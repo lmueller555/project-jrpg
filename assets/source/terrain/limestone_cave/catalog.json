@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "title": "Sanctuary dungeon asset pack",
+  "approval_status": "additions_pending_review",
+  "scale": 2,
+  "page_width": 1440,
+  "sources": {
+    "base": {"label": "Limestone terrain", "manifest": "assets/terrain/limestone_cave/assets.json", "status": "existing"},
+    "wall_micro": {"label": "Microcrystal wall seams", "manifest": "assets/terrain/limestone_cave/wall_gems/assets.json", "status": "existing"},
+    "structure": {"label": "Structures and passages", "manifest": "assets/terrain/limestone_cave/structure/assets.json", "status": "new"},
+    "water": {"label": "Water and seepage", "manifest": "assets/terrain/limestone_cave/water/assets.json", "status": "new"},
+    "geology": {"label": "Loose geology and entrance", "manifest": "assets/terrain/limestone_cave/geology/assets.json", "status": "new"},
+    "micro_adapters": {"label": "Microcrystal seam adapters", "manifest": "assets/terrain/limestone_cave/micro_adapters/assets.json", "status": "new"}
+  }
+}

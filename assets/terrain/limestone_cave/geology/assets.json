@@ -1,0 +1,1404 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.geology.24",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "source_recipe": "assets/source/terrain/limestone_cave/geology.json",
+  "materials": {
+    "earth": {
+      "tiles": [
+        "assets/terrain/limestone_cave/geology/tiles/earth_00.png",
+        "assets/terrain/limestone_cave/geology/tiles/earth_01.png",
+        "assets/terrain/limestone_cave/geology/tiles/earth_02.png",
+        "assets/terrain/limestone_cave/geology/tiles/earth_03.png"
+      ]
+    }
+  },
+  "modules": {
+    "debris.pebbles.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/pebbles/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.pebbles.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/pebbles/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.pebbles.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/pebbles/2.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.pebbles.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/pebbles/3.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.rubble.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/rubble/0.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.rubble.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/rubble/1.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.rubble.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/rubble/2.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.rubble.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/rubble/3.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.talus.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/talus/0.png"
+      ],
+      "size": [
+        72,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.talus.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/talus/1.png"
+      ],
+      "size": [
+        72,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.talus.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/talus/2.png"
+      ],
+      "size": [
+        72,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "debris.talus.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/debris/talus/3.png"
+      ],
+      "size": [
+        72,
+        40
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "slab.fallen.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/slab/fallen/0.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        36,
+        43
+      ],
+      "footprints": [
+        [
+          12,
+          34,
+          46,
+          10
+        ]
+      ],
+      "ground_decal": false,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "solid_fragment"
+    },
+    "slab.fallen.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/slab/fallen/1.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        36,
+        43
+      ],
+      "footprints": [
+        [
+          12,
+          34,
+          46,
+          10
+        ]
+      ],
+      "ground_decal": false,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "solid_fragment"
+    },
+    "slab.fallen.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/slab/fallen/2.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        36,
+        43
+      ],
+      "footprints": [
+        [
+          12,
+          34,
+          46,
+          10
+        ]
+      ],
+      "ground_decal": false,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "solid_fragment"
+    },
+    "slab.fallen.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/slab/fallen/3.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        36,
+        43
+      ],
+      "footprints": [
+        [
+          12,
+          34,
+          46,
+          10
+        ]
+      ],
+      "ground_decal": false,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "solid_fragment"
+    },
+    "crack.branching.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/crack/branching/0.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "crack.branching.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "crack.branching.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/crack/branching/2.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "crack.branching.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/crack/branching/3.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "erosion.channel.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/erosion/channel/0.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "erosion.channel.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/erosion/channel/1.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "erosion.channel.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/erosion/channel/2.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "erosion.channel.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/erosion/channel/3.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "mineral.crust.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/mineral/crust/0.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "mineral.crust.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/mineral/crust/1.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "mineral.crust.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/mineral/crust/2.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "mineral.crust.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/mineral/crust/3.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "stain.damp.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/stain/damp/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "stain.damp.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/stain/damp/1.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "stain.damp.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/stain/damp/2.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "stain.damp.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/stain/damp/3.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "cave",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.root.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/root/0.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.root.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/root/1.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.root.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/root/2.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.root.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/root/3.png"
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.moss.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/moss/0.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.moss.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/moss/1.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.moss.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/moss/2.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.moss.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/moss/3.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.leaves.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/leaves/0.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.leaves.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/leaves/1.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.leaves.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/leaves/2.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "entrance.leaves.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/entrance/leaves/3.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "placement": "entrance",
+      "terrain_role": "surface_detail"
+    },
+    "transition.earth.north.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/north/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "north"
+    },
+    "transition.earth.north.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/north/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "north"
+    },
+    "transition.earth.east.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/east/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "east"
+    },
+    "transition.earth.east.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/east/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "east"
+    },
+    "transition.earth.south.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/south/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "south"
+    },
+    "transition.earth.south.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/south/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "south"
+    },
+    "transition.earth.west.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/west/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "west"
+    },
+    "transition.earth.west.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/west/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "west"
+    },
+    "transition.earth.outer_ne.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_ne/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_ne"
+    },
+    "transition.earth.outer_ne.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_ne/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_ne"
+    },
+    "transition.earth.outer_se.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_se/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_se"
+    },
+    "transition.earth.outer_se.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_se/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_se"
+    },
+    "transition.earth.outer_sw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_sw/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_sw"
+    },
+    "transition.earth.outer_sw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_sw/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_sw"
+    },
+    "transition.earth.outer_nw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_nw/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_nw"
+    },
+    "transition.earth.outer_nw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_nw/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "outer_nw"
+    },
+    "transition.earth.inner_ne.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_ne/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_ne"
+    },
+    "transition.earth.inner_ne.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_ne/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_ne"
+    },
+    "transition.earth.inner_se.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_se/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_se"
+    },
+    "transition.earth.inner_se.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_se/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_se"
+    },
+    "transition.earth.inner_sw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_sw/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_sw"
+    },
+    "transition.earth.inner_sw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_sw/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_sw"
+    },
+    "transition.earth.inner_nw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_nw/0.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_nw"
+    },
+    "transition.earth.inner_nw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_nw/1.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": [],
+      "ground_decal": true,
+      "frame_duration_ms": 700,
+      "reduced_motion_frame": 0,
+      "direction": "inner_nw"
+    }
+  },
+  "inputs": {
+    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+    "assets/source/terrain/grass/recipe.json": "35c779848145323b2ae50a496cfbdb200126731c7945a23982efcd8c5db5c1ca",
+    "assets/source/terrain/limestone_cave/geology.json": "082c7242c4de4c3e51bbe54272947844b41a3e8930947944500812b271149893",
+    "assets/source/terrain/limestone_cave/recipe.json": "6dc38d048731b04a4ba9f8c9f83b7ef100c0ac24549e410543d12c61e1f4a295",
+    "assets/source/terrain/sanctuary_fantasy/grove.json": "15c4ead603a10bde42874db2604abbf0002a4944caf138fc04b1300a8eaf755a",
+    "assets/terrain/eldenmere/terraces/palette.json": "e51abfb741288899762fc57bacdad39035aa5bb88529b7e743bbef97bf614174",
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b",
+    "tools/build_dungeon_geology.py": "3d86e335f635af736acdcb04707685c24de01562e1a6ff2e2d86e53601e63015",
+    "tools/build_limestone_cave_assets.py": "405f87bf1117f66f519dcde137cdeff2418bb6c7a734a2a4abcb616f402ea607"
+  },
+  "artifacts": {
+    "assets/terrain/limestone_cave/geology/modules/debris/pebbles/0.png": "472e678295e9cc22999c3ba3c5b0bbb0c863a09ca9c3c2ccae9e947cb05d3c9e",
+    "assets/terrain/limestone_cave/geology/modules/debris/pebbles/1.png": "1b084f4286faba3e3d6c590cf7204673f436a7d29b266edaac62ed9107f4fd02",
+    "assets/terrain/limestone_cave/geology/modules/debris/pebbles/2.png": "f5ba35660f31967345a1854ecfd4ae79b2def575faa7735c926efdeac4e97f68",
+    "assets/terrain/limestone_cave/geology/modules/debris/pebbles/3.png": "499e20dc536852a7b8aa88020fc6c0f5f9398e5f0bd38fd283ef7c685c70c98f",
+    "assets/terrain/limestone_cave/geology/modules/debris/rubble/0.png": "af527954c5c361341dea2d4e302b9f1967d809204e553cda96a8a5191bb86901",
+    "assets/terrain/limestone_cave/geology/modules/debris/rubble/1.png": "a526f9b17dc8dc243b3aa9229d4fb28196a044623a554509b9d19b7170f71fb6",
+    "assets/terrain/limestone_cave/geology/modules/debris/rubble/2.png": "be68f412cd1c1fe70a1871933af0f711f83497d7224ee8416a16783ed8ca533c",
+    "assets/terrain/limestone_cave/geology/modules/debris/rubble/3.png": "ef21c68064aa69bf61d4f4cbecb5f3e0d6ce308f8636a88956232ef4266a6299",
+    "assets/terrain/limestone_cave/geology/modules/debris/talus/0.png": "2bca00198a921ed7582c3f3a85510c0d1e1187e3f68a807d4ccff10ee41e5284",
+    "assets/terrain/limestone_cave/geology/modules/debris/talus/1.png": "a1bdaf4010e0525afead9e0710d2c0f17525bd7754a8decd8d5f711629c2bfdb",
+    "assets/terrain/limestone_cave/geology/modules/debris/talus/2.png": "ad81d1690ecdc23e9ed291c1563bc041b53a9efffabf40430761871e294b1f07",
+    "assets/terrain/limestone_cave/geology/modules/debris/talus/3.png": "15e0a52516c4a4cdd4e2d6b9a312b23211856e484e652f608045b5c8f0b4552b",
+    "assets/terrain/limestone_cave/geology/modules/slab/fallen/0.png": "976bf9d21ad1eba585267647f516b83a92b43b4fad8b3531a7623d2751c3c727",
+    "assets/terrain/limestone_cave/geology/modules/slab/fallen/1.png": "c1a165cc5eacd1fdd04a7ff5c6c9b8e62a709949fd050c952fbf8c8596b65eb9",
+    "assets/terrain/limestone_cave/geology/modules/slab/fallen/2.png": "0d8dc3175887ca7c01b53312af04c06e89eb48a77830d43cd1f83bfcf2e57195",
+    "assets/terrain/limestone_cave/geology/modules/slab/fallen/3.png": "fe8e2bced62a906bca657931c513e4627b272efd46e649fde4e2e8fbda5b9eed",
+    "assets/terrain/limestone_cave/geology/modules/crack/branching/0.png": "7f1cf649fe0a3df6947f50505c58b82af6e6bc83e1656ad032e63af5b7e4ca21",
+    "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",
+    "assets/terrain/limestone_cave/geology/modules/crack/branching/2.png": "61edb7ba07c43352921144e74a1972e7a0eaa8ff4c40dc2c0e0eb5f0a87d4950",
+    "assets/terrain/limestone_cave/geology/modules/crack/branching/3.png": "bf5f3cc8c452388812ad9bca2450cdb6f690af15889829ceadbdba1863379f52",
+    "assets/terrain/limestone_cave/geology/modules/erosion/channel/0.png": "adfdb94efb78c2dda3df133db9d4899807d1ae6dc0b8ab11b670f4d46233ad87",
+    "assets/terrain/limestone_cave/geology/modules/erosion/channel/1.png": "e3313c99778f1fc608837459e610343cf001fb2d82e3f64d2a00a11faea4d3d5",
+    "assets/terrain/limestone_cave/geology/modules/erosion/channel/2.png": "88f79e45581326e8b92673afb2b7d076727a4f81647c7375647dd3a6e0ad5914",
+    "assets/terrain/limestone_cave/geology/modules/erosion/channel/3.png": "1bd8b66877222653cd850b47ddc212da94498f638e597410ea4e2c0008085981",
+    "assets/terrain/limestone_cave/geology/modules/mineral/crust/0.png": "beb6e8e2121c04a2e06058ae1741eb0ac8aec861bb91f70784e84c9a50ef8f28",
+    "assets/terrain/limestone_cave/geology/modules/mineral/crust/1.png": "9f668400d59fed79eb22a2958b4932533dd35c43cca886fcded399dad353da8b",
+    "assets/terrain/limestone_cave/geology/modules/mineral/crust/2.png": "cbe457a4322d8be2260dfb580b893f6fe989894db94f08d12500d8ffbfec8e00",
+    "assets/terrain/limestone_cave/geology/modules/mineral/crust/3.png": "3e5783c1872784af83c4a82d63f9b8bce43980bdbef960228decbcfd02297b1c",
+    "assets/terrain/limestone_cave/geology/modules/stain/damp/0.png": "19b9ffa7c61717c0e3bbcf04041bd1e3d1c596c52ba63e09928f5ecff3d55337",
+    "assets/terrain/limestone_cave/geology/modules/stain/damp/1.png": "f4e5fda61995f793520c0692938ca3371f94996f5b6eb4cc0fba563b15857e3e",
+    "assets/terrain/limestone_cave/geology/modules/stain/damp/2.png": "89b19ea2c5ddf056d00c34a349fde393a028e971d10e4f52a84483e6b516fe23",
+    "assets/terrain/limestone_cave/geology/modules/stain/damp/3.png": "dd29d43f3542b519376beea0b917a0b39701201eb4203002250a8b681792e3ab",
+    "assets/terrain/limestone_cave/geology/modules/entrance/root/0.png": "0e94332155237df28875e395dc1002d42d82bea973edb9ba1e942952f783be3e",
+    "assets/terrain/limestone_cave/geology/modules/entrance/root/1.png": "209acd9486e07ac2a1541b2c668ba49fc35c38b31a8bf68674d0e629838453ee",
+    "assets/terrain/limestone_cave/geology/modules/entrance/root/2.png": "f92ac44aa8d0066942397dec1b7f19b3ffc2bb4133941eab6180c3354dd9943c",
+    "assets/terrain/limestone_cave/geology/modules/entrance/root/3.png": "44a87d984ad76be3d3f3128ff6876f4d27a3bdcd7905081a6ddd3d82b1d6f61c",
+    "assets/terrain/limestone_cave/geology/modules/entrance/moss/0.png": "81b76788431ff194b884be1673f73a9e0be6a378f236e4ef30871b9cbde75a44",
+    "assets/terrain/limestone_cave/geology/modules/entrance/moss/1.png": "842290f0a5ca5423e05215647a86f039b8abc31b35fbe8b7c21832d583393a76",
+    "assets/terrain/limestone_cave/geology/modules/entrance/moss/2.png": "13fd456bbc7eaab8c094ad74300807b238132613b180831887282976b673f608",
+    "assets/terrain/limestone_cave/geology/modules/entrance/moss/3.png": "349b3d386ea12934edadb3dd1c3b605b7118a49eda7a74ba2e86c2dd01074b10",
+    "assets/terrain/limestone_cave/geology/modules/entrance/leaves/0.png": "3f45e95e2c124a27e7f857191fbed71115315bf672db76622a417053a3daf37f",
+    "assets/terrain/limestone_cave/geology/modules/entrance/leaves/1.png": "7f5aa5834f47d74a423f96683ab40e6896da869d5b97c89649e71dab802d7761",
+    "assets/terrain/limestone_cave/geology/modules/entrance/leaves/2.png": "f4aafa830a769df4dd03a420d24e408e585bb567b614706f6b20caf00fa32750",
+    "assets/terrain/limestone_cave/geology/modules/entrance/leaves/3.png": "2d0f3ed9d4452428a3500e556661963d803b14b36a77d3556313b7a6be894ad5",
+    "assets/terrain/limestone_cave/geology/tiles/earth_00.png": "44472ce4a234590427a93f7593e70b2c3cf9a63f0b66d2db6ba24626cd1f1a20",
+    "assets/terrain/limestone_cave/geology/tiles/earth_01.png": "88a157810a32efb9d33a69e203ff646d509c71ed264ff75a4d6863ba492cfe59",
+    "assets/terrain/limestone_cave/geology/tiles/earth_02.png": "b70535ef21d6caa6666ad973422ece605a8a5e0ec542868983966e47da7a4765",
+    "assets/terrain/limestone_cave/geology/tiles/earth_03.png": "74767f1b23910cc73eda583eab828c26216561dfca6919bb7b57d08aad495819",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/north/0.png": "075c9a5d74de353b70d8919f93206e1ae17918a2df912fb5e1f317b207ecf9a8",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/north/1.png": "6e437c3e0b150a5d72ee62647c90916f07a1a851dfeef71cf58d11bd433638a1",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/east/0.png": "01f4100814eec52ad8317c26641782867d2d77a35a81d1b8ddd0ea5847493a11",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/east/1.png": "65cd032725330970c0c958832a42f023cae6eb388a9a0376d15fc28267f6b34c",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/south/0.png": "3a42e09ad2ba7783817b452fc8650976913d64b06a31f12ddae510a9f7ca472d",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/south/1.png": "8dfbe1b94a7b042234b03a09247b0f59ac016549aded7f4c7a364ea2ad3a43ac",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/west/0.png": "17e11260365d8a9c35b73032ff4c8b1f53dd9e4c898df7cfb798b69f3e723bca",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/west/1.png": "281416332f4a69825f7eea46099c9f6b429bc9fdfaf136c683cfdd8016b2d908",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_ne/0.png": "9740bd51137dda29b79ac161cc3479f75530ca03dcf4ff22b3b5b24500433060",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_ne/1.png": "4259d19fc5a31aab64cfe6d29c9581c35d1bcefcc0844ed4e423ec24c83b47c8",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_se/0.png": "9890e9c4a44112b99d1553f9224008a9e258b386a09759afb20d9ab57bc4e292",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_se/1.png": "ec78a851f7b90e1702e44f94c604ed07736af5c2f94c2b035392c5c8ddcf078e",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_sw/0.png": "0901d0229b2e7e05d5842f174d126079a2e5b1e25d27ea90c3e890bfe467db64",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_sw/1.png": "ca075fa4815988b2e1df754c21f40e68ec86ff56b2bc352cb3ae8837065d867e",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_nw/0.png": "4cbbd4201f5ebe30fc6c634df6ca6a404d0c0475d9bd2cd04c85227ecabc58da",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/outer_nw/1.png": "c9abd726d179b5cdba97bfbff651a23272b819670b05bbf1e53ea686e8fd4c1b",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_ne/0.png": "b667ce55f5e7f2d279832d8d48327b0df06d2bdd4339dce8de379f4662977c71",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_ne/1.png": "1dca88d409dc843e0ad8c246b0acf63152cf4a66e67dee945785b19fc0ae273e",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_se/0.png": "495c5bcbb04cc6aa4b6b96b9338031a3fe798cf307b666222b018a0580fb80a9",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_se/1.png": "974144ddb6a44f62cbae36e11f5bb38e33485efefcf2455c6d9bf6ed3581792b",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_sw/0.png": "a53f04f2816382a7ae667db25a9b365bb5f2077b9c1472cc28e513c8dcda9b3e",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_sw/1.png": "d5ce1a465b92be0b56c3cf3e4eefeedeae7432be64f4bb664e0a8b719a19fb21",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_nw/0.png": "c12c199b79cf93a36c3fa52c4603ccbe63017c9d52a1e1be92aecceb8086ecbb",
+    "assets/terrain/limestone_cave/geology/modules/transition/earth/inner_nw/1.png": "f8c9ce9ccff728c8620b3b7e5e3d5dadb52697aa932112073868e0c150baf5e9",
+    "assets/terrain/limestone_cave/geology/geology_review.png": "feaa80e5d08af1d9e619a4daa5e06bd62e3813c41c9baed2e4ef4d026bb270dd",
+    "assets/terrain/limestone_cave/geology/README.md": "a474712f7cf84d72bec938c18b261a11b00fedc2b9a77ae7aa6ff018d2e2a8c9"
+  }
+}

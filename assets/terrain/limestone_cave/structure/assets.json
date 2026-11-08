@@ -1,0 +1,1749 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.structure.24",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "source_recipe": "assets/source/terrain/limestone_cave/structure.json",
+  "modules": {
+    "wall.face.north.h24": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/north/h24.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        38
+      ],
+      "footprints": [
+        [
+          4,
+          32,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "north",
+      "height_px": 24
+    },
+    "wall.face.north.h48": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/north/h48.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        62
+      ],
+      "footprints": [
+        [
+          4,
+          56,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "north",
+      "height_px": 48
+    },
+    "wall.face.north.h72": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/north/h72.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        86
+      ],
+      "footprints": [
+        [
+          4,
+          80,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "north",
+      "height_px": 72
+    },
+    "wall.cap.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/cap/north.png"
+      ],
+      "size": [
+        96,
+        24
+      ],
+      "anchor": [
+        48,
+        19
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "north",
+      "height_px": 0
+    },
+    "wall.base.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/base/north.png"
+      ],
+      "size": [
+        96,
+        24
+      ],
+      "anchor": [
+        48,
+        19
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "north",
+      "height_px": 0
+    },
+    "ledge.edge.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ledge/edge/north.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        38
+      ],
+      "footprints": [
+        [
+          4,
+          32,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "north",
+      "elevation": 24
+    },
+    "ramp.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ramp/north.png"
+      ],
+      "size": [
+        72,
+        96
+      ],
+      "anchor": [
+        36,
+        90
+      ],
+      "footprints": [
+        [
+          4,
+          8,
+          6,
+          80
+        ],
+        [
+          63,
+          8,
+          5,
+          80
+        ]
+      ],
+      "walkable_regions": [
+        [
+          12,
+          0,
+          48,
+          96
+        ]
+      ],
+      "direction": "north",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "steps.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/steps/north.png"
+      ],
+      "size": [
+        72,
+        96
+      ],
+      "anchor": [
+        36,
+        90
+      ],
+      "footprints": [
+        [
+          4,
+          8,
+          6,
+          80
+        ],
+        [
+          63,
+          8,
+          5,
+          80
+        ]
+      ],
+      "walkable_regions": [
+        [
+          12,
+          0,
+          48,
+          96
+        ]
+      ],
+      "direction": "north",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "tunnel.north.narrow": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/north/narrow.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        90
+      ],
+      "footprints": [
+        [
+          6,
+          67,
+          12,
+          22
+        ],
+        [
+          78,
+          67,
+          12,
+          22
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          48,
+          48,
+          48
+        ]
+      ],
+      "direction": "north",
+      "clear_width": 48
+    },
+    "tunnel.north.wide": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/north/wide.png"
+      ],
+      "size": [
+        128,
+        96
+      ],
+      "anchor": [
+        64,
+        90
+      ],
+      "footprints": [
+        [
+          6,
+          67,
+          12,
+          22
+        ],
+        [
+          110,
+          67,
+          12,
+          22
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          48,
+          80,
+          48
+        ]
+      ],
+      "direction": "north",
+      "clear_width": 80
+    },
+    "alcove.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/alcove/north.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        90
+      ],
+      "footprints": [
+        [
+          6,
+          67,
+          12,
+          22
+        ],
+        [
+          78,
+          67,
+          12,
+          22
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          48,
+          48,
+          48
+        ]
+      ],
+      "direction": "north",
+      "clear_width": 48,
+      "passage": false
+    },
+    "wall.face.east.h24": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/east/h24.png"
+      ],
+      "size": [
+        36,
+        96
+      ],
+      "anchor": [
+        14,
+        90
+      ],
+      "footprints": [
+        [
+          8,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "east",
+      "height_px": 24
+    },
+    "wall.face.east.h48": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/east/h48.png"
+      ],
+      "size": [
+        48,
+        96
+      ],
+      "anchor": [
+        14,
+        90
+      ],
+      "footprints": [
+        [
+          8,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "east",
+      "height_px": 48
+    },
+    "wall.face.east.h72": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/east/h72.png"
+      ],
+      "size": [
+        60,
+        96
+      ],
+      "anchor": [
+        14,
+        90
+      ],
+      "footprints": [
+        [
+          8,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "east",
+      "height_px": 72
+    },
+    "wall.cap.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/cap/east.png"
+      ],
+      "size": [
+        24,
+        96
+      ],
+      "anchor": [
+        12,
+        91
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "east",
+      "height_px": 0
+    },
+    "wall.base.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/base/east.png"
+      ],
+      "size": [
+        24,
+        96
+      ],
+      "anchor": [
+        12,
+        91
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "east",
+      "height_px": 0
+    },
+    "ledge.edge.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ledge/edge/east.png"
+      ],
+      "size": [
+        36,
+        96
+      ],
+      "anchor": [
+        14,
+        90
+      ],
+      "footprints": [
+        [
+          8,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "east",
+      "elevation": 24
+    },
+    "ramp.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ramp/east.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        90,
+        36
+      ],
+      "footprints": [
+        [
+          8,
+          4,
+          80,
+          6
+        ],
+        [
+          8,
+          63,
+          80,
+          5
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          12,
+          96,
+          48
+        ]
+      ],
+      "direction": "east",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "steps.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/steps/east.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        90,
+        36
+      ],
+      "footprints": [
+        [
+          8,
+          4,
+          80,
+          6
+        ],
+        [
+          8,
+          63,
+          80,
+          5
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          12,
+          96,
+          48
+        ]
+      ],
+      "direction": "east",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "tunnel.east.narrow": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/east/narrow.png"
+      ],
+      "size": [
+        112,
+        88
+      ],
+      "anchor": [
+        16,
+        44
+      ],
+      "footprints": [
+        [
+          18,
+          10,
+          60,
+          6
+        ],
+        [
+          18,
+          72,
+          60,
+          8
+        ],
+        [
+          97,
+          19,
+          9,
+          50
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          20,
+          88,
+          48
+        ]
+      ],
+      "direction": "east",
+      "clear_width": 48
+    },
+    "tunnel.east.wide": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/east/wide.png"
+      ],
+      "size": [
+        112,
+        120
+      ],
+      "anchor": [
+        16,
+        60
+      ],
+      "footprints": [
+        [
+          18,
+          10,
+          60,
+          6
+        ],
+        [
+          18,
+          104,
+          60,
+          8
+        ],
+        [
+          97,
+          19,
+          9,
+          82
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          20,
+          88,
+          80
+        ]
+      ],
+      "direction": "east",
+      "clear_width": 80
+    },
+    "alcove.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/alcove/east.png"
+      ],
+      "size": [
+        112,
+        88
+      ],
+      "anchor": [
+        16,
+        44
+      ],
+      "footprints": [
+        [
+          18,
+          10,
+          60,
+          6
+        ],
+        [
+          18,
+          72,
+          60,
+          8
+        ],
+        [
+          97,
+          19,
+          9,
+          50
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          20,
+          88,
+          48
+        ]
+      ],
+      "direction": "east",
+      "clear_width": 48,
+      "passage": false
+    },
+    "wall.face.south.h24": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/south/h24.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        18
+      ],
+      "footprints": [
+        [
+          4,
+          12,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "south",
+      "height_px": 24
+    },
+    "wall.face.south.h48": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/south/h48.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        18
+      ],
+      "footprints": [
+        [
+          4,
+          12,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "south",
+      "height_px": 48
+    },
+    "wall.face.south.h72": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/south/h72.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        18
+      ],
+      "footprints": [
+        [
+          4,
+          12,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "south",
+      "height_px": 72
+    },
+    "wall.cap.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/cap/south.png"
+      ],
+      "size": [
+        96,
+        24
+      ],
+      "anchor": [
+        48,
+        19
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "south",
+      "height_px": 0
+    },
+    "wall.base.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/base/south.png"
+      ],
+      "size": [
+        96,
+        24
+      ],
+      "anchor": [
+        48,
+        19
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "south",
+      "height_px": 0
+    },
+    "ledge.edge.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ledge/edge/south.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        18
+      ],
+      "footprints": [
+        [
+          4,
+          12,
+          88,
+          12
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "south",
+      "elevation": 24
+    },
+    "ramp.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ramp/south.png"
+      ],
+      "size": [
+        72,
+        96
+      ],
+      "anchor": [
+        36,
+        90
+      ],
+      "footprints": [
+        [
+          4,
+          8,
+          6,
+          80
+        ],
+        [
+          63,
+          8,
+          5,
+          80
+        ]
+      ],
+      "walkable_regions": [
+        [
+          12,
+          0,
+          48,
+          96
+        ]
+      ],
+      "direction": "south",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "steps.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/steps/south.png"
+      ],
+      "size": [
+        72,
+        96
+      ],
+      "anchor": [
+        36,
+        90
+      ],
+      "footprints": [
+        [
+          4,
+          8,
+          6,
+          80
+        ],
+        [
+          63,
+          8,
+          5,
+          80
+        ]
+      ],
+      "walkable_regions": [
+        [
+          12,
+          0,
+          48,
+          96
+        ]
+      ],
+      "direction": "south",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "tunnel.south.narrow": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/south/narrow.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        12
+      ],
+      "footprints": [
+        [
+          6,
+          10,
+          12,
+          38
+        ],
+        [
+          78,
+          10,
+          12,
+          38
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          0,
+          48,
+          48
+        ]
+      ],
+      "direction": "south",
+      "clear_width": 48
+    },
+    "tunnel.south.wide": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/south/wide.png"
+      ],
+      "size": [
+        128,
+        72
+      ],
+      "anchor": [
+        64,
+        12
+      ],
+      "footprints": [
+        [
+          6,
+          10,
+          12,
+          38
+        ],
+        [
+          110,
+          10,
+          12,
+          38
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          0,
+          80,
+          48
+        ]
+      ],
+      "direction": "south",
+      "clear_width": 80
+    },
+    "alcove.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/alcove/south.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        12
+      ],
+      "footprints": [
+        [
+          6,
+          10,
+          12,
+          38
+        ],
+        [
+          78,
+          10,
+          12,
+          38
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          0,
+          48,
+          48
+        ]
+      ],
+      "direction": "south",
+      "clear_width": 48,
+      "passage": false
+    },
+    "wall.face.west.h24": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/west/h24.png"
+      ],
+      "size": [
+        36,
+        96
+      ],
+      "anchor": [
+        22,
+        90
+      ],
+      "footprints": [
+        [
+          16,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "west",
+      "height_px": 24
+    },
+    "wall.face.west.h48": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/west/h48.png"
+      ],
+      "size": [
+        48,
+        96
+      ],
+      "anchor": [
+        34,
+        90
+      ],
+      "footprints": [
+        [
+          28,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "west",
+      "height_px": 48
+    },
+    "wall.face.west.h72": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/face/west/h72.png"
+      ],
+      "size": [
+        60,
+        96
+      ],
+      "anchor": [
+        46,
+        90
+      ],
+      "footprints": [
+        [
+          40,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "west",
+      "height_px": 72
+    },
+    "wall.cap.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/cap/west.png"
+      ],
+      "size": [
+        24,
+        96
+      ],
+      "anchor": [
+        12,
+        91
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "west",
+      "height_px": 0
+    },
+    "wall.base.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/base/west.png"
+      ],
+      "size": [
+        24,
+        96
+      ],
+      "anchor": [
+        12,
+        91
+      ],
+      "footprints": [],
+      "walkable_regions": [],
+      "direction": "west",
+      "height_px": 0
+    },
+    "ledge.edge.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ledge/edge/west.png"
+      ],
+      "size": [
+        36,
+        96
+      ],
+      "anchor": [
+        22,
+        90
+      ],
+      "footprints": [
+        [
+          16,
+          6,
+          12,
+          84
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "west",
+      "elevation": 24
+    },
+    "ramp.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/ramp/west.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        90,
+        36
+      ],
+      "footprints": [
+        [
+          8,
+          4,
+          80,
+          6
+        ],
+        [
+          8,
+          63,
+          80,
+          5
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          12,
+          96,
+          48
+        ]
+      ],
+      "direction": "west",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "steps.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/steps/west.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        90,
+        36
+      ],
+      "footprints": [
+        [
+          8,
+          4,
+          80,
+          6
+        ],
+        [
+          8,
+          63,
+          80,
+          5
+        ]
+      ],
+      "walkable_regions": [
+        [
+          0,
+          12,
+          96,
+          48
+        ]
+      ],
+      "direction": "west",
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "tunnel.west.narrow": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/west/narrow.png"
+      ],
+      "size": [
+        112,
+        88
+      ],
+      "anchor": [
+        96,
+        44
+      ],
+      "footprints": [
+        [
+          34,
+          10,
+          60,
+          6
+        ],
+        [
+          34,
+          72,
+          60,
+          8
+        ],
+        [
+          6,
+          19,
+          9,
+          50
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          20,
+          88,
+          48
+        ]
+      ],
+      "direction": "west",
+      "clear_width": 48
+    },
+    "tunnel.west.wide": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/tunnel/west/wide.png"
+      ],
+      "size": [
+        112,
+        120
+      ],
+      "anchor": [
+        96,
+        60
+      ],
+      "footprints": [
+        [
+          34,
+          10,
+          60,
+          6
+        ],
+        [
+          34,
+          104,
+          60,
+          8
+        ],
+        [
+          6,
+          19,
+          9,
+          82
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          20,
+          88,
+          80
+        ]
+      ],
+      "direction": "west",
+      "clear_width": 80
+    },
+    "alcove.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/alcove/west.png"
+      ],
+      "size": [
+        112,
+        88
+      ],
+      "anchor": [
+        96,
+        44
+      ],
+      "footprints": [
+        [
+          34,
+          10,
+          60,
+          6
+        ],
+        [
+          34,
+          72,
+          60,
+          8
+        ],
+        [
+          6,
+          19,
+          9,
+          50
+        ]
+      ],
+      "walkable_regions": [
+        [
+          24,
+          20,
+          88,
+          48
+        ]
+      ],
+      "direction": "west",
+      "clear_width": 48,
+      "passage": false
+    },
+    "wall.corner.inner.ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/ne.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          52,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          7,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "ne",
+      "height_px": 24
+    },
+    "wall.corner.inner.se": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/se.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          52,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          52,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "se",
+      "height_px": 24
+    },
+    "wall.corner.inner.sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/sw.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          6,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          52,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "sw",
+      "height_px": 24
+    },
+    "wall.corner.inner.nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/nw.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          6,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          7,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "nw",
+      "height_px": 24
+    },
+    "wall.corner.outer.ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/ne.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          52,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          7,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "ne",
+      "height_px": 24
+    },
+    "wall.corner.outer.se": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/se.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          52,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          52,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "se",
+      "height_px": 24
+    },
+    "wall.corner.outer.sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/sw.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          6,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          52,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "sw",
+      "height_px": 24
+    },
+    "wall.corner.outer.nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/nw.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        67
+      ],
+      "footprints": [
+        [
+          6,
+          12,
+          12,
+          48
+        ],
+        [
+          12,
+          7,
+          45,
+          10
+        ]
+      ],
+      "walkable_regions": [],
+      "direction": "nw",
+      "height_px": 24
+    },
+    "shelf.low.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/shelf/low/0.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        66
+      ],
+      "footprints": [
+        [
+          6,
+          49,
+          17,
+          16
+        ],
+        [
+          73,
+          49,
+          17,
+          16
+        ],
+        [
+          5,
+          20,
+          6,
+          27
+        ],
+        [
+          85,
+          20,
+          6,
+          27
+        ],
+        [
+          18,
+          11,
+          60,
+          7
+        ]
+      ],
+      "walkable_regions": [
+        [
+          12,
+          21,
+          72,
+          24
+        ],
+        [
+          24,
+          20,
+          48,
+          52
+        ]
+      ],
+      "elevation": 24,
+      "clear_width": 48
+    },
+    "shelf.low.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/structure/modules/shelf/low/1.png"
+      ],
+      "size": [
+        144,
+        96
+      ],
+      "anchor": [
+        72,
+        90
+      ],
+      "footprints": [
+        [
+          6,
+          73,
+          41,
+          16
+        ],
+        [
+          97,
+          73,
+          41,
+          16
+        ],
+        [
+          5,
+          20,
+          6,
+          51
+        ],
+        [
+          133,
+          20,
+          6,
+          51
+        ],
+        [
+          18,
+          11,
+          108,
+          7
+        ]
+      ],
+      "walkable_regions": [
+        [
+          12,
+          21,
+          120,
+          48
+        ],
+        [
+          48,
+          20,
+          48,
+          76
+        ]
+      ],
+      "elevation": 24,
+      "clear_width": 48
+    }
+  },
+  "inputs": {
+    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+    "assets/source/terrain/limestone_cave/recipe.json": "6dc38d048731b04a4ba9f8c9f83b7ef100c0ac24549e410543d12c61e1f4a295",
+    "assets/source/terrain/limestone_cave/structure.json": "bf8927591734841c0f316f5dc416b49d97c5a2cbd4aaf3296c752edbb1157df4",
+    "assets/terrain/eldenmere/terraces/palette.json": "e51abfb741288899762fc57bacdad39035aa5bb88529b7e743bbef97bf614174",
+    "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b",
+    "tools/build_dungeon_structure.py": "d6263a821984340bfeb274cdff2ed22c8af194458386213230aa631603e802eb",
+    "tools/build_limestone_cave_assets.py": "405f87bf1117f66f519dcde137cdeff2418bb6c7a734a2a4abcb616f402ea607"
+  },
+  "artifacts": {
+    "assets/terrain/limestone_cave/structure/modules/wall/face/north/h24.png": "773f38746b1eed20a7cf6b1ab3a4237b5c091d8b082aec0d7586330d68d6074e",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/north/h48.png": "90557a001f042e6d9bb6441c62a6869cc895c8064f71a9fefb149da0ee3753ae",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/north/h72.png": "010006f17936ebbfe7139512c08d769a4aa042114ef4de75808db681fcadb761",
+    "assets/terrain/limestone_cave/structure/modules/wall/cap/north.png": "cdde2aedf8ed01ad88d9ab7b74e82f4244a74ab5aaeca7ad3df6579c77289a7d",
+    "assets/terrain/limestone_cave/structure/modules/wall/base/north.png": "013f89a8941997f2f79e0171af5b3f26daeea990c772d37980868f40087e2060",
+    "assets/terrain/limestone_cave/structure/modules/ledge/edge/north.png": "773f38746b1eed20a7cf6b1ab3a4237b5c091d8b082aec0d7586330d68d6074e",
+    "assets/terrain/limestone_cave/structure/modules/ramp/north.png": "82493a8c4f4f1087fe0ebb7c9f041fc86337b75fcad95aacc7281bf0549d4aa7",
+    "assets/terrain/limestone_cave/structure/modules/steps/north.png": "2ea4d6eff596e787241e42105f9fc1b32994d470fb02ab978174efe3dc4b7270",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/north/narrow.png": "89936f33138e2cb6ce7bfe15cd6d281e85ee4b7b36b712c45b8bcc5b818ba893",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/north/wide.png": "a6cf1e43c35895bd070dd592a2fdb2c69e27fbf14db4871330d8bbf3f2e39d2f",
+    "assets/terrain/limestone_cave/structure/modules/alcove/north.png": "754ea939830cc4f3c156ba81e3798cec9110bc5a319b6b74500766b45c0915b9",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/east/h24.png": "f0221ef5104a64afd119bd460c46274126145382a8bee40ffb5bf555e850c08a",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/east/h48.png": "13294c70c1ac7695f0dfaa0cd561efa86e9d9ae63bca065b910a3f47b1ea7449",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/east/h72.png": "4abc1577b6f4190c8d976f7496b8a7feb52b1db98eb7bbd2977c0dbda7b2d5ce",
+    "assets/terrain/limestone_cave/structure/modules/wall/cap/east.png": "e7d5abd725a2afd335dd9b5807809e143dc90f54f3bd4b2621393cbf8da4f9d5",
+    "assets/terrain/limestone_cave/structure/modules/wall/base/east.png": "f4d1da9dbafcb6347f5204299bdacae317a461a506a35a45ec86553cc6a861c7",
+    "assets/terrain/limestone_cave/structure/modules/ledge/edge/east.png": "f0221ef5104a64afd119bd460c46274126145382a8bee40ffb5bf555e850c08a",
+    "assets/terrain/limestone_cave/structure/modules/ramp/east.png": "92cef32ee00b0b86d4ad23ee81de7414d9a4b939d2068d6d4915b07e8bc4b9de",
+    "assets/terrain/limestone_cave/structure/modules/steps/east.png": "c9d55ac3d8ed9412ce11edc8d46f4710c9b9acbd285a3682a345939f73b35dd6",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/east/narrow.png": "202a67d21e4baf0c3000dd6f30fa3d0fe4ab63ad9d531e4488d1a50fc78daa48",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/east/wide.png": "72b7798423bcd50252eb36ce9b9c311238ab8151a11858681594c88bde85af93",
+    "assets/terrain/limestone_cave/structure/modules/alcove/east.png": "6ee89334b505c841d0cfb6b78abf0f146a524b83ebaed14efd6a5bcf2428a5bc",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/south/h24.png": "10da644ea1ec01c53379b6b9d598da6355168d310fe25bcc03b0004eebe261ab",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/south/h48.png": "e7306b7f7acc6ae2cd0c03a11a4a9dbe425b49b26286a7e871cfe7d9209e6e42",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/south/h72.png": "c0615a983478f1a93945f8d84ba594456e646194e867d739ec150c384e3e7fa6",
+    "assets/terrain/limestone_cave/structure/modules/wall/cap/south.png": "cdde2aedf8ed01ad88d9ab7b74e82f4244a74ab5aaeca7ad3df6579c77289a7d",
+    "assets/terrain/limestone_cave/structure/modules/wall/base/south.png": "013f89a8941997f2f79e0171af5b3f26daeea990c772d37980868f40087e2060",
+    "assets/terrain/limestone_cave/structure/modules/ledge/edge/south.png": "10da644ea1ec01c53379b6b9d598da6355168d310fe25bcc03b0004eebe261ab",
+    "assets/terrain/limestone_cave/structure/modules/ramp/south.png": "24e6be8ae73da0eef884aafa46910dbe998749f7db8bbf6749501db37e7a3547",
+    "assets/terrain/limestone_cave/structure/modules/steps/south.png": "35763f4c6c6ec5648590654e3b1d40ac2014d3e80424f9b2d81847de08e6f230",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/south/narrow.png": "d05143a476d6f04e76263b6eedf5d7e671fd20dca664c43263b55bbeadec8b7f",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/south/wide.png": "901706144232081a1ddfa00c9df466aae4d94d04463f40f5cd586c5ce7cea51e",
+    "assets/terrain/limestone_cave/structure/modules/alcove/south.png": "d3d6a4808101cb915f9c353ed5e4f8a2e0e6a41aa4b5d68a50367d62bed021c7",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/west/h24.png": "f63c20776f925f12b2b7fa9d314ace5b948d3d575167bf7cf38f401834a9d59c",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/west/h48.png": "38b438f4db8db3f1cf83fc302c1d9d49b54b0c62209713e4f96785635c7f6fcb",
+    "assets/terrain/limestone_cave/structure/modules/wall/face/west/h72.png": "7d764e563457716cad8f9c098282433cd27ca7dd834019675117a0aaed6fe7f5",
+    "assets/terrain/limestone_cave/structure/modules/wall/cap/west.png": "e7d5abd725a2afd335dd9b5807809e143dc90f54f3bd4b2621393cbf8da4f9d5",
+    "assets/terrain/limestone_cave/structure/modules/wall/base/west.png": "f4d1da9dbafcb6347f5204299bdacae317a461a506a35a45ec86553cc6a861c7",
+    "assets/terrain/limestone_cave/structure/modules/ledge/edge/west.png": "f63c20776f925f12b2b7fa9d314ace5b948d3d575167bf7cf38f401834a9d59c",
+    "assets/terrain/limestone_cave/structure/modules/ramp/west.png": "a3e9d06d6102fda8d6021f0705880262a1b4769b8ca50eceb012c89f0e682eb2",
+    "assets/terrain/limestone_cave/structure/modules/steps/west.png": "32424a4f3e41505c1e54e495fba6a52cd4d3325976910bd8b0ffcf5e1d41bdda",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/west/narrow.png": "2cb6078682b3d6d5e7b49a3d6a4cf2c8536e344645280bebdb432fbdc2069543",
+    "assets/terrain/limestone_cave/structure/modules/tunnel/west/wide.png": "2d502e64a6eba2c26ac4dcec82d9b583124f64fa7eddb83e58028bb5ec5cd728",
+    "assets/terrain/limestone_cave/structure/modules/alcove/west.png": "dadaa25ec11fec220bd6d586467cd42af79287ab881e3307c15d095ef40397c8",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/ne.png": "628fea2e6b08d592f3d72ab6a70b26564203952dd430c5e182c01ad5f16d3175",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/se.png": "6c6b406061ff144b8720e6b526d7ee48c83cca179a295aae2b898c5f0dcdac09",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/sw.png": "28e49f32c82ca2fef66af597e0eaf78e4ec1aeaaede801ee7e9eaac14baf2e37",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/inner/nw.png": "8c752affe23104c9e8010251cdce841fca514fba12492282532fde6605b24de7",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/ne.png": "02c7ec8b6ab75746bcfdaf2e6ae9a84289935fbe58d51d112a5f4c6b9d742830",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/se.png": "06a838d83656edb416c7f8b2ef6a995f6c9d6f4fbfa95956527c88529526e34b",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/sw.png": "207c909aedf4f50a5af40923983edaa260bd77b67ff1c3fdf6ae3eaf1e61329d",
+    "assets/terrain/limestone_cave/structure/modules/wall/corner/outer/nw.png": "b18aa2f605f7aef078e3b0cc36e3b111a8de5188eae7fa5e222eb3baf83d8163",
+    "assets/terrain/limestone_cave/structure/modules/shelf/low/0.png": "550b1acdb01830ed251630c7e51f1386bfbb12464cdd146cf8f64f94c36a3528",
+    "assets/terrain/limestone_cave/structure/modules/shelf/low/1.png": "24a352ee27460a2238be9042cccbc89ae39e4edf8ff465953f3f77adc9da6e2e",
+    "assets/terrain/limestone_cave/structure/structure_review.png": "5997e6598fce2c8155bc54651dab995144b36bbfb446b49a4d8033e2a3c5b065",
+    "assets/terrain/limestone_cave/structure/README.md": "6fd01bde504dad1d711b3e236dec1151b1afcd23d3672ffa39e05958d2afabe1"
+  }
+}

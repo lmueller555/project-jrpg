@@ -1,0 +1,5492 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.water.24",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "source_recipe": "assets/source/terrain/limestone_cave/water.json",
+  "modules": {
+    "water.shallow.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          24
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/water/shallow/0.png"
+    },
+    "water.shallow.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          24
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/water/shallow/1.png"
+    },
+    "water.shallow.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          24
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/water/shallow/2.png"
+    },
+    "water.deep.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          24
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/water/deep/0.png"
+    },
+    "water.deep.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          24
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/water/deep/1.png"
+    },
+    "water.deep.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          24
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/water/deep/2.png"
+    },
+    "bank.north.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          5,
+          6,
+          1,
+          1
+        ],
+        [
+          17,
+          6,
+          1,
+          1
+        ],
+        [
+          0,
+          7,
+          9,
+          1
+        ],
+        [
+          14,
+          7,
+          10,
+          1
+        ],
+        [
+          0,
+          8,
+          24,
+          16
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/north/0.png"
+    },
+    "bank.north.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          6,
+          1,
+          1
+        ],
+        [
+          0,
+          7,
+          6,
+          1
+        ],
+        [
+          14,
+          7,
+          10,
+          1
+        ],
+        [
+          0,
+          8,
+          24,
+          16
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/north/1.png"
+    },
+    "bank.east.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          17,
+          5
+        ],
+        [
+          0,
+          5,
+          18,
+          1
+        ],
+        [
+          0,
+          6,
+          17,
+          3
+        ],
+        [
+          0,
+          9,
+          16,
+          5
+        ],
+        [
+          0,
+          14,
+          17,
+          3
+        ],
+        [
+          0,
+          17,
+          18,
+          1
+        ],
+        [
+          0,
+          18,
+          17,
+          6
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/east/0.png"
+    },
+    "bank.east.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          17,
+          6
+        ],
+        [
+          0,
+          6,
+          16,
+          8
+        ],
+        [
+          0,
+          14,
+          17,
+          3
+        ],
+        [
+          0,
+          17,
+          18,
+          1
+        ],
+        [
+          0,
+          18,
+          17,
+          6
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/east/1.png"
+    },
+    "bank.south.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          16
+        ],
+        [
+          0,
+          16,
+          10,
+          1
+        ],
+        [
+          15,
+          16,
+          9,
+          1
+        ],
+        [
+          6,
+          17,
+          1,
+          1
+        ],
+        [
+          18,
+          17,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/south/0.png"
+    },
+    "bank.south.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          16
+        ],
+        [
+          0,
+          16,
+          10,
+          1
+        ],
+        [
+          18,
+          16,
+          6,
+          1
+        ],
+        [
+          6,
+          17,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/south/1.png"
+    },
+    "bank.west.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          7,
+          0,
+          17,
+          6
+        ],
+        [
+          6,
+          6,
+          18,
+          1
+        ],
+        [
+          7,
+          7,
+          17,
+          3
+        ],
+        [
+          8,
+          10,
+          16,
+          5
+        ],
+        [
+          7,
+          15,
+          17,
+          3
+        ],
+        [
+          6,
+          18,
+          18,
+          1
+        ],
+        [
+          7,
+          19,
+          17,
+          5
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/west/0.png"
+    },
+    "bank.west.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          7,
+          0,
+          17,
+          6
+        ],
+        [
+          6,
+          6,
+          18,
+          1
+        ],
+        [
+          7,
+          7,
+          17,
+          3
+        ],
+        [
+          8,
+          10,
+          16,
+          8
+        ],
+        [
+          7,
+          18,
+          17,
+          6
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/west/1.png"
+    },
+    "bank.outer_ne.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          7,
+          1,
+          1
+        ],
+        [
+          0,
+          8,
+          6,
+          1
+        ],
+        [
+          0,
+          9,
+          8,
+          1
+        ],
+        [
+          0,
+          10,
+          11,
+          1
+        ],
+        [
+          0,
+          11,
+          12,
+          1
+        ],
+        [
+          0,
+          12,
+          13,
+          2
+        ],
+        [
+          0,
+          14,
+          14,
+          1
+        ],
+        [
+          0,
+          15,
+          15,
+          2
+        ],
+        [
+          0,
+          17,
+          16,
+          3
+        ],
+        [
+          0,
+          20,
+          17,
+          2
+        ],
+        [
+          0,
+          22,
+          18,
+          2
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_ne/0.png"
+    },
+    "bank.outer_ne.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          7,
+          1,
+          1
+        ],
+        [
+          0,
+          8,
+          6,
+          1
+        ],
+        [
+          0,
+          9,
+          8,
+          1
+        ],
+        [
+          0,
+          10,
+          9,
+          1
+        ],
+        [
+          0,
+          11,
+          11,
+          1
+        ],
+        [
+          0,
+          12,
+          12,
+          1
+        ],
+        [
+          0,
+          13,
+          13,
+          1
+        ],
+        [
+          0,
+          14,
+          14,
+          1
+        ],
+        [
+          0,
+          15,
+          15,
+          2
+        ],
+        [
+          0,
+          17,
+          16,
+          3
+        ],
+        [
+          0,
+          20,
+          17,
+          2
+        ],
+        [
+          0,
+          22,
+          18,
+          2
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_ne/1.png"
+    },
+    "bank.outer_se.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          1,
+          16,
+          5
+        ],
+        [
+          0,
+          6,
+          15,
+          2
+        ],
+        [
+          0,
+          8,
+          14,
+          3
+        ],
+        [
+          0,
+          11,
+          13,
+          1
+        ],
+        [
+          0,
+          12,
+          12,
+          1
+        ],
+        [
+          0,
+          13,
+          10,
+          1
+        ],
+        [
+          0,
+          14,
+          9,
+          1
+        ],
+        [
+          0,
+          15,
+          7,
+          1
+        ],
+        [
+          0,
+          16,
+          4,
+          1
+        ],
+        [
+          0,
+          17,
+          2,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_se/0.png"
+    },
+    "bank.outer_se.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          1,
+          16,
+          5
+        ],
+        [
+          0,
+          6,
+          15,
+          2
+        ],
+        [
+          0,
+          8,
+          14,
+          1
+        ],
+        [
+          0,
+          9,
+          13,
+          2
+        ],
+        [
+          0,
+          11,
+          12,
+          1
+        ],
+        [
+          0,
+          12,
+          11,
+          1
+        ],
+        [
+          0,
+          13,
+          10,
+          1
+        ],
+        [
+          0,
+          14,
+          9,
+          1
+        ],
+        [
+          0,
+          15,
+          7,
+          1
+        ],
+        [
+          0,
+          16,
+          4,
+          1
+        ],
+        [
+          0,
+          17,
+          2,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_se/1.png"
+    },
+    "bank.outer_sw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          6,
+          0,
+          18,
+          2
+        ],
+        [
+          7,
+          2,
+          17,
+          2
+        ],
+        [
+          8,
+          4,
+          16,
+          3
+        ],
+        [
+          9,
+          7,
+          15,
+          2
+        ],
+        [
+          10,
+          9,
+          14,
+          1
+        ],
+        [
+          11,
+          10,
+          13,
+          2
+        ],
+        [
+          12,
+          12,
+          12,
+          1
+        ],
+        [
+          13,
+          13,
+          11,
+          1
+        ],
+        [
+          16,
+          14,
+          8,
+          1
+        ],
+        [
+          18,
+          15,
+          6,
+          1
+        ],
+        [
+          23,
+          16,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_sw/0.png"
+    },
+    "bank.outer_sw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          6,
+          0,
+          18,
+          2
+        ],
+        [
+          7,
+          2,
+          17,
+          2
+        ],
+        [
+          8,
+          4,
+          16,
+          3
+        ],
+        [
+          9,
+          7,
+          15,
+          2
+        ],
+        [
+          10,
+          9,
+          14,
+          1
+        ],
+        [
+          11,
+          10,
+          13,
+          1
+        ],
+        [
+          12,
+          11,
+          12,
+          1
+        ],
+        [
+          13,
+          12,
+          11,
+          1
+        ],
+        [
+          15,
+          13,
+          9,
+          1
+        ],
+        [
+          16,
+          14,
+          8,
+          1
+        ],
+        [
+          18,
+          15,
+          6,
+          1
+        ],
+        [
+          23,
+          16,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_sw/1.png"
+    },
+    "bank.outer_nw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          22,
+          6,
+          2,
+          1
+        ],
+        [
+          20,
+          7,
+          4,
+          1
+        ],
+        [
+          17,
+          8,
+          7,
+          1
+        ],
+        [
+          15,
+          9,
+          9,
+          1
+        ],
+        [
+          14,
+          10,
+          10,
+          1
+        ],
+        [
+          12,
+          11,
+          12,
+          1
+        ],
+        [
+          11,
+          12,
+          13,
+          1
+        ],
+        [
+          10,
+          13,
+          14,
+          3
+        ],
+        [
+          9,
+          16,
+          15,
+          2
+        ],
+        [
+          8,
+          18,
+          16,
+          5
+        ],
+        [
+          7,
+          23,
+          17,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_nw/0.png"
+    },
+    "bank.outer_nw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          22,
+          6,
+          2,
+          1
+        ],
+        [
+          20,
+          7,
+          4,
+          1
+        ],
+        [
+          17,
+          8,
+          7,
+          1
+        ],
+        [
+          15,
+          9,
+          9,
+          1
+        ],
+        [
+          14,
+          10,
+          10,
+          1
+        ],
+        [
+          13,
+          11,
+          11,
+          1
+        ],
+        [
+          12,
+          12,
+          12,
+          1
+        ],
+        [
+          11,
+          13,
+          13,
+          2
+        ],
+        [
+          10,
+          15,
+          14,
+          1
+        ],
+        [
+          9,
+          16,
+          15,
+          2
+        ],
+        [
+          8,
+          18,
+          16,
+          5
+        ],
+        [
+          7,
+          23,
+          17,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/outer_nw/1.png"
+    },
+    "bank.inner_ne.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          10,
+          3
+        ],
+        [
+          0,
+          3,
+          11,
+          3
+        ],
+        [
+          0,
+          6,
+          12,
+          1
+        ],
+        [
+          0,
+          7,
+          13,
+          1
+        ],
+        [
+          0,
+          8,
+          15,
+          1
+        ],
+        [
+          0,
+          9,
+          16,
+          1
+        ],
+        [
+          0,
+          10,
+          18,
+          1
+        ],
+        [
+          0,
+          11,
+          24,
+          13
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_ne/0.png"
+    },
+    "bank.inner_ne.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          10,
+          4
+        ],
+        [
+          0,
+          4,
+          11,
+          3
+        ],
+        [
+          0,
+          7,
+          13,
+          1
+        ],
+        [
+          0,
+          8,
+          14,
+          1
+        ],
+        [
+          0,
+          9,
+          16,
+          1
+        ],
+        [
+          0,
+          10,
+          18,
+          1
+        ],
+        [
+          0,
+          11,
+          24,
+          13
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_ne/1.png"
+    },
+    "bank.inner_se.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          10
+        ],
+        [
+          0,
+          10,
+          21,
+          1
+        ],
+        [
+          0,
+          11,
+          18,
+          1
+        ],
+        [
+          0,
+          12,
+          17,
+          1
+        ],
+        [
+          0,
+          13,
+          16,
+          2
+        ],
+        [
+          0,
+          15,
+          15,
+          1
+        ],
+        [
+          0,
+          16,
+          14,
+          2
+        ],
+        [
+          0,
+          18,
+          13,
+          6
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_se/0.png"
+    },
+    "bank.inner_se.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          10
+        ],
+        [
+          0,
+          10,
+          20,
+          1
+        ],
+        [
+          0,
+          11,
+          17,
+          2
+        ],
+        [
+          0,
+          13,
+          16,
+          1
+        ],
+        [
+          0,
+          14,
+          15,
+          2
+        ],
+        [
+          0,
+          16,
+          14,
+          2
+        ],
+        [
+          0,
+          18,
+          13,
+          6
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_se/1.png"
+    },
+    "bank.inner_sw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          13
+        ],
+        [
+          6,
+          13,
+          18,
+          1
+        ],
+        [
+          8,
+          14,
+          16,
+          1
+        ],
+        [
+          9,
+          15,
+          15,
+          1
+        ],
+        [
+          11,
+          16,
+          13,
+          1
+        ],
+        [
+          12,
+          17,
+          12,
+          1
+        ],
+        [
+          13,
+          18,
+          11,
+          3
+        ],
+        [
+          14,
+          21,
+          10,
+          3
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_sw/0.png"
+    },
+    "bank.inner_sw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          0,
+          24,
+          13
+        ],
+        [
+          6,
+          13,
+          18,
+          1
+        ],
+        [
+          8,
+          14,
+          16,
+          1
+        ],
+        [
+          10,
+          15,
+          14,
+          1
+        ],
+        [
+          11,
+          16,
+          13,
+          1
+        ],
+        [
+          13,
+          17,
+          11,
+          3
+        ],
+        [
+          14,
+          20,
+          10,
+          4
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_sw/1.png"
+    },
+    "bank.inner_nw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          11,
+          0,
+          13,
+          6
+        ],
+        [
+          10,
+          6,
+          14,
+          2
+        ],
+        [
+          9,
+          8,
+          15,
+          1
+        ],
+        [
+          8,
+          9,
+          16,
+          2
+        ],
+        [
+          7,
+          11,
+          17,
+          1
+        ],
+        [
+          6,
+          12,
+          18,
+          1
+        ],
+        [
+          3,
+          13,
+          21,
+          1
+        ],
+        [
+          0,
+          14,
+          24,
+          10
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_nw/0.png"
+    },
+    "bank.inner_nw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          11,
+          0,
+          13,
+          6
+        ],
+        [
+          10,
+          6,
+          14,
+          2
+        ],
+        [
+          9,
+          8,
+          15,
+          2
+        ],
+        [
+          8,
+          10,
+          16,
+          1
+        ],
+        [
+          7,
+          11,
+          17,
+          2
+        ],
+        [
+          4,
+          13,
+          20,
+          1
+        ],
+        [
+          0,
+          14,
+          24,
+          10
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/bank/inner_nw/1.png"
+    },
+    "stream.vertical.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          19
+        ],
+        [
+          18,
+          19,
+          14,
+          4
+        ],
+        [
+          17,
+          23,
+          15,
+          2
+        ],
+        [
+          17,
+          25,
+          14,
+          4
+        ],
+        [
+          16,
+          29,
+          15,
+          2
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/vertical/0.png",
+      "connections": [
+        "north",
+        "south"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.vertical.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          18,
+          18,
+          14,
+          7
+        ],
+        [
+          17,
+          25,
+          14,
+          4
+        ],
+        [
+          17,
+          29,
+          15,
+          2
+        ],
+        [
+          18,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/vertical/1.png",
+      "connections": [
+        "north",
+        "south"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.horizontal.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          23,
+          17,
+          25,
+          1
+        ],
+        [
+          0,
+          18,
+          48,
+          12
+        ],
+        [
+          0,
+          30,
+          27,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ],
+        [
+          24,
+          31,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/horizontal/0.png",
+      "connections": [
+        "east",
+        "west"
+      ],
+      "ports": {
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.horizontal.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          25,
+          17,
+          1,
+          1
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          22,
+          18,
+          26,
+          1
+        ],
+        [
+          0,
+          19,
+          48,
+          12
+        ],
+        [
+          9,
+          31,
+          16,
+          1
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/horizontal/1.png",
+      "connections": [
+        "east",
+        "west"
+      ],
+      "ports": {
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_ne.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          17
+        ],
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          17,
+          17,
+          31,
+          2
+        ],
+        [
+          18,
+          19,
+          30,
+          8
+        ],
+        [
+          19,
+          27,
+          29,
+          1
+        ],
+        [
+          20,
+          28,
+          28,
+          1
+        ],
+        [
+          21,
+          29,
+          27,
+          1
+        ],
+        [
+          22,
+          30,
+          5,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_ne/0.png",
+      "connections": [
+        "north",
+        "east"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_ne.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          18,
+          18,
+          30,
+          9
+        ],
+        [
+          19,
+          27,
+          29,
+          1
+        ],
+        [
+          20,
+          28,
+          28,
+          1
+        ],
+        [
+          21,
+          29,
+          27,
+          1
+        ],
+        [
+          22,
+          30,
+          26,
+          1
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_ne/1.png",
+      "connections": [
+        "north",
+        "east"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_se.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          23,
+          17,
+          25,
+          1
+        ],
+        [
+          22,
+          18,
+          26,
+          1
+        ],
+        [
+          21,
+          19,
+          27,
+          1
+        ],
+        [
+          20,
+          20,
+          28,
+          1
+        ],
+        [
+          19,
+          21,
+          29,
+          1
+        ],
+        [
+          18,
+          22,
+          30,
+          1
+        ],
+        [
+          17,
+          23,
+          31,
+          6
+        ],
+        [
+          16,
+          29,
+          32,
+          1
+        ],
+        [
+          16,
+          30,
+          15,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_se/0.png",
+      "connections": [
+        "south",
+        "east"
+      ],
+      "ports": {
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_se.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          25,
+          17,
+          1,
+          1
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          22,
+          18,
+          26,
+          1
+        ],
+        [
+          21,
+          19,
+          27,
+          1
+        ],
+        [
+          20,
+          20,
+          28,
+          1
+        ],
+        [
+          19,
+          21,
+          29,
+          1
+        ],
+        [
+          18,
+          22,
+          30,
+          3
+        ],
+        [
+          17,
+          25,
+          31,
+          6
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ],
+        [
+          18,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_se/1.png",
+      "connections": [
+        "south",
+        "east"
+      ],
+      "ports": {
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_sw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          0,
+          18,
+          27,
+          1
+        ],
+        [
+          0,
+          19,
+          28,
+          1
+        ],
+        [
+          0,
+          20,
+          29,
+          1
+        ],
+        [
+          0,
+          21,
+          30,
+          1
+        ],
+        [
+          0,
+          22,
+          31,
+          9
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_sw/0.png",
+      "connections": [
+        "south",
+        "west"
+      ],
+      "ports": {
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_sw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          22,
+          18,
+          5,
+          1
+        ],
+        [
+          0,
+          19,
+          28,
+          1
+        ],
+        [
+          0,
+          20,
+          29,
+          1
+        ],
+        [
+          0,
+          21,
+          30,
+          1
+        ],
+        [
+          0,
+          22,
+          31,
+          7
+        ],
+        [
+          0,
+          29,
+          32,
+          2
+        ],
+        [
+          9,
+          31,
+          23,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ],
+        [
+          18,
+          32,
+          14,
+          7
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_sw/1.png",
+      "connections": [
+        "south",
+        "west"
+      ],
+      "ports": {
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_nw.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          18
+        ],
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          0,
+          18,
+          31,
+          1
+        ],
+        [
+          0,
+          19,
+          32,
+          6
+        ],
+        [
+          0,
+          25,
+          31,
+          2
+        ],
+        [
+          0,
+          27,
+          30,
+          1
+        ],
+        [
+          0,
+          28,
+          29,
+          1
+        ],
+        [
+          0,
+          29,
+          28,
+          1
+        ],
+        [
+          0,
+          30,
+          27,
+          1
+        ],
+        [
+          24,
+          31,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_nw/0.png",
+      "connections": [
+        "north",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.bend_nw.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          18,
+          18,
+          14,
+          1
+        ],
+        [
+          0,
+          19,
+          32,
+          6
+        ],
+        [
+          0,
+          25,
+          31,
+          2
+        ],
+        [
+          0,
+          27,
+          30,
+          1
+        ],
+        [
+          0,
+          28,
+          29,
+          1
+        ],
+        [
+          0,
+          29,
+          28,
+          1
+        ],
+        [
+          0,
+          30,
+          27,
+          1
+        ],
+        [
+          9,
+          31,
+          16,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/bend_nw/1.png",
+      "connections": [
+        "north",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_n.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          17
+        ],
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          17,
+          17,
+          31,
+          1
+        ],
+        [
+          0,
+          18,
+          48,
+          12
+        ],
+        [
+          0,
+          30,
+          27,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ],
+        [
+          24,
+          31,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_n/0.png",
+      "connections": [
+        "north",
+        "east",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_n.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          18,
+          18,
+          30,
+          1
+        ],
+        [
+          0,
+          19,
+          48,
+          12
+        ],
+        [
+          9,
+          31,
+          16,
+          1
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_n/1.png",
+      "connections": [
+        "north",
+        "east",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_e.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          17
+        ],
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          17,
+          17,
+          31,
+          2
+        ],
+        [
+          18,
+          19,
+          30,
+          4
+        ],
+        [
+          17,
+          23,
+          31,
+          6
+        ],
+        [
+          16,
+          29,
+          32,
+          1
+        ],
+        [
+          16,
+          30,
+          15,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_e/0.png",
+      "connections": [
+        "north",
+        "east",
+        "south"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_e.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          18,
+          18,
+          30,
+          7
+        ],
+        [
+          17,
+          25,
+          31,
+          6
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ],
+        [
+          18,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_e/1.png",
+      "connections": [
+        "north",
+        "east",
+        "south"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_s.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          23,
+          17,
+          25,
+          1
+        ],
+        [
+          0,
+          18,
+          48,
+          12
+        ],
+        [
+          0,
+          30,
+          31,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_s/0.png",
+      "connections": [
+        "east",
+        "south",
+        "west"
+      ],
+      "ports": {
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_s.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          25,
+          17,
+          1,
+          1
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          22,
+          18,
+          26,
+          1
+        ],
+        [
+          0,
+          19,
+          48,
+          12
+        ],
+        [
+          9,
+          31,
+          23,
+          1
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ],
+        [
+          18,
+          32,
+          14,
+          7
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_s/1.png",
+      "connections": [
+        "east",
+        "south",
+        "west"
+      ],
+      "ports": {
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_w.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          18
+        ],
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          0,
+          18,
+          31,
+          1
+        ],
+        [
+          0,
+          19,
+          32,
+          6
+        ],
+        [
+          0,
+          25,
+          31,
+          6
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_w/0.png",
+      "connections": [
+        "north",
+        "south",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.t_w.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          18,
+          18,
+          14,
+          1
+        ],
+        [
+          0,
+          19,
+          32,
+          6
+        ],
+        [
+          0,
+          25,
+          31,
+          4
+        ],
+        [
+          0,
+          29,
+          32,
+          2
+        ],
+        [
+          9,
+          31,
+          23,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ],
+        [
+          18,
+          32,
+          14,
+          7
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/t_w/1.png",
+      "connections": [
+        "north",
+        "south",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.cross.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          17
+        ],
+        [
+          34,
+          16,
+          2,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          1
+        ],
+        [
+          10,
+          17,
+          5,
+          1
+        ],
+        [
+          17,
+          17,
+          31,
+          1
+        ],
+        [
+          0,
+          18,
+          48,
+          12
+        ],
+        [
+          0,
+          30,
+          31,
+          1
+        ],
+        [
+          39,
+          30,
+          9,
+          1
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/cross/0.png",
+      "connections": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.cross.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          39,
+          17,
+          9,
+          1
+        ],
+        [
+          0,
+          17,
+          9,
+          2
+        ],
+        [
+          18,
+          18,
+          30,
+          1
+        ],
+        [
+          0,
+          19,
+          48,
+          12
+        ],
+        [
+          9,
+          31,
+          23,
+          1
+        ],
+        [
+          33,
+          31,
+          5,
+          1
+        ],
+        [
+          12,
+          32,
+          1,
+          1
+        ],
+        [
+          18,
+          32,
+          14,
+          7
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/cross/1.png",
+      "connections": [
+        "north",
+        "east",
+        "south",
+        "west"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "east": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        },
+        "west": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.inlet.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          22,
+          9,
+          5,
+          1
+        ],
+        [
+          21,
+          10,
+          7,
+          1
+        ],
+        [
+          20,
+          11,
+          9,
+          2
+        ],
+        [
+          19,
+          13,
+          11,
+          6
+        ],
+        [
+          20,
+          19,
+          9,
+          2
+        ],
+        [
+          19,
+          21,
+          11,
+          1
+        ],
+        [
+          18,
+          22,
+          13,
+          1
+        ],
+        [
+          17,
+          23,
+          14,
+          6
+        ],
+        [
+          16,
+          29,
+          15,
+          2
+        ],
+        [
+          16,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/inlet/0.png",
+      "connections": [
+        "south"
+      ],
+      "ports": {
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.inlet.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          22,
+          9,
+          5,
+          1
+        ],
+        [
+          21,
+          10,
+          7,
+          1
+        ],
+        [
+          20,
+          11,
+          9,
+          2
+        ],
+        [
+          19,
+          13,
+          11,
+          6
+        ],
+        [
+          20,
+          19,
+          9,
+          2
+        ],
+        [
+          19,
+          21,
+          11,
+          1
+        ],
+        [
+          18,
+          22,
+          13,
+          3
+        ],
+        [
+          17,
+          25,
+          14,
+          4
+        ],
+        [
+          17,
+          29,
+          15,
+          2
+        ],
+        [
+          18,
+          31,
+          14,
+          8
+        ],
+        [
+          17,
+          39,
+          14,
+          9
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/inlet/1.png",
+      "connections": [
+        "south"
+      ],
+      "ports": {
+        "south": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.outlet.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          19
+        ],
+        [
+          18,
+          19,
+          14,
+          4
+        ],
+        [
+          17,
+          23,
+          15,
+          2
+        ],
+        [
+          16,
+          25,
+          17,
+          2
+        ],
+        [
+          15,
+          27,
+          19,
+          5
+        ],
+        [
+          16,
+          32,
+          17,
+          2
+        ],
+        [
+          17,
+          34,
+          15,
+          2
+        ],
+        [
+          18,
+          36,
+          13,
+          1
+        ],
+        [
+          20,
+          37,
+          9,
+          1
+        ],
+        [
+          22,
+          38,
+          5,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/outlet/0.png",
+      "connections": [
+        "north"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "stream.outlet.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        46
+      ],
+      "footprints": [],
+      "collision_kind": "water",
+      "water_regions": [
+        [
+          17,
+          0,
+          14,
+          9
+        ],
+        [
+          19,
+          9,
+          14,
+          9
+        ],
+        [
+          18,
+          18,
+          14,
+          5
+        ],
+        [
+          17,
+          23,
+          15,
+          2
+        ],
+        [
+          16,
+          25,
+          17,
+          2
+        ],
+        [
+          15,
+          27,
+          19,
+          5
+        ],
+        [
+          16,
+          32,
+          17,
+          2
+        ],
+        [
+          17,
+          34,
+          15,
+          2
+        ],
+        [
+          18,
+          36,
+          13,
+          1
+        ],
+        [
+          20,
+          37,
+          9,
+          1
+        ],
+        [
+          22,
+          38,
+          5,
+          1
+        ]
+      ],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true,
+      "water_mask": "assets/terrain/limestone_cave/water/masks/stream/outlet/1.png",
+      "connections": [
+        "north"
+      ],
+      "ports": {
+        "north": {
+          "first_pixel": 17,
+          "last_pixel": 30,
+          "width": 14
+        }
+      }
+    },
+    "seepage.wall.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_05.png"
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "anchor": [
+        16,
+        62
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "seepage.wall.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_05.png"
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "anchor": [
+        16,
+        62
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "seepage.wall.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_05.png"
+      ],
+      "size": [
+        32,
+        64
+      ],
+      "anchor": [
+        16,
+        62
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "wet_crack.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        30
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "wet_crack.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        30
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "wet_crack.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        30
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "trickle.wall.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_05.png"
+      ],
+      "size": [
+        24,
+        72
+      ],
+      "anchor": [
+        12,
+        70
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "trickle.wall.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_05.png"
+      ],
+      "size": [
+        24,
+        72
+      ],
+      "anchor": [
+        12,
+        70
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "drip.falling.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_05.png"
+      ],
+      "size": [
+        16,
+        64
+      ],
+      "anchor": [
+        8,
+        62
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "drip.falling.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_05.png"
+      ],
+      "size": [
+        16,
+        64
+      ],
+      "anchor": [
+        8,
+        62
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "ripple.small.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_05.png"
+      ],
+      "size": [
+        32,
+        20
+      ],
+      "anchor": [
+        16,
+        18
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "ripple.small.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_05.png"
+      ],
+      "size": [
+        32,
+        20
+      ],
+      "anchor": [
+        16,
+        18
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 2,
+      "banks_fixed": true
+    },
+    "crust.edge.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/crust/edge/0/frame_00.png"
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "anchor": [
+        16,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 0,
+      "banks_fixed": true
+    },
+    "crust.edge.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/crust/edge/1/frame_00.png"
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "anchor": [
+        16,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 0,
+      "banks_fixed": true
+    },
+    "crust.corner.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/crust/corner/0/frame_00.png"
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "anchor": [
+        16,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 0,
+      "banks_fixed": true
+    },
+    "crust.corner.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/crust/corner/1/frame_00.png"
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "anchor": [
+        16,
+        22
+      ],
+      "footprints": [],
+      "collision_kind": "none",
+      "water_regions": [],
+      "frame_duration_ms": 140,
+      "reduced_motion_frame": 0,
+      "banks_fixed": true
+    }
+  },
+  "inputs": {
+    "assets/source/terrain/limestone_cave/water.json": "92f21de435fdb8fa3f991519a6cdf4c48dd3915dbcb0c9104afac36009a66a73",
+    "tools/build_dungeon_water.py": "1017cb8d6536285fd7ef7fb9d317137043bfae0faffe782a043f0035d4ad9814",
+    "tools/build_limestone_cave_assets.py": "405f87bf1117f66f519dcde137cdeff2418bb6c7a734a2a4abcb616f402ea607",
+    "assets/source/terrain/limestone_cave/recipe.json": "6dc38d048731b04a4ba9f8c9f83b7ef100c0ac24549e410543d12c61e1f4a295",
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+  },
+  "artifacts": {
+    "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_00.png": "a4d1bb0997ab62ef5e4eaf5daed90f657d99d45d35d05f51c42c21e35203e57c",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_01.png": "c2844ba48b9cc159cc28ff5b9d410f3953f6126e50cbd3051df30a8f8c9f3a92",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_02.png": "fb66162cd3e465f43dfdb56d557c61a0aca93d445352e9aa91a1b39f99b25d2c",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_03.png": "386f415362e3f023530c854e239b4b90f8cbc2ddf9b562bf9a00a6b1f127d000",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_04.png": "bfdec7a1755289a8e0c6bbcbcd5412e93950c88027bc05b3efc964429d7df519",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/0/frame_05.png": "df40c1958c5cae7b03beef868ccaa862c565966d557915db9250be9a68543aa2",
+    "assets/terrain/limestone_cave/water/masks/water/shallow/0.png": "8070a00c3f4deccdd7edd967ffa80594b38b2b17152cdc298a881757b882d53d",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_00.png": "3a712af3d65ed7290b35e6d7a6d5feac8ac0173bfb5fafd1be64ce987cf36123",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_01.png": "7b8f0f1f08aeff944aeda80e170c3a805c49837a757de5f77c088305748f8531",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_02.png": "eb6594503d54ce5a3994dc40cd14341e5e2da2b69c87ab6e43107498eed3cc3d",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_03.png": "6c9ec405bf1b382bc933b1ceeeeaf41afe275419a458eb3af05c2ce1e9593300",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_04.png": "5fa32f200f9bb93f0a502dac57b504ba38e904d36be93294feaf9e73ab54b684",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/1/frame_05.png": "c84d27e335a5a2f0a610a23a9de01483609a995767a6b5a9aa034972f70773c2",
+    "assets/terrain/limestone_cave/water/masks/water/shallow/1.png": "8070a00c3f4deccdd7edd967ffa80594b38b2b17152cdc298a881757b882d53d",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_00.png": "24953f48dbb57056cd94d3bc184fb88363d56153ed7933c3135932b32fa49b56",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_01.png": "bcf77abad37a08b8891204b5d582bfe503db1caec36c87e49739fb351c3a8f0e",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_02.png": "f948e9391a404e5ad8f337ed2cb19d9d76dd67e2cdb399e609f061b4a068ed3e",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_03.png": "d298758ca7d77bb2b0444ac77afff4acf8c057cb1ca22923a3f023f0bc80bb4e",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_04.png": "485a5759358f13fd16b11d371d92fe3975993bba9d33fb7ff59b3b8a878a48c2",
+    "assets/terrain/limestone_cave/water/modules/water/shallow/2/frame_05.png": "47a058f74aa26364b15dc191ca2c9cb55028f6dc56e67841b82c17805012c280",
+    "assets/terrain/limestone_cave/water/masks/water/shallow/2.png": "8070a00c3f4deccdd7edd967ffa80594b38b2b17152cdc298a881757b882d53d",
+    "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_00.png": "ce0b28f13994593211c70254d5a0cdab9b12027716d90de5d74bf0ff464d6a4e",
+    "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_01.png": "01fe50aee6e8ccf4537167d11760f325ee3de80a403f269276219a8d6adbdecc",
+    "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_02.png": "40fbe08b3e1d0c19edaed9ccba19ab43ecdf68e5bc6a89f0268c94799fd9e7df",
+    "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_03.png": "50d58281d2769b4cf7f440bc0077e2ef2b104d25c3fa19c6048cc31cdc62175b",
+    "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_04.png": "e8d4523ddb038eac749a0c3902710255f131f8d8c6d6171c8677fe1c020c7c55",
+    "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_05.png": "0ced67f4fdb32b4697106470bad4e951f8bb828bbce9301f987883ed58dd60b2",
+    "assets/terrain/limestone_cave/water/masks/water/deep/0.png": "8070a00c3f4deccdd7edd967ffa80594b38b2b17152cdc298a881757b882d53d",
+    "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png": "b3182a79f7b51a4060391a67b88b561633923c292badc3361554020d316bdc77",
+    "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_01.png": "a980b9e43693482c6cd1ede5698e141e310fb08510af305425a8ea8fc1538c66",
+    "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_02.png": "3913253b0a17e78d02f25243291eaa5ec2c79261ea8d112341b42ce7ad92d644",
+    "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_03.png": "a7bec5129203d219b99a5fa0eabf1754483cce44b540f272adab7d382ee746b3",
+    "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_04.png": "57f872a26f8cea9d47084778264ee2f437733bc4f27d7c88932a801cad462e55",
+    "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_05.png": "84c1329e774c42f46ddd40e421508becb450980f8968e7c3827150b94ba74ca0",
+    "assets/terrain/limestone_cave/water/masks/water/deep/1.png": "8070a00c3f4deccdd7edd967ffa80594b38b2b17152cdc298a881757b882d53d",
+    "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_00.png": "6f10ca8517052db9a1533454a75f5e3ab84f635cc78d9f3b973a67b8df9611e7",
+    "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_01.png": "dffb9225d3cd9562f9b0966eb928c92783684212e106a1623a865df890535447",
+    "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_02.png": "6ecef001019e474ffd1497e3cb90b5e23e5865bf647886b7940279dbe619c1dd",
+    "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_03.png": "4d58421c6a23e44d8a5fcbfe147b111c696f97e63217412997160c739d2b1152",
+    "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_04.png": "a138484482c7d7c4b7a941d7273701a131ab8ec53581b137a2804a85f99c8121",
+    "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_05.png": "176d7d8b8f134f307bb417bb36f8c4b03c90bf09c60a61ff5796ea6d457b5cc5",
+    "assets/terrain/limestone_cave/water/masks/water/deep/2.png": "8070a00c3f4deccdd7edd967ffa80594b38b2b17152cdc298a881757b882d53d",
+    "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png": "1e0a1d81fa21f1145c5601005f756c4273324cd5150d7da6428306e40a109f77",
+    "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png": "87956b20eda57b26b2f03c72797443dc85fa3b3ccd632069f92bba747f843a51",
+    "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png": "9ce748f87c3113008e47008389329b7e3da1ae40553fc0c5c16ed579b93e8059",
+    "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png": "c155e635b8d0ab7f5f9ee5268bf64b9e5f220df2d06aa9ddf9517c110b877981",
+    "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png": "1c43e2ff7b4976e4341be6d1d9cc80842e33bf533345a3b87727d562ffde3470",
+    "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png": "acb1585d716b1af5dfb1b3bebb19d42af63c56bcda1a7f86c775a0a017e68438",
+    "assets/terrain/limestone_cave/water/masks/bank/north/0.png": "53f950afda1e592fd0fbe722e3168508a4a0e79837b4347b721a3de365ba0aeb",
+    "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_00.png": "57508fc93f177ff10cf03bbca3e5c085182edcaf05f4ed03df605ddef3de05bc",
+    "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_01.png": "998727a448eb7c43c133673ea3c5dee5ac3576493ced88326b810f1591ac2bc2",
+    "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_02.png": "ad6301c085050c77bfd467d4e1335cf1dcbdb2d6ab687345eadd594bae057bf9",
+    "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_03.png": "77abb9a24f0df31d7f9397d98149274bed6c22ba3577df609aa2f8d245050dcd",
+    "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_04.png": "11f6c4985d855be87c8b0b213a954b9ae867c4469b33ab4a8126bc40f9ff1409",
+    "assets/terrain/limestone_cave/water/modules/bank/north/1/frame_05.png": "980eeb4fcd1f5dcf57fa9350c662027388bd31692f310620716107a5bf689e5c",
+    "assets/terrain/limestone_cave/water/masks/bank/north/1.png": "ba0752ff835e8a4f8c9b43687891914d5c8c7760640cb639d929b07a09457fb6",
+    "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_00.png": "3f790eb714fd4d43b52a59299893251d08a5a9e36a36d7b4c6176cb7572db77f",
+    "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_01.png": "b21f89ded335eba0b6d508acfd33e18423fbdc5212d45ec141d20b53e1907eb7",
+    "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_02.png": "808e26996dc15116dcd32b77e0961d3a1c5830e61fd9ddc8c3bc878079fe3925",
+    "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_03.png": "baad8a841388b732db1041361b32b23792a95a6cb42421694be1de5db6ab7f29",
+    "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_04.png": "af9a4b95c5de5738766ca59ac0c69cdee6d5e5d729e05ec401376a2dbfd042a8",
+    "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_05.png": "fba0dcf7669fdf31be2b06e66245824d19c11f4b4bccd38ebbf2cfe195a1d01b",
+    "assets/terrain/limestone_cave/water/masks/bank/east/0.png": "b13993a3e857ec06d7abe796d08eb94956d04363c53a4e617ca083e25dca9bc7",
+    "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_00.png": "836cdbc3112e0cc4617d72b43bcd4182c9c4e852be10a0b68b2efbcf9e707e99",
+    "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_01.png": "cd67d24ab5fdf5b58e43ae554d4bc1a854a5719f9bb5de3ced8f26d34391da3b",
+    "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_02.png": "7876a655ff2e4b6af1123b45421721e39551fcb2b71683796626badd8ba57c9a",
+    "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_03.png": "b1122b7569868c2a7a6ff64709c6fead1cccfa79c83dd6007648001c94811d1f",
+    "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_04.png": "acfe5f2481f97e00f56d2c01a968e0c38c82443ba246251399eb9690b71c26a4",
+    "assets/terrain/limestone_cave/water/modules/bank/east/1/frame_05.png": "d5c28876b6cb3b44fb48e58169a7c763cb83cdbde39a06d5306b97a791c73901",
+    "assets/terrain/limestone_cave/water/masks/bank/east/1.png": "cc84cc4554f91e0c2df4f42c7ba94e08489f58a25330b9d14d06bd9e41c640a4",
+    "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_00.png": "e940838f9b666de40fea99638d4cd48122ebd5ec3df2ddffaef1030198794b2c",
+    "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_01.png": "73b0d1c50fde9920852892c34e0c348fa03af24d479eb510a98139df808b6a8f",
+    "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_02.png": "9de3d27f9b6972f287c0bca879fa06cb6d6940b591eb522565097090a5e3aab8",
+    "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_03.png": "4485dd109b70cd229cb8667a6ae788bb71f19c796d99433467c3d42c0f17222e",
+    "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_04.png": "803e65a9430931d0e57259bc2837ea2632a1a6584507759ad7fed35be3e7df1b",
+    "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_05.png": "0a50d1a9c156a7087e630f4b08080cbac59fa52320beef94ff6467b7a63ad25e",
+    "assets/terrain/limestone_cave/water/masks/bank/south/0.png": "8c9ef631d373f9b70624c7913609433806e8888c079c45125b98b7979e2759f6",
+    "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_00.png": "0a6c5d966a5942c7077b82b5af2a89785b25be91850db36d74697b9c4cd48d0c",
+    "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_01.png": "b07593c5fd46d6b0f4ad9cde8f4d6b80442f34e8c1a50a95a48d5410940460a1",
+    "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_02.png": "821910263127dca5ea31d3b5a166827672afaa79d7fa3e79d56da6bff606ee63",
+    "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_03.png": "d4580b13c51ea9ab9d589bdad71aefc9a712e9b610ea5bd2871f3a90d4372621",
+    "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_04.png": "02139019d03f9c941dcd6a8b49383f13923d1bada44402927b2f7785ddaa0252",
+    "assets/terrain/limestone_cave/water/modules/bank/south/1/frame_05.png": "a34a2e808392b36e6b254d7c68f651eb9d4f5c0becf3ebabb94045377c097d2e",
+    "assets/terrain/limestone_cave/water/masks/bank/south/1.png": "f602219cb981ceddf6434f6bd040cd0d52caaa9c8145d83445e30a4b96aa8b24",
+    "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_00.png": "3e7cc16df41f1ebc18b71804a943cee5d00bd28c9a01b4c2a315fea0ce7e1e3b",
+    "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_01.png": "3f200186eba7e89446b41d60e8ac8a1d49fb37e4970900e82939a70585454fd9",
+    "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_02.png": "a1aba2b0bac33836fd9374dae9d2ac48b4ba5eedb0adeb96892304813f683bef",
+    "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_03.png": "2c4326b8d0ecaca2808fcd7c4a8b389002c94595aa2c3c79cc74f72c2ced6b86",
+    "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_04.png": "3af742614e39fb807a353cf574a69253a4cdb500017748802ddda26a238bc855",
+    "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_05.png": "aa109053ea0cce5224a98a602c0839107dedc384f873fc69001a0d0cd4f0006c",
+    "assets/terrain/limestone_cave/water/masks/bank/west/0.png": "85110f0a58af18b67105bb34b95e90466f6732ec14c64c17b6ed5899b308f264",
+    "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_00.png": "2d4f88bea02b0ec5072f01807fc97cc36bb7e1f3dbbf8aa1adf3d668ea5e2c4d",
+    "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_01.png": "ca5ee24367301018fb80662a828769c3dd989ca745b03bf719626fdbb71d6367",
+    "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_02.png": "2e22754e633a40cc7af8b3a1d334dc57a4de9727b2bc0315a7cf5af0e07aebd7",
+    "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_03.png": "7135d4ed34f2d5538bb42673447a0e05efc4a8d58e00a0e498cd6d179aaa3dec",
+    "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_04.png": "d35f95161d6419a9009b77382764e028c1a64eec51184d6050863cfe5005523c",
+    "assets/terrain/limestone_cave/water/modules/bank/west/1/frame_05.png": "d069e6b0753b5a18d08b4af2f0e8d13c6ee57d054f0ae0cd859db55009e9ff55",
+    "assets/terrain/limestone_cave/water/masks/bank/west/1.png": "1dcd147c8eae9a376f5edddd5575b3708a6e6fe1fe1c60bcbada6a902997ace5",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_00.png": "b4ca19d62a27a3a42ece3e593d8f42a73fe010760197f664d2ee93c2009b152a",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_01.png": "8ae19ce9544bd605506095973ebeecd6637ccb0debe4100d76ca3acbf216a99b",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_02.png": "1e00fee6daaf956c75e36375989696b0ed0c6c123f44d67540ab4f4e8998b3ee",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_03.png": "016b7ac73b8067dd9d2d047ad977300ff20795db6dfede7d611ca4112a334d2f",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_04.png": "b835b9f5c65f39b4f5b55c8c6e1d813e82a94b3cb0a0d49161f6fe71ba0ada94",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_05.png": "ec314708f114935215a84351124fac53f7cd4f3df6020030c61dc348c1e8edbb",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_ne/0.png": "6300740fa25ffe2e48c4eb20165efce97eed6a31a090a039097e89c09586c582",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_00.png": "dcdb24327d2764338ae165a68dc2ae7de7b95613041829b52de87600e964f61e",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_01.png": "ddfdfd321c3cfbf351ed4bdd67c110c02252efaf9e6e2bc10b109f15f3b22d23",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_02.png": "8ae9fdca71374a73ed5eed1ecae9ac768f9a884954b41dc787dd7b9f436758f2",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_03.png": "d45e1888714d2dcecd3b7bac63c0a0b98954d291d87bc87d0d480fb6b3eb1c62",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_04.png": "921eeb77acef2cfd5578b5f53f344e7f0cd92d412f44f4da2b0b413f8cc3ee46",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_ne/1/frame_05.png": "5ba62334672e0da32005bc75a8fb554df3fa2a20144eabcfd58f777a98c9270c",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_ne/1.png": "4901aaa6bd1bbf5d4780def09ae6a5c033fd8cb744a0e89e68a50acb182a54d3",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_00.png": "b1253d636a647f929aa288321d001c697c74e476ebb672a487e3e3135b5e8f51",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_01.png": "7213eac7e975776f1f1e3c56aaf0898cf479e560db2853f0e91f05586f18d83b",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_02.png": "810141975db93b93a7e2116ec2a4042fe1ae571ab51aaa4b4045d4a255def7d5",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_03.png": "60084eaec548007d69fa92ec88ce4f2dc70d2beb887b0457dd31aa67368066c8",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_04.png": "b13d53d5c3e7b1a7d7b0debb4d1de642f44c692a696cadef8be9623c760c099e",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_05.png": "e93d45d788efbb437039fe1c3c699a5f3122835fa1b0ef02024de8ce8bdd2bdb",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_se/0.png": "f010233e7691b8ffde9f9d7cb92ce1a1cfaa8d430bdf5d4c0be7ae852783cff3",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_00.png": "c799877bc98de970bbf4983618f43ce063fc35649bc10deee53dfe9edc170ad4",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_01.png": "3482b3a030bbea2acb05ecc65cf365dcb4d2d5243c7a18f453094b038122aeff",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_02.png": "8a6bf6f707eb55c73414fefd92673c4375a66995c868d24b775b2a7e990c24f8",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_03.png": "894c11713adeda47769aa8b52a40744aebe5b88e19b2aa12faf64c5de993edae",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_04.png": "9f05054e9ecd51eaa3928b4325034d5514e5b1ab8d16410b1f997fcc20e5c812",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_se/1/frame_05.png": "8182659bad3a912a94a85d31491634e2483caec974bdae809106aa27d5f1a72b",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_se/1.png": "dd695cbfd272afcf247b37b0330f8bec7976a824a70809ad4a05c3722b61d647",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_00.png": "5498cd8b0d30e7641792df21e614390238c2c787363124b0b703c8b6100d687b",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_01.png": "7fe8739810bae5ce239ca91784066a1f9ca558692679a0f4606bf68e646a6dda",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_02.png": "ece3db0542bbd53d72f5bf23a40f518924f4a8a340cf470165fe1af09303368d",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_03.png": "bf41cb4f5a9800354ec962bdd8232f8bdf95e25a4dedc049c66ceca4e489faa8",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_04.png": "56f3f19b8a0b4ec56514fd3a031452c5d7cb8f702b5e73210c0e7f75d446c0ed",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_05.png": "f6366c3ff19221e142ab9ab20e93dad75c87f54516ea7bb555f804f1369aacb0",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_sw/0.png": "a80b2789735433f8f646d37817e6459e6598dc6d26b239c2e61b66060b418cf7",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_00.png": "5215ad8c58213e6856a720f3b52a5e66726e1f3ea16bab0db2fe42e5b72c5536",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_01.png": "89433fb696ee05d8f5f599ea530a0e3c83bb91c7c4b76e64653a14629565f81c",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_02.png": "c74302f454b84092141ac33d52b2e6f32176a1b54727bd4b79dac85af7728050",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_03.png": "a569efaf9a11a1fbd020a41c1d1873fbcbebe4b9dc560150f93f2e94db4f8ea0",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_04.png": "3fb8669b5d2de9be6bd2ae85eee1c6df2cc7e8dddeab99b2fbdfab9d8bc40c7d",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_sw/1/frame_05.png": "22c6b8da50ccf234afdeb0828957f891d12e08fe89c3f59b3f86a0e6d5c2f47e",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_sw/1.png": "9f76aca0bee0f663e66fa98debd6db8150769cccaaee35787b3a0486d6a63390",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png": "6254c24f2b9795a90ddb62a06f4797ad7e100a03e5275ee068496e102265c83f",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_01.png": "d069375c91321bb409afeb5c8db79be6141724df7823fc548624eec8da5a4fed",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_02.png": "bacaf7a8c9586b4dd61714e19fa1ea06aa270622b3fa03067e3f55d9e3f1d05d",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_03.png": "44dc7b75891983e105a5c176b08d557e34c70a83d0c472e6087d37b4f9166e29",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_04.png": "f1b2052d043ef758683f27db1cc7154489920f934823250acee79919cde12f12",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_05.png": "b44ea8328ae120ad09bc124966da8c0a24a610fa36cf36636a8ee7ee4ffcd0e5",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_nw/0.png": "e7f47c623bc65897ece8defb56c68ba61516636e78aae38fbf44cf5a8fd029f2",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_00.png": "f7c0f5614626a73ebc66995bdf279688334533f0c56aff5d1a427cb2ec855cae",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_01.png": "11682d5ddc34f8e80f4f1974aee1bb4b7bb769680b30d4883cb1942f62f66661",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_02.png": "f426f019b0ac8ee59754b5a4ca32ba47a7a9b158938b0e04faa8c66044496725",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_03.png": "14bd7b476617aa3cf4a7f1f72e213f050419877a2a3478e20e078ef4a920202c",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_04.png": "4be67e1d546675ffd27768858b36f380440876634b8c3ddc50a4f6fce904f267",
+    "assets/terrain/limestone_cave/water/modules/bank/outer_nw/1/frame_05.png": "2f5041c333b575989177e2e08e8c5ac453f762b8bd4989b61634ea2a9bc04b18",
+    "assets/terrain/limestone_cave/water/masks/bank/outer_nw/1.png": "5bf578cb6267c335d8be44a86f40653cc5b13d99784da504377f2a425dbf9878",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_00.png": "9a9aa96cfb3616e5493e4189f3ab42e03315f0e98cf75fc6e107365560b09c64",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_01.png": "82d99553c192530f999bdb16d1652d82c7afc8a2582e17405694ed506a972509",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_02.png": "5a88c6f6890ba8802ce25f26e02a1bbf1bbd04d237e8df8237649d359b012a07",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_03.png": "aecbd1d231a603572903a029ebb9688b18fa783543bf60123a9308baaea5fb1f",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_04.png": "4303f3060669708c0126b17cccf477a5561b60e6ea11eb5ea09d656a8942d783",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_05.png": "f8ef249b232bba28e5bd650e21e9de4cdf52bd7776a0be7a640a5a9f95d6162c",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_ne/0.png": "5dc55b095123c6cc36af83a4733378702c517c912ace661bfd519bc0a5caa3a2",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_00.png": "2d521b44fcb5cca0df90a9067e05166af4380cfae59d495115cebb260f9e2010",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_01.png": "64a6669d88870b2ce891043d2342e9d57df4bf760c7099cae54f354df6d88149",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_02.png": "d9d68ff17fbb70041e69bfcee8826d0318e71a207ac46c2392257ed63b13d515",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_03.png": "ae06687096595f09ba8fce10ee54637760a138f0875aacd894122ab4610c3ac3",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_04.png": "1abe0119bd646998e1944a090f068e735e7808e324577de9c5d3577eb7afb9a1",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_ne/1/frame_05.png": "0ccea45f1ca9a7e1ad1722cda8fea142c6e70410b7a3aec65037dbabcf773ea7",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_ne/1.png": "a034507dc1b72fff592f7cd38dd269802adc1e1255046c839725bf927202a3d8",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_00.png": "98c6faf18ce5b0a5e0e03e20346b567ef93c22f07b9de2371e86796e6cf97720",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_01.png": "0d4d0ef7b898cd81dce1d51abeff589f7f192f5e4f6950e9c521b1b4bbcbccd9",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_02.png": "6efb076e2bd710de87c5286584c3754766b273c91f27b3e63e45bcfdae70603b",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_03.png": "552e09fbb6eea2b30319832b5c7332d341f91907fbeb031b79d65d348ce248eb",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_04.png": "6ea198c9060c9b73013822563a30c26b30d9008008a4a52891d9a86c8b1ac0d7",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/0/frame_05.png": "0c0e8c20e6ace688f6cafdde7046f0f1fa9c966556f8681decfccb3e0bc3daa6",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_se/0.png": "9e79702bf48b992c3b5a77e23cac35dda4a4ca9830ec94a7998f89940fd1c2de",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_00.png": "942d552a7d30e03eb232284b320fc792ef86b741cd30140a88a26be31784ca37",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_01.png": "f088541e7d957470e25b97ce348efa9c43c8e7d0e1fc5be630b9aec7b207e3d4",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_02.png": "d9b7a79fde84d62d2b4fda3f22c9a7600b88ecc1c4badaeddccbf3d924b9beaf",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_03.png": "6003f8fc1eb7df25135f0a063cb875d8d25d7ab9b4e4ca7cc879d22956f19b16",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_04.png": "dd11a30559c0c483d8c3d6262a526b7c908f0dddd9ba83c5eeeee80675b964ea",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_se/1/frame_05.png": "15c8253ff0d843d3242c159593d4975b4127482cf7d42fd618a997ca4f465013",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_se/1.png": "d7d2bac4e114d6c73a94c3c8ce6ba26667ee14f3a077a3c9c047fff682267d2c",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_00.png": "ae4ec7834b8fcfb67a99c7808e7e63495068eeca152e076a39590581074290ef",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_01.png": "1fdf0a2595f170e02717c032ba8fa2e20dd265be70fd777d1ad69f9d0c615a1d",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_02.png": "7c3dc0fed8482b247ce0d9baea004da15b2717e852377476564e4bd0a820651b",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_03.png": "ae983fc243577a24607bf24b5509a8dc299285535c84c74a5967b9d6aa40dca6",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_04.png": "2e90a032e605f5d115c23b4fff1da36f530800ab33b16530d305c46239c633fa",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/0/frame_05.png": "1200298579ab2042e984aed64b497aeed5f5973987a3f4865b71edac764f2f74",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_sw/0.png": "21647e6dac86624b238b81a6c3144688a3063430426cb8ac259df857eac4f076",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_00.png": "ecb70673fdb04fffc941e25d0129cab13ebacb2fbadae2d3f87ef7ad0e2a1881",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_01.png": "0c97e804d035831519b7f484fc2c564d94a4b7f78302094a37e150635563bf4e",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_02.png": "13494af0488b16609f0643236a0dd48d5e82c1f4b139fb0d569106908a3a05ad",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_03.png": "76e57e9884022b986d218ba536b8697c16cf3c76c93d05bf33334fd140d0670a",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_04.png": "16aeca3e961d350a102ef05dbbeeee0523626325d52438bd6ab047a977fda574",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_sw/1/frame_05.png": "61aa281d46e30db3108d0d8254bda76e60774dec76cfba4395921dc2e0ce7f18",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_sw/1.png": "33cffd81f00596725e1ae52117820ac9454ce45769862d5c5a1ba0c90fa21515",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_00.png": "03ad3e76ee18b36ea370d7a1e5dc54b425fb6d054e0b5a711eb50c56eb69204d",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_01.png": "10b48df75f356a25f6b8025c764b5a5d72d62b0968139b2ecaf3cf835c3aa4e5",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_02.png": "1205234373b77407b92c756d48dca61b431f82bb23c7fb8c641a6ce8a8a1a27e",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_03.png": "ff95a609041d248124ac492f483bfef92bf957c853d07e06be7761a3eac15083",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_04.png": "5cf7295fc4f9595f0287754e1339d86b40b7e921366ca311493d885c53ea6ec4",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_05.png": "8a485ac357ba9baedfaa17b01127b4bc790d46689c461ff67b913d2df221e60a",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_nw/0.png": "10e312bc5549604b9275c30a0af51671914ce893f9053ff614df69c3409393b6",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_00.png": "59a1606bf219c493cc1a7be31830370a5363c8234f3c3b7df7e9ec570345a14b",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_01.png": "f7765ab7b4feace1c41215da90fb63bb1655672762862cb1027470f474232d6f",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_02.png": "05cc7e458c8ddb369826a1a92dcfdb2cee816b0b1db63bf127e81e2de81f6e15",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_03.png": "c8e9680db4036236abe4baef49cfe72f636cf1bb13dbf49790b8c1ff7acf10a7",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_04.png": "7b8fe56983e76d071c8dd8b738f1abbea6569f46c6430a9518e3afdcc1d397f5",
+    "assets/terrain/limestone_cave/water/modules/bank/inner_nw/1/frame_05.png": "b0dad9da45f7958f2670c49881e90ae4d8d8e049b19012d1f3f313e54882e191",
+    "assets/terrain/limestone_cave/water/masks/bank/inner_nw/1.png": "58b0108dec7ad2560e9be67545cff6881e604a1e0ef6bf71d8768d6261ab8ac8",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_00.png": "13235ce145e15d6b7c1000e95ce6c9a9f2348dbbc1970c5ccce8141383070d9e",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_01.png": "aec469df168e675de4ca97137d23feeecc7afa0d632d768308ec0e4fd2beda50",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_02.png": "49913d6bc9c6bb5d8845da39a0516c6396ba74407d5555c76003e191d711a210",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_03.png": "97bd1a085556ba152255b7d7d885e80f5d3f20376bd22e7cb3e646979e773784",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_04.png": "2ec17a2f0f7544bf9ed70d5d7d2721d88be86263f183c639169b6f7050ae7413",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/0/frame_05.png": "347709a946834f4d7a97e9757446d7a3b3bff1378fa390c7b0a5643c5ea1f1a2",
+    "assets/terrain/limestone_cave/water/masks/stream/vertical/0.png": "4f61409f6b7f2c5af12de0cc731407f23a59cd59f34c0cb24ca3d2f10891b8c9",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_00.png": "a3a66eb6de84f882953bc674d89d81dcb29d5fbaf0569a90f85251d971f79753",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_01.png": "b157f3d0b7487d29e63f0948572f03971931f960ac98355c2b5e7ab4b8a8021a",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_02.png": "8311b18b38d3ea8c16e3a9f205485fa3205f0b70079a452c21b42be0ab93f3d2",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_03.png": "74795b5de7530534e113c271a01ad2e706230fa07d8c2768c336827f81a55fc4",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_04.png": "48c0e150d8310e3d1af792b254a65a2b834b82c4e14f5ae31778922c1a697bf6",
+    "assets/terrain/limestone_cave/water/modules/stream/vertical/1/frame_05.png": "cf5e206d903a5547b5bd85f3d11bfd33f51a4190d0b8bfdc73c564aa18d6d259",
+    "assets/terrain/limestone_cave/water/masks/stream/vertical/1.png": "dac3e7232b7b13c22c794fba5bf21dac714fff7c516e52aa3a4d4d8646502501",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_00.png": "5a04fddbc300c53ba5471d6db675ecdf0423f281435cc7420f6bb5baf44ef4f9",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_01.png": "bd7daa4976bcabc4e0b333ce126aa754d30719cf9abfdb6d23f091519ccfe220",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_02.png": "635fa4a3ff5f4720391a9bef5f6ea4926b7cff5e24c57d0f253b53f808c7695b",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_03.png": "b7438f7fd59834276aeca77239662f5fb46281943a72994ca9bbda39db9d5993",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_04.png": "1500d89bbad7fa0aa98ed4bbd9ed67d913e8e7fdd768f3b1d79b1e6737e81fb8",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/0/frame_05.png": "431ac346f96bc776e6895b3cf362f9bc46f21081189951a19ac99154ceceeefb",
+    "assets/terrain/limestone_cave/water/masks/stream/horizontal/0.png": "c110cc02d1f74ea2739d400517e94ef7e3ce738570766865d6a9a01558d02180",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_00.png": "8a9c72e52ae85420053f964ff92d8f59e39773e9747675828e3c562ecf3e1d29",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_01.png": "7a12572535430e9e84015e17cd9e73473b74364b56e2857a9a4eeb30f8d5e020",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_02.png": "02f261abc2e62144b5459f06fcc1203fd4b2005fbb7e4de556863995f1ad31cd",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_03.png": "bdde48229576e9725bb60d1f06e8d7447d89a984b571d2e6bb77d22c3bb250de",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_04.png": "f2598673c27b71beeb8ce344ae9d3ef150c490656c2c1b568ddfdd3808dc3446",
+    "assets/terrain/limestone_cave/water/modules/stream/horizontal/1/frame_05.png": "ed9b3144a89f598ebc1333dc4c60aed7102ba215af137d424d54313d90877d30",
+    "assets/terrain/limestone_cave/water/masks/stream/horizontal/1.png": "c08c28a53e5af0c166ca657dd921094c975741aaf9e488d215b839bf848707fb",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_00.png": "9b0c8de0ca7537577fd808f1f8e42e31000fbb7960825d3be22e35a8288a0988",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_01.png": "58a98b5b4fb7cd04368176f351b32746ea6eed4c6663a716f047d2114f01ce1d",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_02.png": "42567180f2b0f7e3aaa380c27f36861ece282f2d4bd084548f1972f5d0641cb5",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_03.png": "10b1f54c2b26e27f28de5cab2b4d4d5ad16768317f64f1c0c7c1aa5250c949ce",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_04.png": "1810cd9d95a3076f82f3cbcbc9408ca86c53a77c178aa110369df1fdb039b061",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/0/frame_05.png": "97244de9445ef35a79919d8031a31956e27a4730cd913e19d9d871bf441b5b40",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_ne/0.png": "0575936707835bef14e6652ae2a2df56572408c771c85bd58dee4249eca7aa13",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_00.png": "e6b7b4f579bad1037b1b8070f18750d339422d88001208bce1ca57d0b24e5982",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_01.png": "0825938dbb74732b2270668e77c6a9c4e2242ea5af0db1cd29884f688e70baf6",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_02.png": "e6efe4dbfbf6deea8e323823f5be197c6d4d5c66a67aea132cb31a9d2681d477",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_03.png": "0ac77f818e7e76f6b6bcf4435c7b8556ae4a2c3b5daf9058f744edf5ad22d7b3",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_04.png": "88840ee485633562e8b0675623ef0983babfaa0c709069b1c184123fe6a1599c",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_ne/1/frame_05.png": "a37ed5c95034d3d268cedfda836bbb4a9c5bedb87607fb920523ef12a4c8bccc",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_ne/1.png": "7f05e543fe9fcfc3c48b680c2288694d3c3a21b9218ceedcb41384bb5f2c6737",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_00.png": "c2245fad8cec7fb98a112c952ea0e75f4b57738df3329ed8e2578ad933462afd",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_01.png": "dfc133f42aa3cba136e2b98235332fc5c947d1d339b893f4a66c0c711320b1f6",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_02.png": "4dc546c9f2a6450681673b1662f52bbdd670f72386a3d6d4b3c1e4b23589cb4d",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_03.png": "b1ddba8764e888c51af012fcc12fb6829562c061891de28ef2d74fa1b82c683d",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_04.png": "7492bb16b64d0a1c6d4c8d085f7a6d76326b339e6d24e2f721a392a592abdeb6",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/0/frame_05.png": "138c088777011c6b6bab8b39d21f0a88082f5992b8f1a5747d08247548364426",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_se/0.png": "5fb30d680f325cf08a1565361ec0193dbf247375cdcb7c7305d7a1e21508fbd6",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_00.png": "d224986dd7fe0bb9e815170fe1a9bf73ac9ef07795a602ed34bd32209a245184",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_01.png": "2acfa21247886109312854ad4b2b159ab5e9115ab45b62ce230ab0b0caa3b59f",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_02.png": "ef1543bfc7f39038a8c0f4e0fd25264a3baba90f5bdb257ba270f5e288f0d01f",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_03.png": "0f1e0e9ded513eaf802edcf64cae98fb10bfc02965b367b54ecf35d542774401",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_04.png": "ed273896dfb12b2b563bea32f80f1664d0faacf6273834e4eb9612a603217ecf",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_se/1/frame_05.png": "ad9114e36700808c77ebe90197dd975657b07e4d579348981c244981c5298d15",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_se/1.png": "69e6f997be977d8028589ed1e3e92cb23cffb733774a2ee2f233684360adf958",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_00.png": "ae4954e79bd14a8d4dff3227f8f905ad0ff0d194a96e5430f27fb682deacf07a",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_01.png": "ee71c757ef7032907dba3590fbb4032b4de5dcff7d738429afbac700da13cc14",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_02.png": "f0523f3212952599cc3e03c7ba6c538a3806e98079fde6c44a3f1a65895107de",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_03.png": "2a6060a51a13db059a4d3f2f2e601f3f93af53bb307eb56296940b9297436456",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_04.png": "def4f1f217ba7408f9d647dd819245e39778f74a43d48f3209957d33abaeefc0",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/0/frame_05.png": "909cdc61b25313ff6667485eef51ddc3c8d81ec20516b5972d1db0c363f9c184",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_sw/0.png": "60502c9b848d65a50bebf479c9b09b234ffcb8c4c2948cd5bf59b90935d9518c",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_00.png": "c7ddca088677f8510a8c0a25139c70f92c74072ad8cb00ab71bdd0a095b20c95",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_01.png": "4575b502354f008c8c162dc1fd08a13f2b89056defb898de7771c91fdd9890ce",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_02.png": "a4ecc059c7059e4936c50afcf5861b90d2a23550433a3bf4f88a3b9e4c0499de",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_03.png": "47ca04d4585e211e62b3763c56206ac7235975aec6fd740e2b741530352ace89",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_04.png": "8968689732c6d8b26b3f21684a54631d5bf61c29fc41fcc0b5817006352ea2e2",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_sw/1/frame_05.png": "d3f5bd637731d258e46be7b40b924665ca48297a5fe9236979794d65536f17f0",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_sw/1.png": "fe80ef3fc451e161aa07d86b38c1216a00ead41e97ab9ce56c419877ca8f56ca",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_00.png": "f85c8b47d9a65391a1700b25d2922167b216f95e9392f7eee468bf267e2ef87f",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_01.png": "587afc804c077fdb294dd18122bd38fb40f701ea7acd0b3fe160248c5bb34290",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_02.png": "2fdf56a01956c96edddf9d22407bfc0f9d6f4c697d6ad65f7a00ea717383c9ed",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_03.png": "9729d5b6a6322d755aeecc9a839dbe635fc9c4f91d62bb54ef71ee09ffe59b0a",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_04.png": "c369365426e1b1f31c64d8dc7f3d810f7f537e8a4f7b0b8570a148889903bef5",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/0/frame_05.png": "512c8b22a284f9c40cfde1a366c6792f1b8a23a3d8f38a3f60c101b8f8d787ac",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_nw/0.png": "214585a6487945dfc904bfa3035a007341364f8b90852c16a9f3ae43fe8a6a17",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_00.png": "9330f1f4ec5d9efb39bdfa24c9c2ddc5ddfbd126bbf820423bc6d4201c1b6a91",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_01.png": "c7dadff777874e70aa9ba03ebfbbc22ca9dd8c4560d746f196f3d280148e43f7",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_02.png": "783aab08129f6c101aed4af3452fe6bc7a451f5604651b41df2230cb840193f8",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_03.png": "f1001d11b2214512388a4e807065265c6e64bfe94bf28da3b199f0f264292515",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_04.png": "97520f1af550c53c7ce0bd2b0480dfafdcf8c66e565236d53c427d564a97276e",
+    "assets/terrain/limestone_cave/water/modules/stream/bend_nw/1/frame_05.png": "1d1c980fdf2e3a4b619a95e41b6edcca80263616cac55ccf1b9c9cbaba04bdcb",
+    "assets/terrain/limestone_cave/water/masks/stream/bend_nw/1.png": "c497df0362a0e27a292ec7715ef7185f0448b7fb772a3891cc50f170d5bb72db",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_00.png": "7c4cde5ccf7d66120702de3d584a167aab75e421149d8508817f38f7edeb85a7",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_01.png": "1e6d0fa20b20912063e02314b20414624eaeb412d9feb719d442e33b3ce929bb",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_02.png": "393ec7e841d6b2323f7ba777216cebecd78242a77e60ad7cedcefbffb4e88ca4",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_03.png": "50b5f4492f57743696f6460eab806745b0a6ad82d184e064d86e7c6d7ba5ff30",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_04.png": "1c06e9c0875d4e1a94e61f4b8741091524ec28b3af05f2478a89430f0a504c0e",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/0/frame_05.png": "e57142946cdf33365e553d4a789b4e29e438ca54f5bc7d8e7cbff5e0d3493913",
+    "assets/terrain/limestone_cave/water/masks/stream/t_n/0.png": "16b6a41d6a96b6cbe119efcbcc81a71ae6f07525e621b4e857fe9f993970cdf1",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_00.png": "7360f191478ce8b376e54a1ed538f02391fca508bf2dcda51eeef085bb7f7367",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_01.png": "84ac3a00e1548d1fe6a573ea7811b9a536bb0eee7df1909f60bf8280a2c7a88f",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_02.png": "8f7a37fed5373b9231e12bd2279c7cc681ac9453f34efa4b45e3a75903e2b49e",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_03.png": "fc771c9e07dff32726941182704deeb3235f64e96589be2b67c4ec817a46ba3c",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_04.png": "cde79eba338e00125b59ea481b9363c0bc60a273c0d6d93e4c2a28e91799e267",
+    "assets/terrain/limestone_cave/water/modules/stream/t_n/1/frame_05.png": "68d051809a125113d1260274ebadb2cadb1f54fb742198bc1ea6eb48d1cea107",
+    "assets/terrain/limestone_cave/water/masks/stream/t_n/1.png": "e8726c3f5711aedae0d5126e59f78e770baadb9ce38ba1268d16c7bb11e80f36",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_00.png": "80cefc8242fcc12a6cf59f3f8d75e7608a14a1b33dde7ae2d0ec01195c837cb1",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_01.png": "f8af1c3433e34a491b871f6df3427244b5df36a1c76a41ec2fcf6e03c58e50bf",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_02.png": "8dd9f67f13e0296b3e5f803538742281588790e8d2ade0db9dc248bf5f17631a",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_03.png": "0c1b02257dcfa8dc67e77c043bc7551a8b522a602df86bd5cbb0e85b72f6babe",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_04.png": "31636271f680614d5fe87b75fe87444554e107d998b6cd9fa9a4de1a6f35a334",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/0/frame_05.png": "d11956b77ded4417d3672debf86c91e84d375d88aecb69d8b96844e18ef41eb8",
+    "assets/terrain/limestone_cave/water/masks/stream/t_e/0.png": "cd0f65165f0660f74bcedc513eeab2e10b5d6e5f30c8a06c17539b8951097887",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_00.png": "758ac038971b808dcf5f10442408d68f29dada4f7bfff777495105f7811d2604",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_01.png": "7d2d63d48332ab3d272fe5c3f2da7712c3271f75e97acfbab05c260c20328657",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_02.png": "e0f474773df53e01003e9ea314a65aecc63374fd0f9742694d56969d559fe8c7",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_03.png": "b16d971f6e6e742a679f03212384e9ee47f61c62a07635b1afcecc37f8668a13",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_04.png": "54fbba2d76e4b01d1c32ceb49b4654c5f6d792c9ff17f023adf89267ac0d31e6",
+    "assets/terrain/limestone_cave/water/modules/stream/t_e/1/frame_05.png": "9d7c72b4a339b9ff14998107f07c27b9539d3e4c15746f689c82dccb7a548e31",
+    "assets/terrain/limestone_cave/water/masks/stream/t_e/1.png": "ff917a431b0f4f350935b940e024620c306d717ffbb9b5343647820445cbab57",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_00.png": "2a99ba08f6a24fd92df1db1891a44fe1d0cce0dc0bd56bf20797d841cb2eb62a",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_01.png": "34ba26874b6daa2d323cdfc872fffac23fc45d5e93baba9c6a5b7b8ab42b622b",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_02.png": "11240717358fa927c40a6921263eab018c53faa697504a033d867d4639ce1fa5",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_03.png": "e9c79954749f2e2553e987c91c0a2006e4cb6cd593d7b6f2e110c00711d38959",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_04.png": "75f9a5ff56194089c27a807f03954313601fbb2ccf78839580d8c66d681c3cb7",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/0/frame_05.png": "4f303a38958a52a0b1f1de76108eee4a602e1ff49c5e69a3fa95b0eb58236274",
+    "assets/terrain/limestone_cave/water/masks/stream/t_s/0.png": "de08b3c83740db9850a983f1d516d6a1e8e7966fe45c54da7ffff11d4fad30f0",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_00.png": "33d389c43031c4aa371e2b21ef36740514cbeae11383e17bbe1b5e8b6be86bb7",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_01.png": "2e2adf82ec46630e28558611ae46c4d23b68a22c2ae212495bf6fde42bf806cf",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_02.png": "fffe10044c6244676e6bb2b3523dac77825fd319381952444479508af93e7ca3",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_03.png": "a2605ab3a9b7a9df42c838d3d24d7e3d9e95d1a047c61770d90a6661f4fc164d",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_04.png": "0a69ed130881712f6a42ecedfb19b4579169aa8dfffe3426f873c1aa1691a40c",
+    "assets/terrain/limestone_cave/water/modules/stream/t_s/1/frame_05.png": "a4da6ebc788c05c4e74091169aabaaee0277c81096d473e17b360dfd18316dd2",
+    "assets/terrain/limestone_cave/water/masks/stream/t_s/1.png": "3ae800aff7e3b7b0bfb53b52171b685476493777ccb97285512f64f73deca795",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_00.png": "ea40f6a761e331a1130e4ff00321a23310cebc4215f2c22cb607b0d123fcc7ca",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_01.png": "8af78a395e7d3b675d13aa134c4a7111d49e739e32a674779e02370d4fe61963",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_02.png": "912899a5463e1d70c8c5163ecfa931f55ed5187254b12559bc73f66f7c904e3a",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_03.png": "a132b62d0ad8d8e92310f688152ef6fe62572ece5349e0a0a451c821af851b15",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_04.png": "b161cb4a0577820643780d6a3782a54076f8b571ae97141a23b57cc4baeb10e6",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/0/frame_05.png": "3e4d9deb3200aa955e2fab1db3e0a026b29056a19b0ba748ac593ae3f403061b",
+    "assets/terrain/limestone_cave/water/masks/stream/t_w/0.png": "20edb0ab0e8559abaa459016eb7d3b275e985d5c322550e15d7c971a25c4bb83",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_00.png": "f830e31d4f92ab67930f9a10c8996c3651c8e309756001df63aeb423eb5680db",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_01.png": "0c737e380f18d48e8273aa767cfb0446b00df37e269a2d0bc42cffd495857e4c",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_02.png": "78af84759ba6a97318afe6d69568e34188c7e577e7e1bb6fb50a46cb5641ee6a",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_03.png": "7bb4df935366f1dc128d7caceb7a4d0137616444da667defc6f44b5befb47982",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_04.png": "ed1948558951487157e0f7549a7d75b42f462b1b1a9f6f0cb05b86f8a31a8c7f",
+    "assets/terrain/limestone_cave/water/modules/stream/t_w/1/frame_05.png": "89fd1fa89965b78a0387e6a99f684b64028c131c79fbfcc8c73d44468bfe8e95",
+    "assets/terrain/limestone_cave/water/masks/stream/t_w/1.png": "4cef62b845a1411d6498e9e983db43a9da208b4dac496f80f9595593560a6c90",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_00.png": "7a6c0f30459fdcee43179aa6dc76c5bc60fb7ec8b01a0ba86e9fd17a99c9dc7e",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_01.png": "b25c87f162e375032223d0598ce57f0e8ca0d82430266ea9dfe566fe65fd7325",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_02.png": "213f7c1fef43934b06ac7db57d036e8fd5c17b9020fdb41ef95469ed065604c1",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_03.png": "8bdf6c47f3b20d73e77e554f4491d80ac5297ecfa1387743be038b08cd714102",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_04.png": "405d5bfdb022a536124fd5a60914c03fe4b1d28f6fa5a36517de263193ad47cd",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/0/frame_05.png": "aa612e089a1778aca64e0357dafa81a3ec92647b08eba482c13a8b542372b2c8",
+    "assets/terrain/limestone_cave/water/masks/stream/cross/0.png": "64f6980b7448d8b285ce5d8e398aa752ece9c2496b7ab509a3147400a3064449",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_00.png": "8ee5ff112a234807a5428d90ff49bc75259b9b949e94ae231f20f054a3510378",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_01.png": "b9b1f9c7a30e3050b6cb8e9c55d56013705033273038f663f0a174ba93357a34",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_02.png": "2e700be3e14e92e25ba370b6cef4c73275c123a05ca00417aea00369cac89518",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_03.png": "3739a71e126ca2fba8903e3958312474066ddb7b87eb3c3f39309a8cfb7a7306",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_04.png": "7a9884a0b72187ca00dc09af95f5e81b34da5ce27e51ba72a3c2c85956c3ef13",
+    "assets/terrain/limestone_cave/water/modules/stream/cross/1/frame_05.png": "94858f7103d243e3a93557a57747471b9092ed7117885e6187674297b206fc3a",
+    "assets/terrain/limestone_cave/water/masks/stream/cross/1.png": "134373ee57bc19142b9158ec0ffe4944c09c103d94fabf98762f99e5e03c5634",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_00.png": "d733d2d72d36a2fd868616c651c8a6ceab0bfb9b4eb43f849abb950458c2b7bc",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_01.png": "85f86663e0f03b7cb2a5bad5a92da49959ee45ebed57a2dc42fbea66a5ae2129",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_02.png": "ef4efd00a26a6ba69ac17f0e694b92d9aba3bdd370c49f1c8e51174e67ed19b4",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_03.png": "fb2756d25169b31a67315533456895ff44cc8beb06830776fd149059fd50aa06",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_04.png": "b6163f790f99f8b1d2d334250324bc96fd528e17469211b73eee87e55ca40beb",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/0/frame_05.png": "8bcd0412e68d14dd5cd86e9514106aae7eb6cf0f2671b32b7877d40d3f91aefb",
+    "assets/terrain/limestone_cave/water/masks/stream/inlet/0.png": "578cc2b5d865f8849895f45c02fc493d4e2cca8890c4f2b7774a6a097e0fe1ba",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_00.png": "4b3479a3324bc637cf96656546637ae23a16caa93915e03581544fbc00a8b3ca",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_01.png": "b12e600ac2f57218f91cbcf7b3d9a39955293f4d6bd90220401251c504fb051c",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_02.png": "ea3971b71c4238339ebcc839dc67c8c1b169fa30b7bbfc922ebf934dce193682",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_03.png": "231942c11f06ac53211ccb678978f85824a16ec853fa47474f0d620a17833ecd",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_04.png": "abce5a6bab69746d46ffb70e8755e532c0614486229e4858e85af7d3dd23e08f",
+    "assets/terrain/limestone_cave/water/modules/stream/inlet/1/frame_05.png": "4a54ba94864ca53a5285b8d631b498e06c33635703cc49f38845a08338af8b3a",
+    "assets/terrain/limestone_cave/water/masks/stream/inlet/1.png": "66e60ee6c3af395d72d4fad03fb1b4e5fe456eca474c4198cec97f8799b75833",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_00.png": "ff97ef05cea88c10e4723e57894442ab70933c945d8d0725aeb32e71a35b0c54",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_01.png": "0af8c9241886010638f1955e08d2542d7ec17bff58bf09850a7cbadafc904110",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_02.png": "08d9cde96f9e64db95f0bc20f0bf112fc9b3dbe960a450dc6f8eb47659c4c108",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_03.png": "594ef0a8156c8935e09b70b2f87050f6ff1b2cea91e4452957ac0688270a7f66",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_04.png": "1cf5b92a58532303d644904070808254f22685fae96bf0afd969c80db0fae79b",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/0/frame_05.png": "a31416c7276bc0ab7af46ea557970e3a10c8bffa443f371605b6a2270179f649",
+    "assets/terrain/limestone_cave/water/masks/stream/outlet/0.png": "2d3998de47eb7d7503a39803cebaa99e1fea8bc4e6949f6d205627f163b492d0",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_00.png": "06587675d2b8b4339cd90be9dae6248581ff46dc9e8f9073d9fc916f32a4dfd8",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_01.png": "6abac22fb6a8e30092b078a93fc93488dae5faa79af687debfd858b58cdc4d01",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_02.png": "d800fedb94937d12675239458a6082af8f97e2e2560b13f5b2a4eb70b9dcd1bc",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_03.png": "c72b4813f764001e7cc4366ecbf383f0ecf630476e977072233d491f1415b973",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_04.png": "6531857d4b955b80fb1c47a2546d54a203faf0e07f1fa5722ebed3ccd407dc31",
+    "assets/terrain/limestone_cave/water/modules/stream/outlet/1/frame_05.png": "ca026c89e4219ceabae54390083f45029c28486313b2bdd567d5f80f3e17a000",
+    "assets/terrain/limestone_cave/water/masks/stream/outlet/1.png": "eab934644a93f0ad86f6e0b757b254de35383b8f40720845b1155c1b00084ca9",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_00.png": "0c0f066188009887041a3f6923cb432c585b3150b5d0105036b4b8c0da10702b",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_01.png": "93b861c9bdf766826795a431466cb1caee2e5c8e897bb1af32e3a7c14d4f99b0",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_02.png": "11e19711a09ad36dabd726430aefa5b4b265cfdef8c4d03c93a329ec57a1b7b4",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_03.png": "edfa6e8f3dd1325b7a1859030ac76102732caf685363d501e06a1e2e9eab965a",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_04.png": "a687d239d10a5b4ac8baede826971938662b524c541a9a1984d2ef14ae6e8c0d",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/0/frame_05.png": "6628b08da192cd29ccd298cb987c583906467ffb8433b98d730dbb360f11033d",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_00.png": "ec2e3cf93074f13b77589c1435e2c73b34a2c11e70ab1e12b59695fb810e9cfd",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_01.png": "bacff191138049d37f76c3f0be65115346058c652c8e3303dc7f64b3a919d566",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_02.png": "1b397e1d5ffbcd2b5714fe5eaa472ea42f5edbced16cc744e4b6ff0b5879b421",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_03.png": "37e7f770839b719b3bcb3ace6e8e6d10688654aec268f6cf433d5ca2addc504e",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_04.png": "f65956632055d91f8252b695691c9bba5c52466e30ce48fe6d50ba3ed56c35a0",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/1/frame_05.png": "9b2e5c35951e1559484fe0eaafaad1207afa8025c87522c705ce50084b5d8d4e",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_00.png": "290f868c39e28358dd4e4ec867d499df39771670821cc4bbe3ee9b5847dc2886",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_01.png": "ae3f715677903894d64add94b9ca42bb57950a438511f0e556360d9389070c79",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_02.png": "8a4b37c08ed248ab149e9151e738226c44c92250fc6d8f1a06577a170c9f766a",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_03.png": "cd3a1b2cd21ad683377bad25925f3df2dd03c2992876d548a1ece60575f4168d",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_04.png": "bc75cfe589fcc919bc3509178f341a0c0cdebd7b8212124bc8bbc834b3a11cfe",
+    "assets/terrain/limestone_cave/water/modules/seepage/wall/2/frame_05.png": "65c5e65fa8cf8ad340597bc2285096581f2eb9021ffec4178ae775c6a4490008",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_00.png": "d8ffef9b72d4b4ea987f6f079b17c3b04331439b8c60881d162f57d2a8087bd9",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_01.png": "556b03db2c26b8c4d3c86b0e55eae34aad22c60728395f30a01e22e131473d0e",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_02.png": "26df3a2cafa910c29d489f5ba93b93ebe546bab623898bd9be3837dba3cf8e87",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_03.png": "b5ae2c6dcf6a652cf6412fac563bba55161c5ccc9d6abdf1171b50ef750f087f",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_04.png": "dd1a20c07cdeb8dc2b648a622a947b664a9d64d174ca9ed8745bb34fbde40b72",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_05.png": "a21c69b7904afedc66800b1c8541f1f0fd13dbc05ed47a25af3e4955158c6960",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_00.png": "8627c93fb4205a76c4f34e7b27dcfd45fc3f8b08bbfe84bfa8709b337d51e66b",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_01.png": "1e1337fdd87aee0976cb67d10f66ef60d347e014a1f3fd53de3fee65bb697419",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_02.png": "1aa643f833a31803fb20c1ba94e131a71ee18c203eb918da4af17d3f5b1139a1",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_03.png": "2480b347845620e3d78823ff915fcd02a8ca2108667d8a424d5c39c35af5827a",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_04.png": "fa606abea835863e59853b6e02f1436282987699e252553e82344852ed24d855",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/1/frame_05.png": "012ff5665467183a7bb3c8cafa6d6a0519a84790e53479ad60768fd731f13fa7",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_00.png": "985168be68102382acf2712f40266c91c320c092ef67ff159cbec3b38dd9bc8e",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_01.png": "ad590cdb504d9946b815a589201d5909ea5b7459b2122510613f9756c77ea871",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_02.png": "fcb11670bb4f5d29a09b1d8e422d108563a5a577f5325beb2a6a3843ae46b264",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_03.png": "af34a26d52a045c73078663ca809bcad8c622b5098923f5b80743080aca613f8",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_04.png": "9879b58900e366b3902738b6875cee94436a0c30c24c6598a33f28a04a2142de",
+    "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_05.png": "266a11345a3960855c26172fd8310d9813dfab6bee1b0a51852eb539c6e41721",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_00.png": "82a4a99082990edcf0fdb336c1517e088e25aeaa750cc6372c604a3012987adf",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_01.png": "af316001b871f226cc7e547e031eadac12200f4916561a5970988329b6433822",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_02.png": "843c652212e9e695542a16aa6e619814e46d8bf99cc4540ee16d4563011587b8",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_03.png": "79ce43d7930aa4b57d9335f4b64bf8f3d535a89d9814df4f50f25bafca00422d",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_04.png": "8afcbad5795bdf97c6050ca5e5cd35a6d2b852e3e5fd5e2c04758ca6992ae719",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/0/frame_05.png": "a7f758aa8156c160272658a1555915444a36b598c8b8f028bc685529c7eea9a2",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_00.png": "740ce15c46e0d499c0f3c448f794c4dc8a8cb04f5d1a72af4d14a047080a2103",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_01.png": "9cb15276e23d3611c268318d1ff1e643c3428eff5d5e570b2c7beb03fd8ffb66",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_02.png": "4e6e8b98bc8febefccc3fba2f11a08e82ac6dd0046a6a4c9f1b4b150d5143e7b",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_03.png": "dc7629bd453f1011668ddc45fab896a24d2e15bb19869e7be2496c7444c984cf",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_04.png": "a831f11230674f119ae61c81e83dc07a0907e948e79af90c25d999e5687c0be5",
+    "assets/terrain/limestone_cave/water/modules/trickle/wall/1/frame_05.png": "1e7a68cafdb63d46e130a0ba22c9086732ae8d45fc8f22e2caa9517a2fe75206",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_00.png": "67adda5f89200469e952afae8025049884e4abaab12738882a5ea350099c3ba3",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_01.png": "183490fe6ea9b78e494bb34e1793076ea7bf6db1c371fb44b452dac816ee0aeb",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_02.png": "0c47d5817f9d3da143bb94acc017421dae62c00e442d3c7b07386bfdc8f2d725",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_03.png": "ed7d56bed8f3f444efc52194168b85c688c20b9e7346f81ccf64ac02bf14ad9d",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_04.png": "d03435d2b72a96d3bde4204dd07d526392c22574cfd44c7fd55fd3d47ee5d301",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/0/frame_05.png": "a99928d8b12badd8ed2b9ad7ef59c3466ec477eb43cf895f4f89988a8f95e643",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_00.png": "83d84605ab9508293f74d7a0f9fe5efbf4167eb79545bd72a3737bd4ac8c5d9c",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_01.png": "0dffaf773cddca6c09dde08afc65aa53076fe88d8d83af1760f43d3400bb89ca",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_02.png": "644b7f7dd9bdd2e6ab5adef615587f1342292de9f878053d49dabe0a469fa091",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_03.png": "a307e487fad9723f0e11a96d35587cc1912f2064f716d0c76eb1abd79b8ada64",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_04.png": "be5b10e2313f07458b11e8e7fc63248061acbd0fe8d7185e2ebf753665b5fe4f",
+    "assets/terrain/limestone_cave/water/modules/drip/falling/1/frame_05.png": "0f3094cf30371b699145668cfae2132139e007da79c1582ed8743e99f3a7906c",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_00.png": "42dd201c8fa9c4b6f754fc1231ab05dac0c69cf6f391ab0ec59fe843069dd800",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_01.png": "372e5458c21d28cebeee885ff71a3b83abace632f93865f6b431a52a68afca2a",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_02.png": "37357215ab4b0768d3416a6afe5bed7b2cdaf7b986f401df5b91cb372036e344",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_03.png": "9726d57f614110dc3f4b2b9a3a2f689a67bb64d3dbbaddb8f305d0278f327bb2",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_04.png": "4d35e973540a09841aab405c5ea1a6e0449c954526db959787ce0c93c8a3f87e",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/0/frame_05.png": "a6f45a355642257523329e0edb921bbc5df9b52849a85ea6e993e032603fff6b",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_00.png": "88d378340157097f1f6f378d07b74732e430123e05e5119d2339c764984ab525",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_01.png": "33c149d4ab369372c11e63aa0fa2a43a485c4b139e2a35321cabcbfa68df10ab",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_02.png": "b6c5b444348392a15efd6ebffb526bd17d9ed585b1fecadd8d24e03daf1182f7",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_03.png": "30a1665bfbe40f2f5d2872f44692323b30dddda8b345f78d5dd3f49be91532a7",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_04.png": "6a60d9100a15eef7dea0c115004cbc1163e5d3e7c032e7ec4e70691583ed8c1d",
+    "assets/terrain/limestone_cave/water/modules/ripple/small/1/frame_05.png": "cf50b2340b7d1a6151f8bc6555c6956c4e4f28538e497ba72fdfb8a5e0f0922b",
+    "assets/terrain/limestone_cave/water/modules/crust/edge/0/frame_00.png": "d4c77ed60d567dd894c0cf8d2a8b1195086baa25dcb67c574790a4710e720711",
+    "assets/terrain/limestone_cave/water/modules/crust/edge/1/frame_00.png": "45bbf695ff51a0cab04f99073c3085b2a17d1c60c2c4c390bf1e18466ecaca06",
+    "assets/terrain/limestone_cave/water/modules/crust/corner/0/frame_00.png": "b471ba15e7cfb5eba921d2e4a227aa5271ff1279032e93d806d0383b06b370a8",
+    "assets/terrain/limestone_cave/water/modules/crust/corner/1/frame_00.png": "2c557087a163f3c80ecb79984a0fa15392e93501dfb1b1b8455b2896ad422b1f",
+    "assets/terrain/limestone_cave/water/water_review.png": "6237ce650c257caf99ea396a08d5bf263f98e47522d1b4ff45e89cd0849f236f",
+    "assets/terrain/limestone_cave/water/water_review.gif": "f3f8be77a8e612701783d3b38383528551b499b43b4f31dc4b61969f17a3763a",
+    "assets/terrain/limestone_cave/water/README.md": "ea6bfa38667b0caf8fa8db42bc6744e2df48a722fddfdaf7db06020aee4bf881"
+  }
+}
