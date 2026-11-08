@@ -183,6 +183,60 @@
       "impact_at": 0.5,
       "animation": "cast",
       "target": "self"
+    },
+    "lithrusk_claw_clamp": {
+      "name": "Claw Clamp",
+      "kind": "physical",
+      "potency": 0.65,
+      "mp_cost": 0,
+      "duration": 0.8,
+      "impact_at": 0.4,
+      "animation": "attack",
+      "target": "opponent",
+      "element": "non_elemental"
+    },
+    "lithrusk_shell_bash": {
+      "name": "Shell Bash",
+      "kind": "physical",
+      "potency": 0.8,
+      "mp_cost": 0,
+      "duration": 0.95,
+      "impact_at": 0.5,
+      "animation": "attack",
+      "target": "opponent",
+      "element": "non_elemental"
+    },
+    "veylume_static_spark": {
+      "name": "Static Spark",
+      "kind": "magical",
+      "potency": 0.6,
+      "mp_cost": 0,
+      "duration": 0.85,
+      "impact_at": 0.45,
+      "animation": "cast",
+      "target": "opponent",
+      "element": "electric"
+    },
+    "veylume_gather_charge": {
+      "name": "Gather Charge",
+      "kind": "prepare",
+      "potency": 0,
+      "mp_cost": 0,
+      "duration": 0.8,
+      "impact_at": 0.4,
+      "animation": "prepare",
+      "target": "self"
+    },
+    "veylume_veinflash": {
+      "name": "Veinflash",
+      "kind": "magical",
+      "potency": 1.0,
+      "mp_cost": 4,
+      "duration": 1.0,
+      "impact_at": 0.55,
+      "animation": "cast",
+      "target": "opponent",
+      "element": "electric"
     }
   }
 }

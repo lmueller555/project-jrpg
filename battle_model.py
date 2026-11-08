@@ -48,7 +48,10 @@ def _number(value, minimum=0, maximum=1000000):
 
 
 def load_actions(data=None):
-    """Validate and copy the initial battle's supported action catalog."""
+    """Validate and copy the supported action catalog and optional element tags.
+
+    Element tags retain authoring intent; damage does not apply affinities yet.
+    """
     if data is None:data = json.loads(ACTION_PATH.read_text(encoding='utf-8'))
     if (not isinstance(data, dict) or set(data) != {'version', 'actions'}
             or type(data['version']) is not int or data['version'] != 1
@@ -56,14 +59,15 @@ def load_actions(data=None):
         raise ValueError('Invalid battle action catalog')
     fields = {'name', 'kind', 'potency', 'mp_cost', 'duration', 'impact_at', 'animation', 'target'}
     for identifier, action in data['actions'].items():
+        expected_fields = fields
+        if isinstance(action, dict):
+            expected_fields = (fields | {'weapon_hits'} if action.get('kind') == 'enchant' else
+                               fields | {'turns', 'rate_multiplier'} if action.get('kind') == 'haste' else
+                               fields | {'magical_potency'} if action.get('kind') == 'spellblade' else fields)
+            if 'element' in action:expected_fields = expected_fields | {'element'}
         if (not isinstance(identifier, str) or not identifier
                 or not isinstance(action, dict)
-                or set(action) != (fields | {'weapon_hits'}
-                                   if action.get('kind') == 'enchant' else
-                                   fields | {'turns', 'rate_multiplier'}
-                                   if action.get('kind') == 'haste' else
-                                   fields | {'magical_potency'}
-                                   if action.get('kind') == 'spellblade' else fields)
+                or set(action) != expected_fields
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
                 or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant', 'haste', 'spellblade', 'failed_edge')
@@ -73,6 +77,12 @@ def load_actions(data=None):
                 or not _number(action['impact_at'], 0, action['duration'])
                 or not _number(action['potency'])):
             raise ValueError('Invalid battle action')
+        if 'element' in action:
+            from bestiary import ELEMENT_IDS
+            if (action['kind'] not in ('physical', 'magical')
+                    or not isinstance(action['element'], str)
+                    or action['element'] not in ELEMENT_IDS):
+                raise ValueError('Invalid battle action element')
         if action['kind'] in ('physical', 'magical', 'spellblade'):
             if action['potency'] <= 0 or action['target'] != 'opponent':
                 raise ValueError('Invalid damaging action')
@@ -248,6 +258,8 @@ class BattleModel:
             raise ValueError('Use bestiary_data for Bestiary encounters')
         actions = load_actions(options.get('action_data'))
         record = build_enemy(enemy_id, level, data=bestiary_data, actions=actions)
+        if record['metadata']['presentation_pending']:
+            raise ValueError('Bestiary enemy presentation is pending')
         if record['fighting_style'] not in (None, 'standard_attacks',
                                             'physical_magical_alternation'):
             raise ValueError('Unsupported Bestiary fighting style')

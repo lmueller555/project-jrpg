@@ -2,6 +2,7 @@
 from copy import deepcopy
 import json
 import unittest
+from unittest.mock import patch
 
 from battle_model import ACTION_PATH, ENEMY_PATH, BattleModel, load_actions, load_enemies
 from bestiary import build_enemy, load_bestiary
@@ -96,6 +97,35 @@ class BestiaryBattleTests(unittest.TestCase):
         self.assertEqual(model.events[-1]['action'], 'cave_bat_bite')
         self.assertEqual(model.enemy_action_aliases,
                          {'cave_bat_bite': 'bite', 'cave_bat_wing_gust': 'wing_gust'})
+
+    def test_action_elements_validate_without_activating_elemental_damage(self):
+        data = json.loads(ACTION_PATH.read_text())
+        original = deepcopy(data)
+        self.assertNotIn('element', load_actions(data)['cave_bat_wing_gust'])
+        for element in ('non_elemental', 'fire', 'electric', 'water', 'ice',
+                        'nature', 'wind', 'holy', 'ground'):
+            with self.subTest(element=element):
+                tagged = deepcopy(data)
+                tagged['actions']['cave_bat_wing_gust']['element'] = element
+                self.assertEqual(load_actions(tagged)['cave_bat_wing_gust']['element'], element)
+                model = self.model(action_data=tagged)
+                self.enemy_turn(model)
+                # Existing approved damage stays 22 regardless of an action's
+                # authoring tag; weakness/resistance application is deferred.
+                self.assertEqual(self.enemy_turn(model)[0].damage, 22)
+        self.assertEqual(data, original)
+        for value in ('poison', 'lightning', '', None, True, 1, [], {}):
+            with self.subTest(invalid_element=value):
+                malformed = deepcopy(data)
+                malformed['actions']['aether_dart']['element'] = value
+                with self.assertRaisesRegex(ValueError, 'Invalid battle action element'):
+                    load_actions(malformed)
+        for identifier in ('guard', 'flee', 'prepare_charge', 'overclock', 'nature_edge'):
+            with self.subTest(utility=identifier):
+                malformed = deepcopy(data)
+                malformed['actions'][identifier]['element'] = 'electric'
+                with self.assertRaisesRegex(ValueError, 'Invalid battle action element'):
+                    load_actions(malformed)
 
     def test_real_enemy_turns_alternate_until_two_gusts_exhaust_mp(self):
         model = self.model(source=player(hp=9999))
@@ -209,6 +239,33 @@ class BestiaryBattleTests(unittest.TestCase):
         build_enemy('cave_bat', 2, data=catalog)
         with self.assertRaisesRegex(ValueError, 'Unsupported Bestiary fighting style'):
             self.model(bestiary_data=catalog)
+
+    def test_pending_species_are_authorable_but_cannot_start_a_battle(self):
+        source = player()
+        before = source.to_dict()
+        catalog = load_bestiary()
+        original = deepcopy(catalog)
+        for identifier, level in (('lithrusk', 2), ('veylume', 3)):
+            with self.subTest(enemy=identifier):
+                record = build_enemy(identifier, level, data=catalog)
+                self.assertTrue(record['metadata']['presentation_pending'])
+                with patch.object(BattleModel, '__init__',
+                                  side_effect=AssertionError('Battle construction must not begin')):
+                    with self.assertRaisesRegex(ValueError, 'Bestiary enemy presentation is pending'):
+                        BattleModel.from_bestiary(source, identifier, level, bestiary_data=catalog)
+        self.assertEqual(source.to_dict(), before)
+        self.assertEqual(catalog, original)
+
+    def test_future_veylume_style_stays_guarded_even_if_presentation_is_supplied(self):
+        catalog = load_bestiary()
+        # A borrowed existing sprite is only a test fixture. The canonical
+        # Veylume entry deliberately retains no model or animation references.
+        catalog['enemies']['veylume']['presentation'] = {'sprite_id': 'bat', 'action_aliases': {}}
+        self.assertFalse(build_enemy('veylume', 3, data=catalog)['metadata']['presentation_pending'])
+        with patch.object(BattleModel, '__init__',
+                          side_effect=AssertionError('Unsupported AI must not start a battle')):
+            with self.assertRaisesRegex(ValueError, 'Unsupported Bestiary fighting style'):
+                BattleModel.from_bestiary(player(3), 'veylume', 3, bestiary_data=catalog)
 
 
 if __name__ == '__main__':unittest.main()

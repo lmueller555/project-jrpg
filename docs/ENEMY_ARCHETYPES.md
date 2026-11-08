@@ -143,8 +143,12 @@ enemy levels, species adjustments and the progression transition are settled.
 
 The first computed species is **Cave Bat**, separate from the fixed test Bat.
 It uses Hybrid growth, Physical/Magical Alternation, levels 2–3 and species
-factors HP ×0.40, MP ×0.10 and Evasion ×1.20. Its complete definition and
-normal/boss authoring workflow are documented in the [Bestiary guide](BESTIARY.md).
+factors HP ×0.40, MP ×0.10 and Evasion ×1.20. **Lithrusk** adds an Armored
+Bulwark at levels 2–3 with HP ×0.50 and MP ×0; **Veylume** adds a Caster
+Arcanist at levels 3–4 with HP ×0.40 and MP ×0.15. Their presentation is
+pending, and Veylume's Magical Offense style remains authored future behavior.
+The complete definitions and normal/boss authoring workflow are documented
+in the [Bestiary guide](BESTIARY.md).
 
 ## Catalogue and growth API
 

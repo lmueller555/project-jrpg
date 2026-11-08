@@ -5,11 +5,11 @@ dictionary for monster and boss definitions. Entries are keyed by stable enemy
 IDs under `enemies`. [`bestiary.py`](../bestiary.py) validates the complete
 dictionary and resolves a species at an explicitly selected level.
 
-The dictionary contains the first computed species, **Cave Bat**, and preserves
-the existing fixed Bat and Ridgeback Tusker records for their authored test and
-MQ02 encounters. Fixed records retain their exact stats, abilities and item
-drops. Their future levels, species tuning and elemental profiles have not been
-assigned.
+The dictionary contains three computed Sanctuary cave species: **Cave Bat**,
+**Lithrusk** and **Veylume**. It preserves the existing fixed Bat and Ridgeback
+Tusker records for their authored test and MQ02 encounters. Fixed records
+retain their exact stats, abilities and item drops. Their future levels,
+species tuning and elemental profiles have not been assigned.
 
 This is an authoring dictionary and combat adapter. It does not add a
 player-facing encyclopedia menu, unlock the sanctuary cave, place new world
@@ -72,6 +72,112 @@ The Cave Bat's elemental profile is authored below. Applying elemental damage
 and absorption in battle remains future work, as does its planned low Stagger
 resistance. Item drops remain explicitly pending; the resolved combat bundle is
 empty until loot is authored. No item or drop chance is invented by the loader.
+
+## Lithrusk and Veylume
+
+These two normal species complement the Cave Bat's mixed offense. Lithrusk is
+a slow, sturdy physical attacker; Veylume delivers stronger magical attacks
+from a fragile body. Their models, sprites and animations are deferred.
+
+| Property | Lithrusk | Veylume |
+| --- | --- | --- |
+| ID | `lithrusk` | `veylume` |
+| Family | Cave crustacean | Aether-adapted insect |
+| Habitat | Splitstone Hollow and lower damp passages | Crystal galleries and the deeper approach |
+| Level range | 2–3 | 3–4 |
+| Element | Ground | Electric |
+| Combat concept | Bulwark | Arcanist |
+| Stat profile | Armored | Caster |
+| Fighting style | Standard Attacks | Magical Offense |
+| Species adjustments | HP ×0.50, MP ×0 | HP ×0.40, MP ×0.15 |
+| Planned Stagger resistance | High | Low |
+| Encounter guidance | One specimen | One specimen |
+| Drops | Pending | Pending |
+
+All omitted species multipliers are ×1, with no additional tier multiplier.
+Stats use the approved baseline/profile composition and one final rounding
+step, just like Cave Bat. The stat tables below are resolved documentation;
+the dictionary retains growth parameters rather than duplicated stat tables.
+
+| Attribute | Lithrusk L2 | Lithrusk L3 | Veylume L3 | Veylume L4 |
+| --- | ---: | ---: | ---: | ---: |
+| HP | 120 | 140 | 67 | 82 |
+| MP | 0 | 0 | 10 | 11 |
+| Strength | 11 | 13 | 7 | 8 |
+| Magick | 10 | 11 | 18 | 20 |
+| Spirit | 13 | 14 | 16 | 17 |
+| Defense | 23 | 25 | 10 | 11 |
+| Magick Defense | 8 | 10 | 17 | 19 |
+| Speed | 10 | 11 | 12 | 13 |
+| Accuracy | 14 | 15 | 15 | 17 |
+| Evasion | 12 | 14 | 14 | 15 |
+| Luck | 13 | 15 | 15 | 16 |
+| XP reward | 84 | 104 | 104 | 120 |
+
+| Ability | Action ID | Category / element | Potency | MP |
+| --- | --- | --- | ---: | ---: |
+| Claw Clamp | `lithrusk_claw_clamp` | Physical / Non-Elemental | 0.65 | 0 |
+| Shell Bash | `lithrusk_shell_bash` | Physical / Non-Elemental | 0.80 | 0 |
+| Static Spark | `veylume_static_spark` | Magical / Electric | 0.60 | 0 |
+| Gather Charge | `veylume_gather_charge` | Preparation | 0 | 0 |
+| Veinflash | `veylume_veinflash` | Magical / Electric | 1.00 | 4 |
+
+Lithrusk's authored sequence is **Claw Clamp → Shell Bash**, with Claw Clamp
+as its free fallback. Both attacks remain available without MP. Its mineral
+plates suggest physical durability, but basic attacks remain viable and
+Aether Edge's magical component provides another useful response.
+
+Veylume's intended sequence is **Static Spark → Gather Charge → Veinflash**.
+Gather Charge spends a preparation turn and signals the larger discharge.
+Both levels have enough MP for two Veinflashes, leaving two or three MP.
+Static Spark is the free fallback. Its future action selector must skip Gather
+Charge whenever Veinflash is unaffordable, then rely on Static Spark.
+`magical_offense` and this conditional preparation remain authoring data;
+the current adapter does not execute them or reuse the Tusker's charge logic.
+
+Against unmodified same-level Caelan at 100% damage variance, Lithrusk's
+Claw Clamp/Shell Bash deal 14/17 damage at level 2 and 19/24 at level 3.
+Veylume's Static Spark/Veinflash deal 34/57 at level 3 and 42/70 at level 4.
+Caelan's ordinary attacks defeat Lithrusk in roughly six to seven hits and
+Veylume in three. These checks use unchanged damage formulas and neutral
+elemental behavior; they do not activate affinities or retune player stats.
+
+| Incoming element | Lithrusk | Veylume |
+| --- | ---: | ---: |
+| Non-Elemental | 100% damage | 100% damage |
+| Fire | 100% damage | 100% damage |
+| Electric | 50% damage | 100% healing (absorb) |
+| Water | 150% damage | 100% damage |
+| Ice | 100% damage | 100% damage |
+| Nature | 100% damage | 100% damage |
+| Wind | 100% damage | 100% damage |
+| Holy | 100% damage | 100% damage |
+| Ground | 100% healing (absorb) | 200% damage |
+
+Lithrusk's pale limestone plates and heavy gait suggest Ground alignment;
+water wears its porous shell and dry mineral plates insulate it against
+Electric attacks. Veylume's sparking antennae and luminous wing veins reveal
+Electric alignment; Ground disperses its stored charge. Its light belongs to
+a living insect adapted to ambient Aether. These profiles remain hidden
+authoring data until elemental combat and deliberate reveal mechanics exist.
+
+### Authoring before art
+
+An unfinished species uses `"presentation": {"sprite_id": null,
+"action_aliases": {}}`. The loader validates and resolves its complete data
+without requiring art files. `metadata['presentation_pending']` reports this
+state; the overview and stat previews also include a `presentation_pending`
+column. Concrete sprite IDs still require an existing animation manifest.
+Pending art requires empty aliases and cannot silently borrow another enemy's
+appearance. `BattleModel.from_bestiary` rejects it before constructing a battle.
+
+Physical and magical actions can carry an optional canonical `element` tag,
+separately from their damage category and the species' defensive affinities.
+Utility and Spellblade actions retain their existing untagged schemas. These
+tags preserve design intent and
+do not apply elemental damage, resistance or absorption in the current engine.
+Their generic action timing/animation tokens satisfy the existing action
+schema; no species animation assets or action-pose mappings are created.
 
 ## Elemental identity and relationships
 
@@ -173,6 +279,11 @@ assert bat['metadata']['drops_pending']
 assert bat['metadata']['elemental_profile']['element'] == 'non_elemental'
 assert bat['metadata']['elemental_profile']['damage_percentages']['fire'] == 200
 
+lithrusk = build_enemy('lithrusk', 2)
+assert lithrusk['combat']['attributes']['hp'] == 120
+assert lithrusk['metadata']['presentation_pending']
+assert lithrusk['presentation']['sprite_id'] is None
+
 fixed = build_enemy('bat')
 assert fixed['combat']['attributes']['hp'] == 72
 assert fixed['level'] is None
@@ -230,8 +341,9 @@ than silently substituting another style.
    Consider identity early enough to inform the monster's name, visual design,
    habitat and behavior. Keep the data hidden except through deliberate reveal
    mechanics such as the planned Study ability.
-5. Author presentation references and explicitly mark future mechanics and
-   undecided drops. Reusing art is independent of gameplay action identity.
+5. Author presentation references, or use an explicit null sprite ID with empty
+   action aliases while art is pending. Mark future mechanics and undecided
+   drops. Reusing art is independent of gameplay action identity.
 6. Preview every level in the range and test the resolved combat behavior.
 
 Use `"tier": "normal"` for an ordinary monster. For a boss, use
@@ -251,6 +363,8 @@ python tools/preview_bestiary.py --list
 python tools/preview_bestiary.py --enemy cave_bat --levels 2 3
 python tools/preview_bestiary.py --enemy cave_bat --levels 2 3 --format json
 python tools/preview_bestiary.py --enemy cave_bat --levels 2 3 --format csv
+python tools/preview_bestiary.py --enemy lithrusk --levels 2 3
+python tools/preview_bestiary.py --enemy veylume --levels 3 4
 ```
 
 The preview resolves dictionary data without opening a game, changing a journey,
