@@ -1,0 +1,1709 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.24",
+  "status": "review",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "source_recipe": "assets/source/terrain/limestone_cave/recipe.json",
+  "materials": {
+    "dry": {
+      "tiles": [
+        "assets/terrain/limestone_cave/tiles/dry_00.png",
+        "assets/terrain/limestone_cave/tiles/dry_01.png",
+        "assets/terrain/limestone_cave/tiles/dry_02.png",
+        "assets/terrain/limestone_cave/tiles/dry_03.png",
+        "assets/terrain/limestone_cave/tiles/dry_04.png",
+        "assets/terrain/limestone_cave/tiles/dry_05.png",
+        "assets/terrain/limestone_cave/tiles/dry_06.png",
+        "assets/terrain/limestone_cave/tiles/dry_07.png",
+        "assets/terrain/limestone_cave/tiles/dry_08.png",
+        "assets/terrain/limestone_cave/tiles/dry_09.png",
+        "assets/terrain/limestone_cave/tiles/dry_10.png",
+        "assets/terrain/limestone_cave/tiles/dry_11.png"
+      ]
+    },
+    "damp": {
+      "tiles": [
+        "assets/terrain/limestone_cave/tiles/damp_00.png",
+        "assets/terrain/limestone_cave/tiles/damp_01.png",
+        "assets/terrain/limestone_cave/tiles/damp_02.png",
+        "assets/terrain/limestone_cave/tiles/damp_03.png",
+        "assets/terrain/limestone_cave/tiles/damp_04.png",
+        "assets/terrain/limestone_cave/tiles/damp_05.png",
+        "assets/terrain/limestone_cave/tiles/damp_06.png",
+        "assets/terrain/limestone_cave/tiles/damp_07.png"
+      ]
+    },
+    "gravel": {
+      "tiles": [
+        "assets/terrain/limestone_cave/tiles/gravel_00.png",
+        "assets/terrain/limestone_cave/tiles/gravel_01.png",
+        "assets/terrain/limestone_cave/tiles/gravel_02.png",
+        "assets/terrain/limestone_cave/tiles/gravel_03.png",
+        "assets/terrain/limestone_cave/tiles/gravel_04.png",
+        "assets/terrain/limestone_cave/tiles/gravel_05.png",
+        "assets/terrain/limestone_cave/tiles/gravel_06.png",
+        "assets/terrain/limestone_cave/tiles/gravel_07.png"
+      ]
+    },
+    "silt": {
+      "tiles": [
+        "assets/terrain/limestone_cave/tiles/silt_00.png",
+        "assets/terrain/limestone_cave/tiles/silt_01.png",
+        "assets/terrain/limestone_cave/tiles/silt_02.png",
+        "assets/terrain/limestone_cave/tiles/silt_03.png"
+      ]
+    }
+  },
+  "modules": {
+    "wall.front.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/front/0.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.front.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/front/1.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.front.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/front/2.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.front.3": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/front/3.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.front.4": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/front/4.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.front.5": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/front/5.png"
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "anchor": [
+        48,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.return_left.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/return_left/0.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.return_right.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/return_right/0.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.concave.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/concave/0.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.convex.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/convex/0.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.overhang.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/overhang/0.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        43
+      ],
+      "footprints": []
+    },
+    "formation.stalagmites.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/stalagmites/0.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": [
+        [
+          18,
+          67,
+          36,
+          10
+        ]
+      ]
+    },
+    "formation.broken_column.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/broken_column/0.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": [
+        [
+          18,
+          67,
+          36,
+          10
+        ]
+      ]
+    },
+    "formation.flowstone.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/flowstone/0.png"
+      ],
+      "size": [
+        80,
+        80
+      ],
+      "anchor": [
+        40,
+        76
+      ],
+      "footprints": [
+        [
+          20,
+          67,
+          40,
+          10
+        ]
+      ]
+    },
+    "formation.pendants.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/pendants/0.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": []
+    },
+    "formation.boulder.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/boulder/0.png"
+      ],
+      "size": [
+        64,
+        48
+      ],
+      "anchor": [
+        32,
+        44
+      ],
+      "footprints": [
+        [
+          16,
+          35,
+          32,
+          10
+        ]
+      ]
+    },
+    "patch.dry.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/dry/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "patch.damp.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/damp/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "patch.gravel.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/gravel/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "patch.silt.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/silt/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "shoreline.edge.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/edge/0.png"
+      ],
+      "size": [
+        48,
+        24
+      ],
+      "anchor": [
+        24,
+        20
+      ],
+      "footprints": []
+    },
+    "shoreline.corner.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/corner/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "shoreline.inner.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/inner/0.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "socket.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/socket/0.png"
+      ],
+      "size": [
+        64,
+        27
+      ],
+      "anchor": [
+        32,
+        21
+      ],
+      "footprints": [
+        [
+          10,
+          15,
+          44,
+          10
+        ]
+      ]
+    },
+    "wall.return_left.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/return_left/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.return_right.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/return_right/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.concave.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/concave/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.convex.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/convex/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.overhang.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/overhang/1.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        43
+      ],
+      "footprints": []
+    },
+    "formation.stalagmites.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/stalagmites/1.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": [
+        [
+          18,
+          67,
+          36,
+          10
+        ]
+      ]
+    },
+    "formation.broken_column.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/broken_column/1.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": [
+        [
+          18,
+          67,
+          36,
+          10
+        ]
+      ]
+    },
+    "formation.flowstone.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/flowstone/1.png"
+      ],
+      "size": [
+        80,
+        80
+      ],
+      "anchor": [
+        40,
+        76
+      ],
+      "footprints": [
+        [
+          20,
+          67,
+          40,
+          10
+        ]
+      ]
+    },
+    "formation.pendants.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/pendants/1.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": []
+    },
+    "formation.boulder.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/boulder/1.png"
+      ],
+      "size": [
+        64,
+        48
+      ],
+      "anchor": [
+        32,
+        44
+      ],
+      "footprints": [
+        [
+          16,
+          35,
+          32,
+          10
+        ]
+      ]
+    },
+    "patch.dry.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/dry/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        68
+      ],
+      "footprints": []
+    },
+    "patch.damp.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/damp/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        68
+      ],
+      "footprints": []
+    },
+    "patch.gravel.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/gravel/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        68
+      ],
+      "footprints": []
+    },
+    "patch.silt.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/silt/1.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        68
+      ],
+      "footprints": []
+    },
+    "shoreline.edge.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/edge/1.png"
+      ],
+      "size": [
+        48,
+        24
+      ],
+      "anchor": [
+        24,
+        20
+      ],
+      "footprints": []
+    },
+    "shoreline.corner.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/corner/1.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "shoreline.inner.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/inner/1.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "socket.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/socket/1.png"
+      ],
+      "size": [
+        64,
+        27
+      ],
+      "anchor": [
+        32,
+        21
+      ],
+      "footprints": [
+        [
+          10,
+          15,
+          44,
+          10
+        ]
+      ]
+    },
+    "wall.return_left.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/return_left/2.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.return_right.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/return_right/2.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.concave.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/concave/2.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.convex.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/convex/2.png"
+      ],
+      "size": [
+        72,
+        72
+      ],
+      "anchor": [
+        36,
+        64
+      ],
+      "footprints": []
+    },
+    "wall.overhang.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/wall/overhang/2.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "anchor": [
+        48,
+        43
+      ],
+      "footprints": []
+    },
+    "formation.stalagmites.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/stalagmites/2.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": [
+        [
+          18,
+          67,
+          36,
+          10
+        ]
+      ]
+    },
+    "formation.broken_column.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/broken_column/2.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": [
+        [
+          18,
+          67,
+          36,
+          10
+        ]
+      ]
+    },
+    "formation.flowstone.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/flowstone/2.png"
+      ],
+      "size": [
+        80,
+        80
+      ],
+      "anchor": [
+        40,
+        76
+      ],
+      "footprints": [
+        [
+          20,
+          67,
+          40,
+          10
+        ]
+      ]
+    },
+    "formation.pendants.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/pendants/2.png"
+      ],
+      "size": [
+        72,
+        80
+      ],
+      "anchor": [
+        36,
+        76
+      ],
+      "footprints": []
+    },
+    "formation.boulder.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/boulder/2.png"
+      ],
+      "size": [
+        64,
+        48
+      ],
+      "anchor": [
+        32,
+        44
+      ],
+      "footprints": [
+        [
+          16,
+          35,
+          32,
+          10
+        ]
+      ]
+    },
+    "patch.dry.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/dry/2.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        92
+      ],
+      "footprints": []
+    },
+    "patch.damp.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/damp/2.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        92
+      ],
+      "footprints": []
+    },
+    "patch.gravel.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/gravel/2.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        92
+      ],
+      "footprints": []
+    },
+    "patch.silt.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/patch/silt/2.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "anchor": [
+        48,
+        92
+      ],
+      "footprints": []
+    },
+    "shoreline.edge.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/edge/2.png"
+      ],
+      "size": [
+        48,
+        24
+      ],
+      "anchor": [
+        24,
+        20
+      ],
+      "footprints": []
+    },
+    "shoreline.corner.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/corner/2.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "shoreline.inner.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/shoreline/inner/2.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "anchor": [
+        24,
+        44
+      ],
+      "footprints": []
+    },
+    "socket.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/socket/2.png"
+      ],
+      "size": [
+        64,
+        27
+      ],
+      "anchor": [
+        32,
+        21
+      ],
+      "footprints": [
+        [
+          10,
+          15,
+          44,
+          10
+        ]
+      ]
+    },
+    "tunnel.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/tunnel/north.png"
+      ],
+      "size": [
+        96,
+        88
+      ],
+      "anchor": [
+        48,
+        84
+      ],
+      "footprints": []
+    },
+    "transition.damp.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/north.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/east.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/south.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/west.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.outer_ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/outer_ne.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.outer_se": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/outer_se.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.outer_sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/outer_sw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.outer_nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/outer_nw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.inner_ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/inner_ne.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.inner_se": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/inner_se.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.inner_sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/inner_sw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.damp.inner_nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/damp/inner_nw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/north.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/east.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/south.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/west.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.outer_ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/outer_ne.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.outer_se": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/outer_se.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.outer_sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/outer_sw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.outer_nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/outer_nw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.inner_ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/inner_ne.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.inner_se": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/inner_se.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.inner_sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/inner_sw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.gravel.inner_nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/gravel/inner_nw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/north.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/east.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/south.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/west.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.outer_ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/outer_ne.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.outer_se": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/outer_se.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.outer_sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/outer_sw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.outer_nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/outer_nw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.inner_ne": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/inner_ne.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.inner_se": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/inner_se.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.inner_sw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/inner_sw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    },
+    "transition.silt.inner_nw": {
+      "frames": [
+        "assets/terrain/limestone_cave/modules/transition/silt/inner_nw.png"
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "footprints": []
+    }
+  },
+  "palette": {
+    "limestone": [
+      "#444b49",
+      "#5c635b",
+      "#72776a",
+      "#898b7a",
+      "#a0a08a",
+      "#b5b29a",
+      "#cbc5ae",
+      "#dfd6bd"
+    ],
+    "dry": [
+      "#717468",
+      "#858778",
+      "#969685",
+      "#a4a38f",
+      "#b4b19a"
+    ],
+    "damp": [
+      "#475e5b",
+      "#5a706a",
+      "#6b8076",
+      "#7b8e81",
+      "#98a18e"
+    ],
+    "gravel": [
+      "#66695f",
+      "#7a7c6e",
+      "#8d8e7d",
+      "#a2a08b",
+      "#bbb59c"
+    ],
+    "silt": [
+      "#696b5d",
+      "#7d7c68",
+      "#908c75",
+      "#a59d82",
+      "#b9ae91"
+    ],
+    "calcite": "#d4cdb6",
+    "mineral_mauve": "#9b8b91",
+    "wet_edge": "#667f77",
+    "deep_joint": "#354641"
+  },
+  "inputs": {
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
+    "assets/terrain/eldenmere/terraces/palette.json": "e51abfb741288899762fc57bacdad39035aa5bb88529b7e743bbef97bf614174",
+    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+    "assets/terrain/sanctuary_cave/walls/face_00.png": "f2099a1fa55fe8daacd32ee056e4014430e777777156d637586b82da995f0e6e",
+    "assets/source/terrain/limestone_cave/recipe.json": "6dc38d048731b04a4ba9f8c9f83b7ef100c0ac24549e410543d12c61e1f4a295"
+  },
+  "artifacts": {
+    "assets/terrain/limestone_cave/tiles/dry_00.png": "0713a802763815e59b4a0ce451d888dc5b71a957818391adb72a64dcccec9a58",
+    "assets/terrain/limestone_cave/tiles/dry_01.png": "82d7e87dfe3d141644ff1ffb806421b6d1cd741daf89c6eda8ebae0eec92e62e",
+    "assets/terrain/limestone_cave/tiles/dry_02.png": "9bbab0e29dda74bc1082f652aac8f8669f70fdec8d8f78e89f423a31501d3293",
+    "assets/terrain/limestone_cave/tiles/dry_03.png": "bb2b6888179bb16523e1cb2bf40b62c2f89052c10b61b5d34a412be41b8f7b60",
+    "assets/terrain/limestone_cave/tiles/dry_04.png": "e91304df82ce425eb0ea6bb3f7db9aa4008ffcfb805e6dc0d402a22fe9e40766",
+    "assets/terrain/limestone_cave/tiles/dry_05.png": "074b41f66e4dd784e98160fd33df43bc7e1327fb206bc07419a9216194c9242c",
+    "assets/terrain/limestone_cave/tiles/dry_06.png": "2d6c2dc261be1acab54be09af326135753fee61361acc74e1bf4199ac2f49fb5",
+    "assets/terrain/limestone_cave/tiles/dry_07.png": "be0067be7b8d23bb73c9744051c11aaf83f8fa5172802a45b068230519f2978f",
+    "assets/terrain/limestone_cave/tiles/dry_08.png": "ab1afc6be4664131df20ea5d88fecf73c4932f51f986d2bc3a38d555bf87da0b",
+    "assets/terrain/limestone_cave/tiles/dry_09.png": "5421ca7ea1b6b4b0a8c58bbea31c15a1298aecb84d454922211380f3a0d50fb4",
+    "assets/terrain/limestone_cave/tiles/dry_10.png": "26b9eff5f1e271df9fb86b26c621ad918ea29d16297b86b00eab4b97ffd19d47",
+    "assets/terrain/limestone_cave/tiles/dry_11.png": "03bda1e9062278796cc42ca98fbdbb3d5ebd5b880ee550ec879e8ce69565081a",
+    "assets/terrain/limestone_cave/tiles/damp_00.png": "1644669d1221728752cd53232bb074134cb168f6ee58a18978fad4f8036fdd26",
+    "assets/terrain/limestone_cave/tiles/damp_01.png": "71e834702a88026dde8ddb3f1e6fe50e2dc3faeb49db48196ac735a09146fe91",
+    "assets/terrain/limestone_cave/tiles/damp_02.png": "969636734c90d000f247df3cda72cad34be44b4d9b8bf242ff9d0ce6c56a0573",
+    "assets/terrain/limestone_cave/tiles/damp_03.png": "bbbc2f7c884f87db49f5da12add1e2c7cf12ac7dbd02f2f0b0bb64c464db2739",
+    "assets/terrain/limestone_cave/tiles/damp_04.png": "296dcb79928a36b56eaf7563b049516c80b03336bee8fc7b79bcb90320938ce7",
+    "assets/terrain/limestone_cave/tiles/damp_05.png": "bb6b7f5462b3a430fc91a21034804b7f4de1cb581b557f469eefc35bebbef8a2",
+    "assets/terrain/limestone_cave/tiles/damp_06.png": "7584a953a4dd1d33da505c8257c994d06642cb2827b022e2ff9655713012bdfa",
+    "assets/terrain/limestone_cave/tiles/damp_07.png": "3b8d2e343515a402bb29bb6a16b52d800c09bbf63ec74b2a56e7944e7f82d7d8",
+    "assets/terrain/limestone_cave/tiles/gravel_00.png": "1de787a79fd63dec10eb193643fb57109e6e1caf6e5a92bcb8264c0581175067",
+    "assets/terrain/limestone_cave/tiles/gravel_01.png": "ce20c03a92bc3e2f35a9ac1159ee3196a24114f4948a268b1a76ad31e38342aa",
+    "assets/terrain/limestone_cave/tiles/gravel_02.png": "f0f071f8b721a19ef98c53f43870a5fd3f0c08caf6ae91b61ee49b353512df7b",
+    "assets/terrain/limestone_cave/tiles/gravel_03.png": "8065f2ec2eaae9c1c4fb41aa8365f840d03258691fdabe81e78f595e572b0d3a",
+    "assets/terrain/limestone_cave/tiles/gravel_04.png": "da9ff045134d1be748022f01cff7f6d529435eb86737626aa52cb6129ccd002c",
+    "assets/terrain/limestone_cave/tiles/gravel_05.png": "cebb176d5f06747a31e7006e5f443927196933befd47bc374dbd5d2cebf710b1",
+    "assets/terrain/limestone_cave/tiles/gravel_06.png": "8fb398dd6ceed09daa513e904bda2952978a8cbccf31eced0220bff4229f7232",
+    "assets/terrain/limestone_cave/tiles/gravel_07.png": "e8a9041144af8f5b10d4262754f4df00baa41d56fb254a605ad08eea2a8ea52f",
+    "assets/terrain/limestone_cave/tiles/silt_00.png": "eaedc4e82a9bb1f3d437276ad3a3fcc39384eee5d4d075ae265c41081df64f93",
+    "assets/terrain/limestone_cave/tiles/silt_01.png": "8c2b5857c993baa62719c573adc6324e15fcddb4708ddd39e370299950baecd3",
+    "assets/terrain/limestone_cave/tiles/silt_02.png": "677bdb40136a03d495bf052069d64b42ba54c05e066b2f7849717c715400dd7c",
+    "assets/terrain/limestone_cave/tiles/silt_03.png": "73c284e98cd206433853bcec12e19bd7a595c0ac5c952ab5085a415eafacbae6",
+    "assets/terrain/limestone_cave/modules/wall/front/0.png": "5c78537301f227f57308147d3b655ebe3f5521913da981efedb8a717eb3d4bd7",
+    "assets/terrain/limestone_cave/modules/wall/front/1.png": "e2594bc305294520bf6fc23c4821717aa52d739efa423c38425a7ead40bcc0b9",
+    "assets/terrain/limestone_cave/modules/wall/front/2.png": "d8344246ec849cd968b7bfafd3b91c21a28cfacbb1ba2abbc294234236aea3cf",
+    "assets/terrain/limestone_cave/modules/wall/front/3.png": "19e8475e197c75ee89eeb92f048d1c6d8398841aca4e06145d3a88ff38c61656",
+    "assets/terrain/limestone_cave/modules/wall/front/4.png": "4aa01ef48e997372353f5f0d0c528e70b21276fa5ebc8476a42e993dbf36758a",
+    "assets/terrain/limestone_cave/modules/wall/front/5.png": "1032613873f9173388a6bfaadaa00672f21b03cb2dd1ebca4f8f95a353f4fb68",
+    "assets/terrain/limestone_cave/modules/wall/return_left/0.png": "ca29f76b9469ea718094d673cdd48f3f6341d5a8d79180bf72459f5164be507b",
+    "assets/terrain/limestone_cave/modules/wall/return_right/0.png": "d1f478283a3701bf6693f59fa9d1c962d320e2c2c9d0efef04fc64df9b851f48",
+    "assets/terrain/limestone_cave/modules/wall/concave/0.png": "7c7b9da128713ce18e4bd2106b59a168831dcf8200246cbd46bffe5d17425933",
+    "assets/terrain/limestone_cave/modules/wall/convex/0.png": "702525b6416f4c0116f7e31b27edf161ff769fc27c7f42c144ad62334a2715da",
+    "assets/terrain/limestone_cave/modules/wall/overhang/0.png": "43d13f11180b5b2b3cb2a97bc5e47253fd6790da031074dff98f6ac64b0e0938",
+    "assets/terrain/limestone_cave/modules/formation/stalagmites/0.png": "39d014e6fd4cc916650496a71e148ab6f0e4df88b81445b8b7b366994754f64c",
+    "assets/terrain/limestone_cave/modules/formation/broken_column/0.png": "9b9192feeff9758a227f0451583c403b4abe82216c6bbfdc0be5146e52bc85a1",
+    "assets/terrain/limestone_cave/modules/formation/flowstone/0.png": "514241b91ca11ba9ceefbef8296129db80568d398b15984b05b45db88089cdf5",
+    "assets/terrain/limestone_cave/modules/formation/pendants/0.png": "a81dfa0c7f1a278e983638006f478084721f8ddda329ac9a98d720d72040e704",
+    "assets/terrain/limestone_cave/modules/formation/boulder/0.png": "f569f64831fa397716f389678cb7716d96941ae6fa56ece872276e8f06bb3328",
+    "assets/terrain/limestone_cave/modules/patch/dry/0.png": "487b4855100793ccb25a49b79886a120bf35b00e733ba0b29af63f254852c7e3",
+    "assets/terrain/limestone_cave/modules/patch/damp/0.png": "21db1c2f4d5ac9a8579d478fb2140ed99e97d912ec96f07ea88de9f2b7675e0f",
+    "assets/terrain/limestone_cave/modules/patch/gravel/0.png": "94e6544bb69c3d5497dd61d0bbdaab54ef06db6b0a6012f43dab0489cb180b5f",
+    "assets/terrain/limestone_cave/modules/patch/silt/0.png": "f397bab29166a9a3f97900a58944a369df2f521c9e38731b67b967afb073cac9",
+    "assets/terrain/limestone_cave/modules/shoreline/edge/0.png": "2e05b3ed501d9c334334f78c6478b7c5c78469d9aa665ab86f7ea06fe6e87493",
+    "assets/terrain/limestone_cave/modules/shoreline/corner/0.png": "9b00f68c4173824d02267502da5293b5fe04fdbd11ce932bea9c439c51c62867",
+    "assets/terrain/limestone_cave/modules/shoreline/inner/0.png": "21f9ab7fdf8fe4189d87ad022e95662dd64ee6249e01c49cda9d1e56a55376df",
+    "assets/terrain/limestone_cave/modules/socket/0.png": "3d3e460c27dda36df8d7016dc8297a5509846bfe7434430b0b69460318a4595a",
+    "assets/terrain/limestone_cave/modules/wall/return_left/1.png": "8cdeb4cc52559fc40fa612ad7690addaf0df5b05303e78c20d7af810e486824e",
+    "assets/terrain/limestone_cave/modules/wall/return_right/1.png": "ba6a0f9bc4f310b7899957baade205d8787c4af645f4285fe395b1bf79d76181",
+    "assets/terrain/limestone_cave/modules/wall/concave/1.png": "630e46858699d1c556334f4bed6a4d0ee83f965960a21d422c854a66a063ff33",
+    "assets/terrain/limestone_cave/modules/wall/convex/1.png": "26e444d3f69f34c8f6cd7e149ad83d03f386699ec5c04c31b701a2cfc228063d",
+    "assets/terrain/limestone_cave/modules/wall/overhang/1.png": "3d303c4e4f55e36d8db49066b3a4e154b684d0536e39e1bcb4cfca1bbf092d68",
+    "assets/terrain/limestone_cave/modules/formation/stalagmites/1.png": "fc18822de737d443073e08460032dca9017928742c43d681faa10d20cbfa9fc0",
+    "assets/terrain/limestone_cave/modules/formation/broken_column/1.png": "d57812af159d52f3e5b6546141c2dc26f4dc1b08e8621a39ba865115a95c68d5",
+    "assets/terrain/limestone_cave/modules/formation/flowstone/1.png": "23ae1de01cfddf52d9e451f14c01aa3ea6af367e6c662b709adf979f9de81047",
+    "assets/terrain/limestone_cave/modules/formation/pendants/1.png": "ea67e3072f688e1c230d7269d3998b20c2eb0ddb9c662cf861515fd20754ec7e",
+    "assets/terrain/limestone_cave/modules/formation/boulder/1.png": "c6b09abef6e436e09787664c3490295500bc44e88012e9ab31120ba8c325bc57",
+    "assets/terrain/limestone_cave/modules/patch/dry/1.png": "c712f61fca8f6e1eb687be4b48a8498396cc7a91c79cb4fd053c7c5f838d9f72",
+    "assets/terrain/limestone_cave/modules/patch/damp/1.png": "5f34c676ccaf8c5b0dfedc0e0b989e872d12e83073e1ea574e33cf7cacfc11b3",
+    "assets/terrain/limestone_cave/modules/patch/gravel/1.png": "70f427b2fa5357123706ebc96977d8016e79dfb2ab6702785316c798f7c7cc59",
+    "assets/terrain/limestone_cave/modules/patch/silt/1.png": "7d5dc722c5c97670a6f4328d2fff99aa70788e4d979bf2c73d9ad7deda2b4b66",
+    "assets/terrain/limestone_cave/modules/shoreline/edge/1.png": "b784ad871bbceaf37ece67698a49bdbfcc2daf8336232d9f42a4aded7eadd846",
+    "assets/terrain/limestone_cave/modules/shoreline/corner/1.png": "d9d77c81c74fef759caf70bf451dfa87e182befbf78f7894015287284926a6bf",
+    "assets/terrain/limestone_cave/modules/shoreline/inner/1.png": "4e9b3a99670f3ee2f2b1ba01778037dd6fbfdf1a8ccceb7ac70cc55bd5c339b7",
+    "assets/terrain/limestone_cave/modules/socket/1.png": "1922cea347bc83613f1aca7505721341cf0f783d631969b97802da63a342199c",
+    "assets/terrain/limestone_cave/modules/wall/return_left/2.png": "8af0c3deec8effddb3afb3a2be8d64b8c875f687b256d094810ddc4bea1600e4",
+    "assets/terrain/limestone_cave/modules/wall/return_right/2.png": "73f046c96bab0fa7991cf7928a3b0e968f5beb5b0314a00dfbf56379b6228ebe",
+    "assets/terrain/limestone_cave/modules/wall/concave/2.png": "625c255c2e87d4ccdf97cae8d6f5ad729715eb16d1da8174f87eb95601570516",
+    "assets/terrain/limestone_cave/modules/wall/convex/2.png": "7d7d248ee78d8116ee65fcf4817ac73e81e0af872138f16bc470e5b7f4a1bc1d",
+    "assets/terrain/limestone_cave/modules/wall/overhang/2.png": "df0dbcea66947d466c94e12579af19a7083f217357d9936165a7532cc8c92507",
+    "assets/terrain/limestone_cave/modules/formation/stalagmites/2.png": "a98870d829c13db4f4f211709b0bd899c3543edca5e3ff54ab5bed06d4ae0bd2",
+    "assets/terrain/limestone_cave/modules/formation/broken_column/2.png": "61f05109569d5af6e6bc0ba4918a0493773b9668f39c38b67065ff1431b132cb",
+    "assets/terrain/limestone_cave/modules/formation/flowstone/2.png": "180c3312269bf27ed8715d3fb2da11b42bad5d74150770536df940d22126d458",
+    "assets/terrain/limestone_cave/modules/formation/pendants/2.png": "bab7726535bd644078c371c8ff437106fdcefe795ff442a08f49a5ea4f480329",
+    "assets/terrain/limestone_cave/modules/formation/boulder/2.png": "287f941061c5bd500c40a1494def824d10a01966b3bdaef65842c12edc9f1300",
+    "assets/terrain/limestone_cave/modules/patch/dry/2.png": "cdd438c704179394ab919a6b86a83e9641dc99cb5248c0a6705abe76e0acbad7",
+    "assets/terrain/limestone_cave/modules/patch/damp/2.png": "9bf41d3e9bb4691d8a31f07af84e2f2dea66e81813c24168588a3751e43fe6d0",
+    "assets/terrain/limestone_cave/modules/patch/gravel/2.png": "76476ad2708605091fa479a80c6f3ae0c2144ed97f39918ce4d4b9cb0011ac1a",
+    "assets/terrain/limestone_cave/modules/patch/silt/2.png": "b5a65cd147dae0b72361b784073db7a8866a2563ad550487507f182657a6fc10",
+    "assets/terrain/limestone_cave/modules/shoreline/edge/2.png": "214232b035b624b88602ac90a2ba135588f5aaf89463f5599182b548ef508f04",
+    "assets/terrain/limestone_cave/modules/shoreline/corner/2.png": "1405a2237518fefbf8ecdd252ceb50153eb3bcab6d905cbbe320c34578a9bb5a",
+    "assets/terrain/limestone_cave/modules/shoreline/inner/2.png": "3b1463dfc7c0d8eec2e0cde1d3e60249852410a17e5075ef272f9e42b15a0ccb",
+    "assets/terrain/limestone_cave/modules/socket/2.png": "a10927bf18be7622f713fd3bc25365185df03dc08e4e3d875a1c43207c83f160",
+    "assets/terrain/limestone_cave/modules/tunnel/north.png": "91d027b048b3da02dab65251a72aa8e042da737a1e74e90d87959bcd2b67087d",
+    "assets/terrain/limestone_cave/modules/transition/damp/north.png": "b9da9c40a86b131a86dbc585a0c67af5dd6a3b70e1f145862cb37f85f96fff97",
+    "assets/terrain/limestone_cave/modules/transition/damp/east.png": "505105a9176929b21dd04be978efcc2a1964048be6a125886b53594bb46ab3b6",
+    "assets/terrain/limestone_cave/modules/transition/damp/south.png": "9be0d151e2c7eb505a5672f14794d41027f61b02aae62f684dee352584c1183c",
+    "assets/terrain/limestone_cave/modules/transition/damp/west.png": "28a423a15a9e06e1781af00b4a700ecf963cfbe5545db671fd5db6da972126d6",
+    "assets/terrain/limestone_cave/modules/transition/damp/outer_ne.png": "d5ee7248babb77308cce7829af20126d6f1dde02a1aff9bda048562ceda23a68",
+    "assets/terrain/limestone_cave/modules/transition/damp/outer_se.png": "0604a2beeeb098fb6dc2b70043eebfce6864c5a6157b6d60f07d51dc2ae19710",
+    "assets/terrain/limestone_cave/modules/transition/damp/outer_sw.png": "e3be6a7e6c7878802c469e34ba0f3817fe383adf880cf9f64ecccbda7aad69ff",
+    "assets/terrain/limestone_cave/modules/transition/damp/outer_nw.png": "9ee7c150d6ae55615f63e28e740fcf089f3c699356b16975c3a12cd360c2d7b9",
+    "assets/terrain/limestone_cave/modules/transition/damp/inner_ne.png": "92fc7a315d9c4312a8d8788be65c1eeeae8970ed4db21eb7368c9530fb24cd66",
+    "assets/terrain/limestone_cave/modules/transition/damp/inner_se.png": "e884c7d5705089492cf93a462b83baac57ff757685ccfcacdd925a5b8da63bd2",
+    "assets/terrain/limestone_cave/modules/transition/damp/inner_sw.png": "42150493173c79d35056d9e9b5aabc30151dae0739945fee395715d34278b0b7",
+    "assets/terrain/limestone_cave/modules/transition/damp/inner_nw.png": "315663582152bb7f68fdab42535eeb885e8a17e05a8be3b0ccebf4676ea9801f",
+    "assets/terrain/limestone_cave/modules/transition/gravel/north.png": "862d60e8e61ce761d1dfbcd5e88783d0a8f21ce86fcfe79ea9d9fdda2546ec92",
+    "assets/terrain/limestone_cave/modules/transition/gravel/east.png": "ff2ff286b16163e20e4df9b18e1fea0bf8311994ca30088c902dbfcdf7c931ea",
+    "assets/terrain/limestone_cave/modules/transition/gravel/south.png": "68664d2e0b873ca6eacce3952808194af1966dfb1695cf40b8d6b04f416bf77c",
+    "assets/terrain/limestone_cave/modules/transition/gravel/west.png": "c7cfeaabfcb8fa514e43e4dc6c7e75f1ff5b6dd5bfe88fc2b9c12f4b18d068c5",
+    "assets/terrain/limestone_cave/modules/transition/gravel/outer_ne.png": "37c3561d8f2a114b1a376474e110d4887f62ce9c7eff4e4029cf468e3a6d0aab",
+    "assets/terrain/limestone_cave/modules/transition/gravel/outer_se.png": "e1775a5766c65ecf368ea3fd95db2d5eb7919fefead2df96f52d6ffc3ac1e605",
+    "assets/terrain/limestone_cave/modules/transition/gravel/outer_sw.png": "80fa8eb387580c2aa203792854cf6fda07df9c2d352ae75e390eef8ac3ab8aef",
+    "assets/terrain/limestone_cave/modules/transition/gravel/outer_nw.png": "d885e69d7bffbb44078b7a5166d55ca28a2b5520dff6b491bbc544f637b47860",
+    "assets/terrain/limestone_cave/modules/transition/gravel/inner_ne.png": "cb42b01b717e32471a3caf5d3eefd064aefbd1f233b7779250108c6155997330",
+    "assets/terrain/limestone_cave/modules/transition/gravel/inner_se.png": "42af18a8498ebfdf302a6199e75d9fa329992a39878d25a671c73c599b0c101b",
+    "assets/terrain/limestone_cave/modules/transition/gravel/inner_sw.png": "48ad2873a8c4680aa3d9f8f2dee107d09d6a338e2a7f56044dbdc5f820c1cbe2",
+    "assets/terrain/limestone_cave/modules/transition/gravel/inner_nw.png": "d27705352af0f20994e867684dfe35e0e1b4d6c7718552993b5958de0e3c4d04",
+    "assets/terrain/limestone_cave/modules/transition/silt/north.png": "73a3a8e3effe453800015763e819aa0d972f223ec7668d77a3d9424a20be0ee7",
+    "assets/terrain/limestone_cave/modules/transition/silt/east.png": "76da082bd71c548dac0c4d1743840364411236851d479e4f35aeaa647192407f",
+    "assets/terrain/limestone_cave/modules/transition/silt/south.png": "07b201d463993f67d04821c736a1c14749ff9b749aaea5069bffe2f5793389c9",
+    "assets/terrain/limestone_cave/modules/transition/silt/west.png": "c1d6c364c957134e500037f2fcf23c9447432e98fd3c6a96ec7f2fdb767dc78b",
+    "assets/terrain/limestone_cave/modules/transition/silt/outer_ne.png": "9e3d9118cc5c48efda6ecc0934fc73aec4c81d0d1af9dcfb3e9bda43719e448e",
+    "assets/terrain/limestone_cave/modules/transition/silt/outer_se.png": "957f56b75a1ae38f3d0f85a630ec2d2cbb7a8a6321af97780c8953790699f061",
+    "assets/terrain/limestone_cave/modules/transition/silt/outer_sw.png": "3a3d067acb1bcd9f65560fea952cdd62e0775c8fc2db64f023f989e1e2bb353c",
+    "assets/terrain/limestone_cave/modules/transition/silt/outer_nw.png": "15889469f9ae5178b48fb237cbd02a16391a2802a830f9c1fcc751e477b68bcf",
+    "assets/terrain/limestone_cave/modules/transition/silt/inner_ne.png": "0a8ebc7ff737ed299a8f25d3093820820a60f7df632bb38b05e960816cf87901",
+    "assets/terrain/limestone_cave/modules/transition/silt/inner_se.png": "732ff7414357dc7c6a55d4a67b6e8e08609c662f3d007f2cb0c760261714052c",
+    "assets/terrain/limestone_cave/modules/transition/silt/inner_sw.png": "4053af827983a1b89588e093a511f475e7dfe570dec62e89b275b38ac6bca908",
+    "assets/terrain/limestone_cave/modules/transition/silt/inner_nw.png": "9a87ef4abd329334faa921d95940ddc759f239e0c1500a4a07241ea8e22b3b29",
+    "assets/terrain/limestone_cave/materials_review.png": "ec1ee2d3bc2f5dae7a1d328a6e5c795d2c01ae0bbaec42cd938b320eb2093de9",
+    "assets/terrain/limestone_cave/regional_comparison.png": "71e4658257761a967fedc5e0b330814f8929b57fe8635e8a55566c5cc8bd7442"
+  }
+}
