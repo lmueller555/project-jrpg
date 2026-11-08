@@ -166,7 +166,9 @@ def products():
                        'gain':item.get('gain',.9)})
         wall_gems.append({'id':item['id'],'entity_id':item['id'],'color':item['color'],
                           'position':item['position'],'light_position':item['light_position'],
-                          'emission_bounds':[pos[0]+ex,pos[1]+ey,ew,eh]})
+                          'emission_bounds':[pos[0]+ex,pos[1]+ey,ew,eh],
+                          'crystal_count':record['crystal_count'],
+                          'crystal_sizes':record['crystal_sizes']})
     # A faint steady entrance wash relates the warm stone to the exterior.
     lights.append({'position':[240,532],'color':[201,195,157],'radius':150,'steady':True})
 
@@ -213,6 +215,7 @@ def products():
           'landmarks':spec['landmarks'],
           'cave':{'ambient':[112,119,127],'lights':lights,'pulse_period_ms':6000,
                   'wall_gems':wall_gems,
+                  'microcrystal_count':sum(item['crystal_count'] for item in wall_gems),
                   'review_points':spec['review_points'],'routes':spec['routes'],
                   'review_checks':checks,'treasures':[],'links':[]},
           'build':{'tool':'tools/build_limestone_cave_chamber.py',

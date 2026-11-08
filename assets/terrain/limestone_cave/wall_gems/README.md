@@ -1,20 +1,22 @@
-# Embedded cave wall gems
+# Embedded wall microcrystals
 
 Status: pending visual review; not merged into the live game.
 
-Red, Blue, Green, White, Orange and Purple gemstones sit flush inside
-chipped limestone cavities. Fixed stone lips partially cover each
-mineral core. These modules have no floor footprint or standing shards.
+Red, Blue, Green, White, Orange and Purple microcrystals follow
+irregular branching seams in limestone. The transparent modules leave
+the existing rock visible between separated mineral grains. There are
+no large gemstones, bezels, standing shards or floor footprints.
 
-Each color has three native silhouettes and six frames of increasing
-facet brightness. Anchors point to the gem center, not the floor.
-`emission_bounds` records the core rectangle; the rock surround is
-kept below the production renderer's mineral emission thresholds.
+Every color has three fields containing 24, 28 or 32 tiny facets.
+Individual grains measure 1-4 by 1-5 native pixels, mostly 2 by 3.
+`core_components`, `crystal_sizes` and `crystal_count` record this
+scale. `emission_bounds` encloses the complete field, while each
+component records one separated grain. Anchors identify field centers.
 
-The existing six-second cave pulse selects the frame and illuminates
-nearby walls, floor and characters through an exposed light root.
-The colors do not establish elemental relationships.
+Six frames vary brightness only. Neutral hairline crevices and small
+rock lips stay fixed. The production six-second pulse controls the
+facets and the colored illumination on nearby stone and floor.
 
-Rebuild with `python tools/build_wall_gems.py`; append `--check` for a
-read-only deterministic validation. The editable source recipe is
+Rebuild with `python tools/build_wall_gems.py`; append `--check` for
+deterministic validation. The source recipe is
 `assets/source/terrain/limestone_cave/wall_gems.json`.

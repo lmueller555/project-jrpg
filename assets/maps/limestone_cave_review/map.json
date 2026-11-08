@@ -63,22 +63,6 @@
       "source_module": "wall.return_right.1"
     },
     {
-      "id": "flowstone_overhang",
-      "position": [
-        402,
-        132
-      ],
-      "sort_y": 163,
-      "sort_priority": 0,
-      "frames": [
-        "assets/terrain/limestone_cave/modules/wall/overhang/1.png"
-      ],
-      "frame_duration_ms": 700,
-      "phase_offset": 0,
-      "reduced_motion_frame": 0,
-      "source_module": "wall.overhang.1"
-    },
-    {
       "id": "eroded_column",
       "position": [
         319,
@@ -122,30 +106,6 @@
           134,
           357,
           32,
-          10
-        ]
-      ]
-    },
-    {
-      "id": "wall_flowstone",
-      "position": [
-        387,
-        130
-      ],
-      "sort_y": 206,
-      "sort_priority": 0,
-      "frames": [
-        "assets/terrain/limestone_cave/modules/formation/flowstone/1.png"
-      ],
-      "frame_duration_ms": 700,
-      "phase_offset": 0,
-      "reduced_motion_frame": 0,
-      "source_module": "formation.flowstone.1",
-      "footprints": [
-        [
-          407,
-          197,
-          40,
           10
         ]
       ]
@@ -201,8 +161,8 @@
     {
       "id": "ceiling_pendants",
       "position": [
-        164,
-        169
+        89,
+        229
       ],
       "sort_y": 634,
       "sort_priority": 0,
@@ -231,12 +191,35 @@
       "source_module": "tunnel.north"
     },
     {
-      "id": "embedded_red",
+      "id": "microcrystal_purple_0",
       "position": [
-        129,
-        177
+        113,
+        189
       ],
-      "sort_y": 197,
+      "sort_y": 203,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 0,
+      "source_module": "wall_gem.purple.0",
+      "wall_gem_color": "purple"
+    },
+    {
+      "id": "microcrystal_red_0",
+      "position": [
+        178,
+        152
+      ],
+      "sort_y": 166,
       "sort_priority": 0,
       "frames": [
         "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png",
@@ -249,40 +232,40 @@
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
-      "light_index": 0,
+      "light_index": 1,
       "source_module": "wall_gem.red.0",
       "wall_gem_color": "red"
     },
     {
-      "id": "embedded_blue",
+      "id": "microcrystal_blue_0",
       "position": [
-        245,
-        122
+        248,
+        131
       ],
-      "sort_y": 143,
+      "sort_y": 145,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png",
-        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png",
-        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png",
-        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png",
-        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png",
-        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
-      "light_index": 1,
-      "source_module": "wall_gem.blue.1",
+      "light_index": 2,
+      "source_module": "wall_gem.blue.0",
       "wall_gem_color": "blue"
     },
     {
-      "id": "embedded_green",
+      "id": "microcrystal_green_0",
       "position": [
-        334,
-        116
+        318,
+        129
       ],
-      "sort_y": 136,
+      "sort_y": 143,
       "sort_priority": 0,
       "frames": [
         "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png",
@@ -295,40 +278,40 @@
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
-      "light_index": 2,
+      "light_index": 3,
       "source_module": "wall_gem.green.0",
       "wall_gem_color": "green"
     },
     {
-      "id": "embedded_white",
+      "id": "microcrystal_white_0",
       "position": [
-        495,
-        122
+        388,
+        125
       ],
-      "sort_y": 143,
+      "sort_y": 139,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png",
-        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png",
-        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png",
-        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png",
-        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png",
-        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
-      "light_index": 3,
-      "source_module": "wall_gem.white.1",
+      "light_index": 4,
+      "source_module": "wall_gem.white.0",
       "wall_gem_color": "white"
     },
     {
-      "id": "embedded_orange",
+      "id": "microcrystal_orange_0",
       "position": [
-        579,
-        135
+        458,
+        137
       ],
-      "sort_y": 155,
+      "sort_y": 151,
       "sort_priority": 0,
       "frames": [
         "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png",
@@ -341,17 +324,17 @@
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
-      "light_index": 4,
+      "light_index": 5,
       "source_module": "wall_gem.orange.0",
       "wall_gem_color": "orange"
     },
     {
-      "id": "embedded_purple",
+      "id": "microcrystal_purple_1",
       "position": [
-        625,
-        127
+        524,
+        147
       ],
-      "sort_y": 148,
+      "sort_y": 161,
       "sort_priority": 0,
       "frames": [
         "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png",
@@ -364,9 +347,262 @@
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
-      "light_index": 5,
+      "light_index": 6,
       "source_module": "wall_gem.purple.1",
       "wall_gem_color": "purple"
+    },
+    {
+      "id": "microcrystal_blue_1",
+      "position": [
+        594,
+        146
+      ],
+      "sort_y": 160,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 7,
+      "source_module": "wall_gem.blue.1",
+      "wall_gem_color": "blue"
+    },
+    {
+      "id": "microcrystal_green_1",
+      "position": [
+        654,
+        143
+      ],
+      "sort_y": 157,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 8,
+      "source_module": "wall_gem.green.1",
+      "wall_gem_color": "green"
+    },
+    {
+      "id": "microcrystal_red_1",
+      "position": [
+        694,
+        150
+      ],
+      "sort_y": 164,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 9,
+      "source_module": "wall_gem.red.1",
+      "wall_gem_color": "red"
+    },
+    {
+      "id": "microcrystal_green_2",
+      "position": [
+        210,
+        126
+      ],
+      "sort_y": 142,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 10,
+      "source_module": "wall_gem.green.2",
+      "wall_gem_color": "green"
+    },
+    {
+      "id": "microcrystal_white_1",
+      "position": [
+        269,
+        109
+      ],
+      "sort_y": 123,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 11,
+      "source_module": "wall_gem.white.1",
+      "wall_gem_color": "white"
+    },
+    {
+      "id": "microcrystal_orange_1",
+      "position": [
+        324,
+        102
+      ],
+      "sort_y": 116,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 12,
+      "source_module": "wall_gem.orange.1",
+      "wall_gem_color": "orange"
+    },
+    {
+      "id": "microcrystal_purple_2",
+      "position": [
+        375,
+        100
+      ],
+      "sort_y": 116,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 13,
+      "source_module": "wall_gem.purple.2",
+      "wall_gem_color": "purple"
+    },
+    {
+      "id": "microcrystal_red_2",
+      "position": [
+        430,
+        105
+      ],
+      "sort_y": 121,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 14,
+      "source_module": "wall_gem.red.2",
+      "wall_gem_color": "red"
+    },
+    {
+      "id": "microcrystal_blue_2",
+      "position": [
+        485,
+        118
+      ],
+      "sort_y": 134,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 15,
+      "source_module": "wall_gem.blue.2",
+      "wall_gem_color": "blue"
+    },
+    {
+      "id": "microcrystal_orange_2",
+      "position": [
+        540,
+        127
+      ],
+      "sort_y": 143,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 16,
+      "source_module": "wall_gem.orange.2",
+      "wall_gem_color": "orange"
+    },
+    {
+      "id": "microcrystal_white_2",
+      "position": [
+        595,
+        118
+      ],
+      "sort_y": 134,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "light_index": 17,
+      "source_module": "wall_gem.white.2",
+      "wall_gem_color": "white"
     },
     {
       "id": "pool_reflection",
@@ -439,93 +675,273 @@
     "lights": [
       {
         "position": [
-          150,
-          249
-        ],
-        "color": [
-          245,
-          76,
-          65
-        ],
-        "radius": 160,
-        "phase": 0.0,
-        "entity_id": "embedded_red",
-        "gain": 0.9
-      },
-      {
-        "position": [
-          270,
-          195
-        ],
-        "color": [
-          66,
-          124,
-          250
-        ],
-        "radius": 185,
-        "phase": 0.18,
-        "entity_id": "embedded_blue",
-        "gain": 0.9
-      },
-      {
-        "position": [
-          355,
-          188
-        ],
-        "color": [
-          73,
-          222,
-          104
-        ],
-        "radius": 185,
-        "phase": 0.36,
-        "entity_id": "embedded_green",
-        "gain": 0.9
-      },
-      {
-        "position": [
-          520,
-          195
-        ],
-        "color": [
-          231,
-          235,
-          231
-        ],
-        "radius": 185,
-        "phase": 0.54,
-        "entity_id": "embedded_white",
-        "gain": 0.9
-      },
-      {
-        "position": [
-          600,
-          207
-        ],
-        "color": [
-          255,
-          139,
-          45
-        ],
-        "radius": 160,
-        "phase": 0.72,
-        "entity_id": "embedded_orange",
-        "gain": 0.9
-      },
-      {
-        "position": [
-          650,
-          200
+          145,
+          252
         ],
         "color": [
           183,
           103,
           239
         ],
-        "radius": 160,
-        "phase": 0.9,
-        "entity_id": "embedded_purple",
-        "gain": 0.9
+        "radius": 155,
+        "phase": 0.4,
+        "entity_id": "microcrystal_purple_0",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          210,
+          218
+        ],
+        "color": [
+          245,
+          76,
+          65
+        ],
+        "radius": 155,
+        "phase": 0.0,
+        "entity_id": "microcrystal_red_0",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          280,
+          192
+        ],
+        "color": [
+          66,
+          124,
+          250
+        ],
+        "radius": 155,
+        "phase": 0.08,
+        "entity_id": "microcrystal_blue_0",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          350,
+          190
+        ],
+        "color": [
+          73,
+          222,
+          104
+        ],
+        "radius": 155,
+        "phase": 0.16,
+        "entity_id": "microcrystal_green_0",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          420,
+          180
+        ],
+        "color": [
+          231,
+          235,
+          231
+        ],
+        "radius": 145,
+        "phase": 0.24,
+        "entity_id": "microcrystal_white_0",
+        "gain": 0.28
+      },
+      {
+        "position": [
+          490,
+          194
+        ],
+        "color": [
+          255,
+          139,
+          45
+        ],
+        "radius": 155,
+        "phase": 0.32,
+        "entity_id": "microcrystal_orange_0",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          560,
+          207
+        ],
+        "color": [
+          183,
+          103,
+          239
+        ],
+        "radius": 155,
+        "phase": 0.6,
+        "entity_id": "microcrystal_purple_1",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          630,
+          203
+        ],
+        "color": [
+          66,
+          124,
+          250
+        ],
+        "radius": 155,
+        "phase": 0.28,
+        "entity_id": "microcrystal_blue_1",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          690,
+          199
+        ],
+        "color": [
+          73,
+          222,
+          104
+        ],
+        "radius": 155,
+        "phase": 0.36,
+        "entity_id": "microcrystal_green_1",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          730,
+          212
+        ],
+        "color": [
+          245,
+          76,
+          65
+        ],
+        "radius": 155,
+        "phase": 0.2,
+        "entity_id": "microcrystal_red_1",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          250,
+          201
+        ],
+        "color": [
+          73,
+          222,
+          104
+        ],
+        "radius": 155,
+        "phase": 0.56,
+        "entity_id": "microcrystal_green_2",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          305,
+          186
+        ],
+        "color": [
+          231,
+          235,
+          231
+        ],
+        "radius": 145,
+        "phase": 0.44,
+        "entity_id": "microcrystal_white_1",
+        "gain": 0.28
+      },
+      {
+        "position": [
+          360,
+          187
+        ],
+        "color": [
+          255,
+          139,
+          45
+        ],
+        "radius": 155,
+        "phase": 0.52,
+        "entity_id": "microcrystal_orange_1",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          415,
+          180
+        ],
+        "color": [
+          183,
+          103,
+          239
+        ],
+        "radius": 155,
+        "phase": 0.8,
+        "entity_id": "microcrystal_purple_2",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          470,
+          194
+        ],
+        "color": [
+          245,
+          76,
+          65
+        ],
+        "radius": 155,
+        "phase": 0.4,
+        "entity_id": "microcrystal_red_2",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          525,
+          197
+        ],
+        "color": [
+          66,
+          124,
+          250
+        ],
+        "radius": 155,
+        "phase": 0.48,
+        "entity_id": "microcrystal_blue_2",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          580,
+          208
+        ],
+        "color": [
+          255,
+          139,
+          45
+        ],
+        "radius": 155,
+        "phase": 0.72,
+        "entity_id": "microcrystal_orange_2",
+        "gain": 0.38
+      },
+      {
+        "position": [
+          635,
+          202
+        ],
+        "color": [
+          231,
+          235,
+          231
+        ],
+        "radius": 145,
+        "phase": 0.64,
+        "entity_id": "microcrystal_white_2",
+        "gain": 0.28
       },
       {
         "position": [
@@ -544,120 +960,2419 @@
     "pulse_period_ms": 6000,
     "wall_gems": [
       {
-        "id": "embedded_red",
-        "entity_id": "embedded_red",
+        "id": "microcrystal_purple_0",
+        "entity_id": "microcrystal_purple_0",
+        "color": "purple",
+        "position": [
+          145,
+          203
+        ],
+        "light_position": [
+          145,
+          252
+        ],
+        "emission_bounds": [
+          116,
+          192,
+          57,
+          22
+        ],
+        "crystal_count": 24,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_red_0",
+        "entity_id": "microcrystal_red_0",
         "color": "red",
         "position": [
-          150,
-          197
+          210,
+          166
         ],
         "light_position": [
-          150,
-          249
+          210,
+          218
         ],
         "emission_bounds": [
-          142,
-          186,
-          17,
-          21
+          181,
+          155,
+          57,
+          22
+        ],
+        "crystal_count": 24,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ]
         ]
       },
       {
-        "id": "embedded_blue",
-        "entity_id": "embedded_blue",
+        "id": "microcrystal_blue_0",
+        "entity_id": "microcrystal_blue_0",
         "color": "blue",
         "position": [
-          270,
-          143
+          280,
+          145
         ],
         "light_position": [
-          270,
-          195
+          280,
+          192
         ],
         "emission_bounds": [
-          258,
-          133,
-          24,
-          19
+          251,
+          134,
+          57,
+          22
+        ],
+        "crystal_count": 24,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ]
         ]
       },
       {
-        "id": "embedded_green",
-        "entity_id": "embedded_green",
+        "id": "microcrystal_green_0",
+        "entity_id": "microcrystal_green_0",
         "color": "green",
         "position": [
-          355,
-          136
-        ],
-        "light_position": [
-          355,
-          188
-        ],
-        "emission_bounds": [
-          347,
-          125,
-          17,
-          21
-        ]
-      },
-      {
-        "id": "embedded_white",
-        "entity_id": "embedded_white",
-        "color": "white",
-        "position": [
-          520,
+          350,
           143
         ],
         "light_position": [
-          520,
-          195
+          350,
+          190
         ],
         "emission_bounds": [
-          508,
-          133,
-          24,
-          19
+          321,
+          132,
+          57,
+          22
+        ],
+        "crystal_count": 24,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ]
         ]
       },
       {
-        "id": "embedded_orange",
-        "entity_id": "embedded_orange",
-        "color": "orange",
+        "id": "microcrystal_white_0",
+        "entity_id": "microcrystal_white_0",
+        "color": "white",
         "position": [
-          600,
-          155
+          420,
+          139
         ],
         "light_position": [
-          600,
+          420,
+          180
+        ],
+        "emission_bounds": [
+          391,
+          128,
+          57,
+          22
+        ],
+        "crystal_count": 24,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_orange_0",
+        "entity_id": "microcrystal_orange_0",
+        "color": "orange",
+        "position": [
+          490,
+          151
+        ],
+        "light_position": [
+          490,
+          194
+        ],
+        "emission_bounds": [
+          461,
+          140,
+          57,
+          22
+        ],
+        "crystal_count": 24,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_purple_1",
+        "entity_id": "microcrystal_purple_1",
+        "color": "purple",
+        "position": [
+          560,
+          161
+        ],
+        "light_position": [
+          560,
           207
         ],
         "emission_bounds": [
-          592,
-          144,
-          17,
+          528,
+          150,
+          62,
           21
+        ],
+        "crystal_count": 28,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
         ]
       },
       {
-        "id": "embedded_purple",
-        "entity_id": "embedded_purple",
-        "color": "purple",
+        "id": "microcrystal_blue_1",
+        "entity_id": "microcrystal_blue_1",
+        "color": "blue",
         "position": [
-          650,
-          148
+          630,
+          160
         ],
         "light_position": [
-          650,
-          200
+          630,
+          203
         ],
         "emission_bounds": [
-          638,
-          138,
-          24,
-          19
+          598,
+          149,
+          62,
+          21
+        ],
+        "crystal_count": 28,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_green_1",
+        "entity_id": "microcrystal_green_1",
+        "color": "green",
+        "position": [
+          690,
+          157
+        ],
+        "light_position": [
+          690,
+          199
+        ],
+        "emission_bounds": [
+          658,
+          146,
+          62,
+          21
+        ],
+        "crystal_count": 28,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_red_1",
+        "entity_id": "microcrystal_red_1",
+        "color": "red",
+        "position": [
+          730,
+          164
+        ],
+        "light_position": [
+          730,
+          212
+        ],
+        "emission_bounds": [
+          698,
+          153,
+          62,
+          21
+        ],
+        "crystal_count": 28,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_green_2",
+        "entity_id": "microcrystal_green_2",
+        "color": "green",
+        "position": [
+          250,
+          142
+        ],
+        "light_position": [
+          250,
+          201
+        ],
+        "emission_bounds": [
+          215,
+          129,
+          69,
+          24
+        ],
+        "crystal_count": 32,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_white_1",
+        "entity_id": "microcrystal_white_1",
+        "color": "white",
+        "position": [
+          305,
+          123
+        ],
+        "light_position": [
+          305,
+          186
+        ],
+        "emission_bounds": [
+          273,
+          112,
+          62,
+          21
+        ],
+        "crystal_count": 28,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_orange_1",
+        "entity_id": "microcrystal_orange_1",
+        "color": "orange",
+        "position": [
+          360,
+          116
+        ],
+        "light_position": [
+          360,
+          187
+        ],
+        "emission_bounds": [
+          328,
+          105,
+          62,
+          21
+        ],
+        "crystal_count": 28,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_purple_2",
+        "entity_id": "microcrystal_purple_2",
+        "color": "purple",
+        "position": [
+          415,
+          116
+        ],
+        "light_position": [
+          415,
+          180
+        ],
+        "emission_bounds": [
+          380,
+          103,
+          69,
+          24
+        ],
+        "crystal_count": 32,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_red_2",
+        "entity_id": "microcrystal_red_2",
+        "color": "red",
+        "position": [
+          470,
+          121
+        ],
+        "light_position": [
+          470,
+          194
+        ],
+        "emission_bounds": [
+          435,
+          108,
+          69,
+          24
+        ],
+        "crystal_count": 32,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_blue_2",
+        "entity_id": "microcrystal_blue_2",
+        "color": "blue",
+        "position": [
+          525,
+          134
+        ],
+        "light_position": [
+          525,
+          197
+        ],
+        "emission_bounds": [
+          490,
+          121,
+          69,
+          24
+        ],
+        "crystal_count": 32,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_orange_2",
+        "entity_id": "microcrystal_orange_2",
+        "color": "orange",
+        "position": [
+          580,
+          143
+        ],
+        "light_position": [
+          580,
+          208
+        ],
+        "emission_bounds": [
+          545,
+          130,
+          69,
+          24
+        ],
+        "crystal_count": 32,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "id": "microcrystal_white_2",
+        "entity_id": "microcrystal_white_2",
+        "color": "white",
+        "position": [
+          635,
+          134
+        ],
+        "light_position": [
+          635,
+          202
+        ],
+        "emission_bounds": [
+          600,
+          121,
+          69,
+          24
+        ],
+        "crystal_count": 32,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
         ]
       }
     ],
+    "microcrystal_count": 504,
     "review_points": {
       "entrance_earth": [
         240,
@@ -863,13 +3578,6 @@
           ]
         },
         {
-          "id": "wall_flowstone:0",
-          "position": [
-            427,
-            202
-          ]
-        },
-        {
           "id": "western_stalagmites:0",
           "position": [
             115,
@@ -917,12 +3625,11 @@
     "tool": "tools/build_limestone_cave_chamber.py",
     "source_recipe": "assets/source/maps/limestone_cave_review/recipe.json",
     "source_sha256": {
-      "assets/source/maps/limestone_cave_review/recipe.json": "ab42be8126ad587e231046e430466869c07eb89cf048d149c179cb95263a0e8a",
+      "assets/source/maps/limestone_cave_review/recipe.json": "85ae5946a2637b091b0b403773d3a80c6739cd9a01cca59f2e0bb74cc7b1b670",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/modules/formation/boulder/0.png": "f569f64831fa397716f389678cb7716d96941ae6fa56ece872276e8f06bb3328",
       "assets/terrain/limestone_cave/modules/formation/broken_column/1.png": "d57812af159d52f3e5b6546141c2dc26f4dc1b08e8621a39ba865115a95c68d5",
-      "assets/terrain/limestone_cave/modules/formation/flowstone/1.png": "23ae1de01cfddf52d9e451f14c01aa3ea6af367e6c662b709adf979f9de81047",
       "assets/terrain/limestone_cave/modules/formation/pendants/1.png": "ea67e3072f688e1c230d7269d3998b20c2eb0ddb9c662cf861515fd20754ec7e",
       "assets/terrain/limestone_cave/modules/formation/stalagmites/0.png": "39d014e6fd4cc916650496a71e148ab6f0e4df88b81445b8b7b366994754f64c",
       "assets/terrain/limestone_cave/modules/formation/stalagmites/2.png": "a98870d829c13db4f4f211709b0bd899c3543edca5e3ff54ab5bed06d4ae0bd2",
@@ -938,7 +3645,6 @@
       "assets/terrain/limestone_cave/modules/wall/front/3.png": "19e8475e197c75ee89eeb92f048d1c6d8398841aca4e06145d3a88ff38c61656",
       "assets/terrain/limestone_cave/modules/wall/front/4.png": "4aa01ef48e997372353f5f0d0c528e70b21276fa5ebc8476a42e993dbf36758a",
       "assets/terrain/limestone_cave/modules/wall/front/5.png": "1032613873f9173388a6bfaadaa00672f21b03cb2dd1ebca4f8f95a353f4fb68",
-      "assets/terrain/limestone_cave/modules/wall/overhang/1.png": "3d303c4e4f55e36d8db49066b3a4e154b684d0536e39e1bcb4cfca1bbf092d68",
       "assets/terrain/limestone_cave/modules/wall/return_left/0.png": "ca29f76b9469ea718094d673cdd48f3f6341d5a8d79180bf72459f5164be507b",
       "assets/terrain/limestone_cave/modules/wall/return_right/1.png": "ba6a0f9bc4f310b7899957baade205d8787c4af645f4285fe395b1bf79d76181",
       "assets/terrain/limestone_cave/tiles/damp_00.png": "1644669d1221728752cd53232bb074134cb168f6ee58a18978fad4f8036fdd26",
@@ -973,43 +3679,115 @@
       "assets/terrain/limestone_cave/tiles/silt_01.png": "8c2b5857c993baa62719c573adc6324e15fcddb4708ddd39e370299950baecd3",
       "assets/terrain/limestone_cave/tiles/silt_02.png": "677bdb40136a03d495bf052069d64b42ba54c05e066b2f7849717c715400dd7c",
       "assets/terrain/limestone_cave/tiles/silt_03.png": "73c284e98cd206433853bcec12e19bd7a595c0ac5c952ab5085a415eafacbae6",
-      "assets/terrain/limestone_cave/wall_gems/assets.json": "428b3a48e91752db4df87535fab82c8b714ce6cdbf562309dd86682a894758a5",
-      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png": "fe6e725b197e5a378a8412c8b0af4fc0197b6477d29a79224c67cadff0ffe057",
-      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png": "9b28ed01a0dc4850443f0e9807483a0cde1421c419234ce4cbd0176b2a111d68",
-      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png": "bbcc14dcabd5ef1fd44580af3f56e20ae232dd4db87fb1c1cea44ab3d00845d2",
-      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png": "4899e23c5f3c2e6f5094e702acec4d6bcb760d9bbed00951aae171db4731cf23",
-      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png": "8a9916b972587fbcbe6ad15abf2fd46c1dee2be5a87dffabc636f4151e553e5d",
-      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png": "4cb20800d599cf8f79ba27706fce1c65df22e972c5ca66863d7ddf4571a1f871",
-      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png": "38308ed48d92f37d2642d0c8dc8767eb51f96d1d0abfebbb063b80a944463a47",
-      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_01.png": "6170676c069c8fd97c6e544f197004a769e3684a8b781ba6eeb6bcfa642e096e",
-      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_02.png": "4a672d657fbfe1b642bf6d2e75e98a99f6136adec3e2183d98d6fe883dd7148c",
-      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_03.png": "a13c08a62a9a6a3f85521b3d11cdb7ff4ee0d7ec7998ecd2d3dc64e2a6b91632",
-      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_04.png": "c76d43ff8b38e49c7c970ef4d6e3261b78b5e5793101d9bca4081a32011bd6c8",
-      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_05.png": "adb4067eb33dff1ca1d15b597aa2bec9045d77258003ccccf5b18b6f24df39b4",
-      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png": "e18157a10bf930f26495d025d942204d5b940e897ad5a679ef7f139a28195bd9",
-      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_01.png": "92776de56273c5beb1a4ef6bbf3426368da8ca25681faa8aef676c00d7f0788b",
-      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_02.png": "8630a8f3d8b3d5558364f89333bfa63fbca0467f82ce8c739524c51a089cbe22",
-      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_03.png": "bef94f940924921b325a723711e6d031f7dd173e1bbeffcb7de0587426b47843",
-      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_04.png": "af96b71fb5ca02c2957d78b259505fdcebc0437ea782090ef4bb038265df1b1e",
-      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_05.png": "9f923621fb0c51e934f45cf1f4236fd0a50a10ca7611fa57622670ba19c2ca2e",
-      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png": "499e5896e1de31ecd695e84b353ab4dc6551b6d9a1431346262c6318d0e6f401",
-      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_01.png": "309eb22b9150c741ce0b3c56723132874521ef0c53d9830377e1f9d67f2ff109",
-      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_02.png": "3295143dd1f1114950a2d76e88c9f13f21b4b5bd5909cf8458322941fede8fc5",
-      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_03.png": "45f9295aaf76dba410cc4fd99452e6c0c32b643828cf8728ac398853c1a162b7",
-      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_04.png": "fa4523422014b79f6fabd0181c1bb757d6f307a81ab2cb0437279e307bb031a9",
-      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_05.png": "19e4ea1799edc5d749fe8fa48cd32a48595dd9a34db3f5204ef3f8d21d39557a",
-      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png": "126e73d5a57a9cce6905e6adbbb5146107dbc581ed58374aa51ac19b5be4d0c3",
-      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_01.png": "23afe8627f2bbf2c0cf88b224652bdeae68c418abc5cf8ee55ec7766837d30ce",
-      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_02.png": "f149499f5ca150d4731d07aefa2920063f0cb7e390481127162e4497c337b360",
-      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_03.png": "e6ea5401b95993d477b6473e5243e895831e3649671e08fa14dca31d3398ea4e",
-      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_04.png": "0d7dc154f7c0d961bbab5adc74fe3716311f1020b13b9f504d43c1f6e67e4707",
-      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_05.png": "2c54fba7190939688d5a07abe8bcec0a1931d0bf224a9a413d41bdde8165a68d",
-      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png": "47cfbbcc5d9dcd80617c9c24c5e230db2f05804afcf05fd2c622433527723a76",
-      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png": "18780698086a9e19b5f2e4919313c76bd6764a723c36bc90e79508e4fe8fd92b",
-      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png": "293d9dfb053227d89f2097e19a978ab5baeddcb3fc9f5616801ea2a7a5c35b25",
-      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png": "a36c25cde4e693188f1af50df425ed77d8f2fa6fbc5e782d4fba971f01ba28cd",
-      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png": "2de3a63b0945082a22c3da7fcc480fcab09f810a62d96d9d509b9c526321ef0e",
-      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png": "ca84228a643c0f23e07eef551ada608dc00a3d827c4eb32c511cac50ed8cc375"
+      "assets/terrain/limestone_cave/wall_gems/assets.json": "3e206e020a28d049a9c40596d3e05c2aa9ca6106dd862685a2b38866b4e4589d",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_00.png": "b28b11113e07c8e24777d487f15220de7d636cbf983f461c35cb657a325bf886",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_01.png": "e689d02063ca073836fafa0b1a0fd0e8013aa37900e97f61096105d082eb03c3",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_02.png": "71ef143d6a2ac0f83e77b7c25e246267ef58203171a4190a3d71eca6578c44fa",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_03.png": "e50dd838b5bcd854e5c6e9fde9f075d673a71beb7e00bf1bc4678c1b1af429ed",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_04.png": "4b18a7305ded4baa9106b37c0e5473fc6f3d57d2a165501c825ec3480aa15fa5",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_05.png": "b8ab12da023728c77280e02451e26ba24a76f2dc4dd2e401380519b8076bc8c6",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png": "ae2dc90ac4a1918ecb6644c7a7124369f06e59d12971b20b8ae07469c64a6722",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png": "31d0810ff76c04fa14e741f185738aba1dbf8e3a9df1727f73bb9162b788db68",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png": "a32cfa33b867ac47cd446d6a9a81629c689e5eba9fc6b91a19f78dedff38ac2d",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png": "63b001b6f51c5ac1edcbb33c5f4a0a57c9b12b794c1c07123afb0ce64335edf7",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png": "507bdf24ed65de643493b2d57ef8fac9fc8a61bc7d0c44defb365a80467af9a4",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png": "8648c024991492ee05fb80c3709eb57dc39c558e138e73bae49ea4d979038e50",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_00.png": "1755a6f94a09b0cca4c9113c081ae89813064ee6ff3574c5a2a9b39b2ef08408",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_01.png": "4c73282e0c8883df4aa62deb5acbc7b00b4780117e8a80b2e3ec7ccb15e22802",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_02.png": "6319cc8d26d0368cef043138a82187930cab1d98cd0e471f8136e8094d85ec7b",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_03.png": "f188e997dd81b05a80cef198769c88558d4c299de96517327007e05c727b4aea",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_04.png": "723b8fbfd124883a11ba636ef0778c45cca1040f77db7f89957a9bed39403563",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_05.png": "9c0874901918619a6eac99194356e91ec23cf1fc699dd96c134901b9558f3da0",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png": "6c4e4a916a0eb1344edfff0d433061c041c04ba5ca79f0d47945637678b47e32",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_01.png": "02b794ce259b77b4f06b1a044db9620ebf939e7d5e9b9548b7c8dfc6fa4bc1b5",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_02.png": "abe58ced18ec208d6d1e2e3b4b37b693d76128603e38e9883625ed5149bc2406",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_03.png": "bbe41ae79943c5454b1b8f9702fdfafc7b9642d24fb3963972c61e380d3ef905",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_04.png": "7c9117f738189a869edc3e3130c36645fc220c9ec87e45f4903e9c74d9465e81",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_05.png": "b93b0b55d4ada6ebaa5dad595dc2c81ed33b08f013ad0be8e79ab35d932220d5",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_00.png": "ca94831978212d4d561e4754f3f6ed57faf779ccafc7637b14f72669b71b9ae6",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_01.png": "95ba32ddd8a472ac8b388e3a776016deedc28b85e8d6c5171060fd1eb0adab88",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_02.png": "6c7f16f6969a0269d2ce7cc1829cba210a1becfbb55929c660a6ee7540bdcbbf",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_03.png": "ff8b582bb8f4fa0e5fc29b499717174383428f7aae103985545b60bfdd9cdb02",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_04.png": "bf06c90ab1b00afb3ce3af8253f82fd4cf460c68a565579a1d76f0a8cd035a5c",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_05.png": "41cc967137234938372d5fa80ee3ac480c3ca5d160868d450d82faec3a507394",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_00.png": "af7ab97fc4b00097602da3fffc646d26079219eae25a9857fa8abf17709b642b",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_01.png": "3e1d411d1f2f640c0b1f3394c174cd67737c3d9518170b20951001e4191c054a",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_02.png": "c6473642dfd75793c458fbf8129e93bf8b67cdf6bb2f0df7fe1f41dd1fcf7795",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_03.png": "d82dfbdf44427cff1268abd97323dbb293857e445c6892caffc2ee570fd11886",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_04.png": "b0c89d11faec82c884f4511fda1aa1c4542a42720e1e5931611def7f3702292d",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_05.png": "4fcb13a90ee48f5735bacc04108997a4378708fd6f287264f645522dcdd41b44",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png": "e4c0f2e5bc04bb70d89ca55f2c92fc74acd7246ff041093809f99a0e9f0100d0",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_01.png": "04b0dfdd996bf10e24252b40288219141172c6bd8a831231840bb0ea713eb2fe",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_02.png": "9a7a7514a40e21ecd9712819b4c5ec7125c08f0c11c415d1458c1847d13d4707",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_03.png": "5e870158e74a911534712393f2f8a44e91fb507662fce8f15a4755fba423dbcf",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_04.png": "b7a2014dbadccb22fcc50a1f9c108b71477af2c4332314091f172c5c54197c75",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_05.png": "d2fadc47b550dc33186608cf7ec0d702174676c663ae2cf64ffbb507a97556dd",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_00.png": "89017a1e2a8d94c57b99800438f4470957736677110e159ca9fdbffe910ef000",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_01.png": "b6cd462cf0b5cab814319aa762b718383db421969cd4121cafcc269050919d59",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_02.png": "14c2240656af6dddf8de8e639bfc8431e87909f5dd7e28148e5716d76bf9be3c",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_03.png": "cb02ee8de593a45ce60025636bee2ad3709fc74e6c0490e30d1315dd835ae33d",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_04.png": "92b1649f060547db36e0e6f4eb338be494c3a61574fcd17e0e2cb5fb0918acd4",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_05.png": "ac9f6e4352bedb888f1b813a6bfb8fb296a9457bef591a7720eb0d2b78318ac3",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_00.png": "f7a72ac89f1941817d96bcc874e2e9fa8d3d6b54cce25d81a07be3bfde1e10f5",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_01.png": "e9467366a828d426f2b55ba3d7080eb26097dcd716aee564031cb8a4bac03165",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_02.png": "9ef3da2667b34ab5a4417d9a3ba3844a84c8cb8f6967d81d3823cba459abe7a4",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_03.png": "6e2f0e8537cd32b16f696440349cb46d2a2c656815da8f997674c996f0c09f55",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_04.png": "5d417e5c724fd4774dc0eddaec582b9cd6d757d63c2274c7bbd0c9a208d2645c",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_05.png": "d151006acbd5b1aa275ed19d3882cafdc1090fd03c8c5b9030fd8f547f5a07b4",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_00.png": "fbe335377b8e6d3b028932a2feb2d1dcdb737057802dcd7d08338dfd4da231e0",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_01.png": "5433695245ceef408ce4999fc6c538d7a3575a3476ccc6bb557aa00939de959e",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_02.png": "8f3ccfa0cf7bedbb3d30d9a09d74fb226674c112563344d9bdb7f2e90ef8c64a",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_03.png": "12a3f72c255f1253983fafdfd442c2c2b7b73e8dd2c70f97c690c2b4205d8382",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_04.png": "8bf69b8c32dc51f4a36653a7ecdfcc08af6831aaf411e0f9d2a72474d56d5309",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_05.png": "513eae0983a57109eb488ca830bedd27725cf2fd527ad39981b3499f93b6eb78",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png": "5d3f4fad1c6a7ccbb394178b090250b9afbfbbfc1e09a33a1c1c97860df36d64",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_01.png": "c302bfee94e76ead92a2f57656732e2271aab1103f06f58f664b200d3392b47f",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_02.png": "fe80e7e3a220f78a42f794da7f9e45ebb9ff9ed271472ddd4b575f3a7edd9fb8",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_03.png": "953b68571955cfaeba3016c61be3136c30f8b22467117ad7c506e37c0b433f00",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_04.png": "c22f1cce0838bfad24f5e8e2eb0322921578075665744846fd2b4bc132d1470a",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_05.png": "0f15e11295ade544c2b025770a50bfb02c446ce7551246d9f28181dbdbe53708",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_00.png": "9df8e96ee3b821fc25af754ac268570779dd4a2c0b182643b032e63bf08d9456",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_01.png": "68bab9e7ad138cc4abf544aff1f9ae49a5c416f92c15cde021bc56d48f7bb5e9",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_02.png": "48f09fcf377d19ed038cb68d7783f18ce327a1732c27561f0b7e9385e8259c91",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_03.png": "86dbc49e4e440b88fffdfdde55a987499f2b4c362cf2cd9c2e93a25229cc10ee",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_04.png": "6926cce0590367cff152a563f3952bf2068a8df292e149ad8e56d243f4b87e1e",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_05.png": "08bc23674a9d7a09b21335d94923e940a232a141bdbaecdc15fb3fcdc253c0c7",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png": "ddf0976b040ce349cca970115187f533305d04c3abfa2d943c302a74c981e7b5",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_01.png": "9ed98f2a58270fb796b07bdd18f1f5fd0dc80156f86463948adc5762389a98e2",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_02.png": "58eecb716a8f0c0d7c89b321a980e93519bfd338cdab03f5392a34ed1137c869",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_03.png": "034c606030b4743121482f973515d4434614c0580f2e1e5b69c9dffd6b91722b",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_04.png": "f076ba6624f18ad962a59e1d4e301a49ae043b70c35128a67d35c77dfe8944bc",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_05.png": "3f000f7e7450ce53eb9cc2b14f520393c1318858734e9fc4eadc534acfc6e823",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_00.png": "576327192ea04b344fe8a3b7cfa6a188a161b4dc79593a6f564e555847b999d5",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_01.png": "f68f73aba9bd4bfa297ee253cf132a7ebdaa39fde42ce313f9a6277d101f9fd5",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_02.png": "ba92c9f885c9bff1a7f0b253309b1e44a07f09e88673ffd1c4190b750046bae4",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_03.png": "d0b5cc9ee3ddcdc71cf92250004585d2c8d8a7fc454870362f64c5250e2874ee",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_04.png": "632ab1165b078a368b0eda71cb00a1983e3c75fb002bdc447eaa41b0820a8278",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_05.png": "9279332e580164324386ce763ac36bbbb680de885342e775a3b693155fa2109d",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_00.png": "dae64db93a94a498df72082cb4cf93becdf9e39a851a73f843d7707d15123dd5",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_01.png": "d0594b38fcee9a8d214103e6b36af404a582bf1f718f46908e8593c64a810a45",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_02.png": "0111c5649e46c59b877da1c459976fa72de560d8b9057f7429f49a52251f0148",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_03.png": "0590a80850d17ad3625301c712d7ee036ad1c4f90d16009a2b83d15eba738650",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_04.png": "b94a80680ff27be86196fad427413cd4884e2e052a0463262359ffa05567b109",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_05.png": "9d10b2011aad29d36e2e716537ba3a40027e10afab61bc2c7f487a4d059ac6b7",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_00.png": "c6e683346f3ca41518f083414eeb8a08bcc190bd3a55fe3cd6e3a47cf2c9afe5",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_01.png": "177807f589dce9d470cb0a0954cbe546da654081ee4cc2fd6c64bea2404fb502",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_02.png": "a2188526ff94c5ee3b2161e554188b73df66f9484ae41e87de323c9b9285e742",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_03.png": "e217977b5d8fc4191e84cb38dee2bcccb7e6bbb9dddaabeb20d379847c96dae2",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_04.png": "fb47c5483dee3dda633e825a1a0333f1871ccfded112439ee27a7d06b822ba0c",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_05.png": "e8a0868e3aca4ee62814d16dde073f95df8df02fded095b0008814720c56f656",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png": "c728b40821b1953bd0582d59530be92b12118f931c0d6dc8e3908aedf5d66875",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png": "b17ca83875be1b147c8c6d8c2968c8df90497c09b1280b477134981c37209f38",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png": "92a8c2876db3dbf816c1bcf2edbbea49b8dc6388a6bfa992fc81bfa73a5d979c",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png": "7c19ed64a37cfc00ecb5c205f42b0e3efb5a86a59857729fcf2d46258a38ac24",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png": "bbd47debb169ffb77314df6e1e7118d1b65a572b50dacba432b52ddee015a0b4",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png": "d2dc50a0080a6ca0edd5a135b71d9e5e326261b0d62e9f01d06d56caddad9dbb",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_00.png": "9c0dc4b1e894c0cef2bcf8ae54c99dc03b24847790811a9c64cabd7376c07fd7",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_01.png": "55450b60adf29c20856999253589b848593a059472c4e3d79596281610e40465",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_02.png": "fc979e9b5254acf2de0e761b26c522e13125e372ca9953279557f4f06fab6131",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_03.png": "60a24122afd16601d50f7be312aacdbe730d4495e3c8ff0f4f2e8e90609ac24a",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_04.png": "d0dab3b2fc7cf79405ebc489a81e4756fab6a891a390ca755387cd0a6e34b885",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_05.png": "23c6c2eac42b0ffb812650fc12eedbeeb29f6262de71662eb99a9ef7889ea451"
     }
   }
 }

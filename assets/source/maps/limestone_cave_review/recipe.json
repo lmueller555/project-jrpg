@@ -603,14 +603,6 @@
       ]
     },
     {
-      "id": "wall_flowstone",
-      "module": "formation.flowstone.1",
-      "position": [
-        427,
-        206
-      ]
-    },
-    {
       "id": "western_stalagmites",
       "module": "formation.stalagmites.0",
       "position": [
@@ -630,8 +622,8 @@
       "id": "ceiling_pendants",
       "module": "formation.pendants.1",
       "position": [
-        200,
-        245
+        125,
+        305
       ],
       "foreground": true
     }
@@ -651,14 +643,6 @@
       "position": [
         783,
         296
-      ]
-    },
-    {
-      "id": "flowstone_overhang",
-      "module": "wall.overhang.1",
-      "position": [
-        450,
-        175
       ]
     }
   ],
@@ -924,100 +908,303 @@
   "wall_gem_manifest": "assets/terrain/limestone_cave/wall_gems/assets.json",
   "wall_gems": [
     {
-      "id": "embedded_red",
+      "id": "microcrystal_purple_0",
+      "module": "wall_gem.purple.0",
+      "color": "purple",
+      "position": [
+        145,
+        203
+      ],
+      "light_position": [
+        145,
+        252
+      ],
+      "radius": 155,
+      "phase": 0.4,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_red_0",
       "module": "wall_gem.red.0",
       "color": "red",
       "position": [
-        150,
-        197
+        210,
+        166
       ],
       "light_position": [
-        150,
-        249
+        210,
+        218
       ],
-      "radius": 160,
+      "radius": 155,
       "phase": 0.0,
-      "gain": 0.9
+      "gain": 0.38
     },
     {
-      "id": "embedded_blue",
-      "module": "wall_gem.blue.1",
+      "id": "microcrystal_blue_0",
+      "module": "wall_gem.blue.0",
       "color": "blue",
       "position": [
-        270,
-        143
+        280,
+        145
       ],
       "light_position": [
-        270,
-        195
+        280,
+        192
       ],
-      "radius": 185,
-      "phase": 0.18,
-      "gain": 0.9
+      "radius": 155,
+      "phase": 0.08,
+      "gain": 0.38
     },
     {
-      "id": "embedded_green",
+      "id": "microcrystal_green_0",
       "module": "wall_gem.green.0",
       "color": "green",
       "position": [
-        355,
-        136
-      ],
-      "light_position": [
-        355,
-        188
-      ],
-      "radius": 185,
-      "phase": 0.36,
-      "gain": 0.9
-    },
-    {
-      "id": "embedded_white",
-      "module": "wall_gem.white.1",
-      "color": "white",
-      "position": [
-        520,
+        350,
         143
       ],
       "light_position": [
-        520,
-        195
+        350,
+        190
       ],
-      "radius": 185,
-      "phase": 0.54,
-      "gain": 0.9
+      "radius": 155,
+      "phase": 0.16,
+      "gain": 0.38
     },
     {
-      "id": "embedded_orange",
+      "id": "microcrystal_white_0",
+      "module": "wall_gem.white.0",
+      "color": "white",
+      "position": [
+        420,
+        139
+      ],
+      "light_position": [
+        420,
+        180
+      ],
+      "radius": 145,
+      "phase": 0.24,
+      "gain": 0.28
+    },
+    {
+      "id": "microcrystal_orange_0",
       "module": "wall_gem.orange.0",
       "color": "orange",
       "position": [
-        600,
-        155
+        490,
+        151
       ],
       "light_position": [
-        600,
-        207
+        490,
+        194
       ],
-      "radius": 160,
-      "phase": 0.72,
-      "gain": 0.9
+      "radius": 155,
+      "phase": 0.32,
+      "gain": 0.38
     },
     {
-      "id": "embedded_purple",
+      "id": "microcrystal_purple_1",
       "module": "wall_gem.purple.1",
       "color": "purple",
       "position": [
-        650,
-        148
+        560,
+        161
       ],
       "light_position": [
-        650,
-        200
+        560,
+        207
       ],
-      "radius": 160,
-      "phase": 0.9,
-      "gain": 0.9
+      "radius": 155,
+      "phase": 0.6,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_blue_1",
+      "module": "wall_gem.blue.1",
+      "color": "blue",
+      "position": [
+        630,
+        160
+      ],
+      "light_position": [
+        630,
+        203
+      ],
+      "radius": 155,
+      "phase": 0.28,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_green_1",
+      "module": "wall_gem.green.1",
+      "color": "green",
+      "position": [
+        690,
+        157
+      ],
+      "light_position": [
+        690,
+        199
+      ],
+      "radius": 155,
+      "phase": 0.36,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_red_1",
+      "module": "wall_gem.red.1",
+      "color": "red",
+      "position": [
+        730,
+        164
+      ],
+      "light_position": [
+        730,
+        212
+      ],
+      "radius": 155,
+      "phase": 0.2,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_green_2",
+      "module": "wall_gem.green.2",
+      "color": "green",
+      "position": [
+        250,
+        142
+      ],
+      "light_position": [
+        250,
+        201
+      ],
+      "radius": 155,
+      "phase": 0.56,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_white_1",
+      "module": "wall_gem.white.1",
+      "color": "white",
+      "position": [
+        305,
+        123
+      ],
+      "light_position": [
+        305,
+        186
+      ],
+      "radius": 145,
+      "phase": 0.44,
+      "gain": 0.28
+    },
+    {
+      "id": "microcrystal_orange_1",
+      "module": "wall_gem.orange.1",
+      "color": "orange",
+      "position": [
+        360,
+        116
+      ],
+      "light_position": [
+        360,
+        187
+      ],
+      "radius": 155,
+      "phase": 0.52,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_purple_2",
+      "module": "wall_gem.purple.2",
+      "color": "purple",
+      "position": [
+        415,
+        116
+      ],
+      "light_position": [
+        415,
+        180
+      ],
+      "radius": 155,
+      "phase": 0.8,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_red_2",
+      "module": "wall_gem.red.2",
+      "color": "red",
+      "position": [
+        470,
+        121
+      ],
+      "light_position": [
+        470,
+        194
+      ],
+      "radius": 155,
+      "phase": 0.4,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_blue_2",
+      "module": "wall_gem.blue.2",
+      "color": "blue",
+      "position": [
+        525,
+        134
+      ],
+      "light_position": [
+        525,
+        197
+      ],
+      "radius": 155,
+      "phase": 0.48,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_orange_2",
+      "module": "wall_gem.orange.2",
+      "color": "orange",
+      "position": [
+        580,
+        143
+      ],
+      "light_position": [
+        580,
+        208
+      ],
+      "radius": 155,
+      "phase": 0.72,
+      "gain": 0.38
+    },
+    {
+      "id": "microcrystal_white_2",
+      "module": "wall_gem.white.2",
+      "color": "white",
+      "position": [
+        635,
+        134
+      ],
+      "light_position": [
+        635,
+        202
+      ],
+      "radius": 145,
+      "phase": 0.64,
+      "gain": 0.28
     }
-  ]
+  ],
+  "wall_crystal_style": {
+    "representation": "embedded_microcrystal_seams",
+    "typical_native_grain_size": [
+      2,
+      3
+    ],
+    "maximum_native_grain_size": [
+      4,
+      5
+    ]
+  }
 }

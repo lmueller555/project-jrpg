@@ -121,7 +121,11 @@ def check(output):
     assert report['pulse']['max_mean'] > report['pulse']['min_mean']
     assert {gem['color'] for gem in report['wall_gems']} == {
         'red', 'blue', 'green', 'white', 'orange', 'purple'}
-    print('Limestone chamber movement, six wall-gem colors, pulse, static mode, isolation and review fingerprints verified.')
+    assert report['microcrystals']['total'] >= 250
+    assert report['microcrystals']['fields'] >= 12
+    assert report['microcrystals']['max_width'] <= 4
+    assert report['microcrystals']['max_height'] <= 5
+    print('Limestone chamber movement, six microcrystal colors, pulse, static mode, isolation and review fingerprints verified.')
 
 
 def capture(output, movie_enabled=True):
@@ -239,23 +243,67 @@ def capture(output, movie_enabled=True):
         gem_records = demo.world.data['cave'].get('wall_gems', [])
         if gem_records:
             colors = ('red', 'blue', 'green', 'white', 'orange', 'purple')
-            board = Image.new('RGB', (984, 450), '#202925')
+            manifest = json.loads((ROOT/'assets/terrain/limestone_cave/wall_gems/assets.json').read_text())
+            counts = {color:0 for color in colors};sizes=[]
+            for field in gem_records:
+                entity = next(record for record in demo.world.entities
+                              if record['id'] == field.get('entity_id', field['id']))
+                module = manifest['modules'][entity['source_module']]
+                counts[field['color']] += module['crystal_count']
+                sizes.extend(module['crystal_sizes'])
+            report['microcrystals'] = {
+                'fields':len(gem_records), 'total':sum(counts.values()),
+                'by_color':counts, 'max_width':max(size[0] for size in sizes),
+                'max_height':max(size[1] for size in sizes),
+                'source':'Authored microfacet rectangles in the placed production modules'}
+            board = Image.new('RGB', (984, 600), '#202925')
             draw = ImageDraw.Draw(board);font = ImageFont.load_default(size=16)
-            draw.text((16, 10), 'Embedded wall gems / production renderer / 3x native pixels',
+            draw.text((16, 10), 'Wall microcrystal seams / production renderer / all art enlarged exactly 3x',
                       fill='#eee6cf', font=font)
             gem_views = []
+            def detail_score(gem):
+                entity = next(record for record in demo.world.entities
+                              if record['id'] == gem.get('entity_id', gem['id']))
+                # A representative detail should show the seam rather than
+                # the tunnel or hanging stone which correctly occludes it.
+                overlaps = [entity['rect'].clip(record['rect'])
+                            for record in demo.world.entities
+                            if record.get('light_index') is None
+                            and record['sort_y'] > entity['sort_y']]
+                hidden = sum(rect.width*rect.height for rect in overlaps)
+                return hidden, abs(entity['rect'].centerx-demo.world.size[0]/2)
             for index, color in enumerate(colors):
-                gem = next(record for record in gem_records if record['color'] == color)
+                candidates = [record for record in gem_records if record['color'] == color]
+                gem = min(candidates, key=detail_score)
                 entity = next(record for record in demo.world.entities
                               if record['id'] == gem.get('entity_id', gem['id']))
                 rect = entity['rect']
                 box = (rect.centerx-50, rect.centery-28, rect.centerx+50, rect.centery+28)
                 detail = overview.crop(box).resize((300,168), Image.Resampling.NEAREST)
                 x = 12+index%3*324;y = 44+index//3*201
-                draw.text((x+4,y), color.title(), fill='#eee6cf', font=font)
+                draw.text((x+4,y), color.title()+f' / {counts[color]} grains in chamber',
+                          fill='#eee6cf', font=font)
                 board.paste(detail, (x,y+23))
                 gem_views.append({'id':gem['id'], 'color':color,
+                                  'color_grain_count':counts[color],
                                   'world_crop':list(box), 'source':'Stitched production World.draw'})
+            # Caelan shares the exact enlargement of the wall crops. The
+            # picture therefore makes the grain size judgeable without
+            # inflating the tiny crystal facets into decorative gem icons.
+            with Image.open(ROOT/'assets/characters/caelan/idle_front.png') as source:
+                character = source.convert('RGBA')
+            character = character.resize((character.width*3, character.height*3),
+                                         Image.Resampling.NEAREST)
+            board.paste(character, (880, 478), character)
+            draw.text((16, 476), 'Tiny facets follow fissures and uneven mineral seams.',
+                      fill='#eee6cf', font=font)
+            draw.text((16, 504), 'Caelan and every wall sample use the same 3x enlargement.',
+                      fill='#cbd5ca', font=font)
+            draw.text((16, 532), f"{report['microcrystals']['total']} embedded grains; most facets are 2 x 3 native pixels.",
+                      fill='#cbd5ca', font=font)
+            draw.text((16, 558), 'No individual facet exceeds 4 x 5 native pixels.',
+                      fill='#cbd5ca', font=font)
+            draw.text((868, 578), 'Caelan / scale', fill='#eee6cf', font=font)
             board.save(output/'embedded_wall_gems.png')
             artifacts.append('embedded_wall_gems.png')
             report['wall_gems'] = gem_views

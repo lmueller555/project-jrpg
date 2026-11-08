@@ -39,6 +39,28 @@ def clear_segment(world, first, last):
                for i in range(count+1))
 
 
+def pixel_components(mask):
+    """Measure the actual eight-connected mineral pixels, not sprite canvases."""
+    pending = {tuple(point) for point in np.argwhere(mask)}
+    components = []
+    while pending:
+        start = pending.pop()
+        queue = [start]
+        points = [start]
+        while queue:
+            y, x = queue.pop()
+            for dy in (-1, 0, 1):
+                for dx in (-1, 0, 1):
+                    other = y+dy, x+dx
+                    if other in pending:
+                        pending.remove(other)
+                        queue.append(other)
+                        points.append(other)
+        ys, xs = zip(*points)
+        components.append((min(xs), min(ys), max(xs)-min(xs)+1, max(ys)-min(ys)+1))
+    return components
+
+
 class LimestoneCaveReviewTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -87,22 +109,26 @@ class LimestoneCaveReviewTests(unittest.TestCase):
         for path, expected in self.world.data['build']['source_sha256'].items():
             self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
 
-    def test_six_gem_colors_are_recessed_in_walls_and_light_the_exposed_floor(self):
-        """A floor obstacle with a gem sprite cannot satisfy embedded wall art."""
+    def test_hundreds_of_microcrystals_are_recessed_in_walls_and_light_the_floor(self):
+        """Shrinking six icons cannot substitute for mineral-rich cave walls."""
         spec = json.loads(CHAMBER_SOURCE.read_text())
         floor = Image.new('L', self.world.size)
         ImageDraw.Draw(floor).polygon([tuple(point) for point in spec['floor_outline']], fill=255)
         entities = [record for record in self.world.data['entities'] if 'light_index' in record]
-        self.assertTrue(entities)
+        self.assertGreaterEqual(len(entities), 12, 'The walls need many irregular mineral seams')
         present = set()
+        color_patches = {color: 0 for color in GEM_COLORS}
+        total_crystals = 0
         for entity in entities:
             with self.subTest(gem=entity['id']):
                 name = entity['source_module']
                 self.assertTrue(name.startswith('wall_gem.'),
-                                'Standing crystal clusters must be replaced by wall gems')
+                                'Standing crystal clusters must be replaced by wall microcrystals')
                 module = self.wall_gems['modules'][name]
                 color = module['gem_color']
                 present.add(color)
+                color_patches[color] += 1
+                total_crystals += module['crystal_count']
                 self.assertIn(color, GEM_COLORS)
                 self.assertFalse(module.get('footprints'))
                 self.assertFalse(entity.get('footprint') or entity.get('footprints'),
@@ -112,10 +138,10 @@ class LimestoneCaveReviewTests(unittest.TestCase):
                 anchor = x+ax, y+ay
                 self.assertEqual(floor.getpixel(anchor), 0, 'Gem anchor is on open floor')
                 self.assertEqual(self.world.blocked.get_at(anchor), 1)
-                bx, by, width, height = module['emission_bounds']
-                core = floor.crop((x+bx, y+by, x+bx+width, y+by+height))
-                self.assertLess(np.count_nonzero(np.array(core))/core.width/core.height, .1,
-                                'The gem body projects onto the traversable floor')
+                for bx, by, width, height in module['core_components']:
+                    core = floor.crop((x+bx, y+by, x+bx+width, y+by+height))
+                    self.assertFalse(np.any(np.array(core)),
+                                     'A microcrystal projects onto the traversable floor')
                 source = self.world.data['cave']['lights'][entity['light_index']]
                 self.assertEqual(source['color'], module['color'])
                 red, green, blue = source['color']
@@ -135,8 +161,13 @@ class LimestoneCaveReviewTests(unittest.TestCase):
                                  'Wall light must have an exposed floor root')
                 self.assertEqual(self.world.blocked.get_at(tuple(source['position'])), 0)
         self.assertEqual(present, GEM_COLORS)
+        self.assertTrue(all(count >= 2 for count in color_patches.values()),
+                        'Each color needs scattered seams, not one isolated gemstone')
+        self.assertGreaterEqual(total_crystals, 250,
+                                'The chamber needs hundreds of embedded microcrystals')
+        self.assertEqual(self.world.data['cave']['microcrystal_count'], total_crystals)
 
-    def test_wall_gem_pulse_brightens_facets_without_moving_the_stone_or_silhouette(self):
+    def test_microcrystals_stay_tiny_and_separate_while_brightness_pulses(self):
         families = set()
         for name, module in self.wall_gems['modules'].items():
             with self.subTest(module=name):
@@ -149,22 +180,52 @@ class LimestoneCaveReviewTests(unittest.TestCase):
                 alpha = frames[0][:, :, 3]
                 self.assertTrue(set(np.unique(alpha)) <= {0, 255})
                 self.assertTrue(np.any(alpha), 'Gem module cannot be transparent')
+                self.assertLess(np.count_nonzero(alpha)/alpha.size, .35,
+                                'A mineral seam should preserve the actual wall beneath it')
                 for frame in frames[1:]:
                     self.assertTrue(np.array_equal(alpha, frame[:, :, 3]),
                                     'Pulsing changes the rock silhouette')
-                x, y, width, height = module['emission_bounds']
-                self.assertTrue(0 <= x < x+width <= module['size'][0])
-                self.assertTrue(0 <= y < y+height <= module['size'][1])
+                rects = module['core_components']
+                self.assertEqual(module['crystal_count'], len(rects))
+                self.assertGreaterEqual(len(rects), 15)
+                self.assertLessEqual(len(rects), 35)
                 core = np.zeros(alpha.shape, dtype=bool)
-                core[y:y+height, x:x+width] = True
-                mineral = core & (alpha > 0)
+                small = 0
+                for x, y, width, height in rects:
+                    self.assertTrue(0 <= x < x+width <= module['size'][0])
+                    self.assertTrue(0 <= y < y+height <= module['size'][1])
+                    self.assertTrue(1 <= width <= 4 and 1 <= height <= 5,
+                                    'An individual microcrystal exceeds the native pixel scale')
+                    small += width <= 3 and height <= 3
+                    core[y:y+height, x:x+width] = True
+                self.assertGreaterEqual(small, len(rects)*.5,
+                                        'Most facets should be only a few native pixels')
+                # Animated pixels isolate the mineral from fixed crevices and
+                # lips. Measure their real exported shape to catch a large gem
+                # hidden behind misleading crystal-count metadata.
+                mineral = np.any(np.stack([frame[:, :, :3] != frames[0][:, :, :3]
+                                          for frame in frames[1:]]), axis=(0, 3)) & (alpha > 0)
                 self.assertTrue(mineral.any())
+                self.assertFalse(np.any(mineral & ~core), 'A facet escaped its declared native bounds')
+                components = pixel_components(mineral)
+                self.assertEqual(len(components), len(rects),
+                                 'Grains disappeared or merged into a larger gemstone')
+                for x, y, width, height in components:
+                    self.assertLessEqual(width, 4)
+                    self.assertLessEqual(height, 5)
+                # A straight row of equally spaced icons would still read as
+                # placed jewels. Real seams need a varied vertical spread and
+                # irregular grain spacing within the unchanged wall.
+                centers = [(x+width/2, y+height/2) for x, y, width, height in rects]
+                self.assertGreaterEqual(len({y for x, y in centers}), 5)
+                gaps = np.diff(sorted({x for x, y in centers}))
+                self.assertGreaterEqual(len(set(gaps)), 3)
                 brightness = [frame[:, :, :3][mineral].mean() for frame in frames]
                 self.assertGreater(brightness[-1], brightness[0]+5,
                                    'A facet shimmer alone is not a brightness pulse')
                 for first, last in zip(brightness, brightness[1:]):
                     self.assertGreaterEqual(last, first-.1)
-                stone = ~core & (alpha > 0)
+                stone = ~mineral & (alpha > 0)
                 for frame in frames[1:]:
                     self.assertTrue(np.array_equal(frames[0][stone], frame[stone]),
                                     'Surrounding limestone changes independently of world light')
@@ -280,6 +341,11 @@ class LimestoneCaveReviewTests(unittest.TestCase):
         self.assertTrue(report['ordinary_movement_only'])
         self.assertTrue(report['no_save_or_settings_files'])
         self.assertTrue(report['walking_seen'] and report['running_seen'])
+        self.assertGreaterEqual(report['microcrystals']['total'], 250)
+        self.assertEqual(report['microcrystals']['total'],
+                         self.world.data['cave']['microcrystal_count'])
+        self.assertLessEqual(report['microcrystals']['max_width'], 4)
+        self.assertLessEqual(report['microcrystals']['max_height'], 5)
         check(REVIEW)
 
 

@@ -5,14 +5,18 @@ the live cave and is not merged into main.**
 
 The review develops the Sanctuary's existing natural stone into a cave pack:
 neutral grey and taupe limestone, pale calcite edges, damp teal staining and
-irregular mineral strata. Red, blue, green, white, orange and purple gems sit
-inside chipped recesses in the cave walls. Their facets pulse with the colored
-light cast across the surrounding stone and floor. The gems are embedded
-minerals rather than standing crystal clusters on the ground.
+irregular mineral strata. Numerous tiny red, blue, green, white, orange and
+purple microcrystals are embedded in irregular seams throughout the cave walls.
+Individual facets remain only a few native pixels across, with small dense
+pockets and scattered grains along the fissures. Their pulse casts colored
+light across the surrounding stone and floor.
+The current chamber uses 18 seam fields containing 504 individual grains,
+84 of each color. Most grains are 2 × 3 native pixels and the largest is 4 × 5,
+compared with Caelan's roughly 34-pixel visible height.
 
 The pack contains dry limestone, damp stone, gravel and silt, larger material
 patches, natural wall faces and returns, erosion pockets, overhangs, wet shores,
-gem recesses and varied formations. Its 24-pixel grid and character scale
+mineral seams and varied formations. Its 24-pixel grid and character scale
 match the Sanctuary and Eldenmere. Keeper paving is a restrained trace of care
 within the natural chamber.
 
@@ -47,10 +51,10 @@ story remain unchanged while this material direction is reviewed.
 The authoritative pack recipe is
 `assets/source/terrain/limestone_cave/recipe.json`; the chamber recipe is
 `assets/source/maps/limestone_cave_review/recipe.json`.
-The embedded gem supplement has its own authoritative recipe at
+The embedded microcrystal supplement has its own authoritative recipe at
 `assets/source/terrain/limestone_cave/wall_gems.json`.
 The exported pack manifest records native module sizes, anchors, footprints
-and source provenance. Both builders support deterministic read-only checks.
+and source provenance. The builders support deterministic read-only checks.
 
 ```sh
 python tools/build_limestone_cave_assets.py
@@ -72,5 +76,7 @@ chamber, material comparison, pulse and walkthrough. The
 compares the proposed modules with the regional stone sources and Caelan.
 The [regional comparison](../assets/terrain/limestone_cave/regional_comparison.png)
 places the new limestone alongside the approved Sanctuary and Eldenmere stone.
-The [embedded gem board](../assets/terrain/limestone_cave/wall_gems/colors_review.png)
-shows the six requested colors and their native sprite variants.
+The [microcrystal board](../assets/terrain/limestone_cave/wall_gems/colors_review.png)
+shows the six requested colors and their native seam variants. The
+[production scale study](reviews/limestone_cave/embedded_wall_gems.png) compares
+the grains with Caelan at the same enlargement.
