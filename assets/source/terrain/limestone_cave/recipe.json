@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.24",
+  "tile_size": 24,
+  "seed": 82516,
+  "status": "review",
+  "approval_status": "pending_review",
+  "source_assets": [
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png",
+    "assets/terrain/eldenmere/terraces/palette.json"
+  ],
+  "palette": {
+    "limestone": ["#444b49", "#5c635b", "#72776a", "#898b7a", "#a0a08a", "#b5b29a", "#cbc5ae", "#dfd6bd"],
+    "dry": ["#717468", "#858778", "#969685", "#a4a38f", "#b4b19a"],
+    "damp": ["#475e5b", "#5a706a", "#6b8076", "#7b8e81", "#98a18e"],
+    "gravel": ["#66695f", "#7a7c6e", "#8d8e7d", "#a2a08b", "#bbb59c"],
+    "silt": ["#696b5d", "#7d7c68", "#908c75", "#a59d82", "#b9ae91"],
+    "calcite": "#d4cdb6",
+    "mineral_mauve": "#9b8b91",
+    "wet_edge": "#667f77",
+    "deep_joint": "#354641"
+  },
+  "materials": {"dry": 12, "damp": 8, "gravel": 8, "silt": 4},
+  "wall_variants": 6,
+  "formation_variants": 3,
+  "notes": "Native source texture sampling, neutral limestone ramps and newly authored organic geological silhouettes. No source sprite resampling. Crystal colors and emission are separate. Walls are geological layers, never regular masonry blocks."
+}

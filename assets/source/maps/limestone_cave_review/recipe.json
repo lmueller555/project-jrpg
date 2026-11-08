@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "id": "limestone_cave_review",
+  "name": "Limestone Cave — Material Review",
+  "asset_manifest": "assets/terrain/limestone_cave/assets.json",
+  "crystal_manifest": "assets/terrain/sanctuary_fantasy/crystals/assets.json",
+  "size_tiles": [36, 26],
+  "tile_size": 24,
+  "seed": 78163,
+  "spawn": [240, 510],
+  "floor_outline": [[99,515],[79,475],[73,421],[84,377],[78,326],[86,282],[110,248],[148,226],[185,211],[220,187],[263,172],[306,161],[346,167],[389,153],[432,157],[471,170],[511,168],[551,182],[594,184],[631,178],[672,172],[714,179],[749,198],[773,232],[787,273],[803,313],[791,353],[799,398],[781,439],[754,474],[713,498],[672,511],[632,530],[588,542],[544,553],[499,550],[453,560],[410,563],[367,554],[324,562],[282,553],[240,557],[201,547],[157,550],[126,535]],
+  "materials": {
+    "base": "dry",
+    "blend_radius": 9,
+    "patches": [
+      {"material":"silt","polygon":[[100,470],[150,431],[218,442],[281,482],[314,559],[157,570],[101,531]]},
+      {"material":"gravel","polygon":[[97,283],[148,248],[213,241],[281,258],[300,294],[263,320],[215,303],[163,317],[107,330]]},
+      {"material":"damp","polygon":[[437,284],[479,248],[547,251],[596,265],[654,256],[718,283],[753,334],[747,394],[715,449],[664,475],[601,466],[542,484],[480,456],[454,419],[434,361]]},
+      {"material":"silt","polygon":[[630,424],[697,401],[755,424],[769,456],[722,495],[663,511],[611,488]]},
+      {"material":"gravel","polygon":[[346,486],[386,461],[437,474],[454,520],[426,559],[375,556],[344,528]]}
+    ]
+  },
+  "geology_patches": [
+    {"module":"patch.dry.0","position":[285,296]},
+    {"module":"patch.dry.1","position":[420,217]},
+    {"module":"patch.gravel.1","position":[128,283]},
+    {"module":"patch.damp.1","position":[473,422]},
+    {"module":"patch.silt.0","position":[682,471]}
+  ],
+  "pool": {
+    "center": [605,350],
+    "radii": [100,62],
+    "outline": [[512,329],[521,312],[543,300],[570,292],[601,289],[629,295],[657,301],[684,314],[699,333],[704,354],[692,373],[673,390],[645,403],[613,411],[583,407],[556,397],[532,384],[516,363],[506,346]],
+    "deep": [[537,333],[555,316],[580,312],[610,307],[641,319],[669,329],[680,347],[667,365],[641,383],[611,391],[580,386],[556,375],[543,359]]
+  },
+  "formations": [
+    {"id":"eroded_column","module":"formation.broken_column.1","position":[355,403]},
+    {"id":"small_boulders","module":"formation.boulder.0","position":[150,366]},
+    {"id":"wall_flowstone","module":"formation.flowstone.1","position":[427,206]},
+    {"id":"western_stalagmites","module":"formation.stalagmites.0","position":[115,461]},
+    {"id":"eastern_stalagmites","module":"formation.stalagmites.2","position":[752,414]},
+    {"id":"ceiling_pendants","module":"formation.pendants.1","position":[265,230],"foreground":true}
+  ],
+  "wall_details": [
+    {"id":"west_return","module":"wall.return_left.0","position":[106,285]},
+    {"id":"east_return","module":"wall.return_right.1","position":[783,296]},
+    {"id":"flowstone_overhang","module":"wall.overhang.1","position":[490,175]}
+  ],
+  "tunnel": {"module":"tunnel.north","position":[715,217]},
+  "keeper_paving": {"image":"assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png","positions":[[674,258],[704,268],[686,283]]},
+  "crystals": [
+    {"id":"entrance_amethyst","module":"crystal.small_fan.amethyst","position":[194,480],"light_position":[210,490],"radius":145,"phase":0.0},
+    {"id":"western_cyan","module":"crystal.medium_fan.cyan","position":[203,252],"light_position":[220,273],"radius":180,"phase":0.15},
+    {"id":"central_opal","module":"crystal.small_fan.opal","position":[368,221],"light_position":[368,240],"radius":150,"phase":0.3},
+    {"id":"pool_amethyst","module":"crystal.medium_fork.amethyst","position":[542,266],"light_position":[537,284],"radius":190,"phase":0.2},
+    {"id":"tunnel_cyan","module":"crystal.small_fan.cyan","position":[762,258],"light_position":[742,279],"radius":155,"phase":0.0},
+    {"id":"shore_opal","module":"crystal.small_fan.opal","position":[731,444],"light_position":[710,453],"radius":150,"phase":0.3}
+  ],
+  "review_points": {
+    "entrance_earth": [240,510],
+    "dry_limestone": [310,350],
+    "curved_wall": [305,228],
+    "mineral_seam": [457,275],
+    "wet_shoreline": [520,425],
+    "pool_reflections": [629,451],
+    "keeper_paving": [683,288],
+    "tunnel_mouth": [715,240],
+    "foreground_depth": [355,431],
+    "pulse": [430,255]
+  },
+  "routes": {
+    "material_circuit": [[240,510],[270,454],[310,350],[305,228],[430,255],[457,275],[480,325],[470,390],[520,425],[629,451],[710,470],[756,330],[715,240],[683,288],[475,245],[400,300],[401,446],[355,431],[298,467],[240,510]],
+    "formation_rear": [[310,350],[355,371],[390,376],[401,446],[355,431]],
+    "running_lane": [[240,510],[298,467],[401,446],[470,390]]
+  },
+  "review_checks": {
+    "depth_cases": [
+      {"id":"eroded_column","feet":[355,371],"hidden_pixel":[352,359],"visible_feet":[355,431],"visible_pixel":[352,419]}
+    ]
+  },
+  "landmarks": [
+    {"id":"dry","name":"Dry limestone","position":[310,350],"description":"Warm grey stone, pale mineral seams and worn footpaths."},
+    {"id":"wall","name":"Eroded wall","position":[305,228],"description":"Long natural strata curve into damp pockets and flowstone."},
+    {"id":"water","name":"Pool edge","position":[629,451],"description":"Wet stone and silt give way to mineral crust and dark still water."},
+    {"id":"tunnel","name":"Natural passage","position":[715,240],"description":"An irregular recess opens beneath the same limestone layers."}
+  ]
+}
