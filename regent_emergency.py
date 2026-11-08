@@ -30,6 +30,7 @@ class RegentEmergency:
     def mira(self):return self.game.mill_quest.mira
 
     def reset(self):
+        self._courage_started = False
         self._auto_dialogue = None
         self._staged_world = None
         self._station_goals = {}
@@ -237,6 +238,29 @@ class RegentEmergency:
         return {'attack_report':'E: Hear what happened at the Sanctuary',
                 'departure':'E: Help with the Sanctuary emergency',
                 'mira_departure':'E: Ask Mira to come to the Sanctuary'}.get(self.target(), '')
+
+    def sync_music(self, *, restoring=False):
+        """Silence the entrance, then hold Kindled Courage through arrival.
+
+        Report pages restart on load, so their silent opening restarts too.
+        Later durable stages restore the ongoing score without a dialogue cue.
+        The future arrival resolution must advance beyond these stages to
+        release this ownership.
+        """
+        if self.owner.stage not in EMERGENCY_STAGES:return
+        if self.game.combat.active:return
+        social = self.game.social
+        if (self.owner.stage == 'attack_report'
+                and social.script_identifier == 'regent_attack_report'
+                and social.page is not None
+                and social.page.get('source_line', 0) >= 3):
+            self._courage_started = True
+        if self.owner.stage not in ('interruption', 'attack_report') or self._courage_started:
+            self.game.music.play('battle', fade_ms=0 if restoring else 450)  # Kindled Courage.
+        elif restoring:
+            self.game.music.stop()
+        else:
+            self.game.music.fade_out(700)
 
     def tracker_text(self):
         return {'interruption':'Someone is hurrying into the house.',

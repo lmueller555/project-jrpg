@@ -49,6 +49,15 @@ completion. The existing Venn cart detour stays removed.
 
 ## Dialogue and presentation
 
+The survivor's entrance fades the music to silence over 700 ms. His first two
+utterances (including Aldric's intervening question) play in silence. Kindled
+Courage begins on Lucan's following question and loops through departure,
+Mira's rejoining and Sanctuary arrival. The pending arrival retains this score;
+the future arrival scene must release emergency music ownership when it ends.
+Continue restarts an unfinished report with its silent opening and restores the
+score directly at later checkpoints. Cancelling and reopening the report within
+the same session does not restart an already-started score.
+
 The current main arrays are `preparations`, `arrival`, `welcome`, `discussion`,
 `attack_report`, `departure`, `mira_departure` and `sanctuary_waiting`. The
 survivor enters along a real physical route; his first concern is the people
