@@ -36,6 +36,7 @@ EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
 PARTY_IDENTIFIERS = frozenset(('player', 'mira', 'lucan', 'rhea', 'edran'))
 MAX_PARTY_MEMBERS = 3
+MAX_ENEMIES = 4
 
 
 def _integer(value, minimum=0, maximum=MAX_ENEMY_RESOURCE):
@@ -236,14 +237,66 @@ class BattleAction:
     weapon_equipped: bool = False
 
 
+@dataclass
+class EnemyState:
+    """Independent action selection and prepared spell state for one opponent."""
+    behavior: dict | None = None
+    style: str | None = None
+    preparations: dict | None = None
+    prepared_action: str | None = None
+    target_index: int = 0
+    action_index: int = 0
+    telegraphed_target: str | None = None
+
+
+def _primary_enemy_state(field):
+    """Keep the established single-opponent attributes as first-enemy aliases."""
+    return property(lambda self: getattr(self._enemy_states['enemy'], field),
+                    lambda self, value: setattr(self._enemy_states['enemy'], field, value))
+
+
 class BattleModel:
-    """Player-commanded party against one enemy, with party-first readiness ties.
+    """Player-commanded party against up to four independently acting enemies.
 
     ``player`` remains Caelan for save settlement and existing callers. Commands
     default to ``active_player``; any living, full-gauge member can be selected
     while the model waits. Supplied party profiles and resources are copied;
     the caller settles their persistent state when the encounter ends.
     """
+
+    _enemy_behavior = _primary_enemy_state('behavior')
+    _enemy_style = _primary_enemy_state('style')
+    _enemy_preparations = _primary_enemy_state('preparations')
+    _enemy_prepared_action = _primary_enemy_state('prepared_action')
+    _enemy_target_index = _primary_enemy_state('target_index')
+    _enemy_action_index = _primary_enemy_state('action_index')
+    telegraphed_target = _primary_enemy_state('telegraphed_target')
+
+    @staticmethod
+    def _prepared_spells(record, actions):
+        if record['metadata']['presentation_pending']:
+            raise ValueError('Bestiary enemy presentation is pending')
+        if record['fighting_style'] not in (None, 'standard_attacks',
+                                            'physical_magical_alternation', 'magical_offense'):
+            raise ValueError('Unsupported Bestiary fighting style')
+        behavior = record['behavior']
+        if behavior is not None and behavior['targeting'] != 'cycle_living_party':
+            raise ValueError('Unsupported Bestiary targeting')
+        preparations = {}
+        if record['fighting_style'] == 'magical_offense':
+            for index, identifier in enumerate(behavior['sequence']):
+                action = actions[identifier]
+                if action['kind'] == 'prepare':
+                    if index+1 >= len(behavior['sequence']):
+                        raise ValueError('Magical preparation requires a following spell')
+                    spell = behavior['sequence'][index+1]
+                    if (actions[spell]['kind'] != 'magical' or not actions[spell]['mp_cost']
+                            or preparations.get(identifier, spell) != spell):
+                        raise ValueError('Magical preparation requires one paid spell')
+                    preparations[identifier] = spell
+                elif action['kind'] != 'magical' and identifier != behavior['fallback']:
+                    raise ValueError('Magical offense requires damaging spells')
+        return preparations
 
     @classmethod
     def from_bestiary(cls, player_attributes, enemy_id, level, *,
@@ -258,31 +311,8 @@ class BattleModel:
             raise ValueError('Use bestiary_data for Bestiary encounters')
         actions = load_actions(options.get('action_data'))
         record = build_enemy(enemy_id, level, data=bestiary_data, actions=actions)
-        if record['metadata']['presentation_pending']:
-            raise ValueError('Bestiary enemy presentation is pending')
-        if record['fighting_style'] not in (None, 'standard_attacks',
-                                            'physical_magical_alternation', 'magical_offense'):
-            raise ValueError('Unsupported Bestiary fighting style')
+        preparations = cls._prepared_spells(record, actions)
         behavior = record['behavior']
-        if behavior is not None and behavior['targeting'] != 'cycle_living_party':
-            raise ValueError('Unsupported Bestiary targeting')
-        preparations = {}
-        if record['fighting_style'] == 'magical_offense':
-            # Preparation is an ordinary ATB turn for the immediately following
-            # paid spell. Deriving this link from the authored sequence avoids
-            # a species-specific AI and keeps MP checks on the actual action.
-            for index, identifier in enumerate(behavior['sequence']):
-                action = actions[identifier]
-                if action['kind'] == 'prepare':
-                    if index+1 >= len(behavior['sequence']):
-                        raise ValueError('Magical preparation requires a following spell')
-                    spell = behavior['sequence'][index+1]
-                    if (actions[spell]['kind'] != 'magical' or not actions[spell]['mp_cost']
-                            or preparations.get(identifier, spell) != spell):
-                        raise ValueError('Magical preparation requires one paid spell')
-                    preparations[identifier] = spell
-                elif action['kind'] != 'magical' and identifier != behavior['fallback']:
-                    raise ValueError('Magical offense requires damaging spells')
         model = cls(player_attributes, enemy_id=enemy_id,
                     enemy_data={'version': 1, 'enemies': {enemy_id: record['combat']}},
                     **options)
@@ -295,13 +325,75 @@ class BattleModel:
         model._enemy_behavior = deepcopy(behavior)
         model._enemy_style = record['fighting_style']
         model._enemy_preparations = preparations
+        model.enemy_records['enemy'] = model.enemy_bestiary_record
+        return model
+
+    @classmethod
+    def from_bestiary_group(cls, player_attributes, members, *, bestiary_data=None,
+                            initial_atb=True, initial_atb_seed=None, **options):
+        """Build a fixed one-to-four-opponent formation at explicit levels.
+
+        The formation is copied before battle. Initial ATB rolls are independent
+        per participant; a dedicated seed can preserve the encounter handoff
+        without coupling opening readiness to later damage variance.
+        """
+        from bestiary import build_enemy
+        if (not isinstance(members, (tuple, list)) or not 1 <= len(members) <= MAX_ENEMIES
+                or type(initial_atb) is not bool
+                or initial_atb_seed is not None and not _integer(initial_atb_seed, maximum=2**63-1)
+                or any(key in options for key in ('enemy_id', 'enemy_data'))
+                or options.get('spellblade_tutorial', False)):
+            raise ValueError('Invalid Bestiary formation')
+        actions = load_actions(options.get('action_data'))
+        records = []
+        for member in members:
+            if not isinstance(member, dict) or set(member) != {'enemy_id', 'level'}:
+                raise ValueError('Invalid Bestiary formation member')
+            record = build_enemy(member['enemy_id'], member['level'], data=bestiary_data,
+                                 actions=actions)
+            cls._prepared_spells(record, actions)
+            records.append(record)
+        first = records[0]
+        model = cls.from_bestiary(player_attributes, first['id'], first['level'],
+                                  bestiary_data=bestiary_data, **options)
+        enemies = [model.enemy]
+        for index, record in enumerate(records[1:], 2):
+            identifier = 'enemy_'+str(index)
+            definition = deepcopy(record['combat'])
+            attributes = definition['attributes']
+            enemies.append(Combatant(identifier, definition['name'], dict(attributes),
+                                     attributes['hp'], attributes['mp']))
+            model.enemy_definitions[identifier] = definition
+            model.enemy_records[identifier] = deepcopy(record)
+            model._enemy_states[identifier] = EnemyState(
+                behavior=deepcopy(record['behavior']), style=record['fighting_style'],
+                preparations=cls._prepared_spells(record, actions),
+                target_index=(index-1) % len(model.party))
+        model.enemies = tuple(enemies)
+        model.enemy_xp_reward = sum(record['xp_reward'] or 0 for record in records)
+        drops = {}
+        for record in records:
+            for item, quantity in record['combat']['rewards']['drops'].items():
+                drops[item] = drops.get(item, 0)+quantity
+        model.encounter_rewards = {'drops': drops}
+        if initial_atb:
+            generator = model.randomize_initial_atb(initial_atb_seed)
+            offset = generator.randint(0, len(model.party)-1)
+            for index, enemy in enumerate(model.enemies):
+                model._enemy_states[enemy.identifier].target_index = (offset+index) % len(model.party)
+        model.message = ('Enemies approach!' if len(model.enemies) > 1
+                         else model.enemy.name+' approaches!')
         return model
 
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
                  guest_abilities=None, spellblade_tutorial=False,
-                 active_gem=DEFAULT_GEM, party_members=None):
+                 active_gem=DEFAULT_GEM, party_members=None, initial_atb=False,
+                 initial_atb_seed=None):
+        if (type(initial_atb) is not bool or initial_atb_seed is not None
+                and not _integer(initial_atb_seed, maximum=2**63-1)):
+            raise ValueError('Invalid initial ATB configuration')
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -360,6 +452,7 @@ class BattleModel:
         self._bot_owner_alive = {bot.identifier: bool(self.combatant(bot.owner_id).hp)
                                  for bot in self.bots}
         self._active_actor = 'player'
+        self._enemy_states = {'enemy': EnemyState(preparations={})}
         self.enemy_id = enemy_id
         self.enemy_bestiary_id = None
         self.enemy_bestiary_record = None
@@ -375,6 +468,12 @@ class BattleModel:
         enemy = self.enemy_definition
         self.enemy = Combatant('enemy', enemy['name'], dict(enemy['attributes']),
                                enemy['attributes']['hp'], enemy['attributes']['mp'])
+        self.enemies = (self.enemy,)
+        self.enemy_definitions = {'enemy': self.enemy_definition}
+        self.enemy_records = {'enemy': None}
+        self.encounter_rewards = deepcopy(enemy['rewards'])
+        self.initial_atb_values = {}
+        self.selected_target = 'enemy'
         self.learned_abilities = frozenset(learned_abilities)
         self.rng = random.Random() if rng is None else rng
         if not callable(getattr(self.rng, 'randint', None)):
@@ -397,8 +496,24 @@ class BattleModel:
                                 'aether_edge' not in self.learned_abilities else None)
         self.aether_edge_discovered = False
         self._lesson_bot_actions = 0
+        if initial_atb and not self.spellblade_guided:self.randomize_initial_atb(initial_atb_seed)
         if self.spellblade_guided:self.enemy.atb = 1.
         if self.phase == 'defeat':self._result('defeat')
+
+    def randomize_initial_atb(self, seed=None):
+        """Roll each living participant once, independently, in [0, 0.5]."""
+        if seed is not None and not _integer(seed, maximum=2**63-1):
+            raise ValueError('Invalid initial ATB seed')
+        generator = random.Random(seed) if seed is not None else self.rng
+        self.initial_atb_values = {}
+        for actor in (*self.party, *self.enemies, *self.bots):
+            value = (generator.random()*.5 if callable(getattr(generator, 'random', None))
+                     else generator.randint(0, 500000)/1000000)
+            alive = (bool(self._party_actor(actor.owner_id).hp) if isinstance(actor, BotUnit)
+                     else bool(actor.hp))
+            actor.atb = value if alive else 0.
+            self.initial_atb_values[actor.identifier] = actor.atb
+        return generator
 
     @property
     def spellblade_guided(self):
@@ -439,9 +554,58 @@ class BattleModel:
         return rate
 
     def combatant(self, identifier):
-        if identifier == 'enemy':return self.enemy
-        return next((member for member in (*self.party, *self.bots)
+        return next((member for member in (*self.party, *self.bots,
+                                           *getattr(self, 'enemies', ()))
                      if member.identifier == identifier), None)
+
+    def is_enemy(self, identifier):
+        return any(enemy.identifier == identifier for enemy in self.enemies)
+
+    @property
+    def living_enemies(self):return tuple(enemy for enemy in self.enemies if enemy.hp)
+
+    @property
+    def enemy_telegraphs(self):
+        return {identifier: state.telegraphed_target
+                for identifier, state in self._enemy_states.items()
+                if state.telegraphed_target is not None}
+
+    @property
+    def enemy_prepared_actions(self):
+        return {identifier: state.prepared_action
+                for identifier, state in self._enemy_states.items()
+                if state.prepared_action is not None}
+
+    def enemy_record(self, identifier='enemy'):
+        return self.enemy_records.get(identifier)
+
+    def enemy_definition_for(self, identifier='enemy'):
+        return self.enemy_definitions.get(identifier)
+
+    def enemy_sprite_id_for(self, identifier='enemy'):
+        if identifier == 'enemy':return self.enemy_sprite_id
+        record = self.enemy_records.get(identifier)
+        return record['presentation']['sprite_id'] if record is not None else None
+
+    def enemy_action_aliases_for(self, identifier='enemy'):
+        if identifier == 'enemy':return self.enemy_action_aliases
+        record = self.enemy_records.get(identifier)
+        return record['presentation']['action_aliases'] if record is not None else {}
+
+    def enemy_sprite(self, identifier='enemy'):
+        return self.enemy_sprite_id_for(identifier)
+
+    def select_target(self, identifier):
+        target = self.combatant(identifier)
+        if not self.is_enemy(identifier) or target is None or not target.hp:return False
+        self.selected_target = identifier
+        return True
+
+    def _living_target(self, preferred=None):
+        target = self.combatant(preferred or self.selected_target)
+        if target is not None and self.is_enemy(target.identifier) and target.hp:
+            return target.identifier
+        return self.living_enemies[0].identifier if self.living_enemies else None
 
     def bot_for(self, owner_id='mira'):
         return next((bot for bot in self.bots if bot.owner_id == owner_id), None)
@@ -596,14 +760,21 @@ class BattleModel:
             return 'Not enough MP.'
         return ''
 
-    def choose_action(self, identifier, actor_id=None):
+    def choose_action(self, identifier, actor_id=None, target_id=None, *, target=None):
         if self.action_reason(identifier, actor_id):return False
+        if target is not None:
+            if target_id is not None and target_id != target:return False
+            target_id = target
         actor = self._party_actor(actor_id)
         self._active_actor = actor.identifier
         action = ('aether_edge' if actor.identifier == 'player' and
                   self.spellblade_stage == 'second_edge' and identifier in ELEMENTAL_EDGE_ATTEMPTS
                   else self._action_id(identifier, actor))
-        self._start_action(actor.identifier, action)
+        if self.actions[action]['target'] == 'opponent':
+            if target_id is not None and not self.select_target(target_id):return False
+            target_id = self._living_target(target_id)
+            if target_id is None:return False
+        self._start_action(actor.identifier, action, target_id=target_id)
         return True
 
     def drain_events(self):
@@ -611,60 +782,67 @@ class BattleModel:
         return result
 
     def _sync_enemy_preparation(self):
-        """Keep a held spell's visible target and MP reservation truthful."""
-        spell = self._enemy_prepared_action
-        if spell is None:return
+        """Keep each held spell's visible target and MP reservation truthful."""
         living = [member for member in self.party if member.hp]
-        casting = (self.current_action is not None and self.current_action.actor == 'enemy'
-                   and self.current_action.action == spell)
-        if (not self.enemy.hp or not living or self.ended
-                or not casting and self.enemy.mp < self.actions[spell]['mp_cost']):
-            self._enemy_prepared_action = self.telegraphed_target = None
-            return
-        if not any(member.identifier == self.telegraphed_target for member in living):
-            # Queries remain read-only; this simulation boundary owns the
-            # retarget so both the warning and the eventual hit agree.
-            self.telegraphed_target = self._enemy_target(spell)
-            if casting and not self.current_action.resolved:
-                self.current_action.target = self.telegraphed_target
+        for enemy in self.enemies:
+            state = self._enemy_states[enemy.identifier]
+            spell = state.prepared_action
+            if spell is None:continue
+            casting = (self.current_action is not None
+                       and self.current_action.actor == enemy.identifier
+                       and self.current_action.action == spell)
+            if (not enemy.hp or not living or self.ended
+                    or not casting and enemy.mp < self.actions[spell]['mp_cost']):
+                state.prepared_action = state.telegraphed_target = None
+                continue
+            if not any(member.identifier == state.telegraphed_target for member in living):
+                state.telegraphed_target = self._enemy_target(spell, enemy.identifier)
+                if casting and not self.current_action.resolved:
+                    self.current_action.target = state.telegraphed_target
 
-    def _enemy_target(self, identifier):
+    def _enemy_target(self, identifier, enemy_actor='enemy'):
         living = [member for member in self.party if member.hp]
         if not living:return None
-        if identifier == self._enemy_prepared_action and self.telegraphed_target:
+        state = self._enemy_states[enemy_actor]
+        if identifier == state.prepared_action and state.telegraphed_target:
             target = next((member for member in living
-                           if member.identifier == self.telegraphed_target), None)
+                           if member.identifier == state.telegraphed_target), None)
             if target is not None:return target.identifier
-        if self._enemy_behavior is not None:
+        if state.behavior is not None:
             for offset in range(len(self.party)):
-                member = self.party[(self._enemy_target_index+offset) % len(self.party)]
+                member = self.party[(state.target_index+offset) % len(self.party)]
                 if member.hp:return member.identifier
         if self.spellblade_guided and identifier == 'tusker_charge':return 'player'
-        if identifier == 'tusker_charge' and self.telegraphed_target:
+        if identifier == 'tusker_charge' and state.telegraphed_target:
             target = next((member for member in living
-                           if member.identifier == self.telegraphed_target), None)
+                           if member.identifier == state.telegraphed_target), None)
             if target is not None:return target.identifier
-        if self.enemy_id == 'ridgeback_tusker' and identifier == 'tusk_strike':
+        record = self.enemy_records.get(enemy_actor)
+        species = self.enemy_id if enemy_actor == 'enemy' else record['id'] if record else None
+        if species == 'ridgeback_tusker' and identifier == 'tusk_strike':
             mira = self.combatant('mira')
             if mira is not None and mira.hp:return 'mira'
         return living[0].identifier
 
-    def _start_action(self, actor_id, identifier):
+    def _start_action(self, actor_id, identifier, target_id=None):
         actor = self.combatant(actor_id)
         record = self.actions[identifier]
+        enemy_actor = self.is_enemy(actor_id)
         if not isinstance(actor, BotUnit):actor.mp -= record['mp_cost']
         actor.atb = 0.0
-        target = 'enemy' if actor_id != 'enemy' else self._enemy_target(identifier)
+        target = (self._enemy_target(identifier, actor_id) if enemy_actor
+                  else self._living_target(target_id))
         if record['target'] == 'self':target = actor_id
         elif record['target'] == 'none':target = None
         elif record['target'] == 'owned_bot':
             bot = self.active_bot(actor_id)
             target = bot.identifier if bot is not None else None
-        if (actor_id == 'enemy' and self._enemy_behavior is not None
-                and record['target'] == 'opponent' and target is not None):
-            if identifier == self._enemy_prepared_action:self.telegraphed_target = target
-            self._enemy_target_index = (next(index for index, member in enumerate(self.party)
-                                             if member.identifier == target)+1) % len(self.party)
+        if enemy_actor and record['target'] == 'opponent' and target is not None:
+            state = self._enemy_states[actor_id]
+            if state.behavior is not None:
+                if identifier == state.prepared_action:state.telegraphed_target = target
+                state.target_index = (next(index for index, member in enumerate(self.party)
+                                          if member.identifier == target)+1) % len(self.party)
         timing = (timing_override(identifier, record['duration'], record['impact_at'])
                   if actor_id == 'player' else None)
         duration, impact_at = timing or (record['duration'], record['impact_at'])
@@ -679,31 +857,32 @@ class BattleModel:
         self.events.append({'type': 'action_started', 'actor': actor_id,
                             'action': identifier, 'target': target, 'name': record['name']})
 
-    def _start_enemy_action(self):
-        choices = (self._enemy_behavior['sequence'] if self._enemy_behavior is not None
-                   else self.enemy_definition['abilities'])
+    def _start_enemy_action(self, enemy_actor='enemy'):
+        enemy = self.combatant(enemy_actor)
+        if enemy is None or not enemy.hp:return
+        state = self._enemy_states[enemy_actor]
+        choices = (state.behavior['sequence'] if state.behavior is not None
+                   else self.enemy_definitions[enemy_actor]['abilities'])
         if self.spellblade_guided:
             identifier = ('prepare_charge' if self.spellblade_stage == 'opening' else
                           'tusker_charge' if self.spellblade_stage == 'charge' else 'tusk_strike')
         else:
-            identifier = choices[self._enemy_action_index % len(choices)]
-            self._enemy_action_index += 1
-        prepared_spell = self._enemy_preparations.get(identifier)
+            identifier = choices[state.action_index % len(choices)]
+            state.action_index += 1
+        prepared_spell = state.preparations.get(identifier)
         if (prepared_spell is not None
-                and self.enemy.mp < self.actions[prepared_spell]['mp_cost']):
-            # Never spend turns announcing an attack that cannot be paid for.
-            # Restart at the free fallback instead of walking an empty cycle.
-            identifier = self._enemy_behavior['fallback']
-            self._enemy_action_index = 0
-            self._enemy_prepared_action = self.telegraphed_target = None
-        if self.enemy.mp < self.actions[identifier]['mp_cost']:
-            identifier = (self._enemy_behavior['fallback'] if self._enemy_behavior is not None
+                and enemy.mp < self.actions[prepared_spell]['mp_cost']):
+            identifier = state.behavior['fallback']
+            state.action_index = 0
+            state.prepared_action = state.telegraphed_target = None
+        if enemy.mp < self.actions[identifier]['mp_cost']:
+            identifier = (state.behavior['fallback'] if state.behavior is not None
                           else next(key for key in choices if self.actions[key]['mp_cost'] == 0
                                     and self.actions[key]['kind'] in ('physical', 'magical')))
-            if self._enemy_style == 'magical_offense':
-                self._enemy_action_index = 0
-                self._enemy_prepared_action = self.telegraphed_target = None
-        self._start_action('enemy', identifier)
+            if state.style == 'magical_offense':
+                state.action_index = 0
+                state.prepared_action = state.telegraphed_target = None
+        self._start_action(enemy_actor, identifier)
 
     def _resolve_action(self):
         action = self.current_action
@@ -718,12 +897,13 @@ class BattleModel:
             self._pending_outcome = 'fled'
             self.message = actor.name+' gets away safely.'
         elif action.kind == 'prepare':
-            prepared_spell = self._enemy_preparations.get(action.action)
-            target = self._enemy_target(prepared_spell or 'tusker_charge')
-            self.telegraphed_target = target
+            state = self._enemy_states[action.actor]
+            prepared_spell = state.preparations.get(action.action)
+            target = self._enemy_target(prepared_spell or 'tusker_charge', action.actor)
+            state.telegraphed_target = target
             member = self.combatant(target)
             if prepared_spell is not None:
-                self._enemy_prepared_action = prepared_spell
+                state.prepared_action = prepared_spell
                 self.message = actor.name+' gathers charge toward '+member.name+'.'
             else:self.message = actor.name+' lowers its head toward '+member.name+'.'
             self.events.append({'type': 'telegraph', 'actor': action.actor,
@@ -756,6 +936,14 @@ class BattleModel:
                                     'rate_multiplier': bot.haste_rate_multiplier})
         else:
             target = self.combatant(action.target)
+            if target is None or not target.hp:
+                action.target = (self._enemy_target(action.action, action.actor)
+                                 if self.is_enemy(action.actor) else self._living_target())
+                target = self.combatant(action.target)
+            if target is None:
+                self._pending_outcome = 'defeat' if self.is_enemy(action.actor) else 'victory'
+                action.resolved = True
+                return
             protected = target.guarded
             calculator = physical_damage if action.kind in ('physical', 'spellblade') else magical_damage
             variance = roll_variance(self.rng)
@@ -783,10 +971,12 @@ class BattleModel:
             if enchanted:
                 event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
             self.events.append(event)
-            if action.actor == 'enemy' and action.action == self._enemy_prepared_action:
-                self._enemy_prepared_action = self.telegraphed_target = None
+            if self.is_enemy(action.actor):
+                state = self._enemy_states[action.actor]
+                if action.action == state.prepared_action:
+                    state.prepared_action = state.telegraphed_target = None
             if action.action == 'tusker_charge':
-                self.telegraphed_target = None
+                self._enemy_states[action.actor].telegraphed_target = None
                 if self.spellblade_stage == 'charge':self.spellblade_stage = 'first_edge'
             if action.action == 'aether_edge' and self.spellblade_stage == 'second_edge':
                 self.spellblade_stage = 'complete'
@@ -796,16 +986,21 @@ class BattleModel:
                                     'action': 'aether_edge'})
             if not target.hp:
                 target.atb = 0.0
-                if action.target == 'enemy':self._pending_outcome = 'victory'
+                if self.is_enemy(action.target):
+                    state = self._enemy_states[action.target]
+                    state.prepared_action = state.telegraphed_target = None
+                    self.selected_target = self._living_target()
+                    if not self.living_enemies:self._pending_outcome = 'victory'
                 elif not any(member.hp for member in self.party):self._pending_outcome = 'defeat'
             self._sync_bot_activity()
         self._sync_enemy_preparation()
         action.resolved = True
 
     def _result(self, outcome):
-        if self._enemy_style == 'magical_offense':
-            self._enemy_prepared_action = self.telegraphed_target = None
-        for actor in (*self.party, self.enemy):actor.aether_edge_hits = 0
+        for state in self._enemy_states.values():
+            if state.style == 'magical_offense':
+                state.prepared_action = state.telegraphed_target = None
+        for actor in (*self.party, *self.enemies):actor.aether_edge_hits = 0
         for bot in self.bots:
             bot.atb = 0.0
             bot.haste_turns = 0
@@ -823,7 +1018,7 @@ class BattleModel:
 
     def _advance_gauges(self, seconds, atb_multiplier=1.0):
         scaled_seconds = seconds*atb_multiplier
-        for combatant in (*self.party, self.enemy):
+        for combatant in (*self.party, *self.enemies):
             if combatant.hp:
                 combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*scaled_seconds)
         for bot in self.bots:
@@ -882,9 +1077,13 @@ class BattleModel:
                 if not living:
                     self._result('defeat')
                     return
+                if not self.living_enemies:
+                    self._result('victory')
+                    return
                 candidates = [*living, *(bot for bot in self.bots
                                          if self.active_bot(bot.owner_id) is bot
-                                         and (not self.spellblade_guided or self._lesson_bot_actions < 3)), self.enemy]
+                                         and (not self.spellblade_guided or self._lesson_bot_actions < 3)),
+                              *self.living_enemies]
                 times = [(actor, max(0.0, ((1-actor.atb)/self.atb_rate(actor))/atb_multiplier)
                           if atb_multiplier else 0.0 if actor.atb+EPSILON >= 1 else math.inf)
                          for actor in candidates]
@@ -912,7 +1111,7 @@ class BattleModel:
                 member.atb = 1.0
                 if isinstance(member, BotUnit):
                     self._start_action(member.identifier, member.ability_id)
-                else:self._start_enemy_action()
+                else:self._start_enemy_action(member.identifier)
             elif self.phase == 'acting':
                 action = self.current_action
                 actor = self.combatant(action.actor)

@@ -3,8 +3,9 @@
 Lithrusk and Veylume have dedicated right-facing combat sprites for the
 Sanctuary cave's first enemy roster. The [Bestiary](BESTIARY.md) retains their
 approved stats, levels, actions and elemental profiles. This work adds their
-visual presentation and supports Veylume's prepared spell sequence; it does
-not place encounters in the cave or change damage formulas.
+visual presentation and supports Veylume's prepared spell sequence. The
+[random encounter system](CAVE_RANDOM_ENCOUNTERS.md) now uses these banks in
+one-to-four-enemy cave battles. Damage formulas remain unchanged.
 
 ## Visual design
 
@@ -97,6 +98,8 @@ python tools/capture_cave_enemy_combat.py --check
 
 The [review](reviews/cave_enemy_combat/README.md) contains an animated sprite
 showcase, contact sheet, real BattleScene combat reel and source/artifact hash
-verification. The combat reel uses disposable encounter fixtures on the
-existing battlefield to show the presentation before cave population work.
-It does not settle rewards or touch a player's journey or settings.
+verification. This retained review records the original sprite rollout before
+random encounters and group presentation. Its source-match check applies to
+that revision; generating a new review captures the current runtime. The reel
+uses disposable encounter fixtures on the existing battlefield and does not
+settle rewards or touch a player's journey or settings.

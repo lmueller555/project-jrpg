@@ -318,8 +318,8 @@ character growth, the approved XP/reward curves, effective rating caps of 999
 profiles alongside fighting styles and twenty enemy concepts. Use
 `python tools/preview_leveling.py --enemy-profiles --levels 1 50 100` to inspect
 them. Foundation helpers select full XP for each surviving active combatant and
-apply stat gains without restoring current HP/MP. Live integration still needs
-individual enemy levels and saved-level transition rules; victories currently
+apply stat gains without restoring current HP/MP. Live saved-level/XP activation
+and remaining encounter-level assignments are separate work; victories currently
 award item drops.
 
 The [Bestiary dictionary](docs/BESTIARY.md) is the central source for monster
@@ -338,7 +338,10 @@ with their authored values. Use `python tools/preview_bestiary.py --list` or
 Use `--enemy lithrusk` or `--enemy veylume` to inspect either new species.
 Their [combat art and animation preview](docs/CAVE_ENEMY_COMBAT_ART.md) shows
 the native sprites and real battle presentation. The continuous sanctuary cave
-is explorable; placing these new encounters remains later work.
+now has [distance-based random encounters](docs/CAVE_RANDOM_ENCOUNTERS.md):
+14 weighted formations of up to four enemies, 16–36-tile spacing, independent
+0–50% opening ATB and four animated cave battlefields. Safe areas and durable
+encounter checkpoints preserve exploration and Continue behavior.
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored

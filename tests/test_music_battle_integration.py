@@ -143,9 +143,11 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertTrue(game.combat.transitioning)
         self.assertEqual(game.music.desired_track, 'battle')
         before = game.elapsed_ms, game.player.position.copy()
+        opening = [a.atb for a in (*scene.model.party, scene.model.enemy)]
+        self.assertTrue(all(0 <= value <= .5 for value in opening))
         key(game, pygame.K_SPACE)
         self.frame(game, .05)
-        self.assertEqual([a.atb for a in (*scene.model.party, scene.model.enemy)], [0, 0])
+        self.assertEqual([a.atb for a in (*scene.model.party, scene.model.enemy)], opening)
         self.assertEqual((game.elapsed_ms, game.player.position), before)
         self.finish_transition(game)
         for _ in range(200):
