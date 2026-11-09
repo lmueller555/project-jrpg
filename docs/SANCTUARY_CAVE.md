@@ -88,13 +88,20 @@ The cave is explorable while the MQ03 Sanctuary arrival remains pending.
 Existing party ownership and Kindled Courage continue at that checkpoint.
 Cave entry, treasure and the Echo Chamber inspection preserve that story state.
 
-Six spaces reserve future normal encounters: four on the direct route and one
-on each exploration loop. The Echo Chamber reserves the miniboss arena. These
-are layout metadata, with no enemy population or boss combat added by this
-level implementation. The Quiet Shelf provides a preparation pause without
-restoring HP or MP.
+The cave now uses [distance-based random encounters](CAVE_RANDOM_ENCOUNTERS.md)
+with Cave Bats, Lithrusks and Veylumes. A hidden 16–36-tile countdown, weighted
+toward 26, selects one of 14 authored formations from the outer, middle or deep
+pool. Battles contain at most four enemies; groups of three or four are rarer.
+The six original encounter spaces remain layout references. Random selection
+uses the player's actual location throughout the continuous cave.
 
-The arrival cutscene, enemy populations, miniboss identity, combat balance and
+The entrance apron, High Overlook, Quiet Shelf and Echo Chamber are protected.
+The Echo Chamber still reserves the future miniboss. The Quiet Shelf provides
+a preparation pause without restoring HP or MP. Battle entry focuses the party,
+presents a loading screen and reveals one of four animated cave battlefields.
+Victory/flee return to the same cave position and reset the distance budget.
+
+The arrival cutscene, miniboss identity, further combat tuning and
 post-boss resolution remain later work. The cave does not establish the
 confluence's detailed workings, identify the original sacrificial temple or
 merge this location with the historically sealed workers' passage.

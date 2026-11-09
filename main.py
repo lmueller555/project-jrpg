@@ -62,6 +62,7 @@ from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FIL
 from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
 from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave
+from cave_random_encounters import CaveRandomEncounters
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -364,6 +365,8 @@ class Player:
         self.facing='front'
         self.moving=False
         self.running=False
+        self.motion_trace=[]
+        self.motion_weights=[]
         self.walk_ms=0.0
         self.idles={d:world.image(f'assets/characters/caelan/idle_{d}.png') for d in ('front','left','right','back')}
         self.walks={};self.runs={}
@@ -378,6 +381,8 @@ class Player:
     def update(self,direction,seconds,world,running=False):
         vector=pygame.Vector2(direction)
         self.moving=False
+        self.motion_trace=[tuple(self.position)]
+        self.motion_weights=[]
         if not vector.length_squared():
             self.running=False
             self.walk_ms=0
@@ -393,10 +398,21 @@ class Player:
         delta=displacement/steps
         start=self.position.copy()
         for _ in range(steps):
+            step_start=tuple(self.position)
             candidate=self.position+pygame.Vector2(delta.x,0)
             if world.can_stand(candidate):self.position.x=candidate.x
+            horizontal=tuple(self.position)
             candidate=self.position+pygame.Vector2(0,delta.y)
             if world.can_stand(candidate):self.position.y=candidate.y
+            point=tuple(self.position)
+            axis_distance=abs(point[0]-step_start[0])+abs(point[1]-step_start[1])
+            weight=math.dist(step_start,point)/axis_distance if axis_distance else 1.
+            # Follow the actual safe axis legs around corners while crediting
+            # their combined Euclidean length, so diagonals have no extra tax.
+            for endpoint in (horizontal,point):
+                if endpoint!=self.motion_trace[-1]:
+                    self.motion_trace.append(endpoint)
+                    self.motion_weights.append(weight)
         self.moving=self.position.distance_squared_to(start)>1e-8
         self.running=self.moving and bool(running)
         # Each gait uses its authored frame durations, independent of travel speed.
@@ -515,6 +531,7 @@ class Game:
         from sanctuary_reserve import SanctuaryReserve
         self.sanctuary_reserve=SanctuaryReserve(self)
         self.sanctuary_cave=SanctuaryCave(self)
+        self.cave_random_encounters=CaveRandomEncounters()
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
@@ -563,6 +580,7 @@ class Game:
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
                            'sanctuary_cave':self.sanctuary_cave.to_dict(),
+                           'cave_encounter_pending':self.cave_random_encounters.pending,
                            'character_attributes':self.attributes.to_dict(),
                            'party':self.party.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
@@ -646,6 +664,7 @@ class Game:
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                SanctuaryCave.valid_journey(data) and
+               CaveRandomEncounters.valid_journey(data) and
                ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
@@ -805,6 +824,8 @@ class Game:
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.reset()
         self.sanctuary_cave.restore(data.get('sanctuary_cave') if data else None)
+        if not self.cave_random_encounters.restore(data.get('cave_random_encounters') if data else None):
+            return False
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -877,6 +898,11 @@ class Game:
                 self.save_error='The saved battle spoils could not be restored.'
                 self.on_title=True
                 return False
+        elif self.cave_random_encounters.pending is not None:
+            if not self.combat.start_cave(self.cave_random_encounters.pending, restoring=True):
+                self.save_error='The saved cave encounter could not be restored.'
+                self.on_title=True
+                return False
         self.save_progress()
         self.regent_arrival.maybe_start()
         if self.party.pending_selection is not None:self._resume_party_selection()
@@ -895,6 +921,7 @@ class Game:
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
+              'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'party':self.party.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
@@ -1351,6 +1378,37 @@ class Game:
         finally:
             self.regional_audio.update(0)
 
+    def _cave_encounters_available(self):
+        """Only free, focused exploration can spend the cave's travel budget."""
+        return (self.sanctuary_cave.active and not self._is_gallery_preview
+                and not self.on_title and self._music_focused
+                and not self.combat.active and not self.social.locked
+                and not self.social.active and not self.map_open
+                and not self.quest_ui.journal_open and not self.household_action
+                and not self.transfer_cooldown and not self.opening_fade
+                and not self.opening.locks_player and not self.opening.controls_player
+                and not self.opening_cinematic.active
+                and not any(getattr(getattr(self,name,None),'is_open',False)
+                            for name in ('pause','inventory_ui','world_map_viewer',
+                                         'party_ui','status_ui'))
+                and not self.party.battle_reason())
+
+    def _advance_cave_encounters(self):
+        """Consume actual swept movement and stop at the exact trigger point."""
+        if not self._cave_encounters_available():return False
+        ticket=self.cave_random_encounters.pending
+        if ticket is None:
+            trace=self.player.motion_trace
+            for previous,current,weight in zip(trace,trace[1:],self.player.motion_weights):
+                ticket=self.cave_random_encounters.travel(previous,current,
+                    scene_id=self.world.data['id'],distance_scale=weight)
+                if ticket is not None:break
+        if ticket is None:return False
+        self.player.position.update(ticket['position'])
+        self.player.moving=self.player.running=False
+        self.player.walk_ms=0.0
+        return self.combat.start_cave(ticket)
+
     def _update_world(self,seconds,direction=None,running=None):
         if self.mill_gift.active:
             self.opening_audio.set_paused(True)
@@ -1380,7 +1438,7 @@ class Game:
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
         self.mill_quest.sync_encounter_music()
-        if not self.on_title:self.regent_quest.emergency.sync_music()
+        if not self.on_title and not self.combat.active:self.regent_quest.emergency.sync_music()
         self.music.set_paused(not self._music_focused or
                               bool(self.combat.active and (self.combat.paused or not self.combat.focused)))
         self.music.set_ducked(not self.combat.post_phase and
@@ -1441,6 +1499,9 @@ class Game:
         if not self.opening.controls_player:
             previous=self.player.position.copy()
             self.player.update(direction,seconds,self.world,bool(running))
+            if self._advance_cave_encounters():
+                self.opening_audio.set_paused(True)
+                return
             if (not (getattr(self.overworld_travel,'in_reserve',False) or self.sanctuary_cave.active) and self.world.data.get('kind')=='interior'
                     and self.opening.stage in ('explore','assignment','done')):
                 self.opening.record_footsteps(self.player.position.distance_to(previous))

@@ -1,0 +1,1228 @@
+{
+  "version": 1,
+  "canvas": [
+    480,
+    320
+  ],
+  "tile_size": 24,
+  "source_map": "assets/maps/sanctuary_cave/map.json",
+  "manifests": {
+    "base": "assets/terrain/limestone_cave/assets.json",
+    "structure": "assets/terrain/limestone_cave/structure/assets.json",
+    "water": "assets/terrain/limestone_cave/water/assets.json",
+    "geology": "assets/terrain/limestone_cave/geology/assets.json",
+    "micro": "assets/terrain/limestone_cave/micro_adapters/assets.json"
+  },
+  "frame_count": 24,
+  "frame_duration_ms": 250,
+  "reduced_motion_frame": 8,
+  "fields": [
+    {
+      "id": "cave_outer",
+      "name": "Rooted Vein Gallery",
+      "source_rooms": [
+        "entrance",
+        "vein_gallery"
+      ],
+      "source_position": [
+        456,
+        1280
+      ],
+      "seed": 1024,
+      "floor_material": "dry",
+      "ambient": 0.66,
+      "daylight": true,
+      "wall_edge": [
+        [
+          0,
+          134
+        ],
+        [
+          48,
+          130
+        ],
+        [
+          96,
+          138
+        ],
+        [
+          144,
+          127
+        ],
+        [
+          192,
+          133
+        ],
+        [
+          240,
+          128
+        ],
+        [
+          288,
+          137
+        ],
+        [
+          336,
+          126
+        ],
+        [
+          384,
+          136
+        ],
+        [
+          432,
+          131
+        ],
+        [
+          480,
+          134
+        ]
+      ],
+      "wall_baselines": [
+        130,
+        134,
+        129,
+        136,
+        130,
+        135
+      ],
+      "patches": [
+        {
+          "material": "earth",
+          "polygon": [
+            [
+              0,
+              115
+            ],
+            [
+              144,
+              121
+            ],
+            [
+              191,
+              164
+            ],
+            [
+              171,
+              233
+            ],
+            [
+              112,
+              263
+            ],
+            [
+              0,
+              271
+            ]
+          ]
+        },
+        {
+          "material": "gravel",
+          "polygon": [
+            [
+              218,
+              158
+            ],
+            [
+              297,
+              146
+            ],
+            [
+              360,
+              179
+            ],
+            [
+              328,
+              234
+            ],
+            [
+              230,
+              218
+            ]
+          ]
+        }
+      ],
+      "placements": [
+        {
+          "id": "root_left",
+          "pack": "geology",
+          "module": "entrance.root.0",
+          "position": [
+            -5,
+            25
+          ]
+        },
+        {
+          "id": "root_right",
+          "pack": "geology",
+          "module": "entrance.root.2",
+          "position": [
+            405,
+            16
+          ]
+        },
+        {
+          "id": "moss_left",
+          "pack": "geology",
+          "module": "entrance.moss.1",
+          "position": [
+            6,
+            102
+          ]
+        },
+        {
+          "id": "leaves_left",
+          "pack": "geology",
+          "module": "entrance.leaves.2",
+          "position": [
+            2,
+            125
+          ]
+        },
+        {
+          "id": "rear_tunnel",
+          "pack": "structure",
+          "module": "tunnel.north.wide",
+          "position": [
+            401,
+            129
+          ]
+        },
+        {
+          "id": "left_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.1",
+          "position": [
+            19,
+            139
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "right_rock",
+          "pack": "base",
+          "module": "formation.boulder.2",
+          "position": [
+            470,
+            139
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "rear_pendants",
+          "pack": "base",
+          "module": "formation.pendants.0",
+          "position": [
+            446,
+            22
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "floor_erosion",
+          "pack": "geology",
+          "module": "erosion.channel.1",
+          "position": [
+            183,
+            228
+          ]
+        },
+        {
+          "id": "foreground_rubble",
+          "pack": "geology",
+          "module": "debris.pebbles.2",
+          "position": [
+            372,
+            265
+          ]
+        }
+      ],
+      "dark_recesses": [
+        [
+          365,
+          70,
+          70,
+          65
+        ]
+      ],
+      "crystals": [
+        {
+          "module": "micro.blue.diagonal_left",
+          "position": [
+            53,
+            76
+          ],
+          "phase": 0.044,
+          "radius": 150
+        },
+        {
+          "module": "micro.green.sparse",
+          "position": [
+            122,
+            107
+          ],
+          "phase": 0.22,
+          "radius": 150
+        },
+        {
+          "module": "micro.white.dense",
+          "position": [
+            184,
+            72
+          ],
+          "phase": 0.44,
+          "radius": 150
+        },
+        {
+          "module": "micro.orange.diagonal_right",
+          "position": [
+            246,
+            106
+          ],
+          "phase": 0.594,
+          "radius": 150
+        },
+        {
+          "module": "micro.purple.sparse",
+          "position": [
+            300,
+            70
+          ],
+          "phase": 0.836,
+          "radius": 150
+        },
+        {
+          "module": "micro.red.dense",
+          "position": [
+            442,
+            47
+          ],
+          "phase": 1.056,
+          "radius": 150
+        }
+      ]
+    },
+    {
+      "id": "cave_grotto",
+      "name": "Reflecting Grotto",
+      "source_rooms": [
+        "reflecting_grotto",
+        "upper_passage"
+      ],
+      "source_position": [
+        400,
+        864
+      ],
+      "seed": 2117,
+      "floor_material": "damp",
+      "ambient": 0.62,
+      "wall_edge": [
+        [
+          0,
+          134
+        ],
+        [
+          48,
+          130
+        ],
+        [
+          96,
+          138
+        ],
+        [
+          144,
+          127
+        ],
+        [
+          192,
+          133
+        ],
+        [
+          240,
+          128
+        ],
+        [
+          288,
+          137
+        ],
+        [
+          336,
+          126
+        ],
+        [
+          384,
+          136
+        ],
+        [
+          432,
+          131
+        ],
+        [
+          480,
+          134
+        ]
+      ],
+      "wall_baselines": [
+        126,
+        132,
+        127,
+        122,
+        98,
+        103
+      ],
+      "patches": [
+        {
+          "material": "silt",
+          "polygon": [
+            [
+              265,
+              129
+            ],
+            [
+              382,
+              135
+            ],
+            [
+              479,
+              153
+            ],
+            [
+              479,
+              216
+            ],
+            [
+              389,
+              205
+            ],
+            [
+              315,
+              177
+            ]
+          ]
+        },
+        {
+          "material": "gravel",
+          "polygon": [
+            [
+              10,
+              221
+            ],
+            [
+              95,
+              209
+            ],
+            [
+              150,
+              260
+            ],
+            [
+              119,
+              319
+            ],
+            [
+              0,
+              319
+            ]
+          ]
+        }
+      ],
+      "water_cells": [
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          5
+        ],
+        [
+          19,
+          5
+        ]
+      ],
+      "placements": [
+        {
+          "id": "left_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.2",
+          "position": [
+            14,
+            139
+          ],
+          "scale": 0.8
+        },
+        {
+          "id": "hanging_tips",
+          "pack": "base",
+          "module": "formation.pendants.1",
+          "position": [
+            57,
+            22
+          ],
+          "scale": 0.6
+        },
+        {
+          "id": "right_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.0",
+          "position": [
+            469,
+            139
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "seepage",
+          "pack": "water",
+          "module": "seepage.wall.1",
+          "position": [
+            390,
+            105
+          ],
+          "animated": true
+        },
+        {
+          "id": "trickle",
+          "pack": "water",
+          "module": "trickle.wall.0",
+          "position": [
+            407,
+            127
+          ],
+          "animated": true
+        },
+        {
+          "id": "pool_drip",
+          "pack": "water",
+          "module": "drip.falling.0",
+          "position": [
+            406,
+            126
+          ],
+          "animated": true
+        },
+        {
+          "id": "ripples",
+          "pack": "water",
+          "module": "ripple.small.1",
+          "position": [
+            406,
+            133
+          ],
+          "animated": true
+        },
+        {
+          "id": "wet_crack",
+          "pack": "water",
+          "module": "wet_crack.0",
+          "position": [
+            243,
+            233
+          ],
+          "animated": true
+        },
+        {
+          "id": "calcite",
+          "pack": "geology",
+          "module": "mineral.crust.2",
+          "position": [
+            269,
+            130
+          ]
+        },
+        {
+          "id": "floor_stain",
+          "pack": "geology",
+          "module": "stain.damp.1",
+          "position": [
+            195,
+            180
+          ]
+        }
+      ],
+      "crystals": [
+        {
+          "module": "micro.purple.diagonal_left",
+          "position": [
+            40,
+            89
+          ],
+          "phase": 0.11,
+          "radius": 150
+        },
+        {
+          "module": "micro.blue.dense",
+          "position": [
+            103,
+            64
+          ],
+          "phase": 0.264,
+          "radius": 150
+        },
+        {
+          "module": "micro.green.sparse",
+          "position": [
+            168,
+            103
+          ],
+          "phase": 0.484,
+          "radius": 150
+        },
+        {
+          "module": "micro.white.diagonal_right",
+          "position": [
+            231,
+            68
+          ],
+          "phase": 0.66,
+          "radius": 150
+        },
+        {
+          "module": "micro.orange.dense",
+          "position": [
+            294,
+            65
+          ],
+          "phase": 0.814,
+          "radius": 150
+        },
+        {
+          "module": "micro.red.sparse",
+          "position": [
+            448,
+            49
+          ],
+          "phase": 1.1,
+          "radius": 150
+        }
+      ]
+    },
+    {
+      "id": "cave_hollow",
+      "name": "Splitstone Hollow",
+      "source_rooms": [
+        "splitstone_hollow",
+        "keepers_recess"
+      ],
+      "source_position": [
+        1100,
+        1200
+      ],
+      "seed": 3201,
+      "floor_material": "dry",
+      "ambient": 0.63,
+      "wall_edge": [
+        [
+          0,
+          134
+        ],
+        [
+          48,
+          130
+        ],
+        [
+          96,
+          138
+        ],
+        [
+          144,
+          127
+        ],
+        [
+          192,
+          133
+        ],
+        [
+          240,
+          128
+        ],
+        [
+          288,
+          137
+        ],
+        [
+          336,
+          126
+        ],
+        [
+          384,
+          136
+        ],
+        [
+          432,
+          131
+        ],
+        [
+          480,
+          134
+        ]
+      ],
+      "wall_baselines": [
+        132,
+        135,
+        131,
+        130,
+        134,
+        131
+      ],
+      "patches": [
+        {
+          "material": "gravel",
+          "polygon": [
+            [
+              124,
+              125
+            ],
+            [
+              296,
+              127
+            ],
+            [
+              356,
+              188
+            ],
+            [
+              282,
+              238
+            ],
+            [
+              176,
+              223
+            ],
+            [
+              110,
+              181
+            ]
+          ]
+        },
+        {
+          "material": "damp",
+          "polygon": [
+            [
+              380,
+              139
+            ],
+            [
+              479,
+              132
+            ],
+            [
+              479,
+              260
+            ],
+            [
+              426,
+              246
+            ],
+            [
+              389,
+              202
+            ]
+          ]
+        }
+      ],
+      "placements": [
+        {
+          "id": "rear_arch",
+          "pack": "structure",
+          "module": "tunnel.north.wide",
+          "position": [
+            228,
+            132
+          ]
+        },
+        {
+          "id": "split_left",
+          "pack": "base",
+          "module": "formation.broken_column.1",
+          "position": [
+            161,
+            139
+          ],
+          "scale": 0.8
+        },
+        {
+          "id": "split_right",
+          "pack": "base",
+          "module": "formation.broken_column.2",
+          "position": [
+            294,
+            136
+          ],
+          "scale": 0.8
+        },
+        {
+          "id": "overlook",
+          "pack": "structure",
+          "module": "shelf.low.1",
+          "position": [
+            414,
+            124
+          ],
+          "scale": 1
+        },
+        {
+          "id": "overlook_ramp",
+          "pack": "structure",
+          "module": "ramp.north",
+          "position": [
+            413,
+            136
+          ],
+          "scale": 0.66
+        },
+        {
+          "id": "rear_pendants",
+          "pack": "base",
+          "module": "formation.pendants.0",
+          "position": [
+            87,
+            22
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "left_boulder",
+          "pack": "base",
+          "module": "formation.boulder.1",
+          "position": [
+            8,
+            138
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "keeper_slab",
+          "pack": "geology",
+          "module": "slab.fallen.0",
+          "position": [
+            467,
+            141
+          ],
+          "scale": 0.6
+        },
+        {
+          "id": "rear_erosion",
+          "pack": "geology",
+          "module": "erosion.channel.3",
+          "position": [
+            324,
+            131
+          ]
+        },
+        {
+          "id": "foreground_crack",
+          "pack": "geology",
+          "module": "crack.branching.1",
+          "position": [
+            238,
+            251
+          ]
+        }
+      ],
+      "dark_recesses": [
+        [
+          191,
+          73,
+          73,
+          61
+        ]
+      ],
+      "crystals": [
+        {
+          "module": "micro.blue.vertical",
+          "position": [
+            61,
+            94
+          ],
+          "phase": 0.044,
+          "radius": 150
+        },
+        {
+          "module": "micro.green.diagonal_right",
+          "position": [
+            119,
+            68
+          ],
+          "phase": 0.286,
+          "radius": 150
+        },
+        {
+          "module": "micro.purple.sparse",
+          "position": [
+            210,
+            42
+          ],
+          "phase": 0.484,
+          "radius": 150
+        },
+        {
+          "module": "micro.orange.dense",
+          "position": [
+            324,
+            68
+          ],
+          "phase": 0.704,
+          "radius": 150
+        },
+        {
+          "module": "micro.red.diagonal_left",
+          "position": [
+            383,
+            48
+          ],
+          "phase": 0.902,
+          "radius": 150
+        },
+        {
+          "module": "micro.white.vertical",
+          "position": [
+            465,
+            93
+          ],
+          "phase": 1.122,
+          "radius": 150
+        }
+      ]
+    },
+    {
+      "id": "cave_depths",
+      "name": "Deep Gallery",
+      "source_rooms": [
+        "deep_passage",
+        "deep_gallery"
+      ],
+      "source_position": [
+        1680,
+        970
+      ],
+      "seed": 4329,
+      "floor_material": "gravel",
+      "ambient": 0.58,
+      "wall_edge": [
+        [
+          0,
+          134
+        ],
+        [
+          48,
+          130
+        ],
+        [
+          96,
+          138
+        ],
+        [
+          144,
+          127
+        ],
+        [
+          192,
+          133
+        ],
+        [
+          240,
+          128
+        ],
+        [
+          288,
+          137
+        ],
+        [
+          336,
+          126
+        ],
+        [
+          384,
+          136
+        ],
+        [
+          432,
+          131
+        ],
+        [
+          480,
+          134
+        ]
+      ],
+      "wall_baselines": [
+        136,
+        131,
+        133,
+        129,
+        136,
+        132
+      ],
+      "patches": [
+        {
+          "material": "dry",
+          "polygon": [
+            [
+              9,
+              157
+            ],
+            [
+              138,
+              145
+            ],
+            [
+              192,
+              204
+            ],
+            [
+              144,
+              278
+            ],
+            [
+              10,
+              262
+            ]
+          ]
+        },
+        {
+          "material": "damp",
+          "polygon": [
+            [
+              264,
+              140
+            ],
+            [
+              428,
+              134
+            ],
+            [
+              479,
+              171
+            ],
+            [
+              479,
+              253
+            ],
+            [
+              387,
+              261
+            ],
+            [
+              301,
+              221
+            ]
+          ]
+        }
+      ],
+      "placements": [
+        {
+          "id": "deep_arch",
+          "pack": "structure",
+          "module": "tunnel.north.wide",
+          "position": [
+            257,
+            134
+          ]
+        },
+        {
+          "id": "west_stalagmites",
+          "pack": "base",
+          "module": "formation.stalagmites.2",
+          "position": [
+            17,
+            139
+          ],
+          "scale": 0.9
+        },
+        {
+          "id": "east_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.1",
+          "position": [
+            467,
+            139
+          ],
+          "scale": 0.9
+        },
+        {
+          "id": "deep_pendants",
+          "pack": "base",
+          "module": "formation.pendants.2",
+          "position": [
+            434,
+            22
+          ],
+          "scale": 0.8
+        },
+        {
+          "id": "rear_boulder",
+          "pack": "base",
+          "module": "formation.boulder.2",
+          "position": [
+            345,
+            139
+          ],
+          "scale": 0.6
+        },
+        {
+          "id": "mineral_crust",
+          "pack": "geology",
+          "module": "mineral.crust.1",
+          "position": [
+            84,
+            136
+          ]
+        },
+        {
+          "id": "floor_erosion",
+          "pack": "geology",
+          "module": "erosion.channel.2",
+          "position": [
+            224,
+            241
+          ]
+        },
+        {
+          "id": "left_wet_stain",
+          "pack": "geology",
+          "module": "stain.damp.2",
+          "position": [
+            35,
+            204
+          ]
+        },
+        {
+          "id": "right_wet_crack",
+          "pack": "water",
+          "module": "wet_crack.2",
+          "position": [
+            447,
+            244
+          ],
+          "animated": true
+        }
+      ],
+      "dark_recesses": [
+        [
+          220,
+          75,
+          75,
+          59
+        ]
+      ],
+      "crystals": [
+        {
+          "module": "micro.red.vertical",
+          "position": [
+            30,
+            87
+          ],
+          "phase": 0.088,
+          "radius": 150
+        },
+        {
+          "module": "micro.blue.dense",
+          "position": [
+            96,
+            106
+          ],
+          "phase": 0.22,
+          "radius": 150
+        },
+        {
+          "module": "micro.green.diagonal_left",
+          "position": [
+            149,
+            67
+          ],
+          "phase": 0.374,
+          "radius": 150
+        },
+        {
+          "module": "micro.white.sparse",
+          "position": [
+            205,
+            43
+          ],
+          "phase": 0.528,
+          "radius": 150
+        },
+        {
+          "module": "micro.purple.dense",
+          "position": [
+            278,
+            41
+          ],
+          "phase": 0.682,
+          "radius": 150
+        },
+        {
+          "module": "micro.orange.diagonal_right",
+          "position": [
+            350,
+            71
+          ],
+          "phase": 0.88,
+          "radius": 150
+        },
+        {
+          "module": "micro.blue.dense",
+          "position": [
+            408,
+            99
+          ],
+          "phase": 1.034,
+          "radius": 150
+        },
+        {
+          "module": "micro.green.vertical",
+          "position": [
+            464,
+            70
+          ],
+          "phase": 1.144,
+          "radius": 150
+        }
+      ]
+    }
+  ]
+}

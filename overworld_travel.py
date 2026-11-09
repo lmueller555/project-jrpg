@@ -109,6 +109,12 @@ class OverworldTravel:
             return False
         record = data.get('overworld')
         active = data.get('player', {}).get('scene') in {WORLD_ID, *RESERVE_SCENES, *CAVE_SCENES, *LEGACY_SCENES}
+        pending = data.get('post_battle')
+        cave_spoils = False
+        if (pending is not None and data['player'].get('scene') == 'sanctuary_cave'
+                and isinstance(pending, dict) and pending.get('kind') == 'cave'):
+            from post_battle import valid_pending_snapshot
+            cave_spoils = valid_pending_snapshot(pending, data)
         if record is None:
             return not active
         from grain_farm import valid_state
@@ -128,7 +134,7 @@ class OverworldTravel:
                 and ('grain_farm' not in record or valid_state(record['grain_farm']))
                 and type(record['version']) is int and record['version'] == 1
                 and record['region'] == REGION_ID
-                and not (active and data.get('post_battle') is not None)):
+                and not (active and pending is not None and not cave_spoils)):
             return False
         wildlife = record.get('wildlife')
         if wildlife is not None and wildlife['vignette']['phase'] in ('visit', 'done'):

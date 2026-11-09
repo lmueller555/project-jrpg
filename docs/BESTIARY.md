@@ -11,9 +11,10 @@ Tusker records for their authored test and MQ02 encounters. Fixed records
 retain their exact stats, abilities and item drops. Their future levels,
 species tuning and elemental profiles have not been assigned.
 
-This is an authoring dictionary and combat adapter. It does not add a
-player-facing encyclopedia menu, unlock the sanctuary cave, place new world
-encounters, or activate saved character levels and combat XP grants.
+This is an authoring dictionary and combat adapter. The three cave species are
+used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).
+The dictionary does not add a player-facing encyclopedia menu or activate
+saved character levels and combat XP grants.
 
 ## Cave Bat
 
@@ -181,8 +182,8 @@ separately from their damage category and the species' defensive affinities.
 Utility and Spellblade actions retain their existing untagged schemas. These
 tags preserve design intent and do not apply elemental damage, resistance or
 absorption in the current engine. Their visual Electric projectiles and impact
-effects do not change that rule. No cave encounter population is added by the
-combat art implementation.
+effects do not change that rule. Cave encounter pools and multi-enemy battle
+selection are documented in [Random encounters](CAVE_RANDOM_ENCOUNTERS.md).
 
 ## Elemental identity and relationships
 

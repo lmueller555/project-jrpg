@@ -75,8 +75,13 @@ class BatContactEncounterTests(unittest.TestCase):
                 self.assertEqual((game.elapsed_ms, tuple(game.player.position),
                                   [tuple(npc.position) for npc in game.persistent_npcs]), world)
                 self.assertTrue(game.combat.transitioning)
-                self.assertTrue(all(actor.atb == 0 for actor in
-                                    (*game.combat.model.party, game.combat.model.enemy)))
+                participants=(*game.combat.model.party, game.combat.model.enemy)
+                opening=[actor.atb for actor in participants]
+                self.assertTrue(all(0 <= value <= .5 for value in opening))
+                self.assertEqual(opening,[game.combat.model.initial_atb_values[actor.identifier]
+                                          for actor in participants])
+                game.update(.05,(0,0),False)
+                self.assertEqual([actor.atb for actor in participants],opening)
                 return
         self.fail('Running into the visible Bat did not start its encounter')
 

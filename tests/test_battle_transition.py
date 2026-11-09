@@ -115,12 +115,14 @@ class EncounterEntryTests(unittest.TestCase):
         elapsed = game.elapsed_ms
         position = tuple(game.player.position)
         villagers = [tuple(npc.position) for npc in game.persistent_npcs]
+        opening_atb = tuple(actor.atb for actor in (*scene.model.party, scene.model.enemy))
+        self.assertTrue(all(0 <= gauge <= .5 for gauge in opening_atb))
         duration = owner.transition.duration
         for _ in range(12):game.update(duration / 12, (1, 0), True)
         if owner.transitioning:game.update(.000001, (1, 0), True)
         self.assertFalse(owner.transitioning)
         self.assertEqual(scene._elapsed, 0)
-        self.assertTrue(all(actor.atb == 0 for actor in (*scene.model.party, scene.model.enemy)))
+        self.assertEqual(tuple(actor.atb for actor in (*scene.model.party, scene.model.enemy)), opening_atb)
         self.assertEqual(game.elapsed_ms, elapsed)
         self.assertEqual(tuple(game.player.position), position)
         self.assertEqual([tuple(npc.position) for npc in game.persistent_npcs], villagers)

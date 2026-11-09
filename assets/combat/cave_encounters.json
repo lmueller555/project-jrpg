@@ -1,0 +1,312 @@
+{
+  "version": 1,
+  "scene": "sanctuary_cave",
+  "tile_size": 24,
+  "distance_tiles": {
+    "minimum": 16,
+    "mode": 26,
+    "maximum": 36,
+    "safe_exit": 4
+  },
+  "formations": {
+    "bat": [
+      "cave_bat"
+    ],
+    "lithrusk": [
+      "lithrusk"
+    ],
+    "veylume": [
+      "veylume"
+    ],
+    "bat_pair": [
+      "cave_bat",
+      "cave_bat"
+    ],
+    "bat_lithrusk": [
+      "cave_bat",
+      "lithrusk"
+    ],
+    "bat_veylume": [
+      "cave_bat",
+      "veylume"
+    ],
+    "lithrusk_veylume": [
+      "lithrusk",
+      "veylume"
+    ],
+    "bat_trio": [
+      "cave_bat",
+      "cave_bat",
+      "cave_bat"
+    ],
+    "bat_pair_lithrusk": [
+      "cave_bat",
+      "cave_bat",
+      "lithrusk"
+    ],
+    "bat_pair_veylume": [
+      "cave_bat",
+      "cave_bat",
+      "veylume"
+    ],
+    "mixed_trio": [
+      "cave_bat",
+      "lithrusk",
+      "veylume"
+    ],
+    "bat_quartet": [
+      "cave_bat",
+      "cave_bat",
+      "cave_bat",
+      "cave_bat"
+    ],
+    "bat_trio_lithrusk": [
+      "cave_bat",
+      "cave_bat",
+      "cave_bat",
+      "lithrusk"
+    ],
+    "bat_trio_veylume": [
+      "cave_bat",
+      "cave_bat",
+      "cave_bat",
+      "veylume"
+    ]
+  },
+  "areas": {
+    "outer": {
+      "levels": {
+        "cave_bat": [
+          2,
+          2
+        ],
+        "lithrusk": [
+          2,
+          2
+        ]
+      },
+      "weights": {
+        "bat": 35,
+        "lithrusk": 20,
+        "veylume": 0,
+        "bat_pair": 30,
+        "bat_lithrusk": 15,
+        "bat_veylume": 0,
+        "lithrusk_veylume": 0,
+        "bat_trio": 0,
+        "bat_pair_lithrusk": 0,
+        "bat_pair_veylume": 0,
+        "mixed_trio": 0,
+        "bat_quartet": 0,
+        "bat_trio_lithrusk": 0,
+        "bat_trio_veylume": 0
+      }
+    },
+    "middle": {
+      "levels": {
+        "cave_bat": [
+          2,
+          3
+        ],
+        "lithrusk": [
+          2,
+          3
+        ],
+        "veylume": [
+          3,
+          3
+        ]
+      },
+      "weights": {
+        "bat": 20,
+        "lithrusk": 15,
+        "veylume": 5,
+        "bat_pair": 20,
+        "bat_lithrusk": 20,
+        "bat_veylume": 10,
+        "lithrusk_veylume": 0,
+        "bat_trio": 5,
+        "bat_pair_lithrusk": 3,
+        "bat_pair_veylume": 1,
+        "mixed_trio": 1,
+        "bat_quartet": 0,
+        "bat_trio_lithrusk": 0,
+        "bat_trio_veylume": 0
+      }
+    },
+    "deep": {
+      "levels": {
+        "cave_bat": [
+          3,
+          3
+        ],
+        "lithrusk": [
+          3,
+          3
+        ],
+        "veylume": [
+          3,
+          4
+        ]
+      },
+      "weights": {
+        "bat": 18,
+        "lithrusk": 10,
+        "veylume": 7,
+        "bat_pair": 17,
+        "bat_lithrusk": 13,
+        "bat_veylume": 10,
+        "lithrusk_veylume": 5,
+        "bat_trio": 6,
+        "bat_pair_lithrusk": 5,
+        "bat_pair_veylume": 3,
+        "mixed_trio": 1,
+        "bat_quartet": 3,
+        "bat_trio_lithrusk": 1,
+        "bat_trio_veylume": 1
+      }
+    }
+  },
+  "rooms": {
+    "entrance": {
+      "area": "outer",
+      "battlefield": "cave_outer"
+    },
+    "vein_gallery": {
+      "area": "outer",
+      "battlefield": "cave_outer"
+    },
+    "reflecting_grotto": {
+      "area": "middle",
+      "battlefield": "cave_grotto"
+    },
+    "upper_passage": {
+      "area": "middle",
+      "battlefield": "cave_grotto"
+    },
+    "splitstone_hollow": {
+      "area": "middle",
+      "battlefield": "cave_hollow"
+    },
+    "keepers_recess": {
+      "area": "middle",
+      "battlefield": "cave_hollow"
+    },
+    "deep_passage": {
+      "area": "deep",
+      "battlefield": "cave_depths"
+    },
+    "deep_gallery": {
+      "area": "deep",
+      "battlefield": "cave_depths"
+    },
+    "raised_shelf": {
+      "area": null,
+      "battlefield": null
+    },
+    "quiet_shelf": {
+      "area": null,
+      "battlefield": null
+    },
+    "echo_chamber": {
+      "area": null,
+      "battlefield": null
+    }
+  },
+  "safe_polygons": {
+    "entrance_apron": [
+      [
+        180,
+        1608
+      ],
+      [
+        410,
+        1608
+      ],
+      [
+        410,
+        1810
+      ],
+      [
+        180,
+        1810
+      ]
+    ]
+  },
+  "routes": {
+    "main": {
+      "width": 120,
+      "bands": [
+        {
+          "first": 0,
+          "last": 3,
+          "area": "outer",
+          "battlefield": "cave_outer"
+        },
+        {
+          "first": 4,
+          "last": 6,
+          "area": "middle",
+          "battlefield": "cave_hollow"
+        },
+        {
+          "first": 7,
+          "last": 10,
+          "area": "deep",
+          "battlefield": "cave_depths"
+        },
+        {
+          "first": 11,
+          "last": 14,
+          "area": null,
+          "battlefield": null
+        }
+      ]
+    },
+    "reflecting_loop": {
+      "width": 108,
+      "bands": [
+        {
+          "first": 0,
+          "last": 12,
+          "area": "middle",
+          "battlefield": "cave_grotto"
+        }
+      ]
+    },
+    "keeper_loop": {
+      "width": 108,
+      "bands": [
+        {
+          "first": 0,
+          "last": 5,
+          "area": "middle",
+          "battlefield": "cave_hollow"
+        },
+        {
+          "first": 6,
+          "last": 9,
+          "area": "deep",
+          "battlefield": "cave_depths"
+        }
+      ]
+    },
+    "raised_shelf": {
+      "width": 132,
+      "bands": [
+        {
+          "first": 0,
+          "last": 1,
+          "area": "middle",
+          "battlefield": "cave_hollow"
+        },
+        {
+          "first": 2,
+          "last": 4,
+          "area": null,
+          "battlefield": null
+        }
+      ]
+    }
+  }
+}

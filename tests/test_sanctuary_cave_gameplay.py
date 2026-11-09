@@ -3,6 +3,7 @@ import json
 import os
 import tempfile
 import unittest
+from unittest.mock import patch
 
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -16,6 +17,11 @@ from tools.capture_mq03_emergency import Driver
 
 class CaveGameplayTests(unittest.TestCase):
     def setUp(self):
+        # This suite isolates terrain, discoveries and following. Real random
+        # battle entry/settlement is exercised in test_cave_random_gameplay.
+        encounters=patch('main.Game._cave_encounters_available',return_value=False)
+        encounters.start()
+        self.addCleanup(encounters.stop)
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         self.addCleanup(pygame.quit)
