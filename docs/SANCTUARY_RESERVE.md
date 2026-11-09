@@ -34,13 +34,45 @@ eastern garden workstation remain solid. The bays are assembled as open floors,
 separate columns, arches and roof pieces, with collision at their physical bases.
 
 The hall is a separate, enterable scene with quiet seating and a records table.
-Its exit returns to the sanctuary court. The southern reserve exit returns to
+An animated door in its north wall, beside a bed plaque, leads to a small visitor
+relief room. Nessa tends the bed, fresh water and care supplies there. The hall's
+main exit returns to the sanctuary court. The southern reserve exit returns to
 the overworld near the miniature, and the existing Eldenmere entrance still
 returns to the village's southern road.
 
 Press **M** to inspect the local reserve map. It shows the sanctuary grounds,
 current position and named places, with short descriptions for each landmark.
 The same control closes the map and returns to exploration.
+
+## Visitor relief room
+
+Enter the hall from the Sanctuary court, then follow the bed plaque through the
+north-wing doorway. The relief room has a proper bed, water table, clean linens,
+care supplies, stained glass and a warm memorial lamp, assembled from the same
+native pixel packs as the hall. Attendant Nessa welcomes travelers and those
+keeping vigil. Both her dialogue and the bedside **E: rest** prompt offer an
+explicit **Rest / Not now** choice, with no fee or quest prerequisite.
+
+A short rest fully restores current HP and MP to each available travelling
+member's effective maxima, including reserves and KO companions. Characters
+unavailable elsewhere retain their resources. Levels, EXP, stats, modifiers,
+inventory, equipment, party formation, story progress and the cave encounter
+counter stay intact. There is no overnight time skip or quest completion.
+The existing story music continues through the room and rest.
+
+Recovery is saved before the completion message. A failed save restores the
+previous resources and offers **Retry / Not now**. Walking away or changing
+rooms before confirming cannot heal the party remotely. Saving and Continue
+inside the room preserve its location; **M** uses the Sanctuary overview and
+identifies the relief room. This rest point is available during the pending
+MQ03 Sanctuary outing without resolving its unfinished arrival scene.
+
+The independently rebuilt room is `elden_vale_sanctuary_relief`; its entrance
+and return use normal reciprocal hall doors. Build it with
+`python tools/build_sanctuary_relief_room.py`, and use `--check` to verify the
+exports. The hall's doorway and plaque are part of
+`tools/build_sanctuary_reserve_hall.py`. See the
+[production room captures](reviews/sanctuary_relief/README.md).
 
 Caretakers and visitors are live sprites rather than people painted into the
 scenery. Optional conversations and inspections introduce local care,
@@ -53,15 +85,15 @@ the confluence without revealing an ancient mechanism.
 The cave mouth retains its visible keeper rail and public apron. At the apron,
 press **E** to lift the rail and enter the [crystal cave](SANCTUARY_CAVE.md).
 One continuous cave provides branching exploration, one-time treasure and
-pulsing environmental light. Cave exploration does not advance MQ03. Enemy
-encounters, the miniboss and Caelan's first elemental Edge remain later quest
-work. This cave is distinct from the historically sealed workers' passage
-beneath the sanctuary.
+pulsing environmental light. Cave exploration does not advance MQ03. The
+[cave random encounters](CAVE_RANDOM_ENCOUNTERS.md) are live; the miniboss and
+its arrival resolution remain later quest work. This cave is distinct from the
+historically sealed workers' passage beneath the sanctuary.
 
 [Cave Bat](BESTIARY.md#cave-bat) is authored in the Bestiary as a level-2–3
-species for the eastern-ridge caves. Its data and isolated combat adapter are
-available, while encounter placement remains future quest work. The reserve
-remains peaceful; the keeper rail marks an explicit interaction into the cave.
+species for the eastern-ridge caves, joining Lithrusk and Veylume in the cave's
+weighted encounter roster. The reserve remains peaceful; the keeper rail marks
+an explicit interaction into the cave.
 
 During the new MQ03 route, a survivor exposes the Crown crew Aldric secretly
 sent ahead to establish authority and prepare mining. Caretakers have heard

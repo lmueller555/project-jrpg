@@ -88,6 +88,17 @@ def fantasy_modules(data):
     draw.line((8,7,8,12), fill=palette['lamp_light'])
     draw.line((4,17,11,17), fill=palette['stone_light'])
     images['memorial_lamp'] = lamp
+
+    sign = Image.new('RGBA', (18, 14))
+    draw = ImageDraw.Draw(sign)
+    draw.rectangle((0,0,17,13), fill='#45382d', outline=palette['amber'])
+    draw.rectangle((2,2,15,11), fill='#314f40')
+    draw.rectangle((4,5,6,8), fill=palette['opal'])
+    draw.rectangle((7,5,13,8), fill=palette['cyan_light'])
+    draw.line((3,4,3,11), fill=palette['amber'])
+    draw.line((3,9,14,9), fill=palette['amber'])
+    draw.line((14,7,14,11), fill=palette['amber'])
+    images['visitor_bed_sign'] = sign
     return images
 
 
@@ -154,6 +165,9 @@ def products():
     blocked = Image.new('L', ground.size, 255)
     blocked.paste(0, box(data['floor_rect']))
     blocked.paste(0, box(data['exit_clearance']))
+    relief_door = data.get('relief_door')
+    if relief_door:
+        blocked.paste(0, box(relief_door['clearance']))
     output = {ART/'ground.png': png(ground.convert('RGB'))}
     for name, image in fantasy.items():output[ART/'fantasy'/(name+'.png')] = png(image)
     entities = []
@@ -199,6 +213,17 @@ def products():
     for entity in sorted(entities, key=lambda item: item['sort_y']):
         image = Image.open(BytesIO(output[ROOT/entity['frames'][0]])).convert('RGBA')
         overview.alpha_composite(image, tuple(entity['position']))
+    relief_frames = []
+    if relief_door:
+        for index, source in enumerate(relief_door['frames'], 1):
+            content = (ROOT/source['path']).read_bytes()
+            if hashlib.sha256(content).hexdigest() != source['sha256']:
+                raise ValueError('Source door pixel asset changed: '+source['path'])
+            path = ART/'doors/relief_room'/f'frame_{index:02d}.png'
+            output[path] = content
+            relief_frames.append(path.relative_to(ROOT).as_posix())
+        overview.alpha_composite(Image.open(BytesIO(output[ROOT/relief_frames[0]])).convert('RGBA'),
+                                 tuple(relief_door['position']))
     output[ART/'overview.png'] = png(overview.convert('RGB'))
     output[MAP/'collision.png'] = png(blocked)
     map_data = {
@@ -222,6 +247,18 @@ def products():
         'source_assets': list(data['assets'].values()), 'object_footprints': footprints,
         'walkable_floor': data['floor_rect'], 'exit_clearance': data['exit_clearance'],
         'fantasy_details': data['fantasy']}
+    if relief_door:
+        map_data['doors'].append({
+            'id': relief_door['id'], 'anchor': relief_door['anchor'],
+            'entry_y': relief_door['anchor'][1], 'entry_side': 'north',
+            'entry_half_width': 10, 'open_radius': 42, 'close_radius': 50,
+            'frame_duration_ms': 100, 'frames': relief_frames,
+            'position': relief_door['position'], 'host': None, 'requires_open': True,
+            'destination': relief_door['destination'], 'spawn': relief_door['spawn'],
+            'arrival_facing': 'back', 'arrival_door': 'hall'})
+        map_data['public_approaches'] = {'relief_room': relief_door['approach']}
+        map_data['relief_clearance'] = relief_door['clearance']
+        map_data['door_source_assets'] = relief_door['frames']
     output[MAP/'map.json'] = (json.dumps(map_data, indent=2)+'\n').encode()
     manifest = {'version': 1, 'authoring': data['authoring'],
                 'source_recipe': SOURCE.relative_to(ROOT).as_posix(),

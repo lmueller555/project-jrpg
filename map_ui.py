@@ -368,7 +368,8 @@ class MapUI:
         self._draw_details(painter)
 
     def _in_reserve(self):
-        return self.game.world.data.get('id') in ('elden_vale_sanctuary', 'elden_vale_sanctuary_hall')
+        from overworld_travel import RESERVE_SCENES
+        return self.game.world.data.get('id') in RESERVE_SCENES
 
     def _in_cave(self):
         return self.game.world.data.get('id') == 'sanctuary_cave'
