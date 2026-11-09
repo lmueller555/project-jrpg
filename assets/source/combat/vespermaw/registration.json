@@ -1,0 +1,8547 @@
+{
+  "version": 1,
+  "canvas": [
+    160,
+    144
+  ],
+  "anchor": [
+    64,
+    128
+  ],
+  "source_grid": [
+    8,
+    4
+  ],
+  "native_scale": 0.6,
+  "palette_colors": 64,
+  "source_sha256": {
+    "assets/source/combat/vespermaw/locomotion.png": "7e8f641ca06acd283b41a52f0292751afd5fa79d734aaf243345512fff8eef8d",
+    "assets/source/combat/vespermaw/raking_claw.png": "3b6e39f858fa680887260eeae82d66caf92d762f8e06e9592ddccdd7d01c43f1",
+    "assets/source/combat/vespermaw/confluence_roar.png": "8924254c220ea3b10c145fc4045c8bbfb2e02e4e08e095236e4b612e435d7edd",
+    "assets/source/combat/vespermaw/gather_resonance.png": "ff64b86aa012df67e08faaf344501a41d126bbe10b9b38d1275831cbebdefb04",
+    "assets/source/combat/vespermaw/charged_hold.png": "ac8884fdcf01544d7205a3867753e54414501d7d665816d345fadc3d246dddf9",
+    "assets/source/combat/vespermaw/ruinous_pounce.png": "cbb4b50234ab467bdf758a0e87db75769c69698c2527060d00e6a764aae11255",
+    "assets/source/combat/vespermaw/reactions.png": "be8b8ad5a290b3dd80b20607ae0a6af9d00ec0ab2a5ac0b02e374a69712f1b7f",
+    "assets/source/combat/vespermaw/defeat.png": "e1c2ed5271d4780ebb9d2248d3ae5fff4ddd23c29b05e7388eeea45f8b4b32a2"
+  },
+  "drawings": [
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 0,
+      "source_rect": [
+        16,
+        41,
+        200,
+        149
+      ],
+      "source_foot": [
+        102.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          116.0,
+          122.95
+        ],
+        "contact": [
+          213,
+          154.24
+        ],
+        "cast_origin": [
+          190.0,
+          82.72
+        ],
+        "mouth": [
+          190.0,
+          82.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 1,
+      "source_rect": [
+        239,
+        41,
+        198,
+        149
+      ],
+      "source_foot": [
+        324.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          338.0,
+          122.95
+        ],
+        "contact": [
+          434,
+          154.24
+        ],
+        "cast_origin": [
+          411.26,
+          82.72
+        ],
+        "mouth": [
+          411.26,
+          82.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 2,
+      "source_rect": [
+        461,
+        42,
+        197,
+        148
+      ],
+      "source_foot": [
+        546.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          559.5,
+          123.4
+        ],
+        "contact": [
+          655,
+          154.48
+        ],
+        "cast_origin": [
+          632.39,
+          83.44
+        ],
+        "mouth": [
+          632.39,
+          83.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 3,
+      "source_rect": [
+        683,
+        40,
+        195,
+        150
+      ],
+      "source_foot": [
+        768.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          780.5,
+          122.5
+        ],
+        "contact": [
+          875,
+          154.0
+        ],
+        "cast_origin": [
+          852.65,
+          82.0
+        ],
+        "mouth": [
+          852.65,
+          82.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 4,
+      "source_rect": [
+        904,
+        38,
+        195,
+        152
+      ],
+      "source_foot": [
+        989.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1001.5,
+          121.6
+        ],
+        "contact": [
+          1096,
+          153.52
+        ],
+        "cast_origin": [
+          1073.65,
+          80.56
+        ],
+        "mouth": [
+          1073.65,
+          80.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 5,
+      "source_rect": [
+        1127,
+        35,
+        193,
+        155
+      ],
+      "source_foot": [
+        1211.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1223.5,
+          120.25
+        ],
+        "contact": [
+          1317,
+          152.8
+        ],
+        "cast_origin": [
+          1294.91,
+          78.4
+        ],
+        "mouth": [
+          1294.91,
+          78.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 6,
+      "source_rect": [
+        1348,
+        34,
+        194,
+        156
+      ],
+      "source_foot": [
+        1433.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1445.0,
+          119.8
+        ],
+        "contact": [
+          1539,
+          152.56
+        ],
+        "cast_origin": [
+          1516.78,
+          77.68
+        ],
+        "mouth": [
+          1516.78,
+          77.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 7,
+      "source_rect": [
+        1572,
+        34,
+        190,
+        156
+      ],
+      "source_foot": [
+        1655.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1667.0,
+          119.8
+        ],
+        "contact": [
+          1759,
+          152.56
+        ],
+        "cast_origin": [
+          1737.3,
+          77.68
+        ],
+        "mouth": [
+          1737.3,
+          77.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 8,
+      "source_rect": [
+        19,
+        256,
+        191,
+        154
+      ],
+      "source_foot": [
+        102.875,
+        410
+      ],
+      "source_anchors": {
+        "body": [
+          114.5,
+          340.7
+        ],
+        "contact": [
+          207,
+          373.04
+        ],
+        "cast_origin": [
+          185.17,
+          299.12
+        ],
+        "mouth": [
+          185.17,
+          299.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 9,
+      "source_rect": [
+        241,
+        259,
+        192,
+        152
+      ],
+      "source_foot": [
+        324.625,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          337.0,
+          342.6
+        ],
+        "contact": [
+          430,
+          374.52
+        ],
+        "cast_origin": [
+          408.04,
+          301.56
+        ],
+        "mouth": [
+          408.04,
+          301.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 10,
+      "source_rect": [
+        461,
+        265,
+        195,
+        146
+      ],
+      "source_foot": [
+        546.375,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          558.5,
+          345.3
+        ],
+        "contact": [
+          653,
+          375.96
+        ],
+        "cast_origin": [
+          630.65,
+          305.88
+        ],
+        "mouth": [
+          630.65,
+          305.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 11,
+      "source_rect": [
+        682,
+        268,
+        196,
+        143
+      ],
+      "source_foot": [
+        768.125,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          780.0,
+          346.65
+        ],
+        "contact": [
+          875,
+          376.68
+        ],
+        "cast_origin": [
+          852.52,
+          308.04
+        ],
+        "mouth": [
+          852.52,
+          308.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 12,
+      "source_rect": [
+        903,
+        269,
+        199,
+        142
+      ],
+      "source_foot": [
+        989.875,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1002.5,
+          347.1
+        ],
+        "contact": [
+          1099,
+          376.92
+        ],
+        "cast_origin": [
+          1076.13,
+          308.76
+        ],
+        "mouth": [
+          1076.13,
+          308.76
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 13,
+      "source_rect": [
+        1126,
+        271,
+        197,
+        140
+      ],
+      "source_foot": [
+        1211.625,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1224.5,
+          348.0
+        ],
+        "contact": [
+          1320,
+          377.4
+        ],
+        "cast_origin": [
+          1297.39,
+          310.2
+        ],
+        "mouth": [
+          1297.39,
+          310.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 14,
+      "source_rect": [
+        1347,
+        274,
+        199,
+        137
+      ],
+      "source_foot": [
+        1433.375,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1446.5,
+          349.35
+        ],
+        "contact": [
+          1543,
+          378.12
+        ],
+        "cast_origin": [
+          1520.13,
+          312.36
+        ],
+        "mouth": [
+          1520.13,
+          312.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 15,
+      "source_rect": [
+        1570,
+        275,
+        198,
+        136
+      ],
+      "source_foot": [
+        1655.125,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1669.0,
+          349.8
+        ],
+        "contact": [
+          1765,
+          378.36
+        ],
+        "cast_origin": [
+          1742.26,
+          313.08
+        ],
+        "mouth": [
+          1742.26,
+          313.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 16,
+      "source_rect": [
+        17,
+        496,
+        199,
+        136
+      ],
+      "source_foot": [
+        102.875,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          116.5,
+          570.8
+        ],
+        "contact": [
+          213,
+          599.36
+        ],
+        "cast_origin": [
+          190.13,
+          534.08
+        ],
+        "mouth": [
+          190.13,
+          534.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 17,
+      "source_rect": [
+        238,
+        492,
+        200,
+        140
+      ],
+      "source_foot": [
+        324.625,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          338.0,
+          569.0
+        ],
+        "contact": [
+          435,
+          598.4
+        ],
+        "cast_origin": [
+          412.0,
+          531.2
+        ],
+        "mouth": [
+          412.0,
+          531.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 18,
+      "source_rect": [
+        460,
+        488,
+        198,
+        144
+      ],
+      "source_foot": [
+        546.375,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          559.0,
+          567.2
+        ],
+        "contact": [
+          655,
+          597.44
+        ],
+        "cast_origin": [
+          632.26,
+          528.32
+        ],
+        "mouth": [
+          632.26,
+          528.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 19,
+      "source_rect": [
+        682,
+        484,
+        198,
+        147
+      ],
+      "source_foot": [
+        768.125,
+        631
+      ],
+      "source_anchors": {
+        "body": [
+          781.0,
+          564.85
+        ],
+        "contact": [
+          877,
+          595.72
+        ],
+        "cast_origin": [
+          854.26,
+          525.16
+        ],
+        "mouth": [
+          854.26,
+          525.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 20,
+      "source_rect": [
+        904,
+        487,
+        198,
+        144
+      ],
+      "source_foot": [
+        989.875,
+        631
+      ],
+      "source_anchors": {
+        "body": [
+          1003.0,
+          566.2
+        ],
+        "contact": [
+          1099,
+          596.44
+        ],
+        "cast_origin": [
+          1076.26,
+          527.32
+        ],
+        "mouth": [
+          1076.26,
+          527.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 21,
+      "source_rect": [
+        1124,
+        494,
+        200,
+        138
+      ],
+      "source_foot": [
+        1211.625,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          1224.0,
+          569.9
+        ],
+        "contact": [
+          1321,
+          598.88
+        ],
+        "cast_origin": [
+          1298.0,
+          532.64
+        ],
+        "mouth": [
+          1298.0,
+          532.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 22,
+      "source_rect": [
+        1346,
+        498,
+        202,
+        134
+      ],
+      "source_foot": [
+        1433.375,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          1447.0,
+          571.7
+        ],
+        "contact": [
+          1545,
+          599.84
+        ],
+        "cast_origin": [
+          1521.74,
+          535.52
+        ],
+        "mouth": [
+          1521.74,
+          535.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 23,
+      "source_rect": [
+        1566,
+        498,
+        202,
+        134
+      ],
+      "source_foot": [
+        1655.125,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          1667.0,
+          571.7
+        ],
+        "contact": [
+          1765,
+          599.84
+        ],
+        "cast_origin": [
+          1741.74,
+          535.52
+        ],
+        "mouth": [
+          1741.74,
+          535.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 24,
+      "source_rect": [
+        13,
+        721,
+        205,
+        134
+      ],
+      "source_foot": [
+        102.875,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          115.5,
+          794.7
+        ],
+        "contact": [
+          215,
+          822.84
+        ],
+        "cast_origin": [
+          191.35,
+          758.52
+        ],
+        "mouth": [
+          191.35,
+          758.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 25,
+      "source_rect": [
+        234,
+        719,
+        204,
+        136
+      ],
+      "source_foot": [
+        324.625,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          336.0,
+          793.8
+        ],
+        "contact": [
+          435,
+          822.36
+        ],
+        "cast_origin": [
+          411.48,
+          757.08
+        ],
+        "mouth": [
+          411.48,
+          757.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 26,
+      "source_rect": [
+        459,
+        715,
+        202,
+        140
+      ],
+      "source_foot": [
+        546.375,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          560.0,
+          792.0
+        ],
+        "contact": [
+          658,
+          821.4
+        ],
+        "cast_origin": [
+          634.74,
+          754.2
+        ],
+        "mouth": [
+          634.74,
+          754.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 27,
+      "source_rect": [
+        682,
+        711,
+        199,
+        144
+      ],
+      "source_foot": [
+        768.125,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          781.5,
+          790.2
+        ],
+        "contact": [
+          878,
+          820.44
+        ],
+        "cast_origin": [
+          855.13,
+          751.32
+        ],
+        "mouth": [
+          855.13,
+          751.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 28,
+      "source_rect": [
+        903,
+        708,
+        199,
+        147
+      ],
+      "source_foot": [
+        989.875,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          1002.5,
+          788.85
+        ],
+        "contact": [
+          1099,
+          819.72
+        ],
+        "cast_origin": [
+          1076.13,
+          749.16
+        ],
+        "mouth": [
+          1076.13,
+          749.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 29,
+      "source_rect": [
+        1126,
+        708,
+        195,
+        147
+      ],
+      "source_foot": [
+        1211.625,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          1223.5,
+          788.85
+        ],
+        "contact": [
+          1318,
+          819.72
+        ],
+        "cast_origin": [
+          1295.65,
+          749.16
+        ],
+        "mouth": [
+          1295.65,
+          749.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 30,
+      "source_rect": [
+        1349,
+        706,
+        195,
+        149
+      ],
+      "source_foot": [
+        1433.375,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          1446.5,
+          787.95
+        ],
+        "contact": [
+          1541,
+          819.24
+        ],
+        "cast_origin": [
+          1518.65,
+          747.72
+        ],
+        "mouth": [
+          1518.65,
+          747.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/locomotion.png",
+      "source_cell": 31,
+      "source_rect": [
+        1572,
+        707,
+        193,
+        148
+      ],
+      "source_foot": [
+        1655.125,
+        855
+      ],
+      "source_anchors": {
+        "body": [
+          1668.5,
+          788.4
+        ],
+        "contact": [
+          1762,
+          819.48
+        ],
+        "cast_origin": [
+          1739.91,
+          748.44
+        ],
+        "mouth": [
+          1739.91,
+          748.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 0,
+      "source_rect": [
+        18,
+        46,
+        196,
+        145
+      ],
+      "source_foot": [
+        102.875,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          116.0,
+          125.75
+        ],
+        "contact": [
+          211,
+          156.2
+        ],
+        "cast_origin": [
+          188.52,
+          86.6
+        ],
+        "mouth": [
+          188.52,
+          86.6
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 1,
+      "source_rect": [
+        238,
+        48,
+        196,
+        143
+      ],
+      "source_foot": [
+        324.625,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          336.0,
+          126.65
+        ],
+        "contact": [
+          431,
+          156.68
+        ],
+        "cast_origin": [
+          408.52,
+          88.04
+        ],
+        "mouth": [
+          408.52,
+          88.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 2,
+      "source_rect": [
+        461,
+        51,
+        192,
+        140
+      ],
+      "source_foot": [
+        546.375,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          557.0,
+          128.0
+        ],
+        "contact": [
+          650,
+          157.4
+        ],
+        "cast_origin": [
+          628.04,
+          90.2
+        ],
+        "mouth": [
+          628.04,
+          90.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 3,
+      "source_rect": [
+        684,
+        50,
+        187,
+        139
+      ],
+      "source_foot": [
+        768.125,
+        189
+      ],
+      "source_anchors": {
+        "body": [
+          777.5,
+          126.45
+        ],
+        "contact": [
+          868,
+          155.64
+        ],
+        "cast_origin": [
+          846.69,
+          88.92
+        ],
+        "mouth": [
+          846.69,
+          88.92
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 4,
+      "source_rect": [
+        908,
+        47,
+        178,
+        140
+      ],
+      "source_foot": [
+        989.875,
+        187
+      ],
+      "source_anchors": {
+        "body": [
+          997.0,
+          124.0
+        ],
+        "contact": [
+          1083,
+          153.4
+        ],
+        "cast_origin": [
+          1062.86,
+          86.2
+        ],
+        "mouth": [
+          1062.86,
+          86.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 5,
+      "source_rect": [
+        1130,
+        45,
+        176,
+        141
+      ],
+      "source_foot": [
+        1211.625,
+        186
+      ],
+      "source_anchors": {
+        "body": [
+          1218.0,
+          122.55
+        ],
+        "contact": [
+          1303,
+          152.16
+        ],
+        "cast_origin": [
+          1283.12,
+          84.48
+        ],
+        "mouth": [
+          1283.12,
+          84.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 6,
+      "source_rect": [
+        1353,
+        43,
+        176,
+        143
+      ],
+      "source_foot": [
+        1433.375,
+        186
+      ],
+      "source_anchors": {
+        "body": [
+          1441.0,
+          121.65
+        ],
+        "contact": [
+          1526,
+          151.68
+        ],
+        "cast_origin": [
+          1506.12,
+          83.04
+        ],
+        "mouth": [
+          1506.12,
+          83.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 7,
+      "source_rect": [
+        1574,
+        39,
+        179,
+        147
+      ],
+      "source_foot": [
+        1655.125,
+        186
+      ],
+      "source_anchors": {
+        "body": [
+          1663.5,
+          119.85
+        ],
+        "contact": [
+          1750,
+          150.72
+        ],
+        "cast_origin": [
+          1729.73,
+          80.16
+        ],
+        "mouth": [
+          1729.73,
+          80.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 8,
+      "source_rect": [
+        20,
+        262,
+        189,
+        145
+      ],
+      "source_foot": [
+        102.875,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          114.5,
+          341.75
+        ],
+        "contact": [
+          206,
+          372.2
+        ],
+        "cast_origin": [
+          184.43,
+          302.6
+        ],
+        "mouth": [
+          184.43,
+          302.6
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 9,
+      "source_rect": [
+        241,
+        263,
+        201,
+        144
+      ],
+      "source_foot": [
+        324.625,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          341.5,
+          342.2
+        ],
+        "contact": [
+          439,
+          372.44
+        ],
+        "cast_origin": [
+          415.87,
+          303.32
+        ],
+        "mouth": [
+          415.87,
+          303.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 10,
+      "source_rect": [
+        462,
+        263,
+        203,
+        144
+      ],
+      "source_foot": [
+        546.375,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          563.5,
+          342.2
+        ],
+        "contact": [
+          662,
+          372.44
+        ],
+        "cast_origin": [
+          638.61,
+          303.32
+        ],
+        "mouth": [
+          638.61,
+          303.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 11,
+      "source_rect": [
+        682,
+        263,
+        210,
+        144
+      ],
+      "source_foot": [
+        768.125,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          787.0,
+          342.2
+        ],
+        "contact": [
+          889,
+          372.44
+        ],
+        "cast_origin": [
+          864.7,
+          303.32
+        ],
+        "mouth": [
+          864.7,
+          303.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 12,
+      "source_rect": [
+        904,
+        267,
+        214,
+        140
+      ],
+      "source_foot": [
+        989.875,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          1011.0,
+          344.0
+        ],
+        "contact": [
+          1115,
+          373.4
+        ],
+        "cast_origin": [
+          1090.18,
+          306.2
+        ],
+        "mouth": [
+          1090.18,
+          306.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 13,
+      "source_rect": [
+        1125,
+        270,
+        211,
+        138
+      ],
+      "source_foot": [
+        1211.625,
+        408
+      ],
+      "source_anchors": {
+        "body": [
+          1230.5,
+          345.9
+        ],
+        "contact": [
+          1333,
+          374.88
+        ],
+        "cast_origin": [
+          1308.57,
+          308.64
+        ],
+        "mouth": [
+          1308.57,
+          308.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 14,
+      "source_rect": [
+        1345,
+        274,
+        213,
+        133
+      ],
+      "source_foot": [
+        1433.375,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          1451.5,
+          347.15
+        ],
+        "contact": [
+          1555,
+          375.08
+        ],
+        "cast_origin": [
+          1530.31,
+          311.24
+        ],
+        "mouth": [
+          1530.31,
+          311.24
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 15,
+      "source_rect": [
+        1565,
+        278,
+        202,
+        129
+      ],
+      "source_foot": [
+        1655.125,
+        407
+      ],
+      "source_anchors": {
+        "body": [
+          1666.0,
+          348.95
+        ],
+        "contact": [
+          1764,
+          376.04
+        ],
+        "cast_origin": [
+          1740.74,
+          314.12
+        ],
+        "mouth": [
+          1740.74,
+          314.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 16,
+      "source_rect": [
+        16,
+        503,
+        186,
+        136
+      ],
+      "source_foot": [
+        102.875,
+        639
+      ],
+      "source_anchors": {
+        "body": [
+          109.0,
+          577.8
+        ],
+        "contact": [
+          199,
+          606.36
+        ],
+        "cast_origin": [
+          177.82,
+          541.08
+        ],
+        "mouth": [
+          177.82,
+          541.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 17,
+      "source_rect": [
+        238,
+        504,
+        189,
+        134
+      ],
+      "source_foot": [
+        324.625,
+        638
+      ],
+      "source_anchors": {
+        "body": [
+          332.5,
+          577.7
+        ],
+        "contact": [
+          424,
+          605.84
+        ],
+        "cast_origin": [
+          402.43,
+          541.52
+        ],
+        "mouth": [
+          402.43,
+          541.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 18,
+      "source_rect": [
+        461,
+        504,
+        191,
+        132
+      ],
+      "source_foot": [
+        546.375,
+        636
+      ],
+      "source_anchors": {
+        "body": [
+          556.5,
+          576.6
+        ],
+        "contact": [
+          649,
+          604.32
+        ],
+        "cast_origin": [
+          627.17,
+          540.96
+        ],
+        "mouth": [
+          627.17,
+          540.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 19,
+      "source_rect": [
+        684,
+        505,
+        189,
+        132
+      ],
+      "source_foot": [
+        768.125,
+        637
+      ],
+      "source_anchors": {
+        "body": [
+          778.5,
+          577.6
+        ],
+        "contact": [
+          870,
+          605.32
+        ],
+        "cast_origin": [
+          848.43,
+          541.96
+        ],
+        "mouth": [
+          848.43,
+          541.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 20,
+      "source_rect": [
+        906,
+        505,
+        188,
+        131
+      ],
+      "source_foot": [
+        989.875,
+        636
+      ],
+      "source_anchors": {
+        "body": [
+          1000.0,
+          577.05
+        ],
+        "contact": [
+          1091,
+          604.56
+        ],
+        "cast_origin": [
+          1069.56,
+          541.68
+        ],
+        "mouth": [
+          1069.56,
+          541.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 21,
+      "source_rect": [
+        1128,
+        508,
+        190,
+        127
+      ],
+      "source_foot": [
+        1211.625,
+        635
+      ],
+      "source_anchors": {
+        "body": [
+          1223.0,
+          577.85
+        ],
+        "contact": [
+          1315,
+          604.52
+        ],
+        "cast_origin": [
+          1293.3,
+          543.56
+        ],
+        "mouth": [
+          1293.3,
+          543.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 22,
+      "source_rect": [
+        1348,
+        505,
+        191,
+        131
+      ],
+      "source_foot": [
+        1433.375,
+        636
+      ],
+      "source_anchors": {
+        "body": [
+          1443.5,
+          577.05
+        ],
+        "contact": [
+          1536,
+          604.56
+        ],
+        "cast_origin": [
+          1514.17,
+          541.68
+        ],
+        "mouth": [
+          1514.17,
+          541.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 23,
+      "source_rect": [
+        1571,
+        508,
+        188,
+        128
+      ],
+      "source_foot": [
+        1655.125,
+        636
+      ],
+      "source_anchors": {
+        "body": [
+          1665.0,
+          578.4
+        ],
+        "contact": [
+          1756,
+          605.28
+        ],
+        "cast_origin": [
+          1734.56,
+          543.84
+        ],
+        "mouth": [
+          1734.56,
+          543.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 24,
+      "source_rect": [
+        17,
+        730,
+        190,
+        128
+      ],
+      "source_foot": [
+        102.875,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          112.0,
+          800.4
+        ],
+        "contact": [
+          204,
+          827.28
+        ],
+        "cast_origin": [
+          182.3,
+          765.84
+        ],
+        "mouth": [
+          182.3,
+          765.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 25,
+      "source_rect": [
+        239,
+        728,
+        190,
+        129
+      ],
+      "source_foot": [
+        324.625,
+        857
+      ],
+      "source_anchors": {
+        "body": [
+          334.0,
+          798.95
+        ],
+        "contact": [
+          426,
+          826.04
+        ],
+        "cast_origin": [
+          404.3,
+          764.12
+        ],
+        "mouth": [
+          404.3,
+          764.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 26,
+      "source_rect": [
+        461,
+        726,
+        189,
+        132
+      ],
+      "source_foot": [
+        546.375,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          555.5,
+          798.6
+        ],
+        "contact": [
+          647,
+          826.32
+        ],
+        "cast_origin": [
+          625.43,
+          762.96
+        ],
+        "mouth": [
+          625.43,
+          762.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 27,
+      "source_rect": [
+        685,
+        724,
+        187,
+        134
+      ],
+      "source_foot": [
+        768.125,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          778.5,
+          797.7
+        ],
+        "contact": [
+          869,
+          825.84
+        ],
+        "cast_origin": [
+          847.69,
+          761.52
+        ],
+        "mouth": [
+          847.69,
+          761.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 28,
+      "source_rect": [
+        904,
+        724,
+        190,
+        134
+      ],
+      "source_foot": [
+        989.875,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          999.0,
+          797.7
+        ],
+        "contact": [
+          1091,
+          825.84
+        ],
+        "cast_origin": [
+          1069.3,
+          761.52
+        ],
+        "mouth": [
+          1069.3,
+          761.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 29,
+      "source_rect": [
+        1128,
+        723,
+        187,
+        136
+      ],
+      "source_foot": [
+        1211.625,
+        859
+      ],
+      "source_anchors": {
+        "body": [
+          1221.5,
+          797.8
+        ],
+        "contact": [
+          1312,
+          826.36
+        ],
+        "cast_origin": [
+          1290.69,
+          761.08
+        ],
+        "mouth": [
+          1290.69,
+          761.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 30,
+      "source_rect": [
+        1349,
+        718,
+        189,
+        140
+      ],
+      "source_foot": [
+        1433.375,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          1443.5,
+          795.0
+        ],
+        "contact": [
+          1535,
+          824.4
+        ],
+        "cast_origin": [
+          1513.43,
+          757.2
+        ],
+        "mouth": [
+          1513.43,
+          757.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/raking_claw.png",
+      "source_cell": 31,
+      "source_rect": [
+        1571,
+        719,
+        188,
+        140
+      ],
+      "source_foot": [
+        1655.125,
+        859
+      ],
+      "source_anchors": {
+        "body": [
+          1665.0,
+          796.0
+        ],
+        "contact": [
+          1756,
+          825.4
+        ],
+        "cast_origin": [
+          1734.56,
+          758.2
+        ],
+        "mouth": [
+          1734.56,
+          758.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 0,
+      "source_rect": [
+        17,
+        36,
+        201,
+        155
+      ],
+      "source_foot": [
+        102.875,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          117.5,
+          121.25
+        ],
+        "contact": [
+          215,
+          153.8
+        ],
+        "cast_origin": [
+          191.87,
+          79.4
+        ],
+        "mouth": [
+          191.87,
+          79.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 1,
+      "source_rect": [
+        238,
+        40,
+        200,
+        151
+      ],
+      "source_foot": [
+        324.625,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          338.0,
+          123.05
+        ],
+        "contact": [
+          435,
+          154.76
+        ],
+        "cast_origin": [
+          412.0,
+          82.28
+        ],
+        "mouth": [
+          412.0,
+          82.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 2,
+      "source_rect": [
+        459,
+        50,
+        202,
+        141
+      ],
+      "source_foot": [
+        546.375,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          560.0,
+          127.55
+        ],
+        "contact": [
+          658,
+          157.16
+        ],
+        "cast_origin": [
+          634.74,
+          89.48
+        ],
+        "mouth": [
+          634.74,
+          89.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 3,
+      "source_rect": [
+        681,
+        61,
+        199,
+        132
+      ],
+      "source_foot": [
+        768.125,
+        193
+      ],
+      "source_anchors": {
+        "body": [
+          780.5,
+          133.6
+        ],
+        "contact": [
+          877,
+          161.32
+        ],
+        "cast_origin": [
+          854.13,
+          97.96
+        ],
+        "mouth": [
+          854.13,
+          97.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 4,
+      "source_rect": [
+        902,
+        72,
+        200,
+        122
+      ],
+      "source_foot": [
+        989.875,
+        194
+      ],
+      "source_anchors": {
+        "body": [
+          1002.0,
+          139.1
+        ],
+        "contact": [
+          1099,
+          164.72
+        ],
+        "cast_origin": [
+          1076.0,
+          106.16
+        ],
+        "mouth": [
+          1076.0,
+          106.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 5,
+      "source_rect": [
+        1124,
+        80,
+        198,
+        115
+      ],
+      "source_foot": [
+        1211.625,
+        195
+      ],
+      "source_anchors": {
+        "body": [
+          1223.0,
+          143.25
+        ],
+        "contact": [
+          1319,
+          167.4
+        ],
+        "cast_origin": [
+          1296.26,
+          112.2
+        ],
+        "mouth": [
+          1296.26,
+          112.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 6,
+      "source_rect": [
+        1346,
+        83,
+        197,
+        113
+      ],
+      "source_foot": [
+        1433.375,
+        196
+      ],
+      "source_anchors": {
+        "body": [
+          1444.5,
+          145.15
+        ],
+        "contact": [
+          1540,
+          168.88
+        ],
+        "cast_origin": [
+          1517.39,
+          114.64
+        ],
+        "mouth": [
+          1517.39,
+          114.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 7,
+      "source_rect": [
+        1567,
+        90,
+        195,
+        106
+      ],
+      "source_foot": [
+        1655.125,
+        196
+      ],
+      "source_anchors": {
+        "body": [
+          1664.5,
+          148.3
+        ],
+        "contact": [
+          1759,
+          170.56
+        ],
+        "cast_origin": [
+          1736.65,
+          119.68
+        ],
+        "mouth": [
+          1736.65,
+          119.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 8,
+      "source_rect": [
+        16,
+        303,
+        197,
+        116
+      ],
+      "source_foot": [
+        102.875,
+        419
+      ],
+      "source_anchors": {
+        "body": [
+          114.5,
+          366.8
+        ],
+        "contact": [
+          210,
+          391.16
+        ],
+        "cast_origin": [
+          187.39,
+          335.48
+        ],
+        "mouth": [
+          187.39,
+          335.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 9,
+      "source_rect": [
+        238,
+        291,
+        194,
+        126
+      ],
+      "source_foot": [
+        324.625,
+        417
+      ],
+      "source_anchors": {
+        "body": [
+          335.0,
+          360.3
+        ],
+        "contact": [
+          429,
+          386.76
+        ],
+        "cast_origin": [
+          406.78,
+          326.28
+        ],
+        "mouth": [
+          406.78,
+          326.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 10,
+      "source_rect": [
+        460,
+        277,
+        190,
+        137
+      ],
+      "source_foot": [
+        546.375,
+        414
+      ],
+      "source_anchors": {
+        "body": [
+          555.0,
+          352.35
+        ],
+        "contact": [
+          647,
+          381.12
+        ],
+        "cast_origin": [
+          625.3,
+          315.36
+        ],
+        "mouth": [
+          625.3,
+          315.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 11,
+      "source_rect": [
+        683,
+        268,
+        187,
+        146
+      ],
+      "source_foot": [
+        768.125,
+        414
+      ],
+      "source_anchors": {
+        "body": [
+          776.5,
+          348.3
+        ],
+        "contact": [
+          867,
+          378.96
+        ],
+        "cast_origin": [
+          845.69,
+          308.88
+        ],
+        "mouth": [
+          845.69,
+          308.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 12,
+      "source_rect": [
+        904,
+        254,
+        187,
+        160
+      ],
+      "source_foot": [
+        989.875,
+        414
+      ],
+      "source_anchors": {
+        "body": [
+          997.5,
+          342.0
+        ],
+        "contact": [
+          1088,
+          375.6
+        ],
+        "cast_origin": [
+          1066.69,
+          298.8
+        ],
+        "mouth": [
+          1066.69,
+          298.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 13,
+      "source_rect": [
+        1126,
+        243,
+        187,
+        171
+      ],
+      "source_foot": [
+        1211.625,
+        414
+      ],
+      "source_anchors": {
+        "body": [
+          1219.5,
+          337.05
+        ],
+        "contact": [
+          1310,
+          372.96
+        ],
+        "cast_origin": [
+          1288.69,
+          290.88
+        ],
+        "mouth": [
+          1288.69,
+          290.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 14,
+      "source_rect": [
+        1349,
+        234,
+        186,
+        180
+      ],
+      "source_foot": [
+        1433.375,
+        414
+      ],
+      "source_anchors": {
+        "body": [
+          1442.0,
+          333.0
+        ],
+        "contact": [
+          1532,
+          370.8
+        ],
+        "cast_origin": [
+          1510.82,
+          284.4
+        ],
+        "mouth": [
+          1510.82,
+          284.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 15,
+      "source_rect": [
+        1570,
+        227,
+        187,
+        187
+      ],
+      "source_foot": [
+        1655.125,
+        414
+      ],
+      "source_anchors": {
+        "body": [
+          1663.5,
+          329.85
+        ],
+        "contact": [
+          1754,
+          369.12
+        ],
+        "cast_origin": [
+          1732.69,
+          279.36
+        ],
+        "mouth": [
+          1732.69,
+          279.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 16,
+      "source_rect": [
+        17,
+        458,
+        188,
+        177
+      ],
+      "source_foot": [
+        102.875,
+        635
+      ],
+      "source_anchors": {
+        "body": [
+          111.0,
+          555.35
+        ],
+        "contact": [
+          202,
+          592.52
+        ],
+        "cast_origin": [
+          180.56,
+          507.56
+        ],
+        "mouth": [
+          180.56,
+          507.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 17,
+      "source_rect": [
+        237,
+        471,
+        188,
+        164
+      ],
+      "source_foot": [
+        324.625,
+        635
+      ],
+      "source_anchors": {
+        "body": [
+          331.0,
+          561.2
+        ],
+        "contact": [
+          422,
+          595.64
+        ],
+        "cast_origin": [
+          400.56,
+          516.92
+        ],
+        "mouth": [
+          400.56,
+          516.92
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 18,
+      "source_rect": [
+        458,
+        484,
+        191,
+        153
+      ],
+      "source_foot": [
+        546.375,
+        637
+      ],
+      "source_anchors": {
+        "body": [
+          553.5,
+          568.15
+        ],
+        "contact": [
+          646,
+          600.28
+        ],
+        "cast_origin": [
+          624.17,
+          526.84
+        ],
+        "mouth": [
+          624.17,
+          526.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 19,
+      "source_rect": [
+        680,
+        495,
+        192,
+        144
+      ],
+      "source_foot": [
+        768.125,
+        639
+      ],
+      "source_anchors": {
+        "body": [
+          776.0,
+          574.2
+        ],
+        "contact": [
+          869,
+          604.44
+        ],
+        "cast_origin": [
+          847.04,
+          535.32
+        ],
+        "mouth": [
+          847.04,
+          535.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 20,
+      "source_rect": [
+        902,
+        503,
+        192,
+        136
+      ],
+      "source_foot": [
+        989.875,
+        639
+      ],
+      "source_anchors": {
+        "body": [
+          998.0,
+          577.8
+        ],
+        "contact": [
+          1091,
+          606.36
+        ],
+        "cast_origin": [
+          1069.04,
+          541.08
+        ],
+        "mouth": [
+          1069.04,
+          541.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 21,
+      "source_rect": [
+        1123,
+        511,
+        197,
+        128
+      ],
+      "source_foot": [
+        1211.625,
+        639
+      ],
+      "source_anchors": {
+        "body": [
+          1221.5,
+          581.4
+        ],
+        "contact": [
+          1317,
+          608.28
+        ],
+        "cast_origin": [
+          1294.39,
+          546.84
+        ],
+        "mouth": [
+          1294.39,
+          546.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 22,
+      "source_rect": [
+        1346,
+        517,
+        198,
+        123
+      ],
+      "source_foot": [
+        1433.375,
+        640
+      ],
+      "source_anchors": {
+        "body": [
+          1445.0,
+          584.65
+        ],
+        "contact": [
+          1541,
+          610.48
+        ],
+        "cast_origin": [
+          1518.26,
+          551.44
+        ],
+        "mouth": [
+          1518.26,
+          551.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 23,
+      "source_rect": [
+        1569,
+        520,
+        196,
+        120
+      ],
+      "source_foot": [
+        1655.125,
+        640
+      ],
+      "source_anchors": {
+        "body": [
+          1667.0,
+          586.0
+        ],
+        "contact": [
+          1762,
+          611.2
+        ],
+        "cast_origin": [
+          1739.52,
+          553.6
+        ],
+        "mouth": [
+          1739.52,
+          553.6
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 24,
+      "source_rect": [
+        16,
+        745,
+        197,
+        118
+      ],
+      "source_foot": [
+        102.875,
+        863
+      ],
+      "source_anchors": {
+        "body": [
+          114.5,
+          809.9
+        ],
+        "contact": [
+          210,
+          834.68
+        ],
+        "cast_origin": [
+          187.39,
+          778.04
+        ],
+        "mouth": [
+          187.39,
+          778.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 25,
+      "source_rect": [
+        239,
+        744,
+        196,
+        119
+      ],
+      "source_foot": [
+        324.625,
+        863
+      ],
+      "source_anchors": {
+        "body": [
+          337.0,
+          809.45
+        ],
+        "contact": [
+          432,
+          834.44
+        ],
+        "cast_origin": [
+          409.52,
+          777.32
+        ],
+        "mouth": [
+          409.52,
+          777.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 26,
+      "source_rect": [
+        460,
+        743,
+        196,
+        118
+      ],
+      "source_foot": [
+        546.375,
+        861
+      ],
+      "source_anchors": {
+        "body": [
+          558.0,
+          807.9
+        ],
+        "contact": [
+          653,
+          832.68
+        ],
+        "cast_origin": [
+          630.52,
+          776.04
+        ],
+        "mouth": [
+          630.52,
+          776.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 27,
+      "source_rect": [
+        682,
+        738,
+        197,
+        121
+      ],
+      "source_foot": [
+        768.125,
+        859
+      ],
+      "source_anchors": {
+        "body": [
+          780.5,
+          804.55
+        ],
+        "contact": [
+          876,
+          829.96
+        ],
+        "cast_origin": [
+          853.39,
+          771.88
+        ],
+        "mouth": [
+          853.39,
+          771.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 28,
+      "source_rect": [
+        904,
+        730,
+        198,
+        129
+      ],
+      "source_foot": [
+        989.875,
+        859
+      ],
+      "source_anchors": {
+        "body": [
+          1003.0,
+          800.95
+        ],
+        "contact": [
+          1099,
+          828.04
+        ],
+        "cast_origin": [
+          1076.26,
+          766.12
+        ],
+        "mouth": [
+          1076.26,
+          766.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 29,
+      "source_rect": [
+        1125,
+        725,
+        199,
+        134
+      ],
+      "source_foot": [
+        1211.625,
+        859
+      ],
+      "source_anchors": {
+        "body": [
+          1224.5,
+          798.7
+        ],
+        "contact": [
+          1321,
+          826.84
+        ],
+        "cast_origin": [
+          1298.13,
+          762.52
+        ],
+        "mouth": [
+          1298.13,
+          762.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 30,
+      "source_rect": [
+        1348,
+        717,
+        197,
+        141
+      ],
+      "source_foot": [
+        1433.375,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          1446.5,
+          794.55
+        ],
+        "contact": [
+          1542,
+          824.16
+        ],
+        "cast_origin": [
+          1519.39,
+          756.48
+        ],
+        "mouth": [
+          1519.39,
+          756.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/confluence_roar.png",
+      "source_cell": 31,
+      "source_rect": [
+        1569,
+        710,
+        196,
+        148
+      ],
+      "source_foot": [
+        1655.125,
+        858
+      ],
+      "source_anchors": {
+        "body": [
+          1667.0,
+          791.4
+        ],
+        "contact": [
+          1762,
+          822.48
+        ],
+        "cast_origin": [
+          1739.52,
+          751.44
+        ],
+        "mouth": [
+          1739.52,
+          751.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 0,
+      "source_rect": [
+        16,
+        41,
+        200,
+        148
+      ],
+      "source_foot": [
+        102.875,
+        189
+      ],
+      "source_anchors": {
+        "body": [
+          116.0,
+          122.4
+        ],
+        "contact": [
+          213,
+          153.48
+        ],
+        "cast_origin": [
+          190.0,
+          82.44
+        ],
+        "mouth": [
+          190.0,
+          82.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 1,
+      "source_rect": [
+        238,
+        42,
+        200,
+        147
+      ],
+      "source_foot": [
+        324.625,
+        189
+      ],
+      "source_anchors": {
+        "body": [
+          338.0,
+          122.85
+        ],
+        "contact": [
+          435,
+          153.72
+        ],
+        "cast_origin": [
+          412.0,
+          83.16
+        ],
+        "mouth": [
+          412.0,
+          83.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 2,
+      "source_rect": [
+        460,
+        43,
+        200,
+        147
+      ],
+      "source_foot": [
+        546.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          560.0,
+          123.85
+        ],
+        "contact": [
+          657,
+          154.72
+        ],
+        "cast_origin": [
+          634.0,
+          84.16
+        ],
+        "mouth": [
+          634.0,
+          84.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 3,
+      "source_rect": [
+        682,
+        47,
+        200,
+        143
+      ],
+      "source_foot": [
+        768.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          782.0,
+          125.65
+        ],
+        "contact": [
+          879,
+          155.68
+        ],
+        "cast_origin": [
+          856.0,
+          87.04
+        ],
+        "mouth": [
+          856.0,
+          87.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 4,
+      "source_rect": [
+        903,
+        50,
+        200,
+        140
+      ],
+      "source_foot": [
+        989.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1003.0,
+          127.0
+        ],
+        "contact": [
+          1100,
+          156.4
+        ],
+        "cast_origin": [
+          1077.0,
+          89.2
+        ],
+        "mouth": [
+          1077.0,
+          89.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 5,
+      "source_rect": [
+        1126,
+        55,
+        200,
+        135
+      ],
+      "source_foot": [
+        1211.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1226.0,
+          129.25
+        ],
+        "contact": [
+          1323,
+          157.6
+        ],
+        "cast_origin": [
+          1300.0,
+          92.8
+        ],
+        "mouth": [
+          1300.0,
+          92.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 6,
+      "source_rect": [
+        1347,
+        58,
+        201,
+        132
+      ],
+      "source_foot": [
+        1433.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1447.5,
+          130.6
+        ],
+        "contact": [
+          1545,
+          158.32
+        ],
+        "cast_origin": [
+          1521.87,
+          94.96
+        ],
+        "mouth": [
+          1521.87,
+          94.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 7,
+      "source_rect": [
+        1569,
+        63,
+        200,
+        127
+      ],
+      "source_foot": [
+        1655.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1669.0,
+          132.85
+        ],
+        "contact": [
+          1766,
+          159.52
+        ],
+        "cast_origin": [
+          1743.0,
+          98.56
+        ],
+        "mouth": [
+          1743.0,
+          98.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 8,
+      "source_rect": [
+        17,
+        287,
+        199,
+        126
+      ],
+      "source_foot": [
+        102.875,
+        413
+      ],
+      "source_anchors": {
+        "body": [
+          116.5,
+          356.3
+        ],
+        "contact": [
+          213,
+          382.76
+        ],
+        "cast_origin": [
+          190.13,
+          322.28
+        ],
+        "mouth": [
+          190.13,
+          322.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 9,
+      "source_rect": [
+        238,
+        292,
+        200,
+        124
+      ],
+      "source_foot": [
+        324.625,
+        416
+      ],
+      "source_anchors": {
+        "body": [
+          338.0,
+          360.2
+        ],
+        "contact": [
+          435,
+          386.24
+        ],
+        "cast_origin": [
+          412.0,
+          326.72
+        ],
+        "mouth": [
+          412.0,
+          326.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 10,
+      "source_rect": [
+        460,
+        295,
+        199,
+        122
+      ],
+      "source_foot": [
+        546.375,
+        417
+      ],
+      "source_anchors": {
+        "body": [
+          559.5,
+          362.1
+        ],
+        "contact": [
+          656,
+          387.72
+        ],
+        "cast_origin": [
+          633.13,
+          329.16
+        ],
+        "mouth": [
+          633.13,
+          329.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 11,
+      "source_rect": [
+        682,
+        300,
+        199,
+        116
+      ],
+      "source_foot": [
+        768.125,
+        416
+      ],
+      "source_anchors": {
+        "body": [
+          781.5,
+          363.8
+        ],
+        "contact": [
+          878,
+          388.16
+        ],
+        "cast_origin": [
+          855.13,
+          332.48
+        ],
+        "mouth": [
+          855.13,
+          332.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 12,
+      "source_rect": [
+        904,
+        303,
+        198,
+        114
+      ],
+      "source_foot": [
+        989.875,
+        417
+      ],
+      "source_anchors": {
+        "body": [
+          1003.0,
+          365.7
+        ],
+        "contact": [
+          1099,
+          389.64
+        ],
+        "cast_origin": [
+          1076.26,
+          334.92
+        ],
+        "mouth": [
+          1076.26,
+          334.92
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 13,
+      "source_rect": [
+        1125,
+        304,
+        199,
+        113
+      ],
+      "source_foot": [
+        1211.625,
+        417
+      ],
+      "source_anchors": {
+        "body": [
+          1224.5,
+          366.15
+        ],
+        "contact": [
+          1321,
+          389.88
+        ],
+        "cast_origin": [
+          1298.13,
+          335.64
+        ],
+        "mouth": [
+          1298.13,
+          335.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 14,
+      "source_rect": [
+        1348,
+        306,
+        199,
+        111
+      ],
+      "source_foot": [
+        1433.375,
+        417
+      ],
+      "source_anchors": {
+        "body": [
+          1447.5,
+          367.05
+        ],
+        "contact": [
+          1544,
+          390.36
+        ],
+        "cast_origin": [
+          1521.13,
+          337.08
+        ],
+        "mouth": [
+          1521.13,
+          337.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 15,
+      "source_rect": [
+        1570,
+        307,
+        198,
+        110
+      ],
+      "source_foot": [
+        1655.125,
+        417
+      ],
+      "source_anchors": {
+        "body": [
+          1669.0,
+          367.5
+        ],
+        "contact": [
+          1765,
+          390.6
+        ],
+        "cast_origin": [
+          1742.26,
+          337.8
+        ],
+        "mouth": [
+          1742.26,
+          337.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 16,
+      "source_rect": [
+        17,
+        533,
+        200,
+        106
+      ],
+      "source_foot": [
+        102.875,
+        639
+      ],
+      "source_anchors": {
+        "body": [
+          117.0,
+          591.3
+        ],
+        "contact": [
+          214,
+          613.56
+        ],
+        "cast_origin": [
+          191.0,
+          562.68
+        ],
+        "mouth": [
+          191.0,
+          562.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 17,
+      "source_rect": [
+        239,
+        535,
+        199,
+        105
+      ],
+      "source_foot": [
+        324.625,
+        640
+      ],
+      "source_anchors": {
+        "body": [
+          338.5,
+          592.75
+        ],
+        "contact": [
+          435,
+          614.8
+        ],
+        "cast_origin": [
+          412.13,
+          564.4
+        ],
+        "mouth": [
+          412.13,
+          564.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 18,
+      "source_rect": [
+        461,
+        537,
+        199,
+        104
+      ],
+      "source_foot": [
+        546.375,
+        641
+      ],
+      "source_anchors": {
+        "body": [
+          560.5,
+          594.2
+        ],
+        "contact": [
+          657,
+          616.04
+        ],
+        "cast_origin": [
+          634.13,
+          566.12
+        ],
+        "mouth": [
+          634.13,
+          566.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 19,
+      "source_rect": [
+        683,
+        538,
+        199,
+        103
+      ],
+      "source_foot": [
+        768.125,
+        641
+      ],
+      "source_anchors": {
+        "body": [
+          782.5,
+          594.65
+        ],
+        "contact": [
+          879,
+          616.28
+        ],
+        "cast_origin": [
+          856.13,
+          566.84
+        ],
+        "mouth": [
+          856.13,
+          566.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 20,
+      "source_rect": [
+        902,
+        539,
+        201,
+        103
+      ],
+      "source_foot": [
+        989.875,
+        642
+      ],
+      "source_anchors": {
+        "body": [
+          1002.5,
+          595.65
+        ],
+        "contact": [
+          1100,
+          617.28
+        ],
+        "cast_origin": [
+          1076.87,
+          567.84
+        ],
+        "mouth": [
+          1076.87,
+          567.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 21,
+      "source_rect": [
+        1124,
+        539,
+        201,
+        104
+      ],
+      "source_foot": [
+        1211.625,
+        643
+      ],
+      "source_anchors": {
+        "body": [
+          1224.5,
+          596.2
+        ],
+        "contact": [
+          1322,
+          618.04
+        ],
+        "cast_origin": [
+          1298.87,
+          568.12
+        ],
+        "mouth": [
+          1298.87,
+          568.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 22,
+      "source_rect": [
+        1345,
+        538,
+        202,
+        105
+      ],
+      "source_foot": [
+        1433.375,
+        643
+      ],
+      "source_anchors": {
+        "body": [
+          1446.0,
+          595.75
+        ],
+        "contact": [
+          1544,
+          617.8
+        ],
+        "cast_origin": [
+          1520.74,
+          567.4
+        ],
+        "mouth": [
+          1520.74,
+          567.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 23,
+      "source_rect": [
+        1565,
+        538,
+        203,
+        105
+      ],
+      "source_foot": [
+        1655.125,
+        643
+      ],
+      "source_anchors": {
+        "body": [
+          1666.5,
+          595.75
+        ],
+        "contact": [
+          1765,
+          617.8
+        ],
+        "cast_origin": [
+          1741.61,
+          567.4
+        ],
+        "mouth": [
+          1741.61,
+          567.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 24,
+      "source_rect": [
+        15,
+        760,
+        201,
+        106
+      ],
+      "source_foot": [
+        102.875,
+        866
+      ],
+      "source_anchors": {
+        "body": [
+          115.5,
+          818.3
+        ],
+        "contact": [
+          213,
+          840.56
+        ],
+        "cast_origin": [
+          189.87,
+          789.68
+        ],
+        "mouth": [
+          189.87,
+          789.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 25,
+      "source_rect": [
+        236,
+        763,
+        201,
+        104
+      ],
+      "source_foot": [
+        324.625,
+        867
+      ],
+      "source_anchors": {
+        "body": [
+          336.5,
+          820.2
+        ],
+        "contact": [
+          434,
+          842.04
+        ],
+        "cast_origin": [
+          410.87,
+          792.12
+        ],
+        "mouth": [
+          410.87,
+          792.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 26,
+      "source_rect": [
+        459,
+        763,
+        200,
+        104
+      ],
+      "source_foot": [
+        546.375,
+        867
+      ],
+      "source_anchors": {
+        "body": [
+          559.0,
+          820.2
+        ],
+        "contact": [
+          656,
+          842.04
+        ],
+        "cast_origin": [
+          633.0,
+          792.12
+        ],
+        "mouth": [
+          633.0,
+          792.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 27,
+      "source_rect": [
+        679,
+        763,
+        202,
+        104
+      ],
+      "source_foot": [
+        768.125,
+        867
+      ],
+      "source_anchors": {
+        "body": [
+          780.0,
+          820.2
+        ],
+        "contact": [
+          878,
+          842.04
+        ],
+        "cast_origin": [
+          854.74,
+          792.12
+        ],
+        "mouth": [
+          854.74,
+          792.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 28,
+      "source_rect": [
+        901,
+        763,
+        201,
+        105
+      ],
+      "source_foot": [
+        989.875,
+        868
+      ],
+      "source_anchors": {
+        "body": [
+          1001.5,
+          820.75
+        ],
+        "contact": [
+          1099,
+          842.8
+        ],
+        "cast_origin": [
+          1075.87,
+          792.4
+        ],
+        "mouth": [
+          1075.87,
+          792.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 29,
+      "source_rect": [
+        1123,
+        763,
+        201,
+        105
+      ],
+      "source_foot": [
+        1211.625,
+        868
+      ],
+      "source_anchors": {
+        "body": [
+          1223.5,
+          820.75
+        ],
+        "contact": [
+          1321,
+          842.8
+        ],
+        "cast_origin": [
+          1297.87,
+          792.4
+        ],
+        "mouth": [
+          1297.87,
+          792.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 30,
+      "source_rect": [
+        1345,
+        763,
+        201,
+        105
+      ],
+      "source_foot": [
+        1433.375,
+        868
+      ],
+      "source_anchors": {
+        "body": [
+          1445.5,
+          820.75
+        ],
+        "contact": [
+          1543,
+          842.8
+        ],
+        "cast_origin": [
+          1519.87,
+          792.4
+        ],
+        "mouth": [
+          1519.87,
+          792.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/gather_resonance.png",
+      "source_cell": 31,
+      "source_rect": [
+        1567,
+        766,
+        201,
+        103
+      ],
+      "source_foot": [
+        1655.125,
+        869
+      ],
+      "source_anchors": {
+        "body": [
+          1667.5,
+          822.65
+        ],
+        "contact": [
+          1765,
+          844.28
+        ],
+        "cast_origin": [
+          1741.87,
+          794.84
+        ],
+        "mouth": [
+          1741.87,
+          794.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 0,
+      "source_rect": [
+        11,
+        62,
+        202,
+        130
+      ],
+      "source_foot": [
+        102.875,
+        192
+      ],
+      "source_anchors": {
+        "body": [
+          112.0,
+          133.5
+        ],
+        "contact": [
+          210,
+          160.8
+        ],
+        "cast_origin": [
+          186.74,
+          98.4
+        ],
+        "mouth": [
+          186.74,
+          98.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 1,
+      "source_rect": [
+        234,
+        62,
+        201,
+        128
+      ],
+      "source_foot": [
+        324.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          334.5,
+          132.4
+        ],
+        "contact": [
+          432,
+          159.28
+        ],
+        "cast_origin": [
+          408.87,
+          97.84
+        ],
+        "mouth": [
+          408.87,
+          97.84
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 2,
+      "source_rect": [
+        455,
+        57,
+        202,
+        134
+      ],
+      "source_foot": [
+        546.375,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          556.0,
+          130.7
+        ],
+        "contact": [
+          654,
+          158.84
+        ],
+        "cast_origin": [
+          630.74,
+          94.52
+        ],
+        "mouth": [
+          630.74,
+          94.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 3,
+      "source_rect": [
+        678,
+        56,
+        201,
+        135
+      ],
+      "source_foot": [
+        768.125,
+        191
+      ],
+      "source_anchors": {
+        "body": [
+          778.5,
+          130.25
+        ],
+        "contact": [
+          876,
+          158.6
+        ],
+        "cast_origin": [
+          852.87,
+          93.8
+        ],
+        "mouth": [
+          852.87,
+          93.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 4,
+      "source_rect": [
+        900,
+        55,
+        200,
+        135
+      ],
+      "source_foot": [
+        989.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1000.0,
+          129.25
+        ],
+        "contact": [
+          1097,
+          157.6
+        ],
+        "cast_origin": [
+          1074.0,
+          92.8
+        ],
+        "mouth": [
+          1074.0,
+          92.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 5,
+      "source_rect": [
+        1122,
+        52,
+        201,
+        138
+      ],
+      "source_foot": [
+        1211.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1222.5,
+          127.9
+        ],
+        "contact": [
+          1320,
+          156.88
+        ],
+        "cast_origin": [
+          1296.87,
+          90.64
+        ],
+        "mouth": [
+          1296.87,
+          90.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 6,
+      "source_rect": [
+        1344,
+        51,
+        200,
+        139
+      ],
+      "source_foot": [
+        1433.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1444.0,
+          127.45
+        ],
+        "contact": [
+          1541,
+          156.64
+        ],
+        "cast_origin": [
+          1518.0,
+          89.92
+        ],
+        "mouth": [
+          1518.0,
+          89.92
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 7,
+      "source_rect": [
+        1566,
+        49,
+        199,
+        141
+      ],
+      "source_foot": [
+        1655.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1665.5,
+          126.55
+        ],
+        "contact": [
+          1762,
+          156.16
+        ],
+        "cast_origin": [
+          1739.13,
+          88.48
+        ],
+        "mouth": [
+          1739.13,
+          88.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 8,
+      "source_rect": [
+        14,
+        268,
+        198,
+        144
+      ],
+      "source_foot": [
+        102.875,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          113.0,
+          347.2
+        ],
+        "contact": [
+          209,
+          377.44
+        ],
+        "cast_origin": [
+          186.26,
+          308.32
+        ],
+        "mouth": [
+          186.26,
+          308.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 9,
+      "source_rect": [
+        234,
+        268,
+        201,
+        143
+      ],
+      "source_foot": [
+        324.625,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          334.5,
+          346.65
+        ],
+        "contact": [
+          432,
+          376.68
+        ],
+        "cast_origin": [
+          408.87,
+          308.04
+        ],
+        "mouth": [
+          408.87,
+          308.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 10,
+      "source_rect": [
+        456,
+        268,
+        202,
+        143
+      ],
+      "source_foot": [
+        546.375,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          557.0,
+          346.65
+        ],
+        "contact": [
+          655,
+          376.68
+        ],
+        "cast_origin": [
+          631.74,
+          308.04
+        ],
+        "mouth": [
+          631.74,
+          308.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 11,
+      "source_rect": [
+        678,
+        270,
+        201,
+        141
+      ],
+      "source_foot": [
+        768.125,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          778.5,
+          347.55
+        ],
+        "contact": [
+          876,
+          377.16
+        ],
+        "cast_origin": [
+          852.87,
+          309.48
+        ],
+        "mouth": [
+          852.87,
+          309.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 12,
+      "source_rect": [
+        901,
+        271,
+        201,
+        140
+      ],
+      "source_foot": [
+        989.875,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1001.5,
+          348.0
+        ],
+        "contact": [
+          1099,
+          377.4
+        ],
+        "cast_origin": [
+          1075.87,
+          310.2
+        ],
+        "mouth": [
+          1075.87,
+          310.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 13,
+      "source_rect": [
+        1122,
+        274,
+        202,
+        137
+      ],
+      "source_foot": [
+        1211.625,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1223.0,
+          349.35
+        ],
+        "contact": [
+          1321,
+          378.12
+        ],
+        "cast_origin": [
+          1297.74,
+          312.36
+        ],
+        "mouth": [
+          1297.74,
+          312.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 14,
+      "source_rect": [
+        1343,
+        276,
+        204,
+        135
+      ],
+      "source_foot": [
+        1433.375,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1445.0,
+          350.25
+        ],
+        "contact": [
+          1544,
+          378.6
+        ],
+        "cast_origin": [
+          1520.48,
+          313.8
+        ],
+        "mouth": [
+          1520.48,
+          313.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 15,
+      "source_rect": [
+        1566,
+        280,
+        203,
+        131
+      ],
+      "source_foot": [
+        1655.125,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1667.5,
+          352.05
+        ],
+        "contact": [
+          1766,
+          379.56
+        ],
+        "cast_origin": [
+          1742.61,
+          316.68
+        ],
+        "mouth": [
+          1742.61,
+          316.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 16,
+      "source_rect": [
+        14,
+        503,
+        200,
+        129
+      ],
+      "source_foot": [
+        102.875,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          114.0,
+          573.95
+        ],
+        "contact": [
+          211,
+          601.04
+        ],
+        "cast_origin": [
+          188.0,
+          539.12
+        ],
+        "mouth": [
+          188.0,
+          539.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 17,
+      "source_rect": [
+        235,
+        506,
+        201,
+        127
+      ],
+      "source_foot": [
+        324.625,
+        633
+      ],
+      "source_anchors": {
+        "body": [
+          335.5,
+          575.85
+        ],
+        "contact": [
+          433,
+          602.52
+        ],
+        "cast_origin": [
+          409.87,
+          541.56
+        ],
+        "mouth": [
+          409.87,
+          541.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 18,
+      "source_rect": [
+        457,
+        507,
+        201,
+        126
+      ],
+      "source_foot": [
+        546.375,
+        633
+      ],
+      "source_anchors": {
+        "body": [
+          557.5,
+          576.3
+        ],
+        "contact": [
+          655,
+          602.76
+        ],
+        "cast_origin": [
+          631.87,
+          542.28
+        ],
+        "mouth": [
+          631.87,
+          542.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 19,
+      "source_rect": [
+        679,
+        509,
+        201,
+        125
+      ],
+      "source_foot": [
+        768.125,
+        634
+      ],
+      "source_anchors": {
+        "body": [
+          779.5,
+          577.75
+        ],
+        "contact": [
+          877,
+          604.0
+        ],
+        "cast_origin": [
+          853.87,
+          544.0
+        ],
+        "mouth": [
+          853.87,
+          544.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 20,
+      "source_rect": [
+        902,
+        511,
+        201,
+        123
+      ],
+      "source_foot": [
+        989.875,
+        634
+      ],
+      "source_anchors": {
+        "body": [
+          1002.5,
+          578.65
+        ],
+        "contact": [
+          1100,
+          604.48
+        ],
+        "cast_origin": [
+          1076.87,
+          545.44
+        ],
+        "mouth": [
+          1076.87,
+          545.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 21,
+      "source_rect": [
+        1123,
+        513,
+        201,
+        121
+      ],
+      "source_foot": [
+        1211.625,
+        634
+      ],
+      "source_anchors": {
+        "body": [
+          1223.5,
+          579.55
+        ],
+        "contact": [
+          1321,
+          604.96
+        ],
+        "cast_origin": [
+          1297.87,
+          546.88
+        ],
+        "mouth": [
+          1297.87,
+          546.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 22,
+      "source_rect": [
+        1345,
+        514,
+        200,
+        120
+      ],
+      "source_foot": [
+        1433.375,
+        634
+      ],
+      "source_anchors": {
+        "body": [
+          1445.0,
+          580.0
+        ],
+        "contact": [
+          1542,
+          605.2
+        ],
+        "cast_origin": [
+          1519.0,
+          547.6
+        ],
+        "mouth": [
+          1519.0,
+          547.6
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 23,
+      "source_rect": [
+        1566,
+        515,
+        201,
+        119
+      ],
+      "source_foot": [
+        1655.125,
+        634
+      ],
+      "source_anchors": {
+        "body": [
+          1666.5,
+          580.45
+        ],
+        "contact": [
+          1764,
+          605.44
+        ],
+        "cast_origin": [
+          1740.87,
+          548.32
+        ],
+        "mouth": [
+          1740.87,
+          548.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 24,
+      "source_rect": [
+        14,
+        739,
+        200,
+        117
+      ],
+      "source_foot": [
+        102.875,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          114.0,
+          803.35
+        ],
+        "contact": [
+          211,
+          827.92
+        ],
+        "cast_origin": [
+          188.0,
+          771.76
+        ],
+        "mouth": [
+          188.0,
+          771.76
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 25,
+      "source_rect": [
+        236,
+        740,
+        199,
+        116
+      ],
+      "source_foot": [
+        324.625,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          335.5,
+          803.8
+        ],
+        "contact": [
+          432,
+          828.16
+        ],
+        "cast_origin": [
+          409.13,
+          772.48
+        ],
+        "mouth": [
+          409.13,
+          772.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 26,
+      "source_rect": [
+        457,
+        741,
+        201,
+        115
+      ],
+      "source_foot": [
+        546.375,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          557.5,
+          804.25
+        ],
+        "contact": [
+          655,
+          828.4
+        ],
+        "cast_origin": [
+          631.87,
+          773.2
+        ],
+        "mouth": [
+          631.87,
+          773.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 27,
+      "source_rect": [
+        679,
+        743,
+        200,
+        113
+      ],
+      "source_foot": [
+        768.125,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          779.0,
+          805.15
+        ],
+        "contact": [
+          876,
+          828.88
+        ],
+        "cast_origin": [
+          853.0,
+          774.64
+        ],
+        "mouth": [
+          853.0,
+          774.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 28,
+      "source_rect": [
+        900,
+        744,
+        201,
+        113
+      ],
+      "source_foot": [
+        989.875,
+        857
+      ],
+      "source_anchors": {
+        "body": [
+          1000.5,
+          806.15
+        ],
+        "contact": [
+          1098,
+          829.88
+        ],
+        "cast_origin": [
+          1074.87,
+          775.64
+        ],
+        "mouth": [
+          1074.87,
+          775.64
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 29,
+      "source_rect": [
+        1122,
+        745,
+        201,
+        112
+      ],
+      "source_foot": [
+        1211.625,
+        857
+      ],
+      "source_anchors": {
+        "body": [
+          1222.5,
+          806.6
+        ],
+        "contact": [
+          1320,
+          830.12
+        ],
+        "cast_origin": [
+          1296.87,
+          776.36
+        ],
+        "mouth": [
+          1296.87,
+          776.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 30,
+      "source_rect": [
+        1344,
+        744,
+        200,
+        112
+      ],
+      "source_foot": [
+        1433.375,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          1444.0,
+          805.6
+        ],
+        "contact": [
+          1541,
+          829.12
+        ],
+        "cast_origin": [
+          1518.0,
+          775.36
+        ],
+        "mouth": [
+          1518.0,
+          775.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/charged_hold.png",
+      "source_cell": 31,
+      "source_rect": [
+        1565,
+        742,
+        202,
+        114
+      ],
+      "source_foot": [
+        1655.125,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          1666.0,
+          804.7
+        ],
+        "contact": [
+          1764,
+          828.64
+        ],
+        "cast_origin": [
+          1740.74,
+          773.92
+        ],
+        "mouth": [
+          1740.74,
+          773.92
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 0,
+      "source_rect": [
+        20,
+        72,
+        187,
+        145
+      ],
+      "source_foot": [
+        102.875,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          113.5,
+          151.75
+        ],
+        "contact": [
+          204,
+          182.2
+        ],
+        "cast_origin": [
+          182.69,
+          112.6
+        ],
+        "mouth": [
+          182.69,
+          112.6
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 1,
+      "source_rect": [
+        240,
+        84,
+        189,
+        130
+      ],
+      "source_foot": [
+        324.625,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          334.5,
+          155.5
+        ],
+        "contact": [
+          426,
+          182.8
+        ],
+        "cast_origin": [
+          404.43,
+          120.4
+        ],
+        "mouth": [
+          404.43,
+          120.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 2,
+      "source_rect": [
+        460,
+        97,
+        191,
+        118
+      ],
+      "source_foot": [
+        546.375,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          555.5,
+          161.9
+        ],
+        "contact": [
+          648,
+          186.68
+        ],
+        "cast_origin": [
+          626.17,
+          130.04
+        ],
+        "mouth": [
+          626.17,
+          130.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 3,
+      "source_rect": [
+        680,
+        109,
+        193,
+        107
+      ],
+      "source_foot": [
+        768.125,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          776.5,
+          167.85
+        ],
+        "contact": [
+          870,
+          190.32
+        ],
+        "cast_origin": [
+          847.91,
+          138.96
+        ],
+        "mouth": [
+          847.91,
+          138.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 4,
+      "source_rect": [
+        901,
+        115,
+        195,
+        101
+      ],
+      "source_foot": [
+        989.875,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          998.5,
+          170.55
+        ],
+        "contact": [
+          1093,
+          191.76
+        ],
+        "cast_origin": [
+          1070.65,
+          143.28
+        ],
+        "mouth": [
+          1070.65,
+          143.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 5,
+      "source_rect": [
+        1124,
+        117,
+        193,
+        98
+      ],
+      "source_foot": [
+        1211.625,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          1220.5,
+          170.9
+        ],
+        "contact": [
+          1314,
+          191.48
+        ],
+        "cast_origin": [
+          1291.91,
+          144.44
+        ],
+        "mouth": [
+          1291.91,
+          144.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 6,
+      "source_rect": [
+        1347,
+        93,
+        189,
+        119
+      ],
+      "source_foot": [
+        1433.375,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          1441.5,
+          158.45
+        ],
+        "contact": [
+          1533,
+          183.44
+        ],
+        "cast_origin": [
+          1511.43,
+          126.32
+        ],
+        "mouth": [
+          1511.43,
+          126.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 7,
+      "source_rect": [
+        1569,
+        79,
+        185,
+        134
+      ],
+      "source_foot": [
+        1655.125,
+        217
+      ],
+      "source_anchors": {
+        "body": [
+          1661.5,
+          152.7
+        ],
+        "contact": [
+          1751,
+          180.84
+        ],
+        "cast_origin": [
+          1729.95,
+          116.52
+        ],
+        "mouth": [
+          1729.95,
+          116.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 8,
+      "source_rect": [
+        20,
+        296,
+        183,
+        139
+      ],
+      "source_foot": [
+        102.875,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          111.5,
+          372.45
+        ],
+        "contact": [
+          200,
+          401.64
+        ],
+        "cast_origin": [
+          179.21,
+          334.92
+        ],
+        "mouth": [
+          179.21,
+          334.92
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 9,
+      "source_rect": [
+        241,
+        291,
+        184,
+        144
+      ],
+      "source_foot": [
+        324.625,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          333.0,
+          370.2
+        ],
+        "contact": [
+          422,
+          400.44
+        ],
+        "cast_origin": [
+          401.08,
+          331.32
+        ],
+        "mouth": [
+          401.08,
+          331.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 10,
+      "source_rect": [
+        461,
+        281,
+        185,
+        151
+      ],
+      "source_foot": [
+        546.375,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          553.5,
+          364.05
+        ],
+        "contact": [
+          643,
+          395.76
+        ],
+        "cast_origin": [
+          621.95,
+          323.28
+        ],
+        "mouth": [
+          621.95,
+          323.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 11,
+      "source_rect": [
+        680,
+        276,
+        189,
+        143
+      ],
+      "source_foot": [
+        768.125,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          774.5,
+          354.65
+        ],
+        "contact": [
+          866,
+          384.68
+        ],
+        "cast_origin": [
+          844.43,
+          316.04
+        ],
+        "mouth": [
+          844.43,
+          316.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 12,
+      "source_rect": [
+        892,
+        275,
+        201,
+        121
+      ],
+      "source_foot": [
+        989.875,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          992.5,
+          341.55
+        ],
+        "contact": [
+          1090,
+          366.96
+        ],
+        "cast_origin": [
+          1066.87,
+          308.88
+        ],
+        "mouth": [
+          1066.87,
+          308.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 13,
+      "source_rect": [
+        1112,
+        273,
+        207,
+        116
+      ],
+      "source_foot": [
+        1211.625,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          1215.5,
+          336.8
+        ],
+        "contact": [
+          1316,
+          361.16
+        ],
+        "cast_origin": [
+          1292.09,
+          305.48
+        ],
+        "mouth": [
+          1292.09,
+          305.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 14,
+      "source_rect": [
+        1333,
+        273,
+        207,
+        105
+      ],
+      "source_foot": [
+        1433.375,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          1436.5,
+          330.75
+        ],
+        "contact": [
+          1537,
+          352.8
+        ],
+        "cast_origin": [
+          1513.09,
+          302.4
+        ],
+        "mouth": [
+          1513.09,
+          302.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 15,
+      "source_rect": [
+        1557,
+        274,
+        212,
+        93
+      ],
+      "source_foot": [
+        1655.125,
+        435
+      ],
+      "source_anchors": {
+        "body": [
+          1663.0,
+          325.15
+        ],
+        "contact": [
+          1766,
+          344.68
+        ],
+        "cast_origin": [
+          1741.44,
+          300.04
+        ],
+        "mouth": [
+          1741.44,
+          300.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 16,
+      "source_rect": [
+        6,
+        500,
+        210,
+        101
+      ],
+      "source_foot": [
+        102.875,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          111.0,
+          555.55
+        ],
+        "contact": [
+          213,
+          576.76
+        ],
+        "cast_origin": [
+          188.7,
+          528.28
+        ],
+        "mouth": [
+          188.7,
+          528.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 17,
+      "source_rect": [
+        230,
+        497,
+        208,
+        116
+      ],
+      "source_foot": [
+        324.625,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          334.0,
+          560.8
+        ],
+        "contact": [
+          435,
+          585.16
+        ],
+        "cast_origin": [
+          410.96,
+          529.48
+        ],
+        "mouth": [
+          410.96,
+          529.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 18,
+      "source_rect": [
+        454,
+        500,
+        206,
+        127
+      ],
+      "source_foot": [
+        546.375,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          557.0,
+          569.85
+        ],
+        "contact": [
+          657,
+          596.52
+        ],
+        "cast_origin": [
+          633.22,
+          535.56
+        ],
+        "mouth": [
+          633.22,
+          535.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 19,
+      "source_rect": [
+        673,
+        511,
+        207,
+        130
+      ],
+      "source_foot": [
+        768.125,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          776.5,
+          582.5
+        ],
+        "contact": [
+          877,
+          609.8
+        ],
+        "cast_origin": [
+          853.09,
+          547.4
+        ],
+        "mouth": [
+          853.09,
+          547.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 20,
+      "source_rect": [
+        897,
+        523,
+        199,
+        131
+      ],
+      "source_foot": [
+        989.875,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          996.5,
+          595.05
+        ],
+        "contact": [
+          1093,
+          622.56
+        ],
+        "cast_origin": [
+          1070.13,
+          559.68
+        ],
+        "mouth": [
+          1070.13,
+          559.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 21,
+      "source_rect": [
+        1124,
+        538,
+        195,
+        118
+      ],
+      "source_foot": [
+        1211.625,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          1221.5,
+          602.9
+        ],
+        "contact": [
+          1316,
+          627.68
+        ],
+        "cast_origin": [
+          1293.65,
+          571.04
+        ],
+        "mouth": [
+          1293.65,
+          571.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 22,
+      "source_rect": [
+        1347,
+        546,
+        190,
+        109
+      ],
+      "source_foot": [
+        1433.375,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          1442.0,
+          605.95
+        ],
+        "contact": [
+          1534,
+          628.84
+        ],
+        "cast_origin": [
+          1512.3,
+          576.52
+        ],
+        "mouth": [
+          1512.3,
+          576.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 23,
+      "source_rect": [
+        1568,
+        551,
+        192,
+        104
+      ],
+      "source_foot": [
+        1655.125,
+        655
+      ],
+      "source_anchors": {
+        "body": [
+          1664.0,
+          608.2
+        ],
+        "contact": [
+          1757,
+          630.04
+        ],
+        "cast_origin": [
+          1735.04,
+          580.12
+        ],
+        "mouth": [
+          1735.04,
+          580.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 24,
+      "source_rect": [
+        17,
+        751,
+        191,
+        124
+      ],
+      "source_foot": [
+        102.875,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          112.5,
+          819.2
+        ],
+        "contact": [
+          205,
+          845.24
+        ],
+        "cast_origin": [
+          183.17,
+          785.72
+        ],
+        "mouth": [
+          183.17,
+          785.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 25,
+      "source_rect": [
+        238,
+        753,
+        191,
+        124
+      ],
+      "source_foot": [
+        324.625,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          333.5,
+          821.2
+        ],
+        "contact": [
+          426,
+          847.24
+        ],
+        "cast_origin": [
+          404.17,
+          787.72
+        ],
+        "mouth": [
+          404.17,
+          787.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 26,
+      "source_rect": [
+        458,
+        759,
+        191,
+        119
+      ],
+      "source_foot": [
+        546.375,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          553.5,
+          824.45
+        ],
+        "contact": [
+          646,
+          849.44
+        ],
+        "cast_origin": [
+          624.17,
+          792.32
+        ],
+        "mouth": [
+          624.17,
+          792.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 27,
+      "source_rect": [
+        681,
+        766,
+        190,
+        112
+      ],
+      "source_foot": [
+        768.125,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          776.0,
+          827.6
+        ],
+        "contact": [
+          868,
+          851.12
+        ],
+        "cast_origin": [
+          846.3,
+          797.36
+        ],
+        "mouth": [
+          846.3,
+          797.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 28,
+      "source_rect": [
+        903,
+        772,
+        191,
+        106
+      ],
+      "source_foot": [
+        989.875,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          998.5,
+          830.3
+        ],
+        "contact": [
+          1091,
+          852.56
+        ],
+        "cast_origin": [
+          1069.17,
+          801.68
+        ],
+        "mouth": [
+          1069.17,
+          801.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 29,
+      "source_rect": [
+        1125,
+        776,
+        190,
+        102
+      ],
+      "source_foot": [
+        1211.625,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          1220.0,
+          832.1
+        ],
+        "contact": [
+          1312,
+          853.52
+        ],
+        "cast_origin": [
+          1290.3,
+          804.56
+        ],
+        "mouth": [
+          1290.3,
+          804.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 30,
+      "source_rect": [
+        1348,
+        776,
+        189,
+        102
+      ],
+      "source_foot": [
+        1433.375,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          1442.5,
+          832.1
+        ],
+        "contact": [
+          1534,
+          853.52
+        ],
+        "cast_origin": [
+          1512.43,
+          804.56
+        ],
+        "mouth": [
+          1512.43,
+          804.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/ruinous_pounce.png",
+      "source_cell": 31,
+      "source_rect": [
+        1569,
+        777,
+        191,
+        101
+      ],
+      "source_foot": [
+        1655.125,
+        878
+      ],
+      "source_anchors": {
+        "body": [
+          1664.5,
+          832.55
+        ],
+        "contact": [
+          1757,
+          853.76
+        ],
+        "cast_origin": [
+          1735.17,
+          805.28
+        ],
+        "mouth": [
+          1735.17,
+          805.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 0,
+      "source_rect": [
+        17,
+        53,
+        197,
+        137
+      ],
+      "source_foot": [
+        102.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          115.5,
+          128.35
+        ],
+        "contact": [
+          211,
+          157.12
+        ],
+        "cast_origin": [
+          188.39,
+          91.36
+        ],
+        "mouth": [
+          188.39,
+          91.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 1,
+      "source_rect": [
+        241,
+        59,
+        195,
+        131
+      ],
+      "source_foot": [
+        324.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          338.5,
+          131.05
+        ],
+        "contact": [
+          433,
+          158.56
+        ],
+        "cast_origin": [
+          410.65,
+          95.68
+        ],
+        "mouth": [
+          410.65,
+          95.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 2,
+      "source_rect": [
+        463,
+        63,
+        194,
+        127
+      ],
+      "source_foot": [
+        546.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          560.0,
+          132.85
+        ],
+        "contact": [
+          654,
+          159.52
+        ],
+        "cast_origin": [
+          631.78,
+          98.56
+        ],
+        "mouth": [
+          631.78,
+          98.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 3,
+      "source_rect": [
+        685,
+        66,
+        192,
+        124
+      ],
+      "source_foot": [
+        768.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          781.0,
+          134.2
+        ],
+        "contact": [
+          874,
+          160.24
+        ],
+        "cast_origin": [
+          852.04,
+          100.72
+        ],
+        "mouth": [
+          852.04,
+          100.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 4,
+      "source_rect": [
+        907,
+        67,
+        191,
+        123
+      ],
+      "source_foot": [
+        989.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1002.5,
+          134.65
+        ],
+        "contact": [
+          1095,
+          160.48
+        ],
+        "cast_origin": [
+          1073.17,
+          101.44
+        ],
+        "mouth": [
+          1073.17,
+          101.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 5,
+      "source_rect": [
+        1129,
+        65,
+        193,
+        125
+      ],
+      "source_foot": [
+        1211.625,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1225.5,
+          133.75
+        ],
+        "contact": [
+          1319,
+          160.0
+        ],
+        "cast_origin": [
+          1296.91,
+          100.0
+        ],
+        "mouth": [
+          1296.91,
+          100.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 6,
+      "source_rect": [
+        1350,
+        60,
+        194,
+        130
+      ],
+      "source_foot": [
+        1433.375,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1447.0,
+          131.5
+        ],
+        "contact": [
+          1541,
+          158.8
+        ],
+        "cast_origin": [
+          1518.78,
+          96.4
+        ],
+        "mouth": [
+          1518.78,
+          96.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 7,
+      "source_rect": [
+        1572,
+        59,
+        194,
+        131
+      ],
+      "source_foot": [
+        1655.125,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          1669.0,
+          131.05
+        ],
+        "contact": [
+          1763,
+          158.56
+        ],
+        "cast_origin": [
+          1740.78,
+          95.68
+        ],
+        "mouth": [
+          1740.78,
+          95.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 8,
+      "source_rect": [
+        19,
+        274,
+        195,
+        137
+      ],
+      "source_foot": [
+        102.875,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          116.5,
+          349.35
+        ],
+        "contact": [
+          211,
+          378.12
+        ],
+        "cast_origin": [
+          188.65,
+          312.36
+        ],
+        "mouth": [
+          188.65,
+          312.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 9,
+      "source_rect": [
+        242,
+        276,
+        194,
+        136
+      ],
+      "source_foot": [
+        324.625,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          339.0,
+          350.8
+        ],
+        "contact": [
+          433,
+          379.36
+        ],
+        "cast_origin": [
+          410.78,
+          314.08
+        ],
+        "mouth": [
+          410.78,
+          314.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 10,
+      "source_rect": [
+        463,
+        282,
+        195,
+        130
+      ],
+      "source_foot": [
+        546.375,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          560.5,
+          353.5
+        ],
+        "contact": [
+          655,
+          380.8
+        ],
+        "cast_origin": [
+          632.65,
+          318.4
+        ],
+        "mouth": [
+          632.65,
+          318.4
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 11,
+      "source_rect": [
+        685,
+        287,
+        194,
+        125
+      ],
+      "source_foot": [
+        768.125,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          782.0,
+          355.75
+        ],
+        "contact": [
+          876,
+          382.0
+        ],
+        "cast_origin": [
+          853.78,
+          322.0
+        ],
+        "mouth": [
+          853.78,
+          322.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 12,
+      "source_rect": [
+        908,
+        291,
+        191,
+        121
+      ],
+      "source_foot": [
+        989.875,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          1003.5,
+          357.55
+        ],
+        "contact": [
+          1096,
+          382.96
+        ],
+        "cast_origin": [
+          1074.17,
+          324.88
+        ],
+        "mouth": [
+          1074.17,
+          324.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 13,
+      "source_rect": [
+        1129,
+        292,
+        192,
+        119
+      ],
+      "source_foot": [
+        1211.625,
+        411
+      ],
+      "source_anchors": {
+        "body": [
+          1225.0,
+          357.45
+        ],
+        "contact": [
+          1318,
+          382.44
+        ],
+        "cast_origin": [
+          1296.04,
+          325.32
+        ],
+        "mouth": [
+          1296.04,
+          325.32
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 14,
+      "source_rect": [
+        1350,
+        290,
+        193,
+        122
+      ],
+      "source_foot": [
+        1433.375,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          1446.5,
+          357.1
+        ],
+        "contact": [
+          1540,
+          382.72
+        ],
+        "cast_origin": [
+          1517.91,
+          324.16
+        ],
+        "mouth": [
+          1517.91,
+          324.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 15,
+      "source_rect": [
+        1572,
+        287,
+        193,
+        125
+      ],
+      "source_foot": [
+        1655.125,
+        412
+      ],
+      "source_anchors": {
+        "body": [
+          1668.5,
+          355.75
+        ],
+        "contact": [
+          1762,
+          382.0
+        ],
+        "cast_origin": [
+          1739.91,
+          322.0
+        ],
+        "mouth": [
+          1739.91,
+          322.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 16,
+      "source_rect": [
+        19,
+        499,
+        195,
+        133
+      ],
+      "source_foot": [
+        102.875,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          116.5,
+          572.15
+        ],
+        "contact": [
+          211,
+          600.08
+        ],
+        "cast_origin": [
+          188.65,
+          536.24
+        ],
+        "mouth": [
+          188.65,
+          536.24
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 17,
+      "source_rect": [
+        239,
+        497,
+        186,
+        135
+      ],
+      "source_foot": [
+        324.625,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          332.0,
+          571.25
+        ],
+        "contact": [
+          422,
+          599.6
+        ],
+        "cast_origin": [
+          400.82,
+          534.8
+        ],
+        "mouth": [
+          400.82,
+          534.8
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 18,
+      "source_rect": [
+        463,
+        490,
+        178,
+        143
+      ],
+      "source_foot": [
+        546.375,
+        633
+      ],
+      "source_anchors": {
+        "body": [
+          552.0,
+          568.65
+        ],
+        "contact": [
+          638,
+          598.68
+        ],
+        "cast_origin": [
+          617.86,
+          530.04
+        ],
+        "mouth": [
+          617.86,
+          530.04
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 19,
+      "source_rect": [
+        683,
+        476,
+        181,
+        156
+      ],
+      "source_foot": [
+        768.125,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          773.5,
+          561.8
+        ],
+        "contact": [
+          861,
+          594.56
+        ],
+        "cast_origin": [
+          840.47,
+          519.68
+        ],
+        "mouth": [
+          840.47,
+          519.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 20,
+      "source_rect": [
+        913,
+        470,
+        170,
+        161
+      ],
+      "source_foot": [
+        989.875,
+        631
+      ],
+      "source_anchors": {
+        "body": [
+          998.0,
+          558.55
+        ],
+        "contact": [
+          1080,
+          592.36
+        ],
+        "cast_origin": [
+          1060.9,
+          515.08
+        ],
+        "mouth": [
+          1060.9,
+          515.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 21,
+      "source_rect": [
+        1135,
+        473,
+        175,
+        159
+      ],
+      "source_foot": [
+        1211.625,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          1222.5,
+          560.45
+        ],
+        "contact": [
+          1307,
+          593.84
+        ],
+        "cast_origin": [
+          1287.25,
+          517.52
+        ],
+        "mouth": [
+          1287.25,
+          517.52
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 22,
+      "source_rect": [
+        1351,
+        491,
+        180,
+        140
+      ],
+      "source_foot": [
+        1433.375,
+        631
+      ],
+      "source_anchors": {
+        "body": [
+          1441.0,
+          568.0
+        ],
+        "contact": [
+          1528,
+          597.4
+        ],
+        "cast_origin": [
+          1507.6,
+          530.2
+        ],
+        "mouth": [
+          1507.6,
+          530.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 23,
+      "source_rect": [
+        1572,
+        501,
+        194,
+        131
+      ],
+      "source_foot": [
+        1655.125,
+        632
+      ],
+      "source_anchors": {
+        "body": [
+          1669.0,
+          573.05
+        ],
+        "contact": [
+          1763,
+          600.56
+        ],
+        "cast_origin": [
+          1740.78,
+          537.68
+        ],
+        "mouth": [
+          1740.78,
+          537.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 24,
+      "source_rect": [
+        19,
+        731,
+        195,
+        125
+      ],
+      "source_foot": [
+        102.875,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          116.5,
+          799.75
+        ],
+        "contact": [
+          211,
+          826.0
+        ],
+        "cast_origin": [
+          188.65,
+          766.0
+        ],
+        "mouth": [
+          188.65,
+          766.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 25,
+      "source_rect": [
+        240,
+        731,
+        196,
+        125
+      ],
+      "source_foot": [
+        324.625,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          338.0,
+          799.75
+        ],
+        "contact": [
+          433,
+          826.0
+        ],
+        "cast_origin": [
+          410.52,
+          766.0
+        ],
+        "mouth": [
+          410.52,
+          766.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 26,
+      "source_rect": [
+        462,
+        731,
+        196,
+        125
+      ],
+      "source_foot": [
+        546.375,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          560.0,
+          799.75
+        ],
+        "contact": [
+          655,
+          826.0
+        ],
+        "cast_origin": [
+          632.52,
+          766.0
+        ],
+        "mouth": [
+          632.52,
+          766.0
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 27,
+      "source_rect": [
+        685,
+        727,
+        195,
+        129
+      ],
+      "source_foot": [
+        768.125,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          782.5,
+          797.95
+        ],
+        "contact": [
+          877,
+          825.04
+        ],
+        "cast_origin": [
+          854.65,
+          763.12
+        ],
+        "mouth": [
+          854.65,
+          763.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 28,
+      "source_rect": [
+        907,
+        724,
+        194,
+        132
+      ],
+      "source_foot": [
+        989.875,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          1004.0,
+          796.6
+        ],
+        "contact": [
+          1098,
+          824.32
+        ],
+        "cast_origin": [
+          1075.78,
+          760.96
+        ],
+        "mouth": [
+          1075.78,
+          760.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 29,
+      "source_rect": [
+        1129,
+        723,
+        193,
+        133
+      ],
+      "source_foot": [
+        1211.625,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          1225.5,
+          796.15
+        ],
+        "contact": [
+          1319,
+          824.08
+        ],
+        "cast_origin": [
+          1296.91,
+          760.24
+        ],
+        "mouth": [
+          1296.91,
+          760.24
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 30,
+      "source_rect": [
+        1350,
+        723,
+        194,
+        133
+      ],
+      "source_foot": [
+        1433.375,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          1447.0,
+          796.15
+        ],
+        "contact": [
+          1541,
+          824.08
+        ],
+        "cast_origin": [
+          1518.78,
+          760.24
+        ],
+        "mouth": [
+          1518.78,
+          760.24
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/reactions.png",
+      "source_cell": 31,
+      "source_rect": [
+        1572,
+        723,
+        193,
+        133
+      ],
+      "source_foot": [
+        1655.125,
+        856
+      ],
+      "source_anchors": {
+        "body": [
+          1668.5,
+          796.15
+        ],
+        "contact": [
+          1762,
+          824.08
+        ],
+        "cast_origin": [
+          1739.91,
+          760.24
+        ],
+        "mouth": [
+          1739.91,
+          760.24
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 0,
+      "source_rect": [
+        15,
+        44,
+        196,
+        146
+      ],
+      "source_foot": [
+        102.875,
+        190
+      ],
+      "source_anchors": {
+        "body": [
+          113.0,
+          124.3
+        ],
+        "contact": [
+          208,
+          154.96
+        ],
+        "cast_origin": [
+          185.52,
+          84.88
+        ],
+        "mouth": [
+          185.52,
+          84.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 1,
+      "source_rect": [
+        236,
+        45,
+        198,
+        147
+      ],
+      "source_foot": [
+        324.625,
+        192
+      ],
+      "source_anchors": {
+        "body": [
+          335.0,
+          125.85
+        ],
+        "contact": [
+          431,
+          156.72
+        ],
+        "cast_origin": [
+          408.26,
+          86.16
+        ],
+        "mouth": [
+          408.26,
+          86.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 2,
+      "source_rect": [
+        457,
+        52,
+        201,
+        142
+      ],
+      "source_foot": [
+        546.375,
+        194
+      ],
+      "source_anchors": {
+        "body": [
+          557.5,
+          130.1
+        ],
+        "contact": [
+          655,
+          159.92
+        ],
+        "cast_origin": [
+          631.87,
+          91.76
+        ],
+        "mouth": [
+          631.87,
+          91.76
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 3,
+      "source_rect": [
+        682,
+        52,
+        197,
+        142
+      ],
+      "source_foot": [
+        768.125,
+        194
+      ],
+      "source_anchors": {
+        "body": [
+          780.5,
+          130.1
+        ],
+        "contact": [
+          876,
+          159.92
+        ],
+        "cast_origin": [
+          853.39,
+          91.76
+        ],
+        "mouth": [
+          853.39,
+          91.76
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 4,
+      "source_rect": [
+        904,
+        58,
+        195,
+        136
+      ],
+      "source_foot": [
+        989.875,
+        194
+      ],
+      "source_anchors": {
+        "body": [
+          1001.5,
+          132.8
+        ],
+        "contact": [
+          1096,
+          161.36
+        ],
+        "cast_origin": [
+          1073.65,
+          96.08
+        ],
+        "mouth": [
+          1073.65,
+          96.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 5,
+      "source_rect": [
+        1126,
+        63,
+        195,
+        132
+      ],
+      "source_foot": [
+        1211.625,
+        195
+      ],
+      "source_anchors": {
+        "body": [
+          1223.5,
+          135.6
+        ],
+        "contact": [
+          1318,
+          163.32
+        ],
+        "cast_origin": [
+          1295.65,
+          99.96
+        ],
+        "mouth": [
+          1295.65,
+          99.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 6,
+      "source_rect": [
+        1347,
+        73,
+        193,
+        123
+      ],
+      "source_foot": [
+        1433.375,
+        196
+      ],
+      "source_anchors": {
+        "body": [
+          1443.5,
+          140.65
+        ],
+        "contact": [
+          1537,
+          166.48
+        ],
+        "cast_origin": [
+          1514.91,
+          107.44
+        ],
+        "mouth": [
+          1514.91,
+          107.44
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 7,
+      "source_rect": [
+        1568,
+        87,
+        190,
+        111
+      ],
+      "source_foot": [
+        1655.125,
+        198
+      ],
+      "source_anchors": {
+        "body": [
+          1663.0,
+          148.05
+        ],
+        "contact": [
+          1755,
+          171.36
+        ],
+        "cast_origin": [
+          1733.3,
+          118.08
+        ],
+        "mouth": [
+          1733.3,
+          118.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 8,
+      "source_rect": [
+        16,
+        309,
+        192,
+        116
+      ],
+      "source_foot": [
+        102.875,
+        425
+      ],
+      "source_anchors": {
+        "body": [
+          112.0,
+          372.8
+        ],
+        "contact": [
+          205,
+          397.16
+        ],
+        "cast_origin": [
+          183.04,
+          341.48
+        ],
+        "mouth": [
+          183.04,
+          341.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 9,
+      "source_rect": [
+        240,
+        313,
+        189,
+        115
+      ],
+      "source_foot": [
+        324.625,
+        428
+      ],
+      "source_anchors": {
+        "body": [
+          334.5,
+          376.25
+        ],
+        "contact": [
+          426,
+          400.4
+        ],
+        "cast_origin": [
+          404.43,
+          345.2
+        ],
+        "mouth": [
+          404.43,
+          345.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 10,
+      "source_rect": [
+        464,
+        319,
+        194,
+        111
+      ],
+      "source_foot": [
+        546.375,
+        430
+      ],
+      "source_anchors": {
+        "body": [
+          561.0,
+          380.05
+        ],
+        "contact": [
+          655,
+          403.36
+        ],
+        "cast_origin": [
+          632.78,
+          350.08
+        ],
+        "mouth": [
+          632.78,
+          350.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 11,
+      "source_rect": [
+        684,
+        322,
+        195,
+        111
+      ],
+      "source_foot": [
+        768.125,
+        433
+      ],
+      "source_anchors": {
+        "body": [
+          781.5,
+          383.05
+        ],
+        "contact": [
+          876,
+          406.36
+        ],
+        "cast_origin": [
+          853.65,
+          353.08
+        ],
+        "mouth": [
+          853.65,
+          353.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 12,
+      "source_rect": [
+        902,
+        322,
+        198,
+        112
+      ],
+      "source_foot": [
+        989.875,
+        434
+      ],
+      "source_anchors": {
+        "body": [
+          1001.0,
+          383.6
+        ],
+        "contact": [
+          1097,
+          407.12
+        ],
+        "cast_origin": [
+          1074.26,
+          353.36
+        ],
+        "mouth": [
+          1074.26,
+          353.36
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 13,
+      "source_rect": [
+        1123,
+        329,
+        197,
+        107
+      ],
+      "source_foot": [
+        1211.625,
+        436
+      ],
+      "source_anchors": {
+        "body": [
+          1221.5,
+          387.85
+        ],
+        "contact": [
+          1317,
+          410.32
+        ],
+        "cast_origin": [
+          1294.39,
+          358.96
+        ],
+        "mouth": [
+          1294.39,
+          358.96
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 14,
+      "source_rect": [
+        1342,
+        339,
+        200,
+        99
+      ],
+      "source_foot": [
+        1433.375,
+        438
+      ],
+      "source_anchors": {
+        "body": [
+          1442.0,
+          393.45
+        ],
+        "contact": [
+          1539,
+          414.24
+        ],
+        "cast_origin": [
+          1516.0,
+          366.72
+        ],
+        "mouth": [
+          1516.0,
+          366.72
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 15,
+      "source_rect": [
+        1564,
+        344,
+        198,
+        97
+      ],
+      "source_foot": [
+        1655.125,
+        441
+      ],
+      "source_anchors": {
+        "body": [
+          1663.0,
+          397.35
+        ],
+        "contact": [
+          1759,
+          417.72
+        ],
+        "cast_origin": [
+          1736.26,
+          371.16
+        ],
+        "mouth": [
+          1736.26,
+          371.16
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 16,
+      "source_rect": [
+        11,
+        566,
+        202,
+        96
+      ],
+      "source_foot": [
+        102.875,
+        662
+      ],
+      "source_anchors": {
+        "body": [
+          112.0,
+          618.8
+        ],
+        "contact": [
+          210,
+          638.96
+        ],
+        "cast_origin": [
+          186.74,
+          592.88
+        ],
+        "mouth": [
+          186.74,
+          592.88
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 17,
+      "source_rect": [
+        234,
+        567,
+        200,
+        95
+      ],
+      "source_foot": [
+        324.625,
+        662
+      ],
+      "source_anchors": {
+        "body": [
+          334.0,
+          619.25
+        ],
+        "contact": [
+          431,
+          639.2
+        ],
+        "cast_origin": [
+          408.0,
+          593.6
+        ],
+        "mouth": [
+          408.0,
+          593.6
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 18,
+      "source_rect": [
+        456,
+        570,
+        202,
+        91
+      ],
+      "source_foot": [
+        546.375,
+        661
+      ],
+      "source_anchors": {
+        "body": [
+          557.0,
+          620.05
+        ],
+        "contact": [
+          655,
+          639.16
+        ],
+        "cast_origin": [
+          631.74,
+          595.48
+        ],
+        "mouth": [
+          631.74,
+          595.48
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 19,
+      "source_rect": [
+        679,
+        571,
+        200,
+        90
+      ],
+      "source_foot": [
+        768.125,
+        661
+      ],
+      "source_anchors": {
+        "body": [
+          779.0,
+          620.5
+        ],
+        "contact": [
+          876,
+          639.4
+        ],
+        "cast_origin": [
+          853.0,
+          596.2
+        ],
+        "mouth": [
+          853.0,
+          596.2
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 20,
+      "source_rect": [
+        901,
+        575,
+        200,
+        86
+      ],
+      "source_foot": [
+        989.875,
+        661
+      ],
+      "source_anchors": {
+        "body": [
+          1001.0,
+          622.3
+        ],
+        "contact": [
+          1098,
+          640.36
+        ],
+        "cast_origin": [
+          1075.0,
+          599.08
+        ],
+        "mouth": [
+          1075.0,
+          599.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 21,
+      "source_rect": [
+        1121,
+        575,
+        203,
+        86
+      ],
+      "source_foot": [
+        1211.625,
+        661
+      ],
+      "source_anchors": {
+        "body": [
+          1222.5,
+          622.3
+        ],
+        "contact": [
+          1321,
+          640.36
+        ],
+        "cast_origin": [
+          1297.61,
+          599.08
+        ],
+        "mouth": [
+          1297.61,
+          599.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 22,
+      "source_rect": [
+        1341,
+        575,
+        205,
+        86
+      ],
+      "source_foot": [
+        1433.375,
+        661
+      ],
+      "source_anchors": {
+        "body": [
+          1443.5,
+          622.3
+        ],
+        "contact": [
+          1543,
+          640.36
+        ],
+        "cast_origin": [
+          1519.35,
+          599.08
+        ],
+        "mouth": [
+          1519.35,
+          599.08
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 23,
+      "source_rect": [
+        1563,
+        580,
+        205,
+        81
+      ],
+      "source_foot": [
+        1655.125,
+        661
+      ],
+      "source_anchors": {
+        "body": [
+          1665.5,
+          624.55
+        ],
+        "contact": [
+          1765,
+          641.56
+        ],
+        "cast_origin": [
+          1741.35,
+          602.68
+        ],
+        "mouth": [
+          1741.35,
+          602.68
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 24,
+      "source_rect": [
+        11,
+        803,
+        206,
+        79
+      ],
+      "source_foot": [
+        102.875,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          114.0,
+          846.45
+        ],
+        "contact": [
+          214,
+          863.04
+        ],
+        "cast_origin": [
+          190.22,
+          825.12
+        ],
+        "mouth": [
+          190.22,
+          825.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 25,
+      "source_rect": [
+        232,
+        803,
+        207,
+        79
+      ],
+      "source_foot": [
+        324.625,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          335.5,
+          846.45
+        ],
+        "contact": [
+          436,
+          863.04
+        ],
+        "cast_origin": [
+          412.09,
+          825.12
+        ],
+        "mouth": [
+          412.09,
+          825.12
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 26,
+      "source_rect": [
+        453,
+        805,
+        208,
+        77
+      ],
+      "source_foot": [
+        546.375,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          557.0,
+          847.35
+        ],
+        "contact": [
+          658,
+          863.52
+        ],
+        "cast_origin": [
+          633.96,
+          826.56
+        ],
+        "mouth": [
+          633.96,
+          826.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 27,
+      "source_rect": [
+        675,
+        806,
+        208,
+        76
+      ],
+      "source_foot": [
+        768.125,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          779.0,
+          847.8
+        ],
+        "contact": [
+          880,
+          863.76
+        ],
+        "cast_origin": [
+          855.96,
+          827.28
+        ],
+        "mouth": [
+          855.96,
+          827.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 28,
+      "source_rect": [
+        896,
+        806,
+        209,
+        76
+      ],
+      "source_foot": [
+        989.875,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          1000.5,
+          847.8
+        ],
+        "contact": [
+          1102,
+          863.76
+        ],
+        "cast_origin": [
+          1077.83,
+          827.28
+        ],
+        "mouth": [
+          1077.83,
+          827.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 29,
+      "source_rect": [
+        1118,
+        805,
+        209,
+        77
+      ],
+      "source_foot": [
+        1211.625,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          1222.5,
+          847.35
+        ],
+        "contact": [
+          1324,
+          863.52
+        ],
+        "cast_origin": [
+          1299.83,
+          826.56
+        ],
+        "mouth": [
+          1299.83,
+          826.56
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 30,
+      "source_rect": [
+        1340,
+        806,
+        208,
+        76
+      ],
+      "source_foot": [
+        1433.375,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          1444.0,
+          847.8
+        ],
+        "contact": [
+          1545,
+          863.76
+        ],
+        "cast_origin": [
+          1520.96,
+          827.28
+        ],
+        "mouth": [
+          1520.96,
+          827.28
+        ]
+      }
+    },
+    {
+      "source_sheet": "assets/source/combat/vespermaw/defeat.png",
+      "source_cell": 31,
+      "source_rect": [
+        1562,
+        807,
+        209,
+        75
+      ],
+      "source_foot": [
+        1655.125,
+        882
+      ],
+      "source_anchors": {
+        "body": [
+          1666.5,
+          848.25
+        ],
+        "contact": [
+          1768,
+          864.0
+        ],
+        "cast_origin": [
+          1743.83,
+          828.0
+        ],
+        "mouth": [
+          1743.83,
+          828.0
+        ]
+      }
+    }
+  ],
+  "animations": {
+    "idle": {
+      "drawings": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "duration_ms": 1600,
+      "loop": true
+    },
+    "prowl": {
+      "drawings": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "duration_ms": 1120,
+      "loop": true
+    },
+    "raking_claw": {
+      "drawings": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "duration_ms": 1200,
+      "loop": false,
+      "contact_ms": 600,
+      "contact_frame": 16
+    },
+    "confluence_roar": {
+      "drawings": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "duration_ms": 1600,
+      "loop": false,
+      "contact_ms": 800,
+      "contact_frame": 16
+    },
+    "gather_resonance": {
+      "drawings": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "duration_ms": 1600,
+      "loop": false,
+      "contact_ms": 800,
+      "contact_frame": 16
+    },
+    "charged_hold": {
+      "drawings": [
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159
+      ],
+      "duration_ms": 1600,
+      "loop": true
+    },
+    "ruinous_pounce": {
+      "drawings": [
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "duration_ms": 1400,
+      "loop": false,
+      "contact_ms": 700,
+      "contact_frame": 21
+    },
+    "exhausted": {
+      "drawings": [
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207
+      ],
+      "duration_ms": 1600,
+      "loop": true
+    },
+    "hurt": {
+      "drawings": [
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223
+      ],
+      "duration_ms": 640,
+      "loop": false
+    },
+    "defeat": {
+      "drawings": [
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255
+      ],
+      "duration_ms": 2000,
+      "loop": false
+    }
+  }
+}

@@ -50,9 +50,10 @@ class VespermawBestiaryTests(unittest.TestCase):
         record = build_enemy('vespermaw', 7)
         design = record['metadata']['combat_design']
         self.assertTrue(record['metadata']['combat_pending'])
-        self.assertTrue(record['metadata']['presentation_pending'])
+        self.assertFalse(record['metadata']['presentation_pending'])
         self.assertFalse(record['metadata']['drops_pending'])
-        self.assertEqual(record['presentation'], {'sprite_id': None, 'action_aliases': {}})
+        self.assertEqual(record['presentation'], {'sprite_id': 'vespermaw',
+            'action_aliases': {key: key.removeprefix('vespermaw_') for key in SEQUENCE}})
         self.assertEqual(design['status'], 'pending_runtime')
         self.assertEqual(record['behavior']['sequence'], SEQUENCE)
         self.assertEqual(record['combat']['abilities'], SEQUENCE)
@@ -94,11 +95,10 @@ class VespermawBestiaryTests(unittest.TestCase):
         before = source.to_dict()
         for art_ready in (False, True):
             with self.subTest(art_ready=art_ready):
-                if art_ready:
-                    # A labelled stand-in isolates combat readiness from art readiness.
-                    catalog['enemies']['vespermaw']['presentation'] = {
-                        'sprite_id': 'ridgeback_tusker',
-                        'action_aliases': dict.fromkeys(SEQUENCE, 'tusk_strike')}
+                catalog['enemies']['vespermaw']['presentation'] = (
+                    {'sprite_id': 'vespermaw', 'action_aliases':
+                     {key: key.removeprefix('vespermaw_') for key in SEQUENCE}}
+                    if art_ready else {'sprite_id': None, 'action_aliases': {}})
                 self.assertEqual(build_enemy('vespermaw', 7, data=catalog)
                                  ['metadata']['presentation_pending'], not art_ready)
                 with patch.object(BattleModel, '__init__', side_effect=AssertionError('Battle began')):
@@ -109,6 +109,17 @@ class VespermawBestiaryTests(unittest.TestCase):
                             {'enemy_id': 'cave_bat', 'level': 2},
                             {'enemy_id': 'vespermaw', 'level': 7}], bestiary_data=catalog)
         self.assertEqual(source.to_dict(), before)
+
+    def test_pending_design_pose_aliases_require_real_states_and_stay_local(self):
+        catalog = load_bestiary()
+        catalog['enemies']['vespermaw']['presentation']['action_aliases'][SEQUENCE[0]] = 'missing_claw'
+        with self.assertRaisesRegex(ValueError, 'authored animation states'):
+            load_bestiary(catalog)
+        # Existing live-action aliases still refer to action definitions.
+        catalog = load_bestiary()
+        catalog['enemies']['cave_bat']['presentation']['action_aliases']['cave_bat_bite'] = 'idle'
+        with self.assertRaisesRegex(ValueError, 'Invalid Bestiary presentation'):
+            load_bestiary(catalog)
 
     def test_proposed_damage_envelope_uses_current_party_growth_and_guard(self):
         boss = build_enemy('vespermaw', 7)['combat']['attributes']
@@ -142,7 +153,7 @@ class VespermawBestiaryTests(unittest.TestCase):
                     elif format_name == 'csv':
                         row, = csv.DictReader(io.StringIO(result.stdout))
                         self.assertEqual((row['hp'], row['xp_reward']), ('1877', '1110'))
-                        self.assertEqual((row['presentation_pending'], row['combat_pending']), ('True', 'True'))
+                        self.assertEqual((row['presentation_pending'], row['combat_pending']), ('False', 'True'))
                     else:
                         self.assertIn('runtime mechanics deferred', result.stdout)
                         self.assertIn('all_opponents', result.stdout)

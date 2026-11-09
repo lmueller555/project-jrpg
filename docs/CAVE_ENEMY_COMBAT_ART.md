@@ -1,5 +1,9 @@
 # Lithrusk and Veylume combat art
 
+The future Sanctuary miniboss has a separate
+[Vespermaw combat art bank](VESPERMAW_COMBAT_ART.md), with 256 authored poses.
+Its combat mechanics and story encounter remain pending.
+
 Lithrusk and Veylume have dedicated right-facing combat sprites for the
 Sanctuary cave's first enemy roster. The [Bestiary](BESTIARY.md) retains their
 approved stats, levels, actions and elemental profiles. This work adds their
