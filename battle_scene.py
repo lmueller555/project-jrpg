@@ -18,6 +18,8 @@ from mira_combat_art import MiraCombatArt
 from cave_battlefield import CaveBattlefield, CAVE_BATTLEFIELDS
 from battle_target_marker import (FINGER_SIZE, FINGER_GAP, target_marker_geometry,
                                   draw_target_ring, draw_target_finger)
+from battle_announcements import BattleAnnouncements, enemy_charge_warnings
+from enemy_charge_aura import EnemyChargeAura
 
 from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS, MUTED
 
@@ -185,6 +187,25 @@ class BattleScene:
                             self._make_background(COMBAT_ART/battlefield/'background.png'))
         self._grass = self._make_grass() if battlefield == 'eldenmere' else ()
         self._shadows = self._make_shadows()
+        self.announcements = BattleAnnouncements(model, display_name=self._feedback_name)
+        self.announcement_rect = pygame.Rect(8, 3, 464, 29)
+        self.announcement_text_rects = []
+        self.charge_aura = EnemyChargeAura()
+        self.charge_aura_rects = {}
+
+    def _feedback_name(self, identifier):
+        if self._is_enemy(identifier):return self._enemy_name(identifier)
+        member = self.model.combatant(identifier) or self._bot(identifier)
+        return member.name if member is not None else str(identifier or '')
+
+    def announce(self, text, *, actor=None, kind='event'):
+        """Present an authored battle emote without changing combat state."""
+        self.announcements.consume({'type': kind, 'actor': actor, 'text': text})
+
+    @property
+    def charging_enemies(self):
+        return tuple(warning['actor'] for warning in enemy_charge_warnings(
+            self.model, display_name=self._feedback_name))
 
     def _enemy_members(self):
         return tuple(getattr(self.model, 'enemies', (self.model.enemy,)))
@@ -880,6 +901,7 @@ class BattleScene:
         self.gear.hovered = bool(self.gear_hover_available and self._pointer is not None
                                  and self.gear.rect.collidepoint(self._pointer))
         self._elapsed += seconds
+        self.announcements.update(seconds)
         for reaction in self._reactions.values():reaction['age'] += seconds
         self._reactions = {key: value for key, value in self._reactions.items() if value['age'] < .55}
         self._action_cues()
@@ -902,6 +924,7 @@ class BattleScene:
         self._phase_elapsed = (0.0 if self.model.phase != self._last_phase
                                else self._phase_elapsed+seconds)
         for event in self.model.drain_events():
+            self.announcements.consume(event)
             self._tutorial_event(event)
             if event['type'] == 'impact':
                 age = max(0., event.get('frame_age', 0.))
@@ -1279,7 +1302,10 @@ class BattleScene:
         ground = self._ground_positions()
         self.enemy_rects = {}
         self.target_marker_rects = {}
+        self.charge_aura_rects = {}
         marked = self._marked_enemy()
+        charges = {warning['actor']: warning for warning in enemy_charge_warnings(
+            self.model, display_name=self._feedback_name)}
         for actor in sorted(positions, key=lambda identifier: ground[identifier].y):
             point = positions[actor]
             self._draw_shadow(canvas, actor, ground[actor])
@@ -1297,6 +1323,12 @@ class BattleScene:
             rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
             body = rendered.get_bounding_rect().move(origin)
+            aura_bounds = None
+            if actor in charges and body.width and body.height:
+                aura_bounds = (pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35))
+                    if charges[actor].get('stage') == 'release' else self._target_marker_bounds(actor))
+                self.charge_aura_rects[actor] = self.charge_aura.draw(canvas, body, self._elapsed,
+                    actor_key=actor, reduced_motion=self.reduced_motion, bounds=aura_bounds)
             if actor == marked and body.width and body.height:
                 bounds = self._target_marker_bounds(actor)
                 # A fixed idle footprint keeps the floor ring from breathing
@@ -1315,6 +1347,9 @@ class BattleScene:
                 self.target_marker_rects = target_marker_geometry(body, floor, bounds=bounds)
                 self.target_marker_rects['ring'] = draw_target_ring(canvas, footprint, floor, bounds=bounds)
             canvas.blit(rendered, origin)
+            if aura_bounds is not None:
+                self.charge_aura.draw(canvas, body, self._elapsed, actor_key=actor,
+                    reduced_motion=self.reduced_motion, bounds=aura_bounds, foreground=True)
             if self._is_enemy(actor):
                 self.enemy_rects[actor] = body
             if actor == 'player' and self.model.weapon_equipped and self.model.player.hp:
@@ -1500,6 +1535,39 @@ class BattleScene:
         fill.width = round(fill.width*max(0., min(1., value)))
         if fill.width:painter.rect(ATB_YELLOW, fill)
 
+    def _draw_announcement(self, painter):
+        message = self.announcements.current
+        target = self._marked_enemy()
+        text = (message['text'] if message is not None else
+                'Target: '+self._enemy_name(target) if target is not None else self.location_name)
+        rect = self.announcement_rect
+        painter.panel(rect)
+        color = '#ffb0a0' if message and message.get('kind') == 'warning' else GOLD
+        if message and message.get('kind') == 'warning':painter.rect('#c84b4a', rect, 1)
+        line_height = painter.font(bold=True).get_linesize()
+        capacity = max(1, (rect.height-6)//line_height)
+        lines = painter.wrap(text, rect.width-18, bold=True)
+        # Keep a warning's direction cue with its target on the next page.
+        # Wrapping may otherwise strand an arrow at the end of the first line.
+        for index in range(len(lines)-1):
+            if lines[index].rstrip().endswith(' →'):
+                lines[index] = lines[index].rstrip()[:-2].rstrip()
+                lines[index+1:index+2] = painter.wrap('→ '+lines[index+1],
+                                                     rect.width-18, bold=True)
+        pages = max(1, math.ceil(len(lines)/capacity))
+        age = max(0., float(message.get('age', 0.))) if message else 0.
+        duration = max(.01, float(message.get('duration', pages*2.5))) if message else pages*2.5
+        page = min(pages-1, int(age*pages/duration))
+        visible = lines[page*capacity:(page+1)*capacity]
+        y = rect.centery-len(visible)*line_height/2
+        self.announcement_text_rects = []
+        painter.clip(rect.inflate(-8, -2))
+        for line in visible:
+            self.announcement_text_rects.append(painter.text(line, (rect.centerx, y),
+                color=color, anchor='midtop', bold=True))
+            y += line_height
+        painter.clip()
+
     def draw(self, world_canvas, ui_surface):
         painter = self.game.ui.painter(ui_surface)
         small, name = self._layout(painter)
@@ -1511,21 +1579,7 @@ class BattleScene:
         pygame.transform.scale(world_canvas, ui_surface.get_size(), ui_surface)
         model, player, enemy = self.model, self.model.player, self.model.enemy
         self._draw_enemy_status(painter)
-        selected_target = getattr(model, 'selected_target', None)
-        caption = ('Target: '+self._enemy_name(selected_target) if self._marked_enemy() is not None
-                   and selected_target is not None else
-                   model.current_action.name if model.current_action is not None else self.location_name)
-        painter.text(caption, (241, 16), color=FOREST_DARK, anchor='midtop')
-        painter.text(caption, (240, 15), color=GOLD, anchor='midtop')
-        warnings = [(source, model.combatant(target)) for source, target in self._telegraphs().items()]
-        for index, (source, target) in enumerate(warnings):
-            if target is None or not target.hp:continue
-            compact = len(model.party) == 3
-            warning = ('Charge → '+(target.name.split()[0] if compact else target.name))
-            if self._group:warning = self._enemy_name(source)+' → '+target.name.split()[0]
-            warning_y = (self.panel_rect.top-small*(index+1)-5 if compact else 43+index*small)
-            painter.text(warning, (461, warning_y+1), role='small', color=FOREST_DARK, anchor='topright')
-            painter.text(warning, (460, warning_y), role='small', color=GOLD, anchor='topright')
+        self._draw_announcement(painter)
         positions = self._positions()
         for popup in self._popups:
             if popup['target'] not in positions:continue

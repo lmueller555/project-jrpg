@@ -94,7 +94,26 @@ The single-enemy controls remain available for existing encounters.
 
 Compact large-text layouts arrange three or four enemy status cards in one
 row, keeping every HP/ATB bar visible and reserving space for the finger above
-the sprites. The selected enemy's full name appears in the top caption.
+the sprites. The selected enemy's full name appears in the top announcement box
+when no ability, event or incoming-attack warning is being shown.
+
+The top box reports named abilities other than each combatant's basic attack,
+authored emotes, and existing events such as Guard, Overclock, Haste expiry and
+the first weapon's discovery. Incoming prepared attacks identify the charging
+enemy, attack name and living target. Warnings persist across other actors'
+turns and rotate when several enemies are charging; queued routine status
+notices yield to these warnings. Longer announcements page their full text
+inside the same fixed-height box, including at 150% text size.
+
+Tusker preparation and Veylume's Gather Charge produce a red lightning-flame
+power aura, held through player decisions and the attack's release until
+impact. Each enemy's preparation state controls its own aura. KO, canceled
+preparations, unaffordable follow-ups and battle results clear the warning.
+Effects follow the scene clock, pause with the battle, stay within the field,
+and use a static frame under Reduced Motion. The aura does not change elemental
+affinities, damage, action timing or ATB. Authored battle scripts can present an
+emote with `BattleScene.announce(text, actor=...)`; presentation never mutates
+combat state. See [review captures](reviews/battle_feedback/README.md).
 
 Victory resources and reward receipts are checkpointed before returning to
 the exact cave position. EXP from every defeated monster is summed, then each
