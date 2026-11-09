@@ -125,7 +125,8 @@ def _validate_elemental_profile(profile):
 
 
 def _validate_species(enemy, actions, archetypes, items):
-    if (set(enemy) != SPECIES_FIELDS or enemy['mode'] != 'species'
+    if (set(enemy) not in (SPECIES_FIELDS, SPECIES_FIELDS | {'combat_design'})
+            or enemy['mode'] != 'species'
             or not _text(enemy['name'], 120) or not _text(enemy['description'])
             or not _identifier(enemy['family']) or enemy['tier'] not in ('normal', 'boss')
             or not isinstance(enemy['habitats'], list) or not enemy['habitats']
@@ -145,10 +146,19 @@ def _validate_species(enemy, actions, archetypes, items):
             or not _multipliers(enemy['tier_multipliers'])):
         raise ValueError('Invalid Bestiary species profile')
     behavior = enemy['behavior']
+    pending_combat = 'combat_design' in enemy
+    if pending_combat:
+        from enemy_combat_design import validate_combat_design
+        designed_actions = validate_combat_design(enemy['combat_design'], behavior)
+        if set(designed_actions) & set(actions):
+            raise ValueError('Pending combat actions cannot override live actions')
+        actions = {**actions, **designed_actions}
+    allowed_kinds = (*_DAMAGE_KINDS, 'prepare')
+    if pending_combat:allowed_kinds += ('recover',)
     if (not isinstance(behavior, dict) or set(behavior) != {'sequence', 'fallback', 'targeting'}
             or not isinstance(behavior['sequence'], list) or not behavior['sequence']
             or any(not isinstance(identifier, str) or identifier not in actions
-                   or actions[identifier]['kind'] not in (*_DAMAGE_KINDS, 'prepare')
+                   or actions[identifier]['kind'] not in allowed_kinds
                    for identifier in behavior['sequence'])
             or not isinstance(behavior['fallback'], str)
             or behavior['fallback'] not in behavior['sequence']
@@ -183,7 +193,7 @@ def _validate_species(enemy, actions, archetypes, items):
         states = manifest.get('animations') if isinstance(manifest, dict) else None
         def authored_state(identifier):
             alias = presentation['action_aliases'].get(identifier)
-            return alias if alias in states else actions[alias or identifier]['animation']
+            return alias if alias in states else actions[alias or identifier].get('animation', identifier)
         if not isinstance(states, dict) or any(
                 authored_state(identifier) not in states for identifier in behavior['sequence']):
             raise ValueError('Bestiary actions require authored animation states')
@@ -236,7 +246,9 @@ def fixed_enemy_definitions(data=None, actions=None):
 def build_enemy(enemy_id, level=None, *, data=None, actions=None):
     """Resolve an authored enemy or a species at an explicitly selected level.
 
-    ``combat`` is a fresh legacy-compatible four-field enemy definition. XP and
+    ``combat`` retains the four-field enemy-definition shape. Pending combat
+    designs preserve their local action IDs for inspection; the battle adapter
+    rejects these records until their runtime rules are implemented. XP and
     planning metadata remain separate so compilation cannot award rewards or
     silently activate future elemental/Stagger rules. A pending loot design
     yields an empty combat item bundle and ``metadata['drops_pending']``. A
@@ -266,6 +278,7 @@ def build_enemy(enemy_id, level=None, *, data=None, actions=None):
     metadata = deepcopy(entry)
     metadata['drops_pending'] = pending
     metadata['presentation_pending'] = entry['presentation']['sprite_id'] is None
+    metadata['combat_pending'] = 'combat_design' in entry
     return {'id': enemy_id, 'level': level,
             'xp_reward': monster_xp(level, boss=entry['tier'] == 'boss'),
             'combat': combat, 'fighting_style': entry['fighting_style'],

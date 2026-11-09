@@ -274,6 +274,8 @@ class BattleModel:
 
     @staticmethod
     def _prepared_spells(record, actions):
+        if record['metadata'].get('combat_pending'):
+            raise ValueError('Bestiary enemy combat implementation is pending')
         if record['metadata']['presentation_pending']:
             raise ValueError('Bestiary enemy presentation is pending')
         if record['fighting_style'] not in (None, 'standard_attacks',

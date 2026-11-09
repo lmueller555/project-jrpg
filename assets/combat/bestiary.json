@@ -258,6 +258,147 @@
         "solo_count": 1,
         "party_count": 1
       }
+    },
+    "vespermaw": {
+      "mode": "species",
+      "name": "Vespermaw",
+      "description": "A pale cave predator whose shoulders and spine bear mineral crusts threaded with violet and blue microcrystals. Long exposure to the Sanctuary’s Aether confluence has strengthened its body and given its growl an unnatural resonance. Recent disturbances have driven it from the deeper passages. A living beast, not one of the Sanctuary’s dead.",
+      "family": "aether_adapted_beast",
+      "tier": "boss",
+      "habitats": [
+        "elden_vale_sanctuary_caves"
+      ],
+      "level_range": {
+        "min": 7,
+        "max": 7
+      },
+      "archetype": "windup_attacker",
+      "stat_profile": "brute",
+      "fighting_style": "telegraphed_windup",
+      "species_multipliers": {
+        "mag": 1.35,
+        "speed": 0.8
+      },
+      "tier_multipliers": {
+        "hp": 2.5
+      },
+      "behavior": {
+        "sequence": [
+          "vespermaw_raking_claw",
+          "vespermaw_confluence_roar",
+          "vespermaw_gather_resonance",
+          "vespermaw_ruinous_pounce",
+          "vespermaw_exhausted"
+        ],
+        "fallback": "vespermaw_raking_claw",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": null,
+        "action_aliases": {}
+      },
+      "rewards": {
+        "drops": {
+          "aether_amethyst": 1,
+          "aether_sapphire": 1
+        }
+      },
+      "elemental_profile": {
+        "element": "ground",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 100,
+          "electric": 50,
+          "water": 150,
+          "ice": 100,
+          "nature": 100,
+          "wind": 100,
+          "holy": 100,
+          "ground": 100
+        },
+        "absorption": {
+          "elements": [
+            "ground"
+          ],
+          "healing_percent": 100
+        },
+        "design_rationale": "Pale mineral crusts, heavy limbs and stone-lined claws reveal its Ground alignment. The crust insulates against Electric attacks but is vulnerable to erosion by Water; Ground replenishes it. Its blue and violet microcrystals indicate Aether exposure rather than Water or Electric alignment. Holy remains neutral because it is a living beast."
+      },
+      "planned_mechanics": {
+        "stagger": {
+          "status": "planned",
+          "resistance": "normal"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 1
+      },
+      "combat_design": {
+        "status": "pending_runtime",
+        "requirements": [
+          "party_wide_damage",
+          "recovery_vulnerability",
+          "guaranteed_target_response"
+        ],
+        "actions": {
+          "vespermaw_raking_claw": {
+            "name": "Raking Claw",
+            "kind": "physical",
+            "target": "opponent",
+            "potency": 0.65,
+            "mp_cost": 0,
+            "element": "non_elemental"
+          },
+          "vespermaw_confluence_roar": {
+            "name": "Confluence Roar",
+            "kind": "magical",
+            "target": "all_opponents",
+            "potency": 0.5,
+            "mp_cost": 6,
+            "element": "non_elemental"
+          },
+          "vespermaw_gather_resonance": {
+            "name": "Gather Resonance",
+            "kind": "prepare",
+            "target": "self",
+            "potency": 0,
+            "mp_cost": 0
+          },
+          "vespermaw_ruinous_pounce": {
+            "name": "Ruinous Pounce",
+            "kind": "physical",
+            "target": "opponent",
+            "potency": 1.4,
+            "mp_cost": 0,
+            "element": "non_elemental"
+          },
+          "vespermaw_exhausted": {
+            "name": "Exhausted",
+            "kind": "recover",
+            "target": "self",
+            "potency": 0,
+            "mp_cost": 0
+          }
+        },
+        "windup": {
+          "prepare_action": "vespermaw_gather_resonance",
+          "attack_action": "vespermaw_ruinous_pounce",
+          "minimum_target_actions": 1,
+          "retargeting": "repeat_warning"
+        },
+        "recovery": {
+          "after_action": "vespermaw_ruinous_pounce",
+          "recovery_action": "vespermaw_exhausted",
+          "damage_taken_multiplier": 1.25,
+          "ends_before_action": "vespermaw_raking_claw"
+        },
+        "encounter": {
+          "trigger": "story",
+          "repeatable": false,
+          "formation_size": 1
+        }
+      }
     }
   }
 }

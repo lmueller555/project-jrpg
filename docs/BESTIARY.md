@@ -5,16 +5,18 @@ dictionary for monster and boss definitions. Entries are keyed by stable enemy
 IDs under `enemies`. [`bestiary.py`](../bestiary.py) validates the complete
 dictionary and resolves a species at an explicitly selected level.
 
-The dictionary contains three computed Sanctuary cave species: **Cave Bat**,
-**Lithrusk** and **Veylume**. It preserves the existing fixed Bat and Ridgeback
-Tusker records for their authored test and MQ02 encounters. Fixed records
+The dictionary contains four computed Sanctuary cave species: **Cave Bat**,
+**Lithrusk**, **Veylume** and the level-seven miniboss **Vespermaw**. Vespermaw's
+combat design and art are pending; it is not placed in the cave yet. The
+dictionary preserves the existing fixed Bat and Ridgeback Tusker records for
+their authored test and MQ02 encounters. Fixed records
 retain their exact stats, abilities and item drops. Their computed-species
 tuning and elemental profiles have not been assigned. The live victory owner
 uses a level-one reward reference for the test Bat (**42 EXP**) and level three
 for the Ridgeback Tusker (**73 EXP**) without rescaling either fixed encounter.
 
-This is an authoring dictionary and combat adapter. The three cave species are
-used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).
+This is an authoring dictionary and combat adapter. The three normal cave
+species are used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).
 The dictionary does not add a player-facing encyclopedia menu. Its resolved EXP
 feeds the live victory progression flow described in [Leveling](LEVELING.md):
 every living active combatant receives the full sum for the encounter, with
@@ -55,7 +57,7 @@ attribute tables.
 | Accuracy | 14 | 15 |
 | Evasion | 15 | 16 |
 | Luck | 13 | 15 |
-| XP reward | 84 | 104 |
+| XP reward | 59 | 73 |
 
 | Ability | Action ID | Damage | Potency | MP |
 | --- | --- | --- | ---: | ---: |
@@ -119,7 +121,7 @@ the dictionary retains growth parameters rather than duplicated stat tables.
 | Accuracy | 14 | 15 | 15 | 17 |
 | Evasion | 12 | 14 | 14 | 15 |
 | Luck | 13 | 15 | 15 | 16 |
-| XP reward | 84 | 104 | 104 | 120 |
+| XP reward | 59 | 73 | 73 | 84 |
 
 | Ability | Action ID | Category / element | Potency | MP |
 | --- | --- | --- | ---: | ---: |
@@ -169,7 +171,105 @@ Electric alignment; Ground disperses its stored charge. Its light belongs to
 a living insect adapted to ambient Aether. These profiles remain hidden
 authoring data until elemental combat and deliberate reveal mechanics exist.
 
-### Authoring before art
+## Vespermaw
+
+Vespermaw is a living cave predator adapted to the Sanctuary's Aether confluence.
+Its pale body carries mineral crusts along the shoulders and spine, threaded
+with violet and blue microcrystals. Recent disturbances have agitated it and
+driven it out of the deeper passages. It is not undead, and its Holy affinity
+is neutral.
+
+| Property | Definition |
+| --- | --- |
+| ID | `vespermaw` |
+| Family | Aether-adapted beast |
+| Habitat | Elden Vale Sanctuary cave, final Echo Chamber |
+| Level range | 7–7; an explicit level of 7 is required |
+| Tier | Boss |
+| Element | Ground |
+| Combat concept | Windup Attacker |
+| Stat profile | Brute |
+| Fighting style | Telegraphed Windup |
+| Species adjustments | Magick ×1.35, Speed ×0.80 |
+| Tier adjustments | HP ×2.50 |
+| Intended encounter | One-time story battle with one Vespermaw |
+| Planned Stagger resistance | Normal (moderate) |
+
+All omitted multipliers are ×1. The approved profile, species and tier factors
+are composed before the single final rounding/cap step.
+
+| Attribute | Level 7 |
+| --- | ---: |
+| HP | 1,877 |
+| MP | 29 |
+| Strength | 24 |
+| Magick | 18 |
+| Spirit | 17 |
+| Defense | 26 |
+| Magick Defense | 18 |
+| Speed | 11 |
+| Accuracy | 23 |
+| Evasion | 19 |
+| Luck | 21 |
+| XP reward | 1,110 |
+
+The reward is ten times the reduced level-seven normal-monster reward of
+111 EXP. On a future live victory, each surviving active combatant receives
+the full 1,110 EXP. Guaranteed drops are one `aether_amethyst` and one
+`aether_sapphire`, both existing material items. Previewing this record does
+not grant EXP, items or story progress.
+
+The complete approved action design is stored in the entry's validated
+`combat_design` block, separately from the live action catalogue:
+
+| Ability | Action ID | Category / target | Potency | MP |
+| --- | --- | --- | ---: | ---: |
+| Raking Claw | `vespermaw_raking_claw` | Non-Elemental physical / one character | 0.65 | 0 |
+| Confluence Roar | `vespermaw_confluence_roar` | Non-Elemental magical / all living party members | 0.50 each | 6 |
+| Gather Resonance | `vespermaw_gather_resonance` | Preparation / self | 0 | 0 |
+| Ruinous Pounce | `vespermaw_ruinous_pounce` | Non-Elemental physical / marked character | 1.40 | 0 |
+| Exhausted | `vespermaw_exhausted` | Recovery / self | 0 | 0 |
+
+The intended cycle is **Raking Claw → Confluence Roar → Gather Resonance →
+Ruinous Pounce → Exhausted**, then repeat. Raking Claw is the free fallback
+when the Roar's MP cost cannot be paid. Single-target pressure cycles through
+living party members. Gather Resonance announces and locks the Pounce target;
+that character must receive at least one opportunity to act before the hit.
+Retargeting requires a fresh warning rather than an unannounced Pounce.
+
+After Pounce, Vespermaw takes 25% more damage and spends its next turn recovering.
+That vulnerability ends immediately before the next Raking Claw begins. This
+window is independent of the future Stagger mechanic. Initial tuning assumes
+a rested three-character party around levels five through seven and does not
+require in-battle healing.
+
+| Incoming element | Response |
+| --- | ---: |
+| Non-Elemental | 100% damage |
+| Fire | 100% damage |
+| Electric | 50% damage |
+| Water | 150% damage |
+| Ice | 100% damage |
+| Nature | 100% damage |
+| Wind | 100% damage |
+| Holy | 100% damage |
+| Ground | 100% healing (absorb) |
+
+The mineral crust and heavy gait suggest Ground alignment. The crust insulates
+against Electric attacks but is vulnerable to erosion by Water. Ground
+absorption takes precedence over its stored damage percentage. As with the
+other species, elemental responses and Stagger remain hidden planning data.
+
+`combat_design.status` is `pending_runtime`: party-wide damage, the recovery
+vulnerability and the guaranteed marked-character response opportunity still
+need combat support. `metadata['combat_pending']` reports this state. The
+complete sequence is preserved for authoring, but battle construction rejects
+it instead of substituting a single-target Roar or a fake recovery attack.
+Presentation also remains `null` with empty aliases; sprite design and
+animations are deferred. Adding this entry does not add a random encounter,
+place a story trigger, resolve MQ03's arrival or activate the boss fight.
+
+## Authoring before art
 
 An unfinished species uses `"presentation": {"sprite_id": null,
 "action_aliases": {}}`. The loader validates and resolves its complete data
@@ -285,7 +385,7 @@ assert 'cave_bat' in catalogue['enemies']
 bat = build_enemy('cave_bat', 2)
 assert bat['combat']['name'] == 'Cave Bat'
 assert bat['combat']['attributes']['hp'] == 73
-assert bat['xp_reward'] == 84
+assert bat['xp_reward'] == 59
 assert bat['metadata']['drops_pending']
 assert bat['metadata']['elemental_profile']['element'] == 'non_elemental'
 assert bat['metadata']['elemental_profile']['damage_percentages']['fire'] == 200
@@ -313,10 +413,13 @@ resolved record containing `id`, `level`, `xp_reward`, `combat`,
 `fighting_style`, `behavior`, `presentation` and `metadata`.
 
 The `combat` block contains exactly `name`, `attributes`, `abilities` and
-`rewards`, compatible with the existing battle validator. Elemental design is
+`rewards`. Supported live species are compatible with the existing battle
+validator; pending `combat_design` entries preserve their local action IDs and
+are rejected by the adapter before battle construction. Elemental design is
 retained in `metadata['elemental_profile']`; it is not a combat modifier yet.
-Behavior, presentation and future-mechanic information retain separate ownership. Species require an
-explicit level within their authored range; fixed records accept no level.
+Behavior, presentation and future-mechanic information retain separate ownership.
+Species require an explicit level within their authored range; fixed records
+accept no level.
 Unknown IDs, malformed ranges, invalid references, non-finite multipliers and
 missing free fallback actions are rejected.
 
@@ -327,7 +430,7 @@ from character_attributes import CharacterAttributes
 model = BattleModel.from_bestiary(CharacterAttributes(), 'cave_bat', 2)
 assert model.enemy.name == 'Cave Bat'
 assert model.enemy_level == 2
-assert model.enemy_xp_reward == 84
+assert model.enemy_xp_reward == 59
 assert model.enemy_sprite_id == 'bat'
 ```
 
@@ -351,10 +454,13 @@ than silently substituting another style.
 2. Select an approved stat profile and combat concept, then supply explicit
    `species_multipliers` and `tier_multipliers`. Omitted attribute factors are
    ×1. Keep the common growth curve in the growth backend.
-3. Register any new action definitions in
+3. Register any supported new action definitions in
    [`actions.json`](../assets/combat/actions.json), then reference their IDs in
    the sequence and free fallback. Choose a supported targeting policy and
    fighting style, or implement the missing behavior before battle use.
+   An authoring-only `combat_design` can retain unsupported actions and their
+   windup/recovery rules with `status: pending_runtime`; these records remain
+   unavailable to the combat adapter until runtime support is implemented.
 4. Author a complete `elemental_profile`, including all nine damage percentages,
    matching-element absorption and a rationale for the clues players can infer.
    Consider identity early enough to inform the monster's name, visual design,
@@ -384,6 +490,8 @@ python tools/preview_bestiary.py --enemy cave_bat --levels 2 3 --format json
 python tools/preview_bestiary.py --enemy cave_bat --levels 2 3 --format csv
 python tools/preview_bestiary.py --enemy lithrusk --levels 2 3
 python tools/preview_bestiary.py --enemy veylume --levels 3 4
+python tools/preview_bestiary.py --enemy vespermaw --levels 7
+python tools/preview_bestiary.py --enemy vespermaw --levels 7 --format json
 ```
 
 The preview resolves dictionary data without opening a game, changing a journey,

@@ -26,7 +26,7 @@ class BestiaryPreviewTests(unittest.TestCase):
         result = self.run_preview('--list', '--format', 'json')
         self.assertEqual(result.returncode, 0, result.stderr)
         rows = {row['id']: row for row in json.loads(result.stdout)}
-        self.assertEqual(set(rows), {'bat', 'ridgeback_tusker', 'cave_bat', 'lithrusk', 'veylume'})
+        self.assertEqual(set(rows), {'bat', 'ridgeback_tusker', 'cave_bat', 'lithrusk', 'veylume', 'vespermaw'})
         self.assertEqual(rows['bat']['kind'], 'fixed')
         self.assertEqual(rows['ridgeback_tusker']['levels'], 'fixed')
         self.assertEqual(rows['cave_bat']['kind'], 'species')
