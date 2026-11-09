@@ -82,10 +82,19 @@ its authored opening. Each enemy owns its HP, MP, action sequence and charge
 target; victory requires defeating all enemies.
 
 For groups, Attack and offensive skills open target selection. Arrow keys and
-Enter select/confirm a living foe, Escape returns to commands, and enemy cards
-or bodies are clickable. Cards show distinct names, HP and ATB; duplicate Bats
+Enter select/confirm a living foe, and Escape returns to commands. A white
+finger points down at the selected enemy, with a static red circle beneath its
+sprite. Hovering a living enemy selects it without spending a turn; clicking
+its sprite or status card immediately executes the highlighted attack or
+offensive skill, including before a separate target confirmation. Support
+skills retain their normal menu behavior. Unavailable skills explain their
+requirements without spending MP or ATB. Cards show distinct names, HP and ATB; duplicate Bats
 receive distinguishing labels. Bots and attacks retarget defeated enemies.
 The single-enemy controls remain available for existing encounters.
+
+Compact large-text layouts arrange three or four enemy status cards in one
+row, keeping every HP/ATB bar visible and reserving space for the finger above
+the sprites. The selected enemy's full name appears in the top caption.
 
 Victory resources and reward receipts are checkpointed before returning to
 the exact cave position. EXP from every defeated monster is summed, then each

@@ -16,6 +16,8 @@ from battle_action_audio import BattleActionAudio
 from combat_motion_art import MOTION_STATES, frame as motion_frame, anchors as motion_anchors
 from mira_combat_art import MiraCombatArt
 from cave_battlefield import CaveBattlefield, CAVE_BATTLEFIELDS
+from battle_target_marker import (FINGER_SIZE, FINGER_GAP, target_marker_geometry,
+                                  draw_target_ring, draw_target_finger)
 
 from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS, MUTED
 
@@ -132,6 +134,7 @@ class BattleScene:
         self._target_command = None
         self.enemy_rows = {}
         self.enemy_rects = {}
+        self.target_marker_rects = {}
         self._command_context = (model.phase, model.ready_actor)
         self._held = False
         self._elapsed = 0.0
@@ -175,6 +178,7 @@ class BattleScene:
         self._command_scroll = 0
         self._pointer = None
         self._pointer_window = None
+        self._hovered_enemy = None
         self._viewport = (self.game.ui_surface.get_size(), getattr(self.game.audio, 'text_scale', 1))
         self._command_lines = {}
         self._background = (self._cave_field.frames[0] if self._cave_field is not None else
@@ -210,11 +214,21 @@ class BattleScene:
         name = 'Bat' if self._group and member.name == 'Cave Bat' else member.name
         return name+(' '+chr(65+duplicates.index(member)) if len(duplicates) > 1 else '')
 
+    def _enemy_header_columns(self):
+        count = len(self._enemy_members())
+        height = getattr(self, '_enemy_label_height', 21)
+        space = self.panel_rect.top-5-(35+math.ceil(count/2)*height+4)
+        # Large text keeps all HP/ATB cards, using one row so bodies and the
+        # pointing glove still have room below the header.
+        return count if count > 2 and space < FINGER_SIZE[1]+FINGER_GAP+40 else min(2, count)
+
     def _group_slots(self):
         members = self._enemy_members()
         height = getattr(self, '_enemy_label_height', 21)
-        return {enemy.identifier: pygame.Rect(10+(index % 2)*130,
-                    35+index//2*height, 126, height-2)
+        columns = self._enemy_header_columns()
+        return {enemy.identifier: pygame.Rect(10+round(index % columns*260/columns),
+                    35+index//columns*height,
+                    round((index % columns+1)*260/columns)-round(index % columns*260/columns)-4, height-2)
                 for index, enemy in enumerate(members)}
 
     @staticmethod
@@ -264,6 +278,10 @@ class BattleScene:
             image, ground_y = self._shadows['player'], round(point.y)
         elif self._sprite(actor) == 'ridgeback_tusker':
             image, ground_y = self._shadows['tusker'], round(point.y)
+            factor = self._actor_scale(actor)/2
+            if factor != 1:
+                image = pygame.transform.scale(image, (max(1, round(image.get_width()*factor)),
+                                                       max(1, round(image.get_height()*factor))))
         elif self._sprite(actor) in CAVE_ENEMIES:
             image = self._shadows[self._sprite(actor)]
             factor = self._actor_scale(actor)/2
@@ -274,7 +292,7 @@ class BattleScene:
             # The Bat moves above the same ground plane, including its idle bob.
             ground_y = round(self._home_positions()[actor].y+(0 if self._group or self._cave_field is not None else 14))
             image = self._shadows['enemy_low' if point.y > 177 else 'enemy_high']
-            if self._group:
+            if self._group or self._actor_scale(actor) != 2:
                 image = pygame.transform.scale(image, (max(1, round(image.get_width()*self._actor_scale(actor)/2)),
                                                        max(1, round(image.get_height()*self._actor_scale(actor)/2))))
         canvas.blit(image, (round(point.x)-image.get_width()//2,
@@ -380,6 +398,15 @@ class BattleScene:
                     'hp': pygame.Rect(slot.left+4, slot.top+small+3, slot.width-8, 3),
                     'atb': pygame.Rect(slot.left+4, slot.top+small+7, slot.width-8, 2),
                     'body': self._group_body_area(identifier)}
+        else:
+            enemy_x = 119 if len(self.model.party) > 1 else 126
+            width, height = painter.font('name', bold=True).size(self.model.enemy.name)
+            name_rect = pygame.Rect(0, 0, width, height)
+            name_rect.center = (enemy_x, 43)
+            bar = pygame.Rect(45, 57, 150, 6) if len(self.model.party) > 1 else pygame.Rect(86, 57, 80, 6)
+            atb = pygame.Rect(bar.x, 65, bar.width, 2)
+            self.enemy_rows['enemy'] = {'row': name_rect.union(bar).union(atb).inflate(6, 4),
+                'name': name_rect, 'hp': bar, 'atb': atb}
         return small, name
 
     def _bot(self, identifier):
@@ -557,6 +584,74 @@ class BattleScene:
         self._tutorial_event({'type': 'player_ready', 'actor': identifier})
         return True
 
+    def _offensive_command(self):
+        """Return the pending or highlighted command that can target a foe."""
+        if self._target_command is not None:
+            identifier = self._target_command
+        else:
+            actions = self._command_actions()
+            if not actions:return None
+            identifier = actions[self.selected % len(actions)]
+        if identifier == 'attack' or self.model.actions.get(identifier, {}).get('target') == 'opponent':
+            return identifier
+        return None
+
+    def _execute_enemy_command(self, identifier):
+        """A fresh foe click chooses its target and spends exactly one action."""
+        if self.model.phase != 'ready' or not self.model.select_target(identifier):return False
+        command = self._offensive_command()
+        if command is None:
+            self._notice = 'Choose an attack or offensive skill.'
+            self._sound('move')
+            return False
+        reason = self._command_reason(command)
+        if reason:
+            self._notice = reason
+            self._sound('back')
+            return False
+        if not self.model.choose_action(command, target_id=identifier):
+            self._notice = self.model.action_reason(command)
+            self._sound('back')
+            return False
+        self._target_command = None
+        self._notice = ''
+        self._sync_commands()
+        self._sound('confirm')
+        return True
+
+    def _refresh_enemy_rects(self):
+        """Use current visible sprite bounds, including before the first draw."""
+        positions = self._positions()
+        self.enemy_rects = {}
+        for enemy in self._enemy_members():
+            actor = enemy.identifier
+            if actor not in positions:continue
+            state, time = self._pose(actor)
+            image, anchor = self.sprites.frame(self._sprite(actor), state, time)
+            scale = self._actor_scale(actor)
+            rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)),
+                                                       max(1, round(image.get_height()*scale))))
+            point = positions[actor]
+            origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
+            self.enemy_rects[actor] = rendered.get_bounding_rect().move(origin)
+
+    def _enemy_at(self, point):
+        """Resolve enemy headers or bodies without reaching through the HUD."""
+        field = pygame.Rect(0, 0, 480, self.panel_rect.top)
+        if point is None or not field.collidepoint(point):return None
+        for identifier, row in self.enemy_rows.items():
+            if self.model.combatant(identifier).hp and row['row'].clip(field).collidepoint(point):
+                return identifier
+        self._refresh_enemy_rects()
+        living = [(identifier, rect) for identifier, rect in self.enemy_rects.items()
+                  if self.model.combatant(identifier).hp and rect.width and rect.height]
+        for padding in (0, 8):
+            hits = [(identifier, rect) for identifier, rect in living
+                    if rect.inflate(padding, padding).clip(field).collidepoint(point)]
+            if hits:
+                return min(hits, key=lambda item: pygame.Vector2(item[1].center).distance_squared_to(point))[0]
+        return None
+
     def _confirm(self):
         if self.model.phase == 'victory':return
         if self.model.phase in RESULTS:
@@ -565,17 +660,13 @@ class BattleScene:
             return
         if self.model.phase != 'ready':return
         if self._target_command is not None:
-            command = self._target_command
             target = getattr(self.model, 'selected_target', None)
             if target is None or not self.model.combatant(target).hp:
                 living = [enemy for enemy in self._enemy_members() if enemy.hp]
                 if not living:return
                 target = living[0].identifier
                 self.model.select_target(target)
-            if self.model.choose_action(command, target_id=target):
-                self._target_command = None
-                self._notice = ''
-                self._sync_commands();self._sound('confirm')
+            self._execute_enemy_command(target)
             return
         self._sync_commands()
         actions = self._command_actions()
@@ -655,9 +746,11 @@ class BattleScene:
         if hasattr(event, 'pos'):
             self._pointer_window = event.pos
             self._pointer = point
+            self._hovered_enemy = None
             self.gear.hovered = bool(point is not None and self.gear.rect.collidepoint(point))
         if event.type == pygame.WINDOWLEAVE:
             self._pointer = self._pointer_window = None
+            self._hovered_enemy = None
             self.gear.hovered = False
         if event.type == pygame.WINDOWFOCUSLOST:
             self.focused = False
@@ -709,8 +802,9 @@ class BattleScene:
         if self.paused:
             if (event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and self.focused
                     and point is not None and self.resume_rect.collidepoint(point)):
-                self.paused = False;self._sound('confirm')
+                self.paused = False;self._held = True;self._sound('confirm')
             return True
+        if not self.focused:return True
         if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):self._confirm()
             elif self.model.phase == 'ready' and self._target_command is not None and event.key in (
@@ -742,18 +836,10 @@ class BattleScene:
             if self.model.phase in RESULTS:
                 if self.continue_rect.collidepoint(point):self._confirm()
             elif self.model.phase == 'ready':
-                for identifier, row in self.enemy_rows.items():
-                    if row['row'].collidepoint(point) and self.model.combatant(identifier).hp:
-                        self.model.select_target(identifier)
-                        if self._target_command is not None:self._confirm()
-                        else:self._sound('move')
-                        return True
-                for identifier, rect in self.enemy_rects.items():
-                    if rect.inflate(8, 8).collidepoint(point) and self.model.combatant(identifier).hp:
-                        self.model.select_target(identifier)
-                        if self._target_command is not None:self._confirm()
-                        else:self._sound('move')
-                        return True
+                identifier = self._enemy_at(point)
+                if identifier is not None:
+                    self._execute_enemy_command(identifier)
+                    return True
                 for identifier, row in self.party_rows.items():
                     if row['row'].collidepoint(point):
                         self._select_member(identifier);return True
@@ -767,6 +853,12 @@ class BattleScene:
                     if rect.collidepoint(point):
                         self.selected = actions.index(identifier);self._confirm();break
         elif event.type == pygame.MOUSEMOTION and self.model.phase == 'ready' and point is not None:
+            identifier = self._enemy_at(point)
+            self._hovered_enemy = identifier
+            if identifier is not None:
+                self.model.select_target(identifier)
+                return True
+            if self._target_command is not None:return True
             actions = self._command_actions()
             for identifier, rect in self.command_rects.items():
                 if rect.collidepoint(point):
@@ -918,15 +1010,15 @@ class BattleScene:
                 point = pygame.Vector2(area.centerx-(bounds.centerx-anchor[0])*scale,
                                        area.bottom-(bounds.bottom-anchor[1])*scale)
                 positions[identifier] = self._clamp_enemy_position(point, identifier)
-        elif self._cave_field is not None or self.model.enemy_sprite_id in CAVE_ENEMIES:
+        elif hasattr(self.sprites, 'actors'):
             positions['enemy'] = self._clamp_enemy_position(positions['enemy'])
         return positions
 
-    def _group_body_area(self, actor):
+    def _group_body_zone(self, actor):
         members = self._enemy_members()
         index = next(index for index, enemy in enumerate(members) if enemy.identifier == actor)
         label = getattr(self, '_enemy_label_height', 21)
-        top = 35+math.ceil(len(members)/2)*label+4
+        top = 35+math.ceil(len(members)/self._enemy_header_columns())*label+4
         bottom = self.panel_rect.top-5
         columns = (len(members) if bottom-top < 100 or all(self._sprite(enemy.identifier) == 'bat' for enemy in members)
                    else min(2, len(members)))
@@ -936,6 +1028,28 @@ class BattleScene:
         row_top = top+round(index//columns*(bottom-top)/rows)
         row_bottom = top+round((index//columns+1)*(bottom-top)/rows)
         return pygame.Rect(left+3, row_top, right-left-6, max(1, row_bottom-row_top-2))
+
+    def _group_body_area(self, actor):
+        area = self._group_body_zone(actor)
+        space = min(FINGER_SIZE[1]+FINGER_GAP, max(0, area.height-1))
+        return pygame.Rect(area.x, area.y+space, area.width, area.height-space)
+
+    def _enemy_body_area(self, actor):
+        if self._group:return self._group_body_area(actor)
+        top = (70 if self._cave_field is not None else 65)+FINGER_SIZE[1]+FINGER_GAP
+        return pygame.Rect(5, top, 470, max(1, self.panel_rect.top-top-3))
+
+    def _target_marker_bounds(self, actor):
+        if self._group:return self._group_body_zone(actor)
+        top = 70 if self._cave_field is not None else 65
+        return pygame.Rect(5, top, 470, max(1, self.panel_rect.top-top-3))
+
+    def _marked_enemy(self):
+        if (self.model.phase != 'ready' or self.paused or not self.focused
+                or self.tutorial_active or self._offensive_command() is None):return None
+        identifier = getattr(self.model, 'selected_target', None)
+        enemy = self.model.combatant(identifier)
+        return identifier if enemy is not None and self._is_enemy(identifier) and enemy.hp else None
 
     def _enemy_art(self, actor='enemy'):
         """The complete native occupied bounds, including attack/defeat poses."""
@@ -953,10 +1067,11 @@ class BattleScene:
         if not self._is_enemy(actor):return 2.
         if self._group:
             bounds, area = self._enemy_art(actor)['bounds'], self._group_body_area(actor)
-            return min(2., (area.width-4)/max(1, bounds.width), (area.height-2)/max(1, bounds.height))
-        if self._cave_field is None and self._sprite(actor) not in CAVE_ENEMIES:return 2.
+            return min(2., max(1, area.width-4)/max(1, bounds.width), max(1, area.height-2)/max(1, bounds.height))
+        # Injected test/preview sprite banks may not supply occupied metadata.
+        if not hasattr(self.sprites, 'actors'):return 2.
         bounds = self._enemy_art(actor)['bounds']
-        available = max(1, self.panel_rect.top-(73 if self._cave_field is not None else 68))
+        available = self._enemy_body_area(actor).height
         return min(2., 224/max(1, bounds.width), available/max(1, bounds.height))
 
     def _clamp_enemy_position(self, point, actor='enemy', *, moving=False):
@@ -964,9 +1079,7 @@ class BattleScene:
         scale = self._actor_scale(actor)
         bounds, anchor = art['bounds'], art['anchor']
         area = (pygame.Rect(5, 35, 470, max(1, self.panel_rect.top-38)) if moving and self._group else
-                self._group_body_area(actor) if self._group else
-                pygame.Rect(5, 70 if self._cave_field is not None else 65, 470,
-                            max(1, self.panel_rect.top-(73 if self._cave_field is not None else 68))))
+                self._enemy_body_area(actor))
         low = pygame.Vector2(area.left-(bounds.left-anchor[0])*scale,
                              area.top-(bounds.top-anchor[1])*scale)
         high = pygame.Vector2(area.right-(bounds.right-anchor[0])*scale,
@@ -978,7 +1091,7 @@ class BattleScene:
         positions = self._home_positions() if positions is None else positions
         point = positions[actor]
         if self._is_enemy(actor):
-            if self._group or self._cave_field is not None or self._sprite(actor) in CAVE_ENEMIES:
+            if hasattr(self.sprites, 'actors'):
                 art = self._enemy_art(actor)
                 offset = pygame.Vector2(art['idle_bounds'].center)-art['anchor']
                 return point+offset*self._actor_scale(actor)
@@ -1165,6 +1278,8 @@ class BattleScene:
         positions = self._positions()
         ground = self._ground_positions()
         self.enemy_rects = {}
+        self.target_marker_rects = {}
+        marked = self._marked_enemy()
         for actor in sorted(positions, key=lambda identifier: ground[identifier].y):
             point = positions[actor]
             self._draw_shadow(canvas, actor, ground[actor])
@@ -1181,9 +1296,27 @@ class BattleScene:
             scale = self._actor_scale(actor)
             rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
+            body = rendered.get_bounding_rect().move(origin)
+            if actor == marked and body.width and body.height:
+                bounds = self._target_marker_bounds(actor)
+                # A fixed idle footprint keeps the floor ring from breathing
+                # with flying enemies' wingbeats and their idle bob.
+                footprint = body
+                if hasattr(self.sprites, 'actors'):
+                    art = self._enemy_art(actor)
+                    idle = art['idle_bounds']
+                    home = self._home_positions()[actor]
+                    footprint = pygame.Rect(round(home.x+(idle.x-art['anchor'][0])*scale),
+                        round(home.y+(idle.y-art['anchor'][1])*scale),
+                        max(1, round(idle.width*scale)), max(1, round(idle.height*scale)))
+                floor = ground[actor].copy()
+                if self._sprite(actor) == 'bat' and not self._group and self._cave_field is None:
+                    floor.y = self._home_positions()[actor].y+14
+                self.target_marker_rects = target_marker_geometry(body, floor, bounds=bounds)
+                self.target_marker_rects['ring'] = draw_target_ring(canvas, footprint, floor, bounds=bounds)
             canvas.blit(rendered, origin)
             if self._is_enemy(actor):
-                self.enemy_rects[actor] = rendered.get_bounding_rect().move(origin)
+                self.enemy_rects[actor] = body
             if actor == 'player' and self.model.weapon_equipped and self.model.player.hp:
                 current = self.model.current_action
                 own_action = current if current is not None and current.actor == 'player' else None
@@ -1231,6 +1364,9 @@ class BattleScene:
                                    (round(point.x+offset), round(point.y-25)), 2)
         self._draw_mira_effects(canvas)
         self._draw_cave_enemy_effects(canvas, positions)
+        if marked is not None and self.target_marker_rects:
+            self.target_marker_rects['finger'] = draw_target_finger(canvas, self.enemy_rects[marked],
+                bounds=self._target_marker_bounds(marked))
         if (action is not None and action.kind == 'magical' and not action.resolved
                 and not getattr(action, 'choreography', None)
                 and not (self._is_enemy(action.actor) and self._sprite(action.actor) == 'veylume')):
@@ -1356,9 +1492,6 @@ class BattleScene:
             self._enemy_atb(painter, row['atb'], enemy.atb)
             if selected == identifier and enemy.hp and model.phase == 'ready':
                 painter.rect(GOLD, row['row'], 1)
-                rect = self.enemy_rects.get(identifier)
-                if rect is not None:
-                    painter.rect(GOLD, rect.inflate(4, 4), 1)
 
     @staticmethod
     def _enemy_atb(painter, rect, value):
@@ -1379,7 +1512,7 @@ class BattleScene:
         model, player, enemy = self.model, self.model.player, self.model.enemy
         self._draw_enemy_status(painter)
         selected_target = getattr(model, 'selected_target', None)
-        caption = ('Target: '+self._enemy_name(selected_target) if self._target_command is not None
+        caption = ('Target: '+self._enemy_name(selected_target) if self._marked_enemy() is not None
                    and selected_target is not None else
                    model.current_action.name if model.current_action is not None else self.location_name)
         painter.text(caption, (241, 16), color=FOREST_DARK, anchor='midtop')
@@ -1494,7 +1627,8 @@ class BattleScene:
                 if model.phase == 'ready' and actions.index(identifier) == self.selected:
                     painter.rect(MUTED if disabled else GOLD, rect, 1)
             detail = self._notice or self._detail_text()
-            if detail and (self._notice or self.command_menu == 'skills'):
+            if detail and (self._notice or self.command_menu == 'skills') and (
+                    self._hovered_enemy is None or self._notice):
                 lines = painter.wrap(detail, 270, role='small')
                 box = pygame.Rect(192, top-len(lines)*small-12, 280, len(lines)*small+8)
                 painter.panel(box)

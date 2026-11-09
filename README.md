@@ -101,6 +101,7 @@ duplicating rewards. The Music slider controls the soundtrack independently of e
 | J | Open/close the quest journal; select a quest and scroll its details |
 | I | Open/close the inventory; Tab or left/right switches categories |
 | Q / E in Characters | Inspect the previous/next recruited character, including level and EXP |
+| Hover / left click an enemy in combat | Select a living target / execute the highlighted attack or offensive skill |
 | Left click anywhere / Space / E | Advance an open conversation |
 | E near a bedroom furnishing | Inspect it when the prompt appears |
 | Click a response button | Accept a quest or leave it for later |
@@ -320,6 +321,12 @@ to enter combat automatically. The separate battle scene includes Caelan's comba
 animations, Attack, Guard, Flee and learned Aether Dart, plus the bottom HP/MP/ATB
 panel. All gauges pause while the player chooses; enemy ATB is hidden. See the
 [combat preview](docs/reviews/atb_combat/README.md).
+
+A white finger points down at the selected enemy, with a static red circle on
+the ground beneath it. While a character is ready, hover an enemy to select it
+and click its sprite or status card to use the highlighted attack or offensive
+skill. Group targeting also supports arrows and Enter. See the
+[targeting review](docs/reviews/battle_targeting/README.md).
 
 The [traditional leveling system](docs/LEVELING.md) supplies saved level-1–100
 character growth, the approved XP/reward curves, effective rating caps of 999
