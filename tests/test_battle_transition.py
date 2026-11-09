@@ -179,13 +179,15 @@ class EncounterEntryTests(unittest.TestCase):
         self.assertGreater(owner.transition.elapsed, elapsed)
 
     def test_entry_and_reset_request_music_without_restarting_scene_clocks(self):
-        self.game.music = SimpleNamespace(play=Mock())
+        self.game.music = SimpleNamespace(begin_battle=Mock(), end_battle=Mock(),
+                                          set_ducked=Mock())
         owner, scene = self.start()
-        self.game.music.play.assert_called_once_with('battle')
+        self.game.music.begin_battle.assert_called_once_with()
         owner.reset()
         self.assertFalse(owner.active)
         self.assertIsNone(owner.transition)
-        self.game.music.play.assert_called_with('eldenmere')
+        self.game.music.end_battle.assert_called_once_with()
+        self.game.music.set_ducked.assert_called_once_with(False)
         self.assertEqual(scene._elapsed, 0)
 
 

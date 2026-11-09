@@ -56,7 +56,6 @@ class CombatEncounters:
         self.entry = None
         self._cave_ticket = None
         self._cave_checkpointed = False
-        self._cave_return_track = None
 
     @property
     def active(self):return self.scene is not None or self.entry is not None
@@ -96,11 +95,18 @@ class CombatEncounters:
     def transitioning(self):
         return bool(self.transition is not None and self.transition.active)
 
-    def _music(self, track):
+    def _begin_battle_music(self):
         music = getattr(self.game, 'music', None)
-        if music is not None:music.play(track)
+        if music is not None:music.begin_battle()
+
+    def _end_battle_music(self):
+        music = getattr(self.game, 'music', None)
+        if music is not None:
+            music.set_ducked(False)
+            music.end_battle()
 
     def reset(self):
+        self._end_battle_music()
         self.scene = None
         self.receipt_id = None
         self.cooldown = self.world_seconds = 0.0
@@ -122,8 +128,6 @@ class CombatEncounters:
         self.entry = None
         self._cave_ticket = None
         self._cave_checkpointed = False
-        self._cave_return_track = None
-        self._music('eldenmere')
 
     def _party_options(self):
         party = getattr(self.game, 'party', None)
@@ -180,7 +184,7 @@ class CombatEncounters:
         self.transition = BattleTransition(
             frame, reduced_motion=getattr(self.game.audio, 'reduced_motion', False))
         self._entry_keys.clear()
-        self._music('battle')
+        self._begin_battle_music()
 
     @property
     def bat_unlocked(self):
@@ -324,7 +328,6 @@ class CombatEncounters:
         self.receipt_id = ticket['receipt']
         self._settled = False
         self._capture_party_entry()
-        self._cave_return_track = getattr(getattr(game, 'music', None), 'desired_track', None)
         game.player.moving = game.player.running = False
         game.player.walk_ms = 0.
         game.social.clear_pointer();game._mouse_held = False
@@ -334,6 +337,7 @@ class CombatEncounters:
         self.entry = CaveBattleEntry(frame, focus, location,
                                     reduced_motion=game.audio.reduced_motion)
         self._entry_keys.clear()
+        self._begin_battle_music()
         self._cave_checkpointed = self._checkpoint()
         if not self._cave_checkpointed:
             self.entry.set_error('Progress could not be saved. Retry to enter battle.')
@@ -376,21 +380,6 @@ class CombatEncounters:
                 self.scene = None;self.transition = None
                 entry.set_error('The battle could not be prepared. Please retry.')
 
-    def _restore_cave_music(self):
-        emergency = getattr(getattr(self.game, 'regent_quest', None), 'emergency', None)
-        if emergency is not None:emergency.sync_music(restoring=True)
-        # The Sanctuary emergency owns Kindled Courage while its arrival is
-        # pending. A free exploration visit retains its own previous track.
-        quest = getattr(self.game, 'regent_quest', None)
-        if quest is None or getattr(quest, 'stage', None) not in (
-                'sanctuary_travel', 'sanctuary_arrival_pending'):
-            self._music(self._cave_return_track or 'eldenmere')
-
-    def _cave_courage_owned(self):
-        return (self.kind == 'cave' and
-                getattr(getattr(self.game, 'regent_quest', None), 'stage', None)
-                in ('sanctuary_travel', 'sanctuary_arrival_pending'))
-
     def _finish_cave_counter(self):
         owner = getattr(self.game, 'cave_random_encounters', None)
         if owner is None or self._cave_ticket is None:return None
@@ -432,6 +421,7 @@ class CombatEncounters:
             if not self.transition.active:self.transition = None
             return
         self.scene.update(seconds)
+        if self.model.ended:self._end_battle_music()
         self._checkpoint_spellblade_discovery()
         if self.model.phase == 'victory':
             self._begin_victory()
@@ -481,6 +471,7 @@ class CombatEncounters:
                 self.scene._held = True
             return True
         self.scene.handle_event(event)
+        if self.model.ended:self._end_battle_music()
         if self.model.phase == 'victory':
             self._begin_victory()
             return True
@@ -546,10 +537,7 @@ class CombatEncounters:
         self.scene._tutorial_queue.clear()
         self._entry_keys.clear()
         self._victory_checkpointed = self._checkpoint()
-        music = getattr(game, 'music', None)
-        if music is not None:
-            music.set_ducked(False)
-            music.play('battle' if self._cave_courage_owned() else 'victory', fade_ms=0)
+        self._end_battle_music()
         return True
 
     def _post_error(self, message):
@@ -705,10 +693,8 @@ class CombatEncounters:
         game.player.moving = game.player.running = False
         game.player.walk_ms = 0.0;game._mouse_held = False
         game.social.clear_pointer();game.camera.reset()
-        if kind == 'cave':
-            self._restore_cave_music()
-            self._cave_ticket = None
-        else:self._music('eldenmere')
+        self._end_battle_music()
+        if kind == 'cave':self._cave_ticket = None
         if kind == 'mill':game.mill_quest.battle_returned('victory', recovered=record['incapacitated'])
         return True
 
@@ -738,7 +724,6 @@ class CombatEncounters:
         self.kind, self.receipt_id = record['kind'], record['receipt']
         if self.kind == 'cave':
             self._cave_ticket = deepcopy(record['encounter'])
-            self._cave_return_track = getattr(getattr(game, 'music', None), 'desired_track', None)
         if self.kind == 'bat':self._bat_contact_armed = False
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
         options = self._party_options() if 'party_active' in record else {
@@ -779,10 +764,8 @@ class CombatEncounters:
         self.spoils = SpoilsScene(game, record['rewards'], party=model.party, model=model)
         self.post_phase = 'spoils';self._post_elapsed = 0.;self.transition = None
         self._settled = False;self._victory_checkpointed = True;self._entry_keys.clear()
-        music = getattr(game, 'music', None)
-        if music is not None:
-            if self._cave_courage_owned():music.play('battle', fade_ms=0)
-            else:music.stop()
+        # Continue reconstructs the current world/story score before Spoils.
+        # There is no live battle stream to override or resume after a reload.
         self._award_spoils()
         return True
 
@@ -814,7 +797,7 @@ class CombatEncounters:
         game._mouse_held = False
         game.social.clear_pointer()
         game.save_progress()
-        self._music('eldenmere')
+        self._end_battle_music()
         return True
 
     def _settle_cave(self):
@@ -845,7 +828,7 @@ class CombatEncounters:
         game.player.moving = game.player.running = False
         game.player.walk_ms = 0.;game._mouse_held = False
         game.social.clear_pointer();game.camera.reset()
-        self._restore_cave_music()
+        self._end_battle_music()
         self._cave_ticket = None
         return True
 
@@ -892,7 +875,7 @@ class CombatEncounters:
         game.camera.reset()
         # Defeat/withdrawal checkpoints retain the existing safe retry policy.
         game.save_progress()
-        self._music('eldenmere')
+        self._end_battle_music()
         quest.battle_returned(outcome, recovered=model.player.hp <= 0)
         return True
 

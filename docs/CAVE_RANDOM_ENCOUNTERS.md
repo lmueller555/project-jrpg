@@ -95,6 +95,11 @@ retry cannot consume another random roll. Fleeing preserves spent resources.
 The pending MQ03 outing, escorts, treasures and Kindled Courage ownership
 remain intact, including through cave victory and spoils.
 
+Cave entry temporarily switches the soundtrack to Kindled Courage. Victory,
+fleeing and defeat fade the previous track back in at its interrupted playback
+position; results and Spoils keep that resumed stream. If MQ03 already owns
+Kindled Courage, the same stream continues through entry and return.
+
 Enemy stats, XP curves, damage formulas, affinities and item-drop definitions
 are unchanged. Group XP is exposed as Bestiary metadata; the existing reward
 pipeline still settles item receipts, with live saved-level/XP activation

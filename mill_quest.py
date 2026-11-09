@@ -54,7 +54,6 @@ class MillQuest:
         self._returning = False
         self._return_dialogue = None
         self._encounter_callback = None
-        self._encounter_music_started = False
         self._encounter_phase = None
         self._encounter_elapsed = 0.0
         self._encounter_warning_acknowledged = False
@@ -250,7 +249,6 @@ class MillQuest:
         self.dialogue = None;self.paths.clear();self.retry.clear();self.trail.clear();self.last_scene = None
         self._player_route = None
         self._return_dialogue = None;self._encounter_callback = None
-        self._encounter_music_started = False
         self._encounter_phase = None
         self._encounter_elapsed = 0.0
         self._encounter_warning_acknowledged = False
@@ -532,7 +530,6 @@ class MillQuest:
                 or not self._with_mira() or not callable(on_finished)):
             return False
         self._encounter_callback = on_finished
-        self._encounter_music_started = False
         self._encounter_auto_armed = False
         self._encounter_warning_acknowledged = False
         self._encounter_phase = 'noticing';self._encounter_elapsed = 0.0
@@ -566,10 +563,6 @@ class MillQuest:
         if getattr(self, 'dialogue', None) == 'encounter_intro':self.dialogue = None
         camera = getattr(self.game, 'camera', None)
         if was_active and camera is not None:camera.return_to_player(duration=0)
-        if getattr(self, '_encounter_music_started', False):
-            music = getattr(self.game, 'music', None)
-            if music is not None:music.play('eldenmere')
-        self._encounter_music_started = False
 
     def _encounter_dialogue_finished(self):
         # A quick acknowledgement never skips the return pan.
@@ -586,12 +579,9 @@ class MillQuest:
         self._encounter_warning_acknowledged = False
         self.mira.end_conversation()
         if not self.encounter_pending or callback is None:return
-        music = getattr(self.game, 'music', None)
-        self._encounter_music_started = True
-        if music is not None:music.play('battle')
-        if callback() is False:
-            self._encounter_music_started = False
-            if music is not None:music.play('eldenmere')
+        # The encounter owner captures the exploration stream at this cue,
+        # after the return pan and warning, before selecting the battle theme.
+        callback()
 
     def _update_encounter_cutscene(self, seconds):
         if not self.encounter_cutscene_active:return
@@ -639,13 +629,6 @@ class MillQuest:
             page = game.social.page
             if page and page.get('cue') == 'mill_return_to_party':
                 self._begin_encounter_return()
-        elif (self._encounter_music_started and not intro
-              and not self.encounter_cutscene_active
-              and not getattr(getattr(game, 'combat', None), 'active', False)):
-            self._encounter_music_started = False
-            music = getattr(game, 'music', None)
-            if music is not None:
-                music.play('eldenmere')
 
     def battle_won(self):
         """Commit the encounter fact; its owner saves this with resources/rewards."""

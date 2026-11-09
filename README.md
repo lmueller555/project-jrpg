@@ -75,10 +75,12 @@ stages a cutscene on millrace arrival: Caelan and Mira stop, the camera pans to
 the boar for their conversation, then returns on Mira's “come back to me” warning.
 The score and fight begin only after the camera is back and the warning is read,
 continuing through the world-to-battle curtain and reveal. Reduced
-Motion uses a short plain fade. Victories play **Triumphal Fanfare** once and
-show a victory banner before opening **Spoils of Battle**, where items
-are awarded. After the fanfare ends, Spoils stays silent until Continue returns
-to the world theme. Victory checkpoints survive quitting without losing or
+Motion uses a short plain fade. Battles remember the previous track's playback
+position. Victory, fleeing and defeat fade that track back in from where it
+was interrupted, including during the result and **Spoils of Battle** screens.
+Victories still show a banner and award items through Spoils. If the story
+already uses Kindled Courage, it continues without restarting.
+Victory checkpoints survive quitting without losing or
 duplicating rewards. The Music slider controls the soundtrack independently of effects. See the [music assets](assets/music/README.md) and
 [music/transition preview](docs/reviews/battle_music_transition/README.md) and
 [victory/Spoils review](docs/reviews/victory_spoils/README.md).

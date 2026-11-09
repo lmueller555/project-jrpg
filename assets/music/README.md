@@ -45,7 +45,7 @@ or rearranged.
 | `Eldenmere Theme.m4a` | `runtime/eldenmere_theme.ogg` | Title screen |
 | `Eldenmere.m4a` | `runtime/eldenmere.ogg` | Eldenmere, its interiors and millrace exploration; repeats without restarting across area transfers |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it after the return camera pan and acknowledgment of Mira's warning |
-| `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Victory banner and Spoils of Battle; plays once, then stays silent until Spoils is left |
+| `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Retained one-shot cue; combat results now resume the interrupted soundtrack |
 | `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
 | `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
 | `Wintermute 2.m4a` | `runtime/wintermute2.ogg` | Retained previous Ice Reaper cue |
@@ -57,6 +57,27 @@ cues as one-shots; the world
 and battle cues use the default repeating playback. The opening leitmotif
 explicitly sets `loop: true`. New uploads remain
 available for review until assigned to playback.
+
+### Combat interruption and return
+
+Entering a Bat, millrace or cave encounter remembers the selected soundtrack
+and its current playback position, then switches to Kindled Courage. The
+millrace cue still waits for the camera's return and Mira's acknowledged
+warning; cave encounters switch when their entry sequence begins.
+
+When combat resolves through victory, fleeing or defeat, the interrupted
+track fades in from that saved position. The result banner, rewards screen
+and return to exploration share that resumed stream. Repeated result updates,
+reward retries and dismissal do not restart it. If Kindled Courage was already
+playing for the MQ03 emergency, it continues uninterrupted through the battle.
+Entering from silence returns to silence.
+
+Resume positions use the streamed decoder clock and Ogg seeking, including
+the original seek offset after earlier battles and wrapping at a looping
+track's length. Pausing, losing focus or muting music does not advance the
+interrupted track. The Music slider and dialogue ducking still apply to fades.
+Positions are held for the running journey; loading a journey reconstructs
+the appropriate world or story cue as before, rather than saving audio clocks.
 
 **Ice Reaper:** The full 32-second cinematic uses Those I Swore to Save.
 It plays from the beginning once, honors music settings and pause, and stops
