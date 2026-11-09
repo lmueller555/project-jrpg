@@ -15,6 +15,16 @@ SIZE = (640, 360)
 class GalleryUI:
     """Metadata-only browsing; scene worlds are created only when Play is chosen."""
 
+    heading = 'Gallery'
+    subtitle = 'Replay any scene. Your saved journey stays untouched.'
+    play_label = 'Play scene'
+    item_noun = 'scenes'
+    empty_heading = 'No scenes yet'
+    empty_description = 'New cutscenes will appear here.'
+    error_heading = 'Scene unavailable'
+    error_back_label = 'Back to Gallery'
+    show_thumbnails = True
+
     def __init__(self, game, entries=None):
         if entries is None:
             from cutscene_gallery import GALLERY_ENTRIES
@@ -71,11 +81,11 @@ class GalleryUI:
         self.back_rect.width = max(100, painter.font().size('Back · Esc')[0]+20)
         self.back_rect.right = 602
         header_bottom = 28+max(heading.get_height(), self.back_rect.height)
-        self._subtitle = painter.wrap('Replay any scene. Your saved journey stays untouched.', 556, 'small')
+        self._subtitle = painter.wrap(self.subtitle, 556, 'small')
         self._subtitle_y = header_bottom+6
         viewport_top = self._subtitle_y+len(self._subtitle)*(small.get_linesize()+1)+12
         self.play_rect.height = max(25, body.get_height()+9)
-        self.play_rect.width = max(118, body.size('Play scene')[0]+38)
+        self.play_rect.width = max(118, body.size(self.play_label)[0]+38)
         self.play_rect.right = 600
         footer_height = max(self.play_rect.height+15, small.get_linesize()*2+18)
         self.play_rect.bottom = self.panel.bottom-12
@@ -90,10 +100,11 @@ class GalleryUI:
             offset = 0
             self._starts = []
             self._heights = []
+            text_width = 414 if self.show_thumbnails else self.viewport.width-20
             for entry in self.entries:
-                chapter = painter.wrap(entry.chapter, 414, 'small')
-                name = painter.wrap(entry.name, 414, 'body', bold=True)
-                description = painter.wrap(entry.description, 414, 'small') if entry.description else []
+                chapter = painter.wrap(entry.chapter, text_width, 'small')
+                name = painter.wrap(entry.name, text_width, 'body', bold=True)
+                description = painter.wrap(entry.description, text_width, 'small') if entry.description else []
                 height = max(84, 20+(len(chapter)+len(description))*(small.get_linesize()+1)
                              +len(name)*(body.get_linesize()+1)+6)
                 self._row_content.append((chapter, name, description))
@@ -231,7 +242,7 @@ class GalleryUI:
         painter.veil(140)
         painter.panel(self.panel)
         painter.lantern((43, 40), size=11)
-        painter.text('Gallery', (57, 26), role='heading', color=GOLD, bold=True)
+        painter.text(self.heading, (57, 26), role='heading', color=GOLD, bold=True)
         painter.button(self.back_rect, 'Back · Esc')
         for index, line in enumerate(self._subtitle):
             painter.text(line, (36, self._subtitle_y+index*(painter.font('small').get_linesize()+1)),
@@ -240,8 +251,8 @@ class GalleryUI:
         painter.clip(self.viewport)
         if not self.entries:
             painter.lantern((self.viewport.centerx, self.viewport.centery-22), size=20)
-            painter.text('No scenes yet', self.viewport.center, role='heading', anchor='center', bold=True)
-            painter.text('New cutscenes will appear here.',
+            painter.text(self.empty_heading, self.viewport.center, role='heading', anchor='center', bold=True)
+            painter.text(self.empty_description,
                          (self.viewport.centerx, self.viewport.centery+23), role='small', color=MUTED,
                          anchor='midtop')
         for index, (entry, row) in enumerate(zip(self.entries, self.rows)):
@@ -249,9 +260,10 @@ class GalleryUI:
             selected = index == self.selected
             painter.rect(FOREST_LIGHT if selected else FOREST_DARK, row)
             painter.rect(GOLD if selected else FOREST, row, 1)
-            thumb = pygame.Rect(row.left+8, row.top+8, 112, 63)
-            self._draw_thumbnail(painter, entry.thumbnail, thumb)
-            text_x = row.left+132
+            if self.show_thumbnails:
+                thumb = pygame.Rect(row.left+8, row.top+8, 112, 63)
+                self._draw_thumbnail(painter, entry.thumbnail, thumb)
+            text_x = row.left+(132 if self.show_thumbnails else 10)
             y = row.top+9
             chapter, name, description = self._row_content[index]
             for line in chapter:
@@ -273,8 +285,8 @@ class GalleryUI:
             painter.rect(FOREST_DARK, track)
             painter.rect(BRASS, (track.left, track.top+offset, track.width, thumb_height))
         painter.line(BRASS, (36, self.viewport.bottom+7), (604, self.viewport.bottom+7))
-        painter.button(self.play_rect, 'Play scene', selected=bool(self.entries), disabled=not self.entries)
-        count = f'{self.selected+1} / {len(self.entries)} scenes' if self.entries else '0 scenes'
+        painter.button(self.play_rect, self.play_label, selected=bool(self.entries), disabled=not self.entries)
+        count = f'{self.selected+1} / {len(self.entries)} {self.item_noun}' if self.entries else f'0 {self.item_noun}'
         footer_y = self.viewport.bottom+12
         painter.text(count, (36, footer_y), role='small', color=MUTED)
         painter.text(self._footer_hint,
@@ -289,14 +301,14 @@ class GalleryUI:
             height = min(320, 90+painter.font('heading').get_height()+len(error_lines)*line_height)
             error = pygame.Rect(72, (360-height)//2, 496, height)
             painter.panel(error)
-            painter.text('Scene unavailable', (error.left+20, error.top+13),
+            painter.text(self.error_heading, (error.left+20, error.top+13),
                          role='heading', color=GOLD, bold=True)
             text_top = error.top+23+painter.font('heading').get_height()
             for index, line in enumerate(error_lines):
                 painter.text(line, (error.left+20, text_top+index*line_height))
-            self._error_back = pygame.Rect(0, 0, max(210, painter.font(bold=True).size('Back to Gallery')[0]+38),
+            self._error_back = pygame.Rect(0, 0, max(210, painter.font(bold=True).size(self.error_back_label)[0]+38),
                                            max(29, painter.font().get_height()+9))
             self._error_back.midbottom = (error.centerx, error.bottom-12)
-            painter.button(self._error_back, 'Back to Gallery', selected=True)
+            painter.button(self._error_back, self.error_back_label, selected=True)
         self.game.window.blit(self._frame, (0, 0))
         pygame.display.flip()

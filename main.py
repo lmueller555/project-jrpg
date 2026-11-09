@@ -440,12 +440,22 @@ def camera_for(position,world_size,view_size=VIEW_SIZE):
 
 
 class Game:
-    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None,settings_path=None,*,_preview_window=None,_preview_settings=None):
+    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None,settings_path=None,*,_preview_window=None,_preview_settings=None,_quest_playtest=False):
         pygame.display.init();pygame.font.init()
-        self._is_gallery_preview=_preview_window is not None
+        self._is_embedded=_preview_window is not None
+        if _quest_playtest and not self._is_embedded:
+            raise ValueError('Quest playtests require an isolated session window')
+        self._is_quest_playtest=bool(_quest_playtest)
+        self._is_gallery_preview=self._is_embedded and not self._is_quest_playtest
+        self._input_offset=(0,0)
+        self._display_owner=None
+        self._playtest_request=None
         self.on_gallery=False
         self.gallery=None
         self.gallery_session=None
+        self.on_quest_playtest=False
+        self.quest_playtest_menu=None
+        self.quest_playtest_session=None
         self.fullscreen=fullscreen
         self.windowed_size=tuple(window_size)
         self.window=(_preview_window if _preview_window is not None else
@@ -453,8 +463,8 @@ class Game:
                                             pygame.FULLSCREEN if fullscreen else pygame.RESIZABLE))
         pygame.display.set_caption('Project JRPG — Eldenmere')
         self.canvas=pygame.Surface(VIEW_SIZE)
-        self.audio=AudioSettings(None if self._is_gallery_preview else settings_path)
-        if self._is_gallery_preview and _preview_settings is not None:
+        self.audio=AudioSettings(None if self._is_embedded else settings_path)
+        if self._is_embedded and _preview_settings is not None:
             for key in ('music_volume','effects_volume','text_scale','reduced_motion','tracker_visible',
                         '_last_music','_last_effects'):
                 setattr(self.audio,key,getattr(_preview_settings,key))
@@ -545,7 +555,7 @@ class Game:
         self.elemental_bosses=ElementalBosses(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
-        self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
+        self.save_store=SaveStore(None if self._is_embedded else save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
         self._saved_progress=self._progress_signature()
@@ -555,7 +565,7 @@ class Game:
 
     def open_gallery(self):
         """The catalogue lives on the title; it never starts a normal journey."""
-        if self._is_gallery_preview or not self.on_title:return False
+        if self._is_embedded or not self.on_title or self.on_quest_playtest:return False
         if self.gallery is None:
             from gallery_ui import GalleryUI
             self.gallery=GalleryUI(self)
@@ -563,6 +573,39 @@ class Game:
         self.title.fade=0
         self.title._mouse_held=False
         self.gallery.resume()
+        return True
+
+    def open_quest_playtests(self):
+        if self._is_embedded or not self.on_title or self.on_gallery:return False
+        if self.quest_playtest_menu is None:
+            from quest_playtest_ui import QuestPlaytestUI
+            self.quest_playtest_menu=QuestPlaytestUI(self)
+        self.on_quest_playtest=True
+        self.title.fade=0
+        self.title._mouse_held=False
+        self.quest_playtest_menu.resume()
+        return True
+
+    def close_quest_playtests(self):
+        if self.quest_playtest_session is not None:self.quest_playtest_session.close()
+        self.on_quest_playtest=False
+        self.title.selected=self.title.quest_playtest_index
+        self.title._mouse_held=False
+        self.title._pressed=None
+
+    def launch_quest_playtest(self,identifier):
+        if not self.on_quest_playtest or self.quest_playtest_session is not None:return False
+        from quest_playtest_session import QuestPlaytestSession
+        entry=next((entry for entry in self.quest_playtest_menu.entries if entry.id==identifier),None)
+        if entry is None:
+            self.quest_playtest_menu.error=f'Unsupported quest playtest: {identifier}'
+            return False
+        try:
+            self.quest_playtest_session=QuestPlaytestSession(self,entry)
+        except (OSError,ValueError,pygame.error) as error:
+            self.quest_playtest_menu.error=f'This playtest could not open: {error}'
+            self.quest_playtest_menu.resume()
+            return False
         return True
 
     def close_gallery(self):
@@ -1141,8 +1184,8 @@ class Game:
     def to_canvas(self,point):
         """Match the rendered viewport, including preview and fullscreen borders."""
         _,size,origin=self._ensure_ui_surface()
-        x=(point[0]-origin[0])*VIEW_SIZE[0]/size[0]
-        y=(point[1]-origin[1])*VIEW_SIZE[1]/size[1]
+        x=(point[0]-self._input_offset[0]-origin[0])*VIEW_SIZE[0]/size[0]
+        y=(point[1]-self._input_offset[1]-origin[1])*VIEW_SIZE[1]/size[1]
         return (x,y) if 0<=x<VIEW_SIZE[0] and 0<=y<VIEW_SIZE[1] else None
 
     def award_battle_rewards(self,receipt_id,drops):
@@ -1167,11 +1210,11 @@ class Game:
     def _ensure_ui_surface(self):
         """Display-resolution UI over nearest-scaled world pixels.
 
-        Normal play retains integer scaling. A Gallery preview fits its complete
-        scene below the separate toolbar, including at the minimum window size.
+        Normal play retains integer scaling. Embedded sessions fit the complete
+        game below their separate toolbar, including at the minimum window size.
         """
         width,height=self.window.get_size()
-        scale=(min(width/VIEW_SIZE[0],height/VIEW_SIZE[1]) if self._is_gallery_preview else
+        scale=(min(width/VIEW_SIZE[0],height/VIEW_SIZE[1]) if self._is_embedded else
                max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1])))
         size=(round(VIEW_SIZE[0]*scale),round(VIEW_SIZE[1]*scale))
         if self.ui_surface is None or self.ui_surface.get_size()!=size:
@@ -1250,6 +1293,10 @@ class Game:
         return destination
 
     def toggle_fullscreen(self):
+        if self._display_owner is not None:
+            self._display_owner.toggle_fullscreen()
+            self.fullscreen=self._display_owner.fullscreen
+            return
         self.fullscreen=not self.fullscreen
         if self.fullscreen:
             self.windowed_size=self.window.get_size()
@@ -1259,6 +1306,12 @@ class Game:
 
     def handle_events(self,events=None):
         events=pygame.event.get() if events is None else events
+        if self.quest_playtest_session is not None:
+            session=self.quest_playtest_session
+            try:return session.handle_events(events)
+            except (OSError,ValueError,pygame.error) as error:
+                session.fail(error)
+                return True
         if self.gallery_session is not None:
             session=self.gallery_session
             try:return session.handle_events(events)
@@ -1289,13 +1342,17 @@ class Game:
                 self._ensure_ui_surface()
                 continue
             if resumed:continue
+            if self.on_quest_playtest:
+                if not self.quest_playtest_menu.handle_event(event):return False
+                resumed=not self.on_quest_playtest or self.quest_playtest_session is not None
+                continue
             if self.on_gallery:
                 if self.gallery_session is None and not self.gallery.handle_event(event):return False
                 resumed=not self.on_gallery or self.gallery_session is not None
                 continue
             if self.on_title:
                 if not self.title.handle_event(event):return False
-                resumed=self.on_gallery
+                resumed=self.on_gallery or self.on_quest_playtest
                 continue
             if resumed:continue
             if self.opening_cinematic.active:
@@ -1460,6 +1517,16 @@ class Game:
 
     def update(self,seconds,direction=None,running=None):
         self.elemental_bosses.sync_audio()
+        if self.quest_playtest_session is not None:
+            session=self.quest_playtest_session
+            try:session.update(seconds,direction,running)
+            except (OSError,ValueError,pygame.error) as error:session.fail(error)
+            return
+        if self.on_quest_playtest:
+            self.music.set_paused(not self._music_focused)
+            self.music.update(seconds)
+            self.quest_playtest_menu.update(seconds)
+            return
         if self.gallery_session is not None:
             session=self.gallery_session
             try:session.update(seconds)
@@ -1838,6 +1905,16 @@ class Game:
                 painter.text(line,(rect.x+9,rect.y+7+index*line_height),color=GOLD)
 
     def draw(self):
+        if self.quest_playtest_session is not None:
+            session=self.quest_playtest_session
+            try:session.draw()
+            except (OSError,ValueError,pygame.error) as error:
+                session.fail(error)
+                self.quest_playtest_menu.draw()
+            return
+        if self.on_quest_playtest:
+            self.quest_playtest_menu.draw()
+            return
         if self.gallery_session is not None:
             session=self.gallery_session
             try:session.draw()
@@ -1856,28 +1933,28 @@ class Game:
             self.opening_cinematic.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            if not self._is_gallery_preview:pygame.display.flip()
+            if not self._is_embedded:pygame.display.flip()
             return
         if self.mill_gift.active:
             _,size,origin=self._ensure_ui_surface()
             self.mill_gift.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            if not self._is_gallery_preview:pygame.display.flip()
+            if not self._is_embedded:pygame.display.flip()
             return
         if self.regent_arrival.active:
             _,size,origin=self._ensure_ui_surface()
             self.regent_arrival.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            if not self._is_gallery_preview:pygame.display.flip()
+            if not self._is_embedded:pygame.display.flip()
             return
         if self.combat.active:
             _,size,origin=self._ensure_ui_surface()
             self.combat.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            if not self._is_gallery_preview:pygame.display.flip()
+            if not self._is_embedded:pygame.display.flip()
             return
         camera=self.camera.position()
         if isinstance(self.world,World):
@@ -1923,7 +2000,7 @@ class Game:
         self.world_map_viewer.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)
-        if not self._is_gallery_preview:pygame.display.flip()
+        if not self._is_embedded:pygame.display.flip()
 
 
 def main(argv=None):

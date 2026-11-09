@@ -35,7 +35,7 @@ class TitleTests(unittest.TestCase):
         self.game.update(3,(1,0),True)
         self.assertTrue(self.game.on_title)
         self.assertEqual((tuple(self.game.player.position),actor.state_ms,self.game.elapsed_ms),initial)
-        self.assertEqual([r.centerx for r in self.game.title.rows],[320]*5)
+        self.assertEqual([r.centerx for r in self.game.title.rows],[320]*len(self.game.title.options))
 
     def test_new_game_click_fades_to_cinematic_and_skip_enters_real_playable_world(self):
         self.assertTrue(self.click(self.game.title.rows[0]))
@@ -123,16 +123,18 @@ class TitleTests(unittest.TestCase):
             for selected in range(len(self.game.title.options)):
                 with self.subTest(key=key,selected=selected):
                     self.game.on_gallery=False
+                    self.game.on_quest_playtest=False
                     self.game.title.selected=selected
                     self.game.title.settings=False
                     self.game.title.fade=0
                     pygame.event.clear()
                     pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=key))
                     running=self.game.handle_events()
-                    self.assertEqual(running,selected!=4)
+                    self.assertEqual(running,selected!=self.game.title.quit_index)
                     self.assertEqual(self.game.title.fade>0,selected==0)
                     self.assertEqual(self.game.title.settings,selected==self.game.title.settings_index)
                     self.assertEqual(self.game.on_gallery,selected==self.game.title.gallery_index)
+                    self.assertEqual(self.game.on_quest_playtest,selected==self.game.title.quest_playtest_index)
 
     def test_keypad_enter_works_in_settings_and_repeat_does_not_reactivate(self):
         self.game.title.settings=True

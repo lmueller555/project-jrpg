@@ -237,6 +237,9 @@ class PauseMenu:
 
     def __init__(self, game):
         self.game = game
+        if getattr(game, '_is_quest_playtest', False):
+            self.options = (*type(self).options[:-1], 'Restart Quest', 'Quest List', 'Quit')
+        self.settings_index = self.options.index('Settings')
         if not hasattr(game, 'ui'):game.ui = UIStyle(game)
         self.is_open = False
         self.settings = False
@@ -299,6 +302,8 @@ class PauseMenu:
         self.game.ui.sound('back')
 
     def to_canvas(self, point):
+        if getattr(self.game, '_is_quest_playtest', False):
+            return self.game.to_canvas(point)
         width, height = self.game.window.get_size()
         scale = max(1, min(width//480, height//320))
         point = ((point[0]-(width-480*scale)//2)/scale,
@@ -337,6 +342,10 @@ class PauseMenu:
         elif label == 'Settings':
             self.settings = True;self.selected = 0;self.settings_panel.reset()
             self.game.ui.sound('confirm')
+        elif label == 'Restart Quest':
+            self.game._playtest_request = 'restart'
+        elif label == 'Quest List':
+            self.game._playtest_request = 'quests'
         elif label == 'Quit':
             self.game.ui.sound('confirm');return False
         return True

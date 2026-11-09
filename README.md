@@ -56,6 +56,16 @@ arrows, then click a card or press Enter. **Esc** returns to the catalogue,
 **R** restarts the scene, and Space/E/click advances dialogue. Each replay uses
 a fresh session that cannot save or change Continue; no saved game or unlocks
 are required. See the [Gallery guide and coverage](docs/GALLERY.md).
+**Quests (Playtest)** starts any of the four registered quests before its opening
+conversation, without replaying earlier quests or requiring a saved journey.
+Each run is a fresh, fully playable temporary game: movement, combat, party,
+inventory, journal and maps remain available, but no journey or settings are
+written to disk. The toolbar identifies the quest and offers **Restart (F10)**
+and **Quests (F9)**, also available during dialogue and combat. Escape retains
+the normal pause menu, with additional Restart Quest and Quest List actions.
+Progress is discarded on leaving; normal Continue stays untouched. MQ03 is
+marked in development, and MQ04 uses an explicit test-only completed visit to
+reach its playable content. See [quest playtests](docs/QUEST_SYSTEM.md#title-screen-quest-playtests).
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
 The current green-and-brass menus, parchment ledger/map and text-rendering
 rules are documented in [UI design](docs/UI_DESIGN.md).
