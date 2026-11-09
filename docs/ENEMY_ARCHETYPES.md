@@ -146,7 +146,8 @@ It uses Hybrid growth, Physical/Magical Alternation, levels 2–3 and species
 factors HP ×0.40, MP ×0.10 and Evasion ×1.20. **Lithrusk** adds an Armored
 Bulwark at levels 2–3 with HP ×0.50 and MP ×0; **Veylume** adds a Caster
 Arcanist at levels 3–4 with HP ×0.40 and MP ×0.15. Their presentation is
-pending, and Veylume's Magical Offense style remains authored future behavior.
+provided by dedicated combat sprite banks. Veylume's Magical Offense pattern
+supports preparation, a locked living target and MP-aware fallback selection.
 The complete definitions and normal/boss authoring workflow are documented
 in the [Bestiary guide](BESTIARY.md).
 

@@ -119,8 +119,8 @@ class BestiaryGenerationTests(unittest.TestCase):
                     self.assertEqual(metadata['level_range'],
                                      dict(zip(('min', 'max'), design['levels'])))
                     self.assertEqual(enemy['presentation'],
-                                     {'sprite_id': None, 'action_aliases': {}})
-                    self.assertTrue(metadata['presentation_pending'])
+                                     {'sprite_id': identifier, 'action_aliases': {}})
+                    self.assertFalse(metadata['presentation_pending'])
                     self.assertTrue(metadata['drops_pending'])
                     self.assertEqual(enemy['combat']['rewards'], {'drops': {}})
                     profile = metadata['elemental_profile']
@@ -164,7 +164,7 @@ class BestiaryGenerationTests(unittest.TestCase):
             enemy['behavior']['sequence'].clear()
             enemy['metadata']['elemental_profile']['absorption']['elements'].clear()
             self.assertEqual(self.catalog, before)
-            self.assertIsNone(self.catalog['enemies'][identifier]['presentation']['sprite_id'])
+            self.assertEqual(self.catalog['enemies'][identifier]['presentation']['sprite_id'], identifier)
 
     def test_new_species_level_profiles_and_normal_xp_are_stable(self):
         expected = {
@@ -205,7 +205,8 @@ class BestiaryGenerationTests(unittest.TestCase):
             self.assertEqual(build_enemy('veylume', level)['combat']['attributes']['mp']//flash['mp_cost'], 2)
 
     def test_existing_species_and_fixed_encounters_have_ready_presentation(self):
-        for identifier, level in (('cave_bat', 2), ('bat', None), ('ridgeback_tusker', None)):
+        for identifier, level in (('cave_bat', 2), ('bat', None), ('ridgeback_tusker', None),
+                                  ('lithrusk', 2), ('veylume', 3)):
             with self.subTest(enemy=identifier):
                 self.assertFalse(build_enemy(identifier, level)['metadata']['presentation_pending'])
 
@@ -360,6 +361,14 @@ class BestiaryValidationTests(unittest.TestCase):
                 malformed = deepcopy(data)
                 malformed['enemies']['cave_bat']['presentation'] = presentation
                 with self.assertRaises(ValueError):load_bestiary(malformed)
+
+    def test_ready_presentation_rejects_an_action_without_a_real_animation(self):
+        data = deepcopy(self.catalog)
+        # The action exists, so checking only the global action dictionary
+        # would silently admit a pose that the real Bat art cannot render.
+        data['enemies']['cave_bat']['presentation']['action_aliases']['cave_bat_bite'] = 'overclock'
+        with self.assertRaises(ValueError):
+            load_bestiary(data)
 
     def test_bad_stagger_values_cannot_enable_unimplemented_mechanics(self):
         for field, value in (('status', 'active'), ('resistance', 99)):

@@ -33,6 +33,7 @@ HP_YELLOW = GOLD
 HP_RED = '#df6b62'
 MP_BLUE = '#5da9e9'
 ATB_YELLOW = GOLD
+CAVE_ENEMIES = frozenset(('lithrusk', 'veylume'))
 
 
 class CombatSprites:
@@ -45,7 +46,8 @@ class CombatSprites:
             self._load_actor(actor)
 
     def _load_actor(self, actor):
-        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea', 'edran'):
+        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea', 'edran',
+                         'lithrusk', 'veylume'):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
         data = json.loads((folder/'animation.json').read_text(encoding='utf-8'))
@@ -72,7 +74,16 @@ class CombatSprites:
                 raise ValueError('Invalid combat animation')
             animations[state] = (frames, animation['loop'])
         if 'idle' not in animations:raise ValueError('Combat sprites require an idle')
-        self.actors[actor] = {'anchor': tuple(anchor), 'animations': animations}
+        occupied = [frame.get_bounding_rect() for sequence, _ in animations.values()
+                    for frame, _ in sequence if frame.get_bounding_rect().width]
+        bounds = occupied[0].unionall(occupied[1:]) if occupied else pygame.Rect(0, 0, *canvas)
+        idle = [frame.get_bounding_rect() for frame, _ in animations['idle'][0]
+                if frame.get_bounding_rect().width]
+        idle_bounds = idle[0].unionall(idle[1:]) if idle else bounds
+        self.actors[actor] = {'anchor': tuple(anchor), 'animations': animations,
+                             'bounds': bounds, 'idle_bounds': idle_bounds,
+                             'timing': {state: {'contact_ms': entry.get('contact_ms')}
+                                        for state, entry in data['animations'].items()}}
 
     def frame(self, actor, state, elapsed_ms):
         if actor not in self.actors:self._load_actor(actor)
@@ -133,6 +144,7 @@ class BattleScene:
         self.action_audio = BattleActionAudio(game)
         self._cue_action = None
         self._cue_phases = set()
+        self._enemy_charge_time = None
         self._last_phase = model.phase
         self._notice = ''
         self.panel_rect = pygame.Rect(8, 232, 464, 80)
@@ -191,7 +203,9 @@ class BattleScene:
                                    ('bot', (25, 5), 55),
                                    ('enemy_low', (30, 7), 48),
                                    ('enemy_high', (24, 5), 34),
-                                   ('tusker', (114, 14), 62)):
+                                   ('tusker', (114, 14), 62),
+                                   ('lithrusk', (84, 11), 62),
+                                   ('veylume', (32, 6), 30)):
             image = pygame.Surface(size, pygame.SRCALPHA)
             pygame.draw.ellipse(image, (31, 43, 29, opacity//2), image.get_rect())
             pygame.draw.ellipse(image, (31, 43, 29, opacity), image.get_rect().inflate(-8, -2))
@@ -205,6 +219,12 @@ class BattleScene:
             image, ground_y = self._shadows['player'], round(point.y)
         elif self.model.enemy_sprite_id == 'ridgeback_tusker':
             image, ground_y = self._shadows['tusker'], round(point.y)
+        elif self.model.enemy_sprite_id in CAVE_ENEMIES:
+            image = self._shadows[self.model.enemy_sprite_id]
+            factor = self._actor_scale('enemy')/2
+            image = pygame.transform.scale(image, (max(1, round(image.get_width()*factor)),
+                                                   max(1, round(image.get_height()*factor))))
+            ground_y = round(point.y)
         else:
             # The Bat moves above the same ground plane, including its idle bob.
             ground_y = round(self._home_positions()['enemy'].y+14)
@@ -696,6 +716,11 @@ class BattleScene:
                 self.command_menu = 'root'
                 self.selected = 0
                 self._notice = ''
+            elif event['type'] == 'telegraph' and event.get('prepared_action'):
+                # Start the held wingbeat after Gather Charge finishes. The
+                # model's event age also makes large-frame updates seekable.
+                self._enemy_charge_time = (self._elapsed-max(0., event.get('frame_age', 0.))
+                                           +event.get('hold_after', 0.))
         self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
         self._reactions = {key: value for key, value in self._reactions.items() if value['age'] < .55}
         self._sync_commands()
@@ -726,6 +751,16 @@ class BattleScene:
                 self._cue_phases.add('mira_release')
                 self.action_audio.play('focus')
             return
+        if action is not None and action.actor == 'enemy' and self.model.enemy_sprite_id in CAVE_ENEMIES:
+            clocks = ({'focus': 0.} if action.kind == 'prepare' else
+                      {'focus': 0., 'release': self.action_fx.release_at(action)} if action.kind == 'magical' else
+                      {'step': 0., 'swing': action.impact_at*.6, 'land': action.impact_at+.02})
+            for cue, boundary in clocks.items():
+                key = 'enemy_'+cue
+                if action.elapsed >= boundary and key not in self._cue_phases:
+                    self._cue_phases.add(key)
+                    self.action_audio.play(cue)
+            return
         sample = self._choreography(action)
         if sample is None or sample.phase in self._cue_phases:return
         self._cue_phases.add(sample.phase)
@@ -752,12 +787,47 @@ class BattleScene:
             positions = {'player': pygame.Vector2(354, 184-offset),
                          'enemy': pygame.Vector2(126, 170-offset)}
         for bot in self._field_bots():positions[bot.identifier] = self._bot_home()
+        if self.model.enemy_sprite_id in CAVE_ENEMIES:
+            positions['enemy'] = self._clamp_enemy_position(positions['enemy'])
         return positions
+
+    def _enemy_art(self):
+        """The complete native occupied bounds, including attack/defeat poses."""
+        sprite = self.model.enemy_sprite_id
+        if sprite not in self.sprites.actors:self.sprites._load_actor(sprite)
+        return self.sprites.actors[sprite]
+
+    def _actor_scale(self, actor):
+        """Fit only the new large silhouettes between the HP bar and menus.
+
+        Native frames always use nearest-neighbour scaling. Legacy actors keep
+        their established 2x presentation; compact accessibility layouts can
+        reduce these two larger species without clipping wings or stone plates.
+        """
+        if actor != 'enemy' or self.model.enemy_sprite_id not in CAVE_ENEMIES:return 2.
+        bounds = self._enemy_art()['bounds']
+        available = max(1, self.panel_rect.top-68)
+        return min(2., 224/max(1, bounds.width), available/max(1, bounds.height))
+
+    def _clamp_enemy_position(self, point):
+        art = self._enemy_art()
+        scale = self._actor_scale('enemy')
+        bounds, anchor = art['bounds'], art['anchor']
+        low = pygame.Vector2(5-(bounds.left-anchor[0])*scale,
+                             65-(bounds.top-anchor[1])*scale)
+        high = pygame.Vector2(475-(bounds.right-anchor[0])*scale,
+                              self.panel_rect.top-3-(bounds.bottom-anchor[1])*scale)
+        return pygame.Vector2(max(low.x, min(high.x, point.x)),
+                              max(low.y, min(high.y, point.y)))
 
     def _hit_point(self, actor, positions=None):
         positions = self._home_positions() if positions is None else positions
         point = positions[actor]
         if actor == 'enemy':
+            if self.model.enemy_sprite_id in CAVE_ENEMIES:
+                art = self._enemy_art()
+                offset = pygame.Vector2(art['idle_bounds'].center)-art['anchor']
+                return point+offset*self._actor_scale('enemy')
             return point+((54, -38) if self.model.enemy_sprite_id == 'ridgeback_tusker' else (8, -32))
         return point+(0, -36)
 
@@ -789,7 +859,14 @@ class BattleScene:
             blend = 1-(1-max(0.0, min(1.0, approach)))**3
             target = positions[action.target]
             if action.actor == 'enemy':
-                contact = pygame.Vector2(-96, -4) if self.model.enemy_sprite_id == 'ridgeback_tusker' else pygame.Vector2(-34, -14)
+                if self.model.enemy_sprite_id in CAVE_ENEMIES:
+                    art = self._enemy_art()
+                    bounds, anchor = art['idle_bounds'], art['anchor']
+                    reach = pygame.Vector2(bounds.right-anchor[0]-5, bounds.centery-anchor[1])
+                    target = self._hit_point(action.target, positions)
+                    contact = -reach*self._actor_scale('enemy')
+                else:
+                    contact = pygame.Vector2(-96, -4) if self.model.enemy_sprite_id == 'ridgeback_tusker' else pygame.Vector2(-34, -14)
             else:contact = pygame.Vector2(83, -4)
             positions[action.actor] = positions[action.actor].lerp(target+contact, blend)
         for actor, record in self._reactions.items():
@@ -799,6 +876,8 @@ class BattleScene:
                                        reduced_motion=self.reduced_motion, guarded=record['guarded'])
             if reaction['active']:
                 positions[actor] += pygame.Vector2(reaction['offset'])*(.5 if record['guarded'] else 1)
+        if self.model.enemy_sprite_id in CAVE_ENEMIES:
+            positions['enemy'] = self._clamp_enemy_position(positions['enemy'])
         return positions
 
     def _positions(self):
@@ -862,6 +941,10 @@ class BattleScene:
             if sequence is not None:return sequence.pose, sequence.pose_ms
             if actor == 'mira' and action.kind == 'guard':
                 return 'guard_enter', action.elapsed*1000
+            if actor == 'enemy' and sprite in CAVE_ENEMIES:
+                if sprite == 'lithrusk' and action.kind == 'physical':
+                    return self._lithrusk_pose(action)
+                return action.animation, action.elapsed*1000
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
                      'overclock' if action.kind == 'haste' else
                      'cast' if action.kind in ('magical', 'enchant', 'failed_edge') else 'guard' if action.kind == 'guard'
@@ -869,13 +952,40 @@ class BattleScene:
                      if action.animation in ('prepare', 'charge') else 'attack')
             return state, action.elapsed*1000
         if actor == 'enemy' and self.model.telegraphed_target:
+            if sprite == 'veylume':
+                start = self._elapsed if self._enemy_charge_time is None else self._enemy_charge_time
+                elapsed = max(0., self._elapsed-start)
+                return 'charged_hold', 0 if self.reduced_motion else elapsed*1000
             return 'prepare', self._elapsed*1000
         if combatant.guarded:
             return ('guard_enter', 300.) if actor == 'player' else ('guard', self._elapsed*1000)
         if actor == 'player' and self._gear_adjust_time is not None:
             age = self._elapsed-self._gear_adjust_time
             if age < .6:return 'focus_adjust', age*1000
-        return 'idle', self._elapsed*1000
+        if actor == 'enemy' and sprite == 'veylume' and self._elapsed < .65 and not self.reduced_motion:
+            frames = self._enemy_art()['animations']['fly'][0]
+            return 'fly', self._elapsed/.65*sum(length for _, length in frames)
+        return 'idle', 0 if self.reduced_motion and sprite in CAVE_ENEMIES else self._elapsed*1000
+
+    def _lithrusk_pose(self, action):
+        """Show the gait on approach/retreat and every strike drawing at contact.
+
+        The strike clock is piecewise around the authoritative impact boundary;
+        the source's contact drawing still lands on the exact damage frame.
+        """
+        age, duration, impact = action.elapsed, action.duration, action.impact_at
+        start, end = .2*duration, .8*duration
+        if not self.reduced_motion and (age < start or age >= end):
+            return 'walk', max(0., age if age < start else age-end)*1000
+        if self.reduced_motion:start, end = 0., duration
+        art = self._enemy_art()
+        source = art['animations'][action.animation][0]
+        milliseconds = sum(length for _, length in source)
+        contact = art['timing'][action.animation]['contact_ms']
+        if contact is None:contact = impact*1000
+        time = (contact*max(0., age-start)/max(.001, impact-start) if age <= impact else
+                contact+(milliseconds-contact)*min(1., (age-impact)/max(.001, end-impact)))
+        return action.animation, min(milliseconds-1, max(0., time))
 
     def _draw_field(self, canvas):
         canvas.blit(self._background, (0, 0))
@@ -895,8 +1005,9 @@ class BattleScene:
                 elif self.model.weapon_equipped:
                     from gearblade_art import combat_frame
                     image, anchor = combat_frame(image, state, time)
-            canvas.blit(pygame.transform.scale(image, (image.get_width()*2, image.get_height()*2)),
-                        (round(point.x-anchor[0]*2), round(point.y-anchor[1]*2)))
+            scale = self._actor_scale(actor)
+            canvas.blit(pygame.transform.scale(image, (round(image.get_width()*scale), round(image.get_height()*scale))),
+                        (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale)))
             if actor == 'player' and self.model.weapon_equipped and self.model.player.hp:
                 current = self.model.current_action
                 own_action = current if current is not None and current.actor == 'player' else None
@@ -943,8 +1054,10 @@ class BattleScene:
                 pygame.draw.circle(canvas, '#d8f7ff',
                                    (round(point.x+offset), round(point.y-25)), 2)
         self._draw_mira_effects(canvas)
+        self._draw_cave_enemy_effects(canvas, positions)
         if (action is not None and action.kind == 'magical' and not action.resolved
-                and not getattr(action, 'choreography', None)):
+                and not getattr(action, 'choreography', None)
+                and not (action.actor == 'enemy' and self.model.enemy_sprite_id == 'veylume')):
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
             end = positions[action.target]+(0, -33)
@@ -953,6 +1066,26 @@ class BattleScene:
                 color = ('#376ea2', '#72c8f0', '#d8f7ff')[index]
                 pygame.draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
         self._draw_foreground(canvas)
+
+    def _draw_cave_enemy_effects(self, canvas, positions):
+        if self.model.enemy_sprite_id != 'veylume' or not self.model.enemy.hp:return
+        art = self._enemy_art()
+        bounds, anchor = art['idle_bounds'], art['anchor']
+        scale = self._actor_scale('enemy')
+        origin = positions['enemy']+pygame.Vector2(bounds.right-anchor[0]-8,
+                                                  bounds.centery-anchor[1]-6)*scale
+        action = self.model.current_action
+        if (action is not None and action.actor == 'enemy'
+                and action.kind == 'magical' and action.target in positions):
+            self.action_fx.draw(canvas, positions['enemy'], positions[action.target], action,
+                                anchors={'cast_origin': origin, 'release_origin': origin,
+                                         'target_hit': self._hit_point(action.target, positions),
+                                         'show_impact': False}, reduced_motion=self.reduced_motion)
+        if (self.model.telegraphed_target or action is not None and action.actor == 'enemy'
+                and action.kind == 'prepare'):
+            elapsed = action.elapsed if action is not None and action.actor == 'enemy' else self._elapsed
+            self.action_fx.draw_electric_charge(canvas, origin, elapsed,
+                                               reduced_motion=self.reduced_motion)
 
     def _mira_shot(self):
         action = self.model.current_action

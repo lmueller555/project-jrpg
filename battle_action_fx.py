@@ -14,7 +14,8 @@ import pygame
 
 DART_RELEASE_AT = .75
 IMPACT_FLASH_SECONDS = .08
-REACTION_TIMINGS = {'bat': (.15, .37), 'ridgeback_tusker': (.18, .42)}
+REACTION_TIMINGS = {'bat': (.15, .37), 'ridgeback_tusker': (.18, .42),
+                    'lithrusk': (.2, .5), 'veylume': (.2, .5)}
 
 
 def _get(record, name, default=None):
@@ -84,6 +85,8 @@ class BattleActionEffects:
     AETHER = ((98, 65, 149), (187, 151, 238), (255, 245, 255))
     CONTACT = ((136, 95, 58), (246, 199, 119), (255, 247, 214))
     DUST = ((105, 100, 67), (157, 145, 99), (198, 181, 126))
+    ELECTRIC = ((37, 77, 113), (94, 215, 242), (255, 236, 153))
+    ELECTRIC_ACTIONS = frozenset(('veylume_static_spark', 'veylume_veinflash'))
 
     def __init__(self):
         self._layer = None
@@ -161,7 +164,7 @@ class BattleActionEffects:
     def _draw_charge(self, layer, sample):
         strength, point = sample['charge'], pygame.Vector2(sample['origin'])
         if strength <= 0:return
-        dark, mid, light = self.MAGIC
+        dark, mid, light = self.ELECTRIC if sample['action'] in self.ELECTRIC_ACTIONS else self.MAGIC
         radius = 3+round(strength*3)
         pygame.draw.circle(layer, _color(dark, strength*.28), _xy(point), radius+3)
         pygame.draw.circle(layer, _color(mid, strength*.9), _xy(point), radius, 1)
@@ -177,7 +180,17 @@ class BattleActionEffects:
         entry = sample['projectile']
         if entry is None:return
         point, heading = pygame.Vector2(entry['point']), pygame.Vector2(entry['direction'])
-        dark, mid, light = self.MAGIC
+        dark, mid, light = self.ELECTRIC if sample['action'] in self.ELECTRIC_ACTIONS else self.MAGIC
+        if sample['action'] in self.ELECTRIC_ACTIONS:
+            normal = pygame.Vector2(-heading.y, heading.x)
+            size = 15 if sample['action'] == 'veylume_veinflash' else 9
+            points = [point-heading*size,
+                      point-heading*(size*.67)+normal*3,
+                      point-heading*(size*.42)-normal*2, point]
+            pygame.draw.lines(layer, _color(mid, .9), False, [_xy(p) for p in points], 2)
+            pygame.draw.lines(layer, _color(light, 1.), False, [_xy(p) for p in points], 1)
+            pygame.draw.circle(layer, _color(light, .9), _xy(point), 2)
+            return
         if not sample['reduced_motion']:
             normal = pygame.Vector2(-heading.y, heading.x)
             tail = point-heading*18
@@ -192,7 +205,8 @@ class BattleActionEffects:
         if not strength:return
         point = pygame.Vector2(point)
         name, kind = _get(action, 'action', action if isinstance(action, str) else ''), _get(action, 'kind', '')
-        palette = self.AETHER if name == 'aether_edge' else self.MAGIC if name == 'aether_dart' or kind == 'magical' else self.CONTACT
+        palette = (self.ELECTRIC if name in self.ELECTRIC_ACTIONS else self.AETHER if name == 'aether_edge'
+                   else self.MAGIC if name == 'aether_dart' or kind == 'magical' else self.CONTACT)
         _, mid, light = palette
         if reduced_motion:
             pygame.draw.circle(layer, _color(mid, strength*.65), _xy(point), 5, 1)
@@ -248,4 +262,23 @@ class BattleActionEffects:
         if reduced_motion:return
         layer = self._canvas_layer(canvas)
         self._draw_dust(layer, point, age, direction, landing)
+        canvas.blit(layer, (0, 0))
+
+    def draw_electric_charge(self, canvas, point, elapsed, *, reduced_motion=False):
+        """A small local, seekable charge cue; never a full-screen flash."""
+        point = pygame.Vector2(_point(point))
+        elapsed = _number(elapsed, 'charge age')
+        layer = self._canvas_layer(canvas)
+        _, mid, light = self.ELECTRIC
+        phase = 0. if reduced_motion else elapsed*2.4
+        pygame.draw.circle(layer, _color(mid, .55), _xy(point), 5, 1)
+        pygame.draw.circle(layer, _color(light, .85), _xy(point), 2)
+        if not reduced_motion:
+            for index in range(3):
+                angle = phase+index*math.tau/3
+                direction = pygame.Vector2(math.cos(angle), math.sin(angle))
+                normal = pygame.Vector2(-direction.y, direction.x)
+                points = [point+direction*6, point+direction*9+normal*2,
+                          point+direction*11-normal, point+direction*14]
+                pygame.draw.lines(layer, _color(mid, .8), False, [_xy(p) for p in points], 1)
         canvas.blit(layer, (0, 0))

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "actor": "veylume",
+  "canvas": [112, 104],
+  "anchor": [56, 88],
+  "native_scale": 0.33,
+  "palette_colors": 96,
+  "atlases": ["base_hover_flight.png", "actions_spark_charge.png", "actions_charge_flash.png", "reactions_hurt_defeat.png", "charged_hold.png"],
+  "registration": "Whole alpha-component bounds may cross nominal grid edges. All poses retain one global scale and the nominal cell's center/bottom hover pivot; the last four collapsed poses register their authored floor contact.",
+  "animations": {
+    "idle": {"sources": [["base_hover_flight.png", [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]]], "duration_ms": 1280, "loop": true},
+    "fly": {"sources": [["base_hover_flight.png", [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]], "duration_ms": 960, "loop": true},
+    "static_spark": {"sources": [["actions_spark_charge.png", [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]]], "duration_ms": 850, "contact_ms": 450, "contact_frame": 8, "loop": false},
+    "gather_charge": {"sources": [["actions_spark_charge.png", [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]], ["actions_charge_flash.png", [0,1,2,3,4,5,6,7]]], "duration_ms": 800, "contact_ms": 400, "contact_frame": 12, "loop": false},
+    "veinflash": {"sources": [["actions_charge_flash.png", [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]], "duration_ms": 1000, "contact_ms": 550, "contact_frame": 9, "loop": false},
+    "hurt": {"sources": [["reactions_hurt_defeat.png", [0,1,2,3,4,5,6,7,8,9,10,11]]], "duration_ms": 500, "loop": false},
+    "defeat": {"sources": [["reactions_hurt_defeat.png", [12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]], "duration_ms": 1200, "loop": false},
+    "charged_hold": {"sources": [["charged_hold.png", [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]], "duration_ms": 1600, "loop": true}
+  }
+}

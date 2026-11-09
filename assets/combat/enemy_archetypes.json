@@ -258,10 +258,8 @@
     "magical_offense": {
       "name": "Magical Offense",
       "description": "Favor damaging spells while maintaining a free fallback.",
-      "implementation": "requires_implementation",
-      "requirements": [
-        "authored_enemy_action_selection"
-      ]
+      "implementation": "existing_pattern",
+      "requirements": []
     },
     "physical_magical_alternation": {
       "name": "Physical/Magical Alternation",

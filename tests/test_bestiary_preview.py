@@ -7,9 +7,10 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from bestiary import ELEMENT_IDS, load_bestiary, build_enemy
-from tools.preview_bestiary import elemental_rows, stat_rows
+from tools.preview_bestiary import elemental_rows, stat_rows, main as preview_main
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,10 +43,10 @@ class BestiaryPreviewTests(unittest.TestCase):
         self.assertEqual(rows['veylume']['element'], 'electric')
         self.assertFalse(rows['bat']['presentation_pending'])
         self.assertFalse(rows['cave_bat']['presentation_pending'])
-        self.assertTrue(rows['lithrusk']['presentation_pending'])
-        self.assertTrue(rows['veylume']['presentation_pending'])
+        self.assertFalse(rows['lithrusk']['presentation_pending'])
+        self.assertFalse(rows['veylume']['presentation_pending'])
 
-    def test_pending_species_preview_in_all_formats_without_models_or_side_effects(self):
+    def test_ready_species_preview_in_all_formats_without_side_effects(self):
         designs = (('lithrusk', [2, 3], 'ground', 'water', 150),
                    ('veylume', [3, 4], 'electric', 'ground', 200))
         with tempfile.TemporaryDirectory(prefix='pending-bestiary-') as directory:
@@ -55,24 +56,40 @@ class BestiaryPreviewTests(unittest.TestCase):
                     self.assertEqual(json_result.returncode, 0, json_result.stderr)
                     records = json.loads(json_result.stdout)
                     self.assertEqual([record['level'] for record in records], levels)
-                    self.assertTrue(all(record['metadata']['presentation_pending'] for record in records))
-                    self.assertTrue(all(record['presentation'] ==
-                                        {'sprite_id': None, 'action_aliases': {}} for record in records))
+                    self.assertFalse(any(record['metadata']['presentation_pending'] for record in records))
+                    self.assertTrue(all(record['presentation']['sprite_id'] == identifier for record in records))
                     readable = self.run_preview('--enemy', identifier, cwd=directory)
                     self.assertEqual(readable.returncode, 0, readable.stderr)
-                    self.assertIn('Presentation: pending (models/animations deferred)', readable.stdout)
+                    self.assertIn('Presentation: '+identifier, readable.stdout)
                     self.assertIn('100% healing (absorb)', readable.stdout)
                     csv_result = self.run_preview('--enemy', identifier, '--format', 'csv', cwd=directory)
                     self.assertEqual(csv_result.returncode, 0, csv_result.stderr)
                     rows = list(csv.DictReader(io.StringIO(csv_result.stdout)))
                     self.assertEqual([row['level'] for row in rows], [str(level) for level in levels])
                     for row in rows:
-                        self.assertEqual(row['presentation_pending'], 'True')
+                        self.assertEqual(row['presentation_pending'], 'False')
                         self.assertEqual(row['element'], element)
                         self.assertEqual(row['damage_percent_'+weakness], str(percentage))
                         self.assertEqual(row['absorption_elements'], element)
                         self.assertEqual(row['absorption_healing_percent'], '100')
             self.assertEqual(list(Path(directory).iterdir()), [])
+
+    def test_pending_art_is_still_supported_by_every_authoring_format(self):
+        catalogue = load_bestiary()
+        catalogue['enemies']['lithrusk']['presentation'] = {'sprite_id': None, 'action_aliases': {}}
+        for format_name in ('markdown', 'json', 'csv'):
+            output = io.StringIO()
+            with self.subTest(format=format_name), patch('tools.preview_bestiary.load_bestiary', return_value=catalogue), \
+                    patch('sys.stdout', output):
+                self.assertEqual(preview_main(['--enemy', 'lithrusk', '--format', format_name]), 0)
+            value = output.getvalue()
+            if format_name == 'json':
+                self.assertTrue(all(record['metadata']['presentation_pending'] for record in json.loads(value)))
+            elif format_name == 'csv':
+                self.assertTrue(all(row['presentation_pending'] == 'True'
+                                    for row in csv.DictReader(io.StringIO(value))))
+            else:
+                self.assertIn('Presentation: pending (models/animations deferred)', value)
 
     def test_json_uses_real_species_stats_rewards_and_behavior_outside_repository(self):
         with tempfile.TemporaryDirectory(prefix='bestiary-preview-') as directory:

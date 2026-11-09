@@ -178,6 +178,15 @@ def _validate_species(enemy, actions, archetypes, items):
     elif (not _identifier(sprite_id) or Path(sprite_id).name != sprite_id
           or not (ROOT/'assets/combat'/sprite_id/'animation.json').is_file()):
         raise ValueError('Invalid Bestiary presentation')
+    else:
+        manifest = json.loads((ROOT/'assets/combat'/sprite_id/'animation.json').read_text())
+        states = manifest.get('animations') if isinstance(manifest, dict) else None
+        def authored_state(identifier):
+            alias = presentation['action_aliases'].get(identifier)
+            return alias if alias in states else actions[alias or identifier]['animation']
+        if not isinstance(states, dict) or any(
+                authored_state(identifier) not in states for identifier in behavior['sequence']):
+            raise ValueError('Bestiary actions require authored animation states')
     if (not isinstance(enemy['rewards'], dict) or set(enemy['rewards']) != {'drops'}
             or (enemy['rewards']['drops'] is not None
                 and not _drops(enemy['rewards']['drops'], items))):

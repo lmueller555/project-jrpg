@@ -77,7 +77,8 @@ empty until loot is authored. No item or drop chance is invented by the loader.
 
 These two normal species complement the Cave Bat's mixed offense. Lithrusk is
 a slow, sturdy physical attacker; Veylume delivers stronger magical attacks
-from a fragile body. Their models, sprites and animations are deferred.
+from a fragile body. Both have dedicated combat sprite banks and working
+action presentation, documented in [Cave enemy combat art](CAVE_ENEMY_COMBAT_ART.md).
 
 | Property | Lithrusk | Veylume |
 | --- | --- | --- |
@@ -130,10 +131,11 @@ Aether Edge's magical component provides another useful response.
 Veylume's intended sequence is **Static Spark → Gather Charge → Veinflash**.
 Gather Charge spends a preparation turn and signals the larger discharge.
 Both levels have enough MP for two Veinflashes, leaving two or three MP.
-Static Spark is the free fallback. Its future action selector must skip Gather
-Charge whenever Veinflash is unaffordable, then rely on Static Spark.
-`magical_offense` and this conditional preparation remain authoring data;
-the current adapter does not execute them or reuse the Tusker's charge logic.
+Static Spark is the free fallback. The action selector skips Gather Charge
+whenever Veinflash is unaffordable, then relies on Static Spark. Preparation
+locks a living target for Veinflash and retargets if that character is defeated.
+The adapter supports this Magical Offense pattern independently of the
+Tusker's charge behavior. A charged hover loop remains visible between turns.
 
 Against unmodified same-level Caelan at 100% damage variance, Lithrusk's
 Claw Clamp/Shell Bash deal 14/17 damage at level 2 and 19/24 at level 3.
@@ -167,17 +169,20 @@ An unfinished species uses `"presentation": {"sprite_id": null,
 "action_aliases": {}}`. The loader validates and resolves its complete data
 without requiring art files. `metadata['presentation_pending']` reports this
 state; the overview and stat previews also include a `presentation_pending`
-column. Concrete sprite IDs still require an existing animation manifest.
+column. Concrete sprite IDs require an existing animation manifest and
+authored states for every action. Lithrusk and Veylume now resolve to their own
+ready sprite banks with empty alias maps; their action records name the poses
+directly.
 Pending art requires empty aliases and cannot silently borrow another enemy's
 appearance. `BattleModel.from_bestiary` rejects it before constructing a battle.
 
 Physical and magical actions can carry an optional canonical `element` tag,
 separately from their damage category and the species' defensive affinities.
 Utility and Spellblade actions retain their existing untagged schemas. These
-tags preserve design intent and
-do not apply elemental damage, resistance or absorption in the current engine.
-Their generic action timing/animation tokens satisfy the existing action
-schema; no species animation assets or action-pose mappings are created.
+tags preserve design intent and do not apply elemental damage, resistance or
+absorption in the current engine. Their visual Electric projectiles and impact
+effects do not change that rule. No cave encounter population is added by the
+combat art implementation.
 
 ## Elemental identity and relationships
 
@@ -281,8 +286,8 @@ assert bat['metadata']['elemental_profile']['damage_percentages']['fire'] == 200
 
 lithrusk = build_enemy('lithrusk', 2)
 assert lithrusk['combat']['attributes']['hp'] == 120
-assert lithrusk['metadata']['presentation_pending']
-assert lithrusk['presentation']['sprite_id'] is None
+assert not lithrusk['metadata']['presentation_pending']
+assert lithrusk['presentation']['sprite_id'] == 'lithrusk'
 
 fixed = build_enemy('bat')
 assert fixed['combat']['attributes']['hp'] == 72

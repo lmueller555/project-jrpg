@@ -1,0 +1,1503 @@
+{
+  "version": 1,
+  "source_sha256": {
+    "assets/characters/attributes.json": "577e1dc0282e9eeb73c99c59c7c24fa6fbaad98d426920d3ad51f88fc9e8747e",
+    "assets/characters/level_growth.json": "e1843749e4e9ad0696a5c42327899872269c2e94d9996bec4784adeab0bdf9b0",
+    "assets/combat/actions.json": "658d040ec1682d696fa81e2f0f0a9aa565ebe0c523f10c782a9cdf1668138ea0",
+    "assets/combat/bestiary.json": "67a9ca253badb0ef16a9893bf38ba4ad3b32463a05afa023a8b12db15ec12cfa",
+    "assets/combat/caelan/animation.json": "a9394d1b7c17f8c464afe85386a10df8204f7d03b4be8ebe186d32d47a1a350e",
+    "assets/combat/caelan/attack_01.png": "ef7fdd2be551ec078a7c8207f29b707739df896314849e73c2a2bc45c1d591c5",
+    "assets/combat/caelan/attack_02.png": "9c72723d636d1acb9d684ba33e41e8271ae77974fc4c34e2f0407145fb17339d",
+    "assets/combat/caelan/attack_03.png": "3eefaeeef04339bae7af3146527117ec07ef7645e08292942a9c348092adba68",
+    "assets/combat/caelan/cast_01.png": "73dbb4205af9c504a02e7013d2a01cfa5de551ce8b24c8c6f1ee7b02ad4adad0",
+    "assets/combat/caelan/cast_02.png": "ab46ad0a7564ec4daa99ae9333b69fcce1aa793fb9e94070fe30d97bf96e1c02",
+    "assets/combat/caelan/cast_03.png": "746d61d0198afc7d63cb3650f657ff5cfeee73a5792f53b675edf4298e8bbb3b",
+    "assets/combat/caelan/defeat_01.png": "9f1aceb3dbc69ba963ae8ccd6f1680ebe98cb9c507914df2c577282f1d2a6fda",
+    "assets/combat/caelan/defeat_02.png": "abf409314fcb35c53aabb605f03fd59cdeacc55537d20c32cb02fe3ffcc0e709",
+    "assets/combat/caelan/guard_01.png": "84e523cae5c0d04fd9c0f65fd781b06c4e1c1bb876db48b7c17ac49cfdf5d779",
+    "assets/combat/caelan/guard_02.png": "6525a7d007dcbd33f909905464b6dc9c546c9791d6fcfadb23f411dd7d9222ef",
+    "assets/combat/caelan/hurt_01.png": "8a2addf44c6c4471b2b3396ea6a1193e7d113858eab8d83487d680f235b67f4c",
+    "assets/combat/caelan/hurt_02.png": "4286773d0e11eea81b21723191062b053ef022a1cf53359c9df3e3ba570bc9bb",
+    "assets/combat/caelan/idle_01.png": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9",
+    "assets/combat/caelan/idle_02.png": "14e431fdc59c2a9cfc9b7b39222cdc89c22f78e3bb4d38c84adce9d9cc1a0c6a",
+    "assets/combat/caelan/spritesheet.png": "cc01ff42a5d5101e5860488f4e3730382f6e41759207a3a0ce3726a7702b38cc",
+    "assets/combat/caelan/victory_01.png": "0ab7c7971c77f3b23f331b4d44cd81e3ddab7c8a61a17922d2b8e415354d6ac9",
+    "assets/combat/caelan/victory_02.png": "377e03fa9a4e7d5ec7ec1f57784f28b798db461b0f2ad5e9a8215db00505ced4",
+    "assets/combat/caelan_choreography.json": "4715a9aeafb6a4828f943ea26f0d2955b5530229a0ee1aa4270934074ab2d7e5",
+    "assets/combat/caelan_motion/animation.json": "9f47a4f0719393833d4ba4e28c18c269726025f8184e6560de9fd6e957c3a220",
+    "assets/combat/caelan_motion/armed_authored.png": "77e8e88aebe5421cbc91c95f7f0b396cd71dce205d367465c95329f53e857bbd",
+    "assets/combat/caelan_motion/provenance.json": "1479ad7b92a685b8b2d996ea91d304a1bf00cc671088044f092e0f40b6cc6ba2",
+    "assets/combat/caelan_motion/unarmed_authored.png": "1634138e1a147686549cd4c44412719d212a89bdf61b0e24baa0b195d45947c3",
+    "assets/combat/eldenmere/background.png": "12a3203cae1845c2b241b636ac5dd56348f6997fe9a2158502262cc165701ba9",
+    "assets/combat/eldenmere/grass.png": "e5b6d1702a267569e2a69a0fc63d83e3cfaa923c364a6cfec19cb3e9032bff7c",
+    "assets/combat/eldenmere/scene.json": "5c6b98093279d8d2e9541bd06bc2df09c24383327aebd145ee073e33165188b8",
+    "assets/combat/enemy_archetypes.json": "8949341f7f3eafb824f71ee2469cb36c264aa1e75f6d20d1ed196dcee4a0463b",
+    "assets/combat/lithrusk/animation.json": "1a7904fa00cf99e80d75240c9c663c42a47f1b9144c042f62755eafe9e40b93c",
+    "assets/combat/lithrusk/claw_clamp_01.png": "5bcc9da25f12828da052f4c25d2803ab2b347d5a1371b92cdfd1c8f25290fdeb",
+    "assets/combat/lithrusk/claw_clamp_02.png": "bf2b325a72cf2258c4f5430df54db0cb4d1826b1778f2865164f3e9d18a6478a",
+    "assets/combat/lithrusk/claw_clamp_03.png": "f45a52ae3bc584f97569c431054816db8f3df29a061b7b5a628c4bb52d45b972",
+    "assets/combat/lithrusk/claw_clamp_04.png": "12058b4d67c056da774f0b854c91e402419a2b5fe9cc3393f7b75d35473162bc",
+    "assets/combat/lithrusk/claw_clamp_05.png": "34b9f45c6974ccebce70fb5e79f3b6bb32cf7117ee97c1ef5cc8eae1faa4ff16",
+    "assets/combat/lithrusk/claw_clamp_06.png": "3d0bf0a0c9aaa73d916d1c1905f7bd05c22fc38f9f78b1f1409d11f3342e0ded",
+    "assets/combat/lithrusk/claw_clamp_07.png": "7943bd7e5f5624690c71325169a3fac1c5fe414b5e39cc406628b19e3b3de69e",
+    "assets/combat/lithrusk/claw_clamp_08.png": "cdfb74e95c24ab55055186b5074ef3d313e39a2ab0341a5579323a84ee6e9a8b",
+    "assets/combat/lithrusk/claw_clamp_09.png": "261c36f6f2ef78ef5e318829841b58c65989aa0562a357e7263e09d66d62b87c",
+    "assets/combat/lithrusk/claw_clamp_10.png": "086d16740a0cafce298f2505c6b4320204a9a153a4a4468bf9fc0d65f2dd2149",
+    "assets/combat/lithrusk/claw_clamp_11.png": "97efef5cfe7675b89e8918ccde1f0b48db6b714d1fd710e3dc002412864f0da3",
+    "assets/combat/lithrusk/claw_clamp_12.png": "edf5d52245771264ad0f1d011f8bd49a63e3f06a384be852e87d8a8094b87c09",
+    "assets/combat/lithrusk/claw_clamp_13.png": "5d82aa95fb322dc03e2b90c5e02a9f091dd7fc5914d0865aeaa625777962de53",
+    "assets/combat/lithrusk/claw_clamp_14.png": "f4c09c9d0ea824b76060b7159357e761390032acaaab333370ae043795bea894",
+    "assets/combat/lithrusk/claw_clamp_15.png": "e054f5c3aa810c8d0c6f7b09ef440515cabf2f844be4474ef9eab5661d49b915",
+    "assets/combat/lithrusk/claw_clamp_16.png": "8de07c083d42dcef28e1fd707e9909ebdd9f43a6cba2636789cdeeae13ecb92a",
+    "assets/combat/lithrusk/defeat_01.png": "fd598aaf04c83e2057047c655dae7454a1394c2cde54c553b443ef3993a83b2a",
+    "assets/combat/lithrusk/defeat_02.png": "f2ca155630954b7ece36724a3e5a31fd0322f868f0f2c2af92c256d574dca1d7",
+    "assets/combat/lithrusk/defeat_03.png": "06e9d0954b06f47c47d43960daa73d640060397d91b2a45cdbab35b3bf54e2dc",
+    "assets/combat/lithrusk/defeat_04.png": "4ea77cfc31d95e43e721626851d159290f1cf2a15065888fb473a9dba2fe6320",
+    "assets/combat/lithrusk/defeat_05.png": "79b5dc9049ed3d2e3963fb8cfbbc59f8b00ae5597b48dfe9b0feb1e1fe86e455",
+    "assets/combat/lithrusk/defeat_06.png": "173956b80e8d6d83b4dfbc0048d81dabf6240e1ec21d675c604c10b29233bc2b",
+    "assets/combat/lithrusk/defeat_07.png": "35ba36253d8867f688c545b0594d868a444043e51680574d3dca60153897fd81",
+    "assets/combat/lithrusk/defeat_08.png": "32f1626678047d29d879a139999672c196fbf65db7d773eb48acf7cbacbb987e",
+    "assets/combat/lithrusk/defeat_09.png": "fb3857bfcc67f9d3a9793d52b712b6913e5edff3cec0b3f8b14d02b9f70a77dd",
+    "assets/combat/lithrusk/defeat_10.png": "0eccfd94550f94f3c93da0d5e13ac4ff54838d978aa6faf9f5f2cbf7d3e407a7",
+    "assets/combat/lithrusk/defeat_11.png": "ce7828a324d69ca84a4110e59b0c67a39567e95c00b80c637df6914a88a47170",
+    "assets/combat/lithrusk/defeat_12.png": "fd67f7c7dca13fecea1bfae88248026098a798306ea3ed9ba99be42df825ea7e",
+    "assets/combat/lithrusk/defeat_13.png": "31de5c4a4ce60cac846208036c8cea2465e6ca03907985a26315e4b7349c3aae",
+    "assets/combat/lithrusk/defeat_14.png": "0fd2558f084b866df988da242875892d131ed231f5e14f1b56f7ca1ae99024b1",
+    "assets/combat/lithrusk/defeat_15.png": "0f8a211609d5d8600d0cd00eaa61fb08dc69c11bb4255da0d6732a11910eea15",
+    "assets/combat/lithrusk/defeat_16.png": "046b7ffbb95bb84a46596ca55cb03e7b9020b02001d78b17bb69ad69b30ec885",
+    "assets/combat/lithrusk/hurt_01.png": "f9dc97164edec6295a3a475f4e06293c7ba954e87b399aed7d32f4b36392ba09",
+    "assets/combat/lithrusk/hurt_02.png": "4bcc406741e6d1d73b87646d4510d0683acefabf311c9775373f22e8632c19d6",
+    "assets/combat/lithrusk/hurt_03.png": "8c6f2cc29de61dcde195cac2752237cb10c04b63f1787b268b697c58699ab011",
+    "assets/combat/lithrusk/hurt_04.png": "d10b995c4a7ce2c30725c669793774ab162cd238ccb280b37d464a19f20fa4f2",
+    "assets/combat/lithrusk/hurt_05.png": "b0c208c1349cd118326d255e5041938ee30a06a7cb69e20bc1cc420cf7111c71",
+    "assets/combat/lithrusk/hurt_06.png": "3d022c70deaa093f5a833a8f6369050de1dd8da386075e6d0ca998aa3037940b",
+    "assets/combat/lithrusk/hurt_07.png": "9bf5e7a83809bd7d120f45c668e0c858055b1b5d0f2116f8cb0d37035c6b1569",
+    "assets/combat/lithrusk/hurt_08.png": "9d3018746147bbea38f3679d448968ac269c18ab98cca18886d1cacb0557d931",
+    "assets/combat/lithrusk/hurt_09.png": "539567a897b00790315ce8614682d3e0c6982a0d26b18adad62dad2947a71453",
+    "assets/combat/lithrusk/hurt_10.png": "59792e3cfe94b9d7559bb0766fbe39d7d880bb3e20cf964542526e55570fa9d9",
+    "assets/combat/lithrusk/hurt_11.png": "37bd9fdac6ee4973f0e922f71f9d4be20830e7001f5f5cfc0ae01bf8eb0b494e",
+    "assets/combat/lithrusk/hurt_12.png": "a2813b1e644abc9cef72491a2d5f27e8531bbc076bedc9e74e1845197a135b95",
+    "assets/combat/lithrusk/hurt_13.png": "f9f67197faf222ea83b42e8efc55dabbc28aa632395b9268592e8110834e42bb",
+    "assets/combat/lithrusk/hurt_14.png": "825083152a04e7f888675332678dc74743bbbcc64949c4ec3df19f6d7bdb79f4",
+    "assets/combat/lithrusk/hurt_15.png": "4a93afbbf39406362abd8ebc942da0e1d9200fc9dd74254f2acce86acbec65e6",
+    "assets/combat/lithrusk/hurt_16.png": "92ad50371768077a2fabf77b5c6d51298f4fb40c9865c75f1312b4453a02c3b5",
+    "assets/combat/lithrusk/idle_01.png": "a23d229ee552572311376d815c8a2c9ea15df825770b417c839bc6660ac0e603",
+    "assets/combat/lithrusk/idle_02.png": "9b07378946b44c0b0b500d65492abe5f63d3116f3b110e7bce65b5a805029cc2",
+    "assets/combat/lithrusk/idle_03.png": "a73abf5d85c5086bf8bab2d67709747fba64bb6455fa18addf193033927dc925",
+    "assets/combat/lithrusk/idle_04.png": "ff3957cc7dce615ffcd0aac31d58db3612c101c31f78dc2dd2a9885da9141a1e",
+    "assets/combat/lithrusk/idle_05.png": "8ae22ae8c7e7d03d36653081cd415e9be5990538284fadb88ac1c8042c3cc781",
+    "assets/combat/lithrusk/idle_06.png": "6b35fb4870ce0d2388e345e89a304ca253d5091253a1464d1897b7525ece2a6e",
+    "assets/combat/lithrusk/idle_07.png": "1d0aa01c88465b2cc4525f2d3391ad0937dd1a098072f53fed8941e13ff4197e",
+    "assets/combat/lithrusk/idle_08.png": "f244a439480489e1c5fbd1b70a7785111e15bec222045ba5953e52d6d62f9c6a",
+    "assets/combat/lithrusk/idle_09.png": "29c3e64dd55fe169bf40bb89d71add90809bb062e71f5dae01bc9b9aacf4982c",
+    "assets/combat/lithrusk/idle_10.png": "9453233472009107b43c0e58a8c4fee488d3e6b97aea8aa09817ea40bbe26408",
+    "assets/combat/lithrusk/idle_11.png": "bad1da47813f014a31732e133023c7b9e669c2f9ac953c0cf500b3361558c7df",
+    "assets/combat/lithrusk/idle_12.png": "6c888f38383188fda7ce2bad2298070b7d7e5a5a43475e01b3a40d690a51265c",
+    "assets/combat/lithrusk/idle_13.png": "e2d88cfb346a186fb3e69162579d61eaf5535fba1a3a0238f938d893d75ad4d5",
+    "assets/combat/lithrusk/idle_14.png": "98639669140267c4199f8c00bae9328e7384cd67d67ce533d4c17c9fd9a3c873",
+    "assets/combat/lithrusk/idle_15.png": "314b2ab7c32170be555c8e270db4c804b38a2c8898da4ddb976a2f090877b1f5",
+    "assets/combat/lithrusk/idle_16.png": "3e3a6b8866024af5b841b9336d2a7ec35f6e3930d42a113c6b0ee792b779d960",
+    "assets/combat/lithrusk/shell_bash_01.png": "d5dd8056658dcb322d269e0e27c326036503ec89b69c6075a289a2b8bf15e78b",
+    "assets/combat/lithrusk/shell_bash_02.png": "a241ea90dba8734fe23b77292c7358f689f66134d974e6e21ba5c74c8feb23a0",
+    "assets/combat/lithrusk/shell_bash_03.png": "f191691a3db78f68646ed00d02b23158fdc3219dfff2d555d72fd3a3d6cb4e84",
+    "assets/combat/lithrusk/shell_bash_04.png": "ce5e714567ede641a949eb9b5a72edf1328a4581777db610a86d5dcbf56f44f1",
+    "assets/combat/lithrusk/shell_bash_05.png": "c74e0adc21ea7ded7d01baeae92236d4eb4cb8b3857bcaf6ad86a8b2a101827b",
+    "assets/combat/lithrusk/shell_bash_06.png": "4619a327ac1905da190c7039ec01cf814924fa67184f0fee64a88d22683cb8bc",
+    "assets/combat/lithrusk/shell_bash_07.png": "864134cbf19f7667b6d93103629ff5a97901f4d11295b53c9874566a70cc002a",
+    "assets/combat/lithrusk/shell_bash_08.png": "428e2803f03ff30c526b5a105f1a4339ff0ea865048a5d6af5a41d5ba75828c1",
+    "assets/combat/lithrusk/shell_bash_09.png": "4343c134eef00758968001a97bd2bec7a68a37cc6e4022fb19c67785a6072fc4",
+    "assets/combat/lithrusk/shell_bash_10.png": "e5b6c5d4a11d78476026a462ca943c2d6d7de96aeb7bb0443ffbf8baa2d9d48a",
+    "assets/combat/lithrusk/shell_bash_11.png": "00f15d0804ff496e6591406627bcd7e179631c44a5d4fc4e8abafaec3ea285c5",
+    "assets/combat/lithrusk/shell_bash_12.png": "ac6dd7eefe062b232d07190ccad8fcf13b4686701a3dbdc0313f60953dd69289",
+    "assets/combat/lithrusk/shell_bash_13.png": "9701e4a2349704b1e16da6d9d52bfab9c1f649b32202d743f9a383868895f87f",
+    "assets/combat/lithrusk/shell_bash_14.png": "cbf5ab1741dd06a10474709c1353b77837f417a6a5c8f3cade3065ed8c1a3897",
+    "assets/combat/lithrusk/shell_bash_15.png": "c626c56e84e9db70a1c7af60101f0c1acf1946fb3390ff1d7a5b35bda8acc284",
+    "assets/combat/lithrusk/shell_bash_16.png": "2c498f3698751afca74d94f1fb2ec1b5154277c5fbedd14246cce816176db7fa",
+    "assets/combat/lithrusk/spritesheet.png": "b289d2479713fe4801b905c73b85877ac524d482ee44309d3de2ed8be9cccdbf",
+    "assets/combat/lithrusk/walk_01.png": "23a2341224df6b44e44f1d0b76d750fcccb8e2b89bccb2808321f93734ed2e63",
+    "assets/combat/lithrusk/walk_02.png": "3f9dfc05061b83404284260e0f7b27514d5fc97942784ad3eece12552479cbe5",
+    "assets/combat/lithrusk/walk_03.png": "ce61ac2f90e18d20b7aa44f82fffd80dc7df5288ca8677102a802407315249d4",
+    "assets/combat/lithrusk/walk_04.png": "409f58fc6a67632bacbb5570f636b0991faef3af47d0b3b159691ea4172ec766",
+    "assets/combat/lithrusk/walk_05.png": "d4d9d39c8a08ab835136eaa26cbfe8a31008cf6bcc5b11b342e28e04fb15eafc",
+    "assets/combat/lithrusk/walk_06.png": "5abe7335bd75acfb717cc828981324a8c0f40ad1dc8fbdac92abe578d4ffe708",
+    "assets/combat/lithrusk/walk_07.png": "61d56dfd92cc18d3861e9db7102d3bf99e98cc6b64a290910261480abc2e4012",
+    "assets/combat/lithrusk/walk_08.png": "5e6a53ed5b2cd295e7ca7e10e5798b31ee769155a088aa4a069a32ba473c9148",
+    "assets/combat/lithrusk/walk_09.png": "a2321d1a47024b72628ef0c5a71bcc6fcc36a86d6e31f950202e6901c6522fcd",
+    "assets/combat/lithrusk/walk_10.png": "58ee899acb52c0a971791c9d8156da73fff972f05d07e7fc5864e587fb296448",
+    "assets/combat/lithrusk/walk_11.png": "c4fe14410a2919fc87b6b9569cb1868fadbfc09b9905764e8c9ccc07abfe365d",
+    "assets/combat/lithrusk/walk_12.png": "b2b20acf91eafea21a5007b328d87ccd8e844fbbb619c19c42b5f1a067629cbd",
+    "assets/combat/lithrusk/walk_13.png": "f6634687ac666821e389bf51e1b25c44dadb422acdb79bd5928d80136becd8f0",
+    "assets/combat/lithrusk/walk_14.png": "e8afefb8902d0b26e9ac742fc235281dfdee4a69cfe0b0c797395876c6196849",
+    "assets/combat/lithrusk/walk_15.png": "03e099f9af482db4eaecde48b326a400986372ee606079230d1b02e0018a4fd1",
+    "assets/combat/lithrusk/walk_16.png": "f19330407cc7835de8b3b8fdd6fe12b30ff08b0191063fa153a2f6254b622d24",
+    "assets/combat/veylume/animation.json": "0b555ab1e884ca4684e8e6c6f9ecb82be7f75ea903a5ec48d97d655270e52cc9",
+    "assets/combat/veylume/charged_hold_01.png": "cc8f66f028aee443a7a06a2ac83da4511bfa3774e226e23082191859e35fa6ff",
+    "assets/combat/veylume/charged_hold_02.png": "858ab736c6cdb7ca027ab8f90f0186c01f715419a30075a4a3b10fffdba41798",
+    "assets/combat/veylume/charged_hold_03.png": "4da97b4cd2874d29274abd9c7ca8caa5c2a310ca2ad8d7f015066aef794459d3",
+    "assets/combat/veylume/charged_hold_04.png": "0a53294b0f34f0e2de79cef252013135f98039d719122eb10a9d9a0b3051d14e",
+    "assets/combat/veylume/charged_hold_05.png": "cd49e4f9432a32a948915508caf2b247035f035b624d373cf4ed08a5b473a2ca",
+    "assets/combat/veylume/charged_hold_06.png": "c93cc4acfd30e2745105422b4d9b14d144f49948ac92daf4c00f934403dbccde",
+    "assets/combat/veylume/charged_hold_07.png": "0be773e3514811b3dc46bb85312438daeb50fe580641fb5fc989d2b83d91a55f",
+    "assets/combat/veylume/charged_hold_08.png": "16e65bd22caa7786606a8c3454c1900c536d15286e1af52ba20337636814e675",
+    "assets/combat/veylume/charged_hold_09.png": "f70bc56c5b6f660bf4231aa1872834871795c93b9c3f7573554d060bef18b48c",
+    "assets/combat/veylume/charged_hold_10.png": "12a92982b9a6e1511576834b546d46977ef31d3437d77ebf38077a95d634bcb0",
+    "assets/combat/veylume/charged_hold_11.png": "2f1cd3828b01c6c68a8bb415185eaac3c6aa85f03f78b8479ab36b08d18eaf26",
+    "assets/combat/veylume/charged_hold_12.png": "e2a3980d13197ea209915e35bf7fa59f1f7d53f8884f9df2d187b4e0fb16866a",
+    "assets/combat/veylume/charged_hold_13.png": "b7b1af51e85cbcbe03d51231af7a57a8b3f1a85fbf7db91d681458c4cbe44c08",
+    "assets/combat/veylume/charged_hold_14.png": "06dfecb30d1059c802e0a6f09eecf15b299fca77d645076fcef22dc143d4ec95",
+    "assets/combat/veylume/charged_hold_15.png": "6d90f37a4ce44ad0bbe140f8688804a68f5d830323b8bf54e3db87beee59c4d8",
+    "assets/combat/veylume/charged_hold_16.png": "bebb2e48932264430b12b6054d8d308a401db7a1dcfed91074dcbd7b4c6c70d1",
+    "assets/combat/veylume/charged_hold_17.png": "e8761c099026f12d40907e6577df6be65c64e322bce4736d7f750f2a731f90b1",
+    "assets/combat/veylume/charged_hold_18.png": "9d1570d199734bf8404ca785b1b636f9ae03c5ac1cb560d88fc1a0aaf031a62c",
+    "assets/combat/veylume/charged_hold_19.png": "d3903d28bee8e93ea8ed1ed36f4edb2f06d2846df17d604b1f6d10aadf42b4d8",
+    "assets/combat/veylume/charged_hold_20.png": "0e799d0bede8ffa65bfd093c129db333b1979749918a35628b35b1ed121701d0",
+    "assets/combat/veylume/charged_hold_21.png": "26079cd600d28aee44a8a9f3eab588939b6eebe9da438ee0c670a432d0177d4c",
+    "assets/combat/veylume/charged_hold_22.png": "549e2c7b77dea514440c6ef59e6ba216bce356fa821040c5bcb12725b9a23432",
+    "assets/combat/veylume/charged_hold_23.png": "abfc9b448028ec02443646da05369e70266abb88559d2d4fc95834e7dd8c3d8d",
+    "assets/combat/veylume/charged_hold_24.png": "2896878d27a0590efe18d864517d0d969fbc568e18d7187456909d79f51bc15b",
+    "assets/combat/veylume/charged_hold_25.png": "b93de1891bc76b532b206326708699f8724a0b6775d881d7f57c7dde60b08426",
+    "assets/combat/veylume/charged_hold_26.png": "9a7adfaf16bf257beafb2badb8887575da4abfab10621439c681254d5413ee11",
+    "assets/combat/veylume/charged_hold_27.png": "ae42e393400a335d96f10078144767c78b0dd5ec1bea199e6b24f4e3273bdec5",
+    "assets/combat/veylume/charged_hold_28.png": "1948554f42e019f8320b9e7bedae9b324fe03b09e81ef8741237502d0e6a3de0",
+    "assets/combat/veylume/charged_hold_29.png": "faa43c61650ffce68f3d9e6de3bc6e3be7286bf88ab24488ca6ea723a0225694",
+    "assets/combat/veylume/charged_hold_30.png": "8a77374660d9e09958299ad460669ea6658566329faa56d27fe3987088d60b5f",
+    "assets/combat/veylume/charged_hold_31.png": "f59b503eb1cd02ed80ecb60f2748ec39b9d6ef54630b43dfb101a398dbae9b14",
+    "assets/combat/veylume/charged_hold_32.png": "39569a5bb5eda3cce4f5f63900257c9431d5dde97492de6bbb4d8fdc68e5afc0",
+    "assets/combat/veylume/defeat_01.png": "b907e14071c2e9282a910bb8ec580df13ceec03cc7a3f8823e4672a474a9e8ca",
+    "assets/combat/veylume/defeat_02.png": "a551e6308f9705e3d46a39c89cfa9be6b9e22e85d1f8a880dd188d9170edec20",
+    "assets/combat/veylume/defeat_03.png": "013df96279e91fef0e7e4aca798c7322d178a947c70f820700cb0768063dd3ca",
+    "assets/combat/veylume/defeat_04.png": "3b1544557be3678ca353736a07f0d9e29cf27d936cb8ae469d5be132b8b4ffc1",
+    "assets/combat/veylume/defeat_05.png": "868341900c09e0738f1a71f58f98e61ceb80968bf83ea58b4153fa8fe0c293e3",
+    "assets/combat/veylume/defeat_06.png": "71c84144a24ad0e97ee61e2e4cf2258e8d88901962cfc3c5f95140825521f77a",
+    "assets/combat/veylume/defeat_07.png": "5b7f58e717570d59bc809643e3ef45c5084955ff16d9be83d85cdf5afb2dac99",
+    "assets/combat/veylume/defeat_08.png": "98272af3ef035a226952540f6b5395659b3b99cc4aa30f76a791ba67bbad8e6c",
+    "assets/combat/veylume/defeat_09.png": "752a4d90d26f601140d220a2f481557ca82c27227e27cd9a1eb18a5229d938d6",
+    "assets/combat/veylume/defeat_10.png": "1d93ada231faaf24c0de742a23a6d366e1d438c0872d4c3f4c63ba0d59e91458",
+    "assets/combat/veylume/defeat_11.png": "7fd546ddd3196ddd11ac5c21e10f758112537175cd2fe11c4925e4add168fb6f",
+    "assets/combat/veylume/defeat_12.png": "8ffe8d0451abdfb55615aef83ec753c3be7eaef0bc0c71434da8c454ae259b49",
+    "assets/combat/veylume/defeat_13.png": "bd117ccc3480ef676b1cd07e25a28e70d849db32f8e8707ec3c0c150d4d1a836",
+    "assets/combat/veylume/defeat_14.png": "3f9564444ce28a310114aaff7b317a11b7cfd0bf119cc8c60b51164708c97fdd",
+    "assets/combat/veylume/defeat_15.png": "d684df4cde18ed747540c31de092e573e960f6d0ae847ef36d05b1f16c8e0013",
+    "assets/combat/veylume/defeat_16.png": "85c735da61c110b8a3cdbffb8d3b226de0f9f51b545012a335e5304a40785bd1",
+    "assets/combat/veylume/defeat_17.png": "3b1be343e81da211f5a7904b11fa58b0d615afb9c136a9b77ecf44dc650ca235",
+    "assets/combat/veylume/defeat_18.png": "f3e5d55db4ffdc648a0a9647845655c401d9fbf5f0040d02f0e66a74f271e23b",
+    "assets/combat/veylume/defeat_19.png": "700542d51ef612178a5fa7b7ae54c2854cd83935c3a65f31b4b5c8e0b1d9d87a",
+    "assets/combat/veylume/defeat_20.png": "90bba2de53563d3687f4ff3c4189764d0bd2e86df2f46bb6ce3a60a08bb741b9",
+    "assets/combat/veylume/fly_01.png": "58b918db5f52bd71086f010d71218114548f6b6d1f7b7fe72e81eec1c8b0ba55",
+    "assets/combat/veylume/fly_02.png": "307181524edfb27edf362f541cc59aff9704cf020ca3d462d8511ad37756d76d",
+    "assets/combat/veylume/fly_03.png": "6d53501b0bdfdfc9daed8eb175703d8f773c3dfa25a6492fd08258d308feb36a",
+    "assets/combat/veylume/fly_04.png": "411d1577206630d558b493d8c78a769d61a740e32f446b1f7a4da1c902d47a98",
+    "assets/combat/veylume/fly_05.png": "ff908567ea15f1ca08fc88b7cf0178affa070e75ec51c0ddb8f39502d28febf7",
+    "assets/combat/veylume/fly_06.png": "89d68ddddb7f999aa663e3fb5898df90847f83b8f77760a198f29e01b8f9f633",
+    "assets/combat/veylume/fly_07.png": "6117f84a45167100e34a0106ae450846a37a5eae88acc65b2764dce95811e8f1",
+    "assets/combat/veylume/fly_08.png": "f6f43f635847cc7a417ff4ad1e58957f8483966d7f392942f77239a32ea04da4",
+    "assets/combat/veylume/fly_09.png": "8346e3bf3b947d8cbc7ab8940c9162519341d2576967abadd92fdad16e045369",
+    "assets/combat/veylume/fly_10.png": "01a1849a72e0b785f1a42cc84440c50d57bf96c948d7a05e2cb16c83b606069d",
+    "assets/combat/veylume/fly_11.png": "bd9b49374a78673c927eff4215800415bc7f5330400171acc2d58aed29f883b8",
+    "assets/combat/veylume/fly_12.png": "b9151da8bd7754b1d9f6e7099457fd05a492c2d2cc53bad3b44634e1a2405bf0",
+    "assets/combat/veylume/fly_13.png": "961bf3199fb7ae213a9f94ff0941b8e736674d4f6436db2592a392adb7d1237d",
+    "assets/combat/veylume/fly_14.png": "fe5841a71d8d519433bb87a5f04e72346491f6a95d737744088d68fe9c109fb3",
+    "assets/combat/veylume/fly_15.png": "23a7008fd7cfa0b283f56112e710a30ec855fa606622a843cddf974b70c146d1",
+    "assets/combat/veylume/fly_16.png": "1f2d8ea355816459f93bab44bffe3e6502b6b98a093e2207afa06195f34da0c6",
+    "assets/combat/veylume/gather_charge_01.png": "3e279e2fe522f77c9e3746f25635b48e8bcd912275e73d567b654b9d92a4df60",
+    "assets/combat/veylume/gather_charge_02.png": "91dde49a1779a0a84a901f4abe0ddfa5b915aedb545a925359a950c63a4e4878",
+    "assets/combat/veylume/gather_charge_03.png": "c869b949ceeb2853be1523c8fb853f319eeb7102feb8688f403ce068e330caee",
+    "assets/combat/veylume/gather_charge_04.png": "55f2cbb4ffab5e698c228760535e3f827ddfc40796da41733425a96c39535039",
+    "assets/combat/veylume/gather_charge_05.png": "fc42ecc776dbd855a21de92c71ac69061337af0496a8ca2a227ac88a77b94c42",
+    "assets/combat/veylume/gather_charge_06.png": "4e765d1aa34ab9d69d2651ea92a37298dad611dedb1f09ef1de694b87f594087",
+    "assets/combat/veylume/gather_charge_07.png": "bc017fb452c401d7993f14b4b63ace4bf631cefe5713351797f2d03bd5d4578d",
+    "assets/combat/veylume/gather_charge_08.png": "b73142087fc7ee2d08f769b9801d15d61d0dc50e08c6cf75f0f75bfe656aa7e9",
+    "assets/combat/veylume/gather_charge_09.png": "39203084079a5592c31a98c21f6d7ff5235c860f01a694e1780df8f3a6a408e4",
+    "assets/combat/veylume/gather_charge_10.png": "61cafa59f730435c2dd66574e294296220528fd2dc1fa99734f849153c6a51fe",
+    "assets/combat/veylume/gather_charge_11.png": "70fdce2083f403f990957e1caa45c725b497629c5cb856d7793cf9cc23bd52c5",
+    "assets/combat/veylume/gather_charge_12.png": "df9bc61c78cdea05b8a5fd308b7140247d4c71721d8411345323d8941e8099ae",
+    "assets/combat/veylume/gather_charge_13.png": "35f54fd5b58dd584416b279af4212d738206d21b71fe430c8a8270141c434af4",
+    "assets/combat/veylume/gather_charge_14.png": "4033a98f7f3cd923849ace227dff13da9212c16f79252b8de58d779087ac1f64",
+    "assets/combat/veylume/gather_charge_15.png": "1326b23f93c5df46f03dc1f5da8cc26132c007e4369f397398ce7fd20fdcf4ab",
+    "assets/combat/veylume/gather_charge_16.png": "267f94572663f0923cda664ff1ce2a6bc2f489c82c8a933b4218a0f7958b892d",
+    "assets/combat/veylume/gather_charge_17.png": "f20896441d8bede6b5b1980286367a937c71605dc7079f312b82214b10ef83b9",
+    "assets/combat/veylume/gather_charge_18.png": "d77694bbedbdb189aecc3331e2565b5a7800437aa80a6aff37312d5af0e6554e",
+    "assets/combat/veylume/gather_charge_19.png": "d1d401c62d552b69c9dc7e39e9dd5945d8947a876615a8a3070890651392dd3d",
+    "assets/combat/veylume/gather_charge_20.png": "111219f133f24b48267819c5ccdcb558c7f51b6bf29c4a0b6856ae7f5f54d96e",
+    "assets/combat/veylume/gather_charge_21.png": "d279f88f9235013a82abf60541aa419ca4ee654ad72abe04ca6e646673b7c8b1",
+    "assets/combat/veylume/gather_charge_22.png": "cc115697e4ed488b56ca2a6aff56efe5f066ba8b14a196ce9cdf982022565729",
+    "assets/combat/veylume/gather_charge_23.png": "96a561eb0c75cf901d3aedf2364822ae5f4302ac292d9db639842dd7fc38212d",
+    "assets/combat/veylume/gather_charge_24.png": "de409b988380b12d88010b0962687691fcc879aa918e20eda00d9f5e0794b1ed",
+    "assets/combat/veylume/hurt_01.png": "f470cd986bb566add6b2200a1e946934a5cbf2ef27449a5c608edc72f7c1ef0f",
+    "assets/combat/veylume/hurt_02.png": "e6b517e829c3a3cae0016bdcf4871104928cdf809002d6c3d67850d54c2a053f",
+    "assets/combat/veylume/hurt_03.png": "a852f32a648159f3e589c8aa2e10fe52e1eb81adfd023a6e53e9a177120d0a65",
+    "assets/combat/veylume/hurt_04.png": "c8c89776af1c8b2da29608bf4cfc5a16a7da197af96f0f3ad2e7654bc34c4146",
+    "assets/combat/veylume/hurt_05.png": "7fc4b3714e7f5756ba6d9d86716598f2cea73d8b29d5de2f95ed26da07c2360b",
+    "assets/combat/veylume/hurt_06.png": "ee29b74f1c594ccf43fef2294d9643e25080a56df7232e562dffbc03ee4f56be",
+    "assets/combat/veylume/hurt_07.png": "d65c23cfa12b9a88aa182aa558108d12742830361fda8c1ac1c61f31ae927e8b",
+    "assets/combat/veylume/hurt_08.png": "d08396b3408d5f0b1ee2d00a4466afe71171401ff1c9c657c09ed3ebe5d90ffd",
+    "assets/combat/veylume/hurt_09.png": "f3b80a001fda712797c1f53708713f0c4ecdab6a4fab14e2394796770e863286",
+    "assets/combat/veylume/hurt_10.png": "ad44e8d1897c7d68aa06e1d960a8373c3a8ee4632b84d053bfbc5ece02f63d28",
+    "assets/combat/veylume/hurt_11.png": "c4c9163e84f868f0270bade5a51f510739e3d0cf9e224194c2955115f6863dbb",
+    "assets/combat/veylume/hurt_12.png": "f6fc10e6cb7f2afd84a98f7df4fa0c01f202cab82363955e85bb971076e07663",
+    "assets/combat/veylume/idle_01.png": "1ef23e71ad10d57444e4505478ccccdbf3b9c84c3cc27f29a9c695023a916606",
+    "assets/combat/veylume/idle_02.png": "bace4de2bc3f464543b31c3d021a09bf9ff35e08e0eea3cb93eea5425f07f2b2",
+    "assets/combat/veylume/idle_03.png": "9081d38b29cdc3cb5af51813a93f6f9eb3583ce0746d965966d2518fc8906013",
+    "assets/combat/veylume/idle_04.png": "087a8ecbb3abf7b7d5e30d21b708858185ce42c22c9d49d81ec72a16f5b2c8a0",
+    "assets/combat/veylume/idle_05.png": "a7ed6ccc801a85ba5da1f17769636a795ab2828d358bb7208c6c0d18efedb18e",
+    "assets/combat/veylume/idle_06.png": "63c9d1d67a4a8a8b4ab12ffa5a72c65c059edae9e5e4feb9f6b9a79626bb322b",
+    "assets/combat/veylume/idle_07.png": "1830b20f9e7fde5884acebf43e4ea19f69ea04d40cb5fb22e98ec0a084c2e5e1",
+    "assets/combat/veylume/idle_08.png": "f8fff287d1fc94bc5d866c0ba2e9a3f5398430030da6bc696bc30dbf0a800fc8",
+    "assets/combat/veylume/idle_09.png": "b6a433716ece02aa380e4c9c7b81c33a390a5365e45726779b57bec48192be9f",
+    "assets/combat/veylume/idle_10.png": "902ec0d3587290e88065b92703a12edc54c2502678e71c0b38285ad685d418d7",
+    "assets/combat/veylume/idle_11.png": "50139ce6e3e930b2687da587fd98a05f2eba12858aaaa1c9574d68636da4bef7",
+    "assets/combat/veylume/idle_12.png": "72f6bf96e2c5a2fbaab1f1498f158f2f1d5e2ca0a958f4b4653bb9841395d986",
+    "assets/combat/veylume/idle_13.png": "56c4530a05478d85767d4c81cf2b7d95fac01cbec10d5de72ddb76d050730703",
+    "assets/combat/veylume/idle_14.png": "ae61e2fd8c70bb95eed5425963251cae52c0234f67fbc5a82a026b66d1830824",
+    "assets/combat/veylume/idle_15.png": "1b2ff3fcb191cd237a52dd12b1569ce874e8bd39556eb4f41e79fb4a15047980",
+    "assets/combat/veylume/idle_16.png": "f8acd0eff4842eab6fb931490f757c66b0d1582b23c9d1196d26dd5e78b438e3",
+    "assets/combat/veylume/spritesheet.png": "e772e25ede39e12638507d93c6d2f8ca766772b09ea7ec44b5617444dc96fe6e",
+    "assets/combat/veylume/static_spark_01.png": "eeee646d8b502cee5ccc4b5cd6dfe149ad62bcbf902db365290216aee74f415f",
+    "assets/combat/veylume/static_spark_02.png": "30c3c016b383d45612598ebcd6b409687c134d35dc370f3d418e8f44a6d4a415",
+    "assets/combat/veylume/static_spark_03.png": "96a67a574a91271eb75226f822e12840b8230bbe6bbd5c17126b061355930d96",
+    "assets/combat/veylume/static_spark_04.png": "f43f0f0fa089411df07ac247ee7185a17fc6de54f757d43547f2a25f4559f3a6",
+    "assets/combat/veylume/static_spark_05.png": "85f342f3a48321c87b71b8abfec05ddd78d3d5561f409c6cdfd55ed7e467ba0f",
+    "assets/combat/veylume/static_spark_06.png": "4b712030bb634433f559fe852a79097607e5f75afd59a5c7c7704bc4ae3b39d6",
+    "assets/combat/veylume/static_spark_07.png": "dbb67854c81bec7b607ff7b22e67834a9208fdd44ca571235a19a765881b4075",
+    "assets/combat/veylume/static_spark_08.png": "41a893afd4b09f0d62a4778b114bf8b2526c401173938aaa1e80d71acc7ba6f2",
+    "assets/combat/veylume/static_spark_09.png": "7237f700e60052b58c3f64754f7a56b3b3cc112026972948cc1e1d86484b5e66",
+    "assets/combat/veylume/static_spark_10.png": "05d4a0284a406b51e52d591d3a9a55a2b22fc6788fb4d528eaa90b1579c1b6e2",
+    "assets/combat/veylume/static_spark_11.png": "e675ecd19e1bf6b2e904d7c723d8dcd60962ecf9a416db3230fe5ffc21015024",
+    "assets/combat/veylume/static_spark_12.png": "dfbcede51f79d7d7d92404c7e804330a5931c8af3b3b77e626a183d7f234eb3f",
+    "assets/combat/veylume/static_spark_13.png": "0bcea582d95796f247c3d5bafeea0ed1ea3288a3094c3f68920640cec5ff8e1f",
+    "assets/combat/veylume/static_spark_14.png": "338a159c7a203374ebcfdc02f0c0ab7228ab401a76a20f6de5ac7a2a132187c3",
+    "assets/combat/veylume/static_spark_15.png": "e6a9b406c90f0b56600162540c8918052f33859fe7252b921158503ad35cee02",
+    "assets/combat/veylume/static_spark_16.png": "b183fbf62876a6c837540a1ca30feeb03ae601109b5acbff3e49eb5bedf92362",
+    "assets/combat/veylume/veinflash_01.png": "294bc682fdaa41432446ba02bcead11e4c1cf0bda737a459ee66078587f644a6",
+    "assets/combat/veylume/veinflash_02.png": "3c7cf9606b1e960f5be0ef94f07301c807a4c577a13816ee5df3415e20de7a44",
+    "assets/combat/veylume/veinflash_03.png": "d7600524e191284e63d234f1f1a41608f2da14b89a5be516e13301be8ccd352d",
+    "assets/combat/veylume/veinflash_04.png": "22c0c68444e85b7744ea6cd0a06e3cd9f168f1e8240f18c4c03dfbe0dc0e9d68",
+    "assets/combat/veylume/veinflash_05.png": "1c24dee8325b483f2255547533a5db361b34ce1cdf41ac923c2e0ac009058ae2",
+    "assets/combat/veylume/veinflash_06.png": "59f12f445e38e93ec98f59685c0afabc91e9ab116cffd7333851fcc8fbb99df9",
+    "assets/combat/veylume/veinflash_07.png": "9fd05b9d19b4720c95dbe3426b3e288dee384787dfc74af08aaf263b17f93b34",
+    "assets/combat/veylume/veinflash_08.png": "5d92d3425b11373f53ad40b69d6c02d586aeee121a4f4ae83840c90df4c8fb9b",
+    "assets/combat/veylume/veinflash_09.png": "a4ca5dc29e4a7b3a8be8a540d6474045fe6ebc15c7797cf2dc814c0955e8feb6",
+    "assets/combat/veylume/veinflash_10.png": "264143b33f2d0cf00d95220369912c279b8e3e401829335211abc64e9b231358",
+    "assets/combat/veylume/veinflash_11.png": "0a37ef1d4c501b09df92ec12dab1d405d603a5cf0a68255b526be7db83ac49c5",
+    "assets/combat/veylume/veinflash_12.png": "058fa30dc93e030e4174d01116643fd52d6d42e060e6441172d037e4d3999c85",
+    "assets/combat/veylume/veinflash_13.png": "1dbb7f84676d1925efbb93752dbaa7516853417e469f24f6d4f7baba58b9aac9",
+    "assets/combat/veylume/veinflash_14.png": "e265c6c54dc995de713cd5942dd4bb8a26cb2544f434db243b94bbab3a941964",
+    "assets/combat/veylume/veinflash_15.png": "5239298b93c63252f3fd0056dacabd54425632b0a816ce3ae51bdb0d7e549828",
+    "assets/combat/veylume/veinflash_16.png": "0c23cc1e2f28916df414bab0b98d0d34c2b7f724b021fb4b4adfa43cbf9d88c3",
+    "assets/combat/veylume/veinflash_17.png": "18e1f49a261e5345ad2371d8519a653c0c182a34479acf49d65628a354de9709",
+    "assets/combat/veylume/veinflash_18.png": "262cbab1a7594a503f4e1cc1375471fab2ec5ddeb9308e2c71b2e14cc7ed5484",
+    "assets/combat/veylume/veinflash_19.png": "c0fb63e94dba8cf7c0a504bc828ddbae4697b28f961a470ae008fd1ff932d3e9",
+    "assets/combat/veylume/veinflash_20.png": "a05d8b62bf859500d56c24d23cb37b9d9dbacf04606b38bf5f76d14796f4b5df",
+    "assets/combat/veylume/veinflash_21.png": "65b63199a20390b29957e62dcc12d8d926755597e91717265f6324634dbcf1c3",
+    "assets/combat/veylume/veinflash_22.png": "5e00f5650e198c660a0a18b3e0f3c3be829e693701d51a30477bd3346c86a29a",
+    "assets/combat/veylume/veinflash_23.png": "5a8d8ef70d9794c7f5a812cb2f83d584a61973d39eb501a0d25ec828fbebc78a",
+    "assets/combat/veylume/veinflash_24.png": "51e8b9eae48fdb5a58a0491bf10177c158786fa3ea81bbdc00999a72a338aa43",
+    "assets/source/combat/lithrusk/README.md": "28825b6f8458aedd0ea8a830888b3a3d03d94ffd9c30a3e0d1625610d764ee1d",
+    "assets/source/combat/lithrusk/attacks.png": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+    "assets/source/combat/lithrusk/locomotion.png": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+    "assets/source/combat/lithrusk/reactions.png": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+    "assets/source/combat/lithrusk/registration.json": "e77e0fd0b755d2a5c161dedb62d694b44cb7962e5bbcdd333cea4b93dcf781e5",
+    "assets/source/combat/veylume/README.md": "3fc233e3c817ab56c11273b5a965e8c5f1aa31556c16f02c086195590f154d11",
+    "assets/source/combat/veylume/actions_charge_flash.png": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+    "assets/source/combat/veylume/actions_spark_charge.png": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+    "assets/source/combat/veylume/base_hover_flight.png": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+    "assets/source/combat/veylume/charged_hold.png": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+    "assets/source/combat/veylume/reactions_hurt_defeat.png": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+    "assets/source/combat/veylume/registration.json": "7c82369d1e866a951cf0f52de350e2b48dcbbebff497e8455d571b18d3088a5c",
+    "assets/ui/fonts/AtkinsonHyperlegible-Bold.ttf": "5a3b0c8cc8ca545155150b4512a1fa248298df121c50d6557e651e61fbdab92f",
+    "assets/ui/fonts/AtkinsonHyperlegible-Regular.ttf": "7fb917c89019896d0b52ee84b7cbb3304c18cb90b19a62f5e32712bd23e97669",
+    "assets/ui/fonts/DejaVuSans.ttf": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+    "assets/ui/fonts/DejaVuSerif.ttf": "8cb29f7db250ebb2551a6ce2c1e0bfd5a0eb520e9e233370db0493e82e1f36f7",
+    "battle_action_audio.py": "0f293129034e64a1f617ded45ab1a2be697548d3512207313617a3a77aab6ac4",
+    "battle_action_fx.py": "9e9dfbe44b108395b16309e1031c774f1698cf39d223c4fdb9b1e29b136d9f37",
+    "battle_choreography.py": "34b6543a8fd36592ee7ebe065add9862b457a259183635d2daa09617dd8c200a",
+    "battle_model.py": "1b50cb262017fbbd6c2591dd7774f86abaab65427c6e0acc1441e7161d148245",
+    "battle_scene.py": "ac0dbe6c6c54fd08aaea013a31769d8264198402ce3fb0835afa19fc808fabe4",
+    "bestiary.py": "620729bd05b9ed6a12a782bbc9165429466cd60272beca00564a80bf51e91efe",
+    "character_attributes.py": "ec293cbe73705509e825d7e7bea19121400835de020ca3f42ae48851d0e3ed97",
+    "combat_damage.py": "609063367c7910f222abadd62c601327743767d324c19e9893e6b45f66e5b28f",
+    "combat_motion_art.py": "631feb7e6b553c2fa53b6400b1c2ccb30c07161686b47b5ace72a5be3613aac9",
+    "enemy_growth.py": "820ca38e61db22741620c4922ab465dadb4703ab6ea67b78dc389d2dd77446b9",
+    "gearblade_art.py": "3c0b287aa30545f68e7b00f41f29d38e6b96a40a01d0328878377fc75c2958d5",
+    "gearblade_fx.py": "dc07e5c00f76eba53b81afca424ad4b7329cfadf019388b6e00c4bb4bdfdbd32",
+    "leveling.py": "8cf11a5874b041cb5400e7c0a012f7b84a63694e6fcd3be3e515ffb6b7527ef8",
+    "main.py": "8640650536055e68f2dd5ddf76742339649b0a7ca8bb6a71a1d46ea77e7fc757",
+    "tools/build_lithrusk_combat.py": "09a9c7a65f2a477ae7410132f85319754bd60c5b7b80e1a2566722e01a5b2e41",
+    "tools/build_veylume_combat.py": "0f705b6d58322f81df80af55ff675442e72dfc51ab853112cff6793537c4c340",
+    "tools/capture_cave_enemy_combat.py": "602c52ce15480bedf112c1fbc9265f61f4ebda9d610c1ec53869824cc296e10b",
+    "ui_style.py": "8a8594a907bcfc6b773ba3ad1654fd7578bb5438479034b154041926c4bc18c4"
+  },
+  "artifact_sha256": {
+    "README.md": "0369b4c4a261de5f701040be9a69e28c72b41f3ca072d6bedb2a9938fc038986",
+    "battle_contact_sheet.png": "70dfdc81bb438e634b00946ce0210a9f59cb4b687e907ea2b52a1ddecadd69e3",
+    "combat_reel_silent.mp4": "3b082c41274e4b031516b4dda8996ea17ec92461ae72d37e22f014fc7f83e465",
+    "lithrusk_claw_clamp.png": "95eb5059466e2b3e86bf1c4701464ce33360a7d4357b30d51f86125def28e1b6",
+    "lithrusk_defeat.png": "c5ec163fb43d568bf6b62e09a32f1fbf9e10e543c5b4d0dd7c090ec70bd2d0cc",
+    "lithrusk_shell_bash.png": "1e2f37a8da2dceabaf071dc92b791246beb4c3cadcbb68e8ea28ba250bbe0841",
+    "sprite_animations.gif": "1035186de52d6c212538d706b9dddb4bb49f1a215c3b5177f64a69cf109540ea",
+    "sprite_contact_sheet.png": "c111794d742ad4878dcd5a6e0a8dd5dcaaaeab5038eb2d499ba199a57bef03b1",
+    "veylume_charged_hold.png": "6c78e7227ee4073716723c937a46f07970de38af47832224c3f7ff77b709d759",
+    "veylume_defeat.png": "8fc1ca311372180e7aaff9320de3eac6fbe146ce5e413749f1822e8ebffaaced",
+    "veylume_gather_charge.png": "d6679016c6e4cf3d2f9f9753b7748219524849518a4636c241ea94654ec367b0",
+    "veylume_static_spark.png": "a9a733f7cb979a9d8ac4002d7cabecfa27bfbdc4ef4cf3017ca61b3612885ac6",
+    "veylume_veinflash.png": "da37616ac9abc33f900cf837f3b5bbc07393e74e055fb77af1835d89e8dde9d6"
+  },
+  "animations": {
+    "lithrusk:idle": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 1600,
+      "loop": true,
+      "previewed_frame_count": 16
+    },
+    "lithrusk:walk": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 1120,
+      "loop": true,
+      "previewed_frame_count": 16
+    },
+    "lithrusk:claw_clamp": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 800,
+      "loop": false,
+      "previewed_frame_count": 16
+    },
+    "lithrusk:shell_bash": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 950,
+      "loop": false,
+      "previewed_frame_count": 16
+    },
+    "lithrusk:hurt": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 500,
+      "loop": false,
+      "previewed_frame_count": 16
+    },
+    "lithrusk:defeat": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 1000,
+      "loop": false,
+      "previewed_frame_count": 16
+    },
+    "veylume:idle": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 1280,
+      "loop": true,
+      "previewed_frame_count": 16
+    },
+    "veylume:fly": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 960,
+      "loop": true,
+      "previewed_frame_count": 16
+    },
+    "veylume:static_spark": {
+      "frames": 16,
+      "unique_frames": 16,
+      "duration_ms": 850,
+      "loop": false,
+      "previewed_frame_count": 16
+    },
+    "veylume:gather_charge": {
+      "frames": 24,
+      "unique_frames": 24,
+      "duration_ms": 800,
+      "loop": false,
+      "previewed_frame_count": 24
+    },
+    "veylume:charged_hold": {
+      "frames": 32,
+      "unique_frames": 32,
+      "duration_ms": 1600,
+      "loop": true,
+      "previewed_frame_count": 32
+    },
+    "veylume:veinflash": {
+      "frames": 24,
+      "unique_frames": 24,
+      "duration_ms": 1000,
+      "loop": false,
+      "previewed_frame_count": 24
+    },
+    "veylume:hurt": {
+      "frames": 12,
+      "unique_frames": 12,
+      "duration_ms": 500,
+      "loop": false,
+      "previewed_frame_count": 12
+    },
+    "veylume:defeat": {
+      "frames": 20,
+      "unique_frames": 20,
+      "duration_ms": 1200,
+      "loop": false,
+      "previewed_frame_count": 20
+    }
+  },
+  "video": {
+    "fps": 30,
+    "frames": 545,
+    "seconds": 18.167,
+    "size": [
+      960,
+      704
+    ],
+    "clips": [
+      {
+        "start_seconds": 0.0,
+        "duration_seconds": 1.0,
+        "reason": "lithrusk idle"
+      },
+      {
+        "start_seconds": 1.0,
+        "duration_seconds": 0.8,
+        "reason": "lithrusk lithrusk_claw_clamp"
+      },
+      {
+        "start_seconds": 1.8,
+        "duration_seconds": 0.967,
+        "reason": "lithrusk lithrusk_shell_bash"
+      },
+      {
+        "start_seconds": 2.767,
+        "duration_seconds": 1.367,
+        "reason": "lithrusk receives hit"
+      },
+      {
+        "start_seconds": 4.133,
+        "duration_seconds": 1.367,
+        "reason": "lithrusk receives lethal hit"
+      },
+      {
+        "start_seconds": 5.5,
+        "duration_seconds": 2.2,
+        "reason": "lithrusk defeat"
+      },
+      {
+        "start_seconds": 7.7,
+        "duration_seconds": 1.0,
+        "reason": "veylume idle"
+      },
+      {
+        "start_seconds": 8.7,
+        "duration_seconds": 0.867,
+        "reason": "veylume veylume_static_spark"
+      },
+      {
+        "start_seconds": 9.567,
+        "duration_seconds": 0.8,
+        "reason": "veylume veylume_gather_charge"
+      },
+      {
+        "start_seconds": 10.367,
+        "duration_seconds": 1.0,
+        "reason": "veylume charged hold between ATB turns"
+      },
+      {
+        "start_seconds": 11.367,
+        "duration_seconds": 1.0,
+        "reason": "veylume veylume_veinflash"
+      },
+      {
+        "start_seconds": 12.367,
+        "duration_seconds": 0.867,
+        "reason": "veylume free Spark after MP depletion"
+      },
+      {
+        "start_seconds": 13.233,
+        "duration_seconds": 1.367,
+        "reason": "veylume receives hit"
+      },
+      {
+        "start_seconds": 14.6,
+        "duration_seconds": 1.367,
+        "reason": "veylume receives lethal hit"
+      },
+      {
+        "start_seconds": 15.967,
+        "duration_seconds": 2.2,
+        "reason": "veylume defeat"
+      }
+    ]
+  },
+  "encounters": [
+    {
+      "actor": "lithrusk",
+      "level": 3,
+      "enemy_actions": [
+        {
+          "action": "lithrusk_claw_clamp",
+          "mp": 0,
+          "target": "player",
+          "time": 6.7333
+        },
+        {
+          "action": "lithrusk_shell_bash",
+          "mp": 0,
+          "target": "player",
+          "time": 14.2333
+        },
+        {
+          "action": "lithrusk_claw_clamp",
+          "mp": 0,
+          "target": "player",
+          "time": 21.9333
+        },
+        {
+          "action": "lithrusk_shell_bash",
+          "mp": 0,
+          "target": "player",
+          "time": 29.4333
+        },
+        {
+          "action": "lithrusk_claw_clamp",
+          "mp": 0,
+          "target": "player",
+          "time": 37.9
+        },
+        {
+          "action": "lithrusk_shell_bash",
+          "mp": 0,
+          "target": "player",
+          "time": 46.2333
+        },
+        {
+          "action": "lithrusk_claw_clamp",
+          "mp": 0,
+          "target": "player",
+          "time": 54.7
+        },
+        {
+          "action": "lithrusk_shell_bash",
+          "mp": 0,
+          "target": "player",
+          "time": 63.0
+        },
+        {
+          "action": "lithrusk_claw_clamp",
+          "mp": 0,
+          "target": "player",
+          "time": 71.5
+        }
+      ],
+      "events": [
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "name": "Claw Clamp"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "damage": 10,
+          "remaining_hp": 9989,
+          "guarded": true,
+          "frame_age": 0.021486643437816873
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "name": "Shell Bash"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "damage": 12,
+          "remaining_hp": 9977,
+          "guarded": true,
+          "frame_age": 0.009639953542300524
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "name": "Claw Clamp"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "damage": 9,
+          "remaining_hp": 9968,
+          "guarded": true,
+          "frame_age": 0.031126596980117167
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "name": "Shell Bash"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "damage": 12,
+          "remaining_hp": 9956,
+          "guarded": true,
+          "frame_age": 0.01927990708460082
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 26,
+          "remaining_hp": 114,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "name": "Claw Clamp"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "damage": 19,
+          "remaining_hp": 9937,
+          "guarded": false,
+          "frame_age": 0.007433217189085135
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 27,
+          "remaining_hp": 87,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "name": "Shell Bash"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "damage": 25,
+          "remaining_hp": 9912,
+          "guarded": false,
+          "frame_age": 0.028919860626901835
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 26,
+          "remaining_hp": 61,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "name": "Claw Clamp"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "damage": 18,
+          "remaining_hp": 9894,
+          "guarded": false,
+          "frame_age": 0.017073170731384764
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 25,
+          "remaining_hp": 36,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "name": "Shell Bash"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_shell_bash",
+          "target": "player",
+          "damage": 23,
+          "remaining_hp": 9871,
+          "guarded": false,
+          "frame_age": 0.005226480835867693
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 27,
+          "remaining_hp": 9,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "name": "Claw Clamp"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "lithrusk_claw_clamp",
+          "target": "player",
+          "damage": 19,
+          "remaining_hp": 9852,
+          "guarded": false,
+          "frame_age": 0.026713124273683726
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 26,
+          "remaining_hp": 0,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "result",
+          "outcome": "victory"
+        }
+      ],
+      "states_seen": [
+        "claw_clamp",
+        "defeat",
+        "hurt",
+        "idle",
+        "shell_bash",
+        "walk"
+      ],
+      "outcome": "victory",
+      "source_character_unchanged": true,
+      "simulation_seconds": 79.833
+    },
+    {
+      "actor": "veylume",
+      "level": 4,
+      "enemy_actions": [
+        {
+          "action": "veylume_static_spark",
+          "mp": 11,
+          "target": "player",
+          "time": 6.4333
+        },
+        {
+          "action": "veylume_gather_charge",
+          "mp": 11,
+          "target": "enemy",
+          "time": 13.7
+        },
+        {
+          "action": "veylume_veinflash",
+          "mp": 7,
+          "target": "player",
+          "time": 20.9333
+        },
+        {
+          "action": "veylume_static_spark",
+          "mp": 7,
+          "target": "player",
+          "time": 28.3667
+        },
+        {
+          "action": "veylume_gather_charge",
+          "mp": 7,
+          "target": "enemy",
+          "time": 35.6333
+        },
+        {
+          "action": "veylume_veinflash",
+          "mp": 3,
+          "target": "player",
+          "time": 42.8667
+        },
+        {
+          "action": "veylume_static_spark",
+          "mp": 3,
+          "target": "player",
+          "time": 50.3
+        },
+        {
+          "action": "veylume_static_spark",
+          "mp": 3,
+          "target": "player",
+          "time": 57.5667
+        },
+        {
+          "action": "veylume_static_spark",
+          "mp": 3,
+          "target": "player",
+          "time": 64.8333
+        },
+        {
+          "action": "veylume_static_spark",
+          "mp": 3,
+          "target": "player",
+          "time": 72.9
+        },
+        {
+          "action": "veylume_static_spark",
+          "mp": 3,
+          "target": "player",
+          "time": 80.9667
+        }
+      ],
+      "events": [
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 21,
+          "remaining_hp": 9978,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_gather_charge",
+          "target": "enemy",
+          "name": "Gather Charge"
+        },
+        {
+          "type": "telegraph",
+          "actor": "enemy",
+          "action": "veylume_gather_charge",
+          "target": "player",
+          "prepared_action": "veylume_veinflash",
+          "hold_after": 0.4,
+          "frame_age": 0.0
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_veinflash",
+          "target": "player",
+          "name": "Veinflash"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_veinflash",
+          "target": "player",
+          "damage": 35,
+          "remaining_hp": 9943,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 20,
+          "remaining_hp": 9923,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_gather_charge",
+          "target": "enemy",
+          "name": "Gather Charge"
+        },
+        {
+          "type": "telegraph",
+          "actor": "enemy",
+          "action": "veylume_gather_charge",
+          "target": "player",
+          "prepared_action": "veylume_veinflash",
+          "hold_after": 0.4,
+          "frame_age": 0.0
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_veinflash",
+          "target": "player",
+          "name": "Veinflash"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_veinflash",
+          "target": "player",
+          "damage": 35,
+          "remaining_hp": 9888,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 20,
+          "remaining_hp": 9868,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 20,
+          "remaining_hp": 9848,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "guard",
+          "target": "player",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 21,
+          "remaining_hp": 9827,
+          "guarded": true,
+          "frame_age": 0.016666666666666614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 42,
+          "remaining_hp": 40,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 41,
+          "remaining_hp": 9786,
+          "guarded": false,
+          "frame_age": 0.016666666666667614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 38,
+          "remaining_hp": 2,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "name": "Static Spark"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "veylume_static_spark",
+          "target": "player",
+          "damage": 40,
+          "remaining_hp": 9746,
+          "guarded": false,
+          "frame_age": 0.016666666666667614
+        },
+        {
+          "type": "player_ready",
+          "actor": "player"
+        },
+        {
+          "type": "action_started",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "name": "Attack"
+        },
+        {
+          "type": "impact",
+          "actor": "player",
+          "action": "attack",
+          "target": "enemy",
+          "damage": 39,
+          "remaining_hp": 0,
+          "guarded": false,
+          "frame_age": 0.013333333333333315
+        },
+        {
+          "type": "result",
+          "outcome": "victory"
+        }
+      ],
+      "states_seen": [
+        "charged_hold",
+        "defeat",
+        "fly",
+        "gather_charge",
+        "hurt",
+        "idle",
+        "static_spark",
+        "veinflash"
+      ],
+      "outcome": "victory",
+      "source_character_unchanged": true,
+      "simulation_seconds": 90.533
+    }
+  ],
+  "captures": [
+    {
+      "file": "lithrusk_claw_clamp.png",
+      "actor": "lithrusk",
+      "state": "claw_clamp",
+      "action": "lithrusk_claw_clamp",
+      "elapsed": 0.4214866434378169,
+      "enemy_mp": 0,
+      "enemy_hp": 140,
+      "target": "player"
+    },
+    {
+      "file": "lithrusk_shell_bash.png",
+      "actor": "lithrusk",
+      "state": "shell_bash",
+      "action": "lithrusk_shell_bash",
+      "elapsed": 0.5096399535423005,
+      "enemy_mp": 0,
+      "enemy_hp": 140,
+      "target": "player"
+    },
+    {
+      "file": "lithrusk_defeat.png",
+      "actor": "lithrusk",
+      "state": "defeat",
+      "enemy_hp": 0
+    },
+    {
+      "file": "veylume_static_spark.png",
+      "actor": "veylume",
+      "state": "static_spark",
+      "action": "veylume_static_spark",
+      "elapsed": 0.4666666666666666,
+      "enemy_mp": 11,
+      "enemy_hp": 82,
+      "target": "player"
+    },
+    {
+      "file": "veylume_gather_charge.png",
+      "actor": "veylume",
+      "state": "gather_charge",
+      "action": "veylume_gather_charge",
+      "elapsed": 0.4,
+      "enemy_mp": 11,
+      "enemy_hp": 82,
+      "target": "enemy"
+    },
+    {
+      "file": "veylume_charged_hold.png",
+      "actor": "veylume",
+      "state": "charged_hold",
+      "enemy_mp": 11,
+      "target": "player"
+    },
+    {
+      "file": "veylume_veinflash.png",
+      "actor": "veylume",
+      "state": "veinflash",
+      "action": "veylume_veinflash",
+      "elapsed": 0.5666666666666667,
+      "enemy_mp": 7,
+      "enemy_hp": 82,
+      "target": "player"
+    },
+    {
+      "file": "veylume_defeat.png",
+      "actor": "veylume",
+      "state": "defeat",
+      "enemy_hp": 0
+    }
+  ],
+  "no_user_save_or_settings_files": true,
+  "persistent_attributes_unchanged": true,
+  "fixtures": [
+    "Real Game/BattleScene on Eldenmere review stage; no cave world encounters.",
+    "In-memory journey and disposable settings directory.",
+    "Initial same-level offensive stats with review-only 9999 HP endurance.",
+    "Real 30 FPS ATB and mouse Guard/Attack; no resource, gauge or pose injection.",
+    "Included actions remain real-time; repeated actions and charging waits omitted."
+  ]
+}
