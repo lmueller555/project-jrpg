@@ -6,10 +6,10 @@ IDs under `enemies`. [`bestiary.py`](../bestiary.py) validates the complete
 dictionary and resolves a species at an explicitly selected level.
 
 The dictionary contains four computed Sanctuary cave species: **Cave Bat**,
-**Lithrusk**, **Veylume** and the level-seven miniboss **Vespermaw**. Vespermaw's
-combat implementation is pending; its dedicated sprite bank is ready, but it
-is not placed in the cave yet. The
-dictionary preserves the existing fixed Bat and Ridgeback Tusker records for
+**Lithrusk**, **Veylume** and the level-seven miniboss **Vespermaw**. Vespermaw is
+a one-time story encounter in the cave's final Echo Chamber, with its dedicated
+sprite bank and full combat cycle. The dictionary preserves the existing fixed
+Bat and Ridgeback Tusker records for
 their authored test and MQ02 encounters. Fixed records
 retain their exact stats, abilities and item drops. Their computed-species
 tuning and elemental profiles have not been assigned. The live victory owner
@@ -193,7 +193,7 @@ is neutral.
 | Fighting style | Telegraphed Windup |
 | Species adjustments | Magick ×1.35, Speed ×0.80 |
 | Tier adjustments | HP ×2.50 |
-| Intended encounter | One-time story battle with one Vespermaw |
+| Encounter | One-time Echo Chamber story battle with one Vespermaw |
 | Planned Stagger resistance | Normal (moderate) |
 
 All omitted multipliers are ×1. The approved profile, species and tier factors
@@ -215,13 +215,14 @@ are composed before the single final rounding/cap step.
 | XP reward | 1,110 |
 
 The reward is ten times the reduced level-seven normal-monster reward of
-111 EXP. On a future live victory, each surviving active combatant receives
+111 EXP. On victory, each surviving active combatant receives
 the full 1,110 EXP. Guaranteed drops are one `aether_amethyst` and one
 `aether_sapphire`, both existing material items. Previewing this record does
 not grant EXP, items or story progress.
 
-The complete approved action design is stored in the entry's validated
-`combat_design` block, separately from the live action catalogue:
+The approved action design is retained in the entry's validated `combat_design`
+block with `status: ready`, and its five actions are registered in the live
+action catalogue:
 
 | Ability | Action ID | Category / target | Potency | MP |
 | --- | --- | --- | ---: | ---: |
@@ -231,18 +232,24 @@ The complete approved action design is stored in the entry's validated
 | Ruinous Pounce | `vespermaw_ruinous_pounce` | Non-Elemental physical / marked character | 1.40 | 0 |
 | Exhausted | `vespermaw_exhausted` | Recovery / self | 0 | 0 |
 
-The intended cycle is **Raking Claw → Confluence Roar → Gather Resonance →
+The live cycle is **Raking Claw → Confluence Roar → Gather Resonance →
 Ruinous Pounce → Exhausted**, then repeat. Raking Claw is the free fallback
 when the Roar's MP cost cannot be paid. Single-target pressure cycles through
 living party members. Gather Resonance announces and locks the Pounce target;
 that character must receive at least one opportunity to act before the hit.
-Retargeting requires a fresh warning rather than an unannounced Pounce.
+Retargeting requires a fresh warning and another response opportunity.
+Confluence Roar resolves a separate magical hit against each living active
+party member. Each member's Magick Defense, Guard and variance apply to their
+own hit; KO characters and bots are excluded. Its six MP is spent once.
 
 After Pounce, Vespermaw takes 25% more damage and spends its next turn recovering.
 That vulnerability ends immediately before the next Raking Claw begins. This
 window is independent of the future Stagger mechanic. Initial tuning assumes
 a rested three-character party around levels five through seven and does not
-require in-battle healing.
+require in-battle healing. The current pending-MQ03 route naturally provides
+Caelan and Mira; a rested level-six-to-seven pair has enough damage and
+survivability when using Aether Edge, Overclock and Guard against the marked
+Pounce. This encounter does not recruit Lucan or change his story ownership.
 
 | Incoming element | Response |
 | --- | ---: |
@@ -261,18 +268,30 @@ against Electric attacks but is vulnerable to erosion by Water. Ground
 absorption takes precedence over its stored damage percentage. As with the
 other species, elemental responses and Stagger remain hidden planning data.
 
-`combat_design.status` is `pending_runtime`: party-wide damage, the recovery
-vulnerability and the guaranteed marked-character response opportunity still
-need combat support. `metadata['combat_pending']` reports this state. The
-complete sequence is preserved for authoring, but battle construction rejects
-it instead of substituting a single-target Roar or a fake recovery attack.
+`combat_design.status` is `ready` and `metadata['combat_pending']` is false.
+Party-wide damage, the recovery vulnerability and the guaranteed marked-character
+response opportunity are active. Pending designs for future enemies remain
+blocked by the adapter until their own action rules are implemented.
 Presentation references the dedicated `vespermaw` bank, with direct aliases
 from the five designed action IDs to their matching animation states. The
 [combat art bank](VESPERMAW_COMBAT_ART.md) supplies 256 authored poses across
 ten animations, including idle, prowl, charged hold, hurt and defeat.
-Art readiness does not activate the missing combat mechanics: the
-`combat_pending` gate remains in place. This does not add a random encounter,
-place a story trigger, resolve MQ03's arrival or activate the boss fight.
+
+Approaching the Echo Chamber offers **Enter / Party / Step back**. Entry uses a
+short crystal-and-growl introduction and the dedicated Echo Chamber battlefield.
+Party selection respects existing story locks and never heals or levels anyone.
+The fight uses the ordinary 0–50% opening ATB range; its saved combat seed makes
+an unfinished entry repeatable on Continue. Flee is unavailable during this boss
+battle. Defeat offers **Retry / Return to the Quiet Shelf**, restoring captured
+entry HP/MP and granting no rewards. Recovery remains available at the nearby
+Sanctuary visitor bed after leaving the cave.
+
+The boss has its own durable state and fixed reward receipt. The defeated flag
+is saved with the XP/drop transaction, and pending spoils remain resumable after
+a failed save or Continue. A completed victory permanently disables the trigger;
+revisiting cannot repeat rewards. It remains excluded from random pools and does
+not complete MQ03, resolve the pending Sanctuary arrival, change escort ownership
+or end Kindled Courage. See the [live encounter review](reviews/vespermaw_encounter/README.md).
 
 ## Authoring before art
 
@@ -469,6 +488,7 @@ than silently substituting another style.
    An authoring-only `combat_design` can retain unsupported actions and their
    windup/recovery rules with `status: pending_runtime`; these records remain
    unavailable to the combat adapter until runtime support is implemented.
+   A `ready` design must match its registered live actions and supported rules.
 4. Author a complete `elemental_profile`, including all nine damage percentages,
    matching-element absorption and a rationale for the clues players can infer.
    Consider identity early enough to inform the monster's name, visual design,

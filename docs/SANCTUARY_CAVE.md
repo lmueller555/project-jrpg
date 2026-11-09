@@ -102,18 +102,31 @@ The six original encounter spaces remain layout references. Random selection
 uses the player's actual location throughout the continuous cave.
 
 The entrance apron, High Overlook, Quiet Shelf and Echo Chamber are protected.
-The Echo Chamber reserves the future level-seven miniboss,
-[Vespermaw](BESTIARY.md#vespermaw). Its Bestiary entry records the solo story
-encounter design, stats, elements, rewards and complete action cycle. Its
-[combat art](VESPERMAW_COMBAT_ART.md) is ready. Party-wide Roar damage, Pounce
-response rules, recovery vulnerability and the actual encounter trigger remain
-pending. It is excluded from random pools.
-The Quiet Shelf provides
-a preparation pause without restoring HP or MP. Battle entry focuses the party,
-presents a loading screen and reveals one of four animated cave battlefields.
-Victory/flee return to the same cave position and reset the distance budget.
+The Echo Chamber contains the level-seven miniboss,
+[Vespermaw](BESTIARY.md#vespermaw), as a one-time solo story encounter. The
+approach offers **Enter / Party / Step back**, with a short crystal-and-growl
+introduction before the dedicated animated Echo Chamber battlefield. Its
+[combat art](VESPERMAW_COMBAT_ART.md), party-wide Roar, marked Pounce response
+and recovery vulnerability are active. It remains excluded from random pools.
+The Quiet Shelf provides a preparation pause without restoring HP or MP.
 
-The arrival cutscene, miniboss implementation, further combat tuning and
+Boss entry checkpoints the formation, current party resources, safe approach
+and opening combat seed. Continue restarts an unfinished fight from that entry
+checkpoint. Flee is disabled during the boss battle; defeat offers **Retry /
+Return to the Quiet Shelf** with pre-fight HP/MP restored and no rewards.
+Victory awards 1,110 EXP to each living active member plus one Aether Amethyst
+and one Aether Sapphire through the standard spoils transaction. The saved
+defeated flag prevents the encounter and rewards from repeating after Continue
+or revisiting. Boss completion leaves MQ03 and its pending arrival untouched;
+the previous music resumes through the existing battle music owner.
+
+Random battle entry focuses the party, presents a loading screen and reveals
+one of four regional animated cave battlefields. Victory/flee return to the
+same cave position and reset the random distance budget. The boss owns its own
+entry and completion records instead of consuming a random-encounter ticket.
+See the [live encounter review](reviews/vespermaw_encounter/README.md).
+
+The arrival cutscene, further combat tuning and
 post-boss resolution remain later work. The cave does not establish the
 confluence's detailed workings, identify the original sacrificial temple or
 merge this location with the historically sealed workers' passage.

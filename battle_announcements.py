@@ -100,6 +100,10 @@ def enemy_charge_warnings(model, display_name=None):
         source = _name(model, actor, display_name)
         suffix = ' → '+_name(model, target, display_name) if target is not None else ''
         text = source+(' unleashes ' if releasing else ' readies ')+action_name+suffix
+        if attack == 'vespermaw_ruinous_pounce':
+            # A solo boss's name is already on its field header. Keep the marked
+            # character on the first page even with minimum-size enlarged text.
+            text = action_name+suffix
         warnings.append({'text': text, 'kind': 'warning', 'actor': actor,
                          'action': attack, 'action_name': action_name, 'target': target,
                          'stage': stage, 'age': 0., 'duration': _duration(text)})
@@ -118,9 +122,28 @@ class BattleAnnouncements:
         self._warning_key = None
         self._warning_origin = 0.
         self._showing_warning = False
+        self._recovery_key = None
+        self._recovery_origin = 0.
 
     @property
     def warnings(self):return enemy_charge_warnings(self.model, self.display_name)
+
+    def _recovery_notice(self, actor, action=None):
+        multiplier = getattr(self.model, 'enemy_recovery_states', {}).get(actor)
+        if multiplier is None:return None
+        increase = round((multiplier-1)*100)
+        return {'text': _name(self.model, actor, self.display_name)
+                +' is exhausted — takes '+str(increase)+'% more damage.',
+                'kind': 'event', 'actor': actor, 'action': action, 'recovery': True}
+
+    def _prune_recovery(self):
+        states = getattr(self.model, 'enemy_recovery_states', {})
+        key = tuple(states.items())
+        if key != self._recovery_key:
+            self._recovery_key, self._recovery_origin = key, self._elapsed
+        def valid(message):return not message.get('recovery') or message.get('actor') in states
+        if self._current is not None and not valid(self._current):self._current = None
+        self._queue = deque((message for message in self._queue if valid(message)), maxlen=6)
 
     def clear(self):
         self._current = None
@@ -128,12 +151,14 @@ class BattleAnnouncements:
         self._action_token = None
         self._warning_key = None
         self._showing_warning = False
+        self._recovery_key = None
 
     def _ability(self, actor, identifier, name=None):
         if not isinstance(identifier, str) or not isinstance(actor, str):return None
         record = self.model.actions.get(identifier)
         if (record is None or identifier == basic_attack(self.model, actor)
                 or record['kind'] in ('guard', 'flee')):return None
+        if record['kind'] == 'recover':return self._recovery_notice(actor, identifier)
         label = _text(name) or record['name']
         source = _name(self.model, actor, self.display_name)
         return {'text': source+' — '+label if source else label,
@@ -202,6 +227,7 @@ class BattleAnnouncements:
         if self.model.phase in RESULTS:
             self.clear()
             return None
+        self._prune_recovery()
         self._sync_action()
         warnings = self._sync_warning_cycle()
         self._defer_for_warning()
@@ -213,7 +239,14 @@ class BattleAnnouncements:
         self._next_notice()
         if self._current is not None:
             return dict(self._current)
-        if not warnings:return None
+        if not warnings:
+            for enemy in self.model.enemies:
+                notice = self._recovery_notice(enemy.identifier)
+                if enemy.hp and notice is not None:
+                    duration = _duration(notice['text'])
+                    return dict(notice, age=(self._elapsed-self._recovery_origin) % duration,
+                                duration=duration)
+            return None
         period = sum(item['duration'] for item in warnings)
         age = (self._elapsed-self._warning_origin) % period
         for warning in warnings:
@@ -237,9 +270,20 @@ class BattleAnnouncements:
             else:self._show(self._ability(actor, event.get('action'), event.get('name')),
                             replace=True, priority=2)
             return
+        if kind == 'telegraph' and event.get('prepared_action') == 'vespermaw_ruinous_pounce':
+            # The marked character must be visible as soon as the model commits
+            # or changes the warning, including during Gather's follow-through.
+            self._current = None
+            self._action_token = self.model.current_action
+            return
         name = _name(self.model, actor, self.display_name)
         message = None
-        if kind in ('event', 'emote', 'narration', 'special_event'):
+        if kind == 'recovery_started':
+            message = self._recovery_notice(actor, event.get('action'))
+        elif kind == 'recovery_ended':
+            self._prune_recovery()
+            return
+        elif kind in ('event', 'emote', 'narration', 'special_event'):
             text = _text(event.get('text'))
             if text:
                 message = {'text': (name+' — ' if kind == 'emote' and name else '')+text,
@@ -276,6 +320,7 @@ class BattleAnnouncements:
             self.clear()
             return
         self._elapsed += seconds
+        self._prune_recovery()
         self._sync_action()
         self._sync_warning_cycle()
         self._defer_for_warning()

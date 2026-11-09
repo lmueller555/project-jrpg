@@ -1,4 +1,4 @@
-"""Compose four native cave battle stages from the approved limestone pack.
+"""Compose native cave battle stages from the approved limestone pack.
 
 The recipe references real continuous-cave rooms and retained terrain modules.
 Lighting and water are compiled into a short background cycle; no characters,
@@ -21,6 +21,8 @@ SOURCE = ROOT/'assets/source/combat/cave_battlefields/recipe.json'
 SIZE = (480, 320)
 FRAME_COUNT = 24
 FRAME_MS = 250
+FIELD_IDS = frozenset(('cave_outer', 'cave_grotto', 'cave_hollow', 'cave_depths',
+                       'cave_echo_chamber'))
 
 
 def encoded(image):
@@ -36,6 +38,12 @@ def products():
             or spec.get('frame_duration_ms') != FRAME_MS
             or spec.get('reduced_motion_frame') != 8):
         raise ValueError('Invalid cave battlefield recipe dimensions or timing')
+    fields = spec.get('fields')
+    if (not isinstance(fields, list) or len(fields) != len(FIELD_IDS)
+            or any(not isinstance(field, dict) or not isinstance(field.get('id'), str)
+                   for field in fields)
+            or {field['id'] for field in fields} != FIELD_IDS):
+        raise ValueError('Invalid cave battlefield recipe roster')
     used = {SOURCE, Path(__file__).resolve()}
     result = {}
     source_map = ROOT/spec['source_map']

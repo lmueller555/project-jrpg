@@ -26,7 +26,8 @@ def overview_rows(catalogue):
                'stat_profile': entry.get('stat_profile', ''),
                'fighting_style': entry.get('fighting_style', ''),
                'element': entry.get('elemental_profile', {}).get('element', 'unassigned'),
-               'combat_pending': 'combat_design' in entry,
+               'combat_pending': (bool(entry.get('combat_design'))
+                                  and entry['combat_design']['status'] != 'ready'),
                'presentation_pending': (entry.get('mode') == 'species'
                                         and entry['presentation']['sprite_id'] is None)}
 
@@ -122,7 +123,9 @@ def main(argv=None):
                                          'pending (models/animations deferred)'))
             design = record['metadata'].get('combat_design')
             if design is not None:
-                print('Combat: pending (authored design; runtime mechanics deferred)')
+                pending = record['metadata'].get('combat_pending', True)
+                print('Combat: pending (authored design; runtime mechanics deferred)' if pending
+                      else 'Combat: ready (live action rules)')
                 print()
                 table([{'Action': identifier, 'Name': action['name'],
                         'Kind': action['kind'], 'Target': action['target'],
@@ -136,7 +139,8 @@ def main(argv=None):
                 print('Recovery: damage taken ×'+str(recovery['damage_taken_multiplier'])
                       +' after '+recovery['after_action']+' until '
                       +recovery['ends_before_action']+' begins.')
-                print('Encounter: one-time solo story battle; not placed.')
+                print('Encounter: one-time solo story battle; not placed.' if pending
+                      else 'Encounter: one-time solo story battle.')
             profile = record['metadata'].get('elemental_profile')
             print()
             if profile is None:

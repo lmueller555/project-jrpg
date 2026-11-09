@@ -181,6 +181,7 @@ class BattleScene:
         self._cue_phases = set()
         self._enemy_charge_time = None
         self._enemy_charge_times = {}
+        self._enemy_recovery_times = {}
         self._last_phase = model.phase
         self._notice = ''
         self.panel_rect = pygame.Rect(8, 232, 464, 80)
@@ -948,6 +949,7 @@ class BattleScene:
         self._action_cues()
         self._phase_elapsed = (0.0 if self.model.phase != self._last_phase
                                else self._phase_elapsed+seconds)
+        roar_impact_cued = False
         for event in self.model.drain_events():
             self.announcements.consume(event)
             self._tutorial_event(event)
@@ -955,9 +957,10 @@ class BattleScene:
                 age = max(0., event.get('frame_age', 0.))
                 self._reactions[event['target']] = {'age': age, 'guarded': event.get('guarded', False),
                     'lethal': not event['remaining_hp'], 'action': event['action']}
-                if age < .12:
+                if age < .12 and (event['action'] != 'vespermaw_confluence_roar' or not roar_impact_cued):
                     metallic = event.get('guarded') and (event['target'] != 'player' or self.model.weapon_equipped)
                     self.action_audio.play('guard_hit' if metallic else 'impact')
+                    if event['action'] == 'vespermaw_confluence_roar':roar_impact_cued = True
                 self._popups.append({'target': event['target'],
                                      'text': str(event['damage']), 'age': age,
                                      'guarded': event.get('guarded', False)})
@@ -982,6 +985,17 @@ class BattleScene:
                 self._enemy_charge_time = (self._elapsed-max(0., event.get('frame_age', 0.))
                                            +event.get('hold_after', 0.))
                 self._enemy_charge_times[event.get('actor', 'enemy')] = self._enemy_charge_time
+            elif event['type'] == 'recovery_started':
+                definition = self.model.actions.get(event.get('action'), {})
+                remaining = max(0., definition.get('duration', 0)-definition.get('impact_at', 0))
+                self._enemy_recovery_times[event.get('actor', 'enemy')] = (
+                    self._elapsed-max(0., event.get('frame_age', 0.))+remaining)
+            elif event['type'] == 'recovery_ended':
+                self._enemy_recovery_times.pop(event.get('actor', 'enemy'), None)
+            elif event['type'] == 'result':
+                self._enemy_recovery_times.clear()
+                self._enemy_charge_times.clear()
+                self._enemy_charge_time = None
         self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
         self._reactions = {key: value for key, value in self._reactions.items() if value['age'] < .55}
         self._sync_commands()
@@ -1285,6 +1299,9 @@ class BattleScene:
                 if sprite == 'lithrusk' and action.kind == 'physical':
                     return self._lithrusk_pose(action, actor)
                 if sprite == 'vespermaw':
+                    if action.kind == 'recover':
+                        start = self._enemy_recovery_times.setdefault(actor, self._elapsed)
+                        return 'exhausted', 0 if self.reduced_motion else max(0., self._elapsed-start)*1000
                     return self._vespermaw_pose(action, actor)
                 return action.animation, action.elapsed*1000
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
@@ -1300,6 +1317,10 @@ class BattleScene:
                 elapsed = max(0., self._elapsed-start)
                 return 'charged_hold', 0 if self.reduced_motion else elapsed*1000
             return 'prepare', self._elapsed*1000
+        if (self._is_enemy(actor) and sprite == 'vespermaw'
+                and actor in getattr(self.model, 'enemy_recovery_states', {})):
+            start = self._enemy_recovery_times.setdefault(actor, self._elapsed)
+            return 'exhausted', 0 if self.reduced_motion else max(0., self._elapsed-start)*1000
         if combatant.guarded:
             return ('guard_enter', 300.) if actor == 'player' else ('guard', self._elapsed*1000)
         if actor == 'player' and self._gear_adjust_time is not None:
@@ -1454,11 +1475,13 @@ class BattleScene:
                                    (round(point.x+offset), round(point.y-25)), 2)
         self._draw_mira_effects(canvas)
         self._draw_cave_enemy_effects(canvas, positions)
+        self._draw_vespermaw_roar(canvas, positions)
         if marked is not None and self.target_marker_rects:
             self.target_marker_rects['finger'] = draw_target_finger(canvas, self.enemy_rects[marked],
                 bounds=self._target_marker_bounds(marked))
         if (action is not None and action.kind == 'magical' and not action.resolved
                 and not getattr(action, 'choreography', None)
+                and action.target in positions
                 and not (self._is_enemy(action.actor) and self._sprite(action.actor) == 'veylume')):
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
@@ -1468,6 +1491,49 @@ class BattleScene:
                 color = ('#376ea2', '#72c8f0', '#d8f7ff')[index]
                 pygame.draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
         self._draw_foreground(canvas)
+
+    def _vespermaw_roar_geometry(self, positions):
+        """Sample a mouth-origin wave toward each living opposing character."""
+        action = self.model.current_action
+        if (action is None or action.action != 'vespermaw_confluence_roar'
+                or action.actor not in positions or not self._is_enemy(action.actor)):
+            return None
+        state, clock = self._pose(action.actor)
+        sprite = self._sprite(action.actor)
+        art = self._enemy_art(action.actor)
+        points = self.sprites.anchors(sprite, state, clock)
+        native = points.get('cast_origin', points.get('body', art['anchor']))
+        origin = positions[action.actor]+(pygame.Vector2(native)-art['anchor'])*self._actor_scale(action.actor)
+        affected = getattr(action, 'targets', ()) or tuple(
+            member.identifier for member in self.model.party if member.hp)
+        targets = tuple((identifier, self._hit_point(identifier, positions))
+                        for identifier in affected if identifier in positions)
+        fraction = max(0., min(1., action.elapsed/max(.001, action.impact_at)))
+        return {'origin': origin, 'targets': targets, 'fraction': fraction,
+                'age': max(0., action.elapsed-action.impact_at)}
+
+    def _draw_vespermaw_roar(self, canvas, positions):
+        geometry = self._vespermaw_roar_geometry(positions)
+        if geometry is None:return
+        origin, fraction = geometry['origin'], geometry['fraction']
+        previous = canvas.get_clip()
+        canvas.set_clip(pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35)))
+        try:
+            # Small attached throat light remains static under reduced motion.
+            pygame.draw.circle(canvas, '#8bc9db', (round(origin.x), round(origin.y)), 3, 1)
+            for _, target in geometry['targets']:
+                if self.reduced_motion:
+                    if fraction < 1:continue
+                    center, radius = target, 6
+                else:
+                    center = origin.lerp(target, fraction)
+                    radius = 4+round(7*fraction)
+                for offset, color in ((0, '#b7a4d9'), (3, '#a6d6df')):
+                    rect = pygame.Rect(round(center.x-radius/2-offset), round(center.y-radius-offset),
+                                       radius+offset*2, radius*2+offset*2)
+                    pygame.draw.arc(canvas, color, rect, -1.15, 1.15, 1)
+        finally:
+            canvas.set_clip(previous)
 
     def _draw_cave_enemy_effects(self, canvas, positions):
         for enemy in self._enemy_members():

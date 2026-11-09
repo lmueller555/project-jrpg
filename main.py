@@ -64,6 +64,7 @@ from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
 from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave
 from cave_random_encounters import CaveRandomEncounters
+from sanctuary_boss import SanctuaryBoss
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -537,6 +538,7 @@ class Game:
         self.sanctuary_relief=SanctuaryRelief(self)
         self.sanctuary_cave=SanctuaryCave(self)
         self.cave_random_encounters=CaveRandomEncounters()
+        self.sanctuary_boss=SanctuaryBoss(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
@@ -586,6 +588,7 @@ class Game:
                            'inventory':self.inventory.to_dict(),
                            'sanctuary_cave':self.sanctuary_cave.to_dict(),
                            'cave_encounter_pending':self.cave_random_encounters.pending,
+                           'sanctuary_boss':self.sanctuary_boss.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'character_levels':self.character_progression.to_dict(),
                            'party':self.party.to_dict(),
@@ -670,6 +673,7 @@ class Game:
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                SanctuaryCave.valid_journey(data) and
+               SanctuaryBoss.valid_journey(data) and
                CaveRandomEncounters.valid_journey(data) and
                ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
                CharacterProgression.valid_journey(data) and
@@ -798,7 +802,8 @@ class Game:
         elif not self.character_progression.restore(data.get('character_levels')):
             return False
         # Pending spoils retain their original before/after stat transaction.
-        if data is not None and not data.get('post_battle'):
+        if (data is not None and not data.get('post_battle')
+                and not (data.get('sanctuary_boss') or {}).get('pending')):
             self.character_progression.retune_legacy_mira()
         self._party_prompt_before=None
         self._party_prompt_callback=None
@@ -844,6 +849,7 @@ class Game:
         self.sanctuary_cave.restore(data.get('sanctuary_cave') if data else None)
         if not self.cave_random_encounters.restore(data.get('cave_random_encounters') if data else None):
             return False
+        if not self.sanctuary_boss.restore(data.get('sanctuary_boss') if data else None):return False
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -916,6 +922,11 @@ class Game:
                 self.save_error='The saved battle spoils could not be restored.'
                 self.on_title=True
                 return False
+        elif self.sanctuary_boss.pending is not None:
+            if not self.combat.start_boss(self.sanctuary_boss.pending, restoring=True):
+                self.save_error='The saved boss encounter could not be restored.'
+                self.on_title=True
+                return False
         elif self.cave_random_encounters.pending is not None:
             if not self.combat.start_cave(self.cave_random_encounters.pending, restoring=True):
                 self.save_error='The saved cave encounter could not be restored.'
@@ -940,6 +951,7 @@ class Game:
               'inventory':self.inventory.to_dict(),
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
+              'sanctuary_boss':self.sanctuary_boss.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'character_levels':self.character_progression.to_dict(),
               'party':self.party.to_dict(),
@@ -1367,6 +1379,10 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    if self.sanctuary_boss.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.sanctuary_cave.interact():
                         advanced=True
                         resumed=True
@@ -1407,6 +1423,7 @@ class Game:
         return (self.sanctuary_cave.active and not self._is_gallery_preview
                 and not self.on_title and self._music_focused
                 and not self.combat.active and not self.social.locked
+                and self.sanctuary_boss.pending is None
                 and not self.social.active and not self.map_open
                 and not self.quest_ui.journal_open and not self.household_action
                 and not self.transfer_cooldown and not self.opening_fade
@@ -1519,10 +1536,14 @@ class Game:
                 door.update(self.player.position if scene is self.world else None,seconds,
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
         direction=(0,0) if (self.map_open or self.quest_ui.journal_open or
-                           self.opening.locks_player or self.household_action or self.opening_fade) else direction
+                           self.opening.locks_player or self.household_action or self.opening_fade
+                           or self.sanctuary_boss.locks_player) else direction
         if not self.opening.controls_player:
             previous=self.player.position.copy()
             self.player.update(direction,seconds,self.world,bool(running))
+            if self.sanctuary_boss.update(seconds):
+                self.opening_audio.set_paused(True)
+                return
             if self._advance_cave_encounters():
                 self.opening_audio.set_paused(True)
                 return
@@ -1716,7 +1737,8 @@ class Game:
         display=self.nearby_world_map()
         hint=('E: '+display['label']) if display is not None else ''
         reserve=getattr(self,'sanctuary_reserve',None)
-        hint=(hint or self.overworld_travel.interaction_hint() or self.sanctuary_cave.interaction_hint() or
+        hint=(hint or self.overworld_travel.interaction_hint() or self.sanctuary_boss.interaction_hint() or
+              self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
               self.sanctuary_relief.interaction_hint() or
               self.bed_rest.interaction_hint() or self.opening.interaction_hint() or

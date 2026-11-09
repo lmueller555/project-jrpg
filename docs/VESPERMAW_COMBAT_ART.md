@@ -4,7 +4,7 @@ Vespermaw's dedicated combat bank depicts the Sanctuary cave's pale, heavy
 predator: broad forelimbs and jaw, mineral shoulder and spine crusts, and small
 violet/cyan microcrystals. It faces right toward the party. The
 [Bestiary entry](BESTIARY.md#vespermaw) owns its level-seven stats, rewards,
-affinities and intended combat rules; this work supplies visual presentation.
+affinities and live combat rules. The bank supplies its visual presentation.
 
 The bank uses a shared 160 × 144 native canvas and a fixed anatomical floor
 anchor of 64, 128. Per-frame body, contact and cast-origin points travel with
@@ -47,14 +47,22 @@ visible. The separate compact captures document this layout limit explicitly.
 The cave reel is explicitly an **art-only visual fixture**. It renders these
 poses through production `BattleScene` using ordinary Bat rules and a directly
 sampled enemy pose clock, with a copied level-seven three-character party.
-It does not demonstrate boss balance or execute Vespermaw's pending party-wide
-Roar, marked-target response guarantee, or recovery vulnerability. It constructs
+This retained art review predates the live encounter. It does not demonstrate
+boss balance or execute its party-wide Roar, marked-target response guarantee,
+or recovery vulnerability. It constructs
 no persistent Game and touches no user save, settings or quest/reward state.
 
-Vespermaw remains unavailable as a live fight until its combat implementation
-and story encounter are developed. Its runtime gate remains in place even
-with its art attached. Elemental responses and Stagger also remain authoring
-data; the crystal colors do not activate elemental mechanics.
+Vespermaw is now a one-time live encounter in the Echo Chamber. Its current
+combat includes party-wide Roar hits, a marked-target response guarantee and
+the 25% recovery vulnerability, using these complete animation clocks. The
+[live encounter review](reviews/vespermaw_encounter/README.md) captures that
+flow separately from the historical art-only fixture. Elemental responses and
+Stagger remain authoring data; the crystal colors do not activate those systems.
+
+The old art-only review retains source hashes from its original rollout. Its
+source-match check targets that historical revision and flags the subsequently
+changed Bestiary and renderer in the current tree. Use the live encounter
+capture and its `--check` command to verify the current playable implementation.
 
 Reproduce and verify from the repository root:
 

@@ -1,0 +1,686 @@
+{
+  "fixture": "Earlier quest fixture followed by real MQ03 travel; level7 resources and near-arena location are review fixtures. No additional companion is recruited.",
+  "captures": [
+    {
+      "file": "approach_offer.png",
+      "label": "Echo Chamber approach \u00b7 deliberate entry",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": "sanctuary_boss_offer",
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": false,
+        "pending": null
+      }
+    },
+    {
+      "file": "introduction.png",
+      "label": "Crystal-and-growl introduction \u00b7 production entry",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": false,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "battle_opening.png",
+      "label": "Live level-seven boss \u00b7 authentic two-member outing",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "charging",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "raking_claw.png",
+      "label": "Live combat \u00b7 raking claw",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "acting",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "confluence_roar.png",
+      "label": "Live combat \u00b7 confluence roar",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "acting",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "gather_resonance.png",
+      "label": "Live combat \u00b7 gather resonance",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "acting",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "ruinous_pounce.png",
+      "label": "Live combat \u00b7 ruinous pounce",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "acting",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "exhausted.png",
+      "label": "Live combat \u00b7 exhausted",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "acting",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "spoils.png",
+      "label": "Victory rewards \u00b7 actual surviving active party",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "victory",
+      "boss": {
+        "version": 1,
+        "defeated": true,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 329,
+              "mp": 43
+            },
+            "mira": {
+              "hp": 345,
+              "mp": 43
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "cleared_chamber.png",
+      "label": "One-time victory \u00b7 chamber cleared",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": true,
+        "intro_seen": true,
+        "pending": null
+      }
+    },
+    {
+      "file": "defeat_approach_offer.png",
+      "label": "Low-HP retry fixture \u00b7 Echo Chamber approach \u00b7 deliberate entry",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": "sanctuary_boss_offer",
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": false,
+        "pending": null
+      }
+    },
+    {
+      "file": "defeat_introduction.png",
+      "label": "Low-HP retry fixture \u00b7 Crystal-and-growl introduction \u00b7 production entry",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": false,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 1,
+              "mp": 0
+            },
+            "mira": {
+              "hp": 1,
+              "mp": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "defeat_battle_opening.png",
+      "label": "Low-HP retry fixture \u00b7 Live level-seven boss \u00b7 authentic two-member outing",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "charging",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 1,
+              "mp": 0
+            },
+            "mira": {
+              "hp": 1,
+              "mp": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "defeat_choice.png",
+      "label": "Low-HP retry fixture \u00b7 Retry or return after actual defeat",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": "sanctuary_boss_defeat",
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 1,
+              "mp": 0
+            },
+            "mira": {
+              "hp": 1,
+              "mp": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "defeat_retry.png",
+      "label": "Low-HP retry fixture \u00b7 Retry preserves captured entry HP/MP",
+      "scene": "sanctuary_cave",
+      "position": [
+        1940.0,
+        492.0
+      ],
+      "script": null,
+      "battle_phase": "charging",
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": {
+          "version": 1,
+          "enemy_id": "vespermaw",
+          "level": 7,
+          "receipt": "boss:vespermaw",
+          "scene": "sanctuary_cave",
+          "position": [
+            1940.0,
+            492.0
+          ],
+          "facing": "back",
+          "battlefield": "cave_echo_chamber",
+          "combat_seed": 7,
+          "party_active": [
+            "caelan",
+            "mira"
+          ],
+          "party_resources": {
+            "caelan": {
+              "hp": 1,
+              "mp": 0
+            },
+            "mira": {
+              "hp": 1,
+              "mp": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "file": "defeat_quiet_shelf.png",
+      "label": "Low-HP retry fixture \u00b7 Safe return with boss unbeaten and no reward",
+      "scene": "sanctuary_cave",
+      "position": [
+        1810.0,
+        600.0
+      ],
+      "script": null,
+      "battle_phase": null,
+      "boss": {
+        "version": 1,
+        "defeated": false,
+        "intro_seen": true,
+        "pending": null
+      }
+    }
+  ],
+  "observed_enemy_actions": [
+    "confluence_roar",
+    "exhausted",
+    "gather_resonance",
+    "raking_claw",
+    "ruinous_pounce"
+  ],
+  "xp_gained": {
+    "caelan": 1110,
+    "mira": 1110
+  },
+  "story_unchanged": true,
+  "low_hp_defeat_fixture": {
+    "retry_entry_resources": {
+      "hp": 1,
+      "mp": 0
+    },
+    "returned_to_quiet_shelf": true,
+    "defeated": false,
+    "pending": null,
+    "xp_and_inventory_unchanged": true
+  },
+  "source_sha256": {
+    "assets/combat/actions.json": "88fd210d8a33d8ef1113368dd2a435e4d4440a84b148cf51512208163296abcf",
+    "assets/combat/bestiary.json": "88d3df148ed1f2306d04b9fd51dae061a38684b1d2ffd19d953b81bf3dbc321c",
+    "assets/combat/cave_echo_chamber/background.png": "4fcbf0054726064e4881a8a2d6085783d915e81a5c1d497c465ab51cf477afae",
+    "assets/combat/cave_echo_chamber/background_00.png": "2d161043509c28efa70a82287dc4345d7f0c302094002122d6743fa41c2b2690",
+    "assets/combat/cave_echo_chamber/background_01.png": "a6c156f13f16b327344d5fdb2f38194a2fc3cf949870051a5c9fffa0203f03e3",
+    "assets/combat/cave_echo_chamber/background_02.png": "dd15b505decc4a5a147682ddb1b5a08eff21d6f8bed1bb553138a1566d6c433d",
+    "assets/combat/cave_echo_chamber/background_03.png": "77bcbb021ababf6c2513cd55bf779d936c0d1d97949f7c4d06dcc5857051e29d",
+    "assets/combat/cave_echo_chamber/background_04.png": "31c365d14c28aff5acdf4d48e77ccfa16088dde26636ea7acdfa6c143b7172e8",
+    "assets/combat/cave_echo_chamber/background_05.png": "8551dda4bdbf142318f80d7d7d91197011c32d0394eb0c94aa7e1ddd81960431",
+    "assets/combat/cave_echo_chamber/background_06.png": "d26068fc31da656a65ecb8bb9b8e4b90b9cc0ff5f79c221a4cbf4d46c58adfdc",
+    "assets/combat/cave_echo_chamber/background_07.png": "4170b05bea83c028b81ac5a0152eb6dde32e2db0efe6bb4146f11e104bd7ab29",
+    "assets/combat/cave_echo_chamber/background_08.png": "4fcbf0054726064e4881a8a2d6085783d915e81a5c1d497c465ab51cf477afae",
+    "assets/combat/cave_echo_chamber/background_09.png": "2e82220c3f6023ad963a89ffb172f2b3374a6a321cf6c8a5489dba9db68dee93",
+    "assets/combat/cave_echo_chamber/background_10.png": "c45cb8b8584b31d909e6fb9749c6f8239af3cfbd3c8cfa9cab9d999d3f5ce574",
+    "assets/combat/cave_echo_chamber/background_11.png": "efcd5ef49862d2b6050d4958134586933e15e03310abad3f2d119e27ce47ad25",
+    "assets/combat/cave_echo_chamber/background_12.png": "651737c89035531589367893f79265b0de2b5e88d751a2bb0c818a811af372ec",
+    "assets/combat/cave_echo_chamber/background_13.png": "2f5017ab0ef65128b870d8955533b6e3e401ce084c288f666a1b2082e26673a2",
+    "assets/combat/cave_echo_chamber/background_14.png": "3ecffe401a2d74dbc761f0a807e95453aab3d1dba04959729e3ba38bb3433f17",
+    "assets/combat/cave_echo_chamber/background_15.png": "ec05df504bb1e54ce43c94c5dfc34689db884a01cd681c5f9c41746febbdcf82",
+    "assets/combat/cave_echo_chamber/background_16.png": "916d04c8ac08df6073ebe0b6773c655db51a7492b6c12dbfc8d4447aeda69f7c",
+    "assets/combat/cave_echo_chamber/background_17.png": "0baeed43234883dc5f01f02cfe1c2bc4abaf7cc471ecaee2bf59672d2c6e3fa9",
+    "assets/combat/cave_echo_chamber/background_18.png": "e9897e0ee937000f3806617ea09f91bf11f9bc750528ceeff8b0b8d53f7db543",
+    "assets/combat/cave_echo_chamber/background_19.png": "ffe12b53e0b435d254e38321f7b44b03fb784c12d2d27d244f2333ce1ca9db30",
+    "assets/combat/cave_echo_chamber/background_20.png": "9ca3ac698baf65d1259112601e36409b56a2b7a343b7e4d479550258350bd56a",
+    "assets/combat/cave_echo_chamber/background_21.png": "55a064f84c8057a6263f04b98fd7d6ed345884406b4dcf9d957b29788b664377",
+    "assets/combat/cave_echo_chamber/background_22.png": "38fd029a49b30d43c337eed3fa8c669a5221bfd740cafb7a820446d2c6416439",
+    "assets/combat/cave_echo_chamber/background_23.png": "23050295882f3c2721b9224c2df9aeb30bd126f0d3e70da69117dc69b90e8549",
+    "assets/combat/cave_echo_chamber/battlefield.json": "4ce24edb9d649296d11937f72c4af94b2b309155450f8780af66e1f181a0b4ed",
+    "assets/combat/vespermaw/animation.json": "94e35ca49a130c6cb2b083ce09b952a3ff43dde9ea2ac1a3d604114fc6873c26",
+    "battle_model.py": "250da9522f039b58bbd3cba1334ca78a5c58bc5e63ac728071dab7111406c2d4",
+    "battle_scene.py": "95d5071c91c41bf915d6c10ec669d05731303874030c38a7afe8484e2dbdab0c",
+    "cave_battle_entry.py": "e0e11bcfff13fcb063d73980efce77b49aeea085b8e150d24aead133690a0a64",
+    "cave_battlefield.py": "09c95781ca16521bce199b66273514e1cfa4c527abd966601c3263074c13220c",
+    "combat_damage.py": "609063367c7910f222abadd62c601327743767d324c19e9893e6b45f66e5b28f",
+    "game_music.py": "8527f8007d97b886cf23d29491eabeba7b4dab556e187ccf92c3074dd26f0671",
+    "main.py": "be6f35ac29e3f54a861bd50ef6ff9271e286513b95e3ddb907b230ec183c9028",
+    "post_battle.py": "f983f7e7b13f3cc7926cfb9d33e9dddd8fdebe10e660a870a1cccc8d825c1e0f",
+    "sanctuary_boss.py": "9b7149eb89716cc6aa7ca94b2c3e459b4d03ef593e6794bb92de85eef598edd2",
+    "sanctuary_boss_entry.py": "875e2c7033560fa8f28def04c42416c647e8c7342bc64e5a57d972f1d9ce0cd7",
+    "tools/capture_vespermaw_encounter.py": "16ac1e95f5a29ba20f2b22dbc36c76f2685c3ab9db963375871f2715e5daa1a6",
+    "world_encounters.py": "3c3c1216b4a9345c89afb9fc23127528cdcdca69167c3fd0226afbbe041ae751"
+  },
+  "artifact_sha256": {
+    "README.md": "7abced2e13b7526d4b168819acb91845fd929102f190612e91242d413fee53d6",
+    "approach_offer.png": "d0c6c85c0b201828f87ccf580993b364debf24493c23ca5abae32d280186080d",
+    "battle_opening.png": "3d912d5cdb837534b8afdff4b8d03f34036464670c2878b050dab66c2150a077",
+    "cleared_chamber.png": "f9824039f8a9f1f5582311dbc1d8d1f6919134774eb29695ce61e29ce389d969",
+    "confluence_roar.png": "b526b8c81c7cd438ec32b07bc7358b4248273116c125444dd4f4de34d3418629",
+    "contact_sheet.png": "d6035ecd8a8763e647cddba151fdb89afd684fe3f4252cc76b6d210de8e3276c",
+    "defeat_approach_offer.png": "7c54061859ce5cfd02c7461a1637ef169ab640563824eb902ef6fd7f6de2c4ef",
+    "defeat_battle_opening.png": "4e4af14b72fa77390b3a55f068ef6c3ba4761635718c25aeb0837116eabac902",
+    "defeat_choice.png": "778d3ee46d67388a0085365b230d39de303e771f0634b1c00700ab67b64fa783",
+    "defeat_introduction.png": "fcba5d43b4861090e0bfb20c819af66e781f46d5fa802f2cf0ecb26b749f02d7",
+    "defeat_quiet_shelf.png": "fb139e0660ee588110eb9f1b82ee0455ca6f3bac4896ee2983d7fbcfa419452f",
+    "defeat_retry.png": "4e4af14b72fa77390b3a55f068ef6c3ba4761635718c25aeb0837116eabac902",
+    "exhausted.png": "e9c4a1d486d69c17eb6ea2700101bc1ad69e0c1691ccf1768b12fa97266b5821",
+    "gather_resonance.png": "9538c278a6bbd0f84e3cb5fc6c9ae10702b1f53e88ed89effeb5010c197f590e",
+    "introduction.png": "943bb3770ad1e9f4cec34039bf737f8284b683520e9bedf2ba1df08dbac9729e",
+    "raking_claw.png": "01dda81b3bb28f94e445f16920d69b4ee975302daf197332dfd6d16dac81baf8",
+    "ruinous_pounce.png": "255db74ea123e63eda857878c9e1599fbb731431ead2d953d94148b96cd98d64",
+    "spoils.png": "794048426a253c91a662dcbe9e792041de36a59504217ef9cffd0759e9973441"
+  }
+}
