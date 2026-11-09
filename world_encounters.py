@@ -185,6 +185,8 @@ class CombatEncounters:
         options = ({'party_actors': travel.actors()}
                    if travel is not None and not getattr(game.world, 'is_overworld', False) else {})
         game.world.draw(frame, camera, game.player, game.elapsed_ms, include_ui=False, **options)
+        elementals = getattr(game, 'elemental_bosses', None)
+        if elementals is not None:elementals.draw_world(frame, camera)
         self.draw_world(frame, camera)
         game.opening.draw_world(frame, camera)
         for visit in game.household_visits:visit.draw_world(frame, camera)
@@ -396,21 +398,40 @@ class CombatEncounters:
         resources and seed are the battle entry checkpoint, independent of the
         cave's random encounter countdown.
         """
-        from sanctuary_boss import SCENE_ID, valid_ticket
+        return self._start_authored_boss(ticket, 'cave_boss', restoring=restoring)
+
+    def start_elemental_boss(self, ticket, *, restoring=False):
+        """Start either independently owned elemental teaching encounter."""
+        return self._start_authored_boss(ticket, 'elemental_boss', restoring=restoring)
+
+    def _boss_controller(self):
+        return (self.game.elemental_bosses if self.kind == 'elemental_boss'
+                else self.game.sanctuary_boss)
+
+    def _start_authored_boss(self, ticket, kind, *, restoring=False):
+        if kind == 'elemental_boss':
+            from elemental_bosses import SCENE_ID, valid_ticket
+        else:
+            from sanctuary_boss import SCENE_ID, valid_ticket
         game = self.game
-        controller = getattr(game, 'sanctuary_boss', None)
+        controller = getattr(game, 'elemental_bosses' if kind == 'elemental_boss' else 'sanctuary_boss', None)
         if (self.active or game.world.data.get('id') != SCENE_ID
                 or not valid_ticket(ticket) or controller is None
-                or controller.pending != ticket or controller.defeated
+                or controller.pending != ticket
                 or not game.world.can_stand(ticket['position'])
                 or list(game.party.active_ids) != ticket['party_active']
                 or game.party.battle_reason()):return False
+        if kind == 'elemental_boss':
+            if (controller.to_dict()['bosses'][ticket['enemy_id']]['defeated']
+                    or game.cave_lesson.needs_intro or game.sanctuary_boss.pending is not None):return False
+        elif (controller.defeated
+              or getattr(getattr(game, 'elemental_bosses', None), 'pending', None) is not None):return False
         current = {identifier: {'hp': game.party.characters[identifier].current_hp,
                                 'mp': game.party.characters[identifier].current_mp}
                    for identifier in ticket['party_active']}
         if current != ticket['party_resources']:return False
         if getattr(game.cave_random_encounters, 'pending', None) is not None:return False
-        self.kind = 'cave_boss'
+        self.kind = kind
         self._boss_ticket = deepcopy(ticket)
         self.receipt_id = ticket['receipt']
         self._settled = False
@@ -440,14 +461,15 @@ class CombatEncounters:
             owned_gems=game.character_abilities.owned_gems(),
             bot_loadouts=game.bot_loadouts.battle_loadouts(),
             rng=random.Random(ticket['combat_seed']), initial_atb=True,
-            initial_atb_seed=ticket['combat_seed'], **self._party_options())
+            initial_atb_seed=ticket['combat_seed'],
+            elemental_tutorial=self.kind == 'elemental_boss', **self._party_options())
 
     def _load_boss_battle(self):
         game, ticket = self.game, self._boss_ticket
         model = self._boss_model()
         model.encounter_rewards = self._available_rewards(model.encounter_rewards)
         scene = BattleScene(game, model, battlefield=ticket['battlefield'])
-        controller = game.sanctuary_boss
+        controller = self._boss_controller()
         before = controller.to_dict()
         if not controller.entry_loaded():
             raise ValueError('The boss introduction could not be acknowledged')
@@ -461,7 +483,7 @@ class CombatEncounters:
         self.transition.elapsed = self.transition.close_seconds+self.transition.hold_seconds
         scene.paused, scene.focused = old.paused, old.focused
         scene._held = old._held
-        old.stop_audio()
+        if hasattr(old, 'stop_audio'):old.stop_audio()
         self.entry = None
 
     def _update_cave_entry(self, seconds):
@@ -475,7 +497,7 @@ class CombatEncounters:
         entry.update(seconds)
         if entry.ready_to_load:
             try:
-                if self.kind == 'cave_boss':self._load_boss_battle()
+                if self.kind in ('cave_boss', 'elemental_boss'):self._load_boss_battle()
                 else:self._load_cave_battle()
             except (OSError, ValueError, pygame.error):
                 self.scene = None;self.transition = None
@@ -624,8 +646,8 @@ class CombatEncounters:
         game, model = self.game, self.model
         hp, mp = model.player.hp, model.player.mp
         incapacitated = hp == 0
-        cave_battle = self.kind in ('cave', 'cave_boss')
-        ticket = self._boss_ticket if self.kind == 'cave_boss' else self._cave_ticket
+        cave_battle = self.kind in ('cave', 'cave_boss', 'elemental_boss')
+        ticket = self._boss_ticket if self.kind in ('cave_boss', 'elemental_boss') else self._cave_ticket
         if incapacitated and not cave_battle:hp = max(1, game.attributes.value('hp')//4)
         position = (ticket['position'] if cave_battle else
                     self._mill_origin if self.kind == 'mill' and self._mill_origin is not None
@@ -707,7 +729,9 @@ class CombatEncounters:
                   game.party.to_dict() if hasattr(game, 'party') else None,
                   game.character_progression.to_dict() if plan is not None else None,
                   game.attributes.to_dict())
-        boss_before = game.sanctuary_boss.to_dict() if self.kind == 'cave_boss' else None
+        boss_controller = self._boss_controller() if self.kind in ('cave_boss', 'elemental_boss') else None
+        boss_before = boss_controller.to_dict() if boss_controller is not None else None
+        abilities_before = game.character_abilities.to_dict() if self.kind == 'elemental_boss' else None
         lesson = getattr(game, 'cave_lesson', None)
         lesson_before = (lesson.to_dict() if self.kind == 'cave' and lesson is not None
                          and lesson.is_intro(self._cave_ticket) else None)
@@ -718,7 +742,8 @@ class CombatEncounters:
             if before[5] is not None:game.party.restore(before[5])
             else:game.attributes.restore(before[7])
             if before[6] is not None:game.character_progression.restore(before[6])
-            if boss_before is not None:game.sanctuary_boss.restore(boss_before)
+            if boss_before is not None:boss_controller.restore(boss_before)
+            if abilities_before is not None:game.character_abilities.restore(abilities_before)
             if lesson_before is not None:lesson.restore(lesson_before)
             return self._post_error(message)
 
@@ -733,7 +758,18 @@ class CombatEncounters:
             return rollback('The encounter could not be completed. Try again.')
         if not self._apply_resources(resources, party_resources):
             return rollback('Battle resources could not be collected. Try again.')
-        if self.kind == 'cave_boss' and not game.sanctuary_boss.mark_defeated(record['receipt']):
+        if self.kind == 'elemental_boss':
+            from elemental_bosses import definition
+            unlock = definition(record['encounter']['enemy_id'])
+            owner = game.character_abilities
+            if unlock['gem'] not in owner.owned_gems() and not owner.grant_gem(unlock['gem']):
+                return rollback('The focus gem could not be installed. Try again.')
+            if (unlock['skill'] not in owner.known_abilities()
+                    and not owner.learn_ability('caelan', unlock['skill'])):
+                return rollback('The elemental technique could not be learned. Try again.')
+            if not owner.set_active_gem(unlock['gem']):
+                return rollback('The focus gem could not be selected. Try again.')
+        if boss_controller is not None and not boss_controller.mark_defeated(record['receipt']):
             return rollback('The boss encounter could not be completed. Try again.')
         if lesson_before is not None and not lesson.mark_cleared(self._cave_ticket):
             return rollback('The cave lesson could not be completed. Try again.')
@@ -833,18 +869,19 @@ class CombatEncounters:
         self._pending = None
         self._exiting_spoils = True
         cave_before = self._finish_cave_counter() if self.kind == 'cave' else None
-        boss_before = game.sanctuary_boss.to_dict() if self.kind == 'cave_boss' else None
+        boss_controller = self._boss_controller() if self.kind in ('cave_boss', 'elemental_boss') else None
+        boss_before = boss_controller.to_dict() if boss_controller is not None else None
         if self.kind == 'cave' and cave_before is None:
             self._pending = record;self._exiting_spoils = False
             self.spoils.dismissed = False
             return self._post_error('The cave encounter could not be completed. Try again.')
-        if self.kind == 'cave_boss' and not game.sanctuary_boss.finish(record['receipt']):
+        if boss_controller is not None and not boss_controller.finish(record['receipt']):
             self._pending = record;self._exiting_spoils = False
             self.spoils.dismissed = False
             return self._post_error('The boss encounter could not be completed. Try again.')
         if not self._checkpoint():
             if cave_before is not None:game.cave_random_encounters.restore(cave_before)
-            if boss_before is not None:game.sanctuary_boss.restore(boss_before)
+            if boss_before is not None:boss_controller.restore(boss_before)
             self._pending = record
             self._exiting_spoils = False
             self.spoils.dismissed = False
@@ -861,7 +898,7 @@ class CombatEncounters:
         game.social.clear_pointer();game.camera.reset()
         self._end_battle_music()
         if kind == 'cave':self._cave_ticket = None
-        if kind == 'cave_boss':self._boss_ticket = None
+        if kind in ('cave_boss', 'elemental_boss'):self._boss_ticket = None
         if kind == 'mill':game.mill_quest.battle_returned('victory', recovered=record['incapacitated'])
         return True
 
@@ -880,11 +917,15 @@ class CombatEncounters:
             validation['cave_random_encounters'] = game.cave_random_encounters.to_dict()
         elif record['kind'] == 'cave_boss':
             validation['sanctuary_boss'] = game.sanctuary_boss.to_dict()
+        elif record['kind'] == 'elemental_boss':
+            validation['elemental_bosses'] = game.elemental_bosses.to_dict()
+            validation['character_abilities'] = game.character_abilities.to_dict()
+            validation['inventory'] = game.inventory.to_dict()
         if not valid_pending_snapshot(record, validation):return False
         self._pending = deepcopy(record)
         # begin_journey has already chosen a clear standing spot if an NPC now
         # occupies the old return position; keep that safe landing on exit.
-        if record['kind'] in ('cave', 'cave_boss'):
+        if record['kind'] in ('cave', 'cave_boss', 'elemental_boss'):
             if not game.world.can_stand(record['position']):
                 self._pending = None
                 return False
@@ -894,7 +935,7 @@ class CombatEncounters:
         self.kind, self.receipt_id = record['kind'], record['receipt']
         if self.kind == 'cave':
             self._cave_ticket = deepcopy(record['encounter'])
-        elif self.kind == 'cave_boss':
+        elif self.kind in ('cave_boss', 'elemental_boss'):
             self._boss_ticket = deepcopy(record['encounter'])
         if self.kind == 'bat':self._bat_contact_armed = False
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
@@ -912,7 +953,7 @@ class CombatEncounters:
                 learned_abilities=game.character_abilities.known_abilities(),
                 rng=random.Random(self._cave_ticket['combat_seed']), initial_atb=True,
                 **common)
-        elif self.kind == 'cave_boss':
+        elif self.kind in ('cave_boss', 'elemental_boss'):
             model = self._boss_model()
         else:
             model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
@@ -924,7 +965,7 @@ class CombatEncounters:
                 identifier = 'caelan' if member.identifier == 'player' else member.identifier
                 member.hp = record['party_resources'][identifier]['hp']
                 member.mp = record['party_resources'][identifier]['mp']
-        model.player.hp = (record['resources']['hp'] if self.kind in ('cave', 'cave_boss') else
+        model.player.hp = (record['resources']['hp'] if self.kind in ('cave', 'cave_boss', 'elemental_boss') else
                            0 if record['incapacitated'] else record['resources']['hp'])
         model.player.mp = record['resources']['mp']
         for enemy in getattr(model, 'enemies', (model.enemy,)):
@@ -932,8 +973,8 @@ class CombatEncounters:
         model._result('victory')
         model.drain_events()
         model.enemy_definition['rewards'] = deepcopy(record['rewards'])
-        if self.kind in ('cave', 'cave_boss'):model.encounter_rewards = deepcopy(record['rewards'])
-        battlefield = (self._boss_ticket['battlefield'] if self.kind == 'cave_boss' else
+        if self.kind in ('cave', 'cave_boss', 'elemental_boss'):model.encounter_rewards = deepcopy(record['rewards'])
+        battlefield = (self._boss_ticket['battlefield'] if self.kind in ('cave_boss', 'elemental_boss') else
                        self._cave_ticket['battlefield'] if self.kind == 'cave' else
                        'millrace' if self.kind == 'mill' else 'eldenmere')
         self.scene = BattleScene(game, model, battlefield=battlefield)
@@ -951,7 +992,7 @@ class CombatEncounters:
             if self._pending is None:self._begin_victory()
             return False
         if self.kind == 'cave':return self._settle_cave()
-        if self.kind == 'cave_boss':return self._settle_boss()
+        if self.kind in ('cave_boss', 'elemental_boss'):return self._settle_boss()
         if self.kind == 'mill':return self._settle_mill()
         game, scene, model = self.game, self.scene, self.scene.model
         # Defeat is a safe withdrawal: every member retains the resources saved
@@ -1028,6 +1069,9 @@ class CombatEncounters:
         """Return an unbeaten boss to its captured entry resources and choices."""
         game, scene = self.game, self.scene
         ticket = deepcopy(self._boss_ticket)
+        controller = self._boss_controller()
+        if self.kind == 'elemental_boss' and self.model.phase == 'fled':
+            return self._flee_elemental_boss(ticket, controller)
         if ticket is None or not self._apply_resources(
                 ticket['party_resources']['caelan'], ticket['party_resources']):
             scene.dismissed = False
@@ -1044,7 +1088,41 @@ class CombatEncounters:
         self._end_battle_music()
         # The ticket remains durable until the controller commits Retry or
         # Return. Quitting before that choice can safely restart the encounter.
-        game.sanctuary_boss.battle_defeated(ticket)
+        controller.battle_defeated(ticket)
+        return True
+
+    def _flee_elemental_boss(self, ticket, controller):
+        """Withdraw to this chamber's foyer, retaining spent party resources."""
+        game, scene = self.game, self.scene
+        if ticket is None:return False
+        before = (game.party.to_dict(), controller.to_dict(),
+                  tuple(game.player.position), game.player.facing)
+        resources = self._model_resources(self.model)
+        if not self._apply_resources(resources['caelan'], resources):
+            scene.dismissed = False
+            scene.result_error = 'Could not return from battle. Try again.'
+            return False
+        if not controller.finish_flee(ticket):
+            game.party.restore(before[0]);controller.restore(before[1])
+            scene.dismissed = False
+            scene.result_error = 'The chamber could not be left. Try again.'
+            return False
+        self._boss_ticket = None
+        if not self._checkpoint():
+            game.party.restore(before[0]);controller.restore(before[1])
+            game.player.position.update(before[2]);game.player.facing = before[3]
+            self._boss_ticket = ticket
+            game.party_travel.reset();game.camera.reset()
+            scene.dismissed = False
+            scene.result_error = 'Progress could not be saved. Try again.'
+            return False
+        self._settled = True
+        self.scene = None;self.entry = None;self.transition = None
+        self._entry_keys.clear();self.kind = None
+        game.player.moving = game.player.running = False
+        game.player.walk_ms = 0.;game._mouse_held = False
+        game.social.clear_pointer();game.party_travel.reset();game.camera.reset()
+        self._end_battle_music()
         return True
 
     def _settle_mill(self):

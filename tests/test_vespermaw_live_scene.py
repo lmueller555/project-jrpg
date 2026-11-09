@@ -158,7 +158,7 @@ class VespermawLiveSceneTests(unittest.TestCase):
         scene.update(action.duration)
         scene.announcements.clear()
         self.assertEqual(scene._pose('enemy')[0], 'exhausted')
-        self.assertIn('25% more damage', scene.announcements.current['text'])
+        self.assertIn('50% more damage', scene.announcements.current['text'])
         scene.update(.3)
         self.assertGreater(scene.announcements.current['age'], 0)
         before = scene._pose('enemy')[1]
@@ -169,7 +169,7 @@ class VespermawLiveSceneTests(unittest.TestCase):
         self.start(scene, 'raking_claw')
         self.assertFalse(scene.model.enemy_recovery_states)
         self.assertFalse(scene._enemy_recovery_times)
-        self.assertNotIn('25%', (scene.announcements.current or {}).get('text', ''))
+        self.assertNotIn('50%', (scene.announcements.current or {}).get('text', ''))
         scene.draw(canvas, game.ui_surface)
         scene.model._result('defeat')
         scene.update(0)

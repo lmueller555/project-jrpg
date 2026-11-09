@@ -396,13 +396,309 @@
         "recovery": {
           "after_action": "vespermaw_ruinous_pounce",
           "recovery_action": "vespermaw_exhausted",
-          "damage_taken_multiplier": 1.25,
+          "damage_taken_multiplier": 1.5,
           "ends_before_action": "vespermaw_raking_claw"
         },
         "encounter": {
           "trigger": "story",
           "repeatable": false,
           "formation_size": 1
+        }
+      }
+    },
+    "embravyr": {
+      "mode": "species",
+      "name": "Embravyr",
+      "description": "Fire-aspected Aether coalesced around a red crystal core. Emberglass fragments form a low, coiled body, with shifting limbs joined by flame. It gathers beside the warm crystal vents branching from the Sanctuary cave.",
+      "family": "aether_elemental",
+      "tier": "boss",
+      "habitats": [
+        "elden_vale_sanctuary_caves"
+      ],
+      "level_range": {
+        "min": 4,
+        "max": 4
+      },
+      "archetype": "windup_attacker",
+      "stat_profile": "armored",
+      "fighting_style": "telegraphed_windup",
+      "species_multipliers": {
+        "str": 1.1,
+        "mag": 1.25,
+        "speed": 0.9
+      },
+      "tier_multipliers": {
+        "hp": 1.8
+      },
+      "behavior": {
+        "sequence": [
+          "embravyr_cinder_lash",
+          "embravyr_emberwash",
+          "embravyr_gather_embers",
+          "embravyr_furnace_lunge",
+          "embravyr_cooling"
+        ],
+        "fallback": "embravyr_cinder_lash",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": "embravyr",
+        "action_aliases": {
+          "embravyr_cinder_lash": "cinder_lash",
+          "embravyr_emberwash": "emberwash",
+          "embravyr_gather_embers": "gather_embers",
+          "embravyr_furnace_lunge": "furnace_lunge",
+          "embravyr_cooling": "cooling"
+        }
+      },
+      "rewards": {
+        "drops": {
+          "red_focus_gem": 1
+        }
+      },
+      "elemental_profile": {
+        "element": "fire",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 100,
+          "electric": 100,
+          "water": 200,
+          "ice": 150,
+          "nature": 50,
+          "wind": 100,
+          "holy": 100,
+          "ground": 100
+        },
+        "absorption": {
+          "elements": [
+            "fire"
+          ],
+          "healing_percent": 100
+        },
+        "design_rationale": "A red core, emberglass armor and visible flame reveal Fire alignment. Water quenches its body; Ice also disrupts its heat. Nature attacks wither against its flames. Fire replenishes its core. Other elements remain neutral."
+      },
+      "planned_mechanics": {
+        "stagger": {
+          "status": "planned",
+          "resistance": "normal"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 1
+      },
+      "combat_design": {
+        "status": "ready",
+        "requirements": [
+          "party_wide_damage",
+          "recovery_vulnerability",
+          "guaranteed_target_response"
+        ],
+        "actions": {
+          "embravyr_cinder_lash": {
+            "name": "Cinder Lash",
+            "kind": "physical",
+            "target": "opponent",
+            "potency": 0.65,
+            "mp_cost": 0,
+            "element": "non_elemental"
+          },
+          "embravyr_emberwash": {
+            "name": "Emberwash",
+            "kind": "magical",
+            "target": "all_opponents",
+            "potency": 0.45,
+            "mp_cost": 4,
+            "element": "fire"
+          },
+          "embravyr_gather_embers": {
+            "name": "Gather Embers",
+            "kind": "prepare",
+            "target": "self",
+            "potency": 0,
+            "mp_cost": 0
+          },
+          "embravyr_furnace_lunge": {
+            "name": "Furnace Lunge",
+            "kind": "physical",
+            "target": "opponent",
+            "potency": 1.35,
+            "mp_cost": 0,
+            "element": "fire"
+          },
+          "embravyr_cooling": {
+            "name": "Cooling",
+            "kind": "recover",
+            "target": "self",
+            "potency": 0,
+            "mp_cost": 0
+          }
+        },
+        "windup": {
+          "prepare_action": "embravyr_gather_embers",
+          "attack_action": "embravyr_furnace_lunge",
+          "minimum_target_actions": 1,
+          "retargeting": "repeat_warning"
+        },
+        "recovery": {
+          "after_action": "embravyr_furnace_lunge",
+          "recovery_action": "embravyr_cooling",
+          "damage_taken_multiplier": 1.5,
+          "ends_before_action": "embravyr_cinder_lash"
+        },
+        "encounter": {
+          "trigger": "story",
+          "repeatable": false,
+          "formation_size": 1,
+          "flee_allowed": true
+        }
+      }
+    },
+    "nivareth": {
+      "mode": "species",
+      "name": "Nivareth",
+      "description": "Ice-aspected Aether gathered around a white crystal core. A suspended lattice of pale shards forms its body and angular limbs, veiled in drifting frost. It gathers in a cold crystal hollow off the Sanctuary cave.",
+      "family": "aether_elemental",
+      "tier": "boss",
+      "habitats": [
+        "elden_vale_sanctuary_caves"
+      ],
+      "level_range": {
+        "min": 4,
+        "max": 4
+      },
+      "archetype": "windup_attacker",
+      "stat_profile": "warded",
+      "fighting_style": "telegraphed_windup",
+      "species_multipliers": {
+        "str": 0.85,
+        "mag": 1.2,
+        "speed": 0.9
+      },
+      "tier_multipliers": {
+        "hp": 2.2
+      },
+      "behavior": {
+        "sequence": [
+          "nivareth_rime_needle",
+          "nivareth_glassfall",
+          "nivareth_gather_frost",
+          "nivareth_frostspire_thrust",
+          "nivareth_settling"
+        ],
+        "fallback": "nivareth_rime_needle",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": "nivareth",
+        "action_aliases": {
+          "nivareth_rime_needle": "rime_needle",
+          "nivareth_glassfall": "glassfall",
+          "nivareth_gather_frost": "gather_frost",
+          "nivareth_frostspire_thrust": "frostspire_thrust",
+          "nivareth_settling": "settling"
+        }
+      },
+      "rewards": {
+        "drops": {
+          "white_focus_gem": 1
+        }
+      },
+      "elemental_profile": {
+        "element": "ice",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 200,
+          "electric": 100,
+          "water": 50,
+          "ice": 100,
+          "nature": 100,
+          "wind": 100,
+          "holy": 100,
+          "ground": 100
+        },
+        "absorption": {
+          "elements": [
+            "ice"
+          ],
+          "healing_percent": 100
+        },
+        "design_rationale": "A white core, frost and translucent ice shards reveal Ice alignment. Fire melts its lattice. Water feeds the frost and is partially resisted, while Ice replenishes the core. Other elements remain neutral."
+      },
+      "planned_mechanics": {
+        "stagger": {
+          "status": "planned",
+          "resistance": "normal"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 1
+      },
+      "combat_design": {
+        "status": "ready",
+        "requirements": [
+          "party_wide_damage",
+          "recovery_vulnerability",
+          "guaranteed_target_response"
+        ],
+        "actions": {
+          "nivareth_rime_needle": {
+            "name": "Rime Needle",
+            "kind": "magical",
+            "target": "opponent",
+            "potency": 0.4,
+            "mp_cost": 0,
+            "element": "ice"
+          },
+          "nivareth_glassfall": {
+            "name": "Glassfall",
+            "kind": "magical",
+            "target": "all_opponents",
+            "potency": 0.35,
+            "mp_cost": 4,
+            "element": "ice"
+          },
+          "nivareth_gather_frost": {
+            "name": "Gather Frost",
+            "kind": "prepare",
+            "target": "self",
+            "potency": 0,
+            "mp_cost": 0
+          },
+          "nivareth_frostspire_thrust": {
+            "name": "Frostspire Thrust",
+            "kind": "physical",
+            "target": "opponent",
+            "potency": 2,
+            "mp_cost": 0,
+            "element": "ice"
+          },
+          "nivareth_settling": {
+            "name": "Settling",
+            "kind": "recover",
+            "target": "self",
+            "potency": 0,
+            "mp_cost": 0
+          }
+        },
+        "windup": {
+          "prepare_action": "nivareth_gather_frost",
+          "attack_action": "nivareth_frostspire_thrust",
+          "minimum_target_actions": 1,
+          "retargeting": "repeat_warning"
+        },
+        "recovery": {
+          "after_action": "nivareth_frostspire_thrust",
+          "recovery_action": "nivareth_settling",
+          "damage_taken_multiplier": 1.5,
+          "ends_before_action": "nivareth_rime_needle"
+        },
+        "encounter": {
+          "trigger": "story",
+          "repeatable": false,
+          "formation_size": 1,
+          "flee_allowed": true
         }
       }
     }

@@ -23,6 +23,8 @@ Deep Gallery → Quiet Shelf → Echo Chamber**.
 | Keeper's Recess | Takes the lower damp route from Splitstone Hollow and rejoins Deep Passage | A keeper's chest and traces of maintained stonework |
 | High shelf | A ramp-accessed spur overlooking Splitstone Hollow | A cache and a view over the junction |
 | Quiet Shelf alcove | A short spur before the final chamber | The last cache and room to prepare |
+| Embervein Chamber | Optional continuous branch from the lower Vein Gallery route | Level-four Embravyr, Red focus and Flame Edge |
+| Stillfrost Chamber | Optional continuous branch from the upper/deeper junction | Level-four Nivareth, White focus and Ice Edge |
 
 The first Vein Gallery cache introduces the containers on the direct route.
 Both longer detours reconnect, so exploration does not require retracing a
@@ -88,6 +90,12 @@ culled to the viewport. The HUD, dialogue and menus remain outside the lighting
 pass. Reduced motion holds crystals and illumination at a readable static
 state while preserving the same terrain and collision.
 
+The optional elemental rooms add sparse floor-clipped embers or frost motes
+and an Effects-volume crystal hum through `elemental_room_fx.py`. Their original
+wall microcrystal light roots remain shared with the cave lighting pass.
+Reduced Motion holds the motes, and menus, dialogue, focus loss and combat
+release the ambience audio without changing story music ownership.
+
 ## Story and encounters
 
 The cave is explorable while the MQ03 Sanctuary arrival remains pending.
@@ -100,8 +108,9 @@ focus Aqua Edge here. His first distance-triggered encounter is fixed to two
 level-two Cave Bats. A player-selected Aqua Edge succeeds, teaches the ability
 and releases ordinary ATB combat. Aqua Edge costs 0 MP throughout this battle
 and its retries. Afterward it costs 4 MP and remains usable outside the cave. The Blue gem is the only installed
-gem at this stage. Red and White gem acquisition and their miniboss roles are
-not yet implemented. See [Caelan’s progression](CAELAN_AQUA_PROGRESSION.md).
+gem at this point. Optional [elemental chambers](ELEMENTAL_CAVE_ENCOUNTERS.md)
+then add the Red/Fire and White/Ice focuses in either order. See
+[Caelan’s progression](CAELAN_AQUA_PROGRESSION.md).
 
 The cave now uses [distance-based random encounters](CAVE_RANDOM_ENCOUNTERS.md)
 with Cave Bats, Lithrusks and Veylumes. A hidden 16–36-tile countdown, weighted
@@ -111,13 +120,21 @@ enemies; groups of three or four are rarer.
 The six original encounter spaces remain layout references. Random selection
 uses the player's actual location throughout the continuous cave.
 
-The entrance apron, High Overlook, Quiet Shelf and Echo Chamber are protected.
+The entrance apron, High Overlook, Quiet Shelf, Echo Chamber and the new
+guardian chambers and their final approaches are protected from random battles.
+Earlier stretches of the optional branches keep their existing area pools.
+Embravyr and Nivareth are pure elemental Aether formations, each fixed at level four. Their
+independent Approach / Party / Leave choices and animated battlefields lead
+to guaranteed Red/Flame Edge and White/Ice Edge rewards respectively. Either
+order works; neither is required for Vespermaw. Elemental Edges cost 0 MP
+throughout these two teaching encounters, then 4 MP in normal combat.
+
 The Echo Chamber contains the level-seven miniboss,
 [Vespermaw](BESTIARY.md#vespermaw), as a one-time solo story encounter. The
 approach offers **Enter / Party / Step back**, with a short crystal-and-growl
 introduction before the dedicated animated Echo Chamber battlefield. Its
 [combat art](VESPERMAW_COMBAT_ART.md), party-wide Roar, marked Pounce response
-and recovery vulnerability are active. It remains excluded from random pools.
+and +50% exhaustion vulnerability are active. It remains excluded from random pools.
 The Quiet Shelf provides a preparation pause without restoring HP or MP.
 
 Boss entry checkpoints the formation, current party resources, safe approach
@@ -134,8 +151,12 @@ Random battle entry focuses the party, presents a loading screen and reveals
 one of four regional animated cave battlefields. Victory/flee return to the
 same cave position and reset the random distance budget. The introductory
 bat pair instead retains its exact ticket after defeat or withdrawal until
-victory; a deferred retry permits preparation without starting another battle. The boss owns its own
+victory; a deferred retry permits preparation without starting another battle. Each authored boss owns its own
 entry and completion records instead of consuming a random-encounter ticket.
+The two elemental encounters permit Flee; Vespermaw retains its no-Flee rule.
+Focus rewards, learned skills and EXP share an atomic victory transaction,
+while KO Caelan defers only the post-Spoils installation dialogue. See the
+[elemental encounter guide](ELEMENTAL_CAVE_ENCOUNTERS.md).
 See the [live encounter review](reviews/vespermaw_encounter/README.md).
 
 The arrival cutscene, further combat tuning and

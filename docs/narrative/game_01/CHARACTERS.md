@@ -303,7 +303,11 @@ unarmed. Mira presents his first gear-and-gem blade at the start of MQ02, before
 the outing. The gift contains only the Blue Water gem. His first Aqua Edge
 attempt fails, but inadvertently releases and teaches Aether Edge in the same
 attempt. The first Sanctuary cave encounter later teaches Aqua Edge. It costs
-0 MP throughout that introductory battle and 4 MP after it clears. The
+0 MP throughout that introductory battle and normally 4 MP after it clears.
+Optional level-four Embravyr and Nivareth crystallize the Red/Fire and White/Ice
+focuses and teach Flame Edge and Ice Edge in either order. Learned elemental
+Edges cost 0 MP throughout those two teaching fights, then return to 4 MP in
+normal encounters. These unlocks retain one gear and one selected focus. The
 [character ability dictionaries](../../CHARACTER_ABILITIES.md) record his
 unlock rules and the other party members' profiles.
 The values are visible through **Pause → Characters**, with attribute icons and

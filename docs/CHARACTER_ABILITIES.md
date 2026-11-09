@@ -22,11 +22,11 @@ Future combat direction is captured in the character sheets for
 [Caelan](narrative/game_01/characters/CAELAN.md#combat-progression-concept),
 [Mira](narrative/game_01/characters/MIRA.md#combat-progression-concept) and
 [Lucan](narrative/game_01/characters/LUCAN.md#combat-progression-concept).
-Later gem, gear, bot, self-augment and weapon unlock methods remain undecided;
-these concepts do not determine acquisition rules beyond the implemented
-Blue-gem and Aqua Edge opening.
+Further gem, gear, bot, self-augment and weapon unlock methods remain
+undecided. Caelan’s implemented acquisitions cover the Blue-gem/Aqua opening
+and the optional Red/Flame and White/Ice guardian rewards.
 
-Aqua Edge has a permanent `learned` entry, separate from the failed Boar attempt used to teach Aether Edge. Nature, Fire and Ice techniques are not available in the opening lesson. Selecting or owning a gem does not automatically teach an ability. Red and White gem acquisition and their associated cave attacks remain the next design work.
+Aqua Edge has a permanent `learned` entry, separate from the failed Boar attempt used to teach Aether Edge. Nature, Fire and Ice techniques are not available in the opening lesson. Selecting or owning a gem does not automatically teach an ability. Optional level-four Embravyr and Nivareth encounters install the Red/Fire and White/Ice gems and teach Flame Edge and Ice Edge respectively, in either order. See [elemental cave encounters](ELEMENTAL_CAVE_ENCOUNTERS.md).
 
 ## Mira’s Blade
 
@@ -69,12 +69,16 @@ Bats for this lesson. Caelan chooses Skills → Aqua Edge. Mira, Rivet and enemy
 actions wait until its successful opening strike, so the encounter cannot end
 before the lesson. Aqua Edge costs **0 MP throughout this introductory
 battle**, including its retries, even if he entered with no MP. After clearing the encounter, ordinary
-Aqua Edge costs **4 MP** in every area; the cave is not a continuing requirement.
+Aqua Edge normally costs **4 MP** in every area; the cave is not a continuing requirement. The two optional elemental teaching encounters waive every learned elemental Edge's MP cost throughout the battle and retries, while Aether Edge and Overclock retain 4 and 5 MP.
 
 Aqua Edge combines physical potency 1 with **Water** magical potency 0.5. Only
 the magical component reads the target’s elemental profile, including its exact
 0–200% response or matching-element absorption. The physical component remains
-ordinary physical damage. Aether Edge remains available and non-elemental.
+ordinary physical damage. Aether Edge remains available and non-elemental. Flame Edge and Ice Edge
+use the same physical potency 1 plus magical potency 0.5, with Fire and Ice
+magical components and their matching selected owned gem. Each normally costs
+4 MP. The one-time focus victory, rather than selection or a raw material,
+teaches its associated technique.
 
 The resonance, learned ability and cleared introductory battle are separate
 facts. Discovery checkpoints the earned skill and battle resources immediately.
@@ -98,5 +102,12 @@ Generic `CharacterAbilities.acquire_weapon(character_id, item_id, learn_starter=
 `game.equip_weapon(character_id, item_id)` equips an already-owned weapon; `None` unequips it. Unequipping a learned technique retains knowledge but prevents weapon-required use. Equipment reserves inventory quantities across characters, and loadout changes remain blocked during combat.
 
 Older active/completed MQ02 journeys preserve prior progress without replaying the birthday scene. Older active weaponless routes retain their compatibility dialogue. A completed legacy-bypass MQ02 journey that still lacks the blade receives one owned, Blue-only blade and its starter Aether Edge through an idempotent compatibility migration. This records the current story equipment without replaying scenes or restoring resources. New available quests receive the presentation before recruitment. Save/retry paths never duplicate the gift, learned technique or encounter rewards.
+
+Optional guardian victory saves its guaranteed focus item, installed gem,
+learned Edge, selected focus, EXP, resources and receipt atomically. The
+installation exchange is an acknowledged presentation after Spoils; KO Caelan
+receives the focus and skill immediately but waits to acknowledge it until
+conscious. Neither guardian is required to obtain the other or defeat
+Vespermaw.
 
 Owned gems are saved separately from `gear_focus`. Acquiring Mira’s Blade grants only Water. Raw Aether Sapphire, Ruby or other material drops do not install focus gems. Saves without gem ownership migrate to Blue only, retaining earned Aether Edge and existing character progress. Older journeys with prior cave encounters receive Aqua Edge without replaying a completed introduction.

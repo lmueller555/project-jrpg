@@ -1,5 +1,11 @@
 # Vespermaw live encounter review
 
+The optional elemental-chamber update changes Vespermaw's exhaustion from +25%
+to **+50% incoming damage**. This retained capture is historical evidence of
+the earlier encounter build. The current [elemental encounter review](../elemental_cave_encounters/README.md)
+shows the shared +50% recovery rule, while [the Bestiary](../../BESTIARY.md#vespermaw)
+records Vespermaw's current data.
+
 These retained captures show the PR #162 build before Blue-only gem ownership
 and the cave Aqua Edge lesson. Their original production hashes remain in
 `verification.json`; the current capture tool seeds the earlier Aqua discovery

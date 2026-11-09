@@ -68,7 +68,7 @@ class VespermawBestiaryTests(unittest.TestCase):
         self.assertEqual((recover['kind'], recover['target']), ('recover', 'self'))
         self.assertEqual(design['windup']['minimum_target_actions'], 1)
         self.assertEqual(design['windup']['retargeting'], 'repeat_warning')
-        self.assertEqual(design['recovery']['damage_taken_multiplier'], 1.25)
+        self.assertEqual(design['recovery']['damage_taken_multiplier'], 1.5)
         self.assertEqual(design['encounter'],
                          {'trigger': 'story', 'repeatable': False, 'formation_size': 1})
         # Live definitions match the complete approved design.
@@ -160,6 +160,6 @@ class VespermawBestiaryTests(unittest.TestCase):
                     else:
                         self.assertIn('Combat: ready', result.stdout)
                         self.assertIn('all_opponents', result.stdout)
-                        self.assertIn('damage taken ×1.25', result.stdout)
+                        self.assertIn('damage taken ×1.5', result.stdout)
                         self.assertIn('100% healing (absorb)', result.stdout)
             self.assertEqual(list(Path(directory).iterdir()), [])

@@ -79,8 +79,8 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertEqual(first_weapon, {'aether_edge'})
         self.assertEqual(registrations['basic_magicks'], {'unlock': 'starting'})
         learned = {key for key, value in registrations.items() if value['unlock'] == 'learned'}
-        self.assertEqual(len(learned), 21)
-        self.assertTrue({'brace', 'mend', 'aether_dart'}.issubset(learned))
+        self.assertEqual(len(learned), 23)
+        self.assertTrue({'brace', 'mend', 'aether_dart', 'flame_edge', 'ice_edge'}.issubset(learned))
         self.assertTrue(learned.isdisjoint(self.abilities.known_abilities()))
         definition = self.abilities.definitions['aether_edge']
         self.assertEqual(set(definition), {'name', 'description', 'kind'})

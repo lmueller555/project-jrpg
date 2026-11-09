@@ -26,7 +26,8 @@ class BestiaryPreviewTests(unittest.TestCase):
         result = self.run_preview('--list', '--format', 'json')
         self.assertEqual(result.returncode, 0, result.stderr)
         rows = {row['id']: row for row in json.loads(result.stdout)}
-        self.assertEqual(set(rows), {'bat', 'ridgeback_tusker', 'cave_bat', 'lithrusk', 'veylume', 'vespermaw'})
+        self.assertEqual(set(rows), {'bat', 'ridgeback_tusker', 'cave_bat', 'lithrusk', 'veylume', 'vespermaw',
+                                     'embravyr', 'nivareth'})
         self.assertEqual(rows['bat']['kind'], 'fixed')
         self.assertEqual(rows['ridgeback_tusker']['levels'], 'fixed')
         self.assertEqual(rows['cave_bat']['kind'], 'species')
@@ -45,6 +46,11 @@ class BestiaryPreviewTests(unittest.TestCase):
         self.assertFalse(rows['cave_bat']['presentation_pending'])
         self.assertFalse(rows['lithrusk']['presentation_pending'])
         self.assertFalse(rows['veylume']['presentation_pending'])
+        for identifier, profile, element in (('embravyr', 'armored', 'fire'), ('nivareth', 'warded', 'ice')):
+            self.assertEqual(rows[identifier]['levels'], '4–4')
+            self.assertEqual(rows[identifier]['stat_profile'], profile)
+            self.assertEqual(rows[identifier]['element'], element)
+            self.assertFalse(rows[identifier]['presentation_pending'])
 
     def test_ready_species_preview_in_all_formats_without_side_effects(self):
         designs = (('lithrusk', [2, 3], 'ground', 'water', 150),

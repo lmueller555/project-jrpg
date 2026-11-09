@@ -18,7 +18,9 @@ rates, including when a frame crosses an area or safe boundary.
 
 Menus, dialogue, scripted movement, transitions, focus loss and safe areas
 pause the countdown. Entering another room preserves it. The protected areas
-are the entrance apron, High Overlook, Quiet Shelf and Echo Chamber; leaving
+are the entrance apron, High Overlook, Quiet Shelf, Echo Chamber, the two
+guardian chambers and their final approaches; earlier branch stretches retain
+their outer or deep random pools. Leaving
 protection ensures at least four tile lengths remain. Ordinary victory and
 fleeing roll a fresh distance. Ordinary defeat uses the
 optional-battle withdrawal policy, returns the entry resources without a reward
@@ -92,7 +94,7 @@ battlefield. A short reveal opens combat. Escape/focus loss pauses entry and
 held inputs cannot carry through to spend a combat turn. Loading or checkpoint
 failures offer retry while retaining the same ticket.
 
-Four native asset-pack battlefields represent the outer galleries, Reflecting
+Four random-encounter native asset-pack battlefields represent the outer galleries, Reflecting
 Grotto, Splitstone Hollow and Deep Gallery. Each has 24 frames over a six-second
 cycle, pulsing wall microcrystals and a static reduced-motion frame. The grotto
 adds water and drips. A cached renderer frames the scenery for the visible
@@ -168,11 +170,15 @@ sheet uses black old values, green arrows and green new values with numeric
 gains on light parchment. Quiet EXP and level-up effects honor Effects volume
 without replacing the resumed soundtrack. Party and Characters menus expose
 levels and progress; see [Leveling](LEVELING.md) for save compatibility and rules.
-The three cave species currently have pending item drops, so their resolved
-drop bundles are empty even when the battle grants EXP. Stagger, further
-elemental techniques and post-miniboss story resolution remain
+The three normal cave species currently have pending item drops, so their resolved
+drop bundles are empty even when the battle grants EXP. Stagger, techniques beyond the three learned elemental Edges, and
+post-miniboss story resolution remain
 separate work. The one-time level-seven Vespermaw encounter is live in the Echo
-Chamber after the introductory lesson clears.
+Chamber after the introductory lesson clears. Optional level-four Embravyr and
+Nivareth use their own protected chambers, tickets and receipts; they are never
+selected by a weighted pool. Their guaranteed Red/White focuses and learned
+Edges do not change random formation weights or the 16–36-tile countdown.
+See [elemental cave encounters](ELEMENTAL_CAVE_ENCOUNTERS.md).
 
 ## Validation
 

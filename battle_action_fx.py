@@ -86,10 +86,23 @@ class BattleActionEffects:
     CONTACT = ((136, 95, 58), (246, 199, 119), (255, 247, 214))
     DUST = ((105, 100, 67), (157, 145, 99), (198, 181, 126))
     ELECTRIC = ((37, 77, 113), (94, 215, 242), (255, 236, 153))
+    FIRE = ((129, 41, 25), (246, 133, 58), (255, 238, 169))
+    ICE = ((54, 99, 151), (155, 220, 250), (242, 255, 255))
     ELECTRIC_ACTIONS = frozenset(('veylume_static_spark', 'veylume_veinflash'))
+    FIRE_ACTIONS = frozenset(('flame_edge', 'embravyr_emberwash', 'embravyr_furnace_lunge'))
+    ICE_ACTIONS = frozenset(('ice_edge', 'nivareth_rime_needle', 'nivareth_glassfall',
+                             'nivareth_frostspire_thrust'))
 
     def __init__(self):
         self._layer = None
+
+    def _palette(self, name, kind='magical'):
+        if name in self.ELECTRIC_ACTIONS:return self.ELECTRIC
+        if name in self.FIRE_ACTIONS:return self.FIRE
+        if name in self.ICE_ACTIONS:return self.ICE
+        if name == 'aether_edge':return self.AETHER
+        if name in ('aether_dart', 'aqua_edge') or kind == 'magical':return self.MAGIC
+        return self.CONTACT
 
     @staticmethod
     def release_at(action):
@@ -164,7 +177,7 @@ class BattleActionEffects:
     def _draw_charge(self, layer, sample):
         strength, point = sample['charge'], pygame.Vector2(sample['origin'])
         if strength <= 0:return
-        dark, mid, light = self.ELECTRIC if sample['action'] in self.ELECTRIC_ACTIONS else self.MAGIC
+        dark, mid, light = self._palette(sample['action'])
         radius = 3+round(strength*3)
         pygame.draw.circle(layer, _color(dark, strength*.28), _xy(point), radius+3)
         pygame.draw.circle(layer, _color(mid, strength*.9), _xy(point), radius, 1)
@@ -180,7 +193,19 @@ class BattleActionEffects:
         entry = sample['projectile']
         if entry is None:return
         point, heading = pygame.Vector2(entry['point']), pygame.Vector2(entry['direction'])
-        dark, mid, light = self.ELECTRIC if sample['action'] in self.ELECTRIC_ACTIONS else self.MAGIC
+        dark, mid, light = self._palette(sample['action'])
+        if sample['action'] in self.ICE_ACTIONS:
+            normal = pygame.Vector2(-heading.y, heading.x)
+            pygame.draw.polygon(layer, _color(mid, .9), [_xy(point+heading*6),
+                _xy(point+normal*3), _xy(point-heading*5), _xy(point-normal*3)])
+            pygame.draw.line(layer, _color(light, 1.), _xy(point-heading*3), _xy(point+heading*5), 1)
+            return
+        if sample['action'] in self.FIRE_ACTIONS:
+            normal = pygame.Vector2(-heading.y, heading.x)
+            pygame.draw.polygon(layer, _color(mid, .9), [_xy(point+heading*4),
+                _xy(point+normal*3-heading*2), _xy(point-heading*10), _xy(point-normal*3)])
+            pygame.draw.line(layer, _color(light, 1.), _xy(point-heading*4), _xy(point+heading*3), 2)
+            return
         if sample['action'] in self.ELECTRIC_ACTIONS:
             normal = pygame.Vector2(-heading.y, heading.x)
             size = 15 if sample['action'] == 'veylume_veinflash' else 9
@@ -205,8 +230,7 @@ class BattleActionEffects:
         if not strength:return
         point = pygame.Vector2(point)
         name, kind = _get(action, 'action', action if isinstance(action, str) else ''), _get(action, 'kind', '')
-        palette = (self.ELECTRIC if name in self.ELECTRIC_ACTIONS else self.AETHER if name == 'aether_edge'
-                   else self.MAGIC if name == 'aether_dart' or kind == 'magical' else self.CONTACT)
+        palette = self._palette(name, kind)
         _, mid, light = palette
         if reduced_motion:
             pygame.draw.circle(layer, _color(mid, strength*.65), _xy(point), 5, 1)

@@ -90,7 +90,8 @@ class CaveAssetTests(unittest.TestCase):
             self.assertGreater(len(route), 3)
         encounters = self.cave['encounter_spaces']
         self.assertEqual(Counter(space['route'] for space in encounters),
-                         Counter({'main': 4, 'reflecting_loop': 1, 'keeper_loop': 1}))
+                         Counter({'main': 4, 'reflecting_loop': 1, 'keeper_loop': 1,
+                                  'embervein_branch':1, 'stillfrost_branch':1}))
         for space in encounters:
             radius = space['radius']
             self.assertGreaterEqual(radius, 48)

@@ -150,6 +150,13 @@ class CaveGameplayTests(unittest.TestCase):
         self.key(pygame.K_e)
         self.assertEqual(driver.game.world.data['id'], SCENE_ID)
         driver.until(lambda:not driver.game.transfer_cooldown)
+        # The existing first-entry Blue resonance owns input until its spoken
+        # pages are acknowledged. This terrain-only route suppresses battles,
+        # but still follows that production conversation before walking on.
+        driver.until(lambda:driver.game.social.active)
+        self.assertEqual(driver.game.social.script_identifier, 'cave_blue_resonance')
+        driver.read_current()
+        self.assertTrue(driver.game.cave_lesson.resonance_seen)
         world = self.guard_continuous_walk()
         cave = world.data['cave']
         points = cave['navigation_points']

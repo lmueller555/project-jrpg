@@ -6,8 +6,8 @@ GEM_NAMES = {'nature': 'Nature', 'water': 'Water', 'fire': 'Fire', 'ice': 'Ice'}
 GEM_COLORS = {'nature': (93, 190, 113), 'water': (91, 166, 235),
               'fire': (226, 92, 83), 'ice': (235, 242, 247)}
 
-# Ice has a selector position, but no starting action or unlock. Its requirement
-# is reserved here so a later authored Ice Edge can use the same eligibility.
+# The three cave discoveries independently install their matching focus and
+# teach an Edge. Nature remains a reserved socket for later progression.
 REQUIRED_GEMS = {'nature_edge': 'nature', 'aqua_edge': 'water',
                  'flame_edge': 'fire', 'ice_edge': 'ice'}
 

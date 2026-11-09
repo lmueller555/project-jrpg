@@ -1564,6 +1564,584 @@
           "radius": 170
         }
       ]
+    },
+    {
+      "id": "cave_embervein",
+      "name": "Embervein Chamber",
+      "source_rooms": [
+        "embervein_chamber"
+      ],
+      "source_position": [
+        768,
+        1632
+      ],
+      "seed": 8404,
+      "floor_material": "gravel",
+      "ambient": 0.58,
+      "wall_edge": [
+        [
+          0,
+          143
+        ],
+        [
+          48,
+          137
+        ],
+        [
+          96,
+          129
+        ],
+        [
+          144,
+          124
+        ],
+        [
+          192,
+          120
+        ],
+        [
+          240,
+          118
+        ],
+        [
+          288,
+          120
+        ],
+        [
+          336,
+          124
+        ],
+        [
+          384,
+          129
+        ],
+        [
+          432,
+          137
+        ],
+        [
+          480,
+          143
+        ]
+      ],
+      "wall_baselines": [
+        139,
+        130,
+        122,
+        122,
+        130,
+        139
+      ],
+      "patches": [
+        {
+          "material": "dry",
+          "polygon": [
+            [
+              30,
+              150
+            ],
+            [
+              128,
+              135
+            ],
+            [
+              236,
+              154
+            ],
+            [
+              294,
+              190
+            ],
+            [
+              240,
+              236
+            ],
+            [
+              110,
+              248
+            ],
+            [
+              18,
+              217
+            ]
+          ]
+        }
+      ],
+      "placements": [
+        {
+          "id": "cave_embervein_vault_west",
+          "pack": "base",
+          "module": "formation.pendants.2",
+          "position": [
+            46,
+            18
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "cave_embervein_vault_centre",
+          "pack": "base",
+          "module": "formation.pendants.0",
+          "position": [
+            237,
+            9
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "cave_embervein_vault_east",
+          "pack": "base",
+          "module": "formation.pendants.1",
+          "position": [
+            432,
+            17
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "cave_embervein_west_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.2",
+          "position": [
+            9,
+            140
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "cave_embervein_east_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.0",
+          "position": [
+            473,
+            141
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "cave_embervein_west_crust",
+          "pack": "geology",
+          "module": "mineral.crust.1",
+          "position": [
+            108,
+            131
+          ]
+        },
+        {
+          "id": "cave_embervein_east_crust",
+          "pack": "geology",
+          "module": "mineral.crust.2",
+          "position": [
+            373,
+            132
+          ]
+        },
+        {
+          "id": "cave_embervein_rear_stain",
+          "pack": "geology",
+          "module": "stain.damp.1",
+          "position": [
+            241,
+            133
+          ]
+        },
+        {
+          "id": "cave_embervein_low_floor_crack",
+          "pack": "geology",
+          "module": "crack.branching.2",
+          "position": [
+            242,
+            257
+          ]
+        },
+        {
+          "id": "cave_embervein_side_pebbles",
+          "pack": "geology",
+          "module": "debris.pebbles.1",
+          "position": [
+            439,
+            262
+          ]
+        }
+      ],
+      "crystals": [
+        {
+          "module": "micro.red.dense",
+          "position": [
+            35,
+            96
+          ],
+          "phase": 0.0,
+          "radius": 185
+        },
+        {
+          "module": "micro.red.diagonal_left",
+          "position": [
+            77,
+            64
+          ],
+          "phase": 0.08,
+          "radius": 185
+        },
+        {
+          "module": "micro.orange.vertical",
+          "position": [
+            131,
+            91
+          ],
+          "phase": 0.16,
+          "radius": 185
+        },
+        {
+          "module": "micro.red.dense",
+          "position": [
+            185,
+            46
+          ],
+          "phase": 0.24,
+          "radius": 185
+        },
+        {
+          "module": "micro.red.diagonal_right",
+          "position": [
+            239,
+            78
+          ],
+          "phase": 0.32,
+          "radius": 185
+        },
+        {
+          "module": "micro.red.dense",
+          "position": [
+            291,
+            43
+          ],
+          "phase": 0.4,
+          "radius": 185
+        },
+        {
+          "module": "micro.orange.sparse",
+          "position": [
+            345,
+            76
+          ],
+          "phase": 0.48,
+          "radius": 185
+        },
+        {
+          "module": "micro.red.diagonal_right",
+          "position": [
+            400,
+            51
+          ],
+          "phase": 0.56,
+          "radius": 185
+        },
+        {
+          "module": "micro.red.vertical",
+          "position": [
+            454,
+            96
+          ],
+          "phase": 0.64,
+          "radius": 185
+        }
+      ],
+      "light_gain": 1.65
+    },
+    {
+      "id": "cave_stillfrost",
+      "name": "Stillfrost Chamber",
+      "source_rooms": [
+        "stillfrost_chamber"
+      ],
+      "source_position": [
+        1296,
+        528
+      ],
+      "seed": 9404,
+      "floor_material": "damp",
+      "ambient": 0.62,
+      "wall_edge": [
+        [
+          0,
+          143
+        ],
+        [
+          48,
+          137
+        ],
+        [
+          96,
+          129
+        ],
+        [
+          144,
+          124
+        ],
+        [
+          192,
+          120
+        ],
+        [
+          240,
+          118
+        ],
+        [
+          288,
+          120
+        ],
+        [
+          336,
+          124
+        ],
+        [
+          384,
+          129
+        ],
+        [
+          432,
+          137
+        ],
+        [
+          480,
+          143
+        ]
+      ],
+      "wall_baselines": [
+        139,
+        130,
+        122,
+        122,
+        130,
+        139
+      ],
+      "patches": [
+        {
+          "material": "silt",
+          "polygon": [
+            [
+              30,
+              150
+            ],
+            [
+              128,
+              135
+            ],
+            [
+              236,
+              154
+            ],
+            [
+              294,
+              190
+            ],
+            [
+              240,
+              236
+            ],
+            [
+              110,
+              248
+            ],
+            [
+              18,
+              217
+            ]
+          ]
+        }
+      ],
+      "placements": [
+        {
+          "id": "cave_stillfrost_vault_west",
+          "pack": "base",
+          "module": "formation.pendants.2",
+          "position": [
+            46,
+            18
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "cave_stillfrost_vault_centre",
+          "pack": "base",
+          "module": "formation.pendants.0",
+          "position": [
+            237,
+            9
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "cave_stillfrost_vault_east",
+          "pack": "base",
+          "module": "formation.pendants.1",
+          "position": [
+            432,
+            17
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "cave_stillfrost_west_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.2",
+          "position": [
+            9,
+            140
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "cave_stillfrost_east_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.0",
+          "position": [
+            473,
+            141
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "cave_stillfrost_west_crust",
+          "pack": "geology",
+          "module": "mineral.crust.1",
+          "position": [
+            108,
+            131
+          ]
+        },
+        {
+          "id": "cave_stillfrost_east_crust",
+          "pack": "geology",
+          "module": "mineral.crust.2",
+          "position": [
+            373,
+            132
+          ]
+        },
+        {
+          "id": "cave_stillfrost_rear_stain",
+          "pack": "geology",
+          "module": "stain.damp.1",
+          "position": [
+            241,
+            133
+          ]
+        },
+        {
+          "id": "cave_stillfrost_low_floor_crack",
+          "pack": "geology",
+          "module": "crack.branching.2",
+          "position": [
+            242,
+            257
+          ]
+        },
+        {
+          "id": "cave_stillfrost_side_pebbles",
+          "pack": "geology",
+          "module": "debris.pebbles.1",
+          "position": [
+            439,
+            262
+          ]
+        },
+        {
+          "id": "cold_seep",
+          "pack": "water",
+          "module": "wet_crack.1",
+          "position": [
+            448,
+            240
+          ],
+          "animated": true
+        }
+      ],
+      "crystals": [
+        {
+          "module": "micro.white.dense",
+          "position": [
+            35,
+            96
+          ],
+          "phase": 0.0,
+          "radius": 180
+        },
+        {
+          "module": "micro.blue.diagonal_left",
+          "position": [
+            77,
+            64
+          ],
+          "phase": 0.08,
+          "radius": 180
+        },
+        {
+          "module": "micro.white.vertical",
+          "position": [
+            131,
+            91
+          ],
+          "phase": 0.16,
+          "radius": 180
+        },
+        {
+          "module": "micro.white.dense",
+          "position": [
+            185,
+            46
+          ],
+          "phase": 0.24,
+          "radius": 180
+        },
+        {
+          "module": "micro.blue.diagonal_right",
+          "position": [
+            239,
+            78
+          ],
+          "phase": 0.32,
+          "radius": 180
+        },
+        {
+          "module": "micro.white.dense",
+          "position": [
+            291,
+            43
+          ],
+          "phase": 0.4,
+          "radius": 180
+        },
+        {
+          "module": "micro.white.sparse",
+          "position": [
+            345,
+            76
+          ],
+          "phase": 0.48,
+          "radius": 180
+        },
+        {
+          "module": "micro.blue.diagonal_right",
+          "position": [
+            400,
+            51
+          ],
+          "phase": 0.56,
+          "radius": 180
+        },
+        {
+          "module": "micro.white.vertical",
+          "position": [
+            454,
+            96
+          ],
+          "phase": 0.64,
+          "radius": 180
+        }
+      ],
+      "light_gain": 1.08
     }
   ]
 }

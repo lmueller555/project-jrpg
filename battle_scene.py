@@ -31,14 +31,15 @@ ACTION_LABELS = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
                  'skills': 'Skills', 'back': 'Back',
                  'aether_edge': 'Aether Edge', 'aether_dart': 'Dart · 4 MP',
                  'nature_edge': 'Nature Edge', 'aqua_edge': 'Aqua Edge',
-                 'flame_edge': 'Flame Edge',
+                 'flame_edge': 'Flame Edge', 'ice_edge': 'Ice Edge',
                  'overclock': 'Overclock'}
 HP_GREEN = '#6fc878'
 HP_YELLOW = GOLD
 HP_RED = '#df6b62'
 MP_BLUE = '#5da9e9'
 ATB_YELLOW = GOLD
-CAVE_ENEMIES = frozenset(('lithrusk', 'veylume', 'vespermaw'))
+ELEMENTALS = frozenset(('embravyr', 'nivareth'))
+CAVE_ENEMIES = frozenset(('lithrusk', 'veylume', 'vespermaw', *ELEMENTALS))
 
 
 class CombatSprites:
@@ -52,7 +53,7 @@ class CombatSprites:
 
     def _load_actor(self, actor):
         if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea', 'edran',
-                         'lithrusk', 'veylume', 'vespermaw'):
+                         'lithrusk', 'veylume', 'vespermaw', *ELEMENTALS):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
         data = json.loads((folder/'animation.json').read_text(encoding='utf-8'))
@@ -175,6 +176,7 @@ class BattleScene:
         self._popups = []
         self._reactions = {}
         self.action_fx = BattleActionEffects()
+        self._elemental_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         motion_frame('plant', 0, armed=model.weapon_equipped)
         self.action_audio = BattleActionAudio(game)
         self._cue_action = None
@@ -312,6 +314,8 @@ class BattleScene:
                                    ('tusker', (114, 14), 62),
                                    ('lithrusk', (84, 11), 62),
                                    ('veylume', (32, 6), 30),
+                                   ('embravyr', (68, 10), 42),
+                                   ('nivareth', (54, 8), 34),
                                    ('vespermaw', (126, 17), 65)):
             image = pygame.Surface(size, pygame.SRCALPHA)
             pygame.draw.ellipse(image, (31, 43, 29, opacity//2), image.get_rect())
@@ -576,7 +580,7 @@ class BattleScene:
 
     def _command_label(self, identifier):
         label = ACTION_LABELS.get(identifier, identifier)
-        if identifier == 'aqua_edge':
+        if identifier in ('aqua_edge', 'flame_edge', 'ice_edge'):
             cost = self.model.action_mp_cost(identifier, self.model.ready_actor)
             return label+' · '+str(cost)+' MP'
         return label
@@ -598,12 +602,13 @@ class BattleScene:
                 selected = actions[self.selected % len(actions)]
                 if selected == 'aether_edge':
                     return '4 MP · Physical and non-elemental magical sword strike.'
-                if selected == 'aqua_edge':
-                    if self.model.spellblade_guided:
+                if selected in ('aqua_edge', 'flame_edge', 'ice_edge'):
+                    if selected == 'aqua_edge' and self.model.spellblade_guided:
                         return self._command_reason(selected) or 'Try channeling Water through the blue gem.'
                     cost = self.model.action_mp_cost(selected, self.model.ready_actor)
-                    return str(cost)+' MP · Physical sword strike with Water magic.'
-                if selected in ('nature_edge','aqua_edge','flame_edge'):
+                    element = {'aqua_edge': 'Water', 'flame_edge': 'Fire', 'ice_edge': 'Ice'}[selected]
+                    return str(cost)+' MP · Physical sword strike with '+element+' magic.'
+                if selected == 'nature_edge':
                     return self._command_reason(selected) or 'Unpractised elemental focus.'
                 if selected == 'overclock':
                     return '5 MP · Haste: +50% ATB for 8 bot turns.'
@@ -984,10 +989,12 @@ class BattleScene:
                 age = max(0., event.get('frame_age', 0.))
                 self._reactions[event['target']] = {'age': age, 'guarded': event.get('guarded', False),
                     'lethal': not event['remaining_hp'], 'action': event['action']}
-                if age < .12 and (event['action'] != 'vespermaw_confluence_roar' or not roar_impact_cued):
+                group_spell = event['action'] in ('vespermaw_confluence_roar',
+                                                  'embravyr_emberwash', 'nivareth_glassfall')
+                if age < .12 and (not group_spell or not roar_impact_cued):
                     metallic = event.get('guarded') and (event['target'] != 'player' or self.model.weapon_equipped)
                     self.action_audio.play('guard_hit' if metallic else 'impact')
-                    if event['action'] == 'vespermaw_confluence_roar':roar_impact_cued = True
+                    if group_spell:roar_impact_cued = True
                 self._popups.append({'target': event['target'],
                                      'text': str(event['damage']), 'age': age,
                                      'guarded': event.get('guarded', False)})
@@ -1160,14 +1167,14 @@ class BattleScene:
         if not self._is_enemy(actor):return 2.
         if self._group:
             bounds, area = self._enemy_art(actor)['bounds'], self._group_body_area(actor)
-            inset = 2 if self._sprite(actor) == 'vespermaw' else 0
+            inset = 2 if self._sprite(actor) in ('vespermaw', *ELEMENTALS) else 0
             return min(2., max(1, area.width-4-inset)/max(1, bounds.width),
                        max(1, area.height-2-inset)/max(1, bounds.height))
         # Injected test/preview sprite banks may not supply occupied metadata.
         if not hasattr(self.sprites, 'actors'):return 2.
         bounds = self._enemy_art(actor)['bounds']
         available = self._enemy_body_area(actor).height
-        if self._sprite(actor) == 'vespermaw':available = max(1, available-2)
+        if self._sprite(actor) in ('vespermaw', *ELEMENTALS):available = max(1, available-2)
         return min(2., 224/max(1, bounds.width), available/max(1, bounds.height))
 
     def _clamp_enemy_position(self, point, actor='enemy', *, moving=False):
@@ -1179,7 +1186,7 @@ class BattleScene:
         # A large canvas scaled to a fractional size can gain one raster pixel
         # after both the target size and blit origin round. Keep that pixel in
         # the field rather than overlapping the status panel or target header.
-        if self._sprite(actor) == 'vespermaw':area = area.inflate(-2, -2)
+        if self._sprite(actor) in ('vespermaw', *ELEMENTALS):area = area.inflate(-2, -2)
         low = pygame.Vector2(area.left-(bounds.left-anchor[0])*scale,
                              area.top-(bounds.top-anchor[1])*scale)
         high = pygame.Vector2(area.right-(bounds.right-anchor[0])*scale,
@@ -1313,7 +1320,7 @@ class BattleScene:
                 return ('guard_impact' if reaction['guarded'] else 'hurt_recover'), age*1000
             if actor == 'mira' and reaction['guarded']:
                 return 'guard_impact', age*1000
-            if self._is_enemy(actor) and sprite == 'vespermaw' and not reaction['lethal']:
+            if self._is_enemy(actor) and sprite in ('vespermaw', *ELEMENTALS) and not reaction['lethal']:
                 frames = self._enemy_art(actor)['animations']['hurt'][0]
                 return 'hurt', age/reaction_length*sum(length for _, length in frames)
             return 'hurt', age*1000
@@ -1329,10 +1336,10 @@ class BattleScene:
             if self._is_enemy(actor) and sprite in CAVE_ENEMIES:
                 if sprite == 'lithrusk' and action.kind == 'physical':
                     return self._lithrusk_pose(action, actor)
-                if sprite == 'vespermaw':
+                if sprite in ('vespermaw', *ELEMENTALS):
                     if action.kind == 'recover':
                         start = self._enemy_recovery_times.setdefault(actor, self._elapsed)
-                        return 'exhausted', 0 if self.reduced_motion else max(0., self._elapsed-start)*1000
+                        return action.animation, 0 if self.reduced_motion else max(0., self._elapsed-start)*1000
                     return self._vespermaw_pose(action, actor)
                 return action.animation, action.elapsed*1000
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
@@ -1342,16 +1349,17 @@ class BattleScene:
                      if action.animation in ('prepare', 'charge') else 'attack')
             return state, action.elapsed*1000
         if self._is_enemy(actor) and self._telegraphs().get(actor):
-            if sprite in ('veylume', 'vespermaw'):
+            if sprite in ('veylume', 'vespermaw', *ELEMENTALS):
                 started = self._enemy_charge_times.get(actor, self._enemy_charge_time)
                 start = self._elapsed if started is None else started
                 elapsed = max(0., self._elapsed-start)
                 return 'charged_hold', 0 if self.reduced_motion else elapsed*1000
             return 'prepare', self._elapsed*1000
-        if (self._is_enemy(actor) and sprite == 'vespermaw'
+        if (self._is_enemy(actor) and sprite in ('vespermaw', *ELEMENTALS)
                 and actor in getattr(self.model, 'enemy_recovery_states', {})):
             start = self._enemy_recovery_times.setdefault(actor, self._elapsed)
-            return 'exhausted', 0 if self.reduced_motion else max(0., self._elapsed-start)*1000
+            recovery = {'vespermaw': 'exhausted', 'embravyr': 'cooling', 'nivareth': 'settling'}[sprite]
+            return recovery, 0 if self.reduced_motion else max(0., self._elapsed-start)*1000
         if combatant.guarded:
             return ('guard_enter', 300.) if actor == 'player' else ('guard', self._elapsed*1000)
         if actor == 'player' and self._gear_adjust_time is not None:
@@ -1360,6 +1368,9 @@ class BattleScene:
         if self._is_enemy(actor) and sprite == 'veylume' and self._elapsed < .65 and not self.reduced_motion:
             frames = self._enemy_art(actor)['animations']['fly'][0]
             return 'fly', self._elapsed/.65*sum(length for _, length in frames)
+        if self._is_enemy(actor) and sprite in ELEMENTALS and self._elapsed < .8 and not self.reduced_motion:
+            frames = self._enemy_art(actor)['animations']['emerge'][0]
+            return 'emerge', self._elapsed/.8*sum(length for _, length in frames)
         return 'idle', 0 if self.reduced_motion and sprite in CAVE_ENEMIES else self._elapsed*1000
 
     def _vespermaw_pose(self, action, actor='enemy'):
@@ -1472,7 +1483,8 @@ class BattleScene:
                 context['unmastered'] = not mastered and context.get('action') != 'aether_edge'
                 # Aqua shares the authored sword motion, while the light keeps
                 # its Water identity even during an Aether-shaped pose.
-                if context.get('action') == 'aqua_edge':context['elemental'] = True
+                if context.get('action') in ('aqua_edge', 'flame_edge', 'ice_edge'):
+                    context['elemental'] = True
                 self.gear_fx.draw(canvas, point, state, time, self.model.active_gem, self._elapsed,
                     slot_age=None if self._slot_time is None else self._elapsed-self._slot_time,
                     action=context, reduced_motion=self.reduced_motion,
@@ -1511,6 +1523,7 @@ class BattleScene:
                                    (round(point.x+offset), round(point.y-25)), 2)
         self._draw_mira_effects(canvas)
         self._draw_cave_enemy_effects(canvas, positions)
+        self._draw_elemental_effects(canvas, positions)
         self._draw_vespermaw_roar(canvas, positions)
         if marked is not None and self.target_marker_rects:
             self.target_marker_rects['finger'] = draw_target_finger(canvas, self.enemy_rects[marked],
@@ -1518,7 +1531,7 @@ class BattleScene:
         if (action is not None and action.kind == 'magical' and not action.resolved
                 and not getattr(action, 'choreography', None)
                 and action.target in positions
-                and not (self._is_enemy(action.actor) and self._sprite(action.actor) == 'veylume')):
+                and not (self._is_enemy(action.actor) and self._sprite(action.actor) in ('veylume', *ELEMENTALS))):
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
             end = positions[action.target]+(0, -33)
@@ -1592,6 +1605,66 @@ class BattleScene:
                 elapsed = action.elapsed if action is not None and action.actor == identifier else self._elapsed
                 self.action_fx.draw_electric_charge(canvas, origin, elapsed,
                                                    reduced_motion=self.reduced_motion)
+
+    def _draw_elemental_effects(self, canvas, positions):
+        """Attach elemental casts to authored cores and show cooling/melting."""
+        previous = canvas.get_clip()
+        field = pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35))
+        canvas.set_clip(field)
+        try:
+            action = self.model.current_action
+            if (action is not None and self._is_enemy(action.actor)
+                    and self._sprite(action.actor) in ELEMENTALS and action.kind == 'magical'):
+                actor = action.actor
+                art = self._enemy_art(actor)
+                state, clock = self._pose(actor)
+                points = self.sprites.anchors(self._sprite(actor), state, clock)
+                native = points.get('cast_origin', points.get('core',
+                    points.get('body', art['idle_bounds'].center)))
+                origin = positions[actor]+(pygame.Vector2(native)-art['anchor'])*self._actor_scale(actor)
+                targets = getattr(action, 'targets', ()) or (
+                    tuple(member.identifier for member in self.model.party if member.hp)
+                    if action.target == 'all_opponents' else (action.target,))
+                for target in targets:
+                    if target not in positions:continue
+                    self.action_fx.draw(canvas, positions[actor], positions[target], action,
+                        anchors={'cast_origin': origin, 'release_origin': origin,
+                                 'target_hit': self._hit_point(target, positions), 'show_impact': False},
+                        reduced_motion=self.reduced_motion)
+            layer = self._elemental_layer
+            layer.fill((0, 0, 0, 0))
+            layer.set_clip(field)
+            for actor, reaction in self._reactions.items():
+                if actor not in positions or not self._is_enemy(actor):continue
+                sprite, move = self._sprite(actor), reaction['action']
+                steam = sprite == 'embravyr' and move in ('aqua_edge', 'ice_edge')
+                melt = sprite == 'nivareth' and move == 'flame_edge'
+                if not (steam or melt):continue
+                age = reaction['age']
+                if not 0 <= age < .5:continue
+                point = self._hit_point(actor, positions)
+                fraction = age/.5
+                alpha = round((1-fraction)*190)
+                if self.reduced_motion:
+                    pygame.draw.circle(layer, (195, 235, 245, alpha),
+                                       (round(point.x), round(point.y)), 7, 1)
+                    continue
+                for index in range(7):
+                    spread = (index-3)*4
+                    x = point.x+spread+math.sin(index*1.7+fraction*2)*3
+                    y = point.y-4-fraction*(10+index%3*4) if steam else point.y+fraction*(9+index%3*3)
+                    if steam:
+                        pygame.draw.circle(layer, (215, 235, 238, alpha),
+                                           (round(x), round(y)), 2+index%2)
+                    else:
+                        pygame.draw.line(layer, (196, 238, 250, alpha),
+                                         (round(x), round(y-2)), (round(x), round(y+2)), 1)
+                        if index%2 == 0:
+                            pygame.draw.circle(layer, (248, 165, 86, alpha),
+                                               (round(x+2), round(y-4)), 1)
+            canvas.blit(layer, (0, 0))
+        finally:
+            canvas.set_clip(previous)
 
     def _mira_shot(self):
         action = self.model.current_action

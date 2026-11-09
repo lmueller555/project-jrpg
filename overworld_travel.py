@@ -113,7 +113,7 @@ class OverworldTravel:
         pending = data.get('post_battle')
         cave_spoils = False
         if (pending is not None and data['player'].get('scene') == 'sanctuary_cave'
-                and isinstance(pending, dict) and pending.get('kind') in ('cave', 'cave_boss')):
+                and isinstance(pending, dict) and pending.get('kind') in ('cave', 'cave_boss', 'elemental_boss')):
             from post_battle import valid_pending_snapshot
             cave_spoils = valid_pending_snapshot(pending, data)
         if record is None:

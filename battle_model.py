@@ -31,7 +31,8 @@ BOT_PATH = ROOT/'assets/combat/bots.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
-SUPPORTED_SKILL_ACTIONS = ('aether_edge', 'aqua_edge', 'overclock')
+ELEMENTAL_EDGE_ACTIONS = ('aqua_edge', 'flame_edge', 'ice_edge')
+SUPPORTED_SKILL_ACTIONS = ('aether_edge', *ELEMENTAL_EDGE_ACTIONS, 'overclock')
 ELEMENTAL_EDGE_ATTEMPTS = ('aqua_edge',)
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
@@ -82,7 +83,8 @@ def load_actions(data=None):
         if 'element' in action:
             from bestiary import ELEMENT_IDS
             if (action['kind'] not in ('physical', 'magical', 'spellblade')
-                    or action['kind'] == 'spellblade' and identifier != 'aqua_edge'
+                    or action['kind'] == 'spellblade' and (identifier not in ELEMENTAL_EDGE_ACTIONS
+                        or action['element'] != REQUIRED_GEMS[identifier])
                     or not isinstance(action['element'], str)
                     or action['element'] not in ELEMENT_IDS):
                 raise ValueError('Invalid battle action element')
@@ -412,11 +414,16 @@ class BattleModel:
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
                  guest_abilities=None, spellblade_tutorial=False, aqua_edge_tutorial=False,
+                 elemental_tutorial=False,
                  active_gem=DEFAULT_GEM, owned_gems=GEM_ORDER, party_members=None, initial_atb=False,
                  initial_atb_seed=None):
         if (type(initial_atb) is not bool or initial_atb_seed is not None
                 and not _integer(initial_atb_seed, maximum=2**63-1)):
             raise ValueError('Invalid initial ATB configuration')
+        if (type(elemental_tutorial) is not bool
+                or elemental_tutorial and enemy_id not in ('embravyr', 'nivareth')):
+            raise ValueError('Invalid elemental teaching encounter')
+        self.elemental_tutorial = elemental_tutorial
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -634,7 +641,9 @@ class BattleModel:
 
     @property
     def flee_allowed(self):
-        return not any(state.design is not None for state in self._enemy_states.values())
+        return not any(state.design is not None
+                       and not state.design['encounter'].get('flee_allowed', False)
+                       for state in self._enemy_states.values())
 
     def enemy_record(self, identifier='enemy'):
         return self.enemy_records.get(identifier)
@@ -824,10 +833,12 @@ class BattleModel:
         return ''
 
     def action_mp_cost(self, identifier, actor_id=None):
-        """The introductory cave encounter is free, including learned retries."""
+        """Teaching encounters waive elemental Edge costs, never other actions."""
         actor = self._party_actor(actor_id)
-        if actor is not None and actor.identifier == 'player' and identifier == 'aqua_edge':
-            if self.aqua_edge_stage is not None or self.spellblade_stage == 'first_edge':return 0
+        if actor is not None and actor.identifier == 'player':
+            if self.elemental_tutorial and identifier in ELEMENTAL_EDGE_ACTIONS:return 0
+            if identifier == 'aqua_edge' and (self.aqua_edge_stage is not None
+                                             or self.spellblade_stage == 'first_edge'):return 0
         action_id = self._action_id(identifier, actor) if actor is not None else identifier
         return self.actions[action_id]['mp_cost']
 
@@ -959,7 +970,7 @@ class BattleModel:
                 if identifier == state.prepared_action:state.telegraphed_target = target
                 state.target_index = (next(index for index, member in enumerate(self.party)
                                           if member.identifier == target)+1) % len(self.party)
-        choreography = 'aether_edge' if identifier == 'aqua_edge' else identifier
+        choreography = 'aether_edge' if identifier in ELEMENTAL_EDGE_ACTIONS else identifier
         timing = (timing_override(choreography, record['duration'], record['impact_at'])
                   if actor_id == 'player' else None)
         duration, impact_at = timing or (record['duration'], record['impact_at'])

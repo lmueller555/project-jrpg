@@ -159,6 +159,9 @@ These are events during the game, not achievements completed before its opening:
   covenant or authorizing excavation. On entering the Sanctuary cave, he notices
   concentrated ambient aether resonating with the Blue gem. His first cave
   encounter is two Cave Bats; his successful Aqua Edge retry teaches the ability.
+  Optional Embravyr and Nivareth encounters crystallize Red/Fire and White/Ice
+  focuses, teaching Flame Edge and Ice Edge in either order. These beings are
+  formed from ambient elemental Aether.
 - **MQ04:** Helps with Liam's project and learns when the child wants to act
   for himself instead of receiving an adult's help.
 
@@ -184,7 +187,7 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 | Practical competence | Can inspect ordinary problems, use borrowed tools and contribute physical work | Established in opening quests |
 | Basic magicks | Learned capability with meaningful limits; not ignorance, limitless power or creating water from nothing | Established |
 | Early magical scale | Can move an isolated pocket after pressure relief; cannot push back the Venns' flowing load on the attempted-magicks route | Established in MQ01 and MQ02 |
-| Combat | Spellblade identity; initially unarmed. Mira’s Blue-only MQ02 gift defers Aether Edge until a failed Aqua attempt inadvertently releases it. The first Sanctuary cave encounter later teaches Aqua Edge. | Established; ability guide |
+| Combat | Spellblade identity; initially unarmed. Mira’s Blue-only MQ02 gift defers Aether Edge until a failed Aqua attempt inadvertently releases it. The first Sanctuary cave encounter later teaches Aqua Edge; optional Embravyr and Nivareth teach Flame Edge and Ice Edge through their guaranteed focus rewards. | Established; ability guide |
 | Experience relative to Mira | Less experienced than Mira despite carrying her new blade in the opening river-path fight | Established |
 | Blind spot | Treats a failed attempt as evidence against a whole possible future, even when the conditions differ | Established |
 | Help he may need | Specific feedback and room to try, rather than either empty praise or someone making his choice for him | Established |
@@ -193,9 +196,10 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 ## Combat progression concept
 
 **Current author direction, 2026-11-07:** Preserve these broad strokes for later
-development. These are future concepts, not implemented abilities or a finished
-progression system. The opening Blue gem and cave Aqua Edge lesson are
-established; Red/White gem acquisition and additional gears remain undecided.
+development. The later gear combinations and ultimate below remain future concepts. The
+implemented opening has Blue/Water, the cave Aqua Edge lesson and optional
+Red/Fire and White/Ice acquisition through Embravyr and Nivareth. Additional
+gears remain undecided.
 
 ### Elemental gems and additional gears
 
@@ -206,12 +210,16 @@ established; Red/White gem acquisition and additional gears remain undecided.
 - Selecting the same element on multiple gears can enable a devastating attack
   of that element.
 
-The methods and timing for unlocking further gems and additional gears,
-combination effects and same-element attack rules remain open. Red and White
-gems are intended for the Sanctuary cave, but their acquisition scenes and
-miniboss roles have not yet been designed.
-The existing one-gear opening and its skill-discovery sequence remain the
-implemented starting point; selecting a gem does not itself teach a skill.
+The Sanctuary cave's optional level-four Aether guardians establish the first
+further gems: Embravyr settles into Red and teaches Flame Edge; Nivareth settles
+into White and teaches Ice Edge. Either can be found first, with acquisition
+prose reflecting that order. Neither is required for Vespermaw. All three cave
+bosses expose a +50% exhaustion window, giving the player's tools another
+opportunity to matter. See [elemental encounters](../../../ELEMENTAL_CAVE_ENCOUNTERS.md).
+
+The methods and timing for later gems and additional gears, combination effects
+and same-element attack rules remain open. The implemented blade still has one
+gear and one selected focus; selecting a gem does not itself teach a skill.
 
 ### Ultimate concept: a blade for each unlocked element
 

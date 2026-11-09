@@ -2,8 +2,10 @@
 
 Caelan receives one Blue Water gem in Mira’s Blade, accidentally discovers
 Aether Edge at the millrace, then learns Aqua Edge at the Sanctuary confluence.
-Red and White gem acquisition, their elemental techniques and their role in
-Vespermaw’s encounter remain later design work.
+Optional level-four Embravyr and Nivareth encounters then add Red/Fire and
+White/Ice focuses with Flame Edge and Ice Edge, in either order. Their
+[encounter guide](ELEMENTAL_CAVE_ENCOUNTERS.md) records the implemented rewards
+and combat rules; additional gears remain future work.
 
 ## Playable sequence
 
@@ -24,7 +26,13 @@ Vespermaw’s encounter remain later design work.
 5. Aqua Edge costs **0 MP throughout this introductory encounter and all its
    retries**, including after the discovery is already known. Victory and its
    ordinary rewards clear the introduction. Later encounters use its normal
-   **4-MP** cost, in the cave and elsewhere.
+   **4-MP** cost, in the cave and elsewhere. The two later optional elemental
+   teaching encounters waive all learned elemental Edge costs throughout their
+   fights and retries; ordinary battles and Vespermaw retain 4 MP.
+6. Embravyr's Aether settles into a Red focus and Nivareth's into a White focus.
+   Each guaranteed victory award installs its gem and learns the corresponding
+   Edge. First and second acquisition dialogue adapts to either order, and
+   waits for a KO Caelan to recover without withholding his earned focus.
 
 The confluence creates an opportunity to discover the skill; it does not become
 a permanent location requirement. Aether Edge remains learned and usable.
@@ -37,10 +45,15 @@ install focus gems.
 | Technique | Physical potency | Magical potency | Magical element | MP |
 | --- | ---: | ---: | --- | ---: |
 | Aether Edge | 1 | 0.5 | Non-Elemental | 4 |
-| Aqua Edge | 1 | 0.5 | Water | 0 in introductory encounter; 4 afterward |
+| Aqua Edge | 1 | 0.5 | Water | 0 in introductory encounter; normally 4 |
+| Flame Edge | 1 | 0.5 | Fire | Normally 4 |
+| Ice Edge | 1 | 0.5 | Ice | Normally 4 |
 
-Only Aqua Edge’s magical component applies the target’s authored Water
-percentage or matching-element absorption. Its physical component remains an
+All learned elemental Edges cost 0 MP in the two optional elemental teaching
+encounters. Aether Edge remains 4 MP there.
+
+Each elemental Edge’s magical component applies the target’s authored matching
+elemental percentage or matching-element absorption. Its physical component remains an
 ordinary physical strike. The resolver accepts every stored percentage from
 0 through 200, including intermediate weaknesses and resistances. Absorption
 uses the neutral-affinity magical amount, restores at most missing HP and does

@@ -29,7 +29,7 @@ class BestiaryGenerationTests(unittest.TestCase):
                     'rewards': {'drops': {'aether_emerald': 1}}}}
         self.assertEqual(fixed_enemy_definitions(), expected)
         self.assertEqual(set(self.catalog['enemies']),
-                         {*expected, 'cave_bat', 'lithrusk', 'veylume', 'vespermaw'})
+                         {*expected, 'cave_bat', 'lithrusk', 'veylume', 'vespermaw', 'embravyr', 'nivareth'})
         for identifier, record in expected.items():
             generated = build_enemy(identifier)
             self.assertEqual(generated['combat'], record)

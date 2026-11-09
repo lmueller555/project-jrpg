@@ -211,6 +211,14 @@
     "echo_chamber": {
       "area": null,
       "battlefield": null
+    },
+    "embervein_chamber": {
+      "area": null,
+      "battlefield": null
+    },
+    "stillfrost_chamber": {
+      "area": null,
+      "battlefield": null
     }
   },
   "safe_polygons": {
@@ -303,6 +311,40 @@
         {
           "first": 2,
           "last": 4,
+          "area": null,
+          "battlefield": null
+        }
+      ]
+    },
+    "embervein_branch": {
+      "width": 96,
+      "bands": [
+        {
+          "first": 0,
+          "last": 5,
+          "area": "outer",
+          "battlefield": "cave_outer"
+        },
+        {
+          "first": 6,
+          "last": 8,
+          "area": null,
+          "battlefield": null
+        }
+      ]
+    },
+    "stillfrost_branch": {
+      "width": 96,
+      "bands": [
+        {
+          "first": 0,
+          "last": 0,
+          "area": "deep",
+          "battlefield": "cave_depths"
+        },
+        {
+          "first": 1,
+          "last": 3,
           "area": null,
           "battlefield": null
         }

@@ -184,11 +184,11 @@ class VespermawLiveModelTests(unittest.TestCase):
     def test_recovery_spends_turn_and_ends_before_next_claw(self):
         model = self.model()
         self.prepare(model);self.respond(model);self.enemy_turn(model)
-        self.assertEqual(model.enemy_recovery_states, {'enemy': 1.25})
+        self.assertEqual(model.enemy_recovery_states, {'enemy': 1.5})
         resources = (model.enemy.hp, model.enemy.mp)
         self.assertEqual(self.enemy_turn(model).action, RECOVER)
         self.assertEqual((model.enemy.hp, model.enemy.mp), resources)
-        self.assertEqual(model.enemy_recovery_states, {'enemy': 1.25})
+        self.assertEqual(model.enemy_recovery_states, {'enemy': 1.5})
         self.empty_gauges(model);model.enemy.atb = 1;model.update(0)
         self.assertEqual(model.current_action.action, CLAW)
         self.assertEqual(model.enemy_recovery_states, {})
@@ -210,7 +210,7 @@ class VespermawLiveModelTests(unittest.TestCase):
                     model._start_action(actor, action)
                     resolved = self.finish(model)
                     hits.append(resolved.damage)
-                self.assertEqual(hits[1], hits[0]*5//4)
+                self.assertEqual(hits[1], hits[0]*3//2)
         model = self.model()
         model.player.attributes.update(str=999, mag=999)
         model._enemy_states['enemy'].vulnerable = True

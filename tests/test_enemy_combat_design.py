@@ -127,6 +127,16 @@ class EnemyCombatDesignTests(unittest.TestCase):
         behavior['sequence'] = ['claw', 'gather', 'pounce', 'roar', 'exhausted']
         self.assert_invalid(self.design, behavior)
 
+    def test_only_explicit_boolean_flee_permission_changes_story_boss_policy(self):
+        for allowed in (False, True):
+            design = deepcopy(self.design)
+            design['encounter']['flee_allowed'] = allowed
+            self.assertEqual(validate_combat_design(design, self.behavior), design['actions'])
+        for invalid in (0, 1, 'yes', None, [], {}):
+            design = deepcopy(self.design)
+            design['encounter']['flee_allowed'] = invalid
+            self.assert_invalid(design, self.behavior)
+
     def test_story_encounter_cannot_be_random_repeatable_or_a_group(self):
         for field, value in (('trigger', 'random'), ('repeatable', True),
                              ('repeatable', 0), ('formation_size', True),
