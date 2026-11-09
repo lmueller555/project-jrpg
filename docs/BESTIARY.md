@@ -77,9 +77,9 @@ roughly three to four hits. Encounter guidance recommends one Cave Bat for solo
 Caelan and pairs after the combat party expands; this guidance does not place
 or spawn encounters.
 
-The Cave Bat's elemental profile is authored below. Applying elemental damage
-and absorption in battle remains future work, as does its planned low Stagger
-resistance. Item drops remain explicitly pending; the resolved combat bundle is
+The Cave Bat’s elemental profile is authored below. Aqua Edge now reads its
+Water response in battle. Its planned low Stagger resistance remains future
+work. Item drops remain explicitly pending; the resolved combat bundle is
 empty until loot is authored. No item or drop chance is invented by the loader.
 
 ## Lithrusk and Veylume
@@ -311,18 +311,20 @@ appearance. `BattleModel.from_bestiary` rejects it before constructing a battle.
 
 Physical and magical actions can carry an optional canonical `element` tag,
 separately from their damage category and the species' defensive affinities.
-Utility and Spellblade actions retain their existing untagged schemas. These
-tags preserve design intent and do not apply elemental damage, resistance or
-absorption in the current engine. Their visual Electric projectiles and impact
-effects do not change that rule. Cave encounter pools and multi-enemy battle
+Utility actions remain untagged. Aqua Edge tags only its magical Spellblade
+component as Water and reads the target’s authored percentage or absorption.
+Existing enemy attack tags continue to preserve design intent; their visual
+Electric projectiles do not by themselves grant player elemental profiles.
+Cave encounter pools and multi-enemy battle
 selection are documented in [Random encounters](CAVE_RANDOM_ENCOUNTERS.md).
 
 ## Elemental identity and relationships
 
 The canonical roster is **Non-Elemental, Fire, Electric, Water, Ice, Nature,
 Wind, Holy and Ground**. Nature replaces the proposed Poison element and keeps
-Caelan's existing Nature gem within the roster. Poison status, if introduced,
-is separate from an elemental damage type.
+Caelan’s planned Nature focus within the roster; the opening gift installs
+only Blue Water. Poison status, if introduced, is separate from an elemental
+damage type.
 
 Every computed species includes an `elemental_profile` with:
 
@@ -393,8 +395,8 @@ appearance, environment and behavior should support an informed guess about
 its element and affinities. Use consistent clues across related creatures;
 surprising exceptions need their own recognizable clue. Edran's planned
 **Study** ability will be one of the limited ways to reveal enemy data directly.
-This data update does not implement Study, add automatic HUD affinity labels or
-apply elemental combat effects.
+Aqua Edge applies these data to its magical component. This does not implement
+Study or add automatic HUD affinity labels.
 
 The old partial `planned_mechanics.elemental_affinities` map has been replaced
 by this complete profile. `planned_mechanics` now contains only Stagger design.
@@ -443,7 +445,8 @@ The `combat` block contains exactly `name`, `attributes`, `abilities` and
 `rewards`. Supported live species are compatible with the existing battle
 validator; pending `combat_design` entries preserve their local action IDs and
 are rejected by the adapter before battle construction. Elemental design is
-retained in `metadata['elemental_profile']`; it is not a combat modifier yet.
+retained in `metadata['elemental_profile']` and read by Aqua Edge’s Water
+magical component.
 Behavior, presentation and future-mechanic information retain separate ownership.
 Species require an explicit level within their authored range; fixed records
 accept no level.

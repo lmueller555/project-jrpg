@@ -62,7 +62,7 @@ class GearbladeEffects:
         self._layer = pygame.Surface(self.LAYER_SIZE, pygame.SRCALPHA)
 
     def sample(self, point, state, time_ms, gem, elapsed, slot_age=None,
-               action=None, reduced_motion=False, pose_anchors=None):
+               action=None, reduced_motion=False, pose_anchors=None, owned_gems=None):
         """Describe the current effect without modifying battle or FX state."""
         clocks = [float(time_ms), float(elapsed), float(point[0]), float(point[1])]
         if slot_age is not None:clocks.append(float(slot_age))
@@ -72,7 +72,7 @@ class GearbladeEffects:
         kind = _get(action, 'kind', '')
         action_age = max(0., float(_get(action, 'elapsed', 0.) or 0.))
         if not math.isfinite(action_age):raise ValueError('Invalid action clock')
-        aether = state == 'aether_edge' or name == 'aether_edge'
+        aether = (name == 'aether_edge' or not name and state == 'aether_edge') and not _get(action, 'elemental', False)
         failed = kind == 'failed_edge'
         tentative = bool(_get(action, 'unmastered', False)) or failed
         effect = 'aether' if aether else REQUIRED_GEMS.get(name, gem)
@@ -86,7 +86,8 @@ class GearbladeEffects:
         x, y = pose['guard']
         gems = pose.get('gems', {'nature':(x,y-3), 'water':(x+3,y),
                                  'fire':(x,y+3), 'ice':(x-3,y)})
-        anchors['gems'] = {key:translate(value) for key,value in gems.items()}
+        anchors['gems'] = {key:translate(value) for key,value in gems.items()
+                           if owned_gems is None or key in owned_gems}
         active = bool(name) and not failed
         strength = .28 if not active else .66
         if tentative:strength *= .42
@@ -130,7 +131,8 @@ class GearbladeEffects:
             pygame.draw.polygon(layer,_color(color,strength+.25),
                                 [_xy(point+v) for v in ((0,-2),(2,0),(0,2),(-2,0))])
             if active:pygame.draw.line(layer,_color((251,249,230),.78),_xy(point+(-1,-1)),_xy(point),1)
-        if sample['slot_age'] is not None and 0 <= sample['slot_age'] < .56:
+        if (sample['slot_age'] is not None and 0 <= sample['slot_age'] < .56
+                and sample['gem'] in anchors['gems']):
             age = sample['slot_age']/.56
             point = anchors['gems'][sample['gem']]
             color = PALETTES['aether'][1] if aether else GEM_COLORS[sample['gem']]
@@ -261,8 +263,8 @@ class GearbladeEffects:
             self._glint(layer,end+direction*3,light,contact,4 if not sample['reduced_motion'] else 2)
 
     def draw(self, canvas, point, state, time_ms, gem, elapsed, slot_age=None,
-             action=None, reduced_motion=False, pose_anchors=None):
-        sample=self.sample(point,state,time_ms,gem,elapsed,slot_age,action,reduced_motion,pose_anchors)
+             action=None, reduced_motion=False, pose_anchors=None, owned_gems=None):
+        sample=self.sample(point,state,time_ms,gem,elapsed,slot_age,action,reduced_motion,pose_anchors,owned_gems)
         if not sample['visible']:return sample
         layer=self._layer
         layer.fill((0,0,0,0))

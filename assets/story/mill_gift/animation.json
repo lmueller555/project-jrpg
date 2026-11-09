@@ -53,7 +53,7 @@
         55,
         -2
       ],
-      "sha256": "cc9de87972470f0ac6bebe4ba02d1eb1c40edd6da064fa8dac9946d2fa41b87b"
+      "sha256": "4ac27d119742831450e8cea86960367b5d9cdb62ad581d801a5a01de347b284e"
     },
     {
       "file": "handoff_02.png",
@@ -69,7 +69,7 @@
         55,
         -2
       ],
-      "sha256": "83782388f87d6216b172af503d9e3eb7c5584b2a4c1168536c8cb54d39fe6599"
+      "sha256": "16e6b57402a916ecca1d7431c72e08d95b9c793f2331299e9ea61ee02f9de374"
     },
     {
       "file": "handoff_03.png",
@@ -85,7 +85,7 @@
         55,
         -2
       ],
-      "sha256": "53bbf956de4ca04ad8dedbf7ee005ef24f534c8897402f649670b8a51be9f249"
+      "sha256": "f4d46a8883ba9ac83c5762ceffb50e0aae40d2aa49593b132d78b288e1fb2a04"
     },
     {
       "file": "handoff_04.png",
@@ -101,7 +101,7 @@
         55,
         -2
       ],
-      "sha256": "196d256c3911b3184097e793abdb3206120210e5d7962b04c7f560a1238c7e29"
+      "sha256": "7c24f54508d316121c1cc978c1f76c3dde66b2016a5ca7dad91cae245018b802"
     },
     {
       "file": "handoff_05.png",
@@ -117,7 +117,7 @@
         55,
         -2
       ],
-      "sha256": "f1498a14ae1bea76eefd245dcbc5a87c8843c5577ff5e8b8ae9d798a95eb7275"
+      "sha256": "82c4fca30f7c6b08b90738f83d35e7d72b8fcdbc19ac4498df9ba990b93f9c10"
     },
     {
       "file": "handoff_06.png",
@@ -133,7 +133,7 @@
         55,
         -2
       ],
-      "sha256": "eb3678703fc69ebbf7272fc0ca40578cc7a76215079e10b5207caa95cf000b36"
+      "sha256": "64fe4c8912065f4059fb8eb3fb90de6a49bc3e26f7a945d6f7adda0107bd8263"
     },
     {
       "file": "handoff_07.png",
@@ -149,7 +149,7 @@
         55,
         -2
       ],
-      "sha256": "25b2c578682a11b43c1b821cdc2d88f632ad2c2d6050374f284368689b3157f4"
+      "sha256": "1b206b59c0fd099fbeeb4bcbfc2cf541d0e3e474968c28be09dc437f30b75a47"
     },
     {
       "file": "handoff_08.png",
@@ -165,7 +165,7 @@
         55,
         -2
       ],
-      "sha256": "672ef3cbe29e9883c3172d75614d09087bf2f08c1ad7fa97ba1e72efd5a2e38b"
+      "sha256": "13eada79d7a74b90116d01a7aeadf070b3ecf9767fcbbe07cead66a10c293f0e"
     }
   ],
   "gear_hands": [
@@ -178,7 +178,7 @@
         768,
         512
       ],
-      "sha256": "da0795a918a8eee8b4cb31c9516532ed91139f0cc39af26ec4dbbad3c8e4ba8c"
+      "sha256": "847d858729b0fb52e47d88daf19604625bc8be2b82ab932ee1dd169477ae43dc"
     },
     {
       "file": "gear_hands_02.png",
@@ -189,7 +189,7 @@
         1536,
         512
       ],
-      "sha256": "ae5d6ac5e6c73d170b663c7287dc25ddcdc48d989ac93406a61f2263230e9325"
+      "sha256": "6498cf5024c2173483f0b8b6f460aa9c1352975d36dcd6b52ef704a80174226f"
     },
     {
       "file": "gear_hands_03.png",
@@ -200,7 +200,7 @@
         768,
         1024
       ],
-      "sha256": "7acf0d82375fcb922f82a75faf4a698ed0b8f938c0f3d059aaf591aa5039fef4"
+      "sha256": "9e123b57822db95c26d0f8e3038583a7c31bf8d5623d655e3fb7efc8b4ad6161"
     },
     {
       "file": "gear_hands_04.png",
@@ -211,13 +211,13 @@
         1536,
         1024
       ],
-      "sha256": "3f635443acb3b052d9bbd47ef47d8c4b8d8ea144a9a6a12ed2f09486566ddb74"
+      "sha256": "498f4f77091f00708f5a9d8e7c6d39fee3cea4084ea9c9f5fbd2283801a79ac6"
     }
   ],
   "sources": {
-    "gear_hands_generated.png": "af3f6c4067abe01fb0a3fb443ac34a9009972cce425d99276f7c04d9028e2a47",
-    "handoff_generated.png": "c9b1f6d4b6b6ed2998b6eea049953330a1b46e2aed7e8a97537a29de6a8974ff",
-    "weapon_generated.png": "69ade5b923915c3d44f45788c4901c1ac6308ac40584cb037cd8806f563d09b5",
+    "gear_hands_generated.png": "4d214829589ceb99571ef9e84c3adeab894df78e1baea69597e63fd0b47dbe55",
+    "handoff_generated.png": "14cd43bba94af438c5feae1936215687dc03f3c36327bebed997d69993d6b2cb",
+    "weapon_generated.png": "286f958a88d386ec7d208cd7c63949bb3fe91db7eb85606bd8269a3ac254af41",
     "workshop_generated.png": "1359412863bb4239d3927e596e2bc1d4407b52a6bdc46103c106a2671739c35d"
   },
   "audio": {

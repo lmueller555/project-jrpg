@@ -23,22 +23,30 @@ class GearPersistenceTests(unittest.TestCase):
     def snapshot(self):
         return (self.owner.to_dict(), self.inventory.to_dict())
 
-    def test_water_default_preserves_the_legacy_version_one_representation(self):
+    def test_water_default_and_explicit_empty_ownership_reset_without_a_free_gem(self):
         legacy = self.owner.to_dict()
-        self.assertEqual(set(legacy), {'version', 'characters'})
+        self.assertEqual(set(legacy), {'version', 'characters', 'gear_gems'})
+        self.assertEqual(legacy['gear_gems'], {'caelan': []})
         self.assertEqual(self.owner.active_gem(), 'water')
+        self.assertFalse(self.owner.set_active_gem('water'))
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade'))
+        self.assertTrue(self.owner.grant_gem('fire'))
         self.assertTrue(self.owner.set_active_gem('fire'))
         self.assertTrue(self.owner.restore(legacy))
         self.assertEqual(self.owner.active_gem(), 'water')
         self.assertEqual(self.owner.to_dict(), legacy)
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade'))
+        self.assertTrue(self.owner.grant_gem('ice'))
         self.assertTrue(self.owner.set_active_gem('ice'))
         self.assertTrue(self.owner.restore(None))
         self.assertEqual(self.owner.active_gem(), 'water')
         self.assertEqual(self.owner.to_dict(), legacy)
 
     def test_each_settled_focus_round_trips_without_transient_state(self):
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
         for gem in GEM_ORDER:
             with self.subTest(gem=gem):
+                if gem not in self.owner.owned_gems():self.assertTrue(self.owner.grant_gem(gem))
                 self.assertTrue(self.owner.set_active_gem(gem))
                 saved = json.loads(json.dumps(self.owner.to_dict()))
                 other = CharacterAbilities(self.inventory)
@@ -50,6 +58,8 @@ class GearPersistenceTests(unittest.TestCase):
                 self.assertEqual(other.known_abilities(), frozenset({'basic_magicks'}))
 
     def test_invalid_setters_leave_all_owners_unchanged(self):
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade'))
+        self.assertTrue(self.owner.grant_gem('fire'))
         self.assertTrue(self.owner.set_active_gem('fire'))
         before = self.snapshot()
         for gem in (None, True, 0, [], {}, 'Fire', 'lightning', float('nan')):
@@ -65,6 +75,7 @@ class GearPersistenceTests(unittest.TestCase):
     def test_invalid_focus_snapshots_reject_atomically_with_pending_training(self):
         self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade',
                                                   learn_starter=False))
+        self.assertTrue(self.owner.grant_gem('nature'))
         self.assertTrue(self.owner.set_active_gem('nature'))
         saved = self.owner.to_dict()
         before = self.snapshot()
@@ -84,6 +95,7 @@ class GearPersistenceTests(unittest.TestCase):
     def test_focus_preserves_deferred_lesson_and_earned_unequipped_knowledge(self):
         self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade',
                                                   learn_starter=False))
+        self.assertTrue(self.owner.grant_gem('ice'))
         self.assertTrue(self.owner.set_active_gem('ice'))
         saved = self.owner.to_dict()
         other = CharacterAbilities(self.inventory)
@@ -94,6 +106,7 @@ class GearPersistenceTests(unittest.TestCase):
         self.assertEqual(other.active_gem(), 'ice')
         self.assertTrue(other.equip_weapon('caelan', 'caelan_gearblade'))
         self.assertTrue(other.learn_first_weapon_skills())
+        self.assertTrue(other.grant_gem('nature'))
         self.assertTrue(other.set_active_gem('nature'))
         self.assertTrue(other.equip_weapon('caelan', None))
         earned = other.to_dict()
@@ -106,6 +119,8 @@ class GearPersistenceTests(unittest.TestCase):
         self.assertEqual(self.inventory.quantity('caelan_gearblade'), 1)
 
     def test_focus_save_is_detached_and_validated_with_the_whole_journey(self):
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade'))
+        self.assertTrue(self.owner.grant_gem('fire'))
         self.assertTrue(self.owner.set_active_gem('fire'))
         journey = {'inventory': self.inventory.to_dict(),
                    'character_abilities': self.owner.to_dict()}
@@ -113,6 +128,47 @@ class GearPersistenceTests(unittest.TestCase):
         journey['character_abilities']['gear_focus']['caelan'] = 'missing'
         self.assertFalse(CharacterAbilities.valid_journey(journey))
         self.assertEqual(self.owner.active_gem(), 'fire')
+
+    def test_gift_only_installs_blue_and_material_loot_does_not_install_focuses(self):
+        self.assertEqual(self.owner.owned_gems(), ())
+        self.assertFalse(self.owner.grant_gem('fire'))
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
+        self.assertEqual(self.owner.owned_gems(), ('water',))
+        for material in ('aether_ruby', 'aether_emerald', 'aether_opal'):
+            self.assertTrue(self.inventory.add(material))
+        self.assertEqual(self.owner.owned_gems(), ('water',))
+        self.assertFalse(self.owner.set_active_gem('fire'))
+        self.assertFalse(self.owner.set_active_gem('ice'))
+        self.assertFalse(self.owner.grant_gem('water'))
+        self.assertEqual(self.owner.known_abilities(), frozenset({'basic_magicks'}))
+
+    def test_legacy_focus_migrates_to_blue_and_preserves_earned_aether(self):
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade'))
+        old = self.owner.to_dict()
+        old.pop('gear_gems')
+        old['gear_focus'] = {'caelan': 'fire'}
+        self.assertTrue(self.owner.restore(old))
+        self.assertEqual(self.owner.owned_gems(), ('water',))
+        self.assertEqual(self.owner.active_gem(), 'water')
+        self.assertIn('aether_edge', self.owner.known_abilities())
+        self.assertNotIn('aqua_edge', self.owner.known_abilities())
+
+    def test_owned_gem_data_is_strict_and_restore_is_atomic(self):
+        self.assertTrue(self.owner.acquire_weapon('caelan', 'caelan_gearblade'))
+        saved = self.owner.to_dict()
+        before = self.snapshot()
+        invalid = (None, True, [], {'mira': ['water']}, {},
+                   {'caelan': 'water'}, {'caelan': [None]}, {'caelan': [[]]},
+                   {'caelan': ['water', 'water']}, {'caelan': ['unknown']},
+                   {'caelan': ['fire', 'water']}, {'caelan': []}, {'caelan': ['fire']})
+        for value in invalid:
+            with self.subTest(value=value):
+                bad = deepcopy(saved);bad['gear_gems'] = value
+                self.assertFalse(self.owner.restore(bad))
+                self.assertEqual(self.snapshot(), before)
+        bad = deepcopy(saved);bad['gear_focus'] = {'caelan': 'fire'}
+        self.assertFalse(self.owner.restore(bad))
+        self.assertEqual(self.snapshot(), before)
 
 
 class GearPersistenceGameplayTests(unittest.TestCase):
@@ -137,6 +193,7 @@ class GearPersistenceGameplayTests(unittest.TestCase):
             game = new_game()
             seed_completed_mill(game)
             self.assertTrue(game.acquire_weapon('caelan', 'caelan_gearblade'))
+            self.assertTrue(game.character_abilities.grant_gem('fire'))
             self.assertTrue(game.character_abilities.set_active_gem('fire'))
             self.assertTrue(game.save_progress())
             self.assertEqual(json.loads(path.read_text())['character_abilities']['gear_focus'],

@@ -79,7 +79,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertEqual(first_weapon, {'aether_edge'})
         self.assertEqual(registrations['basic_magicks'], {'unlock': 'starting'})
         learned = {key for key, value in registrations.items() if value['unlock'] == 'learned'}
-        self.assertEqual(len(learned), 20)
+        self.assertEqual(len(learned), 21)
         self.assertTrue({'brace', 'mend', 'aether_dart'}.issubset(learned))
         self.assertTrue(learned.isdisjoint(self.abilities.known_abilities()))
         definition = self.abilities.definitions['aether_edge']
@@ -316,6 +316,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
     def test_learned_snapshot_validation_is_strict_and_preserves_all_state_on_failure(self):
         self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade',
                                                      learn_starter=False))
+        self.assertTrue(self.abilities.grant_gem('ice'))
         self.assertTrue(self.abilities.set_active_gem('ice'))
         self.assertTrue(self.abilities.learn_ability('caelan', 'mend'))
         saved, before = self.abilities.to_dict(), self.snapshot()

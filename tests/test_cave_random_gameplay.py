@@ -30,6 +30,13 @@ class CaveRandomGameplayTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix='cave-random-story-') as directory:
             driver = Driver(directory)
             driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
+            # These independent counter/reward cases begin after the new
+            # Blue-gem lesson. Its actual story/input arc has dedicated tests.
+            if not driver.game.character_abilities.has_weapon():
+                assert driver.game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade')
+            driver.game.character_abilities.learn_ability('caelan', 'aqua_edge')
+            assert driver.game.cave_lesson.restore({'version': 1,
+                'resonance_seen': True, 'battle_cleared': True, 'deferred': False})
             driver.walk(RESERVE_ENTRY_APPROACH)
             driver.game.handle_events([
                 pygame.event.Event(pygame.KEYDOWN, key=pygame.K_e, repeat=False),

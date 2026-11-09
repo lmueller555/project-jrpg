@@ -151,12 +151,14 @@ These are events during the game, not achievements completed before its opening:
   with tools. Only if the player tries magicks first does he fail to move the
   flowing water; that failure does not occur on the direct tools route.
 - **MQ02:** Receives Mira’s gear-and-gem blade before leaving the village. His
-  first elemental attempt fails; the next discovers Aether Edge. After pressure
-  relief, he notices a small, isolated water task and deliberately uses the
+  first Aqua Edge attempt fails, then inadvertently releases and learns Aether
+  Edge. After pressure relief, he notices a small, isolated water task and deliberately uses the
   blade’s blue focus to help. His initiative matters alongside
   Mira's mechanical knowledge; neither does all the useful work.
 - **MQ03:** Acts as guide, host and witness rather than deciding the adults'
-  covenant or authorizing excavation.
+  covenant or authorizing excavation. On entering the Sanctuary cave, he notices
+  concentrated ambient aether resonating with the Blue gem. His first cave
+  encounter is two Cave Bats; his successful Aqua Edge retry teaches the ability.
 - **MQ04:** Helps with Liam's project and learns when the child wants to act
   for himself instead of receiving an adult's help.
 
@@ -182,7 +184,7 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 | Practical competence | Can inspect ordinary problems, use borrowed tools and contribute physical work | Established in opening quests |
 | Basic magicks | Learned capability with meaningful limits; not ignorance, limitless power or creating water from nothing | Established |
 | Early magical scale | Can move an isolated pocket after pressure relief; cannot push back the Venns' flowing load on the attempted-magicks route | Established in MQ01 and MQ02 |
-| Combat | Spellblade identity; initially unarmed. Mira’s MQ02 gift defers Aether Edge until his accidental second elemental attempt; it becomes his sole learned starter technique. | Established; ability guide |
+| Combat | Spellblade identity; initially unarmed. Mira’s Blue-only MQ02 gift defers Aether Edge until a failed Aqua attempt inadvertently releases it. The first Sanctuary cave encounter later teaches Aqua Edge. | Established; ability guide |
 | Experience relative to Mira | Less experienced than Mira despite carrying her new blade in the opening river-path fight | Established |
 | Blind spot | Treats a failed attempt as evidence against a whole possible future, even when the conditions differ | Established |
 | Help he may need | Specific feedback and room to try, rather than either empty praise or someone making his choice for him | Established |
@@ -192,19 +194,22 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 
 **Current author direction, 2026-11-07:** Preserve these broad strokes for later
 development. These are future concepts, not implemented abilities or a finished
-progression system. Gem and gear acquisition methods remain undecided.
+progression system. The opening Blue gem and cave Aqua Edge lesson are
+established; Red/White gem acquisition and additional gears remain undecided.
 
 ### Elemental gems and additional gears
 
 - Lean into the blade's Gear system as Caelan's central combat progression.
-- Introduce more elemental gems over time, beyond the opening set.
+- Introduce more elemental gems over time, beyond the opening Blue Water gem.
 - Eventually add more gears to the blade, allowing simultaneous element
   selections. Combining different elements can produce unique effects.
 - Selecting the same element on multiple gears can enable a devastating attack
   of that element.
 
-The methods and timing for unlocking gems and additional gears, the eventual
-element list, combination effects and same-element attack rules remain open.
+The methods and timing for unlocking further gems and additional gears,
+combination effects and same-element attack rules remain open. Red and White
+gems are intended for the Sanctuary cave, but their acquisition scenes and
+miniboss roles have not yet been designed.
 The existing one-gear opening and its skill-discovery sequence remain the
 implemented starting point; selecting a gem does not itself teach a skill.
 

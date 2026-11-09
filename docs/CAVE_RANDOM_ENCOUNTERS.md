@@ -19,9 +19,12 @@ rates, including when a frame crosses an area or safe boundary.
 Menus, dialogue, scripted movement, transitions, focus loss and safe areas
 pause the countdown. Entering another room preserves it. The protected areas
 are the entrance apron, High Overlook, Quiet Shelf and Echo Chamber; leaving
-protection ensures at least four tile lengths remain. Victory and fleeing roll
-a fresh distance. Defeat uses the existing optional-battle withdrawal policy,
-returns the entry resources without a reward and also rolls a fresh distance.
+protection ensures at least four tile lengths remain. Ordinary victory and
+fleeing roll a fresh distance. Ordinary defeat uses the
+optional-battle withdrawal policy, returns the entry resources without a reward
+and also rolls a fresh distance. The introductory Aqua lesson is the exception:
+its exact pending bat-pair ticket remains after defeat or withdrawal until
+victory, with a deferred retry that allows travel and preparation.
 
 The counter saves its remaining distance, rolled threshold, compact random
 state and selected encounter ticket. Ordinary Continue and cave reentry do not
@@ -29,6 +32,27 @@ reroll an encounter. The ticket fixes formation, levels, battlefield, combat
 seed, receipt and return position before the battle-entry cutscene. Continue
 from an unfinished battle retries the same encounter with the entry resources.
 Old saves without this optional block begin with a fresh counter.
+
+## First-encounter lesson
+
+The first entrance with Mira’s Blade acknowledges a separate Blue-gem
+resonance scene. The first distance trigger then fixes **two level-two Cave
+Bats**, regardless of the local weighted pool. The saved ticket identifies the
+Aqua lesson, retaining the formation, battlefield, seed and return position.
+Enemy, Mira and Rivet actions wait for Caelan’s successful player-selected Aqua
+Edge. The successful opening strike learns Aqua Edge at impact; ordinary ATB
+combat follows. Aqua Edge costs **0 MP throughout this encounter and its retries**;
+after victory, its ordinary cost is 4 MP in every area.
+
+The lesson requires conscious active Caelan and his equipped blade, without a
+minimum MP requirement or automatic resource refill. The pending formation can
+be deferred for preparation and resumed from its cave position. Failure or
+withdrawal does not unlearn an already successful discovery. Victory and its
+once-only rewards clear the lesson and release normal weighted selection;
+the miniboss cannot bypass it. Resonance, skill ownership and battle clearance
+are separate saved facts. Older journeys with prior cave encounters preserve
+their progress and receive Aqua Edge without replaying completed content. See
+[Caelan’s opening progression](CAELAN_AQUA_PROGRESSION.md).
 
 ## Encounter roster
 
@@ -77,8 +101,9 @@ combat floor at different UI sizes.
 `BattleModel.from_bestiary_group` supports one to four independent enemies.
 Each living party member, enemy and active bot receives an independent uniform
 0–50% starting ATB roll for normal battles. Opening enemy target cycles are
-spread across living party members. The scripted first-weapon lesson retains
-its authored opening. Each enemy owns its HP, MP, action sequence and charge
+spread across living party members. The scripted first-weapon and cave Aqua
+lessons retain their authored opening opportunities. Each enemy owns its HP,
+MP, action sequence and charge
 target; victory requires defeating all enemies.
 
 For groups, Attack and offensive skills open target selection. Arrow keys and
@@ -133,8 +158,10 @@ fleeing and defeat fade the previous track back in at its interrupted playback
 position; results and Spoils keep that resumed stream. If MQ03 already owns
 Kindled Courage, the same stream continues through entry and return.
 
-Enemy stats, XP curves, damage formulas, affinities and item-drop definitions
-are unchanged. Group EXP now feeds saved character levels and deterministic
+Enemy stats, XP curves, base damage formulas and item-drop definitions remain
+unchanged. Aqua Edge’s magical component now applies the stored Water response
+and matching-element absorption; its physical component remains ordinary.
+Group EXP now feeds saved character levels and deterministic
 growth. Spoils shows each character's animated EXP bar, zero-EXP KO state or
 maximum-level state, followed by acknowledged level-up sheets when needed. A
 sheet uses black old values, green arrows and green new values with numeric
@@ -142,8 +169,10 @@ gains on light parchment. Quiet EXP and level-up effects honor Effects volume
 without replacing the resumed soundtrack. Party and Characters menus expose
 levels and progress; see [Leveling](LEVELING.md) for save compatibility and rules.
 The three cave species currently have pending item drops, so their resolved
-drop bundles are empty even when the battle grants EXP. Elemental damage
-effects, Stagger, the miniboss and its story resolution remain separate work.
+drop bundles are empty even when the battle grants EXP. Stagger, further
+elemental techniques and post-miniboss story resolution remain
+separate work. The one-time level-seven Vespermaw encounter is live in the Echo
+Chamber after the introductory lesson clears.
 
 ## Validation
 

@@ -39,6 +39,7 @@ named abilities.
 | `affinity=2` | Elemental weakness, ×2 |
 | `affinity=0.5` | Elemental resistance, ×0.5 |
 | `affinity=1` | Neutral element |
+| `affinity=1.5` | Intermediate response, ×1.5; any finite multiplier from 0 through 2 is accepted |
 | `affinity=0` or `immune=True` | Zero damage |
 | `protected=True` | Appropriate physical/magical protection, ×0.5 |
 | `variance_percent` | Integer 95–105, converted to a percentage multiplier |
@@ -82,9 +83,10 @@ uses the supplied object's `randint(95, 105)`; it never accesses global random
 state. An actual battle controller will supply its owned RNG.
 
 Ratings and variance require integers, with booleans rejected. Potency accepts
-positive finite integers, floats or `fractions.Fraction` values. Affinity must
-be exactly 0, 0.5, 1 or 2; flags must be booleans. Invalid inputs are rejected
-before miss/immunity resolution, leaving participants unchanged.
+positive finite integers, floats or `fractions.Fraction` values. Affinity accepts
+any finite integer, float or Fraction multiplier from 0 through 2; flags must
+be booleans. Invalid inputs are rejected before miss/immunity resolution,
+leaving participants unchanged.
 
 ## Reference results
 
@@ -130,3 +132,13 @@ damage-limit break, or assign enemy values. The first [ATB battle](COMBAT.md)
 now uses this shared calculator for Attack, Aether Dart and the Bat's abilities.
 Other combat actions will use the same backend. Healing remains separate
 and will use Spirit. Existing opening-quest spell outcomes remain authored scenes.
+
+## Live elemental Spellblade use
+
+Aqua Edge applies an enemy’s stored Water percentage to its magical component;
+the physical component retains neutral physical behavior. The full 0–200%
+range is supported, including intermediate values such as Vespermaw’s 150%
+Water response. Matching-element absorption restores the neutral-affinity
+magical amount up to missing HP and does not revive an enemy. Aether Edge stays
+non-elemental. This extends elemental resolution without changing the approved
+base offense/defense curve, ordinary variance or damage caps.

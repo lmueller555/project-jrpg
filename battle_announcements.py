@@ -294,6 +294,8 @@ class BattleAnnouncements:
                        'kind': 'event', 'actor': actor}
         elif kind == 'spellblade_discovered':
             message = {'text': name+' discovers Aether Edge!', 'kind': 'event', 'actor': actor}
+        elif kind == 'aqua_edge_discovered':
+            message = {'text': name+' learns Aqua Edge!', 'kind': 'event', 'actor': actor}
         elif kind == 'haste_expired':
             message = {'text': name+"'s Overclock ends.", 'kind': 'event', 'actor': actor}
         elif kind == 'haste_applied':

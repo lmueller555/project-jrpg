@@ -29,6 +29,13 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
             driver.meal();driver.attack_report();driver.departure()
             driver.rejoin_mira();driver.arrive()
             game = driver.game
+            # Explicit earlier-discovery fixture; production input still owns
+            # the boss approach and every settlement/Continue below.
+            owner = game.character_abilities
+            if not owner.has_weapon():assert owner.acquire_weapon('caelan', 'caelan_gearblade')
+            assert owner.learn_ability('caelan', 'aqua_edge')
+            assert game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
+                                             'battle_cleared': True, 'deferred': False})
             game.player.position.update(RESERVE_ENTRY_APPROACH)
             game.opening_fade = game.transfer_cooldown = 0
             assert game.sanctuary_cave.interact()

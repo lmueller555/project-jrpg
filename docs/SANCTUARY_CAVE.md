@@ -94,10 +94,20 @@ The cave is explorable while the MQ03 Sanctuary arrival remains pending.
 Existing party ownership and Kindled Courage continue at that checkpoint.
 Cave entry, treasure and the Echo Chamber inspection preserve that story state.
 
+The first entrance with Mira’s Blade presents a short Blue-gem resonance
+scene. Caelan notices concentrated ambient aether and wonders whether he can
+focus Aqua Edge here. His first distance-triggered encounter is fixed to two
+level-two Cave Bats. A player-selected Aqua Edge succeeds, teaches the ability
+and releases ordinary ATB combat. Aqua Edge costs 0 MP throughout this battle
+and its retries. Afterward it costs 4 MP and remains usable outside the cave. The Blue gem is the only installed
+gem at this stage. Red and White gem acquisition and their miniboss roles are
+not yet implemented. See [Caelan’s progression](CAELAN_AQUA_PROGRESSION.md).
+
 The cave now uses [distance-based random encounters](CAVE_RANDOM_ENCOUNTERS.md)
 with Cave Bats, Lithrusks and Veylumes. A hidden 16–36-tile countdown, weighted
 toward 26, selects one of 14 authored formations from the outer, middle or deep
-pool. Battles contain at most four enemies; groups of three or four are rarer.
+pool after the introductory bat pair clears. Battles contain at most four
+enemies; groups of three or four are rarer.
 The six original encounter spaces remain layout references. Random selection
 uses the player's actual location throughout the continuous cave.
 
@@ -122,7 +132,9 @@ the previous music resumes through the existing battle music owner.
 
 Random battle entry focuses the party, presents a loading screen and reveals
 one of four regional animated cave battlefields. Victory/flee return to the
-same cave position and reset the random distance budget. The boss owns its own
+same cave position and reset the random distance budget. The introductory
+bat pair instead retains its exact ticket after defeat or withdrawal until
+victory; a deferred retry permits preparation without starting another battle. The boss owns its own
 entry and completion records instead of consuming a random-encounter ticket.
 See the [live encounter review](reviews/vespermaw_encounter/README.md).
 

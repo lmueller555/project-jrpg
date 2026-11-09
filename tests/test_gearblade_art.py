@@ -11,7 +11,7 @@ os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 
 import pygame
-from gearblade_art import GearbladeFocus,GearbladeCombat,combat_frame,prepare_combat_art
+from gearblade_art import GearbladeFocus,GearbladeCombat,combat_frame,prepare_combat_art,with_owned_gems
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -70,6 +70,32 @@ class GearbladeArtTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256((ROOT/record['source']).read_bytes()).hexdigest(),record['source_sha256'])
             for frame in record['frames']:
                 self.assertEqual(hashlib.sha256((folder/frame['file']).read_bytes()).hexdigest(),frame['sha256'])
+
+    def test_runtime_empty_sockets_keep_blue_and_never_mutate_source_or_silhouette(self):
+        source = pygame.Surface((15, 15), pygame.SRCALPHA)
+        source.fill((180, 70, 100, 255), (2, 2, 11, 11))
+        pose = {'gems': {'nature': (4, 4), 'water': (10, 4),
+                         'fire': (4, 10), 'ice': (10, 10)}}
+        for point, color in (((4, 4), (40, 180, 70)), ((4, 10), (180, 40, 20)),
+                             ((10, 10), (140, 165, 210))):
+            source.set_at(point, (*color, 255))
+        before = pygame.image.tobytes(source, 'RGBA')
+        blue = with_owned_gems(source, pose, ('water',))
+        self.assertEqual(pygame.image.tobytes(source, 'RGBA'), before)
+        self.assertEqual(blue.get_at((10, 4)), source.get_at((10, 4)))
+        for point in ((4, 4), (4, 10), (10, 10)):
+            self.assertLess(max(blue.get_at(point)[:3]) - min(blue.get_at(point)[:3]), 30)
+            self.assertNotEqual(blue.get_at(point), source.get_at(point))
+        self.assertEqual(blue.get_at((5, 5)), source.get_at((5, 5)))
+        self.assertEqual(pygame.mask.from_surface(blue).count(), pygame.mask.from_surface(source).count())
+        self.assertIs(blue, with_owned_gems(source, pose, ('water',)))
+        self.assertIs(source, with_owned_gems(source, pose))
+
+    def test_owned_focus_rendering_supports_both_authored_combat_banks(self):
+        for state in ('idle', 'aether_edge', 'slash', 'cast_release'):
+            image, anchor = self.combat.frame(state, 200, owned_gems=('water',))
+            self.assertEqual(image.get_size(), (64, 64))
+            self.assertEqual(anchor, (32, 56))
 
 
 if __name__=='__main__':unittest.main()

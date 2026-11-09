@@ -1,5 +1,11 @@
 # Vespermaw live encounter review
 
+These retained captures show the PR #162 build before Blue-only gem ownership
+and the cave Aqua Edge lesson. Their original production hashes remain in
+`verification.json`; the current capture tool seeds the earlier Aqua discovery
+explicitly when reproducing this boss-only review. Current gem and lesson
+visuals are covered by the [Aqua progression review](../caelan_aqua_progression/README.md).
+
 [Encounter contact sheet](contact_sheet.png) · [Opening offer](approach_offer.png)
 · [Roar](confluence_roar.png) · [Pounce warning](gather_resonance.png)
 · [Recovery opening](exhausted.png) · [Spoils](spoils.png)

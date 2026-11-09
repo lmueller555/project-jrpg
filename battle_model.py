@@ -20,7 +20,7 @@ from bot_loadouts import load_bot_definitions, starting_battle_loadouts
 from battle_choreography import timing_override
 from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
                            roll_variance)
-from gear_state import DEFAULT_GEM, GEM_NAMES, REQUIRED_GEMS, valid_gem
+from gear_state import DEFAULT_GEM, GEM_NAMES, GEM_ORDER, REQUIRED_GEMS, valid_gem
 
 
 ROOT = Path(__file__).resolve().parent
@@ -31,8 +31,8 @@ BOT_PATH = ROOT/'assets/combat/bots.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
-SUPPORTED_SKILL_ACTIONS = ('aether_edge', 'overclock')
-ELEMENTAL_EDGE_ATTEMPTS = ('nature_edge', 'aqua_edge', 'flame_edge')
+SUPPORTED_SKILL_ACTIONS = ('aether_edge', 'aqua_edge', 'overclock')
+ELEMENTAL_EDGE_ATTEMPTS = ('aqua_edge',)
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
 PARTY_IDENTIFIERS = frozenset(('player', 'mira', 'lucan', 'rhea', 'edran'))
@@ -52,7 +52,7 @@ def _number(value, minimum=0, maximum=1000000):
 def load_actions(data=None):
     """Validate and copy the supported action catalog and optional element tags.
 
-    Element tags retain authoring intent; damage does not apply affinities yet.
+    Element tags apply the Bestiary response to elemental damage components.
     """
     if data is None:data = json.loads(ACTION_PATH.read_text(encoding='utf-8'))
     if (not isinstance(data, dict) or set(data) != {'version', 'actions'}
@@ -81,7 +81,8 @@ def load_actions(data=None):
             raise ValueError('Invalid battle action')
         if 'element' in action:
             from bestiary import ELEMENT_IDS
-            if (action['kind'] not in ('physical', 'magical')
+            if (action['kind'] not in ('physical', 'magical', 'spellblade')
+                    or action['kind'] == 'spellblade' and identifier != 'aqua_edge'
                     or not isinstance(action['element'], str)
                     or action['element'] not in ELEMENT_IDS):
                 raise ValueError('Invalid battle action element')
@@ -358,6 +359,9 @@ class BattleModel:
                 or any(key in options for key in ('enemy_id', 'enemy_data'))
                 or options.get('spellblade_tutorial', False)):
             raise ValueError('Invalid Bestiary formation')
+        if options.get('aqua_edge_tutorial', False) and list(members) != [
+                {'enemy_id': 'cave_bat', 'level': 2}, {'enemy_id': 'cave_bat', 'level': 2}]:
+            raise ValueError('Aqua Edge lesson requires its two level-two Cave Bats')
         actions = load_actions(options.get('action_data'))
         records = []
         for member in members:
@@ -407,8 +411,8 @@ class BattleModel:
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
-                 guest_abilities=None, spellblade_tutorial=False,
-                 active_gem=DEFAULT_GEM, party_members=None, initial_atb=False,
+                 guest_abilities=None, spellblade_tutorial=False, aqua_edge_tutorial=False,
+                 active_gem=DEFAULT_GEM, owned_gems=GEM_ORDER, party_members=None, initial_atb=False,
                  initial_atb_seed=None):
         if (type(initial_atb) is not bool or initial_atb_seed is not None
                 and not _integer(initial_atb_seed, maximum=2**63-1)):
@@ -423,6 +427,13 @@ class BattleModel:
         if type(weapon_equipped) is not bool:raise ValueError('Invalid weapon equipment state')
         self.weapon_equipped = weapon_equipped
         if not valid_gem(active_gem):raise ValueError('Invalid active gem')
+        if owned_gems is None:owned_gems = GEM_ORDER
+        if (not isinstance(owned_gems, (tuple, list))
+                or any(not valid_gem(gem) for gem in owned_gems)
+                or len(set(owned_gems)) != len(owned_gems)
+                or owned_gems and active_gem not in owned_gems):
+            raise ValueError('Invalid owned gems')
+        self.owned_gems = tuple(gem for gem in GEM_ORDER if gem in owned_gems)
         self.active_gem = active_gem
         # The presentation owns selector motion. It holds this flag while a
         # focus settles, preventing a command from using an intermediate pose.
@@ -508,12 +519,23 @@ class BattleModel:
         self._enemy_action_index = 0
         self.telegraphed_target = None
         if type(spellblade_tutorial) is not bool:raise ValueError('Invalid spellblade tutorial state')
+        if type(aqua_edge_tutorial) is not bool:raise ValueError('Invalid Aqua Edge tutorial state')
+        if aqua_edge_tutorial and (spellblade_tutorial or enemy_id != 'cave_bat'
+                                   or not weapon_equipped or not self.player.hp
+                                   or 'water' not in self.owned_gems or active_gem != 'water'):
+            raise ValueError('Aqua Edge lesson requires conscious armed Caelan and Blue gem')
         if spellblade_tutorial and (enemy_id != 'ridgeback_tusker'
-                                   or self.combatant('mira') is None or not weapon_equipped):
+                                   or self.combatant('mira') is None or not weapon_equipped
+                                   or 'water' not in self.owned_gems):
             raise ValueError('Spellblade lesson requires the armed mill party')
         self.spellblade_stage = ('opening' if spellblade_tutorial and
                                 'aether_edge' not in self.learned_abilities else None)
+        if self.spellblade_guided and self.player.mp < self.actions['aether_edge']['mp_cost']:
+            raise ValueError('The mill lesson requires preparation for Aether Edge')
         self.aether_edge_discovered = False
+        self.aqua_edge_stage = (('complete' if 'aqua_edge' in self.learned_abilities else 'attempt')
+                                if aqua_edge_tutorial else None)
+        self.aqua_edge_discovered = False
         self._lesson_bot_actions = 0
         if initial_atb and not self.spellblade_guided:self.randomize_initial_atb(initial_atb_seed)
         if self.spellblade_guided:self.enemy.atb = 1.
@@ -539,6 +561,14 @@ class BattleModel:
         return self.spellblade_stage not in (None, 'complete')
 
     @property
+    def aqua_edge_guided(self):
+        return self.aqua_edge_stage not in (None, 'complete')
+
+    @property
+    def lesson_guided(self):
+        return self.spellblade_guided or self.aqua_edge_guided
+
+    @property
     def waiting_for_player(self):return self.phase == 'ready'
 
     @property
@@ -561,7 +591,8 @@ class BattleModel:
         ``gear_settling`` blocks commands, not this completion callback. The
         presentation clears its settling flag after committing the final gem.
         """
-        if not valid_gem(gem) or not self.gear_available:return False
+        if (not valid_gem(gem) or gem not in self.owned_gems or not self.gear_available
+                or self.lesson_guided and gem != 'water'):return False
         self.active_gem = gem
         return True
 
@@ -694,7 +725,7 @@ class BattleModel:
     def ready_members(self):
         return tuple(member.identifier for member in self.party
                      if member.hp and member.atb+EPSILON >= 1
-                     and (not self.spellblade_guided or member.identifier == 'player'))
+                     and (not self.lesson_guided or member.identifier == 'player'))
 
     def select_ready(self, identifier):
         if (not self.waiting_for_player or not isinstance(identifier, str)
@@ -718,11 +749,9 @@ class BattleModel:
         actor = self._party_actor(actor_id)
         if actor is None:return []
         if actor.identifier == 'player':
-            if self.spellblade_stage in ('first_edge', 'second_edge'):
-                return list(ELEMENTAL_EDGE_ATTEMPTS)
-            # The shipped elemental records are lesson-only failed attempts.
-            # A later authored damaging definition must also be learned before
-            # it can become a normal skill; the selector grants no unlocks.
+            if self.spellblade_stage == 'first_edge' or self.aqua_edge_guided:
+                return ['aqua_edge']
+            # Focus ownership never grants the corresponding technique.
             return [key for key in ('aether_edge', *REQUIRED_GEMS)
                     if key in self.learned_abilities and key in self.actions
                     and self.actions[key]['kind'] != 'failed_edge']
@@ -744,8 +773,9 @@ class BattleModel:
         if actor is None:return 'This action is not available.'
         if self.spellblade_guided:
             if actor.identifier != 'player':return 'Mira is covering Caelan.'
-            if self.spellblade_stage not in ('first_edge', 'second_edge'):
+            if self.spellblade_stage != 'first_edge':
                 return 'Guard against the charge first.'
+        if self.aqua_edge_guided and actor.identifier != 'player':return 'Mira is covering Caelan.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
         if actor.identifier == 'player' and self.gear_settling:
@@ -767,6 +797,7 @@ class BattleModel:
             return 'This action is not available.'
         if identifier == 'flee' and not self.flee_allowed:
             return 'Cannot flee this boss battle.'
+        if self.aqua_edge_guided and actor.identifier != 'player':return 'Mira is covering Caelan.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
         if actor.identifier == 'player' and self.gear_settling:
@@ -782,14 +813,23 @@ class BattleModel:
             return 'Requires a weapon.'
         if actor.identifier == 'player' and identifier in REQUIRED_GEMS:
             gem = REQUIRED_GEMS[identifier]
+            if gem not in self.owned_gems:return 'Requires the '+GEM_NAMES[gem]+' gem.'
             if self.active_gem != gem:return 'Requires the '+GEM_NAMES[gem]+' gem.'
         if identifier == 'overclock' and self.active_bot(actor.identifier) is None:
             return 'Requires an active bot.'
-        action_id = ('aether_edge' if self.spellblade_stage == 'second_edge' and
-                     identifier in ELEMENTAL_EDGE_ATTEMPTS else self._action_id(identifier, actor))
-        if actor.mp < self.actions[action_id]['mp_cost']:
+        if self.aqua_edge_guided and identifier != 'aqua_edge':
+            return 'Try Aqua Edge from Skills.'
+        if actor.mp < self.action_mp_cost(identifier, actor.identifier):
             return 'Not enough MP.'
         return ''
+
+    def action_mp_cost(self, identifier, actor_id=None):
+        """The introductory cave encounter is free, including learned retries."""
+        actor = self._party_actor(actor_id)
+        if actor is not None and actor.identifier == 'player' and identifier == 'aqua_edge':
+            if self.aqua_edge_stage is not None or self.spellblade_stage == 'first_edge':return 0
+        action_id = self._action_id(identifier, actor) if actor is not None else identifier
+        return self.actions[action_id]['mp_cost']
 
     def choose_action(self, identifier, actor_id=None, target_id=None, *, target=None):
         if self.action_reason(identifier, actor_id):return False
@@ -798,8 +838,8 @@ class BattleModel:
             target_id = target
         actor = self._party_actor(actor_id)
         self._active_actor = actor.identifier
-        action = ('aether_edge' if actor.identifier == 'player' and
-                  self.spellblade_stage == 'second_edge' and identifier in ELEMENTAL_EDGE_ATTEMPTS
+        action = ('aqua_edge_attempt' if actor.identifier == 'player' and
+                  self.spellblade_stage == 'first_edge' and identifier == 'aqua_edge'
                   else self._action_id(identifier, actor))
         if self.actions[action]['target'] == 'opponent':
             if target_id is not None and not self.select_target(target_id):return False
@@ -903,7 +943,7 @@ class BattleModel:
                     and identifier == state.design['recovery']['ends_before_action']):
                 state.vulnerable = False
                 self.events.append({'type': 'recovery_ended', 'actor': actor_id, 'action': identifier})
-        if not isinstance(actor, BotUnit):actor.mp -= record['mp_cost']
+        if not isinstance(actor, BotUnit):actor.mp -= self.action_mp_cost(identifier, actor_id)
         actor.atb = 0.0
         target = (self._enemy_target(identifier, actor_id) if enemy_actor
                   else self._living_target(target_id))
@@ -919,14 +959,15 @@ class BattleModel:
                 if identifier == state.prepared_action:state.telegraphed_target = target
                 state.target_index = (next(index for index, member in enumerate(self.party)
                                           if member.identifier == target)+1) % len(self.party)
-        timing = (timing_override(identifier, record['duration'], record['impact_at'])
+        choreography = 'aether_edge' if identifier == 'aqua_edge' else identifier
+        timing = (timing_override(choreography, record['duration'], record['impact_at'])
                   if actor_id == 'player' else None)
         duration, impact_at = timing or (record['duration'], record['impact_at'])
         self.current_action = BattleAction(actor_id, identifier, target, record['name'],
                                           record['kind'], record['animation'],
                                           duration, impact_at,
                                           active_gem=self.active_gem if actor_id == 'player' else None,
-                                          choreography=identifier if timing else None,
+                                          choreography=choreography if timing else None,
                                           weapon_equipped=self.weapon_equipped if actor_id == 'player' else False)
         if target == 'all_opponents':
             opponents = self.party if enemy_actor else self.enemies
@@ -1001,7 +1042,7 @@ class BattleModel:
             self.message = actor.name+' is exhausted.'
             self.events.append({'type': 'recover', 'actor': action.actor, 'action': action.action})
         elif action.kind == 'failed_edge':
-            self.message = 'The chosen focus flickers; the elemental strike fails.'
+            self.message = 'The Blue gem flickers; Aqua Edge fails. Raw aether floods the blade.'
             self.spellblade_stage = 'second_edge'
             self.events.append({'type': 'spellblade_failed', 'actor': action.actor,
                                 'action': action.action})
@@ -1054,6 +1095,12 @@ class BattleModel:
             if action.action == 'tusker_charge':
                 self._enemy_states[action.actor].telegraphed_target = None
                 if self.spellblade_stage == 'charge':self.spellblade_stage = 'first_edge'
+            if action.action == 'aqua_edge' and self.aqua_edge_guided:
+                self.aqua_edge_stage = 'complete'
+                self.learned_abilities = self.learned_abilities | {'aqua_edge'}
+                self.aqua_edge_discovered = True
+                self.events.append({'type': 'aqua_edge_discovered', 'actor': 'player',
+                                    'action': 'aqua_edge'})
             if action.action == 'aether_edge' and self.spellblade_stage == 'second_edge':
                 self.spellblade_stage = 'complete'
                 self.learned_abilities = self.learned_abilities | {'aether_edge'}
@@ -1065,6 +1112,18 @@ class BattleModel:
         self._sync_enemy_preparation()
         action.resolved = True
 
+    def _elemental_response(self, target, element):
+        """Shared Bestiary response for a tagged damage component.
+
+        Unaligned and fixed legacy actors are neutral. Same-element absorption
+        supersedes the percentage and restores the neutral component's damage.
+        """
+        record = self.enemy_records.get(target.identifier)
+        profile = record['metadata'].get('elemental_profile') if record else None
+        if profile is None or element in (None, 'non_elemental'):return Fraction(1), False
+        if element in profile['absorption']['elements']:return Fraction(1), True
+        return Fraction(str(profile['damage_percentages'][element]))/100, False
+
     def _damage_target(self, action, actor, target):
         """Resolve one hit; vulnerability modifies the complete hit once."""
         protected = target.guarded
@@ -1072,12 +1131,19 @@ class BattleModel:
         variance = roll_variance(self.rng)
         source = self.combatant(actor.owner_id) if isinstance(actor, BotUnit) else actor
         if isinstance(actor, BotUnit):actor.attributes['str'] = source.value('str')
-        damage = calculator(source, target, self.actions[action.action]['potency'],
+        record = self.actions[action.action]
+        affinity, absorbed = self._elemental_response(target, record.get('element'))
+        # A spellblade's element belongs only to its magical component.
+        damage = calculator(source, target, record['potency'],
+                            affinity=1 if action.kind == 'spellblade' else affinity,
                             protected=protected, variance_percent=variance)
+        healing = damage if absorbed and action.kind != 'spellblade' else 0
+        if healing:damage = 0
         if action.kind == 'spellblade':
-            bonus = magical_damage(source, target, self.actions[action.action]['magical_potency'],
-                                   protected=protected, variance_percent=variance)
-            damage = min(NORMAL_DAMAGE_CAP, damage+bonus)
+            bonus = magical_damage(source, target, record['magical_potency'],
+                                   affinity=affinity, protected=protected, variance_percent=variance)
+            if absorbed:healing = bonus
+            else:damage = min(NORMAL_DAMAGE_CAP, damage+bonus)
         enchanted = (action.actor == 'player' and self.weapon_equipped
                      and action.kind == 'physical' and actor.aether_edge_hits > 0)
         if enchanted:
@@ -1090,12 +1156,16 @@ class BattleModel:
             if state.design is not None and state.vulnerable:
                 factor = Fraction(str(state.design['recovery']['damage_taken_multiplier']))
                 damage = min(NORMAL_DAMAGE_CAP, damage*factor.numerator//factor.denominator)
-        target.hp = max(0, target.hp-damage)
+        before_hp = target.hp
+        target.hp = max(0, min(target.max_hp, target.hp-damage+healing))
+        restored = max(0, target.hp-max(0, before_hp-damage))
         target.guarded = False
         self.message = target.name+' takes '+str(damage)+' damage.'
+        if restored:self.message += ' The element restores '+str(restored)+' HP.'
         event = {'type': 'impact', 'actor': action.actor, 'action': action.action,
                  'target': target.identifier, 'damage': damage,
                  'remaining_hp': target.hp, 'guarded': protected}
+        if absorbed:event.update(healing=restored, element=record.get('element'), absorbed=True)
         if enchanted:event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
         self.events.append(event)
         if not target.hp:
@@ -1134,24 +1204,26 @@ class BattleModel:
     def _advance_gauges(self, seconds, atb_multiplier=1.0):
         scaled_seconds = seconds*atb_multiplier
         for combatant in (*self.party, *self.enemies):
-            if combatant.hp:
+            if combatant.hp and (not self.aqua_edge_guided or combatant.identifier == 'player'):
                 combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*scaled_seconds)
         for bot in self.bots:
-            if self.active_bot(bot.owner_id) is bot:
+            if self.active_bot(bot.owner_id) is bot and not self.aqua_edge_guided:
                 bot.atb = min(1.0, bot.atb+self.atb_rate(bot)*scaled_seconds)
 
     def _sync_bot_activity(self):
         # A lesson cannot keep ordering an incapacitated character to act.
         # Release the companions without treating survival as a skill discovery.
-        if self.spellblade_guided and not self.player.hp:
-            self.spellblade_stage = None
+        if self.lesson_guided and not self.player.hp:
+            was_aqua = self.aqua_edge_guided
+            self.spellblade_stage = self.aqua_edge_stage = None
             self.telegraphed_target = None
             if self.current_action is not None and self.current_action.actor == 'player':
                 self.last_action, self.current_action = self.current_action, None
                 self.phase = 'charging'
             elif self.waiting_for_player and self._active_actor == 'player':
                 self.phase = 'charging'
-            self.events.append({'type': 'spellblade_interrupted', 'actor': 'player'})
+            self.events.append({'type': 'aqua_edge_interrupted' if was_aqua else 'spellblade_interrupted',
+                                'actor': 'player'})
         for bot in self.bots:
             alive = bool(self._party_actor(bot.owner_id).hp)
             if alive != self._bot_owner_alive[bot.identifier]:
@@ -1195,11 +1267,14 @@ class BattleModel:
                 if not self.living_enemies:
                     self._result('victory')
                     return
-                candidates = [*living, *(bot for bot in self.bots
+                candidates = [*(member for member in living
+                                if not self.aqua_edge_guided or member.identifier == 'player'),
+                              *(bot for bot in self.bots
                                          if self.active_bot(bot.owner_id) is bot
+                                         and not self.aqua_edge_guided
                                          and (not self.spellblade_guided or self._lesson_bot_actions < 3)),
                               *(enemy for enemy in self.living_enemies
-                                if not self._enemy_response_pending(enemy.identifier))]
+                                if not self.aqua_edge_guided and not self._enemy_response_pending(enemy.identifier))]
                 times = [(actor, max(0.0, ((1-actor.atb)/self.atb_rate(actor))/atb_multiplier)
                           if atb_multiplier else 0.0 if actor.atb+EPSILON >= 1 else math.inf)
                          for actor in candidates]
@@ -1252,7 +1327,10 @@ class BattleModel:
                     if self._pending_outcome is not None:
                         self._result(self._pending_outcome)
                         return
-                    self.phase = 'charging'
+                    if (action.action == 'aqua_edge_attempt' and self.spellblade_stage == 'second_edge'
+                            and self.player.hp):
+                        self._start_action('player', 'aether_edge')
+                    else:self.phase = 'charging'
                     continue
                 boundary = action.duration if action.resolved else action.impact_at
                 wait = max(0.0, boundary-action.elapsed)

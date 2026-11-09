@@ -319,7 +319,7 @@ class GearBattleSceneTests(unittest.TestCase):
                 self.assertEqual(sum(popup['target'] == 'enemy' for popup in self.scene._popups), 1)
         self.assertEqual(len(set(damage)), 1)
 
-    def test_tutorial_keeps_guard_failure_and_next_turn_discovery_with_matching_focus(self):
+    def test_tutorial_uses_only_blue_focus_and_automatically_discovers_aether(self):
         self.make_scene(tutorial=True, learned=())
         self.scene.update(1000)
         self.acknowledge()
@@ -333,25 +333,15 @@ class GearBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.model.spellblade_stage, 'first_edge')
         self.assertIn('gear_instruction', self.scene._tutorial_seen)
         self.click(self.scene.command_rects['skills'].center)
-        self.click(self.scene.command_rects['nature_edge'].center)
-        self.assertIsNone(self.model.current_action)
-        self.assertEqual(self.scene._notice, 'Requires the Nature gem.')
-        right = self.start_turn()
-        self.pointer(pygame.MOUSEBUTTONUP, right)
-        self.scene.update(.1)
-        self.assertEqual(self.model.active_gem, REQUIRED_GEMS['nature_edge'])
-        self.click(self.scene.command_rects['nature_edge'].center)
-        self.assertEqual(self.model.current_action.action, 'nature_edge')
+        self.assertEqual(self.model.skill_actions(), ['aqua_edge'])
+        self.assertNotIn('nature_edge', self.scene.command_rects)
+        self.assertNotIn('flame_edge', self.scene.command_rects)
+        self.click(self.scene.command_rects['aqua_edge'].center)
+        self.assertEqual(self.model.current_action.action, 'aqua_edge_attempt')
         self.scene.update(.9)
         self.acknowledge()
         self.assertEqual(self.model.spellblade_stage, 'second_edge')
-        for _ in range(30):
-            self.scene.update(1000)
-            self.acknowledge()
-            if self.model.waiting_for_player:
-                break
-        self.click(self.scene.command_rects['skills'].center)
-        self.click(self.scene.command_rects['nature_edge'].center)
+        self.scene.update(0)
         self.assertEqual(self.model.current_action.action, 'aether_edge')
         self.scene.update(self.model.current_action.impact_at)
         self.assertTrue(self.model.aether_edge_discovered)

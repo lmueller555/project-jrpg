@@ -21,7 +21,6 @@ MAX_VARIANCE_PERCENT = 105
 MAX_ATTRIBUTE_RATING = ATTRIBUTE_CAPS['str']
 
 Scalar = int | float | Fraction
-_AFFINITIES = frozenset((Fraction(0), Fraction(1, 2), Fraction(1), Fraction(2)))
 
 
 class AttributeValues(Protocol):
@@ -64,7 +63,8 @@ def calculate_damage(
     """Calculate one damaging hit without changing any character or resource.
 
     Ratings are integers from 0 to 999; potency is positive and finite. Affinity
-    is 0 (immune), 0.5 (resistant), 1 (neutral), or 2 (weak). Critical hits apply
+    is any finite multiplier from 0 (immune) through 2 (double damage).
+    Critical hits apply
     x1.5, matching protection applies x0.5, and variance is an integer percent
     from 95 through 105. The deterministic default uses 100% variance.
 
@@ -79,8 +79,8 @@ def calculate_damage(
     if power <= 0:
         raise ValueError('potency must be positive')
     element = _fraction(affinity, 'affinity')
-    if element not in _AFFINITIES:
-        raise ValueError('affinity must be 0, 0.5, 1 or 2')
+    if not 0 <= element <= 2:
+        raise ValueError('affinity must be between 0 and 2')
     if type(variance_percent) is not int:
         raise TypeError('variance_percent must be an integer')
     if not MIN_VARIANCE_PERCENT <= variance_percent <= MAX_VARIANCE_PERCENT:

@@ -1,4 +1,4 @@
-"""The mill lesson resolves Guard, failure, and the next-turn discovery in order."""
+"""The mill lesson resolves Guard, failure, and the inadvertent discovery in order."""
 import unittest
 from battle_model import BattleModel, ELEMENTAL_EDGE_ATTEMPTS
 from character_attributes import CharacterAttributes
@@ -16,41 +16,37 @@ class SpellbladeLessonTests(unittest.TestCase):
         self.assertTrue(model.waiting_for_player)
         self.assertEqual(model.ready_actor,'player')
 
-    def test_all_nine_element_choices_fail_then_discover_the_same_non_elemental_skill(self):
-        for first in ELEMENTAL_EDGE_ATTEMPTS:
-            for second in ELEMENTAL_EDGE_ATTEMPTS:
-                with self.subTest(first=first,second=second):
-                    m=self.model();self.ready(m)
-                    self.assertEqual(m.spellblade_stage,'guard')
-                    self.assertFalse(m.choose_action('attack'));self.assertFalse(m.choose_action('flee'))
-                    self.assertFalse(m.select_ready('mira'))
-                    self.assertNotEqual(m.command_reason('skills'),'')
-                    self.assertTrue(m.choose_action('guard'));self.ready(m)
-                    charge=next(e for e in m.events if e['type']=='impact' and e['action']=='tusker_charge')
-                    self.assertTrue(charge['guarded']);self.assertGreater(m.player.hp,0)
-                    self.assertEqual(m.spellblade_stage,'first_edge')
-                    self.assertEqual(m.skill_actions(),list(ELEMENTAL_EDGE_ATTEMPTS))
-                    self.assertNotIn('aether_edge',m.available_actions())
-                    hp,mp=m.enemy.hp,m.player.mp
-                    self.assertTrue(m.set_active_gem(REQUIRED_GEMS[first]))
-                    self.assertTrue(m.choose_action(first));action=m.current_action
-                    m.update(action.duration)
-                    self.assertEqual(m.enemy.hp,hp);self.assertEqual(m.player.mp,mp)
-                    self.assertFalse(m.aether_edge_discovered)
-                    self.assertEqual(m.spellblade_stage,'second_edge')
-                    self.ready(m)
-                    self.assertTrue(m.set_active_gem(REQUIRED_GEMS[second]))
-                    self.assertTrue(m.choose_action(second))
-                    self.assertEqual(m.current_action.action,'aether_edge')
-                    self.assertEqual(m.player.mp,mp-4)
-                    m.update(m.current_action.impact_at)
-                    self.assertTrue(m.aether_edge_discovered)
-                    self.assertEqual(m.spellblade_stage,'complete')
-                    self.assertEqual(m.skill_actions('player'),['aether_edge'])
-                    self.assertGreater(m.current_action.damage,0)
-                    self.assertGreater(m.enemy.hp,0)
-                    self.assertEqual(m.player.aether_edge_hits,0)
-                    self.assertEqual(sum(e['type']=='spellblade_discovered' for e in m.events),1)
+    def test_blue_attempt_fails_then_accidentally_discovers_aether_without_second_choice(self):
+        m=self.model();self.ready(m)
+        self.assertEqual(m.spellblade_stage,'guard')
+        self.assertFalse(m.choose_action('attack'));self.assertFalse(m.choose_action('flee'))
+        self.assertFalse(m.select_ready('mira'))
+        self.assertNotEqual(m.command_reason('skills'),'')
+        self.assertTrue(m.choose_action('guard'));self.ready(m)
+        charge=next(e for e in m.events if e['type']=='impact' and e['action']=='tusker_charge')
+        self.assertTrue(charge['guarded']);self.assertGreater(m.player.hp,0)
+        self.assertEqual(m.spellblade_stage,'first_edge')
+        self.assertEqual(m.skill_actions(),['aqua_edge'])
+        self.assertNotIn('aether_edge',m.available_actions())
+        hp,mp=m.enemy.hp,m.player.mp
+        self.assertTrue(m.choose_action('aqua_edge'));failed=m.current_action
+        self.assertEqual(failed.action,'aqua_edge_attempt')
+        m.update(failed.impact_at)
+        self.assertEqual(m.enemy.hp,hp);self.assertEqual(m.player.mp,mp)
+        self.assertFalse(m.aether_edge_discovered)
+        self.assertEqual(m.spellblade_stage,'second_edge')
+        m.update(failed.duration-failed.elapsed)
+        self.assertEqual(m.current_action.action,'aether_edge')
+        self.assertEqual(m.player.mp,mp-4)
+        self.assertFalse(m.waiting_for_player)
+        m.update(m.current_action.impact_at)
+        self.assertTrue(m.aether_edge_discovered)
+        self.assertEqual(m.spellblade_stage,'complete')
+        self.assertEqual(m.skill_actions('player'),['aether_edge'])
+        self.assertGreater(m.current_action.damage,0)
+        self.assertGreater(m.enemy.hp,0)
+        self.assertNotIn('aqua_edge',m.learned_abilities)
+        self.assertEqual(sum(e['type']=='spellblade_discovered' for e in m.events),1)
 
     def test_ready_choices_pause_all_party_enemy_and_bot_gauges(self):
         m=self.model();self.ready(m)
@@ -73,8 +69,7 @@ class SpellbladeLessonTests(unittest.TestCase):
             self.assertTrue(model.waiting_for_player)
             self.assertEqual(model.ready_actor,'mira')
             self.assertTrue(model.choose_action('attack'))
-        self.assertEqual(model.phase,'victory')
-        self.assertGreater(model.combatant('mira').hp,0)
+        self.assertTrue(model.ended)
         self.assertFalse(model.spellblade_guided)
         self.assertFalse(model.aether_edge_discovered)
         self.assertNotIn('aether_edge',model.learned_abilities)

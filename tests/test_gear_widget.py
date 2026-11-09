@@ -212,6 +212,38 @@ class GearWidgetTests(unittest.TestCase):
             masks.append(pygame.image.tobytes(surface, 'RGBA')[3::4])
         self.assertEqual(len(set(masks)), 4)
 
+    def test_blue_only_drag_cannot_seat_an_empty_socket(self):
+        self.widget = GearWidget(owned_gems=('water',))
+        self.widget.layout((100, 100, 48, 48))
+        self.drag_quarter()
+        self.assertEqual(self.widget.preview_gem, 'water')
+        self.assertIsNone(self.widget.update(.2))
+        self.assertEqual(self.widget.active_gem, 'water')
+        self.widget.focused = True
+        for key in (pygame.K_LEFT, pygame.K_RIGHT):
+            self.event(pygame.KEYDOWN, key=key)
+            self.assertEqual(self.widget.preview_gem, 'water')
+        with self.assertRaises(ValueError):self.widget.active_gem = 'fire'
+
+    def test_keyboard_skips_empty_sockets_when_a_later_gem_is_installed(self):
+        self.widget = GearWidget(owned_gems=('water', 'fire'))
+        self.widget.layout((100, 100, 48, 48))
+        self.widget.focused = True
+        for expected in ('fire', 'water', 'fire', 'water'):
+            self.event(pygame.KEYDOWN, key=pygame.K_LEFT)
+            self.assertEqual(self.widget.preview_gem, expected)
+            self.event(pygame.KEYDOWN, key=pygame.K_RETURN)
+            self.assertEqual(self.widget.update(.1), expected)
+
+    def test_unowned_slots_render_as_empty_settings(self):
+        from gear_widget import _mechanism, _point
+        empty = _mechanism(0, 1, ('water',))
+        full = _mechanism(0, 1)
+        for index, gem in enumerate(GEM_ORDER):
+            point = _point(12, index * QUARTER)
+            if gem == 'water':self.assertEqual(empty.get_at(point), full.get_at(point))
+            else:self.assertEqual(tuple(empty.get_at(point))[:3], (24, 43, 38))
+
 
 if __name__ == '__main__':
     unittest.main()

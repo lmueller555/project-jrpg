@@ -300,8 +300,10 @@ develops through learned weapon techniques and magicks; these numbers do not
 change his established magical limitations. Aether Edge is his only learned
 first-weapon starter skill, without permanent elemental coverage. He begins
 unarmed. Mira presents his first gear-and-gem blade at the start of MQ02, before
-the outing. The first elemental attempt fails and the next discovers Aether
-Edge; that remains his only learned starter skill. The
+the outing. The gift contains only the Blue Water gem. His first Aqua Edge
+attempt fails, but inadvertently releases and teaches Aether Edge in the same
+attempt. The first Sanctuary cave encounter later teaches Aqua Edge. It costs
+0 MP throughout that introductory battle and 4 MP after it clears. The
 [character ability dictionaries](../../CHARACTER_ABILITIES.md) record his
 unlock rules and the other party members' profiles.
 The values are visible through **Pause → Characters**, with attribute icons and

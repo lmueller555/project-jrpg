@@ -140,5 +140,18 @@ class GearbladeEffectsTests(unittest.TestCase):
         self.assertIs(self.fx._layer,layer)
         self.assertEqual(layer.get_size(),(176,176))
 
+    def test_only_owned_jewels_glow_and_empty_ownership_has_no_slot_burst(self):
+        sample = self.fx.sample((160,140), 'idle', 0, 'water', 1., owned_gems=('water',))
+        self.assertEqual(set(sample['anchors']['gems']), {'water'})
+        empty = pygame.Surface((480,320), pygame.SRCALPHA)
+        self.fx.draw(empty, (160,140), 'idle', 0, 'water', 1., slot_age=.2, owned_gems=())
+
+    def test_aqua_uses_water_even_with_the_shared_spellblade_body_pose(self):
+        aqua = dict(action='aqua_edge', kind='spellblade', elapsed=.5, elemental=True)
+        sample = self.fx.sample((160,140), 'aether_edge', 500, 'water', 1., action=aqua,
+                                owned_gems=('water',))
+        self.assertEqual(sample['effect'], 'water')
+        self.assertEqual(sample['mode'], 'elemental')
+
 
 if __name__=='__main__':unittest.main()

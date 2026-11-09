@@ -20,7 +20,7 @@ import pygame
 
 from main import Game
 from test_mill_battle_gameplay import (
-    acknowledge_battle_result, click, key, read_social,
+    acknowledge_battle_result, click, finish_mill_battle, key, read_social,
     seed_completed_mill, seed_mill_handoff,
 )
 from ui_style import Painter
@@ -108,15 +108,12 @@ class RivetGameplayTests(unittest.TestCase):
             key(game, pygame.K_SPACE)
         elif scene.model.waiting_for_player and guard_ready:
             game.draw()
-            if getattr(scene.model, 'spellblade_stage', None) in ('first_edge', 'second_edge'):
-                # Finish Caelan's authored introductory attempts through the
-                # real Skills UI before exercising ordinary bot controls.
+            if getattr(scene.model, 'spellblade_stage', None) == 'first_edge':
+                # One failed Aqua selection leads automatically to Aether;
+                # use real Skills input before ordinary bot controls.
                 click(game, scene.command_rects['skills'].center)
                 game.draw()
-                # The gear now gates attempts too; use its settled focus.
-                attempt = {'nature': 'nature_edge', 'water': 'aqua_edge',
-                           'fire': 'flame_edge'}[scene.model.active_gem]
-                click(game, scene.command_rects[attempt].center)
+                click(game, scene.command_rects['aqua_edge'].center)
             else:
                 click(game, scene.command_rects['guard'].center)
         else:
@@ -263,7 +260,8 @@ class RivetGameplayTests(unittest.TestCase):
         click(game, scene.command_rects['attack'].center)
         self.assertEqual((model.current_action.actor, model.current_action.action,
                           model.current_action.target), ('mira', 'bolt_shot', 'enemy'))
-        self.assertIn('Bolt Shot', self.draw_text(game))
+        # Mira's default attack is omitted by the shared announcement banner.
+        self.assertFalse(any('Bolt Shot' in text for text in self.draw_text(game)))
         self.assertTrue(game.handle_events([pygame.event.Event(pygame.WINDOWFOCUSLOST)]))
         self.assertTrue(scene.paused)
         before = self.state(scene)
@@ -310,7 +308,7 @@ class RivetGameplayTests(unittest.TestCase):
             self.assertEqual((bot.atb, bot.haste_turns), (initial_gauge, 0))
             self.assertEqual(scene._pose('mira')[0], 'overclock')
             self.assertEqual(scene._pose('rivet')[0], 'overclock')
-            self.assertIn('Overclock', self.draw_text(game))
+            self.assertIn('Mira — Overclock', self.draw_text(game))
             self.assertIn('overclock', scene.sprites.actors['mira']['animations'])
             self.assertIn('overclock', scene.sprites.actors['rivet']['animations'])
             self.advance_until(game, scene, lambda: action.resolved)
@@ -328,7 +326,7 @@ class RivetGameplayTests(unittest.TestCase):
             self.assertEqual((jab.action, jab.target), ('piston_jab', 'enemy'))
             self.assertEqual(bot.atb, 0)
             self.assertEqual(bot.haste_turns, 8)
-            self.assertIn('Piston Jab', self.draw_text(game))
+            self.assertFalse(any('Piston Jab' in text for text in self.draw_text(game)))
             self.advance_until(game, scene, lambda: jab.resolved)
             self.assertGreater(jab.damage, 0)
             self.assertEqual(bot.haste_turns, 8)
@@ -345,7 +343,9 @@ class RivetGameplayTests(unittest.TestCase):
             self.assertEqual((mira.mp, bot.atb, bot.haste_turns), (mp-5, fraction, remaining))
             self.advance_until(game, scene, lambda: refresh.resolved)
             self.assertEqual((bot.atb, bot.haste_turns), (fraction, 8))
-            self.advance_until(game, scene, lambda: model.ended)
+            # Rivet supplements the party; finish with ordinary attacks and
+            # Aether Edge after observing both Overclock applications.
+            finish_mill_battle(game, dismiss=False, use_overclock=False)
         self.assertEqual(model.phase, 'victory')
         bot_events = [event for event in events if event.get('actor') == 'rivet'
                       and event.get('action') == 'piston_jab'

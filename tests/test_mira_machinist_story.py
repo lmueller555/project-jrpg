@@ -63,8 +63,10 @@ class MiraMachinistStoryTests(unittest.TestCase):
         self.assertIn('mill has stopped', reunion[0]['text'])
         self.assertTrue(any('water' in line['text'] for line in reunion))
         gift = ' '.join(line['text'] for line in self.lines['gift'])
-        for detail in ('birthday', 'grip', 'housing', 'ring', 'Water', 'Nature', 'Fire', 'Ice', 'aether'):
+        for detail in ('birthday', 'grip', 'housing', 'ring', 'Water', 'only gem', 'sockets are empty', 'aether'):
             self.assertIn(detail, gift)
+        for future_element in ('Nature', 'Fire', 'Ice'):
+            self.assertNotIn(future_element, gift)
         self.assertTrue(any(line.get('cue') == 'handoff' for line in self.lines['gift']))
 
     def test_route_weapon_checks_and_both_aftermaths_match_the_machinist_kit(self):
@@ -74,7 +76,8 @@ class MiraMachinistStoryTests(unittest.TestCase):
             self.assertIn(detail, warning)
         for name in ('aftermath', 'aftermath_recovered'):
             text = ' '.join(line['text'] for line in self.lines[name])
-            self.assertIn('elements', text)
+            self.assertIn('water', text)
+            self.assertIn('something else came through', text)
             self.assertIn('sheathed', text)
             self.assertIn('quieter', text)
             self.assertNotIn('better reach', text)

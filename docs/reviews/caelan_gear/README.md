@@ -1,5 +1,9 @@
 # Caelan gear combat review
 
+**Historical capture:** This review predates Blue-only gem ownership and the
+current automatic Aether discovery. It retains the earlier four-focus,
+two-attempt sequence. See [current Caelan progression](../../CAELAN_AQUA_PROGRESSION.md).
+
 [Production MQ02 combat](mq02_gear_combat_silent.mp4) · [Four-focus FX reel](four_gem_fx_silent.mp4) · [Contact sheet](contact_sheet.png) · [Decoded video frames](video_contact_sheet.png)
 
 Both silent previews render the production battle scene at 960×640, 30 FPS.

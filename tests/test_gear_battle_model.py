@@ -78,7 +78,7 @@ class GearBattleModelTests(unittest.TestCase):
         self.assertEqual(model.actions['nature_edge']['kind'], 'failed_edge')
         self.assertNotIn('ice_edge', model.actions)
         shipped = self.model(learned_abilities=list(REQUIRED_GEMS))
-        self.assertEqual(shipped.skill_actions(), [])
+        self.assertEqual(shipped.skill_actions(), ['aqua_edge'])
         self.assertFalse(shipped.choose_action('ice_edge'))
 
     def test_selector_locks_during_caelan_action_unarmed_ko_and_results(self):
@@ -185,47 +185,28 @@ class GearBattleModelTests(unittest.TestCase):
             damages.append(model.current_action.damage)
         self.assertEqual(len(set(damages)), 1)
 
-    def test_every_tutorial_start_gem_and_choice_pair_requires_matching_focus(self):
+    def test_blue_only_tutorial_attempt_and_automatic_aether_require_one_focus(self):
         for initial in GEM_ORDER:
-            for first in ELEMENTAL_EDGE_ATTEMPTS:
-                for second in ELEMENTAL_EDGE_ATTEMPTS:
-                    with self.subTest(initial=initial, first=first, second=second):
-                        model = self.model(enemy_id='ridgeback_tusker', guest_id='mira',
-                                           spellblade_tutorial=True, active_gem=initial)
-                        self.ready(model)
-                        self.assertEqual(model.spellblade_stage, 'guard')
-                        self.assertFalse(model.choose_action(first))
-                        self.assertTrue(model.choose_action('guard'))
-                        self.ready(model)
-                        charge = next(event for event in model.events
-                                      if event['type'] == 'impact' and event['action'] == 'tusker_charge')
-                        self.assertTrue(charge['guarded'])
-                        self.assertEqual(model.spellblade_stage, 'first_edge')
-                        hp, mp = model.enemy.hp, model.player.mp
-                        wrong = next(gem for gem in GEM_ORDER if gem != REQUIRED_GEMS[first])
-                        self.assertTrue(model.set_active_gem(wrong))
-                        before = self.snapshot(model)
-                        self.assertFalse(model.choose_action(first))
-                        self.assertEqual(self.snapshot(model), before)
-                        self.assertTrue(model.set_active_gem(REQUIRED_GEMS[first]))
-                        self.assertTrue(model.choose_action(first))
-                        model.update(model.current_action.duration)
-                        self.assertEqual((model.enemy.hp, model.player.mp), (hp, mp))
-                        self.assertEqual(model.spellblade_stage, 'second_edge')
-                        self.assertFalse(model.aether_edge_discovered)
-                        self.ready(model)
-                        wrong = next(gem for gem in GEM_ORDER if gem != REQUIRED_GEMS[second])
-                        self.assertTrue(model.set_active_gem(wrong))
-                        self.assertFalse(model.choose_action(second))
-                        self.assertTrue(model.set_active_gem(REQUIRED_GEMS[second]))
-                        self.assertTrue(model.choose_action(second))
-                        self.assertEqual(model.current_action.action, 'aether_edge')
-                        self.assertEqual(model.current_action.active_gem, REQUIRED_GEMS[second])
-                        model.update(model.current_action.impact_at)
-                        self.assertEqual(model.player.mp, mp-4)
-                        self.assertEqual(model.spellblade_stage, 'complete')
-                        self.assertEqual(model.learned_abilities, frozenset(['aether_edge']))
-                        self.assertTrue(model.aether_edge_discovered)
+            with self.subTest(initial=initial):
+                model = self.model(enemy_id='ridgeback_tusker', guest_id='mira',
+                                   spellblade_tutorial=True, active_gem=initial)
+                self.ready(model)
+                self.assertEqual(model.spellblade_stage, 'guard')
+                self.assertTrue(model.choose_action('guard'))
+                self.ready(model)
+                self.assertEqual(model.skill_actions(), ['aqua_edge'])
+                if initial != 'water':
+                    self.assertFalse(model.choose_action('aqua_edge'))
+                self.assertTrue(model.set_active_gem('water'))
+                self.assertFalse(model.set_active_gem('fire'))
+                self.assertTrue(model.choose_action('aqua_edge'))
+                model.update(model.current_action.duration)
+                self.assertEqual(model.current_action.action, 'aether_edge')
+                self.assertEqual(model.current_action.active_gem, 'water')
+                model.update(model.current_action.impact_at)
+                self.assertEqual(model.spellblade_stage, 'complete')
+                self.assertEqual(model.learned_abilities, frozenset(['aether_edge']))
+                self.assertTrue(model.aether_edge_discovered)
 
     def test_global_multiplier_changes_all_gauges_and_composes_with_overclock(self):
         model = self.model(guest_id='mira')

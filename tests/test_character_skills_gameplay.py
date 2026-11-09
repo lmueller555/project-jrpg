@@ -169,7 +169,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertTrue(game.character_abilities.learn_ability('caelan', 'aether_dart'))
         self.assertTrue(game.save_progress())
 
-    def test_first_story_fight_equips_the_gift_and_guides_guard_before_elemental_attempts(self):
+    def test_first_story_fight_equips_blue_gift_and_guides_guard_before_aqua_attempt(self):
         game=self.game()
         self.assertIn('caelan_gearblade',self.production_catalog['items'])
         self.assertEqual(game.inventory.entries('weapons'),[])
@@ -183,9 +183,9 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         click(game,scene.command_rects['guard'].center)
         self.ready_player(game,scene)
         self.assertEqual(scene.model.spellblade_stage,'first_edge')
-        self.assertEqual(scene.model.skill_actions(),['nature_edge','aqua_edge','flame_edge'])
+        self.assertEqual(scene.model.skill_actions(),['aqua_edge'])
         click(game,scene.command_rects['skills'].center)
-        self.assertEqual(set(scene.command_rects),{'nature_edge','aqua_edge','flame_edge','back'})
+        self.assertEqual(set(scene.command_rects),{'aqua_edge','back'})
         self.assertNotIn('aether_edge',scene.command_rects)
 
     def test_first_weapon_grants_only_aether_edge_and_survives_continue_but_new_game_clears_it(self):
@@ -311,6 +311,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
     def test_learned_dart_remains_a_usable_root_command_when_unarmed(self):
         game = self.game(completed_mill=True)
         self.unlock_dart(game)
+        self.assertTrue(game.equip_weapon('caelan', None))
         self.assertIn('aether_dart', game.character_abilities.known_abilities())
         scene = self.start_bat(game)
         self.ready_player(game, scene)
