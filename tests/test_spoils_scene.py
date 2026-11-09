@@ -156,7 +156,7 @@ class SpoilsSceneTests(unittest.TestCase):
             labels.append(str(text));return original(painter, text, *args, **kwargs)
         with patch.object(Painter, 'text', record):self.draw()
         for label in ('Spoils of Battle', 'Items',
-                      'No items recovered.', 'Rewards received.', 'Continue'):
+                      'No items recovered.', 'Continue'):
             self.assertIn(label, labels)
         self.assertFalse(any(token in label for label in labels
                              for token in ('EXP', 'Gil', 'RP', 'Resonance', 'Attunement')))

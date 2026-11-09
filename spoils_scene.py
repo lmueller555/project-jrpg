@@ -181,8 +181,8 @@ class SpoilsScene:
         self._rule_y = 65 if self._ids else self.title_rect.bottom + 10
         self._items_label_y = 73 if self._ids else self._rule_y + 12
         self._small = small
-        message = self.result_error or ('Rewards received.' if self.awarded else 'Collecting rewards…')
-        self._footer_lines = painter.wrap(message, 274, role='small')[:2]
+        message = self.result_error or ('' if self.awarded else 'Collecting rewards…')
+        self._footer_lines = painter.wrap(message, 274, role='small')[:2] if message else []
         if len(painter.wrap(message, 274, role='small')) > 2:
             self._footer_lines[-1] = self._footer_lines[-1].rstrip(' .')+'…'
         self._footer_top = 304-max(28, small*len(self._footer_lines))
@@ -506,7 +506,6 @@ class SpoilsScene:
         if self._ids:
             painter.text(format(self.progression['amount'], ',')+' EXP', (446, 27),
                          role='small', color=GOLD, anchor='midright', bold=True)
-            painter.text('Full EXP for each survivor', (35, 45), role='small', color=MUTED)
         painter.line(BRASS, (26, self._rule_y), (454, self._rule_y))
         self._draw_party(painter)
         self._draw_items(painter)
