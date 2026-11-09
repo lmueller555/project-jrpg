@@ -38,7 +38,7 @@ HP_YELLOW = GOLD
 HP_RED = '#df6b62'
 MP_BLUE = '#5da9e9'
 ATB_YELLOW = GOLD
-CAVE_ENEMIES = frozenset(('lithrusk', 'veylume'))
+CAVE_ENEMIES = frozenset(('lithrusk', 'veylume', 'vespermaw'))
 
 
 class CombatSprites:
@@ -52,7 +52,7 @@ class CombatSprites:
 
     def _load_actor(self, actor):
         if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea', 'edran',
-                         'lithrusk', 'veylume'):
+                         'lithrusk', 'veylume', 'vespermaw'):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
         data = json.loads((folder/'animation.json').read_text(encoding='utf-8'))
@@ -63,8 +63,10 @@ class CombatSprites:
                        for i, n in enumerate(anchor))):
             raise ValueError('Invalid combat sprite canvas or anchor')
         animations = {}
+        points = {}
         for state, animation in data['animations'].items():
             frames = []
+            frame_points = []
             for record in animation['frames']:
                 filename = Path(record['file'])
                 duration = record['duration_ms']
@@ -75,9 +77,18 @@ class CombatSprites:
                 if surface.get_size() != tuple(canvas):
                     raise ValueError('Combat animation frames must share their canvas')
                 frames.append((surface, duration))
+                anchors = record.get('anchors', {})
+                if (not isinstance(anchors, dict)
+                        or any(not isinstance(name, str) or not isinstance(point, (list, tuple))
+                               or len(point) != 2 or any(type(value) not in (int, float)
+                                   or not math.isfinite(value) for value in point)
+                               for name, point in anchors.items())):
+                    raise ValueError('Invalid combat animation anchors')
+                frame_points.append({name: tuple(point) for name, point in anchors.items()})
             if not frames or type(animation['loop']) is not bool:
                 raise ValueError('Invalid combat animation')
             animations[state] = (frames, animation['loop'])
+            points[state] = frame_points
         if 'idle' not in animations:raise ValueError('Combat sprites require an idle')
         occupied = [frame.get_bounding_rect() for sequence, _ in animations.values()
                     for frame, _ in sequence if frame.get_bounding_rect().width]
@@ -87,20 +98,33 @@ class CombatSprites:
         idle_bounds = idle[0].unionall(idle[1:]) if idle else bounds
         self.actors[actor] = {'anchor': tuple(anchor), 'animations': animations,
                              'bounds': bounds, 'idle_bounds': idle_bounds,
+                             'frame_anchors': points,
                              'timing': {state: {'contact_ms': entry.get('contact_ms')}
                                         for state, entry in data['animations'].items()}}
 
-    def frame(self, actor, state, elapsed_ms):
+    def _selection(self, actor, state, elapsed_ms):
         if actor not in self.actors:self._load_actor(actor)
         data = self.actors[actor]
-        frames, loop = data['animations'].get(state, data['animations']['idle'])
+        if state not in data['animations']:state = 'idle'
+        frames, loop = data['animations'][state]
         duration = sum(frame[1] for frame in frames)
         time = max(0, elapsed_ms)
         time = time % duration if loop else min(time, duration-1)
-        for surface, length in frames:
-            if time < length:return surface, data['anchor']
+        for index, (_, length) in enumerate(frames):
+            if time < length:return data, state, index
             time -= length
-        return frames[-1][0], data['anchor']
+        return data, state, len(frames)-1
+
+    def frame(self, actor, state, elapsed_ms):
+        data, state, index = self._selection(actor, state, elapsed_ms)
+        return data['animations'][state][0][index][0], data['anchor']
+
+    def anchors(self, actor, state, elapsed_ms):
+        """Read retained pose points using the exact same clock as its drawing."""
+        data, state, index = self._selection(actor, state, elapsed_ms)
+        result = dict(data['frame_anchors'][state][index])
+        result.setdefault('floor', data['anchor'])
+        return result
 
 
 class BattleScene:
@@ -285,7 +309,8 @@ class BattleScene:
                                    ('enemy_high', (24, 5), 34),
                                    ('tusker', (114, 14), 62),
                                    ('lithrusk', (84, 11), 62),
-                                   ('veylume', (32, 6), 30)):
+                                   ('veylume', (32, 6), 30),
+                                   ('vespermaw', (126, 17), 65)):
             image = pygame.Surface(size, pygame.SRCALPHA)
             pygame.draw.ellipse(image, (31, 43, 29, opacity//2), image.get_rect())
             pygame.draw.ellipse(image, (31, 43, 29, opacity), image.get_rect().inflate(-8, -2))
@@ -1085,16 +1110,19 @@ class BattleScene:
 
         Native frames always use nearest-neighbour scaling. Legacy actors keep
         their established 2x presentation; compact accessibility layouts can
-        reduce these two larger species without clipping wings or stone plates.
+        reduce larger species without clipping wings, stone plates or boss poses.
         """
         if not self._is_enemy(actor):return 2.
         if self._group:
             bounds, area = self._enemy_art(actor)['bounds'], self._group_body_area(actor)
-            return min(2., max(1, area.width-4)/max(1, bounds.width), max(1, area.height-2)/max(1, bounds.height))
+            inset = 2 if self._sprite(actor) == 'vespermaw' else 0
+            return min(2., max(1, area.width-4-inset)/max(1, bounds.width),
+                       max(1, area.height-2-inset)/max(1, bounds.height))
         # Injected test/preview sprite banks may not supply occupied metadata.
         if not hasattr(self.sprites, 'actors'):return 2.
         bounds = self._enemy_art(actor)['bounds']
         available = self._enemy_body_area(actor).height
+        if self._sprite(actor) == 'vespermaw':available = max(1, available-2)
         return min(2., 224/max(1, bounds.width), available/max(1, bounds.height))
 
     def _clamp_enemy_position(self, point, actor='enemy', *, moving=False):
@@ -1103,6 +1131,10 @@ class BattleScene:
         bounds, anchor = art['bounds'], art['anchor']
         area = (pygame.Rect(5, 35, 470, max(1, self.panel_rect.top-38)) if moving and self._group else
                 self._enemy_body_area(actor))
+        # A large canvas scaled to a fractional size can gain one raster pixel
+        # after both the target size and blit origin round. Keep that pixel in
+        # the field rather than overlapping the status panel or target header.
+        if self._sprite(actor) == 'vespermaw':area = area.inflate(-2, -2)
         low = pygame.Vector2(area.left-(bounds.left-anchor[0])*scale,
                              area.top-(bounds.top-anchor[1])*scale)
         high = pygame.Vector2(area.right-(bounds.right-anchor[0])*scale,
@@ -1236,6 +1268,9 @@ class BattleScene:
                 return ('guard_impact' if reaction['guarded'] else 'hurt_recover'), age*1000
             if actor == 'mira' and reaction['guarded']:
                 return 'guard_impact', age*1000
+            if self._is_enemy(actor) and sprite == 'vespermaw' and not reaction['lethal']:
+                frames = self._enemy_art(actor)['animations']['hurt'][0]
+                return 'hurt', age/reaction_length*sum(length for _, length in frames)
             return 'hurt', age*1000
         if combatant.hp <= 0:
             return 'defeat', max(0., self._elapsed-self._defeat_times.get(actor, 0)-.18)*1000
@@ -1249,6 +1284,8 @@ class BattleScene:
             if self._is_enemy(actor) and sprite in CAVE_ENEMIES:
                 if sprite == 'lithrusk' and action.kind == 'physical':
                     return self._lithrusk_pose(action, actor)
+                if sprite == 'vespermaw':
+                    return self._vespermaw_pose(action, actor)
                 return action.animation, action.elapsed*1000
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
                      'overclock' if action.kind == 'haste' else
@@ -1257,7 +1294,7 @@ class BattleScene:
                      if action.animation in ('prepare', 'charge') else 'attack')
             return state, action.elapsed*1000
         if self._is_enemy(actor) and self._telegraphs().get(actor):
-            if sprite == 'veylume':
+            if sprite in ('veylume', 'vespermaw'):
                 started = self._enemy_charge_times.get(actor, self._enemy_charge_time)
                 start = self._elapsed if started is None else started
                 elapsed = max(0., self._elapsed-start)
@@ -1272,6 +1309,24 @@ class BattleScene:
             frames = self._enemy_art(actor)['animations']['fly'][0]
             return 'fly', self._elapsed/.65*sum(length for _, length in frames)
         return 'idle', 0 if self.reduced_motion and sprite in CAVE_ENEMIES else self._elapsed*1000
+
+    def _vespermaw_pose(self, action, actor='enemy'):
+        """Preserve the complete authored move and its marked contact drawing.
+
+        The art clock is independent of a future action's battle duration. Its
+        contact point lands on that action's authoritative impact boundary;
+        anticipation and followthrough retain all of their source drawings.
+        """
+        art = self._enemy_art(actor)
+        state = action.animation if action.animation in art['animations'] else 'idle'
+        frames = art['animations'][state][0]
+        total = sum(length for _, length in frames)
+        contact = art['timing'][state]['contact_ms']
+        if contact is None:contact = total*action.impact_at/max(.001, action.duration)
+        age, impact = max(0., action.elapsed), action.impact_at
+        time = (contact*age/max(.001, impact) if age <= impact else
+                contact+(total-contact)*(age-impact)/max(.001, action.duration-impact))
+        return state, max(0., min(total-1, time))
 
     def _lithrusk_pose(self, action, actor='enemy'):
         """Show the gait on approach/retreat and every strike drawing at contact.

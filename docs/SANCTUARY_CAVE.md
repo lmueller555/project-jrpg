@@ -104,9 +104,10 @@ uses the player's actual location throughout the continuous cave.
 The entrance apron, High Overlook, Quiet Shelf and Echo Chamber are protected.
 The Echo Chamber reserves the future level-seven miniboss,
 [Vespermaw](BESTIARY.md#vespermaw). Its Bestiary entry records the solo story
-encounter design, stats, elements, rewards and complete action cycle. Art,
-party-wide Roar damage, Pounce response rules, recovery vulnerability and the
-actual encounter trigger remain pending. It is excluded from random pools.
+encounter design, stats, elements, rewards and complete action cycle. Its
+[combat art](VESPERMAW_COMBAT_ART.md) is ready. Party-wide Roar damage, Pounce
+response rules, recovery vulnerability and the actual encounter trigger remain
+pending. It is excluded from random pools.
 The Quiet Shelf provides
 a preparation pause without restoring HP or MP. Battle entry focuses the party,
 presents a loading screen and reveals one of four animated cave battlefields.

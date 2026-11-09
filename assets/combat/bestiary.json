@@ -294,8 +294,14 @@
         "targeting": "cycle_living_party"
       },
       "presentation": {
-        "sprite_id": null,
-        "action_aliases": {}
+        "sprite_id": "vespermaw",
+        "action_aliases": {
+          "vespermaw_raking_claw": "raking_claw",
+          "vespermaw_confluence_roar": "confluence_roar",
+          "vespermaw_gather_resonance": "gather_resonance",
+          "vespermaw_ruinous_pounce": "ruinous_pounce",
+          "vespermaw_exhausted": "exhausted"
+        }
       },
       "rewards": {
         "drops": {

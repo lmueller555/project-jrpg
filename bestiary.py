@@ -176,7 +176,7 @@ def _validate_species(enemy, actions, archetypes, items):
     if (not isinstance(presentation, dict) or set(presentation) != {'sprite_id', 'action_aliases'}
             or not isinstance(presentation['action_aliases'], dict)
             or any(key not in behavior['sequence'] or not isinstance(value, str)
-                   or value not in actions
+                   or (value not in actions and not (pending_combat and _identifier(value)))
                    for key, value in presentation['action_aliases'].items())):
         raise ValueError('Invalid Bestiary presentation')
     sprite_id = presentation['sprite_id']
@@ -193,7 +193,8 @@ def _validate_species(enemy, actions, archetypes, items):
         states = manifest.get('animations') if isinstance(manifest, dict) else None
         def authored_state(identifier):
             alias = presentation['action_aliases'].get(identifier)
-            return alias if alias in states else actions[alias or identifier].get('animation', identifier)
+            if alias in states:return alias
+            return actions.get(alias or identifier, {}).get('animation', alias or identifier)
         if not isinstance(states, dict) or any(
                 authored_state(identifier) not in states for identifier in behavior['sequence']):
             raise ValueError('Bestiary actions require authored animation states')

@@ -7,7 +7,8 @@ dictionary and resolves a species at an explicitly selected level.
 
 The dictionary contains four computed Sanctuary cave species: **Cave Bat**,
 **Lithrusk**, **Veylume** and the level-seven miniboss **Vespermaw**. Vespermaw's
-combat design and art are pending; it is not placed in the cave yet. The
+combat implementation is pending; its dedicated sprite bank is ready, but it
+is not placed in the cave yet. The
 dictionary preserves the existing fixed Bat and Ridgeback Tusker records for
 their authored test and MQ02 encounters. Fixed records
 retain their exact stats, abilities and item drops. Their computed-species
@@ -265,8 +266,12 @@ vulnerability and the guaranteed marked-character response opportunity still
 need combat support. `metadata['combat_pending']` reports this state. The
 complete sequence is preserved for authoring, but battle construction rejects
 it instead of substituting a single-target Roar or a fake recovery attack.
-Presentation also remains `null` with empty aliases; sprite design and
-animations are deferred. Adding this entry does not add a random encounter,
+Presentation references the dedicated `vespermaw` bank, with direct aliases
+from the five designed action IDs to their matching animation states. The
+[combat art bank](VESPERMAW_COMBAT_ART.md) supplies 256 authored poses across
+ten animations, including idle, prowl, charged hold, hurt and defeat.
+Art readiness does not activate the missing combat mechanics: the
+`combat_pending` gate remains in place. This does not add a random encounter,
 place a story trigger, resolve MQ03's arrival or activate the boss fight.
 
 ## Authoring before art
@@ -279,6 +284,9 @@ column. Concrete sprite IDs require an existing animation manifest and
 authored states for every action. Lithrusk and Veylume now resolve to their own
 ready sprite banks with empty alias maps; their action records name the poses
 directly.
+Pending combat designs may alias their local action IDs directly to manifest
+states; those aliases are checked against the actual bank. Live action aliases
+retain their existing catalog validation.
 Pending art requires empty aliases and cannot silently borrow another enemy's
 appearance. `BattleModel.from_bestiary` rejects it before constructing a battle.
 
