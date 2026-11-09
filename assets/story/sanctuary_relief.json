@@ -1,0 +1,45 @@
+{
+  "attendant": {
+    "id": "relief_attendant",
+    "name": "Attendant Nessa",
+    "variant": "female_01",
+    "facing": "front",
+    "radius": 32
+  },
+  "bed": {
+    "scene": "elden_vale_sanctuary_relief",
+    "entity": "visitor_bed",
+    "interaction_radius": 16,
+    "identifier": "sanctuary_relief_bed",
+    "offer": [
+      {"speaker": "caelan", "text": "A bed and some fresh water. We could catch our breath here."}
+    ],
+    "prompt": "Take a short rest? Fully restores the party's HP and MP. No charge.",
+    "choices": [
+      {"text": "Rest", "action": "rest"},
+      {"text": "Not now", "action": "leave"}
+    ],
+    "complete": [
+      {"speaker": "caelan", "text": "*takes a steady breath* That's better. Everyone ready?"}
+    ]
+  },
+  "attendant_rest": {
+    "scene": "elden_vale_sanctuary_relief",
+    "identifier": "sanctuary_relief_attendant",
+    "offer": [
+      {"speaker": "relief_attendant", "text": "Welcome. I'm Nessa. We keep this room for travelers and those keeping vigil."},
+      {"speaker": "relief_attendant", "text": "The bed is yours for a short rest. There's fresh water, and I'll see to your companions. No charge."}
+    ],
+    "prompt": "Rest with Nessa's help? Fully restores the party's HP and MP.",
+    "choices": [
+      {"text": "Rest", "action": "rest"},
+      {"text": "Not now", "action": "leave"}
+    ],
+    "complete": [
+      {"speaker": "relief_attendant", "text": "There. Everyone's back on their feet. Take care on the paths."}
+    ],
+    "retry_lines": [
+      {"speaker": "caelan", "text": "We'll try again in a moment."}
+    ]
+  }
+}

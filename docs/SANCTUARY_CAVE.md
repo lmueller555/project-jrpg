@@ -1,5 +1,11 @@
 # Sanctuary crystal cave
 
+For nearby recovery, return to the Sanctuary hall and take the bed-marked
+north-wing door to the visitor relief room. Attendant Nessa and the bed both
+offer a free, confirmed short rest that restores travelling party HP/MP and
+revives KO companions. There is no need to return to Eldenmere. See
+[visitor care](SANCTUARY_RESERVE.md#visitor-relief-room).
+
 The Sanctuary's first dungeon is one continuous scrolling cave, assembled from
 the approved limestone dungeon asset pack. The player walks from the rooted,
 daylit entrance through crystal-bearing galleries and reflecting water to the

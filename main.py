@@ -533,6 +533,8 @@ class Game:
         self.overworld_travel=OverworldTravel(self)
         from sanctuary_reserve import SanctuaryReserve
         self.sanctuary_reserve=SanctuaryReserve(self)
+        from sanctuary_relief import SanctuaryRelief
+        self.sanctuary_relief=SanctuaryRelief(self)
         self.sanctuary_cave=SanctuaryCave(self)
         self.cave_random_encounters=CaveRandomEncounters()
         self.regional_audio=RegionalAudio(self)
@@ -834,6 +836,8 @@ class Game:
         self.overworld_travel.restore(data.get('overworld') if data else None)
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.reset()
+        self.sanctuary_relief.reset()
+        self.sanctuary_relief.ensure_world()
         self.sanctuary_cave.restore(data.get('sanctuary_cave') if data else None)
         if not self.cave_random_encounters.restore(data.get('cave_random_encounters') if data else None):
             return False
@@ -1369,6 +1373,10 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    if self.sanctuary_relief.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
@@ -1521,6 +1529,7 @@ class Game:
         if not self.quest_ui.journal_open:self.social.update(direction)
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.update(seconds)
+        self.sanctuary_relief.update(seconds)
         self.sanctuary_cave.update(seconds)
         if not getattr(self.overworld_travel,'remote',self.overworld_travel.active):
             for visit in self.household_visits:
@@ -1597,6 +1606,7 @@ class Game:
         origin=self.world
         self.world=destination
         self.player.position.update(spawn)
+        self.sanctuary_relief.ensure_world()
         self.player.facing=door.data['arrival_facing']
         self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.25
@@ -1705,6 +1715,7 @@ class Game:
         reserve=getattr(self,'sanctuary_reserve',None)
         hint=(hint or self.overworld_travel.interaction_hint() or self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
+              self.sanctuary_relief.interaction_hint() or
               self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
               next((hint for visit in self.household_visits
                     if (hint:=visit.interaction_hint())), ''))

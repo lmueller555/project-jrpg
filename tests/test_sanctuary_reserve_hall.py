@@ -14,7 +14,7 @@ from PIL import Image
 
 from main import Player, World
 from npc_routines import find_path
-from tools.build_sanctuary_reserve_hall import build
+from tools.build_sanctuary_reserve_hall import build, png
 
 ROOT = Path(__file__).resolve().parents[1]
 MAP = ROOT/'assets/maps/elden_vale_sanctuary_hall/map.json'
@@ -89,7 +89,12 @@ class SanctuaryReserveHallTests(unittest.TestCase):
                 self.assertLessEqual(set(image.getchannel('A').get_flattened_data()),{0,255})
                 self.assertGreaterEqual(record['position'][1],48)
                 self.assertLessEqual(record['position'][1]+image.height,144)
-        self.assertEqual(hashlib.sha256((ROOT/data['collision']).read_bytes()).hexdigest(),
+        # The new doorway cuts only its narrow north-wall threshold. Closing
+        # that opening reconstructs the earlier hall's exact collision mask.
+        collision = Image.open(ROOT/data['collision']).convert('L')
+        clearance = pygame.Rect(data['relief_clearance']).clip(pygame.Rect(recipe['walls']['north']))
+        collision.paste(255, (clearance.x, clearance.y, clearance.right, clearance.bottom))
+        self.assertEqual(hashlib.sha256(png(collision)).hexdigest(),
                          '4574117ff4a450028225d349d11048836eb8378ffeae74d4302ffdeda1c7d956')
 
     def test_full_foot_flood_connects_all_clear_floor_around_the_furniture(self):

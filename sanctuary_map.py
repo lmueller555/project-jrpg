@@ -141,7 +141,9 @@ class SanctuaryMapUI:
         MapUI._player_symbol(painter, self.world_to_map(self.player_position()))
         MapUI._player_symbol(painter, (32, 289))
         inside = self.game.world.data.get('id') != RESERVE_ID
-        painter.text('You are here · Inside the hall' if inside else 'You are here',
+        label = ('You are here · Relief room' if self.game.world.data.get('id') == 'elden_vale_sanctuary_relief'
+                 else 'You are here · Inside the hall' if inside else 'You are here')
+        painter.text(label,
                      (43, 282), role='small', color='#344337')
         painter.line('#c4b184', (304, top), (304, 290), 1)
         self._draw_details(painter, top)

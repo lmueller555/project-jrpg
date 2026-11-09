@@ -1,0 +1,361 @@
+{
+  "fixture": "Disposable hall location, recruited party and injuries; production movement, doors, dialogue and recovery.",
+  "captures": [
+    {
+      "file": "hall_relief_door.png",
+      "label": "Sanctuary hall \u00b7 visitor-room entrance",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        192.01091449099874,
+        168.25613682301898
+      ],
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "script": null,
+      "party_resources": {
+        "caelan": {
+          "hp": 17,
+          "mp": 3,
+          "max_hp": 140,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 0,
+          "mp": 0,
+          "max_hp": 150,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 25,
+          "mp": 2,
+          "max_hp": 170,
+          "max_mp": 20
+        },
+        "rhea": {
+          "hp": 5,
+          "mp": 1,
+          "max_hp": 100,
+          "max_mp": 45
+        },
+        "edran": {
+          "hp": 14,
+          "mp": 2,
+          "max_hp": 160,
+          "max_mp": 40
+        }
+      }
+    },
+    {
+      "file": "relief_room.png",
+      "label": "Visitor relief room \u00b7 bed, water and attendant",
+      "scene": "elden_vale_sanctuary_relief",
+      "position": [
+        168.0,
+        248.0
+      ],
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "script": null,
+      "party_resources": {
+        "caelan": {
+          "hp": 17,
+          "mp": 3,
+          "max_hp": 140,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 0,
+          "mp": 0,
+          "max_hp": 150,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 25,
+          "mp": 2,
+          "max_hp": 170,
+          "max_mp": 20
+        },
+        "rhea": {
+          "hp": 5,
+          "mp": 1,
+          "max_hp": 100,
+          "max_mp": 45
+        },
+        "edran": {
+          "hp": 14,
+          "mp": 2,
+          "max_hp": 160,
+          "max_mp": 40
+        }
+      }
+    },
+    {
+      "file": "bed_offer.png",
+      "label": "Bedside offer \u00b7 free, explicitly confirmed rest",
+      "scene": "elden_vale_sanctuary_relief",
+      "position": [
+        104.00000000000001,
+        150.0
+      ],
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "script": "sanctuary_relief_bed_offer",
+      "party_resources": {
+        "caelan": {
+          "hp": 17,
+          "mp": 3,
+          "max_hp": 140,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 0,
+          "mp": 0,
+          "max_hp": 150,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 25,
+          "mp": 2,
+          "max_hp": 170,
+          "max_mp": 20
+        },
+        "rhea": {
+          "hp": 5,
+          "mp": 1,
+          "max_hp": 100,
+          "max_mp": 45
+        },
+        "edran": {
+          "hp": 14,
+          "mp": 2,
+          "max_hp": 160,
+          "max_mp": 40
+        }
+      }
+    },
+    {
+      "file": "bed_offer_large_text.png",
+      "label": "Bedside offer \u00b7 native 150% text",
+      "scene": "elden_vale_sanctuary_relief",
+      "position": [
+        104.00000000000001,
+        150.0
+      ],
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "script": "sanctuary_relief_bed_offer",
+      "party_resources": {
+        "caelan": {
+          "hp": 17,
+          "mp": 3,
+          "max_hp": 140,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 0,
+          "mp": 0,
+          "max_hp": 150,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 25,
+          "mp": 2,
+          "max_hp": 170,
+          "max_mp": 20
+        },
+        "rhea": {
+          "hp": 5,
+          "mp": 1,
+          "max_hp": 100,
+          "max_mp": 45
+        },
+        "edran": {
+          "hp": 14,
+          "mp": 2,
+          "max_hp": 160,
+          "max_mp": 40
+        }
+      }
+    },
+    {
+      "file": "restored_party.png",
+      "label": "After resting \u00b7 active party restored",
+      "scene": "elden_vale_sanctuary_relief",
+      "position": [
+        104.00000000000001,
+        150.0
+      ],
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "script": null,
+      "party_resources": {
+        "caelan": {
+          "hp": 140,
+          "mp": 30,
+          "max_hp": 140,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "max_hp": 150,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 170,
+          "mp": 20,
+          "max_hp": 170,
+          "max_mp": 20
+        },
+        "rhea": {
+          "hp": 100,
+          "mp": 45,
+          "max_hp": 100,
+          "max_mp": 45
+        },
+        "edran": {
+          "hp": 14,
+          "mp": 2,
+          "max_hp": 160,
+          "max_mp": 40
+        }
+      }
+    },
+    {
+      "file": "attendant_offer.png",
+      "label": "Attendant Nessa \u00b7 visitor care and a free rest",
+      "scene": "elden_vale_sanctuary_relief",
+      "position": [
+        240.0,
+        202.0
+      ],
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "script": "sanctuary_relief_attendant_offer",
+      "party_resources": {
+        "caelan": {
+          "hp": 140,
+          "mp": 30,
+          "max_hp": 140,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "max_hp": 150,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 170,
+          "mp": 20,
+          "max_hp": 170,
+          "max_mp": 20
+        },
+        "rhea": {
+          "hp": 100,
+          "mp": 45,
+          "max_hp": 100,
+          "max_mp": 45
+        },
+        "edran": {
+          "hp": 14,
+          "mp": 2,
+          "max_hp": 160,
+          "max_mp": 40
+        }
+      }
+    }
+  ],
+  "checks": {
+    "before_resources": {
+      "caelan": {
+        "hp": 17,
+        "mp": 3,
+        "max_hp": 140,
+        "max_mp": 30
+      },
+      "mira": {
+        "hp": 0,
+        "mp": 0,
+        "max_hp": 150,
+        "max_mp": 30
+      },
+      "lucan": {
+        "hp": 25,
+        "mp": 2,
+        "max_hp": 170,
+        "max_mp": 20
+      },
+      "rhea": {
+        "hp": 5,
+        "mp": 1,
+        "max_hp": 100,
+        "max_mp": 45
+      },
+      "edran": {
+        "hp": 14,
+        "mp": 2,
+        "max_hp": 160,
+        "max_mp": 40
+      }
+    },
+    "after_resources": {
+      "caelan": {
+        "hp": 140,
+        "mp": 30,
+        "max_hp": 140,
+        "max_mp": 30
+      },
+      "mira": {
+        "hp": 150,
+        "mp": 30,
+        "max_hp": 150,
+        "max_mp": 30
+      },
+      "lucan": {
+        "hp": 170,
+        "mp": 20,
+        "max_hp": 170,
+        "max_mp": 20
+      },
+      "rhea": {
+        "hp": 100,
+        "mp": 45,
+        "max_hp": 100,
+        "max_mp": 45
+      },
+      "edran": {
+        "hp": 14,
+        "mp": 2,
+        "max_hp": 160,
+        "max_mp": 40
+      }
+    },
+    "available_reserves_restored": true,
+    "active_ko_revived": true,
+    "unrecruited_elsewhere_preserved": true,
+    "progression_items_story_counter_music_preserved": true,
+    "declined_attendant_rest_kept_resources": true,
+    "walked_hall_door_bed_attendant": true,
+    "room_source": "assets/source/terrain/elden_vale_sanctuary_relief/recipe.json",
+    "attendant_count": 1
+  }
+}

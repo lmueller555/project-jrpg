@@ -34,6 +34,10 @@
     "book_cabinet": [
       486,
       178
+    ],
+    "relief_room": [
+      192,
+      168
     ]
   },
   "inspection_points": {
@@ -67,6 +71,17 @@
       "approach": [
         486,
         178
+      ],
+      "facing": "back"
+    },
+    "relief_room": {
+      "position": [
+        192,
+        144
+      ],
+      "approach": [
+        192,
+        168
       ],
       "facing": "back"
     }
@@ -424,7 +439,7 @@
       {
         "module": "memorial_lamp",
         "position": [
-          171,
+          145,
           107
         ]
       },
@@ -434,8 +449,63 @@
           402,
           107
         ]
+      },
+      {
+        "module": "visitor_bed_sign",
+        "position": [
+          207,
+          105
+        ]
       }
     ],
-    "notes": "Mounted ornaments fit existing north-wall footprint; furniture, floor, doors and all inspection positions remain unchanged."
+    "notes": "Wall ornaments retain their masonry registration; a small signed north-wing door opens to the visitor relief room. Existing remembrance furniture and inspection positions remain unchanged."
+  },
+  "relief_door": {
+    "id": "relief_room",
+    "anchor": [
+      192,
+      144
+    ],
+    "position": [
+      180,
+      102
+    ],
+    "clearance": [
+      168,
+      138,
+      48,
+      18
+    ],
+    "approach": [
+      192,
+      168
+    ],
+    "destination": "assets/maps/elden_vale_sanctuary_relief/map.json",
+    "spawn": [
+      168,
+      248
+    ],
+    "frames": [
+      {
+        "path": "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_01.png",
+        "sha256": "ad0c6ab7536ad91505b65bd8f46c86f859db623c29bf1a29e6da4c9774bcbf49"
+      },
+      {
+        "path": "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_02.png",
+        "sha256": "fbe2bf4a52e9947949840c78de101c12fa317903c660aaeba8b31cf3a7f7450b"
+      },
+      {
+        "path": "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_03.png",
+        "sha256": "7393a76d2d14f6a8ab4463b53d300a7375afb86ef23a061596d763be2633a43d"
+      },
+      {
+        "path": "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_04.png",
+        "sha256": "6f9a253aad76c808ee2049da80191d29e94306a2e73e3f2884a96f09968dba27"
+      },
+      {
+        "path": "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_05.png",
+        "sha256": "7f2d3d9e38d14f327dd7e97fab735d7f9d30e2facafa4ce181c319b0602f2013"
+      }
+    ]
   }
 }

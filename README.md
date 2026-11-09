@@ -256,6 +256,15 @@ Caelan's bed in the Sanctuary bedroom is a free rest point. Approach its side
 or foot, press **E**, then choose **Rest** to fully recover the party's HP and
 MP. A brief fade marks the rest, and the recovered resources are saved.
 
+Elden Vale Sanctuary also has a **visitor relief room** off the hall's north
+wall, marked with a bed plaque. Speak to **Attendant Nessa** or approach the
+visitor bed and press **E**, then choose **Rest**. This free short rest restores
+HP/MP and revives fallen travelling companions, including available reserves.
+It preserves levels, EXP, equipment, quests and cave encounter progress. A
+failed save rolls recovery back and offers Retry. The room is a nearby recovery
+stop between cave fights; the Sanctuary map marks your indoor location.
+See the [room review](docs/reviews/sanctuary_relief/README.md).
+
 Continue preserves the opening checkpoint without replaying finished scenes.
 Saves from before this opening was added keep their existing location/progress;
 choose **New Game** to experience the new beginning. See [story implementation](docs/STORY_IMPLEMENTATION.md).

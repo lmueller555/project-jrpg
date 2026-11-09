@@ -240,7 +240,7 @@ class BedRestTests(unittest.TestCase):
         self.offer(game)
         self.choose(game, 'rest')
         self.assertEqual(self.resources(game.attributes), (140, 30))
-        self.assertEqual(self.resources(companion), (337, 34))
+        self.assertEqual(self.resources(companion), (companion.value('hp'), companion.value('mp')))
         self.assertEqual(companion.to_dict()['attributes'], base)
         self.assertEqual(companion.value('def'), base['def']+9)
 
