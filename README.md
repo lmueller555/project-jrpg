@@ -78,12 +78,19 @@ continuing through the world-to-battle curtain and reveal. Reduced
 Motion uses a short plain fade. Battles remember the previous track's playback
 position. Victory, fleeing and defeat fade that track back in from where it
 was interrupted, including during the result and **Spoils of Battle** screens.
-Victories still show a banner and award items through Spoils. If the story
+Victories show a banner, then **Spoils of Battle** displays each combatant's
+level, EXP gain and animated progress over the dimmed battlefield. Every living
+active combatant receives the full encounter EXP; fallen characters and reserves
+receive none. Level-ups open a parchment stat sheet with black old values,
+green arrows and green new values, accompanied by an effects-volume chime.
+Confirm finishes EXP counting; another press acknowledges each character's
+combined level-up sheet before Continue. Items include quantities, descriptions
+and inventory-limit notices. If the story
 already uses Kindled Courage, it continues without restarting.
 Victory checkpoints survive quitting without losing or
 duplicating rewards. The Music slider controls the soundtrack independently of effects. See the [music assets](assets/music/README.md) and
 [music/transition preview](docs/reviews/battle_music_transition/README.md) and
-[victory/Spoils review](docs/reviews/victory_spoils/README.md).
+[progression/Spoils review](docs/reviews/spoils_progression/README.md).
 
 | Control | Action |
 | --- | --- |
@@ -93,6 +100,7 @@ duplicating rewards. The Music slider controls the soundtrack independently of e
 | Click the overworld minimap | Open the illustrated regional atlas |
 | J | Open/close the quest journal; select a quest and scroll its details |
 | I | Open/close the inventory; Tab or left/right switches categories |
+| Q / E in Characters | Inspect the previous/next recruited character, including level and EXP |
 | Left click anywhere / Space / E | Advance an open conversation |
 | E near a bedroom furnishing | Inspect it when the prompt appears |
 | Click a response button | Accept a quest or leave it for later |
@@ -313,16 +321,20 @@ animations, Attack, Guard, Flee and learned Aether Dart, plus the bottom HP/MP/A
 panel. All gauges pause while the player chooses; enemy ATB is hidden. See the
 [combat preview](docs/reviews/atb_combat/README.md).
 
-The [traditional leveling foundation](docs/LEVELING.md) defines level-1–100
+The [traditional leveling system](docs/LEVELING.md) supplies saved level-1–100
 character growth, the approved XP/reward curves, effective rating caps of 999
 (Speed 255), and an enemy baseline reaching 50,000 HP. The
 [enemy catalogue](docs/ENEMY_ARCHETYPES.md) supplies ten approved numerical stat
 profiles alongside fighting styles and twenty enemy concepts. Use
 `python tools/preview_leveling.py --enemy-profiles --levels 1 50 100` to inspect
-them. Foundation helpers select full XP for each surviving active combatant and
-apply stat gains without restoring current HP/MP. Live saved-level/XP activation
-and remaining encounter-level assignments are separate work; victories currently
-award item drops.
+them. Victories award full encounter EXP to each surviving active combatant,
+applying stat growth without restoring current HP/MP. EXP, growth and item
+receipts are checkpointed together and survive reward retries and Continue.
+New games use the approved level-one profiles. Older journeys retain their
+saved stats and resources, starting at level one with zero recorded EXP rather
+than inferring growth from old rewards. Party and Characters show each member's
+level; Characters also shows EXP progress and supports companion inspection.
+Remaining enemy encounter-level assignments are separate work.
 
 The [Bestiary dictionary](docs/BESTIARY.md) is the central source for monster
 and boss definitions. Its computed Sanctuary cave species are **Cave Bat**

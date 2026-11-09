@@ -19,6 +19,7 @@ from post_battle import valid_pending_snapshot
 from quests import REGENT_QUEST, LANTERN_QUEST
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
 from tools.capture_mq03_emergency import Driver
+from test_mill_battle_gameplay import finish_spoils_presentation
 
 
 class CaveRandomGameplayTests(unittest.TestCase):
@@ -148,6 +149,7 @@ class CaveRandomGameplayTests(unittest.TestCase):
             game.update(.05, (0, 0), False)
         self.assertEqual(owner.post_phase, 'spoils')
         self.assertTrue(owner.spoils.ready)
+        finish_spoils_presentation(game)
         owner.spoils.dismissed = True
         game.update(0, (0, 0), False)
         self.assertFalse(owner.active)

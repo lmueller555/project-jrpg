@@ -1,4 +1,4 @@
-"""Victory presentation, one-shot fanfare and durable real-game spoils."""
+"""Victory presentation, resumed soundtrack and durable real-game spoils."""
 import json
 import os
 from pathlib import Path
@@ -29,6 +29,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.path = self.directory/'journey.json'
         self.backend = MagicMock()
         self.backend.get_busy.return_value = True
+        self.backend.get_pos.return_value = 0
         stream = patch('pygame.mixer.music', self.backend)
         stream.start();self.addCleanup(stream.stop)
 
@@ -61,7 +62,18 @@ class SpoilsGameplayTests(unittest.TestCase):
 
     def state(self, game):
         return (game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict(),
-                game.quests.to_dict(), game.mill_quest.to_dict())
+                game.quests.to_dict(), game.mill_quest.to_dict(), game.character_progression.to_dict())
+
+    def finish_presentation(self, game, spoils):
+        for _ in range(20):
+            if spoils.presentation_complete:return
+            key(game, pygame.K_RETURN)
+            game.update(0, (0, 0), False)
+        self.fail('EXP and level-up presentation did not finish')
+
+    def continue_spoils(self, game, spoils):
+        self.finish_presentation(game, spoils)
+        game.draw();click(game, spoils.continue_rect.center)
 
     def quit(self, game):
         pygame.event.post(pygame.event.Event(pygame.QUIT))
@@ -74,11 +86,11 @@ class SpoilsGameplayTests(unittest.TestCase):
         pygame.event.clear()
         return game
 
-    def test_victory_starts_fanfare_and_banner_without_awarding_or_accepting_continue(self):
+    def test_victory_resumes_world_score_and_banner_without_awarding_or_accepting_continue(self):
         game = self.game();scene = self.bat(game);before = self.state(game)
         self.win(game, scene)
-        self.assertEqual(game.music.desired_track, 'victory')
-        self.backend.play.assert_called_with(0)
+        self.assertEqual(game.music.desired_track, 'eldenmere')
+        self.backend.play.assert_called_with(-1)
         self.assertEqual(self.state(game), before)
         with patch.object(Painter, 'text', autospec=True, wraps=Painter.text) as texts:
             game.draw()
@@ -106,19 +118,18 @@ class SpoilsGameplayTests(unittest.TestCase):
         for _ in range(20):game.update(.5, (1, 0), True)
         self.assertEqual(self.state(game), committed)
         self.assertEqual((game.elapsed_ms, game.player.position), frozen)
-        game.draw();click(game, spoils.continue_rect.center)
+        self.continue_spoils(game, spoils)
         self.assertFalse(game.combat.active)
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertEqual(self.state(game), committed)
         self.assertIsNone(json.loads(self.path.read_text()).get('post_battle'))
 
-    def test_fanfare_ends_once_then_volume_focus_and_waiting_do_not_restart_music(self):
+    def test_resumed_world_score_keeps_playing_through_volume_focus_and_waiting(self):
         game = self.game();scene = self.bat(game);self.win(game, scene)
         spoils = wait_for_spoils(game)
-        self.backend.get_busy.return_value = False
         game.update(.1, (0, 0), False)
-        self.assertTrue(game.music.completed)
-        self.assertFalse(game.music.playing)
+        self.assertFalse(game.music.completed)
+        self.assertTrue(game.music.playing)
         starts, loads = self.backend.play.call_count, self.backend.load.call_count
         for _ in range(20):game.update(.5, (0, 0), False)
         game.audio.set_music(0);game.audio.set_music(.7)
@@ -127,15 +138,15 @@ class SpoilsGameplayTests(unittest.TestCase):
         pygame.event.post(pygame.event.Event(pygame.WINDOWFOCUSGAINED))
         self.assertTrue(game.handle_events());key(game, pygame.K_ESCAPE)
         game.update(.1, (0, 0), False)
-        self.assertEqual(game.music.desired_track, 'victory')
+        self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertEqual(self.backend.play.call_count, starts)
         self.assertEqual(self.backend.load.call_count, loads)
-        self.assertFalse(game.music.playing)
+        self.assertTrue(game.music.playing)
         self.assertTrue(spoils.awarded)
-        click(game, spoils.continue_rect.center)
+        self.continue_spoils(game, spoils)
         self.assertEqual(game.music.desired_track, 'eldenmere')
 
-    def test_quit_during_victory_banner_resumes_silent_spoils_and_awards_once(self):
+    def test_quit_during_victory_banner_resumes_world_score_and_awards_once(self):
         game = self.game();scene = self.bat(game);self.win(game, scene)
         self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 0)
         self.quit(game)
@@ -143,14 +154,14 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertIsNotNone(saved.get('post_battle'))
         restored = self.load();spoils = wait_for_spoils(restored)
         self.assertTrue(spoils.awarded)
-        self.assertFalse(restored.music.playing)
-        self.assertNotIn(restored.music.desired_track, ('battle', 'eldenmere'))
+        self.assertEqual(restored.music.desired_track, 'eldenmere')
+        self.assertEqual(restored.music.desired_track, 'eldenmere')
         self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.inventory.quantity('aether_emerald'), 1)
         committed = self.state(restored)
         for _ in range(5):restored.update(1, (0, 0), False)
         self.assertEqual(self.state(restored), committed)
-        click(restored, spoils.continue_rect.center)
+        self.continue_spoils(restored, spoils)
         self.assertFalse(restored.combat.active)
         self.assertEqual(self.state(restored), committed)
 
@@ -164,7 +175,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         restored = self.load();wait_for_spoils(restored)
         self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.inventory.quantity('aether_emerald'), 1)
-        self.assertFalse(restored.music.playing)
+        self.assertEqual(restored.music.desired_track, 'eldenmere')
 
     def test_quit_on_awarded_spoils_retains_receipt_and_never_awards_again(self):
         game = self.game();scene = self.bat(game);self.win(game, scene)
@@ -173,8 +184,8 @@ class SpoilsGameplayTests(unittest.TestCase):
         restored = self.load();spoils = wait_for_spoils(restored)
         self.assertTrue(spoils.awarded)
         self.assertEqual(self.state(restored), committed)
-        self.assertFalse(restored.music.playing)
-        click(restored, spoils.continue_rect.center)
+        self.assertEqual(restored.music.desired_track, 'eldenmere')
+        self.continue_spoils(restored, spoils)
         self.assertEqual(self.state(restored), committed)
         again = self.load()
         self.assertFalse(again.combat.active)
@@ -195,7 +206,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertTrue(spoils.awarded)
         self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
-        click(game, spoils.continue_rect.center)
+        self.continue_spoils(game, spoils)
         self.assertFalse(game.combat.active)
         self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
 
@@ -242,14 +253,14 @@ class SpoilsGameplayTests(unittest.TestCase):
         game = self.game();scene = self.bat(game);self.win(game, scene)
         spoils = wait_for_spoils(game);committed = self.state(game)
         with patch('save_game.os.replace', side_effect=OSError('disk unavailable')):
-            game.draw();click(game, spoils.continue_rect.center)
+            self.continue_spoils(game, spoils)
             self.assertTrue(game.combat.active)
             self.assertTrue(spoils.result_error)
-            self.assertEqual(game.music.desired_track, 'victory')
+            self.assertEqual(game.music.desired_track, 'eldenmere')
             self.assertEqual(self.state(game), committed)
         game.draw();click(game, spoils.retry_rect.center)
         self.assertTrue(spoils.awarded)
-        click(game, spoils.continue_rect.center)
+        self.continue_spoils(game, spoils)
         self.assertFalse(game.combat.active)
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertEqual(self.state(game), committed)
@@ -263,7 +274,13 @@ class SpoilsGameplayTests(unittest.TestCase):
         driver.directory, driver.path, driver.game = self.directory, self.path, game
         scene = driver.start()
         scene.model.player.hp = 0
-        mill_fixture.finish_mill_battle(game, dismiss=False)
+        # Seed the final knockout/victory boundary. Ordinary tutorial combat
+        # is covered separately; this checks first aid, EXP eligibility and
+        # the durable aftermath rather than requiring Mira to solo the boss.
+        scene.model.enemy.hp = 0
+        scene.model._result('victory')
+        game.combat.transition = None
+        game.update(0, (0, 0), False)
         self.assertGreater(scene.model.combatant('mira').hp, 0)
         spoils = wait_for_spoils(game)
         self.assertTrue(spoils.awarded)
@@ -274,12 +291,12 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertFalse(game.social.active)
         self.quit(game)
         restored = self.load();spoils = wait_for_spoils(restored)
-        self.assertFalse(restored.music.playing)
+        self.assertEqual(restored.music.desired_track, 'eldenmere')
         self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.attributes.current_hp, restored.attributes.value('hp')//4)
         self.assertFalse(restored.social.active)
         game = restored
-        game.draw();click(game, spoils.continue_rect.center)
+        self.continue_spoils(game, spoils)
         self.assertFalse(game.combat.active)
         self.assertEqual(game.social.script_identifier, 'mill_aftermath')
         self.assertTrue(any('bandage' in ' '.join(page['lines']).lower() for page in game.social.pages))
@@ -312,6 +329,9 @@ class SpoilsGameplayTests(unittest.TestCase):
         pygame.event.post(pygame.event.Event(pygame.KEYUP, key=pygame.K_RETURN))
         self.assertTrue(game.handle_events())
         key(game, pygame.K_RETURN)
+        self.assertTrue(game.combat.active)  # First fresh press finishes EXP.
+        self.assertTrue(spoils.presentation_complete)
+        key(game, pygame.K_RETURN)
         self.assertFalse(game.combat.active)
 
     def test_spoils_focus_pause_resize_and_large_text_keep_the_exit_readable(self):
@@ -329,7 +349,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertTrue(game.handle_events());self.assertTrue(spoils.paused)
         key(game, pygame.K_ESCAPE)
         self.assertFalse(spoils.paused)
-        game.draw();click(game, spoils.continue_rect.center)
+        self.continue_spoils(game, spoils)
         self.assertFalse(game.combat.active)
 
 

@@ -88,10 +88,15 @@ receive distinguishing labels. Bots and attacks retarget defeated enemies.
 The single-enemy controls remain available for existing encounters.
 
 Victory resources and reward receipts are checkpointed before returning to
-the exact cave position. Continue can resume pending or already-awarded spoils
-without repeating grants. Cave victories preserve KO party members and do not
-restore HP/MP. Failed return checkpoints roll back the counter/resources so
-retry cannot consume another random roll. Fleeing preserves spent resources.
+the exact cave position. EXP from every defeated monster is summed, then each
+living active combatant receives that full amount. KO combatants, reserves and
+bots receive no EXP; fleeing or defeat grants none. Eligibility uses actual
+end-of-battle HP. EXP, stat growth and item drops share the same once-only award
+and checkpoint. Continue can resume pending or already-awarded Spoils without
+repeating grants. Cave victories preserve KO party members; level-ups increase
+maxima without restoring current HP/MP. Failed return checkpoints roll back the
+counter/resources so retry cannot consume another random roll. Fleeing preserves
+spent resources.
 The pending MQ03 outing, escorts, treasures and Kindled Courage ownership
 remain intact, including through cave victory and spoils.
 
@@ -101,10 +106,15 @@ position; results and Spoils keep that resumed stream. If MQ03 already owns
 Kindled Courage, the same stream continues through entry and return.
 
 Enemy stats, XP curves, damage formulas, affinities and item-drop definitions
-are unchanged. Group XP is exposed as Bestiary metadata; the existing reward
-pipeline still settles item receipts, with live saved-level/XP activation
-remaining separate progression work. The three cave species currently have
-pending item drops, so their resolved drop bundles are empty. Elemental damage
+are unchanged. Group EXP now feeds saved character levels and deterministic
+growth. Spoils shows each character's animated EXP bar, zero-EXP KO state or
+maximum-level state, followed by acknowledged level-up sheets when needed. A
+sheet uses black old values, green arrows and green new values with numeric
+gains on light parchment. Quiet EXP and level-up effects honor Effects volume
+without replacing the resumed soundtrack. Party and Characters menus expose
+levels and progress; see [Leveling](LEVELING.md) for save compatibility and rules.
+The three cave species currently have pending item drops, so their resolved
+drop bundles are empty even when the battle grants EXP. Elemental damage
 effects, Stagger, the miniboss and its story resolution remain separate work.
 
 ## Validation

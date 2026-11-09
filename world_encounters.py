@@ -15,7 +15,7 @@ from battle_transition import BattleTransition
 from cave_battle_entry import CaveBattleEntry
 from inventory import MAX_QUANTITY
 from quests import MILL_QUEST
-from post_battle import valid_pending_snapshot
+from post_battle import battle_reward_definition, valid_pending_snapshot
 from spoils_scene import SpoilsScene
 from ui_style import GOLD
 
@@ -106,6 +106,7 @@ class CombatEncounters:
             music.end_battle()
 
     def reset(self):
+        self.stop_audio()
         self._end_battle_music()
         self.scene = None
         self.receipt_id = None
@@ -128,6 +129,10 @@ class CombatEncounters:
         self.entry = None
         self._cave_ticket = None
         self._cave_checkpointed = False
+
+    def stop_audio(self):
+        """Release disposable reward effects without changing durable victory."""
+        if self.spoils is not None:self.spoils.stop_audio()
 
     def _party_options(self):
         party = getattr(self.game, 'party', None)
@@ -528,6 +533,12 @@ class CombatEncounters:
             resources['caelan'] = {'hp': hp, 'mp': mp}
             self._pending.update(party_before=self._party_resources(),
                                  party_resources=resources, party_active=list(self._party_active))
+            offered = battle_reward_definition(self.kind, self._cave_ticket)
+            end_hp = {'caelan' if member.identifier == 'player' else member.identifier: member.hp
+                      for member in model.party}
+            self._pending.update(version=2, offered_drops=offered['drops'],
+                                 progression=game.character_progression.preview(
+                                     offered['xp'], list(self._party_active), end_hp))
         if not valid_pending_snapshot(self._pending):
             self._pending = None
             raise RuntimeError('A completed battle produced an invalid victory record')
@@ -576,29 +587,49 @@ class CombatEncounters:
             proposed_quests = deepcopy(game.quests)
             if not quest.encounter_pending or not proposed_quests.complete_objective(MILL_QUEST, 'secure_trail'):
                 return self._post_error('The encounter could not be completed. Try again.')
+        plan = record.get('progression')
+        if plan is not None and not game.character_progression.matches_plan(plan):
+            return self._post_error('Character progress could not be collected. Try again.')
         before = (game.battle_rewards.to_dict(), game.inventory.to_dict(), game.quests.to_dict(),
                   quest.to_dict(), set(game.social.flags),
-                  game.party.to_dict() if hasattr(game, 'party') else None)
+                  game.party.to_dict() if hasattr(game, 'party') else None,
+                  game.character_progression.to_dict() if plan is not None else None,
+                  game.attributes.to_dict())
+
+        def rollback(message):
+            game.battle_rewards.restore(before[0]);game.inventory.restore(before[1])
+            game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
+            if before[5] is not None:game.party.restore(before[5])
+            else:game.attributes.restore(before[7])
+            if before[6] is not None:game.character_progression.restore(before[6])
+            return self._post_error(message)
+
         reward = record['rewards']
         if game.battle_rewards.has_receipt(record['receipt']):
             return self._post_error('The victory receipt is inconsistent. Try again.')
         granted = game.battle_rewards.award_battle_rewards(record['receipt'], reward['drops'])
         if not granted:return self._post_error('Rewards could not be collected. Try again.')
+        if plan is not None and not game.character_progression.apply(plan):
+            return rollback('Character progress could not be collected. Try again.')
         if self.kind == 'mill' and not quest.battle_won():
-            game.battle_rewards.restore(before[0]);game.inventory.restore(before[1])
-            game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
-            if before[5] is not None:game.party.restore(before[5])
-            return self._post_error('The encounter could not be completed. Try again.')
+            return rollback('The encounter could not be completed. Try again.')
         if not self._apply_resources(resources, party_resources):
-            game.battle_rewards.restore(before[0]);game.inventory.restore(before[1])
-            game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
-            if before[5] is not None:game.party.restore(before[5])
-            return self._post_error('Battle resources could not be collected. Try again.')
+            return rollback('Battle resources could not be collected. Try again.')
         record['stage'] = 'awarded'
         if not self._checkpoint():return self._post_error('Progress could not be saved. Try again.')
         self.scene.result_error = ''
         self.spoils.set_awarded(reward)
         return True
+
+    def _make_spoils(self):
+        record = self._pending
+        received = record['rewards']['drops']
+        offered = record.get('offered_drops', received)
+        loot = {'offered': dict(offered), 'received': dict(received),
+                'lost': {item: amount-received.get(item, 0) for item, amount in offered.items()
+                         if amount > received.get(item, 0)}}
+        return SpoilsScene(self.game, record['rewards'], party=self.model.party, model=self.model,
+                           progression=record.get('progression'), background=self.scene, loot=loot)
 
     def _update_post_battle(self, seconds):
         if self.paused or not self.focused:return
@@ -606,8 +637,7 @@ class CombatEncounters:
             self.scene.update(seconds)
             self._post_elapsed += seconds
             if self._post_elapsed >= 1.6:
-                self.spoils = SpoilsScene(self.game, self._pending['rewards'],
-                                          party=self.model.party, model=self.model)
+                self.spoils = self._make_spoils()
                 self.post_phase = 'spoils_transition'
                 self._post_elapsed = 0.0
             return
@@ -668,6 +698,9 @@ class CombatEncounters:
 
     def _finish_spoils(self):
         if self._pending is None or self._pending['stage'] != 'awarded' or not self.spoils.ready:return False
+        if not self.spoils.presentation_complete:
+            self.spoils.dismissed = False
+            return False
         game, record = self.game, self._pending
         game.player.position.update(record['position'])
         game.player.facing = record['facing']
@@ -686,6 +719,7 @@ class CombatEncounters:
             return self._post_error('Progress could not be saved. Try again.')
         kind = self.kind
         self._settled = True
+        self.stop_audio()
         self.scene = None;self.spoils = None;self.transition = None
         self.post_phase = None;self._exiting_spoils = False
         self._entry_keys.clear();self.kind = None;self._mill_intro_started = False
@@ -708,6 +742,7 @@ class CombatEncounters:
                       'character_attributes': game.attributes.to_dict(),
                       'quests': game.quests.to_dict(), 'mill_quest': game.mill_quest.to_dict()}
         if hasattr(game, 'party'):validation['party'] = game.party.to_dict()
+        if 'progression' in record:validation['character_levels'] = game.character_progression.to_dict()
         if record['kind'] == 'cave':
             validation['cave_random_encounters'] = game.cave_random_encounters.to_dict()
         if not valid_pending_snapshot(record, validation):return False
@@ -761,7 +796,7 @@ class CombatEncounters:
         battlefield = (self._cave_ticket['battlefield'] if self.kind == 'cave' else
                        'millrace' if self.kind == 'mill' else 'eldenmere')
         self.scene = BattleScene(game, model, battlefield=battlefield)
-        self.spoils = SpoilsScene(game, record['rewards'], party=model.party, model=model)
+        self.spoils = self._make_spoils()
         self.post_phase = 'spoils';self._post_elapsed = 0.;self.transition = None
         self._settled = False;self._victory_checkpointed = True;self._entry_keys.clear()
         # Continue reconstructs the current world/story score before Spoils.

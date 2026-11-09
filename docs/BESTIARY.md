@@ -8,13 +8,18 @@ dictionary and resolves a species at an explicitly selected level.
 The dictionary contains three computed Sanctuary cave species: **Cave Bat**,
 **Lithrusk** and **Veylume**. It preserves the existing fixed Bat and Ridgeback
 Tusker records for their authored test and MQ02 encounters. Fixed records
-retain their exact stats, abilities and item drops. Their future levels,
-species tuning and elemental profiles have not been assigned.
+retain their exact stats, abilities and item drops. Their computed-species
+tuning and elemental profiles have not been assigned. The live victory owner
+uses a level-one reward reference for the test Bat (**60 EXP**) and level three
+for the Ridgeback Tusker (**104 EXP**) without rescaling either fixed encounter.
 
 This is an authoring dictionary and combat adapter. The three cave species are
 used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).
-The dictionary does not add a player-facing encyclopedia menu or activate
-saved character levels and combat XP grants.
+The dictionary does not add a player-facing encyclopedia menu. Its resolved EXP
+feeds the live victory progression flow described in [Leveling](LEVELING.md):
+every living active combatant receives the full sum for the encounter, with
+saved levels and stat growth. Resolving or previewing dictionary data alone
+does not grant rewards.
 
 ## Cave Bat
 
@@ -296,6 +301,11 @@ assert fixed['level'] is None
 assert fixed['xp_reward'] is None
 ```
 
+Fixed records intentionally retain their unassigned species level and EXP in
+this adapter. [`post_battle.battle_reward_definition`](../post_battle.py) supplies
+the explicit test-Bat/MQ02 reward references when settling a live victory; it
+does not turn the fixed records into computed species or alter their attacks.
+
 `load_bestiary(data=None, actions=None)` returns a validated, detached dictionary.
 An optional `actions` argument supplies an already validated action dictionary.
 `build_enemy(enemy_id, level=None, *, data=None, actions=None)` returns a fresh
@@ -324,9 +334,12 @@ assert model.enemy_sprite_id == 'bat'
 `BattleModel.from_bestiary(player_attributes, enemy_id, level, *,
 bestiary_data=None, **options)` exposes the resolved metadata through
 `enemy_bestiary_id`, `enemy_level`, `enemy_xp_reward`, `enemy_sprite_id` and
-`enemy_action_aliases`, plus the detached `enemy_bestiary_record`. These values
-do not award XP or serialize a new world
-encounter. Unsupported future fighting styles remain data until their action
+`enemy_action_aliases`, plus the detached `enemy_bestiary_record`. Constructing
+the model does not award EXP or serialize a new world encounter. The victory
+coordinator sums these resolved rewards, applies survivor eligibility before
+post-battle first aid and settles EXP with item drops and stat growth exactly
+once. KO combatants, reserves and bots receive no EXP; fleeing or defeat grants
+none. Unsupported future fighting styles remain data until their action
 selection and behavior are implemented; the combat adapter rejects them rather
 than silently substituting another style.
 

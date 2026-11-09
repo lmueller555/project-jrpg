@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pygame
+from leveling import CharacterLevel
 
 from ui_style import (FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS,
                       MUTED, DISABLED, ERROR)
@@ -97,6 +98,10 @@ class PartyUI:
         return bool(reason)
 
     def _name(self, identifier):return self.party.definitions[identifier]['name']
+
+    def _level(self, identifier):
+        records = getattr(getattr(self.game, 'character_progression', None), 'records', {})
+        return (records.get(identifier) or CharacterLevel(identifier)).level
 
     def choose_member(self, identifier):
         """Put a companion in the chosen slot, swapping existing active slots."""
@@ -321,7 +326,9 @@ class PartyUI:
             attributes = self.party.characters[identifier]
             portrait = self._portrait(identifier)
             if portrait is not None:painter.image(portrait, (rect.left+5, rect.top+4, 26, 26))
-            painter.text(self._name(identifier), (rect.left+36, rect.top+5), bold=True)
+            painter.text(self._name(identifier), (rect.left+36, rect.top+5), role='small', bold=True)
+            painter.text('Lv. '+str(self._level(identifier)), (rect.right-7, rect.top+5),
+                         role='small', color=GOLD, anchor='topright', bold=True)
             painter.text('HP '+str(attributes.current_hp)+'  MP '+str(attributes.current_mp),
                          (rect.left+6, rect.top+29), role='small', color=MUTED)
             if identifier in self.party.required_ids:
@@ -338,6 +345,8 @@ class PartyUI:
             x, y = rect.left+54, rect.top+5
             definition, attributes = self.party.definitions[identifier], self.party.characters[identifier]
             painter.text(definition['name'], (x, y), bold=True)
+            painter.text('Lv. '+str(self._level(identifier)), (rect.right-7, y),
+                         role='small', color=GOLD, anchor='topright', bold=True)
             y += painter.font().get_linesize()
             painter.text(definition['job'], (x, y), role='small', color=MUTED)
             y += painter.font('small').get_linesize()

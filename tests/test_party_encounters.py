@@ -29,7 +29,7 @@ class PartyEncounterTests(unittest.TestCase):
         for identifier in ('mira', 'lucan', 'rhea'):
             self.assertTrue(self.game.party.recruit(identifier))
         self.assertTrue(self.game.party.select(('caelan', 'mira', 'lucan')))
-        self.game.party.characters['mira'].set_current(hp=170, mp=21)
+        self.assertTrue(self.game.party.characters['mira'].set_current(hp=120, mp=21))
         self.game.party.characters['lucan'].set_current(hp=110, mp=12)
         self.game.party.characters['rhea'].set_current(hp=90, mp=9)
 
@@ -95,7 +95,7 @@ class PartyEncounterTests(unittest.TestCase):
         owner = self.start()
         self.assertEqual([member.identifier for member in owner.model.party], ['player', 'mira', 'lucan'])
         self.assertEqual([(member.hp, member.mp) for member in owner.model.party[1:]],
-                         [(170, 21), (110, 12)])
+                         [(120, 21), (110, 12)])
         self.assertEqual([bot.identifier for bot in owner.model.bots], ['rivet'])
         self.game.draw()
 
@@ -124,7 +124,7 @@ class PartyEncounterTests(unittest.TestCase):
         owner.model.combatant('rhea').mp = 4
         owner.model.phase = 'fled';owner.scene.dismissed = True
         self.assertTrue(owner._settle())
-        self.assertEqual(self.resources()['mira'], (170, 21))
+        self.assertEqual(self.resources()['mira'], (120, 21))
         self.assertEqual(self.resources()['lucan'], (25, 12))
         self.assertEqual(self.resources()['rhea'], (90, 4))
         self.assertEqual(self.resources(self.load()), self.resources())
@@ -164,8 +164,8 @@ class PartyEncounterTests(unittest.TestCase):
         record = owner.snapshot();saved = json.loads(self.path.read_text())
         self.assertTrue(valid_pending_snapshot(record, saved))
         self.assertEqual(record['party_active'], ['caelan', 'mira', 'lucan'])
-        self.assertEqual(record['party_before']['mira'], {'hp': 170, 'mp': 21})
-        self.assertEqual(saved['party']['characters']['mira']['current_hp'], 170)
+        self.assertEqual(record['party_before']['mira'], {'hp': 120, 'mp': 21})
+        self.assertEqual(saved['party']['characters']['mira']['current_hp'], 120)
         self.assertEqual(self.resources(), before)
         restored = self.load()
         self.assertEqual([member.identifier for member in restored.combat.model.party], ['player', 'mira', 'lucan'])
