@@ -333,7 +333,7 @@ class RivetBattleModelTests(unittest.TestCase):
         self.assertTrue(any(event.get('actor') == 'rivet' and event['type'] == 'impact'
                             for event in large.events))
 
-    def test_fixed_timing_balance_benchmark_and_production_overclock_victory(self):
+    def test_historical_timing_balance_benchmark_and_overclock_victory(self):
         catalog = json.loads(ACTION_PATH.read_text())
         # Hold Caelan's benchmark action times constant across all three groups
         # to compare Mira/Rivet economics independently of Caelan choreography.
@@ -343,13 +343,20 @@ class RivetBattleModelTests(unittest.TestCase):
         old_actions = deepcopy(benchmark_actions)
         old_actions['actions']['spear_thrust'] = dict(
             catalog['actions']['bolt_shot'], name='Spear Thrust', potency=1.5)
-        old_guests = json.loads(GUEST_PATH.read_text())
+        # Keep this historical bot-versus-spear comparison at its original
+        # stats; current starting-profile balance is covered by party tests.
+        benchmark_guests = json.loads(GUEST_PATH.read_text())
+        benchmark_guests['guests']['mira']['attributes'].update(
+            {'hp': 300, 'str': 20, 'mag': 12, 'spr': 12, 'def': 18,
+             'm_def': 14, 'speed': 12, 'acc': 16, 'eva': 12})
+        old_guests = deepcopy(benchmark_guests)
         old_guests['guests']['mira']['attack'] = 'spear_thrust'
         enemies = json.loads(ENEMY_PATH.read_text())
         enemies['enemies']['ridgeback_tusker']['attributes'].update(
             hp=1000000, str=0, mag=0)
 
         def simulate(*, buff=False, real=False, **options):
+            options.setdefault('guest_data', benchmark_guests)
             if not real:
                 options['enemy_data'] = enemies
                 options.setdefault('action_data', benchmark_actions)

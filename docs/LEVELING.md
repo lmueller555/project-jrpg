@@ -25,11 +25,13 @@ growth differences to the preserved saved baseline rather than replacing it.
 
 The [Bestiary](BESTIARY.md) now stores individual monster and boss definitions.
 Cave Bat is the first computed species, explicitly authored at levels 2–3 with
-84/104 EXP rewards. Victories sum the resolved monsters' EXP before allocating
-it. The fixed test Bat uses a level-one reward reference, **60 EXP**, and the
-MQ02 Ridgeback Tusker uses a level-three reference, **104 EXP**; these reward
+59/73 EXP rewards. Victories sum the resolved monsters' EXP before allocating
+it. The fixed test Bat uses a level-one reward reference, **42 EXP**, and the
+MQ02 Ridgeback Tusker uses a level-three reference, **73 EXP**; these reward
 references do not rescale either encounter's combat stats. Merely previewing a
-species or constructing a battle model still grants nothing.
+species or constructing a battle model still grants nothing. Pending spoils
+saved before the EXP reduction retain their original validated reward amount;
+new victories use the reduced curve.
 
 ## Experience and levels
 
@@ -38,34 +40,36 @@ level and `M` the defeated monster's level:
 
 ```text
 XP required to advance from L = 2 × round_half_up(100 × L^0.8)
-Normal monster XP at M        = 2 × round_half_up(30 × M^0.5)
+Normal monster XP at M        = round_half_up(0.70 × (2 × round_half_up(30 × M^0.5)))
 Boss XP at M                  = 10 × normal monster XP at M
 ```
 
-Rounding occurs **before doubling**. A level-1 character needs **200 XP** to
-reach level 2; a level-1 normal monster grants **60 XP**, or **600 XP** for the
+Level requirements retain rounding **before doubling**. Normal enemy rewards
+apply a 30% reduction to the previous curve, rounded half up, before the boss
+multiplier. A level-1 character needs **200 XP** to
+reach level 2; a level-1 normal monster grants **42 XP**, or **420 XP** for the
 boss reference. Ten times normal XP is the authored boss starting point, not a
 ten-times multiplier on every boss stat.
 
 | Level | XP to next level | Normal monster XP | Boss reference XP |
 | ---: | ---: | ---: | ---: |
-| 1 | 200 | 60 | 600 |
-| 10 | 1,262 | 190 | 1,900 |
-| 25 | 2,626 | 300 | 3,000 |
-| 50 | 4,574 | 424 | 4,240 |
-| 75 | 6,326 | 520 | 5,200 |
-| 99 | 7,898 | 596 | 5,960 |
-| 100 | MAX | 600 | 6,000 |
+| 1 | 200 | 42 | 420 |
+| 10 | 1,262 | 133 | 1,330 |
+| 25 | 2,626 | 210 | 2,100 |
+| 50 | 4,574 | 297 | 2,970 |
+| 75 | 6,326 | 364 | 3,640 |
+| 99 | 7,898 | 417 | 4,170 |
+| 100 | MAX | 420 | 4,200 |
 
-This preserves the intended increase from roughly 3.3 same-level monsters per
-level early on to roughly 13.2 near the cap. Enemy counts per encounter and
+This raises the number of same-level monsters per level to roughly 4.8
+early on and 18.9 near the cap. Enemy counts per encounter and
 ability availability still determine actual pacing.
 
 **Every character in the active combat party who is alive at battle end receives
 the full encounter XP on victory.** Sum the defeated monsters' rewards before
 allocation; there is no split among survivors. KO'd combatants and reserves
 receive zero. Summoned bots do not receive separate EXP or level records.
-For example, three monsters worth 60 XP each award 180 XP to every surviving
+For example, three monsters worth 42 XP each award 126 XP to every surviving
 combatant. Recipient eligibility uses actual end-of-battle HP before any
 encounter-specific first aid. Fleeing or defeat grants no EXP, including when
 some enemies were defeated before the escape or withdrawal.
@@ -353,3 +357,13 @@ python tools/preview_leveling.py --enemy-profiles --all-levels --format csv
 
 Live combat EXP payout, saved levels and the no-recovery rule are active.
 Signature progression remains separate from natural level growth.
+
+### Mira starting balance
+
+Mira's guest profile now matches her level-one growth profile: 150 HP, 30 MP,
+and 10 in every rating, close to Caelan's 140 HP and otherwise matching starting
+ratings. Her all-rounder growth targets are unchanged. Continue corrects only
+saves matching the recognizable old 300-HP guest baseline plus earned level
+growth. EXP, level, modifiers, MP and KO status are preserved; current HP scales
+with the reduced maximum. Custom saved stats are preserved. Pending spoils
+finish their original stat transaction before a later Continue can retune it.

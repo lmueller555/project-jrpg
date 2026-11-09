@@ -23,7 +23,7 @@ class CharacterProgressionTests(unittest.TestCase):
 
     def test_construction_and_old_save_migration_preserve_all_saved_values(self):
         attributes = self.party.characters['mira']
-        self.assertEqual(attributes.base_value('hp'), 300)  # Historical guest.
+        self.assertEqual(attributes.base_value('hp'), 150)  # Balanced guest.
         self.assertTrue(attributes.apply_growth({'str': 17, 'hp': 31}))
         self.assertTrue(attributes.set_modifiers('equipment', {'def': 8}))
         self.assertTrue(attributes.set_current(hp=0, mp=3))
@@ -36,6 +36,34 @@ class CharacterProgressionTests(unittest.TestCase):
         self.assertEqual(attributes._modifiers, modifiers)
         self.assertTrue(all(progression.level(identifier) == 1 for identifier in character_ids()))
         self.assertTrue(CharacterProgression.valid_journey({'party': before}))
+
+    def test_legacy_mira_retune_preserves_growth_modifiers_injury_and_is_idempotent(self):
+        for level in (1, 7, 100):
+            for injured in (False, True):
+                with self.subTest(level=level, injured=injured):
+                    record = CharacterLevel('mira', total_xp_for_level(level))
+                    self.progression.records['mira'] = record
+                    natural = character_stats('mira', level)
+                    start = character_stats('mira', 1)
+                    old = dict(zip(ATTRIBUTE_IDS, (300, 30, 20, 12, 12, 18, 14, 12, 16, 12, 10)))
+                    attributes = self.party.characters['mira']
+                    attributes._attributes = {key: old[key]+natural[key]-start[key] for key in ATTRIBUTE_IDS}
+                    attributes.set_modifiers('equipment', {'def': 8})
+                    attributes.set_current(hp=attributes.value('hp')//2 if injured else 0, mp=3)
+                    xp = record.total_xp
+                    self.assertTrue(self.progression.retune_legacy_mira())
+                    self.assertEqual(attributes.to_dict()['attributes'], natural)
+                    self.assertEqual(attributes.value('def')-attributes.base_value('def'), 8)
+                    self.assertEqual(attributes.current_mp, 3)
+                    self.assertEqual(attributes.current_hp > 0, injured)
+                    self.assertEqual(record.total_xp, xp)
+                    before = attributes.to_dict()
+                    self.assertFalse(self.progression.retune_legacy_mira())
+                    self.assertEqual(attributes.to_dict(), before)
+        attributes.apply_growth({'str': 17})
+        before = attributes.to_dict()
+        self.assertFalse(self.progression.retune_legacy_mira())
+        self.assertEqual(attributes.to_dict(), before)
 
     def test_genuinely_new_journey_uses_approved_starting_profiles_for_all_five(self):
         identities = {key: value for key, value in self.party.characters.items()}
@@ -93,7 +121,7 @@ class CharacterProgressionTests(unittest.TestCase):
         attributes = self.party.characters['mira']
         attributes.apply_growth({'hp': 31, 'str': 17})
         attributes.set_modifiers('engineered_armor', {'hp': 100, 'def': 7})
-        attributes.set_current(hp=401, mp=4)
+        attributes.set_current(hp=201, mp=4)
         before = attributes.to_dict()['attributes']
         modifiers = deepcopy(attributes._modifiers)
         identity = attributes
@@ -102,7 +130,7 @@ class CharacterProgressionTests(unittest.TestCase):
         self.assertTrue(self.progression.apply(plan))
         self.assertIs(self.party.characters['mira'], identity)
         self.assertEqual(attributes._modifiers, modifiers)
-        self.assertEqual((attributes.current_hp, attributes.current_mp), (401, 4))
+        self.assertEqual((attributes.current_hp, attributes.current_mp), (201, 4))
         self.assertEqual(entry['stats_before'], before)
         self.assertEqual(attributes.to_dict()['attributes'], entry['stats_after'])
         self.assertEqual(attributes.value('def'), entry['stats_after']['def']+7)

@@ -32,23 +32,24 @@ class PartyBattleModelTests(unittest.TestCase):
                 [(bot.identifier, round(bot.atb, 9), bot.haste_turns) for bot in model.bots],
                 deepcopy(model.current_action), deepcopy(events))
 
-    def test_guest_is_a_separate_fixed_profile_with_meaningfully_stronger_weapon(self):
+    def test_guest_is_separate_and_starts_near_caelans_ratings(self):
         source = CharacterAttributes()
         before = source.to_dict()
         model = self.model(source)
         self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
         mira = model.combatant('mira')
-        self.assertEqual((mira.hp, mira.mp, mira.value('str')), (300, 30, 20))
+        self.assertEqual((mira.hp, mira.mp, mira.value('str')), (150, 30, 10))
         self.assertEqual(model.enemy.hp, 700)
         self.assertEqual(model.enemy_definition['abilities'],
                          ['tusk_strike', 'prepare_charge', 'tusker_charge'])
+        model.combatant('mira').atb = .05
         model.update(1000)
         self.assertEqual(model.ready_actor, 'mira')
         self.assertEqual(model.available_actions(), ['attack', 'guard', 'flee', 'overclock'])
         self.assertTrue(model.choose_action('attack'))
         self.assertEqual(model.current_action.action, 'bolt_shot')
         model.update(.4)
-        self.assertEqual(model.current_action.damage, 50)
+        self.assertEqual(model.current_action.damage, 12)
         model.update(1000)
         self.assertEqual(model.ready_actor, 'player')
         self.assertTrue(model.choose_action('attack'))
@@ -58,12 +59,13 @@ class PartyBattleModelTests(unittest.TestCase):
 
     def test_every_gauge_freezes_at_miras_exact_ready_boundary(self):
         model = self.model()
+        model.combatant('mira').atb = .05
         model.update(1000)
         self.assertEqual(model.phase, 'ready')
         self.assertEqual(model.active_player.name, 'Mira')
         self.assertEqual(model.combatant('mira').atb, 1)
-        self.assertAlmostEqual(model.player.atb, .16/.168)
-        self.assertAlmostEqual(model.enemy.atb, .152/.168)
+        self.assertAlmostEqual(model.player.atb, .95)
+        self.assertAlmostEqual(model.enemy.atb, .95*.152/.16)
         before = self.snapshot(model)
         for seconds in (.1, 7, 10000):model.update(seconds)
         self.assertEqual(self.snapshot(model), before)
@@ -93,6 +95,7 @@ class PartyBattleModelTests(unittest.TestCase):
 
     def test_unready_dead_or_unknown_member_cannot_take_a_ready_turn(self):
         model = self.model()
+        model.combatant('mira').atb = .05
         model.update(1000)
         before = self.snapshot(model)
         for actor in ('player', 'enemy', 'missing', [], True):
@@ -157,7 +160,7 @@ class PartyBattleModelTests(unittest.TestCase):
         model.update(.45)
         self.assertTrue(model.player.guarded)
         self.assertEqual(model.player.hp, 140)
-        self.assertEqual(model.combatant('mira').hp, 276)
+        self.assertEqual(model.combatant('mira').hp, 124)
 
     def test_incapped_caelan_does_not_end_battle_while_mira_can_act(self):
         source = CharacterAttributes()
@@ -166,6 +169,7 @@ class PartyBattleModelTests(unittest.TestCase):
         enemies['enemies']['ridgeback_tusker']['attributes']['hp'] = 1
         model = self.model(source, enemy_data=enemies)
         self.assertEqual(model.phase, 'charging')
+        model.combatant('mira').atb = .05
         model.update(1000)
         self.assertEqual(model.ready_actor, 'mira')
         self.assertEqual(model.player.atb, 0)
@@ -199,12 +203,13 @@ class PartyBattleModelTests(unittest.TestCase):
 
     def test_either_party_member_can_withdraw_the_party(self):
         model = self.model()
+        model.combatant('mira').atb = .05
         model.update(1000)
         self.assertEqual(model.ready_actor, 'mira')
         self.assertTrue(model.choose_action('flee'))
         model.update(.7)
         self.assertEqual(model.phase, 'fled')
-        self.assertEqual([member.hp for member in model.party], [140, 300])
+        self.assertEqual([member.hp for member in model.party], [140, 150])
         self.assertEqual(model.enemy.hp, 700)
 
     def test_large_and_small_updates_match_through_party_and_enemy_turns(self):

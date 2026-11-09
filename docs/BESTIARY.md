@@ -10,8 +10,8 @@ The dictionary contains three computed Sanctuary cave species: **Cave Bat**,
 Tusker records for their authored test and MQ02 encounters. Fixed records
 retain their exact stats, abilities and item drops. Their computed-species
 tuning and elemental profiles have not been assigned. The live victory owner
-uses a level-one reward reference for the test Bat (**60 EXP**) and level three
-for the Ridgeback Tusker (**104 EXP**) without rescaling either fixed encounter.
+uses a level-one reward reference for the test Bat (**42 EXP**) and level three
+for the Ridgeback Tusker (**73 EXP**) without rescaling either fixed encounter.
 
 This is an authoring dictionary and combat adapter. The three cave species are
 used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).

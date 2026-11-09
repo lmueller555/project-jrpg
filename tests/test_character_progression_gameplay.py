@@ -45,6 +45,25 @@ class CharacterProgressionGameplayTests(unittest.TestCase):
                 self.assertEqual(attributes.current_mp, attributes.value('mp'))
                 self.assertEqual(self.game.character_progression.level(identifier), 1)
 
+    def test_continue_retunes_old_guest_profile_once_without_healing_or_erasing_exp(self):
+        game = self.game
+        attributes = game.party.characters['mira']
+        attributes._attributes = dict(zip(attributes.definitions,
+            (300, 30, 20, 12, 12, 18, 14, 12, 16, 12, 10)))
+        attributes.set_current(hp=211, mp=7)
+        game.character_progression.records['mira'].award_xp(100)
+        self.assertTrue(game.save_progress())
+        restored = self.make_game(title=True)
+        self.assertTrue(restored.begin_journey(True), restored.save_error)
+        mira = restored.party.characters['mira']
+        self.assertEqual(mira.to_dict()['attributes'], character_stats('mira', 1))
+        self.assertEqual((mira.current_hp, mira.current_mp), (106, 7))
+        self.assertEqual(restored.character_progression['mira'].total_xp, 100)
+        self.assertTrue(restored.save_progress())
+        again = self.make_game(title=True)
+        self.assertTrue(again.begin_journey(True), again.save_error)
+        self.assertEqual(again.party.characters['mira'].to_dict(), mira.to_dict())
+
     def test_progression_changes_are_in_checkpoint_signature_and_continue(self):
         game = self.game
         game.attributes.set_current(hp=47, mp=7)
