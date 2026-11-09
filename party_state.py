@@ -35,8 +35,8 @@ class PartyState:
     Other registered characters begin unrecruited; defining a profile does not
     add it to the visible roster or grant any skill, equipment, or story flag.
     Future companions currently use the established starter ratings until an
-    authored recruitment supplies their tuned profile. Mira retains MQ02's
-    existing guest ratings exactly.
+    authored recruitment supplies their tuned profile. Mira's guest profile
+    matches her balanced level-one growth baseline.
     """
 
     def __init__(self, caelan_attributes):

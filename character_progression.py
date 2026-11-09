@@ -3,7 +3,8 @@
 Character attributes remain owned by the party. Existing journeys acquire zero
 EXP without replacing their saved stats; future levels add the approved growth
 deltas to that preserved baseline. Encounter receipts and checkpointing belong
-to the combat owner, not the presentation or this module.
+to the combat owner, not the presentation or this module. An explicit migration
+retunes only Mira's recognizable historical guest baseline on Continue.
 """
 from __future__ import annotations
 
@@ -108,6 +109,26 @@ class CharacterProgression:
             return True
         except (TypeError, ValueError, KeyError, OverflowError):
             return False
+
+    def retune_legacy_mira(self):
+        """Replace only the recognizable old guest baseline, keeping earned growth.
+
+        Custom saved stats are left intact. HP keeps its injured proportion,
+        including KO, and no EXP or modifiers are changed. The new baseline
+        cannot match the legacy profile on subsequent Continue operations.
+        """
+        legacy = dict(zip(ATTRIBUTE_IDS, (300, 30, 20, 12, 12, 18, 14, 12, 16, 12, 10)))
+        start = character_stats('mira', 1)
+        natural = character_stats('mira', self.level('mira'))
+        expected = {key: legacy[key]+natural[key]-start[key] for key in ATTRIBUTE_IDS}
+        attributes = self.party.characters['mira']
+        if _base_stats(attributes) != expected:return False
+        old_hp, current_hp = attributes.value('hp'), attributes.current_hp
+        attributes._attributes = natural
+        maximum = attributes.value('hp')
+        hp = (current_hp*maximum+old_hp//2)//old_hp
+        attributes.set_current(hp=max(1, hp) if current_hp else 0)
+        return True
 
     @classmethod
     def valid_journey(cls, data):

@@ -20,6 +20,17 @@ CAVE_FIELDS = FIELDS | PARTY_FIELDS | {'encounter'}
 PROGRESSION_FIELDS = {'progression', 'offered_drops'}
 
 
+def _previous_reward_xp(kind, encounter=None):
+    """Recognize pending receipts from before the 30% reward reduction.
+
+    These fixed/cave enemies were normal reward references at levels 1–100.
+    New victories always use battle_reward_definition and the current curve.
+    """
+    levels = ([member['level'] for member in encounter['members']] if kind == 'cave'
+              else [3 if kind == 'mill' else 1])
+    return sum(2*int(30*level**0.5+0.5) for level in levels)
+
+
 def battle_reward_definition(kind, encounter=None):
     """Resolve authored EXP and drops without retuning legacy combat stats.
 
@@ -121,7 +132,8 @@ def valid_pending_snapshot(record, data=None):
         from character_progression import CharacterProgression
         plan = record['progression']
         if (not CharacterProgression.valid_plan(plan)
-                or plan['amount'] != canonical['xp']
+                or plan['amount'] not in (canonical['xp'], _previous_reward_xp(
+                    record['kind'], record.get('encounter')))
                 or plan['active_ids'] != record['party_active']
                 or not isinstance(record['offered_drops'], dict)
                 or any(type(value) is not int for value in record['offered_drops'].values())

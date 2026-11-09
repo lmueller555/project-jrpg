@@ -36,7 +36,7 @@ class PartyStateTests(unittest.TestCase):
         guest=json.loads((ROOT/'assets/combat/guests.json').read_text())['guests']['mira']
         mira=self.party.characters['mira']
         self.assertEqual(mira.to_dict()['attributes'],guest['attributes'])
-        self.assertEqual((mira.current_hp,mira.current_mp),(300,30))
+        self.assertEqual((mira.current_hp,mira.current_mp),(150,30))
         self.assertEqual(set(CharacterAttributes().catalog['characters']), {'caelan'})
 
     def test_recruitment_autofills_only_empty_slots_then_keeps_reserves(self):

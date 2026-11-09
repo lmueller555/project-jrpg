@@ -3,7 +3,7 @@
   "guests": {
     "mira": {
       "name": "Mira",
-      "attributes": {"hp": 300, "mp": 30, "str": 20, "mag": 12, "spr": 12, "def": 18, "m_def": 14, "speed": 12, "acc": 16, "eva": 12, "lck": 10},
+      "attributes": {"hp": 150, "mp": 30, "str": 10, "mag": 10, "spr": 10, "def": 10, "m_def": 10, "speed": 10, "acc": 10, "eva": 10, "lck": 10},
       "attack": "bolt_shot"
     }
   }

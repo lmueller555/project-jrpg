@@ -60,7 +60,7 @@ class BestiarySceneTests(unittest.TestCase):
             scene.handle_event(pygame.event.Event(kind, button=1, pos=(x*2, y*2)))
 
     def test_level_specific_names_and_real_bat_idle_render_at_both_levels(self):
-        for level, hp, reward in ((2, 73, 84), (3, 85, 104)):
+        for level, hp, reward in ((2, 73, 59), (3, 85, 73)):
             with self.subTest(level=level):
                 model, scene = self.encounter(level)
                 labels = []

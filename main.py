@@ -797,6 +797,9 @@ class Game:
             self.character_progression.initialize_new_game()
         elif not self.character_progression.restore(data.get('character_levels')):
             return False
+        # Pending spoils retain their original before/after stat transaction.
+        if data is not None and not data.get('post_battle'):
+            self.character_progression.retune_legacy_mira()
         self._party_prompt_before=None
         self._party_prompt_callback=None
         self.party_ui.reset()
