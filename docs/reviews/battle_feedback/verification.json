@@ -1,0 +1,665 @@
+{
+  "fixture": "Disposable battle-information review; explicit NPC scheduling and ATB",
+  "captures": [
+    {
+      "file": "named_ability.png",
+      "label": "Aether Edge \u00b7 named ability announcement",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "current_announcement": {
+        "text": "Caelan \u2014 Aether Edge",
+        "kind": "ability",
+        "actor": "player",
+        "action": "aether_edge",
+        "age": 0.0,
+        "duration": 2.5,
+        "priority": 2,
+        "created": 0.0
+      },
+      "warnings": [],
+      "charging_enemies": [],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          193,
+          11,
+          94,
+          12
+        ]
+      ],
+      "aura_rects": {},
+      "enemy_bodies": {
+        "enemy": [
+          101,
+          126,
+          40,
+          46
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    },
+    {
+      "file": "tusker_preparing.png",
+      "label": "Tusker begins its heavy-attack windup",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "current_announcement": {
+        "text": "Ridgeback Tusker \u2014 Lowered Tusks",
+        "kind": "ability",
+        "actor": "enemy",
+        "action": "prepare_charge",
+        "age": 0.0,
+        "duration": 2.5,
+        "priority": 2,
+        "created": 0.0
+      },
+      "warnings": [
+        {
+          "text": "Ridgeback Tusker readies Bankbreaker Charge",
+          "kind": "warning",
+          "actor": "enemy",
+          "action": "tusker_charge",
+          "action_name": "Bankbreaker Charge",
+          "target": null,
+          "stage": "prepare",
+          "age": 0.0,
+          "duration": 3.0100000000000002
+        }
+      ],
+      "charging_enemies": [
+        "enemy"
+      ],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          164,
+          11,
+          153,
+          12
+        ]
+      ],
+      "aura_rects": {
+        "enemy": [
+          24,
+          84,
+          186,
+          121
+        ]
+      },
+      "enemy_bodies": {
+        "enemy": [
+          45,
+          112,
+          144,
+          84
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    },
+    {
+      "file": "tusker_held.png",
+      "label": "Charge persists through the player decision",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "ready",
+      "current_announcement": {
+        "text": "Ridgeback Tusker readies Bankbreaker Charge \u2192 Caelan",
+        "kind": "warning",
+        "actor": "enemy",
+        "action": "tusker_charge",
+        "action_name": "Bankbreaker Charge",
+        "target": "player",
+        "stage": "ready",
+        "age": 3.0,
+        "duration": 3.6400000000000006
+      },
+      "warnings": [
+        {
+          "text": "Ridgeback Tusker readies Bankbreaker Charge \u2192 Caelan",
+          "kind": "warning",
+          "actor": "enemy",
+          "action": "tusker_charge",
+          "action_name": "Bankbreaker Charge",
+          "target": "player",
+          "stage": "ready",
+          "age": 0.0,
+          "duration": 3.6400000000000006
+        }
+      ],
+      "charging_enemies": [
+        "enemy"
+      ],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          119,
+          11,
+          243,
+          12
+        ]
+      ],
+      "aura_rects": {
+        "enemy": [
+          30,
+          86,
+          182,
+          119
+        ]
+      },
+      "enemy_bodies": {
+        "enemy": [
+          51,
+          114,
+          140,
+          82
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    },
+    {
+      "file": "tusker_releasing.png",
+      "label": "Bankbreaker Charge \u00b7 aura stays until impact",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "current_announcement": {
+        "text": "Ridgeback Tusker \u2014 Bankbreaker Charge",
+        "kind": "ability",
+        "actor": "enemy",
+        "action": "tusker_charge",
+        "age": 0.25,
+        "duration": 2.5900000000000003,
+        "priority": 2,
+        "created": 5.2399999999999975
+      },
+      "warnings": [
+        {
+          "text": "Ridgeback Tusker unleashes Bankbreaker Charge \u2192 Caelan",
+          "kind": "warning",
+          "actor": "enemy",
+          "action": "tusker_charge",
+          "action_name": "Bankbreaker Charge",
+          "target": "player",
+          "stage": "release",
+          "age": 0.0,
+          "duration": 3.7800000000000002
+        }
+      ],
+      "charging_enemies": [
+        "enemy"
+      ],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          152,
+          11,
+          176,
+          12
+        ]
+      ],
+      "aura_rects": {
+        "enemy": [
+          116,
+          85,
+          200,
+          124
+        ]
+      },
+      "enemy_bodies": {
+        "enemy": [
+          137,
+          114,
+          158,
+          86
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    },
+    {
+      "file": "tusker_released.png",
+      "label": "The power aura clears when the heavy hit lands",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "current_announcement": {
+        "text": "Ridgeback Tusker \u2014 Bankbreaker Charge",
+        "kind": "ability",
+        "actor": "enemy",
+        "action": "tusker_charge",
+        "age": 0.501,
+        "duration": 2.5900000000000003,
+        "priority": 2,
+        "created": 5.2399999999999975
+      },
+      "warnings": [],
+      "charging_enemies": [],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          152,
+          11,
+          176,
+          12
+        ]
+      ],
+      "aura_rects": {},
+      "enemy_bodies": {
+        "enemy": [
+          151,
+          114,
+          158,
+          86
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    },
+    {
+      "file": "multiple_charges.png",
+      "label": "Two independent Veylume windups",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "ready",
+      "current_announcement": {
+        "text": "Veylume B readies Veinflash \u2192 Caelan",
+        "kind": "warning",
+        "actor": "enemy_4",
+        "action": "veylume_veinflash",
+        "action_name": "Veinflash",
+        "target": "player",
+        "stage": "ready",
+        "age": 0.49999999999999956,
+        "duration": 2.5200000000000005
+      },
+      "warnings": [
+        {
+          "text": "Veylume A readies Veinflash \u2192 Lucan",
+          "kind": "warning",
+          "actor": "enemy_3",
+          "action": "veylume_veinflash",
+          "action_name": "Veinflash",
+          "target": "lucan",
+          "stage": "ready",
+          "age": 0.0,
+          "duration": 2.5
+        },
+        {
+          "text": "Veylume B readies Veinflash \u2192 Caelan",
+          "kind": "warning",
+          "actor": "enemy_4",
+          "action": "veylume_veinflash",
+          "action_name": "Veinflash",
+          "target": "player",
+          "stage": "ready",
+          "age": 0.0,
+          "duration": 2.5200000000000005
+        }
+      ],
+      "charging_enemies": [
+        "enemy_3",
+        "enemy_4"
+      ],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          158,
+          11,
+          166,
+          12
+        ]
+      ],
+      "aura_rects": {
+        "enemy_3": [
+          48,
+          163,
+          43,
+          40
+        ],
+        "enemy_4": [
+          164,
+          165,
+          46,
+          38
+        ]
+      },
+      "enemy_bodies": {
+        "enemy": [
+          55,
+          121,
+          28,
+          10
+        ],
+        "enemy_2": [
+          166,
+          117,
+          46,
+          26
+        ],
+        "enemy_3": [
+          56,
+          175,
+          27,
+          21
+        ],
+        "enemy_4": [
+          172,
+          177,
+          30,
+          19
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    },
+    {
+      "file": "multiple_charges_large_text.png",
+      "label": "Native 480 \u00d7 320 \u00b7 text 150%",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "phase": "ready",
+      "current_announcement": {
+        "text": "Veylume B readies Veinflash \u2192 Caelan",
+        "kind": "warning",
+        "actor": "enemy_4",
+        "action": "veylume_veinflash",
+        "action_name": "Veinflash",
+        "target": "player",
+        "stage": "ready",
+        "age": 0.49999999999999956,
+        "duration": 2.5200000000000005
+      },
+      "warnings": [
+        {
+          "text": "Veylume A readies Veinflash \u2192 Lucan",
+          "kind": "warning",
+          "actor": "enemy_3",
+          "action": "veylume_veinflash",
+          "action_name": "Veinflash",
+          "target": "lucan",
+          "stage": "ready",
+          "age": 0.0,
+          "duration": 2.5
+        },
+        {
+          "text": "Veylume B readies Veinflash \u2192 Caelan",
+          "kind": "warning",
+          "actor": "enemy_4",
+          "action": "veylume_veinflash",
+          "action_name": "Veinflash",
+          "target": "player",
+          "stage": "ready",
+          "age": 0.0,
+          "duration": 2.5200000000000005
+        }
+      ],
+      "charging_enemies": [
+        "enemy_3",
+        "enemy_4"
+      ],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          75,
+          6,
+          331,
+          23
+        ]
+      ],
+      "aura_rects": {
+        "enemy_3": [
+          139,
+          88,
+          37,
+          34
+        ],
+        "enemy_4": [
+          195,
+          89,
+          41,
+          33
+        ]
+      },
+      "enemy_bodies": {
+        "enemy": [
+          28,
+          105,
+          22,
+          8
+        ],
+        "enemy_2": [
+          81,
+          102,
+          36,
+          21
+        ],
+        "enemy_3": [
+          147,
+          100,
+          21,
+          17
+        ],
+        "enemy_4": [
+          203,
+          101,
+          25,
+          16
+        ]
+      },
+      "hud": [
+        8,
+        129,
+        464,
+        183
+      ]
+    },
+    {
+      "file": "battle_emote.png",
+      "label": "Authored battle-emote presentation hook",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "charging",
+      "current_announcement": {
+        "text": "The Tusker paws the earth!",
+        "kind": "event",
+        "actor": "enemy",
+        "age": 0.0,
+        "duration": 2.5,
+        "priority": 1,
+        "created": 0.0
+      },
+      "warnings": [],
+      "charging_enemies": [],
+      "announcement_rect": [
+        8,
+        3,
+        464,
+        29
+      ],
+      "announcement_text_rects": [
+        [
+          182,
+          11,
+          116,
+          12
+        ]
+      ],
+      "aura_rects": {},
+      "enemy_bodies": {
+        "enemy": [
+          49,
+          100,
+          138,
+          96
+        ]
+      },
+      "hud": [
+        8,
+        210,
+        464,
+        102
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "basic_attack_omitted": true
+    },
+    {
+      "file": "named_ability.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "file": "tusker_preparing.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "file": "tusker_held.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "animated_aura_frames": 16,
+      "distinct_frames": true,
+      "gif_uses_actual_scene_updates": true
+    },
+    {
+      "file": "tusker_releasing.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "file": "tusker_released.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "file": "multiple_charges.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "file": "multiple_charges_large_text.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "file": "battle_emote.png",
+      "announcement_clear_of_status": true,
+      "aura_inside_field": true,
+      "charge_ids_match_model": true
+    },
+    {
+      "long_warning_text": "Ridgeback Tusker readies Bankbreaker Charge \u2192 Caelan",
+      "native_text_scale": 1.5,
+      "pages_rendered": 2,
+      "rendered_page_text": [
+        [
+          "Ridgeback Tusker readies Bankbreaker Charge"
+        ],
+        [
+          "\u2192 Caelan"
+        ]
+      ],
+      "all_text_inside_panel": true,
+      "target_arrow_stays_with_name": true
+    }
+  ]
+}

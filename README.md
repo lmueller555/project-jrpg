@@ -319,7 +319,8 @@ damage limits. The first [wait-ATB battle](docs/COMBAT.md) is playable against
 a visible Bat on the grass west of the well. Walk within its trigger radius
 to enter combat automatically. The separate battle scene includes Caelan's combat
 animations, Attack, Guard, Flee and learned Aether Dart, plus the bottom HP/MP/ATB
-panel. All gauges pause while the player chooses; enemy ATB is hidden. See the
+panel. All gauges pause while the player chooses; cave encounters also show
+enemy ATB. See the
 [combat preview](docs/reviews/atb_combat/README.md).
 
 A white finger points down at the selected enemy, with a static red circle on
@@ -327,6 +328,14 @@ the ground beneath it. While a character is ready, hover an enemy to select it
 and click its sprite or status card to use the highlighted attack or offensive
 skill. Group targeting also supports arrows and Enter. See the
 [targeting review](docs/reviews/battle_targeting/README.md).
+
+The top battle announcement box names special abilities and reports battle
+events. Incoming heavy attacks show the enemy, attack and intended target;
+their warnings remain available through other combatants' turns. Charging
+enemies radiate a red lightning-and-flame aura until the attack lands or the
+charge is interrupted. Reduced Motion keeps a static red aura. Ordinary basic
+attacks leave room for more useful announcements. See the
+[battle feedback review](docs/reviews/battle_feedback/README.md).
 
 The [traditional leveling system](docs/LEVELING.md) supplies saved level-1–100
 character growth, the approved XP/reward curves, effective rating caps of 999
