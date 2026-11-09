@@ -77,12 +77,13 @@ def register(image, scale, canvas, foot_anchor):
                        scale=scale, registration=list(offset))
 
 
-def build():
+def build(*, world_only=False):
     REVIEW.mkdir(parents=True, exist_ok=True)
     records = []
     for family, source, columns, rows, canvas, anchor, foot, height in (
         ('world','water_generated.png',4,2,(40,48),(20,38),(20,42),34),
         ('combat','combat_generated.png',4,4,(64,64),(32,56),(32,56),36)):
+        if world_only and family != 'world':continue
         target = TARGET/family;target.mkdir(parents=True, exist_ok=True)
         cells = extract(SOURCE/source, columns, rows)
         scale = height/body_height(cells[0][0])
@@ -127,4 +128,9 @@ def build():
     print(json.dumps(records))
 
 
-if __name__ == '__main__':build()
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--world-only', action='store_true',
+                        help='Rebuild the mill water-casting poses without replacing the combat atlas registration.')
+    build(world_only=parser.parse_args().world_only)

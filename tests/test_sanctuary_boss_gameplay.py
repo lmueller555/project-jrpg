@@ -30,6 +30,13 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
             driver = Driver(directory)
             driver.meal(); driver.attack_report(); driver.departure()
             driver.rejoin_mira(); driver.arrive()
+            # Earlier cave discovery is an explicit fixture for these boss
+            # ownership tests; its actual tutorial is exercised separately.
+            owner = driver.game.character_abilities
+            if not owner.has_weapon():assert owner.acquire_weapon('caelan', 'caelan_gearblade')
+            assert owner.learn_ability('caelan', 'aqua_edge')
+            assert driver.game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
+                                                   'battle_cleared': True, 'deferred': False})
             driver.walk(RESERVE_ENTRY_APPROACH)
             driver.game.handle_events([
                 pygame.event.Event(pygame.KEYDOWN, key=pygame.K_e, repeat=False),

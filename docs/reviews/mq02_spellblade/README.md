@@ -1,5 +1,9 @@
 # MQ02: Mira's gift and Caelan's first Spellblade technique
 
+**Historical capture:** This review predates Blue-only gem ownership and the
+current automatic Aether discovery. It retains the earlier four-focus,
+two-attempt sequence. See [current Caelan progression](../../CAELAN_AQUA_PROGRESSION.md).
+
 This review uses an actual disposable New Game from the opening quests through
 the mill repair and Aldric's arrival handoff. Equipment, abilities, attributes
 and quest progress are never seeded by the capture.

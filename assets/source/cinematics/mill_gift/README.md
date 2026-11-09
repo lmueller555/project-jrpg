@@ -1,5 +1,5 @@
 # MQ02 birthday gift cinematic
 
-Image-authored sources preserve the workshop facade and approved Caelan/Mira costume references. The weapon has a fixed grip, brass selector gear and four green/blue/red/white gems.
+Image-authored sources preserve the workshop facade and approved Caelan/Mira costume references. The weapon has a fixed grip, brass selector gear, one blue Water gem and three empty recessed brass sockets. The weapon strip, eight handoff poses and four hand-detail frames were edited with image_gen for this Blue-only starting loadout; the selected blue stone moves with the authored ring rotation. `blue_only_edits.json` records the original reference commit and before/after source hashes, including the companion world water-casting sheet. These are edited sources rather than unmodified originals.
 
 Rebuild exports with `python tools/build_mill_gift.py`. The eight paired handoff poses and four wide hand-detail frames are original drawings. Runtime selects the authored drawings and pans the camera; it does not warp bodies or demonstrate a successful elemental spell. The whole-blade and detached mechanical components are retained for consistent weapon exports. Gear feedback uses a quiet 0.20–0.40 second trim of the existing load_shell.ogg effect, whose source attribution remains in assets/audio/sfx/ice_reaper_rescue/README.md.

@@ -107,6 +107,7 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.scene.update(20)
         self.draw()
         self.assertTrue(self.scene.tutorial_active)
+        ready_actor = self.model.ready_actor
         before = (self.scene._elapsed, tuple(member.atb for member in self.model.party),
                   self.model.enemy.atb, self.model.player.hp, self.model.enemy.hp)
         self.scene.update(100)
@@ -122,8 +123,9 @@ class PartyBattleSceneTests(unittest.TestCase):
             self.draw();self.click(self.scene.tutorial_continue_rect.center)
         self.assertIsNone(self.model.current_action)
         self.assertEqual(self.model.phase, 'ready')
+        self.assertEqual(self.model.ready_actor, ready_actor)
         self.click(self.scene.command_rects['attack'].center)
-        self.assertEqual(self.model.current_action.actor, 'mira')
+        self.assertEqual(self.model.current_action.actor, ready_actor)
 
     def test_real_preparation_event_identifies_guard_target_and_freezes_the_tell(self):
         self.make_scene(tutorial=True)

@@ -243,6 +243,7 @@ class CombatEncounters:
                             self.game.character_abilities.known_abilities(),
                             weapon_equipped=self.game.character_abilities.has_weapon(),
                             active_gem=self.game.character_abilities.active_gem(),
+                            owned_gems=self.game.character_abilities.owned_gems(),
                             bot_loadouts=self.game.bot_loadouts.battle_loadouts(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id=self.definition['enemy'], initial_atb=True,
@@ -293,6 +294,7 @@ class CombatEncounters:
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
                             active_gem=game.character_abilities.active_gem(),
+                            owned_gems=game.character_abilities.owned_gems(),
                             bot_loadouts=game.bot_loadouts.battle_loadouts(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id='ridgeback_tusker', spellblade_tutorial=training,
@@ -333,6 +335,12 @@ class CombatEncounters:
         if getattr(game, 'party', None) is None or game.party.battle_reason():return False
         controller = getattr(game, 'cave_random_encounters', None)
         if controller is None or controller.pending != ticket:return False
+        lesson = getattr(game, 'cave_lesson', None)
+        if lesson is not None and lesson.is_intro(ticket) and lesson.ready_reason():return False
+        if lesson is not None and lesson.is_intro(ticket):
+            # The confluence lesson is specifically the Blue focus. Selecting
+            # another installed gem before arrival cannot strand its loading.
+            if not game.character_abilities.set_active_gem('water'):return False
         self.kind = 'cave'
         self._cave_ticket = deepcopy(ticket)
         self.receipt_id = ticket['receipt']
@@ -360,11 +368,16 @@ class CombatEncounters:
             learned_abilities=game.character_abilities.known_abilities(),
             weapon_equipped=game.character_abilities.has_weapon(),
             active_gem=game.character_abilities.active_gem(),
+            owned_gems=game.character_abilities.owned_gems(),
             bot_loadouts=game.bot_loadouts.battle_loadouts(),
             rng=random.Random(ticket['combat_seed']), initial_atb=True,
+            initial_atb_seed=ticket['combat_seed'],
+            aqua_edge_tutorial=(getattr(game, 'cave_lesson', None) is not None
+                and game.cave_lesson.is_intro(ticket)),
             **self._party_options())
         model.encounter_rewards = self._available_rewards(model.encounter_rewards)
-        scene = BattleScene(game, model, battlefield=ticket['battlefield'])
+        scene = BattleScene(game, model, battlefield=ticket['battlefield'],
+                            tutorial=model.aqua_edge_guided)
         old = self.entry
         self.scene = scene
         self._begin_transition(old.world_frame)
@@ -424,6 +437,7 @@ class CombatEncounters:
             learned_abilities=game.character_abilities.known_abilities(),
             weapon_equipped=game.character_abilities.has_weapon(),
             active_gem=game.character_abilities.active_gem(),
+            owned_gems=game.character_abilities.owned_gems(),
             bot_loadouts=game.bot_loadouts.battle_loadouts(),
             rng=random.Random(ticket['combat_seed']), initial_atb=True,
             initial_atb_seed=ticket['combat_seed'], **self._party_options())
@@ -509,29 +523,41 @@ class CombatEncounters:
             return
         self.scene.update(seconds)
         if self.model.ended:self._end_battle_music()
-        self._checkpoint_spellblade_discovery()
+        if not self._checkpoint_spellblade_discovery():return
         if self.model.phase == 'victory':
             self._begin_victory()
             return
         if self.scene.dismissed:self._settle()
 
     def _checkpoint_spellblade_discovery(self):
-        if (self.kind != 'mill' or self.model is None
-                or not getattr(self.model,'aether_edge_discovered',False)):
-            return
-        owner=self.game.character_abilities
-        if not owner.starter_skills_pending('caelan'):return
-        if owner.learn_first_weapon_skills('caelan'):
-            # Persist the earned action's resources with the learned technique;
-            # quitting here must not refund its MP while keeping the discovery.
-            resources = {'hp': self.model.player.hp, 'mp': self.model.player.mp}
-            party_resources = self._model_resources(self.model) if self._party_active else None
-            if not self._apply_resources(resources, party_resources):
-                raise RuntimeError('Discovered skill produced invalid battle resources')
-            self.game.social.flags.add('CH01_MQ02_AETHER_EDGE_DISCOVERED')
-            # No battle clock is saved. A retry retains the skill actually
-            # discovered, and still owes the encounter's victory/reward receipt.
-            self.game.save_progress()
+        """Commit a discovery and the cast's resources together, retrying errors."""
+        if self.model is None:return True
+        game, owner = self.game, self.game.character_abilities
+        aether = (self.kind == 'mill' and self.model.aether_edge_discovered
+                  and owner.starter_skills_pending('caelan'))
+        aqua = (self.kind == 'cave' and self.model.aqua_edge_discovered
+                and 'aqua_edge' not in owner.known_abilities())
+        if not (aether or aqua):return True
+        before = (owner.to_dict(), game.party.to_dict() if hasattr(game, 'party') else None,
+                  game.attributes.to_dict(), set(game.social.flags))
+        learned = (owner.learn_first_weapon_skills('caelan') if aether
+                   else owner.learn_ability('caelan', 'aqua_edge'))
+        if not learned:return False
+        resources = {'hp': self.model.player.hp, 'mp': self.model.player.mp}
+        party_resources = self._model_resources(self.model) if self._party_active else None
+        if not self._apply_resources(resources, party_resources):
+            owner.restore(before[0])
+            raise RuntimeError('Discovered skill produced invalid battle resources')
+        game.social.flags.add('CH01_MQ02_AETHER_EDGE_DISCOVERED' if aether else
+                              'CH01_MQ03_AQUA_EDGE_DISCOVERED')
+        if self._checkpoint():
+            self.scene.result_error = ''
+            return True
+        owner.restore(before[0]);game.social.flags = before[3]
+        if before[1] is not None:game.party.restore(before[1])
+        else:game.attributes.restore(before[2])
+        self.scene.result_error = 'The learned technique could not be saved. Retrying…'
+        return False
 
     def handle_event(self, event):
         if not self.active:return False
@@ -559,6 +585,7 @@ class CombatEncounters:
             return True
         self.scene.handle_event(event)
         if self.model.ended:self._end_battle_music()
+        if not self._checkpoint_spellblade_discovery():return True
         if self.model.phase == 'victory':
             self._begin_victory()
             return True
@@ -593,6 +620,7 @@ class CombatEncounters:
 
     def _begin_victory(self):
         if self._pending is not None or self.model is None or self.model.phase != 'victory':return False
+        if not self._checkpoint_spellblade_discovery():return False
         game, model = self.game, self.model
         hp, mp = model.player.hp, model.player.mp
         incapacitated = hp == 0
@@ -680,6 +708,9 @@ class CombatEncounters:
                   game.character_progression.to_dict() if plan is not None else None,
                   game.attributes.to_dict())
         boss_before = game.sanctuary_boss.to_dict() if self.kind == 'cave_boss' else None
+        lesson = getattr(game, 'cave_lesson', None)
+        lesson_before = (lesson.to_dict() if self.kind == 'cave' and lesson is not None
+                         and lesson.is_intro(self._cave_ticket) else None)
 
         def rollback(message):
             game.battle_rewards.restore(before[0]);game.inventory.restore(before[1])
@@ -688,6 +719,7 @@ class CombatEncounters:
             else:game.attributes.restore(before[7])
             if before[6] is not None:game.character_progression.restore(before[6])
             if boss_before is not None:game.sanctuary_boss.restore(boss_before)
+            if lesson_before is not None:lesson.restore(lesson_before)
             return self._post_error(message)
 
         reward = record['rewards']
@@ -703,9 +735,11 @@ class CombatEncounters:
             return rollback('Battle resources could not be collected. Try again.')
         if self.kind == 'cave_boss' and not game.sanctuary_boss.mark_defeated(record['receipt']):
             return rollback('The boss encounter could not be completed. Try again.')
+        if lesson_before is not None and not lesson.mark_cleared(self._cave_ticket):
+            return rollback('The cave lesson could not be completed. Try again.')
         record['stage'] = 'awarded'
         if not self._checkpoint():
-            if boss_before is not None:
+            if boss_before is not None or lesson_before is not None:
                 record['stage'] = 'pending'
                 return rollback('Progress could not be saved. Try again.')
             return self._post_error('Progress could not be saved. Try again.')
@@ -870,6 +904,7 @@ class CombatEncounters:
             'guest_id': 'mira' if self.kind == 'mill' else None}
         common = dict(weapon_equipped=game.character_abilities.has_weapon(),
                       active_gem=game.character_abilities.active_gem(),
+                      owned_gems=game.character_abilities.owned_gems(),
                       bot_loadouts=game.bot_loadouts.battle_loadouts(), **options)
         if self.kind == 'cave':
             model = BattleModel.from_bestiary_group(
@@ -946,13 +981,26 @@ class CombatEncounters:
         """Withdraw once, retaining spent resources on flee and entry on defeat."""
         game, scene, model = self.game, self.scene, self.model
         party_before = game.party.to_dict()
+        lesson = getattr(game, 'cave_lesson', None)
+        intro = lesson is not None and lesson.is_intro(self._cave_ticket)
+        lesson_before = lesson.to_dict() if intro else None
         if model.phase != 'defeat':
             resources = {'hp': model.player.hp, 'mp': model.player.mp}
             if not self._apply_resources(resources, self._model_resources(model)):
                 scene.dismissed = False
                 scene.result_error = 'Could not return from battle. Try again.'
                 return False
-        counter_before = self._finish_cave_counter()
+        # An unfinished lesson retains its formation/seed while the player is
+        # free to prepare, visit the bed and return to this exact encounter.
+        ticket = self._cave_ticket
+        if intro:
+            counter_before = game.cave_random_encounters.to_dict()
+            if not lesson.defer(ticket):
+                game.party.restore(party_before)
+                scene.dismissed = False
+                return False
+            self._cave_ticket = None
+        else:counter_before = self._finish_cave_counter()
         if counter_before is None:
             game.party.restore(party_before)
             scene.dismissed = False
@@ -961,6 +1009,8 @@ class CombatEncounters:
         if not self._checkpoint():
             game.party.restore(party_before)
             game.cave_random_encounters.restore(counter_before)
+            if lesson_before is not None:lesson.restore(lesson_before)
+            self._cave_ticket = ticket
             scene.dismissed = False
             scene.result_error = 'Progress could not be saved. Try again.'
             return False

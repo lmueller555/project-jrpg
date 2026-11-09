@@ -84,12 +84,16 @@ class CombatMotionArt:
             time -= milliseconds
         return family, state, len(sequence) - 1
 
-    def frame(self, state, elapsed_ms, armed=True):
+    def frame(self, state, elapsed_ms, armed=True, owned_gems=None):
         """Return the selected 64x64 surface and its fixed floor anchor."""
         if armed and state not in MOTION_STATES:
-            return self.legacy.frame(state, elapsed_ms)
+            return self.legacy.frame(state, elapsed_ms, owned_gems=owned_gems)
         family, state, index = self._selection(state, elapsed_ms, armed)
-        return self.sequences[family][state][index][0], self.anchor
+        image = self.sequences[family][state][index][0]
+        if armed:
+            from gearblade_art import with_owned_gems
+            image = with_owned_gems(image, self.anchors(state, elapsed_ms, armed), owned_gems)
+        return image, self.anchor
 
     def anchors(self, state, elapsed_ms, armed=True):
         """Frame-local body, hand and sword points on the same pose clock."""
@@ -117,8 +121,8 @@ def prepare_combat_motion_art():
     return prepare_combat_art().motion
 
 
-def frame(state, elapsed_ms, armed=True):
-    return prepare_combat_motion_art().frame(state, elapsed_ms, armed)
+def frame(state, elapsed_ms, armed=True, owned_gems=None):
+    return prepare_combat_motion_art().frame(state, elapsed_ms, armed, owned_gems)
 
 
 def anchors(state, elapsed_ms, armed=True):

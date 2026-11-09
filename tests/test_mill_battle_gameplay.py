@@ -126,7 +126,7 @@ def finish_spoils_presentation(game):
 
 
 def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=True,
-                       on_step=None):
+                       on_step=None, use_overclock=True):
     """Use actual tutorial acknowledgement and mouse command/result input."""
     assert game.combat.active
     scene = game.combat.scene
@@ -147,13 +147,13 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
             stage = getattr(scene.model, 'spellblade_stage', None)
             if stage in ('opening', 'guard', 'charge'):
                 action = 'guard'
-            elif stage in ('first_edge', 'second_edge'):
-                # Temporary attempts are selected through the actual Skills
-                # submenu, rather than being granted as permanent knowledge.
+            elif stage == 'first_edge':
+                # Blue is the only focus. Its failed attempt automatically
+                # leads into Caelan's accidental Aether discovery.
                 game.draw()
                 click(game, scene.command_rects['skills'].center)
                 game.draw()
-                click(game, scene.command_rects[{'nature':'nature_edge','water':'aqua_edge','fire':'flame_edge'}.get(scene.model.active_gem,'aqua_edge')].center)
+                click(game, scene.command_rects['aqua_edge'].center)
                 continue
             elif (command == 'attack' and scene.model.telegraphed_target
                     == scene.model.ready_actor):
@@ -165,7 +165,7 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
                 game.draw();click(game, scene.command_rects['skills'].center)
                 game.draw();click(game, scene.command_rects['aether_edge'].center)
                 continue
-            elif (command == 'attack' and scene.model.ready_actor == 'mira'
+            elif (use_overclock and command == 'attack' and scene.model.ready_actor == 'mira'
                     and not scene.model.action_reason('overclock')
                     and not scene.model.active_bot('mira').haste_turns):
                 game.draw();click(game, scene.command_rects['skills'].center)

@@ -93,6 +93,16 @@ def _gem(surface, gem, center, bright=False):
         surface.set_at((x - 1, y - 2), pygame.Color(glint))
 
 
+def _empty_socket(surface, center):
+    """An empty brass setting, with no elemental color or engraved gem."""
+    x, y = center
+    pygame.draw.circle(surface, '#071a18', (x, y + 1), 6)
+    pygame.draw.circle(surface, '#4e4937', (x, y), 5)
+    pygame.draw.circle(surface, '#858c7a', (x, y), 4, 1)
+    pygame.draw.circle(surface, '#182b26', (x, y), 3)
+    pygame.draw.line(surface, '#687467', (x - 2, y + 2), (x + 1, y + 2))
+
+
 @lru_cache(maxsize=1)
 def _housing():
     surface = pygame.Surface((48, 48), pygame.SRCALPHA)
@@ -108,8 +118,8 @@ def _housing():
     return surface
 
 
-@lru_cache(maxsize=240)
-def _mechanism(angle_step, active_index):
+@lru_cache(maxsize=3840)
+def _mechanism(angle_step, active_index, owned_gems=GEM_ORDER):
     """Cache native pixel layers; angle quantization never affects interaction."""
     theta = angle_step * TAU / 240
     surface = pygame.Surface((48, 48), pygame.SRCALPHA)
@@ -149,15 +159,24 @@ def _mechanism(angle_step, active_index):
     pygame.draw.line(surface, '#3c5247', (23, 26), (25, 24))
     surface.set_at((23, 24), pygame.Color('#f4e7b8'))
     for index, gem in enumerate(GEM_ORDER):
-        _gem(surface, gem, _point(12, theta + index * QUARTER), index == active_index)
+        center = _point(12, theta + index * QUARTER)
+        if gem in owned_gems:_gem(surface, gem, center, index == active_index)
+        else:_empty_socket(surface, center)
     return surface
 
 
 class GearWidget:
     """One wheel, one captured gesture, one eventual committed gem."""
-    def __init__(self, active_gem='water'):
+    def __init__(self, active_gem='water', owned_gems=None):
         if active_gem not in GEM_ORDER:
             raise ValueError('Unknown gear gem: ' + str(active_gem))
+        owned_gems = GEM_ORDER if owned_gems is None else owned_gems
+        if (not isinstance(owned_gems, (tuple, list))
+                or any(gem not in GEM_ORDER for gem in owned_gems)
+                or len(set(owned_gems)) != len(owned_gems)
+                or owned_gems and active_gem not in owned_gems):
+            raise ValueError('Invalid owned gear gems')
+        self.owned_gems = tuple(gem for gem in GEM_ORDER if gem in owned_gems)
         self._active_gem = active_gem
         self.rect = pygame.Rect(0, 0, 48, 48)
         self.angle = -GEM_ORDER.index(active_gem) * QUARTER
@@ -182,7 +201,7 @@ class GearWidget:
 
     @active_gem.setter
     def active_gem(self, gem):
-        if gem not in GEM_ORDER:
+        if gem not in GEM_ORDER or self.owned_gems and gem not in self.owned_gems:
             raise ValueError('Unknown gear gem: ' + str(gem))
         if gem == self._active_gem:
             return
@@ -191,7 +210,17 @@ class GearWidget:
 
     @property
     def preview_gem(self):
-        return GEM_ORDER[_slot(self.angle)]
+        return GEM_ORDER[_slot(self._nearest_owned_stop(self.angle))]
+
+    def _nearest_owned_stop(self, angle):
+        if not self.owned_gems:
+            return -GEM_ORDER.index(self._active_gem) * QUARTER
+        candidates = []
+        for gem in self.owned_gems:
+            base = -GEM_ORDER.index(gem) * QUARTER
+            turn = math.floor((angle - base) / TAU + .5)
+            candidates.append(base + turn * TAU)
+        return min(candidates, key=lambda stop: (abs(stop - angle), -stop))
 
     @property
     def busy(self):
@@ -255,7 +284,7 @@ class GearWidget:
         self._pointer_angle = None
         self._keyboard_preview = False
         self._snap_from = self.angle
-        self._snap_to = _nearest_stop(self.angle)
+        self._snap_to = self._nearest_owned_stop(self.angle)
         self._snap_time = 0.
         self._reduced_motion = bool(reduced_motion)
         self.settling = True
@@ -319,10 +348,14 @@ class GearWidget:
         if self.settling:
             return True
         if event.key in (pygame.K_LEFT, pygame.K_RIGHT):
+            if len(self.owned_gems) < 2:return True
             self.dragging = False
             self._pointer_angle = None
             self._keyboard_preview = True
-            self.angle = _nearest_stop(self.angle) + (-QUARTER if event.key == pygame.K_LEFT else QUARTER)
+            direction = -QUARTER if event.key == pygame.K_LEFT else QUARTER
+            self.angle = self._nearest_owned_stop(self.angle) + direction
+            while GEM_ORDER[_slot(self.angle)] not in self.owned_gems:
+                self.angle += direction
             self._notices.append('detent')
             self._passing_remaining = .075
             return True
@@ -358,7 +391,7 @@ class GearWidget:
         wheel = self.wheel_rect
         layer = _housing().copy()
         angle_step = round((self.angle % TAU) / TAU * 240) % 240
-        layer.blit(_mechanism(angle_step, GEM_ORDER.index(self._active_gem)), (0, 0))
+        layer.blit(_mechanism(angle_step, GEM_ORDER.index(self._active_gem), self.owned_gems), (0, 0))
         active_color = GEM_PALETTES[self._active_gem][2]
         moving = self.dragging or self.settling or self._keyboard_preview
         # The 12 o'clock catch is bolted to the housing, outside the turning bank.

@@ -1,0 +1,237 @@
+{
+  "fixtures": [
+    "Gift/Boar run: MQ01 completed with the supported test fixture; MQ02 gift, departure and tutorial use real inputs.",
+    "Cave run: earlier completed-Mill fixture, followed by actual MQ03 dialogue/travel; public weapon acquisition represents its already-earned blade.",
+    "Cave Caelan MP explicitly set to 0; encounter approach positioned and countdown reduced to 1 pixel for capture. Formation and seed are selected and saved by production code."
+  ],
+  "disposable_saves_and_settings": true,
+  "synthetic_attack_poses": false,
+  "captures": [
+    {
+      "file": "gift_blue.png",
+      "label": "Gift: one Blue gem, three empty sockets",
+      "scene": "eldenmere.playable",
+      "learned": [
+        "basic_magicks"
+      ],
+      "owned_gems": [],
+      "action": null,
+      "action_seconds": null,
+      "caelan_mp": 30
+    },
+    {
+      "file": "boar_aqua_menu.png",
+      "label": "Boar: only Aqua Edge can be attempted",
+      "scene": "upstream",
+      "learned": [
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": null,
+      "action_seconds": null,
+      "caelan_mp": 30
+    },
+    {
+      "file": "boar_failed_aqua.png",
+      "label": "Boar: Aqua Edge fails",
+      "scene": "upstream",
+      "learned": [
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": "aqua_edge_attempt",
+      "action_seconds": 0.5,
+      "caelan_mp": 30
+    },
+    {
+      "file": "boar_aether.png",
+      "label": "Boar: accidental Aether Edge strikes",
+      "scene": "upstream",
+      "learned": [
+        "aether_edge",
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": "aether_edge",
+      "action_seconds": 1.0,
+      "caelan_mp": 26
+    },
+    {
+      "file": "cave_resonance.png",
+      "label": "Cave: authored Blue-gem resonance",
+      "scene": "sanctuary_cave",
+      "learned": [
+        "aether_edge",
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": null,
+      "action_seconds": null,
+      "caelan_mp": 0
+    },
+    {
+      "file": "cave_aqua_0mp.png",
+      "label": "First cave battle: Aqua Edge costs 0 MP",
+      "scene": "sanctuary_cave",
+      "learned": [
+        "aether_edge",
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": null,
+      "action_seconds": null,
+      "caelan_mp": 0
+    },
+    {
+      "file": "cave_water_strike.png",
+      "label": "Aqua Edge: actual blue Water strike",
+      "scene": "sanctuary_cave",
+      "learned": [
+        "aether_edge",
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": "aqua_edge",
+      "action_seconds": 0.9,
+      "caelan_mp": 0
+    },
+    {
+      "file": "cave_aqua_learned.png",
+      "label": "Aqua Edge learned; later battles cost 4 MP",
+      "scene": "sanctuary_cave",
+      "learned": [
+        "aether_edge",
+        "aqua_edge",
+        "basic_magicks"
+      ],
+      "owned_gems": [
+        "water"
+      ],
+      "action": "aqua_edge",
+      "action_seconds": 1.0,
+      "caelan_mp": 0
+    }
+  ],
+  "boar_player_actions": [
+    {
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard",
+      "kind": "guard",
+      "animation": "guard",
+      "duration": 0.6,
+      "impact_at": 0.2,
+      "elapsed": 0.2,
+      "damage": 0,
+      "resolved": true,
+      "active_gem": "water",
+      "choreography": "guard",
+      "weapon_equipped": true,
+      "targets": []
+    },
+    {
+      "actor": "player",
+      "action": "aqua_edge_attempt",
+      "target": "player",
+      "name": "Aqua Edge",
+      "kind": "failed_edge",
+      "animation": "cast",
+      "duration": 0.9,
+      "impact_at": 0.5,
+      "elapsed": 0.5,
+      "damage": 0,
+      "resolved": true,
+      "active_gem": "water",
+      "choreography": null,
+      "weapon_equipped": true,
+      "targets": []
+    },
+    {
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "name": "Aether Edge",
+      "kind": "spellblade",
+      "animation": "attack",
+      "duration": 2.0,
+      "impact_at": 1.0,
+      "elapsed": 1.0000000000000007,
+      "damage": 26,
+      "resolved": true,
+      "active_gem": "water",
+      "choreography": "aether_edge",
+      "weapon_equipped": true,
+      "targets": []
+    }
+  ],
+  "cave": {
+    "ticket": {
+      "version": 1,
+      "receipt": "cave:00000029:1",
+      "area": "outer",
+      "location": "vein_gallery",
+      "battlefield": "cave_outer",
+      "formation": "bat_pair",
+      "members": [
+        {
+          "enemy_id": "cave_bat",
+          "level": 2
+        },
+        {
+          "enemy_id": "cave_bat",
+          "level": 2
+        }
+      ],
+      "combat_seed": 796879213,
+      "position": [
+        457.0,
+        1280.0
+      ],
+      "lesson": "aqua_edge"
+    },
+    "mp_after_learning": 0,
+    "learned": [
+      "aether_edge",
+      "aqua_edge",
+      "basic_magicks"
+    ],
+    "discovery_saved": true,
+    "battle_cleared": false
+  },
+  "source_sha256": {
+    "battle_model.py": "62aa71e9985c6118161d822adf0c82662aef48ef45adf5525e0525810f8034de",
+    "battle_scene.py": "4d7057a174f19a5d798954ad7b75d9e0a4933da1409ff127db35f0f8d3238b14",
+    "character_abilities.py": "7b66ede33ad34f04bfcd580f28a796dc45967b44e9ecac86bcd99eb085b43b15",
+    "cave_lesson.py": "35d699890d5c3ee7f78fd517349d8a53bcf5a40aa3669d6bb35a7b87d220dc24",
+    "world_encounters.py": "2ee9488c3948443a2f68e97f555d6e0c287aba3dae0dd75c46b0346625e267ba",
+    "gearblade_fx.py": "83d7af9fcc1bab9ed337a2d89b004ff50e2caae57bcbcb1200e6d6db043ea953",
+    "assets/story/mill/scene.json": "05ed6a6e19a7da6ccf9304ee059161d2d21cdbe00c6b8b31360c3f7f1c65f35a",
+    "assets/story/mill_gift/animation.json": "192106ad98094d34e6204c8d663d16a881d9fb3fe5d61f92a7db4e08281d9d21",
+    "assets/story/gearblade_focus/world/provenance.json": "ce1f6f723f29063c981209cb10164ae1aa32aea7cac2f46977547cb101fa937a",
+    "tools/capture_caelan_aqua_progression.py": "b49aeedc24aacbf0376bd441898165dc37886b5d91686c00ad35816b9e25e59c"
+  },
+  "artifact_sha256": {
+    "gift_blue.png": "8c5ac615304162a0de716e735522ff2cf388b2f932cdfd2fbe46ac465e15ced4",
+    "boar_aqua_menu.png": "61d90a7753e43b2733fd3813bbdee918f9f6f9c4dfe0226d2f6895df12f06b46",
+    "boar_failed_aqua.png": "a05ca24fdbe6d342922b50576f51b9b7e0c04f32d38fd55ac91baecf1fb7ec88",
+    "boar_aether.png": "3573c48e410bb90dbb8b0f141d5bf2b64887e3a6e829a7ee832199f8b13343f8",
+    "cave_resonance.png": "1020b73b92f4a230e604f30cee7ec97679fda665a62da740eec780877ed422fb",
+    "cave_aqua_0mp.png": "5b9a0b7dbf61601ed937fd908aafb3d71af2912e44bce96d29bfb17956ec57a6",
+    "cave_water_strike.png": "16140da4e1851005f584cb8652ac8aa4264da331f3c4ef2defe89c649d4280bd",
+    "cave_aqua_learned.png": "50cda7a2c0e37cd472d7410410c5cd237ada38c3af704e28239f888571bb73a3",
+    "contact_sheet.png": "b212c9521e6a04833c4d888f06e9f9424ed944ba0e0956a1de28ded0a80b37d3"
+  }
+}

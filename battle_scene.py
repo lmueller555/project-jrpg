@@ -198,7 +198,8 @@ class BattleScene:
         self.party_rows = {}
         self.header_rects = {}
         self._detail_lines = []
-        self.gear = GearWidget(getattr(model, 'active_gem', 'water'))
+        self.gear = GearWidget(getattr(model, 'active_gem', 'water'),
+                               owned_gems=getattr(model, 'owned_gems', None))
         self.gear_fx = GearbladeEffects()
         self._slot_time = None
         self._gear_adjust_time = None
@@ -418,7 +419,7 @@ class BattleScene:
                                               self.commands_panel.width-12, 18)
         self.header_rects = {}
         actions = self._command_actions()
-        self._command_lines = {identifier: painter.wrap(ACTION_LABELS.get(identifier, identifier),
+        self._command_lines = {identifier: painter.wrap(self._command_label(identifier),
                                                         self.commands_panel.width-16, role='small')
                                for identifier in actions}
         row_heights = [max(16, len(self._command_lines[item])*small+5) for item in actions]
@@ -485,6 +486,8 @@ class BattleScene:
         return True
 
     def _tutorial_event(self, event):
+        if getattr(self.model, 'aqua_edge_stage', None) is not None:
+            return self._aqua_tutorial_event(event)
         if event['type'] == 'spellblade_interrupted':
             self._tutorial_queue.clear()
             self._queue_tutorial('spellblade_interrupted',
@@ -533,20 +536,17 @@ class BattleScene:
                 self._queue_tutorial('readiness','Steady. Get your footing.',
                     'Full ATB: ready to act. Gauges pause while you choose. Select Guard.')
             elif stage=='first_edge':
-                self._queue_tutorial('spellblade_choose','Now—while it’s turning. Choose a focus.',
-                    'Drag the gear to seat a gem in the top catch, then try its Edge from Skills.')
+                self._queue_tutorial('spellblade_choose','Now—while it’s turning. Try drawing through the blue gem.',
+                    'Choose Skills → Aqua Edge.')
                 self._queue_tutorial('gear_instruction',
-                    'The catch at the top, Cael. Turn a gem into it, then draw your aether through the blade.',
-                    'Hovering over the gear slows all ATB charging to 25%. You can also adjust it while choosing an action.')
+                    'The blue gem is seated. Keep the blade steady and draw your aether through it.')
         elif kind=='spellblade_failed':
             lines=(('caelan','It didn’t—'),('mira','Stay with me.'),
                    ('caelan','*breathing quickly* I turned it. I’m trying, but nothing’s happening!'),
                    ('mira','Cael, look at the blade. Use it as the focus. Direct your aether through it.'),
-                   ('caelan','I don’t know if I can do that here.'),
-                   ('mira','Wait for your opening. I’m here.'))
+                   ('caelan','Wait—there’s something else—'))
             for index,(speaker,text) in enumerate(lines):
-                self._queue_tutorial('spellblade_failed_'+str(index),text,
-                    'On Caelan’s next full ATB, choose a focus from Skills again.' if index==5 else '',speaker)
+                self._queue_tutorial('spellblade_failed_'+str(index),text,'',speaker)
         elif kind=='spellblade_discovered':
             lines=(('caelan','That wasn’t what I was trying to do.'),
                    ('mira','It struck. Can you do that again?'),
@@ -559,12 +559,34 @@ class BattleScene:
             self._queue_tutorial('mira_turn','Rivet, keep it busy. I can cover you both from here.',
                 'Mira fires Bolt Shot. Skills → Overclock hastens Rivet for 8 bot turns.')
 
+    def _aqua_tutorial_event(self, event):
+        kind = event['type']
+        if kind == 'player_ready' and event.get('actor') == 'player' and self.model.aqua_edge_guided:
+            self._queue_tutorial('aqua_retry',
+                'The blue gem… it’s still resonating. I can feel the aether following the blade.',
+                'Choose Skills → Aqua Edge. This first cast costs 0 MP.', 'caelan')
+            self._queue_tutorial('aqua_cover',
+                'Take your moment, Cael. Rivet and I will cover you.')
+        elif kind == 'aqua_edge_discovered':
+            self._queue_tutorial('aqua_success',
+                'Water! That was what I was trying to do at the mill.', '', 'caelan')
+            self._queue_tutorial('aqua_learned',
+                'You found the flow. Hold on to that feeling.',
+                'Learned Aqua Edge. Free for this battle; 4 MP in later battles. Usable outside the cave too.')
+
+    def _command_label(self, identifier):
+        label = ACTION_LABELS.get(identifier, identifier)
+        if identifier == 'aqua_edge':
+            cost = self.model.action_mp_cost(identifier, self.model.ready_actor)
+            return label+' · '+str(cost)+' MP'
+        return label
+
     def _detail_text(self):
         """Full messages flow beneath the occupied party row, never over values."""
         model = self.model
+        if self.result_error:return self.result_error
         if model.phase in RESULTS:
             if model.phase == 'victory':return ''
-            if self.result_error:return self.result_error
             if model.phase == 'defeat':
                 if self._cave_field is not None:return 'Return to the cave.'
                 return ('Return to the safe approach.' if self.battlefield == 'millrace'
@@ -576,6 +598,11 @@ class BattleScene:
                 selected = actions[self.selected % len(actions)]
                 if selected == 'aether_edge':
                     return '4 MP · Physical and non-elemental magical sword strike.'
+                if selected == 'aqua_edge':
+                    if self.model.spellblade_guided:
+                        return self._command_reason(selected) or 'Try channeling Water through the blue gem.'
+                    cost = self.model.action_mp_cost(selected, self.model.ready_actor)
+                    return str(cost)+' MP · Physical sword strike with Water magic.'
                 if selected in ('nature_edge','aqua_edge','flame_edge'):
                     return self._command_reason(selected) or 'Unpractised elemental focus.'
                 if selected == 'overclock':
@@ -964,6 +991,10 @@ class BattleScene:
                 self._popups.append({'target': event['target'],
                                      'text': str(event['damage']), 'age': age,
                                      'guarded': event.get('guarded', False)})
+                if event.get('healing'):
+                    self._popups.append({'target': event['target'],
+                        'text': '+'+str(event['healing']), 'age': age,
+                        'healing': True, 'offset': 14})
                 if not event['remaining_hp']:self._defeat_times[event['target']] = self._elapsed-age
             elif event['type'] == 'guard':
                 self._popups.append({'target': event.get('actor', 'player'), 'text': 'Guard', 'age': 0.0})
@@ -1391,10 +1422,11 @@ class BattleScene:
             if actor == 'player':
                 sequence = self._choreography()
                 if sequence is not None or state in MOTION_STATES:
-                    image, anchor = motion_frame(state, time, armed=self.model.weapon_equipped)
+                    image, anchor = motion_frame(state, time, armed=self.model.weapon_equipped,
+                                                 owned_gems=self.model.owned_gems)
                 elif self.model.weapon_equipped:
                     from gearblade_art import combat_frame
-                    image, anchor = combat_frame(image, state, time)
+                    image, anchor = combat_frame(image, state, time, owned_gems=self.model.owned_gems)
             scale = self._actor_scale(actor)
             rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
@@ -1438,9 +1470,13 @@ class BattleScene:
                 mastered = any(key in self.model.learned_abilities and gem == self.model.active_gem
                                for key, gem in REQUIRED_GEMS.items())
                 context['unmastered'] = not mastered and context.get('action') != 'aether_edge'
+                # Aqua shares the authored sword motion, while the light keeps
+                # its Water identity even during an Aether-shaped pose.
+                if context.get('action') == 'aqua_edge':context['elemental'] = True
                 self.gear_fx.draw(canvas, point, state, time, self.model.active_gem, self._elapsed,
                     slot_age=None if self._slot_time is None else self._elapsed-self._slot_time,
-                    action=context, reduced_motion=self.reduced_motion)
+                    action=context, reduced_motion=self.reduced_motion,
+                    owned_gems=self.model.owned_gems)
         action = self.model.current_action
         if action is not None and getattr(action, 'choreography', None):
             sequence = self._choreography(action)
@@ -1453,8 +1489,8 @@ class BattleScene:
                               if action.target in positions else point,
                               dash_origin=self._home_positions()[action.actor],
                               landing=self._home_positions()[action.actor],
-                              dash_at=.46 if action.action == 'aether_edge' else .14,
-                              landing_at=1.8 if action.action == 'aether_edge' else 1.25)
+                              dash_at=.46 if action.choreography == 'aether_edge' else .14,
+                              landing_at=1.8 if action.choreography == 'aether_edge' else 1.25)
             self.action_fx.draw(canvas, point, positions.get(action.target,point), action,
                                 anchors=attachment, reduced_motion=self.reduced_motion)
         for actor, reaction in self._reactions.items():
@@ -1710,13 +1746,15 @@ class BattleScene:
                 point = positions[popup['target']]+(0, -(88 if self._is_enemy(popup['target'])
                     and self._sprite(popup['target']) == 'ridgeback_tusker' else 18 if self._bot(popup['target']) else 75))
             x, y = self._project(point)
+            y -= popup.get('offset', 0)
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
             popup_width, popup_height = painter.font('name', bold=True).size(popup['text'])
             x = max(popup_width/2+2, min(478-popup_width/2, x))
             y = max(popup_height/2+2, min(self.panel_rect.top-popup_height/2-2, y))
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(popup['text'], (x, y), role='name',
-                         color=MP_BLUE if popup.get('enchant') else GOLD, anchor='center', bold=True)
+                         color=HP_GREEN if popup.get('healing') else MP_BLUE if popup.get('enchant') else GOLD,
+                         anchor='center', bold=True)
         for member in model.party:
             hits = getattr(member, 'aether_edge_hits', 0)
             if not hits or not member.hp:continue

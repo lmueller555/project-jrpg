@@ -115,6 +115,13 @@ class Review:
         driver = Driver(directory)
         driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
         game = self.game = driver.game
+        # The earlier discovery is a labelled fixture, just like the earlier
+        # quest completion and level-seven loadout used by this boss review.
+        if not game.character_abilities.has_weapon():
+            assert game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade')
+        assert game.character_abilities.learn_ability('caelan', 'aqua_edge')
+        assert game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
+                                         'battle_cleared': True, 'deferred': False})
         game.window = pygame.display.set_mode((960, 640), pygame.RESIZABLE)
         game.windowed_size = (960, 640)
         game.audio.set_text_scale(1)

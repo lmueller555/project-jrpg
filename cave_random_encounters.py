@@ -32,7 +32,7 @@ def _integer(value, low=0, high=UINT32):
 
 
 def _number(value, low=0., high=1e7):
-    return type(value) in (int, float) and math.isfinite(value) and low <= value <= high
+    return type(value) in (int, float) and low <= value <= high and math.isfinite(value)
 
 
 def _point(value):
@@ -237,14 +237,17 @@ class CaveRandomEncounters:
     # A short alias is convenient for authoring tools and tests.
     classify = region_at
 
-    def _select(self, position, region):
+    def _select(self, position, region, introductory=False):
         area = self.data['areas'][region['area']]
-        pick = self._unit()*100
-        formation = next(name for name,weight in area['weights'].items()
-                         if (pick := pick-weight) < 0)
+        if introductory:
+            formation = 'bat_pair'
+        else:
+            pick = self._unit()*100
+            formation = next(name for name,weight in area['weights'].items()
+                             if (pick := pick-weight) < 0)
         members = []
         for species in self.data['formations'][formation]:
-            low,high = area['levels'][species]
+            low,high = (2,2) if introductory else area['levels'][species]
             level = low+int(self._unit()*(high-low+1))
             members.append({'enemy_id':species,'level':level})
         seed = self._draw()
@@ -253,10 +256,11 @@ class CaveRandomEncounters:
                          'area':region['area'],'location':region['location'],
                          'battlefield':region['battlefield'],'formation':formation,
                          'members':members,'combat_seed':seed,'position':list(position)}
+        if introductory:self._pending['lesson'] = 'aqua_edge'
         self._remaining = 0.
         return self.pending
 
-    def _spend(self, distance, position, region):
+    def _spend(self, distance, position, region, introductory=False):
         if region is None or region['area'] is None:
             self._was_safe = True
             return None
@@ -265,17 +269,17 @@ class CaveRandomEncounters:
         if distance+1e-9 < self._remaining:
             self._remaining -= distance
             return None
-        return self._select(position,region)
+        return self._select(position,region,introductory)
 
-    def advance(self, distance, position, *, eligible=True):
+    def advance(self, distance, position, *, eligible=True, introductory=False):
         """Spend known travel within one region; ``travel`` also tracks crossings."""
-        if type(eligible) is not bool:raise ValueError('Invalid cave encounter eligibility')
+        if type(eligible) is not bool or type(introductory) is not bool:raise ValueError('Invalid cave encounter eligibility')
         if not _number(distance):raise ValueError('Invalid cave travel distance')
         point = _point(position)
         if point is None:raise ValueError('Invalid cave travel position')
         if self._pending is not None:return self.pending
         if not eligible or not distance:return None
-        return self._spend(distance,point,self.region_at(point))
+        return self._spend(distance,point,self.region_at(point),introductory)
 
     def _crossings(self, start, end):
         """Partition travel at real polygon/corridor boundaries, independent of FPS."""
@@ -303,7 +307,7 @@ class CaveRandomEncounters:
         return sorted(values)
 
     def travel(self, previous, current, *, eligible=True, scene_id=SCENE_ID,
-               distance_scale=1.):
+               distance_scale=1., introductory=False):
         """Count a collision-resolved path segment and interpolate its trigger feet.
 
         Callers must omit teleports and doorway placement. On a selected battle,
@@ -313,7 +317,7 @@ class CaveRandomEncounters:
         legs without interpolating through a blocked corner.
         """
         start,end = _point(previous),_point(current)
-        if (start is None or end is None or type(eligible) is not bool
+        if (start is None or end is None or type(eligible) is not bool or type(introductory) is not bool
                 or not _number(distance_scale, 1e-12, 1.)):
             raise ValueError('Invalid cave movement segment')
         if self._pending is not None:return self.pending
@@ -354,7 +358,7 @@ class CaveRandomEncounters:
                         point = candidate
                         break
             if actual is not None and actual['area'] is not None:region = actual
-            return self._select(point,region)
+            return self._select(point,region,introductory)
         return None
 
     def finish(self, receipt=None):
@@ -368,7 +372,9 @@ class CaveRandomEncounters:
         return True
 
     def valid_ticket(self, record):
-        if (not isinstance(record,dict) or set(record) != TICKET_FIELDS
+        intro = isinstance(record,dict) and record.get('lesson') == 'aqua_edge'
+        fields = TICKET_FIELDS | {'lesson'} if intro else TICKET_FIELDS
+        if (not isinstance(record,dict) or set(record) != fields
                 or type(record['version']) is not int or record['version'] != 1
                 or not isinstance(record['receipt'],str)
                 or re.fullmatch(r'cave:[0-9a-f]{8}:[1-9][0-9]{0,9}',record['receipt']) is None
@@ -381,13 +387,15 @@ class CaveRandomEncounters:
         region = self.region_at(record['position'])
         if region is None or any(record[k] != region[k] for k in ('area','location','battlefield')):return False
         area = self.data['areas'][record['area']]
-        if not area['weights'][record['formation']]:return False
+        if intro:
+            if record['formation'] != 'bat_pair':return False
+        elif not area['weights'][record['formation']]:return False
         members = record['members']
         species = self.data['formations'][record['formation']]
         if not isinstance(members,list) or len(members) != len(species):return False
         for member,expected in zip(members,species):
             if (not isinstance(member,dict) or set(member) != {'enemy_id','level'} or member['enemy_id'] != expected
-                    or not _integer(member['level'],*area['levels'][expected])):return False
+                    or not _integer(member['level'],*((2,2) if intro else area['levels'][expected]))):return False
         return True
 
     def to_dict(self):
@@ -437,6 +445,9 @@ class CaveRandomEncounters:
             if not owner._valid_state(record):return False
             if record['pending'] is None:return True
             player = data['player']
+            lesson = data.get('cave_lesson')
+            if (record['pending'].get('lesson') == 'aqua_edge'
+                    and isinstance(lesson, dict) and lesson.get('deferred') is True):return True
             return player['scene'] == SCENE_ID and player['position'] == record['pending']['position']
         except (TypeError,ValueError,KeyError,OSError):return False
 

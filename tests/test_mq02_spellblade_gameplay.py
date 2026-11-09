@@ -1,4 +1,4 @@
-"""MQ02's real weapon gift, consecutive focus attempts and durable discovery."""
+"""MQ02's Blue-only gift, failed Aqua and accidental durable Aether discovery."""
 from dataclasses import asdict
 import json
 import os
@@ -12,7 +12,6 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 
 import pygame
-from gear_state import REQUIRED_GEMS
 from main import Game
 from quests import MILL_QUEST
 import test_opening_dialogue_pass as opening
@@ -23,15 +22,16 @@ from test_mill_battle_gameplay import (
 
 
 WEAPON = 'caelan_gearblade'
-ATTEMPTS = ('nature_edge', 'aqua_edge', 'flame_edge')
+ATTEMPTS = ('aqua_edge',)
 
 
 def drive_spellblade_battle(game, command='attack', *, dismiss=True,
                             read_aftermath=False, on_step=None, on_frame=None,
-                            first='nature_edge', second='aqua_edge',
+                            first='aqua_edge', second=None,
                             stop_after_discovery=False):
     """Operate production menus; model fields are observed, never advanced here."""
-    assert first in ATTEMPTS and second in ATTEMPTS
+    # Legacy review callers may still provide first/second; Blue is now the
+    # only installed focus and one Aqua selection releases accidental Aether.
     scene, model = game.combat.scene, game.combat.model
     assert game.combat.kind == 'mill'
     assert model.spellblade_stage is not None
@@ -45,16 +45,6 @@ def drive_spellblade_battle(game, command='attack', *, dismiss=True,
 
     def choose(action):
         game.draw()
-        if action in ATTEMPTS and model.active_gem != REQUIRED_GEMS[action]:
-            # Lesson attempts use the same settled focus as ordinary Skills.
-            key(game, pygame.K_g)
-            for _ in range(4):
-                if scene.gear.preview_gem == REQUIRED_GEMS[action]:break
-                key(game, pygame.K_RIGHT)
-            key(game, pygame.K_RETURN)
-            game.update(.1, (0, 0), False)
-            assert model.active_gem == REQUIRED_GEMS[action] and not model.gear_settling
-            key(game, pygame.K_TAB)
         if action in (*ATTEMPTS, 'aether_edge'):
             if scene.command_menu != 'skills':
                 assert not model.command_reason('skills')
@@ -101,8 +91,7 @@ def drive_spellblade_battle(game, command='attack', *, dismiss=True,
             stage = model.spellblade_stage
             if stage in ('opening', 'guard', 'charge'):
                 choose('guard')
-            elif stage == 'first_edge':choose(first)
-            elif stage == 'second_edge':choose(second)
+            elif stage == 'first_edge':choose('aqua_edge')
             else:
                 if 'normal' not in emitted:
                     emitted.add('normal');frame('normal_controls')
@@ -185,6 +174,8 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
         self.assertTrue(game.mill_quest.active)
         self.assertEqual(game.inventory.quantity(WEAPON), 1)
         self.assertTrue(game.character_abilities.has_weapon())
+        self.assertEqual(game.character_abilities.owned_gems(), ('water',))
+        self.assertFalse(game.character_abilities.set_active_gem('caelan', 'fire'))
         self.assertTrue(game.character_abilities.starter_skills_pending())
         self.assertNotIn('aether_edge', game.character_abilities.known_abilities())
         game = self.reload(driver)
@@ -196,15 +187,15 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
         self.assertFalse(game.mill_gift.active)
         self.assertEqual(game.inventory.quantity(WEAPON), 1)
 
-    def test_guard_then_failed_focus_then_next_focus_discovers_and_checkpoints_edge(self):
+    def test_guard_then_failed_aqua_automatically_discovers_and_checkpoints_aether_edge(self):
         driver = self.driver();game = driver.g
         self.start_battle(driver)
         entry_mp = game.combat.model.player.mp
         scene = drive_spellblade_battle(game, stop_after_discovery=True,
-                                        first='flame_edge', second='nature_edge')
+                                        first='aqua_edge')
         actions = [action for action in scene.review_trace if action['actor'] == 'player']
         self.assertEqual([action['action'] for action in actions[:3]],
-                         ['guard', 'flame_edge', 'aether_edge'])
+                         ['guard', 'aqua_edge_attempt', 'aether_edge'])
         self.assertEqual(actions[1]['damage'], 0)
         self.assertGreater(actions[2]['damage'], 0)
         self.assertTrue(scene.model.aether_edge_discovered)
@@ -263,8 +254,7 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
         self.assertTrue(game.character_abilities.starter_skills_pending())
 
     def test_unseeded_opening_both_venn_histories_finish_spellblade_repair_and_aldric_handoff(self):
-        for method, first, second in (('magicks', 'nature_edge', 'aqua_edge'),
-                                       ('tools', 'aqua_edge', 'flame_edge')):
+        for method in ('magicks', 'tools'):
             with self.subTest(method=method):
                 driver = self.driver(method=method, seeded=False)
                 game = driver.g
@@ -280,7 +270,6 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
                 battles = []
 
                 def battle(*args, **kwargs):
-                    kwargs.update(first=first, second=second)
                     scene = drive_spellblade_battle(*args, **kwargs)
                     battles.append(scene)
                     return scene

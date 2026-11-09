@@ -166,13 +166,15 @@
     },
     "aqua_edge": {
       "name": "Aqua Edge",
-      "kind": "failed_edge",
-      "potency": 0,
-      "mp_cost": 0,
+      "kind": "spellblade",
+      "potency": 1,
+      "magical_potency": 0.5,
+      "mp_cost": 4,
       "duration": 0.9,
       "impact_at": 0.5,
-      "animation": "cast",
-      "target": "self"
+      "animation": "attack",
+      "target": "opponent",
+      "element": "water"
     },
     "flame_edge": {
       "name": "Flame Edge",
@@ -290,6 +292,16 @@
       "duration": 1.6,
       "impact_at": 0.0,
       "animation": "exhausted"
+    },
+    "aqua_edge_attempt": {
+      "name": "Aqua Edge",
+      "kind": "failed_edge",
+      "potency": 0,
+      "mp_cost": 0,
+      "duration": 0.9,
+      "impact_at": 0.5,
+      "animation": "cast",
+      "target": "self"
     }
   }
 }

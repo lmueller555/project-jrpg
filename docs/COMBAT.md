@@ -161,8 +161,9 @@ or click through a result into exploration. The UI supports the minimum
 
 ## Caelan’s gear focus
 
-The wheel holds Nature, Water, Fire and Ice gems. The fixed catch at twelve
-o’clock determines the settled focus. A short snap confirms seating; gear
+Mira’s gift installs only the Blue Water gem in the wheel; its other sockets
+are visibly empty and cannot be selected. Owned gems and the settled focus are
+separate saved facts. The fixed catch at twelve o’clock determines the focus. A short snap confirms seating; gear
 rotation consumes no turn, ATB or MP. Caelan can adjust it while charging and
 while deciding an action. His confirmed action captures its focus and locks
 rotation until that action finishes.
@@ -172,14 +173,13 @@ normally: an Overclocked Rivet charges at base × 1.5 × 0.25 while hovering.
 Ready decisions still pause every gauge completely. Attack animations, damage
 impact timing and audio retain their normal speed.
 
-Aether Edge works with every gem and remains non-elemental. Future learned
-Nature Edge, Aqua Edge and Flame Edge require their respective gems as well as
-normal weapon and MP requirements. Selecting a gem never teaches its skill.
-The Ice gem currently supplies a focus position without an initial combat skill.
-MQ02 temporarily exposes its three experimental Edges: the first matching
-attempt fails, the next matching attempt discovers Aether Edge, and only that
-technique remains learned afterward. The later water utility spell does not
-grant Aqua Edge.
+Aether Edge works with every owned focus and remains non-elemental. Aqua Edge
+requires the Blue gem, an equipped blade and its learned unlock. Selecting or
+owning a gem never teaches its skill. MQ02 exposes only the experimental Aqua
+attempt: it fails, then inadvertently releases Aether Edge automatically. The
+later water utility spell does not grant Aqua Edge. The first Sanctuary cave
+encounter teaches Aqua Edge separately; Red/White acquisitions remain future
+design work. Aether materials in inventory do not install gems.
 
 Seating triggers a mechanical catch, engraved energy chase and an elemental
 burst. Blade effects attach to authored per-frame guard and sword coordinates:
@@ -195,8 +195,9 @@ resize, dialogue and results cancel unfinished gestures safely. Reduced Motion
 retains gem identification and immediate visual seating while suppressing
 optional motion and bursts.
 
-See the [gear combat review](reviews/caelan_gear/README.md) for production MQ02
-and four-focus animation previews.
+The [gear combat review](reviews/caelan_gear/README.md) retains historical MQ02
+and four-focus previews from before Blue-only ownership. See
+[Caelan’s opening progression](CAELAN_AQUA_PROGRESSION.md) for current rules.
 
 ## Choreographed actions
 
@@ -245,6 +246,7 @@ Overclock retains its 0.50-second application and 0.90-second duration. See
 | Flee | Leave this test encounter safely | 0 | 0.70 / 0.35 seconds |
 | Aether Dart | Magical damage, potency 2; requires its learned unlock | 4 | 1.60 / 1.10 seconds |
 | Aether Edge | Immediate physical sword strike plus non-elemental Mag component; requires learned skill and equipped weapon | 4 | 2.00 / 1.00 seconds |
+| Aqua Edge | Physical sword strike plus Water Mag component; requires learned skill, equipped weapon and Blue gem | 4; introductory battle 0 | 2.00 / 1.00 seconds |
 
 Caelan is a Spellblade. Aether Edge is his only learned starter skill and appears under Skills after its MQ02 discovery. Before he has a weapon, Skills is greyed out with **Requires a weapon**. The direct strike combines physical potency 1 and Mag potency 0.5, sharing one variance roll and one per-hit cap. It does not enchant future attacks or grant charges. See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 
@@ -266,12 +268,12 @@ Mira starts with HP 150, MP 30 and 10 in every other rating, matching her level-
 
 ### Guided opening
 
-The battle model’s `spellblade_tutorial=True` enables stages `opening → guard → charge → first_edge → second_edge → complete`. The armed, still-learning Caelan is the guided actor:
+The battle model’s `spellblade_tutorial=True` enables the Guard, failed-Aqua and automatic-Aether sequence. The armed, still-learning Caelan is the guided actor:
 
 1. The visible charge tell leads to Guard and actual guarded charge resolution.
-2. His first Skills turn offers **Nature Edge**, **Aqua Edge** and **Flame Edge**. Any selection fails, spending ATB but no MP.
-3. Mira’s hurried instruction follows the failed resolution. On Caelan’s **next full ATB**, any elemental choice resolves as direct **Aether Edge**.
-4. At the second strike’s impact, `aether_edge_discovered` becomes true, the permanent technique is available in the battle and the temporary attempts disappear. Normal party commands resume.
+2. His first Skills turn offers only **Aqua Edge**. That attempt sputters without an MP penalty.
+3. Mira’s hurried instruction follows the failed resolution. The same attempted technique inadvertently follows through as direct **Aether Edge**, without another menu selection.
+4. At its impact, `aether_edge_discovered` becomes true. The 4-MP strike is learned and normal party commands resume. Aqua Edge remains unlearned until the cave.
 
 Back, submenu changes or unacknowledged prose do not advance a lesson. Actor switching and Flee are disabled only during this introductory sequence. Mira automatically covers with Guard. Rivet remains autonomous but takes at most three Piston Jab actions during the bounded lesson; its gauge is preserved and ordinary behavior resumes afterward. This gives the allies useful contributions without allowing their damage to skip the required beats. Existing non-Spellblade/legacy encounters keep their ordinary tutorial behavior.
 
@@ -295,6 +297,38 @@ dialogue cursor are not serialized. Older completed
 intake/repair saves preserve their progress through an explicit legacy bypass
 and receive no invented battle or reward.
 
+## Sanctuary cave Aqua lesson
+
+The first cave entrance with Mira’s Blade presents a short resonance scene:
+concentrated ambient aether lights its Blue gem and suggests that Caelan may be
+able to focus Aqua Edge here. The scene is acknowledged and saved separately
+from learning the technique.
+
+The first distance-triggered cave encounter is always **two level-two Cave
+Bats**, retaining its exact formation, battlefield and seed in a saved ticket.
+A guided opening gives conscious Caelan Skills → Aqua Edge, while allies,
+Rivet and enemy actions wait for the cast. Aqua Edge costs **0 MP throughout
+this introductory battle and its retries**, so no MP preparation or healing
+detour is required. At impact Aqua Edge is learned and checkpointed with
+current party resources; normal ATB then
+resumes. After clearing the encounter, ordinary casts cost 4 MP in every area.
+
+Aqua Edge uses the same physical potency 1 and magical potency 0.5 as Aether
+Edge, but only its magical component is **Water-aligned**. That component uses
+the target’s full 0–200% Water response, or heals the matching elemental target
+for its neutral-affinity value when absorbed. Its physical component remains
+physical. Guard and the existing recovery vulnerability continue to apply
+through the shared hit resolution. Elemental values are not revealed in the HUD.
+
+The introductory battle is cleared only by victory and its ordinary once-only
+award. Defeat or withdrawal preserves its exact ticket for retry, without
+unlearning a successful discovery. A deferred retry allows preparation and
+travel instead of immediately restarting combat. Caelan must be conscious,
+active and carrying the blade; no MP minimum is imposed. The first lesson takes
+priority over the miniboss, and normal weighted encounters begin after it clears.
+Older journeys with prior cave encounters migrate without replaying the lesson.
+See [save and migration details](CAELAN_AQUA_PROGRESSION.md).
+
 ## Cave Bat and the Bestiary
 
 The [Bestiary](BESTIARY.md) stores fixed authored encounters and computed
@@ -304,12 +338,11 @@ namespaced Bite/Gust actions, living-party target cycle and existing Bat art.
 Its 5 MP pays for two Gusts before free Bite fallback. The factory supports
 isolated combat without placing encounters or awarding live XP.
 
-The Cave Bat is distinct from the fixed test Bat below. The sanctuary cave
-remains closed pending its authored dungeon/quest work. Its complete elemental
-profile specifies Non-Elemental identity, Fire damage received at 200% and all
-other types at 100%, with no absorption. Elemental effects and low Stagger
-resistance do not affect battle until those mechanics are implemented; item
-drops have not yet been authored.
+The Cave Bat is distinct from the fixed test Bat below and appears in the
+continuous Sanctuary cave. Its complete elemental profile specifies
+Non-Elemental identity, Fire damage received at 200% and all other types at
+100%, with no absorption. Aqua Edge now reads its Water response during actual
+combat. Stagger and item drops remain future work.
 
 The Bestiary's [elemental design](BESTIARY.md#elemental-identity-and-relationships)
 uses Non-Elemental, Fire, Electric, Water, Ice, Nature, Wind, Holy and Ground.
@@ -317,8 +350,9 @@ Species store all nine damage percentages and matching-element absorption;
 unaligned creatures do not absorb Non-Elemental attacks. These internal data
 are hidden in ordinary combat. A creature's appearance, name, habitat and
 behavior should offer consistent clues. Edran's planned Study ability will be
-one of the limited ways to reveal the data directly; this authoring update does
-not add Study or affinity labels to the battle HUD.
+one of the limited ways to reveal the data directly. Aqua Edge applies the
+stored Water response, while Study and automatic HUD affinity labels remain
+unimplemented.
 
 ## Test Bat
 

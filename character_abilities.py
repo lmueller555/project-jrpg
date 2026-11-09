@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import re
 
-from gear_state import DEFAULT_GEM, valid_gem
+from gear_state import DEFAULT_GEM, GEM_ORDER, valid_gem
 from inventory import Inventory
 
 
@@ -114,6 +114,7 @@ class CharacterAbilities:
         self._learned_abilities = {}
         self._gear_focus = ({'caelan': DEFAULT_GEM}
                             if 'caelan' in self.characters else {})
+        self._gear_gems = ({'caelan': set()} if 'caelan' in self.characters else {})
 
     def _known_character(self, character_id):
         return isinstance(character_id, str) and character_id in self.characters
@@ -126,9 +127,26 @@ class CharacterAbilities:
     def set_active_gem(self, gem, character_id='caelan'):
         """Keep a valid settled focus without granting elemental knowledge."""
         if (not isinstance(character_id, str) or character_id not in self._gear_focus
-                or not valid_gem(gem)):
+                or not valid_gem(gem) or gem not in self.owned_gems(character_id)):
             return False
         self._gear_focus[character_id] = gem
+        return True
+
+    def owned_gems(self, character_id='caelan'):
+        """Installed focuses, independent of skill knowledge and raw materials."""
+        if not isinstance(character_id, str):return ()
+        owned = self._gear_gems.get(character_id, set())
+        return tuple(gem for gem in GEM_ORDER if gem in owned)
+
+    def grant_gem(self, gem, character_id='caelan'):
+        """Install a story-earned focus once; inventory materials never do this."""
+        if (not isinstance(character_id, str) or character_id not in self._gear_gems
+                or not valid_gem(gem)
+                or not self._characters[character_id]['first_weapon_acquired']
+                or gem != DEFAULT_GEM and DEFAULT_GEM not in self._gear_gems[character_id]
+                or gem in self._gear_gems[character_id]):
+            return False
+        self._gear_gems[character_id].add(gem)
         return True
 
     def known_abilities(self, character_id='caelan'):
@@ -223,6 +241,8 @@ class CharacterAbilities:
                    and character_id not in self._deferred_weapon_training)
         self._characters[character_id] = {'equipped_weapon': item_id,
                                           'first_weapon_acquired': True}
+        if character_id == 'caelan' and item_id == 'caelan_gearblade':
+            self._gear_gems[character_id].add(DEFAULT_GEM)
         if not learn_starter and not learned:
             self._deferred_weapon_training.add(character_id)
         elif learn_starter:
@@ -255,6 +275,8 @@ class CharacterAbilities:
             return False
         self._characters[character_id] = {'equipped_weapon': item_id,
                                           'first_weapon_acquired': True}
+        if character_id == 'caelan' and item_id == 'caelan_gearblade':
+            self._gear_gems[character_id].add(DEFAULT_GEM)
         return True
 
     def to_dict(self):
@@ -271,6 +293,11 @@ class CharacterAbilities:
         focus = {identifier: gem for identifier, gem in sorted(self._gear_focus.items())
                  if gem != DEFAULT_GEM}
         if focus:result['gear_focus'] = focus
+        # An explicit empty list distinguishes new unarmed journeys from older
+        # saves that predate focus ownership. Transient wheel state is omitted.
+        if self._gear_gems:
+            result['gear_gems'] = {identifier: list(self.owned_gems(identifier))
+                                   for identifier in sorted(self._gear_gems)}
         if self._learned_abilities:
             result['learned_abilities'] = {
                 identifier: sorted(abilities)
@@ -285,7 +312,7 @@ class CharacterAbilities:
         if (not isinstance(data, dict)
                 or not {'version', 'characters'} <= set(data)
                 or set(data) - {'version', 'characters', 'deferred_weapon_training', 'gear_focus',
-                               'learned_abilities'}
+                               'learned_abilities', 'gear_gems'}
                 or type(data['version']) is not int or data['version'] != 1
                 or not isinstance(data['characters'], dict)
                 or set(data['characters']) != set(self.characters)):
@@ -315,6 +342,32 @@ class CharacterAbilities:
                 or any(identifier != 'caelan' or identifier not in self.characters
                        or not valid_gem(gem) for identifier, gem in focus.items())):
             return False
+        gems = data.get('gear_gems')
+        if 'gear_gems' in data:
+            if (not isinstance(gems, dict) or set(gems) != set(self._gear_gems)
+                    or any(not isinstance(values, list)
+                           or any(not valid_gem(gem) for gem in values)
+                           or len(values) != len(set(values))
+                           or values != [gem for gem in GEM_ORDER if gem in values]
+                           or values and not data['characters'][identifier]['first_weapon_acquired']
+                           for identifier, values in gems.items())
+                    or any(gem not in gems.get(identifier, ())
+                           for identifier, gem in focus.items())
+                    or any(values and DEFAULT_GEM not in values for values in gems.values())
+                    or 'caelan' in gems
+                       and data['characters']['caelan']['first_weapon_acquired']
+                       and (data['characters']['caelan']['equipped_weapon'] == 'caelan_gearblade'
+                            or self.inventory.quantity('caelan_gearblade') > 0)
+                       and DEFAULT_GEM not in gems['caelan']):
+                return False
+        else:
+            # Older journeys displayed all sockets regardless of ownership.
+            # Keep earned techniques, but migrate their focus to the Blue gem
+            # that the story actually gives rather than invent later gems.
+            gems = {identifier: ([DEFAULT_GEM]
+                    if data['characters'][identifier]['first_weapon_acquired'] else [])
+                    for identifier in self._gear_gems}
+            focus = {}
         learned = data.get('learned_abilities', {})
         if (not isinstance(learned, dict)
                 or any(not self._known_character(identifier)
@@ -327,6 +380,7 @@ class CharacterAbilities:
         self._deferred_weapon_training = set(deferred)
         self._gear_focus = ({'caelan': focus.get('caelan', DEFAULT_GEM)}
                             if 'caelan' in self.characters else {})
+        self._gear_gems = {identifier: set(values) for identifier, values in gems.items()}
         self._learned_abilities = {identifier: set(abilities)
                                    for identifier, abilities in learned.items()}
         return True

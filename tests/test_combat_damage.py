@@ -183,13 +183,14 @@ class CombatDamageTests(unittest.TestCase):
             with self.subTest(bad=bad):
                 with self.assertRaises(ValueError):calculate_damage(10, 10, bad)
 
-    def test_affinity_allows_only_immunity_resistance_neutral_or_weakness(self):
-        for affinity, expected in ((0, 0), (.5, 500), (1, 1000), (2, 2000)):
+    def test_affinity_accepts_full_zero_to_double_range(self):
+        for affinity, expected in ((0, 0), (.25, 250), (.5, 500), (1, 1000), (1.5, 1500),
+                                   (1.375,1375), (2, 2000)):
             self.assertEqual(calculate_damage(100, 100, affinity=affinity), expected)
         for bad in (True, False, '.5', None, [], complex(1)):
             with self.subTest(bad=bad):
                 with self.assertRaises(TypeError):calculate_damage(10, 10, affinity=bad)
-        for bad in (-1, .25, 1.5, 3, float('nan'), float('inf')):
+        for bad in (-1, 2.001, 3, float('nan'), float('inf')):
             with self.subTest(bad=bad):
                 with self.assertRaises(ValueError):calculate_damage(10, 10, affinity=bad)
 

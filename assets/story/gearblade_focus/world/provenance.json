@@ -2,9 +2,9 @@
   "version": 1,
   "generated_with": "image_gen",
   "source": "assets/source/cinematics/gearblade_focus/water_generated.png",
-  "source_sha256": "05358527a4e9ba9bcd3351c09839a922f5980a7b544ca3f44955df73c3fee285",
+  "source_sha256": "44aeb3abf4a404904193f5c346ba28892eb21358e924edb8f9d110ba0c8d003d",
   "operation": "Register authored gearblade water and combat drawings without pose warping.\n\nSources are image_gen-authored equal-cell atlases. Only alpha cleanup, uniform\nnearest-neighbor scaling, palette registration and fixed foot anchoring occur.\nThe combat canvas has extra blade margin while retaining the original body\nheight and an explicit new anchor; no equipment is mirrored.",
-  "fixed_scale": 0.10897435897435898,
+  "fixed_scale": 0.10725552050473186,
   "frames": [
     {
       "file": "raise_hand_01.png",
@@ -15,18 +15,18 @@
         444,
         444
       ],
-      "sha256": "02764f4f401fa1f52978b04c4ca8e74146be7fd8ee7f961e577c86c8827b5276",
+      "sha256": "e5962d49fdb79b89aac8f692cb5b86b7ee11657398812c516a7075c4551a79f8",
       "source_bounds": [
-        145,
+        146,
         76,
         345,
-        394
+        393
       ],
       "source_foot": [
-        186.0,
-        390
+        187.0,
+        392
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
         16,
         8
@@ -41,18 +41,18 @@
         887,
         444
       ],
-      "sha256": "f5d9a57e8894af0dac7bdf2f8a369b3529e526233d3faa32976805bd0942dc88",
+      "sha256": "7a77e1b3cf3cbb892568e2659ea157fc3d31e1129d12f07b471e07ed050e0cb4",
       "source_bounds": [
-        145,
-        75,
+        146,
+        76,
         343,
-        394
+        393
       ],
       "source_foot": [
-        185.0,
-        390
+        187.0,
+        392
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
         16,
         8
@@ -67,18 +67,18 @@
         1330,
         444
       ],
-      "sha256": "7e9d853f68992680b4021c856e4679e7001adbf8944ff953057a1b3421d14943",
+      "sha256": "b09f70e459ae187018eb2a1219e6338c7c5ff3f87de8b031ecbc6df895ead983",
       "source_bounds": [
-        145,
-        75,
+        146,
+        76,
         334,
-        394
+        393
       ],
       "source_foot": [
         186.0,
-        390
+        392
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
         16,
         8
@@ -93,18 +93,18 @@
         1774,
         444
       ],
-      "sha256": "22f60e5d220cd6d25af47438c310dc2e9f3a74af39a000d4f26fe23368848e63",
+      "sha256": "76e8c5759fcbdbca38031b2135d8456a7cbad9c865a474d9b0c51204424e48bf",
       "source_bounds": [
-        146,
+        147,
         76,
-        336,
-        394
+        337,
+        393
       ],
       "source_foot": [
-        186.0,
-        390
+        188.0,
+        392
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
         16,
         8
@@ -119,20 +119,20 @@
         444,
         887
       ],
-      "sha256": "788e2930ca883c661c3b72191751bf529e581556657debceb551214a7a99210e",
+      "sha256": "bd691ec42bd83551a55988da667875ffc458d592c9c5dedf66cdeed31d124c65",
       "source_bounds": [
-        144,
+        146,
         75,
-        336,
-        393
+        335,
+        394
       ],
       "source_foot": [
         186.0,
-        389
+        393
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
-        15,
+        16,
         8
       ]
     },
@@ -145,21 +145,21 @@
         887,
         887
       ],
-      "sha256": "22836c30eb545e1f127c6f4c20865cf59351e8ed91527ac9a466b124a39af979",
+      "sha256": "c3a7e3d512a936a53afde2574216f198c3a0ea695652d7ccdeb7655893d0fe14",
       "source_bounds": [
-        145,
-        75,
-        334,
+        146,
+        76,
+        335,
         394
       ],
       "source_foot": [
-        185.0,
+        186.0,
         393
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
         16,
-        7
+        8
       ]
     },
     {
@@ -171,10 +171,10 @@
         1330,
         887
       ],
-      "sha256": "9978b21ba8650f585397dba96488f189dc4719be392736ea9f9dc2cfb45c4a1e",
+      "sha256": "d8e196c91bc361fbf4189c9a63206deb43abc51d8e90faffa2a2a2149bc64965",
       "source_bounds": [
         145,
-        75,
+        76,
         339,
         394
       ],
@@ -182,10 +182,10 @@
         186.0,
         393
       ],
-      "scale": 0.10897435897435898,
+      "scale": 0.10725552050473186,
       "registration": [
         16,
-        7
+        8
       ]
     },
     {
@@ -197,21 +197,21 @@
         1774,
         887
       ],
-      "sha256": "3990832e325b942608feebacfeaaac33df344eb5e31ccdfdec0d1980baef0e2e",
+      "sha256": "a5af952db1a46904591f108c1836194f79ab2fbc294f597f612b47698b76ad1e",
       "source_bounds": [
-        146,
-        75,
-        347,
-        394
-      ],
-      "source_foot": [
-        186.0,
+        147,
+        76,
+        345,
         393
       ],
-      "scale": 0.10897435897435898,
+      "source_foot": [
+        187.0,
+        392
+      ],
+      "scale": 0.10725552050473186,
       "registration": [
         16,
-        7
+        8
       ]
     }
   ]

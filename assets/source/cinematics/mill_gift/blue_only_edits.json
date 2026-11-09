@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "tool": "image_gen",
+  "reference_commit": "c4d250401fcc24802f29e2d2814cf210ca2d6dc4",
+  "operation": "Edit each existing authored source image to retain its blue Water gem and replace green, red and white gemstone interiors with empty recessed brass sockets. Preserve original layout, poses, registration, palette and sword form. Original reference images remain available at reference_commit; these files are edited sources, not unmodified originals.",
+  "sources": [
+    {
+      "source": "assets/source/cinematics/mill_gift/weapon_generated.png",
+      "original_sha256": "69ade5b923915c3d44f45788c4901c1ac6308ac40584cb037cd8806f563d09b5",
+      "edited_sha256": "286f958a88d386ec7d208cd7c63949bb3fe91db7eb85606bd8269a3ac254af41"
+    },
+    {
+      "source": "assets/source/cinematics/mill_gift/handoff_generated.png",
+      "original_sha256": "c9b1f6d4b6b6ed2998b6eea049953330a1b46e2aed7e8a97537a29de6a8974ff",
+      "edited_sha256": "14cd43bba94af438c5feae1936215687dc03f3c36327bebed997d69993d6b2cb"
+    },
+    {
+      "source": "assets/source/cinematics/mill_gift/gear_hands_generated.png",
+      "original_sha256": "af3f6c4067abe01fb0a3fb443ac34a9009972cce425d99276f7c04d9028e2a47",
+      "edited_sha256": "4d214829589ceb99571ef9e84c3adeab894df78e1baea69597e63fd0b47dbe55"
+    },
+    {
+      "source": "assets/source/cinematics/gearblade_focus/water_generated.png",
+      "original_sha256": "05358527a4e9ba9bcd3351c09839a922f5980a7b544ca3f44955df73c3fee285",
+      "edited_sha256": "44aeb3abf4a404904193f5c346ba28892eb21358e924edb8f9d110ba0c8d003d"
+    }
+  ]
+}

@@ -64,6 +64,7 @@ from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
 from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave
 from cave_random_encounters import CaveRandomEncounters
+from cave_lesson import CaveLesson
 from sanctuary_boss import SanctuaryBoss
 
 ROOT=Path(__file__).resolve().parent
@@ -538,6 +539,7 @@ class Game:
         self.sanctuary_relief=SanctuaryRelief(self)
         self.sanctuary_cave=SanctuaryCave(self)
         self.cave_random_encounters=CaveRandomEncounters()
+        self.cave_lesson=CaveLesson(self)
         self.sanctuary_boss=SanctuaryBoss(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
@@ -588,6 +590,7 @@ class Game:
                            'inventory':self.inventory.to_dict(),
                            'sanctuary_cave':self.sanctuary_cave.to_dict(),
                            'cave_encounter_pending':self.cave_random_encounters.pending,
+                           'cave_lesson':self.cave_lesson.to_dict(),
                            'sanctuary_boss':self.sanctuary_boss.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'character_levels':self.character_progression.to_dict(),
@@ -622,6 +625,17 @@ class Game:
             if self.quests.objective_status(quest,objective)=='completed':
                 self.inventory.deliver(quest,objective,delivery['recipient'])
         self.character_abilities.reconcile_equipment()
+        self._migrate_legacy_blade()
+
+    def _migrate_legacy_blade(self, legacy_bypass=None):
+        """Restore the completed gift omitted by supported pre-weapon MQ02 saves."""
+        if legacy_bypass is None:legacy_bypass=getattr(self.mill_quest,'legacy_bypass',False)
+        owner=self.character_abilities
+        acquired=owner.to_dict()['characters']['caelan']['first_weapon_acquired']
+        if (legacy_bypass and self.quests.status(MILL_QUEST)=='completed'
+                and not acquired and not self.inventory.quantity('caelan_gearblade')):
+            return owner.acquire_weapon('caelan','caelan_gearblade',learn_starter=True)
+        return False
 
     def accept_quest(self,identifier):
         """Update quest and supplies together, before the scene checkpoints."""
@@ -675,6 +689,7 @@ class Game:
                SanctuaryCave.valid_journey(data) and
                SanctuaryBoss.valid_journey(data) and
                CaveRandomEncounters.valid_journey(data) and
+               CaveLesson.valid_journey(data) and
                ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
                CharacterProgression.valid_journey(data) and
                BattleRewards.valid_journey(data) and
@@ -838,7 +853,9 @@ class Game:
         if data is not None and 'battle_rewards' in data:
             self.battle_rewards.restore(data['battle_rewards'])
         self.character_abilities=CharacterAbilities(self.inventory)
-        if data is not None:self.character_abilities.restore(data.get('character_abilities'))
+        if data is not None:
+            self.character_abilities.restore(data.get('character_abilities'))
+            self._migrate_legacy_blade((data.get('mill_quest') or {}).get('legacy_bypass',False))
         self.bot_loadouts=BotLoadouts()
         if data is not None and 'bot_loadouts' in data:self.bot_loadouts.restore(data['bot_loadouts'])
         self.overworld_travel.restore(data.get('overworld') if data else None)
@@ -850,6 +867,8 @@ class Game:
         if not self.cave_random_encounters.restore(data.get('cave_random_encounters') if data else None):
             return False
         if not self.sanctuary_boss.restore(data.get('sanctuary_boss') if data else None):return False
+        if not self.cave_lesson.restore(data.get('cave_lesson') if data else None,
+                                        legacy_journey=data):return False
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -927,8 +946,12 @@ class Game:
                 self.save_error='The saved boss encounter could not be restored.'
                 self.on_title=True
                 return False
-        elif self.cave_random_encounters.pending is not None:
-            if not self.combat.start_cave(self.cave_random_encounters.pending, restoring=True):
+        elif (self.cave_random_encounters.pending is not None
+                and not self.cave_lesson.deferred):
+            ticket=self.cave_random_encounters.pending
+            if self.cave_lesson.is_intro(ticket) and self.cave_lesson.ready_reason():
+                self.cave_lesson.defer(ticket)
+            elif not self.combat.start_cave(ticket, restoring=True):
                 self.save_error='The saved cave encounter could not be restored.'
                 self.on_title=True
                 return False
@@ -951,6 +974,7 @@ class Game:
               'inventory':self.inventory.to_dict(),
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
+              'cave_lesson':self.cave_lesson.to_dict(),
               'sanctuary_boss':self.sanctuary_boss.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'character_levels':self.character_progression.to_dict(),
@@ -1237,6 +1261,7 @@ class Game:
             if event.type==pygame.QUIT:
                 self.save_progress()
                 self.combat.stop_audio()
+                self.cave_lesson.release_pose()
                 self.music.stop()
                 return False
             if event.type==pygame.WINDOWFOCUSLOST:
@@ -1379,7 +1404,11 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
-                    if self.sanctuary_boss.interact():
+                    if self.cave_lesson.interact():
+                        advanced=True
+                        resumed=True
+                        continue
+                    if not self.cave_lesson.needs_intro and self.sanctuary_boss.interact():
                         advanced=True
                         resumed=True
                         continue
@@ -1424,6 +1453,9 @@ class Game:
                 and not self.on_title and self._music_focused
                 and not self.combat.active and not self.social.locked
                 and self.sanctuary_boss.pending is None
+                and not self.cave_lesson.deferred
+                and (not self.cave_lesson.needs_intro or
+                     self.cave_lesson.resonance_seen and not self.cave_lesson.ready_reason())
                 and not self.social.active and not self.map_open
                 and not self.quest_ui.journal_open and not self.household_action
                 and not self.transfer_cooldown and not self.opening_fade
@@ -1442,9 +1474,14 @@ class Game:
             trace=self.player.motion_trace
             for previous,current,weight in zip(trace,trace[1:],self.player.motion_weights):
                 ticket=self.cave_random_encounters.travel(previous,current,
-                    scene_id=self.world.data['id'],distance_scale=weight)
+                    scene_id=self.world.data['id'],distance_scale=weight,
+                    introductory=self.cave_lesson.needs_intro)
                 if ticket is not None:break
         if ticket is None:return False
+        if self.cave_lesson.is_intro(ticket) and self.cave_lesson.ready_reason():
+            self.cave_lesson.defer(ticket)
+            self.save_progress()
+            return False
         self.player.position.update(ticket['position'])
         self.player.moving=self.player.running=False
         self.player.walk_ms=0.0
@@ -1537,11 +1574,14 @@ class Game:
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
         direction=(0,0) if (self.map_open or self.quest_ui.journal_open or
                            self.opening.locks_player or self.household_action or self.opening_fade
-                           or self.sanctuary_boss.locks_player) else direction
+                           or self.sanctuary_boss.locks_player or self.cave_lesson.locks_player) else direction
         if not self.opening.controls_player:
             previous=self.player.position.copy()
+            if self.cave_lesson.update(seconds):
+                self.opening_audio.set_paused(True)
+                return
             self.player.update(direction,seconds,self.world,bool(running))
-            if self.sanctuary_boss.update(seconds):
+            if not self.cave_lesson.needs_intro and self.sanctuary_boss.update(seconds):
                 self.opening_audio.set_paused(True)
                 return
             if self._advance_cave_encounters():
@@ -1737,7 +1777,8 @@ class Game:
         display=self.nearby_world_map()
         hint=('E: '+display['label']) if display is not None else ''
         reserve=getattr(self,'sanctuary_reserve',None)
-        hint=(hint or self.overworld_travel.interaction_hint() or self.sanctuary_boss.interaction_hint() or
+        hint=(hint or self.overworld_travel.interaction_hint() or self.cave_lesson.interaction_hint() or
+              (self.sanctuary_boss.interaction_hint() if not self.cave_lesson.needs_intro else '') or
               self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
               self.sanctuary_relief.interaction_hint() or
@@ -1807,6 +1848,7 @@ class Game:
             self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False,
                             party_actors=self.party_travel.actors())
         else:self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
+        self.cave_lesson.draw_world(self.canvas,camera)
         self.combat.draw_world(self.canvas,camera)
         self.opening.draw_world(self.canvas,camera)
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
@@ -1874,6 +1916,7 @@ def main(argv=None):
     finally:
         game.save_progress()
         game.opening_audio.reset()
+        game.cave_lesson.release_pose()
         game.music.stop()
         pygame.quit()
     return 0
