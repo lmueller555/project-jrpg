@@ -52,7 +52,7 @@ class EnemyCombatDesignTests(unittest.TestCase):
 
     def test_invalid_envelopes_requirements_and_references_fail_without_mutation(self):
         for field, value in (
-                ('status', 'ready'), ('requirements', []),
+                ('status', 'unsupported'), ('requirements', []),
                 ('requirements', ['party_wide_damage']*3),
                 ('requirements', ['party_wide_damage', [], 'guaranteed_target_response']),
                 ('actions', {}), ('actions', []), ('extra', True)):

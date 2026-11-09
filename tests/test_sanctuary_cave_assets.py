@@ -99,7 +99,8 @@ class CaveAssetTests(unittest.TestCase):
                          space['center'][1]+radius*math.sin(math.radians(angle)))
                 self.assertTrue(self.world.can_stand(point), (space['id'], point))
         arena = self.cave['arena']
-        self.assertEqual(arena['status'], 'reserved_future_miniboss')
+        self.assertEqual(arena['status'], 'story_boss')
+        self.assertEqual((arena['enemy_id'], arena['level']), ('vespermaw', 7))
         x, y, width, height = arena['bounds']
         self.assertGreaterEqual(width, 300)
         self.assertGreaterEqual(height, 180)

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 from dataclasses import dataclass
+from fractions import Fraction
 import json
 import math
 from pathlib import Path
@@ -71,8 +72,8 @@ def load_actions(data=None):
                 or set(action) != expected_fields
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant', 'haste', 'spellblade', 'failed_edge')
-                or action['target'] not in ('opponent', 'self', 'none', 'owned_bot')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'haste', 'spellblade', 'failed_edge')
+                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'owned_bot')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
                 or not _number(action['impact_at'], 0, action['duration'])
@@ -85,7 +86,8 @@ def load_actions(data=None):
                     or action['element'] not in ELEMENT_IDS):
                 raise ValueError('Invalid battle action element')
         if action['kind'] in ('physical', 'magical', 'spellblade'):
-            if action['potency'] <= 0 or action['target'] != 'opponent':
+            if (action['potency'] <= 0 or action['target'] not in ('opponent', 'all_opponents')
+                    or action['kind'] == 'spellblade' and action['target'] != 'opponent'):
                 raise ValueError('Invalid damaging action')
             if action['kind'] == 'spellblade' and not _number(action['magical_potency'], .001):
                 raise ValueError('Invalid spellblade component')
@@ -101,7 +103,7 @@ def load_actions(data=None):
                     or not _number(action['rate_multiplier'], 1.001, 10)):
                 raise ValueError('Invalid bot haste')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
-              or action['target'] != ('self' if action['kind'] in ('guard', 'prepare', 'failed_edge') else 'none')):
+              or action['target'] != ('self' if action['kind'] in ('guard', 'prepare', 'recover', 'failed_edge') else 'none')):
             raise ValueError('Invalid utility action')
     if not set(PLAYER_ACTIONS+SUPPORTED_LEARNED_ACTIONS+SUPPORTED_SKILL_ACTIONS) <= set(data['actions']):
         raise ValueError('Missing player battle action')
@@ -235,6 +237,7 @@ class BattleAction:
     active_gem: str | None = None
     choreography: str | None = None
     weapon_equipped: bool = False
+    targets: tuple[str, ...] = ()
 
 
 @dataclass
@@ -247,6 +250,9 @@ class EnemyState:
     target_index: int = 0
     action_index: int = 0
     telegraphed_target: str | None = None
+    design: dict | None = None
+    response_actions: int = 0
+    vulnerable: bool = False
 
 
 def _primary_enemy_state(field):
@@ -278,13 +284,18 @@ class BattleModel:
             raise ValueError('Bestiary enemy combat implementation is pending')
         if record['metadata']['presentation_pending']:
             raise ValueError('Bestiary enemy presentation is pending')
-        if record['fighting_style'] not in (None, 'standard_attacks',
-                                            'physical_magical_alternation', 'magical_offense'):
+        design = record['metadata'].get('combat_design')
+        designed = design is not None and design['status'] == 'ready'
+        if (record['fighting_style'] not in (None, 'standard_attacks',
+                                            'physical_magical_alternation', 'magical_offense')
+                and not (designed and record['fighting_style'] == 'telegraphed_windup')):
             raise ValueError('Unsupported Bestiary fighting style')
         behavior = record['behavior']
         if behavior is not None and behavior['targeting'] != 'cycle_living_party':
             raise ValueError('Unsupported Bestiary targeting')
         preparations = {}
+        if designed:
+            preparations[design['windup']['prepare_action']] = design['windup']['attack_action']
         if record['fighting_style'] == 'magical_offense':
             for index, identifier in enumerate(behavior['sequence']):
                 action = actions[identifier]
@@ -327,6 +338,7 @@ class BattleModel:
         model._enemy_behavior = deepcopy(behavior)
         model._enemy_style = record['fighting_style']
         model._enemy_preparations = preparations
+        model._enemy_states['enemy'].design = deepcopy(record['metadata'].get('combat_design'))
         model.enemy_records['enemy'] = model.enemy_bestiary_record
         return model
 
@@ -355,6 +367,10 @@ class BattleModel:
                                  actions=actions)
             cls._prepared_spells(record, actions)
             records.append(record)
+        if any(record['metadata'].get('combat_design', {}).get('status') == 'ready'
+               and record['metadata']['combat_design']['encounter']['formation_size'] != len(records)
+               for record in records):
+            raise ValueError('Story boss requires its authored solo formation')
         first = records[0]
         model = cls.from_bestiary(player_attributes, first['id'], first['level'],
                                   bestiary_data=bestiary_data, **options)
@@ -370,6 +386,7 @@ class BattleModel:
             model._enemy_states[identifier] = EnemyState(
                 behavior=deepcopy(record['behavior']), style=record['fighting_style'],
                 preparations=cls._prepared_spells(record, actions),
+                design=deepcopy(record['metadata'].get('combat_design')),
                 target_index=(index-1) % len(model.party))
         model.enemies = tuple(enemies)
         model.enemy_xp_reward = sum(record['xp_reward'] or 0 for record in records)
@@ -578,6 +595,16 @@ class BattleModel:
                 for identifier, state in self._enemy_states.items()
                 if state.prepared_action is not None}
 
+    @property
+    def enemy_recovery_states(self):
+        return {identifier: state.design['recovery']['damage_taken_multiplier']
+                for identifier, state in self._enemy_states.items()
+                if state.design is not None and state.vulnerable}
+
+    @property
+    def flee_allowed(self):
+        return not any(state.design is not None for state in self._enemy_states.values())
+
     def enemy_record(self, identifier='enemy'):
         return self.enemy_records.get(identifier)
 
@@ -738,6 +765,8 @@ class BattleModel:
         if (actor is None or not isinstance(identifier, str)
                 or identifier not in self.available_actions(actor.identifier)):
             return 'This action is not available.'
+        if identifier == 'flee' and not self.flee_allowed:
+            return 'Cannot flee this boss battle.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
         if actor.identifier == 'player' and self.gear_settling:
@@ -799,8 +828,42 @@ class BattleModel:
                 continue
             if not any(member.identifier == state.telegraphed_target for member in living):
                 state.telegraphed_target = self._enemy_target(spell, enemy.identifier)
-                if casting and not self.current_action.resolved:
+                if state.design is not None:
+                    state.response_actions = 0
+                    self._warn_target(enemy.identifier, state.telegraphed_target, retargeted=True)
+                if casting and state.design is not None and not self.current_action.resolved:
+                    # A target lost during the leap cannot turn its replacement
+                    # into an unannounced hit. Restart the held strike only
+                    # after the replacement has had its own command opportunity.
+                    enemy.mp = min(enemy.max_mp, enemy.mp+self.actions[spell]['mp_cost'])
+                    enemy.atb = 1.0
+                    state.action_index = state.behavior['sequence'].index(spell)
+                    self.last_action, self.current_action = self.current_action, None
+                    self.phase = 'charging'
+                elif casting and not self.current_action.resolved:
                     self.current_action.target = state.telegraphed_target
+
+    def _warn_target(self, enemy_actor, target, *, retargeted=False):
+        state = self._enemy_states[enemy_actor]
+        member = self.combatant(target)
+        if member is None:return
+        prepare = state.design['windup']['prepare_action']
+        self.message = self.combatant(enemy_actor).name+' gathers resonance toward '+member.name+'.'
+        self.events.append({'type': 'telegraph', 'actor': enemy_actor,
+                            'action': prepare, 'target': target,
+                            'prepared_action': state.prepared_action,
+                            'hold_after': 0 if retargeted else
+                                self.actions[prepare]['duration']-self.actions[prepare]['impact_at'],
+                            'retargeted': retargeted})
+
+    def _enemy_response_pending(self, enemy_actor):
+        state = self._enemy_states[enemy_actor]
+        if state.design is None:return False
+        windup = state.design['windup']
+        next_action = state.behavior['sequence'][state.action_index % len(state.behavior['sequence'])]
+        return (next_action == windup['attack_action']
+                and state.prepared_action == next_action
+                and state.response_actions < windup['minimum_target_actions'])
 
     def _enemy_target(self, identifier, enemy_actor='enemy'):
         living = [member for member in self.party if member.hp]
@@ -830,11 +893,22 @@ class BattleModel:
         actor = self.combatant(actor_id)
         record = self.actions[identifier]
         enemy_actor = self.is_enemy(actor_id)
+        if not enemy_actor and self._party_actor(actor_id) is not None:
+            for state in self._enemy_states.values():
+                if state.design is not None and state.telegraphed_target == actor_id:
+                    state.response_actions += 1
+        if enemy_actor:
+            state = self._enemy_states[actor_id]
+            if (state.design is not None and state.vulnerable
+                    and identifier == state.design['recovery']['ends_before_action']):
+                state.vulnerable = False
+                self.events.append({'type': 'recovery_ended', 'actor': actor_id, 'action': identifier})
         if not isinstance(actor, BotUnit):actor.mp -= record['mp_cost']
         actor.atb = 0.0
         target = (self._enemy_target(identifier, actor_id) if enemy_actor
                   else self._living_target(target_id))
         if record['target'] == 'self':target = actor_id
+        elif record['target'] == 'all_opponents':target = 'all_opponents'
         elif record['target'] == 'none':target = None
         elif record['target'] == 'owned_bot':
             bot = self.active_bot(actor_id)
@@ -854,6 +928,9 @@ class BattleModel:
                                           active_gem=self.active_gem if actor_id == 'player' else None,
                                           choreography=identifier if timing else None,
                                           weapon_equipped=self.weapon_equipped if actor_id == 'player' else False)
+        if target == 'all_opponents':
+            opponents = self.party if enemy_actor else self.enemies
+            self.current_action.targets = tuple(member.identifier for member in opponents if member.hp)
         self.phase = 'acting'
         self.message = actor.name+' uses '+record['name']+'.'
         self.events.append({'type': 'action_started', 'actor': actor_id,
@@ -863,6 +940,7 @@ class BattleModel:
         enemy = self.combatant(enemy_actor)
         if enemy is None or not enemy.hp:return
         state = self._enemy_states[enemy_actor]
+        if self._enemy_response_pending(enemy_actor):return False
         choices = (state.behavior['sequence'] if state.behavior is not None
                    else self.enemy_definitions[enemy_actor]['abilities'])
         if self.spellblade_guided:
@@ -870,6 +948,10 @@ class BattleModel:
                           'tusker_charge' if self.spellblade_stage == 'charge' else 'tusk_strike')
         else:
             identifier = choices[state.action_index % len(choices)]
+            if (state.design is not None and identifier == state.design['windup']['attack_action']
+                    and state.prepared_action != identifier):
+                state.action_index = choices.index(state.design['windup']['prepare_action'])
+                identifier = choices[state.action_index]
             state.action_index += 1
         prepared_spell = state.preparations.get(identifier)
         if (prepared_spell is not None
@@ -906,6 +988,7 @@ class BattleModel:
             member = self.combatant(target)
             if prepared_spell is not None:
                 state.prepared_action = prepared_spell
+                state.response_actions = 0
                 self.message = actor.name+' gathers charge toward '+member.name+'.'
             else:self.message = actor.name+' lowers its head toward '+member.name+'.'
             self.events.append({'type': 'telegraph', 'actor': action.actor,
@@ -914,6 +997,9 @@ class BattleModel:
                                     'hold_after': action.duration-action.impact_at}
                                    if prepared_spell else {})})
             if self.spellblade_stage == 'opening':self.spellblade_stage = 'guard'
+        elif action.kind == 'recover':
+            self.message = actor.name+' is exhausted.'
+            self.events.append({'type': 'recover', 'actor': action.actor, 'action': action.action})
         elif action.kind == 'failed_edge':
             self.message = 'The chosen focus flickers; the elemental strike fails.'
             self.spellblade_stage = 'second_edge'
@@ -937,46 +1023,34 @@ class BattleModel:
                                     'remaining_turns': bot.haste_turns,
                                     'rate_multiplier': bot.haste_rate_multiplier})
         else:
-            target = self.combatant(action.target)
-            if target is None or not target.hp:
-                action.target = (self._enemy_target(action.action, action.actor)
-                                 if self.is_enemy(action.actor) else self._living_target())
+            if self.actions[action.action]['target'] == 'all_opponents':
+                opponents = self.party if self.is_enemy(action.actor) else self.enemies
+                targets = tuple(member for member in opponents if member.hp)
+                action.targets = tuple(member.identifier for member in targets)
+                action.damage = sum(self._damage_target(action, actor, target) for target in targets)
+                side = 'the party' if self.is_enemy(action.actor) else 'the enemies'
+                self.message = actor.name+' strikes '+side+' with '+action.name+'.'
+            else:
                 target = self.combatant(action.target)
-            if target is None:
-                self._pending_outcome = 'defeat' if self.is_enemy(action.actor) else 'victory'
-                action.resolved = True
-                return
-            protected = target.guarded
-            calculator = physical_damage if action.kind in ('physical', 'spellblade') else magical_damage
-            variance = roll_variance(self.rng)
-            source = self.combatant(actor.owner_id) if isinstance(actor, BotUnit) else actor
-            if isinstance(actor, BotUnit):actor.attributes['str'] = source.value('str')
-            action.damage = calculator(source, target, self.actions[action.action]['potency'],
-                                       protected=protected, variance_percent=variance)
-            if action.kind == 'spellblade':
-                bonus = magical_damage(source, target, self.actions[action.action]['magical_potency'],
-                                       protected=protected, variance_percent=variance)
-                action.damage = min(NORMAL_DAMAGE_CAP, action.damage+bonus)
-            enchanted = (action.actor == 'player' and self.weapon_equipped
-                         and action.kind == 'physical' and actor.aether_edge_hits > 0)
-            if enchanted:
-                bonus = magical_damage(actor, target, self.actions['aether_edge']['potency'],
-                                       protected=protected, variance_percent=variance)
-                action.damage = min(NORMAL_DAMAGE_CAP, action.damage+bonus)
-                actor.aether_edge_hits -= 1
-            target.hp = max(0, target.hp-action.damage)
-            target.guarded = False
-            self.message = target.name+' takes '+str(action.damage)+' damage.'
-            event = {'type': 'impact', 'actor': action.actor, 'action': action.action,
-                     'target': action.target, 'damage': action.damage,
-                     'remaining_hp': target.hp, 'guarded': protected}
-            if enchanted:
-                event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
-            self.events.append(event)
+                if target is None or not target.hp:
+                    action.target = (self._enemy_target(action.action, action.actor)
+                                     if self.is_enemy(action.actor) else self._living_target())
+                    target = self.combatant(action.target)
+                if target is None:
+                    self._pending_outcome = 'defeat' if self.is_enemy(action.actor) else 'victory'
+                    action.resolved = True
+                    return
+                action.damage = self._damage_target(action, actor, target)
             if self.is_enemy(action.actor):
                 state = self._enemy_states[action.actor]
                 if action.action == state.prepared_action:
                     state.prepared_action = state.telegraphed_target = None
+                    state.response_actions = 0
+                if state.design is not None and action.action == state.design['recovery']['after_action']:
+                    state.vulnerable = True
+                    self.events.append({'type': 'recovery_started', 'actor': action.actor,
+                        'action': action.action,
+                        'damage_taken_multiplier': state.design['recovery']['damage_taken_multiplier']})
             if action.action == 'tusker_charge':
                 self._enemy_states[action.actor].telegraphed_target = None
                 if self.spellblade_stage == 'charge':self.spellblade_stage = 'first_edge'
@@ -986,22 +1060,61 @@ class BattleModel:
                 self.aether_edge_discovered = True
                 self.events.append({'type': 'spellblade_discovered', 'actor': 'player',
                                     'action': 'aether_edge'})
-            if not target.hp:
-                target.atb = 0.0
-                if self.is_enemy(action.target):
-                    state = self._enemy_states[action.target]
-                    state.prepared_action = state.telegraphed_target = None
-                    self.selected_target = self._living_target()
-                    if not self.living_enemies:self._pending_outcome = 'victory'
-                elif not any(member.hp for member in self.party):self._pending_outcome = 'defeat'
+            if not any(member.hp for member in self.party):self._pending_outcome = 'defeat'
             self._sync_bot_activity()
         self._sync_enemy_preparation()
         action.resolved = True
 
+    def _damage_target(self, action, actor, target):
+        """Resolve one hit; vulnerability modifies the complete hit once."""
+        protected = target.guarded
+        calculator = physical_damage if action.kind in ('physical', 'spellblade') else magical_damage
+        variance = roll_variance(self.rng)
+        source = self.combatant(actor.owner_id) if isinstance(actor, BotUnit) else actor
+        if isinstance(actor, BotUnit):actor.attributes['str'] = source.value('str')
+        damage = calculator(source, target, self.actions[action.action]['potency'],
+                            protected=protected, variance_percent=variance)
+        if action.kind == 'spellblade':
+            bonus = magical_damage(source, target, self.actions[action.action]['magical_potency'],
+                                   protected=protected, variance_percent=variance)
+            damage = min(NORMAL_DAMAGE_CAP, damage+bonus)
+        enchanted = (action.actor == 'player' and self.weapon_equipped
+                     and action.kind == 'physical' and actor.aether_edge_hits > 0)
+        if enchanted:
+            bonus = magical_damage(actor, target, self.actions['aether_edge']['potency'],
+                                   protected=protected, variance_percent=variance)
+            damage = min(NORMAL_DAMAGE_CAP, damage+bonus)
+            actor.aether_edge_hits -= 1
+        if self.is_enemy(target.identifier):
+            state = self._enemy_states[target.identifier]
+            if state.design is not None and state.vulnerable:
+                factor = Fraction(str(state.design['recovery']['damage_taken_multiplier']))
+                damage = min(NORMAL_DAMAGE_CAP, damage*factor.numerator//factor.denominator)
+        target.hp = max(0, target.hp-damage)
+        target.guarded = False
+        self.message = target.name+' takes '+str(damage)+' damage.'
+        event = {'type': 'impact', 'actor': action.actor, 'action': action.action,
+                 'target': target.identifier, 'damage': damage,
+                 'remaining_hp': target.hp, 'guarded': protected}
+        if enchanted:event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
+        self.events.append(event)
+        if not target.hp:
+            target.atb = 0.0
+            if self.is_enemy(target.identifier):
+                state = self._enemy_states[target.identifier]
+                state.prepared_action = state.telegraphed_target = None
+                state.response_actions = 0
+                state.vulnerable = False
+                self.selected_target = self._living_target()
+                if not self.living_enemies:self._pending_outcome = 'victory'
+        return damage
+
     def _result(self, outcome):
         for state in self._enemy_states.values():
-            if state.style == 'magical_offense':
+            if state.style == 'magical_offense' or state.design is not None:
                 state.prepared_action = state.telegraphed_target = None
+                state.response_actions = 0
+                state.vulnerable = False
         for actor in (*self.party, *self.enemies):actor.aether_edge_hits = 0
         for bot in self.bots:
             bot.atb = 0.0
@@ -1085,7 +1198,8 @@ class BattleModel:
                 candidates = [*living, *(bot for bot in self.bots
                                          if self.active_bot(bot.owner_id) is bot
                                          and (not self.spellblade_guided or self._lesson_bot_actions < 3)),
-                              *self.living_enemies]
+                              *(enemy for enemy in self.living_enemies
+                                if not self._enemy_response_pending(enemy.identifier))]
                 times = [(actor, max(0.0, ((1-actor.atb)/self.atb_rate(actor))/atb_multiplier)
                           if atb_multiplier else 0.0 if actor.atb+EPSILON >= 1 else math.inf)
                          for actor in candidates]

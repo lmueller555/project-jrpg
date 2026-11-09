@@ -13947,7 +13947,24 @@
         380,
         220
       ],
-      "status": "reserved_future_miniboss"
+      "status": "story_boss",
+      "enemy_id": "vespermaw",
+      "level": 7,
+      "battlefield": "cave_echo_chamber",
+      "approach": [
+        1940,
+        492
+      ],
+      "retreat": [
+        1810,
+        600
+      ],
+      "trigger": [
+        1760,
+        96,
+        600,
+        392
+      ]
     },
     "links": [
       {
@@ -14376,7 +14393,7 @@
     "tool": "tools/build_continuous_sanctuary_cave.py",
     "source_recipe": "assets/source/maps/sanctuary_cave/recipe.json",
     "source_sha256": {
-      "assets/source/maps/sanctuary_cave/recipe.json": "cda817727932d5c84edf4944a8b6203a44598433841a4fd6c98be08e65c5ab0b",
+      "assets/source/maps/sanctuary_cave/recipe.json": "2cee14173afad53f032f96ed2654bdf158a904052fbf1374e7d20bc81ea99cee",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",

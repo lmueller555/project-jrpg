@@ -86,7 +86,7 @@ def _validate_fixed(enemy, actions):
                    for key, value in enemy['attributes'].items())
             or not isinstance(enemy['abilities'], list) or not enemy['abilities']
             or any(not isinstance(identifier, str) or identifier not in actions
-                   or actions[identifier]['kind'] not in (*_DAMAGE_KINDS, 'prepare')
+                   or actions[identifier]['kind'] not in (*_DAMAGE_KINDS, 'prepare', 'recover')
                    for identifier in enemy['abilities'])
             or len(enemy['abilities']) != len(set(enemy['abilities']))
             or not any(actions[identifier]['mp_cost'] == 0
@@ -146,15 +146,22 @@ def _validate_species(enemy, actions, archetypes, items):
             or not _multipliers(enemy['tier_multipliers'])):
         raise ValueError('Invalid Bestiary species profile')
     behavior = enemy['behavior']
-    pending_combat = 'combat_design' in enemy
-    if pending_combat:
+    has_design = 'combat_design' in enemy
+    if has_design:
         from enemy_combat_design import validate_combat_design
         designed_actions = validate_combat_design(enemy['combat_design'], behavior)
-        if set(designed_actions) & set(actions):
-            raise ValueError('Pending combat actions cannot override live actions')
-        actions = {**actions, **designed_actions}
+        if enemy['combat_design']['status'] == 'ready':
+            for identifier, definition in designed_actions.items():
+                if (identifier not in actions
+                        or any(actions[identifier].get(key) != value for key, value in definition.items())):
+                    raise ValueError('Ready combat design must match its live actions')
+        else:
+            if any(any(actions[identifier].get(key) != value for key, value in definition.items())
+                   for identifier, definition in designed_actions.items() if identifier in actions):
+                raise ValueError('Pending combat actions cannot override live actions')
+            actions = {**actions, **designed_actions}
     allowed_kinds = (*_DAMAGE_KINDS, 'prepare')
-    if pending_combat:allowed_kinds += ('recover',)
+    if has_design:allowed_kinds += ('recover',)
     if (not isinstance(behavior, dict) or set(behavior) != {'sequence', 'fallback', 'targeting'}
             or not isinstance(behavior['sequence'], list) or not behavior['sequence']
             or any(not isinstance(identifier, str) or identifier not in actions
@@ -176,7 +183,7 @@ def _validate_species(enemy, actions, archetypes, items):
     if (not isinstance(presentation, dict) or set(presentation) != {'sprite_id', 'action_aliases'}
             or not isinstance(presentation['action_aliases'], dict)
             or any(key not in behavior['sequence'] or not isinstance(value, str)
-                   or (value not in actions and not (pending_combat and _identifier(value)))
+                   or (value not in actions and not (has_design and _identifier(value)))
                    for key, value in presentation['action_aliases'].items())):
         raise ValueError('Invalid Bestiary presentation')
     sprite_id = presentation['sprite_id']
@@ -279,7 +286,8 @@ def build_enemy(enemy_id, level=None, *, data=None, actions=None):
     metadata = deepcopy(entry)
     metadata['drops_pending'] = pending
     metadata['presentation_pending'] = entry['presentation']['sprite_id'] is None
-    metadata['combat_pending'] = 'combat_design' in entry
+    metadata['combat_pending'] = ('combat_design' in entry
+                                  and entry['combat_design']['status'] != 'ready')
     return {'id': enemy_id, 'level': level,
             'xp_reward': monster_xp(level, boss=entry['tier'] == 'boss'),
             'combat': combat, 'fighting_style': entry['fighting_style'],

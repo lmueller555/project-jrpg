@@ -3061,7 +3061,24 @@
       380,
       220
     ],
-    "status": "reserved_future_miniboss"
+    "status": "story_boss",
+    "enemy_id": "vespermaw",
+    "level": 7,
+    "battlefield": "cave_echo_chamber",
+    "approach": [
+      1940,
+      492
+    ],
+    "retreat": [
+      1810,
+      600
+    ],
+    "trigger": [
+      1760,
+      96,
+      600,
+      392
+    ]
   },
   "links": [
     {

@@ -49,12 +49,12 @@ class VespermawBestiaryTests(unittest.TestCase):
     def test_full_combat_design_is_retained_without_approximating_unsupported_actions(self):
         record = build_enemy('vespermaw', 7)
         design = record['metadata']['combat_design']
-        self.assertTrue(record['metadata']['combat_pending'])
+        self.assertFalse(record['metadata']['combat_pending'])
         self.assertFalse(record['metadata']['presentation_pending'])
         self.assertFalse(record['metadata']['drops_pending'])
         self.assertEqual(record['presentation'], {'sprite_id': 'vespermaw',
             'action_aliases': {key: key.removeprefix('vespermaw_') for key in SEQUENCE}})
-        self.assertEqual(design['status'], 'pending_runtime')
+        self.assertEqual(design['status'], 'ready')
         self.assertEqual(record['behavior']['sequence'], SEQUENCE)
         self.assertEqual(record['combat']['abilities'], SEQUENCE)
         self.assertEqual(record['behavior']['fallback'], SEQUENCE[0])
@@ -71,8 +71,10 @@ class VespermawBestiaryTests(unittest.TestCase):
         self.assertEqual(design['recovery']['damage_taken_multiplier'], 1.25)
         self.assertEqual(design['encounter'],
                          {'trigger': 'story', 'repeatable': False, 'formation_size': 1})
-        # These are not silently installed in the live single-target catalog.
-        self.assertFalse(set(SEQUENCE) & set(load_actions()))
+        # Live definitions match the complete approved design.
+        actions = load_actions()
+        for key in SEQUENCE:
+            self.assertTrue(design['actions'][key].items() <= actions[key].items())
 
     def test_records_are_detached_and_local_actions_cannot_override_live_actions(self):
         catalog = load_bestiary()
@@ -86,11 +88,12 @@ class VespermawBestiaryTests(unittest.TestCase):
         boss['combat_design']['actions']['bite'] = boss['combat_design']['actions'].pop(SEQUENCE[0])
         boss['behavior']['sequence'][0] = boss['behavior']['fallback'] = 'bite'
         boss['combat_design']['recovery']['ends_before_action'] = 'bite'
-        with self.assertRaisesRegex(ValueError, 'override live actions'):
+        with self.assertRaisesRegex(ValueError, 'match its live actions'):
             load_bestiary(catalog)
 
     def test_pending_combat_cannot_construct_single_or_group_battles_even_with_art(self):
         catalog = load_bestiary()
+        catalog['enemies']['vespermaw']['combat_design']['status'] = 'pending_runtime'
         source = CharacterAttributes()
         before = source.to_dict()
         for art_ready in (False, True):
@@ -147,15 +150,15 @@ class VespermawBestiaryTests(unittest.TestCase):
                     if format_name == 'json':
                         records = json.loads(result.stdout)
                         self.assertEqual(len(records), 1)
-                        self.assertTrue(records[0]['metadata']['combat_pending'])
+                        self.assertFalse(records[0]['metadata']['combat_pending'])
                         self.assertEqual(records[0]['metadata']['combat_design']['actions']
                                          [SEQUENCE[1]]['target'], 'all_opponents')
                     elif format_name == 'csv':
                         row, = csv.DictReader(io.StringIO(result.stdout))
                         self.assertEqual((row['hp'], row['xp_reward']), ('1877', '1110'))
-                        self.assertEqual((row['presentation_pending'], row['combat_pending']), ('False', 'True'))
+                        self.assertEqual((row['presentation_pending'], row['combat_pending']), ('False', 'False'))
                     else:
-                        self.assertIn('runtime mechanics deferred', result.stdout)
+                        self.assertIn('Combat: ready', result.stdout)
                         self.assertIn('all_opponents', result.stdout)
                         self.assertIn('damage taken ×1.25', result.stdout)
                         self.assertIn('100% healing (absorb)', result.stdout)

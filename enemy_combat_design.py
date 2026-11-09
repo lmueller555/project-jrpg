@@ -1,8 +1,8 @@
-"""Validated enemy action designs whose runtime mechanics are still pending.
+"""Validated enemy action designs with explicit pending or live readiness.
 
 These local actions are authoring data, not additions to the live action
-catalog. Validation returns detached definitions for Bestiary inspection;
-the battle adapter must reject pending designs before constructing a fight.
+catalog until their status is ready and the Bestiary checks every definition
+against its live action. The battle adapter rejects pending designs.
 """
 from copy import deepcopy
 import math
@@ -63,7 +63,7 @@ def validate_combat_design(design, behavior):
     if (not isinstance(design, dict)
             or set(design) != {'status', 'requirements', 'actions', 'windup',
                                'recovery', 'encounter'}
-            or design['status'] != 'pending_runtime'):
+            or design['status'] not in ('pending_runtime', 'ready')):
         raise ValueError('Invalid pending enemy combat design')
     requirements = design['requirements']
     if (not isinstance(requirements, list) or len(requirements) != len(_REQUIREMENTS)

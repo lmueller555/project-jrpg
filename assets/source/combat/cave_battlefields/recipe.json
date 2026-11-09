@@ -1223,6 +1223,347 @@
           "radius": 150
         }
       ]
+    },
+    {
+      "id": "cave_echo_chamber",
+      "name": "Echo Chamber",
+      "source_rooms": [
+        "echo_chamber"
+      ],
+      "source_position": [
+        2060,
+        300
+      ],
+      "seed": 7507,
+      "floor_material": "dry",
+      "ambient": 0.61,
+      "wall_edge": [
+        [
+          0,
+          143
+        ],
+        [
+          48,
+          137
+        ],
+        [
+          96,
+          129
+        ],
+        [
+          144,
+          124
+        ],
+        [
+          192,
+          120
+        ],
+        [
+          240,
+          118
+        ],
+        [
+          288,
+          120
+        ],
+        [
+          336,
+          124
+        ],
+        [
+          384,
+          129
+        ],
+        [
+          432,
+          137
+        ],
+        [
+          480,
+          143
+        ]
+      ],
+      "wall_baselines": [
+        139,
+        130,
+        122,
+        122,
+        130,
+        139
+      ],
+      "patches": [
+        {
+          "material": "gravel",
+          "polygon": [
+            [
+              0,
+              161
+            ],
+            [
+              70,
+              151
+            ],
+            [
+              133,
+              180
+            ],
+            [
+              157,
+              219
+            ],
+            [
+              105,
+              253
+            ],
+            [
+              16,
+              237
+            ],
+            [
+              0,
+              219
+            ]
+          ]
+        },
+        {
+          "material": "gravel",
+          "polygon": [
+            [
+              309,
+              170
+            ],
+            [
+              380,
+              145
+            ],
+            [
+              479,
+              160
+            ],
+            [
+              479,
+              229
+            ],
+            [
+              408,
+              253
+            ],
+            [
+              344,
+              228
+            ]
+          ]
+        },
+        {
+          "material": "damp",
+          "polygon": [
+            [
+              172,
+              136
+            ],
+            [
+              235,
+              128
+            ],
+            [
+              299,
+              143
+            ],
+            [
+              286,
+              178
+            ],
+            [
+              225,
+              186
+            ],
+            [
+              179,
+              168
+            ]
+          ]
+        }
+      ],
+      "placements": [
+        {
+          "id": "vault_west",
+          "pack": "base",
+          "module": "formation.pendants.2",
+          "position": [
+            46,
+            18
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "vault_centre",
+          "pack": "base",
+          "module": "formation.pendants.0",
+          "position": [
+            237,
+            9
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "vault_east",
+          "pack": "base",
+          "module": "formation.pendants.1",
+          "position": [
+            432,
+            17
+          ],
+          "scale": 0.7
+        },
+        {
+          "id": "west_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.2",
+          "position": [
+            9,
+            140
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "east_flowstone",
+          "pack": "base",
+          "module": "formation.flowstone.0",
+          "position": [
+            473,
+            141
+          ],
+          "scale": 0.75
+        },
+        {
+          "id": "west_crust",
+          "pack": "geology",
+          "module": "mineral.crust.1",
+          "position": [
+            108,
+            131
+          ]
+        },
+        {
+          "id": "east_crust",
+          "pack": "geology",
+          "module": "mineral.crust.2",
+          "position": [
+            373,
+            132
+          ]
+        },
+        {
+          "id": "rear_stain",
+          "pack": "geology",
+          "module": "stain.damp.1",
+          "position": [
+            241,
+            133
+          ]
+        },
+        {
+          "id": "low_floor_crack",
+          "pack": "geology",
+          "module": "crack.branching.2",
+          "position": [
+            242,
+            257
+          ]
+        },
+        {
+          "id": "side_pebbles",
+          "pack": "geology",
+          "module": "debris.pebbles.1",
+          "position": [
+            439,
+            262
+          ]
+        }
+      ],
+      "crystals": [
+        {
+          "module": "micro.blue.dense",
+          "position": [
+            35,
+            96
+          ],
+          "phase": 0,
+          "radius": 170
+        },
+        {
+          "module": "micro.purple.diagonal_left",
+          "position": [
+            77,
+            64
+          ],
+          "phase": 0.08,
+          "radius": 170
+        },
+        {
+          "module": "micro.green.vertical",
+          "position": [
+            131,
+            91
+          ],
+          "phase": 0.16,
+          "radius": 160
+        },
+        {
+          "module": "micro.white.dense",
+          "position": [
+            185,
+            46
+          ],
+          "phase": 0.24,
+          "radius": 180
+        },
+        {
+          "module": "micro.blue.diagonal_right",
+          "position": [
+            239,
+            78
+          ],
+          "phase": 0.32,
+          "radius": 180
+        },
+        {
+          "module": "micro.purple.dense",
+          "position": [
+            291,
+            43
+          ],
+          "phase": 0.4,
+          "radius": 180
+        },
+        {
+          "module": "micro.orange.sparse",
+          "position": [
+            345,
+            76
+          ],
+          "phase": 0.48,
+          "radius": 160
+        },
+        {
+          "module": "micro.red.diagonal_right",
+          "position": [
+            400,
+            51
+          ],
+          "phase": 0.56,
+          "radius": 160
+        },
+        {
+          "module": "micro.blue.vertical",
+          "position": [
+            454,
+            96
+          ],
+          "phase": 0.64,
+          "radius": 170
+        }
+      ]
     }
   ]
 }
