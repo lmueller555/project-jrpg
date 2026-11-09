@@ -323,9 +323,11 @@ individual enemy levels and saved-level transition rules; victories currently
 award item drops.
 
 The [Bestiary dictionary](docs/BESTIARY.md) is the central source for monster
-and boss definitions. Its first computed species, **Cave Bat**, has an authored
-level range of 2–3, Hybrid growth, species adjustments and a two-Gust attack
-pattern. Each computed species stores an elemental identity, all nine damage
+and boss definitions. Its computed Sanctuary cave species are **Cave Bat**
+(levels 2–3, Hybrid), **Lithrusk** (levels 2–3, Armored, Ground) and **Veylume**
+(levels 3–4, Caster, Electric). Lithrusk and Veylume include complete stats,
+actions and affinities with dedicated combat sprites and animation banks.
+Each computed species stores an elemental identity, all nine damage
 percentages, matching-element absorption and the design clues behind its
 affinities. Cave Bat is Non-Elemental, takes 200% Fire damage in its authored
 profile and is neutral to other types. Elemental combat effects and Edran's
@@ -333,7 +335,10 @@ planned Study reveal remain future work; ordinary combat does not display this
 internal data. The existing fixed Bat and MQ02 Tusker remain in the same dictionary
 with their authored values. Use `python tools/preview_bestiary.py --list` or
 `python tools/preview_bestiary.py --enemy cave_bat --levels 2 3` to inspect data.
-The sanctuary cave and new world encounters remain later quest work.
+Use `--enemy lithrusk` or `--enemy veylume` to inspect either new species.
+Their [combat art and animation preview](docs/CAVE_ENEMY_COMBAT_ART.md) shows
+the native sprites and real battle presentation. The continuous sanctuary cave
+is explorable; placing these new encounters remains later work.
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored

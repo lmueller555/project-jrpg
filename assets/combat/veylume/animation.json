@@ -1,0 +1,5845 @@
+{
+  "version": 1,
+  "actor": "veylume",
+  "canvas": [
+    112,
+    104
+  ],
+  "anchor": [
+    56,
+    88
+  ],
+  "facing": "right",
+  "sheet": "spritesheet.png",
+  "source_grid": [
+    8,
+    4
+  ],
+  "source_sheets": [
+    "assets/source/combat/veylume/base_hover_flight.png",
+    "assets/source/combat/veylume/actions_spark_charge.png",
+    "assets/source/combat/veylume/actions_charge_flash.png",
+    "assets/source/combat/veylume/reactions_hurt_defeat.png",
+    "assets/source/combat/veylume/charged_hold.png"
+  ],
+  "source_sha256": {
+    "assets/source/combat/veylume/base_hover_flight.png": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+    "assets/source/combat/veylume/actions_spark_charge.png": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+    "assets/source/combat/veylume/actions_charge_flash.png": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+    "assets/source/combat/veylume/reactions_hurt_defeat.png": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+    "assets/source/combat/veylume/charged_hold.png": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683"
+  },
+  "registration": "assets/source/combat/veylume/registration.json",
+  "registration_sha256": "7c82369d1e866a951cf0f52de350e2b48dcbbebff497e8455d571b18d3088a5c",
+  "authored_frames": 160,
+  "native_scale": 0.33,
+  "extraction": "whole-atlas connected alpha silhouettes; fixed nearest-neighbor native scale; binary alpha; shared opaque-only palette; fixed cell pivot and explicit corpse floor contact",
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 0,
+          "source_rect": [
+            28,
+            12,
+            173,
+            168
+          ],
+          "source_pivot": [
+            110.875,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 1,
+          "source_rect": [
+            243,
+            13,
+            180,
+            168
+          ],
+          "source_pivot": [
+            332.625,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_03.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 2,
+          "source_rect": [
+            462,
+            15,
+            183,
+            166
+          ],
+          "source_pivot": [
+            554.375,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            20
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_04.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 3,
+          "source_rect": [
+            663,
+            39,
+            204,
+            142
+          ],
+          "source_pivot": [
+            776.125,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            19,
+            28
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_05.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 4,
+          "source_rect": [
+            884,
+            52,
+            208,
+            130
+          ],
+          "source_pivot": [
+            997.875,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            18,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_06.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 5,
+          "source_rect": [
+            1115,
+            52,
+            198,
+            142
+          ],
+          "source_pivot": [
+            1219.625,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            21,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_07.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 6,
+          "source_rect": [
+            1346,
+            52,
+            187,
+            158
+          ],
+          "source_pivot": [
+            1441.375,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_08.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 7,
+          "source_rect": [
+            1578,
+            52,
+            178,
+            155
+          ],
+          "source_pivot": [
+            1663.125,
+            221.75
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_09.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 8,
+          "source_rect": [
+            32,
+            274,
+            172,
+            138
+          ],
+          "source_pivot": [
+            110.875,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            30,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_10.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 9,
+          "source_rect": [
+            254,
+            272,
+            170,
+            131
+          ],
+          "source_pivot": [
+            332.625,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            30,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_11.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 10,
+          "source_rect": [
+            460,
+            272,
+            185,
+            131
+          ],
+          "source_pivot": [
+            554.375,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_12.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 11,
+          "source_rect": [
+            676,
+            271,
+            190,
+            132
+          ],
+          "source_pivot": [
+            776.125,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_13.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 12,
+          "source_rect": [
+            910,
+            251,
+            179,
+            152
+          ],
+          "source_pivot": [
+            997.875,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_14.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 13,
+          "source_rect": [
+            1138,
+            239,
+            172,
+            164
+          ],
+          "source_pivot": [
+            1219.625,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            21
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_15.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 14,
+          "source_rect": [
+            1359,
+            234,
+            173,
+            168
+          ],
+          "source_pivot": [
+            1441.375,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "idle_16.png",
+          "duration_ms": 80,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 15,
+          "source_rect": [
+            1576,
+            233,
+            177,
+            170
+          ],
+          "source_pivot": [
+            1663.125,
+            443.5
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ]
+    },
+    "fly": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "fly_01.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 16,
+          "source_rect": [
+            25,
+            455,
+            176,
+            169
+          ],
+          "source_pivot": [
+            110.875,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_02.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 17,
+          "source_rect": [
+            235,
+            463,
+            190,
+            156
+          ],
+          "source_pivot": [
+            332.625,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            21
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_03.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 18,
+          "source_rect": [
+            453,
+            479,
+            195,
+            139
+          ],
+          "source_pivot": [
+            554.375,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            27
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_04.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 19,
+          "source_rect": [
+            664,
+            496,
+            208,
+            122
+          ],
+          "source_pivot": [
+            776.125,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            19,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_05.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 20,
+          "source_rect": [
+            881,
+            501,
+            214,
+            121
+          ],
+          "source_pivot": [
+            997.875,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            17,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_06.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 21,
+          "source_rect": [
+            1112,
+            502,
+            208,
+            132
+          ],
+          "source_pivot": [
+            1219.625,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            20,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_07.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 22,
+          "source_rect": [
+            1349,
+            503,
+            193,
+            134
+          ],
+          "source_pivot": [
+            1441.375,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_08.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 23,
+          "source_rect": [
+            1572,
+            502,
+            191,
+            142
+          ],
+          "source_pivot": [
+            1663.125,
+            665.25
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_09.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 24,
+          "source_rect": [
+            22,
+            725,
+            188,
+            141
+          ],
+          "source_pivot": [
+            110.875,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_10.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 25,
+          "source_rect": [
+            246,
+            725,
+            186,
+            128
+          ],
+          "source_pivot": [
+            332.625,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_11.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 26,
+          "source_rect": [
+            452,
+            724,
+            198,
+            117
+          ],
+          "source_pivot": [
+            554.375,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_12.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 27,
+          "source_rect": [
+            665,
+            712,
+            205,
+            129
+          ],
+          "source_pivot": [
+            776.125,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            19,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_13.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 28,
+          "source_rect": [
+            903,
+            694,
+            189,
+            148
+          ],
+          "source_pivot": [
+            997.875,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_14.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 29,
+          "source_rect": [
+            1135,
+            683,
+            175,
+            163
+          ],
+          "source_pivot": [
+            1219.625,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            21
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_15.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 30,
+          "source_rect": [
+            1358,
+            676,
+            174,
+            170
+          ],
+          "source_pivot": [
+            1441.375,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            18
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "fly_16.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/base_hover_flight.png",
+          "source_cell": 31,
+          "source_rect": [
+            1578,
+            676,
+            176,
+            170
+          ],
+          "source_pivot": [
+            1663.125,
+            887.0
+          ],
+          "source_sha256": "522fc45b1539758944454f9bae8fb857fd53155008ca217e6fa60eaab0f52ed3",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            18
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ]
+    },
+    "static_spark": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "static_spark_01.png",
+          "duration_ms": 56,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 0,
+          "source_rect": [
+            23,
+            17,
+            183,
+            163
+          ],
+          "source_pivot": [
+            110.875,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            20
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_02.png",
+          "duration_ms": 56,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 1,
+          "source_rect": [
+            239,
+            31,
+            191,
+            151
+          ],
+          "source_pivot": [
+            332.625,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_03.png",
+          "duration_ms": 57,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 2,
+          "source_rect": [
+            464,
+            48,
+            188,
+            133
+          ],
+          "source_pivot": [
+            554.375,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_04.png",
+          "duration_ms": 56,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 3,
+          "source_rect": [
+            679,
+            65,
+            195,
+            119
+          ],
+          "source_pivot": [
+            776.125,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            36
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_05.png",
+          "duration_ms": 56,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 4,
+          "source_rect": [
+            900,
+            68,
+            197,
+            117
+          ],
+          "source_pivot": [
+            997.875,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            37
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_06.png",
+          "duration_ms": 57,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 5,
+          "source_rect": [
+            1122,
+            61,
+            199,
+            129
+          ],
+          "source_pivot": [
+            1219.625,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_07.png",
+          "duration_ms": 56,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 6,
+          "source_rect": [
+            1347,
+            47,
+            180,
+            143
+          ],
+          "source_pivot": [
+            1441.375,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_08.png",
+          "duration_ms": 56,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 7,
+          "source_rect": [
+            1568,
+            22,
+            203,
+            162
+          ],
+          "source_pivot": [
+            1663.125,
+            221.75
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            22
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_09.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 8,
+          "source_rect": [
+            20,
+            237,
+            208,
+            168
+          ],
+          "source_pivot": [
+            110.875,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            20
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_10.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 9,
+          "source_rect": [
+            248,
+            242,
+            181,
+            164
+          ],
+          "source_pivot": [
+            332.625,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            22
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_11.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 10,
+          "source_rect": [
+            472,
+            259,
+            182,
+            147
+          ],
+          "source_pivot": [
+            554.375,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            27
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_12.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 11,
+          "source_rect": [
+            691,
+            285,
+            179,
+            121
+          ],
+          "source_pivot": [
+            776.125,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            36
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_13.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 12,
+          "source_rect": [
+            904,
+            282,
+            190,
+            124
+          ],
+          "source_pivot": [
+            997.875,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_14.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 13,
+          "source_rect": [
+            1118,
+            281,
+            191,
+            124
+          ],
+          "source_pivot": [
+            1219.625,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_15.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 14,
+          "source_rect": [
+            1345,
+            280,
+            187,
+            124
+          ],
+          "source_pivot": [
+            1441.375,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "static_spark_16.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 15,
+          "source_rect": [
+            1574,
+            250,
+            184,
+            153
+          ],
+          "source_pivot": [
+            1663.125,
+            443.5
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ],
+      "contact_ms": 450,
+      "contact_frame": 8
+    },
+    "gather_charge": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "gather_charge_01.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 16,
+          "source_rect": [
+            24,
+            475,
+            183,
+            149
+          ],
+          "source_pivot": [
+            110.875,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_02.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 17,
+          "source_rect": [
+            242,
+            491,
+            187,
+            132
+          ],
+          "source_pivot": [
+            332.625,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_03.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 18,
+          "source_rect": [
+            459,
+            504,
+            195,
+            120
+          ],
+          "source_pivot": [
+            554.375,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_04.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 19,
+          "source_rect": [
+            673,
+            515,
+            199,
+            109
+          ],
+          "source_pivot": [
+            776.125,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            38
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_05.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 20,
+          "source_rect": [
+            893,
+            513,
+            199,
+            111
+          ],
+          "source_pivot": [
+            997.875,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            21,
+            38
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_06.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 21,
+          "source_rect": [
+            1118,
+            506,
+            195,
+            122
+          ],
+          "source_pivot": [
+            1219.625,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_07.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 22,
+          "source_rect": [
+            1339,
+            501,
+            192,
+            126
+          ],
+          "source_pivot": [
+            1441.375,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_08.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 23,
+          "source_rect": [
+            1566,
+            475,
+            185,
+            150
+          ],
+          "source_pivot": [
+            1663.125,
+            665.25
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_09.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 24,
+          "source_rect": [
+            17,
+            703,
+            184,
+            147
+          ],
+          "source_pivot": [
+            110.875,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            27
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_10.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 25,
+          "source_rect": [
+            235,
+            716,
+            190,
+            134
+          ],
+          "source_pivot": [
+            332.625,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_11.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 26,
+          "source_rect": [
+            457,
+            724,
+            188,
+            126
+          ],
+          "source_pivot": [
+            554.375,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_12.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 27,
+          "source_rect": [
+            677,
+            723,
+            190,
+            127
+          ],
+          "source_pivot": [
+            776.125,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_13.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 28,
+          "source_rect": [
+            899,
+            712,
+            188,
+            136
+          ],
+          "source_pivot": [
+            997.875,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_14.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 29,
+          "source_rect": [
+            1126,
+            695,
+            183,
+            153
+          ],
+          "source_pivot": [
+            1219.625,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_15.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 30,
+          "source_rect": [
+            1349,
+            690,
+            179,
+            158
+          ],
+          "source_pivot": [
+            1441.375,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            23
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_16.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_spark_charge.png",
+          "source_cell": 31,
+          "source_rect": [
+            1573,
+            690,
+            176,
+            157
+          ],
+          "source_pivot": [
+            1663.125,
+            887.0
+          ],
+          "source_sha256": "0435b4fac1c7daa256c6e207b37cb235f9b8a0788a406ab7fab07dd3653181fd",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            23
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_17.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 0,
+          "source_rect": [
+            18,
+            65,
+            189,
+            115
+          ],
+          "source_pivot": [
+            110.875,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            36
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_18.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 1,
+          "source_rect": [
+            245,
+            52,
+            181,
+            132
+          ],
+          "source_pivot": [
+            332.625,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_19.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 2,
+          "source_rect": [
+            471,
+            41,
+            172,
+            144
+          ],
+          "source_pivot": [
+            554.375,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            28
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_20.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 3,
+          "source_rect": [
+            691,
+            24,
+            169,
+            161
+          ],
+          "source_pivot": [
+            776.125,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            23
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_21.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 4,
+          "source_rect": [
+            917,
+            16,
+            165,
+            167
+          ],
+          "source_pivot": [
+            997.875,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            20
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_22.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 5,
+          "source_rect": [
+            1146,
+            13,
+            158,
+            169
+          ],
+          "source_pivot": [
+            1219.625,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            32,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_23.png",
+          "duration_ms": 34,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 6,
+          "source_rect": [
+            1378,
+            10,
+            147,
+            172
+          ],
+          "source_pivot": [
+            1441.375,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            35,
+            18
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "gather_charge_24.png",
+          "duration_ms": 33,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 7,
+          "source_rect": [
+            1605,
+            10,
+            139,
+            171
+          ],
+          "source_pivot": [
+            1663.125,
+            221.75
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            37,
+            18
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ],
+      "contact_ms": 400,
+      "contact_frame": 12
+    },
+    "veinflash": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "veinflash_01.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 8,
+          "source_rect": [
+            52,
+            233,
+            140,
+            170
+          ],
+          "source_pivot": [
+            110.875,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            37,
+            19
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_02.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 9,
+          "source_rect": [
+            266,
+            249,
+            149,
+            155
+          ],
+          "source_pivot": [
+            332.625,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            34,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_03.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 10,
+          "source_rect": [
+            472,
+            262,
+            165,
+            144
+          ],
+          "source_pivot": [
+            554.375,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            28
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_04.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 11,
+          "source_rect": [
+            684,
+            277,
+            178,
+            122
+          ],
+          "source_pivot": [
+            776.125,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_05.png",
+          "duration_ms": 62,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 12,
+          "source_rect": [
+            889,
+            276,
+            206,
+            123
+          ],
+          "source_pivot": [
+            997.875,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            20,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_06.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 13,
+          "source_rect": [
+            1118,
+            270,
+            206,
+            125
+          ],
+          "source_pivot": [
+            1219.625,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_07.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 14,
+          "source_rect": [
+            1348,
+            272,
+            201,
+            123
+          ],
+          "source_pivot": [
+            1441.375,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_08.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 15,
+          "source_rect": [
+            1569,
+            269,
+            193,
+            125
+          ],
+          "source_pivot": [
+            1663.125,
+            443.5
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_09.png",
+          "duration_ms": 61,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 16,
+          "source_rect": [
+            17,
+            491,
+            196,
+            131
+          ],
+          "source_pivot": [
+            110.875,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_10.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 17,
+          "source_rect": [
+            240,
+            496,
+            195,
+            128
+          ],
+          "source_pivot": [
+            332.625,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_11.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 18,
+          "source_rect": [
+            463,
+            502,
+            194,
+            123
+          ],
+          "source_pivot": [
+            554.375,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            34
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_12.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 19,
+          "source_rect": [
+            687,
+            514,
+            181,
+            112
+          ],
+          "source_pivot": [
+            776.125,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            38
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_13.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 20,
+          "source_rect": [
+            907,
+            520,
+            182,
+            109
+          ],
+          "source_pivot": [
+            997.875,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            40
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_14.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 21,
+          "source_rect": [
+            1127,
+            517,
+            181,
+            111
+          ],
+          "source_pivot": [
+            1219.625,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            39
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_15.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 22,
+          "source_rect": [
+            1348,
+            512,
+            181,
+            114
+          ],
+          "source_pivot": [
+            1441.375,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            37
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_16.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 23,
+          "source_rect": [
+            1569,
+            508,
+            182,
+            117
+          ],
+          "source_pivot": [
+            1663.125,
+            665.25
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            36
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_17.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 24,
+          "source_rect": [
+            17,
+            734,
+            183,
+            115
+          ],
+          "source_pivot": [
+            110.875,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            38
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_18.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 25,
+          "source_rect": [
+            242,
+            733,
+            181,
+            120
+          ],
+          "source_pivot": [
+            332.625,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            37
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_19.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 26,
+          "source_rect": [
+            463,
+            733,
+            182,
+            119
+          ],
+          "source_pivot": [
+            554.375,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            37
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_20.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 27,
+          "source_rect": [
+            684,
+            733,
+            182,
+            116
+          ],
+          "source_pivot": [
+            776.125,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            37
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_21.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 28,
+          "source_rect": [
+            909,
+            721,
+            179,
+            129
+          ],
+          "source_pivot": [
+            997.875,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_22.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 29,
+          "source_rect": [
+            1136,
+            707,
+            175,
+            144
+          ],
+          "source_pivot": [
+            1219.625,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            29
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_23.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 30,
+          "source_rect": [
+            1357,
+            702,
+            173,
+            146
+          ],
+          "source_pivot": [
+            1441.375,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            27
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "veinflash_24.png",
+          "duration_ms": 30,
+          "source_sheet": "assets/source/combat/veylume/actions_charge_flash.png",
+          "source_cell": 31,
+          "source_rect": [
+            1580,
+            705,
+            171,
+            143
+          ],
+          "source_pivot": [
+            1663.125,
+            887.0
+          ],
+          "source_sha256": "29efafd846ddaa18a6be9e9a59170b129b00071f0a6e922fb67d39ef1bb0b595",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            28
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ],
+      "contact_ms": 550,
+      "contact_frame": 9
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 0,
+          "source_rect": [
+            35,
+            25,
+            167,
+            155
+          ],
+          "source_pivot": [
+            110.875,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            31,
+            23
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 41,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 1,
+          "source_rect": [
+            249,
+            30,
+            173,
+            151
+          ],
+          "source_pivot": [
+            332.625,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_03.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 2,
+          "source_rect": [
+            471,
+            49,
+            170,
+            142
+          ],
+          "source_pivot": [
+            554.375,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            31
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_04.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 3,
+          "source_rect": [
+            673,
+            74,
+            179,
+            112
+          ],
+          "source_pivot": [
+            776.125,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            39
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_05.png",
+          "duration_ms": 41,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 4,
+          "source_rect": [
+            904,
+            85,
+            176,
+            107
+          ],
+          "source_pivot": [
+            997.875,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            43
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_06.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 5,
+          "source_rect": [
+            1127,
+            79,
+            172,
+            113
+          ],
+          "source_pivot": [
+            1219.625,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            41
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_07.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 6,
+          "source_rect": [
+            1350,
+            63,
+            168,
+            126
+          ],
+          "source_pivot": [
+            1441.375,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            36
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_08.png",
+          "duration_ms": 41,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 7,
+          "source_rect": [
+            1575,
+            45,
+            168,
+            143
+          ],
+          "source_pivot": [
+            1663.125,
+            221.75
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_09.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 8,
+          "source_rect": [
+            33,
+            259,
+            167,
+            144
+          ],
+          "source_pivot": [
+            110.875,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            30,
+            27
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_10.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 9,
+          "source_rect": [
+            252,
+            253,
+            171,
+            149
+          ],
+          "source_pivot": [
+            332.625,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_11.png",
+          "duration_ms": 41,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 10,
+          "source_rect": [
+            473,
+            264,
+            169,
+            138
+          ],
+          "source_pivot": [
+            554.375,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            29
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "hurt_12.png",
+          "duration_ms": 42,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 11,
+          "source_rect": [
+            691,
+            264,
+            170,
+            139
+          ],
+          "source_pivot": [
+            776.125,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            29
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 12,
+          "source_rect": [
+            907,
+            284,
+            175,
+            121
+          ],
+          "source_pivot": [
+            997.875,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            35
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 13,
+          "source_rect": [
+            1129,
+            292,
+            174,
+            124
+          ],
+          "source_pivot": [
+            1219.625,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            38
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_03.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 14,
+          "source_rect": [
+            1353,
+            298,
+            175,
+            119
+          ],
+          "source_pivot": [
+            1441.375,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            40
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_04.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 15,
+          "source_rect": [
+            1574,
+            315,
+            177,
+            106
+          ],
+          "source_pivot": [
+            1663.125,
+            443.5
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            46
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_05.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 16,
+          "source_rect": [
+            27,
+            521,
+            175,
+            123
+          ],
+          "source_pivot": [
+            110.875,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            40
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_06.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 17,
+          "source_rect": [
+            247,
+            524,
+            175,
+            119
+          ],
+          "source_pivot": [
+            332.625,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            41
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_07.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 18,
+          "source_rect": [
+            465,
+            537,
+            177,
+            110
+          ],
+          "source_pivot": [
+            554.375,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            46
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_08.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 19,
+          "source_rect": [
+            681,
+            549,
+            174,
+            110
+          ],
+          "source_pivot": [
+            776.125,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            50
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_09.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 20,
+          "source_rect": [
+            912,
+            564,
+            165,
+            94
+          ],
+          "source_pivot": [
+            997.875,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            55
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_10.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 21,
+          "source_rect": [
+            1134,
+            577,
+            162,
+            82
+          ],
+          "source_pivot": [
+            1219.625,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            59
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_11.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 22,
+          "source_rect": [
+            1354,
+            580,
+            160,
+            74
+          ],
+          "source_pivot": [
+            1441.375,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            60
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_12.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 23,
+          "source_rect": [
+            1573,
+            595,
+            157,
+            58
+          ],
+          "source_pivot": [
+            1663.125,
+            665.25
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            65
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_13.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 24,
+          "source_rect": [
+            30,
+            810,
+            158,
+            62
+          ],
+          "source_pivot": [
+            110.875,
+            887.0
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            63
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_14.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 25,
+          "source_rect": [
+            252,
+            814,
+            159,
+            58
+          ],
+          "source_pivot": [
+            332.625,
+            887.0
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            64
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_15.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 26,
+          "source_rect": [
+            472,
+            816,
+            159,
+            56
+          ],
+          "source_pivot": [
+            554.375,
+            887.0
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            65
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_16.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 27,
+          "source_rect": [
+            693,
+            816,
+            157,
+            56
+          ],
+          "source_pivot": [
+            776.125,
+            887.0
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            65
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_17.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 28,
+          "source_rect": [
+            913,
+            818,
+            157,
+            54
+          ],
+          "source_pivot": [
+            997.875,
+            872
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            70
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_18.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 29,
+          "source_rect": [
+            1134,
+            819,
+            157,
+            53
+          ],
+          "source_pivot": [
+            1219.625,
+            872
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            71
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_19.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 30,
+          "source_rect": [
+            1355,
+            822,
+            157,
+            50
+          ],
+          "source_pivot": [
+            1441.375,
+            872
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            72
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "defeat_20.png",
+          "duration_ms": 60,
+          "source_sheet": "assets/source/combat/veylume/reactions_hurt_defeat.png",
+          "source_cell": 31,
+          "source_rect": [
+            1577,
+            822,
+            156,
+            50
+          ],
+          "source_pivot": [
+            1663.125,
+            872
+          ],
+          "source_sha256": "5f36bc6a57285e943b74849c025b7d2cdce9f69dfb032f7e4ca3b4aaae0476d7",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            72
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ]
+    },
+    "charged_hold": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "charged_hold_01.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 0,
+          "source_rect": [
+            28,
+            19,
+            173,
+            161
+          ],
+          "source_pivot": [
+            110.875,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            21
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_02.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 1,
+          "source_rect": [
+            246,
+            20,
+            173,
+            160
+          ],
+          "source_pivot": [
+            332.625,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            27,
+            21
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_03.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 2,
+          "source_rect": [
+            469,
+            21,
+            175,
+            159
+          ],
+          "source_pivot": [
+            554.375,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            22
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_04.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 3,
+          "source_rect": [
+            677,
+            29,
+            190,
+            151
+          ],
+          "source_pivot": [
+            776.125,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_05.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 4,
+          "source_rect": [
+            894,
+            53,
+            192,
+            127
+          ],
+          "source_pivot": [
+            997.875,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_06.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 5,
+          "source_rect": [
+            1122,
+            53,
+            185,
+            137
+          ],
+          "source_pivot": [
+            1219.625,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_07.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 6,
+          "source_rect": [
+            1356,
+            54,
+            175,
+            148
+          ],
+          "source_pivot": [
+            1441.375,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_08.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 7,
+          "source_rect": [
+            1586,
+            55,
+            165,
+            145
+          ],
+          "source_pivot": [
+            1663.125,
+            221.75
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            31,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_09.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 8,
+          "source_rect": [
+            30,
+            277,
+            169,
+            140
+          ],
+          "source_pivot": [
+            110.875,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_10.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 9,
+          "source_rect": [
+            254,
+            275,
+            166,
+            127
+          ],
+          "source_pivot": [
+            332.625,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            30,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_11.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 10,
+          "source_rect": [
+            470,
+            275,
+            172,
+            127
+          ],
+          "source_pivot": [
+            554.375,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            32
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_12.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 11,
+          "source_rect": [
+            683,
+            276,
+            181,
+            126
+          ],
+          "source_pivot": [
+            776.125,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_13.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 12,
+          "source_rect": [
+            912,
+            268,
+            174,
+            134
+          ],
+          "source_pivot": [
+            997.875,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_14.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 13,
+          "source_rect": [
+            1138,
+            254,
+            170,
+            148
+          ],
+          "source_pivot": [
+            1219.625,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_15.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 14,
+          "source_rect": [
+            1359,
+            251,
+            170,
+            151
+          ],
+          "source_pivot": [
+            1441.375,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_16.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 15,
+          "source_rect": [
+            1581,
+            249,
+            170,
+            153
+          ],
+          "source_pivot": [
+            1663.125,
+            443.5
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_17.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 16,
+          "source_rect": [
+            29,
+            466,
+            171,
+            158
+          ],
+          "source_pivot": [
+            110.875,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            22
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_18.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 17,
+          "source_rect": [
+            237,
+            477,
+            183,
+            147
+          ],
+          "source_pivot": [
+            332.625,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            24,
+            26
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_19.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 18,
+          "source_rect": [
+            460,
+            491,
+            184,
+            133
+          ],
+          "source_pivot": [
+            554.375,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_20.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 19,
+          "source_rect": [
+            673,
+            499,
+            191,
+            125
+          ],
+          "source_pivot": [
+            776.125,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_21.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 20,
+          "source_rect": [
+            888,
+            499,
+            197,
+            125
+          ],
+          "source_pivot": [
+            997.875,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            20,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_22.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 21,
+          "source_rect": [
+            1118,
+            500,
+            189,
+            126
+          ],
+          "source_pivot": [
+            1219.625,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            22,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_23.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 22,
+          "source_rect": [
+            1347,
+            500,
+            183,
+            129
+          ],
+          "source_pivot": [
+            1441.375,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            25,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_24.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 23,
+          "source_rect": [
+            1578,
+            499,
+            173,
+            136
+          ],
+          "source_pivot": [
+            1663.125,
+            665.25
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_25.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 24,
+          "source_rect": [
+            26,
+            720,
+            175,
+            135
+          ],
+          "source_pivot": [
+            110.875,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_26.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 25,
+          "source_rect": [
+            247,
+            720,
+            174,
+            126
+          ],
+          "source_pivot": [
+            332.625,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_27.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 26,
+          "source_rect": [
+            455,
+            720,
+            187,
+            125
+          ],
+          "source_pivot": [
+            554.375,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_28.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 27,
+          "source_rect": [
+            675,
+            721,
+            190,
+            124
+          ],
+          "source_pivot": [
+            776.125,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            23,
+            33
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_29.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 28,
+          "source_rect": [
+            906,
+            711,
+            182,
+            134
+          ],
+          "source_pivot": [
+            997.875,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            26,
+            30
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_30.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 29,
+          "source_rect": [
+            1135,
+            701,
+            173,
+            144
+          ],
+          "source_pivot": [
+            1219.625,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            27
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_31.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 30,
+          "source_rect": [
+            1356,
+            696,
+            174,
+            149
+          ],
+          "source_pivot": [
+            1441.375,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            28,
+            25
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        },
+        {
+          "file": "charged_hold_32.png",
+          "duration_ms": 50,
+          "source_sheet": "assets/source/combat/veylume/charged_hold.png",
+          "source_cell": 31,
+          "source_rect": [
+            1580,
+            692,
+            171,
+            153
+          ],
+          "source_pivot": [
+            1663.125,
+            887.0
+          ],
+          "source_sha256": "31bf648bbb3b0f5500ebc7e35da071436947f186aa4adfae91c6b14845a2c683",
+          "native_scale": 0.33,
+          "position": [
+            29,
+            24
+          ],
+          "anchors": {
+            "floor": [
+              56,
+              88
+            ],
+            "cast_origin": [
+              80,
+              38
+            ],
+            "body": [
+              56,
+              65
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

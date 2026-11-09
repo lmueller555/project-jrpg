@@ -121,6 +121,143 @@
         "solo_count": 1,
         "party_count": 2
       }
+    },
+    "lithrusk": {
+      "mode": "species",
+      "name": "Lithrusk",
+      "description": "A squat cave crustacean armored in overlapping limestone plates, found around Splitstone Hollow and the lower damp passages. It advances slowly, alternating claw clamps with heavier shell bashes. Its mineral shell withstands physical punishment but offers little magical protection.",
+      "family": "cave_crustacean",
+      "tier": "normal",
+      "habitats": [
+        "elden_vale_sanctuary_caves"
+      ],
+      "level_range": {
+        "min": 2,
+        "max": 3
+      },
+      "archetype": "bulwark",
+      "stat_profile": "armored",
+      "fighting_style": "standard_attacks",
+      "species_multipliers": {
+        "hp": 0.5,
+        "mp": 0
+      },
+      "tier_multipliers": {},
+      "behavior": {
+        "sequence": [
+          "lithrusk_claw_clamp",
+          "lithrusk_shell_bash"
+        ],
+        "fallback": "lithrusk_claw_clamp",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": "lithrusk",
+        "action_aliases": {}
+      },
+      "rewards": {
+        "drops": null
+      },
+      "elemental_profile": {
+        "element": "ground",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 100,
+          "electric": 50,
+          "water": 150,
+          "ice": 100,
+          "nature": 100,
+          "wind": 100,
+          "holy": 100,
+          "ground": 100
+        },
+        "absorption": {
+          "elements": [
+            "ground"
+          ],
+          "healing_percent": 100
+        },
+        "design_rationale": "Layered pale limestone plates, an earthy mineral sheen and a low, heavy gait reveal its Ground alignment. Water wears at the porous shell, while the dry mineral plates insulate against Electric damage. Ground replenishes its mineral body. Its other elemental relationships are neutral; magical attacks can exploit its low Magick Defense without requiring a particular element."
+      },
+      "planned_mechanics": {
+        "stagger": {
+          "status": "planned",
+          "resistance": "high"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 1
+      }
+    },
+    "veylume": {
+      "mode": "species",
+      "name": "Veylume",
+      "description": "A delicate Aether-adapted moth with luminous wing veins and sparking antennae, gathering near the Sanctuary cave's pulsing crystal seams. It uses small Static Sparks and gathers charge before the stronger Veinflash. Its strongest flashes exhaust a limited store of charge, leaving only small sparks. Its fragile body makes physical attacks effective.",
+      "family": "aether_insect",
+      "tier": "normal",
+      "habitats": [
+        "elden_vale_sanctuary_caves"
+      ],
+      "level_range": {
+        "min": 3,
+        "max": 4
+      },
+      "archetype": "arcanist",
+      "stat_profile": "caster",
+      "fighting_style": "magical_offense",
+      "species_multipliers": {
+        "hp": 0.4,
+        "mp": 0.15
+      },
+      "tier_multipliers": {},
+      "behavior": {
+        "sequence": [
+          "veylume_static_spark",
+          "veylume_gather_charge",
+          "veylume_veinflash"
+        ],
+        "fallback": "veylume_static_spark",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": "veylume",
+        "action_aliases": {}
+      },
+      "rewards": {
+        "drops": null
+      },
+      "elemental_profile": {
+        "element": "electric",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 100,
+          "electric": 100,
+          "water": 100,
+          "ice": 100,
+          "nature": 100,
+          "wind": 100,
+          "holy": 100,
+          "ground": 200
+        },
+        "absorption": {
+          "elements": [
+            "electric"
+          ],
+          "healing_percent": 100
+        },
+        "design_rationale": "Sparks jump between its antennae and luminous wing veins, visibly revealing Electric alignment. Ground disperses its stored charge, while Electric damage replenishes it. Its remaining affinities are neutral. It is a living cave insect adapted to ambient Aether; its light does not imply Holy alignment or a connection to the region's departed souls."
+      },
+      "planned_mechanics": {
+        "stagger": {
+          "status": "planned",
+          "resistance": "low"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 1
+      }
     }
   }
 }

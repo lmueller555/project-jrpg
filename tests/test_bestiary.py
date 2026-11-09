@@ -1,4 +1,4 @@
-"""Canonical enemy storage, strict authoring and Cave Bat generation."""
+"""Canonical enemy storage, strict authoring and computed cave species."""
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -9,6 +9,7 @@ from unittest.mock import patch
 from bestiary import (ELEMENT_IDS, ELEMENT_NAMES, FIXED_FIELDS, build_enemy,
                       fixed_enemy_definitions, load_bestiary)
 from character_attributes import ATTRIBUTE_IDS
+from battle_model import load_actions
 
 
 class BestiaryGenerationTests(unittest.TestCase):
@@ -27,7 +28,8 @@ class BestiaryGenerationTests(unittest.TestCase):
                     'abilities': ['tusk_strike', 'prepare_charge', 'tusker_charge'],
                     'rewards': {'drops': {'aether_emerald': 1}}}}
         self.assertEqual(fixed_enemy_definitions(), expected)
-        self.assertEqual(set(self.catalog['enemies']), {*expected, 'cave_bat'})
+        self.assertEqual(set(self.catalog['enemies']),
+                         {*expected, 'cave_bat', 'lithrusk', 'veylume'})
         for identifier, record in expected.items():
             generated = build_enemy(identifier)
             self.assertEqual(generated['combat'], record)
@@ -88,6 +90,125 @@ class BestiaryGenerationTests(unittest.TestCase):
                 self.assertNotIn('elemental_affinities', enemy['metadata']['planned_mechanics'])
         for identifier in ('bat', 'ridgeback_tusker'):
             self.assertNotIn('elemental_profile', build_enemy(identifier)['metadata'])
+
+    def test_new_cave_species_resolve_their_roles_and_full_elemental_profiles(self):
+        expected = {
+            'lithrusk': {'name': 'Lithrusk', 'levels': (2, 3),
+                         'profile': 'armored', 'concept': 'bulwark',
+                         'style': 'standard_attacks', 'element': 'ground',
+                         'percentages': {'water': 150, 'electric': 50}},
+            'veylume': {'name': 'Veylume', 'levels': (3, 4),
+                        'profile': 'caster', 'concept': 'arcanist',
+                        'style': 'magical_offense', 'element': 'electric',
+                        'percentages': {'ground': 200}},
+        }
+        actions = load_actions()
+        for identifier, design in expected.items():
+            for level in design['levels']:
+                with self.subTest(enemy=identifier, level=level):
+                    enemy = build_enemy(identifier, level)
+                    metadata = enemy['metadata']
+                    stats = enemy['combat']['attributes']
+                    self.assertEqual(enemy['combat']['name'], design['name'])
+                    self.assertEqual(tuple(stats), ATTRIBUTE_IDS)
+                    self.assertEqual(metadata['tier'], 'normal')
+                    self.assertEqual(metadata['stat_profile'], design['profile'])
+                    self.assertEqual(metadata['archetype'], design['concept'])
+                    self.assertEqual(enemy['fighting_style'], design['style'])
+                    self.assertEqual(metadata['habitats'], ['elden_vale_sanctuary_caves'])
+                    self.assertEqual(metadata['level_range'],
+                                     dict(zip(('min', 'max'), design['levels'])))
+                    self.assertEqual(enemy['presentation'],
+                                     {'sprite_id': identifier, 'action_aliases': {}})
+                    self.assertFalse(metadata['presentation_pending'])
+                    self.assertTrue(metadata['drops_pending'])
+                    self.assertEqual(enemy['combat']['rewards'], {'drops': {}})
+                    profile = metadata['elemental_profile']
+                    self.assertEqual(profile['element'], design['element'])
+                    self.assertEqual(profile['damage_percentages'],
+                                     {element: design['percentages'].get(element, 100)
+                                      for element in ELEMENT_IDS})
+                    self.assertEqual(profile['absorption'],
+                                     {'elements': [design['element']], 'healing_percent': 100})
+                    self.assertTrue(profile['design_rationale'])
+                    self.assertNotIn('elemental_profile', enemy['combat'])
+                    self.assertEqual(metadata['planned_mechanics']['stagger']['status'], 'planned')
+                    fallback = enemy['behavior']['fallback']
+                    self.assertIn(fallback, enemy['behavior']['sequence'])
+                    self.assertEqual(actions[fallback]['mp_cost'], 0)
+                    self.assertIn(actions[fallback]['kind'], ('physical', 'magical'))
+                    self.assertTrue(all(action.startswith(identifier+'_')
+                                        for action in enemy['combat']['abilities']))
+                    if identifier == 'lithrusk':
+                        self.assertGreater(stats['def'], stats['m_def'])
+                        self.assertTrue(all(actions[action]['kind'] == 'physical'
+                                            for action in enemy['combat']['abilities']))
+                    else:
+                        self.assertGreater(stats['mag'], stats['str'])
+                        paid_spells = [actions[action] for action in enemy['combat']['abilities']
+                                       if actions[action]['kind'] == 'magical'
+                                       and actions[action]['mp_cost'] > 0]
+                        self.assertTrue(paid_spells)
+                        self.assertLessEqual(max(action['mp_cost'] for action in paid_spells),
+                                             stats['mp'])
+                        self.assertLess(stats['mp'], 20)
+
+    def test_new_species_keep_explicit_level_selection_and_detached_records(self):
+        for identifier, valid_levels in (('lithrusk', (2, 3)), ('veylume', (3, 4))):
+            for level in (None, valid_levels[0]-1, valid_levels[-1]+1, True, 3.0):
+                with self.subTest(enemy=identifier, level=level), self.assertRaises(ValueError):
+                    build_enemy(identifier, level)
+            before = deepcopy(self.catalog)
+            enemy = build_enemy(identifier, valid_levels[0], data=self.catalog)
+            enemy['combat']['attributes']['hp'] = 1
+            enemy['behavior']['sequence'].clear()
+            enemy['metadata']['elemental_profile']['absorption']['elements'].clear()
+            self.assertEqual(self.catalog, before)
+            self.assertEqual(self.catalog['enemies'][identifier]['presentation']['sprite_id'], identifier)
+
+    def test_new_species_level_profiles_and_normal_xp_are_stable(self):
+        expected = {
+            ('lithrusk', 2): ((120, 0, 11, 10, 13, 23, 8, 10, 14, 12, 13), 84),
+            ('lithrusk', 3): ((140, 0, 13, 11, 14, 25, 10, 11, 15, 14, 15), 104),
+            ('veylume', 3): ((67, 10, 7, 18, 16, 10, 17, 12, 15, 14, 15), 104),
+            ('veylume', 4): ((82, 11, 8, 20, 17, 11, 19, 13, 17, 15, 16), 120),
+        }
+        for (identifier, level), (stats, xp) in expected.items():
+            with self.subTest(enemy=identifier, level=level):
+                enemy = build_enemy(identifier, level)
+                self.assertEqual(tuple(enemy['combat']['attributes'].values()), stats)
+                self.assertEqual(enemy['xp_reward'], xp)
+
+    def test_cave_species_actions_keep_finite_magic_and_explicit_elemental_design(self):
+        actions = load_actions()
+        lithrusk = build_enemy('lithrusk', 2)
+        self.assertEqual(lithrusk['behavior']['sequence'],
+                         ['lithrusk_claw_clamp', 'lithrusk_shell_bash'])
+        self.assertEqual(lithrusk['behavior']['fallback'], 'lithrusk_claw_clamp')
+        for identifier, potency in (('lithrusk_claw_clamp', .65), ('lithrusk_shell_bash', .8)):
+            self.assertEqual(actions[identifier]['kind'], 'physical')
+            self.assertEqual(actions[identifier]['potency'], potency)
+            self.assertEqual(actions[identifier]['mp_cost'], 0)
+            self.assertEqual(actions[identifier]['element'], 'non_elemental')
+        veylume = build_enemy('veylume', 3)
+        self.assertEqual(veylume['behavior']['sequence'],
+                         ['veylume_static_spark', 'veylume_gather_charge', 'veylume_veinflash'])
+        self.assertEqual(veylume['behavior']['fallback'], 'veylume_static_spark')
+        spark, prepare, flash = (actions[key] for key in veylume['behavior']['sequence'])
+        self.assertEqual((spark['kind'], spark['potency'], spark['mp_cost'], spark['element']),
+                         ('magical', .6, 0, 'electric'))
+        self.assertEqual(prepare['kind'], 'prepare')
+        self.assertNotIn('element', prepare)
+        self.assertEqual((flash['kind'], flash['potency'], flash['mp_cost'], flash['element']),
+                         ('magical', 1.0, 4, 'electric'))
+        for level in (3, 4):
+            self.assertEqual(build_enemy('veylume', level)['combat']['attributes']['mp']//flash['mp_cost'], 2)
+
+    def test_existing_species_and_fixed_encounters_have_ready_presentation(self):
+        for identifier, level in (('cave_bat', 2), ('bat', None), ('ridgeback_tusker', None),
+                                  ('lithrusk', 2), ('veylume', 3)):
+            with self.subTest(enemy=identifier):
+                self.assertFalse(build_enemy(identifier, level)['metadata']['presentation_pending'])
 
     def test_each_element_can_be_authored_with_arbitrary_damage_percentages(self):
         expected = dict(zip(ELEMENT_IDS, (0, 25, 75, 100, 125, 150, 175.5, 199.99, 200)))
@@ -218,6 +339,36 @@ class BestiaryValidationTests(unittest.TestCase):
             with self.subTest(data=repr(data)[:180]):
                 with self.assertRaises(ValueError):load_bestiary(data)
                 self.assertEqual(data, before)
+
+    def test_pending_presentation_accepts_only_explicit_null_sprite_without_aliases(self):
+        data = deepcopy(self.catalog)
+        data['enemies']['cave_bat']['presentation'] = {'sprite_id': None, 'action_aliases': {}}
+        before = deepcopy(data)
+        enemy = build_enemy('cave_bat', 2, data=data)
+        self.assertTrue(enemy['metadata']['presentation_pending'])
+        self.assertEqual(data, before)
+        invalid = (
+            None, {}, {'sprite_id': None},
+            {'sprite_id': None, 'action_aliases': []},
+            {'sprite_id': None, 'action_aliases': {'cave_bat_bite': 'bite'}},
+            {'sprite_id': None, 'action_aliases': {}, 'status': 'pending'},
+            {'sprite_id': '', 'action_aliases': {}},
+            {'sprite_id': False, 'action_aliases': {}},
+            {'sprite_id': 'not_created_yet', 'action_aliases': {}},
+        )
+        for presentation in invalid:
+            with self.subTest(presentation=presentation):
+                malformed = deepcopy(data)
+                malformed['enemies']['cave_bat']['presentation'] = presentation
+                with self.assertRaises(ValueError):load_bestiary(malformed)
+
+    def test_ready_presentation_rejects_an_action_without_a_real_animation(self):
+        data = deepcopy(self.catalog)
+        # The action exists, so checking only the global action dictionary
+        # would silently admit a pose that the real Bat art cannot render.
+        data['enemies']['cave_bat']['presentation']['action_aliases']['cave_bat_bite'] = 'overclock'
+        with self.assertRaises(ValueError):
+            load_bestiary(data)
 
     def test_bad_stagger_values_cannot_enable_unimplemented_mechanics(self):
         for field, value in (('status', 'active'), ('resistance', 99)):

@@ -25,7 +25,9 @@ def overview_rows(catalogue):
                'tier': entry.get('tier', ''),
                'stat_profile': entry.get('stat_profile', ''),
                'fighting_style': entry.get('fighting_style', ''),
-               'element': entry.get('elemental_profile', {}).get('element', 'unassigned')}
+               'element': entry.get('elemental_profile', {}).get('element', 'unassigned'),
+               'presentation_pending': (entry.get('mode') == 'species'
+                                        and entry['presentation']['sprite_id'] is None)}
 
 
 def stat_rows(records, *, include_elements=False):
@@ -33,7 +35,8 @@ def stat_rows(records, *, include_elements=False):
         combat = record['combat']
         row = {'id': record['id'], 'name': combat['name'],
                'level': record['level'], 'xp_reward': record['xp_reward'],
-               **{key: combat['attributes'][key] for key in ATTRIBUTE_IDS}}
+               **{key: combat['attributes'][key] for key in ATTRIBUTE_IDS},
+               'presentation_pending': record['metadata']['presentation_pending']}
         if include_elements:
             profile = record['metadata'].get('elemental_profile')
             row['element'] = profile['element'] if profile else 'unassigned'
@@ -112,7 +115,9 @@ def main(argv=None):
                 print('Free fallback: ' + record['behavior']['fallback'])
                 print('Targeting: ' + record['behavior']['targeting'])
             if record['presentation'] is not None:
-                print('Presentation: ' + record['presentation']['sprite_id'])
+                sprite_id = record['presentation']['sprite_id']
+                print('Presentation: ' + (sprite_id if sprite_id is not None else
+                                         'pending (models/animations deferred)'))
             profile = record['metadata'].get('elemental_profile')
             print()
             if profile is None:

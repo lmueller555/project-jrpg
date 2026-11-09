@@ -1,0 +1,3713 @@
+{
+  "version": 1,
+  "actor": "lithrusk",
+  "canvas": [
+    112,
+    96
+  ],
+  "anchor": [
+    48,
+    84
+  ],
+  "facing": "right",
+  "sheet": "spritesheet.png",
+  "authored_frames": 96,
+  "source_grid": [
+    8,
+    4
+  ],
+  "source_sha256": {
+    "assets/source/combat/lithrusk/attacks.png": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+    "assets/source/combat/lithrusk/locomotion.png": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+    "assets/source/combat/lithrusk/reactions.png": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92"
+  },
+  "registration": "assets/source/combat/lithrusk/registration.json",
+  "registration_sha256": "e77e0fd0b755d2a5c161dedb62d694b44cb7962e5bbcdd333cea4b93dcf781e5",
+  "native_scale": 0.37,
+  "palette_colors": 48,
+  "extraction": "complete connected authored body; binary alpha; shared palette; fixed nearest-neighbor scale; explicit anatomical floor",
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 0,
+          "source_rect": [
+            18,
+            61,
+            190,
+            113
+          ],
+          "source_foot": [
+            104,
+            174
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "idle_01.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 1,
+          "source_rect": [
+            241,
+            61,
+            189,
+            113
+          ],
+          "source_foot": [
+            326,
+            174
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "idle_02.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 2,
+          "source_rect": [
+            463,
+            58,
+            189,
+            116
+          ],
+          "source_foot": [
+            548,
+            174
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            41,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "idle_03.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 3,
+          "source_rect": [
+            684,
+            55,
+            190,
+            118
+          ],
+          "source_foot": [
+            769,
+            173
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            40,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "idle_04.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 4,
+          "source_rect": [
+            906,
+            53,
+            191,
+            121
+          ],
+          "source_foot": [
+            991,
+            174
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            39,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "idle_05.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 5,
+          "source_rect": [
+            1128,
+            49,
+            193,
+            125
+          ],
+          "source_foot": [
+            1213,
+            174
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            38,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "idle_06.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 6,
+          "source_rect": [
+            1350,
+            46,
+            194,
+            127
+          ],
+          "source_foot": [
+            1434,
+            173
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            37,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "idle_07.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 7,
+          "source_rect": [
+            1572,
+            45,
+            194,
+            128
+          ],
+          "source_foot": [
+            1656,
+            173
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            37,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "idle_08.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 8,
+          "source_rect": [
+            18,
+            268,
+            196,
+            126
+          ],
+          "source_foot": [
+            104,
+            394
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            37,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "idle_09.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 9,
+          "source_rect": [
+            241,
+            271,
+            194,
+            123
+          ],
+          "source_foot": [
+            326,
+            394
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            38,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "idle_10.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 10,
+          "source_rect": [
+            464,
+            276,
+            191,
+            118
+          ],
+          "source_foot": [
+            548,
+            394
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            40,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "idle_11.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 11,
+          "source_rect": [
+            687,
+            282,
+            189,
+            112
+          ],
+          "source_foot": [
+            769,
+            394
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            18,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "idle_12.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 12,
+          "source_rect": [
+            908,
+            283,
+            187,
+            111
+          ],
+          "source_foot": [
+            991,
+            394
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            43,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "idle_13.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 13,
+          "source_rect": [
+            1130,
+            286,
+            186,
+            108
+          ],
+          "source_foot": [
+            1213,
+            394
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            44,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "idle_14.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 14,
+          "source_rect": [
+            1352,
+            287,
+            187,
+            108
+          ],
+          "source_foot": [
+            1434,
+            395
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            18,
+            44,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "idle_15.png",
+          "duration_ms": 100
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 15,
+          "source_rect": [
+            1574,
+            288,
+            185,
+            108
+          ],
+          "source_foot": [
+            1656,
+            396
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            18,
+            44,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "idle_16.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "walk": {
+      "loop": true,
+      "frames": [
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 16,
+          "source_rect": [
+            17,
+            508,
+            191,
+            109
+          ],
+          "source_foot": [
+            104,
+            617
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            44,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "walk_01.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 17,
+          "source_rect": [
+            239,
+            505,
+            191,
+            113
+          ],
+          "source_foot": [
+            326,
+            618
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "walk_02.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 18,
+          "source_rect": [
+            457,
+            500,
+            198,
+            119
+          ],
+          "source_foot": [
+            548,
+            619
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            40,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "walk_03.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 19,
+          "source_rect": [
+            675,
+            496,
+            203,
+            122
+          ],
+          "source_foot": [
+            769,
+            618
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            39,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "walk_04.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 20,
+          "source_rect": [
+            895,
+            497,
+            207,
+            122
+          ],
+          "source_foot": [
+            991,
+            619
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            39,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "walk_05.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 21,
+          "source_rect": [
+            1120,
+            497,
+            206,
+            120
+          ],
+          "source_foot": [
+            1213,
+            617
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            40,
+            90,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              88,
+              69
+            ]
+          },
+          "file": "walk_06.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 22,
+          "source_rect": [
+            1342,
+            502,
+            206,
+            115
+          ],
+          "source_foot": [
+            1434,
+            617
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            41,
+            90,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              88,
+              69
+            ]
+          },
+          "file": "walk_07.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 23,
+          "source_rect": [
+            1564,
+            503,
+            204,
+            116
+          ],
+          "source_foot": [
+            1656,
+            619
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            41,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "walk_08.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 24,
+          "source_rect": [
+            12,
+            727,
+            202,
+            112
+          ],
+          "source_foot": [
+            104,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            43,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "walk_09.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 25,
+          "source_rect": [
+            233,
+            727,
+            199,
+            112
+          ],
+          "source_foot": [
+            326,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "walk_10.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 26,
+          "source_rect": [
+            457,
+            729,
+            194,
+            110
+          ],
+          "source_foot": [
+            548,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            43,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "walk_11.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 27,
+          "source_rect": [
+            682,
+            733,
+            190,
+            106
+          ],
+          "source_foot": [
+            769,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            45,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "walk_12.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 28,
+          "source_rect": [
+            905,
+            733,
+            190,
+            106
+          ],
+          "source_foot": [
+            991,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            45,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "walk_13.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 29,
+          "source_rect": [
+            1129,
+            733,
+            187,
+            106
+          ],
+          "source_foot": [
+            1213,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            45,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "walk_14.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 30,
+          "source_rect": [
+            1351,
+            733,
+            187,
+            106
+          ],
+          "source_foot": [
+            1434,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            45,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "walk_15.png",
+          "duration_ms": 70
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/locomotion.png",
+          "source_cell": 31,
+          "source_rect": [
+            1573,
+            730,
+            187,
+            109
+          ],
+          "source_foot": [
+            1656,
+            839
+          ],
+          "source_sha256": "2cf59ca576d309490d7645ce5d90f08ef52f69225dec346e97836aaacbe74ffe",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            44,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "walk_16.png",
+          "duration_ms": 70
+        }
+      ]
+    },
+    "claw_clamp": {
+      "loop": false,
+      "frames": [
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 0,
+          "source_rect": [
+            18,
+            62,
+            192,
+            115
+          ],
+          "source_foot": [
+            104,
+            177
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            41,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "claw_clamp_01.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 1,
+          "source_rect": [
+            239,
+            65,
+            190,
+            111
+          ],
+          "source_foot": [
+            326,
+            176
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "claw_clamp_02.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 2,
+          "source_rect": [
+            461,
+            67,
+            187,
+            110
+          ],
+          "source_foot": [
+            548,
+            177
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "claw_clamp_03.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 3,
+          "source_rect": [
+            681,
+            68,
+            183,
+            109
+          ],
+          "source_foot": [
+            769,
+            177
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            15,
+            44,
+            83,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              81,
+              69
+            ]
+          },
+          "file": "claw_clamp_04.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 4,
+          "source_rect": [
+            895,
+            61,
+            198,
+            117
+          ],
+          "source_foot": [
+            991,
+            178
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            41,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "claw_clamp_05.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 5,
+          "source_rect": [
+            1116,
+            54,
+            202,
+            124
+          ],
+          "source_foot": [
+            1213,
+            178
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            38,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "claw_clamp_06.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 6,
+          "source_rect": [
+            1336,
+            53,
+            210,
+            125
+          ],
+          "source_foot": [
+            1434,
+            178
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            38,
+            90,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              88,
+              69
+            ]
+          },
+          "file": "claw_clamp_07.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 7,
+          "source_rect": [
+            1559,
+            51,
+            210,
+            127
+          ],
+          "source_foot": [
+            1656,
+            178
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            37,
+            90,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              88,
+              69
+            ]
+          },
+          "file": "claw_clamp_08.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 8,
+          "source_rect": [
+            9,
+            272,
+            215,
+            127
+          ],
+          "source_foot": [
+            104,
+            399
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            37,
+            93,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              91,
+              69
+            ]
+          },
+          "file": "claw_clamp_09.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 9,
+          "source_rect": [
+            236,
+            278,
+            208,
+            121
+          ],
+          "source_foot": [
+            326,
+            399
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            15,
+            39,
+            92,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              90,
+              69
+            ]
+          },
+          "file": "claw_clamp_10.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 10,
+          "source_rect": [
+            457,
+            281,
+            199,
+            117
+          ],
+          "source_foot": [
+            548,
+            398
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            41,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "claw_clamp_11.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 11,
+          "source_rect": [
+            680,
+            285,
+            189,
+            114
+          ],
+          "source_foot": [
+            769,
+            399
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            15,
+            42,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "claw_clamp_12.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 12,
+          "source_rect": [
+            905,
+            285,
+            184,
+            113
+          ],
+          "source_foot": [
+            991,
+            398
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            84,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              82,
+              69
+            ]
+          },
+          "file": "claw_clamp_13.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 13,
+          "source_rect": [
+            1126,
+            284,
+            192,
+            114
+          ],
+          "source_foot": [
+            1213,
+            398
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "claw_clamp_14.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 14,
+          "source_rect": [
+            1348,
+            284,
+            192,
+            114
+          ],
+          "source_foot": [
+            1434,
+            398
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "claw_clamp_15.png",
+          "duration_ms": 50
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 15,
+          "source_rect": [
+            1570,
+            286,
+            192,
+            112
+          ],
+          "source_foot": [
+            1656,
+            398
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "claw_clamp_16.png",
+          "duration_ms": 50
+        }
+      ],
+      "contact_ms": 400,
+      "contact_frame": 8
+    },
+    "shell_bash": {
+      "loop": false,
+      "frames": [
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 16,
+          "source_rect": [
+            17,
+            510,
+            193,
+            110
+          ],
+          "source_foot": [
+            104,
+            620
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "shell_bash_01.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 17,
+          "source_rect": [
+            239,
+            509,
+            186,
+            112
+          ],
+          "source_foot": [
+            326,
+            621
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "shell_bash_02.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 18,
+          "source_rect": [
+            450,
+            515,
+            193,
+            106
+          ],
+          "source_foot": [
+            548,
+            621
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            45,
+            83,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              81,
+              69
+            ]
+          },
+          "file": "shell_bash_03.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 19,
+          "source_rect": [
+            672,
+            521,
+            192,
+            100
+          ],
+          "source_foot": [
+            769,
+            621
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            47,
+            83,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              81,
+              69
+            ]
+          },
+          "file": "shell_bash_04.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 20,
+          "source_rect": [
+            896,
+            507,
+            189,
+            114
+          ],
+          "source_foot": [
+            991,
+            621
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            42,
+            83,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              81,
+              69
+            ]
+          },
+          "file": "shell_bash_05.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 21,
+          "source_rect": [
+            1115,
+            502,
+            191,
+            119
+          ],
+          "source_foot": [
+            1213,
+            621
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            40,
+            83,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              81,
+              69
+            ]
+          },
+          "file": "shell_bash_06.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 22,
+          "source_rect": [
+            1335,
+            502,
+            198,
+            118
+          ],
+          "source_foot": [
+            1434,
+            620
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            11,
+            40,
+            84,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              82,
+              69
+            ]
+          },
+          "file": "shell_bash_07.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 23,
+          "source_rect": [
+            1554,
+            496,
+            203,
+            125
+          ],
+          "source_foot": [
+            1656,
+            621
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            10,
+            38,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "shell_bash_08.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 24,
+          "source_rect": [
+            5,
+            729,
+            204,
+            113
+          ],
+          "source_foot": [
+            104,
+            842
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            11,
+            42,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "shell_bash_09.png",
+          "duration_ms": 57
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 25,
+          "source_rect": [
+            226,
+            729,
+            201,
+            112
+          ],
+          "source_foot": [
+            326,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            11,
+            43,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "shell_bash_10.png",
+          "duration_ms": 57
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 26,
+          "source_rect": [
+            449,
+            727,
+            196,
+            114
+          ],
+          "source_foot": [
+            548,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            11,
+            42,
+            84,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              82,
+              69
+            ]
+          },
+          "file": "shell_bash_11.png",
+          "duration_ms": 56
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 27,
+          "source_rect": [
+            674,
+            726,
+            200,
+            115
+          ],
+          "source_foot": [
+            769,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            41,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "shell_bash_12.png",
+          "duration_ms": 56
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 28,
+          "source_rect": [
+            901,
+            727,
+            195,
+            114
+          ],
+          "source_foot": [
+            991,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            15,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "shell_bash_13.png",
+          "duration_ms": 56
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 29,
+          "source_rect": [
+            1126,
+            729,
+            192,
+            112
+          ],
+          "source_foot": [
+            1213,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "shell_bash_14.png",
+          "duration_ms": 56
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 30,
+          "source_rect": [
+            1347,
+            728,
+            193,
+            113
+          ],
+          "source_foot": [
+            1434,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "shell_bash_15.png",
+          "duration_ms": 56
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/attacks.png",
+          "source_cell": 31,
+          "source_rect": [
+            1570,
+            732,
+            192,
+            109
+          ],
+          "source_foot": [
+            1656,
+            841
+          ],
+          "source_sha256": "45ffb16dbe3cb3b41091ab5d1aa34765167928e47abd51690e81a3decb57e455",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            44,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "shell_bash_16.png",
+          "duration_ms": 56
+        }
+      ],
+      "contact_ms": 500,
+      "contact_frame": 8
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 0,
+          "source_rect": [
+            17,
+            60,
+            191,
+            114
+          ],
+          "source_foot": [
+            104,
+            174
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "hurt_01.png",
+          "duration_ms": 32
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 1,
+          "source_rect": [
+            240,
+            70,
+            189,
+            107
+          ],
+          "source_foot": [
+            326,
+            177
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            44,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "hurt_02.png",
+          "duration_ms": 32
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 2,
+          "source_rect": [
+            462,
+            78,
+            188,
+            102
+          ],
+          "source_foot": [
+            548,
+            180
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            46,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "hurt_03.png",
+          "duration_ms": 32
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 3,
+          "source_rect": [
+            685,
+            86,
+            190,
+            96
+          ],
+          "source_foot": [
+            769,
+            182
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            48,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "hurt_04.png",
+          "duration_ms": 32
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 4,
+          "source_rect": [
+            905,
+            66,
+            180,
+            114
+          ],
+          "source_foot": [
+            991,
+            180
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            42,
+            83,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              81,
+              69
+            ]
+          },
+          "file": "hurt_05.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 5,
+          "source_rect": [
+            1134,
+            60,
+            165,
+            122
+          ],
+          "source_foot": [
+            1213,
+            182
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            19,
+            39,
+            80,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              78,
+              69
+            ]
+          },
+          "file": "hurt_06.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 6,
+          "source_rect": [
+            1355,
+            48,
+            171,
+            134
+          ],
+          "source_foot": [
+            1434,
+            182
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            19,
+            34,
+            82,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              80,
+              69
+            ]
+          },
+          "file": "hurt_07.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 7,
+          "source_rect": [
+            1578,
+            43,
+            168,
+            139
+          ],
+          "source_foot": [
+            1656,
+            182
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            19,
+            33,
+            81,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              79,
+              69
+            ]
+          },
+          "file": "hurt_08.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 8,
+          "source_rect": [
+            21,
+            277,
+            186,
+            124
+          ],
+          "source_foot": [
+            104,
+            401
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            38,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "hurt_09.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 9,
+          "source_rect": [
+            241,
+            281,
+            193,
+            118
+          ],
+          "source_foot": [
+            326,
+            399
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            40,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "hurt_10.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 10,
+          "source_rect": [
+            462,
+            283,
+            194,
+            116
+          ],
+          "source_foot": [
+            548,
+            399
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            41,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "hurt_11.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 11,
+          "source_rect": [
+            684,
+            284,
+            195,
+            112
+          ],
+          "source_foot": [
+            769,
+            396
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            43,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "hurt_12.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 12,
+          "source_rect": [
+            906,
+            285,
+            193,
+            111
+          ],
+          "source_foot": [
+            991,
+            396
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "hurt_13.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 13,
+          "source_rect": [
+            1128,
+            285,
+            192,
+            112
+          ],
+          "source_foot": [
+            1213,
+            397
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "hurt_14.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 14,
+          "source_rect": [
+            1350,
+            285,
+            192,
+            112
+          ],
+          "source_foot": [
+            1434,
+            397
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "hurt_15.png",
+          "duration_ms": 31
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 15,
+          "source_rect": [
+            1571,
+            284,
+            192,
+            112
+          ],
+          "source_foot": [
+            1656,
+            396
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "hurt_16.png",
+          "duration_ms": 31
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 16,
+          "source_rect": [
+            18,
+            509,
+            190,
+            115
+          ],
+          "source_foot": [
+            104,
+            624
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            41,
+            86,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              84,
+              69
+            ]
+          },
+          "file": "defeat_01.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 17,
+          "source_rect": [
+            241,
+            518,
+            191,
+            114
+          ],
+          "source_foot": [
+            326,
+            632
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            17,
+            42,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "defeat_02.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 18,
+          "source_rect": [
+            461,
+            525,
+            193,
+            111
+          ],
+          "source_foot": [
+            548,
+            636
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            16,
+            43,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "defeat_03.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 19,
+          "source_rect": [
+            681,
+            533,
+            198,
+            111
+          ],
+          "source_foot": [
+            769,
+            644
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            15,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "defeat_04.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 20,
+          "source_rect": [
+            899,
+            532,
+            199,
+            110
+          ],
+          "source_foot": [
+            991,
+            642
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            43,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "defeat_05.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 21,
+          "source_rect": [
+            1125,
+            527,
+            190,
+            114
+          ],
+          "source_foot": [
+            1213,
+            641
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            15,
+            42,
+            85,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              83,
+              69
+            ]
+          },
+          "file": "defeat_06.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 22,
+          "source_rect": [
+            1342,
+            536,
+            197,
+            105
+          ],
+          "source_foot": [
+            1434,
+            641
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            45,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "defeat_07.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 23,
+          "source_rect": [
+            1564,
+            552,
+            198,
+            89
+          ],
+          "source_foot": [
+            1656,
+            641
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            51,
+            87,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              85,
+              69
+            ]
+          },
+          "file": "defeat_08.png",
+          "duration_ms": 63
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 24,
+          "source_rect": [
+            11,
+            780,
+            201,
+            85
+          ],
+          "source_foot": [
+            104,
+            865
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            14,
+            53,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "defeat_09.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 25,
+          "source_rect": [
+            231,
+            785,
+            203,
+            80
+          ],
+          "source_foot": [
+            326,
+            865
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            54,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "defeat_10.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 26,
+          "source_rect": [
+            452,
+            791,
+            206,
+            74
+          ],
+          "source_foot": [
+            548,
+            865
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            57,
+            88,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              86,
+              69
+            ]
+          },
+          "file": "defeat_11.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 27,
+          "source_rect": [
+            673,
+            794,
+            207,
+            71
+          ],
+          "source_foot": [
+            769,
+            865
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            58,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "defeat_12.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 28,
+          "source_rect": [
+            895,
+            797,
+            207,
+            67
+          ],
+          "source_foot": [
+            991,
+            864
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            12,
+            59,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "defeat_13.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 29,
+          "source_rect": [
+            1118,
+            797,
+            206,
+            67
+          ],
+          "source_foot": [
+            1213,
+            864
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            59,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "defeat_14.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 30,
+          "source_rect": [
+            1339,
+            797,
+            207,
+            67
+          ],
+          "source_foot": [
+            1434,
+            864
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            59,
+            90,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              88,
+              69
+            ]
+          },
+          "file": "defeat_15.png",
+          "duration_ms": 62
+        },
+        {
+          "source_sheet": "assets/source/combat/lithrusk/reactions.png",
+          "source_cell": 31,
+          "source_rect": [
+            1562,
+            797,
+            206,
+            67
+          ],
+          "source_foot": [
+            1656,
+            864
+          ],
+          "source_sha256": "02ec1c0684b6c2595125807f511a9f638d5bf895ea898fe396c18102e91a6c92",
+          "native_scale": 0.37,
+          "native_bounds": [
+            13,
+            59,
+            89,
+            84
+          ],
+          "anchors": {
+            "floor": [
+              48,
+              84
+            ],
+            "body": [
+              48,
+              64
+            ],
+            "contact": [
+              87,
+              69
+            ]
+          },
+          "file": "defeat_16.png",
+          "duration_ms": 62
+        }
+      ]
+    }
+  }
+}

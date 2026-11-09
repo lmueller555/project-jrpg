@@ -164,14 +164,29 @@ def _validate_species(enemy, actions, archetypes, items):
             raise ValueError('Mixed attackers require physical/magical alternation')
     presentation = enemy['presentation']
     if (not isinstance(presentation, dict) or set(presentation) != {'sprite_id', 'action_aliases'}
-            or not _identifier(presentation['sprite_id'])
-            or Path(presentation['sprite_id']).name != presentation['sprite_id']
-            or not (ROOT/'assets/combat'/presentation['sprite_id']/'animation.json').is_file()
             or not isinstance(presentation['action_aliases'], dict)
             or any(key not in behavior['sequence'] or not isinstance(value, str)
                    or value not in actions
                    for key, value in presentation['action_aliases'].items())):
         raise ValueError('Invalid Bestiary presentation')
+    sprite_id = presentation['sprite_id']
+    if sprite_id is None:
+        # A species can be authored and previewed before its art exists. An
+        # empty alias map prevents accidental reuse of another enemy's poses.
+        if presentation['action_aliases']:
+            raise ValueError('Pending Bestiary presentation requires empty action aliases')
+    elif (not _identifier(sprite_id) or Path(sprite_id).name != sprite_id
+          or not (ROOT/'assets/combat'/sprite_id/'animation.json').is_file()):
+        raise ValueError('Invalid Bestiary presentation')
+    else:
+        manifest = json.loads((ROOT/'assets/combat'/sprite_id/'animation.json').read_text())
+        states = manifest.get('animations') if isinstance(manifest, dict) else None
+        def authored_state(identifier):
+            alias = presentation['action_aliases'].get(identifier)
+            return alias if alias in states else actions[alias or identifier]['animation']
+        if not isinstance(states, dict) or any(
+                authored_state(identifier) not in states for identifier in behavior['sequence']):
+            raise ValueError('Bestiary actions require authored animation states')
     if (not isinstance(enemy['rewards'], dict) or set(enemy['rewards']) != {'drops'}
             or (enemy['rewards']['drops'] is not None
                 and not _drops(enemy['rewards']['drops'], items))):
@@ -224,7 +239,8 @@ def build_enemy(enemy_id, level=None, *, data=None, actions=None):
     ``combat`` is a fresh legacy-compatible four-field enemy definition. XP and
     planning metadata remain separate so compilation cannot award rewards or
     silently activate future elemental/Stagger rules. A pending loot design
-    yields an empty combat item bundle and ``metadata['drops_pending']``.
+    yields an empty combat item bundle and ``metadata['drops_pending']``. A
+    null sprite ID preserves deferred art as ``metadata['presentation_pending']``.
     """
     catalog = load_bestiary(data, actions)
     if not isinstance(enemy_id, str) or enemy_id not in catalog['enemies']:
@@ -235,7 +251,8 @@ def build_enemy(enemy_id, level=None, *, data=None, actions=None):
         return {'id': enemy_id, 'level': None, 'xp_reward': None,
                 'combat': entry, 'fighting_style': None, 'behavior': None,
                 'presentation': {'sprite_id': enemy_id, 'action_aliases': {}},
-                'metadata': {'mode': 'authored', 'drops_pending': False}}
+                'metadata': {'mode': 'authored', 'drops_pending': False,
+                             'presentation_pending': False}}
     limits = entry['level_range']
     if not _integer(level, limits['min'], limits['max']):
         raise ValueError('Select an integer level within the species range')
@@ -248,6 +265,7 @@ def build_enemy(enemy_id, level=None, *, data=None, actions=None):
               'rewards': {'drops': {} if pending else deepcopy(entry['rewards']['drops'])}}
     metadata = deepcopy(entry)
     metadata['drops_pending'] = pending
+    metadata['presentation_pending'] = entry['presentation']['sprite_id'] is None
     return {'id': enemy_id, 'level': level,
             'xp_reward': monster_xp(level, boss=entry['tier'] == 'boss'),
             'combat': combat, 'fighting_style': entry['fighting_style'],
