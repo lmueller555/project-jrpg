@@ -26,6 +26,7 @@ def overview_rows(catalogue):
                'stat_profile': entry.get('stat_profile', ''),
                'fighting_style': entry.get('fighting_style', ''),
                'element': entry.get('elemental_profile', {}).get('element', 'unassigned'),
+               'combat_pending': 'combat_design' in entry,
                'presentation_pending': (entry.get('mode') == 'species'
                                         and entry['presentation']['sprite_id'] is None)}
 
@@ -36,6 +37,7 @@ def stat_rows(records, *, include_elements=False):
         row = {'id': record['id'], 'name': combat['name'],
                'level': record['level'], 'xp_reward': record['xp_reward'],
                **{key: combat['attributes'][key] for key in ATTRIBUTE_IDS},
+               'combat_pending': record['metadata'].get('combat_pending', False),
                'presentation_pending': record['metadata']['presentation_pending']}
         if include_elements:
             profile = record['metadata'].get('elemental_profile')
@@ -118,6 +120,23 @@ def main(argv=None):
                 sprite_id = record['presentation']['sprite_id']
                 print('Presentation: ' + (sprite_id if sprite_id is not None else
                                          'pending (models/animations deferred)'))
+            design = record['metadata'].get('combat_design')
+            if design is not None:
+                print('Combat: pending (authored design; runtime mechanics deferred)')
+                print()
+                table([{'Action': identifier, 'Name': action['name'],
+                        'Kind': action['kind'], 'Target': action['target'],
+                        'Potency': action['potency'], 'MP': action['mp_cost']}
+                       for identifier, action in design['actions'].items()])
+                print()
+                print('Windup: marked target gets at least '
+                      + str(design['windup']['minimum_target_actions'])+' action opportunity; '
+                      'repeat warning when retargeting.')
+                recovery = design['recovery']
+                print('Recovery: damage taken ×'+str(recovery['damage_taken_multiplier'])
+                      +' after '+recovery['after_action']+' until '
+                      +recovery['ends_before_action']+' begins.')
+                print('Encounter: one-time solo story battle; not placed.')
             profile = record['metadata'].get('elemental_profile')
             print()
             if profile is None:

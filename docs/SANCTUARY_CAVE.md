@@ -102,12 +102,17 @@ The six original encounter spaces remain layout references. Random selection
 uses the player's actual location throughout the continuous cave.
 
 The entrance apron, High Overlook, Quiet Shelf and Echo Chamber are protected.
-The Echo Chamber still reserves the future miniboss. The Quiet Shelf provides
+The Echo Chamber reserves the future level-seven miniboss,
+[Vespermaw](BESTIARY.md#vespermaw). Its Bestiary entry records the solo story
+encounter design, stats, elements, rewards and complete action cycle. Art,
+party-wide Roar damage, Pounce response rules, recovery vulnerability and the
+actual encounter trigger remain pending. It is excluded from random pools.
+The Quiet Shelf provides
 a preparation pause without restoring HP or MP. Battle entry focuses the party,
 presents a loading screen and reveals one of four animated cave battlefields.
 Victory/flee return to the same cave position and reset the distance budget.
 
-The arrival cutscene, miniboss identity, further combat tuning and
+The arrival cutscene, miniboss implementation, further combat tuning and
 post-boss resolution remain later work. The cave does not establish the
 confluence's detailed workings, identify the original sacrificial temple or
 merge this location with the historically sealed workers' passage.
