@@ -468,7 +468,7 @@
     ],
     "position": [
       180,
-      102
+      108
     ],
     "clearance": [
       168,
@@ -506,6 +506,10 @@
         "path": "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_05.png",
         "sha256": "7f2d3d9e38d14f327dd7e97fab735d7f9d30e2facafa4ce181c319b0602f2013"
       }
+    ],
+    "threshold_position": [
+      180,
+      144
     ]
   }
 }

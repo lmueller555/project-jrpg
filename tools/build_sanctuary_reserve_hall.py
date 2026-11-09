@@ -167,6 +167,9 @@ def products():
     blocked.paste(0, box(data['exit_clearance']))
     relief_door = data.get('relief_door')
     if relief_door:
+        # The frame ends at the wall/floor seam; its stone sill projects onto
+        # the floor beneath it, shared by every door animation frame.
+        ground.alpha_composite(assets['threshold'], tuple(relief_door['threshold_position']))
         blocked.paste(0, box(relief_door['clearance']))
     output = {ART/'ground.png': png(ground.convert('RGB'))}
     for name, image in fantasy.items():output[ART/'fantasy'/(name+'.png')] = png(image)
