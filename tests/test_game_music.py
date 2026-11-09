@@ -30,6 +30,8 @@ class FakeMusic:
     def __init__(self):
         self.loads = []
         self.plays = []
+        self.starts = []
+        self.position_ms = 0
         self.play_volumes = []
         self.stops = 0
         self.pauses = 0
@@ -45,8 +47,10 @@ class FakeMusic:
         self.loads.append(path)
         self.busy = False
 
-    def play(self, loops):
+    def play(self, loops, *, start=0):
         self.plays.append(loops)
+        self.starts.append(start)
+        self.position_ms = 0
         self.play_volumes.append(self.volume)
         self.busy, self.paused = True, False
 
@@ -67,6 +71,9 @@ class FakeMusic:
 
     def get_busy(self):
         return self.busy and not self.paused
+
+    def get_pos(self):
+        return self.position_ms if self.busy else -1
 
 
 class FakeMixer:
@@ -350,6 +357,173 @@ class SoundtrackTests(unittest.TestCase):
         self.assertEqual(stream.plays, [0, -1, -1, 0])
         self.assertFalse(music.completed)
         self.assertTrue(music.playing)
+
+    def test_battle_returns_to_the_position_captured_at_entry_with_a_fade_in(self):
+        game, music, stream = self.make_music()
+        music.play('eldenmere', fade_ms=0)
+        stream.position_ms = 12345
+        self.assertTrue(music.begin_battle(fade_ms=400))
+        self.assertTrue(music.battle_active)
+        stream.position_ms += 400  # The outgoing fade must not move the bookmark.
+        music.update(.8)
+        self.assertEqual(music.current_track, 'battle')
+        stream.position_ms = 18400
+        self.assertTrue(music.end_battle(fade_ms=600))
+        self.assertFalse(music.battle_active)
+        self.assertEqual(music.current_track, 'eldenmere')
+        self.assertAlmostEqual(stream.starts[-1], 12.345)
+        self.assertEqual(stream.play_volumes[-1], 0)
+        music.update(.3)
+        self.assertAlmostEqual(stream.volume, .225)
+        music.update(.3)
+        self.assertAlmostEqual(stream.volume, .45)
+        calls = len(stream.plays)
+        self.assertFalse(music.end_battle())
+        self.assertEqual(len(stream.plays), calls)
+
+    def test_consecutive_battles_add_decoder_time_to_the_previous_seek_offset(self):
+        game, music, stream = self.make_music()
+        music.play('eldenmere', fade_ms=0)
+        stream.position_ms = 30250
+        music.begin_battle(fade_ms=0)
+        # Repeated battle ownership cannot replace the original bookmark.
+        stream.position_ms = 1000
+        music.begin_battle(fade_ms=0)
+        music.end_battle(fade_ms=0)
+        stream.position_ms = 2750
+        self.assertAlmostEqual(music.position, 33)
+        music.begin_battle(fade_ms=0)
+        music.end_battle(fade_ms=0)
+        self.assertAlmostEqual(stream.starts[-1], 33)
+
+    def test_looping_cues_wrap_long_running_decoder_positions_before_seeking(self):
+        game, music, stream = self.make_music()
+        music.play('eldenmere', fade_ms=0)
+        duration = music._duration('eldenmere')
+        self.assertGreater(duration, 10)
+        stream.position_ms = (duration * 3 + 7.25) * 1000
+        self.assertAlmostEqual(music.position, 7.25)
+        music.begin_battle(fade_ms=0)
+        music.end_battle(fade_ms=0)
+        self.assertAlmostEqual(stream.starts[-1], 7.25)
+
+    def test_prior_one_shot_ending_during_outgoing_fade_cannot_strand_the_battle_cue(self):
+        game, music, stream = self.make_music()
+        music.play('victory', fade_ms=0)
+        stream.position_ms = 3900
+        music.begin_battle(fade_ms=450)
+        stream.busy = False
+        music.update(.05)
+        self.assertEqual(music.current_track, 'battle')
+        self.assertTrue(music.playing)
+        music.end_battle(fade_ms=450)
+        self.assertEqual(music.current_track, 'victory')
+        self.assertAlmostEqual(stream.starts[-1], 3.9)
+        self.assertFalse(music.completed)
+
+    def test_pause_and_mute_do_not_advance_the_interrupted_cue(self):
+        game, music, stream = self.make_music()
+        music.play('eldenmere', fade_ms=0)
+        stream.position_ms = 11000
+        music.set_paused(True)
+        # Also supports a backend whose raw decoder clock advances while paused.
+        stream.position_ms = 61000
+        music.update(50)
+        self.assertAlmostEqual(music.position, 11)
+        music.set_paused(False)
+        stream.position_ms = 63000
+        self.assertAlmostEqual(music.position, 13)
+        game.audio.set_music(0)
+        stream.position_ms = 113000
+        self.assertAlmostEqual(music.position, 13)
+        music.begin_battle(fade_ms=0)
+        music.end_battle(fade_ms=450)
+        game.audio.set_music(.5)
+        self.assertAlmostEqual(stream.starts[-1], 13)
+        self.assertAlmostEqual(music.position, 13)
+
+    def test_existing_battle_theme_and_aborted_entry_never_restart_the_stream(self):
+        game, music, stream = self.make_music()
+        music.play('battle', fade_ms=0)
+        stream.position_ms = 5000
+        music.begin_battle()
+        stream.position_ms = 22000
+        music.end_battle()
+        self.assertEqual(stream.plays, [-1])
+        self.assertAlmostEqual(music.position, 22)
+        music.play('eldenmere', fade_ms=0)
+        stream.position_ms = 8000
+        music.begin_battle(fade_ms=400)
+        music.update(.1)
+        stream.position_ms += 100
+        music.end_battle(fade_ms=200)
+        music.update(1)
+        self.assertEqual(len(stream.plays), 2)
+        self.assertAlmostEqual(music.position, 8.1)
+
+    def test_silence_and_completed_one_shots_are_restored_without_replaying(self):
+        game, music, stream = self.make_music()
+        music.begin_battle(fade_ms=0)
+        music.end_battle(fade_ms=200)
+        music.update(.2)
+        self.assertIsNone(music.desired_track)
+        self.assertIsNone(music.current_track)
+        music.play('victory', fade_ms=0)
+        stream.busy = False
+        self.assertTrue(music.completed)
+        music.begin_battle(fade_ms=0)
+        count = len(stream.plays)
+        music.end_battle()
+        music.update(1)
+        self.assertTrue(music.completed)
+        self.assertFalse(music.playing)
+        self.assertEqual(music.desired_track, 'victory')
+        self.assertEqual(len(stream.plays), count)
+
+    def test_stop_and_new_stream_owner_discard_an_old_combat_bookmark(self):
+        mixer = FakeMixer()
+        game, music, stream = self.make_music(mixer)
+        music.play('eldenmere', fade_ms=0)
+        music.begin_battle(fade_ms=0)
+        music.stop()
+        self.assertFalse(music.end_battle())
+        music.play('eldenmere', fade_ms=0)
+        music.begin_battle(fade_ms=0)
+        _, newer, _ = self.make_music(mixer)
+        newer.play('title', fade_ms=0)
+        self.assertFalse(music.end_battle())
+        self.assertEqual(newer.current_track, 'title')
+
+    def test_vorbis_duration_reader_matches_all_shipped_decoder_frame_counts(self):
+        root = Path(__file__).resolve().parents[1] / 'assets/music'
+        music = GameMusic(SimpleNamespace(audio=AudioSettings()), mixer=FakeMixer())
+        self.addCleanup(music.stop)
+        records = json.loads((root/'runtime/provenance.json').read_text())['tracks']
+        for identifier in music.tracks:
+            with self.subTest(track=identifier):
+                record = next(item for item in records if item['identifier'] == identifier)
+                expected = record['verification']['decoded_frames'] / record['verification']['sample_rate']
+                self.assertAlmostEqual(music._duration(identifier), expected)
+
+    def test_real_vorbis_decoder_accepts_resumed_offset_and_preserves_playing_stream(self):
+        pygame.mixer.init()
+        self.addCleanup(pygame.mixer.quit)
+        game = SimpleNamespace(audio=AudioSettings())
+        music = GameMusic(game)
+        self.addCleanup(music.stop)
+        self.assertTrue(music.play('eldenmere', fade_ms=0))
+        # Seek the real streamed Ogg without waiting for 40 seconds of playback.
+        music._requested_position = 40.25
+        music._clear_current()
+        self.assertTrue(music._start('eldenmere', 0))
+        before = music.position
+        music.begin_battle(fade_ms=0)
+        self.assertTrue(music.playing)
+        music.end_battle(fade_ms=450)
+        self.assertEqual(music.current_track, 'eldenmere')
+        self.assertTrue(music.playing)
+        self.assertAlmostEqual(music.position, before, delta=.05)
+        self.assertIsNone(music.error)
 
     def test_repeat_metadata_requires_a_real_boolean(self):
         bad = GameMusic(SimpleNamespace(audio=AudioSettings()),

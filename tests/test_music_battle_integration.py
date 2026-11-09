@@ -26,6 +26,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.path = self.directory/'journey.json'
         self.backend = MagicMock()
         self.backend.get_busy.return_value = True
+        self.backend.get_pos.return_value = 0
         stream = patch('pygame.mixer.music', self.backend)
         stream.start();self.addCleanup(stream.stop)
 
@@ -196,17 +197,17 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertTrue(quest.encounter_pending)
         self.assertFalse(game.combat.active)
 
-    def test_mill_victory_and_reward_retry_keep_fanfare_until_spoils_exit(self):
+    def test_mill_victory_and_reward_retry_keep_resumed_score_through_spoils(self):
         game = self.game();self.seed_encounter(game);self.reach_cue(game)
         read_social(game)
         scene = finish_mill_battle(game, dismiss=False)
         self.assertEqual(scene.model.phase, 'victory')
-        self.assertEqual(game.music.desired_track, 'victory')
+        self.assertEqual(game.music.desired_track, 'eldenmere')
         with patch.object(game.battle_rewards, 'award_battle_rewards', return_value=False):
             spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
         self.assertTrue(spoils.result_error)
-        self.assertEqual(game.music.desired_track, 'victory')
+        self.assertEqual(game.music.desired_track, 'eldenmere')
         acknowledge_battle_result(game, scene)
         self.assertFalse(game.combat.active)
         self.assertTrue(game.mill_quest.encounter_cleared)
@@ -308,6 +309,130 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.frame(game, .5)
         self.assertEqual(game.music.desired_track, 'battle')
         self.assertGreater(self.backend.set_volume.call_args.args[0], 0)
+
+
+    def test_all_results_resume_saved_position_before_result_is_dismissed(self):
+        for outcome in ('victory', 'fled', 'defeat'):
+            with self.subTest(outcome=outcome):
+                game = self.game();seed_completed_mill(game)
+                self.frame(game, 1)
+                self.backend.get_pos.return_value = 12345
+                scene = self.begin_bat(game)
+                self.finish_transition(game)
+                self.assertEqual(game.music.current_track, 'battle')
+                self.backend.get_pos.return_value = 78000
+                scene.model._result(outcome)
+                if outcome == 'victory':scene.model.enemy.hp = 0
+                self.frame(game)
+                self.assertTrue(game.combat.active)
+                self.assertEqual(game.music.current_track, 'eldenmere')
+                self.assertFalse(game.music.battle_active)
+                self.backend.play.assert_called_with(-1, start=12.345)
+                self.assertEqual(self.backend.set_volume.call_args.args[0], 0)
+                self.frame(game, .225)
+                self.assertGreater(self.backend.set_volume.call_args.args[0], 0)
+                self.assertLess(self.backend.set_volume.call_args.args[0], .45)
+                game.music.stop()
+
+    def test_second_battle_resumes_after_the_previous_seek_offset(self):
+        game = self.game();seed_completed_mill(game);self.frame(game, 1)
+        self.backend.get_pos.return_value = 12000
+        scene = self.begin_bat(game);self.finish_transition(game)
+        scene.model._result('fled');self.frame(game)
+        self.backend.play.assert_called_with(-1, start=12.0)
+        scene.dismissed = True;self.frame(game)
+        self.assertFalse(game.combat.active)
+        self.backend.get_pos.return_value = 2000
+        game.combat.cooldown = 0
+        self.assertTrue(game.combat.interact())
+        self.finish_transition(game)
+        game.combat.model._result('defeat');self.frame(game)
+        self.backend.play.assert_called_with(-1, start=14.0)
+
+    def test_mill_restores_actual_previous_track_through_aftermath(self):
+        game = self.game();self.seed_encounter(game);self.reach_cue(game)
+        game.music.play('royalty', fade_ms=0)
+        self.backend.get_pos.return_value = 3210
+        read_social(game)
+        self.assertTrue(game.music.battle_active)
+        scene = finish_mill_battle(game, dismiss=False)
+        self.assertEqual(scene.model.phase, 'victory')
+        self.assertEqual(game.music.current_track, 'royalty')
+        self.backend.play.assert_called_with(-1, start=3.21)
+        starts = self.backend.play.call_count
+        acknowledge_battle_result(game, scene)
+        self.frame(game, 1)
+        self.assertFalse(game.combat.active)
+        self.assertEqual(game.music.desired_track, 'royalty')
+        self.assertEqual(self.backend.play.call_count, starts)
+        self.assertEqual(game.social.script_identifier, 'mill_aftermath')
+
+    def test_existing_battle_score_continues_without_reload_at_entry_or_result(self):
+        game = self.game();seed_completed_mill(game)
+        game.music.play('battle', fade_ms=0)
+        self.backend.get_pos.return_value = 44000
+        starts = self.backend.play.call_count
+        loads = self.backend.load.call_count
+        scene = self.begin_bat(game);self.finish_transition(game)
+        scene.model._result('fled');self.frame(game)
+        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(self.backend.play.call_count, starts)
+        self.assertEqual(self.backend.load.call_count, loads)
+        scene.dismissed = True;self.frame(game)
+        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(self.backend.play.call_count, starts)
+
+    def test_silent_world_returns_to_silence_after_result(self):
+        game = self.game();seed_completed_mill(game)
+        game.music.stop()
+        scene = self.begin_bat(game);self.finish_transition(game)
+        self.assertEqual(game.music.current_track, 'battle')
+        scene.model._result('defeat');self.frame(game)
+        self.assertIsNone(game.music.desired_track)
+        self.frame(game, 1)
+        self.assertIsNone(game.music.current_track)
+        scene.dismissed = True;self.frame(game)
+        self.assertIsNone(game.music.desired_track)
+
+    def test_cave_entry_checkpoint_retry_keeps_original_music_position(self):
+        game = self.game();seed_completed_mill(game);self.frame(game, 1)
+        game.world = game._scene_by_id('sanctuary_cave')
+        game.player.position.update(456, 1280)
+        game.camera.reset()
+        game.cave_random_encounters.reset(41)
+        ticket = game.cave_random_encounters.advance(1000, (456, 1280))
+        self.assertIsNotNone(ticket)
+        self.backend.get_pos.return_value = 7654
+        with patch.object(game, 'save_progress', return_value=False):
+            self.assertTrue(game.combat.start_cave(ticket))
+        owner = game.combat
+        self.assertIsNotNone(owner.entry)
+        self.assertTrue(owner.entry.error)
+        self.assertEqual(game.music.desired_track, 'battle')
+        self.frame(game, 1)
+        self.backend.get_pos.return_value = 45000
+        owner.entry.retry_requested = True
+        self.frame(game, 0)
+        self.assertFalse(owner.entry.error)
+        self.frame(game, 1);game.draw();self.frame(game, .01)
+        self.assertIsNotNone(owner.model)
+        self.finish_transition(game)
+        owner.model._result('fled');self.frame(game)
+        self.backend.play.assert_called_with(-1, start=7.654)
+
+    def test_continue_at_spoils_keeps_reconstructed_world_score(self):
+        game = self.game();scene = self.begin_bat(game);self.finish_transition(game)
+        scene.model.enemy.hp = 0;scene.model._result('victory');self.frame(game)
+        wait_for_spoils(game)
+        restored = self.game(title=True)
+        self.assertTrue(restored.has_saved_journey)
+        self.assertTrue(restored.begin_journey(True))
+        self.assertEqual(restored.combat.post_phase, 'spoils')
+        self.assertEqual(restored.music.desired_track, 'eldenmere')
+        self.assertFalse(restored.music.battle_active)
+        self.frame(restored, 1)
+        self.assertEqual(restored.music.current_track, 'eldenmere')
+        self.assertEqual(Path(self.backend.load.call_args.args[0]).name, 'eldenmere.ogg')
 
 
 if __name__ == '__main__':unittest.main()

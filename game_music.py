@@ -1,8 +1,10 @@
 """One streamed soundtrack shared by the title, exploration and encounters.
 
 Track changes use a short, nonblocking fade-out/fade-in. Requests for the same
-track preserve playback across Eldenmere and the millrace. Only music
-is controlled here; environmental effects and UI cues keep their own channels.
+track preserve playback across Eldenmere and the millrace. Combat temporarily
+bookmarks the current cue and resumes it at its saved playback position. Only
+music is controlled here; environmental effects and UI cues keep their own
+channels.
 """
 from __future__ import annotations
 
@@ -40,6 +42,11 @@ class GameMusic:
         self._fade_duration = self._fade_remaining = 0.0
         self._fade_start = 1.0
         self._requested_fade = .45
+        self._requested_position = 0.0
+        self._position_origin = self._position_frozen = 0.0
+        self._fallback_elapsed = 0.0
+        self._durations = {}
+        self._battle_bookmark = None
         settings = getattr(game, 'audio', None)
         if settings is not None and hasattr(settings, 'bind_music'):
             settings.bind_music(self)
@@ -69,6 +76,122 @@ class GameMusic:
         except (OSError, ValueError, KeyError, TypeError) as error:
             self.error = str(error)
             return {}
+
+    def _duration(self, identifier):
+        """Read Vorbis timing headers without decoding a whole music track."""
+        if identifier in self._durations:
+            return self._durations[identifier]
+        duration = None
+        try:
+            with self.tracks[identifier]['path'].open('rb') as source:
+                header = source.read(4096)
+                packet = header.find(b'\x01vorbis')
+                if not header.startswith(b'OggS') or packet < 0:
+                    raise ValueError('Not an Ogg Vorbis stream')
+                rate = int.from_bytes(header[packet + 12:packet + 16], 'little')
+                source.seek(0, 2)
+                length = source.tell()
+                source.seek(max(0, length - 65536))
+                tail = source.read()
+            # A page is at most 65,307 bytes. Validate the final page rather
+            # than mistaking an OggS byte sequence inside compressed audio.
+            offset = len(tail)
+            while (offset := tail.rfind(b'OggS', 0, offset)) >= 0:
+                if offset + 27 > len(tail):
+                    continue
+                count = tail[offset + 26]
+                body = offset + 27 + count
+                if (body <= len(tail) and tail[offset + 4] == 0
+                        and tail[offset + 5] & 4
+                        and tail[offset + 14:offset + 18] == header[14:18]
+                        and body + sum(tail[offset + 27:body]) == len(tail)):
+                    samples = int.from_bytes(tail[offset + 6:offset + 14],
+                                             'little', signed=True)
+                    if rate > 0 and samples > 0:
+                        duration = samples / rate
+                    break
+        except (OSError, ValueError, KeyError):
+            pass
+        self._durations[identifier] = duration
+        return duration
+
+    def _bounded_position(self, identifier, position):
+        position = max(0.0, position)
+        duration = self._duration(identifier)
+        if duration and self.tracks[identifier]['loop']:
+            position %= duration
+        return position
+
+    def _decoder_position(self):
+        try:
+            value = self._mixer.music.get_pos()
+            if type(value) in (int, float) and math.isfinite(value) and value >= 0:
+                return value / 1000
+        except (AttributeError, pygame.error, OSError, ValueError, OverflowError):
+            pass
+        return self._fallback_elapsed
+
+    @property
+    def position(self):
+        """Current cue position in seconds, including an earlier resume seek."""
+        if self.current_track is None:
+            return self._requested_position if self.desired_track is not None else 0.0
+        value = (self._position_frozen if self._stream_paused else
+                 self._position_origin + self._decoder_position())
+        return self._bounded_position(self.current_track, value)
+
+    @property
+    def battle_active(self):
+        return self._battle_bookmark is not None
+
+    def begin_battle(self, fade_ms=450):
+        """Bookmark the interrupted cue once, then request the battle theme."""
+        if self.battle_active:
+            return True
+        if 'battle' not in self.tracks:
+            return False
+        self._observe_completion()
+        identifier = self.current_track or self.desired_track
+        bookmark = {'track': identifier, 'position': self.position,
+                    'completed': self._completed}
+        if not self.play('battle', fade_ms=fade_ms):
+            return False
+        self._battle_bookmark = bookmark
+        return True
+
+    def end_battle(self, fade_ms=450):
+        """Resume the saved cue once, fading in from the saved decoder position."""
+        if not self.battle_active:
+            return False
+        try:
+            fade = float(fade_ms) / 1000
+            if not math.isfinite(fade):
+                return False
+            fade = max(0.0, fade)
+        except (TypeError, ValueError, OverflowError):
+            return False
+        bookmark, self._battle_bookmark = self._battle_bookmark, None
+        identifier = bookmark['track']
+        if identifier is None:
+            self.fade_out(fade_ms)
+            return True
+        if (identifier == self.current_track and self._loaded
+                and not self._completed):
+            # The story may already use the battle cue, or combat may have
+            # ended before the old cue faded out. Never rewind that stream.
+            return self.play(identifier, fade_ms=fade_ms)
+        self._clear_current()
+        self.desired_track = identifier
+        self._requested_position = bookmark['position']
+        self._requested_fade = fade
+        self._failed = False
+        if bookmark['completed']:
+            # A previously finished one-shot must remain silent after combat.
+            self.current_track = identifier
+            self._completed = True
+        else:
+            self._start(identifier, fade)
+        return True
 
     @property
     def playing(self):
@@ -117,6 +240,7 @@ class GameMusic:
             previous._fade_mode = None
             previous._failed = True
             previous._completed = False
+            previous._battle_bookmark = None
         self._owners[self._mixer] = weakref.ref(self)
 
     def _volume(self):
@@ -160,7 +284,14 @@ class GameMusic:
             self._envelope = 0.0 if fade > 0 else 1.0
             gain = self.tracks[identifier]['gain'] * self._volume() * self._duck * self._envelope
             self._mixer.music.set_volume(0.0 if self._paused else gain)
-            self._mixer.music.play(-1 if self.tracks[identifier]['loop'] else 0)
+            position = self._bounded_position(identifier, self._requested_position)
+            loops = -1 if self.tracks[identifier]['loop'] else 0
+            if position > 0:
+                self._mixer.music.play(loops, start=position)
+            else:
+                self._mixer.music.play(loops)
+            self._fallback_elapsed = 0.0
+            self._position_origin = self._position_frozen = position
             self.current_track = identifier
             self._loaded = True
             self._stream_paused = False
@@ -195,6 +326,7 @@ class GameMusic:
             self.refresh_volume()
             return True
         self.desired_track = identifier
+        self._requested_position = 0.0
         self._requested_fade = fade
         self._failed = False
         if self.current_track is None:
@@ -228,9 +360,11 @@ class GameMusic:
         paused = self._paused or self._volume() <= 0
         if paused != self._stream_paused:
             if paused:
+                self._position_frozen = self._position_origin + self._decoder_position()
                 self._mixer.music.pause()
             else:
                 self._mixer.music.unpause()
+                self._position_origin = self._position_frozen - self._decoder_position()
             self._stream_paused = paused
 
     def refresh_volume(self):
@@ -275,6 +409,12 @@ class GameMusic:
         except (ValueError, TypeError, OverflowError):
             return
         self._observe_completion()
+        if self._completed and self.desired_track != self.current_track:
+            # A one-shot can end naturally during its outgoing fade. Settle
+            # that pending request instead of stranding it on the silent cue.
+            self._clear_current()
+        if self._loaded and not self._stream_paused and not self._completed:
+            self._fallback_elapsed += seconds
         if not self._paused:
             self._duck += (self._duck_target - self._duck) * min(1.0, seconds / .18)
         if self.current_track is None and self.desired_track is not None and not self._failed:
@@ -321,6 +461,8 @@ class GameMusic:
         self._fade_start = self._envelope
 
     def stop(self):
+        self._battle_bookmark = None
+        self._requested_position = 0.0
         self._clear_current()
         self.desired_track = None
         self._failed = False
