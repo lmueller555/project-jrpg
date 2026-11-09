@@ -164,12 +164,13 @@ class CharacterAttributes:
         """Add permanent stat gains without restoring current HP or MP.
 
         Accept a stat-delta dictionary, such as ``dict(award.stat_gains)``.
-        Saved base values stop at their gameplay caps; named modifiers retain
-        their ownership. Invalid gains or raw totals leave all state intact.
+        New base growth stops at gameplay caps; an existing larger base is
+        never reduced. Named modifiers retain their ownership. Invalid gains
+        or raw totals leave all state intact.
         The caller owns XP/receipt transactions and durable checkpointing.
         """
         if not _valid_bonuses(gains):return False
-        attributes = {key: min(self.cap(key), value+gains.get(key, 0))
+        attributes = {key: max(value, min(self.cap(key), value+gains.get(key, 0)))
                       for key, value in self._attributes.items()}
         totals = _attribute_totals(attributes, self._modifiers)
         if not _valid_attributes(totals, capped=False):return False

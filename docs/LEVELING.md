@@ -1,30 +1,35 @@
-# Character and enemy leveling foundations
+# Character and enemy leveling
 
-This is the approved traditional leveling design and its executable foundation.
+This is the approved traditional leveling design and its live combat integration.
 [`leveling.py`](../leveling.py) supplies character growth, XP curves and a
 standalone level record. [`enemy_growth.py`](../enemy_growth.py) supplies the
 enemy baseline and enemy-design catalogue. Their data lives in
 [`level_growth.json`](../assets/characters/level_growth.json) and
 [`enemy_archetypes.json`](../assets/combat/enemy_archetypes.json).
 
-Live victories currently award receipt-backed item drops. This foundation does
-not automatically distribute traditional XP, replace MQ02's authored guest
-ratings, or retune the Bat and Tusker encounters. The enlarged effective rating
-caps are active in the shared attribute and damage backends. Recipient and
-level-up recovery rules are approved below; enemy levels and live journey
-integration remain separate work.
+Live victories award EXP, stat growth and item drops through one receipt-backed
+transaction. [`character_progression.py`](../character_progression.py) keeps the
+party's level records and constructs deterministic before/after growth plans;
+the combat owner validates, applies and checkpoints those plans with resources
+and loot. New journeys use the approved level-one profiles for all five
+characters. The existing Bat and Tusker retain their authored combat stats.
 
 Older progression-backed saves receive a one-way compatibility import on
 Continue: earned effective attributes, learned abilities and battle receipts are
-preserved. Retired scores and movement currency are discarded without inventing
-traditional XP or character levels. Validation on the title screen does not
-rewrite the player's file.
+preserved. A valid journey without `character_levels` begins at level one with
+zero EXP, retaining its saved attributes, current HP/MP and earned modifiers.
+Retired scores and movement currency are discarded without conversion to EXP;
+past battle receipts do not create retroactive EXP. Validation on the title
+screen does not rewrite the player's file. Future level-ups add the approved
+growth differences to the preserved saved baseline rather than replacing it.
 
 The [Bestiary](BESTIARY.md) now stores individual monster and boss definitions.
 Cave Bat is the first computed species, explicitly authored at levels 2–3 with
-84/104 XP metadata. The existing fixed Bat and Tusker retain their current
-values. Choosing a species level or resolving its reward does not grant live
-character XP or change existing encounters.
+84/104 EXP rewards. Victories sum the resolved monsters' EXP before allocating
+it. The fixed test Bat uses a level-one reward reference, **60 EXP**, and the
+MQ02 Ridgeback Tusker uses a level-three reference, **104 EXP**; these reward
+references do not rescale either encounter's combat stats. Merely previewing a
+species or constructing a battle model still grants nothing.
 
 ## Experience and levels
 
@@ -57,26 +62,29 @@ level early on to roughly 13.2 near the cap. Enemy counts per encounter and
 ability availability still determine actual pacing.
 
 **Every character in the active combat party who is alive at battle end receives
-the full encounter XP.** Sum the defeated monsters' rewards before allocation;
-there is no split among survivors. KO'd combatants and reserves receive zero.
+the full encounter XP on victory.** Sum the defeated monsters' rewards before
+allocation; there is no split among survivors. KO'd combatants and reserves
+receive zero. Summoned bots do not receive separate EXP or level records.
 For example, three monsters worth 60 XP each award 180 XP to every surviving
-combatant. Recipient eligibility is evaluated before post-battle recovery.
+combatant. Recipient eligibility uses actual end-of-battle HP before any
+encounter-specific first aid. Fleeing or defeat grants no EXP, including when
+some enemies were defeated before the escape or withdrawal.
 
 `combat_xp_allocations(amount, active_ids, current_hp)` implements this selection
-as a pure foundation helper. IDs are canonical character IDs such as `caelan`.
+as a pure allocation helper. IDs are canonical character IDs such as `caelan`.
 The HP mapping may contain the full roster, but only the supplied one-to-three
 combat-party IDs receive allocations. The result includes each active ID with
 its full amount or zero when KO'd; the helper does not mutate XP or resources.
-The caller still owns qualifying outcome rules, durable reward receipts and
-live battle integration. Whether partial kills followed by escape grant XP
-has not been approved.
+The live victory coordinator uses this selection when it prepares the saved
+growth plan; the view does not choose recipients or mutate progression.
 
 ## Character growth
 
 All values below are natural, unmodified attributes. HP and MP are maxima;
-current resources belong to the existing character state. The level-1 profiles
-are new authored growth baselines, separate from current temporary guest and
-placeholder encounter profiles.
+current resources belong to the existing character state. New journeys use
+these level-one baselines. Continued journeys retain their existing baselines,
+including earlier guest or placeholder ratings, and receive the same approved
+growth deltas on subsequent level-ups.
 
 | Attribute | Caelan L1 | Mira L1 | Lucan L1 | Rhea L1 | Edran L1 |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -149,9 +157,34 @@ who gains 20 maximum HP and 5 maximum MP becomes 47/160 HP and 7/35 MP.
 
 `CharacterAttributes.apply_growth(gains)` applies validated nonnegative base-stat
 gains while preserving current resources and existing named modifiers. It returns
-`False` without mutation for invalid data. XP receipts expose `stat_gains`; a
-future live progression coordinator can pass `dict(receipt.stat_gains)` to this
-method. The method itself does not award XP, grant skills or own reward receipts.
+`False` without mutation for invalid data. EXP award plans expose `stat_gains`;
+the live progression coordinator applies them through this method after checking
+the complete participating before-state. The method itself does not award EXP,
+grant skills or own battle receipts. Existing encounter-specific first aid is
+separate from level growth and does not change who qualified for EXP.
+
+### Spoils and menus
+
+Spoils displays the battle's total EXP and each combatant's portrait, level,
+individual reward and progress toward the next level. The full reward appears
+for each eligible survivor; KO rows explain their zero award. Bars fill together,
+carry overflow through level thresholds and show **MAX LEVEL** at level 100.
+Confirm can finish the animation without dismissing the result on the same
+press; reduced motion keeps the information without the extended fill.
+
+Each character who levels up receives one acknowledged sheet, combining all
+levels gained in that battle. Its light parchment panel shows all attributes
+with **black old values → green arrows → green new values**, plus numeric gains.
+HP/MP rows describe maximum-capacity changes, not healing. The short original
+EXP-fill cue and level-up chime use Effects volume; the previously interrupted
+world or story music continues underneath the results. Items remain visible
+with quantities, inspection details and inventory-limit information.
+
+The Party menu shows levels in active slots and the recruited roster. The
+Characters menu can inspect recruited companions and shows level, EXP progress
+and remaining EXP alongside the selected character's attributes. Unrecruited
+profiles do not become visible or join the party merely because a level record
+exists for them.
 
 ### Mira's future inheritance rules
 
@@ -223,7 +256,7 @@ species/tier factors before rounding once and applying caps. The Bat and Tusker
 retain their authored live values while individual levels, species adjustments
 and encounter tuning are defined.
 
-## Standalone API and persistence
+## Progression API and persistence
 
 ```python
 from leveling import (CharacterLevel, character_stats, combat_xp_allocations,
@@ -273,12 +306,34 @@ returns 0 at level 100.
 by the enemy baseline. Invalid levels, unknown characters, malformed records and
 boolean numeric inputs are rejected.
 
-This record is not a new journey field. It does not modify live current HP/MP or
-grant equipment or abilities. The allocation and growth helpers encode the
-approved recipient and no-recovery rules; the caller must coordinate them with
-durable once-only reward handling when wiring combat and saves. Existing
-`CharacterAttributes` snapshots and party object identities retain their current
-ownership.
+`CharacterLevel` remains usable independently of a game. In live journeys,
+`CharacterProgression(party)` owns one record for every canonical character and
+saves them under the top-level `character_levels` field:
+
+```python
+{'version': 1, 'characters': {
+    'caelan': {'version': 1, 'character_id': 'caelan', 'total_xp': 200},
+    # The other four canonical character records are present too.
+}}
+```
+
+`preview(amount, active_ids, end_hp)` produces a detached plan without mutation.
+`valid_plan(plan)` recomputes its allocation, thresholds and growth;
+`matches_plan(plan, after=False)` checks the participating saved before-state;
+and `apply(plan)` commits all validated EXP and base-stat changes together.
+Current resources, modifiers and exposed party attribute identities retain
+their existing ownership. `initialize_new_game()` installs the approved
+level-one stats only for a new journey; `restore(None)` resets EXP records
+without replacing continued-journey stats.
+
+New pending victory records use version 2 and include the progression plan,
+actual end HP, before/after base stats and offered loot. Validation checks them
+against the encounter, saved levels, party attributes and receipt stage.
+Awarding items, EXP and growth is one atomic in-memory transaction, checkpointed
+with battle resources. A failed checkpoint retries the already-awarded state
+without applying the grant again. Animation skips, result dismissal and Continue
+cannot manufacture another grant. Existing version-one pending victories remain
+supported with their original item-only rewards and no retroactive EXP.
 
 Use the headless [growth preview tool](../tools/preview_leveling.py) to inspect
 the canonical curves without creating a game or reading a journey:
@@ -293,12 +348,8 @@ python tools/preview_leveling.py --enemy-profiles --all-levels --format csv
 
 - Recruitment levels, story-absence catch-up and expected campaign levels.
 - Individual enemy levels, species adjustments and elite/boss tuning.
-- Qualifying outcome rules for XP, including partial kills followed by escape.
-- Activating durable traditional level records in the live journey.
 - Damage, healing, accuracy/evasion, critical and ATB balance at the new ranges.
 - Elemental affinity assignment, equipment customization and Stagger design.
 
-Live combat XP payout and saved level records will be integrated once the
-remaining authoring and transition rules are settled. The no-recovery rule is
-already encoded in the growth helper. Signature progression remains separate
-from natural level growth.
+Live combat EXP payout, saved levels and the no-recovery rule are active.
+Signature progression remains separate from natural level growth.

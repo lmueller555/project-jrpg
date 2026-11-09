@@ -41,6 +41,7 @@ from world_map_viewer import WorldMapViewer
 from inventory import Inventory
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
+from character_progression import CharacterProgression
 from party_state import PartyState
 from party_ui import PartyUI
 from party_travel import PartyTravel
@@ -494,6 +495,8 @@ class Game:
         self.inventory=Inventory()
         self.attributes=CharacterAttributes('caelan')
         self.party=PartyState(self.attributes)
+        self.character_progression=CharacterProgression(self.party)
+        self.character_progression.initialize_new_game()
         self._party_prompt_before=None
         self._party_prompt_callback=None
         self.battle_rewards=BattleRewards(self.inventory)
@@ -582,6 +585,7 @@ class Game:
                            'sanctuary_cave':self.sanctuary_cave.to_dict(),
                            'cave_encounter_pending':self.cave_random_encounters.pending,
                            'character_attributes':self.attributes.to_dict(),
+                           'character_levels':self.character_progression.to_dict(),
                            'party':self.party.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
                            'bot_loadouts':self.bot_loadouts.to_dict(),
@@ -666,6 +670,7 @@ class Game:
                SanctuaryCave.valid_journey(data) and
                CaveRandomEncounters.valid_journey(data) and
                ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
+               CharacterProgression.valid_journey(data) and
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
                BotLoadouts.valid_journey(data) and
@@ -785,9 +790,15 @@ class Game:
         self.party=PartyState(self.attributes)
         if data is not None and 'party' in data:
             if not self.party.restore(data['party']):return False
+        self.character_progression=CharacterProgression(self.party)
+        if data is None:
+            self.character_progression.initialize_new_game()
+        elif not self.character_progression.restore(data.get('character_levels')):
+            return False
         self._party_prompt_before=None
         self._party_prompt_callback=None
         self.party_ui.reset()
+        self.status_ui.reset()
         self.party_travel.reset()
         self.elira_visit.release_pose()
         self.venn_visit.release_pose()
@@ -923,6 +934,7 @@ class Game:
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'character_attributes':self.attributes.to_dict(),
+              'character_levels':self.character_progression.to_dict(),
               'party':self.party.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
               'bot_loadouts':self.bot_loadouts.to_dict(),
@@ -1205,6 +1217,7 @@ class Game:
         for event in events:
             if event.type==pygame.QUIT:
                 self.save_progress()
+                self.combat.stop_audio()
                 self.music.stop()
                 return False
             if event.type==pygame.WINDOWFOCUSLOST:

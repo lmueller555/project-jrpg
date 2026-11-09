@@ -8,6 +8,7 @@ from battle_rewards import BattleRewards
 from bestiary import build_enemy, load_bestiary
 from character_attributes import CharacterAttributes
 from inventory import Inventory
+from leveling import monster_xp
 from party_state import MAX_PARTY, PartyState
 from quests import MILL_QUEST, QuestLog
 
@@ -16,6 +17,27 @@ FIELDS = {'version', 'kind', 'receipt', 'stage', 'rewards', 'before', 'resources
           'scene', 'position', 'facing', 'incapacitated'}
 PARTY_FIELDS = {'party_before', 'party_resources', 'party_active'}
 CAVE_FIELDS = FIELDS | PARTY_FIELDS | {'encounter'}
+PROGRESSION_FIELDS = {'progression', 'offered_drops'}
+
+
+def battle_reward_definition(kind, encounter=None):
+    """Resolve authored EXP and drops without retuning legacy combat stats.
+
+    The optional town Bat and MQ02 Tusker retain their fixed combat profiles.
+    Their reward reference levels are one and three respectively. Cave
+    formations use each species' selected Bestiary level.
+    """
+    if kind == 'cave':
+        drops, xp = {}, 0
+        for member in encounter['members']:
+            resolved = build_enemy(member['enemy_id'], member['level'])
+            xp += resolved['xp_reward']
+            for item, amount in resolved['combat']['rewards']['drops'].items():
+                drops[item] = drops.get(item, 0)+amount
+        return {'drops': drops, 'xp': xp}
+    identifier = 'ridgeback_tusker' if kind == 'mill' else 'bat'
+    return {'drops': dict(load_bestiary()['enemies'][identifier]['rewards']['drops']),
+            'xp': monster_xp(3 if kind == 'mill' else 1)}
 
 
 def _resources(value):
@@ -32,10 +54,13 @@ def valid_pending_snapshot(record, data=None):
     """
     if record is None:return True
     cave = isinstance(record, dict) and record.get('kind') == 'cave'
-    if (not isinstance(record, dict) or set(record) not in (FIELDS, FIELDS | PARTY_FIELDS, CAVE_FIELDS)
-            or type(record['version']) is not int or record['version'] != 1
+    modern = isinstance(record, dict) and type(record.get('version')) is int and record['version'] == 2
+    extra = PROGRESSION_FIELDS if modern else set()
+    shapes = (FIELDS | extra, FIELDS | PARTY_FIELDS | extra, CAVE_FIELDS | extra)
+    if (not isinstance(record, dict) or set(record) not in shapes
+            or type(record['version']) is not int or record['version'] not in (1, 2)
             or record['kind'] not in ('bat', 'mill', 'cave')
-            or (set(record) == CAVE_FIELDS) != cave
+            or (set(record) == CAVE_FIELDS | extra) != cave
             or record['stage'] not in ('pending', 'awarded')
             or not isinstance(record['receipt'], str)
             or not _resources(record['before']) or not _resources(record['resources'])
@@ -49,6 +74,7 @@ def valid_pending_snapshot(record, data=None):
                    for n in record['position'])):
         return False
     has_party = 'party_active' in record
+    if modern and not has_party:return False
     if has_party:
         active = record['party_active']
         known = PartyState(CharacterAttributes()).known_ids
@@ -84,20 +110,30 @@ def valid_pending_snapshot(record, data=None):
           or record['scene'] != 'eldenmere.playable' or (record['incapacitated'] and not has_party)):
         return False
     rewards = record['rewards']
-    catalog = load_bestiary()['enemies']
-    if cave:
-        canonical = {'drops': {}}
-        for member in record['encounter']['members']:
-            resolved = build_enemy(member['enemy_id'], member['level'])
-            for item, amount in resolved['combat']['rewards']['drops'].items():
-                canonical['drops'][item] = canonical['drops'].get(item, 0)+amount
-    else:canonical = catalog['ridgeback_tusker' if mill else 'bat']['rewards']
+    canonical = battle_reward_definition(record['kind'], record.get('encounter'))
     if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
             or not isinstance(rewards['drops'], dict)
             or any(key not in canonical['drops'] or type(amount) is not int
                    or not 1 <= amount <= canonical['drops'][key]
                    for key, amount in rewards['drops'].items())):
         return False
+    if modern:
+        from character_progression import CharacterProgression
+        plan = record['progression']
+        if (not CharacterProgression.valid_plan(plan)
+                or plan['amount'] != canonical['xp']
+                or plan['active_ids'] != record['party_active']
+                or not isinstance(record['offered_drops'], dict)
+                or any(type(value) is not int for value in record['offered_drops'].values())
+                or record['offered_drops'] != canonical['drops']
+                or record['incapacitated'] != (plan['end_hp']['caelan'] == 0)):
+            return False
+        for identifier in record['party_active']:
+            hp = plan['end_hp'][identifier]
+            expected = record['party_resources'][identifier]['hp']
+            if identifier == 'caelan' and record['incapacitated'] and not cave:
+                if hp != 0:return False
+            elif hp != expected:return False
     if record['resources']['mp'] > record['before']['mp']:return False
     if (cave or not record['incapacitated']) and record['resources']['hp'] > record['before']['hp']:return False
     if data is None:return True
@@ -111,7 +147,9 @@ def valid_pending_snapshot(record, data=None):
         if not attributes.restore(data['character_attributes']):return False
         if (record['resources']['hp'] > attributes.value('hp')
                 or record['resources']['mp'] > attributes.value('mp')):return False
-        if not cave and record['incapacitated'] and record['resources']['hp'] != max(1, attributes.value('hp')//4):return False
+        before_hp = (record['progression']['characters']['caelan']['stats_before']['hp']
+                     if modern else attributes.value('hp'))
+        if not cave and record['incapacitated'] and record['resources']['hp'] != max(1, before_hp//4):return False
         if cave:
             from cave_random_encounters import CaveRandomEncounters
             state = data['cave_random_encounters']
@@ -133,6 +171,12 @@ def valid_pending_snapshot(record, data=None):
                     values = record[field][identifier]
                     if values['hp'] > member.value('hp') or values['mp'] > member.value('mp'):return False
                 if (member.current_hp, member.current_mp) != (expected[identifier]['hp'], expected[identifier]['mp']):
+                    return False
+            if modern:
+                if 'character_levels' not in data:return False
+                progression = CharacterProgression(party)
+                if (not progression.restore(data['character_levels'])
+                        or not progression.matches_plan(record['progression'], after=awarded)):
                     return False
         quests = QuestLog()
         if not quests.restore(data['quests']):return False

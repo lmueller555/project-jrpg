@@ -4,6 +4,7 @@ from pathlib import Path
 import pygame
 
 from character_attributes import ATTRIBUTE_IDS
+from leveling import CharacterLevel, MAX_LEVEL, xp_to_next_level
 from attribute_icons import draw_attribute_icon
 from ui_style import FOREST, IVORY, GOLD, INK, BRASS, PARCHMENT_DARK
 
@@ -34,13 +35,61 @@ class StatusUI:
         self.detail_thumb = None
         self.dragging = False
         self.drag_offset = 0
-        self.portrait = pygame.image.load(str(ROOT/'assets/portraits/eldenmere/caelan_neutral.png'))
+        self.character_id = 'caelan'
+        self.previous_rect = pygame.Rect(184, 58, 24, 23)
+        self.next_rect = pygame.Rect(213, 58, 24, 23)
+        self.xp_bar_rect = pygame.Rect(88, 101, 348, 4)
+        self._portraits = {}
+
+    @property
+    def roster(self):
+        party = getattr(self.game, 'party', None)
+        return tuple(party.members) if party is not None else ('caelan',)
+
+    @property
+    def attributes(self):
+        party = getattr(self.game, 'party', None)
+        if self.character_id not in self.roster:self.character_id = 'caelan'
+        return party.characters[self.character_id] if party is not None else self.game.attributes
+
+    @property
+    def level_record(self):
+        records = getattr(getattr(self.game, 'character_progression', None), 'records', {})
+        return records.get(self.character_id) or CharacterLevel(self.character_id)
+
+    @property
+    def portrait(self):
+        if self.character_id not in self._portraits:
+            party = getattr(self.game, 'party', None)
+            filename = (party.definitions[self.character_id]['portrait'] if party is not None else
+                        'assets/portraits/eldenmere/caelan_neutral.png')
+            try:self._portraits[self.character_id] = pygame.image.load(str(ROOT/filename)).convert_alpha()
+            except (OSError, pygame.error):self._portraits[self.character_id] = None
+        return self._portraits[self.character_id]
+
+    def select_character(self, identifier):
+        """Inspect a recruited companion without changing formation or resources."""
+        if identifier not in self.roster:return False
+        if identifier == self.character_id:return True
+        self.character_id = identifier
+        self.hovered = None
+        self.keyboard_tooltip = False
+        self.detail_scroll = 0
+        self.dragging = False
+        self.game.ui.sound('move')
+        return True
+
+    def _cycle_character(self, direction):
+        roster = self.roster
+        current = self.character_id if self.character_id in roster else roster[0]
+        return self.select_character(roster[(roster.index(current)+direction)%len(roster)])
 
     def _painter(self, canvas=None):
         return self.game.ui.painter(canvas if canvas is not None else self.game.ui_surface)
 
     def open(self):
         self.is_open = True
+        if self.character_id not in self.roster:self.character_id = 'caelan'
         self.hovered = None
         self.keyboard_tooltip = False
         self._held = False
@@ -57,6 +106,7 @@ class StatusUI:
 
     def reset(self):
         self.is_open = False
+        self.character_id = 'caelan'
         self.selected = 'hp'
         self.detail_scroll = 0
         self._held = False
@@ -71,7 +121,7 @@ class StatusUI:
         self.game.ui.sound('move')
 
     def _layout(self, painter):
-        definition = self.game.attributes.definitions[self.hovered or self.selected]
+        definition = self.attributes.definitions[self.hovered or self.selected]
         lines = painter.wrap(definition['name']+': '+definition['description'], self.detail_view.width)
         line_height = painter.font().get_linesize()+3
         self.detail_max_scroll = max(0, len(lines)*line_height-self.detail_view.height)
@@ -91,7 +141,7 @@ class StatusUI:
         identifier = self.hovered or (self.selected if self.keyboard_tooltip else None)
         if not self.is_open or identifier is None:return None
         painter = painter or self._painter()
-        definition = self.game.attributes.definitions[identifier]
+        definition = self.attributes.definitions[identifier]
         width = min(414, self.tooltip_bounds.width)
         lines = painter.wrap(definition['description'], width-24)
         title = definition['label']+' — '+definition['name']
@@ -118,6 +168,8 @@ class StatusUI:
         point = self.game.to_canvas(event.pos) if hasattr(event, 'pos') else None
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE and not getattr(event, 'repeat', False):self.close()
+            elif event.key in (pygame.K_q, pygame.K_e) and not getattr(event, 'repeat', False):
+                self._cycle_character(-1 if event.key == pygame.K_q else 1)
             elif event.key in (pygame.K_UP, pygame.K_w, pygame.K_LEFT, pygame.K_a,
                                pygame.K_DOWN, pygame.K_s, pygame.K_RIGHT, pygame.K_d, pygame.K_TAB):
                 backward = event.key in (pygame.K_UP, pygame.K_w, pygame.K_LEFT, pygame.K_a) or (
@@ -149,6 +201,8 @@ class StatusUI:
             self._held = True
             if point is None:return True
             if self.close_rect.collidepoint(point):self.close()
+            elif self.previous_rect.collidepoint(point):self._cycle_character(-1)
+            elif self.next_rect.collidepoint(point):self._cycle_character(1)
             elif self.detail_thumb is not None and self.detail_track.inflate(8, 0).collidepoint(point):
                 self.dragging = True
                 self.drag_offset = point[1]-self.detail_thumb.top if self.detail_thumb.collidepoint(point) else self.detail_thumb.height/2
@@ -165,13 +219,28 @@ class StatusUI:
         if not self.is_open:return
         painter = self._painter(canvas)
         lines, line_height = self._layout(painter)
-        attributes = self.game.attributes
+        attributes = self.attributes
         painter.veil(210)
         painter.panel((12, 12, 456, 296), parchment=True)
-        painter.image(self.portrait, (26, 36, 50, 50))
+        if self.portrait is not None:painter.image(self.portrait, (26, 36, 50, 50))
         painter.rect(BRASS, (26, 36, 50, 50), 1)
         painter.text('Characters', (26, 15), role='small', color=INK)
         painter.text(attributes.name, (88, 24), role='heading', color=FOREST, bold=True)
+        level = self.level_record
+        painter.text('Lv. '+str(level.level), (88, 60), color=FOREST, bold=True)
+        painter.button(self.previous_rect, '‹', disabled=len(self.roster) < 2)
+        painter.button(self.next_rect, '›', disabled=len(self.roster) < 2)
+        if level.level == MAX_LEVEL:
+            progress, progress_text = 1.0, 'MAX LEVEL'
+        else:
+            required = xp_to_next_level(level.level)
+            progress = level.xp_into_level/required
+            progress_text = ('EXP '+str(level.xp_into_level)+' / '+str(required)+
+                             '  ·  '+str(level.xp_remaining)+' to next level')
+        painter.text(progress_text, (88, 82), role='small', color=INK)
+        painter.rect(PARCHMENT_DARK, self.xp_bar_rect)
+        if progress:painter.rect(FOREST, (self.xp_bar_rect.x, self.xp_bar_rect.y,
+                                        max(1, round(self.xp_bar_rect.width*progress)), self.xp_bar_rect.height))
         painter.button(self.close_rect, '×')
         for identifier, rect in self.stat_rects.items():
             selected = identifier == self.selected
@@ -186,7 +255,7 @@ class StatusUI:
                 self.icon_rects[identifier] = icon
                 draw_attribute_icon(painter, identifier, icon, color)
                 painter.text(label, (icon.right+5, icon.centery), color=color, anchor='midleft', bold=True)
-                painter.text(str(current)+' / '+str(attributes.value(identifier)),
+                painter.text(str(current)+'/'+str(attributes.value(identifier)),
                              (rect.centerx, rect.bottom-6), color=GOLD if selected else FOREST,
                              anchor='midbottom', role='small')
             else:
@@ -204,7 +273,7 @@ class StatusUI:
         if self.detail_thumb is not None:
             painter.rect(PARCHMENT_DARK, self.detail_track)
             painter.rect(BRASS, self.detail_thumb)
-        hint = 'Hover / arrows: details • Esc: back'
+        hint = 'Q/E: character • Arrows: details • Esc: back'
         hint_lines = painter.wrap(hint, 424, role='small')
         hint_height = painter.font('small').get_linesize()
         for index, line in enumerate(hint_lines):

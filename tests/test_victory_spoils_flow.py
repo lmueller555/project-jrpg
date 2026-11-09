@@ -16,7 +16,7 @@ import pygame
 from inventory import MAX_QUANTITY
 from main import Game
 from post_battle import valid_pending_snapshot
-from test_mill_battle_gameplay import seed_completed_mill
+from test_mill_battle_gameplay import finish_spoils_presentation, seed_completed_mill
 
 
 class VictoryCheckpointTests(unittest.TestCase):
@@ -119,6 +119,7 @@ class VictoryCheckpointTests(unittest.TestCase):
 
     def test_failed_exit_checkpoint_keeps_screen_and_already_awarded_receipt(self):
         owner = self.victory();self.show_spoils()
+        finish_spoils_presentation(self.game)
         receipt = owner.receipt_id
         with patch.object(self.game.save_store, 'write', return_value=False):
             owner.spoils.dismissed = True

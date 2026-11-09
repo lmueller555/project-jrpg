@@ -107,11 +107,22 @@ def acknowledge_battle_result(game, scene):
             game.draw();click(game, spoils.retry_rect.center)
             game.update(0, (0, 0), False)
             assert spoils.awarded and not spoils.result_error
+        finish_spoils_presentation(game)
         game.draw();click(game, spoils.continue_rect.center)
     else:
         game.draw();click(game, scene.continue_rect.center)
     game.update(0, (0, 0), False)
     assert not game.combat.active
+
+
+def finish_spoils_presentation(game):
+    """Finish EXP counting and acknowledge each real character growth sheet."""
+    spoils = game.combat.spoils
+    for _ in range(8):
+        if spoils.presentation_complete:return spoils
+        key(game, pygame.K_RETURN)
+        game.update(0, (0, 0), False)
+    raise AssertionError('Spoils progression did not finish after explicit acknowledgments')
 
 
 def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=True,
@@ -147,6 +158,19 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
             elif (command == 'attack' and scene.model.telegraphed_target
                     == scene.model.ready_actor):
                 action = 'guard'
+            elif (command == 'attack' and scene.model.ready_actor == 'player'
+                    and not scene.model.action_reason('aether_edge')):
+                # After the lesson, use the skill it taught instead of
+                # returning to a slower basic-attack-only strategy.
+                game.draw();click(game, scene.command_rects['skills'].center)
+                game.draw();click(game, scene.command_rects['aether_edge'].center)
+                continue
+            elif (command == 'attack' and scene.model.ready_actor == 'mira'
+                    and not scene.model.action_reason('overclock')
+                    and not scene.model.active_bot('mira').haste_turns):
+                game.draw();click(game, scene.command_rects['skills'].center)
+                game.draw();click(game, scene.command_rects['overclock'].center)
+                continue
             game.draw()
             assert action in scene.command_rects
             click(game, scene.command_rects[action].center)
@@ -351,6 +375,9 @@ class MillBattleGameplayTests(unittest.TestCase):
 
     def test_mira_can_finish_after_caelans_incapacitation_and_first_aid_allows_return(self):
         scene = self.start();game = self.game
+        # Exercise the final exchange and first-aid return, independently of
+        # how long the newly approved level-one Mira can fight alone.
+        scene.model.enemy.hp = 10
         scene.model.player.hp = 0
         finish_mill_battle(game)
         self.assertEqual(scene.model.phase, 'victory')
