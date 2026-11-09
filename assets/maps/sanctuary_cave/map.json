@@ -2444,6 +2444,56 @@
       ]
     },
     {
+      "id": "embervein_west_stone",
+      "position": [
+        600,
+        1586
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/boulder/2.png"
+      ],
+      "sort_y": 1630,
+      "sort_priority": 0,
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "source_module": "formation.boulder.2",
+      "source_pack": "base",
+      "footprints": [
+        [
+          616,
+          1621,
+          32,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "stillfrost_west_flowstone",
+      "position": [
+        1118,
+        474
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/modules/formation/flowstone/1.png"
+      ],
+      "sort_y": 550,
+      "sort_priority": 0,
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "reduced_motion_frame": 0,
+      "source_module": "formation.flowstone.1",
+      "source_pack": "base",
+      "footprints": [
+        [
+          1138,
+          541,
+          40,
+          10
+        ]
+      ]
+    },
+    {
       "id": "cave_vein_cache",
       "position": [
         314,
@@ -3142,8 +3192,8 @@
     {
       "id": "hollow_lower_micro_0",
       "position": [
-        926,
-        1342
+        1154,
+        1378
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_00.png",
@@ -3153,7 +3203,7 @@
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_05.png"
       ],
-      "sort_y": 1366,
+      "sort_y": 1402,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3166,8 +3216,8 @@
     {
       "id": "hollow_lower_micro_1",
       "position": [
-        968,
-        1366
+        842,
+        1300
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_00.png",
@@ -3177,7 +3227,7 @@
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_05.png"
       ],
-      "sort_y": 1390,
+      "sort_y": 1324,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3238,7 +3288,7 @@
     {
       "id": "keeper_west_micro_0",
       "position": [
-        1160,
+        1196,
         1400
       ],
       "frames": [
@@ -3262,8 +3312,8 @@
     {
       "id": "keeper_west_micro_1",
       "position": [
-        1216,
-        1390
+        1252,
+        1396
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_00.png",
@@ -3273,7 +3323,7 @@
         "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_05.png"
       ],
-      "sort_y": 1418,
+      "sort_y": 1424,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3430,8 +3480,8 @@
     {
       "id": "deep_west_micro_0",
       "position": [
-        1459,
-        842
+        1447,
+        872
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_00.png",
@@ -3441,7 +3491,7 @@
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_05.png"
       ],
-      "sort_y": 866,
+      "sort_y": 896,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3454,8 +3504,8 @@
     {
       "id": "deep_west_micro_1",
       "position": [
-        1489,
-        800
+        1567,
+        752
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_00.png",
@@ -3465,7 +3515,7 @@
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_05.png"
       ],
-      "sort_y": 824,
+      "sort_y": 776,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3858,6 +3908,792 @@
       "source_pack": "micro",
       "light_index": 25,
       "wall_gem_color": "blue"
+    },
+    {
+      "id": "embervein_red_micro_0",
+      "position": [
+        550,
+        1564
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1584,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red"
+    },
+    {
+      "id": "embervein_red_micro_1",
+      "position": [
+        640,
+        1468
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1488,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red"
+    },
+    {
+      "id": "embervein_red_micro_2",
+      "position": [
+        690,
+        1446
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_05.png"
+      ],
+      "sort_y": 1470,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.diagonal_left",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red"
+    },
+    {
+      "id": "embervein_orange_micro_0",
+      "position": [
+        850,
+        1738
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_05.png"
+      ],
+      "sort_y": 1758,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.orange.dense",
+      "source_pack": "micro",
+      "light_index": 28,
+      "wall_gem_color": "orange"
+    },
+    {
+      "id": "stillfrost_west_micro_0",
+      "position": [
+        1082,
+        448
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 468,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 29,
+      "wall_gem_color": "white"
+    },
+    {
+      "id": "stillfrost_west_micro_1",
+      "position": [
+        1108,
+        396
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_05.png"
+      ],
+      "sort_y": 420,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.diagonal_left",
+      "source_pack": "micro",
+      "light_index": 29,
+      "wall_gem_color": "white"
+    },
+    {
+      "id": "stillfrost_east_micro_0",
+      "position": [
+        1444,
+        580
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_05.png"
+      ],
+      "sort_y": 600,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.blue.dense",
+      "source_pack": "micro",
+      "light_index": 30,
+      "wall_gem_color": "blue"
+    },
+    {
+      "id": "stillfrost_east_micro_1",
+      "position": [
+        1462,
+        532
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_05.png"
+      ],
+      "sort_y": 552,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.blue.dense",
+      "source_pack": "micro",
+      "light_index": 30,
+      "wall_gem_color": "blue"
+    },
+    {
+      "id": "stillfrost_north_micro_0",
+      "position": [
+        1222,
+        352
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 372,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "white"
+    },
+    {
+      "id": "stillfrost_north_micro_1",
+      "position": [
+        1284,
+        342
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_05.png"
+      ],
+      "sort_y": 366,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.diagonal_right",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "white"
+    },
+    {
+      "id": "embervein_wall_north_0",
+      "position": [
+        606,
+        1480
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1500,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "embervein_wall_north_1",
+      "position": [
+        662,
+        1432
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1452,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "embervein_wall_north_2",
+      "position": [
+        738,
+        1444
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1464,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "embervein_wall_north_3",
+      "position": [
+        846,
+        1476
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_05.png"
+      ],
+      "sort_y": 1496,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.orange.dense",
+      "source_pack": "micro",
+      "light_index": 28,
+      "wall_gem_color": "orange",
+      "source_room": "embervein_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "embervein_wall_west_4",
+      "position": [
+        536,
+        1680
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1700,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "west"
+    },
+    {
+      "id": "embervein_wall_west_5",
+      "position": [
+        578,
+        1732
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1752,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "west"
+    },
+    {
+      "id": "embervein_wall_south_6",
+      "position": [
+        642,
+        1770
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1790,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "south"
+    },
+    {
+      "id": "embervein_wall_south_7",
+      "position": [
+        886,
+        1730
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
+      ],
+      "sort_y": 1750,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.dense",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "south"
+    },
+    {
+      "id": "embervein_wall_south_8",
+      "position": [
+        912,
+        1678
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_05.png"
+      ],
+      "sort_y": 1714,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.orange.vertical",
+      "source_pack": "micro",
+      "light_index": 28,
+      "wall_gem_color": "orange",
+      "source_room": "embervein_chamber",
+      "wall_side": "south"
+    },
+    {
+      "id": "embervein_wall_east_9",
+      "position": [
+        928,
+        1536
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_05.png"
+      ],
+      "sort_y": 1572,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.vertical",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "east"
+    },
+    {
+      "id": "embervein_wall_east_10",
+      "position": [
+        930,
+        1612
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_05.png"
+      ],
+      "sort_y": 1648,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.red.vertical",
+      "source_pack": "micro",
+      "light_index": 27,
+      "wall_gem_color": "red",
+      "source_room": "embervein_chamber",
+      "wall_side": "east"
+    },
+    {
+      "id": "stillfrost_wall_north_12",
+      "position": [
+        1156,
+        372
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 392,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "stillfrost_wall_north_13",
+      "position": [
+        1404,
+        388
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 408,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "stillfrost_wall_north_14",
+      "position": [
+        1360,
+        360
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_05.png"
+      ],
+      "sort_y": 380,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.blue.dense",
+      "source_pack": "micro",
+      "light_index": 30,
+      "wall_gem_color": "blue",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "north"
+    },
+    {
+      "id": "stillfrost_wall_west_15",
+      "position": [
+        1076,
+        528
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 548,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 29,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "west"
+    },
+    {
+      "id": "stillfrost_wall_west_16",
+      "position": [
+        1092,
+        588
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 608,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 29,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "west"
+    },
+    {
+      "id": "stillfrost_wall_south_17",
+      "position": [
+        1144,
+        634
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 654,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 29,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "south"
+    },
+    {
+      "id": "stillfrost_wall_south_18",
+      "position": [
+        1246,
+        692
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png"
+      ],
+      "sort_y": 712,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.dense",
+      "source_pack": "micro",
+      "light_index": 29,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "south"
+    },
+    {
+      "id": "stillfrost_wall_south_19",
+      "position": [
+        1198,
+        664
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_05.png"
+      ],
+      "sort_y": 684,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.blue.dense",
+      "source_pack": "micro",
+      "light_index": 30,
+      "wall_gem_color": "blue",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "south"
+    },
+    {
+      "id": "stillfrost_wall_east_20",
+      "position": [
+        1464,
+        424
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_05.png"
+      ],
+      "sort_y": 460,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.blue.vertical",
+      "source_pack": "micro",
+      "light_index": 30,
+      "wall_gem_color": "blue",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "east"
+    },
+    {
+      "id": "stillfrost_wall_east_21",
+      "position": [
+        1478,
+        604
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_05.png"
+      ],
+      "sort_y": 640,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.white.vertical",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "white",
+      "source_room": "stillfrost_chamber",
+      "wall_side": "east"
     }
   ],
   "foreground": [],
@@ -3962,6 +4798,24 @@
         300
       ],
       "description": "A broad, open chamber lies beneath pendant stone. Tiny crystals pulse along the enclosing walls in many colors."
+    },
+    {
+      "id": "embervein_chamber",
+      "name": "Embervein Chamber",
+      "position": [
+        768,
+        1632
+      ],
+      "description": "An offshoot bends into a warm chamber where countless red microcrystals glimmer inside fractured limestone. Ember light gathers around a solitary elemental."
+    },
+    {
+      "id": "stillfrost_chamber",
+      "name": "Stillfrost Chamber",
+      "position": [
+        1296,
+        528
+      ],
+      "description": "A quiet side chamber glows with white and blue pinpricks embedded in its walls. Pale mineral crust and damp stone catch the cold light around a waiting elemental."
     }
   ],
   "cave": {
@@ -4428,6 +5282,91 @@
         "gain": 0.58,
         "phase": 0,
         "steady": true
+      },
+      {
+        "id": "embervein_red",
+        "position": [
+          708,
+          1620
+        ],
+        "color": [
+          245,
+          76,
+          65
+        ],
+        "radius": 320,
+        "gain": 0.85,
+        "phase": 0.14,
+        "steady": false,
+        "entity_id": "embervein_red_micro_0"
+      },
+      {
+        "id": "embervein_orange",
+        "position": [
+          828,
+          1644
+        ],
+        "color": [
+          255,
+          139,
+          45
+        ],
+        "radius": 320,
+        "gain": 0.72,
+        "phase": 0.32,
+        "steady": false,
+        "entity_id": "embervein_orange_micro_0"
+      },
+      {
+        "id": "stillfrost_west",
+        "position": [
+          1180,
+          480
+        ],
+        "color": [
+          231,
+          235,
+          231
+        ],
+        "radius": 240,
+        "gain": 0.48,
+        "phase": 0.4,
+        "steady": false,
+        "entity_id": "stillfrost_west_micro_0"
+      },
+      {
+        "id": "stillfrost_east",
+        "position": [
+          1416,
+          552
+        ],
+        "color": [
+          66,
+          124,
+          250
+        ],
+        "radius": 250,
+        "gain": 0.5,
+        "phase": 0.58,
+        "steady": false,
+        "entity_id": "stillfrost_east_micro_0"
+      },
+      {
+        "id": "stillfrost_north",
+        "position": [
+          1296,
+          414
+        ],
+        "color": [
+          231,
+          235,
+          231
+        ],
+        "radius": 240,
+        "gain": 0.42,
+        "phase": 0.7,
+        "steady": false,
+        "entity_id": "stillfrost_north_micro_0"
       }
     ],
     "pulse_period_ms": 6000,
@@ -7231,8 +8170,8 @@
         "entity_id": "hollow_lower_micro_0",
         "color": "purple",
         "position": [
-          962,
-          1366
+          1190,
+          1402
         ],
         "light_index": 11,
         "light_position": [
@@ -7347,8 +8286,8 @@
           ]
         ],
         "emission_bounds": [
-          932,
-          1346,
+          1160,
+          1382,
           61,
           38
         ]
@@ -7358,8 +8297,8 @@
         "entity_id": "hollow_lower_micro_1",
         "color": "purple",
         "position": [
-          1004,
-          1390
+          878,
+          1324
         ],
         "light_index": 11,
         "light_position": [
@@ -7474,8 +8413,8 @@
           ]
         ],
         "emission_bounds": [
-          977,
-          1370,
+          851,
+          1304,
           50,
           41
         ]
@@ -7731,7 +8670,7 @@
         "entity_id": "keeper_west_micro_0",
         "color": "blue",
         "position": [
-          1196,
+          1232,
           1424
         ],
         "light_index": 13,
@@ -7847,7 +8786,7 @@
           ]
         ],
         "emission_bounds": [
-          1169,
+          1205,
           1404,
           50,
           41
@@ -7858,8 +8797,8 @@
         "entity_id": "keeper_west_micro_1",
         "color": "blue",
         "position": [
-          1244,
-          1418
+          1280,
+          1424
         ],
         "light_index": 13,
         "light_position": [
@@ -7982,8 +8921,8 @@
           ]
         ],
         "emission_bounds": [
-          1221,
-          1397,
+          1257,
+          1403,
           45,
           42
         ]
@@ -8755,8 +9694,8 @@
         "entity_id": "deep_west_micro_0",
         "color": "purple",
         "position": [
-          1495,
-          866
+          1483,
+          896
         ],
         "light_index": 17,
         "light_position": [
@@ -8871,8 +9810,8 @@
           ]
         ],
         "emission_bounds": [
-          1465,
-          846,
+          1453,
+          876,
           61,
           38
         ]
@@ -8882,8 +9821,8 @@
         "entity_id": "deep_west_micro_1",
         "color": "purple",
         "position": [
-          1525,
-          824
+          1603,
+          776
         ],
         "light_index": 17,
         "light_position": [
@@ -8998,8 +9937,8 @@
           ]
         ],
         "emission_bounds": [
-          1498,
-          804,
+          1576,
+          756,
           50,
           41
         ]
@@ -11035,9 +11974,5276 @@
           45,
           42
         ]
+      },
+      {
+        "id": "embervein_red_micro_0",
+        "entity_id": "embervein_red_micro_0",
+        "color": "red",
+        "position": [
+          582,
+          1584
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          553,
+          1570,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_red_micro_1",
+        "entity_id": "embervein_red_micro_1",
+        "color": "red",
+        "position": [
+          672,
+          1488
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          643,
+          1474,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_red_micro_2",
+        "entity_id": "embervein_red_micro_2",
+        "color": "red",
+        "position": [
+          726,
+          1470
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "emission_bounds": [
+          699,
+          1450,
+          50,
+          41
+        ]
+      },
+      {
+        "id": "embervein_orange_micro_0",
+        "entity_id": "embervein_orange_micro_0",
+        "color": "orange",
+        "position": [
+          882,
+          1758
+        ],
+        "light_index": 28,
+        "light_position": [
+          828,
+          1644
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          853,
+          1744,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_west_micro_0",
+        "entity_id": "stillfrost_west_micro_0",
+        "color": "white",
+        "position": [
+          1114,
+          468
+        ],
+        "light_index": 29,
+        "light_position": [
+          1180,
+          480
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          1085,
+          454,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_west_micro_1",
+        "entity_id": "stillfrost_west_micro_1",
+        "color": "white",
+        "position": [
+          1144,
+          420
+        ],
+        "light_index": 29,
+        "light_position": [
+          1180,
+          480
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "emission_bounds": [
+          1117,
+          400,
+          50,
+          41
+        ]
+      },
+      {
+        "id": "stillfrost_east_micro_0",
+        "entity_id": "stillfrost_east_micro_0",
+        "color": "blue",
+        "position": [
+          1476,
+          600
+        ],
+        "light_index": 30,
+        "light_position": [
+          1416,
+          552
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          1447,
+          586,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_east_micro_1",
+        "entity_id": "stillfrost_east_micro_1",
+        "color": "blue",
+        "position": [
+          1494,
+          552
+        ],
+        "light_index": 30,
+        "light_position": [
+          1416,
+          552
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          1465,
+          538,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_north_micro_0",
+        "entity_id": "stillfrost_north_micro_0",
+        "color": "white",
+        "position": [
+          1254,
+          372
+        ],
+        "light_index": 31,
+        "light_position": [
+          1296,
+          414
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          1225,
+          358,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_north_micro_1",
+        "entity_id": "stillfrost_north_micro_1",
+        "color": "white",
+        "position": [
+          1320,
+          366
+        ],
+        "light_index": 31,
+        "light_position": [
+          1296,
+          414
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "emission_bounds": [
+          1290,
+          346,
+          61,
+          38
+        ]
+      },
+      {
+        "id": "embervein_wall_north_0",
+        "entity_id": "embervein_wall_north_0",
+        "color": "red",
+        "position": [
+          638,
+          1500
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          609,
+          1486,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_north_1",
+        "entity_id": "embervein_wall_north_1",
+        "color": "red",
+        "position": [
+          694,
+          1452
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          665,
+          1438,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_north_2",
+        "entity_id": "embervein_wall_north_2",
+        "color": "red",
+        "position": [
+          770,
+          1464
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          741,
+          1450,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_north_3",
+        "entity_id": "embervein_wall_north_3",
+        "color": "orange",
+        "position": [
+          878,
+          1496
+        ],
+        "light_index": 28,
+        "light_position": [
+          828,
+          1644
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          849,
+          1482,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_west_4",
+        "entity_id": "embervein_wall_west_4",
+        "color": "red",
+        "position": [
+          568,
+          1700
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "west",
+        "emission_bounds": [
+          539,
+          1686,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_west_5",
+        "entity_id": "embervein_wall_west_5",
+        "color": "red",
+        "position": [
+          610,
+          1752
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "west",
+        "emission_bounds": [
+          581,
+          1738,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_south_6",
+        "entity_id": "embervein_wall_south_6",
+        "color": "red",
+        "position": [
+          674,
+          1790
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "south",
+        "emission_bounds": [
+          645,
+          1776,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_south_7",
+        "entity_id": "embervein_wall_south_7",
+        "color": "red",
+        "position": [
+          918,
+          1750
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "south",
+        "emission_bounds": [
+          889,
+          1736,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "embervein_wall_south_8",
+        "entity_id": "embervein_wall_south_8",
+        "color": "orange",
+        "position": [
+          928,
+          1714
+        ],
+        "light_index": 28,
+        "light_position": [
+          828,
+          1644
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "south",
+        "emission_bounds": [
+          916,
+          1684,
+          25,
+          62
+        ]
+      },
+      {
+        "id": "embervein_wall_east_9",
+        "entity_id": "embervein_wall_east_9",
+        "color": "red",
+        "position": [
+          944,
+          1572
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "east",
+        "emission_bounds": [
+          932,
+          1542,
+          25,
+          62
+        ]
+      },
+      {
+        "id": "embervein_wall_east_10",
+        "entity_id": "embervein_wall_east_10",
+        "color": "red",
+        "position": [
+          946,
+          1648
+        ],
+        "light_index": 27,
+        "light_position": [
+          708,
+          1620
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "source_room": "embervein_chamber",
+        "wall_side": "east",
+        "emission_bounds": [
+          934,
+          1618,
+          25,
+          62
+        ]
+      },
+      {
+        "id": "stillfrost_wall_north_12",
+        "entity_id": "stillfrost_wall_north_12",
+        "color": "white",
+        "position": [
+          1188,
+          392
+        ],
+        "light_index": 31,
+        "light_position": [
+          1296,
+          414
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          1159,
+          378,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_north_13",
+        "entity_id": "stillfrost_wall_north_13",
+        "color": "white",
+        "position": [
+          1436,
+          408
+        ],
+        "light_index": 31,
+        "light_position": [
+          1296,
+          414
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          1407,
+          394,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_north_14",
+        "entity_id": "stillfrost_wall_north_14",
+        "color": "blue",
+        "position": [
+          1392,
+          380
+        ],
+        "light_index": 30,
+        "light_position": [
+          1416,
+          552
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "north",
+        "emission_bounds": [
+          1363,
+          366,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_west_15",
+        "entity_id": "stillfrost_wall_west_15",
+        "color": "white",
+        "position": [
+          1108,
+          548
+        ],
+        "light_index": 29,
+        "light_position": [
+          1180,
+          480
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "west",
+        "emission_bounds": [
+          1079,
+          534,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_west_16",
+        "entity_id": "stillfrost_wall_west_16",
+        "color": "white",
+        "position": [
+          1124,
+          608
+        ],
+        "light_index": 29,
+        "light_position": [
+          1180,
+          480
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "west",
+        "emission_bounds": [
+          1095,
+          594,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_south_17",
+        "entity_id": "stillfrost_wall_south_17",
+        "color": "white",
+        "position": [
+          1176,
+          654
+        ],
+        "light_index": 29,
+        "light_position": [
+          1180,
+          480
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "south",
+        "emission_bounds": [
+          1147,
+          640,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_south_18",
+        "entity_id": "stillfrost_wall_south_18",
+        "color": "white",
+        "position": [
+          1278,
+          712
+        ],
+        "light_index": 29,
+        "light_position": [
+          1180,
+          480
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "south",
+        "emission_bounds": [
+          1249,
+          698,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_south_19",
+        "entity_id": "stillfrost_wall_south_19",
+        "color": "blue",
+        "position": [
+          1230,
+          684
+        ],
+        "light_index": 30,
+        "light_position": [
+          1416,
+          552
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "south",
+        "emission_bounds": [
+          1201,
+          670,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "stillfrost_wall_east_20",
+        "entity_id": "stillfrost_wall_east_20",
+        "color": "blue",
+        "position": [
+          1480,
+          460
+        ],
+        "light_index": 30,
+        "light_position": [
+          1416,
+          552
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "east",
+        "emission_bounds": [
+          1468,
+          430,
+          25,
+          62
+        ]
+      },
+      {
+        "id": "stillfrost_wall_east_21",
+        "entity_id": "stillfrost_wall_east_21",
+        "color": "white",
+        "position": [
+          1494,
+          640
+        ],
+        "light_index": 31,
+        "light_position": [
+          1296,
+          414
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "source_room": "stillfrost_chamber",
+        "wall_side": "east",
+        "emission_bounds": [
+          1482,
+          610,
+          25,
+          62
+        ]
       }
     ],
-    "microcrystal_count": 1352,
+    "microcrystal_count": 2480,
     "placed_modules": [
       {
         "id": "entrance_arch",
@@ -12002,6 +18208,118 @@
         "feet": [
           2275,
           220
+        ],
+        "ground": true
+      },
+      {
+        "id": "embervein_west_stone",
+        "pack": "base",
+        "module": "formation.boulder.2",
+        "position": [
+          600,
+          1586
+        ],
+        "feet": [
+          632,
+          1630
+        ],
+        "ground": false
+      },
+      {
+        "id": "embervein_rear_crust",
+        "pack": "geology",
+        "module": "mineral.crust.2",
+        "position": [
+          690,
+          1508
+        ],
+        "feet": [
+          690,
+          1508
+        ],
+        "ground": true
+      },
+      {
+        "id": "embervein_floor_crack",
+        "pack": "geology",
+        "module": "crack.branching.3",
+        "position": [
+          700,
+          1684
+        ],
+        "feet": [
+          700,
+          1684
+        ],
+        "ground": true
+      },
+      {
+        "id": "embervein_low_pebbles",
+        "pack": "geology",
+        "module": "debris.pebbles.2",
+        "position": [
+          834,
+          1716
+        ],
+        "feet": [
+          834,
+          1716
+        ],
+        "ground": true
+      },
+      {
+        "id": "stillfrost_west_flowstone",
+        "pack": "base",
+        "module": "formation.flowstone.1",
+        "position": [
+          1118,
+          474
+        ],
+        "feet": [
+          1158,
+          550
+        ],
+        "ground": false
+      },
+      {
+        "id": "stillfrost_rear_crust",
+        "pack": "geology",
+        "module": "mineral.crust.0",
+        "position": [
+          1210,
+          418
+        ],
+        "feet": [
+          1210,
+          418
+        ],
+        "ground": true
+      },
+      {
+        "id": "stillfrost_east_crust",
+        "pack": "geology",
+        "module": "mineral.crust.1",
+        "position": [
+          1384,
+          488
+        ],
+        "feet": [
+          1384,
+          488
+        ],
+        "ground": true
+      },
+      {
+        "id": "stillfrost_damp_seam",
+        "pack": "geology",
+        "module": "stain.damp.2",
+        "position": [
+          1288,
+          568
+        ],
+        "feet": [
+          1288,
+          568
         ],
         "ground": true
       }
@@ -13513,6 +19831,156 @@
           ]
         ],
         "description": "A broad, open chamber lies beneath pendant stone. Tiny crystals pulse along the enclosing walls in many colors."
+      },
+      {
+        "id": "embervein_chamber",
+        "name": "Embervein Chamber",
+        "position": [
+          768,
+          1632
+        ],
+        "polygon": [
+          [
+            936,
+            1632
+          ],
+          [
+            928,
+            1684
+          ],
+          [
+            890,
+            1728
+          ],
+          [
+            840,
+            1758
+          ],
+          [
+            782,
+            1776
+          ],
+          [
+            716,
+            1768
+          ],
+          [
+            658,
+            1748
+          ],
+          [
+            618,
+            1690
+          ],
+          [
+            600,
+            1632
+          ],
+          [
+            612,
+            1578
+          ],
+          [
+            642,
+            1530
+          ],
+          [
+            702,
+            1500
+          ],
+          [
+            756,
+            1488
+          ],
+          [
+            820,
+            1498
+          ],
+          [
+            878,
+            1524
+          ],
+          [
+            918,
+            1572
+          ]
+        ],
+        "description": "An offshoot bends into a warm chamber where countless red microcrystals glimmer inside fractured limestone. Ember light gathers around a solitary elemental."
+      },
+      {
+        "id": "stillfrost_chamber",
+        "name": "Stillfrost Chamber",
+        "position": [
+          1296,
+          528
+        ],
+        "polygon": [
+          [
+            1464,
+            528
+          ],
+          [
+            1457,
+            580
+          ],
+          [
+            1426,
+            628
+          ],
+          [
+            1372,
+            658
+          ],
+          [
+            1308,
+            672
+          ],
+          [
+            1245,
+            664
+          ],
+          [
+            1188,
+            640
+          ],
+          [
+            1146,
+            600
+          ],
+          [
+            1128,
+            528
+          ],
+          [
+            1141,
+            472
+          ],
+          [
+            1176,
+            428
+          ],
+          [
+            1236,
+            398
+          ],
+          [
+            1296,
+            384
+          ],
+          [
+            1362,
+            396
+          ],
+          [
+            1428,
+            428
+          ],
+          [
+            1452,
+            478
+          ]
+        ],
+        "description": "A quiet side chamber glows with white and blue pinpricks embedded in its walls. Pale mineral crust and damp stone catch the cold light around a waiting elemental."
       }
     ],
     "routes": {
@@ -13711,6 +20179,70 @@
           1220,
           970
         ]
+      ],
+      "embervein_branch": [
+        [
+          680,
+          1270
+        ],
+        [
+          744,
+          1392
+        ],
+        [
+          864,
+          1392
+        ],
+        [
+          960,
+          1440
+        ],
+        [
+          1008,
+          1560
+        ],
+        [
+          1008,
+          1800
+        ],
+        [
+          840,
+          1848
+        ],
+        [
+          768,
+          1776
+        ],
+        [
+          768,
+          1736
+        ],
+        [
+          768,
+          1632
+        ]
+      ],
+      "stillfrost_branch": [
+        [
+          1580,
+          840
+        ],
+        [
+          1464,
+          816
+        ],
+        [
+          1368,
+          720
+        ],
+        [
+          1320,
+          648
+        ],
+        [
+          1296,
+          528
+        ]
       ]
     },
     "navigation_points": {
@@ -13757,6 +20289,14 @@
       "echo_chamber": [
         2060,
         300
+      ],
+      "embervein_chamber": [
+        768,
+        1632
+      ],
+      "stillfrost_chamber": [
+        1296,
+        528
       ]
     },
     "treasures": [
@@ -13933,6 +20473,24 @@
         ],
         "radius": 48,
         "route": "keeper_loop"
+      },
+      {
+        "id": "embravyr",
+        "center": [
+          768,
+          1632
+        ],
+        "radius": 94,
+        "route": "embervein_branch"
+      },
+      {
+        "id": "nivareth",
+        "center": [
+          1296,
+          528
+        ],
+        "radius": 94,
+        "route": "stillfrost_branch"
       }
     ],
     "arena": {
@@ -13966,6 +20524,60 @@
         392
       ]
     },
+    "elemental_arenas": [
+      {
+        "id": "embravyr",
+        "enemy_id": "embravyr",
+        "room": "embervein_chamber",
+        "level": 4,
+        "battlefield": "cave_embervein",
+        "center": [
+          768,
+          1632
+        ],
+        "approach": [
+          768,
+          1736
+        ],
+        "retreat": [
+          840,
+          1848
+        ],
+        "trigger": [
+          612,
+          1512,
+          304,
+          200
+        ],
+        "status": "story_boss"
+      },
+      {
+        "id": "nivareth",
+        "enemy_id": "nivareth",
+        "room": "stillfrost_chamber",
+        "level": 4,
+        "battlefield": "cave_stillfrost",
+        "center": [
+          1296,
+          528
+        ],
+        "approach": [
+          1320,
+          648
+        ],
+        "retreat": [
+          1368,
+          720
+        ],
+        "trigger": [
+          1152,
+          396,
+          288,
+          228
+        ],
+        "status": "story_boss"
+      }
+    ],
     "links": [
       {
         "id": "reserve",
@@ -14289,6 +20901,20 @@
           ]
         },
         {
+          "id": "embervein_west_stone:1",
+          "position": [
+            632,
+            1626
+          ]
+        },
+        {
+          "id": "stillfrost_west_flowstone:1",
+          "position": [
+            1158,
+            546
+          ]
+        },
+        {
           "id": "cave_vein_cache",
           "position": [
             334,
@@ -14385,6 +21011,30 @@
             520
           ],
           "width": 72
+        },
+        {
+          "name": "embervein_winding_approach",
+          "position": [
+            864,
+            1392
+          ],
+          "width": 72
+        },
+        {
+          "name": "embervein_foyer",
+          "position": [
+            840,
+            1848
+          ],
+          "width": 72
+        },
+        {
+          "name": "stillfrost_foyer",
+          "position": [
+            1368,
+            720
+          ],
+          "width": 72
         }
       ]
     }
@@ -14393,7 +21043,7 @@
     "tool": "tools/build_continuous_sanctuary_cave.py",
     "source_recipe": "assets/source/maps/sanctuary_cave/recipe.json",
     "source_sha256": {
-      "assets/source/maps/sanctuary_cave/recipe.json": "2cee14173afad53f032f96ed2654bdf158a904052fbf1374e7d20bc81ea99cee",
+      "assets/source/maps/sanctuary_cave/recipe.json": "94dc6491534d36e8bc62ee8a2158a631adb02877ac78821e038af496534cbfbe",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
@@ -14413,6 +21063,7 @@
       "assets/terrain/limestone_cave/geology/modules/entrance/root/0.png": "0e94332155237df28875e395dc1002d42d82bea973edb9ba1e942952f783be3e",
       "assets/terrain/limestone_cave/geology/modules/entrance/root/2.png": "f92ac44aa8d0066942397dec1b7f19b3ffc2bb4133941eab6180c3354dd9943c",
       "assets/terrain/limestone_cave/geology/modules/erosion/channel/0.png": "adfdb94efb78c2dda3df133db9d4899807d1ae6dc0b8ab11b670f4d46233ad87",
+      "assets/terrain/limestone_cave/geology/modules/mineral/crust/0.png": "beb6e8e2121c04a2e06058ae1741eb0ac8aec861bb91f70784e84c9a50ef8f28",
       "assets/terrain/limestone_cave/geology/modules/mineral/crust/1.png": "9f668400d59fed79eb22a2958b4932533dd35c43cca886fcded399dad353da8b",
       "assets/terrain/limestone_cave/geology/modules/mineral/crust/2.png": "cbe457a4322d8be2260dfb580b893f6fe989894db94f08d12500d8ffbfec8e00",
       "assets/terrain/limestone_cave/geology/modules/mineral/crust/3.png": "3e5783c1872784af83c4a82d63f9b8bce43980bdbef960228decbcfd02297b1c",
@@ -14431,12 +21082,24 @@
       "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_03.png": "605adc791fea5e72447fca987c55aef756603602b6697f339d8c4ac600678d16",
       "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_04.png": "966710179a80afa615b9c99e9bcab5b8d8dd1955c3b605fa985dc4d696de346a",
       "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_05.png": "90356e31b6bf16cb5de44053e3f46bebfce57d021e52a18a5658c974abb0fe1f",
+      "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_00.png": "3f02a99ce8319b4ab8409e7f27f5977294ba9f53170ab06d90b3f0102a258e58",
+      "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_01.png": "594c0c776c7eeb076755a0548a6fd0007858dbcf25f4ddc0a0076f91365d6a91",
+      "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_02.png": "4bebc3249416f4962ed446de795cdd963287b4137d579b75a533c03cb2790245",
+      "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_03.png": "32fd3624fb89d69d26a795b3ff43604919e75bf5db3afa8a7f50407558530a76",
+      "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_04.png": "8efea26b09a6f44ab910a608eeddc07d18aa1c277e901c18f05a6ddfbd073c7c",
+      "assets/terrain/limestone_cave/micro_adapters/blue/dense/frame_05.png": "f4cf7342e2458b328c52e23197c344461b7852e3a69ba386ba58f09bc5127e39",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_00.png": "8ae28a03e9c9d988fab42cf8cce84abc2684cbdbe45b9cda392769df1167b332",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_01.png": "4fafe3621b9f1182004454a746dc3ac67e266d88acc101716410c488a94d538b",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_02.png": "18da28cf292d285edb4f5b6b38e78ef08172e174a83f29acd496f9367716d053",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_03.png": "3d83cd0d6cabf5b91706e217dda0474262cbad5d604cb2cc980eb3468a9f8150",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_04.png": "ce599dee735108346f622dbd08216cab3ec032a9e28fa1f4826a2858c525793f",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_05.png": "e226547b3aaa47df2903e666049a10c21932c8b7f5172a6c54e80d650a6bbcb6",
+      "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_00.png": "a0e51a3e2ac6b431b34844aa1070d9714c5fc42e156f2edbfbf6d8d767eb2904",
+      "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_01.png": "87e934369793c3acefb19c601697a11ecdc5e7bcb0b2adb8ae034427a25c3ee6",
+      "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_02.png": "a477236b0810565041d4f988f77074d9c14e23012a36ae1bb160668816e94682",
+      "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_03.png": "a2b686989f8c5f6ddca6be89533197fe7ecbd0566924b36d793fe93936893a0b",
+      "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_04.png": "267cf142f2fe71751a513fd09c330c3ff70ea1db146fe644e92c3da96b9515e0",
+      "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_05.png": "d919ec78aba7cc42bff9228cb38a82021a492ba62dfbc53ea7e956c076e11e50",
       "assets/terrain/limestone_cave/micro_adapters/green/sparse/frame_00.png": "267ecccfdd2173db26ed4c2c13f3fb25b30955120ccd57e403b57058ad53a649",
       "assets/terrain/limestone_cave/micro_adapters/green/sparse/frame_01.png": "f5257ce01aba802c1697ea5c1617c90c518008dd607dd7a136437b2cec54fe88",
       "assets/terrain/limestone_cave/micro_adapters/green/sparse/frame_02.png": "0d7582cb706821008db436cbfb7563bf1a7999f2f05f681e389ff66bf6f2d9b5",
@@ -14479,25 +21142,56 @@
       "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png": "02780c78c8f8d79175a4efeac87daaacfb1bc53a27e8015c59fdabfb22b71749",
       "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png": "46c4b5aa2ab4a18791e9666a00e9a45870c7df5cfa22560f01b711c4ea33a475",
       "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png": "a100a813e76db869769b5bbe7509fd618bcea145ceabac7758cc89a6fea13c27",
+      "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_00.png": "95dd33f28c56a048cf6e04ae766138b7afbf49462e0946971d8953b3dfe7d958",
+      "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_01.png": "ef114dd952ee5407a16139745c6e90128551105758fe3b6ad04cd7e4a4baf345",
+      "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_02.png": "601ff398fa3c500d52b6fd8a6443c68e067a8af9367b6fdda4af4839c8e6b48e",
+      "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_03.png": "af63aa2324b17bd04b50b1a7a9f233c8b41b59e4cb40ac063f59a4af3a37944a",
+      "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_04.png": "1a23695f402ccf9a772289b2db3b5514f7df018598fc22702471cb76888947e5",
+      "assets/terrain/limestone_cave/micro_adapters/red/diagonal_left/frame_05.png": "6d71f099585b6e1ef3e92f870ea699568d0dda95ce3e3f41ee898b4b71297bf3",
       "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_00.png": "9a5e629625cfea9a7b1b940b47ef6c8ebadc91721acc679f564cd9097eef8b90",
       "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_01.png": "c234f08d0a20bf4e14d4926040574e0793837b0e4dee5e29820cf20af34bfcdd",
       "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_02.png": "6e76853c1ccc5d421ab6264291f0945f05753bfcc63ece6d9206361c104e198e",
       "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_03.png": "1eff7e7b91c7307ab80228280dd9c843866a40a769010191fa00878fc9d751f6",
       "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_04.png": "d49e93340e28cefe6d82238b18468375b5fc86114bd9792932ef801316e19fd9",
       "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_05.png": "3d9e5d27403a84a63409650550911e75b070222c19c18e3db0dab0d7aa317a34",
+      "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_00.png": "6d36d9b6aed0ea926177c4434ce3165ac04d1e45703017f23f76d414d872b2ef",
+      "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_01.png": "2ed485cc092af7ad3bfc0f1477098989d5c4a1c2f17705728d1ef5cc9d5e446b",
+      "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_02.png": "61dc24bc1bbf2c3e426b25f2a486e5242941d8a263f1657a71f66f7230c56874",
+      "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_03.png": "b3ea5ccffa4618f58f62ca1c1e08a8d5bab2419b43188060dc01f690a838cfd3",
+      "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_04.png": "d924deb6b688921b4d388fef6c7b0b65784563ba292f9d4c2ac74078d51dcc89",
+      "assets/terrain/limestone_cave/micro_adapters/red/vertical/frame_05.png": "b887e8a10548b2d2b5777a0237946f4de277d79c33a42c20c2cbc310ef02dbdc",
       "assets/terrain/limestone_cave/micro_adapters/white/corner_outer/frame_00.png": "b9de51f5708fd40292103acbe2445990021da689f03d64ca15dcc91bae05a941",
       "assets/terrain/limestone_cave/micro_adapters/white/corner_outer/frame_01.png": "5caae679f669ae0a0fb3734673b96ef59f75f041a5197e5d56d83c81f3eb67d1",
       "assets/terrain/limestone_cave/micro_adapters/white/corner_outer/frame_02.png": "0926fce791af859adbc3021be118c99cf3ae72c12961666064e6d89e613621db",
       "assets/terrain/limestone_cave/micro_adapters/white/corner_outer/frame_03.png": "6282e14f6038d48bcde8c4706ad4950723c3f79953a5954ac07460d69663661f",
       "assets/terrain/limestone_cave/micro_adapters/white/corner_outer/frame_04.png": "38da0ca4b0f128d8540acdd212f480ad65dc191307ab761d5f06fede3a161d3b",
       "assets/terrain/limestone_cave/micro_adapters/white/corner_outer/frame_05.png": "8ed20607b34ccb7e701e13224712b4ecf32724e030e2c657858d80a0d950724a",
+      "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_00.png": "2a09bd3d4f64449f5f245b40493237cbd71f6915d7f3e7b91f22ebbd70123d3d",
+      "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_01.png": "a25fdd49a61c36c496da2bce01007b93ec62b4af12a119f372d9aed674ebef0e",
+      "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_02.png": "94ccfea4a2edfb17e4a614d5a16fdeb127f7ed5d1a778491f3733fd019622a22",
+      "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_03.png": "cf9798f4ee3456d12f56d88c16d3acb224f8879a3777dab106d2e862f658df46",
+      "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_04.png": "b9bca3a3c372c21cc305f038a0fd39c8afa2ebd3f6abe9e1ce840fe5fe6d1aa9",
+      "assets/terrain/limestone_cave/micro_adapters/white/dense/frame_05.png": "cd021ffd28d156b5c12e740f7012c926d9cd2094b7ab7997ad2f7e85bc0e6001",
+      "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_00.png": "623e3d7c5e3468a8eee389c02cdfddab77583878c2a2c82ceaac5186271794ee",
+      "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_01.png": "a8f068ea7d5e17a9de2b429353fd0deeaa800f82c1563de28730cd95e7f118e9",
+      "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_02.png": "9aecf60052c9631c0360e71a342d74a476fa0af9854bf23da4169c1ebd4ff999",
+      "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_03.png": "33a567a3f41ad8a594c94e59a63f995c1c284aac2ad3c71b82940d08d9c9e949",
+      "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_04.png": "c9471c5de829cb081ad0f674992a7590cfe15e2a4243fa8ed8e96667eeda172a",
+      "assets/terrain/limestone_cave/micro_adapters/white/diagonal_left/frame_05.png": "19621db1f831a55257c0195ee020f079c925789b5860c9d3b99cf174b3f3724a",
       "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_00.png": "86dbdaa40cb6f7d160befafd3ff85ac50d2acea74c6cee39a03c6ad4d456c73d",
       "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_01.png": "f37237ddfdc5784f4a7521a51c139c6b55c68a869cf5e6e02b7ba891429cf728",
       "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_02.png": "20b527840cff8224ab774d08def03ce0a39b418616b7c57aaf394fe6dce457fd",
       "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_03.png": "c2e4e1dc772e84fe82949746d6210e5ff4a2ee2e92e3d6327d54af6aec35a77d",
       "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_04.png": "e970dff241ae62cccb7262c70537a68e2c13aba3b4aa9d8e1e9ce6e324bc0407",
       "assets/terrain/limestone_cave/micro_adapters/white/diagonal_right/frame_05.png": "5a4d8048614e75c2353306774ab657c0852a023c8a196b9b8b6a9d0154ff60ee",
+      "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_00.png": "32b4477f2f9008e0d908de51de8fca8e77b5fd1e2341ea3e7c561e553b8646ae",
+      "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_01.png": "5b9d2f5ddad51aac932e85a90892e35f055478d0d029f2a3e0e64fd222107193",
+      "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_02.png": "bc1acae32914bfd7230b4f72d28ded7e7bfbe806d685ef5bb01db3285cb74196",
+      "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_03.png": "fb8748a4ed6284249c5d667a72063eff65232db394c9aa901d74ea583328a1f5",
+      "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_04.png": "38e8b6f70f3713857eb7bb5429e661ffc8b60657a90f10cfaf37798916d0cadb",
+      "assets/terrain/limestone_cave/micro_adapters/white/vertical/frame_05.png": "a2dcf65d4b3ddb6d33765749e7848ab5bc1ca7a44516b2f3b521d266ca0f616e",
       "assets/terrain/limestone_cave/modules/formation/boulder/1.png": "c6b09abef6e436e09787664c3490295500bc44e88012e9ab31120ba8c325bc57",
+      "assets/terrain/limestone_cave/modules/formation/boulder/2.png": "287f941061c5bd500c40a1494def824d10a01966b3bdaef65842c12edc9f1300",
       "assets/terrain/limestone_cave/modules/formation/broken_column/0.png": "9b9192feeff9758a227f0451583c403b4abe82216c6bbfdc0be5146e52bc85a1",
       "assets/terrain/limestone_cave/modules/formation/broken_column/1.png": "d57812af159d52f3e5b6546141c2dc26f4dc1b08e8621a39ba865115a95c68d5",
       "assets/terrain/limestone_cave/modules/formation/broken_column/2.png": "61f05109569d5af6e6bc0ba4918a0493773b9668f39c38b67065ff1431b132cb",

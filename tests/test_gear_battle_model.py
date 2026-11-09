@@ -76,9 +76,9 @@ class GearBattleModelTests(unittest.TestCase):
             self.assertEqual(after[:1]+after[2:], before[:1]+before[2:])
             self.assertEqual(model.skill_actions(), ['aether_edge'])
         self.assertEqual(model.actions['nature_edge']['kind'], 'failed_edge')
-        self.assertNotIn('ice_edge', model.actions)
+        self.assertEqual(model.actions['ice_edge']['kind'], 'spellblade')
         shipped = self.model(learned_abilities=list(REQUIRED_GEMS))
-        self.assertEqual(shipped.skill_actions(), ['aqua_edge'])
+        self.assertEqual(shipped.skill_actions(), ['aqua_edge', 'flame_edge', 'ice_edge'])
         self.assertFalse(shipped.choose_action('ice_edge'))
 
     def test_selector_locks_during_caelan_action_unarmed_ko_and_results(self):

@@ -5,8 +5,9 @@ dictionary for monster and boss definitions. Entries are keyed by stable enemy
 IDs under `enemies`. [`bestiary.py`](../bestiary.py) validates the complete
 dictionary and resolves a species at an explicitly selected level.
 
-The dictionary contains four computed Sanctuary cave species: **Cave Bat**,
-**Lithrusk**, **Veylume** and the level-seven miniboss **Vespermaw**. Vespermaw is
+The dictionary contains six computed Sanctuary cave species: **Cave Bat**,
+**Lithrusk**, **Veylume**, level-four **Embravyr** and **Nivareth**, and the
+level-seven miniboss **Vespermaw**. Vespermaw is
 a one-time story encounter in the cave's final Echo Chamber, with its dedicated
 sprite bank and full combat cycle. The dictionary preserves the existing fixed
 Bat and Ridgeback Tusker records for
@@ -169,8 +170,8 @@ Lithrusk's pale limestone plates and heavy gait suggest Ground alignment;
 water wears its porous shell and dry mineral plates insulate it against
 Electric attacks. Veylume's sparking antennae and luminous wing veins reveal
 Electric alignment; Ground disperses its stored charge. Its light belongs to
-a living insect adapted to ambient Aether. These profiles remain hidden
-authoring data until elemental combat and deliberate reveal mechanics exist.
+a living insect adapted to ambient Aether. These profiles remain hidden internal data read by elemental combat. Deliberate
+reveals such as Edran’s Study remain future work.
 
 ## Vespermaw
 
@@ -242,7 +243,7 @@ Confluence Roar resolves a separate magical hit against each living active
 party member. Each member's Magick Defense, Guard and variance apply to their
 own hit; KO characters and bots are excluded. Its six MP is spent once.
 
-After Pounce, Vespermaw takes 25% more damage and spends its next turn recovering.
+After Pounce, Vespermaw takes 50% more damage and spends its next turn recovering.
 That vulnerability ends immediately before the next Raking Claw begins. This
 window is independent of the future Stagger mechanic. Initial tuning assumes
 a rested three-character party around levels five through seven and does not
@@ -266,7 +267,8 @@ Pounce. This encounter does not recruit Lucan or change his story ownership.
 The mineral crust and heavy gait suggest Ground alignment. The crust insulates
 against Electric attacks but is vulnerable to erosion by Water. Ground
 absorption takes precedence over its stored damage percentage. As with the
-other species, elemental responses and Stagger remain hidden planning data.
+other species, elemental response tables remain hidden internal data; live
+elemental Edges read them during combat. Stagger remains future work.
 
 `combat_design.status` is `ready` and `metadata['combat_pending']` is false.
 Party-wide damage, the recovery vulnerability and the guaranteed marked-character
@@ -293,6 +295,55 @@ revisiting cannot repeat rewards. It remains excluded from random pools and does
 not complete MQ03, resolve the pending Sanctuary arrival, change escort ownership
 or end Kindled Courage. See the [live encounter review](reviews/vespermaw_encounter/README.md).
 
+## Embravyr and Nivareth
+
+These are **pure elemental Aether formations**, not living animals with Fire or
+Ice coatings. Both are fixed level-four solo bosses in optional, continuously
+walkable Sanctuary branches. Neither is in a random pool or required for
+Vespermaw, and either can be defeated first.
+
+| Property | Embravyr | Nivareth |
+| --- | --- | --- |
+| ID | `embravyr` | `nivareth` |
+| Family | Aether elemental | Aether elemental |
+| Room / combat field | Embervein Chamber / `cave_embervein` | Stillfrost Chamber / `cave_stillfrost` |
+| Level | 4 | 4 |
+| Element | Fire | Ice |
+| Stat profile | Armored | Warded |
+| Archetype / style | Windup Attacker / Telegraphed Windup | Windup Attacker / Telegraphed Windup |
+| HP / MP | 612 / 37 | 658 / 61 |
+| Strength / Magick / Spirit | 15 / 15 / 16 | 12 / 18 / 19 |
+| Defense / Magick Defense | 28 / 11 | 11 / 28 |
+| Speed / Accuracy / Evasion / Luck | 11 / 17 / 15 / 16 | 12 / 17 / 15 / 16 |
+| Species factors | Strength ×1.10, Magick ×1.25, Speed ×0.90 | Strength ×0.85, Magick ×1.20, Speed ×0.90 |
+| Boss HP factor | ×1.80 | ×2.20 |
+| EXP per living active member | 840 | 840 |
+| Guaranteed focus | `red_focus_gem` / Fire | `white_focus_gem` / Ice |
+| Learned technique | Flame Edge | Ice Edge |
+| Defensive clues | Red core, emberglass and flames | White core, floating ice lattice and frost |
+| Main weaknesses | Water 200%, Ice 150% | Fire 200% |
+| Resistance | Nature 50% | Water 50% |
+| Absorption | Fire: 100% healing | Ice: 100% healing |
+
+All omitted affinities are neutral 100%. Embravyr repeats **Cinder Lash →
+Emberwash → Gather Embers → Furnace Lunge → Cooling**. Nivareth repeats **Rime
+Needle → Glassfall → Gather Frost → Frostspire Thrust → Settling**. Both have
+party-wide magical pressure, an explicitly marked heavy hit, a guaranteed
+response opportunity and a **×1.50 incoming-damage** recovery window. Vespermaw
+now uses that same exhaustion multiplier after Pounce.
+
+Their victories install the corresponding focus and teach its Edge in the
+same atomic transaction as the guaranteed item, EXP, selected focus, resources
+and receipt. KO Caelan receives the focus and technique but no EXP; acquisition
+presentation waits until he is conscious. No raw material silently installs a
+focus. Learned elemental Edges cost 0 MP during these two teaching encounters;
+normal fights and Vespermaw retain their 4-MP cost. Aether Edge and Overclock
+retain ordinary costs everywhere.
+
+See [complete elemental encounter data](ELEMENTAL_CAVE_ENCOUNTERS.md) for action
+potencies, all affinities, both-order acquisition, defeat/Flee rules, persistence
+and the current in-game review.
+
 ## Authoring before art
 
 An unfinished species uses `"presentation": {"sprite_id": null,
@@ -311,8 +362,9 @@ appearance. `BattleModel.from_bestiary` rejects it before constructing a battle.
 
 Physical and magical actions can carry an optional canonical `element` tag,
 separately from their damage category and the species' defensive affinities.
-Utility actions remain untagged. Aqua Edge tags only its magical Spellblade
-component as Water and reads the target’s authored percentage or absorption.
+Utility actions remain untagged. Aqua Edge, Flame Edge and Ice Edge tag only
+their magical Spellblade component as Water, Fire and Ice respectively, reading
+the target’s authored percentage or absorption.
 Existing enemy attack tags continue to preserve design intent; their visual
 Electric projectiles do not by themselves grant player elemental profiles.
 Cave encounter pools and multi-enemy battle
@@ -395,7 +447,7 @@ appearance, environment and behavior should support an informed guess about
 its element and affinities. Use consistent clues across related creatures;
 surprising exceptions need their own recognizable clue. Edran's planned
 **Study** ability will be one of the limited ways to reveal enemy data directly.
-Aqua Edge applies these data to its magical component. This does not implement
+The three elemental Edges apply these data to their magical component. This does not implement
 Study or add automatic HUD affinity labels.
 
 The old partial `planned_mechanics.elemental_affinities` map has been replaced

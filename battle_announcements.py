@@ -68,6 +68,12 @@ def _duration(text):
     return max(2.5, min(12., len(text) * .07))
 
 
+def _authored_windup(model, actor):
+    record = model.enemy_record(actor) if model.is_enemy(actor) else None
+    design = record.get('metadata', {}).get('combat_design') if record is not None else None
+    return design['windup']['attack_action'] if design is not None else None
+
+
 def enemy_charge_warnings(model, display_name=None):
     """Describe actual preparation, held attacks and unresolved releases.
 
@@ -100,7 +106,7 @@ def enemy_charge_warnings(model, display_name=None):
         source = _name(model, actor, display_name)
         suffix = ' → '+_name(model, target, display_name) if target is not None else ''
         text = source+(' unleashes ' if releasing else ' readies ')+action_name+suffix
-        if attack == 'vespermaw_ruinous_pounce':
+        if attack is not None and attack == _authored_windup(model, actor):
             # A solo boss's name is already on its field header. Keep the marked
             # character on the first page even with minimum-size enlarged text.
             text = action_name+suffix
@@ -270,7 +276,8 @@ class BattleAnnouncements:
             else:self._show(self._ability(actor, event.get('action'), event.get('name')),
                             replace=True, priority=2)
             return
-        if kind == 'telegraph' and event.get('prepared_action') == 'vespermaw_ruinous_pounce':
+        if (kind == 'telegraph' and event.get('prepared_action') is not None
+                and event.get('prepared_action') == _authored_windup(self.model, actor)):
             # The marked character must be visible as soon as the model commits
             # or changes the warning, including during Gather's follow-through.
             self._current = None
@@ -280,6 +287,10 @@ class BattleAnnouncements:
         message = None
         if kind == 'recovery_started':
             message = self._recovery_notice(actor, event.get('action'))
+            # The hit has landed: make its opening visible during followthrough
+            # rather than leaving the completed strike's title over the window.
+            self._show(message, replace=True, priority=2)
+            return
         elif kind == 'recovery_ended':
             self._prune_recovery()
             return

@@ -66,6 +66,7 @@ from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migra
 from cave_random_encounters import CaveRandomEncounters
 from cave_lesson import CaveLesson
 from sanctuary_boss import SanctuaryBoss
+from elemental_bosses import ElementalBosses
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -541,6 +542,7 @@ class Game:
         self.cave_random_encounters=CaveRandomEncounters()
         self.cave_lesson=CaveLesson(self)
         self.sanctuary_boss=SanctuaryBoss(self)
+        self.elemental_bosses=ElementalBosses(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
@@ -592,6 +594,7 @@ class Game:
                            'cave_encounter_pending':self.cave_random_encounters.pending,
                            'cave_lesson':self.cave_lesson.to_dict(),
                            'sanctuary_boss':self.sanctuary_boss.to_dict(),
+                           'elemental_bosses':self.elemental_bosses.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'character_levels':self.character_progression.to_dict(),
                            'party':self.party.to_dict(),
@@ -688,6 +691,7 @@ class Game:
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                SanctuaryCave.valid_journey(data) and
                SanctuaryBoss.valid_journey(data) and
+               ElementalBosses.valid_journey(data) and
                CaveRandomEncounters.valid_journey(data) and
                CaveLesson.valid_journey(data) and
                ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
@@ -818,7 +822,8 @@ class Game:
             return False
         # Pending spoils retain their original before/after stat transaction.
         if (data is not None and not data.get('post_battle')
-                and not (data.get('sanctuary_boss') or {}).get('pending')):
+                and not (data.get('sanctuary_boss') or {}).get('pending')
+                and not (data.get('elemental_bosses') or {}).get('pending')):
             self.character_progression.retune_legacy_mira()
         self._party_prompt_before=None
         self._party_prompt_callback=None
@@ -867,6 +872,7 @@ class Game:
         if not self.cave_random_encounters.restore(data.get('cave_random_encounters') if data else None):
             return False
         if not self.sanctuary_boss.restore(data.get('sanctuary_boss') if data else None):return False
+        if not self.elemental_bosses.restore(data.get('elemental_bosses') if data else None):return False
         if not self.cave_lesson.restore(data.get('cave_lesson') if data else None,
                                         legacy_journey=data):return False
         # Residents resume their own routines on launch. A saved standing spot
@@ -946,6 +952,11 @@ class Game:
                 self.save_error='The saved boss encounter could not be restored.'
                 self.on_title=True
                 return False
+        elif self.elemental_bosses.pending is not None:
+            if not self.combat.start_elemental_boss(self.elemental_bosses.pending, restoring=True):
+                self.save_error='The saved elemental encounter could not be restored.'
+                self.on_title=True
+                return False
         elif (self.cave_random_encounters.pending is not None
                 and not self.cave_lesson.deferred):
             ticket=self.cave_random_encounters.pending
@@ -976,6 +987,7 @@ class Game:
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'cave_lesson':self.cave_lesson.to_dict(),
               'sanctuary_boss':self.sanctuary_boss.to_dict(),
+              'elemental_bosses':self.elemental_bosses.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'character_levels':self.character_progression.to_dict(),
               'party':self.party.to_dict(),
@@ -1261,6 +1273,7 @@ class Game:
             if event.type==pygame.QUIT:
                 self.save_progress()
                 self.combat.stop_audio()
+                self.elemental_bosses.stop_audio()
                 self.cave_lesson.release_pose()
                 self.music.stop()
                 return False
@@ -1357,6 +1370,17 @@ class Game:
                 self.social.clear_pointer()
                 self.pause.open()
                 continue
+            if self.elemental_bosses.acquisition_active:
+                # Acknowledging the last page still belongs to the gem seating
+                # until its short visual finishes; it cannot activate a door.
+                if (event.type==pygame.KEYDOWN and event.key in (pygame.K_SPACE,pygame.K_e)
+                        and not getattr(event,'repeat',False) and not advanced and self.social.active):
+                    self.social.advance();advanced=True
+                elif event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
+                    if not self._mouse_held and not advanced and self.social.active:
+                        self.social.click(self.to_canvas(event.pos));advanced=True
+                    self._mouse_held=True
+                continue
             if self.mill_quest.encounter_cutscene_active:
                 if not self.social.active:
                     # Pans own world input; Escape above still pauses the game.
@@ -1412,6 +1436,10 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    if self.elemental_bosses.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.sanctuary_cave.interact():
                         advanced=True
                         resumed=True
@@ -1431,6 +1459,7 @@ class Game:
         return True
 
     def update(self,seconds,direction=None,running=None):
+        self.elemental_bosses.sync_audio()
         if self.gallery_session is not None:
             session=self.gallery_session
             try:session.update(seconds)
@@ -1453,6 +1482,8 @@ class Game:
                 and not self.on_title and self._music_focused
                 and not self.combat.active and not self.social.locked
                 and self.sanctuary_boss.pending is None
+                and self.elemental_bosses.pending is None
+                and not self.elemental_bosses.acquisition_active
                 and not self.cave_lesson.deferred
                 and (not self.cave_lesson.needs_intro or
                      self.cave_lesson.resonance_seen and not self.cave_lesson.ready_reason())
@@ -1574,10 +1605,14 @@ class Game:
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
         direction=(0,0) if (self.map_open or self.quest_ui.journal_open or
                            self.opening.locks_player or self.household_action or self.opening_fade
-                           or self.sanctuary_boss.locks_player or self.cave_lesson.locks_player) else direction
+                           or self.sanctuary_boss.locks_player or self.elemental_bosses.locks_player
+                           or self.cave_lesson.locks_player) else direction
         if not self.opening.controls_player:
             previous=self.player.position.copy()
             if self.cave_lesson.update(seconds):
+                self.opening_audio.set_paused(True)
+                return
+            if self.elemental_bosses.update(seconds):
                 self.opening_audio.set_paused(True)
                 return
             self.player.update(direction,seconds,self.world,bool(running))
@@ -1778,6 +1813,7 @@ class Game:
         hint=('E: '+display['label']) if display is not None else ''
         reserve=getattr(self,'sanctuary_reserve',None)
         hint=(hint or self.overworld_travel.interaction_hint() or self.cave_lesson.interaction_hint() or
+              self.elemental_bosses.interaction_hint() or
               (self.sanctuary_boss.interaction_hint() if not self.cave_lesson.needs_intro else '') or
               self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
@@ -1849,6 +1885,7 @@ class Game:
                             party_actors=self.party_travel.actors())
         else:self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
         self.cave_lesson.draw_world(self.canvas,camera)
+        self.elemental_bosses.draw_world(self.canvas,camera)
         self.combat.draw_world(self.canvas,camera)
         self.opening.draw_world(self.canvas,camera)
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
@@ -1856,13 +1893,15 @@ class Game:
         pygame.transform.scale(self.canvas,size,self.ui_surface)
         for routine in getattr(self.world,'play_routines',[]):
             routine.draw(self.ui_surface,camera,self.world)
-        if not self._is_gallery_preview:
+        if not self._is_gallery_preview and not self.elemental_bosses.acquisition_active:
             self.quest_ui.draw_markers(self.ui_surface,camera)
             self.draw_hud(self.ui_surface)
             self.quest_ui.draw_tracker(self.ui_surface)
         if not self.map_open and not self.quest_ui.journal_open:
             self.social.draw(self.ui_surface,self.elapsed_ms,camera=camera)
-        if not self._is_gallery_preview:self.quest_ui.draw_notifications(self.ui_surface)
+        self.elemental_bosses.draw_ui(self.ui_surface)
+        if not self._is_gallery_preview and not self.elemental_bosses.acquisition_active:
+            self.quest_ui.draw_notifications(self.ui_surface)
         if self.save_error and not self.quest_ui.journal_open:
             painter=self.ui.painter(self.ui_surface)
             lines=painter.wrap('Progress could not be saved. Check the saves folder.',436,role='small')
@@ -1917,6 +1956,7 @@ def main(argv=None):
         game.save_progress()
         game.opening_audio.reset()
         game.cave_lesson.release_pose()
+        game.elemental_bosses.stop_audio()
         game.music.stop()
         pygame.quit()
     return 0

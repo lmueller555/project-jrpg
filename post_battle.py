@@ -41,6 +41,11 @@ def battle_reward_definition(kind, encounter=None):
     if kind == 'cave_boss':
         resolved = build_enemy('vespermaw', 7)
         return {'drops': dict(resolved['combat']['rewards']['drops']), 'xp': resolved['xp_reward']}
+    if kind == 'elemental_boss':
+        from elemental_bosses import valid_ticket
+        if not valid_ticket(encounter):raise ValueError('Invalid elemental encounter reward')
+        resolved = build_enemy(encounter['enemy_id'], encounter['level'])
+        return {'drops': dict(resolved['combat']['rewards']['drops']), 'xp': resolved['xp_reward']}
     if kind == 'cave':
         drops, xp = {}, 0
         for member in encounter['members']:
@@ -68,14 +73,15 @@ def valid_pending_snapshot(record, data=None):
     """
     if record is None:return True
     cave = isinstance(record, dict) and record.get('kind') == 'cave'
-    boss = isinstance(record, dict) and record.get('kind') == 'cave_boss'
+    elemental = isinstance(record, dict) and record.get('kind') == 'elemental_boss'
+    boss = isinstance(record, dict) and record.get('kind') in ('cave_boss', 'elemental_boss')
     cave_battle = cave or boss
     modern = isinstance(record, dict) and type(record.get('version')) is int and record['version'] == 2
     extra = PROGRESSION_FIELDS if modern else set()
     shapes = (FIELDS | extra, FIELDS | PARTY_FIELDS | extra, CAVE_FIELDS | extra)
     if (not isinstance(record, dict) or set(record) not in shapes
             or type(record['version']) is not int or record['version'] not in (1, 2)
-            or record['kind'] not in ('bat', 'mill', 'cave', 'cave_boss')
+            or record['kind'] not in ('bat', 'mill', 'cave', 'cave_boss', 'elemental_boss')
             or (set(record) == CAVE_FIELDS | extra) != cave_battle
             or (boss and not modern)
             or record['stage'] not in ('pending', 'awarded')
@@ -87,7 +93,7 @@ def valid_pending_snapshot(record, data=None):
             or record['facing'] not in ('front', 'back', 'left', 'right')
             or not isinstance(record['scene'], str)
             or not isinstance(record['position'], list) or len(record['position']) != 2
-            or any(type(n) not in (int, float) or not math.isfinite(n) or abs(n) >= 1e7
+            or any(type(n) not in (int, float) or abs(n) >= 1e7 or not math.isfinite(n)
                    for n in record['position'])):
         return False
     has_party = 'party_active' in record
@@ -124,7 +130,10 @@ def valid_pending_snapshot(record, data=None):
                 or record['incapacitated'] != (record['resources']['hp'] == 0)):
             return False
     elif boss:
-        from sanctuary_boss import SCENE_ID, valid_ticket
+        if elemental:
+            from elemental_bosses import SCENE_ID, valid_ticket
+        else:
+            from sanctuary_boss import SCENE_ID, valid_ticket
         ticket = record['encounter']
         if (not valid_ticket(ticket) or record['scene'] != SCENE_ID
                 or record['receipt'] != ticket['receipt']
@@ -145,6 +154,9 @@ def valid_pending_snapshot(record, data=None):
                    or not 1 <= amount <= canonical['drops'][key]
                    for key, amount in rewards['drops'].items())):
         return False
+    # A story focus is guaranteed; it cannot disappear through ordinary loot
+    # capacity handling or be substituted with a similarly colored material.
+    if elemental and rewards['drops'] != canonical['drops']:return False
     if modern:
         from character_progression import CharacterProgression
         plan = record['progression']
@@ -187,11 +199,24 @@ def valid_pending_snapshot(record, data=None):
                     or state.get('pending') != record['encounter']):return False
         awarded = record['stage'] == 'awarded'
         if boss:
-            from sanctuary_boss import SanctuaryBoss
-            state = data['sanctuary_boss']
-            if (not SanctuaryBoss.valid_snapshot(state)
-                    or state['pending'] != record['encounter']
-                    or state['defeated'] != awarded):return False
+            if elemental:
+                from elemental_bosses import ElementalBosses, definition
+                state = data['elemental_bosses']
+                if (not ElementalBosses.valid_snapshot(state)
+                        or state['pending'] != record['encounter']
+                        or state['bosses'][record['encounter']['enemy_id']]['defeated'] != awarded):return False
+                if awarded:
+                    reward = definition(record['encounter']['enemy_id'])
+                    abilities = data.get('character_abilities') or {}
+                    if (reward['gem'] not in abilities.get('gear_gems', {}).get('caelan', [])
+                            or reward['skill'] not in abilities.get('learned_abilities', {}).get('caelan', [])
+                            or data.get('inventory', {}).get('items', {}).get(reward['item'], 0) < 1):return False
+            else:
+                from sanctuary_boss import SanctuaryBoss
+                state = data['sanctuary_boss']
+                if (not SanctuaryBoss.valid_snapshot(state)
+                        or state['pending'] != record['encounter']
+                        or state['defeated'] != awarded):return False
         if receipts.has_receipt(record['receipt']) != awarded:return False
         resources = record['resources'] if awarded else record['before']
         if (attributes.current_hp, attributes.current_mp) != (resources['hp'], resources['mp']):return False

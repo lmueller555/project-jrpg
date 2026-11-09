@@ -250,8 +250,11 @@ def products():
         lights.append(light)
         if item.get('steady'):
             continue
-        for variation in range(2):
-            key = 'micro.'+color+'.'+patterns[(index+variation*2) % len(patterns)]
+        field_patterns = item.get('patterns', [patterns[(index+variation*2) % len(patterns)] for variation in range(2)])
+        if not isinstance(field_patterns,list) or not 1 <= len(field_patterns) <= 4 or any(pattern not in patterns for pattern in field_patterns):
+            raise ValueError('Invalid microcrystal field patterns: '+item['id'])
+        for variation,pattern in enumerate(field_patterns):
+            key = 'micro.'+color+'.'+pattern
             record, images = module('micro', key)
             anchor = record['anchor']
             candidates = [(dx, dy) for dy in range(-240, 241, 6) for dx in range(-240, 241, 6)]
@@ -280,6 +283,38 @@ def products():
                          'crystal_count': record['crystal_count'], 'crystal_sizes': record['crystal_sizes'],
                          'emission_bounds': [position[0]+ex, position[1]+ey, ew, eh]})
         light['entity_id'] = item['id']+'_micro_0'
+    # Extra native seam drawings share existing light roots. Their explicit
+    # perimeter targets cover every room wall without expanding the32-root
+    # lighting cache or making large floor crystals stand in for wall detail.
+    group_indices = {item['id']:index for index,item in enumerate(spec['light_groups'])}
+    for item in spec.get('wall_fields', []):
+        index = group_indices[item['light_group']]
+        color = item['color']
+        key = 'micro.'+color+'.'+item['pattern']
+        record,images = module('micro',key)
+        anchor = record['anchor']
+        if record['color'] != lights[index]['color']:
+            raise ValueError('Wall seam must share its own color light: '+item['id'])
+        candidates = [(dx,dy) for dy in range(-96,97,4) for dx in range(-96,97,4)]
+        candidates.sort(key=lambda delta:delta[0]**2+delta[1]**2)
+        position = None
+        for dx,dy in candidates:
+            center = [item['near'][0]+dx,item['near'][1]+dy]
+            candidate = [center[0]-anchor[0],center[1]-anchor[1]]
+            if any((center[0]-x)**2+(center[1]-y)**2 < 36**2 for x,y in used_sockets):continue
+            if all(not contains_floor(candidate[0]+x,candidate[1]+y,width,height)
+                   for x,y,width,height in record['core_components']):
+                position = candidate;used_sockets.append(center);break
+        if position is None:raise ValueError('No perimeter microcrystal socket: '+item['id'])
+        add_entity(item['id'],record,position,center[1],source_module=key,
+                   source_pack='micro',light_index=index,wall_gem_color=color,
+                   source_room=item['room'],wall_side=item['side'])
+        ex,ey,ew,eh = record['emission_bounds']
+        gems.append({'id':item['id'],'entity_id':item['id'],'color':color,
+                     'position':center,'light_index':index,'light_position':lights[index]['position'],
+                     'crystal_count':record['crystal_count'],'crystal_sizes':record['crystal_sizes'],
+                     'source_room':item['room'],'wall_side':item['side'],
+                     'emission_bounds':[position[0]+ex,position[1]+ey,ew,eh]})
     if len(lights) > 32:
         raise ValueError('Continuous dungeon exceeds bounded lighting cache')
 
@@ -299,6 +334,25 @@ def products():
     for name, point in spec['legacy_landings'].items():
         if not free(point):
             raise ValueError('Blocked legacy landing '+name)
+    arena_fields = {'id','enemy_id','room','level','battlefield','center','approach','retreat','trigger','status'}
+    arena_ids = set()
+    room_ids = {room['id'] for room in spec['rooms']}
+    for arena in spec.get('elemental_arenas', []):
+        if (not isinstance(arena,dict) or set(arena) != arena_fields
+                or arena['id'] in arena_ids or arena['room'] not in room_ids
+                or arena['status'] != 'story_boss' or type(arena['level']) is not int
+                or not 1 <= arena['level'] <= 100):
+            raise ValueError('Invalid elemental arena metadata')
+        arena_ids.add(arena['id'])
+        for key in ('center','approach','retreat'):
+            if not free(arena[key]):raise ValueError('Blocked elemental '+key+': '+arena['id'])
+        x,y,width,height = arena['trigger']
+        if (any(type(value) is not int for value in arena['trigger'])
+                or not 0 <= x < x+width <= w or not 0 <= y < y+height <= h
+                or not x <= arena['center'][0] < x+width
+                or not y <= arena['center'][1] < y+height
+                or x <= arena['approach'][0] < x+width and y <= arena['approach'][1] < y+height):
+            raise ValueError('Invalid elemental trigger: '+arena['id'])
     for name, route in spec['routes'].items():
         for start, end in zip(route, route[1:]):
             distance = max(abs(end[0]-start[0]), abs(end[1]-start[1]))
@@ -330,7 +384,7 @@ def products():
                      'wall_gems': gems, 'microcrystal_count': sum(gem['crystal_count'] for gem in gems),
                      'placed_modules': placed, 'water_tiles': water_records,
                      **{key: spec[key] for key in ('rooms', 'routes', 'navigation_points', 'treasures', 'loops',
-                                                   'legacy_landings', 'encounter_spaces', 'arena', 'links', 'inspections')},
+                                                   'legacy_landings', 'encounter_spaces', 'arena', 'elemental_arenas', 'links', 'inspections')},
                      'traversal_checks': checks},
             'build': {'tool': 'tools/build_continuous_sanctuary_cave.py',
                       'source_recipe': SOURCE.relative_to(ROOT).as_posix(),

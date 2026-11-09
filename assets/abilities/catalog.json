@@ -138,7 +138,12 @@
     },
     "flame_edge": {
       "name": "Flame Edge",
-      "description": "An unpractised attempt to channel Fire-aspected aether through the blade. This tutorial attempt does not grant a learned elemental technique.",
+      "description": "A Red-gem blade strike combining physical force with Fire-aspected magicks.",
+      "kind": "technique"
+    },
+    "ice_edge": {
+      "name": "Ice Edge",
+      "description": "A White-gem blade strike combining physical force with Ice-aspected magicks.",
       "kind": "technique"
     }
   }

@@ -22,7 +22,7 @@ SIZE = (480, 320)
 FRAME_COUNT = 24
 FRAME_MS = 250
 FIELD_IDS = frozenset(('cave_outer', 'cave_grotto', 'cave_hollow', 'cave_depths',
-                       'cave_echo_chamber'))
+                       'cave_echo_chamber', 'cave_embervein', 'cave_stillfrost'))
 
 
 def encoded(image):
@@ -197,7 +197,7 @@ def products():
             pulses = []
             for falloff, color, phase in lights:
                 pulse = .5-.5*math.cos(frame/FRAME_COUNT*math.tau+phase)
-                values += falloff[:, :, None]*color*(.022+.075*pulse)
+                values += falloff[:, :, None]*color*(.022+.075*pulse)*field.get('light_gain',1.)
                 pulses.append(pulse)
             canvas = Image.fromarray(np.rint(np.clip(values, 0, 255)).astype(np.uint8)).convert('RGBA')
             for item, pulse in zip(field['crystals'], pulses):

@@ -9,7 +9,7 @@ import pygame
 
 ROOT = Path(__file__).resolve().parent
 CAVE_BATTLEFIELDS = frozenset(('cave_outer', 'cave_grotto', 'cave_hollow', 'cave_depths',
-                              'cave_echo_chamber'))
+                              'cave_echo_chamber', 'cave_embervein', 'cave_stillfrost'))
 
 
 class CaveBattlefield:

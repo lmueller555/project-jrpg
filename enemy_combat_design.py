@@ -127,7 +127,9 @@ def validate_combat_design(design, behavior):
 
     encounter = design['encounter']
     if (not isinstance(encounter, dict)
-            or set(encounter) != {'trigger', 'repeatable', 'formation_size'}
+            or set(encounter) not in ({'trigger', 'repeatable', 'formation_size'},
+                                      {'trigger', 'repeatable', 'formation_size', 'flee_allowed'})
+            or 'flee_allowed' in encounter and type(encounter['flee_allowed']) is not bool
             or encounter['trigger'] != 'story' or encounter['repeatable'] is not False
             or type(encounter['formation_size']) is not int or encounter['formation_size'] != 1):
         raise ValueError('Invalid pending enemy story encounter')

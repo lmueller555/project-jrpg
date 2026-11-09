@@ -68,12 +68,12 @@ def _actions(actions):
     return load_actions(None if actions is None else {'version': 1, 'actions': actions})
 
 
-def _drops(values, definitions=None):
+def _drops(values, definitions=None, *, story_focus=None):
     if not isinstance(values, dict):return False
     for identifier, amount in values.items():
         if not _identifier(identifier) or not _integer(amount, 1, MAX_QUANTITY):return False
         if definitions is not None and (identifier not in definitions
-                or definitions[identifier]['category'] == 'key_items'):
+                or definitions[identifier]['category'] == 'key_items' and identifier != story_focus):
             return False
     return True
 
@@ -124,7 +124,7 @@ def _validate_elemental_profile(profile):
         raise ValueError('Invalid Bestiary elemental absorption')
 
 
-def _validate_species(enemy, actions, archetypes, items):
+def _validate_species(enemy, actions, archetypes, items, *, enemy_id=None):
     if (set(enemy) not in (SPECIES_FIELDS, SPECIES_FIELDS | {'combat_design'})
             or enemy['mode'] != 'species'
             or not _text(enemy['name'], 120) or not _text(enemy['description'])
@@ -205,9 +205,18 @@ def _validate_species(enemy, actions, archetypes, items):
         if not isinstance(states, dict) or any(
                 authored_state(identifier) not in states for identifier in behavior['sequence']):
             raise ValueError('Bestiary actions require authored animation states')
+    # The two nonrepeatable elemental lessons have one protected core reward.
+    # Ordinary enemies still cannot drop quest/key items.
+    story_focus = {'embravyr': 'red_focus_gem', 'nivareth': 'white_focus_gem'}.get(enemy_id)
+    if story_focus is not None and (enemy['tier'] != 'boss'
+            or enemy['family'] != 'aether_elemental'
+            or enemy['level_range'] != {'min': 4, 'max': 4}
+            or not has_design or enemy['combat_design']['encounter']['repeatable']):
+        raise ValueError('Focus core requires its authored one-time elemental boss')
     if (not isinstance(enemy['rewards'], dict) or set(enemy['rewards']) != {'drops'}
+            or story_focus is not None and enemy['rewards']['drops'] != {story_focus: 1}
             or (enemy['rewards']['drops'] is not None
-                and not _drops(enemy['rewards']['drops'], items))):
+                and not _drops(enemy['rewards']['drops'], items, story_focus=story_focus))):
         raise ValueError('Invalid Bestiary drops')
     _validate_elemental_profile(enemy['elemental_profile'])
     planned = enemy['planned_mechanics']
@@ -241,7 +250,7 @@ def load_bestiary(data=None, actions=None):
         if not _identifier(identifier) or not isinstance(enemy, dict):
             raise ValueError('Invalid Bestiary enemy identifier')
         if set(enemy) == FIXED_FIELDS:_validate_fixed(enemy, actions)
-        else:_validate_species(enemy, actions, archetypes, items)
+        else:_validate_species(enemy, actions, archetypes, items, enemy_id=identifier)
     return deepcopy(data)
 
 

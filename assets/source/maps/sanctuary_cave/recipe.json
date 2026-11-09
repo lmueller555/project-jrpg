@@ -934,6 +934,156 @@
         ]
       ],
       "description": "A broad, open chamber lies beneath pendant stone. Tiny crystals pulse along the enclosing walls in many colors."
+    },
+    {
+      "id": "embervein_chamber",
+      "name": "Embervein Chamber",
+      "position": [
+        768,
+        1632
+      ],
+      "polygon": [
+        [
+          936,
+          1632
+        ],
+        [
+          928,
+          1684
+        ],
+        [
+          890,
+          1728
+        ],
+        [
+          840,
+          1758
+        ],
+        [
+          782,
+          1776
+        ],
+        [
+          716,
+          1768
+        ],
+        [
+          658,
+          1748
+        ],
+        [
+          618,
+          1690
+        ],
+        [
+          600,
+          1632
+        ],
+        [
+          612,
+          1578
+        ],
+        [
+          642,
+          1530
+        ],
+        [
+          702,
+          1500
+        ],
+        [
+          756,
+          1488
+        ],
+        [
+          820,
+          1498
+        ],
+        [
+          878,
+          1524
+        ],
+        [
+          918,
+          1572
+        ]
+      ],
+      "description": "An offshoot bends into a warm chamber where countless red microcrystals glimmer inside fractured limestone. Ember light gathers around a solitary elemental."
+    },
+    {
+      "id": "stillfrost_chamber",
+      "name": "Stillfrost Chamber",
+      "position": [
+        1296,
+        528
+      ],
+      "polygon": [
+        [
+          1464,
+          528
+        ],
+        [
+          1457,
+          580
+        ],
+        [
+          1426,
+          628
+        ],
+        [
+          1372,
+          658
+        ],
+        [
+          1308,
+          672
+        ],
+        [
+          1245,
+          664
+        ],
+        [
+          1188,
+          640
+        ],
+        [
+          1146,
+          600
+        ],
+        [
+          1128,
+          528
+        ],
+        [
+          1141,
+          472
+        ],
+        [
+          1176,
+          428
+        ],
+        [
+          1236,
+          398
+        ],
+        [
+          1296,
+          384
+        ],
+        [
+          1362,
+          396
+        ],
+        [
+          1428,
+          428
+        ],
+        [
+          1452,
+          478
+        ]
+      ],
+      "description": "A quiet side chamber glows with white and blue pinpricks embedded in its walls. Pale mineral crust and damp stone catch the cold light around a waiting elemental."
     }
   ],
   "corridors": [
@@ -1148,6 +1298,78 @@
         ]
       ],
       "width": 132
+    },
+    {
+      "id": "embervein_branch",
+      "points": [
+        [
+          680,
+          1270
+        ],
+        [
+          744,
+          1392
+        ],
+        [
+          864,
+          1392
+        ],
+        [
+          960,
+          1440
+        ],
+        [
+          1008,
+          1560
+        ],
+        [
+          1008,
+          1800
+        ],
+        [
+          840,
+          1848
+        ],
+        [
+          768,
+          1776
+        ],
+        [
+          768,
+          1736
+        ],
+        [
+          768,
+          1632
+        ]
+      ],
+      "width": 96
+    },
+    {
+      "id": "stillfrost_branch",
+      "points": [
+        [
+          1580,
+          840
+        ],
+        [
+          1464,
+          816
+        ],
+        [
+          1368,
+          720
+        ],
+        [
+          1320,
+          648
+        ],
+        [
+          1296,
+          528
+        ]
+      ],
+      "width": 96
     }
   ],
   "material_patches": [
@@ -1351,6 +1573,130 @@
         [
           1760,
           700
+        ]
+      ]
+    },
+    {
+      "material": "gravel",
+      "polygon": [
+        [
+          646,
+          1512
+        ],
+        [
+          820,
+          1494
+        ],
+        [
+          916,
+          1574
+        ],
+        [
+          926,
+          1690
+        ],
+        [
+          816,
+          1760
+        ],
+        [
+          650,
+          1712
+        ],
+        [
+          612,
+          1600
+        ]
+      ]
+    },
+    {
+      "material": "dry",
+      "polygon": [
+        [
+          706,
+          1560
+        ],
+        [
+          814,
+          1534
+        ],
+        [
+          880,
+          1608
+        ],
+        [
+          862,
+          1692
+        ],
+        [
+          744,
+          1732
+        ],
+        [
+          658,
+          1658
+        ]
+      ]
+    },
+    {
+      "material": "damp",
+      "polygon": [
+        [
+          1158,
+          450
+        ],
+        [
+          1284,
+          390
+        ],
+        [
+          1416,
+          432
+        ],
+        [
+          1452,
+          546
+        ],
+        [
+          1392,
+          636
+        ],
+        [
+          1266,
+          664
+        ],
+        [
+          1150,
+          582
+        ]
+      ]
+    },
+    {
+      "material": "silt",
+      "polygon": [
+        [
+          1176,
+          480
+        ],
+        [
+          1236,
+          432
+        ],
+        [
+          1320,
+          430
+        ],
+        [
+          1378,
+          480
+        ],
+        [
+          1360,
+          540
+        ],
+        [
+          1238,
+          558
         ]
       ]
     }
@@ -2324,6 +2670,90 @@
         220
       ],
       "ground": true
+    },
+    {
+      "id": "embervein_west_stone",
+      "pack": "base",
+      "module": "formation.boulder.2",
+      "position": [
+        632,
+        1630
+      ]
+    },
+    {
+      "id": "embervein_rear_crust",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        690,
+        1508
+      ],
+      "ground": true,
+      "collision": false
+    },
+    {
+      "id": "embervein_floor_crack",
+      "pack": "geology",
+      "module": "crack.branching.3",
+      "position": [
+        700,
+        1684
+      ],
+      "ground": true,
+      "collision": false
+    },
+    {
+      "id": "embervein_low_pebbles",
+      "pack": "geology",
+      "module": "debris.pebbles.2",
+      "position": [
+        834,
+        1716
+      ],
+      "ground": true,
+      "collision": false
+    },
+    {
+      "id": "stillfrost_west_flowstone",
+      "pack": "base",
+      "module": "formation.flowstone.1",
+      "position": [
+        1158,
+        550
+      ]
+    },
+    {
+      "id": "stillfrost_rear_crust",
+      "pack": "geology",
+      "module": "mineral.crust.0",
+      "position": [
+        1210,
+        418
+      ],
+      "ground": true,
+      "collision": false
+    },
+    {
+      "id": "stillfrost_east_crust",
+      "pack": "geology",
+      "module": "mineral.crust.1",
+      "position": [
+        1384,
+        488
+      ],
+      "ground": true,
+      "collision": false
+    },
+    {
+      "id": "stillfrost_damp_seam",
+      "pack": "geology",
+      "module": "stain.damp.2",
+      "position": [
+        1288,
+        568
+      ],
+      "ground": true,
+      "collision": false
     }
   ],
   "light_groups": [
@@ -2627,6 +3057,81 @@
       "radius": 250,
       "gain": 0.58,
       "steady": true
+    },
+    {
+      "id": "embervein_red",
+      "near": [
+        708,
+        1620
+      ],
+      "color": "red",
+      "radius": 320,
+      "gain": 0.85,
+      "phase": 0.14,
+      "patterns": [
+        "dense",
+        "dense",
+        "diagonal_left"
+      ]
+    },
+    {
+      "id": "embervein_orange",
+      "near": [
+        828,
+        1644
+      ],
+      "color": "orange",
+      "radius": 320,
+      "gain": 0.72,
+      "phase": 0.32,
+      "patterns": [
+        "dense"
+      ]
+    },
+    {
+      "id": "stillfrost_west",
+      "near": [
+        1180,
+        480
+      ],
+      "color": "white",
+      "radius": 240,
+      "gain": 0.48,
+      "phase": 0.4,
+      "patterns": [
+        "dense",
+        "diagonal_left"
+      ]
+    },
+    {
+      "id": "stillfrost_east",
+      "near": [
+        1416,
+        552
+      ],
+      "color": "blue",
+      "radius": 250,
+      "gain": 0.5,
+      "phase": 0.58,
+      "patterns": [
+        "dense",
+        "dense"
+      ]
+    },
+    {
+      "id": "stillfrost_north",
+      "near": [
+        1296,
+        414
+      ],
+      "color": "white",
+      "radius": 240,
+      "gain": 0.42,
+      "phase": 0.7,
+      "patterns": [
+        "dense",
+        "diagonal_right"
+      ]
     }
   ],
   "routes": {
@@ -2825,6 +3330,70 @@
         1220,
         970
       ]
+    ],
+    "embervein_branch": [
+      [
+        680,
+        1270
+      ],
+      [
+        744,
+        1392
+      ],
+      [
+        864,
+        1392
+      ],
+      [
+        960,
+        1440
+      ],
+      [
+        1008,
+        1560
+      ],
+      [
+        1008,
+        1800
+      ],
+      [
+        840,
+        1848
+      ],
+      [
+        768,
+        1776
+      ],
+      [
+        768,
+        1736
+      ],
+      [
+        768,
+        1632
+      ]
+    ],
+    "stillfrost_branch": [
+      [
+        1580,
+        840
+      ],
+      [
+        1464,
+        816
+      ],
+      [
+        1368,
+        720
+      ],
+      [
+        1320,
+        648
+      ],
+      [
+        1296,
+        528
+      ]
     ]
   },
   "navigation_points": {
@@ -2871,6 +3440,14 @@
     "echo_chamber": [
       2060,
       300
+    ],
+    "embervein_chamber": [
+      768,
+      1632
+    ],
+    "stillfrost_chamber": [
+      1296,
+      528
     ]
   },
   "treasures": [
@@ -3047,6 +3624,24 @@
       ],
       "radius": 48,
       "route": "keeper_loop"
+    },
+    {
+      "id": "embravyr",
+      "center": [
+        768,
+        1632
+      ],
+      "radius": 94,
+      "route": "embervein_branch"
+    },
+    {
+      "id": "nivareth",
+      "center": [
+        1296,
+        528
+      ],
+      "radius": 94,
+      "route": "stillfrost_branch"
     }
   ],
   "arena": {
@@ -3254,6 +3849,30 @@
           520
         ],
         "width": 72
+      },
+      {
+        "name": "embervein_winding_approach",
+        "position": [
+          864,
+          1392
+        ],
+        "width": 72
+      },
+      {
+        "name": "embervein_foyer",
+        "position": [
+          840,
+          1848
+        ],
+        "width": 72
+      },
+      {
+        "name": "stillfrost_foyer",
+        "position": [
+          1368,
+          720
+        ],
+        "width": 72
       }
     ]
   },
@@ -3302,6 +3921,314 @@
         160,
         22
       ]
+    }
+  ],
+  "elemental_arenas": [
+    {
+      "id": "embravyr",
+      "enemy_id": "embravyr",
+      "room": "embervein_chamber",
+      "level": 4,
+      "battlefield": "cave_embervein",
+      "center": [
+        768,
+        1632
+      ],
+      "approach": [
+        768,
+        1736
+      ],
+      "retreat": [
+        840,
+        1848
+      ],
+      "trigger": [
+        612,
+        1512,
+        304,
+        200
+      ],
+      "status": "story_boss"
+    },
+    {
+      "id": "nivareth",
+      "enemy_id": "nivareth",
+      "room": "stillfrost_chamber",
+      "level": 4,
+      "battlefield": "cave_stillfrost",
+      "center": [
+        1296,
+        528
+      ],
+      "approach": [
+        1320,
+        648
+      ],
+      "retreat": [
+        1368,
+        720
+      ],
+      "trigger": [
+        1152,
+        396,
+        288,
+        228
+      ],
+      "status": "story_boss"
+    }
+  ],
+  "wall_fields": [
+    {
+      "id": "embervein_wall_north_0",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "north",
+      "near": [
+        666,
+        1500
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_north_1",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "north",
+      "near": [
+        718,
+        1468
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_north_2",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "north",
+      "near": [
+        770,
+        1464
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_north_3",
+      "room": "embervein_chamber",
+      "light_group": "embervein_orange",
+      "color": "orange",
+      "side": "north",
+      "near": [
+        878,
+        1496
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_west_4",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "west",
+      "near": [
+        568,
+        1700
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_west_5",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "west",
+      "near": [
+        610,
+        1752
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_south_6",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "south",
+      "near": [
+        674,
+        1790
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_south_7",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "south",
+      "near": [
+        870,
+        1778
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "embervein_wall_south_8",
+      "room": "embervein_chamber",
+      "light_group": "embervein_orange",
+      "color": "orange",
+      "side": "south",
+      "near": [
+        920,
+        1730
+      ],
+      "pattern": "vertical"
+    },
+    {
+      "id": "embervein_wall_east_9",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "east",
+      "near": [
+        948,
+        1572
+      ],
+      "pattern": "vertical"
+    },
+    {
+      "id": "embervein_wall_east_10",
+      "room": "embervein_chamber",
+      "light_group": "embervein_red",
+      "color": "red",
+      "side": "east",
+      "near": [
+        950,
+        1648
+      ],
+      "pattern": "vertical"
+    },
+    {
+      "id": "stillfrost_wall_north_12",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_north",
+      "color": "white",
+      "side": "north",
+      "near": [
+        1188,
+        392
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_north_13",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_north",
+      "color": "white",
+      "side": "north",
+      "near": [
+        1432,
+        416
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_north_14",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_east",
+      "color": "blue",
+      "side": "north",
+      "near": [
+        1392,
+        380
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_west_15",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_west",
+      "color": "white",
+      "side": "west",
+      "near": [
+        1108,
+        548
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_west_16",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_west",
+      "color": "white",
+      "side": "west",
+      "near": [
+        1128,
+        608
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_south_17",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_west",
+      "color": "white",
+      "side": "south",
+      "near": [
+        1180,
+        654
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_south_18",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_west",
+      "color": "white",
+      "side": "south",
+      "near": [
+        1290,
+        704
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_south_19",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_east",
+      "color": "blue",
+      "side": "south",
+      "near": [
+        1230,
+        684
+      ],
+      "pattern": "dense"
+    },
+    {
+      "id": "stillfrost_wall_east_20",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_east",
+      "color": "blue",
+      "side": "east",
+      "near": [
+        1480,
+        460
+      ],
+      "pattern": "vertical"
+    },
+    {
+      "id": "stillfrost_wall_east_21",
+      "room": "stillfrost_chamber",
+      "light_group": "stillfrost_north",
+      "color": "white",
+      "side": "east",
+      "near": [
+        1494,
+        640
+      ],
+      "pattern": "vertical"
     }
   ]
 }

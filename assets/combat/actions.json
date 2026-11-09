@@ -178,13 +178,15 @@
     },
     "flame_edge": {
       "name": "Flame Edge",
-      "kind": "failed_edge",
-      "potency": 0,
-      "mp_cost": 0,
+      "kind": "spellblade",
+      "potency": 1,
+      "magical_potency": 0.5,
+      "mp_cost": 4,
       "duration": 0.9,
       "impact_at": 0.5,
-      "animation": "cast",
-      "target": "self"
+      "animation": "attack",
+      "target": "opponent",
+      "element": "fire"
     },
     "lithrusk_claw_clamp": {
       "name": "Claw Clamp",
@@ -302,6 +304,124 @@
       "impact_at": 0.5,
       "animation": "cast",
       "target": "self"
+    },
+    "ice_edge": {
+      "name": "Ice Edge",
+      "kind": "spellblade",
+      "potency": 1,
+      "magical_potency": 0.5,
+      "mp_cost": 4,
+      "duration": 0.9,
+      "impact_at": 0.5,
+      "animation": "attack",
+      "target": "opponent",
+      "element": "ice"
+    },
+    "embravyr_cinder_lash": {
+      "name": "Cinder Lash",
+      "kind": "physical",
+      "target": "opponent",
+      "potency": 0.65,
+      "mp_cost": 0,
+      "element": "non_elemental",
+      "duration": 1.0,
+      "impact_at": 0.5,
+      "animation": "cinder_lash"
+    },
+    "embravyr_emberwash": {
+      "name": "Emberwash",
+      "kind": "magical",
+      "target": "all_opponents",
+      "potency": 0.45,
+      "mp_cost": 4,
+      "element": "fire",
+      "duration": 1.4,
+      "impact_at": 0.75,
+      "animation": "emberwash"
+    },
+    "embravyr_gather_embers": {
+      "name": "Gather Embers",
+      "kind": "prepare",
+      "target": "self",
+      "potency": 0,
+      "mp_cost": 0,
+      "duration": 1.4,
+      "impact_at": 0.7,
+      "animation": "gather_embers"
+    },
+    "embravyr_furnace_lunge": {
+      "name": "Furnace Lunge",
+      "kind": "physical",
+      "target": "opponent",
+      "potency": 1.35,
+      "mp_cost": 0,
+      "element": "fire",
+      "duration": 1.4,
+      "impact_at": 0.7,
+      "animation": "furnace_lunge"
+    },
+    "embravyr_cooling": {
+      "name": "Cooling",
+      "kind": "recover",
+      "target": "self",
+      "potency": 0,
+      "mp_cost": 0,
+      "duration": 1.2,
+      "impact_at": 0,
+      "animation": "cooling"
+    },
+    "nivareth_rime_needle": {
+      "name": "Rime Needle",
+      "kind": "magical",
+      "target": "opponent",
+      "potency": 0.4,
+      "mp_cost": 0,
+      "element": "ice",
+      "duration": 0.9,
+      "impact_at": 0.45,
+      "animation": "rime_needle"
+    },
+    "nivareth_glassfall": {
+      "name": "Glassfall",
+      "kind": "magical",
+      "target": "all_opponents",
+      "potency": 0.35,
+      "mp_cost": 4,
+      "element": "ice",
+      "duration": 1.4,
+      "impact_at": 0.8,
+      "animation": "glassfall"
+    },
+    "nivareth_gather_frost": {
+      "name": "Gather Frost",
+      "kind": "prepare",
+      "target": "self",
+      "potency": 0,
+      "mp_cost": 0,
+      "duration": 1.4,
+      "impact_at": 0.7,
+      "animation": "gather_frost"
+    },
+    "nivareth_frostspire_thrust": {
+      "name": "Frostspire Thrust",
+      "kind": "physical",
+      "target": "opponent",
+      "potency": 2,
+      "mp_cost": 0,
+      "element": "ice",
+      "duration": 1.4,
+      "impact_at": 0.7,
+      "animation": "frostspire_thrust"
+    },
+    "nivareth_settling": {
+      "name": "Settling",
+      "kind": "recover",
+      "target": "self",
+      "potency": 0,
+      "mp_cost": 0,
+      "duration": 1.2,
+      "impact_at": 0,
+      "animation": "settling"
     }
   }
 }

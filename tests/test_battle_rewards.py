@@ -26,6 +26,24 @@ class BattleRewardTests(unittest.TestCase):
         self.assertTrue(clone.award_battle_rewards('battle:second', {'aether_emerald': 1}))
         self.assertEqual(self.inventory.quantity('aether_emerald'), 3)
 
+    def test_focus_receipts_grant_only_their_matching_protected_core_once(self):
+        for receipt, focus, other in (('boss:embravyr', 'red_focus_gem', 'white_focus_gem'),
+                                      ('boss:nivareth', 'white_focus_gem', 'red_focus_gem')):
+            before = self.state()
+            for bundle in ({}, {other: 1}, {focus: 2}, {focus: True},
+                           {focus: 1, 'aether_ruby': 1}, {'halden_medicine': 1}):
+                with self.subTest(receipt=receipt, bundle=bundle):
+                    self.assertFalse(self.owner.award_battle_rewards(receipt, bundle))
+                    self.assertEqual(self.state(), before)
+            self.assertFalse(self.owner.award_battle_rewards('battle:ordinary', {focus: 1}))
+            self.assertTrue(self.owner.award_battle_rewards(receipt, {focus: 1}))
+            self.assertEqual(self.inventory.quantity(focus), 1)
+            self.assertFalse(self.inventory.remove(focus))
+            clone = BattleRewards(self.inventory)
+            self.assertTrue(clone.restore(self.owner.to_dict()))
+            self.assertFalse(clone.award_battle_rewards(receipt, {focus: 1}))
+            self.assertEqual(self.inventory.quantity(focus), 1)
+
     def test_empty_capped_spoils_still_record_receipt_once(self):
         self.assertTrue(self.inventory.add('aether_emerald', MAX_QUANTITY))
         before = self.inventory.to_dict()

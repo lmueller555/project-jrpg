@@ -178,8 +178,10 @@ requires the Blue gem, an equipped blade and its learned unlock. Selecting or
 owning a gem never teaches its skill. MQ02 exposes only the experimental Aqua
 attempt: it fails, then inadvertently releases Aether Edge automatically. The
 later water utility spell does not grant Aqua Edge. The first Sanctuary cave
-encounter teaches Aqua Edge separately; Red/White acquisitions remain future
-design work. Aether materials in inventory do not install gems.
+encounter teaches Aqua Edge separately. Optional level-four Embravyr and
+Nivareth encounters then award the Red/Flame Edge and White/Ice Edge unlocks
+in either order. These still use one gear with one selected focus. Aether
+materials in inventory do not install gems.
 
 Seating triggers a mechanical catch, engraved energy chase and an elemental
 burst. Blade effects attach to authored per-frame guard and sword coordinates:
@@ -237,7 +239,7 @@ at 0.28 seconds and keeps its 0.40-second damage impact and 0.80-second duration
 Overclock retains its 0.50-second application and 0.90-second duration. See
 [Mira's combat presentation](MIRA_BOTS.md#combat-presentation).
 
-## Caelan's initial actions
+## Caelan's combat actions
 
 | Action | Effect | MP | Duration / impact |
 | --- | --- | ---: | --- |
@@ -246,7 +248,14 @@ Overclock retains its 0.50-second application and 0.90-second duration. See
 | Flee | Leave this test encounter safely | 0 | 0.70 / 0.35 seconds |
 | Aether Dart | Magical damage, potency 2; requires its learned unlock | 4 | 1.60 / 1.10 seconds |
 | Aether Edge | Immediate physical sword strike plus non-elemental Mag component; requires learned skill and equipped weapon | 4 | 2.00 / 1.00 seconds |
-| Aqua Edge | Physical sword strike plus Water Mag component; requires learned skill, equipped weapon and Blue gem | 4; introductory battle 0 | 2.00 / 1.00 seconds |
+| Aqua Edge | Physical sword strike plus Water Mag component; requires learned skill, equipped weapon and Blue gem | Normally 4; introductory battle 0 | 2.00 / 1.00 seconds |
+| Flame Edge | Physical sword strike plus Fire Mag component; requires Red gem and its learned unlock | Normally 4 | 2.00 / 1.00 seconds |
+| Ice Edge | Physical sword strike plus Ice Mag component; requires White gem and its learned unlock | Normally 4 | 2.00 / 1.00 seconds |
+
+All already-learned elemental Edges cost 0 MP throughout the two optional
+elemental teaching encounters and their retries. Aether Edge and Overclock
+retain their ordinary costs; normal encounters and Vespermaw use 4-MP
+elemental Edges.
 
 Caelan is a Spellblade. Aether Edge is his only learned starter skill and appears under Skills after its MQ02 discovery. Before he has a weapon, Skills is greyed out with **Requires a weapon**. The direct strike combines physical potency 1 and Mag potency 0.5, sharing one variance roll and one per-hit cap. It does not enchant future attacks or grant charges. See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 
@@ -311,7 +320,8 @@ Rivet and enemy actions wait for the cast. Aqua Edge costs **0 MP throughout
 this introductory battle and its retries**, so no MP preparation or healing
 detour is required. At impact Aqua Edge is learned and checkpointed with
 current party resources; normal ATB then
-resumes. After clearing the encounter, ordinary casts cost 4 MP in every area.
+resumes. After clearing the encounter, ordinary casts cost 4 MP in every area,
+with the two optional elemental teaching encounters as a later 0-MP exception.
 
 Aqua Edge uses the same physical potency 1 and magical potency 0.5 as Aether
 Edge, but only its magical component is **Water-aligned**. That component uses
@@ -328,6 +338,26 @@ active and carrying the blade; no MP minimum is imposed. The first lesson takes
 priority over the miniboss, and normal weighted encounters begin after it clears.
 Older journeys with prior cave encounters migrate without replaying the lesson.
 See [save and migration details](CAELAN_AQUA_PROGRESSION.md).
+
+## Optional elemental chambers
+
+Embravyr and Nivareth are fixed level-four formations of Fire and Ice Aether,
+encountered independently in the continuous Embervein and Stillfrost branches.
+Each has its own Approach / Party / Leave offer, live introduction and animated
+combat field. Both permit Flee, preserving spent resources. Defeat restores
+entry resources and offers Retry / Leave; unfinished entries preserve their
+seed and party on Continue. Neither encounter is mandatory for Vespermaw.
+
+A marked Furnace Lunge or Frostspire Thrust guarantees the target an action
+opportunity before impact. The following recovery exposes **+50% incoming
+damage**; Vespermaw's post-Pounce exhaustion now uses that same multiplier.
+The bonus begins at the heavy hit and ends before the next basic action, with
+ordinary Guard and per-hit caps preserved. This does not implement Stagger.
+
+Each victory guarantees its focus item, owned gem and learned Edge even if
+Caelan is KO, while EXP still goes only to living active members. Installation
+prose follows Spoils and waits for Caelan to recover. Its acknowledgment never
+repeats rewards. See [complete combat, rewards and save rules](ELEMENTAL_CAVE_ENCOUNTERS.md).
 
 ## Cave Bat and the Bestiary
 
@@ -350,8 +380,8 @@ Species store all nine damage percentages and matching-element absorption;
 unaligned creatures do not absorb Non-Elemental attacks. These internal data
 are hidden in ordinary combat. A creature's appearance, name, habitat and
 behavior should offer consistent clues. Edran's planned Study ability will be
-one of the limited ways to reveal the data directly. Aqua Edge applies the
-stored Water response, while Study and automatic HUD affinity labels remain
+one of the limited ways to reveal the data directly. Elemental Edges apply the
+stored matching magical response, while Study and automatic HUD affinity labels remain
 unimplemented.
 
 ## Test Bat

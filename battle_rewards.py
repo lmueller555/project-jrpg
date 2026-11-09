@@ -7,6 +7,7 @@ from inventory import Inventory
 
 MAX_RECEIPTS = 4096
 _IDENTIFIER = re.compile(r'^[a-zA-Z0-9_.:/-]{1,128}$')
+_FOCUS_REWARDS = {'boss:embravyr': 'red_focus_gem', 'boss:nivareth': 'white_focus_gem'}
 
 
 def _identifier(value):
@@ -32,12 +33,16 @@ class BattleRewards:
         return isinstance(receipt_id, str) and receipt_id in self._receipts
 
     def award_battle_rewards(self, receipt_id, drops):
+        if not _identifier(receipt_id):return False
+        focus = _FOCUS_REWARDS.get(receipt_id)
+        if focus is not None and drops != {focus: 1}:return False
         if (not _identifier(receipt_id) or self.has_receipt(receipt_id)
                 or len(self._receipts) >= MAX_RECEIPTS
                 or not isinstance(drops, dict)
                 or any(not isinstance(identifier, str)
                        or identifier not in self.inventory.definitions
                        or self.inventory.definitions[identifier]['category'] == 'key_items'
+                          and identifier != focus
                        or not Inventory._amount(amount)
                        for identifier, amount in drops.items())):
             return False

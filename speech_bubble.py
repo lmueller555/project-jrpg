@@ -92,7 +92,9 @@ class SpeechBubble:
         return (round(point[0]-camera[0]), round(point[1]-camera[1]))
 
     def _cutscene_phase(self):
-        """Only the staged mill encounter uses deliberate off-speaker framing."""
+        """Authored staging can reserve the upper view for its visible action."""
+        if (getattr(self.social, 'script_identifier', None) or '').startswith('elemental_focus_acquisition_'):
+            return 'focus_acquisition'
         quest = getattr(self.social.game, 'mill_quest', None)
         if (getattr(quest, 'encounter_cutscene_active', False)
                 and getattr(self.social, 'script_identifier', None) == 'mill_encounter_intro'):
