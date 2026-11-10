@@ -141,7 +141,7 @@ Boss entry checkpoints the formation, current party resources, safe approach
 and opening combat seed. Continue restarts an unfinished fight from that entry
 checkpoint. Flee is disabled during the boss battle; defeat offers **Retry /
 Return to the Quiet Shelf** with pre-fight HP/MP restored and no rewards.
-Victory awards 1,110 EXP to each living active member plus one Aether Amethyst
+Victory awards 520 EXP to each living active member plus one Aether Amethyst
 and one Aether Sapphire through the standard spoils transaction. The saved
 defeated flag prevents the encounter and rewards from repeating after Continue
 or revisiting. Boss completion leaves MQ03 and its pending arrival untouched;

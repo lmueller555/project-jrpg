@@ -40,8 +40,8 @@ class BestiaryGenerationTests(unittest.TestCase):
 
     def test_cave_bat_matches_every_approved_stat_and_reward(self):
         expected = {
-            2: ((73, 5, 13, 14, 11, 13, 13, 13, 14, 15, 13), 59),
-            3: ((85, 5, 15, 15, 13, 14, 14, 14, 15, 16, 15), 73)}
+            2: ((73, 5, 13, 14, 11, 13, 13, 13, 14, 15, 13), 32),
+            3: ((85, 5, 15, 15, 13, 14, 14, 14, 15, 16, 15), 37)}
         for level, (values, xp) in expected.items():
             with self.subTest(level=level):
                 enemy = build_enemy('cave_bat', level)
@@ -168,10 +168,10 @@ class BestiaryGenerationTests(unittest.TestCase):
 
     def test_new_species_level_profiles_and_normal_xp_are_stable(self):
         expected = {
-            ('lithrusk', 2): ((120, 0, 11, 10, 13, 23, 8, 10, 14, 12, 13), 59),
-            ('lithrusk', 3): ((140, 0, 13, 11, 14, 25, 10, 11, 15, 14, 15), 73),
-            ('veylume', 3): ((67, 10, 7, 18, 16, 10, 17, 12, 15, 14, 15), 73),
-            ('veylume', 4): ((82, 11, 8, 20, 17, 11, 19, 13, 17, 15, 16), 84),
+            ('lithrusk', 2): ((120, 0, 11, 10, 13, 23, 8, 10, 14, 12, 13), 32),
+            ('lithrusk', 3): ((140, 0, 13, 11, 14, 25, 10, 11, 15, 14, 15), 37),
+            ('veylume', 3): ((67, 10, 7, 18, 16, 10, 17, 12, 15, 14, 15), 37),
+            ('veylume', 4): ((82, 11, 8, 20, 17, 11, 19, 13, 17, 15, 16), 42),
         }
         for (identifier, level), (stats, xp) in expected.items():
             with self.subTest(enemy=identifier, level=level):
@@ -234,7 +234,7 @@ class BestiaryGenerationTests(unittest.TestCase):
         boss['tier'] = 'boss'
         boss['tier_multipliers'] = {'hp': 2}
         generated = build_enemy('cave_bat', 2, data=catalog)
-        self.assertEqual(generated['xp_reward'], 590)
+        self.assertEqual(generated['xp_reward'], 320)
         self.assertEqual(generated['combat']['attributes']['hp'], 146)
         self.assertEqual(generated['combat']['attributes']['str'], 13)
 

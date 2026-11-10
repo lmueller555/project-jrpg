@@ -27,7 +27,7 @@ class VespermawBestiaryTests(unittest.TestCase):
         record = build_enemy('vespermaw', 7)
         self.assertEqual(record['combat']['attributes'], dict(zip(ATTRIBUTE_IDS,
                          (1877, 29, 24, 18, 17, 26, 18, 11, 23, 19, 21))))
-        self.assertEqual(record['xp_reward'], 1110)
+        self.assertEqual(record['xp_reward'], 520)
         self.assertEqual(record['combat']['rewards']['drops'],
                          {'aether_amethyst': 1, 'aether_sapphire': 1})
         metadata = record['metadata']
@@ -155,7 +155,7 @@ class VespermawBestiaryTests(unittest.TestCase):
                                          [SEQUENCE[1]]['target'], 'all_opponents')
                     elif format_name == 'csv':
                         row, = csv.DictReader(io.StringIO(result.stdout))
-                        self.assertEqual((row['hp'], row['xp_reward']), ('1877', '1110'))
+                        self.assertEqual((row['hp'], row['xp_reward']), ('1877', '520'))
                         self.assertEqual((row['presentation_pending'], row['combat_pending']), ('False', 'False'))
                     else:
                         self.assertIn('Combat: ready', result.stdout)

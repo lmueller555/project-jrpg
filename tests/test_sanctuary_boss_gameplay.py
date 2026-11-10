@@ -181,6 +181,22 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.game.update(0, (0, 0), False)
         self.assertFalse(owner.active)
 
+    def test_previous_curve_awarded_boss_spoils_preserve_original_exp(self):
+        from bestiary import build_enemy
+        owner = self.start()
+        before = {key: self.game.character_progression[key].total_xp for key in self.game.party.active_ids}
+        def previous_enemy(*args, **kwargs):
+            result = build_enemy(*args, **kwargs)
+            result['xp_reward'] = 1110
+            return result
+        with patch('post_battle.build_enemy', side_effect=previous_enemy):
+            self.victory(owner)
+            wait_for_spoils(self.game)
+        self.game = self.load()
+        for key, total in before.items():
+            self.assertEqual(self.game.character_progression[key].total_xp, total+1110)
+        self.assertTrue(valid_pending_snapshot(self.game.combat.snapshot(), json.loads(self.path.read_text())))
+
     def test_approach_offers_party_or_retreat_without_healing_or_story_progress(self):
         before, resources = self.context(), self.resources()
         self.offer()
@@ -236,7 +252,7 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.game = self.load()
         self.assertEqual(self.game.combat.post_phase, 'spoils')
         self.assertEqual(self.game.character_progression['caelan'].total_xp, xp['caelan'])
-        self.assertEqual(self.game.character_progression['mira'].total_xp, xp['mira']+1110)
+        self.assertEqual(self.game.character_progression['mira'].total_xp, xp['mira']+520)
         for key, quantity in quantities.items():
             self.assertEqual(self.game.inventory.quantity(key), quantity+1)
         self.assertEqual((self.game.attributes.current_hp, self.game.attributes.current_mp), (0, 2))

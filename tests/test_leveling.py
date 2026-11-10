@@ -118,26 +118,26 @@ class CharacterGrowthTests(unittest.TestCase):
 
 
 class ExperienceCurveTests(unittest.TestCase):
-    def test_approved_doubled_curves_and_boss_rewards(self):
-        anchors = {1: (200, 42), 10: (1262, 133), 25: (2626, 210),
-                   50: (4574, 297), 75: (6326, 364), 99: (7898, 417)}
+    def test_approved_required_curve_and_new_monster_rewards(self):
+        anchors = {1: (200, 24), 10: (1262, 60), 25: (2626, 87),
+                   50: (4574, 115), 75: (6326, 135), 99: (7898, 151)}
         for level, (required, reward) in anchors.items():
             with self.subTest(level=level):
                 self.assertEqual(xp_to_next_level(level), required)
                 self.assertEqual(monster_xp(level), reward)
                 self.assertEqual(monster_xp(level, boss=True), reward*10)
         self.assertEqual(xp_to_next_level(100), 0)
-        self.assertEqual(monster_xp(100), 420)
-        self.assertEqual(monster_xp(100, boss=True), 4200)
+        self.assertEqual(monster_xp(100), 151)
+        self.assertEqual(monster_xp(100, boss=True), 1510)
 
     def test_required_curve_stays_even_and_rewards_are_reduced(self):
         self.assertEqual(xp_to_next_level(5), 724)
-        self.assertEqual(monster_xp(2), 59)
+        self.assertEqual(monster_xp(2), 32)
         for level in range(1, 101):
             with self.subTest(level=level):
                 self.assertEqual(xp_to_next_level(level) % 2, 0)
-                old_reward = 2*int(30*level**0.5+0.5)
-                self.assertLessEqual(abs(monster_xp(level)-0.7*old_reward), 0.500001)
+                raw_reward = 24*level**0.4
+                self.assertLessEqual(abs(monster_xp(level)-raw_reward), 0.500001)
 
     def test_every_cumulative_boundary_and_one_xp_below_it(self):
         self.assertEqual(total_xp_for_level(1), 0)

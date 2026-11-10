@@ -52,7 +52,7 @@ multipliers and boss HP multiplier, with a single final rounding step.
 | Accuracy | 17 | 17 |
 | Evasion | 15 | 15 |
 | Luck | 16 | 16 |
-| EXP per living active party member | 840 | 840 |
+| EXP per living active party member | 420 | 420 |
 
 Embravyr uses the **Armored** stat profile, with Strength ×1.10, Magick ×1.25,
 Speed ×0.90 and boss HP ×1.80. Nivareth uses **Warded**, with Strength ×0.85,
@@ -131,7 +131,7 @@ its **5 MP** cost. In ordinary encounters and Vespermaw, elemental Edges retain
 | Embravyr | `red_focus_gem` | Fire / Red | Flame Edge (`flame_edge`) |
 | Nivareth | `white_focus_gem` | Ice / White | Ice Edge (`ice_edge`) |
 
-Each victory grants the full 840 EXP to every living active character, plus its
+Each victory grants the full 420 EXP to every living active character, plus its
 focus item once. Reserves, bots and KO characters receive no EXP. The focus,
 installed gem and technique are guaranteed even if Caelan ends the fight KO.
 Neither a raw Aether Ruby nor Aether Opal installs these focuses.
@@ -184,9 +184,10 @@ The focused model, map and actual-Game integration suites cover both orders,
 partial completion, zero MP, Guard response windows, ×1.50 exhaustion, save
 boundaries, rollback, KO acquisition and independent older journeys.
 
-The [current encounter review](reviews/elemental_cave_encounters/README.md)
-contains actual room, combat and acquisition captures, a contact sheet and
-source hashes. Reproduce it with:
+The [encounter review](reviews/elemental_cave_encounters/README.md)
+contains historical room, combat and acquisition captures, a contact sheet and
+source hashes. Its captured EXP values predate the current reward curve;
+the values in this guide describe live rewards. Reproduce the review with:
 
 ```sh
 SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy \

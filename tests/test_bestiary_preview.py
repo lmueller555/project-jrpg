@@ -105,7 +105,7 @@ class BestiaryPreviewTests(unittest.TestCase):
         records = json.loads(result.stdout)
         self.assertEqual([record['level'] for record in records], [2, 3])
         self.assertEqual([record['combat']['attributes']['hp'] for record in records], [73, 85])
-        self.assertEqual([record['xp_reward'] for record in records], [59, 73])
+        self.assertEqual([record['xp_reward'] for record in records], [32, 37])
         self.assertEqual(records[0]['behavior']['sequence'],
                          ['cave_bat_bite', 'cave_bat_wing_gust'])
         self.assertTrue(records[0]['metadata']['drops_pending'])
@@ -123,7 +123,7 @@ class BestiaryPreviewTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         rows = list(csv.DictReader(io.StringIO(result.stdout)))
         self.assertEqual([row['level'] for row in rows], ['3', '2'])
-        self.assertEqual([row['xp_reward'] for row in rows], ['73', '59'])
+        self.assertEqual([row['xp_reward'] for row in rows], ['37', '32'])
         self.assertEqual([row['mp'] for row in rows], ['5', '5'])
         self.assertEqual([row['element'] for row in rows], ['non_elemental']*2)
         for row in rows:

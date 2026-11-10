@@ -1,5 +1,8 @@
 # Elemental cave encounter review
 
+Historical capture: EXP values predate the `24 × level^0.4` reward curve.
+See [current leveling rules](../../LEVELING.md) for live values.
+
 These captures show the production continuous cave, optional Embravyr/Nivareth
 encounters, full combat cycles, guaranteed focus rewards and acknowledged gem
 installation. The creatures are pure elemental Aether formations with their

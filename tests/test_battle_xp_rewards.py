@@ -79,6 +79,25 @@ class BattleExperienceTests(unittest.TestCase):
         self.assertEqual(self.total(game=restored), 60)
         self.assertEqual(restored.combat.snapshot()['progression']['amount'], 60)
 
+    def previous_curve_spoils(self, *, awarded):
+        with patch('post_battle.monster_xp', return_value=42):
+            owner = self.victory()
+            if awarded:self.show_spoils()
+        self.assertEqual(owner.snapshot()['progression']['amount'], 42)
+        restored = self.load()
+        wait_for_spoils(restored)
+        self.assertEqual(self.total(game=restored), 42)
+        self.assertTrue(valid_pending_snapshot(restored.combat.snapshot(), self.persisted()))
+        restored.save_progress()
+        again = self.load()
+        self.assertEqual(self.total(game=again), 42)
+
+    def test_previous_curve_pending_spoils_keep_original_exp_on_continue(self):
+        self.previous_curve_spoils(awarded=False)
+
+    def test_previous_curve_awarded_spoils_do_not_regrant_exp_on_continue(self):
+        self.previous_curve_spoils(awarded=True)
+
     def test_survivors_each_receive_full_exp_and_ko_before_first_aid_gets_none(self):
         game = self.game
         for identifier in ('mira', 'lucan', 'rhea'):
@@ -94,23 +113,23 @@ class BattleExperienceTests(unittest.TestCase):
         self.assertGreater(owner.snapshot()['resources']['hp'], 0)
         self.show_spoils()
         self.assertEqual([self.total(key) for key in ('caelan', 'mira', 'lucan', 'rhea')],
-                         [0, 42, 42, 0])
+                         [0, 24, 24, 0])
         self.assertEqual(game.party.characters['mira'].current_hp, 83)
         self.assertEqual(game.party.characters['lucan'].current_hp, 67)
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), self.persisted()))
 
     def test_level_up_adds_growth_without_healing_and_saves_both_before_and_after(self):
         game = self.game
-        game.character_progression.records['caelan'] = CharacterLevel('caelan', 175)
+        game.character_progression.records['caelan'] = CharacterLevel('caelan', 190)
         owner = self.start()
         owner.model.player.hp, owner.model.player.mp = 47, 7
         self.victory(owner)
         plan = owner.snapshot()['progression']['characters']['caelan']
         self.assertEqual((plan['old_level'], plan['new_level']), (1, 2))
-        self.assertEqual(self.total(), 175)
-        self.assertEqual(self.persisted()['character_levels']['characters']['caelan']['total_xp'], 175)
+        self.assertEqual(self.total(), 190)
+        self.assertEqual(self.persisted()['character_levels']['characters']['caelan']['total_xp'], 190)
         self.show_spoils()
-        self.assertEqual(self.total(), 217)
+        self.assertEqual(self.total(), 214)
         self.assertEqual(game.character_progression.level('caelan'), 2)
         self.assertEqual((game.attributes.current_hp, game.attributes.current_mp), (47, 7))
         self.assertEqual(game.attributes.to_dict()['attributes'], plan['stats_after'])
@@ -118,19 +137,19 @@ class BattleExperienceTests(unittest.TestCase):
 
     def test_failed_award_write_retries_checkpoint_without_second_exp_or_stat_grant(self):
         game = self.game
-        game.character_progression.records['caelan'] = CharacterLevel('caelan', 175)
+        game.character_progression.records['caelan'] = CharacterLevel('caelan', 190)
         owner = self.victory()
         with patch.object(game.save_store, 'write', return_value=False):
             spoils = self.show_spoils()
         self.assertEqual(owner.snapshot()['stage'], 'awarded')
         self.assertFalse(spoils.ready)
-        self.assertEqual(self.total(), 217)
+        self.assertEqual(self.total(), 214)
         after = game.attributes.to_dict()
         self.assertEqual(self.persisted()['post_battle']['stage'], 'pending')
         with patch.object(game.character_progression, 'apply', side_effect=AssertionError('duplicate EXP')):
             spoils.retry_requested = True;game.update(0, (0, 0), False)
         self.assertTrue(spoils.ready)
-        self.assertEqual(self.total(), 217)
+        self.assertEqual(self.total(), 214)
         self.assertEqual(game.attributes.to_dict(), after)
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), self.persisted()))
 
@@ -144,45 +163,45 @@ class BattleExperienceTests(unittest.TestCase):
         self.assertFalse(game.battle_rewards.has_receipt(owner.receipt_id))
         spoils.retry_requested = True;game.update(0, (0, 0), False)
         self.assertTrue(spoils.ready)
-        self.assertEqual(self.total(), 42)
+        self.assertEqual(self.total(), 24)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
 
     def test_late_transaction_failure_rolls_back_items_receipt_exp_and_growth(self):
         game = self.game
-        game.character_progression.records['caelan'] = CharacterLevel('caelan', 175)
+        game.character_progression.records['caelan'] = CharacterLevel('caelan', 190)
         owner = self.victory()
         before = game.attributes.to_dict()
         with patch.object(owner, '_apply_resources', return_value=False):
             spoils = self.show_spoils()
         self.assertFalse(spoils.ready)
         self.assertEqual(owner.snapshot()['stage'], 'pending')
-        self.assertEqual(self.total(), 175)
+        self.assertEqual(self.total(), 190)
         self.assertEqual(game.attributes.to_dict(), before)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 0)
         self.assertFalse(game.battle_rewards.has_receipt(owner.receipt_id))
         spoils.retry_requested = True;game.update(0, (0, 0), False)
         self.assertTrue(spoils.ready)
-        self.assertEqual(self.total(), 217)
+        self.assertEqual(self.total(), 214)
 
     def test_continue_pending_or_awarded_victory_does_not_repeat_exp_or_growth(self):
         game = self.game
-        game.character_progression.records['caelan'] = CharacterLevel('caelan', 175)
+        game.character_progression.records['caelan'] = CharacterLevel('caelan', 190)
         owner = self.victory()
         original = owner.snapshot()['progression']
         restored = self.load()
-        self.assertEqual(restored.character_progression['caelan'].total_xp, 217)
+        self.assertEqual(restored.character_progression['caelan'].total_xp, 214)
         self.assertEqual(restored.combat.snapshot()['progression'], original)
         after = restored.attributes.to_dict()
         restored.save_progress()
         again = self.load()
-        self.assertEqual(again.character_progression['caelan'].total_xp, 217)
+        self.assertEqual(again.character_progression['caelan'].total_xp, 214)
         self.assertEqual(again.attributes.to_dict(), after)
         self.assertEqual(len(again.battle_rewards.to_dict()['receipts']), 1)
         self.assertTrue(valid_pending_snapshot(again.combat.snapshot(), self.persisted()))
 
     def test_forged_amount_eligibility_growth_before_or_saved_xp_are_rejected(self):
         game = self.game
-        game.character_progression.records['caelan'] = CharacterLevel('caelan', 175)
+        game.character_progression.records['caelan'] = CharacterLevel('caelan', 190)
         owner = self.victory();data = self.persisted()
         for mutate in (
             lambda r:r['progression'].update(amount=6000),
@@ -231,7 +250,7 @@ class BattleExperienceTests(unittest.TestCase):
         game.character_progression.records['caelan'] = CharacterLevel('caelan', MAX_TOTAL_XP-10)
         owner = self.victory();self.show_spoils()
         plan = owner.snapshot()['progression']['characters']['caelan']
-        self.assertEqual((plan['accepted_xp'], plan['discarded_xp']), (10, 32))
+        self.assertEqual((plan['accepted_xp'], plan['discarded_xp']), (10, 14))
         self.assertEqual(self.total(), MAX_TOTAL_XP)
         self.assertEqual(game.character_progression.level('caelan'), 100)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
@@ -243,7 +262,7 @@ class BattleExperienceTests(unittest.TestCase):
         owner = self.victory();self.show_spoils()
         self.assertEqual(owner.snapshot()['rewards'], {'drops': {}})
         self.assertEqual(owner.snapshot()['offered_drops'], {'aether_emerald': 1})
-        self.assertEqual(self.total(), 42)
+        self.assertEqual(self.total(), 24)
         self.assertEqual(game.inventory.quantity('aether_emerald'), MAX_QUANTITY)
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), self.persisted()))
 

@@ -92,7 +92,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
             with self.subTest(identifier=identifier):
                 record = build_enemy(identifier, 4)
                 self.assertEqual(record['combat']['attributes'], dict(zip(ATTRIBUTE_IDS, STATS[identifier])))
-                self.assertEqual(record['xp_reward'], 840)
+                self.assertEqual(record['xp_reward'], 420)
                 self.assertEqual(record['combat']['rewards']['drops'], {GEMS[identifier][2]: 1})
                 metadata = record['metadata']
                 self.assertEqual((metadata['tier'], metadata['family']), ('boss', 'aether_elemental'))
@@ -244,7 +244,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
         capped._start_action('player', 'aqua_edge')
         self.assertEqual(self.finish(capped).damage, 9999)
 
-    def play(self, identifier, level, resources, gems, known, seed):
+    def play(self, identifier, level, resources, gems, known, seed, *, require_both_alive=True):
         members = party_profiles(level, resources)
         before = deepcopy(members)
         model = self.model(identifier, level=level, party_members=members,
@@ -267,7 +267,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
             model.update(.05);model.drain_events()
             if model.ended:break
         self.assertEqual(model.phase, 'victory')
-        self.assertTrue(all(member.hp > 0 for member in model.party))
+        if require_both_alive:self.assertTrue(all(member.hp > 0 for member in model.party))
         self.assertEqual(members, before)
         return model
 
@@ -293,12 +293,16 @@ class ElementalMinibossModelTests(unittest.TestCase):
                                           for key in ('caelan', 'mira')} if zero_mp else None)
                             gems, known = ['water'], ['aether_edge', 'aqua_edge']
                             for identifier in order:
-                                model = self.play(identifier, level, resources, gems, known, seed)
+                                # Reduced EXP grants fewer stats between fights.
+                                # Victory may cost a KO on the final no-rest fight;
+                                # a first-fight KO must not seed the second fight.
+                                model = self.play(identifier, level, resources, gems, known, seed,
+                                    require_both_alive=identifier == order[0])
                                 resources = {'caelan': (model.player.hp, model.player.mp),
                                              'mira': (model.combatant('mira').hp, model.combatant('mira').mp)}
                                 if zero_mp:self.assertEqual((resources['caelan'][1], resources['mira'][1]), (0, 0))
                                 # Rewards grow maxima/ratings; the captured resources stay unchanged.
-                                xp += 840;level = level_for_total_xp(xp)
+                                xp += 420;level = level_for_total_xp(xp)
                                 gems.append(GEMS[identifier][0]);known.append(GEMS[identifier][1])
 
     def test_new_bosses_allow_flee_but_vespermaw_still_does_not(self):

@@ -1,5 +1,8 @@
 # Vespermaw live encounter review
 
+Historical capture: EXP values predate the `24 × level^0.4` reward curve.
+See [current leveling rules](../../LEVELING.md) for live values.
+
 The optional elemental-chamber update changes Vespermaw's exhaustion from +25%
 to **+50% incoming damage**. This retained capture is historical evidence of
 the earlier encounter build. The current [elemental encounter review](../elemental_cave_encounters/README.md)

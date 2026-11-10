@@ -21,14 +21,18 @@ PROGRESSION_FIELDS = {'progression', 'offered_drops'}
 
 
 def _previous_reward_xp(kind, encounter=None):
-    """Recognize pending receipts from before the 30% reward reduction.
+    """Recognize exact totals from the two previously shipped reward curves.
 
     These fixed/cave enemies were normal reward references at levels 1–100.
     New victories always use battle_reward_definition and the current curve.
     """
+    boss = kind in ('cave_boss', 'elemental_boss')
     levels = ([member['level'] for member in encounter['members']] if kind == 'cave'
-              else [3 if kind == 'mill' else 1])
-    return sum(2*int(30*level**0.5+0.5) for level in levels)
+              else [encounter['level']] if boss else [3 if kind == 'mill' else 1])
+    original = [2*int(30*level**0.5+0.5) for level in levels]
+    reduced = sum((amount*70+50)//100 for amount in original)*(10 if boss else 1)
+    # Authored bosses shipped after the 30% cut. They never used the older curve.
+    return (reduced,) if boss else (sum(original), reduced)
 
 
 def battle_reward_definition(kind, encounter=None):
@@ -160,8 +164,7 @@ def valid_pending_snapshot(record, data=None):
     if modern:
         from character_progression import CharacterProgression
         plan = record['progression']
-        approved_xp = ((canonical['xp'],) if boss else
-                       (canonical['xp'], _previous_reward_xp(record['kind'], record.get('encounter'))))
+        approved_xp = (canonical['xp'], *_previous_reward_xp(record['kind'], record.get('encounter')))
         if (not CharacterProgression.valid_plan(plan)
                 or plan['amount'] not in approved_xp
                 or plan['active_ids'] != record['party_active']

@@ -14,8 +14,8 @@ Bat and Ridgeback Tusker records for
 their authored test and MQ02 encounters. Fixed records
 retain their exact stats, abilities and item drops. Their computed-species
 tuning and elemental profiles have not been assigned. The live victory owner
-uses a level-one reward reference for the test Bat (**42 EXP**) and level three
-for the Ridgeback Tusker (**73 EXP**) without rescaling either fixed encounter.
+uses a level-one reward reference for the test Bat (**24 EXP**) and level three
+for the Ridgeback Tusker (**37 EXP**) without rescaling either fixed encounter.
 
 This is an authoring dictionary and combat adapter. The three normal cave
 species are used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).
@@ -59,7 +59,7 @@ attribute tables.
 | Accuracy | 14 | 15 |
 | Evasion | 15 | 16 |
 | Luck | 13 | 15 |
-| XP reward | 59 | 73 |
+| XP reward | 32 | 37 |
 
 | Ability | Action ID | Damage | Potency | MP |
 | --- | --- | --- | ---: | ---: |
@@ -123,7 +123,7 @@ the dictionary retains growth parameters rather than duplicated stat tables.
 | Accuracy | 14 | 15 | 15 | 17 |
 | Evasion | 12 | 14 | 14 | 15 |
 | Luck | 13 | 15 | 15 | 16 |
-| XP reward | 59 | 73 | 73 | 84 |
+| XP reward | 32 | 37 | 37 | 42 |
 
 | Ability | Action ID | Category / element | Potency | MP |
 | --- | --- | --- | ---: | ---: |
@@ -213,11 +213,11 @@ are composed before the single final rounding/cap step.
 | Accuracy | 23 |
 | Evasion | 19 |
 | Luck | 21 |
-| XP reward | 1,110 |
+| XP reward | 520 |
 
 The reward is ten times the reduced level-seven normal-monster reward of
-111 EXP. On victory, each surviving active combatant receives
-the full 1,110 EXP. Guaranteed drops are one `aether_amethyst` and one
+52 EXP. On victory, each surviving active combatant receives
+the full 520 EXP. Guaranteed drops are one `aether_amethyst` and one
 `aether_sapphire`, both existing material items. Previewing this record does
 not grant EXP, items or story progress.
 
@@ -317,7 +317,7 @@ Vespermaw, and either can be defeated first.
 | Speed / Accuracy / Evasion / Luck | 11 / 17 / 15 / 16 | 12 / 17 / 15 / 16 |
 | Species factors | Strength ×1.10, Magick ×1.25, Speed ×0.90 | Strength ×0.85, Magick ×1.20, Speed ×0.90 |
 | Boss HP factor | ×1.80 | ×2.20 |
-| EXP per living active member | 840 | 840 |
+| EXP per living active member | 420 | 420 |
 | Guaranteed focus | `red_focus_gem` / Fire | `white_focus_gem` / Ice |
 | Learned technique | Flame Edge | Ice Edge |
 | Defensive clues | Red core, emberglass and flames | White core, floating ice lattice and frost |
@@ -466,7 +466,7 @@ assert 'cave_bat' in catalogue['enemies']
 bat = build_enemy('cave_bat', 2)
 assert bat['combat']['name'] == 'Cave Bat'
 assert bat['combat']['attributes']['hp'] == 73
-assert bat['xp_reward'] == 59
+assert bat['xp_reward'] == 32
 assert bat['metadata']['drops_pending']
 assert bat['metadata']['elemental_profile']['element'] == 'non_elemental'
 assert bat['metadata']['elemental_profile']['damage_percentages']['fire'] == 200
@@ -512,7 +512,7 @@ from character_attributes import CharacterAttributes
 model = BattleModel.from_bestiary(CharacterAttributes(), 'cave_bat', 2)
 assert model.enemy.name == 'Cave Bat'
 assert model.enemy_level == 2
-assert model.enemy_xp_reward == 59
+assert model.enemy_xp_reward == 32
 assert model.enemy_sprite_id == 'bat'
 ```
 

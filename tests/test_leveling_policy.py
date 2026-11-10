@@ -13,7 +13,7 @@ class CombatXpAllocationTests(unittest.TestCase):
         before = dict(hp)
         xp = sum(monster_xp(1) for _ in range(3))
         allocations = combat_xp_allocations(xp, ('caelan', 'mira', 'lucan'), hp)
-        self.assertEqual(allocations, {'caelan': 126, 'mira': 0, 'lucan': 126})
+        self.assertEqual(allocations, {'caelan': 72, 'mira': 0, 'lucan': 72})
         self.assertEqual(hp, before)
         self.assertNotIn('rhea', allocations)
         self.assertNotIn('edran', allocations)
