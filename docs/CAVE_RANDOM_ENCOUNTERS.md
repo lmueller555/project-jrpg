@@ -171,7 +171,7 @@ gains on light parchment. Quiet EXP and level-up effects honor Effects volume
 without replacing the resumed soundtrack. Party and Characters menus expose
 levels and progress; see [Leveling](LEVELING.md) for save compatibility and rules.
 The three normal cave species currently have pending item drops, so their resolved
-drop bundles are empty even when the battle grants EXP. Stagger, techniques beyond the three learned elemental Edges, and
+drop bundles include independent Potion, Revival Salts, Ether and Rest Kit rolls for every enemy. See [Consumables](CONSUMABLES.md). Stagger, techniques beyond the three learned elemental Edges, and
 post-miniboss story resolution remain
 separate work. The one-time level-seven Vespermaw encounter is live in the Echo
 Chamber after the introductory lesson clears. Optional level-four Embravyr and

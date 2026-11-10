@@ -18,6 +18,7 @@ FIELDS = {'version', 'kind', 'receipt', 'stage', 'rewards', 'before', 'resources
 PARTY_FIELDS = {'party_before', 'party_resources', 'party_active'}
 CAVE_FIELDS = FIELDS | PARTY_FIELDS | {'encounter'}
 PROGRESSION_FIELDS = {'progression', 'offered_drops'}
+ITEM_FIELDS = {'item_costs', 'item_before'}
 
 
 def _previous_reward_xp(kind, encounter=None):
@@ -83,11 +84,12 @@ def valid_pending_snapshot(record, data=None):
     elemental = isinstance(record, dict) and record.get('kind') == 'elemental_boss'
     boss = isinstance(record, dict) and record.get('kind') in ('cave_boss', 'elemental_boss')
     cave_battle = cave or boss
-    modern = isinstance(record, dict) and type(record.get('version')) is int and record['version'] == 2
-    extra = PROGRESSION_FIELDS if modern else set()
+    modern = isinstance(record, dict) and type(record.get('version')) is int and record['version'] in (2, 3)
+    item_version = modern and record['version'] == 3
+    extra = (PROGRESSION_FIELDS | (ITEM_FIELDS if item_version else set())) if modern else set()
     shapes = (FIELDS | extra, FIELDS | PARTY_FIELDS | extra, CAVE_FIELDS | extra)
     if (not isinstance(record, dict) or set(record) not in shapes
-            or type(record['version']) is not int or record['version'] not in (1, 2)
+            or type(record['version']) is not int or record['version'] not in (1, 2, 3)
             or record['kind'] not in ('bat', 'mill', 'cave', 'cave_boss', 'elemental_boss')
             or (set(record) == CAVE_FIELDS | extra) != cave_battle
             or (boss and not modern)
@@ -103,6 +105,12 @@ def valid_pending_snapshot(record, data=None):
             or any(type(n) not in (int, float) or abs(n) >= 1e7 or not math.isfinite(n)
                    for n in record['position'])):
         return False
+    costs = record.get('item_costs', {})
+    if item_version:
+        from consumables import valid_costs
+        if not valid_costs(costs, record['item_before']):return False
+    from consumables import resource_allowances
+    hp_gain, mp_gain = resource_allowances(costs)
     has_party = 'party_active' in record
     if modern and not has_party:return False
     if has_party:
@@ -120,8 +128,8 @@ def valid_pending_snapshot(record, data=None):
                 or record['party_resources']['caelan'] != record['resources']):return False
         for identifier in active:
             before, after = record['party_before'][identifier], record['party_resources'][identifier]
-            if after['mp'] > before['mp']:return False
-            if (cave_battle or identifier != 'caelan' or not record['incapacitated']) and after['hp'] > before['hp']:
+            if after['mp'] > before['mp']+mp_gain:return False
+            if (cave_battle or identifier != 'caelan' or not record['incapacitated']) and after['hp'] > before['hp']+hp_gain:
                 return False
         if cave_battle and not any(value['hp'] for value in record['party_resources'].values()):return False
     mill = record['kind'] == 'mill'
@@ -155,6 +163,10 @@ def valid_pending_snapshot(record, data=None):
         return False
     rewards = record['rewards']
     canonical = battle_reward_definition(record['kind'], record.get('encounter'))
+    if item_version:
+        from enemy_loot import encounter_drops
+        canonical['drops'] = encounter_drops(record['kind'], record.get('encounter'),
+                                             record['receipt'], canonical['drops'])
     if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
             or not isinstance(rewards['drops'], dict)
             or any(key not in canonical['drops'] or type(amount) is not int
@@ -163,7 +175,10 @@ def valid_pending_snapshot(record, data=None):
         return False
     # A story focus is guaranteed; it cannot disappear through ordinary loot
     # capacity handling or be substituted with a similarly colored material.
-    if elemental and rewards['drops'] != canonical['drops']:return False
+    if elemental:
+        from elemental_bosses import definition
+        core = definition(record['encounter']['enemy_id'])['item']
+        if rewards['drops'].get(core) != 1:return False
     if modern:
         from character_progression import CharacterProgression
         plan = record['progression']
@@ -182,8 +197,8 @@ def valid_pending_snapshot(record, data=None):
             if identifier == 'caelan' and record['incapacitated'] and not cave_battle:
                 if hp != 0:return False
             elif hp != expected:return False
-    if record['resources']['mp'] > record['before']['mp']:return False
-    if (cave_battle or not record['incapacitated']) and record['resources']['hp'] > record['before']['hp']:return False
+    if record['resources']['mp'] > record['before']['mp']+mp_gain:return False
+    if (cave_battle or not record['incapacitated']) and record['resources']['hp'] > record['before']['hp']+hp_gain:return False
     if data is None:return True
     try:
         if (data['player']['scene'] != record['scene']
@@ -204,6 +219,14 @@ def valid_pending_snapshot(record, data=None):
             if (not CaveRandomEncounters.valid_snapshot(state)
                     or state.get('pending') != record['encounter']):return False
         awarded = record['stage'] == 'awarded'
+        if item_version:
+            inventory = Inventory()
+            if 'inventory' not in data or not inventory.restore(data['inventory']):return False
+            carried = data.get('inventory', {}).get('items', {})
+            for key, cost in costs.items():
+                expected = record['item_before'][key]
+                if awarded:expected += record['rewards']['drops'].get(key, 0)-cost
+                if carried.get(key, 0) != expected:return False
         if boss:
             if elemental:
                 from elemental_bosses import ElementalBosses, definition

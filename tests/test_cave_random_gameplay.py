@@ -279,6 +279,8 @@ class CaveRandomGameplayTests(unittest.TestCase):
         self.assertTrue(owner._begin_victory())
         self.assertEqual(self.game.music.desired_track, 'battle')
         pending = owner.snapshot()
+        for item, quantity in pending['rewards']['drops'].items():
+            inventory['items'][item] = inventory['items'].get(item, 0)+quantity
         self.assertEqual(pending['kind'], 'cave')
         self.assertEqual(pending['encounter'], ticket)
         self.assertEqual(pending['resources'], {'hp': 0, 'mp': 2})

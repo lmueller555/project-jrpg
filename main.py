@@ -505,7 +505,7 @@ class Game:
             if shared.home.data.get('bone_routine'):
                 self.bone_routines.append(DaisyBone(self,shared.home,shared,shared.home.data['bone_routine']))
         self.quests=QuestLog()
-        self.inventory=Inventory()
+        self.inventory=Inventory() if self._is_gallery_preview else Inventory.new_journey()
         self.attributes=CharacterAttributes('caelan')
         self.party=PartyState(self.attributes)
         self.character_progression=CharacterProgression(self.party)
@@ -882,7 +882,7 @@ class Game:
         if self._overworld_world is not None:self._overworld_world.participation.release_pose(self)
         if data is None:
             self.quests.restore(QuestLog().to_dict())
-            self.inventory=Inventory()
+            self.inventory=Inventory() if self._is_gallery_preview else Inventory.new_journey()
             self.social.flags.clear()
             self.world=self.town
             position=self.town.data['spawn']

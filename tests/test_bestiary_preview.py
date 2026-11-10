@@ -108,7 +108,7 @@ class BestiaryPreviewTests(unittest.TestCase):
         self.assertEqual([record['xp_reward'] for record in records], [32, 37])
         self.assertEqual(records[0]['behavior']['sequence'],
                          ['cave_bat_bite', 'cave_bat_wing_gust'])
-        self.assertTrue(records[0]['metadata']['drops_pending'])
+        self.assertFalse(records[0]['metadata']['drops_pending'])
         self.assertEqual(records[0]['combat']['rewards'], {'drops': {}})
         profile = records[0]['metadata']['elemental_profile']
         self.assertEqual(profile['element'], 'non_elemental')

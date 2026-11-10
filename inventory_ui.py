@@ -25,6 +25,12 @@ class InventoryUI:
         self.tracks = {'list': pygame.Rect(211, 96, 6, 181),
                        'details': pygame.Rect(443, 96, 6, 181)}
         self.thumbs = {}
+        self.use_rect = pygame.Rect(234, 280, 202, 24)
+        self._use_item_id = None
+        self._target_index = 0
+        self._notice = ''
+        self.target_rects = {}
+        self.target_back_rect = pygame.Rect(292, 248, 104, 28)
 
     @property
     def category(self):return CATEGORIES[self.category_index]
@@ -37,12 +43,16 @@ class InventoryUI:
 
     def close(self):
         self.is_open = False
+        self._use_item_id = None
+        self._notice = ''
         self._held = False
         self.dragging = None
         self.game.ui.sound('back')
 
     def reset(self):
         self.is_open = False
+        self._use_item_id = None
+        self._notice = ''
         self.category_index = 3
         self.selected = None
         self.list_scroll = self.detail_scroll = 0
@@ -55,12 +65,14 @@ class InventoryUI:
     def _select(self, identifier):
         if identifier != self.selected:
             self.selected = identifier
+            self._notice = ''
             self.detail_scroll = 0
             self.game.ui.sound('move')
 
     def _category(self, index):
         if index == self.category_index:return
         self.category_index = index % 4
+        self._notice = ''
         self.selected = None
         self.list_scroll = self.detail_scroll = 0
         self.game.ui.sound('move')
@@ -86,7 +98,39 @@ class InventoryUI:
             add('Slot: '+item['equipment_slot'].replace('_', ' ').title())
         for stat, value in item.get('stats', {}).items():
             add(stat.replace('_', ' ').title()+': '+str(value))
+        if self._notice:add('');add(self._notice, 'small', FOREST)
         return rows
+
+    def _start_use(self):
+        from consumables import field_reason
+        reason = field_reason(self.game, self.selected)
+        if reason:self._notice = reason;self.game.ui.sound('back');return
+        self._use_item_id = self.selected
+        self._target_index = 0;self._notice = ''
+        self.game.ui.sound('confirm')
+
+    def _use_on(self, character_id):
+        from consumables import use_field_item
+        success, self._notice = use_field_item(self.game, self._use_item_id, character_id)
+        self.game.ui.sound('confirm' if success else 'back')
+        if success and not self.game.inventory.quantity(self._use_item_id):self._use_item_id = None
+
+    def _target_event(self, event):
+        targets = list(self.game.party.available_ids)
+        if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
+            if event.key in (pygame.K_ESCAPE, pygame.K_BACKSPACE):self._use_item_id = None;return True
+            if event.key in (pygame.K_UP, pygame.K_DOWN, pygame.K_w, pygame.K_s):
+                self._target_index = (self._target_index+(-1 if event.key in (pygame.K_UP, pygame.K_w) else 1)) % len(targets)
+            elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE) and targets:
+                self._use_on(targets[self._target_index % len(targets)])
+        elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._held = False
+        elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and not self._held:
+            self._held = True;point = self.game.to_canvas(event.pos)
+            if point is None:return True
+            if self.target_back_rect.collidepoint(point):self._use_item_id = None;return True
+            for key, rect in self.target_rects.items():
+                if rect.collidepoint(point):self._use_on(key);break
+        return True
 
     def _layout(self, painter):
         entries = self.game.inventory.entries(self.category)
@@ -134,6 +178,7 @@ class InventoryUI:
 
     def handle_event(self, event):
         if not self.is_open:return False
+        if self._use_item_id is not None:return self._target_event(event)
         painter = self._painter()
         entries, content, _ = self._layout(painter)
         if event.type == pygame.KEYDOWN:
@@ -151,6 +196,7 @@ class InventoryUI:
             elif event.key == pygame.K_PAGEDOWN:self.detail_scroll = min(self.detail_max_scroll, self.detail_scroll+100)
             elif event.key == pygame.K_HOME:self.detail_scroll = 0
             elif event.key == pygame.K_END:self.detail_scroll = self.detail_max_scroll
+            elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):self._start_use()
             return True
         if event.type == pygame.MOUSEWHEEL:
             point = self.game.to_canvas(pygame.mouse.get_pos())
@@ -177,6 +223,7 @@ class InventoryUI:
             point = self.game.to_canvas(event.pos)
             if point is None:return True
             if self.close_rect.collidepoint(point):self.close()
+            elif self.use_rect.collidepoint(point):self._start_use()
             else:
                 for index, rect in enumerate(self.tabs):
                     if rect.collidepoint(point):self._category(index);return True
@@ -231,6 +278,30 @@ class InventoryUI:
         for name, thumb in self.thumbs.items():
             painter.rect(PARCHMENT_DARK, self.tracks[name])
             painter.rect(BRASS, thumb)
-        hint = 'I / Esc: close • Tab: category • ↑ / ↓: select'
-        for index, line in enumerate(painter.wrap(hint, 428, role='small')):
+        hint = 'Enter: use • Esc: close'
+        for index, line in enumerate(painter.wrap(hint, 196, role='small')):
             painter.text(line, (26, 285+index*painter.font('small').get_linesize()), role='small', color=INK)
+        from consumables import field_reason
+        reason = field_reason(self.game, self.selected)
+        painter.button(self.use_rect, 'Use', disabled=bool(reason))
+        if self._use_item_id is not None:
+            painter.veil(155);painter.panel((72, 40, 336, 248))
+            item = self.game.inventory.definitions[self._use_item_id]
+            title = 'Use '+item['name']+' ×'+str(self.game.inventory.quantity(self._use_item_id))
+            for index, line in enumerate(painter.wrap(title, 312, role='body')):
+                painter.text(line, (84, 48+index*painter.font().get_linesize()), color=GOLD, bold=True)
+            self.target_rects = {}
+            targets = list(self.game.party.available_ids)
+            for index, key in enumerate(targets):
+                actor = self.game.party.characters[key]
+                rect = pygame.Rect(84, 86+index*31, 312, 29)
+                self.target_rects[key] = rect
+                is_mp = item['effect']['kind'] == 'restore_mp'
+                value, maximum = ((actor.current_mp, actor.value('mp')) if is_mp
+                                  else (actor.current_hp, actor.value('hp')))
+                label = actor.name+' · '+str(value)+'/'+str(maximum)+(' MP' if is_mp else ' HP')
+                painter.button(rect, label, disabled=bool(field_reason(self.game, self._use_item_id, key)))
+                if index == self._target_index:painter.rect(GOLD, rect, 1)
+            painter.button(self.target_back_rect, 'Back')
+            for index, line in enumerate(painter.wrap(self._notice, 200, role='small')[:2]):
+                painter.text(line, (84, 248+index*painter.font('small').get_linesize()), role='small', color=IVORY)

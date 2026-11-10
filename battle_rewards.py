@@ -35,7 +35,15 @@ class BattleRewards:
     def award_battle_rewards(self, receipt_id, drops):
         if not _identifier(receipt_id):return False
         focus = _FOCUS_REWARDS.get(receipt_id)
-        if focus is not None and drops != {focus: 1}:return False
+        if focus is not None:
+            from bestiary import load_bestiary
+            enemy = receipt_id.split(':', 1)[1]
+            limits = {row['item']: row['quantity'] for row in
+                      load_bestiary()['enemies'][enemy]['rewards'].get('drop_table', [])}
+            if (not isinstance(drops, dict) or type(drops.get(focus)) is not int
+                    or drops.get(focus) != 1 or any(key != focus and
+                       (key not in limits or type(amount) is not int or not 1 <= amount <= limits[key])
+                       for key, amount in drops.items())):return False
         if (not _identifier(receipt_id) or self.has_receipt(receipt_id)
                 or len(self._receipts) >= MAX_RECEIPTS
                 or not isinstance(drops, dict)

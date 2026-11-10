@@ -7,17 +7,18 @@ Wheel and Page Up/Down read longer contents; both columns have draggable scrollb
 when needed. I, Escape or the close button returns to gameplay, or to Pause when
 opened there. Inventory freezes the world and preserves any conversation below it.
 
-## Ownership and future item types
+## Ownership and consumables
 
 `assets/items/catalog.json` defines stable IDs, names, descriptions and categories.
 `inventory.py` keeps positive integer quantities separately from definitions.
 There is no weight or slot limit that could block a quest delivery. Identical
 items are counted together, including spare weapons and armor. Distinct equipment
 variants can have separate catalog IDs. Optional `equipment_slot` and `stats`
-metadata is supported in the details pane; equipping, combat and consumable
-effects belong to their future gameplay systems. The live catalog defines the
-opening quest's three supply bundles and seven Aether Crystals. Normal New Game
-starts with an empty satchel; crystal definitions do not grant sample loot.
+metadata is supported in the details pane. [Consumables](CONSUMABLES.md) now
+support field and combat use. New journeys and quest playtests start with five
+Potions, five Ethers, three Revival Salts, three Smoke Bombs and three Rest Kits.
+Rest Kit use remains unavailable pending its resting rules. Crystal definitions
+do not grant sample loot. Continue preserves actual saved quantities.
 
 `add`, `add_many`, `quantity`, `entries`, `remove` and `consume_bundle` are the
 ownership API. Bundles validate fully before mutation. `consume_bundle` rejects
@@ -84,5 +85,5 @@ are rejected before replacing live progress. Settings remain separate.
 Older saves without inventory migrate quietly: accepted quests receive their
 outstanding supplies; completed household objectives are treated as delivered.
 Already recorded grants and receipts never replay or refill a delivered item.
-New Game clears inventory and receipts. Completing a household through its quest
+New Game resets inventory and receipts, then supplies the fresh starting bundle. Completing a household through its quest
 controller also retires any remaining supplies registered for that household.

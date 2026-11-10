@@ -76,7 +76,9 @@ class BestiaryGenerationTests(unittest.TestCase):
                     'fallback': 'cave_bat_bite', 'targeting': 'cycle_living_party'})
 
     def test_pending_loot_and_planned_mechanics_do_not_become_combat_rules(self):
-        enemy = build_enemy('cave_bat', 2)
+        catalog = deepcopy(self.catalog)
+        catalog['enemies']['cave_bat']['rewards'] = {'drops': None}
+        enemy = build_enemy('cave_bat', 2, data=catalog)
         self.assertEqual(enemy['combat']['rewards'], {'drops': {}})
         self.assertTrue(enemy['metadata']['drops_pending'])
         self.assertIsNone(enemy['metadata']['rewards']['drops'])
@@ -140,7 +142,7 @@ class BestiaryGenerationTests(unittest.TestCase):
                     self.assertEqual(enemy['presentation'],
                                      {'sprite_id': identifier, 'action_aliases': {}})
                     self.assertFalse(metadata['presentation_pending'])
-                    self.assertTrue(metadata['drops_pending'])
+                    self.assertFalse(metadata['drops_pending'])
                     self.assertEqual(enemy['combat']['rewards'], {'drops': {}})
                     profile = metadata['elemental_profile']
                     self.assertEqual(profile['element'], design['element'])

@@ -372,7 +372,7 @@ The Cave Bat is distinct from the fixed test Bat below and appears in the
 continuous Sanctuary cave. Its complete elemental profile specifies
 Non-Elemental identity, Fire damage received at 200% and all other types at
 100%, with no absorption. Aqua Edge now reads its Water response during actual
-combat. Stagger and item drops remain future work.
+combat. Stagger remains future work; [supply drop tables](CONSUMABLES.md) now feed victory loot.
 
 The Bestiary's [elemental design](BESTIARY.md#elemental-identity-and-relationships)
 uses Non-Elemental, Fire, Electric, Water, Ice, Nature, Wind, Holy and Ground.
