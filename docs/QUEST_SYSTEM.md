@@ -46,10 +46,26 @@ as Gallery; Enter or a click starts the highlighted quest.
 Earlier quest prerequisites are prepared, not replayed. The selected quest stays
 available with no completed objectives, and later quests remain locked. Earlier
 Venn work uses borrowed tools without forcing the optional failed spell. Starts
-after MQ02 include the current mill repair, cups on the table, gearblade, actual
-required encounter drops and EXP, and an unavailable temporary Mira after her
-outing. No future companions, maxed-out stats or optional encounter rewards are
-granted.
+after MQ02 include the current mill repair, cups on the table, Blue-focus
+gearblade, Aether Edge, and the Boar's actual drops and EXP. Mira is already
+recruited, available and active alongside Caelan in these playtest checkpoints,
+including when the tester heads straight to the cave. MQ03's ordinary rejoin
+conversation still establishes the required Sanctuary party event.
+
+Starts after MQ03 additionally grant **5,500 EXP each to Caelan and Mira**, on
+top of their Boar EXP. This fixed cave allowance includes the tutorial and boss
+EXP; boss receipts and item rewards do not add further EXP. The later checkpoint
+assumes both optional focus guardians were defeated: Aqua/Flame/Ice Edge are
+learned, Blue/Red/White focuses are installed, both focus receipts/items and the
+Vespermaw receipt/material drops exist, all three bosses are cleared, and prior
+acquisition dialogue is acknowledged. Optional treasure containers remain
+unopened. Starting MQ03 itself leaves all these cave discoveries unfinished.
+
+Levels and stats follow accumulated EXP; there is no level-one override. Both
+available characters start rested at their resulting maximum HP/MP. Later
+combat awards EXP and handles level-ups normally. No future companions receive
+recruitment or EXP from these checkpoints. Restart builds a fresh checkpoint,
+so the Boar reward and cave allowance never stack across restarts.
 
 Runs use the normal gameplay controllers and input, not Gallery's restricted
 scene playback. The toolbar identifies **PLAYTEST** and **not saved**:

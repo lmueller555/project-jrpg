@@ -16,7 +16,11 @@ from regent_arrival import RegentArrival
 from regent_quest import RegentQuest
 from lantern_quest import LanternQuest
 from quests import QuestLog
-from quest_playtest import QUEST_ORDER, prepare_quest, quest_entries
+from quest_playtest import QUEST_ORDER, SKIPPED_MQ03_XP, prepare_quest, quest_entries
+from post_battle import battle_reward_definition
+from cave_lesson import CaveLesson
+from sanctuary_boss import SanctuaryBoss
+from elemental_bosses import ElementalBosses, REGISTRY
 
 
 class QuestPlaytestStarts(unittest.TestCase):
@@ -65,6 +69,8 @@ class QuestPlaytestStarts(unittest.TestCase):
                     self.assertEqual(game.quests.status(other),
                                      'completed' if other_index < index else
                                      'available' if other_index == index else 'locked')
+                    if other_index < index:
+                        self.assertIn(other+'_COMPLETE', game.social.flags)
                 snapshot = {'quests': game.quests.to_dict(),
                             'mill_quest': game.mill_quest.to_dict(),
                             'regent_arrival': game.regent_arrival.to_dict(),
@@ -98,10 +104,42 @@ class QuestPlaytestStarts(unittest.TestCase):
                 self.assertTrue(game.mill_quest.cups_placed)
                 self.assertTrue(game.battle_rewards.has_receipt('mq02:ridgeback_tusker'))
                 self.assertEqual(game.inventory.quantity('caelan_gearblade'), 1)
-                self.assertGreater(game.character_progression['caelan'].total_xp, 0)
-                self.assertGreater(game.character_progression['mira'].total_xp, 0)
-                self.assertFalse(game.party.members['mira']['available'])
-                self.assertEqual(game.party.active_ids, ('caelan',))
+                expected = battle_reward_definition('mill')['xp']
+                if identifier == 'CH01_MQ04':expected += SKIPPED_MQ03_XP
+                for key in ('caelan', 'mira'):
+                    self.assertEqual(game.character_progression[key].total_xp, expected)
+                    self.assertEqual(game.party.characters[key].current_hp, game.party.characters[key].value('hp'))
+                self.assertTrue(game.party.members['mira']['available'])
+                self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
+                self.assertIn('aether_edge', game.character_abilities.known_abilities())
+                self.assertEqual(game.character_abilities.owned_gems(),
+                                 ('water',) if identifier == 'CH01_MQ03' else ('water', 'fire', 'ice'))
+                for key in ('lucan', 'rhea', 'edran'):
+                    self.assertNotIn(key, game.party.members)
+                    self.assertEqual(game.character_progression[key].total_xp, 0)
+
+    def test_completed_cave_state_and_unlocks_exist_only_after_mq03(self):
+        for identifier in ('CH01_MQ03', 'CH01_MQ04'):
+            game = self.game();prepare_quest(game, identifier)
+            completed = identifier == 'CH01_MQ04'
+            self.assertEqual(game.cave_lesson.battle_cleared, completed)
+            self.assertEqual(game.sanctuary_boss.defeated, completed)
+            self.assertEqual(game.battle_rewards.has_receipt('boss:vespermaw'), completed)
+            for entry in REGISTRY.values():
+                self.assertEqual(game.inventory.quantity(entry['item']), int(completed))
+                self.assertEqual(game.battle_rewards.has_receipt(entry['receipt']), completed)
+                self.assertEqual(entry['skill'] in game.character_abilities.known_abilities(), completed)
+            self.assertFalse(game.elemental_bosses.acquisition_active)
+            self.assertFalse(any(state['pending_acquisition'] for state in game.elemental_bosses.bosses.values()))
+            snapshot = {'cave_lesson': game.cave_lesson.to_dict(),
+                        'sanctuary_boss': game.sanctuary_boss.to_dict(),
+                        'elemental_bosses': game.elemental_bosses.to_dict(),
+                        'battle_rewards': game.battle_rewards.to_dict(),
+                        'character_abilities': game.character_abilities.to_dict(),
+                        'inventory': game.inventory.to_dict()}
+            for validator in (CaveLesson, SanctuaryBoss, ElementalBosses):
+                self.assertTrue(validator.valid_journey(snapshot), validator)
+            self.assertEqual(game.sanctuary_cave.to_dict()['opened'], [])
 
     def test_regent_start_includes_arrival_while_lantern_uses_an_explicit_test_bridge(self):
         game = self.game()

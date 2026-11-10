@@ -12,6 +12,8 @@ if TYPE_CHECKING:
 
 
 QUEST_ORDER = (OPENING_QUEST, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST)
+SKIPPED_MQ03_XP = 5500  # Total cave allowance, including its authored bosses.
+EARLY_PARTY = ('caelan', 'mira')
 
 
 @dataclass(frozen=True)
@@ -77,6 +79,7 @@ def _completed_opening(game: Game) -> None:
         'repaired': True, 'magicks_failed': False}), 'restore the repaired Venn gate')
     game.social.flags.add('CH01_MQ01_VENN_METHOD_TOOLS')
     _require(game.quests.turn_in(OPENING_QUEST, 'mother_serene'), 'report previous visits')
+    game.social.flags.update({'CH01_MQ01_REPORTED', 'CH01_MQ01_COMPLETE'})
     game.opening_conclusion.restore({'version': 1, 'stage': 'done'})
     _require(game.opening_conclusion.stage == 'done', 'restore the mill handoff')
     _require(game.opening.restore({'version': 1, 'stage': 'disabled'}), 'finish the morning')
@@ -107,13 +110,51 @@ def _completed_mill(game: Game) -> None:
         'warned': True, 'encounter_cleared': True, 'aftermath_done': True,
         'legacy_bypass': False, 'reported_to_halden': True, 'cups_placed': True,
     }), 'restore the completed modern mill and table setting')
+    game.social.flags.update({'CH01_MQ02_ENCOUNTER_CLEARED', 'CH01_MQ02_SMALL_MAGICK',
+                              'CH01_MQ02_MILL_RESTORED', 'CH01_MQ02_COMPLETE'})
     _require(game._sync_story_party(), "finish Mira's previous outing")
     if game.quests.status(REGENT_QUEST) == 'locked':
         _require(game.quests.unlock(REGENT_QUEST), 'unlock the regent quest')
 
 
+def _completed_cave(game: Game) -> None:
+    """Seed the canonical completed-cave route without stacking boss EXP.
+
+    The two optional focuses are included in this later-story test checkpoint;
+    optional treasure containers remain untouched. No live combat is settled.
+    """
+    from elemental_bosses import REGISTRY
+    owner = game.character_abilities
+    _require(owner.learn_ability('caelan', 'aqua_edge'), 'restore Aqua Edge discovery')
+    _require(game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
+                                     'battle_cleared': True, 'deferred': False}),
+             'restore the completed bat lesson')
+    state = game.elemental_bosses.to_dict()
+    for enemy_id, entry in REGISTRY.items():
+        _require(game.award_battle_rewards(entry['receipt'], {entry['item']: 1}),
+                 f'restore {enemy_id} focus receipt')
+        _require(owner.grant_gem(entry['gem']), f'install {entry["gem"]} focus')
+        _require(owner.learn_ability('caelan', entry['skill']), f'learn {entry["skill"]}')
+        state['bosses'][enemy_id].update(discovered=True, intro_seen=True,
+                                       defeated=True, pending_acquisition=False)
+        state['victory_order'].append(enemy_id)
+    _require(game.elemental_bosses.restore(state), 'acknowledge previous focus installations')
+    reward = battle_reward_definition('cave_boss')
+    _require(game.award_battle_rewards('boss:vespermaw', reward['drops']),
+             'restore Vespermaw reward receipt')
+    _require(game.sanctuary_boss.restore({'version': 1, 'defeated': True,
+                                       'intro_seen': True, 'pending': None}),
+             'restore defeated Vespermaw')
+    _require(owner.set_active_gem('water'), 'select the Blue focus')
+    plan = game.character_progression.preview(
+        SKIPPED_MQ03_XP, EARLY_PARTY,
+        {key: game.party.characters[key].current_hp for key in EARLY_PARTY})
+    _require(game.character_progression.apply(plan), 'grant skipped MQ03 cave EXP')
+
+
 def _completed_visit(game: Game) -> None:
     _completed_mill(game)
+    _completed_cave(game)
     _require(game.regent_arrival.restore({'version': 1, 'state': 'seen'}),
              'restore the previous arrival')
     _require(game.accept_quest(REGENT_QUEST), 'prepare the test-only completed visit')
@@ -121,6 +162,7 @@ def _completed_visit(game: Game) -> None:
     _require(game.quests.turn_in(REGENT_QUEST, 'mother_serene'), 'close the test-only visit')
     _require(game.regent_quest.restore({'version': 3, 'stage': 'done'}),
              'restore the supported completed-visit setup')
+    game.social.flags.add('CH01_MQ03_COMPLETE')
     if game.quests.status(LANTERN_QUEST) == 'locked':
         _require(game.quests.unlock(LANTERN_QUEST), 'unlock the lantern quest')
     _require(game.lantern_quest.restore(), 'prepare the lantern invitation')
@@ -162,6 +204,13 @@ def prepare_quest(game: Game, identifier: str) -> None:
              'keep the selected quest untouched')
     game._sync_inventory()
     _require(game._sync_story_party(), 'reconcile the starting party')
+    if QUEST_ORDER.index(identifier) >= QUEST_ORDER.index(REGENT_QUEST):
+        # The completed outing recruited Mira. In a playtest she is usable even
+        # when the tester heads straight to the cave before MQ03's rejoin prose.
+        # The normal story handoff can still require her for the Sanctuary trip.
+        _require(game.party.set_available('mira', True), 'make previously recruited Mira available')
+        _require(game.party.select(EARLY_PARTY), 'restore the earlier combat party')
+        for key in EARLY_PARTY:game.party.characters[key].recover()
     game.social.blocked.clear()
     game.social.clear_pointer()
     game.quests.drain_events()

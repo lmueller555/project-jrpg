@@ -159,6 +159,78 @@ class QuestPlaytestSessionTests(unittest.TestCase):
                 self.assertIsNone(game.save_error)
                 self.key(pygame.K_F9)
 
+    def test_mq03_straight_to_cave_keeps_mira_in_first_tutorial_battle(self):
+        from overworld_travel import RESERVE_ID
+        from sanctuary_cave import RESERVE_ENTRY_APPROACH
+        from test_aqua_progression_gameplay import AquaProgressionGameplayTests
+        session = self.launch('CH01_MQ03')
+        game = session.game
+        self.parent.draw()
+        self.click(self.game_point(session, game.regent_arrival.skip_rect.center))
+        self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
+        # Shorten travel only; do not grant quests, membership or abilities.
+        game.world = game._scene_by_id(RESERVE_ID)
+        game.player.position.update(RESERVE_ENTRY_APPROACH)
+        helper = AquaProgressionGameplayTests()
+        helper.game = game
+        helper.enter_cave()
+        self.assertTrue(game.cave_lesson.resonance_seen)
+        game.player.position.update(456, 1280)
+        game.camera.reset()
+        game.cave_random_encounters.reset(41)
+        state = game.cave_random_encounters.to_dict()
+        state.update(remaining=1., was_safe=False)
+        self.assertTrue(game.cave_random_encounters.restore(state))
+        self.parent.update(.05, (1, 0), False)
+        self.assertEqual(game.cave_random_encounters.pending['formation'], 'bat_pair')
+        self.assertEqual(game.cave_random_encounters.pending['lesson'], 'aqua_edge')
+        model = helper.load_battle()
+        self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
+        self.assertIn('aether_edge', model.learned_abilities)
+        self.assertEqual(model.action_mp_cost('aqua_edge', 'player'), 0)
+        scene = game.combat.scene
+        for _ in range(1000):
+            if scene.tutorial_active:self.key(pygame.K_SPACE)
+            elif model.waiting_for_player:
+                self.assertEqual(model.ready_actor, 'player')
+                self.parent.draw()
+                self.click(self.game_point(session, scene.command_rects['skills'].center))
+                self.parent.draw()
+                self.click(self.game_point(session, scene.command_rects['aqua_edge'].center))
+                self.key(pygame.K_RETURN)
+                break
+            self.tick()
+        for _ in range(1000):
+            if model.aqua_edge_discovered:break
+            if scene.tutorial_active:self.key(pygame.K_SPACE)
+            self.tick()
+        self.assertTrue(model.aqua_edge_discovered)
+
+    def test_later_checkpoint_restart_does_not_stack_exp_or_focus_rewards(self):
+        session = self.launch('CH01_MQ04');game = session.game
+        expected = game._progress_signature()
+        active = game.party.active_ids
+        plan = game.character_progression.preview(100, active,
+            {key: game.party.characters[key].current_hp for key in active})
+        self.assertTrue(game.character_progression.apply(plan))
+        self.key(pygame.K_F10)
+        replacement = self.parent.quest_playtest_session
+        self.assertIsNot(replacement, session)
+        self.assertEqual(replacement.game._progress_signature(), expected)
+
+    def test_mq03_story_rejoin_retains_previously_recruited_mira(self):
+        from tools.capture_mq03_emergency import Driver
+        session = self.launch('CH01_MQ03');game = session.game
+        self.parent.draw()
+        self.click(self.game_point(session, game.regent_arrival.skip_rect.center))
+        driver = Driver.__new__(Driver)
+        driver.game = game;driver.observer = None
+        driver.transitions = [];driver.stages = [];driver.dialogue = []
+        driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
+        self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
+        self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
+        self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
+
     def test_normal_movement_encounters_hud_and_menus_are_not_gallery_restricted(self):
         session = self.launch()
         game = session.game
