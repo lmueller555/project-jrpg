@@ -152,6 +152,20 @@ class ElementalCaveGameplayTests(unittest.TestCase):
             game.update(.05, (0, 0), False)
         self.fail('The authored elemental battle reveal did not finish')
 
+    def test_previous_curve_pending_guardian_spoils_preserve_original_exp(self):
+        from bestiary import build_enemy
+        self.start('embravyr');self.enter_battle()
+        before = {key: self.game.character_progression[key].total_xp for key in self.game.party.active_ids}
+        def previous_enemy(*args, **kwargs):
+            result = build_enemy(*args, **kwargs)
+            result['xp_reward'] = 840
+            return result
+        with patch('post_battle.build_enemy', side_effect=previous_enemy):self.victory()
+        self.assertEqual(self.game.combat.snapshot()['progression']['amount'], 840)
+        self.game = self.load();self.award()
+        for key, total in before.items():
+            self.assertEqual(self.game.character_progression[key].total_xp, total+840)
+
     def victory(self, *, caelan_ko=False):
         owner = self.game.combat
         if caelan_ko:owner.model.player.hp = 0
@@ -268,7 +282,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                           for identifier in self.game.party.active_ids}
                     ticket, pages = self.beat_and_collect(enemy_id)
                     reward = battle_reward_definition('elemental_boss', ticket)
-                    self.assertEqual(reward['xp'], 840)
+                    self.assertEqual(reward['xp'], 420)
                     self.assertEqual(self.game.inventory.quantity(entry['item']), 1)
                     self.assertIn(entry['gem'], self.game.character_abilities.owned_gems())
                     self.assertIn(entry['skill'], self.game.character_abilities.known_abilities())
@@ -279,7 +293,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                     self.assertEqual(self.game.elemental_bosses.victory_order, list(order[:index+1]))
                     self.assertTrue(any(entry['skill_name'] in page for page in pages))
                     for identifier, old in xp.items():
-                        self.assertEqual(self.game.character_progression[identifier].total_xp, old+840)
+                        self.assertEqual(self.game.character_progression[identifier].total_xp, old+420)
                     self.assertEqual(self.story(), story)
                     self.assertTrue(self.game.save_progress())
                     self.game = self.load()
@@ -410,7 +424,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         game = self.game
         self.assertEqual(game.attributes.current_hp, 0)
         self.assertEqual(game.character_progression['caelan'].total_xp, xp['caelan'])
-        self.assertEqual(game.character_progression['mira'].total_xp, xp['mira']+840)
+        self.assertEqual(game.character_progression['mira'].total_xp, xp['mira']+420)
         self.assertEqual(game.inventory.quantity('white_focus_gem'), 1)
         self.assertIn('ice', game.character_abilities.owned_gems())
         self.assertIn('ice_edge', game.character_abilities.known_abilities())

@@ -193,7 +193,7 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         wait_for_spoils(self.game)
         self.assertTrue(self.game.sanctuary_boss.defeated)
         self.assertTrue(self.game.battle_rewards.has_receipt(RECEIPT))
-        self.assertEqual(self.totals(), {key: value+(0 if key == 'mira' else 1110)
+        self.assertEqual(self.totals(), {key: value+(0 if key == 'mira' else 520)
                                         for key, value in totals.items()})
         self.assertEqual(self.resources()['caelan'], {'hp': 47, 'mp': 7})
         self.assertEqual(self.resources()['mira']['hp'], 0)
@@ -213,7 +213,7 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         self.assertEqual(owner.snapshot()['resources']['hp'], 0)
         wait_for_spoils(self.game)
         self.assertEqual(self.game.attributes.current_hp, 0)
-        self.assertEqual(self.totals(), {key: value+(1110 if key == 'mira' else 0)
+        self.assertEqual(self.totals(), {key: value+(520 if key == 'mira' else 0)
                                         for key, value in totals.items()})
         restored = self.load()
         self.assertEqual(restored.attributes.current_hp, 0)
@@ -302,4 +302,4 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         wrong_state = deepcopy(data);wrong_state['sanctuary_boss']['defeated'] = True
         self.assertFalse(valid_pending_snapshot(record, wrong_state))
         self.assertEqual(battle_reward_definition('cave_boss', self.ticket),
-                         {'drops': {'aether_amethyst': 1, 'aether_sapphire': 1}, 'xp': 1110})
+                         {'drops': {'aether_amethyst': 1, 'aether_sapphire': 1}, 'xp': 520})

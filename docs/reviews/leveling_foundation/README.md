@@ -1,5 +1,8 @@
 # Leveling foundation review
 
+Historical capture: EXP values predate the `24 × level^0.4` reward curve.
+See [current leveling rules](../../LEVELING.md) for live values.
+
 This checkpoint implements the approved character/monster curves as standalone
 code and validated design data. The shared effective rating caps are active:
 ordinary ratings 999, Speed 255, player HP 9,999 and MP 999. The approved growth curves and authored encounter ratings remain available

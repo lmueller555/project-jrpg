@@ -57,8 +57,8 @@ class BestiaryBattleTests(unittest.TestCase):
         return action, mp
 
     def test_level_profiles_and_metadata_are_independent_battle_copies(self):
-        expected = {2: ([73, 5, 13, 14, 11, 13, 13, 13, 14, 15, 13], 59),
-                    3: ([85, 5, 15, 15, 13, 14, 14, 14, 15, 16, 15], 73)}
+        expected = {2: ([73, 5, 13, 14, 11, 13, 13, 13, 14, 15, 13], 32),
+                    3: ([85, 5, 15, 15, 13, 14, 14, 14, 15, 16, 15], 37)}
         catalog = load_bestiary()
         original = deepcopy(catalog)
         actions = json.loads(ACTION_PATH.read_text())

@@ -23,8 +23,8 @@ CATALOG_PATH = Path(__file__).resolve().parent/'assets/characters/level_growth.j
 _CHARACTER_IDS = ('caelan', 'mira', 'lucan', 'rhea', 'edran')
 _EXPONENTS = {'resources': 1.2, 'ratings': 1.15, 'speed': 1}
 _XP_RULES = {'required_scale': 100, 'required_exponent': 0.8,
-             'monster_scale': 30, 'monster_exponent': 0.5,
-             'multiplier': 2, 'boss_multiplier': 10, 'reward_percent': 70}
+             'monster_scale': 24, 'monster_exponent': 0.4,
+             'multiplier': 2, 'boss_multiplier': 10}
 _NATURAL_CAPS = {key: 9999 if key == 'hp' else 999 if key == 'mp'
                  else 255 if key == 'speed' else 300 for key in ATTRIBUTE_IDS}
 
@@ -135,9 +135,7 @@ def monster_xp(level, boss=False):
     if type(boss) is not bool:
         raise TypeError('boss must be a boolean')
     rules = _CATALOG['xp']
-    amount = rules['multiplier']*_round_half_up(
-        rules['monster_scale']*level**rules['monster_exponent'])
-    amount = (amount*rules['reward_percent']+50)//100
+    amount = _round_half_up(rules['monster_scale']*level**rules['monster_exponent'])
     return amount*(rules['boss_multiplier'] if boss else 1)
 
 
