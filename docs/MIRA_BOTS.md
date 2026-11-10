@@ -60,7 +60,8 @@ Overclock's command description and activation feedback still explain the effect
 
 Mira now starts with 150 HP, 30 MP and 10 in every rating. Her bots inherit
 these reduced stats through the existing rules. The historical benchmark below
-uses the former 300 HP / Str 20 profile to compare bot and spear mechanics.
+uses the former 300 HP / Str 20 profile and the former 700-HP Tusker stats
+to compare bot and spear mechanics independently of later encounter tuning.
 Bolt Shot has potency 0.75, Piston Jab potency 1.0, and Rivet's base Speed is 8.
 Against the Tusker at fixed 100% variance, Caelan's punch deals 16, Mira's bolt
 50 and Rivet's jab 67. Every hit uses the existing physical damage formula and

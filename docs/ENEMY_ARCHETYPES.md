@@ -129,17 +129,18 @@ those actions in the current encounter controller.
 | Enemy | Stat profile | Fighting style | Species adjustment |
 | --- | --- | --- | --- |
 | **Bat** | Hybrid | Alternates physical Bite and magical Wing Gust; falls back to Bite when MP is exhausted. | A small Evasion bias; exact growth adjustment pending. |
-| **Ridgeback Tusker / Boar** | Brute | Windup Attacker: Lowered Tusks telegraphs Bankbreaker Charge. | Individual encounter and boss tuning pending. |
+| **Ridgeback Tusker / Boar** | Brute | Windup Attacker: Lowered Tusks telegraphs Bankbreaker Charge. | Level-one boss; no extra species/tier stat factors (270 HP, 240 EXP). |
 
 The Bat's classification describes its mixed damage approach. It does not imply
 a humanoid class, and its modest Evasion bias does not make evasion its primary
 combat identity. The Tusker's high HP and physical offense provide its numerical
 profile; reacting to its charge is the central behavioral lesson.
 
-These references do not retune the live Bat or MQ02 Tusker. Their current
-attributes, ability timing and drops remain authored in
-[`bestiary.json`](../assets/combat/bestiary.json) and the battle controller until
-enemy levels, species adjustments and the progression transition are settled.
+The test Bat remains a fixed authored encounter. The MQ02 Tusker now derives
+its stats from the level-one Brute template in
+[`bestiary.json`](../assets/combat/bestiary.json), while its existing abilities,
+charge targeting and guided Guard/Aether discovery remain authored in the
+battle controller.
 
 The first computed species is **Cave Bat**, separate from the fixed test Bat.
 It uses Hybrid growth, Physical/Magical Alternation, levels 2–3 and species

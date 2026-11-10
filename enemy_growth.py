@@ -3,7 +3,8 @@
 The fixed five-character reference excludes party selection, equipment and
 temporary effects. Named profiles apply the approved numerical multipliers;
 species and tier adjustments remain explicitly authored optional layers.
-The catalog does not replace the authored Bat or Tusker encounters.
+The Tusker uses the level-one Brute profile with its original authored AI.
+The test Bat retains its fixed encounter stats.
 """
 from copy import deepcopy
 from decimal import Decimal, ROUND_HALF_UP

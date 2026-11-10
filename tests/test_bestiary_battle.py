@@ -200,15 +200,15 @@ class BestiaryBattleTests(unittest.TestCase):
         fixed = load_enemies(load_actions(), catalog)
         self.assertEqual(set(fixed), {'bat', 'ridgeback_tusker'})
         self.assertEqual(fixed['bat']['attributes']['hp'], 72)
-        self.assertEqual(fixed['ridgeback_tusker']['attributes']['hp'], 700)
+        self.assertEqual(fixed['ridgeback_tusker']['attributes']['hp'], 270)
         for enemy_id in fixed:
             with self.subTest(enemy=enemy_id):
                 model = BattleModel(player(), enemy_id=enemy_id,
                                     party_members=party_profiles(), bot_loadouts={})
-                self.assertEqual(model.enemy_definition, catalog['enemies'][enemy_id])
+                self.assertEqual(model.enemy_definition, fixed[enemy_id])
                 self.assertEqual(model.enemy_sprite_id, enemy_id)
-                self.assertIsNone(model.enemy_level)
-                self.assertIsNone(model.enemy_xp_reward)
+                self.assertEqual(model.enemy_level, 1 if enemy_id == 'ridgeback_tusker' else None)
+                self.assertEqual(model.enemy_xp_reward, 240 if enemy_id == 'ridgeback_tusker' else None)
                 action = 'bite' if enemy_id == 'bat' else 'tusk_strike'
                 target = 'player' if enemy_id == 'bat' else 'mira'
                 for _ in range(2):

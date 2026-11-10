@@ -9,13 +9,9 @@ The dictionary contains six computed Sanctuary cave species: **Cave Bat**,
 **Lithrusk**, **Veylume**, level-four **Embravyr** and **Nivareth**, and the
 level-seven miniboss **Vespermaw**. Vespermaw is
 a one-time story encounter in the cave's final Echo Chamber, with its dedicated
-sprite bank and full combat cycle. The dictionary preserves the existing fixed
-Bat and Ridgeback Tusker records for
-their authored test and MQ02 encounters. Fixed records
-retain their exact stats, abilities and item drops. Their computed-species
-tuning and elemental profiles have not been assigned. The live victory owner
-uses a level-one reward reference for the test Bat (**24 EXP**) and level three
-for the Ridgeback Tusker (**37 EXP**) without rescaling either fixed encounter.
+sprite bank and full combat cycle. MQ02's **Ridgeback Tusker** is a computed
+level-one Brute boss. The test **Bat** alone retains a fixed authored profile
+and a level-one normal reward reference of **24 EXP**.
 
 This is an authoring dictionary and combat adapter. The three normal cave
 species are used by the [Sanctuary random encounter system](CAVE_RANDOM_ENCOUNTERS.md).
@@ -24,6 +20,25 @@ feeds the live victory progression flow described in [Leveling](LEVELING.md):
 every living active combatant receives the full sum for the encounter, with
 saved levels and stat growth. Resolving or previewing dictionary data alone
 does not grant rewards.
+
+## Ridgeback Tusker (MQ02 Boar)
+
+`ridgeback_tusker` uses level **1**, boss tier, the **Brute** stat profile and
+**Telegraphed Windup** fighting style. Both species and tier stat factors are
+empty: the ordinary level-one Brute HP of **270** is retained. Boss tier changes
+EXP to **240 per living active character**, not HP. Its element is Non-Elemental
+with neutral damage responses and no absorption.
+
+| HP | MP | Strength | Magick | Spirit | Defense | Magick Defense | Speed | Accuracy | Evasion | Luck |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 270 | 21 | 13 | 7 | 10 | 14 | 10 | 9 | 13 | 11 | 12 |
+
+Tusk Strike, Lowered Tusks and Bankbreaker Charge retain their action definitions,
+timings and original MQ02 targeting/Guard lesson. All cost zero MP; the template's
+21 MP is unused. The guaranteed Aether Emerald drop is unchanged. The live story
+constructor explicitly binds this species to level one. `build_enemy` and the
+Bestiary factory accept level one only. Previous reward receipts/spoils preserve
+their saved EXP amounts on Continue.
 
 ## Cave Bat
 

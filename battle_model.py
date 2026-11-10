@@ -114,16 +114,23 @@ def load_actions(data=None):
 
 
 def load_enemies(actions, data=None):
-    """Validate the whole Bestiary and retain fixed profiles for legacy callers.
+    """Validate the Bestiary and compile fixed encounters plus MQ02 at level one.
 
     Level-derived definitions require ``BattleModel.from_bestiary`` so a caller
-    cannot accidentally fight one at an unspecified level.
+    cannot accidentally fight one at an unspecified level. MQ02's Tusker has
+    an explicit level-one binding for its established story constructor.
     """
-    from bestiary import FIXED_FIELDS, load_bestiary
+    from bestiary import FIXED_FIELDS, build_enemy, load_bestiary
     catalog = load_bestiary(data, actions=actions)
-    return {identifier: deepcopy(enemy)
+    enemies = {identifier: deepcopy(enemy)
             for identifier, enemy in catalog['enemies'].items()
             if set(enemy) == FIXED_FIELDS}
+    # MQ02 is an explicitly level-one authored encounter. Retain its established
+    # constructor API while compiling its stats from the canonical template.
+    if 'ridgeback_tusker' in catalog['enemies'] and 'ridgeback_tusker' not in enemies:
+        enemies['ridgeback_tusker'] = build_enemy('ridgeback_tusker', 1,
+            data=catalog, actions=actions)['combat']
+    return enemies
 
 
 def load_guests(actions, data=None):
@@ -291,7 +298,8 @@ class BattleModel:
         designed = design is not None and design['status'] == 'ready'
         if (record['fighting_style'] not in (None, 'standard_attacks',
                                             'physical_magical_alternation', 'magical_offense')
-                and not (designed and record['fighting_style'] == 'telegraphed_windup')):
+                and not ((designed or record['id'] == 'ridgeback_tusker')
+                         and record['fighting_style'] == 'telegraphed_windup')):
             raise ValueError('Unsupported Bestiary fighting style')
         behavior = record['behavior']
         if behavior is not None and behavior['targeting'] != 'cycle_living_party':
@@ -328,7 +336,8 @@ class BattleModel:
         actions = load_actions(options.get('action_data'))
         record = build_enemy(enemy_id, level, data=bestiary_data, actions=actions)
         preparations = cls._prepared_spells(record, actions)
-        behavior = record['behavior']
+        # The Tusker retains MQ02's authored targeting and forced Guard lesson.
+        behavior = None if enemy_id == 'ridgeback_tusker' else record['behavior']
         model = cls(player_attributes, enemy_id=enemy_id,
                     enemy_data={'version': 1, 'enemies': {enemy_id: record['combat']}},
                     **options)
@@ -390,7 +399,8 @@ class BattleModel:
             model.enemy_definitions[identifier] = definition
             model.enemy_records[identifier] = deepcopy(record)
             model._enemy_states[identifier] = EnemyState(
-                behavior=deepcopy(record['behavior']), style=record['fighting_style'],
+                behavior=None if record['id'] == 'ridgeback_tusker' else deepcopy(record['behavior']),
+                style=record['fighting_style'],
                 preparations=cls._prepared_spells(record, actions),
                 design=deepcopy(record['metadata'].get('combat_design')),
                 target_index=(index-1) % len(model.party))
@@ -508,6 +518,13 @@ class BattleModel:
         self.enemies = (self.enemy,)
         self.enemy_definitions = {'enemy': self.enemy_definition}
         self.enemy_records = {'enemy': None}
+        if enemy_id == 'ridgeback_tusker' and enemy_data is None:
+            from bestiary import build_enemy
+            record = build_enemy(enemy_id, 1, actions=self.actions)
+            self.enemy_bestiary_id = enemy_id
+            self.enemy_bestiary_record = self.enemy_records['enemy'] = record
+            self.enemy_level, self.enemy_xp_reward = record['level'], record['xp_reward']
+            self._enemy_style = record['fighting_style']
         self.encounter_rewards = deepcopy(enemy['rewards'])
         self.initial_atb_values = {}
         self.selected_target = 'enemy'

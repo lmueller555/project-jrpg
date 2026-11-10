@@ -12,7 +12,7 @@ transaction. [`character_progression.py`](../character_progression.py) keeps the
 party's level records and constructs deterministic before/after growth plans;
 the combat owner validates, applies and checkpoints those plans with resources
 and loot. New journeys use the approved level-one profiles for all five
-characters. The existing Bat and Tusker retain their authored combat stats.
+characters. The test Bat retains its authored stats; MQ02 uses the level-one Brute boss profile.
 
 Older progression-backed saves receive a one-way compatibility import on
 Continue: earned effective attributes, learned abilities and battle receipts are
@@ -27,9 +27,9 @@ The [Bestiary](BESTIARY.md) now stores individual monster and boss definitions.
 Cave Bat is the first computed species, explicitly authored at levels 2–3 with
 32/37 EXP rewards. Victories sum the resolved monsters' EXP before allocating
 it. The fixed test Bat uses a level-one reward reference, **24 EXP**, and the
-MQ02 Ridgeback Tusker uses a level-three reference, **37 EXP**; these reward
-references do not rescale either encounter's combat stats. Merely previewing a
-species or constructing a battle model still grants nothing. Pending and awarded
+MQ02 Ridgeback Tusker uses the level-one Brute boss template and grants
+**240 EXP**. The boss has 270 HP without extra species/tier stat factors.
+Merely previewing a species or constructing a battle model still grants nothing. Pending and awarded
 spoils from previously shipped reward curves retain their original validated
 amounts, including boss rewards. New victories use the current curve; earned EXP,
 level thresholds and existing stats remain intact.
