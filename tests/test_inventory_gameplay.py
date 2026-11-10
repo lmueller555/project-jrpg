@@ -68,11 +68,11 @@ class InventoryGameplayTests(unittest.TestCase):
     def test_decline_or_walkaway_does_not_grant_items(self):
         self.offer()
         self.click(self.game.social.choice_rects[1].center)
-        self.assertEqual(self.game.inventory.entries(), [])
+        self.assertEqual(self.game.inventory.entries('key_items'), [])
         self.offer()
         self.game.player.position.update(288, 280)
         self.game.update(0, (0, 0), False)
-        self.assertEqual(self.game.inventory.entries(), [])
+        self.assertEqual(self.game.inventory.entries('key_items'), [])
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
 
     def test_delivery_removes_medicine_once_and_preserves_other_halden_tasks(self):
@@ -184,7 +184,7 @@ class InventoryGameplayTests(unittest.TestCase):
         self.game.accept_quest(OPENING_QUEST)
         self.game.deliver_quest_item(OPENING_QUEST, 'halden', 'halden')
         self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
-        self.assertEqual(self.game.inventory.entries(), [])
+        self.assertEqual(self.game.inventory.to_dict(), Inventory.new_journey().to_dict())
         self.assertFalse(self.game.inventory.was_delivered(OPENING_QUEST, 'halden'))
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
 
@@ -201,7 +201,7 @@ class InventoryGameplayTests(unittest.TestCase):
         self.game.handle_events()
         self.assertFalse(self.game.inventory_ui.is_open)
         self.assertTrue(self.game.social.choosing)
-        self.assertEqual(self.game.inventory.entries(), [])
+        self.assertEqual(self.game.inventory.entries('key_items'), [])
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
 
     def test_future_equipment_and_item_definitions_render_without_gameplay_stubs(self):

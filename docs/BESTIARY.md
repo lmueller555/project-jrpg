@@ -95,8 +95,11 @@ or spawn encounters.
 
 The Cave Bat’s elemental profile is authored below. Aqua Edge now reads its
 Water response in battle. Its planned low Stagger resistance remains future
-work. Item drops remain explicitly pending; the resolved combat bundle is
-empty until loot is authored. No item or drop chance is invented by the loader.
+work. Its authored `rewards.drop_table` supplies independent Potion (15%),
+Revival Salts (10%), Ether (5%) and Rest Kit (5%) rolls. Lithrusk, Veylume and
+all three cave bosses use the same supply table. [Consumable rules](CONSUMABLES.md)
+cover live settlement; resolving a Bestiary profile alone never rolls or grants
+loot. Guaranteed drops stay in `rewards.drops`.
 
 ## Lithrusk and Veylume
 
@@ -118,7 +121,7 @@ action presentation, documented in [Cave enemy combat art](CAVE_ENEMY_COMBAT_ART
 | Species adjustments | HP ×0.50, MP ×0 | HP ×0.40, MP ×0.15 |
 | Planned Stagger resistance | High | Low |
 | Encounter guidance | One specimen | One specimen |
-| Drops | Pending | Pending |
+| Supply drops | Potion 15%, Revival Salts 10%, Ether 5%, Rest Kit 5% | Potion 15%, Revival Salts 10%, Ether 5%, Rest Kit 5% |
 
 All omitted species multipliers are ×1, with no additional tier multiplier.
 Stats use the approved baseline/profile composition and one final rounding
@@ -482,7 +485,7 @@ bat = build_enemy('cave_bat', 2)
 assert bat['combat']['name'] == 'Cave Bat'
 assert bat['combat']['attributes']['hp'] == 73
 assert bat['xp_reward'] == 32
-assert bat['metadata']['drops_pending']
+assert not bat['metadata']['drops_pending']
 assert bat['metadata']['elemental_profile']['element'] == 'non_elemental'
 assert bat['metadata']['elemental_profile']['damage_percentages']['fire'] == 200
 

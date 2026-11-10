@@ -139,6 +139,7 @@ class BattleScene:
         if battlefield not in ('eldenmere', 'millrace', *CAVE_BATTLEFIELDS):
             raise ValueError('Unknown battlefield')
         self.game, self.model = game, model
+        model.set_item_inventory(getattr(game, 'inventory', None))
         self.battlefield = battlefield
         self._cave_field = CaveBattlefield(battlefield) if battlefield in CAVE_BATTLEFIELDS else None
         self.location_name = (self._cave_field.name if self._cave_field is not None else
@@ -158,6 +159,7 @@ class BattleScene:
         self.focused = True
         self.selected = 0
         self.command_menu = 'root'
+        self._selected_item = None
         self._target_command = None
         self.enemy_rows = {}
         self.enemy_rects = {}
@@ -428,6 +430,13 @@ class BattleScene:
                                for identifier in actions}
         row_heights = [max(16, len(self._command_lines[item])*small+5) for item in actions]
         available = height-small-15
+        if self.command_menu == 'root':
+            # Keep all five primary commands visible without growing the HUD.
+            primary = min(5, len(actions))
+            compact = max(small+2, available//max(1, primary))
+            for index in range(primary):
+                if len(self._command_lines[actions[index]]) == 1:
+                    row_heights[index] = min(row_heights[index], compact)
         self._command_scroll = min(self._command_scroll, max(0, len(actions)-1))
         if actions:
             selected = self.selected % len(actions)
@@ -579,6 +588,12 @@ class BattleScene:
                 'Learned Aqua Edge. Free for this battle; 4 MP in later battles. Usable outside the cave too.')
 
     def _command_label(self, identifier):
+        if identifier == 'items':return 'Items'
+        if identifier.startswith('item:'):
+            key = identifier.split(':', 1)[1]
+            return self.model.item_definitions[key]['name']+' ×'+str(self.model.item_counts[key])
+        if identifier.startswith('ally:'):
+            return self.model.combatant(identifier.split(':', 1)[1]).name
         label = ACTION_LABELS.get(identifier, identifier)
         if identifier in ('aqua_edge', 'flame_edge', 'ice_edge'):
             cost = self.model.action_mp_cost(identifier, self.model.ready_actor)
@@ -588,6 +603,11 @@ class BattleScene:
     def _detail_text(self):
         """Full messages flow beneath the occupied party row, never over values."""
         model = self.model
+        if self.command_menu == 'items':
+            actions = self._command_actions()
+            chosen = actions[self.selected % len(actions)] if actions else ''
+            if chosen.startswith('item:'):return model.item_definitions[chosen.split(':', 1)[1]]['description']
+        if self.command_menu == 'item_targets':return 'Choose a party member for '+model.item_definitions[self._selected_item]['name']+'.'
         if self.result_error:return self.result_error
         if model.phase in RESULTS:
             if model.phase == 'victory':return ''
@@ -628,6 +648,10 @@ class BattleScene:
             self._command_context = context
 
     def _command_actions(self):
+        if self.command_menu == 'items':
+            return ['item:'+key for key, count in self.model.item_counts.items() if count]+['back']
+        if self.command_menu == 'item_targets':
+            return ['ally:'+member.identifier for member in self.model.party]+['back']
         if self.command_menu == 'skills':
             return list(self.model.skill_actions())+['back']
         commands = getattr(self.model, 'command_actions', self.model.available_actions)
@@ -635,7 +659,9 @@ class BattleScene:
 
     def _command_reason(self, identifier):
         if identifier == 'back':return ''
-        if identifier == 'skills':return self.model.command_reason(identifier)
+        if identifier.startswith('item:'):return self.model.item_reason(identifier.split(':', 1)[1])
+        if identifier.startswith('ally:'):return self.model.item_reason(self._selected_item, identifier.split(':', 1)[1])
+        if identifier in ('skills', 'items'):return self.model.command_reason(identifier)
         return self.model.action_reason(identifier)
 
     def _set_menu(self, menu):
@@ -753,18 +779,28 @@ class BattleScene:
         self.selected %= len(actions)
         identifier = actions[self.selected]
         if identifier == 'back':
-            self._set_menu('root')
+            self._set_menu('items' if self.command_menu == 'item_targets' else 'root')
             self._sound('back')
             return
-        if identifier == 'skills':
+        if identifier in ('skills', 'items'):
             reason = self._command_reason(identifier)
             if reason:
                 self._notice = reason
                 self._sound('back')
             else:
-                self._set_menu('skills')
+                self._set_menu(identifier)
                 self._sound('confirm')
             return
+        if identifier.startswith('item:'):
+            item_id = identifier.split(':', 1)[1]
+            reason = self.model.item_reason(item_id)
+            if reason:self._notice = reason;self._sound('back');return
+            self._selected_item = item_id
+            if self.model.item_definitions[item_id]['effect']['kind'] == 'escape':self._use_item(None)
+            else:self._set_menu('item_targets');self._sound('confirm')
+            return
+        if identifier.startswith('ally:'):
+            self._use_item(identifier.split(':', 1)[1]);return
         record = self.model.actions.get(identifier, {})
         if self._group and (identifier == 'attack' or record.get('target') == 'opponent'):
             reason = self._command_reason(identifier)
@@ -783,6 +819,12 @@ class BattleScene:
         else:
             self._notice = self.model.action_reason(identifier)
             self._sound('back')
+
+    def _use_item(self, target):
+        if self.model.choose_item(self._selected_item, target):
+            self._notice = '';self._sync_commands();self._sound('confirm')
+        else:
+            self._notice = self.model.item_reason(self._selected_item, target);self._sound('back')
 
     @property
     def gear_enabled(self):
@@ -860,8 +902,8 @@ class BattleScene:
                 if self.focused:
                     if not self.paused and self._target_command is not None:
                         self._target_command = None;self._notice = '';self._sound('back');return True
-                    if not self.paused and self.command_menu == 'skills':
-                        self._set_menu('root');self._sound('back');return True
+                    if not self.paused and self.command_menu in ('skills', 'items', 'item_targets'):
+                        self._set_menu('items' if self.command_menu == 'item_targets' else 'root');self._sound('back');return True
                     self.paused = not self.paused
                     if self.paused:self.action_audio.stop()
                     self._held = False
@@ -921,6 +963,7 @@ class BattleScene:
                     return True
                 for identifier, row in self.party_rows.items():
                     if row['row'].collidepoint(point):
+                        if self.command_menu == 'item_targets':self._use_item(identifier);return True
                         self._select_member(identifier);return True
                 if self._target_command is not None:
                     if self._target_confirm_rect.collidepoint(point):self._confirm()
@@ -983,6 +1026,12 @@ class BattleScene:
                                else self._phase_elapsed+seconds)
         roar_impact_cued = False
         for event in self.model.drain_events():
+            if event['type'] == 'item_effect':
+                if event['amount']:
+                    self._popups.append({'target': event['target'], 'text': '+'+str(event['amount'])+
+                        (' MP' if event.get('resource') == 'mp' else ''), 'age': event.get('frame_age', 0.),
+                        'healing': event.get('resource') != 'mp', 'mp': event.get('resource') == 'mp'})
+                self.action_audio.play('focus')
             self.announcements.consume(event)
             self._tutorial_event(event)
             if event['type'] == 'impact':
@@ -1329,6 +1378,7 @@ class BattleScene:
         if not self._is_enemy(actor) and self.model.phase == 'victory':return 'victory', self._phase_elapsed*1000
         action = self.model.current_action
         if action is not None and action.actor == actor:
+            if action.kind == 'item':return 'idle', 0 if self.reduced_motion else action.elapsed*1000
             sequence = self._choreography(action)
             if sequence is not None:return sequence.pose, sequence.pose_ms
             if actor == 'mira' and action.kind == 'guard':
@@ -1524,6 +1574,7 @@ class BattleScene:
         self._draw_mira_effects(canvas)
         self._draw_cave_enemy_effects(canvas, positions)
         self._draw_elemental_effects(canvas, positions)
+        self._draw_item_effects(canvas, positions)
         self._draw_vespermaw_roar(canvas, positions)
         if marked is not None and self.target_marker_rects:
             self.target_marker_rects['finger'] = draw_target_finger(canvas, self.enemy_rects[marked],
@@ -1605,6 +1656,36 @@ class BattleScene:
                 elapsed = action.elapsed if action is not None and action.actor == identifier else self._elapsed
                 self.action_fx.draw_electric_charge(canvas, origin, elapsed,
                                                    reduced_motion=self.reduced_motion)
+
+    def _draw_item_effects(self, canvas, positions):
+        action = self.model.current_action
+        if action is None or action.kind != 'item':return
+        key = action.action.split(':', 1)[1]
+        kind = self.model.item_definitions[key]['effect']['kind']
+        target = action.actor if kind == 'escape' else action.target
+        if target not in positions:return
+        if not hasattr(self, '_item_layer'):
+            self._item_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
+        layer = self._item_layer;layer.fill((0, 0, 0, 0))
+        layer.set_clip(pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35)))
+        center = self._hit_point(target, positions)
+        progress = max(0., min(1., action.elapsed/action.duration))
+        rgb = ((175, 185, 177) if kind == 'escape' else (108, 184, 239) if kind == 'restore_mp'
+               else (245, 208, 111) if kind == 'revive' else (125, 226, 157))
+        alpha = round(190*(1-progress*.6))
+        if self.reduced_motion:
+            pygame.draw.circle(layer, (*rgb, alpha), (round(center.x), round(center.y)), 12, 2)
+        elif kind == 'escape':
+            for index in range(7):
+                point = center+pygame.Vector2((index-3)*(5+progress*5), -progress*index*3)
+                pygame.draw.circle(layer, (*rgb, alpha//2), (round(point.x), round(point.y)), 8+round(progress*12))
+        else:
+            for index in range(8):
+                angle = index*math.tau/8+progress*1.3
+                point = center+pygame.Vector2(math.cos(angle), math.sin(angle))*(10+progress*15)
+                pygame.draw.circle(layer, (*rgb, alpha), (round(point.x), round(point.y)), 2)
+            pygame.draw.circle(layer, (*rgb, alpha//2), (round(center.x), round(center.y)), 9+round(progress*10), 1)
+        canvas.blit(layer, (0, 0))
 
     def _draw_elemental_effects(self, canvas, positions):
         """Attach elemental casts to authored cores and show cooling/melting."""
@@ -1826,7 +1907,7 @@ class BattleScene:
             y = max(popup_height/2+2, min(self.panel_rect.top-popup_height/2-2, y))
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(popup['text'], (x, y), role='name',
-                         color=HP_GREEN if popup.get('healing') else MP_BLUE if popup.get('enchant') else GOLD,
+                         color=HP_GREEN if popup.get('healing') else MP_BLUE if popup.get('enchant') or popup.get('mp') else GOLD,
                          anchor='center', bold=True)
         for member in model.party:
             hits = getattr(member, 'aether_edge_hits', 0)
@@ -1856,7 +1937,7 @@ class BattleScene:
         top = self.panel_rect.top
         heading = ({'defeat': 'DEFEATED', 'fled': 'ESCAPED'}.get(model.phase)
                    or ('TARGET' if self._target_command is not None else '')
-                   or ('SKILLS' if self.command_menu == 'skills' else 'COMMANDS'))
+                   or {'skills': 'SKILLS', 'items': 'ITEMS', 'item_targets': 'RECIPIENT'}.get(self.command_menu, 'COMMANDS'))
         painter.text(heading, (self.commands_panel.centerx, top+5), role='small',
                      color=GOLD, anchor='midtop', bold=True)
         self.header_rects = {}
@@ -1913,7 +1994,7 @@ class BattleScene:
                 if model.phase == 'ready' and actions.index(identifier) == self.selected:
                     painter.rect(MUTED if disabled else GOLD, rect, 1)
             detail = self._notice or self._detail_text()
-            if detail and (self._notice or self.command_menu == 'skills') and (
+            if detail and (self._notice or self.command_menu in ('skills', 'items', 'item_targets')) and (
                     self._hovered_enemy is None or self._notice):
                 lines = painter.wrap(detail, 270, role='small')
                 box = pygame.Rect(192, top-len(lines)*small-12, 280, len(lines)*small+8)

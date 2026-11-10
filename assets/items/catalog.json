@@ -76,6 +76,51 @@
       "name": "White Focus Gem",
       "category": "key_items",
       "description": "The stable white core recovered from Nivareth. Installed in Mira’s Blade, it focuses Ice-aspected Aether for Ice Edge."
+    },
+    "potion": {
+      "name": "Potion",
+      "category": "items",
+      "description": "A healing draught that restores 100 HP to one living character.",
+      "use_context": "consumable",
+      "effect": {
+        "kind": "restore_hp",
+        "amount": 100
+      }
+    },
+    "ether": {
+      "name": "Ether",
+      "category": "items",
+      "description": "Restores 15 MP to one living character.",
+      "use_context": "consumable",
+      "effect": {
+        "kind": "restore_mp",
+        "amount": 15
+      }
+    },
+    "revival_salts": {
+      "name": "Revival Salts",
+      "category": "items",
+      "description": "Revives one KO character with 25% of their maximum HP.",
+      "use_context": "consumable",
+      "effect": {
+        "kind": "revive",
+        "percent": 25
+      }
+    },
+    "smoke_bomb": {
+      "name": "Smoke Bomb",
+      "category": "items",
+      "description": "Allows the party to escape a battle that permits fleeing.",
+      "use_context": "consumable",
+      "effect": {
+        "kind": "escape"
+      }
+    },
+    "rest_kit": {
+      "name": "Rest Kit",
+      "category": "items",
+      "description": "A compact bundle of supplies for resting. Where it can be used has yet to be established.",
+      "use_context": "rest_policy_pending"
     }
   },
   "quest_grants": {
@@ -110,5 +155,12 @@
         "venn_supplies": 1
       }
     }
+  },
+  "starting_items": {
+    "potion": 5,
+    "ether": 5,
+    "revival_salts": 3,
+    "smoke_bomb": 3,
+    "rest_kit": 3
   }
 }

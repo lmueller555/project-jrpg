@@ -224,6 +224,7 @@ class BattleExperienceTests(unittest.TestCase):
         self.victory()
         data = self.persisted()
         data['post_battle']['version'] = 1
+        data['post_battle'].pop('item_costs');data['post_battle'].pop('item_before')
         data['post_battle'].pop('progression');data['post_battle'].pop('offered_drops')
         data.pop('character_levels')
         self.path.write_text(json.dumps(data))

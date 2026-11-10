@@ -130,7 +130,29 @@
         }
       },
       "rewards": {
-        "drops": null
+        "drops": {},
+        "drop_table": [
+          {
+            "item": "potion",
+            "chance": 15,
+            "quantity": 1
+          },
+          {
+            "item": "revival_salts",
+            "chance": 10,
+            "quantity": 1
+          },
+          {
+            "item": "ether",
+            "chance": 5,
+            "quantity": 1
+          },
+          {
+            "item": "rest_kit",
+            "chance": 5,
+            "quantity": 1
+          }
+        ]
       },
       "elemental_profile": {
         "element": "non_elemental",
@@ -196,7 +218,29 @@
         "action_aliases": {}
       },
       "rewards": {
-        "drops": null
+        "drops": {},
+        "drop_table": [
+          {
+            "item": "potion",
+            "chance": 15,
+            "quantity": 1
+          },
+          {
+            "item": "revival_salts",
+            "chance": 10,
+            "quantity": 1
+          },
+          {
+            "item": "ether",
+            "chance": 5,
+            "quantity": 1
+          },
+          {
+            "item": "rest_kit",
+            "chance": 5,
+            "quantity": 1
+          }
+        ]
       },
       "elemental_profile": {
         "element": "ground",
@@ -265,7 +309,29 @@
         "action_aliases": {}
       },
       "rewards": {
-        "drops": null
+        "drops": {},
+        "drop_table": [
+          {
+            "item": "potion",
+            "chance": 15,
+            "quantity": 1
+          },
+          {
+            "item": "revival_salts",
+            "chance": 10,
+            "quantity": 1
+          },
+          {
+            "item": "ether",
+            "chance": 5,
+            "quantity": 1
+          },
+          {
+            "item": "rest_kit",
+            "chance": 5,
+            "quantity": 1
+          }
+        ]
       },
       "elemental_profile": {
         "element": "electric",
@@ -347,7 +413,29 @@
         "drops": {
           "aether_amethyst": 1,
           "aether_sapphire": 1
-        }
+        },
+        "drop_table": [
+          {
+            "item": "potion",
+            "chance": 15,
+            "quantity": 1
+          },
+          {
+            "item": "revival_salts",
+            "chance": 10,
+            "quantity": 1
+          },
+          {
+            "item": "ether",
+            "chance": 5,
+            "quantity": 1
+          },
+          {
+            "item": "rest_kit",
+            "chance": 5,
+            "quantity": 1
+          }
+        ]
       },
       "elemental_profile": {
         "element": "ground",
@@ -494,7 +582,29 @@
       "rewards": {
         "drops": {
           "red_focus_gem": 1
-        }
+        },
+        "drop_table": [
+          {
+            "item": "potion",
+            "chance": 15,
+            "quantity": 1
+          },
+          {
+            "item": "revival_salts",
+            "chance": 10,
+            "quantity": 1
+          },
+          {
+            "item": "ether",
+            "chance": 5,
+            "quantity": 1
+          },
+          {
+            "item": "rest_kit",
+            "chance": 5,
+            "quantity": 1
+          }
+        ]
       },
       "elemental_profile": {
         "element": "fire",
@@ -642,7 +752,29 @@
       "rewards": {
         "drops": {
           "white_focus_gem": 1
-        }
+        },
+        "drop_table": [
+          {
+            "item": "potion",
+            "chance": 15,
+            "quantity": 1
+          },
+          {
+            "item": "revival_salts",
+            "chance": 10,
+            "quantity": 1
+          },
+          {
+            "item": "ether",
+            "chance": 5,
+            "quantity": 1
+          },
+          {
+            "item": "rest_kit",
+            "chance": 5,
+            "quantity": 1
+          }
+        ]
       },
       "elemental_profile": {
         "element": "ice",

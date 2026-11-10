@@ -435,6 +435,9 @@ class BattleModel:
             raise ValueError('Invalid elemental teaching encounter')
         self.elemental_tutorial = elemental_tutorial
         self.actions = load_actions(action_data)
+        self.item_counts = None
+        self.item_spent = {}
+        self.item_definitions = {}
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
             raise ValueError('Unknown battle enemy')
@@ -791,9 +794,15 @@ class BattleModel:
         if actor is None:return []
         spells = [key for key in SUPPORTED_LEARNED_ACTIONS
                   if actor.identifier == 'player' and key in self.learned_abilities]
-        return ['attack', 'skills', 'guard', 'flee']+spells
+        return ['attack', 'skills']+(['items'] if self.item_counts is not None else [])+['guard', 'flee']+spells
 
     def command_reason(self, identifier, actor_id=None):
+        if identifier == 'items':
+            if self.item_counts is None:return 'Items are unavailable.'
+            if self.lesson_guided:return 'Finish the guided action first.'
+            if not self.waiting_for_player:return 'Wait until a character is ready.'
+            if not any(self.item_counts.get(key, 0) for key in self.item_definitions):return 'No items carried.'
+            return ''
         if identifier != 'skills':return self.action_reason(identifier, actor_id)
         actor = self._party_actor(actor_id)
         if actor is None:return 'This action is not available.'
@@ -874,6 +883,49 @@ class BattleModel:
             target_id = self._living_target(target_id)
             if target_id is None:return False
         self._start_action(actor.identifier, action, target_id=target_id)
+        return True
+
+    def set_item_inventory(self, inventory):
+        """Copy shared supplies for this attempt; settlement owns durable costs."""
+        from inventory import Inventory
+        if not isinstance(inventory, Inventory) or self.item_counts is not None:return
+        self.item_definitions = {key: deepcopy(value) for key, value in inventory.definitions.items()
+                                 if value.get('use_context') in ('consumable', 'rest_policy_pending')}
+        self.item_counts = {key: inventory.quantity(key) for key in self.item_definitions}
+        for key, item in self.item_definitions.items():
+            self.actions['item:'+key] = {'name': item['name'], 'kind': 'item',
+                'potency': 0, 'mp_cost': 0, 'duration': 1., 'impact_at': .5,
+                'animation': 'idle', 'target': 'none' if item.get('effect', {}).get('kind') == 'escape' else 'ally'}
+
+    def item_reason(self, item_id, target_id=None, actor_id=None):
+        from consumables import target_reason
+        actor = self._party_actor(actor_id)
+        if not isinstance(item_id, str):return 'Choose an item.'
+        if self.item_counts is None or item_id not in self.item_definitions:return 'This item is unavailable.'
+        item = self.item_definitions[item_id]
+        if not item.get('effect'):return 'Rest Kit use is not available yet.'
+        if not self.item_counts[item_id]:return 'None remaining.'
+        if self.lesson_guided:return 'Finish the guided action first.'
+        if self.phase != 'ready' or actor is None or not actor.hp or actor.atb+EPSILON < 1:
+            return 'This character is not ready.'
+        if actor.identifier == 'player' and self.gear_settling:return 'The gear is settling.'
+        if item['effect']['kind'] == 'escape':return '' if self.flee_allowed else 'Cannot flee this boss battle.'
+        if target_id is None:
+            return '' if any(not self.item_reason(item_id, member.identifier, actor.identifier)
+                             for member in self.party) else 'No valid target.'
+        target = self._party_actor(target_id)
+        if target is None:return 'Choose a party member.'
+        return target_reason(self.item_definitions[item_id]['effect'], target.hp, target.mp,
+                             target.max_hp, target.max_mp)
+
+    def choose_item(self, item_id, target_id=None, actor_id=None):
+        if self.item_reason(item_id, target_id, actor_id):return False
+        if self.item_definitions[item_id]['effect']['kind'] != 'escape' and target_id is None:return False
+        actor = self._party_actor(actor_id)
+        self._active_actor = actor.identifier
+        self.item_counts[item_id] -= 1
+        self.item_spent[item_id] = self.item_spent.get(item_id, 0)+1
+        self._start_action(actor.identifier, 'item:'+item_id, target_id=target_id)
         return True
 
     def drain_events(self):
@@ -976,6 +1028,7 @@ class BattleModel:
         target = (self._enemy_target(identifier, actor_id) if enemy_actor
                   else self._living_target(target_id))
         if record['target'] == 'self':target = actor_id
+        elif record['target'] == 'ally':target = target_id
         elif record['target'] == 'all_opponents':target = 'all_opponents'
         elif record['target'] == 'none':target = None
         elif record['target'] == 'owned_bot':
@@ -1046,6 +1099,28 @@ class BattleModel:
             self.events.append({'type': 'guard', 'actor': action.actor})
             if self.spellblade_stage == 'guard' and action.actor == 'player':
                 self.spellblade_stage = 'charge';self.enemy.atb = 1.
+        elif action.kind == 'item':
+            from consumables import restore, target_reason
+            item_id = action.action.split(':', 1)[1]
+            effect = self.item_definitions[item_id]['effect']
+            if effect['kind'] == 'escape':
+                self._pending_outcome = 'fled'
+                self.message = 'The party escapes under cover of smoke.'
+                self.events.append({'type': 'item_effect', 'actor': action.actor,
+                    'target': action.actor, 'item': item_id, 'action': action.action, 'amount': 0})
+            else:
+                target = self._party_actor(action.target)
+                if target is not None and not target_reason(effect, target.hp, target.mp, target.max_hp, target.max_mp):
+                    before_hp, before_mp = target.hp, target.mp
+                    target.hp, target.mp = restore(effect, target.hp, target.mp, target.max_hp, target.max_mp)
+                    if before_hp == 0:target.atb = 0.;target.guarded = False
+                    amount = target.mp-before_mp if effect['kind'] == 'restore_mp' else target.hp-before_hp
+                    self.events.append({'type': 'item_effect', 'actor': action.actor,
+                        'target': target.identifier, 'item': item_id, 'action': action.action,
+                        'amount': amount, 'revived': before_hp == 0,
+                        'resource': 'mp' if effect['kind'] == 'restore_mp' else 'hp'})
+                    self.message = target.name+' recovers '+str(amount)+(' MP.' if effect['kind'] == 'restore_mp' else ' HP.')
+                    self._sync_bot_activity()
         elif action.kind == 'flee':
             self._pending_outcome = 'fled'
             self.message = actor.name+' gets away safely.'

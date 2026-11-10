@@ -510,10 +510,11 @@ class CombatEncounters:
         if not owner.finish(self.receipt_id):return None
         return before
 
-    def _available_rewards(self, reward):
-        drops = {key: min(quantity, MAX_QUANTITY-self.game.inventory.quantity(key))
+    def _available_rewards(self, reward, spent=None):
+        spent = spent or {}
+        drops = {key: min(quantity, MAX_QUANTITY-self.game.inventory.quantity(key)+spent.get(key, 0))
                  for key, quantity in reward['drops'].items()
-                 if self.game.inventory.quantity(key) < MAX_QUANTITY}
+                 if self.game.inventory.quantity(key)-spent.get(key, 0) < MAX_QUANTITY}
         return {'drops': drops}
 
     def tick_world(self, seconds):
@@ -668,9 +669,15 @@ class CombatEncounters:
             self._pending.update(party_before=self._party_resources(),
                                  party_resources=resources, party_active=list(self._party_active))
             offered = battle_reward_definition(self.kind, ticket)
+            from enemy_loot import encounter_drops
+            offered['drops'] = encounter_drops(self.kind, ticket, self.receipt_id, offered['drops'])
+            costs = dict(getattr(model, 'item_spent', {}))
+            self._pending['rewards'] = self._available_rewards({'drops': offered['drops']}, costs)
             end_hp = {'caelan' if member.identifier == 'player' else member.identifier: member.hp
                       for member in model.party}
-            self._pending.update(version=2, offered_drops=offered['drops'],
+            self._pending.update(version=3, offered_drops=offered['drops'],
+                                 item_costs=costs,
+                                 item_before={key: game.inventory.quantity(key) for key in costs},
                                  progression=game.character_progression.preview(
                                      offered['xp'], list(self._party_active), end_hp))
         if not valid_pending_snapshot(self._pending):
@@ -750,8 +757,10 @@ class CombatEncounters:
         reward = record['rewards']
         if game.battle_rewards.has_receipt(record['receipt']):
             return self._post_error('The victory receipt is inconsistent. Try again.')
+        if record.get('item_costs') and not game.inventory.consume_bundle(record['item_costs']):
+            return rollback('Used items could not be settled. Try again.')
         granted = game.battle_rewards.award_battle_rewards(record['receipt'], reward['drops'])
-        if not granted:return self._post_error('Rewards could not be collected. Try again.')
+        if not granted:return rollback('Rewards could not be collected. Try again.')
         if plan is not None and not game.character_progression.apply(plan):
             return rollback('Character progress could not be collected. Try again.')
         if self.kind == 'mill' and not quest.battle_won():
@@ -909,6 +918,7 @@ class CombatEncounters:
         validation = {'player': {'scene': game.world.data['id'], 'position': record['position'],
                                   'facing': record['facing']},
                       'battle_rewards': game.battle_rewards.to_dict(),
+                      'inventory': game.inventory.to_dict(),
                       'character_attributes': game.attributes.to_dict(),
                       'quests': game.quests.to_dict(), 'mill_quest': game.mill_quest.to_dict()}
         if hasattr(game, 'party'):validation['party'] = game.party.to_dict()
@@ -987,6 +997,21 @@ class CombatEncounters:
         return True
 
     def _settle(self):
+        """Commit used supplies with a withdrawal; defeat restores entry supplies."""
+        if not self.active or self.model is None or not self.model.ended or self._settled:return False
+        if self.model.phase != 'fled':return self._settle_outcome()
+        before = self.game.inventory.to_dict()
+        costs = dict(getattr(self.model, 'item_spent', {}))
+        if costs and not self.game.inventory.consume_bundle(costs):
+            self.scene.dismissed = False
+            self.scene.result_error = 'Used items could not be settled. Try again.'
+            return False
+        if not self._settle_outcome():
+            self.game.inventory.restore(before)
+            return False
+        return True
+
+    def _settle_outcome(self):
         if not self.active or not self.scene.model.ended or self._settled:return False
         if self.model.phase == 'victory':
             if self._pending is None:self._begin_victory()

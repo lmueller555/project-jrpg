@@ -58,6 +58,8 @@ class QuestPlaytestStarts(unittest.TestCase):
             with self.subTest(quest=identifier):
                 game = self.game()
                 prepare_quest(game, identifier)
+                for item, count in game.inventory.catalog['starting_items'].items():
+                    self.assertEqual(game.inventory.quantity(item), count)
                 self.assertFalse(game._is_gallery_preview)
                 self.assertTrue(game._is_quest_playtest)
                 self.assertFalse(game.save_store.enabled)

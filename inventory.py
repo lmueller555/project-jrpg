@@ -2,7 +2,7 @@
 
 Definitions belong to the catalog, quantities to the journey. Identical items
 are counted by stable ID; differing equipment stats can use distinct catalog
-IDs. Equipment slots/combat effects are metadata for their future controllers.
+IDs. Equipment slots remain metadata; consumable effects drive shared use rules.
 """
 from copy import deepcopy
 import json
@@ -27,6 +27,15 @@ class Inventory:
         self._granted = set()
         self._delivered = set()
 
+    @classmethod
+    def new_journey(cls):
+        """Create a fresh inventory with starting supplies; never refill a save."""
+        inventory = cls()
+        bundle = inventory.catalog.get('starting_items', {})
+        if bundle and not inventory.add_many(bundle):
+            raise ValueError('Starting inventory could not be created')
+        return inventory
+
     @staticmethod
     def _amount(value):return type(value) is int and 0 < value <= MAX_QUANTITY
 
@@ -37,6 +46,21 @@ class Inventory:
                     or record.get('category') not in CATEGORIES
                     or any(not isinstance(record.get(key), str) or not record[key] for key in ('name', 'description'))):
                 raise ValueError('Invalid item definition')
+            effect = record.get('effect')
+            if effect is not None:
+                schemas = {'restore_hp': {'kind', 'amount'}, 'restore_mp': {'kind', 'amount'},
+                           'revive': {'kind', 'percent'}, 'escape': {'kind'}}
+                if (record['category'] != 'items' or not isinstance(effect, dict)
+                        or not isinstance(effect.get('kind'), str)
+                        or effect.get('kind') not in schemas or set(effect) != schemas[effect['kind']]
+                        or 'amount' in effect and (type(effect['amount']) is not int or not 1 <= effect['amount'] <= 9999)
+                        or 'percent' in effect and (type(effect['percent']) is not int or not 1 <= effect['percent'] <= 100)):
+                    raise ValueError('Invalid consumable effect')
+        starting = self.catalog.get('starting_items', {})
+        if (not isinstance(starting, dict) or starting and
+                (not self._valid_bundle(starting) or any(
+                    self.definitions[key]['category'] == 'key_items' for key in starting))):
+            raise ValueError('Invalid starting items')
         for bundle in self.grants.values():
             if not self._valid_bundle(bundle):raise ValueError('Invalid quest grant')
         for key, delivery in self.deliveries.items():

@@ -97,6 +97,20 @@ def _validate_fixed(enemy, actions):
         raise ValueError('Invalid authored Bestiary encounter')
 
 
+def _validate_drop_table(rows, items):
+    """Independent ordinary-item rolls; quest rewards remain guaranteed only."""
+    if not isinstance(rows, list):raise ValueError('Invalid Bestiary drop table')
+    seen = set()
+    for row in rows:
+        if (not isinstance(row, dict) or set(row) != {'item', 'chance', 'quantity'}
+                or not isinstance(row['item'], str) or row['item'] not in items
+                or row['item'] in seen or items[row['item']]['category'] == 'key_items'
+                or not _integer(row['chance'], 0, 100)
+                or not _integer(row['quantity'], 1, MAX_QUANTITY)):
+            raise ValueError('Invalid Bestiary drop table row')
+        seen.add(row['item'])
+
+
 def _validate_elemental_profile(profile):
     """Validate hidden authoring data, without applying elemental combat rules.
 
@@ -213,11 +227,14 @@ def _validate_species(enemy, actions, archetypes, items, *, enemy_id=None):
             or enemy['level_range'] != {'min': 4, 'max': 4}
             or not has_design or enemy['combat_design']['encounter']['repeatable']):
         raise ValueError('Focus core requires its authored one-time elemental boss')
-    if (not isinstance(enemy['rewards'], dict) or set(enemy['rewards']) != {'drops'}
+    if (not isinstance(enemy['rewards'], dict)
+            or set(enemy['rewards']) not in ({'drops'}, {'drops', 'drop_table'})
             or story_focus is not None and enemy['rewards']['drops'] != {story_focus: 1}
             or (enemy['rewards']['drops'] is not None
                 and not _drops(enemy['rewards']['drops'], items, story_focus=story_focus))):
         raise ValueError('Invalid Bestiary drops')
+    if 'drop_table' in enemy['rewards']:
+        _validate_drop_table(enemy['rewards']['drop_table'], items)
     _validate_elemental_profile(enemy['elemental_profile'])
     planned = enemy['planned_mechanics']
     if (not isinstance(planned, dict) or set(planned) != {'stagger'}):

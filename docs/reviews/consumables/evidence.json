@@ -1,0 +1,160 @@
+{
+  "fixtures": [
+    "Disposable completed-Mill setup; no user save/settings paths.",
+    "Caelan starts at 40 HP / 0 MP; Mira is later set KO to demonstrate revival.",
+    "Real authored cave encounter, shortened travel and ready ATB; no edited enemy HP/outcomes.",
+    "Keyboard/mouse item commands and production effects; no complete-victory claim."
+  ],
+  "captures": {
+    "field_recipient_100": {
+      "text_scale": 1.0,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": null
+    },
+    "field_recipient_150": {
+      "text_scale": 1.5,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": null
+    },
+    "battle_items_100": {
+      "text_scale": 1.0,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": {
+        "player": {
+          "hp": 40,
+          "mp": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    "battle_items_150": {
+      "text_scale": 1.5,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": {
+        "player": {
+          "hp": 40,
+          "mp": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    "battle_recipient_150": {
+      "text_scale": 1.5,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": {
+        "player": {
+          "hp": 40,
+          "mp": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    "potion_impact_150": {
+      "text_scale": 1.5,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": {
+        "player": {
+          "hp": 140,
+          "mp": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    "revival_impact_150": {
+      "text_scale": 1.5,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": {
+        "player": {
+          "hp": 140,
+          "mp": 0
+        },
+        "mira": {
+          "hp": 38,
+          "mp": 30
+        }
+      }
+    },
+    "smoke_impact_150": {
+      "text_scale": 1.5,
+      "inventory": {
+        "caelan_gearblade": 1,
+        "ether": 5,
+        "potion": 5,
+        "rest_kit": 3,
+        "revival_salts": 3,
+        "smoke_bomb": 3
+      },
+      "battle_resources": {
+        "player": {
+          "hp": 140,
+          "mp": 0
+        },
+        "mira": {
+          "hp": 38,
+          "mp": 30
+        }
+      }
+    }
+  }
+}
