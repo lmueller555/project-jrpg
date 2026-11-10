@@ -5,7 +5,7 @@ import random
 import unittest
 
 from battle_model import (ACTION_PATH, BOT_PATH, ENEMY_PATH, GUEST_PATH, BattleModel, BotUnit,
-                          load_actions, load_bots)
+                          load_actions, load_bots, load_enemies)
 from character_attributes import CharacterAttributes
 from combat_damage import physical_damage
 
@@ -21,7 +21,7 @@ class FixedVariance:
 
 class RivetBattleModelTests(unittest.TestCase):
     def model(self, **options):
-        enemies = json.loads(ENEMY_PATH.read_text())
+        enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
         enemies['enemies']['bat']['attributes'].update(hp=1000000, str=0, mag=0, speed=0)
         options.setdefault('enemy_data', enemies)
         options.setdefault('guest_id', 'mira')
@@ -351,12 +351,19 @@ class RivetBattleModelTests(unittest.TestCase):
              'm_def': 14, 'speed': 12, 'acc': 16, 'eva': 12})
         old_guests = deepcopy(benchmark_guests)
         old_guests['guests']['mira']['attack'] = 'spear_thrust'
-        enemies = json.loads(ENEMY_PATH.read_text())
+        benchmark_enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
+        # Retain the historical opponent as well as the historical Mira stats;
+        # real=True below uses production action timings, not the new boss tuning.
+        benchmark_enemies['enemies']['ridgeback_tusker']['attributes'].update(
+            {'hp': 700, 'mp': 0, 'str': 12, 'mag': 4, 'spr': 4, 'def': 18,
+             'm_def': 12, 'speed': 8, 'acc': 12, 'eva': 6, 'lck': 4})
+        enemies = deepcopy(benchmark_enemies)
         enemies['enemies']['ridgeback_tusker']['attributes'].update(
             hp=1000000, str=0, mag=0)
 
         def simulate(*, buff=False, real=False, **options):
             options.setdefault('guest_data', benchmark_guests)
+            options.setdefault('enemy_data', benchmark_enemies)
             if not real:
                 options['enemy_data'] = enemies
                 options.setdefault('action_data', benchmark_actions)

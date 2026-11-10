@@ -271,7 +271,7 @@ rules await design. No damage-limit break is granted by the encounter.
 
 ## Millrace tutorial
 
-The Ridgeback Tusker has **700 HP, Str 12, Def 18 and Speed 8**. The revised lesson opens with a separate visible charge preparation, then gives Caelan a real Guard opportunity. After the guided opening it resumes normal tusk strikes, preparation and charge actions. Guard halves the next incoming hit and survives a harmless preparation turn.
+The Ridgeback Tusker uses the level-one **Brute boss** template: **270 HP, Str 13, Def 14 and Speed 9**, with no extra species or tier stat multipliers. It grants **240 EXP** to each surviving active character. The revised lesson opens with a separate visible charge preparation, then gives Caelan a real Guard opportunity. After the guided opening it resumes normal tusk strikes, preparation and charge actions. Guard halves the next incoming hit and survives a harmless preparation turn.
 
 Mira starts with HP 150, MP 30 and 10 in every other rating, matching her level-one growth profile. Bolt Shot uses potency 0.75. Rivet unfolds automatically with empty ATB and autonomously uses Piston Jab at potency 1, drawing strength from Mira. The enemy’s increased health and reduced strength give the new teaching turns room while retaining the damage backend’s 95–105% variance. No hidden minimum-HP invulnerability holds the creature alive.
 

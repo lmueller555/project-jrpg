@@ -21,15 +21,10 @@ class BestiaryGenerationTests(unittest.TestCase):
             'bat': {'name': 'Bat', 'attributes': dict(zip(ATTRIBUTE_IDS,
                      (72, 4, 7, 6, 3, 6, 5, 8, 10, 12, 4))),
                     'abilities': ['bite', 'wing_gust'],
-                    'rewards': {'drops': {'aether_emerald': 1}}},
-            'ridgeback_tusker': {'name': 'Ridgeback Tusker',
-                    'attributes': dict(zip(ATTRIBUTE_IDS,
-                     (700, 0, 12, 4, 4, 18, 12, 8, 12, 6, 4))),
-                    'abilities': ['tusk_strike', 'prepare_charge', 'tusker_charge'],
                     'rewards': {'drops': {'aether_emerald': 1}}}}
         self.assertEqual(fixed_enemy_definitions(), expected)
         self.assertEqual(set(self.catalog['enemies']),
-                         {*expected, 'cave_bat', 'lithrusk', 'veylume', 'vespermaw', 'embravyr', 'nivareth'})
+                         {*expected, 'ridgeback_tusker', 'cave_bat', 'lithrusk', 'veylume', 'vespermaw', 'embravyr', 'nivareth'})
         for identifier, record in expected.items():
             generated = build_enemy(identifier)
             self.assertEqual(generated['combat'], record)
@@ -37,6 +32,30 @@ class BestiaryGenerationTests(unittest.TestCase):
             self.assertIsNone(generated['xp_reward'])
             self.assertIsNone(generated['behavior'])
             with self.assertRaises(ValueError):build_enemy(identifier, 1)
+
+    def test_mq02_tusker_is_a_level_one_brute_boss_without_extra_stat_factors(self):
+        from enemy_growth import profile_enemy_stats
+        from battle_model import BattleModel
+        from character_attributes import CharacterAttributes
+        from post_battle import battle_reward_definition
+        record = build_enemy('ridgeback_tusker', 1)
+        self.assertEqual(record['combat']['attributes'], profile_enemy_stats('brute', 1))
+        self.assertEqual(record['combat']['attributes']['hp'], 270)
+        self.assertEqual(record['xp_reward'], 240)
+        self.assertEqual(record['metadata']['tier'], 'boss')
+        self.assertEqual(record['fighting_style'], 'telegraphed_windup')
+        self.assertEqual(record['metadata']['species_multipliers'], {})
+        self.assertEqual(record['metadata']['tier_multipliers'], {})
+        self.assertEqual(record['combat']['abilities'], ['tusk_strike', 'prepare_charge', 'tusker_charge'])
+        self.assertEqual(battle_reward_definition('mill'), {'drops': {'aether_emerald': 1}, 'xp': 240})
+        for model in (BattleModel(CharacterAttributes(), enemy_id='ridgeback_tusker'),
+                      BattleModel.from_bestiary(CharacterAttributes(), 'ridgeback_tusker', 1)):
+            self.assertEqual(model.enemy_level, 1)
+            self.assertEqual(model.enemy_xp_reward, 240)
+            self.assertEqual(model.enemy_definition, record['combat'])
+            self.assertIsNone(model._enemy_behavior, 'The original MQ02 targeting must remain in control')
+        for level in (None, 2, True):
+            with self.assertRaises(ValueError):build_enemy('ridgeback_tusker', level)
 
     def test_cave_bat_matches_every_approved_stat_and_reward(self):
         expected = {
@@ -88,7 +107,7 @@ class BestiaryGenerationTests(unittest.TestCase):
                 self.assertEqual(profile['absorption'], {'elements': [], 'healing_percent': 100})
                 self.assertIn('wing membranes', profile['design_rationale'])
                 self.assertNotIn('elemental_affinities', enemy['metadata']['planned_mechanics'])
-        for identifier in ('bat', 'ridgeback_tusker'):
+        for identifier in ('bat',):
             self.assertNotIn('elemental_profile', build_enemy(identifier)['metadata'])
 
     def test_new_cave_species_resolve_their_roles_and_full_elemental_profiles(self):
@@ -205,7 +224,7 @@ class BestiaryGenerationTests(unittest.TestCase):
             self.assertEqual(build_enemy('veylume', level)['combat']['attributes']['mp']//flash['mp_cost'], 2)
 
     def test_existing_species_and_fixed_encounters_have_ready_presentation(self):
-        for identifier, level in (('cave_bat', 2), ('bat', None), ('ridgeback_tusker', None),
+        for identifier, level in (('cave_bat', 2), ('bat', None), ('ridgeback_tusker', 1),
                                   ('lithrusk', 2), ('veylume', 3)):
             with self.subTest(enemy=identifier):
                 self.assertFalse(build_enemy(identifier, level)['metadata']['presentation_pending'])

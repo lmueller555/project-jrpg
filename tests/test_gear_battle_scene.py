@@ -12,7 +12,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame
 
 from audio_settings import AudioSettings
-from battle_model import BattleModel, ENEMY_PATH
+from battle_model import BattleModel, ENEMY_PATH, load_actions, load_enemies
 from battle_scene import BattleScene
 from character_attributes import CharacterAttributes
 from gear_state import GEM_ORDER, REQUIRED_GEMS
@@ -45,7 +45,7 @@ class GearBattleSceneTests(unittest.TestCase):
         pygame.quit()
 
     def make_scene(self, *, active_gem='water', tutorial=False, learned=('aether_edge',)):
-        enemies = json.loads(ENEMY_PATH.read_text())
+        enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
         if not tutorial:
             enemies['enemies']['ridgeback_tusker']['attributes'].update(
                 hp=1000000, str=0, mag=0, speed=0)

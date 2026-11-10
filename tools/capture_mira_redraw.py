@@ -29,7 +29,7 @@ import pygame
 from PIL import Image, ImageDraw, ImageFont
 
 from audio_settings import AudioSettings
-from battle_model import BattleModel, ENEMY_PATH
+from battle_model import BattleModel, ENEMY_PATH, load_actions, load_enemies
 from battle_scene import BattleScene
 from character_attributes import CharacterAttributes
 from ui_style import UIStyle
@@ -146,7 +146,7 @@ class Capture:
 
     def make_scene(self, *, reduced=False, enemy_hp=1000000, mira_hp=None):
         self.game.audio.reduced_motion = reduced
-        enemies = json.loads(ENEMY_PATH.read_text())
+        enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
         enemies['enemies']['ridgeback_tusker']['attributes'].update(hp=enemy_hp, speed=0)
         model = BattleModel(self.game.attributes, ['aether_edge'], weapon_equipped=True,
                             guest_id='mira', enemy_id='ridgeback_tusker', enemy_data=enemies,

@@ -288,6 +288,9 @@ class MillBattleGameplayTests(unittest.TestCase):
 
     def test_first_story_fight_has_two_real_characters_and_freezes_world_and_all_gauges(self):
         scene = self.start();game = self.game;c = game.mill_quest
+        self.assertEqual(scene.model.enemy.max_hp, 270)
+        self.assertEqual(scene.model.enemy_level, 1)
+        self.assertEqual(scene.model.enemy_xp_reward, 240)
         self.assertEqual([member.name for member in scene.model.party], ['Caelan', 'Mira'])
         self.assertEqual(sum(c.mira in world.npcs for world in game.scenes.values()), 1)
         while getattr(scene, 'tutorial_active', False):key(game, pygame.K_SPACE)
@@ -310,6 +313,24 @@ class MillBattleGameplayTests(unittest.TestCase):
         self.start(approach=(480, 240))
         self.assertNotIn('intake', self.game.mill_quest.inspected)
         self.assertFalse(self.game.mill_quest.encounter_cleared)
+
+    def test_previous_normal_tusker_reward_survives_continue_after_boss_conversion(self):
+        from bestiary import build_enemy
+        scene = self.start();game = self.game
+        before = {key: game.character_progression[key].total_xp for key in game.party.active_ids}
+        def previous_enemy(*args, **kwargs):
+            record = build_enemy(*args, **kwargs)
+            record['xp_reward'] = 37
+            return record
+        with patch('post_battle.build_enemy', side_effect=previous_enemy):
+            finish_mill_battle(game, dismiss=False, read_aftermath=False)
+        self.assertEqual(game.combat.snapshot()['progression']['amount'], 37)
+        restored = self.new_game(True)
+        self.assertTrue(restored.has_saved_journey, restored.save_error)
+        self.assertTrue(restored.begin_journey(True), restored.save_error)
+        for key, total in before.items():
+            self.assertEqual(restored.character_progression[key].total_xp, total+37)
+        self.assertTrue(restored.battle_rewards.has_receipt('mq02:ridgeback_tusker'))
 
     def test_victory_settles_once_then_linear_aftermath_unlocks_intake(self):
         scene = self.start();game = self.game;c = game.mill_quest

@@ -27,29 +27,69 @@
       }
     },
     "ridgeback_tusker": {
+      "mode": "species",
       "name": "Ridgeback Tusker",
-      "attributes": {
-        "hp": 700,
-        "mp": 0,
-        "str": 12,
-        "mag": 4,
-        "spr": 4,
-        "def": 18,
-        "m_def": 12,
-        "speed": 8,
-        "acc": 12,
-        "eva": 6,
-        "lck": 4
-      },
-      "abilities": [
-        "tusk_strike",
-        "prepare_charge",
-        "tusker_charge"
+      "description": "A massive riverbank boar whose lowered tusks warn of Bankbreaker Charge. The MQ02 encounter uses the level-one Brute boss profile.",
+      "family": "beast",
+      "tier": "boss",
+      "habitats": [
+        "eldenmere_millrace"
       ],
+      "level_range": {
+        "min": 1,
+        "max": 1
+      },
+      "archetype": "windup_attacker",
+      "stat_profile": "brute",
+      "fighting_style": "telegraphed_windup",
+      "species_multipliers": {},
+      "tier_multipliers": {},
+      "behavior": {
+        "sequence": [
+          "tusk_strike",
+          "prepare_charge",
+          "tusker_charge"
+        ],
+        "fallback": "tusk_strike",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": "ridgeback_tusker",
+        "action_aliases": {}
+      },
       "rewards": {
         "drops": {
           "aether_emerald": 1
         }
+      },
+      "elemental_profile": {
+        "element": "non_elemental",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 100,
+          "electric": 100,
+          "water": 100,
+          "ice": 100,
+          "nature": 100,
+          "wind": 100,
+          "holy": 100,
+          "ground": 100
+        },
+        "absorption": {
+          "elements": [],
+          "healing_percent": 100
+        },
+        "design_rationale": "An unaligned physical beast; existing neutral elemental responses are preserved."
+      },
+      "planned_mechanics": {
+        "stagger": {
+          "status": "planned",
+          "resistance": "low"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 1
       }
     },
     "cave_bat": {

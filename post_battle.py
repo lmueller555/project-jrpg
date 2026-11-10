@@ -32,18 +32,22 @@ def _previous_reward_xp(kind, encounter=None):
     original = [2*int(30*level**0.5+0.5) for level in levels]
     reduced = sum((amount*70+50)//100 for amount in original)*(10 if boss else 1)
     # Authored bosses shipped after the 30% cut. They never used the older curve.
-    return (reduced,) if boss else (sum(original), reduced)
+    previous = (reduced,) if boss else (sum(original), reduced)
+    # MQ02 formerly awarded 37 EXP using the 24 × level^0.4 normal L3 reference.
+    return (*previous, 37) if kind == 'mill' else previous
 
 
 def battle_reward_definition(kind, encounter=None):
     """Resolve authored EXP and drops without retuning legacy combat stats.
 
-    The optional town Bat and MQ02 Tusker retain their fixed combat profiles.
-    Their reward reference levels are one and three respectively. Cave
-    formations use each species' selected Bestiary level.
+    The town Bat retains its level-one normal reward reference. MQ02 uses its
+    level-one Brute boss. Cave formations use each selected Bestiary level.
     """
     if kind == 'cave_boss':
         resolved = build_enemy('vespermaw', 7)
+        return {'drops': dict(resolved['combat']['rewards']['drops']), 'xp': resolved['xp_reward']}
+    if kind == 'mill':
+        resolved = build_enemy('ridgeback_tusker', 1)
         return {'drops': dict(resolved['combat']['rewards']['drops']), 'xp': resolved['xp_reward']}
     if kind == 'elemental_boss':
         from elemental_bosses import valid_ticket
@@ -58,9 +62,8 @@ def battle_reward_definition(kind, encounter=None):
             for item, amount in resolved['combat']['rewards']['drops'].items():
                 drops[item] = drops.get(item, 0)+amount
         return {'drops': drops, 'xp': xp}
-    identifier = 'ridgeback_tusker' if kind == 'mill' else 'bat'
-    return {'drops': dict(load_bestiary()['enemies'][identifier]['rewards']['drops']),
-            'xp': monster_xp(3 if kind == 'mill' else 1)}
+    return {'drops': dict(load_bestiary()['enemies']['bat']['rewards']['drops']),
+            'xp': monster_xp(1)}
 
 
 def _resources(value):

@@ -39,7 +39,7 @@ class PartyBattleModelTests(unittest.TestCase):
         self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
         mira = model.combatant('mira')
         self.assertEqual((mira.hp, mira.mp, mira.value('str')), (150, 30, 10))
-        self.assertEqual(model.enemy.hp, 700)
+        self.assertEqual(model.enemy.hp, 270)
         self.assertEqual(model.enemy_definition['abilities'],
                          ['tusk_strike', 'prepare_charge', 'tusker_charge'])
         model.combatant('mira').atb = .05
@@ -49,12 +49,12 @@ class PartyBattleModelTests(unittest.TestCase):
         self.assertTrue(model.choose_action('attack'))
         self.assertEqual(model.current_action.action, 'bolt_shot')
         model.update(.4)
-        self.assertEqual(model.current_action.damage, 12)
+        self.assertEqual(model.current_action.damage, 13)
         model.update(1000)
         self.assertEqual(model.ready_actor, 'player')
         self.assertTrue(model.choose_action('attack'))
         model.update(model.current_action.impact_at)
-        self.assertEqual(model.current_action.damage, 16)
+        self.assertEqual(model.current_action.damage, 17)
         self.assertEqual(source.to_dict(), before)
 
     def test_every_gauge_freezes_at_miras_exact_ready_boundary(self):
@@ -65,7 +65,7 @@ class PartyBattleModelTests(unittest.TestCase):
         self.assertEqual(model.active_player.name, 'Mira')
         self.assertEqual(model.combatant('mira').atb, 1)
         self.assertAlmostEqual(model.player.atb, .95)
-        self.assertAlmostEqual(model.enemy.atb, .95*.152/.16)
+        self.assertAlmostEqual(model.enemy.atb, .95*.156/.16)
         before = self.snapshot(model)
         for seconds in (.1, 7, 10000):model.update(seconds)
         self.assertEqual(self.snapshot(model), before)
@@ -75,7 +75,7 @@ class PartyBattleModelTests(unittest.TestCase):
     def test_simultaneous_party_readiness_allows_selection_before_enemy_turn(self):
         guests = json.loads(GUEST_PATH.read_text())
         guests['guests']['mira']['attributes']['speed'] = 10
-        enemies = json.loads(ENEMY_PATH.read_text())
+        enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
         enemies['enemies']['ridgeback_tusker']['attributes']['speed'] = 10
         model = self.model(guest_data=guests, enemy_data=enemies)
         model.update(6.25)
@@ -140,7 +140,7 @@ class PartyBattleModelTests(unittest.TestCase):
                    and event['action'] == 'tusker_charge')
         self.assertEqual(tell['target'], 'player')
         self.assertEqual(hit['target'], 'player')
-        self.assertEqual(hit['damage'], 19)
+        self.assertEqual(hit['damage'], 23)
         self.assertTrue(hit['guarded'])
         self.assertFalse(any(event['type'] == 'impact' and event['action'] == 'prepare_charge'
                              for event in history))
@@ -160,12 +160,12 @@ class PartyBattleModelTests(unittest.TestCase):
         model.update(.45)
         self.assertTrue(model.player.guarded)
         self.assertEqual(model.player.hp, 140)
-        self.assertEqual(model.combatant('mira').hp, 124)
+        self.assertEqual(model.combatant('mira').hp, 120)
 
     def test_incapped_caelan_does_not_end_battle_while_mira_can_act(self):
         source = CharacterAttributes()
         self.assertTrue(source.set_current(hp=0))
-        enemies = json.loads(ENEMY_PATH.read_text())
+        enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
         enemies['enemies']['ridgeback_tusker']['attributes']['hp'] = 1
         model = self.model(source, enemy_data=enemies)
         self.assertEqual(model.phase, 'charging')
@@ -182,7 +182,7 @@ class PartyBattleModelTests(unittest.TestCase):
         self.assertTrue(source.set_current(hp=0))
         guests = json.loads(GUEST_PATH.read_text())
         guests['guests']['mira']['attributes']['hp'] = 1
-        enemies = json.loads(ENEMY_PATH.read_text())
+        enemies = {'version': 1, 'enemies': load_enemies(load_actions())}
         enemies['enemies']['ridgeback_tusker']['attributes'].update(str=255, speed=255)
         model = self.model(source, guest_data=guests, enemy_data=enemies)
         model.update(1000)
@@ -210,7 +210,7 @@ class PartyBattleModelTests(unittest.TestCase):
         model.update(.7)
         self.assertEqual(model.phase, 'fled')
         self.assertEqual([member.hp for member in model.party], [140, 150])
-        self.assertEqual(model.enemy.hp, 700)
+        self.assertEqual(model.enemy.hp, 270)
 
     def test_large_and_small_updates_match_through_party_and_enemy_turns(self):
         large = self.model(rng=random.Random(71))
@@ -245,7 +245,7 @@ class PartyBattleModelTests(unittest.TestCase):
         with self.assertRaises(ValueError):load_guests(load_actions(), bad)
 
     def test_enemy_cannot_have_only_nondamaging_preparation_actions(self):
-        data = json.loads(ENEMY_PATH.read_text())
+        data = {'version': 1, 'enemies': load_enemies(load_actions())}
         data['enemies']['ridgeback_tusker']['abilities'] = ['prepare_charge']
         with self.assertRaises(ValueError):load_enemies(load_actions(), data)
 
