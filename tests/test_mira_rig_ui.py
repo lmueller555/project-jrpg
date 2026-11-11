@@ -93,8 +93,6 @@ class MiraRigUITests(unittest.TestCase):
                         for pip in self.widget.pip_rects[key]:
                             self.assertTrue(self.widget.channel_rects[key].contains(pip))
                             self.assertLess(pip.right, self.widget.buttons[(key, '-')].left)
-                        expected = key.title()+' 2' if width == 180 else key[0].upper()+' 2'
-                        self.assertEqual(self.widget.channel_labels[key], expected)
 
     def test_window_focus_loss_releases_input_capture_without_committing_draft(self):
         self.click(self.widget.buttons[('support', '-')].center)

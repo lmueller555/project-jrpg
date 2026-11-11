@@ -12,7 +12,6 @@ from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, GOLD, BRASS, IVORY, MUTE
 
 
 CHANNELS = ('weapons', 'protection', 'support')
-NAMES = {'weapons': 'Weapons', 'protection': 'Protection', 'support': 'Support'}
 COLORS = {'weapons': '#ec9c59', 'protection': '#76c8dc', 'support': '#8dca9d'}
 DESCRIPTIONS = {
     'weapons': 'Weapons · forearm emitter and powered actuator',
@@ -34,7 +33,6 @@ class MiraRigUI:
         self.rect = pygame.Rect(0, 0, 120, 60)
         self.buttons = {}
         self.channel_rects = {}
-        self.channel_labels = {}
         self.pip_rects = {}
         self.focused = False
         self.selected_channel = 'weapons'
@@ -213,18 +211,7 @@ class MiraRigUI:
         painter.text(title, (bounds.left+7, bounds.top+2), role='small', color=GOLD, bold=True)
         budget = str(CAPACITY-self.available)+'/'+str(CAPACITY)
         painter.text(budget, (bounds.right-5, bounds.top+2), role='small', color=GOLD, anchor='topright')
-        # Full names make the two-person layout immediately understandable.
-        # Narrow columns use initials, with the complete name in detail_text.
-        font = painter.font('small', True)
-        names = {key: NAMES[key]+' '+str(self._draft[key]) for key in CHANNELS}
-        widest = max(font.size(label)[0] for label in names.values())
-        first_row = self.channel_rects[CHANNELS[0]]
-        label_left = first_row.left+16
-        pip_limit = self.buttons[(CHANNELS[0], '-')].left-4
-        if pip_limit-(label_left+widest+5) < CAPACITY*4:
-            names = {key: key[0].upper()+' '+str(self._draft[key]) for key in CHANNELS}
-            widest = max(font.size(label)[0] for label in names.values())
-        self.channel_labels = names
+        # Channel symbols identify each row; the pips show allocated power.
         self.pip_rects = {}
         for key in CHANNELS:
             row = self.channel_rects[key]
@@ -233,13 +220,11 @@ class MiraRigUI:
             if chosen:painter.rect(GOLD, row, 1)
             color = COLORS[key] if enabled else MUTED
             self._icon(painter, key, (row.left+8, row.centery), color)
-            label = names[key]
-            painter.text(label, (row.left+16, row.centery), role='small', color=IVORY if enabled else MUTED,
-                         anchor='midleft', bold=True)
             first_button = self.buttons[(key, '-')]
-            pip_left = row.left+16+widest+5
+            pip_left = row.left+20
             pip_right = first_button.left-4
-            step = min(7, max(3, (pip_right-pip_left)//CAPACITY))
+            step = min(10, max(3, (pip_right-pip_left)//CAPACITY))
+            pip_left += max(0, (pip_right-pip_left-CAPACITY*step)//2)
             pip_width = max(2, step-2)
             self.pip_rects[key] = []
             for index in range(CAPACITY):
