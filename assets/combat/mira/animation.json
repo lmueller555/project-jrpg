@@ -1276,7 +1276,7 @@
         }
       ]
     },
-    "overclock": {
+    "rig_activation": {
       "loop": false,
       "frames": [
         {
@@ -1326,7 +1326,7 @@
             18,
             17
           ],
-          "file": "overclock_01.png",
+          "file": "rig_activation_01.png",
           "duration_ms": 150
         },
         {
@@ -1376,7 +1376,7 @@
             20,
             16
           ],
-          "file": "overclock_02.png",
+          "file": "rig_activation_02.png",
           "duration_ms": 150
         },
         {
@@ -1426,7 +1426,7 @@
             17,
             15
           ],
-          "file": "overclock_03.png",
+          "file": "rig_activation_03.png",
           "duration_ms": 200
         },
         {
@@ -1476,7 +1476,7 @@
             17,
             16
           ],
-          "file": "overclock_04.png",
+          "file": "rig_activation_04.png",
           "duration_ms": 100
         },
         {
@@ -1526,7 +1526,7 @@
             17,
             16
           ],
-          "file": "overclock_05.png",
+          "file": "rig_activation_05.png",
           "duration_ms": 150
         },
         {
@@ -1576,7 +1576,7 @@
             17,
             17
           ],
-          "file": "overclock_06.png",
+          "file": "rig_activation_06.png",
           "duration_ms": 150
         }
       ],

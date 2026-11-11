@@ -16,8 +16,7 @@ nearest-neighbor sampling and registration; they do not draw or warp anatomy.
 four idle, eight basic attack, two guard entry, two held guard, four guard impact,
 four hurt, six rig activation, four victory, four defeat and four walk drawings.
 Their state ordering and current action timing remain compatible with the
-existing combat renderer. The legacy `overclock` state name temporarily plays
-the new cuff-activation artwork; phase two replaces its gameplay meaning.
+existing combat renderer. The `rig_activation` state depicts operation of the worn cuff controls.
 
 `skills_authored.png` contains 40 additional drawings, eight columns/five rows:
 

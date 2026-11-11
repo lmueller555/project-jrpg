@@ -120,7 +120,7 @@ class BestiaryBattleTests(unittest.TestCase):
                 malformed['actions']['aether_dart']['element'] = value
                 with self.assertRaisesRegex(ValueError, 'Invalid battle action element'):
                     load_actions(malformed)
-        for identifier in ('guard', 'flee', 'prepare_charge', 'overclock', 'nature_edge'):
+        for identifier in ('guard', 'flee', 'prepare_charge', 'nature_edge'):
             with self.subTest(utility=identifier):
                 malformed = deepcopy(data)
                 malformed['actions'][identifier]['element'] = 'electric'
@@ -160,7 +160,7 @@ class BestiaryBattleTests(unittest.TestCase):
 
     def test_target_cycle_uses_party_order_skips_ko_and_keeps_query_read_only(self):
         profiles = party_profiles()
-        model = self.model(party_members=profiles, bot_loadouts={})
+        model = self.model(party_members=profiles)
         self.assertEqual([model._enemy_target('cave_bat_bite') for _ in range(3)],
                          ['player']*3)
         targets = [self.enemy_turn(model)[0].target for _ in range(4)]
@@ -204,7 +204,7 @@ class BestiaryBattleTests(unittest.TestCase):
         for enemy_id in fixed:
             with self.subTest(enemy=enemy_id):
                 model = BattleModel(player(), enemy_id=enemy_id,
-                                    party_members=party_profiles(), bot_loadouts={})
+                                    party_members=party_profiles())
                 self.assertEqual(model.enemy_definition, fixed[enemy_id])
                 self.assertEqual(model.enemy_sprite_id, enemy_id)
                 self.assertEqual(model.enemy_level, 1 if enemy_id == 'ridgeback_tusker' else None)
@@ -279,7 +279,6 @@ class CaveSpeciesBattleTests(unittest.TestCase):
         catalogue['enemies'][identifier]['presentation'] = {
             'sprite_id': 'ridgeback_tusker', 'action_aliases': aliases}
         options.setdefault('party_members', party_profiles())
-        options.setdefault('bot_loadouts', {})
         return BattleModel.from_bestiary(player(level, hp=9999), identifier, level,
                                          bestiary_data=catalogue, rng=FixedVariance(), **options)
 

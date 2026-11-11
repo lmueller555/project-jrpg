@@ -1,10 +1,4 @@
-"""Export the generated machinist actors and Ridgeback Tusker combat atlas.
-
-This only segments authored opaque sprites, applies one fixed native scale per
-actor, and registers the resulting cutouts at their ground anchors. Mira and
-Rivet are delegated to the current machinist exporter; historical spear art is
-never written back over their production assets.
-"""
+"""Export the wearable Engineer and Ridgeback Tusker combat banks."""
 from __future__ import annotations
 
 from collections import deque
@@ -15,9 +9,9 @@ from pathlib import Path
 from PIL import Image
 
 if __package__:
-    from .build_machinist_assets import build_actor as build_machinist_actor
+    from .build_mira_combat import build as build_mira
 else:
-    from build_machinist_assets import build_actor as build_machinist_actor
+    from build_mira_combat import build as build_mira
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,8 +102,8 @@ def exported_frames(source, actor):
 
 
 def build_actor(actor):
-    if actor in ('mira', 'rivet'):
-        return build_machinist_actor(actor)
+    if actor == 'mira':
+        return build_mira()
     settings = ACTORS[actor]
     source = SOURCE/settings['source']
     directory = OUTPUT/actor
@@ -141,11 +135,10 @@ def build_actor(actor):
 
 
 def main():
-    for actor in ('mira', 'rivet'):
-        build_machinist_actor(actor)
+    build_mira()
     for actor in ACTORS:build_actor(actor)
-    print(json.dumps({'actors': ['mira', 'rivet', *ACTORS],
-                      'source_cells_per_actor': {'mira': 19, 'rivet': 16, 'ridgeback_tusker': 16}}))
+    print(json.dumps({'actors': ['mira', *ACTORS],
+                      'source_cells_per_actor': {'mira': 82, 'ridgeback_tusker': 16}}))
     return 0
 
 

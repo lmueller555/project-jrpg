@@ -29,8 +29,8 @@ The eventual combat handoff should continue the same cue without restarting. Thi
 | 7.00–7.50 | Caelan and Lucan dash toward Rhea |
 | 7.50–9.50 | Slow-motion flaming sword strike and enemy-facing kneeling shield interception |
 | 9.50–11.00 | Perspective orbit reveals Mira at the original party position |
-| 11.00–12.80 | Push toward Mira loading her launcher |
-| 12.80–15.10 | Move behind her launcher; she destroys the second shard |
+| 11.00–12.80 | Push toward Mira adjusting and charging her worn cuff emitter |
+| 12.80–15.10 | Move behind her arm-rig sight; she destroys the second shard |
 | 15.10–17.30 | Camera pushes toward the existing full-body Rhea; closed eyes strain, then open angrily with a green gleam |
 | 17.30–17.95 | Prison shatters; rapid retreat behind the Reaper while Rhea turns toward her |
 | 17.95–20.25 | Sweep from one Reaper shoulder to the other, targeting Rhea and her constructing rune |

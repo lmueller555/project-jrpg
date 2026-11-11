@@ -16,7 +16,6 @@ import random
 
 from character_attributes import ATTRIBUTE_IDS, ATTRIBUTE_CAPS
 from character_abilities import starting_abilities
-from bot_loadouts import load_bot_definitions, starting_battle_loadouts
 from battle_choreography import timing_override
 from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
                            roll_variance)
@@ -30,7 +29,6 @@ ROOT = Path(__file__).resolve().parent
 ACTION_PATH = ROOT/'assets/combat/actions.json'
 ENEMY_PATH = ROOT/'assets/combat/bestiary.json'
 GUEST_PATH = ROOT/'assets/combat/guests.json'
-BOT_PATH = ROOT/'assets/combat/bots.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
@@ -68,7 +66,6 @@ def load_actions(data=None):
         expected_fields = fields.copy()
         if isinstance(action, dict):
             expected_fields = (fields | {'weapon_hits'} if action.get('kind') == 'enchant' else
-                               fields | {'turns', 'rate_multiplier'} if action.get('kind') == 'haste' else
                                fields | {'magical_potency'} if action.get('kind') == 'spellblade' else fields.copy())
             if 'element' in action:expected_fields = expected_fields | {'element'}
             if 'power_requirements' in action:expected_fields |= {'power_requirements'}
@@ -79,8 +76,8 @@ def load_actions(data=None):
                 or set(action) != expected_fields
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'haste', 'spellblade', 'failed_edge', 'barrier', 'heal')
-                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'owned_bot', 'ally')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'spellblade', 'failed_edge', 'barrier', 'heal')
+                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'ally')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
                 or not _number(action['impact_at'], 0, action['duration'])
@@ -124,12 +121,6 @@ def load_actions(data=None):
                     or action['animation'] != 'cast'
                     or not _integer(action['weapon_hits'], 1, 999)):
                 raise ValueError('Invalid weapon enchantment')
-        elif action['kind'] == 'haste':
-            if (action['potency'] != 0 or action['target'] != 'owned_bot'
-                    or action['animation'] != 'overclock'
-                    or not _integer(action['turns'], 1, 999)
-                    or not _number(action['rate_multiplier'], 1.001, 10)):
-                raise ValueError('Invalid bot haste')
         elif action['kind'] == 'barrier':
             if action['potency'] != 0 or action['target'] != 'self' or 'barrier_percent' not in action:
                 raise ValueError('Invalid barrier action')
@@ -188,16 +179,6 @@ def load_guests(actions, data=None):
     return deepcopy(data['guests'])
 
 
-def load_bots(actions, data=None):
-    """Validate bot profiles and their free autonomous attacks together."""
-    definitions = load_bot_definitions(data)
-    for bot in definitions.values():
-        for identifier in bot['ability_ids']:
-            if (identifier not in actions or actions[identifier]['kind'] != 'physical'
-                    or actions[identifier]['target'] != 'opponent'
-                    or actions[identifier]['mp_cost'] != 0):
-                raise ValueError('Invalid autonomous bot action')
-    return definitions
 
 
 def _party_snapshot(members, actions):
@@ -251,19 +232,6 @@ class Combatant:
     def max_mp(self):return self.value('mp')
 
 
-@dataclass
-class BotUnit:
-    """An untargetable battle attachment; it owns no health or magic resource."""
-    identifier: str
-    owner_id: str
-    name: str
-    attributes: dict
-    ability_id: str
-    atb: float = 0.0
-    haste_turns: int = 0
-    haste_rate_multiplier: float = 1.5
-
-    def value(self, identifier):return self.attributes[identifier]
 
 
 @dataclass
@@ -459,7 +427,7 @@ class BattleModel:
 
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
-                 enemy_data=None, guest_data=None, bot_loadouts=None,
+                 enemy_data=None, guest_data=None,
                  guest_abilities=None, spellblade_tutorial=False, aqua_edge_tutorial=False,
                  elemental_tutorial=False,
                  active_gem=DEFAULT_GEM, owned_gems=GEM_ORDER, party_members=None, initial_atb=False,
@@ -540,12 +508,6 @@ class BattleModel:
             load_guests(self.actions, guest_data)
         self.party = tuple(members)
         self.guest_abilities = self._guest_ability_map(guest_abilities)
-        # The wearable rig replaces the autonomous combat attachment. Retired
-        # loadout inputs remain accepted until their story/compatibility cleanup.
-        self.bot_definitions = {}
-        self.bots = ()
-        self._bot_owner_alive = {bot.identifier: bool(self.combatant(bot.owner_id).hp)
-                                 for bot in self.bots}
         self._active_actor = 'player'
         self._enemy_states = {'enemy': EnemyState(preparations={})}
         self.enemy_id = enemy_id
@@ -583,9 +545,6 @@ class BattleModel:
         self.phase = 'charging' if any(member.hp for member in self.party) else 'defeat'
         self.current_action = self.last_action = None
         self.events = []
-        for bot in self.bots:
-            self.events.append({'type': 'bot_deployed', 'actor': bot.identifier,
-                                'owner': bot.owner_id})
         self.message = 'A Bat approaches!' if enemy_id == 'bat' else self.enemy.name+' approaches!'
         self._pending_outcome = None
         self._enemy_action_index = 0
@@ -608,7 +567,6 @@ class BattleModel:
         self.aqua_edge_stage = (('complete' if 'aqua_edge' in self.learned_abilities else 'attempt')
                                 if aqua_edge_tutorial else None)
         self.aqua_edge_discovered = False
-        self._lesson_bot_actions = 0
         if initial_atb and not self.spellblade_guided:self.randomize_initial_atb(initial_atb_seed)
         if self.spellblade_guided:self.enemy.atb = 1.
         if self.phase == 'defeat':self._result('defeat')
@@ -619,11 +577,10 @@ class BattleModel:
             raise ValueError('Invalid initial ATB seed')
         generator = random.Random(seed) if seed is not None else self.rng
         self.initial_atb_values = {}
-        for actor in (*self.party, *self.enemies, *self.bots):
+        for actor in (*self.party, *self.enemies):
             value = (generator.random()*.5 if callable(getattr(generator, 'random', None))
                      else generator.randint(0, 500000)/1000000)
-            alive = (bool(self._party_actor(actor.owner_id).hp) if isinstance(actor, BotUnit)
-                     else bool(actor.hp))
+            alive = bool(actor.hp)
             actor.atb = value if alive else 0.
             self.initial_atb_values[actor.identifier] = actor.atb
         return generator
@@ -671,12 +628,10 @@ class BattleModel:
     @staticmethod
     def atb_rate(combatant):
         rate = .12+.004*combatant.value('speed')
-        if isinstance(combatant, BotUnit) and combatant.haste_turns:
-            rate *= combatant.haste_rate_multiplier
         return rate
 
     def combatant(self, identifier):
-        return next((member for member in (*self.party, *self.bots,
+        return next((member for member in (*self.party,
                                            *getattr(self, 'enemies', ()))
                      if member.identifier == identifier), None)
 
@@ -741,13 +696,7 @@ class BattleModel:
             return target.identifier
         return self.living_enemies[0].identifier if self.living_enemies else None
 
-    def bot_for(self, owner_id='mira'):
-        return next((bot for bot in self.bots if bot.owner_id == owner_id), None)
 
-    def active_bot(self, owner_id='mira'):
-        bot = self.bot_for(owner_id)
-        owner = self._party_actor(owner_id)
-        return bot if bot is not None and owner is not None and owner.hp and not self.ended else None
 
     def _guest_ability_map(self, supplied):
         if supplied is None:
@@ -761,31 +710,6 @@ class BattleModel:
             raise ValueError('Invalid guest abilities')
         return {owner: frozenset(known) for owner, known in supplied.items()}
 
-    def _make_bots(self, supplied):
-        if supplied is None:supplied = starting_battle_loadouts()
-        if not isinstance(supplied, dict):raise ValueError('Invalid battle bot loadouts')
-        bots = []
-        used = set()
-        for owner_id, loadout in supplied.items():
-            if (not isinstance(owner_id, str) or not owner_id
-                    or not isinstance(loadout, dict) or set(loadout) != {'bot_id', 'ability_id'}
-                    or not isinstance(loadout['bot_id'], str)
-                    or loadout['bot_id'] not in self.bot_definitions):
-                raise ValueError('Invalid battle bot loadout')
-            identifier = loadout['bot_id']
-            definition = self.bot_definitions[identifier]
-            if (definition['owner_id'] != owner_id or identifier in used
-                    or not isinstance(loadout['ability_id'], str)
-                    or loadout['ability_id'] not in definition['ability_ids']):
-                raise ValueError('Invalid battle bot loadout')
-            used.add(identifier)
-            owner = self._party_actor(owner_id)
-            if owner is None:continue
-            attributes = dict(definition['attributes'])
-            attributes['str'] = owner.value('str')
-            bots.append(BotUnit(identifier, owner_id, definition['name'], attributes,
-                                loadout['ability_id']))
-        return tuple(bots)
 
     @property
     def active_player(self):
@@ -1103,7 +1027,7 @@ class BattleModel:
                     and identifier == state.design['recovery']['ends_before_action']):
                 state.vulnerable = False
                 self.events.append({'type': 'recovery_ended', 'actor': actor_id, 'action': identifier})
-        if not isinstance(actor, BotUnit):actor.mp -= self.action_mp_cost(identifier, actor_id)
+        actor.mp -= self.action_mp_cost(identifier, actor_id)
         actor.atb = 0.0
         target = (self._enemy_target(identifier, actor_id) if enemy_actor
                   else self._living_target(target_id))
@@ -1111,9 +1035,6 @@ class BattleModel:
         elif record['target'] == 'ally':target = target_id
         elif record['target'] == 'all_opponents':target = 'all_opponents'
         elif record['target'] == 'none':target = None
-        elif record['target'] == 'owned_bot':
-            bot = self.active_bot(actor_id)
-            target = bot.identifier if bot is not None else None
         if enemy_actor and record['target'] == 'opponent' and target is not None:
             state = self._enemy_states[actor_id]
             if state.behavior is not None:
@@ -1217,7 +1138,7 @@ class BattleModel:
                         'amount': amount, 'revived': before_hp == 0,
                         'resource': 'mp' if effect['kind'] == 'restore_mp' else 'hp'})
                     self.message = target.name+' recovers '+str(amount)+(' MP.' if effect['kind'] == 'restore_mp' else ' HP.')
-                    self._sync_bot_activity()
+                    self._sync_party_activity()
         elif action.kind == 'flee':
             self._pending_outcome = 'fled'
             self.message = actor.name+' gets away safely.'
@@ -1252,17 +1173,6 @@ class BattleModel:
             self.events.append({'type': 'enchant', 'actor': action.actor,
                                 'action': action.action,
                                 'remaining_hits': actor.aether_edge_hits})
-        elif action.kind == 'haste':
-            bot = self.active_bot(action.actor)
-            if bot is not None and bot.identifier == action.target:
-                record = self.actions[action.action]
-                bot.haste_turns = record['turns']
-                bot.haste_rate_multiplier = record['rate_multiplier']
-                self.message = actor.name+' overclocks '+bot.name+'.'
-                self.events.append({'type': 'haste_applied', 'actor': action.actor,
-                                    'target': bot.identifier, 'action': action.action,
-                                    'remaining_turns': bot.haste_turns,
-                                    'rate_multiplier': bot.haste_rate_multiplier})
         else:
             if self.actions[action.action]['target'] == 'all_opponents':
                 opponents = self.party if self.is_enemy(action.actor) else self.enemies
@@ -1310,7 +1220,7 @@ class BattleModel:
                 self.events.append({'type': 'spellblade_discovered', 'actor': 'player',
                                     'action': 'aether_edge'})
             if not any(member.hp for member in self.party):self._pending_outcome = 'defeat'
-            self._sync_bot_activity()
+            self._sync_party_activity()
         self._sync_enemy_preparation()
         action.resolved = True
 
@@ -1353,8 +1263,7 @@ class BattleModel:
         protected = target.guarded
         calculator = physical_damage if action.kind in ('physical', 'spellblade') else magical_damage
         variance = roll_variance(self.rng)
-        source = self.combatant(actor.owner_id) if isinstance(actor, BotUnit) else actor
-        if isinstance(actor, BotUnit):actor.attributes['str'] = source.value('str')
+        source = actor
         record = self.actions[action.action]
         affinity, absorbed = self._elemental_response(target, record.get('element'))
         # A spellblade's element belongs only to its magical component.
@@ -1422,14 +1331,6 @@ class BattleModel:
         for actor in (*self.party, *self.enemies):
             actor.aether_edge_hits = 0
             self._clear_barrier(actor, 'battle_end')
-        for bot in self.bots:
-            bot.atb = 0.0
-            bot.haste_turns = 0
-            bot.haste_rate_multiplier = 1.5
-            self.events.append({'type': 'bot_removed', 'actor': bot.identifier,
-                                'owner': bot.owner_id})
-        self.bots = ()
-        self._bot_owner_alive.clear()
         self.phase = outcome
         defeat = ('The party has fallen.' if len(self.party) > 1
                   else self.player.name+' has fallen.')
@@ -1442,11 +1343,7 @@ class BattleModel:
         for combatant in (*self.party, *self.enemies):
             if combatant.hp and (not self.aqua_edge_guided or combatant.identifier == 'player'):
                 combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*scaled_seconds)
-        for bot in self.bots:
-            if self.active_bot(bot.owner_id) is bot and not self.aqua_edge_guided:
-                bot.atb = min(1.0, bot.atb+self.atb_rate(bot)*scaled_seconds)
-
-    def _sync_bot_activity(self):
+    def _sync_party_activity(self):
         # A lesson cannot keep ordering an incapacitated character to act.
         # Release the companions without treating survival as a skill discovery.
         for member in self.party:
@@ -1462,29 +1359,10 @@ class BattleModel:
                 self.phase = 'charging'
             self.events.append({'type': 'aqua_edge_interrupted' if was_aqua else 'spellblade_interrupted',
                                 'actor': 'player'})
-        for bot in self.bots:
-            alive = bool(self._party_actor(bot.owner_id).hp)
-            if alive != self._bot_owner_alive[bot.identifier]:
-                self._bot_owner_alive[bot.identifier] = alive
-                self.events.append({'type': 'bot_resumed' if alive else 'bot_suspended',
-                                    'actor': bot.identifier, 'owner': bot.owner_id})
-
-    def _complete_bot_action(self, action):
-        bot = self.combatant(action.actor)
-        if isinstance(bot, BotUnit) and self.spellblade_guided:self._lesson_bot_actions += 1
-        if not isinstance(bot, BotUnit) or not bot.haste_turns:return
-        bot.haste_turns -= 1
-        self.events.append({'type': 'haste_tick', 'actor': bot.identifier,
-                            'remaining_turns': bot.haste_turns})
-        if not bot.haste_turns:
-            self.events.append({'type': 'haste_expired', 'actor': bot.identifier,
-                                'remaining_turns': 0})
-
     def update(self, seconds, *, atb_multiplier=1.0):
         """Consume wall time through exact boundaries; choice time is free.
 
-        The global multiplier affects every charging gauge, including hasted
-        bots, but never action animations. Zero freezes charging while still
+        The global multiplier affects every charging gauge, but never action animations. Zero freezes charging while still
         allowing an already full gauge to act. Ready menus always pause gauges.
         """
         if type(seconds) not in (int, float):raise TypeError('Battle time must be numeric')
@@ -1492,7 +1370,7 @@ class BattleModel:
         if type(atb_multiplier) not in (int, float):raise TypeError('ATB multiplier must be numeric')
         if not math.isfinite(atb_multiplier) or atb_multiplier < 0:
             raise ValueError('Invalid ATB multiplier')
-        self._sync_bot_activity()
+        self._sync_party_activity()
         self._sync_enemy_preparation()
         remaining = float(seconds)
         while True:
@@ -1507,10 +1385,6 @@ class BattleModel:
                     return
                 candidates = [*(member for member in living
                                 if not self.aqua_edge_guided or member.identifier == 'player'),
-                              *(bot for bot in self.bots
-                                         if self.active_bot(bot.owner_id) is bot
-                                         and not self.aqua_edge_guided
-                                         and (not self.spellblade_guided or self._lesson_bot_actions < 3)),
                               *(enemy for enemy in self.living_enemies
                                 if not self.aqua_edge_guided and not self._enemy_response_pending(enemy.identifier))]
                 times = [(actor, max(0.0, ((1-actor.atb)/self.atb_rate(actor))/atb_multiplier)
@@ -1538,17 +1412,10 @@ class BattleModel:
                     self.events.append({'type': 'player_ready', 'actor': member.identifier})
                     return
                 member.atb = 1.0
-                if isinstance(member, BotUnit):
-                    self._start_action(member.identifier, member.ability_id)
-                else:self._start_enemy_action(member.identifier)
+                self._start_enemy_action(member.identifier)
             elif self.phase == 'acting':
                 action = self.current_action
                 actor = self.combatant(action.actor)
-                if isinstance(actor, BotUnit) and self.active_bot(actor.owner_id) is None:
-                    if not any(member.hp for member in self.party):
-                        self.last_action, self.current_action = action, None
-                        self._result('defeat')
-                    return
                 if not action.resolved and action.elapsed+EPSILON >= action.impact_at:
                     event_start = len(self.events)
                     self._resolve_action()
@@ -1561,7 +1428,6 @@ class BattleModel:
                             event['frame_age'] = remaining
                 if action.elapsed+EPSILON >= action.duration:
                     action.elapsed = action.duration
-                    self._complete_bot_action(action)
                     self._complete_rig_turn(action)
                     self.last_action, self.current_action = action, None
                     if self._pending_outcome is not None:

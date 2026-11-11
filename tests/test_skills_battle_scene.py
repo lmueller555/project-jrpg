@@ -183,7 +183,6 @@ class SkillsBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.scene.command_menu, 'skills')
         self.assertIn('charged_bolt', self.scene.command_rects)
         self.assertIn('impact_bolt', self.model.skill_actions())
-        self.assertNotIn('overclock', self.scene.command_rects)
         self.click(self.scene.party_rows['player']['row'].center)
         self.open_skills()
         self.click(self.scene.command_rects['aether_edge'].center)

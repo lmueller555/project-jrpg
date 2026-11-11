@@ -116,11 +116,9 @@ before live objects change. Caelan's attribute object remains the same object
 used by the existing game systems.
 
 Older saves without a party record start from Caelan and reconcile the existing
-mill story state. Battles copy the selected formation and its current resources.
-Every active participant settles resources together; reserves are untouched.
-Pending victory/spoils checkpoints also retain the participants and their
+mill story state. Battles copy the selected formation and its current resources. Every active participant settles resources together; reserves are untouched. Pending victory/spoils checkpoints also retain the participants and their
 resources so continuing a saved result does not refill companions or repeat the
-reward. Mira's Rivet belongs to her deployment and does not consume a party slot.
+reward.
 
 Exploration followers use the player's traversed, collision-checked route.
 Doors/teleports reset the trail; followers appear once there is enough clear
@@ -130,7 +128,7 @@ representation.
 
 ## Review artifacts
 
-See [the captured review](reviews/party_system/README.md) for native menu stills,
+See [the captured review](reviews/mira_rig_continuity/README.md) for native menu stills,
 a short silent video, a menu GIF, input evidence and reproducible source hashes.
 The review fixture explicitly recruits future characters to exercise reserves;
 it adds no story events to the game.

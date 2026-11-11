@@ -1,0 +1,1002 @@
+{
+  "version": 1,
+  "arm": "anatomical_left",
+  "equipment": "external worn cuff over intact limb",
+  "exports": [
+    {
+      "file": "assets/characters/mira/idle_front.png",
+      "source_cell": 0,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_front/frame_01.png",
+      "source_cell": 4,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_front/frame_02.png",
+      "source_cell": 5,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_front/frame_03.png",
+      "source_cell": 6,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_front/frame_04.png",
+      "source_cell": 7,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/idle_back.png",
+      "source_cell": 1,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_back/frame_01.png",
+      "source_cell": 8,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_back/frame_02.png",
+      "source_cell": 9,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_back/frame_03.png",
+      "source_cell": 10,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_back/frame_04.png",
+      "source_cell": 11,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/idle_left.png",
+      "source_cell": 2,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_left/frame_01.png",
+      "source_cell": 12,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_left/frame_02.png",
+      "source_cell": 13,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_left/frame_03.png",
+      "source_cell": 14,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_left/frame_04.png",
+      "source_cell": 15,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/idle_right.png",
+      "source_cell": 3,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_right/frame_01.png",
+      "source_cell": 16,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_right/frame_02.png",
+      "source_cell": 17,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_right/frame_03.png",
+      "source_cell": 18,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/walk_right/frame_04.png",
+      "source_cell": 19,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/rest.png",
+      "source_cell": 20,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/inspect.png",
+      "source_cell": 21,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/reach.png",
+      "source_cell": 22,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/wrench_high.png",
+      "source_cell": 23,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/wrench_mid.png",
+      "source_cell": 24,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/wrench_pull.png",
+      "source_cell": 25,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/withdraw.png",
+      "source_cell": 26,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/test_a.png",
+      "source_cell": 27,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/characters/mira/work_bench/test_b.png",
+      "source_cell": 28,
+      "source": "exploration_authored.png",
+      "scale": 0.15915119363395225,
+      "anchor": [
+        16,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_front_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_front_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 1,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_rear_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 3,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_rear_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_rear_left_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 5,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_left_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 6,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_front_left_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 7,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/raise_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 24,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/raise_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 26,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/raise_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 29,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/raise_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 31,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/aim_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 6,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/aim_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 6,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/aim_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 6,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/aim_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 6,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 16,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 17,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 18,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 19,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_05.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 20,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_06.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 21,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_07.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 22,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/load_08.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 23,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/fire_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 24,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/fire_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 25,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/fire_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 27,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/fire_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 28,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/fire_05.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 30,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/fire_06.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 31,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/ready_rear_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 12,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/ready_rear_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 12,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/ready_rear_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 12,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/ready_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 12,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/loading_detail_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 18,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/loading_detail_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 19,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/loading_detail_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 20,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/actors/mira/loading_detail_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 21,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_01.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_01.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/stand.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_01.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_02.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_02.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_03.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_03.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_04.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_04.png",
+      "anchor": [
+        32,
+        54
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "cinematic_authored.png",
+      "sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf"
+    },
+    {
+      "file": "exploration_authored.png",
+      "sha256": "24a49ce103add02d5726bac4fff36a03e3818c9294e245d91dcd00d2600c40db"
+    }
+  ]
+}

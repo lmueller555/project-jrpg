@@ -84,8 +84,7 @@ class BattleFeedbackTests(unittest.TestCase):
     def resources(self, model):
         return (model.phase, model.ready_actor,
                 tuple((actor.identifier, actor.hp, actor.mp, actor.atb)
-                      for actor in (*model.party, *model.enemies)),
-                tuple((bot.identifier, bot.atb, bot.haste_turns) for bot in model.bots))
+                      for actor in (*model.party, *model.enemies)))
 
     def current_text(self, scene):
         current = scene.announcements.current
@@ -103,7 +102,7 @@ class BattleFeedbackTests(unittest.TestCase):
                 scene.update(model.current_action.duration)
         clear_gauges(model)
         scene.announcements.clear()
-        self.assertEqual(model.bots, ())
+        self.assertFalse(hasattr(model, 'bots'))
         scene.update(0)
         self.assertIsNone(model.current_action)
         self.assertIsNone(scene.announcements.current)

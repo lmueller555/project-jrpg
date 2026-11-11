@@ -25,7 +25,7 @@ ANIMATIONS = {
     'guard': ([14, 15], [300, 300], True),
     'guard_impact': ([16, 17, 40, 41], [80, 100, 100, 120], False),
     'hurt': ([18, 19, 20, 21], [80, 100, 100, 120], False),
-    'overclock': (list(range(22, 28)), [150, 150, 200, 100, 150, 150], False),
+    'rig_activation': (list(range(22, 28)), [150, 150, 200, 100, 150, 150], False),
     'victory': (list(range(28, 32)), [180, 180, 320, 420], False),
     'defeat': (list(range(32, 36)), [120, 160, 180, 420], False),
     'walk': (list(range(36, 40)), [140, 140, 140, 140], True),
@@ -130,7 +130,7 @@ def build():
             drawings[index].save(OUTPUT/filename, optimize=True)
             frames.append(dict(records[index], file=filename, duration_ms=duration))
         animations[state] = dict(loop=loop, frames=frames)
-        if state in ('attack', 'overclock'):
+        if state in ('attack', 'rig_activation'):
             animations[state]['contact_ms'] = 400 if state == 'attack' else 500
         if state == 'attack':animations[state]['release_ms'] = 280
         if state in ('charged_bolt','impact_bolt','arc_discharge'):

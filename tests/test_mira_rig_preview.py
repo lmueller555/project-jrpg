@@ -33,7 +33,7 @@ class MiraRigPreviewTests(unittest.TestCase):
         before = self.game._progress_signature()
         resources = [(actor.identifier, actor.hp, actor.mp, actor.atb)
                      for actor in (*self.study.model.party, *self.study.model.enemies)]
-        self.assertEqual(self.study.model.bots, ())
+        self.assertFalse(hasattr(self.study.model, 'bots'))
         self.study.rig.adjust('support', -1)
         self.study.rig.adjust('weapons', 1)
         self.assertTrue(self.study.rig.commit())

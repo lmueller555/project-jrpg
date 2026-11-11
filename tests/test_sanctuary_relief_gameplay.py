@@ -130,7 +130,7 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
             'active': game.party.active_ids,
             'event': game.party.event_id,
             'abilities': game.character_abilities.to_dict(),
-            'bots': game.bot_loadouts.to_dict(),
+            'rig': game.mira_rig.to_dict(),
             'rewards': game.battle_rewards.to_dict(),
             'treasure': game.sanctuary_cave.to_dict(),
             'encounters': game.cave_random_encounters.to_dict(),

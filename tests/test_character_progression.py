@@ -251,7 +251,7 @@ class CharacterProgressionTests(unittest.TestCase):
         before = self.state()
         for amount, active, hp in ((True, ('caelan',), {'caelan': 1}),
                                    (-1, ('caelan',), {'caelan': 1}),
-                                   (1, (), {}), (1, ('rivet',), {'rivet': 1}),
+                                   (1, (), {}), (1, ('unknown_actor',), {'unknown_actor': 1}),
                                    (1, ('caelan',), {'caelan': True}),
                                    (1, ('caelan',), {'caelan': 10000})):
             with self.subTest(amount=amount, active=active, hp=hp):

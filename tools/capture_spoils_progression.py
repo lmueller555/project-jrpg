@@ -91,7 +91,7 @@ class Review:
              {'enemy_id': 'lithrusk', 'level': 3}],
             party_members=game.party.battle_members(),
             learned_abilities=game.character_abilities.known_abilities(),
-            bot_loadouts=game.bot_loadouts.battle_loadouts(),
+
             rng=random.Random(73))
         scene = BattleScene(game, model, battlefield='cave_grotto')
         for enemy in model.enemies:

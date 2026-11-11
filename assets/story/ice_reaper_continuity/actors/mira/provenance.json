@@ -1,208 +1,100 @@
 {
   "version": 1,
-  "operation": "Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.",
-  "sources": {
-    "men_views_generated.png": "f27b5ca0e1d487f214bde52826b4be6979c13170c6236ced3e084dacdc19f444",
-    "women_views_generated.png": "a03741f17eb71f865e062da043d1639c3a1f377e1cd5ab8e158081b783c5db2c",
-    "boss_views_generated.png": "6c8648a116529f1e5b82117617d42e9d9d2e0bf6d7f82b90f6be7383b74e0051",
-    "rear_actions_generated.png": "78c7634df2e5bdbd6d7303b4ccb054be2da4bb5673dcff647c83fb72b02b751f",
-    "rescue_actions_generated.png": "dc5c70ae96ae6b74e545a502c9f29f7aa5dfc5745c86be2bb32b086791f1ce9b",
-    "lucan_impact_generated.png": "0089d170bbe6e2129eb22c542abace77afeb28d04ad54b98d5422054ff72df0b",
-    "lucan_overhead_left_generated.png": "4f64d64b7961f05a92187c33b481e09f45a3986d908df20f06829737e97e9986",
-    "front_right_corrections_generated.png": "d2269b8402d1a45a18a71d23bcd0e0f6def5601e5968ec4ddfa620caf6193473"
-  },
+  "generated_with": "image_gen",
   "frames": [
     {
-      "file": "aim_front_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_front_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 0,
-      "source_box": [
-        0,
-        0,
-        181,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "d38d861f55f11fca09af51116f896d4f3aa5f2fa299ed3baebc1035fb1ebb8bc",
-      "source_content_bounds": [
-        46,
-        106,
-        149,
-        309
-      ],
-      "scale": 0.41379310344827586,
-      "foot_source_x": 115.0,
-      "registration": [
-        35,
-        32
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "aim_front_right_01.png",
-      "source": "front_right_corrections_generated.png",
-      "source_cell": 0,
-      "source_box": [
-        0,
-        0,
-        724,
-        724
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_front_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 1,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "44adf18b3596b3f540fbf99b670b31df5795cdcf87d9c91dfb7df5624f08e102",
-      "source_content_bounds": [
-        193,
-        140,
-        581,
-        648
-      ],
-      "scale": 0.16535433070866143,
-      "foot_source_x": 401.0,
-      "registration": [
-        30,
-        32
-      ]
+      "sha256": "c131321b294b8788eaf15cfa22efbce953512dd98be982e0055687232d6a8155"
     },
     {
-      "file": "aim_right_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_right_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 2,
-      "source_box": [
-        362,
-        0,
-        543,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "35efd4e558c82e6868873a46250433d6c7aab8f71a426ec194de17d8c203f1be",
-      "source_content_bounds": [
-        26,
-        107,
-        174,
-        311
-      ],
-      "scale": 0.4117647058823529,
-      "foot_source_x": 80.0,
-      "registration": [
-        42,
-        32
-      ]
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
     },
     {
-      "file": "aim_rear_right_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_rear_right_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 3,
-      "source_box": [
-        543,
-        0,
-        724,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "23f8b640abad8534e5314911865d71f51d55ba8972a3af87aea380f43767bcd9",
-      "source_content_bounds": [
-        30,
-        101,
-        142,
-        311
-      ],
-      "scale": 0.4,
-      "foot_source_x": 107.0,
-      "registration": [
-        33,
-        32
-      ]
+      "sha256": "9e73aff2fd40b26808711767655a4bfac931034c40bd7e5e1438c0665dcfd10a"
     },
     {
-      "file": "aim_rear_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_rear_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 4,
-      "source_box": [
-        724,
-        0,
-        905,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "2766599467fd030f553069662c1797c0b5c199739f86967fc0f89b7154c7dcc0",
-      "source_content_bounds": [
-        37,
-        100,
-        132,
-        310
-      ],
-      "scale": 0.4,
-      "foot_source_x": 70.0,
-      "registration": [
-        51,
-        32
-      ]
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
     },
     {
-      "file": "aim_rear_left_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_rear_left_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 5,
-      "source_box": [
-        905,
-        0,
-        1086,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "4def35ffa9443d5a574718933764a6bab14ebeaa459e91451d122ae365988269",
-      "source_content_bounds": [
-        38,
-        100,
-        134,
-        312
-      ],
-      "scale": 0.39622641509433965,
-      "foot_source_x": 71.0,
-      "registration": [
-        51,
-        32
-      ]
+      "sha256": "ca0a26a4e2886559c69fdf3537d59bc97a862e493ad2807239eadddb321ab6d4"
     },
     {
-      "file": "aim_left_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_left_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 6,
-      "source_box": [
-        1086,
-        0,
-        1267,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "631d2f2a61b8586e9a37e5e443a8d682fcff11fc763abffaeb79f8afa07c53aa",
-      "source_content_bounds": [
-        15,
-        108,
-        155,
-        310
-      ],
-      "scale": 0.4158415841584158,
-      "foot_source_x": 99.0,
-      "registration": [
-        29,
-        32
-      ]
+      "sha256": "e6d56b3c2f4c2e99e7b670451708d9506636cd514950339fb194d73fb12daa28"
     },
     {
-      "file": "aim_front_left_01.png",
-      "source": "women_views_generated.png",
+      "file": "assets/story/ice_reaper_continuity/actors/mira/aim_front_left_01.png",
+      "source": "cinematic_authored.png",
       "source_cell": 7,
-      "source_box": [
-        1267,
-        0,
-        1448,
-        362
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "f0d8ed63c9fee650c9ef27f8f7d76612cd19f1d326d57294b15ae06e1cab1b38",
-      "source_content_bounds": [
-        23,
-        106,
-        148,
-        310
-      ],
-      "scale": 0.4117647058823529,
-      "foot_source_x": 75.5,
-      "registration": [
-        42,
-        32
-      ]
+      "sha256": "199ef4a471ed6efaf2316efef197187575b16445fd07fa9b1284f676c35b74b1"
+    }
+  ],
+  "sources": [
+    {
+      "file": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+      "sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf"
     }
   ]
 }

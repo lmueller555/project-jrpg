@@ -3,9 +3,11 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 SOURCE=ROOT/'assets/source/cinematics/ice_reaper_rescue/women'
 TARGET=ROOT/'assets/story/ice_reaper_rescue'
 
@@ -48,13 +50,20 @@ def export_sheet(actor,columns,rows,groups,scale):
     (directory/'provenance.json').write_text(json.dumps(dict(source=manifest['source'],source_sha256=sha(source),operation='Equal-cell extraction, alpha threshold, pixel palette registration, nearest scaling and foot registration only; every pose is separately authored.',frames=records),indent=2)+'\n')
     return records
 
-def build():
-    mira=export_sheet('mira',6,5,{'raise':list(range(4)),'aim':list(range(4,8)),'load':list(range(8,16)),'fire':list(range(16,22)),'ready_rear':list(range(22,26)),'loading_detail':list(range(26,30))},.49)
+def _build_other_actors():
+    mira=[]
     rhea=export_sheet('rhea',4,4,{'release':list(range(8)),'release_rear':list(range(12,16))},.29)
     scope=clean(Image.open(SOURCE/'launcher_scope_generated.png')).resize((480,320),Image.Resampling.NEAREST)
     props=TARGET/'props';props.mkdir(parents=True,exist_ok=True)
     scope.save(props/'launcher_scope.png',optimize=True)
     (props/'launcher_scope.json').write_text(json.dumps(dict(canvas=[480,320],scope_center=[240,125],source='assets/source/cinematics/ice_reaper_rescue/women/launcher_scope_generated.png',source_sha256=sha(SOURCE/'launcher_scope_generated.png'),transparent_center=True),indent=2)+'\n')
     print(json.dumps(dict(mira_frames=len(mira),rhea_frames=len(rhea),scope=[480,320])))
+
+def build():
+    result = _build_other_actors()
+    from tools.build_mira_rig_continuity import build as rig_build
+    rig_build()
+    return result
+
 
 if __name__=='__main__':build()

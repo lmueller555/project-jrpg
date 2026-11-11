@@ -42,7 +42,8 @@ def attachments(cell):
 
 
 def build():
-    previous = json.loads((ROOT/'assets/source/combat/mira_redraw/registration.json').read_text())
+    previous = json.loads((SOURCE/'registration.json').read_text())
+    previous['drawings'] = previous['drawings'][:42]
     specification = deepcopy(previous)
     specification.update(source='base_authored.png',source_grid=[6,7],
         sources=[{'file':'base_authored.png','grid':[6,7]},

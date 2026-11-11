@@ -167,7 +167,7 @@ def visual_fixture(size=(960, 640), text_scale=1):
                         'attack': 'bolt_shot' if identifier == 'mira' else 'attack'})
     # Never instantiate the pending canonical boss: ordinary Bat mechanics are
     # used only as the production renderer's model-shaped visual fixture.
-    model = BattleModel(game.attributes, party_members=members, bot_loadouts={})
+    model = BattleModel(game.attributes, party_members=members)
     model.enemy.name = 'Vespermaw'
     model.enemy_sprite_id = 'vespermaw'
     scene = BattleScene(game, model, battlefield='cave_depths')

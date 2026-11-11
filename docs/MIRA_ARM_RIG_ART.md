@@ -10,9 +10,8 @@ it does not replace a limb.
 
 The production combat sprite loader uses the revised idle, firing, guarding,
 hit, rig-operation, victory, KO and movement drawings. The ordinary Bolt Shot
-retains its existing release, damage-impact and action timing. The historical `overclock` animation slot depicts cuff operation and remains
-available to the art sampler. Phase two replaces that old action with the five
-live rig techniques; the retained animation name does not grant a combat skill.
+retains its existing release, damage-impact and action timing. The art sampler
+also includes a `rig_activation` pose sequence, which grants no separate skill.
 
 Five additional eight-frame technique studies provide preparation, activation,
 recoil or hold, and recovery: Charged Bolt, Bulwark, Repair Pulse, Impact Bolt,
@@ -33,16 +32,16 @@ MP, ATB, learned skills, inventory, quests or saved data.
 
 The preview can switch between two- and three-member compositions and seek or
 hold individual poses. Its effect sketches are anchored to the rig and explicitly
-illustrative. The composition omits the old companion bot. Phase two also retires its live
-combat participation; phase three completes the remaining narrative/asset cleanup.
+illustrative. Mira acts directly through her rig. Phase three completes the
+narrative and exploration/cinematic asset cutover.
 
 ## Boundaries and follow-up
 
 Phase one changed combat artwork and added an isolated Gallery study without
 changing stats, action costs, balance, narrative or save formats. Phase two now
 adds the live rig rules and save owner described in [Rig combat](MIRA_RIG_COMBAT.md).
-Existing story/world weapon props remain until the coordinated narrative and
-continuity cleanup.
+[Phase three](reviews/mira_rig_continuity/README.md) replaces the remaining
+world props and cinematic equipment with her worn rig.
 
 [Phase two](MIRA_RIG_COMBAT.md) adds the live rig owner, skill power requirements,
 ally support, barriers, action resolution and save compatibility. Phase three completes

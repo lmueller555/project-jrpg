@@ -65,7 +65,7 @@ class MiraRigGameplayTests(RigGameFixture):
         self.assertTrue(self.game.mira_rig.set_allocation(entry))
         self.cave()
         self.assertEqual(self.game.combat.model.rig_allocation, entry)
-        self.assertEqual(self.game.combat.model.bots, ())
+        self.assertFalse(hasattr(self.game.combat.model, 'bots'))
         self.configure(SUPPORT)
         self.skill('repair_pulse', 'player')
         self.assertGreater(self.game.combat.model.player.hp, self.game.attributes.current_hp)
@@ -76,7 +76,7 @@ class MiraRigGameplayTests(RigGameFixture):
         self.assertEqual(self.game.combat.model.rig_allocation, entry)
         self.assertEqual(self.game.combat.model.player.hp, 40)
         self.assertEqual(self.game.combat.model.combatant('mira').mp, 30)
-        self.assertEqual(self.game.combat.model.bots, ())
+        self.assertFalse(hasattr(self.game.combat.model, 'bots'))
 
     def test_repair_menu_cancel_and_click_ally_use_real_mira_turn_and_mp(self):
         self.cave();self.configure(SUPPORT)

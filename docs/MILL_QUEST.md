@@ -25,7 +25,7 @@ The real item is `caelan_gearblade`, **Mira’s Blade**. Its inventory/first-wea
 
 ## Playing through
 
-Inspect the wheel and its channel with Mira nearby, then acknowledge the diagnosis and departure warning. Mira brings her spring-driven bolt launcher and folded four-legged bot Rivet. Caelan now brings the sheathed gearblade. Take the actual north road past the sanctuary steps and use the boundary prompt to enter the upper millrace.
+Inspect the wheel and its channel with Mira nearby, then acknowledge the diagnosis and departure warning. Caelan now brings the sheathed gearblade. Take the actual north road past the sanctuary steps and use the boundary prompt to enter the upper millrace.
 
 At the safe arrival, the party stops and notices the damaged tree and ridgeback tusker. The camera pans to the creature, holds while they speak, then returns on Mira’s “Caelan, back towards me. Slowly” warning. Kindled Courage and the battle transition begin only after that returned shot settles and its dialogue is acknowledged.
 
@@ -33,11 +33,11 @@ The guided battle opening teaches **Guard first** against a visible charge. Cael
 
 A pending-training route arriving from optional Bat combat with fewer than `min(80, max HP)` HP or 4 MP first plays the short `tutorial_preparation` exchange. Its acknowledged callback raises only those resources to the lesson minimums and checkpoints before entry. Normal fresh-game resources are untouched; this adds no rest choice, time advance or objective and prevents the required discovery from being unaffordable.
 
-During that short lesson, the game guides the active character and commands; Mira covers with Guard and Rivet contributes a bounded number of autonomous jabs. All gauges pause for dialogue and player decisions. After discovery, Mira is player-controlled and Rivet resumes normal autonomous behavior, including her starting Overclock. The [combat guide](COMBAT.md) records tuning and action details. A recorded discovery survives withdrawal/retry without repeating the gift or teaching scene.
+All gauges pause for dialogue and player decisions. The [combat guide](COMBAT.md) records tuning and action details. A recorded discovery survives withdrawal/retry without repeating the gift or teaching scene.
 
 Victory plays Triumphal Fanfare once, the victory banner and Spoils of Battle. Spoils settles the cleared encounter and reward once. Silence follows the fanfare until Continue returns to the world and starts the linear aftermath. There is no continue/rest choice. Unread aftermath remains available, and quitting during victory resumes Spoils without a duplicate grant. Defeat and withdrawal return to a viable approach rather than restoring the intake.
 
-Mira checks Caelan after the fight. The first-aid variant only appears if he was incapacitated. Rivet folds away, and she secures the launcher beside the intake while using the bypass and tools. The water spell and physical repair remain Caelan and Mira’s work rather than a bot ability.
+Mira checks Caelan after the fight. The first-aid variant only appears if he was incapacitated. The water spell and physical repair remain Caelan and Mira’s work.
 
 Inspect the lodged limb and the pressure holding it against the screen. Mira operates the bypass while Caelan stands clear. Once the main supply is isolated, he proposes moving the small pocket around the catch into its adjacent drain. Selecting the blue focus and using a stable sword-casting stance moves existing water and reveals the catch. This deterministic world action has no time limit, cast roll or MP charge; it does not unlock Aqua Edge or move the main current.
 

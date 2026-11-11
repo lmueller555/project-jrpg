@@ -61,7 +61,7 @@ class Review:
         else:
             model = BattleModel(game.attributes, enemy_id=enemy or 'bat', **options)
             battlefield = 'millrace' if enemy == 'ridgeback_tusker' else 'eldenmere'
-        for actor in (*model.party, *model.enemies, *model.bots):
+        for actor in (*model.party, *model.enemies):
             actor.atb = 0
         model.player.atb = 1
         scene = BattleScene(game, model, battlefield=battlefield)

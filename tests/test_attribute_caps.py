@@ -147,15 +147,14 @@ class AttributeCapTests(unittest.TestCase):
                     self.assertEqual(self.state(clone), self.state())
 
     def test_battle_catalogs_and_party_snapshots_share_the_new_rating_caps(self):
-        from battle_model import (BOT_PATH, ENEMY_PATH, GUEST_PATH, BattleModel,
-                                  load_actions, load_bots, load_enemies, load_guests)
+        from battle_model import (ENEMY_PATH, GUEST_PATH, BattleModel,
+                                  load_actions, load_enemies, load_guests)
         actions = load_actions()
         ratings = {key: EXPECTED_CAPS[key] for key in ATTRIBUTE_IDS
                    if key not in ('hp', 'mp')}
         for path, group, identifier, loader in (
                 (ENEMY_PATH, 'enemies', 'bat', load_enemies),
-                (GUEST_PATH, 'guests', 'mira', load_guests),
-                (BOT_PATH, 'bots', 'rivet', load_bots)):
+                (GUEST_PATH, 'guests', 'mira', load_guests)):
             data = json.loads(path.read_text())
             data[group][identifier]['attributes'].update(ratings)
             if group == 'enemies':

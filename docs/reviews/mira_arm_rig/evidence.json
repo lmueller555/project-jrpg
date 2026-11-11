@@ -275,7 +275,7 @@
       "guard",
       "guard_impact",
       "hurt",
-      "overclock",
+      "rig_activation",
       "victory",
       "defeat",
       "walk"
@@ -284,8 +284,8 @@
   },
   "progress_unchanged": true,
   "fingerprints": {
-    "mira_rig_preview.py": "d0c796d27eef4ece014e491706656035937a470d20aa77cdc47d6e46af294b6b",
-    "mira_rig_ui.py": "de78bea6fdb3247b0f67b36f9792f57e8ec05b6b06cbb988815214685eefd1b6",
-    "assets/combat/mira/animation.json": "7e0355fc957bc8474a491b97d59734c8482d4733503ad8356979d3978c2d2d29"
+    "mira_rig_preview.py": "9a5bdf12fd18fd0a88f5bbaef3506aa29f10f2e2c444e19c0fcfed2864305935",
+    "mira_rig_ui.py": "c1c00e47f899969fd70ba937c5492b97dfc57dfb53ade6f4f771b99ec16cff28",
+    "assets/combat/mira/animation.json": "d73b8527c7e5ae7198cce1faa73959fcbde6f8b91417b9bcbbc3181265c0ff1e"
   }
 }

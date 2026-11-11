@@ -67,32 +67,32 @@ class MillCombatStoryTests(unittest.TestCase):
 
     def test_weapon_is_carried_out_stowed_for_tools_and_carried_home(self):
         controller = self.controller(warned=True)
-        self.assertTrue(controller.mira_armed)
-        self.assertFalse(controller.mira_weapon_stowed)
+        self.assertTrue(controller.mira_rig_powered)
+        self.assertFalse(controller.mira_rig_safed)
         self.assertTrue(controller.battle_won())
         self.assertTrue(controller._aftermath_finished())
         controller._record_inspection('intake')
-        self.assertFalse(controller.mira_armed)
-        self.assertTrue(controller.mira_weapon_stowed)
+        self.assertFalse(controller.mira_rig_powered)
+        self.assertTrue(controller.mira_rig_safed)
         for objective, fact in (('prepare_intake', 'prepared'), ('small_spell', 'spell_done')):
             self.assertTrue(controller._complete(objective))
             setattr(controller, fact, True)
         controller.encouraged = True
         self.assertTrue(controller._complete('repair_intake'));controller.restored = True
-        self.assertTrue(controller.mira_armed)
-        self.assertFalse(controller.mira_weapon_stowed)
+        self.assertTrue(controller.mira_rig_powered)
+        self.assertFalse(controller.mira_rig_safed)
         self.assertTrue(controller._complete('verify_mill'));controller.verified = True
         self.assertTrue(controller._complete('report'))
         controller.reported_to_halden = True;controller._returning = True
-        self.assertTrue(controller.mira_armed)
+        self.assertTrue(controller.mira_rig_powered)
         controller._returning = False
-        self.assertFalse(controller.mira_armed)
+        self.assertFalse(controller.mira_rig_powered)
         self.assertTrue(controller._complete('return_sanctuary'))
         self.assertTrue(controller.game.quests.turn_in(MILL_QUEST, 'mira_worker'))
         controller.cups_placed = controller.resolved = True;controller._returning = True
-        self.assertTrue(controller.mira_armed)
+        self.assertTrue(controller.mira_rig_powered)
         controller._returning = False
-        self.assertFalse(controller.mira_armed)
+        self.assertFalse(controller.mira_rig_powered)
         self.assertTrue(MillQuest.valid_snapshot(controller.to_dict()))
 
     def test_intake_requires_the_acknowledged_linear_aftermath(self):
@@ -162,7 +162,7 @@ class MillCombatStoryTests(unittest.TestCase):
         self.assertTrue(any('tusker' in line['text'].lower() for line in lines['resolution_combat']))
         self.assertFalse(any('tusker' in line['text'].lower() for line in lines['resolution']))
         self.assertTrue(any('sword sheathed' in line['text'] for line in lines['warning']))
-        self.assertTrue(any('Rivet' in line['text'] for line in lines['warning']))
+        self.assertTrue(any('brace' in line['text'] for line in lines['warning']))
         self.assertTrue(any('bandage' in line['text'] for line in lines['aftermath_recovered']))
         self.assertTrue(any('tree' in line['text'] for line in lines['encounter_intro']))
         self.assertEqual([(line['speaker'], line['text']) for line in lines['encounter_intro']

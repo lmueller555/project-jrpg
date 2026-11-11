@@ -31,10 +31,8 @@ class MiraRigModelTests(unittest.TestCase):
         model = self.model()
         self.assertEqual(model.rig_allocation, dict(weapons=2, protection=2, support=2))
         self.assertEqual(model.skill_actions('mira'), list(SKILLS))
-        self.assertEqual(model.bots, ())
+        self.assertFalse(hasattr(model, 'bots'))
         self.assertFalse(any(event['type'] == 'bot_deployed' for event in model.drain_events()))
-        legacy = self.model(bot_loadouts={'mira': {'bot_id': 'rivet', 'ability_id': 'piston_jab'}})
-        self.assertEqual(legacy.bots, ())
         self.assertEqual(self.model(guest_abilities={'mira': []}).skill_actions('mira'), [])
 
     def test_configuration_validates_atomically_without_resources_or_turns(self):
@@ -73,7 +71,7 @@ class MiraRigModelTests(unittest.TestCase):
         self.assertFalse(model.action_reason('arc_discharge'))
         self.assertTrue(model.action_reason('bulwark'))
         self.assertTrue(model.action_reason('charged_bolt', actor_id='player'))
-        self.assertTrue(model.action_reason('overclock'))
+        self.assertTrue(model.action_reason('unknown_technique'))
 
     def test_basic_shot_is_free_and_requires_no_specific_power(self):
         model = self.model();model.set_rig_allocation(dict(weapons=0, protection=3, support=3))

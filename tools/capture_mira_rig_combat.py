@@ -158,7 +158,7 @@ def main():
         encoder = None
         gif_frames[0].save(OUT/'mira_rig_combat.gif', save_all=True,
             append_images=gif_frames[1:], duration=100, loop=0, optimize=False)
-        assert not game.combat.model.bots
+        assert all(a.identifier in ('player', 'mira', 'lucan') for a in game.combat.model.party)
         evidence['video'] = {'file': 'mira_rig_combat.mp4', 'frames': video_frames, 'fps': 20, 'audio': False}
         evidence['fingerprints'] = {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
             for name in ('battle_model.py', 'battle_scene.py', 'mira_rig_ui.py', 'mira_rig_rules.py')}

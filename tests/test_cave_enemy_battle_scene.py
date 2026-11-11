@@ -65,7 +65,7 @@ class CaveEnemyBattleSceneTests(unittest.TestCase):
 
     def encounter(self, actor, level, three_party=True):
         self.game.attributes = player(level)
-        options = {'party_members': party(level), 'bot_loadouts': {}} if three_party else {}
+        options = {'party_members': party(level), 'rig_allocation': None} if three_party else {}
         model = BattleModel.from_bestiary(self.game.attributes, actor, level,
                                           rng=FixedVariance(), **options)
         scene = BattleScene(self.game, model)

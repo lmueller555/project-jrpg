@@ -200,10 +200,6 @@ class Review:
                 actor = model.ready_actor
                 if actor == model.telegraphed_target:
                     command = 'guard'
-                elif actor == 'mira' and 'overclock' in model.available_actions():
-                    bot = model.active_bot()
-                    command = ('overclock' if bot is not None and not bot.haste_turns
-                               and not model.action_reason('overclock') else 'attack')
                 elif actor == 'player' and 'aether_edge' in model.available_actions():
                     command = 'aether_edge' if not model.action_reason('aether_edge') else 'attack'
                 else:command = 'attack'

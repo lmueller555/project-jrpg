@@ -14,19 +14,35 @@
       "frames": [
         {
           "file": "raise_01.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            43,
+            80
+          ]
         },
         {
           "file": "raise_02.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            38,
+            64
+          ]
         },
         {
           "file": "raise_03.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            42,
+            39
+          ]
         },
         {
           "file": "raise_04.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            42,
+            79
+          ]
         }
       ],
       "closeup": false
@@ -35,19 +51,35 @@
       "frames": [
         {
           "file": "aim_01.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            50,
+            39
+          ]
         },
         {
           "file": "aim_02.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            50,
+            39
+          ]
         },
         {
           "file": "aim_03.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            50,
+            39
+          ]
         },
         {
           "file": "aim_04.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            50,
+            39
+          ]
         }
       ],
       "closeup": false
@@ -56,35 +88,67 @@
       "frames": [
         {
           "file": "load_01.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "load_02.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "load_03.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "load_04.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "load_05.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            49,
+            69
+          ]
         },
         {
           "file": "load_06.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "load_07.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            41,
+            76
+          ]
         },
         {
           "file": "load_08.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            42,
+            77
+          ]
         }
       ],
       "closeup": false
@@ -93,27 +157,51 @@
       "frames": [
         {
           "file": "fire_01.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            43,
+            80
+          ]
         },
         {
           "file": "fire_02.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            41,
+            76
+          ]
         },
         {
           "file": "fire_03.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            40,
+            40
+          ]
         },
         {
           "file": "fire_04.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            41,
+            36
+          ]
         },
         {
           "file": "fire_05.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            40,
+            55
+          ]
         },
         {
           "file": "fire_06.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            42,
+            79
+          ]
         }
       ],
       "closeup": false
@@ -122,19 +210,35 @@
       "frames": [
         {
           "file": "ready_rear_01.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "ready_rear_02.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "ready_rear_03.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "ready_rear_04.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         }
       ],
       "closeup": false
@@ -143,25 +247,48 @@
       "frames": [
         {
           "file": "loading_detail_01.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "loading_detail_02.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         },
         {
           "file": "loading_detail_03.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            28,
+            50
+          ]
         },
         {
           "file": "loading_detail_04.png",
-          "duration_ms": 90
+          "duration_ms": 90,
+          "emitter": [
+            64,
+            60
+          ]
         }
       ],
       "closeup": true
     }
   },
-  "source": "assets/source/cinematics/ice_reaper_rescue/women/mira_actions_generated.png",
-  "source_sha256": "914e151b06ec441f8158554d3b7f05e198dc631beedbd8bcb529c81c981924f9",
-  "authored": true
+  "source": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+  "source_sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf",
+  "authored": true,
+  "worn_rig_source": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+  "sources": [
+    {
+      "file": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+      "sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf"
+    }
+  ]
 }

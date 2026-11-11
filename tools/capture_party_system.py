@@ -42,7 +42,7 @@ def fingerprints():
     paths = list(ROOT.glob('*.py'))+[Path(__file__).resolve()]
     paths += list((ROOT/'assets/characters').glob('*.json'))
     paths += list((ROOT/'assets/combat').glob('*.json'))
-    for identifier in ('caelan', 'mira', 'lucan', 'rhea', 'edran', 'rivet', 'bat'):
+    for identifier in ('caelan', 'mira', 'lucan', 'rhea', 'edran', 'bat'):
         for directory in (ROOT/'assets/characters'/identifier, ROOT/'assets/combat'/identifier):
             paths += [p for p in directory.rglob('*') if p.is_file()]
     return {str(path.relative_to(ROOT)):digest(path) for path in sorted(set(paths))}

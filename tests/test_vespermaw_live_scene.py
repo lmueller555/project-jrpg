@@ -51,7 +51,7 @@ class VespermawLiveSceneTests(unittest.TestCase):
                           'hp': stats['hp'], 'mp': stats['mp'],
                           'attack': 'bolt_shot' if identifier == 'mira' else 'attack'})
         model = BattleModel.from_bestiary(CharacterAttributes(), 'vespermaw', 7,
-            party_members=party, bot_loadouts={}, rng=FixedVariance(), initial_atb=False)
+            party_members=party,  rng=FixedVariance(), initial_atb=False)
         scene = BattleScene(game, model, sprites=self.sprites, battlefield='cave_echo_chamber')
         canvas = pygame.Surface((480, 320))
         scene.draw(canvas, game.ui_surface)

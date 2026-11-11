@@ -38,7 +38,7 @@ class CombatXpAllocationTests(unittest.TestCase):
                  (60, ('caelan',), None), (60, ('caelan',), {'caelan': True}),
                  (60, ('caelan',), {'caelan': -1}),
                  (60, ('caelan',), {'caelan': 10000}),
-                 (60, ('caelan',), {'caelan': 140, 'rivet': 1})]
+                 (60, ('caelan',), {'caelan': 140, 'unrelated_unit': 1})]
         for amount, active, resources in cases:
             before = deepcopy(resources)
             with self.subTest(amount=amount, active=active, resources=resources):

@@ -24,13 +24,11 @@ class GearBattleModelTests(unittest.TestCase):
                   for event in model.events]
         actors = [(actor.identifier, actor.hp, actor.mp, round(actor.atb, 9))
                   for actor in (*model.party, model.enemy)]
-        bots = [(bot.identifier, round(bot.atb, 9), bot.haste_turns)
-                for bot in model.bots]
         action = model.current_action
         active = (action.actor, action.action, round(action.elapsed, 9),
                   action.damage, action.resolved, action.active_gem) if action else None
         return (model.phase, model.active_gem, model.learned_abilities,
-                actors, bots, active, deepcopy(events))
+                actors, active, deepcopy(events))
 
     def ready(self, model, actor='player'):
         model.update(1000)
@@ -216,7 +214,7 @@ class GearBattleModelTests(unittest.TestCase):
         model.update(.4, atb_multiplier=.2)
         for actor in (*model.party, model.enemy):
             self.assertAlmostEqual(actor.atb, initial[actor.identifier]+model.atb_rate(actor)*.4*.2)
-        self.assertEqual(model.bots, ())
+        self.assertFalse(hasattr(model, 'bots'))
 
     def test_scaled_exact_ready_boundary_and_unscaled_ready_wait(self):
         for multiplier in (.2, 1., 3.):
@@ -237,14 +235,14 @@ class GearBattleModelTests(unittest.TestCase):
             model.player.atb = 1
             model.update(0)
             self.assertTrue(model.choose_action('aether_edge'))
-            gauges = [actor.atb for actor in (*model.party, *model.bots, model.enemy)]
+            gauges = [actor.atb for actor in (*model.party, model.enemy)]
             action = model.current_action
             model.update(action.impact_at-.001, atb_multiplier=multiplier)
             self.assertFalse(model.current_action.resolved)
             model.update(.001, atb_multiplier=multiplier)
             self.assertTrue(model.current_action.resolved)
             self.assertEqual(model.current_action.elapsed, action.impact_at)
-            self.assertEqual([actor.atb for actor in (*model.party, *model.bots, model.enemy)], gauges)
+            self.assertEqual([actor.atb for actor in (*model.party, model.enemy)], gauges)
             model.update(action.duration-action.impact_at, atb_multiplier=multiplier)
             self.assertEqual(model.phase, 'charging')
             self.assertEqual(model.last_action.elapsed, action.duration)
@@ -256,7 +254,7 @@ class GearBattleModelTests(unittest.TestCase):
         before = self.snapshot(model)
         model.update(10000, atb_multiplier=0)
         self.assertEqual(self.snapshot(model), before)
-        for actor in (*model.party, *model.bots, model.enemy):actor.atb = 1
+        for actor in (*model.party, model.enemy):actor.atb = 1
         model.update(0, atb_multiplier=0)
         self.assertEqual(model.ready_actor, 'player')
         model.choose_action('guard');model.update(model.current_action.duration, atb_multiplier=0)

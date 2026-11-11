@@ -50,7 +50,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
             bestiary_data=model_catalog(), **options)
 
     def ready(self, model):
-        for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+        for actor in (*model.party, *model.enemies):actor.atb = 0
         model.player.atb = 1
         model.update(0)
         self.assertTrue(model.waiting_for_player)
@@ -65,7 +65,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
         if model.current_action is not None:
             self.assertEqual(model.current_action.actor, 'enemy')
             return self.finish(model)
-        for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+        for actor in (*model.party, *model.enemies):actor.atb = 0
         model.enemy.atb = 1
         model.update(0)
         self.assertEqual(model.current_action.actor, 'enemy')
@@ -75,7 +75,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
         model._enemy_action_index = 2
         self.enemy_turn(model)
         marked = model.combatant(model.telegraphed_target)
-        for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+        for actor in (*model.party, *model.enemies):actor.atb = 0
         model.enemy.atb = 1
         before = marked.hp
         model.update(.05)
@@ -151,7 +151,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
             model.player.mp = model.combatant('mira').mp = 0
             for skill in ELEMENTAL_EDGE_ACTIONS:self.assertEqual(model.action_mp_cost(skill, 'player'), 0)
             self.assertEqual(model.action_mp_cost('aether_edge', 'player'), 4)
-            self.assertEqual(model.action_mp_cost('overclock', 'mira'), 5)
+            self.assertEqual(model.action_mp_cost('arc_discharge', 'mira'), 5)
             for skill, gem in (('aqua_edge', 'water'), ('flame_edge', 'fire'), ('ice_edge', 'ice')):
                 self.ready(model);self.assertTrue(model.set_active_gem(gem))
                 self.assertTrue(model.choose_action(skill))
@@ -220,7 +220,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
             recovery = self.enemy_turn(model)
             self.assertEqual(recovery.kind, 'recover')
             self.assertEqual(model.enemy_recovery_states, {'enemy': 1.5})
-            for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+            for actor in (*model.party, *model.enemies):actor.atb = 0
             model.enemy.atb = 1;model.update(0)
             self.assertEqual(model.enemy_recovery_states, {})
 
@@ -244,12 +244,14 @@ class ElementalMinibossModelTests(unittest.TestCase):
         capped._start_action('player', 'aqua_edge')
         self.assertEqual(self.finish(capped).damage, 9999)
 
-    def play(self, identifier, level, resources, gems, known, seed, *, require_both_alive=True):
+    def play(self, identifier, level, resources, gems, known, seed, *, require_both_alive=True, supplies=None):
         members = party_profiles(level, resources)
         before = deepcopy(members)
         model = self.model(identifier, level=level, party_members=members,
             learned_abilities=known, owned_gems=tuple(gems), rng=random.Random(seed),
             initial_atb=True, initial_atb_seed=seed)
+        if supplies is None:supplies = Inventory.new_journey()
+        model.set_item_inventory(supplies)
         for _ in range(20000):
             if model.waiting_for_player:
                 actor = model.ready_actor
@@ -260,18 +262,20 @@ class ElementalMinibossModelTests(unittest.TestCase):
                         model.set_active_gem('fire');command = 'flame_edge'
                     elif model.player.mp >= 4:command = 'aether_edge'
                     else:command = 'attack'
-                elif (model.active_bot() and not model.active_bot().haste_turns
-                      and model.active_player.mp >= 5):command = 'overclock'
                 else:command = 'attack'
-                self.assertTrue(model.choose_action(command))
+                injured = min(model.party, key=lambda member: member.hp/member.max_hp)
+                if command != 'guard' and 0 < injured.hp < injured.max_hp*.55 and model.item_counts.get('potion',0):
+                    self.assertTrue(model.choose_item('potion', injured.identifier))
+                else:self.assertTrue(model.choose_action(command))
             model.update(.05);model.drain_events()
             if model.ended:break
         self.assertEqual(model.phase, 'victory')
         if require_both_alive:self.assertTrue(all(member.hp > 0 for member in model.party))
         self.assertEqual(members, before)
+        if model.item_spent:self.assertTrue(supplies.consume_bundle(model.item_spent))
         return model
 
-    def test_level_one_through_four_party_can_win_either_first_boss_at_zero_mp(self):
+    def test_level_one_through_four_party_can_win_either_first_boss_at_zero_mp_with_starting_supplies(self):
         for level in (1, 2, 3, 4):
             resources = {key: (character_stats(key, level)['hp'], 0) for key in ('caelan', 'mira')}
             for identifier in BOSSES:
@@ -292,12 +296,13 @@ class ElementalMinibossModelTests(unittest.TestCase):
                             resources = ({key: (character_stats(key, level)['hp'], 0)
                                           for key in ('caelan', 'mira')} if zero_mp else None)
                             gems, known = ['water'], ['aether_edge', 'aqua_edge']
+                            supplies = Inventory.new_journey()
                             for identifier in order:
                                 # Reduced EXP grants fewer stats between fights.
                                 # Victory may cost a KO on the final no-rest fight;
                                 # a first-fight KO must not seed the second fight.
                                 model = self.play(identifier, level, resources, gems, known, seed,
-                                    require_both_alive=identifier == order[0])
+                                    require_both_alive=identifier == order[0], supplies=supplies)
                                 resources = {'caelan': (model.player.hp, model.player.mp),
                                              'mira': (model.combatant('mira').hp, model.combatant('mira').mp)}
                                 if zero_mp:self.assertEqual((resources['caelan'][1], resources['mira'][1]), (0, 0))

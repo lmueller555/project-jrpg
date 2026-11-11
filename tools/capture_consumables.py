@@ -49,7 +49,7 @@ def main():
         fixture.click_command('item:potion');capture('battle_recipient_150')
         fixture.click_command('ally:player');game.update(.5, (0, 0), False)
         capture('potion_impact_150');game.update(.5, (0, 0), False)
-        game.combat.model.combatant('mira').hp = 0;game.combat.model._sync_bot_activity()
+        game.combat.model.combatant('mira').hp = 0;game.combat.model._sync_party_activity()
         fixture.ready();fixture.click_command('items');fixture.click_command('item:revival_salts')
         fixture.click_command('ally:mira');game.update(.5, (0, 0), False)
         capture('revival_impact_150');game.update(.5, (0, 0), False)

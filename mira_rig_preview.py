@@ -25,7 +25,7 @@ POSES = (
     ('repair_pulse', 'Repair Pulse'), ('impact_bolt', 'Impact Bolt'),
     ('arc_discharge', 'Arc Discharge'), ('guard_enter', 'Brace'),
     ('guard', 'Guard'), ('guard_impact', 'Guard impact'),
-    ('hurt', 'Hit reaction'), ('overclock', 'Rig activation'),
+    ('hurt', 'Hit reaction'), ('rig_activation', 'Rig activation'),
     ('victory', 'Victory'), ('defeat', 'KO'), ('walk', 'Movement'),
 )
 SKILL_ART = (
@@ -137,7 +137,7 @@ class MiraRigPreview:
         self.model = BattleModel.from_bestiary_group(self.game.attributes,
             [{'enemy_id': 'cave_bat', 'level': 2}]*2, party_members=_profiles(self.party_count),
             weapon_equipped=True, learned_abilities=('aether_edge',),
-            bot_loadouts={}, guest_abilities={}, rng=random.Random(9))
+            guest_abilities={}, rng=random.Random(9))
         # A frozen command-ready composition, not a played encounter.
         self.model.phase = 'ready';self.model._active_actor = 'mira'
         self.model.combatant('mira').atb = 1.

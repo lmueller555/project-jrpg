@@ -59,7 +59,7 @@ class ThreeMemberBattleTests(unittest.TestCase):
         self.assertNotIn('mira', model.ready_members)
 
     def test_three_ready_members_select_independent_turns_before_enemy(self):
-        model = self.model(bot_loadouts={})
+        model = self.model()
         for actor in (*model.party, model.enemy):actor.atb = 1
         model.update(0)
         self.assertEqual(model.ready_members, ('player', 'mira', 'rhea'))
@@ -111,16 +111,16 @@ class ThreeMemberBattleTests(unittest.TestCase):
         model.combatant('rhea').hp = 1
         model.update(model.current_action.duration)
         self.assertEqual(model.phase, 'defeat')
-        self.assertEqual(model.bots, ())
+        self.assertFalse(hasattr(model, 'bots'))
 
     def test_rig_uses_only_miras_party_slot_and_reserve_mira_deploys_nothing(self):
         model = self.model()
         self.assertEqual(len(model.party), 3)
-        self.assertEqual(model.bots, ())
-        self.assertIsNone(model._party_actor('rivet'))
-        self.assertFalse(model.select_ready('rivet'))
+        self.assertFalse(hasattr(model, 'bots'))
+        self.assertIsNone(model._party_actor('unknown_actor'))
+        self.assertFalse(model.select_ready('unknown_actor'))
         model = self.model(profiles('player', 'lucan', 'edran'))
-        self.assertEqual(model.bots, ())
+        self.assertFalse(hasattr(model, 'bots'))
         for identifier in ('lucan', 'edran'):
             self.assertEqual(model.available_actions(identifier), ['attack', 'guard', 'flee'])
 
@@ -221,8 +221,8 @@ class ThreeMemberBattleUITests(unittest.TestCase):
                         for _, bounds in records:
                             if bounds.colliderect(scene.commands_panel):
                                 self.assertTrue(scene.commands_panel.contains(bounds))
-                        self.assertEqual(scene.model.bots, ())
-                        self.assertFalse(any(text == 'Rivet ATB' or text.startswith('Haste ·')
+                        self.assertFalse(hasattr(scene.model, 'bots'))
+                        self.assertFalse(any(text.startswith('Companion ATB')
                                              for text, _ in records))
 
     def test_native_edran_art_falls_back_to_idle_without_mirroring(self):

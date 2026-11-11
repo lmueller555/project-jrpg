@@ -54,7 +54,7 @@ class Review:
 
     @staticmethod
     def clear_gauges(scene):
-        for actor in (*scene.model.party, *scene.model.enemies, *scene.model.bots):
+        for actor in (*scene.model.party, *scene.model.enemies):
             actor.atb = 0
 
     def scene(self, *, tusker=False, mixed=False):

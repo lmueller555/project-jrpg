@@ -224,10 +224,9 @@ class AquaProgressionGameplayTests(unittest.TestCase):
             elif model.waiting_for_player:
                 actor = model.ready_actor
                 action = ('aqua_edge' if actor == 'player' else
-                          'overclock' if not model.action_reason('overclock')
-                          and not model.active_bot('mira').haste_turns else 'attack')
+                          'attack')
                 game.draw()
-                if action in ('aqua_edge', 'overclock'):
+                if action == 'aqua_edge':
                     click(game, scene.command_rects['skills'].center)
                     game.draw()
                 self.assertEqual(model.action_reason(action), '')

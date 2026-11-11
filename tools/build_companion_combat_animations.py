@@ -17,7 +17,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from tools.build_machinist_assets import authored_cells
+from tools.atlas_extract import authored_cells
 
 
 SOURCE = ROOT/'assets/source/combat/companion_animations'

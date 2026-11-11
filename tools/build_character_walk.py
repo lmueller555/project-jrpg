@@ -5,12 +5,14 @@ Add --refresh-template to extract masks from the approved Caelan references.
 """
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageColor, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 CLEAR = (0, 0, 0, 0)
 
 
@@ -207,6 +209,9 @@ def on_background(image, scale):
 
 
 def build(recipe_path, refresh):
+    if "mira" in Path(recipe_path).parts:
+        from tools.build_mira_rig_continuity import build as rig_build
+        return rig_build()
     recipe = read_json(recipe_path)
     direction = recipe.get("direction", "front")
     config_path = (recipe_path.parent / recipe["template"]).resolve()

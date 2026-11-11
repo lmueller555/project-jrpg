@@ -807,6 +807,18 @@ class IceReaperActionStage:
                 p=camera.project(source)
                 if p:pygame.draw.circle(canvas,('#d8edfa','#edf8ff','#bcd9ec')[i%3],p[:2],max(1,round(camera.focal/p[2]*(.035+i%3*.025))))
 
+    def mira_emitter_world(self, time, camera, position):
+        action, local, duration = self._action('mira', time)
+        key = self.sequence_key('mira', action, local, duration, camera, position, time)
+        image, data = self._sequence('mira', action, local, duration, camera, position, time=time)
+        sequence = data['sequences'][key]
+        index = next((i for i,(sprite,_) in enumerate(sequence) if sprite is image), 0)
+        entry = data['manifest']['animations'][key]['frames'][index]
+        point = entry.get('emitter', data['anchor'])
+        right, up, _ = camera.basis()
+        scale = 1.85/data['body_pixels']
+        return V3(position)+right*((point[0]-data['anchor'][0])*scale)+up*((data['anchor'][1]-point[1])*scale)
+
     def _draw_shard(self, canvas, camera, point, target, *, size=2.8, alpha=255, tip=False):
         p=camera.project(point)
         direction=V3(target)-V3(point)
@@ -863,7 +875,7 @@ class IceReaperActionStage:
             grow=.2+.8*smooth(phase(time,12.65,14.2))
             self._draw_shard(canvas,camera,second,positions['mira'],size=2.8*grow)
         if 14.25 <= time < 14.7:
-            muzzle=positions['mira']+V3(-.18,1.45,-.45)
+            muzzle=self.mira_emitter_world(time, camera, positions['mira'])
             u=phase(time,14.25,14.7)
             point=muzzle.lerp(second,u)
             self._line3(canvas,camera,'#ffe9a9',[point,muzzle.lerp(second,max(0,u-.1))],4)

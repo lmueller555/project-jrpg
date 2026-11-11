@@ -227,9 +227,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                     actor = model.ready_actor
                     if actor == marked:command = 'guard'
                     elif actor == 'mira':
-                        bot = model.active_bot('mira')
-                        command = ('overclock' if bot is not None and not bot.haste_turns
-                                   and not model.action_reason('overclock') else 'attack')
+                        command = 'attack'
                     elif enemy_id == 'embravyr':
                         command = 'ice_edge' if 'ice_edge' in model.skill_actions() else 'aqua_edge'
                     elif 'flame_edge' in model.skill_actions():command = 'flame_edge'
@@ -244,7 +242,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                         key(game, pygame.K_RETURN);game.update(.1, (0, 0), False);key(game, pygame.K_TAB)
                         self.assertEqual(model.active_gem, wanted)
                     game.draw()
-                    if command in ('aqua_edge', 'flame_edge', 'ice_edge', 'overclock'):
+                    if command in ('aqua_edge', 'flame_edge', 'ice_edge'):
                         click(game, scene.command_rects['skills'].center);game.draw()
                     self.assertEqual(model.action_reason(command), '')
                     click(game, scene.command_rects[command].center)
@@ -332,7 +330,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                 self.assertEqual(self.resources(), before)
                 self.assertEqual(restored.action_mp_cost('aqua_edge', 'player'), 0)
                 self.assertEqual(restored.action_mp_cost('aether_edge', 'player'), 4)
-                self.assertEqual(restored.action_mp_cost('overclock', 'mira'), 5)
+                self.assertEqual(restored.action_mp_cost('arc_discharge', 'mira'), 5)
 
     def test_spoils_and_acquisition_continue_never_duplicate_focus_exp_or_receipt(self):
         ticket = self.start('embravyr');self.enter_battle();self.victory()

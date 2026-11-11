@@ -33,7 +33,7 @@ homecoming and table-setting conversation are not repeated.
 7. Serene treats the survivor, helped by Tomas and the driver. Caelan volunteers
    to help the people still at the reserve and proposes bringing Mira. Aldric,
    Lucan and the page accompany him to her workshop.
-8. Speak with Mira. She chooses to bring her existing kit and Rivet, rejoins
+8. Speak with Mira. She chooses to bring her existing kit and arm rig, rejoins
    for the outing, and travels with the group through the existing town exit
    and overworld route.
 9. Reach the real Sanctuary reserve. The cast gathers at safe arrival positions

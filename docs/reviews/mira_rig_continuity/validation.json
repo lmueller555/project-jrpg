@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "baseline_revision": "7fa97c26165249d5ea97233927353ef3bdbe7c3c",
+  "focused_run": {
+    "passed": 134,
+    "subtests_passed": 726,
+    "scope": "Rig state/model/UI, legacy saves, story parity, continuity exports, workshop, cuff emitter, assets, consumables, enemy groups, skill UI, elemental bosses and Vespermaw."
+  },
+  "broader_partial_run": {
+    "passed": 1196,
+    "completed_full_suite": false,
+    "note": "Stopped broad shards to inspect failures. Asset rebuilds and renderer tests are subsequently run serially to avoid reading in-flight PNG exports."
+  },
+  "failures_reproduced_on_baseline": [
+    "tests/test_aether_doctrine.py::AetherDoctrineTests::test_regent_stewardship_uses_the_planetary_cycle",
+    "tests/test_aldric_side_walk.py::AldricSideWalkTests::test_all_protected_generated_and_non_side_assets_keep_stored_sha256",
+    "tests/test_bat_contact_encounter.py::BatContactEncounterTests::test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress",
+    "tests/test_battle_status_ui.py::BattleStatusUITests::test_single_character_column_keeps_status_above_gear_and_commands_on_right",
+    "tests/test_battle_status_ui.py::BattleStatusUITests::test_status_and_maximum_resources_fit_character_column_at_every_scale",
+    "tests/test_caelan_directional_runs.py::CaelanDirectionalRunTests::test_approved_frames_and_protected_art",
+    "tests/test_caelan_left_run.py::CaelanLeftRunTests::test_matches_approved_frames_and_preserves_existing_art",
+    "tests/test_gallery_session.py::GallerySessionTests::test_legacy_save_remains_byte_identical_until_normal_continue",
+    "tests/test_eldenmere_grass.py::EldenmereGrassTests::test_rollout_preserves_collision_and_all_non_art_metadata",
+    "tests/test_choreography_scene.py::ChoreographySceneTests::test_damage_popups_use_the_same_camera_projection_as_actors",
+    "tests/test_choreography_scene.py::ChoreographySceneTests::test_event_reactions_do_not_depend_on_damage_popup_visibility",
+    "tests/test_doors.py::BuildingDoors::test_all_thirteen_rooms_have_reachable_exits_and_furnishings",
+    "tests/test_character_skills_gameplay.py::CharacterSkillsGameplayTests::test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey",
+    "tests/test_millrace_cutscene_gameplay.py::MillraceCutsceneGameplayTests::test_awarded_spoils_reload_bypasses_the_arrival_cutscene",
+    "tests/test_millrace_cutscene_gameplay.py::MillraceCutsceneGameplayTests::test_unawarded_spoils_reload_bypasses_the_arrival_cutscene",
+    "tests/test_overworld_map.py::RegionalMapTests::test_real_game_update_freezes_regional_world_until_map_closes",
+    "tests/test_ice_reaper_opening.py::IceReaperOpeningTests::test_party_uses_approved_frames_with_matching_combat_display_scale"
+  ],
+  "art_builds": "Both Mira and Tusker combat banks rebuild byte-identically; continuity exports rebuild deterministically.",
+  "opening_followup": {
+    "passed": 42,
+    "subtests_passed": 45,
+    "scope": "Compact battle UI, opening cinematic assets and gameplay, deterministic continuity exports."
+  }
+}

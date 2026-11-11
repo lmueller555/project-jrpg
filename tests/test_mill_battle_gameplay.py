@@ -126,7 +126,7 @@ def finish_spoils_presentation(game):
 
 
 def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=True,
-                       on_step=None, use_overclock=True):
+                       on_step=None):
     """Use actual tutorial acknowledgement and mouse command/result input."""
     assert game.combat.active
     scene = game.combat.scene
@@ -164,12 +164,6 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
                 # returning to a slower basic-attack-only strategy.
                 game.draw();click(game, scene.command_rects['skills'].center)
                 game.draw();click(game, scene.command_rects['aether_edge'].center)
-                continue
-            elif (use_overclock and command == 'attack' and scene.model.ready_actor == 'mira'
-                    and not scene.model.action_reason('overclock')
-                    and not scene.model.active_bot('mira').haste_turns):
-                game.draw();click(game, scene.command_rects['skills'].center)
-                game.draw();click(game, scene.command_rects['overclock'].center)
                 continue
             game.draw()
             assert action in scene.command_rects
