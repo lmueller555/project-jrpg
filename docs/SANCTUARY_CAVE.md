@@ -99,8 +99,15 @@ release the ambience audio without changing story music ownership.
 ## Story and encounters
 
 The cave is explorable while the MQ03 Sanctuary arrival remains pending.
-Existing party ownership and Kindled Courage continue at that checkpoint.
-Cave entry, treasure and the Echo Chamber inspection preserve that story state.
+Existing party ownership and quest progress remain intact. **Elden Vale
+Sanctuary Cave** replaces the emergency score during non-battle cave exploration,
+including the optional elemental chambers, dialogue and menus. The cue repeats
+without restarting as the player walks between rooms. Battles retain
+**Kindled Courage**, then resume the cave track at its interrupted position
+through results and rewards. Continue selects the cave cue even when restoring
+pending rewards; exiting returns to the appropriate outdoor or story score.
+Cave entry, treasure and the Echo Chamber inspection preserve the pending story
+state. See [music exports and playback](../assets/music/README.md).
 
 The first entrance with Mira’s Blade presents a short Blue-gem resonance
 scene. Caelan notices concentrated ambient aether and wonders whether he can

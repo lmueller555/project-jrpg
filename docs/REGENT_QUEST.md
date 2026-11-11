@@ -52,8 +52,10 @@ completion. The existing Venn cart detour stays removed.
 The survivor's entrance fades the music to silence over 700 ms. His first two
 utterances (including Aldric's intervening question) play in silence. Kindled
 Courage begins on Lucan's following question and loops through departure,
-Mira's rejoining and Sanctuary arrival. The pending arrival retains this score;
-the future arrival scene must release emergency music ownership when it ends.
+Mira's rejoining and Sanctuary arrival. The pending arrival retains this score
+outdoors; non-battle cave exploration temporarily uses **Elden Vale Sanctuary
+Cave**, returning to the emergency score on exit. The future arrival scene must
+release emergency music ownership when it ends.
 Continue restarts an unfinished report with its silent opening and restores the
 score directly at later checkpoints. Cancelling and reopening the report within
 the same session does not restart an already-started score.

@@ -150,13 +150,15 @@ repeating grants. Cave victories preserve KO party members; level-ups increase
 maxima without restoring current HP/MP. Failed return checkpoints roll back the
 counter/resources so retry cannot consume another random roll. Fleeing preserves
 spent resources.
-The pending MQ03 outing, escorts, treasures and Kindled Courage ownership
-remain intact, including through cave victory and spoils.
+The pending MQ03 outing, escorts and treasures remain intact, including through
+cave victory and spoils. The cave's exploration score supersedes the MQ03
+emergency score only while inside the cave; no quest stage is advanced.
 
-Cave entry temporarily switches the soundtrack to Kindled Courage. Victory,
-fleeing and defeat fade the previous track back in at its interrupted playback
-position; results and Spoils keep that resumed stream. If MQ03 already owns
-Kindled Courage, the same stream continues through entry and return.
+Cave exploration loops **Elden Vale Sanctuary Cave**. Battle entry temporarily
+switches the soundtrack to **Kindled Courage**. Victory, fleeing and defeat fade
+the cave track back in at its interrupted playback position; results and Spoils
+keep that resumed stream. Loading a pending battle first selects the cave cue
+so returning from it cannot accidentally resume the title theme.
 
 Enemy stats, XP curves, base damage formulas and item-drop definitions remain
 unchanged. Aqua Edge’s magical component now applies the stored Water response

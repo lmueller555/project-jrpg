@@ -52,7 +52,8 @@ class CaveGameplayTests(unittest.TestCase):
         self.assertEqual(quest.stage, 'sanctuary_arrival_pending')
         self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
         self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(game.music.desired_track,
+                         'sanctuary_cave' if game.sanctuary_cave.active else 'battle')
         self.assertFalse(game.combat.active)
         self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
         self.assertIn('mira', game.party.active_ids)

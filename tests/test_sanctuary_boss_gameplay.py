@@ -158,7 +158,9 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
         self.assertIn('mira', game.party.active_ids)
         self.assertNotIn('lucan', game.party.members)
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(game.music.desired_track,
+                         'battle' if game.combat.active and not game.combat.post_phase
+                         else 'sanctuary_cave')
 
     def victory(self, owner):
         for enemy in owner.model.enemies:enemy.hp = 0

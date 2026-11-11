@@ -74,7 +74,9 @@ class CaveRandomGameplayTests(unittest.TestCase):
         self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
         self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
         self.assertIn('mira', game.party.active_ids)
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(game.music.desired_track,
+                         'battle' if game.combat.active and not game.combat.post_phase
+                         else 'sanctuary_cave')
 
     def position(self, point=(456, 1280)):
         # Test-only placement chooses a clear start; only subsequent production
@@ -277,7 +279,7 @@ class CaveRandomGameplayTests(unittest.TestCase):
         for enemy in owner.model.enemies:enemy.hp = 0
         owner.model._result('victory')
         self.assertTrue(owner._begin_victory())
-        self.assertEqual(self.game.music.desired_track, 'battle')
+        self.assertEqual(self.game.music.desired_track, 'sanctuary_cave')
         pending = owner.snapshot()
         for item, quantity in pending['rewards']['drops'].items():
             inventory['items'][item] = inventory['items'].get(item, 0)+quantity
@@ -297,7 +299,7 @@ class CaveRandomGameplayTests(unittest.TestCase):
         self.assertFalse(OverworldTravel.valid_journey(forged))
         restored = self.load()
         self.assertEqual(restored.combat.post_phase, 'spoils')
-        self.assertEqual(restored.music.desired_track, 'battle')
+        self.assertEqual(restored.music.desired_track, 'sanctuary_cave')
         self.assertEqual(len(restored.combat.model.enemies), 4)
         self.assertTrue(all(enemy.hp == 0 for enemy in restored.combat.model.enemies))
         self.assertEqual((restored.attributes.current_hp, restored.attributes.current_mp), (0, 2))
@@ -307,7 +309,7 @@ class CaveRandomGameplayTests(unittest.TestCase):
         self.assertEqual(restored.inventory.to_dict(), inventory)
         receipt_state = restored.battle_rewards.to_dict()
         again = self.load()
-        self.assertEqual(again.music.desired_track, 'battle')
+        self.assertEqual(again.music.desired_track, 'sanctuary_cave')
         self.assertEqual(again.battle_rewards.to_dict(), receipt_state)
         self.assertEqual(again.inventory.to_dict(), inventory)
         self.finish_spoils(again)

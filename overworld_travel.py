@@ -286,6 +286,7 @@ class OverworldTravel:
         g.camera.reset()
         g.location_label = None
         g.location_seconds = 3.5
+        g._sync_world_music()
         g.save_progress()
         return True
 

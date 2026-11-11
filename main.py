@@ -984,8 +984,7 @@ class Game:
         self.camera.reset()
         self.combat.prepare_world_resume()
         self.music.set_paused(not self._music_focused)
-        self.music.play('eldenmere')
-        self.regent_quest.emergency.sync_music(restoring=True)
+        self._sync_world_music(restoring=True)
         if data is not None and data.get('post_battle') is not None:
             if not self.combat.restore_pending(data['post_battle']):
                 self.save_error='The saved battle spoils could not be restored.'
@@ -1544,6 +1543,18 @@ class Game:
         finally:
             self.regional_audio.update(0)
 
+    def _sync_world_music(self, *, restoring=False):
+        """Cave exploration supersedes the MQ03 travel score, never combat."""
+        if (self.on_title or self.combat.active or self.opening_cinematic.active
+                or self.mill_gift.active or self.regent_arrival.active):
+            return
+        if self.sanctuary_cave.active:
+            self.music.play('sanctuary_cave', fade_ms=0 if restoring else 450)
+            return
+        if restoring or self.music.desired_track == 'sanctuary_cave':
+            self.music.play('eldenmere')
+        self.regent_quest.emergency.sync_music(restoring=restoring)
+
     def _cave_encounters_available(self):
         """Only free, focused exploration can spend the cave's travel budget."""
         return (self.sanctuary_cave.active and not self._is_gallery_preview
@@ -1615,7 +1626,7 @@ class Game:
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
         self.mill_quest.sync_encounter_music()
-        if not self.on_title and not self.combat.active:self.regent_quest.emergency.sync_music()
+        self._sync_world_music()
         self.music.set_paused(not self._music_focused or
                               bool(self.combat.active and (self.combat.paused or not self.combat.focused)))
         self.music.set_ducked(not self.combat.post_phase and

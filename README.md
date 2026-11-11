@@ -78,6 +78,10 @@ The title water animates throughout the brook, pools, mill discharge and
 foreground cascades. **Eldenmere Theme** loops on the title screen.
 **Eldenmere** loops through Eldenmere, its interiors and the millrace,
 continuing across area transfers and resuming on Continue.
+**Elden Vale Sanctuary Cave** loops during non-battle exploration throughout the
+cave and its elemental chambers. Battles still use Kindled Courage, then resume
+the cave track at its interrupted position. Exiting the cave restores the
+appropriate outdoor or story music.
 **Dare to Dream Leitmotif** loops throughout the New Game
 cinematic, then hands back to Eldenmere when it ends or is skipped.
 **Kindled Courage** plays in battles. MQ02 now

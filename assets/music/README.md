@@ -44,6 +44,7 @@ or rearranged.
 | --- | --- | --- |
 | `Eldenmere Theme.m4a` | `runtime/eldenmere_theme.ogg` | Title screen |
 | `Eldenmere.m4a` | `runtime/eldenmere.ogg` | Eldenmere, its interiors and millrace exploration; repeats without restarting across area transfers |
+| `Elden Vale Sanctuary Cave.m4a` | `runtime/elden_vale_sanctuary_cave.ogg` | Non-battle exploration throughout the Sanctuary cave, including the optional elemental chambers |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it after the return camera pan and acknowledgment of Mira's warning |
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Retained one-shot cue; combat results now resume the interrupted soundtrack |
 | `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
@@ -58,6 +59,14 @@ and battle cues use the default repeating playback. The opening leitmotif
 explicitly sets `loop: true`. New uploads remain
 available for review until assigned to playback.
 
+**Elden Vale Sanctuary Cave** repeats throughout the continuous cave without
+restarting between rooms, including during non-battle dialogue and menus.
+It takes priority over MQ03's ongoing emergency score only while inside the
+cave. Exiting restores the appropriate outdoor or story cue; Continue selects
+the cave cue before restoring a pending encounter or rewards screen.
+The full source is preserved without trimming, normalization or rearrangement.
+Its native Vorbis export includes the encoder's documented 56 extra frames.
+
 ### Combat interruption and return
 
 Entering a Bat, millrace or cave encounter remembers the selected soundtrack
@@ -66,7 +75,8 @@ millrace cue still waits for the camera's return and Mira's acknowledged
 warning; cave encounters switch when their entry sequence begins.
 
 When combat resolves through victory, fleeing or defeat, the interrupted
-track fades in from that saved position. The result banner, rewards screen
+track fades in from that saved position. Cave encounters return to
+**Elden Vale Sanctuary Cave**. The result banner, rewards screen
 and return to exploration share that resumed stream. Repeated result updates,
 reward retries and dismissal do not restart it. If Kindled Courage was already
 playing for the MQ03 emergency, it continues uninterrupted through the battle.
@@ -131,6 +141,12 @@ To rebuild only the Eldenmere/millrace exploration cue:
 
 ```sh
 python tools/build_runtime_music.py --track eldenmere
+```
+
+To rebuild only the Sanctuary cave exploration cue:
+
+```sh
+python tools/build_runtime_music.py --track sanctuary_cave
 ```
 
 To rebuild only the Wintermute2 preview cue:
