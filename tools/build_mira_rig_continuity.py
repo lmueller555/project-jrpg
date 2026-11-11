@@ -1,7 +1,7 @@
 """Register authored worn-rig exploration and cinematic drawings, without repainting."""
 from pathlib import Path
 from statistics import median
-import hashlib,json,sys
+import hashlib,json,sys,shutil
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
@@ -121,6 +121,16 @@ def build():
     for name in ('idle_front_review.png','walk_directions_review.gif','scale_comparison.png'):
         p=OUT/name
         if p.exists():p.unlink()
+    # The opening's small held poses use the current combat bank verbatim.
+    combat=ROOT/'assets/combat/mira'
+    manifest=json.loads((combat/'animation.json').read_text())
+    opening=ROOT/'assets/story/ice_reaper_opening/actors/mira'
+    for i,entry in enumerate(manifest['animations']['idle']['frames']):
+        names=[f'ready_{i+1:02}.png']+(['stand.png'] if i==0 else [])
+        for name in names:
+            shutil.copyfile(combat/entry['file'],opening/name)
+            exports.append(dict(file=(opening/name).relative_to(ROOT).as_posix(),
+                                source='assets/combat/mira/animation.json',source_frame=entry['file'],anchor=manifest['anchor']))
     data=dict(version=1,arm='anatomical_left',equipment='external worn cuff over intact limb',exports=exports,
               sources=[dict(file=p.name,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(SOURCE.glob('*_authored.png'))])
     (SOURCE/'registration.json').write_text(json.dumps(data,indent=2)+'\n')

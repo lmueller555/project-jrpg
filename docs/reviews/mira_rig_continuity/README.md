@@ -36,8 +36,10 @@ emitter placement and deterministic art rebuilds. Historic review packs showing
 the removed companion or replaced Mira equipment have been retired; current
 combat evidence is linked above.
 
-The broader pre-existing suite has failures in old spoils continuation/command
-layout assertions and Caelan approval-document hashes. These reproduce on the
-parent `main` revision (`7fa97c26`); phase three does not change those UI rules
-or Caelan assets. The focused continuity, migration and combat checks above are
-the verification for this cutover.
+The final focused run passed **134 tests and 726 subtests**. The opening-art
+follow-up passed **42 tests and 45 subtests**. The broader partial
+run passed 1,196 tests before being stopped for failure comparison; a full-suite
+pass is not claimed. Older spoils, layout, save-fixture, map and approval-hash
+failures reproduce on parent `main` (`7fa97c26`).
+[Validation details](validation.json) list the baseline checks. The refreshed
+opening poses also correct its pre-existing stale Mira art copy.

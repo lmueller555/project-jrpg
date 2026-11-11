@@ -942,6 +942,51 @@
         64,
         116
       ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_01.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_01.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/stand.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_01.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_02.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_02.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_03.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_03.png",
+      "anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_04.png",
+      "source": "assets/combat/mira/animation.json",
+      "source_frame": "idle_04.png",
+      "anchor": [
+        32,
+        54
+      ]
     }
   ],
   "sources": [

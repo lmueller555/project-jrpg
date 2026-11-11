@@ -103,7 +103,7 @@ class CompactBattleUITests(unittest.TestCase):
         before=scene.model.rig_allocation
         with patch.object(Painter,'text',record):
             scene.draw(self.canvas,self.game.ui_surface)
-        self.assertIsNone(scene.model.bot_for('mira'))
+        self.assertFalse(hasattr(scene.model, 'bot_for'))
         self.assertIsNotNone(scene.rig)
         self.assertTrue(scene.party_rows['mira']['interactable'].contains(scene.rig.rect))
         self.assertFalse(any(text.startswith('Companion ATB') for text in rendered))
