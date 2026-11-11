@@ -86,7 +86,7 @@ class LevelingCombatIntegrationTests(unittest.TestCase):
                             'name': identifier.title(), 'attributes': stats,
                             'hp': stats['hp'], 'mp': stats['mp'],
                             'attack': 'bolt_shot' if identifier == 'mira' else 'attack'})
-                    model = BattleModel(source, party_members=party, bot_loadouts={},
+                    model = BattleModel(source, party_members=party,
                                         enemy_data=enemy_at_level(level), rng=FixedVariance())
                     self.assertEqual(model.enemy.attributes, baseline_enemy_stats(level))
                     self.assertEqual(len(model.party), 3)

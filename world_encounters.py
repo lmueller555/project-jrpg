@@ -1257,7 +1257,6 @@ class CombatEncounters:
                         for frame in record['animations']['idle']['frames']]
 
     def draw_world(self, canvas, camera):
-        self._draw_mira_weapon(canvas, camera)
         self._draw_mill_world(canvas, camera)
         if (self.active or self.cooldown > 0
                 or not self.bat_unlocked
@@ -1274,33 +1273,6 @@ class CombatEncounters:
         pygame.draw.ellipse(canvas, '#304a35', shadow)
         canvas.blit(image, (round(point.x-self._anchor[0]), round(point.y-self._anchor[1])))
 
-    def _draw_mira_weapon(self, canvas, camera):
-        quest = self.game.mill_quest
-        carried = (quest.mira_armed and quest._mira_world is self.game.world
-                   and not quest.action and not quest._mira_pose)
-        stowed = (getattr(quest, 'mira_weapon_stowed', False)
-                  and self.game.world is quest.upstream)
-        if not carried and not stowed:return
-        if 'bolt_launcher' not in self._world_art:
-            folder = ROOT/'assets/combat/mira'
-            if not (folder/'world_bolt_launcher.json').exists():return
-            record = json.loads((folder/'world_bolt_launcher.json').read_text())
-            image = pygame.image.load(str(folder/'world_bolt_launcher.png')).convert_alpha()
-            self._world_art['bolt_launcher'] = image, record['hand_anchor']
-        source, anchor = self._world_art['bolt_launcher']
-        if carried:
-            facing = quest.mira.facing
-            if facing == 'right':
-                source = pygame.transform.flip(source, True, False)
-                anchor = (source.get_width()-1-anchor[0], anchor[1])
-            angle = {'front': 65, 'back': -65, 'left': -10, 'right': 10}.get(facing, 0)
-            hand = quest.mira.position+pygame.Vector2(-8 if facing == 'left' else 8, -13)
-        else:
-            angle, hand = 18, pygame.Vector2(430, 252)
-        image = pygame.transform.rotate(source, angle)
-        grip = (pygame.Vector2(anchor)-pygame.Vector2(source.get_size())/2).rotate(-angle)
-        point = hand-pygame.Vector2(camera)-pygame.Vector2(image.get_size())/2-grip
-        canvas.blit(image, (round(point.x), round(point.y)))
 
     def _draw_mill_world(self, canvas, camera):
         quest = self.game.mill_quest

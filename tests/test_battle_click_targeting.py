@@ -85,7 +85,7 @@ class BattleClickTargetingTests(unittest.TestCase):
                 tuple((actor.identifier, getattr(actor, 'hp', None),
                        getattr(actor, 'mp', None), actor.atb,
                        getattr(actor, 'haste_turns', None))
-                      for actor in (*model.party, *model.enemies, *model.bots)))
+                      for actor in (*model.party, *model.enemies)))
 
     def select_skill(self, scene, identifier='aether_edge'):
         self.click(scene, scene.command_rects['skills'].center)

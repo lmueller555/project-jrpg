@@ -46,7 +46,6 @@ from party_state import PartyState
 from party_ui import PartyUI
 from party_travel import PartyTravel
 from character_abilities import CharacterAbilities
-from bot_loadouts import BotLoadouts
 from mira_rig_state import MiraRigState, migrate_mira_rig
 from status_ui import StatusUI
 from battle_rewards import BattleRewards
@@ -515,7 +514,6 @@ class Game:
         self._party_prompt_callback=None
         self.battle_rewards=BattleRewards(self.inventory)
         self.character_abilities=CharacterAbilities(self.inventory)
-        self.bot_loadouts=BotLoadouts()
         self.mira_rig=MiraRigState()
         self.social=SocialSystem(self)
         self._mouse_held=False
@@ -906,7 +904,6 @@ class Game:
         if data is not None:
             self.character_abilities.restore(data.get('character_abilities'))
             self._migrate_legacy_blade((data.get('mill_quest') or {}).get('legacy_bypass',False))
-        self.bot_loadouts=BotLoadouts()
         self.mira_rig=MiraRigState()
         if data is not None and 'mira_rig' in data:
             if not self.mira_rig.restore(data['mira_rig']):return False

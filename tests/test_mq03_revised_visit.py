@@ -84,8 +84,15 @@ class RevisedVisitTests(unittest.TestCase):
                              for flag in self.g.social.flags))
 
     def test_legacy_unarmed_arrival_does_not_invent_the_gift_or_homecoming(self):
+        self.driver.assign();self.driver.at('arrival')
+        # Travel can start modern arrival automatically; restart its dialogue with legacy ownership.
+        self.g.social.cancel_script()
+        self.quest.on_dialogue_cancelled('regent_arrival')
+        if self.g.inventory.quantity('caelan_gearblade'):
+            self.assertTrue(self.g.inventory.consume_bundle({'caelan_gearblade': 1}))
+        self.g.character_abilities.reset()
         self.assertEqual(self.g.inventory.quantity('caelan_gearblade'), 0)
-        self.driver.assign();self.driver.at('arrival');self.driver.interact('arrival')
+        self.driver.interact('arrival')
         actual = self.g.social._source_lines
         text = ' '.join(line['text'] for line in actual)
         self.assertNotIn('birthday', text)
@@ -146,7 +153,7 @@ class RevisedVisitTests(unittest.TestCase):
         mira = self.quest.lines['mira_departure']
         self.assertTrue(any(line['speaker'] == 'mira' and 'I’m coming' in line['text']
                             for line in mira))
-        self.assertTrue(any(line['speaker'] == 'mira' and 'Rivet' in line['text']
+        self.assertTrue(any(line['speaker'] == 'mira' and 'arm brace' in line['text']
                             for line in mira))
         current = ' '.join(line['text'] for key in ('discussion', 'attack_report',
                            'departure', 'mira_departure', 'sanctuary_waiting')

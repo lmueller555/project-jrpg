@@ -29,7 +29,6 @@ class PartyBattleModelTests(unittest.TestCase):
         return (model.phase, model.ready_actor, model.telegraphed_target,
                 [(member.identifier, member.hp, member.mp, round(member.atb, 9),
                   member.guarded) for member in (*model.party, model.enemy)],
-                [(bot.identifier, round(bot.atb, 9), bot.haste_turns) for bot in model.bots],
                 deepcopy(model.current_action), deepcopy(events))
 
     def test_guest_is_separate_and_starts_near_caelans_ratings(self):

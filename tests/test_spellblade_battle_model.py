@@ -50,9 +50,9 @@ class SpellbladeLessonTests(unittest.TestCase):
 
     def test_ready_choices_pause_all_party_enemy_and_bot_gauges(self):
         m=self.model();self.ready(m)
-        before=[a.atb for a in (*m.party,*m.bots,m.enemy)]
+        before=[a.atb for a in (*m.party,m.enemy)]
         m.update(10000)
-        self.assertEqual([a.atb for a in (*m.party,*m.bots,m.enemy)],before)
+        self.assertEqual([a.atb for a in (*m.party,m.enemy)],before)
 
     def test_known_skill_skips_the_temporary_training_menu(self):
         m=BattleModel(CharacterAttributes(),enemy_id='ridgeback_tusker',guest_id='mira',

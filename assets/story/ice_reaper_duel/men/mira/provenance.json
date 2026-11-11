@@ -1,341 +1,309 @@
 {
   "version": 1,
   "generated_with": "image_gen",
-  "sources": [
-    {
-      "file": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "sha256": "53946a47ba560da65fa9f0d7edd692b6c5f67d06d8c2724653a5cd5c88d08dd5"
-    },
-    {
-      "file": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
-      "sha256": "8d776703e565ebc302b60764ce1e06de522f2689c4e69f010dc3e79d0d2042ae"
-    }
-  ],
-  "operation": "Equal-cell extraction, alpha threshold, fixed actor scale and foot/knee registration. No joint warping, mirrored weapons or generated in-between poses.",
   "frames": [
     {
-      "file": "brace_front_01.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 0,
-      "source_bounds": [
-        0,
-        0,
-        384,
-        512
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "677fdfb70d15d93e01df1d3f85e92caee108d72a6f64f04ea0e5b6ed10d1be7e",
-      "scale": 0.233,
-      "source_content_bounds": [
-        88,
-        108,
-        305,
-        447
-      ],
-      "foot": [
-        170.0,
-        446
-      ],
-      "offset": [
-        24,
-        12
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_front_02.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 1,
-      "source_bounds": [
-        384,
-        0,
-        768,
-        512
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "ad54af4668f4a3603c77f6548024b5db8953573774a484a19552bbf2199bcc4d",
-      "scale": 0.233,
-      "source_content_bounds": [
-        95,
-        108,
-        316,
-        447
-      ],
-      "foot": [
-        169.0,
-        446
-      ],
-      "offset": [
-        25,
-        12
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_front_03.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 2,
-      "source_bounds": [
-        768,
-        0,
-        1152,
-        512
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "5e5e631e51d481c79743e5c7619563499ab4e05c00149d0e8d494c79461e588b",
-      "scale": 0.233,
-      "source_content_bounds": [
-        103,
-        130,
-        329,
-        447
-      ],
-      "foot": [
-        161.0,
-        446
-      ],
-      "offset": [
-        26,
-        12
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_front_04.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 3,
-      "source_bounds": [
-        1152,
-        0,
-        1536,
-        512
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "97899c778c5805378006cfe6bf2b81a09599bf1d656d1edac8792c7ff3076c19",
-      "scale": 0.233,
-      "source_content_bounds": [
-        96,
-        112,
-        321,
-        447
-      ],
-      "foot": [
-        167.0,
-        446
-      ],
-      "offset": [
-        25,
-        12
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_rear_01.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 4,
-      "source_bounds": [
-        0,
-        512,
-        384,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "519bbc112385ddb58108cc78fa5192b3f38a09407d789b5a9e5d9ce002141feb",
-      "scale": 0.233,
-      "source_content_bounds": [
-        82,
-        108,
-        279,
-        444
-      ],
-      "foot": [
-        163.5,
-        443
-      ],
-      "offset": [
-        26,
-        13
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_rear_02.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 5,
-      "source_bounds": [
-        384,
-        512,
-        768,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "4faa7140c3f2506507ee4c07b10a26e658341a45d2d25fb8c1fd5f067292b55d",
-      "scale": 0.233,
-      "source_content_bounds": [
-        80,
-        105,
-        302,
-        444
-      ],
-      "foot": [
-        162.0,
-        443
-      ],
-      "offset": [
-        26,
-        13
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_rear_03.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 6,
-      "source_bounds": [
-        768,
-        512,
-        1152,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "efea3c217d65ca5d400a0974b0dba9434049f2aceeeb8dbd66f01a8a515952d0",
-      "scale": 0.233,
-      "source_content_bounds": [
-        77,
-        127,
-        307,
-        444
-      ],
-      "foot": [
-        148.0,
-        443
-      ],
-      "offset": [
-        30,
-        13
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_rear_04.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
-      "cell": 7,
-      "source_bounds": [
-        1152,
-        512,
-        1536,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "4ae6c3f18f63972d5a714729f74a4ac92a12f458812c54316d7940a5bfb6dae9",
-      "scale": 0.233,
-      "source_content_bounds": [
-        81,
-        108,
-        305,
-        444
-      ],
-      "foot": [
-        161.0,
-        443
-      ],
-      "offset": [
-        26,
-        13
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_right_01.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
-      "cell": 12,
-      "source_bounds": [
-        0,
-        683,
-        256,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_front_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 0,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "e6e03066cc12eae342aaabee85345429cfc6fa883447d71685729e524149db41",
-      "scale": 0.2915,
-      "source_content_bounds": [
-        45,
-        13,
-        225,
-        284
-      ],
-      "foot": [
-        150.0,
-        283
-      ],
-      "offset": [
-        20,
-        34
-      ]
+      "sha256": "e3ac9fac5b9c55b454f8487bb46de5df9a9f1b8138551c6c02b0b16c49179d6b"
     },
     {
-      "file": "brace_right_02.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
-      "cell": 13,
-      "source_bounds": [
-        256,
-        683,
-        512,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "5eae59fe097c5ca43feaa838e259ab8e387c4be0ce6c8f326a7dc8741709bc2b",
-      "scale": 0.2915,
-      "source_content_bounds": [
-        43,
-        13,
-        219,
-        284
-      ],
-      "foot": [
-        147.0,
-        283
-      ],
-      "offset": [
-        21,
-        34
-      ]
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
     },
     {
-      "file": "brace_right_03.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
-      "cell": 14,
-      "source_bounds": [
-        512,
-        683,
-        768,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "200e02e535068a25941349c2d4332351374d8806eae7b0ad58aff6ee7ee71fae",
-      "scale": 0.2915,
-      "source_content_bounds": [
-        33,
-        23,
-        212,
-        284
-      ],
-      "foot": [
-        150.0,
-        283
-      ],
-      "offset": [
-        20,
-        34
-      ]
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
     },
     {
-      "file": "brace_right_04.png",
-      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
-      "cell": 15,
-      "source_bounds": [
-        768,
-        683,
-        1024,
-        1024
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "sha256": "e29a2cc81cf1486782a631401fd38f66f1aac0ed90ad31be7340534f11980fcf",
-      "scale": 0.2915,
-      "source_content_bounds": [
-        34,
-        19,
-        207,
-        285
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "foot": [
-        151.0,
-        284
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
       ],
-      "offset": [
-        20,
-        33
-      ]
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_rear_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 4,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "4434bf48f8c678accc6a4bdc464e9f64b1cefc74c5c5979a45d1c07c0c960d3d"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_01.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_02.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_03.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    },
+    {
+      "file": "assets/story/ice_reaper_duel/men/mira/brace_right_04.png",
+      "source": "cinematic_authored.png",
+      "source_cell": 2,
+      "scale": 0.417910447761194,
+      "anchor": [
+        64,
+        116
+      ],
+      "sha256": "9e940c146c42c82b1a3549808b2ba28af01e077d14b256760afbb9e4aabc9701"
+    }
+  ],
+  "sources": [
+    {
+      "file": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+      "sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf"
     }
   ]
 }

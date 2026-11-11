@@ -17,7 +17,7 @@ from battle_model import BattleModel
 from battle_scene import BattleScene
 from character_attributes import CharacterAttributes
 from mira_combat_art import MiraCombatArt
-from test_rivet_battle_scene import FieldSprites
+from battle_sprite_fixtures import FieldSprites
 from ui_style import UIStyle
 
 

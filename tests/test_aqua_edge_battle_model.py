@@ -76,7 +76,7 @@ class AquaEdgeBattleModelTests(unittest.TestCase):
         self.assertTrue(model.choose_action('aqua_edge'))
         model.update(model.current_action.duration)
         self.assertEqual(model.player.mp, 4)
-        for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+        for actor in (*model.party, *model.enemies):actor.atb = 0
         model.player.atb = 1
         model.update(0)
         self.assertTrue(model.choose_action('aqua_edge'))
@@ -91,7 +91,7 @@ class AquaEdgeBattleModelTests(unittest.TestCase):
             self.assertFalse(model.aqua_edge_guided)
             self.assertFalse(model.aqua_edge_discovered)
             self.assertEqual(model.action_mp_cost('aqua_edge', 'player'), 0 if tutorial else 4)
-            for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+            for actor in (*model.party, *model.enemies):actor.atb = 0
             model.player.atb = 1
             model.update(0)
             self.assertEqual(model.action_reason('aqua_edge'), '' if tutorial else 'Not enough MP.')
@@ -162,7 +162,7 @@ class AquaEdgeBattleModelTests(unittest.TestCase):
         self.assertTrue(model.choose_action('aqua_edge'))
         model.update(model.current_action.duration)
         self.assertEqual(model.enemy.hp, model.enemy.max_hp)
-        for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+        for actor in (*model.party, *model.enemies):actor.atb = 0
         model.player.atb = 1;model.update(0)
         self.assertTrue(model.choose_action('aether_edge'))
         model.update(model.current_action.impact_at)
@@ -199,8 +199,6 @@ class AquaEdgeBattleModelTests(unittest.TestCase):
                         if model.spellblade_stage == 'guard' or actor == model.telegraphed_target:command = 'guard'
                         elif model.spellblade_stage == 'first_edge':command = 'aqua_edge'
                         elif actor == 'player' and model.player.mp >= 4:command = 'aether_edge'
-                        elif (actor == 'mira' and model.active_bot() and not model.active_bot().haste_turns
-                              and model.active_player.mp >= 5):command = 'overclock'
                         else:command = 'attack'
                         self.assertTrue(model.choose_action(command))
                     model.update(.05);model.drain_events()
@@ -224,8 +222,6 @@ class AquaEdgeBattleModelTests(unittest.TestCase):
                         actor = model.ready_actor
                         if actor in model.enemy_telegraphs.values():command = 'guard'
                         elif actor == 'player' and model.player.mp >= 4:command = 'aqua_edge'
-                        elif (actor == 'mira' and model.active_bot() and not model.active_bot().haste_turns
-                              and model.active_player.mp >= 5):command = 'overclock'
                         else:command = 'attack'
                         self.assertTrue(model.choose_action(command))
                     model.update(.05);model.drain_events()

@@ -144,7 +144,7 @@ def capture(output=OUTPUT, *, baseline_ref='HEAD', protected_hashes=None,
                              'assets/source/cinematics/lucan_forward_guard')
               for path in sorted((ROOT/folder).rglob('*')) if path.is_file()}
     manifest_hash = digest(ROOT/MANIFEST)
-    reference_path = ROOT/'docs/reviews/rhea_winter_cinematic/verification.json'
+    reference_path = ROOT/'assets/source/cinematics/ice_reaper_continuity/staging_reference.json'
     reference = json.loads(reference_path.read_text())
     timeline, snapshots, sprite_snapshots = [], [], []
     sample_frames = {round((time-START)*FPS): time for time in SNAPSHOTS}

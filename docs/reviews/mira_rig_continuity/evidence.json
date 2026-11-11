@@ -1,0 +1,88 @@
+{
+  "scope": "Isolated rendered world/workshop and seekable production cinematic art. No played victory or quest completion is claimed.",
+  "captures": [
+    {
+      "file": "workshop_0000.png",
+      "scene": "eldenmere",
+      "clock_ms": 0
+    },
+    {
+      "file": "workshop_1000.png",
+      "scene": "eldenmere",
+      "clock_ms": 1000
+    },
+    {
+      "file": "workshop_2000.png",
+      "scene": "eldenmere",
+      "clock_ms": 2000
+    },
+    {
+      "file": "workshop_2400.png",
+      "scene": "eldenmere",
+      "clock_ms": 2400
+    },
+    {
+      "file": "workshop_3600.png",
+      "scene": "eldenmere",
+      "clock_ms": 3600
+    },
+    {
+      "file": "workshop_5000.png",
+      "scene": "eldenmere",
+      "clock_ms": 5000
+    },
+    {
+      "file": "workshop_6500.png",
+      "scene": "eldenmere",
+      "clock_ms": 6500
+    },
+    {
+      "file": "workshop_7600.png",
+      "scene": "eldenmere",
+      "clock_ms": 7600
+    },
+    {
+      "file": "cinematic_0930.png",
+      "scene": "Ice Reaper study",
+      "seconds": 9.3
+    },
+    {
+      "file": "cinematic_1080.png",
+      "scene": "Ice Reaper study",
+      "seconds": 10.8
+    },
+    {
+      "file": "cinematic_1180.png",
+      "scene": "Ice Reaper study",
+      "seconds": 11.8
+    },
+    {
+      "file": "cinematic_1250.png",
+      "scene": "Ice Reaper study",
+      "seconds": 12.5
+    },
+    {
+      "file": "cinematic_1330.png",
+      "scene": "Ice Reaper study",
+      "seconds": 13.3
+    },
+    {
+      "file": "cinematic_1435.png",
+      "scene": "Ice Reaper study",
+      "seconds": 14.35
+    },
+    {
+      "file": "cinematic_1700.png",
+      "scene": "Ice Reaper study",
+      "seconds": 17.0
+    }
+  ],
+  "progress_unchanged": true,
+  "fingerprints": {
+    "battle_model.py": "cac5fad2d1308564ee8b2e79b27925f036d569a4a8b25ef69cdad048cd3ccd7a",
+    "mill_quest.py": "a157ae72cb97dcd4039059c5807e0b724dcb50fdc6319bb13479eefede8ae8a0",
+    "world_encounters.py": "bd0b29945f25ef3b9402259f5a0bd9f4bacee99002c45d4bdedff31c8a301f03",
+    "ice_reaper_action.py": "123a88e5997b298ed6f2f10669af9b059233831cef5511b0ce93af82763f735a",
+    "assets/source/characters/mira/arm_rig/registration.json": "bd9569ef4fc56d939440e32f208881d50d1726b62bb0f87c2e467bf7b55cdc85"
+  }
+}

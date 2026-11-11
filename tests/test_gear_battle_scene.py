@@ -86,7 +86,7 @@ class GearBattleSceneTests(unittest.TestCase):
                 for actor in (*self.model.party, self.model.enemy)]
 
     def gauges(self):
-        return [actor.atb for actor in (*self.model.party, *self.model.bots, self.model.enemy)]
+        return [actor.atb for actor in (*self.model.party, self.model.enemy)]
 
     def gear_points(self):
         rect = self.scene.gear.rect
@@ -105,7 +105,7 @@ class GearBattleSceneTests(unittest.TestCase):
             self.key(pygame.K_RETURN)
 
     def test_hover_slows_every_charging_gauge_and_leaves_ready_choices_frozen(self):
-        self.assertEqual(self.model.bots, ())
+        self.assertFalse(hasattr(self.model, 'bots'))
         actors = (*self.model.party, self.model.enemy)
         self.pointer(pygame.MOUSEMOTION, self.scene.gear.rect.center)
         self.assertEqual(self.scene.atb_multiplier, .25)
@@ -148,7 +148,7 @@ class GearBattleSceneTests(unittest.TestCase):
                     self.assertAlmostEqual(actor.atb, before[actor.identifier]+
                                            self.model.atb_rate(actor)*.1*.25)
                     self.assertLess(actor.atb, 1)
-                self.assertEqual(self.model.bots, ())
+                self.assertFalse(hasattr(self.model, 'bots'))
 
     def test_window_resize_reprojects_hover_and_cancels_an_unfinished_gesture(self):
         def to_canvas(point):
@@ -165,7 +165,7 @@ class GearBattleSceneTests(unittest.TestCase):
         self.scene.update(.4)
         self.assertFalse(self.scene.gear.hovered)
         self.assertEqual(self.scene.atb_multiplier, 1)
-        for actor in (*self.model.party, *self.model.bots, self.model.enemy):
+        for actor in (*self.model.party, self.model.enemy):
             self.assertAlmostEqual(actor.atb, self.model.atb_rate(actor)*.4)
 
         self.ready()

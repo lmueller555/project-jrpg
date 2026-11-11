@@ -27,7 +27,7 @@ The encounter opens a separate view of Eldenmere's well clearing, with combat
 sprites and a bottom interface. The exploration world, player position,
 villagers and quest clocks remain paused until the encounter ends. See the
 [current battlefield preview](reviews/eldenmere_battlefield/README.md) and the
-[initial combat implementation preview](reviews/atb_combat/README.md).
+[initial combat implementation preview](reviews/mira_rig_continuity/README.md).
 
 ## Eldenmere battlefield
 
@@ -87,7 +87,7 @@ Environmental and UI effects retain their independent volume and channels.
 The original uploads remain in `assets/music/`; supported Vorbis playback copies
 and their catalog are under the same folder. The asset guide documents the
 conversion and conservative removal of the battle track's near-silent tail.
-See the [actual scene and transition review](reviews/battle_music_transition/README.md).
+See the [actual scene and transition review](reviews/mira_rig_continuity/README.md).
 
 ## Timing and decisions
 
@@ -134,11 +134,9 @@ At standard text size in 960×640 or 1440×960, the three-character panel is
 102 logical pixels tall, down from 128, while Caelan's gear stays 48×48 logical
 pixels. Accessible text keeps its configured size; at the smallest window with
 150% text, the panel grows to fit and the party stagger compresses to keep every
-sprite visible. See the [compact UI comparison](reviews/compact_combat_ui/README.md).
+sprite visible. See the [compact UI comparison](reviews/mira_rig_continuity/README.md).
 
-Rivet remains visible and autonomous on the battlefield. Its internal ATB gauge
-and remaining Haste turns are not displayed as a separate HUD. Overclock's
-description and one-off action feedback remain available.
+Mira uses her [wearable arm rig](MIRA_RIG_COMBAT.md), her own ATB and MP, and the live power-routing console. Her equipment does not add a separate combatant.
 
 | Input | Action |
 | --- | --- |
@@ -168,10 +166,7 @@ rotation consumes no turn, ATB or MP. Caelan can adjust it while charging and
 while deciding an action. His confirmed action captures its focus and locks
 rotation until that action finishes.
 
-Hover slows charging for party members, enemies and Rivet. Haste multiplies
-normally: an Overclocked Rivet charges at base × 1.5 × 0.25 while hovering.
-Ready decisions still pause every gauge completely. Attack animations, damage
-impact timing and audio retain their normal speed.
+Hover slows charging for all party members and enemies. Ready decisions pause all gauges. Action animation, impact and audio clocks retain their normal speed.
 
 Aether Edge works with every owned focus and remains non-elemental. Aqua Edge
 requires the Blue gem, an equipped blade and its learned unlock. Selecting or
@@ -197,7 +192,7 @@ resize, dialogue and results cancel unfinished gestures safely. Reduced Motion
 retains gem identification and immediate visual seating while suppressing
 optional motion and bursts.
 
-The [gear combat review](reviews/caelan_gear/README.md) retains historical MQ02
+The [gear combat review](reviews/mira_rig_continuity/README.md) retains historical MQ02
 and four-focus previews from before Blue-only ownership. See
 [Caelan’s opening progression](CAELAN_AQUA_PROGRESSION.md) for current rules.
 
@@ -211,13 +206,7 @@ Armed and unarmed actions use separate authored whole-body drawings, preserving
 body proportions and a shared floor anchor. Contact positions derive from the
 actual sword-tip or fist reach against the Bat or Tusker silhouette.
 
-`assets/combat/caelan_choreography.json` owns phase, pose, movement, elevation,
-camera and impact timing. Only Caelan’s canonical actions receive these timing
-profiles; other actors and custom action fixtures keep their defined timings.
-All ATB remains paused through the complete action, including the return and
-landing. A lethal hit finishes recovery before victory. Discovery checkpoints
-remain at the successful Edge’s authoritative impact. Rivet’s Haste still
-expires after eight completed bot actions, independent of animation duration.
+Mira uses her [wearable arm rig](MIRA_RIG_COMBAT.md), her own ATB and MP, and the live power-routing console. Her equipment does not add a separate combatant.
 
 The painted battlefield, sprites and effects receive one restrained camera
 transform (up to 4% zoom); status columns and commands stay fixed. Ground
@@ -230,7 +219,7 @@ impact age is carried through coarse frames. Small departure/landing dust and
 short cues from existing licensed recordings accompany movement. No new dodge
 probability or skill unlock is introduced by this presentation pass.
 
-Review the [action and MQ02 previews](reviews/caelan_choreography/README.md).
+Review the [action and MQ02 previews](reviews/mira_rig_continuity/README.md).
 
 Mira's [wearable arm-rig art](MIRA_ARM_RIG_ART.md) supplies 82 whole-body drawings,
 including eight-frame animations for each of her five live rig techniques.
@@ -255,9 +244,7 @@ live techniques and allocation rules are documented in [Mira rig combat](MIRA_RI
 | Ice Edge | Physical sword strike plus Ice Mag component; requires White gem and its learned unlock | Normally 4 | 2.00 / 1.00 seconds |
 
 All already-learned elemental Edges cost 0 MP throughout the two optional
-elemental teaching encounters and their retries. Aether Edge and Overclock
-retain their ordinary costs; normal encounters and Vespermaw use 4-MP
-elemental Edges.
+elemental teaching encounters and their retries. Aether Edge and Mira’s rig techniques retain their ordinary MP costs
 
 Caelan is a Spellblade. Aether Edge is his only learned starter skill and appears under Skills after its MQ02 discovery. Before he has a weapon, Skills is greyed out with **Requires a weapon**. The direct strike combines physical potency 1 and Mag potency 0.5, sharing one variance roll and one per-hit cap. It does not enchant future attacks or grant charges. See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 
@@ -294,7 +281,7 @@ If optional encounters leave the pending-training Caelan below `min(80, max HP)`
 
 After the introduction, Mira is player-controlled with Attack, Skills, Items, Guard and Flee. Her [rig techniques](MIRA_RIG_COMBAT.md) provide physical and Electric offense, a personal barrier, and ally healing. Reconfiguration is free; every technique spends her normal turn and its listed MP.
 
-The battlefield looks south/southwest toward distant Eldenmere, with the river along the near left bank, reeds, roots and freshly broken timber. A visible tusker and damaged tree mark the actual upstream approach. Mira carries her launcher from the workshop, secures it during intake work and retrieves it for the return. Caelan’s blade is sheathed on the walking route and used as the blue Water focus for the later isolated-pocket spell. The spell does not unlock Aqua Edge.
+The battlefield looks south/southwest toward distant Eldenmere, with the river along the near left bank, reeds, roots and freshly broken timber. A visible tusker and damaged tree mark the actual upstream approach. Mira powers her worn arm rig for the outing, safes its emitter during intake work and reactivates the brace for the return. Caelan’s blade is sheathed on the walking route and used as the blue Water focus for the later isolated-pocket spell. The spell does not unlock Aqua Edge.
 
 Victory grants one Aether Emerald once on Spoils, and commits
 the cleared trail with remaining resources before its Continue opens the linear aftermath. The intake remains
@@ -318,7 +305,7 @@ from learning the technique.
 The first distance-triggered cave encounter is always **two level-two Cave
 Bats**, retaining its exact formation, battlefield and seed in a saved ticket.
 A guided opening gives conscious Caelan Skills → Aqua Edge, while allies,
-Rivet and enemy actions wait for the cast. Aqua Edge costs **0 MP throughout
+Mira and enemy actions wait for the cast. Aqua Edge costs **0 MP throughout
 this introductory battle and its retries**, so no MP preparation or healing
 detour is required. At impact Aqua Edge is learned and checkpointed with
 current party resources; normal ATB then

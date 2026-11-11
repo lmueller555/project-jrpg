@@ -41,7 +41,7 @@ The first entrance with Mira’s Blade acknowledges a separate Blue-gem
 resonance scene. The first distance trigger then fixes **two level-two Cave
 Bats**, regardless of the local weighted pool. The saved ticket identifies the
 Aqua lesson, retaining the formation, battlefield, seed and return position.
-Enemy, Mira and Rivet actions wait for Caelan’s successful player-selected Aqua
+Enemy, Mira actions wait for Caelan’s successful player-selected Aqua
 Edge. The successful opening strike learns Aqua Edge at impact; ordinary ATB
 combat follows. Aqua Edge costs **0 MP throughout this encounter and its retries**;
 after victory, its ordinary cost is 4 MP in every area.
@@ -124,9 +124,7 @@ row, keeping every HP/ATB bar visible and reserving space for the finger above
 the sprites. The selected enemy's full name appears in the top announcement box
 when no ability, event or incoming-attack warning is being shown.
 
-The top box reports named abilities other than each combatant's basic attack,
-authored emotes, and existing events such as Guard, Overclock, Haste expiry and
-the first weapon's discovery. Incoming prepared attacks identify the charging
+Incoming prepared attacks identify the charging
 enemy, attack name and living target. Warnings persist across other actors'
 turns and rotate when several enemies are charging; queued routine status
 notices yield to these warnings. Longer announcements page their full text
@@ -140,7 +138,7 @@ Effects follow the scene clock, pause with the battle, stay within the field,
 and use a static frame under Reduced Motion. The aura does not change elemental
 affinities, damage, action timing or ATB. Authored battle scripts can present an
 emote with `BattleScene.announce(text, actor=...)`; presentation never mutates
-combat state. See [review captures](reviews/battle_feedback/README.md).
+combat state. See [review captures](reviews/mira_rig_continuity/README.md).
 
 Victory resources and reward receipts are checkpointed before returning to
 the exact cave position. EXP from every defeated monster is summed, then each

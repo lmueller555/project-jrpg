@@ -44,7 +44,7 @@ class MQ03PartyIntegrationTests(unittest.TestCase):
         mira=game.party.characters['mira']
         mira.set_current(hp=83,mp=4)
         before=(game.inventory.to_dict(),game.character_abilities.to_dict(),
-                game.bot_loadouts.to_dict(),game.battle_rewards.to_dict())
+                game.mira_rig.to_dict(),game.battle_rewards.to_dict())
         self.prepare_acknowledged_trip()
         for _ in range(4):self.assertTrue(game._sync_story_party())
         self.assertIs(game.party.characters['mira'],mira)
@@ -54,7 +54,7 @@ class MQ03PartyIntegrationTests(unittest.TestCase):
         self.assertEqual(game.party.required_ids,('caelan','mira'))
         self.assertNotIn('lucan',game.party.members)
         self.assertEqual(before,(game.inventory.to_dict(),game.character_abilities.to_dict(),
-                                 game.bot_loadouts.to_dict(),game.battle_rewards.to_dict()))
+                                 game.mira_rig.to_dict(),game.battle_rewards.to_dict()))
 
     def test_reserved_mq03_party_event_is_validated_before_live_state_changes(self):
         game=self.game

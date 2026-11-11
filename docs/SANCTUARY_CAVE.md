@@ -157,7 +157,7 @@ The two elemental encounters permit Flee; Vespermaw retains its no-Flee rule.
 Focus rewards, learned skills and EXP share an atomic victory transaction,
 while KO Caelan defers only the post-Spoils installation dialogue. See the
 [elemental encounter guide](ELEMENTAL_CAVE_ENCOUNTERS.md).
-See the [live encounter review](reviews/vespermaw_encounter/README.md).
+See the [live encounter review](reviews/mira_rig_continuity/README.md).
 
 The arrival cutscene, further combat tuning and
 post-boss resolution remain later work. The cave does not establish the

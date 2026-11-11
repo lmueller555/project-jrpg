@@ -55,7 +55,7 @@ no persistent Game and touches no user save, settings or quest/reward state.
 Vespermaw is now a one-time live encounter in the Echo Chamber. Its current
 combat includes party-wide Roar hits, a marked-target response guarantee and
 the 50% recovery vulnerability, using these complete animation clocks. The
-[live encounter review](reviews/vespermaw_encounter/README.md) captures that
+[live encounter review](reviews/mira_rig_continuity/README.md) captures that
 flow separately from the historical art-only fixture. Elemental responses and
 Stagger remain authoring data; the crystal colors do not activate those systems.
 

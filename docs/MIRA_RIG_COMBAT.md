@@ -99,13 +99,14 @@ New saves contain the rig owner and omit the retired loadout. Levels, EXP,
 party/quest facts, gems, inventory and current resources are retained. New starting
 techniques do not recruit Mira or make an unavailable/reserve character combat-ready.
 
-## Tutorials, review and remaining cleanup
+## Tutorials and review
 
 The Boar's Guard → failed Aqua Edge → Aether Edge lesson and the first cave Aqua
 lesson retain their guided control. Mira's rig becomes available after their
 required steps. Combat guidance describes her direct engineering techniques.
-The remaining old story dialogue, world props and retired asset/backend cleanup
-belongs to phase three; it is separate from the combat cutover.
+Phase three completes the story dialogue, worn-rig exploration and cinematic art,
+and retirement of the autonomous bot backend. See the
+[continuity review](reviews/mira_rig_continuity/README.md).
 
 The title Gallery's phase-one arm-rig study remains an isolated art sandbox.
 Its local allocations and illustrative effects never change the durable rig.

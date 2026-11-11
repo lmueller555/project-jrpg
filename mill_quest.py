@@ -102,12 +102,12 @@ class MillQuest:
     @property
     def combat_unlocked(self):return self.encounter_cleared or self.legacy_bypass
     @property
-    def mira_armed(self):
+    def mira_rig_powered(self):
+        """The worn rig is ready for the outing, rather than a carried prop."""
         return (((self.active and not self.reported_to_halden) or self._returning) and self._done('meet_mira')
-                and not self.legacy_bypass
-                and ('intake' not in self.inspected or self.restored))
+                and not self.legacy_bypass and ('intake' not in self.inspected or self.restored))
     @property
-    def mira_weapon_stowed(self):
+    def mira_rig_safed(self):
         return (self.active and not self.reported_to_halden and self._done('meet_mira') and not self.legacy_bypass
                 and 'intake' in self.inspected and not self.restored)
     @property

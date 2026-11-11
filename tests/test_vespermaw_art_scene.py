@@ -53,7 +53,7 @@ class VespermawArtSceneTests(unittest.TestCase):
                             'attack': 'bolt_shot' if identifier == 'mira' else 'attack'})
         # The specimen deliberately retains Bat rules: only the visual bank is
         # replaced. Vespermaw's canonical unsupported combat remains gated.
-        model = BattleModel(attributes, enemy_id='bat', party_members=members, bot_loadouts={})
+        model = BattleModel(attributes, enemy_id='bat', party_members=members)
         model.enemy_sprite_id = 'vespermaw'
         scene = BattleScene(game, model, sprites=self.sprites, battlefield='cave_depths')
         canvas = pygame.Surface((480, 320))

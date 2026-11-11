@@ -60,13 +60,13 @@ class BattleChoreographyTests(unittest.TestCase):
                 model = self.model()
                 model.enemy.hp = 1
                 action = self.choose(model, identifier)
-                gauges = [actor.atb for actor in (*model.party, *model.bots, model.enemy)]
+                gauges = [actor.atb for actor in (*model.party, model.enemy)]
                 model.update(impact)
                 self.assertEqual(model.enemy.hp, 0)
                 self.assertEqual(model.phase, 'acting')
                 model.update(duration-impact-.001)
                 self.assertEqual(model.phase, 'acting')
-                self.assertEqual([actor.atb for actor in (*model.party, *model.bots, model.enemy)], gauges)
+                self.assertEqual([actor.atb for actor in (*model.party, model.enemy)], gauges)
                 self.assertEqual(sum(event['type'] == 'impact' for event in model.events), 1)
                 model.update(.001)
                 self.assertEqual(model.phase, 'victory')
@@ -133,8 +133,7 @@ class BattleChoreographyTests(unittest.TestCase):
     def test_shared_enemy_guest_and_bot_actions_retain_catalog_timings(self):
         model = self.model(guest_id='mira')
         catalog = json.loads(ACTION_PATH.read_text())['actions']
-        for actor, identifier in (('enemy', 'attack'), ('mira', 'guard'),
-                                  (model.bots[0].identifier, model.bots[0].ability_id)):
+        for actor, identifier in (('enemy', 'attack'), ('mira', 'guard')):
             with self.subTest(actor=actor, action=identifier):
                 model._start_action(actor, identifier)
                 action = model.current_action

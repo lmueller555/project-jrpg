@@ -106,7 +106,7 @@ class CompactBattleUITests(unittest.TestCase):
         self.assertIsNone(scene.model.bot_for('mira'))
         self.assertIsNotNone(scene.rig)
         self.assertTrue(scene.party_rows['mira']['interactable'].contains(scene.rig.rect))
-        self.assertFalse(any(text=='Rivet ATB' or text.startswith('Haste ·') for text in rendered))
+        self.assertFalse(any(text.startswith('Companion ATB') for text in rendered))
         self.assertEqual(scene.rig.allocation,before)
         scene.update(.1)
         self.assertEqual(scene.model.rig_allocation,before)

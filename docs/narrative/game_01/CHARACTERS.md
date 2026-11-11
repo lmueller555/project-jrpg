@@ -206,7 +206,7 @@ creature's identity and any connection to mining remain unknown.
 
 Serene recognizes Aldric's bad faith and then tends the injured survivor,
 with Tomas and the driver helping. Caelan volunteers and collects Mira from
-her workshop. Mira joins with her existing engineering equipment and bot.
+her workshop. Mira joins with her worn engineering arm rig.
 Aldric, Lucan, the page, Caelan and Mira make the emergency journey. The page's
 prior knowledge of the operation remains unspecified. Lucan was unaware and
 is taken aback before turning to the people left in danger.
@@ -226,9 +226,7 @@ is not run for this route.
 
 ## Mira's millrace outing
 
-Mira is Caelan's childhood friend and a capable **Engineer**. Her authoritative
-[character sheet](characters/MIRA.md) retains her established millrace role,
-Rivet, practical competence and relationships, and adds ten dialogue references.
+Mira is Caelan's childhood friend and a capable **Engineer**.
 
 **Combat direction, 2026-11-07:** Engineer supersedes her earlier Machinist
 designation. Her [future progression notes](characters/MIRA.md#combat-progression-concept)
@@ -250,7 +248,7 @@ arrangements, and workshop property and funding details remain open.
 interpretations, writing guidance and ten dialogue references are approved.
 Hypothetical scene events, disclosure timing and her exact ending remain open.
 
-The [bot guide](../../MIRA_BOTS.md) remains authoritative for combat rules.
+The [bot guide](../../MIRA_RIG_COMBAT.md) remains authoritative for combat rules.
 No game dialogue, mechanics or artwork changes accompany this biography revision.
 
 Liam's mother is Eldenmere's schoolteacher, as established by the author on

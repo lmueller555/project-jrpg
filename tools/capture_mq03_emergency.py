@@ -408,7 +408,7 @@ def capture(output=OUT,movie_enabled=True):
                 if speaker=='serene':tag='serene_cares_for_survivor'
                 elif speaker=='caelan':tag='caelan_volunteers'
             elif identifier=='regent_mira_departure':
-                if speaker in ('mira','mira_worker') and any(word in text.lower() for word in ('coming','kit','rivet')):tag='mira_rejoins'
+                if speaker in ('mira','mira_worker') and any(word in text.lower() for word in ('coming','kit')):tag='mira_rejoins'
                 elif speaker=='caelan':tag='mira_emergency_explained'
             if tag and tag not in selected:
                 selected.add(tag);hold(1.5);photograph(tag)

@@ -52,18 +52,6 @@
       "animation": "attack",
       "target": "opponent"
     },
-    "overclock": {
-      "name": "Overclock",
-      "kind": "haste",
-      "potency": 0,
-      "mp_cost": 5,
-      "duration": 0.9,
-      "impact_at": 0.5,
-      "animation": "overclock",
-      "target": "owned_bot",
-      "turns": 8,
-      "rate_multiplier": 1.5
-    },
     "bite": {
       "name": "Bite",
       "kind": "physical",
@@ -106,16 +94,6 @@
     },
     "bolt_shot": {
       "name": "Bolt Shot",
-      "kind": "physical",
-      "potency": 1,
-      "mp_cost": 0,
-      "duration": 0.8,
-      "impact_at": 0.4,
-      "animation": "attack",
-      "target": "opponent"
-    },
-    "piston_jab": {
-      "name": "Piston Jab",
       "kind": "physical",
       "potency": 1,
       "mp_cost": 0,

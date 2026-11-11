@@ -387,7 +387,7 @@ class BestiaryValidationTests(unittest.TestCase):
         data = deepcopy(self.catalog)
         # The action exists, so checking only the global action dictionary
         # would silently admit a pose that the real Bat art cannot render.
-        data['enemies']['cave_bat']['presentation']['action_aliases']['cave_bat_bite'] = 'overclock'
+        data['enemies']['cave_bat']['presentation']['action_aliases']['cave_bat_bite'] = 'rig_activation'
         with self.assertRaises(ValueError):
             load_bestiary(data)
 

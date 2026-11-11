@@ -97,7 +97,7 @@ class SanctuaryReliefRestTests(unittest.TestCase):
         return deepcopy((game.character_progression.to_dict(), game.quests.to_dict(),
                          game.mill_quest.to_dict(), game.regent_quest.to_dict(),
                          game.inventory.to_dict(), game.character_abilities.to_dict(),
-                         game.bot_loadouts.to_dict(), game.party.members, game.party.active_ids,
+                         game.mira_rig.to_dict(), game.party.members, game.party.active_ids,
                          game.party.event_id, game.battle_rewards.to_dict(),
                          game.cave_random_encounters.to_dict(), sorted(game.social.flags)))
 

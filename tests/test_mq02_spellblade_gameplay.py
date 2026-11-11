@@ -72,9 +72,9 @@ def drive_spellblade_battle(game, command='attack', *, dismiss=True,
             text = scene.tutorial_text
             if text not in seen_guidance:
                 seen_guidance.add(text);frame('guidance', text)
-                before = tuple(actor.atb for actor in (*model.party, model.enemy, *model.bots))
+                before = tuple(actor.atb for actor in (*model.party, model.enemy))
                 game.update(.5, (0, 0), False)
-                assert before == tuple(actor.atb for actor in (*model.party, model.enemy, *model.bots))
+                assert before == tuple(actor.atb for actor in (*model.party, model.enemy))
             key(game, pygame.K_SPACE)
         elif model.ended:
             frame('victory' if model.phase == 'victory' else model.phase)

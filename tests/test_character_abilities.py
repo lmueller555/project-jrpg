@@ -298,7 +298,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
         before = self.snapshot()
         for character, ability in (
                 ('missing', 'mend'), ([], 'mend'), (None, 'mend'),
-                ('mira', 'mend'), ('caelan', 'overclock'), ('caelan', 'missing'),
+                ('mira', 'mend'), ('caelan', 'charged_bolt'), ('caelan', 'missing'),
                 ('caelan', 'basic_magicks'), ('caelan', 'aether_edge'),
                 ('caelan', None), ('caelan', True), ('caelan', [])):
             with self.subTest(character=character, ability=ability):

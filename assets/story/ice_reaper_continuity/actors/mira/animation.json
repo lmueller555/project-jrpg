@@ -14,7 +14,11 @@
       "frames": [
         {
           "file": "aim_front_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            79,
+            39
+          ]
         }
       ],
       "view_azimuth_deg": 0,
@@ -25,7 +29,11 @@
       "frames": [
         {
           "file": "aim_front_right_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            80,
+            39
+          ]
         }
       ],
       "view_azimuth_deg": 45,
@@ -36,7 +44,11 @@
       "frames": [
         {
           "file": "aim_right_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            79,
+            39
+          ]
         }
       ],
       "view_azimuth_deg": 90,
@@ -47,7 +59,11 @@
       "frames": [
         {
           "file": "aim_rear_right_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            80,
+            38
+          ]
         }
       ],
       "view_azimuth_deg": 135,
@@ -58,7 +74,11 @@
       "frames": [
         {
           "file": "aim_rear_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            78,
+            38
+          ]
         }
       ],
       "view_azimuth_deg": 180,
@@ -69,7 +89,11 @@
       "frames": [
         {
           "file": "aim_rear_left_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            50,
+            38
+          ]
         }
       ],
       "view_azimuth_deg": -135,
@@ -80,7 +104,11 @@
       "frames": [
         {
           "file": "aim_left_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            50,
+            39
+          ]
         }
       ],
       "view_azimuth_deg": -90,
@@ -91,7 +119,11 @@
       "frames": [
         {
           "file": "aim_front_left_01.png",
-          "duration_ms": 200
+          "duration_ms": 200,
+          "emitter": [
+            47,
+            38
+          ]
         }
       ],
       "view_azimuth_deg": -45,
@@ -100,5 +132,14 @@
     }
   },
   "authored": true,
-  "source_art_review": "awaiting_user_review"
+  "source_art_review": "awaiting_user_review",
+  "worn_rig_source": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+  "source": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+  "source_sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf",
+  "sources": [
+    {
+      "file": "assets/source/characters/mira/arm_rig/cinematic_authored.png",
+      "sha256": "f0f1176b03829da4060d514606d13f9c6a9320acc9b5634fd510e8596046b9cf"
+    }
+  ]
 }

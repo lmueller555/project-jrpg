@@ -96,7 +96,7 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertEqual([member.identifier for member in owner.model.party], ['player', 'mira', 'lucan'])
         self.assertEqual([(member.hp, member.mp) for member in owner.model.party[1:]],
                          [(120, 21), (110, 12)])
-        self.assertEqual(owner.model.bots, ())
+        self.assertFalse(hasattr(owner.model, 'bots'))
         self.game.draw()
 
     def test_party_menu_blocks_contact_and_living_companion_can_fight_with_caelan_ko(self):
@@ -115,11 +115,11 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertTrue(wait_for_spoils(game).ready)
         self.assertEqual(game.attributes.current_hp, game.attributes.value('hp')//4)
 
-    def test_reserve_mira_does_not_deploy_rivet_or_receive_battle_resource_changes(self):
+    def test_reserve_mira_does_not_create_extra_actors_or_receive_battle_resource_changes(self):
         self.assertTrue(self.game.party.select(('caelan', 'lucan', 'rhea')))
         owner = self.start()
         self.assertEqual([member.identifier for member in owner.model.party], ['player', 'lucan', 'rhea'])
-        self.assertEqual(owner.model.bots, ())
+        self.assertFalse(hasattr(owner.model, 'bots'))
         owner.model.combatant('lucan').hp = 25
         owner.model.combatant('rhea').mp = 4
         owner.model.phase = 'fled';owner.scene.dismissed = True

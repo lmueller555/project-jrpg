@@ -1,11 +1,13 @@
 """Register authored wind-reaction drawings; no procedural pose deformation."""
 from pathlib import Path
+import sys
 import hashlib
 import json
 import numpy as np
 from PIL import Image, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 SOURCE=ROOT/'assets/source/cinematics/ice_reaper_duel/men'
 TARGET=ROOT/'assets/story/ice_reaper_duel/men'
 CANVAS=(128,128)
@@ -46,9 +48,8 @@ def extract(source,columns,rows,index):
     return source.crop(bounds),bounds
 
 
-def build():
+def _build_other_actors():
     source=SOURCE/'wind_men_generated.png';men=Image.open(source).convert('RGBA')
-    mira_source=SOURCE/'mira_brace_generated.png';mira=Image.open(mira_source).convert('RGBA')
     side_source=SOURCE/'wind_right_generated.png';side=Image.open(side_source).convert('RGBA')
     left_source=SOURCE/'caelan_left_generated.png';left=Image.open(left_source).convert('RGBA')
     specs={'caelan':[(men,source,6,4,.38,'rear',list(range(6))),
@@ -57,10 +58,7 @@ def build():
                      (left,left_source,3,2,.203,'left',list(range(6)))],
            'lucan':[(men,source,6,4,.405,'rear',list(range(12,18))),
                     (men,source,6,4,.405,'front',list(range(18,24))),
-                    (side,side_source,6,3,.31,'right',list(range(6,12)))],
-           'mira':[(mira,mira_source,4,2,.233,'front',list(range(4))),
-                   (mira,mira_source,4,2,.233,'rear',list(range(4,8))),
-                   (side,side_source,6,3,.2915,'right',list(range(12,16)))]}
+                    (side,side_source,6,3,.31,'right',list(range(6,12)))]}
     summaries={}
     for actor,views in specs.items():
         folder=TARGET/actor;folder.mkdir(parents=True,exist_ok=True)
@@ -99,6 +97,13 @@ def build():
         board.save(folder/'contact_sheet.png',optimize=True)
         summaries[actor]=dict(drawings=len(records),actions=len(animations))
     print(json.dumps(summaries))
+
+
+def build():
+    result = _build_other_actors()
+    from tools.build_mira_rig_continuity import build as rig_build
+    rig_build()
+    return result
 
 
 if __name__=='__main__':build()

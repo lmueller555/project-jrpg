@@ -80,7 +80,7 @@ def register(image,scale,canvas,anchor):
     frame=Image.new('RGBA',canvas);frame.alpha_composite(resized,(x,y))
     return frame,dict(source_content_bounds=list(bounds),scale=scale,foot_source_x=foot_x,registration=[x,y])
 
-def build():
+def _build_other_actors():
     atlases={
       'men':cells('men_views_generated.png',8,2),
       'women':cells('women_views_generated.png',8,3),
@@ -118,7 +118,6 @@ def build():
         export('caelan','ready_'+view,'men',[col],71,angle,held=True)
         # Lucan's held atlas uses the opposite authored view sign to the stage.
         export('lucan','hold_brace_'+view,'men',[8+col],68,-angle,held=True)
-        export('mira','aim_'+view,'quarter' if col==1 else 'women',[0] if col==1 else [col],84,angle,held=True)
         export('rhea','frozen_'+view,'quarter' if col==1 else 'women',[1] if col==1 else [8+col],81,angle,held=True)
         export('rhea','release_'+view,'quarter' if col==1 else 'women',[2] if col==1 else [16+col],81,angle,held=True)
         export('ice_reaper','ready_'+view,'boss',[(-col)%8],145,angle,held=True)
@@ -138,6 +137,13 @@ def build():
     # Keep the user-requested enemy-facing guard when rebuilding the atlas.
     from tools.build_lucan_guard_correction import build as correct_lucan_guard
     correct_lucan_guard()
+
+def build():
+    result = _build_other_actors()
+    from tools.build_mira_rig_continuity import build as rig_build
+    rig_build()
+    return result
+
 
 if __name__=='__main__':
     build()

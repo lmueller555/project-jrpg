@@ -136,7 +136,7 @@ These occur after the opening and must not be rewritten as earlier biography:
 
 - **MQ02:** Presents Caelan’s early birthday blade before the outing, helps
   diagnose the restricted mill intake, covers him during the first combat
-  lesson, fights the Ridgeback Tusker with her launcher and Rivet, checks Caelan
+  lesson, fights the Ridgeback Tusker with her arm rig, checks Caelan
   afterward, and contributes mechanical knowledge to their repair. Caelan's
   modest magical success remains
   his own useful contribution.
@@ -166,7 +166,7 @@ accomplishment already completed at the opening or an implemented game scene.
 | Private pleasure | Testing a small mechanism simply because she wants to see it move, even when it has no important purpose | Established |
 | Comfort | Quiet company that does not demand she explain herself or make herself useful | Established |
 | Non-work hobbies and tastes | Food, music, leisure activities and other preferences remain undecided | Open |
-| Treasured possessions | No parental keepsake has been established. Her flower, tools and Rivet do not automatically carry an inherited meaning. | Open |
+| Treasured possessions | No parental keepsake has been established. Her flower and tools do not automatically carry an inherited meaning. | Open |
 
 ## Capabilities and limitations
 
@@ -174,46 +174,40 @@ accomplishment already completed at the opening or an implemented game scene.
 | --- | --- | --- |
 | Job identity | Engineer; supersedes the earlier Machinist combat designation | Role revised, 2026-11-07 |
 | Practical competence | Mechanical diagnosis, repair and collaborative construction | Established |
-| MQ02 kit | Compact spring-driven bolt launcher and Rivet, her familiar workshop bot folded into her kit | Established |
-| Rivet and Overclock | Rivet unfolds for battle and attacks autonomously; her starting Overclock grants it Haste | Established |
-| Combat position | Stronger and more experienced than newly armed Caelan in MQ02; temporary player-controlled guest after the guided opening | Established |
-| Background limits | Her age and mill training are established; no military background has been assigned | Established / Open |
-| Emotional blind spot | May try to approach another person's pain as a problem to solve before understanding what they want | Established |
-| Help she needs | Someone willing to stay with her without requiring an explanation or a solution | Established |
-| Mechanics and artwork | Existing gameplay and art are unchanged; qualitative future progression is recorded below, with exact rules and numeric development still open | Scope constraint / Open details |
+| Starting equipment | External Aether Arm Rig: forearm emitter, powered support, projector and engineering tool | Implemented |
+| Starting combat | Six power units; Charged Bolt, Bulwark, Repair Pulse, Impact Bolt and Arc Discharge use her own MP and ATB | Implemented |
+| Stat identity | All-rounder; equipment and power routing establish tactical specialization | Established |
+| Background limits | No military background, limb loss, surgery or injury has been assigned | Established / Open |
+| Emotional blind spot | May treat another person's pain as a problem to solve before understanding what they want | Established |
 
-See the [bot guide](../../../MIRA_BOTS.md) for current implemented combat rules.
+See [wearable arm-rig combat](../../../MIRA_RIG_COMBAT.md) for implemented rules.
 
 ## Combat progression concept
 
-**Current author direction, 2026-11-07:** Mira's combat identity is **Engineer**.
-This supersedes Machinist as her intended role. The following broad strokes
-capture future development; they do not implement new bots, augments or an
-ultimate, or change the current launcher, Rivet and Overclock rules.
+Mira is an **Engineer** whose robotics are **worn over intact limbs**. Her equipment
+uses visible straps, articulated supports and accessible tools. It does not
+replace any part of her body or imply an injury or surgical history.
 
-### Bots and engineered self-augments
+### Wearable engineering
 
-- Center her progression on her bots and on engineered prosthetics she creates
-  for herself.
-- Use **Iron Man** as inspiration for wearable engineering and self-augmentation.
-- As the game progresses, she unlocks additional bots and self-augments that she
-  wears and configures.
+- Begin with her arm rig and six-unit Weapons/Protection/Support allocation.
+- Unlock attachments, techniques, additional worn armor and reactor improvements.
+- Let new components expand what Mira personally does in combat, with Iron Man
+  as inspiration for wearable engineering.
+- Preserve allocation tradeoffs; increasing capacity should not make every
+  system available simultaneously without a meaningful choice.
 
-The unlock methods, bot roster, individual augment effects, configuration limits
-and the exact physical form of the prosthetics remain undecided. These concepts
-do not assign an injury, surgery or new biographical event.
+Acquisition methods, later components and capacity milestones remain open.
+The independent workshop-management robot idea concerns her workshop, not a
+second controllable combatant.
 
 ### Ultimate concept: piloted mech
 
-- Mira dismisses her currently deployed bot.
-- She uses her kit to **suit up into a large mech**, with **Gundam** as the
-  reference for the scale and piloted-machine concept.
-- Mira pilots the mech for **five turns**, gaining major combat enhancements.
-
-The enhancements, mech actions, duration counter, activation costs, damage and
-resource handling, and the return of her ordinary kit or bot afterward remain
-open. This five-turn concept is separate from the current Overclock effect,
-which lasts eight completed bot actions. The ultimate name and acquisition method remain undecided.
+Mira uses her kit to suit up into a large piloted mech for **five turns**, with
+Gundam as a reference for scale. Expanded power routing and enhanced versions of
+her techniques could build on familiar controls. Exact actions, costs, duration
+handling, acquisition and the ultimate's name remain undecided. At its conclusion
+she returns to her ordinary worn equipment.
 
 ## Relationships
 

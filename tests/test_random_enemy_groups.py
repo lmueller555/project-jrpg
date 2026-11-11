@@ -57,7 +57,6 @@ def profiles():
 
 def group(members=None, **options):
     options.setdefault('party_members', profiles())
-    options.setdefault('bot_loadouts', {})
     options.setdefault('rng', random.Random(7))
     options.setdefault('initial_atb', False)
     return BattleModel.from_bestiary_group(attributes(), deepcopy(MEMBERS if members is None else members),
@@ -65,7 +64,7 @@ def group(members=None, **options):
 
 
 def clear_gauges(model):
-    for actor in (*model.party, *model.enemies, *model.bots):
+    for actor in (*model.party, *model.enemies):
         actor.atb = 0
 
 
@@ -86,11 +85,11 @@ class RandomEnemyGroupTests(unittest.TestCase):
         for seed in range(16):
             first = group(initial_atb=True, initial_atb_seed=seed, rng=random.Random(1))
             second = group(initial_atb=True, initial_atb_seed=seed, rng=random.Random(987))
-            gauges = tuple(actor.atb for actor in (*first.party, *first.enemies, *first.bots))
+            gauges = tuple(actor.atb for actor in (*first.party, *first.enemies))
             self.assertTrue(all(0 <= value <= .5 for value in gauges), gauges)
             self.assertGreater(len(set(gauges)), 1, 'Actors must not share one initial roll')
             self.assertEqual(gauges, tuple(actor.atb for actor in
-                                          (*second.party, *second.enemies, *second.bots)))
+                                          (*second.party, *second.enemies)))
             seen.add(gauges)
         self.assertGreater(len(seen), 12)
         self.assertTrue(all(actor.atb == 0 for actor in (*group().party, *group().enemies)))
@@ -195,11 +194,11 @@ class RandomEnemyGroupTests(unittest.TestCase):
         self.assertNotIn(model.enemy, model.living_enemies)
 
     def test_miras_shot_uses_selected_enemy_and_retargets_after_its_defeat(self):
-        model = group(bot_loadouts=None, initial_atb=True, initial_atb_seed=9)
+        model = group( initial_atb=True, initial_atb_seed=9)
         mira = model.combatant('mira')
         self.assertTrue(0 <= mira.atb <= .5)
         self.assertIn(mira.identifier, model.initial_atb_values)
-        self.assertNotIn('rivet', model.initial_atb_values)
+        self.assertEqual(set(model.initial_atb_values), {a.identifier for a in (*model.party, *model.enemies)})
         target = model.combatant('enemy_4');target.hp = 1
         self.assertTrue(model.select_target(target.identifier))
         clear_gauges(model);mira.atb = 1
@@ -215,7 +214,7 @@ class RandomEnemyGroupTests(unittest.TestCase):
         self.assertTrue(model.choose_action('attack'))
         self.assertIn(model.current_action.target,
                       [enemy.identifier for enemy in model.living_enemies])
-        self.assertEqual(model.bots, ())
+        self.assertFalse(hasattr(model, 'bots'))
 
     def test_spellblade_damage_and_guard_apply_to_the_actual_group_target(self):
         model = group(weapon_equipped=True, learned_abilities=('aether_edge',))

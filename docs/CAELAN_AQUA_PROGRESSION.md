@@ -21,7 +21,7 @@ and combat rules; additional gears remain future work.
    here. This short, acknowledged scene is saved independently of the skill.
 4. The existing **16–36-tile** encounter countdown selects **two level-two Cave
    Bats** for the first fight. The player chooses Skills → Aqua Edge and a foe.
-   Enemy, Mira and Rivet actions wait until that first successful cast. It
+   Enemy, Mira actions wait until that first successful cast. It
    teaches Aqua Edge at impact, then ordinary ATB combat resumes.
 5. Aqua Edge costs **0 MP throughout this introductory encounter and all its
    retries**, including after the discovery is already known. Victory and its
@@ -110,9 +110,9 @@ selection, save/Continue boundaries, failed writes, defeat/withdrawal and
 normal encounters after victory. See the relevant suites under `tests/` and
 [the encounter rules](CAVE_RANDOM_ENCOUNTERS.md).
 
-The [current visual review](reviews/caelan_aqua_progression/README.md) shows the
+The [current visual review](reviews/mira_rig_continuity/README.md) shows the
 gift, both Boar effects and the cave lesson using actual game input and rendering.
 
-Earlier [four-focus gear](reviews/caelan_gear/README.md) and
-[two-attempt MQ02](reviews/mq02_spellblade/README.md) captures are historical
+Earlier [four-focus gear](reviews/mira_rig_continuity/README.md) and
+[two-attempt MQ02](reviews/mira_rig_continuity/README.md) captures are historical
 records of those implementations, rather than previews of this sequence.

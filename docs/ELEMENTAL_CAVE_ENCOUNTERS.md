@@ -120,8 +120,7 @@ was defeated first. Neither route requires the other guardian's reward.
 During these two teaching encounters, every already-learned elemental Edge
 costs **0 MP**: Aqua, Flame and Ice. This applies throughout the fight and retries.
 It does not grant unknown skills or missing gems, and selecting the required
-owned focus still matters. Aether Edge retains its **4 MP** cost and Overclock
-its **5 MP** cost. In ordinary encounters and Vespermaw, elemental Edges retain
+owned focus still matters. Aether Edge retains its **4 MP** cost and Mira’s rig techniques retain their ordinary MP costs. In ordinary encounters and Vespermaw, elemental Edges retain
 **4 MP**. There is no hidden pre-fight healing or MP refill.
 
 ## Focus rewards and acknowledged installation
@@ -184,7 +183,7 @@ The focused model, map and actual-Game integration suites cover both orders,
 partial completion, zero MP, Guard response windows, ×1.50 exhaustion, save
 boundaries, rollback, KO acquisition and independent older journeys.
 
-The [encounter review](reviews/elemental_cave_encounters/README.md)
+The [encounter review](reviews/mira_rig_continuity/README.md)
 contains historical room, combat and acquisition captures, a contact sheet and
 source hashes. Its captured EXP values predate the current reward curve;
 the values in this guide describe live rewards. Reproduce the review with:

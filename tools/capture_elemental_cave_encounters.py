@@ -156,7 +156,7 @@ class Review:
     def choose_command(self, command, *, capture_menu=None):
         game, scene = self.game, self.game.combat.scene
         game.draw()
-        if command in ('aqua_edge', 'flame_edge', 'ice_edge', 'aether_edge', 'overclock'):
+        if command in ('aqua_edge', 'flame_edge', 'ice_edge', 'aether_edge'):
             click(game, scene.command_rects['skills'].center);game.draw()
             if capture_menu:self.photograph(*capture_menu)
         assert not scene.model.action_reason(command), scene.model.action_reason(command)
@@ -211,10 +211,7 @@ class Review:
                     command = 'guard'
                     if actor == marked:command = 'guard'
                     elif actor == 'mira':
-                        bot = model.active_bot('mira')
-                        command = ('overclock' if bot is not None and not bot.haste_turns
-                                   and not model.action_reason('overclock') else
-                                   'guard' if observed != actions else 'attack')
+                        command = 'guard' if observed != actions else 'attack'
                     elif actor == 'player' and (observed == actions or not edge_used):
                         command = 'aqua_edge' if enemy_id == 'embravyr' else 'flame_edge'
                         self.switch_focus('water' if command == 'aqua_edge' else 'fire')

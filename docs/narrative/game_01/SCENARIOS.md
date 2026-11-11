@@ -35,8 +35,7 @@ absence, allowing the workshop to continue operating without her being there.
 
 - The bot's name, appearance, capabilities and exact management duties are
   unassigned.
-- Rivet remains Mira's established starting combat bot. This workshop role
-  does not identify the new bot as Rivet, replace Rivet or add a combat system.
+- This is an independent workshop helper concept; its identity and duties remain open.
 - The exact departure timing, workshop condition and local needs must be
   reconciled with the eventual Act I catastrophe and its consequences. These
   notes do not settle Eldenmere's ultimate condition.

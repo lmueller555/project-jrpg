@@ -261,14 +261,10 @@ Confluence Roar resolves a separate magical hit against each living active
 party member. Each member's Magick Defense, Guard and variance apply to their
 own hit; KO characters and bots are excluded. Its six MP is spent once.
 
-After Pounce, Vespermaw takes 50% more damage and spends its next turn recovering.
-That vulnerability ends immediately before the next Raking Claw begins. This
+After Pounce, Vespermaw takes 50% more damage and spends its next turn recovering. That vulnerability ends immediately before the next Raking Claw begins. This
 window is independent of the future Stagger mechanic. Initial tuning assumes
 a rested three-character party around levels five through seven and does not
-require in-battle healing. The current pending-MQ03 route naturally provides
-Caelan and Mira; a rested level-six-to-seven pair has enough damage and
-survivability when using Aether Edge, Overclock and Guard against the marked
-Pounce. This encounter does not recruit Lucan or change his story ownership.
+require in-battle healing. This encounter does not recruit Lucan or change his story ownership.
 
 | Incoming element | Response |
 | --- | ---: |
@@ -311,7 +307,7 @@ is saved with the XP/drop transaction, and pending spoils remain resumable after
 a failed save or Continue. A completed victory permanently disables the trigger;
 revisiting cannot repeat rewards. It remains excluded from random pools and does
 not complete MQ03, resolve the pending Sanctuary arrival, change escort ownership
-or end Kindled Courage. See the [live encounter review](reviews/vespermaw_encounter/README.md).
+or end Kindled Courage. See the [live encounter review](reviews/mira_rig_continuity/README.md).
 
 ## Embravyr and Nivareth
 
@@ -355,8 +351,7 @@ same atomic transaction as the guaranteed item, EXP, selected focus, resources
 and receipt. KO Caelan receives the focus and technique but no EXP; acquisition
 presentation waits until he is conscious. No raw material silently installs a
 focus. Learned elemental Edges cost 0 MP during these two teaching encounters;
-normal fights and Vespermaw retain their 4-MP cost. Aether Edge and Overclock
-retain ordinary costs everywhere.
+normal fights and Vespermaw retain their 4-MP cost. Aether Edge and Mira’s rig techniques retain their ordinary MP costs
 
 See [complete elemental encounter data](ELEMENTAL_CAVE_ENCOUNTERS.md) for action
 potencies, all affinities, both-order acquisition, defeat/Flee rules, persistence

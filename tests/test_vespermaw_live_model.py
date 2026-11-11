@@ -46,7 +46,7 @@ class VespermawLiveModelTests(unittest.TestCase):
         return model
 
     def empty_gauges(self, model):
-        for actor in (*model.party, *model.enemies, *model.bots):actor.atb = 0
+        for actor in (*model.party, *model.enemies):actor.atb = 0
 
     def finish(self, model):
         action = model.current_action
@@ -106,7 +106,6 @@ class VespermawLiveModelTests(unittest.TestCase):
         for event in impacts:
             self.assertEqual(before[event['target']]-model.combatant(event['target']).hp, event['damage'])
         self.assertEqual(action.damage, sum(event['damage'] for event in impacts))
-        self.assertNotIn('rivet', action.targets)
 
     def test_roar_resolves_every_hit_before_defeat(self):
         model = self.model()
@@ -130,7 +129,7 @@ class VespermawLiveModelTests(unittest.TestCase):
                           if event['type'] == 'impact'], ['enemy'])
 
     def test_fast_enemy_waits_for_marked_members_real_command_without_gauge_boost(self):
-        model = self.model(bot_loadouts={})
+        model = self.model()
         model._enemy_target_index = 1
         self.prepare(model)
         self.assertEqual(model.telegraphed_target, 'mira')
@@ -161,7 +160,7 @@ class VespermawLiveModelTests(unittest.TestCase):
     def test_retargeting_before_and_during_pounce_repeats_warning_and_response(self):
         for midair in (False, True):
             with self.subTest(midair=midair):
-                model = self.model(bot_loadouts={})
+                model = self.model()
                 self.prepare(model)
                 old = model.telegraphed_target
                 if midair:
@@ -196,10 +195,10 @@ class VespermawLiveModelTests(unittest.TestCase):
         self.assertEqual(len([event for event in events if event['type'] == 'recovery_started']), 1)
         self.assertEqual(len([event for event in events if event['type'] == 'recovery_ended']), 1)
 
-    def test_vulnerability_modifies_complete_physical_magical_bot_and_composite_hits_once(self):
+    def test_vulnerability_modifies_complete_physical_magical_rig_and_composite_hits_once(self):
         for actor, action, enchanted in (('player', 'attack', False),
                 ('player', 'aether_dart', False), ('mira', 'bolt_shot', False),
-                ('rivet', 'piston_jab', False), ('player', 'aether_edge', False),
+                ('mira', 'charged_bolt', False), ('player', 'aether_edge', False),
                 ('player', 'attack', True)):
             with self.subTest(actor=actor, action=action, enchanted=enchanted):
                 hits = []
@@ -251,8 +250,6 @@ class VespermawLiveModelTests(unittest.TestCase):
                             actor = model.ready_actor
                             if actor in model.enemy_telegraphs.values():command = 'guard'
                             elif actor == 'player' and model.active_player.mp >= 4:command = 'aether_edge'
-                            elif (actor == 'mira' and model.active_bot() and not model.active_bot().haste_turns
-                                  and model.active_player.mp >= 5):command = 'overclock'
                             else:command = 'attack'
                             self.assertTrue(model.choose_action(command))
                         model.update(.05);model.drain_events()
@@ -279,6 +276,6 @@ class VespermawLiveModelTests(unittest.TestCase):
             state = model._enemy_states['enemy']
             return (history, [(actor.identifier, getattr(actor, 'hp', None),
                                getattr(actor, 'mp', None), round(actor.atb, 7))
-                              for actor in (*model.party, *model.enemies, *model.bots)],
+                              for actor in (*model.party, *model.enemies)],
                     model.ready_actor, state.action_index, state.response_actions, state.vulnerable)
         self.assertEqual(run(.01), run(1000))
