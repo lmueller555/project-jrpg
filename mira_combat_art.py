@@ -73,6 +73,17 @@ class MiraCombatArt:
         return tuple(floor_point[axis] + (point[axis] - floor[axis]) * 2
                      for axis in range(2))
 
+    def action_time(self, state, elapsed, impact_at, duration):
+        """Seek an authored skill pose with contact on the model's impact clock."""
+        if (any(not _number(value) for value in (elapsed, impact_at, duration))
+                or elapsed < 0 or not 0 < impact_at < duration):
+            raise ValueError('Invalid Mira action clock')
+        animation = self.animations[state]
+        length = sum(frame['duration_ms'] for frame in animation['frames'])
+        contact = animation.get('contact_ms', impact_at*1000)
+        if elapsed <= impact_at:return contact*elapsed/impact_at
+        return min(length-1, contact+(length-contact)*(elapsed-impact_at)/(duration-impact_at))
+
     def shot(self, elapsed, impact_at, floor_point, target_point, *, resolved=False):
         """Sample a bolt from its release drawing's muzzle to the impact point.
 

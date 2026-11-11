@@ -35,9 +35,8 @@ Escape/Back cancels the recipient picker before closing the satchel.
 Combat's **Items** command opens the shared supplies, then a recipient list.
 Clicking a party status row can also select that recipient. Each use spends one
 full ATB turn and zero MP. Recovery resolves at the item's impact, with colored
-effects and positive recovery numbers. Revived characters return with zero ATB;
-their deployed bots resume their existing behavior. Guided tutorial commands
-retain control until their required lesson action has finished. Smoke Bombs obey
+effects and positive recovery numbers. Revived characters return with zero ATB.
+Guided tutorial commands retain control until their required lesson action has finished. Smoke Bombs obey
 the same flee restrictions as the ordinary Flee command.
 
 Supplies are local to the current combat attempt until settlement. Victory and
@@ -79,9 +78,10 @@ drop. Focus gems remain protected, guaranteed and unique.
 
 `enemy_loot.py` gives loot its own deterministic random stream from the saved
 encounter identity and combat seed. Loot never consumes combat damage/ATB random
-draws. New version-three Spoils store the rolled offer, received capped bundle,
+draws. Version-three and later Spoils store the rolled offer, received capped bundle,
 used-item costs and the corresponding entry quantities. Continue and failed-save
-retries reproduce the same offer and never repeat consumption or grants. Earlier
+retries reproduce the same offer and never repeat consumption or grants. Version-four victories additionally retain rig allocation and skill-healing facts,
+as described in [Mira rig combat](MIRA_RIG_COMBAT.md). Earlier
 version-one/two Spoils retain their original guaranteed-only rewards.
 
 `consumables.py` shares restorative calculations between the model and field
@@ -90,7 +90,7 @@ percentage revival or escape. Invalid effect parameters, quantities, drop
 chances, duplicate rows and probabilistic key-item drops are rejected. New item
 variants can use the same effects without an item-specific implementation.
 
-Later changes to drop probabilities must account for pending version-three
+Later changes to drop probabilities must account for pending version-three/four
 victories, just as EXP changes preserve existing reward plans. Combat/field
 resting locations, shops, prices, damage items and status remedies remain future
 work.

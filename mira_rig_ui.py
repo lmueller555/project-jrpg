@@ -1,7 +1,8 @@
-"""Mira's wearable arm-rig console, isolated from combat rules and saved state.
+"""Mira's wearable arm-rig console, with local drafts and deliberate commits.
 
-This first-phase widget is an allocation study for the art preview. Committing
-its six local pips never changes a battle model, character stats or abilities.
+An optional apply callback binds this editor to an authoritative battle model.
+The standalone art study supplies no callback and remains entirely local. The
+widget owns no character resources, ability effects, progression or save files.
 """
 from __future__ import annotations
 
@@ -24,11 +25,12 @@ CAPACITY = 6
 class MiraRigUI:
     """A compact, keyboard/mouse allocation console with explicit input focus."""
 
-    def __init__(self, allocation=None):
+    def __init__(self, allocation=None, *, on_apply=None):
         allocation = dict.fromkeys(CHANNELS, 2) if allocation is None else allocation
         if not self.valid_allocation(allocation):raise ValueError('Invalid rig allocation')
         self._allocation = dict(allocation)
         self._draft = dict(allocation)
+        self.on_apply = on_apply
         self.rect = pygame.Rect(0, 0, 120, 60)
         self.buttons = {}
         self.channel_rects = {}
@@ -80,8 +82,22 @@ class MiraRigUI:
         if not self.valid_allocation(self._draft):
             self.notice = 'Allocate all six power units before applying.'
             return False
+        if self.on_apply is not None:
+            self.notice = ''
+            if not self.on_apply(dict(self._draft)):
+                if not self.notice:self.notice = 'The rig cannot be configured right now.'
+                return False
         self._allocation = dict(self._draft)
-        self.notice = 'Allocation applied to the preview.'
+        self.notice = ('Allocation applied to the preview.' if self.on_apply is None
+                       else 'Power allocation applied.')
+        return True
+
+    def sync(self, allocation):
+        """Accept an authoritative allocation without discarding unchanged drafts."""
+        if not self.valid_allocation(allocation):return False
+        if allocation != self._allocation:
+            self._allocation = dict(allocation)
+            self.cancel()
         return True
 
     def cancel(self):

@@ -12,11 +12,11 @@ Caelan is a **Spellblade**. He begins unarmed with his established basic magicks
 
 The current design identities are Spellblade, Engineer, Armsmaster, Aethermage
 and Sage. **Documentation revision, 2026-11-07:** Engineer replaces Machinist
-for Mira, and Armsmaster replaces Knight for Lucan. The runtime dictionaries
-still contain the earlier Machinist and Knight labels; changing those labels
+for Mira, and Armsmaster replaces Knight for Lucan. Mira’s runtime dictionary now uses Engineer; Lucan’s earlier Knight label remains
+until his own combat revision. Changing other labels
 is a separate implementation task.
 
-Mira starts with Overclock and Rivet; Piston Jab belongs to the bot definition. Registration does not recruit a party member or grant equipment. Focused Strike remains a future explicitly learned skill. `basic_magicks` is an authored-world capability rather than an executable combat skill.
+Mira starts as an Engineer with the arm-rig capability and Charged Bolt, Bulwark, Repair Pulse, Impact Bolt and Arc Discharge. Registration does not recruit a party member or grant equipment. Focused Strike remains a future explicitly learned skill. `basic_magicks` is an authored-world capability rather than an executable combat skill.
 
 Future combat direction is captured in the character sheets for
 [Caelan](narrative/game_01/characters/CAELAN.md#combat-progression-concept),
@@ -53,9 +53,9 @@ The accidental tutorial strike uses the same actual action. It is discovered on 
 
 The root menu includes Skills even when unavailable. Before owning a weapon, it explains **Requires a weapon**. With a pending lesson weapon, MQ02’s guided opening first teaches Guard against the telegraphed charge. His Skills menu then offers only **Aqua Edge**. This attempt sputters without spending MP; the same attempted technique inadvertently follows through as a successful **Aether Edge**, costing its normal 4 MP. There is no second elemental menu selection. Its impact learns Aether Edge and releases ordinary party controls; Aqua Edge remains unlearned until the cave.
 
-During the short guided lesson, actor switching and Flee are unavailable; the game points to Guard, then Skills. Mira covers with Guard, and Rivet contributes bounded autonomous attacks. Once discovery completes, ordinary commands, target selection and Mira’s player-controlled turns return. Opening or closing Skills spends no MP or ATB; ordinary choices pause every gauge. Back/Escape leaves the submenu without accidentally consuming an attempt. Escape at the root pauses battle.
+During the short guided lesson, actor switching and Flee are unavailable; the game points to Guard, then Skills. Mira covers with Guard; her rig controls unlock after the guided steps. Once discovery completes, ordinary commands, target selection and Mira’s player-controlled turns return. Opening or closing Skills spends no MP or ATB; ordinary choices pause every gauge. Back/Escape leaves the submenu without accidentally consuming an attempt. Escape at the root pauses battle.
 
-Mira’s Skills contains Overclock. It requires her active bot and 5 MP; it gives Rivet Haste for eight completed bot turns at 1.5× ATB fill, refreshing without stacking. Aether Dart still requires its independent learned unlock. See [Mira’s bot rules](MIRA_BOTS.md).
+Mira’s Skills contains her five [rig techniques](MIRA_RIG_COMBAT.md), each gated by applied power and MP. Aether Dart still requires its independent learned unlock.
 
 ## Aqua Edge and the first cave encounter
 
@@ -65,11 +65,11 @@ light, then decides to try focusing Aqua Edge again. This scene does not teach
 the combat ability by itself.
 
 The normal 16–36-tile distance trigger selects a fixed pair of level-two Cave
-Bats for this lesson. Caelan chooses Skills → Aqua Edge. Mira, Rivet and enemy
+Bats for this lesson. Caelan chooses Skills → Aqua Edge. Mira and enemy
 actions wait until its successful opening strike, so the encounter cannot end
 before the lesson. Aqua Edge costs **0 MP throughout this introductory
 battle**, including its retries, even if he entered with no MP. After clearing the encounter, ordinary
-Aqua Edge normally costs **4 MP** in every area; the cave is not a continuing requirement. The two optional elemental teaching encounters waive every learned elemental Edge's MP cost throughout the battle and retries, while Aether Edge and Overclock retain 4 and 5 MP.
+Aqua Edge normally costs **4 MP** in every area; the cave is not a continuing requirement. The two optional elemental teaching encounters waive every learned elemental Edge's MP cost throughout the battle and retries, while Aether Edge and Mira’s rig techniques retain their ordinary MP costs.
 
 Aqua Edge combines physical potency 1 with **Water** magical potency 0.5. Only
 the magical component reads the target’s elemental profile, including its exact

@@ -10,13 +10,14 @@ it does not replace a limb.
 
 The production combat sprite loader uses the revised idle, firing, guarding,
 hit, rig-operation, victory, KO and movement drawings. The ordinary Bolt Shot
-retains its existing release, damage-impact and action timing. The temporary
-`overclock` animation slot remains compatible with the current combat rules,
-but depicts operation of controls on her cuff.
+retains its existing release, damage-impact and action timing. The historical `overclock` animation slot depicts cuff operation and remains
+available to the art sampler. Phase two replaces that old action with the five
+live rig techniques; the retained animation name does not grant a combat skill.
 
 Five additional eight-frame technique studies provide preparation, activation,
 recoil or hold, and recovery: Charged Bolt, Bulwark, Repair Pulse, Impact Bolt,
-and Arc Discharge. These are artwork, not learned or executable skills yet.
+and Arc Discharge. These began as art-only studies. [Phase two](MIRA_RIG_COMBAT.md) now implements
+them as power-gated combat skills; the Gallery remains an isolated art sandbox.
 Each source drawing is retained, registered at the feet and exported with
 attachment anchors for the emitter and controls. Exporting resamples and
 registers the authored artwork; it does not synthesize anatomy or use whole-body
@@ -32,19 +33,19 @@ MP, ATB, learned skills, inventory, quests or saved data.
 
 The preview can switch between two- and three-member compositions and seek or
 hold individual poses. Its effect sketches are anchored to the rig and explicitly
-illustrative. The composition omits the old companion bot, while that bot's
-production combat and narrative removal belongs to the subsequent phases.
+illustrative. The composition omits the old companion bot. Phase two also retires its live
+combat participation; phase three completes the remaining narrative/asset cleanup.
 
 ## Boundaries and follow-up
 
-This phase changes combat artwork and adds an isolated Gallery study. It does
-not change Mira's stats, action costs, enemy balance, the opening/Mill/Sanctuary
-narrative, or save formats. Existing story/world weapon props are retained until
-the coordinated narrative and continuity cleanup. No new skill is offered in a
-normal battle before its rules exist.
+Phase one changed combat artwork and added an isolated Gallery study without
+changing stats, action costs, balance, narrative or save formats. Phase two now
+adds the live rig rules and save owner described in [Rig combat](MIRA_RIG_COMBAT.md).
+Existing story/world weapon props remain until the coordinated narrative and
+continuity cleanup.
 
-Phase two implements the rig as a gameplay owner, skill power requirements,
-ally support, barriers, action resolution and balance. Phase three completes
+[Phase two](MIRA_RIG_COMBAT.md) adds the live rig owner, skill power requirements,
+ally support, barriers, action resolution and save compatibility. Phase three completes
 the retired bot's removal across story, ownership, compatibility, asset builders,
 documentation and current review evidence.
 

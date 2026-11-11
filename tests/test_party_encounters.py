@@ -96,7 +96,7 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertEqual([member.identifier for member in owner.model.party], ['player', 'mira', 'lucan'])
         self.assertEqual([(member.hp, member.mp) for member in owner.model.party[1:]],
                          [(120, 21), (110, 12)])
-        self.assertEqual([bot.identifier for bot in owner.model.bots], ['rivet'])
+        self.assertEqual(owner.model.bots, ())
         self.game.draw()
 
     def test_party_menu_blocks_contact_and_living_companion_can_fight_with_caelan_ko(self):
@@ -181,15 +181,18 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertEqual(again.battle_rewards.to_dict(), restored.battle_rewards.to_dict())
         self.assertEqual(again.inventory.quantity('aether_emerald'), 1)
 
-    def test_failed_award_save_keeps_complete_memory_state_and_retries_without_duplicate_reward(self):
-        owner = self.victory()
+    def test_failed_award_save_rolls_back_all_state_and_retry_grants_once(self):
+        before = self.resources();owner = self.victory()
         with patch.object(self.game.save_store, 'write', return_value=False):
             spoils = wait_for_spoils(self.game)
             self.assertFalse(spoils.ready)
-            self.assertEqual(owner.snapshot()['stage'], 'awarded')
-            self.assertEqual(self.resources()['mira'], (0, 17))
-            self.assertEqual(self.resources()['lucan'], (61, 3))
+            self.assertEqual(owner.snapshot()['stage'], 'pending')
+            self.assertEqual(self.resources(), before)
+            self.assertFalse(self.game.battle_rewards.has_receipt(owner.snapshot()['receipt']))
             self.assertEqual(json.loads(self.path.read_text())['post_battle']['stage'], 'pending')
+        self.assertTrue(owner._award_spoils())
+        self.assertEqual(self.resources()['mira'], (0, 17))
+        self.assertEqual(self.resources()['lucan'], (61, 3))
         with patch.object(self.game.battle_rewards, 'award_battle_rewards',
                           side_effect=AssertionError('duplicate reward')):
             self.assertTrue(owner._award_spoils())

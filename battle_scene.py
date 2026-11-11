@@ -15,6 +15,7 @@ from battle_action_fx import BattleActionEffects, target_reaction
 from battle_action_audio import BattleActionAudio
 from combat_motion_art import MOTION_STATES, frame as motion_frame, anchors as motion_anchors
 from mira_combat_art import MiraCombatArt
+from mira_rig_ui import MiraRigUI
 from cave_battlefield import CaveBattlefield, CAVE_BATTLEFIELDS
 from battle_target_marker import (FINGER_SIZE, FINGER_GAP, target_marker_geometry,
                                   draw_target_ring, draw_target_finger)
@@ -32,7 +33,10 @@ ACTION_LABELS = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
                  'aether_edge': 'Aether Edge', 'aether_dart': 'Dart · 4 MP',
                  'nature_edge': 'Nature Edge', 'aqua_edge': 'Aqua Edge',
                  'flame_edge': 'Flame Edge', 'ice_edge': 'Ice Edge',
-                 'overclock': 'Overclock'}
+                 'charged_bolt': 'Charged Bolt', 'bulwark': 'Bulwark',
+                 'repair_pulse': 'Repair Pulse', 'impact_bolt': 'Impact Bolt',
+                 'arc_discharge': 'Arc Discharge'}
+RIG_SKILLS = frozenset(('charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge'))
 HP_GREEN = '#6fc878'
 HP_YELLOW = GOLD
 HP_RED = '#df6b62'
@@ -52,7 +56,7 @@ class CombatSprites:
             self._load_actor(actor)
 
     def _load_actor(self, actor):
-        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea', 'edran',
+        if actor not in ('caelan', 'bat', 'mira', 'ridgeback_tusker', 'lucan', 'rhea', 'edran',
                          'lithrusk', 'veylume', 'vespermaw', *ELEMENTALS):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
@@ -150,6 +154,8 @@ class BattleScene:
         self.tutorial_continue_rect = pygame.Rect(354, 61, 90, 20)
         self.sprites = sprites if sprites is not None else CombatSprites()
         self.mira_art = MiraCombatArt() if model.combatant('mira') is not None else None
+        self.rig = (MiraRigUI(getattr(model, 'rig_allocation', None), on_apply=self._apply_rig)
+                    if self.mira_art is not None else None)
         if model.weapon_equipped:
             from gearblade_art import prepare_combat_art
             prepare_combat_art()
@@ -160,6 +166,7 @@ class BattleScene:
         self.selected = 0
         self.command_menu = 'root'
         self._selected_item = None
+        self._selected_skill = None
         self._target_command = None
         self.enemy_rows = {}
         self.enemy_rects = {}
@@ -168,17 +175,13 @@ class BattleScene:
         self._held = False
         self._elapsed = 0.0
         self._phase_elapsed = 0.0
-        # A result clears the model's attachments. Keep only a visual reference
-        # for the celebration; it never supplies commands or combat resources.
-        self._encounter_bots = tuple(getattr(model, 'bots', ()))
-        self._deploy_times = {bot.identifier: 0.0 for bot in self._encounter_bots}
-        self.bot_status = {}
         self._defeat_times = {member.identifier: 0.0 for member in
                               (*model.party, *self._enemy_members()) if not member.hp}
         self._popups = []
         self._reactions = {}
         self.action_fx = BattleActionEffects()
         self._elemental_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
+        self._rig_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         motion_frame('plant', 0, armed=model.weapon_equipped)
         self.action_audio = BattleActionAudio(game)
         self._cue_action = None
@@ -225,7 +228,7 @@ class BattleScene:
 
     def _feedback_name(self, identifier):
         if self._is_enemy(identifier):return self._enemy_name(identifier)
-        member = self.model.combatant(identifier) or self._bot(identifier)
+        member = self.model.combatant(identifier)
         return member.name if member is not None else str(identifier or '')
 
     def announce(self, text, *, actor=None, kind='event'):
@@ -310,7 +313,6 @@ class BattleScene:
         """Small translucent ground projections keep the painted grass visible."""
         shadows = {}
         for key, size, opacity in (('player', (34, 7), 65),
-                                   ('bot', (25, 5), 55),
                                    ('enemy_low', (30, 7), 48),
                                    ('enemy_high', (24, 5), 34),
                                    ('tusker', (114, 14), 62),
@@ -326,9 +328,7 @@ class BattleScene:
         return shadows
 
     def _draw_shadow(self, canvas, actor, point):
-        if self._bot(actor) is not None:
-            image, ground_y = self._shadows['bot'], round(point.y)
-        elif not self._is_enemy(actor):
+        if not self._is_enemy(actor):
             image, ground_y = self._shadows['player'], round(point.y)
         elif self._sprite(actor) == 'ridgeback_tusker':
             image, ground_y = self._shadows['tusker'], round(point.y)
@@ -417,6 +417,9 @@ class BattleScene:
         wheel = pygame.Rect(0, 0, side, side)
         wheel.center = (space.centerx-18 if space.width >= 140 else space.centerx, space.centery)
         self.gear.layout(wheel)
+        if self.rig is not None and 'mira' in self.party_rows:
+            self.rig.sync(self.model.rig_allocation)
+            self.rig.layout(self.party_rows['mira']['interactable'], painter)
         self.continue_rect = pygame.Rect(self.commands_panel.left+6, self.panel_rect.bottom-25, self.commands_panel.width-12, 20)
         self.resume_rect = pygame.Rect(172, 171, 136, 29)
         self._target_confirm_rect = pygame.Rect(self.commands_panel.left+6, self.panel_rect.bottom-47,
@@ -470,15 +473,6 @@ class BattleScene:
                 'name': name_rect, 'hp': bar, 'atb': atb}
         return small, name
 
-    def _bot(self, identifier):
-        return next((bot for bot in self._encounter_bots
-                     if bot.identifier == identifier), None)
-
-    def _field_bots(self):
-        if self.model.phase in ('victory', 'defeat'):
-            return self._encounter_bots
-        return tuple(getattr(self.model, 'bots', ()))
-
     @property
     def tutorial_active(self):return bool(self._tutorial_queue)
 
@@ -505,7 +499,7 @@ class BattleScene:
             self._tutorial_queue.clear()
             self._queue_tutorial('spellblade_interrupted',
                 'Stay down, Cael. I’ll finish this.',
-                'Caelan is incapacitated. Mira and Rivet can continue the battle.')
+                'Caelan is incapacitated. Mira can continue the battle.')
             return
         if self.model.spellblade_stage is not None:
             return self._spellblade_tutorial_event(event)
@@ -515,8 +509,8 @@ class BattleScene:
                 'Full ATB: ready to act. Gauges pause while you choose.')
             if event.get('actor') == 'mira':
                 self._queue_tutorial('mira_turn',
-                    'Rivet, keep it busy. I can cover you both from here.',
-                    'Mira fires Bolt Shot. Skills → Overclock costs 5 MP and hastens Rivet for 8 bot turns.')
+                    'I can cover you from here. Let me route power to the arm rig.',
+                    'Mira fires Bolt Shot. Configure her arm rig to power different Skills.')
         elif event['type'] == 'telegraph':
             target = self.model.combatant(event.get('target'))
             name = target.name if target is not None else 'us'
@@ -569,8 +563,8 @@ class BattleScene:
                 self._queue_tutorial('spellblade_discovered_'+str(index),text,
                     'Learned Aether Edge · 4 MP. Normal party commands are now available.' if index==3 else '',speaker)
         elif kind=='player_ready' and event.get('actor')=='mira' and stage=='complete':
-            self._queue_tutorial('mira_turn','Rivet, keep it busy. I can cover you both from here.',
-                'Mira fires Bolt Shot. Skills → Overclock hastens Rivet for 8 bot turns.')
+            self._queue_tutorial('mira_turn','I can cover you from here. Let me route power to the arm rig.',
+                'Mira fires Bolt Shot. Click her rig or press M to configure power for her Skills.')
 
     def _aqua_tutorial_event(self, event):
         kind = event['type']
@@ -579,7 +573,7 @@ class BattleScene:
                 'The blue gem… it’s still resonating. I can feel the aether following the blade.',
                 'Choose Skills → Aqua Edge. This first cast costs 0 MP.', 'caelan')
             self._queue_tutorial('aqua_cover',
-                'Take your moment, Cael. Rivet and I will cover you.')
+                'Take your moment, Cael. I’ll cover you.')
         elif kind == 'aqua_edge_discovered':
             self._queue_tutorial('aqua_success',
                 'Water! That was what I was trying to do at the mill.', '', 'caelan')
@@ -595,7 +589,7 @@ class BattleScene:
         if identifier.startswith('ally:'):
             return self.model.combatant(identifier.split(':', 1)[1]).name
         label = ACTION_LABELS.get(identifier, identifier)
-        if identifier in ('aqua_edge', 'flame_edge', 'ice_edge'):
+        if identifier in ('aqua_edge', 'flame_edge', 'ice_edge', *RIG_SKILLS):
             cost = self.model.action_mp_cost(identifier, self.model.ready_actor)
             return label+' · '+str(cost)+' MP'
         return label
@@ -608,6 +602,9 @@ class BattleScene:
             chosen = actions[self.selected % len(actions)] if actions else ''
             if chosen.startswith('item:'):return model.item_definitions[chosen.split(':', 1)[1]]['description']
         if self.command_menu == 'item_targets':return 'Choose a party member for '+model.item_definitions[self._selected_item]['name']+'.'
+        if self.command_menu == 'skill_targets':return 'Choose a living ally for Repair Pulse.'
+        if self.rig is not None and self.rig.focused:
+            return self.rig.detail_text+' · Arrows: route · Enter: apply · Tab: return'
         if self.result_error:return self.result_error
         if model.phase in RESULTS:
             if model.phase == 'victory':return ''
@@ -630,8 +627,16 @@ class BattleScene:
                     return str(cost)+' MP · Physical sword strike with '+element+' magic.'
                 if selected == 'nature_edge':
                     return self._command_reason(selected) or 'Unpractised elemental focus.'
-                if selected == 'overclock':
-                    return '5 MP · Haste: +50% ATB for 8 bot turns.'
+                if selected in RIG_SKILLS:
+                    from mira_rig_rules import SKILLS
+                    requirement = SKILLS[selected]['requirements']
+                    power = ' / '.join(key.title()+' '+str(value) for key, value in requirement.items() if value)
+                    effect = {'charged_bolt': 'A powered physical shot.',
+                              'bulwark': 'Barrier: 25% maximum HP for two Mira turns.',
+                              'repair_pulse': 'Restore HP to one living ally.',
+                              'impact_bolt': 'Physical shot and a 10% maximum-HP barrier.',
+                              'arc_discharge': 'Electric magical damage.'}[selected]
+                    return str(model.action_mp_cost(selected, model.ready_actor))+' MP · '+power+' · '+effect
             return ''
         return model.message if model.phase == 'acting' else 'Preparing the next action.'
 
@@ -641,6 +646,8 @@ class BattleScene:
         """A command list belongs only to its current ready party member."""
         context = (self.model.phase, self.model.ready_actor)
         if context != self._command_context:
+            previous_actor = self._command_context[1]
+            if previous_actor != context[1] and context[1] != 'mira':self._cancel_rig()
             self.command_menu = 'root'
             self.selected = 0
             self._notice = ''
@@ -652,6 +659,8 @@ class BattleScene:
             return ['item:'+key for key, count in self.model.item_counts.items() if count]+['back']
         if self.command_menu == 'item_targets':
             return ['ally:'+member.identifier for member in self.model.party]+['back']
+        if self.command_menu == 'skill_targets':
+            return ['ally:'+member.identifier for member in self.model.party]+['back']
         if self.command_menu == 'skills':
             return list(self.model.skill_actions())+['back']
         commands = getattr(self.model, 'command_actions', self.model.available_actions)
@@ -660,7 +669,10 @@ class BattleScene:
     def _command_reason(self, identifier):
         if identifier == 'back':return ''
         if identifier.startswith('item:'):return self.model.item_reason(identifier.split(':', 1)[1])
-        if identifier.startswith('ally:'):return self.model.item_reason(self._selected_item, identifier.split(':', 1)[1])
+        if identifier.startswith('ally:'):
+            target = identifier.split(':', 1)[1]
+            return (self.model.action_reason(self._selected_skill, target_id=target)
+                    if self.command_menu == 'skill_targets' else self.model.item_reason(self._selected_item, target))
         if identifier in ('skills', 'items'):return self.model.command_reason(identifier)
         return self.model.action_reason(identifier)
 
@@ -678,6 +690,7 @@ class BattleScene:
 
     def _select_member(self, identifier):
         if not self.model.select_ready(identifier):return False
+        self._cancel_rig()
         self.command_menu = 'root'
         self._command_context = (self.model.phase, self.model.ready_actor)
         self.selected = 0
@@ -779,7 +792,8 @@ class BattleScene:
         self.selected %= len(actions)
         identifier = actions[self.selected]
         if identifier == 'back':
-            self._set_menu('items' if self.command_menu == 'item_targets' else 'root')
+            self._set_menu('items' if self.command_menu == 'item_targets' else
+                           'skills' if self.command_menu == 'skill_targets' else 'root')
             self._sound('back')
             return
         if identifier in ('skills', 'items'):
@@ -800,8 +814,16 @@ class BattleScene:
             else:self._set_menu('item_targets');self._sound('confirm')
             return
         if identifier.startswith('ally:'):
-            self._use_item(identifier.split(':', 1)[1]);return
+            target = identifier.split(':', 1)[1]
+            if self.command_menu == 'skill_targets':self._use_ally_skill(target)
+            else:self._use_item(target)
+            return
         record = self.model.actions.get(identifier, {})
+        if record.get('target') == 'ally':
+            reason = self._command_reason(identifier)
+            if reason:self._notice = reason;self._sound('back');return
+            self._selected_skill = identifier
+            self._set_menu('skill_targets');self._sound('confirm');return
         if self._group and (identifier == 'attack' or record.get('target') == 'opponent'):
             reason = self._command_reason(identifier)
             if reason:
@@ -825,6 +847,32 @@ class BattleScene:
             self._notice = '';self._sync_commands();self._sound('confirm')
         else:
             self._notice = self.model.item_reason(self._selected_item, target);self._sound('back')
+
+    def _use_ally_skill(self, target):
+        if self.model.choose_action(self._selected_skill, target_id=target):
+            self._notice = '';self._sync_commands();self._sound('confirm')
+        else:
+            self._notice = self.model.action_reason(self._selected_skill, target_id=target)
+            self._sound('back')
+
+    def _apply_rig(self, allocation):
+        if not self.rig_enabled or not self.model.set_rig_allocation(allocation):
+            self.rig.notice = self.model.rig_reason() or 'The rig cannot be configured right now.'
+            self._sound('back')
+            return False
+        self._notice = ''
+        self._sound('confirm')
+        return True
+
+    def _cancel_rig(self):
+        if self.rig is not None:
+            self.rig.cancel();self.rig.focused = False;self.rig._held = False
+
+    @property
+    def rig_enabled(self):
+        return (self.rig is not None and self.focused and not self.paused
+                and not self.dismissed and not self.tutorial_active
+                and not self.model.rig_reason())
 
     @property
     def gear_enabled(self):
@@ -878,6 +926,7 @@ class BattleScene:
             self.paused = True
             self._held = False
             self._cancel_gear()
+            self._cancel_rig()
             self.action_audio.stop()
             return True
         if event.type == pygame.WINDOWFOCUSGAINED:
@@ -886,6 +935,7 @@ class BattleScene:
         if (self.tutorial_active and not self.paused
                 and not (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE)):
             self._cancel_gear()
+            self._cancel_rig()
             if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False) and event.key in (
                     pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
                 self.advance_tutorial()
@@ -896,14 +946,29 @@ class BattleScene:
                         self.advance_tutorial()
             elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._held = False
             return True
+        if self.rig is not None:
+            if (event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False)
+                    and event.key == pygame.K_m and self.rig_enabled):
+                self._cancel_gear()
+                if self.rig.focused:self._cancel_rig()
+                else:self.rig.focused = True;self._notice = ''
+                return True
+            if self.rig.focused and event.type == pygame.KEYDOWN and event.key in (pygame.K_TAB, pygame.K_g):
+                self._cancel_rig()
+            elif self.rig.handle_event(event, point, enabled=self.rig_enabled):
+                self._cancel_gear();self._notice = ''
+                if event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._held = False
+                return True
         if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key == pygame.K_ESCAPE:
                 self._cancel_gear()
                 if self.focused:
                     if not self.paused and self._target_command is not None:
                         self._target_command = None;self._notice = '';self._sound('back');return True
-                    if not self.paused and self.command_menu in ('skills', 'items', 'item_targets'):
-                        self._set_menu('items' if self.command_menu == 'item_targets' else 'root');self._sound('back');return True
+                    if not self.paused and self.command_menu in ('skills', 'items', 'item_targets', 'skill_targets'):
+                        self._set_menu('items' if self.command_menu == 'item_targets' else
+                                       'skills' if self.command_menu == 'skill_targets' else 'root')
+                        self._sound('back');return True
                     self.paused = not self.paused
                     if self.paused:self.action_audio.stop()
                     self._held = False
@@ -964,6 +1029,7 @@ class BattleScene:
                 for identifier, row in self.party_rows.items():
                     if row['row'].collidepoint(point):
                         if self.command_menu == 'item_targets':self._use_item(identifier);return True
+                        if self.command_menu == 'skill_targets':self._use_ally_skill(identifier);return True
                         self._select_member(identifier);return True
                 if self._target_command is not None:
                     if self._target_confirm_rect.collidepoint(point):self._confirm()
@@ -1008,6 +1074,9 @@ class BattleScene:
         self._action_cues()
         for popup in self._popups:popup['age'] += seconds
         self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
+        if self.rig is not None:
+            self.rig.sync(self.model.rig_allocation)
+            if not self.rig_enabled:self._cancel_rig()
         if not self.gear_enabled and (self.gear.busy):self._cancel_gear()
         gem = self.gear.update(seconds, reduced_motion=self.reduced_motion)
         if gem is not None and self.model.set_active_gem(gem):
@@ -1026,6 +1095,17 @@ class BattleScene:
                                else self._phase_elapsed+seconds)
         roar_impact_cued = False
         for event in self.model.drain_events():
+            if event['type'] == 'skill_heal':
+                if event['amount']:
+                    self._popups.append({'target': event['target'], 'text': '+'+str(event['amount']),
+                        'age': event.get('frame_age', 0.), 'healing': True})
+                self.action_audio.play('focus')
+            elif event['type'] == 'barrier_applied':
+                self._popups.append({'target': event['target'], 'text': 'Shield '+str(event['amount']),
+                    'age': event.get('frame_age', 0.), 'shield': True})
+            elif event['type'] == 'barrier_absorbed':
+                self._popups.append({'target': event['target'], 'text': 'Blocked '+str(event['amount']),
+                    'age': event.get('frame_age', 0.), 'shield': True, 'offset': 14})
             if event['type'] == 'item_effect':
                 if event['amount']:
                     self._popups.append({'target': event['target'], 'text': '+'+str(event['amount'])+
@@ -1057,11 +1137,6 @@ class BattleScene:
             elif event['type'] == 'enchant':
                 self._popups.append({'target': event['actor'], 'text': 'Aether Edge',
                                      'age': 0.0, 'enchant': True})
-            elif event['type'] == 'haste_applied':
-                self._popups.append({'target': event['target'], 'text': 'Haste',
-                                     'age': 0.0, 'enchant': True})
-            elif event['type'] == 'bot_deployed':
-                self._deploy_times[event['actor']] = self._elapsed
             elif event['type'] == 'player_ready':
                 self.command_menu = 'root'
                 self.selected = 0
@@ -1092,11 +1167,6 @@ class BattleScene:
     @property
     def reduced_motion(self):return getattr(self.game.audio, 'reduced_motion', False)
 
-    def _bot_home(self):
-        if len(self.model.party) == 3:
-            return pygame.Vector2(271, self.panel_rect.top-18)
-        return pygame.Vector2(296, 181-max(0, 202-self.panel_rect.top))
-
     def _choreography(self, action=None):
         action = self.model.current_action if action is None else action
         if action is None or not getattr(action, 'choreography', None):return None
@@ -1112,6 +1182,11 @@ class BattleScene:
             if action.elapsed >= self.mira_art.release_at and 'mira_release' not in self._cue_phases:
                 self._cue_phases.add('mira_release')
                 self.action_audio.play('focus')
+            return
+        if action is not None and action.actor == 'mira' and action.action in RIG_SKILLS:
+            if action.elapsed >= max(.05, action.impact_at-.18) and 'rig_release' not in self._cue_phases:
+                self._cue_phases.add('rig_release')
+                self.action_audio.play('focus' if action.kind in ('heal', 'barrier') else 'release')
             return
         if action is not None and self._is_enemy(action.actor) and self._sprite(action.actor) in CAVE_ENEMIES:
             clocks = ({'focus': 0.} if action.kind == 'prepare' else
@@ -1148,7 +1223,6 @@ class BattleScene:
         else:
             positions = {'player': pygame.Vector2(354, 184-offset),
                          'enemy': pygame.Vector2(126, 170-offset)}
-        for bot in self._field_bots():positions[bot.identifier] = self._bot_home()
         if self._group:
             positions.pop('enemy', None)
             for enemy in self._enemy_members():
@@ -1345,20 +1419,6 @@ class BattleScene:
         return pygame.Vector2(point)*zoom+offset
 
     def _pose(self, actor):
-        bot = self._bot(actor)
-        if bot is not None:
-            owner = self.model.combatant(bot.owner_id)
-            if owner is None or not owner.hp or self.model.phase in ('defeat', 'fled'):
-                return 'suspend', self._elapsed*1000
-            if self.model.phase == 'victory':return 'victory', self._phase_elapsed*1000
-            action = self.model.current_action
-            if action is not None:
-                if action.kind == 'haste' and action.target == actor:
-                    return 'overclock', action.elapsed*1000
-                if action.actor == actor:return action.animation, action.elapsed*1000
-            deployment = self._elapsed-self._deploy_times.get(actor, 0)
-            if deployment < .6:return 'deploy', deployment*1000
-            return 'idle', self._elapsed*1000
         combatant = self.model.combatant(actor)
         reaction = self._reactions.get(actor)
         sprite = self._sprite(actor)
@@ -1379,6 +1439,9 @@ class BattleScene:
         action = self.model.current_action
         if action is not None and action.actor == actor:
             if action.kind == 'item':return 'idle', 0 if self.reduced_motion else action.elapsed*1000
+            if actor == 'mira' and action.action in RIG_SKILLS:
+                return action.action, self.mira_art.action_time(action.action, action.elapsed,
+                    action.impact_at, action.duration)
             sequence = self._choreography(action)
             if sequence is not None:return sequence.pose, sequence.pose_ms
             if actor == 'mira' and action.kind == 'guard':
@@ -1393,7 +1456,6 @@ class BattleScene:
                     return self._vespermaw_pose(action, actor)
                 return action.animation, action.elapsed*1000
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
-                     'overclock' if action.kind == 'haste' else
                      'cast' if action.kind in ('magical', 'enchant', 'failed_edge') else 'guard' if action.kind == 'guard'
                      else 'idle' if action.kind == 'flee' else action.animation
                      if action.animation in ('prepare', 'charge') else 'attack')
@@ -1564,14 +1626,9 @@ class BattleScene:
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
             pygame.draw.circle(canvas, '#5da9e9', (round(point.x), round(point.y)), 15+pulse, 1)
             pygame.draw.circle(canvas, '#b1e4ff', (round(point.x), round(point.y)-18), 2)
-        if action is not None and action.kind == 'haste' and action.target in positions:
-            point = positions[action.target]+(0, -24)
-            pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*12)*2)
-            pygame.draw.circle(canvas, '#72c8f0', (round(point.x), round(point.y)), 19+pulse, 1)
-            for offset in (-9, 9):
-                pygame.draw.circle(canvas, '#d8f7ff',
-                                   (round(point.x+offset), round(point.y-25)), 2)
         self._draw_mira_effects(canvas)
+        self._draw_rig_skill_effects(canvas, positions)
+        self._draw_rig_barriers(canvas, positions)
         self._draw_cave_enemy_effects(canvas, positions)
         self._draw_elemental_effects(canvas, positions)
         self._draw_item_effects(canvas, positions)
@@ -1582,6 +1639,7 @@ class BattleScene:
         if (action is not None and action.kind == 'magical' and not action.resolved
                 and not getattr(action, 'choreography', None)
                 and action.target in positions
+                and action.action not in RIG_SKILLS
                 and not (self._is_enemy(action.actor) and self._sprite(action.actor) in ('veylume', *ELEMENTALS))):
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
@@ -1773,15 +1831,102 @@ class BattleScene:
                 # A small spring-release glint, not a firearm's fireball.
                 pygame.draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
                 pygame.draw.line(canvas, '#f8f0d9', (x-3, y+2), (x-1, y+1), 1)
+    def _rig_skill_geometry(self, positions=None):
+        """Read-only skill attachments sampled from the authoritative action."""
         action = self.model.current_action
-        if (self.mira_art is not None and action is not None and action.actor == 'mira'
-                and action.action == 'overclock' and action.impact_at <= action.elapsed < action.impact_at+.08
-                and not self.reduced_motion):
-            point = self.mira_art.world_anchor('overclock', action.elapsed*1000, 'controller',
-                                               self._home_positions()['mira'])
-            x, y = (round(n) for n in point)
-            pygame.draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
-            pygame.draw.line(canvas, '#f8f0d9', (x+3, y-2), (x+1, y-1), 1)
+        if (self.mira_art is None or action is None or action.actor != 'mira'
+                or action.action not in RIG_SKILLS):return None
+        positions = self._positions() if positions is None else positions
+        key = action.action
+        attachment = 'tool' if key == 'repair_pulse' else 'projector' if key == 'bulwark' else 'muzzle'
+        clock = self.mira_art.action_time(key, action.elapsed, action.impact_at, action.duration)
+        current = pygame.Vector2(self.mira_art.world_anchor(key, clock, attachment, positions['mira']))
+        release_at = max(.05, action.impact_at-.18)
+        release_clock = self.mira_art.action_time(key, release_at, action.impact_at, action.duration)
+        origin = pygame.Vector2(self.mira_art.world_anchor(key, release_clock, attachment, positions['mira']))
+        target_id = action.actor if key == 'bulwark' else action.target
+        if target_id not in positions:return None
+        target = self._hit_point(target_id, positions)
+        traveling = release_at <= action.elapsed < action.impact_at and not action.resolved
+        fraction = ((action.elapsed-release_at)/(action.impact_at-release_at)) if traveling else None
+        return {'key': key, 'action': action, 'origin': origin, 'attachment': current,
+                'target': pygame.Vector2(target), 'target_id': target_id,
+                'fraction': fraction, 'release_at': release_at}
+
+    def _draw_rig_skill_effects(self, canvas, positions):
+        geometry = self._rig_skill_geometry(positions)
+        if geometry is None:return
+        action, key = geometry['action'], geometry['key']
+        layer = self._rig_layer;layer.fill((0, 0, 0, 0))
+        layer.set_clip(pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35)))
+        origin, attachment, target = geometry['origin'], geometry['attachment'], geometry['target']
+        fraction = geometry['fraction']
+        color = ((134, 221, 158) if key == 'repair_pulse' else
+                 (126, 221, 237) if key in ('bulwark', 'arc_discharge') else (246, 193, 103))
+        def point(value):return round(value[0]), round(value[1])
+        if action.elapsed < action.impact_at:
+            strength = min(1., action.elapsed/max(.001, geometry['release_at']))
+            pygame.draw.circle(layer, (*color, 80), point(attachment), 3+round(strength*2), 1)
+            pygame.draw.circle(layer, (*color, 235), point(attachment), 1)
+            if not self.reduced_motion:
+                for index in range(3):
+                    angle = index*math.tau/3+action.elapsed*5
+                    mote = attachment+pygame.Vector2(math.cos(angle), math.sin(angle))*(6-strength*3)
+                    pygame.draw.circle(layer, (*color, 155), point(mote), 1)
+        if fraction is not None:
+            projectile = origin.lerp(target, fraction)
+            if key in ('charged_bolt', 'impact_bolt'):
+                direction = target-origin
+                direction = direction.normalize() if direction.length_squared() else pygame.Vector2(-1, 0)
+                pygame.draw.line(layer, (*color, 230), point(projectile-direction*9), point(projectile), 2)
+                pygame.draw.line(layer, (255, 247, 215, 245), point(projectile-direction*3), point(projectile), 1)
+            elif key == 'repair_pulse':
+                if not self.reduced_motion:
+                    pygame.draw.line(layer, (*color, 55), point(origin), point(target), 1)
+                    for index in range(4):
+                        mote = origin.lerp(target, max(0., min(1., fraction-index*.12)))
+                        pygame.draw.circle(layer, (*color, 225-index*35), point(mote), 1)
+                else:pygame.draw.circle(layer, (*color, 175), point(target), 9, 1)
+            elif key == 'arc_discharge':
+                nodes = [point(origin)]
+                for index in range(1, 7):
+                    node = origin.lerp(projectile, index/7)
+                    if not self.reduced_motion:node.y += math.sin(index*2.7+action.elapsed*40)*3
+                    nodes.append(point(node))
+                nodes.append(point(projectile))
+                pygame.draw.lines(layer, (*color, 225), False, nodes, 1)
+                pygame.draw.circle(layer, (225, 249, 255, 225), point(projectile), 2)
+            elif key == 'bulwark':
+                pygame.draw.line(layer, (*color, 115), point(origin), point(target), 1)
+                self._rig_hex(layer, target, 9+round(fraction*15), (*color, 150))
+        # Impact decoration never precedes the actual impact. Lasting shields
+        # are rendered separately from the live, remaining barrier pool.
+        impact_age = action.elapsed-action.impact_at
+        if action.resolved and 0 <= impact_age < .18:
+            radius = 8 if self.reduced_motion else 6+round(impact_age*45)
+            pygame.draw.circle(layer, (*color, 180), point(target), radius, 1)
+            if key == 'repair_pulse':
+                pygame.draw.line(layer, (*color, 220), point(target+(-3, 0)), point(target+(3, 0)), 1)
+                pygame.draw.line(layer, (*color, 220), point(target+(0, -3)), point(target+(0, 3)), 1)
+        canvas.blit(layer, (0, 0))
+
+    @staticmethod
+    def _rig_hex(layer, center, radius, color):
+        vertices = [(round(center.x+math.cos(index*math.tau/6)*radius),
+                     round(center.y+math.sin(index*math.tau/6)*radius*1.2)) for index in range(6)]
+        pygame.draw.polygon(layer, (*color[:3], min(28, color[3])), vertices)
+        pygame.draw.polygon(layer, color, vertices, 1)
+
+    def _draw_rig_barriers(self, canvas, positions):
+        layer = self._rig_layer;layer.fill((0, 0, 0, 0))
+        layer.set_clip(pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35)))
+        any_barrier = False
+        for member in self.model.party:
+            if not member.hp or not getattr(member, 'barrier', 0):continue
+            center = self._hit_point(member.identifier, positions)
+            self._rig_hex(layer, center, 23, (131, 215, 235, 135))
+            any_barrier = True
+        if any_barrier:canvas.blit(layer, (0, 0))
 
     @staticmethod
     def _bar(painter, rect, fraction, color):
@@ -1898,7 +2043,7 @@ class BattleScene:
                 point = self._hit_point(popup['target'], positions)+(0, -12)
             else:
                 point = positions[popup['target']]+(0, -(88 if self._is_enemy(popup['target'])
-                    and self._sprite(popup['target']) == 'ridgeback_tusker' else 18 if self._bot(popup['target']) else 75))
+                    and self._sprite(popup['target']) == 'ridgeback_tusker' else 75))
             x, y = self._project(point)
             y -= popup.get('offset', 0)
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
@@ -1907,8 +2052,20 @@ class BattleScene:
             y = max(popup_height/2+2, min(self.panel_rect.top-popup_height/2-2, y))
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(popup['text'], (x, y), role='name',
-                         color=HP_GREEN if popup.get('healing') else MP_BLUE if popup.get('enchant') or popup.get('mp') else GOLD,
+                         color=HP_GREEN if popup.get('healing') else MP_BLUE if popup.get('enchant') or popup.get('mp') or popup.get('shield') else GOLD,
                          anchor='center', bold=True)
+        self.barrier_badges = {}
+        for member in model.party:
+            if not member.hp or not getattr(member, 'barrier', 0):continue
+            point = self._project(positions[member.identifier])
+            label = 'Shield '+str(member.barrier)+' · '+str(member.barrier_turns)+'t'
+            width, height = painter.font('small', bold=True).size(label)
+            x = max(width/2+3, min(477-width/2, point.x))
+            y = min(self.panel_rect.top-3, point.y+10)
+            badge = pygame.Rect(round(x-width/2-3), round(y-height-2), width+6, height+3)
+            painter.rect(FOREST_DARK, badge);painter.rect(MP_BLUE, badge, 1)
+            self.barrier_badges[member.identifier] = painter.text(label, (x, y), role='small',
+                color='#a8e2ef', anchor='midbottom', bold=True)
         for member in model.party:
             hits = getattr(member, 'aether_edge_hits', 0)
             if not hits or not member.hp:continue
@@ -1937,7 +2094,8 @@ class BattleScene:
         top = self.panel_rect.top
         heading = ({'defeat': 'DEFEATED', 'fled': 'ESCAPED'}.get(model.phase)
                    or ('TARGET' if self._target_command is not None else '')
-                   or {'skills': 'SKILLS', 'items': 'ITEMS', 'item_targets': 'RECIPIENT'}.get(self.command_menu, 'COMMANDS'))
+                   or {'skills': 'SKILLS', 'items': 'ITEMS', 'item_targets': 'RECIPIENT',
+                       'skill_targets': 'RECIPIENT'}.get(self.command_menu, 'COMMANDS'))
         painter.text(heading, (self.commands_panel.centerx, top+5), role='small',
                      color=GOLD, anchor='midtop', bold=True)
         self.header_rects = {}
@@ -1963,6 +2121,8 @@ class BattleScene:
                          (column.right-4, top+self._status_height))
         self.gear.draw(painter, self._elapsed, enabled=self.gear_enabled,
                        slowed=self.atb_multiplier < 1, focused=self.gear.focused)
+        if self.rig is not None and 'mira' in self.party_rows:
+            self.rig.draw(painter, self.party_rows['mira']['interactable'], enabled=self.rig_enabled)
         space = self.party_rows['player']['interactable']
         if space.width >= 140:
             painter.text(GEM_NAMES[self.model.active_gem], (self.gear.rect.right+7, self.gear.rect.centery),
@@ -1994,7 +2154,8 @@ class BattleScene:
                 if model.phase == 'ready' and actions.index(identifier) == self.selected:
                     painter.rect(MUTED if disabled else GOLD, rect, 1)
             detail = self._notice or self._detail_text()
-            if detail and (self._notice or self.command_menu in ('skills', 'items', 'item_targets')) and (
+            if detail and (self._notice or self.command_menu in ('skills', 'items', 'item_targets', 'skill_targets')
+                           or self.rig is not None and self.rig.focused) and (
                     self._hovered_enemy is None or self._notice):
                 lines = painter.wrap(detail, 270, role='small')
                 box = pygame.Rect(192, top-len(lines)*small-12, 280, len(lines)*small+8)

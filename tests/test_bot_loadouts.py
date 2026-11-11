@@ -1,4 +1,4 @@
-"""Starting bot ownership and strict, independent persistent loadouts."""
+"""Retired bot ownership is empty while retained legacy catalogue data stays strict."""
 from copy import deepcopy
 import json
 import unittest
@@ -9,34 +9,33 @@ from character_abilities import CharacterAbilities, starting_abilities
 from inventory import Inventory
 
 
-class BotLoadoutsTests(unittest.TestCase):
-    def setUp(self):
-        self.loadouts = BotLoadouts()
+RIG_SKILLS = ('charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge')
+RIG_STARTERS = frozenset({'arm_rig', *RIG_SKILLS})
 
-    def test_mira_starts_with_one_owned_bot_and_one_autonomous_ability(self):
-        expected = {'mira': {'bot_id': 'rivet', 'ability_id': 'piston_jab'}}
-        self.assertEqual(self.loadouts.battle_loadouts(), expected)
-        self.assertEqual(starting_battle_loadouts(), expected)
-        self.assertEqual(self.loadouts.owned_bots('mira'), frozenset({'rivet'}))
-        for owner in ('caelan', 'lucan', 'rhea', 'edran', 'missing', [], None):
+
+class BotLoadoutsTests(unittest.TestCase):
+    def setUp(self):self.loadouts = BotLoadouts()
+
+    def test_starting_registry_grants_a_worn_rig_and_no_owned_autonomous_attachment(self):
+        self.assertEqual(self.loadouts.battle_loadouts(), {})
+        self.assertEqual(starting_battle_loadouts(), {})
+        for owner in ('mira', 'caelan', 'lucan', 'rhea', 'edran', 'missing', [], None):
             self.assertEqual(self.loadouts.owned_bots(owner), frozenset())
-        self.assertEqual(starting_abilities('mira'), frozenset({'rivet', 'overclock'}))
+        self.assertEqual(starting_abilities('mira'), RIG_STARTERS)
         self.assertEqual(starting_abilities('caelan'), frozenset({'basic_magicks'}))
         self.assertEqual(starting_abilities('missing'), frozenset())
 
-    def test_bot_is_a_capability_and_its_strike_is_absent_from_miras_skills(self):
+    def test_rig_capability_and_techniques_are_miras_without_retired_commands(self):
         abilities = CharacterAbilities(Inventory())
-        self.assertEqual(abilities.known_abilities('mira'), frozenset({'overclock', 'rivet'}))
-        self.assertEqual(abilities.skill_ids('mira'), ('overclock',))
-        self.assertEqual(abilities.definitions['rivet']['kind'], 'capability')
-        self.assertEqual(abilities.definitions['piston_jab']['kind'], 'technique')
-        for identifier in ('deploy', 'deploy_rivet', 'repair', 'repair_rivet'):
-            self.assertNotIn(identifier, abilities.definitions)
+        self.assertEqual(abilities.known_abilities('mira'), RIG_STARTERS)
+        self.assertEqual(abilities.skill_ids('mira'), RIG_SKILLS)
+        self.assertEqual(abilities.definitions['arm_rig']['kind'], 'capability')
+        for identifier in ('rivet', 'overclock', 'piston_jab', 'deploy_rivet', 'repair_rivet'):
             self.assertNotIn(identifier, abilities.known_abilities('mira'))
+            self.assertNotIn(identifier, abilities.skill_ids('mira'))
 
-    def test_ownership_does_not_create_a_party_profile_or_change_progression(self):
-        inventory = Inventory()
-        abilities = CharacterAbilities(inventory)
+    def test_reset_does_not_create_a_party_profile_or_change_progression(self):
+        inventory = Inventory();abilities = CharacterAbilities(inventory)
         before = (inventory.to_dict(), abilities.to_dict())
         self.loadouts.reset()
         self.assertTrue(self.loadouts.restore(self.loadouts.to_dict()))
@@ -44,94 +43,77 @@ class BotLoadoutsTests(unittest.TestCase):
         self.assertNotIn('rivet', abilities.character_ids)
         self.assertEqual(abilities.character_ids, ('caelan', 'mira', 'lucan', 'rhea', 'edran'))
 
-    def test_copies_and_round_trip_do_not_share_mutable_loadout_state(self):
-        saved = self.loadouts.to_dict()
-        other = BotLoadouts()
+    def test_empty_modern_state_round_trips_without_sharing_mutable_ownership(self):
+        saved = self.loadouts.to_dict();other = BotLoadouts()
+        self.assertEqual(saved, {'version': 1, 'loadouts': {}})
         for _ in range(2):
             self.assertTrue(other.restore(saved))
             self.assertEqual(other.to_dict(), saved)
-        saved['loadouts']['mira']['ability_id'] = 'missing'
-        result = other.battle_loadouts()
-        result['mira']['bot_id'] = 'missing'
-        self.assertEqual(other.battle_loadouts(), starting_battle_loadouts())
+        saved['loadouts']['mira'] = {'bot_id': 'rivet', 'ability_id': 'piston_jab'}
         self.assertFalse(other.restore(saved))
-        self.assertEqual(other.battle_loadouts(), starting_battle_loadouts())
+        self.assertEqual(other.battle_loadouts(), {})
+        returned = other.battle_loadouts();returned['mira'] = {'bot_id': 'rivet'}
+        self.assertEqual(other.battle_loadouts(), {})
 
-    def test_malformed_saves_are_rejected_atomically_without_extra_slots(self):
+    def test_malformed_modern_state_is_rejected_atomically(self):
         saved = self.loadouts.to_dict()
-        records = [None, True, [], {}, {'version': 1, 'loadouts': {}}]
-        for field, value in (('version', True), ('version', 2), ('loadouts', [])):
-            bad = deepcopy(saved);bad[field] = value;records.append(bad)
-        bad = deepcopy(saved);bad['unexpected'] = True;records.append(bad)
-        bad = deepcopy(saved);bad['loadouts']['caelan'] = bad['loadouts'].pop('mira');records.append(bad)
-        bad = deepcopy(saved);bad['loadouts']['lucan'] = deepcopy(bad['loadouts']['mira']);records.append(bad)
-        for field, value in (('bot_id', None), ('bot_id', []), ('bot_id', 'missing'),
-                             ('ability_id', None), ('ability_id', []),
-                             ('ability_id', 'missing'), ('ability_id', 'overclock')):
-            bad = deepcopy(saved);bad['loadouts']['mira'][field] = value;records.append(bad)
-        bad = deepcopy(saved);bad['loadouts']['mira']['ability_ids'] = ['piston_jab'];records.append(bad)
-        for record in records:
+        invalid = [None, True, [], {}, {'version': True, 'loadouts': {}},
+                   {'version': 2, 'loadouts': {}}, {'version': 1, 'loadouts': []},
+                   {'version': 1, 'loadouts': {}, 'unexpected': True},
+                   {'version': 1, 'loadouts': {'lucan': {'bot_id': 'rivet', 'ability_id': 'piston_jab'}}},
+                   {'version': 1, 'loadouts': {'mira': {'bot_id': 'missing', 'ability_id': 'piston_jab'}}}]
+        for record in invalid:
             with self.subTest(record=record):
                 self.assertFalse(self.loadouts.restore(record))
                 self.assertEqual(self.loadouts.to_dict(), saved)
 
-    def test_future_catalog_bots_are_not_granted_or_restored_as_owned(self):
-        catalog = json.loads(CATALOG_PATH.read_text(encoding='utf-8'))
+    def test_future_catalogue_entries_do_not_grant_or_restore_ownership(self):
+        catalog = json.loads(CATALOG_PATH.read_text())
         catalog['bots']['fixture_future_bot'] = deepcopy(catalog['bots']['rivet'])
         catalog['bots']['fixture_foreign_bot'] = deepcopy(catalog['bots']['rivet'])
         catalog['bots']['fixture_foreign_bot']['owner_id'] = 'lucan'
         owner = BotLoadouts(catalog)
-        self.assertEqual(owner.battle_loadouts(), starting_battle_loadouts())
-        self.assertEqual(owner.owned_bots('mira'), frozenset({'rivet'}))
+        self.assertEqual(owner.battle_loadouts(), {})
+        self.assertEqual(owner.owned_bots('mira'), frozenset())
         self.assertEqual(owner.owned_bots('lucan'), frozenset())
-        for bot_id in ('fixture_future_bot', 'fixture_foreign_bot'):
-            bad = owner.to_dict();bad['loadouts']['mira']['bot_id'] = bot_id
-            self.assertFalse(owner.restore(bad))
-        self.assertEqual(owner.battle_loadouts(), starting_battle_loadouts())
+        for bot_id in ('rivet', 'fixture_future_bot', 'fixture_foreign_bot'):
+            self.assertFalse(owner.restore({'version': 1, 'loadouts': {
+                'mira': {'bot_id': bot_id, 'ability_id': 'piston_jab'}}}))
         catalog['bots']['rivet']['ability_ids'].append('focused_strike')
         self.assertEqual(owner.definitions['rivet']['ability_ids'], ['piston_jab'])
 
-    def test_valid_equipped_ability_can_round_trip_without_multiple_slots(self):
+    def test_valid_catalogue_ability_does_not_reintroduce_an_equipped_bot(self):
         definitions = load_bot_definitions()
         definitions['rivet']['ability_ids'].append('focused_strike')
         owner = BotLoadouts(definitions)
-        saved = owner.to_dict();saved['loadouts']['mira']['ability_id'] = 'focused_strike'
-        self.assertTrue(owner.restore(saved))
-        self.assertEqual(owner.battle_loadouts()['mira']['ability_id'], 'focused_strike')
-        owner.reset()
-        self.assertEqual(owner.battle_loadouts()['mira']['ability_id'], 'piston_jab')
+        self.assertFalse(owner.restore({'version': 1, 'loadouts': {
+            'mira': {'bot_id': 'rivet', 'ability_id': 'focused_strike'}}}))
+        owner.reset();self.assertEqual(owner.battle_loadouts(), {})
 
-    def test_legacy_journeys_gain_only_defaults_and_explicit_null_is_invalid(self):
+    def test_modern_journey_shape_defaults_to_empty_and_rejects_explicit_null(self):
         self.assertTrue(BotLoadouts.valid_journey({}))
         self.assertTrue(BotLoadouts.valid_journey({'bot_loadouts': self.loadouts.to_dict()}))
         for record in (None, True, [], {}):
             self.assertFalse(BotLoadouts.valid_journey({'bot_loadouts': record}))
-        for journey in (None, True, []):
-            self.assertFalse(BotLoadouts.valid_journey(journey))
+        for journey in (None, True, []):self.assertFalse(BotLoadouts.valid_journey(journey))
 
     def test_existing_caelan_equipment_history_remains_compatible(self):
         catalog = Inventory().catalog
         catalog['items']['fixture_blade'] = {
-            'name': 'Fixture Blade', 'description': 'An equipment history fixture.',
-            'category': 'weapons'}
-        inventory = Inventory(catalog)
-        abilities = CharacterAbilities(inventory)
+            'name': 'Fixture Blade', 'description': 'An equipment history fixture.', 'category': 'weapons'}
+        inventory = Inventory(catalog);abilities = CharacterAbilities(inventory)
         self.assertTrue(abilities.acquire_weapon('caelan', 'fixture_blade'))
         self.assertTrue(abilities.equip_weapon('caelan', None))
         saved = abilities.to_dict()
-        self.assertEqual(abilities.known_abilities(), frozenset({'basic_magicks', 'aether_edge'}))
-        self.assertEqual(abilities.skill_ids(), ('aether_edge',))
         restored = CharacterAbilities(inventory)
-        self.assertTrue(restored.restore(saved))
-        self.assertEqual(restored.to_dict(), saved)
-        self.assertIn('aether_edge', restored.known_abilities())
-        self.assertFalse(restored.has_weapon())
+        self.assertTrue(restored.restore(saved));self.assertEqual(restored.to_dict(), saved)
+        self.assertIn('aether_edge', restored.known_abilities());self.assertFalse(restored.has_weapon())
         restored.restore(None)
         self.assertEqual(restored.known_abilities(), frozenset({'basic_magicks'}))
-        self.assertEqual(restored.known_abilities('mira'), frozenset({'rivet', 'overclock'}))
+        self.assertEqual(restored.known_abilities('mira'), RIG_STARTERS)
 
-    def test_catalog_validation_rejects_resources_unknown_owners_and_invalid_abilities(self):
-        catalog = json.loads(CATALOG_PATH.read_text(encoding='utf-8'))
+    def test_retained_catalogue_validation_rejects_invalid_owners_attributes_and_abilities(self):
+        catalog = json.loads(CATALOG_PATH.read_text())
         invalid = []
         for field, value in (('version', True), ('version', 2), ('bots', []), ('bots', {})):
             bad = deepcopy(catalog);bad[field] = value;invalid.append(bad)

@@ -1,3 +1,9 @@
+# Retired combat design
+
+This document records the previous bot implementation. It is not the current
+combat guide. Mira now uses [wearable arm-rig combat](MIRA_RIG_COMBAT.md);
+remaining historical material is scheduled for phase-three cleanup.
+
 # Mira's Engineer combat and Rivet
 
 **Design-role revision, 2026-11-07:** Engineer supersedes Machinist. The runtime

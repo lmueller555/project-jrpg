@@ -14,6 +14,7 @@ from battle_scene import BattleScene
 from battle_transition import BattleTransition
 from cave_battle_entry import CaveBattleEntry
 from inventory import MAX_QUANTITY
+from mira_rig_state import MiraRigState
 from quests import MILL_QUEST
 from post_battle import battle_reward_definition, valid_pending_snapshot
 from spoils_scene import SpoilsScene
@@ -52,6 +53,8 @@ class CombatEncounters:
         self._exiting_spoils = False
         self._bat_contact_armed = True
         self._party_entry = None
+        self._rig_entry = None
+        self._rig_stats = None
         self._party_active = None
         self.entry = None
         self._cave_ticket = None
@@ -127,6 +130,8 @@ class CombatEncounters:
         self._exiting_spoils = False
         self._bat_contact_armed = True
         self._party_entry = None
+        self._rig_entry = None
+        self._rig_stats = None
         self._party_active = None
         self.entry = None
         self._cave_ticket = None
@@ -146,10 +151,24 @@ class CombatEncounters:
                 'guest_abilities': {identifier: self.game.character_abilities.known_abilities(identifier)
                                     for identifier in party.active_ids if identifier != 'caelan'}}
 
+    def _rig_snapshot(self):
+        owner = getattr(self.game, 'mira_rig', None)
+        return owner.to_dict() if owner is not None else MiraRigState().to_dict()
+
+    def _rig_allocation(self):
+        return self._rig_snapshot()['allocation']
+
+    def _restore_rig(self, record):
+        owner = getattr(self.game, 'mira_rig', None)
+        return owner.restore(record) if owner is not None else record == MiraRigState().to_dict()
+
     def _capture_party_entry(self):
+        self._rig_entry = self._rig_snapshot()
         party = getattr(self.game, 'party', None)
         self._party_active = tuple(party.active_ids) if party is not None else None
         self._party_entry = self._party_resources() if party is not None else None
+        self._rig_stats = ({key: {stat: party.characters[key].value(stat) for stat in ('hp', 'spr')}
+                            for key in self._party_active} if party is not None else {})
 
     def _party_resources(self):
         party = self.game.party
@@ -246,7 +265,7 @@ class CombatEncounters:
                             weapon_equipped=self.game.character_abilities.has_weapon(),
                             active_gem=self.game.character_abilities.active_gem(),
                             owned_gems=self.game.character_abilities.owned_gems(),
-                            bot_loadouts=self.game.bot_loadouts.battle_loadouts(),
+                            rig_allocation=self._rig_allocation(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id=self.definition['enemy'], initial_atb=True,
                             **self._party_options())
@@ -297,7 +316,7 @@ class CombatEncounters:
                             weapon_equipped=game.character_abilities.has_weapon(),
                             active_gem=game.character_abilities.active_gem(),
                             owned_gems=game.character_abilities.owned_gems(),
-                            bot_loadouts=game.bot_loadouts.battle_loadouts(),
+                            rig_allocation=self._rig_allocation(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id='ridgeback_tusker', spellblade_tutorial=training,
                             initial_atb=not training, **options)
@@ -371,7 +390,7 @@ class CombatEncounters:
             weapon_equipped=game.character_abilities.has_weapon(),
             active_gem=game.character_abilities.active_gem(),
             owned_gems=game.character_abilities.owned_gems(),
-            bot_loadouts=game.bot_loadouts.battle_loadouts(),
+            rig_allocation=self._rig_allocation(),
             rng=random.Random(ticket['combat_seed']), initial_atb=True,
             initial_atb_seed=ticket['combat_seed'],
             aqua_edge_tutorial=(getattr(game, 'cave_lesson', None) is not None
@@ -459,7 +478,7 @@ class CombatEncounters:
             weapon_equipped=game.character_abilities.has_weapon(),
             active_gem=game.character_abilities.active_gem(),
             owned_gems=game.character_abilities.owned_gems(),
-            bot_loadouts=game.bot_loadouts.battle_loadouts(),
+            rig_allocation=self._rig_allocation(),
             rng=random.Random(ticket['combat_seed']), initial_atb=True,
             initial_atb_seed=ticket['combat_seed'],
             elemental_tutorial=self.kind == 'elemental_boss', **self._party_options())
@@ -675,7 +694,14 @@ class CombatEncounters:
             self._pending['rewards'] = self._available_rewards({'drops': offered['drops']}, costs)
             end_hp = {'caelan' if member.identifier == 'player' else member.identifier: member.hp
                       for member in model.party}
-            self._pending.update(version=3, offered_drops=offered['drops'],
+            self._pending.update(version=4,
+                                 rig_before=deepcopy(self._rig_entry or self._rig_snapshot()),
+                                 rig_after={'version': 1, 'allocation': dict(model.rig_allocation)},
+                                 rig_stats=deepcopy(self._rig_stats),
+                                 rig_skill_uses=dict(model.rig_skill_uses),
+                                 rig_healing={'caelan' if key == 'player' else key: value
+                                              for key, value in model.rig_healing.items()},
+                                 offered_drops=offered['drops'],
                                  item_costs=costs,
                                  item_before={key: game.inventory.quantity(key) for key in costs},
                                  progression=game.character_progression.preview(
@@ -735,7 +761,7 @@ class CombatEncounters:
                   quest.to_dict(), set(game.social.flags),
                   game.party.to_dict() if hasattr(game, 'party') else None,
                   game.character_progression.to_dict() if plan is not None else None,
-                  game.attributes.to_dict())
+                  game.attributes.to_dict(), self._rig_snapshot())
         boss_controller = self._boss_controller() if self.kind in ('cave_boss', 'elemental_boss') else None
         boss_before = boss_controller.to_dict() if boss_controller is not None else None
         abilities_before = game.character_abilities.to_dict() if self.kind == 'elemental_boss' else None
@@ -749,6 +775,7 @@ class CombatEncounters:
             if before[5] is not None:game.party.restore(before[5])
             else:game.attributes.restore(before[7])
             if before[6] is not None:game.character_progression.restore(before[6])
+            self._restore_rig(before[8])
             if boss_before is not None:boss_controller.restore(boss_before)
             if abilities_before is not None:game.character_abilities.restore(abilities_before)
             if lesson_before is not None:lesson.restore(lesson_before)
@@ -767,6 +794,8 @@ class CombatEncounters:
             return rollback('The encounter could not be completed. Try again.')
         if not self._apply_resources(resources, party_resources):
             return rollback('Battle resources could not be collected. Try again.')
+        if 'rig_after' in record and not self._restore_rig(record['rig_after']):
+            return rollback('Rig configuration could not be collected. Try again.')
         if self.kind == 'elemental_boss':
             from elemental_bosses import definition
             unlock = definition(record['encounter']['enemy_id'])
@@ -784,7 +813,7 @@ class CombatEncounters:
             return rollback('The cave lesson could not be completed. Try again.')
         record['stage'] = 'awarded'
         if not self._checkpoint():
-            if boss_before is not None or lesson_before is not None:
+            if boss_before is not None or lesson_before is not None or record['version'] >= 4:
                 record['stage'] = 'pending'
                 return rollback('Progress could not be saved. Try again.')
             return self._post_error('Progress could not be saved. Try again.')
@@ -919,6 +948,7 @@ class CombatEncounters:
                                   'facing': record['facing']},
                       'battle_rewards': game.battle_rewards.to_dict(),
                       'inventory': game.inventory.to_dict(),
+                      'mira_rig': self._rig_snapshot(),
                       'character_attributes': game.attributes.to_dict(),
                       'quests': game.quests.to_dict(), 'mill_quest': game.mill_quest.to_dict()}
         if hasattr(game, 'party'):validation['party'] = game.party.to_dict()
@@ -956,7 +986,7 @@ class CombatEncounters:
         common = dict(weapon_equipped=game.character_abilities.has_weapon(),
                       active_gem=game.character_abilities.active_gem(),
                       owned_gems=game.character_abilities.owned_gems(),
-                      bot_loadouts=game.bot_loadouts.battle_loadouts(), **options)
+                      rig_allocation=self._rig_allocation(), **options)
         if self.kind == 'cave':
             model = BattleModel.from_bestiary_group(
                 game.attributes, self._cave_ticket['members'],
@@ -1001,13 +1031,18 @@ class CombatEncounters:
         if not self.active or self.model is None or not self.model.ended or self._settled:return False
         if self.model.phase != 'fled':return self._settle_outcome()
         before = self.game.inventory.to_dict()
+        rig_before = self._rig_snapshot()
         costs = dict(getattr(self.model, 'item_spent', {}))
         if costs and not self.game.inventory.consume_bundle(costs):
             self.scene.dismissed = False
             self.scene.result_error = 'Used items could not be settled. Try again.'
             return False
+        if not self._restore_rig({'version': 1, 'allocation': dict(self.model.rig_allocation)}):
+            self.game.inventory.restore(before)
+            return False
         if not self._settle_outcome():
             self.game.inventory.restore(before)
+            self._restore_rig(rig_before)
             return False
         return True
 
@@ -1020,6 +1055,8 @@ class CombatEncounters:
         if self.kind in ('cave_boss', 'elemental_boss'):return self._settle_boss()
         if self.kind == 'mill':return self._settle_mill()
         game, scene, model = self.game, self.scene, self.scene.model
+        party_before = game.party.to_dict() if self._party_active else None
+        attributes_before = game.attributes.to_dict()
         # Defeat is a safe withdrawal: every member retains the resources saved
         # before this optional fight, and receives no item drops.
         if model.phase != 'defeat':
@@ -1029,6 +1066,12 @@ class CombatEncounters:
                 scene.dismissed = False
                 scene.result_error = 'Could not return from battle. Try again.'
                 return False
+        if not self._checkpoint():
+            if party_before is not None:game.party.restore(party_before)
+            else:game.attributes.restore(attributes_before)
+            scene.dismissed = False
+            scene.result_error = 'Progress could not be saved. Try again.'
+            return False
         self._settled = True
         self.scene = None
         self.transition = None
@@ -1039,7 +1082,6 @@ class CombatEncounters:
         game.player.walk_ms = 0.0
         game._mouse_held = False
         game.social.clear_pointer()
-        game.save_progress()
         self._end_battle_music()
         return True
 
@@ -1153,6 +1195,8 @@ class CombatEncounters:
     def _settle_mill(self):
         game, scene = self.game, self.scene
         model, quest = scene.model, game.mill_quest
+        party_before = game.party.to_dict() if self._party_active else None
+        attributes_before = game.attributes.to_dict()
         outcome = model.phase
         if outcome == 'victory':
             if self._pending is None:self._begin_victory()
@@ -1179,6 +1223,12 @@ class CombatEncounters:
             scene.dismissed = False
             scene.result_error = 'Could not return from battle. Try again.'
             return False
+        if not self._checkpoint():
+            if party_before is not None:game.party.restore(party_before)
+            else:game.attributes.restore(attributes_before)
+            scene.dismissed = False
+            scene.result_error = 'Progress could not be saved. Try again.'
+            return False
         game.player.position.update(quest.upstream.data['spawn'])
         self._settled = True
         self.scene = None
@@ -1192,7 +1242,6 @@ class CombatEncounters:
         game.social.clear_pointer()
         game.camera.reset()
         # Defeat/withdrawal checkpoints retain the existing safe retry policy.
-        game.save_progress()
         self._end_battle_music()
         quest.battle_returned(outcome, recovered=model.player.hp <= 0)
         return True

@@ -91,7 +91,7 @@ class BattleFeedbackTests(unittest.TestCase):
         current = scene.announcements.current
         return '' if current is None else current['text']
 
-    def test_basic_party_and_autonomous_bot_attacks_do_not_fill_the_announcement_box(self):
+    def test_basic_party_attacks_stay_quiet_without_an_autonomous_actor(self):
         scene, model = self.scene(guest=True)
         for actor in ('player', 'mira'):
             with self.subTest(actor=actor):
@@ -103,9 +103,9 @@ class BattleFeedbackTests(unittest.TestCase):
                 scene.update(model.current_action.duration)
         clear_gauges(model)
         scene.announcements.clear()
-        model.bot_for().atb = 1
+        self.assertEqual(model.bots, ())
         scene.update(0)
-        self.assertEqual(model.current_action.actor, 'rivet')
+        self.assertIsNone(model.current_action)
         self.assertIsNone(scene.announcements.current)
 
     def test_enemy_basic_attacks_stay_quiet_but_named_specials_are_announced(self):
@@ -171,35 +171,41 @@ class BattleFeedbackTests(unittest.TestCase):
         self.assertTrue(model.player.guarded)
         self.assertIn('Guard', self.current_text(scene))
 
-    def test_overclock_and_actual_haste_expiry_produce_special_event_feedback(self):
+    def test_bulwark_and_actual_barrier_expiry_produce_special_event_feedback(self):
         scene, model = self.scene(guest=True)
         self.ready(scene, 'mira')
-        self.assertTrue(model.choose_action('overclock'))
+        self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+        self.assertTrue(model.choose_action('bulwark'))
         scene.update(0)
-        self.assertIn('Overclock', self.current_text(scene))
+        self.assertIn('Bulwark', self.current_text(scene))
         scene.update(model.current_action.duration)
-        bot = model.bot_for()
-        bot.haste_turns = 1
-        clear_gauges(model)
-        scene.announcements.clear()
-        bot.atb = 1
-        scene.update(0)
-        scene.update(model.current_action.duration)
-        self.assertEqual(bot.haste_turns, 0)
+        mira = model.combatant('mira')
+        self.assertGreater(mira.barrier, 0)
+        self.assertEqual(mira.barrier_turns, 2)
+        for _ in range(2):
+            self.ready(scene, 'mira')
+            scene.announcements.clear()
+            self.assertTrue(model.choose_action('guard'))
+            scene.update(model.current_action.duration)
+        self.assertEqual((mira.barrier, mira.barrier_turns), (0, 0))
+        self.ready(scene)
+        current = scene.announcements.current
+        scene.update(current['duration']-current['age']+.01)
         self.assertIsNotNone(scene.announcements.current)
-        self.assertIn('Rivet', self.current_text(scene))
+        self.assertIn('barrier', self.current_text(scene))
 
-    def test_incoming_warning_precedes_queued_haste_feedback_after_overclock_title(self):
+    def test_incoming_warning_precedes_queued_barrier_feedback_after_skill_title(self):
         scene, model = self.scene(guest=True)
         self.hold_charge(scene)
         self.ready(scene, 'mira')
-        self.assertTrue(model.choose_action('overclock'))
+        self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+        self.assertTrue(model.choose_action('bulwark'))
         scene.update(0)
-        self.assertIn('Overclock', self.current_text(scene))
+        self.assertIn('Bulwark', self.current_text(scene))
         scene.update(model.current_action.duration)
-        self.assertGreater(model.bot_for().haste_turns, 0)
-        # A normal player decision freezes ATB while announcement time can
-        # advance. The queued Haste notice must not conceal the armed charge.
+        self.assertGreater(model.combatant('mira').barrier, 0)
+        # A ready party member freezes ATB while announcement time advances.
+        # Queued barrier feedback must not conceal the armed enemy charge.
         self.ready(scene)
         current = scene.announcements.current
         self.assertEqual(current['kind'], 'ability')

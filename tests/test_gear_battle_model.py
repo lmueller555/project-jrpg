@@ -118,7 +118,7 @@ class GearBattleModelTests(unittest.TestCase):
         self.assertEqual(model.command_reason('skills'), 'The gear is settling.')
         self.assertTrue(model.set_active_gem('ice'))
         self.assertTrue(model.gear_settling)
-        self.assertTrue(model.choose_action('overclock', actor_id='mira'))
+        self.assertTrue(model.choose_action('attack', actor_id='mira'))
         self.assertTrue(model.set_active_gem('fire'))
         self.assertIsNone(model.current_action.active_gem)
         model.update(model.current_action.duration)
@@ -126,12 +126,13 @@ class GearBattleModelTests(unittest.TestCase):
         self.assertTrue(model.choose_action('aether_edge', actor_id='player'))
         self.assertEqual(model.current_action.active_gem, 'fire')
 
-    def test_enemy_and_bot_actions_do_not_lock_caelans_selector(self):
-        for actor in ('enemy', 'rivet'):
+    def test_enemy_and_mira_actions_do_not_lock_caelans_selector(self):
+        for actor in ('enemy', 'mira'):
             with self.subTest(actor=actor):
                 model = self.model(guest_id='mira')
                 model.combatant(actor).atb = 1
                 model.update(0)
+                if actor == 'mira':self.assertTrue(model.choose_action('attack'))
                 self.assertEqual(model.current_action.actor, actor)
                 self.assertTrue(model.gear_available)
                 self.assertTrue(model.set_active_gem('nature'))
@@ -208,18 +209,14 @@ class GearBattleModelTests(unittest.TestCase):
                 self.assertEqual(model.learned_abilities, frozenset(['aether_edge']))
                 self.assertTrue(model.aether_edge_discovered)
 
-    def test_global_multiplier_changes_all_gauges_and_composes_with_overclock(self):
+    def test_global_multiplier_changes_every_character_and_enemy_gauge(self):
         model = self.model(guest_id='mira')
-        bot = model.bot_for()
-        bot.haste_turns = 8
-        bot.atb = .13
         for actor in (*model.party, model.enemy):actor.atb = .21
-        initial = {actor.identifier: actor.atb for actor in (*model.party, bot, model.enemy)}
+        initial = {actor.identifier: actor.atb for actor in (*model.party, model.enemy)}
         model.update(.4, atb_multiplier=.2)
-        for actor in (*model.party, bot, model.enemy):
+        for actor in (*model.party, model.enemy):
             self.assertAlmostEqual(actor.atb, initial[actor.identifier]+model.atb_rate(actor)*.4*.2)
-        self.assertEqual(bot.haste_turns, 8)
-        self.assertAlmostEqual(bot.atb, .13+(.12+.004*8)*1.5*.4*.2)
+        self.assertEqual(model.bots, ())
 
     def test_scaled_exact_ready_boundary_and_unscaled_ready_wait(self):
         for multiplier in (.2, 1., 3.):
@@ -265,8 +262,6 @@ class GearBattleModelTests(unittest.TestCase):
         model.choose_action('guard');model.update(model.current_action.duration, atb_multiplier=0)
         self.assertEqual(model.ready_actor, 'mira')
         model.choose_action('guard');model.update(model.current_action.duration, atb_multiplier=0)
-        self.assertEqual(model.current_action.actor, 'rivet')
-        model.update(.8, atb_multiplier=0)
         self.assertEqual(model.current_action.actor, 'enemy')
 
     def test_multiplier_validation_is_atomic(self):
@@ -279,10 +274,9 @@ class GearBattleModelTests(unittest.TestCase):
                     model.update(.1, atb_multiplier=value)
                 self.assertEqual(self.snapshot(model), before)
 
-    def test_large_and_small_frames_match_with_slow_hasted_bot_boundaries(self):
+    def test_large_and_small_frames_match_with_slow_party_and_enemy_boundaries(self):
         large = self.model(guest_id='mira', rng=random.Random(47))
         small = self.model(guest_id='mira', rng=random.Random(47))
-        large.bot_for().haste_turns = small.bot_for().haste_turns = 8
         for turn in range(12):
             multiplier = (.2, 1., 2.)[turn % 3]
             large.update(1000, atb_multiplier=multiplier)
@@ -292,7 +286,7 @@ class GearBattleModelTests(unittest.TestCase):
             self.assertEqual(self.snapshot(large), self.snapshot(small))
             self.assertTrue(large.choose_action('guard'))
             self.assertTrue(small.choose_action('guard'))
-        self.assertTrue(any(event['type'] == 'impact' and event['actor'] == 'rivet'
+        self.assertTrue(any(event['type'] == 'impact' and event['actor'] == 'enemy'
                             for event in large.events))
 
 

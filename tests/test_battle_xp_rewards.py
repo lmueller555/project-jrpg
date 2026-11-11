@@ -135,22 +135,25 @@ class BattleExperienceTests(unittest.TestCase):
         self.assertEqual(game.attributes.to_dict()['attributes'], plan['stats_after'])
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), self.persisted()))
 
-    def test_failed_award_write_retries_checkpoint_without_second_exp_or_stat_grant(self):
+    def test_failed_award_write_rolls_back_then_retries_one_exp_and_stat_grant(self):
         game = self.game
         game.character_progression.records['caelan'] = CharacterLevel('caelan', 190)
         owner = self.victory()
+        before = game.attributes.to_dict()
         with patch.object(game.save_store, 'write', return_value=False):
             spoils = self.show_spoils()
-        self.assertEqual(owner.snapshot()['stage'], 'awarded')
+        self.assertEqual(owner.snapshot()['stage'], 'pending')
         self.assertFalse(spoils.ready)
-        self.assertEqual(self.total(), 214)
-        after = game.attributes.to_dict()
+        self.assertEqual(self.total(), 190)
+        self.assertEqual(game.attributes.to_dict(), before)
         self.assertEqual(self.persisted()['post_battle']['stage'], 'pending')
-        with patch.object(game.character_progression, 'apply', side_effect=AssertionError('duplicate EXP')):
+        with patch.object(game.character_progression, 'apply', wraps=game.character_progression.apply) as apply:
             spoils.retry_requested = True;game.update(0, (0, 0), False)
+            self.assertEqual(apply.call_count, 1)
         self.assertTrue(spoils.ready)
         self.assertEqual(self.total(), 214)
-        self.assertEqual(game.attributes.to_dict(), after)
+        self.assertEqual(game.attributes.to_dict()['attributes'],
+                         owner.snapshot()['progression']['characters']['caelan']['stats_after'])
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), self.persisted()))
 
     def test_initial_checkpoint_failure_grants_neither_exp_nor_items_until_retry(self):
@@ -224,6 +227,7 @@ class BattleExperienceTests(unittest.TestCase):
         self.victory()
         data = self.persisted()
         data['post_battle']['version'] = 1
+        for key in ('rig_before', 'rig_after', 'rig_skill_uses', 'rig_healing', 'rig_stats'):data['post_battle'].pop(key)
         data['post_battle'].pop('item_costs');data['post_battle'].pop('item_before')
         data['post_battle'].pop('progression');data['post_battle'].pop('offered_drops')
         data.pop('character_levels')

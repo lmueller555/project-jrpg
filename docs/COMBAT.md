@@ -2,11 +2,11 @@
 
 MQ02 introduces combat on the riverbank north of Eldenmere. Caelan and Mira
 fight a Ridgeback Tusker together before inspecting the blocked mill intake.
-Mira is a temporary, player-controlled Engineer with a bolt launcher, her own
-attributes, commands, HP/MP and ATB, and the autonomous bot Rivet. Mira gives Caelan his gear-and-gem sword before departure. The warning, encounter and linear aftermath lead into his smaller sword-focused water spell and the mechanical repair.
+Mira is a player-controlled Engineer with a wearable arm rig, her own
+attributes, commands, HP/MP and ATB. Her rig uses six allocated power units. Mira gives Caelan his gear-and-gem sword before departure. The warning, encounter and linear aftermath lead into his smaller sword-focused water spell and the mechanical repair.
 
-Engineer is her revised design role; the [bot guide](MIRA_BOTS.md) distinguishes
-that terminology from the earlier runtime label and documents current mechanics.
+The [arm-rig combat guide](MIRA_RIG_COMBAT.md) documents her current techniques,
+power requirements, barriers and save behavior.
 
 The repeatable **test Bat** is available in Eldenmere independently of MQ02 or
 other quest progress. It contains one Bat and Caelan and hovers on the grass
@@ -124,8 +124,8 @@ area uses the bottom two-thirds. HP is green above 50%, yellow above 25% through
 and red at 25% or below. MP is blue.
 
 Caelan’s lower section contains his rotating gear. Mira’s lower section is
-reserved for her future mechanic; Overclock and Rivet continue through their
-existing command and autonomous behavior. Panel height follows measured text
+her live six-unit Weapons/Protection/Support allocation console. Apply commits
+a complete configuration; only applied power enables her techniques. Panel height follows measured text
 and the wheel’s usable area; larger text keeps its configured size. Long
 command labels wrap and command selection scrolls to remain visible. Contextual
 skill details appear immediately above the panel.
@@ -233,13 +233,13 @@ probability or skill unlock is introduced by this presentation pass.
 Review the [action and MQ02 previews](reviews/caelan_choreography/README.md).
 
 Mira's [wearable arm-rig art](MIRA_ARM_RIG_ART.md) supplies 82 whole-body drawings,
-including five eight-frame technique studies reserved for the next combat phase.
+including eight-frame animations for each of her five live rig techniques.
 Her revised base bank preserves stable floor registration, aim/recoil,
 cuff activation and separate guarded-impact recovery. Bolt Shot releases from its authored muzzle
 at 0.28 seconds and keeps its 0.40-second damage impact and 0.80-second duration.
-Overclock retains its 0.50-second application and 0.90-second duration. See
+Rig techniques resolve on their own registered contact frames. See
 [the arm-rig review](reviews/mira_arm_rig/README.md) for the new artwork. The
-current bot rules remain in place until the later gameplay/narrative phases.
+live techniques and allocation rules are documented in [Mira rig combat](MIRA_RIG_COMBAT.md).
 
 ## Caelan's combat actions
 
@@ -275,7 +275,7 @@ rules await design. No damage-limit break is granted by the encounter.
 
 The Ridgeback Tusker uses the level-one **Brute boss** template: **270 HP, Str 13, Def 14 and Speed 9**, with no extra species or tier stat multipliers. It grants **240 EXP** to each surviving active character. The revised lesson opens with a separate visible charge preparation, then gives Caelan a real Guard opportunity. After the guided opening it resumes normal tusk strikes, preparation and charge actions. Guard halves the next incoming hit and survives a harmless preparation turn.
 
-Mira starts with HP 150, MP 30 and 10 in every other rating, matching her level-one growth profile. Bolt Shot uses potency 0.75. Rivet unfolds automatically with empty ATB and autonomously uses Piston Jab at potency 1, drawing strength from Mira. The enemy’s increased health and reduced strength give the new teaching turns room while retaining the damage backend’s 95–105% variance. No hidden minimum-HP invulnerability holds the creature alive.
+Mira starts with HP 150, MP 30 and 10 in every other rating, matching her level-one growth profile. Bolt Shot uses potency 1.0. Her five rig techniques spend her own ATB and MP; no autonomous companion supplies extra turns. The enemy’s increased health and reduced strength give the new teaching turns room while retaining the damage backend’s 95–105% variance. No hidden minimum-HP invulnerability holds the creature alive.
 
 ### Guided opening
 
@@ -286,13 +286,13 @@ The battle model’s `spellblade_tutorial=True` enables the Guard, failed-Aqua a
 3. Mira’s hurried instruction follows the failed resolution. The same attempted technique inadvertently follows through as direct **Aether Edge**, without another menu selection.
 4. At its impact, `aether_edge_discovered` becomes true. The 4-MP strike is learned and normal party commands resume. Aqua Edge remains unlearned until the cave.
 
-Back, submenu changes or unacknowledged prose do not advance a lesson. Actor switching and Flee are disabled only during this introductory sequence. Mira automatically covers with Guard. Rivet remains autonomous but takes at most three Piston Jab actions during the bounded lesson; its gauge is preserved and ordinary behavior resumes afterward. This gives the allies useful contributions without allowing their damage to skip the required beats. Existing non-Spellblade/legacy encounters keep their ordinary tutorial behavior.
+Back, submenu changes or unacknowledged prose do not advance a lesson. Actor switching and Flee are disabled only during this introductory sequence. Mira automatically covers with Guard. Her rig is unavailable during the guided steps and becomes usable when ordinary party commands resume. Existing non-Spellblade/legacy encounters keep their ordinary tutorial behavior.
 
-The scene uses speaker-labelled, player-paced instruction with brief interface hints. All gauges, action clocks and bot clocks stop for those lines and player decisions. Acknowledgement input cannot also commit a command. Model stages advance on resolved actions, not page counts or menu visits. The first-weapon gift and Aether Edge discovery have distinct persistence: a gifted weapon does not learn the technique early, and a recorded discovery is not repeated on withdrawal/retry.
+The scene uses speaker-labelled, player-paced instruction with brief interface hints. All gauges and action clocks stop for those lines and player decisions. Acknowledgement input cannot also commit a command. Model stages advance on resolved actions, not page counts or menu visits. The first-weapon gift and Aether Edge discovery have distinct persistence: a gifted weapon does not learn the technique early, and a recorded discovery is not repeated on withdrawal/retry.
 
 If optional encounters leave the pending-training Caelan below `min(80, max HP)` HP or 4 MP, the pre-battle `tutorial_preparation` exchange completes before entry and restores only those minimums. A normal first playthrough is unaffected. This ensures the required Guard and 4-MP discovery remain viable without inventing a rest choice or additional quest milestone.
 
-After the introduction, Mira is player-controlled with Attack, Skills, Guard and Flee. Overclock costs 5 MP and one normal turn, giving Rivet Haste for eight completed bot actions at 1.5× final ATB fill rate. Recasting refreshes without stacking. Rivet has no HP bar, cannot be targeted, suspends while Mira is incapacitated and does not count toward party survival. See [Mira’s bot rules](MIRA_BOTS.md).
+After the introduction, Mira is player-controlled with Attack, Skills, Items, Guard and Flee. Her [rig techniques](MIRA_RIG_COMBAT.md) provide physical and Electric offense, a personal barrier, and ally healing. Reconfiguration is free; every technique spends her normal turn and its listed MP.
 
 The battlefield looks south/southwest toward distant Eldenmere, with the river along the near left bank, reeds, roots and freshly broken timber. A visible tusker and damaged tree mark the actual upstream approach. Mira carries her launcher from the workshop, secures it during intake work and retrieves it for the return. Caelan’s blade is sheathed on the walking route and used as the blue Water focus for the later isolated-pocket spell. The spell does not unlock Aqua Edge.
 

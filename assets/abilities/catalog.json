@@ -145,6 +145,36 @@
       "name": "Ice Edge",
       "description": "A White-gem blade strike combining physical force with Ice-aspected magicks.",
       "kind": "technique"
+    },
+    "arm_rig": {
+      "name": "Aether Arm Rig",
+      "description": "Mira wears an external arm augmentation. Six power units configure Weapons, Protection and Support to enable her engineering techniques.",
+      "kind": "capability"
+    },
+    "charged_bolt": {
+      "name": "Charged Bolt",
+      "description": "Weapons 3. A charged physical shot from Mira\u2019s forearm emitter. Costs 3 MP.",
+      "kind": "technique"
+    },
+    "bulwark": {
+      "name": "Bulwark",
+      "description": "Protection 3. Grants Mira a barrier equal to 25% of her maximum HP for two subsequent turns. Costs 3 MP.",
+      "kind": "technique"
+    },
+    "repair_pulse": {
+      "name": "Repair Pulse",
+      "description": "Support 3. Restores a living ally\u2019s HP using engineering tools and Mira\u2019s Spirit. Costs 4 MP.",
+      "kind": "technique"
+    },
+    "impact_bolt": {
+      "name": "Impact Bolt",
+      "description": "Weapons 2 / Protection 2. A physical shot that also grants Mira a 10% maximum-HP barrier. Costs 4 MP.",
+      "kind": "technique"
+    },
+    "arc_discharge": {
+      "name": "Arc Discharge",
+      "description": "Weapons 3 / Support 2. An Electric magical discharge from Mira\u2019s arm rig. Costs 5 MP.",
+      "kind": "technique"
     }
   }
 }

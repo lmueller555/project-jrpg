@@ -28,7 +28,7 @@ class BattleAnnouncementTests(unittest.TestCase):
     def test_ordinary_attacks_resolve_for_each_actor_and_enemy_species(self):
         model = self.model(guest_id='mira')
         expected = {'player': 'attack', 'mira': 'bolt_shot',
-                    'rivet': 'piston_jab', 'enemy': 'bite'}
+                    'enemy': 'bite'}
         for actor, attack in expected.items():
             with self.subTest(actor=actor):
                 self.assertEqual(basic_attack(model, actor), attack)
@@ -96,14 +96,14 @@ class BattleAnnouncementTests(unittest.TestCase):
     def test_distinct_repeated_abilities_get_fresh_holds_but_duplicate_events_do_not(self):
         model = self.model(guest_id='mira')
         notices = BattleAnnouncements(model)
-        first = self.start(model, 'mira', 'overclock')
+        first = self.start(model, 'mira', 'bulwark')
         self.feed(notices, model)
         model.update(first.duration)
         self.feed(notices, model)
         notices.update(first.duration)
         self.assertGreater(notices.current['age'], 0)
 
-        second = self.start(model, 'mira', 'overclock')
+        second = self.start(model, 'mira', 'bulwark')
         self.assertIsNot(first, second)
         starts = [event for event in model.drain_events() if event['type'] == 'action_started']
         self.assertEqual(notices.current['age'], 0)
@@ -111,7 +111,7 @@ class BattleAnnouncementTests(unittest.TestCase):
         for event in starts:
             notices.consume(event)
             notices.consume(dict(event))
-        self.assertEqual(notices.current['text'], 'Mira — Overclock')
+        self.assertEqual(notices.current['text'], 'Mira — Bulwark')
         self.assertAlmostEqual(notices.current['age'], .4)
 
     def test_ability_interruptions_do_not_restart_the_multiple_charge_rotation(self):
@@ -242,13 +242,13 @@ class BattleAnnouncementTests(unittest.TestCase):
     def test_actual_status_events_are_readable_and_basic_damage_is_not_a_fake_critical(self):
         model = self.model(guest_id='mira')
         notices = BattleAnnouncements(model)
-        action = self.start(model, 'mira', 'overclock')
+        action = self.start(model, 'mira', 'bulwark')
         self.feed(notices, model)
-        self.assertIn('Overclock', notices.current['text'])
+        self.assertIn('Bulwark', notices.current['text'])
         model.update(action.duration)
         self.feed(notices, model)
         notices.update(3)
-        self.assertIn('Rivet gains Haste for 8 turns', notices.current['text'])
+        self.assertIn('barrier', notices.current['text'].lower())
         notices.clear()
         notices.consume({'type': 'impact', 'actor': 'player', 'target': 'enemy',
                          'damage': 9999, 'remaining_hp': 10})
@@ -265,7 +265,7 @@ class BattleAnnouncementTests(unittest.TestCase):
         notices.update(3)
         self.assertIn('Aqua Edge fails', notices.current['text'])
 
-    def test_held_charge_outweighs_queued_haste_before_the_enemys_next_turn(self):
+    def test_held_charge_outweighs_queued_barrier_notice_before_the_enemys_next_turn(self):
         model = self.model(enemy_id='ridgeback_tusker', guest_id='mira')
         notices = BattleAnnouncements(model)
         action = self.start(model, 'enemy', 'prepare_charge')
@@ -274,13 +274,13 @@ class BattleAnnouncementTests(unittest.TestCase):
         notices.update(action.duration)
         self.assertEqual(notices.warnings[0]['stage'], 'ready')
 
-        action = self.start(model, 'mira', 'overclock')
+        action = self.start(model, 'mira', 'bulwark')
         self.feed(notices, model)
-        self.assertIn('Overclock', notices.current['text'])
+        self.assertIn('Bulwark', notices.current['text'])
         model.update(action.duration)
         self.feed(notices, model)
         notices.update(action.duration)
-        self.assertTrue(any('Haste' in item['text'] for item in notices._queue))
+        self.assertTrue(any('barrier' in item['text'].lower() for item in notices._queue))
         # Advance real ATB as well as the UI clock. The utility notice must
         # yield as soon as the skill title expires, before the charged turn.
         model.update(1.7)
@@ -291,7 +291,7 @@ class BattleAnnouncementTests(unittest.TestCase):
         self.assertIn('readies Bankbreaker Charge', notices.current['text'])
         self.assertEqual(notices.current['target'], model.telegraphed_target)
         for event in ({'type': 'guard', 'actor': 'player'},
-                      {'type': 'bot_deployed', 'actor': 'rivet', 'owner': 'mira'}):
+                      {'type': 'guard', 'actor': 'mira'}):
             notices.consume(event)
             self.assertEqual(notices.current['kind'], 'warning')
 
@@ -305,7 +305,7 @@ class BattleAnnouncementTests(unittest.TestCase):
         self.feed(notices, model)
         self.assertEqual(notices.warnings, ())
         notices.update(3)
-        self.assertIn('Rivet gains Haste', notices.current['text'])
+        self.assertIn('barrier', notices.current['text'].lower())
 
     def test_results_clear_titles_queue_and_even_legacy_telegraphs(self):
         model = self.model(enemy_id='ridgeback_tusker')
