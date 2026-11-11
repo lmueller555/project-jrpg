@@ -1,0 +1,2743 @@
+{
+  "version": 1,
+  "source": "base_authored.png",
+  "source_grid": [
+    6,
+    7
+  ],
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    54
+  ],
+  "native_scale": 0.225,
+  "palette_colors": 96,
+  "registration": "Explicit projected boot contacts; retained base pose boot centers, measured skill boot contacts; cell-local source attachments. One fixed 0.225 native scale, no silhouette-centroid registration and no per-pose body scaling.",
+  "drawings": [
+    {
+      "source_cell": 0,
+      "source_rect": [
+        0,
+        0,
+        194,
+        193
+      ],
+      "source_foot": [
+        116,
+        187
+      ],
+      "anchors": {
+        "muzzle": [
+          54,
+          122
+        ],
+        "controller": [
+          88,
+          119
+        ],
+        "projector": [
+          54,
+          122
+        ],
+        "tool": [
+          54,
+          122
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 1,
+      "source_rect": [
+        194,
+        0,
+        193,
+        193
+      ],
+      "source_foot": [
+        110,
+        187
+      ],
+      "anchors": {
+        "muzzle": [
+          47,
+          115
+        ],
+        "controller": [
+          81,
+          112
+        ],
+        "projector": [
+          47,
+          115
+        ],
+        "tool": [
+          47,
+          115
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 2,
+      "source_rect": [
+        387,
+        0,
+        193,
+        193
+      ],
+      "source_foot": [
+        107,
+        187
+      ],
+      "anchors": {
+        "muzzle": [
+          42,
+          120
+        ],
+        "controller": [
+          76,
+          117
+        ],
+        "projector": [
+          42,
+          120
+        ],
+        "tool": [
+          42,
+          120
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 3,
+      "source_rect": [
+        580,
+        0,
+        194,
+        193
+      ],
+      "source_foot": [
+        102,
+        187
+      ],
+      "anchors": {
+        "muzzle": [
+          42,
+          118
+        ],
+        "controller": [
+          76,
+          115
+        ],
+        "projector": [
+          42,
+          118
+        ],
+        "tool": [
+          42,
+          118
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 4,
+      "source_rect": [
+        774,
+        0,
+        194,
+        193
+      ],
+      "source_foot": [
+        96,
+        187
+      ],
+      "anchors": {
+        "muzzle": [
+          37,
+          95
+        ],
+        "controller": [
+          71,
+          92
+        ],
+        "projector": [
+          37,
+          95
+        ],
+        "tool": [
+          37,
+          95
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 5,
+      "source_rect": [
+        968,
+        0,
+        193,
+        193
+      ],
+      "source_foot": [
+        92,
+        186
+      ],
+      "anchors": {
+        "muzzle": [
+          26,
+          73
+        ],
+        "controller": [
+          60,
+          70
+        ],
+        "projector": [
+          26,
+          73
+        ],
+        "tool": [
+          26,
+          73
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 6,
+      "source_rect": [
+        0,
+        193,
+        194,
+        194
+      ],
+      "source_foot": [
+        115,
+        186
+      ],
+      "anchors": {
+        "muzzle": [
+          41,
+          72
+        ],
+        "controller": [
+          75,
+          69
+        ],
+        "projector": [
+          41,
+          72
+        ],
+        "tool": [
+          41,
+          72
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 7,
+      "source_rect": [
+        194,
+        193,
+        193,
+        194
+      ],
+      "source_foot": [
+        111,
+        186
+      ],
+      "anchors": {
+        "muzzle": [
+          33,
+          68
+        ],
+        "controller": [
+          67,
+          65
+        ],
+        "projector": [
+          33,
+          68
+        ],
+        "tool": [
+          33,
+          68
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 8,
+      "source_rect": [
+        387,
+        193,
+        193,
+        194
+      ],
+      "source_foot": [
+        108,
+        186
+      ],
+      "anchors": {
+        "muzzle": [
+          41,
+          68
+        ],
+        "controller": [
+          75,
+          65
+        ],
+        "projector": [
+          41,
+          68
+        ],
+        "tool": [
+          41,
+          68
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 9,
+      "source_rect": [
+        580,
+        193,
+        194,
+        194
+      ],
+      "source_foot": [
+        101,
+        186
+      ],
+      "anchors": {
+        "muzzle": [
+          38,
+          93
+        ],
+        "controller": [
+          72,
+          90
+        ],
+        "projector": [
+          38,
+          93
+        ],
+        "tool": [
+          38,
+          93
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 10,
+      "source_rect": [
+        774,
+        193,
+        194,
+        194
+      ],
+      "source_foot": [
+        96,
+        187
+      ],
+      "anchors": {
+        "muzzle": [
+          34,
+          117
+        ],
+        "controller": [
+          68,
+          114
+        ],
+        "projector": [
+          34,
+          117
+        ],
+        "tool": [
+          34,
+          117
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 11,
+      "source_rect": [
+        968,
+        193,
+        193,
+        194
+      ],
+      "source_foot": [
+        92,
+        186
+      ],
+      "anchors": {
+        "muzzle": [
+          28,
+          119
+        ],
+        "controller": [
+          62,
+          116
+        ],
+        "projector": [
+          28,
+          119
+        ],
+        "tool": [
+          28,
+          119
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 12,
+      "source_rect": [
+        0,
+        387,
+        194,
+        193
+      ],
+      "source_foot": [
+        115,
+        180
+      ],
+      "anchors": {
+        "muzzle": [
+          57,
+          111
+        ],
+        "controller": [
+          91,
+          108
+        ],
+        "projector": [
+          57,
+          111
+        ],
+        "tool": [
+          57,
+          111
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 13,
+      "source_rect": [
+        194,
+        387,
+        193,
+        193
+      ],
+      "source_foot": [
+        111,
+        180
+      ],
+      "anchors": {
+        "muzzle": [
+          58,
+          113
+        ],
+        "controller": [
+          92,
+          110
+        ],
+        "projector": [
+          58,
+          113
+        ],
+        "tool": [
+          58,
+          113
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 14,
+      "source_rect": [
+        387,
+        387,
+        193,
+        193
+      ],
+      "source_foot": [
+        108,
+        180
+      ],
+      "anchors": {
+        "muzzle": [
+          58,
+          116
+        ],
+        "controller": [
+          92,
+          113
+        ],
+        "projector": [
+          58,
+          116
+        ],
+        "tool": [
+          58,
+          116
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 15,
+      "source_rect": [
+        580,
+        387,
+        194,
+        193
+      ],
+      "source_foot": [
+        101,
+        180
+      ],
+      "anchors": {
+        "muzzle": [
+          52,
+          109
+        ],
+        "controller": [
+          86,
+          106
+        ],
+        "projector": [
+          52,
+          109
+        ],
+        "tool": [
+          52,
+          109
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 16,
+      "source_rect": [
+        774,
+        387,
+        194,
+        193
+      ],
+      "source_foot": [
+        97,
+        180
+      ],
+      "anchors": {
+        "muzzle": [
+          52,
+          117
+        ],
+        "controller": [
+          86,
+          114
+        ],
+        "projector": [
+          52,
+          117
+        ],
+        "tool": [
+          52,
+          117
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 17,
+      "source_rect": [
+        968,
+        387,
+        193,
+        193
+      ],
+      "source_foot": [
+        92,
+        180
+      ],
+      "anchors": {
+        "muzzle": [
+          50,
+          111
+        ],
+        "controller": [
+          84,
+          108
+        ],
+        "projector": [
+          50,
+          111
+        ],
+        "tool": [
+          50,
+          111
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 18,
+      "source_rect": [
+        0,
+        580,
+        194,
+        194
+      ],
+      "source_foot": [
+        106,
+        175
+      ],
+      "anchors": {
+        "muzzle": [
+          57,
+          102
+        ],
+        "controller": [
+          91,
+          99
+        ],
+        "projector": [
+          57,
+          102
+        ],
+        "tool": [
+          57,
+          102
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 19,
+      "source_rect": [
+        194,
+        580,
+        193,
+        194
+      ],
+      "source_foot": [
+        106,
+        175
+      ],
+      "anchors": {
+        "muzzle": [
+          59,
+          110
+        ],
+        "controller": [
+          93,
+          107
+        ],
+        "projector": [
+          59,
+          110
+        ],
+        "tool": [
+          59,
+          110
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 20,
+      "source_rect": [
+        387,
+        580,
+        193,
+        194
+      ],
+      "source_foot": [
+        107,
+        175
+      ],
+      "anchors": {
+        "muzzle": [
+          46,
+          98
+        ],
+        "controller": [
+          80,
+          95
+        ],
+        "projector": [
+          46,
+          98
+        ],
+        "tool": [
+          46,
+          98
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 21,
+      "source_rect": [
+        580,
+        580,
+        194,
+        194
+      ],
+      "source_foot": [
+        105,
+        175
+      ],
+      "anchors": {
+        "muzzle": [
+          43,
+          102
+        ],
+        "controller": [
+          77,
+          99
+        ],
+        "projector": [
+          43,
+          102
+        ],
+        "tool": [
+          43,
+          102
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 22,
+      "source_rect": [
+        774,
+        580,
+        194,
+        194
+      ],
+      "source_foot": [
+        100,
+        176
+      ],
+      "anchors": {
+        "muzzle": [
+          44,
+          116
+        ],
+        "controller": [
+          78,
+          113
+        ],
+        "projector": [
+          44,
+          116
+        ],
+        "tool": [
+          44,
+          116
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 23,
+      "source_rect": [
+        968,
+        580,
+        193,
+        194
+      ],
+      "source_foot": [
+        90,
+        176
+      ],
+      "anchors": {
+        "muzzle": [
+          45,
+          115
+        ],
+        "controller": [
+          79,
+          112
+        ],
+        "projector": [
+          45,
+          115
+        ],
+        "tool": [
+          45,
+          115
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 24,
+      "source_rect": [
+        0,
+        774,
+        194,
+        193
+      ],
+      "source_foot": [
+        113,
+        172
+      ],
+      "anchors": {
+        "muzzle": [
+          56,
+          110
+        ],
+        "controller": [
+          90,
+          107
+        ],
+        "projector": [
+          56,
+          110
+        ],
+        "tool": [
+          56,
+          110
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 25,
+      "source_rect": [
+        194,
+        774,
+        193,
+        193
+      ],
+      "source_foot": [
+        109,
+        173
+      ],
+      "anchors": {
+        "muzzle": [
+          52,
+          101
+        ],
+        "controller": [
+          86,
+          98
+        ],
+        "projector": [
+          52,
+          101
+        ],
+        "tool": [
+          52,
+          101
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 26,
+      "source_rect": [
+        387,
+        774,
+        193,
+        193
+      ],
+      "source_foot": [
+        107,
+        173
+      ],
+      "anchors": {
+        "muzzle": [
+          46,
+          102
+        ],
+        "controller": [
+          80,
+          99
+        ],
+        "projector": [
+          46,
+          102
+        ],
+        "tool": [
+          46,
+          102
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 27,
+      "source_rect": [
+        580,
+        774,
+        194,
+        193
+      ],
+      "source_foot": [
+        100,
+        172
+      ],
+      "anchors": {
+        "muzzle": [
+          42,
+          101
+        ],
+        "controller": [
+          76,
+          98
+        ],
+        "projector": [
+          42,
+          101
+        ],
+        "tool": [
+          42,
+          101
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 28,
+      "source_rect": [
+        774,
+        774,
+        194,
+        193
+      ],
+      "source_foot": [
+        96,
+        173
+      ],
+      "anchors": {
+        "muzzle": [
+          41,
+          101
+        ],
+        "controller": [
+          75,
+          98
+        ],
+        "projector": [
+          41,
+          101
+        ],
+        "tool": [
+          41,
+          101
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 29,
+      "source_rect": [
+        968,
+        774,
+        193,
+        193
+      ],
+      "source_foot": [
+        93,
+        173
+      ],
+      "anchors": {
+        "muzzle": [
+          33,
+          105
+        ],
+        "controller": [
+          67,
+          102
+        ],
+        "projector": [
+          33,
+          105
+        ],
+        "tool": [
+          33,
+          105
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 30,
+      "source_rect": [
+        0,
+        967,
+        194,
+        194
+      ],
+      "source_foot": [
+        117,
+        172
+      ],
+      "anchors": {
+        "muzzle": [
+          54,
+          104
+        ],
+        "controller": [
+          88,
+          101
+        ],
+        "projector": [
+          54,
+          104
+        ],
+        "tool": [
+          54,
+          104
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 31,
+      "source_rect": [
+        194,
+        967,
+        193,
+        194
+      ],
+      "source_foot": [
+        111,
+        172
+      ],
+      "anchors": {
+        "muzzle": [
+          53,
+          101
+        ],
+        "controller": [
+          87,
+          98
+        ],
+        "projector": [
+          53,
+          101
+        ],
+        "tool": [
+          53,
+          101
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 32,
+      "source_rect": [
+        387,
+        967,
+        193,
+        194
+      ],
+      "source_foot": [
+        107,
+        172
+      ],
+      "anchors": {
+        "muzzle": [
+          48,
+          101
+        ],
+        "controller": [
+          82,
+          98
+        ],
+        "projector": [
+          48,
+          101
+        ],
+        "tool": [
+          48,
+          101
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 33,
+      "source_rect": [
+        580,
+        967,
+        194,
+        194
+      ],
+      "source_foot": [
+        110,
+        172
+      ],
+      "anchors": {
+        "muzzle": [
+          42,
+          116
+        ],
+        "controller": [
+          76,
+          113
+        ],
+        "projector": [
+          42,
+          116
+        ],
+        "tool": [
+          42,
+          116
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 34,
+      "source_rect": [
+        774,
+        967,
+        194,
+        194
+      ],
+      "source_foot": [
+        106,
+        170
+      ],
+      "anchors": {
+        "muzzle": [
+          21,
+          153
+        ],
+        "controller": [
+          55,
+          150
+        ],
+        "projector": [
+          21,
+          153
+        ],
+        "tool": [
+          21,
+          153
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 35,
+      "source_rect": [
+        968,
+        967,
+        193,
+        194
+      ],
+      "source_foot": [
+        101,
+        170
+      ],
+      "anchors": {
+        "muzzle": [
+          25,
+          156
+        ],
+        "controller": [
+          59,
+          153
+        ],
+        "projector": [
+          25,
+          156
+        ],
+        "tool": [
+          25,
+          156
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 36,
+      "source_rect": [
+        0,
+        1161,
+        194,
+        193
+      ],
+      "source_foot": [
+        110,
+        170
+      ],
+      "anchors": {
+        "muzzle": [
+          54,
+          95
+        ],
+        "controller": [
+          88,
+          92
+        ],
+        "projector": [
+          54,
+          95
+        ],
+        "tool": [
+          54,
+          95
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 37,
+      "source_rect": [
+        194,
+        1161,
+        193,
+        193
+      ],
+      "source_foot": [
+        111,
+        171
+      ],
+      "anchors": {
+        "muzzle": [
+          55,
+          92
+        ],
+        "controller": [
+          89,
+          89
+        ],
+        "projector": [
+          55,
+          92
+        ],
+        "tool": [
+          55,
+          92
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 38,
+      "source_rect": [
+        387,
+        1161,
+        193,
+        193
+      ],
+      "source_foot": [
+        111,
+        170
+      ],
+      "anchors": {
+        "muzzle": [
+          48,
+          96
+        ],
+        "controller": [
+          82,
+          93
+        ],
+        "projector": [
+          48,
+          96
+        ],
+        "tool": [
+          48,
+          96
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 39,
+      "source_rect": [
+        580,
+        1161,
+        194,
+        193
+      ],
+      "source_foot": [
+        111,
+        170
+      ],
+      "anchors": {
+        "muzzle": [
+          44,
+          92
+        ],
+        "controller": [
+          78,
+          89
+        ],
+        "projector": [
+          44,
+          92
+        ],
+        "tool": [
+          44,
+          92
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 40,
+      "source_rect": [
+        774,
+        1161,
+        194,
+        193
+      ],
+      "source_foot": [
+        99,
+        169
+      ],
+      "anchors": {
+        "muzzle": [
+          42,
+          99
+        ],
+        "controller": [
+          76,
+          96
+        ],
+        "projector": [
+          42,
+          99
+        ],
+        "tool": [
+          42,
+          99
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 41,
+      "source_rect": [
+        968,
+        1161,
+        193,
+        193
+      ],
+      "source_foot": [
+        94,
+        170
+      ],
+      "anchors": {
+        "muzzle": [
+          41,
+          100
+        ],
+        "controller": [
+          75,
+          97
+        ],
+        "projector": [
+          41,
+          100
+        ],
+        "tool": [
+          41,
+          100
+        ]
+      },
+      "source": "base_authored.png",
+      "native_scale": 0.225
+    },
+    {
+      "source_cell": 42,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        0,
+        0,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          78,
+          126
+        ],
+        "controller": [
+          112,
+          123
+        ],
+        "projector": [
+          78,
+          126
+        ],
+        "tool": [
+          78,
+          126
+        ]
+      }
+    },
+    {
+      "source_cell": 43,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        198,
+        0,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          81,
+          99
+        ],
+        "controller": [
+          115,
+          96
+        ],
+        "projector": [
+          81,
+          99
+        ],
+        "tool": [
+          81,
+          99
+        ]
+      }
+    },
+    {
+      "source_cell": 44,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        396,
+        0,
+        199,
+        198
+      ],
+      "source_foot": [
+        128,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          76,
+          85
+        ],
+        "controller": [
+          110,
+          82
+        ],
+        "projector": [
+          76,
+          85
+        ],
+        "tool": [
+          76,
+          85
+        ]
+      }
+    },
+    {
+      "source_cell": 45,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        595,
+        0,
+        198,
+        198
+      ],
+      "source_foot": [
+        127,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          71,
+          81
+        ],
+        "controller": [
+          105,
+          78
+        ],
+        "projector": [
+          71,
+          81
+        ],
+        "tool": [
+          71,
+          81
+        ]
+      }
+    },
+    {
+      "source_cell": 46,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        793,
+        0,
+        198,
+        198
+      ],
+      "source_foot": [
+        127,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          65,
+          78
+        ],
+        "controller": [
+          99,
+          75
+        ],
+        "projector": [
+          65,
+          78
+        ],
+        "tool": [
+          65,
+          78
+        ]
+      }
+    },
+    {
+      "source_cell": 47,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        991,
+        0,
+        199,
+        198
+      ],
+      "source_foot": [
+        128,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          63,
+          94
+        ],
+        "controller": [
+          97,
+          91
+        ],
+        "projector": [
+          63,
+          94
+        ],
+        "tool": [
+          63,
+          94
+        ]
+      }
+    },
+    {
+      "source_cell": 48,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1190,
+        0,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          67,
+          111
+        ],
+        "controller": [
+          101,
+          108
+        ],
+        "projector": [
+          67,
+          111
+        ],
+        "tool": [
+          67,
+          111
+        ]
+      }
+    },
+    {
+      "source_cell": 49,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1388,
+        0,
+        198,
+        198
+      ],
+      "source_foot": [
+        127,
+        196
+      ],
+      "anchors": {
+        "muzzle": [
+          79,
+          124
+        ],
+        "controller": [
+          113,
+          121
+        ],
+        "projector": [
+          79,
+          124
+        ],
+        "tool": [
+          79,
+          124
+        ]
+      }
+    },
+    {
+      "source_cell": 50,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        0,
+        198,
+        198,
+        199
+      ],
+      "source_foot": [
+        126,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          81,
+          83
+        ],
+        "controller": [
+          115,
+          80
+        ],
+        "projector": [
+          81,
+          83
+        ],
+        "tool": [
+          81,
+          83
+        ]
+      }
+    },
+    {
+      "source_cell": 51,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        198,
+        198,
+        198,
+        199
+      ],
+      "source_foot": [
+        126,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          82,
+          78
+        ],
+        "controller": [
+          116,
+          75
+        ],
+        "projector": [
+          82,
+          78
+        ],
+        "tool": [
+          82,
+          78
+        ]
+      }
+    },
+    {
+      "source_cell": 52,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        396,
+        198,
+        199,
+        199
+      ],
+      "source_foot": [
+        124,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          82,
+          84
+        ],
+        "controller": [
+          116,
+          81
+        ],
+        "projector": [
+          82,
+          84
+        ],
+        "tool": [
+          82,
+          84
+        ]
+      }
+    },
+    {
+      "source_cell": 53,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        595,
+        198,
+        198,
+        199
+      ],
+      "source_foot": [
+        124,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          63,
+          89
+        ],
+        "controller": [
+          97,
+          86
+        ],
+        "projector": [
+          63,
+          89
+        ],
+        "tool": [
+          63,
+          89
+        ]
+      }
+    },
+    {
+      "source_cell": 54,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        793,
+        198,
+        198,
+        199
+      ],
+      "source_foot": [
+        128,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          56,
+          89
+        ],
+        "controller": [
+          90,
+          86
+        ],
+        "projector": [
+          56,
+          89
+        ],
+        "tool": [
+          56,
+          89
+        ]
+      }
+    },
+    {
+      "source_cell": 55,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        991,
+        198,
+        199,
+        199
+      ],
+      "source_foot": [
+        128,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          58,
+          91
+        ],
+        "controller": [
+          92,
+          88
+        ],
+        "projector": [
+          58,
+          91
+        ],
+        "tool": [
+          58,
+          91
+        ]
+      }
+    },
+    {
+      "source_cell": 56,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1190,
+        198,
+        198,
+        199
+      ],
+      "source_foot": [
+        127,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          66,
+          87
+        ],
+        "controller": [
+          100,
+          84
+        ],
+        "projector": [
+          66,
+          87
+        ],
+        "tool": [
+          66,
+          87
+        ]
+      }
+    },
+    {
+      "source_cell": 57,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1388,
+        198,
+        198,
+        199
+      ],
+      "source_foot": [
+        128,
+        198
+      ],
+      "anchors": {
+        "muzzle": [
+          79,
+          125
+        ],
+        "controller": [
+          113,
+          122
+        ],
+        "projector": [
+          79,
+          125
+        ],
+        "tool": [
+          79,
+          125
+        ]
+      }
+    },
+    {
+      "source_cell": 58,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        0,
+        397,
+        198,
+        198
+      ],
+      "source_foot": [
+        124,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          79,
+          116
+        ],
+        "controller": [
+          113,
+          113
+        ],
+        "projector": [
+          79,
+          116
+        ],
+        "tool": [
+          79,
+          116
+        ]
+      }
+    },
+    {
+      "source_cell": 59,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        198,
+        397,
+        198,
+        198
+      ],
+      "source_foot": [
+        124,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          78,
+          122
+        ],
+        "controller": [
+          112,
+          119
+        ],
+        "projector": [
+          78,
+          122
+        ],
+        "tool": [
+          78,
+          122
+        ]
+      }
+    },
+    {
+      "source_cell": 60,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        396,
+        397,
+        199,
+        198
+      ],
+      "source_foot": [
+        128,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          77,
+          119
+        ],
+        "controller": [
+          111,
+          116
+        ],
+        "projector": [
+          77,
+          119
+        ],
+        "tool": [
+          77,
+          119
+        ]
+      }
+    },
+    {
+      "source_cell": 61,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        595,
+        397,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          90,
+          117
+        ],
+        "controller": [
+          124,
+          114
+        ],
+        "projector": [
+          90,
+          117
+        ],
+        "tool": [
+          90,
+          117
+        ]
+      }
+    },
+    {
+      "source_cell": 62,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        793,
+        397,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          36,
+          116
+        ],
+        "controller": [
+          70,
+          113
+        ],
+        "projector": [
+          36,
+          116
+        ],
+        "tool": [
+          36,
+          116
+        ]
+      }
+    },
+    {
+      "source_cell": 63,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        991,
+        397,
+        199,
+        198
+      ],
+      "source_foot": [
+        128,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          59,
+          115
+        ],
+        "controller": [
+          93,
+          112
+        ],
+        "projector": [
+          59,
+          115
+        ],
+        "tool": [
+          59,
+          115
+        ]
+      }
+    },
+    {
+      "source_cell": 64,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1190,
+        397,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          70,
+          121
+        ],
+        "controller": [
+          104,
+          118
+        ],
+        "projector": [
+          70,
+          121
+        ],
+        "tool": [
+          70,
+          121
+        ]
+      }
+    },
+    {
+      "source_cell": 65,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1388,
+        397,
+        198,
+        198
+      ],
+      "source_foot": [
+        126,
+        197
+      ],
+      "anchors": {
+        "muzzle": [
+          79,
+          126
+        ],
+        "controller": [
+          113,
+          123
+        ],
+        "projector": [
+          79,
+          126
+        ],
+        "tool": [
+          79,
+          126
+        ]
+      }
+    },
+    {
+      "source_cell": 66,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        0,
+        595,
+        198,
+        199
+      ],
+      "source_foot": [
+        128,
+        193
+      ],
+      "anchors": {
+        "muzzle": [
+          75,
+          128
+        ],
+        "controller": [
+          109,
+          125
+        ],
+        "projector": [
+          75,
+          128
+        ],
+        "tool": [
+          75,
+          128
+        ]
+      }
+    },
+    {
+      "source_cell": 67,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        198,
+        595,
+        198,
+        199
+      ],
+      "source_foot": [
+        125,
+        193
+      ],
+      "anchors": {
+        "muzzle": [
+          67,
+          130
+        ],
+        "controller": [
+          101,
+          127
+        ],
+        "projector": [
+          67,
+          130
+        ],
+        "tool": [
+          67,
+          130
+        ]
+      }
+    },
+    {
+      "source_cell": 68,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        396,
+        595,
+        199,
+        199
+      ],
+      "source_foot": [
+        126,
+        194
+      ],
+      "anchors": {
+        "muzzle": [
+          64,
+          94
+        ],
+        "controller": [
+          98,
+          91
+        ],
+        "projector": [
+          64,
+          94
+        ],
+        "tool": [
+          64,
+          94
+        ]
+      }
+    },
+    {
+      "source_cell": 69,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        595,
+        595,
+        198,
+        199
+      ],
+      "source_foot": [
+        125,
+        194
+      ],
+      "anchors": {
+        "muzzle": [
+          61,
+          94
+        ],
+        "controller": [
+          95,
+          91
+        ],
+        "projector": [
+          61,
+          94
+        ],
+        "tool": [
+          61,
+          94
+        ]
+      }
+    },
+    {
+      "source_cell": 70,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        793,
+        595,
+        198,
+        199
+      ],
+      "source_foot": [
+        124,
+        194
+      ],
+      "anchors": {
+        "muzzle": [
+          68,
+          115
+        ],
+        "controller": [
+          102,
+          112
+        ],
+        "projector": [
+          68,
+          115
+        ],
+        "tool": [
+          68,
+          115
+        ]
+      }
+    },
+    {
+      "source_cell": 71,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        991,
+        595,
+        199,
+        199
+      ],
+      "source_foot": [
+        130,
+        193
+      ],
+      "anchors": {
+        "muzzle": [
+          67,
+          105
+        ],
+        "controller": [
+          101,
+          102
+        ],
+        "projector": [
+          67,
+          105
+        ],
+        "tool": [
+          67,
+          105
+        ]
+      }
+    },
+    {
+      "source_cell": 72,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1190,
+        595,
+        198,
+        199
+      ],
+      "source_foot": [
+        128,
+        193
+      ],
+      "anchors": {
+        "muzzle": [
+          73,
+          109
+        ],
+        "controller": [
+          107,
+          106
+        ],
+        "projector": [
+          73,
+          109
+        ],
+        "tool": [
+          73,
+          109
+        ]
+      }
+    },
+    {
+      "source_cell": 73,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1388,
+        595,
+        198,
+        199
+      ],
+      "source_foot": [
+        130,
+        193
+      ],
+      "anchors": {
+        "muzzle": [
+          79,
+          128
+        ],
+        "controller": [
+          113,
+          125
+        ],
+        "projector": [
+          79,
+          128
+        ],
+        "tool": [
+          79,
+          128
+        ]
+      }
+    },
+    {
+      "source_cell": 74,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        0,
+        794,
+        198,
+        198
+      ],
+      "source_foot": [
+        127,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          76,
+          111
+        ],
+        "controller": [
+          110,
+          108
+        ],
+        "projector": [
+          76,
+          111
+        ],
+        "tool": [
+          76,
+          111
+        ]
+      }
+    },
+    {
+      "source_cell": 75,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        198,
+        794,
+        198,
+        198
+      ],
+      "source_foot": [
+        127,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          91,
+          102
+        ],
+        "controller": [
+          125,
+          99
+        ],
+        "projector": [
+          91,
+          102
+        ],
+        "tool": [
+          91,
+          102
+        ]
+      }
+    },
+    {
+      "source_cell": 76,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        396,
+        794,
+        199,
+        198
+      ],
+      "source_foot": [
+        126,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          78,
+          75
+        ],
+        "controller": [
+          112,
+          72
+        ],
+        "projector": [
+          78,
+          75
+        ],
+        "tool": [
+          78,
+          75
+        ]
+      }
+    },
+    {
+      "source_cell": 77,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        595,
+        794,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          70,
+          75
+        ],
+        "controller": [
+          104,
+          72
+        ],
+        "projector": [
+          70,
+          75
+        ],
+        "tool": [
+          70,
+          75
+        ]
+      }
+    },
+    {
+      "source_cell": 78,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        793,
+        794,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          56,
+          71
+        ],
+        "controller": [
+          90,
+          68
+        ],
+        "projector": [
+          56,
+          71
+        ],
+        "tool": [
+          56,
+          71
+        ]
+      }
+    },
+    {
+      "source_cell": 79,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        991,
+        794,
+        199,
+        198
+      ],
+      "source_foot": [
+        128,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          76,
+          85
+        ],
+        "controller": [
+          110,
+          82
+        ],
+        "projector": [
+          76,
+          85
+        ],
+        "tool": [
+          76,
+          85
+        ]
+      }
+    },
+    {
+      "source_cell": 80,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1190,
+        794,
+        198,
+        198
+      ],
+      "source_foot": [
+        129,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          73,
+          91
+        ],
+        "controller": [
+          107,
+          88
+        ],
+        "projector": [
+          73,
+          91
+        ],
+        "tool": [
+          73,
+          91
+        ]
+      }
+    },
+    {
+      "source_cell": 81,
+      "source": "skills_authored.png",
+      "native_scale": 0.225,
+      "source_rect": [
+        1388,
+        794,
+        198,
+        198
+      ],
+      "source_foot": [
+        128,
+        189
+      ],
+      "anchors": {
+        "muzzle": [
+          79,
+          121
+        ],
+        "controller": [
+          113,
+          118
+        ],
+        "projector": [
+          79,
+          121
+        ],
+        "tool": [
+          79,
+          121
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "file": "base_authored.png",
+      "grid": [
+        6,
+        7
+      ]
+    },
+    {
+      "file": "skills_authored.png",
+      "grid": [
+        8,
+        5
+      ]
+    }
+  ]
+}

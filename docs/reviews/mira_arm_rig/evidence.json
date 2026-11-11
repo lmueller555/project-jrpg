@@ -1,0 +1,291 @@
+{
+  "scope": "Phase one: worn arm-rig artwork and local routing study only",
+  "fixture": [
+    "Isolated non-persistent Game; fixed level-one Caelan/Mira composition.",
+    "Two level-two Cave Bats, no bot loadouts, frozen command-ready ATB.",
+    "No model actions, battle outcomes, damage, healing, MP costs or unlocks execute.",
+    "Poses and illustrative attachment effects are sought for art review.",
+    "Three-member variant adds Lucan only to the disposable composition."
+  ],
+  "captures": [
+    {
+      "file": "combat_2_party_text_100.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "idle",
+      "pose_ms": 540.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "combat_2_party_text_150.png",
+      "party_count": 2,
+      "text_scale": 1.5,
+      "pose": "idle",
+      "pose_ms": 540.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "combat_3_party_text_100.png",
+      "party_count": 3,
+      "text_scale": 1.0,
+      "pose": "idle",
+      "pose_ms": 540.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        },
+        "lucan": {
+          "hp": 140,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "combat_3_party_text_150.png",
+      "party_count": 3,
+      "text_scale": 1.5,
+      "pose": "idle",
+      "pose_ms": 540.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        },
+        "lucan": {
+          "hp": 140,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "attack.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "attack",
+      "pose_ms": 455.99999999999994,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "charged_bolt.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "charged_bolt",
+      "pose_ms": 547.1999999999999,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "bulwark.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "bulwark",
+      "pose_ms": 627.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "repair_pulse.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "repair_pulse",
+      "pose_ms": 661.1999999999999,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "impact_bolt.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "impact_bolt",
+      "pose_ms": 547.1999999999999,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "arc_discharge.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "arc_discharge",
+      "pose_ms": 581.4,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    },
+    {
+      "file": "weapons_configuration.png",
+      "party_count": 2,
+      "text_scale": 1.0,
+      "pose": "charged_bolt",
+      "pose_ms": 364.8,
+      "allocation": {
+        "weapons": 3,
+        "protection": 2,
+        "support": 1
+      },
+      "resources": {
+        "player": {
+          "hp": 140,
+          "mp": 30
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30
+        }
+      }
+    }
+  ],
+  "video": {
+    "file": "mira_arm_rig_study.mp4",
+    "frames": 349,
+    "fps": 20,
+    "states": [
+      "idle",
+      "attack",
+      "charged_bolt",
+      "bulwark",
+      "repair_pulse",
+      "impact_bolt",
+      "arc_discharge",
+      "guard_enter",
+      "guard",
+      "guard_impact",
+      "hurt",
+      "overclock",
+      "victory",
+      "defeat",
+      "walk"
+    ],
+    "audio": false
+  },
+  "progress_unchanged": true,
+  "fingerprints": {
+    "mira_rig_preview.py": "d0c796d27eef4ece014e491706656035937a470d20aa77cdc47d6e46af294b6b",
+    "mira_rig_ui.py": "de78bea6fdb3247b0f67b36f9792f57e8ec05b6b06cbb988815214685eefd1b6",
+    "assets/combat/mira/animation.json": "7e0355fc957bc8474a491b97d59734c8482d4733503ad8356979d3978c2d2d29"
+  }
+}

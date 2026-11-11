@@ -86,12 +86,18 @@ class GallerySession:
                     continue
                 if getattr(event, 'repeat', False):continue
                 if event.key in (pygame.K_ESCAPE, pygame.K_BACKSPACE):
+                    if self.playback.review is not None and self.playback.review.rig.focused:
+                        self.playback.review.handle_events([event])
+                        continue
                     self.close()
                     return True  # discard the release/repeat tail of this batch
                 if not self.parent._music_focused:continue
                 if event.key == pygame.K_r:
                     self.restart()
                     return True
+                if self.playback.review is not None:
+                    forwarded.append(event)
+                    continue
                 cinematic = self.game.opening_cinematic.active or self.game.regent_arrival.active
                 if event.key == pygame.K_p and cinematic:
                     forwarded.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, repeat=False))
@@ -120,11 +126,13 @@ class GallerySession:
                     # Release must clear a scene press even if the cursor moved
                     # into the toolbar since the initial click.
                     if event.type != pygame.MOUSEBUTTONUP:continue
-                if (self.game.opening_cinematic.active or self.game.regent_arrival.active
+                if (self.playback.review is not None
+                        or self.game.opening_cinematic.active or self.game.regent_arrival.active
                         or self.game.social.active or event.type == pygame.MOUSEBUTTONUP):
                     forwarded.append(pygame.event.Event(event.type,dict(event.dict,
                         pos=(event.pos[0]-self.viewport_rect.x,event.pos[1]-self.viewport_rect.y))))
-        self.game.handle_events(forwarded)
+        if self.playback.review is not None:self.playback.review.handle_events(forwarded)
+        else:self.game.handle_events(forwarded)
         if not self.parent._music_focused:
             self.game.music.set_paused(True)
             self.game.opening_audio.set_paused(True)
@@ -136,14 +144,17 @@ class GallerySession:
         if self.closed:return
         if not self.parent._music_focused:return
         if not self.playback.settling:
-            self.game.update(seconds, (0, 0), False)
-        self.playback.update(seconds)
+            if self.playback.review is not None:self.playback.review.update(seconds)
+            else:self.game.update(seconds, (0, 0), False)
+        if self.playback.review is None or self.playback.review.playing:
+            self.playback.update(seconds)
         if self.playback.finished:self.close()
 
     def draw(self):
         if self.closed:return
         painter = self._layout()
-        self.game.draw()
+        if self.playback.review is not None:self.playback.review.draw()
+        else:self.game.draw()
         self.parent.window.fill(FOREST_DARK)
         self.parent.window.blit(self.game.window,self.viewport_rect)
         painter.rect(FOREST_DARK, self.bar_rect)

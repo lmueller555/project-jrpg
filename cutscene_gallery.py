@@ -29,6 +29,7 @@ class GalleryPlayback:
         self._drive = lambda: None
         self._done = False
         self._settled = 0.
+        self.review = None
 
     @property
     def settling(self):return self._done
@@ -378,6 +379,13 @@ def _entry(identifier, name, chapter, description, fixture, automatic=False):
                         AUTOMATIC_CONTROLS if automatic else DIALOGUE_CONTROLS, fixture)
 
 
+def _mira_arm_rig(game, playback):
+    from mira_rig_preview import MiraRigPreview
+    game.opening.restore({'version': 1, 'stage': 'disabled'})
+    playback.review = MiraRigPreview(game)
+    playback.watch(lambda: playback.elapsed >= 45.)
+
+
 GALLERY_ENTRIES = (
     _entry('later_journey', 'A Light in the Distance', 'Prologue',
            'Caelan and Mira share a quiet moment later in their journey.', _opening_film, True),
@@ -434,6 +442,11 @@ GALLERY_ENTRIES = (
     _entry('ice_reaper_opening', 'Ice Reaper: Frozen Clearing (32s)', 'Scene Studies',
            'A coordinated rescue, Rhea’s awakening and a fiery confrontation with the Ice Reaper.',
            _ice_reaper_film, True),
+    GalleryEntry('mira_arm_rig', 'Mira: Aether Arm Rig', 'Scene Studies',
+           'A 45-second wearable arm-rig art study with local power-routing controls. '
+           'Future techniques are animation previews; they do not change battle rules.',
+           'assets/ui/gallery/mira_arm_rig.png',
+           'Space: hold · [ / ]: pose · Tab: routing · 3: party · Esc: Gallery', _mira_arm_rig),
 )
 
 GALLERY_BY_ID = {entry.id: entry for entry in GALLERY_ENTRIES}

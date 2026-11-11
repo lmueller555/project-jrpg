@@ -1,6 +1,13 @@
 # Cutscene Gallery
 
 Choose **Gallery** on the title screen to replay the registered scenes.
+
+The **Scene Studies** section also includes **Mira: Aether Arm Rig**, an isolated
+phase-one combat art preview. It shows her wearable augmentation, all combat
+poses, illustrative future technique effects and a local six-unit routing
+console. Its buttons select artwork rather than execute skills, and its
+configuration never changes a journey. See the [arm-rig review](reviews/mira_arm_rig/README.md)
+for captures, controls and the precise phase boundary.
 The catalogue is available immediately, including without a saved journey.
 Thumbnails are cropped from actual production-rendered frames, not illustrations
 or prerecorded playback. Scenes run with their current dialogue, animation,

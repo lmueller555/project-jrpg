@@ -10,16 +10,38 @@
     54
   ],
   "facing": "left",
-  "source_sheet": "assets/source/combat/mira_redraw/mira_combat_authored.png",
-  "source_sha256": "cb8450a8d10d3839c0ea0ac7f4b2205305c839ee4c11f034312b7b02176b8012",
+  "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
+  "source_sha256": "772474757138a6b4112c29f027646826f36b3bcdad378c631974ea25ab9d962d",
+  "source_sheets": [
+    {
+      "path": "assets/source/combat/mira_arm_rig/base_authored.png",
+      "sha256": "772474757138a6b4112c29f027646826f36b3bcdad378c631974ea25ab9d962d",
+      "grid": [
+        6,
+        7
+      ]
+    },
+    {
+      "path": "assets/source/combat/mira_arm_rig/skills_authored.png",
+      "sha256": "a4089941b2936b6d333c90099a1140104e06b47f52307ca36356550a0f865002",
+      "grid": [
+        8,
+        5
+      ]
+    }
+  ],
   "sheet": "spritesheet.png",
+  "sheet_grid": [
+    8,
+    11
+  ],
   "source_grid": [
     6,
     7
   ],
-  "authored_frames": 42,
+  "authored_frames": 82,
   "extraction": "largest connected authored alpha; binary alpha; fixed nearest-neighbor native scale; shared opaque-only 96-color palette; explicit anatomical floor",
-  "registration": "assets/source/combat/mira_redraw/registration.json",
+  "registration": "assets/source/combat/mira_arm_rig/registration.json",
   "native_scale": 0.225,
   "animations": {
     "idle": {
@@ -35,7 +57,7 @@
           ],
           "source_foot": [
             116,
-            185
+            187
           ],
           "anchors": {
             "floor": [
@@ -43,24 +65,34 @@
               54
             ],
             "muzzle": [
-              17,
-              38
+              18,
+              39
             ],
             "controller": [
-              31,
-              38
+              26,
+              39
+            ],
+            "projector": [
+              18,
+              39
+            ],
+            "tool": [
+              18,
+              39
             ]
           },
-          "source_bounds": [
-            47,
-            11,
-            169,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            46,
+            9,
+            174,
+            188
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
-            15
+            14
           ],
           "file": "idle_01.png",
           "duration_ms": 280
@@ -75,7 +107,7 @@
           ],
           "source_foot": [
             110,
-            185
+            187
           ],
           "anchors": {
             "floor": [
@@ -83,21 +115,31 @@
               54
             ],
             "muzzle": [
-              17,
+              18,
               38
             ],
             "controller": [
-              31,
+              25,
+              37
+            ],
+            "projector": [
+              18,
+              38
+            ],
+            "tool": [
+              18,
               38
             ]
           },
-          "source_bounds": [
-            235,
-            9,
-            356,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            234,
+            7,
+            361,
+            188
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
             14
@@ -115,7 +157,7 @@
           ],
           "source_foot": [
             107,
-            185
+            187
           ],
           "anchors": {
             "floor": [
@@ -123,24 +165,34 @@
               54
             ],
             "muzzle": [
-              16,
-              38
+              17,
+              39
             ],
             "controller": [
-              31,
+              25,
               38
+            ],
+            "projector": [
+              17,
+              39
+            ],
+            "tool": [
+              17,
+              39
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             422,
-            16,
-            545,
-            185
+            14,
+            550,
+            188
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
-            16
+            15
           ],
           "file": "idle_03.png",
           "duration_ms": 280
@@ -155,7 +207,7 @@
           ],
           "source_foot": [
             102,
-            185
+            187
           ],
           "anchors": {
             "floor": [
@@ -163,24 +215,34 @@
               54
             ],
             "muzzle": [
-              17,
+              18,
               38
             ],
             "controller": [
-              31,
+              26,
+              38
+            ],
+            "projector": [
+              18,
+              38
+            ],
+            "tool": [
+              18,
               38
             ]
           },
-          "source_bounds": [
-            613,
-            12,
-            736,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            615,
+            10,
+            741,
+            188
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            16,
-            15
+            17,
+            14
           ],
           "file": "idle_04.png",
           "duration_ms": 260
@@ -200,7 +262,7 @@
           ],
           "source_foot": [
             96,
-            185
+            187
           ],
           "anchors": {
             "floor": [
@@ -208,24 +270,34 @@
               54
             ],
             "muzzle": [
-              17,
-              32
+              19,
+              33
             ],
             "controller": [
-              31,
-              38
+              26,
+              33
+            ],
+            "projector": [
+              19,
+              33
+            ],
+            "tool": [
+              19,
+              33
             ]
           },
-          "source_bounds": [
-            802,
-            14,
-            924,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            804,
+            12,
+            932,
+            188
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             17,
-            16
+            15
           ],
           "file": "attack_01.png",
           "duration_ms": 100
@@ -240,7 +312,7 @@
           ],
           "source_foot": [
             92,
-            185
+            186
           ],
           "anchors": {
             "floor": [
@@ -248,24 +320,34 @@
               54
             ],
             "muzzle": [
-              16,
+              17,
               29
             ],
             "controller": [
-              31,
-              38
+              25,
+              28
+            ],
+            "projector": [
+              17,
+              29
+            ],
+            "tool": [
+              17,
+              29
             ]
           },
-          "source_bounds": [
-            989,
-            12,
-            1112,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            987,
+            10,
+            1120,
+            187
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
-            15
+            14
           ],
           "file": "attack_02.png",
           "duration_ms": 80
@@ -280,7 +362,7 @@
           ],
           "source_foot": [
             115,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -289,23 +371,33 @@
             ],
             "muzzle": [
               15,
-              29
+              28
             ],
             "controller": [
-              31,
-              38
+              23,
+              28
+            ],
+            "projector": [
+              15,
+              28
+            ],
+            "tool": [
+              15,
+              28
             ]
           },
-          "source_bounds": [
-            39,
-            205,
-            166,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            33,
+            204,
+            173,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            15,
-            16
+            14,
+            15
           ],
           "file": "attack_03.png",
           "duration_ms": 100
@@ -320,7 +412,7 @@
           ],
           "source_foot": [
             111,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -328,24 +420,34 @@
               54
             ],
             "muzzle": [
-              18,
-              29
+              14,
+              27
             ],
             "controller": [
-              31,
-              38
+              22,
+              27
+            ],
+            "projector": [
+              14,
+              27
+            ],
+            "tool": [
+              14,
+              27
             ]
           },
-          "source_bounds": [
-            240,
-            205,
-            367,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            220,
+            204,
+            372,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            13,
+            15
           ],
           "file": "attack_04.png",
           "duration_ms": 60
@@ -360,7 +462,7 @@
           ],
           "source_foot": [
             108,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -369,23 +471,33 @@
             ],
             "muzzle": [
               17,
-              29
+              27
             ],
             "controller": [
-              31,
-              38
+              25,
+              27
+            ],
+            "projector": [
+              17,
+              27
+            ],
+            "tool": [
+              17,
+              27
             ]
           },
-          "source_bounds": [
-            425,
-            205,
-            558,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            421,
+            204,
+            563,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            16,
-            16
+            15,
+            15
           ],
           "file": "attack_05.png",
           "duration_ms": 80
@@ -400,7 +512,7 @@
           ],
           "source_foot": [
             101,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -408,24 +520,34 @@
               54
             ],
             "muzzle": [
-              17,
+              18,
               33
             ],
             "controller": [
-              31,
-              38
+              25,
+              32
+            ],
+            "projector": [
+              18,
+              33
+            ],
+            "tool": [
+              18,
+              33
             ]
           },
-          "source_bounds": [
-            613,
-            206,
-            738,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            612,
+            205,
+            743,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            16,
+            15
           ],
           "file": "attack_06.png",
           "duration_ms": 100
@@ -440,7 +562,7 @@
           ],
           "source_foot": [
             96,
-            183
+            187
           ],
           "anchors": {
             "floor": [
@@ -448,24 +570,34 @@
               54
             ],
             "muzzle": [
-              17,
+              18,
               38
             ],
             "controller": [
-              31,
+              26,
+              38
+            ],
+            "projector": [
+              18,
+              38
+            ],
+            "tool": [
+              18,
               38
             ]
           },
-          "source_bounds": [
-            802,
-            208,
-            923,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            801,
+            206,
+            931,
+            381
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            16,
+            15
           ],
           "file": "attack_07.png",
           "duration_ms": 140
@@ -480,7 +612,7 @@
           ],
           "source_foot": [
             92,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -488,24 +620,34 @@
               54
             ],
             "muzzle": [
-              16,
+              18,
               39
             ],
             "controller": [
-              31,
+              25,
               38
+            ],
+            "projector": [
+              18,
+              39
+            ],
+            "tool": [
+              18,
+              39
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             989,
-            207,
-            1112,
-            376
+            206,
+            1121,
+            380
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
-            16
+            15
           ],
           "file": "attack_08.png",
           "duration_ms": 140
@@ -527,7 +669,7 @@
           ],
           "source_foot": [
             115,
-            178
+            180
           ],
           "anchors": {
             "floor": [
@@ -535,24 +677,34 @@
               54
             ],
             "muzzle": [
-              17,
+              19,
               38
             ],
             "controller": [
-              31,
+              27,
+              38
+            ],
+            "projector": [
+              19,
+              38
+            ],
+            "tool": [
+              19,
               38
             ]
           },
-          "source_bounds": [
-            48,
-            412,
-            165,
-            565
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            49,
+            410,
+            171,
+            568
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             17,
-            20
+            19
           ],
           "file": "guard_enter_01.png",
           "duration_ms": 150
@@ -567,7 +719,7 @@
           ],
           "source_foot": [
             111,
-            178
+            180
           ],
           "anchors": {
             "floor": [
@@ -575,21 +727,31 @@
               54
             ],
             "muzzle": [
-              18,
-              38
+              20,
+              39
             ],
             "controller": [
-              31,
+              28,
               38
+            ],
+            "projector": [
+              20,
+              39
+            ],
+            "tool": [
+              20,
+              39
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             245,
             411,
-            355,
-            565
+            362,
+            568
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
             19
@@ -612,7 +774,7 @@
           ],
           "source_foot": [
             108,
-            178
+            180
           ],
           "anchors": {
             "floor": [
@@ -620,23 +782,33 @@
               54
             ],
             "muzzle": [
-              18,
+              21,
               40
             ],
             "controller": [
-              31,
-              38
+              28,
+              39
+            ],
+            "projector": [
+              21,
+              40
+            ],
+            "tool": [
+              21,
+              40
             ]
           },
-          "source_bounds": [
-            435,
-            419,
-            545,
-            565
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            437,
+            420,
+            548,
+            568
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            18,
+            19,
             21
           ],
           "file": "guard_01.png",
@@ -652,7 +824,7 @@
           ],
           "source_foot": [
             101,
-            178
+            180
           ],
           "anchors": {
             "floor": [
@@ -660,24 +832,34 @@
               54
             ],
             "muzzle": [
-              19,
-              39
+              21,
+              38
             ],
             "controller": [
-              31,
+              29,
+              37
+            ],
+            "projector": [
+              21,
+              38
+            ],
+            "tool": [
+              21,
               38
             ]
           },
-          "source_bounds": [
-            622,
-            412,
-            733,
-            565
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            625,
+            410,
+            738,
+            568
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             19,
-            20
+            19
           ],
           "file": "guard_02.png",
           "duration_ms": 300
@@ -697,7 +879,7 @@
           ],
           "source_foot": [
             97,
-            178
+            180
           ],
           "anchors": {
             "floor": [
@@ -705,21 +887,31 @@
               54
             ],
             "muzzle": [
-              20,
-              39
+              22,
+              40
             ],
             "controller": [
-              31,
-              38
+              30,
+              39
+            ],
+            "projector": [
+              22,
+              40
+            ],
+            "tool": [
+              22,
+              40
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             818,
-            415,
-            926,
-            565
+            418,
+            930,
+            568
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             20,
             20
@@ -737,7 +929,7 @@
           ],
           "source_foot": [
             92,
-            178
+            180
           ],
           "anchors": {
             "floor": [
@@ -745,24 +937,34 @@
               54
             ],
             "muzzle": [
-              21,
-              39
+              23,
+              38
             ],
             "controller": [
-              31,
+              30,
+              38
+            ],
+            "projector": [
+              23,
+              38
+            ],
+            "tool": [
+              23,
               38
             ]
           },
-          "source_bounds": [
-            1005,
-            412,
-            1121,
-            565
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            1006,
+            411,
+            1126,
+            568
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             20,
-            20
+            19
           ],
           "file": "guard_impact_02.png",
           "duration_ms": 100
@@ -777,7 +979,7 @@
           ],
           "source_foot": [
             99,
-            167
+            169
           ],
           "anchors": {
             "floor": [
@@ -785,24 +987,34 @@
               54
             ],
             "muzzle": [
-              18,
-              40
+              19,
+              38
             ],
             "controller": [
-              31,
+              27,
+              38
+            ],
+            "projector": [
+              19,
+              38
+            ],
+            "tool": [
+              19,
               38
             ]
           },
-          "source_bounds": [
-            809,
-            1176,
-            918,
-            1329
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            808,
+            1175,
+            924,
+            1331
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            18,
-            20
+            17,
+            19
           ],
           "file": "guard_impact_03.png",
           "duration_ms": 100
@@ -817,7 +1029,7 @@
           ],
           "source_foot": [
             94,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -825,24 +1037,34 @@
               54
             ],
             "muzzle": [
-              19,
-              41
+              20,
+              38
             ],
             "controller": [
-              31,
+              28,
+              38
+            ],
+            "projector": [
+              20,
+              38
+            ],
+            "tool": [
+              20,
               38
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             1001,
-            1176,
-            1112,
-            1329
+            1175,
+            1116,
+            1332
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
-            20
+            19
           ],
           "file": "guard_impact_04.png",
           "duration_ms": 120
@@ -862,7 +1084,7 @@
           ],
           "source_foot": [
             106,
-            173
+            175
           ],
           "anchors": {
             "floor": [
@@ -870,23 +1092,33 @@
               54
             ],
             "muzzle": [
-              20,
+              21,
               38
             ],
             "controller": [
-              31,
+              29,
+              37
+            ],
+            "projector": [
+              21,
+              38
+            ],
+            "tool": [
+              21,
               38
             ]
           },
-          "source_bounds": [
-            52,
-            590,
-            167,
-            754
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            49,
+            589,
+            171,
+            756
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            20,
+            19,
             17
           ],
           "file": "hurt_01.png",
@@ -902,7 +1134,7 @@
           ],
           "source_foot": [
             106,
-            173
+            175
           ],
           "anchors": {
             "floor": [
@@ -911,23 +1143,33 @@
             ],
             "muzzle": [
               21,
-              40
+              39
             ],
             "controller": [
-              31,
-              38
+              29,
+              39
+            ],
+            "projector": [
+              21,
+              39
+            ],
+            "tool": [
+              21,
+              39
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             245,
-            610,
-            349,
-            754
+            608,
+            353,
+            756
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             20,
-            22
+            21
           ],
           "file": "hurt_02.png",
           "duration_ms": 100
@@ -942,7 +1184,7 @@
           ],
           "source_foot": [
             107,
-            173
+            175
           ],
           "anchors": {
             "floor": [
@@ -954,20 +1196,30 @@
               37
             ],
             "controller": [
-              31,
-              38
+              26,
+              36
+            ],
+            "projector": [
+              18,
+              37
+            ],
+            "tool": [
+              18,
+              37
             ]
           },
-          "source_bounds": [
-            433,
-            598,
-            537,
-            754
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            426,
+            597,
+            544,
+            756
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            18,
-            19
+            17,
+            18
           ],
           "file": "hurt_03.png",
           "duration_ms": 100
@@ -982,7 +1234,7 @@
           ],
           "source_foot": [
             105,
-            173
+            175
           ],
           "anchors": {
             "floor": [
@@ -990,24 +1242,34 @@
               54
             ],
             "muzzle": [
-              17,
-              39
+              18,
+              38
             ],
             "controller": [
-              31,
+              26,
+              37
+            ],
+            "projector": [
+              18,
+              38
+            ],
+            "tool": [
+              18,
               38
             ]
           },
-          "source_bounds": [
-            619,
-            596,
-            728,
-            754
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            616,
+            596,
+            735,
+            756
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            19
+            16,
+            18
           ],
           "file": "hurt_04.png",
           "duration_ms": 120
@@ -1027,7 +1289,7 @@
           ],
           "source_foot": [
             100,
-            173
+            176
           ],
           "anchors": {
             "floor": [
@@ -1036,22 +1298,32 @@
             ],
             "muzzle": [
               19,
-              41
+              40
             ],
             "controller": [
-              35,
-              37
+              27,
+              40
+            ],
+            "projector": [
+              19,
+              40
+            ],
+            "tool": [
+              19,
+              40
             ]
           },
-          "source_bounds": [
-            818,
-            589,
-            920,
-            754
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            810,
+            591,
+            927,
+            757
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            19,
+            18,
             17
           ],
           "file": "overclock_01.png",
@@ -1067,7 +1339,7 @@
           ],
           "source_foot": [
             90,
-            173
+            176
           ],
           "anchors": {
             "floor": [
@@ -1075,24 +1347,34 @@
               54
             ],
             "muzzle": [
-              20,
+              22,
               40
             ],
             "controller": [
-              41,
-              36
+              30,
+              40
+            ],
+            "projector": [
+              22,
+              40
+            ],
+            "tool": [
+              22,
+              40
             ]
           },
-          "source_bounds": [
-            1004,
-            589,
-            1110,
-            754
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            1005,
+            589,
+            1114,
+            757
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             20,
-            17
+            16
           ],
           "file": "overclock_02.png",
           "duration_ms": 150
@@ -1107,7 +1389,7 @@
           ],
           "source_foot": [
             113,
-            170
+            172
           ],
           "anchors": {
             "floor": [
@@ -1115,24 +1397,34 @@
               54
             ],
             "muzzle": [
-              20,
-              42
+              19,
+              40
             ],
             "controller": [
-              29,
-              32
+              27,
+              39
+            ],
+            "projector": [
+              19,
+              40
+            ],
+            "tool": [
+              19,
+              40
             ]
           },
-          "source_bounds": [
-            55,
-            777,
-            160,
-            945
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            47,
+            774,
+            168,
+            947
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            19,
-            16
+            17,
+            15
           ],
           "file": "overclock_03.png",
           "duration_ms": 200
@@ -1147,7 +1439,7 @@
           ],
           "source_foot": [
             109,
-            170
+            173
           ],
           "anchors": {
             "floor": [
@@ -1156,22 +1448,32 @@
             ],
             "muzzle": [
               19,
-              41
+              38
             ],
             "controller": [
-              28,
-              32
+              27,
+              37
+            ],
+            "projector": [
+              19,
+              38
+            ],
+            "tool": [
+              19,
+              38
             ]
           },
-          "source_bounds": [
-            244,
-            777,
-            353,
-            945
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            238,
+            777,
+            357,
+            948
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            19,
+            17,
             16
           ],
           "file": "overclock_04.png",
@@ -1187,7 +1489,7 @@
           ],
           "source_foot": [
             107,
-            170
+            173
           ],
           "anchors": {
             "floor": [
@@ -1196,23 +1498,33 @@
             ],
             "muzzle": [
               18,
-              42
+              38
             ],
             "controller": [
-              30,
-              32
+              26,
+              37
+            ],
+            "projector": [
+              18,
+              38
+            ],
+            "tool": [
+              18,
+              38
             ]
           },
-          "source_bounds": [
-            434,
-            778,
-            539,
-            945
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            426,
+            776,
+            545,
+            948
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            18,
-            17
+            17,
+            16
           ],
           "file": "overclock_05.png",
           "duration_ms": 150
@@ -1227,7 +1539,7 @@
           ],
           "source_foot": [
             100,
-            170
+            172
           ],
           "anchors": {
             "floor": [
@@ -1236,22 +1548,32 @@
             ],
             "muzzle": [
               19,
-              40
+              38
             ],
             "controller": [
-              35,
-              39
+              27,
+              37
+            ],
+            "projector": [
+              19,
+              38
+            ],
+            "tool": [
+              19,
+              38
             ]
           },
-          "source_bounds": [
-            620,
-            781,
-            730,
-            945
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            614,
+            780,
+            737,
+            947
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            18,
+            17,
             17
           ],
           "file": "overclock_06.png",
@@ -1273,7 +1595,7 @@
           ],
           "source_foot": [
             96,
-            170
+            173
           ],
           "anchors": {
             "floor": [
@@ -1281,24 +1603,34 @@
               54
             ],
             "muzzle": [
-              18,
-              40
+              20,
+              38
             ],
             "controller": [
-              31,
+              27,
+              37
+            ],
+            "projector": [
+              20,
+              38
+            ],
+            "tool": [
+              20,
               38
             ]
           },
-          "source_bounds": [
-            808,
-            778,
-            923,
-            945
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            807,
+            777,
+            930,
+            948
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
-            17
+            16
           ],
           "file": "victory_01.png",
           "duration_ms": 180
@@ -1313,7 +1645,7 @@
           ],
           "source_foot": [
             93,
-            170
+            173
           ],
           "anchors": {
             "floor": [
@@ -1322,20 +1654,30 @@
             ],
             "muzzle": [
               18,
-              41
+              39
             ],
             "controller": [
-              31,
+              26,
               38
+            ],
+            "projector": [
+              18,
+              39
+            ],
+            "tool": [
+              18,
+              39
             ]
           },
-          "source_bounds": [
-            996,
-            777,
-            1112,
-            945
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            993,
+            778,
+            1120,
+            948
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             17,
             16
@@ -1353,7 +1695,7 @@
           ],
           "source_foot": [
             117,
-            168
+            172
           ],
           "anchors": {
             "floor": [
@@ -1361,24 +1703,34 @@
               54
             ],
             "muzzle": [
-              17,
-              41
+              18,
+              39
             ],
             "controller": [
-              31,
+              25,
               38
+            ],
+            "projector": [
+              18,
+              39
+            ],
+            "tool": [
+              18,
+              39
             ]
           },
-          "source_bounds": [
-            49,
-            967,
-            169,
-            1137
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            46,
+            967,
+            173,
+            1140
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            16,
+            15
           ],
           "file": "victory_03.png",
           "duration_ms": 320
@@ -1393,7 +1745,7 @@
           ],
           "source_foot": [
             111,
-            168
+            172
           ],
           "anchors": {
             "floor": [
@@ -1401,24 +1753,34 @@
               54
             ],
             "muzzle": [
-              18,
-              40
+              19,
+              38
             ],
             "controller": [
-              31,
+              27,
+              37
+            ],
+            "projector": [
+              19,
+              38
+            ],
+            "tool": [
+              19,
               38
             ]
           },
-          "source_bounds": [
-            240,
-            968,
-            356,
-            1137
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            239,
+            967,
+            362,
+            1140
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             17,
-            16
+            15
           ],
           "file": "victory_04.png",
           "duration_ms": 420
@@ -1438,7 +1800,7 @@
           ],
           "source_foot": [
             107,
-            168
+            172
           ],
           "anchors": {
             "floor": [
@@ -1447,23 +1809,33 @@
             ],
             "muzzle": [
               19,
-              39
+              38
             ],
             "controller": [
-              31,
+              26,
+              37
+            ],
+            "projector": [
+              19,
+              38
+            ],
+            "tool": [
+              19,
               38
             ]
           },
-          "source_bounds": [
-            433,
-            978,
-            538,
-            1137
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            427,
+            979,
+            542,
+            1140
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            18,
-            19
+            17,
+            18
           ],
           "file": "defeat_01.png",
           "duration_ms": 120
@@ -1478,7 +1850,7 @@
           ],
           "source_foot": [
             110,
-            168
+            172
           ],
           "anchors": {
             "floor": [
@@ -1486,24 +1858,34 @@
               54
             ],
             "muzzle": [
-              18,
-              43
+              17,
+              41
             ],
             "controller": [
-              31,
-              38
+              24,
+              41
+            ],
+            "projector": [
+              17,
+              41
+            ],
+            "tool": [
+              17,
+              41
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             614,
-            996,
-            741,
-            1137
+            994,
+            742,
+            1140
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             15,
-            23
+            21
           ],
           "file": "defeat_02.png",
           "duration_ms": 160
@@ -1518,7 +1900,7 @@
           ],
           "source_foot": [
             106,
-            168
+            170
           ],
           "anchors": {
             "floor": [
@@ -1527,23 +1909,33 @@
             ],
             "muzzle": [
               13,
-              52
+              50
             ],
             "controller": [
-              31,
-              38
+              21,
+              50
+            ],
+            "projector": [
+              13,
+              50
+            ],
+            "tool": [
+              13,
+              50
             ]
           },
-          "source_bounds": [
-            786,
-            1009,
-            936,
-            1137
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            787,
+            1008,
+            938,
+            1138
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             11,
-            26
+            25
           ],
           "file": "defeat_03.png",
           "duration_ms": 180
@@ -1558,7 +1950,7 @@
           ],
           "source_foot": [
             101,
-            168
+            170
           ],
           "anchors": {
             "floor": [
@@ -1566,23 +1958,33 @@
               54
             ],
             "muzzle": [
-              13,
-              52
+              15,
+              51
             ],
             "controller": [
-              31,
-              38
+              23,
+              50
+            ],
+            "projector": [
+              15,
+              51
+            ],
+            "tool": [
+              15,
+              51
             ]
           },
-          "source_bounds": [
-            980,
-            1016,
-            1125,
-            1137
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            985,
+            1017,
+            1127,
+            1138
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            12,
+            13,
             27
           ],
           "file": "defeat_04.png",
@@ -1603,7 +2005,7 @@
           ],
           "source_foot": [
             110,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -1612,20 +2014,30 @@
             ],
             "muzzle": [
               19,
-              39
+              37
             ],
             "controller": [
-              31,
-              38
+              27,
+              36
+            ],
+            "projector": [
+              19,
+              37
+            ],
+            "tool": [
+              19,
+              37
             ]
           },
-          "source_bounds": [
-            50,
-            1161,
-            160,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            46,
+            1161,
+            161,
+            1332
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
             16
@@ -1643,7 +2055,7 @@
           ],
           "source_foot": [
             111,
-            167
+            171
           ],
           "anchors": {
             "floor": [
@@ -1651,21 +2063,31 @@
               54
             ],
             "muzzle": [
-              18,
-              39
+              19,
+              36
             ],
             "controller": [
-              31,
-              38
+              27,
+              36
+            ],
+            "projector": [
+              19,
+              36
+            ],
+            "tool": [
+              19,
+              36
             ]
           },
-          "source_bounds": [
-            242,
-            1161,
-            347,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            241,
+            1161,
+            353,
+            1333
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
             16
@@ -1683,7 +2105,7 @@
           ],
           "source_foot": [
             111,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -1692,23 +2114,33 @@
             ],
             "muzzle": [
               18,
-              41
+              37
             ],
             "controller": [
-              31,
-              38
+              25,
+              37
+            ],
+            "projector": [
+              18,
+              37
+            ],
+            "tool": [
+              18,
+              37
             ]
           },
-          "source_bounds": [
-            433,
-            1162,
-            542,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            427,
+            1161,
+            545,
+            1332
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            17
+            16,
+            16
           ],
           "file": "walk_03.png",
           "duration_ms": 140
@@ -1723,7 +2155,7 @@
           ],
           "source_foot": [
             111,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -1732,28 +2164,2068 @@
             ],
             "muzzle": [
               17,
-              39
+              36
             ],
             "controller": [
-              31,
-              38
+              25,
+              36
+            ],
+            "projector": [
+              17,
+              36
+            ],
+            "tool": [
+              17,
+              36
             ]
           },
-          "source_bounds": [
-            621,
-            1161,
-            723,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            616,
+            1161,
+            729,
+            1332
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            16,
+            15,
             16
           ],
           "file": "walk_04.png",
           "duration_ms": 140
         }
       ]
+    },
+    "charged_bolt": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 42,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            0,
+            0,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              38
+            ],
+            "controller": [
+              28,
+              38
+            ],
+            "projector": [
+              21,
+              38
+            ],
+            "tool": [
+              21,
+              38
+            ]
+          },
+          "source_bounds": [
+            69,
+            13,
+            183,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            13
+          ],
+          "file": "charged_bolt_01.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 43,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            198,
+            0,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              32
+            ],
+            "controller": [
+              29,
+              32
+            ],
+            "projector": [
+              21,
+              32
+            ],
+            "tool": [
+              21,
+              32
+            ]
+          },
+          "source_bounds": [
+            270,
+            14,
+            380,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            13
+          ],
+          "file": "charged_bolt_02.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 44,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            396,
+            0,
+            199,
+            198
+          ],
+          "source_foot": [
+            128,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              29
+            ],
+            "controller": [
+              28,
+              28
+            ],
+            "projector": [
+              20,
+              29
+            ],
+            "tool": [
+              20,
+              29
+            ]
+          },
+          "source_bounds": [
+            462,
+            13,
+            580,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            18,
+            13
+          ],
+          "file": "charged_bolt_03.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 45,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            595,
+            0,
+            198,
+            198
+          ],
+          "source_foot": [
+            127,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              28
+            ],
+            "controller": [
+              27,
+              27
+            ],
+            "projector": [
+              19,
+              28
+            ],
+            "tool": [
+              19,
+              28
+            ]
+          },
+          "source_bounds": [
+            657,
+            15,
+            781,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            17,
+            13
+          ],
+          "file": "charged_bolt_04.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 46,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            793,
+            0,
+            198,
+            198
+          ],
+          "source_foot": [
+            127,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              27
+            ],
+            "controller": [
+              26,
+              27
+            ],
+            "projector": [
+              18,
+              27
+            ],
+            "tool": [
+              18,
+              27
+            ]
+          },
+          "source_bounds": [
+            850,
+            16,
+            980,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            14
+          ],
+          "file": "charged_bolt_05.png",
+          "duration_ms": 90
+        },
+        {
+          "source_cell": 47,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            991,
+            0,
+            199,
+            198
+          ],
+          "source_foot": [
+            128,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              31
+            ],
+            "controller": [
+              25,
+              30
+            ],
+            "projector": [
+              17,
+              31
+            ],
+            "tool": [
+              17,
+              31
+            ]
+          },
+          "source_bounds": [
+            1045,
+            24,
+            1172,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            15,
+            15
+          ],
+          "file": "charged_bolt_06.png",
+          "duration_ms": 90
+        },
+        {
+          "source_cell": 48,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1190,
+            0,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              35
+            ],
+            "controller": [
+              26,
+              34
+            ],
+            "projector": [
+              18,
+              35
+            ],
+            "tool": [
+              18,
+              35
+            ]
+          },
+          "source_bounds": [
+            1249,
+            20,
+            1368,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            14
+          ],
+          "file": "charged_bolt_07.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 49,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1388,
+            0,
+            198,
+            198
+          ],
+          "source_foot": [
+            127,
+            196
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              38
+            ],
+            "controller": [
+              29,
+              37
+            ],
+            "projector": [
+              21,
+              38
+            ],
+            "tool": [
+              21,
+              38
+            ]
+          },
+          "source_bounds": [
+            1458,
+            13,
+            1571,
+            197
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            13
+          ],
+          "file": "charged_bolt_08.png",
+          "duration_ms": 180
+        }
+      ],
+      "contact_ms": 650
+    },
+    "bulwark": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 50,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            0,
+            198,
+            198,
+            199
+          ],
+          "source_foot": [
+            126,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              22,
+              28
+            ],
+            "controller": [
+              30,
+              28
+            ],
+            "projector": [
+              22,
+              28
+            ],
+            "tool": [
+              22,
+              28
+            ]
+          },
+          "source_bounds": [
+            71,
+            219,
+            177,
+            396
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            20,
+            14
+          ],
+          "file": "bulwark_01.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 51,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            198,
+            198,
+            198,
+            199
+          ],
+          "source_foot": [
+            126,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              22,
+              27
+            ],
+            "controller": [
+              30,
+              26
+            ],
+            "projector": [
+              22,
+              27
+            ],
+            "tool": [
+              22,
+              27
+            ]
+          },
+          "source_bounds": [
+            271,
+            219,
+            377,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            20,
+            14
+          ],
+          "file": "bulwark_02.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 52,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            396,
+            198,
+            199,
+            199
+          ],
+          "source_foot": [
+            124,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              23,
+              28
+            ],
+            "controller": [
+              30,
+              28
+            ],
+            "projector": [
+              23,
+              28
+            ],
+            "tool": [
+              23,
+              28
+            ]
+          },
+          "source_bounds": [
+            464,
+            219,
+            577,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            14
+          ],
+          "file": "bulwark_03.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 53,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            595,
+            198,
+            198,
+            199
+          ],
+          "source_foot": [
+            124,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              29
+            ],
+            "controller": [
+              26,
+              29
+            ],
+            "projector": [
+              18,
+              29
+            ],
+            "tool": [
+              18,
+              29
+            ]
+          },
+          "source_bounds": [
+            641,
+            219,
+            774,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            14,
+            14
+          ],
+          "file": "bulwark_04.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 54,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            793,
+            198,
+            198,
+            199
+          ],
+          "source_foot": [
+            128,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              29
+            ],
+            "controller": [
+              23,
+              29
+            ],
+            "projector": [
+              16,
+              29
+            ],
+            "tool": [
+              16,
+              29
+            ]
+          },
+          "source_bounds": [
+            841,
+            221,
+            979,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            14,
+            15
+          ],
+          "file": "bulwark_05.png",
+          "duration_ms": 180
+        },
+        {
+          "source_cell": 55,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            991,
+            198,
+            199,
+            199
+          ],
+          "source_foot": [
+            128,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              30
+            ],
+            "controller": [
+              24,
+              29
+            ],
+            "projector": [
+              16,
+              30
+            ],
+            "tool": [
+              16,
+              30
+            ]
+          },
+          "source_bounds": [
+            1038,
+            221,
+            1177,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            14,
+            15
+          ],
+          "file": "bulwark_06.png",
+          "duration_ms": 180
+        },
+        {
+          "source_cell": 56,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1190,
+            198,
+            198,
+            199
+          ],
+          "source_foot": [
+            127,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              29
+            ],
+            "controller": [
+              26,
+              28
+            ],
+            "projector": [
+              18,
+              29
+            ],
+            "tool": [
+              18,
+              29
+            ]
+          },
+          "source_bounds": [
+            1246,
+            222,
+            1375,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            15
+          ],
+          "file": "bulwark_07.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 57,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1388,
+            198,
+            198,
+            199
+          ],
+          "source_foot": [
+            128,
+            198
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              38
+            ],
+            "controller": [
+              29,
+              37
+            ],
+            "projector": [
+              21,
+              38
+            ],
+            "tool": [
+              21,
+              38
+            ]
+          },
+          "source_bounds": [
+            1458,
+            221,
+            1568,
+            397
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            15
+          ],
+          "file": "bulwark_08.png",
+          "duration_ms": 160
+        }
+      ],
+      "contact_ms": 620
+    },
+    "repair_pulse": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 58,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            0,
+            397,
+            198,
+            198
+          ],
+          "source_foot": [
+            124,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              22,
+              36
+            ],
+            "controller": [
+              30,
+              35
+            ],
+            "projector": [
+              22,
+              36
+            ],
+            "tool": [
+              22,
+              36
+            ]
+          },
+          "source_bounds": [
+            70,
+            421,
+            176,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            20,
+            15
+          ],
+          "file": "repair_pulse_01.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 59,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            198,
+            397,
+            198,
+            198
+          ],
+          "source_foot": [
+            124,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              22,
+              37
+            ],
+            "controller": [
+              29,
+              36
+            ],
+            "projector": [
+              22,
+              37
+            ],
+            "tool": [
+              22,
+              37
+            ]
+          },
+          "source_bounds": [
+            267,
+            420,
+            378,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            20,
+            15
+          ],
+          "file": "repair_pulse_02.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 60,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            396,
+            397,
+            199,
+            198
+          ],
+          "source_foot": [
+            128,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              36
+            ],
+            "controller": [
+              28,
+              36
+            ],
+            "projector": [
+              21,
+              36
+            ],
+            "tool": [
+              21,
+              36
+            ]
+          },
+          "source_bounds": [
+            448,
+            421,
+            577,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            15,
+            15
+          ],
+          "file": "repair_pulse_03.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 61,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            595,
+            397,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              23,
+              36
+            ],
+            "controller": [
+              31,
+              35
+            ],
+            "projector": [
+              23,
+              36
+            ],
+            "tool": [
+              23,
+              36
+            ]
+          },
+          "source_bounds": [
+            628,
+            420,
+            775,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            11,
+            15
+          ],
+          "file": "repair_pulse_04.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 62,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            793,
+            397,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              11,
+              36
+            ],
+            "controller": [
+              19,
+              35
+            ],
+            "projector": [
+              11,
+              36
+            ],
+            "tool": [
+              11,
+              36
+            ]
+          },
+          "source_bounds": [
+            824,
+            420,
+            974,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            10,
+            15
+          ],
+          "file": "repair_pulse_05.png",
+          "duration_ms": 180
+        },
+        {
+          "source_cell": 63,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            991,
+            397,
+            199,
+            198
+          ],
+          "source_foot": [
+            128,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              36
+            ],
+            "controller": [
+              24,
+              35
+            ],
+            "projector": [
+              16,
+              36
+            ],
+            "tool": [
+              16,
+              36
+            ]
+          },
+          "source_bounds": [
+            1045,
+            419,
+            1173,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            15,
+            15
+          ],
+          "file": "repair_pulse_06.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 64,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1190,
+            397,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              37
+            ],
+            "controller": [
+              27,
+              36
+            ],
+            "projector": [
+              19,
+              37
+            ],
+            "tool": [
+              19,
+              37
+            ]
+          },
+          "source_bounds": [
+            1251,
+            420,
+            1370,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            17,
+            15
+          ],
+          "file": "repair_pulse_07.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 65,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1388,
+            397,
+            198,
+            198
+          ],
+          "source_foot": [
+            126,
+            197
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              38
+            ],
+            "controller": [
+              29,
+              37
+            ],
+            "projector": [
+              21,
+              38
+            ],
+            "tool": [
+              21,
+              38
+            ]
+          },
+          "source_bounds": [
+            1458,
+            420,
+            1570,
+            595
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            15
+          ],
+          "file": "repair_pulse_08.png",
+          "duration_ms": 180
+        }
+      ],
+      "contact_ms": 620
+    },
+    "impact_bolt": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 66,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            0,
+            595,
+            198,
+            199
+          ],
+          "source_foot": [
+            128,
+            193
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              39
+            ],
+            "controller": [
+              28,
+              39
+            ],
+            "projector": [
+              20,
+              39
+            ],
+            "tool": [
+              20,
+              39
+            ]
+          },
+          "source_bounds": [
+            65,
+            622,
+            184,
+            789
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            18,
+            17
+          ],
+          "file": "impact_bolt_01.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 67,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            198,
+            595,
+            198,
+            199
+          ],
+          "source_foot": [
+            125,
+            193
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              40
+            ],
+            "controller": [
+              27,
+              39
+            ],
+            "projector": [
+              19,
+              40
+            ],
+            "tool": [
+              19,
+              40
+            ]
+          },
+          "source_bounds": [
+            256,
+            630,
+            389,
+            789
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            17,
+            18
+          ],
+          "file": "impact_bolt_02.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 68,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            396,
+            595,
+            199,
+            199
+          ],
+          "source_foot": [
+            126,
+            194
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              32
+            ],
+            "controller": [
+              26,
+              31
+            ],
+            "projector": [
+              18,
+              32
+            ],
+            "tool": [
+              18,
+              32
+            ]
+          },
+          "source_bounds": [
+            451,
+            621,
+            585,
+            790
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            16
+          ],
+          "file": "impact_bolt_03.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 69,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            595,
+            595,
+            198,
+            199
+          ],
+          "source_foot": [
+            125,
+            194
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              32
+            ],
+            "controller": [
+              25,
+              31
+            ],
+            "projector": [
+              18,
+              32
+            ],
+            "tool": [
+              18,
+              32
+            ]
+          },
+          "source_bounds": [
+            649,
+            620,
+            783,
+            790
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            16
+          ],
+          "file": "impact_bolt_04.png",
+          "duration_ms": 80
+        },
+        {
+          "source_cell": 70,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            793,
+            595,
+            198,
+            199
+          ],
+          "source_foot": [
+            124,
+            194
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              36
+            ],
+            "controller": [
+              27,
+              36
+            ],
+            "projector": [
+              19,
+              36
+            ],
+            "tool": [
+              19,
+              36
+            ]
+          },
+          "source_bounds": [
+            853,
+            632,
+            979,
+            790
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            18,
+            19
+          ],
+          "file": "impact_bolt_05.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 71,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            991,
+            595,
+            199,
+            199
+          ],
+          "source_foot": [
+            130,
+            193
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              34
+            ],
+            "controller": [
+              25,
+              34
+            ],
+            "projector": [
+              18,
+              34
+            ],
+            "tool": [
+              18,
+              34
+            ]
+          },
+          "source_bounds": [
+            1045,
+            622,
+            1181,
+            789
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            15,
+            17
+          ],
+          "file": "impact_bolt_06.png",
+          "duration_ms": 160
+        },
+        {
+          "source_cell": 72,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1190,
+            595,
+            198,
+            199
+          ],
+          "source_foot": [
+            128,
+            193
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              35
+            ],
+            "controller": [
+              27,
+              34
+            ],
+            "projector": [
+              20,
+              35
+            ],
+            "tool": [
+              20,
+              35
+            ]
+          },
+          "source_bounds": [
+            1252,
+            614,
+            1374,
+            789
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            17,
+            15
+          ],
+          "file": "impact_bolt_07.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 73,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1388,
+            595,
+            198,
+            199
+          ],
+          "source_foot": [
+            130,
+            193
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              39
+            ],
+            "controller": [
+              28,
+              39
+            ],
+            "projector": [
+              21,
+              39
+            ],
+            "tool": [
+              21,
+              39
+            ]
+          },
+          "source_bounds": [
+            1458,
+            619,
+            1572,
+            789
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            18,
+            16
+          ],
+          "file": "impact_bolt_08.png",
+          "duration_ms": 180
+        }
+      ],
+      "contact_ms": 400
+    },
+    "arc_discharge": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 74,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            0,
+            794,
+            198,
+            198
+          ],
+          "source_foot": [
+            127,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              36
+            ],
+            "controller": [
+              28,
+              36
+            ],
+            "projector": [
+              21,
+              36
+            ],
+            "tool": [
+              21,
+              36
+            ]
+          },
+          "source_bounds": [
+            66,
+            810,
+            180,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            18,
+            15
+          ],
+          "file": "arc_discharge_01.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 75,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            198,
+            794,
+            198,
+            198
+          ],
+          "source_foot": [
+            127,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              24,
+              34
+            ],
+            "controller": [
+              32,
+              34
+            ],
+            "projector": [
+              24,
+              34
+            ],
+            "tool": [
+              24,
+              34
+            ]
+          },
+          "source_bounds": [
+            264,
+            811,
+            377,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            18,
+            15
+          ],
+          "file": "arc_discharge_02.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 76,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            396,
+            794,
+            199,
+            198
+          ],
+          "source_foot": [
+            126,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              28
+            ],
+            "controller": [
+              29,
+              28
+            ],
+            "projector": [
+              21,
+              28
+            ],
+            "tool": [
+              21,
+              28
+            ]
+          },
+          "source_bounds": [
+            450,
+            810,
+            580,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            15
+          ],
+          "file": "arc_discharge_03.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 77,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            595,
+            794,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              28
+            ],
+            "controller": [
+              27,
+              28
+            ],
+            "projector": [
+              19,
+              28
+            ],
+            "tool": [
+              19,
+              28
+            ]
+          },
+          "source_bounds": [
+            645,
+            810,
+            779,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            14,
+            15
+          ],
+          "file": "arc_discharge_04.png",
+          "duration_ms": 160
+        },
+        {
+          "source_cell": 78,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            793,
+            794,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              27
+            ],
+            "controller": [
+              23,
+              27
+            ],
+            "projector": [
+              16,
+              27
+            ],
+            "tool": [
+              16,
+              27
+            ]
+          },
+          "source_bounds": [
+            843,
+            810,
+            977,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            14,
+            15
+          ],
+          "file": "arc_discharge_05.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 79,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            991,
+            794,
+            199,
+            198
+          ],
+          "source_foot": [
+            128,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              31
+            ],
+            "controller": [
+              28,
+              30
+            ],
+            "projector": [
+              20,
+              31
+            ],
+            "tool": [
+              20,
+              31
+            ]
+          },
+          "source_bounds": [
+            1050,
+            816,
+            1171,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            16,
+            16
+          ],
+          "file": "arc_discharge_06.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 80,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1190,
+            794,
+            198,
+            198
+          ],
+          "source_foot": [
+            129,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              32
+            ],
+            "controller": [
+              27,
+              31
+            ],
+            "projector": [
+              19,
+              32
+            ],
+            "tool": [
+              19,
+              32
+            ]
+          },
+          "source_bounds": [
+            1251,
+            812,
+            1374,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            17,
+            16
+          ],
+          "file": "arc_discharge_07.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 81,
+          "source": "skills_authored.png",
+          "native_scale": 0.225,
+          "source_rect": [
+            1388,
+            794,
+            198,
+            198
+          ],
+          "source_foot": [
+            128,
+            189
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              39
+            ],
+            "controller": [
+              29,
+              38
+            ],
+            "projector": [
+              21,
+              39
+            ],
+            "tool": [
+              21,
+              39
+            ]
+          },
+          "source_bounds": [
+            1458,
+            811,
+            1569,
+            984
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/skills_authored.png",
+          "position": [
+            19,
+            15
+          ],
+          "file": "arc_discharge_08.png",
+          "duration_ms": 180
+        }
+      ],
+      "contact_ms": 650
     },
     "bolt_shot": {
       "loop": false,
@@ -1768,7 +4240,7 @@
           ],
           "source_foot": [
             96,
-            185
+            187
           ],
           "anchors": {
             "floor": [
@@ -1776,24 +4248,34 @@
               54
             ],
             "muzzle": [
-              17,
-              32
+              19,
+              33
             ],
             "controller": [
-              31,
-              38
+              26,
+              33
+            ],
+            "projector": [
+              19,
+              33
+            ],
+            "tool": [
+              19,
+              33
             ]
           },
-          "source_bounds": [
-            802,
-            14,
-            924,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            804,
+            12,
+            932,
+            188
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             17,
-            16
+            15
           ],
           "file": "attack_01.png",
           "duration_ms": 100
@@ -1808,7 +4290,7 @@
           ],
           "source_foot": [
             92,
-            185
+            186
           ],
           "anchors": {
             "floor": [
@@ -1816,24 +4298,34 @@
               54
             ],
             "muzzle": [
-              16,
+              17,
               29
             ],
             "controller": [
-              31,
-              38
+              25,
+              28
+            ],
+            "projector": [
+              17,
+              29
+            ],
+            "tool": [
+              17,
+              29
             ]
           },
-          "source_bounds": [
-            989,
-            12,
-            1112,
-            185
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            987,
+            10,
+            1120,
+            187
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
-            15
+            14
           ],
           "file": "attack_02.png",
           "duration_ms": 80
@@ -1848,7 +4340,7 @@
           ],
           "source_foot": [
             115,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -1857,23 +4349,33 @@
             ],
             "muzzle": [
               15,
-              29
+              28
             ],
             "controller": [
-              31,
-              38
+              23,
+              28
+            ],
+            "projector": [
+              15,
+              28
+            ],
+            "tool": [
+              15,
+              28
             ]
           },
-          "source_bounds": [
-            39,
-            205,
-            166,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            33,
+            204,
+            173,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            15,
-            16
+            14,
+            15
           ],
           "file": "attack_03.png",
           "duration_ms": 100
@@ -1888,7 +4390,7 @@
           ],
           "source_foot": [
             111,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -1896,24 +4398,34 @@
               54
             ],
             "muzzle": [
-              18,
-              29
+              14,
+              27
             ],
             "controller": [
-              31,
-              38
+              22,
+              27
+            ],
+            "projector": [
+              14,
+              27
+            ],
+            "tool": [
+              14,
+              27
             ]
           },
-          "source_bounds": [
-            240,
-            205,
-            367,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            220,
+            204,
+            372,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            13,
+            15
           ],
           "file": "attack_04.png",
           "duration_ms": 60
@@ -1928,7 +4440,7 @@
           ],
           "source_foot": [
             108,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -1937,23 +4449,33 @@
             ],
             "muzzle": [
               17,
-              29
+              27
             ],
             "controller": [
-              31,
-              38
+              25,
+              27
+            ],
+            "projector": [
+              17,
+              27
+            ],
+            "tool": [
+              17,
+              27
             ]
           },
-          "source_bounds": [
-            425,
-            205,
-            558,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            421,
+            204,
+            563,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            16,
-            16
+            15,
+            15
           ],
           "file": "attack_05.png",
           "duration_ms": 80
@@ -1968,7 +4490,7 @@
           ],
           "source_foot": [
             101,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -1976,24 +4498,34 @@
               54
             ],
             "muzzle": [
-              17,
+              18,
               33
             ],
             "controller": [
-              31,
-              38
+              25,
+              32
+            ],
+            "projector": [
+              18,
+              33
+            ],
+            "tool": [
+              18,
+              33
             ]
           },
-          "source_bounds": [
-            613,
-            206,
-            738,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            612,
+            205,
+            743,
+            380
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            16,
+            15
           ],
           "file": "attack_06.png",
           "duration_ms": 100
@@ -2008,7 +4540,7 @@
           ],
           "source_foot": [
             96,
-            183
+            187
           ],
           "anchors": {
             "floor": [
@@ -2016,24 +4548,34 @@
               54
             ],
             "muzzle": [
-              17,
+              18,
               38
             ],
             "controller": [
-              31,
+              26,
+              38
+            ],
+            "projector": [
+              18,
+              38
+            ],
+            "tool": [
+              18,
               38
             ]
           },
-          "source_bounds": [
-            802,
-            208,
-            923,
-            376
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            801,
+            206,
+            931,
+            381
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            16
+            16,
+            15
           ],
           "file": "attack_07.png",
           "duration_ms": 140
@@ -2048,7 +4590,7 @@
           ],
           "source_foot": [
             92,
-            183
+            186
           ],
           "anchors": {
             "floor": [
@@ -2056,24 +4598,34 @@
               54
             ],
             "muzzle": [
-              16,
+              18,
               39
             ],
             "controller": [
-              31,
+              25,
               38
+            ],
+            "projector": [
+              18,
+              39
+            ],
+            "tool": [
+              18,
+              39
             ]
           },
+          "source": "base_authored.png",
+          "native_scale": 0.225,
           "source_bounds": [
             989,
-            207,
-            1112,
-            376
+            206,
+            1121,
+            380
           ],
-          "native_scale": 0.225,
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             16,
-            16
+            15
           ],
           "file": "attack_08.png",
           "duration_ms": 140
@@ -2095,7 +4647,7 @@
           ],
           "source_foot": [
             110,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -2104,20 +4656,30 @@
             ],
             "muzzle": [
               19,
-              39
+              37
             ],
             "controller": [
-              31,
-              38
+              27,
+              36
+            ],
+            "projector": [
+              19,
+              37
+            ],
+            "tool": [
+              19,
+              37
             ]
           },
-          "source_bounds": [
-            50,
-            1161,
-            160,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            46,
+            1161,
+            161,
+            1332
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
             16
@@ -2135,7 +4697,7 @@
           ],
           "source_foot": [
             111,
-            167
+            171
           ],
           "anchors": {
             "floor": [
@@ -2143,21 +4705,31 @@
               54
             ],
             "muzzle": [
-              18,
-              39
+              19,
+              36
             ],
             "controller": [
-              31,
-              38
+              27,
+              36
+            ],
+            "projector": [
+              19,
+              36
+            ],
+            "tool": [
+              19,
+              36
             ]
           },
-          "source_bounds": [
-            242,
-            1161,
-            347,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            241,
+            1161,
+            353,
+            1333
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
             18,
             16
@@ -2175,7 +4747,7 @@
           ],
           "source_foot": [
             111,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -2184,23 +4756,33 @@
             ],
             "muzzle": [
               18,
-              41
+              37
             ],
             "controller": [
-              31,
-              38
+              25,
+              37
+            ],
+            "projector": [
+              18,
+              37
+            ],
+            "tool": [
+              18,
+              37
             ]
           },
-          "source_bounds": [
-            433,
-            1162,
-            542,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            427,
+            1161,
+            545,
+            1332
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            17,
-            17
+            16,
+            16
           ],
           "file": "walk_03.png",
           "duration_ms": 140
@@ -2215,7 +4797,7 @@
           ],
           "source_foot": [
             111,
-            167
+            170
           ],
           "anchors": {
             "floor": [
@@ -2224,22 +4806,32 @@
             ],
             "muzzle": [
               17,
-              39
+              36
             ],
             "controller": [
-              31,
-              38
+              25,
+              36
+            ],
+            "projector": [
+              17,
+              36
+            ],
+            "tool": [
+              17,
+              36
             ]
           },
-          "source_bounds": [
-            621,
-            1161,
-            723,
-            1330
-          ],
+          "source": "base_authored.png",
           "native_scale": 0.225,
+          "source_bounds": [
+            616,
+            1161,
+            729,
+            1332
+          ],
+          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
           "position": [
-            16,
+            15,
             16
           ],
           "file": "walk_04.png",

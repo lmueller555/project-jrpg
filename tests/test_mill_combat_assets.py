@@ -66,11 +66,12 @@ class MillCombatAssetTests(unittest.TestCase):
                 images.append(image.tobytes())
         self.assertEqual(len(set(images)), frame_count)
 
-    def test_mira_has_complete_unclipped_launcher_overclock_and_recovery_poses(self):
+    def test_mira_has_complete_unclipped_arm_rig_and_technique_studies(self):
         self.assert_complete_actor('mira', (64, 64), (32, 54), 'left',
                                    {'idle', 'attack', 'guard', 'hurt', 'victory',
                                     'defeat', 'walk', 'bolt_shot', 'overclock', 'flee',
-                                    'guard_enter', 'guard_impact'}, 42)
+                                    'guard_enter', 'guard_impact', 'charged_bolt', 'bulwark',
+                                    'repair_pulse', 'impact_bolt', 'arc_discharge'}, 82)
 
     def test_tusker_has_distinct_native_preparation_charge_and_collapse_poses(self):
         self.assert_complete_actor('ridgeback_tusker', (96, 72), (48, 62), 'right',
@@ -95,8 +96,11 @@ class MillCombatAssetTests(unittest.TestCase):
                 records = {record['source_cell']: record
                            for state in data['animations'].values()
                            for record in state['frames']}
-                self.assertEqual(set(records), set(range(42 if actor == 'mira' else 16)))
+                self.assertEqual(set(records), set(range(82 if actor == 'mira' else 16)))
                 for record in records.values():
+                    source = ROOT/record.get('source_sheet', data['source_sheet'])
+                    with Image.open(source) as image:
+                        width, height = image.size
                     left, top, right, bottom = record['source_bounds']
                     self.assertTrue(0 <= left < right <= width)
                     self.assertTrue(0 <= top < bottom <= height)

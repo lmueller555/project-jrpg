@@ -16,7 +16,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT/'assets/source/combat/mira_redraw'
+SOURCE = ROOT/'assets/source/combat/mira_arm_rig'
 OUTPUT = ROOT/'assets/combat/mira'
 ANIMATIONS = {
     'idle': ([0, 1, 2, 3], [280, 260, 280, 260], True),
@@ -29,6 +29,11 @@ ANIMATIONS = {
     'victory': (list(range(28, 32)), [180, 180, 320, 420], False),
     'defeat': (list(range(32, 36)), [120, 160, 180, 420], False),
     'walk': (list(range(36, 40)), [140, 140, 140, 140], True),
+    'charged_bolt': (list(range(42,50)), [120,100,100,140,90,90,140,180], False),
+    'bulwark': (list(range(50,58)), [100,100,140,120,180,180,120,160], False),
+    'repair_pulse': (list(range(58,66)), [120,120,140,140,180,140,140,180], False),
+    'impact_bolt': (list(range(66,74)), [100,100,120,80,100,160,120,180], False),
+    'arc_discharge': (list(range(74,82)), [120,100,120,160,100,100,140,180], False),
 }
 
 
@@ -67,11 +72,13 @@ def _main_component(image):
 def build():
     specification = json.loads((SOURCE/'registration.json').read_text())
     source_path = SOURCE/specification['source']
-    with Image.open(source_path) as image:source = image.convert('RGBA')
+    sources = {record['file']: Image.open(SOURCE/record['file']).convert('RGBA')
+               for record in specification['sources']}
     # Transparent source RGB can contain arbitrary matte colors. Use only
     # visible pixels so those colors cannot displace Mira's dusty rose shirt.
     # One palette for the whole bank also keeps materials stable across poses.
-    visible = [pixel[:3] for pixel in source.getdata() if pixel[3] >= 128]
+    visible = [pixel[:3] for source in sources.values() for pixel in source.getdata()
+               if pixel[3] >= 128]
     opaque_colors = Image.new('RGB', (len(visible), 1))
     opaque_colors.putdata(visible)
     palette = opaque_colors.quantize(colors=specification['palette_colors'],
@@ -80,6 +87,8 @@ def build():
     canvas, anchor = specification['canvas'], specification['anchor']
     drawings, records = [], []
     for drawing in specification['drawings']:
+        source = sources[drawing['source']]
+        scale = drawing.get('native_scale', specification['native_scale'])
         left, top, width, height = drawing['source_rect']
         cell = _main_component(source.crop((left, top, left+width, top+height)))
         bounds = cell.getbbox()
@@ -105,11 +114,12 @@ def build():
                         for name, point in drawing['anchors'].items()})
         record = dict(drawing, source_bounds=[left+bounds[0], top+bounds[1],
                                                left+bounds[2], top+bounds[3]],
+                      source_sheet=(SOURCE/drawing['source']).relative_to(ROOT).as_posix(),
                       native_scale=scale, position=position, anchors=anchors)
         drawings.append(frame)
         records.append(record)
-    if len({image.tobytes() for image in drawings}) != 42:
-        raise ValueError('All 42 Mira drawings must remain visually distinct')
+    if len({image.tobytes() for image in drawings}) != 82:
+        raise ValueError('All 82 Mira drawings must remain visually distinct')
     OUTPUT.mkdir(parents=True, exist_ok=True)
     animations, names = {}, set()
     for state, (indices, durations, loop) in ANIMATIONS.items():
@@ -123,19 +133,26 @@ def build():
         if state in ('attack', 'overclock'):
             animations[state]['contact_ms'] = 400 if state == 'attack' else 500
         if state == 'attack':animations[state]['release_ms'] = 280
+        if state in ('charged_bolt','impact_bolt','arc_discharge'):
+            animations[state]['contact_ms'] = {'charged_bolt':650,'impact_bolt':400,'arc_discharge':650}[state]
+        if state in ('bulwark','repair_pulse'):
+            animations[state]['contact_ms'] = 620
     animations['bolt_shot'] = animations['attack']
     animations['flee'] = animations['walk']
     for filename in OUTPUT.glob('*.png'):
         if not filename.stem.startswith('world_') and filename.name not in names | {'spritesheet.png'}:
             filename.unlink()
-    sheet = Image.new('RGBA', (canvas[0]*6, canvas[1]*7))
+    sheet = Image.new('RGBA', (canvas[0]*8, canvas[1]*11))
     for index, image in enumerate(drawings):
-        sheet.alpha_composite(image, ((index % 6)*canvas[0], (index//6)*canvas[1]))
+        sheet.alpha_composite(image, ((index % 8)*canvas[0], (index//8)*canvas[1]))
     sheet.save(OUTPUT/'spritesheet.png', optimize=True)
     metadata = dict(version=1, actor='mira', canvas=canvas, anchor=anchor,
         facing='left', source_sheet=source_path.relative_to(ROOT).as_posix(),
         source_sha256=hashlib.sha256(source_path.read_bytes()).hexdigest(),
-        sheet='spritesheet.png', source_grid=[6, 7], authored_frames=42,
+        source_sheets=[dict(path=(SOURCE/record['file']).relative_to(ROOT).as_posix(),
+            sha256=hashlib.sha256((SOURCE/record['file']).read_bytes()).hexdigest(),grid=record['grid'])
+            for record in specification['sources']],
+        sheet='spritesheet.png', sheet_grid=[8,11], source_grid=[6,7], authored_frames=82,
         extraction=f'largest connected authored alpha; binary alpha; fixed nearest-neighbor native scale; shared opaque-only {specification["palette_colors"]}-color palette; explicit anatomical floor',
         registration=(SOURCE/'registration.json').relative_to(ROOT).as_posix(),
         native_scale=scale, animations=animations)
