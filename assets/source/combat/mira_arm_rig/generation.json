@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "generator": "image_gen.imagegen",
+  "created": "2026-11-11",
+  "scope": "Phase-one wearable-arm artwork; new skill poses are visual assets, not implemented abilities.",
+  "identity": "Mira wears an external brass/graphite arm cuff and articulated supports over an intact arm. Cream flower, short brown ponytail, dusty rose working shirt, charcoal trousers and brown boots retained.",
+  "sources": [
+    {
+      "file": "base_authored.png",
+      "original_generated_file": "exec-83c7a803-2b01-4a48-b92d-3986203f08df.png",
+      "sha256": "772474757138a6b4112c29f027646826f36b3bcdad378c631974ea25ab9d962d",
+      "grid": [
+        6,
+        7
+      ],
+      "reference": "assets/source/combat/mira_redraw/mira_combat_authored.png",
+      "prompt_summary": "Edit the exact previous42-pose6x7atlas, preserving identity, body poses and grid. Replace handheld gun with one consistent external wearable forearm rig: graphite rails, brass piston, leather elbow/wrist straps, cyan emitter lens and orange/cyan/green lamps. Intact skin and fingers; no amputation or robot limb. Activation touches built-in cuff controls rather than a handheld controller. Preserve transparent full-body drawings and directional left-facing combat poses."
+    },
+    {
+      "file": "skills_authored.png",
+      "original_generated_file": "exec-5228a6ba-958e-4f5e-88de-a5ecff19f2e9.png",
+      "sha256": "a4089941b2936b6d333c90099a1140104e06b47f52307ca36356550a0f865002",
+      "grid": [
+        8,
+        5
+      ],
+      "reference": "assets/source/combat/mira_arm_rig/base_authored.png",
+      "prompt_summary": "Create40newwhole-bodydrawings in8columns5rows ofthe sameMira/wearablecuff. One8frame chronological animation perrow: ChargedBolt, Bulwark, RepairPulse, ImpactBolt, ArcDischarge. Clear preparation, release, recoil, recovery; practical mechanics with unfolding projector petals, repair nozzle and retractable conductor prongs. Full bodies and intact hands; fixed consistent scale and plantedfeet; no text or disconnected effects."
+    }
+  ],
+  "processing": "Unmodified source PNGs retained. Connected-alpha isolation, binary alpha, shared96-color palette, fixed nearest-neighbor0.225sampling and explicit source-foot/attachment registration only. No anatomical shapes or motion are synthesized by exporters."
+}

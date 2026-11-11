@@ -36,14 +36,14 @@ class MiraRedrawAssetTests(unittest.TestCase):
     def test_drawings_use_anatomical_floor_registration_instead_of_silhouette_center(self):
         records = {frame['source_cell']: frame for animation in self.data['animations'].values()
                    for frame in animation['frames']}
-        self.assertEqual(len(records), 42)
+        self.assertEqual(len(records), 82)
         for index, frame in records.items():
             with self.subTest(drawing=index):
                 self.assertEqual(frame['anchors']['floor'], [32,54])
                 left, top, _, _ = frame['source_bounds']
                 cell_x, cell_y, _, _ = frame['source_rect']
                 foot_x, foot_y = frame['source_foot']
-                scale = self.data['native_scale']
+                scale = frame['native_scale']
                 self.assertEqual(frame['position'],
                     [round(32-(cell_x+foot_x-left)*scale),
                      round(54-(cell_y+foot_y-top)*scale)])
@@ -98,6 +98,24 @@ class MiraRedrawAssetTests(unittest.TestCase):
     def test_existing_overworld_launcher_remains_pixel_identical(self):
         self.assertEqual(hashlib.sha256((ART/'world_bolt_launcher.png').read_bytes()).hexdigest(),
                          'c4b72145c0007034958f8246d8b0c9e046a4eeddab78ff9457b4ae2f571f77cc')
+
+    def test_arm_rig_studies_have_complete_registered_sequences_and_retained_sources(self):
+        sources = {entry['path']: entry for entry in self.data['source_sheets']}
+        self.assertEqual(len(sources), 2)
+        for path, record in sources.items():
+            self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(), record['sha256'])
+        for state in ('charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge'):
+            animation = self.data['animations'][state]
+            self.assertEqual(len(animation['frames']), 8)
+            self.assertFalse(animation['loop'])
+            for frame in animation['frames']:
+                with self.subTest(state=state, frame=frame['file']):
+                    self.assertIn(frame['source_sheet'], sources)
+                    image = Image.open(ART/frame['file']).convert('RGBA')
+                    for anchor in ('muzzle', 'controller'):
+                        x, y = frame['anchors'][anchor]
+                        self.assertTrue(image.getchannel('A').crop((x-2,y-2,x+3,y+3)).getbbox(),
+                                        anchor+' must attach to the worn rig')
 
 
 if __name__ == '__main__':

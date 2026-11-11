@@ -232,12 +232,14 @@ probability or skill unlock is introduced by this presentation pass.
 
 Review the [action and MQ02 previews](reviews/caelan_choreography/README.md).
 
-Mira's [combat redraw](reviews/mira_redraw/README.md) adds 42 whole-body drawings
-with stable floor registration, two-handed aim/recoil, controller handling and
-separate guarded-impact recovery. Bolt Shot releases from its authored muzzle
+Mira's [wearable arm-rig art](MIRA_ARM_RIG_ART.md) supplies 82 whole-body drawings,
+including five eight-frame technique studies reserved for the next combat phase.
+Her revised base bank preserves stable floor registration, aim/recoil,
+cuff activation and separate guarded-impact recovery. Bolt Shot releases from its authored muzzle
 at 0.28 seconds and keeps its 0.40-second damage impact and 0.80-second duration.
 Overclock retains its 0.50-second application and 0.90-second duration. See
-[Mira's combat presentation](MIRA_BOTS.md#combat-presentation).
+[the arm-rig review](reviews/mira_arm_rig/README.md) for the new artwork. The
+current bot rules remain in place until the later gameplay/narrative phases.
 
 ## Caelan's combat actions
 
