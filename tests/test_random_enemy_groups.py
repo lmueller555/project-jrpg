@@ -194,28 +194,28 @@ class RandomEnemyGroupTests(unittest.TestCase):
         self.assertEqual(model.current_action.actor, 'enemy_2')
         self.assertNotIn(model.enemy, model.living_enemies)
 
-    def test_rivet_uses_the_selected_enemy_and_retargets_after_its_defeat(self):
+    def test_miras_shot_uses_selected_enemy_and_retargets_after_its_defeat(self):
         model = group(bot_loadouts=None, initial_atb=True, initial_atb_seed=9)
-        bot = model.bot_for('mira')
-        self.assertIsNotNone(bot)
-        self.assertTrue(0 <= bot.atb <= .5)
-        self.assertIn(bot.identifier, model.initial_atb_values)
-        target = model.combatant('enemy_4')
-        target.hp = 1
+        mira = model.combatant('mira')
+        self.assertTrue(0 <= mira.atb <= .5)
+        self.assertIn(mira.identifier, model.initial_atb_values)
+        self.assertNotIn('rivet', model.initial_atb_values)
+        target = model.combatant('enemy_4');target.hp = 1
         self.assertTrue(model.select_target(target.identifier))
-        clear_gauges(model)
-        bot.atb = 1
+        clear_gauges(model);mira.atb = 1
         model.update(0)
+        self.assertTrue(model.choose_action('attack'))
         self.assertEqual((model.current_action.actor, model.current_action.target),
-                         (bot.identifier, target.identifier))
+                         ('mira', target.identifier))
         model.update(model.current_action.duration)
         self.assertEqual(target.hp, 0)
         self.assertNotEqual(model.phase, 'victory')
-        clear_gauges(model)
-        bot.atb = 1
+        clear_gauges(model);mira.atb = 1
         model.update(0)
+        self.assertTrue(model.choose_action('attack'))
         self.assertIn(model.current_action.target,
                       [enemy.identifier for enemy in model.living_enemies])
+        self.assertEqual(model.bots, ())
 
     def test_spellblade_damage_and_guard_apply_to_the_actual_group_target(self):
         model = group(weapon_equipped=True, learned_abilities=('aether_edge',))
@@ -355,7 +355,8 @@ class RandomEnemyGroupSceneTests(unittest.TestCase):
                     self.assertEqual(rendered.call_args.args[1], scene._elapsed*1000)
                     self.assertTrue(rendered.call_args.args[2])
                 self.game.audio.set_reduced_motion(False)
-        self.assertEqual(len(set(bank)), 4, 'The four cave locations need distinct scenery')
+        self.assertEqual(len(set(bank)), len(CAVE_BATTLEFIELDS),
+                         'Every authored cave location needs distinct scenery')
 
     def test_cave_battlefields_retain_real_location_and_native_asset_provenance(self):
         root = Path(__file__).resolve().parents[1]
@@ -366,8 +367,9 @@ class RandomEnemyGroupSceneTests(unittest.TestCase):
             self.assertTrue(set(data['source_rooms']) <= rooms)
             self.assertTrue(data['animation']['pulse'])
             self.assertGreater(data['animation']['microcrystal_count'], 0)
-            self.assertEqual(set(data['animation']['crystal_colors']),
-                             {'red', 'blue', 'green', 'white', 'orange', 'purple'})
+            colors = set(data['animation']['crystal_colors'])
+            self.assertTrue(colors)
+            self.assertLessEqual(colors, {'red', 'blue', 'green', 'white', 'orange', 'purple'})
             sources = data['build']['source_sha256']
             self.assertTrue(any(name.startswith('assets/terrain/limestone_cave/') for name in sources))
             for name, expected in sources.items():

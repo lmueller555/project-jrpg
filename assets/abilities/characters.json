@@ -38,10 +38,16 @@
     },
     "mira": {
       "name": "Mira",
-      "job": "Machinist",
-      "skills": {"overclock": {"unlock": "starting"}},
+      "job": "Engineer",
+      "skills": {
+        "charged_bolt": {"unlock": "starting"},
+        "bulwark": {"unlock": "starting"},
+        "repair_pulse": {"unlock": "starting"},
+        "impact_bolt": {"unlock": "starting"},
+        "arc_discharge": {"unlock": "starting"}
+      },
       "spells": {},
-      "abilities": {"rivet": {"unlock": "starting"}}
+      "abilities": {"arm_rig": {"unlock": "starting"}}
     },
     "lucan": {
       "name": "Lucan",

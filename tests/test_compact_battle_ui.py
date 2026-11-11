@@ -1,4 +1,4 @@
-"""Compact status rows preserve the battlefield, controls and hidden bot clocks."""
+"""Compact status rows preserve the battlefield, gear and wearable rig controls."""
 import os
 from types import SimpleNamespace
 import unittest
@@ -93,24 +93,23 @@ class CompactBattleUITests(unittest.TestCase):
                 scene.handle_event(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_DOWN))
             self.assertEqual(seen,set(scene._command_actions()))
 
-    def test_bot_hud_is_absent_while_autonomous_and_haste_state_are_preserved(self):
+    def test_rig_console_replaces_the_retired_extra_combatant(self):
         scene=self.scene(('player','mira'))
-        bot=scene.model.bot_for('mira')
-        bot.atb=.35;bot.haste_turns=8
         rendered=[]
         original=Painter.text
         def record(painter,text,*args,**kwargs):
             rendered.append(str(text))
             return original(painter,text,*args,**kwargs)
-        before=(bot.atb,bot.haste_turns)
+        before=scene.model.rig_allocation
         with patch.object(Painter,'text',record):
             scene.draw(self.canvas,self.game.ui_surface)
-        self.assertEqual(scene.bot_status,{})
+        self.assertIsNone(scene.model.bot_for('mira'))
+        self.assertIsNotNone(scene.rig)
+        self.assertTrue(scene.party_rows['mira']['interactable'].contains(scene.rig.rect))
         self.assertFalse(any(text=='Rivet ATB' or text.startswith('Haste ·') for text in rendered))
-        self.assertEqual((bot.atb,bot.haste_turns),before)
+        self.assertEqual(scene.rig.allocation,before)
         scene.update(.1)
-        self.assertGreater(bot.atb,before[0])
-        self.assertEqual(bot.haste_turns,8)
+        self.assertEqual(scene.model.rig_allocation,before)
 
     def test_gear_keyboard_input_still_targets_the_resized_interaction_area(self):
         scene=self.scene()

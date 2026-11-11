@@ -1,0 +1,1067 @@
+{
+  "scope": "Phase two: actual live battle rules, controls and skill effects",
+  "fixture": [
+    "Each run uses a disposable completed-Mill Game and temporary save/settings files.",
+    "Caelan starts injured at40HP/0MP, Mira has30MP; readiness is explicitly shortened.",
+    "Two or three active members use a real authored cave encounter.",
+    "Lucan is recruited only in the three-character layout fixture.",
+    "All routing/skill/target commands use production mouse or keyboard input.",
+    "No enemy HP, battle outcome, pose or effect is replaced; no complete-victory claim."
+  ],
+  "captures": {
+    "combat_2_party_text_100": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {},
+      "item_spent": {},
+      "current_action": null,
+      "phase": "ready"
+    },
+    "combat_2_party_text_150": {
+      "text_scale": 1.5,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {},
+      "item_spent": {},
+      "current_action": null,
+      "phase": "ready"
+    },
+    "combat_3_party_text_100": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "lucan": {
+          "hp": 170,
+          "mp": 20,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {},
+      "item_spent": {},
+      "current_action": null,
+      "phase": "ready"
+    },
+    "combat_3_party_text_150": {
+      "text_scale": 1.5,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "lucan": {
+          "hp": 170,
+          "mp": 20,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {},
+      "item_spent": {},
+      "current_action": null,
+      "phase": "ready"
+    },
+    "support_allocation": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 0,
+        "protection": 3,
+        "support": 3
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 30,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {},
+      "item_spent": {},
+      "current_action": null,
+      "phase": "ready"
+    },
+    "bulwark_impact": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 0,
+        "protection": 3,
+        "support": 3
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 27,
+          "barrier": 37,
+          "barrier_turns": 2
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1
+      },
+      "item_spent": {},
+      "current_action": "bulwark",
+      "phase": "acting"
+    },
+    "bulwark_after": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 0,
+        "protection": 3,
+        "support": 3
+      },
+      "party": {
+        "player": {
+          "hp": 40,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 27,
+          "barrier": 37,
+          "barrier_turns": 2
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1
+      },
+      "item_spent": {},
+      "current_action": null,
+      "phase": "charging"
+    },
+    "repair_pulse_impact": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 0,
+        "protection": 3,
+        "support": 3
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 23,
+          "barrier": 37,
+          "barrier_turns": 2
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1
+      },
+      "item_spent": {},
+      "current_action": "repair_pulse",
+      "phase": "acting"
+    },
+    "repair_pulse_after": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 0,
+        "protection": 3,
+        "support": 3
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 23,
+          "barrier": 37,
+          "barrier_turns": 1
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1
+      },
+      "item_spent": {},
+      "current_action": null,
+      "phase": "charging"
+    },
+    "offense_allocation": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 3,
+        "protection": 1,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 23,
+          "barrier": 37,
+          "barrier_turns": 1
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 85,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1
+      },
+      "item_spent": {},
+      "current_action": null,
+      "phase": "ready"
+    },
+    "charged_bolt_impact": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 3,
+        "protection": 1,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 20,
+          "barrier": 37,
+          "barrier_turns": 1
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 53,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1,
+        "charged_bolt": 1
+      },
+      "item_spent": {},
+      "current_action": "charged_bolt",
+      "phase": "acting"
+    },
+    "charged_bolt_after": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 3,
+        "protection": 1,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 20,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 53,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 85,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1,
+        "charged_bolt": 1
+      },
+      "item_spent": {},
+      "current_action": null,
+      "phase": "charging"
+    },
+    "arc_discharge_impact": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 3,
+        "protection": 1,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 15,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 53,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 59,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1,
+        "charged_bolt": 1,
+        "arc_discharge": 1
+      },
+      "item_spent": {},
+      "current_action": "arc_discharge",
+      "phase": "acting"
+    },
+    "arc_discharge_after": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 3,
+        "protection": 1,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 15,
+          "barrier": 0,
+          "barrier_turns": 0
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 53,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 59,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1,
+        "charged_bolt": 1,
+        "arc_discharge": 1
+      },
+      "item_spent": {},
+      "current_action": null,
+      "phase": "charging"
+    },
+    "impact_bolt_impact": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 11,
+          "barrier": 15,
+          "barrier_turns": 2
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 36,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 59,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1,
+        "charged_bolt": 1,
+        "arc_discharge": 1,
+        "impact_bolt": 1
+      },
+      "item_spent": {},
+      "current_action": "impact_bolt",
+      "phase": "acting"
+    },
+    "impact_bolt_after": {
+      "text_scale": 1.0,
+      "allocation": {
+        "weapons": 2,
+        "protection": 2,
+        "support": 2
+      },
+      "party": {
+        "player": {
+          "hp": 81,
+          "mp": 0,
+          "barrier": 0,
+          "barrier_turns": 0
+        },
+        "mira": {
+          "hp": 150,
+          "mp": 11,
+          "barrier": 15,
+          "barrier_turns": 2
+        }
+      },
+      "enemies": {
+        "enemy": {
+          "hp": 36,
+          "mp": 5
+        },
+        "enemy_2": {
+          "hp": 59,
+          "mp": 5
+        }
+      },
+      "skill_uses": {
+        "bulwark": 1,
+        "repair_pulse": 1,
+        "charged_bolt": 1,
+        "arc_discharge": 1,
+        "impact_bolt": 1
+      },
+      "item_spent": {},
+      "current_action": null,
+      "phase": "charging"
+    }
+  },
+  "actions": [
+    {
+      "skill": "bulwark",
+      "before": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 0,
+          "protection": 3,
+          "support": 3
+        },
+        "party": {
+          "player": {
+            "hp": 40,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 30,
+            "barrier": 0,
+            "barrier_turns": 0
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 85,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {},
+        "item_spent": {},
+        "current_action": null,
+        "phase": "ready"
+      },
+      "after": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 0,
+          "protection": 3,
+          "support": 3
+        },
+        "party": {
+          "player": {
+            "hp": 40,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 27,
+            "barrier": 37,
+            "barrier_turns": 2
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 85,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "charging"
+      }
+    },
+    {
+      "skill": "repair_pulse",
+      "before": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 0,
+          "protection": 3,
+          "support": 3
+        },
+        "party": {
+          "player": {
+            "hp": 40,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 27,
+            "barrier": 37,
+            "barrier_turns": 2
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 85,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "ready"
+      },
+      "after": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 0,
+          "protection": 3,
+          "support": 3
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 23,
+            "barrier": 37,
+            "barrier_turns": 1
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 85,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "charging"
+      }
+    },
+    {
+      "skill": "charged_bolt",
+      "before": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 3,
+          "protection": 1,
+          "support": 2
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 23,
+            "barrier": 37,
+            "barrier_turns": 1
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 85,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "ready"
+      },
+      "after": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 3,
+          "protection": 1,
+          "support": 2
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 20,
+            "barrier": 0,
+            "barrier_turns": 0
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 53,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1,
+          "charged_bolt": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "charging"
+      }
+    },
+    {
+      "skill": "arc_discharge",
+      "before": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 3,
+          "protection": 1,
+          "support": 2
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 20,
+            "barrier": 0,
+            "barrier_turns": 0
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 53,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 85,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1,
+          "charged_bolt": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "ready"
+      },
+      "after": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 3,
+          "protection": 1,
+          "support": 2
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 15,
+            "barrier": 0,
+            "barrier_turns": 0
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 53,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 59,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1,
+          "charged_bolt": 1,
+          "arc_discharge": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "charging"
+      }
+    },
+    {
+      "skill": "impact_bolt",
+      "before": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 2,
+          "protection": 2,
+          "support": 2
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 15,
+            "barrier": 0,
+            "barrier_turns": 0
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 53,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 59,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1,
+          "charged_bolt": 1,
+          "arc_discharge": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "ready"
+      },
+      "after": {
+        "text_scale": 1.0,
+        "allocation": {
+          "weapons": 2,
+          "protection": 2,
+          "support": 2
+        },
+        "party": {
+          "player": {
+            "hp": 81,
+            "mp": 0,
+            "barrier": 0,
+            "barrier_turns": 0
+          },
+          "mira": {
+            "hp": 150,
+            "mp": 11,
+            "barrier": 15,
+            "barrier_turns": 2
+          }
+        },
+        "enemies": {
+          "enemy": {
+            "hp": 36,
+            "mp": 5
+          },
+          "enemy_2": {
+            "hp": 59,
+            "mp": 5
+          }
+        },
+        "skill_uses": {
+          "bulwark": 1,
+          "repair_pulse": 1,
+          "charged_bolt": 1,
+          "arc_discharge": 1,
+          "impact_bolt": 1
+        },
+        "item_spent": {},
+        "current_action": null,
+        "phase": "charging"
+      }
+    }
+  ],
+  "video": {
+    "file": "mira_rig_combat.mp4",
+    "frames": 132,
+    "fps": 20,
+    "audio": false
+  },
+  "fingerprints": {
+    "battle_model.py": "3faad6aec62a27c5bb45d9c6e9628798c817e1c9f9ad0ee462498b188e9eff34",
+    "battle_scene.py": "8b9f3f51f28f0c0eae803bdebeb886e64d5059c0e5e5124483f5314b0ad2be82",
+    "mira_rig_ui.py": "c1c00e47f899969fd70ba937c5492b97dfc57dfb53ade6f4f771b99ec16cff28",
+    "mira_rig_rules.py": "74d508beb27f9f563bc0c328e0d42834b1be86e49864f0d04fbacc6e381b20b3"
+  }
+}

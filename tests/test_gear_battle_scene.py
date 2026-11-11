@@ -105,9 +105,8 @@ class GearBattleSceneTests(unittest.TestCase):
             self.key(pygame.K_RETURN)
 
     def test_hover_slows_every_charging_gauge_and_leaves_ready_choices_frozen(self):
-        bot = self.model.bot_for()
-        bot.haste_turns = 8
-        actors = (*self.model.party, bot, self.model.enemy)
+        self.assertEqual(self.model.bots, ())
+        actors = (*self.model.party, self.model.enemy)
         self.pointer(pygame.MOUSEMOTION, self.scene.gear.rect.center)
         self.assertEqual(self.scene.atb_multiplier, .25)
         self.scene.update(.4)
@@ -129,16 +128,14 @@ class GearBattleSceneTests(unittest.TestCase):
         for other_atb in (0, .99):
             with self.subTest(other_atb=other_atb):
                 self.make_scene()
-                bot = self.model.bot_for()
-                bot.haste_turns = 8
-                others = (self.model.combatant('mira'), bot, self.model.enemy)
+                others = (self.model.combatant('mira'), self.model.enemy)
                 for actor in others:
                     actor.atb = other_atb
                 self.model.player.atb = 1
                 self.scene.update(0)
                 self.assertTrue(self.model.choose_action('attack'))
                 before = {actor.identifier: actor.atb
-                          for actor in (*self.model.party, bot, self.model.enemy)}
+                          for actor in (*self.model.party, self.model.enemy)}
                 self.pointer(pygame.MOUSEMOTION, self.scene.gear.rect.center)
                 self.assertFalse(self.scene.gear_enabled)
                 self.assertEqual(self.scene.atb_multiplier, .25)
@@ -147,11 +144,11 @@ class GearBattleSceneTests(unittest.TestCase):
                 self.assertIsNone(self.model.current_action)
                 self.assertEqual(self.model.phase, 'charging')
                 self.assertEqual(self.model.last_action.elapsed, duration)
-                for actor in (*self.model.party, bot, self.model.enemy):
+                for actor in (*self.model.party, self.model.enemy):
                     self.assertAlmostEqual(actor.atb, before[actor.identifier]+
                                            self.model.atb_rate(actor)*.1*.25)
                     self.assertLess(actor.atb, 1)
-                self.assertEqual(bot.haste_turns, 8)
+                self.assertEqual(self.model.bots, ())
 
     def test_window_resize_reprojects_hover_and_cancels_an_unfinished_gesture(self):
         def to_canvas(point):

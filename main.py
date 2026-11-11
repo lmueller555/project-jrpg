@@ -47,6 +47,7 @@ from party_ui import PartyUI
 from party_travel import PartyTravel
 from character_abilities import CharacterAbilities
 from bot_loadouts import BotLoadouts
+from mira_rig_state import MiraRigState, migrate_mira_rig
 from status_ui import StatusUI
 from battle_rewards import BattleRewards
 from legacy_save import migrate_retired_progression
@@ -515,6 +516,7 @@ class Game:
         self.battle_rewards=BattleRewards(self.inventory)
         self.character_abilities=CharacterAbilities(self.inventory)
         self.bot_loadouts=BotLoadouts()
+        self.mira_rig=MiraRigState()
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -642,7 +644,7 @@ class Game:
                            'character_levels':self.character_progression.to_dict(),
                            'party':self.party.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
-                           'bot_loadouts':self.bot_loadouts.to_dict(),
+                           'mira_rig':self.mira_rig.to_dict(),
                            'battle_rewards':self.battle_rewards.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
@@ -712,7 +714,7 @@ class Game:
             self.save_error=self.save_store.error
             return None
         try:
-            data=migrate_legacy_cave(migrate_retired_progression(data))
+            data=migrate_mira_rig(migrate_legacy_cave(migrate_retired_progression(data)))
         except (TypeError, ValueError, OSError, KeyError):
             self.save_error='The saved journey could not be read.'
             return None
@@ -741,7 +743,7 @@ class Game:
                CharacterProgression.valid_journey(data) and
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
-               BotLoadouts.valid_journey(data) and
+               MiraRigState.valid_journey(data) and
                (not RegentQuest.sanctuary_party_snapshot(data.get('regent_quest')) or 'party' in data) and
                ('party' not in data or self._valid_party_snapshot(data)) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
@@ -905,7 +907,9 @@ class Game:
             self.character_abilities.restore(data.get('character_abilities'))
             self._migrate_legacy_blade((data.get('mill_quest') or {}).get('legacy_bypass',False))
         self.bot_loadouts=BotLoadouts()
-        if data is not None and 'bot_loadouts' in data:self.bot_loadouts.restore(data['bot_loadouts'])
+        self.mira_rig=MiraRigState()
+        if data is not None and 'mira_rig' in data:
+            if not self.mira_rig.restore(data['mira_rig']):return False
         self.overworld_travel.restore(data.get('overworld') if data else None)
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.reset()
@@ -1035,7 +1039,7 @@ class Game:
               'character_levels':self.character_progression.to_dict(),
               'party':self.party.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
-              'bot_loadouts':self.bot_loadouts.to_dict(),
+              'mira_rig':self.mira_rig.to_dict(),
               'battle_rewards':self.battle_rewards.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),

@@ -113,10 +113,10 @@ class ThreeMemberBattleTests(unittest.TestCase):
         self.assertEqual(model.phase, 'defeat')
         self.assertEqual(model.bots, ())
 
-    def test_bot_attachment_uses_no_party_slot_and_reserve_mira_deploys_nothing(self):
+    def test_rig_uses_only_miras_party_slot_and_reserve_mira_deploys_nothing(self):
         model = self.model()
         self.assertEqual(len(model.party), 3)
-        self.assertEqual([bot.identifier for bot in model.bots], ['rivet'])
+        self.assertEqual(model.bots, ())
         self.assertIsNone(model._party_actor('rivet'))
         self.assertFalse(model.select_ready('rivet'))
         model = self.model(profiles('player', 'lucan', 'edran'))
@@ -166,7 +166,7 @@ class ThreeMemberBattleUITests(unittest.TestCase):
 
     def tearDown(self):pygame.quit()
 
-    def test_three_columns_max_resources_and_bot_fit_at_minimum_and_default_size(self):
+    def test_three_columns_max_resources_and_rig_fit_at_minimum_and_default_size(self):
         for identifiers in (('player', 'mira', 'edran'), ('player', 'lucan', 'rhea')):
             model = BattleModel(self.game.attributes,
                                 party_members=profiles(*identifiers, maximum=True),
@@ -221,7 +221,7 @@ class ThreeMemberBattleUITests(unittest.TestCase):
                         for _, bounds in records:
                             if bounds.colliderect(scene.commands_panel):
                                 self.assertTrue(scene.commands_panel.contains(bounds))
-                        self.assertEqual(scene.bot_status, {})
+                        self.assertEqual(scene.model.bots, ())
                         self.assertFalse(any(text == 'Rivet ATB' or text.startswith('Haste ·')
                                              for text, _ in records))
 

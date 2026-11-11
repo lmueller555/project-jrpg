@@ -45,11 +45,11 @@ class PartyBattleModelTests(unittest.TestCase):
         model.combatant('mira').atb = .05
         model.update(1000)
         self.assertEqual(model.ready_actor, 'mira')
-        self.assertEqual(model.available_actions(), ['attack', 'guard', 'flee', 'overclock'])
+        self.assertEqual(model.available_actions(), ['attack', 'guard', 'flee', 'charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge'])
         self.assertTrue(model.choose_action('attack'))
         self.assertEqual(model.current_action.action, 'bolt_shot')
         model.update(.4)
-        self.assertEqual(model.current_action.damage, 13)
+        self.assertEqual(model.current_action.damage, 17)
         model.update(1000)
         self.assertEqual(model.ready_actor, 'player')
         self.assertTrue(model.choose_action('attack'))
@@ -69,8 +69,7 @@ class PartyBattleModelTests(unittest.TestCase):
         before = self.snapshot(model)
         for seconds in (.1, 7, 10000):model.update(seconds)
         self.assertEqual(self.snapshot(model), before)
-        self.assertEqual(model.events, [{'type': 'bot_deployed', 'actor': 'rivet', 'owner': 'mira'},
-                                       {'type': 'player_ready', 'actor': 'mira'}])
+        self.assertEqual(model.events, [{'type': 'player_ready', 'actor': 'mira'}])
 
     def test_simultaneous_party_readiness_allows_selection_before_enemy_turn(self):
         guests = json.loads(GUEST_PATH.read_text())

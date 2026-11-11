@@ -139,7 +139,7 @@ class ItemGameplayTests(unittest.TestCase):
         model.combatant('mira').hp = 0
         self.ready();self.assertTrue(model.choose_item('revival_salts', 'mira'));model.update(1.)
         record = self.victory()
-        self.assertEqual(record['version'], 3)
+        self.assertEqual(record['version'], 4)
         self.assertEqual(record['item_costs'], {'potion': 1, 'ether': 1, 'revival_salts': 1})
         before = deepcopy(game.inventory.to_dict())
         expected = encounter_drops('cave', ticket, ticket['receipt'], {})
@@ -208,6 +208,7 @@ class ItemGameplayTests(unittest.TestCase):
         ticket = self.cave();record = self.victory()
         data = json.loads(self.path.read_text())
         old = data['post_battle'];old['version'] = 2
+        for key in ('rig_before', 'rig_after', 'rig_skill_uses', 'rig_healing', 'rig_stats'):old.pop(key)
         old.pop('item_costs');old.pop('item_before')
         old['offered_drops'] = battle_reward_definition('cave', ticket)['drops']
         old['rewards'] = {'drops': dict(old['offered_drops'])}

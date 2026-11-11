@@ -154,12 +154,12 @@ class AetherEdgeBattleModelTests(unittest.TestCase):
         model.player.atb=model.combatant('mira').atb=1;model.update(0)
         self.assertTrue(model.choose_action('aether_edge',actor_id='player'));model.update(model.current_action.duration)
         self.assertEqual(model.ready_actor,'mira')
-        self.assertEqual(model.skill_actions(),['overclock'])
+        self.assertEqual(model.skill_actions(),['charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge'])
         self.assertNotIn('aether_edge',model.available_actions())
         self.assertFalse(model.choose_action('aether_edge'))
         self.assertTrue(model.choose_action('attack'));model.update(.4)
         self.assertEqual(model.current_action.damage,
-                         physical_damage(model.combatant('mira'),model.enemy,.75))
+                         physical_damage(model.combatant('mira'),model.enemy,1))
         self.assertEqual(model.combatant('mira').mp,30)
 
     def test_spellblade_schema_validates_its_bonus_and_rejects_retired_hit_charges(self):

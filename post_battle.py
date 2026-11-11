@@ -19,6 +19,7 @@ PARTY_FIELDS = {'party_before', 'party_resources', 'party_active'}
 CAVE_FIELDS = FIELDS | PARTY_FIELDS | {'encounter'}
 PROGRESSION_FIELDS = {'progression', 'offered_drops'}
 ITEM_FIELDS = {'item_costs', 'item_before'}
+RIG_FIELDS = {'rig_before', 'rig_after', 'rig_skill_uses', 'rig_healing', 'rig_stats'}
 
 
 def _previous_reward_xp(kind, encounter=None):
@@ -84,12 +85,14 @@ def valid_pending_snapshot(record, data=None):
     elemental = isinstance(record, dict) and record.get('kind') == 'elemental_boss'
     boss = isinstance(record, dict) and record.get('kind') in ('cave_boss', 'elemental_boss')
     cave_battle = cave or boss
-    modern = isinstance(record, dict) and type(record.get('version')) is int and record['version'] in (2, 3)
-    item_version = modern and record['version'] == 3
-    extra = (PROGRESSION_FIELDS | (ITEM_FIELDS if item_version else set())) if modern else set()
+    modern = isinstance(record, dict) and type(record.get('version')) is int and record['version'] in (2, 3, 4)
+    item_version = modern and record['version'] in (3, 4)
+    rig_version = modern and record['version'] == 4
+    extra = ((PROGRESSION_FIELDS | (ITEM_FIELDS if item_version else set())
+              | (RIG_FIELDS if rig_version else set())) if modern else set())
     shapes = (FIELDS | extra, FIELDS | PARTY_FIELDS | extra, CAVE_FIELDS | extra)
     if (not isinstance(record, dict) or set(record) not in shapes
-            or type(record['version']) is not int or record['version'] not in (1, 2, 3)
+            or type(record['version']) is not int or record['version'] not in (1, 2, 3, 4)
             or record['kind'] not in ('bat', 'mill', 'cave', 'cave_boss', 'elemental_boss')
             or (set(record) == CAVE_FIELDS | extra) != cave_battle
             or (boss and not modern)
@@ -111,6 +114,12 @@ def valid_pending_snapshot(record, data=None):
         if not valid_costs(costs, record['item_before']):return False
     from consumables import resource_allowances
     hp_gain, mp_gain = resource_allowances(costs)
+    if rig_version:
+        from character_progression import CharacterProgression
+        from mira_rig_settlement import valid_rig_outcome
+        if (not CharacterProgression.valid_plan(record['progression'])
+                or not valid_rig_outcome(record, mp_gain)):return False
+    healing = record.get('rig_healing', {})
     has_party = 'party_active' in record
     if modern and not has_party:return False
     if has_party:
@@ -129,7 +138,8 @@ def valid_pending_snapshot(record, data=None):
         for identifier in active:
             before, after = record['party_before'][identifier], record['party_resources'][identifier]
             if after['mp'] > before['mp']+mp_gain:return False
-            if (cave_battle or identifier != 'caelan' or not record['incapacitated']) and after['hp'] > before['hp']+hp_gain:
+            if ((cave_battle or identifier != 'caelan' or not record['incapacitated'])
+                    and after['hp'] > before['hp']+hp_gain+healing.get(identifier, 0)):
                 return False
         if cave_battle and not any(value['hp'] for value in record['party_resources'].values()):return False
     mill = record['kind'] == 'mill'
@@ -198,7 +208,8 @@ def valid_pending_snapshot(record, data=None):
                 if hp != 0:return False
             elif hp != expected:return False
     if record['resources']['mp'] > record['before']['mp']+mp_gain:return False
-    if (cave_battle or not record['incapacitated']) and record['resources']['hp'] > record['before']['hp']+hp_gain:return False
+    if ((cave_battle or not record['incapacitated'])
+            and record['resources']['hp'] > record['before']['hp']+hp_gain+healing.get('caelan', 0)):return False
     if data is None:return True
     try:
         if (data['player']['scene'] != record['scene']
@@ -219,6 +230,11 @@ def valid_pending_snapshot(record, data=None):
             if (not CaveRandomEncounters.valid_snapshot(state)
                     or state.get('pending') != record['encounter']):return False
         awarded = record['stage'] == 'awarded'
+        if rig_version:
+            from mira_rig_state import MiraRigState
+            rig = MiraRigState()
+            expected_rig = record['rig_after'] if awarded else record['rig_before']
+            if not rig.restore(data.get('mira_rig')) or rig.to_dict() != expected_rig:return False
         if item_version:
             inventory = Inventory()
             if 'inventory' not in data or not inventory.restore(data['inventory']):return False

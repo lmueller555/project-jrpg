@@ -56,7 +56,7 @@ class ConsumableModelTests(unittest.TestCase):
         self.assertEqual(model.player.mp, 30)
         self.assertEqual(model.item_spent, {'potion': 2, 'ether': 1})
 
-    def test_revival_can_target_only_ko_party_and_resumes_bot_without_free_atb(self):
+    def test_revival_can_target_only_ko_party_without_free_atb_or_autonomous_actor(self):
         model = self.model();mira = model.combatant('mira')
         mira.hp = 0;model._sync_bot_activity()
         self.ready(model)
@@ -69,8 +69,8 @@ class ConsumableModelTests(unittest.TestCase):
         self.assertTrue(model.choose_item('revival_salts', 'mira'));model.update(.5)
         self.assertEqual(mira.hp, 38)
         self.assertEqual(mira.atb, 0.)
-        self.assertIsNotNone(model.active_bot('mira'))
-        self.assertTrue(any(event['type'] == 'bot_resumed' for event in model.drain_events()))
+        self.assertIsNone(model.active_bot('mira'))
+        self.assertFalse(any(event['type'] == 'bot_resumed' for event in model.drain_events()))
 
     def test_smoke_obeys_flee_rules_and_no_items_can_skip_a_guided_lesson(self):
         model = self.model();self.ready(model)

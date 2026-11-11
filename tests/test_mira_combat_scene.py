@@ -33,8 +33,11 @@ def fixture_manifest():
     return {'canvas': [64, 64], 'anchor': [32, 54], 'animations': {
         'attack': {'loop': False, 'release_ms': 280, 'contact_ms': 400, 'frames': frames},
         'idle': {'loop': True, 'frames': [deepcopy(frames[0]), deepcopy(frames[1])]},
-        'overclock': {'loop': False, 'contact_ms': 500, 'frames': [
-            {**deepcopy(frames[0]), 'duration_ms': 900}]},
+        'bulwark': {'loop': False, 'contact_ms': 620, 'frames': [
+            {**deepcopy(frames[0]), 'duration_ms': 620,
+             'anchors': {'floor': [32, 54], 'muzzle': [14, 34], 'projector': [12, 32]}},
+            {**deepcopy(frames[1]), 'duration_ms': 480,
+             'anchors': {'floor': [32, 54], 'muzzle': [12, 33], 'projector': [8, 29]}}]},
     }}
 
 
@@ -105,7 +108,8 @@ class MiraCombatSceneTests(unittest.TestCase):
         self.mira.atb = 1
         self.scene.update(0)
         self.scene.draw(self.canvas, self.game.ui_surface)
-        if command == 'overclock':
+        if command == 'bulwark':
+            self.assertTrue(self.model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
             self.click(self.scene.command_rects['skills'].center)
         self.click(self.scene.command_rects[command].center)
         return self.model.current_action
@@ -181,21 +185,22 @@ class MiraCombatSceneTests(unittest.TestCase):
             self.scene.update(.01)
         self.assertEqual([call.args for call in cues.call_args_list], [('focus',)])
 
-    def test_overclock_controller_activation_uses_current_drawing_anchor(self):
-        self.choose('overclock')
-        self.scene.update(.5)
-        self.assertEqual(self.model.bot_for('mira').haste_turns, 8)
-        point = self.scene.mira_art.world_anchor('overclock', 500, 'controller',
-                                                 self.scene._home_positions()['mira'])
-        with patch('battle_scene.pygame.draw.line', wraps=pygame.draw.line) as lines:
-            self.scene._draw_mira_effects(self.canvas)
-        self.assertEqual(lines.call_count, 2)
-        x, y = (round(n) for n in point)
-        self.assertEqual(lines.call_args_list[0].args[2], (x-3, y-2))
+    def test_bulwark_projector_uses_current_drawing_anchor_and_actual_impact(self):
+        action = self.choose('bulwark')
+        self.scene.update(action.impact_at-.001)
+        self.assertEqual(self.mira.barrier, 0)
+        self.scene.update(.001)
+        self.assertGreater(self.mira.barrier, 0)
+        point = self.scene.mira_art.world_anchor('bulwark', 620, 'projector',
+                                                 self.scene._positions()['mira'])
+        geometry = self.scene._rig_skill_geometry()
+        self.assertEqual(tuple(geometry['attachment']), point)
+        self.assertEqual(geometry['target_id'], 'mira')
+        self.assertIsNone(geometry['fraction'])
+        self.scene._draw_rig_skill_effects(self.canvas, self.scene._positions())
         self.game.audio.reduced_motion = True
-        with patch('battle_scene.pygame.draw.line') as lines:
-            self.scene._draw_mira_effects(self.canvas)
-        self.assertFalse(lines.called)
+        self.scene._draw_rig_skill_effects(self.canvas, self.scene._positions())
+        self.assertEqual(self.mira.barrier, 37)
 
 
 if __name__ == '__main__':

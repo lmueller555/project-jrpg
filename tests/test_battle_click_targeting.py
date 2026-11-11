@@ -189,8 +189,9 @@ class BattleClickTargetingTests(unittest.TestCase):
 
     def test_selected_support_skill_does_not_target_or_cast_on_an_enemy(self):
         scene, model = self.scene(enemy='ridgeback_tusker', guest=True, ready=('mira',))
-        self.select_skill(scene, 'overclock')
-        self.assertEqual(model.action_reason('overclock'), '')
+        self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+        self.select_skill(scene, 'bulwark')
+        self.assertEqual(model.action_reason('bulwark'), '')
         before = self.resources(model)
         self.click(scene, scene.enemy_rects['enemy'].center)
         self.assertEqual(self.resources(model), before)
@@ -317,7 +318,9 @@ class BattleClickTargetingTests(unittest.TestCase):
                 elif blocked == 'unfocused':scene.focused = False
                 elif blocked == 'tutorial':
                     scene._tutorial_queue.append({'speaker': 'mira', 'text': 'Wait.', 'help': ''})
-                elif blocked == 'support':self.select_skill(scene, 'overclock')
+                elif blocked == 'support':
+                    self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+                    self.select_skill(scene, 'bulwark')
                 self.draw(scene)
                 self.assertEqual(scene.target_marker_rects, {})
 

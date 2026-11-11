@@ -21,6 +21,9 @@ from battle_choreography import timing_override
 from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
                            roll_variance)
 from gear_state import DEFAULT_GEM, GEM_NAMES, GEM_ORDER, REQUIRED_GEMS, valid_gem
+from mira_rig_rules import (CHANNELS as RIG_CHANNELS, CAPACITY as RIG_CAPACITY,
+                           DEFAULT_ALLOCATION, SKILLS as RIG_SKILLS,
+                           valid_allocation, healing_amount, barrier_amount)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -32,7 +35,7 @@ RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
 ELEMENTAL_EDGE_ACTIONS = ('aqua_edge', 'flame_edge', 'ice_edge')
-SUPPORTED_SKILL_ACTIONS = ('aether_edge', *ELEMENTAL_EDGE_ACTIONS, 'overclock')
+SUPPORTED_SKILL_ACTIONS = ('aether_edge', *ELEMENTAL_EDGE_ACTIONS, *RIG_SKILLS)
 ELEMENTAL_EDGE_ATTEMPTS = ('aqua_edge',)
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
@@ -62,24 +65,46 @@ def load_actions(data=None):
         raise ValueError('Invalid battle action catalog')
     fields = {'name', 'kind', 'potency', 'mp_cost', 'duration', 'impact_at', 'animation', 'target'}
     for identifier, action in data['actions'].items():
-        expected_fields = fields
+        expected_fields = fields.copy()
         if isinstance(action, dict):
             expected_fields = (fields | {'weapon_hits'} if action.get('kind') == 'enchant' else
                                fields | {'turns', 'rate_multiplier'} if action.get('kind') == 'haste' else
-                               fields | {'magical_potency'} if action.get('kind') == 'spellblade' else fields)
+                               fields | {'magical_potency'} if action.get('kind') == 'spellblade' else fields.copy())
             if 'element' in action:expected_fields = expected_fields | {'element'}
+            if 'power_requirements' in action:expected_fields |= {'power_requirements'}
+            if 'barrier_percent' in action:expected_fields |= {'barrier_percent', 'barrier_turns'}
+            if action.get('kind') == 'heal':expected_fields |= {'heal_percent', 'spirit_multiplier'}
         if (not isinstance(identifier, str) or not identifier
                 or not isinstance(action, dict)
                 or set(action) != expected_fields
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'haste', 'spellblade', 'failed_edge')
-                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'owned_bot')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'haste', 'spellblade', 'failed_edge', 'barrier', 'heal')
+                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'owned_bot', 'ally')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
                 or not _number(action['impact_at'], 0, action['duration'])
                 or not _number(action['potency'])):
             raise ValueError('Invalid battle action')
+        if 'power_requirements' in action:
+            requirements = action['power_requirements']
+            if (identifier not in RIG_SKILLS or not isinstance(requirements, dict)
+                    or set(requirements) != set(RIG_CHANNELS)
+                    or any(not _integer(value, 0, RIG_CAPACITY) for value in requirements.values())
+                    or sum(requirements.values()) > RIG_CAPACITY):
+                raise ValueError('Invalid rig power requirements')
+        if identifier in RIG_SKILLS:
+            rule = RIG_SKILLS[identifier]
+            if (action.get('power_requirements') != rule['requirements']
+                    or action['kind'] != rule['kind'] or action['mp_cost'] != rule['mp_cost']
+                    or action['potency'] != rule['potency']
+                    or action.get('barrier_percent') != rule.get('barrier_percent')
+                    or action.get('element') != rule.get('element')):
+                raise ValueError('Rig action does not match its canonical rules')
+        if 'barrier_percent' in action:
+            if (identifier not in RIG_SKILLS or not _integer(action['barrier_percent'], 1, 100)
+                    or action['barrier_turns'] != 2 or type(action['barrier_turns']) is not int):
+                raise ValueError('Invalid rig barrier')
         if 'element' in action:
             from bestiary import ELEMENT_IDS
             if (action['kind'] not in ('physical', 'magical', 'spellblade')
@@ -105,6 +130,14 @@ def load_actions(data=None):
                     or not _integer(action['turns'], 1, 999)
                     or not _number(action['rate_multiplier'], 1.001, 10)):
                 raise ValueError('Invalid bot haste')
+        elif action['kind'] == 'barrier':
+            if action['potency'] != 0 or action['target'] != 'self' or 'barrier_percent' not in action:
+                raise ValueError('Invalid barrier action')
+        elif action['kind'] == 'heal':
+            if (identifier != 'repair_pulse' or action['potency'] != 0 or action['target'] != 'ally'
+                    or type(action['heal_percent']) is not int or action['heal_percent'] != 15
+                    or type(action['spirit_multiplier']) is not int or action['spirit_multiplier'] != 2):
+                raise ValueError('Invalid restorative skill')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
               or action['target'] != ('self' if action['kind'] in ('guard', 'prepare', 'recover', 'failed_edge') else 'none')):
             raise ValueError('Invalid utility action')
@@ -206,6 +239,8 @@ class Combatant:
     atb: float = 0.0
     guarded: bool = False
     aether_edge_hits: int = 0
+    barrier: int = 0
+    barrier_turns: int = 0
 
     def value(self, identifier):return self.attributes[identifier]
 
@@ -248,6 +283,8 @@ class BattleAction:
     choreography: str | None = None
     weapon_equipped: bool = False
     targets: tuple[str, ...] = ()
+    rig_allocation: dict | None = None
+    barrier_granted: bool = False
 
 
 @dataclass
@@ -426,7 +463,7 @@ class BattleModel:
                  guest_abilities=None, spellblade_tutorial=False, aqua_edge_tutorial=False,
                  elemental_tutorial=False,
                  active_gem=DEFAULT_GEM, owned_gems=GEM_ORDER, party_members=None, initial_atb=False,
-                 initial_atb_seed=None):
+                 initial_atb_seed=None, rig_allocation=None):
         if (type(initial_atb) is not bool or initial_atb_seed is not None
                 and not _integer(initial_atb_seed, maximum=2**63-1)):
             raise ValueError('Invalid initial ATB configuration')
@@ -438,6 +475,12 @@ class BattleModel:
         self.item_counts = None
         self.item_spent = {}
         self.item_definitions = {}
+        rig_allocation = DEFAULT_ALLOCATION if rig_allocation is None else rig_allocation
+        if not valid_allocation(rig_allocation):raise ValueError('Invalid rig allocation')
+        self._rig_allocation = dict(rig_allocation)
+        self.rig_skill_uses = {}
+        self.rig_healing = {}
+        self.restorative_skills = {}
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
             raise ValueError('Unknown battle enemy')
@@ -497,8 +540,10 @@ class BattleModel:
             load_guests(self.actions, guest_data)
         self.party = tuple(members)
         self.guest_abilities = self._guest_ability_map(guest_abilities)
-        self.bot_definitions = load_bots(self.actions)
-        self.bots = self._make_bots(bot_loadouts)
+        # The wearable rig replaces the autonomous combat attachment. Retired
+        # loadout inputs remain accepted until their story/compatibility cleanup.
+        self.bot_definitions = {}
+        self.bots = ()
         self._bot_owner_alive = {bot.identifier: bool(self.combatant(bot.owner_id).hp)
                                  for bot in self.bots}
         self._active_actor = 'player'
@@ -766,6 +811,34 @@ class BattleModel:
         if actor_id is None:actor_id = self._active_actor
         return next((member for member in self.party if member.identifier == actor_id), None)
 
+    @property
+    def rig_allocation(self):return dict(self._rig_allocation)
+
+    def rig_reason(self):
+        mira = self._party_actor('mira')
+        if mira is None:return 'Mira is not in the combat party.'
+        if not mira.hp:return 'Mira is incapacitated.'
+        if self.ended:return 'The battle has ended.'
+        if self.lesson_guided:return 'Finish the guided action first.'
+        if self.phase == 'acting':return 'Wait for the current action to finish.'
+        if self.phase != 'charging' and not (self.phase == 'ready' and self.ready_actor == 'mira'):
+            return 'Select Mira when she is ready.'
+        return ''
+
+    def set_rig_allocation(self, allocation):
+        if not valid_allocation(allocation) or self.rig_reason():return False
+        self._rig_allocation = dict(allocation)
+        return True
+
+    def _repair_reason(self, target_id):
+        if target_id is None:
+            return '' if any(member.hp and member.hp < member.max_hp for member in self.party) else 'No injured living ally.'
+        target = self._party_actor(target_id)
+        if target is None:return 'Choose an active party member.'
+        if not target.hp:return 'Repair Pulse cannot revive a KO character.'
+        if target.hp >= target.max_hp:return 'HP is already full.'
+        return ''
+
     def available_actions(self, actor_id=None):
         actor = self._party_actor(actor_id)
         if actor is None:return []
@@ -784,8 +857,8 @@ class BattleModel:
             return [key for key in ('aether_edge', *REQUIRED_GEMS)
                     if key in self.learned_abilities and key in self.actions
                     and self.actions[key]['kind'] != 'failed_edge']
-        if actor.identifier == 'mira' and 'overclock' in self.guest_abilities.get('mira', ()):
-            return ['overclock']
+        if actor.identifier == 'mira':
+            return [key for key in RIG_SKILLS if key in self.guest_abilities.get('mira', ())]
         return []
 
     def command_actions(self, actor_id=None):
@@ -825,7 +898,7 @@ class BattleModel:
             return self.guest_definitions[actor.identifier]['attack']
         return command
 
-    def action_reason(self, identifier, actor_id=None):
+    def action_reason(self, identifier, actor_id=None, target_id=None):
         actor = self._party_actor(actor_id)
         if (actor is None or not isinstance(identifier, str)
                 or identifier not in self.available_actions(actor.identifier)):
@@ -850,8 +923,14 @@ class BattleModel:
             gem = REQUIRED_GEMS[identifier]
             if gem not in self.owned_gems:return 'Requires the '+GEM_NAMES[gem]+' gem.'
             if self.active_gem != gem:return 'Requires the '+GEM_NAMES[gem]+' gem.'
-        if identifier == 'overclock' and self.active_bot(actor.identifier) is None:
-            return 'Requires an active bot.'
+        if identifier in RIG_SKILLS:
+            requirements = self.actions[identifier]['power_requirements']
+            missing = [key.title()+' '+str(amount)+' (currently '+str(self._rig_allocation[key])+')'
+                       for key, amount in requirements.items() if self._rig_allocation[key] < amount]
+            if missing:return 'Requires '+', '.join(missing)+'.'
+            if identifier == 'repair_pulse':
+                reason = self._repair_reason(target_id)
+                if reason:return reason
         if self.aqua_edge_guided and identifier != 'aqua_edge':
             return 'Try Aqua Edge from Skills.'
         if actor.mp < self.action_mp_cost(identifier, actor.identifier):
@@ -869,10 +948,10 @@ class BattleModel:
         return self.actions[action_id]['mp_cost']
 
     def choose_action(self, identifier, actor_id=None, target_id=None, *, target=None):
-        if self.action_reason(identifier, actor_id):return False
         if target is not None:
             if target_id is not None and target_id != target:return False
             target_id = target
+        if self.action_reason(identifier, actor_id, target_id):return False
         actor = self._party_actor(actor_id)
         self._active_actor = actor.identifier
         action = ('aqua_edge_attempt' if actor.identifier == 'player' and
@@ -882,6 +961,7 @@ class BattleModel:
             if target_id is not None and not self.select_target(target_id):return False
             target_id = self._living_target(target_id)
             if target_id is None:return False
+        elif self.actions[action]['target'] == 'ally' and target_id is None:return False
         self._start_action(actor.identifier, action, target_id=target_id)
         return True
 
@@ -1050,6 +1130,11 @@ class BattleModel:
                                           active_gem=self.active_gem if actor_id == 'player' else None,
                                           choreography=choreography if timing else None,
                                           weapon_equipped=self.weapon_equipped if actor_id == 'player' else False)
+        if actor_id == 'mira' and identifier in RIG_SKILLS:
+            self.current_action.rig_allocation = self.rig_allocation
+            self.rig_skill_uses[identifier] = self.rig_skill_uses.get(identifier, 0)+1
+            if identifier == 'repair_pulse':
+                self.restorative_skills[identifier] = self.restorative_skills.get(identifier, 0)+1
         if target == 'all_opponents':
             opponents = self.party if enemy_actor else self.enemies
             self.current_action.targets = tuple(member.identifier for member in opponents if member.hp)
@@ -1099,6 +1184,18 @@ class BattleModel:
             self.events.append({'type': 'guard', 'actor': action.actor})
             if self.spellblade_stage == 'guard' and action.actor == 'player':
                 self.spellblade_stage = 'charge';self.enemy.atb = 1.
+        elif action.kind == 'barrier':
+            self._grant_barrier(actor, self.actions[action.action]['barrier_percent'], action)
+            self.message = actor.name+' activates Bulwark.'
+        elif action.kind == 'heal':
+            target = self._party_actor(action.target)
+            if target is not None and target.hp:
+                amount = min(target.max_hp-target.hp, healing_amount(actor.value('spr'), target.max_hp))
+                target.hp += amount
+                if amount:self.rig_healing[target.identifier] = self.rig_healing.get(target.identifier, 0)+amount
+                self.events.append({'type': 'skill_heal', 'actor': actor.identifier,
+                    'target': target.identifier, 'action': action.action, 'amount': amount, 'resource': 'hp'})
+                self.message = target.name+' recovers '+str(amount)+' HP.'
         elif action.kind == 'item':
             from consumables import restore, target_reason
             item_id = action.action.split(':', 1)[1]
@@ -1185,6 +1282,8 @@ class BattleModel:
                     action.resolved = True
                     return
                 action.damage = self._damage_target(action, actor, target)
+            if action.action == 'impact_bolt' and actor.hp:
+                self._grant_barrier(actor, self.actions[action.action]['barrier_percent'], action)
             if self.is_enemy(action.actor):
                 state = self._enemy_states[action.actor]
                 if action.action == state.prepared_action:
@@ -1227,6 +1326,28 @@ class BattleModel:
         if element in profile['absorption']['elements']:return Fraction(1), True
         return Fraction(str(profile['damage_percentages'][element]))/100, False
 
+    def _grant_barrier(self, target, percent, action):
+        previous = target.barrier
+        target.barrier = max(previous, barrier_amount(target.max_hp, percent))
+        target.barrier_turns = 2
+        action.barrier_granted = True
+        self.events.append({'type': 'barrier_applied', 'actor': action.actor,
+            'target': target.identifier, 'action': action.action, 'amount': target.barrier,
+            'previous': previous, 'turns': target.barrier_turns})
+
+    def _clear_barrier(self, target, reason):
+        if target.barrier or target.barrier_turns:
+            target.barrier = target.barrier_turns = 0
+            self.events.append({'type': 'barrier_expired', 'actor': target.identifier,
+                                'target': target.identifier, 'reason': reason})
+
+    def _complete_rig_turn(self, action):
+        target = self._party_actor(action.actor)
+        if target is None or target.identifier != 'mira' or not target.hp:return
+        if target.barrier_turns and not action.barrier_granted:
+            target.barrier_turns -= 1
+            if not target.barrier_turns:self._clear_barrier(target, 'duration')
+
     def _damage_target(self, action, actor, target):
         """Resolve one hit; vulnerability modifies the complete hit once."""
         protected = target.guarded
@@ -1259,6 +1380,14 @@ class BattleModel:
             if state.design is not None and state.vulnerable:
                 factor = Fraction(str(state.design['recovery']['damage_taken_multiplier']))
                 damage = min(NORMAL_DAMAGE_CAP, damage*factor.numerator//factor.denominator)
+        blocked = min(target.barrier, damage)
+        if blocked:
+            target.barrier -= blocked
+            damage -= blocked
+            self.events.append({'type': 'barrier_absorbed', 'actor': action.actor,
+                'target': target.identifier, 'action': action.action,
+                'amount': blocked, 'remaining': target.barrier})
+            if not target.barrier:self._clear_barrier(target, 'depleted')
         before_hp = target.hp
         target.hp = max(0, min(target.max_hp, target.hp-damage+healing))
         restored = max(0, target.hp-max(0, before_hp-damage))
@@ -1269,10 +1398,12 @@ class BattleModel:
                  'target': target.identifier, 'damage': damage,
                  'remaining_hp': target.hp, 'guarded': protected}
         if absorbed:event.update(healing=restored, element=record.get('element'), absorbed=True)
+        if blocked:event['barrier_absorbed'] = blocked
         if enchanted:event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
         self.events.append(event)
         if not target.hp:
             target.atb = 0.0
+            self._clear_barrier(target, 'ko')
             if self.is_enemy(target.identifier):
                 state = self._enemy_states[target.identifier]
                 state.prepared_action = state.telegraphed_target = None
@@ -1288,7 +1419,9 @@ class BattleModel:
                 state.prepared_action = state.telegraphed_target = None
                 state.response_actions = 0
                 state.vulnerable = False
-        for actor in (*self.party, *self.enemies):actor.aether_edge_hits = 0
+        for actor in (*self.party, *self.enemies):
+            actor.aether_edge_hits = 0
+            self._clear_barrier(actor, 'battle_end')
         for bot in self.bots:
             bot.atb = 0.0
             bot.haste_turns = 0
@@ -1316,6 +1449,8 @@ class BattleModel:
     def _sync_bot_activity(self):
         # A lesson cannot keep ordering an incapacitated character to act.
         # Release the companions without treating survival as a skill discovery.
+        for member in self.party:
+            if not member.hp:self._clear_barrier(member, 'ko')
         if self.lesson_guided and not self.player.hp:
             was_aqua = self.aqua_edge_guided
             self.spellblade_stage = self.aqua_edge_stage = None
@@ -1420,12 +1555,14 @@ class BattleModel:
                     # Presentation clocks advance by the caller's full frame,
                     # including time left unused at a ready/result boundary.
                     for event in self.events[event_start:]:
-                        if (event['type'] == 'impact' or event['type'] == 'telegraph'
+                        if (event['type'] in ('impact', 'skill_heal', 'barrier_applied', 'barrier_absorbed')
+                                or event['type'] == 'telegraph'
                                 and event.get('prepared_action')):
                             event['frame_age'] = remaining
                 if action.elapsed+EPSILON >= action.duration:
                     action.elapsed = action.duration
                     self._complete_bot_action(action)
+                    self._complete_rig_turn(action)
                     self.last_action, self.current_action = action, None
                     if self._pending_outcome is not None:
                         self._result(self._pending_outcome)

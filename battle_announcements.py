@@ -32,11 +32,10 @@ def _sequence(model, actor):
 
 
 def basic_attack(model, actor):
-    """Resolve each actor's ordinary attack, including guest/bot aliases."""
+    """Resolve each actor's ordinary attack, including guest aliases."""
     if actor == 'player':return 'attack'
     member = model.combatant(actor)
     if member is None:return None
-    if hasattr(member, 'ability_id'):return member.ability_id
     if actor in model.guest_definitions:return model.guest_definitions[actor]['attack']
     if model.is_enemy(actor):
         record = model.enemy_record(actor)
@@ -307,22 +306,17 @@ class BattleAnnouncements:
             message = {'text': name+' discovers Aether Edge!', 'kind': 'event', 'actor': actor}
         elif kind == 'aqua_edge_discovered':
             message = {'text': name+' learns Aqua Edge!', 'kind': 'event', 'actor': actor}
-        elif kind == 'haste_expired':
-            message = {'text': name+"'s Overclock ends.", 'kind': 'event', 'actor': actor}
-        elif kind == 'haste_applied':
+        elif kind == 'barrier_applied':
             target = _name(self.model, event.get('target'), self.display_name)
-            turns = event.get('remaining_turns')
-            suffix = ' for '+str(turns)+' turns' if type(turns) is int and turns > 0 else ''
-            message = {'text': target+' gains Haste'+suffix+'.', 'kind': 'event', 'actor': actor}
-        elif kind == 'bot_suspended':
-            message = {'text': name+' pauses while its engineer is down.', 'kind': 'event', 'actor': actor}
-        elif kind == 'bot_resumed':
-            message = {'text': name+' resumes fighting.', 'kind': 'event', 'actor': actor}
+            message = {'text': target+' gains a barrier ('+str(event.get('amount', 0))+' HP).',
+                       'kind': 'event', 'actor': actor}
+        elif kind == 'barrier_expired':
+            if event.get('reason') in ('ko', 'result', 'battle_end'):return
+            target = _name(self.model, event.get('target', actor), self.display_name)
+            message = {'text': target+"'s barrier "+('breaks.' if event.get('reason') in ('broken', 'depleted') else 'ends.'),
+                       'kind': 'event', 'actor': actor}
         elif kind == 'guard':
             self._show({'text': name+' uses Guard.', 'kind': 'event', 'actor': actor}, only_empty=True)
-            return
-        elif kind == 'bot_deployed':
-            self._show({'text': name+' deployed.', 'kind': 'event', 'actor': actor}, only_empty=True)
             return
         if message is not None:self._show(message, priority=1)
 
