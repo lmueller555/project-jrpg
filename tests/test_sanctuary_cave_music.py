@@ -217,7 +217,7 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
         self.assertTrue(other.music.end_battle())
         self.assertEqual(other.music.desired_track, 'sanctuary_cave')
 
-    def test_runtime_cue_and_provenance_match_the_unchanged_original_upload(self):
+    def test_runtime_cue_and_provenance_match_the_replacement_upload(self):
         catalog = json.loads((ROOT/'assets/music/tracks.json').read_text())
         self.assertEqual(catalog['tracks']['sanctuary_cave'],
                          {'file': 'runtime/elden_vale_sanctuary_cave.ogg', 'gain': .45})
@@ -226,7 +226,7 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
         original = (ROOT/'assets/music'/record['source']).read_bytes()
         self.assertEqual(record['source_sha256'], hashlib.sha256(original).hexdigest())
         self.assertEqual(record['source_git_blob_sha'],
-                         'f1ea34eee45acba92385339435a652c423f41376')
+                         '220628c072a322cf4f0ec205708db3d3287c770e')
         self.assertEqual(record['boundaries']['removed_tail_frames'], 0)
         self.assertEqual(record['boundaries']['boundary_declick_ms'], 0)
         self.assertEqual(record['verification']['sha256'], hashlib.sha256(
