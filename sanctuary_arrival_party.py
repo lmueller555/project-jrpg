@@ -1,10 +1,12 @@
 """Temporary three-person rescue formation acknowledged at Sanctuary arrival.
 
 This helper reconciles only the named MQ03 event. The cinematic owns saving
-and rollback of its completion checkpoint; this module never restores HP/MP,
-levels, equipment or skills and never makes Lucan a permanent recruit.
+and rollback of its completion checkpoint. A one-time cave receipt installs
+Lucan's authored guest profile without resetting it on ordinary reconciliation.
 """
 from __future__ import annotations
+
+from lucan_guest import initialize_lucan_guest
 
 
 EVENT_ID = 'mq03_sanctuary'
@@ -25,6 +27,8 @@ def sync_arrival_party(game):
     arrival = getattr(game, 'sanctuary_arrival', None)
     if not getattr(arrival, 'completed', False):return None
     party = game.party
+    departed = bool(getattr(getattr(game, 'sanctuary_cave', None), 'lucan_departed', False))
+    required = ('caelan', 'mira') if departed else REQUIRED
     stage = getattr(getattr(game, 'regent_quest', None), 'stage', None)
     if stage not in TRIP_STAGES:
         if party.current_event_id == EVENT_ID:
@@ -42,23 +46,31 @@ def sync_arrival_party(game):
     # A correctly applied event already owns the active trio. Do not reorder
     # the player's supported formation or reset any persistent character owner.
     if (party.current_event_id == EVENT_ID
-            and set(REQUIRED) <= set(party.required_ids)
-            and set(party.active_ids) == set(REQUIRED)
-            and all(party.is_available(key) for key in REQUIRED)):
+            and set(required) == set(party.required_ids)
+            and all(key in party.active_ids and party.is_available(key) for key in required)
+            and (not departed or not party.is_guest('lucan')
+                 or not party.is_available('lucan'))):
+        initialize_lucan_guest(game)
         return True
 
     before = party.to_dict()
     previous_event = before['event']
     if party.current_event_id in ('mq02', EVENT_ID):
         if not party.end_event(party.current_event_id):return False
-    if 'lucan' not in party.members and not party.recruit('lucan', temporary=True):
+    new_guest = not departed and 'lucan' not in party.members
+    if new_guest and not party.recruit('lucan', temporary=True):
         party.restore(before)
         return False
     if (not party.set_available('mira', True)
-            or not party.set_available('lucan', True)
-            or not party.begin_event(EVENT_ID, required=REQUIRED, reason=REASON)):
+            or not departed and not party.set_available('lucan', True)
+            or not party.begin_event(EVENT_ID, required=required,
+                reason='Caelan and Mira are needed at the Sanctuary.' if departed else REASON)):
         party.restore(before)
         return False
+    if departed and party.is_guest('lucan'):
+        if not party.set_available('lucan', False, 'Returned to Aldric after the cave rescue.'):
+            party.restore(before)
+            return False
     if previous_event is not None:
         # Keep the formation from before the original outing, rather than
         # treating its enforced Caelan/Mira pair as the player's old choice.
@@ -67,6 +79,7 @@ def sync_arrival_party(game):
         if not party.restore(proposed):
             party.restore(before)
             return False
+    initialize_lucan_guest(game, new=new_guest)
     return True
 
 
@@ -78,6 +91,17 @@ def valid_arrival_party(data, party):
     record = data.get('regent_quest')
     stage = record.get('stage') if isinstance(record, dict) else None
     if stage not in TRIP_STAGES:return True
+    cave = data.get('sanctuary_cave', {})
+    if not isinstance(cave, dict):return False
+    departed = cave.get('lucan_departed', False)
+    if departed:
+        boss = data.get('sanctuary_boss', {})
+        return (isinstance(boss, dict) and boss.get('defeated') is True
+                and party.current_event_id == EVENT_ID
+                and {'caelan', 'mira'} <= set(party.required_ids)
+                and {'caelan', 'mira'} <= set(party.active_ids)
+                and all(party.is_available(key) for key in ('caelan', 'mira'))
+                and (not party.is_guest('lucan') or not party.is_available('lucan')))
     return (party.current_event_id == EVENT_ID
             and set(REQUIRED) <= set(party.required_ids)
             and set(party.active_ids) == set(REQUIRED)

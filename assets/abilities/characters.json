@@ -5,54 +5,128 @@
       "name": "Caelan",
       "job": "Spellblade",
       "skills": {
-        "aether_edge": {"unlock": "first_weapon"},
-        "aqua_edge": {"unlock": "learned"},
-        "flame_edge": {"unlock": "learned"},
-        "ice_edge": {"unlock": "learned"},
-        "brace": {"unlock": "learned"},
-        "focused_strike": {"unlock": "learned"},
-        "sweeping_strike": {"unlock": "learned"},
-        "guarded_strike": {"unlock": "learned"},
-        "piercing_strike": {"unlock": "learned"},
-        "rally": {"unlock": "learned"},
-        "intercept": {"unlock": "learned"},
-        "riposte": {"unlock": "learned"},
-        "channel": {"unlock": "learned"},
-        "steadfast": {"unlock": "learned"}
+        "aether_edge": {
+          "unlock": "first_weapon"
+        },
+        "aqua_edge": {
+          "unlock": "learned"
+        },
+        "flame_edge": {
+          "unlock": "learned"
+        },
+        "ice_edge": {
+          "unlock": "learned"
+        },
+        "brace": {
+          "unlock": "learned"
+        },
+        "focused_strike": {
+          "unlock": "learned"
+        },
+        "sweeping_strike": {
+          "unlock": "learned"
+        },
+        "guarded_strike": {
+          "unlock": "learned"
+        },
+        "piercing_strike": {
+          "unlock": "learned"
+        },
+        "rally": {
+          "unlock": "learned"
+        },
+        "intercept": {
+          "unlock": "learned"
+        },
+        "riposte": {
+          "unlock": "learned"
+        },
+        "channel": {
+          "unlock": "learned"
+        },
+        "steadfast": {
+          "unlock": "learned"
+        }
       },
       "spells": {
-        "mend": {"unlock": "learned"},
-        "aether_dart": {"unlock": "learned"},
-        "aether_arc": {"unlock": "learned"},
-        "aether_lance": {"unlock": "learned"},
-        "aether_burst": {"unlock": "learned"},
-        "greater_mend": {"unlock": "learned"},
-        "renew": {"unlock": "learned"},
-        "cleanse": {"unlock": "learned"},
-        "ward": {"unlock": "learned"},
-        "dispel": {"unlock": "learned"}
+        "mend": {
+          "unlock": "learned"
+        },
+        "aether_dart": {
+          "unlock": "learned"
+        },
+        "aether_arc": {
+          "unlock": "learned"
+        },
+        "aether_lance": {
+          "unlock": "learned"
+        },
+        "aether_burst": {
+          "unlock": "learned"
+        },
+        "greater_mend": {
+          "unlock": "learned"
+        },
+        "renew": {
+          "unlock": "learned"
+        },
+        "cleanse": {
+          "unlock": "learned"
+        },
+        "ward": {
+          "unlock": "learned"
+        },
+        "dispel": {
+          "unlock": "learned"
+        }
       },
       "abilities": {
-        "basic_magicks": {"unlock": "starting"}
+        "basic_magicks": {
+          "unlock": "starting"
+        }
       }
     },
     "mira": {
       "name": "Mira",
       "job": "Engineer",
       "skills": {
-        "charged_bolt": {"unlock": "starting"},
-        "bulwark": {"unlock": "starting"},
-        "repair_pulse": {"unlock": "starting"},
-        "impact_bolt": {"unlock": "starting"},
-        "arc_discharge": {"unlock": "starting"}
+        "charged_bolt": {
+          "unlock": "starting"
+        },
+        "bulwark": {
+          "unlock": "starting"
+        },
+        "repair_pulse": {
+          "unlock": "starting"
+        },
+        "impact_bolt": {
+          "unlock": "starting"
+        },
+        "arc_discharge": {
+          "unlock": "starting"
+        }
       },
       "spells": {},
-      "abilities": {"arm_rig": {"unlock": "starting"}}
+      "abilities": {
+        "arm_rig": {
+          "unlock": "starting"
+        }
+      }
     },
     "lucan": {
       "name": "Lucan",
-      "job": "Knight",
-      "skills": {},
+      "job": "Armsmaster",
+      "skills": {
+        "inspire": {
+          "unlock": "starting"
+        },
+        "bolster": {
+          "unlock": "starting"
+        },
+        "provoke": {
+          "unlock": "starting"
+        }
+      },
       "spells": {},
       "abilities": {}
     },

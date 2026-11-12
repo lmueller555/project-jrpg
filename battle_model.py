@@ -7,7 +7,7 @@ Only this battle's copied resources change; the owning game settles outcomes.
 from __future__ import annotations
 
 from copy import deepcopy
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from fractions import Fraction
 import json
 import math
@@ -33,7 +33,9 @@ RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
 ELEMENTAL_EDGE_ACTIONS = ('aqua_edge', 'flame_edge', 'ice_edge')
-SUPPORTED_SKILL_ACTIONS = ('aether_edge', *ELEMENTAL_EDGE_ACTIONS, *RIG_SKILLS)
+LUCAN_SKILLS = ('inspire', 'bolster', 'provoke')
+LUCAN_BUFF_STATS = {'inspire': 'str', 'bolster': 'def'}
+SUPPORTED_SKILL_ACTIONS = ('aether_edge', *ELEMENTAL_EDGE_ACTIONS, *RIG_SKILLS, *LUCAN_SKILLS)
 ELEMENTAL_EDGE_ATTEMPTS = ('aqua_edge',)
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
@@ -76,8 +78,8 @@ def load_actions(data=None):
                 or set(action) != expected_fields
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'spellblade', 'failed_edge', 'barrier', 'heal')
-                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'ally')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'recover', 'enchant', 'spellblade', 'failed_edge', 'barrier', 'heal', 'buff', 'provoke')
+                or action['target'] not in ('opponent', 'all_opponents', 'self', 'none', 'ally', 'all_allies')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
                 or not _number(action['impact_at'], 0, action['duration'])
@@ -129,6 +131,11 @@ def load_actions(data=None):
                     or type(action['heal_percent']) is not int or action['heal_percent'] != 15
                     or type(action['spirit_multiplier']) is not int or action['spirit_multiplier'] != 2):
                 raise ValueError('Invalid restorative skill')
+        elif action['kind'] in ('buff', 'provoke'):
+            expected = ('buff', 'all_allies', 5) if identifier in LUCAN_BUFF_STATS else ('provoke', 'all_opponents', 8)
+            if (identifier not in LUCAN_SKILLS or action['potency'] != 0
+                    or (action['kind'], action['target'], action['mp_cost']) != expected):
+                raise ValueError('Invalid Lucan support skill')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
               or action['target'] != ('self' if action['kind'] in ('guard', 'prepare', 'recover', 'failed_edge') else 'none')):
             raise ValueError('Invalid utility action')
@@ -222,8 +229,14 @@ class Combatant:
     aether_edge_hits: int = 0
     barrier: int = 0
     barrier_turns: int = 0
+    buffs: dict = field(default_factory=dict)
 
-    def value(self, identifier):return self.attributes[identifier]
+    def value(self, identifier):
+        value = self.attributes[identifier]
+        if any(stat == identifier and self.buffs.get(skill, 0) > 0
+               for skill, stat in LUCAN_BUFF_STATS.items()):
+            return min(ATTRIBUTE_CAPS[identifier], value*3//2)
+        return value
 
     @property
     def max_hp(self):return self.value('hp')
@@ -256,6 +269,7 @@ class BattleAction:
     element: str | None = None
     channel_from: str | None = None
     channel_to: str | None = None
+    refreshed_buffs: tuple = ()
 
 
 @dataclass
@@ -275,6 +289,8 @@ class EnemyState:
     element: str | None = None
     turns: int = 0
     shifted_at: int = -1
+    provoked_by: str | None = None
+    provoke_turns: int = 0
 
 
 def _primary_enemy_state(field):
@@ -701,6 +717,12 @@ class BattleModel:
                 if state.design is not None and state.vulnerable}
 
     @property
+    def enemy_provocations(self):
+        return {identifier: {'target': state.provoked_by, 'turns': state.provoke_turns}
+                for identifier, state in self._enemy_states.items()
+                if state.provoked_by is not None and state.provoke_turns > 0}
+
+    @property
     def flee_allowed(self):
         return not any(state.design is not None
                        and not state.design['encounter'].get('flee_allowed', False)
@@ -821,6 +843,8 @@ class BattleModel:
                     and self.actions[key]['kind'] != 'failed_edge']
         if actor.identifier == 'mira':
             return [key for key in RIG_SKILLS if key in self.guest_abilities.get('mira', ())]
+        if actor.identifier == 'lucan':
+            return [key for key in LUCAN_SKILLS if key in self.guest_abilities.get('lucan', ())]
         return []
 
     def command_actions(self, actor_id=None):
@@ -881,6 +905,9 @@ class BattleModel:
             gem = REQUIRED_GEMS[identifier]
             if gem not in self.owned_gems:return 'Requires the '+GEM_NAMES[gem]+' gem.'
             if self.active_gem != gem:return 'Requires the '+GEM_NAMES[gem]+' gem.'
+        if identifier == 'provoke' and all(self._provoke_immune(enemy.identifier)
+                                           for enemy in self.living_enemies):
+            return 'Minibosses and bosses are immune to Provoke.'
         if identifier in RIG_SKILLS:
             requirements = self.actions[identifier]['power_requirements']
             missing = [key.title()+' '+str(amount)+' (currently '+str(self._rig_allocation[key])+')'
@@ -988,6 +1015,8 @@ class BattleModel:
                 if state.design is not None:
                     state.response_actions = 0
                     self._warn_target(enemy.identifier, state.telegraphed_target, retargeted=True)
+                else:
+                    self._warn_preparation(enemy.identifier)
                 if casting and state.design is not None and not self.current_action.resolved:
                     # A target lost during the leap cannot turn its replacement
                     # into an unannounced hit. Restart the held strike only
@@ -1026,6 +1055,10 @@ class BattleModel:
         living = [member for member in self.party if member.hp]
         if not living:return None
         state = self._enemy_states[enemy_actor]
+        provoker = next((member for member in living if member.identifier == state.provoked_by), None)
+        if (state.provoke_turns > 0 and provoker is not None
+                and self.actions.get(identifier, {}).get('target') == 'opponent'):
+            return provoker.identifier
         if identifier == state.prepared_action and state.telegraphed_target:
             target = next((member for member in living
                            if member.identifier == state.telegraphed_target), None)
@@ -1066,6 +1099,7 @@ class BattleModel:
                   else self._living_target(target_id))
         if record['target'] == 'self':target = actor_id
         elif record['target'] == 'ally':target = target_id
+        elif record['target'] == 'all_allies':target = 'all_allies'
         elif record['target'] == 'all_opponents':target = 'all_opponents'
         elif record['target'] == 'none':target = None
         if enemy_actor and record['target'] == 'opponent' and target is not None:
@@ -1095,6 +1129,9 @@ class BattleModel:
         if target == 'all_opponents':
             opponents = self.party if enemy_actor else self.enemies
             self.current_action.targets = tuple(member.identifier for member in opponents if member.hp)
+        elif target == 'all_allies':
+            allies = self.enemies if enemy_actor else self.party
+            self.current_action.targets = tuple(member.identifier for member in allies if member.hp)
         self.phase = 'acting'
         self.message = actor.name+' uses '+record['name']+'.'
         self.events.append({'type': 'action_started', 'actor': actor_id,
@@ -1159,6 +1196,32 @@ class BattleModel:
             self.events.append({'type':'elemental_shift','actor':action.actor,
                 'action':action.action,'element':state.element,
                 'channel_from':action.channel_from,'channel_to':action.channel_to})
+        elif action.kind == 'buff':
+            skill = action.action
+            recipients = tuple(member for member in self.party if member.hp)
+            action.targets = tuple(member.identifier for member in recipients)
+            action.refreshed_buffs = tuple((member.identifier, skill) for member in recipients)
+            for member in recipients:
+                member.buffs[skill] = 5
+                self.events.append({'type': 'buff_applied', 'actor': action.actor,
+                    'target': member.identifier, 'action': skill, 'turns': 5,
+                    'stat': LUCAN_BUFF_STATS[skill], 'percent': 50})
+            self.message = actor.name+' inspires the party.' if skill == 'inspire' else actor.name+' bolsters the party.'
+        elif action.kind == 'provoke':
+            action.targets = tuple(enemy.identifier for enemy in self.living_enemies
+                                   if not self._provoke_immune(enemy.identifier))
+            for enemy in self.living_enemies:
+                if self._provoke_immune(enemy.identifier):
+                    self.events.append({'type': 'provoke_immune', 'actor': action.actor,
+                        'target': enemy.identifier, 'action': 'provoke'})
+                    continue
+                state = self._enemy_states[enemy.identifier]
+                state.provoked_by = action.actor
+                state.provoke_turns = 5
+                self.events.append({'type': 'provoke_applied', 'actor': action.actor,
+                    'target': enemy.identifier, 'action': 'provoke', 'turns': 5})
+                self._redirect_preparation(enemy.identifier, action.actor)
+            self.message = actor.name+' challenges the enemies.'
         elif action.kind == 'guard':
             actor.guarded = True
             self.message = actor.name+' braces for the next attack.'
@@ -1321,6 +1384,67 @@ class BattleModel:
             target.barrier_turns -= 1
             if not target.barrier_turns:self._clear_barrier(target, 'duration')
 
+    def _provoke_immune(self, enemy_actor):
+        record = self.enemy_records.get(enemy_actor)
+        if record is not None:return record['metadata'].get('tier') not in (None, 'normal')
+        # Legacy/custom constructors still retain the Tusker's boss identity.
+        return enemy_actor == 'enemy' and self.enemy_id == 'ridgeback_tusker'
+
+    def _redirect_preparation(self, enemy_actor, target_id):
+        """A changed marked target receives its own warning/opportunity."""
+        state = self._enemy_states[enemy_actor]
+        spell = state.prepared_action
+        if (not spell or self.actions[spell]['target'] != 'opponent'
+                or state.telegraphed_target == target_id):return
+        state.telegraphed_target = target_id
+        if state.design is not None:
+            state.response_actions = 0
+            self._warn_target(enemy_actor, target_id, retargeted=True)
+        else:
+            self._warn_preparation(enemy_actor)
+
+    def _warn_preparation(self, enemy_actor):
+        state = self._enemy_states[enemy_actor]
+        spell = state.prepared_action
+        prepare = next((key for key, value in state.preparations.items() if value == spell), spell)
+        self.events.append({'type': 'telegraph', 'actor': enemy_actor,
+            'action': prepare, 'target': state.telegraphed_target, 'prepared_action': spell,
+            'hold_after': 0, 'retargeted': True})
+
+    def _clear_buffs(self, actor, reason):
+        for skill in tuple(actor.buffs):
+            del actor.buffs[skill]
+            self.events.append({'type': 'buff_expired', 'actor': actor.identifier,
+                'target': actor.identifier, 'action': skill, 'stat': LUCAN_BUFF_STATS[skill],
+                'turns': 0, 'reason': reason})
+
+    def _clear_provoke(self, enemy_actor, reason):
+        state = self._enemy_states[enemy_actor]
+        if state.provoked_by is None and not state.provoke_turns:return
+        source = state.provoked_by
+        state.provoked_by = None
+        state.provoke_turns = 0
+        self.events.append({'type': 'provoke_expired', 'actor': source,
+            'target': enemy_actor, 'action': 'provoke', 'turns': 0, 'reason': reason})
+
+    def _complete_status_turn(self, action):
+        if action.kind == 'channel':return
+        actor = self.combatant(action.actor)
+        if self.is_enemy(action.actor):
+            state = self._enemy_states[action.actor]
+            if state.provoke_turns:
+                state.provoke_turns -= 1
+                if state.provoke_turns == 0:self._clear_provoke(action.actor, 'duration')
+            return
+        for skill in tuple(actor.buffs):
+            if (actor.identifier, skill) in action.refreshed_buffs:continue
+            actor.buffs[skill] -= 1
+            if actor.buffs[skill] == 0:
+                del actor.buffs[skill]
+                self.events.append({'type': 'buff_expired', 'actor': actor.identifier,
+                    'target': actor.identifier, 'action': skill, 'stat': LUCAN_BUFF_STATS[skill],
+                    'turns': 0, 'reason': 'duration'})
+
     def _damage_target(self, action, actor, target):
         """Resolve one hit; vulnerability modifies the complete hit once."""
         protected = target.guarded
@@ -1377,7 +1501,12 @@ class BattleModel:
         if not target.hp:
             target.atb = 0.0
             self._clear_barrier(target, 'ko')
+            self._clear_buffs(target, 'ko')
+            for identifier, state in self._enemy_states.items():
+                if state.provoked_by == target.identifier:
+                    self._clear_provoke(identifier, 'source_ko')
             if self.is_enemy(target.identifier):
+                self._clear_provoke(target.identifier, 'ko')
                 state = self._enemy_states[target.identifier]
                 state.prepared_action = state.telegraphed_target = None
                 state.response_actions = 0
@@ -1397,6 +1526,8 @@ class BattleModel:
         for actor in (*self.party, *self.enemies):
             actor.aether_edge_hits = 0
             self._clear_barrier(actor, 'battle_end')
+            self._clear_buffs(actor, 'battle_end')
+        for identifier in self._enemy_states:self._clear_provoke(identifier, 'battle_end')
         self.phase = outcome
         defeat = ('The party has fallen.' if len(self.party) > 1
                   else self.player.name+' has fallen.')
@@ -1413,7 +1544,13 @@ class BattleModel:
         # A lesson cannot keep ordering an incapacitated character to act.
         # Release the companions without treating survival as a skill discovery.
         for member in self.party:
-            if not member.hp:self._clear_barrier(member, 'ko')
+            if not member.hp:
+                self._clear_barrier(member, 'ko')
+                self._clear_buffs(member, 'ko')
+        for identifier, state in self._enemy_states.items():
+            provoker = self._party_actor(state.provoked_by) if state.provoked_by else None
+            if state.provoked_by and (provoker is None or not provoker.hp):
+                self._clear_provoke(identifier, 'source_ko')
         if self.lesson_guided and not self.player.hp:
             was_aqua = self.aqua_edge_guided
             self.spellblade_stage = self.aqua_edge_stage = None
@@ -1511,13 +1648,15 @@ class BattleModel:
                     # Presentation clocks advance by the caller's full frame,
                     # including time left unused at a ready/result boundary.
                     for event in self.events[event_start:]:
-                        if (event['type'] in ('impact', 'skill_heal', 'barrier_applied', 'barrier_absorbed')
+                        if (event['type'] in ('impact', 'skill_heal', 'barrier_applied', 'barrier_absorbed',
+                                              'buff_applied', 'provoke_applied', 'provoke_immune')
                                 or event['type'] == 'telegraph'
                                 and event.get('prepared_action')):
                             event['frame_age'] = remaining
                 if action.elapsed+EPSILON >= action.duration:
                     action.elapsed = action.duration
                     self._complete_rig_turn(action)
+                    self._complete_status_turn(action)
                     self.last_action, self.current_action = action, None
                     if self._pending_outcome is not None:
                         self._result(self._pending_outcome)

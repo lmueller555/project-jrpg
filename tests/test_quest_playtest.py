@@ -127,7 +127,8 @@ class QuestPlaytestStarts(unittest.TestCase):
                     self.assertTrue(game.party.members['lucan']['temporary'])
                     self.assertFalse(game.party.members['lucan']['available'])
                     self.assertNotIn('lucan', game.party.active_ids)
-                    self.assertEqual(game.character_progression['lucan'].total_xp, SKIPPED_MQ03_XP)
+                    self.assertEqual(game.character_progression['lucan'].level, 5)
+                    self.assertEqual(game.character_progression['lucan'].xp_into_level, 0)
                     self.assertIsNone(game.party.current_event_id)
 
     def test_completed_cave_state_and_unlocks_exist_only_after_mq03(self):

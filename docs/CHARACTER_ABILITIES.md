@@ -12,9 +12,9 @@ Caelan is a **Spellblade**. He begins unarmed with his established basic magicks
 
 The current design identities are Spellblade, Engineer, Armsmaster, Aethermage
 and Sage. **Documentation revision, 2026-11-07:** Engineer replaces Machinist
-for Mira, and Armsmaster replaces Knight for Lucan. Mira’s runtime dictionary now uses Engineer; Lucan’s earlier Knight label remains
-until his own combat revision. Changing other labels
-is a separate implementation task.
+for Mira, and Armsmaster replaces Knight for Lucan. Their runtime dictionaries
+now use Engineer and Armsmaster respectively. The limited guest skills below
+do not implement Lucan's future arsenal progression.
 
 Mira starts as an Engineer with the arm-rig capability and Charged Bolt, Bulwark, Repair Pulse, Impact Bolt and Arc Discharge. Registration does not recruit a party member or grant equipment. Focused Strike remains a future explicitly learned skill. `basic_magicks` is an authored-world capability rather than an executable combat skill.
 
@@ -27,6 +27,23 @@ undecided. Caelan’s implemented acquisitions cover the Blue-gem/Aqua opening
 and the optional Red/Flame and White/Ice guardian rewards.
 
 Aqua Edge has a permanent `learned` entry, separate from the failed Boar attempt used to teach Aether Edge. Nature, Fire and Ice techniques are not available in the opening lesson. Selecting or owning a gem does not automatically teach an ability. Optional level-four Embravyr and Nivareth encounters install the Red/Fire and White/Ice gems and teach Flame Edge and Ice Edge respectively, in either order. See [elemental cave encounters](ELEMENTAL_CAVE_ENCOUNTERS.md).
+
+## Lucan's guest skills
+
+Lucan's Sanctuary appearance is a level-five guest role with no combat EXP and
+no character interactable. His manually selected Skills are **Inspire** (5 MP,
+all living active allies gain 50% Attack), **Bolster** (5 MP, all living active
+allies gain 50% Defense), and **Provoke** (8 MP, normal enemies direct their
+single-target hostile actions toward him). Buffs last five recipient turns;
+Provoke lasts five turns of each affected enemy. Recasting refreshes duration
+without stacking, and a newly applied self-buff does not lose its first turn
+to Lucan's casting action. Minibosses and bosses are immune to Provoke.
+
+Attack, Items, Guard and permitted Flee actions remain available. These guest
+skills do not implement his future arsenal progression or permanent-recruit
+interactable. See [combat rules](COMBAT.md#lucans-cave-guest-combat) for targeting,
+expiry and guest eligibility, and [the rescue formation](PARTY.md#sanctuary-rescue-formation)
+for joining and departure.
 
 ## Mira’s Blade
 

@@ -66,10 +66,13 @@ This raises the number of same-level monsters per level to roughly 8.3
 early on and 52.3 near the cap. Enemy counts per encounter and
 ability availability still determine actual pacing.
 
-**Every character in the active combat party who is alive at battle end receives
-the full encounter XP on victory.** Sum the defeated monsters' rewards before
+**Every EXP-eligible character in the active combat party who is alive at battle
+end receives the full encounter XP on victory.** Sum the defeated monsters' rewards before
 allocation; there is no split among survivors. KO'd combatants and reserves
-receive zero. Summoned bots do not receive separate EXP or level records.
+receive zero. Lucan's Sanctuary cave guest appearance is explicitly ineligible:
+he joins at level 5 and receives no combat EXP, including the Vespermaw reward.
+This guest rule does not change Caelan or Mira's full-survivor award, and is
+separate from Lucan's future permanent recruitment. Summoned bots do not receive separate EXP or level records.
 For example, three monsters worth 24 XP each award 72 XP to every surviving
 combatant. Recipient eligibility uses actual end-of-battle HP before any
 encounter-specific first aid. Fleeing or defeat grants no EXP, including when
@@ -172,7 +175,9 @@ separate from level growth and does not change who qualified for EXP.
 
 Spoils displays the battle's total EXP and each combatant's portrait, level,
 individual reward and progress toward the next level. The full reward appears
-for each eligible survivor; KO rows explain their zero award. Bars fill together,
+for each eligible survivor; KO rows explain their zero award. Lucan's guest row
+shows his fixed guest level without implying EXP progress or a level-up award.
+Bars fill together,
 carry overflow through level thresholds and show **MAX LEVEL** at level 100.
 Confirm can finish the animation without dismissing the result on the same
 press; reduced motion keeps the information without the extended fill.

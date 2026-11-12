@@ -101,6 +101,12 @@ release the ambience audio without changing story music ownership.
 
 The [MQ03 arrival scene](SANCTUARY_ARRIVAL.md) returns control at the cave
 apron with Caelan, Mira and temporary companion Lucan ready for the rescue.
+Lucan joins as a level-five guest, receives no combat EXP, and has Inspire,
+Bolster and Provoke alongside the ordinary Attack, Items, Guard and permitted
+Flee commands. He has no interactable minigame in this appearance; see
+[guest combat rules](COMBAT.md#lucans-cave-guest-combat). He remains for early
+rest trips, and leaves only after Vespermaw's defeat and the subsequent actual
+cave exit. Save/Continue and later cave re-entry retain that departure.
 MQ03 remains active; cave exploration does not complete its remaining story. **Elden Vale
 Sanctuary Cave** replaces the emergency score during non-battle cave exploration,
 including the optional elemental chambers, dialogue and menus. The cue repeats

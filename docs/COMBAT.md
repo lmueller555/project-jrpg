@@ -293,6 +293,40 @@ independent 95–105% variance from the battle's own RNG. Attack accuracy is
 currently guaranteed and critical hits are disabled while those probability
 rules await design. No damage-limit break is granted by the encounter.
 
+## Lucan's cave guest combat
+
+Lucan joins the Sanctuary rescue as a **level-five guest**. He is manually
+controlled through Attack, Skills, Items, Guard and Flee; encounter-specific
+Flee restrictions still apply. He has no combat interactable during this guest
+appearance. His full Armsmaster arsenal and interactable remain later work for
+his permanent recruitment.
+
+| Skill | MP | Effect |
+| --- | ---: | --- |
+| Inspire | 5 | Raises every living active party member's Attack (`str`) by 50% for five of that recipient's turns. |
+| Bolster | 5 | Raises every living active party member's Defense (`def`) by 50% for five of that recipient's turns. |
+| Provoke | 8 | Directs each susceptible normal enemy's single-target hostile actions toward Lucan for five of that enemy's turns. |
+
+Inspire and Bolster coexist, refresh without stacking, and apply battle-only
+modifiers rather than changing saved base stats. The casting action does not
+immediately consume the caster's freshly applied buff turn. Effective Attack
+and Defense use integer rounding down and respect the existing stat cap.
+KO clears the affected character's buffs; battle results clear all temporary
+buff and Provoke state.
+
+Provoke does not affect minibosses or bosses and does not redirect party-wide
+attacks or self-buffs. Enemies can still prepare attacks; a prepared
+single-target attack follows the normal target warning and response guarantee
+when its target changes. Each affected enemy tracks its own duration; Lucan
+becoming incapacitated ends forced targeting. Recasting refreshes the effect
+rather than stacking it. If every enemy is immune, the command is rejected
+without MP or ATB cost. In a mixed formation, it affects susceptible normal
+enemies and reports the others' immunity.
+
+Lucan receives **no combat EXP while he is this guest**, even when alive at
+victory. Caelan and Mira retain their normal full-survivor awards. Buffs and
+Provoke are encounter state and do not persist into the next fight.
+
 ## Millrace tutorial
 
 The Ridgeback Tusker uses the level-one **Brute boss** template: **270 HP, Str 13, Def 14 and Speed 9**, with no extra species or tier stat multipliers. It grants **240 EXP** to each surviving active character. The revised lesson opens with a separate visible charge preparation, then gives Caelan a real Guard opportunity. After the guided opening it resumes normal tusk strikes, preparation and charge actions. Guard halves the next incoming hit and survives a harmless preparation turn.
@@ -471,11 +505,11 @@ award checkpoint succeeds. A failed grant or save leaves a Retry action on
 Spoils. Receipts prevent duplicate rewards even when a capped inventory receives
 no additional items.
 
-The standalone [traditional leveling foundation](LEVELING.md) and
-[enemy archetype catalogue](ENEMY_ARCHETYPES.md) define the approved XP and growth
-curves and approved active-survivor XP/no-recovery policies. Saved-level and
-encounter integration remain pending; these encounters do not yet award
-traditional XP.
+The [traditional leveling foundation](LEVELING.md) and
+[enemy archetype catalogue](ENEMY_ARCHETYPES.md) define the XP and growth
+curves. Each living EXP-eligible active combatant receives the full encounter
+EXP; level-ups do not restore HP or MP. Lucan's fixed-level cave guest receives
+no combat EXP, while Caelan and Mira retain their normal awards.
 
 The fanfare may finish while Spoils is open. No music follows it, and volume,
 focus or repeated updates cannot replay it. Eldenmere Theme resumes only when

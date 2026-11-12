@@ -152,6 +152,10 @@ def _completed_cave(game: Game) -> None:
         SKIPPED_MQ03_XP, rescue_party,
         {key: game.party.characters[key].current_hp for key in rescue_party})
     _require(game.character_progression.apply(plan), 'grant skipped MQ03 cave EXP')
+    # Later-story checkpoints also assume the completed rescue party has
+    # physically left the cave. Lucan's guest receipt prevents re-recruitment.
+    game.sanctuary_cave.lucan_departed = True
+    _require(game._sync_story_party(), 'restore Lucan’s completed guest departure')
 
 
 def _completed_visit(game: Game) -> None:
@@ -166,7 +170,7 @@ def _completed_visit(game: Game) -> None:
     _require(game.regent_quest.restore({'version': 3, 'stage': 'sanctuary_arrival_pending'}),
              'restore the previous Sanctuary response')
     # Apply its acknowledged consequences, without running the arrival movie in
-    # a later-quest fixture. Lucan shares the same cave allowance as the others.
+    # a later-quest fixture. Temporary Lucan retains level five and no cave EXP.
     _require(game.sanctuary_arrival.restore({'version': 1, 'beat': 7,
                                           'completed': True, 'cave_entered': True}),
              'restore the previous Sanctuary rescue handoff')

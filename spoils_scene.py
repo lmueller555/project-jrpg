@@ -197,6 +197,7 @@ class SpoilsScene:
                                 for index, identifier in enumerate(self._ids)}
         self.bar_rects = {}
         for identifier, rect in self.character_rects.items():
+            if identifier in self.progression.get('guest_ids', ()):continue
             entry = self.progression['characters'][identifier]
             ko = self.progression['end_hp'][identifier] == 0
             gain = 'KO — No EXP' if ko else '+'+format(entry['accepted_xp'], ',')+' EXP'
@@ -366,6 +367,7 @@ class SpoilsScene:
             entry = self.progression['characters'][identifier]
             state = self.displayed_progress(identifier)
             ko = self.progression['end_hp'][identifier] == 0
+            guest = identifier in self.progression.get('guest_ids', ())
             advanced = state['level'] > entry['old_level']
             self._glass(painter, rect, 228)
             if advanced:painter.rect(GOLD, rect, 1)
@@ -377,9 +379,10 @@ class SpoilsScene:
             painter.text(self._name(identifier), (rect.left+50, rect.top+4), bold=True)
             painter.text('Lv. '+str(state['level']), (rect.right-10, rect.top+5), role='small',
                          color=GOLD, anchor='topright', bold=True)
-            gain = 'KO — No EXP' if ko else '+'+format(entry['accepted_xp'], ',')+' EXP'
+            gain = 'Guest · No EXP' if guest else 'KO — No EXP' if ko else '+'+format(entry['accepted_xp'], ',')+' EXP'
             painter.text(gain, (rect.right-10, rect.top+33), role='small',
-                         color=MUTED if ko else GOLD, anchor='midright')
+                         color=MUTED if ko or guest else GOLD, anchor='midright')
+            if guest:continue
             bar = self.bar_rects[identifier]
             painter.rect(FOREST_LIGHT, bar)
             fill = bar.inflate(-2, -2);fill.width = round(fill.width*state['fill'])

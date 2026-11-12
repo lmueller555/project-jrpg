@@ -32,12 +32,13 @@ class SanctuaryArrivalStateTests(unittest.TestCase):
             if self.g.sanctuary_arrival.dialogue:self.press()
         self.fail(('Scene did not settle',self.g.sanctuary_arrival.beat,self.g.sanctuary_arrival.error))
     def test_completed_handoff_is_durable_and_never_completes_mq03_or_heals_members(self):
-        before={key:(m.current_hp,m.current_mp) for key,m in self.g.party.characters.items()}
+        before={key:(m.current_hp,m.current_mp) for key,m in self.g.party.characters.items() if key!='lucan'}
         self.until(lambda:self.g.sanctuary_arrival.completed)
         self.assertEqual(self.g.party.active_ids,('caelan','mira','lucan'))
         self.assertEqual(self.g.regent_quest.stage,'sanctuary_arrival_pending')
         self.assertFalse(self.g.regent_quest.sanctuary_escort_active)
-        self.assertEqual(before,{key:(m.current_hp,m.current_mp) for key,m in self.g.party.characters.items()})
+        self.assertEqual(before,{key:(m.current_hp,m.current_mp) for key,m in self.g.party.characters.items() if key!='lucan'})
+        self.assertEqual(self.g.character_progression.level('lucan'),5)
         self.assertEqual(list(self.g.player.position),[1008,406])
         self.assertEqual({a.identifier for a in self.g.party_travel.actors()},{'mira','lucan'})
         facings={key:actor.facing for key,actor in self.g.sanctuary_arrival.actors.items()}
@@ -98,12 +99,20 @@ class SanctuaryArrivalStateTests(unittest.TestCase):
         self.until(lambda:self.g.sanctuary_arrival.beat==7)
         self.until(lambda:self.g.sanctuary_arrival.dialogue is not None)
         owner=self.g.sanctuary_arrival;before=deepcopy(self.g.party.to_dict());raw=self.path.read_bytes()
+        levels_before=deepcopy(self.g.character_progression.to_dict())
+        cave_before=deepcopy(self.g.sanctuary_cave.to_dict())
         with patch.object(self.g.save_store,'write',return_value=False):
             self.until(lambda:bool(owner.error))
         self.assertFalse(owner.completed);self.assertTrue(owner.active)
         self.assertEqual(self.g.party.to_dict(),before);self.assertEqual(self.path.read_bytes(),raw)
+        self.assertEqual(self.g.character_progression.to_dict(),levels_before)
+        self.assertEqual(self.g.sanctuary_cave.to_dict(),cave_before)
         self.press();self.assertTrue(owner.completed);self.assertFalse(owner.active)
         self.assertIn('lucan',self.g.party.active_ids)
+        self.assertTrue(self.g.sanctuary_cave.lucan_guest_initialized)
+        self.assertEqual(self.g.character_progression.level('lucan'),5)
+        from leveling import character_stats
+        self.assertEqual(self.g.party.characters['lucan']._attributes,character_stats('lucan',5))
     def test_earlier_cave_visit_releases_music_without_skipping_the_later_arrival(self):
         self.g.sanctuary_arrival.cave_entered=True
         self.g.music.play('eldenmere',fade_ms=0)
