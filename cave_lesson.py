@@ -41,7 +41,7 @@ class CaveLesson:
     @property
     def blade_presented(self):
         page = getattr(self.game.social, 'page', None) or {}
-        return self.glowing and page.get('source_line', 0) < 3
+        return self.glowing and page.get('source_line', 0) < 5
 
     @staticmethod
     def is_intro(ticket):
@@ -180,10 +180,10 @@ class CaveLesson:
         g.player.moving = g.player.running = False
         g.player.facing = 'front'
         opened = g.social.start_script([
-            {'speaker':'caelan','text':'Wow...I've never actually been inside this cave before. What about you, Mira?'},
-            {'speaker':'mira','text':'No...it's beautiful...and haunting at the same time.'},
+            {'speaker':'caelan','text':"Wow...I've never actually been inside this cave before. What about you, Mira?"},
+            {'speaker':'mira','text':"No...it's beautiful...and haunting at the same time."},
             {'speaker':'caelan','text':'And the Aether...is so much stronger in here.'},
-            {'speaker':'caelan','text':'My blade—the blue gem is glowing. It's like it's resonating with the Aether around us. I wonder...'},
+            {'speaker':'caelan','text':"My blade—the blue gem is glowing. It's like it's resonating with the Aether around us. I wonder..."},
             {'speaker':'caelan','text':'Maybe I can channel it better in here than at the mill.'},
             {'speaker':'caelan','text':'And Mira… do you think they could be here?'},
             {'speaker':'mira','text':'Who?'},
@@ -192,7 +192,7 @@ class CaveLesson:
             {'speaker':'mira','text':'I know Cael. I was wondering the same thing about mine on the way over.'},
             {'speaker':'caelan','text':'…You were?'},
             {'speaker':'mira','text':'Yeah...I wish I knew. I miss them.'},
-            {'speaker':'caelan','text':'I miss mine too...I'm sorry.'},
+            {'speaker':'caelan','text':"I miss mine too...I'm sorry."},
             {'speaker':'lucan','text':'Keep moving. Stay close.'},
         ], on_complete=self._resonance_complete, identifier=SCRIPT_ID)
         if opened:
@@ -256,7 +256,7 @@ class CaveLesson:
             if not self.blade_presented:
                 self.release_pose()
                 page = self.game.social.page or {}
-                self.game.player.facing = 'back' if page.get('source_line') == 10 else 'left'
+                self.game.player.facing = 'back' if page.get('source_line') == 13 else 'left'
             return False
         self._glowing = False
         self.release_pose()
