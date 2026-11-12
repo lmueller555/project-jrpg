@@ -180,16 +180,19 @@ class CaveLesson:
         g.player.moving = g.player.running = False
         g.player.facing = 'front'
         opened = g.social.start_script([
-            {'speaker':'caelan','text':'The Aether is so much stronger in here…'},
-            {'speaker':'caelan','text':'My blade—the blue gem is glowing. It is answering the Aether in the walls.'},
-            {'speaker':'caelan','text':'Maybe I can focus it better here. I should try Aqua Edge again.'},
-            {'speaker':'caelan','text':'Mira… do you think they could be here?'},
+            {'speaker':'caelan','text':'Wow...I've never actually been inside this cave before. What about you, Mira?'},
+            {'speaker':'mira','text':'No...it's beautiful...and haunting at the same time.'},
+            {'speaker':'caelan','text':'And the Aether...is so much stronger in here.'},
+            {'speaker':'caelan','text':'My blade—the blue gem is glowing. It's like it's resonating with the Aether around us. I wonder...'},
+            {'speaker':'caelan','text':'Maybe I can channel it better in here than at the mill.'},
+            {'speaker':'caelan','text':'And Mira… do you think they could be here?'},
             {'speaker':'mira','text':'Who?'},
-            {'speaker':'caelan','text':'My parents. Somewhere in all this aether.'},
+            {'speaker':'caelan','text':'My parents. Somewhere in all this aether. Maybe they were guided back here...?'},
             {'speaker':'caelan','text':'I know we came for—'},
-            {'speaker':'mira','text':'I know. I’ve wondered the same thing about mine.'},
-            {'speaker':'caelan','text':'…Have you?'},
-            {'speaker':'mira','text':'I wish I knew.'},
+            {'speaker':'mira','text':'I know Cael. I was wondering the same thing about mine on the way over.'},
+            {'speaker':'caelan','text':'…You were?'},
+            {'speaker':'mira','text':'Yeah...I wish I knew. I miss them.'},
+            {'speaker':'caelan','text':'I miss mine too...I'm sorry.'},
             {'speaker':'lucan','text':'Keep moving. Stay close.'},
         ], on_complete=self._resonance_complete, identifier=SCRIPT_ID)
         if opened:
@@ -222,7 +225,7 @@ class CaveLesson:
         g = self.game
         if not self._near_retry():
             if not self.needs_intro or not g.sanctuary_boss.nearby():return False
-            text = self.ready_reason() or 'Before we face whatever is in there, I should try the blue gem against the creatures in these passages.'
+            text = self.ready_reason() or 'Before we face whatever is in there, I should practice channeling my Aether against the creatures in these passages.'
             return g.social.start_script([{'speaker':'caelan','text':text}],identifier='cave_aqua_before_chamber')
         reason = self.ready_reason()
         lines = [{'speaker':'caelan','text': reason or 'The bats are still in the passage. I can try Aqua Edge here.'}]
