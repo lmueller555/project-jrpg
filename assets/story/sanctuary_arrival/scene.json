@@ -14,8 +14,8 @@
           406
         ],
         "mira": [
-          700,
-          350
+          716,
+          318
         ],
         "lucan": [
           858,
@@ -34,7 +34,7 @@
           390
         ],
         "worker_a": [
-          700,
+          688,
           318
         ],
         "worker_b": [
@@ -53,34 +53,40 @@
       "lines": [
         {
           "speaker": "caelan",
-          "text": "Mother Serene sent us. A man reached Eldenmere."
+          "text": "Mother Serene sent us. A man reached Eldenmere.",
+          "id": "arrival_contact.0"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "He made it?"
+          "text": "He made it?",
+          "id": "arrival_contact.1"
         },
         {
           "speaker": "caelan",
-          "text": "She’s looking after him. Where do you need us?"
+          "text": "She’s looking after him. Where do you need us?",
+          "id": "arrival_contact.2"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "Here, first. We brought these two clear of the cave."
+          "text": "Here, first. We brought these two clear of the cave.",
+          "id": "arrival_contact.3"
         },
         {
           "speaker": "mira",
-          "text": "Let me see that dressing. Keep your arm still for a moment."
+          "text": "Let me see that dressing. Keep your arm still for a moment.",
+          "id": "arrival_contact.4",
+          "action": "treat"
         },
         {
           "speaker": "arrival_worker",
-          "text": "All right. Thank you."
+          "text": "All right. Thank you.",
+          "id": "arrival_contact.5"
         }
       ],
       "poses": {
         "mira": "tend",
         "worker_a": "injured",
-        "worker_b": "injured",
-        "runner": "set_down"
+        "worker_b": "injured"
       },
       "movement": {
         "lucan": {
@@ -130,12 +136,12 @@
               354
             ],
             [
-              700,
+              716,
               354
             ],
             [
-              700,
-              350
+              716,
+              318
             ]
           ]
         },
@@ -222,35 +228,30 @@
       "lines": [
         {
           "speaker": "lucan",
-          "text": "Who haven’t you found?"
+          "text": "Who haven’t you found?",
+          "id": "accounting.0"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "One of the workers. The creature pulled him back into the cave."
+          "text": "One of the workers. The creature pulled him back into the cave.",
+          "id": "accounting.1"
         },
         {
           "speaker": "lucan",
-          "text": "Did anyone hear him afterward?"
+          "text": "Did anyone hear him afterward?",
+          "id": "accounting.2"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "He answered when we called. I heard him again before you came through the arch."
-        },
-        {
-          "speaker": "regent_clerk",
-          "text": "I have the crew list. Show me who is here."
-        },
-        {
-          "speaker": "aldric",
-          "text": "Bring it here. We’ll account for everyone."
+          "text": "He answered when we called. I heard him again before you came through the arch.",
+          "id": "accounting.3"
         }
       ],
       "poses": {
         "mira": "tend",
         "worker_a": "injured",
         "worker_b": "injured",
-        "page": "read",
-        "runner": "set_down"
+        "page": "read"
       },
       "movement": {
         "lucan": {
@@ -300,31 +301,23 @@
       "lines": [
         {
           "speaker": "arrival_caretaker",
-          "text": "Your men said the ground had already been placed under the Crown."
+          "text": "Your men claimed this ground for the Crown. Mother Serene gave no agreement.",
+          "id": "responsibility.0"
         },
         {
           "speaker": "aldric",
-          "text": "They were acting on my orders."
+          "text": "They had my orders, without her agreement.",
+          "id": "responsibility.1"
+        },
+        {
+          "speaker": "aldric",
+          "text": "There’ll be no more work here. What do you need for the injured?",
+          "id": "responsibility.2"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "Mother Serene gave no agreement."
-        },
-        {
-          "speaker": "aldric",
-          "text": "No. She did not."
-        },
-        {
-          "speaker": "aldric",
-          "text": "There’ll be no more work here. Tell me what you need for the injured."
-        },
-        {
-          "speaker": "arrival_caretaker",
-          "text": "Clean water, cloths, and room to work. Keep the path to the hall clear."
-        },
-        {
-          "speaker": "aldric",
-          "text": "We’ll keep it clear."
+          "text": "Clean water and cloths. Keep the path to the hall clear.",
+          "id": "responsibility.3"
         }
       ],
       "poses": {
@@ -368,47 +361,46 @@
       "lines": [
         {
           "speaker": "mira",
-          "text": "That will hold. Keep the arm supported; I’ll leave the cloths here."
-        },
-        {
-          "speaker": "mira",
-          "text": "Is the footing at the entrance loose?"
+          "text": "That will hold. Keep the arm supported; I’ll leave the cloths here.",
+          "id": "rescue_decision.0",
+          "after": "retrieve"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "There’s fallen stone. We couldn’t reach the man safely."
+          "text": "There’s fallen stone. We couldn’t reach the man safely.",
+          "id": "rescue_decision.1"
         },
         {
           "speaker": "lucan",
-          "text": "Show me exactly where you heard him."
-        },
-        {
-          "speaker": "caelan",
-          "text": "Then I’m going with you."
+          "text": "Show me where you heard him.",
+          "id": "rescue_decision.2"
         },
         {
           "speaker": "lucan",
-          "text": "You two stay here."
+          "text": "You two stay here.",
+          "id": "rescue_decision.3"
         },
         {
           "speaker": "caelan",
-          "text": "We came to help bring them back."
+          "text": "We came to help bring them back.",
+          "id": "rescue_decision.4"
         },
         {
           "speaker": "mira",
-          "text": "If he’s trapped under something, you’ll need more than a sword. I have the tools."
+          "text": "If he’s trapped, you’ll need more than a sword. I have the tools.",
+          "id": "rescue_decision.5"
         },
         {
           "speaker": "lucan",
-          "text": "Then you stay behind me until we know what’s ahead."
+          "text": "Then you stay behind me until we know what’s ahead.",
+          "id": "rescue_decision.6"
         }
       ],
       "poses": {
         "mira": "set_down",
         "worker_a": "injured",
         "worker_b": "injured",
-        "page": "read",
-        "runner": "tend"
+        "page": "read"
       },
       "movement": {
         "lucan": {
@@ -426,6 +418,10 @@
         "mira": {
           "waypoints": [
             [
+              716,
+              350
+            ],
+            [
               718,
               350
             ],
@@ -438,7 +434,7 @@
               402
             ]
           ],
-          "delay": 0.8
+          "delay": 0
         }
       }
     },
@@ -453,26 +449,19 @@
       "lines": [
         {
           "speaker": "aldric",
-          "text": "Go with them, Lucan. Bring our people back. I’ll remain here."
-        },
-        {
-          "speaker": "lucan",
-          "text": "Stay with the caretakers, my lord."
-        },
-        {
-          "speaker": "aldric",
-          "text": "I will. Page, help me with the names."
+          "text": "Go with them, Lucan. Bring our people back. The page and I will help here.",
+          "id": "royal_handoff.0"
         },
         {
           "speaker": "regent_clerk",
-          "text": "Yes, your lordship."
+          "text": "I have the crew list. Show me who is here.",
+          "id": "royal_handoff.1"
         }
       ],
       "poses": {
         "worker_a": "injured",
         "worker_b": "injured",
-        "page": "read",
-        "runner": "tend"
+        "page": "read"
       },
       "movement": {}
     },
@@ -487,15 +476,13 @@
       "lines": [
         {
           "speaker": "arrival_caretaker",
-          "text": "Nessa keeps the visitor room ready. Through the hall, then the north door with the bed plaque."
+          "text": "Nessa keeps the visitor room ready. Through the hall, then the north door with the bed plaque.",
+          "id": "visitor_rest.0"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "If you need to recover, come back. We’ll keep it available."
-        },
-        {
-          "speaker": "mira",
-          "text": "Thank you."
+          "text": "If you need to recover, come back. We’ll keep it available.",
+          "id": "visitor_rest.1"
         }
       ],
       "poses": {
@@ -537,22 +524,24 @@
       "lines": [
         {
           "speaker": "lucan",
-          "text": "We find him first. Keep close, and call out anything you see."
+          "text": "We find him first. Keep close, and call out anything you see.",
+          "id": "cave_approach.0"
         },
         {
           "speaker": "mira",
-          "text": "Watch the loose stone."
+          "text": "Watch the loose stone.",
+          "id": "cave_approach.1"
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "I’ll unhook the rope. Call back if you need us."
+          "text": "I’ll unhook the rope. Call back if you need us.",
+          "id": "cave_approach.2"
         }
       ],
       "poses": {
         "worker_a": "injured",
         "worker_b": "injured",
-        "page": "read",
-        "runner": "tend"
+        "page": "read"
       },
       "movement": {
         "lucan": {
@@ -693,7 +682,7 @@
       390
     ],
     "worker_a": [
-      700,
+      688,
       318
     ],
     "worker_b": [

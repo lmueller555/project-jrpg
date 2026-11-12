@@ -28,6 +28,7 @@ class SanctuaryArrivalStateTests(unittest.TestCase):
         for _ in range(limit):
             if predicate():return
             self.tick()
+            if predicate():return
             if self.g.sanctuary_arrival.dialogue:self.press()
         self.fail(('Scene did not settle',self.g.sanctuary_arrival.beat,self.g.sanctuary_arrival.error))
     def test_completed_handoff_is_durable_and_never_completes_mq03_or_heals_members(self):

@@ -42,7 +42,7 @@ unread prose.
 | `visitor_rest` | Reframe toward the hall as the caretaker gestures and the runner returns toward its doorway. | Establish Nessa's visitor room: through the hall, then the north door with the bed plaque. The bed remains available during cave exploration. |
 | `cave_approach` | Follow Caelan, Mira and Lucan along the eastward path. Aldric/page continue their work behind them. Lucan checks the opening; Mira watches loose stone; the caretaker unhooks the rope, lowers it and steps clear. Finish at the actual gameplay camera position. | Give the rescue a clear immediate aim and return control without a staging jump. |
 
-The eight beats contain 38 authored dialogue lines. Workers retain injured
+The eight beats contain 28 authored dialogue lines. Workers retain injured
 poses while Mira's dressing work, the page's reading and runner's supply work
 provide restrained background activity. Important admissions and the rescue
 decision receive steady compositions rather than reaction montages.
@@ -126,6 +126,37 @@ the acknowledged arrival checkpoint. An interrupted final beat rebuilds its
 unacknowledged starting arrangement. Gallery restart restores the closed rope;
 pause and focus loss freeze the interaction and sound.
 
-The remaining dialogue reduction, medical acting, general care-supply
-continuity and contextual post-scene conversations belong to the next polish
-pass. This pass preserves the eight story beats and their quest consequences.
+The performance pass below completes dialogue, care-supply continuity and
+contextual replies while preserving these eight story checkpoints.
+
+
+## Dialogue and performance pass
+
+The eight checkpoint beats now contain 28 player-paced dialogue boxes. Stable
+line IDs own one-shot care cues; pagination does not replay them. Mira checks
+the existing dressing beside the worker before acknowledging her final care
+instruction, retrieving her kit, and departing. Fast confirmations wait for
+required short contact actions and never accumulate multiple advances.
+
+The local treatment station places Worker A at [688,318] and Mira at [716,318].
+Native care, retrieval and linen placement artwork comes from
+`tools/build_sanctuary_care_performance.py` (use `--check` for reproducibility).
+The registered treatment grip meets the patient's existing forearm dressing.
+The runner completes one placement before settling. Quiet contact sounds share
+pause, focus and cleanup behavior with the rope.
+
+Deposited linen is a nonblocking world prop rendered at a fixed location during
+and after the cinematic. Mira's personal kit disappears at retrieval before she
+walks. Continue rebuilds props from the acknowledged beat. Emergency actors
+have short optional replies; the gardener and cave observations select context
+from the actual arrival/quest state, without inventing a renewed sighting or a
+rescue resolution. Gallery instructions identify P as pause and Escape as exit.
+
+### Global personal-prop presentation
+
+Personal weapons, tools and kits are visible only for authored use actions.
+When use ends, hide them before ordinary travel, independently of equipment or
+inventory ownership. Caelan's blade is shown only during its explicit MQ03
+scabbard cue, never as an equipment-dependent travel overlay. Deposited world
+objects remain fixed; gameplay transport objectives retain their authored carry
+animations. This visual rule grants no items, healing or quest progress.

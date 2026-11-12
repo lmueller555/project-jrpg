@@ -6,6 +6,7 @@ body drawings, attention and table props; reading is always player paced.
 import math
 
 import pygame
+from prop_presentation import personal_prop_visible
 
 from social import facing_toward
 
@@ -227,7 +228,7 @@ class RegentActions:
         if not self.owner.eligible:return
         player = self.game.player
         inventory = getattr(self.game, 'inventory', None)
-        if self.owner.stage != 'done' and inventory is not None and inventory.quantity('caelan_gearblade') > 0:
+        if personal_prop_visible(player, self.active_cue == 'caelan_scabbard') and inventory is not None and inventory.quantity('caelan_gearblade') > 0:
             sword = self._weapon()
             x = player.position.x+(4 if player.facing in ('front', 'right') else -10)
             y = player.position.y-20

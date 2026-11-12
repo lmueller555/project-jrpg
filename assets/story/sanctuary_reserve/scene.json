@@ -1,50 +1,202 @@
 {
   "caretaker": [
-    {"speaker":"reserve_caretaker","text":"*looks up with a smile* Caelan. Mind that little one's roots, will you? They're just under the path."},
-    {"speaker":"caelan","text":"It's looking better than it did last time."},
-    {"speaker":"reserve_caretaker","text":"A little shade helped. And a great deal of watching it and pretending I wasn't worried."},
-    {"speaker":"caelan","text":"*smiles* Do you need a hand?"},
-    {"speaker":"reserve_caretaker","text":"I've got these. Take a walk while it's quiet. People have been coming up all morning."},
-    {"speaker":"reserve_caretaker","text":"Some sit a while. Some help with the trees. We make room for both."},
-    {"speaker":"reserve_caretaker","text":"And mind the rope across the cave. The footing inside still needs checking."}
+    {
+      "speaker": "reserve_caretaker",
+      "text": "*looks up with a smile* Caelan. Mind that little one's roots, will you? They're just under the path."
+    },
+    {
+      "speaker": "caelan",
+      "text": "It's looking better than it did last time."
+    },
+    {
+      "speaker": "reserve_caretaker",
+      "text": "A little shade helped. And a great deal of watching it and pretending I wasn't worried."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*smiles* Do you need a hand?"
+    },
+    {
+      "speaker": "reserve_caretaker",
+      "text": "I've got these. Take a walk while it's quiet. People have been coming up all morning."
+    },
+    {
+      "speaker": "reserve_caretaker",
+      "text": "Some sit a while. Some help with the trees. We make room for both."
+    },
+    {
+      "speaker": "reserve_caretaker",
+      "text": "And mind the rope across the cave. The footing inside still needs checking."
+    }
   ],
   "visitors": [
-    {"speaker":"reserve_visitor_slate","text":"That sapling's taller than me now."},
-    {"speaker":"reserve_visitor_plum","text":"You said that last year."},
-    {"speaker":"reserve_visitor_slate","text":"Last year I was standing downhill."},
-    {"speaker":"caelan","text":"*laughs softly* I'll give you that."},
-    {"speaker":"reserve_visitor_plum","text":"His mother used to bring us here. She always found this bench first."},
-    {"speaker":"reserve_visitor_slate","text":"*rests a hand on the back of the bench* She liked to say everyone else could walk another lap."},
-    {"speaker":"reserve_visitor_plum","text":"We still do, most days."}
+    {
+      "speaker": "reserve_visitor_slate",
+      "text": "That sapling's taller than me now."
+    },
+    {
+      "speaker": "reserve_visitor_plum",
+      "text": "You said that last year."
+    },
+    {
+      "speaker": "reserve_visitor_slate",
+      "text": "Last year I was standing downhill."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*laughs softly* I'll give you that."
+    },
+    {
+      "speaker": "reserve_visitor_plum",
+      "text": "His mother used to bring us here. She always found this bench first."
+    },
+    {
+      "speaker": "reserve_visitor_slate",
+      "text": "*rests a hand on the back of the bench* She liked to say everyone else could walk another lap."
+    },
+    {
+      "speaker": "reserve_visitor_plum",
+      "text": "We still do, most days."
+    }
   ],
   "boundary": [
-    {"speaker":"caelan","text":"*reads the weathered marker* Elden Vale Sanctuary."},
-    {"speaker":"caelan","text":"The boundary stones go right around the wooded ridge. Someone's been keeping the ivy off the marks."}
+    {
+      "speaker": "caelan",
+      "text": "*reads the weathered marker* Elden Vale Sanctuary."
+    },
+    {
+      "speaker": "caelan",
+      "text": "The boundary stones go right around the wooded ridge. Someone's been keeping the ivy off the marks."
+    }
   ],
   "grove": [
-    {"speaker":"caelan","text":"*pauses beneath the silver-green branches* Even the fallen blossoms seem to catch the light."},
-    {"speaker":"caelan","text":"Serene says the aether gathers here naturally. It's easier to notice when I stand still."}
+    {
+      "speaker": "caelan",
+      "text": "*pauses beneath the silver-green branches* Even the fallen blossoms seem to catch the light."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Serene says the aether gathers here naturally. It's easier to notice when I stand still."
+    }
   ],
   "cave": [
-    {"speaker":"caelan","text":"*stops at the rope* The crystals catch the light all the way up the rock. It's cool this close to them."},
-    {"speaker":"caelan","text":"There's old stonework between them, just inside."},
-    {"speaker":"caelan","text":"*reads the notice* Closed while the inner path is checked."},
-    {"speaker":"caelan","text":"I'll leave the rope where it is."}
+    {
+      "speaker": "caelan",
+      "text": "*stops at the rope* The crystals catch the light all the way up the rock. It's cool this close to them."
+    },
+    {
+      "speaker": "caelan",
+      "text": "There's old stonework between them, just inside."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*reads the notice* Closed while the inner path is checked."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I'll leave the rope where it is."
+    }
   ],
   "survey": [
-    {"speaker":"caelan","text":"*studies the marks on the board* The stone face is well clear of the hall."},
-    {"speaker":"caelan","text":"Still inside the sanctuary boundary, though. Nothing's been cut here."}
+    {
+      "speaker": "caelan",
+      "text": "*studies the marks on the board* The stone face is well clear of the hall."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Still inside the sanctuary boundary, though. Nothing's been cut here."
+    }
   ],
   "records": [
-    {"speaker":"caelan","text":"A visitors' ledger. Names, work done in the grove, repairs that need seeing to..."},
-    {"speaker":"caelan","text":"*smiles at an entry* Someone's written 'fixed the same bench again.'"}
+    {
+      "speaker": "caelan",
+      "text": "A visitors' ledger. Names, work done in the grove, repairs that need seeing to..."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*smiles at an entry* Someone's written 'fixed the same bench again.'"
+    }
   ],
   "remembrance": [
-    {"speaker":"caelan","text":"Fresh flowers. The candles have been trimmed, too."},
-    {"speaker":"caelan","text":"Someone's been here this morning."}
+    {
+      "speaker": "caelan",
+      "text": "Fresh flowers. The candles have been trimmed, too."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Someone's been here this morning."
+    }
   ],
   "cabinet": [
-    {"speaker":"caelan","text":"Grove accounts, repair books, old plans... They've kept these carefully."},
-    {"speaker":"caelan","text":"I'd better leave them in order."}
+    {
+      "speaker": "caelan",
+      "text": "Grove accounts, repair books, old plans... They've kept these carefully."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I'd better leave them in order."
+    }
+  ],
+  "emergency_caretaker": [
+    {
+      "speaker": "arrival_caretaker",
+      "text": "We heard him answer after he was pulled inside. That was before you arrived."
+    },
+    {
+      "speaker": "arrival_caretaker",
+      "text": "If you need rest, Nessa is through the hall, then the north door with the bed plaque."
+    }
+  ],
+  "emergency_visitors": [
+    {
+      "speaker": "reserve_visitor_plum",
+      "text": "We’ll leave the courtyard clear. The caretakers need room to work."
+    }
+  ],
+  "emergency_worker_a": [
+    {
+      "speaker": "arrival_worker",
+      "text": "The dressing is holding. Thank you. Please bring word of the man still inside."
+    }
+  ],
+  "emergency_worker_b": [
+    {
+      "speaker": "arrival_worker_b",
+      "text": "They’re looking after us. I wish I could tell you more about what took him."
+    }
+  ],
+  "emergency_runner": [
+    {
+      "speaker": "arrival_runner",
+      "text": "The clean linen is here. I’ll stay with them while the caretaker watches the entrance."
+    }
+  ],
+  "emergency_sentry": [
+    {
+      "speaker": "arrival_sentry",
+      "text": "I’m watching the entrance. Call out if you need help coming back."
+    }
+  ],
+  "cave_open": [
+    {
+      "speaker": "caelan",
+      "text": "The rope’s been lowered. We can get through."
+    }
+  ],
+  "emergency_caretaker_guard": [
+    {
+      "speaker": "arrival_caretaker",
+      "text": "We heard him answer after he was pulled inside. That was before you arrived."
+    },
+    {
+      "speaker": "arrival_caretaker",
+      "text": "If you need rest, Nessa is through the hall, then the north door with the bed plaque."
+    }
+  ],
+  "emergency_caretaker_gardener": [
+    {
+      "speaker": "reserve_caretaker",
+      "text": "We’re keeping the paths clear for the injured. Nessa has the visitor room ready through the hall."
+    }
   ]
 }

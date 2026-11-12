@@ -145,7 +145,19 @@ class SanctuaryReserve:
                                   for field in ('position','approach') if field in point}}
             approach = approaches.get(record.get('approach_id', identifier))
             if approach is not None:result[identifier]['approach'] = list(approach)
+        arrival=getattr(self.game,'sanctuary_arrival',None)
+        if key=='targets' and getattr(arrival,'completed',False) and self.game.regent_quest.stage=='sanctuary_arrival_pending':
+            for role in ('caretaker','worker_a','worker_b','runner','sentry'):
+                actor=arrival.actors.get(role)
+                if actor is not None:
+                    result['emergency_'+role]={'position':list(actor.position),'approach':list(actor.position),
+                        'radius':38,'actor':'emergency_'+role,'label':{'caretaker':'Speak with the caretaker','worker_a':'Speak with the injured worker','worker_b':'Speak with the injured worker','runner':'Speak with the attendant','sentry':'Speak with the lookout'}[role],'script':'emergency_'+role}
         return result
+
+    def _actor(self,key):
+        if key and key.startswith('emergency_'):
+            return self.game.sanctuary_arrival.actors.get(key.removeprefix('emergency_'))
+        return self.actors.get(key)
 
     def ensure_world(self):
         world = self.game.world
@@ -216,7 +228,7 @@ class SanctuaryReserve:
         candidates = []
         for key, target in self.targets.items():
             position = pygame.Vector2(target['position'])
-            actor = self.actors.get(target.get('actor')) if game.world.data.get('id') == SCENE_ID else None
+            actor = self._actor(target.get('actor')) if game.world.data.get('id') == SCENE_ID else None
             if actor is not None:position = actor.position
             delta = position-game.player.position
             if delta.length_squared() and delta.normalize().dot(forward) < .1:continue
@@ -236,11 +248,17 @@ class SanctuaryReserve:
         if nearby is None:return False
         key,target = nearby
         identifier = 'sanctuary_reserve_'+key
-        if not self.game.social.start_script(self.dialogue[target.get('script',key)],
+        script=target.get('script',key)
+        arrival=getattr(self.game,'sanctuary_arrival',None)
+        if getattr(arrival,'completed',False):
+            if script=='cave':script='cave_open'
+            elif self.game.regent_quest.stage=='sanctuary_arrival_pending' and script in ('caretaker','visitors'):
+                script='emergency_caretaker_gardener' if script=='caretaker' else 'emergency_visitors'
+        if not self.game.social.start_script(self.dialogue[script],
                                               on_complete=self._release_conversation,
                                               identifier=identifier):return False
         self._conversation = identifier
-        actor = self.actors.get(target.get('actor'))
+        actor = self._actor(target.get('actor'))
         if actor is not None:
             actor.request_conversation(facing_toward(self.game.player.position-actor.position))
         return True
