@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "character": "aldric",
+  "canonical_portrait": "assets/portraits/eldenmere/aldric_neutral.png",
+  "design": "Brown-haired Regent Aldric in navy coat with brass edging and ivory collar, matching his approved portrait and cinematic costume.",
+  "builder": "tools/build_regent_aldric.py",
+  "registration": {
+    "canvas": [
+      24,
+      36
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ],
+    "foot_anchor": [
+      12,
+      34
+    ]
+  },
+  "method": "Canonical portrait front-head and cinematic head/coat/boot registration with explicit native eight-phase gait; no generic villager palette.",
+  "source_hashes": {
+    "assets/portraits/eldenmere/aldric_neutral.png": "49a865f706d6f4880ef9fae9308ef990ae7c434b1df2f125b4db776db539f525",
+    "assets/story/regent_arrival/actors/aldric/stand_left.png": "4781136b0a06688dad9c07f0907e9e354350029c14bcaf440faa878efd2939a8",
+    "assets/story/regent_arrival/actors/aldric/stand_right.png": "5823738e2aada5677e7700cbd8ffec29e5c6a9ce1a2b1c182fe756deb7ad0b3b",
+    "assets/story/regent_arrival/actors/aldric/stand_back.png": "63cc2a2e6f317670f1e0e4c8209410baefbb72760ae019cd5a8e38ed433b98be"
+  }
+}

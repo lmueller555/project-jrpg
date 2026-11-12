@@ -13,14 +13,8 @@ OUT=ROOT/'assets/story/regent'
 DIRECTIONS=('front','left','right','back')
 OUTLINE='#1a0e16';WOOD='#836347';WOOD_LIGHT='#b79a6c';WOOD_DARK='#573e2a'
 SPECS={
- 'aldric':{'name':'Regent Aldric','source':'male_03','position':[732,1032],
-           'hair':['#3b302d','#70635a','#aaa196'],
-           'shirt':['#263d4e','#3e5869','#637c89'],
-           'trousers':['#343037','#514850','#75656a']},
- 'regent_clerk':{'name':'Page','source':'male_01','position':[708,1054],
-           'hair':['#30251f','#5b3f2b','#8b6343'],
-           'shirt':['#354653','#607987','#8b9c9f'],
-           'trousers':['#493e3b','#725d4c','#a38a6a']},
+ 'aldric':{'name':'Regent Aldric','source':'canonical_aldric','position':[732,1032]},
+ 'regent_clerk':{'name':'Page','source':'canonical_page','position':[708,1054]},
  'regent_driver':{'name':'Driver','source':'male_01','position':[744,1104],
            'hair':['#312924','#69513c','#9a7857'],
            'shirt':['#344c37','#547953','#80986b'],
@@ -66,6 +60,27 @@ def recolor(source,spec,direction,offset=0):
  return im
 
 def actor_sheet(identifier,spec):
+ if identifier=='aldric':
+  if __package__:
+   from .build_regent_aldric import build as build_aldric
+  else:
+   from build_regent_aldric import build as build_aldric
+  build_aldric()
+  return {'id':identifier,'name':'Regent Aldric','position':spec['position'],
+          'probe_size':[8,4],'draw_anchor':[12,30],
+          'art':'assets/story/regent/actors/aldric/animation.json','facing':'front'}
+ if identifier=='regent_clerk':
+  # The Page has a native moss-coat design, not a generic villager recolor.
+  # The ordinary build preserves existing approved exports; this branch only
+  # supplies the correct recipe when constructing the actor for the first time.
+  if __package__:
+   from .build_regent_page import build as build_page
+  else:
+   from build_regent_page import build as build_page
+  build_page()
+  return {'id':identifier,'name':'Page','position':spec['position'],
+          'probe_size':[8,4],'draw_anchor':[12,30],
+          'art':'assets/story/regent/actors/regent_clerk/animation.json','facing':'front'}
  sheet=Image.new('RGBA',(120,144));idles={};walks={};sources={}
  for row,direction in enumerate(DIRECTIONS):
   source_path=f"assets/characters/npcs/{spec['source']}/idle_{direction}.png"

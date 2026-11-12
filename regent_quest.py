@@ -173,6 +173,7 @@ class RegentQuest:
 
     def release_pose(self):
         self.scene_actions.release()
+        for actor in self.actors.values():actor.set_pose(None)
         if not self._owned:return
         for actor in (self.serene, self.tomas):
             if self._handed_off(actor):continue

@@ -15,7 +15,7 @@ with the cave east of the care stations and hall. There are no reverse angles
 or camera rotation.
 
 Two injured Crown workers shelter in the first two bays. A caretaker tends them,
-a runner brings water and cloths from the hall, and a sentry watches the eastern
+a runner brings cloths from the hall, and a sentry watches the eastern
 path. The existing survey ground remains evidence of the concealed operation;
 its intact stone face is not newly excavated or blamed for the attack. The
 grove, memorial lamps and ordinary Sanctuary architecture remain maintained.
@@ -40,7 +40,7 @@ unread prose.
 | `rescue_decision` | Mira finishes the dressing, withdraws her tools and stands beside Caelan. Lucan moves into a commanding position facing them. | Mira's engineering tools give her a practical rescue role; Caelan insists on following through. Lucan accepts their involvement while retaining his protective, somewhat overbearing manner. |
 | `royal_handoff` | Hold the group while Lucan turns back toward Aldric, receives the order and turns toward the cave again. | Aldric explicitly releases his guard to accompany the rescue. Aldric and the page remain with the caretakers and crew list. |
 | `visitor_rest` | Reframe toward the hall as the caretaker gestures and the runner returns toward its doorway. | Establish Nessa's visitor room: through the hall, then the north door with the bed plaque. The bed remains available during cave exploration. |
-| `cave_approach` | Follow Caelan, Mira and Lucan along the eastward path. Aldric/page continue their work behind them. Lucan checks the opening; Mira watches loose stone; the caretaker raises the rail and withdraws. Finish at the actual gameplay camera position. | Give the rescue a clear immediate aim and return control without a staging jump. |
+| `cave_approach` | Follow Caelan, Mira and Lucan along the eastward path. Aldric/page continue their work behind them. Lucan checks the opening; Mira watches loose stone; the caretaker unhooks the rope, lowers it and steps clear. Finish at the actual gameplay camera position. | Give the rescue a clear immediate aim and return control without a staging jump. |
 
 The eight beats contain 38 authored dialogue lines. Workers retain injured
 poses while Mira's dressing work, the page's reading and runner's supply work
@@ -83,3 +83,49 @@ requires a later rescue payoff; arrival itself does not invent a rescue,
 complete the boss, grant rewards or resolve MQ03. The characters do not yet know
 that the bridge storm's aether surge opened the deeper rupture. That causal
 connection remains author continuity until discovered in subsequent scenes.
+
+
+## Character identity, movement and rope polish
+
+Aldric's native navy coat and brown hair now match his existing portrait and
+cinematic design, including his seated meal pose. His deterministic exporter is
+`tools/build_regent_aldric.py`.
+
+The Page uses the brown-haired, moss-coated design established in the larger
+arrival cinematic and its dedicated `regent_page` portrait. His native 24×36
+art includes four standing directions, eight-frame gaits, six-frame ledger
+sequences and a matching meal pose. `tools/build_regent_page.py --check`
+validates the exports and retained design recipe. The technical `regent_clerk`
+identity remains compatible with earlier journeys.
+
+The two injured workers retain distinct faces and workwear: the dark-haired
+worker in reddish clothing speaks, while the brown-haired worker in olive rests
+his leg. The grey-haired caretaker wears Sanctuary service colors. Their
+portraits and native poses are registered by
+`tools/build_sanctuary_arrival_art.py`; they do not reuse the survivor who remains
+in Eldenmere.
+
+`SanctuaryBlocking` consumes finite movement tracks from `scene.json`.
+Authored lanes, departure delays and intermediate stations separate all ten
+actors' full 24×12 ground probes. The page's work station lies outside the cave
+approach. The runner makes one delivery and remains at work. The opening camera
+tracks the arriving column before settling on the courtyard composition.
+
+The barrier stands on the accessible apron at `[972,359]`, with stationary posts
+and sixteen separately authored rope frames. The caretaker operates the right
+fastening from `[1052,404]`, using a twelve-frame interaction with its own canvas
+anchor. Hand and rope contacts share a 1.6-second timeline; a quiet sound marks
+the release. The rope is guided down, released and settles on the ground while
+the posts remain fixed. The caretaker then steps clear to `[1052,426]`.
+
+`SanctuaryRope` adds reversible, local post/closed-rope footprints without
+changing the cave façade's static boundary or the existing entrance interaction.
+The closed rope's footprint releases at the same cue as the visible fastening.
+The final positions, facings, Page reading hold and open rope reconstruct from
+the acknowledged arrival checkpoint. An interrupted final beat rebuilds its
+unacknowledged starting arrangement. Gallery restart restores the closed rope;
+pause and focus loss freeze the interaction and sound.
+
+The remaining dialogue reduction, medical acting, general care-supply
+continuity and contextual post-scene conversations belong to the next polish
+pass. This pass preserves the eight story beats and their quest consequences.

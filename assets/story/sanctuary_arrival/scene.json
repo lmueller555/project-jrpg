@@ -22,16 +22,16 @@
           404
         ],
         "aldric": [
-          730,
-          426
+          772,
+          414
         ],
         "page": [
-          758,
-          438
+          820,
+          386
         ],
         "caretaker": [
-          662,
-          376
+          648,
+          390
         ],
         "worker_a": [
           700,
@@ -46,8 +46,8 @@
           418
         ],
         "runner": [
-          600,
-          380
+          800,
+          350
         ]
       },
       "lines": [
@@ -81,6 +81,129 @@
         "worker_a": "injured",
         "worker_b": "injured",
         "runner": "set_down"
+      },
+      "movement": {
+        "lucan": {
+          "waypoints": [
+            [
+              444,
+              430
+            ],
+            [
+              858,
+              430
+            ],
+            [
+              858,
+              404
+            ]
+          ]
+        },
+        "caelan": {
+          "waypoints": [
+            [
+              444,
+              454
+            ],
+            [
+              662,
+              454
+            ],
+            [
+              662,
+              406
+            ]
+          ]
+        },
+        "mira": {
+          "waypoints": [
+            [
+              444,
+              478
+            ],
+            [
+              564,
+              478
+            ],
+            [
+              564,
+              354
+            ],
+            [
+              700,
+              354
+            ],
+            [
+              700,
+              350
+            ]
+          ]
+        },
+        "aldric": {
+          "waypoints": [
+            [
+              444,
+              502
+            ],
+            [
+              564,
+              502
+            ],
+            [
+              564,
+              438
+            ],
+            [
+              772,
+              438
+            ],
+            [
+              772,
+              414
+            ]
+          ]
+        },
+        "page": {
+          "waypoints": [
+            [
+              444,
+              526
+            ],
+            [
+              564,
+              526
+            ],
+            [
+              564,
+              366
+            ],
+            [
+              820,
+              366
+            ],
+            [
+              820,
+              386
+            ]
+          ]
+        },
+        "runner": {
+          "waypoints": [
+            [
+              600,
+              370
+            ],
+            [
+              800,
+              370
+            ],
+            [
+              800,
+              350
+            ]
+          ],
+          "delay": 3.0
+        }
       }
     },
     {
@@ -94,14 +217,6 @@
         "lucan": [
           820,
           412
-        ],
-        "page": [
-          772,
-          406
-        ],
-        "runner": [
-          724,
-          350
         ]
       },
       "lines": [
@@ -136,6 +251,20 @@
         "worker_b": "injured",
         "page": "read",
         "runner": "set_down"
+      },
+      "movement": {
+        "lucan": {
+          "waypoints": [
+            [
+              858,
+              412
+            ],
+            [
+              820,
+              412
+            ]
+          ]
+        }
       }
     },
     {
@@ -152,7 +281,8 @@
         "worker_a": "injured",
         "worker_b": "injured",
         "page": "read"
-      }
+      },
+      "movement": {}
     },
     {
       "id": "responsibility",
@@ -165,10 +295,6 @@
         "caretaker": [
           690,
           382
-        ],
-        "runner": [
-          628,
-          384
         ]
       },
       "lines": [
@@ -206,6 +332,20 @@
         "worker_a": "injured",
         "worker_b": "injured",
         "page": "read"
+      },
+      "movement": {
+        "caretaker": {
+          "waypoints": [
+            [
+              648,
+              382
+            ],
+            [
+              690,
+              382
+            ]
+          ]
+        }
       }
     },
     {
@@ -221,12 +361,8 @@
           402
         ],
         "lucan": [
-          760,
-          450
-        ],
-        "runner": [
-          724,
-          350
+          858,
+          414
         ]
       },
       "lines": [
@@ -273,6 +409,37 @@
         "worker_b": "injured",
         "page": "read",
         "runner": "tend"
+      },
+      "movement": {
+        "lucan": {
+          "waypoints": [
+            [
+              858,
+              412
+            ],
+            [
+              858,
+              414
+            ]
+          ]
+        },
+        "mira": {
+          "waypoints": [
+            [
+              718,
+              350
+            ],
+            [
+              718,
+              402
+            ],
+            [
+              702,
+              402
+            ]
+          ],
+          "delay": 0.8
+        }
       }
     },
     {
@@ -306,7 +473,8 @@
         "worker_b": "injured",
         "page": "read",
         "runner": "tend"
-      }
+      },
+      "movement": {}
     },
     {
       "id": "visitor_rest",
@@ -315,12 +483,7 @@
         600,
         365
       ],
-      "goals": {
-        "runner": [
-          534,
-          370
-        ]
-      },
+      "goals": {},
       "lines": [
         {
           "speaker": "arrival_caretaker",
@@ -339,7 +502,8 @@
         "worker_a": "injured",
         "worker_b": "injured",
         "page": "read"
-      }
+      },
+      "movement": {}
     },
     {
       "id": "cave_approach",
@@ -354,24 +518,20 @@
           406
         ],
         "mira": [
-          976,
+          984,
           432
         ],
         "lucan": [
-          1032,
-          400
+          976,
+          406
         ],
         "caretaker": [
-          972,
-          454
+          1052,
+          426
         ],
         "sentry": [
           1068,
           444
-        ],
-        "runner": [
-          724,
-          350
         ]
       },
       "lines": [
@@ -385,16 +545,168 @@
         },
         {
           "speaker": "arrival_caretaker",
-          "text": "I’ll lift the rail. Call back if you need us."
+          "text": "I’ll unhook the rope. Call back if you need us."
         }
       ],
       "poses": {
         "worker_a": "injured",
         "worker_b": "injured",
         "page": "read",
-        "runner": "tend",
-        "caretaker": "lift_rail"
+        "runner": "tend"
+      },
+      "movement": {
+        "lucan": {
+          "waypoints": [
+            [
+              858,
+              406
+            ],
+            [
+              976,
+              406
+            ]
+          ]
+        },
+        "caelan": {
+          "waypoints": [
+            [
+              662,
+              426
+            ],
+            [
+              1008,
+              426
+            ],
+            [
+              1008,
+              406
+            ]
+          ],
+          "delay": 0.4
+        },
+        "mira": {
+          "waypoints": [
+            [
+              718,
+              402
+            ],
+            [
+              718,
+              434
+            ],
+            [
+              984,
+              434
+            ],
+            [
+              984,
+              432
+            ]
+          ],
+          "delay": 1.35
+        },
+        "caretaker": {
+          "waypoints": [
+            [
+              690,
+              366
+            ],
+            [
+              880,
+              366
+            ],
+            [
+              880,
+              390
+            ],
+            [
+              920,
+              390
+            ],
+            [
+              920,
+              418
+            ],
+            [
+              1032,
+              418
+            ],
+            [
+              1032,
+              404
+            ],
+            [
+              1052,
+              404
+            ]
+          ],
+          "delay": 0.8
+        },
+        "sentry": {
+          "waypoints": [
+            [
+              1068,
+              418
+            ],
+            [
+              1068,
+              444
+            ]
+          ]
+        }
+      },
+      "keeper": {
+        "contact": [
+          1052,
+          404
+        ],
+        "retreat": [
+          1052,
+          426
+        ]
       }
     }
-  ]
+  ],
+  "starts": {
+    "caelan": [
+      444,
+      642
+    ],
+    "mira": [
+      444,
+      674
+    ],
+    "lucan": [
+      444,
+      610
+    ],
+    "aldric": [
+      444,
+      706
+    ],
+    "page": [
+      444,
+      738
+    ],
+    "caretaker": [
+      648,
+      390
+    ],
+    "worker_a": [
+      700,
+      318
+    ],
+    "worker_b": [
+      776,
+      318
+    ],
+    "sentry": [
+      948,
+      418
+    ],
+    "runner": [
+      600,
+      370
+    ]
+  }
 }

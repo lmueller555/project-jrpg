@@ -1,0 +1,508 @@
+{
+  "version": 1,
+  "actors": {
+    "caretaker": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/story/sanctuary_arrival/art/caretaker/idle_front.png",
+        "back": "assets/story/sanctuary_arrival/art/caretaker/idle_back.png",
+        "left": "assets/story/sanctuary_arrival/art/caretaker/idle_left.png",
+        "right": "assets/story/sanctuary_arrival/art/caretaker/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_03.png",
+            "duration_ms": 140
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_03.png",
+            "duration_ms": 140
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_03.png",
+            "duration_ms": 140
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_03.png",
+            "duration_ms": 140
+          }
+        ]
+      },
+      "poses": {
+        "unhook": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_00.png",
+              "duration_ms": 100,
+              "grip": [
+                26,
+                31
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_01.png",
+              "duration_ms": 100,
+              "grip": [
+                21,
+                24
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_02.png",
+              "duration_ms": 100,
+              "grip": [
+                15,
+                18
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_03.png",
+              "duration_ms": 100,
+              "grip": [
+                12,
+                12
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_04.png",
+              "duration_ms": 100,
+              "grip": [
+                12,
+                13
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_05.png",
+              "duration_ms": 100,
+              "grip": [
+                13,
+                16
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_06.png",
+              "duration_ms": 100,
+              "grip": [
+                14,
+                20
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_07.png",
+              "duration_ms": 100,
+              "grip": [
+                14,
+                24
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_08.png",
+              "duration_ms": 100,
+              "grip": [
+                14,
+                28
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_09.png",
+              "duration_ms": 100,
+              "grip": [
+                13,
+                31
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_10.png",
+              "duration_ms": 200,
+              "grip": [
+                21,
+                32
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_11.png",
+              "duration_ms": 400,
+              "grip": [
+                26,
+                31
+              ]
+            }
+          ],
+          "loop": false,
+          "anchor": [
+            26,
+            40
+          ]
+        }
+      },
+      "portrait": "arrival_caretaker",
+      "portrait_file": "assets/story/sanctuary_arrival/art/portraits/caretaker.png",
+      "stationary": false
+    },
+    "worker_a": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/story/sanctuary_arrival/art/worker_a/idle_front.png",
+        "back": "assets/story/sanctuary_arrival/art/worker_a/idle_back.png",
+        "left": "assets/story/sanctuary_arrival/art/worker_a/idle_left.png",
+        "right": "assets/story/sanctuary_arrival/art/worker_a/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_front.png",
+            "duration_ms": 200
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_back.png",
+            "duration_ms": 200
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_left.png",
+            "duration_ms": 200
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_right.png",
+            "duration_ms": 200
+          }
+        ]
+      },
+      "poses": {
+        "injured": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_arrival/art/worker_a/injured.png",
+              "duration_ms": 1000
+            }
+          ],
+          "loop": true,
+          "anchor": [
+            12,
+            30
+          ]
+        }
+      },
+      "portrait": "arrival_worker_a",
+      "portrait_file": "assets/story/sanctuary_arrival/art/portraits/worker_a.png",
+      "stationary": true
+    },
+    "worker_b": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/story/sanctuary_arrival/art/worker_b/idle_front.png",
+        "back": "assets/story/sanctuary_arrival/art/worker_b/idle_back.png",
+        "left": "assets/story/sanctuary_arrival/art/worker_b/idle_left.png",
+        "right": "assets/story/sanctuary_arrival/art/worker_b/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_b/idle_front.png",
+            "duration_ms": 200
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_b/idle_back.png",
+            "duration_ms": 200
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_b/idle_left.png",
+            "duration_ms": 200
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/worker_b/idle_right.png",
+            "duration_ms": 200
+          }
+        ]
+      },
+      "poses": {
+        "injured": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_arrival/art/worker_b/injured.png",
+              "duration_ms": 1000
+            }
+          ],
+          "loop": true,
+          "anchor": [
+            16,
+            30
+          ]
+        }
+      },
+      "portrait": "arrival_worker_b",
+      "portrait_file": "assets/story/sanctuary_arrival/art/portraits/worker_b.png",
+      "stationary": true
+    }
+  },
+  "rail": {
+    "position": [
+      972,
+      359
+    ],
+    "frame_size": [
+      72,
+      48
+    ],
+    "posts": "assets/story/sanctuary_arrival/art/rail/posts.png",
+    "rope_frames": [
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_00.png",
+        "duration_ms": 100,
+        "free_end": [
+          66,
+          17
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_01.png",
+        "duration_ms": 100,
+        "free_end": [
+          66,
+          17
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_02.png",
+        "duration_ms": 100,
+        "free_end": [
+          66,
+          17
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_03.png",
+        "duration_ms": 100,
+        "free_end": [
+          66,
+          17
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_04.png",
+        "duration_ms": 100,
+        "free_end": [
+          66,
+          18
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_05.png",
+        "duration_ms": 100,
+        "free_end": [
+          67,
+          21
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_06.png",
+        "duration_ms": 100,
+        "free_end": [
+          68,
+          25
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_07.png",
+        "duration_ms": 100,
+        "free_end": [
+          68,
+          29
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_08.png",
+        "duration_ms": 100,
+        "free_end": [
+          68,
+          33
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_09.png",
+        "duration_ms": 100,
+        "free_end": [
+          67,
+          36
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_10.png",
+        "duration_ms": 100,
+        "free_end": [
+          60,
+          40
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_11.png",
+        "duration_ms": 100,
+        "free_end": [
+          48,
+          43
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_12.png",
+        "duration_ms": 100,
+        "free_end": [
+          35,
+          44
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_13.png",
+        "duration_ms": 100,
+        "free_end": [
+          24,
+          44
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_14.png",
+        "duration_ms": 100,
+        "free_end": [
+          18,
+          43
+        ]
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/art/rail/rope_15.png",
+        "duration_ms": 100,
+        "free_end": [
+          18,
+          43
+        ]
+      }
+    ],
+    "caretaker_position": [
+      1052,
+      404
+    ],
+    "facing": "left",
+    "contact_point": [
+      66,
+      17
+    ],
+    "grip_world": [
+      1038,
+      376
+    ],
+    "contact_ms": 300,
+    "release_ms": 400,
+    "duration_ms": 1600,
+    "guided_until_ms": 1000,
+    "sound": "assets/story/sanctuary_arrival/art/rail/rope_release.wav",
+    "post_footprints": [
+      [
+        4,
+        29,
+        6,
+        4
+      ],
+      [
+        62,
+        29,
+        6,
+        4
+      ]
+    ],
+    "closed_rope_footprint": [
+      10,
+      29,
+      52,
+      4
+    ],
+    "closed": "assets/story/sanctuary_arrival/art/rail/closed.png",
+    "open": "assets/story/sanctuary_arrival/art/rail/open.png"
+  },
+  "source_recipe": "assets/source/story/sanctuary_arrival_polish/recipe.json",
+  "design": "Native Sanctuary care identities and fixed-post rope release; pixel registration is explicit."
+}

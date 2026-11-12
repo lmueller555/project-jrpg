@@ -351,6 +351,53 @@
       "sprite_root": "assets/story/regent_emergency",
       "source": "assets/portraits/eldenmere/male_03_neutral.png",
       "derivation_recipe": "assets/source/story/regent_emergency/recipe.json"
+    },
+    "regent_page": {
+      "name": "Page",
+      "expression": "attentive",
+      "file": "../../story/regent_arrival/actors/portraits/clerk.png",
+      "sprite_root": "assets/story/regent/actors/regent_clerk",
+      "source": "assets/story/regent_arrival/actors/portraits/clerk.png",
+      "native_size": [
+        72,
+        72
+      ]
+    },
+    "arrival_caretaker": {
+      "name": "Sanctuary caretaker",
+      "expression": "concerned",
+      "file": "../../story/sanctuary_arrival/art/portraits/caretaker.png",
+      "sprite_root": "assets/story/sanctuary_arrival/art/caretaker",
+      "source": "assets/source/story/sanctuary_arrival_polish/care_identity_design.png",
+      "native_size": [
+        72,
+        72
+      ],
+      "derivation_recipe": "assets/source/story/sanctuary_arrival_polish/recipe.json"
+    },
+    "arrival_worker_a": {
+      "name": "Injured Crown worker",
+      "expression": "injured",
+      "file": "../../story/sanctuary_arrival/art/portraits/worker_a.png",
+      "sprite_root": "assets/story/sanctuary_arrival/art/worker_a",
+      "source": "assets/source/story/sanctuary_arrival_polish/care_identity_design.png",
+      "native_size": [
+        72,
+        72
+      ],
+      "derivation_recipe": "assets/source/story/sanctuary_arrival_polish/recipe.json"
+    },
+    "arrival_worker_b": {
+      "name": "Resting Crown worker",
+      "expression": "injured",
+      "file": "../../story/sanctuary_arrival/art/portraits/worker_b.png",
+      "sprite_root": "assets/story/sanctuary_arrival/art/worker_b",
+      "source": "assets/source/story/sanctuary_arrival_polish/care_identity_design.png",
+      "native_size": [
+        72,
+        72
+      ],
+      "derivation_recipe": "assets/source/story/sanctuary_arrival_polish/recipe.json"
     }
   },
   "aliases": {
