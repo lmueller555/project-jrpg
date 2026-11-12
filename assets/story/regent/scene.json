@@ -265,7 +265,7 @@
   "attack_report": [
     {
       "speaker": "regent_survivor",
-      "text": "*breathless* Your lordship—the men at the Sanctuary…",
+      "text": "Your lordship—the men at the Sanctuary…",
       "cue": "survivor_alarm"
     },
     {
@@ -277,136 +277,80 @@
       "text": "Something came out of the cave. We couldn’t get everyone away."
     },
     {
-      "speaker": "lucan",
-      "text": "How many are still there?"
-    },
-    {
-      "speaker": "regent_survivor",
-      "text": "I don’t know. I saw men trying to get clear. Others were still up there when I ran."
-    },
-    {
       "speaker": "serene",
       "text": "What men?"
     },
     {
       "speaker": "regent_survivor",
-      "text": "The advance party. We were setting out the Crown’s working ground."
+      "text": "The advance party. We were marking out the Crown’s working ground."
     },
     {
       "speaker": "serene",
-      "text": "*turns to Aldric* You sent a crew into the reserve?"
+      "text": "You’ve already sent men into the reserve?"
     },
     {
       "speaker": "aldric",
-      "text": "I sent them ahead to establish the Crown’s authority over the deposit."
-    },
-    {
-      "speaker": "serene",
-      "text": "When?"
-    },
-    {
-      "speaker": "aldric",
-      "text": "Before I came to Eldenmere."
+      "text": "Ahead of my visit. To secure the deposit and prepare the mining work."
     },
     {
       "speaker": "lucan",
-      "text": "*stares at Aldric* You sent men ahead? I wasn't told.",
+      "text": "You sent them without telling me?",
       "cue": "lucan_disbelief"
     },
     {
       "speaker": "aldric",
-      "text": "It was a separate order, Lucan."
+      "text": "They weren’t supposed to enter the cave."
     },
     {
       "speaker": "serene",
-      "text": "You came here asking for my agreement after sending them in."
-    },
-    {
-      "speaker": "aldric",
-      "text": "There are repair crews waiting. I intended to have the site ready."
-    },
-    {
-      "speaker": "serene",
-      "text": "What were your men instructed to do when the caretakers objected?"
-    },
-    {
-      "speaker": "aldric",
-      "text": "They carried my orders to secure the ground and prepare the mining work."
+      "text": "You came asking for my agreement after giving the orders."
     },
     {
       "speaker": "regent_survivor",
-      "text": "*struggles to catch his breath* My lord, please. They’re still there."
+      "text": "Please… the others are still there."
     },
     {
       "speaker": "lucan",
-      "text": "Is the road to the reserve clear?"
+      "text": "Is the road clear?"
     },
     {
       "speaker": "regent_survivor",
-      "text": "It was when I left. I heard it behind us. That growling…"
+      "text": "It was when I left."
     },
     {
       "speaker": "lucan",
-      "text": "*after a moment* We need to reach them."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Then we’ll go now."
+      "text": "Then we move. Now."
     }
   ],
   "departure": [
     {
       "speaker": "serene",
-      "text": "*supports the survivor* Sit down. Slowly.",
+      "text": "Easy. Tomas, water and clean cloths.",
       "cue": "survivor_aid"
     },
     {
-      "speaker": "tomas",
-      "text": "I’ll get water."
-    },
-    {
-      "speaker": "serene",
-      "text": "And clean cloths, please. I need to see where he is hurt."
-    },
-    {
       "speaker": "regent_driver",
-      "text": "I’ll help. Tell me what you need."
+      "text": "I’ll help you tend him."
     },
     {
       "speaker": "caelan",
-      "text": "I can go with them. Mira has her kit. We can help bring people back."
+      "text": "I’ll get Mira. She has her kit—we can help the wounded."
     },
     {
       "speaker": "serene",
-      "text": "Get Mira, then find the caretakers. Help the wounded. Keep clear of the cave."
-    },
-    {
-      "speaker": "caelan",
-      "text": "I will."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Page, bring the survey."
-    },
-    {
-      "speaker": "regent_clerk",
-      "text": "Yes, your lordship."
+      "text": "Find the caretakers when you arrive. Help where you can, but stay clear of the cave."
     },
     {
       "speaker": "lucan",
-      "text": "We stay together on the road. When we arrive, I want to know where everyone is."
-    },
-    {
-      "speaker": "serene",
-      "text": "Aldric. We have not finished this."
+      "text": "Page, bring the survey. Stay with us."
     },
     {
       "speaker": "aldric",
-      "text": "I know."
+      "text": "Mother Serene—"
     },
     {
-      "speaker": "caelan",
-      "text": "I’ll get Mira."
+      "speaker": "serene",
+      "text": "Bring them back safely, Aldric. We will speak when you return."
     }
   ],
   "mira_departure": [

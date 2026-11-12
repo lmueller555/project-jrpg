@@ -49,9 +49,13 @@ completion. The existing Venn cart detour stays removed.
 
 ## Dialogue and presentation
 
+The report and departure use 21 dialogue boxes, retaining Serene’s accusation
+and Lucan’s surprise before urgent rescue arrangements. Lucan does not speak
+until the secret deployment is exposed.
+
 The survivor's entrance fades the music to silence over 700 ms. His first two
-utterances (including Aldric's intervening question) play in silence. Kindled
-Courage begins on Lucan's following question and loops through departure,
+utterances (including Aldric's intervening question) play in silence. **Something is Wrong**
+begins on Serene’s “What men?” and loops through departure,
 Mira's rejoining and Sanctuary arrival. The arrival scene retains this score
 through its final handoff. The first successful cave entry permanently releases
 the emergency override; **Elden Vale Sanctuary Cave** plays underground, and

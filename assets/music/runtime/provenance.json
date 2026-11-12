@@ -294,6 +294,38 @@
         "sha256": "38f9b73f72c081b20deedbd0ab227758842095e5111fadd6d56039efbb20290b",
         "bytes": 1525809
       }
+    },
+    {
+      "identifier": "something_is_wrong",
+      "source": "Something is Wrong.m4a",
+      "source_git_blob_sha": "8ba8df87f440b7b4d34561cec1dc31722bb21fba",
+      "source_sha256": "1cc19a3dc6790602eb2327c155cec6d7454937b53a9120c69910056f5d6b9299",
+      "source_codec": "opus",
+      "source_decoded_frames": 2861448,
+      "source_decoded_seconds": 59.6135,
+      "loop": true,
+      "runtime": "runtime/something_is_wrong.ogg",
+      "runtime_frame_delta": 0,
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 2861448,
+        "duration_seconds": 59.6135,
+        "peak_dbfs": -3.452738693845549,
+        "rms_dbfs": -18.186309613527946,
+        "sample_step_across_repeat": 0.006730017252266407,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": true,
+        "pygame_stream_one_shot": false,
+        "sha256": "0989816de1ed63f5dac87e9d2f9a6852e75825a96ecede5f799880225369e091",
+        "bytes": 1531157
+      }
     }
   ]
 }

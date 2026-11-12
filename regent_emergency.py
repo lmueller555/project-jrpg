@@ -71,7 +71,7 @@ class RegentEmergency:
     def mira(self):return self.game.mill_quest.mira
 
     def reset(self):
-        self._courage_started = False
+        self._emergency_music_started = False
         self._auto_dialogue = None
         self._staged_world = None
         self._station_goals = {}
@@ -302,9 +302,9 @@ class RegentEmergency:
                 and social.script_identifier == 'regent_attack_report'
                 and social.page is not None
                 and social.page.get('source_line', 0) >= 3):
-            self._courage_started = True
-        if self.owner.stage not in ('interruption', 'attack_report') or self._courage_started:
-            self.game.music.play('battle', fade_ms=0 if restoring else 450)  # Kindled Courage.
+            self._emergency_music_started = True
+        if self.owner.stage not in ('interruption', 'attack_report') or self._emergency_music_started:
+            self.game.music.play('something_is_wrong', fade_ms=0 if restoring else 450)
         elif restoring:
             self.game.music.stop()
         else:

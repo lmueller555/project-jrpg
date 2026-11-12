@@ -401,7 +401,7 @@ def capture(output=OUT,movie_enabled=True):
                 if 'growl' in text.lower():tag='growling_warning'
             elif identifier=='regent_attack_report':
                 if 'survivor' in speaker and any(word in text.lower() for word in ('cave','get everyone')):tag='survivor_report'
-                elif speaker=='lucan' and any(word in text.lower() for word in ('told','know','ahead','informed')):tag='lucan_surprised'
+                elif speaker=='lucan' and any(word in text.lower() for word in ('without telling','know','ahead','informed')):tag='lucan_surprised'
                 elif speaker=='serene' and any(word in text.lower() for word in ('asking','agreement','permission')):tag='serene_discovers_betrayal'
                 elif speaker=='aldric' and any(word in text.lower() for word in ('authority','orders','ahead')):tag='aldric_exposed'
             elif identifier=='regent_departure':
@@ -550,7 +550,7 @@ def check(output):
         record['scene'] for record in report['survivor_route']}
     assert len(report['survivor_route'])>20
     assert any(record['script']=='regent_attack_report' and record['speaker']=='lucan'
-               and "wasn't told" in record['text'].lower().replace('’',"'")
+               and "without telling" in record['text'].lower().replace('’',"'")
                for record in report['dialogue'])
     assert report['continued_after_report'] and report['continued_at_arrival']
     assert report['cave_barrier_closed'] and report['no_battle_or_reward']

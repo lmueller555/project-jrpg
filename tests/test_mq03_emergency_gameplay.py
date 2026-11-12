@@ -61,12 +61,12 @@ class MQ03EmergencyGameplayTests(unittest.TestCase):
         def check_music(identifier,line,page):
             driver.tick()
             self.assertEqual(driver.game.music.desired_track,
-                             None if page['source_line'] < 3 else 'battle')
+                             None if page['source_line'] < 3 else 'something_is_wrong')
         driver.read_current(on_page=check_music)
         self.assertEqual(driver.quest.stage,'departure')
         driver.continue_saved()
         self.assertEqual(driver.quest.stage,'departure')
-        self.assertEqual(driver.game.music.desired_track,'battle')
+        self.assertEqual(driver.game.music.desired_track,'something_is_wrong')
         driver.tick()
         self.assertNotEqual(driver.game.social.script_identifier,'regent_attack_report')
         self.assertEqual(len(survivors(driver.game)),1)
@@ -115,7 +115,7 @@ class MQ03EmergencyGameplayTests(unittest.TestCase):
         self.assertFalse(driver.game.world.can_stand((1008,365)))
         driver.continue_saved(settle=False)
         self.assertEqual(driver.quest.stage,'sanctuary_arrival_pending')
-        self.assertEqual(driver.game.music.desired_track,'battle')
+        self.assertEqual(driver.game.music.desired_track,'something_is_wrong')
         self.assertEqual(driver.game.world.data['id'],RESERVE)
         self.assertEqual(driver.game.party.characters['mira'].to_dict(),resources)
         self.assertEqual(driver.game.quests.status(LANTERN_QUEST),'locked')

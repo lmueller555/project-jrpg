@@ -20,6 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 MUSIC = ROOT / 'assets/music'
 RATE = 48000
 SOURCES = (
+    dict(identifier='something_is_wrong', source='Something is Wrong.m4a',
+         git_sha='8ba8df87f440b7b4d34561cec1dc31722bb21fba',
+         target='something_is_wrong.ogg', title='Something is Wrong', trim_tail=False),
     dict(identifier='title', source='Eldenmere Theme.m4a',
          git_sha='57758f45b93257789f1fff434fecce4a43ef8a4c',
          target='eldenmere_theme.ogg', title='Eldenmere Theme', trim_tail=False),

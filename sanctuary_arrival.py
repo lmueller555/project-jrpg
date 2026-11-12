@@ -174,7 +174,7 @@ class SanctuaryArrival(MillGift):
         _regent_checkpoint(self.game,'sanctuary_arrival_pending')
         self.reset();self.game._sync_story_party()
         _station(self.game,self.game._scene_by_id(RESERVE),(444,642),'back')
-        self.game.music.play('battle',fade_ms=0)
+        self.game.music.play('something_is_wrong',fade_ms=0)
     def maybe_start(self):
         g=self.game
         if (not self.active and not self.completed
