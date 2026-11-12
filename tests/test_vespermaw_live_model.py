@@ -69,6 +69,11 @@ class VespermawLiveModelTests(unittest.TestCase):
         model.enemy.atb = 1
         model.update(0)
         self.assertEqual(model.current_action.actor, 'enemy')
+        if model.current_action.kind == 'channel':
+            self.assertEqual(model.current_action.action,'vespermaw_attune')
+            self.finish(model)
+            self.assertEqual(model.current_action.actor,'enemy')
+            self.assertNotEqual(model.current_action.kind,'channel')
         return self.finish(model)
 
     def prepare(self, model):
@@ -279,3 +284,95 @@ class VespermawLiveModelTests(unittest.TestCase):
                               for actor in (*model.party, *model.enemies)],
                     model.ready_actor, state.action_index, state.response_actions, state.vulnerable)
         self.assertEqual(run(.01), run(1000))
+
+    def test_forms_change_after_two_completed_turns_including_preparation_and_recovery(self):
+        model = self.model()
+        actual = []
+        for turn in range(8):
+            if model._enemy_response_pending('enemy'):self.respond(model)
+            action = self.enemy_turn(model)
+            actual.append(model.vespermaw_element)
+            self.assertEqual(model.vespermaw_turns,turn+1)
+            if action.action == ROAR:self.assertEqual(action.element,model.vespermaw_element)
+            elif action.kind == 'physical':self.assertEqual(action.element,'non_elemental')
+        self.assertEqual(actual,['fire','fire','ice','ice','water','water','fire','fire'])
+        shifts = [event for event in model.drain_events() if event['type']=='elemental_shift']
+        self.assertEqual([event['element'] for event in shifts],['ice','water','fire'])
+
+    def test_free_channel_commits_at_cue_then_immediately_takes_the_reserved_turn(self):
+        model = self.model()
+        self.enemy_turn(model);self.enemy_turn(model)
+        self.empty_gauges(model);model.enemy.atb=1
+        model.update(0)
+        action = model.current_action
+        self.assertEqual((action.action,action.kind,action.channel_from,action.channel_to),
+                         ('vespermaw_attune','channel','fire','ice'))
+        self.assertEqual((action.duration,action.impact_at),(2.5,1.65))
+        before = [(a.hp,a.mp,a.atb) for a in (*model.party,*model.enemies)]
+        index = model._enemy_action_index
+        model.update(1.649)
+        self.assertEqual(model.vespermaw_element,'fire')
+        model.update(.001)
+        self.assertEqual(model.vespermaw_element,'ice')
+        self.assertEqual([(a.hp,a.mp,a.atb) for a in (*model.party,*model.enemies)],before)
+        self.assertEqual(model._enemy_action_index,index)
+        self.assertEqual(model.vespermaw_turns,2)
+        model.update(.85)
+        self.assertEqual(model.current_action.action,GATHER)
+        self.assertEqual(model.current_action.elapsed,0)
+        self.assertEqual(model._enemy_action_index,index+1)
+        self.assertEqual(model.enemy.atb,0)
+        self.assertEqual(model.vespermaw_turns,2)
+        self.finish(model)
+        self.assertEqual(model.vespermaw_turns,3)
+
+    def test_channel_preserves_prepared_target_warning_and_response_credit(self):
+        model = self.model()
+        self.prepare(model);self.respond(model)
+        state = model._enemy_states['enemy']
+        state.turns = 2
+        before = (state.prepared_action,state.telegraphed_target,state.response_actions)
+        self.empty_gauges(model);model.enemy.atb=1;model.update(0)
+        self.assertTrue(model.vespermaw_channeling)
+        self.finish(model)
+        self.assertEqual((state.prepared_action,state.telegraphed_target,state.response_actions),before)
+        self.assertEqual(model.current_action.action,POUNCE)
+        self.assertEqual(model.current_action.target,before[1])
+        self.assertFalse(any(e['type']=='telegraph' for e in model.drain_events()
+                             if e.get('retargeted')))
+
+    def test_result_cancels_a_partial_channel_without_a_followup_attack(self):
+        model = self.model()
+        self.enemy_turn(model);self.enemy_turn(model)
+        self.empty_gauges(model);model.enemy.atb=1;model.update(0)
+        self.assertTrue(model.vespermaw_channeling)
+        model.update(.5)
+        model._result('victory')
+        self.assertFalse(model.vespermaw_channeling)
+        self.assertIsNone(model.current_action)
+        model.drain_events();model.update(10)
+        self.assertEqual(model.drain_events(),[])
+        self.assertEqual(model.vespermaw_turns,2)
+
+    def test_each_form_has_one_double_weakness_and_matching_full_absorption(self):
+        from fractions import Fraction
+        from bestiary import ELEMENT_IDS
+        for form,weakness in (('fire','water'),('ice','fire'),('water','ice')):
+            model = self.model()
+            model._enemy_states['enemy'].element = form
+            for element in ELEMENT_IDS:
+                response = model._elemental_response(model.enemy,element)
+                self.assertEqual(response,(Fraction(2 if element==weakness else 1),element==form))
+            model.enemy.hp=10000
+            model.actions['aether_dart']['element']=form
+            model._start_action('player','aether_dart')
+            self.finish(model)
+            self.assertGreater(model.enemy.hp,10000)
+            impact = next(e for e in model.drain_events() if e['type']=='impact')
+            self.assertTrue(impact['absorbed'])
+            self.assertEqual(impact['damage'],0)
+            self.assertGreater(impact['healing'],0)
+            # Ordinary attacks remain viable without either optional gem.
+            hp=model.enemy.hp
+            model._start_action('player','attack');self.finish(model)
+            self.assertLess(model.enemy.hp,hp)

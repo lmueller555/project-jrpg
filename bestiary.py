@@ -139,7 +139,8 @@ def _validate_elemental_profile(profile):
 
 
 def _validate_species(enemy, actions, archetypes, items, *, enemy_id=None):
-    if (set(enemy) not in (SPECIES_FIELDS, SPECIES_FIELDS | {'combat_design'})
+    optional_fields = {'combat_design', 'elemental_channeling'}
+    if (not SPECIES_FIELDS <= set(enemy) or not set(enemy) <= SPECIES_FIELDS | optional_fields
             or enemy['mode'] != 'species'
             or not _text(enemy['name'], 120) or not _text(enemy['description'])
             or not _identifier(enemy['family']) or enemy['tier'] not in ('normal', 'boss')
@@ -236,6 +237,27 @@ def _validate_species(enemy, actions, archetypes, items, *, enemy_id=None):
     if 'drop_table' in enemy['rewards']:
         _validate_drop_table(enemy['rewards']['drop_table'], items)
     _validate_elemental_profile(enemy['elemental_profile'])
+    channeling = enemy.get('elemental_channeling')
+    if 'elemental_channeling' in enemy:
+        if (enemy_id != 'vespermaw' or enemy['family'] != 'aether_elemental'
+                or not isinstance(channeling,dict)
+                or set(channeling) != {'cycle','turns_per_form','duration_ms','commit_ms','forms'}
+                or channeling['cycle'] != ['fire','ice','water']
+                or type(channeling['turns_per_form']) is not int or channeling['turns_per_form'] != 2
+                or type(channeling['duration_ms']) is not int or channeling['duration_ms'] != 2500
+                or type(channeling['commit_ms']) is not int or channeling['commit_ms'] != 1650
+                or not isinstance(channeling['forms'],dict)
+                or set(channeling['forms']) != set(channeling['cycle'])):
+            raise ValueError('Invalid elemental channeling configuration')
+        for element,profile in channeling['forms'].items():
+            _validate_elemental_profile(profile)
+            weakness = {'fire':'water','ice':'fire','water':'ice'}[element]
+            if (profile['element'] != element or profile['damage_percentages'][weakness] != 200
+                    or any(value != 100 for kind,value in profile['damage_percentages'].items()
+                           if kind != weakness)):
+                raise ValueError('Invalid elemental channeling response')
+        if enemy['elemental_profile'] != channeling['forms']['fire']:
+            raise ValueError('Initial channeling profile must match Fire')
     planned = enemy['planned_mechanics']
     if (not isinstance(planned, dict) or set(planned) != {'stagger'}):
         raise ValueError('Invalid planned Bestiary mechanics')

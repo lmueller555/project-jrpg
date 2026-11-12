@@ -243,7 +243,9 @@ def products():
         if x < 0 or y < 0 or x+width > w or y+height > h:
             return True
         return bool(integral[y+height, x+width]-integral[y, x+width]-integral[y+height, x]+integral[y, x])
-    lights, gems = [], []
+    lights, gems, elemental_crystals = [], [], []
+    elemental_pack = (read('assets/terrain/limestone_cave/elemental_crystals/assets.json')['modules']
+                      if any(item.get('elemental_crystal') for item in spec['light_groups']) else {})
     patterns = ['dense', 'diagonal_left', 'sparse', 'corner_outer', 'vertical', 'diagonal_right']
     used_sockets = []
     for index, item in enumerate(spec['light_groups']):
@@ -259,6 +261,24 @@ def products():
                  'gain': item.get('gain', .45), 'phase': item.get('phase', 0),
                  'steady': item.get('steady', False)}
         lights.append(light)
+        if item.get('elemental_crystal'):
+            element = item['elemental_crystal']
+            record = elemental_pack[element]
+            center = item['crystal_position']
+            position = [center[i]-record['anchor'][i] for i in range(2)]
+            # These exceptional large lenses are part of this chamber's wall,
+            # independent of the small seam sockets throughout the dungeon.
+            for path in record['frames']:opened(path)
+            identifier = 'echo_elemental_'+element
+            add_entity(identifier,record,position,center[1],source_pack='elemental_crystals',
+                       source_module=element,light_index=index,elemental_crystal=element)
+            light['entity_id'] = identifier
+            light['color'] = record['color']
+            elemental_crystals.append({'id':identifier,'element':element,'position':center,
+                'image_position':position,'anchor':record['anchor'],'size':record['size'],
+                'emission_origin':[position[i]+record['emission_origin'][i] for i in range(2)],
+                'light_index':index,'source_room':'echo_chamber'})
+            continue
         if item.get('steady'):
             continue
         field_patterns = item.get('patterns', [patterns[(index+variation*2) % len(patterns)] for variation in range(2)])
@@ -392,6 +412,7 @@ def products():
             'overview': (OUTPUT/'overview.png').relative_to(ROOT).as_posix(),
             'entities': entities, 'foreground': [], 'doors': [], 'npcs': [], 'landmarks': landmarks,
             'cave': {'ambient': [112, 119, 127], 'lights': lights, 'pulse_period_ms': 6000,
+                     'elemental_crystals':elemental_crystals,
                      'wall_gems': gems, 'microcrystal_count': sum(gem['crystal_count'] for gem in gems),
                      'placed_modules': placed, 'water_tiles': water_records,
                      **{key: spec[key] for key in ('rooms', 'routes', 'navigation_points', 'treasures', 'loops',

@@ -138,8 +138,10 @@ and will use Spirit. Existing opening-quest spell outcomes remain authored scene
 Aqua Edge, Flame Edge and Ice Edge apply an enemy’s stored Water, Fire or Ice
 percentage respectively to their magical component;
 the physical component retains neutral physical behavior. The full 0–200%
-range is supported, including intermediate values such as Vespermaw’s 150%
-Water response. Matching-element absorption restores the neutral-affinity
+range is supported, including intermediate values such as Lithrusk’s 150%
+Water response. Vespermaw resolves against its current channeled form: its
+weakness takes 200% magical damage, its matching element is absorbed, and
+other elements retain 100%. Matching-element absorption restores the neutral-affinity
 magical amount up to missing HP and does not revive an enemy. Aether Edge stays
 non-elemental. This extends elemental resolution without changing the approved
 base offense/defense curve, ordinary variance or damage caps.

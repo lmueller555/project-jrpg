@@ -1,0 +1,4705 @@
+{
+  "version": 1,
+  "canvas": [
+    160,
+    144
+  ],
+  "anchor": [
+    64,
+    128
+  ],
+  "duration_ms": 2500,
+  "commit_ms": 1650,
+  "frames": [
+    {
+      "file": "assets/combat/vespermaw/channeling/body_00.png",
+      "duration_ms": 35,
+      "start_ms": 0,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 0,
+      "source_sha256": "daab7753ccc3dea55735fafe2a28dbf2d43e1bce44033616898cb626ddf5653c",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          88
+        ],
+        "contact": [
+          130,
+          107
+        ],
+        "cast_origin": [
+          116,
+          64
+        ],
+        "mouth": [
+          116,
+          64
+        ],
+        "spine": [
+          66,
+          46
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          60
+        ],
+        [
+          48,
+          58
+        ],
+        [
+          57,
+          48
+        ],
+        [
+          66,
+          46
+        ],
+        [
+          75,
+          47
+        ],
+        [
+          84,
+          44
+        ],
+        [
+          93,
+          48
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_01.png",
+      "duration_ms": 36,
+      "start_ms": 35,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 1,
+      "source_sha256": "7aa9dd9d52987b5531dfceae239c623e56f1afb14e2dd73c5e6021f625e1b4f6",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          88
+        ],
+        "contact": [
+          130,
+          107
+        ],
+        "cast_origin": [
+          116,
+          64
+        ],
+        "mouth": [
+          116,
+          64
+        ],
+        "spine": [
+          66,
+          47
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          67
+        ],
+        [
+          48,
+          57
+        ],
+        [
+          57,
+          50
+        ],
+        [
+          66,
+          47
+        ],
+        [
+          75,
+          47
+        ],
+        [
+          84,
+          44
+        ],
+        [
+          93,
+          48
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_02.png",
+      "duration_ms": 35,
+      "start_ms": 71,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 3,
+      "source_sha256": "7cded1e35830d067ec9a22d8051a1ce883f3f5d5f29fffbef62a0d64d64ea1cc",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          89
+        ],
+        "contact": [
+          131,
+          107
+        ],
+        "cast_origin": [
+          117,
+          66
+        ],
+        "mouth": [
+          117,
+          66
+        ],
+        "spine": [
+          66,
+          50
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          68
+        ],
+        [
+          48,
+          61
+        ],
+        [
+          57,
+          53
+        ],
+        [
+          66,
+          50
+        ],
+        [
+          75,
+          50
+        ],
+        [
+          84,
+          46
+        ],
+        [
+          93,
+          50
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_03.png",
+      "duration_ms": 36,
+      "start_ms": 106,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 4,
+      "source_sha256": "98ddde264ccaf1f7f7fb838a855aeb72c7eae02ca1b6c4ffa985f68491daaf11",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          90
+        ],
+        "contact": [
+          130,
+          108
+        ],
+        "cast_origin": [
+          116,
+          68
+        ],
+        "mouth": [
+          116,
+          68
+        ],
+        "spine": [
+          66,
+          52
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          70
+        ],
+        [
+          48,
+          61
+        ],
+        [
+          57,
+          55
+        ],
+        [
+          66,
+          52
+        ],
+        [
+          75,
+          52
+        ],
+        [
+          84,
+          49
+        ],
+        [
+          93,
+          52
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_04.png",
+      "duration_ms": 35,
+      "start_ms": 142,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 5,
+      "source_sha256": "09d8add4c5a26c586326eebdc1f9ef98d261aff9778af49ee22b9363d51bc42e",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          73,
+          92
+        ],
+        "contact": [
+          131,
+          109
+        ],
+        "cast_origin": [
+          117,
+          70
+        ],
+        "mouth": [
+          117,
+          70
+        ],
+        "spine": [
+          66,
+          54
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          65
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          66,
+          54
+        ],
+        [
+          75,
+          54
+        ],
+        [
+          84,
+          51
+        ],
+        [
+          93,
+          55
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_05.png",
+      "duration_ms": 35,
+      "start_ms": 177,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 7,
+      "source_sha256": "daf6f672293a21468ed6af5a43db9e5a0ecd437173b4f28f72578d86407f4687",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          94
+        ],
+        "contact": [
+          131,
+          110
+        ],
+        "cast_origin": [
+          117,
+          73
+        ],
+        "mouth": [
+          117,
+          73
+        ],
+        "spine": [
+          66,
+          60
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          69
+        ],
+        [
+          48,
+          66
+        ],
+        [
+          57,
+          62
+        ],
+        [
+          66,
+          60
+        ],
+        [
+          75,
+          60
+        ],
+        [
+          84,
+          57
+        ],
+        [
+          93,
+          60
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_06.png",
+      "duration_ms": 36,
+      "start_ms": 212,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 8,
+      "source_sha256": "5e5891c8cf369ea44c0e900dfd0173d950f38617e9c1993bf471dae38c56afe4",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          94
+        ],
+        "contact": [
+          130,
+          110
+        ],
+        "cast_origin": [
+          116,
+          74
+        ],
+        "mouth": [
+          116,
+          74
+        ],
+        "spine": [
+          66,
+          59
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          65
+        ],
+        [
+          57,
+          61
+        ],
+        [
+          66,
+          59
+        ],
+        [
+          75,
+          60
+        ],
+        [
+          84,
+          57
+        ],
+        [
+          93,
+          60
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_07.png",
+      "duration_ms": 35,
+      "start_ms": 248,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 9,
+      "source_sha256": "aac2cd137fac7f3c253e4e14752470164562042eae0884b1efc1282b458edf9a",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          95
+        ],
+        "contact": [
+          130,
+          110
+        ],
+        "cast_origin": [
+          116,
+          74
+        ],
+        "mouth": [
+          116,
+          74
+        ],
+        "spine": [
+          66,
+          61
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          67
+        ],
+        [
+          57,
+          63
+        ],
+        [
+          66,
+          61
+        ],
+        [
+          75,
+          61
+        ],
+        [
+          84,
+          59
+        ],
+        [
+          93,
+          63
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_08.png",
+      "duration_ms": 36,
+      "start_ms": 283,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 11,
+      "source_sha256": "d42f5ed01b8b82cf3032e811dd324229f477ca7b0417d31e705bff076eb89458",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          97
+        ],
+        "contact": [
+          130,
+          111
+        ],
+        "cast_origin": [
+          116,
+          78
+        ],
+        "mouth": [
+          116,
+          78
+        ],
+        "spine": [
+          66,
+          63
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          75
+        ],
+        [
+          48,
+          69
+        ],
+        [
+          57,
+          65
+        ],
+        [
+          66,
+          63
+        ],
+        [
+          75,
+          65
+        ],
+        [
+          84,
+          63
+        ],
+        [
+          93,
+          66
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_09.png",
+      "duration_ms": 35,
+      "start_ms": 319,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 12,
+      "source_sha256": "61eb75d743ec1908c3d603530a4a3718789f227f4c74c202dd118c07d89b5f6e",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          97
+        ],
+        "contact": [
+          129,
+          112
+        ],
+        "cast_origin": [
+          116,
+          79
+        ],
+        "mouth": [
+          116,
+          79
+        ],
+        "spine": [
+          66,
+          67
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          77
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          68
+        ],
+        [
+          66,
+          67
+        ],
+        [
+          75,
+          67
+        ],
+        [
+          84,
+          65
+        ],
+        [
+          93,
+          68
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_10.png",
+      "duration_ms": 36,
+      "start_ms": 354,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 13,
+      "source_sha256": "91cfd1fd93a687685162d7684b4d791ce53610ce2969353463774a08d4d43293",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          97
+        ],
+        "contact": [
+          130,
+          112
+        ],
+        "cast_origin": [
+          116,
+          79
+        ],
+        "mouth": [
+          116,
+          79
+        ],
+        "spine": [
+          66,
+          67
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          77
+        ],
+        [
+          48,
+          71
+        ],
+        [
+          57,
+          68
+        ],
+        [
+          66,
+          67
+        ],
+        [
+          75,
+          64
+        ],
+        [
+          84,
+          65
+        ],
+        [
+          93,
+          68
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_11.png",
+      "duration_ms": 35,
+      "start_ms": 390,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 15,
+      "source_sha256": "86734bb19cbff94bf0cda764165799b30c580076d8be9bde1b074cef82fcafd5",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          98
+        ],
+        "contact": [
+          130,
+          112
+        ],
+        "cast_origin": [
+          116,
+          80
+        ],
+        "mouth": [
+          116,
+          80
+        ],
+        "spine": [
+          66,
+          69
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          79
+        ],
+        [
+          48,
+          75
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          69
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          67
+        ],
+        [
+          93,
+          72
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_12.png",
+      "duration_ms": 35,
+      "start_ms": 425,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 16,
+      "source_sha256": "2a0cbbbb18bfffd3347aa0a5e4967f33ec1e88a0885d17324594497906d031e1",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          99
+        ],
+        "contact": [
+          131,
+          113
+        ],
+        "cast_origin": [
+          117,
+          82
+        ],
+        "mouth": [
+          117,
+          82
+        ],
+        "spine": [
+          66,
+          71
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          80
+        ],
+        [
+          48,
+          76
+        ],
+        [
+          57,
+          72
+        ],
+        [
+          66,
+          71
+        ],
+        [
+          75,
+          68
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          93,
+          72
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_13.png",
+      "duration_ms": 36,
+      "start_ms": 460,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 18,
+      "source_sha256": "b9236ca6aa5644bd69c16a007afe8ae6f3b8d90e53a3389117c60110ae1ce387",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          117,
+          83
+        ],
+        "mouth": [
+          117,
+          83
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          80
+        ],
+        [
+          48,
+          76
+        ],
+        [
+          57,
+          73
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_14.png",
+      "duration_ms": 35,
+      "start_ms": 496,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 19,
+      "source_sha256": "b83befddb16b69a612d2f66975f163e97185ce1dcd34c370f0e9e276666bbbba",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          73,
+          100
+        ],
+        "contact": [
+          131,
+          113
+        ],
+        "cast_origin": [
+          117,
+          84
+        ],
+        "mouth": [
+          117,
+          84
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          79
+        ],
+        [
+          48,
+          76
+        ],
+        [
+          57,
+          72
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          74
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_15.png",
+      "duration_ms": 36,
+      "start_ms": 531,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 20,
+      "source_sha256": "d1ca246da288e9a8a09afcb4573afe464a9225e3fdc6df8bb2947d195758b6de",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          84
+        ],
+        "mouth": [
+          116,
+          84
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          78
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          72
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_16.png",
+      "duration_ms": 35,
+      "start_ms": 567,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 22,
+      "source_sha256": "627d9622b2cebe4f53200599713dfb7cf78b03889d80e2d4f86fbf8f815ca60c",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          76
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          69
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_17.png",
+      "duration_ms": 36,
+      "start_ms": 602,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 23,
+      "source_sha256": "a66a6b04fa4fc565782a53ba7cf41804d36d4ad07f50fd5b3f782366bf9c3933",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          75
+        ],
+        [
+          48,
+          70
+        ],
+        [
+          57,
+          69
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          72
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_18.png",
+      "duration_ms": 35,
+      "start_ms": 638,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 24,
+      "source_sha256": "6fd3da6197cfa76d1fd2f09320b6f989b195c1dad02befd028eebc99835f7ccd",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          99
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          82
+        ],
+        "mouth": [
+          116,
+          82
+        ],
+        "spine": [
+          66,
+          69
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          76
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          69
+        ],
+        [
+          75,
+          69
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_19.png",
+      "duration_ms": 35,
+      "start_ms": 673,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 26,
+      "source_sha256": "d96bcf357b05b94c7d4fdf1ee6565bec86e8b9edfbe4aa618eee5b6e75cecce5",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          77
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          71
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          73
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          76
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_20.png",
+      "duration_ms": 36,
+      "start_ms": 708,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 27,
+      "source_sha256": "b962381013cbe0124303b897493c338d3f26564e883e7ecceeb365b416e05c9a",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          76
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          71
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          72
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          77
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_21.png",
+      "duration_ms": 35,
+      "start_ms": 744,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 28,
+      "source_sha256": "cfe24af0ca8e9278cae3fa65539103cd9480bc8286f34ec6d8b7af2ca6248b31",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          129,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          75
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          72
+        ],
+        [
+          84,
+          71
+        ],
+        [
+          93,
+          76
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_22.png",
+      "duration_ms": 36,
+      "start_ms": 779,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 30,
+      "source_sha256": "42c4bc2542ae1999b51be4b1f5c18b875d92acd9e8b69f8e1dee015f9fe71799",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          73
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          77
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_23.png",
+      "duration_ms": 35,
+      "start_ms": 815,
+      "phase": "brace",
+      "body_state": "gather_resonance",
+      "body_frame": 31,
+      "source_sha256": "71e51cad6cf02b97d5c0baf6b5d1c9ce2ca48eba0f44ca90d0a0529f91915a58",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          84
+        ],
+        "mouth": [
+          116,
+          84
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          71
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          74
+        ],
+        [
+          84,
+          73
+        ],
+        [
+          93,
+          78
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_24.png",
+      "duration_ms": 31,
+      "start_ms": 850,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 31,
+      "source_sha256": "71e51cad6cf02b97d5c0baf6b5d1c9ce2ca48eba0f44ca90d0a0529f91915a58",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          84
+        ],
+        "mouth": [
+          116,
+          84
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          71
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          74
+        ],
+        [
+          84,
+          73
+        ],
+        [
+          93,
+          78
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_25.png",
+      "duration_ms": 30,
+      "start_ms": 881,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 29,
+      "source_sha256": "f2edf2742feb39a719863eb2ad7a64b9d35952d28dadc7adfd6dba3caaa44f98",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          75
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          71
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          76
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_26.png",
+      "duration_ms": 31,
+      "start_ms": 911,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 27,
+      "source_sha256": "b962381013cbe0124303b897493c338d3f26564e883e7ecceeb365b416e05c9a",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          76
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          71
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          72
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          77
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_27.png",
+      "duration_ms": 30,
+      "start_ms": 942,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 26,
+      "source_sha256": "d96bcf357b05b94c7d4fdf1ee6565bec86e8b9edfbe4aa618eee5b6e75cecce5",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          77
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          71
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          73
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          76
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_28.png",
+      "duration_ms": 31,
+      "start_ms": 972,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 24,
+      "source_sha256": "6fd3da6197cfa76d1fd2f09320b6f989b195c1dad02befd028eebc99835f7ccd",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          99
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          82
+        ],
+        "mouth": [
+          116,
+          82
+        ],
+        "spine": [
+          66,
+          69
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          76
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          69
+        ],
+        [
+          75,
+          69
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_29.png",
+      "duration_ms": 30,
+      "start_ms": 1003,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 22,
+      "source_sha256": "627d9622b2cebe4f53200599713dfb7cf78b03889d80e2d4f86fbf8f815ca60c",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          83
+        ],
+        "mouth": [
+          116,
+          83
+        ],
+        "spine": [
+          66,
+          70
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          76
+        ],
+        [
+          48,
+          73
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          70
+        ],
+        [
+          75,
+          69
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_30.png",
+      "duration_ms": 31,
+      "start_ms": 1033,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 20,
+      "source_sha256": "d1ca246da288e9a8a09afcb4573afe464a9225e3fdc6df8bb2947d195758b6de",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          116,
+          84
+        ],
+        "mouth": [
+          116,
+          84
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          78
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          72
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_31.png",
+      "duration_ms": 30,
+      "start_ms": 1064,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 18,
+      "source_sha256": "b9236ca6aa5644bd69c16a007afe8ae6f3b8d90e53a3389117c60110ae1ce387",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          100
+        ],
+        "contact": [
+          130,
+          113
+        ],
+        "cast_origin": [
+          117,
+          83
+        ],
+        "mouth": [
+          117,
+          83
+        ],
+        "spine": [
+          66,
+          72
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          80
+        ],
+        [
+          48,
+          76
+        ],
+        [
+          57,
+          73
+        ],
+        [
+          66,
+          72
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          72
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_32.png",
+      "duration_ms": 31,
+      "start_ms": 1094,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 16,
+      "source_sha256": "2a0cbbbb18bfffd3347aa0a5e4967f33ec1e88a0885d17324594497906d031e1",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          99
+        ],
+        "contact": [
+          131,
+          113
+        ],
+        "cast_origin": [
+          117,
+          82
+        ],
+        "mouth": [
+          117,
+          82
+        ],
+        "spine": [
+          66,
+          71
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          80
+        ],
+        [
+          48,
+          76
+        ],
+        [
+          57,
+          72
+        ],
+        [
+          66,
+          71
+        ],
+        [
+          75,
+          68
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          93,
+          72
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_33.png",
+      "duration_ms": 31,
+      "start_ms": 1125,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 15,
+      "source_sha256": "86734bb19cbff94bf0cda764165799b30c580076d8be9bde1b074cef82fcafd5",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          98
+        ],
+        "contact": [
+          130,
+          112
+        ],
+        "cast_origin": [
+          116,
+          80
+        ],
+        "mouth": [
+          116,
+          80
+        ],
+        "spine": [
+          66,
+          69
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          79
+        ],
+        [
+          48,
+          75
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          69
+        ],
+        [
+          75,
+          70
+        ],
+        [
+          84,
+          67
+        ],
+        [
+          93,
+          72
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_34.png",
+      "duration_ms": 30,
+      "start_ms": 1156,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 13,
+      "source_sha256": "91cfd1fd93a687685162d7684b4d791ce53610ce2969353463774a08d4d43293",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          97
+        ],
+        "contact": [
+          130,
+          112
+        ],
+        "cast_origin": [
+          116,
+          79
+        ],
+        "mouth": [
+          116,
+          79
+        ],
+        "spine": [
+          66,
+          67
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          77
+        ],
+        [
+          48,
+          71
+        ],
+        [
+          57,
+          68
+        ],
+        [
+          66,
+          67
+        ],
+        [
+          75,
+          64
+        ],
+        [
+          84,
+          65
+        ],
+        [
+          93,
+          68
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_35.png",
+      "duration_ms": 31,
+      "start_ms": 1186,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 11,
+      "source_sha256": "d42f5ed01b8b82cf3032e811dd324229f477ca7b0417d31e705bff076eb89458",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          97
+        ],
+        "contact": [
+          130,
+          111
+        ],
+        "cast_origin": [
+          116,
+          78
+        ],
+        "mouth": [
+          116,
+          78
+        ],
+        "spine": [
+          66,
+          63
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          75
+        ],
+        [
+          48,
+          69
+        ],
+        [
+          57,
+          65
+        ],
+        [
+          66,
+          63
+        ],
+        [
+          75,
+          65
+        ],
+        [
+          84,
+          63
+        ],
+        [
+          93,
+          66
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_36.png",
+      "duration_ms": 30,
+      "start_ms": 1217,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 9,
+      "source_sha256": "aac2cd137fac7f3c253e4e14752470164562042eae0884b1efc1282b458edf9a",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          95
+        ],
+        "contact": [
+          130,
+          110
+        ],
+        "cast_origin": [
+          116,
+          74
+        ],
+        "mouth": [
+          116,
+          74
+        ],
+        "spine": [
+          66,
+          61
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          67
+        ],
+        [
+          57,
+          63
+        ],
+        [
+          66,
+          61
+        ],
+        [
+          75,
+          61
+        ],
+        [
+          84,
+          59
+        ],
+        [
+          93,
+          63
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_37.png",
+      "duration_ms": 31,
+      "start_ms": 1247,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 7,
+      "source_sha256": "daf6f672293a21468ed6af5a43db9e5a0ecd437173b4f28f72578d86407f4687",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          94
+        ],
+        "contact": [
+          131,
+          110
+        ],
+        "cast_origin": [
+          117,
+          73
+        ],
+        "mouth": [
+          117,
+          73
+        ],
+        "spine": [
+          66,
+          60
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          69
+        ],
+        [
+          48,
+          66
+        ],
+        [
+          57,
+          62
+        ],
+        [
+          66,
+          60
+        ],
+        [
+          75,
+          60
+        ],
+        [
+          84,
+          57
+        ],
+        [
+          93,
+          60
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_38.png",
+      "duration_ms": 30,
+      "start_ms": 1278,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 5,
+      "source_sha256": "09d8add4c5a26c586326eebdc1f9ef98d261aff9778af49ee22b9363d51bc42e",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          73,
+          92
+        ],
+        "contact": [
+          131,
+          109
+        ],
+        "cast_origin": [
+          117,
+          70
+        ],
+        "mouth": [
+          117,
+          70
+        ],
+        "spine": [
+          66,
+          54
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          65
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          66,
+          54
+        ],
+        [
+          75,
+          54
+        ],
+        [
+          84,
+          51
+        ],
+        [
+          93,
+          55
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_39.png",
+      "duration_ms": 31,
+      "start_ms": 1308,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 4,
+      "source_sha256": "98ddde264ccaf1f7f7fb838a855aeb72c7eae02ca1b6c4ffa985f68491daaf11",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          90
+        ],
+        "contact": [
+          130,
+          108
+        ],
+        "cast_origin": [
+          116,
+          68
+        ],
+        "mouth": [
+          116,
+          68
+        ],
+        "spine": [
+          66,
+          52
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          70
+        ],
+        [
+          48,
+          61
+        ],
+        [
+          57,
+          55
+        ],
+        [
+          66,
+          52
+        ],
+        [
+          75,
+          52
+        ],
+        [
+          84,
+          49
+        ],
+        [
+          93,
+          52
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_40.png",
+      "duration_ms": 30,
+      "start_ms": 1339,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 2,
+      "source_sha256": "1632fe2d34e262900830f4ff50b242198c304005fe74de147235eb3ce3c98e6e",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          88
+        ],
+        "contact": [
+          130,
+          107
+        ],
+        "cast_origin": [
+          117,
+          64
+        ],
+        "mouth": [
+          117,
+          64
+        ],
+        "spine": [
+          66,
+          48
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          68
+        ],
+        [
+          48,
+          60
+        ],
+        [
+          57,
+          52
+        ],
+        [
+          66,
+          48
+        ],
+        [
+          75,
+          48
+        ],
+        [
+          84,
+          45
+        ],
+        [
+          93,
+          48
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_41.png",
+      "duration_ms": 31,
+      "start_ms": 1369,
+      "phase": "rise",
+      "body_state": "gather_resonance",
+      "body_frame": 0,
+      "source_sha256": "daab7753ccc3dea55735fafe2a28dbf2d43e1bce44033616898cb626ddf5653c",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          88
+        ],
+        "contact": [
+          130,
+          107
+        ],
+        "cast_origin": [
+          116,
+          64
+        ],
+        "mouth": [
+          116,
+          64
+        ],
+        "spine": [
+          66,
+          46
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          60
+        ],
+        [
+          48,
+          58
+        ],
+        [
+          57,
+          48
+        ],
+        [
+          66,
+          46
+        ],
+        [
+          75,
+          47
+        ],
+        [
+          84,
+          44
+        ],
+        [
+          93,
+          48
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_42.png",
+      "duration_ms": 36,
+      "start_ms": 1400,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 0,
+      "source_sha256": "5c5f8eb1839a71c3e66f9bae11a6a7a2a15b7144d90d1d2c9912c26d39ef0e21",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          73,
+          86
+        ],
+        "contact": [
+          131,
+          106
+        ],
+        "cast_origin": [
+          117,
+          61
+        ],
+        "mouth": [
+          117,
+          61
+        ],
+        "spine": [
+          66,
+          44
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          59
+        ],
+        [
+          48,
+          52
+        ],
+        [
+          57,
+          45
+        ],
+        [
+          66,
+          44
+        ],
+        [
+          75,
+          41
+        ],
+        [
+          84,
+          40
+        ],
+        [
+          93,
+          43
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_43.png",
+      "duration_ms": 37,
+      "start_ms": 1436,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 1,
+      "source_sha256": "1509360b2be5b56d8d326b4f589ea176ce890a047a9557192eec5784a576f958",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          87
+        ],
+        "contact": [
+          130,
+          106
+        ],
+        "cast_origin": [
+          116,
+          63
+        ],
+        "mouth": [
+          116,
+          63
+        ],
+        "spine": [
+          66,
+          45
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          59
+        ],
+        [
+          48,
+          53
+        ],
+        [
+          57,
+          46
+        ],
+        [
+          66,
+          45
+        ],
+        [
+          75,
+          42
+        ],
+        [
+          84,
+          42
+        ],
+        [
+          93,
+          45
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_44.png",
+      "duration_ms": 36,
+      "start_ms": 1473,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 2,
+      "source_sha256": "1b097ae81dfaeaa9922656f128b708e38fd30a6274544b7fb2184463513c977d",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          90
+        ],
+        "contact": [
+          131,
+          108
+        ],
+        "cast_origin": [
+          117,
+          67
+        ],
+        "mouth": [
+          117,
+          67
+        ],
+        "spine": [
+          66,
+          50
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          61
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          57,
+          50
+        ],
+        [
+          66,
+          50
+        ],
+        [
+          75,
+          48
+        ],
+        [
+          84,
+          48
+        ],
+        [
+          93,
+          50
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_45.png",
+      "duration_ms": 36,
+      "start_ms": 1509,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 3,
+      "source_sha256": "35c3539b0c9e10d352f219c5a4f25fd61c4a3b8ee84ce82d008cbcc2f0a235c0",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          92
+        ],
+        "contact": [
+          129,
+          109
+        ],
+        "cast_origin": [
+          116,
+          71
+        ],
+        "mouth": [
+          116,
+          71
+        ],
+        "spine": [
+          66,
+          54
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          68
+        ],
+        [
+          48,
+          58
+        ],
+        [
+          57,
+          53
+        ],
+        [
+          66,
+          54
+        ],
+        [
+          75,
+          54
+        ],
+        [
+          84,
+          53
+        ],
+        [
+          93,
+          57
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_46.png",
+      "duration_ms": 37,
+      "start_ms": 1545,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 4,
+      "source_sha256": "2d2fe8029992f643a5b3688f09923092fa929928e4166a7f2fce4a7ed872b9a2",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          95
+        ],
+        "contact": [
+          129,
+          110
+        ],
+        "cast_origin": [
+          116,
+          75
+        ],
+        "mouth": [
+          116,
+          75
+        ],
+        "spine": [
+          66,
+          60
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          63
+        ],
+        [
+          57,
+          59
+        ],
+        [
+          66,
+          60
+        ],
+        [
+          75,
+          60
+        ],
+        [
+          84,
+          59
+        ],
+        [
+          93,
+          65
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_47.png",
+      "duration_ms": 36,
+      "start_ms": 1582,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 5,
+      "source_sha256": "3a70ec7f77c56e1f4988d385249b555b55958dd030487b578a82e07908246bc5",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          97
+        ],
+        "contact": [
+          128,
+          111
+        ],
+        "cast_origin": [
+          115,
+          78
+        ],
+        "mouth": [
+          115,
+          78
+        ],
+        "spine": [
+          66,
+          63
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          71
+        ],
+        [
+          48,
+          66
+        ],
+        [
+          57,
+          62
+        ],
+        [
+          66,
+          63
+        ],
+        [
+          75,
+          66
+        ],
+        [
+          84,
+          64
+        ],
+        [
+          93,
+          68
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_48.png",
+      "duration_ms": 37,
+      "start_ms": 1618,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 7,
+      "source_sha256": "649add1db69e256e0da5f3a101c4434cba1b42f8297e731d5fca524877f55f51",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          70,
+          99
+        ],
+        "contact": [
+          126,
+          113
+        ],
+        "cast_origin": [
+          113,
+          82
+        ],
+        "mouth": [
+          113,
+          82
+        ],
+        "spine": [
+          66,
+          69
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          79
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          57,
+          70
+        ],
+        [
+          66,
+          69
+        ],
+        [
+          75,
+          71
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          93,
+          75
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_49.png",
+      "duration_ms": 36,
+      "start_ms": 1655,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 8,
+      "source_sha256": "8d77c804d65bead8285a3b20366f95cf66e1010f774ed37ab6ceb9ba09866948",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          97
+        ],
+        "contact": [
+          128,
+          111
+        ],
+        "cast_origin": [
+          115,
+          78
+        ],
+        "mouth": [
+          115,
+          78
+        ],
+        "spine": [
+          66,
+          63
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          74
+        ],
+        [
+          48,
+          66
+        ],
+        [
+          57,
+          62
+        ],
+        [
+          66,
+          63
+        ],
+        [
+          75,
+          62
+        ],
+        [
+          84,
+          62
+        ],
+        [
+          93,
+          68
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_50.png",
+      "duration_ms": 36,
+      "start_ms": 1691,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 9,
+      "source_sha256": "fefdb72ed129299167900780dbec5481706edf7bfb1d28fb94d8ed10a142ad98",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          70,
+          94
+        ],
+        "contact": [
+          127,
+          110
+        ],
+        "cast_origin": [
+          113,
+          74
+        ],
+        "mouth": [
+          113,
+          74
+        ],
+        "spine": [
+          66,
+          57
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          70
+        ],
+        [
+          48,
+          63
+        ],
+        [
+          57,
+          59
+        ],
+        [
+          66,
+          57
+        ],
+        [
+          75,
+          57
+        ],
+        [
+          84,
+          56
+        ],
+        [
+          93,
+          57
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_51.png",
+      "duration_ms": 37,
+      "start_ms": 1727,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 10,
+      "source_sha256": "632003299fcda116f1239b10e3278c9083e206bcf4865ecda2e0b71db1be1ec1",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          91
+        ],
+        "contact": [
+          124,
+          108
+        ],
+        "cast_origin": [
+          111,
+          69
+        ],
+        "mouth": [
+          111,
+          69
+        ],
+        "spine": [
+          66,
+          56
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          63
+        ],
+        [
+          57,
+          56
+        ],
+        [
+          66,
+          56
+        ],
+        [
+          75,
+          50
+        ],
+        [
+          84,
+          49
+        ],
+        [
+          93,
+          51
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_52.png",
+      "duration_ms": 36,
+      "start_ms": 1764,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 11,
+      "source_sha256": "c2ad0b13fd90717735ad693ec62abb8962d7dc7654e8e8c263f02501cc7283da",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          89
+        ],
+        "contact": [
+          123,
+          107
+        ],
+        "cast_origin": [
+          111,
+          65
+        ],
+        "mouth": [
+          111,
+          65
+        ],
+        "spine": [
+          66,
+          50
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          67
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          57,
+          51
+        ],
+        [
+          66,
+          50
+        ],
+        [
+          75,
+          46
+        ],
+        [
+          84,
+          45
+        ],
+        [
+          93,
+          45
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_53.png",
+      "duration_ms": 36,
+      "start_ms": 1800,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 12,
+      "source_sha256": "a0b800cc368d5e6402068d8a8509dac72cc736eb23979f7009bd4e5208fdb1fb",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          85
+        ],
+        "contact": [
+          123,
+          105
+        ],
+        "cast_origin": [
+          110,
+          59
+        ],
+        "mouth": [
+          110,
+          59
+        ],
+        "spine": [
+          66,
+          45
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          65
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          57,
+          47
+        ],
+        [
+          66,
+          45
+        ],
+        [
+          75,
+          40
+        ],
+        [
+          84,
+          39
+        ],
+        [
+          93,
+          37
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_54.png",
+      "duration_ms": 37,
+      "start_ms": 1836,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 13,
+      "source_sha256": "635cc28cef91c4e34757fbbe00978eb39e9a305b99c31b2b66eca74d951cffa3",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          82
+        ],
+        "contact": [
+          123,
+          103
+        ],
+        "cast_origin": [
+          110,
+          54
+        ],
+        "mouth": [
+          110,
+          54
+        ],
+        "spine": [
+          66,
+          41
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          63
+        ],
+        [
+          48,
+          52
+        ],
+        [
+          57,
+          44
+        ],
+        [
+          66,
+          41
+        ],
+        [
+          75,
+          36
+        ],
+        [
+          84,
+          34
+        ],
+        [
+          93,
+          32
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_55.png",
+      "duration_ms": 36,
+      "start_ms": 1873,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 14,
+      "source_sha256": "fdfc90b7b9e8ae2d32410218f5c6de509537554122a9aec378fb46afc3464f2a",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          79
+        ],
+        "contact": [
+          123,
+          102
+        ],
+        "cast_origin": [
+          110,
+          50
+        ],
+        "mouth": [
+          110,
+          50
+        ],
+        "spine": [
+          66,
+          38
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          63
+        ],
+        [
+          48,
+          46
+        ],
+        [
+          57,
+          42
+        ],
+        [
+          66,
+          38
+        ],
+        [
+          75,
+          32
+        ],
+        [
+          84,
+          30
+        ],
+        [
+          93,
+          28
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_56.png",
+      "duration_ms": 36,
+      "start_ms": 1909,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 15,
+      "source_sha256": "3e693f0a0897258169982d2aa1884939f8360c56a4464833bca09f64c8f32b84",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          78
+        ],
+        "contact": [
+          123,
+          101
+        ],
+        "cast_origin": [
+          111,
+          47
+        ],
+        "mouth": [
+          111,
+          47
+        ],
+        "spine": [
+          66,
+          31
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          56
+        ],
+        [
+          48,
+          44
+        ],
+        [
+          57,
+          38
+        ],
+        [
+          66,
+          31
+        ],
+        [
+          75,
+          28
+        ],
+        [
+          84,
+          28
+        ],
+        [
+          93,
+          28
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_57.png",
+      "duration_ms": 37,
+      "start_ms": 1945,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 16,
+      "source_sha256": "f04be0cbc017afb47a5c0dbaa5dd3562c46590f379acc1a55d1fcf9d74a23e93",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          80
+        ],
+        "contact": [
+          123,
+          103
+        ],
+        "cast_origin": [
+          111,
+          52
+        ],
+        "mouth": [
+          111,
+          52
+        ],
+        "spine": [
+          66,
+          38
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          60
+        ],
+        [
+          48,
+          47
+        ],
+        [
+          57,
+          38
+        ],
+        [
+          66,
+          38
+        ],
+        [
+          75,
+          31
+        ],
+        [
+          84,
+          29
+        ],
+        [
+          93,
+          28
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_58.png",
+      "duration_ms": 36,
+      "start_ms": 1982,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 18,
+      "source_sha256": "72f7aa9d800375882e5f2141bb8a93bd0ea99cfb2fdb00c0f76f3cbbd4eadfb0",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          68,
+          87
+        ],
+        "contact": [
+          124,
+          106
+        ],
+        "cast_origin": [
+          111,
+          62
+        ],
+        "mouth": [
+          111,
+          62
+        ],
+        "spine": [
+          66,
+          44
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          60
+        ],
+        [
+          48,
+          54
+        ],
+        [
+          57,
+          46
+        ],
+        [
+          66,
+          44
+        ],
+        [
+          75,
+          40
+        ],
+        [
+          84,
+          40
+        ],
+        [
+          93,
+          41
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_59.png",
+      "duration_ms": 37,
+      "start_ms": 2018,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 19,
+      "source_sha256": "f6127a9a6f2d2c35b6f13bae352833cc75e6bb83dc581b4b0b67a8529c85b840",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          89
+        ],
+        "contact": [
+          125,
+          107
+        ],
+        "cast_origin": [
+          111,
+          66
+        ],
+        "mouth": [
+          111,
+          66
+        ],
+        "spine": [
+          66,
+          49
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          61
+        ],
+        [
+          48,
+          57
+        ],
+        [
+          57,
+          50
+        ],
+        [
+          66,
+          49
+        ],
+        [
+          75,
+          45
+        ],
+        [
+          84,
+          45
+        ],
+        [
+          93,
+          48
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_60.png",
+      "duration_ms": 36,
+      "start_ms": 2055,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 20,
+      "source_sha256": "f77f4d1004bcae6223fbb6a3e9a4c63ad85623824c40fc1ad49cc25baf6847c4",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          69,
+          91
+        ],
+        "contact": [
+          125,
+          108
+        ],
+        "cast_origin": [
+          111,
+          69
+        ],
+        "mouth": [
+          111,
+          69
+        ],
+        "spine": [
+          66,
+          53
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          64
+        ],
+        [
+          48,
+          59
+        ],
+        [
+          57,
+          54
+        ],
+        [
+          66,
+          53
+        ],
+        [
+          75,
+          49
+        ],
+        [
+          84,
+          50
+        ],
+        [
+          93,
+          54
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_61.png",
+      "duration_ms": 36,
+      "start_ms": 2091,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 21,
+      "source_sha256": "7a9d21014b75f19f89f83524b391bca26dda13cda438dbcc97ae8a65c37aa933",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          70,
+          93
+        ],
+        "contact": [
+          127,
+          110
+        ],
+        "cast_origin": [
+          114,
+          73
+        ],
+        "mouth": [
+          114,
+          73
+        ],
+        "spine": [
+          66,
+          58
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          68
+        ],
+        [
+          48,
+          63
+        ],
+        [
+          57,
+          59
+        ],
+        [
+          66,
+          58
+        ],
+        [
+          75,
+          55
+        ],
+        [
+          84,
+          56
+        ],
+        [
+          93,
+          58
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_62.png",
+      "duration_ms": 37,
+      "start_ms": 2127,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 22,
+      "source_sha256": "8e46b80a3d66ced5eb85fdfc89a1ce34db245c4e03663d2f45b34861d1fbab40",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          95
+        ],
+        "contact": [
+          129,
+          110
+        ],
+        "cast_origin": [
+          115,
+          75
+        ],
+        "mouth": [
+          115,
+          75
+        ],
+        "spine": [
+          66,
+          60
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          70
+        ],
+        [
+          48,
+          65
+        ],
+        [
+          57,
+          60
+        ],
+        [
+          66,
+          60
+        ],
+        [
+          75,
+          58
+        ],
+        [
+          84,
+          58
+        ],
+        [
+          93,
+          61
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_63.png",
+      "duration_ms": 36,
+      "start_ms": 2164,
+      "phase": "release",
+      "body_state": "confluence_roar",
+      "body_frame": 23,
+      "source_sha256": "808aa6cbe7b82206861d332592c5b66a009f68708f59e13cddfea9980267d2b6",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          96
+        ],
+        "contact": [
+          128,
+          111
+        ],
+        "cast_origin": [
+          115,
+          76
+        ],
+        "mouth": [
+          115,
+          76
+        ],
+        "spine": [
+          66,
+          63
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          68
+        ],
+        [
+          57,
+          64
+        ],
+        [
+          66,
+          63
+        ],
+        [
+          75,
+          59
+        ],
+        [
+          84,
+          61
+        ],
+        [
+          93,
+          63
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_64.png",
+      "duration_ms": 38,
+      "start_ms": 2200,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 24,
+      "source_sha256": "d896ebc427151783118216ed0f43b5b0ef5642c704c991200e876768605b319a",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          96
+        ],
+        "contact": [
+          128,
+          111
+        ],
+        "cast_origin": [
+          115,
+          77
+        ],
+        "mouth": [
+          115,
+          77
+        ],
+        "spine": [
+          66,
+          64
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          67
+        ],
+        [
+          57,
+          63
+        ],
+        [
+          66,
+          64
+        ],
+        [
+          75,
+          60
+        ],
+        [
+          84,
+          61
+        ],
+        [
+          93,
+          65
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_65.png",
+      "duration_ms": 37,
+      "start_ms": 2238,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 25,
+      "source_sha256": "cd561db29266297fdc476b13c27fb1ded6c2c648fdf8d8f9aa512590d965f627",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          96
+        ],
+        "contact": [
+          128,
+          111
+        ],
+        "cast_origin": [
+          115,
+          77
+        ],
+        "mouth": [
+          115,
+          77
+        ],
+        "spine": [
+          66,
+          64
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          68
+        ],
+        [
+          57,
+          64
+        ],
+        [
+          66,
+          64
+        ],
+        [
+          75,
+          61
+        ],
+        [
+          84,
+          62
+        ],
+        [
+          93,
+          66
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_66.png",
+      "duration_ms": 37,
+      "start_ms": 2275,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 26,
+      "source_sha256": "037945e75cfe865adf05054ab0c8c7a0b0f0f3aefb10e170e286f87e0ab85528",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          96
+        ],
+        "contact": [
+          128,
+          111
+        ],
+        "cast_origin": [
+          114,
+          77
+        ],
+        "mouth": [
+          114,
+          77
+        ],
+        "spine": [
+          66,
+          64
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          73
+        ],
+        [
+          48,
+          68
+        ],
+        [
+          57,
+          64
+        ],
+        [
+          66,
+          64
+        ],
+        [
+          75,
+          60
+        ],
+        [
+          84,
+          62
+        ],
+        [
+          93,
+          66
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_67.png",
+      "duration_ms": 38,
+      "start_ms": 2312,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 27,
+      "source_sha256": "306f0ebef975564c61ec22cfb77de1f4c7c6f632e349bc8f25ccb3b83949f7d7",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          95
+        ],
+        "contact": [
+          129,
+          111
+        ],
+        "cast_origin": [
+          115,
+          76
+        ],
+        "mouth": [
+          115,
+          76
+        ],
+        "spine": [
+          66,
+          62
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          72
+        ],
+        [
+          48,
+          66
+        ],
+        [
+          57,
+          62
+        ],
+        [
+          66,
+          62
+        ],
+        [
+          75,
+          59
+        ],
+        [
+          84,
+          61
+        ],
+        [
+          93,
+          64
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_68.png",
+      "duration_ms": 38,
+      "start_ms": 2350,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 28,
+      "source_sha256": "9a02ce9891a412d68a5e3bc9f9ee013e7a03cc7f80634b178c2e58c67435ad6d",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          93
+        ],
+        "contact": [
+          129,
+          109
+        ],
+        "cast_origin": [
+          116,
+          72
+        ],
+        "mouth": [
+          116,
+          72
+        ],
+        "spine": [
+          66,
+          58
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          70
+        ],
+        [
+          48,
+          64
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          66,
+          58
+        ],
+        [
+          75,
+          56
+        ],
+        [
+          84,
+          56
+        ],
+        [
+          93,
+          60
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_69.png",
+      "duration_ms": 37,
+      "start_ms": 2388,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 29,
+      "source_sha256": "5efe43d503929b222035a65ebda4e1a950087b18834a66b87c2d8094b222b610",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          92
+        ],
+        "contact": [
+          130,
+          109
+        ],
+        "cast_origin": [
+          116,
+          70
+        ],
+        "mouth": [
+          116,
+          70
+        ],
+        "spine": [
+          66,
+          55
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          67
+        ],
+        [
+          48,
+          60
+        ],
+        [
+          57,
+          55
+        ],
+        [
+          66,
+          55
+        ],
+        [
+          75,
+          52
+        ],
+        [
+          84,
+          53
+        ],
+        [
+          93,
+          57
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_70.png",
+      "duration_ms": 37,
+      "start_ms": 2425,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 30,
+      "source_sha256": "f882266aaba6ab3e8376553edbdb4baaaf8157e7cc8eb645f1fddacbca3cdd1d",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          72,
+          90
+        ],
+        "contact": [
+          129,
+          108
+        ],
+        "cast_origin": [
+          116,
+          67
+        ],
+        "mouth": [
+          116,
+          67
+        ],
+        "spine": [
+          66,
+          50
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          63
+        ],
+        [
+          48,
+          56
+        ],
+        [
+          57,
+          50
+        ],
+        [
+          66,
+          50
+        ],
+        [
+          75,
+          47
+        ],
+        [
+          84,
+          48
+        ],
+        [
+          93,
+          51
+        ]
+      ]
+    },
+    {
+      "file": "assets/combat/vespermaw/channeling/body_71.png",
+      "duration_ms": 38,
+      "start_ms": 2462,
+      "phase": "settle",
+      "body_state": "confluence_roar",
+      "body_frame": 31,
+      "source_sha256": "224c1130f0a4206b689d535c9b42b8c86cf1581b85cb8e14d4d5177612b6ae32",
+      "anchors": {
+        "floor": [
+          64,
+          128
+        ],
+        "body": [
+          71,
+          88
+        ],
+        "contact": [
+          128,
+          107
+        ],
+        "cast_origin": [
+          115,
+          64
+        ],
+        "mouth": [
+          115,
+          64
+        ],
+        "spine": [
+          66,
+          47
+        ]
+      },
+      "crystal_tips": [
+        [
+          39,
+          61
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          57,
+          48
+        ],
+        [
+          66,
+          47
+        ],
+        [
+          75,
+          43
+        ],
+        [
+          84,
+          45
+        ],
+        [
+          93,
+          47
+        ]
+      ]
+    }
+  ],
+  "body_bank": "assets/combat/vespermaw/animation.json",
+  "body_bank_sha256": "94e35ca49a130c6cb2b083ce09b952a3ff43dde9ea2ac1a3d604114fc6873c26",
+  "performance": "brace and crouch, deliberate rise, open-jaw release, settling breath",
+  "materials": [
+    "fire",
+    "ice",
+    "water"
+  ],
+  "new_independent_body_drawings": false,
+  "layering": "complete registered body; fur palette and travelling material reveal; ridge/eye highlights; distinct elemental motes"
+}

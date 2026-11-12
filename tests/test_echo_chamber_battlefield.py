@@ -55,8 +55,10 @@ class EchoChamberBattlefieldTests(unittest.TestCase):
         self.assertEqual(data['source_position'], [2060, 360])
         self.assertEqual(data['animation']['period_ms'], 12000)
         self.assertEqual(set(data['animation']['crystal_colors']),
-                         {'red', 'blue', 'green', 'white', 'orange', 'purple'})
-        self.assertGreaterEqual(data['animation']['microcrystal_count'], 50)
+                         {'red', 'blue', 'white'})
+        self.assertEqual(data['animation']['microcrystal_count'], 0)
+        self.assertEqual([c['element'] for c in data['elemental_crystals']],['fire','ice','water'])
+        self.assertTrue(all(c['size']==[64,76] for c in data['elemental_crystals']))
         self.assertEqual(data['animation']['water_tiles'], 0)
         self.assertTrue(data['animation']['pulse'])
         self.assertEqual(data['clear_actor_stage'], [24, 145, 432, 77])
@@ -72,7 +74,7 @@ class EchoChamberBattlefieldTests(unittest.TestCase):
     def test_animation_is_cached_varied_looping_and_reduced_motion_is_static(self):
         with patch.object(pygame.image, 'load', wraps=pygame.image.load) as load:
             field = CaveBattlefield(IDENTIFIER)
-            self.assertEqual(load.call_count, 48)
+            self.assertEqual(load.call_count, 48+3*8)
             original_loads = load.call_count
             frames = [pygame.image.tobytes(field.frame(index*250), 'RGB') for index in range(48)]
             self.assertGreaterEqual(len(set(frames)), 20)
@@ -96,6 +98,22 @@ class EchoChamberBattlefieldTests(unittest.TestCase):
             with self.subTest(field=identifier):
                 paths = sorted((ROOT/'assets/combat'/identifier).glob('*.png'))
                 self.assertEqual(sha256(b''.join(path.read_bytes() for path in paths)).hexdigest(), expected)
+
+    def test_channel_lighting_tracks_the_active_form_and_preserves_large_hud_framing(self):
+        field=CaveBattlefield(IDENTIFIER)
+        from vespermaw_crystals import ElementalCrystals
+        before=ElementalCrystals.strengths(0,{'element':'fire','from':'fire','to':'ice','progress':0,'commit':.66})
+        after=ElementalCrystals.strengths(0,{'element':'ice','from':'fire','to':'ice','progress':.66,'commit':.66})
+        self.assertGreater(before['fire'],before['ice'])
+        self.assertGreater(after['ice'],after['fire'])
+        self.assertEqual(after['water'],0)
+        quiet=ElementalCrystals.strengths(100,{'element':'water'},True)
+        self.assertEqual(quiet,ElementalCrystals.strengths(5000,{'element':'water'},True))
+        first=pygame.Surface((480,320));second=pygame.Surface((480,320))
+        field.draw(first,1000,vertical_offset=0,elemental_state={'element':'ice'})
+        field.draw(second,1000,vertical_offset=40,elemental_state={'element':'ice'})
+        self.assertEqual(pygame.image.tobytes(first,'RGB'),pygame.image.tobytes(second,'RGB'))
+        self.assertEqual(field.crystal_origin('ice',40),field.crystal_origin('ice',0))
 
     def test_new_field_retains_strict_identity_dimensions_and_frame_path_validation(self):
         valid = CaveBattlefield(IDENTIFIER).data

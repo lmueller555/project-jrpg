@@ -3001,11 +3001,15 @@
     "tool": "tools/build_cave_battlefields.py",
     "source_recipe": "assets/source/combat/cave_battlefields/recipe.json",
     "source_sha256": {
-      "assets/maps/sanctuary_cave/map.json": "0c9df3ed7d9e7441ca7864bbac9cea02c7c969e0476cf033a406306083d3a595",
-      "assets/source/combat/cave_battlefields/recipe.json": "23d9b3e6c05e69e3ca661300a793574ea45672ca1f69cbc99fcabb8c1e29ca1d",
+      "assets/maps/sanctuary_cave/map.json": "47991793426e873d8efb313fd94eb367d02f85c8f78bec2d9cb6bf725bce8348",
+      "assets/source/combat/cave_battlefields/recipe.json": "355d360aa90d481371ff47922a52a05f88fe3f59a8a485f7ad56e95af75c79f6",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/chasm/assets.json": "10bbb3814c288ea6c24156be449450b96ed0ec005aac2ff336ecab60a626c3f5",
       "assets/terrain/limestone_cave/chasm/rupture.png": "b76b133e993cec70807324198d8ea788768e54e22fb8fb16697af7aae6e8ee39",
+      "assets/terrain/limestone_cave/elemental_crystals/assets.json": "a1980428b8abac76e3b9d88240f83b1af7063c47d389473fafc0c04ef735ad70",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_00.png": "03a171bd7a328a07276815022371f5a07636b19be76b4ba4862df0b844616f71",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_00.png": "a0d651b3640bf02e4a3326ee77c5923606e8ea87cda5e2bf1e0227caca3b4fc1",
+      "assets/terrain/limestone_cave/elemental_crystals/water_00.png": "198a3c94848ed903e73e146b73b58896cb44c8064086eed64b2f65ea079fa9b0",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/2.png": "61edb7ba07c43352921144e74a1972e7a0eaa8ff4c40dc2c0e0eb5f0a87d4950",
@@ -3040,12 +3044,6 @@
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_03.png": "3d83cd0d6cabf5b91706e217dda0474262cbad5d604cb2cc980eb3468a9f8150",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_04.png": "ce599dee735108346f622dbd08216cab3ec032a9e28fa1f4826a2858c525793f",
       "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_05.png": "e226547b3aaa47df2903e666049a10c21932c8b7f5172a6c54e80d650a6bbcb6",
-      "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_right/frame_00.png": "c730dd6d437317c9b911b85d68256752d02d8ea602be8b63ba1a345c9cde906d",
-      "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_right/frame_01.png": "d7b83870a52d8f448e09fd1ee2bc657d9fd893a4e595de722c06d92afa2af341",
-      "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_right/frame_02.png": "3a01b4c6c3cc4de0152ee44a5fa303584f495e3b2bc262b3428516c0507af580",
-      "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_right/frame_03.png": "1574753b536551d1089d51099a3cf87492260984dcf2f3023fe2933f9a726cd6",
-      "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_right/frame_04.png": "509983bd2e79b8e3578210420ca967f90fbdcd2c727dbddd74db68d3ff608def",
-      "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_right/frame_05.png": "b11858533efc9305c31e26795cfff714320cb6801f46e8a6396032dbc717ab26",
       "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_00.png": "a0e51a3e2ac6b431b34844aa1070d9714c5fc42e156f2edbfbf6d8d767eb2904",
       "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_01.png": "87e934369793c3acefb19c601697a11ecdc5e7bcb0b2adb8ae034427a25c3ee6",
       "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_02.png": "a477236b0810565041d4f988f77074d9c14e23012a36ae1bb160668816e94682",
@@ -3293,7 +3291,7 @@
       "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_04.png": "9879b58900e366b3902738b6875cee94436a0c30c24c6598a33f28a04a2142de",
       "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_05.png": "266a11345a3960855c26172fd8310d9813dfab6bee1b0a51852eb539c6e41721",
       "cave_chasm_fx.py": "bdf3c5206001d327b8f8e6664e700d80ad59c6e6ecc134e4e79306ad59c27b4d",
-      "tools/build_cave_battlefields.py": "3c54bda01e3ce2c9e8831d13cbf43a995893b380becb1a02a1bbdb99384715cf"
+      "tools/build_cave_battlefields.py": "089971fe308f3d39c07dd83aa50900889ab83e44ae7d4d6682da96fd7af0054b"
     }
   }
 }

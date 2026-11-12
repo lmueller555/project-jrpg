@@ -368,8 +368,8 @@
     "vespermaw": {
       "mode": "species",
       "name": "Vespermaw",
-      "description": "A pale cave predator whose shoulders and spine bear mineral crusts threaded with violet and blue microcrystals. Long exposure to the Sanctuary’s Aether confluence has strengthened its body and given its growl an unnatural resonance. Recent disturbances have driven it from the deeper passages. A living beast, not one of the Sanctuary’s dead.",
-      "family": "aether_adapted_beast",
+      "description": "A beast-shaped elemental drawn from the ruptured Sanctuary confluence. Its familiar predatory silhouette is woven from dense aether, mineral crusts and fur-like filaments. Three great wall crystals feed its shifting Fire, Ice and Water forms; each channel changes its coloration and elemental response. It is a manifestation of disturbed aether, not one of the Sanctuary’s dead.",
+      "family": "aether_elemental",
       "tier": "boss",
       "habitats": [
         "elden_vale_sanctuary_caves"
@@ -438,12 +438,12 @@
         ]
       },
       "elemental_profile": {
-        "element": "ground",
+        "element": "fire",
         "damage_percentages": {
           "non_elemental": 100,
           "fire": 100,
-          "electric": 50,
-          "water": 150,
+          "electric": 100,
+          "water": 200,
           "ice": 100,
           "nature": 100,
           "wind": 100,
@@ -452,11 +452,11 @@
         },
         "absorption": {
           "elements": [
-            "ground"
+            "fire"
           ],
           "healing_percent": 100
         },
-        "design_rationale": "Pale mineral crusts, heavy limbs and stone-lined claws reveal its Ground alignment. The crust insulates against Electric attacks but is vulnerable to erosion by Water; Ground replenishes it. Its blue and violet microcrystals indicate Aether exposure rather than Water or Electric alignment. Holy remains neutral because it is a living beast."
+        "design_rationale": "Ember-red fur and sparks show Fire; Water quenches it. Matching elemental damage replenishes this form. Other elements remain neutral."
       },
       "planned_mechanics": {
         "stagger": {
@@ -531,6 +531,81 @@
           "trigger": "story",
           "repeatable": false,
           "formation_size": 1
+        }
+      },
+      "elemental_channeling": {
+        "cycle": [
+          "fire",
+          "ice",
+          "water"
+        ],
+        "turns_per_form": 2,
+        "duration_ms": 2500,
+        "commit_ms": 1650,
+        "forms": {
+          "fire": {
+            "element": "fire",
+            "damage_percentages": {
+              "non_elemental": 100,
+              "fire": 100,
+              "electric": 100,
+              "water": 200,
+              "ice": 100,
+              "nature": 100,
+              "wind": 100,
+              "holy": 100,
+              "ground": 100
+            },
+            "absorption": {
+              "elements": [
+                "fire"
+              ],
+              "healing_percent": 100
+            },
+            "design_rationale": "Ember-red fur and sparks show Fire; Water quenches it. Matching elemental damage replenishes this form. Other elements remain neutral."
+          },
+          "ice": {
+            "element": "ice",
+            "damage_percentages": {
+              "non_elemental": 100,
+              "fire": 200,
+              "electric": 100,
+              "water": 100,
+              "ice": 100,
+              "nature": 100,
+              "wind": 100,
+              "holy": 100,
+              "ground": 100
+            },
+            "absorption": {
+              "elements": [
+                "ice"
+              ],
+              "healing_percent": 100
+            },
+            "design_rationale": "Frost-white fur and drifting frost show Ice; Fire melts it. Matching elemental damage replenishes this form. Other elements remain neutral."
+          },
+          "water": {
+            "element": "water",
+            "damage_percentages": {
+              "non_elemental": 100,
+              "fire": 100,
+              "electric": 100,
+              "water": 100,
+              "ice": 200,
+              "nature": 100,
+              "wind": 100,
+              "holy": 100,
+              "ground": 100
+            },
+            "absorption": {
+              "elements": [
+                "water"
+              ],
+              "healing_percent": 100
+            },
+            "design_rationale": "Deep-blue flowing fur shows Water; Ice freezes its liquid aether. Matching elemental damage replenishes this form. Other elements remain neutral."
+          }
         }
       }
     },

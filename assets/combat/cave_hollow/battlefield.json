@@ -1893,8 +1893,8 @@
     "tool": "tools/build_cave_battlefields.py",
     "source_recipe": "assets/source/combat/cave_battlefields/recipe.json",
     "source_sha256": {
-      "assets/maps/sanctuary_cave/map.json": "0c9df3ed7d9e7441ca7864bbac9cea02c7c969e0476cf033a406306083d3a595",
-      "assets/source/combat/cave_battlefields/recipe.json": "23d9b3e6c05e69e3ca661300a793574ea45672ca1f69cbc99fcabb8c1e29ca1d",
+      "assets/maps/sanctuary_cave/map.json": "47991793426e873d8efb313fd94eb367d02f85c8f78bec2d9cb6bf725bce8348",
+      "assets/source/combat/cave_battlefields/recipe.json": "355d360aa90d481371ff47922a52a05f88fe3f59a8a485f7ad56e95af75c79f6",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",
@@ -2115,7 +2115,7 @@
       "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_03.png": "b5ae2c6dcf6a652cf6412fac563bba55161c5ccc9d6abdf1171b50ef750f087f",
       "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_04.png": "dd1a20c07cdeb8dc2b648a622a947b664a9d64d174ca9ed8745bb34fbde40b72",
       "assets/terrain/limestone_cave/water/modules/wet_crack/0/frame_05.png": "a21c69b7904afedc66800b1c8541f1f0fd13dbc05ed47a25af3e4955158c6960",
-      "tools/build_cave_battlefields.py": "3c54bda01e3ce2c9e8831d13cbf43a995893b380becb1a02a1bbdb99384715cf"
+      "tools/build_cave_battlefields.py": "089971fe308f3d39c07dd83aa50900889ab83e44ae7d4d6682da96fd7af0054b"
     }
   }
 }

@@ -3718,196 +3718,82 @@
       "wall_gem_color": "white"
     },
     {
-      "id": "arena_west_micro_0",
+      "id": "echo_elemental_fire",
       "position": [
-        1799,
-        161
+        1868,
+        87
       ],
       "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/vertical/frame_05.png"
+        "assets/terrain/limestone_cave/elemental_crystals/fire_00.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_01.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_02.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_03.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_04.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_05.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_06.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_07.png"
       ],
-      "sort_y": 197,
+      "sort_y": 159,
       "sort_priority": 0,
-      "frame_duration_ms": 600,
+      "frame_duration_ms": 160,
       "phase_offset": 0,
       "reduced_motion_frame": 4,
-      "source_module": "micro.orange.vertical",
-      "source_pack": "micro",
+      "source_pack": "elemental_crystals",
+      "source_module": "fire",
       "light_index": 22,
-      "wall_gem_color": "orange"
+      "elemental_crystal": "fire"
     },
     {
-      "id": "arena_west_micro_1",
+      "id": "echo_elemental_ice",
       "position": [
-        1837,
-        129
+        2028,
+        32
       ],
       "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/orange/dense/frame_05.png"
+        "assets/terrain/limestone_cave/elemental_crystals/ice_00.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_01.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_02.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_03.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_04.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_05.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_06.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_07.png"
       ],
-      "sort_y": 149,
+      "sort_y": 104,
       "sort_priority": 0,
-      "frame_duration_ms": 600,
+      "frame_duration_ms": 160,
       "phase_offset": 0,
       "reduced_motion_frame": 4,
-      "source_module": "micro.orange.dense",
-      "source_pack": "micro",
-      "light_index": 22,
-      "wall_gem_color": "orange"
-    },
-    {
-      "id": "arena_north_micro_0",
-      "position": [
-        1984,
-        72
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_05.png"
-      ],
-      "sort_y": 96,
-      "sort_priority": 0,
-      "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "reduced_motion_frame": 4,
-      "source_module": "micro.purple.diagonal_right",
-      "source_pack": "micro",
+      "source_pack": "elemental_crystals",
+      "source_module": "ice",
       "light_index": 23,
-      "wall_gem_color": "purple"
+      "elemental_crystal": "ice"
     },
     {
-      "id": "arena_north_micro_1",
+      "id": "echo_elemental_water",
       "position": [
-        2032,
-        66
+        2208,
+        83
       ],
       "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_05.png"
+        "assets/terrain/limestone_cave/elemental_crystals/water_00.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_01.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_02.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_03.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_04.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_05.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_06.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_07.png"
       ],
-      "sort_y": 90,
+      "sort_y": 155,
       "sort_priority": 0,
-      "frame_duration_ms": 600,
+      "frame_duration_ms": 160,
       "phase_offset": 0,
       "reduced_motion_frame": 4,
-      "source_module": "micro.purple.diagonal_left",
-      "source_pack": "micro",
-      "light_index": 23,
-      "wall_gem_color": "purple"
-    },
-    {
-      "id": "arena_east_micro_0",
-      "position": [
-        2212,
-        126
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
-      ],
-      "sort_y": 146,
-      "sort_priority": 0,
-      "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "reduced_motion_frame": 4,
-      "source_module": "micro.red.dense",
-      "source_pack": "micro",
+      "source_pack": "elemental_crystals",
+      "source_module": "water",
       "light_index": 24,
-      "wall_gem_color": "red"
-    },
-    {
-      "id": "arena_east_micro_1",
-      "position": [
-        2284,
-        158
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_05.png"
-      ],
-      "sort_y": 182,
-      "sort_priority": 0,
-      "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "reduced_motion_frame": 4,
-      "source_module": "micro.red.sparse",
-      "source_pack": "micro",
-      "light_index": 24,
-      "wall_gem_color": "red"
-    },
-    {
-      "id": "arena_lower_micro_0",
-      "position": [
-        2118,
-        472
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/diagonal_left/frame_05.png"
-      ],
-      "sort_y": 496,
-      "sort_priority": 0,
-      "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "reduced_motion_frame": 4,
-      "source_module": "micro.blue.diagonal_left",
-      "source_pack": "micro",
-      "light_index": 25,
-      "wall_gem_color": "blue"
-    },
-    {
-      "id": "arena_lower_micro_1",
-      "position": [
-        2186,
-        444
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_00.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_01.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_02.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_03.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_04.png",
-        "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_05.png"
-      ],
-      "sort_y": 472,
-      "sort_priority": 0,
-      "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "reduced_motion_frame": 4,
-      "source_module": "micro.blue.corner_outer",
-      "source_pack": "micro",
-      "light_index": 25,
-      "wall_gem_color": "blue"
+      "elemental_crystal": "water"
     },
     {
       "id": "embervein_red_micro_0",
@@ -3930,7 +3816,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red"
     },
     {
@@ -3954,7 +3840,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red"
     },
     {
@@ -3978,7 +3864,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.diagonal_left",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red"
     },
     {
@@ -4002,7 +3888,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.orange.dense",
       "source_pack": "micro",
-      "light_index": 28,
+      "light_index": 27,
       "wall_gem_color": "orange"
     },
     {
@@ -4026,7 +3912,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 29,
+      "light_index": 28,
       "wall_gem_color": "white"
     },
     {
@@ -4050,7 +3936,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.diagonal_left",
       "source_pack": "micro",
-      "light_index": 29,
+      "light_index": 28,
       "wall_gem_color": "white"
     },
     {
@@ -4074,7 +3960,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.blue.dense",
       "source_pack": "micro",
-      "light_index": 30,
+      "light_index": 29,
       "wall_gem_color": "blue"
     },
     {
@@ -4098,7 +3984,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.blue.dense",
       "source_pack": "micro",
-      "light_index": 30,
+      "light_index": 29,
       "wall_gem_color": "blue"
     },
     {
@@ -4122,7 +4008,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 31,
+      "light_index": 30,
       "wall_gem_color": "white"
     },
     {
@@ -4146,7 +4032,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.diagonal_right",
       "source_pack": "micro",
-      "light_index": 31,
+      "light_index": 30,
       "wall_gem_color": "white"
     },
     {
@@ -4170,7 +4056,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "north"
@@ -4196,7 +4082,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "north"
@@ -4222,7 +4108,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "north"
@@ -4248,7 +4134,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.orange.dense",
       "source_pack": "micro",
-      "light_index": 28,
+      "light_index": 27,
       "wall_gem_color": "orange",
       "source_room": "embervein_chamber",
       "wall_side": "north"
@@ -4274,7 +4160,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "west"
@@ -4300,7 +4186,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "west"
@@ -4326,7 +4212,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "south"
@@ -4352,7 +4238,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.dense",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "south"
@@ -4378,7 +4264,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.orange.vertical",
       "source_pack": "micro",
-      "light_index": 28,
+      "light_index": 27,
       "wall_gem_color": "orange",
       "source_room": "embervein_chamber",
       "wall_side": "south"
@@ -4404,7 +4290,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.vertical",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "east"
@@ -4430,7 +4316,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.red.vertical",
       "source_pack": "micro",
-      "light_index": 27,
+      "light_index": 26,
       "wall_gem_color": "red",
       "source_room": "embervein_chamber",
       "wall_side": "east"
@@ -4456,7 +4342,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 31,
+      "light_index": 30,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "north"
@@ -4482,7 +4368,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 31,
+      "light_index": 30,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "north"
@@ -4508,7 +4394,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.blue.dense",
       "source_pack": "micro",
-      "light_index": 30,
+      "light_index": 29,
       "wall_gem_color": "blue",
       "source_room": "stillfrost_chamber",
       "wall_side": "north"
@@ -4534,7 +4420,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 29,
+      "light_index": 28,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "west"
@@ -4560,7 +4446,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 29,
+      "light_index": 28,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "west"
@@ -4586,7 +4472,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 29,
+      "light_index": 28,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "south"
@@ -4612,7 +4498,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.dense",
       "source_pack": "micro",
-      "light_index": 29,
+      "light_index": 28,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "south"
@@ -4638,7 +4524,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.blue.dense",
       "source_pack": "micro",
-      "light_index": 30,
+      "light_index": 29,
       "wall_gem_color": "blue",
       "source_room": "stillfrost_chamber",
       "wall_side": "south"
@@ -4664,7 +4550,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.blue.vertical",
       "source_pack": "micro",
-      "light_index": 30,
+      "light_index": 29,
       "wall_gem_color": "blue",
       "source_room": "stillfrost_chamber",
       "wall_side": "east"
@@ -4690,7 +4576,7 @@
       "reduced_motion_frame": 4,
       "source_module": "micro.white.vertical",
       "source_pack": "micro",
-      "light_index": 31,
+      "light_index": 30,
       "wall_gem_color": "white",
       "source_room": "stillfrost_chamber",
       "wall_side": "east"
@@ -5200,72 +5086,55 @@
         "entity_id": "quiet_east_micro_0"
       },
       {
-        "id": "arena_west",
+        "id": "arena_fire",
         "position": [
-          1875,
-          215
+          1900,
+          207
         ],
         "color": [
           255,
-          139,
-          45
+          105,
+          62
         ],
-        "radius": 240,
-        "gain": 0.45,
-        "phase": 3.74,
+        "radius": 220,
+        "gain": 0.5,
+        "phase": 0.0,
         "steady": false,
-        "entity_id": "arena_west_micro_0"
+        "entity_id": "echo_elemental_fire"
       },
       {
-        "id": "arena_north",
+        "id": "arena_ice",
         "position": [
-          2044,
-          144
+          2056,
+          142
         ],
         "color": [
-          183,
-          103,
-          239
+          180,
+          226,
+          245
         ],
-        "radius": 240,
-        "gain": 0.45,
-        "phase": 3.91,
+        "radius": 220,
+        "gain": 0.5,
+        "phase": 1.4,
         "steady": false,
-        "entity_id": "arena_north_micro_0"
+        "entity_id": "echo_elemental_ice"
       },
       {
-        "id": "arena_east",
+        "id": "arena_water",
         "position": [
-          2250,
-          230
+          2240,
+          207
         ],
         "color": [
-          245,
-          76,
-          65
+          65,
+          153,
+          234
         ],
-        "radius": 240,
-        "gain": 0.45,
-        "phase": 4.08,
+        "radius": 220,
+        "gain": 0.5,
+        "phase": 2.8,
         "steady": false,
-        "entity_id": "arena_east_micro_0"
-      },
-      {
-        "id": "arena_lower",
-        "position": [
-          2160,
-          400
-        ],
-        "color": [
-          66,
-          124,
-          250
-        ],
-        "radius": 240,
-        "gain": 0.45,
-        "phase": 4.25,
-        "steady": false,
-        "entity_id": "arena_lower_micro_0"
+        "entity_id": "echo_elemental_water"
       },
       {
         "id": "daylight",
@@ -5370,6 +5239,86 @@
       }
     ],
     "pulse_period_ms": 6000,
+    "elemental_crystals": [
+      {
+        "id": "echo_elemental_fire",
+        "element": "fire",
+        "position": [
+          1900,
+          159
+        ],
+        "image_position": [
+          1868,
+          87
+        ],
+        "anchor": [
+          32,
+          72
+        ],
+        "size": [
+          64,
+          76
+        ],
+        "emission_origin": [
+          1900,
+          131
+        ],
+        "light_index": 22,
+        "source_room": "echo_chamber"
+      },
+      {
+        "id": "echo_elemental_ice",
+        "element": "ice",
+        "position": [
+          2060,
+          104
+        ],
+        "image_position": [
+          2028,
+          32
+        ],
+        "anchor": [
+          32,
+          72
+        ],
+        "size": [
+          64,
+          76
+        ],
+        "emission_origin": [
+          2060,
+          76
+        ],
+        "light_index": 23,
+        "source_room": "echo_chamber"
+      },
+      {
+        "id": "echo_elemental_water",
+        "element": "water",
+        "position": [
+          2240,
+          155
+        ],
+        "image_position": [
+          2208,
+          83
+        ],
+        "anchor": [
+          32,
+          72
+        ],
+        "size": [
+          64,
+          76
+        ],
+        "emission_origin": [
+          2240,
+          127
+        ],
+        "light_index": 24,
+        "source_room": "echo_chamber"
+      }
+    ],
     "wall_gems": [
       {
         "id": "entrance_micro_0",
@@ -10904,1078 +10853,6 @@
         ]
       },
       {
-        "id": "arena_west_micro_0",
-        "entity_id": "arena_west_micro_0",
-        "color": "orange",
-        "position": [
-          1815,
-          197
-        ],
-        "light_index": 22,
-        "light_position": [
-          1875,
-          215
-        ],
-        "crystal_count": 26,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "emission_bounds": [
-          1803,
-          167,
-          25,
-          62
-        ]
-      },
-      {
-        "id": "arena_west_micro_1",
-        "entity_id": "arena_west_micro_1",
-        "color": "orange",
-        "position": [
-          1869,
-          149
-        ],
-        "light_index": 22,
-        "light_position": [
-          1875,
-          215
-        ],
-        "crystal_count": 40,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ]
-        ],
-        "emission_bounds": [
-          1840,
-          135,
-          54,
-          31
-        ]
-      },
-      {
-        "id": "arena_north_micro_0",
-        "entity_id": "arena_north_micro_0",
-        "color": "purple",
-        "position": [
-          2020,
-          96
-        ],
-        "light_index": 23,
-        "light_position": [
-          2044,
-          144
-        ],
-        "crystal_count": 26,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "emission_bounds": [
-          1990,
-          76,
-          61,
-          38
-        ]
-      },
-      {
-        "id": "arena_north_micro_1",
-        "entity_id": "arena_north_micro_1",
-        "color": "purple",
-        "position": [
-          2068,
-          90
-        ],
-        "light_index": 23,
-        "light_position": [
-          2044,
-          144
-        ],
-        "crystal_count": 26,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "emission_bounds": [
-          2041,
-          70,
-          50,
-          41
-        ]
-      },
-      {
-        "id": "arena_east_micro_0",
-        "entity_id": "arena_east_micro_0",
-        "color": "red",
-        "position": [
-          2244,
-          146
-        ],
-        "light_index": 24,
-        "light_position": [
-          2250,
-          230
-        ],
-        "crystal_count": 40,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ]
-        ],
-        "emission_bounds": [
-          2215,
-          132,
-          54,
-          31
-        ]
-      },
-      {
-        "id": "arena_east_micro_1",
-        "entity_id": "arena_east_micro_1",
-        "color": "red",
-        "position": [
-          2316,
-          182
-        ],
-        "light_index": 24,
-        "light_position": [
-          2250,
-          230
-        ],
-        "crystal_count": 10,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ]
-        ],
-        "emission_bounds": [
-          2299,
-          167,
-          45,
-          32
-        ]
-      },
-      {
-        "id": "arena_lower_micro_0",
-        "entity_id": "arena_lower_micro_0",
-        "color": "blue",
-        "position": [
-          2154,
-          496
-        ],
-        "light_index": 25,
-        "light_position": [
-          2160,
-          400
-        ],
-        "crystal_count": 26,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "emission_bounds": [
-          2127,
-          476,
-          50,
-          41
-        ]
-      },
-      {
-        "id": "arena_lower_micro_1",
-        "entity_id": "arena_lower_micro_1",
-        "color": "blue",
-        "position": [
-          2214,
-          472
-        ],
-        "light_index": 25,
-        "light_position": [
-          2160,
-          400
-        ],
-        "crystal_count": 28,
-        "crystal_sizes": [
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            2,
-            4
-          ],
-          [
-            3,
-            4
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ]
-        ],
-        "emission_bounds": [
-          2191,
-          451,
-          45,
-          42
-        ]
-      },
-      {
         "id": "embervein_red_micro_0",
         "entity_id": "embervein_red_micro_0",
         "color": "red",
@@ -11983,7 +10860,7 @@
           582,
           1584
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -12166,7 +11043,7 @@
           672,
           1488
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -12349,7 +11226,7 @@
           726,
           1470
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -12476,7 +11353,7 @@
           882,
           1758
         ],
-        "light_index": 28,
+        "light_index": 27,
         "light_position": [
           828,
           1644
@@ -12659,7 +11536,7 @@
           1114,
           468
         ],
-        "light_index": 29,
+        "light_index": 28,
         "light_position": [
           1180,
           480
@@ -12842,7 +11719,7 @@
           1144,
           420
         ],
-        "light_index": 29,
+        "light_index": 28,
         "light_position": [
           1180,
           480
@@ -12969,7 +11846,7 @@
           1476,
           600
         ],
-        "light_index": 30,
+        "light_index": 29,
         "light_position": [
           1416,
           552
@@ -13152,7 +12029,7 @@
           1494,
           552
         ],
-        "light_index": 30,
+        "light_index": 29,
         "light_position": [
           1416,
           552
@@ -13335,7 +12212,7 @@
           1254,
           372
         ],
-        "light_index": 31,
+        "light_index": 30,
         "light_position": [
           1296,
           414
@@ -13518,7 +12395,7 @@
           1320,
           366
         ],
-        "light_index": 31,
+        "light_index": 30,
         "light_position": [
           1296,
           414
@@ -13645,7 +12522,7 @@
           638,
           1500
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -13830,7 +12707,7 @@
           694,
           1452
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -14015,7 +12892,7 @@
           770,
           1464
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -14200,7 +13077,7 @@
           878,
           1496
         ],
-        "light_index": 28,
+        "light_index": 27,
         "light_position": [
           828,
           1644
@@ -14385,7 +13262,7 @@
           568,
           1700
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -14570,7 +13447,7 @@
           610,
           1752
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -14755,7 +13632,7 @@
           674,
           1790
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -14940,7 +13817,7 @@
           918,
           1750
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -15125,7 +14002,7 @@
           928,
           1714
         ],
-        "light_index": 28,
+        "light_index": 27,
         "light_position": [
           828,
           1644
@@ -15254,7 +14131,7 @@
           944,
           1572
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -15383,7 +14260,7 @@
           946,
           1648
         ],
-        "light_index": 27,
+        "light_index": 26,
         "light_position": [
           708,
           1620
@@ -15512,7 +14389,7 @@
           1188,
           392
         ],
-        "light_index": 31,
+        "light_index": 30,
         "light_position": [
           1296,
           414
@@ -15697,7 +14574,7 @@
           1436,
           408
         ],
-        "light_index": 31,
+        "light_index": 30,
         "light_position": [
           1296,
           414
@@ -15882,7 +14759,7 @@
           1392,
           380
         ],
-        "light_index": 30,
+        "light_index": 29,
         "light_position": [
           1416,
           552
@@ -16067,7 +14944,7 @@
           1108,
           548
         ],
-        "light_index": 29,
+        "light_index": 28,
         "light_position": [
           1180,
           480
@@ -16252,7 +15129,7 @@
           1124,
           608
         ],
-        "light_index": 29,
+        "light_index": 28,
         "light_position": [
           1180,
           480
@@ -16437,7 +15314,7 @@
           1176,
           654
         ],
-        "light_index": 29,
+        "light_index": 28,
         "light_position": [
           1180,
           480
@@ -16622,7 +15499,7 @@
           1278,
           712
         ],
-        "light_index": 29,
+        "light_index": 28,
         "light_position": [
           1180,
           480
@@ -16807,7 +15684,7 @@
           1230,
           684
         ],
-        "light_index": 30,
+        "light_index": 29,
         "light_position": [
           1416,
           552
@@ -16992,7 +15869,7 @@
           1480,
           460
         ],
-        "light_index": 30,
+        "light_index": 29,
         "light_position": [
           1416,
           552
@@ -17121,7 +15998,7 @@
           1494,
           640
         ],
-        "light_index": 31,
+        "light_index": 30,
         "light_position": [
           1296,
           414
@@ -17243,7 +16120,7 @@
         ]
       }
     ],
-    "microcrystal_count": 2480,
+    "microcrystal_count": 2258,
     "placed_modules": [
       {
         "id": "entrance_arch",
@@ -21101,12 +19978,37 @@
     "tool": "tools/build_continuous_sanctuary_cave.py",
     "source_recipe": "assets/source/maps/sanctuary_cave/recipe.json",
     "source_sha256": {
-      "assets/source/maps/sanctuary_cave/recipe.json": "fecd9d4156f876475ff29d3044460a05e3aceff97f76f16074427efdb3eb83b8",
+      "assets/source/maps/sanctuary_cave/recipe.json": "5b4caed206e222816bd0213b56e04926e8b9c2b3a7f574394cad0e8b3bbf1f2e",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/chasm/assets.json": "10bbb3814c288ea6c24156be449450b96ed0ec005aac2ff336ecab60a626c3f5",
       "assets/terrain/limestone_cave/chasm/collision.png": "69367bb2356d85f6e936d072c945b1a5ba65626988c115bdeeea11151c89ebaa",
       "assets/terrain/limestone_cave/chasm/rupture.png": "b76b133e993cec70807324198d8ea788768e54e22fb8fb16697af7aae6e8ee39",
+      "assets/terrain/limestone_cave/elemental_crystals/assets.json": "a1980428b8abac76e3b9d88240f83b1af7063c47d389473fafc0c04ef735ad70",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_00.png": "03a171bd7a328a07276815022371f5a07636b19be76b4ba4862df0b844616f71",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_01.png": "936c1cc3dff19aeb799bfbc755d09f04cd25aeffcc235ebdf2d4606101c07521",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_02.png": "7e05b423dd98df6bebc077ed8347cd57c353c46b9d52ba2754c97017c8cd4955",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_03.png": "3c45f0660d35f26a215cb91834e6527f6a5da7a210e997d605ff254e480a0d27",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_04.png": "2073760c8efafebfbbc555badf0b7dbd2f29fd49ae7af87b182c4c868524306c",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_05.png": "cc2fb26c2504be4f0e851ddff2f133500f4cc973d10c90c5166f94bddd065321",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_06.png": "d709c2c6cf13a37bbb60be6b937ebf89ce264d07c28b294dd7c6d18e0c4f00e2",
+      "assets/terrain/limestone_cave/elemental_crystals/fire_07.png": "10a412d384a65c5556a508f03fa440e0fd24fb8161975fb441b9f6ea050eea2b",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_00.png": "a0d651b3640bf02e4a3326ee77c5923606e8ea87cda5e2bf1e0227caca3b4fc1",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_01.png": "7970bf116a7831888e73db23bddd57925ee4b41acd85e2dc468d8957e2fea203",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_02.png": "b5ec963d2fb0b1d8cb441d2487b55d3fd30fc1f4520b289114662696d5191612",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_03.png": "f6fc1456d3c2fc53434061996467f9b545a7fa1c727e4f1ed3c34ee5f3cd9905",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_04.png": "5ade5b34cff4186d7f744ea099c26f851f416827c7d30799b29777e1f7b08620",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_05.png": "03d7c540303b58ef4d013d7c415023d68312274e7e13352a8f3f518af6ce7464",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_06.png": "26c5e98f439b09027400c70fa14fd69e606f15f9aaaaa3e1802442732b6020c0",
+      "assets/terrain/limestone_cave/elemental_crystals/ice_07.png": "4fc2c7fb45e25036b1543badf949284ae5e795ebc5b5015a417c0e8aeb303495",
+      "assets/terrain/limestone_cave/elemental_crystals/water_00.png": "198a3c94848ed903e73e146b73b58896cb44c8064086eed64b2f65ea079fa9b0",
+      "assets/terrain/limestone_cave/elemental_crystals/water_01.png": "9b853b1987d273f0d5366714c8cf3a99339bf82486f971b646255a8f37309a49",
+      "assets/terrain/limestone_cave/elemental_crystals/water_02.png": "91e38787c9c45ee722ca72dae8bd09beb3c890ea457ac07a1deab0868f960f75",
+      "assets/terrain/limestone_cave/elemental_crystals/water_03.png": "d60c2e461ffed18548904349185d22416e890b52aa34db90c220311595f62ee9",
+      "assets/terrain/limestone_cave/elemental_crystals/water_04.png": "502c4cb9567554ddfaa7bc43822f8294ee044fa6312298d11f033282696928ba",
+      "assets/terrain/limestone_cave/elemental_crystals/water_05.png": "9188df3ccbc7a65d4f4327d734121dbbf00e086d1e7f7dc15cdc67ce43bd5e91",
+      "assets/terrain/limestone_cave/elemental_crystals/water_06.png": "64d9f7ca62d1c38e6a6d305749f52d2c0704790eefeedd92726c114a2ab5c4eb",
+      "assets/terrain/limestone_cave/elemental_crystals/water_07.png": "f721048cba878deaef9179284869b4dabd982a9f8138d06ec96d56cd659706b8",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/0.png": "7f1cf649fe0a3df6947f50505c58b82af6e6bc83e1656ad032e63af5b7e4ca21",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",

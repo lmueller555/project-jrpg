@@ -253,6 +253,9 @@ class BattleAction:
     targets: tuple[str, ...] = ()
     rig_allocation: dict | None = None
     barrier_granted: bool = False
+    element: str | None = None
+    channel_from: str | None = None
+    channel_to: str | None = None
 
 
 @dataclass
@@ -268,6 +271,10 @@ class EnemyState:
     design: dict | None = None
     response_actions: int = 0
     vulnerable: bool = False
+    channeling: dict | None = None
+    element: str | None = None
+    turns: int = 0
+    shifted_at: int = -1
 
 
 def _primary_enemy_state(field):
@@ -292,6 +299,25 @@ class BattleModel:
     _enemy_target_index = _primary_enemy_state('target_index')
     _enemy_action_index = _primary_enemy_state('action_index')
     telegraphed_target = _primary_enemy_state('telegraphed_target')
+    vespermaw_element = _primary_enemy_state('element')
+    vespermaw_turns = _primary_enemy_state('turns')
+
+    @property
+    def vespermaw_channeling(self):
+        return (not self.ended and self.current_action is not None
+                and self.current_action.kind == 'channel')
+
+    def _install_channeling(self, identifier, record):
+        config = record['metadata'].get('elemental_channeling')
+        if config is None:return
+        state = self._enemy_states[identifier]
+        state.channeling = deepcopy(config)
+        state.element = config['cycle'][0]
+        # A scene-local presentation event, never a selectable combat ability.
+        self.actions['vespermaw_attune'] = {
+            'name':'Elemental Confluence', 'kind':'channel', 'animation':'channel',
+            'duration':config['duration_ms']/1000, 'impact_at':config['commit_ms']/1000,
+            'target':'self', 'mp_cost':0, 'potency':0}
 
     @staticmethod
     def _prepared_spells(record, actions):
@@ -357,6 +383,7 @@ class BattleModel:
         model._enemy_preparations = preparations
         model._enemy_states['enemy'].design = deepcopy(record['metadata'].get('combat_design'))
         model.enemy_records['enemy'] = model.enemy_bestiary_record
+        model._install_channeling('enemy', record)
         return model
 
     @classmethod
@@ -409,6 +436,7 @@ class BattleModel:
                 preparations=cls._prepared_spells(record, actions),
                 design=deepcopy(record['metadata'].get('combat_design')),
                 target_index=(index-1) % len(model.party))
+            model._install_channeling(identifier, record)
         model.enemies = tuple(enemies)
         model.enemy_xp_reward = sum(record['xp_reward'] or 0 for record in records)
         drops = {}
@@ -1051,6 +1079,9 @@ class BattleModel:
                                           active_gem=self.active_gem if actor_id == 'player' else None,
                                           choreography=choreography if timing else None,
                                           weapon_equipped=self.weapon_equipped if actor_id == 'player' else False)
+        self.current_action.element = (self._enemy_states[actor_id].element
+            if enemy_actor and identifier == 'vespermaw_confluence_roar'
+            else record.get('element'))
         if actor_id == 'mira' and identifier in RIG_SKILLS:
             self.current_action.rig_allocation = self.rig_allocation
             self.rig_skill_uses[identifier] = self.rig_skill_uses.get(identifier, 0)+1
@@ -1069,6 +1100,24 @@ class BattleModel:
         if enemy is None or not enemy.hp:return
         state = self._enemy_states[enemy_actor]
         if self._enemy_response_pending(enemy_actor):return False
+        config = state.channeling
+        if (config is not None and state.turns > 0
+                and state.turns % config['turns_per_form'] == 0
+                and state.shifted_at != state.turns):
+            state.shifted_at = state.turns
+            cycle = config['cycle']
+            destination = cycle[(cycle.index(state.element)+1) % len(cycle)]
+            record = self.actions['vespermaw_attune']
+            self.current_action = BattleAction(enemy_actor,'vespermaw_attune',enemy_actor,
+                record['name'],'channel','channel',record['duration'],record['impact_at'],
+                active_gem=destination, element=destination,
+                channel_from=state.element, channel_to=destination)
+            self.phase = 'acting'
+            self.message = enemy.name+' channels '+destination.title()+' aether.'
+            self.events.append({'type':'action_started','actor':enemy_actor,
+                'action':'vespermaw_attune','target':enemy_actor,'name':record['name'],
+                'channel_from':state.element,'channel_to':destination})
+            return True
         choices = (state.behavior['sequence'] if state.behavior is not None
                    else self.enemy_definitions[enemy_actor]['abilities'])
         if self.spellblade_guided:
@@ -1099,7 +1148,13 @@ class BattleModel:
     def _resolve_action(self):
         action = self.current_action
         actor = self.combatant(action.actor)
-        if action.kind == 'guard':
+        if action.kind == 'channel':
+            state = self._enemy_states[action.actor]
+            state.element = action.channel_to
+            self.events.append({'type':'elemental_shift','actor':action.actor,
+                'action':action.action,'element':state.element,
+                'channel_from':action.channel_from,'channel_to':action.channel_to})
+        elif action.kind == 'guard':
             actor.guarded = True
             self.message = actor.name+' braces for the next attack.'
             self.events.append({'type': 'guard', 'actor': action.actor})
@@ -1231,7 +1286,10 @@ class BattleModel:
         supersedes the percentage and restores the neutral component's damage.
         """
         record = self.enemy_records.get(target.identifier)
-        profile = record['metadata'].get('elemental_profile') if record else None
+        state = self._enemy_states.get(target.identifier)
+        profile = (state.channeling['forms'][state.element]
+            if state is not None and state.channeling is not None
+            else record['metadata'].get('elemental_profile') if record else None)
         if profile is None or element in (None, 'non_elemental'):return Fraction(1), False
         if element in profile['absorption']['elements']:return Fraction(1), True
         return Fraction(str(profile['damage_percentages'][element]))/100, False
@@ -1265,7 +1323,8 @@ class BattleModel:
         variance = roll_variance(self.rng)
         source = actor
         record = self.actions[action.action]
-        affinity, absorbed = self._elemental_response(target, record.get('element'))
+        element = action.element or record.get('element')
+        affinity, absorbed = self._elemental_response(target, element)
         # A spellblade's element belongs only to its magical component.
         damage = calculator(source, target, record['potency'],
                             affinity=1 if action.kind == 'spellblade' else affinity,
@@ -1306,7 +1365,7 @@ class BattleModel:
         event = {'type': 'impact', 'actor': action.actor, 'action': action.action,
                  'target': target.identifier, 'damage': damage,
                  'remaining_hp': target.hp, 'guarded': protected}
-        if absorbed:event.update(healing=restored, element=record.get('element'), absorbed=True)
+        if absorbed:event.update(healing=restored, element=element, absorbed=True)
         if blocked:event['barrier_absorbed'] = blocked
         if enchanted:event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
         self.events.append(event)
@@ -1323,6 +1382,8 @@ class BattleModel:
         return damage
 
     def _result(self, outcome):
+        if self.current_action is not None and self.current_action.kind == 'channel':
+            self.last_action, self.current_action = self.current_action, None
         for state in self._enemy_states.values():
             if state.style == 'magical_offense' or state.design is not None:
                 state.prepared_action = state.telegraphed_target = None
@@ -1433,6 +1494,12 @@ class BattleModel:
                     if self._pending_outcome is not None:
                         self._result(self._pending_outcome)
                         return
+                    if action.kind == 'channel':
+                        self.phase = 'charging'
+                        self._start_enemy_action(action.actor)
+                        continue
+                    if self.is_enemy(action.actor):
+                        self._enemy_states[action.actor].turns += 1
                     if (action.action == 'aqua_edge_attempt' and self.spellblade_stage == 'second_edge'
                             and self.player.hp):
                         self._start_action('player', 'aether_edge')
