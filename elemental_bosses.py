@@ -297,9 +297,9 @@ class ElementalBosses:
             self.restore(before)
             error = 'Progress could not be saved. Try again before entering.'
         g.player.moving = g.player.running = False
-        line = ('Look, the Aether is condensing into that monster. It's drawing in fire-aspected Aether from the cave.'
+        line = ("Look, the Aether is condensing into that monster. It's drawing in fire-aspected Aether from the cave."
                 if entry['element'] == 'fire' else
-                'Look, the Aether is condensing into that monster. It's drawing in ice-aspected Aether from its surroundings.')
+                "Look, the Aether is condensing into that monster. It's drawing in ice-aspected Aether from its surroundings.")
         opened = g.social.start_choice(
             [{'speaker': 'caelan', 'text': line}],
             [{'text': 'Approach', 'action': 'enter'}, {'text': 'Party', 'action': 'party'},

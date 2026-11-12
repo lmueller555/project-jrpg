@@ -190,14 +190,17 @@ class AquaProgressionGameplayTests(unittest.TestCase):
                 lines[source] = True
             self.assertTrue(lesson.locks_player)
             self.assertFalse(game.combat.active)
-            if source >= 3:
+            if source >= 5:
                 self.assertFalse(lesson.blade_presented)
                 self.assertFalse(hasattr(game.player, 'story_sprite'))
+                self.assertEqual(game.player.facing, 'back' if source == 13 else 'left')
+            else:
+                self.assertTrue(lesson.blade_presented)
             key(game, pygame.K_SPACE)
             game.update(.05, (1, 0), False)
         else:self.fail('Cave entry did not finish')
-        self.assertEqual(speakers, ['caelan']*4+['mira']+['caelan']*2+
-                         ['mira', 'caelan', 'mira', 'lucan'])
+        self.assertEqual(speakers, ['caelan', 'mira']+['caelan']*4+['mira']+
+                         ['caelan']*2+['mira', 'caelan', 'mira', 'caelan', 'lucan'])
         self.assertTrue(lesson.resonance_seen)
         self.assertFalse(lesson.locks_player)
         self.assertFalse(hasattr(game.player, 'story_sprite'))

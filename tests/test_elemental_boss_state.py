@@ -121,9 +121,9 @@ class ElementalBossStateTests(unittest.TestCase):
                 first = owner._acquisition_lines(order[0])
                 second = owner._acquisition_lines(order[1])
                 self.assertGreater(len(first), len(second))
-                self.assertIn('I can feel the Aether moving through me now. Before, I was just pushing.',
+                self.assertIn('Wow, I can channel Aether through it.',
                               [line['text'] for line in first])
-                self.assertIn('Follow it through the gem. Let it take its shape.',
+                self.assertIn('Can you form it around your blade like with the water gem?',
                               [line['text'] for line in first])
 
     def test_journey_pending_requires_aqua_clear_entry_resources_and_unique_owner(self):
