@@ -1,5 +1,12 @@
 # Garden and orchard work
 
+Character–object work follows the mandatory
+[global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
+[personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,
+contact timings, and captures below describe the current implementation.
+Natural proportions and readable intent take priority over exact hand contact;
+a small, deliberate transfer snap is acceptable.
+
 Two region-owned actors bring the existing southern kitchen garden and village
 orchard to life. They are separate from the sanctuary gardener and all town
 household instances. The sites are about 1,500 pixels apart: a cross-site visit
@@ -34,16 +41,18 @@ owned across streaming eviction.
 Objects stay at their source until a grab finishes and stay held until a
 set-down finishes, then snap without interpolating between hand and station.
 Rear-facing carried props draw behind the body's opaque pixels, while exposed
-edges remain visible. Deposited produce still draws over its basket. Filling,
-watering and fruit-admiring gestures retain their intentional held-object motion.
+edges remain visible. Front and side views must also respect camera-relative
+hand and object depth. Deposited produce uses the receiving basket's support
+and world depth. Filling, watering and fruit-admiring gestures retain their
+intentional held-object motion.
 
 The optional `overworld.garden_orchard` save record contains independent worker
 phase, action index, action time, feet, greeting and read state. It is validated
 without loading art. Older saves omit the field and start the work normally.
 Continue restores the exact action and object ownership rather than rewinding a
 carry to storage. Finishing the dialogue checkpoints its read state before the
-plant move begins. Contact timestamps also checkpoint immediately, so Continue
-after a contact cannot replay its sound. The autosave dirty signature excludes
+plant move begins. Transfer-cue timestamps (called contacts in the implementation)
+also checkpoint immediately, so Continue after a transfer cannot replay its sound. The autosave dirty signature excludes
 per-frame feet and action time; those precise fields remain in explicit and
 contact/step snapshots, without synchronous disk writes every animation frame.
 Saving or streaming never creates a
