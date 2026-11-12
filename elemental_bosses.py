@@ -297,9 +297,9 @@ class ElementalBosses:
             self.restore(before)
             error = 'Progress could not be saved. Try again before entering.'
         g.player.moving = g.player.running = False
-        line = ('That shape… It is made of Aether. The heat is gathering around it.'
+        line = ('Look, the Aether is condensing into that monster. It's drawing in fire-aspected Aether from the cave.'
                 if entry['element'] == 'fire' else
-                'The Aether is gathering into that shape. Everything around it is freezing.')
+                'Look, the Aether is condensing into that monster. It's drawing in ice-aspected Aether from its surroundings.')
         opened = g.social.start_choice(
             [{'speaker': 'caelan', 'text': line}],
             [{'text': 'Approach', 'action': 'enter'}, {'text': 'Party', 'action': 'party'},
@@ -413,16 +413,16 @@ class ElementalBosses:
         color = 'red' if key == 'embravyr' else 'white'
         if first:
             return [
-                {'speaker': 'caelan', 'text': 'The Aether has settled into a gem…'},
-                {'speaker': 'mira', 'text': 'It fits one of the empty sockets. Let me seat it in the ring.'},
-                {'speaker': 'caelan', 'text': 'I can feel the Aether moving through me now. Before, I was just pushing.'},
-                {'speaker': 'mira', 'text': 'Follow it through the gem. Let it take its shape.'},
-                {'speaker': 'caelan', 'text': 'Yes. I think I can shape it. '+entry['skill_name']+'.'},
+                {'speaker': 'caelan', 'text': 'The Aether has settled into a gem like I have in my sword.'},
+                {'speaker': 'mira', 'text': 'Look...it fits one of the empty sockets. Let me seat it in the ring.'},
+                {'speaker': 'caelan', 'text': 'Wow, I can channel Aether through it.'},
+                {'speaker': 'mira', 'text': 'Can you form it around your blade like with the water gem?'},
+                {'speaker': 'caelan', 'text': 'Yeah...I am getting the hang of it while we are in this cave.'},
                 {'speaker': 'caelan', 'text': 'The '+color+' focus is part of the blade now.'},
             ]
         return [
-            {'speaker': 'mira', 'text': 'Another focus. There is still room in the ring.'},
-            {'speaker': 'caelan', 'text': 'A different flow… but I know how to follow it now. '+entry['skill_name']+'.'},
+            {'speaker': 'mira', 'text': 'Another focus. There is still room in the ring for it, here.'},
+            {'speaker': 'caelan', 'text': 'This one has different flow… but I know how to follow it now.'},
             {'speaker': 'caelan', 'text': 'The '+color+' focus is part of the blade now.'},
         ]
 
