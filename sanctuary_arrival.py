@@ -342,7 +342,9 @@ class SanctuaryArrival(MillGift):
             success=sync_arrival_party(g)
         else:self.phase_index+=1;success=True
         g.player.position.update(self.actors['caelan'].position);g.player.facing=self.actors['caelan'].facing
-        if not success or not (g._is_gallery_preview or g.save_progress()):
+        # Disposable quest playtests and Gallery runs acknowledge beats in
+        # memory. A disabled save store is intentional, not an I/O failure.
+        if not success or not (g._is_gallery_preview or not g.save_store.enabled or g.save_progress()):
             self.phase_index=before['beat'];self.completed=before['completed'];g.party.restore(party_before)
             g.character_progression.restore(levels_before);g.sanctuary_cave.restore(cave_before)
             self.error='Progress could not be saved. Press Enter or click to retry.'

@@ -145,6 +145,12 @@ the acknowledged arrival checkpoint. An interrupted final beat rebuilds its
 unacknowledged starting arrangement. Gallery restart restores the closed rope;
 pause and focus loss freeze the interaction and sound.
 
+In disposable quest playtests, each beat and the final party handoff advance
+in memory without writing a journey. Disabled saving is intentional in this
+mode and must not trigger the checkpoint retry prompt. Normal journeys still
+require a successful save; actual write failures roll back the beat and party
+handoff until the player retries successfully.
+
 The performance pass below completes dialogue, care-supply continuity and
 contextual replies while preserving these eight story checkpoints.
 
