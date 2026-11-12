@@ -5,6 +5,8 @@ entrance movement and gathered render actors are reconstructed from that stage.
 """
 from __future__ import annotations
 
+import math
+
 import pygame
 
 from social import facing_toward
@@ -16,6 +18,44 @@ EMERGENCY_STAGES = frozenset((
     'sanctuary_travel', 'sanctuary_arrival_pending'))
 MIRA_STAGES = frozenset(('sanctuary_travel', 'sanctuary_arrival_pending'))
 RESERVE_ID = 'elden_vale_sanctuary'
+
+
+def legacy_cave_entered(data):
+    """Infer an older journey's cave visit from durable cave facts only.
+
+    This never reads assets, mutates data or substitutes for journey validation.
+    A completed MQ03 stage alone is not evidence: older visits could finish
+    before the cave existed. Incomplete/invalid owners still face their normal
+    validators before the migrated journey can be resumed.
+    """
+    if not isinstance(data,dict):return False
+    player=data.get('player')
+    if isinstance(player,dict) and player.get('scene') in (
+            'sanctuary_cave','sanctuary_cave_entrance',
+            'sanctuary_cave_hollow','sanctuary_cave_depths'):
+        return True
+    from cave_lesson import CaveLesson
+    from sanctuary_cave import SanctuaryCave
+    from sanctuary_boss import SanctuaryBoss
+    lesson=data.get('cave_lesson')
+    if CaveLesson.valid_snapshot(lesson) and lesson['resonance_seen']:return True
+    cave=data.get('sanctuary_cave')
+    if SanctuaryCave.valid_snapshot(cave) and cave['opened']:return True
+    boss=data.get('sanctuary_boss')
+    if SanctuaryBoss.valid_snapshot(boss) and (boss['defeated'] or boss['pending'] is not None):return True
+    # A completed random encounter also covers pre-lesson cave visitors.
+    # Pending encounters require a cave position or acknowledged lesson above.
+    counter=data.get('cave_random_encounters')
+    fields={'version','identity','rng_state','sequence','threshold','remaining','was_safe','pending'}
+    return bool(isinstance(counter,dict) and set(counter)==fields
+                and type(counter['version']) is int and counter['version']==1
+                and all(type(counter[k]) is int and 0<=counter[k]<=2**32-1
+                        for k in ('identity','rng_state','sequence'))
+                and counter['sequence']>0 and counter['pending'] is None
+                and all(type(counter[k]) in (int,float) and 0<counter[k]<1e7
+                        and math.isfinite(counter[k]) for k in ('threshold','remaining'))
+                and counter['remaining']<=counter['threshold']
+                and (counter['was_safe'] is None or type(counter['was_safe']) is bool))
 
 
 class RegentEmergency:
@@ -227,6 +267,9 @@ class RegentEmergency:
                 c.aldric:'travel_aldric', c.lucan:'travel_lucan', c.clerk:'travel_page'}
         if actor not in keys:return None
         if c._world(actor) is not self.game.world:return False
+        if getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False):
+            keys.update({c.aldric:'arrival_aldric_waiting',c.clerk:'arrival_page_waiting'})
+            return c._speak(keys[actor])
         key = 'sanctuary_waiting' if c.stage == 'sanctuary_arrival_pending' and actor in c.sanctuary_escorts else keys[actor]
         if key not in c.lines:return False
         return c._speak(key)
@@ -244,13 +287,14 @@ class RegentEmergency:
                 'mira_departure':'E: Ask Mira to come to the Sanctuary'}.get(self.target(), '')
 
     def sync_music(self, *, restoring=False):
-        """Silence the entrance, then hold Kindled Courage through arrival.
+        """Hold the emergency score until the journey's first cave entry.
 
         Report pages restart on load, so their silent opening restarts too.
         Later durable stages restore the ongoing score without a dialogue cue.
-        The future arrival resolution must advance beyond these stages to
-        release this ownership.
+        Cave entry permanently releases this override, including on Continue
+        and later returns to the reserve or Eldenmere.
         """
+        if getattr(getattr(self.game,'sanctuary_arrival',None),'cave_entered',False):return
         if self.owner.stage not in EMERGENCY_STAGES:return
         if self.game.combat.active:return
         social = self.game.social
@@ -267,6 +311,8 @@ class RegentEmergency:
             self.game.music.fade_out(700)
 
     def tracker_text(self):
+        if getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False):
+            return 'Search the Sanctuary cave for the missing worker.'
         return {'interruption':'Someone is hurrying into the house.',
                 'attack_report':'Hear the survivor’s report in the dining room.',
                 'departure':'Speak with Serene before leaving.',

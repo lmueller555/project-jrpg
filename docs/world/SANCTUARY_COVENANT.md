@@ -12,7 +12,9 @@ survivor's report of a cave attack exposes the Crown crew Aldric secretly
 sent ahead to establish authority and begin the mining operation. Lucan was
 unaware of the deployment. The new route reaches the
 [detailed reserve](../SANCTUARY_RESERVE.md) with Aldric, Lucan, the page, Caelan
-and Mira; the arrival cutscene and miniboss remain later work.
+and Mira. The [arrival scene](../SANCTUARY_ARRIVAL.md) and cave miniboss are
+implemented; the missing worker's rescue payoff and final MQ03 resolution
+remain later story work.
 
 **Scope:** Elden Vale Sanctuary near Eldenmere, its public covenant, its
 service to the dead and the breach of trust exposed in Chapter 1.

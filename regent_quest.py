@@ -99,13 +99,15 @@ class RegentQuest:
 
     @property
     def sanctuary_escort_active(self):
-        return self.stage in ('rejoin_mira', *MIRA_STAGES)
+        return (self.stage in ('rejoin_mira', *MIRA_STAGES)
+                and not getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False))
 
     @property
     def sanctuary_escorts(self):return (self.aldric, self.lucan, self.clerk)
 
     @property
     def travel_members(self):
+        if getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False):return ()
         return self.sanctuary_escorts if self.sanctuary_escort_active else tuple(self.party)
 
     @staticmethod

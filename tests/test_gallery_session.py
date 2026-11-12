@@ -89,7 +89,8 @@ class GallerySessionTests(unittest.TestCase):
             session = game.gallery_session
             if session is None:return
             child = session.game
-            if child.social.active or child.regent_arrival.dialogue is not None and child.regent_arrival.active:
+            if (child.social.active or child.regent_arrival.dialogue is not None and child.regent_arrival.active
+                    or child.sanctuary_arrival.active and child.sanctuary_arrival.dialogue is not None):
                 self.assertTrue(self.key(game, pygame.K_SPACE))
             game.update(.1, (1, 0), True)
         self.fail('Preview did not return to the catalogue')
@@ -140,10 +141,14 @@ class GallerySessionTests(unittest.TestCase):
         raw = self.path.read_bytes()
         game = self.game()
         self.assertTrue(game.has_saved_journey)
+        # Loading may normalize supported legacy owners in memory. Gallery
+        # must preserve that loaded snapshot and the original disk bytes.
+        loaded = copy.deepcopy(game.saved_journey)
         self.launch(game, 'mill_small_spell')
         self.finish(game)
         self.assertEqual(self.path.read_bytes(), raw)
-        self.assertEqual(game.saved_journey, payload)
+        self.assertEqual(game.saved_journey, loaded)
+        self.assertEqual({key: game.saved_journey[key] for key in payload}, payload)
         game.close_gallery()
         self.assertTrue(game.begin_journey(True))
         self.assertEqual(game.quests.to_dict(), payload['quests'])
@@ -370,7 +375,8 @@ class GallerySessionTests(unittest.TestCase):
                     if frame % 3 == 0:
                         game.draw()
                         if game.gallery_session is None:break
-                        if child.social.active or child.regent_arrival.active:
+                        if (child.social.active or child.regent_arrival.active
+                                or child.sanctuary_arrival.active and child.sanctuary_arrival.dialogue is not None):
                             self.assertTrue(self.key(game, pygame.K_SPACE))
                     game.update(.1)
                     if game.gallery_session is None:break

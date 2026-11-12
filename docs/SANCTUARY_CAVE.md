@@ -99,14 +99,16 @@ release the ambience audio without changing story music ownership.
 
 ## Story and encounters
 
-The cave is explorable while the MQ03 Sanctuary arrival remains pending.
-Existing party ownership and quest progress remain intact. **Elden Vale
+The [MQ03 arrival scene](SANCTUARY_ARRIVAL.md) returns control at the cave
+apron with Caelan, Mira and temporary companion Lucan ready for the rescue.
+MQ03 remains active; cave exploration does not complete its remaining story. **Elden Vale
 Sanctuary Cave** replaces the emergency score during non-battle cave exploration,
 including the optional elemental chambers, dialogue and menus. The cue repeats
 without restarting as the player walks between rooms. Battles retain
 **Kindled Courage**, then resume the cave track at its interrupted position
 through results and rewards. Continue selects the cave cue even when restoring
-pending rewards; exiting returns to the appropriate outdoor or story score.
+pending rewards. First entry permanently releases MQ03's emergency override;
+exiting returns to normal area music, including after Continue and later visits.
 Cave entry, treasure and the Echo Chamber inspection preserve the pending story
 state. See [music exports and playback](../assets/music/README.md).
 
@@ -152,7 +154,7 @@ Return to the Quiet Shelf** with pre-fight HP/MP restored and no rewards.
 Victory awards 520 EXP to each living active member plus one Aether Amethyst
 and one Aether Sapphire through the standard spoils transaction. The saved
 defeated flag prevents the encounter and rewards from repeating after Continue
-or revisiting. Boss completion leaves MQ03 and its pending arrival untouched;
+or revisiting. Boss completion leaves MQ03's remaining rescue and resolution open;
 the previous music resumes through the existing battle music owner.
 
 Random battle entry focuses the party, presents a loading screen and reveals
@@ -167,8 +169,9 @@ while KO Caelan defers only the post-Spoils installation dialogue. See the
 [elemental encounter guide](ELEMENTAL_CAVE_ENCOUNTERS.md).
 See the [live encounter review](reviews/mira_rig_continuity/README.md).
 
-The arrival cutscene, further combat tuning and
-post-boss resolution remain later work. The cave does not establish the
+The [arrival cutscene](SANCTUARY_ARRIVAL.md) is implemented. Further combat
+tuning, the missing worker's rescue payoff and post-boss resolution remain
+later work. The cave does not establish the
 confluence's detailed workings, identify the original sacrificial temple or
 merge this location with the historically sealed workers' passage.
 

@@ -65,6 +65,10 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
                 {'version': 3, 'stage': 'sanctuary_arrival_pending'}))
             self.assertTrue(game._sync_story_party())
             game.regent_quest.emergency.sync_music(restoring=True)
+        # This suite isolates music after the fully acknowledged arrival scene.
+        arrival=getattr(game,'sanctuary_arrival',None)
+        if arrival is not None:
+            self.assertTrue(arrival.restore({'version':1,'beat':7,'completed':True,'cave_entered':False}))
         self.assertTrue(game.cave_lesson.restore(
             {'version': 1, 'resonance_seen': True, 'battle_cleared': True, 'deferred': False}))
         if 'aqua_edge' not in game.character_abilities.known_abilities():
@@ -123,7 +127,7 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
             self.assertEqual(game.music.desired_track, 'sanctuary_cave')
         self.assertEqual(self.backend.play.call_count, starts)
 
-    def test_exiting_restores_the_outdoor_or_emergency_cue(self):
+    def test_first_cave_exit_restores_normal_area_music_even_during_mq03(self):
         for emergency in (False, True):
             with self.subTest(emergency=emergency):
                 game = self.enter(emergency=emergency)
@@ -133,9 +137,9 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
                 game.player.position.update(link.get('approach', link['position']))
                 self.assertTrue(game.sanctuary_cave.interact())
                 self.assertEqual(game.world.data['id'], RESERVE_ID)
-                self.assertEqual(game.music.desired_track, 'battle' if emergency else 'eldenmere')
+                self.assertEqual(game.music.desired_track, 'eldenmere')
                 self.tick(game, 1)
-                self.assertEqual(game.music.current_track, 'battle' if emergency else 'eldenmere')
+                self.assertEqual(game.music.current_track, 'eldenmere')
 
     def test_continue_selects_cave_music_before_any_first_update(self):
         game = self.enter()
@@ -144,6 +148,7 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
         self.assertTrue(other.has_saved_journey, other.save_error)
         self.assertTrue(other.begin_journey(True), other.save_error)
         self.assertEqual(other.music.current_track, 'sanctuary_cave')
+        self.assertTrue(other.sanctuary_arrival.cave_entered)
         self.assertEqual(other.music.desired_track, 'sanctuary_cave')
         self.assertFalse(other.combat.active)
 

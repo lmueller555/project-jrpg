@@ -146,22 +146,38 @@ def _completed_cave(game: Game) -> None:
                                        'intro_seen': True, 'pending': None}),
              'restore defeated Vespermaw')
     _require(owner.set_active_gem('water'), 'select the Blue focus')
+    from sanctuary_arrival_party import REQUIRED as rescue_party
+    _require(game.party.active_ids == rescue_party, 'restore the acknowledged cave rescue formation')
     plan = game.character_progression.preview(
-        SKIPPED_MQ03_XP, EARLY_PARTY,
-        {key: game.party.characters[key].current_hp for key in EARLY_PARTY})
+        SKIPPED_MQ03_XP, rescue_party,
+        {key: game.party.characters[key].current_hp for key in rescue_party})
     _require(game.character_progression.apply(plan), 'grant skipped MQ03 cave EXP')
 
 
 def _completed_visit(game: Game) -> None:
     _completed_mill(game)
-    _completed_cave(game)
     _require(game.regent_arrival.restore({'version': 1, 'state': 'seen'}),
              'restore the previous arrival')
     _require(game.accept_quest(REGENT_QUEST), 'prepare the test-only completed visit')
-    _complete_objectives(game, REGENT_QUEST)
+    objectives = game.quests.definitions[REGENT_QUEST]['objectives']
+    for objective in objectives[:-1]:
+        _require(game.quests.complete_objective(REGENT_QUEST, objective['id']),
+                 f'previous visit/{objective["id"]}')
+    _require(game.regent_quest.restore({'version': 3, 'stage': 'sanctuary_arrival_pending'}),
+             'restore the previous Sanctuary response')
+    # Apply its acknowledged consequences, without running the arrival movie in
+    # a later-quest fixture. Lucan shares the same cave allowance as the others.
+    _require(game.sanctuary_arrival.restore({'version': 1, 'beat': 7,
+                                          'completed': True, 'cave_entered': True}),
+             'restore the previous Sanctuary rescue handoff')
+    _require(game._sync_story_party(), 'restore the cave rescue trio')
+    _completed_cave(game)
+    _require(game.quests.complete_objective(REGENT_QUEST, objectives[-1]['id']),
+             'finish the previous Sanctuary response')
     _require(game.quests.turn_in(REGENT_QUEST, 'mother_serene'), 'close the test-only visit')
     _require(game.regent_quest.restore({'version': 3, 'stage': 'done'}),
              'restore the supported completed-visit setup')
+    _require(game._sync_story_party(), 'finish Lucan’s temporary rescue outing')
     game.social.flags.add('CH01_MQ03_COMPLETE')
     if game.quests.status(LANTERN_QUEST) == 'locked':
         _require(game.quests.unlock(LANTERN_QUEST), 'unlock the lantern quest')

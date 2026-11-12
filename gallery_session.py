@@ -65,6 +65,10 @@ class GallerySession:
             self.game._ensure_ui_surface()
         return painter
 
+    def _cinematic_active(self):
+        return (self.game.opening_cinematic.active or self.game.regent_arrival.active
+                or bool(getattr(getattr(self.game, 'sanctuary_arrival', None), 'active', False)))
+
     def handle_events(self, events):
         if self.closed:return True
         self._layout()
@@ -98,7 +102,7 @@ class GallerySession:
                 if self.playback.review is not None:
                     forwarded.append(event)
                     continue
-                cinematic = self.game.opening_cinematic.active or self.game.regent_arrival.active
+                cinematic = self._cinematic_active()
                 if event.key == pygame.K_p and cinematic:
                     forwarded.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, repeat=False))
                 elif event.key in (pygame.K_SPACE, pygame.K_e, pygame.K_RETURN, pygame.K_KP_ENTER):
@@ -107,6 +111,15 @@ class GallerySession:
                         # this batch must not become a world interaction when
                         # the first E closes the final page and runs its callback.
                         forwarded.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE, repeat=False))
+                continue
+            if event.type == pygame.KEYUP:
+                # MillGift-derived scene controllers keep held-key guards.
+                # Releases must use the same translated key as their press.
+                if event.key == pygame.K_p and self._cinematic_active():
+                    forwarded.append(pygame.event.Event(pygame.KEYUP, key=pygame.K_ESCAPE))
+                elif event.key in (pygame.K_SPACE, pygame.K_e, pygame.K_RETURN, pygame.K_KP_ENTER):
+                    if self._cinematic_active() or self.game.social.active:
+                        forwarded.append(pygame.event.Event(pygame.KEYUP, key=pygame.K_SPACE))
                 continue
             if event.type == pygame.VIDEORESIZE and not self.parent.fullscreen:
                 self.parent.window = pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
@@ -127,7 +140,7 @@ class GallerySession:
                     # into the toolbar since the initial click.
                     if event.type != pygame.MOUSEBUTTONUP:continue
                 if (self.playback.review is not None
-                        or self.game.opening_cinematic.active or self.game.regent_arrival.active
+                        or self._cinematic_active()
                         or self.game.social.active or event.type == pygame.MOUSEBUTTONUP):
                     forwarded.append(pygame.event.Event(event.type,dict(event.dict,
                         pos=(event.pos[0]-self.viewport_rect.x,event.pos[1]-self.viewport_rect.y))))
@@ -190,6 +203,8 @@ class GallerySession:
             game.regional_audio.reset()
             game.opening_audio.reset()
             game.regent_arrival.reset()
+            arrival = getattr(game, 'sanctuary_arrival', None)
+            if arrival is not None:arrival.reset()
             game.opening_cinematic.reset()
             game.combat.reset()
             game.music.stop()

@@ -151,8 +151,9 @@ maxima without restoring current HP/MP. Failed return checkpoints roll back the
 counter/resources so retry cannot consume another random roll. Fleeing preserves
 spent resources.
 The pending MQ03 outing, escorts and treasures remain intact, including through
-cave victory and spoils. The cave's exploration score supersedes the MQ03
-emergency score only while inside the cave; no quest stage is advanced.
+cave victory and spoils. First cave entry permanently releases the MQ03
+emergency music override; later outdoor visits use normal area music. This
+music handoff does not advance the quest stage.
 
 Cave exploration loops **Elden Vale Sanctuary Cave**. Battle entry temporarily
 switches the soundtrack to **Kindled Courage**. Victory, fleeing and defeat fade

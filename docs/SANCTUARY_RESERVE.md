@@ -85,22 +85,24 @@ the confluence without revealing an ancient mechanism.
 The cave mouth retains its visible keeper rail and public apron. At the apron,
 press **E** to lift the rail and enter the [crystal cave](SANCTUARY_CAVE.md).
 One continuous cave provides branching exploration, one-time treasure and
-pulsing environmental light. Cave exploration does not advance MQ03. The
-[cave random encounters](CAVE_RANDOM_ENCOUNTERS.md) are live; the miniboss and
-its arrival resolution remain later quest work. This cave is distinct from the
+pulsing environmental light. Cave exploration does not resolve MQ03's rescue
+storyline. The
+[cave random encounters](CAVE_RANDOM_ENCOUNTERS.md) are live; the level-seven miniboss is live, while the later rescue payoff and quest
+resolution remain future work. This cave is distinct from the
 historically sealed workers' passage beneath the sanctuary.
 
 [Cave Bat](BESTIARY.md#cave-bat) is authored in the Bestiary as a level-2–3
 species for the eastern-ridge caves, joining Lithrusk and Veylume in the cave's
-weighted encounter roster. The reserve remains peaceful; the keeper rail marks
+weighted encounter roster. The reserve remains non-combat ground, with the
+arrival scene staging caretaker aid and injured workers; the keeper rail marks
 an explicit interaction into the cave.
 
 During the new MQ03 route, a survivor exposes the Crown crew Aldric secretly
 sent ahead to establish authority and prepare mining. Caretakers have heard
 growling since the bridge incident; the attack's cause and the creature's
 identity remain unresolved. Aldric, Lucan, the page, Caelan and Mira arrive
-with MQ03 still active. The arrival cutscene, crew staging and exact extent of
-the work completed before the attack remain later scene work. Existing survey
+with MQ03 still active. The [arrival scene](SANCTUARY_ARRIVAL.md) stages wounded crew, caretaker aid
+and a rescue decision before returning control at the apron. Existing survey
 art is not evidence that the emergency has been resolved or permission granted.
 The guarded regional gates and destroyed western bridge retain their restrictions.
 

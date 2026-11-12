@@ -278,6 +278,8 @@ class OverworldTravel:
         self._reserve_entry_armed = self._reserve_exit_armed = False
         for owner in (g.mill_quest, g.regent_quest, g.lantern_quest):
             owner.on_enter_scene(origin, transition)
+        arrival=getattr(g,'sanctuary_arrival',None)
+        if arrival is not None:arrival.on_enter_scene(origin,transition)
         if destination is g.town:
             self._restore_party()
         else:

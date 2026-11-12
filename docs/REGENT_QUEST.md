@@ -37,9 +37,9 @@ homecoming and table-setting conversation are not repeated.
    for the outing, and travels with the group through the existing town exit
    and overworld route.
 9. Reach the real Sanctuary reserve. The cast gathers at safe arrival positions
-   and MQ03 remains active at `sanctuary_arrival_pending`. The arrival cutscene
-   and subsequent resolution are future work. Player control is not left
-   permanently locked at this checkpoint.
+   and MQ03 remains active at `sanctuary_arrival_pending`. The eight-beat arrival scene plays in the live reserve. Its acknowledged
+   handoff returns control at the cave apron with Lucan temporarily joining
+   Caelan and Mira. The later rescue payoff and quest resolution remain future work.
 
 The four ordered objective IDs remain `meet_visitors`, `accompany_visit`,
 `welcome_party` and `speak_serene` for compatibility. The final objective now
@@ -52,10 +52,11 @@ completion. The existing Venn cart detour stays removed.
 The survivor's entrance fades the music to silence over 700 ms. His first two
 utterances (including Aldric's intervening question) play in silence. Kindled
 Courage begins on Lucan's following question and loops through departure,
-Mira's rejoining and Sanctuary arrival. The pending arrival retains this score
-outdoors; non-battle cave exploration temporarily uses **Elden Vale Sanctuary
-Cave**, returning to the emergency score on exit. The future arrival scene must
-release emergency music ownership when it ends.
+Mira's rejoining and Sanctuary arrival. The arrival scene retains this score
+through its final handoff. The first successful cave entry permanently releases
+the emergency override; **Elden Vale Sanctuary Cave** plays underground, and
+normal area music resumes outside even while MQ03 remains active. Continue
+preserves the release, and older saves with durable cave evidence inherit it.
 Continue restarts an unfinished report with its silent opening and restores the
 score directly at later checkpoints. Cancelling and reopening the report within
 the same session does not restart an already-started score.
@@ -101,15 +102,18 @@ emergency or granted new Sanctuary visit facts.
 Serene, Tomas and the driver remain at home with the survivor. The existing
 Mira actor and resources are reused; MQ03 owns her outing so MQ02 cannot return
 her to the bench during it. No equipment, HP or MP is reset and no duplicate
-Mira is created. Caelan and Mira are the required combat members for this
-outing. Aldric, Lucan and the page travel as story companions; traveling with
-Lucan does not recruit him into combat yet.
+Mira is created. Caelan and Mira are the required combat members on the road
+to the reserve. Aldric, Lucan and the page travel as story companions until
+arrival. Once its rescue plan is acknowledged, Lucan becomes the temporary
+third combat member;
+Aldric and the page remain with the workers. His permanent recruitment remains
+a later story decision.
 
 The overworld keeps its established leader-scale presentation while the quest
 carries the travelers' scene ownership. The group reforms at the reserve's safe
 entrance. Saved phases and the party event restore that ownership after load;
-New Game releases it. The future arrival scene will determine the next party
-and quest handoff.
+New Game releases it. The [arrival scene](SANCTUARY_ARRIVAL.md) owns its durable beat checkpoints
+and the three-member rescue handoff.
 
 ## Story boundaries
 
@@ -120,10 +124,10 @@ Serene's treatment of the survivor gives aid without settling that conflict.
 
 The growling began after the bridge incident, the crew entered the reserve and
 something from the cave attacked them. This sequence does not identify the
-creature or prove that mining caused the attack. The amount of work completed
-at the site remains for the arrival cutscene. The cave barrier, miniboss,
-Sanctuary arrival cutscene and MQ03 resolution are not fabricated by this
-implementation. Tomas's lantern invitation must be positioned after that later
+creature or prove that mining caused the attack. The arrival confirms injured crew, suspends the work and establishes a
+missing worker believed alive inside.
+The playable cave and miniboss remain live; rescuing the worker and resolving
+MQ03 require the later story continuation. Tomas's lantern invitation must be positioned after that later
 sequence rather than firing from the removed ending.
 
 See the [faith guide](world/ELDEN_VALE_FAITH.md),

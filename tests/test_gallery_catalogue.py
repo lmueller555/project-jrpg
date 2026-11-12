@@ -110,6 +110,10 @@ class GalleryCatalogueTests(unittest.TestCase):
                     scripts.add(game.social.script_identifier)
                     game.handle_events([pygame.event.Event(pygame.KEYDOWN,
                                                            key=pygame.K_SPACE, repeat=False)])
+                if game.sanctuary_arrival.active and game.sanctuary_arrival.dialogue is not None:
+                    scripts.add('sanctuary_arrival_'+game.sanctuary_arrival.shot)
+                    game.handle_events([pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False),
+                                        pygame.event.Event(pygame.KEYUP,key=pygame.K_SPACE)])
                 if game.regent_arrival.active:
                     game.handle_events([pygame.event.Event(pygame.KEYDOWN,
                                                            key=pygame.K_SPACE, repeat=False)])
