@@ -23,6 +23,19 @@ SEQUENCE = ['vespermaw_'+name for name in (
 
 
 class VespermawBestiaryTests(unittest.TestCase):
+    def test_channeling_configuration_rejects_malformed_or_misleading_profiles(self):
+        for change in ('none','cycle','duration','weakness','absorb','initial'):
+            catalog = load_bestiary()
+            boss = catalog['enemies']['vespermaw']
+            channel = boss['elemental_channeling']
+            if change=='none':boss['elemental_channeling']=None
+            elif change=='cycle':channel['cycle']=['fire','water','ice']
+            elif change=='duration':channel['duration_ms']=True
+            elif change=='weakness':channel['forms']['water']['damage_percentages']['ice']=100
+            elif change=='absorb':channel['forms']['ice']['absorption']['elements']=['fire']
+            else:boss['elemental_profile']=deepcopy(channel['forms']['ice'])
+            with self.subTest(change=change),self.assertRaises(ValueError):load_bestiary(catalog)
+
     def test_exact_level_seven_profile_rewards_and_elemental_relationships(self):
         record = build_enemy('vespermaw', 7)
         self.assertEqual(record['combat']['attributes'], dict(zip(ATTRIBUTE_IDS,
@@ -37,11 +50,16 @@ class VespermawBestiaryTests(unittest.TestCase):
         self.assertEqual(metadata['planned_mechanics']['stagger'],
                          {'status': 'planned', 'resistance': 'normal'})
         profile = metadata['elemental_profile']
-        self.assertEqual(profile['element'], 'ground')
+        self.assertEqual(profile['element'], 'fire')
         self.assertEqual(profile['damage_percentages'],
-                         {key: {'electric': 50, 'water': 150}.get(key, 100)
+                         {key: {'water': 200}.get(key, 100)
                           for key in ELEMENT_IDS})
-        self.assertEqual(profile['absorption'], {'elements': ['ground'], 'healing_percent': 100})
+        self.assertEqual(profile['absorption'], {'elements': ['fire'], 'healing_percent': 100})
+        self.assertEqual(metadata['family'],'aether_elemental')
+        channel = metadata['elemental_channeling']
+        self.assertEqual(channel['cycle'],['fire','ice','water'])
+        self.assertEqual((channel['turns_per_form'],channel['duration_ms'],channel['commit_ms']),
+                         (2,2500,1650))
         for level in (None, 6, 8, True, 7.0):
             with self.subTest(level=level), self.assertRaises(ValueError):
                 build_enemy('vespermaw', level)

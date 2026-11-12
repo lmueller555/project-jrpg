@@ -21,6 +21,8 @@ from battle_target_marker import (FINGER_SIZE, FINGER_GAP, target_marker_geometr
                                   draw_target_ring, draw_target_finger)
 from battle_announcements import BattleAnnouncements, enemy_charge_warnings
 from enemy_charge_aura import EnemyChargeAura
+from vespermaw_confluence_fx import (VespermawConfluenceEffects,
+                                     VespermawChannelAudio, COLORS as CONFLUENCE_COLORS)
 
 from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS, MUTED
 
@@ -184,6 +186,13 @@ class BattleScene:
         self._rig_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         motion_frame('plant', 0, armed=model.weapon_equipped)
         self.action_audio = BattleActionAudio(game)
+        self.channel_art = None
+        if any(self._sprite(enemy.identifier)=='vespermaw' for enemy in self._enemy_members()):
+            from vespermaw_channel_art import VespermawChannelArt
+            self.channel_art = VespermawChannelArt()
+        self.channel_fx = VespermawConfluenceEffects()
+        self.channel_audio = VespermawChannelAudio(game)
+        if self.channel_art is not None:self.channel_audio.prepare()
         self._cue_action = None
         self._cue_phases = set()
         self._enemy_charge_time = None
@@ -469,6 +478,10 @@ class BattleScene:
             name_rect.center = (enemy_x, 43)
             bar = pygame.Rect(45, 57, 150, 6) if len(self.model.party) > 1 else pygame.Rect(86, 57, 80, 6)
             atb = pygame.Rect(bar.x, 65, bar.width, 2)
+            if self.channel_art is not None and self.battlefield=='cave_echo_chamber':
+                name_rect.midbottom=(240,114)
+                bar=pygame.Rect(165,117,150,5)
+                atb=pygame.Rect(165,124,150,2)
             self.enemy_rows['enemy'] = {'row': name_rect.union(bar).union(atb).inflate(6, 4),
                 'name': name_rect, 'hp': bar, 'atb': atb}
         return small, name
@@ -928,6 +941,7 @@ class BattleScene:
             self._cancel_gear()
             self._cancel_rig()
             self.action_audio.stop()
+            self.channel_audio.pause()
             return True
         if event.type == pygame.WINDOWFOCUSGAINED:
             self.focused = True
@@ -970,7 +984,8 @@ class BattleScene:
                                        'skills' if self.command_menu == 'skill_targets' else 'root')
                         self._sound('back');return True
                     self.paused = not self.paused
-                    if self.paused:self.action_audio.stop()
+                    if self.paused:
+                        self.action_audio.stop();self.channel_audio.pause()
                     self._held = False
                     self._sound('back' if self.paused else 'confirm')
                 return True
@@ -1055,9 +1070,12 @@ class BattleScene:
         return True
 
     def update(self, seconds):
-        if self.dismissed or self.paused or not self.focused or self.tutorial_active:return
+        if self.dismissed or self.paused or not self.focused or self.tutorial_active:
+            self.channel_audio.sync(self.model.current_action,paused=True)
+            return
         if type(seconds) not in (int, float):raise TypeError('Scene time must be numeric')
         if not math.isfinite(seconds) or seconds < 0:raise ValueError('Invalid scene time')
+        self.channel_audio.sync(self.model.current_action)
         viewport = (self.game.ui_surface.get_size(), getattr(self.game.audio, 'text_scale', 1))
         if viewport != self._viewport:
             self._viewport = viewport
@@ -1174,9 +1192,11 @@ class BattleScene:
 
     def _action_cues(self):
         action = self.model.current_action
+        self.channel_audio.sync(action, paused=self.paused or not self.focused)
         if action is not self._cue_action:
             self._cue_action = action
             self._cue_phases.clear()
+        if action is not None and action.action=='vespermaw_attune':return
         if (action is not None and action.actor == 'mira'
                 and action.action == 'bolt_shot' and self.mira_art is not None):
             if action.elapsed >= self.mira_art.release_at and 'mira_release' not in self._cue_phases:
@@ -1438,6 +1458,8 @@ class BattleScene:
         if not self._is_enemy(actor) and self.model.phase == 'victory':return 'victory', self._phase_elapsed*1000
         action = self.model.current_action
         if action is not None and action.actor == actor:
+            if sprite=='vespermaw' and action.action=='vespermaw_attune':
+                return 'channel', action.elapsed*1000
             if action.kind == 'item':return 'idle', 0 if self.reduced_motion else action.elapsed*1000
             if actor == 'mira' and action.action in RIG_SKILLS:
                 return action.action, self.mira_art.action_time(action.action, action.elapsed,
@@ -1523,10 +1545,30 @@ class BattleScene:
                 contact+(milliseconds-contact)*min(1., (age-impact)/max(.001, end-impact)))
         return action.animation, min(milliseconds-1, max(0., time))
 
+    def _vespermaw_channel_state(self):
+        state={'element':getattr(self.model,'vespermaw_element','fire')}
+        action=self.model.current_action
+        if action is not None and action.action=='vespermaw_attune':
+            state.update({'from':action.channel_from,'to':action.channel_to,
+                          'progress':max(0.,min(1.,action.elapsed/action.duration)),
+                          'commit':action.impact_at/action.duration})
+        return state
+
+    def _field_offset(self):
+        # The echo chamber's three wall crystals are essential combat cues.
+        # Keep their authored composition under large-font HUD growth; actor
+        # stations already move upward independently with the compact panel.
+        if self.battlefield=='cave_echo_chamber':return 0
+        return round(max(0,210-self.panel_rect.top)*.5)
+
     def _draw_field(self, canvas):
+        channel_state=self._vespermaw_channel_state()
+        field_offset=self._field_offset()
         if self._cave_field is not None:
             self._cave_field.draw(canvas, self._elapsed*1000, self.reduced_motion,
-                                  vertical_offset=round(max(0, 210-self.panel_rect.top)*.5))
+                                  vertical_offset=field_offset,
+                                  elemental_state=(channel_state if self.channel_art
+                                                   and self.model.phase not in RESULTS else None))
         else:canvas.blit(self._background, (0, 0))
         positions = self._positions()
         ground = self._ground_positions()
@@ -1542,6 +1584,12 @@ class BattleScene:
             state, time = self._pose(actor)
             sprite = self._sprite(actor)
             image, anchor = self.sprites.frame(sprite, state, time)
+            if sprite=='vespermaw' and self.channel_art is not None:
+                current=self.model.current_action
+                if current is not None and current.actor==actor and current.action=='vespermaw_attune':
+                    image,anchor=self.channel_art.channel_frame(current.elapsed*1000,
+                        current.channel_from,current.channel_to,reduced_motion=self.reduced_motion)
+                else:image=self.channel_art.tint(image,channel_state['element'])
             if actor == 'player':
                 sequence = self._choreography()
                 if sequence is not None or state in MOTION_STATES:
@@ -1554,6 +1602,8 @@ class BattleScene:
             rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
             body = rendered.get_bounding_rect().move(origin)
+            if sprite=='vespermaw' and self.channel_art is not None:
+                self._draw_channel_stream(canvas,actor,point,scale,foreground=False)
             aura_bounds = None
             if actor in charges and body.width and body.height:
                 aura_bounds = (pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35))
@@ -1578,6 +1628,11 @@ class BattleScene:
                 self.target_marker_rects = target_marker_geometry(body, floor, bounds=bounds)
                 self.target_marker_rects['ring'] = draw_target_ring(canvas, footprint, floor, bounds=bounds)
             canvas.blit(rendered, origin)
+            if sprite=='vespermaw' and self.channel_art is not None:
+                if self.model.combatant(actor).hp:
+                    self.channel_art.draw_motes(canvas,point,scale,channel_state['element'],
+                        self._elapsed*1000,reduced_motion=self.reduced_motion)
+                self._draw_channel_stream(canvas,actor,point,scale,foreground=True)
             if aura_bounds is not None:
                 self.charge_aura.draw(canvas, body, self._elapsed, actor_key=actor,
                     reduced_motion=self.reduced_motion, bounds=aura_bounds, foreground=True)
@@ -1650,6 +1705,18 @@ class BattleScene:
                 pygame.draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
         self._draw_foreground(canvas)
 
+    def _draw_channel_stream(self,canvas,actor,point,scale,*,foreground):
+        action=self.model.current_action
+        if action is None or action.actor!=actor or action.action!='vespermaw_attune':return
+        offset=self._field_offset()
+        source=(self._cave_field.crystal_origin(action.channel_to,vertical_offset=offset)
+                if self._cave_field is not None else (94,42))
+        anchors=self.channel_art.anchors(action.elapsed*1000)
+        spine=pygame.Vector2(point)+(pygame.Vector2(anchors.get('spine',(64,80)))-pygame.Vector2(64,128))*scale
+        self.channel_fx.draw(canvas,source,spine,point,action,
+            bounds=pygame.Rect(0,35,480,max(1,self.panel_rect.top-35)),
+            reduced_motion=self.reduced_motion,foreground=foreground)
+
     def _vespermaw_roar_geometry(self, positions):
         """Sample a mouth-origin wave toward each living opposing character."""
         action = self.model.current_action
@@ -1677,8 +1744,10 @@ class BattleScene:
         previous = canvas.get_clip()
         canvas.set_clip(pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35)))
         try:
+            colors=CONFLUENCE_COLORS.get(getattr(self.model,'vespermaw_element','water'),
+                                         CONFLUENCE_COLORS['water'])
             # Small attached throat light remains static under reduced motion.
-            pygame.draw.circle(canvas, '#8bc9db', (round(origin.x), round(origin.y)), 3, 1)
+            pygame.draw.circle(canvas, colors[1], (round(origin.x), round(origin.y)), 3, 1)
             for _, target in geometry['targets']:
                 if self.reduced_motion:
                     if fraction < 1:continue
@@ -1686,7 +1755,7 @@ class BattleScene:
                 else:
                     center = origin.lerp(target, fraction)
                     radius = 4+round(7*fraction)
-                for offset, color in ((0, '#b7a4d9'), (3, '#a6d6df')):
+                for offset, color in ((0, colors[1]), (3, colors[2])):
                     rect = pygame.Rect(round(center.x-radius/2-offset), round(center.y-radius-offset),
                                        radius+offset*2, radius*2+offset*2)
                     pygame.draw.arc(canvas, color, rect, -1.15, 1.15, 1)
@@ -1946,6 +2015,15 @@ class BattleScene:
         model = self.model
         if not self._group:
             enemy = model.enemy
+            if self.channel_art is not None and self.battlefield=='cave_echo_chamber':
+                # Center the boss readout beneath the middle crystal, leaving
+                # all three silhouettes and their pulse unobscured.
+                painter.text(enemy.name,(241,115),role='name',color=FOREST_DARK,
+                             anchor='midbottom',bold=True)
+                painter.text(enemy.name,(240,114),role='name',anchor='midbottom',bold=True)
+                self._bar(painter,pygame.Rect(165,117,150,5),enemy.hp/enemy.value('hp'),'#9ab46b')
+                self._enemy_atb(painter,pygame.Rect(165,124,150,2),enemy.atb)
+                return
             enemy_x = 119 if len(model.party) > 1 else 126
             painter.text(enemy.name, (enemy_x+1, 44), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(enemy.name, (enemy_x, 43), role='name', anchor='center', bold=True)
@@ -1993,6 +2071,10 @@ class BattleScene:
 
     def _draw_announcement(self, painter):
         message = self.announcements.current
+        action=self.model.current_action
+        if action is not None and action.action=='vespermaw_attune':
+            message={'text':'Vespermaw — '+action.channel_to.title()+' Confluence',
+                     'kind':'ability','age':action.elapsed,'duration':action.duration}
         target = self._marked_enemy()
         text = (message['text'] if message is not None else
                 'Target: '+self._enemy_name(target) if target is not None else self.location_name)

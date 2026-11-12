@@ -1240,56 +1240,56 @@
       "wall_edge": [
         [
           0,
-          83
+          115
         ],
         [
           48,
-          77
+          109
         ],
         [
           96,
-          69
+          101
         ],
         [
           144,
-          64
+          96
         ],
         [
           192,
-          60
+          92
         ],
         [
           240,
-          58
+          90
         ],
         [
           288,
-          60
+          92
         ],
         [
           336,
-          64
+          96
         ],
         [
           384,
-          69
+          101
         ],
         [
           432,
-          77
+          109
         ],
         [
           480,
-          83
+          115
         ]
       ],
       "wall_baselines": [
-        79,
-        70,
-        62,
-        62,
-        70,
-        79
+        111,
+        102,
+        94,
+        94,
+        102,
+        111
       ],
       "patches": [
         {
@@ -1481,101 +1481,42 @@
           ]
         }
       ],
-      "crystals": [
-        {
-          "module": "micro.blue.dense",
-          "position": [
-            35,
-            43
-          ],
-          "phase": 0,
-          "radius": 170
-        },
-        {
-          "module": "micro.purple.diagonal_left",
-          "position": [
-            77,
-            29
-          ],
-          "phase": 0.08,
-          "radius": 170
-        },
-        {
-          "module": "micro.green.vertical",
-          "position": [
-            131,
-            34
-          ],
-          "phase": 0.16,
-          "radius": 160
-        },
-        {
-          "module": "micro.white.dense",
-          "position": [
-            185,
-            21
-          ],
-          "phase": 0.24,
-          "radius": 180
-        },
-        {
-          "module": "micro.blue.diagonal_right",
-          "position": [
-            239,
-            35
-          ],
-          "phase": 0.32,
-          "radius": 180
-        },
-        {
-          "module": "micro.purple.dense",
-          "position": [
-            291,
-            19
-          ],
-          "phase": 0.4,
-          "radius": 180
-        },
-        {
-          "module": "micro.orange.sparse",
-          "position": [
-            345,
-            34
-          ],
-          "phase": 0.48,
-          "radius": 160
-        },
-        {
-          "module": "micro.red.diagonal_right",
-          "position": [
-            400,
-            23
-          ],
-          "phase": 0.56,
-          "radius": 160
-        },
-        {
-          "module": "micro.blue.vertical",
-          "position": [
-            454,
-            43
-          ],
-          "phase": 0.64,
-          "radius": 170
-        }
-      ],
+      "crystals": [],
       "frame_count": 48,
       "chasm": {
         "position": [
-          135,
-          74
+          165,
+          106
         ],
         "size": [
-          210,
-          66
+          150,
+          38
         ],
         "manifest": "assets/terrain/limestone_cave/chasm/assets.json"
-      }
+      },
+      "elemental_crystals": [
+        {
+          "element": "fire",
+          "position": [
+            94,
+            102
+          ]
+        },
+        {
+          "element": "ice",
+          "position": [
+            240,
+            93
+          ]
+        },
+        {
+          "element": "water",
+          "position": [
+            386,
+            102
+          ]
+        }
+      ]
     },
     {
       "id": "cave_embervein",

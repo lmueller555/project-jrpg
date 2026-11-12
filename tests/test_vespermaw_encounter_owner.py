@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -15,7 +15,7 @@ import pygame
 from leveling import CharacterLevel, character_stats, total_xp_for_level
 from main import Game
 from post_battle import battle_reward_definition, valid_pending_snapshot
-from sanctuary_boss import BATTLEFIELD, RECEIPT, SCENE_ID
+from sanctuary_boss import APPROACH, BATTLEFIELD, RECEIPT, SCENE_ID
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
 from test_mill_battle_gameplay import wait_for_spoils
 from tools.capture_mq03_emergency import Driver
@@ -29,6 +29,15 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
             driver.meal();driver.attack_report();driver.departure()
             driver.rejoin_mira();driver.arrive()
             game = driver.game
+            # Arrival now owns a player-paced in-world cinematic. Acknowledge
+            # its real action/dialogue checkpoints before entering the cave.
+            for _ in range(4000):
+                if game.sanctuary_arrival.completed:break
+                if game.sanctuary_arrival.dialogue is not None:
+                    game.handle_events([pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False),
+                                        pygame.event.Event(pygame.KEYUP,key=pygame.K_SPACE)])
+                driver.tick(.05)
+            else:raise AssertionError('Sanctuary arrival did not complete')
             # Explicit earlier-discovery fixture; production input still owns
             # the boss approach and every settlement/Continue below.
             owner = game.character_abilities
@@ -40,7 +49,7 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
             game.opening_fade = game.transfer_cooldown = 0
             assert game.sanctuary_cave.interact()
             game.opening_fade = game.transfer_cooldown = 0
-            game.player.position.update(2060, 300)
+            game.player.position.update(APPROACH)
             assert game.world.can_stand(game.player.position)
             assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
@@ -161,6 +170,44 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         self.assertEqual([actor.atb for actor in (*resumed.party, resumed.enemy)], atb)
         self.assertEqual(self.resources(restored), before)
         self.assertEqual(restored.cave_random_encounters.to_dict(), self.counter)
+
+    def test_continue_mid_channel_restarts_the_seeded_attempt_in_fire(self):
+        self.start()
+        model = self.load_battle()
+        initial_atb = [actor.atb for actor in (*model.party, model.enemy)]
+        resources = self.resources()
+        # Stage the next authored free shift without spending persistent party
+        # resources; the encounter owner saves attempts, not partial combat.
+        model.vespermaw_turns = 2
+        for actor in (*model.party,model.enemy):actor.atb = 0
+        model.enemy.atb = 1
+        model.update(0)
+        self.assertEqual(model.current_action.action,'vespermaw_attune')
+        model.update(model.current_action.impact_at+.05)
+        self.assertEqual(model.vespermaw_element,'ice')
+        self.assertTrue(self.game.save_progress())
+        restored = self.load()
+        resumed = self.load_battle(restored)
+        self.assertEqual(resumed.vespermaw_element,'fire')
+        self.assertEqual(resumed.vespermaw_turns,0)
+        self.assertFalse(resumed.vespermaw_channeling)
+        self.assertEqual([actor.atb for actor in (*resumed.party,resumed.enemy)],initial_atb)
+        self.assertEqual(self.resources(restored),resources)
+        self.assertFalse(restored.sanctuary_boss.defeated)
+
+    def test_attempt_reset_stops_the_channel_voice_and_all_disposable_effects(self):
+        owner = self.start()
+        self.load_battle()
+        channel = owner.scene.channel_audio
+        voice = Mock(); sound = object()
+        voice.get_sound.return_value = sound
+        channel.voice = voice; channel.sound = sound
+        with patch.object(owner.scene.action_audio,'stop') as action_stop:
+            owner.reset()
+        voice.stop.assert_called_once()
+        action_stop.assert_called_once()
+        self.assertIsNone(owner.scene)
+        self.assertFalse(self.game.sanctuary_boss.defeated)
 
     def test_failed_intro_acknowledgement_save_retains_entry_until_retry(self):
         owner = self.start()

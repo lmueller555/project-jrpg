@@ -143,6 +143,10 @@ class CombatEncounters:
         if self.spoils is not None:self.spoils.stop_audio()
         if self.entry is not None and hasattr(self.entry, 'stop_audio'):
             self.entry.stop_audio()
+        if self.scene is not None:
+            for name in ('action_audio', 'channel_audio'):
+                audio = getattr(self.scene, name, None)
+                if audio is not None:audio.stop()
 
     def _party_options(self):
         party = getattr(self.game, 'party', None)

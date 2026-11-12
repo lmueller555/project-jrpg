@@ -3000,48 +3000,52 @@
       "phase": 3.5700000000000003
     },
     {
-      "id": "arena_west",
+      "id": "arena_fire",
       "near": [
-        1875,
-        215
-      ],
-      "color": "orange",
-      "radius": 240,
-      "gain": 0.45,
-      "phase": 3.74
-    },
-    {
-      "id": "arena_north",
-      "near": [
-        2040,
-        160
-      ],
-      "color": "purple",
-      "radius": 240,
-      "gain": 0.45,
-      "phase": 3.91
-    },
-    {
-      "id": "arena_east",
-      "near": [
-        2250,
-        230
+        1900,
+        207
       ],
       "color": "red",
-      "radius": 240,
-      "gain": 0.45,
-      "phase": 4.08
+      "radius": 220,
+      "gain": 0.5,
+      "phase": 0.0,
+      "elemental_crystal": "fire",
+      "crystal_position": [
+        1900,
+        159
+      ]
     },
     {
-      "id": "arena_lower",
+      "id": "arena_ice",
       "near": [
-        2160,
-        400
+        2060,
+        154
+      ],
+      "color": "white",
+      "radius": 220,
+      "gain": 0.5,
+      "phase": 1.4,
+      "elemental_crystal": "ice",
+      "crystal_position": [
+        2060,
+        104
+      ]
+    },
+    {
+      "id": "arena_water",
+      "near": [
+        2240,
+        207
       ],
       "color": "blue",
-      "radius": 240,
-      "gain": 0.45,
-      "phase": 4.25
+      "radius": 220,
+      "gain": 0.5,
+      "phase": 2.8,
+      "elemental_crystal": "water",
+      "crystal_position": [
+        2240,
+        155
+      ]
     },
     {
       "id": "daylight",

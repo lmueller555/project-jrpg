@@ -140,6 +140,18 @@ def products():
             image = opened(pack['composition']['file']).resize(tuple(chasm['size']),Image.Resampling.NEAREST)
             ground.alpha_composite(image,tuple(chasm['position']))
             used.add(ROOT/'cave_chasm_fx.py')
+        elemental_crystals = []
+        if field.get('elemental_crystals'):
+            pack_path = ROOT/'assets/terrain/limestone_cave/elemental_crystals/assets.json'
+            used.add(pack_path)
+            lenses = json.loads(pack_path.read_text())['modules']
+            for item in field['elemental_crystals']:
+                record = lenses[item['element']]
+                position = [item['position'][i]-record['anchor'][i] for i in range(2)]
+                ground.alpha_composite(opened(record['frames'][0]),tuple(position))
+                elemental_crystals.append({**item, 'anchor':record['anchor'],
+                    'emission_origin':[position[i]+record['emission_origin'][i] for i in range(2)],
+                    'frames':record['frames'],'size':record['size']})
         frame_count = field.get('frame_count',FRAME_COUNT)
         if frame_count not in (24,48):raise ValueError('Invalid battlefield cycle length')
         # All opaque scenery ends above the arena, apart from harmless ground
@@ -241,10 +253,13 @@ def products():
                 'source_position': field['source_position'], 'camera': 'low view toward the rear cave wall',
                 'clear_actor_stage': [24, 145, 432, 77],
                 'animation': {'period_ms': frame_count*FRAME_MS,
-                              'crystal_colors': sorted({item['color'] for item in crystals}),
+                              'crystal_colors': sorted({item['color'] for item in crystals}
+                                  | {dict(fire='red',ice='white',water='blue')[item['element']]
+                                     for item in elemental_crystals}),
                               'microcrystal_count': sum(item['crystal_count'] for item in crystals),
                               'water_tiles': len(water_records), 'pulse': True},
                 'crystals': crystals, 'placed_modules': wall_records+placed,
+                **({'elemental_crystals':elemental_crystals} if elemental_crystals else {}),
                 **({'chasm':chasm} if chasm else {}),
                 'build': {'tool': 'tools/build_cave_battlefields.py',
                           'source_recipe': SOURCE.relative_to(ROOT).as_posix(),

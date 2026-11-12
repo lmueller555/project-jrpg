@@ -238,7 +238,8 @@ class CaveAssetTests(unittest.TestCase):
         solid = np.array(Image.open(ROOT/self.world.data['collision']).convert('L')) > 0
         colors = set()
         total = 0
-        fields = [entity for entity in self.world.data['entities'] if 'light_index' in entity]
+        fields = [entity for entity in self.world.data['entities']
+                  if 'light_index' in entity and not entity.get('elemental_crystal')]
         self.assertGreaterEqual(len(fields), 20)
         for entity in fields:
             module = self.packs[entity['source_pack']]['modules'][entity['source_module']]
@@ -259,6 +260,19 @@ class CaveAssetTests(unittest.TestCase):
         self.assertGreaterEqual(total, 500)
         for light in lights:
             self.assertEqual(self.world.blocked.get_at(tuple(light['position'])), 0, light)
+
+    def test_echo_chamber_has_three_large_wall_lenses_without_changing_walkways(self):
+        records = self.cave['elemental_crystals']
+        self.assertEqual([record['element'] for record in records],['fire','ice','water'])
+        self.assertTrue(all(record['source_room']=='echo_chamber' for record in records))
+        entities = {entity['id']:entity for entity in self.world.data['entities']}
+        for record in records:
+            entity=entities[record['id']]
+            self.assertEqual(len(entity['frames']),8)
+            self.assertEqual(record['size'],[64,76])
+            self.assertFalse(entity.get('footprints'))
+            self.assertEqual(entity['source_pack'],'elemental_crystals')
+        self.assertTrue(self.world.can_stand(self.cave['navigation_points']['echo_chamber']))
 
 
 if __name__ == '__main__':

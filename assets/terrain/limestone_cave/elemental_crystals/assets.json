@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "kind": "embedded_elemental_lenses",
+  "modules": {
+    "fire": {
+      "frames": [
+        "assets/terrain/limestone_cave/elemental_crystals/fire_00.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_01.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_02.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_03.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_04.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_05.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_06.png",
+        "assets/terrain/limestone_cave/elemental_crystals/fire_07.png"
+      ],
+      "anchor": [
+        32,
+        72
+      ],
+      "emission_origin": [
+        32,
+        44
+      ],
+      "element": "fire",
+      "size": [
+        64,
+        76
+      ],
+      "frame_duration_ms": 160,
+      "reduced_motion_frame": 4,
+      "color": [
+        255,
+        105,
+        62
+      ],
+      "core_components": [
+        [
+          13,
+          12,
+          39,
+          59
+        ]
+      ],
+      "footprints": []
+    },
+    "ice": {
+      "frames": [
+        "assets/terrain/limestone_cave/elemental_crystals/ice_00.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_01.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_02.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_03.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_04.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_05.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_06.png",
+        "assets/terrain/limestone_cave/elemental_crystals/ice_07.png"
+      ],
+      "anchor": [
+        32,
+        72
+      ],
+      "emission_origin": [
+        32,
+        44
+      ],
+      "element": "ice",
+      "size": [
+        64,
+        76
+      ],
+      "frame_duration_ms": 160,
+      "reduced_motion_frame": 4,
+      "color": [
+        180,
+        226,
+        245
+      ],
+      "core_components": [
+        [
+          13,
+          12,
+          39,
+          59
+        ]
+      ],
+      "footprints": []
+    },
+    "water": {
+      "frames": [
+        "assets/terrain/limestone_cave/elemental_crystals/water_00.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_01.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_02.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_03.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_04.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_05.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_06.png",
+        "assets/terrain/limestone_cave/elemental_crystals/water_07.png"
+      ],
+      "anchor": [
+        32,
+        72
+      ],
+      "emission_origin": [
+        32,
+        44
+      ],
+      "element": "water",
+      "size": [
+        64,
+        76
+      ],
+      "frame_duration_ms": 160,
+      "reduced_motion_frame": 4,
+      "color": [
+        65,
+        153,
+        234
+      ],
+      "core_components": [
+        [
+          13,
+          12,
+          39,
+          59
+        ]
+      ],
+      "footprints": []
+    }
+  },
+  "design": "Large irregular elemental lenses seated in fractured limestone; Fire jagged, Ice faceted, Water flowing.",
+  "build": "tools/build_vespermaw_crystals.py"
+}

@@ -144,7 +144,13 @@ The Echo Chamber contains the level-seven miniboss,
 approach offers **Enter / Party / Step back**, with a short crystal-and-growl
 introduction before the dedicated animated Echo Chamber battlefield. Its
 [combat art](VESPERMAW_COMBAT_ART.md), party-wide Roar, marked Pounce response
-and +50% exhaustion vulnerability are active. It remains excluded from random pools.
+and +50% exhaustion vulnerability are active. It starts in Fire and channels
+Ice, then Water, changing freely before every third, fifth, seventh and later
+alternate boss turn. Three large embedded red, white and blue crystals line the
+rear wall in the exploration chamber and matching battlefield. The active
+crystal brightens and pulses with the boss's fur and elemental effects; no
+counter-element hints are displayed. Physical and non-elemental damage remain
+viable, so neither optional gem is required. It remains excluded from random pools.
 The Quiet Shelf provides a preparation pause without restoring HP or MP.
 
 Boss entry checkpoints the formation, current party resources, safe approach

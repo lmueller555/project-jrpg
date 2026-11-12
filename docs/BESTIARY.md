@@ -193,20 +193,19 @@ reveals such as Edran’s Study remain future work.
 
 ## Vespermaw
 
-Vespermaw is a living cave predator adapted to the Sanctuary's Aether confluence.
-Its pale body carries mineral crusts along the shoulders and spine, threaded
-with violet and blue microcrystals. Recent disturbances have agitated it and
-driven it out of the deeper passages. It is not undead, and its Holy affinity
-is neutral.
+Vespermaw is a beast-shaped elemental manifestation of the Sanctuary's disturbed
+Aether confluence. Its heavy forelimbs, jaw and mineral shoulder/spine growths
+retain the established silhouette, while its fur and emanations change with the
+element it channels. It is not one of the Sanctuary's dead; Holy remains neutral.
 
 | Property | Definition |
 | --- | --- |
 | ID | `vespermaw` |
-| Family | Aether-adapted beast |
+| Family | Aether elemental |
 | Habitat | Elden Vale Sanctuary cave, final Echo Chamber |
 | Level range | 7–7; an explicit level of 7 is required |
 | Tier | Boss |
-| Element | Ground |
+| Element | Fire initially; cycles Fire → Ice → Water |
 | Combat concept | Windup Attacker |
 | Stat profile | Brute |
 | Fighting style | Telegraphed Windup |
@@ -246,7 +245,7 @@ action catalogue:
 | Ability | Action ID | Category / target | Potency | MP |
 | --- | --- | --- | ---: | ---: |
 | Raking Claw | `vespermaw_raking_claw` | Non-Elemental physical / one character | 0.65 | 0 |
-| Confluence Roar | `vespermaw_confluence_roar` | Non-Elemental magical / all living party members | 0.50 each | 6 |
+| Confluence Roar | `vespermaw_confluence_roar` | Current channeled element, magical / all living party members | 0.50 each | 6 |
 | Gather Resonance | `vespermaw_gather_resonance` | Preparation / self | 0 | 0 |
 | Ruinous Pounce | `vespermaw_ruinous_pounce` | Non-Elemental physical / marked character | 1.40 | 0 |
 | Exhausted | `vespermaw_exhausted` | Recovery / self | 0 | 0 |
@@ -266,23 +265,34 @@ window is independent of the future Stagger mechanic. Initial tuning assumes
 a rested three-character party around levels five through seven and does not
 require in-battle healing. This encounter does not recruit Lucan or change his story ownership.
 
-| Incoming element | Response |
-| --- | ---: |
-| Non-Elemental | 100% damage |
-| Fire | 100% damage |
-| Electric | 50% damage |
-| Water | 150% damage |
-| Ice | 100% damage |
-| Nature | 100% damage |
-| Wind | 100% damage |
-| Holy | 100% damage |
-| Ground | 100% healing (absorb) |
+### Elemental channeling
 
-The mineral crust and heavy gait suggest Ground alignment. The crust insulates
-against Electric attacks but is vulnerable to erosion by Water. Ground
-absorption takes precedence over its stored damage percentage. As with the
-other species, elemental response tables remain hidden internal data; live
-elemental Edges read them during combat. Stagger remains future work.
+The independent elemental cycle is **Fire → Ice → Water → Fire**. Vespermaw
+begins in Fire and completes two of its own actions in each form. Preparation,
+heavy-hit and recovery actions all count; party turns do not. Before its third,
+fifth, seventh and subsequent alternate turns, it performs a free 2.5-second
+channeling sequence, then immediately executes its scheduled action. Channeling
+spends no additional ATB, MP or action-sequence slot. The existing marked-target
+response guarantee and recovery state survive the transition.
+
+| Current form | Visual identity | Weakness: 200% damage | Absorbed element: 100% healing |
+| --- | --- | --- | --- |
+| Fire | Ember-red fur, sparks, active red wall crystal | Water | Fire |
+| Ice | Frost-white fur, frost, active white wall crystal | Fire | Ice |
+| Water | Deep-blue flowing fur, droplets, active blue wall crystal | Ice | Water |
+
+All other elements take their normal 100% damage, including Non-Elemental and
+Holy. Matching-element absorption takes precedence over the stored damage
+percentage. The weakness relationships remain hidden internal data; neither the
+HUD nor transformation announcements recommend a counter or gem. Form colors,
+crystal activity, damage and healing feedback invite experimentation. The
+optional elemental side rooms remain optional: physical and non-elemental
+attacks stay viable in every form.
+
+The new form commits at the channeling sequence's **1.65-second cue**, synchronized
+with the fur and crystal change. ATB and other action playback are frozen during
+the sequence. Confluence Roar uses the current element; Raking Claw and Ruinous
+Pounce retain their Non-Elemental physical damage. Stagger remains future work.
 
 `combat_design.status` is `ready` and `metadata['combat_pending']` is false.
 Party-wide damage, the recovery vulnerability and the guaranteed marked-character
@@ -290,14 +300,17 @@ response opportunity are active. Pending designs for future enemies remain
 blocked by the adapter until their own action rules are implemented.
 Presentation references the dedicated `vespermaw` bank, with direct aliases
 from the five designed action IDs to their matching animation states. The
-[combat art bank](VESPERMAW_COMBAT_ART.md) supplies 256 authored poses across
-ten animations, including idle, prowl, charged hold, hurt and defeat.
+[combat art bank](VESPERMAW_COMBAT_ART.md) retains 256 authored poses across
+ten animations, including idle, prowl, charged hold, hurt and defeat, with a
+separate detailed channeling performance and form palettes across the bank.
 
 Approaching the Echo Chamber offers **Enter / Party / Step back**. Entry uses a
 short crystal-and-growl introduction and the dedicated Echo Chamber battlefield.
 Party selection respects existing story locks and never heals or levels anyone.
 The fight uses the ordinary 0–50% opening ATB range; its saved combat seed makes
-an unfinished entry repeatable on Continue. Flee is unavailable during this boss
+an unfinished entry repeatable on Continue. An unfinished fight restarts from
+its captured entry resources in Fire with zero completed turns, rather than
+resuming a partial transformation. Flee is unavailable during this boss
 battle. Defeat offers **Retry / Return to the Quiet Shelf**, restoring captured
 entry HP/MP and granting no rewards. Recovery remains available at the nearby
 Sanctuary visitor bed after leaving the cave.

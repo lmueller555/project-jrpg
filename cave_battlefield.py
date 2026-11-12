@@ -36,17 +36,32 @@ class CaveBattlefield:
         if type(static) is not int or not 0 <= static < len(self.frames):
             raise ValueError('Invalid reduced-motion battlefield frame')
         self.name = data.get('name', 'Sanctuary Cave')
+        self.elemental_crystals = None
+        if identifier == 'cave_echo_chamber':
+            from vespermaw_crystals import ElementalCrystals
+            self.elemental_crystals = ElementalCrystals(root)
 
     def frame(self, elapsed_ms, reduced_motion=False):
         index = (self.data.get('reduced_motion_frame', 0) if reduced_motion else
                  int(max(0, elapsed_ms)//self.data['frame_duration_ms']) % len(self.frames))
         return self.frames[index]
 
-    def draw(self, target, elapsed_ms, reduced_motion=False, *, vertical_offset=0):
+    def crystal_origin(self, element, vertical_offset=0):
+        from vespermaw_crystals import crystal_origin
+        return crystal_origin(element,0 if self.elemental_crystals is not None else vertical_offset)
+
+    def draw(self, target, elapsed_ms, reduced_motion=False, *, vertical_offset=0,
+             elemental_state=None):
         frame = self.frame(elapsed_ms, reduced_motion)
         offset = min(160, max(0, int(vertical_offset)))
+        # The boss's three wall lenses are essential visual information. Keep
+        # their authored rear-wall composition in view when a larger HUD
+        # reframes the actors; cropping the vault would hide their identities.
+        if self.elemental_crystals is not None:offset=0
         target.blit(frame, (0, -offset))
         if offset:
             # HUD growth reframes the scene upward. Continue the clear lower
             # floor beneath it, including when a victory banner hides the HUD.
             target.blit(frame, (0, 320-offset), pygame.Rect(0, 320-offset, 480, offset))
+        if self.elemental_crystals is not None:
+            self.elemental_crystals.draw(target,elapsed_ms,elemental_state,reduced_motion,offset)

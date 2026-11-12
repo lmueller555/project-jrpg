@@ -1873,8 +1873,8 @@
     "tool": "tools/build_cave_battlefields.py",
     "source_recipe": "assets/source/combat/cave_battlefields/recipe.json",
     "source_sha256": {
-      "assets/maps/sanctuary_cave/map.json": "0c9df3ed7d9e7441ca7864bbac9cea02c7c969e0476cf033a406306083d3a595",
-      "assets/source/combat/cave_battlefields/recipe.json": "23d9b3e6c05e69e3ca661300a793574ea45672ca1f69cbc99fcabb8c1e29ca1d",
+      "assets/maps/sanctuary_cave/map.json": "47991793426e873d8efb313fd94eb367d02f85c8f78bec2d9cb6bf725bce8348",
+      "assets/source/combat/cave_battlefields/recipe.json": "355d360aa90d481371ff47922a52a05f88fe3f59a8a485f7ad56e95af75c79f6",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
       "assets/terrain/limestone_cave/geology/modules/debris/pebbles/2.png": "f5ba35660f31967345a1854ecfd4ae79b2def575faa7735c926efdeac4e97f68",
@@ -1968,7 +1968,7 @@
       "assets/terrain/limestone_cave/tiles/silt_02.png": "677bdb40136a03d495bf052069d64b42ba54c05e066b2f7849717c715400dd7c",
       "assets/terrain/limestone_cave/tiles/silt_03.png": "73c284e98cd206433853bcec12e19bd7a595c0ac5c952ab5085a415eafacbae6",
       "assets/terrain/limestone_cave/water/assets.json": "92ba7d1f88ed8789d2b73ca45e851043de92db6c8fddfb35724fd4339546f278",
-      "tools/build_cave_battlefields.py": "3c54bda01e3ce2c9e8831d13cbf43a995893b380becb1a02a1bbdb99384715cf"
+      "tools/build_cave_battlefields.py": "089971fe308f3d39c07dd83aa50900889ab83e44ae7d4d6682da96fd7af0054b"
     }
   }
 }

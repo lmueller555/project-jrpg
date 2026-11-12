@@ -348,6 +348,27 @@ Caelan is KO, while EXP still goes only to living active members. Installation
 prose follows Spoils and waits for Caelan to recover. Its acknowledgment never
 repeats rewards. See [complete combat, rewards and save rules](ELEMENTAL_CAVE_ENCOUNTERS.md).
 
+## Vespermaw elemental channeling
+
+The Echo Chamber boss starts in Fire and cycles **Fire → Ice → Water** after
+every two completed boss actions, including preparation and recovery turns.
+Before turns 3, 5, 7 and so on, a free 2.5-second channeling performance precedes
+the scheduled action without spending another ATB gauge, MP payment or AI slot.
+The new form commits at 1.65 seconds. Other actions and ATB progression wait for
+the performance; a marked Pounce target and its response guarantee remain intact.
+
+Fire is weak to Water, Ice to Fire, and Water to Ice, each at 200% damage.
+Matching-element damage heals for 100%; other elements remain neutral. These
+relationships are not disclosed by ordinary combat UI. Fur colors, distinct
+ambient effects and the corresponding large red/white/blue wall crystal show
+the current form without suggesting its counter. Confluence Roar uses that
+form's element; the claw and pounce remain physical and Non-Elemental.
+
+Optional gems are not an entry requirement. Physical/non-elemental damage can
+finish the fight in every form. Continue and Retry rebuild the captured entry
+in Fire with zero completed boss turns. See the [Bestiary](BESTIARY.md#vespermaw)
+and [art guide](VESPERMAW_COMBAT_ART.md) for profiles and presentation.
+
 ## Cave Bat and the Bestiary
 
 The [Bestiary](BESTIARY.md) stores fixed authored encounters and computed

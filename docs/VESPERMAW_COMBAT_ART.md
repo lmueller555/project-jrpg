@@ -1,8 +1,10 @@
 # Vespermaw combat art
 
-Vespermaw's dedicated combat bank depicts the Sanctuary cave's pale, heavy
-predator: broad forelimbs and jaw, mineral shoulder and spine crusts, and small
-violet/cyan microcrystals. It faces right toward the party. The
+Vespermaw's dedicated combat bank retains its heavy beast-shaped silhouette:
+broad forelimbs and jaw, with mineral shoulder and spine growths. It now depicts
+an elemental manifestation of the Sanctuary's disturbed Aether confluence,
+channeling Fire, Ice and Water through its fur and crystal growths. It faces
+right toward the party. The
 [Bestiary entry](BESTIARY.md#vespermaw) owns its level-seven stats, rewards,
 affinities and live combat rules. The bank supplies its visual presentation.
 
@@ -25,7 +27,7 @@ anchors on the same clock as their frame.
 | Exhausted | 16 | Slumped breathing and visible fatigue; looping |
 | Hurt | 16 | A bodily flinch and recovery |
 | Defeat | 32 | Weight settling into the final collapsed pose |
-| **Total** | **256** | **Ten dedicated states** |
+| **Retained body bank** | **256** | **Ten dedicated states** |
 
 The source atlases are retained under `assets/source/combat/vespermaw/`, with
 registration and SHA-256 provenance. The deterministic builder extracts whole
@@ -34,7 +36,7 @@ alpha cleanup. It does not inflate frame counts by generating translated,
 warped or mirrored copies. Non-looping states retain their final frame after
 their manifest duration; each loop keeps its own manifest clock.
 
-The [animation review](reviews/vespermaw_combat/README.md) includes a simultaneous
+The historical [animation review](reviews/vespermaw_combat/README.md) includes a simultaneous
 all-state animated board, contact sheet, a silent production cave renderer
 reel, and normal/native enlarged-text captures. The board samples the retained
 manifest and verifies that every exported pose was shown.
@@ -56,8 +58,40 @@ Vespermaw is now a one-time live encounter in the Echo Chamber. Its current
 combat includes party-wide Roar hits, a marked-target response guarantee and
 the 50% recovery vulnerability, using these complete animation clocks. The
 [live encounter review](reviews/mira_rig_continuity/README.md) captures that
-flow separately from the historical art-only fixture. Elemental responses and
-Stagger remain authoring data; the crystal colors do not activate those systems.
+flow separately from the historical art-only fixture. Elemental responses are
+now active through the channeling system below. Stagger remains future work.
+Those earlier captures do not certify the new elemental presentation.
+
+## Elemental channeling performance
+
+`assets/combat/vespermaw/channeling/performance.json` registers a separate
+**72-frame, 2.5-second timeline** using a progression of retained complete body
+poses: planted compression, rising shoulders/head, an open-jaw surge, and weight
+settling back into stance. New per-frame spine, fur, eye and elemental effects
+build on that performance. These are timeline samples with layered animation,
+not a claim of 72 newly hand-authored body drawings; the original 256-pose bank
+remains unchanged.
+
+The runtime helper `vespermaw_channel_art.py` caches shaded Fire, Ice and Water
+palettes for the full bank, so idle, attacks, windup, hurt, exhaustion and defeat
+all retain the active form. Fire uses ember-red fur and sparks, Ice frost-white
+fur and frost, and Water deep-blue fur and droplets. The silhouette, facial
+readability, grounded floor and native scale remain registered throughout.
+
+The free transition begins before every alternate boss turn after its first
+two turns. The incoming crystal builds a pulse as the outgoing crystal dims;
+aether travels from the crystal into the spine, then through the fur. At
+**1.65 seconds**, the active damage profile, fur palette and crystal state
+commit together. The body recovers before its scheduled attack begins. The
+existing red charging warning remains a separate heavy-attack signal.
+
+Three large embedded wall crystals replace the Echo Chamber's small focal
+crystal arrangement: Fire/red, Ice/white and Water/blue, in matching exploration
+and battle geography. The active crystal pulses brightly with restrained
+rock/boss light spill; the others stay subdued. The chasm and rising aether
+remain. Element names and effects communicate the form without revealing its
+weakness or recommending a gem. Reduced Motion retains readable form changes
+without intense moving effects; pause/focus use the battle simulation clock.
 
 The old art-only review retains source hashes from its original rollout. Its
 source-match check targets that historical revision and flags the subsequently
@@ -68,6 +102,7 @@ Reproduce and verify from the repository root:
 
 ```sh
 python tools/build_vespermaw_combat.py --check
+python tools/build_vespermaw_channeling.py --check
 python tools/capture_vespermaw_combat.py
 python tools/capture_vespermaw_combat.py --check
 ```
