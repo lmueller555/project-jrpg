@@ -128,6 +128,51 @@ class QuestPlaytestSessionTests(unittest.TestCase):
                     self.assertEqual(self.snapshot(), before)
                     self.assertEqual(self.parent.has_saved_journey, saved)
 
+    def test_mq03_arrival_acknowledges_every_beat_without_disk_saves(self):
+        from cutscene_gallery import _station
+        from regent_quest import OBJECTIVES, PREFIX
+
+        self.parent.on_title = False
+        self.assertTrue(self.parent.save_progress())
+        self.parent.on_title = True
+        before = self.snapshot()
+        session = self.launch('CH01_MQ03')
+        game = session.game
+        self.assertTrue(game._is_quest_playtest)
+        self.assertFalse(game._is_gallery_preview)
+        self.assertFalse(game.save_store.enabled)
+        # Skip the earlier meal/travel to isolate the live rescue cinematic
+        # inside the actual title-menu playtest session.
+        self.assertTrue(game.regent_arrival.restore({'version': 1, 'state': 'seen'}))
+        self.assertTrue(game.accept_quest('CH01_MQ03'))
+        for objective in OBJECTIVES[:PREFIX['sanctuary_arrival_pending']]:
+            self.assertTrue(game.quests.complete_objective('CH01_MQ03', objective))
+        self.assertTrue(game.regent_quest.restore(
+            {'version': 3, 'stage': 'sanctuary_arrival_pending'}))
+        self.assertTrue(game._sync_story_party())
+        _station(game, game._scene_by_id('elden_vale_sanctuary'), (444, 642), 'back')
+        owner = game.sanctuary_arrival
+        beats = set()
+        with patch.object(game.save_store, 'write',
+                          side_effect=AssertionError('Playtest wrote a journey')):
+            for _ in range(4500):
+                self.tick(.1)
+                self.assertFalse(owner.error, (owner.beat, owner.error))
+                beats.add(owner.beat)
+                if owner.completed:break
+                if owner.dialogue is not None:self.key(pygame.K_SPACE)
+            else:self.fail('Playtest arrival did not finish')
+            self.assertEqual(beats, set(range(8)))
+            self.assertFalse(owner.active)
+            self.assertTrue(owner.rail.opened)
+            self.assertEqual(game.party.active_ids, ('caelan', 'mira', 'lucan'))
+            self.assertEqual(game.character_progression.level('lucan'), 5)
+            self.assertTrue(game.sanctuary_cave.interact())
+            self.assertEqual(game.world.data['id'], 'sanctuary_cave')
+        self.key(pygame.K_F9)
+        self.assertIsNone(self.parent.quest_playtest_session)
+        self.assertEqual(self.snapshot(), before)
+
     def test_each_opening_can_be_accepted_through_normal_gameplay(self):
         for identifier in QUEST_ORDER:
             with self.subTest(quest=identifier):
