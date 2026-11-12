@@ -105,11 +105,12 @@ class MiraCombatSceneTests(unittest.TestCase):
         pygame.quit()
 
     def choose(self, command):
+        if command == 'bulwark':
+            self.assertTrue(self.model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
         self.mira.atb = 1
         self.scene.update(0)
         self.scene.draw(self.canvas, self.game.ui_surface)
         if command == 'bulwark':
-            self.assertTrue(self.model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
             self.click(self.scene.command_rects['skills'].center)
         self.click(self.scene.command_rects[command].center)
         return self.model.current_action

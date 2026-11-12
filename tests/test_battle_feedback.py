@@ -172,8 +172,8 @@ class BattleFeedbackTests(unittest.TestCase):
 
     def test_bulwark_and_actual_barrier_expiry_produce_special_event_feedback(self):
         scene, model = self.scene(guest=True)
-        self.ready(scene, 'mira')
         self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+        self.ready(scene, 'mira')
         self.assertTrue(model.choose_action('bulwark'))
         scene.update(0)
         self.assertIn('Bulwark', self.current_text(scene))
@@ -196,8 +196,8 @@ class BattleFeedbackTests(unittest.TestCase):
     def test_incoming_warning_precedes_queued_barrier_feedback_after_skill_title(self):
         scene, model = self.scene(guest=True)
         self.hold_charge(scene)
-        self.ready(scene, 'mira')
         self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+        self.ready(scene, 'mira')
         self.assertTrue(model.choose_action('bulwark'))
         scene.update(0)
         self.assertIn('Bulwark', self.current_text(scene))

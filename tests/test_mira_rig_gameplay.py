@@ -30,8 +30,9 @@ class RigGameFixture(unittest.TestCase):
     victory = item_helpers.ItemGameplayTests.victory
 
     def configure(self, allocation):
-        self.ready('mira')
+        self.assertEqual(self.game.combat.model.phase, 'charging')
         self.assertTrue(self.game.combat.model.set_rig_allocation(allocation))
+        self.ready('mira')
         self.game.draw()
 
     def skill(self, identifier, target=None):

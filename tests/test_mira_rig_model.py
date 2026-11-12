@@ -51,7 +51,7 @@ class MiraRigModelTests(unittest.TestCase):
         self.ready(model, 'player')
         self.assertFalse(model.set_rig_allocation(dict(weapons=0, protection=3, support=3)))
         self.ready(model)
-        self.assertTrue(model.set_rig_allocation(dict(weapons=0, protection=3, support=3)))
+        self.assertFalse(model.set_rig_allocation(dict(weapons=0, protection=3, support=3)))
 
     def test_configuration_unavailable_for_absent_ko_guided_or_ended_mira(self):
         self.assertTrue(BattleModel(CharacterAttributes()).rig_reason())
@@ -66,7 +66,12 @@ class MiraRigModelTests(unittest.TestCase):
         model = self.model();self.ready(model)
         self.assertTrue(model.action_reason('charged_bolt'))
         self.assertFalse(model.choose_action('charged_bolt'))
+        # Reconfiguration is preparation for the following turn, never a
+        # way to bypass a ready turn's requirements from its skill menu.
+        self.assertTrue(model.choose_action('guard'))
+        model.update(model.current_action.duration)
         self.assertTrue(model.set_rig_allocation(dict(weapons=3, protection=0, support=3)))
+        self.ready(model)
         self.assertFalse(model.action_reason('charged_bolt'))
         self.assertFalse(model.action_reason('arc_discharge'))
         self.assertTrue(model.action_reason('bulwark'))

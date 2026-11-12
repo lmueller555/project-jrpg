@@ -135,6 +135,7 @@ class MiraRigUI:
             self._held = False
             return False
         if not enabled:
+            self.cancel()
             self.focused = False
             self._held = False
             return False
@@ -209,6 +210,12 @@ class MiraRigUI:
             painter.rect(GOLD, (x, bounds.top+2, 1, 1))
         title = 'ARM RIG' if bounds.width >= 140 else 'RIG'
         painter.text(title, (bounds.left+7, bounds.top+2), role='small', color=GOLD, bold=True)
+        if not enabled:
+            x=bounds.left+7+painter.font('small').size(title)[0]+5
+            y=bounds.top+3
+            painter.rect(MUTED,(x,y+3,6,5))
+            painter.rect(MUTED,(x+1,y,4,5),1)
+            painter.line(FOREST_DARK,(x+3,y+5),(x+3,y+6))
         budget = str(CAPACITY-self.available)+'/'+str(CAPACITY)
         painter.text(budget, (bounds.right-5, bounds.top+2), role='small', color=GOLD, anchor='topright')
         # Channel symbols identify each row; the pips show allocated power.

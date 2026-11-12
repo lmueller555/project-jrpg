@@ -82,7 +82,7 @@ class GearBattleSceneTests(unittest.TestCase):
         self.draw()
 
     def resources(self):
-        return [(actor.identifier, actor.hp, actor.mp, actor.atb)
+        return [(actor.identifier, actor.hp, actor.mp)
                 for actor in (*self.model.party, self.model.enemy)]
 
     def gauges(self):
@@ -138,7 +138,7 @@ class GearBattleSceneTests(unittest.TestCase):
                           for actor in (*self.model.party, self.model.enemy)}
                 self.pointer(pygame.MOUSEMOTION, self.scene.gear.rect.center)
                 self.assertFalse(self.scene.gear_enabled)
-                self.assertEqual(self.scene.atb_multiplier, .25)
+                self.assertEqual(self.scene.atb_multiplier, 1)
                 duration = self.model.current_action.duration
                 self.scene.update(duration+.1)
                 self.assertIsNone(self.model.current_action)
@@ -168,7 +168,6 @@ class GearBattleSceneTests(unittest.TestCase):
         for actor in (*self.model.party, self.model.enemy):
             self.assertAlmostEqual(actor.atb, self.model.atb_rate(actor)*.4)
 
-        self.ready()
         top, right = self.gear_points()
         self.pointer(pygame.MOUSEBUTTONDOWN, (top[0]*2, top[1]*2))
         self.pointer(pygame.MOUSEMOTION, (right[0]*2, right[1]*2))
@@ -185,11 +184,10 @@ class GearBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.resources(), before)
         # A late release from the old viewport cannot select the adjacent actor.
         self.pointer(pygame.MOUSEBUTTONUP, self.scene.party_rows['mira']['row'].center)
-        self.assertEqual(self.model.ready_actor, 'player')
+        self.assertIsNone(self.model.ready_actor)
         self.assertIsNone(self.model.current_action)
 
     def test_drag_captures_party_row_release_without_spending_or_switching_owner(self):
-        self.ready()
         before = self.resources()
         self.start_turn()
         mira = self.scene.party_rows['mira']['row'].center
@@ -197,15 +195,14 @@ class GearBattleSceneTests(unittest.TestCase):
         self.pointer(pygame.MOUSEBUTTONUP, mira)
         self.assertFalse(self.scene.gear.dragging)
         self.assertTrue(self.scene.gear.settling)
-        self.assertEqual(self.model.ready_actor, 'player')
+        self.assertIsNone(self.model.ready_actor)
         self.assertIsNone(self.model.current_action)
         self.scene.update(.1)
         self.assertEqual(self.resources(), before)
-        self.assertEqual(self.model.ready_actor, 'player')
+        self.assertIsNone(self.model.ready_actor)
         self.assertEqual(self.model.active_gem, self.scene.gear.active_gem)
 
     def test_release_outside_seats_once_then_persists_and_skills_use_the_settled_gem(self):
-        self.ready()
         self.game.character_abilities = SimpleNamespace(set_active_gem=Mock(return_value=True))
         self.game.save_progress = Mock()
         before = self.resources()
@@ -225,13 +222,13 @@ class GearBattleSceneTests(unittest.TestCase):
         self.game.save_progress.assert_called_once_with()
         self.scene.update(.5)
         self.game.save_progress.assert_called_once_with()
+        self.ready()
         self.click(self.scene.command_rects['skills'].center)
         self.click(self.scene.command_rects['aether_edge'].center)
         self.assertEqual(self.model.current_action.active_gem, 'nature')
         self.assertEqual(self.model.player.mp, 26)
 
     def test_keyboard_preview_blocks_keypad_command_until_seated_or_cancelled(self):
-        self.ready()
         before = self.resources()
         self.key(pygame.K_g)
         self.key(pygame.K_RIGHT)
@@ -246,7 +243,6 @@ class GearBattleSceneTests(unittest.TestCase):
         for focus_loss in (False, True):
             with self.subTest(focus_loss=focus_loss):
                 self.make_scene()
-                self.ready()
                 self.start_turn()
                 if focus_loss:
                     self.scene.handle_event(pygame.event.Event(pygame.WINDOWFOCUSLOST))
@@ -263,7 +259,6 @@ class GearBattleSceneTests(unittest.TestCase):
                 self.assertEqual(self.resources(), before)
 
     def test_reduced_motion_seat_then_immediate_pause_cannot_desync_model_and_widget(self):
-        self.ready()
         self.game.audio.set_reduced_motion(True)
         right = self.start_turn()
         self.pointer(pygame.MOUSEBUTTONUP, right)
@@ -289,7 +284,6 @@ class GearBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.scene.gear.active_gem, self.model.active_gem)
 
     def test_result_entered_during_a_gesture_restores_the_last_committed_focus(self):
-        self.ready()
         right = self.start_turn()
         self.pointer(pygame.MOUSEBUTTONUP, right)
         self.assertTrue(self.scene.gear.settling)
@@ -328,7 +322,7 @@ class GearBattleSceneTests(unittest.TestCase):
             if self.model.waiting_for_player and self.model.spellblade_stage == 'first_edge':
                 break
         self.assertEqual(self.model.spellblade_stage, 'first_edge')
-        self.assertIn('gear_instruction', self.scene._tutorial_seen)
+        self.assertIn('blue_focus_ready', self.scene._tutorial_seen)
         self.click(self.scene.command_rects['skills'].center)
         self.assertEqual(self.model.skill_actions(), ['aqua_edge'])
         self.assertNotIn('nature_edge', self.scene.command_rects)

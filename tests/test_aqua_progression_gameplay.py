@@ -34,6 +34,13 @@ class AquaProgressionGameplayTests(unittest.TestCase):
             driver.meal();driver.attack_report();driver.departure()
             driver.rejoin_mira();driver.arrive()
             game = driver.game
+            # The arrival cinematic now owns the cave handoff. Complete its
+            # real dialogue/actions before testing the introductory battle.
+            for _ in range(4000):
+                if game.sanctuary_arrival.completed:break
+                if game.sanctuary_arrival.dialogue is not None:key(game, pygame.K_SPACE)
+                driver.tick(.05)
+            else:raise AssertionError('Sanctuary arrival did not complete')
             # This fixture predates the gift. Public acquisition models its
             # already-earned blade without awarding any cave progression.
             if not game.character_abilities.has_weapon():
@@ -172,7 +179,7 @@ class AquaProgressionGameplayTests(unittest.TestCase):
         model = self.load_battle()
         self.assertEqual(model.player.mp, 0)
         self.assertEqual(model.action_mp_cost('aqua_edge', 'player'), 0)
-        self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
+        self.assertEqual([member.identifier for member in model.party], ['player', 'mira', 'lucan'])
         self.assertTrue(all(0 <= value <= .5 for value in model.initial_atb_values.values()))
         self.assertFalse(any(enemy.hp < enemy.max_hp for enemy in model.enemies))
         scene = self.cast_aqua()
