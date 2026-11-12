@@ -86,6 +86,56 @@ class PartyTravelTests(unittest.TestCase):
         context.world.is_overworld=True
         self.assertFalse(travel.stage_companion('mira',(75,80)))
 
+    def test_two_authored_followers_remain_at_their_stations_until_the_leader_moves(self):
+        context = game(active=('caelan','mira','lucan'))
+        context.player.position.update(100,80)
+        context.mill_quest = SimpleNamespace(mira=SimpleNamespace(party_travelling=False))
+        travel = PartyTravel(context,actor_factory=actor)
+        # These are the Sanctuary handoff offsets, including a >64px pair leg.
+        positions = {'mira':(68,106),'lucan':(124,74)}
+        self.assertTrue(travel.stage_companions(positions,{'mira':'back','lucan':'left'}))
+        followers = travel.actors()
+        self.assertEqual([value.identifier for value in followers],['mira','lucan'])
+        for _ in range(120):travel.update(1/60)
+        self.assertEqual([tuple(value.position) for value in followers],[(68,106),(124,74)])
+        self.assertEqual([value.facing for value in followers],['back','left'])
+        self.assertTrue(all(value.visible and not value.moving and value.walk_ms==0 for value in followers))
+        self.assertEqual(tuple(travel._points[0]),positions['lucan'])
+        self.assertEqual(tuple(travel._points[-1]),tuple(context.player.position))
+        self.assertTrue(context.mill_quest.mira.party_travelling)
+        self.assertEqual(context.world.npcs,[])
+        walk(travel,(140,80))
+        self.assertEqual(travel.actors(),followers)
+        self.assertTrue(all(context.world.can_stand(value.position) for value in followers))
+        self.assertTrue(all(tuple(value.position)!=positions[value.identifier] for value in followers))
+
+    def test_invalid_multi_follower_handoff_does_not_reset_an_existing_formation(self):
+        context = game(active=('caelan','mira','lucan'))
+        context.player.position.update(100,80)
+        travel = PartyTravel(context,actor_factory=actor)
+        positions = {'mira':(68,106),'lucan':(124,74)}
+        self.assertTrue(travel.stage_companions(positions))
+        followers = travel.actors()
+        def snapshot():
+            return ([tuple(point) for point in travel._points],list(travel._distances),
+                    [(id(value),tuple(value.position),value.visible,value.trail_distance,value.facing) for value in followers])
+        before = snapshot()
+        # Clear endpoints, but the tail-to-first-follower chord crosses a wall.
+        context.world.obstacles.append(pygame.Rect(92,84,8,10))
+        self.assertTrue(all(context.world.can_stand(point) for point in positions.values()))
+        self.assertFalse(travel.stage_companions(positions))
+        self.assertEqual(snapshot(),before)
+        context.world.obstacles.clear()
+        for invalid in ({'mira':(100,105),'lucan':(100,110)},
+                        {'mira':(100,80),'lucan':(124,74)},
+                        {'mira':(10,150),'lucan':(124,74)},
+                        {'edran':(68,106),'lucan':(124,74)}):
+            self.assertFalse(travel.stage_companions(invalid))
+            self.assertEqual(snapshot(),before)
+        self.assertFalse(travel.stage_companions(positions,{'mira':'north'}))
+        self.assertEqual(snapshot(),before)
+        self.assertEqual(travel.actors(),followers)
+
     def test_mq03_story_lucan_is_not_duplicated_by_a_preexisting_roster_member(self):
         context=game(active=('caelan','mira','lucan'))
         context.regent_quest=SimpleNamespace(sanctuary_escort_active=True)
@@ -250,16 +300,16 @@ class PartyTravelTests(unittest.TestCase):
     def test_approved_directional_art_uses_native_canvas_and_character_foot_anchor(self):
         pygame.display.init()
         pygame.display.set_mode((1, 1))
-        for identifier, anchor in (('mira', (12, 34)), ('lucan', (12, 34)),
+        for identifier, anchor in (('mira', (16, 34)), ('lucan', (12, 34)),
                                    ('rhea', (10, 34)), ('edran', (12, 34))):
             value = _TravelActor(identifier)
             self.assertEqual(value.draw_anchor, anchor)
             for facing in ('front', 'back', 'left', 'right'):
                 value.facing = facing
-                self.assertEqual(value.sprite(0).get_size(), (24, 36))
+                self.assertEqual(value.sprite(0).get_size(), (32 if identifier=='mira' else 24, 36))
                 value.moving = True
                 value.walk_ms = 160
-                self.assertEqual(value.sprite(0).get_size(), (24, 36))
+                self.assertEqual(value.sprite(0).get_size(), (32 if identifier=='mira' else 24, 36))
                 value.moving = False
 
     def test_hidden_routine_cannot_start_an_invisible_conversation(self):

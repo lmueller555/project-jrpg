@@ -123,7 +123,8 @@ growling or resolve the conflict before the later cutscene.
 - The buried works' origin, purpose and relationship to the natural confluence.
 - The creature's identity and the relation, if any, between the bridge incident,
   growling, advance crew's activity and attack.
-- The arrival cutscene, rescue, miniboss encounter and later MQ03 resolution.
+- The missing worker's rescue payoff and final MQ03 resolution. The Sanctuary
+  arrival scene and cave miniboss encounter are implemented.
 
 The old foundation plan and historical passage-injury account remain public
 background evidence, separate from the recent attack. Serene's inherited

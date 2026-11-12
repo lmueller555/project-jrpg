@@ -81,12 +81,14 @@ class PartyTravel:
         self._world = None
         self._points = []
         self._distances = []
+        self._staged_leader = None
 
     def reset(self):
         self._sync_authored(())
         self._world = None
         self._points.clear()
         self._distances.clear()
+        self._staged_leader = None
         for actor in self._actors.values():
             actor.visible = False
             actor.moving = False
@@ -170,7 +172,80 @@ class PartyTravel:
         reset_following_facing(actor)
         return True
 
+    def stage_companions(self, positions, facings=None):
+        """Atomically publish an authored formation and its checked trail.
+
+        ``positions`` supplies all currently effective passive followers. The
+        reverse formation seeds tail → first follower → leader, retaining each
+        actor's real station rather than deriving it from normal follow spacing.
+        A stationary leader holds the authored formation until ordinary movement
+        begins. Invalid origins, overlapping feet or blocked route segments do
+        not change actors, story ownership or any existing breadcrumb history.
+        """
+        active = self._active() if self._normal_scale() else ()
+        if (not isinstance(positions, dict) or not 1 <= len(positions) <= 2
+                or set(positions) != set(active)):
+            return False
+        facings = {} if facings is None else facings
+        if (not isinstance(facings, dict) or not set(facings) <= set(positions)
+                or any(value not in ('front', 'back', 'left', 'right') for value in facings.values())):
+            return False
+        leader = pygame.Vector2(self.game.player.position)
+        origins = {}
+        for identifier in active:
+            value = positions[identifier]
+            try:
+                if (len(value) != 2 or any(type(n) not in (int, float)
+                        or not math.isfinite(n) for n in value)):
+                    return False
+                origin = pygame.Vector2(value)
+            except (TypeError, ValueError, OverflowError):
+                return False
+            if not 12 <= origin.distance_to(leader) <= TELEPORT_DISTANCE:return False
+            if not self.game.world.can_stand(origin):return False
+            origins[identifier] = origin
+        if not self.game.world.can_stand(leader):return False
+
+        stations = [leader, *origins.values()]
+        probe = getattr(self.game.world, 'probe_rect', None)
+        for index, first in enumerate(stations):
+            for second in stations[index+1:]:
+                if first.distance_to(second) < 12:return False
+                if probe is not None and probe(first).colliderect(probe(second)):
+                    return False
+        points = [origins[active[-1]].copy()]
+        distances = [0.]
+        offsets = {active[-1]: 0.}
+        for identifier in (*reversed(active[:-1]), None):
+            end = leader if identifier is None else origins[identifier]
+            segment = self._segment(points[-1], end)
+            if segment is None:return False
+            for point in segment:
+                distance = points[-1].distance_to(point)
+                if distance > 1e-9:
+                    points.append(point)
+                    distances.append(distances[-1]+distance)
+            if identifier is not None:offsets[identifier] = distances[-1]
+        # Load any new art before mutating the published formation.
+        created = {key: self._actor_factory(key) for key in active if key not in self._actors}
+        self._start_trail(points[0])
+        self._points, self._distances = points, distances
+        self._actors.update(created)
+        self._sync_authored(active)
+        for key in active:
+            actor = self._actors[key]
+            actor.position.update(origins[key])
+            actor.trail_distance = offsets[key]
+            actor.facing = facings.get(key, getattr(self.game.player, 'facing', 'front'))
+            actor.visible = True
+            actor.moving = False
+            actor.walk_ms = 0.
+            reset_following_facing(actor)
+        self._staged_leader = leader.copy()
+        return True
+
     def _start_trail(self, position):
+        self._staged_leader = None
         self._world = self.game.world
         self._points = [pygame.Vector2(position)]
         self._distances = [0.0]
@@ -255,6 +330,9 @@ class PartyTravel:
             self._start_trail(position)
         else:
             self._record(position)
+        if (self._staged_leader is not None
+                and position.distance_squared_to(self._staged_leader) > 1e-10):
+            self._staged_leader = None
         for identifier, actor in self._actors.items():
             if identifier not in active:
                 actor.visible = False
@@ -280,6 +358,8 @@ class PartyTravel:
                 actor.moving = False
                 actor.walk_ms = 0.0
                 reset_following_facing(actor)
+            elif self._staged_leader is not None:
+                actor.moving = False
             else:
                 self._advance(actor, goal, seconds, speed)
             placed.append(actor)

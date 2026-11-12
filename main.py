@@ -62,6 +62,8 @@ from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
+from sanctuary_arrival import SanctuaryArrival
+from sanctuary_arrival_party import sync_arrival_party, valid_arrival_party
 from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave, migrate_chasm_checkpoint
 from cave_random_encounters import CaveRandomEncounters
 from cave_lesson import CaveLesson
@@ -553,6 +555,7 @@ class Game:
         self.cave_lesson=CaveLesson(self)
         self.sanctuary_boss=SanctuaryBoss(self)
         self.elemental_bosses=ElementalBosses(self)
+        self.sanctuary_arrival=SanctuaryArrival(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_embedded else save_path)
@@ -638,6 +641,7 @@ class Game:
                            'cave_lesson':self.cave_lesson.to_dict(),
                            'sanctuary_boss':self.sanctuary_boss.to_dict(),
                            'elemental_bosses':self.elemental_bosses.to_dict(),
+                           'sanctuary_arrival':self.sanctuary_arrival.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'character_levels':self.character_progression.to_dict(),
                            'party':self.party.to_dict(),
@@ -658,7 +662,7 @@ class Game:
 
     @property
     def household_action(self):
-        return (self.mill_gift.active or self.regent_arrival.active or self.regent_arrival.state=='pending' or
+        return (self.sanctuary_arrival.active or self.mill_gift.active or self.regent_arrival.active or self.regent_arrival.state=='pending' or
                 any(visit.locks_player for visit in self.household_visits))
 
     def _sync_inventory(self):
@@ -743,6 +747,7 @@ class Game:
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
                MiraRigState.valid_journey(data) and
+               SanctuaryArrival.valid_journey(data) and
                (not RegentQuest.sanctuary_party_snapshot(data.get('regent_quest')) or 'party' in data) and
                ('party' not in data or self._valid_party_snapshot(data)) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
@@ -787,7 +792,7 @@ class Game:
                     or party.current_event_id!='mq03_sanctuary'
                     or 'mira' not in party.required_ids):return False
         elif party.current_event_id=='mq03_sanctuary':return False
-        return attributes.to_dict()==expected_attributes
+        return attributes.to_dict()==expected_attributes and valid_arrival_party(data,party)
 
     @staticmethod
     def _valid_inventory_snapshot(data):
@@ -957,11 +962,13 @@ class Game:
             self.quests.unlock(REGENT_QUEST);self.quests.drain_events()
         self.regent_arrival.restore(data.get('regent_arrival') if data else None)
         if self.regent_arrival.arrival_complete:self.mill_quest.sanctuary_return.release()
+        self.sanctuary_arrival.restore(data.get('sanctuary_arrival') if data else None,journey=data)
         self.regent_quest.restore(data.get('regent_quest') if data else None)
         if self.quests.status(REGENT_QUEST)=='completed' and self.quests.status(LANTERN_QUEST)=='locked':
             self.quests.unlock(LANTERN_QUEST);self.quests.drain_events()
         self.lantern_quest.restore(data.get('lantern_quest') if data else None)
         self._sync_story_party()
+        self.sanctuary_arrival.sync_residents()
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -976,6 +983,8 @@ class Game:
                 landing=self.town.data['spawn']
             self.player.position.update(landing)
         self.overworld_travel.finish_story_restore(regional_checkpoint)
+        if self.sanctuary_cave.active:self.sanctuary_arrival.note_cave_entry()
+        self.sanctuary_arrival.stage_party()
         for scene in self.scenes.values():
             scene.reset_grass(reduced_motion=self.audio.reduced_motion)
         self.opening_audio.reset()
@@ -1032,6 +1041,7 @@ class Game:
               'cave_lesson':self.cave_lesson.to_dict(),
               'sanctuary_boss':self.sanctuary_boss.to_dict(),
               'elemental_bosses':self.elemental_bosses.to_dict(),
+              'sanctuary_arrival':self.sanctuary_arrival.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'character_levels':self.character_progression.to_dict(),
               'party':self.party.to_dict(),
@@ -1067,6 +1077,8 @@ class Game:
         met=self.quests.objective_status(MILL_QUEST,'meet_mira')=='completed'
         sanctuary_trip=bool(getattr(self.regent_quest,'sanctuary_party_active',False))
         if not met:return not sanctuary_trip
+        handled=sync_arrival_party(self)
+        if handled is not None:return handled
         migrated='mira' not in self.party.members
         if migrated:self.party.recruit('mira',temporary=True)
         # Acknowledged MQ03 recruitment owns this outing after the completed
@@ -1321,6 +1333,7 @@ class Game:
                 return True
         self.regent_arrival.begin_input_batch()
         self.mill_gift.begin_event_batch()
+        self.sanctuary_arrival.begin_event_batch()
         advanced=False
         resumed=False
         for event in events:
@@ -1361,6 +1374,11 @@ class Game:
                 self.music.set_paused(not self._music_focused or
                                       self.opening_cinematic.paused)
                 resumed=not self.opening_cinematic.active
+                continue
+            if self.sanctuary_arrival.active:
+                self.sanctuary_arrival.handle_event(event)
+                self.music.set_paused(not self._music_focused or self.sanctuary_arrival.paused)
+                resumed=not self.sanctuary_arrival.active
                 continue
             if self.mill_gift.active:
                 self.mill_gift.handle_event(event)
@@ -1599,6 +1617,14 @@ class Game:
         return self.combat.start_cave(ticket)
 
     def _update_world(self,seconds,direction=None,running=None):
+        if not self.on_title:self.sanctuary_arrival.maybe_start()
+        if self.sanctuary_arrival.active:
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or self.sanctuary_arrival.paused)
+            self.music.set_ducked(self.sanctuary_arrival.dialogue is not None)
+            self.music.update(seconds)
+            self.sanctuary_arrival.update(seconds)
+            return
         if self.mill_gift.active:
             self.opening_audio.set_paused(True)
             self.music.set_paused(not self._music_focused or self.mill_gift.paused)
@@ -1946,6 +1972,12 @@ class Game:
             self.opening_cinematic.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
+            if not self._is_embedded:pygame.display.flip()
+            return
+        if self.sanctuary_arrival.active:
+            _,size,origin=self._ensure_ui_surface()
+            self.sanctuary_arrival.draw(self.canvas,self.ui_surface)
+            self.window.fill('#101b19');self.window.blit(self.ui_surface,origin)
             if not self._is_embedded:pygame.display.flip()
             return
         if self.mill_gift.active:

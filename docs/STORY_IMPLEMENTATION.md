@@ -245,13 +245,16 @@ Version-three quest checkpoints separate acknowledged discussion, the physical
 interruption, attack report, departure, Mira's rejoining and Sanctuary travel.
 Partial dialogue and entrance routes are transient. The existing four objective
 IDs remain compatible with earlier journeys; the final objective stays active
-at `sanctuary_arrival_pending`. This endpoint stages all five travelers without
-playing the deferred arrival cutscene, opening the cave, granting rewards or
-unlocking MQ04.
+at `sanctuary_arrival_pending`. A separate arrival owner now plays the
+eight-beat scene in the live reserve, checkpoints acknowledged beats and
+returns control at the cave apron. It does not grant rewards, turn in MQ03 or
+unlock MQ04.
 
 Mira's existing resources and character state persist through the required
-`mq03_sanctuary` party event. Aldric, Lucan and the page are story escorts;
-Lucan is not newly recruited into combat. New Game releases borrowed actors.
+`mq03_sanctuary` party event. Aldric, Lucan and the page are story escorts on
+the road. Once the arrival rescue plan is acknowledged, Lucan becomes the
+temporary third combat member while Aldric and the page stay with the workers.
+New Game releases borrowed actors.
 Completed version-one/two MQ03 journeys remain complete and retain later
 lantern progress; an unfinished old discussion resumes before the new facts
 are acknowledged. The later formal authorization remains separate story work.

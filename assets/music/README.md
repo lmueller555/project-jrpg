@@ -61,9 +61,11 @@ available for review until assigned to playback.
 
 **Elden Vale Sanctuary Cave** repeats throughout the continuous cave without
 restarting between rooms, including during non-battle dialogue and menus.
-It takes priority over MQ03's ongoing emergency score only while inside the
-cave. Exiting restores the appropriate outdoor or story cue; Continue selects
-the cave cue before restoring a pending encounter or rewards screen.
+The first successful cave entry permanently ends MQ03's emergency music
+override for that journey. Exiting the cave then restores normal area music,
+including on later visits to the Sanctuary or Eldenmere. Continue preserves
+that release and selects the cave cue before restoring an underground encounter
+or rewards screen. Ordinary battles still bookmark and resume their area cue.
 The full source is preserved without trimming, normalization or rearrangement.
 Its native Vorbis export includes the encoder's documented 56 extra frames.
 

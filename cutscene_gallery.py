@@ -144,7 +144,7 @@ def _regent_checkpoint(game, stage):
     if stage == 'done':
         if not game.quests.turn_in(REGENT_QUEST, 'mother_serene'):raise ValueError('Cannot finish regent quest')
         game.quests.unlock(LANTERN_QUEST)
-    if not game.regent_quest.restore({'version': 2, 'stage': stage}):raise ValueError('Invalid regent checkpoint')
+    if not game.regent_quest.restore({'version': 3, 'stage': stage}):raise ValueError('Invalid regent checkpoint')
 
 
 def _lantern_checkpoint(game, stage, world, position):
@@ -379,6 +379,15 @@ def _entry(identifier, name, chapter, description, fixture, automatic=False):
                         AUTOMATIC_CONTROLS if automatic else DIALOGUE_CONTROLS, fixture)
 
 
+def _sanctuary_arrival(game, playback):
+    """Replay the actual rescue arrival in a disposable reserve fixture."""
+    controller = game.sanctuary_arrival
+    controller.prepare_preview()
+    if not controller.start(force=True):
+        raise ValueError('Cannot start the Sanctuary emergency arrival')
+    playback.watch(lambda: controller.completed and not controller.active)
+
+
 def _mira_arm_rig(game, playback):
     from mira_rig_preview import MiraRigPreview
     game.opening.restore({'version': 1, 'stage': 'disabled'})
@@ -417,6 +426,10 @@ GALLERY_ENTRIES = (
            'A lever, a haul rope and two pairs of hands restore the mill.', partial(_mill_action, action='repair')),
     _entry('regent_arrival', 'Aldric’s Relief Caravan', 'The Regent’s Road',
            'The present-day caravan reaches Eldenmere after the mill is restored.', _arrival),
+    GalleryEntry('sanctuary_arrival', 'Sanctuary — Emergency Arrival', 'The Regent’s Road',
+           'Find the wounded, account for the missing worker and prepare the Sanctuary cave rescue.',
+           'assets/ui/gallery/sanctuary_arrival.png',
+           'Space / E / click: dialogue · P: pause · R: restart · Esc: Gallery', _sanctuary_arrival),
     _entry('lantern_frame', 'A Frame of His Own', 'Liam’s First Lantern',
            'Try the design, assemble the tower frame and help Liam lift it.', partial(_lantern, segment='frame')),
     _entry('lantern_collect', 'Gathering the Materials', 'Liam’s First Lantern',

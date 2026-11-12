@@ -136,6 +136,7 @@ class RegionalAudio:
         cave = getattr(g.world, 'is_sanctuary_cave', False)
         return ((g.overworld_travel.active or reserve or cave) and not g.on_title and not g.opening_cinematic.active
                 and not g.regent_arrival.active and g.regent_arrival.state != 'pending'
+                and not getattr(getattr(g,'sanctuary_arrival',None),'active',False)
                 and not g.combat.active and not g.pause.is_open and not g.inventory_ui.is_open
                 and not g.world_map_viewer.is_open and not g.map_open and not g.quest_ui.journal_open
                 and not getattr(getattr(g,'party_ui',None),'is_open',False)

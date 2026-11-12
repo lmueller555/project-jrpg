@@ -18,11 +18,11 @@ must be able to fight to enter combat. Resting at Caelan's bed recovers availabl
 recruited characters, including reserves. Unavailable characters keep their
 resources while away. Existing battle outcome recovery rules remain in effect.
 
-This work does not change progression, distribute reserve XP, recruit future
-characters through new quests, or give them skills or equipment. Mira retains
-her existing mill combat ratings. Lucan, Rhea and Edran have registered metadata
-and use the existing starter ratings until their authored recruitment is tuned.
-They stay hidden from the roster until explicitly recruited.
+Recruitment remains story-owned and does not itself grant new skills or
+equipment. Mira retains her existing character state. Lucan joins temporarily
+for MQ03's cave rescue after the Sanctuary arrival scene; his permanent
+recruitment remains a later story decision. Rhea and Edran remain hidden from
+the roster until explicitly recruited.
 
 The [traditional leveling foundation](LEVELING.md) supplies separate approved
 growth profiles for all five characters. The approved allocation rule gives the
@@ -132,3 +132,14 @@ See [the captured review](reviews/mira_rig_continuity/README.md) for native menu
 a short silent video, a menu GIF, input evidence and reproducible source hashes.
 The review fixture explicitly recruits future characters to exercise reserves;
 it adds no story events to the game.
+
+### Sanctuary rescue formation
+
+The MQ03 arrival scene temporarily adds Lucan after the rescue plan is
+acknowledged. The existing `mq03_sanctuary` event then requires Caelan, Mira
+and Lucan, preserving resources and the formation from before the outing.
+Aldric and the page remain at the reserve. This is separate from Lucan's later
+permanent recruitment. Earlier checkpoints retain the two-member event until
+the arrival is acknowledged. Quest playtest starts beyond MQ03 preserve the
+existing Caelan/Mira EXP allowance and grant Lucan the cave allowance while
+returning him to unavailable temporary membership after the outing.

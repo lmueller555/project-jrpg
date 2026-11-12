@@ -138,9 +138,14 @@ class SanctuaryCave:
     def _entry(self):
         g = self.game
         if g.world.data.get('id') != RESERVE_ID:return None
+        arrival=getattr(g,'sanctuary_arrival',None)
+        if (arrival is not None and not arrival.completed
+                and getattr(getattr(g,'regent_quest',None),'stage',None)=='sanctuary_arrival_pending'):
+            return None
         point = g.world.data.get('public_approaches', {}).get('cave', RESERVE_ENTRY_APPROACH)
         return {'id': 'sanctuary_to_cave', 'position': point, 'radius': 28,
-                'destination': SCENE_ID, 'label': 'Lift the rail and enter the cave'}
+                'destination': SCENE_ID, 'label': ('Enter the cave' if getattr(arrival,'completed',False)
+                                                    else 'Lift the rail and enter the cave')}
 
     def _nearby(self):
         if not self._available():return None

@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "beats": [
+    {
+      "id": "arrival_contact",
+      "min_seconds": 2.4,
+      "camera": [
+        700,
+        360
+      ],
+      "goals": {
+        "caelan": [
+          662,
+          406
+        ],
+        "mira": [
+          700,
+          350
+        ],
+        "lucan": [
+          858,
+          404
+        ],
+        "aldric": [
+          730,
+          426
+        ],
+        "page": [
+          758,
+          438
+        ],
+        "caretaker": [
+          662,
+          376
+        ],
+        "worker_a": [
+          700,
+          318
+        ],
+        "worker_b": [
+          776,
+          318
+        ],
+        "sentry": [
+          948,
+          418
+        ],
+        "runner": [
+          600,
+          380
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "caelan",
+          "text": "Mother Serene sent us. A man reached Eldenmere."
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "He made it?"
+        },
+        {
+          "speaker": "caelan",
+          "text": "She’s looking after him. Where do you need us?"
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "Here, first. We brought these two clear of the cave."
+        },
+        {
+          "speaker": "mira",
+          "text": "Let me see that dressing. Keep your arm still for a moment."
+        },
+        {
+          "speaker": "arrival_worker",
+          "text": "All right. Thank you."
+        }
+      ],
+      "poses": {
+        "mira": "tend",
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "runner": "set_down"
+      }
+    },
+    {
+      "id": "accounting",
+      "min_seconds": 1.8,
+      "camera": [
+        730,
+        380
+      ],
+      "goals": {
+        "lucan": [
+          820,
+          412
+        ],
+        "page": [
+          772,
+          406
+        ],
+        "runner": [
+          724,
+          350
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "Who haven’t you found?"
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "One of the workers. The creature pulled him back into the cave."
+        },
+        {
+          "speaker": "lucan",
+          "text": "Did anyone hear him afterward?"
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "He answered when we called. I heard him again before you came through the arch."
+        },
+        {
+          "speaker": "regent_clerk",
+          "text": "I have the crew list. Show me who is here."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Bring it here. We’ll account for everyone."
+        }
+      ],
+      "poses": {
+        "mira": "tend",
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read",
+        "runner": "set_down"
+      }
+    },
+    {
+      "id": "cave_reveal",
+      "min_seconds": 2.4,
+      "camera": [
+        980,
+        365
+      ],
+      "goals": {},
+      "lines": [],
+      "poses": {
+        "mira": "tend",
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read"
+      }
+    },
+    {
+      "id": "responsibility",
+      "min_seconds": 1.6,
+      "camera": [
+        730,
+        380
+      ],
+      "goals": {
+        "caretaker": [
+          690,
+          382
+        ],
+        "runner": [
+          628,
+          384
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "arrival_caretaker",
+          "text": "Your men said the ground had already been placed under the Crown."
+        },
+        {
+          "speaker": "aldric",
+          "text": "They were acting on my orders."
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "Mother Serene gave no agreement."
+        },
+        {
+          "speaker": "aldric",
+          "text": "No. She did not."
+        },
+        {
+          "speaker": "aldric",
+          "text": "There’ll be no more work here. Tell me what you need for the injured."
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "Clean water, cloths, and room to work. Keep the path to the hall clear."
+        },
+        {
+          "speaker": "aldric",
+          "text": "We’ll keep it clear."
+        }
+      ],
+      "poses": {
+        "mira": "tend",
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read"
+      }
+    },
+    {
+      "id": "rescue_decision",
+      "min_seconds": 1.9,
+      "camera": [
+        740,
+        390
+      ],
+      "goals": {
+        "mira": [
+          702,
+          402
+        ],
+        "lucan": [
+          760,
+          450
+        ],
+        "runner": [
+          724,
+          350
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "mira",
+          "text": "That will hold. Keep the arm supported; I’ll leave the cloths here."
+        },
+        {
+          "speaker": "mira",
+          "text": "Is the footing at the entrance loose?"
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "There’s fallen stone. We couldn’t reach the man safely."
+        },
+        {
+          "speaker": "lucan",
+          "text": "Show me exactly where you heard him."
+        },
+        {
+          "speaker": "caelan",
+          "text": "Then I’m going with you."
+        },
+        {
+          "speaker": "lucan",
+          "text": "You two stay here."
+        },
+        {
+          "speaker": "caelan",
+          "text": "We came to help bring them back."
+        },
+        {
+          "speaker": "mira",
+          "text": "If he’s trapped under something, you’ll need more than a sword. I have the tools."
+        },
+        {
+          "speaker": "lucan",
+          "text": "Then you stay behind me until we know what’s ahead."
+        }
+      ],
+      "poses": {
+        "mira": "set_down",
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read",
+        "runner": "tend"
+      }
+    },
+    {
+      "id": "royal_handoff",
+      "min_seconds": 1.6,
+      "camera": [
+        740,
+        390
+      ],
+      "goals": {},
+      "lines": [
+        {
+          "speaker": "aldric",
+          "text": "Go with them, Lucan. Bring our people back. I’ll remain here."
+        },
+        {
+          "speaker": "lucan",
+          "text": "Stay with the caretakers, my lord."
+        },
+        {
+          "speaker": "aldric",
+          "text": "I will. Page, help me with the names."
+        },
+        {
+          "speaker": "regent_clerk",
+          "text": "Yes, your lordship."
+        }
+      ],
+      "poses": {
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read",
+        "runner": "tend"
+      }
+    },
+    {
+      "id": "visitor_rest",
+      "min_seconds": 1.8,
+      "camera": [
+        600,
+        365
+      ],
+      "goals": {
+        "runner": [
+          534,
+          370
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "arrival_caretaker",
+          "text": "Nessa keeps the visitor room ready. Through the hall, then the north door with the bed plaque."
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "If you need to recover, come back. We’ll keep it available."
+        },
+        {
+          "speaker": "mira",
+          "text": "Thank you."
+        }
+      ],
+      "poses": {
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read"
+      }
+    },
+    {
+      "id": "cave_approach",
+      "min_seconds": 2.4,
+      "camera": [
+        1008,
+        406
+      ],
+      "goals": {
+        "caelan": [
+          1008,
+          406
+        ],
+        "mira": [
+          976,
+          432
+        ],
+        "lucan": [
+          1032,
+          400
+        ],
+        "caretaker": [
+          972,
+          454
+        ],
+        "sentry": [
+          1068,
+          444
+        ],
+        "runner": [
+          724,
+          350
+        ]
+      },
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "We find him first. Keep close, and call out anything you see."
+        },
+        {
+          "speaker": "mira",
+          "text": "Watch the loose stone."
+        },
+        {
+          "speaker": "arrival_caretaker",
+          "text": "I’ll lift the rail. Call back if you need us."
+        }
+      ],
+      "poses": {
+        "worker_a": "injured",
+        "worker_b": "injured",
+        "page": "read",
+        "runner": "tend",
+        "caretaker": "lift_rail"
+      }
+    }
+  ]
+}
