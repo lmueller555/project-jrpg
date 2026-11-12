@@ -1,0 +1,197 @@
+{
+  "poses": {
+    "place": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_05.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ]
+    },
+    "treat": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_06.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_07.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_08.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_09.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_10.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_11.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ]
+    },
+    "retrieve": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_06.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_07.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ]
+    },
+    "offer_arm": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/patient_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/patient_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/patient_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/patient_03.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        12,
+        30
+      ]
+    },
+    "runner_place": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_05.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        20,
+        30
+      ]
+    }
+  },
+  "props": {
+    "kit": "assets/story/sanctuary_arrival/performance/kit.png",
+    "linen": "assets/story/sanctuary_arrival/performance/linen.png"
+  }
+}

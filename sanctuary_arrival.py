@@ -98,8 +98,12 @@ class SanctuaryArrival(MillGift):
         self._published=[];self.actors={};self._world=None
         self.reset()
     def reset(self):
+        self._sync_care_audio(stop=True)
         for world,actor in getattr(self,'_published',[]):
             if actor in world.npcs:world.npcs.remove(actor)
+        for world,record in getattr(self,'_care_props',[]):
+            if record in world.entities:world.entities.remove(record)
+        self._care_props=[];self._line_id=None;self._action_remaining=0.;self._pending_advance=False;self._kit=False;self._runner_delivered=False;self._delivery_remaining=0.
         self._published=[];self.actors={};self._world=None
         super().reset();self.completed=False;self.cave_entered=False;self.error=''
         self._ready=False;self._checkpoint_failed=False;self.blocking=None
@@ -112,7 +116,12 @@ class SanctuaryArrival(MillGift):
     @property
     def shot(self):return self.phase['id']
     @property
-    def dialogue(self):return super().dialogue if self._ready and not self.error else None
+    def dialogue(self):
+        line=super().dialogue
+        if self.error or line is None:return None
+        actor={'arrival_caretaker':'caretaker','arrival_worker':'worker_a','regent_clerk':'page'}.get(line['speaker'],line['speaker'])
+        ready=self._ready or (self.game.camera.settled and self.blocking is not None and not self.blocking.busy(actor))
+        return line if ready else None
     def to_dict(self):return {'version':1,'beat':self.beat,'completed':self.completed,'cave_entered':self.cave_entered}
     @staticmethod
     def valid_snapshot(data):
@@ -172,12 +181,24 @@ class SanctuaryArrival(MillGift):
                      (('caelan',g.player),('mira',g.mill_quest.mira),('lucan',c.lucan),('aldric',c.aldric),('page',c.clerk))}
         for key,variant in (('caretaker','male_03'),('worker_a','male_02'),('worker_b','male_01'),('sentry','female_02'),('runner','female_01')):
             self.actors[key]=CastActor(key,world,variant=variant,art=self.art['actors'].get(key))
+        performance=json.loads((ROOT/'assets/story/sanctuary_arrival/performance/art.json').read_text())
+        for name,animation in performance['poses'].items():
+            actor=self.actors['runner'] if name=='runner_place' else self.actors['worker_a'] if name=='offer_arm' else self.actors['mira']
+            actor.pose_animations[name]={
+                'frames':tuple(world.image(f['file']) for f in animation['frames']),
+                'durations':tuple(f['duration_ms'] for f in animation['frames']),
+                'loop':False,'anchor':tuple(animation['anchor'])}
+        self.actors['mira'].pose_animations['tend']=self.actors['mira'].pose_animations['treat']
         portraits=json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())['portraits']
         for key,name,actor in (('arrival_caretaker','Caretaker','caretaker'),('arrival_worker','Injured worker','worker_a')):
             portrait=self.art['actors'][actor]['portrait']
             g.social.data['speakers'][key]={'name':name,'portrait':portrait,'actor_id':self.actors[actor].data['id']}
             if portrait not in g.social.portraits:
                 g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
+        for role,name,portrait in (('worker_b','Injured worker','arrival_worker_b'),('runner','Sanctuary attendant','female_01'),('sentry','Sanctuary lookout','female_02')):
+            key='arrival_'+role
+            g.social.data['speakers'][key]={'name':name,'portrait':portrait}
+            if portrait not in g.social.portraits:g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
         for actor in c.sanctuary_escorts:c._hide(actor)
         starts=self.manifest['starts']
         first=self.manifest['beats'][0]['goals']
@@ -201,13 +222,19 @@ class SanctuaryArrival(MillGift):
     def _begin_beat(self):
         self.phase_time=0.;self.dialogue_index=0;self.page_index=0;self._ready=False
         self._checkpoint_failed=False;self.caption_layout=None
-        self._mira_departure=None
+        self._mira_departure=None;self._line_id=None;self._action_remaining=0.;self._pending_advance=False
+        self._kit=self.beat<=4;self._runner_delivered=self.beat>0;self._delivery_remaining=0.
         self.blocking.begin(self.beat,initial=self.beat==0)
         for key,actor in self.actors.items():actor.pose=self.phase.get('poses',{}).get(key)
         if self.beat==4:
             # Her authored departure begins after the brief retrieval hold.
-            self._mira_departure=self.phase['goals']['mira']
-            self.actors['mira'].pose='retrieve'
+            self.blocking.tracks['mira'].finished=True
+            self.actors['mira'].route=[]
+            self.actors['mira'].pose='treat';self.actors['mira'].pose_ms=10000
+            self.actors['worker_a'].pose='offer_arm';self.actors['worker_a'].pose_ms=10000
+        if self.beat in (1,2,3):
+            self.actors['mira'].pose='treat';self.actors['mira'].pose_ms=10000
+            self.actors['worker_a'].pose='offer_arm';self.actors['worker_a'].pose_ms=10000
         self._focus_camera()
     def _focus_camera(self):
         # Gallery initialization and intentional room cuts may reset tracking;
@@ -222,7 +249,29 @@ class SanctuaryArrival(MillGift):
                 self.error='';self._checkpoint_failed=False;self._commit_beat()
                 return True
             return False
+        line=self.dialogue
+        if line is not None and not self.paused and self.focused and not self._batch_advanced:
+            self._layout(self.game.ui.painter(self.game.ui_surface))
+            if self._action_remaining>0:
+                self._pending_advance=True;return True
+            if self.page_index+1>=len(self.caption_pages) and line.get('after')=='retrieve' and self._kit:
+                self.actors['mira'].pose='retrieve';self._action_remaining=.8;self._play_care_sound()
+                self._pending_advance=True;return True
         return super().advance()
+    def _sync_care_props(self):
+        if self._world is None:return
+        world=self._world
+        for oldworld,record in self._care_props:
+            if record in oldworld.entities:oldworld.entities.remove(record)
+        self._care_props=[]
+        props=[('linen',[700,338])]
+        if self._kit and not self.completed and not self.blocking.busy('mira'):props.append(('kit',[708,326]))
+        if self.completed or self._runner_delivered:props.append(('linen',[784,338]))
+        for number,(name,point) in enumerate(props):
+            image=world.image('assets/story/sanctuary_arrival/performance/'+name+'.png')
+            record={'id':'arrival_supply_'+str(number),'position':point,'rect':image.get_rect(topleft=point),
+                    'surfaces':[image],'sort_y':point[1]+image.get_height(),'phase_offset':0,'frame_duration_ms':1000}
+            world.entities.append(record);self._care_props.append((world,record))
     def _next_if_ready(self):
         if not self._ready or self._checkpoint_failed or self.dialogue_index<len(self.sections[self.beat]):return
         if self.beat==7 and not self._rail_pending:
@@ -256,22 +305,62 @@ class SanctuaryArrival(MillGift):
             g.party_travel.reset();self.sync_residents();g.camera.release(.45)
             g._mouse_held=False;g.social.clear_pointer()
         else:self._begin_beat()
+    def _play_care_sound(self):
+        if not pygame.mixer.get_init() or self.game.audio.effects_volume<=0:return
+        self._sync_care_audio(stop=True)
+        self._care_sound=pygame.mixer.Sound(str(ROOT/'assets/story/sanctuary_arrival/performance/cloth.wav'))
+        self._care_voice=self._care_sound.play()
+        self._sync_care_audio()
+    def _sync_care_audio(self,paused=False,stop=False):
+        voice=getattr(self,'_care_voice',None)
+        if voice is None:return
+        try:
+            if voice.get_sound() is not self._care_sound:self._care_voice=None;return
+            if stop:voice.stop();self._care_voice=None;return
+            voice.set_volume(.18*self.game.audio.effects_volume)
+            if paused:voice.pause()
+            else:voice.unpause()
+        except pygame.error:self._care_voice=None
     def handle_event(self,event):
         handled=super().handle_event(event)
         # Gallery freezes its update clock on focus loss, so pause sound on the
         # event itself rather than waiting for another simulation frame.
         self.rail.sync_audio(self.paused or not self.focused or not self.game._music_focused)
+        self._sync_care_audio(self.paused or not self.focused or not self.game._music_focused)
         return handled
     def update(self,seconds):
         frozen=self.paused or not self.focused or not self.game._music_focused
         self.rail.sync_audio(frozen)
+        self._sync_care_audio(frozen)
         if not self.active or frozen:return
         seconds=max(0.,float(seconds));self.elapsed+=seconds;self.phase_time+=seconds
         self._input_armed=self.elapsed>=.1
-        if self._mira_departure is not None and self.phase_time>=.8:
-            self.actors['mira'].pose=None;self._mira_departure=None
         self.blocking.update(seconds)
         for actor in self.actors.values():actor.advance_pose(seconds)
+        if self.beat==0 and not self.blocking.busy('mira') and self.actors['mira'].pose=='tend':
+            self.actors['mira'].pose='place'
+        line=self.dialogue
+        if line is not None and line['id']!=self._line_id:
+            self._line_id=line['id']
+            if line.get('action')=='treat':
+                self.actors['worker_a'].pose='offer_arm'
+                self.actors['mira'].pose='treat';self._action_remaining=1.2;self._kit=True;self._play_care_sound()
+        if self._action_remaining>0:
+            self._action_remaining=max(0.,self._action_remaining-seconds)
+            if self._action_remaining==0:
+                retrieved=self.actors['mira'].pose=='retrieve'
+                if retrieved:self._kit=False;self.actors['mira'].pose=None;self.actors['worker_a'].pose='injured'
+                if self._pending_advance:
+                    self._pending_advance=False;self._batch_advanced=False
+                    super().advance()
+                if retrieved:self.blocking.move_actor('mira',self.phase['movement']['mira']['waypoints'])
+        if self.beat==0 and not self.blocking.busy('runner') and not self._runner_delivered:
+            if self._delivery_remaining==0:
+                self.actors['runner'].pose='runner_place';self._delivery_remaining=.6
+            self._delivery_remaining=max(0.,self._delivery_remaining-seconds)
+            if self._delivery_remaining==0:
+                self._runner_delivered=True;self.actors['runner'].pose=None;self._play_care_sound()
+        self._sync_care_props()
         self._settled_facings()
         self._focus_camera();self.game.camera.update(seconds)
         keeper=self.actors['caretaker']
@@ -288,7 +377,7 @@ class SanctuaryArrival(MillGift):
                 self._rail_retreat=True;keeper.pose=None
                 self.blocking.move_actor('caretaker',[self.phase['goals']['caretaker']])
         self._ready=(self.phase_time>=self.phase['min_seconds'] and self.game.camera.settled
-                     and self.blocking.settled
+                     and self.blocking.settled and not self.blocking.busy('runner') and self._delivery_remaining==0
                      and (not self._rail_pending or self._rail_retreat) and self._mira_departure is None)
         self._next_if_ready()
     def _settled_facings(self):
@@ -308,6 +397,13 @@ class SanctuaryArrival(MillGift):
         if self.beat==7:
             for key in ('caelan','lucan','mira','caretaker'):target[key]=(1008,359)
             target['aldric']='worker_a'
+        line=self.dialogue
+        if line is not None:
+            speaker={'arrival_caretaker':'caretaker','arrival_worker':'worker_a','regent_clerk':'page'}.get(line['speaker'],line['speaker'])
+            if speaker in a:
+                listener='aldric' if self.beat==3 and speaker=='caretaker' else 'caretaker' if speaker=='aldric' else 'lucan' if speaker in ('caelan','mira') and self.beat==4 else 'caelan'
+                if speaker not in ('mira','worker_a','page'):target[speaker]=listener
+                if listener not in ('mira','worker_a','page'):target[listener]=speaker
         for key,destination in target.items():
             actor=a[key]
             if actor.moving or actor.route or key=='caretaker' and self._rail_pending and not self._rail_retreat:continue
@@ -342,6 +438,7 @@ class SanctuaryArrival(MillGift):
         for key in ('caretaker','worker_a','worker_b','sentry','runner'):
             actor=self.actors[key];actor.route=[];actor.moving=False
             if actor not in world.npcs:world.npcs.append(actor);self._published.append((world,actor))
+        self._kit=False;self._sync_care_props()
         self.stage_party()
     def stage_party(self):
         # Story restoration temporarily uses town coordinates while rebuilding
@@ -366,24 +463,13 @@ class SanctuaryArrival(MillGift):
         self._world.reduced_motion=self.reduced_motion
         try:self._world.draw(canvas,g.camera.position(),g.player,self.elapsed*1000,include_ui=False,party_actors=tuple(self.actors.values()))
         finally:g.player.story_visible=old
-        # Small physical care supplies remain grounded beside the workers.
-        camera=g.camera.position()
-        if self.beat<4 or self._mira_departure is not None:
-            x,y=self.manifest['beats'][0]['goals']['mira'];offset=(15,-5)
-        else:
-            mira=self.actors['mira'];x,y=mira.position
-            offset=(-12,-14) if mira.facing in ('left','back') else (8,-14)
-        rect=pygame.Rect(round(x-camera[0]+offset[0]),round(y-camera[1]+offset[1]),10,6)
-        pygame.draw.rect(canvas,'#604d35',rect);canvas.blit(self._linen,(rect.x+2,rect.y+1))
-        runner=self.actors['runner']
-        canvas.blit(self._linen,(round(runner.position.x-camera[0]-3),round(runner.position.y-camera[1]-16)))
         pygame.transform.scale(canvas,ui_surface.get_size(),ui_surface)
         painter=g.ui.painter(ui_surface);self._layout(painter)
         if self.caption_layout is not None:
             portrait=g.social.portraits[self.caption_layout.portrait_key]
             speech_bubble.draw_dialogue_frame(painter,self.caption_layout,portrait)
             speech_bubble.draw_dialogue_prose(painter,self.caption_layout,self.caption_lines,hint='Click to continue',show_indicator=True)
-        painter.text('Esc · Resume' if self.paused else 'Esc · Pause',(12,310),role='small',color=MUTED,anchor='bottomleft')
+        painter.text(('P · Resume' if self.paused else 'P · Pause') if g._is_gallery_preview else ('Esc · Resume' if self.paused else 'Esc · Pause'),(12,310),role='small',color=MUTED,anchor='bottomleft')
         if self.error:
             painter.panel((35,100,410,65));painter.text(self.error,(45,120),role='small',color=GOLD)
         if self.paused or not self.focused:
