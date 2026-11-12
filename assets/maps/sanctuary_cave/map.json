@@ -3768,8 +3768,8 @@
     {
       "id": "arena_north_micro_0",
       "position": [
-        1980,
-        70
+        1984,
+        72
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_00.png",
@@ -3779,7 +3779,7 @@
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_right/frame_05.png"
       ],
-      "sort_y": 94,
+      "sort_y": 96,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3792,8 +3792,8 @@
     {
       "id": "arena_north_micro_1",
       "position": [
-        2028,
-        70
+        2032,
+        66
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_00.png",
@@ -3803,7 +3803,7 @@
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/purple/diagonal_left/frame_05.png"
       ],
-      "sort_y": 94,
+      "sort_y": 90,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -4795,9 +4795,9 @@
       "name": "Echo Chamber",
       "position": [
         2060,
-        300
+        360
       ],
-      "description": "A broad, open chamber lies beneath pendant stone. Tiny crystals pulse along the enclosing walls in many colors."
+      "description": "A fresh rupture yawns beneath the crystal-lined vault. Claw-scored limestone and rising threads of aether hint at a deeper subterranean world."
     },
     {
       "id": "embervein_chamber",
@@ -5219,8 +5219,8 @@
       {
         "id": "arena_north",
         "position": [
-          2040,
-          160
+          2044,
+          144
         ],
         "color": [
           183,
@@ -11218,13 +11218,13 @@
         "entity_id": "arena_north_micro_0",
         "color": "purple",
         "position": [
-          2016,
-          94
+          2020,
+          96
         ],
         "light_index": 23,
         "light_position": [
-          2040,
-          160
+          2044,
+          144
         ],
         "crystal_count": 26,
         "crystal_sizes": [
@@ -11334,8 +11334,8 @@
           ]
         ],
         "emission_bounds": [
-          1986,
-          74,
+          1990,
+          76,
           61,
           38
         ]
@@ -11345,13 +11345,13 @@
         "entity_id": "arena_north_micro_1",
         "color": "purple",
         "position": [
-          2064,
-          94
+          2068,
+          90
         ],
         "light_index": 23,
         "light_position": [
-          2040,
-          160
+          2044,
+          144
         ],
         "crystal_count": 26,
         "crystal_sizes": [
@@ -11461,8 +11461,8 @@
           ]
         ],
         "emission_bounds": [
-          2037,
-          74,
+          2041,
+          70,
           50,
           41
         ]
@@ -19830,7 +19830,7 @@
             233
           ]
         ],
-        "description": "A broad, open chamber lies beneath pendant stone. Tiny crystals pulse along the enclosing walls in many colors."
+        "description": "A fresh rupture yawns beneath the crystal-lined vault. Claw-scored limestone and rising threads of aether hint at a deeper subterranean world."
       },
       {
         "id": "embervein_chamber",
@@ -20047,7 +20047,7 @@
         ],
         [
           2060,
-          300
+          360
         ]
       ],
       "reflecting_loop": [
@@ -20288,7 +20288,7 @@
       ],
       "echo_chamber": [
         2060,
-        300
+        360
       ],
       "embervein_chamber": [
         768,
@@ -20497,13 +20497,13 @@
       "id": "echo_chamber",
       "center": [
         2060,
-        300
+        360
       ],
       "bounds": [
-        1870,
-        190,
-        380,
-        220
+        1920,
+        328,
+        300,
+        120
       ],
       "status": "story_boss",
       "enemy_id": "vespermaw",
@@ -20637,6 +20637,37 @@
         "radius": 30,
         "label": "Take in the quiet ledge",
         "text": "A sheltered ledge before the chamber. We should make sure we are ready before going farther."
+      },
+      {
+        "id": "echo_rupture",
+        "position": [
+          2070,
+          320
+        ],
+        "approach": [
+          2070,
+          344
+        ],
+        "radius": 30,
+        "label": "Examine the rupture",
+        "text": "Aether rises from the newly broken floor. There is no safe route down.",
+        "dialogue": [
+          {
+            "speaker": "mira",
+            "text": "Those marks go all the way up the rock. Something climbed out."
+          },
+          {
+            "speaker": "caelan",
+            "text": "I can feel aether rising from below."
+          },
+          {
+            "speaker": "mira",
+            "text": "We’d need proper equipment to get down there."
+          }
+        ],
+        "requires_party": [
+          "mira"
+        ]
       }
     ],
     "traversal_checks": {
@@ -20955,6 +20986,13 @@
             1710,
             570
           ]
+        },
+        {
+          "id": "echo_rupture",
+          "position": [
+            2084,
+            230
+          ]
         }
       ],
       "ramp_checks": {
@@ -21037,15 +21075,38 @@
           "width": 72
         }
       ]
+    },
+    "chasm": {
+      "id": "echo_rupture",
+      "position": [
+        1940,
+        144
+      ],
+      "bounds": [
+        1940,
+        144,
+        288,
+        174
+      ],
+      "manifest": "assets/terrain/limestone_cave/chasm/assets.json",
+      "safe_landing": [
+        2060,
+        360
+      ],
+      "aether_period_ms": 12000,
+      "descendable": false
     }
   },
   "build": {
     "tool": "tools/build_continuous_sanctuary_cave.py",
     "source_recipe": "assets/source/maps/sanctuary_cave/recipe.json",
     "source_sha256": {
-      "assets/source/maps/sanctuary_cave/recipe.json": "94dc6491534d36e8bc62ee8a2158a631adb02877ac78821e038af496534cbfbe",
+      "assets/source/maps/sanctuary_cave/recipe.json": "fecd9d4156f876475ff29d3044460a05e3aceff97f76f16074427efdb3eb83b8",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
+      "assets/terrain/limestone_cave/chasm/assets.json": "10bbb3814c288ea6c24156be449450b96ed0ec005aac2ff336ecab60a626c3f5",
+      "assets/terrain/limestone_cave/chasm/collision.png": "69367bb2356d85f6e936d072c945b1a5ba65626988c115bdeeea11151c89ebaa",
+      "assets/terrain/limestone_cave/chasm/rupture.png": "b76b133e993cec70807324198d8ea788768e54e22fb8fb16697af7aae6e8ee39",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/0.png": "7f1cf649fe0a3df6947f50505c58b82af6e6bc83e1656ad032e63af5b7e4ca21",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",

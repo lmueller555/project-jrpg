@@ -1,0 +1,42 @@
+{
+  "scope": "Disposable visual fixtures using production world and BattleScene renderers. No played encounter or quest completion is claimed.",
+  "exploration_times_ms": [
+    0,
+    500,
+    1000,
+    1500,
+    2000,
+    2500,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    8500,
+    9000,
+    9500,
+    10000,
+    10500,
+    11000,
+    11500
+  ],
+  "camera": [
+    1844,
+    110
+  ],
+  "persistent_save_enabled": false,
+  "battle_fixture": "Level-seven Vespermaw, two member display fixture",
+  "fingerprints": {
+    "assets/maps/sanctuary_cave/map.json": "0c9df3ed7d9e7441ca7864bbac9cea02c7c969e0476cf033a406306083d3a595",
+    "assets/combat/cave_echo_chamber/battlefield.json": "37df1af4ed8df6ff00d630b8cc6b00001c9ac07b4b2860cd7e285f23e8f3b5a9",
+    "cave_chasm_fx.py": "bdf3c5206001d327b8f8e6664e700d80ad59c6e6ecc134e4e79306ad59c27b4d",
+    "sanctuary_boss_entry.py": "b80744a1c703029168003ffcf9046ba6d85b334aaef05419295df28395c86313",
+    "tools/capture_echo_chasm.py": "557374b1e01c094956c0d91130d30f695b8ec753c3b4394ca3d7fd792858eadb"
+  }
+}

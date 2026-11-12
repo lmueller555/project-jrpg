@@ -35,7 +35,7 @@ DURATIONS = {'river':4., 'sack':.42, 'rustle':.45,
              'creak':.65, 'stone':.24, 'cup':.22,
              'leaves':.48, 'basket':.32,
              'sheep':.55, 'bird':.22, 'wings':.30,
-             'crystal':6., 'spring':4.}
+             'crystal':6., 'spring':4., 'chasm':6.}
 
 
 def samples(name, rate, channels):
@@ -43,7 +43,7 @@ def samples(name, rate, channels):
     rng = random.Random(9182)
     duration = DURATIONS[name]; count = round(rate*duration)
     values = []; low = 0.
-    looped = name in ('river', 'crystal', 'spring')
+    looped = name in ('river', 'crystal', 'spring', 'chasm')
     fade = round(rate*.08) if looped else 0
     for i in range(count+fade):
         t = i/rate; white = rng.uniform(-1,1)
@@ -59,6 +59,11 @@ def samples(name, rate, channels):
             v = swell*(.032*math.sin(2*math.pi*422*t)
                        +.018*math.sin(2*math.pi*633*t)
                        +.009*math.sin(2*math.pi*1055*t))
+        elif name == 'chasm':
+            # Subterranean air and a distant confluence resonance, with no sting.
+            swell=.78+.22*math.sin(math.pi*t/duration)**2
+            v=swell*(low*.09+white*.006+.023*math.sin(2*math.pi*65*t)
+                     +.012*math.sin(2*math.pi*130*t)+.006*math.sin(2*math.pi*260*t))
         elif name == 'spring':
             # Close, small water: less low rumble than the regional river.
             swell = .82+.18*math.sin(2*math.pi*t/duration)**2
@@ -128,12 +133,14 @@ class RegionalAudio:
     def enabled(self):
         g = self.game
         reserve = getattr(g.world, 'is_sanctuary_reserve', False)
-        return ((g.overworld_travel.active or reserve) and not g.on_title and not g.opening_cinematic.active
+        cave = getattr(g.world, 'is_sanctuary_cave', False)
+        return ((g.overworld_travel.active or reserve or cave) and not g.on_title and not g.opening_cinematic.active
                 and not g.regent_arrival.active and g.regent_arrival.state != 'pending'
                 and not g.combat.active and not g.pause.is_open and not g.inventory_ui.is_open
                 and not g.world_map_viewer.is_open and not g.map_open and not g.quest_ui.journal_open
                 and not getattr(getattr(g,'party_ui',None),'is_open',False)
                 and not getattr(g,'on_gallery',False) and getattr(g,'gallery_session',None) is None
+                and (not cave or not g.social.locked and not getattr(g.status_ui,'is_open',False))
                 and g._music_focused and g.audio.effects_volume > 0)
 
     def _notify(self, action, key, **data):
@@ -234,6 +241,12 @@ class RegionalAudio:
             self.play(source)
 
     def ambient_sources(self):
+        if getattr(self.game.world,'is_sanctuary_cave',False):
+            chasm=self.game.world.data.get('cave',{}).get('chasm')
+            if chasm:
+                x,y,w,h=chasm['bounds']
+                yield Source('cave.echo_rupture','chasm','aether',(x+w/2,y+h/2),.28,90,350,1,True)
+            return
         if getattr(self.game.world,'is_sanctuary_reserve',False):
             effects=self.game.world.data.get('fantasy_effects',{})
             for index,record in enumerate(effects.get('crystals',[])):

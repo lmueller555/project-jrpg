@@ -104,7 +104,8 @@ class CaveAssetTests(unittest.TestCase):
         self.assertEqual((arena['enemy_id'], arena['level']), ('vespermaw', 7))
         x, y, width, height = arena['bounds']
         self.assertGreaterEqual(width, 300)
-        self.assertGreaterEqual(height, 180)
+        # The rear rupture reserves its own floor; the foreground remains clear.
+        self.assertGreaterEqual(height, 120)
         for px in range(x+12, x+width-11, 12):
             for py in range(y+6, y+height-5, 12):
                 self.assertTrue(self.world.can_stand((px, py)), ('arena', px, py))

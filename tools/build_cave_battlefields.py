@@ -11,12 +11,15 @@ from hashlib import sha256
 from io import BytesIO
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
+from cave_chasm_fx import strands
 SOURCE = ROOT/'assets/source/combat/cave_battlefields/recipe.json'
 SIZE = (480, 320)
 FRAME_COUNT = 24
@@ -130,6 +133,15 @@ def products():
         for item in field.get('placements', []):
             if not item.get('animated'):
                 placed.append(placement(ground, item))
+        chasm = field.get('chasm')
+        if chasm:
+            path = ROOT/chasm['manifest'];used.add(path)
+            pack = json.loads(path.read_text())
+            image = opened(pack['composition']['file']).resize(tuple(chasm['size']),Image.Resampling.NEAREST)
+            ground.alpha_composite(image,tuple(chasm['position']))
+            used.add(ROOT/'cave_chasm_fx.py')
+        frame_count = field.get('frame_count',FRAME_COUNT)
+        if frame_count not in (24,48):raise ValueError('Invalid battlefield cycle length')
         # All opaque scenery ends above the arena, apart from harmless ground
         # decals. The four enemy slots and three player slots remain clear.
         lighting_mask = np.ones((height, width), dtype=np.float32)
@@ -178,7 +190,7 @@ def products():
                              'crystal_sizes': record['crystal_sizes'], 'core_components': record['core_components'],
                              'light_position': origin, 'radius': radius})
         frames = []
-        for frame in range(FRAME_COUNT):
+        for frame in range(frame_count):
             canvas = static.copy()
             for item in water_records:
                 _, image = module('water', item['module'], frame)
@@ -199,9 +211,20 @@ def products():
                 pulse = .5-.5*math.cos(frame/FRAME_COUNT*math.tau+phase)
                 values += falloff[:, :, None]*color*(.022+.075*pulse)*field.get('light_gain',1.)
                 pulses.append(pulse)
+            if chasm:
+                cx,cy=chasm['position'];cw,ch=chasm['size']
+                falloff=np.clip(1-((xx-(cx+cw/2))/(cw*.65))**2-((yy-(cy+ch*.65))/(ch*.7))**2,0,1)
+                pulse=.85+.15*math.cos(frame*FRAME_MS/12000*math.tau)
+                values += falloff[:,:,None]*np.array((5,13,18))*pulse
             canvas = Image.fromarray(np.rint(np.clip(values, 0, 255)).astype(np.uint8)).convert('RGBA')
             for item, pulse in zip(field['crystals'], pulses):
                 placement(canvas, {'pack': 'micro', **item}, round(pulse*5))
+            if chasm:
+                layer=Image.new('RGBA',SIZE);draw=ImageDraw.Draw(layer)
+                for a,b,color,alpha in strands((*chasm['position'],*chasm['size']),frame*FRAME_MS):
+                    draw.line([a,b],fill=(*color,alpha//5),width=3)
+                    draw.line([a,b],fill=(*color,alpha),width=1)
+                canvas.alpha_composite(layer)
             directory = ROOT/'assets/combat'/field['id']
             name = f'background_{frame:02}.png'
             result[(directory/name).relative_to(ROOT).as_posix()] = encoded(canvas.convert('RGB'))
@@ -217,11 +240,12 @@ def products():
                 'source_room_names': [rooms[name]['name'] for name in field['source_rooms']],
                 'source_position': field['source_position'], 'camera': 'low view toward the rear cave wall',
                 'clear_actor_stage': [24, 145, 432, 77],
-                'animation': {'period_ms': FRAME_COUNT*FRAME_MS,
+                'animation': {'period_ms': frame_count*FRAME_MS,
                               'crystal_colors': sorted({item['color'] for item in crystals}),
                               'microcrystal_count': sum(item['crystal_count'] for item in crystals),
                               'water_tiles': len(water_records), 'pulse': True},
                 'crystals': crystals, 'placed_modules': wall_records+placed,
+                **({'chasm':chasm} if chasm else {}),
                 'build': {'tool': 'tools/build_cave_battlefields.py',
                           'source_recipe': SOURCE.relative_to(ROOT).as_posix(),
                           'source_sha256': provenance}}

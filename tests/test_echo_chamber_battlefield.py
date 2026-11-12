@@ -52,8 +52,8 @@ class EchoChamberBattlefieldTests(unittest.TestCase):
         self.assertEqual(data['source_scene'], 'sanctuary_cave')
         self.assertEqual(data['source_rooms'], ['echo_chamber'])
         self.assertEqual(data['source_room_names'], ['Echo Chamber'])
-        self.assertEqual(data['source_position'], [2060, 300])
-        self.assertEqual(data['animation']['period_ms'], 6000)
+        self.assertEqual(data['source_position'], [2060, 360])
+        self.assertEqual(data['animation']['period_ms'], 12000)
         self.assertEqual(set(data['animation']['crystal_colors']),
                          {'red', 'blue', 'green', 'white', 'orange', 'purple'})
         self.assertGreaterEqual(data['animation']['microcrystal_count'], 50)
@@ -72,11 +72,11 @@ class EchoChamberBattlefieldTests(unittest.TestCase):
     def test_animation_is_cached_varied_looping_and_reduced_motion_is_static(self):
         with patch.object(pygame.image, 'load', wraps=pygame.image.load) as load:
             field = CaveBattlefield(IDENTIFIER)
-            self.assertEqual(load.call_count, 24)
+            self.assertEqual(load.call_count, 48)
             original_loads = load.call_count
-            frames = [pygame.image.tobytes(field.frame(index*250), 'RGB') for index in range(24)]
+            frames = [pygame.image.tobytes(field.frame(index*250), 'RGB') for index in range(48)]
             self.assertGreaterEqual(len(set(frames)), 20)
-            self.assertIs(field.frame(0), field.frame(6000))
+            self.assertIs(field.frame(0), field.frame(12000))
             self.assertIs(field.frame(-100), field.frame(0))
             self.assertIs(field.frame(249), field.frames[0])
             self.assertIs(field.frame(250), field.frames[1])

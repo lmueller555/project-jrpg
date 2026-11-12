@@ -183,6 +183,38 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.game.update(0, (0, 0), False)
         self.assertFalse(owner.active)
 
+    def test_old_pending_boss_position_in_the_new_chasm_resumes_on_intact_floor(self):
+        self.start()
+        data=json.loads(self.path.read_text())
+        data['player']['position']=[2084,230]
+        data['sanctuary_boss']['pending']['position']=[2084,230]
+        seed=data['sanctuary_boss']['pending']['combat_seed']
+        resources=self.resources()
+        self.path.write_text(json.dumps(data))
+        self.game=self.load()
+        self.assertTrue(self.game.combat.active)
+        self.assertEqual(list(self.game.player.position),[2060,360])
+        self.assertEqual(self.game.sanctuary_boss.pending['position'],[2060,360])
+        self.assertEqual(self.game.sanctuary_boss.pending['combat_seed'],seed)
+        self.assertEqual(self.resources(),resources)
+        self.assertTrue(self.game.world.can_stand(self.game.player.position))
+
+    def test_old_awarded_spoils_in_the_new_chasm_preserve_the_existing_grant(self):
+        self.victory(self.start());wait_for_spoils(self.game)
+        data=json.loads(self.path.read_text())
+        data['player']['position']=[2084,230]
+        data['sanctuary_boss']['pending']['position']=[2084,230]
+        data['post_battle']['position']=[2084,230]
+        data['post_battle']['encounter']['position']=[2084,230]
+        self.path.write_text(json.dumps(data))
+        self.game=self.load()
+        self.assertTrue(self.game.combat.active)
+        self.assertEqual(list(self.game.player.position),[2060,360])
+        saved=json.loads(self.path.read_text())
+        for key in ('inventory','character_levels','battle_rewards'):
+            self.assertEqual(saved[key],data[key],key)
+        self.assertTrue(self.game.sanctuary_boss.defeated)
+
     def test_previous_curve_awarded_boss_spoils_preserve_original_exp(self):
         from bestiary import build_enemy
         owner = self.start()

@@ -30,7 +30,31 @@
     "assets/combat/cave_echo_chamber/background_20.png",
     "assets/combat/cave_echo_chamber/background_21.png",
     "assets/combat/cave_echo_chamber/background_22.png",
-    "assets/combat/cave_echo_chamber/background_23.png"
+    "assets/combat/cave_echo_chamber/background_23.png",
+    "assets/combat/cave_echo_chamber/background_24.png",
+    "assets/combat/cave_echo_chamber/background_25.png",
+    "assets/combat/cave_echo_chamber/background_26.png",
+    "assets/combat/cave_echo_chamber/background_27.png",
+    "assets/combat/cave_echo_chamber/background_28.png",
+    "assets/combat/cave_echo_chamber/background_29.png",
+    "assets/combat/cave_echo_chamber/background_30.png",
+    "assets/combat/cave_echo_chamber/background_31.png",
+    "assets/combat/cave_echo_chamber/background_32.png",
+    "assets/combat/cave_echo_chamber/background_33.png",
+    "assets/combat/cave_echo_chamber/background_34.png",
+    "assets/combat/cave_echo_chamber/background_35.png",
+    "assets/combat/cave_echo_chamber/background_36.png",
+    "assets/combat/cave_echo_chamber/background_37.png",
+    "assets/combat/cave_echo_chamber/background_38.png",
+    "assets/combat/cave_echo_chamber/background_39.png",
+    "assets/combat/cave_echo_chamber/background_40.png",
+    "assets/combat/cave_echo_chamber/background_41.png",
+    "assets/combat/cave_echo_chamber/background_42.png",
+    "assets/combat/cave_echo_chamber/background_43.png",
+    "assets/combat/cave_echo_chamber/background_44.png",
+    "assets/combat/cave_echo_chamber/background_45.png",
+    "assets/combat/cave_echo_chamber/background_46.png",
+    "assets/combat/cave_echo_chamber/background_47.png"
   ],
   "frame_duration_ms": 250,
   "reduced_motion_frame": 8,
@@ -44,7 +68,7 @@
   ],
   "source_position": [
     2060,
-    300
+    360
   ],
   "camera": "low view toward the rear cave wall",
   "clear_actor_stage": [
@@ -54,7 +78,7 @@
     77
   ],
   "animation": {
-    "period_ms": 6000,
+    "period_ms": 12000,
     "crystal_colors": [
       "blue",
       "green",
@@ -72,7 +96,7 @@
       "module": "micro.blue.dense",
       "position": [
         3,
-        76
+        23
       ],
       "color": "blue",
       "crystal_count": 40,
@@ -482,7 +506,7 @@
       ],
       "light_position": [
         35,
-        134
+        81
       ],
       "radius": 170
     },
@@ -490,7 +514,7 @@
       "module": "micro.purple.diagonal_left",
       "position": [
         41,
-        40
+        5
       ],
       "color": "purple",
       "crystal_count": 26,
@@ -760,7 +784,7 @@
       ],
       "light_position": [
         77,
-        102
+        67
       ],
       "radius": 170
     },
@@ -768,7 +792,7 @@
       "module": "micro.green.vertical",
       "position": [
         115,
-        55
+        -2
       ],
       "color": "green",
       "crystal_count": 26,
@@ -1038,7 +1062,7 @@
       ],
       "light_position": [
         131,
-        129
+        72
       ],
       "radius": 160
     },
@@ -1046,7 +1070,7 @@
       "module": "micro.white.dense",
       "position": [
         153,
-        26
+        1
       ],
       "color": "white",
       "crystal_count": 40,
@@ -1456,7 +1480,7 @@
       ],
       "light_position": [
         185,
-        84
+        59
       ],
       "radius": 180
     },
@@ -1464,7 +1488,7 @@
       "module": "micro.blue.diagonal_right",
       "position": [
         203,
-        54
+        11
       ],
       "color": "blue",
       "crystal_count": 26,
@@ -1734,7 +1758,7 @@
       ],
       "light_position": [
         239,
-        116
+        73
       ],
       "radius": 180
     },
@@ -1742,7 +1766,7 @@
       "module": "micro.purple.dense",
       "position": [
         259,
-        23
+        -1
       ],
       "color": "purple",
       "crystal_count": 40,
@@ -2152,7 +2176,7 @@
       ],
       "light_position": [
         291,
-        81
+        57
       ],
       "radius": 180
     },
@@ -2160,7 +2184,7 @@
       "module": "micro.orange.sparse",
       "position": [
         313,
-        52
+        10
       ],
       "color": "orange",
       "crystal_count": 10,
@@ -2270,7 +2294,7 @@
       ],
       "light_position": [
         345,
-        114
+        72
       ],
       "radius": 160
     },
@@ -2278,7 +2302,7 @@
       "module": "micro.red.diagonal_right",
       "position": [
         364,
-        27
+        -1
       ],
       "color": "red",
       "crystal_count": 26,
@@ -2548,7 +2572,7 @@
       ],
       "light_position": [
         400,
-        89
+        61
       ],
       "radius": 160
     },
@@ -2556,7 +2580,7 @@
       "module": "micro.blue.vertical",
       "position": [
         438,
-        60
+        7
       ],
       "color": "blue",
       "crystal_count": 26,
@@ -2826,7 +2850,7 @@
       ],
       "light_position": [
         454,
-        134
+        81
       ],
       "radius": 170
     }
@@ -2837,7 +2861,7 @@
       "module": "wall.front.1",
       "position": [
         -2,
-        75
+        15
       ]
     },
     {
@@ -2845,7 +2869,7 @@
       "module": "wall.front.2",
       "position": [
         92,
-        66
+        6
       ]
     },
     {
@@ -2853,7 +2877,7 @@
       "module": "wall.front.3",
       "position": [
         186,
-        58
+        -2
       ]
     },
     {
@@ -2861,7 +2885,7 @@
       "module": "wall.front.4",
       "position": [
         280,
-        58
+        -2
       ]
     },
     {
@@ -2869,7 +2893,7 @@
       "module": "wall.front.5",
       "position": [
         374,
-        66
+        6
       ]
     },
     {
@@ -2877,7 +2901,7 @@
       "module": "wall.front.0",
       "position": [
         468,
-        75
+        15
       ]
     },
     {
@@ -2945,7 +2969,7 @@
       "module": "mineral.crust.1",
       "position": [
         108,
-        131
+        71
       ],
       "scale": 1,
       "source_frames": [
@@ -2957,7 +2981,7 @@
       "module": "mineral.crust.2",
       "position": [
         373,
-        132
+        72
       ],
       "scale": 1,
       "source_frames": [
@@ -2969,7 +2993,7 @@
       "module": "stain.damp.1",
       "position": [
         241,
-        133
+        73
       ],
       "scale": 1,
       "source_frames": [
@@ -3001,13 +3025,26 @@
       ]
     }
   ],
+  "chasm": {
+    "position": [
+      135,
+      74
+    ],
+    "size": [
+      210,
+      66
+    ],
+    "manifest": "assets/terrain/limestone_cave/chasm/assets.json"
+  },
   "build": {
     "tool": "tools/build_cave_battlefields.py",
     "source_recipe": "assets/source/combat/cave_battlefields/recipe.json",
     "source_sha256": {
-      "assets/maps/sanctuary_cave/map.json": "a33e7206e1e87f47ae60b3c275d1f8945263aef79863bbdbad3c9a51f3aca3f9",
-      "assets/source/combat/cave_battlefields/recipe.json": "28ce3f1b5c369cf64a748cfe4fee638bdaae83aef78f6b5c089585778e879bbe",
+      "assets/maps/sanctuary_cave/map.json": "0c9df3ed7d9e7441ca7864bbac9cea02c7c969e0476cf033a406306083d3a595",
+      "assets/source/combat/cave_battlefields/recipe.json": "23d9b3e6c05e69e3ca661300a793574ea45672ca1f69cbc99fcabb8c1e29ca1d",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
+      "assets/terrain/limestone_cave/chasm/assets.json": "10bbb3814c288ea6c24156be449450b96ed0ec005aac2ff336ecab60a626c3f5",
+      "assets/terrain/limestone_cave/chasm/rupture.png": "b76b133e993cec70807324198d8ea788768e54e22fb8fb16697af7aae6e8ee39",
       "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",
       "assets/terrain/limestone_cave/geology/modules/crack/branching/2.png": "61edb7ba07c43352921144e74a1972e7a0eaa8ff4c40dc2c0e0eb5f0a87d4950",
@@ -3288,7 +3325,8 @@
       "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_03.png": "af34a26d52a045c73078663ca809bcad8c622b5098923f5b80743080aca613f8",
       "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_04.png": "9879b58900e366b3902738b6875cee94436a0c30c24c6598a33f28a04a2142de",
       "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_05.png": "266a11345a3960855c26172fd8310d9813dfab6bee1b0a51852eb539c6e41721",
-      "tools/build_cave_battlefields.py": "4f72f2b7b25bd1245d9d8f53fb6f3e170c40713870717f2dca093b8e89f0a1d4"
+      "cave_chasm_fx.py": "bdf3c5206001d327b8f8e6664e700d80ad59c6e6ecc134e4e79306ad59c27b4d",
+      "tools/build_cave_battlefields.py": "3c54bda01e3ce2c9e8831d13cbf43a995893b380becb1a02a1bbdb99384715cf"
     }
   }
 }

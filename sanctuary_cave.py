@@ -119,12 +119,16 @@ class SanctuaryCave:
         for world in getattr(self.game, 'scenes', {}).values():self._sync_world(world)
 
     def update(self, seconds=0):
-        if self.active:self._sync_world(self.game.world)
+        if self.active:
+            self._sync_world(self.game.world)
+            if self._available() and getattr(self.game,'_music_focused',True):
+                self.game.world.chasm_elapsed_ms = getattr(self.game.world,'chasm_elapsed_ms',0.)+max(0.,seconds)*1000
 
     def _available(self):
         g = self.game
         return (not g.on_title and not g.social.locked and not g.pause.is_open
                 and not g.inventory_ui.is_open and not g.party_ui.is_open
+                and not getattr(getattr(g,'status_ui',None),'is_open',False)
                 and not g.world_map_viewer.is_open and not g.map_open
                 and not g.quest_ui.journal_open and not g.combat.active
                 and not g.transfer_cooldown and not g.opening_fade
@@ -210,4 +214,41 @@ class SanctuaryCave:
         kind, record = nearby
         if kind == 'link':return self._travel(record)
         if kind == 'treasure':return self._open(record)
+        present=getattr(getattr(self.game,'party',None),'active_ids',())
+        if 'dialogue' in record and all(key in present for key in record.get('requires_party',())):
+            self.game.player.moving = False
+            return self.game.social.start_script(record['dialogue'], identifier='sanctuary_cave_'+record['id'])
         return self._say(record['text'], record['id'])
+
+
+def migrate_chasm_checkpoint(data, metadata=None):
+    """Relocate only checkpoints covered by the newly authored Echo rupture.
+
+    Matching encounter coordinates move together so pending boss/reward records
+    remain valid. Resources, rewards, seeds and story facts are never rewritten.
+    The returned copy still passes the ordinary save validators before use.
+    """
+    player=data.get('player') if isinstance(data,dict) else None
+    if not isinstance(player,dict) or player.get('scene')!=SCENE_ID:return data
+    position=player.get('position')
+    if (not isinstance(position,list) or len(position)!=2
+            or any(type(n) not in (int,float) or abs(n)>=1e7 or not math.isfinite(n) for n in position)):return data
+    metadata=metadata or json.loads(SCENE_FILES[SCENE_ID].read_text())
+    chasm=metadata.get('cave',{}).get('chasm')
+    if not chasm:return data
+    probe=pygame.Rect(round(position[0])-12,round(position[1])-6,24,12)
+    if not pygame.Rect(chasm['bounds']).inflate(12,12).colliderect(probe):return data
+    collision=pygame.image.load(str(ROOT/metadata['collision']))
+    if not any(collision.get_at((x,y)).r for y in range(probe.top,probe.bottom)
+               for x in range(probe.left,probe.right)):return data
+    landing=list(chasm['safe_landing'])
+    result=deepcopy(data);result['player']['position']=landing
+    owners=[result[key].get('pending') for key in ('sanctuary_boss','cave_random_encounters')
+            if isinstance(result.get(key),dict)]
+    post=result.get('post_battle')
+    if isinstance(post,dict) and post.get('kind') in ('cave','cave_boss'):
+        owners += [post,post.get('encounter')]
+    for record in owners:
+        if isinstance(record,dict) and record.get('scene')==SCENE_ID and record.get('position')==position:
+            record['position']=list(landing)
+    return result

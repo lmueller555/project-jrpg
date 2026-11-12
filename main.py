@@ -62,7 +62,7 @@ from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
-from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave
+from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave, migrate_chasm_checkpoint
 from cave_random_encounters import CaveRandomEncounters
 from cave_lesson import CaveLesson
 from sanctuary_boss import SanctuaryBoss
@@ -712,7 +712,8 @@ class Game:
             self.save_error=self.save_store.error
             return None
         try:
-            data=migrate_mira_rig(migrate_legacy_cave(migrate_retired_progression(data)))
+            data=migrate_legacy_cave(migrate_retired_progression(data))
+            data=migrate_mira_rig(migrate_chasm_checkpoint(data))
         except (TypeError, ValueError, OSError, KeyError):
             self.save_error='The saved journey could not be read.'
             return None

@@ -183,6 +183,7 @@ class SanctuaryCaveWorld(World):
 
     def __init__(self, path, image_cache=None):
         super().__init__(path, image_cache)
+        self.chasm_elapsed_ms = 0.
         self.lighting = CaveLighting(self)
         self.lighting.prewarm()
         self._crystals = []
@@ -225,7 +226,7 @@ class SanctuaryCaveWorld(World):
                 return nearest['name']
         return self.data['name']
 
-    def draw(self, target, camera, player, elapsed_ms, include_ui=True, party_actors=()):
+    def draw(self, target, camera, player, elapsed_ms, include_ui=True, party_actors=(), effect_time_ms=None):
         emissions = []
         for record, frames, index, masks in self._crystals:
             source = self.lighting.sources[index]
@@ -237,4 +238,9 @@ class SanctuaryCaveWorld(World):
         super().draw(target, camera, player, elapsed_ms, False, party_actors=party_actors)
         self.lighting.apply(target, camera, elapsed_ms, reduced_motion=self.reduced_motion,
                             emissions=emissions)
-
+        chasm = self.data.get('cave', {}).get('chasm')
+        if chasm:
+            from cave_chasm_fx import draw_aether
+            draw_aether(target, camera, chasm['bounds'],
+                        self.chasm_elapsed_ms if effect_time_ms is None else effect_time_ms,
+                        self.reduced_motion)
