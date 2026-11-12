@@ -18,7 +18,11 @@ and combat rules; additional gears remain future work.
    successful strike costs 4 MP and learns Aether Edge at impact.
 3. On entering the Sanctuary cave with the blade, Caelan notices stronger
    ambient aether. The Blue gem glows, and he wonders if he can focus Aqua Edge
-   here. This short, acknowledged scene is saved independently of the skill.
+   here. In the same condensed entry exchange, he quietly asks Mira whether
+   his missing parents could be in the confluence. She admits wondering about
+   her own parents and offers no certainty. Lucan then tells them to keep
+   moving. This is one acknowledged scene, saved independently of the skill;
+   it adds no separate interruption after the first bat encounter.
 4. The existing **16–36-tile** encounter countdown selects **two level-two Cave
    Bats** for the first fight. The player chooses Skills → Aqua Edge and a foe.
    Enemy, Mira actions wait until that first successful cast. It
@@ -80,6 +84,12 @@ cannot substitute for one another.
 in the character ability owner. The random encounter ticket identifies the
 lesson with `lesson: "aqua_edge"`, and fixes the pair, levels, combat seed,
 battlefield, receipt and return position before combat loads.
+
+The entry resonance and private parental-loss exchange share the existing
+`cave_blue_resonance` script and its `resonance_seen` acknowledgment. Returning
+to the cave does not replay either half. The conversation does not teach Aqua
+Edge, confirm Caelan's parents' deaths, or establish recognizable spirits in
+the cave. See [MQ03 S10](narrative/game_01/CH01_MQ03.md#s10--cave-entry-resonance-and-private-confidence).
 
 A successful discovery checkpoints its learned skill and current party
 resources together. A failed write rolls both back and retries the checkpoint;

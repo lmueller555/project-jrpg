@@ -38,6 +38,11 @@ class CaveLesson:
     def glowing(self):
         return self._glowing and self.active and self.game.social.script_identifier == SCRIPT_ID
 
+    @property
+    def blade_presented(self):
+        page = getattr(self.game.social, 'page', None) or {}
+        return self.glowing and page.get('source_line', 0) < 3
+
     @staticmethod
     def is_intro(ticket):
         return isinstance(ticket,dict) and ticket.get('lesson') == 'aqua_edge'
@@ -165,6 +170,7 @@ class CaveLesson:
     def _resonance_complete(self):
         self._glowing = False
         self.release_pose()
+        self.game.player.facing = 'back'
         before = self.resonance_seen
         self.resonance_seen = True
         if not self._checkpoint():self.resonance_seen = before
@@ -177,9 +183,27 @@ class CaveLesson:
             {'speaker':'caelan','text':'The Aether is so much stronger in here…'},
             {'speaker':'caelan','text':'My blade—the blue gem is glowing. It is answering the Aether in the walls.'},
             {'speaker':'caelan','text':'Maybe I can focus it better here. I should try Aqua Edge again.'},
+            {'speaker':'caelan','text':'Mira… do you think they could be here?'},
+            {'speaker':'mira','text':'Who?'},
+            {'speaker':'caelan','text':'My parents. Somewhere in all this aether.'},
+            {'speaker':'caelan','text':'I know we came for—'},
+            {'speaker':'mira','text':'I know. I’ve wondered the same thing about mine.'},
+            {'speaker':'caelan','text':'…Have you?'},
+            {'speaker':'mira','text':'I wish I knew.'},
+            {'speaker':'lucan','text':'Keep moving. Stay close.'},
         ], on_complete=self._resonance_complete, identifier=SCRIPT_ID)
         if opened:
             self._glowing = True;self._elapsed = 0.
+            travel = getattr(g, 'party_travel', None)
+            if travel is not None:
+                # Use checked passive actors, rather than duplicating story NPCs.
+                active = travel._active()
+                if active and set(active) <= {'mira', 'lucan'}:
+                    positions = {'mira':g.player.position+pygame.Vector2(-24,0),
+                                 'lucan':g.player.position+pygame.Vector2(24,24)}
+                    travel.stage_companions({key:tuple(positions[key]) for key in active},
+                                            {key:('right' if key == 'mira' else 'back')
+                                             for key in active})
             self._stage_pose()
         return opened
 
@@ -226,6 +250,10 @@ class CaveLesson:
     def update(self, seconds=0):
         if self.glowing:
             self._elapsed += max(0.,seconds)
+            if not self.blade_presented:
+                self.release_pose()
+                page = self.game.social.page or {}
+                self.game.player.facing = 'back' if page.get('source_line') == 10 else 'left'
             return False
         self._glowing = False
         self.release_pose()
@@ -236,7 +264,7 @@ class CaveLesson:
 
     def draw_world(self, target, camera):
         """A bounded blue glimmer on the blade during the confluence exchange."""
-        if not self.glowing:return
+        if not self.blade_presented:return
         point = self.game.player.position-pygame.Vector2(camera)
         # Registered .9s world drawing: foot(20,38), focus(27,23), tip(34,15).
         hand = point+pygame.Vector2(7,-15)

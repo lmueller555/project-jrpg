@@ -269,7 +269,7 @@ her loss. Grief does not eliminate competence, humor or a future she can want.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Personal secrets | No secret about the deaths or her family has been established | Open |
-| Disclosure | Halden knows about the loss and recognizes her continuing grief. Caelan shares an understanding of growing up without their parents; specific details discussed between the friends and when the player learns her personal history remain undecided. | Established / Open |
+| Disclosure | Halden knows about the loss and recognizes her continuing grief. At the MQ03 cave entrance, Mira admits that she too has wondered whether her parents could be in the confluence, answering Caelan's private question about his own. Detailed personal history and further disclosures remain undecided. | Established / Open |
 | Shared past with Caelan | Several shared childhood memories exist at the opening. The player learns about them later throughout the game; their specific content, timing and presentation remain unassigned. | Established history and disclosure intent / Open details |
 | Caelan's parents | The shared connection does not establish that she knows they are alive; her knowledge of their survival or whereabouts remains unassigned | Open |
 | Knowledge limits | Bereavement does not give her answers about souls, resurrection or hidden cosmic history | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |

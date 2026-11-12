@@ -172,6 +172,36 @@ class AquaProgressionGameplayTests(unittest.TestCase):
         self.assertTrue(restored.cave_lesson.to_dict()['resonance_seen'])
         self.assertNotIn('aqua_edge', restored.character_abilities.known_abilities())
 
+    def test_entry_confidence_shares_resonance_lock_and_stows_blade(self):
+        game = self.game
+        lesson = self.enter_cave(read=False)
+        self.assertEqual({actor.identifier for actor in game.party_travel.actors()},
+                         {'mira', 'lucan'})
+        self.assertTrue(lesson.blade_presented)
+        self.assertTrue(hasattr(game.player, 'story_sprite'))
+        speakers = []
+        lines = {}
+        for _ in range(100):
+            if not game.social.locked:break
+            page = game.social.page
+            source = page['source_line']
+            if source not in lines:
+                speakers.append(page['speaker'])
+                lines[source] = True
+            self.assertTrue(lesson.locks_player)
+            self.assertFalse(game.combat.active)
+            if source >= 3:
+                self.assertFalse(lesson.blade_presented)
+                self.assertFalse(hasattr(game.player, 'story_sprite'))
+            key(game, pygame.K_SPACE)
+            game.update(.05, (1, 0), False)
+        else:self.fail('Cave entry did not finish')
+        self.assertEqual(speakers, ['caelan']*4+['mira']+['caelan']*2+
+                         ['mira', 'caelan', 'mira', 'lucan'])
+        self.assertTrue(lesson.resonance_seen)
+        self.assertFalse(lesson.locks_player)
+        self.assertFalse(hasattr(game.player, 'story_sprite'))
+
     def test_zero_mp_first_cast_unlocks_and_continue_retains_same_pending_bats(self):
         self.game.attributes.set_current(mp=0)
         self.enter_cave()
