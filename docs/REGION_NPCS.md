@@ -1,5 +1,12 @@
 # Elden Vale NPC sprites and routine animation
 
+Character–object work follows the mandatory
+[global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
+[personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,
+contact timings, and captures below describe the current implementation.
+Natural proportions and readable intent take priority over exact hand contact;
+a small, deliberate transfer snap is acceptable.
+
 The opening overworld contains ten human NPCs: the loader and coworker at the western
 grain farm, the mason and surveyor at the ruined western crossing, and two road
 guards at each of the northern and southern checkpoints, plus the kitchen
@@ -53,7 +60,9 @@ Stones stay in the source pile through the full lift and remain held through
 placement, snapping only when each action completes. Cup pickups, supported
 set-downs and handoffs likewise change ownership only after the action completes;
 the stone wait, retrieval and tray placement are separate actions.
-Ordinary carrying, drinking and tool motion retain their painted hand contacts.
+Ordinary carrying, drinking and tool motion retain their authored action and
+holding positions. Existing painted contacts are local registrations; exact
+pixel contact is optional when the action remains believable.
 The mason steps
 into reachable placement and receiving stations; the cup has one owner and one
 visible location through the shaky-stone, steady-tray and handoff sequence.
@@ -74,10 +83,12 @@ set-down they stay in the worker's hand until the animation finishes, then snap
 to the destination. Pickup and placement sounds occur at that same boundary.
 Filling, watering, admiring fruit and ordinary carry motion remain animated.
 
-All held props use regional depth sorting: behind the body when facing away,
-in front otherwise. The body's actual opaque pixels obscure the prop; portions
-outside the silhouette remain visible. Deposited produce remains visible over
-its receiving basket. The sheep-care basket's collision footprint changes with
+All held props use regional depth sorting and the actual camera view. Rear
+views place the prop behind the body's opaque silhouette; exposed portions
+remain visible. Front, side, and oblique views use the appropriate near/far
+arm and object layers, as required by the global standard. Placement must respect
+the receiving basket's support and rim depth. The sheep-care basket's collision
+footprint changes with
 its completed pickup or placement, not when the animation begins.
 
 `tests/test_regional_prop_transfers.py` checks action boundaries, save/Continue,

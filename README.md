@@ -8,6 +8,11 @@ woodland ground, with leg-height grass that parts around travelling characters.
 The separate [playable material study](docs/GRASS_DEMO.md) remains available with
 `python tools/preview_grass.py` and uses no journey or settings file.
 
+Character animation, scene staging, and prop rendering must follow the
+[global object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md).
+Contributor instructions are in [AGENTS.md](AGENTS.md); personal equipment
+visibility is covered by the [prop policy](docs/PERSONAL_PROPS.md).
+
 ## Music files
 
 Add your music files to [`assets/music/`](assets/music/). The folder's README

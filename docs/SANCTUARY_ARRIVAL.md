@@ -1,5 +1,12 @@
 # Sanctuary arrival: MQ03 emergency response
 
+Character–object work follows the mandatory
+[global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
+[personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,
+contact timings, and captures below describe the current implementation.
+Natural proportions and readable intent take priority over exact hand contact;
+a small, deliberate transfer snap is acceptable.
+
 The arrival scene plays in the live Elden Vale Sanctuary reserve after the
 acknowledged survivor report, Mira's rejoining and the actual road journey.
 Its source is [`scene.json`](../assets/story/sanctuary_arrival/scene.json).
@@ -152,11 +159,11 @@ have short optional replies; the gardener and cave observations select context
 from the actual arrival/quest state, without inventing a renewed sighting or a
 rescue resolution. Gallery instructions identify P as pause and Escape as exit.
 
-### Global personal-prop presentation
+### Personal props in this scene
 
-Personal weapons, tools and kits are visible only for authored use actions.
-When use ends, hide them before ordinary travel, independently of equipment or
-inventory ownership. Caelan's blade is shown only during its explicit MQ03
-scabbard cue, never as an equipment-dependent travel overlay. Deposited world
-objects remain fixed; gameplay transport objectives retain their authored carry
-animations. This visual rule grants no items, healing or quest progress.
+The [global interaction standard](OBJECT_INTERACTION_STANDARD.md) and
+[visibility policy](PERSONAL_PROPS.md) govern this scene. Mira's retrieved kit
+is hidden before travel, while deposited linen remains at its world station.
+Caelan's separate weapon overlay belongs to the authored MQ03 scabbard cue.
+The documented rope and forearm grip coordinates are existing registrations;
+they do not require future actions to force exact contact or extend limbs.

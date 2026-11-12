@@ -1,5 +1,12 @@
 # Mira and the mill quest
 
+Character–object work follows the mandatory
+[global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
+[personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,
+contact timings, and captures below describe the current implementation.
+Natural proportions and readable intent take priority over exact hand contact;
+a small, deliberate transfer snap is acceptable.
+
 MQ02 now ends with Caelan returning to help Serene and Tomas inside the
 sanctuary dining room. Halden's acknowledged mill report records the repair
 and releases Mira to her workshop, while the quest remains active. After the
@@ -77,7 +84,7 @@ The town trail prompt sits at the northern road boundary, beyond the terrace sta
 
 Inspect the mechanism beside the visible wheel and the millrace beside its channel. At the intake, approach the visible screen, bypass handle, water recess and repair lever; the **E** hint appears beside each object. After repairs, inspect the same wheel, then speak with the actual Halden and Mira nearby. The new final conversation is beside Serene inside the sanctuary dining room; matching coordinates outside cannot trigger it. The request and birthday presentation remain beside Mira at her outdoor workbench; encouragement follows Mira rather than an abandoned spell position.
 
-Object interactions measure the gap between Caelan’s ground footprint and the object’s visible bounds, within 20 native pixels. The wheel reads its approved artwork metadata; intake controls read their rendered alpha bounds. Work stations are separate from interaction areas: Caelan walks around solid props into the existing action positions, preserving Mira’s hand contacts and the rope alignment. The corrected layout and both trail endpoints are reproduced by `tools/build_mill_quest.py`.
+Object interactions measure the gap between Caelan’s ground footprint and the object’s visible bounds, within 20 native pixels. The wheel reads its approved artwork metadata; intake controls read their rendered alpha bounds. Work stations are separate from interaction areas: Caelan walks around solid props into the existing action positions, retaining the authored work poses and rope registration. These existing contact coordinates are scene-specific; the global standard permits a small transfer snap and does not require pixel-perfect hand contact. The corrected layout and both trail endpoints are reproduced by `tools/build_mill_quest.py`.
 
 ## Ownership
 
@@ -96,7 +103,8 @@ existing actor from MQ01, moved to an explicit resolution station.
 The upstream area uses the existing world loader and a reversible exterior link.
 Its walking banks, channel and intake collision remain consistent while repair
 props change state. The small spell keeps Caelan’s stable stance and normal body proportions while using the gearblade’s blue focus; it does not stretch his limbs or move his planted boots unnaturally. Mira's supporting
-and repair actions remain physically connected to the mechanism.
+and repair actions use their authored mechanism poses. Future changes must
+follow the global standard's approach, facing, proportion, and depth rules.
 
 A single durable mill-restored fact controls the repaired intake, adequate race
 flow, turning wheel and map description. The MQ01 conclusion's stopped-wheel
