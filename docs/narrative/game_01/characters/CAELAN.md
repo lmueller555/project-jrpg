@@ -51,6 +51,13 @@ Although they do not talk about it, they probably think their parents are dead
 by now. This is their likely private belief, not an established death or a
 certainty they have discussed with each other.
 
+**MQ03 disclosure:** On first entering the Sanctuary cave, its concentrated
+aether prompts Caelan to ask Mira quietly whether his parents could be there.
+The question exposes his private grief and uncertainty; it is not proof of
+death or a claim that he can recognize their presence. Mira shares that she has
+wondered about her own parents, before Lucan urges them onward. This moment
+does not establish a conversation about the subject between Caelan and Tomas.
+
 **Still open:** The parents' names and occupations, when and why they went
 missing, the boys' ages at the time, the exact last sighting or reliable news,
 details of the transition into Serene's care, what Serene or others know, and
