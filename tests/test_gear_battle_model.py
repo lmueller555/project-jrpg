@@ -1,10 +1,11 @@
 """Gear focus eligibility and a global charging clock keep battle boundaries."""
 from copy import deepcopy
 import json
+import math
 import random
 import unittest
 
-from battle_model import ACTION_PATH, ENEMY_PATH, BattleModel, ELEMENTAL_EDGE_ATTEMPTS
+from battle_model import ACTION_PATH, ENEMY_PATH, BattleModel, ELEMENTAL_EDGE_ATTEMPTS, EPSILON
 from character_attributes import CharacterAttributes
 from gear_state import DEFAULT_GEM, GEM_COLORS, GEM_NAMES, GEM_ORDER, REQUIRED_GEMS, valid_gem
 from test_aether_edge_battle_model import FixedVariance
@@ -66,7 +67,6 @@ class GearBattleModelTests(unittest.TestCase):
 
     def test_selecting_gems_never_changes_resources_turns_or_unlocks(self):
         model = self.model(learned_abilities=['aether_edge'])
-        self.ready(model)
         before = self.snapshot(model)
         for gem in GEM_ORDER:
             self.assertTrue(model.set_active_gem(gem))
@@ -78,6 +78,81 @@ class GearBattleModelTests(unittest.TestCase):
         shipped = self.model(learned_abilities=list(REQUIRED_GEMS))
         self.assertEqual(shipped.skill_actions(), ['aqua_edge', 'flame_edge', 'ice_edge'])
         self.assertFalse(shipped.choose_action('ice_edge'))
+
+    def test_shared_preparation_window_closes_for_ready_and_action_playback(self):
+        model = self.model(guest_id='mira')
+        model.player.atb = .99
+        self.assertEqual(model.interactable_reason('player'), '')
+        self.assertEqual(model.interactable_reason('mira'), '')
+        self.assertTrue(model.set_active_gem('ice'))
+        model.update(model.charging_boundary_seconds())
+        self.assertEqual(model.ready_actor, 'player')
+        self.assertTrue(model.interactable_reason('player'))
+        self.assertTrue(model.interactable_reason('mira'))
+        self.assertFalse(model.set_active_gem('fire'))
+        self.assertFalse(model.set_rig_allocation(dict(weapons=3, protection=0, support=3)))
+        self.assertTrue(model.choose_action('guard'))
+        self.assertEqual(model.player.atb, 0.)
+        self.assertTrue(model.interactable_reason('player'))
+        self.assertTrue(model.interactable_reason('mira'))
+        self.assertFalse(model.set_active_gem('fire'))
+        model.update(model.current_action.duration)
+        self.assertEqual(model.phase, 'charging')
+        self.assertTrue(model.set_active_gem('fire'))
+        self.assertTrue(model.set_rig_allocation(dict(weapons=3, protection=0, support=3)))
+
+    def test_full_unselected_and_epsilon_ready_gauges_reject_late_callbacks(self):
+        model = self.model(guest_id='mira')
+        for actor_id in ('player', 'mira'):
+            actor = model.combatant(actor_id)
+            actor.atb = 1-EPSILON/2
+            self.assertTrue(model.interactable_reason(actor_id))
+        self.assertFalse(model.set_active_gem('fire'))
+        self.assertFalse(model.set_rig_allocation(dict(weapons=3, protection=0, support=3)))
+        self.assertEqual(model.active_gem, 'water')
+        self.assertEqual(model.rig_allocation, dict(weapons=2, protection=2, support=2))
+        for actor in model.party:actor.atb=1.
+        model.update(0)
+        self.assertEqual(model.ready_actor, 'player')
+        self.assertTrue(model.select_ready('mira'))
+        self.assertFalse(model.set_active_gem('fire'))
+        self.assertFalse(model.set_rig_allocation(dict(weapons=3, protection=0, support=3)))
+
+    def test_boundary_query_is_read_only_and_uses_enemy_readiness(self):
+        model = self.model(guest_id='mira')
+        model.enemy.atb = .99
+        before = self.snapshot(model)
+        expected = .01/model.atb_rate(model.enemy)
+        self.assertAlmostEqual(model.charging_boundary_seconds(), expected)
+        self.assertAlmostEqual(model.charging_boundary_seconds(.25), expected*4)
+        self.assertTrue(math.isinf(model.charging_boundary_seconds(0)))
+        self.assertEqual(self.snapshot(model), before)
+        model.enemy.atb = 1-EPSILON/2
+        almost_ready = model.charging_boundary_seconds()
+        self.assertGreater(almost_ready, 0.)
+        model.update(almost_ready)
+        self.assertEqual(model.current_action.actor, 'enemy')
+        self.assertTrue(math.isinf(model.charging_boundary_seconds()))
+        model.phase='charging';model.current_action=None
+        model.enemy.atb = 1.
+        self.assertEqual(model.charging_boundary_seconds(), 0.)
+        model.update(0)
+        self.assertEqual(model.current_action.actor, 'enemy')
+        self.assertTrue(math.isinf(model.charging_boundary_seconds()))
+
+    def test_ko_revive_and_absent_members_use_the_same_window(self):
+        model = self.model(guest_id='mira')
+        self.assertTrue(model.interactable_reason('absent'))
+        for member in model.party:
+            hp = member.hp
+            member.hp = 0
+            self.assertTrue(model.interactable_reason(member.identifier))
+            member.hp = hp
+            self.assertEqual(model.interactable_reason(member.identifier), '')
+        model.combatant('mira').atb = 1
+        model.update(0)
+        self.assertTrue(model.interactable_reason('player'))
+        self.assertFalse(model.set_active_gem('fire'))
 
     def test_selector_locks_during_caelan_action_unarmed_ko_and_results(self):
         model = self.model(learned_abilities=['aether_edge'])
@@ -104,27 +179,25 @@ class GearBattleModelTests(unittest.TestCase):
             self.assertFalse(locked.set_active_gem('fire'))
             self.assertEqual(self.snapshot(locked), before)
 
-    def test_settling_blocks_caelan_commands_but_can_commit_and_does_not_block_mira(self):
+    def test_settling_does_not_delay_a_full_gauge_or_allow_a_late_commit(self):
         model = self.model(guest_id='mira', learned_abilities=['aether_edge'])
+        model.gear_settling = True
         model.player.atb = model.combatant('mira').atb = 1
         model.update(0)
-        model.gear_settling = True
+        self.assertFalse(model.gear_settling)
         self.assertTrue(model.gear_busy)
         for command in ('attack', 'aether_edge', 'guard', 'flee'):
-            self.assertEqual(model.action_reason(command), 'The gear is settling.')
-            self.assertFalse(model.choose_action(command))
-        self.assertEqual(model.command_reason('skills'), 'The gear is settling.')
-        self.assertTrue(model.set_active_gem('ice'))
-        self.assertTrue(model.gear_settling)
+            self.assertEqual(model.action_reason(command), '')
+        self.assertEqual(model.command_reason('skills'), '')
+        self.assertFalse(model.set_active_gem('ice'))
         self.assertTrue(model.choose_action('attack', actor_id='mira'))
-        self.assertTrue(model.set_active_gem('fire'))
+        self.assertFalse(model.set_active_gem('fire'))
         self.assertIsNone(model.current_action.active_gem)
         model.update(model.current_action.duration)
-        model.gear_settling = False
         self.assertTrue(model.choose_action('aether_edge', actor_id='player'))
-        self.assertEqual(model.current_action.active_gem, 'fire')
+        self.assertEqual(model.current_action.active_gem, 'water')
 
-    def test_enemy_and_mira_actions_do_not_lock_caelans_selector(self):
+    def test_enemy_and_mira_actions_lock_caelans_selector_until_charging_resumes(self):
         for actor in ('enemy', 'mira'):
             with self.subTest(actor=actor):
                 model = self.model(guest_id='mira')
@@ -132,9 +205,12 @@ class GearBattleModelTests(unittest.TestCase):
                 model.update(0)
                 if actor == 'mira':self.assertTrue(model.choose_action('attack'))
                 self.assertEqual(model.current_action.actor, actor)
+                self.assertFalse(model.gear_available)
+                self.assertFalse(model.set_active_gem('nature'))
+                self.assertIsNone(model.current_action.active_gem)
+                model.update(model.current_action.duration)
                 self.assertTrue(model.gear_available)
                 self.assertTrue(model.set_active_gem('nature'))
-                self.assertIsNone(model.current_action.active_gem)
 
     def test_implemented_elements_require_both_unlock_and_matching_settled_gem(self):
         for identifier, required in REQUIRED_GEMS.items():
@@ -189,15 +265,14 @@ class GearBattleModelTests(unittest.TestCase):
             with self.subTest(initial=initial):
                 model = self.model(enemy_id='ridgeback_tusker', guest_id='mira',
                                    spellblade_tutorial=True, active_gem=initial)
+                self.assertTrue(model.set_active_gem('water'))
+                self.assertFalse(model.set_active_gem('fire'))
                 self.ready(model)
                 self.assertEqual(model.spellblade_stage, 'guard')
                 self.assertTrue(model.choose_action('guard'))
                 self.ready(model)
                 self.assertEqual(model.skill_actions(), ['aqua_edge'])
-                if initial != 'water':
-                    self.assertFalse(model.choose_action('aqua_edge'))
-                self.assertTrue(model.set_active_gem('water'))
-                self.assertFalse(model.set_active_gem('fire'))
+                self.assertFalse(model.set_active_gem('water'))
                 self.assertTrue(model.choose_action('aqua_edge'))
                 model.update(model.current_action.duration)
                 self.assertEqual(model.current_action.action, 'aether_edge')

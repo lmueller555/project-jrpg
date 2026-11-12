@@ -56,12 +56,17 @@ class MiraRigSceneTests(unittest.TestCase):
         self.scene.selected = actions.index(key)
         self.scene._confirm();self.draw()
 
+    def charging(self):
+        self.model.phase = 'charging';self.model.current_action = None
+        for member in (*self.model.party,*self.model.enemies):member.atb = 0.
+        self.scene.update(0);self.draw()
+
     def allocation(self, value):
         self.assertTrue(self.model.set_rig_allocation(value))
         self.draw()
 
     def test_mouse_drafts_do_not_change_model_until_apply_and_failed_apply_keeps_draft(self):
-        self.ready()
+        self.charging()
         self.click(self.scene.rig.buttons[('support', '-')].center)
         self.click(self.scene.rig.buttons[('weapons', '+')].center)
         self.assertEqual(self.model.rig_allocation, dict.fromkeys(('weapons', 'protection', 'support'), 2))
@@ -76,7 +81,7 @@ class MiraRigSceneTests(unittest.TestCase):
         self.assertIsNone(self.model.current_action)
 
     def test_keyboard_focus_esc_cancel_and_actor_switch_do_not_submit_a_combat_action(self):
-        self.ready()
+        self.charging()
         self.key(pygame.K_m);self.assertTrue(self.scene.rig.focused)
         self.key(pygame.K_LEFT);self.key(pygame.K_DOWN);self.key(pygame.K_RIGHT)
         self.key(pygame.K_ESCAPE)
@@ -84,6 +89,7 @@ class MiraRigSceneTests(unittest.TestCase):
         self.assertFalse(self.scene.rig.dirty)
         self.key(pygame.K_m);self.key(pygame.K_LEFT)
         self.model.player.atb = 1.
+        self.scene.update(0)
         self.key(pygame.K_TAB)
         self.assertFalse(self.scene.rig.focused)
         self.assertFalse(self.scene.rig.dirty)
@@ -91,7 +97,7 @@ class MiraRigSceneTests(unittest.TestCase):
         self.assertIsNone(self.model.current_action)
 
     def test_repair_cancel_and_invalid_recipient_keep_mp_then_party_row_confirms_healing(self):
-        self.ready();self.allocation({'weapons': 0, 'protection': 3, 'support': 3})
+        self.allocation({'weapons': 0, 'protection': 3, 'support': 3});self.ready()
         self.model.player.hp = 20
         mira = self.model.combatant('mira');before_mp = mira.mp
         self.command('skills');self.command('repair_pulse')
@@ -129,12 +135,15 @@ class MiraRigSceneTests(unittest.TestCase):
             self.assertIn(key, actions)
         self.assertTrue(self.scene._command_reason('charged_bolt'))
         self.assertFalse(self.scene._command_reason('impact_bolt'))
+        self.assertTrue(self.model.choose_action('guard'))
+        self.scene.update(self.model.current_action.duration)
         self.allocation({'weapons': 3, 'protection': 1, 'support': 2})
+        self.ready();self.command('skills')
         self.assertFalse(self.scene._command_reason('charged_bolt'))
         self.assertTrue(self.scene._command_reason('impact_bolt'))
 
     def test_authored_skill_contact_matches_damage_clock_and_projectile_ends_at_impact(self):
-        self.ready();self.allocation({'weapons': 3, 'protection': 1, 'support': 2})
+        self.allocation({'weapons': 3, 'protection': 1, 'support': 2});self.ready()
         self.assertTrue(self.model.choose_action('charged_bolt'))
         action = self.model.current_action
         self.scene.update(.5)
@@ -152,7 +161,7 @@ class MiraRigSceneTests(unittest.TestCase):
         self.draw()
 
     def test_barrier_display_uses_actual_pool_and_turns_and_clears_on_ko(self):
-        self.ready();self.allocation({'weapons': 0, 'protection': 3, 'support': 3})
+        self.allocation({'weapons': 0, 'protection': 3, 'support': 3});self.ready()
         self.assertTrue(self.model.choose_action('bulwark'))
         action = self.model.current_action
         self.scene.update(action.impact_at);self.draw()

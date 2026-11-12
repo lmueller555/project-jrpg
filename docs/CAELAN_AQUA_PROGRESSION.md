@@ -40,6 +40,13 @@ The isolated water spell during MQ02 remains a world action and does not teach
 Aqua Edge early. Aether Sapphire, Ruby and other inventory materials do not
 install focus gems.
 
+Combat instruction introduces gem preparation while ATB is charging, before
+the command menu. The already seated Blue gem supports both opening lessons;
+neither lesson permits changing focus after Caelan becomes ready. The shared
+[charging-window rule](COMBAT.md#charging-windows-for-character-interactables)
+locks his settled gem through selection and action completion and cancels any
+unfinished edit at the window cutoff.
+
 ## Combat data
 
 | Technique | Physical potency | Magical potency | Magical element | MP |

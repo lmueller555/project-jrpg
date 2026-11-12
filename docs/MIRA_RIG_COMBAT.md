@@ -16,10 +16,21 @@ bonuses in this first gameplay version. Requirements are minimum values.
 The combat panel maintains a draft. Minus releases a unit; plus assigns a free
 unit. Apply commits only nonnegative integer allocations totaling exactly six.
 Cancel discards the draft. Only the applied allocation enables techniques.
-Reconfiguration costs no MP or turn, and does not grant/reset ATB or alter
-an action that has already begun. It is available during ordinary charging
-and Mira's ready command selection; guided lessons, action animations, KO and
-results disable it.
+Reconfiguration costs no MP or turn, and does not grant/reset ATB. It is
+available only while Mira is alive, her own ATB is below full and battle time
+is charging. Once her gauge fills, her last applied allocation stays locked
+through command/target selection and her completed action. ATB resets at action
+start, but the rig does not reopen until the action finishes and charging
+resumes. Any actor's ready menu or action animation pauses the editing window,
+including Vespermaw's free elemental transformation. Guided lessons, KO, pause,
+focus loss and results also disable it. See the shared
+[charging-window rule](COMBAT.md#charging-windows-for-character-interactables).
+
+If the window closes with an unconfirmed draft, discard it and display the last
+applied allocation. A draft never applies automatically next turn. The panel
+remains visible with dimmed controls and a small lock indicator; mouse,
+keyboard and model callbacks enforce the same restriction. Valid configurations
+committed before the cutoff retain their existing persistence behavior.
 
 Use the panel's mouse controls, or **M** to focus it. Left/Right adjusts power,
 Up/Down selects a channel and Enter applies a complete configuration. Tab
@@ -102,8 +113,9 @@ techniques do not recruit Mira or make an unavailable/reserve character combat-r
 ## Tutorials and review
 
 The Boar's Guard → failed Aqua Edge → Aether Edge lesson and the first cave Aqua
-lesson retain their guided control. Mira's rig becomes available after their
-required steps. Combat guidance describes her direct engineering techniques.
+lesson retain their guided control. Mira's rig becomes available in charging
+windows after their required steps; a ready menu is never an editing exception.
+Combat guidance describes her direct engineering techniques.
 Phase three completes the story dialogue, worn-rig exploration and cinematic art,
 and retirement of the autonomous bot backend. See the
 [continuity review](reviews/mira_rig_continuity/README.md).

@@ -228,6 +228,13 @@ class GearWidget:
         return self.dragging or self.settling or self._keyboard_preview
 
     @property
+    def commit_after_seconds(self):
+        """Next commit boundary for the combat simulation's shared clock."""
+        if self._pending_commit is not None:return 0.
+        if not self.settling:return math.inf
+        return max(0., SNAP_SECONDS-self._snap_time)
+
+    @property
     def wheel_rect(self):
         side = max(0, min(self.rect.width, self.rect.height))
         return pygame.Rect(self.rect.centerx - side // 2, self.rect.top, side, side)
@@ -414,6 +421,11 @@ class GearWidget:
             veil = pygame.Surface((48, 48), pygame.SRCALPHA)
             veil.fill((13, 32, 27, 100))
             layer.blit(veil, (0, 0))
+            # One small padlock replaces hover/focus highlights while retaining
+            # the visible committed focus beneath the disabled treatment.
+            pygame.draw.rect(layer, '#c2c7a8', (37, 39, 7, 6))
+            pygame.draw.rect(layer, '#c2c7a8', (38, 35, 5, 6), 1)
+            pygame.draw.line(layer, '#33483b', (40, 41), (40, 43))
         painter.image(layer, wheel)
         if self._burst_remaining > 0 and not self._reduced_motion and enabled:
             self._draw_burst(painter)

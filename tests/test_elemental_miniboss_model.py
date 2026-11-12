@@ -153,7 +153,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
             self.assertEqual(model.action_mp_cost('aether_edge', 'player'), 4)
             self.assertEqual(model.action_mp_cost('arc_discharge', 'mira'), 5)
             for skill, gem in (('aqua_edge', 'water'), ('flame_edge', 'fire'), ('ice_edge', 'ice')):
-                self.ready(model);self.assertTrue(model.set_active_gem(gem))
+                self.assertTrue(model.set_active_gem(gem));self.ready(model)
                 self.assertTrue(model.choose_action(skill))
                 self.assertEqual(model.current_action.choreography, 'aether_edge')
                 self.finish(model)
@@ -174,7 +174,9 @@ class ElementalMinibossModelTests(unittest.TestCase):
             self.assertFalse(unowned.choose_action(skill))
             known = self.model();self.ready(known)
             self.assertFalse(known.choose_action(skill))
-            self.assertTrue(known.set_active_gem(gem))
+            self.assertFalse(known.set_active_gem(gem))
+            self.assertTrue(known.choose_action('guard'));self.finish(known)
+            self.assertTrue(known.set_active_gem(gem));self.ready(known)
             self.assertEqual(known.action_reason(skill), '')
 
     def test_new_edge_component_powers_and_element_tags_are_validated(self):
@@ -190,7 +192,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
                 ('embravyr', 'ice_edge', 'ice', Fraction(3, 2)),
                 ('nivareth', 'aqua_edge', 'water', Fraction(1, 2)),
                 ('nivareth', 'flame_edge', 'fire', 2)):
-            model = self.model(identifier);self.ready(model);model.set_active_gem(gem)
+            model = self.model(identifier);self.assertTrue(model.set_active_gem(gem));self.ready(model)
             self.assertTrue(model.choose_action(skill));action = self.finish(model)
             self.assertEqual(action.damage, physical_damage(model.player, model.enemy)+
                 magical_damage(model.player, model.enemy, .5, affinity=affinity))
@@ -199,9 +201,9 @@ class ElementalMinibossModelTests(unittest.TestCase):
         for identifier in BOSSES:
             model = self.model(identifier)
             model.enemy.hp = 100
-            self.ready(model)
             gem, skill, _ = GEMS[identifier]
-            self.assertTrue(model.set_active_gem(gem));self.assertTrue(model.choose_action(skill))
+            self.assertTrue(model.set_active_gem(gem));self.ready(model)
+            self.assertTrue(model.choose_action(skill))
             physical = physical_damage(model.player, model.enemy)
             healing = magical_damage(model.player, model.enemy, .5)
             self.finish(model)
@@ -253,13 +255,15 @@ class ElementalMinibossModelTests(unittest.TestCase):
         if supplies is None:supplies = Inventory.new_journey()
         model.set_item_inventory(supplies)
         for _ in range(20000):
+            if model.gear_available and identifier != 'embravyr' and 'flame_edge' in known:
+                self.assertTrue(model.set_active_gem('fire'))
             if model.waiting_for_player:
                 actor = model.ready_actor
                 if actor in model.enemy_telegraphs.values():command = 'guard'
                 elif actor == 'player':
                     if identifier == 'embravyr':command = 'aqua_edge'
                     elif 'flame_edge' in known:
-                        model.set_active_gem('fire');command = 'flame_edge'
+                        command = 'flame_edge'
                     elif model.player.mp >= 4:command = 'aether_edge'
                     else:command = 'attack'
                 else:command = 'attack'

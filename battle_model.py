@@ -494,8 +494,8 @@ class BattleModel:
             raise ValueError('Invalid owned gems')
         self.owned_gems = tuple(gem for gem in GEM_ORDER if gem in owned_gems)
         self.active_gem = active_gem
-        # The presentation owns selector motion. It holds this flag while a
-        # focus settles, preventing a command from using an intermediate pose.
+        # Presentation-only selector motion. Readiness cancels unfinished
+        # motion; commands always use the last committed focus without delay.
         self.gear_settling = False
         values = {key: player_attributes.value(key) for key in ATTRIBUTE_IDS}
         if any(not _integer(value, 1 if key == 'hp' else 0, ATTRIBUTE_CAPS[key])
@@ -631,12 +631,25 @@ class BattleModel:
     @property
     def ended(self):return self.phase in RESULT_PHASES
 
+    def interactable_reason(self, actor_id):
+        """Configuration is preparation during actual gauge charging only.
+
+        ATB resets when an action starts, so a sub-full gauge alone cannot
+        authorize editing. Menus and all action playback freeze preparation.
+        """
+        actor = self._party_actor(actor_id)
+        if actor is None:return 'This character is not in the combat party.'
+        if not actor.hp:return actor.name+' is incapacitated.'
+        if self.ended:return 'The battle has ended.'
+        if actor.atb+EPSILON >= 1:return actor.name+' is ready; configuration is locked.'
+        if self.phase != 'charging' or self.current_action is not None:
+            return 'Wait for ATB charging to resume.'
+        return ''
+
     @property
     def gear_available(self):
-        """The selector stays usable through other actors' actions and menus."""
-        return bool(self.weapon_equipped and self.player.hp and not self.ended
-                    and not (self.current_action is not None
-                             and self.current_action.actor == 'player'))
+        """A settled gem can change only inside Caelan's charging window."""
+        return bool(self.weapon_equipped and not self.interactable_reason('player'))
 
     @property
     def gear_busy(self):
@@ -645,8 +658,8 @@ class BattleModel:
     def set_active_gem(self, gem):
         """Commit a settled focus without spending MP, ATB, or teaching skills.
 
-        ``gear_settling`` blocks commands, not this completion callback. The
-        presentation clears its settling flag after committing the final gem.
+        A late animation callback cannot bypass the charging-window cutoff.
+        Settling never extends that cutoff or delays an already ready turn.
         """
         if (not valid_gem(gem) or gem not in self.owned_gems or not self.gear_available
                 or self.lesson_guided and gem != 'water'):return False
@@ -772,10 +785,7 @@ class BattleModel:
         if not mira.hp:return 'Mira is incapacitated.'
         if self.ended:return 'The battle has ended.'
         if self.lesson_guided:return 'Finish the guided action first.'
-        if self.phase == 'acting':return 'Wait for the current action to finish.'
-        if self.phase != 'charging' and not (self.phase == 'ready' and self.ready_actor == 'mira'):
-            return 'Select Mira when she is ready.'
-        return ''
+        return self.interactable_reason('mira')
 
     def set_rig_allocation(self, allocation):
         if not valid_allocation(allocation) or self.rig_reason():return False
@@ -838,8 +848,6 @@ class BattleModel:
         if self.aqua_edge_guided and actor.identifier != 'player':return 'Mira is covering Caelan.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
-        if actor.identifier == 'player' and self.gear_settling:
-            return 'The gear is settling.'
         if actor.identifier == 'player' and not self.weapon_equipped:
             return 'Requires a weapon.'
         if not self.skill_actions(actor.identifier):return 'No skills learned.'
@@ -860,8 +868,6 @@ class BattleModel:
         if self.aqua_edge_guided and actor.identifier != 'player':return 'Mira is covering Caelan.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
-        if actor.identifier == 'player' and self.gear_settling:
-            return 'The gear is settling.'
         if self.spellblade_guided:
             if actor.identifier != 'player':return 'Mira is covering Caelan.'
             expected = ('guard',) if self.spellblade_stage == 'guard' else ELEMENTAL_EDGE_ATTEMPTS
@@ -940,7 +946,6 @@ class BattleModel:
         if self.lesson_guided:return 'Finish the guided action first.'
         if self.phase != 'ready' or actor is None or not actor.hp or actor.atb+EPSILON < 1:
             return 'This character is not ready.'
-        if actor.identifier == 'player' and self.gear_settling:return 'The gear is settling.'
         if item['effect']['kind'] == 'escape':return '' if self.flee_allowed else 'Cannot flee this boss battle.'
         if target_id is None:
             return '' if any(not self.item_reason(item_id, member.identifier, actor.identifier)
@@ -1420,6 +1425,28 @@ class BattleModel:
                 self.phase = 'charging'
             self.events.append({'type': 'aqua_edge_interrupted' if was_aqua else 'spellblade_interrupted',
                                 'actor': 'player'})
+
+    def charging_boundary_seconds(self, atb_multiplier=1.0):
+        """Read the next charging cutoff without advancing any battle state.
+
+        Presentation uses this boundary to order selector completion against
+        gauge readiness. At a tie, readiness wins and the edit is discarded.
+        Guided-lesson and marked-target restrictions match normal ATB choice.
+        """
+        if type(atb_multiplier) not in (int, float):raise TypeError('ATB multiplier must be numeric')
+        if not math.isfinite(atb_multiplier) or atb_multiplier < 0:
+            raise ValueError('Invalid ATB multiplier')
+        if self.phase != 'charging':return math.inf
+        candidates = [*(member for member in self.party if member.hp
+                        and (not self.aqua_edge_guided or member.identifier == 'player')),
+                      *(enemy for enemy in self.living_enemies
+                        if not self.aqua_edge_guided
+                        and not self._enemy_response_pending(enemy.identifier))]
+        return min((max(0.,(1-actor.atb)/self.atb_rate(actor)/atb_multiplier)
+                    if atb_multiplier else 0. if actor.atb+EPSILON >= 1 else math.inf
+                    for actor in candidates),
+                   default=math.inf)
+
     def update(self, seconds, *, atb_multiplier=1.0):
         """Consume wall time through exact boundaries; choice time is free.
 
@@ -1464,6 +1491,7 @@ class BattleModel:
                 remaining = max(0.0, remaining-boundary)
                 if member in living:
                     member.atb = 1.0
+                    self.gear_settling = False
                     if self.spellblade_guided and member.identifier != 'player':
                         self._start_action(member.identifier, 'guard')
                         continue

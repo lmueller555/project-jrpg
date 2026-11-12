@@ -46,7 +46,7 @@ class BattleClickTargetingTests(unittest.TestCase):
                 round(point[1] * self.scale + self.origin[1]))
 
     def scene(self, *, multiple=False, enemy='bat', guest=False, draw=True,
-              ready=('player',)):
+              ready=('player',), allocation=None):
         if multiple:
             model = group(learned_abilities=['aether_edge', 'aether_dart'],
                           weapon_equipped=True)
@@ -59,6 +59,7 @@ class BattleClickTargetingTests(unittest.TestCase):
                             battlefield='cave_hollow' if multiple else
                             'millrace' if enemy == 'ridgeback_tusker' else 'eldenmere')
         clear_gauges(model)
+        if allocation is not None:self.assertTrue(model.set_rig_allocation(allocation))
         for identifier in ready:
             model.combatant(identifier).atb = 1
         scene.update(0)
@@ -188,8 +189,8 @@ class BattleClickTargetingTests(unittest.TestCase):
                 self.assertIsNone(model.current_action)
 
     def test_selected_support_skill_does_not_target_or_cast_on_an_enemy(self):
-        scene, model = self.scene(enemy='ridgeback_tusker', guest=True, ready=('mira',))
-        self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
+        scene, model = self.scene(enemy='ridgeback_tusker', guest=True, ready=('mira',),
+                                  allocation={'weapons': 0, 'protection': 3, 'support': 3})
         self.select_skill(scene, 'bulwark')
         self.assertEqual(model.action_reason('bulwark'), '')
         before = self.resources(model)
@@ -311,7 +312,9 @@ class BattleClickTargetingTests(unittest.TestCase):
             with self.subTest(blocked=blocked):
                 scene, model = self.scene(enemy='ridgeback_tusker', guest=True,
                                           ready=() if blocked == 'charging' else
-                                          ('mira',) if blocked == 'support' else ('player',))
+                                          ('mira',) if blocked == 'support' else ('player',),
+                                          allocation=({'weapons': 0, 'protection': 3, 'support': 3}
+                                                      if blocked == 'support' else None))
                 if blocked == 'acting':
                     self.assertTrue(model.choose_action('attack', target_id='enemy'))
                 elif blocked == 'paused':scene.paused = True
@@ -319,7 +322,6 @@ class BattleClickTargetingTests(unittest.TestCase):
                 elif blocked == 'tutorial':
                     scene._tutorial_queue.append({'speaker': 'mira', 'text': 'Wait.', 'help': ''})
                 elif blocked == 'support':
-                    self.assertTrue(model.set_rig_allocation({'weapons': 0, 'protection': 3, 'support': 3}))
                     self.select_skill(scene, 'bulwark')
                 self.draw(scene)
                 self.assertEqual(scene.target_marker_rects, {})

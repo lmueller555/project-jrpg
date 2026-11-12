@@ -143,9 +143,9 @@ Mira uses her [wearable arm rig](MIRA_RIG_COMBAT.md), her own ATB and MP, and th
 | Click a command | Open Skills or commit an action for the selected ready character |
 | Click a ready character’s status / Tab | Select another ready party member |
 | Arrows + Enter/Space | Select and commit a command |
-| Drag Caelan’s gear | Rotate a gem toward the fixed north catch; release to seat it |
-| Hover the gear | All units’ ATB charges at 25% of its normal rate |
-| G, then Left/Right and Enter/Space | Focus the gear, rotate and seat a gem with the keyboard |
+| Drag Caelan’s gear while editable | Rotate a gem toward the fixed north catch; release to seat it |
+| Hover the editable gear | All units’ ATB charges at 25% of its normal rate |
+| G, then Left/Right and Enter/Space while editable | Focus the gear, rotate and seat a gem with the keyboard |
 | Tab while the gear is focused | Return to command navigation |
 | Back / Escape in Skills | Return to root commands without spending a turn |
 | Escape outside Skills | Pause/resume the battle |
@@ -162,11 +162,46 @@ or click through a result into exploration. The UI supports the minimum
 Mira’s gift installs only the Blue Water gem in the wheel; its other sockets
 are visibly empty and cannot be selected. Owned gems and the settled focus are
 separate saved facts. The fixed catch at twelve o’clock determines the focus. A short snap confirms seating; gear
-rotation consumes no turn, ATB or MP. Caelan can adjust it while charging and
-while deciding an action. His confirmed action captures its focus and locks
-rotation until that action finishes.
+rotation consumes no turn, ATB or MP. Caelan can adjust it only during his
+charging window, as defined below. His last settled gem remains fixed while
+ready, selecting a command/target and performing his action.
 
-Hover slows charging for all party members and enemies. Ready decisions pause all gauges. Action animation, impact and audio clocks retain their normal speed.
+Hover slows charging for all party members and enemies only while the gear is
+editable. A locked gear cannot activate slowdown. Ready decisions pause all
+gauges. Action animation, impact and audio clocks retain their normal speed.
+
+### Charging windows for character interactables
+
+The combat model owns one timing rule for Caelan's gear and Mira's power
+routing: a living active character can edit configuration only while their own
+ATB is below full and battle time is actually charging. This also defines the
+timing contract for future character interactables.
+
+| Battle state | Interactable treatment |
+| --- | --- |
+| Gauges advancing; character's ATB below full | Editable, subject to equipment and guided-lesson restrictions. |
+| Character's ATB reaches full, including waiting for selection | Lock the last committed configuration. |
+| Any character's ready command or target menu | Both controls remain locked because gauges are paused. |
+| Any action animation, including Vespermaw's free channeling | Both controls remain locked. Resetting ATB at action start does not reopen them. |
+| Character finishes their action and charging resumes | Reopen their control if alive and their ATB remains below full. |
+| KO, pause, focus loss, or result | Disable input; retain the committed configuration. |
+
+The locked controls remain visible with subdued interaction highlights and a
+small lock indicator. Mouse, keyboard and delayed configuration callbacks obey
+the same model rule. Cancelling a command or changing the selected ready party
+member does not reopen a charging window.
+
+At a window boundary, discard an unfinished gear drag, keyboard preview,
+uncompleted seating animation or unconfirmed routing draft and restore the
+last committed gem/allocation. No edit is deferred to the next turn. A completed
+edit before the boundary stays committed; if seating completion and ATB-full
+occur at the same instant, the lock wins. Pending interaction animation never
+delays readiness or a combat command. Coarse and fine frame updates use the
+same charging and transfer boundaries.
+
+The Blue-gem lessons explain preparation during charging, before command
+selection. Their ready menus do not bypass this rule. The gift's already seated
+Blue gem remains available for the guided Aqua attempts.
 
 Aether Edge works with every owned focus and remains non-elemental. Aqua Edge
 requires the Blue gem, an equipped blade and its learned unlock. Selecting or

@@ -505,6 +505,24 @@ class BattleScene:
         self._sound('confirm')
         return True
 
+    def _charging_tutorials(self):
+        """Explain preparation before readiness, with a real window afterward.
+
+        Blue is already seated for the guided lessons; no ready-time override
+        or compulsory last-second gesture is needed to complete either lesson.
+        """
+        if (not self.tutorial or self.tutorial_active
+                or self.model.phase != 'charging'
+                or self.model.charging_boundary_seconds() < 1.):return
+        if self.model.gear_available:
+            self._queue_tutorial('gear_instruction',
+                'Keep your focus ready while you have an opening.',
+                'Adjust the gear while ATB charges. Your seated gem locks when ATB fills.')
+        if not self.model.rig_reason():
+            self._queue_tutorial('rig_instruction',
+                'I’ll set the arm rig before I make my move.',
+                'Click Mira’s rig or press M while ATB charges. Confirm power before it fills.')
+
     def _tutorial_event(self, event):
         if getattr(self.model, 'aqua_edge_stage', None) is not None:
             return self._aqua_tutorial_event(event)
@@ -522,8 +540,8 @@ class BattleScene:
                 'Full ATB: ready to act. Gauges pause while you choose.')
             if event.get('actor') == 'mira':
                 self._queue_tutorial('mira_turn',
-                    'I can cover you from here. Let me route power to the arm rig.',
-                    'Mira fires Bolt Shot. Configure her arm rig to power different Skills.')
+                    'I can cover you from here.',
+                    'Mira is ready. Use her confirmed power allocation, or fire Bolt Shot.')
         elif event['type'] == 'telegraph':
             target = self.model.combatant(event.get('target'))
             name = target.name if target is not None else 'us'
@@ -558,7 +576,7 @@ class BattleScene:
             elif stage=='first_edge':
                 self._queue_tutorial('spellblade_choose','Now—while it’s turning. Try drawing through the blue gem.',
                     'Choose Skills → Aqua Edge.')
-                self._queue_tutorial('gear_instruction',
+                self._queue_tutorial('blue_focus_ready',
                     'The blue gem is seated. Keep the blade steady and draw your aether through it.')
         elif kind=='spellblade_failed':
             lines=(('caelan','It didn’t—'),('mira','Stay with me.'),
@@ -576,8 +594,8 @@ class BattleScene:
                 self._queue_tutorial('spellblade_discovered_'+str(index),text,
                     'Learned Aether Edge · 4 MP. Normal party commands are now available.' if index==3 else '',speaker)
         elif kind=='player_ready' and event.get('actor')=='mira' and stage=='complete':
-            self._queue_tutorial('mira_turn','I can cover you from here. Let me route power to the arm rig.',
-                'Mira fires Bolt Shot. Click her rig or press M to configure power for her Skills.')
+            self._queue_tutorial('mira_turn','I can cover you from here.',
+                'Mira is ready. Use her confirmed power allocation, or fire Bolt Shot.')
 
     def _aqua_tutorial_event(self, event):
         kind = event['type']
@@ -889,17 +907,12 @@ class BattleScene:
 
     @property
     def gear_enabled(self):
-        action = self.model.current_action
-        return (self.model.weapon_equipped and self.model.player.hp > 0
-                and self.model.phase not in RESULTS and not self.dismissed
-                and not self.paused and self.focused and not self.tutorial_active
-                and not (action is not None and action.actor == 'player'))
+        return (self.model.gear_available and not self.dismissed
+                and not self.paused and self.focused and not self.tutorial_active)
 
     @property
     def gear_hover_available(self):
-        return (self.model.weapon_equipped and self.model.player.hp > 0
-                and self.model.phase not in RESULTS and not self.dismissed
-                and not self.paused and self.focused and not self.tutorial_active)
+        return self.gear_enabled
 
     @property
     def atb_multiplier(self):
@@ -911,6 +924,59 @@ class BattleScene:
         self.gear.hovered = False
         self.gear.focused = False
         self.model.gear_settling = False
+
+    def _sync_interactable_locks(self):
+        """A closed charging window discards every uncommitted local edit."""
+        if not self.gear_enabled:self._cancel_gear()
+        if self.rig is not None:
+            self.rig.sync(self.model.rig_allocation)
+            if not self.rig_enabled:self._cancel_rig()
+        self.gear.hovered = bool(self.gear_hover_available and self._pointer is not None
+                                and self.gear.rect.collidepoint(self._pointer))
+
+    def _commit_gear(self, gem, frame_age=0.):
+        if gem is None:return
+        if not self.model.set_active_gem(gem):
+            self._cancel_gear()
+            return
+        self._slot_time = self._elapsed-frame_age
+        self._gear_adjust_time = self._elapsed-frame_age
+        owner = getattr(self.game, 'character_abilities', None)
+        if owner is not None and owner.set_active_gem(gem):
+            save = getattr(self.game, 'save_progress', None)
+            if save is not None:save()
+
+    def _advance_combat(self, seconds):
+        """Share one clock across ATB boundaries and a seating completion.
+
+        The model advances first. At equal times readiness wins over a pending
+        seat, and the old committed focus is restored without a late callback.
+        Action boundaries are split too, so hovering cannot slow an action but
+        can slow the charging interval which follows it in the same frame.
+        """
+        remaining = seconds
+        while True:
+            self._sync_interactable_locks()
+            multiplier = self.atb_multiplier
+            charge_boundary = self.model.charging_boundary_seconds(multiplier)
+            commit_boundary = self.gear.commit_after_seconds if self.gear_enabled else math.inf
+            action = self.model.current_action
+            action_boundary = (max(0.,action.duration-action.elapsed)
+                if self.model.phase == 'acting' and action is not None else math.inf)
+            step = min(remaining, charge_boundary, commit_boundary, action_boundary)
+            events_before = len(self.model.events)
+            self.model.update(step, atb_multiplier=multiplier)
+            remaining = max(0.,remaining-step)
+            # Preserve presentation ages across the internal simulation slices.
+            for event in self.model.events[events_before:]:
+                if 'frame_age' in event:event['frame_age'] += remaining
+            self._sync_interactable_locks()
+            if self.gear_enabled:
+                self._commit_gear(self.gear.update(step, reduced_motion=self.reduced_motion),remaining)
+                self.model.gear_settling = self.gear.busy
+                for notice in self.gear.consume_notices():
+                    self._sound('gear_seat' if notice == 'seat' else 'gear_detent')
+            if remaining <= 0 or self.model.phase in RESULTS or self.model.waiting_for_player:return
 
     def _cycle_target(self, delta):
         enemies = [enemy.identifier for enemy in self._enemy_members() if enemy.hp]
@@ -985,6 +1051,7 @@ class BattleScene:
                         self._sound('back');return True
                     self.paused = not self.paused
                     if self.paused:
+                        self._cancel_rig()
                         self.action_audio.stop();self.channel_audio.pause()
                     self._held = False
                     self._sound('back' if self.paused else 'confirm')
@@ -996,7 +1063,7 @@ class BattleScene:
             if consumed:
                 if event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._held = False
                 return True
-        elif self.gear.busy:self._cancel_gear()
+        else:self._cancel_gear()
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             self._held = False
             return True
@@ -1070,6 +1137,7 @@ class BattleScene:
         return True
 
     def update(self, seconds):
+        self._sync_interactable_locks()
         if self.dismissed or self.paused or not self.focused or self.tutorial_active:
             self.channel_audio.sync(self.model.current_action,paused=True)
             return
@@ -1092,22 +1160,7 @@ class BattleScene:
         self._action_cues()
         for popup in self._popups:popup['age'] += seconds
         self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
-        if self.rig is not None:
-            self.rig.sync(self.model.rig_allocation)
-            if not self.rig_enabled:self._cancel_rig()
-        if not self.gear_enabled and (self.gear.busy):self._cancel_gear()
-        gem = self.gear.update(seconds, reduced_motion=self.reduced_motion)
-        if gem is not None and self.model.set_active_gem(gem):
-            self._slot_time = self._elapsed
-            self._gear_adjust_time = self._elapsed
-            owner = getattr(self.game, 'character_abilities', None)
-            if owner is not None and owner.set_active_gem(gem):
-                save = getattr(self.game, 'save_progress', None)
-                if save is not None:save()
-        self.model.gear_settling = self.gear.busy
-        for notice in self.gear.consume_notices():
-            self._sound('gear_seat' if notice == 'seat' else 'gear_detent')
-        self.model.update(seconds, atb_multiplier=self.atb_multiplier)
+        self._advance_combat(seconds)
         self._action_cues()
         self._phase_elapsed = (0.0 if self.model.phase != self._last_phase
                                else self._phase_elapsed+seconds)
@@ -1181,6 +1234,7 @@ class BattleScene:
         self._sync_commands()
         self._last_phase = self.model.phase
         if self.model.phase in RESULTS or self.tutorial_active:self._cancel_gear()
+        self._charging_tutorials()
 
     @property
     def reduced_motion(self):return getattr(self.game.audio, 'reduced_motion', False)
