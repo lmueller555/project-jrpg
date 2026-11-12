@@ -45,6 +45,51 @@ work station, facing, animation, or prop placement.
 The visible action must precede its result. Playback must not complete a
 pickup, placement, or other required action merely because dialogue advances.
 
+## Interaction positioning and distance guides
+
+Position the character so the action is physically believable before starting
+the animation. Author a contact point on the object and an approach position
+with the required character facing. For two-character interactions, stage both
+participants so their natural poses can cooperate without implausible body
+overlap. Hold the work position until the action and transfer finish.
+
+Measure distances in **native world pixels**, before camera zoom, display
+scaling, or screenshot enlargement. The following are initial authoring defaults
+for our roughly 24×36-pixel characters, not universal hard limits:
+
+| Measurement | Suggested range |
+| --- | --- |
+| Hand to the object's contact point immediately before a pickup or release snap | **0–4 px preferred; 5–6 px acceptable** when the gesture reads clearly. |
+| Hand to the contact point during sustained work, such as treating a dressing | **0–3 px**, allowing small animation movement. |
+| Character's feet/ground anchor to a small floor object's ground position during pickup | **8–16 px**, with a natural bend or kneel. |
+| Character's feet/ground anchor to the base of a standing interaction, such as a rope fastening | **8–18 px**, with the contact point at a reachable height. |
+| Feet-to-feet spacing for a standing handover | **16–26 px**, with both characters facing the exchange. |
+| Feet-to-feet spacing for close assistance or treatment | **14–24 px**, adjusted for sitting, kneeling, and the injured pose. |
+
+Keep **body spacing** separate from the **hand-to-contact-point gap**. A zero-pixel
+gap means the hand meets the intended handle, grip, dressing, or fastening; it
+does not mean placing the character's center inside the object's sprite. A grip
+may overlap object pixels slightly, with hands and object layered appropriately.
+Measure the contact gap between the authored hand/grip point and the object's
+contact point in the same world coordinate space. Ground spacing uses the
+actors' feet and the object's base/support position, not canvas centers or
+transparent sprite padding.
+
+Hand-contact ranges are the stronger guide; ground-spacing ranges are starting
+positions. Check height, facing, support, body overlap, and camera visibility as
+well as distance. A nearby object can still be too high or hidden for the action
+to read. Choose a camera-readable approach while retaining correct occlusion.
+If the natural reach is too short, move closer, turn, bend, kneel, or reposition
+the object before reaching. Do not stretch anatomy or use a large snap to
+compensate for poor staging.
+
+Scale these defaults for unusually large or small characters. Oversized objects,
+two-person handling, and unusual poses can require other spacing; document the
+reason for a deliberate exception in the scene's implementation notes. Validate
+the actual animation at native gameplay scale rather than failing solely on a
+numeric boundary. Calibrate these initial ranges as interactions are visually
+reviewed; they do not certify existing scenes or require unrelated scene changes.
+
 ## Object ownership and transfer examples
 
 An object has one authoritative owner and one visible location at a time.
@@ -117,7 +162,9 @@ unless those effects are independently part of the authorized gameplay design.
 
 For new or corrected interactions, verify the following in the actual scene:
 
-- The character reaches a sensible nearby station and faces the object.
+- The character reaches a sensible nearby station and faces the object; body
+  spacing and hand-contact gaps follow the distance guides or a documented,
+  visually justified exception.
 - The intended action is readable at native gameplay scale; limbs, hands, body
   scale, and foot placement remain natural throughout.
 - The snap is small, deliberate, and synchronized with the action's cue.
