@@ -85,27 +85,38 @@ def walking(idle, template, phase):
     return image
 
 
-def arm_pose(idle, grip, index):
-    """Native reaching arm is registered to a fixed body and authored grip."""
+def arm_pose(idle, grip, elbow, index):
+    """A compact bent arm replaces the standing arm; feet remain registered.
+
+    The closer work station lets a normal forearm reach the fastening. These
+    joints are authored as a body pose, never computed from a distant target.
+    The one-pixel head lean is a torso action, not a sliding ground anchor.
+    """
     result=Image.new('RGBA',(40,48));body=idle.copy()
-    # Move the near arm from its standing position into the reaching silhouette.
-    # The small tunic patch fills the old sleeve without changing torso/feet.
-    d=ImageDraw.Draw(body)
-    if 1 <= index <= 10:
-        d.rectangle((13,18,15,24),fill=PALETTE['sleeve_shadow'])
-        d.line((13,18,13,24),fill=PALETTE['sleeve'])
-    if 1 <= index <= 10:
-        shoulder=(25,26)
-        elbow=(round((shoulder[0]+grip[0])*.5),round((shoulder[1]+grip[1])*.5)+2)
-        draw=ImageDraw.Draw(result)
-        draw.line((shoulder,elbow,grip),fill=PALETTE['outline'],width=5)
-        draw.line((shoulder,elbow,grip),fill=PALETTE['sleeve_shadow'],width=3)
-        draw.line(((shoulder[0]-1,shoulder[1]-1),(elbow[0]-1,elbow[1]-1),grip),fill=PALETTE['sleeve'],width=2)
-    result.alpha_composite(body,(14,10))
-    if 1 <= index <= 10:
-        draw=ImageDraw.Draw(result)
-        draw.rectangle((grip[0]-1,grip[1]-1,grip[0]+1,grip[1]+1),fill=PALETTE['skin_shadow'])
-        draw.line((grip[0]-1,grip[1]-1,grip[0]+1,grip[1]-1),fill=PALETTE['skin'],width=2)
+    if index in (0,15):
+        result.alpha_composite(body,(8,10))
+        return result
+    # Replace the old sleeve/hand completely rather than drawing a second arm
+    # on top of the upright idle. Preserve the native head and grounded boots.
+    body.paste((0,0,0,0),(6,16,17,27));d=ImageDraw.Draw(body)
+    d.polygon(((9,16),(13,16),(15,20),(14,26),(9,27),(7,24)),
+              fill=PALETTE['outline'])
+    d.polygon(((10,17),(13,17),(14,21),(13,25),(9,25),(8,23)),
+              fill=PALETTE['sleeve_shadow'])
+    d.line((11,17,12,24),fill=PALETTE['sleeve'],width=2)
+    d.line((8,18,8,25),fill='#376b65',width=2)
+    d.line((8,25,13,25),fill='#594a35')
+    result.alpha_composite(body,(8,10))
+    if 2<=index<=6:
+        head=result.crop((8,10,32,26));result.paste((0,0,0,0),(8,10,32,26))
+        result.alpha_composite(head,(7,10))
+    draw=ImageDraw.Draw(result);shoulder=(18,27)
+    draw.line((shoulder,elbow,grip),fill=PALETTE['outline'],width=4)
+    draw.line((shoulder,elbow,grip),fill=PALETTE['sleeve_shadow'],width=2)
+    draw.line(((shoulder[0],shoulder[1]-1),(elbow[0],elbow[1]-1)),
+              fill=PALETTE['sleeve'],width=1)
+    draw.rectangle((grip[0]-1,grip[1]-1,grip[0]+1,grip[1]+1),fill=PALETTE['skin_shadow'])
+    draw.line((grip[0]-1,grip[1]-1,grip[0]+1,grip[1]-1),fill=PALETTE['skin'],width=2)
     return result
 
 
@@ -127,15 +138,23 @@ def bezier(points, steps=100):
 
 def rope_frame(index):
     image=Image.new('RGBA',(72,48));draw=ImageDraw.Draw(image)
-    end_points=[(66,17)]*4+[(66,18),(67,21),(68,25),(68,29),(68,33),(67,36),
-                            (60,40),(48,43),(35,44),(24,44),(18,43),(18,43)]
+    # The short guided descent stays within a normal bent-arm reach. Once
+    # released at 800ms gravity, rather than an extending arm, lowers the end.
+    end_points=[(66,17)]*4+[(68,18),(69,21),(69,24),(70,26),(68,29),(62,34),
+                            (54,39),(44,42),(33,43),(24,43),(23,40),(23,40)]
     end=end_points[index]
     if index<4:points=bezier(((7,17),(36,33),end))
-    elif index<10:
+    elif index<8:
         # Gravity increases the sag while the caretaker guides the free end.
         points=bezier(((7,17),(28,37+index*.4),(51,39),end))
     elif index<14:
-        points=bezier(((7,17),(7,43),(max(12,end[0]-10),44),end))
+        # Ease from the guided arc into the hanging strand so the whole rope
+        # does not jump sideways when the hand lets go.
+        q=(index-7)/6
+        control_a=(28+(7-28)*q,39.8+(43-39.8)*q)
+        target_b=(max(12,end[0]-10),44)
+        control_b=(51+(target_b[0]-51)*q,39+(target_b[1]-39)*q)
+        points=bezier(((7,17),control_a,control_b,end))
     else:
         points=bezier(((7,17),(7,30),(8,37),(12,40)))
         # One loose coil settles beside the fixed post after the free end falls.
@@ -197,11 +216,15 @@ def products():
             poses['injured']={'frames':[{'file':export(Path(role)/'injured.png',rest),'duration_ms':1000}],
                               'loop':True,'anchor':[canvas[0]//2,30]}
         else:
-            grips=[(26,31),(21,24),(15,18),(12,12),(12,13),(13,16),(14,20),(14,24),(14,28),(13,31),(21,32),(26,31)]
-            durations=[100]*10+[200,400]
-            poses['unhook']={'frames':[{'file':export(Path(role)/f'unhook/frame_{i:02}.png',arm_pose(native_idles['left'],grip,i)),
-                                       'duration_ms':duration,'grip':list(grip)} for i,(grip,duration) in enumerate(zip(grips,durations))],
-                             'loop':False,'anchor':[26,40]}
+            grips=[(20,34),(17,30),(12,26),(9,23),(8,23),(9,26),(9,29),(10,31),
+                   (12,32),(15,32),(18,33),(20,34),(20,34),(20,34),(20,34),(20,34)]
+            elbows=[(21,30),(20,29),(15,28),(13,27),(13,27),(13,29),(14,30),(15,31),
+                    (16,31),(19,30),(21,30),(21,30),(21,30),(21,30),(21,30),(21,30)]
+            poses['unhook']={'frames':[{'file':export(Path(role)/f'unhook/frame_{i:02}.png',arm_pose(native_idles['left'],grip,elbow,i)),
+                                       'duration_ms':100,'grip':list(grip),
+                                       'shoulder':[18,27],'elbow':list(elbow)}
+                                      for i,(grip,elbow) in enumerate(zip(grips,elbows))],
+                             'loop':False,'anchor':[20,40],'facing':'left'}
         actors[role]={'anchor':[12,30],'frame_size':[24,36],'idles':idles,'walks':walks,'poses':poses,
                       'portrait':'arrival_'+role,'portrait_file':portrait_file,'stationary':role!='caretaker'}
     original=Image.open(ROOT/'assets/terrain/elden_vale_sanctuary_kit/cave_keeper_rail.png').convert('RGBA')
@@ -213,22 +236,25 @@ def products():
     ropes=[]
     for index in range(16):
         rope,end=rope_frame(index)
-        ropes.append({'file':export(Path('rail')/f'rope_{index:02}.png',rope),'duration_ms':100,'free_end':list(end)})
+        ropes.append({'file':export(Path('rail')/f'rope_{index:02}.png',rope),'duration_ms':100,
+                      'free_end':list(end),'state':('attached' if index<4 else 'guided' if index<8 else 'falling' if index<14 else 'settled')})
     closed=images['rail/rope_00.png'].copy();closed.alpha_composite(posts)
     export(Path('rail')/'closed.png',closed)
     opened=images['rail/rope_15.png'].copy();opened.alpha_composite(posts)
     export(Path('rail')/'open.png',opened)
     sound=ART/'rail/rope_release.wav';out[sound]=release_sound()
     rail={'position':[972,359],'frame_size':[72,48],'posts':posts_file,'rope_frames':ropes,
-          'caretaker_position':[1052,404],'facing':'left','contact_point':[66,17],
+          'caretaker_position':[1052,394],'facing':'left','contact_point':[66,17],
           'grip_world':[1038,376],'contact_ms':300,'release_ms':400,'duration_ms':1600,
-          'guided_until_ms':1000,'sound':sound.relative_to(ROOT).as_posix(),
+          'guided_until_ms':800,'drop_ms':800,'sort_y':395,
+          'support_world':[1037,392],'max_contact_gap':4,
+          'sound':sound.relative_to(ROOT).as_posix(),
           'post_footprints':[[4,29,6,4],[62,29,6,4]],'closed_rope_footprint':[10,29,52,4],
           'closed':(ART/'rail/closed.png').relative_to(ROOT).as_posix(),
           'open':(ART/'rail/open.png').relative_to(ROOT).as_posix()}
     manifest={'version':1,'actors':actors,'rail':rail,
               'source_recipe':'assets/source/story/sanctuary_arrival_polish/recipe.json',
-              'design':'Native Sanctuary care identities and fixed-post rope release; pixel registration is explicit.'}
+              'design':'Native Sanctuary care identities and a naturally proportioned, fixed-post rope release with a deliberate small contact snap.'}
     out[MANIFEST]=(json.dumps(manifest,indent=2)+'\n').encode()
     # Rebuilding also repairs these dedicated registrations; generic villagers
     # and portraits owned by other quests retain their existing records.

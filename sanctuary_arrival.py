@@ -13,6 +13,7 @@ from regent_emergency import legacy_cave_entered
 from sanctuary_arrival_party import sync_arrival_party
 from sanctuary_arrival_blocking import SanctuaryBlocking
 from sanctuary_rope import SanctuaryRope
+from sanctuary_care import SanctuaryCare
 from ui_style import IVORY,MUTED,GOLD
 ROOT=Path(__file__).resolve().parent
 RESERVE='elden_vale_sanctuary'
@@ -25,6 +26,7 @@ class CastActor:
         self.story_visible=True;self.party_travelling=False;self.moving=False
         self.facing='front';self.walk_ms=0.;self._pose=None;self.pose_ms=0.;self.route=[]
         self.pose_animations={};self.walk_durations={}
+        self.carrying=False;self.carry_idles={};self.carry_walks={}
         self.draw_anchor=tuple(getattr(source,'draw_anchor', (12,30)))
         if key=='caelan':self.draw_anchor=(12,30)
         if source is not None:
@@ -34,10 +36,6 @@ class CastActor:
         else:
             self.idles={d:world.image(f'assets/characters/npcs/{variant}/idle_{d}.png') for d in ('front','back','left','right')}
             self.walks={d:[world.image(f'assets/characters/npcs/{variant}/walk_{d}/frame_{i:02}.png') for i in range(1,5)] for d in self.idles}
-        self._poses={}
-        if key=='mira':
-            for name,file in (('tend','inspect'),('set_down','reach'),('retrieve','withdraw')):
-                self._poses[name]=world.image(f'assets/characters/mira/work_bench/{file}.png')
         if art is not None:
             self.draw_anchor=tuple(art['anchor'])
             self.idles={direction:world.image(path) for direction,path in art['idles'].items()}
@@ -81,9 +79,9 @@ class CastActor:
             if self.pose in self.pose_animations:
                 animation=self.pose_animations[self.pose]
                 return self._frame(animation['frames'],animation['durations'],self.pose_ms,animation['loop'])
-            if self.pose in self._poses:return self._poses[self.pose]
+            if self.carrying and self.facing in self.carry_idles:return self.carry_idles[self.facing]
             return self.idles[self.facing]
-        frames=self.walks[self.facing]
+        frames=self.carry_walks[self.facing] if self.carrying and self.facing in self.carry_walks else self.walks[self.facing]
         durations=self.walk_durations.get(self.facing,(140,)*len(frames))
         image=self._frame(frames,durations,self.walk_ms)
         return image[0] if isinstance(image,tuple) else image
@@ -94,7 +92,9 @@ class SanctuaryArrival(MillGift):
         self.game=game
         self.manifest=json.loads((ROOT/'assets/story/sanctuary_arrival/scene.json').read_text())
         self.art=json.loads((ROOT/'assets/story/sanctuary_arrival/art.json').read_text())
+        self.performance=json.loads((ROOT/'assets/story/sanctuary_arrival/performance/art.json').read_text())
         self.rail=SanctuaryRope(game,self.art['rail'])
+        self.care=SanctuaryCare(self,self.performance)
         self._published=[];self.actors={};self._world=None
         self.reset()
     def reset(self):
@@ -103,7 +103,8 @@ class SanctuaryArrival(MillGift):
             if actor in world.npcs:world.npcs.remove(actor)
         for world,record in getattr(self,'_care_props',[]):
             if record in world.entities:world.entities.remove(record)
-        self._care_props=[];self._line_id=None;self._action_remaining=0.;self._pending_advance=False;self._kit=False;self._runner_delivered=False;self._delivery_remaining=0.
+        self._care_props=[];self._line_id=None;self._pending_advance=False
+        self.care.reset(0);self._page_remaining=0.;self._page_resuming=False
         self._published=[];self.actors={};self._world=None
         super().reset();self.completed=False;self.cave_entered=False;self.error=''
         self._ready=False;self._checkpoint_failed=False;self.blocking=None
@@ -111,6 +112,16 @@ class SanctuaryArrival(MillGift):
         self._rail_pending=False;self._rail_elapsed=0.;self._rail_retreat=False
     @property
     def beat(self):return self.phase_index
+    @property
+    def _kit(self):return self.care.kit_owner!='stowed'
+    @property
+    def _runner_delivered(self):return self.care.runner_delivered
+    @property
+    def _delivery_remaining(self):
+        if not self.care.runner_started or self.care.runner_delivered:return 0.
+        return max(0.,(sum(f['duration_ms'] for f in self.performance['poses']['runner_place']['frames'])-self.care.runner_elapsed_ms)/1000)
+    @property
+    def _action_remaining(self):return max(self.care.remaining,self._page_remaining)
     @property
     def phase(self):return self.manifest['beats'][self.beat]
     @property
@@ -181,14 +192,17 @@ class SanctuaryArrival(MillGift):
                      (('caelan',g.player),('mira',g.mill_quest.mira),('lucan',c.lucan),('aldric',c.aldric),('page',c.clerk))}
         for key,variant in (('caretaker','male_03'),('worker_a','male_02'),('worker_b','male_01'),('sentry','female_02'),('runner','female_01')):
             self.actors[key]=CastActor(key,world,variant=variant,art=self.art['actors'].get(key))
-        performance=json.loads((ROOT/'assets/story/sanctuary_arrival/performance/art.json').read_text())
+        performance=self.performance
         for name,animation in performance['poses'].items():
-            actor=self.actors['runner'] if name=='runner_place' else self.actors['worker_a'] if name=='offer_arm' else self.actors['mira']
+            actor=self.actors['runner'] if name=='runner_place' else self.actors['worker_a'] if name in ('offer_arm','arm_rest') else self.actors['mira']
             actor.pose_animations[name]={
                 'frames':tuple(world.image(f['file']) for f in animation['frames']),
                 'durations':tuple(f['duration_ms'] for f in animation['frames']),
                 'loop':False,'anchor':tuple(animation['anchor'])}
-        self.actors['mira'].pose_animations['tend']=self.actors['mira'].pose_animations['treat']
+        runner=self.actors['runner']
+        runner.carry_idles={direction:world.image(path) for direction,path in performance['carry_idles'].items()}
+        runner.carry_walks={direction:[world.image(f['file']) for f in frames] for direction,frames in performance['carry_walks'].items()}
+        runner.walk_durations={direction:tuple(f['duration_ms'] for f in frames) for direction,frames in performance['carry_walks'].items()}
         portraits=json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())['portraits']
         for key,name,actor in (('arrival_caretaker','Caretaker','caretaker'),('arrival_worker','Injured worker','worker_a')):
             portrait=self.art['actors'][actor]['portrait']
@@ -222,19 +236,22 @@ class SanctuaryArrival(MillGift):
     def _begin_beat(self):
         self.phase_time=0.;self.dialogue_index=0;self.page_index=0;self._ready=False
         self._checkpoint_failed=False;self.caption_layout=None
-        self._mira_departure=None;self._line_id=None;self._action_remaining=0.;self._pending_advance=False
-        self._kit=self.beat<=4;self._runner_delivered=self.beat>0;self._delivery_remaining=0.
+        self._line_id=None;self._pending_advance=False;self._page_remaining=0.;self._page_resuming=False
+        self.care.reset(self.beat)
         self.blocking.begin(self.beat,initial=self.beat==0)
         for key,actor in self.actors.items():actor.pose=self.phase.get('poses',{}).get(key)
+        self.actors['runner'].carrying=not self.care.runner_delivered
         if self.beat==4:
             # Her authored departure begins after the brief retrieval hold.
             self.blocking.tracks['mira'].finished=True
             self.actors['mira'].route=[]
-            self.actors['mira'].pose='treat';self.actors['mira'].pose_ms=10000
-            self.actors['worker_a'].pose='offer_arm';self.actors['worker_a'].pose_ms=10000
+            self.actors['mira'].pose='care_idle';self.actors['mira'].pose_ms=10000
+            self.actors['worker_a'].pose='arm_rest';self.actors['worker_a'].pose_ms=10000
         if self.beat in (1,2,3):
-            self.actors['mira'].pose='treat';self.actors['mira'].pose_ms=10000
-            self.actors['worker_a'].pose='offer_arm';self.actors['worker_a'].pose_ms=10000
+            self.actors['mira'].pose='care_idle';self.actors['mira'].pose_ms=10000
+            self.actors['worker_a'].pose='arm_rest';self.actors['worker_a'].pose_ms=10000
+        if self.beat>0:self.actors['worker_a'].pose_ms=10000
+        self._sync_care_props()
         self._focus_camera()
     def _focus_camera(self):
         # Gallery initialization and intentional room cuts may reset tracking;
@@ -252,25 +269,54 @@ class SanctuaryArrival(MillGift):
         line=self.dialogue
         if line is not None and not self.paused and self.focused and not self._batch_advanced:
             self._layout(self.game.ui.painter(self.game.ui_surface))
+            self._line_action(line)
             if self._action_remaining>0:
                 self._pending_advance=True;return True
             if self.page_index+1>=len(self.caption_pages) and line.get('after')=='retrieve' and self._kit:
-                self.actors['mira'].pose='retrieve';self._action_remaining=.8;self._play_care_sound()
+                self.care.start('retrieve',['retrieve']);self._ready=False
                 self._pending_advance=True;return True
+            if self.page_index+1>=len(self.caption_pages) and line['speaker']=='regent_clerk' and self.actors['page'].pose=='read_attention':
+                page=self.actors['page'];page.pose='read_resume'
+                self._page_remaining=sum(page.pose_animations['read_resume']['durations'])/1000
+                self._page_resuming=True;self._pending_advance=True;self._ready=False
+                return True
         return super().advance()
+
+    def _line_action(self,line):
+        if line['id']==self._line_id:return
+        # An early confirmation must not skip an action that has not started.
+        if line.get('action')=='treat':
+            if self.care.busy or not self.care.setup_started:return
+            self.care.start('treat',['treat','finish']);self._ready=False
+        elif line['speaker']=='regent_clerk':
+            page=self.actors['page'];page.pose='read_attention'
+            self._page_remaining=sum(page.pose_animations['read_attention']['durations'])/1000
+        self._line_id=line['id']
+
+    def _care_finished(self,purpose):
+        if purpose=='retrieve':
+            self.blocking.move_actor('mira',self.phase['movement']['mira']['waypoints'])
+        if self._pending_advance:
+            self._pending_advance=False;self._batch_advanced=False
+            # Re-enter the input path so deferred treatment and ledger cues
+            # still run before acknowledging their dialogue.
+            self.advance()
+
     def _sync_care_props(self):
         if self._world is None:return
         world=self._world
         for oldworld,record in self._care_props:
             if record in oldworld.entities:oldworld.entities.remove(record)
         self._care_props=[]
-        props=[('linen',[700,338])]
-        if self._kit and not self.completed and not self.blocking.busy('mira'):props.append(('kit',[708,326]))
-        if self.completed or self._runner_delivered:props.append(('linen',[784,338]))
-        for number,(name,point) in enumerate(props):
-            image=world.image('assets/story/sanctuary_arrival/performance/'+name+'.png')
-            record={'id':'arrival_supply_'+str(number),'position':point,'rect':image.get_rect(topleft=point),
-                    'surfaces':[image],'sort_y':point[1]+image.get_height(),'phase_offset':0,'frame_duration_ms':1000}
+        props=['linen_mira']
+        if self.care.kit_owner=='world' and not self.completed:props.append('kit')
+        if self.completed or self.care.runner_linen_placed:props.append('linen_runner')
+        for key in props:
+            prop=self.performance['objects'][key]
+            image=world.image(prop['file'])
+            support=pygame.Vector2(prop['position']);point=list(support-pygame.Vector2(prop['anchor']))
+            record={'id':'arrival_'+key,'position':point,'rect':image.get_rect(topleft=point),
+                    'surfaces':[image],'sort_y':support.y,'phase_offset':0,'frame_duration_ms':1000}
             world.entities.append(record);self._care_props.append((world,record))
     def _next_if_ready(self):
         if not self._ready or self._checkpoint_failed or self.dialogue_index<len(self.sections[self.beat]):return
@@ -337,29 +383,24 @@ class SanctuaryArrival(MillGift):
         self._input_armed=self.elapsed>=.1
         self.blocking.update(seconds)
         for actor in self.actors.values():actor.advance_pose(seconds)
-        if self.beat==0 and not self.blocking.busy('mira') and self.actors['mira'].pose=='tend':
-            self.actors['mira'].pose='place'
-        line=self.dialogue
-        if line is not None and line['id']!=self._line_id:
-            self._line_id=line['id']
-            if line.get('action')=='treat':
-                self.actors['worker_a'].pose='offer_arm'
-                self.actors['mira'].pose='treat';self._action_remaining=1.2;self._kit=True;self._play_care_sound()
-        if self._action_remaining>0:
-            self._action_remaining=max(0.,self._action_remaining-seconds)
-            if self._action_remaining==0:
-                retrieved=self.actors['mira'].pose=='retrieve'
-                if retrieved:self._kit=False;self.actors['mira'].pose=None;self.actors['worker_a'].pose='injured'
-                if self._pending_advance:
+        self.care.update(seconds)
+        if self.beat==0 and not self.blocking.busy('mira') and not self.care.setup_started:
+            # Movement consumed this tick; start at frame zero rather than
+            # spending the same delta a second time on the placement.
+            self.care.start('setup',['place','take_cloth'])
+        if self._page_remaining>0:
+            self._page_remaining=max(0.,self._page_remaining-seconds)
+            if self._page_remaining==0:
+                if self._page_resuming:
+                    self._page_resuming=False
+                    page=self.actors['page'];page.pose='read';page.pose_ms=10000
                     self._pending_advance=False;self._batch_advanced=False
                     super().advance()
-                if retrieved:self.blocking.move_actor('mira',self.phase['movement']['mira']['waypoints'])
-        if self.beat==0 and not self.blocking.busy('runner') and not self._runner_delivered:
-            if self._delivery_remaining==0:
-                self.actors['runner'].pose='runner_place';self._delivery_remaining=.6
-            self._delivery_remaining=max(0.,self._delivery_remaining-seconds)
-            if self._delivery_remaining==0:
-                self._runner_delivered=True;self.actors['runner'].pose=None;self._play_care_sound()
+                elif self._pending_advance:
+                    self._pending_advance=False;self._batch_advanced=False
+                    self.advance()
+        line=self.dialogue
+        if line is not None:self._line_action(line)
         self._sync_care_props()
         self._settled_facings()
         self._focus_camera();self.game.camera.update(seconds)
@@ -378,7 +419,8 @@ class SanctuaryArrival(MillGift):
                 self.blocking.move_actor('caretaker',[self.phase['goals']['caretaker']])
         self._ready=(self.phase_time>=self.phase['min_seconds'] and self.game.camera.settled
                      and self.blocking.settled and not self.blocking.busy('runner') and self._delivery_remaining==0
-                     and (not self._rail_pending or self._rail_retreat) and self._mira_departure is None)
+                     and self.care.runner_delivered and not self.care.busy and self._page_remaining==0
+                     and (not self._rail_pending or self._rail_retreat))
         self._next_if_ready()
     def _settled_facings(self):
         if not self.actors:return
@@ -407,10 +449,17 @@ class SanctuaryArrival(MillGift):
         for key,destination in target.items():
             actor=a[key]
             if actor.moving or actor.route or key=='caretaker' and self._rail_pending and not self._rail_retreat:continue
+            if key=='mira' and (self.care.busy or self.beat<4):
+                actor.facing=self.performance['poses'].get(actor.pose,{}).get('facing','left')
+                continue
+            if key=='runner' and actor.pose=='runner_place':
+                actor.facing=self.performance['poses']['runner_place'].get('facing','front')
+                continue
             point=a[destination].position if isinstance(destination,str) else pygame.Vector2(destination)
             delta=point-actor.position
             if delta.length_squared():actor.facing=facing_toward(delta)
-        for key in ('worker_a','worker_b'):a[key].facing='front'
+        a['worker_a'].facing=self.performance['poses'].get(a['worker_a'].pose,{}).get('facing','front')
+        a['worker_b'].facing='front'
         if not a['page'].moving:a['page'].facing='left'
 
     def sync_residents(self):
@@ -425,6 +474,7 @@ class SanctuaryArrival(MillGift):
             for beat in self.manifest['beats']:goals.update(beat['goals'])
             for key,actor in self.actors.items():
                 actor.position.update(goals[key]);actor.pose=self.manifest['beats'][-1].get('poses',{}).get(key)
+            self.actors['worker_a'].pose_ms=10000
         for actor in self.actors.values():actor.route=[];actor.moving=False
         for key,source in (('aldric',c.aldric),('page',c.clerk)):
             c._place(source,world,self.actors[key].position);source.story_following=False
@@ -438,7 +488,7 @@ class SanctuaryArrival(MillGift):
         for key in ('caretaker','worker_a','worker_b','sentry','runner'):
             actor=self.actors[key];actor.route=[];actor.moving=False
             if actor not in world.npcs:world.npcs.append(actor);self._published.append((world,actor))
-        self._kit=False;self._sync_care_props()
+        self.care.kit_owner='stowed';self.care.runner_delivered=True;self._sync_care_props()
         self.stage_party()
     def stage_party(self):
         # Story restoration temporarily uses town coordinates while rebuilding

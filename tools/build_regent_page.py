@@ -119,14 +119,14 @@ def walking(art, direction, phase):
     return image
 
 
-def ledger_pose(idle, phase, *, lowering=False):
+def ledger_pose(idle, phase, *, lowering=False, book_drop=0):
     """Six contact drawings: free folio, opening, settled spread and glance."""
     if lowering:phase=5-phase
     image=idle.copy();d=ImageDraw.Draw(image)
     # The native left-facing body supplies head/coat; sleeve and hands reach
     # toward the book instead of borrowing a differently proportioned figure.
     open_width=(3,4,6,8,9,9)[phase]
-    y=(24,23,22,21,20,20)[phase]
+    y=(24,23,22,21,20,20)[phase]+book_drop
     x=2 if phase>=2 else 5
     d.line((9,17,7,y+2,5,y+2),fill=PALETTE['outline'],width=3)
     d.line((9,17,7,y+1),fill=PALETTE['coat_light'],width=2)
@@ -148,6 +148,31 @@ def ledger_pose(idle, phase, *, lowering=False):
     return image
 
 
+def ledger_attention(art, phase):
+    """Lower the open folio and lift the chin without changing its owner.
+
+    The first drawing is the existing reading hold, so entering this action
+    never makes the folio jump or vanish. The six-pixel hand area remains
+    beside the torso while the book lowers only three native pixels.
+    """
+    idle=standing(art,'left')
+    # Rebuild the head over its own coat/boots instead of leaving a duplicate
+    # face behind the tilted drawing. Pivot near the back of the jaw; a small
+    # profile rotation raises the chin toward the listener.
+    angle=(0,0,-4,-6,-8,-8)[phase]
+    if angle:
+        head,coat,boots=art
+        idle=Image.new('RGBA',SIZE)
+        idle.alpha_composite(boots,((24-boots.width)//2,27))
+        idle.alpha_composite(coat,((24-coat.width)//2,12))
+        head_layer=Image.new('RGBA',SIZE)
+        head_layer.alpha_composite(head,(5,0))
+        head_layer=head_layer.rotate(angle,Image.Resampling.NEAREST,
+                                     center=(14,10),expand=False)
+        idle.alpha_composite(head_layer)
+    return ledger_pose(idle,5,book_drop=(0,1,1,2,3,3)[phase])
+
+
 def seated(idle):
     image=idle.copy();image.paste((0,0,0,0),(0,26,24,36))
     d=ImageDraw.Draw(image)
@@ -163,7 +188,7 @@ def seated(idle):
 
 def products():
     image=_source();out={};idles={};walks={};poses={}
-    sheet=Image.new('RGBA',(9*24,6*36))
+    sheet=Image.new('RGBA',(9*24,8*36))
     native={direction:parts(image,direction) for direction in DIRECTIONS}
     for row,direction in enumerate(DIRECTIONS):
         idle=standing(native[direction],direction)
@@ -181,6 +206,14 @@ def products():
             frame=ledger_pose(left,phase,lowering=name=='read_lower')
             rect=[phase*24,row*36,24,36];sheet.alpha_composite(frame,rect[:2])
             frames.append({'rect':rect,'duration_ms':(140,110,100,140,180,200)[phase]})
+        poses[name]={'frames':frames,'loop':False,'facing':'left'}
+    for row,name in ((6,'read_attention'),(7,'read_resume')):
+        frames=[]
+        for phase in range(6):
+            drawing=phase if name=='read_attention' else 5-phase
+            frame=ledger_attention(native['left'],drawing)
+            rect=[phase*24,row*36,24,36];sheet.alpha_composite(frame,rect[:2])
+            frames.append({'rect':rect,'duration_ms':100})
         poses[name]={'frames':frames,'loop':False,'facing':'left'}
     out[OUT/'poses.png']=png(sheet)
     out[ROOT/'assets/story/regent/poses/clerk_seated.png']=png(seated(standing(native['front'],'front')))
