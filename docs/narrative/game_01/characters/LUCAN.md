@@ -101,14 +101,34 @@ insignificance into a canonical childhood humiliation.
 | Blind spot | Treats his own protective judgment as authority over others | Established |
 | Help he needs | Other people can offer better plans; he must learn to recognize and accept that | Established growth direction |
 | Noncombat crafts and natural talents | A wagonwright upbringing does not yet establish his own craft proficiency | Open |
-| Mechanics | Arsenal-based progression is the current direction below; exact abilities, weapon rules, starting attributes and unlock methods remain undecided | Direction recorded, 2026-11-07 / Open details |
+| Mechanics | The implemented cave guest has the skills below; full arsenal progression, weapon rules and later unlock methods remain open | Guest subset implemented / Future arsenal direction |
 
 ## Combat progression concept
+
+### Implemented Sanctuary guest appearance
+
+Lucan assists in the cave as a **level-five guest** and earns no combat EXP.
+Players command his Attack, Skills, Items, Guard and permitted Flee actions,
+but his full Armsmaster mechanics and character interactable wait for permanent
+recruitment later in the story. His guest skills establish his protective role:
+
+- **Inspire:** 5 MP; all living active allies gain 50% Attack for five of their own turns.
+- **Bolster:** 5 MP; all living active allies gain 50% Defense for five of their own turns.
+- **Provoke:** 8 MP; normal enemies direct single-target hostile actions toward
+  him for five of their own turns. Minibosses and bosses are immune.
+
+Inspire and Bolster can coexist; recasting refreshes duration without stacking
+the bonus. His newly granted self-buff does not lose a turn to its casting
+action. Provoke preserves telegraphed-attack response opportunities and ends
+if Lucan is incapacitated. He accompanies early healing trips, then leaves
+after the cave boss is defeated and the party exits the cave. This departure
+does not decide his later permanent recruitment or ultimate ability.
 
 **Current author direction, 2026-11-07:** Lucan's combat identity is
 **Armsmaster**, replacing Knight as his intended job. His employment as Aldric's
 personal guard and his protective characterization remain established.
-These are future combat concepts, not implemented weapon or ability systems.
+The arsenal and ultimate directions below remain future combat concepts; the
+implemented guest skills above are a separate limited appearance.
 
 ### A growing arsenal
 

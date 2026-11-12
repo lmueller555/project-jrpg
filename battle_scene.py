@@ -16,6 +16,7 @@ from battle_action_audio import BattleActionAudio
 from combat_motion_art import MOTION_STATES, frame as motion_frame, anchors as motion_anchors
 from mira_combat_art import MiraCombatArt
 from mira_rig_ui import MiraRigUI
+from lucan_skill_fx import LucanSkillEffects, SKILLS as LUCAN_SKILLS, COLORS as LUCAN_COLORS, icon as lucan_status_icon
 from cave_battlefield import CaveBattlefield, CAVE_BATTLEFIELDS
 from battle_target_marker import (FINGER_SIZE, FINGER_GAP, target_marker_geometry,
                                   draw_target_ring, draw_target_finger)
@@ -37,7 +38,8 @@ ACTION_LABELS = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
                  'flame_edge': 'Flame Edge', 'ice_edge': 'Ice Edge',
                  'charged_bolt': 'Charged Bolt', 'bulwark': 'Bulwark',
                  'repair_pulse': 'Repair Pulse', 'impact_bolt': 'Impact Bolt',
-                 'arc_discharge': 'Arc Discharge'}
+                 'arc_discharge': 'Arc Discharge',
+                 'inspire': 'Inspire', 'bolster': 'Bolster', 'provoke': 'Provoke'}
 RIG_SKILLS = frozenset(('charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge'))
 HP_GREEN = '#6fc878'
 HP_YELLOW = GOLD
@@ -186,6 +188,7 @@ class BattleScene:
         self._rig_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         motion_frame('plant', 0, armed=model.weapon_equipped)
         self.action_audio = BattleActionAudio(game)
+        self.lucan_fx = LucanSkillEffects()
         self.channel_art = None
         if any(self._sprite(enemy.identifier)=='vespermaw' for enemy in self._enemy_members()):
             from vespermaw_channel_art import VespermawChannelArt
@@ -620,7 +623,7 @@ class BattleScene:
         if identifier.startswith('ally:'):
             return self.model.combatant(identifier.split(':', 1)[1]).name
         label = ACTION_LABELS.get(identifier, identifier)
-        if identifier in ('aqua_edge', 'flame_edge', 'ice_edge', *RIG_SKILLS):
+        if identifier in ('aqua_edge', 'flame_edge', 'ice_edge', *RIG_SKILLS, *LUCAN_SKILLS):
             cost = self.model.action_mp_cost(identifier, self.model.ready_actor)
             return label+' · '+str(cost)+' MP'
         return label
@@ -658,6 +661,11 @@ class BattleScene:
                     return str(cost)+' MP · Physical sword strike with '+element+' magic.'
                 if selected == 'nature_edge':
                     return self._command_reason(selected) or 'Unpractised elemental focus.'
+                if selected in LUCAN_SKILLS:
+                    effect = {'inspire': 'Party Attack +50% for five turns each.',
+                              'bolster': 'Party Defense +50% for five turns each.',
+                              'provoke': 'Normal enemies target Lucan for five turns each. Bosses are immune.'}[selected]
+                    return str(model.action_mp_cost(selected, model.ready_actor))+' MP · '+effect
                 if selected in RIG_SKILLS:
                     from mira_rig_rules import SKILLS
                     requirement = SKILLS[selected]['requirements']
@@ -1166,6 +1174,9 @@ class BattleScene:
                                else self._phase_elapsed+seconds)
         roar_impact_cued = False
         for event in self.model.drain_events():
+            if event['type'] == 'provoke_immune':
+                self._popups.append({'target':event['target'],'text':'Immune',
+                    'age':event.get('frame_age',0.),'immune':True})
             if event['type'] == 'skill_heal':
                 if event['amount']:
                     self._popups.append({'target': event['target'], 'text': '+'+str(event['amount']),
@@ -1251,6 +1262,11 @@ class BattleScene:
             self._cue_action = action
             self._cue_phases.clear()
         if action is not None and action.action=='vespermaw_attune':return
+        if action is not None and action.actor == 'lucan' and action.action in LUCAN_SKILLS:
+            if action.elapsed >= max(.05,action.impact_at-.15) and 'lucan_command' not in self._cue_phases:
+                self._cue_phases.add('lucan_command')
+                self.action_audio.play('focus' if action.action != 'provoke' else 'release')
+            return
         if (action is not None and action.actor == 'mira'
                 and action.action == 'bolt_shot' and self.mira_art is not None):
             if action.elapsed >= self.mira_art.release_at and 'mira_release' not in self._cue_phases:
@@ -1514,6 +1530,13 @@ class BattleScene:
         if action is not None and action.actor == actor:
             if sprite=='vespermaw' and action.action=='vespermaw_attune':
                 return 'channel', action.elapsed*1000
+            if actor == 'lucan' and action.action in LUCAN_SKILLS:
+                pose = 'guard' if action.action == 'bolster' else 'technique'
+                if hasattr(self.sprites,'actors'):
+                    if 'lucan' not in self.sprites.actors:self.sprites._load_actor('lucan')
+                    duration=sum(length for _,length in self.sprites.actors['lucan']['animations'][pose][0])
+                    return pose, max(0.,duration-1) if self.reduced_motion else min(duration-1,action.elapsed/action.duration*duration)
+                return pose, action.elapsed*1000
             if action.kind == 'item':return 'idle', 0 if self.reduced_motion else action.elapsed*1000
             if actor == 'mira' and action.action in RIG_SKILLS:
                 return action.action, self.mira_art.action_time(action.action, action.elapsed,
@@ -1738,6 +1761,8 @@ class BattleScene:
         self._draw_mira_effects(canvas)
         self._draw_rig_skill_effects(canvas, positions)
         self._draw_rig_barriers(canvas, positions)
+        self.lucan_fx.draw(canvas,action,positions,lambda actor:self._hit_point(actor,positions),
+            pygame.Rect(0,35,480,max(1,self.panel_rect.top-35)),reduced_motion=self.reduced_motion)
         self._draw_cave_enemy_effects(canvas, positions)
         self._draw_elemental_effects(canvas, positions)
         self._draw_item_effects(canvas, positions)
@@ -2116,6 +2141,55 @@ class BattleScene:
             if selected == identifier and enemy.hp and model.phase == 'ready':
                 painter.rect(GOLD, row['row'], 1)
 
+    def _draw_support_status(self, painter, positions):
+        """Small emblems and model-owned turn counts, without prose overlays."""
+        self.support_badges = {}
+        statuses = []
+        for member in self.model.party:
+            active=[(key,turns) for key,turns in getattr(member,'buffs',{}).items()
+                    if key in ('inspire','bolster') and turns>0]
+            if not member.hp or not active:continue
+            point=self._project(positions[member.identifier])
+            bottom=min(self.panel_rect.top-3,point.y+12)
+            if getattr(member,'barrier',0):bottom-=painter.font('small').get_linesize()+4
+            statuses.append((member.identifier,active,point.x,bottom))
+        for identifier,state in getattr(self.model,'enemy_provocations',{}).items():
+            member=self.model.combatant(identifier)
+            if member is None or not member.hp or not state['turns']:continue
+            body=self.enemy_rects.get(identifier)
+            if body is None:continue
+            point=self._project((body.right+11,body.centery))
+            statuses.append((identifier,[('provoke',state['turns'])],point.x,point.y))
+        height=max(10,painter.font('small').get_linesize()+2)
+        occupied=[rect.inflate(7,5) for rect in self.barrier_badges.values()]
+        for actor,active,x,bottom in statuses:
+            widths=[9+painter.font('small',bold=True).size(str(turns))[0]+4 for _,turns in active]
+            width=sum(widths)+4
+            x=max(width/2+3,min(477-width/2,x))
+            bottom=max(35+height,min(self.panel_rect.top-3,bottom))
+            preferred=pygame.Rect(round(x-width/2),round(bottom-height),width,height)
+            limits=pygame.Rect(2,35,476,max(height,self.panel_rect.top-38))
+            badge=preferred.clamp(limits)
+            # A large-text barrier badge can extend under a neighbouring
+            # character. Keep every count readable rather than overprinting it.
+            offsets=((0,0),(-width-5,0),(width+5,0),(0,-height-4),
+                     (-width-5,-height-4),(width+5,-height-4),(0,-2*(height+4)))
+            for dx,dy in offsets:
+                candidate=preferred.move(dx,dy).clamp(limits)
+                if not any(candidate.inflate(3,3).colliderect(other) for other in occupied):
+                    badge=candidate;break
+            occupied.append(badge)
+            painter.rect(FOREST_DARK,badge);painter.rect(BRASS,badge,1)
+            cursor=badge.left+3
+            for (key,turns),span in zip(active,widths):
+                image=pygame.Surface((9,9),pygame.SRCALPHA)
+                lucan_status_icon(image,key,(1,0),LUCAN_COLORS[key])
+                painter.image(image,pygame.Rect(cursor,badge.centery-4,9,9))
+                painter.text(str(turns),(cursor+10,badge.centery),role='small',
+                    color=LUCAN_COLORS[key],anchor='midleft',bold=True)
+                cursor+=span
+            self.support_badges[actor]=badge
+
     @staticmethod
     def _enemy_atb(painter, rect, value):
         painter.rect(FOREST, rect)
@@ -2211,6 +2285,7 @@ class BattleScene:
             painter.text(cue, (cue_point[0]+1, cue_point[1]+1), role='small',
                          color=FOREST_DARK, anchor='midbottom', bold=True)
             painter.text(cue, cue_point, role='small', color=MP_BLUE, anchor='midbottom', bold=True)
+        self._draw_support_status(painter,positions)
         if model.phase == 'victory':
             # The encounter owner advances this celebration to Spoils of Battle.
             # Rewards and an exit command belong to that separate screen.

@@ -259,7 +259,7 @@ class OverworldTravel:
                 place(g.town, landing)
                 actor.facing = 'back'
 
-    def _commit(self, destination, position, facing, transition):
+    def _commit(self, destination, position, facing, transition, *, checkpoint=True):
         g = self.game
         origin = g.world
         if self.active:g.world.participation.before_travel(g)
@@ -289,7 +289,7 @@ class OverworldTravel:
         g.location_label = None
         g.location_seconds = 3.5
         g._sync_world_music()
-        g.save_progress()
+        if checkpoint:g.save_progress()
         return True
 
     def enter_region(self):

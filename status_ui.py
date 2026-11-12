@@ -230,7 +230,11 @@ class StatusUI:
         painter.text('Lv. '+str(level.level), (88, 60), color=FOREST, bold=True)
         painter.button(self.previous_rect, '‹', disabled=len(self.roster) < 2)
         painter.button(self.next_rect, '›', disabled=len(self.roster) < 2)
-        if level.level == MAX_LEVEL:
+        from lucan_guest import is_lucan_guest
+        guest = self.character_id=='lucan' and is_lucan_guest(getattr(self.game,'party',None))
+        if guest:
+            progress, progress_text = 0., 'Guest · No EXP'
+        elif level.level == MAX_LEVEL:
             progress, progress_text = 1.0, 'MAX LEVEL'
         else:
             required = xp_to_next_level(level.level)
@@ -238,7 +242,7 @@ class StatusUI:
             progress_text = ('EXP '+str(level.xp_into_level)+' / '+str(required)+
                              '  ·  '+str(level.xp_remaining)+' to next level')
         painter.text(progress_text, (88, 82), role='small', color=INK)
-        painter.rect(PARCHMENT_DARK, self.xp_bar_rect)
+        if not guest:painter.rect(PARCHMENT_DARK, self.xp_bar_rect)
         if progress:painter.rect(FOREST, (self.xp_bar_rect.x, self.xp_bar_rect.y,
                                         max(1, round(self.xp_bar_rect.width*progress)), self.xp_bar_rect.height))
         painter.button(self.close_rect, '×')

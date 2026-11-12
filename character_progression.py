@@ -12,7 +12,8 @@ from copy import deepcopy
 
 from character_attributes import (ATTRIBUTE_CAPS, ATTRIBUTE_IDS, MAX_ATTRIBUTE_VALUE,
                                   CharacterAttributes)
-from leveling import CharacterLevel, character_ids, character_stats, combat_xp_allocations
+from leveling import (CharacterLevel, character_ids, character_stats,
+                      combat_xp_allocations, total_xp_for_level)
 
 
 _IDS = character_ids()
@@ -130,6 +131,30 @@ class CharacterProgression:
         attributes.set_current(hp=max(1, hp) if current_hp else 0)
         return True
 
+    def initialize_guest_level(self, identifier, level, *, preserve_resources=False):
+        """Install a story-authored starting profile without an EXP award.
+
+        The event owner controls the one-time receipt. Legacy adoption retains
+        HP/MP proportions, including KO; later reconciliation cannot heal or
+        reset an already adopted guest.
+        """
+        if (not isinstance(identifier, str) or identifier not in self.records or type(level) is not int
+                or not 1 <= level <= 100 or type(preserve_resources) is not bool):
+            return False
+        attributes = self.party.characters[identifier]
+        old_hp, old_mp = attributes.value('hp'), attributes.value('mp')
+        hp, mp = attributes.current_hp, attributes.current_mp
+        attributes._attributes = character_stats(identifier, level)
+        maximum_hp, maximum_mp = attributes.value('hp'), attributes.value('mp')
+        if preserve_resources:
+            hp = ((hp*maximum_hp+old_hp//2)//old_hp if hp else 0)
+            hp = max(1, hp) if attributes.current_hp else 0
+            mp = (mp*maximum_mp+old_mp//2)//old_mp if old_mp else 0
+        else:hp, mp = maximum_hp, maximum_mp
+        attributes.set_current(hp=min(maximum_hp, hp), mp=min(maximum_mp, mp))
+        self.records[identifier] = CharacterLevel(identifier, total_xp_for_level(level))
+        return True
+
     @classmethod
     def valid_journey(cls, data):
         return (isinstance(data, dict)
@@ -139,15 +164,19 @@ class CharacterProgression:
     def preview(self, amount, active_ids, end_hp):
         """Build every combatant's outcome from actual HP before first aid.
 
-        Each living active character receives the full battle EXP. KO entries
-        are retained with zero requested EXP so the view can explain exclusion;
+        Each eligible living active character receives the full battle EXP. KO
+        and Lucan guest entries retain zero EXP for accurate presentation;
         reserves and summoned bots never enter this plan. Stats are unbuffed
         persistent base values, with the existing per-attribute caps applied.
         """
         allocations = combat_xp_allocations(amount, active_ids, end_hp)
+        from lucan_guest import guest_xp_excluded
+        guests = [key for key in guest_xp_excluded(self.party) if key in active_ids]
+        for key in guests:allocations[key] = 0
         result = {'version': 1, 'amount': amount, 'active_ids': list(active_ids),
                   'end_hp': {identifier: end_hp[identifier] for identifier in active_ids},
                   'characters': {}}
+        if guests:result.update(version=2, guest_ids=guests)
         for identifier in active_ids:
             record = CharacterLevel.from_dict(self.records[identifier].to_dict())
             award = record.award_xp(allocations[identifier]).to_dict()
@@ -163,14 +192,18 @@ class CharacterProgression:
     def valid_plan(plan):
         """Recompute the complete saved award without trusting its gains."""
         try:
-            if (not isinstance(plan, dict) or set(plan) != _PLAN_FIELDS
-                    or type(plan['version']) is not int or plan['version'] != 1
+            if (not isinstance(plan, dict) or type(plan.get('version')) is not int
+                    or plan['version'] not in (1, 2)
+                    or set(plan) != (_PLAN_FIELDS | {'guest_ids'} if plan['version']==2 else _PLAN_FIELDS)
                     or not isinstance(plan['active_ids'], list)
                     or not isinstance(plan['end_hp'], dict)
                     or not isinstance(plan['characters'], dict)):
                 return False
             active = plan['active_ids']
             allocations = combat_xp_allocations(plan['amount'], active, plan['end_hp'])
+            if plan['version']==2:
+                if plan['guest_ids'] != ['lucan'] or 'lucan' not in active:return False
+                allocations['lucan'] = 0
             if (set(plan['end_hp']) != set(active)
                     or set(plan['characters']) != set(active)):
                 return False
@@ -207,6 +240,10 @@ class CharacterProgression:
         """Match participating EXP and base stats, leaving resources separate."""
         if type(after) is not bool or not self.valid_plan(plan):
             return False
+        if plan['version']==2:
+            from lucan_guest import guest_xp_excluded
+            expected = [key for key in guest_xp_excluded(self.party) if key in plan['active_ids']]
+            if plan['guest_ids'] != expected:return False
         state = 'new' if after else 'old'
         stats = 'stats_after' if after else 'stats_before'
         return all(self.records[identifier].total_xp == entry[state+'_total_xp']

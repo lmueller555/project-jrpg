@@ -854,6 +854,12 @@ class Game:
             return True
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
+        # Existing battle receipts must restore against their original stat
+        # before-state. Guest-profile migration waits until that battle ends.
+        self._lucan_guest_defer_profile=bool(data and (data.get('post_battle')
+            or (data.get('sanctuary_boss') or {}).get('pending')
+            or (data.get('elemental_bosses') or {}).get('pending')
+            or (data.get('cave_random_encounters') or {}).get('pending')))
         self.opening_cinematic.reset()
         self.mill_gift.reset()
         self.regent_arrival.reset()
@@ -1019,6 +1025,7 @@ class Game:
                 self.save_error='The saved cave encounter could not be restored.'
                 self.on_title=True
                 return False
+        self._lucan_guest_defer_profile=False
         self.save_progress()
         self.regent_arrival.maybe_start()
         if self.party.pending_selection is not None:self._resume_party_selection()

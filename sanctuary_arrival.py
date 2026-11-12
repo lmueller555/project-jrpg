@@ -335,6 +335,7 @@ class SanctuaryArrival(MillGift):
         if world is not None:self.rail.set_progress(progress,world)
     def _commit_beat(self):
         g=self.game;before=self.to_dict();party_before=g.party.to_dict()
+        levels_before=g.character_progression.to_dict();cave_before=g.sanctuary_cave.to_dict()
         last=self.beat==7
         if last:
             self.completed=True
@@ -343,6 +344,7 @@ class SanctuaryArrival(MillGift):
         g.player.position.update(self.actors['caelan'].position);g.player.facing=self.actors['caelan'].facing
         if not success or not (g._is_gallery_preview or g.save_progress()):
             self.phase_index=before['beat'];self.completed=before['completed'];g.party.restore(party_before)
+            g.character_progression.restore(levels_before);g.sanctuary_cave.restore(cave_before)
             self.error='Progress could not be saved. Press Enter or click to retry.'
             self._checkpoint_failed=True;return
         if last:
@@ -478,7 +480,13 @@ class SanctuaryArrival(MillGift):
         for actor in self.actors.values():actor.route=[];actor.moving=False
         for key,source in (('aldric',c.aldric),('page',c.clerk)):
             c._place(source,world,self.actors[key].position);source.story_following=False
-        c._hide(c.lucan)
+        if (getattr(g.sanctuary_cave,'lucan_departed',False)
+                and g.party.is_guest('lucan')):
+            # He has returned to Aldric after the completed cave outing;
+            # use the canonical royal actor, never a second follower sprite.
+            c._place(c.lucan,world,(844,414));c.lucan.story_following=False
+            c.lucan.facing='left';c.lucan.set_pose(None)
+        else:c._hide(c.lucan)
         self._settled_facings()
         for key,source in (('aldric',c.aldric),('page',c.clerk)):
             source.facing=self.actors[key].facing
@@ -504,9 +512,10 @@ class SanctuaryArrival(MillGift):
         if not self.completed or g.regent_quest.stage!='sanctuary_arrival_pending':return
         leader=self.manifest['beats'][-1]['goals']['caelan']
         if g.player.position.distance_to(leader)<1:
+            followers=tuple(key for key in ('mira','lucan') if key in g.party.active_ids)
             g.party_travel.stage_companions(
-                {key:self.actors[key].position for key in ('mira','lucan')},
-                facings={key:self.actors[key].facing for key in ('mira','lucan')})
+                {key:self.actors[key].position for key in followers},
+                facings={key:self.actors[key].facing for key in followers})
     def draw(self,canvas,ui_surface):
         g=self.game;old=g.player.story_visible if hasattr(g.player,'story_visible') else True
         g.player.story_visible=False

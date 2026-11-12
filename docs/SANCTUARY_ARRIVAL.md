@@ -74,8 +74,12 @@ compositions rather than reaction montages.
 
 ## Gameplay and continuity handoff
 
-Lucan becomes a temporary third combat member with Caelan and Mira for the MQ03
-Sanctuary outing. This is not his later permanent entrustment to the party.
+Lucan becomes a temporary level-five third combat member with Caelan and Mira
+for the MQ03 Sanctuary outing. He earns no combat EXP during this guest role
+and uses Inspire, Bolster and Provoke without an interactable minigame. This is
+not his later permanent entrustment to the party. He stays through early rest
+trips and leaves only after Vespermaw is defeated and the party exits the cave;
+Continue and re-entry preserve that departure.
 Aldric and the page remain in the reserve. The player regains control on the
 apron, with both the cave interaction and the path back to the hall available.
 Entering the cave continues into the existing aether-resonance introduction.

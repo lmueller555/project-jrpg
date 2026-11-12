@@ -106,6 +106,10 @@ class PartyState:
 
     def is_available(self, identifier):return identifier in self.available_ids
 
+    def is_guest(self, identifier):
+        """Temporary companions use guest combat/progression rules."""
+        return bool(self._members.get(identifier, {}).get('temporary'))
+
     def selection_change_reason(self):
         return (self.lock_reason or 'The party is fixed for this event.') if self.locked else ''
 
