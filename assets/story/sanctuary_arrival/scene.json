@@ -14,7 +14,7 @@
           406
         ],
         "mira": [
-          716,
+          712,
           318
         ],
         "lucan": [
@@ -84,7 +84,6 @@
         }
       ],
       "poses": {
-        "mira": "tend",
         "worker_a": "injured",
         "worker_b": "injured"
       },
@@ -136,11 +135,11 @@
               354
             ],
             [
-              716,
+              712,
               354
             ],
             [
-              716,
+              712,
               318
             ]
           ]
@@ -248,8 +247,8 @@
         }
       ],
       "poses": {
-        "mira": "tend",
-        "worker_a": "injured",
+        "mira": "care_idle",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -278,8 +277,8 @@
       "goals": {},
       "lines": [],
       "poses": {
-        "mira": "tend",
-        "worker_a": "injured",
+        "mira": "care_idle",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -321,8 +320,8 @@
         }
       ],
       "poses": {
-        "mira": "tend",
-        "worker_a": "injured",
+        "mira": "care_idle",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -397,8 +396,8 @@
         }
       ],
       "poses": {
-        "mira": "set_down",
-        "worker_a": "injured",
+        "mira": "care_idle",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -418,7 +417,7 @@
         "mira": {
           "waypoints": [
             [
-              716,
+              712,
               350
             ],
             [
@@ -459,7 +458,7 @@
         }
       ],
       "poses": {
-        "worker_a": "injured",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -486,7 +485,7 @@
         }
       ],
       "poses": {
-        "worker_a": "injured",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -539,7 +538,7 @@
         }
       ],
       "poses": {
-        "worker_a": "injured",
+        "worker_a": "arm_rest",
         "worker_b": "injured",
         "page": "read"
       },
@@ -626,7 +625,7 @@
             ],
             [
               1052,
-              404
+              394
             ]
           ],
           "delay": 0.8
@@ -647,7 +646,7 @@
       "keeper": {
         "contact": [
           1052,
-          404
+          394
         ],
         "retreat": [
           1052,

@@ -1,197 +1,1088 @@
 {
+  "version": 2,
   "poses": {
     "place": {
       "frames": [
         {
           "file": "assets/story/sanctuary_arrival/performance/place_00.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            27,
+            28
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/place_01.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            26,
+            30
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/place_02.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            26,
+            32
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/place_03.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            26,
+            34
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/place_04.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            25,
+            36
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/place_05.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            24,
+            38
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_06.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            40
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_07.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            40
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_08.png",
+          "duration_ms": 100,
+          "hand": [
+            25,
+            39
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_09.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            38
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_10.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            36
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/place_11.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            35
+          ]
         }
       ],
       "loop": false,
       "anchor": [
         32,
         40
-      ]
+      ],
+      "facing": "left",
+      "cue_ms": {
+        "kit_deposit": 700
+      }
+    },
+    "take_cloth": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_00.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            35
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_01.png",
+          "duration_ms": 100,
+          "hand": [
+            37,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_02.png",
+          "duration_ms": 100,
+          "hand": [
+            39,
+            35
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_03.png",
+          "duration_ms": 100,
+          "hand": [
+            40,
+            36
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_04.png",
+          "duration_ms": 100,
+          "hand": [
+            42,
+            38
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_05.png",
+          "duration_ms": 100,
+          "hand": [
+            44,
+            39
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_06.png",
+          "duration_ms": 100,
+          "hand": [
+            44,
+            39
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_07.png",
+          "duration_ms": 100,
+          "hand": [
+            41,
+            38
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_08.png",
+          "duration_ms": 100,
+          "hand": [
+            38,
+            37
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_09.png",
+          "duration_ms": 100,
+          "hand": [
+            33,
+            36
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_10.png",
+          "duration_ms": 100,
+          "hand": [
+            30,
+            36
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/take_cloth_11.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            35
+          ],
+          "held_prop": "cloth"
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ],
+      "facing": "right",
+      "cue_ms": {
+        "cloth_pickup": 600
+      }
     },
     "treat": {
       "frames": [
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_00.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            26,
+            35
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_01.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            24,
+            35
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_02.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            23,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_03.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            22,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_04.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_05.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_06.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            33
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_07.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_08.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            35
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_09.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_10.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/treat_11.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_12.png",
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/treat_13.png",
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
         }
       ],
       "loop": false,
       "anchor": [
         32,
         40
-      ]
+      ],
+      "facing": "left",
+      "cue_ms": {}
+    },
+    "finish": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_00.png",
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_01.png",
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ],
+          "held_prop": "cloth"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_02.png",
+          "duration_ms": 100,
+          "hand": [
+            20,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_03.png",
+          "duration_ms": 100,
+          "hand": [
+            21,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_04.png",
+          "duration_ms": 100,
+          "hand": [
+            23,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_05.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            35
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_06.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            35
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/finish_07.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            35
+          ]
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ],
+      "facing": "left",
+      "cue_ms": {
+        "dressing_release": 200
+      }
+    },
+    "care_idle": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/care_idle_00.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            35
+          ]
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ],
+      "facing": "left",
+      "cue_ms": {}
+    },
+    "care_ready": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/care_ready_00.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            35
+          ],
+          "held_prop": "cloth"
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ],
+      "facing": "left",
+      "cue_ms": {}
     },
     "retrieve": {
       "frames": [
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_00.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            27,
+            35
+          ]
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_01.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            26,
+            36
+          ]
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_02.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            26,
+            38
+          ]
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_03.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            25,
+            39
+          ]
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_04.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            24,
+            40
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_05.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            24,
+            38
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_06.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            25,
+            37
+          ],
+          "held_prop": "kit"
         },
         {
           "file": "assets/story/sanctuary_arrival/performance/retrieve_07.png",
-          "duration_ms": 100
+          "duration_ms": 100,
+          "hand": [
+            25,
+            35
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_08.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            33
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_09.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            31
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_10.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            30
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_11.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            28
+          ],
+          "held_prop": "kit"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_12.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            28
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/retrieve_13.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            28
+          ]
         }
       ],
       "loop": false,
       "anchor": [
         32,
         40
-      ]
+      ],
+      "facing": "left",
+      "cue_ms": {
+        "kit_pickup": 400,
+        "kit_stow": 1200
+      }
     },
     "offer_arm": {
       "frames": [
         {
-          "file": "assets/story/sanctuary_arrival/performance/patient_00.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_00.png",
+          "duration_ms": 100,
+          "hand": [
+            34,
+            34
+          ]
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/patient_01.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_01.png",
+          "duration_ms": 100,
+          "hand": [
+            35,
+            34
+          ]
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/patient_02.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_02.png",
+          "duration_ms": 100,
+          "hand": [
+            37,
+            34
+          ]
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/patient_03.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_03.png",
+          "duration_ms": 100,
+          "hand": [
+            38,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_04.png",
+          "duration_ms": 100,
+          "hand": [
+            40,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_05.png",
+          "duration_ms": 100,
+          "hand": [
+            41,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_06.png",
+          "duration_ms": 100,
+          "hand": [
+            43,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/offer_arm_07.png",
+          "duration_ms": 100,
+          "hand": [
+            44,
+            34
+          ]
         }
       ],
       "loop": false,
       "anchor": [
-        12,
-        30
-      ]
+        32,
+        40
+      ],
+      "facing": "right",
+      "cue_ms": {}
+    },
+    "arm_rest": {
+      "frames": [
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_00.png",
+          "duration_ms": 100,
+          "hand": [
+            44,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_01.png",
+          "duration_ms": 100,
+          "hand": [
+            43,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_02.png",
+          "duration_ms": 100,
+          "hand": [
+            41,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_03.png",
+          "duration_ms": 100,
+          "hand": [
+            40,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_04.png",
+          "duration_ms": 100,
+          "hand": [
+            38,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_05.png",
+          "duration_ms": 100,
+          "hand": [
+            37,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_06.png",
+          "duration_ms": 100,
+          "hand": [
+            35,
+            34
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/arm_rest_07.png",
+          "duration_ms": 100,
+          "hand": [
+            34,
+            34
+          ]
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ],
+      "facing": "right",
+      "cue_ms": {}
     },
     "runner_place": {
       "frames": [
         {
-          "file": "assets/story/sanctuary_arrival/performance/runner_00.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_00.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            29
+          ],
+          "held_prop": "linen"
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/runner_01.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_01.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            31
+          ],
+          "held_prop": "linen"
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/runner_02.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_02.png",
+          "duration_ms": 100,
+          "hand": [
+            25,
+            33
+          ],
+          "held_prop": "linen"
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/runner_03.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_03.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            35
+          ],
+          "held_prop": "linen"
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/runner_04.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_04.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            37
+          ],
+          "held_prop": "linen"
         },
         {
-          "file": "assets/story/sanctuary_arrival/performance/runner_05.png",
-          "duration_ms": 100
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_05.png",
+          "duration_ms": 100,
+          "hand": [
+            23,
+            39
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_06.png",
+          "duration_ms": 100,
+          "hand": [
+            22,
+            41
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_07.png",
+          "duration_ms": 100,
+          "hand": [
+            22,
+            41
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_08.png",
+          "duration_ms": 100,
+          "hand": [
+            23,
+            38
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_09.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            35
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_10.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            32
+          ]
+        },
+        {
+          "file": "assets/story/sanctuary_arrival/performance/runner_place_11.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            29
+          ]
         }
       ],
       "loop": false,
       "anchor": [
-        20,
-        30
-      ]
+        32,
+        40
+      ],
+      "facing": "left",
+      "cue_ms": {
+        "linen_deposit": 700
+      }
     }
   },
   "props": {
     "kit": "assets/story/sanctuary_arrival/performance/kit.png",
     "linen": "assets/story/sanctuary_arrival/performance/linen.png"
+  },
+  "stations": {
+    "mira": [
+      712,
+      318
+    ],
+    "worker_a": [
+      688,
+      318
+    ],
+    "runner": [
+      800,
+      350
+    ]
+  },
+  "prop_metadata": {
+    "kit": {
+      "position": [
+        704,
+        328
+      ],
+      "anchor": [
+        7,
+        10
+      ],
+      "contact": [
+        7,
+        1
+      ]
+    },
+    "linen_mira": {
+      "position": [
+        724,
+        324
+      ],
+      "anchor": [
+        6,
+        7
+      ],
+      "contact": [
+        6,
+        0
+      ],
+      "prop": "linen"
+    },
+    "linen_runner": {
+      "position": [
+        790,
+        358
+      ],
+      "anchor": [
+        6,
+        7
+      ],
+      "contact": [
+        6,
+        0
+      ],
+      "prop": "linen"
+    }
+  },
+  "carry_idles": {
+    "front": "assets/story/sanctuary_arrival/performance/carry/idle_front.png",
+    "back": "assets/story/sanctuary_arrival/performance/carry/idle_back.png",
+    "left": "assets/story/sanctuary_arrival/performance/carry/idle_left.png",
+    "right": "assets/story/sanctuary_arrival/performance/carry/idle_right.png"
+  },
+  "carry_walks": {
+    "front": [
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_front_01.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_front_02.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_front_03.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_front_04.png",
+        "duration_ms": 140
+      }
+    ],
+    "back": [
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_back_01.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_back_02.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_back_03.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_back_04.png",
+        "duration_ms": 140
+      }
+    ],
+    "left": [
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_left_01.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_left_02.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_left_03.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_left_04.png",
+        "duration_ms": 140
+      }
+    ],
+    "right": [
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_right_01.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_right_02.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_right_03.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "assets/story/sanctuary_arrival/performance/carry/walk_right_04.png",
+        "duration_ms": 140
+      }
+    ]
+  },
+  "carry_anchor": [
+    12,
+    30
+  ],
+  "objects": {
+    "kit": {
+      "position": [
+        704,
+        328
+      ],
+      "anchor": [
+        7,
+        10
+      ],
+      "contact": [
+        7,
+        1
+      ],
+      "file": "assets/story/sanctuary_arrival/performance/kit.png"
+    },
+    "linen_mira": {
+      "position": [
+        724,
+        324
+      ],
+      "anchor": [
+        6,
+        7
+      ],
+      "contact": [
+        6,
+        0
+      ],
+      "prop": "linen",
+      "file": "assets/story/sanctuary_arrival/performance/linen.png"
+    },
+    "linen_runner": {
+      "position": [
+        790,
+        358
+      ],
+      "anchor": [
+        6,
+        7
+      ],
+      "contact": [
+        6,
+        0
+      ],
+      "prop": "linen",
+      "file": "assets/story/sanctuary_arrival/performance/linen.png"
+    }
   }
 }

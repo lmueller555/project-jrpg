@@ -20,14 +20,15 @@ class ArrivalPerformanceTests(unittest.TestCase):
     def test_care_instruction_precedes_retrieval_and_kit_never_follows_walking(self):
         d=self.driver;o=self.g.sanctuary_arrival
         d.until(lambda:o.beat==4 and o.dialogue is not None)
-        self.assertEqual(tuple(o.actors['mira'].position),(716,318))
+        self.assertEqual(tuple(o.actors['mira'].position),
+                         tuple(o.manifest['beats'][0]['goals']['mira']))
         self.assertTrue(o._kit)
         d.press();self.assertGreater(o._action_remaining,0)
         for _ in range(20):
             d.tick(.1)
             if o.actors['mira'].moving:
                 self.assertFalse(o._kit)
-                self.assertNotIn([708,326],[r['position'] for _,r in o._care_props])
+                self.assertFalse(any(r['id']=='arrival_kit' for _,r in o._care_props))
                 break
         else:self.fail('Mira never departed after retrieving her kit')
         d.until(lambda:o.completed)
@@ -36,14 +37,19 @@ class ArrivalPerformanceTests(unittest.TestCase):
         other=d.game();self.assertTrue(other.begin_journey(True))
         self.assertEqual([r['position'] for _,r in other.sanctuary_arrival._care_props],expected)
         self.assertFalse(other.sanctuary_arrival._kit)
-    def test_treatment_contact_is_registered_to_the_existing_dressing(self):
+    def test_treatment_uses_nearby_stations_and_a_small_hand_to_dressing_gap(self):
         d=self.driver;o=self.g.sanctuary_arrival
         d.until(lambda:o.beat==1)
         mira=o.actors['mira'];worker=o.actors['worker_a']
-        mira.pose='treat';mira.pose_ms=900;worker.pose='offer_arm';worker.pose_ms=900
-        self.assertEqual(tuple(mira.position-pygame.Vector2(mira.draw_anchor)+pygame.Vector2(16,34)),
-                         tuple(worker.position-pygame.Vector2(worker.draw_anchor)+pygame.Vector2(24,24)))
-        self.assertGreater(mira.sprite(0).get_at((16,34)).a,0)
+        mira.pose='treat';mira.pose_ms=10000;worker.pose='offer_arm';worker.pose_ms=10000
+        self.assertGreaterEqual(mira.position.distance_to(worker.position),14)
+        self.assertLessEqual(mira.position.distance_to(worker.position),24)
+        hand=o.performance['poses']['treat']['frames'][-1]['hand']
+        dressing=o.performance['poses']['offer_arm']['frames'][-1]['hand']
+        hand_world=mira.position-pygame.Vector2(mira.draw_anchor)+hand
+        dressing_world=worker.position-pygame.Vector2(worker.draw_anchor)+dressing
+        self.assertLessEqual(hand_world.distance_to(dressing_world),3)
+        self.assertGreater(mira.sprite(0).get_at(hand).a,0)
     def test_wounded_worker_has_contextual_post_scene_interaction(self):
         d=self.driver;o=self.g.sanctuary_arrival;d.until(lambda:o.completed)
         self.g.player.position.update(688,348);self.g.player.facing='back'

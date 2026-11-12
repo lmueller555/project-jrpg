@@ -41,18 +41,19 @@ unread prose.
 | Beat | Composition and action | Dramatic purpose |
 | --- | --- | --- |
 | `arrival_contact` | Travel from the arch into the court. The camera discovers the occupied cloister as the group approaches. Mira tends an arm while Caelan speaks with the caretaker; Lucan checks the eastern sightline. | Establish an emergency already being managed, and follow through on Caelan's promise to Serene. |
-| `accounting` | Lucan comes closer to ask who remains missing. The page opens the crew list beside Aldric while Mira continues practical care. | Establish one worker was pulled into the cave and has been heard answering since. The page's prior knowledge of the deployment remains unspecified. |
+| `accounting` | Lucan comes closer to ask who remains missing. The page opens the crew list beside Aldric; Mira remains beside the treated worker and her supplies. | Establish one worker was pulled into the cave and has been heard answering since. The page's prior knowledge of the deployment remains unspecified. |
 | `cave_reveal` | A silent 2.4-second hold on the crystal-lined cave approach, keeper rail and disturbed ground. | Let the viewer locate the threat. No interior, creature or chasm is shown. |
 | `responsibility` | Return to a steady composition containing Aldric, the caretaker and wounded workers. The caretaker stands between Aldric and the people affected by his orders. | Aldric admits he acted without Serene's agreement, suspends the work and offers useful aid. Accepting his help does not settle the breach of trust. |
 | `rescue_decision` | Mira finishes the dressing, withdraws her tools and stands beside Caelan. Lucan moves into a commanding position facing them. | Mira's engineering tools give her a practical rescue role; Caelan insists on following through. Lucan accepts their involvement while retaining his protective, somewhat overbearing manner. |
-| `royal_handoff` | Hold the group while Lucan turns back toward Aldric, receives the order and turns toward the cave again. | Aldric explicitly releases his guard to accompany the rescue. Aldric and the page remain with the caretakers and crew list. |
-| `visitor_rest` | Reframe toward the hall as the caretaker gestures and the runner returns toward its doorway. | Establish Nessa's visitor room: through the hall, then the north door with the bed plaque. The bed remains available during cave exploration. |
+| `royal_handoff` | Hold the group while Lucan turns back toward Aldric, receives the order and turns toward the cave again. The page lowers his open ledger and looks up to speak, then resumes reading. | Aldric explicitly releases his guard to accompany the rescue. Aldric and the page remain with the caretakers and crew list. |
+| `visitor_rest` | Reframe toward the hall as the caretaker gives directions; the runner remains beside the delivered supplies. | Establish Nessa's visitor room: through the hall, then the north door with the bed plaque. The bed remains available during cave exploration. |
 | `cave_approach` | Follow Caelan, Mira and Lucan along the eastward path. Aldric/page continue their work behind them. Lucan checks the opening; Mira watches loose stone; the caretaker unhooks the rope, lowers it and steps clear. Finish at the actual gameplay camera position. | Give the rescue a clear immediate aim and return control without a staging jump. |
 
-The eight beats contain 28 authored dialogue lines. Workers retain injured
-poses while Mira's dressing work, the page's reading and runner's supply work
-provide restrained background activity. Important admissions and the rescue
-decision receive steady compositions rather than reaction montages.
+The eight beats contain 28 authored dialogue lines. The treated worker presents
+his arm only for care, then lowers it to a supported rest. Mira's dressing work,
+the page's reading and runner's supply work provide restrained background
+activity. Important admissions and the rescue decision receive steady
+compositions rather than reaction montages.
 
 ## Character follow-through
 
@@ -120,10 +121,17 @@ tracks the arriving column before settling on the courtyard composition.
 
 The barrier stands on the accessible apron at `[972,359]`, with stationary posts
 and sixteen separately authored rope frames. The caretaker operates the right
-fastening from `[1052,404]`, using a twelve-frame interaction with its own canvas
-anchor. Hand and rope contacts share a 1.6-second timeline; a quiet sound marks
-the release. The rope is guided down, released and settles on the ground while
-the posts remain fixed. The caretaker then steps clear to `[1052,426]`.
+fastening from `[1052,394]`, facing left, using a sixteen-frame interaction with
+its own canvas anchor. His feet are about 15 native pixels from the right post's
+base at `[1037,392]`; the fastening is at `[1038,376]`. His shoulder, elbow and
+wrist remain naturally proportioned. A small contact gap is permitted instead
+of extending his arm to force exact hand/free-end coincidence.
+
+The hand and rope share a 1.6-second timeline: approach/contact at 300 ms,
+unhooking at 400 ms, guided slack until 800 ms, then free fall and settling. A
+quiet sound marks unhooking. The left end stays attached and both posts remain
+fixed. After releasing the rope, the caretaker withdraws his hand and steps
+clear to `[1052,426]`.
 
 `SanctuaryRope` adds reversible, local post/closed-rope footprints without
 changing the cave façade's static boundary or the existing entrance interaction.
@@ -145,12 +153,62 @@ the existing dressing beside the worker before acknowledging her final care
 instruction, retrieving her kit, and departing. Fast confirmations wait for
 required short contact actions and never accumulate multiple advances.
 
-The local treatment station places Worker A at [688,318] and Mira at [716,318].
+### Interaction stations and native anchors
+
 Native care, retrieval and linen placement artwork comes from
 `tools/build_sanctuary_care_performance.py` (use `--check` for reproducibility).
-The registered treatment grip meets the patient's existing forearm dressing.
-The runner completes one placement before settling. Quiet contact sounds share
-pause, focus and cleanup behavior with the rope.
+The performance manifest registers character ground stations and each prop's
+support anchor and contact point. All coordinates below are **native world
+pixels**, before camera or display scaling:
+
+| Character or object | Ground/support position | Staging |
+| --- | --- | --- |
+| Worker A | `[688,318]` | Presents his forearm toward Mira, then returns it to supported rest. |
+| Mira | `[712,318]` | 24 px from the worker; turns toward each supply and uses authored bend/kneel poses. |
+| Mira's kit | `[704,328]` | About 13 px from Mira's feet, within natural floor-object reach. |
+| Clean linen beside Mira | `[724,324]` | About 13 px from Mira's feet; separate from the dressing retained on the arm. |
+| Runner | `[800,350]` | Stops before lowering the bundle. |
+| Delivered linen | `[790,358]` | About 13 px from the runner's feet; stays fixed after release. |
+
+Prop support positions are not image top-left coordinates. Rendering subtracts
+the prop's local support anchor to obtain its image origin; hand gaps use its
+separate contact point. Enlarged action canvases preserve the character's
+ground registration. Use the global standard's hand-contact ranges and visual
+review; neither these station coordinates nor older exact-contact checks
+justify stretched arms or sliding planted feet.
+
+### Care, delivery and ledger lifecycles
+
+Mira's sequence is **place → take cloth → treat → finish → retrieve**. She stops
+and faces the kit destination before lowering it with a natural body bend. The
+kit remains in her grip until its release cue, then becomes one fixed world
+prop. She turns toward nearby linen, takes a cloth at its pickup cue, and turns
+back toward the worker. During treatment, the dressing is secured on the arm;
+Mira withdraws her hands while the worker returns his arm to supported rest.
+She does not hold an exaggerated reach throughout later dialogue.
+
+After her final care instruction, Mira faces the kit, grasps and lifts it, then
+stows it and recovers before walking toward the rescue group. The remaining
+clean linen stays beside the worker. Each transfer has one owner and one
+representation; advancing dialogue cannot publish a placement or retrieval
+before its physical cue. Her action facing takes priority over conversational
+turns while she is manipulating an object.
+
+The runner carries one consistently sized linen bundle along her finite route,
+with directional carry art and body-appropriate occlusion. She stops, faces the
+delivery spot, bends and lowers the bundle, then releases it to its registered
+world support. The deposited bundle remains fixed as she recovers and settles;
+there is no repeated supply loop or floating travel overlay.
+
+The page remains at his left-facing reading station with the ledger registered
+to his hands and torso. On his `royal_handoff` line, `read_attention` lowers the
+still-open ledger and lifts his chin toward the listener; `read_resume` returns
+him to reading after acknowledgement. Both are six-frame, 600 ms actions with
+continuous start/end drawings. He continues reading after the scene; no physical
+handover or new stowing action is implied. Any later turn or departure must use
+appropriate directional artwork or finish and stow the ledger first.
+
+Quiet contact sounds share pause, focus and cleanup behavior with the rope.
 
 Deposited linen is a nonblocking world prop rendered at a fixed location during
 and after the cinematic. Mira's personal kit disappears at retrieval before she
@@ -167,3 +225,15 @@ is hidden before travel, while deposited linen remains at its world station.
 Caelan's separate weapon overlay belongs to the authored MQ03 scabbard cue.
 The documented rope and forearm grip coordinates are existing registrations;
 they do not require future actions to force exact contact or extend limbs.
+
+### Review scope
+
+Check the live Gallery scene at native gameplay scale for approach, reach,
+transfer, recovery and departure, including body proportions, contact gaps,
+foot placement and foreground/actor occlusion. Focused checks protect single
+ownership and cue timing across slow/rapid input, pause/focus changes, restart
+and checkpoint restoration; completion alone does not establish visual quality.
+Clean-water fetching and individual engineering-tool use remain dialogue
+references. This interaction pass does not add those actions or a new medical
+or inventory effect. Earlier review captures remain historical evidence rather
+than certification of the revised performance.

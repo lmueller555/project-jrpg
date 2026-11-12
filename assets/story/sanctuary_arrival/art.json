@@ -97,104 +97,265 @@
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_00.png",
               "duration_ms": 100,
               "grip": [
-                26,
-                31
+                20,
+                34
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                21,
+                30
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_01.png",
               "duration_ms": 100,
               "grip": [
-                21,
-                24
+                17,
+                30
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                20,
+                29
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_02.png",
               "duration_ms": 100,
               "grip": [
+                12,
+                26
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
                 15,
-                18
+                28
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_03.png",
               "duration_ms": 100,
               "grip": [
-                12,
-                12
+                9,
+                23
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                27
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_04.png",
               "duration_ms": 100,
               "grip": [
-                12,
-                13
+                8,
+                23
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                27
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_05.png",
               "duration_ms": 100,
               "grip": [
+                9,
+                26
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
                 13,
-                16
+                29
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_06.png",
               "duration_ms": 100,
               "grip": [
+                9,
+                29
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
                 14,
-                20
+                30
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_07.png",
               "duration_ms": 100,
               "grip": [
-                14,
-                24
+                10,
+                31
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                15,
+                31
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_08.png",
               "duration_ms": 100,
               "grip": [
-                14,
-                28
+                12,
+                32
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                16,
+                31
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_09.png",
               "duration_ms": 100,
               "grip": [
-                13,
-                31
+                15,
+                32
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                19,
+                30
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_10.png",
-              "duration_ms": 200,
+              "duration_ms": 100,
               "grip": [
+                18,
+                33
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
                 21,
-                32
+                30
               ]
             },
             {
               "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_11.png",
-              "duration_ms": 400,
+              "duration_ms": 100,
               "grip": [
-                26,
-                31
+                20,
+                34
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                21,
+                30
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_12.png",
+              "duration_ms": 100,
+              "grip": [
+                20,
+                34
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                21,
+                30
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_13.png",
+              "duration_ms": 100,
+              "grip": [
+                20,
+                34
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                21,
+                30
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_14.png",
+              "duration_ms": 100,
+              "grip": [
+                20,
+                34
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                21,
+                30
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_15.png",
+              "duration_ms": 100,
+              "grip": [
+                20,
+                34
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                21,
+                30
               ]
             }
           ],
           "loop": false,
           "anchor": [
-            26,
+            20,
             40
-          ]
+          ],
+          "facing": "left"
         }
       },
       "portrait": "arrival_caretaker",
@@ -339,7 +500,8 @@
         "free_end": [
           66,
           17
-        ]
+        ],
+        "state": "attached"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_01.png",
@@ -347,7 +509,8 @@
         "free_end": [
           66,
           17
-        ]
+        ],
+        "state": "attached"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_02.png",
@@ -355,7 +518,8 @@
         "free_end": [
           66,
           17
-        ]
+        ],
+        "state": "attached"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_03.png",
@@ -363,108 +527,121 @@
         "free_end": [
           66,
           17
-        ]
+        ],
+        "state": "attached"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_04.png",
         "duration_ms": 100,
         "free_end": [
-          66,
+          68,
           18
-        ]
+        ],
+        "state": "guided"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_05.png",
         "duration_ms": 100,
         "free_end": [
-          67,
+          69,
           21
-        ]
+        ],
+        "state": "guided"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_06.png",
         "duration_ms": 100,
         "free_end": [
-          68,
-          25
-        ]
+          69,
+          24
+        ],
+        "state": "guided"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_07.png",
         "duration_ms": 100,
         "free_end": [
-          68,
-          29
-        ]
+          70,
+          26
+        ],
+        "state": "guided"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_08.png",
         "duration_ms": 100,
         "free_end": [
           68,
-          33
-        ]
+          29
+        ],
+        "state": "falling"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_09.png",
         "duration_ms": 100,
         "free_end": [
-          67,
-          36
-        ]
+          62,
+          34
+        ],
+        "state": "falling"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_10.png",
         "duration_ms": 100,
         "free_end": [
-          60,
-          40
-        ]
+          54,
+          39
+        ],
+        "state": "falling"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_11.png",
         "duration_ms": 100,
         "free_end": [
-          48,
-          43
-        ]
+          44,
+          42
+        ],
+        "state": "falling"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_12.png",
         "duration_ms": 100,
         "free_end": [
-          35,
-          44
-        ]
+          33,
+          43
+        ],
+        "state": "falling"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_13.png",
         "duration_ms": 100,
         "free_end": [
           24,
-          44
-        ]
+          43
+        ],
+        "state": "falling"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_14.png",
         "duration_ms": 100,
         "free_end": [
-          18,
-          43
-        ]
+          23,
+          40
+        ],
+        "state": "settled"
       },
       {
         "file": "assets/story/sanctuary_arrival/art/rail/rope_15.png",
         "duration_ms": 100,
         "free_end": [
-          18,
-          43
-        ]
+          23,
+          40
+        ],
+        "state": "settled"
       }
     ],
     "caretaker_position": [
       1052,
-      404
+      394
     ],
     "facing": "left",
     "contact_point": [
@@ -478,7 +655,14 @@
     "contact_ms": 300,
     "release_ms": 400,
     "duration_ms": 1600,
-    "guided_until_ms": 1000,
+    "guided_until_ms": 800,
+    "drop_ms": 800,
+    "sort_y": 395,
+    "support_world": [
+      1037,
+      392
+    ],
+    "max_contact_gap": 4,
     "sound": "assets/story/sanctuary_arrival/art/rail/rope_release.wav",
     "post_footprints": [
       [
@@ -504,5 +688,5 @@
     "open": "assets/story/sanctuary_arrival/art/rail/open.png"
   },
   "source_recipe": "assets/source/story/sanctuary_arrival_polish/recipe.json",
-  "design": "Native Sanctuary care identities and fixed-post rope release; pixel registration is explicit."
+  "design": "Native Sanctuary care identities and a naturally proportioned, fixed-post rope release with a deliberate small contact snap."
 }

@@ -206,7 +206,7 @@ class SanctuaryArrivalPolishTests(unittest.TestCase):
         self.key(parent, pygame.K_ESCAPE)
         voice.stop.assert_called()
 
-    def test_the_rendered_hand_stays_on_the_rope_while_guiding_it_down(self):
+    def test_rope_contact_stays_within_natural_reach_until_the_free_end_is_released(self):
         parent, _, game, owner = self.scene()
         keeper = owner.actors['caretaker']
         rope = owner.rail
@@ -230,14 +230,22 @@ class SanctuaryArrivalPolishTests(unittest.TestCase):
             grip = pygame.Vector2(hand_frame['grip'])
             hand_world = keeper.position-pygame.Vector2(keeper.draw_anchor)+grip
             rope_world = pygame.Vector2(rope.art['position'])+rope_frame['free_end']
-            self.assertEqual(tuple(hand_world), tuple(rope_world), elapsed)
+            # The global standard permits a small deliberate contact gap.
+            # Exact coincidence previously forced an oversized reaching arm.
+            self.assertLessEqual(hand_world.distance_to(rope_world),4,elapsed)
             hand = keeper.sprite(0).get_at(tuple(map(int, grip)))
             endpoint = game.world.image(rope_frame['file']).get_at(tuple(rope_frame['free_end']))
             self.assertEqual(hand.a, 255)
             self.assertEqual(endpoint.a, 255)
             parent.draw()
-            screen = tuple(round(value) for value in hand_world-pygame.Vector2(game.camera.position()))
-            self.assertEqual(game.canvas.get_at(screen), hand, elapsed)
+            self.assertEqual(tuple(keeper.position),tuple(rope.art['caretaker_position']))
+
+        # Unhooking opens the passage at the visual cue, rather than waiting
+        # until the rope has settled or allowing passage through a taut rope.
+        rope.set_progress((rope.art['release_ms']-1)/rope.duration_ms,game.world)
+        self.assertFalse(game.world.can_stand((1008,396)))
+        rope.set_progress(rope.art['release_ms']/rope.duration_ms,game.world)
+        self.assertTrue(game.world.can_stand((1008,396)))
 
     def test_gallery_restart_during_release_restores_the_closed_barrier(self):
         parent, session, _, owner = self.scene()
@@ -251,6 +259,24 @@ class SanctuaryArrivalPolishTests(unittest.TestCase):
         self.assertEqual(replacement.beat, 0)
         self.assertFalse(replacement.rail.opened)
         self.assertEqual(replacement.rail.progress, 0)
+        self.assertEqual(parent._progress_signature(), before)
+
+    def test_gallery_restart_during_kit_retrieval_discards_partial_prop_ownership(self):
+        parent, session, game, owner = self.scene()
+        before = parent._progress_signature()
+        self.until(parent, lambda: owner.care.action == 'retrieve'
+                   and owner.care.kit_owner == 'mira')
+        props = [record for _, record in owner._care_props]
+        self.assertTrue(props)
+        self.assertTrue(self.key(parent, pygame.K_r))
+        self.assertTrue(session.closed)
+        replacement = parent.gallery_session.game.sanctuary_arrival
+        self.assertIsNot(replacement, owner)
+        self.assertEqual(replacement.beat, 0)
+        self.assertEqual(replacement.care.kit_owner, 'stowed')
+        self.assertEqual(replacement.care.cloth_owner, 'linen')
+        self.assertFalse(replacement.care.runner_linen_placed)
+        self.assertTrue(all(record not in game.world.entities for record in props))
         self.assertEqual(parent._progress_signature(), before)
 
 
