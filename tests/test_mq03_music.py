@@ -1,4 +1,4 @@
-"""Survivor silence and dialogue-driven Kindled Courage ownership."""
+"""Survivor silence and dialogue-driven emergency-score ownership."""
 import os
 os.environ.setdefault('SDL_VIDEODRIVER','dummy')
 os.environ.setdefault('SDL_AUDIODRIVER','dummy')
@@ -17,7 +17,9 @@ class EmergencyMusicTests(unittest.TestCase):
         self.game=NS(audio=AudioSettings(), combat=NS(active=False),
                      social=NS(script_identifier=None,page=None))
         self.mixer=FakeMixer()
-        self.game.music=GameMusic(self.game,catalog=CATALOG,mixer=self.mixer)
+        self.game.music=GameMusic(self.game,catalog={**CATALOG, 'tracks': {**CATALOG['tracks'],
+                         'something_is_wrong': {'file': 'runtime/something_is_wrong.ogg', 'gain': .45}}},
+                                      mixer=self.mixer)
         self.addCleanup(self.game.music.stop)
         self.owner=NS(game=self.game,actors={},stage='interruption')
         self.scene=RegentEmergency(self.owner)
@@ -38,7 +40,7 @@ class EmergencyMusicTests(unittest.TestCase):
             self.assertIsNone(music.current_track)
         self.game.social.page={'source_line':3}
         self.scene.sync_music();music.update(.5)
-        self.assertEqual(music.current_track,'battle')
+        self.assertEqual(music.current_track,'something_is_wrong')
         loads=len(self.mixer.music.loads)
         # Cancellation and rereading do not rewind the started score.
         self.game.social.page={'source_line':0}
@@ -52,7 +54,7 @@ class EmergencyMusicTests(unittest.TestCase):
         self.game.sanctuary_arrival=NS(completed=True,cave_entered=False)
         self.owner.stage='sanctuary_arrival_pending'
         self.scene.sync_music();self.game.music.update(1)
-        self.assertEqual(self.game.music.current_track,'battle')
+        self.assertEqual(self.game.music.current_track,'something_is_wrong')
 
     def test_first_cave_entry_permanently_releases_emergency_ownership(self):
         self.game.sanctuary_arrival=NS(completed=True,cave_entered=True)
@@ -68,14 +70,14 @@ class EmergencyMusicTests(unittest.TestCase):
         self.assertTrue(self.game.music.end_battle(fade_ms=0))
         self.scene.sync_music();self.assertEqual(self.game.music.current_track,'eldenmere')
 
-    def test_restore_report_restarts_silent_opening_later_checkpoints_restore_courage(self):
+    def test_restore_report_restarts_silent_opening_later_checkpoints_restore_emergency_score(self):
         self.owner.stage='attack_report'
         self.scene.sync_music(restoring=True)
         self.assertIsNone(self.game.music.current_track)
         for stage in ('departure','rejoin_mira','sanctuary_travel','sanctuary_arrival_pending'):
             self.owner.stage=stage
             self.scene.sync_music(restoring=True)
-            self.assertEqual(self.game.music.current_track,'battle')
+            self.assertEqual(self.game.music.current_track,'something_is_wrong')
         self.owner.stage='done'
         self.game.music.play('eldenmere',fade_ms=0)
         self.scene.sync_music()

@@ -134,19 +134,21 @@ class RevisedVisitTests(unittest.TestCase):
         report = self.quest.lines['attack_report']
         self.assertEqual(report[0]['speaker'], 'regent_survivor')
         text = ' '.join(line['text'] for line in report)
-        self.assertIn('establish the Crown’s authority', text)
-        self.assertIn('Before I came to Eldenmere', text)
+        self.assertIn('secure the deposit and prepare the mining work', text)
+        self.assertIn('Ahead of my visit.', text)
         surprise = next(line for line in report if line.get('cue') == 'lucan_disbelief')
         self.assertEqual(surprise['speaker'], 'lucan')
-        self.assertIn("I wasn't told", surprise['text'])
+        self.assertIn("without telling me", surprise['text'])
         surprise_index = report.index(surprise)
-        self.assertTrue(any(line['speaker'] == 'lucan' and 'road to the reserve' in line['text']
+        self.assertFalse(any(line['speaker'] == 'lucan' for line in report[:surprise_index]))
+        self.assertEqual(len(report)+len(self.quest.lines['departure']), 21)
+        self.assertTrue(any(line['speaker'] == 'lucan' and 'road clear' in line['text']
                             for line in report[surprise_index+1:]))
 
     def test_departure_keeps_care_at_home_and_brings_miras_existing_equipment(self):
         departure = self.quest.lines['departure']
         self.assertTrue(any(line.get('cue') == 'survivor_aid' for line in departure))
-        self.assertTrue(any(line['speaker'] == 'tomas' and 'water' in line['text']
+        self.assertTrue(any(line['speaker'] == 'serene' and 'Tomas, water and clean cloths' in line['text']
                             for line in departure))
         self.assertTrue(any(line['speaker'] == 'regent_driver' and 'help' in line['text']
                             for line in departure))

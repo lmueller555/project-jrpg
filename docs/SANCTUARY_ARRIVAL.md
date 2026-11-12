@@ -84,7 +84,7 @@ Aldric and the page remain in the reserve. The player regains control on the
 apron, with both the cave interaction and the path back to the hall available.
 Entering the cave continues into the existing aether-resonance introduction.
 
-Kindled Courage carries the arrival scene. The first actual cave entry ends
+Something is Wrong carries the arrival scene. The first actual cave entry ends
 its MQ03 override for that journey; subsequent area transfers use normal music.
 The caretaker's invitation is a continuing recovery option, not an automatic
 heal or a new item requirement. Dialogue gives no medical countdown that would

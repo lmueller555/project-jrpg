@@ -80,8 +80,8 @@ When combat resolves through victory, fleeing or defeat, the interrupted
 track fades in from that saved position. Cave encounters return to
 **Elden Vale Sanctuary Cave**. The result banner, rewards screen
 and return to exploration share that resumed stream. Repeated result updates,
-reward retries and dismissal do not restart it. If Kindled Courage was already
-playing for the MQ03 emergency, it continues uninterrupted through the battle.
+reward retries and dismissal do not restart it. An encounter during MQ03's
+emergency interrupts **Something is Wrong** and resumes it afterward.
 Entering from silence returns to silence.
 
 Resume positions use the streamed decoder clock and Ogg seeking, including
@@ -174,3 +174,11 @@ The full Ice Reaper cinematic uses `Those I Swore to Save.m4a`, exported as
 `runtime/those_i_swore_to_save.ogg`. It starts at the beginning of the scene
 and follows gallery pause, restart and exit behavior. Rebuild with
 `python tools/build_runtime_music.py --track those_i_swore_to_save`.
+
+**Something is Wrong** (`something_is_wrong`) scores MQ03’s emergency report,
+departure and Sanctuary arrival. It begins after the survivor’s first two
+statements, on Serene’s “What men?”, and loops until the first cave entry
+releases the story override. The runtime Ogg preserves the full uploaded source
+without trimming, normalization or rearrangement. Combat continues to use
+**Kindled Courage** independently. Rebuild with
+`python tools/build_runtime_music.py --track something_is_wrong`.
