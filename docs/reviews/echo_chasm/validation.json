@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "tests": {
+    "total_passed": 82,
+    "subtests_passed": 383,
+    "terrain_and_effects_run": {
+      "passed": 48,
+      "subtests_passed": 352,
+      "modules": [
+        "test_cave_chasm",
+        "test_sanctuary_cave_assets",
+        "test_echo_chamber_battlefield",
+        "test_sanctuary_cave_migration",
+        "test_sanctuary_cave_controller",
+        "test_regional_audio"
+      ]
+    },
+    "gameplay_run": {
+      "passed": 34,
+      "subtests_passed": 31,
+      "modules": [
+        "test_sanctuary_boss_gameplay",
+        "test_sanctuary_boss_state",
+        "test_sanctuary_cave_music",
+        "test_elemental_room_fx"
+      ]
+    }
+  },
+  "build_checks": [
+    "Chasm module PNGs and manifest rebuild byte-identically",
+    "Continuous cave and battlefield --check passed through asset regression tests",
+    "Other regional battlefield PNG hashes unchanged"
+  ],
+  "manual_runtime_checks": [
+    "Full-foot paths from foreground to both side approaches",
+    "Running north from foreground stopped at y=325.8 without entering the rupture",
+    "Production-rendered exploration, combat and Reduced Motion intro captures"
+  ],
+  "save_checks": [
+    "Covered old player position relocates on Continue without rewriting the file during title inspection",
+    "Unfinished Vespermaw ticket keeps resources and combat seed",
+    "Already-awarded boss spoils keep the existing grant and receipts"
+  ],
+  "scope": "No full-suite pass claimed; targeted dungeon, effects, persistence, boss and music regressions."
+}

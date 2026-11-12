@@ -65,11 +65,22 @@ class SanctuaryBossEntry(CaveBattleEntry):
         if self.phase == 'cutscene' and not self.intro_seen:
             progress = min(1., self.elapsed/self.duration)
             origin = pygame.Vector2(game.camera.position())
-            if not self.reduced_motion:
+            chasm = game.world.data.get('cave', {}).get('chasm')
+            if chasm:
+                x,y,w,h = chasm['bounds']
+                center = pygame.Vector2(x+w/2,y+h*.55)
+                target = center-pygame.Vector2(canvas.get_size())/2
+                if self.reduced_motion:origin = target
+                else:
+                    ease = math.sin(min(1., progress/.8)*math.pi/2)**2
+                    origin = origin.lerp(target,.8*ease)
+                self.focus = center-origin
+            elif not self.reduced_motion:
                 ease = math.sin(min(1., progress/.8)*math.pi/2)**2
-                origin = origin.lerp((1820, 140), .8*ease)
+                origin = origin.lerp((1820,140),.8*ease)
             frame = pygame.Surface(canvas.get_size())
             game.world.draw(frame, origin, game.player, game.elapsed_ms+self.elapsed*1000,
-                            include_ui=False, party_actors=game.party_travel.actors())
+                            include_ui=False, party_actors=game.party_travel.actors(),
+                            effect_time_ms=getattr(game.world,'chasm_elapsed_ms',0.)+self.elapsed*1000)
             self.world_frame = frame
         super().draw(game, canvas, ui_surface)

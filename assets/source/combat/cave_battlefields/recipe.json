@@ -1232,7 +1232,7 @@
       ],
       "source_position": [
         2060,
-        300
+        360
       ],
       "seed": 7507,
       "floor_material": "dry",
@@ -1240,56 +1240,56 @@
       "wall_edge": [
         [
           0,
-          143
+          83
         ],
         [
           48,
-          137
+          77
         ],
         [
           96,
-          129
+          69
         ],
         [
           144,
-          124
+          64
         ],
         [
           192,
-          120
+          60
         ],
         [
           240,
-          118
+          58
         ],
         [
           288,
-          120
+          60
         ],
         [
           336,
-          124
+          64
         ],
         [
           384,
-          129
+          69
         ],
         [
           432,
-          137
+          77
         ],
         [
           480,
-          143
+          83
         ]
       ],
       "wall_baselines": [
-        139,
-        130,
-        122,
-        122,
-        130,
-        139
+        79,
+        70,
+        62,
+        62,
+        70,
+        79
       ],
       "patches": [
         {
@@ -1441,7 +1441,7 @@
           "module": "mineral.crust.1",
           "position": [
             108,
-            131
+            71
           ]
         },
         {
@@ -1450,7 +1450,7 @@
           "module": "mineral.crust.2",
           "position": [
             373,
-            132
+            72
           ]
         },
         {
@@ -1459,7 +1459,7 @@
           "module": "stain.damp.1",
           "position": [
             241,
-            133
+            73
           ]
         },
         {
@@ -1486,7 +1486,7 @@
           "module": "micro.blue.dense",
           "position": [
             35,
-            96
+            43
           ],
           "phase": 0,
           "radius": 170
@@ -1495,7 +1495,7 @@
           "module": "micro.purple.diagonal_left",
           "position": [
             77,
-            64
+            29
           ],
           "phase": 0.08,
           "radius": 170
@@ -1504,7 +1504,7 @@
           "module": "micro.green.vertical",
           "position": [
             131,
-            91
+            34
           ],
           "phase": 0.16,
           "radius": 160
@@ -1513,7 +1513,7 @@
           "module": "micro.white.dense",
           "position": [
             185,
-            46
+            21
           ],
           "phase": 0.24,
           "radius": 180
@@ -1522,7 +1522,7 @@
           "module": "micro.blue.diagonal_right",
           "position": [
             239,
-            78
+            35
           ],
           "phase": 0.32,
           "radius": 180
@@ -1531,7 +1531,7 @@
           "module": "micro.purple.dense",
           "position": [
             291,
-            43
+            19
           ],
           "phase": 0.4,
           "radius": 180
@@ -1540,7 +1540,7 @@
           "module": "micro.orange.sparse",
           "position": [
             345,
-            76
+            34
           ],
           "phase": 0.48,
           "radius": 160
@@ -1549,7 +1549,7 @@
           "module": "micro.red.diagonal_right",
           "position": [
             400,
-            51
+            23
           ],
           "phase": 0.56,
           "radius": 160
@@ -1558,12 +1558,24 @@
           "module": "micro.blue.vertical",
           "position": [
             454,
-            96
+            43
           ],
           "phase": 0.64,
           "radius": 170
         }
-      ]
+      ],
+      "frame_count": 48,
+      "chasm": {
+        "position": [
+          135,
+          74
+        ],
+        "size": [
+          210,
+          66
+        ],
+        "manifest": "assets/terrain/limestone_cave/chasm/assets.json"
+      }
     },
     {
       "id": "cave_embervein",

@@ -204,6 +204,17 @@ def products():
         ImageDraw.Draw(collision).rectangle((footprint[0], footprint[1], footprint[0]+27, footprint[1]+9), fill=255)
         solids.append({'id': treasure['id'], 'position': [cx, cy]})
 
+    chasm = spec.get('chasm')
+    if chasm:
+        pack = read(chasm['manifest'])
+        image = opened(pack['composition']['file'])
+        ground.alpha_composite(image, tuple(chasm['position']))
+        mask = Image.new('L',(w,h))
+        mask.paste(opened(pack['composition']['collision']).convert('L'),tuple(chasm['position']))
+        # An additional four-pixel unstable lip keeps feet back from the edge.
+        collision = ImageChops.lighter(collision,mask.filter(ImageFilter.MaxFilter(9)))
+        solids.append({'id':'echo_rupture','position':[2084,230]})
+
     # Ledge faces extend into the surrounding rock, leaving precisely the
     # central 48 px ramp notch as the only entrance to the higher shelf.
     for barrier in spec.get('collision_barriers', []):
@@ -385,7 +396,7 @@ def products():
                      'placed_modules': placed, 'water_tiles': water_records,
                      **{key: spec[key] for key in ('rooms', 'routes', 'navigation_points', 'treasures', 'loops',
                                                    'legacy_landings', 'encounter_spaces', 'arena', 'elemental_arenas', 'links', 'inspections')},
-                     'traversal_checks': checks},
+                     'traversal_checks': checks, **({'chasm':chasm} if chasm else {})},
             'build': {'tool': 'tools/build_continuous_sanctuary_cave.py',
                       'source_recipe': SOURCE.relative_to(ROOT).as_posix(),
                       'source_sha256': {str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest()

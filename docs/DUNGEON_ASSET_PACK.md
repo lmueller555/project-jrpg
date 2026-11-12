@@ -73,3 +73,12 @@ is documented in [Sanctuary cave](SANCTUARY_CAVE.md).
 
 Pygame and NumPy are runtime dependencies. Building and capturing require Pillow;
 the walkthrough recording additionally requires ffmpeg.
+
+## Rupture and subterranean depth
+
+The [chasm module pack](../assets/terrain/limestone_cave/chasm/assets.json)
+adds separately authored north/south rims, side rims, deep stratified rock,
+fresh rubble, fissures and climbing scratches. The retained
+[source atlas](../assets/source/terrain/limestone_cave/chasm/README.md) and
+`tools/build_cave_chasm_assets.py` reproduce its registered exports. The Echo
+Chamber composes these into a blocked opening; there is no descent transition.

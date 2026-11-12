@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "id": "limestone.chasm",
+  "source": "assets/source/terrain/limestone_cave/chasm/authored_modules.png",
+  "source_sha256": "e670dc0e2f58702257e5109095c70448b685329fc8323f0d565c527936186493",
+  "modules": {
+    "rim.north": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/rim_north.png"
+      ],
+      "size": [
+        96,
+        48
+      ],
+      "source_cell": 0,
+      "source_rect": [
+        0,
+        0,
+        438,
+        448
+      ],
+      "source_bounds": [
+        23,
+        151,
+        418,
+        324
+      ],
+      "scale": 0.2379746835443038
+    },
+    "rim.south": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/rim_south.png"
+      ],
+      "size": [
+        96,
+        40
+      ],
+      "source_cell": 1,
+      "source_rect": [
+        438,
+        0,
+        876,
+        448
+      ],
+      "source_bounds": [
+        25,
+        207,
+        416,
+        355
+      ],
+      "scale": 0.24040920716112532
+    },
+    "rim.west": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/rim_west.png"
+      ],
+      "size": [
+        48,
+        96
+      ],
+      "source_cell": 2,
+      "source_rect": [
+        876,
+        0,
+        1314,
+        448
+      ],
+      "source_bounds": [
+        97,
+        45,
+        320,
+        413
+      ],
+      "scale": 0.2062780269058296
+    },
+    "rim.east": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/rim_east.png"
+      ],
+      "size": [
+        48,
+        96
+      ],
+      "source_cell": 3,
+      "source_rect": [
+        1314,
+        0,
+        1752,
+        448
+      ],
+      "source_bounds": [
+        126,
+        45,
+        342,
+        413
+      ],
+      "scale": 0.21296296296296297
+    },
+    "face.deep": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/face_deep.png"
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "source_cell": 4,
+      "source_rect": [
+        0,
+        448,
+        438,
+        897
+      ],
+      "source_bounds": [
+        68,
+        76,
+        374,
+        387
+      ],
+      "scale": 0.3022508038585209
+    },
+    "debris.fresh": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/debris_fresh.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "source_cell": 5,
+      "source_rect": [
+        438,
+        448,
+        876,
+        897
+      ],
+      "source_bounds": [
+        73,
+        138,
+        372,
+        336
+      ],
+      "scale": 0.15151515151515152
+    },
+    "crack.fresh": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/crack_fresh.png"
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "source_cell": 6,
+      "source_rect": [
+        876,
+        448,
+        1314,
+        897
+      ],
+      "source_bounds": [
+        93,
+        112,
+        362,
+        350
+      ],
+      "scale": 0.17100371747211895
+    },
+    "scratches.climbing": {
+      "frames": [
+        "assets/terrain/limestone_cave/chasm/scratches_climbing.png"
+      ],
+      "size": [
+        40,
+        32
+      ],
+      "source_cell": 7,
+      "source_rect": [
+        1314,
+        448,
+        1752,
+        897
+      ],
+      "source_bounds": [
+        111,
+        128,
+        329,
+        331
+      ],
+      "scale": 0.1477832512315271
+    }
+  },
+  "composition": {
+    "file": "assets/terrain/limestone_cave/chasm/rupture.png",
+    "size": [
+      288,
+      174
+    ],
+    "collision": "assets/terrain/limestone_cave/chasm/collision.png",
+    "collision_polygon": [
+      [
+        24,
+        42
+      ],
+      [
+        64,
+        24
+      ],
+      [
+        112,
+        16
+      ],
+      [
+        166,
+        23
+      ],
+      [
+        224,
+        32
+      ],
+      [
+        263,
+        57
+      ],
+      [
+        270,
+        92
+      ],
+      [
+        242,
+        122
+      ],
+      [
+        189,
+        143
+      ],
+      [
+        125,
+        150
+      ],
+      [
+        62,
+        138
+      ],
+      [
+        25,
+        111
+      ],
+      [
+        14,
+        76
+      ]
+    ]
+  },
+  "operation": "Equal-cell extraction, alpha threshold, fixed nearest-neighbor registration; authored modules composed around a dark depth mask."
+}

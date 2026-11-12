@@ -30,7 +30,8 @@ The first Vein Gallery cache introduces the containers on the direct route.
 Both longer detours reconnect, so exploration does not require retracing a
 long dead end. A split pillar, natural arch, contrasting dry and wet routes,
 wall contours and local lighting distinguish the junctions. The Echo Chamber
-has a broad, clear floor framed by stone and embedded microcrystals.
+has a clear foreground framed by stone and embedded microcrystals, with a
+fresh rupture in its rear floor.
 
 Main passages allow at least three 24-pixel tiles of clearance. Shelves, ramps
 and optional routes are authored for the full 24 × 12 pixel player footprint
@@ -185,3 +186,35 @@ historical evidence, not a preview of the current layout. The
 [expanded pack review](reviews/dungeon_pack/README.md) show the approved reusable
 materials. No new walkthrough was generated for the continuous level; review
 the merged dungeon in-game.
+
+## Echo Chamber rupture
+
+A large fresh chasm occupies the rear-central Echo Chamber. The foreground and
+both side routes remain walkable. Broken rim slabs, exposed older strata and
+climbing scratches show a route by which subterranean monsters emerged.
+The footprint and its unstable lip are solid; there is no ladder, transfer,
+descent option or lower-level encounter. The rupture remains after Vespermaw.
+When Mira is travelling with the party, a safe inspection has her recognize
+climbing marks and the equipment needed for descent; Caelan feels rising aether
+without claiming the full explanation. Otherwise Caelan inspects it alone.
+
+**Established cause:** the aether surge that caused the lightning storm and
+bridge destruction also disturbed this natural confluence. The floor ruptured,
+opening onto the deeper subterranean region before the Crown crew was attacked.
+That region is later-game content. This does not add a new explanation for the
+planet's aether cycle or resolve the Sanctuary's other story scenes.
+
+Eleven restrained aether threads rise, bend outward and dissolve over a
+12-second cycle, with blue-white dominant and faint other mineral colors.
+A soft below-rim glow preserves a dark centre. The ordinary crystal cycle
+remains six seconds. The Effects-volume regional audio owner adds quiet air
+and low resonance near the opening; it releases the bed for menus, dialogue,
+focus loss, combat and leaving the cave. Cave music remains unchanged.
+World VFX freeze with pause/focus conditions; Reduced Motion holds them steady.
+The boss introduction pans to the rupture and the dedicated Echo battlefield
+shows matching scenery and a cached 48-frame cycle behind its clear actor stage.
+
+Old cave saves covered by the new collision relocate to an intact foreground
+landing. Matching pending boss and spoils coordinates move together before
+normal save validation. Seeds, receipts, resources, rewards and story flags
+are preserved; loading alone does not write the migration to disk.
