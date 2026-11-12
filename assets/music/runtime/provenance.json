@@ -266,11 +266,11 @@
     {
       "identifier": "sanctuary_cave",
       "source": "Elden Vale Sanctuary Cave.m4a",
-      "source_git_blob_sha": "f1ea34eee45acba92385339435a652c423f41376",
-      "source_sha256": "a36b96da801ff1ccdde0efcb8ee18c25e818c9f95abd7b8fc9abeaa5e7270660",
+      "source_git_blob_sha": "220628c072a322cf4f0ec205708db3d3287c770e",
+      "source_sha256": "ac5deecade3a89e4dfdc4a883b82930db33c92c2224a3a7976fa6019faaf00b5",
       "source_codec": "opus",
-      "source_decoded_frames": 5756808,
-      "source_decoded_seconds": 119.9335,
+      "source_decoded_frames": 5737608,
+      "source_decoded_seconds": 119.5335,
       "loop": true,
       "runtime": "runtime/elden_vale_sanctuary_cave.ogg",
       "runtime_frame_delta": 56,
@@ -283,16 +283,16 @@
         "codec": "vorbis",
         "sample_rate": 48000,
         "channels": 2,
-        "decoded_frames": 5756864,
-        "duration_seconds": 119.93466666666667,
-        "peak_dbfs": -3.8586247396474254,
-        "rms_dbfs": -18.536301611486724,
-        "sample_step_across_repeat": 0.003762602573260665,
+        "decoded_frames": 5737664,
+        "duration_seconds": 119.53466666666667,
+        "peak_dbfs": -4.238942067706038,
+        "rms_dbfs": -18.3284706885838,
+        "sample_step_across_repeat": 0.000919697224162519,
         "pygame_full_decode": true,
         "pygame_stream_with_repeat": true,
         "pygame_stream_one_shot": false,
-        "sha256": "078dd220e5b0cb577785ed4b932084fd5de261aec1365fa2348999ebb9b5381a",
-        "bytes": 1536610
+        "sha256": "38f9b73f72c081b20deedbd0ab227758842095e5111fadd6d56039efbb20290b",
+        "bytes": 1525809
       }
     }
   ]

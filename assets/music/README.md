@@ -143,6 +143,13 @@ To rebuild only the Eldenmere/millrace exploration cue:
 python tools/build_runtime_music.py --track eldenmere
 ```
 
+Replacing an original upload, even with the same filename, does not update its
+runtime OGG. After intentionally replacing a song, update that track's `git_sha`
+in `tools/build_runtime_music.py` to the new value printed by
+`git hash-object "assets/music/<source filename>"`. Rebuild that track and commit
+the replacement source, runtime OGG, provenance and builder change together.
+Restart the game to load the rebuilt track.
+
 To rebuild only the Sanctuary cave exploration cue:
 
 ```sh

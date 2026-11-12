@@ -28,7 +28,7 @@ SOURCES = (
          target='eldenmere.ogg', title='Eldenmere', trim_tail=False,
          encoder='vorbis', runtime_frame_delta=56),
     dict(identifier='sanctuary_cave', source='Elden Vale Sanctuary Cave.m4a',
-         git_sha='f1ea34eee45acba92385339435a652c423f41376',
+         git_sha='220628c072a322cf4f0ec205708db3d3287c770e',
          target='elden_vale_sanctuary_cave.ogg', title='Elden Vale Sanctuary Cave',
          trim_tail=False, encoder='vorbis', runtime_frame_delta=56),
     dict(identifier='battle', source='Kindled Courage.m4a',
