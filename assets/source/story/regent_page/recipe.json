@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "character": "regent_clerk",
+  "canonical_portrait": "assets/story/regent_arrival/actors/portraits/clerk.png",
+  "design": "Brown-haired Page in moss coat, ivory collar and brass trim, with leather ledger. Native JRPG head/coat/boot registration; 24x36 pixels.",
+  "source": "turnaround_generated.png",
+  "source_sha256": "1c58816c1d26dde629a801fea543ebac824a867e011f808f94969ec94442f9db",
+  "builder": "tools/build_regent_page.py",
+  "registration": {
+    "canvas": [
+      24,
+      36
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ],
+    "foot_anchor": [
+      12,
+      34
+    ]
+  },
+  "walk_frames_per_direction": 8,
+  "pose_frames": {
+    "read": 6,
+    "read_lower": 6
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "design_reference": "care_identity_design.png",
+  "generation": "Reference-directed native pixel-design sheet; exported via explicit sprite rectangles and original-foot registration.",
+  "authoring_tool": "tools/build_sanctuary_arrival_art.py",
+  "sources": [
+    {
+      "path": "assets/source/story/sanctuary_arrival_polish/care_identity_design.png",
+      "sha256": "58d2dce7a615f2a58bbcc23233d6745c0648fbcf98f829aabaf0dc978922ec77"
+    },
+    {
+      "path": "assets/terrain/elden_vale_sanctuary_kit/cave_keeper_rail.png",
+      "sha256": "2a86cda467715dcf80b2e417dfd6e842e9f4e41c8d3bf84e73593cf1272a3a33"
+    }
+  ],
+  "positions": {
+    "rail": [
+      972,
+      359
+    ],
+    "keeper": [
+      1052,
+      404
+    ],
+    "fastening": [
+      1038,
+      376
+    ]
+  },
+  "export": {
+    "native_body_height": 30,
+    "canvas": [
+      24,
+      36
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ],
+    "actual_boot_baseline": 34,
+    "interaction_canvas": [
+      40,
+      48
+    ],
+    "interaction_anchor": [
+      26,
+      40
+    ]
+  },
+  "notes": [
+    "The original Gray-haired survivor in Eldenmere is not changed.",
+    "Worker A is dark-haired in rust-red; Worker B is brown-haired in olive.",
+    "Fixed wooden posts remain invariant; right rope end releases, loose rope drops onto threshold and settles at left anchor."
+  ]
+}

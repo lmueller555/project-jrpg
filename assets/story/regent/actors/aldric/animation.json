@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "canvas": [
     24,
     36
@@ -47,7 +48,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -56,7 +57,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -65,7 +66,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -74,7 +75,43 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          120,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          144,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          168,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          192,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 80
       }
     ],
     "left": [
@@ -85,7 +122,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -94,7 +131,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -103,7 +140,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -112,7 +149,43 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          120,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          144,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          168,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          192,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 80
       }
     ],
     "right": [
@@ -123,7 +196,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -132,7 +205,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -141,7 +214,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -150,7 +223,43 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          120,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          144,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          168,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          192,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 80
       }
     ],
     "back": [
@@ -161,7 +270,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -170,7 +279,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -179,7 +288,7 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
       },
       {
         "rect": [
@@ -188,15 +297,47 @@
           24,
           36
         ],
-        "duration_ms": 140
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          120,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          144,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          168,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 80
+      },
+      {
+        "rect": [
+          192,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 80
       }
     ]
   },
-  "source_hashes": {
-    "assets/characters/npcs/male_03/idle_front.png": "a1ae24db1b5e32f89c5d1ddbb1ae6f5f1a93b04bae6184d9dd4401aacbcb77c4",
-    "assets/characters/npcs/male_03/idle_left.png": "2a61cbda18ce01a3921595796810a1d77ea6ad0215ad3f7bee2a75a1469fa623",
-    "assets/characters/npcs/male_03/idle_right.png": "6130e357d061c91de350034ed03ba96adaaf7726cf00106d358999597fa3dc4d",
-    "assets/characters/npcs/male_03/idle_back.png": "096e2c9a703c389f8e8313566b6b6dafde9dc11e9d4ff2ad272f1fb13fc0a7c9"
-  },
-  "design": "practical travelling clothing; no crown or armour"
+  "portrait": "aldric",
+  "source_recipe": "assets/source/story/regent_aldric/recipe.json",
+  "design": "Canonical brown-haired Aldric: navy travelling coat, brass edging, ivory collar and leather boots."
 }

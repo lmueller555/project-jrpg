@@ -56,8 +56,12 @@ class SanctuaryArrivalGalleryTests(unittest.TestCase):
                         self.assertTrue(viewport.collidepoint(child.sanctuary_arrival.actors[key].position),key)
                     first_composition_checked=True
                 if child.sanctuary_arrival.completed:
-                    rail=child.sanctuary_arrival._rail_record
-                    self.assertGreater(rail['rect'].height,rail['rect'].width)
+                    rope=child.sanctuary_arrival.rail
+                    rail=rope.record
+                    posts=child.world.image(rope.art['posts'])
+                    self.assertTrue(rope.opened)
+                    self.assertEqual(rail['rect'].size,posts.get_size())
+                    self.assertEqual(rail['position'],rope.art['position'])
                     self.assertEqual(child.world.blocked.count(),blocked_count)
                     rail_opened=True
                 if child.social.active or child.sanctuary_arrival.dialogue is not None:

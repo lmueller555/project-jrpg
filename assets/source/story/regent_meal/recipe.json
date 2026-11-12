@@ -6,27 +6,9 @@
     {
       "actor": "aldric",
       "file": "assets/story/regent/poses/aldric_seated.png",
-      "source_cell": [
-        0,
-        0,
-        397,
-        793
-      ],
-      "source_bounds": [
-        70,
-        127,
-        379,
-        742
-      ],
-      "uniform_scale": 0.04552845528455285,
-      "export_size": [
-        14,
-        28
-      ],
-      "offset": [
-        5,
-        7
-      ],
+      "export_recipe": "assets/source/story/regent_aldric/recipe.json",
+      "builder": "tools/build_regent_aldric.py",
+      "method": "canonical brown-haired Aldric, navy coat and seated native pose shared with overworld idle/walk/portrait",
       "anchor": [
         12,
         30
@@ -74,27 +56,9 @@
     {
       "actor": "clerk",
       "file": "assets/story/regent/poses/clerk_seated.png",
-      "source_cell": [
-        793,
-        0,
-        1190,
-        793
-      ],
-      "source_bounds": [
-        65,
-        128,
-        331,
-        742
-      ],
-      "uniform_scale": 0.04560260586319218,
-      "export_size": [
-        12,
-        28
-      ],
-      "offset": [
-        6,
-        7
-      ],
+      "export_recipe": "assets/source/story/regent_page/recipe.json",
+      "builder": "tools/build_regent_page.py",
+      "method": "native Page coat and seated pose; canonical design shared with overworld idle, walk, ledger and portrait",
       "anchor": [
         12,
         30

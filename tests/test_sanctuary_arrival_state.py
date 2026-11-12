@@ -39,9 +39,16 @@ class SanctuaryArrivalStateTests(unittest.TestCase):
         self.assertEqual(before,{key:(m.current_hp,m.current_mp) for key,m in self.g.party.characters.items()})
         self.assertEqual(list(self.g.player.position),[1008,406])
         self.assertEqual({a.identifier for a in self.g.party_travel.actors()},{'mira','lucan'})
+        facings={key:actor.facing for key,actor in self.g.sanctuary_arrival.actors.items()}
+        self.assertEqual(self.g.regent_quest.clerk.pose,'read')
+        self.assertEqual(self.g.regent_quest.clerk.facing,facings['page'])
+        self.assertTrue(self.g.sanctuary_arrival.rail.opened)
         other=self.game();self.assertTrue(other.has_saved_journey,other.save_error)
         self.assertTrue(other.begin_journey(True),other.save_error)
         self.assertTrue(other.sanctuary_arrival.completed)
+        self.assertEqual({key:actor.facing for key,actor in other.sanctuary_arrival.actors.items()},facings)
+        self.assertEqual(other.regent_quest.clerk.pose,'read')
+        self.assertTrue(other.sanctuary_arrival.rail.opened)
         self.assertEqual(other.party.active_ids,('caelan','mira','lucan'))
         other.opening_fade=other.transfer_cooldown=0;other.update(.2,(0,0),False)
         self.assertFalse(other.sanctuary_arrival.active)
@@ -52,6 +59,14 @@ class SanctuaryArrivalStateTests(unittest.TestCase):
         self.assertEqual(other.party.active_ids,('caelan','mira','lucan'))
         self.assertEqual(other.music.desired_track,'sanctuary_cave')
         self.assertTrue(other.has_saved_journey,other.save_error)
+    def test_older_standing_spot_covered_by_the_new_closed_rope_resumes_on_clear_apron(self):
+        self.g.player.position.update(1008,396)
+        self.assertTrue(self.g.save_progress())
+        other=self.game();self.assertTrue(other.begin_journey(True),other.save_error)
+        self.assertEqual(tuple(other.player.position),(1008,406))
+        self.assertTrue(other.world.can_stand(other.player.position))
+        self.assertFalse(other.sanctuary_arrival.completed)
+
     def test_partial_dialogue_restarts_only_its_unacknowledged_beat_after_continue(self):
         self.until(lambda:self.g.sanctuary_arrival.beat==3)
         self.until(lambda:self.g.sanctuary_arrival.dialogue is not None)
@@ -63,6 +78,21 @@ class SanctuaryArrivalStateTests(unittest.TestCase):
         self.assertEqual(other.sanctuary_arrival.beat,3)
         self.assertEqual(other.sanctuary_arrival.dialogue_index,0)
         self.assertFalse(other.sanctuary_arrival.completed)
+    def test_continue_during_rope_operation_rebuilds_the_unacknowledged_final_beat(self):
+        self.until(lambda:self.g.sanctuary_arrival.beat==7)
+        self.until(lambda:.2<self.g.sanctuary_arrival.rail.progress<.8)
+        self.assertTrue(self.g.save_progress())
+        other=self.game();self.assertTrue(other.begin_journey(True),other.save_error)
+        self.g=other;self.g.opening_fade=self.g.transfer_cooldown=0
+        self.tick()
+        owner=self.g.sanctuary_arrival
+        self.assertTrue(owner.active);self.assertEqual(owner.beat,7)
+        self.assertEqual(owner.rail.progress,0.)
+        self.assertFalse(owner.completed)
+        self.until(lambda:owner.completed)
+        self.assertTrue(owner.rail.opened)
+        self.assertEqual(self.g.party.active_ids,('caelan','mira','lucan'))
+
     def test_failed_final_checkpoint_rolls_back_recruitment_and_retries_without_replaying_scene(self):
         self.until(lambda:self.g.sanctuary_arrival.beat==7)
         self.until(lambda:self.g.sanctuary_arrival.dialogue is not None)
