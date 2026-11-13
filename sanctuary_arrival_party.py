@@ -11,7 +11,8 @@ from lucan_guest import initialize_lucan_guest
 
 EVENT_ID = 'mq03_sanctuary'
 REQUIRED = ('caelan', 'mira', 'lucan')
-TRIP_STAGES = frozenset(('sanctuary_travel', 'sanctuary_arrival_pending'))
+from regent_resolution import STAGES as RESOLUTION_STAGES
+TRIP_STAGES = frozenset(('sanctuary_travel', 'sanctuary_arrival_pending', *(s for s in RESOLUTION_STAGES if s!='resolution_family')))
 REASON = 'Caelan, Mira and Lucan are needed for the Sanctuary rescue.'
 
 

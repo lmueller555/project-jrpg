@@ -16,7 +16,8 @@ from overworld_travel import CAVE_SCENES
 EMERGENCY_STAGES = frozenset((
     'interruption', 'attack_report', 'departure', 'rejoin_mira',
     'sanctuary_travel', 'sanctuary_arrival_pending'))
-MIRA_STAGES = frozenset(('sanctuary_travel', 'sanctuary_arrival_pending'))
+from regent_resolution import STAGES as RESOLUTION_STAGES
+MIRA_STAGES = frozenset(('sanctuary_travel', 'sanctuary_arrival_pending', *(s for s in RESOLUTION_STAGES if s!='resolution_family')))
 RESERVE_ID = 'elden_vale_sanctuary'
 
 
@@ -315,12 +316,18 @@ class RegentEmergency:
             rescue = getattr(self.game, 'sanctuary_rescue', None)
             stage = getattr(rescue, 'stage', 'undiscovered')
             if stage == 'evacuated':
-                return 'The rescued worker is recovering at the Sanctuary.'
+                return 'Join Lucan and Aldric at Elden Vale Sanctuary.'
             if stage in ('greenwell', 'handoff'):
                 return 'Speak to Lucan at Greenwell to escort the worker outside.'
             if getattr(getattr(self.game, 'sanctuary_boss', None), 'defeated', False):
                 return 'Help Mira and Lucan bring the trapped worker to safety.'
-            return 'Search the Sanctuary cave for the missing worker.'
+            if not self.game.sanctuary_cave.active:
+                return 'Return to Elden Vale Sanctuary and enter the cave.'
+            if self.game.cave_lesson.needs_intro:
+                return 'Practice Aqua Edge against the cave bats.'
+            if stage=='confrontation':
+                return 'Confront Vespermaw in the Echo Chamber.'
+            return 'Reach the Echo Chamber and search for the worker.'
         return {'interruption':'Someone is hurrying into the house.',
                 'attack_report':'Hear the survivor’s report in the dining room.',
                 'departure':'Speak with Serene before leaving.',

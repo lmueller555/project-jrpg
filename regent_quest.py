@@ -16,6 +16,7 @@ from npc_following import following_facing, idle_following_facing, reset_followi
 from quests import REGENT_QUEST, MILL_QUEST, LANTERN_QUEST, QuestLog
 from regent_actors import StoryActor
 from regent_actions import RegentActions
+from regent_resolution import RegentResolution, STAGES as RESOLUTION_STAGES
 from regent_emergency import RegentEmergency, EMERGENCY_STAGES, MIRA_STAGES
 from social import facing_toward
 
@@ -29,7 +30,8 @@ LEGACY_STAGES = ('idle', 'assigned', 'met', 'dispute', 'releasing', 'escorting',
                  'welcome', 'hosted', 'discussion', 'done')
 LEGACY_ESCORT = frozenset(('met', 'dispute', 'releasing', 'escorting'))
 OBJECTIVES = ('meet_visitors', 'accompany_visit', 'welcome_party', 'speak_serene')
-PREFIX = {'idle': 0, 'assigned': 0, 'escorting': 1, 'welcome': 2,
+STAGES = (*STAGES, *RESOLUTION_STAGES)
+PREFIX = {**{stage:3 for stage in RESOLUTION_STAGES}, 'idle': 0, 'assigned': 0, 'escorting': 1, 'welcome': 2,
           'hosted': 3, **{stage: 3 for stage in EMERGENCY_STAGES}, 'done': 4}
 
 
@@ -70,6 +72,7 @@ class RegentQuest:
         self.dining.task_blockers = self._dining_blockers
         self.scene_actions = RegentActions(self)
         self.emergency = RegentEmergency(self)
+        self.resolution = RegentResolution(self)
 
     @property
     def active(self):return self.game.quests.status(REGENT_QUEST) in ('active', 'ready')
@@ -99,7 +102,7 @@ class RegentQuest:
 
     @property
     def sanctuary_escort_active(self):
-        return (self.stage in ('rejoin_mira', *MIRA_STAGES)
+        return (self.stage == 'resolution_return' or self.stage in ('rejoin_mira', *MIRA_STAGES)
                 and not getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False))
 
     @property
@@ -107,6 +110,7 @@ class RegentQuest:
 
     @property
     def travel_members(self):
+        if self.stage=='resolution_return':return self.sanctuary_escorts
         if getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False):return ()
         return self.sanctuary_escorts if self.sanctuary_escort_active else tuple(self.party)
 
@@ -144,6 +148,7 @@ class RegentQuest:
         quests = QuestLog()
         if not quests.restore(data.get('quests')):return False
         status = quests.status(REGENT_QUEST);stage = record['stage']
+        if stage in RESOLUTION_STAGES and (data.get('sanctuary_rescue',{}).get('stage')!='evacuated' or not data.get('sanctuary_boss',{}).get('defeated')):return False
         if stage in MIRA_STAGES and 'party' not in data:return False
         done = quests.states[REGENT_QUEST]['completed_objectives']
         if done != list(OBJECTIVES[:PREFIX[stage]]):return False
@@ -162,6 +167,7 @@ class RegentQuest:
         actor.scene_id = world.data['id'];actor.moving = False
         if actor in (self.serene, self.tomas):self.game._routine_worlds[actor] = world
         else:self._worlds[actor] = world
+        if actor is self.game.mill_quest.mira:self.game.mill_quest._mira_world=world
         if actor in self.actors.values():actor.story_visible = True
         self.paths.pop(actor, None)
         reset_following_facing(actor)
@@ -240,6 +246,36 @@ class RegentQuest:
         return self._travel(actor, self.dining, .05) and self._move(actor, desired, .05)
 
     def _setup_stage(self, force=False):
+        if self.stage in RESOLUTION_STAGES:
+            self.scene_actions.release()
+            self._claim();self._setup=True
+            self.clerk.set_pose('read' if self.stage in ('resolution_report','resolution_relief') else None)
+            if self.emergency.survivor is not None:
+                self.emergency._place(self.emergency.survivor,self.dining,self.emergency.point('survivor_rest',(60,276)))
+            self.emergency._place(self.driver,self.dining,self.emergency.point('driver_aid',(132,300)))
+            if self.stage=='resolution_report':
+                world=self.game._scene_by_id('elden_vale_sanctuary')
+                for actor,position in ((self.aldric,(772,414)),(self.clerk,(820,386)),(self.lucan,(844,414))):
+                    landing=self._landing(actor,position,world)
+                    if landing is not None:self._place(actor,world,landing)
+            elif self.stage=='resolution_return':
+                for index,actor in enumerate(self.sanctuary_escorts):
+                    if force or not actor.story_visible:
+                        landing=self._landing(actor,self.game.player.position+pygame.Vector2(-24-index*18,24),self.game.world)
+                        if landing is not None:self._place(actor,self.game.world,landing)
+            else:
+
+                for actor,prefix in self._party_keys():
+                    landing=self._landing(actor,self.points[prefix+'_courtyard'],self.dining)
+                    if landing is not None:self._place(actor,self.dining,landing)
+                for actor,key in ((self.serene,'aftermath'),(self.tomas,'tomas')):
+                    landing=self._landing(actor,self.points[key],self.dining)
+                    if landing is not None:self._place(actor,self.dining,landing)
+                mira=self.game.mill_quest.mira
+                landing=self._landing(mira,(288,228),self.dining)
+                if self.stage!='resolution_family' and landing is not None:self._place(mira,self.dining,landing)
+                elif self.stage=='resolution_family':self.game.mill_quest.return_mira_to_bench()
+            return
         if self.stage in EMERGENCY_STAGES:
             self.emergency.setup(force=force)
             return
@@ -320,6 +356,10 @@ class RegentQuest:
         return True
 
     def marker_for(self, identifier):
+        if identifier=='sanctuary_arrival_lucan' and self.game.sanctuary_rescue.waiting:return '?'
+        if self.stage in RESOLUTION_STAGES:
+            wanted='aldric' if self.stage=='resolution_report' else 'mira_worker' if self.stage=='resolution_companions' else 'mother_serene'
+            return '?' if identifier==wanted and self.stage!='resolution_return' else None
         if not self.eligible:return NotImplemented
         if self.stage in EMERGENCY_STAGES:return self.emergency.marker_for(identifier)
         if identifier == 'mother_serene':
@@ -332,6 +372,8 @@ class RegentQuest:
     def _near(self, where, radius=38):return self.game.player.position.distance_to(where)<=radius
 
     def try_conversation(self, actor):
+        if self.stage in RESOLUTION_STAGES:
+            return self.resolution.interact() if actor is self.resolution.target() else None
         if not self.eligible:return None
         if self.stage in EMERGENCY_STAGES:
             return self.emergency.try_conversation(actor)
@@ -373,6 +415,7 @@ class RegentQuest:
         return None
 
     def interact(self):
+        if self.stage in RESOLUTION_STAGES:return self.resolution.interact()
         if self.game.social.locked:return False
         target = self._target()
         if target == 'mira_departure':return self.emergency._start_mira()
@@ -429,6 +472,7 @@ class RegentQuest:
             if hasattr(self.serene, key):delattr(self.serene, key)
 
     def interaction_hint(self):
+        if self.stage in RESOLUTION_STAGES:return 'E: '+self.resolution.text() if self.resolution.target() is not None else ''
         if self.stage in EMERGENCY_STAGES:return self.emergency.interaction_hint()
         if (self.stage == 'discussion' and not self._aside_ready
                 and self.game.world is self.dining and self._near(self.points['aftermath'], 60)):
@@ -439,6 +483,7 @@ class RegentQuest:
                 'aftermath': 'E: Speak with Mother Serene'}.get(target, '')
 
     def tracker_text(self):
+        if self.stage in RESOLUTION_STAGES:return self.resolution.text()
         if not self.eligible:return ''
         if self.stage in EMERGENCY_STAGES:return self.emergency.tracker_text()
         return {'idle': 'Meet Mother Serene in the dining room at home.',
@@ -603,6 +648,13 @@ class RegentQuest:
         if self.sanctuary_escort_active:self.emergency.on_travel_restored()
 
     def update(self, seconds):
+        if self.stage=='sanctuary_arrival_pending' and self.game.sanctuary_rescue.stage=='evacuated':
+            self.resolution.commit('resolution_report')
+        if self.stage in RESOLUTION_STAGES:
+            if not self._setup:self._setup_stage()
+            if not self.game.social.locked:self.resolution.update(seconds)
+            self._pose_owned();self._sync_props()
+            return
         if self.game.map_open or self.game.quest_ui.journal_open:return
         if not self.eligible:return
         if not self._setup:

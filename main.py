@@ -2160,6 +2160,12 @@ class Game:
             if not self._is_embedded:pygame.display.flip()
             return
         camera=self.camera.position()
+        resolution=self.regent_quest
+        if resolution.stage.startswith('resolution_') and resolution.dialogue:
+            target=resolution.resolution.target()
+            if target is not None:
+                center=(self.player.position+target.position)/2
+                camera=camera_for(center,self.world.size)
         if isinstance(self.world,World):
             self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False,
                             party_actors=self.party_travel.actors())
