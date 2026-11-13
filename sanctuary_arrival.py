@@ -30,9 +30,14 @@ class CastActor:
         self.draw_anchor=tuple(getattr(source,'draw_anchor', (12,30)))
         if key=='caelan':self.draw_anchor=(12,30)
         if source is not None:
-            self.idles=source.idles;self.walks=source.walks
-            self.walk_durations=getattr(source,'walk_durations',{})
-            self.pose_animations=dict(getattr(source,'pose_animations',{}))
+            # Scene overrides belong to this display actor. In particular,
+            # Player.walks stores (surface, duration) pairs; replacing a shared
+            # direction with scene surfaces corrupts normal movement afterward.
+            self.idles=dict(source.idles)
+            self.walks={direction:list(frames) for direction,frames in source.walks.items()}
+            self.walk_durations=dict(getattr(source,'walk_durations',{}))
+            self.pose_animations={name:dict(animation) for name,animation in
+                                  getattr(source,'pose_animations',{}).items()}
         else:
             self.idles={d:world.image(f'assets/characters/npcs/{variant}/idle_{d}.png') for d in ('front','back','left','right')}
             self.walks={d:[world.image(f'assets/characters/npcs/{variant}/walk_{d}/frame_{i:02}.png') for i in range(1,5)] for d in self.idles}
