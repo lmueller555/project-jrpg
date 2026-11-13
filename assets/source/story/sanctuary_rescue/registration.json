@@ -1,0 +1,1634 @@
+{
+  "version": 1,
+  "sources": {
+    "actions_authored.png": "9123a9869513b9a59a64f2f1cfeb31944be7cb8df1a86b31d059c450954d9f2c",
+    "worker_supported_authored.png": "7f535625e98145a8f010da8c05768c648f3122456740e44c0d802b12dc575850",
+    "lucan_supported_authored.png": "e99ba07bdd8093fda6a591a0818d40cc2b324fe55cd601264640bc211c89c5ca"
+  },
+  "frames": [
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_0_0.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "source_bounds": [
+        39,
+        99,
+        224,
+        248
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        6,
+        16
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_0_1.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        256,
+        0,
+        512,
+        256
+      ],
+      "source_bounds": [
+        37,
+        80,
+        221,
+        249
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        6,
+        13
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_0_2.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        512,
+        0,
+        768,
+        256
+      ],
+      "source_bounds": [
+        35,
+        76,
+        219,
+        247
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        6,
+        13
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_0_3.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        768,
+        0,
+        1024,
+        256
+      ],
+      "source_bounds": [
+        36,
+        72,
+        207,
+        247
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        7,
+        12
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_1_0.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        0,
+        256,
+        256,
+        512
+      ],
+      "source_bounds": [
+        62,
+        101,
+        213,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        8,
+        17
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_1_1.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        256,
+        256,
+        512,
+        512
+      ],
+      "source_bounds": [
+        53,
+        92,
+        197,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        9,
+        16
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_1_2.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        512,
+        256,
+        768,
+        512
+      ],
+      "source_bounds": [
+        52,
+        52,
+        194,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        9,
+        10
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_1_3.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        768,
+        256,
+        1024,
+        512
+      ],
+      "source_bounds": [
+        39,
+        25,
+        176,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        10,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_2_0.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        0,
+        512,
+        256,
+        768
+      ],
+      "source_bounds": [
+        39,
+        26,
+        193,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        8,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_2_1.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        256,
+        512,
+        512,
+        768
+      ],
+      "source_bounds": [
+        36,
+        26,
+        199,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        8,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_2_2.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        512,
+        512,
+        768,
+        768
+      ],
+      "source_bounds": [
+        32,
+        26,
+        196,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        8,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_2_3.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        768,
+        512,
+        1024,
+        768
+      ],
+      "source_bounds": [
+        34,
+        21,
+        189,
+        244
+      ],
+      "scale": 0.15246636771300448,
+      "destination": [
+        8,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_3_0.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        0,
+        768,
+        256,
+        1024
+      ],
+      "source_bounds": [
+        51,
+        55,
+        199,
+        239
+      ],
+      "scale": 0.15384615384615385,
+      "destination": [
+        8,
+        11
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_3_1.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        256,
+        768,
+        512,
+        1024
+      ],
+      "source_bounds": [
+        64,
+        65,
+        189,
+        237
+      ],
+      "scale": 0.15384615384615385,
+      "destination": [
+        10,
+        13
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_3_2.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        512,
+        768,
+        768,
+        1024
+      ],
+      "source_bounds": [
+        60,
+        31,
+        175,
+        238
+      ],
+      "scale": 0.15384615384615385,
+      "destination": [
+        11,
+        7
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_3_3.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        768,
+        768,
+        1024,
+        1024
+      ],
+      "source_bounds": [
+        70,
+        17,
+        175,
+        238
+      ],
+      "scale": 0.15384615384615385,
+      "destination": [
+        12,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_4_0.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        0,
+        1024,
+        256,
+        1280
+      ],
+      "source_bounds": [
+        64,
+        42,
+        202,
+        230
+      ],
+      "scale": 0.15178571428571427,
+      "destination": [
+        10,
+        10
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_4_1.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        256,
+        1024,
+        512,
+        1280
+      ],
+      "source_bounds": [
+        61,
+        59,
+        191,
+        231
+      ],
+      "scale": 0.15178571428571427,
+      "destination": [
+        10,
+        13
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_4_2.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        512,
+        1024,
+        768,
+        1280
+      ],
+      "source_bounds": [
+        59,
+        55,
+        195,
+        230
+      ],
+      "scale": 0.15178571428571427,
+      "destination": [
+        10,
+        12
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_4_3.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        768,
+        1024,
+        1024,
+        1280
+      ],
+      "source_bounds": [
+        58,
+        36,
+        171,
+        230
+      ],
+      "scale": 0.15178571428571427,
+      "destination": [
+        12,
+        10
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_0.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        0,
+        1280,
+        256,
+        1536
+      ],
+      "source_bounds": [
+        57,
+        46,
+        198,
+        237
+      ],
+      "scale": 0.14847161572052403,
+      "destination": [
+        10,
+        11
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_1.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        256,
+        1280,
+        512,
+        1536
+      ],
+      "source_bounds": [
+        48,
+        63,
+        214,
+        238
+      ],
+      "scale": 0.14847161572052403,
+      "destination": [
+        8,
+        13
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_2.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        512,
+        1280,
+        768,
+        1536
+      ],
+      "source_bounds": [
+        68,
+        24,
+        195,
+        238
+      ],
+      "scale": 0.14847161572052403,
+      "destination": [
+        10,
+        7
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_3.png",
+      "source": "actions_authored.png",
+      "source_rect": [
+        768,
+        1280,
+        1024,
+        1536
+      ],
+      "source_bounds": [
+        77,
+        9,
+        207,
+        238
+      ],
+      "scale": 0.14847161572052403,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_front_0.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "source_bounds": [
+        72,
+        56,
+        223,
+        314
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_front_1.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "source_bounds": [
+        58,
+        57,
+        207,
+        314
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_front_2.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        543,
+        0,
+        814,
+        362
+      ],
+      "source_bounds": [
+        42,
+        57,
+        196,
+        314
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_front_3.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "source_bounds": [
+        31,
+        58,
+        178,
+        310
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_back_0.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "source_bounds": [
+        94,
+        48,
+        244,
+        309
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_back_1.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "source_bounds": [
+        82,
+        45,
+        232,
+        301
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_back_2.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        543,
+        362,
+        814,
+        724
+      ],
+      "source_bounds": [
+        75,
+        45,
+        224,
+        309
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        4
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_back_3.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "source_bounds": [
+        64,
+        44,
+        213,
+        304
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_left_0.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        0,
+        724,
+        272,
+        1086
+      ],
+      "source_bounds": [
+        63,
+        29,
+        215,
+        289
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_left_1.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        272,
+        724,
+        543,
+        1086
+      ],
+      "source_bounds": [
+        52,
+        29,
+        196,
+        288
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_left_2.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        543,
+        724,
+        814,
+        1086
+      ],
+      "source_bounds": [
+        39,
+        29,
+        199,
+        288
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_left_3.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        814,
+        724,
+        1086,
+        1086
+      ],
+      "source_bounds": [
+        29,
+        29,
+        171,
+        288
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_right_0.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        0,
+        1086,
+        272,
+        1448
+      ],
+      "source_bounds": [
+        89,
+        18,
+        239,
+        279
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_right_1.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        272,
+        1086,
+        543,
+        1448
+      ],
+      "source_bounds": [
+        89,
+        20,
+        224,
+        279
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        11,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_right_2.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        543,
+        1086,
+        814,
+        1448
+      ],
+      "source_bounds": [
+        55,
+        18,
+        215,
+        280
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/worker/supported_right_3.png",
+      "source": "worker_supported_authored.png",
+      "source_rect": [
+        814,
+        1086,
+        1086,
+        1448
+      ],
+      "source_bounds": [
+        70,
+        20,
+        202,
+        279
+      ],
+      "scale": 0.13076923076923078,
+      "destination": [
+        12,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_front_0.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        0,
+        0,
+        312,
+        315
+      ],
+      "source_bounds": [
+        113,
+        42,
+        261,
+        278
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_front_1.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        312,
+        0,
+        624,
+        315
+      ],
+      "source_bounds": [
+        104,
+        42,
+        245,
+        277
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_front_2.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        624,
+        0,
+        935,
+        315
+      ],
+      "source_bounds": [
+        94,
+        42,
+        234,
+        277
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_front_3.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        935,
+        0,
+        1247,
+        315
+      ],
+      "source_bounds": [
+        85,
+        42,
+        228,
+        277
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_back_0.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        0,
+        315,
+        312,
+        630
+      ],
+      "source_bounds": [
+        76,
+        39,
+        227,
+        275
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        9,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_back_1.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        312,
+        315,
+        624,
+        630
+      ],
+      "source_bounds": [
+        65,
+        39,
+        214,
+        274
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_back_2.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        624,
+        315,
+        935,
+        630
+      ],
+      "source_bounds": [
+        55,
+        39,
+        204,
+        274
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_back_3.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        935,
+        315,
+        1247,
+        630
+      ],
+      "source_bounds": [
+        47,
+        39,
+        196,
+        273
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_left_0.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        0,
+        630,
+        312,
+        946
+      ],
+      "source_bounds": [
+        92,
+        25,
+        241,
+        258
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_left_1.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        312,
+        630,
+        624,
+        946
+      ],
+      "source_bounds": [
+        90,
+        25,
+        232,
+        258
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_left_2.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        624,
+        630,
+        935,
+        946
+      ],
+      "source_bounds": [
+        74,
+        26,
+        220,
+        258
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_left_3.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        935,
+        630,
+        1247,
+        946
+      ],
+      "source_bounds": [
+        65,
+        25,
+        206,
+        257
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        6
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_right_0.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        0,
+        946,
+        312,
+        1261
+      ],
+      "source_bounds": [
+        90,
+        26,
+        231,
+        260
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_right_1.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        312,
+        946,
+        624,
+        1261
+      ],
+      "source_bounds": [
+        73,
+        24,
+        213,
+        259
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_right_2.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        624,
+        946,
+        935,
+        1261
+      ],
+      "source_bounds": [
+        59,
+        24,
+        216,
+        259
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        8,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/lucan/supported_right_3.png",
+      "source": "lucan_supported_authored.png",
+      "source_rect": [
+        935,
+        946,
+        1247,
+        1261
+      ],
+      "source_bounds": [
+        51,
+        23,
+        195,
+        259
+      ],
+      "scale": 0.1440677966101695,
+      "destination": [
+        10,
+        5
+      ],
+      "canvas": [
+        40,
+        40
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ]
+    }
+  ]
+}

@@ -206,6 +206,14 @@ class SanctuaryCave:
         landing = g.overworld_travel._landing(destination, desired)
         if landing is None:return False
         self._sync_world(destination)
+        rescue = getattr(g, 'sanctuary_rescue', None)
+        if (rescue is not None and getattr(getattr(g, 'sanctuary_arrival', None), 'completed', False)
+                and g.world.data.get('id') in CAVE_SCENES
+                and destination.data.get('id') == RESERVE_ID
+                and getattr(getattr(g, 'sanctuary_boss', None), 'defeated', False)
+                and rescue.stage != 'evacuated'):
+            return self._say('We need to bring the injured worker back. Lucan is waiting with him at Greenwell.',
+                             'worker_waiting')
         if (g.world.data.get('id') in CAVE_SCENES and destination.data.get('id') == RESERVE_ID
                 and getattr(getattr(g,'sanctuary_boss',None), 'defeated', False)
                 and g.party.is_guest('lucan') and not self.lucan_departed):
@@ -218,10 +226,13 @@ class SanctuaryCave:
         from sanctuary_arrival_party import sync_arrival_party
         g = self.game
         party_before, cave_before = g.party.to_dict(), self.to_dict()
+        rescue = getattr(g, 'sanctuary_rescue', None)
+        rescue_before = rescue.stage if rescue is not None else None
         levels_before = g.character_progression.to_dict()
         origin, position, facing = g.world, tuple(g.player.position), g.player.facing
         cooldown = g.transfer_cooldown
         self.lucan_departed = True
+        if rescue is not None:rescue.stage = 'evacuated'
         if sync_arrival_party(g) is not False:
             g.overworld_travel._commit(destination, landing, record.get('facing', 'back'),
                                       record, checkpoint=False)
@@ -232,6 +243,7 @@ class SanctuaryCave:
         g.party.restore(party_before)
         g.character_progression.restore(levels_before)
         self.restore(cave_before)
+        if rescue is not None:rescue.stage = rescue_before
         g.world = origin
         g.player.position.update(position);g.player.facing = facing
         g.transfer_cooldown = cooldown

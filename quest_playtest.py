@@ -155,6 +155,8 @@ def _completed_cave(game: Game) -> None:
     # Later-story checkpoints also assume the completed rescue party has
     # physically left the cave. Lucan's guest receipt prevents re-recruitment.
     game.sanctuary_cave.lucan_departed = True
+    _require(game.sanctuary_rescue.restore({'version':1, 'stage':'evacuated'}),
+             'restore the completed worker rescue')
     _require(game._sync_story_party(), 'restore Lucan’s completed guest departure')
 
 

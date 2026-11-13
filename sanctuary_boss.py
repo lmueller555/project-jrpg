@@ -192,19 +192,33 @@ class SanctuaryBoss:
             if g.cave_random_encounters.pending is not None:
                 self.offer('Finish the current encounter first.')
                 return
-            ticket = {'version': 1, 'enemy_id': 'vespermaw', 'level': 7,
-                      'receipt': RECEIPT, 'scene': SCENE_ID,
-                      'position': list(g.player.position), 'facing': g.player.facing,
-                      'battlefield': BATTLEFIELD, 'combat_seed': random.SystemRandom().randrange(2**63),
-                      'party_active': list(g.party.active_ids),
-                      'party_resources': {key: {'hp': g.party.characters[key].current_hp,
-                                                'mp': g.party.characters[key].current_mp}
-                                          for key in g.party.active_ids}}
-            if not valid_ticket(ticket):return
-            self._pending = ticket
-            if not g.combat.start_boss(ticket):
-                self._pending = None
-                self.offer('The battle could not be started. Try again.')
+            rescue = getattr(g, 'sanctuary_rescue', None)
+            if rescue is not None:
+                rescue.start_before(self._begin_battle)
+            else:
+                self._begin_battle()
+
+    def _begin_battle(self):
+        """Commit the ticket only after the acknowledged rescue confrontation."""
+        g = self.game
+        if (self.defeated or self._pending is not None or g.combat.active
+                or g.party.battle_reason() or g.cave_random_encounters.pending is not None):
+            return False
+        ticket = {'version': 1, 'enemy_id': 'vespermaw', 'level': 7,
+                  'receipt': RECEIPT, 'scene': SCENE_ID,
+                  'position': list(g.player.position), 'facing': g.player.facing,
+                  'battlefield': BATTLEFIELD, 'combat_seed': random.SystemRandom().randrange(2**63),
+                  'party_active': list(g.party.active_ids),
+                  'party_resources': {key: {'hp': g.party.characters[key].current_hp,
+                                            'mp': g.party.characters[key].current_mp}
+                                      for key in g.party.active_ids}}
+        if not valid_ticket(ticket):return
+        self._pending = ticket
+        if not g.combat.start_boss(ticket):
+            self._pending = None
+            self.offer('The battle could not be started. Try again.')
+            return False
+        return True
 
     def _checkpoint(self):
         return not self.game.save_store.enabled or self.game.save_progress()

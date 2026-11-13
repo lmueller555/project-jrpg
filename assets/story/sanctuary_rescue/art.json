@@ -1,0 +1,940 @@
+{
+  "version": 1,
+  "status": "review",
+  "actors": {
+    "mira": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/characters/mira/idle_front.png",
+        "back": "assets/characters/mira/idle_back.png",
+        "left": "assets/characters/mira/idle_left.png",
+        "right": "assets/characters/mira/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/characters/mira/walk_front/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_front/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_front/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_front/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/characters/mira/walk_back/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_back/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_back/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_back/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/characters/mira/walk_left/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_left/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_left/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_left/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/characters/mira/walk_right/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_right/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_right/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/mira/walk_right/frame_04.png",
+            "duration_ms": 140
+          }
+        ]
+      },
+      "poses": {
+        "kneel": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_0.png",
+              "duration_ms": 1000
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        },
+        "tool": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_0.png",
+              "duration_ms": 650
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_1.png",
+              "duration_ms": 650
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_2.png",
+              "duration_ms": 650
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_3.png",
+              "duration_ms": 650
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        },
+        "treat": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_0.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_1.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_2.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_3.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_3.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_2.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_1.png",
+              "duration_ms": 400
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_4_0.png",
+              "duration_ms": 400
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        }
+      }
+    },
+    "lucan": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/characters/lucan/idle_front.png",
+        "back": "assets/characters/lucan/idle_back.png",
+        "left": "assets/characters/lucan/idle_left.png",
+        "right": "assets/characters/lucan/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/characters/lucan/walk_front/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_front/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_front/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_front/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/characters/lucan/walk_back/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_back/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_back/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_back/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/characters/lucan/walk_left/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_left/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_left/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_left/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/characters/lucan/walk_right/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_right/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_right/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/lucan/walk_right/frame_04.png",
+            "duration_ms": 140
+          }
+        ]
+      },
+      "poses": {
+        "brace": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_3_0.png",
+              "duration_ms": 350
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_3_1.png",
+              "duration_ms": 350
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        },
+        "lift": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_3_0.png",
+              "duration_ms": 650
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_3_1.png",
+              "duration_ms": 650
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_3_2.png",
+              "duration_ms": 650
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_3_3.png",
+              "duration_ms": 650
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        }
+      },
+      "supported_walks": {
+        "front": [
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_front_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_front_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_front_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_front_3.png",
+            "duration_ms": 220
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_back_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_back_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_back_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_back_3.png",
+            "duration_ms": 220
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_left_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_left_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_left_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_left_3.png",
+            "duration_ms": 220
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_right_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_right_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_right_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/lucan/supported_right_3.png",
+            "duration_ms": 220
+          }
+        ]
+      },
+      "supported_idles": {
+        "front": "assets/story/sanctuary_rescue/lucan/supported_front_0.png",
+        "back": "assets/story/sanctuary_rescue/lucan/supported_back_0.png",
+        "left": "assets/story/sanctuary_rescue/lucan/supported_left_0.png",
+        "right": "assets/story/sanctuary_rescue/lucan/supported_right_0.png"
+      },
+      "supported_anchor": [
+        20,
+        34
+      ]
+    },
+    "caelan": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/characters/caelan/idle_front.png",
+        "back": "assets/characters/caelan/idle_back.png",
+        "left": "assets/characters/caelan/idle_left.png",
+        "right": "assets/characters/caelan/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/characters/caelan/walk_front/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_front/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_front/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_front/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/characters/caelan/walk_back/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_back/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_back/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_back/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/characters/caelan/walk_left/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_left/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_left/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_left/frame_04.png",
+            "duration_ms": 140
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/characters/caelan/walk_right/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_right/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_right/frame_03.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/characters/caelan/walk_right/frame_04.png",
+            "duration_ms": 140
+          }
+        ]
+      },
+      "poses": {
+        "assist": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_5_0.png",
+              "duration_ms": 320
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_5_1.png",
+              "duration_ms": 320
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_5_2.png",
+              "duration_ms": 320
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_5_3.png",
+              "duration_ms": 320
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        }
+      }
+    },
+    "caretaker": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "idles": {
+        "front": "assets/story/sanctuary_arrival/art/caretaker/idle_front.png",
+        "back": "assets/story/sanctuary_arrival/art/caretaker/idle_back.png",
+        "left": "assets/story/sanctuary_arrival/art/caretaker/idle_left.png",
+        "right": "assets/story/sanctuary_arrival/art/caretaker/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_03.png",
+            "duration_ms": 140
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_03.png",
+            "duration_ms": 140
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_03.png",
+            "duration_ms": 140
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_00.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_01.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_02.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_03.png",
+            "duration_ms": 140
+          }
+        ]
+      },
+      "poses": {
+        "receive": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_02.png",
+              "duration_ms": 200,
+              "grip": [
+                12,
+                26
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                15,
+                28
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_03.png",
+              "duration_ms": 200,
+              "grip": [
+                9,
+                23
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                27
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_04.png",
+              "duration_ms": 200,
+              "grip": [
+                8,
+                23
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                27
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_05.png",
+              "duration_ms": 200,
+              "grip": [
+                9,
+                26
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                29
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_06.png",
+              "duration_ms": 200,
+              "grip": [
+                9,
+                29
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                14,
+                30
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_07.png",
+              "duration_ms": 200,
+              "grip": [
+                10,
+                31
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                15,
+                31
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_08.png",
+              "duration_ms": 200,
+              "grip": [
+                12,
+                32
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                16,
+                31
+              ]
+            },
+            {
+              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_09.png",
+              "duration_ms": 200,
+              "grip": [
+                15,
+                32
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                19,
+                30
+              ]
+            }
+          ],
+          "loop": false,
+          "anchor": [
+            20,
+            40
+          ],
+          "facing": "left"
+        }
+      },
+      "portrait": "arrival_caretaker",
+      "portrait_file": "assets/story/sanctuary_arrival/art/portraits/caretaker.png",
+      "stationary": false
+    },
+    "worker": {
+      "anchor": [
+        20,
+        34
+      ],
+      "frame_size": [
+        40,
+        40
+      ],
+      "idles": {
+        "front": "assets/story/sanctuary_rescue/worker/supported_front_0.png",
+        "back": "assets/story/sanctuary_rescue/worker/supported_back_0.png",
+        "left": "assets/story/sanctuary_rescue/worker/supported_left_0.png",
+        "right": "assets/story/sanctuary_rescue/worker/supported_right_0.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_front_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_front_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_front_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_front_3.png",
+            "duration_ms": 220
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_back_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_back_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_back_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_back_3.png",
+            "duration_ms": 220
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_left_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_left_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_left_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_left_3.png",
+            "duration_ms": 220
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_right_0.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_right_1.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_right_2.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "assets/story/sanctuary_rescue/worker/supported_right_3.png",
+            "duration_ms": 220
+          }
+        ]
+      },
+      "poses": {
+        "pinned": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_0_0.png",
+              "duration_ms": 500
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_0_1.png",
+              "duration_ms": 500
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": true
+        },
+        "seated": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_0_3.png",
+              "duration_ms": 1000
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        },
+        "rise": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_1_0.png",
+              "duration_ms": 300
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_1_1.png",
+              "duration_ms": 300
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_1_2.png",
+              "duration_ms": 300
+            },
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_1_3.png",
+              "duration_ms": 300
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        },
+        "supported": {
+          "frames": [
+            {
+              "file": "assets/story/sanctuary_rescue/actions/row_1_3.png",
+              "duration_ms": 1000
+            }
+          ],
+          "anchor": [
+            20,
+            34
+          ],
+          "loop": false
+        }
+      }
+    }
+  },
+  "props": {
+    "rock": {
+      "file": "assets/story/sanctuary_rescue/props/rock.png",
+      "anchor": [
+        18,
+        20
+      ]
+    },
+    "tool": {
+      "file": "assets/story/sanctuary_rescue/props/tool.png",
+      "anchor": [
+        3,
+        3
+      ]
+    },
+    "dressing": {
+      "file": "assets/story/sanctuary_arrival/performance/linen.png",
+      "anchor": [
+        6,
+        7
+      ]
+    }
+  },
+  "source_sha256": {
+    "actions_authored.png": "9123a9869513b9a59a64f2f1cfeb31944be7cb8df1a86b31d059c450954d9f2c",
+    "worker_supported_authored.png": "7f535625e98145a8f010da8c05768c648f3122456740e44c0d802b12dc575850",
+    "lucan_supported_authored.png": "e99ba07bdd8093fda6a591a0818d40cc2b324fe55cd601264640bc211c89c5ca"
+  },
+  "prop_sources": {
+    "assets/terrain/limestone_cave/geology/modules/slab/fallen/0.png": "976bf9d21ad1eba585267647f516b83a92b43b4fad8b3531a7623d2751c3c727",
+    "assets/story/mill/poses/mira_tool.png": "1d5f41d0b18197f67bbf3441b7876879e997eb17736977f92bb44c492a8422a6",
+    "assets/story/sanctuary_arrival/performance/linen.png": "896c9f77d065dd07830dfd7e3eb732443afbb3c9827871a41dca6597942ade30",
+    "assets/story/sanctuary_arrival/art.json": "b19665141b97f8ce308d6200fb274c6fba6278333d6042d6a6ad279c74299284"
+  },
+  "registration": "assets/source/story/sanctuary_rescue/registration.json"
+}

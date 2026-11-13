@@ -180,6 +180,7 @@ class QuestPlaytestSession:
             game.regent_arrival.reset()
             game.opening_cinematic.reset()
             game.mill_gift.reset()
+            game.sanctuary_rescue.reset()
             game.elemental_bosses.stop_audio()
             game.combat.reset()
             game.music.stop()

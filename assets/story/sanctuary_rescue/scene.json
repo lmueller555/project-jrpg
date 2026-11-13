@@ -1,0 +1,599 @@
+{
+  "version": 1,
+  "worker_position": [
+    2130,
+    405
+  ],
+  "greenwell_position": [
+    1996,
+    828
+  ],
+  "handoff_position": [
+    968,
+    414
+  ],
+  "beats": [
+    {
+      "id": "call",
+      "stage": "discovered",
+      "min_seconds": 1.8,
+      "camera": [
+        2010,
+        435
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "rescue_worker",
+          "text": "Here… behind the stone."
+        },
+        {
+          "speaker": "lucan",
+          "text": "Stop. Someone is still alive."
+        }
+      ],
+      "goals": {
+        "caelan": [
+          2000,
+          450
+        ],
+        "mira": [
+          2030,
+          450
+        ],
+        "lucan": [
+          1970,
+          450
+        ],
+        "worker": [
+          2130,
+          405
+        ]
+      },
+      "poses": {}
+    },
+    {
+      "id": "approach",
+      "stage": "discovered",
+      "min_seconds": 2.0,
+      "camera": [
+        2090,
+        415
+      ],
+      "zoom": 1.12,
+      "pan_seconds": 1.0,
+      "lines": [],
+      "goals": {
+        "caelan": [
+          2094,
+          430
+        ],
+        "mira": [
+          2106,
+          405
+        ],
+        "lucan": [
+          2098,
+          380
+        ]
+      },
+      "poses": {}
+    },
+    {
+      "id": "examine",
+      "stage": "discovered",
+      "min_seconds": 2.4,
+      "camera": [
+        2110,
+        411
+      ],
+      "zoom": 1.18,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "mira",
+          "text": "Don’t pull your leg. We’ll move what’s holding it."
+        },
+        {
+          "speaker": "rescue_worker",
+          "text": "I tried. It won’t shift."
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "mira": "kneel"
+      }
+    },
+    {
+      "id": "warning",
+      "stage": "discovered",
+      "min_seconds": 1.6,
+      "camera": [
+        2110,
+        411
+      ],
+      "zoom": 1.18,
+      "pan_seconds": 0,
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "Caelan. Away from the wall."
+        },
+        {
+          "speaker": "caelan",
+          "text": "What—?"
+        }
+      ],
+      "goals": {},
+      "poses": {}
+    },
+    {
+      "id": "reveal",
+      "stage": "discovered",
+      "min_seconds": 3.0,
+      "camera": [
+        2025,
+        410
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [],
+      "goals": {
+        "lucan": [
+          2042,
+          420
+        ],
+        "mira": [
+          2090,
+          446
+        ],
+        "caelan": [
+          2060,
+          450
+        ]
+      },
+      "poses": {},
+      "reveal": true,
+      "sound": "growl"
+    },
+    {
+      "id": "confrontation",
+      "stage": "confrontation",
+      "min_seconds": 1.3,
+      "camera": [
+        2020,
+        422
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "Behind me. Both of you."
+        }
+      ],
+      "goals": {},
+      "poses": {},
+      "reveal": true
+    },
+    {
+      "id": "aftermath",
+      "stage": "confrontation",
+      "min_seconds": 1.8,
+      "camera": [
+        2040,
+        420
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [],
+      "goals": {
+        "caelan": [
+          2060,
+          450
+        ],
+        "mira": [
+          2090,
+          446
+        ],
+        "lucan": [
+          2042,
+          420
+        ],
+        "worker": [
+          2130,
+          405
+        ]
+      },
+      "poses": {},
+      "sound": "cough"
+    },
+    {
+      "id": "return_to_worker",
+      "stage": "confrontation",
+      "min_seconds": 2.0,
+      "camera": [
+        2110,
+        413
+      ],
+      "zoom": 1.15,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "mira",
+          "text": "We’re here. Let me see your leg."
+        }
+      ],
+      "goals": {
+        "mira": [
+          2106,
+          405
+        ],
+        "caelan": [
+          2112,
+          425
+        ],
+        "lucan": [
+          2110,
+          389
+        ]
+      },
+      "poses": {}
+    },
+    {
+      "id": "free_worker",
+      "stage": "freed",
+      "min_seconds": 4.6,
+      "camera": [
+        2110,
+        413
+      ],
+      "zoom": 1.15,
+      "pan_seconds": 0,
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "I have the stone. Bring him clear."
+        },
+        {
+          "speaker": "caelan",
+          "text": "Easy. I’ve got you."
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "mira": "tool",
+        "lucan": "lift",
+        "caelan": "assist"
+      },
+      "action": "free",
+      "cue_seconds": 2.8,
+      "sound": "stone"
+    },
+    {
+      "id": "treatment",
+      "stage": "treated",
+      "min_seconds": 4.8,
+      "camera": [
+        2120,
+        416
+      ],
+      "zoom": 1.2,
+      "pan_seconds": 0.8,
+      "lines": [
+        {
+          "speaker": "mira",
+          "text": "Keep your weight off it. The dressing will hold until we reach the caretakers."
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "mira": "treat",
+        "worker": "seated"
+      },
+      "action": "treat",
+      "cue_seconds": 3.2,
+      "sound": "cloth"
+    },
+    {
+      "id": "account",
+      "stage": "treated",
+      "min_seconds": 1.5,
+      "camera": [
+        2110,
+        418
+      ],
+      "zoom": 1.12,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "rescue_worker",
+          "text": "The floor broke beneath the work face. It came up through the opening."
+        },
+        {
+          "speaker": "caelan",
+          "text": "That rupture…"
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "worker": "seated"
+      }
+    },
+    {
+      "id": "rupture",
+      "stage": "treated",
+      "min_seconds": 2.2,
+      "camera": [
+        2070,
+        250
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "We can look at it later. He needs help outside."
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "worker": "seated"
+      }
+    },
+    {
+      "id": "assisted_stand",
+      "stage": "treated",
+      "min_seconds": 3.2,
+      "camera": [
+        2110,
+        420
+      ],
+      "zoom": 1.08,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "rescue_worker",
+          "text": "I can walk. Just… slowly."
+        },
+        {
+          "speaker": "lucan",
+          "text": "Lean on me."
+        }
+      ],
+      "goals": {
+        "lucan": [
+          2106,
+          405
+        ],
+        "mira": [
+          2106,
+          438
+        ],
+        "caelan": [
+          2078,
+          438
+        ]
+      },
+      "poses": {
+        "worker": "rise",
+        "lucan": "brace"
+      },
+      "action": "stand",
+      "cue_seconds": 2.7
+    },
+    {
+      "id": "evacuate_to_greenwell",
+      "stage": "treated",
+      "min_seconds": 2.0,
+      "camera": [
+        2070,
+        440
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 0.8,
+      "lines": [],
+      "goals": {
+        "worker": [
+          1996,
+          828
+        ],
+        "lucan": [
+          1972,
+          828
+        ],
+        "mira": [
+          1944,
+          852
+        ],
+        "caelan": [
+          1920,
+          828
+        ]
+      },
+      "poses": {
+        "worker": "supported",
+        "lucan": "brace"
+      },
+      "action": "escort"
+    },
+    {
+      "id": "greenwell_rest",
+      "stage": "greenwell",
+      "min_seconds": 1.5,
+      "camera": [
+        1970,
+        814
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "mira",
+          "text": "Rest here a moment. The path out is clear."
+        },
+        {
+          "speaker": "lucan",
+          "text": "When you’re ready, we take him back to the Sanctuary."
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "worker": "seated"
+      }
+    },
+    {
+      "id": "handoff_arrival",
+      "stage": "handoff",
+      "min_seconds": 1.8,
+      "camera": [
+        980,
+        420
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "rescue_caretaker",
+          "text": "You found him. Bring him here."
+        }
+      ],
+      "goals": {
+        "worker": [
+          968,
+          414
+        ],
+        "lucan": [
+          944,
+          414
+        ],
+        "mira": [
+          968,
+          438
+        ],
+        "caelan": [
+          1000,
+          438
+        ],
+        "caretaker": [
+          1028,
+          414
+        ]
+      },
+      "poses": {
+        "worker": "supported",
+        "lucan": "brace"
+      }
+    },
+    {
+      "id": "caretaker_receives",
+      "stage": "handoff",
+      "min_seconds": 3.0,
+      "camera": [
+        980,
+        420
+      ],
+      "zoom": 1.12,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "rescue_caretaker",
+          "text": "Easy now. We’ll take care of you."
+        },
+        {
+          "speaker": "rescue_worker",
+          "text": "Thank you. All of you."
+        }
+      ],
+      "goals": {
+        "caretaker": [
+          992,
+          414
+        ]
+      },
+      "poses": {
+        "worker": "seated",
+        "caretaker": "receive"
+      },
+      "action": "handoff",
+      "cue_seconds": 2.0
+    },
+    {
+      "id": "handoff_complete",
+      "stage": "evacuated",
+      "min_seconds": 1.5,
+      "camera": [
+        970,
+        420
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 1.0,
+      "lines": [
+        {
+          "speaker": "lucan",
+          "text": "He’s in good hands. I’ll report to Aldric."
+        },
+        {
+          "speaker": "mira",
+          "text": "We should tell Mother Serene he’s safe."
+        }
+      ],
+      "goals": {},
+      "poses": {
+        "worker": "seated"
+      }
+    },
+    {
+      "id": "leave_greenwell",
+      "stage": "greenwell",
+      "min_seconds": 1.6,
+      "camera": [
+        1970,
+        814
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 0.0,
+      "lines": [],
+      "goals": {},
+      "poses": {
+        "worker": "rise",
+        "lucan": "brace"
+      },
+      "action": "stand",
+      "cue_seconds": 1.2
+    },
+    {
+      "id": "departure_walk",
+      "stage": "greenwell",
+      "min_seconds": 1.0,
+      "camera": [
+        1970,
+        840
+      ],
+      "zoom": 1.0,
+      "pan_seconds": 0.6,
+      "lines": [],
+      "goals": {
+        "worker": [
+          1996,
+          860
+        ],
+        "lucan": [
+          1972,
+          860
+        ],
+        "mira": [
+          1944,
+          884
+        ],
+        "caelan": [
+          1920,
+          860
+        ]
+      },
+      "poses": {},
+      "action": "escort"
+    }
+  ]
+}

@@ -312,6 +312,14 @@ class RegentEmergency:
 
     def tracker_text(self):
         if getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False):
+            rescue = getattr(self.game, 'sanctuary_rescue', None)
+            stage = getattr(rescue, 'stage', 'undiscovered')
+            if stage == 'evacuated':
+                return 'The rescued worker is recovering at the Sanctuary.'
+            if stage in ('greenwell', 'handoff'):
+                return 'Speak to Lucan at Greenwell to escort the worker outside.'
+            if getattr(getattr(self.game, 'sanctuary_boss', None), 'defeated', False):
+                return 'Help Mira and Lucan bring the trapped worker to safety.'
             return 'Search the Sanctuary cave for the missing worker.'
         return {'interruption':'Someone is hurrying into the house.',
                 'attack_report':'Hear the survivor’s report in the dining room.',
