@@ -3,8 +3,8 @@
   "status": "implemented",
   "builder": "tools/build_sanctuary_opening_poses.py",
   "source_png_sha256": {
-    "assets/characters/caelan/idle_right.png": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f",
-    "assets/characters/caelan/idle_front.png": "bd05f10ba11f5fafce37d2000b8d0c93eec33b38f0fa008e90531feeb3a78d00",
+    "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
+    "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
     "assets/characters/tomas/idle_left.png": "f6808a69db9a00afdeff443bf72381ad3df2a784d644651d36df7ffda5ad99fa",
     "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png": "0c5bbe8607c11734ddf08d48f50ab700687006646466d22b98e31b59f82344ce",
     "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d",
@@ -198,5 +198,17 @@
   "notes": "Caelan uses the authored overworld refresh; Tomas, furniture, prop ownership and action timing remain registered.",
   "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
   "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
-  "appearance_registration": "Authored natural poses; existing canvas, ground anchor and event timing retained."
+  "appearance_registration": "Authored natural poses with native contour; existing canvas, ground anchor and event timing retained.",
+  "outline": {
+    "version": 1,
+    "ink_rgba": [
+      18,
+      12,
+      14,
+      255
+    ],
+    "width_native_pixels": 1,
+    "placement": "inside existing cardinal silhouette",
+    "skin_highlights": "retain bright supported skin-edge pixels"
+  }
 }

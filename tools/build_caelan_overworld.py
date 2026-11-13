@@ -2,7 +2,8 @@
 
 The source atlases are retained unchanged. Export isolates connected hard alpha,
 reduces with nearest sampling at one scale per atlas, and registers complete
-silhouettes; it does not paint or anatomically stretch the generated drawings.
+silhouettes. The native contour pass inks the silhouette edge without changing
+anatomy, interior shading or alpha.
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 from tools.build_mira_combat import _main_component
+from tools.caelan_outline import apply_outline, STYLE
 
 SOURCE=ROOT/'assets/source/characters/caelan/overworld_refresh'
 BASE='assets/characters/caelan'
@@ -66,7 +68,7 @@ def registered(index, *, actions=False, canvas=(24,36), anchor=(12,34), flight=F
     if x<0 or y<0 or x+resized.width>canvas[0] or y+resized.height>canvas[1]:
         raise ValueError(('Caelan drawing would clip',index,actions,canvas,(x,y),resized.size))
     image=Image.new('RGBA',canvas);image.alpha_composite(resized,(x,y))
-    return image,dict(source_rect=[rect[0],rect[1],rect[2]-rect[0],rect[3]-rect[1]],
+    return apply_outline(image),dict(source_rect=[rect[0],rect[1],rect[2]-rect[0],rect[3]-rect[1]],
                       source_bounds=list(bounds),scale=scale,canvas=list(canvas),
                       foot_anchor=list(anchor),destination=[x,y])
 
@@ -122,7 +124,7 @@ def products():
         status(meta)
         meta['source']='assets/source/characters/caelan/overworld_refresh/travel_authored.png'
         result[BASE+'/'+name]=(json.dumps(meta,indent=2)+'\n').encode()
-    reg=dict(version=1,status='review',source='assets/source/characters/caelan/overworld_refresh/travel_authored.png',
+    reg=dict(version=1,status='review',outline=STYLE,source='assets/source/characters/caelan/overworld_refresh/travel_authored.png',
              source_sha256=sha256((SOURCE/'travel_authored.png').read_bytes()).hexdigest(),
              source_cells=records,action_source='assets/source/characters/caelan/overworld_refresh/actions_authored.png',
              action_source_sha256=sha256((SOURCE/'actions_authored.png').read_bytes()).hexdigest(),

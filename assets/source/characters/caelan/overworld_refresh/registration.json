@@ -1,6 +1,18 @@
 {
   "version": 1,
   "status": "review",
+  "outline": {
+    "version": 1,
+    "ink_rgba": [
+      18,
+      12,
+      14,
+      255
+    ],
+    "width_native_pixels": 1,
+    "placement": "inside existing cardinal silhouette",
+    "skin_highlights": "retain bright supported skin-edge pixels"
+  },
   "source": "assets/source/characters/caelan/overworld_refresh/travel_authored.png",
   "source_sha256": "bbe99437fe56a14d9d25c8197dc42620f0f599346051cb39118b77ce9b8c8aa2",
   "source_cells": [

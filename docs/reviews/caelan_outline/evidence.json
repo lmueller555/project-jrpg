@@ -1,0 +1,743 @@
+{
+  "baseline_commit": "6e1a61bc8bfe80caeafd8d868331c3fe43eaf056",
+  "scope": "Isolated actual Player selector, production world and interaction owners. Rescue prerequisites/victory are explicitly seeded; no played fight or full quest walkthrough is claimed.",
+  "travel_loop_ms": 2800,
+  "disk_persistence_disabled": true,
+  "travel_progress_unchanged": true,
+  "worlds": [
+    {
+      "file": "town.png",
+      "scene": "eldenmere.playable",
+      "direction": "front",
+      "player": [
+        392,
+        328
+      ],
+      "mira": [
+        424,
+        332
+      ],
+      "camera": [
+        152,
+        168
+      ],
+      "clock_ms": 1500
+    },
+    {
+      "file": "cave.png",
+      "scene": "sanctuary_cave",
+      "direction": "right",
+      "player": [
+        456,
+        1280
+      ],
+      "mira": [
+        488,
+        1284
+      ],
+      "camera": [
+        216,
+        1120
+      ],
+      "clock_ms": 1500
+    }
+  ],
+  "interactions": [
+    {
+      "file": "halden_lift_preparation.png",
+      "scene": "halden",
+      "owner": "halden_visit",
+      "action": [
+        "lift",
+        0
+      ],
+      "phase": null,
+      "action_seconds": 0.18,
+      "contact": false,
+      "logical_position": [
+        104.0,
+        292.0
+      ],
+      "drawn_position": [
+        104.0,
+        292.0
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "camera": [
+        -60,
+        16
+      ]
+    },
+    {
+      "file": "halden_lift_precontact.png",
+      "scene": "halden",
+      "owner": "halden_visit",
+      "action": [
+        "lift",
+        0
+      ],
+      "phase": null,
+      "action_seconds": 0.359,
+      "contact": false,
+      "logical_position": [
+        104.0,
+        292.0
+      ],
+      "drawn_position": [
+        104.0,
+        292.0
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "camera": [
+        -60,
+        16
+      ]
+    },
+    {
+      "file": "halden_lift_contact.png",
+      "scene": "halden",
+      "owner": "halden_visit",
+      "action": [
+        "lift",
+        0
+      ],
+      "phase": null,
+      "action_seconds": 0.361,
+      "contact": true,
+      "logical_position": [
+        104.0,
+        292.0
+      ],
+      "drawn_position": [
+        104.0,
+        292.0
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "camera": [
+        -60,
+        16
+      ]
+    },
+    {
+      "file": "halden_carry_front.png",
+      "scene": "halden",
+      "owner": "halden_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 0.761,
+      "contact": true,
+      "logical_position": [
+        104.0,
+        292.0
+      ],
+      "drawn_position": [
+        104.0,
+        292.0
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "camera": [
+        -60,
+        16
+      ]
+    },
+    {
+      "file": "halden_carry_back.png",
+      "scene": "halden",
+      "owner": "halden_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 0.761,
+      "contact": true,
+      "logical_position": [
+        104.0,
+        292.0
+      ],
+      "drawn_position": [
+        104.0,
+        292.0
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "camera": [
+        -60,
+        16
+      ]
+    },
+    {
+      "file": "venn_give_precontact.png",
+      "scene": "venn",
+      "owner": "venn_visit",
+      "action": "supplies",
+      "phase": null,
+      "action_seconds": 0.3,
+      "contact": false,
+      "logical_position": [
+        300.0,
+        226.0
+      ],
+      "drawn_position": [
+        300.0,
+        226.0
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "camera": [
+        -24,
+        16
+      ]
+    },
+    {
+      "file": "venn_give_contact.png",
+      "scene": "venn",
+      "owner": "venn_visit",
+      "action": "supplies",
+      "phase": null,
+      "action_seconds": 0.44999999999999996,
+      "contact": true,
+      "logical_position": [
+        300.0,
+        226.0
+      ],
+      "drawn_position": [
+        300.0,
+        226.0
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "camera": [
+        -24,
+        16
+      ]
+    },
+    {
+      "file": "venn_give_recovery.png",
+      "scene": "venn",
+      "owner": "venn_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 0.95,
+      "contact": true,
+      "logical_position": [
+        300.0,
+        226.0
+      ],
+      "drawn_position": [
+        300.0,
+        226.0
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "camera": [
+        -24,
+        16
+      ]
+    },
+    {
+      "file": "venn_tools_0.png",
+      "scene": "eldenmere.playable",
+      "owner": "venn_visit",
+      "action": "repair",
+      "phase": "work_pin",
+      "action_seconds": 0.05,
+      "contact": false,
+      "logical_position": [
+        1428.0,
+        670.0
+      ],
+      "drawn_position": [
+        1428.0,
+        670.0
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "camera": [
+        1056,
+        510
+      ]
+    },
+    {
+      "file": "venn_tools_1.png",
+      "scene": "eldenmere.playable",
+      "owner": "venn_visit",
+      "action": "repair",
+      "phase": "work_pin",
+      "action_seconds": 0.25,
+      "contact": false,
+      "logical_position": [
+        1428.0,
+        670.0
+      ],
+      "drawn_position": [
+        1428.0,
+        670.0
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "camera": [
+        1056,
+        510
+      ]
+    },
+    {
+      "file": "venn_tools_2.png",
+      "scene": "eldenmere.playable",
+      "owner": "venn_visit",
+      "action": "repair",
+      "phase": "work_pin",
+      "action_seconds": 0.45,
+      "contact": false,
+      "logical_position": [
+        1428.0,
+        670.0
+      ],
+      "drawn_position": [
+        1428.0,
+        670.0
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "camera": [
+        1056,
+        510
+      ]
+    },
+    {
+      "file": "venn_tools_3.png",
+      "scene": "eldenmere.playable",
+      "owner": "venn_visit",
+      "action": "repair",
+      "phase": "work_pin",
+      "action_seconds": 0.65,
+      "contact": false,
+      "logical_position": [
+        1428.0,
+        670.0
+      ],
+      "drawn_position": [
+        1428.0,
+        670.0
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "camera": [
+        1056,
+        510
+      ]
+    },
+    {
+      "file": "elira_lantern_reach.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": "retrieve",
+      "phase": null,
+      "action_seconds": 1.1,
+      "contact": false,
+      "logical_position": [
+        154.0,
+        118.0
+      ],
+      "drawn_position": [
+        154,
+        76
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        0
+      ]
+    },
+    {
+      "file": "elira_lantern_take.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": "retrieve",
+      "phase": null,
+      "action_seconds": 1.1800000000000002,
+      "contact": true,
+      "logical_position": [
+        154.0,
+        118.0
+      ],
+      "drawn_position": [
+        154,
+        76
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        0
+      ]
+    },
+    {
+      "file": "elira_lantern_carry.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 2.58,
+      "contact": true,
+      "logical_position": [
+        154.0,
+        118.0
+      ],
+      "drawn_position": [
+        154.0,
+        118.0
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        0
+      ]
+    },
+    {
+      "file": "elira_lantern_carry_front.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 2.58,
+      "contact": true,
+      "logical_position": [
+        154.0,
+        118.0
+      ],
+      "drawn_position": [
+        154.0,
+        118.0
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        0
+      ]
+    },
+    {
+      "file": "elira_lantern_carry_left.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 2.58,
+      "contact": true,
+      "logical_position": [
+        154.0,
+        118.0
+      ],
+      "drawn_position": [
+        154.0,
+        118.0
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        0
+      ]
+    },
+    {
+      "file": "elira_lantern_carry_right.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 2.58,
+      "contact": true,
+      "logical_position": [
+        154.0,
+        118.0
+      ],
+      "drawn_position": [
+        154.0,
+        118.0
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        0
+      ]
+    },
+    {
+      "file": "elira_lantern_place.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": "place",
+      "phase": null,
+      "action_seconds": 0.3,
+      "contact": false,
+      "logical_position": [
+        180.0,
+        238.0
+      ],
+      "drawn_position": [
+        180.0,
+        238.0
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "camera": [
+        -96,
+        16
+      ]
+    },
+    {
+      "file": "elira_lantern_finished.png",
+      "scene": "elira",
+      "owner": "elira_visit",
+      "action": null,
+      "phase": null,
+      "action_seconds": 0.8999999999999999,
+      "contact": true,
+      "logical_position": [
+        180.0,
+        238.0
+      ],
+      "drawn_position": [
+        180.0,
+        238.0
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "camera": [
+        -96,
+        16
+      ]
+    }
+  ],
+  "rescue": [
+    {
+      "file": "rescue_free_worker.png",
+      "phase": "free_worker",
+      "action_seconds": 2.9499999999999975,
+      "camera": [
+        2110.0,
+        413.0
+      ],
+      "zoom": 1.15,
+      "player": [
+        1940.0,
+        492.0
+      ]
+    },
+    {
+      "file": "rescue_treatment.png",
+      "phase": "treatment",
+      "action_seconds": 3.349999999999996,
+      "camera": [
+        2120.0,
+        416.0
+      ],
+      "zoom": 1.2,
+      "player": [
+        2112.0,
+        425.0
+      ]
+    },
+    {
+      "file": "rescue_assisted_stand.png",
+      "phase": "assisted_stand",
+      "action_seconds": 2.849999999999998,
+      "camera": [
+        2110.0,
+        420.0
+      ],
+      "zoom": 1.08,
+      "player": [
+        2112.0,
+        425.0
+      ]
+    },
+    {
+      "file": "rescue_greenwell_walk.png",
+      "stage": "greenwell",
+      "player": [
+        1918.56,
+        828.0
+      ],
+      "camera": [
+        1680,
+        668
+      ]
+    }
+  ],
+  "input_sha256": {
+    "assets/characters/caelan/idle_back.png": "48e1e4c117ac1792ed7a5ee4c4ed24cc571524334afdf12e3a8d15b6c11aa47e",
+    "assets/characters/caelan/idle_directions.png": "e684349d335e572d5cc049d43da64055b152350aec00adf46d1688e83cec7308",
+    "assets/characters/caelan/idle_directions_review.png": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792",
+    "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
+    "assets/characters/caelan/idle_front_preview.png": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f",
+    "assets/characters/caelan/idle_front_review.png": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351",
+    "assets/characters/caelan/idle_left.png": "aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086",
+    "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
+    "assets/characters/caelan/participation_sit_front.png": "14f452752336b7b31b5295cc7ba7f9975421b5860128460252d8fe2501dffa84",
+    "assets/characters/caelan/run_back/frame_01.png": "04de2c6a76ef08f282f7a809634bf38d635bb862d429cea0148c00a765236e31",
+    "assets/characters/caelan/run_back/frame_02.png": "84f4cd09516a96afdb12fe5c5905fb768236926e9d411ca46d9b0bce3fd5c48c",
+    "assets/characters/caelan/run_back/frame_03.png": "d849eca02ad7e6969b63af627cf3388cb00d0829cdcf3786edb4cd9563cf3627",
+    "assets/characters/caelan/run_back/frame_04.png": "82906a2cad93be7c03dba41d343a6fcf44a7aef26e76d4ccdbc15f70ca0b5ca3",
+    "assets/characters/caelan/run_back/spritesheet.png": "ab759fa35b863a09c8c4e78487f9c0e2a116aa973cad1ad7bae5dd878b819898",
+    "assets/characters/caelan/run_front/frame_01.png": "0b094d8f75646aa394d1552473a05c87b45641133d48de050b7cdaa4ed363954",
+    "assets/characters/caelan/run_front/frame_02.png": "368e4a6d022393b2bfbae61d26e3d239eb09616d65957b4a31695a2dfd43dc74",
+    "assets/characters/caelan/run_front/frame_03.png": "960cabf6ae51527e1250b7cc7804d78d9b022e91c954ccf92c8b7a9f051aa114",
+    "assets/characters/caelan/run_front/frame_04.png": "b22b9d4b0fdb812151428d50f94e4a941575a12dc2c87b313c1c83b5bb43a0cd",
+    "assets/characters/caelan/run_front/spritesheet.png": "eeb4f2e6a23351dbd7cb1782f8781fb1a58c21dfeca376239aeeb8621c2714a6",
+    "assets/characters/caelan/run_left/frame_01.png": "85380019f16a656c16e8e6299eded907b027fd38d5427b4448fd761554b5383a",
+    "assets/characters/caelan/run_left/frame_02.png": "61c32be06450797ea0e6188d496a4afb08691198ea9f7b41005d76bc4e8b74f7",
+    "assets/characters/caelan/run_left/frame_03.png": "7b4e97a71d333de841de5e8b191019a0d372cbe97fe8637ef642d5711317dca6",
+    "assets/characters/caelan/run_left/frame_04.png": "e4c9584e30b114211bdf066e2f4fabd06058a1eb3de74bc1fe095009b289a05d",
+    "assets/characters/caelan/run_left/spritesheet.png": "0bbf228c431b6987cf3ae42e31502f8b38e82277f7e3e786b9073f0738f8688a",
+    "assets/characters/caelan/run_right/frame_01.png": "dd40e7eba71c753d5e7e6276bc61a705624aa1625dc549fdb62e174b3b76b7f1",
+    "assets/characters/caelan/run_right/frame_02.png": "7a4a74264f10918763d5adb9d9d9ba512812eb9d71c170cf425023830fccf6b4",
+    "assets/characters/caelan/run_right/frame_03.png": "9f76ce7f1ffc07d96def11e3517a0369f76f1a82c934afc27a513ac7db631c7d",
+    "assets/characters/caelan/run_right/frame_04.png": "d2375f716d37cd7ed0d2c91aaf6d0616dc31be18d657add47f85a7f69d271eef",
+    "assets/characters/caelan/run_right/spritesheet.png": "f6bf25146385f6020e996f4589168f9f34211b97ab0fe2443d57416f925a8358",
+    "assets/characters/caelan/walk_back/frame_01.png": "cecc793a7655cb9c6d02d9ebe22d929e13d0568757af28c276e67d7dfe97a92e",
+    "assets/characters/caelan/walk_back/frame_02.png": "a911743a781304928d54ec26de2ec9d7effa412680ddc268ae573ca6de612e0c",
+    "assets/characters/caelan/walk_back/frame_03.png": "b7033f3aedaf8efb393f251b0752494c17a5dfd906158d5e820d486526071835",
+    "assets/characters/caelan/walk_back/frame_04.png": "9a80511e848dffc3f96f6971aa9d3a78b23368f7cb96f9cc277a5433643073df",
+    "assets/characters/caelan/walk_back/frames_review.png": "523d84ac432e23c395c06d6f9a2d233554224c43acf8cbda7f34838061d15c92",
+    "assets/characters/caelan/walk_back/spritesheet.png": "b4aab9cdddc5ba1e3e0d1d8d1edac52a75847924c8ebfc2e7fefc7764f251f46",
+    "assets/characters/caelan/walk_directions.png": "b9289d0384e23dfcf0321ce5924eeefbb4a82678c0a746623ea3fad16eb614b9",
+    "assets/characters/caelan/walk_directions_review.png": "fba6b1ec8a24df4b5cabd03bbfb76c35632e4b922efa5200986cd1383c8a92e8",
+    "assets/characters/caelan/walk_front/frame_01.png": "16ee3ad7f67ef073a646bf72d0717260c93c4d7580f95eb40f294f1d7d40661f",
+    "assets/characters/caelan/walk_front/frame_02.png": "427a107ceef05fd92b1878420bc0228562caf06a7f31718c26414f2ecf182815",
+    "assets/characters/caelan/walk_front/frame_03.png": "51e1dabf6c13b19d04c6af6b5608b2750fbae2d017b39121fb18e39a396063bb",
+    "assets/characters/caelan/walk_front/frame_04.png": "6c9a77e8b56c4b8d5522a2dfdb6e55b86d44195d02fefb36281dc24ff20564be",
+    "assets/characters/caelan/walk_front/frames_review.png": "94773a2fb01dbb91208a00d9a45b981e4346573460fc1f9d76eeafad80a25127",
+    "assets/characters/caelan/walk_front/spritesheet.png": "58b7892d7fdcd31f8533ba965dc54bc629f75829bc32d39a853c9b8b7656d71c",
+    "assets/characters/caelan/walk_left/frame_01.png": "bd31d4de4a9aea6d4a21cb2a352786305f936af4d96be3e3a976295a87278bd9",
+    "assets/characters/caelan/walk_left/frame_02.png": "330df1e6e18953109741a343a5b38b38a129a3c91cbc75e009070f1c070f824e",
+    "assets/characters/caelan/walk_left/frame_03.png": "d13a9cc891085bb8311225c549db94dfb5db70aeb229fed023781790c7f2e805",
+    "assets/characters/caelan/walk_left/frame_04.png": "278948c2469428983828721bb1a37ab4f4177ebf18fb560b332efb3a836734f6",
+    "assets/characters/caelan/walk_left/frames_review.png": "4317983f4579f791e25ed6046f8721ce89af5b373d7288c8b57b0dd2f7028d40",
+    "assets/characters/caelan/walk_left/spritesheet.png": "3cbf9db1010ee946a18a04d11b05aff9d0abe9bdca6e74fb5559e7819797dbf9",
+    "assets/characters/caelan/walk_right/frame_01.png": "dd919ec2769e4b5cf5f020880840b0066da2cfa7d1db392da12c6194cda2738a",
+    "assets/characters/caelan/walk_right/frame_02.png": "79d825b02f7e7e996c5dd83756dcae1beedd84a491a81e6dc0248a7ded7c0135",
+    "assets/characters/caelan/walk_right/frame_03.png": "c81ce51f8fc2c7725f4f0ef8fac86dc711000eb2db3718c52fc81ad8026b07b1",
+    "assets/characters/caelan/walk_right/frame_04.png": "8b8d0303d2a22d5049c31847d0ddc42a9a06cd47b9a5f6c1837fc2323342a09d",
+    "assets/characters/caelan/walk_right/frames_review.png": "acf4360f3dd45bbb501346af0504fcb0c4945c263f83194c940d9526c6da2fa0",
+    "assets/characters/caelan/walk_right/spritesheet.png": "e4f9ad81fd2961d16e96897eaaf3480d4a9e7cff2fd5c5eb0faed6bf83c15dc9",
+    "assets/characters/mira/idle_back.png": "52980d6f47d866ccb63f7fdcc02c2ea8f9a68b361808a48d48f116dbc351d9ea",
+    "assets/characters/mira/idle_front.png": "6b42068698145aa5a3caec1a3063a178da7df1e2921258faf7f10631f7ce8507",
+    "assets/characters/mira/idle_left.png": "695e92c91ccab22fa62f0952cd9f0cbe3ab8eadc6715eba2ad714a9eed3dc11a",
+    "assets/characters/mira/idle_right.png": "3cfe22f5b8ef5576c0818ca07d3b769ace360cfa8b4dfc486cc673f4a79db84b",
+    "assets/source/characters/caelan/overworld_refresh/actions_authored.png": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+    "assets/source/characters/caelan/overworld_refresh/registration.json": "b45001c8283fc5d69c91b54cebb626d66257a021cf9d9dc19bb0552dc8bdf034",
+    "assets/source/characters/caelan/overworld_refresh/travel_authored.png": "bbe99437fe56a14d9d25c8197dc42620f0f599346051cb39118b77ce9b8c8aa2",
+    "assets/source/story/sanctuary_rescue/registration.json": "a95496aa834be6db272f5e5505cffc2ad4f8e0eb151bebacec2715961a1f8a89",
+    "assets/story/sanctuary_rescue/actions/row_0_0.png": "3a4fb992106f8c54f1a4942f70b5ad441ec4f271f23e571ea166479c3f4b9878",
+    "assets/story/sanctuary_rescue/actions/row_0_1.png": "f1bc7cb34e483757e21f1b31011961672b83acf4b224ddc7e2894a761794d8a8",
+    "assets/story/sanctuary_rescue/actions/row_0_2.png": "606a07117aaa69d42473e6bf0cadb6746b126a627921b21cf47054f10a853508",
+    "assets/story/sanctuary_rescue/actions/row_0_3.png": "73b273f3381cfacd6ff43a13ac58dbaacdc260b821f596f0946057cf7d299550",
+    "assets/story/sanctuary_rescue/actions/row_1_0.png": "c1142bc07dec11bb0725b6a46cc3189fdb83004e55898a3c6bdf2444efb77e8d",
+    "assets/story/sanctuary_rescue/actions/row_1_1.png": "6671c83bae2d5fd5f8d023663a8c012a3a6af97d697d9bcaaa707b9ba83aa8b6",
+    "assets/story/sanctuary_rescue/actions/row_1_2.png": "8117d4883738bda8613d9d4e734257a6b91a595096c413328d6a8687d0bce1ac",
+    "assets/story/sanctuary_rescue/actions/row_1_3.png": "f0da5e9eda5901ca6235d63494f109659802dd4ccbe3fc0902de68a3352c7b29",
+    "assets/story/sanctuary_rescue/actions/row_2_0.png": "256c2d89f21a02eae08e6b7794b420aeb1f389ac30e95725c81683ec1df7d669",
+    "assets/story/sanctuary_rescue/actions/row_2_1.png": "0b1b665f801ed975d0a3f2f2919d07bd695311cdc729b9f114d52b1b3039b876",
+    "assets/story/sanctuary_rescue/actions/row_2_2.png": "bd9280f76f625977854e5a44406f482d8e20f0e37784bd4e47fecc713216e954",
+    "assets/story/sanctuary_rescue/actions/row_2_3.png": "8b3de332dbf431e5979e6ad2d6e5bb2866c1401443a760c89d9c09d14704a437",
+    "assets/story/sanctuary_rescue/actions/row_3_0.png": "d60f13ca533e39d132e6c6a3dfe0363eb09fafc471d963ca896e2330be162eca",
+    "assets/story/sanctuary_rescue/actions/row_3_1.png": "4451776afc9b86dfe42c3b6b1dc3c91242bd8fa94425c075fd05c921ef1a939f",
+    "assets/story/sanctuary_rescue/actions/row_3_2.png": "195dda2653e7e1be6306e47be73934849cadd8e6b9649d1bf33e5d0ed8c1a415",
+    "assets/story/sanctuary_rescue/actions/row_3_3.png": "cbb0dcbae6f29c585b290cb3a67f26f284ac2c3d516995a44eabf80a7dfb99e8",
+    "assets/story/sanctuary_rescue/actions/row_4_0.png": "0d513080948c061649ac67427fa7227c4aab75903811633dd4f168ed8f338be7",
+    "assets/story/sanctuary_rescue/actions/row_4_1.png": "8bfeae2ae3fbea8406df20d2602b53e507dea19e94b735a0c2f73be64539ddd6",
+    "assets/story/sanctuary_rescue/actions/row_4_2.png": "cf476d8ff1fc4c3bd2d6c1a24d682730306e6dd458a03acc715f3f4d340a62dc",
+    "assets/story/sanctuary_rescue/actions/row_4_3.png": "8b5012b1a924d5f624c6cc9b0a66bb687bf4dbd53d35b39939fd4f7213b9ab81",
+    "assets/story/sanctuary_rescue/actions/row_5_0.png": "d699da8fddf040ce4037ab2d9e4245c426a8bdb0b7630800b78263c2f722fac1",
+    "assets/story/sanctuary_rescue/actions/row_5_1.png": "18bd698ecd37c7efa513357c5a6924c0287a101c1e9d98fdb9cd05eb276dd4ff",
+    "assets/story/sanctuary_rescue/actions/row_5_2.png": "178f1615aa0acd9b4db97442e7ce3bbc6c5baa4bd0df652c03b9c4fca9d1936c",
+    "assets/story/sanctuary_rescue/actions/row_5_3.png": "b2fffa56ee36edafa31c8efa3176de0ca219e590b2b051e20341b91dd20c3c78",
+    "assets/story/sanctuary_rescue/art.json": "74a56e059bb5aa0199a86c9de2791c37153fceae644ba23ec32edb4792d098c5",
+    "sanctuary_arrival.py": "7e4f24b155b99891208a96201a7680d63b80f51c62ec54ae36d4a2160e4d31b4",
+    "sanctuary_rescue.py": "328a2b1ef47a8d24a2bd0f733a1a9bb3cba87e8478ce9ef2d10477e932abfbdb",
+    "tools/build_caelan_overworld.py": "f1770a6facb82236a3a070e5f78373e962e175dca4008bd1675f710b7a080910",
+    "tools/build_caelan_overworld_dependents.py": "ced38dd7d857cdda17bc8225d043a8791c946ae581e8c4b616e5a873a04e7902",
+    "tools/build_sanctuary_rescue_art.py": "fc6e2c77be8e6ac1fca2441b9d07ba6d68b978fc4f8452a1a1c09f191389147d",
+    "tools/caelan_outline.py": "c1f6a54cb3b2e2f8dd6001573f18cfc204cdedaf292571dc0a6fde6e5e89cf8d",
+    "tools/capture_caelan_outline.py": "d054496656253ac4c7a235b4c3833dca958d0f8156ae4eae21e2c2509b8c211c"
+  },
+  "output_sha256": {
+    "actions.png": "96ae940080482de122a61e8b9531b48fcb5ae4f2c32254cc782ed80cdbe6ddc7",
+    "cave.png": "0813b624de30a53b132c897679dccbca75069e6193e63f632530456586428049",
+    "comparison.png": "7b9059fc9e634bc80b2dbf6e298471f10d4a672779b8bf67e246cf55959a1229",
+    "elira_lantern_carry.png": "7428757c1373d308336eb8a73435e78b8901e33ffe3de7504f54ce1664d9ca96",
+    "elira_lantern_carry_front.png": "aaa8068ccc07180c628e9ad8cd0898b73761b41887aa3d5366ba54bf5a74ce31",
+    "elira_lantern_carry_left.png": "97be37ee3c440b1dacf2891f0ea50afa05109f7917178ba9bb17c5ad99dc9705",
+    "elira_lantern_carry_right.png": "dcc48333882f52b496c56edcc9d15af4ba0a0bcf6852a54dfc9336133ca4e5f2",
+    "elira_lantern_finished.png": "2b079f759ad2929d5b2eee1b0fee003fdb7b18cdb8a58efee8b0dfc6a7bf90c4",
+    "elira_lantern_place.png": "a0835bc88a41d6dcf9c15564893973add3d784d2ac92cc3023c4f7f347d442e3",
+    "elira_lantern_reach.png": "13a9f6823b92181366a6a3388751bd9dd8c2f2a3d56757531260b06b576552f8",
+    "elira_lantern_take.png": "019825549d49b110a55cc0282068fa85d72d1f2a6d545188a54d8bfeb92a2788",
+    "halden_carry_back.png": "3d5c95f2c35aa82ff21cfb9bc0a6618ae6587f1c64ac9ebccbc2954e2b67a7a9",
+    "halden_carry_front.png": "14855755c18a209991ec49f66fc443f1f30798885ae602b8cf69401aa868d9fb",
+    "halden_lift_contact.png": "b6a5100d01b90ba2cfd249deab20402db114ecbeb87f360047e643727eecbef7",
+    "halden_lift_precontact.png": "5e43e202ae8b2708f393bf6cebabe94e75b63a93df93068a5d50840d6fe15b5b",
+    "halden_lift_preparation.png": "548e4dcad7348001fcdc57baf2f8080da8202a4079a5fce4f7619719aa884b87",
+    "interactions.png": "d718af3e2cb0bb769580a0c9abee1a9cc035579cca9b80627ed23bbe05d60cab",
+    "native_contact_sheet.png": "938f1de78e5d8400f42b451f6a7e0432a0e731fc062546fb7301101d234e94fe",
+    "rescue_assisted_stand.png": "44f07d5c661bafb2763a0002dbd35847d71c8f1bc572bfdd5c30b2c9b51454f6",
+    "rescue_free_worker.png": "d4c4aa9510d86b68a4f5bb08dfc2197a4ecc2fa9f8c6e2461838159bd9d71ab8",
+    "rescue_greenwell_walk.png": "226cd16a0977afc2745ca95e2f322fb8a45a5a293779dfe57cb8f0188651fa29",
+    "rescue_treatment.png": "d71f328ea097140440ebe351f6f0c4afc3bf130ca09ba1d1dffc86f1163e418a",
+    "town.png": "85ccf84de665b3ae0436913f7189a412d82d19167e35bde2818bc2ee1a32189f",
+    "travel.gif": "d307128758f642d188c8520af1e600fe66c6160644e44d740b4ed85212725033",
+    "travel.png": "4f79d686c9aed87e071218484c819470221b022d13c0d47da09e127b854d99f1",
+    "venn_give_contact.png": "ce105af5b5c90e9e375b8933f79f8beda562fb7a4eee4f3ac2a59270807a4c90",
+    "venn_give_precontact.png": "5a1f3132a14d8d626c5be4c46a543bba580cec4ca6986cb217a634d1653edba4",
+    "venn_give_recovery.png": "1ab5bcd1089a96a02b0f063bbf467bb9039bad67d0c4ce567850ee139add7040",
+    "venn_tools_0.png": "653bb839284386718c2c6177924e96957987294dc1811a5825ce51a8b3277a76",
+    "venn_tools_1.png": "6437d495b3a84e0fd33b6fe955b030e0709bb456618db4dfaac379593a97762a",
+    "venn_tools_2.png": "a789718bd5b2add5ee54bdab9da9b86987cc66c960bc0b845bbbfeca85873cf5",
+    "venn_tools_3.png": "f6de1dbebe54910cd77368c54b2013af7ce83c2c30062c5750c5194f0e97ad83"
+  }
+}

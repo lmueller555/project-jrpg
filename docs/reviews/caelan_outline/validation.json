@@ -1,0 +1,113 @@
+{
+  "new_test_cases": 4,
+  "result": "passed",
+  "commands": [
+    "PYTHONPATH=tests python -m unittest test_caelan_outline"
+  ],
+  "contracts": [
+    "All 36 travel frames preserve alpha, bounds and strict interior RGB.",
+    "Every travel pose gains dark outer contour coverage.",
+    "Transparent gaps between limbs remain clear.",
+    "The contour does not mutate its input and is idempotent.",
+    "Only the four Caelan rescue frames receive the outline; the other 52 rescue body frames match raw source registration.",
+    "Dependent-body metadata records the shared contour policy and representative banks contain the outline ink."
+  ],
+  "reference_edge_metrics": {
+    "before": {
+      "front": {
+        "dark_edge_pixels": 5,
+        "cardinal_edge_pixels": 92,
+        "fraction": 0.054
+      },
+      "back": {
+        "dark_edge_pixels": 7,
+        "cardinal_edge_pixels": 90,
+        "fraction": 0.078
+      },
+      "left": {
+        "dark_edge_pixels": 12,
+        "cardinal_edge_pixels": 81,
+        "fraction": 0.148
+      },
+      "right": {
+        "dark_edge_pixels": 15,
+        "cardinal_edge_pixels": 81,
+        "fraction": 0.185
+      }
+    },
+    "after": {
+      "front": {
+        "dark_edge_pixels": 87,
+        "cardinal_edge_pixels": 92,
+        "fraction": 0.946
+      },
+      "back": {
+        "dark_edge_pixels": 84,
+        "cardinal_edge_pixels": 90,
+        "fraction": 0.933
+      },
+      "left": {
+        "dark_edge_pixels": 78,
+        "cardinal_edge_pixels": 81,
+        "fraction": 0.963
+      },
+      "right": {
+        "dark_edge_pixels": 78,
+        "cardinal_edge_pixels": 81,
+        "fraction": 0.963
+      }
+    },
+    "mira": {
+      "front": {
+        "dark_edge_pixels": 76,
+        "cardinal_edge_pixels": 85,
+        "fraction": 0.894
+      },
+      "back": {
+        "dark_edge_pixels": 65,
+        "cardinal_edge_pixels": 82,
+        "fraction": 0.793
+      },
+      "left": {
+        "dark_edge_pixels": 66,
+        "cardinal_edge_pixels": 78,
+        "fraction": 0.846
+      },
+      "right": {
+        "dark_edge_pixels": 64,
+        "cardinal_edge_pixels": 79,
+        "fraction": 0.81
+      }
+    }
+  },
+  "limits": "The numerical contour and reproduction checks do not certify anatomy or every scene interaction. Native-size comparisons and production-renderer captures were visually reviewed separately.",
+  "targeted_test_cases": 38,
+  "additional_selections": [
+    {
+      "selection": "Core travel contracts, cast animation ownership and full rescue lifecycle",
+      "test_cases": 32,
+      "result": "passed",
+      "reported_by": "root"
+    },
+    {
+      "selection": "Authored Venn spell poses and Lantern construction art contracts",
+      "test_cases": 2,
+      "result": "passed",
+      "reported_by": "root"
+    }
+  ],
+  "reproducible_exports": {
+    "caelan_overworld": 202,
+    "sanctuary_rescue": 60,
+    "result": "passed",
+    "reported_by": "root"
+  },
+  "capture": {
+    "input_fingerprints": 95,
+    "output_fingerprints": 32,
+    "travel_loop_ms": 2800,
+    "disk_persistence_disabled": true,
+    "travel_progress_unchanged": true
+  },
+  "compile_and_whitespace_checks": "passed"
+}

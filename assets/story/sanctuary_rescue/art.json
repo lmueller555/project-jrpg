@@ -1,6 +1,18 @@
 {
   "version": 1,
   "status": "review",
+  "caelan_outline": {
+    "version": 1,
+    "ink_rgba": [
+      18,
+      12,
+      14,
+      255
+    ],
+    "width_native_pixels": 1,
+    "placement": "inside existing cardinal silhouette",
+    "skin_highlights": "retain bright supported skin-edge pixels"
+  },
   "actors": {
     "mira": {
       "anchor": [
