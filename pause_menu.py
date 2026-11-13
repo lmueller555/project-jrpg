@@ -232,7 +232,7 @@ class SettingsPanel:
 
 
 class PauseMenu:
-    options = ('Resume', 'Characters', 'Party', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
+    options = ('Resume', 'Characters', 'Party', 'Inventory', 'Journal', 'Map', 'Save Game', 'Load Game', 'Settings', 'Quit')
     settings_index = options.index('Settings')
 
     def __init__(self, game):
@@ -339,6 +339,8 @@ class PauseMenu:
             self.overlay = 'map'
             self.game.map_open = True
             self.game.ui.sound('confirm')
+        elif label in ('Save Game','Load Game'):
+            self.game.save_menu.open('save' if label=='Save Game' else 'load')
         elif label == 'Settings':
             self.settings = True;self.selected = 0;self.settings_panel.reset()
             self.game.ui.sound('confirm')

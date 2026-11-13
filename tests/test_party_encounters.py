@@ -129,25 +129,33 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertEqual(self.resources()['rhea'], (90, 4))
         self.assertEqual(self.resources(self.load()), self.resources())
 
-    def test_defeat_preserves_optional_battle_entry_resources_for_all_members(self):
+    def test_defeat_opens_game_over_without_overwriting_prebattle_resources(self):
         before = self.resources()
+        self.assertTrue(self.game.save_progress())
+        saved = self.path.read_bytes()
         owner = self.start()
         for member in owner.model.party:member.hp = 0;member.mp = 0
         owner.model.phase = 'defeat';owner.scene.dismissed = True
         self.assertTrue(owner._settle())
+        self.assertTrue(self.game.game_over)
+        self.assertEqual(self.path.read_bytes(), saved)
         self.assertEqual(self.resources(), before)
         self.assertEqual(self.resources(self.load()), before)
         self.assertEqual(self.game.battle_rewards.to_dict()['receipts'], [])
 
-    def test_mill_defeat_restores_viable_companion_hp_and_preserves_entry_mp(self):
+    def test_mill_defeat_opens_game_over_without_healing_or_saving(self):
         owner = self.start_mill()
+        self.assertTrue(self.game.save_progress())
+        saved = self.path.read_bytes()
         for member in owner.model.party:member.hp = 0;member.mp = 0
         owner.model.phase = 'defeat';owner.scene.dismissed = True
         self.assertTrue(owner._settle())
         mira = self.game.party.characters['mira']
-        self.assertEqual((mira.current_hp, mira.current_mp), (mira.value('hp'), 9))
+        self.assertTrue(self.game.game_over)
+        self.assertEqual(self.path.read_bytes(), saved)
+        self.assertEqual((mira.current_hp, mira.current_mp), (37, 9))
         self.assertFalse(self.game.mill_quest.encounter_cleared)
-        self.assertEqual(self.resources(self.load())['mira'], (mira.value('hp'), 9))
+        self.assertEqual(self.resources(self.load())['mira'], (37, 9))
 
     def test_mill_withdrawal_preserves_actual_companion_ko_and_spent_mp(self):
         owner = self.start_mill()

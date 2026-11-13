@@ -14,10 +14,10 @@ SIZE=(640,360)
 
 
 class TitleScreen:
-    gallery_index = 2
-    quest_playtest_index = 3
-    settings_index = 4
-    quit_index = 5
+    gallery_index = 3
+    quest_playtest_index = 4
+    settings_index = 5
+    quit_index = 6
     def __init__(self,game):
         self.game=game
         if not hasattr(game,'audio'):game.audio=AudioSettings()
@@ -46,7 +46,7 @@ class TitleScreen:
         self.elapsed=0.0
         self.fade=0.0
         self.continuing=False
-        self.options=('New Game','Continue','Gallery','Quests (Playtest)','Settings','Quit')
+        self.options=('New Game','Continue','Load Game','Gallery','Quests (Playtest)','Settings','Quit')
         self.rows=[pygame.Rect(235,219+i*24,170,22) for i in range(len(self.options))]
         self.settings_panel=SettingsPanel(self,SIZE)
         self.settings_rows=self.settings_panel.rows
@@ -122,6 +122,8 @@ class TitleScreen:
             self.continuing=True
             self.fade=.001
             self.game.ui.sound('confirm')
+        elif self.selected==2:
+            self.game.save_menu.open('load')
         elif self.selected==self.gallery_index:
             self._mouse_held=False;self._pressed=None
             self.game.ui.sound('confirm');self.game.open_gallery()

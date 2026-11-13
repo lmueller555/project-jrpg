@@ -65,8 +65,8 @@ The score then continues into battle without restarting.
 Pause or focus loss freezes staging and the camera. Movement and unrelated
 menu inputs cannot move the actors or advance a pan. Reduced Motion uses static
 shot changes. Canceling releases the camera and actors; an unfinished scene
-reloads at the safe arrival and restarts without granting progress. A Flee or
-defeat return waits for an explicit retry or a new area entry. Completed and
+reloads at the safe arrival and restarts without granting progress. A Flee return waits for an explicit retry or a new area entry. Party defeat
+opens Game Over without changing recovery saves. Completed and
 legacy-bypassed encounters do not replay. Ordinary dialogue still follows the
 player with the full viewport. See the [millrace cutscene review](reviews/millrace_cutscene/README.md).
 
@@ -356,8 +356,9 @@ Victory grants one Aether Emerald once on Spoils, and commits
 the cleared trail with remaining resources before its Continue opens the linear aftermath. The intake remains
 blocked until the existing repair. If Mira wins while Caelan is incapacitated,
 first aid restores him to 25% maximum HP before the recovery exchange. Flee
-returns to the safe approach without rewards or encounter completion. Defeat
-returns there with full Caelan HP and pre-battle MP for a viable retry.
+returns to the safe approach without rewards or encounter completion. Party defeat
+opens Game Over and offers manual-save or autosave loading without healing
+or overwriting recovery files.
 Interrupted battles save the unfinished encounter at the safe approach. Party
 resources resume from the entry checkpoint; partial ATB, action damage and the
 dialogue cursor are not serialized. Older completed
@@ -389,8 +390,9 @@ physical. Guard and the existing recovery vulnerability continue to apply
 through the shared hit resolution. Elemental values are not revealed in the HUD.
 
 The introductory battle is cleared only by victory and its ordinary once-only
-award. Defeat or withdrawal preserves its exact ticket for retry, without
-unlearning a successful discovery. A deferred retry allows preparation and
+award. Withdrawal preserves its exact ticket for retry, without
+unlearning a successful discovery. Defeat opens Game Over; loading restores
+the chosen snapshot, including its discovery state. A deferred retry allows preparation and
 travel instead of immediately restarting combat. Caelan must be conscious,
 active and carrying the blade; no MP minimum is imposed. The first lesson takes
 priority over the miniboss, and normal weighted encounters begin after it clears.
@@ -531,7 +533,8 @@ items or progression. Older journeys without a post-battle checkpoint still load
 
 Victory retains remaining HP/MP, with the existing MQ02 first aid if Mira wins
 while Caelan is incapacitated. Flee grants no rewards and keeps its existing
-safe return. Defeat also keeps its existing retry checkpoint. Neither Flee nor
+safe return. Defeat opens Game Over and preserves all existing saves. See
+[save slots and autosaves](SAVE_SYSTEM.md). Neither Flee nor
 defeat opens Spoils or plays the victory fanfare. The Bat returns after its
 normal four-second exploration cooldown.
 

@@ -5,6 +5,7 @@ import math
 import pygame
 
 from quest_playtest import prepare_quest
+from save_library import SaveLibrary
 from ui_style import BRASS, FOREST_DARK, GOLD, MUTED
 
 
@@ -33,6 +34,11 @@ class QuestPlaytestSession:
             self.game._display_owner = parent
             self._layout()
             prepare_quest(self.game, entry.id)
+            checkpoint = parent.save_store.path
+            if checkpoint is not None:
+                checkpoint = checkpoint.parent/'playtests'/entry.id/'checkpoint.json'
+            self.game.saves.library = SaveLibrary(checkpoint)
+            self.game.saves.begin()
             self.game.music.set_paused(not parent._music_focused)
             ready = True
         finally:
@@ -145,7 +151,7 @@ class QuestPlaytestSession:
         painter.button(self.restart_rect, 'Restart (F10)')
         painter.button(self.back_rect, 'Quests (F9)')
         width = self.restart_rect.left-20
-        for index, text in enumerate((f'PLAYTEST - {self.entry.id} - not saved', self.entry.name)):
+        for index, text in enumerate((f'PLAYTEST - {self.entry.id} - separate saves', self.entry.name)):
             lines = painter.wrap(text, width, role='small', bold=index == 0)
             line = lines[0] if lines else ''
             painter.text(line, (8, 5+index*painter.font('small').get_linesize()),

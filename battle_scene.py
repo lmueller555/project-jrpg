@@ -643,6 +643,7 @@ class BattleScene:
         if model.phase in RESULTS:
             if model.phase == 'victory':return ''
             if model.phase == 'defeat':
+                if not getattr(self.game,'_is_gallery_preview',False):return 'Continue to Game Over.'
                 if self._cave_field is not None:return 'Return to the cave.'
                 return ('Return to the safe approach.' if self.battlefield == 'millrace'
                         else 'Return to Eldenmere.')

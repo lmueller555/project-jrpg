@@ -22,10 +22,10 @@ are the entrance apron, High Overlook, Quiet Shelf, Echo Chamber, the two
 guardian chambers and their final approaches; earlier branch stretches retain
 their outer or deep random pools. Leaving
 protection ensures at least four tile lengths remain. Ordinary victory and
-fleeing roll a fresh distance. Ordinary defeat uses the
-optional-battle withdrawal policy, returns the entry resources without a reward
-and also rolls a fresh distance. The introductory Aqua lesson is the exception:
-its exact pending bat-pair ticket remains after defeat or withdrawal until
+fleeing roll a fresh distance. Party defeat opens Game Over without changing
+saved resources or the encounter countdown. Loading restores the chosen snapshot.
+The introductory Aqua lesson has special withdrawal behavior:
+its exact pending bat-pair ticket remains after withdrawal until
 victory, with a deferred retry that allows travel and preparation.
 
 The counter saves its remaining distance, rolled threshold, compact random
@@ -90,6 +90,10 @@ with a mean and mode of 26 tiles.
 
 Pending encounters from earlier saves retain their already-selected levels;
 new encounters use the revised pools after settlement.
+
+Party defeat uses [Game Over and save loading](SAVE_SYSTEM.md), preserving
+manual slots and autosave history. Victory and successful escape request a
+recovery autosave after their transactions settle.
 
 ## Entry, combat and return
 

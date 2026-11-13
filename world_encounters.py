@@ -35,6 +35,7 @@ class CombatEncounters:
         self.radius = self.definition['interaction_radius']
         self.scene = None
         self.receipt_id = None
+        self._defeat_elapsed = 0.
         self.cooldown = 0.0
         self.world_seconds = 0.0
         self._settled = False
@@ -101,6 +102,7 @@ class CombatEncounters:
         return bool(self.transition is not None and self.transition.active)
 
     def _begin_battle_music(self):
+        self._defeat_elapsed = 0.
         music = getattr(self.game, 'music', None)
         if music is not None:music.begin_battle()
 
@@ -568,8 +570,13 @@ class CombatEncounters:
             if not self.transition.active:self.transition = None
             return
         self.scene.update(seconds)
+        if (self.model.phase == 'defeat' and not getattr(self.game,'_is_gallery_preview',False)):
+            if not self.scene.paused and self.scene.focused:self._defeat_elapsed += seconds
+            if self._defeat_elapsed >= 1.5:
+                self.game.show_game_over()
+                return
         if self.model.ended:self._end_battle_music()
-        if not self._checkpoint_spellblade_discovery():return
+        if self.model.phase != 'defeat' and not self._checkpoint_spellblade_discovery():return
         if self.model.phase == 'victory':
             self._begin_victory()
             return
@@ -631,7 +638,7 @@ class CombatEncounters:
             return True
         self.scene.handle_event(event)
         if self.model.ended:self._end_battle_music()
-        if not self._checkpoint_spellblade_discovery():return True
+        if self.model.phase != 'defeat' and not self._checkpoint_spellblade_discovery():return True
         if self.model.phase == 'victory':
             self._begin_victory()
             return True
@@ -942,6 +949,7 @@ class CombatEncounters:
         if kind == 'cave':self._cave_ticket = None
         if kind in ('cave_boss', 'elemental_boss'):self._boss_ticket = None
         if kind == 'mill':game.mill_quest.battle_returned('victory', recovered=record['incapacitated'])
+        if hasattr(game,'saves'):game.saves.request_battle(record['receipt'])
         return True
 
     def restore_pending(self, record):
@@ -1048,10 +1056,14 @@ class CombatEncounters:
             self.game.inventory.restore(before)
             self._restore_rig(rig_before)
             return False
+        if hasattr(self.game,'saves'):self.game.saves.request_battle(self.receipt_id+':fled:'+uuid4().hex)
         return True
 
     def _settle_outcome(self):
         if not self.active or not self.scene.model.ended or self._settled:return False
+        if self.model.phase == 'defeat' and not getattr(self.game,'_is_gallery_preview',False):
+            self.game.show_game_over()
+            return True
         if self.model.phase == 'victory':
             if self._pending is None:self._begin_victory()
             return False
