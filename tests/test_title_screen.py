@@ -122,6 +122,7 @@ class TitleTests(unittest.TestCase):
         for key in (pygame.K_RETURN,pygame.K_KP_ENTER):
             for selected in range(len(self.game.title.options)):
                 with self.subTest(key=key,selected=selected):
+                    self.game.save_menu.close()
                     self.game.on_gallery=False
                     self.game.on_quest_playtest=False
                     self.game.title.selected=selected

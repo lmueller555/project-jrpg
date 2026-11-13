@@ -25,6 +25,8 @@ from title_screen import TitleScreen
 from quests import QuestLog, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
 from quest_ui import QuestUI
 from save_game import SaveStore
+from game_saves import GameSaves
+from save_menu import SaveMenu
 from opening import OpeningSequence
 from opening_cinematic import OpeningCinematic
 from regent_arrival import RegentArrival
@@ -559,8 +561,26 @@ class Game:
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_embedded else save_path)
+        self.game_over=False
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
+        self.saves=GameSaves(self,self.save_store.path)
+        self.save_menu=SaveMenu(self)
+        if not self._is_embedded:
+            legacy=self.saved_journey
+            if not self.saves.library.migrate_legacy(legacy):
+                self.save_error=self.saves.library.error or 'The existing save could not be imported.'
+            if legacy is not None and 'save_context' not in legacy:
+                self.saved_journey={**legacy,'save_context':self.saves.library.legacy_context(legacy)}
+            if self.saved_journey is None:
+                rows=sorted((row for row in self.saves.entries(all_campaigns=True) if row[1]),
+                            key=lambda row:row[1]['metadata']['saved_at'],reverse=True)
+                for row in rows:
+                    data=self._validate_journey(row[1]['payload'])
+                    if data is not None:
+                        self.saved_journey=data
+                        self.save_error=None
+                        break
         self._saved_progress=self._progress_signature()
         self._save_retry_seconds=0.0
         self.opening_fade=0.0
@@ -715,6 +735,15 @@ class Game:
         if data is None:
             self.save_error=self.save_store.error
             return None
+        return self._validate_journey(data)
+
+    def _validate_journey(self,data):
+        try:return self._validate_journey_unchecked(data)
+        except (TypeError,ValueError,OSError,KeyError,OverflowError,AttributeError):
+            self.save_error='The saved journey could not be read.'
+            return None
+
+    def _validate_journey_unchecked(self,data):
         try:
             data=migrate_legacy_cave(migrate_retired_progression(data))
             data=migrate_mira_rig(migrate_chasm_checkpoint(data))
@@ -726,7 +755,8 @@ class Game:
                     all(type(n) in (int,float) and abs(n)<1e7 and math.isfinite(n) for n in value))
         scene_ids={self.town.data['id'],WORLD_ID,*CAVE_SCENE_FILES,*self.town.data.get('interior_scenes',{}),*self.town.data.get('exterior_scenes',{})}
         player=data.get('player')
-        valid=(type(data.get('version')) is int and data['version']==1 and
+        valid=(('save_context' not in data or GameSaves.valid_context(data['save_context'])) and
+               type(data.get('version')) is int and data['version']==1 and
                isinstance(player,dict) and isinstance(player.get('scene'),str) and
                player['scene'] in scene_ids and point(player.get('position')) and
                OverworldTravel.valid_journey(data) and
@@ -853,7 +883,16 @@ class Game:
             self.music.play('opening_leitmotif',fade_ms=0)
             return True
         data=self.saved_journey if continue_saved else None
+        self.game_over=False
+        self.save_menu.close()
         if continue_saved and data is None:return False
+        if (data is None and self.save_store.enabled and self.saved_journey is not None
+                and 'save_context' in self.saved_journey
+                and not self.saves.library.archive_checkpoint(self.saved_journey)):
+            self.save_error=self.saves.library.error or 'The previous journey could not be preserved.'
+            self.on_title=True
+            self.title.fade=0.
+            return False
         # Existing battle receipts must restore against their original stat
         # before-state. Guest-profile migration waits until that battle ends.
         self._lucan_guest_defer_profile=bool(data and (data.get('post_battle')
@@ -1026,6 +1065,7 @@ class Game:
                 self.on_title=True
                 return False
         self._lucan_guest_defer_profile=False
+        self.saves.begin(data)
         self.save_progress()
         self.regent_arrival.maybe_start()
         if self.party.pending_selection is not None:self._resume_party_selection()
@@ -1034,7 +1074,21 @@ class Game:
     def save_progress(self):
         """Checkpoint on story changes, conversations, door transfers and quit."""
         if (self._is_gallery_preview or self.on_title or self.opening_cinematic.active
+                or self.game_over or (self.combat.model is not None and self.combat.model.phase=='defeat')
                 or not self.save_store.enabled):return False
+        data=self.journey_snapshot()
+        if self.save_store.enabled and not self.save_store.write(data):
+            self.save_error=self.save_store.error
+            self._save_retry_seconds=10.0
+            return False
+        self.saved_journey=data
+        self.save_error=None
+        self._save_retry_seconds=0.0
+        self._saved_progress=self._progress_signature()
+        return True
+
+    def journey_snapshot(self):
+        """Capture a complete resumable state without publishing a save."""
         self._sync_inventory()
         self._sync_story_party()
         saved_position=self.player.position
@@ -1069,15 +1123,41 @@ class Game:
               'exterior_position':list(self.exterior_position)}
         data['overworld']=self.overworld_travel.to_dict()
         if post_battle is not None:data['post_battle']=post_battle
-        if not self.save_store.write(data):
-            self.save_error=self.save_store.error
-            self._save_retry_seconds=10.0
-            return False
-        self.saved_journey=data
-        self.save_error=None
-        self._save_retry_seconds=0.0
-        self._saved_progress=self._progress_signature()
-        return True
+        data['save_context']=self.saves.context()
+        return data
+
+    def show_game_over(self):
+        """Defeat never commits resources or replaces any recovery save."""
+        self.game_over=True
+        self.combat.reset()
+        self.saves.pending_scene=None
+        self.saves.pending_battles.clear()
+        self.opening_audio.reset()
+        self.regional_audio.reset()
+        self.elemental_bosses.stop_audio()
+        self.player.moving=self.player.running=False
+        self._mouse_held=False
+        self.save_menu.open('game_over')
+
+    def return_to_title(self):
+        self.save_menu.close()
+        if self._is_quest_playtest:
+            self._playtest_request='quests'
+            return
+        self.game_over=False
+        self.combat.reset()
+        self.social.cancel()
+        self.pause.close()
+        self.opening_cinematic.reset()
+        self.regent_arrival.reset()
+        self.mill_gift.reset()
+        self.sanctuary_arrival.reset()
+        self.on_title=True
+        self.title.fade=0.
+        self.title.selected=0
+        self.saved_journey=self._read_saved_journey()
+        self.music.set_ducked(False)
+        self.music.play('title',fade_ms=250)
 
     def _sync_story_party(self):
         """Reconcile authored recruitment without granting future companions."""
@@ -1363,6 +1443,10 @@ class Game:
                 self._ensure_ui_surface()
                 continue
             if resumed:continue
+            if self.save_menu.is_open:
+                self.save_menu.handle_event(event)
+                resumed=not self.save_menu.is_open
+                continue
             if self.on_quest_playtest:
                 if not self.quest_playtest_menu.handle_event(event):return False
                 resumed=not self.on_quest_playtest or self.quest_playtest_session is not None
@@ -1563,11 +1647,16 @@ class Game:
             self.music.update(seconds)
             self.gallery.update(seconds)
             return
+        if self.save_menu.is_open or self.game_over:
+            self.music.set_paused(not self._music_focused)
+            self.music.update(seconds)
+            return
         self.regional_audio.update(seconds)
         try:
             self._update_world(seconds,direction,running)
         finally:
             self.regional_audio.update(0)
+            self.saves.update(seconds)
 
     def _sync_world_music(self, *, restoring=False):
         """Cave exploration supersedes the MQ03 travel score, never combat."""
@@ -1971,6 +2060,9 @@ class Game:
         if self.on_gallery:
             self.gallery.draw()
             return
+        if self.save_menu.is_open:
+            self.save_menu.draw()
+            return
         if self.on_title:
             self.title.draw()
             return
@@ -2041,6 +2133,13 @@ class Game:
             for index,line in enumerate(lines):
                 painter.text(line,(22,y+7+index*painter.font('small').get_linesize()),
                              role='small',color=ERROR)
+        if self.saves.notice_seconds and not self.save_error and not self.social.active:
+            painter=self.ui.painter(self.ui_surface)
+            lines=painter.wrap(self.saves.notice,420,role='small')
+            height=len(lines)*painter.font('small').get_linesize()+12
+            painter.panel((18,VIEW_SIZE[1]-height-8,444,height))
+            for index,line in enumerate(lines):
+                painter.text(line,(25,VIEW_SIZE[1]-height-3+index*painter.font('small').get_linesize()),role='small',color=GOLD)
         if self.opening_fade and not self.audio.reduced_motion:
             self.ui.painter(self.ui_surface).veil(round(255*self.opening_fade/.5))
         self.pause.draw(self.ui_surface)

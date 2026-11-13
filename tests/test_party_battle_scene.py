@@ -250,12 +250,12 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.assertEqual((tusker.get_size(), anchor), ((96, 72), (48, 62)))
         self.assertEqual(set(sprites.actors), {'caelan', 'bat', 'mira', 'ridgeback_tusker'})
 
-    def test_defeat_names_the_actual_safe_return_location(self):
+    def test_defeat_leads_to_game_over_in_every_battlefield(self):
         self.model.phase = 'defeat'
-        self.assertEqual(self.scene._detail_text(), 'Return to the safe approach.')
+        self.assertEqual(self.scene._detail_text(), 'Continue to Game Over.')
         bat = BattleScene(self.game, BattleModel(self.game.attributes), sprites=self.sprites)
         bat.model.phase = 'defeat'
-        self.assertEqual(bat._detail_text(), 'Return to Eldenmere.')
+        self.assertEqual(bat._detail_text(), 'Continue to Game Over.')
 
 
 if __name__ == '__main__':unittest.main()

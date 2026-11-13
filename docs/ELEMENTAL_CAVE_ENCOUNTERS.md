@@ -157,10 +157,10 @@ records which was obtained first. One pending ticket fixes the enemy, level,
 receipt, battlefield, safe return position, party entry resources and combat
 seed before loading. Receipts are `boss:embravyr` and `boss:nivareth`.
 
-Continue from an unfinished encounter restarts that exact entry. A defeat
-restores captured entry HP/MP, grants nothing and offers **Retry / Leave**.
-Retry retains the ticket and seed; Leave returns to that chamber's reachable
-approach. Flee is permitted, retains resources actually spent and returns to
+Continue from an unfinished encounter restarts that exact entry. Party defeat
+opens [Game Over](SAVE_SYSTEM.md) with manual-save and autosave loading; it
+neither heals the party nor overwrites recovery files. Flee is permitted,
+retains resources actually spent and returns to
 the chamber approach without a reward. Both guardians remain available until
 victory, and their state is separate from the random encounter countdown and
 Vespermaw's owner.

@@ -495,31 +495,26 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         self.assertEqual(tuple(self.game.player.position), tuple(definition('nivareth')['retreat']))
         self.assertIsNotNone(self.game._read_saved_journey(), self.game.save_error)
 
-    def test_defeat_retry_retains_entry_ticket_and_retreat_grants_nothing(self):
+    def test_defeat_opens_game_over_and_manual_load_restores_prebattle_journey(self):
         self.game.attributes.set_current(hp=71, mp=3)
         self.game.party.characters['mira'].set_current(hp=95, mp=4)
+        self.position('nivareth')
+        self.assertTrue(self.game.saves.manual(1))
         before, story = self.durable(), self.story()
         ticket = self.start('nivareth');self.enter_battle()
+        saved = self.path.read_bytes()
         for member in self.game.combat.model.party:member.hp = member.mp = 0
         self.game.combat.model._result('defeat');self.game.combat.scene.dismissed = True
         self.assertTrue(self.game.combat._settle())
-        self.assertEqual(self.resources(), ticket['party_resources'])
-        self.choose('retry')
-        resumed = self.enter_battle()
-        self.assertEqual(self.game.elemental_bosses.pending, ticket)
-        self.assertEqual(resumed.player.hp, 71)
-        for member in resumed.party:member.hp = 0
-        resumed._result('defeat');self.game.combat.scene.dismissed = True
-        self.assertTrue(self.game.combat._settle())
-        self.choose('leave')
+        self.assertTrue(self.game.game_over)
         self.assertFalse(self.game.combat.active)
-        self.assertIsNone(self.game.elemental_bosses.pending)
+        self.assertEqual(self.path.read_bytes(), saved)
         self.assertEqual(self.resources(), ticket['party_resources'])
-        self.assertEqual(self.game.inventory.to_dict(), before['inventory'])
-        self.assertEqual(self.game.character_progression.to_dict(), before['levels'])
-        self.assertEqual(self.game.battle_rewards.to_dict(), before['rewards'])
+        self.assertTrue(self.game.saves.load(self.game.saves.latest('manual')))
+        self.assertFalse(self.game.game_over)
+        self.assertIsNone(self.game.elemental_bosses.pending)
+        self.assertEqual(self.durable(), before)
         self.assertEqual(self.story(), story)
-        self.assertEqual(tuple(self.game.player.position), tuple(definition('nivareth')['retreat']))
 
     def test_material_items_do_not_install_focus_and_normal_encounter_edge_costs_stay_four(self):
         self.assertTrue(self.game.inventory.add_many({'aether_ruby': 1, 'aether_opal': 1}))

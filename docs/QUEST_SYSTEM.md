@@ -68,18 +68,21 @@ recruitment or EXP from these checkpoints. Restart builds a fresh checkpoint,
 so the Boar reward and cave allowance never stack across restarts.
 
 Runs use the normal gameplay controllers and input, not Gallery's restricted
-scene playback. The toolbar identifies **PLAYTEST** and **not saved**:
+scene playback. The toolbar identifies **PLAYTEST** and **separate saves**:
 
-- **F10 / Restart:** discard the entire run and rebuild its original quest start.
-- **F9 / Quests:** discard the run and return to the same catalogue selection.
+- **F10 / Restart:** rebuild the original quest start, keeping its separate save library.
+- **F9 / Quests:** leave the run and return to the same catalogue selection.
+- **Save Game / Load Game:** use the playtest's own slots and autosaves. See
+  [save slots, autosaves and Game Over](SAVE_SYSTEM.md).
 - **Escape:** the ordinary pause menu; Restart Quest and Quest List are also
   present there. Toolbar controls remain usable during combat and cinematics.
 - Completing a quest does not close the run; normal progression can continue
   where implemented. This feature does not implement MQ03's missing ending.
 
 Each launch owns a fresh game, world, controllers, inventory and party. It copies
-current settings into a non-persistent settings owner. Both journey and settings
-stores have no disk path: the normal saved journey, Continue reference and
+current settings into a non-persistent settings owner. Its internal
+checkpoint/settings stores have no disk path; player saves use a separate
+per-quest library. The normal saved journey, Continue reference and
 settings bytes are neither loaded nor changed. Restart, returning to the list,
 and quitting release the private music and effects. Missing assets or an invalid
 starting state return to the selector with an error, never to a fallback New Game.
