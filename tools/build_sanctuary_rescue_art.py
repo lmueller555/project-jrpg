@@ -1,7 +1,8 @@
 """Register authored rescue bodies at fixed scale; reuse existing prop drawings.
 
-No body parts are repainted, stretched or interpolated. Retained atlases supply
+No body parts are stretched or interpolated. Retained atlases supply
 all joint changes. Source alpha is hardened before nearest-neighbour reduction.
+Caelan's row receives the shared native contour pass after registration.
 """
 from __future__ import annotations
 import argparse
@@ -16,6 +17,7 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 from tools.build_mira_combat import _main_component
+from tools.caelan_outline import apply_outline, STYLE
 SOURCE=ROOT/'assets/source/story/sanctuary_rescue'
 BASE='assets/story/sanctuary_rescue'
 DIRECTIONS=('front','back','left','right')
@@ -39,6 +41,7 @@ def products():
         x=20-round(body.width/2);y=39-body.height
         if x<0 or y<0 or x+body.width>40:raise ValueError(('Rescue art clipping',name,row,col,body.size))
         image=Image.new('RGBA',(40,40));image.alpha_composite(body,(x,y))
+        if name=='actions_authored.png' and row==5:image=apply_outline(image)
         registration.append(dict(file=path,source=name,source_rect=list(rect),source_bounds=list(bounds),scale=scale,destination=[x,y],canvas=[40,40],draw_anchor=ANCHOR))
         return export(path,image)
     action=[]
@@ -81,7 +84,7 @@ def products():
     tool_file=export(BASE+'/props/tool.png',pry)
     props={'rock':dict(file=rock_file,anchor=[18,20]),'tool':dict(file=tool_file,anchor=[3,3]),'dressing':dict(file=linen,anchor=[6,7])}
     sources={name:sha256((SOURCE/name).read_bytes()).hexdigest() for name in ('actions_authored.png','worker_supported_authored.png','lucan_supported_authored.png')}
-    manifest=dict(version=1,status='review',actors=actors,props=props,source_sha256=sources,
+    manifest=dict(version=1,status='review',caelan_outline=STYLE,actors=actors,props=props,source_sha256=sources,
         prop_sources={path:sha256((ROOT/path).read_bytes()).hexdigest() for path in (slab,tool,linen,arrival_path)},
         registration='assets/source/story/sanctuary_rescue/registration.json')
     result[BASE+'/art.json']=(json.dumps(manifest,indent=2)+'\n').encode()

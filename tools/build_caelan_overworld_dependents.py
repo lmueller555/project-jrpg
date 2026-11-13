@@ -20,6 +20,7 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 from tools.build_caelan_overworld import action_frame, registered
+from tools.caelan_outline import STYLE
 SOURCE=ROOT/'assets/source/characters/caelan/overworld_refresh'
 LEGACY=SOURCE/'legacy/dependents'
 DIRECTIONS=('front','back','left','right')
@@ -60,7 +61,8 @@ def products():
         data=deepcopy(data)
         data['appearance_source']=SOURCE_FILE
         data['appearance_source_sha256']=sha256((ROOT/SOURCE_FILE).read_bytes()).hexdigest()
-        data['appearance_registration']='Authored natural poses; existing canvas, ground anchor and event timing retained.'
+        data['appearance_registration']='Authored natural poses with native contour; existing canvas, ground anchor and event timing retained.'
+        data['outline']=STYLE
         return data
 
     # Breakfast: matched sitting, spoon and empty-hand cup poses. Existing cup
@@ -243,7 +245,7 @@ def products():
         export(f'{folder}/place_{phase}.png',lantern_canvas(body,origin),(0,),anchor=(20,54))
         export(f'{folder}/place_empty_{phase}.png',lantern_canvas(body),(0,),anchor=(20,54))
 
-    manifest=dict(version=1,status='review',source=SOURCE_FILE,
+    manifest=dict(version=1,status='review',outline=STYLE,source=SOURCE_FILE,
                   travel_source='assets/source/characters/caelan/overworld_refresh/travel_authored.png',
                   travel_source_sha256=sha256((SOURCE/'travel_authored.png').read_bytes()).hexdigest(),
                   covered_sleep_exception='The established closed-eye pillow-head key remains until a matching closed-eye source is authored.',

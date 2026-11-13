@@ -17,9 +17,17 @@ These source atlases preserve the character's costume and natural anatomy.
 fixed per-atlas scale, destination positions, anchors and hashes. The gutters
 were measured from the actual drawings rather than assuming mathematically
 uniform rows. Export selects connected hard alpha, reduces with nearest-neighbor
-sampling and places complete drawings. It does not repaint pixels, interpolate
-limbs, enlarge hands or warp anatomy. The shared alpha extraction helper is the
-same one used for Mira's authored art.
+sampling and places complete drawings. The native contour pass in
+`tools/caelan_outline.py` then inks the one-pixel cardinal silhouette boundary
+with warm near-black (18, 12, 14). Bright supported skin-edge highlights remain
+readable. Alpha, clear gaps, enclosed shading and registration stay unchanged;
+no limbs are interpolated, enlarged or warped. The shared alpha extraction
+helper is the same one used for Mira's authored art.
+
+The same contour policy reaches world-action derivatives through their body
+inputs and the four independently authored Caelan rescue-assistance frames.
+The retained closed-eye head and separate gearblade world drawings already
+have dark authored outlines. Combat and larger cinematic art are separate banks.
 
 `legacy/` retains the preceding Caelan runtime artwork and dependent-source
 inputs for provenance, before/after comparison, and unchanged prop/FX reuse.

@@ -24,6 +24,8 @@ hands. The common (20,34) draw anchor keeps the native body's ground baseline
 consistent with ordinary (12,30) anchors on 24×36 travel canvases. Body size is
 roughly 34 native pixels when standing; bent joints account for shorter poses.
 `registration.json` records all cells, source bounds, scales and destinations.
+Caelan's four assistance drawings also receive the shared native contour pass
+from `tools/caelan_outline.py`; other cast members retain their authored pixels.
 
 The Sanctuary caretaker retains the existing gray-haired arrival identity. Its
 `receive` pose reuses the existing leftward reach/recovery drawings from the

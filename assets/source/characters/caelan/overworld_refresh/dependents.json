@@ -1,6 +1,18 @@
 {
   "version": 1,
   "status": "review",
+  "outline": {
+    "version": 1,
+    "ink_rgba": [
+      18,
+      12,
+      14,
+      255
+    ],
+    "width_native_pixels": 1,
+    "placement": "inside existing cardinal silhouette",
+    "skin_highlights": "retain bright supported skin-edge pixels"
+  },
   "source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
   "travel_source": "assets/source/characters/caelan/overworld_refresh/travel_authored.png",
   "travel_source_sha256": "bbe99437fe56a14d9d25c8197dc42620f0f599346051cb39118b77ce9b8c8aa2",
@@ -21,7 +33,7 @@
         12,
         30
       ],
-      "output_sha256": "9ed13bc7687faba347b95bf59f968afa58345debc1e74150a9b6b75a6d6a86c3"
+      "output_sha256": "d7ce380617fac3457e7b93edb3f7070278166c4a854c1f319fc066aecd6520fa"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_seated_glance.png",
@@ -36,7 +48,7 @@
         12,
         30
       ],
-      "output_sha256": "e9c34c2331349a5a3ade1ae21f0f4b0b8d0cae604e71ab3e1b7a5e1bc2ad3510"
+      "output_sha256": "ab50ca63df86a6ad421a52e9661ebc7b44ef5792b98c22b916849b05f1700bb3"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_sleep_head.png",
@@ -66,7 +78,7 @@
         12,
         30
       ],
-      "output_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f"
+      "output_sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_04.png",
@@ -83,7 +95,7 @@
         12,
         30
       ],
-      "output_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f"
+      "output_sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_02.png",
@@ -100,7 +112,7 @@
         12,
         30
       ],
-      "output_sha256": "019b17f3f6f0c37813ed10046870423babc2e3dac008d27dcae179a7355156b6"
+      "output_sha256": "15d48c177424872f42559993ec3e4771ca2a09c3eebc1a14a01bfc6eaf0c567b"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_03.png",
@@ -117,7 +129,7 @@
         12,
         30
       ],
-      "output_sha256": "019b17f3f6f0c37813ed10046870423babc2e3dac008d27dcae179a7355156b6"
+      "output_sha256": "15d48c177424872f42559993ec3e4771ca2a09c3eebc1a14a01bfc6eaf0c567b"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_03.png",
@@ -134,7 +146,7 @@
         12,
         30
       ],
-      "output_sha256": "e9c34c2331349a5a3ade1ae21f0f4b0b8d0cae604e71ab3e1b7a5e1bc2ad3510"
+      "output_sha256": "ab50ca63df86a6ad421a52e9661ebc7b44ef5792b98c22b916849b05f1700bb3"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_02.png",
@@ -151,7 +163,7 @@
         12,
         30
       ],
-      "output_sha256": "e9c34c2331349a5a3ade1ae21f0f4b0b8d0cae604e71ab3e1b7a5e1bc2ad3510"
+      "output_sha256": "ab50ca63df86a6ad421a52e9661ebc7b44ef5792b98c22b916849b05f1700bb3"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_04.png",
@@ -168,7 +180,7 @@
         12,
         30
       ],
-      "output_sha256": "9ed13bc7687faba347b95bf59f968afa58345debc1e74150a9b6b75a6d6a86c3"
+      "output_sha256": "d7ce380617fac3457e7b93edb3f7070278166c4a854c1f319fc066aecd6520fa"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_01.png",
@@ -185,7 +197,7 @@
         12,
         30
       ],
-      "output_sha256": "9ed13bc7687faba347b95bf59f968afa58345debc1e74150a9b6b75a6d6a86c3"
+      "output_sha256": "d7ce380617fac3457e7b93edb3f7070278166c4a854c1f319fc066aecd6520fa"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_01.png",
@@ -200,7 +212,7 @@
         12,
         30
       ],
-      "output_sha256": "0c3055a8bcd3bff493fb2d680bd2edbffbbee9acd10041b988a2e42b32e1e9e5"
+      "output_sha256": "42be4f5afa745c82909c5404a5f7b05f931bf25fcc7ca838c5e3f707c17137e9"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_01.png",
@@ -215,7 +227,7 @@
         12,
         30
       ],
-      "output_sha256": "f497c8161ecd4b8e69fd404708a54ebed5646c2bfc23b95d8b304759d3ce459a"
+      "output_sha256": "407409631b2b26a5694c5f67e5f745155421086ec534c5f54e9287621f5da04f"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_02.png",
@@ -230,7 +242,7 @@
         12,
         30
       ],
-      "output_sha256": "119eb7fa3c782176f5ae91b2709fcf31b1e5f5688015e45907af6c4b7cad9d0c"
+      "output_sha256": "0c3123a4f912e1cc5554e40906e11d3dad94d1f34ae4bacbcbd6b6dd9ef1b11a"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_02.png",
@@ -245,7 +257,7 @@
         12,
         30
       ],
-      "output_sha256": "c7e799db379489d66946b2049c12b1e82bf9e88b43caee1f29e3655a58c91966"
+      "output_sha256": "d46d2fc65b82c959ca0e95f01b76dc08d0b1772e787a4961d253aa083c050d5a"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_03.png",
@@ -260,7 +272,7 @@
         12,
         30
       ],
-      "output_sha256": "9115604f52ed5aaad950646018c3d4ef3d6823fbb56a02ff75b54922400099a0"
+      "output_sha256": "ac73c5c5413b449940c8e3bf12fba402042c85fb3096ee41c9a32bacc00bf5e5"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_03.png",
@@ -275,7 +287,7 @@
         12,
         30
       ],
-      "output_sha256": "bc6079f109e9c58bc2b03e948125bf8d161e1c869d9b06e49a78ff2a6ac6053f"
+      "output_sha256": "3ab4d169489b2d1d724b4e86ffb63c075f3bd4f50acbd6d4a9d75bf201082845"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_04.png",
@@ -290,7 +302,7 @@
         12,
         30
       ],
-      "output_sha256": "958046fe4b790738db4b8e3d18ecb89fbe4e3410ed1269aa738d53f0c67100f5"
+      "output_sha256": "f2195e9499ac954ee3e1374c3457e350c88ec89c814d93e1e7c275e2c26a7c62"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_04.png",
@@ -305,7 +317,7 @@
         12,
         30
       ],
-      "output_sha256": "36c4babfc5ccb6e17e7b323879cee7e56cb8097f78d36ef9dbe8bc4d0f98425c"
+      "output_sha256": "eb4f384124f2970b7c78f11a7d04fe18a458656aac9033457827de1f7c488cfd"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/wake_up/frame_01.png",
@@ -335,7 +347,7 @@
         12,
         30
       ],
-      "output_sha256": "bd05f10ba11f5fafce37d2000b8d0c93eec33b38f0fa008e90531feeb3a78d00"
+      "output_sha256": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/wake_up/frame_03.png",
@@ -350,7 +362,7 @@
         12,
         30
       ],
-      "output_sha256": "019b17f3f6f0c37813ed10046870423babc2e3dac008d27dcae179a7355156b6"
+      "output_sha256": "15d48c177424872f42559993ec3e4771ca2a09c3eebc1a14a01bfc6eaf0c567b"
     },
     {
       "file": "assets/story/sanctuary_opening/poses/wake_up/frame_04.png",
@@ -365,7 +377,7 @@
         12,
         30
       ],
-      "output_sha256": "bd05f10ba11f5fafce37d2000b8d0c93eec33b38f0fa008e90531feeb3a78d00"
+      "output_sha256": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e"
     },
     {
       "file": "assets/characters/caelan/participation_sit_front.png",
@@ -380,7 +392,7 @@
         12,
         34
       ],
-      "output_sha256": "350adf3f745f1700a1079c9c77259825951f69c9e2bd52ae4d5730143d4f0c80"
+      "output_sha256": "14f452752336b7b31b5295cc7ba7f9975421b5860128460252d8fe2501dffa84"
     },
     {
       "file": "assets/story/halden/caelan/hold_front.png",
@@ -395,7 +407,7 @@
         16,
         34
       ],
-      "output_sha256": "51f3c8a60f15ad0dc7a8a16d3fd13e3c544970c551ae4abf14011ee88d9cc121"
+      "output_sha256": "863357eff4293727bc59b9e1eac330cd13c70b8c8e9edef1403fc782862db264"
     },
     {
       "file": "assets/story/halden/caelan/carry_front_0.png",
@@ -410,7 +422,7 @@
         16,
         34
       ],
-      "output_sha256": "1e169a47ea948d2b3091dd68a3c7e22c5343af91fab22c9f7140966fb1ff34f0"
+      "output_sha256": "918a1f55d30dc66ec569227f27aa6291d98452bd684362fc5f1e56d259743d40"
     },
     {
       "file": "assets/story/halden/caelan/carry_front_1.png",
@@ -425,7 +437,7 @@
         16,
         34
       ],
-      "output_sha256": "08359f3c45fdd6a61fffda4167fb1ee5c9e28ff5651ae425b7c898e86bf5d282"
+      "output_sha256": "e997e6e9800b0a7af90a1100090fb45a2c844aa6cc3b19444d04f362e7872a59"
     },
     {
       "file": "assets/story/halden/caelan/carry_front_2.png",
@@ -440,7 +452,7 @@
         16,
         34
       ],
-      "output_sha256": "74d1654fe2b62d6404f62d2afd821e4db70befb2f3d4b5416c90cbb8fdb4560b"
+      "output_sha256": "e85a5eb2dce99b90ece8c75b1e3f8b70d4711bb671402999c0641cf15f42f3f2"
     },
     {
       "file": "assets/story/halden/caelan/carry_front_3.png",
@@ -455,7 +467,7 @@
         16,
         34
       ],
-      "output_sha256": "e31cc44e37b4fc6a65cbd1307533d5c687a510d73c779317133dc8a46b3c15d7"
+      "output_sha256": "9ccc3ddfd70ba565c1ddf8ab3b42f21721f269a059162a31257faa979bbfb41e"
     },
     {
       "file": "assets/story/halden/caelan/lift_front_0.png",
@@ -471,7 +483,7 @@
         16,
         34
       ],
-      "output_sha256": "4e7bad271d566b3bfca0b197c96295c00ec6938e9e8f45d57bdaea8954f640ac"
+      "output_sha256": "eb059d2c15a96799205a6fa2b5de849f2f317c82166d3e18431086057d17a2b0"
     },
     {
       "file": "assets/story/halden/caelan/lift_front_1.png",
@@ -487,7 +499,7 @@
         16,
         34
       ],
-      "output_sha256": "4e7bad271d566b3bfca0b197c96295c00ec6938e9e8f45d57bdaea8954f640ac"
+      "output_sha256": "eb059d2c15a96799205a6fa2b5de849f2f317c82166d3e18431086057d17a2b0"
     },
     {
       "file": "assets/story/halden/caelan/lift_front_2.png",
@@ -503,7 +515,7 @@
         16,
         34
       ],
-      "output_sha256": "34ba47db3071a4d2d9d6a8f1ae01d10b66c3168724a8dfe49bf1dadef6d5860c"
+      "output_sha256": "8cc134d7c3de0ae919c61a8e0b4b93aea1a2555531860e760921a747c230e0a7"
     },
     {
       "file": "assets/story/halden/caelan/lift_front_3.png",
@@ -519,7 +531,7 @@
         16,
         34
       ],
-      "output_sha256": "51f3c8a60f15ad0dc7a8a16d3fd13e3c544970c551ae4abf14011ee88d9cc121"
+      "output_sha256": "863357eff4293727bc59b9e1eac330cd13c70b8c8e9edef1403fc782862db264"
     },
     {
       "file": "assets/story/halden/caelan/hold_back.png",
@@ -534,7 +546,7 @@
         16,
         34
       ],
-      "output_sha256": "07003ca1e3acd535499ce85345c35e475f0f5f684caf69bb0545bfef69a92108"
+      "output_sha256": "d782e5a7a6bb2a30e7de10c56538a06b02faa6b72cbe54388d71d8c49ab9f53d"
     },
     {
       "file": "assets/story/halden/caelan/carry_back_0.png",
@@ -549,7 +561,7 @@
         16,
         34
       ],
-      "output_sha256": "27d263ed721aeb481d28896db67328fe46b7da5da489c404f72211ed30a33e02"
+      "output_sha256": "eb4c766063501ad4b56441a4fc409a81bb7954fec3a9e056f2b2c6ba9030bdba"
     },
     {
       "file": "assets/story/halden/caelan/carry_back_1.png",
@@ -564,7 +576,7 @@
         16,
         34
       ],
-      "output_sha256": "a072374406eca5d0497ed8ec265b316e231677aa6d26431790911319c29266f4"
+      "output_sha256": "793d7c016358d7d1b43d6797cbd33286cdc590157125f4a19102826a321a0323"
     },
     {
       "file": "assets/story/halden/caelan/carry_back_2.png",
@@ -579,7 +591,7 @@
         16,
         34
       ],
-      "output_sha256": "b0c18acf371abdcf12fd5702c603dcb5545b62fd9f8b71c69bdf1f39e7ed2b96"
+      "output_sha256": "c238c5bd83a4d3a6df28dab5f9677a021db43aa407d62660890006f2e29f40a7"
     },
     {
       "file": "assets/story/halden/caelan/carry_back_3.png",
@@ -594,7 +606,7 @@
         16,
         34
       ],
-      "output_sha256": "9897e69e2b5831e127b3ca51eff1d17bf13034fee167c2953f600b4c0b8dcfce"
+      "output_sha256": "fc7362c6d54769077cf70cf796a8e4b53da14dd95edc0af9722cb0f42620f670"
     },
     {
       "file": "assets/story/halden/caelan/lift_back_0.png",
@@ -610,7 +622,7 @@
         16,
         34
       ],
-      "output_sha256": "1f83688b49cdde8ffa3f689a8942b0ec280430340f0ea2503b1b9618c13a47d6"
+      "output_sha256": "9e352a172587db63a5df7bb3309f6ad0b2847715deb53b154dba64b03f4e8ab6"
     },
     {
       "file": "assets/story/halden/caelan/lift_back_1.png",
@@ -626,7 +638,7 @@
         16,
         34
       ],
-      "output_sha256": "1f83688b49cdde8ffa3f689a8942b0ec280430340f0ea2503b1b9618c13a47d6"
+      "output_sha256": "9e352a172587db63a5df7bb3309f6ad0b2847715deb53b154dba64b03f4e8ab6"
     },
     {
       "file": "assets/story/halden/caelan/lift_back_2.png",
@@ -642,7 +654,7 @@
         16,
         34
       ],
-      "output_sha256": "635d7a013a1052db5188e9a4659d5419446b763269245a08cb0d3bfb9764529c"
+      "output_sha256": "ee6e18b777942886ca5cdea6c966c35355a273e43196344a35e7c32d03131034"
     },
     {
       "file": "assets/story/halden/caelan/lift_back_3.png",
@@ -658,7 +670,7 @@
         16,
         34
       ],
-      "output_sha256": "07003ca1e3acd535499ce85345c35e475f0f5f684caf69bb0545bfef69a92108"
+      "output_sha256": "d782e5a7a6bb2a30e7de10c56538a06b02faa6b72cbe54388d71d8c49ab9f53d"
     },
     {
       "file": "assets/story/halden/caelan/hold_left.png",
@@ -673,7 +685,7 @@
         16,
         34
       ],
-      "output_sha256": "624596b6ef6a3914a103002d3503487dd2a120c5b41cdf875a8696396f716fce"
+      "output_sha256": "eeb5cdfd44dcfd3280069fd7629cdc3b1a5217a2bc6be2d0822d531b4ac20ebd"
     },
     {
       "file": "assets/story/halden/caelan/carry_left_0.png",
@@ -688,7 +700,7 @@
         16,
         34
       ],
-      "output_sha256": "edf7eb4b057606a1782ec651ecf70b44ea784a424a1525d6da88ec390ca12a40"
+      "output_sha256": "3db83c20ff561e61dc61109e3b3e3a479c0bf539d95c98efa0c25781d3b584aa"
     },
     {
       "file": "assets/story/halden/caelan/carry_left_1.png",
@@ -703,7 +715,7 @@
         16,
         34
       ],
-      "output_sha256": "2c163974e7ebc1b0cf037fdd3e37800d15001ee16d473e43e4e1f502df6071bb"
+      "output_sha256": "da537ab7ff775ae87223a51f3b9d54737b41f2635c02e2b689d5f3a60937da1d"
     },
     {
       "file": "assets/story/halden/caelan/carry_left_2.png",
@@ -718,7 +730,7 @@
         16,
         34
       ],
-      "output_sha256": "ef8581c19e8f64e14f30b7c4ba1c9c0aa931479c6af4b22076a31ee8c84abbd5"
+      "output_sha256": "92f1f206843eef38ccb4ec099cf18410e791dc6b08cbbf33bdd09c5c0d81d2d3"
     },
     {
       "file": "assets/story/halden/caelan/carry_left_3.png",
@@ -733,7 +745,7 @@
         16,
         34
       ],
-      "output_sha256": "3bf4843c5ad674cfe401ab43941c6d879e84a446fd10c559d4156a8e7f901ddc"
+      "output_sha256": "cb57c9f7875d1f30da52d0682613d7a2cfabb498439621f4838f0d24824a49ed"
     },
     {
       "file": "assets/story/halden/caelan/lift_left_0.png",
@@ -749,7 +761,7 @@
         16,
         34
       ],
-      "output_sha256": "6badefffb33b9c8732e57dc7ae37c95057ba04e7f6ea796e95b452b947d7ffca"
+      "output_sha256": "e38ad9973d6d8552f770767d0aede3a2a8fc0f8f0182def6602b2cbb52d1991f"
     },
     {
       "file": "assets/story/halden/caelan/lift_left_1.png",
@@ -765,7 +777,7 @@
         16,
         34
       ],
-      "output_sha256": "6badefffb33b9c8732e57dc7ae37c95057ba04e7f6ea796e95b452b947d7ffca"
+      "output_sha256": "e38ad9973d6d8552f770767d0aede3a2a8fc0f8f0182def6602b2cbb52d1991f"
     },
     {
       "file": "assets/story/halden/caelan/lift_left_2.png",
@@ -781,7 +793,7 @@
         16,
         34
       ],
-      "output_sha256": "ee77a5871cf945759908301b9b85dd758d166c9d5669bbbfd069feea4a1bb3f4"
+      "output_sha256": "31043fce2f3488f8ec451908dfdbec1f8f83d720210c0761ff4ddca73dd5fc9d"
     },
     {
       "file": "assets/story/halden/caelan/lift_left_3.png",
@@ -797,7 +809,7 @@
         16,
         34
       ],
-      "output_sha256": "624596b6ef6a3914a103002d3503487dd2a120c5b41cdf875a8696396f716fce"
+      "output_sha256": "eeb5cdfd44dcfd3280069fd7629cdc3b1a5217a2bc6be2d0822d531b4ac20ebd"
     },
     {
       "file": "assets/story/halden/caelan/hold_right.png",
@@ -812,7 +824,7 @@
         16,
         34
       ],
-      "output_sha256": "f7c635003f702c843342154dc3354b90b89902f1bce7c9cfbd25b79e32ce78bc"
+      "output_sha256": "37a6e02877f7b7019c0f1adef74b94aa997a281f7671af41c1c8433976f6027b"
     },
     {
       "file": "assets/story/halden/caelan/carry_right_0.png",
@@ -827,7 +839,7 @@
         16,
         34
       ],
-      "output_sha256": "b7eb888ec7b84e8a0ec8b29dc22da13bf27ed672efe99832c0a6b6b92bda3f80"
+      "output_sha256": "aeef95850c3089b5fc194c7bde0b321bcf21914d755e7289e157af676a2bc203"
     },
     {
       "file": "assets/story/halden/caelan/carry_right_1.png",
@@ -842,7 +854,7 @@
         16,
         34
       ],
-      "output_sha256": "97e6f2ab069b4a0f757166d2a654738a7a3c494cedfcd435b70d74bcd8878d5d"
+      "output_sha256": "de5c8aa13309f4c8df2d96efdce669db07daed1bfd78dddef8543c6586629a33"
     },
     {
       "file": "assets/story/halden/caelan/carry_right_2.png",
@@ -857,7 +869,7 @@
         16,
         34
       ],
-      "output_sha256": "58ba22a60c7a06c30aa95769c24ab830cc18825a62400ad91a8c52af2dc40ba6"
+      "output_sha256": "98d4999da1c99df7bc9700caeaa5d9f2faba22224074f5e5ce076f424c72ce71"
     },
     {
       "file": "assets/story/halden/caelan/carry_right_3.png",
@@ -872,7 +884,7 @@
         16,
         34
       ],
-      "output_sha256": "c0c185fd4778e37db98b2b5513074a62662cf658f3e90771324e263ff8685b2c"
+      "output_sha256": "9fe4b3f856e4636db9ce446c9ad86e348470363151dbbb25eb24115846c485ab"
     },
     {
       "file": "assets/story/halden/caelan/lift_right_0.png",
@@ -888,7 +900,7 @@
         16,
         34
       ],
-      "output_sha256": "c1b1d23754fc3d1689e1cf7fcc7844221191e58db2e39a4cc4c8eb87a8976273"
+      "output_sha256": "4f8d8f9866d6723aeae45b16ac4bda3007ec36cd3ac7f69e2069591295caab39"
     },
     {
       "file": "assets/story/halden/caelan/lift_right_1.png",
@@ -904,7 +916,7 @@
         16,
         34
       ],
-      "output_sha256": "c1b1d23754fc3d1689e1cf7fcc7844221191e58db2e39a4cc4c8eb87a8976273"
+      "output_sha256": "4f8d8f9866d6723aeae45b16ac4bda3007ec36cd3ac7f69e2069591295caab39"
     },
     {
       "file": "assets/story/halden/caelan/lift_right_2.png",
@@ -920,7 +932,7 @@
         16,
         34
       ],
-      "output_sha256": "d0e4da94d278e6c671dede1fa4fe4731a87e0b1a5a2d3177cf3715771c3ce767"
+      "output_sha256": "7c0d5ea8eda9c034e0bec455e25af8f16b6882c3c0d36cde4068dfc407170e9d"
     },
     {
       "file": "assets/story/halden/caelan/lift_right_3.png",
@@ -936,7 +948,7 @@
         16,
         34
       ],
-      "output_sha256": "f7c635003f702c843342154dc3354b90b89902f1bce7c9cfbd25b79e32ce78bc"
+      "output_sha256": "37a6e02877f7b7019c0f1adef74b94aa997a281f7671af41c1c8433976f6027b"
     },
     {
       "file": "assets/story/venn/caelan/give_front.png",
@@ -951,7 +963,7 @@
         20,
         38
       ],
-      "output_sha256": "34901c31ee7cd680acfce01f4992f17a2ee27254a6e101f48b70b2b44387f8a7"
+      "output_sha256": "cf2d09b81dfd12a460ec7cbf20c74c037b5a54258cb38d3823cc5a973c61023d"
     },
     {
       "file": "assets/story/venn/caelan/give_back.png",
@@ -966,7 +978,7 @@
         20,
         38
       ],
-      "output_sha256": "20fdd11308dbcad5e5a0c8fc804218cd67595dd96b7284446419a56ac3143bf6"
+      "output_sha256": "8c3a140ae969d3a72bd9310895680382e9b64955d64830af71e6ebce9194a86e"
     },
     {
       "file": "assets/story/venn/caelan/give_left.png",
@@ -981,7 +993,7 @@
         20,
         38
       ],
-      "output_sha256": "a232463489cb5b6537a0f0c1dd1ac285a05d6c49305c6d55e3526009764b69b0"
+      "output_sha256": "9ae544ca999b1ab540351e4cfcc718ea82aa3639205fa40c7b14f2e25f4a24c8"
     },
     {
       "file": "assets/story/venn/caelan/give_right.png",
@@ -996,7 +1008,7 @@
         20,
         38
       ],
-      "output_sha256": "075f86e0bc2ee35fcbf2dbb5f8ed4e7e23b9260bb8dfacf7a58e50400a944d68"
+      "output_sha256": "10a1821006faa9b9eeb626ad07ab870106f1501a0521324d6134057e8c51afb2"
     },
     {
       "file": "assets/story/venn/caelan/hands_0.png",
@@ -1011,7 +1023,7 @@
         20,
         38
       ],
-      "output_sha256": "d6d066a1ff818c93d8d2e26a514d6a45fe38e7e4f609d3cf8d11aac3eb6802c2"
+      "output_sha256": "0193219e1dfe6799c82c5b6a176014a73f0d66a482a5d22ec62777bfa9e67685"
     },
     {
       "file": "assets/story/venn/caelan/hands_1.png",
@@ -1026,7 +1038,7 @@
         20,
         38
       ],
-      "output_sha256": "3fa3e386ab93c64b7aa108a6e76756df457743fe05b1d7e54228708e9040a70d"
+      "output_sha256": "fbb9785765c5c196d47e497704f33d1f7ce69d8da8abdeb53b8f6033dfcc47a1"
     },
     {
       "file": "assets/story/venn/caelan/hands_2.png",
@@ -1041,7 +1053,7 @@
         20,
         38
       ],
-      "output_sha256": "4d477d8fcca1477b4ddeae1205087024b4bdb94a5eaa10763c2b77e64bfadbd4"
+      "output_sha256": "76413d6063bc4caa10f6c7e96c6013dd36d27ff17c349826adf7e7f5b7879c21"
     },
     {
       "file": "assets/story/venn/caelan/hands_3.png",
@@ -1056,7 +1068,7 @@
         20,
         38
       ],
-      "output_sha256": "2b11a86c57016d5a9aeff4706a18150ffc16c65199596745f6a69cb1e39355f0"
+      "output_sha256": "7f8d734cb2f3829785d565bda7085097635669018b5226e76270ce490b58a0cd"
     },
     {
       "file": "assets/story/venn/caelan/tools_0.png",
@@ -1071,7 +1083,7 @@
         20,
         38
       ],
-      "output_sha256": "829824eb5c63a0e749dc86910e11002589468277dcc6f508ba127710220c4435"
+      "output_sha256": "d03f14f7ef91ea7eb040b87c880c8fb50ff79536cebaf8b1e68ab00556870dec"
     },
     {
       "file": "assets/story/venn/caelan/tools_1.png",
@@ -1086,7 +1098,7 @@
         20,
         38
       ],
-      "output_sha256": "d79c977c3afe2aa2cdc3dee4cfb06620ee33a08ea2b55191dd5206e4b10f8c8b"
+      "output_sha256": "0b11eee13834341cf9f2331a25ad7f21c931d4e3c467701d377992f1bcdb97af"
     },
     {
       "file": "assets/story/venn/caelan/tools_2.png",
@@ -1101,7 +1113,7 @@
         20,
         38
       ],
-      "output_sha256": "8fc4fb9fda1940b59c8bca9289a2a70da9da16ec7ccc21277ef8657f23c85ee4"
+      "output_sha256": "c0f0d41dd7c35b1987abb36a5e1efe39393a4f528e951eb74eed7cb9c3d48c7d"
     },
     {
       "file": "assets/story/venn/caelan/tools_3.png",
@@ -1116,7 +1128,7 @@
         20,
         38
       ],
-      "output_sha256": "70ee786d6e5a42eeaeed615dddf808f1e358889838e49be54c4cf976ee65bdcc"
+      "output_sha256": "6d18cae37d1fa82e87cbd5773646b9c7f14350150466b4d3e9e53f00e384e064"
     },
     {
       "file": "assets/story/venn/magicks/poses.png",
@@ -1133,7 +1145,7 @@
         20,
         38
       ],
-      "output_sha256": "f5648da6cf09ccd58337aec594b69cc1478b52a81dae2d31146bed5f01e27164"
+      "output_sha256": "bb5118a42367d78ef6b9960cbe10c97e9d3254ec1a8da7a09317e70fc3b532f6"
     },
     {
       "file": "assets/story/venn/magicks/body.png",
@@ -1150,7 +1162,7 @@
         20,
         38
       ],
-      "output_sha256": "d79606eac99b3f2d452c18d39e7ecddfd30b274762106d08cae6d71de46acf64"
+      "output_sha256": "2456f3b82fc968869870e755c43fd7da313222d65fc86ebf72912027e61ffb2c"
     },
     {
       "file": "assets/story/venn/magicks/casting_arm.png",
@@ -1189,7 +1201,7 @@
         12,
         30
       ],
-      "output_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f"
+      "output_sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207"
     },
     {
       "file": "assets/story/mill/poses/poses.png",
@@ -1206,7 +1218,7 @@
         20,
         38
       ],
-      "output_sha256": "0449e70e367efbc25e70891b91e25951c39306c0aa6a02a55d05bf128c34ff68"
+      "output_sha256": "456641c22828d0e98529833a4657c7de811780fd637f0ebc24e070873f940c6e"
     },
     {
       "file": "assets/story/mill/poses/body.png",
@@ -1223,7 +1235,7 @@
         20,
         38
       ],
-      "output_sha256": "32972654ed868d61a7953a963a41521d2f9a3abd0546361996e1176b69d30901"
+      "output_sha256": "bc415779edc046b20ccf803ba2be28491179cb24eb3492649a6ab226de789b5a"
     },
     {
       "file": "assets/story/mill/poses/casting_arm.png",
@@ -1262,7 +1274,7 @@
         12,
         30
       ],
-      "output_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f"
+      "output_sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207"
     },
     {
       "file": "assets/story/lantern/poses/caelan.png",
@@ -1280,7 +1292,7 @@
         20,
         38
       ],
-      "output_sha256": "821f588d42c8e92367b9748d2d1c4e513bf33bf9b6df8135fb37ef675452d37c"
+      "output_sha256": "d44b8c92f301e1af11f24fa0532c170e3de69e5c12a391bb4e1ce43799b46719"
     },
     {
       "file": "assets/story/lantern/poses/caelan_body.png",
@@ -1298,7 +1310,7 @@
         20,
         38
       ],
-      "output_sha256": "821f588d42c8e92367b9748d2d1c4e513bf33bf9b6df8135fb37ef675452d37c"
+      "output_sha256": "d44b8c92f301e1af11f24fa0532c170e3de69e5c12a391bb4e1ce43799b46719"
     },
     {
       "file": "assets/story/lantern/poses/caelan_working_arm.png",
@@ -1324,7 +1336,7 @@
         12,
         30
       ],
-      "output_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f"
+      "output_sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207"
     },
     {
       "file": "assets/story/elira/hold_front.png",
@@ -1339,7 +1351,7 @@
         20,
         54
       ],
-      "output_sha256": "73cdbb69f82678f73db083e220d8570231f92ff635681e4b542176a0cd139c66"
+      "output_sha256": "d945ae36f14ee1321864edacb5919b0fe3fe988140c992d5558eb640bc2493ca"
     },
     {
       "file": "assets/story/elira/give_front.png",
@@ -1354,7 +1366,7 @@
         20,
         54
       ],
-      "output_sha256": "4d3437eb6886fd6b955d16d486982444ad9a6a93cf55d8bfed392811d1fcd51c"
+      "output_sha256": "83f9d063967d858d95cbb42af40ba1e6a59f4ebe5834a5f7ade8c424e2ea7d17"
     },
     {
       "file": "assets/story/elira/carry_front_0.png",
@@ -1369,7 +1381,7 @@
         20,
         54
       ],
-      "output_sha256": "18e42042e1d7af0cf139fcb720bb9476d1dd20e3b7358c5e6447a8c622d538fa"
+      "output_sha256": "e40449a486909bf385ced08a30c3eb8c1d1ed54da79bec1b5c9225a75c492cbf"
     },
     {
       "file": "assets/story/elira/carry_front_1.png",
@@ -1384,7 +1396,7 @@
         20,
         54
       ],
-      "output_sha256": "14fdd850a70d58f447cc4d290954b710e4cdbee5730e8e62b32a7af02574fde1"
+      "output_sha256": "d47271736484bc0c9a258784695debf6725f07bd91c7a5d7cbd1e7b757ac454c"
     },
     {
       "file": "assets/story/elira/carry_front_2.png",
@@ -1399,7 +1411,7 @@
         20,
         54
       ],
-      "output_sha256": "eba4e05f41cd6628d72ec9ce6a195f6f602a31e5bc6f89ea92a713c080be3b9d"
+      "output_sha256": "0a1bb5f2e3fb3f49f297e75ca81fe74d4487a7ccf989a42e482e62fb681874a5"
     },
     {
       "file": "assets/story/elira/carry_front_3.png",
@@ -1414,7 +1426,7 @@
         20,
         54
       ],
-      "output_sha256": "d486ce4723d82240ed4d1258048589d8912b3f37269cac05ebb9962f5c8feb50"
+      "output_sha256": "d4b3273cf1360e42bd0e0bce51da9f493c0c69e436baa972b6ae6683404edd2c"
     },
     {
       "file": "assets/story/elira/hold_back.png",
@@ -1429,7 +1441,7 @@
         20,
         54
       ],
-      "output_sha256": "669092a3d3d06f1c69361d66aef85abe2320500e217423b1562c7a1cb2b404d1"
+      "output_sha256": "4aa2a5465d7dc39e7acf6ebc9c63449a78cbf884c0130238d5bef65332ef2f7a"
     },
     {
       "file": "assets/story/elira/give_back.png",
@@ -1444,7 +1456,7 @@
         20,
         54
       ],
-      "output_sha256": "9452c21493eaff6b4325df397252c4cf12787b52ef010dd069163c747a7c07b4"
+      "output_sha256": "fe95151fd44affea22ebb17b920e0e19805212d289089ddd0af0d8d6b2696dd4"
     },
     {
       "file": "assets/story/elira/carry_back_0.png",
@@ -1459,7 +1471,7 @@
         20,
         54
       ],
-      "output_sha256": "48a932debb7794506c3153f90eb51056be6e8f0e1931adafa99ed611519794da"
+      "output_sha256": "ed6dbb23499334207ce7806afac8556dac6c096b7f729eeedc33307ced34d46e"
     },
     {
       "file": "assets/story/elira/carry_back_1.png",
@@ -1474,7 +1486,7 @@
         20,
         54
       ],
-      "output_sha256": "d964d2be4d154765be47eadb4662310ea0c25ed4cb5baac15d90fae52ce38067"
+      "output_sha256": "e0fa72ebfaea91f289537bf26311ff2d8ec21e2c1321e414a1584bea07f9655d"
     },
     {
       "file": "assets/story/elira/carry_back_2.png",
@@ -1489,7 +1501,7 @@
         20,
         54
       ],
-      "output_sha256": "f6679bf34b18fd6194f511eed280024b68110230a4d8140cfa8dd108f22573fd"
+      "output_sha256": "88c708d2a2d7e28e6fa6a2f7776ca246222a98b38b0f61384537af84fe78a0a1"
     },
     {
       "file": "assets/story/elira/carry_back_3.png",
@@ -1504,7 +1516,7 @@
         20,
         54
       ],
-      "output_sha256": "48b0f7b35b2c8ecec44b338eb41b1a540b77c978b35e17a360215ace3e97234a"
+      "output_sha256": "a551310d77e91ef026b00c9a783b8ea3d1a285e56a8aceb8d76de0032c098ba9"
     },
     {
       "file": "assets/story/elira/hold_left.png",
@@ -1519,7 +1531,7 @@
         20,
         54
       ],
-      "output_sha256": "6132120ae711cdf3f228a44944101049b52cf0760049e2258348fbff1aeb3e9c"
+      "output_sha256": "453e51e76c1f2c0362011867c5a3a93d1472708b199f67637a29535c77c7f5be"
     },
     {
       "file": "assets/story/elira/give_left.png",
@@ -1534,7 +1546,7 @@
         20,
         54
       ],
-      "output_sha256": "5e3d189092ecb259ec5fb410e62100753d3b9b2bf409ee91917838b02a7ca8f9"
+      "output_sha256": "11a6ccd915c8eab69600cb4122e0a1d889bbfbe3b7eb29ae4549fe498c19d4a9"
     },
     {
       "file": "assets/story/elira/carry_left_0.png",
@@ -1549,7 +1561,7 @@
         20,
         54
       ],
-      "output_sha256": "da92be8f19ff169250fa4cecec500d66cc89e3079e9f1f7ed892cc2404a21f26"
+      "output_sha256": "8ec06b0d30aafd3f2f12fd60ca88759f258149bb6dccc355736d62cff284abb0"
     },
     {
       "file": "assets/story/elira/carry_left_1.png",
@@ -1564,7 +1576,7 @@
         20,
         54
       ],
-      "output_sha256": "d6e80cf414c6e4eb3ca61d5bfb34295bdfe3ffb332706648facb7be4671f5eab"
+      "output_sha256": "5daa5ad734c8407fd1a45d3c974dd064f9c406f15db371ffb981752ef90a73ca"
     },
     {
       "file": "assets/story/elira/carry_left_2.png",
@@ -1579,7 +1591,7 @@
         20,
         54
       ],
-      "output_sha256": "1f18db8b95ebe37ebae5acac3d84fba9d8ada64ea64512cc29067eaee26a5b98"
+      "output_sha256": "fd40c2134d5dd45028a51b06b8748cdaf98a4a4ddbd711345f924721fd271c5b"
     },
     {
       "file": "assets/story/elira/carry_left_3.png",
@@ -1594,7 +1606,7 @@
         20,
         54
       ],
-      "output_sha256": "7a63992354004c1427a966c0c4f41a953b37c94a7784cda9156d0f4c63022963"
+      "output_sha256": "2304b6d9ed1015fd156de1eb144de624565b1815016429681580fc3431839804"
     },
     {
       "file": "assets/story/elira/hold_right.png",
@@ -1609,7 +1621,7 @@
         20,
         54
       ],
-      "output_sha256": "366660a6f6ce1875e9b61930aff8ed462c0e775af6523fbf9f7f1a6fa67a4a8e"
+      "output_sha256": "e6d5b507335fb1de466fa17b854c088d3124f1244bdd0763712367e2172e4d93"
     },
     {
       "file": "assets/story/elira/give_right.png",
@@ -1624,7 +1636,7 @@
         20,
         54
       ],
-      "output_sha256": "979a29ea0dcbc97a50683f05076d5d608aa9129ac3cbaafe534fba18728e5bbe"
+      "output_sha256": "bd588c3a8eb552bbd6e02c2157e8dcd8d9dcd673df1aa0771688e361beb64ee8"
     },
     {
       "file": "assets/story/elira/carry_right_0.png",
@@ -1639,7 +1651,7 @@
         20,
         54
       ],
-      "output_sha256": "0fab03c766d220c3122a34babf002d2e6474cfef5d7619cc7a17e74ec1527b16"
+      "output_sha256": "44908ab72ba9f987011f62bbe100782a4f41666baef4f4dbbb91ac64a9bbdd02"
     },
     {
       "file": "assets/story/elira/carry_right_1.png",
@@ -1654,7 +1666,7 @@
         20,
         54
       ],
-      "output_sha256": "9a565662ae41e92df3cc73173f84e9fd34ac26820c2cb4dfd119a03fb27ac8ef"
+      "output_sha256": "29dc688a66ce66432b509cbed28aa15c292b291e2cd8aa006314512e1dab461e"
     },
     {
       "file": "assets/story/elira/carry_right_2.png",
@@ -1669,7 +1681,7 @@
         20,
         54
       ],
-      "output_sha256": "8dd7e759fb51756843f23ba52a24ca03dbeaae891752ca224d955f6f028f883a"
+      "output_sha256": "fbaec830f4807a5003428743387cfb0a528ddec8e7486fa6fe49474c1d0e1df1"
     },
     {
       "file": "assets/story/elira/carry_right_3.png",
@@ -1684,7 +1696,7 @@
         20,
         54
       ],
-      "output_sha256": "58b5462d322e3c66618e138829033c0556d4cb6068ec9aac5723f1ef912b02ec"
+      "output_sha256": "91649960ae433fe08bd5ff62c5e4be4fb1cc34bea90c9b9c11a238381832f27f"
     },
     {
       "file": "assets/story/elira/reach_0.png",
@@ -1700,7 +1712,7 @@
         20,
         54
       ],
-      "output_sha256": "e1d0b323466cd66b9a9f573bc4c363a84e909296d71be9ccdb1b5d1abaa9905d"
+      "output_sha256": "7aa7985b572bd93da74e6c6abefd250396a3dc3fffc8583331bea24ac754906f"
     },
     {
       "file": "assets/story/elira/take_0.png",
@@ -1717,7 +1729,7 @@
         20,
         54
       ],
-      "output_sha256": "aabd5d8daac7e982b20fab71acb4de4ec56fa0732c0c06fed2c24ef9e7a125b1"
+      "output_sha256": "193b757634b98f90056d018c9e237e0e1880a0dd01d144cf97d3fe1bddd1b2b0"
     },
     {
       "file": "assets/story/elira/step_0.png",
@@ -1730,7 +1742,7 @@
         20,
         54
       ],
-      "output_sha256": "81376a155de8eb84a46cf1841aaa9a09d2de4584fdfbfaa39e7f47aa75f5a6a4"
+      "output_sha256": "fc5d63a53fd6d0e987f8f1870a8dda6d0eddf4124d5f59a98ecb30f47374a687"
     },
     {
       "file": "assets/story/elira/down_0.png",
@@ -1745,7 +1757,7 @@
         20,
         54
       ],
-      "output_sha256": "48a932debb7794506c3153f90eb51056be6e8f0e1931adafa99ed611519794da"
+      "output_sha256": "ed6dbb23499334207ce7806afac8556dac6c096b7f729eeedc33307ced34d46e"
     },
     {
       "file": "assets/story/elira/place_0.png",
@@ -1760,7 +1772,7 @@
         20,
         54
       ],
-      "output_sha256": "ae0c9c04b3f4f8cd839c77b9bc63f9f4dafb45f2d3878285ce56065e68c3c654"
+      "output_sha256": "c66ee79584b8713fd46f83286f4285e05d2f675e945e4df951945946289366ac"
     },
     {
       "file": "assets/story/elira/place_empty_0.png",
@@ -1775,7 +1787,7 @@
         20,
         54
       ],
-      "output_sha256": "435a0886eca8c6119c65cdea4da8916b5064daf139978b91a8e17b266df37d9e"
+      "output_sha256": "ce6ed11acd6a7e6d9cc24a611c84d0566ba6546c9af92b16bef18ec64c637759"
     },
     {
       "file": "assets/story/elira/reach_1.png",
@@ -1791,7 +1803,7 @@
         20,
         54
       ],
-      "output_sha256": "53617b577d377f71b7eeae1b44553fa0df4458eb70f92651bfb70ec84fa08ca2"
+      "output_sha256": "c34788c5bd6ef0905972a9959ca3a6c0c43bb833528969980b4a39c2d18534f9"
     },
     {
       "file": "assets/story/elira/take_1.png",
@@ -1808,7 +1820,7 @@
         20,
         54
       ],
-      "output_sha256": "bd152944c82bdf0e37eac8952b4317fae055cc679484c6765233de94050074fe"
+      "output_sha256": "4ee569bd67da3d6269812cc485bb6bef730825636bf5a5e135bec650db198ad4"
     },
     {
       "file": "assets/story/elira/step_1.png",
@@ -1821,7 +1833,7 @@
         20,
         54
       ],
-      "output_sha256": "81895145c70f27e4a89a8910549d04ef822140439acf8105f77fdef816bb583e"
+      "output_sha256": "164d773566629ea2383ddc5bc1b8f7e3fb8b92533503fe8265251d4578b492c1"
     },
     {
       "file": "assets/story/elira/down_1.png",
@@ -1836,7 +1848,7 @@
         20,
         54
       ],
-      "output_sha256": "d964d2be4d154765be47eadb4662310ea0c25ed4cb5baac15d90fae52ce38067"
+      "output_sha256": "e0fa72ebfaea91f289537bf26311ff2d8ec21e2c1321e414a1584bea07f9655d"
     },
     {
       "file": "assets/story/elira/place_1.png",
@@ -1851,7 +1863,7 @@
         20,
         54
       ],
-      "output_sha256": "98653cf1135cecd1b5366b4044a2a1a92b9782a66753d4d8e68df4f07b6c1249"
+      "output_sha256": "82a716527a909aeef454753e142155d37d0e2900b18974503462b4f3bc575e9d"
     },
     {
       "file": "assets/story/elira/place_empty_1.png",
@@ -1866,7 +1878,7 @@
         20,
         54
       ],
-      "output_sha256": "435a0886eca8c6119c65cdea4da8916b5064daf139978b91a8e17b266df37d9e"
+      "output_sha256": "ce6ed11acd6a7e6d9cc24a611c84d0566ba6546c9af92b16bef18ec64c637759"
     },
     {
       "file": "assets/story/elira/reach_2.png",
@@ -1882,7 +1894,7 @@
         20,
         54
       ],
-      "output_sha256": "9452c21493eaff6b4325df397252c4cf12787b52ef010dd069163c747a7c07b4"
+      "output_sha256": "fe95151fd44affea22ebb17b920e0e19805212d289089ddd0af0d8d6b2696dd4"
     },
     {
       "file": "assets/story/elira/take_2.png",
@@ -1899,7 +1911,7 @@
         20,
         54
       ],
-      "output_sha256": "b85a5ad9ad6298407559d499026a7d58da2ba1a6e92c5be3bd7202037f832f84"
+      "output_sha256": "39d667a60a5e1b15f96195a26cbf7e9b44c55535787a92e56db1d8bec00e9664"
     },
     {
       "file": "assets/story/elira/step_2.png",
@@ -1912,7 +1924,7 @@
         20,
         54
       ],
-      "output_sha256": "cfffbcf9df15a7943cb0014412d7e341b05a98de212736667faa6f988d961b7e"
+      "output_sha256": "514c1cb2bb7047380938a185213935729067ddeb8b11212f50ab149740a25477"
     },
     {
       "file": "assets/story/elira/down_2.png",
@@ -1927,7 +1939,7 @@
         20,
         54
       ],
-      "output_sha256": "f6679bf34b18fd6194f511eed280024b68110230a4d8140cfa8dd108f22573fd"
+      "output_sha256": "88c708d2a2d7e28e6fa6a2f7776ca246222a98b38b0f61384537af84fe78a0a1"
     },
     {
       "file": "assets/story/elira/place_2.png",
@@ -1942,7 +1954,7 @@
         20,
         54
       ],
-      "output_sha256": "6bd0c7b4ea391be1269f7662915eaccfbc22e981b1cb3113d6943aaba95c8502"
+      "output_sha256": "b929ca176479c123951a74adceff8a5b51614e5ecb264cf319ba27cdbaebd762"
     },
     {
       "file": "assets/story/elira/place_empty_2.png",
@@ -1957,7 +1969,7 @@
         20,
         54
       ],
-      "output_sha256": "435a0886eca8c6119c65cdea4da8916b5064daf139978b91a8e17b266df37d9e"
+      "output_sha256": "ce6ed11acd6a7e6d9cc24a611c84d0566ba6546c9af92b16bef18ec64c637759"
     },
     {
       "file": "assets/story/elira/reach_3.png",
@@ -1973,7 +1985,7 @@
         20,
         54
       ],
-      "output_sha256": "158ff0c29ce28205a23b5fc0ef66e15bb22c5d7c1e7dfe5f3687f67fb7500444"
+      "output_sha256": "2e6ac012a300f793674ba1de3e58104356b5dfe3987c61faeeddd9a48fcb4981"
     },
     {
       "file": "assets/story/elira/take_3.png",
@@ -1990,7 +2002,7 @@
         20,
         54
       ],
-      "output_sha256": "669092a3d3d06f1c69361d66aef85abe2320500e217423b1562c7a1cb2b404d1"
+      "output_sha256": "4aa2a5465d7dc39e7acf6ebc9c63449a78cbf884c0130238d5bef65332ef2f7a"
     },
     {
       "file": "assets/story/elira/step_3.png",
@@ -2003,7 +2015,7 @@
         20,
         54
       ],
-      "output_sha256": "bbf11e725a42bb19874c65a99d2cff8f662c5bdeaf25472076b7c3a11a9397ae"
+      "output_sha256": "05b7ac2754dfa293ea8a184329d0f4781feb3b33d3c152809fef5966ffbf4ade"
     },
     {
       "file": "assets/story/elira/down_3.png",
@@ -2018,7 +2030,7 @@
         20,
         54
       ],
-      "output_sha256": "48b0f7b35b2c8ecec44b338eb41b1a540b77c978b35e17a360215ace3e97234a"
+      "output_sha256": "a551310d77e91ef026b00c9a783b8ea3d1a285e56a8aceb8d76de0032c098ba9"
     },
     {
       "file": "assets/story/elira/place_3.png",
@@ -2033,7 +2045,7 @@
         20,
         54
       ],
-      "output_sha256": "d2dc3f07d88208e96008dc5dff6de8258953210dec8a01f31528985d42a20999"
+      "output_sha256": "f1fc81d2fe6b72e96985de95f312dcb89f803781a7366db56621f8f9dff94267"
     },
     {
       "file": "assets/story/elira/place_empty_3.png",
@@ -2048,7 +2060,7 @@
         20,
         54
       ],
-      "output_sha256": "435a0886eca8c6119c65cdea4da8916b5064daf139978b91a8e17b266df37d9e"
+      "output_sha256": "ce6ed11acd6a7e6d9cc24a611c84d0566ba6546c9af92b16bef18ec64c637759"
     }
   ],
   "preserved": [
