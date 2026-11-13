@@ -21,8 +21,8 @@
         30
       ],
       "wrist": [
-        16,
-        25
+        19,
+        23
       ]
     },
     {
@@ -34,7 +34,7 @@
         30
       ],
       "wrist": [
-        16,
+        18,
         20
       ]
     },
@@ -47,8 +47,8 @@
         30
       ],
       "wrist": [
-        20,
-        23
+        17,
+        17
       ]
     },
     {
@@ -60,7 +60,7 @@
         30
       ],
       "wrist": [
-        16,
+        19,
         25
       ]
     }
@@ -74,5 +74,8 @@
     146,
     189
   ],
-  "release_frame": 3
+  "release_frame": 3,
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "appearance_registration": "Authored natural poses; existing canvas, ground anchor and event timing retained."
 }

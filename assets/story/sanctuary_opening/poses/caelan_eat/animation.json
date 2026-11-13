@@ -21,7 +21,7 @@
         30
       ],
       "wrist": [
-        16,
+        17,
         25
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "wrist": [
         18,
-        25
+        20
       ]
     },
     {
@@ -47,8 +47,8 @@
         30
       ],
       "wrist": [
-        14,
-        16
+        17,
+        17
       ]
     },
     {
@@ -60,10 +60,13 @@
         30
       ],
       "wrist": [
-        14,
-        19
+        18,
+        25
       ]
     }
   ],
-  "registration": "Interpolate display positions continuously; logical standing feet stay on clear floor."
+  "registration": "Interpolate display positions continuously; logical standing feet stay on clear floor.",
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "appearance_registration": "Authored natural poses; existing canvas, ground anchor and event timing retained."
 }

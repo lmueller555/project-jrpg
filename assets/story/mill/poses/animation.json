@@ -16,7 +16,7 @@
     8
   ],
   "source_body": "source_body.png",
-  "source_idle_sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
+  "source_idle_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f",
   "layer_order": [
     "body",
     "casting_arm",
@@ -26,20 +26,6 @@
     4,
     4
   ],
-  "preserved_source_regions": {
-    "head": [
-      0,
-      0,
-      24,
-      14
-    ],
-    "lower_body": [
-      0,
-      25,
-      24,
-      36
-    ]
-  },
   "outcome": "success",
   "sequence": [
     "raise_hand",
@@ -60,25 +46,26 @@
           "angle_degrees": 90,
           "energy_level": 0,
           "casting_hand": [
-            18,
+            19,
             32
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                18.0,
-                32.0
+                19,
+                32
               ]
             ]
-          }
+          },
+          "appearance_source_cell": null
         },
         {
           "rect": [
@@ -90,25 +77,26 @@
           "angle_degrees": 65,
           "energy_level": 0,
           "casting_hand": [
-            20,
+            22,
             32
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                19.690473046962797,
-                31.6252311481466
+                22,
+                32
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 28
         },
         {
           "rect": [
@@ -120,25 +108,26 @@
           "angle_degrees": 40,
           "energy_level": 0,
           "casting_hand": [
-            21,
-            31
+            27,
+            26
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.06417777247591,
-                30.57115043874616
+                27,
+                26
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 29
         },
         {
           "rect": [
@@ -150,25 +139,26 @@
           "angle_degrees": 15,
           "energy_level": 0,
           "casting_hand": [
-            22,
-            29
+            27,
+            26
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.86370330515627,
-                29.035276180410083
+                27,
+                26
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 29
         },
         {
           "rect": [
@@ -180,25 +170,26 @@
           "angle_degrees": -14,
           "energy_level": 0,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         }
       ]
     },
@@ -215,25 +206,26 @@
           "angle_degrees": -14,
           "energy_level": 1,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         },
         {
           "rect": [
@@ -245,25 +237,26 @@
           "angle_degrees": -14,
           "energy_level": 2,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         },
         {
           "rect": [
@@ -275,25 +268,26 @@
           "angle_degrees": -14,
           "energy_level": 1,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         },
         {
           "rect": [
@@ -305,25 +299,26 @@
           "angle_degrees": -14,
           "energy_level": 1,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         },
         {
           "rect": [
@@ -335,25 +330,26 @@
           "angle_degrees": -14,
           "energy_level": 1,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         },
         {
           "rect": [
@@ -365,25 +361,26 @@
           "angle_degrees": -14,
           "energy_level": 0,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         }
       ]
     },
@@ -400,25 +397,26 @@
           "angle_degrees": -14,
           "energy_level": 0,
           "casting_hand": [
-            22,
-            27
+            28,
+            23
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.881182905103984,
-                27.03231241760133
+                28,
+                23
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 30
         },
         {
           "rect": [
@@ -430,25 +428,26 @@
           "angle_degrees": 15,
           "energy_level": 0,
           "casting_hand": [
-            22,
-            29
+            27,
+            26
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.86370330515627,
-                29.035276180410083
+                27,
+                26
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 29
         },
         {
           "rect": [
@@ -460,25 +459,26 @@
           "angle_degrees": 40,
           "energy_level": 0,
           "casting_hand": [
-            21,
-            31
+            27,
+            26
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                21.06417777247591,
-                30.57115043874616
+                27,
+                26
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 29
         },
         {
           "rect": [
@@ -490,25 +490,26 @@
           "angle_degrees": 65,
           "energy_level": 0,
           "casting_hand": [
-            20,
+            22,
             32
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                19.690473046962797,
-                31.6252311481466
+                22,
+                32
               ]
             ]
-          }
+          },
+          "appearance_source_cell": 28
         },
         {
           "rect": [
@@ -520,28 +521,32 @@
           "angle_degrees": 90,
           "energy_level": 0,
           "casting_hand": [
-            18,
+            19,
             32
           ],
           "joints": {
             "casting": [
               [
-                18,
-                24
+                21,
+                25
               ],
               [
-                18,
-                28
+                24,
+                27
               ],
               [
-                18.0,
-                32.0
+                19,
+                32
               ]
             ]
-          }
+          },
+          "appearance_source_cell": null
         }
       ]
     }
   },
-  "effect": "A small controlled movement of still water; no sustained force against a current."
+  "effect": "A small controlled movement of still water; no sustained force against a current.",
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "appearance_registration": "Authored natural poses; existing canvas, ground anchor and event timing retained."
 }

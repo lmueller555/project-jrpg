@@ -1,7 +1,7 @@
 {
   "character": "caelan",
   "animation": "run.left",
-  "status": "approved",
+  "status": "review",
   "frame_size": [
     24,
     36
@@ -11,6 +11,8 @@
     34
   ],
   "loop": true,
+  "image": "spritesheet.png",
+  "source": "assets/source/characters/caelan/overworld_refresh/travel_authored.png",
   "frames": [
     {
       "file": "frame_01.png",
@@ -21,80 +23,8 @@
         36
       ],
       "duration_ms": 100,
-      "phase": "contact_near",
-      "airborne": false,
-      "upper_body_offset": [
-        -2,
-        1
-      ],
-      "legs": {
-        "near": [
-          [
-            12,
-            26
-          ],
-          [
-            9,
-            29
-          ],
-          [
-            7,
-            32
-          ],
-          [
-            5,
-            33
-          ]
-        ],
-        "far": [
-          [
-            12,
-            26
-          ],
-          [
-            16,
-            29
-          ],
-          [
-            18,
-            25
-          ],
-          [
-            17,
-            25
-          ]
-        ]
-      },
-      "arms": {
-        "near": [
-          [
-            11,
-            17
-          ],
-          [
-            17,
-            20
-          ],
-          [
-            19,
-            17
-          ]
-        ],
-        "far": [
-          [
-            10,
-            17
-          ],
-          [
-            6,
-            20
-          ],
-          [
-            3,
-            17
-          ]
-        ]
-      }
+      "phase": "contact_a",
+      "airborne": false
     },
     {
       "file": "frame_02.png",
@@ -105,80 +35,8 @@
         36
       ],
       "duration_ms": 100,
-      "phase": "flight_near",
-      "airborne": true,
-      "upper_body_offset": [
-        -2,
-        -1
-      ],
-      "legs": {
-        "near": [
-          [
-            12,
-            24
-          ],
-          [
-            15,
-            27
-          ],
-          [
-            17,
-            29
-          ],
-          [
-            16,
-            31
-          ]
-        ],
-        "far": [
-          [
-            12,
-            24
-          ],
-          [
-            7,
-            26
-          ],
-          [
-            10,
-            28
-          ],
-          [
-            9,
-            29
-          ]
-        ]
-      },
-      "arms": {
-        "near": [
-          [
-            11,
-            15
-          ],
-          [
-            14,
-            19
-          ],
-          [
-            11,
-            18
-          ]
-        ],
-        "far": [
-          [
-            10,
-            15
-          ],
-          [
-            7,
-            18
-          ],
-          [
-            5,
-            16
-          ]
-        ]
-      }
+      "phase": "flight_a",
+      "airborne": true
     },
     {
       "file": "frame_03.png",
@@ -189,80 +47,8 @@
         36
       ],
       "duration_ms": 100,
-      "phase": "contact_far",
-      "airborne": false,
-      "upper_body_offset": [
-        -2,
-        1
-      ],
-      "legs": {
-        "near": [
-          [
-            12,
-            26
-          ],
-          [
-            16,
-            29
-          ],
-          [
-            18,
-            25
-          ],
-          [
-            17,
-            25
-          ]
-        ],
-        "far": [
-          [
-            12,
-            26
-          ],
-          [
-            9,
-            29
-          ],
-          [
-            7,
-            32
-          ],
-          [
-            5,
-            33
-          ]
-        ]
-      },
-      "arms": {
-        "near": [
-          [
-            11,
-            17
-          ],
-          [
-            6,
-            20
-          ],
-          [
-            3,
-            17
-          ]
-        ],
-        "far": [
-          [
-            10,
-            17
-          ],
-          [
-            16,
-            20
-          ],
-          [
-            18,
-            17
-          ]
-        ]
-      }
+      "phase": "contact_b",
+      "airborne": false
     },
     {
       "file": "frame_04.png",
@@ -273,81 +59,8 @@
         36
       ],
       "duration_ms": 100,
-      "phase": "flight_far",
-      "airborne": true,
-      "upper_body_offset": [
-        -2,
-        -1
-      ],
-      "legs": {
-        "near": [
-          [
-            12,
-            24
-          ],
-          [
-            7,
-            26
-          ],
-          [
-            10,
-            28
-          ],
-          [
-            9,
-            29
-          ]
-        ],
-        "far": [
-          [
-            12,
-            24
-          ],
-          [
-            15,
-            27
-          ],
-          [
-            17,
-            29
-          ],
-          [
-            16,
-            31
-          ]
-        ]
-      },
-      "arms": {
-        "near": [
-          [
-            11,
-            15
-          ],
-          [
-            7,
-            18
-          ],
-          [
-            5,
-            16
-          ]
-        ],
-        "far": [
-          [
-            10,
-            15
-          ],
-          [
-            14,
-            19
-          ],
-          [
-            12,
-            18
-          ]
-        ]
-      }
+      "phase": "flight_b",
+      "airborne": true
     }
-  ],
-  "source_idle_sha256": "abee965ac14e3ac424aa6aa63a0a6e74fab5e52572c2c42efd800d48df184259"
+  ]
 }

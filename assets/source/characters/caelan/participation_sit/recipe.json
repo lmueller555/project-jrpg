@@ -12,9 +12,9 @@
     12,
     25
   ],
-  "boots_baseline": 33,
-  "appearance_source": "assets/characters/caelan/idle_front.png",
-  "appearance_sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
-  "concept": "imagegen_concept.png",
-  "method": "Approved head/upper tunic pixels plus explicit native articulated seated limbs; no anatomical raster warps."
+  "boots_baseline": 34,
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "source_cell": 12,
+  "method": "Independent authored front seated pose with natural bent knees; fixed game registration."
 }

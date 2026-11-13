@@ -321,7 +321,7 @@ class StructureAuthor:
                 image=image.resize((image.width*2,image.height*2),Image.Resampling.NEAREST)
                 x=24+col*278;board.alpha_composite(image,(x,y+29)) if board.mode=='RGBA' else board.paste(image,(x,y+29),image)
                 d.text((x,y+282),key.replace(prefix,''),fill='#cbd5c8',font=label)
-        ca_path=ROOT/'assets/characters/caelan/idle_front.png';ca=Image.open(ca_path).convert('RGBA')
+        ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png';ca=Image.open(ca_path).convert('RGBA')
         ca=ca.resize((ca.width*2,ca.height*2),Image.Resampling.NEAREST);board.paste(ca,(1315,1878),ca)
         d.text((1130,1962),'Caelan / same enlargement',fill='#e8dfc7',font=label)
         self.emit(f'{PACK}/structure_review.png',board)

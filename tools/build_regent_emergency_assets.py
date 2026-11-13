@@ -136,7 +136,8 @@ def products():
     font = ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),20)
     small = ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),16)
     draw.text((20,12),'MQ03 survivor / native injured Crown worker /24×36 source scale',font=font,fill='#e3e8d6')
-    hero = Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    # Retain the original scale-reference figure in historical material reviews.
+    hero = Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     for index,direction in enumerate(DIRECTIONS):
         x=24+index*190;y=60
         for image,dx in ((hero,0),(images[f'idle_{direction}.png'],80)):

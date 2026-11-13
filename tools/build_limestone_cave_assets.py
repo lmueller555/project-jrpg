@@ -324,7 +324,7 @@ class Author:
         d.text((20,758),'Source relationship / approved regional stone / original character scale',font=font,fill='#e3dcc7')
         for i,path in enumerate(self.recipe['source_assets'][:3]):
             im=Image.open(ROOT/path).convert('RGBA');board.paste(im,(20+i*150,808),im)
-        ca=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+        ca=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
         board.paste(ca,(655,808),ca);d.text((600,860),'Caelan: native scale',font=small,fill='#d3d5bc')
         d.text((20,902),'Unlit material board. Crystal emission and colored environment light remain runtime effects.',font=small,fill='#b9c8be')
         self.emit(f'{PACK}/materials_review.png',board)
@@ -347,7 +347,7 @@ class Author:
         dd.text((22,704),'Neutral stone receives crystal color in the production lighting pass. No colored light is painted into these modules.',font=small,fill='#b9c8be')
         self.emit(f'{PACK}/regional_comparison.png',detail)
         inputs={path:sha256((ROOT/path).read_bytes()).hexdigest() for path in self.recipe['source_assets']}
-        for path in ('assets/characters/caelan/idle_front.png','assets/terrain/sanctuary_cave/walls/face_00.png'):
+        for path in ('assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png','assets/terrain/sanctuary_cave/walls/face_00.png'):
             inputs[path]=sha256((ROOT/path).read_bytes()).hexdigest()
         inputs[SOURCE.relative_to(ROOT).as_posix()]=sha256(SOURCE.read_bytes()).hexdigest()
         manifest={'version':1,'id':self.recipe['id'],'status':'review','approval_status':'pending_review','tile_size':24,

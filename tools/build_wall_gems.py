@@ -112,7 +112,7 @@ def products():
             panel.alpha_composite(seam)
             scaled=panel.resize((panel.width*3,panel.height*3),Image.Resampling.NEAREST)
             board.paste(scaled,(x,87+row*108))
-    ca_path=ROOT/'assets/characters/caelan/idle_front.png'
+    ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png'
     ca=Image.open(ca_path).convert('RGBA')
     ca=ca.resize((ca.width*3,ca.height*3),Image.Resampling.NEAREST)
     board.paste(ca,(1430,420),ca)

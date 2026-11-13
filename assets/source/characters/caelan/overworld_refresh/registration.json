@@ -1,0 +1,1174 @@
+{
+  "version": 1,
+  "status": "review",
+  "source": "assets/source/characters/caelan/overworld_refresh/travel_authored.png",
+  "source_sha256": "bbe99437fe56a14d9d25c8197dc42620f0f599346051cb39118b77ce9b8c8aa2",
+  "source_cells": [
+    {
+      "source_rect": [
+        0,
+        0,
+        209,
+        221
+      ],
+      "source_bounds": [
+        85,
+        16,
+        172,
+        213
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        1
+      ],
+      "file": "assets/characters/caelan/idle_front.png",
+      "index": 0,
+      "direction": "front",
+      "gait": "idle",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        0,
+        209,
+        221
+      ],
+      "source_bounds": [
+        68,
+        17,
+        154,
+        213
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        1
+      ],
+      "file": "assets/characters/caelan/idle_back.png",
+      "index": 1,
+      "direction": "back",
+      "gait": "idle",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        418,
+        0,
+        209,
+        221
+      ],
+      "source_bounds": [
+        52,
+        17,
+        140,
+        213
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        1
+      ],
+      "file": "assets/characters/caelan/idle_left.png",
+      "index": 2,
+      "direction": "left",
+      "gait": "idle",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        627,
+        0,
+        209,
+        221
+      ],
+      "source_bounds": [
+        36,
+        16,
+        122,
+        213
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        1
+      ],
+      "file": "assets/characters/caelan/idle_right.png",
+      "index": 3,
+      "direction": "right",
+      "gait": "idle",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        0,
+        221,
+        209,
+        204
+      ],
+      "source_bounds": [
+        83,
+        8,
+        171,
+        197
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_front/frame_01.png",
+      "index": 4,
+      "direction": "front",
+      "gait": "walk",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        221,
+        209,
+        204
+      ],
+      "source_bounds": [
+        68,
+        7,
+        153,
+        197
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_front/frame_02.png",
+      "index": 5,
+      "direction": "front",
+      "gait": "walk",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        221,
+        209,
+        204
+      ],
+      "source_bounds": [
+        53,
+        8,
+        140,
+        198
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_front/frame_03.png",
+      "index": 6,
+      "direction": "front",
+      "gait": "walk",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        221,
+        209,
+        204
+      ],
+      "source_bounds": [
+        37,
+        7,
+        125,
+        196
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_front/frame_04.png",
+      "index": 7,
+      "direction": "front",
+      "gait": "walk",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        425,
+        209,
+        206
+      ],
+      "source_bounds": [
+        85,
+        9,
+        171,
+        199
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_back/frame_01.png",
+      "index": 8,
+      "direction": "back",
+      "gait": "walk",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        425,
+        209,
+        206
+      ],
+      "source_bounds": [
+        69,
+        9,
+        154,
+        200
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_back/frame_02.png",
+      "index": 9,
+      "direction": "back",
+      "gait": "walk",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        425,
+        209,
+        206
+      ],
+      "source_bounds": [
+        55,
+        9,
+        142,
+        199
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_back/frame_03.png",
+      "index": 10,
+      "direction": "back",
+      "gait": "walk",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        425,
+        209,
+        206
+      ],
+      "source_bounds": [
+        43,
+        9,
+        126,
+        199
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_back/frame_04.png",
+      "index": 11,
+      "direction": "back",
+      "gait": "walk",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        631,
+        209,
+        203
+      ],
+      "source_bounds": [
+        74,
+        9,
+        175,
+        197
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        3
+      ],
+      "file": "assets/characters/caelan/walk_left/frame_01.png",
+      "index": 12,
+      "direction": "left",
+      "gait": "walk",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        631,
+        209,
+        203
+      ],
+      "source_bounds": [
+        67,
+        8,
+        153,
+        198
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_left/frame_02.png",
+      "index": 13,
+      "direction": "left",
+      "gait": "walk",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        631,
+        209,
+        203
+      ],
+      "source_bounds": [
+        44,
+        9,
+        146,
+        198
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_left/frame_03.png",
+      "index": 14,
+      "direction": "left",
+      "gait": "walk",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        631,
+        209,
+        203
+      ],
+      "source_bounds": [
+        36,
+        10,
+        123,
+        199
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        2
+      ],
+      "file": "assets/characters/caelan/walk_left/frame_04.png",
+      "index": 15,
+      "direction": "left",
+      "gait": "walk",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        834,
+        209,
+        201
+      ],
+      "source_bounds": [
+        78,
+        9,
+        174,
+        195
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        3
+      ],
+      "file": "assets/characters/caelan/walk_right/frame_01.png",
+      "index": 16,
+      "direction": "right",
+      "gait": "walk",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        834,
+        209,
+        201
+      ],
+      "source_bounds": [
+        68,
+        8,
+        155,
+        196
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        3
+      ],
+      "file": "assets/characters/caelan/walk_right/frame_02.png",
+      "index": 17,
+      "direction": "right",
+      "gait": "walk",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        834,
+        209,
+        201
+      ],
+      "source_bounds": [
+        47,
+        9,
+        146,
+        195
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        3
+      ],
+      "file": "assets/characters/caelan/walk_right/frame_03.png",
+      "index": 18,
+      "direction": "right",
+      "gait": "walk",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        834,
+        209,
+        201
+      ],
+      "source_bounds": [
+        42,
+        9,
+        127,
+        196
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        3
+      ],
+      "file": "assets/characters/caelan/walk_right/frame_04.png",
+      "index": 19,
+      "direction": "right",
+      "gait": "walk",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        1035,
+        209,
+        202
+      ],
+      "source_bounds": [
+        78,
+        11,
+        171,
+        195
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        3
+      ],
+      "file": "assets/characters/caelan/run_front/frame_01.png",
+      "index": 20,
+      "direction": "front",
+      "gait": "run",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        1035,
+        209,
+        202
+      ],
+      "source_bounds": [
+        67,
+        10,
+        156,
+        183
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        2
+      ],
+      "file": "assets/characters/caelan/run_front/frame_02.png",
+      "index": 21,
+      "direction": "front",
+      "gait": "run",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        1035,
+        209,
+        202
+      ],
+      "source_bounds": [
+        52,
+        10,
+        140,
+        194
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        3
+      ],
+      "file": "assets/characters/caelan/run_front/frame_03.png",
+      "index": 22,
+      "direction": "front",
+      "gait": "run",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        1035,
+        209,
+        202
+      ],
+      "source_bounds": [
+        38,
+        11,
+        128,
+        180
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        4,
+        3
+      ],
+      "file": "assets/characters/caelan/run_front/frame_04.png",
+      "index": 23,
+      "direction": "front",
+      "gait": "run",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        1237,
+        209,
+        204
+      ],
+      "source_bounds": [
+        80,
+        8,
+        172,
+        196
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        3
+      ],
+      "file": "assets/characters/caelan/run_back/frame_01.png",
+      "index": 24,
+      "direction": "back",
+      "gait": "run",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        1237,
+        209,
+        204
+      ],
+      "source_bounds": [
+        68,
+        8,
+        155,
+        173
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        4
+      ],
+      "file": "assets/characters/caelan/run_back/frame_02.png",
+      "index": 25,
+      "direction": "back",
+      "gait": "run",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        1237,
+        209,
+        204
+      ],
+      "source_bounds": [
+        52,
+        7,
+        144,
+        196
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        6,
+        2
+      ],
+      "file": "assets/characters/caelan/run_back/frame_03.png",
+      "index": 26,
+      "direction": "back",
+      "gait": "run",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        1237,
+        209,
+        204
+      ],
+      "source_bounds": [
+        40,
+        8,
+        125,
+        173
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        5,
+        4
+      ],
+      "file": "assets/characters/caelan/run_back/frame_04.png",
+      "index": 27,
+      "direction": "back",
+      "gait": "run",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        1441,
+        209,
+        206
+      ],
+      "source_bounds": [
+        70,
+        11,
+        186,
+        195
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        2,
+        3
+      ],
+      "file": "assets/characters/caelan/run_left/frame_01.png",
+      "index": 28,
+      "direction": "left",
+      "gait": "run",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        1441,
+        209,
+        206
+      ],
+      "source_bounds": [
+        61,
+        10,
+        162,
+        176
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        3
+      ],
+      "file": "assets/characters/caelan/run_left/frame_02.png",
+      "index": 29,
+      "direction": "left",
+      "gait": "run",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        1441,
+        209,
+        206
+      ],
+      "source_bounds": [
+        44,
+        10,
+        151,
+        195
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        3
+      ],
+      "file": "assets/characters/caelan/run_left/frame_03.png",
+      "index": 30,
+      "direction": "left",
+      "gait": "run",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        1441,
+        209,
+        206
+      ],
+      "source_bounds": [
+        34,
+        10,
+        143,
+        185
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        2
+      ],
+      "file": "assets/characters/caelan/run_left/frame_04.png",
+      "index": 31,
+      "direction": "left",
+      "gait": "run",
+      "phase": 3
+    },
+    {
+      "source_rect": [
+        0,
+        1647,
+        209,
+        235
+      ],
+      "source_bounds": [
+        54,
+        12,
+        174,
+        198
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        2,
+        3
+      ],
+      "file": "assets/characters/caelan/run_right/frame_01.png",
+      "index": 32,
+      "direction": "right",
+      "gait": "run",
+      "phase": 0
+    },
+    {
+      "source_rect": [
+        209,
+        1647,
+        209,
+        235
+      ],
+      "source_bounds": [
+        55,
+        13,
+        159,
+        184
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        3
+      ],
+      "file": "assets/characters/caelan/run_right/frame_02.png",
+      "index": 33,
+      "direction": "right",
+      "gait": "run",
+      "phase": 1
+    },
+    {
+      "source_rect": [
+        418,
+        1647,
+        209,
+        235
+      ],
+      "source_bounds": [
+        40,
+        14,
+        144,
+        198
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        3
+      ],
+      "file": "assets/characters/caelan/run_right/frame_03.png",
+      "index": 34,
+      "direction": "right",
+      "gait": "run",
+      "phase": 2
+    },
+    {
+      "source_rect": [
+        627,
+        1647,
+        209,
+        235
+      ],
+      "source_bounds": [
+        25,
+        14,
+        132,
+        187
+      ],
+      "scale": 0.17215189873417722,
+      "canvas": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "destination": [
+        3,
+        2
+      ],
+      "file": "assets/characters/caelan/run_right/frame_04.png",
+      "index": 35,
+      "direction": "right",
+      "gait": "run",
+      "phase": 3
+    }
+  ],
+  "action_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "action_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "action_scale": 0.15178571428571427,
+  "action_row_edges": [
+    0,
+    245,
+    448,
+    704,
+    939,
+    1158,
+    1370,
+    1605,
+    1882
+  ]
+}
