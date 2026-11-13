@@ -12,6 +12,7 @@ from social import facing_toward
 from regent_emergency import legacy_cave_entered
 from sanctuary_arrival_party import sync_arrival_party
 from sanctuary_arrival_blocking import SanctuaryBlocking
+from regent_resolution import STAGES as RESOLUTION_STAGES
 from sanctuary_rope import SanctuaryRope
 from sanctuary_care import SanctuaryCare
 from ui_style import IVORY,MUTED,GOLD
@@ -154,7 +155,7 @@ class SanctuaryArrival(MillGift):
         if not SanctuaryArrival.valid_snapshot(record):return False
         if record['beat'] or record['completed']:
             quest=data.get('regent_quest',{})
-            if not isinstance(quest,dict) or quest.get('stage') not in ('sanctuary_arrival_pending','done'):return False
+            if not isinstance(quest,dict) or quest.get('stage') not in ('sanctuary_arrival_pending','done', *RESOLUTION_STAGES):return False
         if record['beat'] and not record['completed']:
             player=data.get('player')
             if not isinstance(player,dict) or player.get('scene')!=RESERVE:return False

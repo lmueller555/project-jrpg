@@ -169,7 +169,7 @@
       "requires_quests": [
         "CH01_MQ02"
       ],
-      "summary": "Help Serene welcome Regent Aldric to Eldenmere and accompany the visiting party.",
+      "summary": "Welcome Regent Aldric, help rescue the Sanctuary workers, and return to Serene to settle the immediate emergency.",
       "available_tracker_text": "Speak with Mother Serene in the dining room at home about the visiting regent.",
       "accept_text": "Meet Aldric’s party by the brook.",
       "report_text": "Continue helping Serene and the visitors.",
@@ -207,7 +207,7 @@
           ]
         }
       ],
-      "implementation_note": "The emergency route remains active at the Sanctuary arrival checkpoint. The arrival cutscene and subsequent resolution are later work; new journeys do not unlock MQ04 here. Completed legacy visits retain their existing completion and lantern access."
+      "implementation_note": "The emergency proceeds through the cave rescue, Sanctuary report, return home and acknowledged resolution. Only the final family exchange completes MQ03 and unlocks MQ04. Completed legacy visits retain their progress."
     },
     {
       "id": "CH01_MQ04",

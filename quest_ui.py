@@ -382,6 +382,9 @@ class QuestUI:
         for line in self.wrap(definition.get('summary', ''), self.font, self.detail_viewport.width):
             rows.append((line, INK, self.font, 0))
         rows.append(('', INK, self.small_font, 0))
+        if identifier == 'CH01_MQ03' and getattr(self.game,'regent_quest',None) is not None:
+            for line in self.wrap(self.game.regent_quest.journal_detail(),self.font,self.detail_viewport.width):
+                rows.append((line,FOREST,self.font,0))
         if status == 'available':
             for line in self.wrap('Find the ! marker to hear this request.', self.font, self.detail_viewport.width):
                 rows.append((line, FOREST, self.font, 0))
