@@ -223,6 +223,10 @@
     "stillfrost_chamber": {
       "area": null,
       "battlefield": null
+    },
+    "greenwell_chamber": {
+      "area": null,
+      "battlefield": null
     }
   },
   "safe_polygons": {
@@ -242,6 +246,48 @@
       [
         180,
         1810
+      ]
+    ],
+    "greenwell_chamber": [
+      [
+        1810,
+        770
+      ],
+      [
+        1840,
+        710
+      ],
+      [
+        1940,
+        692
+      ],
+      [
+        2040,
+        704
+      ],
+      [
+        2120,
+        752
+      ],
+      [
+        2130,
+        824
+      ],
+      [
+        2070,
+        892
+      ],
+      [
+        1970,
+        916
+      ],
+      [
+        1860,
+        880
+      ],
+      [
+        1800,
+        824
       ]
     ]
   },
@@ -269,7 +315,7 @@
         },
         {
           "first": 11,
-          "last": 14,
+          "last": 15,
           "area": null,
           "battlefield": null
         }

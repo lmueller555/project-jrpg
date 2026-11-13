@@ -265,6 +265,13 @@ class SanctuaryCave:
         kind, record = nearby
         if kind == 'link':return self._travel(record)
         if kind == 'treasure':return self._open(record)
+        if record.get('healing_pool'):
+            self.game.player.facing = 'right'
+            for identifier in self.game.party.active_ids:
+                self.game.party.attributes(identifier).recover()
+            self._say(record['text'], record['id'])
+            self.game.save_progress()
+            return True
         present=getattr(getattr(self.game,'party',None),'active_ids',())
         if 'dialogue' in record and all(key in present for key in record.get('requires_party',())):
             self.game.player.moving = False
