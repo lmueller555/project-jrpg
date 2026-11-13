@@ -1,4 +1,4 @@
-"""Level-four elemental bosses, shared Edge rules and honest MP-free lessons."""
+"""Level-five elemental bosses, shared Edge rules and honest MP-free lessons."""
 from copy import deepcopy
 from fractions import Fraction
 import random
@@ -16,8 +16,8 @@ from test_aether_edge_battle_model import FixedVariance
 
 BOSSES = ('embravyr', 'nivareth')
 STATS = {
-    'embravyr': (612, 37, 15, 15, 16, 28, 11, 11, 17, 15, 16),
-    'nivareth': (658, 61, 12, 18, 19, 11, 28, 12, 17, 15, 16)}
+    'embravyr': (753, 39, 17, 17, 17, 31, 12, 12, 19, 16, 18),
+    'nivareth': (810, 65, 13, 20, 21, 13, 31, 13, 19, 16, 18)}
 GEMS = {'embravyr': ('fire', 'flame_edge', 'red_focus_gem'),
         'nivareth': ('ice', 'ice_edge', 'white_focus_gem')}
 
@@ -46,7 +46,8 @@ class ElementalMinibossModelTests(unittest.TestCase):
         options.setdefault('owned_gems', ('water', 'fire', 'ice'))
         options.setdefault('rng', FixedVariance())
         options.setdefault('elemental_tutorial', True)
-        return BattleModel.from_bestiary(CharacterAttributes(), identifier, 4,
+        boss_level = options.pop('boss_level', 5)
+        return BattleModel.from_bestiary(CharacterAttributes(), identifier, boss_level,
             bestiary_data=model_catalog(), **options)
 
     def ready(self, model):
@@ -87,16 +88,16 @@ class ElementalMinibossModelTests(unittest.TestCase):
         self.finish(model)
         return self.enemy_turn(model)
 
-    def test_exact_level_four_profiles_full_affinities_rewards_and_pure_aether_family(self):
+    def test_exact_level_five_profiles_full_affinities_rewards_and_pure_aether_family(self):
         for identifier in BOSSES:
             with self.subTest(identifier=identifier):
-                record = build_enemy(identifier, 4)
+                record = build_enemy(identifier, 5)
                 self.assertEqual(record['combat']['attributes'], dict(zip(ATTRIBUTE_IDS, STATS[identifier])))
-                self.assertEqual(record['xp_reward'], 420)
+                self.assertEqual(record['xp_reward'], 460)
                 self.assertEqual(record['combat']['rewards']['drops'], {GEMS[identifier][2]: 1})
                 metadata = record['metadata']
                 self.assertEqual((metadata['tier'], metadata['family']), ('boss', 'aether_elemental'))
-                self.assertEqual(metadata['level_range'], {'min': 4, 'max': 4})
+                self.assertEqual(metadata['level_range'], {'min': 4, 'max': 5})
                 self.assertEqual(metadata['stat_profile'], 'armored' if identifier == 'embravyr' else 'warded')
                 self.assertEqual(metadata['combat_design']['status'], 'ready')
                 self.assertFalse(metadata['presentation_pending'])
@@ -108,7 +109,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
                 exceptional = {'water': 200, 'ice': 150, 'nature': 50} if identifier == 'embravyr' else {'fire': 200, 'water': 50}
                 self.assertEqual(profile['damage_percentages'], {key: exceptional.get(key, 100) for key in ELEMENT_IDS})
                 self.assertEqual(profile['absorption'], {'elements': [GEMS[identifier][0]], 'healing_percent': 100})
-                for level in (None, 3, 5, True, 4.0):
+                for level in (None, 3, 6, True, 5.0):
                     with self.assertRaises(ValueError):build_enemy(identifier, level)
 
     def test_focus_cores_are_protected_and_only_the_matching_story_boss_can_drop_them(self):
@@ -246,12 +247,16 @@ class ElementalMinibossModelTests(unittest.TestCase):
         capped._start_action('player', 'aqua_edge')
         self.assertEqual(self.finish(capped).damage, 9999)
 
-    def play(self, identifier, level, resources, gems, known, seed, *, require_both_alive=True, supplies=None):
+    def play(self, identifier, level, resources, gems, known, seed, *, require_both_alive=True, supplies=None, boss_level=4, lucan=False):
         members = party_profiles(level, resources)
+        if lucan:
+            stats = character_stats('lucan', 5)
+            members.append({'identifier': 'lucan', 'name': 'Lucan', 'attributes': stats,
+                            'hp': stats['hp'], 'mp': stats['mp'], 'attack': 'attack'})
         before = deepcopy(members)
         model = self.model(identifier, level=level, party_members=members,
             learned_abilities=known, owned_gems=tuple(gems), rng=random.Random(seed),
-            initial_atb=True, initial_atb_seed=seed)
+            initial_atb=True, initial_atb_seed=seed, boss_level=boss_level)
         if supplies is None:supplies = Inventory.new_journey()
         model.set_item_inventory(supplies)
         for _ in range(20000):
@@ -279,7 +284,19 @@ class ElementalMinibossModelTests(unittest.TestCase):
         if model.item_spent:self.assertTrue(supplies.consume_bundle(model.item_spent))
         return model
 
-    def test_level_one_through_four_party_can_win_either_first_boss_at_zero_mp_with_starting_supplies(self):
+    def test_level_five_guardians_with_lucan_at_zero_mp(self):
+        for level in (2, 3, 4, 5):
+            resources = {key: (character_stats(key, level)['hp'], 0) for key in ('caelan', 'mira')}
+            for identifier in BOSSES:
+                for seed in range(5):
+                    with self.subTest(level=level, identifier=identifier, seed=seed):
+                        model = self.play(identifier, level, resources, ['water'],
+                            ['aether_edge', 'aqua_edge'], seed, boss_level=5, lucan=True)
+                        self.assertEqual(model.enemy_level, 5)
+                        self.assertEqual(model.enemy_xp_reward, 460)
+                        self.assertEqual(model.combatant('lucan').attributes, character_stats('lucan', 5))
+
+    def test_legacy_level_four_boss_with_level_one_through_four_party_at_zero_mp_with_starting_supplies(self):
         for level in (1, 2, 3, 4):
             resources = {key: (character_stats(key, level)['hp'], 0) for key in ('caelan', 'mira')}
             for identifier in BOSSES:
@@ -289,7 +306,7 @@ class ElementalMinibossModelTests(unittest.TestCase):
                                           ['aether_edge', 'aqua_edge'], seed)
                         self.assertEqual((model.player.mp, model.combatant('mira').mp), (0, 0))
 
-    def test_both_orders_at_level_two_through_four_carry_resources_without_refills(self):
+    def test_legacy_level_four_bosses_in_both_orders_carry_resources_without_refills(self):
         for initial_level in (2, 3, 4):
             for zero_mp in (False, True):
                 for order in (BOSSES, tuple(reversed(BOSSES))):

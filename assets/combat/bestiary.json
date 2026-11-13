@@ -103,7 +103,7 @@
       ],
       "level_range": {
         "min": 2,
-        "max": 3
+        "max": 5
       },
       "archetype": "battlemage",
       "stat_profile": "hybrid",
@@ -195,7 +195,7 @@
       ],
       "level_range": {
         "min": 2,
-        "max": 3
+        "max": 5
       },
       "archetype": "bulwark",
       "stat_profile": "armored",
@@ -284,8 +284,8 @@
         "elden_vale_sanctuary_caves"
       ],
       "level_range": {
-        "min": 3,
-        "max": 4
+        "min": 2,
+        "max": 5
       },
       "archetype": "arcanist",
       "stat_profile": "caster",
@@ -620,7 +620,7 @@
       ],
       "level_range": {
         "min": 4,
-        "max": 4
+        "max": 5
       },
       "archetype": "windup_attacker",
       "stat_profile": "armored",
@@ -790,7 +790,7 @@
       ],
       "level_range": {
         "min": 4,
-        "max": 4
+        "max": 5
       },
       "archetype": "windup_attacker",
       "stat_profile": "warded",

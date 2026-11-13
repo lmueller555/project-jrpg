@@ -65,25 +65,31 @@ the configuration validates coverage rather than guessing through walls.
 
 | Formation | Outer | Middle | Deep |
 | --- | ---: | ---: | ---: |
-| Cave Bat | 35% | 20% | 18% |
-| Lithrusk | 20% | 15% | 10% |
-| Veylume | 0% | 5% | 7% |
-| 2 Cave Bats | 30% | 20% | 17% |
-| Cave Bat + Lithrusk | 15% | 20% | 13% |
-| Cave Bat + Veylume | 0% | 10% | 10% |
-| Lithrusk + Veylume | 0% | 0% | 5% |
-| 3 Cave Bats | 0% | 5% | 6% |
-| 2 Cave Bats + Lithrusk | 0% | 3% | 5% |
-| 2 Cave Bats + Veylume | 0% | 1% | 3% |
-| Cave Bat + Lithrusk + Veylume | 0% | 1% | 1% |
-| 4 Cave Bats | 0% | 0% | 3% |
+| Cave Bat | 15% | 5% | 3% |
+| Lithrusk | 10% | 5% | 3% |
+| Veylume | 0% | 10% | 7% |
+| 2 Cave Bats | 25% | 10% | 7% |
+| Cave Bat + Lithrusk | 25% | 15% | 10% |
+| Cave Bat + Veylume | 15% | 20% | 18% |
+| Lithrusk + Veylume | 0% | 10% | 15% |
+| 3 Cave Bats | 10% | 5% | 5% |
+| 2 Cave Bats + Lithrusk | 0% | 5% | 5% |
+| 2 Cave Bats + Veylume | 0% | 8% | 10% |
+| Cave Bat + Lithrusk + Veylume | 0% | 7% | 10% |
+| 4 Cave Bats | 0% | 0% | 2% |
 | 3 Cave Bats + Lithrusk | 0% | 0% | 1% |
-| 3 Cave Bats + Veylume | 0% | 0% | 1% |
+| 3 Cave Bats + Veylume | 0% | 0% | 4% |
 
-Columns total 100%. The deeper pool gives 35% singles, 45% pairs, 15% trios
-and 5% quartets. A formation contains at most one Lithrusk and one Veylume.
-Outer Bats/Lithrusks are level 2. Middle Bats/Lithrusks are level 2–3 and
-Veylumes level 3. Deep Bats/Lithrusks are level 3 and Veylumes level 3–4.
+Columns total 100%. The deeper pool gives 13% singles, 50% pairs, 30% trios
+and 7% quartets. Veylumes appear in 15% of outer encounters, 55% of middle
+encounters and 64% of deep encounters. A formation contains at most one Lithrusk and one Veylume.
+All three species roll levels 2–3 in the outer cave, 3–4 in the middle, and
+4–5 in the deep cave, independently and uniformly per enemy. The introductory
+battle remains two level-2 Cave Bats. Encounter spacing remains 16–36 tiles
+with a mean and mode of 26 tiles.
+
+Pending encounters from earlier saves retain their already-selected levels;
+new encounters use the revised pools after settlement.
 
 ## Entry, combat and return
 
@@ -175,7 +181,7 @@ The three normal cave species currently have pending item drops, so their resolv
 drop bundles include independent Potion, Revival Salts, Ether and Rest Kit rolls for every enemy. See [Consumables](CONSUMABLES.md). Stagger, techniques beyond the three learned elemental Edges, and
 post-miniboss story resolution remain
 separate work. The one-time level-seven Vespermaw encounter is live in the Echo
-Chamber after the introductory lesson clears. Optional level-four Embravyr and
+Chamber after the introductory lesson clears. Optional level-five Embravyr and
 Nivareth use their own protected chambers, tickets and receipts; they are never
 selected by a weighted pool. Their guaranteed Red/White focuses and learned
 Edges do not change random formation weights or the 16–36-tile countdown.

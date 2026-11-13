@@ -73,7 +73,7 @@ class ElementalCaveAssetTests(unittest.TestCase):
         self.assertEqual(self.cave['navigation_points']['entrance'],[288,1660])
         self.assertEqual(self.cave['navigation_points']['vein_gallery'],[456,1280])
         self.assertEqual(self.cave['navigation_points']['splitstone_hollow'],[1100,1200])
-        self.assertEqual(self.cave['navigation_points']['echo_chamber'],[2060,300])
+        self.assertEqual(self.cave['navigation_points']['echo_chamber'],[2060,360])
         self.assertEqual(self.cave['arena']['enemy_id'],'vespermaw')
         self.assertEqual(len(self.cave['links']),1)
         self.assertEqual(self.cave['links'][0]['destination'],'elden_vale_sanctuary')
@@ -83,10 +83,10 @@ class ElementalCaveAssetTests(unittest.TestCase):
             'cave_overlook_cache':[1252,944],'cave_quiet_cache':[1710,570]})
         self.assertEqual(self.cave['routes']['main'],[[288,1660],[288,1510],[330,1400],
             [456,1280],[680,1270],[875,1240],[1100,1200],[1370,1180],[1510,1060],
-            [1680,970],[1730,800],[1790,700],[1810,600],[1920,520],[2000,420],[2060,300]])
+            [1680,970],[1730,800],[1790,700],[1810,600],[1920,520],[2000,420],[2060,360]])
         for enemy,arena in self.arenas.items():
             self.assertEqual(arena['enemy_id'],enemy)
-            self.assertEqual(arena['level'],4)
+            self.assertEqual(arena['level'],5)
             self.assertEqual(arena['room'],ROOMS[enemy])
             self.assertEqual(arena['battlefield'],FIELDS[enemy])
             self.assertEqual(arena['status'],'story_boss')

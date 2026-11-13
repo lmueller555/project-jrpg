@@ -19,6 +19,13 @@ MAP_PATH = ROOT/'assets/maps/sanctuary_cave/map.json'
 SCENE_ID = 'sanctuary_cave'
 SAVE_KEY = 'cave_random_encounters'
 AREAS = ('outer', 'middle', 'deep')
+# Pending encounters retain their committed levels across the Lucan rebalance.
+# Only validation uses these ranges; new selections use the current area table.
+LEGACY_LEVELS = {
+    'outer': {'cave_bat': (2, 2), 'lithrusk': (2, 2)},
+    'middle': {'cave_bat': (2, 3), 'lithrusk': (2, 3), 'veylume': (3, 3)},
+    'deep': {'cave_bat': (3, 3), 'lithrusk': (3, 3), 'veylume': (3, 4)},
+}
 BATTLEFIELDS = frozenset(('cave_outer', 'cave_grotto', 'cave_hollow', 'cave_depths'))
 UINT32 = 2**32-1
 STATE_FIELDS = frozenset(('version', 'identity', 'rng_state', 'sequence',
@@ -394,8 +401,11 @@ class CaveRandomEncounters:
         species = self.data['formations'][record['formation']]
         if not isinstance(members,list) or len(members) != len(species):return False
         for member,expected in zip(members,species):
+            low, high = area['levels'][expected]
+            old_low, old_high = LEGACY_LEVELS[record['area']].get(expected, (low, high))
+            limits = (2, 2) if intro else (min(low, old_low), max(high, old_high))
             if (not isinstance(member,dict) or set(member) != {'enemy_id','level'} or member['enemy_id'] != expected
-                    or not _integer(member['level'],*((2,2) if intro else area['levels'][expected]))):return False
+                    or not _integer(member['level'],*limits)):return False
         return True
 
     def to_dict(self):

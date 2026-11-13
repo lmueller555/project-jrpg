@@ -114,18 +114,18 @@ class BestiaryGenerationTests(unittest.TestCase):
 
     def test_new_cave_species_resolve_their_roles_and_full_elemental_profiles(self):
         expected = {
-            'lithrusk': {'name': 'Lithrusk', 'levels': (2, 3),
+            'lithrusk': {'name': 'Lithrusk', 'levels': (2, 5),
                          'profile': 'armored', 'concept': 'bulwark',
                          'style': 'standard_attacks', 'element': 'ground',
                          'percentages': {'water': 150, 'electric': 50}},
-            'veylume': {'name': 'Veylume', 'levels': (3, 4),
+            'veylume': {'name': 'Veylume', 'levels': (2, 5),
                         'profile': 'caster', 'concept': 'arcanist',
                         'style': 'magical_offense', 'element': 'electric',
                         'percentages': {'ground': 200}},
         }
         actions = load_actions()
         for identifier, design in expected.items():
-            for level in design['levels']:
+            for level in range(design['levels'][0], design['levels'][1]+1):
                 with self.subTest(enemy=identifier, level=level):
                     enemy = build_enemy(identifier, level)
                     metadata = enemy['metadata']
@@ -175,7 +175,7 @@ class BestiaryGenerationTests(unittest.TestCase):
                         self.assertLess(stats['mp'], 20)
 
     def test_new_species_keep_explicit_level_selection_and_detached_records(self):
-        for identifier, valid_levels in (('lithrusk', (2, 3)), ('veylume', (3, 4))):
+        for identifier, valid_levels in (('lithrusk', (2, 5)), ('veylume', (2, 5))):
             for level in (None, valid_levels[0]-1, valid_levels[-1]+1, True, 3.0):
                 with self.subTest(enemy=identifier, level=level), self.assertRaises(ValueError):
                     build_enemy(identifier, level)
@@ -280,7 +280,7 @@ class BestiaryGenerationTests(unittest.TestCase):
         self.assertNotIn('ai_enabled', generated['combat'])
 
     def test_caller_must_select_a_supported_level_and_known_enemy(self):
-        for level in (None, 0, 1, 4, 100, True, False, 2.0, '2', [], {}):
+        for level in (None, 0, 1, 6, 100, True, False, 2.0, '2', [], {}):
             with self.subTest(level=level):
                 with self.assertRaises(ValueError):build_enemy('cave_bat', level)
         for identifier in ('missing', '', True, None, [], {}):

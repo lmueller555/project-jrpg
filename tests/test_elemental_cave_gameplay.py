@@ -34,14 +34,20 @@ class ElementalCaveGameplayTests(unittest.TestCase):
             driver.meal();driver.attack_report();driver.departure()
             driver.rejoin_mira();driver.arrive()
             game = driver.game
+            # Arrival now owns the rescue choreography and Lucan's recruitment.
+            for _ in range(2400):
+                if game.sanctuary_arrival.completed:break
+                driver.tick(.2)
+                if game.sanctuary_arrival.dialogue:key(game, pygame.K_SPACE)
+            assert game.sanctuary_arrival.completed
             if not game.character_abilities.has_weapon():
                 assert game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade')
             game.character_abilities.learn_ability('caelan', 'aqua_edge')
             assert game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
                                               'battle_cleared': True, 'deferred': False})
             # Public EXP and recovery APIs establish a labelled rested level-four
-            # party. No companion beyond the actual MQ03 Caelan/Mira pair joins.
-            active = game.party.active_ids
+            # permanent pair. The recruited level-five guest retains his level.
+            active = tuple(key for key in game.party.active_ids if key != 'lucan')
             end_hp = {identifier: game.party.characters[identifier].current_hp for identifier in active}
             assert game.character_progression.apply(game.character_progression.preview(
                 total_xp_for_level(4), active, end_hp))
@@ -130,7 +136,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         ticket = self.game.elemental_bosses.pending
         self.assertTrue(valid_ticket(ticket))
         self.assertEqual(ticket['enemy_id'], enemy_id)
-        self.assertEqual(ticket['level'], 4)
+        self.assertEqual(ticket['level'], 5)
         self.assertEqual(ticket['receipt'], 'boss:'+enemy_id)
         self.assertEqual(json.loads(self.path.read_text())['elemental_bosses']['pending'], ticket)
         return ticket
@@ -158,13 +164,14 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         before = {key: self.game.character_progression[key].total_xp for key in self.game.party.active_ids}
         def previous_enemy(*args, **kwargs):
             result = build_enemy(*args, **kwargs)
-            result['xp_reward'] = 840
+            result['xp_reward'] = 940
             return result
         with patch('post_battle.build_enemy', side_effect=previous_enemy):self.victory()
-        self.assertEqual(self.game.combat.snapshot()['progression']['amount'], 840)
+        self.assertEqual(self.game.combat.snapshot()['progression']['amount'], 940)
         self.game = self.load();self.award()
         for key, total in before.items():
-            self.assertEqual(self.game.character_progression[key].total_xp, total+840)
+            self.assertEqual(self.game.character_progression[key].total_xp,
+                             total+(0 if key == 'lucan' else 940))
 
     def victory(self, *, caelan_ko=False):
         owner = self.game.combat
@@ -226,7 +233,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                         game.draw();click(game, scene.party_rows[marked]['row'].center)
                     actor = model.ready_actor
                     if actor == marked:command = 'guard'
-                    elif actor == 'mira':
+                    elif actor != 'player':
                         command = 'attack'
                     elif enemy_id == 'embravyr':
                         command = 'ice_edge' if 'ice_edge' in model.skill_actions() else 'aqua_edge'
@@ -261,7 +268,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                 for enemy_id in order:
                     self.start(enemy_id, seed=0);self.enter_battle()
                     self.assertEqual(self.game.combat.model.player.mp, 0)
-                    self.assertEqual([member.identifier for member in self.game.combat.model.party], ['player', 'mira'])
+                    self.assertEqual([member.identifier for member in self.game.combat.model.party], ['player', 'mira', 'lucan'])
                     trace = self.play_actual_battle(enemy_id)
                     self.assertTrue(any(event['type'] == 'impact' and event.get('actor') == 'player' for event in trace))
                     self.finish_spoils();self.read_acquisition(expected=enemy_id)
@@ -280,7 +287,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                           for identifier in self.game.party.active_ids}
                     ticket, pages = self.beat_and_collect(enemy_id)
                     reward = battle_reward_definition('elemental_boss', ticket)
-                    self.assertEqual(reward['xp'], 420)
+                    self.assertEqual(reward['xp'], 460)
                     self.assertEqual(self.game.inventory.quantity(entry['item']), 1)
                     self.assertIn(entry['gem'], self.game.character_abilities.owned_gems())
                     self.assertIn(entry['skill'], self.game.character_abilities.known_abilities())
@@ -289,9 +296,10 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                     self.assertTrue(self.game.elemental_bosses.bosses[enemy_id]['defeated'])
                     self.assertFalse(self.game.elemental_bosses.bosses[enemy_id]['pending_acquisition'])
                     self.assertEqual(self.game.elemental_bosses.victory_order, list(order[:index+1]))
-                    self.assertTrue(any(entry['skill_name'] in page for page in pages))
+                    self.assertTrue(any('focus is part of the blade now.' in page for page in pages))
                     for identifier, old in xp.items():
-                        self.assertEqual(self.game.character_progression[identifier].total_xp, old+420)
+                        self.assertEqual(self.game.character_progression[identifier].total_xp,
+                                         old+(0 if identifier == 'lucan' else 460))
                     self.assertEqual(self.story(), story)
                     self.assertTrue(self.game.save_progress())
                     self.game = self.load()
@@ -422,7 +430,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         game = self.game
         self.assertEqual(game.attributes.current_hp, 0)
         self.assertEqual(game.character_progression['caelan'].total_xp, xp['caelan'])
-        self.assertEqual(game.character_progression['mira'].total_xp, xp['mira']+420)
+        self.assertEqual(game.character_progression['mira'].total_xp, xp['mira']+460)
         self.assertEqual(game.inventory.quantity('white_focus_gem'), 1)
         self.assertIn('ice', game.character_abilities.owned_gems())
         self.assertIn('ice_edge', game.character_abilities.known_abilities())

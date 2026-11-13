@@ -43,12 +43,14 @@ class CaveEncounterCoreTests(unittest.TestCase):
                 self.assertLessEqual(members.count('veylume'),1)
                 counts[len(members)] += weight
             sizes[name] = dict(counts)
-        self.assertEqual(sizes, {'outer':{1:55,2:45,3:0,4:0},
-                                 'middle':{1:40,2:50,3:10,4:0},
-                                 'deep':{1:35,2:45,3:15,4:5}})
-        self.assertEqual(c.data['areas']['outer']['levels'],{'cave_bat':[2,2],'lithrusk':[2,2]})
-        self.assertEqual(c.data['areas']['middle']['levels']['veylume'],[3,3])
-        self.assertEqual(c.data['areas']['deep']['levels']['veylume'],[3,4])
+        self.assertEqual(sizes, {'outer':{1:25,2:65,3:10,4:0},
+                                 'middle':{1:20,2:55,3:25,4:0},
+                                 'deep':{1:13,2:50,3:30,4:7}})
+        for name, limits, veylume_rate in [('outer', [2,3], 15), ('middle', [3,4], 55), ('deep', [4,5], 64)]:
+            area = c.data['areas'][name]
+            self.assertEqual(area['levels'], {key: limits for key in ('cave_bat','lithrusk','veylume')})
+            self.assertEqual(sum(weight for formation, weight in area['weights'].items()
+                                 if 'veylume' in c.data['formations'][formation]), veylume_rate)
 
     def test_actual_room_polygons_and_corridors_choose_local_pool_and_safe_places(self):
         c = self.owner
@@ -68,6 +70,36 @@ class CaveEncounterCoreTests(unittest.TestCase):
         # This connector lies outside both named rooms: its authored tube owns
         # the region, rather than a nearest-room guess across solid rock.
         self.assertEqual(c.region_at((780,1255))['area'],'middle')
+
+    def test_new_encounters_use_local_levels_and_include_veylumes_in_every_area(self):
+        for position, limits in ((OUTER, (2,3)), (MIDDLE, (3,4)), (DEEP, (4,5))):
+            c = self.fresh(seed=321)
+            observed = set()
+            for _ in range(500):
+                ticket = c.advance(1000, position)
+                self.assertTrue(c.valid_ticket(ticket))
+                for member in ticket['members']:
+                    self.assertIn(member['level'], limits)
+                    observed.add((member['enemy_id'], member['level']))
+                c.finish(ticket['receipt'])
+            self.assertEqual(observed, {(species, level) for species in
+                ('cave_bat', 'lithrusk', 'veylume') for level in limits})
+
+    def test_legacy_pending_encounters_keep_committed_levels_on_continue(self):
+        from battle_model import BattleModel
+        from character_attributes import CharacterAttributes
+        for position, old_level in ((MIDDLE, 2), (DEEP, 3)):
+            c = self.fresh()
+            c.advance(1000, position)
+            state = c.to_dict()
+            state['pending']['formation'] = 'bat_lithrusk'
+            state['pending']['members'] = [{'enemy_id': species, 'level': old_level}
+                                          for species in ('cave_bat', 'lithrusk')]
+            restored = self.fresh(seed=1)
+            self.assertTrue(restored.restore(state))
+            self.assertEqual(restored.pending, state['pending'])
+            model = BattleModel.from_bestiary_group(CharacterAttributes(), restored.pending['members'])
+            self.assertEqual(len(model.enemies), 2)
 
     def test_counter_pauses_for_safe_places_zero_motion_ineligible_and_other_scenes(self):
         c = self.fresh()
@@ -161,9 +193,8 @@ class CaveEncounterCoreTests(unittest.TestCase):
                 self.assertAlmostEqual(counts[formation]/40,weight,delta=2)
         for _ in range(100):
             ticket = c.advance(1000,OUTER)
-            self.assertLessEqual(len(ticket['members']),2)
-            self.assertTrue(all(member['enemy_id'] != 'veylume' and member['level'] == 2
-                                for member in ticket['members']))
+            self.assertLessEqual(len(ticket['members']),3)
+            self.assertTrue(all(2 <= member['level'] <= 3 for member in ticket['members']))
             c.finish()
 
     def test_pending_handoff_reload_and_finish_are_detached_deterministic_and_idempotent(self):
@@ -234,7 +265,7 @@ class CaveEncounterCoreTests(unittest.TestCase):
             elif change == 'negative_weight':data['areas']['outer']['weights']['bat'] = -1
             elif change == 'five_enemies':data['formations']['bat_quartet'] += ['cave_bat']
             elif change == 'two_casters':data['formations']['bat_veylume'] = ['veylume','veylume']
-            elif change == 'outside_level':data['areas']['outer']['levels']['cave_bat'] = [2,4]
+            elif change == 'outside_level':data['areas']['outer']['levels']['cave_bat'] = [2,6]
             elif change == 'missing_room':data['rooms'].pop('quiet_shelf')
             elif change == 'route_gap':data['routes']['main']['bands'][0]['first'] = 1
             elif change == 'overlapping_band':data['routes']['main']['bands'][1]['first'] = 3

@@ -208,7 +208,7 @@ requires the Blue gem, an equipped blade and its learned unlock. Selecting or
 owning a gem never teaches its skill. MQ02 exposes only the experimental Aqua
 attempt: it fails, then inadvertently releases Aether Edge automatically. The
 later water utility spell does not grant Aqua Edge. The first Sanctuary cave
-encounter teaches Aqua Edge separately. Optional level-four Embravyr and
+encounter teaches Aqua Edge separately. Optional level-five Embravyr and
 Nivareth encounters then award the Red/Flame Edge and White/Ice Edge unlocks
 in either order. These still use one gear with one selected focus. Aether
 materials in inventory do not install gems.
@@ -399,7 +399,7 @@ See [save and migration details](CAELAN_AQUA_PROGRESSION.md).
 
 ## Optional elemental chambers
 
-Embravyr and Nivareth are fixed level-four formations of Fire and Ice Aether,
+Embravyr and Nivareth are fixed level-five formations of Fire and Ice Aether,
 encountered independently in the continuous Embervein and Stillfrost branches.
 Each has its own Approach / Party / Leave offer, live introduction and animated
 combat field. Both permit Flee, preserving spent resources. Defeat restores

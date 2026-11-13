@@ -139,7 +139,7 @@ class Review:
             if game.combat.model is not None and not game.combat.transitioning:break
             game.draw();self.tick(.05)
         assert game.combat.model is not None and not game.combat.transitioning, getattr(game.combat.entry, 'error', None)
-        self.photograph(enemy_id+'_opening.png', definition(enemy_id)['name']+' · level-four solo battle')
+        self.photograph(enemy_id+'_opening.png', definition(enemy_id)['name']+' · level-five solo battle')
         return ticket
 
     def switch_focus(self, gem):
