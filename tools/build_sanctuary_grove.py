@@ -223,7 +223,8 @@ def products():
         for layer in ('roots','trunk','canopy'):image.alpha_composite(pose[layer])
         combined.append(image)
     module('landmark_combined',combined,anchor,[footprint],layer='review_composite')
-    hero=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    # Retain the original scale-reference figure in historical material reviews.
+    hero=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     board=Image.new('RGB',(1200,700),palette['ground']);draw=ImageDraw.Draw(board)
     font=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),18)
     small=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),15)

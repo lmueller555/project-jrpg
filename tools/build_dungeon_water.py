@@ -267,7 +267,7 @@ class WaterAuthor:
         inputs=[SOURCE,Path(__file__).resolve(),ROOT/'tools/build_limestone_cave_assets.py',
                 ROOT/'assets/source/terrain/limestone_cave/recipe.json',
                 ROOT/'assets/terrain/overworld/elden_vale/polish/props/ridge.png',
-                ROOT/'assets/characters/caelan/idle_front.png']
+                ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png']
         manifest={'version':1,'id':self.spec['id'],'approval_status':self.spec['approval_status'],
                   'tile_size':24,'source_recipe':SOURCE.relative_to(ROOT).as_posix(),
                   'modules':self.modules,'inputs':{str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in inputs},
@@ -290,7 +290,7 @@ class WaterAuthor:
                 board.paste(frame,(x+(cellw-frame.width)//2,y),frame)
                 label=name.replace('stream.','stream.\n').replace('bank.','bank.\n')
                 draw.multiline_text((x+3,y+150),label,fill='#e6dfc9',font=font,spacing=2)
-            ca=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+            ca=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
             ca=ca.resize((ca.width*2,ca.height*2),Image.Resampling.NEAREST)
             board.paste(ca,(cols*cellw-74,10),ca)
             draw.text((cols*cellw-150,55),'Caelan / same 2x',fill='#c4d2c6',font=font)

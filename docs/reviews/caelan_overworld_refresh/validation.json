@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "selected_suites": [
+    "test_caelan_overworld_refresh",
+    "test_caelan_left_run",
+    "test_caelan_directional_runs",
+    "test_opening_sequence",
+    "test_polished_opening",
+    "test_opening_gameplay",
+    "test_halden_visit",
+    "test_elira_visit",
+    "test_venn_visit",
+    "test_venn_magicks",
+    "test_mill_quest",
+    "test_lantern_quest",
+    "test_lantern_actor_handoffs",
+    "test_regional_participation",
+    "test_regent_emergency_assets",
+    "test_regent_arrival_staging",
+    "test_cave_aqua_lesson",
+    "test_sanctuary_arrival_objects",
+    "test_grass_asset_proportions",
+    "test_sanctuary_grove_assets"
+  ],
+  "baseline_comparison": {
+    "commit": "f8b33a2baf1d54816e862333d35881e7900f182c",
+    "method": "Detached checkout with original code and assets; temporary journey/settings files.",
+    "reproduced_failures": [
+      "test_halden_visit.HaldenGameplayTests.test_invalid_cross_quest_save_rejected_and_new_game_resets_progress",
+      "test_elira_visit.EliraGameplayTests.test_invalid_progress_never_overwrites_save_and_new_game_clears_local_facts",
+      "test_venn_visit.VennGameplayTests.test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched",
+      "test_lantern_quest.LanternQuestTests.test_active_quest_without_durable_record_is_rejected"
+    ],
+    "reason": "These older assertions expect every corrupt resume checkpoint to disable Continue. The existing save-library fallback can instead offer a separate valid recovery snapshot. The failures reproduce before the sprite refresh and its art assertions.",
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=tests python -m unittest -v test_halden_visit.HaldenGameplayTests.test_invalid_cross_quest_save_rejected_and_new_game_resets_progress test_elira_visit.EliraGameplayTests.test_invalid_progress_never_overwrites_save_and_new_game_clears_local_facts test_venn_visit.VennGameplayTests.test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched test_lantern_quest.LanternQuestTests.test_active_quest_without_durable_record_is_rejected"
+  },
+  "runs": [
+    {
+      "selection": "all 20 suites before updating obsolete artwork assertions and source-reference provenance",
+      "test_cases": 204,
+      "failure_reports": 16,
+      "errors": 2,
+      "note": "Nine failure reports are Lantern subtests within one artwork test; the two source-reference test cases each report a hash failure and builder error."
+    },
+    {
+      "selection": "Core authored travel registration and migrated run contracts after the face-source correction",
+      "test_cases": 11,
+      "result": "passed"
+    },
+    {
+      "selection": "First ten selected suites, with the three independently reproduced save-fallback assertions excluded",
+      "test_cases": 96,
+      "result": "passed"
+    },
+    {
+      "selection": "Second split, before moving to isolated module processes",
+      "selected_test_cases": 105,
+      "completed_passes": 42,
+      "result": "interrupted",
+      "exit_code": 137,
+      "note": "No assertion failures were reported before process termination. Every selected case is rerun in a fresh module process."
+    },
+    {
+      "selection": "Final gait source: core travel 11, Venn authored poses, Lantern authored construction, and pickup ownership continuity",
+      "test_cases": 14,
+      "result": "passed"
+    },
+    {
+      "selection": "Remaining eleven suites, run one module per process; independently reproduced Lantern save-fallback assertion excluded",
+      "test_cases": 105,
+      "result": "passed",
+      "modules": [
+        {
+          "module": "test_mill_quest",
+          "tests": 20,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_lantern_quest",
+          "tests": 23,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_lantern_actor_handoffs",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_regional_participation",
+          "tests": 14,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_regent_emergency_assets",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_regent_arrival_staging",
+          "tests": 10,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_cave_aqua_lesson",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_sanctuary_arrival_objects",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_grass_asset_proportions",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_sanctuary_grove_assets",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        },
+        {
+          "module": "test_caelan_pickup_continuity",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "current_status": "All 201 selected integration cases passed. Four save-fallback assertions reproduce on the original baseline and remain unchanged. After the final gait source, all 14 focused travel/action/ownership cases passed again. The review preserves historical approvals and labels new artwork review; visual approval remains a separate native-scale scene review.",
+  "additional_suites": [
+    "test_caelan_pickup_continuity"
+  ],
+  "final_travel_source_sha256": "bbe99437fe56a14d9d25c8197dc42620f0f599346051cb39118b77ce9b8c8aa2",
+  "native_gait_regression": {
+    "metric": "Mean x of visible grounded-boot pixels at rows 31:35 minus mean x of visible head pixels at rows 2:10, comparing contact phases 1 and 3. Both directions must switch sign with magnitude above 0.25 native pixels.",
+    "front_contact_leads_px": [
+      -1.349,
+      0.643
+    ],
+    "back_contact_leads_px": [
+      1.035,
+      -1.755
+    ],
+    "scope": "This detects the reviewed repeated-leg contact defect; source provenance and silhouette metrics do not replace a native-scale animation and scene review."
+  },
+  "final_summary": {
+    "available_cases": 205,
+    "passed_distinct_cases": 201,
+    "independently_reproduced_baseline_assertions_excluded": 4,
+    "suites": 21,
+    "final_source_focused_rerun_cases": 14,
+    "final_source_focused_rerun_result": "passed",
+    "compile_and_whitespace_checks": "passed"
+  },
+  "historical_scale_reference_provenance": {
+    "result": "passed",
+    "purpose": "Pin immutable terrain/NPC scale references to the retained original Caelan sprite without redrawing unrelated artwork.",
+    "focused_test_cases": 42,
+    "focused_suites": [
+      "test_regent_emergency_assets",
+      "test_sanctuary_grove_assets",
+      "test_sanctuary_crystal_assets",
+      "test_production_grass_assets",
+      "test_grass_demo",
+      "test_grass_asset_proportions",
+      "test_limestone_cave_review",
+      "test_dungeon_pack_expansion"
+    ],
+    "raster_product_comparisons_byte_identical": 1888,
+    "terrain_npc_and_historical_review_raster_files_changed": 0,
+    "catalog_pdf_byte_identical": true,
+    "catalog_archive_member_set_unchanged": true,
+    "catalog_archive_changed_members_provenance_json_only": [
+      "assets/terrain/limestone_cave/assets.json",
+      "assets/terrain/limestone_cave/geology/assets.json",
+      "assets/terrain/limestone_cave/micro_adapters/assets.json",
+      "assets/terrain/limestone_cave/structure/assets.json",
+      "assets/terrain/limestone_cave/wall_gems/assets.json",
+      "assets/terrain/limestone_cave/water/assets.json"
+    ],
+    "historical_approval_records": "Unchanged, including Finn/Rowan historical approved-PNG snapshots and retained review archives.",
+    "verification": "All PNG/GIF and other non-metadata products were compared byte-for-byte before writing; only source recipes, builder references, generated JSON provenance, and provenance JSON inside the catalog ZIP changed. Source/builder checks and whitespace validation pass."
+  }
+}

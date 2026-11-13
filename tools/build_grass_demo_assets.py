@@ -152,7 +152,8 @@ def products():
             raise ValueError('Original grass reference changed: '+source['path'])
     output={};material_images={};plant_images={}
     palette=recipe['palette']
-    hero=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    # Historical scale references retain the original approved figure.
+    hero=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     hero_bounds=hero.getchannel('A').getbbox()
     character_height=hero_bounds[3]-hero_bounds[1]
     if recipe['opaque_height_limit'] != (character_height+1)//2:

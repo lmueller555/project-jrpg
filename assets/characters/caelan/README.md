@@ -1,28 +1,34 @@
-# Caelan — directional idle sprites
+# Caelan — current overworld artwork
 
-Caelan is **18 years old** at the beginning of Game I and is Tomas's older
-biological brother; see [approved character facts](../../../docs/narrative/game_01/CHARACTERS.md).
+The overworld quality refresh replaces the four directional idles, sixteen walk
+frames and sixteen run frames with registered authored drawings. Status is
+**review**, pending the user's visual review after merge. Earlier approvals
+remain historical records; they do not approve this new appearance.
 
-All four directional idle designs and the four-frame walking cycles for [front](walk_front/README.md), [left](walk_left/README.md), [right](walk_right/README.md), and [back](walk_back/README.md), including their coordinated head-and-shoulder bob, were explicitly approved by the user in chat.
+Caelan retains chestnut hair, ivory sleeves/tunic, teal tabard with ochre edging,
+brown leather belt/boots, wrist bracers, dark trousers and the anatomical-left
+hip pouch. Profiles have distinct authored faces, sleeves and near/far limbs.
 
-## Files
+All individual runtime frames stay **24×36**, with metadata foot anchor
+`[12,34]`. The map's existing draw anchor `[12,30]`, player collision, movement
+speed and gait timing are preserved. Walks remain four phases at 140 ms each;
+runs remain four phases at 100 ms with compact raised flight poses. Registration
+moves whole drawings; it never stretches anatomy or changes planted feet within
+a drawing. Ordinary travel depicts no separate sword or tool.
 
-- `idle_front.png`: approved transparent 24×36 front idle.
-- `idle_left.png`, `idle_right.png`, `idle_back.png`: approved transparent 24×36 directional idles. Left/right describe the direction the character faces on screen.
-- `idle_directions.png`: transparent 96×36 sheet, ordered front, left, right, back.
-- `idle_directions.json`: frame rectangles, foot anchors, and approval status; a standalone asset description, not an engine integration.
-- `idle_directions_review.png`: labeled 12× enlargement on a light background for review, not a runtime texture.
-- `idle_front_preview.png` and `idle_front_review.png`: earlier enlarged front views.
-- `walk_directions.png`: approved native 96×144 walking sheet, with front, left, right, and back rows; each row contains four 24×36 frames.
-- `walk_directions.json`: row/frame rectangles, approval status, and links to each direction's animation metadata.
-- `walk_directions_review.gif`: labeled 12× comparison loop, ordered front, left, right, back; `walk_directions_review.png` is its first frame for static inspection.
+Rebuild with:
 
-Every frame uses hard transparency, colors from the approved front palette, and a shared foot anchor at `[12, 34]` in frame coordinates. Frame bounds are 24×36; the visible character occupies a smaller area within that transparent frame. The reference terrain scale discussed in chat is 24×24 pixels.
+```sh
+python tools/build_caelan_overworld.py
+python tools/build_caelan_overworld.py --check
+```
 
-## Appearance
+Sources, exact rectangles, scales and hashes are in
+`../../source/characters/caelan/overworld_refresh/`. The main builder refreshes
+individual runtime PNGs, current combined sheets, manifests and scoped world
+pose derivatives. Historical procedural walk/run builders describe older art;
+the authored builder is the current source of truth.
 
-Chestnut hair, ivory tunic and sleeves, teal outer tabard, ochre trim, brown belt/pouch and boots, and dark trousers. The hip pouch should remain on the character's anatomical left as animations are developed. Use the approved idle views as the visual references for animation.
-
-Generated source concepts are retained in `../../source/characters/caelan/`. They are high-resolution references; the native game-sized sprites are the 24×36 files here. Native exports use nearest-neighbor sampling, hard alpha, and palette mapping. Review images use whole-number enlargement without smoothing.
-
-This artwork approval does not alter the preserved story documents or their character-name spelling. There is currently no game runtime.
+Current preview and validation evidence:
+[overworld quality review](../../../docs/reviews/caelan_overworld_refresh/README.md).
+The earlier review GIFs and approval manifests remain unchanged as history.

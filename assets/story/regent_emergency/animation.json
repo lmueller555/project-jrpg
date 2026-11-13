@@ -65,7 +65,7 @@
   "portrait": "assets/story/regent_emergency/portrait.png",
   "frame_duration_ms": 140,
   "source_recipe": "assets/source/story/regent_emergency/recipe.json",
-  "source_recipe_sha256": "07be0bb367b636bcbff2447e7883f742257cdbd79f4fcd9d9d7eb0c5420c1e47",
+  "source_recipe_sha256": "13132e45fd6f6655df2736957563fafa79ef741307a32b3aa11756c70a5aa37d",
   "source_assets": [
     {
       "path": "assets/characters/npcs/male_03/idle_front.png",
@@ -152,7 +152,7 @@
       "sha256": "2692a09086b07a222fe4e714018783c5c39cd73778cbd3891d3ca6081837c869"
     },
     {
-      "path": "assets/characters/caelan/idle_front.png",
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png",
       "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
     },
     {

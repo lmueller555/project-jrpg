@@ -1,5 +1,7 @@
 """Rebuild the approved Caelan left-facing run and review exports. Requires Pillow."""
 from pathlib import Path
+if (Path(__file__).resolve().parents[1]/'assets/source/characters/caelan/overworld_refresh/registration.json').exists():
+ raise SystemExit('Historical Caelan builder: use python tools/build_caelan_overworld.py for the current authored artwork.')
 import json, hashlib
 from PIL import Image, ImageDraw, ImageFont
 ROOT=Path(__file__).resolve().parents[1]

@@ -279,7 +279,7 @@ class GeologyAuthor:
                 patch=patch.resize((96,96),Image.Resampling.NEAREST)
                 x=20+col*cell_w;y=offset+row*cell_h
                 d.text((x,y),key,font=small,fill='#d5d5bf');board.paste(patch,(x,y+24),patch)
-        ca_path=ROOT/'assets/characters/caelan/idle_front.png'
+        ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png'
         with Image.open(ca_path) as source:ca=source.convert('RGBA')
         ca=ca.resize((ca.width*2,ca.height*2),Image.Resampling.NEAREST)
         board.paste(ca,(board.width-90,board.height-85),ca)

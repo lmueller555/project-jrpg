@@ -17,7 +17,7 @@
   ],
   "source": "assets/story/lantern/poses/caelan_source.png",
   "source_idle": "assets/characters/caelan/idle_right.png",
-  "source_sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
+  "source_sha256": "627b57449556c81211da5c4ee4bd0d1f59f4576e803fa193bb3d079d78057a2f",
   "sheet": "assets/story/lantern/poses/caelan.png",
   "actions": {
     "work": [
@@ -50,7 +50,8 @@
         "native_wrist": [
           16.0,
           23.0
-        ]
+        ],
+        "appearance_source_cell": 24
       },
       {
         "rect": [
@@ -81,7 +82,8 @@
         "native_wrist": [
           19.0,
           20.0
-        ]
+        ],
+        "appearance_source_cell": 25
       },
       {
         "rect": [
@@ -112,7 +114,8 @@
         "native_wrist": [
           22.0,
           18.0
-        ]
+        ],
+        "appearance_source_cell": 26
       },
       {
         "rect": [
@@ -143,7 +146,8 @@
         "native_wrist": [
           22.0,
           18.0
-        ]
+        ],
+        "appearance_source_cell": 26
       },
       {
         "rect": [
@@ -174,7 +178,8 @@
         "native_wrist": [
           19.0,
           20.0
-        ]
+        ],
+        "appearance_source_cell": 27
       }
     ],
     "support": [
@@ -207,7 +212,8 @@
         "native_wrist": [
           16.0,
           23.0
-        ]
+        ],
+        "appearance_source_cell": 24
       },
       {
         "rect": [
@@ -238,7 +244,8 @@
         "native_wrist": [
           19.0,
           22.0
-        ]
+        ],
+        "appearance_source_cell": 25
       },
       {
         "rect": [
@@ -269,7 +276,8 @@
         "native_wrist": [
           21.0,
           21.0
-        ]
+        ],
+        "appearance_source_cell": 26
       },
       {
         "rect": [
@@ -300,7 +308,8 @@
         "native_wrist": [
           21.0,
           21.0
-        ]
+        ],
+        "appearance_source_cell": 27
       }
     ]
   },
@@ -337,5 +346,8 @@
     5,
     1
   ],
-  "lift_height_pixels": 0
+  "lift_height_pixels": 0,
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "appearance_registration": "Authored natural poses; existing canvas, ground anchor and event timing retained."
 }

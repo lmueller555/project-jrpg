@@ -240,7 +240,8 @@ def products():
     font=ImageFont.truetype(str(fontpath),16);small=ImageFont.truetype(str(fontpath),13)
     board=Image.new('RGB',(1240,990),'#173f31');d=ImageDraw.Draw(board)
     d.text((20,14),'Sanctuary crystals / authored native modules / Caelan 34px',font=font,fill='#e3e9d9')
-    hero=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    # Historical scale references retain the original approved figure.
+    hero=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     shapes=list(recipe['shapes']);colors=list(recipe['palettes'])
     for row,name in enumerate(colors):
         yy=65+row*190

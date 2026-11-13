@@ -1,8 +1,7 @@
 {
   "character": "caelan",
   "animation": "walk.right",
-  "status": "approved",
-  "image": "spritesheet.png",
+  "status": "review",
   "frame_size": [
     24,
     36
@@ -12,6 +11,8 @@
     34
   ],
   "loop": true,
+  "image": "spritesheet.png",
+  "source": "assets/source/characters/caelan/overworld_refresh/travel_authored.png",
   "frames": [
     {
       "file": "frame_01.png",
@@ -23,14 +24,7 @@
       ],
       "duration_ms": 140,
       "phase": "contact_a",
-      "head_offset": [
-        0,
-        0
-      ],
-      "upper_body_offset": [
-        0,
-        0
-      ]
+      "airborne": false
     },
     {
       "file": "frame_02.png",
@@ -42,14 +36,7 @@
       ],
       "duration_ms": 140,
       "phase": "passing_a",
-      "head_offset": [
-        0,
-        -1
-      ],
-      "upper_body_offset": [
-        0,
-        -1
-      ]
+      "airborne": false
     },
     {
       "file": "frame_03.png",
@@ -61,14 +48,7 @@
       ],
       "duration_ms": 140,
       "phase": "contact_b",
-      "head_offset": [
-        0,
-        0
-      ],
-      "upper_body_offset": [
-        0,
-        0
-      ]
+      "airborne": false
     },
     {
       "file": "frame_04.png",
@@ -80,19 +60,7 @@
       ],
       "duration_ms": 140,
       "phase": "passing_b",
-      "head_offset": [
-        0,
-        -1
-      ],
-      "upper_body_offset": [
-        0,
-        -1
-      ]
+      "airborne": false
     }
-  ],
-  "review": {
-    "gif": "walk_right_preview.gif",
-    "scale": 20,
-    "background": "#e8edf2"
-  }
+  ]
 }

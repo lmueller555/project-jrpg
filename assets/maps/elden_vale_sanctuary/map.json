@@ -16723,7 +16723,7 @@
     "art_manifest": "assets/terrain/elden_vale_sanctuary/art.json",
     "source_assets": [
       {
-        "path": "assets/characters/caelan/idle_front.png",
+        "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png",
         "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
       },
       {
@@ -16732,11 +16732,11 @@
       },
       {
         "path": "assets/source/terrain/sanctuary_fantasy/crystals.json",
-        "sha256": "1c6ff97069e76f08c681ab4c8e25237b345da66ae07e5bd9774af7124136028e"
+        "sha256": "b1168eb6c7a06011eb7eaa59e261230ca7fada59a0ac7c3a7bbba4b04b94f086"
       },
       {
         "path": "assets/source/terrain/sanctuary_fantasy/grove.json",
-        "sha256": "15c4ead603a10bde42874db2604abbf0002a4944caf138fc04b1300a8eaf755a"
+        "sha256": "a23599a2590329fc693d7828f61a0317537a771883c1e206adb36430eca39a3b"
       },
       {
         "path": "assets/terrain/eldenmere/foliage/palette.json",
@@ -16872,7 +16872,7 @@
       },
       {
         "path": "assets/terrain/grass/assets.json",
-        "sha256": "b0f27b68d695ffc3502ccf91f304ee2e4a74c85aba792bb7533a7316f93fc68d"
+        "sha256": "a49721c76abc9820a5d36f8e5c0eacf132ccc6be066210331fb43dc0dfa7b530"
       },
       {
         "path": "assets/terrain/grass/dirt/mask_000.png",
@@ -17192,7 +17192,7 @@
       },
       {
         "path": "assets/terrain/sanctuary_fantasy/crystals/assets.json",
-        "sha256": "2643e565f84d453d7447628a5e3bfff8c7cf6877a4de109c7a574189a1a880c3"
+        "sha256": "5df4396d77ee3d26fac7876eea245053b04f1f15c8e881f7463fe21a9261b0fd"
       },
       {
         "path": "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_00.png",
@@ -17424,7 +17424,7 @@
       },
       {
         "path": "assets/terrain/sanctuary_fantasy/grove/assets.json",
-        "sha256": "9a40cf49a74c0c181ff06943c4f9d3b385f8acf8191ebca683f497dcc7b97c4a"
+        "sha256": "fb74d001a47e057cf4cffff84a426dd1c7f1e07f0cf282b6e4f01cc8f59229cc"
       },
       {
         "path": "assets/terrain/sanctuary_fantasy/grove/blossom_cyan/frame_00.png",

@@ -14297,10 +14297,10 @@
     "assets/terrain/limestone_cave/water/modules/wet_crack/2/frame_05.png"
   ],
   "inputs": {
-    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+    "assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
     "assets/source/terrain/limestone_cave/catalog.json": "c69bda4f2501b384628d3a273e31e751270e8c223773d31b77ddcc35df471e07",
-    "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
-    "assets/terrain/limestone_cave/geology/assets.json": "231bb9910c45c01192238480852e563389caae017c45f7046a1d0d27e5a7a925",
+    "assets/terrain/limestone_cave/assets.json": "0602455fbd55cf09aa3ae5e0b98e6b4e1d6c29d4a8da01a519bdb06a7dd5889a",
+    "assets/terrain/limestone_cave/geology/assets.json": "0e0f5992af54d0187eb9dcf75ff1fa377d7822eaf15e2efcf16abf89f81eba29",
     "assets/terrain/limestone_cave/geology/modules/crack/branching/0.png": "7f1cf649fe0a3df6947f50505c58b82af6e6bc83e1656ad032e63af5b7e4ca21",
     "assets/terrain/limestone_cave/geology/modules/crack/branching/1.png": "0ad245a2106b38e291f0d281552dc915b659fc877f405a2c4f5ed1786ccad4bf",
     "assets/terrain/limestone_cave/geology/modules/crack/branching/2.png": "61edb7ba07c43352921144e74a1972e7a0eaa8ff4c40dc2c0e0eb5f0a87d4950",
@@ -14373,7 +14373,7 @@
     "assets/terrain/limestone_cave/geology/tiles/earth_01.png": "88a157810a32efb9d33a69e203ff646d509c71ed264ff75a4d6863ba492cfe59",
     "assets/terrain/limestone_cave/geology/tiles/earth_02.png": "b70535ef21d6caa6666ad973422ece605a8a5e0ec542868983966e47da7a4765",
     "assets/terrain/limestone_cave/geology/tiles/earth_03.png": "74767f1b23910cc73eda583eab828c26216561dfca6919bb7b57d08aad495819",
-    "assets/terrain/limestone_cave/micro_adapters/assets.json": "99c101a0311831579683b6ebee93d22f140eab7ee53efca115d6a5101babe129",
+    "assets/terrain/limestone_cave/micro_adapters/assets.json": "2461b93d15fd2d6909965ff67f2705077eff2c991311a3136bc9e5c1fce2ec51",
     "assets/terrain/limestone_cave/micro_adapters/blue/corner_inner/frame_00.png": "8ac7cd5638270f5588c7556757065932959e5fe73a843b573a540a5e6c82d8d3",
     "assets/terrain/limestone_cave/micro_adapters/blue/corner_inner/frame_01.png": "af52b82349357b2980660a6062f9e52ba8e7ed96746127cf84fd69b2976c9a0d",
     "assets/terrain/limestone_cave/micro_adapters/blue/corner_inner/frame_02.png": "e154756dcc0c8b2e4fe921566b30484ac83b28f803c9d1930ead0ea776626882",
@@ -14723,7 +14723,7 @@
     "assets/terrain/limestone_cave/modules/wall/return_right/0.png": "d1f478283a3701bf6693f59fa9d1c962d320e2c2c9d0efef04fc64df9b851f48",
     "assets/terrain/limestone_cave/modules/wall/return_right/1.png": "ba6a0f9bc4f310b7899957baade205d8787c4af645f4285fe395b1bf79d76181",
     "assets/terrain/limestone_cave/modules/wall/return_right/2.png": "73f046c96bab0fa7991cf7928a3b0e968f5beb5b0314a00dfbf56379b6228ebe",
-    "assets/terrain/limestone_cave/structure/assets.json": "4d903df978d41668f8860ec2fcea5e3f502a9ed06ee65220b3b2c95b24f5c8e4",
+    "assets/terrain/limestone_cave/structure/assets.json": "b744c8fc1146f6a6aba79d68e5f0b6f6252b0e4a0418544a05bdbc870ce25ec0",
     "assets/terrain/limestone_cave/structure/modules/alcove/east.png": "6ee89334b505c841d0cfb6b78abf0f146a524b83ebaed14efd6a5bcf2428a5bc",
     "assets/terrain/limestone_cave/structure/modules/alcove/north.png": "754ea939830cc4f3c156ba81e3798cec9110bc5a319b6b74500766b45c0915b9",
     "assets/terrain/limestone_cave/structure/modules/alcove/south.png": "d3d6a4808101cb915f9c353ed5e4f8a2e0e6a41aa4b5d68a50367d62bed021c7",
@@ -14810,7 +14810,7 @@
     "assets/terrain/limestone_cave/tiles/silt_01.png": "8c2b5857c993baa62719c573adc6324e15fcddb4708ddd39e370299950baecd3",
     "assets/terrain/limestone_cave/tiles/silt_02.png": "677bdb40136a03d495bf052069d64b42ba54c05e066b2f7849717c715400dd7c",
     "assets/terrain/limestone_cave/tiles/silt_03.png": "73c284e98cd206433853bcec12e19bd7a595c0ac5c952ab5085a415eafacbae6",
-    "assets/terrain/limestone_cave/wall_gems/assets.json": "3e206e020a28d049a9c40596d3e05c2aa9ca6106dd862685a2b38866b4e4589d",
+    "assets/terrain/limestone_cave/wall_gems/assets.json": "5570b3e766181dd70cac7acb9c8a672d5923bc60f716c4ee66954b26dd45db85",
     "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_00.png": "b28b11113e07c8e24777d487f15220de7d636cbf983f461c35cb657a325bf886",
     "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_01.png": "e689d02063ca073836fafa0b1a0fd0e8013aa37900e97f61096105d082eb03c3",
     "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_02.png": "71ef143d6a2ac0f83e77b7c25e246267ef58203171a4190a3d71eca6578c44fa",
@@ -14919,7 +14919,7 @@
     "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_03.png": "60a24122afd16601d50f7be312aacdbe730d4495e3c8ff0f4f2e8e90609ac24a",
     "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_04.png": "d0dab3b2fc7cf79405ebc489a81e4756fab6a891a390ca755387cd0a6e34b885",
     "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_05.png": "23c6c2eac42b0ffb812650fc12eedbeeb29f6262de71662eb99a9ef7889ea451",
-    "assets/terrain/limestone_cave/water/assets.json": "92ba7d1f88ed8789d2b73ca45e851043de92db6c8fddfb35724fd4339546f278",
+    "assets/terrain/limestone_cave/water/assets.json": "3b43e35d770298e5ec31db5f6a9ce477194f57afdfa1ebfab5e8cb7917a5711b",
     "assets/terrain/limestone_cave/water/masks/bank/east/0.png": "b13993a3e857ec06d7abe796d08eb94956d04363c53a4e617ca083e25dca9bc7",
     "assets/terrain/limestone_cave/water/masks/bank/east/1.png": "cc84cc4554f91e0c2df4f42c7ba94e08489f58a25330b9d14d06bd9e41c640a4",
     "assets/terrain/limestone_cave/water/masks/bank/inner_ne/0.png": "5dc55b095123c6cc36af83a4733378702c517c912ace661bfd519bc0a5caa3a2",
@@ -15423,7 +15423,7 @@
     "assets/terrain/limestone_cave/catalog/page_23_micro_adapters_density_patterns.gif": "0289db79b5c94aebedcafbc9570e4df512c20ad664f9c2a090dada1b9260b104",
     "assets/terrain/limestone_cave/catalog/overview.png": "ba3d3f846b8bd6f402b9b771fed8712d2b45f1732d006883f5229dc33487674b",
     "assets/terrain/limestone_cave/catalog/full_catalog.pdf": "2ab15832fb318473304b731b9e60568b82392169bef621a4b6d18748832f8e11",
-    "assets/terrain/limestone_cave/catalog/native_assets.zip": "81b507b1b606379ec464e7c6576636ff79e4a2ddb64e5310d91e30acc13ddaa3",
+    "assets/terrain/limestone_cave/catalog/native_assets.zip": "86e56756f7b2eef1463850498f9eb4ea1802dd3ae35b1dfc6649d94f5fc35303",
     "assets/terrain/limestone_cave/catalog/README.md": "9554271d95cfa1c13171fc2b56bd5ff94baa229ee00e995a71f2ad79731c47b9"
   }
 }

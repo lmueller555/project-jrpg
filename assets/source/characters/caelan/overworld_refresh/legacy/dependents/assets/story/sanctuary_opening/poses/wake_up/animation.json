@@ -1,0 +1,87 @@
+{
+  "id": "wake_up",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "frame_count": 4,
+  "duration_ms": 860,
+  "loop": false,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 140,
+      "kind": "pillow_head",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "display_position": [
+        60,
+        153
+      ],
+      "head_bottom": 13
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 280,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "display_position": [
+        60,
+        153
+      ],
+      "head_bottom": 13,
+      "bed_occlusion_below_head": true,
+      "bed_occlusion": true
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 260,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "display_position": [
+        90,
+        170
+      ],
+      "head_bottom": 15,
+      "bed_occlusion_below_head": true,
+      "bed_occlusion": true
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 180,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "display_position": [
+        90,
+        186
+      ],
+      "head_bottom": 13
+    }
+  ],
+  "registration": "Keep the pillow-head key anchored. From the awake full-body key, interpolate the whole body toward the right bed edge. Restore blanket pixels only below the current head_bottom and inside bed_rect.",
+  "bed_rect": [
+    36,
+    108,
+    48,
+    72
+  ],
+  "standing_position": [
+    90,
+    186
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "caelan_seated_cup",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "frame_count": 4,
+  "duration_ms": 760,
+  "loop": false,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 140,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "wrist": [
+        16,
+        25
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 200,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "wrist": [
+        16,
+        20
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 240,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "wrist": [
+        20,
+        23
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 180,
+      "kind": "body",
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "wrist": [
+        16,
+        25
+      ]
+    }
+  ],
+  "registration": "Interpolate display positions continuously; logical standing feet stay on clear floor.",
+  "cup_attachment_offset": [
+    -2,
+    -4
+  ],
+  "table_cup_position": [
+    146,
+    189
+  ],
+  "release_frame": 3
+}

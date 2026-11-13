@@ -22,7 +22,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/terrain/limestone_cave/catalog.json'
 OUT = 'assets/terrain/limestone_cave/catalog'
-CAELAN = 'assets/characters/caelan/idle_front.png'
+CAELAN = 'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png'
 BG = '#222f2b'
 PAPER = '#ede4cf'
 MUTED = '#b5c4b7'

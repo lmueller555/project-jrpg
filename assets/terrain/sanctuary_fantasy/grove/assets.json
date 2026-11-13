@@ -450,14 +450,14 @@
     }
   },
   "source_recipe": "assets/source/terrain/sanctuary_fantasy/grove.json",
-  "source_recipe_sha256": "15c4ead603a10bde42874db2604abbf0002a4944caf138fc04b1300a8eaf755a",
+  "source_recipe_sha256": "a23599a2590329fc693d7828f61a0317537a771883c1e206adb36430eca39a3b",
   "source_assets": [
     {
       "path": "assets/terrain/eldenmere/foliage/tree/idle.png",
       "sha256": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7"
     },
     {
-      "path": "assets/characters/caelan/idle_front.png",
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png",
       "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
     },
     {

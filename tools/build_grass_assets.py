@@ -50,7 +50,8 @@ def products():
         output[OUTPUT/relative] = (json.dumps(data, indent=2)+'\n').encode()
         return (OUTPUT/relative).relative_to(ROOT).as_posix()
 
-    hero = Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    # Historical scale references retain the original approved figure.
+    hero = Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     bounds = hero.getchannel('A').getbbox()
     character_height = bounds[3]-bounds[1]
     if recipe['opaque_height_limit'] != (character_height+1)//2:

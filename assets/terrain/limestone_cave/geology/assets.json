@@ -1313,17 +1313,17 @@
     }
   },
   "inputs": {
-    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
-    "assets/source/terrain/grass/recipe.json": "35c779848145323b2ae50a496cfbdb200126731c7945a23982efcd8c5db5c1ca",
+    "assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+    "assets/source/terrain/grass/recipe.json": "05256ed390b6574f904aecebe1095d11e9165c3b5e1fb412bdc77cb8bd818a56",
     "assets/source/terrain/limestone_cave/geology.json": "082c7242c4de4c3e51bbe54272947844b41a3e8930947944500812b271149893",
     "assets/source/terrain/limestone_cave/recipe.json": "6dc38d048731b04a4ba9f8c9f83b7ef100c0ac24549e410543d12c61e1f4a295",
-    "assets/source/terrain/sanctuary_fantasy/grove.json": "15c4ead603a10bde42874db2604abbf0002a4944caf138fc04b1300a8eaf755a",
+    "assets/source/terrain/sanctuary_fantasy/grove.json": "a23599a2590329fc693d7828f61a0317537a771883c1e206adb36430eca39a3b",
     "assets/terrain/eldenmere/terraces/palette.json": "e51abfb741288899762fc57bacdad39035aa5bb88529b7e743bbef97bf614174",
     "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
     "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
     "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b",
-    "tools/build_dungeon_geology.py": "3d86e335f635af736acdcb04707685c24de01562e1a6ff2e2d86e53601e63015",
-    "tools/build_limestone_cave_assets.py": "405f87bf1117f66f519dcde137cdeff2418bb6c7a734a2a4abcb616f402ea607"
+    "tools/build_dungeon_geology.py": "6056713b14f50aeda65bd6f46742aeba13c7a2195845efc2116aedffdecc4e39",
+    "tools/build_limestone_cave_assets.py": "70ee8fc7c1e143cadd77757a66036823b95857ede96ac5d0d60b3f78bbbd115e"
   },
   "artifacts": {
     "assets/terrain/limestone_cave/geology/modules/debris/pebbles/0.png": "472e678295e9cc22999c3ba3c5b0bbb0c863a09ca9c3c2ccae9e947cb05d3c9e",
