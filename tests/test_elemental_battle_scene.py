@@ -50,7 +50,7 @@ class ElementalBattleSceneTests(unittest.TestCase):
                           'hp': stats['hp'], 'mp': stats['mp'],
                           'attack': 'bolt_shot' if identifier == 'mira' else 'attack'})
         model = BattleModel.from_bestiary_group(CharacterAttributes(),
-            [{'enemy_id': enemy, 'level': 4}], party_members=party,
+            [{'enemy_id': enemy, 'level': 5}], party_members=party,
             learned_abilities=('aether_edge', 'aqua_edge', 'flame_edge', 'ice_edge'),
             weapon_equipped=True, owned_gems=gems, rng=FixedVariance(),
             initial_atb=False, elemental_tutorial=teaching)

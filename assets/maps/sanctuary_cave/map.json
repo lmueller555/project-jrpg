@@ -19406,7 +19406,7 @@
         "id": "embravyr",
         "enemy_id": "embravyr",
         "room": "embervein_chamber",
-        "level": 4,
+        "level": 5,
         "battlefield": "cave_embervein",
         "center": [
           768,
@@ -19432,7 +19432,7 @@
         "id": "nivareth",
         "enemy_id": "nivareth",
         "room": "stillfrost_chamber",
-        "level": 4,
+        "level": 5,
         "battlefield": "cave_stillfrost",
         "center": [
           1296,
@@ -19978,7 +19978,7 @@
     "tool": "tools/build_continuous_sanctuary_cave.py",
     "source_recipe": "assets/source/maps/sanctuary_cave/recipe.json",
     "source_sha256": {
-      "assets/source/maps/sanctuary_cave/recipe.json": "5b4caed206e222816bd0213b56e04926e8b9c2b3a7f574394cad0e8b3bbf1f2e",
+      "assets/source/maps/sanctuary_cave/recipe.json": "96996ad416612317381ea1345a707fba7bc7cb7c0ba750b7ec33d209a916d7b2",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/chasm/assets.json": "10bbb3814c288ea6c24156be449450b96ed0ec005aac2ff336ecab60a626c3f5",

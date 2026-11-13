@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def ticket(enemy_id='embravyr'):
     entry = definition(enemy_id)
-    return {'version': 1, 'enemy_id': enemy_id, 'level': 4,
+    return {'version': 1, 'enemy_id': enemy_id, 'level': entry['level'],
             'receipt': entry['receipt'], 'scene': SCENE_ID,
             'position': list(entry['approach']), 'facing': 'back',
             'battlefield': entry['battlefield'], 'combat_seed': 17,
@@ -96,6 +96,20 @@ class ElementalBossStateTests(unittest.TestCase):
             self.assertFalse(valid_ticket(changed))
         changed = ticket();changed['party_resources']['mira']['hp'] = 0
         self.assertFalse(valid_ticket(changed))
+
+    def test_legacy_level_four_pending_guardians_remain_resumable(self):
+        from bestiary import build_enemy
+        for enemy_id in REGISTRY:
+            self.assertEqual(ticket(enemy_id)['level'], 5)
+            state = pending_state(enemy_id)
+            state['pending']['level'] = 4
+            owner = ElementalBosses(None)
+            self.assertTrue(owner.restore(state))
+            self.assertEqual(owner.pending, state['pending'])
+            self.assertEqual(build_enemy(enemy_id, owner.pending['level'])['level'], 4)
+            data = journey(enemy_id)
+            data['elemental_bosses'] = state
+            self.assertTrue(ElementalBosses.valid_journey(data))
 
     def test_completion_keeps_presentation_queued_and_bosses_independent_in_either_order(self):
         for order in (('embravyr', 'nivareth'), ('nivareth', 'embravyr')):

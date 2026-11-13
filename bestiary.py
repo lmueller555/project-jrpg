@@ -221,11 +221,12 @@ def _validate_species(enemy, actions, archetypes, items, *, enemy_id=None):
                 authored_state(identifier) not in states for identifier in behavior['sequence']):
             raise ValueError('Bestiary actions require authored animation states')
     # The two nonrepeatable elemental lessons have one protected core reward.
+    # Level four remains supported for already-committed saves; new spawns are five.
     # Ordinary enemies still cannot drop quest/key items.
     story_focus = {'embravyr': 'red_focus_gem', 'nivareth': 'white_focus_gem'}.get(enemy_id)
     if story_focus is not None and (enemy['tier'] != 'boss'
             or enemy['family'] != 'aether_elemental'
-            or enemy['level_range'] != {'min': 4, 'max': 4}
+            or enemy['level_range'] != {'min': 4, 'max': 5}
             or not has_design or enemy['combat_design']['encounter']['repeatable']):
         raise ValueError('Focus core requires its authored one-time elemental boss')
     if (not isinstance(enemy['rewards'], dict)

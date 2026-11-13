@@ -6,7 +6,7 @@ IDs under `enemies`. [`bestiary.py`](../bestiary.py) validates the complete
 dictionary and resolves a species at an explicitly selected level.
 
 The dictionary contains six computed Sanctuary cave species: **Cave Bat**,
-**Lithrusk**, **Veylume**, level-four **Embravyr** and **Nivareth**, and the
+**Lithrusk**, **Veylume**, level-five **Embravyr** and **Nivareth**, and the
 level-seven miniboss **Vespermaw**. Vespermaw is
 a one-time story encounter in the cave's final Echo Chamber, with its dedicated
 sprite bank and full combat cycle. MQ02's **Ridgeback Tusker** is a computed
@@ -46,7 +46,7 @@ their saved EXP amounts on Continue.
 | --- | --- |
 | ID | `cave_bat` |
 | Habitat | Caves along the Elden Vale Sanctuary's eastern ridge |
-| Level range | 2–3 |
+| Level range | 2–5 |
 | Tier | Normal enemy |
 | Family | Flying beast |
 | Elemental identity | Non-Elemental: an unaligned creature |
@@ -113,7 +113,7 @@ action presentation, documented in [Cave enemy combat art](CAVE_ENEMY_COMBAT_ART
 | ID | `lithrusk` | `veylume` |
 | Family | Cave crustacean | Aether-adapted insect |
 | Habitat | Splitstone Hollow and lower damp passages | Crystal galleries and the deeper approach |
-| Level range | 2–3 | 3–4 |
+| Level range | 2–5 | 2–5 |
 | Element | Ground | Electric |
 | Combat concept | Bulwark | Arcanist |
 | Stat profile | Armored | Caster |
@@ -325,7 +325,7 @@ or end Kindled Courage. See the [live encounter review](reviews/mira_rig_continu
 ## Embravyr and Nivareth
 
 These are **pure elemental Aether formations**, not living animals with Fire or
-Ice coatings. Both are fixed level-four solo bosses in optional, continuously
+Ice coatings. Both are fixed level-five solo bosses in optional, continuously
 walkable Sanctuary branches. Neither is in a random pool or required for
 Vespermaw, and either can be defeated first.
 
@@ -334,17 +334,17 @@ Vespermaw, and either can be defeated first.
 | ID | `embravyr` | `nivareth` |
 | Family | Aether elemental | Aether elemental |
 | Room / combat field | Embervein Chamber / `cave_embervein` | Stillfrost Chamber / `cave_stillfrost` |
-| Level | 4 | 4 |
+| Level | 5 | 5 |
 | Element | Fire | Ice |
 | Stat profile | Armored | Warded |
 | Archetype / style | Windup Attacker / Telegraphed Windup | Windup Attacker / Telegraphed Windup |
-| HP / MP | 612 / 37 | 658 / 61 |
-| Strength / Magick / Spirit | 15 / 15 / 16 | 12 / 18 / 19 |
-| Defense / Magick Defense | 28 / 11 | 11 / 28 |
-| Speed / Accuracy / Evasion / Luck | 11 / 17 / 15 / 16 | 12 / 17 / 15 / 16 |
+| HP / MP | 753 / 39 | 810 / 65 |
+| Strength / Magick / Spirit | 17 / 17 / 17 | 13 / 20 / 21 |
+| Defense / Magick Defense | 31 / 12 | 13 / 31 |
+| Speed / Accuracy / Evasion / Luck | 12 / 19 / 16 / 18 | 13 / 19 / 16 / 18 |
 | Species factors | Strength ×1.10, Magick ×1.25, Speed ×0.90 | Strength ×0.85, Magick ×1.20, Speed ×0.90 |
 | Boss HP factor | ×1.80 | ×2.20 |
-| EXP per living active member | 420 | 420 |
+| EXP per living active member | 460 | 460 |
 | Guaranteed focus | `red_focus_gem` / Fire | `white_focus_gem` / Ice |
 | Learned technique | Flame Edge | Ice Edge |
 | Defensive clues | Red core, emberglass and flames | White core, floating ice lattice and frost |

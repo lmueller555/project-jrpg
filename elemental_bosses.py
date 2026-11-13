@@ -22,14 +22,14 @@ SAVE_KEY = 'elemental_bosses'
 KNOWN_IDS = ('caelan', 'mira', 'lucan', 'rhea', 'edran')
 REGISTRY = {
     'embravyr': {
-        'name': 'Embravyr', 'element': 'fire', 'level': 4,
+        'name': 'Embravyr', 'element': 'fire', 'level': 5,
         'receipt': 'boss:embravyr', 'battlefield': 'cave_embervein',
         'room': 'embervein_chamber', 'location': 'Embervein Chamber',
         'gem': 'fire', 'skill': 'flame_edge', 'item': 'red_focus_gem',
         'gem_name': 'Red Focus Gem', 'skill_name': 'Flame Edge',
     },
     'nivareth': {
-        'name': 'Nivareth', 'element': 'ice', 'level': 4,
+        'name': 'Nivareth', 'element': 'ice', 'level': 5,
         'receipt': 'boss:nivareth', 'battlefield': 'cave_stillfrost',
         'room': 'stillfrost_chamber', 'location': 'Stillfrost Chamber',
         'gem': 'ice', 'skill': 'ice_edge', 'item': 'white_focus_gem',
@@ -83,7 +83,8 @@ def valid_ticket(ticket):
     if (not isinstance(ticket, dict) or set(ticket) != TICKET_FIELDS
             or type(ticket['version']) is not int or ticket['version'] != 1
             or not isinstance(ticket['enemy_id'], str) or ticket['enemy_id'] not in REGISTRY
-            or type(ticket['level']) is not int or ticket['level'] != 4
+            # Level-four tickets remain valid for encounters committed by older saves.
+            or type(ticket['level']) is not int or ticket['level'] not in (4, 5)
             or ticket['scene'] != SCENE_ID
             or not isinstance(ticket['position'], list) or not _point(ticket['position'])
             or ticket['facing'] not in ('front', 'back', 'left', 'right')

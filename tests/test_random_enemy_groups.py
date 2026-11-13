@@ -115,7 +115,7 @@ class RandomEnemyGroupTests(unittest.TestCase):
         self.assertNotEqual(model.enemies[1].value('str'), 999)
 
     def test_formation_limits_levels_and_target_ids_are_validated(self):
-        for members in ([], MEMBERS+[MEMBERS[0]], [{'enemy_id': 'cave_bat', 'level': 4}],
+        for members in ([], MEMBERS+[MEMBERS[0]], [{'enemy_id': 'cave_bat', 'level': 6}],
                         [{'enemy_id': 'missing', 'level': 3}]):
             with self.subTest(members=members), self.assertRaises((ValueError, TypeError)):
                 group(members)
@@ -337,7 +337,8 @@ class RandomEnemyGroupSceneTests(unittest.TestCase):
             self.assertNotEqual(first, crest)
             bank.append(first)
             with patch('pygame.image.load', side_effect=AssertionError('Animation must use cached frames')):
-                self.assertEqual(first, pygame.image.tobytes(field.frame(6000), 'RGB'))
+                cycle_ms = len(field.frames)*field.data['frame_duration_ms']
+                self.assertEqual(first, pygame.image.tobytes(field.frame(cycle_ms), 'RGB'))
                 held = pygame.image.tobytes(field.frame(0, True), 'RGB')
                 self.assertEqual(held, pygame.image.tobytes(field.frame(19321, True), 'RGB'))
                 scene.paused = True
@@ -365,7 +366,11 @@ class RandomEnemyGroupSceneTests(unittest.TestCase):
             data = CaveBattlefield(identifier).data
             self.assertTrue(set(data['source_rooms']) <= rooms)
             self.assertTrue(data['animation']['pulse'])
-            self.assertGreater(data['animation']['microcrystal_count'], 0)
+            if identifier == 'cave_echo_chamber':
+                self.assertEqual({crystal['element'] for crystal in data['elemental_crystals']},
+                                 {'fire', 'water', 'ice'})
+            else:
+                self.assertGreater(data['animation']['microcrystal_count'], 0)
             colors = set(data['animation']['crystal_colors'])
             self.assertTrue(colors)
             self.assertLessEqual(colors, {'red', 'blue', 'green', 'white', 'orange', 'purple'})

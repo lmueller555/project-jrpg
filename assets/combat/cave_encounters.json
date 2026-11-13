@@ -78,22 +78,26 @@
       "levels": {
         "cave_bat": [
           2,
-          2
+          3
         ],
         "lithrusk": [
           2,
-          2
+          3
+        ],
+        "veylume": [
+          2,
+          3
         ]
       },
       "weights": {
-        "bat": 35,
-        "lithrusk": 20,
+        "bat": 15,
+        "lithrusk": 10,
         "veylume": 0,
-        "bat_pair": 30,
-        "bat_lithrusk": 15,
-        "bat_veylume": 0,
+        "bat_pair": 25,
+        "bat_lithrusk": 25,
+        "bat_veylume": 15,
         "lithrusk_veylume": 0,
-        "bat_trio": 0,
+        "bat_trio": 10,
         "bat_pair_lithrusk": 0,
         "bat_pair_veylume": 0,
         "mixed_trio": 0,
@@ -105,30 +109,30 @@
     "middle": {
       "levels": {
         "cave_bat": [
-          2,
-          3
+          3,
+          4
         ],
         "lithrusk": [
-          2,
-          3
+          3,
+          4
         ],
         "veylume": [
           3,
-          3
+          4
         ]
       },
       "weights": {
-        "bat": 20,
-        "lithrusk": 15,
-        "veylume": 5,
-        "bat_pair": 20,
-        "bat_lithrusk": 20,
-        "bat_veylume": 10,
-        "lithrusk_veylume": 0,
+        "bat": 5,
+        "lithrusk": 5,
+        "veylume": 10,
+        "bat_pair": 10,
+        "bat_lithrusk": 15,
+        "bat_veylume": 20,
+        "lithrusk_veylume": 10,
         "bat_trio": 5,
-        "bat_pair_lithrusk": 3,
-        "bat_pair_veylume": 1,
-        "mixed_trio": 1,
+        "bat_pair_lithrusk": 5,
+        "bat_pair_veylume": 8,
+        "mixed_trio": 7,
         "bat_quartet": 0,
         "bat_trio_lithrusk": 0,
         "bat_trio_veylume": 0
@@ -137,33 +141,33 @@
     "deep": {
       "levels": {
         "cave_bat": [
-          3,
-          3
+          4,
+          5
         ],
         "lithrusk": [
-          3,
-          3
+          4,
+          5
         ],
         "veylume": [
-          3,
-          4
+          4,
+          5
         ]
       },
       "weights": {
-        "bat": 18,
-        "lithrusk": 10,
+        "bat": 3,
+        "lithrusk": 3,
         "veylume": 7,
-        "bat_pair": 17,
-        "bat_lithrusk": 13,
-        "bat_veylume": 10,
-        "lithrusk_veylume": 5,
-        "bat_trio": 6,
+        "bat_pair": 7,
+        "bat_lithrusk": 10,
+        "bat_veylume": 18,
+        "lithrusk_veylume": 15,
+        "bat_trio": 5,
         "bat_pair_lithrusk": 5,
-        "bat_pair_veylume": 3,
-        "mixed_trio": 1,
-        "bat_quartet": 3,
+        "bat_pair_veylume": 10,
+        "mixed_trio": 10,
+        "bat_quartet": 2,
         "bat_trio_lithrusk": 1,
-        "bat_trio_veylume": 1
+        "bat_trio_veylume": 4
       }
     }
   },

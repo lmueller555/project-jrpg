@@ -2,7 +2,7 @@
 
 Two optional branches extend the continuous Sanctuary cave. **Embravyr** waits
 in the **Embervein Chamber** and **Nivareth** in the **Stillfrost Chamber**.
-Both are fixed level-four, one-time solo encounters. Either can be approached
+Both are fixed level-five, one-time solo encounters. Either can be approached
 first; neither is required to reach or defeat Vespermaw. Completing the earlier
 Aqua Edge bat lesson enables these encounters without resolving MQ03's pending
 Sanctuary arrival.
@@ -39,20 +39,20 @@ releases its mixer channel without changing the music stream.
 Both use the shared enemy growth pipeline, selected stat profile, species
 multipliers and boss HP multiplier, with a single final rounding step.
 
-| Attribute at level 4 | Embravyr | Nivareth |
+| Attribute at level 5 | Embravyr | Nivareth |
 | --- | ---: | ---: |
-| HP | 612 | 658 |
-| MP | 37 | 61 |
-| Strength | 15 | 12 |
-| Magick | 15 | 18 |
-| Spirit | 16 | 19 |
-| Defense | 28 | 11 |
-| Magick Defense | 11 | 28 |
-| Speed | 11 | 12 |
-| Accuracy | 17 | 17 |
-| Evasion | 15 | 15 |
-| Luck | 16 | 16 |
-| EXP per living active party member | 420 | 420 |
+| HP | 753 | 810 |
+| MP | 39 | 65 |
+| Strength | 17 | 13 |
+| Magick | 17 | 20 |
+| Spirit | 17 | 21 |
+| Defense | 31 | 13 |
+| Magick Defense | 12 | 31 |
+| Speed | 12 | 13 |
+| Accuracy | 19 | 19 |
+| Evasion | 16 | 16 |
+| Luck | 18 | 18 |
+| EXP per living active party member | 460 | 460 |
 
 Embravyr uses the **Armored** stat profile, with Strength ×1.10, Magick ×1.25,
 Speed ×0.90 and boss HP ×1.80. Nivareth uses **Warded**, with Strength ×0.85,
@@ -130,8 +130,8 @@ owned focus still matters. Aether Edge retains its **4 MP** cost and Mira’s ri
 | Embravyr | `red_focus_gem` | Fire / Red | Flame Edge (`flame_edge`) |
 | Nivareth | `white_focus_gem` | Ice / White | Ice Edge (`ice_edge`) |
 
-Each victory grants the full 420 EXP to every living active character, plus its
-focus item once. Reserves, bots and KO characters receive no EXP. The focus,
+Each victory grants the full 460 EXP to every eligible living active character,
+plus its focus item once. Guests, reserves, bots and KO characters receive no EXP. The focus,
 installed gem and technique are guaranteed even if Caelan ends the fight KO.
 Neither a raw Aether Ruby nor Aether Opal installs these focuses.
 
@@ -173,6 +173,10 @@ never reruns the battle or reward. Completed encounters disappear from their
 world positions and cannot repeat rewards.
 
 Older journeys without this optional state gain fresh, undefeated guardians.
+Already-pending level-four encounters remain resumable with their original
+stats and rewards; newly selected encounters use level five. Lucan remains
+a guest and earns no EXP; each eligible living permanent party member receives
+the full 460 EXP from a new level-five guardian.
 Their existing inventory, party, EXP, treasure, Aqua discovery, Vespermaw entry
 or completion and MQ03 stage remain intact. Boss completion does not recruit
 Lucan, conclude the Sanctuary arrival or alter story music ownership.
