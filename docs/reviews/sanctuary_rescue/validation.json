@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "test_command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=tests python -m unittest test_sanctuary_rescue",
+  "test_cases": 18,
+  "result": "passed",
+  "final_run_seconds": 37.16,
+  "covered_contracts": [
+    "Entry offer/retreat do not start rescue or commit battle",
+    "Confirmed pre-scene completes before boss ticket; resources/rewards unchanged",
+    "Pause and focus freeze clocks and staging",
+    "Malformed milestone records and impossible defeat states rejected",
+    "Legacy departed and committed-pending journeys migrate without duplicate scenes",
+    "Physical freeing/treatment cannot be skipped by rapid input",
+    "Greenwell preparation keeps worker/Lucan owned once and suppresses incompatible fights",
+    "Actual caretaker handoff precedes guest departure and survives Continue",
+    "Partial physical work reloads coherently without boss/reward replay",
+    "Failed extraction/final handoff/battle-start checkpoints retry without duplicated consequences",
+    "Reset removes transient actors/props; known worker and deposited stone persist at appropriate stages",
+    "Reduced-motion warning and escort hold stable shots, and escort maintains 24-pixel support spacing",
+    "Disabled-save playtest reaches complete handoff"
+  ],
+  "capture": {
+    "screenshots": 28,
+    "camera_actor_samples": 706,
+    "source_fingerprints_verified": 156,
+    "output_fingerprints_verified": 30,
+    "gif_size": [
+      480,
+      320
+    ],
+    "gif_frames": 142,
+    "gif_duration_ms": 71000,
+    "gif_sampling_ms": 500,
+    "native_pngs_authoritative": true,
+    "persistence_enabled": false,
+    "resources_unchanged": true,
+    "final_stage": "evacuated",
+    "scope": "Disposable seeded cave prerequisites and labelled durable victory facts. No played fight, EXP grant or end-to-end quest walkthrough is claimed."
+  },
+  "compile_and_whitespace_checks": "passed",
+  "limits": "Production controllers/renderers run against explicitly seeded prerequisites and victory facts. This does not claim a played Vespermaw fight or a complete MQ03 walkthrough. Visual checks apply to the pictured rescue phases; broader regression selection is reported in the PR."
+}

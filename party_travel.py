@@ -111,6 +111,9 @@ class PartyTravel:
                     or getattr(getattr(game, 'opening', None), 'locks_player', False))
 
     def _owned_by_story(self, identifier):
+        rescue = getattr(self.game, 'sanctuary_rescue', None)
+        if rescue is not None and (rescue.active or identifier == 'lucan' and rescue.waiting):
+            return True
         if (identifier == 'lucan' and
                 getattr(getattr(self.game,'regent_quest',None),'sanctuary_escort_active',False)):
             return True

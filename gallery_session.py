@@ -205,6 +205,8 @@ class GallerySession:
             game.regent_arrival.reset()
             arrival = getattr(game, 'sanctuary_arrival', None)
             if arrival is not None:arrival.reset()
+            rescue = getattr(game, 'sanctuary_rescue', None)
+            if rescue is not None:rescue.reset()
             game.opening_cinematic.reset()
             game.combat.reset()
             game.music.stop()

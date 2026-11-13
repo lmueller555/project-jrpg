@@ -70,6 +70,7 @@ from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migra
 from cave_random_encounters import CaveRandomEncounters
 from cave_lesson import CaveLesson
 from sanctuary_boss import SanctuaryBoss
+from sanctuary_rescue import SanctuaryRescue
 from elemental_bosses import ElementalBosses
 
 ROOT=Path(__file__).resolve().parent
@@ -558,6 +559,7 @@ class Game:
         self.sanctuary_boss=SanctuaryBoss(self)
         self.elemental_bosses=ElementalBosses(self)
         self.sanctuary_arrival=SanctuaryArrival(self)
+        self.sanctuary_rescue=SanctuaryRescue(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_embedded else save_path)
@@ -660,6 +662,7 @@ class Game:
                            'cave_encounter_pending':self.cave_random_encounters.pending,
                            'cave_lesson':self.cave_lesson.to_dict(),
                            'sanctuary_boss':self.sanctuary_boss.to_dict(),
+              'sanctuary_rescue':self.sanctuary_rescue.to_dict(),
                            'elemental_bosses':self.elemental_bosses.to_dict(),
                            'sanctuary_arrival':self.sanctuary_arrival.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
@@ -682,7 +685,7 @@ class Game:
 
     @property
     def household_action(self):
-        return (self.sanctuary_arrival.active or self.mill_gift.active or self.regent_arrival.active or self.regent_arrival.state=='pending' or
+        return (getattr(getattr(self,'sanctuary_rescue',None),'active',False) or self.sanctuary_arrival.active or self.mill_gift.active or self.regent_arrival.active or self.regent_arrival.state=='pending' or
                 any(visit.locks_player for visit in self.household_visits))
 
     def _sync_inventory(self):
@@ -769,6 +772,7 @@ class Game:
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                SanctuaryCave.valid_journey(data) and
                SanctuaryBoss.valid_journey(data) and
+               SanctuaryRescue.valid_journey(data) and
                ElementalBosses.valid_journey(data) and
                CaveRandomEncounters.valid_journey(data) and
                CaveLesson.valid_journey(data) and
@@ -872,6 +876,7 @@ class Game:
         """
         if not continue_saved and show_cinematic:
             self.mill_gift.reset()
+            self.sanctuary_rescue.reset()
             self.on_title=False
             self._mouse_held=False
             self.social.clear_pointer()
@@ -901,6 +906,7 @@ class Game:
             or (data.get('cave_random_encounters') or {}).get('pending')))
         self.opening_cinematic.reset()
         self.mill_gift.reset()
+        self.sanctuary_rescue.reset()
         self.regent_arrival.reset()
         self.combat.reset()
         self.attributes.reset()
@@ -1030,6 +1036,7 @@ class Game:
         self.overworld_travel.finish_story_restore(regional_checkpoint)
         if self.sanctuary_cave.active:self.sanctuary_arrival.note_cave_entry()
         self.sanctuary_arrival.stage_party()
+        if not self.sanctuary_rescue.restore(data.get('sanctuary_rescue') if data else None,journey=data):return False
         for scene in self.scenes.values():
             scene.reset_grass(reduced_motion=self.audio.reduced_motion)
         self.opening_audio.reset()
@@ -1101,6 +1108,7 @@ class Game:
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'cave_lesson':self.cave_lesson.to_dict(),
               'sanctuary_boss':self.sanctuary_boss.to_dict(),
+              'sanctuary_rescue':self.sanctuary_rescue.to_dict(),
               'elemental_bosses':self.elemental_bosses.to_dict(),
               'sanctuary_arrival':self.sanctuary_arrival.to_dict(),
               'character_attributes':self.attributes.to_dict(),
@@ -1151,6 +1159,7 @@ class Game:
         self.opening_cinematic.reset()
         self.regent_arrival.reset()
         self.mill_gift.reset()
+        self.sanctuary_rescue.reset()
         self.sanctuary_arrival.reset()
         self.on_title=True
         self.title.fade=0.
@@ -1158,6 +1167,30 @@ class Game:
         self.saved_journey=self._read_saved_journey()
         self.music.set_ducked(False)
         self.music.play('title',fade_ms=250)
+
+    def complete_cave_rescue_departure(self):
+        """Publish caretaker handoff and Lucan's guest departure in one checkpoint."""
+        rescue = self.sanctuary_rescue
+        if (rescue.stage != 'handoff' or self.world.data['id'] != 'elden_vale_sanctuary'
+                or not self.sanctuary_boss.defeated or self.sanctuary_boss.pending is not None
+                or self.combat.active):
+            return False
+        party_before = self.party.to_dict()
+        cave_before = self.sanctuary_cave.to_dict()
+        levels_before = self.character_progression.to_dict()
+        rescue.stage = 'evacuated'
+        self.sanctuary_cave.lucan_departed = True
+        if sync_arrival_party(self) is not False and (not self.save_store.enabled or self.save_progress()):
+            self.sanctuary_arrival.sync_residents()
+            self.party_travel.reset()
+            return True
+        rescue.stage = 'handoff'
+        self.party.restore(party_before)
+        self.character_progression.restore(levels_before)
+        self.sanctuary_cave.restore(cave_before)
+        self.sanctuary_arrival.sync_residents()
+        self.party_travel.reset()
+        return False
 
     def _sync_story_party(self):
         """Reconcile authored recruitment without granting future companions."""
@@ -1421,6 +1454,7 @@ class Game:
         self.regent_arrival.begin_input_batch()
         self.mill_gift.begin_event_batch()
         self.sanctuary_arrival.begin_event_batch()
+        self.sanctuary_rescue.begin_event_batch()
         advanced=False
         resumed=False
         for event in events:
@@ -1465,6 +1499,11 @@ class Game:
                 self.music.set_paused(not self._music_focused or
                                       self.opening_cinematic.paused)
                 resumed=not self.opening_cinematic.active
+                continue
+            if self.sanctuary_rescue.active:
+                self.sanctuary_rescue.handle_event(event)
+                self.music.set_paused(not self._music_focused or self.sanctuary_rescue.paused)
+                resumed=not self.sanctuary_rescue.active
                 continue
             if self.sanctuary_arrival.active:
                 self.sanctuary_arrival.handle_event(event)
@@ -1595,6 +1634,10 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    if self.sanctuary_rescue.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.cave_lesson.interact():
                         advanced=True
                         resumed=True
@@ -1673,6 +1716,7 @@ class Game:
     def _cave_encounters_available(self):
         """Only free, focused exploration can spend the cave's travel budget."""
         return (self.sanctuary_cave.active and not self._is_gallery_preview
+                and not self.sanctuary_rescue.waiting
                 and not self.on_title and self._music_focused
                 and not self.combat.active and not self.social.locked
                 and self.sanctuary_boss.pending is None
@@ -1714,6 +1758,14 @@ class Game:
         return self.combat.start_cave(ticket)
 
     def _update_world(self,seconds,direction=None,running=None):
+        if not self.on_title:self.sanctuary_rescue.maybe_start()
+        if self.sanctuary_rescue.active:
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or self.sanctuary_rescue.paused)
+            self.music.set_ducked(self.sanctuary_rescue.dialogue is not None)
+            self.music.update(seconds)
+            self.sanctuary_rescue.update(seconds)
+            return
         if not self.on_title:self.sanctuary_arrival.maybe_start()
         if self.sanctuary_arrival.active:
             self.opening_audio.set_paused(True)
@@ -2016,7 +2068,7 @@ class Game:
         hint=('E: '+display['label']) if display is not None else ''
         reserve=getattr(self,'sanctuary_reserve',None)
         hint=(hint or self.overworld_travel.interaction_hint() or self.cave_lesson.interaction_hint() or
-              self.elemental_bosses.interaction_hint() or
+              self.elemental_bosses.interaction_hint() or self.sanctuary_rescue.interaction_hint() or
               (self.sanctuary_boss.interaction_hint() if not self.cave_lesson.needs_intro else '') or
               self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
@@ -2072,6 +2124,12 @@ class Game:
             self.opening_cinematic.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
+            if not self._is_embedded:pygame.display.flip()
+            return
+        if self.sanctuary_rescue.active:
+            _,size,origin=self._ensure_ui_surface()
+            self.sanctuary_rescue.draw(self.canvas,self.ui_surface)
+            self.window.fill('#101b19');self.window.blit(self.ui_surface,origin)
             if not self._is_embedded:pygame.display.flip()
             return
         if self.sanctuary_arrival.active:

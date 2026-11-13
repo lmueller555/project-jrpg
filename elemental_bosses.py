@@ -260,6 +260,7 @@ class ElementalBosses:
     def _available(self, *, require_cave=True):
         g = self.game
         return ((self.active or not require_cave) and not g.on_title and not g.combat.active
+                and not getattr(getattr(g, 'sanctuary_rescue', None), 'waiting', False)
                 and not g.opening_cinematic.active and not g.social.active and not g.social.locked
                 and not g.household_action and not g.opening.locks_player
                 and not g.transfer_cooldown and not g.opening_fade
