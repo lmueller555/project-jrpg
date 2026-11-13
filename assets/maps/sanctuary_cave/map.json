@@ -33,8 +33,8 @@
     {
       "id": "water_tile_0",
       "position": [
-        384,
-        816
+        2016,
+        744
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png",
@@ -47,7 +47,7 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 0,
+      "phase_offset": 5,
       "reduced_motion_frame": 2,
       "source_module": "bank.outer_nw.0",
       "source_pack": "water",
@@ -56,8 +56,8 @@
     {
       "id": "water_tile_1",
       "position": [
-        408,
-        816
+        2040,
+        744
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
@@ -70,7 +70,7 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 1,
+      "phase_offset": 0,
       "reduced_motion_frame": 2,
       "source_module": "bank.north.0",
       "source_pack": "water",
@@ -79,77 +79,8 @@
     {
       "id": "water_tile_2",
       "position": [
-        432,
-        816
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 2,
-      "reduced_motion_frame": 2,
-      "source_module": "bank.north.0",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_3",
-      "position": [
-        456,
-        816
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 3,
-      "reduced_motion_frame": 2,
-      "source_module": "bank.north.0",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_4",
-      "position": [
-        480,
-        816
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 4,
-      "reduced_motion_frame": 2,
-      "source_module": "bank.north.0",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_5",
-      "position": [
-        504,
-        816
+        2064,
+        744
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_00.png",
@@ -162,109 +93,40 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 5,
+      "phase_offset": 1,
       "reduced_motion_frame": 2,
       "source_module": "bank.outer_ne.0",
       "source_pack": "water",
       "water": true
     },
     {
-      "id": "water_tile_6",
+      "id": "water_tile_3",
       "position": [
-        360,
-        840
+        2016,
+        768
       ],
       "frames": [
-        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_05.png"
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/west/0/frame_05.png"
       ],
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
       "phase_offset": 4,
       "reduced_motion_frame": 2,
-      "source_module": "bank.outer_nw.0",
+      "source_module": "bank.west.0",
       "source_pack": "water",
       "water": true
     },
     {
-      "id": "water_tile_7",
+      "id": "water_tile_4",
       "position": [
-        384,
-        840
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 5,
-      "reduced_motion_frame": 2,
-      "source_module": "bank.inner_nw.0",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_8",
-      "position": [
-        408,
-        840
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 0,
-      "reduced_motion_frame": 2,
-      "source_module": "water.deep.1",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_9",
-      "position": [
-        432,
-        840
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 1,
-      "reduced_motion_frame": 2,
-      "source_module": "water.deep.2",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_10",
-      "position": [
-        456,
-        840
+        2040,
+        768
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_00.png",
@@ -277,63 +139,224 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 2,
+      "phase_offset": 5,
       "reduced_motion_frame": 2,
       "source_module": "water.deep.0",
       "source_pack": "water",
       "water": true
     },
     {
-      "id": "water_tile_11",
+      "id": "water_tile_5",
       "position": [
-        480,
-        840
+        2064,
+        768
       ],
       "frames": [
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_05.png"
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/east/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 0,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.east.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_6",
+      "position": [
+        2016,
+        792
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_sw/0/frame_05.png"
       ],
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
       "phase_offset": 3,
       "reduced_motion_frame": 2,
-      "source_module": "water.deep.1",
+      "source_module": "bank.outer_sw.0",
       "source_pack": "water",
       "water": true
     },
     {
-      "id": "water_tile_12",
+      "id": "water_tile_7",
       "position": [
-        504,
-        840
+        2040,
+        792
       ],
       "frames": [
-        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_05.png"
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/south/0/frame_05.png"
       ],
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
       "phase_offset": 4,
       "reduced_motion_frame": 2,
-      "source_module": "bank.inner_ne.0",
+      "source_module": "bank.south.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_8",
+      "position": [
+        2064,
+        792
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_se/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 5,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.outer_se.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_9",
+      "position": [
+        384,
+        816
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 0,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.outer_nw.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_10",
+      "position": [
+        408,
+        816
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 1,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.north.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_11",
+      "position": [
+        432,
+        816
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 2,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.north.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_12",
+      "position": [
+        456,
+        816
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 3,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.north.0",
       "source_pack": "water",
       "water": true
     },
     {
       "id": "water_tile_13",
       "position": [
-        528,
-        840
+        480,
+        816
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/north/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 4,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.north.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_14",
+      "position": [
+        504,
+        816
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_00.png",
@@ -353,10 +376,10 @@
       "water": true
     },
     {
-      "id": "water_tile_14",
+      "id": "water_tile_15",
       "position": [
-        336,
-        864
+        360,
+        840
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png",
@@ -369,17 +392,17 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 2,
+      "phase_offset": 4,
       "reduced_motion_frame": 2,
       "source_module": "bank.outer_nw.0",
       "source_pack": "water",
       "water": true
     },
     {
-      "id": "water_tile_15",
+      "id": "water_tile_16",
       "position": [
-        360,
-        864
+        384,
+        840
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_00.png",
@@ -392,32 +415,9 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 3,
+      "phase_offset": 5,
       "reduced_motion_frame": 2,
       "source_module": "bank.inner_nw.0",
-      "source_pack": "water",
-      "water": true
-    },
-    {
-      "id": "water_tile_16",
-      "position": [
-        384,
-        864
-      ],
-      "frames": [
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_00.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_01.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_02.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_03.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_04.png",
-        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_05.png"
-      ],
-      "sort_y": -100,
-      "sort_priority": 0,
-      "frame_duration_ms": 140,
-      "phase_offset": 4,
-      "reduced_motion_frame": 2,
-      "source_module": "water.deep.2",
       "source_pack": "water",
       "water": true
     },
@@ -425,7 +425,7 @@
       "id": "water_tile_17",
       "position": [
         408,
-        864
+        840
       ],
       "frames": [
         "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png",
@@ -438,7 +438,7 @@
       "sort_y": -100,
       "sort_priority": 0,
       "frame_duration_ms": 140,
-      "phase_offset": 5,
+      "phase_offset": 0,
       "reduced_motion_frame": 2,
       "source_module": "water.deep.1",
       "source_pack": "water",
@@ -448,6 +448,213 @@
       "id": "water_tile_18",
       "position": [
         432,
+        840
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 1,
+      "reduced_motion_frame": 2,
+      "source_module": "water.deep.2",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_19",
+      "position": [
+        456,
+        840
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 2,
+      "reduced_motion_frame": 2,
+      "source_module": "water.deep.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_20",
+      "position": [
+        480,
+        840
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 3,
+      "reduced_motion_frame": 2,
+      "source_module": "water.deep.1",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_21",
+      "position": [
+        504,
+        840
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_ne/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 4,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.inner_ne.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_22",
+      "position": [
+        528,
+        840
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_ne/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 5,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.outer_ne.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_23",
+      "position": [
+        336,
+        864
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/outer_nw/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 2,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.outer_nw.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_24",
+      "position": [
+        360,
+        864
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/bank/inner_nw/0/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 3,
+      "reduced_motion_frame": 2,
+      "source_module": "bank.inner_nw.0",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_25",
+      "position": [
+        384,
+        864
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/2/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 4,
+      "reduced_motion_frame": 2,
+      "source_module": "water.deep.2",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_26",
+      "position": [
+        408,
+        864
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_00.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_01.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_02.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_03.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_04.png",
+        "assets/terrain/limestone_cave/water/modules/water/deep/1/frame_05.png"
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frame_duration_ms": 140,
+      "phase_offset": 5,
+      "reduced_motion_frame": 2,
+      "source_module": "water.deep.1",
+      "source_pack": "water",
+      "water": true
+    },
+    {
+      "id": "water_tile_27",
+      "position": [
+        432,
         864
       ],
       "frames": [
@@ -468,7 +675,7 @@
       "water": true
     },
     {
-      "id": "water_tile_19",
+      "id": "water_tile_28",
       "position": [
         456,
         864
@@ -491,7 +698,7 @@
       "water": true
     },
     {
-      "id": "water_tile_20",
+      "id": "water_tile_29",
       "position": [
         480,
         864
@@ -514,7 +721,7 @@
       "water": true
     },
     {
-      "id": "water_tile_21",
+      "id": "water_tile_30",
       "position": [
         504,
         864
@@ -537,7 +744,7 @@
       "water": true
     },
     {
-      "id": "water_tile_22",
+      "id": "water_tile_31",
       "position": [
         528,
         864
@@ -560,7 +767,7 @@
       "water": true
     },
     {
-      "id": "water_tile_23",
+      "id": "water_tile_32",
       "position": [
         552,
         864
@@ -583,7 +790,7 @@
       "water": true
     },
     {
-      "id": "water_tile_24",
+      "id": "water_tile_33",
       "position": [
         336,
         888
@@ -606,7 +813,7 @@
       "water": true
     },
     {
-      "id": "water_tile_25",
+      "id": "water_tile_34",
       "position": [
         360,
         888
@@ -629,7 +836,7 @@
       "water": true
     },
     {
-      "id": "water_tile_26",
+      "id": "water_tile_35",
       "position": [
         384,
         888
@@ -652,7 +859,7 @@
       "water": true
     },
     {
-      "id": "water_tile_27",
+      "id": "water_tile_36",
       "position": [
         408,
         888
@@ -675,7 +882,7 @@
       "water": true
     },
     {
-      "id": "water_tile_28",
+      "id": "water_tile_37",
       "position": [
         432,
         888
@@ -698,7 +905,7 @@
       "water": true
     },
     {
-      "id": "water_tile_29",
+      "id": "water_tile_38",
       "position": [
         456,
         888
@@ -721,7 +928,7 @@
       "water": true
     },
     {
-      "id": "water_tile_30",
+      "id": "water_tile_39",
       "position": [
         480,
         888
@@ -744,7 +951,7 @@
       "water": true
     },
     {
-      "id": "water_tile_31",
+      "id": "water_tile_40",
       "position": [
         504,
         888
@@ -767,7 +974,7 @@
       "water": true
     },
     {
-      "id": "water_tile_32",
+      "id": "water_tile_41",
       "position": [
         528,
         888
@@ -790,7 +997,7 @@
       "water": true
     },
     {
-      "id": "water_tile_33",
+      "id": "water_tile_42",
       "position": [
         552,
         888
@@ -813,7 +1020,7 @@
       "water": true
     },
     {
-      "id": "water_tile_34",
+      "id": "water_tile_43",
       "position": [
         336,
         912
@@ -836,7 +1043,7 @@
       "water": true
     },
     {
-      "id": "water_tile_35",
+      "id": "water_tile_44",
       "position": [
         360,
         912
@@ -859,7 +1066,7 @@
       "water": true
     },
     {
-      "id": "water_tile_36",
+      "id": "water_tile_45",
       "position": [
         384,
         912
@@ -882,7 +1089,7 @@
       "water": true
     },
     {
-      "id": "water_tile_37",
+      "id": "water_tile_46",
       "position": [
         408,
         912
@@ -905,7 +1112,7 @@
       "water": true
     },
     {
-      "id": "water_tile_38",
+      "id": "water_tile_47",
       "position": [
         432,
         912
@@ -928,7 +1135,7 @@
       "water": true
     },
     {
-      "id": "water_tile_39",
+      "id": "water_tile_48",
       "position": [
         456,
         912
@@ -951,7 +1158,7 @@
       "water": true
     },
     {
-      "id": "water_tile_40",
+      "id": "water_tile_49",
       "position": [
         480,
         912
@@ -974,7 +1181,7 @@
       "water": true
     },
     {
-      "id": "water_tile_41",
+      "id": "water_tile_50",
       "position": [
         504,
         912
@@ -997,7 +1204,7 @@
       "water": true
     },
     {
-      "id": "water_tile_42",
+      "id": "water_tile_51",
       "position": [
         528,
         912
@@ -1020,7 +1227,7 @@
       "water": true
     },
     {
-      "id": "water_tile_43",
+      "id": "water_tile_52",
       "position": [
         552,
         912
@@ -1043,7 +1250,7 @@
       "water": true
     },
     {
-      "id": "water_tile_44",
+      "id": "water_tile_53",
       "position": [
         360,
         936
@@ -1066,7 +1273,7 @@
       "water": true
     },
     {
-      "id": "water_tile_45",
+      "id": "water_tile_54",
       "position": [
         384,
         936
@@ -1089,7 +1296,7 @@
       "water": true
     },
     {
-      "id": "water_tile_46",
+      "id": "water_tile_55",
       "position": [
         408,
         936
@@ -1112,7 +1319,7 @@
       "water": true
     },
     {
-      "id": "water_tile_47",
+      "id": "water_tile_56",
       "position": [
         432,
         936
@@ -1135,7 +1342,7 @@
       "water": true
     },
     {
-      "id": "water_tile_48",
+      "id": "water_tile_57",
       "position": [
         456,
         936
@@ -1158,7 +1365,7 @@
       "water": true
     },
     {
-      "id": "water_tile_49",
+      "id": "water_tile_58",
       "position": [
         480,
         936
@@ -1181,7 +1388,7 @@
       "water": true
     },
     {
-      "id": "water_tile_50",
+      "id": "water_tile_59",
       "position": [
         504,
         936
@@ -1204,7 +1411,7 @@
       "water": true
     },
     {
-      "id": "water_tile_51",
+      "id": "water_tile_60",
       "position": [
         528,
         936
@@ -1227,7 +1434,7 @@
       "water": true
     },
     {
-      "id": "water_tile_52",
+      "id": "water_tile_61",
       "position": [
         384,
         960
@@ -1250,7 +1457,7 @@
       "water": true
     },
     {
-      "id": "water_tile_53",
+      "id": "water_tile_62",
       "position": [
         408,
         960
@@ -1273,7 +1480,7 @@
       "water": true
     },
     {
-      "id": "water_tile_54",
+      "id": "water_tile_63",
       "position": [
         432,
         960
@@ -1296,7 +1503,7 @@
       "water": true
     },
     {
-      "id": "water_tile_55",
+      "id": "water_tile_64",
       "position": [
         456,
         960
@@ -1319,7 +1526,7 @@
       "water": true
     },
     {
-      "id": "water_tile_56",
+      "id": "water_tile_65",
       "position": [
         480,
         960
@@ -1342,7 +1549,7 @@
       "water": true
     },
     {
-      "id": "water_tile_57",
+      "id": "water_tile_66",
       "position": [
         504,
         960
@@ -1365,7 +1572,7 @@
       "water": true
     },
     {
-      "id": "water_tile_58",
+      "id": "water_tile_67",
       "position": [
         1272,
         1560
@@ -1388,7 +1595,7 @@
       "water": true
     },
     {
-      "id": "water_tile_59",
+      "id": "water_tile_68",
       "position": [
         1296,
         1560
@@ -1411,7 +1618,7 @@
       "water": true
     },
     {
-      "id": "water_tile_60",
+      "id": "water_tile_69",
       "position": [
         1320,
         1560
@@ -1434,7 +1641,7 @@
       "water": true
     },
     {
-      "id": "water_tile_61",
+      "id": "water_tile_70",
       "position": [
         1344,
         1560
@@ -1457,7 +1664,7 @@
       "water": true
     },
     {
-      "id": "water_tile_62",
+      "id": "water_tile_71",
       "position": [
         1272,
         1584
@@ -1480,7 +1687,7 @@
       "water": true
     },
     {
-      "id": "water_tile_63",
+      "id": "water_tile_72",
       "position": [
         1296,
         1584
@@ -1503,7 +1710,7 @@
       "water": true
     },
     {
-      "id": "water_tile_64",
+      "id": "water_tile_73",
       "position": [
         1320,
         1584
@@ -1526,7 +1733,7 @@
       "water": true
     },
     {
-      "id": "water_tile_65",
+      "id": "water_tile_74",
       "position": [
         1344,
         1584
@@ -1549,7 +1756,7 @@
       "water": true
     },
     {
-      "id": "water_tile_66",
+      "id": "water_tile_75",
       "position": [
         1272,
         1608
@@ -1572,7 +1779,7 @@
       "water": true
     },
     {
-      "id": "water_tile_67",
+      "id": "water_tile_76",
       "position": [
         1296,
         1608
@@ -1595,7 +1802,7 @@
       "water": true
     },
     {
-      "id": "water_tile_68",
+      "id": "water_tile_77",
       "position": [
         1320,
         1608
@@ -1618,7 +1825,7 @@
       "water": true
     },
     {
-      "id": "water_tile_69",
+      "id": "water_tile_78",
       "position": [
         1344,
         1608
@@ -1641,7 +1848,7 @@
       "water": true
     },
     {
-      "id": "water_tile_70",
+      "id": "water_tile_79",
       "position": [
         1272,
         1632
@@ -1664,7 +1871,7 @@
       "water": true
     },
     {
-      "id": "water_tile_71",
+      "id": "water_tile_80",
       "position": [
         1296,
         1632
@@ -1687,7 +1894,7 @@
       "water": true
     },
     {
-      "id": "water_tile_72",
+      "id": "water_tile_81",
       "position": [
         1320,
         1632
@@ -1710,7 +1917,7 @@
       "water": true
     },
     {
-      "id": "water_tile_73",
+      "id": "water_tile_82",
       "position": [
         1344,
         1632
@@ -3528,8 +3735,8 @@
     {
       "id": "deep_east_micro_0",
       "position": [
-        1801,
-        817
+        1861,
+        931
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_00.png",
@@ -3539,7 +3746,7 @@
         "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/red/dense/frame_05.png"
       ],
-      "sort_y": 837,
+      "sort_y": 951,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3552,8 +3759,8 @@
     {
       "id": "deep_east_micro_1",
       "position": [
-        1825,
-        873
+        1849,
+        975
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_00.png",
@@ -3563,7 +3770,7 @@
         "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/red/sparse/frame_05.png"
       ],
-      "sort_y": 897,
+      "sort_y": 999,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -3600,8 +3807,8 @@
     {
       "id": "deep_exit_micro_1",
       "position": [
-        1802,
-        760
+        1646,
+        694
       ],
       "frames": [
         "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_00.png",
@@ -3611,7 +3818,7 @@
         "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_04.png",
         "assets/terrain/limestone_cave/micro_adapters/blue/corner_outer/frame_05.png"
       ],
-      "sort_y": 788,
+      "sort_y": 722,
       "sort_priority": 0,
       "frame_duration_ms": 600,
       "phase_offset": 0,
@@ -4034,6 +4241,54 @@
       "source_pack": "micro",
       "light_index": 30,
       "wall_gem_color": "white"
+    },
+    {
+      "id": "greenwell_green_micro_0",
+      "position": [
+        2096,
+        842
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_05.png"
+      ],
+      "sort_y": 862,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.green.dense",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "green"
+    },
+    {
+      "id": "greenwell_green_micro_1",
+      "position": [
+        2116,
+        796
+      ],
+      "frames": [
+        "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_00.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_01.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_02.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_03.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_04.png",
+        "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_05.png"
+      ],
+      "sort_y": 820,
+      "sort_priority": 0,
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "reduced_motion_frame": 4,
+      "source_module": "micro.green.diagonal_left",
+      "source_pack": "micro",
+      "light_index": 31,
+      "wall_gem_color": "green"
     },
     {
       "id": "embervein_wall_north_0",
@@ -4702,6 +4957,15 @@
         528
       ],
       "description": "A quiet side chamber glows with white and blue pinpricks embedded in its walls. Pale mineral crust and damp stone catch the cold light around a waiting elemental."
+    },
+    {
+      "id": "greenwell_chamber",
+      "name": "Greenwell Chamber",
+      "position": [
+        1920,
+        820
+      ],
+      "description": "Green crystals surround a healing spring before the final ascent to Vespermaw."
     }
   ],
   "cave": {
@@ -5236,6 +5500,23 @@
         "phase": 0.7,
         "steady": false,
         "entity_id": "stillfrost_north_micro_0"
+      },
+      {
+        "id": "greenwell_green",
+        "position": [
+          2080,
+          820
+        ],
+        "color": [
+          73,
+          222,
+          104
+        ],
+        "radius": 220,
+        "gain": 0.8,
+        "phase": 0.2,
+        "steady": false,
+        "entity_id": "greenwell_green_micro_0"
       }
     ],
     "pulse_period_ms": 6000,
@@ -9897,8 +10178,8 @@
         "entity_id": "deep_east_micro_0",
         "color": "red",
         "position": [
-          1833,
-          837
+          1893,
+          951
         ],
         "light_index": 18,
         "light_position": [
@@ -10069,8 +10350,8 @@
           ]
         ],
         "emission_bounds": [
-          1804,
-          823,
+          1864,
+          937,
           54,
           31
         ]
@@ -10080,8 +10361,8 @@
         "entity_id": "deep_east_micro_1",
         "color": "red",
         "position": [
-          1857,
-          897
+          1881,
+          999
         ],
         "light_index": 18,
         "light_position": [
@@ -10132,8 +10413,8 @@
           ]
         ],
         "emission_bounds": [
-          1840,
-          882,
+          1864,
+          984,
           45,
           32
         ]
@@ -10270,8 +10551,8 @@
         "entity_id": "deep_exit_micro_1",
         "color": "blue",
         "position": [
-          1830,
-          788
+          1674,
+          722
         ],
         "light_index": 19,
         "light_position": [
@@ -10394,8 +10675,8 @@
           ]
         ],
         "emission_bounds": [
-          1807,
-          767,
+          1651,
+          701,
           45,
           42
         ]
@@ -12512,6 +12793,316 @@
           346,
           61,
           38
+        ]
+      },
+      {
+        "id": "greenwell_green_micro_0",
+        "entity_id": "greenwell_green_micro_0",
+        "color": "green",
+        "position": [
+          2128,
+          862
+        ],
+        "light_index": 31,
+        "light_position": [
+          2080,
+          820
+        ],
+        "crystal_count": 40,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "emission_bounds": [
+          2099,
+          848,
+          54,
+          31
+        ]
+      },
+      {
+        "id": "greenwell_green_micro_1",
+        "entity_id": "greenwell_green_micro_1",
+        "color": "green",
+        "position": [
+          2152,
+          820
+        ],
+        "light_index": 31,
+        "light_position": [
+          2080,
+          820
+        ],
+        "crystal_count": 26,
+        "crystal_sizes": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "emission_bounds": [
+          2125,
+          800,
+          50,
+          41
         ]
       },
       {
@@ -16120,7 +16711,7 @@
         ]
       }
     ],
-    "microcrystal_count": 2258,
+    "microcrystal_count": 2324,
     "placed_modules": [
       {
         "id": "entrance_arch",
@@ -17206,36 +17797,108 @@
         "entity_id": "water_tile_0",
         "module": "bank.outer_nw.0",
         "position": [
-          384,
-          816
+          2016,
+          744
         ]
       },
       {
         "entity_id": "water_tile_1",
         "module": "bank.north.0",
         "position": [
-          408,
-          816
+          2040,
+          744
         ]
       },
       {
         "entity_id": "water_tile_2",
-        "module": "bank.north.0",
+        "module": "bank.outer_ne.0",
         "position": [
-          432,
-          816
+          2064,
+          744
         ]
       },
       {
         "entity_id": "water_tile_3",
-        "module": "bank.north.0",
+        "module": "bank.west.0",
         "position": [
-          456,
-          816
+          2016,
+          768
         ]
       },
       {
         "entity_id": "water_tile_4",
+        "module": "water.deep.0",
+        "position": [
+          2040,
+          768
+        ]
+      },
+      {
+        "entity_id": "water_tile_5",
+        "module": "bank.east.0",
+        "position": [
+          2064,
+          768
+        ]
+      },
+      {
+        "entity_id": "water_tile_6",
+        "module": "bank.outer_sw.0",
+        "position": [
+          2016,
+          792
+        ]
+      },
+      {
+        "entity_id": "water_tile_7",
+        "module": "bank.south.0",
+        "position": [
+          2040,
+          792
+        ]
+      },
+      {
+        "entity_id": "water_tile_8",
+        "module": "bank.outer_se.0",
+        "position": [
+          2064,
+          792
+        ]
+      },
+      {
+        "entity_id": "water_tile_9",
+        "module": "bank.outer_nw.0",
+        "position": [
+          384,
+          816
+        ]
+      },
+      {
+        "entity_id": "water_tile_10",
+        "module": "bank.north.0",
+        "position": [
+          408,
+          816
+        ]
+      },
+      {
+        "entity_id": "water_tile_11",
+        "module": "bank.north.0",
+        "position": [
+          432,
+          816
+        ]
+      },
+      {
+        "entity_id": "water_tile_12",
+        "module": "bank.north.0",
+        "position": [
+          456,
+          816
+        ]
+      },
+      {
+        "entity_id": "water_tile_13",
         "module": "bank.north.0",
         "position": [
           480,
@@ -17243,7 +17906,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_5",
+        "entity_id": "water_tile_14",
         "module": "bank.outer_ne.0",
         "position": [
           504,
@@ -17251,91 +17914,19 @@
         ]
       },
       {
-        "entity_id": "water_tile_6",
-        "module": "bank.outer_nw.0",
-        "position": [
-          360,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_7",
-        "module": "bank.inner_nw.0",
-        "position": [
-          384,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_8",
-        "module": "water.deep.1",
-        "position": [
-          408,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_9",
-        "module": "water.deep.2",
-        "position": [
-          432,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_10",
-        "module": "water.deep.0",
-        "position": [
-          456,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_11",
-        "module": "water.deep.1",
-        "position": [
-          480,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_12",
-        "module": "bank.inner_ne.0",
-        "position": [
-          504,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_13",
-        "module": "bank.outer_ne.0",
-        "position": [
-          528,
-          840
-        ]
-      },
-      {
-        "entity_id": "water_tile_14",
-        "module": "bank.outer_nw.0",
-        "position": [
-          336,
-          864
-        ]
-      },
-      {
         "entity_id": "water_tile_15",
-        "module": "bank.inner_nw.0",
+        "module": "bank.outer_nw.0",
         "position": [
           360,
-          864
+          840
         ]
       },
       {
         "entity_id": "water_tile_16",
-        "module": "water.deep.2",
+        "module": "bank.inner_nw.0",
         "position": [
           384,
-          864
+          840
         ]
       },
       {
@@ -17343,23 +17934,23 @@
         "module": "water.deep.1",
         "position": [
           408,
-          864
+          840
         ]
       },
       {
         "entity_id": "water_tile_18",
-        "module": "water.deep.0",
+        "module": "water.deep.2",
         "position": [
           432,
-          864
+          840
         ]
       },
       {
         "entity_id": "water_tile_19",
-        "module": "water.deep.2",
+        "module": "water.deep.0",
         "position": [
           456,
-          864
+          840
         ]
       },
       {
@@ -17367,11 +17958,83 @@
         "module": "water.deep.1",
         "position": [
           480,
-          864
+          840
         ]
       },
       {
         "entity_id": "water_tile_21",
+        "module": "bank.inner_ne.0",
+        "position": [
+          504,
+          840
+        ]
+      },
+      {
+        "entity_id": "water_tile_22",
+        "module": "bank.outer_ne.0",
+        "position": [
+          528,
+          840
+        ]
+      },
+      {
+        "entity_id": "water_tile_23",
+        "module": "bank.outer_nw.0",
+        "position": [
+          336,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_24",
+        "module": "bank.inner_nw.0",
+        "position": [
+          360,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_25",
+        "module": "water.deep.2",
+        "position": [
+          384,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_26",
+        "module": "water.deep.1",
+        "position": [
+          408,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_27",
+        "module": "water.deep.0",
+        "position": [
+          432,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_28",
+        "module": "water.deep.2",
+        "position": [
+          456,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_29",
+        "module": "water.deep.1",
+        "position": [
+          480,
+          864
+        ]
+      },
+      {
+        "entity_id": "water_tile_30",
         "module": "water.deep.0",
         "position": [
           504,
@@ -17379,7 +18042,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_22",
+        "entity_id": "water_tile_31",
         "module": "bank.inner_ne.0",
         "position": [
           528,
@@ -17387,7 +18050,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_23",
+        "entity_id": "water_tile_32",
         "module": "bank.outer_ne.0",
         "position": [
           552,
@@ -17395,7 +18058,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_24",
+        "entity_id": "water_tile_33",
         "module": "bank.west.0",
         "position": [
           336,
@@ -17403,7 +18066,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_25",
+        "entity_id": "water_tile_34",
         "module": "water.deep.1",
         "position": [
           360,
@@ -17411,7 +18074,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_26",
+        "entity_id": "water_tile_35",
         "module": "water.deep.1",
         "position": [
           384,
@@ -17419,7 +18082,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_27",
+        "entity_id": "water_tile_36",
         "module": "water.deep.1",
         "position": [
           408,
@@ -17427,7 +18090,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_28",
+        "entity_id": "water_tile_37",
         "module": "water.deep.1",
         "position": [
           432,
@@ -17435,7 +18098,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_29",
+        "entity_id": "water_tile_38",
         "module": "water.deep.1",
         "position": [
           456,
@@ -17443,7 +18106,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_30",
+        "entity_id": "water_tile_39",
         "module": "water.deep.1",
         "position": [
           480,
@@ -17451,7 +18114,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_31",
+        "entity_id": "water_tile_40",
         "module": "water.deep.1",
         "position": [
           504,
@@ -17459,7 +18122,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_32",
+        "entity_id": "water_tile_41",
         "module": "water.deep.1",
         "position": [
           528,
@@ -17467,7 +18130,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_33",
+        "entity_id": "water_tile_42",
         "module": "bank.east.0",
         "position": [
           552,
@@ -17475,7 +18138,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_34",
+        "entity_id": "water_tile_43",
         "module": "bank.outer_sw.0",
         "position": [
           336,
@@ -17483,91 +18146,19 @@
         ]
       },
       {
-        "entity_id": "water_tile_35",
+        "entity_id": "water_tile_44",
         "module": "bank.inner_sw.0",
         "position": [
           360,
           912
-        ]
-      },
-      {
-        "entity_id": "water_tile_36",
-        "module": "water.deep.0",
-        "position": [
-          384,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_37",
-        "module": "water.deep.1",
-        "position": [
-          408,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_38",
-        "module": "water.deep.2",
-        "position": [
-          432,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_39",
-        "module": "water.deep.0",
-        "position": [
-          456,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_40",
-        "module": "water.deep.1",
-        "position": [
-          480,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_41",
-        "module": "water.deep.2",
-        "position": [
-          504,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_42",
-        "module": "bank.inner_se.0",
-        "position": [
-          528,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_43",
-        "module": "bank.outer_se.0",
-        "position": [
-          552,
-          912
-        ]
-      },
-      {
-        "entity_id": "water_tile_44",
-        "module": "bank.outer_sw.0",
-        "position": [
-          360,
-          936
         ]
       },
       {
         "entity_id": "water_tile_45",
-        "module": "bank.inner_sw.0",
+        "module": "water.deep.0",
         "position": [
           384,
-          936
+          912
         ]
       },
       {
@@ -17575,23 +18166,23 @@
         "module": "water.deep.1",
         "position": [
           408,
-          936
+          912
         ]
       },
       {
         "entity_id": "water_tile_47",
-        "module": "water.deep.0",
+        "module": "water.deep.2",
         "position": [
           432,
-          936
+          912
         ]
       },
       {
         "entity_id": "water_tile_48",
-        "module": "water.deep.2",
+        "module": "water.deep.0",
         "position": [
           456,
-          936
+          912
         ]
       },
       {
@@ -17599,11 +18190,83 @@
         "module": "water.deep.1",
         "position": [
           480,
-          936
+          912
         ]
       },
       {
         "entity_id": "water_tile_50",
+        "module": "water.deep.2",
+        "position": [
+          504,
+          912
+        ]
+      },
+      {
+        "entity_id": "water_tile_51",
+        "module": "bank.inner_se.0",
+        "position": [
+          528,
+          912
+        ]
+      },
+      {
+        "entity_id": "water_tile_52",
+        "module": "bank.outer_se.0",
+        "position": [
+          552,
+          912
+        ]
+      },
+      {
+        "entity_id": "water_tile_53",
+        "module": "bank.outer_sw.0",
+        "position": [
+          360,
+          936
+        ]
+      },
+      {
+        "entity_id": "water_tile_54",
+        "module": "bank.inner_sw.0",
+        "position": [
+          384,
+          936
+        ]
+      },
+      {
+        "entity_id": "water_tile_55",
+        "module": "water.deep.1",
+        "position": [
+          408,
+          936
+        ]
+      },
+      {
+        "entity_id": "water_tile_56",
+        "module": "water.deep.0",
+        "position": [
+          432,
+          936
+        ]
+      },
+      {
+        "entity_id": "water_tile_57",
+        "module": "water.deep.2",
+        "position": [
+          456,
+          936
+        ]
+      },
+      {
+        "entity_id": "water_tile_58",
+        "module": "water.deep.1",
+        "position": [
+          480,
+          936
+        ]
+      },
+      {
+        "entity_id": "water_tile_59",
         "module": "bank.inner_se.0",
         "position": [
           504,
@@ -17611,7 +18274,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_51",
+        "entity_id": "water_tile_60",
         "module": "bank.outer_se.0",
         "position": [
           528,
@@ -17619,7 +18282,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_52",
+        "entity_id": "water_tile_61",
         "module": "bank.outer_sw.0",
         "position": [
           384,
@@ -17627,7 +18290,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_53",
+        "entity_id": "water_tile_62",
         "module": "bank.south.0",
         "position": [
           408,
@@ -17635,7 +18298,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_54",
+        "entity_id": "water_tile_63",
         "module": "bank.south.0",
         "position": [
           432,
@@ -17643,7 +18306,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_55",
+        "entity_id": "water_tile_64",
         "module": "bank.south.0",
         "position": [
           456,
@@ -17651,7 +18314,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_56",
+        "entity_id": "water_tile_65",
         "module": "bank.south.0",
         "position": [
           480,
@@ -17659,7 +18322,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_57",
+        "entity_id": "water_tile_66",
         "module": "bank.outer_se.0",
         "position": [
           504,
@@ -17667,7 +18330,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_58",
+        "entity_id": "water_tile_67",
         "module": "bank.outer_nw.0",
         "position": [
           1272,
@@ -17675,7 +18338,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_59",
+        "entity_id": "water_tile_68",
         "module": "bank.north.0",
         "position": [
           1296,
@@ -17683,7 +18346,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_60",
+        "entity_id": "water_tile_69",
         "module": "bank.north.0",
         "position": [
           1320,
@@ -17691,7 +18354,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_61",
+        "entity_id": "water_tile_70",
         "module": "bank.outer_ne.0",
         "position": [
           1344,
@@ -17699,7 +18362,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_62",
+        "entity_id": "water_tile_71",
         "module": "bank.west.0",
         "position": [
           1272,
@@ -17707,7 +18370,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_63",
+        "entity_id": "water_tile_72",
         "module": "water.deep.0",
         "position": [
           1296,
@@ -17715,7 +18378,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_64",
+        "entity_id": "water_tile_73",
         "module": "water.deep.2",
         "position": [
           1320,
@@ -17723,7 +18386,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_65",
+        "entity_id": "water_tile_74",
         "module": "bank.east.0",
         "position": [
           1344,
@@ -17731,7 +18394,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_66",
+        "entity_id": "water_tile_75",
         "module": "bank.west.0",
         "position": [
           1272,
@@ -17739,7 +18402,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_67",
+        "entity_id": "water_tile_76",
         "module": "water.deep.1",
         "position": [
           1296,
@@ -17747,7 +18410,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_68",
+        "entity_id": "water_tile_77",
         "module": "water.deep.1",
         "position": [
           1320,
@@ -17755,7 +18418,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_69",
+        "entity_id": "water_tile_78",
         "module": "bank.east.0",
         "position": [
           1344,
@@ -17763,7 +18426,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_70",
+        "entity_id": "water_tile_79",
         "module": "bank.outer_sw.0",
         "position": [
           1272,
@@ -17771,7 +18434,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_71",
+        "entity_id": "water_tile_80",
         "module": "bank.south.0",
         "position": [
           1296,
@@ -17779,7 +18442,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_72",
+        "entity_id": "water_tile_81",
         "module": "bank.south.0",
         "position": [
           1320,
@@ -17787,7 +18450,7 @@
         ]
       },
       {
-        "entity_id": "water_tile_73",
+        "entity_id": "water_tile_82",
         "module": "bank.outer_se.0",
         "position": [
           1344,
@@ -18858,6 +19521,57 @@
           ]
         ],
         "description": "A quiet side chamber glows with white and blue pinpricks embedded in its walls. Pale mineral crust and damp stone catch the cold light around a waiting elemental."
+      },
+      {
+        "id": "greenwell_chamber",
+        "name": "Greenwell Chamber",
+        "position": [
+          1950,
+          790
+        ],
+        "polygon": [
+          [
+            1810,
+            770
+          ],
+          [
+            1840,
+            710
+          ],
+          [
+            1940,
+            692
+          ],
+          [
+            2040,
+            704
+          ],
+          [
+            2120,
+            752
+          ],
+          [
+            2130,
+            824
+          ],
+          [
+            2070,
+            892
+          ],
+          [
+            1970,
+            916
+          ],
+          [
+            1860,
+            880
+          ],
+          [
+            1800,
+            824
+          ]
+        ],
+        "description": "Green crystals surround a healing spring before the final ascent to Vespermaw."
       }
     ],
     "routes": {
@@ -18903,12 +19617,16 @@
           970
         ],
         [
-          1730,
-          800
+          1850,
+          880
         ],
         [
-          1790,
-          700
+          1920,
+          820
+        ],
+        [
+          1920,
+          740
         ],
         [
           1810,
@@ -19174,6 +19892,10 @@
       "stillfrost_chamber": [
         1296,
         528
+      ],
+      "greenwell_chamber": [
+        1920,
+        820
       ]
     },
     "treasures": [
@@ -19545,6 +20267,21 @@
         "requires_party": [
           "mira"
         ]
+      },
+      {
+        "id": "greenwell_pool",
+        "position": [
+          2028,
+          804
+        ],
+        "approach": [
+          2000,
+          828
+        ],
+        "radius": 24,
+        "label": "Rest at the healing pool",
+        "healing_pool": true,
+        "text": "The green spring restores the party’s HP and MP."
       }
     ],
     "traversal_checks": {
@@ -19978,7 +20715,7 @@
     "tool": "tools/build_continuous_sanctuary_cave.py",
     "source_recipe": "assets/source/maps/sanctuary_cave/recipe.json",
     "source_sha256": {
-      "assets/source/maps/sanctuary_cave/recipe.json": "96996ad416612317381ea1345a707fba7bc7cb7c0ba750b7ec33d209a916d7b2",
+      "assets/source/maps/sanctuary_cave/recipe.json": "a267555da8de0d434dce07127ce1d6b42c04581841c9754e0580045ce7108cc8",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "0602455fbd55cf09aa3ae5e0b98e6b4e1d6c29d4a8da01a519bdb06a7dd5889a",
       "assets/terrain/limestone_cave/chasm/assets.json": "10bbb3814c288ea6c24156be449450b96ed0ec005aac2ff336ecab60a626c3f5",
@@ -20063,6 +20800,18 @@
       "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_03.png": "a2b686989f8c5f6ddca6be89533197fe7ecbd0566924b36d793fe93936893a0b",
       "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_04.png": "267cf142f2fe71751a513fd09c330c3ff70ea1db146fe644e92c3da96b9515e0",
       "assets/terrain/limestone_cave/micro_adapters/blue/vertical/frame_05.png": "d919ec78aba7cc42bff9228cb38a82021a492ba62dfbc53ea7e956c076e11e50",
+      "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_00.png": "88323b28c39b398bf284237d8561df2b7216c8ecd089b78c1500b4c9666d36d5",
+      "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_01.png": "e08dae8dc233f1646d8b986fab0e501748e65818f6ce63fd7c8db5e482336794",
+      "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_02.png": "24a9b2247ded4a41ee207a86a29dd138e0aa9bfccc1acecb8c4cb95bc94c7d42",
+      "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_03.png": "47a2711979037064c762c6992efb30831ed3ce4a763b4258db8573ac3d6f03fb",
+      "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_04.png": "b5872e15437ec248577daeb8eacceb8a8e6648e9e4e263d8721a3737367a69c2",
+      "assets/terrain/limestone_cave/micro_adapters/green/dense/frame_05.png": "f52bc65d45d9c34c3e5d08b8b4a09cebb23b26226528eca0ba37ad61b32d4441",
+      "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_00.png": "9d4a2a6241f8805b46994958c13b1b17251d528324de7a68208761d521f7f939",
+      "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_01.png": "f13bf8871bacc44924e1a1d8f96907ed27f3b15d00cb8c849c1e1bd4a9e46244",
+      "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_02.png": "cce1ffdc98ffe850fa3a46c30f8bd24e4c7cae6c8ebd78ad066693aebac22fb9",
+      "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_03.png": "af08bd91d2e6d694affd1eaae3460c9cfbc203d094d95d80fc3c9e166787ff25",
+      "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_04.png": "9020277f5cb415008fe37967fce10e463b911d6d27c9e462cd9e3c171fb537a4",
+      "assets/terrain/limestone_cave/micro_adapters/green/diagonal_left/frame_05.png": "3b2289f626be2e418d3c215d85b70056bdc841be1605684d811ee93b09f81f5d",
       "assets/terrain/limestone_cave/micro_adapters/green/sparse/frame_00.png": "267ecccfdd2173db26ed4c2c13f3fb25b30955120ccd57e403b57058ad53a649",
       "assets/terrain/limestone_cave/micro_adapters/green/sparse/frame_01.png": "f5257ce01aba802c1697ea5c1617c90c518008dd607dd7a136437b2cec54fe88",
       "assets/terrain/limestone_cave/micro_adapters/green/sparse/frame_02.png": "0d7582cb706821008db436cbfb7563bf1a7999f2f05f681e389ff66bf6f2d9b5",

@@ -1084,6 +1084,57 @@
         ]
       ],
       "description": "A quiet side chamber glows with white and blue pinpricks embedded in its walls. Pale mineral crust and damp stone catch the cold light around a waiting elemental."
+    },
+    {
+      "id": "greenwell_chamber",
+      "name": "Greenwell Chamber",
+      "position": [
+        1950,
+        790
+      ],
+      "polygon": [
+        [
+          1810,
+          770
+        ],
+        [
+          1840,
+          710
+        ],
+        [
+          1940,
+          692
+        ],
+        [
+          2040,
+          704
+        ],
+        [
+          2120,
+          752
+        ],
+        [
+          2130,
+          824
+        ],
+        [
+          2070,
+          892
+        ],
+        [
+          1970,
+          916
+        ],
+        [
+          1860,
+          880
+        ],
+        [
+          1800,
+          824
+        ]
+      ],
+      "description": "Green crystals surround a healing spring before the final ascent to Vespermaw."
     }
   ],
   "corridors": [
@@ -1131,12 +1182,16 @@
           970
         ],
         [
-          1730,
-          800
+          1850,
+          880
         ],
         [
-          1790,
-          700
+          1920,
+          820
+        ],
+        [
+          1920,
+          740
         ],
         [
           1810,
@@ -1370,6 +1425,28 @@
         ]
       ],
       "width": 96
+    },
+    {
+      "id": "preserved_shelf_approach",
+      "points": [
+        [
+          1680,
+          970
+        ],
+        [
+          1730,
+          800
+        ],
+        [
+          1790,
+          700
+        ],
+        [
+          1810,
+          600
+        ]
+      ],
+      "width": 120
     }
   ],
   "material_patches": [
@@ -1997,6 +2074,42 @@
     [
       56,
       68
+    ],
+    [
+      84,
+      31
+    ],
+    [
+      85,
+      31
+    ],
+    [
+      86,
+      31
+    ],
+    [
+      84,
+      32
+    ],
+    [
+      85,
+      32
+    ],
+    [
+      86,
+      32
+    ],
+    [
+      84,
+      33
+    ],
+    [
+      85,
+      33
+    ],
+    [
+      86,
+      33
     ]
   ],
   "placements": [
@@ -3136,6 +3249,21 @@
         "dense",
         "diagonal_right"
       ]
+    },
+    {
+      "id": "greenwell_green",
+      "near": [
+        2080,
+        820
+      ],
+      "color": "green",
+      "radius": 220,
+      "gain": 0.8,
+      "phase": 0.2,
+      "patterns": [
+        "dense",
+        "diagonal_left"
+      ]
     }
   ],
   "routes": {
@@ -3181,12 +3309,16 @@
         970
       ],
       [
-        1730,
-        800
+        1850,
+        880
       ],
       [
-        1790,
-        700
+        1920,
+        820
+      ],
+      [
+        1920,
+        740
       ],
       [
         1810,
@@ -3452,6 +3584,10 @@
     "stillfrost_chamber": [
       1296,
       528
+    ],
+    "greenwell_chamber": [
+      1920,
+      820
     ]
   },
   "treasures": [
@@ -3769,6 +3905,21 @@
       "requires_party": [
         "mira"
       ]
+    },
+    {
+      "id": "greenwell_pool",
+      "position": [
+        2028,
+        804
+      ],
+      "approach": [
+        2000,
+        828
+      ],
+      "radius": 24,
+      "label": "Rest at the healing pool",
+      "healing_pool": true,
+      "text": "The green spring restores the party’s HP and MP."
     }
   ],
   "traversal_checks": {

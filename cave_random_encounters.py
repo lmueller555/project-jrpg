@@ -314,19 +314,23 @@ class CaveRandomEncounters:
         return sorted(values)
 
     def travel(self, previous, current, *, eligible=True, scene_id=SCENE_ID,
-               distance_scale=1., introductory=False):
+               distance_scale=1., introductory=False, boss_defeated=False):
         """Count a collision-resolved path segment and interpolate its trigger feet.
 
         Callers must omit teleports and doorway placement. On a selected battle,
         the returned position marks the exact stopping point on the supplied
         segment, rather than the end of a long render frame. ``distance_scale``
         allocates a diagonal substep's Euclidean credit across its safe axis
-        legs without interpolating through a blocked corner.
+        legs without interpolating through a blocked corner. After the durable boss
+        defeat, halve that credit (including trigger interpolation) so expected
+        encounters per travelled distance fall by 50%, without rerolling tickets.
         """
         start,end = _point(previous),_point(current)
         if (start is None or end is None or type(eligible) is not bool or type(introductory) is not bool
+                or type(boss_defeated) is not bool
                 or not _number(distance_scale, 1e-12, 1.)):
             raise ValueError('Invalid cave movement segment')
+        distance_scale *= .5 if boss_defeated else 1.
         if self._pending is not None:return self.pending
         if not eligible or scene_id != SCENE_ID:return None
         distance = math.dist(start,end)

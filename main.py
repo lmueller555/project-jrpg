@@ -1700,6 +1700,7 @@ class Game:
             for previous,current,weight in zip(trace,trace[1:],self.player.motion_weights):
                 ticket=self.cave_random_encounters.travel(previous,current,
                     scene_id=self.world.data['id'],distance_scale=weight,
+                    boss_defeated=self.sanctuary_boss.defeated,
                     introductory=self.cave_lesson.needs_intro)
                 if ticket is not None:break
         if ticket is None:return False
