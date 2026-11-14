@@ -1,0 +1,100 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "reference": "assets/source/characters/iselin/idle_front_master.png",
+  "method": "Separate authored directional views; hard-alpha extraction and uniform nearest-neighbor registration only.",
+  "anatomy": "Braid anatomical left, mantle/brooch anatomical right; braid falls over chest.",
+  "frame_size": [
+    42,
+    72
+  ],
+  "logical_frame_size": [
+    21,
+    36
+  ],
+  "draw_anchor": [
+    21,
+    60
+  ],
+  "foot_anchor": [
+    21,
+    68
+  ],
+  "records": {
+    "front": {
+      "source": "assets/source/characters/iselin/idle_front_master.png",
+      "sha256": "da23deac3b262d78512af5a5f9c0322797feccce91f411d306d55bcbc3a4435a",
+      "bounds": [
+        260,
+        94,
+        767,
+        1432
+      ],
+      "nominal_uniform_scale": 0.05082212257100149,
+      "rounded_size": [
+        26,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    "left": {
+      "source": "assets/source/characters/iselin/idle_left_master.png",
+      "sha256": "165bdddb8b7286dda5c3cea7d6aa3dde00db78f5acfac88ad8fea922d1c17885",
+      "bounds": [
+        271,
+        113,
+        671,
+        1515
+      ],
+      "nominal_uniform_scale": 0.04850213980028531,
+      "rounded_size": [
+        19,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    "right": {
+      "source": "assets/source/characters/iselin/idle_right_master.png",
+      "sha256": "f5ca01bc20620294d8425c6635d991f68a0e565aceb240dd87ad7c870494dbee",
+      "bounds": [
+        257,
+        107,
+        647,
+        1529
+      ],
+      "nominal_uniform_scale": 0.04781997187060478,
+      "rounded_size": [
+        19,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    "back": {
+      "source": "assets/source/characters/iselin/idle_back_master.png",
+      "sha256": "dc404259161fb66e9755af01983061476965df6a62ac3c729f0d4a727a535646",
+      "bounds": [
+        225,
+        106,
+        723,
+        1520
+      ],
+      "nominal_uniform_scale": 0.04809052333804809,
+      "rounded_size": [
+        24,
+        68
+      ],
+      "origin": [
+        9,
+        2
+      ]
+    }
+  }
+}

@@ -1,5 +1,10 @@
 # Iselin — front-facing idle
 
+**Directional update:** all four idles are now registered in `animation.json`.
+See `docs/reviews/iselin_first_assets/DIRECTIONAL_IDLES.md` for the turnaround
+and production capture. All use the existing 42×72 / 21×36 registration.
+Walking and cinematic poses are not part of this idle milestone.
+
 **Current assets:** the 42×72 idle and dialogue portrait are approved. The
 registered idle actor is `actor.json`; `animation.json` supplies a logical
 fallback and the display-density idle. See
