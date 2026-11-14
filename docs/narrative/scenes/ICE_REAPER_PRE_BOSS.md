@@ -2,15 +2,17 @@
 
 **Status:** The first 21 seconds are approved and merged. The continuation is implemented for whole-scene review. Its **32-second** duration supersedes the earlier 45-second budget and meteor/vine ending.
 
-**Placement:** This remains an unplaced Gallery scene study. Its kingdom, region, act and installment have not been assigned. Respect the [current Game I scope](../game_01/ACT_OUTLINE.md) when placing it in the main story.
+**Placement:** This remains an isolated Gallery scene study for Iselin's eventual late-game Ice Reaper confrontation. Her kingdom lies in northern Merovar; its name and capital remain undecided. The exact quest, act and main-story checkpoint have not been assigned. Follow [Iselin's approved character canon](../game_01/characters/ISELIN.md) when placing it in the main story.
 
 Related references: [scenario index](../game_01/SCENARIOS.md), [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01/characters/MIRA.md), [companion foundations](../game_01/COMPANIONS.md), and [aether foundations](../../FOUNDATIONAL_LORE.md).
 
 ## Setting
 
-A huge ice dome covers a ruined, frozen kingdom. The Ice Reaper created it to protect the kingdom against a hostile army. The relationship between the destruction, hostile army and dome's creation remains unspecified. This dome is a regional ice construction, not the Aethersphere.
+A huge ice dome covers a ruined, frozen kingdom. Iselin created it in desperation to protect her people from the coming calamity. She is seen as a traitor and exiled; that rejection is the final breaking point in her descent into the Ice Reaper. This approved motive supersedes the earlier hostile-army explanation. The exact sequence of the kingdom's destruction and the confrontation remains unwritten. The dome is a regional ice construction, not the Aethersphere.
 
-The Ice Reaper is a woman who has merged with a great amount of ice-aspected aether. She has glassy blue wings, ice-covered parts of her body, and blue, white and silver accents. The approved art's silver-white hair and dark clothing do not establish a royal identity, biography or transformation mechanism.
+The Ice Reaper is Regent Iselin, the reigning queen's younger sister. She already has exceptional ice-magick talent from her northern upbringing. Her late-game form has merged with a great amount of ice-aspected aether, with glassy blue wings, ice-covered parts of her body, and blue, white and silver accents. The mechanism and intervening choices that lead to this amplification remain unwritten; she does not first acquire ice magick here.
+
+These identity and motive notes are author knowledge. Opening dialogue, quest trackers, Gallery labels and casual NPC exposition must not reveal her covert Crown investigation or future Ice Reaper identity. The existing scene artwork and action study do not by themselves establish the missing transformation scenes or final encounter placement.
 
 Caelan, Lucan and Mira rescue Rhea from an ice prison. Rhea then takes control of the confrontation while moving her companions out of its path. Her wind blast and fireballs express her limit-breaking magic without establishing a named player ability or a combat damage formula.
 
@@ -102,4 +104,4 @@ Source drawings, prompts, extraction metadata and audio provenance remain beside
 
 ## Open story and gameplay decisions
 
-Main-story placement, kingdom identity, boss attributes and abilities, encounter balance, outcome and post-fight dialogue remain unassigned. The final charge and fade establish the cinematic fight opening without silently implementing those decisions. Any later combat integration must preserve the continuous music handoff and the surviving party's positions.
+The kingdom's northern location and Iselin's identity and protective motive are established. Its name, the capital's name, exact main-story placement, transformation mechanism, boss attributes and abilities, encounter balance, outcome and post-fight dialogue remain unassigned. The final charge and fade establish the cinematic fight opening without silently implementing those decisions. Any later combat integration must preserve the continuous music handoff and the surviving party's positions.

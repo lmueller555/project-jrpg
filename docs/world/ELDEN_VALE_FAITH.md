@@ -13,9 +13,10 @@ every person in Elden Vale follows the same tradition.
 region's dead and the mining operation's disruption of that work. Reports of
 cave growling precede a survivor's account of an attack on Iselin's secret
 advance crew. The emergency takes Caelan, Mira, Iselin, Lucan and the page to
-the [detailed reserve](../SANCTUARY_RESERVE.md). The arrival cutscene, cave
-dungeon and miniboss remain later work; the new route does not complete MQ03
-or immediately unlock the lantern quest.
+the [detailed reserve](../SANCTUARY_RESERVE.md). The implemented arrival, cave
+rescue, Vespermaw fight and healing-pool evacuation lead into the return
+resolution. MQ03 completes and unlocks the lantern quest only after the final
+acknowledged family exchange at home.
 
 Related guides: [Foundational Lore](../FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),
@@ -110,9 +111,10 @@ stays to treat the survivor, with Tomas and the driver helping. Caelan brings
 Mira into the rescue outing and travels with her, Iselin, Lucan and the page.
 The page's prior knowledge of the operation is not established.
 
-The new MQ03 route pauses at the Sanctuary arrival checkpoint. It does not
-explain the attack, identify the miniboss, establish that mining caused the
-growling or resolve the conflict before the later cutscene.
+The implemented MQ03 rescue resolves the immediate missing-worker emergency
+and acknowledges Iselin's breach of trust. It does not establish that mining
+caused the growling or grant permission to excavate. The return resolution
+preserves the Sanctuary's responsibilities and the unresolved wider conflict.
 
 ## Knowledge and decisions still open
 

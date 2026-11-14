@@ -143,7 +143,7 @@ Regent Iselin is an established regional authority and the younger sister of
 her northern kingdom's reigning queen. That Crown governs through regional governors
 and local institutions. Her exact jurisdictional borders, appointment history
 and constitutional powers remain open. Elden Vale and nearby
-upper Leth road and quarry districts form the immediate setting of his
+upper Leth road and quarry districts form the immediate setting of her
 administration's concerns.
 
 Before Game I opens, an extraordinarily powerful lightning surge destroyed
@@ -182,10 +182,11 @@ work does not erase her concealed attempt to impose control over the site.
 
 Serene stays to care for the survivor with Tomas and the driver helping.
 Caelan collects Mira and travels to the reserve with her, Iselin, Lucan and
-the page. The new route pauses at the arrival checkpoint; the cutscene and
-miniboss are later work. The exact extent of the crew's mining preparations
-and the operation's later outcome remain for that sequence. No agreement to
-excavate is granted by this emergency response.
+the page. The implemented route includes the Sanctuary arrival, cave rescue,
+Vespermaw fight, healing-pool evacuation and return resolution. Iselin must
+account for her concealed deployment, and relief arrangements address the
+immediate recovery needs. No agreement to excavate is granted by this emergency
+response or by completing MQ03.
 
 Valley residents should have varied positions. A quarry worker may want steady
 work and stronger safety oversight. A farmer may welcome a road while

@@ -50,9 +50,9 @@ Before the opening morning, an extraordinary lightning surge destroyed the
 road to the next town south of Eldenmere. Only a handful of comparable events
 have occurred elsewhere. Iselin has already helped a couple of those affected
 communities, and their combined repair needs are straining stone supplies.
-His arranged visit brings that relief effort to Eldenmere and a request to
+Her arranged visit brings that relief effort to Eldenmere and a request to
 discuss the protected ridge seam with Serene. The festival gives the visit a
-social setting; the repaired mill does not cause his journey.
+social setting; the repaired mill does not cause her journey.
 
 Elden Vale Sanctuary is the regional ridge site, separate from Serene's home
 in Eldenmere. It was deliberately built near a natural aether confluence to
@@ -65,9 +65,10 @@ before seeking Serene's agreement. A survivor interrupts the post-meal
 conversation after something from the cave attacks that crew, exposing
 Iselin's bad faith. Lucan did not know about the deployment and is taken aback.
 Caelan collects Mira and travels with her, Iselin, Lucan and the page to the
-Sanctuary. The new MQ03 route holds at arrival for a later cutscene; the
-miniboss and the end of the quest remain to be designed. These developments
-do not move the Chapter 3 excavation catastrophe into the opening chapter.
+Sanctuary. The implemented MQ03 route continues through the arrival cinematic,
+cave rescue, Vespermaw fight, healing-pool evacuation and acknowledged return
+resolution. These developments do not move the Chapter 3 excavation
+catastrophe into the opening chapter.
 
 ## Mandatory quests — approved sequence and functions
 
@@ -99,7 +100,7 @@ rewards and does not itself accept MQ03.
 ### MQ03 — The Regent's Road
 
 **Premise:** Iselin reaches Eldenmere during a relief journey after unusual
-lightning has damaged several communities. Repair demand is real, but he has
+lightning has damaged several communities. Repair demand is real, but she has
 already secretly sent a Crown crew to establish authority over the Sanctuary
 and prepare mining. Caelan welcomes the visitors and accompanies them to a meal
 at Serene's home. The discussion of the Sanctuary's duty to guide the region's
@@ -118,16 +119,19 @@ people still in danger. Serene remains to care for the survivor with Tomas and
 the driver helping. The five travelers are Iselin, Lucan, the page, Caelan and
 Mira. The page occupies the former clerk role; no prior complicity is assigned.
 
-The new route ends at a durable arrival checkpoint with MQ03 active. Its
-cutscene, rescue, miniboss and resolution remain later work. The earlier
-private-aftermath completion and immediate MQ04 invitation are superseded for
-new journeys. Existing completed MQ03/MQ04 journeys retain their progress
-without inventing an attack report, new trip or party membership.
+The route continues through the Sanctuary arrival, cave rescue and Vespermaw
+fight. Lucan joins Caelan and Mira as a temporary cave guest. After evacuation
+to the healing pool, the party reports to Iselin and returns home for the
+reunion, accountability and relief arrangements. The acknowledged private
+family exchange completes MQ03 and unlocks MQ04. The earlier immediate
+private-aftermath completion is superseded for new journeys. Existing completed
+MQ03/MQ04 journeys retain their progress without inventing an attack report,
+new trip or party membership.
 
 **Emotional result:** Caelan has reason to value Iselin's achievements and to
-recognize his deception. Lucan's independent reaction begins separating his
-judgment from his employer's; traveling together does not recruit him into
-the combat party yet.
+recognize her deception. Lucan's independent reaction begins separating his
+judgment from his employer's. His temporary cave participation ends after
+the rescue; permanent recruitment remains future work.
 
 ### MQ04 — A Light of His Own
 
@@ -191,7 +195,7 @@ Her precise knowledge is limited: she does not know the cosmic catastrophe, the 
 - **Mira:** Childhood friend and mechanically curious engineer; believes responsible development can improve lives.
 - **Tomas:** **14 years old** at the game opening; Caelan's younger biological brother, restless and inventive; an autonomous person, not simply a future tragedy.
 - **Iselin:** Respected ruler who has tangibly helped the region; MQ03 exposes her deliberate secret deployment and deceptive negotiation. Her achievements do not erase that choice, and the choice does not make her earlier relief work fictitious.
-- **Lucan:** Iselin's personal guard, initially unaware of the advance crew. He is taken aback by the secrecy and responds to the immediate rescue needs without joining the combat roster yet.
+- **Lucan:** Iselin's personal guard, initially unaware of the advance crew. He is taken aback by the secrecy and joins the cave rescue as a temporary guest; permanent recruitment remains future work.
 
 Caelan's age of **18** and Tomas's age of **14** are approved canon; see
 [approved character facts](CHARACTERS.md). Other ages and biography details
@@ -219,9 +223,7 @@ Mechanisms and magicks must obey conservation of aether. Planetary-return teachi
 ## Still to determine
 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
-2. Build the Sanctuary arrival cutscene and the planned cave/miniboss sequence after the implemented MQ03 travel checkpoint.
-3. Resolve the immediate crew emergency and determine MQ03's ending and eventual return to the lantern preparations.
-4. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
-5. Develop the later site investigation and formal-authorization escalation without giving Serene forbidden saga knowledge or erasing MQ03's secret deployment.
-6. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
-7. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.
+2. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
+3. Develop the later site investigation and formal-authorization escalation without giving Serene forbidden saga knowledge or erasing MQ03's secret deployment.
+4. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
+5. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.

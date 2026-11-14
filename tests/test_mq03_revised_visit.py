@@ -119,8 +119,9 @@ class RevisedVisitTests(unittest.TestCase):
     def test_dialogue_does_not_disclose_the_hidden_planetary_history(self):
         text = ' '.join(line['text'] for lines in self.quest.lines.values() for line in lines)
         for disclosure in ('Aethersphere', 'sleeping Ancients', 'cosmic catastrophe',
-                           'protective barrier', 'Queen Isolde', 'House Maroven'):
-            self.assertNotIn(disclosure, text)
+                           'protective barrier', 'Queen Isolde', 'House Maroven',
+                           'Ice Reaper', 'covert investigation'):
+            self.assertNotIn(disclosure.casefold(), text.casefold())
         self.assertNotIn('hire note', text)
         self.assertNotIn('Return the cart', text)
 
@@ -133,6 +134,9 @@ class RevisedVisitTests(unittest.TestCase):
     def test_attack_exposes_iselin_and_lucan_learns_about_the_deployment_here(self):
         report = self.quest.lines['attack_report']
         self.assertEqual(report[0]['speaker'], 'regent_survivor')
+        self.assertTrue(report[0]['text'].startswith('Your ladyship—'))
+        self.assertNotIn('lordship', ' '.join(line['text'] for lines in
+                         self.quest.lines.values() for line in lines).casefold())
         text = ' '.join(line['text'] for line in report)
         self.assertIn('secure the deposit and prepare the mining work', text)
         self.assertIn('Ahead of my visit.', text)

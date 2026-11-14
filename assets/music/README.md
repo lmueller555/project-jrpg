@@ -32,11 +32,11 @@ notes are optional; you can add the audio on its own.
 ## Current game tracks
 | Original upload | Runtime asset | Use |
 | --- | --- | --- |
-| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
+| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Iselin's arrival cinematic |
 | `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
 
 **Royalty of the Realm** starts after Eldenmere's one-second fade during the
-arrival blackout and repeats through the Aldric cinematic. Its native Vorbis
+arrival blackout and repeats through the Iselin cinematic. Its native Vorbis
 export contains the encoder's documented 56-frame lead-in; no music is trimmed
 or rearranged.
 
@@ -47,7 +47,7 @@ or rearranged.
 | `Elden Vale Sanctuary Cave.m4a` | `runtime/elden_vale_sanctuary_cave.ogg` | Non-battle exploration throughout the Sanctuary cave, including the optional elemental chambers |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it after the return camera pan and acknowledgment of Mira's warning |
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Retained one-shot cue; combat results now resume the interrupted soundtrack |
-| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
+| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Iselin's arrival cinematic |
 | `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
 | `Wintermute 2.m4a` | `runtime/wintermute2.ogg` | Retained previous Ice Reaper cue |
 | `Those I Swore to Save.m4a` | `runtime/those_i_swore_to_save.ogg` | Full Ice Reaper cinematic, starting at track position zero |
