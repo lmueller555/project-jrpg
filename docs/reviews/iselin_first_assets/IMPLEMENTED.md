@@ -1,5 +1,10 @@
 # Approved portrait and 42×72 idle
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 The user approved Design A's dialogue portrait and the 42×72 idle at ordinary
 party scale. Earlier review images and statuses are retained as historical work.
 The 24×36 alternative is superseded; its artwork approval is not implied.

@@ -1,10 +1,16 @@
 # Iselin left walk — approved
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 The user approved this cycle for merge. Earlier review-stage notes below are
 retained as history; runtime walking integration remains subsequent work.
 
-Sixteen complete flattened42×72 frames, 35ms each, 560ms full cycle. Review only:
-not merged and not activated in the journey. The approved right cycle is untouched.
+Sixteen complete flattened42×72 frames, 35ms each, 560ms full cycle. Approved
+and merged; runtime activation remains separate. The approved right cycle is
+untouched.
 
 ![Normal speed on the left, half speed on the right](preview.gif)
 

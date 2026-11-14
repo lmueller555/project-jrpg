@@ -1,5 +1,10 @@
 # Companion sprite study sources
 
+Authoring rules live in the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 The lucan, rhea and edran folders each preserve an imagegen-authored transparent
 design sheet and a source.json provenance/extraction recipe. Each source has
 three isolated poses: front overworld idle, left-facing combat-ready stance

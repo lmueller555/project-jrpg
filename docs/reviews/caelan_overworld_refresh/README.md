@@ -1,5 +1,10 @@
 # Caelan overworld quality review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 This review samples the new runtime sprite bank through the real Player frame
 selector and the production town/cave renderers. It also seeks representative
 household interactions through their existing action owners. User approval of

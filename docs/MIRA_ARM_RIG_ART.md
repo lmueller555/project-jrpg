@@ -1,5 +1,10 @@
 # Mira: wearable arm-rig artwork (phase one)
 
+Sprite construction, proportions, registration and visual review follow the
+[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). The
+implementation details below describe this asset/system; older construction
+methods are retained for reproducibility, not as new authoring instructions.
+
 Mira's combat bank now depicts a worn external forearm rig: a graphite housing,
 brass actuator and projector plates, leather attachment straps, an aether lens,
 and visible intact hands and arm. Her rose work shirt, flower, ponytail, tool

@@ -1,5 +1,10 @@
 # Mira: wearable arm-rig combat
 
+Sprite construction, proportions, registration and visual review follow the
+[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). The
+implementation details below describe this asset/system; older construction
+methods are retained for reproducibility, not as new authoring instructions.
+
 Mira is an **Engineer** wearing an external arm augmentation over her intact
 limb. Her forearm emitter, projector and engineering tools use her own stats,
 MP and ATB turn. She has no autonomous combat companion or second action queue.

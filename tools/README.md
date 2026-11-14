@@ -1,5 +1,21 @@
 # Asset tools
 
+Character artwork and animation must follow the
+[global sprite and animation standard](../docs/SPRITE_ANIMATION_STANDARD.md).
+That is the single authoring workflow; this catalogue records commands and
+asset-specific implementation details. Older part/mask/layer builders remain
+for reproducing approved assets, not as the construction method for new walks.
+Do not rebuild approved references or migrate unrelated art as part of adopting
+the standard.
+
+Iselin’s approved complete-frame walk exporters are
+`tools/export_iselin_front_walk.py`,
+`tools/export_iselin_right_walk_redrawn.py`,
+`tools/export_iselin_left_walk.py` and
+`tools/export_iselin_back_walk.py`. The rear exporter uses
+`tools/iselin_back_walk_stability.py` for body-landmark registration.
+See the standard for the workflow and linked revision evidence.
+
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).
 
 Compile functional building doors and room transfers with `python tools/build_building_interiors.py`. It augments the playable town manifest with nine doors, five native poses per visible door, and eleven furnished scene manifests. Approved cottage door frames are reused exactly; other doors derive inward hinge poses from their existing panel pixels. Actor-free ground/light layers, furniture, fire/steam and floor-bounded collision come from approved room assets, with functional mill/workshop workrooms assembled from the same kit. Each house has a distinct scene/return link even when sharing a layout. `build_playable_eldenmere.py` invokes this compiler automatically. `tests/test_doors.py` covers proximity/hold/reversal/hysteresis, walk-in gating, all nine round trips, sanctuary room links, all scene exits/furnishing access, map behavior and small-room centering. Source art remains read only.
@@ -24,7 +40,7 @@ Use `python tools/build_serene_walk.py --direction remaining` for her left/right
 
 Build Serene's sanctuary work loops with `python tools/build_serene_routines.py`. The source recipe under `assets/source/characters/serene/routines/` combines her approved back-facing head, mantle and planted lower body with articulated arms and small provision, paper, poker and linen props on a 48×48 canvas. Four loops export with runtime metadata: sorting provisions, consulting the preparation list, tending the hearth and arranging hall linens. Tests keep protected appearance pixels and feet exact, bound arm lengths, verify table contact and register the poker tip inside the real firebox. Run `python tools/capture_serene_routines.py` to render four 4× reviews through the actual `RoutineNPC`, sanctuary maps and depth sorter; scene/station/crop data come from `assets/maps/eldenmere/routines/serene.json`.
 
-The walk builder assembles character-specific source parts against retained semantic pose masks from Caelan's approved cycles.
+The legacy shared walk builder assembles character-specific source parts against retained semantic pose masks from Caelan's approved cycles. The following commands document that existing implementation; new walks use complete authored drawings under the global standard.
 
 ```sh
 python -m pip install -r tools/requirements-assets.txt
@@ -39,7 +55,7 @@ Use `--refresh-template` to regenerate shared masks before assembling the charac
 
 `--direction` accepts `front`, `left`, `right`, `back`, or `all`. Front remains the default. Each direction has its own appearance input, recipe and material masks. `all` also exports a combined native sheet, metadata, and labeled four-direction comparison GIF. Approval labels come from each recipe.
 
-New characters need a recipe and appropriately prepared appearance parts. Shared semantic arm masks allow clothing recoloring; shared leg art can retain matching trousers/boots or use an explicit leg-color mapping. Other body proportions or costumes can use additional pose components rather than deforming a flattened idle image.
+This legacy builder requires a recipe and appropriately prepared appearance parts. Its semantic arm masks support clothing recoloring and its shared legs support explicit color mapping for existing packs. These are implementation facts for reproducing those packs, not instructions to construct new character walks from separate body parts.
 
 The base male NPC front walk uses the same arm and leg poses with an explicit `leg_palette` mapping for tan trousers and brown boots. A recipe with `shared_leg_costume: false` must supply that mapping; unmapped source colors are rejected. `preserve_waist: true` retains the original belt/buckle and upper-trouser pixels instead of synthesizing a waist. Both options are opt-in, preserving the existing Mira output. Character directories may use identifier components separated by `/`, such as `npcs/male_01`; absolute paths and traversal components are rejected.
 

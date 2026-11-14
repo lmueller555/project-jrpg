@@ -1,5 +1,10 @@
 # Elden Vale NPC sprites and routine animation
 
+Sprite construction, proportions, registration and visual review follow the
+[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). The
+implementation details below describe this asset/system; older construction
+methods are retained for reproducibility, not as new authoring instructions.
+
 Character–object work follows the mandatory
 [global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
 [personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,

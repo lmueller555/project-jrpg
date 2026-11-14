@@ -1,8 +1,13 @@
 # Iselin front walk — approved
 
-The user approved this preview for merge. Runtime walking integration and the
-remaining directions are subsequent work; this milestone supplies the authored
-front cycle. Earlier preview notes below preserve its review context.
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
+The user approved this preview and it is merged. All four Iselin walks are now
+approved and merged; runtime walking integration remains separate. This page
+retains the front-cycle milestone and its earlier review context.
 
 Sixteen independently authored poses, exported at 42×72. Design A's anatomical
 left braid and anatomical right mantle are maintained. The full two-step cycle
@@ -13,8 +18,9 @@ GIF centisecond timing alternates 30/40 ms to reproduce the normal cycle duratio
 
 [Numbered frame sheet](frames.png)
 
-This is a review asset on `art/iselin-front-walk-review`, not merged or activated
-in the journey. Idle artwork, portraits, collision, quest state and walking in
+Historical review-stage state: this asset was prepared on
+`art/iselin-front-walk-review`. It is now approved and merged; runtime walk
+activation remains separate. Idle artwork, portraits, collision, quest state and walking in
 other directions are unchanged. Main actor walking integration follows approval.
 
 The generated 4×4 source is retained unchanged at
@@ -36,4 +42,4 @@ Verification: 16 distinct complete RGBA frames, hard transparency, 42×72 canvas
 560 ms metadata duration, 32-frame normal/slow GIF with 1120 ms combined repeat,
 and successful Pygame loading. Native frame sheet inspected for anatomy, braid/
 mantle consistency, swing opposition, planted support and loop endpoint poses.
-The preview remains subject to the user's motion review.
+The user approved the preview; earlier review wording is retained as history.

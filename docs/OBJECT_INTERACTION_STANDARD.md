@@ -1,5 +1,10 @@
 # Character–object interaction standard
 
+Sprite design, complete-frame construction, walking mechanics, registration and
+asset review are defined in the
+[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). This
+companion covers how those animations interact with objects and scene state.
+
 This is the mandatory global standard for player characters and NPCs manipulating
 objects in cutscenes, scripted scenes, routine work, and gameplay interactions.
 It governs new work and corrections to existing interactions. Read it alongside

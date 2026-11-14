@@ -1,5 +1,10 @@
 # Companion sprite review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 **Status:** All nine base sprite designs are approved, including Edran’s
 sky-blue and silver revision. Character biographies are approved
 in the [companion guide](../../narrative/game_01/COMPANIONS.md).

@@ -8,10 +8,13 @@ woodland ground, with leg-height grass that parts around travelling characters.
 The separate [playable material study](docs/GRASS_DEMO.md) remains available with
 `python tools/preview_grass.py` and uses no journey or settings file.
 
-Character animation, scene staging, and prop rendering must follow the
-[global object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md).
-Contributor instructions are in [AGENTS.md](AGENTS.md); personal equipment
-visibility is covered by the [prop policy](docs/PERSONAL_PROPS.md).
+Character sprites and animation follow the
+[global sprite and animation standard](docs/SPRITE_ANIMATION_STANDARD.md), the
+single authoring guide for appearance, walks, registration, exports and review.
+Object interactions also follow the
+[interaction standard](docs/OBJECT_INTERACTION_STANDARD.md) and
+[prop policy](docs/PERSONAL_PROPS.md). Contributor instructions are in
+[AGENTS.md](AGENTS.md).
 
 Save Game and Load Game now provide ten manual slots and three autosave
 generations per journey. Scene entry and completed battles trigger autosaves;
