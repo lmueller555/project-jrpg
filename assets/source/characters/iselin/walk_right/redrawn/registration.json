@@ -1,0 +1,419 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "references": [
+    "idle_right_master.png",
+    "redrawn/keys.png"
+  ],
+  "source_hashes": {
+    "C.png": "89bf2c73655b4e665bc583d8138d38a983c8d294afbf1d09adf982137ea0984e",
+    "B.png": "be8b77b8c93eebb1d37a7336483586d543a3eb30708be0b3648026dce15fe89a",
+    "A.png": "2f1eabde6c2c337d58184e3dbe17ac9abc9ea9d46e5a7c27afc7bb765b77c4a4",
+    "D.png": "a765f4d2e45084e7532d962a181dd4bbcf63b76e7a25fe35a12fd5b47afd982b",
+    "keys.png": "efe7a47d6c7519f692e238d25542ef9a5c2275ec77c21af447a2dee300d12ec1",
+    "E.png": "616c6edf09500e4c8700c2708306ab9728690b8380a7af68f5652aa3c7e7f1c5"
+  },
+  "processing": "Whole-character crop, hard alpha 220, common scale per source strip, head registration. No part assembly, rotations or limb modifications.",
+  "frames": [
+    {
+      "source": "A.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "bounds": [
+        105,
+        45,
+        467,
+        685
+      ],
+      "uniform_scale": 0.10625,
+      "size": [
+        38,
+        68
+      ],
+      "origin": [
+        4,
+        2
+      ]
+    },
+    {
+      "source": "D.png",
+      "column": 3,
+      "cell": [
+        1629,
+        0,
+        2172,
+        724
+      ],
+      "bounds": [
+        71,
+        44,
+        457,
+        686
+      ],
+      "uniform_scale": 0.1057542768273717,
+      "size": [
+        41,
+        68
+      ],
+      "origin": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "D.png",
+      "column": 2,
+      "cell": [
+        1086,
+        0,
+        1629,
+        724
+      ],
+      "bounds": [
+        119,
+        43,
+        435,
+        686
+      ],
+      "uniform_scale": 0.1057542768273717,
+      "size": [
+        33,
+        68
+      ],
+      "origin": [
+        6,
+        2
+      ]
+    },
+    {
+      "source": "D.png",
+      "column": 1,
+      "cell": [
+        543,
+        0,
+        1086,
+        724
+      ],
+      "bounds": [
+        144,
+        44,
+        443,
+        686
+      ],
+      "uniform_scale": 0.1057542768273717,
+      "size": [
+        32,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "bounds": [
+        180,
+        48,
+        386,
+        684
+      ],
+      "uniform_scale": 0.1069182389937107,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 1,
+      "cell": [
+        543,
+        0,
+        1086,
+        724
+      ],
+      "bounds": [
+        152,
+        48,
+        446,
+        684
+      ],
+      "uniform_scale": 0.1069182389937107,
+      "size": [
+        31,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 2,
+      "cell": [
+        1086,
+        0,
+        1629,
+        724
+      ],
+      "bounds": [
+        99,
+        48,
+        451,
+        684
+      ],
+      "uniform_scale": 0.1069182389937107,
+      "size": [
+        38,
+        68
+      ],
+      "origin": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 3,
+      "cell": [
+        1629,
+        0,
+        2172,
+        724
+      ],
+      "bounds": [
+        107,
+        48,
+        443,
+        684
+      ],
+      "uniform_scale": 0.1069182389937107,
+      "size": [
+        36,
+        68
+      ],
+      "origin": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": "C.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "bounds": [
+        94,
+        46,
+        459,
+        689
+      ],
+      "uniform_scale": 0.10559006211180125,
+      "size": [
+        39,
+        68
+      ],
+      "origin": [
+        3,
+        2
+      ]
+    },
+    {
+      "source": "C.png",
+      "column": 1,
+      "cell": [
+        543,
+        0,
+        1086,
+        724
+      ],
+      "bounds": [
+        139,
+        46,
+        448,
+        690
+      ],
+      "uniform_scale": 0.10559006211180125,
+      "size": [
+        33,
+        68
+      ],
+      "origin": [
+        7,
+        2
+      ]
+    },
+    {
+      "source": "C.png",
+      "column": 2,
+      "cell": [
+        1086,
+        0,
+        1629,
+        724
+      ],
+      "bounds": [
+        171,
+        46,
+        382,
+        687
+      ],
+      "uniform_scale": 0.10559006211180125,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "C.png",
+      "column": 3,
+      "cell": [
+        1629,
+        0,
+        2172,
+        724
+      ],
+      "bounds": [
+        188,
+        46,
+        400,
+        687
+      ],
+      "uniform_scale": 0.10559006211180125,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        13,
+        2
+      ]
+    },
+    {
+      "source": "E.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "bounds": [
+        162,
+        45,
+        386,
+        682
+      ],
+      "uniform_scale": 0.10675039246467818,
+      "size": [
+        24,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ]
+    },
+    {
+      "source": "E.png",
+      "column": 1,
+      "cell": [
+        543,
+        0,
+        1086,
+        724
+      ],
+      "bounds": [
+        132,
+        45,
+        449,
+        682
+      ],
+      "uniform_scale": 0.10675039246467818,
+      "size": [
+        34,
+        68
+      ],
+      "origin": [
+        7,
+        2
+      ]
+    },
+    {
+      "source": "E.png",
+      "column": 2,
+      "cell": [
+        1086,
+        0,
+        1629,
+        724
+      ],
+      "bounds": [
+        112,
+        45,
+        448,
+        682
+      ],
+      "uniform_scale": 0.10675039246467818,
+      "size": [
+        36,
+        68
+      ],
+      "origin": [
+        5,
+        2
+      ]
+    },
+    {
+      "source": "E.png",
+      "column": 3,
+      "cell": [
+        1629,
+        0,
+        2172,
+        724
+      ],
+      "bounds": [
+        81,
+        45,
+        463,
+        682
+      ],
+      "uniform_scale": 0.10675039246467818,
+      "size": [
+        41,
+        68
+      ],
+      "origin": [
+        1,
+        2
+      ]
+    }
+  ],
+  "review_status": "pending"
+}
