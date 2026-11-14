@@ -57,6 +57,8 @@ def build():
                 'sha256':sha256(path.read_bytes()).hexdigest(),'column':col,
                 'bounds':list(bounds),'scale':scale,'size':list(size),
                 'origin':list(origin),'edit_window':list(window)})
+    from tools.iselin_back_walk_stability import stabilize
+    frames,stability=stabilize(SOURCE,frames)
     if len({f.tobytes() for f in frames})!=16:raise ValueError('Repeated exported poses')
     OUTPUT.mkdir(parents=True,exist_ok=True);REVIEW.mkdir(parents=True,exist_ok=True)
     font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',17)
@@ -66,7 +68,7 @@ def build():
         frame.save(OUTPUT/f'frame_{i+1:02}.png');sheet.alpha_composite(frame,(i*42,0))
         pos=(12+i%4*188,46+i//4*310);big=frame.resize((168,288),Image.Resampling.NEAREST)
         board.paste(big,pos,big);draw.text((pos[0],pos[1]+288),f'{i+1:02}',font=font,fill='#263c35')
-    sheet.save(OUTPUT/'spritesheet.png');board.save(REVIEW/'frames.png');board.save(REVIEW/'frames_right_foot_v2.png')
+    sheet.save(OUTPUT/'spritesheet.png');board.save(REVIEW/'frames.png');board.save(REVIEW/'frames_stable_body_v3.png')
     previews=[]
     for tick in range(32):
         im=Image.new('RGB',(440,380),'#e8edf2');d=ImageDraw.Draw(im)
@@ -77,7 +79,7 @@ def build():
     previews[0].save(REVIEW/'preview.gif',save_all=True,append_images=previews[1:],duration=[30,40]*16,
                      loop=0,disposal=2,optimize=False)
     import shutil
-    shutil.copyfile(REVIEW/'preview.gif',REVIEW/'preview_right_foot_v2.gif')
+    shutil.copyfile(REVIEW/'preview.gif',REVIEW/'preview_stable_body_v3.gif')
     (OUTPUT/'animation.json').write_text(json.dumps({'character':'iselin','animation':'walk.back',
         'status':'awaiting_user_review','frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
         'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,'recipe':'tools/export_iselin_back_walk.py',
@@ -87,7 +89,7 @@ def build():
         'reference':'assets/source/characters/iselin/idle_back_master.png',
         'sources':{p.name:sha256(p.read_bytes()).hexdigest() for p in sorted(SOURCE.glob('*.png'))},
         'processing':'Whole drawing alpha220 extraction, common scale per strip and head/ground registration. Right lower-leg regional redraw from complete imagegen poses; all other original pixels restored. No limb transforms, mirrors or interpolation.',
-        'right_foot_corrections':corrections,'frames':[records[key] for key in SEQUENCE],'status':'awaiting_user_review'},indent=2)+'\n')
+        'body_stability':stability,'right_foot_corrections':corrections,'frames':[records[key] for key in SEQUENCE],'status':'awaiting_user_review'},indent=2)+'\n')
 
 
 if __name__=='__main__':build()

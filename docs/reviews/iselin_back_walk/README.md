@@ -4,9 +4,9 @@ Sixteen whole-character drawings exported at42×72, using the established35ms
 frame time and560ms two-step cycle. The review branch does not activate or merge
 this cycle; approved front and side artwork remains unchanged.
 
-![Normal speed on the left; half speed on the right](preview_right_foot_v2.gif)
+![Normal speed on the left; half speed on the right](preview_stable_body_v3.gif)
 
-[Numbered native drawings enlarged4×](frames_right_foot_v2.png).
+[Numbered native drawings enlarged4×](frames_stable_body_v3.png).
 
 The canonical reference is `assets/source/characters/iselin/idle_back_master.png`.
 The mantle stays on anatomical right (viewer right); the braid turns forward
@@ -58,3 +58,36 @@ not physical world-space foot locking. Frame timing remains 35ms.
 remain available for comparison. Frozen original frames and complete generated
 correction drawings are in `redrawn/right_foot_revision/`; source hashes and
 registration are recorded alongside the original generation records.
+
+## Body stability correction, revision 3 (current)
+
+The previous export used full drawing height and the lowest visible pixel to
+scale and register poses from separate strips. Crown height jumped four native
+pixels in frames 5 and 10, with inconsistent head and torso proportions.
+Those frames are retained in `body_stability_v3/before_*.png` and the
+[revision 2 preview](preview_right_foot_v2.gif).
+
+New complete rear drawings use the first frame as a shared proportion reference.
+The current upper-body export uniformly scales each complete source drawing
+using its audited crown-to-belt distance, then aligns the crown horizontally
+at x21. Foot position does not determine this registration. No independent
+horizontal/vertical stretching is used. The crown follows y positions
+3,3,2,2,3,4,4,3 twice per cycle: two pixels total excursion, with at most one
+pixel of movement between adjacent frames, including the loop seam.
+
+Measured exported crown-to-belt distance stays within one pixel of 27. Hair
+silhouettes retain minor drawn variation (16–18 pixels wide, adjacent changes
+at most one pixel). The corrected boots and lower shins, rows 54–71, remain
+pixel-identical to revision 2. Regional coat/knee cleanup was generated as
+complete drawings to remove stray old hem fragments at the revision boundary;
+head, torso and boot pixels are protected during that cleanup. All review
+outputs remain flattened complete RGBA sprites; no runtime limb rig is used.
+
+`tools/iselin_back_walk_stability.py` and the two audited landmark manifests
+record source crops, complete-drawing scales, origins, cleanup windows, bob
+positions and source hashes. Original drawings and intermediate review strips
+are retained. Focused checks cover actual exported crown/belt landmarks, loop
+continuity, historical foot revision preservation, current boot preservation,
+alpha, bounds, distinct poses, opposing contacts and timing. The numbered
+sheet was inspected for coat continuity, body proportions and complete limbs.
+This remains awaiting visual approval and has not been merged into main.
