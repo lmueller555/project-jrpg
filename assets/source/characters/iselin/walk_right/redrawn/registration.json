@@ -12,7 +12,7 @@
     "keys.png": "efe7a47d6c7519f692e238d25542ef9a5c2275ec77c21af447a2dee300d12ec1",
     "E.png": "616c6edf09500e4c8700c2708306ab9728690b8380a7af68f5652aa3c7e7f1c5"
   },
-  "processing": "Whole-character crop, hard alpha 220, common scale per source strip, head registration. No part assembly, rotations or limb modifications.",
+  "processing": "Local imagegen leg edits to whole-character drawings; crop, alpha220, uniform scale and head registration; approved rows0-45 restored unchanged. No part rig, rotations or procedural limb deformation.",
   "frames": [
     {
       "source": "A.png",
@@ -415,5 +415,489 @@
       ]
     }
   ],
-  "review_status": "pending"
+  "review_status": "pending",
+  "leg_revision": {
+    "generation_tool": "image_gen.imagegen",
+    "protected_rows": [
+      0,
+      46
+    ],
+    "frames": [
+      {
+        "source": "legs_0.png",
+        "cell": [
+          0,
+          0,
+          478,
+          822
+        ],
+        "bounds": [
+          48,
+          24,
+          470,
+          798
+        ],
+        "scale": 0.08785529715762273,
+        "size": [
+          37,
+          68
+        ],
+        "origin": [
+          5,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_0.png",
+        "cell": [
+          478,
+          0,
+          957,
+          822
+        ],
+        "bounds": [
+          58,
+          24,
+          431,
+          798
+        ],
+        "scale": 0.08785529715762273,
+        "size": [
+          33,
+          68
+        ],
+        "origin": [
+          5,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_0.png",
+        "cell": [
+          957,
+          0,
+          1435,
+          822
+        ],
+        "bounds": [
+          91,
+          24,
+          387,
+          798
+        ],
+        "scale": 0.08785529715762273,
+        "size": [
+          26,
+          68
+        ],
+        "origin": [
+          8,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_0.png",
+        "cell": [
+          1435,
+          0,
+          1914,
+          822
+        ],
+        "bounds": [
+          120,
+          24,
+          385,
+          798
+        ],
+        "scale": 0.08785529715762273,
+        "size": [
+          23,
+          68
+        ],
+        "origin": [
+          11,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_1.png",
+        "cell": [
+          0,
+          0,
+          478,
+          822
+        ],
+        "bounds": [
+          129,
+          24,
+          373,
+          803
+        ],
+        "scale": 0.08729139922978177,
+        "size": [
+          21,
+          68
+        ],
+        "origin": [
+          11,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_1.png",
+        "cell": [
+          478,
+          0,
+          957,
+          822
+        ],
+        "bounds": [
+          103,
+          24,
+          369,
+          801
+        ],
+        "scale": 0.08729139922978177,
+        "size": [
+          23,
+          68
+        ],
+        "origin": [
+          9,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_1.png",
+        "cell": [
+          957,
+          0,
+          1435,
+          822
+        ],
+        "bounds": [
+          62,
+          24,
+          414,
+          800
+        ],
+        "scale": 0.08729139922978177,
+        "size": [
+          31,
+          68
+        ],
+        "origin": [
+          6,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_1.png",
+        "cell": [
+          1435,
+          0,
+          1914,
+          822
+        ],
+        "bounds": [
+          35,
+          24,
+          439,
+          801
+        ],
+        "scale": 0.08729139922978177,
+        "size": [
+          35,
+          68
+        ],
+        "origin": [
+          3,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_2.png",
+        "cell": [
+          0,
+          0,
+          478,
+          822
+        ],
+        "bounds": [
+          47,
+          26,
+          468,
+          794
+        ],
+        "scale": 0.08854166666666667,
+        "size": [
+          37,
+          68
+        ],
+        "origin": [
+          4,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_2.png",
+        "cell": [
+          478,
+          0,
+          957,
+          822
+        ],
+        "bounds": [
+          85,
+          26,
+          441,
+          794
+        ],
+        "scale": 0.08854166666666667,
+        "size": [
+          32,
+          68
+        ],
+        "origin": [
+          7,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "fix_11_12.png",
+        "cell": [
+          0,
+          0,
+          676,
+          1162
+        ],
+        "bounds": [
+          215,
+          148,
+          502,
+          1030
+        ],
+        "scale": 0.07709750566893424,
+        "size": [
+          22,
+          68
+        ],
+        "origin": [
+          10,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "fix_11_12.png",
+        "cell": [
+          676,
+          0,
+          1353,
+          1162
+        ],
+        "bounds": [
+          154,
+          148,
+          437,
+          1030
+        ],
+        "scale": 0.07709750566893424,
+        "size": [
+          22,
+          68
+        ],
+        "origin": [
+          12,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_3.png",
+        "cell": [
+          0,
+          0,
+          478,
+          821
+        ],
+        "bounds": [
+          112,
+          24,
+          380,
+          790
+        ],
+        "scale": 0.08877284595300261,
+        "size": [
+          24,
+          68
+        ],
+        "origin": [
+          10,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_3.png",
+        "cell": [
+          478,
+          0,
+          957,
+          821
+        ],
+        "bounds": [
+          97,
+          24,
+          412,
+          790
+        ],
+        "scale": 0.08877284595300261,
+        "size": [
+          28,
+          68
+        ],
+        "origin": [
+          8,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_3.png",
+        "cell": [
+          957,
+          0,
+          1436,
+          821
+        ],
+        "bounds": [
+          70,
+          24,
+          436,
+          790
+        ],
+        "scale": 0.08877284595300261,
+        "size": [
+          32,
+          68
+        ],
+        "origin": [
+          6,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      },
+      {
+        "source": "legs_3.png",
+        "cell": [
+          1436,
+          0,
+          1915,
+          821
+        ],
+        "bounds": [
+          41,
+          24,
+          453,
+          790
+        ],
+        "scale": 0.08877284595300261,
+        "size": [
+          37,
+          68
+        ],
+        "origin": [
+          3,
+          2
+        ],
+        "protected_rows": [
+          0,
+          46
+        ]
+      }
+    ],
+    "hashes": {
+      "approved_07.png": "a9f4716eabd86ff5355c2d82e18e7dce766bb01803deabd56c6a018886491ebf",
+      "approved_15.png": "33ef45fc570206edf19a43aaca32fc2a9a42245d539a8b1f35d07a0ee0c062d7",
+      "legs_0.png": "159e56ac475c55361036a3351e948d12b40eae843c9d7d478c5cb3c7b75c429e",
+      "approved_13.png": "faefb0d7622ff49a898d27a4b4d6bdb2fc20a540721065789c092f0515f17558",
+      "reference_3.png": "0c85c6006c651230f85d8f9b576e0eca3ba3c9a3395001ab57939a3f6c65f978",
+      "reference_0.png": "e2adf6223742f67f0382057809ab60604113728315343aaaadb929c57d6d52c0",
+      "approved_06.png": "412ae2e2f1bd75136bf87b134c358fb2eb047af10b33b1d1da6bd9329e52e138",
+      "legs_2.png": "d45cfc2317ddafeb00bcc8fe1234d7726900d500b0a25e2ab944920eeaeec92e",
+      "approved_03.png": "2447fb1a6e90c1731cca9b5e080064fa111121a8868523bcfcf1f33fa54d1283",
+      "approved_08.png": "7d0529dcfded7039267b58714977ce72d8fbf623488790285531b1053caedb64",
+      "reference_1.png": "b381eb99e55cf1efc76045cf0ff77a90df1a125fccfff0698d37ef155698b21a",
+      "approved_04.png": "16f9a90aa0cb212e2875bc2910543a51ad0bdb4ea5d7b5102a7c334f205f93e5",
+      "approved_02.png": "42c414f747c9da14df8941430b1708386650b0c65728a78ce6d9911841f83975",
+      "approved_14.png": "bac1984dfdcf2c89c9d309b7968d51ce89a43a7f6221891bbc8995a57f8f6664",
+      "fix_11_12.png": "7adee3a9dcb49b1bb68e8c349a670c81c0e002ee6f30354c9e66c4d289ba9723",
+      "approved_09.png": "9aac2084b8e83d30db693b7b823728f93c52da8d71819b967d12c2238b205ae5",
+      "legs_3.png": "e668a9c01ec065e770644b7ae79f271129729832ea12d30bb52be80c6af02a2e",
+      "approved_16.png": "7e8f7ec714892ee12b9675db835ce3c047c2efaf75d4d76f2e2730758755b3f4",
+      "approved_12.png": "37ae4ddb2cc8560bf62bf2a06c16f73da9e97609423fd5449591aa9b374b7711",
+      "reference_2.png": "b06cfc7217098c79bda9e909e67c6620fa3cd055b58781fb518c542c44c5c186",
+      "approved_01.png": "c96d66677e542d872340c3fc2e879d6c12e2be127d9ffa460540f39a5181883e",
+      "approved_10.png": "c7d82bb29636905194da87f3e6aeebe9835cec2432d6d1dac95c1fb3157e5447",
+      "approved_05.png": "1d8aef7c0bcd1a004723c8ef2702c87104370d80c749465756066af5c0294375",
+      "approved_11.png": "bd78db971eb7a209f2e92d0c42cc5fe429ca76fde488d344e00ce3b98dd38869",
+      "legs_1.png": "b9705dc13fd2b7b7185141ddda6e806ff481ea422b4dd9d98c5f50ee42879083"
+    }
+  }
 }

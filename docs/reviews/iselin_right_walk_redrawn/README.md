@@ -1,5 +1,8 @@
 # Iselin right walk — whole-frame redraw review
 
+**Current revision:** the arms are approved and protected unchanged; see
+[leg progression revision](LEG_REVISION.md) for the updated motion preview.
+
 This replaces the rejected layered approach with sixteen complete authored
 character drawings. There are no detached limb layers, reused body cores,
 procedural rotations, mirroring, or limb interpolation in the exported frames.
