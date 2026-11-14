@@ -1,0 +1,90 @@
+{
+  "design": "Iselin / Royal Envoy / approved concept A",
+  "design_status": "approved",
+  "artwork_status": "awaiting_user_review",
+  "runtime_integration": false,
+  "builder": "tools/export_iselin_first_assets.py",
+  "portrait": {
+    "source": "assets/source/portraits/eldenmere/iselin_master.png",
+    "source_sha256": "cbbf36a35feaedac27f06e21e55eeccef866d351d93e79f3a425ab514d6dfde5",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_bounds_xyxy": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "output_size": [
+      72,
+      72
+    ],
+    "output_mode": "RGB",
+    "resampling": "nearest"
+  },
+  "sprite": {
+    "source": "assets/source/characters/iselin/idle_front_master.png",
+    "source_sha256": "da23deac3b262d78512af5a5f9c0322797feccce91f411d306d55bcbc3a4435a",
+    "source_size": [
+      1024,
+      1536
+    ],
+    "hard_alpha_threshold": 128,
+    "source_bounds_xyxy": [
+      260,
+      94,
+      767,
+      1432
+    ],
+    "uniform_scale": 0.025411061285500747,
+    "rounded_output_size": [
+      13,
+      34
+    ],
+    "destination_origin": [
+      6,
+      1
+    ],
+    "destination_bounds_xyxy": [
+      6,
+      1,
+      19,
+      35
+    ],
+    "canvas": [
+      24,
+      36
+    ],
+    "resampling": "nearest",
+    "palette_reduction": null,
+    "artwork_modifications": "none; hard-alpha extraction and uniform registration only"
+  },
+  "outputs": {
+    "assets/portraits/eldenmere/iselin_neutral.png": {
+      "sha256": "87fde9a882f90457885575cb5d6c318d688dde116ec87b7b187bfb78c1e38250"
+    },
+    "assets/characters/iselin/idle_front.png": {
+      "sha256": "05999efa8d8fae34f8b516cfc10aad8b498e35f4406f96f007ae1bcede2b9cbf"
+    },
+    "docs/reviews/iselin_first_assets/portrait_4x.png": {
+      "sha256": "e9305dae2c6b71f53e20e291ac74c87d4865d44577acb2848200b4b60297794a"
+    },
+    "docs/reviews/iselin_first_assets/idle_front_16x.png": {
+      "sha256": "84ae369d547c40f7fcb7d4b976bb79a8c75dc4a5768518f110ac66b5f7842133"
+    },
+    "docs/reviews/iselin_first_assets/native_comparison.png": {
+      "sha256": "ee6ee5122ac296f0578dfade5f467c7c625e2ad7e33115c531d8e6c81afec3cf"
+    },
+    "docs/reviews/iselin_first_assets/comparison_4x.png": {
+      "sha256": "342fead85462d314d161b6dcfc79f2688c552744e31fa53fd83f9beb46f9f3e1"
+    },
+    "docs/reviews/iselin_first_assets/preview.png": {
+      "sha256": "90a136c30f5bebb12e09f7e0872a5276b652d61df30cc02b8e4f33828bbd50c4"
+    },
+    "assets/characters/iselin/idle_front.json": {
+      "sha256": "ac6f8d864f5e8dca7f602dfcbe8b6828cf262189e58dfaa4b720889546317094"
+    }
+  }
+}

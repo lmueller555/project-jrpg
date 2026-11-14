@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "character": "iselin",
+  "design_status": "approved",
+  "artwork_status": "awaiting_user_review",
+  "runtime_integration": false,
+  "approval_context": "User selected Design A / Royal Envoy and requested a dialogue portrait plus front-facing idle for review before merging.",
+  "fixed_design": {
+    "hair": "white, long braid over anatomical left shoulder (viewer right)",
+    "eyes": "blue",
+    "clothing": "royal blue travelling coat with silver trim and closures, navy mantle over anatomical right shoulder (viewer left)",
+    "expression": "composed, approachable neutral",
+    "outline": "near-black contour matching existing cast"
+  },
+  "design_reference": {
+    "file": "assets/source/characters/iselin/design_concepts.png",
+    "sha256": "13d6aefb317c4ffba90fe196e88f478cc11da19720ae00259740d8b5c8f0901b"
+  },
+  "selected_design": "A — Royal Envoy; other two concepts are not selected",
+  "generation_tool": "image_gen.imagegen",
+  "generation_records": [
+    {
+      "role": "dialogue_portrait",
+      "original_file": "/workspace/generated_images/exec-d2a79951-d41d-4520-9068-c3edae33cf7f.png",
+      "file": "assets/source/portraits/eldenmere/iselin_master.png",
+      "sha256": "cbbf36a35feaedac27f06e21e55eeccef866d351d93e79f3a425ab514d6dfde5",
+      "references": [
+        "assets/source/characters/iselin/design_concepts.png",
+        "assets/portraits/eldenmere/mira_neutral.png"
+      ],
+      "instruction_summary": "Standalone square neutral portrait retaining approved Design A, white braid on anatomical left, blue eyes, blue/silver royal travel clothing, dark contour, classic pixel-art clusters, green-gray opaque background; intended 72x72 export."
+    },
+    {
+      "role": "idle_front",
+      "original_file": "/workspace/generated_images/exec-0b76d3c3-8c2b-45c9-ae5c-41c4a0951dc2.png",
+      "file": "assets/source/characters/iselin/idle_front_master.png",
+      "sha256": "da23deac3b262d78512af5a5f9c0322797feccce91f411d306d55bcbc3a4435a",
+      "references": [
+        "assets/source/characters/iselin/design_concepts.png",
+        "assets/characters/caelan/idle_front.png"
+      ],
+      "instruction_summary": "Single full-body front-facing neutral idle based on approved Design A with natural adult proportions, clear dark outline, simplified low-resolution clothing, planted boots, no equipment or effects, transparent background; intended 24x36 export."
+    }
+  ],
+  "export_policy": "Technical crop, hard-alpha isolation, uniform nearest-neighbor registration and review layout only. Generated masters own all drawn artwork. No procedural limb or facial edits.",
+  "scope": "Two review assets only; no actor/speaker registration, quest migration, animation expansion or Aldric replacement in this change."
+}
