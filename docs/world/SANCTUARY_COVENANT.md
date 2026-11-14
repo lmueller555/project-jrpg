@@ -201,10 +201,12 @@ or create a permission Serene has granted.
 
 Serene cares for the injured survivor while Tomas and the driver help.
 Caelan volunteers, collects Mira at her workshop and travels to the Sanctuary
-with Mira, Iselin, Lucan and the page. Arrival records the next MQ03 checkpoint;
-the cutscene, rescue, miniboss and final resolution remain later work. The
-former immediate private-aftermath completion and lantern invitation no longer
-finish the new route.
+with Mira, Iselin, Lucan and the page. The implemented Sanctuary arrival leads
+into the cave rescue, Vespermaw fight and healing-pool evacuation. The return
+resolution acknowledges Iselin's breach of trust and arranges relief without
+granting excavation permission. The final acknowledged family exchange
+completes MQ03 and unlocks MQ04; the former immediate private-aftermath
+completion no longer finishes new journeys.
 
 ## Responsibility and unresolved causes
 

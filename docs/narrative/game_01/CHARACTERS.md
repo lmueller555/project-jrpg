@@ -202,9 +202,10 @@ inherited private warning keeps its later disclosure limits.
 
 Caelan begins as a guide and host, then chooses to help the endangered crew.
 He gains no authority to grant a quarry, settle the covenant or command Crown
-policy. The new route pauses at Sanctuary arrival with MQ03 active; its
-cutscene and miniboss are later work, and the old immediate lantern handoff
-is not run for this route.
+policy. The implemented Sanctuary arrival, cave rescue, Vespermaw fight and
+healing-pool evacuation lead into the return resolution at home. The final
+acknowledged family exchange completes MQ03 and unlocks MQ04; the old immediate
+lantern handoff does not finish new journeys.
 
 ## Mira's millrace outing
 

@@ -36,7 +36,7 @@ the wider period of industrialization and unapproved religious details remain op
 The [early regional surges](REGIONAL_SURGES.md) establish a handful of unusual
 lightning incidents. One destroyed the road to the next town south of Eldenmere
 before the opening. Iselin has already aided a couple of other communities;
-their combined repair demands strain the supply of stone and motivate his
+their combined repair demands strain the supply of stone and motivate her
 request to examine a seam within Elden Vale Sanctuary’s protected ground.
 
 The [covenant](../../world/SANCTUARY_COVENANT.md) defines shared custody and
@@ -47,10 +47,12 @@ growling from the cave since the bridge incident; its cause remains unknown.
 
 Iselin secretly dispatched a Crown crew to establish control and prepare the
 mining operation before seeking Serene's agreement. An injured survivor's report
-exposes his deception during MQ03. Lucan did not know about the deployment and
+exposes her deception during MQ03. Lucan did not know about the deployment and
 is taken aback. Iselin, Lucan, her page, Caelan and Mira travel to the Sanctuary
-while Serene, Tomas and the driver care for the survivor. The new route remains
-active at arrival, awaiting the later cutscene and encounter. Older completed
+while Serene, Tomas and the driver care for the survivor. The implemented route continues
+through the Sanctuary arrival, cave rescue, Vespermaw fight and healing-pool
+evacuation, then returns home for accountability and relief arrangements.
+The final acknowledged family exchange completes MQ03 and unlocks MQ04. Older completed
 journeys retain their progress. The later formal authorization, private warning,
 Chapter 3 catastrophe placement and broader revelation boundaries remain
 separate story work.

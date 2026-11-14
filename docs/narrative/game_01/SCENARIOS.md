@@ -47,21 +47,24 @@ make Mira's attachment to useful work, responsibility toward Eldenmere and
 difficulty leaving visible. It need not imply that she has resolved her grief
 or completed her broader growth before departure.
 
-## Unplaced cinematic reference - Ice Reaper
+## Future cinematic reference - Ice Reaper
 
 The [Ice Reaper pre-boss scene](../scenes/ICE_REAPER_PRE_BOSS.md) records the
-author-specified action sequence beneath a region-sized ice dome: Rhea's
-rescue, her meteor and vine attack, and the Ice Reaper's survival.
+current action study beneath a region-sized ice dome: Rhea's rescue and
+awakening, her wind blast and fireball conjuring, and the Reaper's final charge.
 
-**Music and timing:** Wintermute2's first 45 seconds accompany the full
-45-second cinematic, with the same cue continuing into the boss fight.
-Fast anime-style character, object and camera movement keeps the action
-within that fixed duration.
+**Music and timing:** The implemented 32-second study uses **Those I Swore to
+Save**, with the same cue intended to continue into the eventual boss fight.
+This supersedes the earlier 45-second Wintermute2 and meteor/vine proposal.
 
-The opening 0:00-0:05 section is implemented as the isolated Gallery entry
-**Ice Reaper: Frozen Clearing (5s)**. It ends on Caelan's exclamation before
-the attack; the rest of the 45-second cinematic and boss encounter remain
-future work.
+The isolated Gallery entry is **Ice Reaper: Frozen Clearing (32s)**. The first
+21 seconds are approved and merged; the continuation is implemented for
+whole-scene review. A playable boss encounter remains future work.
 
-Its kingdom, region, act and installment remain unassigned. This reference
-does not place it in the opening quests or override Game I's regional scope.
+**Author knowledge:** The Ice Reaper is [Regent Iselin](characters/ISELIN.md).
+She creates the dome over her northern Merovar kingdom to protect her people
+from the coming calamity; being seen as a traitor and exiled completes her
+fall. The kingdom and capital remain unnamed, and the precise act and quest
+placement remain open. This connection must stay out of opening dialogue,
+quest trackers and Gallery labels. The study does not implement her intervening
+journey or transformation.
