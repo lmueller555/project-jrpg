@@ -1,4 +1,7 @@
-# Iselin right walk — whole-frame redraw review
+# Iselin right walk — approved whole-frame redraw
+
+**Approval:** the user approved the leg-corrected right walk for merge.
+See [the accepted leg revision](LEG_REVISION.md). Earlier review notes follow.
 
 **Current revision:** the arms are approved and protected unchanged; see
 [leg progression revision](LEG_REVISION.md) for the updated motion preview.

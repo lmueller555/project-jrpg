@@ -1,4 +1,7 @@
-# Leg progression revision — arms preserved
+# Leg progression revision — approved
+
+The user approved this revised cycle for merge. The upper-body lock and corrected
+leg progression are the accepted right-facing walk; earlier review notes follow.
 
 The approved arm cycle remains in exactly the same frame order. All upper-body
 RGBA pixels in rows0–45 are copied unchanged from retained approved snapshots;

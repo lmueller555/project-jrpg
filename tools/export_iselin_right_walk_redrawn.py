@@ -83,7 +83,7 @@ def build():
                      loop=0,disposal=2,optimize=False)
     (REVIEW/'preview_legs_v2.gif').write_bytes((REVIEW/'preview.gif').read_bytes())
     (REVIEW/'frames_legs_v2.png').write_bytes((REVIEW/'frames.png').read_bytes())
-    metadata={'character':'iselin','animation':'walk.right','status':'awaiting_user_review',
+    metadata={'character':'iselin','animation':'walk.right','status':'approved',
               'frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
               'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,
               'recipe':'tools/export_iselin_right_walk_redrawn.py','construction':'complete authored character drawings',
@@ -92,7 +92,7 @@ def build():
     record={'generation_tool':'image_gen.imagegen','references':['idle_right_master.png','redrawn/keys.png'],
             'source_hashes':{p.name:sha256(p.read_bytes()).hexdigest() for p in SOURCE.glob('*.png')},
             'processing':'Local imagegen leg edits to whole-character drawings; crop, alpha220, uniform scale and head registration; approved rows0-45 restored unchanged. No part rig, rotations or procedural limb deformation.',
-            'frames':[records[key] for key in SEQUENCE],'review_status':'pending'}
+            'frames':[records[key] for key in SEQUENCE],'review_status':'approved'}
     record['leg_revision']={'generation_tool':'image_gen.imagegen','protected_rows':[0,46],
                             'frames':leg_records,'hashes':{p.name:sha256(p.read_bytes()).hexdigest()
                             for p in (SOURCE/'leg_revision').glob('*.png')}}
