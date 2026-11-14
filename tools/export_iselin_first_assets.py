@@ -9,11 +9,13 @@ import argparse
 from hashlib import sha256
 from io import BytesIO
 import json
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 PORTRAIT = "assets/source/portraits/eldenmere/iselin_master.png"
 SPRITE = "assets/source/characters/iselin/idle_front_master.png"
 BASE = "assets/characters/iselin"
@@ -279,6 +281,16 @@ def products():
     }
     outputs["assets/source/characters/iselin/first_assets_export.json"] = json_bytes(record)
     outputs.update(resolution_study())
+    from tools.export_iselin_idles import products as idle_products
+    outputs.update(idle_products())
+    # Directional registration extends the animation/actor outputs above.
+    # Keep their recorded hashes aligned with the final combined product set.
+    for record_path in ('assets/source/characters/iselin/first_assets_export.json',
+                        'assets/source/characters/iselin/resolution_42x72_export.json'):
+        data=json.loads(outputs[record_path])
+        for path in data['outputs']:
+            data['outputs'][path]['sha256']=digest(outputs[path])
+        outputs[record_path]=json_bytes(data)
     return outputs
 
 

@@ -1,11 +1,35 @@
 {
   "idles": {
-    "front": "assets/characters/iselin/idle_front_logical.png"
+    "front": "assets/characters/iselin/idle_front_logical.png",
+    "left": "assets/characters/iselin/idle_left_logical.png",
+    "right": "assets/characters/iselin/idle_right_logical.png",
+    "back": "assets/characters/iselin/idle_back_logical.png"
   },
   "walks": {},
   "high_resolution_idles": {
     "front": {
       "image": "assets/characters/iselin/idle_front_42x72.png",
+      "draw_anchor": [
+        21,
+        60
+      ]
+    },
+    "left": {
+      "image": "assets/characters/iselin/idle_left_42x72.png",
+      "draw_anchor": [
+        21,
+        60
+      ]
+    },
+    "right": {
+      "image": "assets/characters/iselin/idle_right_42x72.png",
+      "draw_anchor": [
+        21,
+        60
+      ]
+    },
+    "back": {
+      "image": "assets/characters/iselin/idle_back_42x72.png",
       "draw_anchor": [
         21,
         60
