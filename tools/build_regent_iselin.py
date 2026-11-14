@@ -77,7 +77,7 @@ def products():
     seq=[]
     for i,image in enumerate(diagonal):
         name=f'walk_left_back_{i:02}.png'
-        sprite=register(image,scale,(80,96),(40-round(head_x(image)*scale),11+((1,1,0,0,1,2,2,1)*2)[i]))
+        sprite=register(image,scale,(80,96),(40-round(head_x(image)*scale),12+((1,1,0,0,1,2,2,1)*2)[i]))
         outputs[GROUND/name]=png(sprite);seq.append({'file':name,'duration_ms':35})
     loops['walk_left_back']=seq
     for name,image in poses.items():outputs[GROUND/(name+'.png')]=png(image)
@@ -109,7 +109,7 @@ def products():
         'registration':{'cinematic_pose_scale':80/source[0].height,'standing_crown_y':12,
             'approved_walk_scale':80/68,'approved_walk_source_anchor':[21,68],'cinematic_anchor':[40,92],
             'diagonal_scale':80/max(image.height for image in diagonal),
-            'diagonal_origins':[[40-round(head_x(image)*80/max(c.height for c in diagonal)),11+((1,1,0,0,1,2,2,1)*2)[i]] for i,image in enumerate(diagonal)],
+            'diagonal_origins':[[40-round(head_x(image)*80/max(c.height for c in diagonal)),12+((1,1,0,0,1,2,2,1)*2)[i]] for i,image in enumerate(diagonal)],
             'seated_scale':68/source[0].height,'seated_origin':[21-round(head_x(seated)*68/source[0].height),70-round(seated.height*68/source[0].height)],
             'aerial_scale':28/max(image.height for image in aerial),
             'aerial_origins':[[24-round(head_x(image)*28/max(c.height for c in aerial)),56-round(image.height*28/max(c.height for c in aerial))] for image in aerial]},

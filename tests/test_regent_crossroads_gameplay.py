@@ -594,9 +594,13 @@ class RegentCrossroadsManifestTests(unittest.TestCase):
             phase = phases[shot]
             with self.subTest(shot=shot):
                 self.assertEqual(phase['scene'], 'crossroads')
-                self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+                self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases)|{'lucan'})
                 for actor in phase['actors']:
-                    self.assertEqual(actor['position'], self.manifest['actor_anchors'][aliases[actor['id']]])
+                    # Lucan's existing escort station was added after the
+                    # original four-station crossroads study.
+                    expected_position=([4034,839] if actor['id']=='lucan' else
+                                       self.manifest['actor_anchors'][aliases[actor['id']]])
+                    self.assertEqual(actor['position'],expected_position)
                     self.assertFalse(any(key in actor for key in ('to', 'path', 'route')))
                 self.assertEqual(phase['camera']['from'], self.manifest['camera_junction'])
         self.assertEqual(phases['road_pan']['min_seconds'], .8)

@@ -39,3 +39,9 @@ The crossroads frame-order checks compare complete RGB hashes for opaque
 scene/UI surfaces. Unused fourth bytes in non-alpha display surfaces are
 excluded; true alpha/clip behavior remains covered by the road-pan unit tests.
 Hashing also prevents unittest from spending minutes diffing binary buffers.
+
+Two legacy `test_regent_crossroads_art` checks also retain a stale region-JSON
+fingerprint: they expect `0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88`,
+but main already contains `3f783a64c266d67a2c1dbdab33232947715affd10b3e89a2316f05176bf9f015`.
+The region file, retained recipe and crossroads builder are unchanged by this
+replacement. These original art-history fingerprints were not silently repinned.

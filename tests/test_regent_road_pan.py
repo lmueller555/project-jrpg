@@ -85,6 +85,8 @@ class RoadWhipPanTests(unittest.TestCase):
             result=self.pan.apply(canvas,.4,reduced_motion=reduced)
             self.assertEqual(result.get_size(),SIZE)
             self.assertNotIsInstance(result,WorldCanvas)
+            self.assertEqual(result.get_bitsize(),canvas.get_bitsize())
+            self.assertEqual(result.get_masks(),canvas.get_masks())
             self.assertEqual(pixels(canvas),before)
 
     def assertPointAlmostEqual(self, actual, expected, places=7):

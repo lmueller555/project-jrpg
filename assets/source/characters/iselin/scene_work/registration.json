@@ -418,26 +418,38 @@
     "diagonal_origins": [
       [
         23,
-        12
+        13
+      ],
+      [
+        24,
+        13
       ],
       [
         24,
         12
-      ],
-      [
-        24,
-        11
       ],
       [
         26,
-        11
+        12
       ],
       [
         28,
-        12
+        13
       ],
       [
         25,
+        14
+      ],
+      [
+        23,
+        14
+      ],
+      [
+        23,
+        13
+      ],
+      [
+        23,
         13
       ],
       [
@@ -454,31 +466,19 @@
       ],
       [
         23,
-        12
-      ],
-      [
-        23,
-        11
-      ],
-      [
-        23,
-        11
-      ],
-      [
-        23,
-        12
-      ],
-      [
-        23,
         13
+      ],
+      [
+        23,
+        14
       ],
       [
         24,
-        13
+        14
       ],
       [
         26,
-        12
+        13
       ]
     ],
     "seated_scale": 0.13765182186234817,
@@ -532,22 +532,22 @@
     "assets/story/regent_arrival/actors/iselin/walk_back_13.png": "1ca12d0f80f78259aebfc73bd7fad67a3f42f23b19503dcc84c08b27b6d28b08",
     "assets/story/regent_arrival/actors/iselin/walk_back_14.png": "6e2ede71874cd0de6583ea501373fe83925c76d2a4ffac8061d5553af954898e",
     "assets/story/regent_arrival/actors/iselin/walk_back_15.png": "19e24020c00f8eda4b5ed1c7dd833fed5642bdfb3af83facb81f47f1b29b8bde",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_00.png": "c2d0f859d71e437835c082e0425c364ad1857482a304c1fca96258e7f315163a",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_01.png": "2c91176694d66a50f4d7101ca2813ab5c6d8e8fba81dc7908e26737f534ceea1",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_02.png": "92c785741ca9e6c01bafe80c3bade9b47083a44b7b0c33670cdb3347851feda4",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_03.png": "7df7937cfe802778fa1f664d272a2c934c5f3b66507e46a19f129cd4f5a96242",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_04.png": "bd3acc40cb2033a51d689a9ca8a357ef416cda40842f2ec9bc66fff4eab10cbb",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_05.png": "86ef4fa84f99c4e06ca0dd7f3078f946afe0cb29bef15699bff244242f366286",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_06.png": "be55f524d55f61e74c59baba604f3dadeab7d848f66f0789ebfc73d73f75aaaa",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_07.png": "882e4edd1b78af798672d713fa8a07bcdac0be395ca43ee489800f58f3a3cd35",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_08.png": "f05de438b240ce7328af34e2d07c42c661576dfce07c245b1501d5f11e80d711",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_09.png": "49ea881c1d533ff08fed95a76cb97937d2910aa92b57bdbe51b1c3d430eb668b",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_10.png": "e0b73b2827f64740087c6c853a3670f15ba31097864d0bf6d7a58b720d849739",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_11.png": "3808cb4e61f8744097cb60a525dab34d562bba529e145e34fa4c91c1db04749c",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_12.png": "250b120b3fa72cebda54e3b13a88100ff91ed8c88808d4fbfd7f28ad83ae74e6",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_13.png": "f61c9867838e401498619de1db15d534931eec78c815852e64f609ddff279a22",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_14.png": "82cdba212e93bd2613a9bc2f137d156b0f9181d60b92cd2d7655eb50d5250a50",
-    "assets/story/regent_arrival/actors/iselin/walk_left_back_15.png": "46a552b62c8be3a250ab5683f16f8e4ef4ea492f7f2856a68561bd058e880489",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_00.png": "9691a6e5d1dc818222dfc53e81e81537c05c2f79017c80d41e3e2566204ed972",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_01.png": "2af18c0c8d6735782d94fac8424f0c74809a53c8f4ee1ce400ccf11c998ad108",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_02.png": "b36792024054ebe350b1455b03ad486b9e04b53bc12defaa9d8135440035fc67",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_03.png": "9ff3ae196a856683211de74066875f40dafe589c8b286e4b1f814f96fab9073b",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_04.png": "b61476e5162e52cb61fff2abd643b1915d1cd5b631c1a9297d3f620aa84339c7",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_05.png": "499d24c017fb2b0403e45fcbf9d90e0e410d82e1e2b63e95d808f7b8946a54ed",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_06.png": "50a720e4c21829d48825c8a0efe16409c00ff24f29ef91e0f2c6212b0cd2993e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_07.png": "70667451451546b4297b99f10127d89ab07223b33ffce2e4c49d20d07b4a9e27",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_08.png": "f9369d77446b46bf4e1e184cd640190baad9447c1ebace730a0149e6b109aac5",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_09.png": "19ab8a18cba5fe4ec6d4a433b998a4dab636d888f8c21ca52b7b736a2832a1fc",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_10.png": "e027b2c5d04db2f82b5fe7d1452b0839694c31fe367a0e93564bf3d4be07493a",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_11.png": "24018d03c125003eb07b0beb5273700b9497c36e9b563d35bab7a679c8846b32",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_12.png": "4c259a1a5c9171799bb4bd54bd6e183a222489133e973f7f2ca954388c78190e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_13.png": "d1860e8279e38d5d42802b30c906253681824fc839351ca54b7e35e0307f8f6c",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_14.png": "5ec430dbbe7af059750394967915961e911de2dea23c784f5d00e32c67a10f15",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_15.png": "57eef3954a4f328b49ad310a93c64c4232a0a10c46065128cbc5a8cdff1df233",
     "assets/story/regent_arrival/actors/iselin/listen_left.png": "4569fa3d61908f76b7f57089f2dac5d38ed2e496bfb879a67ed2b89d349ae5e0",
     "assets/story/regent_arrival/actors/iselin/gesture_left.png": "b65c319a93aa6b3fbc1acca9bd1b78d6d0d723e5df785a40b315a5609fffb821",
     "assets/story/regent_arrival/actors/iselin/turn_left_back.png": "27a0f442204c5f1684d380425de18af2899524a668c418cd0b86264371fcd590",
