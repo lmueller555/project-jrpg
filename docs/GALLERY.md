@@ -65,7 +65,7 @@ it does not duplicate dialogue, animation or camera scripts.
 | `mill_bypass` | Make Room for the Water | Mill preparation dialogue and bypass action |
 | `mill_small_spell` | A Smaller Magical Success | Mill spell introduction/action and Mira's encouragement |
 | `mill_repair` | Freeing the Intake | Mill repair dialogue, lever and haul-rope action until restored |
-| `regent_arrival` | Aldric's Relief Caravan | RegentArrival requested after MQ02's sanctuary homecoming and cup placement; natural finish or Skip |
+| `regent_arrival` | Iselin's Relief Caravan | RegentArrival requested after MQ02's sanctuary homecoming and cup placement; natural finish or Skip |
 | `lantern_frame` | A Frame of His Own | Workshop design, assembly and frame lift until frame ready |
 | `lantern_collect` | Gathering the Materials | Collection dialogue and material pickup |
 | `lantern_homecoming` | A Place at the Table | Home arrival and material placement |

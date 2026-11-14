@@ -22,7 +22,7 @@ def sync_arrival_party(game):
     Before the arrival is acknowledged, existing two-person MQ03 and legacy
     journeys retain their rules. After it, the third member and requirements
     are applied atomically. Repeated synchronization preserves formation order
-    and resources. Ending this named outing returns a temporary Lucan to Aldric;
+    and resources. Ending this named outing returns a temporary Lucan to Iselin;
     a later permanent Lucan or another event is never removed by this helper.
     """
     arrival = getattr(game, 'sanctuary_arrival', None)
@@ -37,7 +37,7 @@ def sync_arrival_party(game):
             if not party.end_event(EVENT_ID):return False
             lucan = party.members.get('lucan')
             if lucan is not None and lucan['temporary']:
-                if not party.set_available('lucan', False, 'Returned to Aldric.'):
+                if not party.set_available('lucan', False, 'Returned to Iselin.'):
                     party.restore(before)
                     return False
         return None
@@ -69,7 +69,7 @@ def sync_arrival_party(game):
         party.restore(before)
         return False
     if departed and party.is_guest('lucan'):
-        if not party.set_available('lucan', False, 'Returned to Aldric after the cave rescue.'):
+        if not party.set_available('lucan', False, 'Returned to Iselin after the cave rescue.'):
             party.restore(before)
             return False
     if previous_event is not None:

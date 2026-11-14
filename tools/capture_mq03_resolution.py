@@ -13,7 +13,7 @@ if __name__=='__main__':
        g.world=c.dining;g.player.position.update((228,252))
        for a in c.sanctuary_escorts:c._place(a,c.dining,c._landing(a,(228,200),c.dining))
        c.resolution.update(0)
-      c._setup_stage();actor=c.aldric if stage=='resolution_report' else g.mill_quest.mira if stage=='resolution_companions' else c.serene
+      c._setup_stage();actor=c.iselin if stage=='resolution_report' else g.mill_quest.mira if stage=='resolution_companions' else c.serene
       if stage=='resolution_return':continue
       g.player.position.update(g.overworld_travel._landing(g.world,actor.position+pygame.Vector2(0,30)))
       assert c.resolution.interact(),stage

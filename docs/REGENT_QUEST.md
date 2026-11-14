@@ -1,22 +1,22 @@
-# Aldric's visit and the Sanctuary emergency
+# Iselin's visit and the Sanctuary emergency
 
-MQ03, **The Regent's Road**, begins with Aldric's welcome and meal at Serene's
-home. Its revised post-meal sequence exposes his secret deployment at Elden
+MQ03, **The Regent's Road**, begins with Iselin's welcome and meal at Serene's
+home. Its revised post-meal sequence exposes her secret deployment at Elden
 Vale Sanctuary, brings Mira back into the party and takes the cast to the
 regional reserve. The [canonical script](narrative/game_01/CH01_MQ03.md) mirrors
 the playable dialogue in `assets/story/regent/scene.json`.
 
 ## Boundary after MQ02
 
-MQ02 completes after Caelan's homecoming and clean-cup placement. Aldric's
+MQ02 completes after Caelan's homecoming and clean-cup placement. Iselin's
 separate [arrival cinematic](REGENT_ARRIVAL.md) returns control to the same
 home dining room. Serene's short request separately accepts MQ03. The gift,
 homecoming and table-setting conversation are not repeated.
 
 ## Playing through
 
-1. Speak with Serene in the dining room, then meet Aldric by the lower bridge.
-2. Greet Aldric, Lucan, the page and driver. Lucan is Aldric's personal guard;
+1. Speak with Serene in the dining room, then meet Iselin by the lower bridge.
+2. Greet Iselin, Lucan, the page and driver. Lucan is Iselin's personal guard;
    his observation about Mira's sword establishes his practical attention.
 3. Guide the visitors directly through the courtyard and hall into the dining
    room. The relief wagon remains at the village approach.
@@ -27,11 +27,11 @@ homecoming and table-setting conversation are not repeated.
    mining would cause. She reports growling from the cave since the bridge
    incident. No agreement is reached.
 6. A wounded survivor runs through the hall and enters the dining room. His
-   report of an attack reveals the advance party. Aldric confirms he dispatched
+   report of an attack reveals the advance party. Iselin confirms she dispatched
    it before coming to Eldenmere, to establish Crown control and prepare the
    mining work. Lucan was not informed and is visibly taken aback.
 7. Serene treats the survivor, helped by Tomas and the driver. Caelan volunteers
-   to help the people still at the reserve and proposes bringing Mira. Aldric,
+   to help the people still at the reserve and proposes bringing Mira. Iselin,
    Lucan and the page accompany him to her workshop.
 8. Speak with Mira. She chooses to bring her existing kit and arm rig, rejoins
    for the outing, and travels with the group through the existing town exit
@@ -54,7 +54,7 @@ and Lucan’s surprise before urgent rescue arrangements. Lucan does not speak
 until the secret deployment is exposed.
 
 The survivor's entrance fades the music to silence over 700 ms. His first two
-utterances (including Aldric's intervening question) play in silence. **Something is Wrong**
+utterances (including Iselin's intervening question) play in silence. **Something is Wrong**
 begins on Serene’s “What men?” and loops through departure,
 Mira's rejoining and Sanctuary arrival. The arrival scene retains this score
 through its final handoff. The first successful cave entry permanently releases
@@ -107,10 +107,10 @@ Serene, Tomas and the driver remain at home with the survivor. The existing
 Mira actor and resources are reused; MQ03 owns her outing so MQ02 cannot return
 her to the bench during it. No equipment, HP or MP is reset and no duplicate
 Mira is created. Caelan and Mira are the required combat members on the road
-to the reserve. Aldric, Lucan and the page travel as story companions until
+to the reserve. Iselin, Lucan and the page travel as story companions until
 arrival. Once its rescue plan is acknowledged, Lucan becomes the temporary
 third combat member;
-Aldric and the page remain with the workers. His permanent recruitment remains
+Iselin and the page remain with the workers. His permanent recruitment remains
 a later story decision.
 
 The overworld keeps its established leader-scale presentation while the quest
@@ -121,9 +121,9 @@ and the three-member rescue handoff.
 
 ## Story boundaries
 
-The user-approved Sanctuary guidance role and Aldric's deliberate concealment
-supersede the older good-faith inspection compromise. His relief needs remain
-real, and his secret assertion of Crown control is still a breach of trust.
+The user-approved Sanctuary guidance role and Iselin's deliberate concealment
+supersede the older good-faith inspection compromise. Her relief needs remain
+real, and her secret assertion of Crown control is still a breach of trust.
 Serene's treatment of the survivor gives aid without settling that conflict.
 
 The growling began after the bridge incident, the crew entered the reserve and

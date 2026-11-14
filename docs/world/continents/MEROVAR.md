@@ -2,7 +2,7 @@
 
 **Status:** Approved continental geography and cultural foundations for Auratia.
 Existing Eldenmere geography remains the local anchor. Illustrative encounters
-remain story seeds. One crown rules Merovar through regional governors and local
+remain story seeds. The northern Crown governs Iselin’s kingdom through regional and local
 institutions; exact internal borders and constitutional arrangements remain open.
 
 **Parent:** [World atlas](../WORLD_ATLAS.md)
@@ -21,13 +21,12 @@ through the interior into Rookfen and the sea. Eldenmere's brook joins this syst
 through unnamed tributaries. Its short millrace remains a separate controlled
 branch, including the established east-to-west flow beneath the mill wheel.
 
-Merovar has one ruling royal family. Aldric is the reigning monarch's younger
-brother, serving as regional regent rather than monarch. His administrative
-reach includes Elden Vale and nearby upper-Leth road and quarry districts.
-The [royal character foundations](../../narrative/game_01/CHARACTERS.md#aldric--approved-royal-background)
-distinguish approved relationships from proposed family names and biographies.
-Exact boundaries, succession rules, the constitution of the regency and
-relations with other continents' states remain open.
+Iselin belongs to the ruling family of a kingdom in northern Merovar and is
+the reigning queen's younger sister. She serves as regional regent and travels
+south on relief and a covert Crown investigation. Her cold homeland is enclosed
+by mountains to the east, west and north, with access only from the south.
+The party's longer journey heads north toward its capital. The kingdom and
+capital remain unnamed; no Crown-wide sovereignty over all Merovar is implied.
 
 ## Elden Vale
 

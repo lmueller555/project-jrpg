@@ -96,7 +96,7 @@ Reduced Motion uses static shot changes. Finishing or skipping leads into the
 ordinary bedroom opening; Continue never inserts this flashforward into an
 existing journey. See [the cinematic guide](OPENING_CINEMATIC.md).
 
-## Aldric's arrival
+## Iselin's arrival
 
 The [post-mill arrival](REGENT_ARRIVAL.md) uses detailed cinematic scenery and
 separate animated actors, with the existing portrait dialogue frame and

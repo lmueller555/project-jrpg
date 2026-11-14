@@ -27,7 +27,7 @@ path. The existing survey ground remains evidence of the concealed operation;
 its intact stone face is not newly excavated or blamed for the attack. The
 grove, memorial lamps and ordinary Sanctuary architecture remain maintained.
 
-The scene uses Caelan, Mira, Lucan, Aldric and the page. Serene, Tomas and the
+The scene uses Caelan, Mira, Lucan, Iselin and the page. Serene, Tomas and the
 driver remain in Eldenmere with the survivor. Nessa remains at the Sanctuary's
 existing relief room; the arrival does not create a second attendant.
 
@@ -41,13 +41,13 @@ unread prose.
 | Beat | Composition and action | Dramatic purpose |
 | --- | --- | --- |
 | `arrival_contact` | Travel from the arch into the court. The camera discovers the occupied cloister as the group approaches. Mira tends an arm while Caelan speaks with the caretaker; Lucan checks the eastern sightline. | Establish an emergency already being managed, and follow through on Caelan's promise to Serene. |
-| `accounting` | Lucan comes closer to ask who remains missing. The page opens the crew list beside Aldric; Mira remains beside the treated worker and her supplies. | Establish one worker was pulled into the cave and has been heard answering since. The page's prior knowledge of the deployment remains unspecified. |
+| `accounting` | Lucan comes closer to ask who remains missing. The page opens the crew list beside Iselin; Mira remains beside the treated worker and her supplies. | Establish one worker was pulled into the cave and has been heard answering since. The page's prior knowledge of the deployment remains unspecified. |
 | `cave_reveal` | A silent 2.4-second hold on the crystal-lined cave approach, keeper rail and disturbed ground. | Let the viewer locate the threat. No interior, creature or chasm is shown. |
-| `responsibility` | Return to a steady composition containing Aldric, the caretaker and wounded workers. The caretaker stands between Aldric and the people affected by his orders. | Aldric admits he acted without Serene's agreement, suspends the work and offers useful aid. Accepting his help does not settle the breach of trust. |
+| `responsibility` | Return to a steady composition containing Iselin, the caretaker and wounded workers. The caretaker stands between Iselin and the people affected by her orders. | Iselin admits she acted without Serene's agreement, suspends the work and offers useful aid. Accepting her help does not settle the breach of trust. |
 | `rescue_decision` | Mira finishes the dressing, withdraws her tools and stands beside Caelan. Lucan moves into a commanding position facing them. | Mira's engineering tools give her a practical rescue role; Caelan insists on following through. Lucan accepts their involvement while retaining his protective, somewhat overbearing manner. |
-| `royal_handoff` | Hold the group while Lucan turns back toward Aldric, receives the order and turns toward the cave again. The page lowers his open ledger and looks up to speak, then resumes reading. | Aldric explicitly releases his guard to accompany the rescue. Aldric and the page remain with the caretakers and crew list. |
+| `royal_handoff` | Hold the group while Lucan turns back toward Iselin, receives the order and turns toward the cave again. The page lowers his open ledger and looks up to speak, then resumes reading. | Iselin explicitly releases her guard to accompany the rescue. Iselin and the page remain with the caretakers and crew list. |
 | `visitor_rest` | Reframe toward the hall as the caretaker gives directions; the runner remains beside the delivered supplies. | Establish Nessa's visitor room: through the hall, then the north door with the bed plaque. The bed remains available during cave exploration. |
-| `cave_approach` | Follow Caelan, Mira and Lucan along the eastward path. Aldric/page continue their work behind them. Lucan checks the opening; Mira watches loose stone; the caretaker unhooks the rope, lowers it and steps clear. Finish at the actual gameplay camera position. | Give the rescue a clear immediate aim and return control without a staging jump. |
+| `cave_approach` | Follow Caelan, Mira and Lucan along the eastward path. Iselin/page continue their work behind them. Lucan checks the opening; Mira watches loose stone; the caretaker unhooks the rope, lowers it and steps clear. Finish at the actual gameplay camera position. | Give the rescue a clear immediate aim and return control without a staging jump. |
 
 The eight beats contain 28 authored dialogue lines. The treated worker presents
 his arm only for care, then lowers it to a supported rest. Mira's dressing work,
@@ -65,7 +65,7 @@ compositions rather than reaction montages.
   known location. He initially orders the younger pair to remain behind, then
   accepts their practical contribution. He does not repeat his earlier surprise
   about the secret deployment as a new discovery.
-- **Aldric:** Owns the orders, admits the absence of agreement and stops the work.
+- **Iselin:** Owns the orders, admits the absence of agreement and stops the work.
   His concern is sincere; the Sanctuary's dispute with him remains unresolved.
 - **Page:** Uses the crew list and helps account for survivors. The scene does
   not establish complicity in the secret deployment.
@@ -80,7 +80,7 @@ and uses Inspire, Bolster and Provoke without an interactable minigame. This is
 not his later permanent entrustment to the party. He stays through early rest
 trips and leaves only after Vespermaw is defeated and the party exits the cave;
 Continue and re-entry preserve that departure.
-Aldric and the page remain in the reserve. The player regains control on the
+Iselin and the page remain in the reserve. The player regains control on the
 apron, with both the cave interaction and the path back to the hall available.
 Entering the cave continues into the existing aether-resonance introduction.
 
@@ -99,9 +99,10 @@ connection remains author continuity until discovered in subsequent scenes.
 
 ## Character identity, movement and rope polish
 
-Aldric's native navy coat and brown hair now match his existing portrait and
-cinematic design, including his seated meal pose. His deterministic exporter is
-`tools/build_regent_aldric.py`.
+Iselin's white hair, blue and silver coat, right mantle and left-shoulder braid
+match her approved portrait and standing sprites, including her seated meal pose.
+Her deterministic cinematic exporter is
+`tools/build_regent_iselin.py`.
 
 The Page uses the brown-haired, moss-coated design established in the larger
 arrival cinematic and its dedicated `regent_page` portrait. His native 24×36

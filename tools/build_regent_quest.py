@@ -13,7 +13,7 @@ OUT=ROOT/'assets/story/regent'
 DIRECTIONS=('front','left','right','back')
 OUTLINE='#1a0e16';WOOD='#836347';WOOD_LIGHT='#b79a6c';WOOD_DARK='#573e2a'
 SPECS={
- 'aldric':{'name':'Regent Aldric','source':'canonical_aldric','position':[732,1032]},
+ 'iselin':{'name':'Regent Iselin','source':'canonical_iselin','position':[732,1032]},
  'regent_clerk':{'name':'Page','source':'canonical_page','position':[708,1054]},
  'regent_driver':{'name':'Driver','source':'male_01','position':[744,1104],
            'hair':['#312924','#69513c','#9a7857'],
@@ -40,7 +40,7 @@ def recolor(source,spec,direction,offset=0):
    pixel=im.getpixel((x,y))
    if pixel in mapping:im.putpixel((x,y),mapping[pixel])
  d=ImageDraw.Draw(im)
- if spec['name']=='Regent Aldric':
+ if spec['name']=='Regent Iselin':
   # A modest travelling coat: pale neckcloth and small old-gold clasp/buttons.
   if direction=='front':
    for p in [(11,14+offset),(12,14+offset)]:d.point(p,fill='#e8d9b4')
@@ -60,15 +60,15 @@ def recolor(source,spec,direction,offset=0):
  return im
 
 def actor_sheet(identifier,spec):
- if identifier=='aldric':
+ if identifier=='iselin':
   if __package__:
-   from .build_regent_aldric import build as build_aldric
+   from .build_regent_iselin import build as build_iselin
   else:
-   from build_regent_aldric import build as build_aldric
-  build_aldric()
-  return {'id':identifier,'name':'Regent Aldric','position':spec['position'],
-          'probe_size':[8,4],'draw_anchor':[12,30],
-          'art':'assets/story/regent/actors/aldric/animation.json','facing':'front'}
+   from build_regent_iselin import build as build_iselin
+  build_iselin()
+  return {'id':identifier,'name':'Regent Iselin','position':spec['position'],
+          'probe_size':[8,4],'draw_anchor':[10.5,30],
+          'art':'assets/characters/iselin/animation.json','facing':'front'}
  if identifier=='regent_clerk':
   # The Page has a native moss-coat design, not a generic villager recolor.
   # The ordinary build preserves existing approved exports; this branch only
@@ -143,7 +143,7 @@ def lucan_actor():
   walks[direction]=[(base/frame['file']).relative_to(ROOT).as_posix() for frame in meta['frames']]
  animation={'canvas':[24,36],'draw_anchor':[12,30],'foot_anchor':[12,34],
             'idles':idles,'walks':walks,'source':'approved Lucan directional idle and walking sets',
-            'design':'Aldric personal guard; approved armor, sword and shield'}
+            'design':'Iselin personal guard; approved armor, sword and shield'}
  path=folder/'animation.json';path.write_text(json.dumps(animation,indent=2)+'\n')
  return {'id':'lucan','name':'Lucan Rooke','position':[672,1132],'probe_size':[8,4],
          'draw_anchor':[12,30],'art':path.relative_to(ROOT).as_posix(),'facing':'front'}
@@ -151,19 +151,21 @@ def lucan_actor():
 
 DEFAULT_LAYOUT={
  'arrival':[744,1032], 'courtyard':[228,252], 'serene':[288,116],
- 'tomas':[108,200], 'aldric_courtyard':[228,200], 'aldric_aside':[378,144],
+ 'tomas':[108,200], 'iselin_courtyard':[228,200], 'iselin_aside':[378,144],
  'clerk_courtyard':[288,132], 'driver_courtyard':[288,252], 'lucan_courtyard':[336,252],
  'preparations':[264,128], 'welcome':[228,252], 'discussion':[228,252], 'aftermath':[168,228],
- 'scene_id':'eldenmere.playable', 'aldric_arrival':[732,1032], 'clerk_arrival':[708,1054],
+ 'scene_id':'eldenmere.playable', 'iselin_arrival':[732,1032], 'clerk_arrival':[708,1054],
  'driver_arrival':[744,1104], 'lucan_arrival':[672,1132],
  'dining_scene_id':'sanctuary_dining', 'serene_meal':[144,228],
  'outside_courtyard':[386,318],
  'dining_stations':['preparations','serene','serene_meal','tomas','courtyard','welcome',
-                    'discussion','aftermath','aldric_courtyard','clerk_courtyard',
-                    'driver_courtyard','lucan_courtyard','aldric_aside']}
+                    'discussion','aftermath','iselin_courtyard','clerk_courtyard',
+                    'driver_courtyard','lucan_courtyard','iselin_aside']}
 
 DEFAULT_LAYOUT.update(serene_meal=[168,116], lucan_courtyard=[336,132], driver_courtyard=[336,252])
-DEFAULT_LAYOUT['meal_seats']={'tomas': {'position': [138, 200], 'approach': [108, 200], 'anchor': [12, 30], 'facing': 'right', 'image': 'assets/story/sanctuary_opening/poses/tomas_seated.png', 'sort_y': 206, 'flip_x': True}, 'aldric': {'position': [198, 200], 'approach': [228, 200], 'anchor': [12, 30], 'facing': 'left', 'image': 'assets/story/regent/poses/aldric_seated.png', 'sort_y': 206}, 'mother_serene': {'position': [168, 158], 'approach': [168, 116], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/serene_seated.png', 'sort_y': 206}, 'regent_clerk': {'position': [288, 158], 'approach': [288, 132], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/clerk_seated.png', 'sort_y': 206}, 'lucan': {'position': [336, 158], 'approach': [336, 132], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/lucan_seated.png', 'sort_y': 206}, 'regent_driver': {'position': [336, 234], 'approach': [336, 252], 'anchor': [12, 30], 'facing': 'back', 'image': 'assets/story/regent/poses/driver_seated.png', 'sort_y': 246}}
+DEFAULT_LAYOUT['meal_seats']={'tomas': {'position': [138, 200], 'approach': [108, 200], 'anchor': [12, 30], 'facing': 'right', 'image': 'assets/story/sanctuary_opening/poses/tomas_seated.png', 'sort_y': 206, 'flip_x': True}, 'iselin': {'position': [198, 200], 'approach': [228, 200], 'anchor': [12, 30], 'facing': 'left', 'image': 'assets/story/regent/poses/iselin_seated.png', 'sort_y': 206}, 'mother_serene': {'position': [168, 158], 'approach': [168, 116], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/serene_seated.png', 'sort_y': 206}, 'regent_clerk': {'position': [288, 158], 'approach': [288, 132], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/clerk_seated.png', 'sort_y': 206}, 'lucan': {'position': [336, 158], 'approach': [336, 132], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/lucan_seated.png', 'sort_y': 206}, 'regent_driver': {'position': [336, 234], 'approach': [336, 252], 'anchor': [12, 30], 'facing': 'back', 'image': 'assets/story/regent/poses/driver_seated.png', 'sort_y': 246}}
+
+DEFAULT_LAYOUT['meal_seats']['iselin'].update(anchor=[10.5,30], detail_image='assets/story/regent/poses/iselin_seated_42x72.png', detail_anchor=[21,60])
 
 def build():
  """Maintain the revised visit without overwriting approved art or room edits.
@@ -190,7 +192,7 @@ def build():
  old_layout=json.loads((OUT/'layout.json').read_text()) if (OUT/'layout.json').exists() else {}
  layout.update(old_layout)
  retired={'road','cart_start','cart_end','cart_actor_offset','venn_start','venn_end',
-          'venn_cart_path','aldric_route','aldric_road','clerk_road','driver_road',
+          'venn_cart_path','iselin_route','iselin_road','clerk_road','driver_road',
           'attendant_road','foreman','crew_resume','attendant_arrival','attendant_courtyard',
           'venn_road','foreman_road','venn_delivery','cart_route'}
  for key in retired:layout.pop(key,None)

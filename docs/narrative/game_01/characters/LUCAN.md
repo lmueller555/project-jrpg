@@ -19,14 +19,14 @@ Unless noted otherwise, this describes his opening characterization.
 | Home region | Redstone March, Merovar | Established |
 | Birthplace and current residence | Specific settlement and residence undecided | Open |
 | Family and upbringing | A wagonwright's household; non-aristocratic upbringing. Relatives' identities remain undecided. | Established / Open |
-| Occupation and affiliations | Aldric's personal guard, serving a member of Merovar's ruling family | Established |
+| Occupation and affiliations | Iselin's personal guard, serving a member of Merovar's ruling family | Established |
 | Combat identity | Armsmaster; supersedes the earlier Knight combat designation | Role revised, 2026-11-07 |
 | Appearance | Dark swept hair, polished steel armor, oxblood cloth and gold trim; approved sword-and-shield base design | Established |
 | Narrative role | Eventual party swordsman and protector; introduction during Act I | Established |
-| Recruitment | Aldric later entrusts him to Caelan's party. Exact occasion, reason and scene remain undecided. | Established / Open |
+| Recruitment | Iselin later entrusts him to Caelan's party. Exact occasion, reason and scene remain undecided. | Established / Open |
 
 Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
-[Aldric's royal background](../CHARACTERS.md#aldric--approved-royal-background),
+[Iselin's royal background](../CHARACTERS.md#iselin--approved-royal-background),
 [Redstone March](../../../world/continents/MEROVAR.md#redstone-march) and
 [Lucan's asset guide](../../../../assets/characters/lucan/README.md).
 
@@ -46,7 +46,7 @@ Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Immediate responsibility | Serve as Aldric's personal guard | Established |
+| Immediate responsibility | Serve as Iselin's personal guard | Established |
 | Aspirations | A prestigious command and lasting security for his family | Established |
 | Motivations | Ambition, recognition and sincere public service coexist | Established |
 | Emotional need | Learn to protect people while respecting their judgment and agency | Established growth direction |
@@ -63,7 +63,7 @@ Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
 | Emotional trigger | When danger approaches, he issues orders even to people who never agreed to follow him | Established |
 | Coping habits | Obsessive equipment maintenance is established; using it to manage anxiety is only a proposal | Established / Proposed |
 | Avoided admission | He sometimes wants reassurance as much as he wants obedience | Proposed |
-| Values and loyalties | Public service, keeping people alive and personal loyalty to Aldric | Established |
+| Values and loyalties | Public service, keeping people alive and personal loyalty to Iselin | Established |
 | Faith, prejudices and absolute moral boundaries | Not yet defined | Open |
 
 ## History, successes and failures
@@ -71,9 +71,9 @@ Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Formative background | Wagonwright upbringing and service protecting road crews and caravans around the Greyfold approaches | Established |
-| Major accomplishment | Earned knighthood through that service; now serves as Aldric's personal guard | Established |
+| Major accomplishment | Earned knighthood through that service; now serves as Iselin's personal guard | Established |
 | Specific feats | Individual rescues, battles or acts of service have not been chosen | Open |
-| Guard appointment | The circumstances of Aldric selecting him remain undecided | Open |
+| Guard appointment | The circumstances of Iselin selecting him remain undecided | Open |
 | Mentors and significant choices | Not yet defined | Open |
 | Proudest success and greatest failure | No particular event has been approved | Open |
 | Losses, regrets and unfinished obligations | Not yet defined | Open |
@@ -125,7 +125,7 @@ after the cave boss is defeated and the party exits the cave. This departure
 does not decide his later permanent recruitment or ultimate ability.
 
 **Current author direction, 2026-11-07:** Lucan's combat identity is
-**Armsmaster**, replacing Knight as his intended job. His employment as Aldric's
+**Armsmaster**, replacing Knight as his intended job. His employment as Iselin's
 personal guard and his protective characterization remain established.
 The arsenal and ultimate directions below remain future combat concepts; the
 implemented guest skills above are a separate limited appearance.
@@ -157,7 +157,7 @@ requirements and name remain undecided.
 
 | Person | Opening dynamic and intended development | Status |
 | --- | --- | --- |
-| Aldric | Personal guard and loyal servant. Aldric later entrusts him to the party. Appointment history, personal intimacy and future tests of loyalty remain open. | Established / Open |
+| Iselin | Personal guard and loyal servant. Iselin later entrusts him to the party. Appointment history, personal intimacy and future tests of loyalty remain open. | Established / Open |
 | Caelan | Condescending instruction develops into respect. Caelan challenges his decisions; Lucan helps Caelan become more assertive. Both should have something useful to teach the other. | Established |
 | Rhea | His desire for orderly decisions contrasts with her observation and improvisation. She enjoys puncturing his self-importance. | Established |
 | Edran | Lucan wants a decision and orderly plan; Edran wants enough information to judge consequences. Particular bonds and conflicts remain open. | Established / Open |
@@ -276,22 +276,22 @@ fraud or a selfless saint for his appetite for recognition to be visible.
 ### Scenario 4 - Duty over applause
 
 **Status:** Proposed for review.
-**Stage:** Service as Aldric's personal guard.
+**Stage:** Service as Iselin's personal guard.
 **Setup:** During a public gathering, an appreciative group beckons Lucan
-closer while Aldric moves to another part of the crowd.
+closer while Iselin moves to another part of the crowd.
 
 **Observable beats:**
 
-- Lucan starts to answer the beckoning gesture, then tracks Aldric's movement.
+- Lucan starts to answer the beckoning gesture, then tracks Iselin's movement.
 - He pauses, lowers the hand he had raised toward the group and shifts
-  back into a position from which he can watch Aldric and the approach.
+  back into a position from which he can watch Iselin and the approach.
 - He stays there while the others enjoy the gathering, attentive rather
   than attempting to reclaim its center.
 
 **Inaction / trade-off:** He gives up recognition he genuinely wants instead
 of leaving his protective assignment to pursue it.
 
-**Character signal:** Loyalty to Aldric can outweigh his appetite for applause.
+**Character signal:** Loyalty to Iselin can outweigh his appetite for applause.
 The setting does not establish an assassination threat, court secret or
 particular political event.
 
@@ -449,11 +449,11 @@ care and leaves a choice without commenting on his own development.
 
 ### 9. Loyalty and a new assignment - possible recruitment expression
 
-**Context:** Aldric entrusts him to the party; the actual scene and wording remain open.
+**Context:** Iselin entrusts him to the party; the actual scene and wording remain open.
 
 > **Lucan:** "Who will be guarding you?"
 >
-> **Aldric:** "I've made arrangements. You won't be leaving me unprotected."
+> **Iselin:** "I've made arrangements. You won't be leaving me unprotected."
 
 *Lucan looks toward the party.*
 
@@ -463,7 +463,7 @@ care and leaves a choice without commenting on his own development.
 been addressed. No replacement guard or recruitment checkpoint is assigned.
 
 **Character signal:** Loyalty appears in the question he needs answered and
-the responsibility he takes next, not a clever rephrasing of Aldric's request.
+the responsibility he takes next, not a clever rephrasing of Iselin's request.
 **Status:** Proposed voice sketch, not an approved recruitment script.
 
 ### 10. Respect without surrendering confidence - later growth

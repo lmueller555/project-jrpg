@@ -52,7 +52,7 @@ class SanctuaryArrivalGalleryTests(unittest.TestCase):
             for frame in range(4500):
                 if child.sanctuary_arrival.dialogue is not None and child.sanctuary_arrival.beat==0:
                     viewport=pygame.Rect(child.camera.position(),(480,320))
-                    for key in ('caelan','mira','lucan','aldric','page','caretaker'):
+                    for key in ('caelan','mira','lucan','iselin','page','caretaker'):
                         self.assertTrue(viewport.collidepoint(child.sanctuary_arrival.actors[key].position),key)
                     first_composition_checked=True
                 if child.sanctuary_arrival.completed:

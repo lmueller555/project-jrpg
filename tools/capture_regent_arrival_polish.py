@@ -73,7 +73,7 @@ def source_inputs():
 
 
 def pose_sheet(output):
-    root = ROOT/'assets/story/regent_arrival/actors/aldric'
+    root = ROOT/'assets/story/regent_arrival/actors/iselin'
     manifest = json.loads((root/'animation.json').read_text())
     files = [frame['file'] for frame in manifest['loops']['walk_left']]
     sheet = Image.new('RGB', (len(files)*180, 230), '#26352e')
@@ -83,7 +83,7 @@ def pose_sheet(output):
         sprite = sprite.resize((160,192),Image.Resampling.NEAREST)
         sheet.paste(sprite,(index*180+10,12),sprite)
         draw.text((index*180+10,210),filename,fill='#f1e7c8')
-    sheet.save(output/'aldric_walk_frames.png')
+    sheet.save(output/'iselin_walk_frames.png')
 
 
 def staging_sheet(output, filenames):
@@ -290,13 +290,13 @@ def capture(output):
             'captures':{path.name:digest(path) for path in sorted(output.iterdir())
                         if path.is_file() and path.suffix in ('.png','.gif','.mp4')}}
         (output/'capture_report.json').write_text(json.dumps(report,indent=2)+'\n')
-        (output/'README.md').write_text('''# Aldric arrival: movement and transition polish
+        (output/'README.md').write_text('''# Iselin arrival: movement and transition polish
 
 [Gate passage and bridge transition](gate_to_bridge.mp4) · [Animated preview](gate_to_bridge.gif) · [Full arrival](arrival_polish.mp4)
 
 These are silent, uninterrupted production Game recordings. The fixture completes earlier quest work only; the unread MQ02 report, arrival, dialogue and final MQ03 handoff use normal input/update/draw. No cinematic clock, phase or actor station is assigned during playback.
 
-![Corrected Aldric walk frames](aldric_walk_frames.png)
+![Corrected Iselin walk frames](iselin_walk_frames.png)
 
 ![Gate passage, fade and bridge establishing frames](gate_transition_contact_sheet.png)
 
@@ -306,7 +306,7 @@ The gate-to-bridge recording includes the whole gate passage, departure fade, bl
 
 The [capture report](capture_report.json) includes compact phase/actor samples, current render fingerprints, artifact hashes, GIF pixel/timing validation and pause, focus, reload, skip, world-freeze and isolated Gallery smoke checks.
 
-To review in-game without repeating MQ02: **Title → Gallery → Aldric’s Relief Caravan**.
+To review in-game without repeating MQ02: **Title → Gallery → Iselin’s Relief Caravan**.
 
 Reproduce with `SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python tools/capture_regent_arrival_polish.py`.
 '''+verification)

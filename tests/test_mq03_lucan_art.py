@@ -22,7 +22,7 @@ class LucanVisitArtTests(unittest.TestCase):
     def test_registered_guard_reuses_every_approved_direction_without_body_changes(self):
         art = read('assets/story/regent/art.json')
         actors = {actor['id']: actor for actor in art['actors']}
-        self.assertEqual(set(actors), {'aldric', 'lucan', 'regent_clerk', 'regent_driver',
+        self.assertEqual(set(actors), {'iselin', 'lucan', 'regent_clerk', 'regent_driver',
                                        'regent_survivor'})
         lucan = actors['lucan']
         self.assertEqual(lucan['draw_anchor'], [12, 30])
@@ -68,7 +68,7 @@ class LucanVisitArtTests(unittest.TestCase):
     def test_shared_meal_has_six_registered_seated_bodies_and_seven_chairs(self):
         layout = read('assets/story/regent/layout.json')
         seats = layout['meal_seats']
-        self.assertEqual(set(seats), {'aldric', 'lucan', 'regent_clerk', 'regent_driver',
+        self.assertEqual(set(seats), {'iselin', 'lucan', 'regent_clerk', 'regent_driver',
                                      'mother_serene', 'tomas'})
         self.assertEqual(seats['lucan']['facing'], 'front')
         self.assertEqual(seats['regent_driver']['facing'], 'back')
@@ -77,10 +77,10 @@ class LucanVisitArtTests(unittest.TestCase):
         guest_chairs = [prop for prop in read('assets/story/regent/art.json')['props']
                         if prop['id'].startswith('dining_guest_chair_')]
         self.assertEqual(len(fixed_chairs)+len(guest_chairs), 7)
-        for record in seats.values():
-            self.assertEqual(record['anchor'], room['player_draw_anchor'])
+        for identifier,record in seats.items():
+            self.assertEqual(record['anchor'],[10.5,30] if identifier=='iselin' else room['player_draw_anchor'])
             with Image.open(ROOT/record['image']) as image:
-                self.assertEqual(image.size, (24, 36))
+                self.assertEqual(image.size, (21,36) if identifier=='iselin' else (24,36))
                 self.assertEqual(image.mode, 'RGBA')
                 self.assertTrue(set(image.getchannel('A').tobytes()) <= {0, 255})
 

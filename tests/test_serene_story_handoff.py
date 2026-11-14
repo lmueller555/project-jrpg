@@ -62,11 +62,11 @@ class SereneStoryHandoffTests(unittest.TestCase):
         self.quest.handoff_serene()
         self.assertIsNone(self.quest.try_conversation(self.serene))
         self.assertIs(self.quest.marker_for('mother_serene'), NotImplemented)
-        self.assertTrue(self.quest._speak('aldric_after'))
+        self.assertTrue(self.quest._speak('iselin_after'))
         self.assertNotIn(self.serene, self.game.social.blocked)
         while self.game.social.active:self.game.social.advance()
         self.assert_borrowed_state(hall, position)
-        self.quest.on_dialogue_cancelled('regent_aldric_after')
+        self.quest.on_dialogue_cancelled('regent_iselin_after')
         self.assert_borrowed_state(hall, position)
 
     def test_releasing_the_visit_does_not_clear_the_later_scenes_pose(self):

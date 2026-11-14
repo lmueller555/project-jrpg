@@ -7,6 +7,7 @@ import math
 
 import pygame
 from prop_presentation import personal_prop_visible
+from regent_actors import animation_frame
 
 from social import facing_toward
 
@@ -37,7 +38,7 @@ class RegentActions:
     def _actors(self):
         result = {'caelan': self.game.player, 'serene': self.owner.serene,
                   'mother_serene': self.owner.serene,
-                  'tomas': self.owner.tomas, 'aldric': self.owner.aldric,
+                  'tomas': self.owner.tomas, 'iselin': self.owner.iselin,
                   'regent_clerk': self.owner.clerk, 'regent_driver': self.owner.driver}
         lucan = getattr(self.owner, 'lucan', None)
         if lucan is not None:result['lucan'] = lucan
@@ -48,10 +49,11 @@ class RegentActions:
     def _owned_actor(self, actor):
         return actor is self.game.player or not self.owner._handed_off(actor)
 
-    def _pose(self, actor, image, anchor, *, position=None, sort_y=None):
+    def _pose(self, actor, image, anchor, *, position=None, sort_y=None, detail=None):
         if not self._owned_actor(actor):return
         previous = self._poses.setdefault(actor, {})
-        values = [('story_sprite', image), ('story_draw_anchor', tuple(anchor))]
+        values = [('story_sprite', image), ('story_draw_anchor', tuple(anchor)),
+                  ('story_detail', detail)]
         if position is not None:values.append(('story_position', tuple(position)))
         if sort_y is not None:values.append(('story_sort_y', sort_y))
         for key, value in values:
@@ -101,6 +103,8 @@ class RegentActions:
             if (actor is None or not self._owned_actor(actor)
                     or self.owner._world(actor) is not self.dining):continue
             image = self._image(record['image'])
+            detail = ((self._image(record['detail_image']),tuple(record['detail_anchor']))
+                      if 'detail_image' in record else None)
             if record.get('flip_x'):image = pygame.transform.flip(image, True, False)
             actor.facing = record['facing'];actor.moving = False
             if self._meal_clock < .35:
@@ -110,11 +114,16 @@ class RegentActions:
                 frames = actor.walks[record['facing']]
                 frame = frames[int(self._meal_clock/.12) % len(frames)]
                 image = frame[0] if isinstance(frame, tuple) else frame
+                if record.get('detail_image') and actor.facing in actor.detail_walks:
+                    durations=actor.walk_durations[actor.facing]
+                    image=animation_frame(frames,durations,self._meal_clock*1000)
+                    detail_frames,detail_anchor=actor.detail_walks[actor.facing]
+                    detail=(animation_frame(detail_frames,durations,self._meal_clock*1000),detail_anchor)
                 self._pose(actor, image, actor.draw_anchor, position=position,
-                           sort_y=position.y+actor.probe_size[1]/2)
+                           sort_y=position.y+actor.probe_size[1]/2, detail=detail)
             else:
                 self._pose(actor, image, record['anchor'], position=record['position'],
-                           sort_y=record['sort_y'])
+                           sort_y=record['sort_y'],detail=detail)
             self._seated = True
 
     def _attention(self, line):
@@ -202,7 +211,7 @@ class RegentActions:
         elif self.active_cue == 'lucan_disbelief':
             actor = getattr(self.owner,'lucan',None)
             if actor is not None and self.owner._world(actor) is self.game.world:
-                direction = facing_toward(self.owner.aldric.position-actor.position)
+                direction = facing_toward(self.owner.iselin.position-actor.position)
                 actor.facing = direction;actor.moving = False
                 self._pose(actor,actor.idles[direction],actor.draw_anchor)
         elif self.active_cue == 'survivor_aid' and self._owned_actor(self.owner.serene):

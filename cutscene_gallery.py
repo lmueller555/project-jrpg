@@ -267,7 +267,7 @@ def _arrival(game, playback):
     _station(game, homecoming.dining, clear, 'right')
     # Request exactly the production pending->active arrival boundary.
     if not game.regent_arrival.request() or not game.regent_arrival.maybe_start():
-        raise ValueError('Cannot start Aldric arrival')
+        raise ValueError('Cannot start Iselin arrival')
     playback.watch(lambda: game.regent_arrival.arrival_complete and not game.regent_arrival.active)
 
 
@@ -424,7 +424,7 @@ GALLERY_ENTRIES = (
            'Move a little still water and hear Mira’s encouragement.', partial(_mill_action, action='spell')),
     _entry('mill_repair', 'Freeing the Intake', 'Mira’s Mill Quest',
            'A lever, a haul rope and two pairs of hands restore the mill.', partial(_mill_action, action='repair')),
-    _entry('regent_arrival', 'Aldric’s Relief Caravan', 'The Regent’s Road',
+    _entry('regent_arrival', 'Iselin’s Relief Caravan', 'The Regent’s Road',
            'The present-day caravan reaches Eldenmere after the mill is restored.', _arrival),
     GalleryEntry('sanctuary_arrival', 'Sanctuary — Emergency Arrival', 'The Regent’s Road',
            'Find the wounded, account for the missing worker and prepare the Sanctuary cave rescue.',

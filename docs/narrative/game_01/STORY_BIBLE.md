@@ -1,5 +1,22 @@
 # Project JRPG — Game I Story Bible
 
+## Current regent direction
+
+[Regent Iselin](characters/ISELIN.md) replaces the former regent in current
+canon. Her homeland is a cold northern kingdom within Merovar, surrounded by
+mountains except for its southern approach. The capital is the party's eventual
+northward destination and remains unnamed. She already has exceptional ice
+magick proficiency. The Crown's pre-game partial knowledge and her covert
+investigation are author-facing facts; her sincere relief work and existing
+Sanctuary breach of trust remain part of the opening.
+
+The intended first half to roughly two-thirds of the adventure accompanies her
+through affected regions before her eventual Ice Reaper descent. The protective
+ice dome, traitor accusation and exile are late-story direction, not opening
+exposition or a newly implemented quest. Existing act sketches remain working
+material subject to that approved direction; they do not establish a competing
+origin or disclose the catastrophe to the player.
+
 **Status:** Game-level requirements and linked approved opening foundations are CANON; the older illustrative premise remains PROPOSED.
 **Version:** 0.2
 **Parent documents:** [Foundational Lore](../../FOUNDATIONAL_LORE.md), [Saga Bible](../saga/SAGA_BIBLE.md), and [Revelation Plan](../saga/REVELATION_PLAN.md).
@@ -18,7 +35,7 @@ the wider period of industrialization and unapproved religious details remain op
 
 The [early regional surges](REGIONAL_SURGES.md) establish a handful of unusual
 lightning incidents. One destroyed the road to the next town south of Eldenmere
-before the opening. Aldric has already aided a couple of other communities;
+before the opening. Iselin has already aided a couple of other communities;
 their combined repair demands strain the supply of stone and motivate his
 request to examine a seam within Elden Vale Sanctuary’s protected ground.
 
@@ -28,10 +45,10 @@ natural confluence to guide the region's dead back to the planet and remember
 them. Mining would disrupt this critical responsibility. Caretakers have heard
 growling from the cave since the bridge incident; its cause remains unknown.
 
-Aldric secretly dispatched a Crown crew to establish control and prepare the
+Iselin secretly dispatched a Crown crew to establish control and prepare the
 mining operation before seeking Serene's agreement. An injured survivor's report
 exposes his deception during MQ03. Lucan did not know about the deployment and
-is taken aback. Aldric, Lucan, his page, Caelan and Mira travel to the Sanctuary
+is taken aback. Iselin, Lucan, her page, Caelan and Mira travel to the Sanctuary
 while Serene, Tomas and the driver care for the survivor. The new route remains
 active at arrival, awaiting the later cutscene and encounter. Older completed
 journeys retain their progress. The later formal authorization, private warning,

@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "listen_left": "listen_left.png",
+    "gesture_left": "gesture_left.png",
+    "turn_left_back": "turn_left_back.png",
+    "stand_left": "stand_left.png",
+    "stand_right": "stand_right.png",
+    "stand_back": "stand_back.png"
+  },
+  "loops": {
+    "walk_left": [
+      {
+        "file": "walk_left_00.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_01.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_02.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_03.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_04.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_05.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_06.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_07.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_08.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_09.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_10.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_11.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_12.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_13.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_14.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_15.png",
+        "duration_ms": 35
+      }
+    ],
+    "walk_back": [
+      {
+        "file": "walk_back_00.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_01.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_02.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_03.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_04.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_05.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_06.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_07.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_08.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_09.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_10.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_11.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_12.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_13.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_14.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_back_15.png",
+        "duration_ms": 35
+      }
+    ],
+    "walk_left_back": [
+      {
+        "file": "walk_left_back_00.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_01.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_02.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_03.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_04.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_05.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_06.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_07.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_08.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_09.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_10.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_11.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_12.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_13.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_14.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "walk_left_back_15.png",
+        "duration_ms": 35
+      }
+    ]
+  },
+  "gaits": {
+    "walk_left": {
+      "stride_pixels": 32
+    }
+  },
+  "source": "Complete Iselin drawings and approved 16-frame walks; no limb assembly."
+}

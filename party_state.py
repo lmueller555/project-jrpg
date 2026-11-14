@@ -287,6 +287,12 @@ class PartyState:
                 return False
         if not data['members']['caelan']['available'] or data['members']['caelan']['temporary']:return False
         proposed._members = deepcopy(data['members'])
+        # Exact legacy display strings only; quest/event identifiers stay stable.
+        legacy_regent_reasons={
+            'Returned to Aldric.':'Returned to Iselin.',
+            'Returned to Aldric after the cave rescue.':'Returned to Iselin after the cave rescue.'}
+        for record in proposed._members.values():
+            record['reason']=legacy_regent_reasons.get(record['reason'],record['reason'])
         event = data['event']
         if event is not None:
             if (not isinstance(event, dict)

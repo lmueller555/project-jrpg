@@ -32,11 +32,11 @@ MAIN_HASHES = {
         '4d598671adb748e13cc87afc4187b6b9245b52e569dfcd1aab5673bd2316504a',
     'assets/story/regent_arrival/actors/portraits/clerk.png':
         '36931d42c448f6b85f0470242df2a8588d762f118b8086d14d4342b36cdbcb96',
-    'assets/story/regent_arrival/actors/aldric/stand_left.png':
+    'assets/source/characters/aldric_archive/arrival/stand_left.png':
         '4781136b0a06688dad9c07f0907e9e354350029c14bcaf440faa878efd2939a8',
-    'assets/story/regent_aerial/actors/aldric/overhead.png':
+    'assets/source/characters/aldric_archive/aerial/overhead.png':
         'b8ee65a5f62fab2dd398268b748217a2948abc92c4245e83e4645332f11fcf3a',
-    'assets/story/regent_aerial/actors/aldric/oblique.png':
+    'assets/source/characters/aldric_archive/aerial/oblique.png':
         'ce2057355b9cb2e46334960d2bd1b6b4bdfd091bb624fbf13ee1a4fa5c05a65f',
     'assets/source/cinematics/regent_arrival/actors/travelers_generated.png':
         '4345f3d017057fea42a42639e6931bc05429bd8c2a5e857c82a7c288ff809c86',
@@ -401,8 +401,10 @@ class RegentClerkWalkTests(unittest.TestCase):
             box = image.getbbox()
             height = box[3]-box[1]
             heights.append(height)
-            aldric = rgba(AERIAL/'aldric'/(pose+'.png')).getbbox()
-            self.assertLessEqual(abs(height-(aldric[3]-aldric[1])), 3)
+            # Compare like-for-like against the retained original adult camera
+            # study; Iselin's distinct top-down silhouette has different foreshortening.
+            original = rgba(ROOT/'assets/source/characters/aldric_archive/aerial'/(pose+'.png')).getbbox()
+            self.assertLessEqual(abs(height-(original[3]-original[1])), 3)
             # Cropping and uniformly shrinking the upright body cannot
             # reproduce the explicitly authored crown/shoulder/hip geometry.
             scaled = self.reference.crop(self.reference.getbbox()).resize(
@@ -429,11 +431,13 @@ class RegentClerkWalkTests(unittest.TestCase):
             for path in directory.rglob('*.png'):
                 # Lucan joined the cinematic after this original-art snapshot.
                 # His own continuity suite validates the additive exports.
-                if path.parent.name == 'lucan':continue
+                if path.parent.name in ('lucan','iselin'):continue
                 if path.parent.name == 'clerk' and (directory == AERIAL or
                                                     path.name not in ('stand_left.png', 'read_left.png')):
                     continue
                 expected.add(path)
+        expected.update((ROOT/'assets/source/characters/aldric_archive/arrival').glob('*.png'))
+        expected.update((ROOT/'assets/source/characters/aldric_archive/aerial').glob('*.png'))
         self.assertEqual(set(self.protected), {path.relative_to(ROOT).as_posix() for path in expected})
 
     def test_authoring_and_joint_records_rebuild_in_memory_without_any_file_writes(self):

@@ -106,7 +106,7 @@ foundations remain in the companion guide.
 
 | Character | Age at opening | Home region | Role and introduction |
 | --- | --- | --- | --- |
-| Lucan Rooke | 24 | Redstone March | Confident, arrogant Armsmaster and Aldric's personal guard; growing arsenal of weapons and shields; Act I |
+| Lucan Rooke | 24 | Redstone March | Confident, arrogant Armsmaster and Iselin's personal guard; growing arsenal of weapons and shields; Act I |
 | Rhea Sorel | 22 | Wooded western Greyfold slopes | Upbeat, carefree Aethermage and field naturalist; sometimes chaotic offensive magicks; early Act II |
 | Edran Hale | 46 | Lower Leth | Reserved, wise Sage; healing, defense, support and enemy debuffs; end of Act II |
 
@@ -126,76 +126,58 @@ are also approved.
 Recruitment quests, action animations, battle abilities, numeric builds and
 progression unlocks require later implementation.
 
-## Aldric — approved royal background
+## Iselin — approved royal background
 
-**Approved:** 2026-11-03.
+Iselin replaces the former regent character throughout current canon. She holds
+that same title and established role: a royal regional regent, the younger sister
+of the reigning queen, and Lucan Rooke's employer. Royal birth does not make her
+the reigning monarch. Her immediate relief responsibilities still include Elden
+Vale and nearby upper-Leth road and quarry districts.
 
-Aldric belongs to Merovar's ruling family and is the younger brother of the
-reigning queen. One crown rules Merovar through regional governors and local
-institutions. Aldric serves as regional regent; his immediate administrative
-concerns remain Elden Vale and nearby upper-Leth road and quarry districts.
-Royal birth does not make him the reigning monarch.
+Her kingdom lies in northern Merovar, in a very cold climate, enclosed by
+mountains to the east, west and north, with its only approach from the south.
+The capital is the party's intended long-term northern destination. The kingdom,
+capital, dynasty, queen's name, exact age and succession details remain unnamed
+or unresolved. The earlier assumption that a single Crown rules all Merovar is
+superseded; Merovar is the wider continent containing her northern kingdom.
 
-Lucan Rooke is Aldric's personal guard. Later in the story, Aldric entrusts
-Lucan to Caelan's party, establishing the basis for his recruitment. The exact
-occasion and scene remain open; this replaces the earlier generic
-road-security escort recruitment premise.
+Growing up in that climate, she already became proficient with ice magick and
+is a prodigy. Recent royal duties have given her little occasion to exercise
+that talent. Her later story concerns the growth and misuse of an existing
+ability, not first acquiring ice magick from nothing.
 
-MQ03 introduces Lucan with Aldric's visiting party, in place of the generic
-traveling attendant. His guard work, unsolicited practical advice and meal
-conversation establish his opening dynamic with Caelan. He was not told about
-Aldric's secret advance crew and is visibly taken aback when the survivor
-exposes it. He then asks practical rescue questions and travels to the Sanctuary
-with Aldric, the page, Caelan and Mira. He remains a story escort; this outing
-does not recruit him into the combat party. The page occupies the earlier
-clerk role, with no approved age, personal history or prior knowledge of the
-secret operation.
+Lucan is her personal guard. MQ03 establishes his professional loyalty, practical
+advice and surprise at the concealed advance crew. He accompanies the cave
+mission as a temporary combat guest; later permanent recruitment remains a
+separate story decision. The page retains the established clerk role and has
+no newly assigned biography or prior knowledge of the operation.
 
-The dynasty's name, the queen's personal name and biography, Aldric's birthplace and age,
-succession rules and the precise constitutional powers of the regency remain
-unapproved. Membership in the ruling family does not yet assign a named
-capital or royal residence.
+The [Iselin character guide](characters/ISELIN.md) records the approved covert
+mission, northward journey and eventual Ice Reaper arc. Those author-facing
+facts are not automatically information available to opening-scene characters.
 
 ### Ruling-family development — proposals, not canon
 
-- **House Maroven:** A proposed dynasty name. Its legitimacy emphasizes keeping
-  roads open, settlements supplied and regional institutions working. This is
-  a royal ideal, not proof that every ruler has fulfilled it.
-- **Queen Isolde Maroven:** Aldric's proposed elder sister and reigning monarch.
-  Patient and politically disciplined, she balances competing regional claims.
-  She trusts Aldric's practical judgment but worries about his tendency to
-  promise results faster than institutions can deliver them.
-- **Dowager Queen Helena Maroven:** Their proposed mother, who values restraint,
-  continuity and relationships with local custodians. She taught Aldric that
-  inherited standing creates obligations rather than personal entitlement.
-- **Prince Oren Maroven:** Isolde's proposed son and intended heir. He admires
-  his uncle's visible service outside court. Aldric wants to teach him that
-  leadership involves listening to people, not merely being admired by them.
-  Exact inheritance rules remain open.
+The previously discussed House Maroven, Queen Isolde, Dowager Helena and Prince
+Oren remain unapproved proposals, now associated with Iselin rather than her
+predecessor. If developed, her relationship to the prince would be aunt rather
+than uncle. No dynasty name, queen's personal name, heir or inheritance rule is
+established by this migration. Proposed themes of service, responsibility and
+wanting achievement to justify royal standing remain usable development notes.
+Her covert Crown investigation, however, is approved separately and must not be
+excluded by the older "no hidden cosmic motive" proposal boundary.
 
-A proposed personal foundation is that Aldric grew up beside an elder sibling
-destined for the crown and sought a useful identity through regional service.
-He wants to be valued for what he accomplishes, not merely his family name.
-That can make urgent relief work both a sincere duty and a personal test.
-His relationship with Lucan can mirror this tension: a royal-born administrator
-and a guard from a wagonwright's household both want achievement to justify
-their standing. How Lucan earned the guard appointment remains to be designed.
-
-These proposed biographies do not establish additional family secrets, a
-succession crisis or a hidden cosmic motive for the Sanctuary operation.
-Aldric's concealed advance crew is separately approved MQ03 story canon.
-
-## Aldric and Serene — relief needs and the Sanctuary breach of trust
+## Iselin and Serene — relief needs and the Sanctuary breach of trust
 
 The [regional surge context](REGIONAL_SURGES.md) and
 [covenant guide](../../world/SANCTUARY_COVENANT.md) govern the revised MQ03
 conflict. The guidance-of-the-dead role and concealed deployment supersede
 the older mutually sincere negotiation and limited-inspection compromise.
 
-Aldric's relief work and the shortages are real. Before speaking with Serene,
-he has nevertheless sent a Crown crew to establish control of the protected
+Iselin's relief work and the shortages are real. Before speaking with Serene,
+she has nevertheless sent a Crown crew to establish control of the protected
 area and prepare mining. The panicked survivor's report of the cave attack
-reveals that action. Aldric sought her agreement while concealing an operation
+reveals that action. Iselin sought her agreement while concealing an operation
 already set in motion; urgency does not erase the deception.
 
 Serene holds the ground in keeping for the region. The Sanctuary was built
@@ -204,10 +186,10 @@ remember them. Mining would disrupt that critical service. Caretakers have
 heard growling from the cave since the bridge incident. Its cause, the
 creature's identity and any connection to mining remain unknown.
 
-Serene recognizes Aldric's bad faith and then tends the injured survivor,
+Serene recognizes Iselin's bad faith and then tends the injured survivor,
 with Tomas and the driver helping. Caelan volunteers and collects Mira from
 her workshop. Mira joins with her worn engineering arm rig.
-Aldric, Lucan, the page, Caelan and Mira make the emergency journey. The page's
+Iselin, Lucan, the page, Caelan and Mira make the emergency journey. The page's
 prior knowledge of the operation remains unspecified. Lucan was unaware and
 is taken aback before turning to the people left in danger.
 

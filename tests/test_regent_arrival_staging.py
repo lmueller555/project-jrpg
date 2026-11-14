@@ -69,8 +69,8 @@ class RegentArrivalStagingTests(unittest.TestCase):
 
     def test_gate_camera_holds_while_the_whole_party_shrinks_into_the_landscape(self):
         phase = self.frame('gate_admission', 0)
-        actors = [actor for actor in phase['actors'] if actor['id'] in ('aldric', 'clerk', 'caravan')]
-        self.assertEqual({actor['id'] for actor in actors}, {'aldric', 'clerk', 'caravan'})
+        actors = [actor for actor in phase['actors'] if actor['id'] in ('iselin', 'clerk', 'caravan')]
+        self.assertEqual({actor['id'] for actor in actors}, {'iselin', 'clerk', 'caravan'})
         camera = self.scene.camera_position.copy()
         observations = {actor['id']: [] for actor in actors}
         for index in range(round(phase['min_seconds']*10)):
@@ -101,17 +101,17 @@ class RegentArrivalStagingTests(unittest.TestCase):
         for index in range(round(phase['min_seconds']*20)+1):
             self.scene.phase_time = index/20
             for actor in phase['actors']:
-                if actor['id'] not in ('aldric', 'clerk', 'caravan'):
+                if actor['id'] not in ('iselin', 'clerk', 'caravan'):
                     continue
                 position = self.scene.actor_position(actor)
                 for guard in guards:
                     self.assertGreater(position.distance_to(self.scene.actor_position(guard)), 30.)
 
-    def test_caravan_follows_aldric_through_the_same_gate_aperture(self):
+    def test_caravan_follows_iselin_through_the_same_gate_aperture(self):
         phase = self.frame('gate_admission', 0)
         crossings = {}
         for actor in phase['actors']:
-            if actor['id'] not in ('aldric', 'clerk', 'caravan'):
+            if actor['id'] not in ('iselin', 'clerk', 'caravan'):
                 continue
             previous = self.scene.actor_position(actor)
             for index in range(1, round(phase['min_seconds']*40)):
@@ -123,16 +123,16 @@ class RegentArrivalStagingTests(unittest.TestCase):
                     break
                 previous = position
             self.scene.phase_time = 0
-        self.assertEqual(set(crossings), {'aldric', 'clerk', 'caravan'})
-        self.assertLess(crossings['aldric'][0], crossings['clerk'][0])
+        self.assertEqual(set(crossings), {'iselin', 'clerk', 'caravan'})
+        self.assertLess(crossings['iselin'][0], crossings['clerk'][0])
         self.assertLess(crossings['clerk'][0], crossings['caravan'][0])
-        self.assertLess(abs(crossings['aldric'][1]-crossings['caravan'][1]), 5)
+        self.assertLess(abs(crossings['iselin'][1]-crossings['caravan'][1]), 5)
         self.assertTrue(all(510 <= x <= 640 for _, x in crossings.values()))
 
     def test_turn_poses_precede_rear_walk_and_scaled_feet_stay_on_road(self):
         phase = self.frame('gate_admission', 0)
         for actor in phase['actors']:
-            if actor['id'] not in ('aldric', 'clerk', 'caravan'):
+            if actor['id'] not in ('iselin', 'clerk', 'caravan'):
                 continue
             with self.subTest(actor=actor['id']):
                 poses = []
@@ -157,8 +157,8 @@ class RegentArrivalStagingTests(unittest.TestCase):
         for shot, seconds in (('gate_approach', 1.5), ('gate_greeting', 0), ('gate_admission', 0)):
             phase = self.frame(shot, seconds)
             stations.append({actor['id']: self.scene.actor_position(actor)
-                             for actor in phase['actors'] if actor['id'] in ('aldric', 'clerk', 'caravan')})
-        self.assertEqual(set(stations[0]), {'aldric', 'clerk', 'caravan'})
+                             for actor in phase['actors'] if actor['id'] in ('iselin', 'clerk', 'caravan')})
+        self.assertEqual(set(stations[0]), {'iselin', 'clerk', 'caravan'})
         self.assertEqual(stations[0], stations[1])
         self.assertEqual(stations[1], stations[2])
         clerk = next(actor for actor in self.scene.phase['actors'] if actor['id'] == 'clerk')
@@ -193,13 +193,13 @@ class RegentArrivalStagingTests(unittest.TestCase):
             return mask, origin, scale, contacts
 
         checked = 0
-        same_depth_checked = {'aldric': 0, 'clerk': 0}
+        same_depth_checked = {'iselin': 0, 'clerk': 0}
         depth_unit = self.scene.data['routes']['gate_road']['depth_unit']
         for shot in ('gate_approach', 'gate_greeting', 'gate_admission'):
             phase = self.frame(shot, 0)
             for index in range(round(phase['min_seconds']*10)+1):
                 self.scene.phase_time = index/10
-                people = [actor for actor in phase['actors'] if actor['id'] in ('aldric', 'clerk')]
+                people = [actor for actor in phase['actors'] if actor['id'] in ('iselin', 'clerk')]
                 obstacles = [actor for actor in phase['actors'] if actor['id'] in ('guard', 'caravan')]
                 for person in people:
                     mask, origin, scale, contacts = silhouette(person)
@@ -237,7 +237,7 @@ class RegentArrivalStagingTests(unittest.TestCase):
                 ('gate_approach', .5, 'clerk', 'clerk'),
                 ('gate_admission', 0., 'clerk', 'clerk'),
                 ('gate_admission', 3.1, 'clerk', 'caravan'),
-                ('gate_admission', 8.2, 'aldric', 'caravan')):
+                ('gate_admission', 8.2, 'iselin', 'caravan')):
             with self.subTest(shot=shot, seconds=seconds, person=identifier, nearer=nearer):
                 phase = self.frame(shot, seconds)
                 actors = {actor['id']: actor for actor in phase['actors']
@@ -273,8 +273,8 @@ class RegentArrivalStagingTests(unittest.TestCase):
         phase['actors'] = []
         solid = pygame.Surface((80, 96), pygame.SRCALPHA)
         solid.fill('#ff00ff')
-        self.scene.actor_art['aldric']['poses']['stand_left'] = solid
-        actor = {'id': 'aldric', 'pose': 'stand_left', 'position': [670, 310]}
+        self.scene.actor_art['iselin']['poses']['stand_left'] = solid
+        actor = {'id': 'iselin', 'pose': 'stand_left', 'position': [670, 310]}
         phase['actors'].append(actor)
         camera = self.scene.camera_position
         post = (round(670-camera.x), round(250-camera.y))

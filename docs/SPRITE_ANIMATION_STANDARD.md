@@ -93,8 +93,8 @@ The established detailed renderer preserves higher-resolution idle and walk
 artwork at ordinary party scale. Resizing it to the logical fallback discards detail;
 enlarging that fallback later cannot recover it. Validate the intended rendering
 path and target window scale. Iselin's walk manifests are registered on her
-reusable actor; the full regent character/story replacement remains separate
-from that rendering integration.
+reusable actor and the regent's opening/MQ03 scenes. Cinematic and seated
+poses have separate complete drawings and preserve the same character design.
 
 ## 2. Plan the gait before drawing in-betweens
 

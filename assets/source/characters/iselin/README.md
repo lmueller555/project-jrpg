@@ -11,8 +11,7 @@ in front views), and a navy mantle over her anatomical-right shoulder.
 
 The portrait, 42×72 directional idles and all four 16-frame walks are approved
 and merged (walk completion: PR #201). The initial 24×36 idle described below
-was superseded by the detailed export. Runtime Aldric-to-Iselin character
-replacement remains separate. See the global standard and the
+was superseded by the detailed export. The live regent character, arrival cinematics and MQ03 scenes now use Iselin. See the global standard and the
 [detailed idle implementation](../../../../docs/reviews/iselin_first_assets/IMPLEMENTED.md)
 for current rendering dimensions; this file preserves the initial source study.
 

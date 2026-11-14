@@ -105,16 +105,16 @@ def export(target):
                       'hinge': [0, 49], 'open_scale': [0.08, 1.0]},
         'anchors': {'left_post': [480, 296], 'right_post': [650, 287],
                     'aperture_center': [575, 292], 'guard': [530, 375],
-                    'aldric': [625, 375], 'caravan': [805, 375],
+                    'iselin': [625, 375], 'caravan': [805, 375],
                     'north_exit': [550, 280]},
     })
     scenes['riverbank']['anchors'] = {
-        'aldric': [620, 375], 'local': [530, 375], 'clerk': [710, 380],
+        'iselin': [620, 375], 'local': [530, 375], 'clerk': [710, 380],
         'safe_bank': [610, 375], 'broken_span_focus': [330, 260],
         'river_surface': [285, 330],
     }
     scenes['approach']['anchors'] = {
-        'wagon_waiting': [610, 375], 'aldric_waiting': [530, 375],
+        'wagon_waiting': [610, 375], 'iselin_waiting': [530, 375],
         'brook_bridge': [840, 265], 'sanctuary': [320, 180],
         'west_bank_layby': [610, 340],
     }

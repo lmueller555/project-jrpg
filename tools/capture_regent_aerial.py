@@ -288,7 +288,7 @@ def capture(output, *, prototype=False):
             all(key in sample['projected_actors'] and
                 0 <= sample['projected_actors'][key]['screen_xy'][0] < 480 and
                 0 <= sample['projected_actors'][key]['screen_xy'][1] < 320
-                for key in ('aldric','caravan','guard_west','guard_east'))]
+                for key in ('iselin','caravan','guard_west','guard_east'))]
         assert gate_cast_visible,'Gate overflight never showed the complete convoy and guard group'
         if not prototype:assert len(canopy_handoffs) == 1,'Missing the occluded background handoff'
         completed = (directory/'journey.json').read_bytes()
@@ -333,7 +333,7 @@ The rest of the arrival completes through normal dialogue input. The [capture re
 
 The video and individual stills preserve the game's native 480×320 view; the GIF is a smaller navigation preview. Contact sheets use JPEG to keep the review lightweight.
 
-Replay in-game from **Title → Gallery → Aldric’s Relief Caravan**.
+Replay in-game from **Title → Gallery → Iselin’s Relief Caravan**.
 
 Reproduce with `SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python tools/capture_regent_aerial.py`.
 '''+verification)

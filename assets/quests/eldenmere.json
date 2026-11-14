@@ -169,30 +169,30 @@
       "requires_quests": [
         "CH01_MQ02"
       ],
-      "summary": "Welcome Regent Aldric, help rescue the Sanctuary workers, and return to Serene to settle the immediate emergency.",
+      "summary": "Welcome Regent Iselin and accompany her party to meet Mother Serene.",
       "available_tracker_text": "Speak with Mother Serene in the dining room at home about the visiting regent.",
-      "accept_text": "Meet Aldric’s party by the brook.",
+      "accept_text": "Meet Iselin’s party by the brook.",
       "report_text": "Continue helping Serene and the visitors.",
       "completion_text": "The Regent’s Road is complete.",
       "script_reference": "docs/narrative/game_01/CH01_MQ03.md",
       "objectives": [
         {
           "id": "meet_visitors",
-          "text": "Meet Aldric's party by the brook.",
+          "text": "Meet Iselin's party by the brook.",
           "tracker_text": "Meet the visitors by the brook.",
           "requires": []
         },
         {
           "id": "accompany_visit",
-          "text": "Accompany Aldric through the village to the dining room in Serene’s home.",
-          "tracker_text": "Bring Aldric into the dining room at home.",
+          "text": "Accompany Iselin through the village to the dining room in Serene’s home.",
+          "tracker_text": "Bring Iselin into the dining room at home.",
           "requires": [
             "meet_visitors"
           ]
         },
         {
           "id": "welcome_party",
-          "text": "Help welcome the visitors and hear Aldric and Serene's conversation.",
+          "text": "Help welcome the visitors and hear Iselin and Serene's conversation.",
           "tracker_text": "Join the visitors in the dining room at home.",
           "requires": [
             "accompany_visit"
@@ -200,7 +200,7 @@
         },
         {
           "id": "speak_serene",
-          "text": "Help Serene with the remainder of Aldric’s visit.",
+          "text": "Help Serene with the remainder of Iselin’s visit.",
           "tracker_text": "Continue helping Serene and the visitors.",
           "requires": [
             "welcome_party"

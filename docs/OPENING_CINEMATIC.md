@@ -26,7 +26,7 @@ or Eldenmere's ultimate condition. The reference to “he” in Mira's encourage
 remains the author's exact wording and leaves its context unresolved for the
 player. The lantern is ordinary traveling equipment, not Liam's tower lantern
 or an identified memorial keepsake. The wayside sanctuary does not reveal the
-ancient sacrificial temple. Aldric's responsibility, the regional mechanism and
+ancient sacrificial temple. Iselin's responsibility, the regional mechanism and
 all saga-level mysteries remain concealed.
 
 The author's exchange establishes an entrance beyond the ridge, a threatened

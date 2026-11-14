@@ -131,7 +131,7 @@ class RegentEmergency:
         if c.sanctuary_escort_active:
             self._stage_escorts(force=True)
         elif force:
-            for actor, prefix in ((c.aldric, 'aldric'), (c.lucan, 'lucan'), (c.clerk, 'clerk')):
+            for actor, prefix in ((c.iselin, 'iselin'), (c.lucan, 'lucan'), (c.clerk, 'clerk')):
                 self._place(actor, c.dining, c.points[prefix+'_courtyard'])
 
     def _care(self, seconds):
@@ -257,19 +257,19 @@ class RegentEmergency:
     def try_conversation(self, actor):
         c = self.owner
         target = self.target()
-        if target == 'attack_report' and actor in (self.survivor, c.serene, c.aldric):
+        if target == 'attack_report' and actor in (self.survivor, c.serene, c.iselin):
             return c._speak(target, self.reported)
-        if target == 'departure' and actor in (self.survivor, c.serene, c.aldric, c.lucan):
+        if target == 'departure' and actor in (self.survivor, c.serene, c.iselin, c.lucan):
             return c._speak(target, self.departed)
         if actor is self.mira and c.stage == 'rejoin_mira':
             return self._start_mira() if target == 'mira_departure' else False
         keys = {c.serene:'emergency_serene', c.tomas:'emergency_tomas',
                 c.driver:'emergency_driver', self.survivor:'survivor_waiting',
-                c.aldric:'travel_aldric', c.lucan:'travel_lucan', c.clerk:'travel_page'}
+                c.iselin:'travel_iselin', c.lucan:'travel_lucan', c.clerk:'travel_page'}
         if actor not in keys:return None
         if c._world(actor) is not self.game.world:return False
         if getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False):
-            keys.update({c.aldric:'arrival_aldric_waiting',c.clerk:'arrival_page_waiting'})
+            keys.update({c.iselin:'arrival_iselin_waiting',c.clerk:'arrival_page_waiting'})
             return c._speak(keys[actor])
         key = 'sanctuary_waiting' if c.stage == 'sanctuary_arrival_pending' and actor in c.sanctuary_escorts else keys[actor]
         if key not in c.lines:return False
@@ -316,7 +316,7 @@ class RegentEmergency:
             rescue = getattr(self.game, 'sanctuary_rescue', None)
             stage = getattr(rescue, 'stage', 'undiscovered')
             if stage == 'evacuated':
-                return 'Join Lucan and Aldric at Elden Vale Sanctuary.'
+                return 'Join Lucan and Iselin at Elden Vale Sanctuary.'
             if stage in ('greenwell', 'handoff'):
                 return 'Speak to Lucan at Greenwell to escort the worker outside.'
             if getattr(getattr(self.game, 'sanctuary_boss', None), 'defeated', False):

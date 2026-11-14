@@ -1,8 +1,8 @@
 {
   "actors": [
     {
-      "id": "aldric",
-      "name": "Regent Aldric",
+      "id": "iselin",
+      "name": "Regent Iselin",
       "position": [
         732,
         1032
@@ -12,10 +12,10 @@
         4
       ],
       "draw_anchor": [
-        12,
+        10.5,
         30
       ],
-      "art": "assets/story/regent/actors/aldric/animation.json",
+      "art": "assets/characters/iselin/animation.json",
       "facing": "front"
     },
     {

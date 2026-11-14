@@ -11,8 +11,8 @@ every person in Elden Vale follows the same tradition.
 
 **Implementation:** MQ03 explains the Sanctuary's responsibility for the
 region's dead and the mining operation's disruption of that work. Reports of
-cave growling precede a survivor's account of an attack on Aldric's secret
-advance crew. The emergency takes Caelan, Mira, Aldric, Lucan and the page to
+cave growling precede a survivor's account of an attack on Iselin's secret
+advance crew. The emergency takes Caelan, Mira, Iselin, Lucan and the page to
 the [detailed reserve](../SANCTUARY_RESERVE.md). The arrival cutscene, cave
 dungeon and miniboss remain later work; the new route does not complete MQ03
 or immediately unlock the lantern quest.
@@ -97,17 +97,17 @@ Caretakers have heard growling from the cave since the bridge incident and
 have kept its entrance closed. The chronology is known; the creature's
 identity and the cause of the change are not.
 
-Before speaking with Serene, Aldric secretly sent a Crown crew to establish
+Before speaking with Serene, Iselin secretly sent a Crown crew to establish
 control of the site and prepare the mining operation. A panicked survivor
 interrupts the meal's aftermath with news that something from the cave
-attacked the crew. His report exposes Aldric's deployment and makes Serene
-recognize that Aldric was seeking her agreement after already acting.
+attacked the crew. His report exposes Iselin's deployment and makes Serene
+recognize that Iselin was seeking her agreement after already acting.
 Lucan was not told about the deployment and is taken aback.
 
-Aldric's relief needs remain real, but they do not make this negotiation
+Iselin's relief needs remain real, but they do not make this negotiation
 honest or erase the disruption of the caretakers' responsibility. Serene
 stays to treat the survivor, with Tomas and the driver helping. Caelan brings
-Mira into the rescue outing and travels with her, Aldric, Lucan and the page.
+Mira into the rescue outing and travels with her, Iselin, Lucan and the page.
 The page's prior knowledge of the operation is not established.
 
 The new MQ03 route pauses at the Sanctuary arrival checkpoint. It does not

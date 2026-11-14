@@ -289,7 +289,7 @@ The overarching ancient and cosmic conflict unfolds across **multiple games**. *
   larger cosmic plan.
 - **Narrative rule:** The player must not need sequel knowledge to understand Game I's main conflict and ending. The four survivors may influence events but modern people retain independent motives and responsibility.
 - **Approved regional foundations:** Caelan's opening community and relationships,
-  the limited [early lightning incidents and Aldric's relief visit](narrative/game_01/REGIONAL_SURGES.md),
+  the limited [early lightning incidents and Iselin's relief visit](narrative/game_01/REGIONAL_SURGES.md),
   and the [covenant disagreement](world/SANCTUARY_COVENANT.md). These do not
   establish a complete five-act plot or the final mechanism of the catastrophe.
 - **Still to design:** Remaining game-wide motives, stakes and local resolution,
@@ -300,7 +300,7 @@ The overarching ancient and cosmic conflict unfolds across **multiple games**. *
 
 The approved opening background now includes a handful of extraordinary
 lightning incidents, including destruction of Eldenmere's southern road before
-the opening morning. Aldric has aided other affected communities, and their
+the opening morning. Iselin has aided other affected communities, and their
 combined repair needs motivate his quarry request. These incidents foreshadow
 a problem with aether's flow without establishing a complete mechanism or
 making the early region cataclysmic. They precede the proposed excavation.

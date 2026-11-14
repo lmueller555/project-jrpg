@@ -2,7 +2,7 @@
 
 Retained clerk pixels supply his profile, moss coat, ledger, hand and materials.
 Unseen rear/overhead silhouettes are explicitly reconstructed at native size.
-Original generations, idle/read exports, portraits and Aldric are read-only.
+Original generations, idle/read exports, portraits and Iselin are read-only.
 """
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ FREE_ARM_LENGTHS = (math.hypot(1, 12), math.hypot(2, 10))
 HELD_ARM_LENGTHS = (math.hypot(3, 12), 11.)
 VIEWS = {'side': 0., 'quarter': math.pi/4, 'back': math.pi/2}
 LOOPS = {'walk_left': 'side', 'walk_left_back': 'quarter', 'walk_back': 'back'}
-# These are clerk-only masks, not a recolored Aldric body or overworld sprite.
+# These are clerk-only masks, not a recolored Iselin body or overworld sprite.
 MASKS = {
     'head': ((0, 0), (79, 0), (79, 29), (0, 29)),
     'torso': ((36, 28), (43, 27), (48, 31), (48, 48), (44, 52),
@@ -246,7 +246,7 @@ def parts(reference):
 
 
 def reconstructed_body(reference, view):
-    """Explicit clerk back silhouettes; no borrowed Aldric head, coat or strap."""
+    """Explicit clerk back silhouettes; no borrowed Iselin head, coat or strap."""
     quarter = view == 'quarter'
     if quarter:
         torso_points = ((36, 29), (42, 28), (47, 31), (49, 37),
@@ -481,27 +481,11 @@ def aerial_pose(reference, oblique=False):
 
 
 def protected_inputs():
+    # This snapshot guards the original clerk-era artwork, including the retired
+    # royal images now relocated to the explicitly historical archive.
     path = OUT/'protected_originals.json'
-    if path.exists():
-        return json.loads(path.read_text())
-    # Capture trusted, already-verified export hashes BEFORE adding new clerk
-    # cells. Subsequent rebuilds use this immutable snapshot, not new manifests.
-    protected = {}
-    for story in ('regent_arrival', 'regent_aerial'):
-        directory = ROOT/'assets/story'/story/'actors'
-        provenance = json.loads((directory/'provenance.json').read_text())
-        for name, sha in provenance['exports'].items():
-            if name.endswith('.png'):
-                protected[(directory/name).relative_to(ROOT).as_posix()] = sha
-    for directory in (SOURCE, ROOT/'assets/source/cinematics/regent_aerial/actors'):
-        for source in directory.glob('*_generated.png'):
-            protected[source.relative_to(ROOT).as_posix()] = digest(source.read_bytes())
-    # Protect Aldric's art, not his metadata: the parent must separately allow
-    # this newly authored clerk in Aldric's older non-side-asset hash guard.
-    for source in sorted((SOURCE/'aldric_side_walk').rglob('*.png')):
-        if source.is_file():
-            protected[source.relative_to(ROOT).as_posix()] = digest(source.read_bytes())
-    return dict(sorted(protected.items()))
+    if not path.exists():raise FileNotFoundError('Retained clerk original-art snapshot is required')
+    return json.loads(path.read_text())
 
 
 def strip(images):
@@ -615,15 +599,23 @@ def build():
         ImageDraw.Draw(board).text((i*260+7, 266), 'Native 1x / '+pose+' 4x', fill='#efdec4')
         # Existing aerial adults are read-only scale/style comparisons, not
         # appearance parts. The clerk silhouette above is authored at 1x.
-        comparison = ROOT/'assets/story/regent_aerial/actors/aldric'/(pose+'.png')
+        comparison = ROOT/'assets/story/regent_aerial/actors/iselin'/(pose+'.png')
         with Image.open(comparison) as original:
             original = original.convert('RGBA')
             board.paste(original, (535+i*95, 95), original)
     draw = ImageDraw.Draw(board)
-    draw.text((530, 55), 'Existing Aldric / scale only', fill='#efdec4')
+    draw.text((530, 55), 'Existing Iselin / scale only', fill='#efdec4')
     draw.text((535, 165), 'overhead', fill='#efdec4')
     draw.text((630, 165), 'oblique', fill='#efdec4')
     outputs[REVIEW/'clerk_aerial.png'] = encoded(board)
+    # Retain original PNG encoding when the authored pixels are unchanged.
+    # This keeps a metadata/identity migration from recompressing source art.
+    for path,data in list(outputs.items()):
+        if path.suffix=='.png' and path.exists():
+            current=Image.open(path).convert('RGBA')
+            generated=Image.open(io.BytesIO(data)).convert('RGBA')
+            if current.size==generated.size and current.tobytes()==generated.tobytes():
+                outputs[path]=path.read_bytes()
     return outputs
 
 

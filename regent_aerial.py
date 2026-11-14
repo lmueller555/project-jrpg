@@ -1,4 +1,4 @@
-"""Georeferenced, deterministic bird-led camera prelude for Aldric's arrival.
+"""Georeferenced, deterministic bird-led camera prelude for Iselin's arrival.
 
 Painted landscape planes share the regional tile coordinates. A four-point
 projection keeps the gate and arriving party registered during the descent;
@@ -23,7 +23,7 @@ CANOPY_START = 26.
 CANOPY_HANDOFF = 26.45
 CANOPY_END = 26.9
 APPROACH_SPEED = 24.
-GROUND_PARTY = {'aldric': (611., 375.), 'lucan': (641., 351.),
+GROUND_PARTY = {'iselin': (611., 375.), 'lucan': (641., 351.),
                 'clerk': (671., 399.), 'caravan': (791., 375.)}
 GROUND_GUARDS = {'guard_west': (530., 330.), 'guard_east': (690., 315.)}
 # Observed centers of the painted road in gate_overhead.png. Coordinates are
@@ -35,7 +35,7 @@ APPROACH_ROAD = ((43.4297,115.9609),(41.0469,113.5),(38.3906,111.1562),
 CARAVAN_CONTACTS = {'rear_left':(59,116),'rear_right':(101,116),
                     'front_left':(60,76),'front_right':(101,76),
                     'hoof_left':(70,50),'hoof_right':(90,50),'nose':(80,14)}
-AERIAL_BOUNDS = {'aldric':(14,28,34,56),'clerk':(15,27,34,56),
+AERIAL_BOUNDS = {'iselin':(14,28,34,56),'clerk':(15,27,34,56),
                  'lucan':(13,28,35,56),
                  'caravan':(56,8,105,128)}
 
@@ -223,8 +223,8 @@ class RegentAerial:
 
     def _actors_sample(self,t,view):
         distance=max(0.,t-16)*ROAD_FINISH/(CANOPY_HANDOFF-16)
-        offsets={'aldric':7.2,'lucan':6.,'clerk':4.8,'caravan':0.}
-        positions={'aldric':road_point(distance+7.2),'lucan':road_point(distance+6.),
+        offsets={'iselin':7.2,'lucan':6.,'clerk':4.8,'caravan':0.}
+        positions={'iselin':road_point(distance+7.2),'lucan':road_point(distance+6.),
                    'clerk':road_point(distance+4.8),
                    'caravan':road_point(distance),
                    'guard_west':np.array((26.6,95.05)),

@@ -275,7 +275,7 @@ class RegentCrossroadsArtTests(unittest.TestCase):
 
     def test_actor_anchors_are_absolute_and_side_stage_is_below_caption(self):
         self.assertEqual(self.manifest["actor_anchors"], {
-            "aldric": [4004, 863], "carrier": [3899, 863],
+            "iselin": [4004, 863], "carrier": [3899, 863],
             "clerk": [4064, 879], "parked_caravan": [4334, 888]})
         for key, point in self.manifest["actor_anchors"].items():
             screen = np.subtract(point, self.manifest["camera_junction"])

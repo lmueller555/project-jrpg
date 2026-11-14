@@ -38,7 +38,7 @@ to memorial trees. Crystal colors do not establish elemental affinities or
 mining rewards.
 
 The new MQ03 emergency journey reaches an arrival checkpoint after exposing
-Aldric's secret crew and its attack. The existing survey art does not stage
+Iselin's secret crew and its attack. The existing survey art does not stage
 that crew or resolve the new event; the arrival cutscene and cave encounters
 remain future story work. The [cave exploration](SANCTUARY_CAVE.md) extends this
 pixel pack with modular underground scenery and wall-clipped crystal lighting.

@@ -1,9 +1,9 @@
-# Aldric's arrival after the mill
+# Iselin's arrival after the mill
 
 MQ02's new ending brings Caelan back from Halden's restored mill to help
 Serene and Tomas in the dining room at Serene's home. After the cup placement
 and final exchange at home are acknowledged, the quest and its ordinary
-rewards settle before this cinematic introduces Regent Aldric. Caelan stays
+rewards settle before this cinematic introduces Regent Iselin. Caelan stays
 at home while the audience sees events elsewhere. The cinematic
 returns control to his same dining-room position. MQ03 becomes available,
 and Serene's separate request to meet the visitors accepts it.
@@ -25,32 +25,32 @@ The visual clock belongs to the cinematic rather than the exploration world.
    views; the scenery never dissolves between the two perspectives.
    The caravan follows the painted approach road before the canopy pass. The
    descent leaves three additional seconds to watch the approach, and both
-   Aldric, his ledger-carrying page and the wagon continue walking throughout
+   Iselin, her ledger-carrying page and the wagon continue walking throughout
    the ground-camera push. Separate foreshortened aerial artwork keeps the
    page present before the descent; he does not appear only after the stop.
    Guards wait closer to the gate, clear of the approaching party.
 3. A modest relief caravan reaches the intact southern land checkpoint. A
-   guard recognizes Aldric; their exchange establishes the longer ridge-road
+   guard recognizes Iselin; their exchange establishes the longer ridge-road
    approach. The guards admit this expected party and remain on duty.
-   Aldric, the page and the caravan turn into the gateway and recede along the
+   Iselin, the page and the caravan turn into the gateway and recede along the
    painted road. A settled camera, shared road perspective and masonry occlusion make
    their passage into the valley visible. The wagon clears the gate before
    the scene fades out.
 4. After the gate passage's short black transition, the party stops at the
    actual three-way junction at regional tile `(7,4)`. Stone leads north/slightly
-   east to Eldenmere and west-southwest toward the ruined crossing; Aldric's
+   east to Eldenmere and west-southwest toward the ruined crossing; Iselin's
    rutted dirt approach joins from the south-southeast. The Carrier asks about
-   deliveries and repairs while the page waits beside Aldric.
+   deliveries and repairs while the page waits beside Iselin.
    After the player acknowledges "Were you here when it happened?", a 0.8-second
    camera traverse follows 122.068 tiles of the canonical main road west to the
    destroyed bridge. Directional blur and sparse tapered streaks affect scenery
    only and clear before the Carrier's two off-screen account paragraphs.
    The account remains player-paced. A clean cut returns to the exact crossroads
-   camera and actor stations for Aldric's response about other incidents and
+   camera and actor stations for Iselin's response about other incidents and
    the page's delivery notes. Nobody is transported to the bridge. River
    ambience belongs to the bridge insert, not the junction.
 5. The caravan continues toward Eldenmere. Serene watches its approach from
-   inside her home. Her private concerns acknowledge Aldric's difficult
+   inside her home. Her private concerns acknowledge Iselin's difficult
    journey and their coming discussion. Tomas's cups return her attention to
    hospitality.
 6. The caravan's arrival leads into its registered waiting location in town.
@@ -64,7 +64,7 @@ The lightning has an unknown cause. Only a handful of incidents have occurred.
 This scene does not link the tusker's fallen tree to the strike, reveal an
 ancient mechanism, disclose Serene's inherited warning, or authorize excavation.
 The full covenant disagreement belongs to MQ03's later meal and discussion.
-Aldric's expected visit was arranged beforehand; he did not set out because
+Iselin's expected visit was arranged beforehand; she did not set out because
 Caelan restored the mill.
 
 ## Controls and presentation
@@ -114,7 +114,7 @@ Transient dialogue pages, camera positions and animation clocks are not saved.
 
 The quest controller uses this handoff to hide new caravan staging while the
 arrival is pending. Afterward, the same party waits at the corrected approach;
-accepting the visit does not create a second Aldric or wagon.
+accepting the visit does not create a second Iselin or wagon.
 
 
 The arrival capture verifies MQ03's introductory request, greeting and welcome
@@ -147,15 +147,15 @@ side, quarter and rear loops keep the same ledger hand and fixed limb lengths.
 
 ```sh
 python tools/build_regent_arrival_scenery.py --check
-python tools/build_aldric_side_walk.py --check
+python tools/build_regent_iselin.py --check
 python tools/build_regent_clerk_walk.py --check
 python tools/build_regent_arrival_actors.py --check
 python tools/build_regent_aerial_actors.py --check
 python tools/build_regent_crossroads.py --check
-PYTHONPATH=tests python -m unittest test_regent_clerk_walk test_regent_crossroads_art test_regent_road_pan test_regent_crossroads_gameplay test_aldric_side_walk test_regent_arrival test_regent_arrival_staging test_regent_quest
+PYTHONPATH=tests python -m unittest test_regent_clerk_walk test_regent_crossroads_art test_regent_road_pan test_regent_crossroads_gameplay test_iselin_replacement test_regent_arrival test_regent_arrival_staging test_regent_quest
 python tools/capture_regent_arrival.py
 python tools/capture_regent_arrival_polish.py
-python tools/capture_aldric_side_walk.py
+python tools/capture_iselin_replacement.py
 python tools/capture_regent_crossroads.py
 python tools/capture_regent_crossroads.py --check
 ```
@@ -165,14 +165,14 @@ contains the uninterrupted arrival, a focused crossroads/bridge clip, native
 pose/contact sheets, geographic overlays and reproducible validation receipts.
 
 The [gate and transition review](reviews/regent_arrival_polish/README.md)
-records the earlier gate-to-riverbank staging pass. The current
-[side-walk review](reviews/aldric_side_walk/README.md) replaces Aldric's side
-cycle with eight phase-authored poses, stable appearance pixels, alternating
-support/swing legs and opposing arms. Its cadence follows distance traveled,
-not an independent scene multiplier. That earlier pass did not change rear
-views or other actors; the later clerk extension preserves Aldric's art too.
+records earlier staging. The predecessor's
+[historical side-walk review](reviews/aldric_side_walk/README.md) is archived
+implementation evidence. Current Iselin scenes use complete authored poses,
+her approved 16-frame walks, and a new rear-three-quarter cycle, exported by
+`tools/build_regent_iselin.py`. The current replacement review records the
+cinematic, meal, Sanctuary and save-checkpoint checks.
 The full arrival can also be replayed from the title screen's **Gallery** as
-**Aldric's Relief Caravan**, without loading or changing a journey.
+**Iselin's Relief Caravan**, without loading or changing a journey.
 
 The [aerial-opening review](reviews/regent_aerial/README.md) records the
 bird-led introduction and its continuous handoff to the gate. Its geographic

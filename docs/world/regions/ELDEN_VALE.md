@@ -5,7 +5,7 @@ regional context around Eldenmere. Illustrative encounters remain story seeds.**
 
 **Implementation:** The [first regional overworld](../../OVERWORLD.md) now
 represents the boundary rivers, woodland, foothills, fields, guarded walls and
-lightning-destroyed western road bridge. Aldric's [arrival cinematic](../../REGENT_ARRIVAL.md)
+lightning-destroyed western road bridge. Iselin's [arrival cinematic](../../REGENT_ARRIVAL.md)
 and MQ03 dialogue present the relief visit and covenant disagreement. Elden Vale
 Sanctuary has an overworld miniature and approach in the northeastern foothills.
 Its [detailed reserve and hall](../../SANCTUARY_RESERVE.md) are now accessible
@@ -139,9 +139,9 @@ to carry a stranger's lantern is created.
 
 ## Authority, development and disagreement
 
-Regent Aldric is an established regional authority and the younger brother of
-Merovar's reigning queen. One crown rules Merovar through regional governors
-and local institutions. His exact jurisdictional borders, appointment history
+Regent Iselin is an established regional authority and the younger sister of
+her northern kingdom's reigning queen. That Crown governs through regional governors
+and local institutions. Her exact jurisdictional borders, appointment history
 and constitutional powers remain open. Elden Vale and nearby
 upper Leth road and quarry districts form the immediate setting of his
 administration's concerns.
@@ -150,14 +150,14 @@ Before Game I opens, an extraordinarily powerful lightning surge destroyed
 Eldenmere's road south to the next town. The southern connection is part of
 the [classroom world map's route context](../../WORLD_MAP.md); the town has no
 approved name. A handful of similar incidents have affected other parts of
-the region, and Aldric has already visited a couple of communities to provide
+the region, and Iselin has already visited a couple of communities to provide
 relief. These are serious local emergencies, not a widespread cataclysm.
 Their deeper mechanism is unknown to the people involved. The
 [Regional Surges guide](../../narrative/game_01/REGIONAL_SURGES.md) governs
 these incidents and the opening arrival context.
 
 Repairs across the affected communities strain stone supplies, hauling and
-other repair resources. Aldric seeks a nearer stone seam within the ridge
+other repair resources. Iselin seeks a nearer stone seam within the ridge
 sanctuary's protected boundary to supply several towns. More distant stone
 remains an alternative, with a longer haul competing for carts, money and
 time needed by other repairs.
@@ -173,15 +173,15 @@ have heard growling inside the cave since that incident and have kept the
 entrance closed. Neither report establishes the creature's identity or a
 common cause for these events.
 
-Before his discussion with Serene, Aldric secretly sent a Crown crew to secure
+Before her discussion with Serene, Iselin secretly sent a Crown crew to secure
 the working area and prepare the mining operation. A panicked survivor's
 report of a cave attack exposes that deployment during
-[MQ03](../../narrative/game_01/CH01_MQ03.md). Serene recognizes his bad faith;
-Lucan, who was not told about the crew, is taken aback. Aldric's genuine relief
-work does not erase his concealed attempt to impose control over the site.
+[MQ03](../../narrative/game_01/CH01_MQ03.md). Serene recognizes her bad faith;
+Lucan, who was not told about the crew, is taken aback. Iselin's genuine relief
+work does not erase her concealed attempt to impose control over the site.
 
 Serene stays to care for the survivor with Tomas and the driver helping.
-Caelan collects Mira and travels to the reserve with her, Aldric, Lucan and
+Caelan collects Mira and travels to the reserve with her, Iselin, Lucan and
 the page. The new route pauses at the arrival checkpoint; the cutscene and
 miniboss are later work. The exact extent of the crew's mining preparations
 and the operation's later outcome remain for that sequence. No agreement to

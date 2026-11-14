@@ -1,4 +1,4 @@
-"""Record MQ02's actual Halden→home→Aldric handoff from a disposable New Game.
+"""Record MQ02's actual Halden→home→Iselin handoff from a disposable New Game.
 
 No quest, actor position, equipment, resources or world progress is seeded.
 Pillow assembles only rendered screenshots; gameplay art is never modified.
@@ -155,7 +155,7 @@ class Capture:
                 'the boar encounter and the repaired mill. The ending uses the ordinary '
                 'sanctuary doors, the exact approved Tomas/Serene/Caelan exchange, a visible '
                 'cup collection and carry, the destination dialogue, and physical placement. '
-                'MQ02 finishes only after the cups are set down. Aldric’s aerial cinematic '
+                'MQ02 finishes only after the cups are set down. Iselin’s aerial cinematic '
                 'then begins; using its Skip button returns to the same dining-room position. '
                 'A separate conversation accepts MQ03.\n\n'
                 f'The review movie is silent, 960×640 at 20 fps, and lasts {self.video.frames/20:.2f} seconds, with readable dialogue. '

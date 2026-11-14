@@ -97,10 +97,10 @@ weighted encounter roster. The reserve remains non-combat ground, with the
 arrival scene staging caretaker aid and injured workers; the keeper rail marks
 an explicit interaction into the cave.
 
-During the new MQ03 route, a survivor exposes the Crown crew Aldric secretly
+During the new MQ03 route, a survivor exposes the Crown crew Iselin secretly
 sent ahead to establish authority and prepare mining. Caretakers have heard
 growling since the bridge incident; the attack's cause and the creature's
-identity remain unresolved. Aldric, Lucan, the page, Caelan and Mira arrive
+identity remain unresolved. Iselin, Lucan, the page, Caelan and Mira arrive
 with MQ03 still active. The [arrival scene](SANCTUARY_ARRIVAL.md) stages wounded crew, caretaker aid
 and a rescue decision before returning control at the apron. Existing survey
 art is not evidence that the emergency has been resolved or permission granted.

@@ -7,6 +7,7 @@ The constructor rejection probes substitute decoded manifests, not asset files.
 from __future__ import annotations
 
 import copy
+from hashlib import sha256
 import json
 import math
 import os
@@ -31,7 +32,11 @@ from ui_style import MUTED
 
 
 def pixels(surface):
-    return pygame.image.tobytes(surface, 'RGBA')
+    # These scene/UI surfaces are opaque. The unused fourth byte of a
+    # non-SRCALPHA display surface is not visible alpha and need not match.
+    # Hash the complete RGB frame so assertion failures cannot trigger a
+    # quadratic difflib comparison of megabytes of binary image data.
+    return sha256(pygame.image.tobytes(surface, 'RGB')).digest()
 
 
 def world_state(game):
@@ -91,7 +96,7 @@ class RegentCrossroadsGameplayTests(unittest.TestCase):
         pygame.quit()
 
     def question(self):
-        """Leave the final Aldric question unread, through production input."""
+        """Leave the final Iselin question unread, through production input."""
         scene = self.reach('locals')
         self.g.update(2., (0, 0), False)
         last = len(scene.phase['dialogue'])-1
@@ -101,9 +106,9 @@ class RegentCrossroadsGameplayTests(unittest.TestCase):
             self.assertEqual(scene.shot, 'locals')
             key(self.g, pygame.K_SPACE)
         else:
-            self.fail('Could not read through to Aldric\'s final question')
+            self.fail('Could not read through to Iselin\'s final question')
         self.assertEqual(scene.dialogue, {
-            'speaker': 'aldric', 'text': 'Were you here when it happened?'})
+            'speaker': 'iselin', 'text': 'Were you here when it happened?'})
         return scene
 
     def middle_of_pan(self):
@@ -148,7 +153,7 @@ class RegentCrossroadsGameplayTests(unittest.TestCase):
         overhead = scene.aerial_snapshot()['projected_actors']
         self.assertTrue(overhead['clerk']['moving'])
         self.assertLess(overhead['caravan']['road_distance'], overhead['clerk']['road_distance'])
-        self.assertLess(overhead['clerk']['road_distance'], overhead['aldric']['road_distance'])
+        self.assertLess(overhead['clerk']['road_distance'], overhead['iselin']['road_distance'])
 
         self.g.update(6.-scene.phase_time, (0, 0), False)
         original_data = copy.deepcopy(scene.data)
@@ -409,7 +414,7 @@ class RegentCrossroadsGameplayTests(unittest.TestCase):
                           for actor in scene.phase['actors']}, stations)
         self.g.update(.4, (0, 0), False)
         self.g.draw()
-        self.assertEqual(scene.dialogue['speaker'], 'aldric')
+        self.assertEqual(scene.dialogue['speaker'], 'iselin')
         self.assertIn('elsewhere', scene.dialogue['text'])
         self.assertEqual(world_state(self.g), frozen)
 
@@ -584,14 +589,18 @@ class RegentCrossroadsManifestTests(unittest.TestCase):
         expected = ['crossroads_establishing', 'locals', 'road_pan', 'bridge_damage', 'relief']
         first = order.index(expected[0])
         self.assertEqual(order[first:first+len(expected)], expected)
-        aliases = {'aldric': 'aldric', 'local': 'carrier', 'clerk': 'clerk', 'caravan': 'parked_caravan'}
+        aliases = {'iselin': 'iselin', 'local': 'carrier', 'clerk': 'clerk', 'caravan': 'parked_caravan'}
         for shot in ('crossroads_establishing', 'locals', 'road_pan', 'relief'):
             phase = phases[shot]
             with self.subTest(shot=shot):
                 self.assertEqual(phase['scene'], 'crossroads')
-                self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+                self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases)|{'lucan'})
                 for actor in phase['actors']:
-                    self.assertEqual(actor['position'], self.manifest['actor_anchors'][aliases[actor['id']]])
+                    # Lucan's existing escort station was added after the
+                    # original four-station crossroads study.
+                    expected_position=([4034,839] if actor['id']=='lucan' else
+                                       self.manifest['actor_anchors'][aliases[actor['id']]])
+                    self.assertEqual(actor['position'],expected_position)
                     self.assertFalse(any(key in actor for key in ('to', 'path', 'route')))
                 self.assertEqual(phase['camera']['from'], self.manifest['camera_junction'])
         self.assertEqual(phases['road_pan']['min_seconds'], .8)
@@ -603,10 +612,10 @@ class RegentCrossroadsManifestTests(unittest.TestCase):
         self.assertEqual(phases['bridge_damage']['actors'], [])
         self.assertEqual([line['speaker'] for line in phases['bridge_damage']['dialogue']], ['local', 'local'])
         self.assertEqual(phases['locals']['dialogue'][-1],
-                         {'speaker': 'aldric', 'text': 'Were you here when it happened?'})
+                         {'speaker': 'iselin', 'text': 'Were you here when it happened?'})
         self.assertIn('flash', phases['bridge_damage']['dialogue'][0]['text'])
         self.assertIn('both sides', phases['bridge_damage']['dialogue'][1]['text'])
-        self.assertEqual(phases['relief']['dialogue'][0]['speaker'], 'aldric')
+        self.assertEqual(phases['relief']['dialogue'][0]['speaker'], 'iselin')
         self.assertIn('elsewhere', phases['relief']['dialogue'][0]['text'])
         self.assertFalse(phases['relief'].get('fade_in') or phases['relief'].get('fade_out'))
 
@@ -626,7 +635,7 @@ class RegentCrossroadsManifestTests(unittest.TestCase):
         changes = (
             {'camera_track': 'unknown_effect'},
             {'scene': 'gate', 'camera': {'from': [380, 140], 'to': [380, 140]}},
-            {'dialogue': [{'speaker': 'aldric', 'text': 'Not during the whip pan.'}]},
+            {'dialogue': [{'speaker': 'iselin', 'text': 'Not during the whip pan.'}]},
             {'camera': {'from': [3733, 623], 'to': self.manifest['camera_bridge']}},
             {'camera': {'from': self.manifest['camera_junction'], 'to': [433, 1203]}},
         )

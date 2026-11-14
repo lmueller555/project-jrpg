@@ -15,11 +15,11 @@
     108,
     200
   ],
-  "aldric_courtyard": [
+  "iselin_courtyard": [
     228,
     200
   ],
-  "aldric_aside": [
+  "iselin_aside": [
     378,
     144
   ],
@@ -52,7 +52,7 @@
     228
   ],
   "scene_id": "eldenmere.playable",
-  "aldric_arrival": [
+  "iselin_arrival": [
     732,
     1032
   ],
@@ -86,10 +86,10 @@
     "welcome",
     "discussion",
     "aftermath",
-    "aldric_courtyard",
+    "iselin_courtyard",
     "clerk_courtyard",
     "driver_courtyard",
-    "aldric_aside",
+    "iselin_aside",
     "lucan_courtyard"
   ],
   "meal_seats": {
@@ -111,7 +111,7 @@
       "sort_y": 206,
       "flip_x": true
     },
-    "aldric": {
+    "iselin": {
       "position": [
         198,
         200
@@ -121,12 +121,17 @@
         200
       ],
       "anchor": [
-        12,
+        10.5,
         30
       ],
       "facing": "left",
-      "image": "assets/story/regent/poses/aldric_seated.png",
-      "sort_y": 206
+      "image": "assets/story/regent/poses/iselin_seated.png",
+      "sort_y": 206,
+      "detail_image": "assets/story/regent/poses/iselin_seated_42x72.png",
+      "detail_anchor": [
+        21,
+        60
+      ]
     },
     "mother_serene": {
       "position": [

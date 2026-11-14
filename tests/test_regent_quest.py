@@ -257,7 +257,7 @@ class RegentQuestTests(unittest.TestCase):
         self.assertFalse(self.g.town.can_stand(pygame.Rect(wagon['blocker']).center))
         self.assertIsNotNone(town_path(self.g.town,self.clear_position(self.g.town,self.c.points['arrival']),
                                       (948,1032),SimpleNamespace(probe_size=self.g.town.probe_size),None))
-        self.assertTrue(self.c.try_conversation(self.c.aldric))
+        self.assertTrue(self.c.try_conversation(self.c.iselin))
         self.read_current()
         self.assertEqual(self.c.stage,'idle')
         self.assertEqual(self.g.quests.status(REGENT),'available')
@@ -390,11 +390,11 @@ class RegentQuestTests(unittest.TestCase):
 
     def test_overlay_panels_pause_staging(self):
         self.meet()
-        position=self.c.aldric.position.copy();stage=self.c.stage
+        position=self.c.iselin.position.copy();stage=self.c.stage
         for owner,field in [(self.g.pause,'is_open'),(self.g.inventory_ui,'is_open'),
                             (self.g,'map_open'),(self.g.quest_ui,'journal_open')]:
             setattr(owner,field,True);self.tick(.5);setattr(owner,field,False)
-            self.assertEqual(self.c.aldric.position,position)
+            self.assertEqual(self.c.iselin.position,position)
             self.assertEqual(self.c.stage,stage)
 
     def test_welcome_dialogue_is_not_skipped_when_cancelled(self):
@@ -462,11 +462,11 @@ class RegentQuestTests(unittest.TestCase):
                             find_path(self.g.town,self.g.player.position,pos,self.g.town.probe_size,None) is not None
                             for pos in options))
 
-    def test_checkpoint_reload_keeps_one_aldric_and_does_not_replay_arrival(self):
+    def test_checkpoint_reload_keeps_one_iselin_and_does_not_replay_arrival(self):
         self.meet();self.reload()
         self.assertEqual(self.c.stage,'escorting')
         self.assertFalse(self.g.social.active)
-        self.assertEqual(sum(self.c.aldric in w.npcs for w in self.g.scenes.values()),1)
+        self.assertEqual(sum(self.c.iselin in w.npcs for w in self.g.scenes.values()),1)
         self.assertEqual(self.g.quests.objective_status(REGENT,'meet_visitors'),'completed')
 
     def test_new_game_resets_visit_and_actor_routines(self):
