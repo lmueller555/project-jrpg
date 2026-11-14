@@ -1,8 +1,8 @@
-# Iselin rear walk — review pending
+# Iselin rear walk — approved
 
 Sixteen whole-character drawings exported at42×72, using the established35ms
-frame time and560ms two-step cycle. The review branch does not activate or merge
-this cycle; approved front and side artwork remains unchanged.
+frame time and560ms two-step cycle. The user approved revision 3 for merge into main. These assets follow the
+existing front/side animation format; runtime character replacement is separate.
 
 ![Normal speed on the left; half speed on the right](preview_stable_body_v3.gif)
 
@@ -90,4 +90,4 @@ are retained. Focused checks cover actual exported crown/belt landmarks, loop
 continuity, historical foot revision preservation, current boot preservation,
 alpha, bounds, distinct poses, opposing contacts and timing. The numbered
 sheet was inspected for coat continuity, body proportions and complete limbs.
-This remains awaiting visual approval and has not been merged into main.
+The user approved this revision for merge into main.

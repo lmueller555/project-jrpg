@@ -81,7 +81,7 @@ def build():
     import shutil
     shutil.copyfile(REVIEW/'preview.gif',REVIEW/'preview_stable_body_v3.gif')
     (OUTPUT/'animation.json').write_text(json.dumps({'character':'iselin','animation':'walk.back',
-        'status':'awaiting_user_review','frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
+        'status':'approved','frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
         'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,'recipe':'tools/export_iselin_back_walk.py',
         'construction':'complete authored rear-view drawings; no limb assembly',
         'frames':[{'file':f'frame_{i+1:02}.png','rect':[i*42,0,42,72],'duration_ms':35} for i in range(16)]},indent=2)+'\n')
@@ -89,7 +89,7 @@ def build():
         'reference':'assets/source/characters/iselin/idle_back_master.png',
         'sources':{p.name:sha256(p.read_bytes()).hexdigest() for p in sorted(SOURCE.glob('*.png'))},
         'processing':'Whole drawing alpha220 extraction, common scale per strip and head/ground registration. Right lower-leg regional redraw from complete imagegen poses; all other original pixels restored. No limb transforms, mirrors or interpolation.',
-        'body_stability':stability,'right_foot_corrections':corrections,'frames':[records[key] for key in SEQUENCE],'status':'awaiting_user_review'},indent=2)+'\n')
+        'body_stability':stability,'right_foot_corrections':corrections,'frames':[records[key] for key in SEQUENCE],'status':'approved'},indent=2)+'\n')
 
 
 if __name__=='__main__':build()
