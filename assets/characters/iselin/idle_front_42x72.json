@@ -1,0 +1,34 @@
+{
+  "character": "iselin",
+  "animation": "idle.front",
+  "design_status": "approved",
+  "artwork_status": "awaiting_user_review",
+  "image": "idle_front_42x72.png",
+  "frame_size": [
+    42,
+    72
+  ],
+  "rect": [
+    0,
+    0,
+    42,
+    72
+  ],
+  "foot_anchor": [
+    21,
+    68
+  ],
+  "draw_anchor": [
+    21,
+    60
+  ],
+  "runtime_integration": false,
+  "proposed_artwork_pixels_per_world_pixel": 2,
+  "proposed_logical_frame_size": [
+    21,
+    36
+  ],
+  "source": "assets/source/characters/iselin/idle_front_master.png",
+  "export_recipe": "tools/export_iselin_first_assets.py",
+  "note": "Resolution study only. Current world renderer does not support artwork pixel ratio metadata."
+}

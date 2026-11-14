@@ -52,3 +52,33 @@ export; both native PNGs load in Pygame; dimensions and RGB/RGBA formats match
 the existing conventions; sprite alpha is exclusively 0/255; its silhouette
 is contained at `[6, 1, 19, 35]`; metadata retains the intended anchors and
 separate design/artwork approval states. Both blue eye pixels survive reduction.
+
+## Requested 42×72 trial
+
+`assets/characters/iselin/idle_front_42x72.png` is an additional transparent
+42×72 export of the same master. The drawing occupies 26×68 pixels with uniform
+scaling and transparent padding; its anatomy has not been stretched to fill
+the wider canvas. The earlier 24×36 asset and portrait are retained unchanged.
+
+![42×72 export and same-height/current-renderer comparison](resolution_42x72.png)
+
+The upper comparison models a higher-resolution character renderer at the
+default 960×640 window: Caelan and Mira's 36-pixel-high frames are doubled to
+72 displayed pixels; Iselin's 72-pixel-high frame supplies those displayed pixels
+directly. All three therefore have the same apparent frame height. The lower
+comparison models the current renderer, which would treat Iselin's 72 image
+pixels as 72 world pixels and make her approximately twice as tall. Both rows
+are magnified another 2× for review. These are static comparison mock-ups, not
+screenshots of a changed game renderer.
+
+The current game first draws actors on a 480×320 world canvas, then enlarges the
+completed canvas. Downscaling the new asset onto that canvas would discard the
+additional detail. A later renderer change must support 2× artwork density while
+preserving logical positions, collision, world depth and scenery occlusion.
+The proposed 42×72 image corresponds to a 21×36 logical frame; its metadata does
+not activate such support. Extra detail requires enough output pixels, available
+at the default 2× window or larger.
+
+The exporter now verifies 14 outputs, including this study. Source, geometry,
+mock-up scale factors and hashes are recorded in
+`assets/source/characters/iselin/resolution_42x72_export.json`.

@@ -114,6 +114,93 @@ def comparison(sprite):
     return strip, centers
 
 
+def resolution_study():
+    """Export the requested 42x72 trial and an explicitly labeled render mock-up."""
+    master = Image.open(ROOT / SPRITE).convert("RGBA")
+    alpha = master.getchannel("A").point(lambda value: 255 if value >= 128 else 0)
+    master.putalpha(alpha)
+    bounds = alpha.getbbox()
+    if bounds is None:
+        raise ValueError("Iselin's source has no opaque artwork")
+    crop = master.crop(bounds)
+    scale = 68 / crop.height
+    size = (round(crop.width * scale), 68)
+    if size[0] > 40:
+        raise ValueError("Iselin's 42x72 trial would clip the authored silhouette")
+    reduced = crop.resize(size, Image.Resampling.NEAREST)
+    sprite = Image.new("RGBA", (42, 72))
+    origin = ((42 - size[0]) // 2, 2)
+    sprite.alpha_composite(reduced, origin)
+    sprite.putdata([
+        sprite.getpixel((x, y)) if sprite.getpixel((x, y))[3] else (0, 0, 0, 0)
+        for y in range(sprite.height) for x in range(sprite.width)
+    ])
+    enlarged = matte(sprite, 6)
+    caelan = Image.open(ROOT / "assets/characters/caelan/idle_front.png").convert("RGBA")
+    mira = Image.open(ROOT / "assets/characters/mira/idle_front.png").convert("RGBA")
+    board = Image.new("RGB", (1080, 850), MATTE)
+    draw = ImageDraw.Draw(board)
+    draw.text((24, 18), "ISELIN / 42 x 72 RESOLUTION TRIAL", font=font(25), fill=INK)
+    draw.text((24, 58), "Same source artwork; proportions preserved. Comparison mock-ups, not gameplay captures.", font=font(16), fill=INK)
+    draw.text((24, 108), "42 x 72 export / enlarged 6x", font=font(16), fill=INK)
+    board.paste(enlarged, (24, 146))
+    draw.text((350, 108), "SAME HEIGHT / HIGHER-RESOLUTION DRAWING", font=font(18), fill=INK)
+    draw.text((350, 137), "Requires a renderer change; extra detail retained at a 2x window.", font=font(15), fill=INK)
+    centers = (430, 640, 860)
+    for name, image, factor, center in zip(
+        ("Caelan", "Mira", "Iselin 42 x 72"),
+        (caelan, mira, sprite), (4, 4, 2), centers,
+    ):
+        export = matte(image, factor)
+        board.paste(export, (center - export.width // 2, 328 - export.height))
+        draw.text((center, 341), name, anchor="mt", font=font(15), fill=INK)
+    draw.text((350, 395), "CURRENT RENDERER / DRAWN AT NATIVE SIZE", font=font(18), fill=INK)
+    draw.text((350, 424), "Same pixels per world unit: Iselin would be twice as tall.", font=font(15), fill=INK)
+    for name, image, center in zip(
+        ("Caelan", "Mira", "Iselin 42 x 72"), (caelan, mira, sprite), centers,
+    ):
+        export = matte(image, 4)
+        board.paste(export, (center - export.width // 2, 728 - export.height))
+        draw.text((center, 741), name, anchor="mt", font=font(15), fill=INK)
+    draw.text((24, 616), "Transparent frame: 42 x 72", font=font(15), fill=INK)
+    draw.text((24, 644), f"Visible drawing: {size[0]} x {size[1]}", font=font(15), fill=INK)
+    draw.text((24, 672), "No stretching or painted changes.", font=font(15), fill=INK)
+    draw.text((24, 794), "Comparison rows are enlarged 2x from a default 960 x 640 window-size mock-up.", font=font(16), fill=INK)
+    outputs = {
+        f"{BASE}/idle_front_42x72.png": encoded(sprite),
+        f"{REVIEW}/idle_front_42x72_6x.png": encoded(enlarged),
+        f"{REVIEW}/resolution_42x72.png": encoded(board),
+    }
+    outputs[f"{BASE}/idle_front_42x72.json"] = json_bytes({
+        "character": "iselin", "animation": "idle.front",
+        "design_status": "approved", "artwork_status": "awaiting_user_review",
+        "image": "idle_front_42x72.png", "frame_size": [42, 72],
+        "rect": [0, 0, 42, 72], "foot_anchor": [21, 68],
+        "draw_anchor": [21, 60], "runtime_integration": False,
+        "proposed_artwork_pixels_per_world_pixel": 2,
+        "proposed_logical_frame_size": [21, 36],
+        "source": SPRITE, "export_recipe": "tools/export_iselin_first_assets.py",
+        "note": "Resolution study only. Current world renderer does not support artwork pixel ratio metadata.",
+    })
+    outputs["assets/source/characters/iselin/resolution_42x72_export.json"] = json_bytes({
+        "status": "awaiting_user_review", "source": SPRITE,
+        "source_sha256": digest((ROOT / SPRITE).read_bytes()),
+        "source_bounds_xyxy": list(bounds), "hard_alpha_threshold": 128,
+        "nominal_uniform_scale": scale, "rounded_output_size": list(size),
+        "destination_origin": list(origin), "frame_size": [42, 72],
+        "resampling": "nearest", "artwork_modifications": "none",
+        "runtime_integration": False,
+        "comparison": {
+            "kind": "static rendering mock-up; no engine changes",
+            "default_world_canvas": [480, 320], "default_window": [960, 640],
+            "same_height_mockup": "Caelan/Mira 4x; Iselin 2x. Represents 2x display resolution enlarged 2x.",
+            "native_size_mockup": "All sprites 4x. Represents current renderer at 2x window enlarged 2x.",
+        },
+        "outputs": {path: {"sha256": digest(data)} for path, data in outputs.items()},
+    })
+    return outputs
+
+
 def products():
     master = Image.open(ROOT / PORTRAIT)
     if master.width != master.height:
@@ -180,6 +267,7 @@ def products():
         "outputs": {path: {"sha256": digest(data)} for path, data in outputs.items()},
     }
     outputs["assets/source/characters/iselin/first_assets_export.json"] = json_bytes(record)
+    outputs.update(resolution_study())
     return outputs
 
 
