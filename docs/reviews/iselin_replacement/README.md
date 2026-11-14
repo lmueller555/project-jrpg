@@ -34,3 +34,8 @@ The [last 50 ms of the aerial handoff](handoff.png) show continuous ground motio
 Mean RGB difference to the endpoint is 5.0266/255 (1.971%); the palette-dependent
 check now uses a 2% full-range bound. The final aerial frame must still equal
 the first ground frame byte for byte, with no black fade.
+
+The crossroads frame-order checks compare complete RGB hashes for opaque
+scene/UI surfaces. Unused fourth bytes in non-alpha display surfaces are
+excluded; true alpha/clip behavior remains covered by the road-pan unit tests.
+Hashing also prevents unittest from spending minutes diffing binary buffers.

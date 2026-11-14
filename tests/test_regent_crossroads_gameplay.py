@@ -7,6 +7,7 @@ The constructor rejection probes substitute decoded manifests, not asset files.
 from __future__ import annotations
 
 import copy
+from hashlib import sha256
 import json
 import math
 import os
@@ -31,7 +32,11 @@ from ui_style import MUTED
 
 
 def pixels(surface):
-    return pygame.image.tobytes(surface, 'RGBA')
+    # These scene/UI surfaces are opaque. The unused fourth byte of a
+    # non-SRCALPHA display surface is not visible alpha and need not match.
+    # Hash the complete RGB frame so assertion failures cannot trigger a
+    # quadratic difflib comparison of megabytes of binary image data.
+    return sha256(pygame.image.tobytes(surface, 'RGB')).digest()
 
 
 def world_state(game):
