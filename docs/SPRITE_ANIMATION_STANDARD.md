@@ -89,11 +89,12 @@ Iselin is a worked example, not a universal size requirement:
 | Collision probe | 8×4 world pixels |
 | Walk | 16 frames × 35 ms = 560 ms per full two-step cycle |
 
-The established detailed renderer preserves the higher-resolution idle artwork
-at ordinary party scale. Resizing it to the logical fallback discards detail;
+The established detailed renderer preserves higher-resolution idle and walk
+artwork at ordinary party scale. Resizing it to the logical fallback discards detail;
 enlarging that fallback later cannot recover it. Validate the intended rendering
-path and target window scale. The approved walk assets and their metadata are
-separate from activating those walks in the game's actor selection logic.
+path and target window scale. Iselin's walk manifests are registered on her
+reusable actor; the full regent character/story replacement remains separate
+from that rendering integration.
 
 ## 2. Plan the gait before drawing in-betweens
 
@@ -389,5 +390,7 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
   smaller boot lift, body-landmark registration, controlled bob and seam cleanup.
 - [Iselin detailed idle rendering](reviews/iselin_first_assets/IMPLEMENTED.md):
   artwork/world density and production occlusion.
+- [Iselin runtime walking](reviews/iselin_walk_integration/README.md): shared
+  logical/detail timing, navigation, stopping, turning and real foliage occlusion.
 - [Asset tool catalogue](../tools/README.md): commands and local implementation
   details, including legacy builders retained for reproducibility.

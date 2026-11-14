@@ -5,7 +5,20 @@
     "right": "assets/characters/iselin/idle_right_logical.png",
     "back": "assets/characters/iselin/idle_back_logical.png"
   },
-  "walks": {},
+  "walks": {
+    "front": {
+      "manifest": "assets/characters/iselin/walk_front/animation.json"
+    },
+    "left": {
+      "manifest": "assets/characters/iselin/walk_left/animation.json"
+    },
+    "right": {
+      "manifest": "assets/characters/iselin/walk_right/animation.json"
+    },
+    "back": {
+      "manifest": "assets/characters/iselin/walk_back/animation.json"
+    }
+  },
   "high_resolution_idles": {
     "front": {
       "image": "assets/characters/iselin/idle_front_42x72.png",
