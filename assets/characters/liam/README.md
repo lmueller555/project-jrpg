@@ -1,5 +1,11 @@
 # Liam — approved directional idles
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Liam is **8 years old**. The approved design uses tousled chestnut hair, two
 green eyes, an ochre tunic with green collar, brown breeches and small boots.
 His front idle has empty hands and a relaxed standing pose.

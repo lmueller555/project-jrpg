@@ -1,5 +1,11 @@
 # Male NPC 01 — right-facing walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat. The front walk and all directional idle designs remain approved.
 
 Four 24×36 frames use Caelan's approved right-facing poses and the NPC's approved `../idle_right.png` appearance. Head and face pixels remain intact. The head, neck, shoulders and upper shirt rise together by one pixel on passing frames 2 and 4. All frames use 140 ms timing and the shared `[12, 34]` foot anchor.

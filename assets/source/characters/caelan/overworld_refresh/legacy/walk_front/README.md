@@ -1,6 +1,12 @@
 # Caelan — front-facing walk cycle
 
-Status: approved by the user, including the coordinated head-and-shoulder bob. The four approved directional idle designs remain unchanged.
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
+Historical approval: approved by the user for the archived artwork, including the coordinated head-and-shoulder bob. The four approved directional idle designs remain unchanged.
 
 ## Deliverables
 
@@ -16,6 +22,9 @@ Every native frame uses the approved front idle palette, binary transparency, an
 
 The head, neck, shoulders, and upper chest stay at their original height on contact frames 1 and 3, and move upward together exactly one native pixel on passing frames 2 and 4. The original pixels are translated without redrawing, preserving the head-to-shoulder spacing instead of extending the neck. A lower-chest row connects the raised upper body to the stationary waist. The belt, hips, legs, feet, and timing are unchanged from the first walking preview. No topmost head pixels are clipped.
 
-Source concepts are retained in `../../../source/characters/caelan/walk_front/`. The initial concept repeated the passing pose; `passing_opposite_concept.png` supplies the corrected fourth pose.
+Source concepts are retained in [the retained source directory](../../../walk_front/). The initial concept repeated the passing pose; `passing_opposite_concept.png` supplies the corrected fourth pose.
 
-Use this approved cycle and its coordinated upper-body bob as references for future walking directions. No runtime integration or other walking directions are included.
+This is the archived front cycle and its original bob implementation. It
+is retained for historical comparison, not as guidance for future walks. See
+[Caelan's current artwork guide](../../../../../../characters/caelan/README.md)
+for current exports and runtime rendering.

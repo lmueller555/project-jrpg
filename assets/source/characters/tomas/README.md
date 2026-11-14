@@ -1,5 +1,11 @@
 # Tomas — retained front-idle source
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `idle_front_concept.png` retains the generated transparent appearance concept, informed by the approved Caelan art for style and the agreed Tomas appearance: blond cowlick, green eyes, short rust-red tunic, ivory sleeves, dark trousers, repaired left knee and ankle boots. Tomas's subsequently approved age is **14** at the beginning of Game I; his older biological brother Caelan is **18**. See [approved character facts](../../../../docs/narrative/game_01/CHARACTERS.md). The concept does not establish further personal history.
 
 The biological relationship was clarified on 2026-11-04. This updates story
@@ -13,4 +19,4 @@ Run `python tools/build_tomas_idle.py`. It writes four full-frame RGBA layers (`
 
 `idle_turnaround_concept.png` retains the generated left, right and back source plate based on both approved front references. `turnaround_export.json` records per-view bounds, material windows, eye landmarks and registration bands. Each view samples into 32 visible rows (3–34) inside a 24×36 frame using the approved palette. The left profile alone exposes the patch on the front of his left knee; the right profile occludes it and the back faces it away.
 
-`python tools/build_tomas_directional_idles.py` reuses the front export's band-sampling helper without rewriting front assets. Four full-frame layers per new view are retained in `idle_left_layers/`, `idle_right_layers/` and `idle_back_layers/` for exact reconstruction and later animation preparation. Pupil/iris landmarks retain a readable eye in each profile; the back has none. Source garment windows separate blond highlights, skin, linen cuffs and rust fabric, with a dedicated patch window restricted to the left-profile knee. All three directional exports are approved; no walking poses are added. Review images retain their original review labels as a record of the approved artwork.
+`python tools/build_tomas_directional_idles.py` reuses the front export's band-sampling helper without rewriting front assets. Four full-frame layers per new view are retained in `idle_left_layers/`, `idle_right_layers/` and `idle_back_layers/` for exact reconstruction of the retained exports. Pupil/iris landmarks retain a readable eye in each profile; the back has none. Source garment windows separate blond highlights, skin, linen cuffs and rust fabric, with a dedicated patch window restricted to the left-profile knee. All three directional exports are approved; no walking poses are added. Review images retain their original review labels as a record of the approved artwork.

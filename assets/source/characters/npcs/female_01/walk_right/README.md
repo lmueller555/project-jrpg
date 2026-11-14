@@ -1,5 +1,11 @@
 # Female NPC 01 — right-walk assembly
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat.
 
 Rebuild with `python tools/build_dress_walk.py --direction right`. The appearance comes from the approved `idle_right.png`; stride silhouettes, arm poses, timing and bob come from the shared right template. The character recipe contains explicit skirt rows, leg split columns and ankle-boot tops for each phase.

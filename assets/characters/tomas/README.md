@@ -1,5 +1,11 @@
 # Tomas — front idle
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Visual design and native front idle **approved** in conversation.
 
 The sprite has tousled honey-blond hair with a cowlick, two green eyes, a short rust-red tunic over an ivory shirt with rolled cuffs, dark brown trousers, a repaired patch on his anatomical left knee (viewer right), and worn brown ankle boots. His hands are empty. No cloth ties, tools, weapons or religious symbols are included. Tomas is **14 years old** at the beginning of Game I, four years younger than his biological brother Caelan; see [approved character facts](../../../docs/narrative/game_01/CHARACTERS.md).

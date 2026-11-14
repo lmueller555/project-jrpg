@@ -1,5 +1,11 @@
 # Mother Serene
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Front idle **approved**, based on the approved caretaker design.
 
 - `idle_front.png`: native RGBA 24×36, hard alpha, foot anchor `[12,34]`, clear bottom row.

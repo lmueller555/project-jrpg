@@ -1,5 +1,11 @@
 # Town NPC — female variant 03
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: base palette and original directional appearances approved. The left/right profile-jaw cleanup is approved by the user.
 
 Blonde hair in the shared low bun, a plum calf-length dress with short sleeves, hazel eyes and brown ankle boots. This is an exact palette variant of `../female_01/idle_front.png`, preserving the silhouette, shading layout, skin, outline and boots.

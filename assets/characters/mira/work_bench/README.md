@@ -1,5 +1,11 @@
 # Mira — outdoor bench routine
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: **approved by the user**. This adds a dedicated 24×36 work animation; the approved idles, walks and workshop art remain unchanged.
 
 An eight-second loop contains nine distinct poses and 21 timed steps: pause with hand on hip, lean toward a small repair fitting, raise the wrench, make **three broad strokes**, lower the wrench, test the fitting's handle by hand, straighten and pause. The wrench grip travels more than six native pixels between its high and pulled poses. Pauses bookend the work; this is not a rapid hammering cycle.

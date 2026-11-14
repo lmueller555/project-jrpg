@@ -1,5 +1,11 @@
 # Mira — front walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user, including the shared poses, timing and coordinated upper-body bob. The corrected front idle is the appearance source; no new image-generated walking frames are used.
 
 ## Files

@@ -1,5 +1,11 @@
 # Liam and his parents — retained front-idle source
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `front_idle_concepts.png` retains the generated family appearance plate, ordered
 mother, Liam, father. It supplies the new character designs, separate from the
 existing approved cast. The native game exports are in the individual `liam`,

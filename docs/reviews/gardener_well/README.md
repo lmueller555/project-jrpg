@@ -1,5 +1,11 @@
 # Sanctuary gardener — well routine review
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: awaiting user review. Implemented in the playable town launched by `main.py`.
 
 Superseded by the [centered near-side revision](../gardener_near_side/README.md). The user liked the well operation but requested removing the unsupported lateral bucket transfer. These captures retain the earlier two-bucket proposal for comparison; the live game and capture command now use the centered near-side routine. The rejected intermediate side-loading attempt remains in `../gardener_single_bucket/`.

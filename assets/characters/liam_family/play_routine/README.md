@@ -1,5 +1,11 @@
 # Liam and Daisy — playtime actions (approved)
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Four unique hard-alpha poses per action, using the approved character palettes:
 
 - Liam: `invite_left/right` (500 ms per pose); `settle_bed` (300 ms per pose);

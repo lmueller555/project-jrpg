@@ -1,5 +1,11 @@
 # Mother Serene — front walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 **Approved.** Four 24×36 frames, 140 ms each, looping in 560 ms. Foot anchor `[12,34]`; offsets are already baked into the pixels.
 
 - `walk_front_preview.gif`: opaque 20× nearest-neighbor loop.

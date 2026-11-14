@@ -1,5 +1,11 @@
 # Female NPC 01 — back walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat. The front walk and all directional idles remain approved.
 
 Four 24×36 frames use the shared back stride at 140 ms per frame, looping in 560 ms with foot anchor `[12, 34]`. The head retains the centered low bun and no visible eyes. The head, neck, shoulders and upper bodice rise together by one pixel on passing frames 02/04. All motion offsets are baked into the frame pixels.

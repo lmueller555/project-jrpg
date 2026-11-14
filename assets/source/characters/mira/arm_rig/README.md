@@ -1,5 +1,11 @@
 # Mira: worn arm-rig continuity sources
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `exploration_authored.png` contains 36 authored drawings in a 6×6 atlas: four
 standing directions, four walking frames per direction, and sixteen workshop
 studies. `cinematic_authored.png` contains 32 authored drawings in an 8×4 atlas:

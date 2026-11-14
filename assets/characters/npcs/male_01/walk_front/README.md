@@ -1,5 +1,11 @@
 # Male NPC 01 — front walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat. All four idle designs and their palettes remain approved.
 
 Four 24×36 frames use Caelan's approved front-walk poses, at 140 ms per frame with a looping 560 ms cycle and the shared `[12, 34]` foot anchor. The approved brown-haired head and face are retained exactly. On passing frames 2 and 4, the head, neck, shoulders and upper shirt rise together by one pixel; the belt stays at the same height. Arm motion comes from the shared semantic pose masks.

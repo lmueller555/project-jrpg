@@ -1,5 +1,11 @@
 # Liam's father — approved directional idles
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Liam's father is in his **mid-30s**; his name is unassigned. The approved design
 uses dark brown hair, a short beard, two hazel eyes, a clay-red tunic over ivory
 sleeves, a plain belt, dark trousers and brown boots, with empty hands.

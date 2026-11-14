@@ -1,5 +1,11 @@
 # Tomas — back walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 **Approved.** Four native 24×36 frames, 140 ms each (560 ms loop), foot anchor `[12,34]`, motion baked into pixels.
 
 `walk_back_preview.gif` is an opaque 20× loop; `frames_review.png` is a 12× strip; `spritesheet.png` is a native 96×36 sheet in playback order. `animation.json` retains timing, frame rectangles, height, eye/patch landmarks and ordered layer provenance. `shared_motion_comparison.gif` shows approved Caelan on the left and Tomas on the right at 16×, synchronized with a shared baseline.

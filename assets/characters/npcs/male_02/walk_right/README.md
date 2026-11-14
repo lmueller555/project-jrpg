@@ -1,5 +1,11 @@
 # Male NPC 02 — right-facing walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat. This palette's idles and front walk remain approved.
 
 Black hair, rust shirt, charcoal trousers and brown boots. These four 24×36 frames apply the existing approved palette to the approved base male right cycle. The approved palette idle supplies its directional head and appearance. The shared template keeps the stride, arm motion and coordinated head-and-shoulder bob identical across palettes. Timing is 140 ms per frame, with the shared `[12, 34]` foot anchor and baked upper-body offsets `[0, 0]`, `[0, -1]`, `[0, 0]`, `[0, -1]`. Skin, eyes, belt and boots retain their original colors.

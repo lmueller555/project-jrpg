@@ -1,5 +1,11 @@
 # Tomas's sanctuary work poses
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `tools/build_tomas_routines.py` assembles the approved directional body parts
 and shared walking phases with new authored three-joint sleeve poses and small
 work props. `poses.json` retains the emitted pose coordinates and prop anchors.

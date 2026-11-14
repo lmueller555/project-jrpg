@@ -1,5 +1,11 @@
 # Male NPC 03 — front-walk parts
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: front-walking animation approved by the user in chat.
 
 The approved palette idle supplies the head, face and waist. The shared builder creates the posed arms and brown-trouser/brown-boot legs with the approved base male walk's geometry. Parts and all four frames retain the same bob offsets and timing.

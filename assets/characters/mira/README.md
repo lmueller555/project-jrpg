@@ -1,5 +1,11 @@
 # Mira — front idle
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Design status: finalized and approved by the user in chat. All four walking directions and their facing appearances are approved. The separate front idle remains a draft appearance reference.
 
 ## Approved design
@@ -25,13 +31,15 @@ The front face has two dark single-pixel eyes on the same row. A few fringe pixe
 
 The generated concept is retained at `../../source/characters/mira/idle_front_concept.png`. Native export uses hard transparency, nearest-neighbor reduction, and a restricted palette sharing existing skin/leather tones, with added pink, charcoal, cream, and gray tool colors. The flower is explicitly preserved as a readable five-pixel motif.
 
-## Shared template workflow
+## Retained legacy template implementation
 
 Mira shares Caelan's 24×36 frame and `[12, 34]` foot anchor. Her lower-leg/boot pixels at rows 26–35 are reused exactly from the approved front idle, rather than generating a new leg stance. This reusable component is stored under `../../templates/humanoid_24x36/`.
 
-Three transparent full-frame assembly layers are retained in `../../source/characters/mira/layers/`: head, upper body, and legs. Compositing them in that order reconstructs the native sprite. The upper-body layer currently groups the shirt, arms, belt, and pouch; separate articulated limb layers can be developed when preparing the pose templates for Mira's animation.
+Three transparent full-frame assembly layers are retained in `../../source/characters/mira/layers/`: head, upper body, and legs. Compositing them in that order reconstructs the native sprite. The upper-body layer groups the shirt, arms, belt and pouch. These layers
+remain for exact reproduction; they are not a recommendation to develop
+articulated limbs for future animation. New poses follow the global standard.
 
-The [four-frame front walk](walk_front/README.md) is approved, assembled with the reusable pose-and-parts workflow. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained under `../../source/characters/mira/walk_front/parts/` and the corresponding new direction folders. The preserved story documents and Caelan artwork are unchanged.
+The [four-frame front walk](walk_front/README.md) is approved, assembled with the retained legacy pose-and-parts builder. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained under `../../source/characters/mira/walk_front/parts/` and the corresponding new direction folders. The preserved story documents and Caelan artwork are unchanged.
 
 Matching [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles, including their new facing appearances, are approved. The flower remains on anatomical left rather than being mirrored onto the right side.
 

@@ -1,5 +1,11 @@
 # Mira — back-facing walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat. The approved front walk is unchanged.
 
 - `frame_01.png`–`frame_04.png`: four transparent native 24×36 frames.

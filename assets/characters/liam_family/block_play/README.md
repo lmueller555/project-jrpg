@@ -1,5 +1,11 @@
 # Liam's wooden-block action sprites — approved
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Each action contains four distinct transparent poses. Liam uses a 96×96 canvas,
 anchor [64,66], and approved native offset [52,36]. `kneel_left/right` and
 `rise_left/right` use 180 ms per pose; `take_left`, `return_left`, `place_right`
