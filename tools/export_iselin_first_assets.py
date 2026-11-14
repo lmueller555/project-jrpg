@@ -173,17 +173,28 @@ def resolution_study():
     }
     outputs[f"{BASE}/idle_front_42x72.json"] = json_bytes({
         "character": "iselin", "animation": "idle.front",
-        "design_status": "approved", "artwork_status": "awaiting_user_review",
+        "design_status": "approved", "artwork_status": "approved",
         "image": "idle_front_42x72.png", "frame_size": [42, 72],
         "rect": [0, 0, 42, 72], "foot_anchor": [21, 68],
-        "draw_anchor": [21, 60], "runtime_integration": False,
+        "draw_anchor": [21, 60], "runtime_integration": True,
         "proposed_artwork_pixels_per_world_pixel": 2,
         "proposed_logical_frame_size": [21, 36],
         "source": SPRITE, "export_recipe": "tools/export_iselin_first_assets.py",
-        "note": "Resolution study only. Current world renderer does not support artwork pixel ratio metadata.",
+        "note": "Registered front idle; WorldCanvas preserves 2x detail at ordinary world scale.",
+    })
+    outputs[f"{BASE}/idle_front_logical.png"] = encoded(sprite.resize((21,36), Image.Resampling.NEAREST))
+    outputs[f"{BASE}/animation.json"] = json_bytes({
+        "idles": {"front": f"{BASE}/idle_front_logical.png"}, "walks": {},
+        "high_resolution_idles": {"front": {"image": f"{BASE}/idle_front_42x72.png", "draw_anchor": [21,60]}},
+    })
+    outputs[f"{BASE}/actor.json"] = json_bytes({
+        "id": "iselin", "name": "Regent Iselin", "position": [0,0],
+        "probe_size": [8,4], "draw_anchor": [10.5,30],
+        "art": f"{BASE}/animation.json", "facing": "front",
+        "scope": "Front idle only; not a walking or cinematic actor yet.",
     })
     outputs["assets/source/characters/iselin/resolution_42x72_export.json"] = json_bytes({
-        "status": "awaiting_user_review", "source": SPRITE,
+        "status": "approved", "source": SPRITE,
         "source_sha256": digest((ROOT / SPRITE).read_bytes()),
         "source_bounds_xyxy": list(bounds), "hard_alpha_threshold": 128,
         "nominal_uniform_scale": scale, "rounded_output_size": list(size),
@@ -286,7 +297,7 @@ def main():
         destination = ROOT / path
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(data)
-    print(f"Exported {len(result)} Iselin assets and review records; no runtime integration.")
+    print(f"Exported {len(result)} Iselin assets and review records.")
 
 
 if __name__ == "__main__":

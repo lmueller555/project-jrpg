@@ -398,6 +398,20 @@
         72
       ],
       "derivation_recipe": "assets/source/story/sanctuary_arrival_polish/recipe.json"
+    },
+    "iselin": {
+      "name": "Regent Iselin",
+      "expression": "neutral",
+      "file": "iselin_neutral.png",
+      "sprite_root": "assets/characters/iselin",
+      "source": "assets/source/portraits/eldenmere/iselin_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "status": "approved"
     }
   },
   "aliases": {

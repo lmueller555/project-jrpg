@@ -77,7 +77,7 @@ def build():
                 'source_rect': list(box),
             }
         board.save(REVIEW / preview)
-    for key, name in (('liam_father', "Liam's father"), ('aldric', 'Regent Aldric'), ('halden', 'Master Halden'), ('elira', 'Elira'),
+    for key, name in (('iselin', 'Regent Iselin'), ('liam_father', "Liam's father"), ('aldric', 'Regent Aldric'), ('halden', 'Master Halden'), ('elira', 'Elira'),
                       ('venn_mother', 'Mrs. Venn'), ('venn_father', 'Mr. Venn'), ('venn_child', 'Venn child')):
         source = SOURCE/f'{key}_master.png'
         if source.exists():

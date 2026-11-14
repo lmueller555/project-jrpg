@@ -1,5 +1,10 @@
 # Iselin — front-facing idle
 
+**Current assets:** the 42×72 idle and dialogue portrait are approved. The
+registered idle actor is `actor.json`; `animation.json` supplies a logical
+fallback and the display-density idle. See
+`docs/reviews/iselin_first_assets/IMPLEMENTED.md`. Older review notes follow.
+
 **Design:** approved Design A / Royal Envoy. **Artwork:** awaiting user review.
 
 `idle_front.png` is a single transparent 24×36 idle frame. It uses the existing

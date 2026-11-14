@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_user_review",
+  "status": "approved",
   "source": "assets/source/characters/iselin/idle_front_master.png",
   "source_sha256": "da23deac3b262d78512af5a5f9c0322797feccce91f411d306d55bcbc3a4435a",
   "source_bounds_xyxy": [
@@ -49,7 +49,16 @@
       "sha256": "416a12e6e2d50089930b892a275a95e98aa7167e5909b50070efb78f4d40a808"
     },
     "assets/characters/iselin/idle_front_42x72.json": {
-      "sha256": "fdc2c9e0e91751153b6d4b8a4e91a810c39974386ab0f167ab55d8a7022f0147"
+      "sha256": "621c85a5cda52926a1e9eb70727163d18317190e4df407b5213eae1e3d9cdd44"
+    },
+    "assets/characters/iselin/idle_front_logical.png": {
+      "sha256": "848b173083a314f17b29f0c0d53e3b5288363c7562a1fb86588069b609c87cbc"
+    },
+    "assets/characters/iselin/animation.json": {
+      "sha256": "5336ed1ae26808ad498da187de3b97ce6e885d5d658d63650c8a4a3192ddbf53"
+    },
+    "assets/characters/iselin/actor.json": {
+      "sha256": "188b75f09982eb71ac72d09624a4ee52c449194f2acd1849cd60a6f1e0f7382e"
     }
   }
 }

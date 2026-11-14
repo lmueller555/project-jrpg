@@ -1,0 +1,19 @@
+{
+  "id": "iselin",
+  "name": "Regent Iselin",
+  "position": [
+    0,
+    0
+  ],
+  "probe_size": [
+    8,
+    4
+  ],
+  "draw_anchor": [
+    10.5,
+    30
+  ],
+  "art": "assets/characters/iselin/animation.json",
+  "facing": "front",
+  "scope": "Front idle only; not a walking or cinematic actor yet."
+}

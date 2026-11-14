@@ -1,5 +1,9 @@
 # Iselin — portrait and front idle review
 
+**Current status:** the portrait and 42×72 idle are approved and implemented.
+See [implementation and production capture](IMPLEMENTED.md). The original
+review notes below preserve the earlier proposals and approval stages.
+
 The user selected **Design A / Royal Envoy** and requested these first two assets
 for visual review before merging. The design is approved; this new artwork is
 **awaiting user review**. The work remains on `art/iselin-portrait-front-idle`.
