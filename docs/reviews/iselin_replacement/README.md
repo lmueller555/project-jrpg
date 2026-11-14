@@ -29,3 +29,8 @@ The emergency driver traverses the actual welcome, meal, interruption, party rej
 Validation covers actor manifests, detailed seating, saved legacy unavailable reasons, arrival/aerial rendering, Sanctuary staging and the MQ03 resolution chain. The existing `test_active_visit_cannot_load_without_its_scene_checkpoint` save-fallback failure is reproducible on the original main runtime and remains outside this replacement.
 
 Integration checks also exposed and corrected a detailed-canvas copy error in the road-pan effect and a missing detail presentation step in the Sanctuary cinematic. Ordinary surface alpha/clip behavior remains covered by the road-pan regressions.
+
+The [last 50 ms of the aerial handoff](handoff.png) show continuous ground motion.
+Mean RGB difference to the endpoint is 5.0266/255 (1.971%); the palette-dependent
+check now uses a 2% full-range bound. The final aerial frame must still equal
+the first ground frame byte for byte, with no black fade.
