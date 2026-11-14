@@ -53,7 +53,7 @@ def build():
     previews[0].save(REVIEW/'preview.gif',save_all=True,append_images=previews[1:],
                      duration=[30,40]*16,loop=0,disposal=2,optimize=False)
     (OUTPUT/'animation.json').write_text(json.dumps({'character':'iselin','animation':'walk.left',
-        'status':'awaiting_user_review','frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
+        'status':'approved','frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
         'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,'recipe':'tools/export_iselin_left_walk.py',
         'construction':'complete authored drawings; asymmetric left-view costume and drawn hair sway',
         'frames':[{'file':f'frame_{i+1:02}.png','rect':[i*42,0,42,72],'duration_ms':35} for i in range(16)]},indent=2)+'\n')
@@ -62,7 +62,7 @@ def build():
         'appearance_reference':'assets/source/characters/iselin/idle_left_master.png',
         'sources':{p.name:sha256(p.read_bytes()).hexdigest() for p in SOURCE.glob('*.png')},
         'processing':'Whole-drawing alpha220 extraction, uniform scale per strip and head/ground registration; approved reflected lower rows46-71 retained to protect foot motion. No limb assembly or procedural hair movement.',
-        'frames':records,'status':'awaiting_user_review'},indent=2)+'\n')
+        'frames':records,'status':'approved'},indent=2)+'\n')
 
 
 if __name__=='__main__':build()

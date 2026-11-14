@@ -1,4 +1,7 @@
-# Iselin left walk — review pending
+# Iselin left walk — approved
+
+The user approved this cycle for merge. Earlier review-stage notes below are
+retained as history; runtime walking integration remains subsequent work.
 
 Sixteen complete flattened42×72 frames, 35ms each, 560ms full cycle. Review only:
 not merged and not activated in the journey. The approved right cycle is untouched.
