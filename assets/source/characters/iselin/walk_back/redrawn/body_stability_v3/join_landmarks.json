@@ -1,0 +1,184 @@
+{
+  "bob": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    2,
+    2,
+    1
+  ],
+  "crown_base_y": 2,
+  "crown_to_belt": 27,
+  "frames": [
+    {
+      "frame": 5,
+      "source": "join_clean_1.png",
+      "column": 0,
+      "bounds": [
+        122,
+        34,
+        360,
+        791
+      ],
+      "crown": [
+        116.5,
+        0
+      ],
+      "belt": [
+        116.5,
+        309.0
+      ],
+      "head_width": 201
+    },
+    {
+      "frame": 6,
+      "source": "join_clean_1.png",
+      "column": 1,
+      "bounds": [
+        107,
+        45,
+        349,
+        799
+      ],
+      "crown": [
+        131.0,
+        0
+      ],
+      "belt": [
+        131.0,
+        307.5
+      ],
+      "head_width": 202
+    },
+    {
+      "frame": 7,
+      "source": "join_clean_1.png",
+      "column": 2,
+      "bounds": [
+        107,
+        45,
+        347,
+        799
+      ],
+      "crown": [
+        130.0,
+        0
+      ],
+      "belt": [
+        130.0,
+        307.5
+      ],
+      "head_width": 202
+    },
+    {
+      "frame": 8,
+      "source": "join_clean_1.png",
+      "column": 3,
+      "bounds": [
+        109,
+        37,
+        346,
+        799
+      ],
+      "crown": [
+        129.5,
+        0
+      ],
+      "belt": [
+        129.5,
+        304.5
+      ],
+      "head_width": 199
+    },
+    {
+      "frame": 9,
+      "source": "join_clean_2.png",
+      "column": 0,
+      "bounds": [
+        118,
+        39,
+        334,
+        794
+      ],
+      "crown": [
+        117.0,
+        0
+      ],
+      "belt": [
+        117.0,
+        302.5
+      ],
+      "head_width": 188
+    },
+    {
+      "frame": 10,
+      "source": "join_clean_2.png",
+      "column": 1,
+      "bounds": [
+        118,
+        39,
+        335,
+        794
+      ],
+      "crown": [
+        117.0,
+        0
+      ],
+      "belt": [
+        117.0,
+        297.5
+      ],
+      "head_width": 188
+    },
+    {
+      "frame": 11,
+      "source": "join_clean_2.png",
+      "column": 2,
+      "bounds": [
+        107,
+        39,
+        335,
+        794
+      ],
+      "crown": [
+        129.0,
+        0
+      ],
+      "belt": [
+        129.0,
+        299.0
+      ],
+      "head_width": 188
+    },
+    {
+      "frame": 12,
+      "source": "join_clean_2.png",
+      "column": 3,
+      "bounds": [
+        119,
+        39,
+        346,
+        794
+      ],
+      "crown": [
+        117.0,
+        0
+      ],
+      "belt": [
+        117.0,
+        297.5
+      ],
+      "head_width": 188
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "bob": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    2,
+    2,
+    1
+  ],
+  "crown_base_y": 2,
+  "crown_to_belt": 27,
+  "frames": [
+    {
+      "frame": 1,
+      "source": "authored_0.png",
+      "column": 0,
+      "bounds": [
+        133,
+        33,
+        367,
+        786
+      ],
+      "crown": [
+        107.5,
+        0
+      ],
+      "belt": [
+        107.5,
+        303.5
+      ],
+      "head_width": 191
+    },
+    {
+      "frame": 2,
+      "source": "authored_0.png",
+      "column": 1,
+      "bounds": [
+        132,
+        33,
+        368,
+        786
+      ],
+      "crown": [
+        108.5,
+        0
+      ],
+      "belt": [
+        108.5,
+        303.5
+      ],
+      "head_width": 191
+    },
+    {
+      "frame": 3,
+      "source": "authored_0.png",
+      "column": 2,
+      "bounds": [
+        125,
+        33,
+        370,
+        786
+      ],
+      "crown": [
+        114.5,
+        0
+      ],
+      "belt": [
+        114.5,
+        303.5
+      ],
+      "head_width": 191
+    },
+    {
+      "frame": 4,
+      "source": "authored_0.png",
+      "column": 3,
+      "bounds": [
+        119,
+        33,
+        369,
+        786
+      ],
+      "crown": [
+        122.0,
+        0
+      ],
+      "belt": [
+        122.0,
+        303.5
+      ],
+      "head_width": 192
+    },
+    {
+      "frame": 5,
+      "source": "authored_1.png",
+      "column": 0,
+      "bounds": [
+        142,
+        54,
+        378,
+        774
+      ],
+      "crown": [
+        114.5,
+        0
+      ],
+      "belt": [
+        114.5,
+        307.5
+      ],
+      "head_width": 197
+    },
+    {
+      "frame": 6,
+      "source": "authored_1.png",
+      "column": 1,
+      "bounds": [
+        106,
+        54,
+        358,
+        776
+      ],
+      "crown": [
+        136.5,
+        0
+      ],
+      "belt": [
+        136.5,
+        307.0
+      ],
+      "head_width": 197
+    },
+    {
+      "frame": 7,
+      "source": "authored_1.png",
+      "column": 2,
+      "bounds": [
+        97,
+        54,
+        335,
+        776
+      ],
+      "crown": [
+        132.5,
+        0
+      ],
+      "belt": [
+        132.5,
+        307.5
+      ],
+      "head_width": 197
+    },
+    {
+      "frame": 8,
+      "source": "authored_1.png",
+      "column": 3,
+      "bounds": [
+        84,
+        54,
+        327,
+        776
+      ],
+      "crown": [
+        132.5,
+        0
+      ],
+      "belt": [
+        132.5,
+        307.5
+      ],
+      "head_width": 197
+    },
+    {
+      "frame": 9,
+      "source": "authored_2.png",
+      "column": 0,
+      "bounds": [
+        120,
+        27,
+        358,
+        772
+      ],
+      "crown": [
+        125.0,
+        0
+      ],
+      "belt": [
+        125.0,
+        315.0
+      ],
+      "head_width": 196
+    },
+    {
+      "frame": 10,
+      "source": "authored_2.png",
+      "column": 1,
+      "bounds": [
+        114,
+        28,
+        354,
+        772
+      ],
+      "crown": [
+        127.0,
+        0
+      ],
+      "belt": [
+        127.0,
+        317.0
+      ],
+      "head_width": 196
+    },
+    {
+      "frame": 11,
+      "source": "authored_2.png",
+      "column": 2,
+      "bounds": [
+        104,
+        27,
+        348,
+        773
+      ],
+      "crown": [
+        132.0,
+        0
+      ],
+      "belt": [
+        132.0,
+        316.0
+      ],
+      "head_width": 196
+    },
+    {
+      "frame": 12,
+      "source": "authored_2.png",
+      "column": 3,
+      "bounds": [
+        112,
+        28,
+        360,
+        772
+      ],
+      "crown": [
+        119.5,
+        0
+      ],
+      "belt": [
+        119.5,
+        317.0
+      ],
+      "head_width": 195
+    },
+    {
+      "frame": 13,
+      "source": "authored_3.png",
+      "column": 0,
+      "bounds": [
+        131,
+        36,
+        370,
+        791
+      ],
+      "crown": [
+        119.0,
+        0
+      ],
+      "belt": [
+        119.0,
+        320.5
+      ],
+      "head_width": 192
+    },
+    {
+      "frame": 14,
+      "source": "authored_3.png",
+      "column": 1,
+      "bounds": [
+        135,
+        36,
+        372,
+        791
+      ],
+      "crown": [
+        107.5,
+        0
+      ],
+      "belt": [
+        107.5,
+        320.5
+      ],
+      "head_width": 193
+    },
+    {
+      "frame": 15,
+      "source": "authored_3.png",
+      "column": 2,
+      "bounds": [
+        125,
+        36,
+        373,
+        791
+      ],
+      "crown": [
+        109.0,
+        0
+      ],
+      "belt": [
+        109.0,
+        320.5
+      ],
+      "head_width": 192
+    },
+    {
+      "frame": 16,
+      "source": "authored_3.png",
+      "column": 3,
+      "bounds": [
+        123,
+        36,
+        368,
+        791
+      ],
+      "crown": [
+        106.0,
+        0
+      ],
+      "belt": [
+        106.0,
+        318.0
+      ],
+      "head_width": 192
+    }
+  ]
+}
