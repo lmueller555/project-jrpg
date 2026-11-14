@@ -4,9 +4,9 @@ Sixteen whole-character drawings exported at42×72, using the established35ms
 frame time and560ms two-step cycle. The review branch does not activate or merge
 this cycle; approved front and side artwork remains unchanged.
 
-![Normal speed on the left; half speed on the right](preview.gif)
+![Normal speed on the left; half speed on the right](preview_right_foot_v2.gif)
 
-[Numbered native drawings enlarged4×](frames.png).
+[Numbered native drawings enlarged4×](frames_right_foot_v2.png).
 
 The canonical reference is `assets/source/characters/iselin/idle_back_master.png`.
 The mantle stays on anatomical right (viewer right); the braid turns forward
@@ -38,3 +38,23 @@ sheet was visually inspected for complete silhouettes, costume sides, hand
 count, left/right identities and transitions across strip joins. Such checks
 support motion review; they do not certify precise joint angles or world-space
 foot locking. This remains an in-place animation preview for user approval.
+
+## Right foot correction, revision 2
+
+Audit found the right boot held high through frame 4, then dropping about nine
+native pixels into frame 5. Frames 11–12 also had an abrupt height change.
+Imagegen redrew complete four-pose strips with smaller right-foot lift and a
+more gradual return to contact. Export protects every original pixel outside
+x22–31, y48–71, retaining the arms, upper body, and left leg exactly.
+No procedural limb translation, rotation, or stretching is used.
+
+The revised right-boot bottom positions are
+63, 62, 63, 65, 66, 69, 69, 69, 69, 68, 66, 63, 64, 64, 64, 65.
+The largest adjacent change is three native pixels, including the loop seam;
+the earlier nine-pixel drop is removed. This measures visible vertical motion,
+not physical world-space foot locking. Frame timing remains 35ms.
+
+[Initial preview](initial_preview.gif) and [initial frame sheet](initial_frames.png)
+remain available for comparison. Frozen original frames and complete generated
+correction drawings are in `redrawn/right_foot_revision/`; source hashes and
+registration are recorded alongside the original generation records.

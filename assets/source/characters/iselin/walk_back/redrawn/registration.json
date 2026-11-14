@@ -11,7 +11,441 @@
     "contact_right.png": "9717c7a68fc1097bb668b0ce70579e94e4c363fdee00b8b14dcd07724ab9db87",
     "keys.png": "84978413be6b0e8c844fdccf5ebad07eb1b09277193155fad00362d576866796"
   },
-  "processing": "Whole drawing alpha220 extraction, common scale per strip and head/ground registration. No part assembly, mirrors or limb interpolation.",
+  "processing": "Whole drawing alpha220 extraction, common scale per strip and head/ground registration. Right lower-leg regional redraw from complete imagegen poses; all other original pixels restored. No limb transforms, mirrors or interpolation.",
+  "right_foot_corrections": [
+    {
+      "frame": 1,
+      "source": "right_foot_revision/edited_0.png",
+      "sha256": "45cc6b7e7bd216ab03f90081b01631c019cc611852c7f46368e80ed24c7fffe0",
+      "column": 0,
+      "bounds": [
+        128,
+        23,
+        364,
+        790
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        12,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 2,
+      "source": "right_foot_revision/edited_0.png",
+      "sha256": "45cc6b7e7bd216ab03f90081b01631c019cc611852c7f46368e80ed24c7fffe0",
+      "column": 1,
+      "bounds": [
+        129,
+        23,
+        365,
+        790
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        12,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 3,
+      "source": "right_foot_revision/edited_0.png",
+      "sha256": "45cc6b7e7bd216ab03f90081b01631c019cc611852c7f46368e80ed24c7fffe0",
+      "column": 2,
+      "bounds": [
+        123,
+        23,
+        364,
+        791
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 4,
+      "source": "right_foot_revision/edited_0.png",
+      "sha256": "45cc6b7e7bd216ab03f90081b01631c019cc611852c7f46368e80ed24c7fffe0",
+      "column": 3,
+      "bounds": [
+        119,
+        23,
+        371,
+        793
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 5,
+      "source": "right_foot_revision/edited_1.png",
+      "sha256": "c6c8ee6888d6ee6c874caea1c2147afa54499b52440827b898ffa3ba94cd084b",
+      "column": 0,
+      "bounds": [
+        127,
+        70,
+        380,
+        788
+      ],
+      "scale": 0.08947368421052632,
+      "size": [
+        23,
+        64
+      ],
+      "origin": [
+        10,
+        6
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 6,
+      "source": "right_foot_revision/edited_1.png",
+      "sha256": "c6c8ee6888d6ee6c874caea1c2147afa54499b52440827b898ffa3ba94cd084b",
+      "column": 1,
+      "bounds": [
+        119,
+        28,
+        375,
+        778
+      ],
+      "scale": 0.08947368421052632,
+      "size": [
+        23,
+        67
+      ],
+      "origin": [
+        10,
+        3
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 7,
+      "source": "right_foot_revision/edited_1.png",
+      "sha256": "c6c8ee6888d6ee6c874caea1c2147afa54499b52440827b898ffa3ba94cd084b",
+      "column": 2,
+      "bounds": [
+        121,
+        28,
+        367,
+        786
+      ],
+      "scale": 0.08947368421052632,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 8,
+      "source": "right_foot_revision/edited_1.png",
+      "sha256": "c6c8ee6888d6ee6c874caea1c2147afa54499b52440827b898ffa3ba94cd084b",
+      "column": 3,
+      "bounds": [
+        110,
+        28,
+        360,
+        788
+      ],
+      "scale": 0.08947368421052632,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        9,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 9,
+      "source": "right_foot_revision/edited_2.png",
+      "sha256": "64b4faddf7a1876de569e17366a546c44d614c8f63e625687ace385278f1d56f",
+      "column": 0,
+      "bounds": [
+        118,
+        23,
+        364,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 10,
+      "source": "right_foot_revision/edited_2.png",
+      "sha256": "64b4faddf7a1876de569e17366a546c44d614c8f63e625687ace385278f1d56f",
+      "column": 1,
+      "bounds": [
+        122,
+        69,
+        362,
+        787
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        21,
+        64
+      ],
+      "origin": [
+        10,
+        6
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 11,
+      "source": "right_foot_revision/edited_2.png",
+      "sha256": "64b4faddf7a1876de569e17366a546c44d614c8f63e625687ace385278f1d56f",
+      "column": 2,
+      "bounds": [
+        113,
+        23,
+        359,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        9,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 12,
+      "source": "right_foot_revision/edited_2.png",
+      "sha256": "64b4faddf7a1876de569e17366a546c44d614c8f63e625687ace385278f1d56f",
+      "column": 3,
+      "bounds": [
+        125,
+        33,
+        377,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        22,
+        67
+      ],
+      "origin": [
+        10,
+        3
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 13,
+      "source": "right_foot_revision/edited_3.png",
+      "sha256": "68aed70d8ea4dd724f423aabf624846018853a0641d9471d74d3fd7302e73440",
+      "column": 0,
+      "bounds": [
+        128,
+        24,
+        363,
+        792
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 14,
+      "source": "right_foot_revision/edited_3.png",
+      "sha256": "68aed70d8ea4dd724f423aabf624846018853a0641d9471d74d3fd7302e73440",
+      "column": 1,
+      "bounds": [
+        134,
+        24,
+        369,
+        792
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        12,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 15,
+      "source": "right_foot_revision/edited_3.png",
+      "sha256": "68aed70d8ea4dd724f423aabf624846018853a0641d9471d74d3fd7302e73440",
+      "column": 2,
+      "bounds": [
+        134,
+        24,
+        379,
+        793
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        12,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    },
+    {
+      "frame": 16,
+      "source": "right_foot_revision/edited_3.png",
+      "sha256": "68aed70d8ea4dd724f423aabf624846018853a0641d9471d74d3fd7302e73440",
+      "column": 3,
+      "bounds": [
+        136,
+        24,
+        381,
+        794
+      ],
+      "scale": 0.08831168831168831,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        12,
+        2
+      ],
+      "edit_window": [
+        22,
+        48,
+        32,
+        72
+      ]
+    }
+  ],
   "frames": [
     {
       "source": "F.png",
