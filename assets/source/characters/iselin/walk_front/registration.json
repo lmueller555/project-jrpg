@@ -1,0 +1,367 @@
+{
+  "tool": "image_gen.imagegen",
+  "reference": "assets/source/characters/iselin/idle_front_master.png",
+  "source_sha256": "9737df00dc8764d06cadae372f889a09eec5a305907cc1624c291968796f9c98",
+  "atlas_grid": [
+    4,
+    4
+  ],
+  "uniform_scale": 0.19318181818181818,
+  "hard_alpha_threshold": 128,
+  "frames": [
+    {
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "bounds": [
+        67,
+        17,
+        199,
+        369
+      ],
+      "size": [
+        26,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    {
+      "cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "bounds": [
+        66,
+        17,
+        193,
+        366
+      ],
+      "size": [
+        25,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "bounds": [
+        68,
+        17,
+        196,
+        364
+      ],
+      "size": [
+        25,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "bounds": [
+        66,
+        17,
+        198,
+        365
+      ],
+      "size": [
+        26,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "bounds": [
+        66,
+        17,
+        199,
+        367
+      ],
+      "size": [
+        26,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    {
+      "cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "bounds": [
+        63,
+        17,
+        194,
+        367
+      ],
+      "size": [
+        25,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    {
+      "cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "bounds": [
+        59,
+        17,
+        196,
+        366
+      ],
+      "size": [
+        26,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "bounds": [
+        61,
+        17,
+        200,
+        366
+      ],
+      "size": [
+        27,
+        67
+      ],
+      "origin": [
+        7,
+        3
+      ]
+    },
+    {
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "bounds": [
+        60,
+        18,
+        197,
+        368
+      ],
+      "size": [
+        26,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    },
+    {
+      "cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "bounds": [
+        63,
+        18,
+        196,
+        365
+      ],
+      "size": [
+        26,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "bounds": [
+        65,
+        18,
+        196,
+        365
+      ],
+      "size": [
+        25,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "bounds": [
+        65,
+        18,
+        198,
+        365
+      ],
+      "size": [
+        26,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "bounds": [
+        66,
+        18,
+        199,
+        363
+      ],
+      "size": [
+        26,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "bounds": [
+        66,
+        18,
+        197,
+        366
+      ],
+      "size": [
+        25,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "bounds": [
+        68,
+        18,
+        199,
+        366
+      ],
+      "size": [
+        25,
+        67
+      ],
+      "origin": [
+        8,
+        3
+      ]
+    },
+    {
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "bounds": [
+        67,
+        18,
+        198,
+        368
+      ],
+      "size": [
+        25,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ]
+    }
+  ],
+  "processing": "Crop, hard alpha, uniform nearest-neighbor reduction and whole-frame registration only.",
+  "approval": "User approved the front-walk preview for merge; directional/runtime walking integration remains a later pass."
+}
