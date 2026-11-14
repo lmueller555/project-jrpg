@@ -29,6 +29,8 @@ class StoryActor:
         self.conversation_ready=False;self.conversation_facing=self.facing
         animation=json.loads((ROOT/record['art']).read_text())
         self.idles={};self.walks={};self.walk_durations={};self.pose_animations={}
+        self.detail_idles={direction:(world.image(data['image']),tuple(data['draw_anchor']))
+                           for direction,data in animation.get('high_resolution_idles',{}).items()}
         self.pose=None;self.pose_ms=0.;self._pose_clock_origin=None
         if 'sheet' in animation:
             sheet=world.image(animation['sheet'])
@@ -76,3 +78,9 @@ class StoryActor:
             progress=max(self.pose_ms,elapsed_ms-self._pose_clock_origin)
             return animation_frame(pose['frames'],pose['durations'],progress,loop=pose['loop'])
         return self.idles[direction]
+
+    def detailed_idle(self, elapsed_ms):
+        direction=self.conversation_facing if self.conversation_ready else self.facing
+        if self.moving or self.pose is not None or getattr(self,'story_sprite',None) is not None:
+            return None
+        return self.detail_idles.get(direction)

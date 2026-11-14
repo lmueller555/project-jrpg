@@ -20,6 +20,7 @@ from liam_daisy_play import PlayActor, LiamDaisyPlay
 from liam_blocks import LiamBlocks
 from daisy_bone import DaisyBone
 from well_routine import DrawingWell
+from dense_art import WorldCanvas, draw_actor
 from social import SocialSystem
 from title_screen import TitleScreen
 from quests import QuestLog, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
@@ -339,8 +340,8 @@ class World:
                 surface=getattr(record,'story_sprite',None)
                 if surface is None:surface=record.sprite(elapsed_ms)
                 if hasattr(record,'draw_background'):record.draw_background(target,camera)
-                target.blit(surface,(round(position[0])-anchor[0]-camera[0],
-                                     round(position[1])-anchor[1]-camera[1]))
+                draw_actor(target,record,surface,(round(position[0])-anchor[0]-camera[0],
+                                     round(position[1])-anchor[1]-camera[1]),elapsed_ms)
                 if hasattr(record,'draw_foreground'):record.draw_foreground(target,camera)
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
@@ -467,7 +468,7 @@ class Game:
                      pygame.display.set_mode((0,0) if fullscreen else self.windowed_size,
                                             pygame.FULLSCREEN if fullscreen else pygame.RESIZABLE))
         pygame.display.set_caption('Project JRPG — Eldenmere')
-        self.canvas=pygame.Surface(VIEW_SIZE)
+        self.canvas=WorldCanvas(VIEW_SIZE)
         self.audio=AudioSettings(None if self._is_embedded else settings_path)
         if self._is_embedded and _preview_settings is not None:
             for key in ('music_volume','effects_volume','text_scale','reduced_motion','tracker_visible',
@@ -2093,6 +2094,7 @@ class Game:
                 painter.text(line,(rect.x+9,rect.y+7+index*line_height),color=GOLD)
 
     def draw(self):
+        self.canvas.reset_detail()
         if self.quest_playtest_session is not None:
             session=self.quest_playtest_session
             try:session.draw()
@@ -2177,6 +2179,7 @@ class Game:
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
         _,size,origin=self._ensure_ui_surface()
         pygame.transform.scale(self.canvas,size,self.ui_surface)
+        self.canvas.present_detail(self.ui_surface)
         for routine in getattr(self.world,'play_routines',[]):
             routine.draw(self.ui_surface,camera,self.world)
         if not self._is_gallery_preview and not self.elemental_bosses.acquisition_active:

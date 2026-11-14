@@ -1,0 +1,29 @@
+{
+  "character": "iselin",
+  "animation": "idle.front",
+  "design_status": "approved",
+  "artwork_status": "awaiting_user_review",
+  "status": "awaiting_user_review",
+  "image": "idle_front.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "source": "assets/source/characters/iselin/idle_front_master.png",
+  "export_recipe": "tools/export_iselin_first_assets.py",
+  "runtime_integration": false
+}

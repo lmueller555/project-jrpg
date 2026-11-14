@@ -11,6 +11,7 @@ import json
 import math
 from pathlib import Path
 
+from dense_art import draw_actor
 import pygame
 
 
@@ -622,9 +623,12 @@ class OverworldWorld:
             surface = getattr(actor,'story_sprite',None)
             if surface is None:surface = actor.sprite() if actor is player else actor.sprite(elapsed_ms)
             rect = surface.get_rect(topleft=(round(position[0])-anchor[0],round(position[1])-anchor[1]))
-            if rect.colliderect(viewport):ordered.append((getattr(actor,'story_sort_y',None) or position[1]+6,priority,surface,rect.topleft))
+            if rect.colliderect(viewport):ordered.append((getattr(actor,'story_sort_y',None) or position[1]+6,priority,(actor,surface,anchor,position),None))
         for _,_,surface,position in sorted(ordered,key=lambda record:(record[0],record[1])):
-            target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
+            if position is None:
+                actor,image,anchor,world_position=surface
+                draw_actor(target,actor,image,(round(world_position[0])-anchor[0]-camera[0],round(world_position[1])-anchor[1]-camera[1]),elapsed_ms)
+            else:target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
         # Spread the one-chunk lookahead ring over frames. Ordinary walking
         # reaches an already prepared neighbour without loading the region.
         candidates = [(cx,cy)

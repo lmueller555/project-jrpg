@@ -1,0 +1,64 @@
+{
+  "status": "approved",
+  "source": "assets/source/characters/iselin/idle_front_master.png",
+  "source_sha256": "da23deac3b262d78512af5a5f9c0322797feccce91f411d306d55bcbc3a4435a",
+  "source_bounds_xyxy": [
+    260,
+    94,
+    767,
+    1432
+  ],
+  "hard_alpha_threshold": 128,
+  "nominal_uniform_scale": 0.05082212257100149,
+  "rounded_output_size": [
+    26,
+    68
+  ],
+  "destination_origin": [
+    8,
+    2
+  ],
+  "frame_size": [
+    42,
+    72
+  ],
+  "resampling": "nearest",
+  "artwork_modifications": "none",
+  "runtime_integration": false,
+  "comparison": {
+    "kind": "static rendering mock-up; no engine changes",
+    "default_world_canvas": [
+      480,
+      320
+    ],
+    "default_window": [
+      960,
+      640
+    ],
+    "same_height_mockup": "Caelan/Mira 4x; Iselin 2x. Represents 2x display resolution enlarged 2x.",
+    "native_size_mockup": "All sprites 4x. Represents current renderer at 2x window enlarged 2x."
+  },
+  "outputs": {
+    "assets/characters/iselin/idle_front_42x72.png": {
+      "sha256": "aff953efd21aea5fa40bf4ab16ab684fbffcbaa7722d076e3e35274d52f15541"
+    },
+    "docs/reviews/iselin_first_assets/idle_front_42x72_6x.png": {
+      "sha256": "24abaf969aa5dde8c5a1086d4da16cead4ffb01425106321401cb50547b871cd"
+    },
+    "docs/reviews/iselin_first_assets/resolution_42x72.png": {
+      "sha256": "416a12e6e2d50089930b892a275a95e98aa7167e5909b50070efb78f4d40a808"
+    },
+    "assets/characters/iselin/idle_front_42x72.json": {
+      "sha256": "621c85a5cda52926a1e9eb70727163d18317190e4df407b5213eae1e3d9cdd44"
+    },
+    "assets/characters/iselin/idle_front_logical.png": {
+      "sha256": "848b173083a314f17b29f0c0d53e3b5288363c7562a1fb86588069b609c87cbc"
+    },
+    "assets/characters/iselin/animation.json": {
+      "sha256": "5336ed1ae26808ad498da187de3b97ce6e885d5d658d63650c8a4a3192ddbf53"
+    },
+    "assets/characters/iselin/actor.json": {
+      "sha256": "188b75f09982eb71ac72d09624a4ee52c449194f2acd1849cd60a6f1e0f7382e"
+    }
+  }
+}

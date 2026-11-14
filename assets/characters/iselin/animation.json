@@ -1,0 +1,15 @@
+{
+  "idles": {
+    "front": "assets/characters/iselin/idle_front_logical.png"
+  },
+  "walks": {},
+  "high_resolution_idles": {
+    "front": {
+      "image": "assets/characters/iselin/idle_front_42x72.png",
+      "draw_anchor": [
+        21,
+        60
+      ]
+    }
+  }
+}
