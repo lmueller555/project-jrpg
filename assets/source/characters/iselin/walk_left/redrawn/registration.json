@@ -1,0 +1,499 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "motion_reference": "approved walk_right reflected as a pose guide only",
+  "appearance_reference": "assets/source/characters/iselin/idle_left_master.png",
+  "sources": {
+    "motion_08.png": "ec1196cb6ce530eb307b281c6b729ad9762b247394c262ff29e1d54c0747dbc3",
+    "authored_0.png": "ff72d37713385be0139a89d478a6d079f870d203edf5b074095fe423546f5086",
+    "motion_11.png": "15119cf349ae0da846159053a379937af750054396b954ceaaa8f08a6e8f0d29",
+    "motion_09.png": "dbf937bbf03ff73d2f744d16d346dd5c633c54c6ea3a467ea039a997595b760d",
+    "authored_2.png": "9d9a61b5a18dd2beeb1ab2afec80b9a6f267295667cd7bd41fc7b8dc3f76b6b0",
+    "motion_14.png": "6ac4b5aab7d1c554a502fe526f67182d0fbfd14a552891e40ba836018762460d",
+    "motion_12.png": "7a752af28ca76b7249254cef89907769fb271ad972f6a0fc1b7d52c396ee1449",
+    "motion_06.png": "53c5a0f602e364cc6349c8c5586cf9e0282df416335d92a7812c274855d5e10f",
+    "motion_13.png": "2c97ae05f7b1d10fe6231213073b22acb8ca483c6ef1361e647928af0bfe0f06",
+    "motion_16.png": "c9577ce095741cdc65813c4e1f9cd75a62e9a76e4528a0e2cf88ab301da092b4",
+    "guide_2.png": "12cce44317c7c58b4597d82f7ea9ae2df50e320d97f3dcf0da89f4c50ac853ef",
+    "motion_15.png": "98b40cbfe7cf3583e69e228e1f3d98220e925ddf6df387772d4db62a86917dc0",
+    "motion_02.png": "f3c71ac8b47125f621d233fd0ee7e2c2b1e2eb097ab5b739e6b9fdc61778e3fe",
+    "authored_3.png": "223aeca40e73695ee50359a5442ae5bc8666f4d9795922cc93dc6203cb3141f6",
+    "motion_05.png": "b881ae90c3327d7d349138423fc975401e1e58d65b027d454ae3ce98386e6327",
+    "motion_10.png": "af98122172aaf3dfb9ddfa62cc34bf3a26139888b08f5f0b8aa3afe86313dbf2",
+    "guide_3.png": "7c9720ffca30f19cb07c1e5856263344d369d9702ec22cbb5ba85abbd3679e78",
+    "motion_04.png": "680fb87f3b6e0fe6bdb10b3249e7d1b089aeaec3cd74f4733a82d084ffe57b9f",
+    "guide_1.png": "36b969dba668b8bd76832b17b1b876eeb7e0519c634dc47da6f4f25d7878d892",
+    "motion_01.png": "e269475fec710f1f286462492b1375f27fd7936dd43d7f65ad49088972a0f83b",
+    "motion_03.png": "c9eca7643ef0ccb76a9e80466fe663e5f3f9000cb49026e886a4c49751f93676",
+    "guide_0.png": "6d43f6a127794342782487f2749f07adc0804a7326650749036b28190eef245b",
+    "authored_1.png": "237d046e968e095676427aeff460dcd5bf587dd2f8038d919593d27625bfba0d",
+    "motion_07.png": "ef75c7f92c44ebf8dab2ad17d8d49d9d5811d44b75704fcd0eb0c38e8c81e266"
+  },
+  "processing": "Whole-drawing alpha220 extraction, uniform scale per strip and head/ground registration; approved reflected lower rows46-71 retained to protect foot motion. No limb assembly or procedural hair movement.",
+  "frames": [
+    {
+      "source": "authored_0.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        478,
+        821
+      ],
+      "bounds": [
+        10,
+        23,
+        422,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        37,
+        68
+      ],
+      "origin": [
+        0,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_0.png",
+      "column": 1,
+      "cell": [
+        478,
+        0,
+        957,
+        821
+      ],
+      "bounds": [
+        53,
+        23,
+        412,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        32,
+        68
+      ],
+      "origin": [
+        4,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_0.png",
+      "column": 2,
+      "cell": [
+        957,
+        0,
+        1436,
+        821
+      ],
+      "bounds": [
+        98,
+        23,
+        395,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        26,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_0.png",
+      "column": 3,
+      "cell": [
+        1436,
+        0,
+        1915,
+        821
+      ],
+      "bounds": [
+        108,
+        23,
+        365,
+        786
+      ],
+      "scale": 0.0891218872870249,
+      "size": [
+        23,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_1.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        478,
+        821
+      ],
+      "bounds": [
+        107,
+        22,
+        344,
+        795
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_1.png",
+      "column": 1,
+      "cell": [
+        478,
+        0,
+        957,
+        821
+      ],
+      "bounds": [
+        107,
+        22,
+        366,
+        795
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        23,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_1.png",
+      "column": 2,
+      "cell": [
+        957,
+        0,
+        1436,
+        821
+      ],
+      "bounds": [
+        73,
+        22,
+        399,
+        795
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        29,
+        68
+      ],
+      "origin": [
+        7,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_1.png",
+      "column": 3,
+      "cell": [
+        1436,
+        0,
+        1915,
+        821
+      ],
+      "bounds": [
+        32,
+        22,
+        436,
+        795
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        36,
+        68
+      ],
+      "origin": [
+        3,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_2.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        478,
+        821
+      ],
+      "bounds": [
+        36,
+        26,
+        437,
+        793
+      ],
+      "scale": 0.08865710560625815,
+      "size": [
+        36,
+        68
+      ],
+      "origin": [
+        2,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_2.png",
+      "column": 1,
+      "cell": [
+        478,
+        0,
+        957,
+        821
+      ],
+      "bounds": [
+        58,
+        26,
+        395,
+        793
+      ],
+      "scale": 0.08865710560625815,
+      "size": [
+        30,
+        68
+      ],
+      "origin": [
+        4,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_2.png",
+      "column": 2,
+      "cell": [
+        957,
+        0,
+        1436,
+        821
+      ],
+      "bounds": [
+        125,
+        26,
+        367,
+        793
+      ],
+      "scale": 0.08865710560625815,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_2.png",
+      "column": 3,
+      "cell": [
+        1436,
+        0,
+        1915,
+        821
+      ],
+      "bounds": [
+        105,
+        26,
+        358,
+        793
+      ],
+      "scale": 0.08865710560625815,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_3.png",
+      "column": 0,
+      "cell": [
+        0,
+        0,
+        478,
+        821
+      ],
+      "bounds": [
+        92,
+        24,
+        351,
+        797
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        23,
+        68
+      ],
+      "origin": [
+        8,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_3.png",
+      "column": 1,
+      "cell": [
+        478,
+        0,
+        957,
+        821
+      ],
+      "bounds": [
+        72,
+        24,
+        370,
+        797
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        26,
+        68
+      ],
+      "origin": [
+        6,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_3.png",
+      "column": 2,
+      "cell": [
+        957,
+        0,
+        1436,
+        821
+      ],
+      "bounds": [
+        38,
+        24,
+        393,
+        792
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        31,
+        68
+      ],
+      "origin": [
+        3,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    },
+    {
+      "source": "authored_3.png",
+      "column": 3,
+      "cell": [
+        1436,
+        0,
+        1915,
+        821
+      ],
+      "bounds": [
+        20,
+        24,
+        422,
+        793
+      ],
+      "scale": 0.08796895213454076,
+      "size": [
+        35,
+        68
+      ],
+      "origin": [
+        2,
+        2
+      ],
+      "protected_motion_rows": [
+        46,
+        72
+      ]
+    }
+  ],
+  "status": "awaiting_user_review"
+}
