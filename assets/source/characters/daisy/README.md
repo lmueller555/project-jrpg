@@ -1,5 +1,11 @@
 # Daisy — retained directional source
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `idle_turnaround_concepts.png` is the generated appearance plate: front at top
 left, left profile at top right, right profile at bottom left, back at bottom
 right. The complete silhouettes and tails have transparent margins on every

@@ -1,5 +1,11 @@
 # Female NPC 01 — front-walk assembly
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user in chat. Source idle and shared reference animations remain unchanged.
 
 `python tools/build_dress_walk.py` reads the approved female front idle and palette, the shared `humanoid_24x36/walk_front/poses.json`, and the character's `walk_front/recipe.json`. It retains appearance parts and writes per-phase legs, skirt, bodice, left arm, right arm and head layers to `parts/`. Their recorded compositing order reconstructs each native frame.

@@ -1,5 +1,11 @@
 # Female NPC 01 — front-idle source
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: front-idle appearance and palette approved by the user in chat.
 
 `idle_front_concept.png` is the generated appearance reference for the first female NPC: dark hair in a low bun, a plain short-sleeved blue dress with a defined waist and flared calf-length skirt, and brown ankle boots. The male NPC and Mira supplied only game style/scale references. The low bun is mostly hidden behind the head in this front view, with small dark nape contours.
@@ -12,9 +18,10 @@ Rebuild from the repository root with the asset dependencies installed:
 python assets/source/characters/npcs/female_01/export_idle.py
 ```
 
-The export also writes a 24× review image, a 16× comparison with male NPC 01 and Mira, and four non-overlapping appearance layers under `layers/`. These layers reconstruct the idle; they are not articulated walking parts. The dress will need dedicated skirt poses later.
+The export also writes a 24× review image, a 16× comparison with male NPC 01 and Mira, and four non-overlapping appearance layers under `layers/`. These layers reconstruct the idle; they are not articulated walking parts. The subsequent walk packs use dedicated skirt poses, as documented in
+[the runtime asset guide](../../../../characters/npcs/female_01/README.md).
 
-The front-facing idle palettes are approved. Approved left, right and back appearances are retained under `directions/`; see its README for the separate base export. Walking frames remain planned.
+The front-facing idle palettes are approved. Approved left, right and back appearances are retained under `directions/`; see its README for the separate base export. The subsequently approved walking packs are documented in that runtime guide.
 
 The base front idle now uses blue iris pixels below its dark pupils. Eye landmarks/colors are recorded in the frame metadata and export recipe. These explicit feature positions keep eye recoloring separate from outlines. Only those two iris pixels change in the first native sprite.
 

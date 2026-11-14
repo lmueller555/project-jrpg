@@ -1,6 +1,12 @@
 # Caelan — back-facing walk cycle
 
-Status: approved by the user, including the coordinated head-and-shoulder bob. The approved directional idles and front walk are unchanged.
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
+Historical approval: approved by the user for the archived artwork, including the coordinated head-and-shoulder bob. The approved directional idles and front walk are unchanged.
 
 - `frame_01.png`–`frame_04.png`: four distinct transparent 24×36 frames.
 - `spritesheet.png`: transparent 96×36 strip in playback order.
@@ -12,4 +18,8 @@ Playback is contact A → passing A → contact B → passing B, then repeat (56
 
 The approved back idle supplies the exact head and neck pixels. Every native frame uses the approved front palette and binary transparency. Source poses are reduced with nearest-neighbor sampling, palette mapped, and registered to a common 24×36 frame.
 
-Sources are retained in `../../../source/characters/caelan/walk_back/`. Use this approved cycle and its coordinated upper-body bob as references for later animation work. There is currently no game runtime.
+Sources are retained in [the retained source directory](../../../walk_back/). This cycle and its bob are retained historical evidence, not the current
+animation-authoring reference. The no-runtime description belonged to the
+original study milestone; see
+[Caelan's current artwork guide](../../../../../../characters/caelan/README.md)
+for current exports and runtime rendering.

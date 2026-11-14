@@ -1,5 +1,11 @@
 # Liam's family — approved directional idles
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `front_idles.png` is a native transparent 72×36 sheet: mother, Liam, father.
 `family.json` links individual sprites, palettes, source layers and metadata.
 

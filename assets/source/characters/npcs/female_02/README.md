@@ -1,5 +1,11 @@
 # Female NPC 02 — palette-derived layers
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: front idle and palette approved by the user in chat.
 
 These four appearance layers are exported from the shared front idle after applying the auburn hair and sage dress palette, plus green iris pixels. The silhouette, skin and brown boots remain unchanged. The layers reconstruct the native sprite; they are not articulated walking parts.

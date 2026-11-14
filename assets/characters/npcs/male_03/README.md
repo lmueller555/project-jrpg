@@ -1,5 +1,11 @@
 # Town NPC — male variant 03
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: this palette, all four directional idles and all four walking cycles are approved by the user in chat.
 
 Gray hair, a slate shirt, brown trousers and brown boots. This is an exact palette variant of the approved `../male_01/idle_front.png`: the silhouette, pose, skin, eyes and transparency are preserved. Material regions keep hair recoloring separate from brown leather and clothing accents.

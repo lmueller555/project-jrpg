@@ -1,5 +1,11 @@
 # Liam, his parents and Daisy — remaining walk directions
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 **All left, right and back walks are approved by the user and merged into
 `main`.** All four walking directions are now approved for Liam, both parents
 and Daisy. The previews retain their original review labels as a record of the

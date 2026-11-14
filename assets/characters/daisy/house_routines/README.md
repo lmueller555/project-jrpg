@@ -1,5 +1,11 @@
 # Daisy's indoor action poses — approved
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Eight actions each contain four unique, transparent 64×48 pixel frames:
 stand_up, settle_down, lower_food, raise_food, eat, lower_water, raise_water,
 and drink. Stand/settle take 720 ms; lower/raise take 640 ms. Eating loops at

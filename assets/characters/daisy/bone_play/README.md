@@ -1,5 +1,11 @@
 # Daisy's bone-play actions — approved
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 All action bodies are transparent 64×48 frames with draw anchor [32,42].
 The approved 32×36 walk/idle pixels are padded at [16,12]; lying art is padded
 at [12,12]. Existing character PNGs and the original palette are unchanged.

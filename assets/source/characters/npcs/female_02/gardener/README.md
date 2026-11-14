@@ -1,5 +1,11 @@
 # Gardener — retained pose source
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 `recipe.json` defines occupied arm joints, bucket grips, head/shoulder leans, carrying depth, native body/action registrations, bucket materials and action timing. `parts/` retains each newly articulated arm layer.
 
 `tools/build_gardener.py` reconstructs all outputs from these instructions and the approved female_02 appearance and walk parts. It preserves head/eye colors, dress scale, boot pixels, walking leg phases and skirt motion. Some older walk metadata references unexported neckline layers; the builder samples their registered rectangles directly from the approved composites rather than changing those source packs.

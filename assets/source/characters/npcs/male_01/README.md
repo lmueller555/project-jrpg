@@ -1,5 +1,11 @@
 # Male NPC 01 — appearance source
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: all three male NPC palettes and all four directional idles are approved by the user in chat.
 
 `idle_front_concept.png` is the generated appearance source. Caelan and Mira were used as style and proportion references. Their artwork is unchanged.
@@ -12,6 +18,7 @@ Rebuild from the repository root with the asset dependencies installed:
 python assets/source/characters/npcs/male_01/export_idle.py
 ```
 
-The export also creates a 24× review image and a 16× comparison with Caelan and Mira. The first NPC palette is brown hair, moss-green shirt, tan trousers and brown boots. The other three idle directions are also approved; walking poses are the next planned assets.
+The export also creates a 24× review image and a 16× comparison with Caelan and Mira. The first NPC palette is brown hair, moss-green shirt, tan trousers and brown boots. The other three idle directions are also approved; the subsequent approved walks are documented in
+[the runtime asset guide](../../../../characters/npcs/male_01/README.md).
 
 `palette_variants.json` defines the other two color schemes and material regions. Rebuild those native frames and the comparison with `python tools/build_npc_palette_variants.py`. Only matching colors inside the named regions are replaced, so hair recoloring preserves brown clothing accents and boots.

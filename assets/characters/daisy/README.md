@@ -1,5 +1,11 @@
 # Daisy — approved directional dog idles
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Daisy is Liam's family's female dog: predominantly gray, with white and black
 patches, floppy gray ears and a fluffy light-tipped tail. Her age is unspecified.
 The front, left, right and back idle designs are approved by the user.

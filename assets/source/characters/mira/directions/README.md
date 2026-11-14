@@ -1,5 +1,11 @@
 # Mira — new facing appearance inputs
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 Status: approved by the user as part of the directional walking animations.
 
 `turnaround_concept.png` is generated appearance reference art for back, left and right views, using Mira's front design and Caelan's directional scale guide. It is not a walking animation source.

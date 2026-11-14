@@ -1,5 +1,11 @@
 # Mother Serene — left walk
 
+**Existing asset / legacy construction reference.** New or revised artwork
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Part, mask, layer and registration recipes below document this pack's existing
+implementation and reproduction, not the authoring method for new animations.
+Approval records and original review evidence are retained.
+
 **Approved.** Four native 24×36 frames at 140 ms each (560 ms loop), foot anchor `[12,34]`, offsets baked into pixels.
 
 `walk_left_preview.gif` is an opaque 20× nearest-neighbor loop; `frames_review.png` is a 12× strip. `spritesheet.png` is a native 96×36 sheet in playback order. `animation.json` records status, phase rectangles, eye/hem/boot landmarks, timing and layer provenance. `shared_motion_comparison.gif` shows Caelan at left and Serene at right, synchronized at 16×.
