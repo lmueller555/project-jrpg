@@ -1,0 +1,564 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "references": [
+    "idle_front_master.png",
+    "idle_left_master.png",
+    "idle_back_master.png"
+  ],
+  "source_sha256": {
+    "aerial.png": "22f588b4207a9ff63224802f9b87ed0d5f7c543c9cb436c4b10cbbb0f62dca0f",
+    "diagonal.png": "e705c5c548a4a2a9f459b7e1efd397d83565e7bba931c484c52ea0bc94f858da",
+    "poses.png": "c9e5028a11f2d7466db17896bcd6ae71eee8ee2e35592cc347bc510af925e43e"
+  },
+  "extractions": {
+    "poses": [
+      {
+        "column": 0,
+        "row": 0,
+        "cell_bounds": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "silhouette_bounds_in_cell": [
+          224,
+          17,
+          376,
+          511
+        ]
+      },
+      {
+        "column": 1,
+        "row": 0,
+        "cell_bounds": [
+          512,
+          0,
+          1024,
+          512
+        ],
+        "silhouette_bounds_in_cell": [
+          113,
+          17,
+          332,
+          511
+        ]
+      },
+      {
+        "column": 2,
+        "row": 0,
+        "cell_bounds": [
+          1024,
+          0,
+          1536,
+          512
+        ],
+        "silhouette_bounds_in_cell": [
+          125,
+          17,
+          286,
+          511
+        ]
+      },
+      {
+        "column": 0,
+        "row": 1,
+        "cell_bounds": [
+          0,
+          512,
+          512,
+          1024
+        ],
+        "silhouette_bounds_in_cell": [
+          165,
+          56,
+          389,
+          488
+        ]
+      },
+      {
+        "column": 1,
+        "row": 1,
+        "cell_bounds": [
+          512,
+          512,
+          1024,
+          1024
+        ],
+        "silhouette_bounds_in_cell": [
+          149,
+          61,
+          352,
+          423
+        ]
+      },
+      {
+        "column": 2,
+        "row": 1,
+        "cell_bounds": [
+          1024,
+          512,
+          1536,
+          1024
+        ],
+        "silhouette_bounds_in_cell": [
+          114,
+          46,
+          283,
+          478
+        ]
+      }
+    ],
+    "diagonal": [
+      {
+        "column": 0,
+        "row": 0,
+        "cell_bounds": [
+          0,
+          0,
+          303,
+          323
+        ],
+        "silhouette_bounds_in_cell": [
+          105,
+          13,
+          228,
+          311
+        ]
+      },
+      {
+        "column": 1,
+        "row": 0,
+        "cell_bounds": [
+          303,
+          0,
+          607,
+          323
+        ],
+        "silhouette_bounds_in_cell": [
+          90,
+          13,
+          209,
+          309
+        ]
+      },
+      {
+        "column": 2,
+        "row": 0,
+        "cell_bounds": [
+          607,
+          0,
+          910,
+          323
+        ],
+        "silhouette_bounds_in_cell": [
+          72,
+          13,
+          189,
+          303
+        ]
+      },
+      {
+        "column": 3,
+        "row": 0,
+        "cell_bounds": [
+          910,
+          0,
+          1214,
+          323
+        ],
+        "silhouette_bounds_in_cell": [
+          62,
+          13,
+          174,
+          298
+        ]
+      },
+      {
+        "column": 0,
+        "row": 1,
+        "cell_bounds": [
+          0,
+          323,
+          303,
+          647
+        ],
+        "silhouette_bounds_in_cell": [
+          122,
+          13,
+          235,
+          301
+        ]
+      },
+      {
+        "column": 1,
+        "row": 1,
+        "cell_bounds": [
+          303,
+          323,
+          607,
+          647
+        ],
+        "silhouette_bounds_in_cell": [
+          93,
+          13,
+          210,
+          300
+        ]
+      },
+      {
+        "column": 2,
+        "row": 1,
+        "cell_bounds": [
+          607,
+          323,
+          910,
+          647
+        ],
+        "silhouette_bounds_in_cell": [
+          69,
+          13,
+          187,
+          301
+        ]
+      },
+      {
+        "column": 3,
+        "row": 1,
+        "cell_bounds": [
+          910,
+          323,
+          1214,
+          647
+        ],
+        "silhouette_bounds_in_cell": [
+          48,
+          13,
+          171,
+          305
+        ]
+      },
+      {
+        "column": 0,
+        "row": 2,
+        "cell_bounds": [
+          0,
+          647,
+          303,
+          971
+        ],
+        "silhouette_bounds_in_cell": [
+          105,
+          15,
+          228,
+          307
+        ]
+      },
+      {
+        "column": 1,
+        "row": 2,
+        "cell_bounds": [
+          303,
+          647,
+          607,
+          971
+        ],
+        "silhouette_bounds_in_cell": [
+          88,
+          15,
+          211,
+          308
+        ]
+      },
+      {
+        "column": 2,
+        "row": 2,
+        "cell_bounds": [
+          607,
+          647,
+          910,
+          971
+        ],
+        "silhouette_bounds_in_cell": [
+          67,
+          15,
+          198,
+          304
+        ]
+      },
+      {
+        "column": 3,
+        "row": 2,
+        "cell_bounds": [
+          910,
+          647,
+          1214,
+          971
+        ],
+        "silhouette_bounds_in_cell": [
+          50,
+          15,
+          176,
+          297
+        ]
+      },
+      {
+        "column": 0,
+        "row": 3,
+        "cell_bounds": [
+          0,
+          971,
+          303,
+          1295
+        ],
+        "silhouette_bounds_in_cell": [
+          107,
+          14,
+          235,
+          295
+        ]
+      },
+      {
+        "column": 1,
+        "row": 3,
+        "cell_bounds": [
+          303,
+          971,
+          607,
+          1295
+        ],
+        "silhouette_bounds_in_cell": [
+          88,
+          14,
+          214,
+          301
+        ]
+      },
+      {
+        "column": 2,
+        "row": 3,
+        "cell_bounds": [
+          607,
+          971,
+          910,
+          1295
+        ],
+        "silhouette_bounds_in_cell": [
+          72,
+          14,
+          191,
+          306
+        ]
+      },
+      {
+        "column": 3,
+        "row": 3,
+        "cell_bounds": [
+          910,
+          971,
+          1214,
+          1295
+        ],
+        "silhouette_bounds_in_cell": [
+          60,
+          14,
+          170,
+          310
+        ]
+      }
+    ],
+    "aerial": [
+      {
+        "column": 0,
+        "row": 0,
+        "cell_bounds": [
+          0,
+          0,
+          768,
+          1024
+        ],
+        "silhouette_bounds_in_cell": [
+          273,
+          228,
+          569,
+          856
+        ]
+      },
+      {
+        "column": 1,
+        "row": 0,
+        "cell_bounds": [
+          768,
+          0,
+          1536,
+          1024
+        ],
+        "silhouette_bounds_in_cell": [
+          149,
+          130,
+          455,
+          912
+        ]
+      }
+    ]
+  },
+  "registration": {
+    "cinematic_pose_scale": 0.16194331983805668,
+    "standing_crown_y": 12,
+    "approved_walk_scale": 1.1764705882352942,
+    "approved_walk_source_anchor": [
+      21,
+      68
+    ],
+    "cinematic_anchor": [
+      40,
+      92
+    ],
+    "diagonal_scale": 0.2684563758389262,
+    "diagonal_origins": [
+      [
+        23,
+        12
+      ],
+      [
+        24,
+        12
+      ],
+      [
+        24,
+        11
+      ],
+      [
+        26,
+        11
+      ],
+      [
+        28,
+        12
+      ],
+      [
+        25,
+        13
+      ],
+      [
+        23,
+        13
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        23,
+        13
+      ],
+      [
+        24,
+        13
+      ],
+      [
+        26,
+        12
+      ]
+    ],
+    "seated_scale": 0.13765182186234817,
+    "seated_origin": [
+      1,
+      11
+    ],
+    "aerial_scale": 0.03580562659846547,
+    "aerial_origins": [
+      [
+        19,
+        34
+      ],
+      [
+        19,
+        28
+      ]
+    ]
+  },
+  "construction": "Complete generated pose cells; uniform whole-drawing sampling, alpha220 extraction and fixed body grid. No detached limbs or nonuniform scaling.",
+  "exports": {
+    "assets/story/regent_arrival/actors/iselin/walk_left_00.png": "daa62dfc8f7ba7d403c55bc82b6dd9b51f2399781e4b04628b0193dcdaab2a99",
+    "assets/story/regent_arrival/actors/iselin/walk_left_01.png": "12e0f2490447c7af443f38c34adc8ddc5cd4f95544e6babfba0bc705dd023435",
+    "assets/story/regent_arrival/actors/iselin/walk_left_02.png": "fb71d2846f41612364a4e268f0a1c025e659ac6f06123b42bb30471d458faf8e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_03.png": "c03d6e30ed76cb08034dbe7b39e2337203329e8f266aee440c441d66d03cc39d",
+    "assets/story/regent_arrival/actors/iselin/walk_left_04.png": "b7947ee5ccec94c948a0540115c2157d2e05b6d1ad27866894fe0ed9540bcd04",
+    "assets/story/regent_arrival/actors/iselin/walk_left_05.png": "0a99d194afcbdc9ab69ed6948aa6981eae600116586cc4ba1fbf6b8d03a1f541",
+    "assets/story/regent_arrival/actors/iselin/walk_left_06.png": "c33a4b638b963ff777fcb359767348c51b9e874fbc7360c05e707930348352ba",
+    "assets/story/regent_arrival/actors/iselin/walk_left_07.png": "ae39d7464edf52ac0d6e74c12a2b1fdb49079d9ac3fc11d18f7eb63105f86102",
+    "assets/story/regent_arrival/actors/iselin/walk_left_08.png": "bffcdddca0189d2c843a52fd48229952ee08467dba6b3f08f95618911efe0bb3",
+    "assets/story/regent_arrival/actors/iselin/walk_left_09.png": "c2e44045a34418127a838e11c3ce43779026cb4ceb7be177f69635ef72c5501d",
+    "assets/story/regent_arrival/actors/iselin/walk_left_10.png": "0a9929e74b8aa8bf26ddbddff0949d8bb08a7ef37f0dfd462d429505c8360099",
+    "assets/story/regent_arrival/actors/iselin/walk_left_11.png": "8fe125cbba850e264c0c6e896c23414a66c2a3d3463e265f6f74ccd09d845e42",
+    "assets/story/regent_arrival/actors/iselin/walk_left_12.png": "d1b982b5bc05b6511cd45c8c54b116765615dfe29099e308f6df90014575615e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_13.png": "15564820b4b964b139c9010df10fb1567ec9c85b15f648e86f657d5d339b32ce",
+    "assets/story/regent_arrival/actors/iselin/walk_left_14.png": "2b44f79784f059eb89f21355bc94c3a51df8d4e6a17a07d1d8587a3c4ca4ba36",
+    "assets/story/regent_arrival/actors/iselin/walk_left_15.png": "ac9ff63ea522ee591ba10fb86e6061021a8e1f36b2fee4c7f057efa8d09d3fd4",
+    "assets/story/regent_arrival/actors/iselin/walk_back_00.png": "794dd354b02855e321ed177e26022fea6d15b5be1878f0f2c1c4f84d60f8b95e",
+    "assets/story/regent_arrival/actors/iselin/walk_back_01.png": "40b1975f2f07123613912f0b6362fac4d9e74946ce94eae0faf683ce9d86fef5",
+    "assets/story/regent_arrival/actors/iselin/walk_back_02.png": "d8875aa9e1ba59c028b4f64eab87e023601053a5ca033c210590d9cfbaca0eb8",
+    "assets/story/regent_arrival/actors/iselin/walk_back_03.png": "85c0cebe7a80c33591740397537fdd75a1457a6b864663ae0ac3a205979dba9f",
+    "assets/story/regent_arrival/actors/iselin/walk_back_04.png": "b3ddc2fe621e13a1315f37dad403c6f27b7a60832aa8b607842bf1c1356d328a",
+    "assets/story/regent_arrival/actors/iselin/walk_back_05.png": "e254f5477bd35f1d57c5be0dc4a6e1c3a87311b59a59439c142ba087d49fa05b",
+    "assets/story/regent_arrival/actors/iselin/walk_back_06.png": "a4e604577134db8177acff614ddbe7ea42cfa53c08068a61c4248b6324b0e5db",
+    "assets/story/regent_arrival/actors/iselin/walk_back_07.png": "7d776b865b356ac11f7ccdd8e523a847c4ea8713a2a833d784b1dab3760f738e",
+    "assets/story/regent_arrival/actors/iselin/walk_back_08.png": "ad12d565220ff57723cea1952d497bcda628d1ef1566ef1b0c89c9c8d106da07",
+    "assets/story/regent_arrival/actors/iselin/walk_back_09.png": "c050f347c71bfb2283b2bcf0a7b9b984c4f2e87465fb1004c0a5a018c6570d2d",
+    "assets/story/regent_arrival/actors/iselin/walk_back_10.png": "80022d1845e687507b976ff7a1be48a4dfa1d25eace0fbc3112d31acbdf2146c",
+    "assets/story/regent_arrival/actors/iselin/walk_back_11.png": "492866aa1b0534a82afd534a64ae9189034884c925956f0ccaa5891106a6da0e",
+    "assets/story/regent_arrival/actors/iselin/walk_back_12.png": "44d317b377c756661029a814e3794393c979f9f3258f450bcc55cce4fb987c37",
+    "assets/story/regent_arrival/actors/iselin/walk_back_13.png": "1ca12d0f80f78259aebfc73bd7fad67a3f42f23b19503dcc84c08b27b6d28b08",
+    "assets/story/regent_arrival/actors/iselin/walk_back_14.png": "6e2ede71874cd0de6583ea501373fe83925c76d2a4ffac8061d5553af954898e",
+    "assets/story/regent_arrival/actors/iselin/walk_back_15.png": "19e24020c00f8eda4b5ed1c7dd833fed5642bdfb3af83facb81f47f1b29b8bde",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_00.png": "c2d0f859d71e437835c082e0425c364ad1857482a304c1fca96258e7f315163a",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_01.png": "2c91176694d66a50f4d7101ca2813ab5c6d8e8fba81dc7908e26737f534ceea1",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_02.png": "92c785741ca9e6c01bafe80c3bade9b47083a44b7b0c33670cdb3347851feda4",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_03.png": "7df7937cfe802778fa1f664d272a2c934c5f3b66507e46a19f129cd4f5a96242",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_04.png": "bd3acc40cb2033a51d689a9ca8a357ef416cda40842f2ec9bc66fff4eab10cbb",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_05.png": "86ef4fa84f99c4e06ca0dd7f3078f946afe0cb29bef15699bff244242f366286",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_06.png": "be55f524d55f61e74c59baba604f3dadeab7d848f66f0789ebfc73d73f75aaaa",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_07.png": "882e4edd1b78af798672d713fa8a07bcdac0be395ca43ee489800f58f3a3cd35",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_08.png": "f05de438b240ce7328af34e2d07c42c661576dfce07c245b1501d5f11e80d711",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_09.png": "49ea881c1d533ff08fed95a76cb97937d2910aa92b57bdbe51b1c3d430eb668b",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_10.png": "e0b73b2827f64740087c6c853a3670f15ba31097864d0bf6d7a58b720d849739",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_11.png": "3808cb4e61f8744097cb60a525dab34d562bba529e145e34fa4c91c1db04749c",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_12.png": "250b120b3fa72cebda54e3b13a88100ff91ed8c88808d4fbfd7f28ad83ae74e6",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_13.png": "f61c9867838e401498619de1db15d534931eec78c815852e64f609ddff279a22",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_14.png": "82cdba212e93bd2613a9bc2f137d156b0f9181d60b92cd2d7655eb50d5250a50",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_15.png": "46a552b62c8be3a250ab5683f16f8e4ef4ea492f7f2856a68561bd058e880489",
+    "assets/story/regent_arrival/actors/iselin/listen_left.png": "4569fa3d61908f76b7f57089f2dac5d38ed2e496bfb879a67ed2b89d349ae5e0",
+    "assets/story/regent_arrival/actors/iselin/gesture_left.png": "b65c319a93aa6b3fbc1acca9bd1b78d6d0d723e5df785a40b315a5609fffb821",
+    "assets/story/regent_arrival/actors/iselin/turn_left_back.png": "27a0f442204c5f1684d380425de18af2899524a668c418cd0b86264371fcd590",
+    "assets/story/regent_arrival/actors/iselin/stand_left.png": "8d93b00a09042662f55b5f325e5236c1f628def51678e2e3b1cec9e3a26d45a5",
+    "assets/story/regent_arrival/actors/iselin/stand_right.png": "9fc3fed3c81065f0a34692db8e08f489d61b1528137fa74900cae1db514d3fb5",
+    "assets/story/regent_arrival/actors/iselin/stand_back.png": "eb2caaf533dcce683956c07f233da25787f135626366083874c76cdda2cb7ee4",
+    "assets/story/regent_arrival/actors/iselin/animation.json": "aa1e5785b7be5c7be65ce72e58d9173a20c53b44a0536b9d73103eed9db5f4fd",
+    "assets/story/regent_aerial/actors/iselin/overhead.png": "164ed3cf23955fb5d7e232757eb80af40040949ec6bf00ae487c87391cf8833b",
+    "assets/story/regent_aerial/actors/iselin/oblique.png": "013a189acb6a9c698da8e936706a6ed05b2baecdca58f8a24d9e995d055386d5",
+    "assets/story/regent_aerial/actors/iselin/animation.json": "fd3426c29ee164d6fd04bf822ba83888dd3da5ba1215bf7c8c7df54faebb388e",
+    "assets/story/regent/poses/iselin_seated_42x72.png": "9f3363544b8f0f6125de281a7741461ea256309043815c027c8ec28baa952edc",
+    "assets/story/regent/poses/iselin_seated.png": "b8912b0f2d3c48664d9c0d9b26e2f198d4efce9998d6bdec1b10dbba2ef0582c"
+  }
+}

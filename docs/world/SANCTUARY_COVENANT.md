@@ -8,10 +8,10 @@ terms remain in place.
 **Implementation:** The Sanctuary was deliberately built near a natural aether
 confluence to guide the region's dead back to the planet and remember them.
 Mining would disrupt this critical societal responsibility. During MQ03, a
-survivor's report of a cave attack exposes the Crown crew Aldric secretly
+survivor's report of a cave attack exposes the Crown crew Iselin secretly
 sent ahead to establish authority and begin the mining operation. Lucan was
 unaware of the deployment. The new route reaches the
-[detailed reserve](../SANCTUARY_RESERVE.md) with Aldric, Lucan, the page, Caelan
+[detailed reserve](../SANCTUARY_RESERVE.md) with Iselin, Lucan, the page, Caelan
 and Mira. The [arrival scene](../SANCTUARY_ARRIVAL.md) and cave miniboss are
 implemented; the missing worker's rescue payoff and final MQ03 resolution
 remain later story work.
@@ -39,10 +39,10 @@ the sanctuary buildings, a wooded hill and buried foundations extending beyond
 the visible walls. Protection applies to the ground beneath the reserve as
 well as its surface.
 
-Aldric's proposed stone seam lies inside that boundary, although the proposed
+Iselin's proposed stone seam lies inside that boundary, although the proposed
 work is clear of the standing walls. Neither party disputes that location.
 Serene opposes disrupting the caretakers' duty to guide the region's dead.
-Aldric has secretly deployed men to establish Crown control and prepare mining
+Iselin has secretly deployed men to establish Crown control and prepare mining
 before securing her agreement. The exposed deployment makes the conflict a
 breach of trust as well as a dispute over the use of protected land.
 
@@ -126,7 +126,7 @@ without being allowed to investigate it.
 
 The chapter-ending formal authorization remains a later escalation. This
 guide does not invent an emergency override clause, establish the full permit
-procedure or settle every legal question about that authorization. Aldric's
+procedure or settle every legal question about that authorization. Iselin's
 secret advance deployment is not a new permission granted by Serene. The new
 MQ03 route remains active at Sanctuary arrival, before its later resolution.
 
@@ -159,11 +159,11 @@ every shallow cut is dangerous, explain the discharge's mechanism or prove
 that a new quarry would cause a catastrophe. No curse or divine punishment is
 confirmed. The exact extent of the buried works remains uncertain.
 
-## The recent road damage and Aldric's request
+## The recent road damage and Iselin's request
 
 Before the game's opening, an extraordinarily powerful lightning surge
 destroyed **Eldenmere's road south to the next town**. A handful of similar
-events have occurred elsewhere in the region. Aldric has already visited a
+events have occurred elsewhere in the region. Iselin has already visited a
 couple of affected communities and helped with relief.
 
 This is early foreshadowing of disturbed aether flow. It is not an established
@@ -171,8 +171,8 @@ widespread cataclysm, and the people in Chapter 1 do not know its deeper
 mechanism. The old passage injury is not another newly occurring road strike.
 
 Repair work across the affected communities has strained available stone,
-transport and repair resources. Aldric seeks the nearer seam because its
-material could serve several towns. His request is a response to existing
+transport and repair resources. Iselin seeks the nearer seam because its
+material could serve several towns. Her request is a response to existing
 damage and relief needs, rather than expansion pursued solely for prestige.
 
 More distant stone remains a real alternative. Its longer haul uses carts,
@@ -181,7 +181,7 @@ every other quarry or route to be unusable.
 
 ## The secret deployment and emergency
 
-Before the meal's negotiation, Aldric sent a crew into the reserve behind
+Before the meal's negotiation, Iselin sent a crew into the reserve behind
 Serene's back to establish Crown authority and begin preparing the mining
 operation. This is an organized advance deployment, not the joint inspection
 proposed in the superseded MQ03 ending. The exact extent of work completed
@@ -189,19 +189,19 @@ before the attack remains for the arrival scene.
 
 A survivor reaches Serene's home in panic after something from within the
 cave attacks the crew. His report reveals whose men were sent and when.
-Serene recognizes that Aldric has already acted while presenting himself as
-seeking her agreement. Lucan was unaware of the secrecy and is taken aback;
+Serene recognizes that Iselin has already acted while presenting herself as
+seeking Serene’s agreement. Lucan was unaware of the secrecy and is taken aback;
 his immediate response turns to the people still at risk. The page's prior
 knowledge has not been assigned.
 
-Aldric's relief work and material shortages remain real. They do not excuse
-his concealment or make Serene's role merely a ceremonial obstacle. His
+Iselin's relief work and material shortages remain real. They do not excuse
+her concealment or make Serene's role merely a ceremonial obstacle. Her
 assertion of Crown authority does not settle the covenant's legal questions
 or create a permission Serene has granted.
 
 Serene cares for the injured survivor while Tomas and the driver help.
 Caelan volunteers, collects Mira at her workshop and travels to the Sanctuary
-with Mira, Aldric, Lucan and the page. Arrival records the next MQ03 checkpoint;
+with Mira, Iselin, Lucan and the page. Arrival records the next MQ03 checkpoint;
 the cutscene, rescue, miniboss and final resolution remain later work. The
 former immediate private-aftermath completion and lantern invitation no longer
 finish the new route.
@@ -210,11 +210,11 @@ finish the new route.
 
 The Sanctuary's role in guiding the dead is established. The workings of the
 confluence, the full buried layout and the cause of the cave attack are not.
-Growling began after the bridge incident; Aldric's crew later entered the
+Growling began after the bridge incident; Iselin's crew later entered the
 reserve and was attacked. This chronology does not establish that mining
 provoked the creature or that the bridge incident created it.
 
-Serene's care for the survivor is emergency aid, not acceptance of Aldric's
+Serene's care for the survivor is emergency aid, not acceptance of Iselin's
 operation. Her duties toward the dead and the living both remain active.
 Earlier proposals to contribute courtyard stone, crew meals and a joint
 inspection are superseded as MQ03's negotiated outcome; they must not be

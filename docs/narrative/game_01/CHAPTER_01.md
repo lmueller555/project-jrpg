@@ -27,10 +27,10 @@ shot follows their departure, then stays with an anonymous bloody helmet on a
 sword embedded in stone. This deliberately hints at an unidentified death later
 in the journey; it does not assign that loss to Tomas or any named character.
 
-- **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, Serene’s home, Elden Vale Sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
+- **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Iselin, Liam, Serene’s home, Elden Vale Sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
 - **The Festival of Light** is the emotional high point of the opening.
-- **Aldric receives a credible, sympathetic introduction**, followed by the exposure of his secret Crown crew in MQ03. His real relief work and abuse of trust both shape the player's view of him.
+- **Iselin receives a credible, sympathetic introduction**, followed by the exposure of her secret Crown crew in MQ03. Her real relief work and abuse of trust both shape the player's view of her.
 - **Chapter end:** Serene learns that excavation at Elden Vale Sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
 - **Act I proceeds through three chapters:** Chapter 1 *Life in Eldenmere*; Chapter 2 *Beneath the Peace*; Chapter 3 *The Shattered Oath*.
 
@@ -48,7 +48,7 @@ dialogue now implement that approved opening context.
 
 Before the opening morning, an extraordinary lightning surge destroyed the
 road to the next town south of Eldenmere. Only a handful of comparable events
-have occurred elsewhere. Aldric has already helped a couple of those affected
+have occurred elsewhere. Iselin has already helped a couple of those affected
 communities, and their combined repair needs are straining stone supplies.
 His arranged visit brings that relief effort to Eldenmere and a request to
 discuss the protected ridge seam with Serene. The festival gives the visit a
@@ -60,11 +60,11 @@ guide the region's dead back to the planet and remember them. Mining would
 disrupt the keepers' critical societal responsibility. Caretakers have heard
 growling inside the cave since the bridge incident.
 
-Aldric secretly sent a Crown crew to establish control and prepare mining
+Iselin secretly sent a Crown crew to establish control and prepare mining
 before seeking Serene's agreement. A survivor interrupts the post-meal
 conversation after something from the cave attacks that crew, exposing
-Aldric's bad faith. Lucan did not know about the deployment and is taken aback.
-Caelan collects Mira and travels with her, Aldric, Lucan and the page to the
+Iselin's bad faith. Lucan did not know about the deployment and is taken aback.
+Caelan collects Mira and travels with her, Iselin, Lucan and the page to the
 Sanctuary. The new MQ03 route holds at arrival for a later cutscene; the
 miniboss and the end of the quest remain to be designed. These developments
 do not move the Chapter 3 excavation catastrophe into the opening chapter.
@@ -90,7 +90,7 @@ do not move the Chapter 3 excavation catastrophe into the opening chapter.
 **Current staging:** Mira checks her worn arm rig before the riverbank outing. The Ridgeback Tusker teaches Caelan Guard, failed Aqua Edge and Aether Edge; Mira then fights using her own power-gated techniques. Victory leads into the character exchange, bypass, small spell and cooperative repair. Older completed routes retain their quest progress.
 
 **Implemented handoff:** After MQ02's acknowledged homecoming and cup-setting,
-[Aldric's arrival](../../REGENT_ARRIVAL.md) shows his expected relief visit before
+[Iselin's arrival](../../REGENT_ARRIVAL.md) shows her expected relief visit before
 Caelan meets the visitors in MQ03. The cinematic preserves the mill repair and
 rewards and does not itself accept MQ03.
 
@@ -98,14 +98,14 @@ rewards and does not itself accept MQ03.
 
 ### MQ03 — The Regent's Road
 
-**Premise:** Aldric reaches Eldenmere during a relief journey after unusual
+**Premise:** Iselin reaches Eldenmere during a relief journey after unusual
 lightning has damaged several communities. Repair demand is real, but he has
 already secretly sent a Crown crew to establish authority over the Sanctuary
 and prepare mining. Caelan welcomes the visitors and accompanies them to a meal
 at Serene's home. The discussion of the Sanctuary's duty to guide the region's
 dead is interrupted by a survivor whose crew was attacked from the cave.
 
-**Purpose:** Build familiarity with Aldric and Lucan before revealing Aldric's
+**Purpose:** Build familiarity with Iselin and Lucan before revealing Iselin's
 breach of trust. Make Serene's protection of the Sanctuary an active societal
 responsibility. Give Caelan agency in the emergency and bring Mira into an
 outing that uses her existing engineering skills and equipment.
@@ -115,7 +115,7 @@ the greeting and meal, then introduces the growling report, survivor's entrance,
 exposure of the secret deployment, departure, Mira's rejoining and ordinary
 travel to the Sanctuary. Lucan is surprised by the secrecy and turns to the
 people still in danger. Serene remains to care for the survivor with Tomas and
-the driver helping. The five travelers are Aldric, Lucan, the page, Caelan and
+the driver helping. The five travelers are Iselin, Lucan, the page, Caelan and
 Mira. The page occupies the former clerk role; no prior complicity is assigned.
 
 The new route ends at a durable arrival checkpoint with MQ03 active. Its
@@ -124,7 +124,7 @@ private-aftermath completion and immediate MQ04 invitation are superseded for
 new journeys. Existing completed MQ03/MQ04 journeys retain their progress
 without inventing an attack report, new trip or party membership.
 
-**Emotional result:** Caelan has reason to value Aldric's achievements and to
+**Emotional result:** Caelan has reason to value Iselin's achievements and to
 recognize his deception. Lucan's independent reaction begins separating his
 judgment from his employer's; traveling together does not recruit him into
 the combat party yet.
@@ -190,8 +190,8 @@ Her precise knowledge is limited: she does not know the cosmic catastrophe, the 
 - **Serene:** Loving guardian and community caretaker; sincere faith and a plausible reason for preserving limited warnings.
 - **Mira:** Childhood friend and mechanically curious engineer; believes responsible development can improve lives.
 - **Tomas:** **14 years old** at the game opening; Caelan's younger biological brother, restless and inventive; an autonomous person, not simply a future tragedy.
-- **Aldric:** Respected ruler who has tangibly helped the region; MQ03 exposes his deliberate secret deployment and deceptive negotiation. His achievements do not erase that choice, and the choice does not make his earlier relief work fictitious.
-- **Lucan:** Aldric's personal guard, initially unaware of the advance crew. He is taken aback by the secrecy and responds to the immediate rescue needs without joining the combat roster yet.
+- **Iselin:** Respected ruler who has tangibly helped the region; MQ03 exposes her deliberate secret deployment and deceptive negotiation. Her achievements do not erase that choice, and the choice does not make her earlier relief work fictitious.
+- **Lucan:** Iselin's personal guard, initially unaware of the advance crew. He is taken aback by the secrecy and responds to the immediate rescue needs without joining the combat roster yet.
 
 Caelan's age of **18** and Tomas's age of **14** are approved canon; see
 [approved character facts](CHARACTERS.md). Other ages and biography details
@@ -212,7 +212,7 @@ and their introduction windows; their exact recruitment quests remain open.
 
 ## Exit conditions and continuity checks
 
-Players should understand why Caelen loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelen without becoming a caricature, why Tomas is loved, and why Aldric is respected. The conflict over sanctuary excavation should be understandable, but its true dangers and ancient origins remain concealed.
+Players should understand why Caelen loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelen without becoming a caricature, why Tomas is loved, and why Iselin is respected. The conflict over sanctuary excavation should be understandable, but its true dangers and ancient origins remain concealed.
 
 Mechanisms and magicks must obey conservation of aether. Planetary-return teaching does not reveal hidden ancient history or settle personal consciousness after death. The Aethersphere's protective purpose and ancient origin, and the four surviving Ancients, remain hidden. Preserve the separate regional ending promised by the saga documents.
 

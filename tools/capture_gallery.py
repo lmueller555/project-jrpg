@@ -78,7 +78,7 @@ def acknowledge(game):
     if child.social.choosing:
         child.draw()
         click(game, child.social.choice_rects[0].center)
-    elif child.social.active or (child.regent_arrival.active and child.regent_arrival.dialogue is not None):
+    elif child.social.active or (child.regent_arrival.active and child.regent_arrival.dialogue is not None) or (child.sanctuary_arrival.active and child.sanctuary_arrival.caption_layout is not None):
         key(game, pygame.K_SPACE)
 
 
@@ -145,6 +145,7 @@ def thumbnail_ready(identifier, g, seconds):
     if identifier == 'halden_arrival':return g.opening_conclusion.settled and g.social.active
     if identifier == 'millrace_threat':return g.mill_quest.encounter_cutscene_phase == 'conversation' and g.mill_quest._encounter_elapsed >= .2
     if identifier.startswith('mill_'):return g.mill_quest.action is not None and g.mill_quest.action_time >= .75
+    if identifier == 'sanctuary_arrival':return g.sanctuary_arrival.active and g.sanctuary_arrival.beat==3 and g.sanctuary_arrival.caption_layout is not None
     if identifier == 'regent_arrival':return g.regent_arrival.shot == 'aerial_region' and g.regent_arrival.phase_time >= 4.
     wanted = {'lantern_frame':'assemble', 'lantern_collect':'rest_pickup',
               'lantern_homecoming':'rest_place', 'lantern_paper_practice':'rest_draft',
@@ -161,7 +162,9 @@ def crop_rect(identifier, game):
     protagonist = getattr(game.player, 'story_position', None) or game.player.position
     center = pygame.Vector2(protagonist)-camera+(0,-20)
     width = 240
-    if identifier == 'checkpoint_borrowed_seat':
+    if identifier == 'sanctuary_arrival' and game.sanctuary_arrival.actors:
+        center=(game.sanctuary_arrival.actors['iselin'].position+game.sanctuary_arrival.actors['caretaker'].position)/2-camera+(0,-18)
+    elif identifier == 'checkpoint_borrowed_seat':
         center = pygame.Vector2(365,-2182)-camera
         width = 240
     elif identifier == 'sheep_basket_visit':
@@ -212,7 +215,9 @@ def capture_thumbnails(identifiers=None):
             g = session.game
             if frame % 3 == 0:
                 g.draw()
-                fallback = (g.canvas.copy(), phase(g), crop_rect(entry.id,g), frame)
+                snapshot=pygame.Surface(g.canvas.get_size());snapshot.blit(g.canvas,(0,0))
+                g.canvas.present_detail(snapshot)
+                fallback = (snapshot, phase(g), crop_rect(entry.id,g), frame)
                 if thumbnail_ready(entry.id, g, (frame+1)/FPS):
                     selected = fallback;break
         if selected is None:

@@ -54,27 +54,27 @@ class LucanArrivalContinuityTests(unittest.TestCase):
         scene=json.loads((ROOT/'assets/story/regent_arrival/scene.json').read_text())
         self.assertIn('lucan',scene['actors'])
         for phase in scene['phases']:
-            if any(actor['id']=='aldric' for actor in phase['actors']):
+            if any(actor['id']=='iselin' for actor in phase['actors']):
                 with self.subTest(shot=phase['id']):
                     self.assertEqual(sum(actor['id']=='lucan' for actor in phase['actors']),1)
         # The same guard and fixed offsets persist through each walking cut.
         for shot in ('gate_approach','gate_greeting','town_approach','town_parking'):
             phase=next(p for p in scene['phases'] if p['id']==shot)
-            aldric=next(a for a in phase['actors'] if a['id']=='aldric')
+            iselin=next(a for a in phase['actors'] if a['id']=='iselin')
             lucan=next(a for a in phase['actors'] if a['id']=='lucan')
             for key in ('position','to'):
-                if key in aldric:
-                    self.assertEqual([b-a for a,b in zip(aldric[key],lucan[key])],[30,-24])
+                if key in iselin:
+                    self.assertEqual([b-a for a,b in zip(iselin[key],lucan[key])],[30,-24])
 
     def test_gate_admission_uses_same_road_depth_and_back_facing(self):
         scene=json.loads((ROOT/'assets/story/regent_arrival/scene.json').read_text())
         phase=next(p for p in scene['phases'] if p['id']=='gate_admission')
         lucan=next(a for a in phase['actors'] if a['id']=='lucan')
-        aldric=next(a for a in phase['actors'] if a['id']=='aldric')
-        self.assertEqual(lucan['route'],aldric['route'])
-        self.assertEqual(lucan['route_end']-lucan['route_start'],aldric['route_end']-aldric['route_start'])
-        self.assertEqual(lucan['move_start'],aldric['move_start'])
-        self.assertEqual(lucan['move_seconds'],aldric['move_seconds'])
+        iselin=next(a for a in phase['actors'] if a['id']=='iselin')
+        self.assertEqual(lucan['route'],iselin['route'])
+        self.assertEqual(lucan['route_end']-lucan['route_start'],iselin['route_end']-iselin['route_start'])
+        self.assertEqual(lucan['move_start'],iselin['move_start'])
+        self.assertEqual(lucan['move_seconds'],iselin['move_seconds'])
         self.assertEqual(lucan['after_pose'],'stand_back')
         self.assertEqual(lucan['route_poses'][-1][1],'walk_back')
 
@@ -83,11 +83,11 @@ class LucanArrivalContinuityTests(unittest.TestCase):
         for time in np.linspace(21,26.4,20):
             snapshot=aerial.sample(float(time))
             lucan=snapshot['projected_actors']['lucan']
-            aldric=snapshot['projected_actors']['aldric']
+            iselin=snapshot['projected_actors']['iselin']
             clerk=snapshot['projected_actors']['clerk']
             self.assertTrue(lucan['moving'])
             self.assertLess(float(np.linalg.norm(ROAD_POINTS-np.asarray(lucan['world_xy']),axis=1).min()),.3)
-            self.assertGreater(aldric['road_distance'],lucan['road_distance'])
+            self.assertGreater(iselin['road_distance'],lucan['road_distance'])
             self.assertGreater(lucan['road_distance'],clerk['road_distance'])
         final=aerial.sample(31)
         self.assertEqual(final['projected_actors']['lucan']['native_xy'],list(GROUND_PARTY['lucan']))

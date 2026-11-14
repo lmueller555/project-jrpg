@@ -1,14 +1,14 @@
 {
   "version": 1,
   "exporter": "tools/build_regent_aerial_actors.py",
-  "exporter_sha256": "10f8a05939490e9a348b1301b82b68eea1584062a7577b683842a2bacafcb365",
+  "exporter_sha256": "ec26e4d285e1cf9a5225cc96a5425a194af15680e0425377ba767753af8ff4a4",
   "prompts_sha256": "f899ddf3f87b22018b2eb931d137ebf165aca19984f40b6a9215b081bebdeeba",
   "sources": {
     "bird_generated.png": "431f1a911380f46ecb53e7a6a84854a710686378d8368bb5e8790cd81a0b8794",
     "convoy_generated.png": "1bdf89bbf171a556665ba3f55ab5c10e3e6de2636d083927c1fea392a9e61df3"
   },
   "native_clerk_sources": {
-    "assets/source/cinematics/regent_arrival/actors/clerk_walk/clerk_walk.json": "f3290ce6b31a004794fbfdc6f543a1636bc0c478affc243eab96cf824c9dc2a9",
+    "assets/source/cinematics/regent_arrival/actors/clerk_walk/clerk_walk.json": "a7e795ef99ef1545ecfa63942e1049ce417ba089e8c54a5890497cf59ab5b010",
     "assets/source/cinematics/regent_arrival/actors/clerk_walk/aerial_overhead.png": "3eb7c7954a10ea4eac3884bf95e253853d0e973f52a3af78d981caf02bf0eb0b",
     "assets/source/cinematics/regent_arrival/actors/clerk_walk/aerial_oblique.png": "39fa7eaa8133ad7a1e66a87fb434fcf3934905ba9128a78cd1a0a1d54e78dbcc"
   },
@@ -117,19 +117,6 @@
       ],
       "scale": 0.15267176
     },
-    "aldric/overhead.png": {
-      "source_bounds": [
-        204,
-        335,
-        114,
-        160
-      ],
-      "source_ground_anchor": [
-        261,
-        495
-      ],
-      "scale": 0.175
-    },
     "guard/overhead.png": {
       "source_bounds": [
         684,
@@ -155,19 +142,6 @@
         570
       ],
       "scale": 0.21505376
-    },
-    "aldric/oblique.png": {
-      "source_bounds": [
-        205,
-        683,
-        116,
-        255
-      ],
-      "source_ground_anchor": [
-        263,
-        938
-      ],
-      "scale": 0.18
     },
     "guard/oblique.png": {
       "source_bounds": [
@@ -224,13 +198,10 @@
     "bird/bank_left.png": "5794ba5415c86c39869f4db1a76312085a0854c8b9c873c9f1438368d365f7ce",
     "bird/bank_right.png": "8e4a27c59de2ab0efec8d7c223fb037cb3016524e9b1c2e96dfc790cfae73cd1",
     "bird/animation.json": "1317c73e184e26dfc40064cf00efe10034b10878d7db6eeb1cd6e5fbf0c498c7",
-    "aldric/overhead.png": "b8ee65a5f62fab2dd398268b748217a2948abc92c4245e83e4645332f11fcf3a",
     "guard/overhead.png": "f62c2698c72d561da7e21d84ace13d56988224cc5a191cd4e6d99cf7f50f1361",
     "caravan/overhead.png": "8fb6fc329061aec4b401c1847f95dd24aa385e275cf4b342202bfcabd2921a81",
-    "aldric/oblique.png": "ce2057355b9cb2e46334960d2bd1b6b4bdfd091bb624fbf13ee1a4fa5c05a65f",
     "guard/oblique.png": "4d2d5591e076187c6517bb4183919b019a6dc2da119966c13903c7dceadce7c0",
     "caravan/oblique.png": "9c267ec44eb9c134ff1545ce8455fb2d9e04986e56819ceb460d9eaedba5beb7",
-    "aldric/animation.json": "75ba10fd3079c09869c1f8dc5e7beb3b68f5afc2ae8b5b433345ae97b5c59c2c",
     "guard/animation.json": "75ba10fd3079c09869c1f8dc5e7beb3b68f5afc2ae8b5b433345ae97b5c59c2c",
     "caravan/animation.json": "7f14c0d11101f956c08df62385bfa16b21924f0be418db4ce09e0db60b5a9636",
     "clerk/overhead.png": "3eb7c7954a10ea4eac3884bf95e253853d0e973f52a3af78d981caf02bf0eb0b",
@@ -240,7 +211,10 @@
     "lucan/oblique.png": "5b49dbb3292e5591d807dc9e08172a5de63b24b1a291649fc964f2fc8317979b",
     "lucan/animation.json": "199f4eb8885e83411630d8f7ebd24099eea2731e064b3d385ab806a5b4be74ed",
     "lucan/provenance.json": "94f8459d2d96e98c88a9b34af08bdbea30979a298f3ee733ff79a1003944487e",
-    "manifest.json": "30ca4e9e1fc445615cfa622eeccce7a17492634b02ca4ea6301e4b421db08e95"
+    "iselin/overhead.png": "164ed3cf23955fb5d7e232757eb80af40040949ec6bf00ae487c87391cf8833b",
+    "iselin/oblique.png": "013a189acb6a9c698da8e936706a6ed05b2baecdca58f8a24d9e995d055386d5",
+    "iselin/animation.json": "fd3426c29ee164d6fd04bf822ba83888dd3da5ba1215bf7c8c7df54faebb388e",
+    "manifest.json": "718d592acddec9554a032827252b82adb9ef386c8230d760e0de1825d55d652d"
   },
   "notes": [
     "Original generations and exact prompts retained without repainting.",

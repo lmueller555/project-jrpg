@@ -222,7 +222,7 @@ See the [runtime capture and testing notes](reviews/opening_conclusion/README.md
 [approved regional story](narrative/game_01/REGIONAL_SURGES.md),
 [covenant guide](world/SANCTUARY_COVENANT.md) and
 [revised MQ03 script](narrative/game_01/CH01_MQ03.md). After MQ02's acknowledged
-report and rewards, the [arrival cinematic](REGENT_ARRIVAL.md) introduces Aldric
+report and rewards, the [arrival cinematic](REGENT_ARRIVAL.md) introduces Iselin
 at the southern land gate, shows him hearing local accounts of the destroyed
 crossing, and gives Serene a private moment inside the sanctuary. The caravan
 then waits at its registered town approach. Completing or skipping the scene
@@ -230,16 +230,16 @@ returns control to Caelan without accepting MQ03. Its saved arrival checkpoint
 prevents both replay after completion and duplicate MQ02 rewards.
 
 After the completed mill quest, MQ03 becomes available from Serene in the
-home dining room. Caelan meets Aldric, Lucan, the page and the driver by the
+home dining room. Caelan meets Iselin, Lucan, the page and the driver by the
 brook and guides them directly to the meal. The former Venn cart dispute is
 removed. Serene explains the Sanctuary's duty to guide the region's dead and
 the growling heard since the bridge incident.
 
 An injured Crown worker enters through the actual house doors and reports an
-attack. The crew's presence exposes Aldric's secret deployment before the
+attack. The crew's presence exposes Iselin's secret deployment before the
 negotiation. Lucan explicitly did not know. Serene, Tomas and the driver remain
 to help the survivor; Caelan collects Mira at her workshop, then travels with
-her, Aldric, Lucan and the page through the existing overworld contacts.
+her, Iselin, Lucan and the page through the existing overworld contacts.
 
 Version-three quest checkpoints separate acknowledged discussion, the physical
 interruption, attack report, departure, Mira's rejoining and Sanctuary travel.
@@ -251,9 +251,9 @@ returns control at the cave apron. It does not grant rewards, turn in MQ03 or
 unlock MQ04.
 
 Mira's existing resources and character state persist through the required
-`mq03_sanctuary` party event. Aldric, Lucan and the page are story escorts on
+`mq03_sanctuary` party event. Iselin, Lucan and the page are story escorts on
 the road. Once the arrival rescue plan is acknowledged, Lucan becomes the
-temporary third combat member while Aldric and the page stay with the workers.
+temporary third combat member while Iselin and the page stay with the workers.
 New Game releases borrowed actors.
 Completed version-one/two MQ03 journeys remain complete and retain later
 lantern progress; an unfinished old discussion resumes before the new facts

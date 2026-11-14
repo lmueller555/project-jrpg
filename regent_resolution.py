@@ -5,11 +5,11 @@ from pathlib import Path
 
 STAGES=('resolution_report','resolution_return','resolution_reunion','resolution_reckoning','resolution_relief','resolution_companions','resolution_family')
 TEXT={
-'resolution_report':'Join Lucan and Aldric at Elden Vale Sanctuary.',
+'resolution_report':'Join Lucan and Iselin at Elden Vale Sanctuary.',
 'resolution_return':'Return to Serene’s dining room in Eldenmere.',
 'resolution_reunion':'Speak with Serene in the dining room at home.',
-'resolution_reckoning':'Hear Serene and Aldric’s account in the dining room.',
-'resolution_relief':'Finish the relief arrangements with Serene and Aldric.',
+'resolution_reckoning':'Hear Serene and Iselin’s account in the dining room.',
+'resolution_relief':'Finish the relief arrangements with Serene and Iselin.',
 'resolution_companions':'Speak with Mira before she returns to her workshop.',
 'resolution_family':'Speak privately with Serene in the dining room.'}
 
@@ -47,7 +47,7 @@ class RegentResolution:
                 self.commit('resolution_reunion')
     def target(self):
         c=self.owner;g=self.game
-        if c.stage=='resolution_report':actor=c.aldric
+        if c.stage=='resolution_report':actor=c.iselin
         elif c.stage=='resolution_companions':actor=g.mill_quest.mira
         else:actor=c.serene
         return actor if c._world(actor) is g.world and c._near(actor.position,72) else None

@@ -125,7 +125,7 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertEqual(self.g.quests.status(REGENT_QUEST),'available')
         self.assertEqual(saved['regent_quest']['stage'],'idle')
         self.assertTrue(RegentArrival.valid_journey(saved))
-        self.assertNotIn(self.g.regent_quest.aldric,self.g.town.npcs)
+        self.assertNotIn(self.g.regent_quest.iselin,self.g.town.npcs)
         self.assertFalse(self.g.regent_arrival.request())
 
     def test_skip_preserves_player_and_repair_and_reveals_caravan_without_accepting(self):
@@ -140,8 +140,8 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertTrue(self.g.mill_quest.restored)
         self.assertEqual(self.g.quests.status(REGENT_QUEST),'available')
         self.assertEqual(self.g.regent_quest.stage,'idle')
-        self.assertIn(self.g.regent_quest.aldric,self.g.town.npcs)
-        self.assertLess(self.g.regent_quest.aldric.position.distance_to(self.g.regent_quest.points['aldric_arrival']),45)
+        self.assertIn(self.g.regent_quest.iselin,self.g.town.npcs)
+        self.assertLess(self.g.regent_quest.iselin.position.distance_to(self.g.regent_quest.points['iselin_arrival']),45)
         self.assertEqual(json.loads(self.path.read_text())['regent_arrival']['state'],'seen')
         self.assertFalse(scene.finish('skipped'))
 
@@ -207,7 +207,7 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertEqual(loaded.regent_arrival.state,'seen')
         self.assertFalse(loaded.regent_arrival.active)
         self.assertEqual(loaded.quests.status(REGENT_QUEST),'available')
-        self.assertIn(loaded.regent_quest.aldric,loaded.town.npcs)
+        self.assertIn(loaded.regent_quest.iselin,loaded.town.npcs)
 
     def test_new_game_resets_pending_and_does_not_reuse_receipt(self):
         self.start()
@@ -289,7 +289,7 @@ class RegentArrivalTests(unittest.TestCase):
             self.g.update(.1,(0,0),False)
         self.assertFalse(scene.active)
         self.assertEqual(observed,[p['id'] for p in scene.data['phases']])
-        self.assertTrue({'aldric','guard','local','clerk','serene','tomas'}<=speakers)
+        self.assertTrue({'iselin','guard','local','clerk','serene','tomas'}<=speakers)
         self.assertEqual(scene.finished_reason,'finished')
         self.assertEqual(self.g.music.desired_track,'eldenmere')
         self.assertEqual(self.g.quests.status(REGENT_QUEST),'available')

@@ -242,7 +242,7 @@ class Capture:
             assert quest.reported_to_halden and quest.cups_placed
             assert game.world.data['id'] == 'sanctuary_dining'
             game.update(.1, (0, 0), False)
-            if game.regent_arrival.active:self.still('aldric_arrival.png')
+            if game.regent_arrival.active:self.still('iselin_arrival.png')
             gift_frames = save_animation(self.output/'gift_preview.gif', self.frames['gift'], 150)
             water_frames = save_animation(self.output/'water_focus.gif', self.frames['water'], 150)
             sheet = Image.new('RGB', (1440, 640))
@@ -271,7 +271,7 @@ class Capture:
                         'reported_to_halden': quest.reported_to_halden,
                         'cups_placed': quest.cups_placed,
                         'completion_scene': game.world.data['id'],
-                        'aldric_handoff': game.regent_arrival.state,
+                        'iselin_handoff': game.regent_arrival.state,
                         'battle_rewards': self.reward,
                         'receipts_before_battle': self.before_battle_receipts,
                         'receipts_after_quest': len(game.battle_rewards.to_dict()['receipts']),
@@ -287,7 +287,7 @@ class Capture:
             (self.output/'verification.json').write_text(json.dumps(metadata, indent=2)+'\n')
             print(json.dumps({'output': str(self.output), 'stills': len(self.stills),
                               'gift_frames': gift_frames, 'water_frames': water_frames,
-                              'quest_completed': True, 'aldric_handoff': metadata['aldric_handoff']}))
+                              'quest_completed': True, 'iselin_handoff': metadata['iselin_handoff']}))
         finally:
             for video in self.videos.values():video.close()
             self.driver.close()

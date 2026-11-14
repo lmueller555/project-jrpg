@@ -24,7 +24,7 @@ Serene's home in the northwest has a raised courtyard with a southern stair conn
 | Halden | [40,23,4,3] | Standard 13×10 separate interior; sack task at the entry/storehouse yard |
 | Elira | [27,37,3,3] | Approved compact 10×10 interior and lantern task near the main bridge |
 | Venn | [49,27,5,3] | Wide 16×10 separate interior, recovering child's sleeping area, nearby gate and plots |
-| Commons | [15,32,12,8] | Flexible 12×8 gathering space for daily activity, Aldric's visit and the festival |
+| Commons | [15,32,12,8] | Flexible 12×8 gathering space for daily activity, Iselin's visit and the festival |
 
 Three additional standard cottages give the village a small residential cluster. Gardens and growing plots are schematic space reservations. Props, households and crowd positions have not been invented for the unnamed homes.
 
@@ -32,7 +32,7 @@ MQ01 begins at home and visits Halden first with Tomas. Tomas returns by the upp
 
 MQ02 can visit Mira and the mill before taking the northbound maintenance path to a separate woodland map. The obstruction, encounter design and final scene staging remain open. The north exit is an available planning connection; no artificial MQ01 roadblocks are proposed. Quest progression remains a matter of dialogue/state rather than locking village routes.
 
-The south road supports Aldric's arrival at the commons. The commons, main bridge and the courtyard at Serene's home can host changing festival dressing while preserving the established circulation. Festival mechanics, exact performances, stalls and named NPC positions remain future decisions.
+The south road supports Iselin's arrival at the commons. The commons, main bridge and the courtyard at Serene's home can host changing festival dressing while preserving the established circulation. Festival mechanics, exact performances, stalls and named NPC positions remain future decisions.
 
 ## Elevation and water contract
 

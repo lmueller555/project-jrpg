@@ -147,10 +147,10 @@ class RegentActionTests(unittest.TestCase):
         self.view.reset()
         self.assertFalse(hasattr(actor,'story_sprite'))
 
-    def test_lucan_disbelief_turns_toward_aldric_and_never_commits_progress(self):
+    def test_lucan_disbelief_turns_toward_iselin_and_never_commits_progress(self):
         self.g.world=self.owner.dining
         self.owner._place(self.owner.lucan,self.owner.dining,(336,252))
-        self.owner._place(self.owner.aldric,self.owner.dining,(228,200))
+        self.owner._place(self.owner.iselin,self.owner.dining,(228,200))
         before=self.owner.lucan.position.copy()
         progress=self.g.quests.to_dict()
         self.cue('attack_report','lucan_disbelief');self.view.update(.1)

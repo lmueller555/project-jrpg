@@ -253,7 +253,7 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
         self.assertIn('mill_tutorial_preparation', driver.sources)
         self.assertTrue(game.character_abilities.starter_skills_pending())
 
-    def test_unseeded_opening_both_venn_histories_finish_spellblade_repair_and_aldric_handoff(self):
+    def test_unseeded_opening_both_venn_histories_finish_spellblade_repair_and_iselin_handoff(self):
         for method in ('magicks', 'tools'):
             with self.subTest(method=method):
                 driver = self.driver(method=method, seeded=False)

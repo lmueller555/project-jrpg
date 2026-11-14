@@ -1,0 +1,71 @@
+{
+  "records": [
+    {
+      "file": "aerial_gate.png",
+      "fixture": "Isolated Gallery; visual shot selection",
+      "shot": "aerial_gate",
+      "seconds": 4
+    },
+    {
+      "file": "gate_greeting.png",
+      "fixture": "Isolated Gallery; visual shot selection",
+      "shot": "gate_greeting",
+      "seconds": 1
+    },
+    {
+      "file": "locals.png",
+      "fixture": "Isolated Gallery; visual shot selection",
+      "shot": "locals",
+      "seconds": 1
+    },
+    {
+      "file": "relief.png",
+      "fixture": "Isolated Gallery; visual shot selection",
+      "shot": "relief",
+      "seconds": 1
+    },
+    {
+      "file": "town_parking.png",
+      "fixture": "Isolated Gallery; visual shot selection",
+      "shot": "town_parking",
+      "seconds": 2
+    },
+    {
+      "file": "resolution_report.png",
+      "fixture": "Seeded cave victory/evacuation; staged return travel; real acknowledged dialogue",
+      "stage": "resolution_report",
+      "valid_checkpoint": true
+    },
+    {
+      "file": "resolution_reunion.png",
+      "fixture": "Seeded cave victory/evacuation; staged return travel; real acknowledged dialogue",
+      "stage": "resolution_reunion",
+      "valid_checkpoint": true
+    },
+    {
+      "file": "resolution_reckoning.png",
+      "fixture": "Seeded cave victory/evacuation; staged return travel; real acknowledged dialogue",
+      "stage": "resolution_reckoning",
+      "valid_checkpoint": true
+    },
+    {
+      "file": "resolution_relief.png",
+      "fixture": "Seeded cave victory/evacuation; staged return travel; real acknowledged dialogue",
+      "stage": "resolution_relief",
+      "valid_checkpoint": true
+    },
+    {
+      "file": "resolution_companions.png",
+      "fixture": "Seeded cave victory/evacuation; staged return travel; real acknowledged dialogue",
+      "stage": "resolution_companions",
+      "valid_checkpoint": true
+    },
+    {
+      "file": "resolution_family.png",
+      "fixture": "Seeded cave victory/evacuation; staged return travel; real acknowledged dialogue",
+      "stage": "resolution_family",
+      "valid_checkpoint": true
+    }
+  ],
+  "persistence": "All sessions use temporary save/settings paths."
+}

@@ -113,12 +113,12 @@ the last currently implemented quest, does not finish the opening chapter.
 The future festival/departure sequence must grant release explicitly.
 
 Bridge repair is a separate durable fact,
-`ELDEN_VALE_WEST_BRIDGE_REPAIRED`. Restoring the mill, helping Aldric, or opening
+`ELDEN_VALE_WEST_BRIDGE_REPAIRED`. Restoring the mill, helping Iselin, or opening
 a checkpoint does not repair the bridge. No current quest grants this flag.
 The engine can reconstruct the repaired crossing from the fact for later work;
 this PR implements the destroyed state experienced during the opening.
 
-The intact land checkpoints reserve a route for Aldric's relief caravan, which
+The intact land checkpoints reserve a route for Iselin's relief caravan, which
 must not arrive across the ruined bridge. The [arrival cinematic](REGENT_ARRIVAL.md)
 uses the southern land checkpoint and preserves the broken crossing and the
 player's travel restrictions. The new ridge landmark does not open those

@@ -156,7 +156,7 @@ class Capture:
             self.driver.actor(quest.serene, 'regent_preparations')
             assert quest.stage == 'assigned'
             self.driver.travel(self.game.town.data['id'])
-            self.driver.actor(quest.aldric, 'regent_arrival')
+            self.driver.actor(quest.iselin, 'regent_arrival')
             assert quest.stage == 'escorting'
             self.walk_station('courtyard')
             self.driver.until(lambda: quest.stage == 'welcome' and quest._group_ready)
@@ -216,7 +216,7 @@ class Capture:
                 '![Actual gameplay contact sheet](scene_contact.png)\n\n'
                 'Recorded from a disposable, unseeded New Game through MQ01 and the revised '
                 'MQ02 gift, boar encounter, water repair and sanctuary ending. The arrival is '
-                'advanced to its gate greeting to verify Lucan is traveling with Aldric; Skip '
+                'advanced to its gate greeting to verify Lucan is traveling with Iselin; Skip '
                 'then returns to the same sanctuary position. The movie records the separate '
                 'MQ03 invitation, Lucan’s introduction, normal door navigation directly back '
                 'to the sanctuary, the meal, ridge discussion and private aftermath.\n\n'

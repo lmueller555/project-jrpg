@@ -254,7 +254,7 @@ or numerical tuning is assigned.
 | Serene | Cares for both brothers because their parents are missing. His personal balance of affection, trust, disagreement and desire for independence needs further development; her knowledge about the parents remains unassigned. | Established / Open |
 | Mira | Childhood friend and practical partner. Growing up without their parents gives them a mostly unspoken connection, supported by several shared childhood memories already present at the opening. He can contribute without matching her expertise. Specific memories and any romance remain unassigned. | Established / Open |
 | Lucan | Condescending instruction develops toward mutual respect; Caelan challenges his decisions and Lucan helps him become more assertive | Established companion direction |
-| Aldric | Guide and witness during the relief visit; deeper admiration, distrust and later personal conflict remain to be earned and specified | Established opening role / Open |
+| Iselin | Guide and witness during the relief visit; deeper admiration, distrust and later personal conflict remain to be earned and specified | Established opening role / Open |
 | Rhea and Edran | Eventual companion relationships remain to be developed; they do not automatically become his teachers | Open |
 
 **Approved relational range:** With Tomas he can be affectionate and occasionally

@@ -27,6 +27,7 @@ class CastActor:
         self.story_visible=True;self.party_travelling=False;self.moving=False
         self.facing='front';self.walk_ms=0.;self._pose=None;self.pose_ms=0.;self.route=[]
         self.pose_animations={};self.walk_durations={}
+        self.detail_idles={};self.detail_walks={}
         self.carrying=False;self.carry_idles={};self.carry_walks={}
         self.draw_anchor=tuple(getattr(source,'draw_anchor', (12,30)))
         if key=='caelan':self.draw_anchor=(12,30)
@@ -37,6 +38,8 @@ class CastActor:
             self.idles=dict(source.idles)
             self.walks={direction:list(frames) for direction,frames in source.walks.items()}
             self.walk_durations=dict(getattr(source,'walk_durations',{}))
+            self.detail_idles=dict(getattr(source,'detail_idles',{}))
+            self.detail_walks=dict(getattr(source,'detail_walks',{}))
             self.pose_animations={name:dict(animation) for name,animation in
                                   getattr(source,'pose_animations',{}).items()}
         else:
@@ -91,6 +94,14 @@ class CastActor:
         durations=self.walk_durations.get(self.facing,(140,)*len(frames))
         image=self._frame(frames,durations,self.walk_ms)
         return image[0] if isinstance(image,tuple) else image
+
+    def detailed_sprite(self,elapsed_ms):
+        if self.pose in self.pose_animations or self.carrying:return None
+        if self.moving:
+            if self.facing not in self.detail_walks:return None
+            frames,anchor=self.detail_walks[self.facing]
+            return self._frame(frames,self.walk_durations[self.facing],self.walk_ms),anchor
+        return self.detail_idles.get(self.facing)
 
 class SanctuaryArrival(MillGift):
     """Shared cinematic input/captions, with in-world actors and checkpoint beats."""
@@ -195,7 +206,7 @@ class SanctuaryArrival(MillGift):
         self._world=world
         self._linen=world.image('assets/characters/serene/routines/props/folded_linen.png')
         self.actors={key:CastActor(key,world,source) for key,source in
-                     (('caelan',g.player),('mira',g.mill_quest.mira),('lucan',c.lucan),('aldric',c.aldric),('page',c.clerk))}
+                     (('caelan',g.player),('mira',g.mill_quest.mira),('lucan',c.lucan),('iselin',c.iselin),('page',c.clerk))}
         for key,variant in (('caretaker','male_03'),('worker_a','male_02'),('worker_b','male_01'),('sentry','female_02'),('runner','female_01')):
             self.actors[key]=CastActor(key,world,variant=variant,art=self.art['actors'].get(key))
         performance=self.performance
@@ -435,25 +446,25 @@ class SanctuaryArrival(MillGift):
     def _settled_facings(self):
         if not self.actors:return
         a=self.actors
-        target={'caelan':'caretaker','caretaker':'caelan','aldric':'caretaker','lucan':'caretaker',
+        target={'caelan':'caretaker','caretaker':'caelan','iselin':'caretaker','lucan':'caretaker',
                 'mira':'worker_a','runner':'worker_b','sentry':(1008,359)}
         if self.beat==0:target['lucan']=(1008,359)
         if self.beat==2:
-            for key in ('caelan','caretaker','lucan','aldric'):target[key]=(1008,359)
-        if self.beat==3:target['caretaker']='aldric'
+            for key in ('caelan','caretaker','lucan','iselin'):target[key]=(1008,359)
+        if self.beat==3:target['caretaker']='iselin'
         if self.beat in (4,5):
-            target.update(caelan='lucan',mira='lucan',lucan='caelan',aldric='lucan')
-            if self.beat==5:target['lucan']='aldric'
+            target.update(caelan='lucan',mira='lucan',lucan='caelan',iselin='lucan')
+            if self.beat==5:target['lucan']='iselin'
         if self.beat==6:
             for key in ('caelan','caretaker','lucan','mira'):target[key]=(534,370)
         if self.beat==7:
             for key in ('caelan','lucan','mira','caretaker'):target[key]=(1008,359)
-            target['aldric']='worker_a'
+            target['iselin']='worker_a'
         line=self.dialogue
         if line is not None:
             speaker={'arrival_caretaker':'caretaker','arrival_worker':'worker_a','regent_clerk':'page'}.get(line['speaker'],line['speaker'])
             if speaker in a:
-                listener='aldric' if self.beat==3 and speaker=='caretaker' else 'caretaker' if speaker=='aldric' else 'lucan' if speaker in ('caelan','mira') and self.beat==4 else 'caelan'
+                listener='iselin' if self.beat==3 and speaker=='caretaker' else 'caretaker' if speaker=='iselin' else 'lucan' if speaker in ('caelan','mira') and self.beat==4 else 'caelan'
                 if speaker not in ('mira','worker_a','page'):target[speaker]=listener
                 if listener not in ('mira','worker_a','page'):target[listener]=speaker
         for key,destination in target.items():
@@ -486,17 +497,17 @@ class SanctuaryArrival(MillGift):
                 actor.position.update(goals[key]);actor.pose=self.manifest['beats'][-1].get('poses',{}).get(key)
             self.actors['worker_a'].pose_ms=10000
         for actor in self.actors.values():actor.route=[];actor.moving=False
-        for key,source in (('aldric',c.aldric),('page',c.clerk)):
+        for key,source in (('iselin',c.iselin),('page',c.clerk)):
             c._place(source,world,self.actors[key].position);source.story_following=False
         if (getattr(g.sanctuary_cave,'lucan_departed',False)
                 and g.party.is_guest('lucan')):
-            # He has returned to Aldric after the completed cave outing;
+            # He has returned to Iselin after the completed cave outing;
             # use the canonical royal actor, never a second follower sprite.
             c._place(c.lucan,world,(844,414));c.lucan.story_following=False
             c.lucan.facing='left';c.lucan.set_pose(None)
         else:c._hide(c.lucan)
         self._settled_facings()
-        for key,source in (('aldric',c.aldric),('page',c.clerk)):
+        for key,source in (('iselin',c.iselin),('page',c.clerk)):
             source.facing=self.actors[key].facing
             if key=='page' and hasattr(source,'set_pose'):
                 source.set_pose('read',elapsed_ms=10000)
@@ -531,6 +542,7 @@ class SanctuaryArrival(MillGift):
         try:self._world.draw(canvas,g.camera.position(),g.player,self.elapsed*1000,include_ui=False,party_actors=tuple(self.actors.values()))
         finally:g.player.story_visible=old
         pygame.transform.scale(canvas,ui_surface.get_size(),ui_surface)
+        if hasattr(canvas,'present_detail'):canvas.present_detail(ui_surface)
         painter=g.ui.painter(ui_surface);self._layout(painter)
         if self.caption_layout is not None:
             portrait=g.social.portraits[self.caption_layout.portrait_key]

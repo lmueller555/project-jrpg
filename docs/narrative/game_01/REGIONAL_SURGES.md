@@ -1,13 +1,13 @@
-# Game I — Early regional surges and Aldric's relief visit
+# Game I — Early regional surges and Iselin's relief visit
 
 **Status:** APPROVED STORY CANON, 2026-10-31.\
 **Scope:** The damaged southern road, the small number of recent lightning
-incidents, Aldric's reason for visiting Eldenmere, and the narrative handoff
+incidents, Iselin's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
 **Implementation:** The [Elden Vale overworld](../../OVERWORLD.md) now presents
 the lightning-destroyed western bridge and road damage on both banks. The
 arrival cutscene presents the relief visit. Revised MQ03 continues the
-protected-ground disagreement into the exposure of Aldric's secret advance
+protected-ground disagreement into the exposure of Iselin's secret advance
 crew and an emergency journey to the Sanctuary. See
 [the arrival guide](../../REGENT_ARRIVAL.md) and [MQ03](CH01_MQ03.md).
 
@@ -50,31 +50,31 @@ The other incidents and their exact locations, dates and individual damage
 remain unspecified. Do not invent an exact regional count or portray every
 storm, monster or broken mechanism as another surge.
 
-These recent lightning incidents precede Aldric's proposed excavation. They
-are not punishment for his later decision, and the quarry request is not
+These recent lightning incidents precede Iselin's proposed excavation. They
+are not punishment for her later decision, and the quarry request is not
 their original cause. The small historic discharge recorded at the ridge
 sanctuary is a separate older incident, not one of these recent road strikes.
 
-## Aldric's purpose and resource pressure
+## Iselin's purpose and resource pressure
 
-Aldric has already travelled to a couple of the affected communities to help
-organize aid and repairs. He reaches Eldenmere with firsthand knowledge of
-their damage and outstanding needs. His relief work and the material shortages are real. His later negotiation
-with Serene is deceptive: he has already sent a crew to establish Crown
+Iselin has already travelled to a couple of the affected communities to help
+organize aid and repairs. She reaches Eldenmere with firsthand knowledge of
+their damage and outstanding needs. Her relief work and the material shortages are real. Her later negotiation
+with Serene is deceptive: she has already sent a crew to establish Crown
 control of the Sanctuary's working area and prepare mining.
 
 Repairing several damaged places is straining the available materials. A
 nearer stone seam offers a possible additional supply for regional recovery.
 Long hauling distances and cart availability still matter, but saving money
-on a routine road project is no longer the main explanation for his request.
+on a routine road project is no longer the main explanation for her request.
 
-His visit was arranged in advance; Serene already has the letter describing
-his expected party. MQ02's completion controls the player's encounter with
-that arrival, not Aldric's decision to travel. The repaired mill is useful
-news Caelan can report, not the reason Aldric undertook the visit.
+Her visit was arranged in advance; Serene already has the letter describing
+her expected party. MQ02's completion controls the player's encounter with
+that arrival, not Iselin's decision to travel. The repaired mill is useful
+news Caelan can report, not the reason Iselin undertook the visit.
 
 The Festival of Light provides a human and social setting for the visit, and
-Aldric intends to see the villagers there. His immediate business is the
+Iselin intends to see the villagers there. Her immediate business is the
 relief effort and a discussion with Serene about the protected ridge site.
 
 ## The protected seam and secret deployment
@@ -90,15 +90,14 @@ disrupt that essential service. Serene also reports growling heard by the
 caretakers inside the cave since the bridge incident. The old foundation plan
 and historical passage-injury account remain separate background evidence.
 
-Aldric has secretly sent a Crown crew ahead to establish control and begin
+Iselin has secretly sent a Crown crew ahead to establish control and begin
 preparing the mining operation. A survivor interrupts the post-meal discussion
 with news that something from within the cave attacked the crew, exposing
-Aldric's deployment. Lucan was unaware of the secrecy and is taken aback.
+Iselin's deployment. Lucan was unaware of the secrecy and is taken aback.
 
-Serene stays to care for the survivor while Caelan collects Mira. Aldric,
-Lucan, the page, Caelan and Mira travel to the reserve. The new route reaches
-an arrival checkpoint with MQ03 still active; the cutscene, miniboss and later
-resolution remain to be built. The earlier limited-inspection agreement and
+Serene stays to care for the survivor while Caelan collects Mira. Iselin,
+Lucan, the page, Caelan and Mira travel to the reserve. The implemented route continues through the Sanctuary arrival, cave rescue,
+Vespermaw fight, healing-pool evacuation and acknowledged return resolution. The earlier limited-inspection agreement and
 immediate lantern handoff are superseded for this route.
 
 Growling after the bridge incident, the crew's later presence and the attack
@@ -106,19 +105,19 @@ form an observed chronology. Their causes and relationship remain open.
 
 ## Approved arrival-cutscene goal
 
-At the end of MQ02, show Aldric's caravan arriving in Eldenmere so the player
+At the end of MQ02, show Iselin's caravan arriving in Eldenmere so the player
 witnesses its arrival before finding the visitors already waiting in town.
 The scene should follow the mill quest's acknowledged conclusion and preserve
 the completed repair and rewards.
 
 The arrival should introduce an expected relief visit: a capable, tired
 administrator arriving after helping other communities. It can establish the
-damaged southern connection and his intended discussion with Serene without
+damaged southern connection and her intended discussion with Serene without
 delivering the full covenant debate in the street.
 
 MQ02's homecoming and cup-setting precede the arrival. MQ03 then
 begins with Serene's short request inside the dining room. Caelan welcomes
-Aldric and Lucan, guides the visitors directly to the meal and hears the
+Iselin and Lucan, guides the visitors directly to the meal and hears the
 ridge discussion interrupted by the attack report. The former cart dispute is
 removed. Caelan volunteers to help the people at risk; he gains no legal or
 survey authority from the relief context.
@@ -134,8 +133,11 @@ They give the opening cinematic's reference to a potentially valley-destroying
 surge a smaller early counterpart. This connection does not establish the
 future scene's exact cause or explain the physical mechanism of the strikes.
 
-Villagers, Aldric and Serene can know the damage and reports from other places
-without knowing why the incidents occur. Observation, religious interpretation
+Villagers and Serene can know the damage and reports from other places
+without knowing why the incidents occur. Iselin privately carries the Crown’s
+incomplete suspicions and covert investigative mission, as established in
+[her character guide](characters/ISELIN.md). Her public relief explanation does
+not reveal that mission. Observation, religious interpretation
 and author knowledge remain distinct. Serene's public maintenance evidence is
 separate from the inherited warning she privately examines after the festival.
 

@@ -75,10 +75,10 @@ class RegentAerialAudioIntegrationTests(unittest.TestCase):
         travel_clock = self.scene.audio.travel
         self.game.update(.2, (0, 0), False)
         after = self.scene.aerial_snapshot()
-        gait_advance = (after['projected_actors']['aldric']['gait_clock']-
-                        before['projected_actors']['aldric']['gait_clock'])
+        gait_advance = (after['projected_actors']['iselin']['gait_clock']-
+                        before['projected_actors']['iselin']['gait_clock'])
         self.assertAlmostEqual(self.scene.audio.travel-travel_clock, gait_advance)
-        for actor in ('aldric', 'caravan'):
+        for actor in ('iselin', 'caravan'):
             self.assertLess(after['projected_actors'][actor]['native_xy'][0],
                             before['projected_actors'][actor]['native_xy'][0])
         self.until(lambda:self.scene.shot == 'gate_greeting')

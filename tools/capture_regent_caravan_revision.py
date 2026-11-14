@@ -426,7 +426,7 @@ The MP4 soundtrack is reconstructed from the exact runtime-decoded PCM and obser
 
 The [capture report](capture_report.json) records the actual camera/actor samples, full leaf coverage at the background handoff, GIF pixel/timing validation, source/media fingerprints and pause, focus, reload, skip, Reduced Motion and isolated Gallery checks.
 
-Replay from **Title → Gallery → Aldric’s Relief Caravan**.
+Replay from **Title → Gallery → Iselin’s Relief Caravan**.
 
 Reproduce with `SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python tools/capture_regent_caravan_revision.py`.
 ''')

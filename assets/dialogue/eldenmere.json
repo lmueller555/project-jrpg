@@ -48,10 +48,10 @@
       "portrait": "mira",
       "actor_id": "mira_worker"
     },
-    "aldric": {
-      "name": "Regent Aldric",
-      "portrait": "aldric",
-      "actor_id": "aldric"
+    "iselin": {
+      "name": "Regent Iselin",
+      "portrait": "iselin",
+      "actor_id": "iselin"
     },
     "grain_loader": {
       "name": "Grain loader",
@@ -146,11 +146,6 @@
       "name": "Lucan Rooke",
       "portrait": "lucan",
       "actor_id": "lucan"
-    },
-    "iselin": {
-      "name": "Regent Iselin",
-      "portrait": "iselin",
-      "actor_id": "iselin"
     }
   },
   "characters": {
@@ -732,13 +727,13 @@
         }
       ]
     },
-    "aldric": {
+    "iselin": {
       "conversations": [
         {
-          "id": "aldric_ambient",
+          "id": "iselin_ambient",
           "lines": [
             {
-              "speaker": "aldric",
+              "speaker": "iselin",
               "text": "Thank you for bringing us here, Caelan. I'll see you at the festival."
             }
           ]
@@ -778,7 +773,7 @@
           "lines": [
             {
               "speaker": "lucan",
-              "text": "His lordship is expected at the festival. I’ll be staying with him."
+              "text": "Her ladyship is expected at the festival. I’ll be staying with her."
             }
           ]
         }

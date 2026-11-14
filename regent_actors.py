@@ -111,7 +111,8 @@ class StoryActor:
 
     def detailed_sprite(self, elapsed_ms):
         """Match sprite() precedence; external scene poses own their artwork."""
-        if getattr(self,'story_sprite',None) is not None:return None
+        if getattr(self,'story_sprite',None) is not None:
+            return getattr(self,'story_detail',None)
         direction=self.conversation_facing if self.conversation_ready else self.facing
         if self.moving and not self.conversation_ready:
             if direction not in self.detail_walks:return None

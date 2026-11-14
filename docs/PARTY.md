@@ -139,7 +139,7 @@ it adds no story events to the game.
 The MQ03 arrival scene temporarily adds level-five Lucan after the rescue plan
 is acknowledged. The existing `mq03_sanctuary` event then requires Caelan, Mira
 and Lucan, preserving resources and the formation from before the outing.
-Aldric and the page remain at the reserve. This is separate from Lucan's later
+Iselin and the page remain at the reserve. This is separate from Lucan's later
 permanent recruitment. Earlier checkpoints retain the two-member event until
 the arrival is acknowledged. He stays with the party on healing trips before
 the boss is defeated and while walking back out after victory. He leaves when

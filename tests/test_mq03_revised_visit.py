@@ -53,15 +53,15 @@ class RevisedVisitTests(unittest.TestCase):
         arrival = ' '.join(line['text'] for line in scenes['arrival'])
         self.assertIn('Lucan Rooke', arrival)
         self.assertIn('my guard', arrival)
-        self.assertIn('early birthday present', arrival.lower())
+        self.assertIn('early birthday gift', arrival.lower())
         discussion = ' '.join(line['text'] for line in scenes['discussion'])
         self.assertIn('Her Majesty', discussion)
-        self.assertIn('brother', discussion)
+        self.assertIn('sister', discussion)
         self.assertIn('Would that she could, but alas.', discussion)
         self.assertIn('across Merovar', discussion)
-        self.assertIn('closest untapped deposit', discussion)
+        self.assertIn('untapped deposits', discussion)
         self.assertIn('guide the region’s dead back to the planet', discussion)
-        self.assertIn('remember', discussion)
+        self.assertIn('Sanctuary', discussion)
         self.assertIn('disrupt our duty to the dead', discussion)
         self.assertIn('growling inside the cave', discussion)
         self.assertIn('Since the incident at the bridge', discussion)
@@ -130,7 +130,7 @@ class RevisedVisitTests(unittest.TestCase):
             for line in lines:
                 self.assertIn(line['text'], script, (name, line['text']))
 
-    def test_attack_exposes_aldric_and_lucan_learns_about_the_deployment_here(self):
+    def test_attack_exposes_iselin_and_lucan_learns_about_the_deployment_here(self):
         report = self.quest.lines['attack_report']
         self.assertEqual(report[0]['speaker'], 'regent_survivor')
         text = ' '.join(line['text'] for line in report)
@@ -155,7 +155,7 @@ class RevisedVisitTests(unittest.TestCase):
         mira = self.quest.lines['mira_departure']
         self.assertTrue(any(line['speaker'] == 'mira' and 'I’m coming' in line['text']
                             for line in mira))
-        self.assertTrue(any(line['speaker'] == 'mira' and 'arm brace' in line['text']
+        self.assertTrue(any(line['speaker'] == 'mira' and 'tools' in line['text'].lower()
                             for line in mira))
         current = ' '.join(line['text'] for key in ('discussion', 'attack_report',
                            'departure', 'mira_departure', 'sanctuary_waiting')

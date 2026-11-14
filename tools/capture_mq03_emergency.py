@@ -306,21 +306,39 @@ class Movie:
         assert self.process.wait()==0,'Video encoding failed'
 
 
+def visible_cast(game):
+    """Resolve the active scene's display actors, not hidden quest originals."""
+    quest=game.regent_quest;arrival=game.sanctuary_arrival
+    if arrival.active and arrival.actors:
+        return [(identifier,arrival.actors[key]) for identifier,key in
+                (('caelan','caelan'),('iselin','iselin'),('lucan','lucan'),
+                 ('regent_clerk','page'),('mira','mira'))]
+    result=[('caelan',game.player),('iselin',quest.iselin),
+            ('lucan',quest.lucan),('regent_clerk',quest.clerk)]
+    result.extend((actor.identifier,actor) for actor in game.party_travel.actors() if actor.identifier=='mira')
+    return result
+
+
 def cast_visibility(game):
     """Count actual visible pixels, toggling one actor only for comparison."""
     world=game.world;quest=game.regent_quest
     companions=tuple(game.party_travel.actors())
-    actors=[('caelan',game.player),(quest.aldric.data['id'],quest.aldric),
-            (quest.lucan.data['id'],quest.lucan),(quest.clerk.data['id'],quest.clerk)]
-    actors.extend((actor.identifier,actor) for actor in companions if actor.identifier=='mira')
+    actors=visible_cast(game)
+    scene_active=game.sanctuary_arrival.active
+    if scene_active:companions=tuple(game.sanctuary_arrival.actors.values())
+    def draw_to(surface):
+        old=getattr(game.player,'story_visible',True)
+        if scene_active:game.player.story_visible=False
+        try:world.draw(surface,camera,game.player,game.elapsed_ms,False,party_actors=companions)
+        finally:game.player.story_visible=old
     camera=camera_for(game.player.position,world.size)
     result={}
     for identifier,actor in actors:
         shown=pygame.Surface(VIEW_SIZE);bare=shown.copy()
-        world.draw(shown,camera,game.player,game.elapsed_ms,False,party_actors=companions)
+        draw_to(shown)
         existed=hasattr(actor,'story_visible');previous=getattr(actor,'story_visible',True)
         actor.story_visible=False
-        try:world.draw(bare,camera,game.player,game.elapsed_ms,False,party_actors=companions)
+        try:draw_to(bare)
         finally:
             if existed:actor.story_visible=previous
             else:del actor.story_visible
@@ -335,7 +353,7 @@ def cast_visibility(game):
         for y in range(sprite.get_height()):
             for x in range(sprite.get_width()):
                 if not mask.get_at((x,y)):continue
-                point=origin[0]+x,origin[1]+y
+                point=int(origin[0])+x,int(origin[1])+y
                 if not shown.get_rect().collidepoint(point):continue
                 opaque+=1;visible+=shown.get_at(point)!=bare.get_at(point)
         result[identifier]={'opaque_pixels':opaque,'visible_pixels':visible}
@@ -403,7 +421,7 @@ def capture(output=OUT,movie_enabled=True):
                 if 'survivor' in speaker and any(word in text.lower() for word in ('cave','get everyone')):tag='survivor_report'
                 elif speaker=='lucan' and any(word in text.lower() for word in ('without telling','know','ahead','informed')):tag='lucan_surprised'
                 elif speaker=='serene' and any(word in text.lower() for word in ('asking','agreement','permission')):tag='serene_discovers_betrayal'
-                elif speaker=='aldric' and any(word in text.lower() for word in ('authority','orders','ahead')):tag='aldric_exposed'
+                elif speaker=='iselin' and any(word in text.lower() for word in ('authority','orders','ahead')):tag='iselin_exposed'
             elif identifier=='regent_departure':
                 if speaker=='serene':tag='serene_cares_for_survivor'
                 elif speaker=='caelan':tag='caelan_volunteers'
@@ -455,16 +473,18 @@ def capture(output=OUT,movie_enabled=True):
             photograph('arrival_continued')
             if movie and movie.frames/20<48:hold(48-movie.frames/20)
             game=driver.game;quest=driver.quest
-            cast=['caelan']
-            for actor in (quest.aldric,quest.lucan,quest.clerk):
-                assert quest._world(actor) is game.world
-                assert sum(actor in world.npcs for world in game.scenes.values())==1
-                cast.append(actor.data['id'])
-            mira_actors=[actor for actor in game.party_travel.actors() if actor.identifier=='mira']
-            assert len(mira_actors)==1
-            cast.append('mira')
-            assert not any(getattr(actor,'party_travelling',False) is False
-                           for actor in game.world.npcs if actor is game.mill_quest.mira)
+            cast=[]
+            companions=tuple(game.party_travel.actors())
+            for identifier,actor in visible_cast(game):
+                if game.sanctuary_arrival.active:
+                    drawn=tuple(game.world.npcs)+tuple(game.sanctuary_arrival.actors.values())
+                    self_count=sum(candidate is actor for candidate in drawn)
+                    assert self_count==1,(identifier,self_count)
+                elif actor is not game.player and actor not in companions:
+                    assert sum(actor in world.npcs for world in game.scenes.values())==1,(identifier,actor.data)
+                cast.append(identifier)
+            assert len(cast)==len(set(cast))==5
+            mira_actors=[actor for identifier,actor in visible_cast(game) if identifier=='mira']
             report.update(arrival_stage=quest.stage,mq03_status=game.quests.status(REGENT_QUEST),
                 mq04_status=game.quests.status(LANTERN_QUEST),
                 mira_resources_preserved=resources==game.party.characters['mira'].to_dict(),
@@ -513,7 +533,7 @@ movie; all observed dialogue is retained in the verification record.
 
 The survivor enters physically, Lucan learns of the secret deployment, and
 Serene remains with the injured worker. Mira retains her previous resources.
-Aldric, Lucan, the page, Caelan and Mira gather at the actual reserve entrance.
+Iselin, Lucan, the page, Caelan and Mira gather at the actual reserve entrance.
 Save/Continue is exercised after the report and at arrival. MQ03 remains active,
 MQ04 remains locked, and the arrival cutscene and miniboss are deliberately left
 for subsequent story work. The cave rail remains closed.
@@ -541,7 +561,7 @@ def check(output):
     assert report['arrival_stage']=='sanctuary_arrival_pending'
     assert report['mq03_status']=='active' and report['mq04_status']=='locked'
     assert report['mira_resources_preserved'] and report['no_lucan_combat_recruitment']
-    assert report['one_mira_representation'] and report['cast_at_arrival']==['aldric','caelan','lucan','mira','regent_clerk']
+    assert report['one_mira_representation'] and report['cast_at_arrival']==sorted(['iselin','caelan','lucan','mira','regent_clerk'])
     for key in ('arrival_visibility','immediate_continue_visibility'):
         assert set(report[key])==set(report['cast_at_arrival'])
         assert all(record['visible_pixels']>0 for record in report[key].values())

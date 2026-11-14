@@ -1,5 +1,22 @@
 # Game I — Act Outline: The Broken Covenant
 
+## Current regent direction
+
+[Regent Iselin](characters/ISELIN.md) replaces the former regent in current
+canon. Her homeland is a cold northern kingdom within Merovar, surrounded by
+mountains except for its southern approach. The capital is the party's eventual
+northward destination and remains unnamed. She already has exceptional ice
+magick proficiency. The Crown's pre-game partial knowledge and her covert
+investigation are author-facing facts; her sincere relief work and existing
+Sanctuary breach of trust remain part of the opening.
+
+The intended first half to roughly two-thirds of the adventure accompanies her
+through affected regions before her eventual Ice Reaper descent. The protective
+ice dome, traitor accusation and exile are late-story direction, not opening
+exposition or a newly implemented quest. Existing act sketches remain working
+material subject to that approved direction; they do not establish a competing
+origin or disclose the catastrophe to the player.
+
 **Status:** WORKING NARRATIVE / PROPOSED, except explicitly linked approved material.\
 **Version:** 0.3\
 **Scope:** Broad five-act narrative structure only; not a scene list, quest plan, or finalized world design.
@@ -52,19 +69,19 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 **Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; five mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
 
 **Approved opening pressure:** Before the opening morning, a lightning surge
-destroys Eldenmere's southern connection. Aldric arrives after aiding a couple
+destroys Eldenmere's southern connection. Iselin arrives after aiding a couple
 of other affected communities, seeking enough stone for regional repairs.
 The marked ridge reserve, incomplete public hazard evidence, Serene's material
-help and Aldric's disputed shallow trial cut now give their disagreement
+help and Iselin's disputed shallow trial cut now give their disagreement
 concrete stakes. The end-MQ02 arrival scene and revised MQ03 dialogue now
 present this context in the game. This small number of early incidents does not
-move the major catastrophe into Chapter 1 or make every anomaly Aldric's doing.
+move the major catastrophe into Chapter 1 or make every anomaly Iselin's doing.
 
 **Function:** Establish the protagonist's lived faith, community, political tensions, and personal loss.
 
 - The approved covenant protects Elden Vale Sanctuary’s marked reserve,
   including buried foundations; ordinary care and surface inspection remain permitted.
-- Repairs after a handful of lightning incidents strain resources. Aldric's
+- Repairs after a handful of lightning incidents strain resources. Iselin's
   relief efforts and request for quarry stone meet Serene's shared-custody duty
   and incomplete evidence of danger. Both contribute to the immediate recovery.
 - The ruler authorizes excavation; a violent aetheric disturbance devastates a nearby settlement tied personally to the protagonist.
@@ -74,7 +91,7 @@ move the major catastrophe into Chapter 1 or make every anomaly Aldric's doing.
 **Act break:** Faith gives way to doubt; the protagonist chooses truth-seeking over automatic obedience.
 
 **Approved companion introduction:** Lucan Rooke, the Armsmaster, enters during
-Act I as Aldric's personal guard. Aldric later entrusts him to Caelan's party,
+Act I as Iselin's personal guard. Iselin later entrusts him to Caelan's party,
 providing the approved basis for recruitment rather than a generic road escort.
 His character foundation is recorded in the [companion guide](COMPANIONS.md);
 the exact recruitment quest remains open.

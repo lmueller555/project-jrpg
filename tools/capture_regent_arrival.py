@@ -1,4 +1,4 @@
-"""Capture the production MQ02 report, Aldric's arrival and the MQ03 handoff.
+"""Capture the production MQ02 report, Iselin's arrival and the MQ03 handoff.
 
 Only earlier quest work and the initial clear mill-report station are seeded.
 The final report, cinematic, persistence and three-conversation MQ03 meal
@@ -555,7 +555,7 @@ class Capture:
             'captures':{path.name:hashlib.sha256(path.read_bytes()).hexdigest()
                         for path in sorted(self.output.iterdir()) if path.suffix in ('.png','.gif','.mp4')}}
         self.output.joinpath('capture_report.json').write_text(json.dumps(report,indent=2)+'\n')
-        self.output.joinpath('README.md').write_text("""# Aldric's arrival and MQ03 meal handoff
+        self.output.joinpath('README.md').write_text("""# Iselin's arrival and MQ03 meal handoff
 
 [Watch the arrival cinematic with music](regent_arrival.mp4) · [Animated preview](regent_arrival.gif)
 
@@ -568,7 +568,7 @@ are played. The review stops after the meal with MQ03 active and MQ04 locked;
 the later Sanctuary emergency is covered by the current MQ03 emergency review.
 No cinematic clock or progression checkpoint is assigned during capture.
 
-| Arrival at the southern land gate | Aldric listens to locals |
+| Arrival at the southern land gate | Iselin listens to locals |
 | --- | --- |
 | ![Checkpoint greeting](gate_greeting.png) | ![Local consequences](locals.png) |
 
@@ -586,7 +586,7 @@ No cinematic clock or progression checkpoint is assigned during capture.
 
 The arrival freezes exploration and preserves Caelan's sanctuary station. MQ03 stays
 available until Serene's separate invitation is acknowledged. The visit leads
-directly from the lower bridge to the sanctuary, with Lucan accompanying Aldric. Separate saved
+directly from the lower bridge to the sanctuary, with Lucan accompanying Iselin. Separate saved
 journey probes verify pending playback recovery, skip, queued-input isolation,
 no duplicate resources and no replay for already-seen or legacy completed saves.
 The bridge remains ruined and no excavation is authorized. The preserved town

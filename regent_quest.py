@@ -1,6 +1,6 @@
 """The Regent's Road: Caelan welcomes visitors and witnesses adult decisions.
 
-Caelan guides Aldric and Lucan directly to the sanctuary. Durable scene
+Caelan guides Iselin and Lucan directly to the sanctuary. Durable scene
 checkpoints are separate from NPC paths and partially read conversations;
 leaving or loading cannot accept unread prose or authorize excavation.
 """
@@ -46,9 +46,9 @@ class RegentQuest:
         self.layout = read('layout.json');self.points = self.layout
         self.lines = read('scene.json');art = read('art.json')
         self.actors = {rec['id']: StoryActor(rec, self.town) for rec in art['actors']}
-        self.aldric = self.actors['aldric'];self.lucan = self.actors['lucan']
+        self.iselin = self.actors['iselin'];self.lucan = self.actors['lucan']
         self.clerk = self.actors['regent_clerk'];self.driver = self.actors['regent_driver']
-        self.party = [self.aldric, self.clerk, self.driver, self.lucan]
+        self.party = [self.iselin, self.clerk, self.driver, self.lucan]
         self.serene = next(a for a in game.persistent_npcs if a.data['id'] == 'mother_serene')
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
         self._worlds = {a: self.town for a in self.actors.values()}
@@ -106,7 +106,7 @@ class RegentQuest:
                 and not getattr(getattr(self.game,'sanctuary_arrival',None),'completed',False))
 
     @property
-    def sanctuary_escorts(self):return (self.aldric, self.lucan, self.clerk)
+    def sanctuary_escorts(self):return (self.iselin, self.lucan, self.clerk)
 
     @property
     def travel_members(self):
@@ -255,7 +255,7 @@ class RegentQuest:
             self.emergency._place(self.driver,self.dining,self.emergency.point('driver_aid',(132,300)))
             if self.stage=='resolution_report':
                 world=self.game._scene_by_id('elden_vale_sanctuary')
-                for actor,position in ((self.aldric,(772,414)),(self.clerk,(820,386)),(self.lucan,(844,414))):
+                for actor,position in ((self.iselin,(772,414)),(self.clerk,(820,386)),(self.lucan,(844,414))):
                     landing=self._landing(actor,position,world)
                     if landing is not None:self._place(actor,world,landing)
             elif self.stage=='resolution_return':
@@ -292,7 +292,7 @@ class RegentQuest:
             # the saved player, never a completed cart settlement or a jump to lunch.
             target = (self.game.player.position + pygame.Vector2(((-28,28),(28,28),(-42,0),(42,0))[index])
                       if self.stage == 'escorting' else self.points[prefix+'_'+phase])
-            if self.stage in ('discussion', 'done') and actor is self.aldric:target = self.points['aldric_aside']
+            if self.stage in ('discussion', 'done') and actor is self.iselin:target = self.points['iselin_aside']
             landing = self._landing(actor, target, world)
             if landing is not None:self._place(actor, world, landing)
         self._setup = self._preps_ready
@@ -305,7 +305,7 @@ class RegentQuest:
                 if (seat := self.points.get('meal_seats', {}).get(actor.data['id'])))
 
     def _party_keys(self):
-        return [(self.aldric, 'aldric'), (self.clerk, 'clerk'),
+        return [(self.iselin, 'iselin'), (self.clerk, 'clerk'),
                 (self.driver, 'driver'), (self.lucan, 'lucan')]
 
     def _save(self):self._sync_props();self.game.save_progress()
@@ -358,14 +358,14 @@ class RegentQuest:
     def marker_for(self, identifier):
         if identifier=='sanctuary_arrival_lucan' and self.game.sanctuary_rescue.waiting:return '?'
         if self.stage in RESOLUTION_STAGES:
-            wanted='aldric' if self.stage=='resolution_report' else 'mira_worker' if self.stage=='resolution_companions' else 'mother_serene'
+            wanted='iselin' if self.stage=='resolution_report' else 'mira_worker' if self.stage=='resolution_companions' else 'mother_serene'
             return '?' if identifier==wanted and self.stage!='resolution_return' else None
         if not self.eligible:return NotImplemented
         if self.stage in EMERGENCY_STAGES:return self.emergency.marker_for(identifier)
         if identifier == 'mother_serene':
             if self._serene_handed_off:return NotImplemented
             return '!' if self.stage == 'idle' else '?' if self.stage == 'discussion' and self._aside_ready else None
-        if identifier == 'aldric':return '?' if self.stage in ('assigned', 'welcome', 'hosted') else None
+        if identifier == 'iselin':return '?' if self.stage in ('assigned', 'welcome', 'hosted') else None
         if identifier in ('lucan', 'regent_clerk', 'regent_driver'):return None
         return NotImplemented
 
@@ -390,13 +390,13 @@ class RegentQuest:
             return self._speak('serene_after' if self.stage == 'done' else 'preparations_after')
         if actor is self.tomas and self._owned:
             return self._speak('hospitality_after' if self.stage in ('hosted', 'discussion', 'done') else 'tomas_waiting')
-        if actor is self.aldric:
+        if actor is self.iselin:
             if self.stage == 'idle':return self._speak('arrival_waiting')
             if self.stage == 'assigned':return self._speak('arrival', self._met)
             if self.stage == 'escorting':return False
             if self.stage == 'welcome':return self._speak('welcome', self._welcomed) if self._group_ready else False
             if self.stage == 'hosted':return self._speak('discussion', self._discussed) if self._group_ready else False
-            return self._speak('aldric_after' if self.stage in ('discussion', 'done') else 'arrival_reminder')
+            return self._speak('iselin_after' if self.stage in ('discussion', 'done') else 'arrival_reminder')
         if actor is self.driver:return self._speak('driver_after')
         if actor is self.clerk:return self._speak('clerk_after' if self.stage in ('discussion', 'done') else 'clerk_waiting')
         if actor is self.lucan:return self._speak('lucan_after' if self.stage in ('discussion', 'done') else 'lucan_waiting')
@@ -476,10 +476,10 @@ class RegentQuest:
         if self.stage in EMERGENCY_STAGES:return self.emergency.interaction_hint()
         if (self.stage == 'discussion' and not self._aside_ready
                 and self.game.world is self.dining and self._near(self.points['aftermath'], 60)):
-            return 'Let Aldric step aside before speaking with Serene.'
+            return 'Let Iselin step aside before speaking with Serene.'
         target = self._target()
-        return {'preparations': 'E: Help welcome the visitors', 'arrival': 'E: Greet Regent Aldric',
-                'welcome': 'E: Join the welcome meal', 'discussion': 'E: Listen to Aldric and Serene',
+        return {'preparations': 'E: Help welcome the visitors', 'arrival': 'E: Greet Regent Iselin',
+                'welcome': 'E: Join the welcome meal', 'discussion': 'E: Listen to Iselin and Serene',
                 'aftermath': 'E: Speak with Mother Serene'}.get(target, '')
 
     def tracker_text(self):
@@ -488,9 +488,9 @@ class RegentQuest:
         if self.stage in EMERGENCY_STAGES:return self.emergency.tracker_text()
         return {'idle': 'Meet Mother Serene in the dining room at home.',
                 'assigned': 'Meet the visitors by the lower bridge.',
-                'escorting': 'Bring Aldric’s party through the hall at home to the dining room.',
+                'escorting': 'Bring Iselin’s party through the hall at home to the dining room.',
                 'welcome': 'Join the welcome meal in the dining room at home.',
-                'hosted': 'Listen to Aldric and Serene after the meal.',
+                'hosted': 'Listen to Iselin and Serene after the meal.',
                 'discussion': 'Speak privately with Mother Serene.',
                 'done': ''}.get(self.stage, '')
 
@@ -670,18 +670,18 @@ class RegentQuest:
         if not self.dialogue:
             if self.stage == 'escorting':
                 self._follow_party(seconds)
-                if self.game.world is self.dining and self._near(self.points['welcome'], 58) and self._world(self.aldric) is self.dining and self.aldric.position.distance_to(self.points['welcome'])<96:
+                if self.game.world is self.dining and self._near(self.points['welcome'], 58) and self._world(self.iselin) is self.dining and self.iselin.position.distance_to(self.points['welcome'])<96:
                     self._complete('accompany_visit');self._transition('welcome')
             elif self.stage in ('welcome', 'hosted'):
                 self._group_ready = self._group_to('courtyard', seconds)
             elif self.stage in ('discussion', 'done'):
-                aside = self._landing(self.aldric, self.points['aldric_aside'], self.dining)
-                aldric_ready = aside is not None and self._move(self.aldric, aside, seconds, 52)
+                aside = self._landing(self.iselin, self.points['iselin_aside'], self.dining)
+                iselin_ready = aside is not None and self._move(self.iselin, aside, seconds, 52)
                 serene_ready = self._serene_handed_off
                 if not serene_ready:
                     station = self._landing(self.serene, self.points['aftermath'], self.dining)
                     serene_ready = station is not None and self._move(self.serene, station, seconds, 48)
-                self._aside_ready = aldric_ready and serene_ready
+                self._aside_ready = iselin_ready and serene_ready
         self._pose_owned();self._sync_props()
         self.scene_actions.update(seconds)
 

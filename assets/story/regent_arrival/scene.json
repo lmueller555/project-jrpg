@@ -12,7 +12,7 @@
   "scenery_manifest": "scenery/scenery.json",
   "crossroads_manifest": "crossroads/manifest.json",
   "actors": {
-    "aldric": "actors/aldric/animation.json",
+    "iselin": "actors/iselin/animation.json",
     "guard": "actors/guard/animation.json",
     "local": "actors/local/animation.json",
     "clerk": "actors/clerk/animation.json",
@@ -23,8 +23,8 @@
     "lucan": "actors/lucan/animation.json"
   },
   "speakers": {
-    "aldric": {
-      "profile": "aldric"
+    "iselin": {
+      "profile": "iselin"
     },
     "guard": {
       "profile": "road_guard",
@@ -169,7 +169,7 @@
           "animation_rate": 0.6
         },
         {
-          "id": "aldric",
+          "id": "iselin",
           "pose": "walk_left",
           "position": [
             611,
@@ -199,8 +199,14 @@
         {
           "id": "clerk",
           "pose": "walk_left",
-          "position": [671, 399],
-          "to": [635, 399],
+          "position": [
+            671,
+            399
+          ],
+          "to": [
+            635,
+            399
+          ],
           "move_seconds": 1.5,
           "gait_offset": 0.25
         },
@@ -251,7 +257,7 @@
           ]
         },
         {
-          "id": "aldric",
+          "id": "iselin",
           "pose": "stand_left",
           "position": [
             575,
@@ -298,18 +304,18 @@
       "dialogue": [
         {
           "speaker": "guard",
-          "text": "Regent Aldric. We were beginning to watch for you."
+          "text": "Regent Iselin. We were beginning to watch for you."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Have we kept you long?"
         },
         {
           "speaker": "guard",
-          "text": "Only since the last wagon came in. You came by the ridge road, my lord?"
+          "text": "Only since the last wagon came in. You came by the ridge road, my lady?"
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "We did. Your warning reached us before the turning."
         },
         {
@@ -317,7 +323,7 @@
           "text": "A longer journey, then."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "*with a tired smile* A better one than finding the crossing ourselves."
         },
         {
@@ -325,7 +331,7 @@
           "text": "The approach is clear. Mother Serene is expecting you."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Thank you. And keep someone at the barrier. We can find our way from here."
         }
       ]
@@ -383,7 +389,7 @@
           ]
         },
         {
-          "id": "aldric",
+          "id": "iselin",
           "pose": "walk_left",
           "position": [
             575,
@@ -450,7 +456,10 @@
         {
           "id": "clerk",
           "pose": "walk_left",
-          "position": [635, 399],
+          "position": [
+            635,
+            399
+          ],
           "move_start": 0.95,
           "move_seconds": 11.75,
           "after_pose": "stand_back",
@@ -458,8 +467,24 @@
           "route": "gate_road",
           "route_start": 120,
           "route_end": 1060,
-          "route_offset": [0, 24],
-          "route_poses": [[0, "walk_left"], [180, "walk_left_back"], [310, "walk_back"]],
+          "route_offset": [
+            0,
+            24
+          ],
+          "route_poses": [
+            [
+              0,
+              "walk_left"
+            ],
+            [
+              180,
+              "walk_left_back"
+            ],
+            [
+              310,
+              "walk_back"
+            ]
+          ],
           "gait_offset": 0.25
         },
         {
@@ -518,15 +543,57 @@
       "scene": "crossroads",
       "min_seconds": 3.2,
       "camera": {
-        "from": [3734, 623],
-        "to": [3734, 623]
+        "from": [
+          3734,
+          623
+        ],
+        "to": [
+          3734,
+          623
+        ]
       },
       "actors": [
-        {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
-        {"id": "local", "pose": "talk_right", "position": [3899, 863]},
-        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
-        {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
-        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
+        {
+          "id": "iselin",
+          "pose": "listen_left",
+          "position": [
+            4004,
+            863
+          ]
+        },
+        {
+          "id": "local",
+          "pose": "talk_right",
+          "position": [
+            3899,
+            863
+          ]
+        },
+        {
+          "id": "lucan",
+          "pose": "stand_left",
+          "position": [
+            4034,
+            839
+          ],
+          "gait_offset": 0.5
+        },
+        {
+          "id": "clerk",
+          "pose": "stand_left",
+          "position": [
+            4064,
+            879
+          ]
+        },
+        {
+          "id": "caravan",
+          "pose": "parked_left",
+          "position": [
+            4334,
+            888
+          ]
+        }
       ],
       "dialogue": [],
       "fade_in": 1.0,
@@ -537,24 +604,66 @@
       "scene": "crossroads",
       "min_seconds": 1.4,
       "camera": {
-        "from": [3734, 623],
-        "to": [3734, 623]
+        "from": [
+          3734,
+          623
+        ],
+        "to": [
+          3734,
+          623
+        ]
       },
       "actors": [
-        {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
-        {"id": "local", "pose": "talk_right", "position": [3899, 863]},
-        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
-        {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
-        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
+        {
+          "id": "iselin",
+          "pose": "listen_left",
+          "position": [
+            4004,
+            863
+          ]
+        },
+        {
+          "id": "local",
+          "pose": "talk_right",
+          "position": [
+            3899,
+            863
+          ]
+        },
+        {
+          "id": "lucan",
+          "pose": "stand_left",
+          "position": [
+            4034,
+            839
+          ],
+          "gait_offset": 0.5
+        },
+        {
+          "id": "clerk",
+          "pose": "stand_left",
+          "position": [
+            4064,
+            879
+          ]
+        },
+        {
+          "id": "caravan",
+          "pose": "parked_left",
+          "position": [
+            4334,
+            888
+          ]
+        }
       ],
       "sound": "roadside",
       "dialogue": [
         {
           "speaker": "local",
-          "text": "My lord? A moment, if you can spare it."
+          "text": "My lady? A moment, if you can spare it."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Of course."
         },
         {
@@ -562,7 +671,7 @@
           "text": "They said you were coming to look at the road. Are they saying when we'll have our bridge back?"
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Not yet. I need to see what the crews are working with before I give you a date."
         },
         {
@@ -570,7 +679,7 @@
           "text": "*lets out a frustrated breath* We've had enough dates already."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Then I won't give you another one today."
         },
         {
@@ -578,7 +687,7 @@
           "text": "It's the hauling. Every load takes longer, and there are fewer carts to share."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "What has been getting through?"
         },
         {
@@ -586,7 +695,7 @@
           "text": "Some supplies. Enough lamp oil for the festival, at least. It's the next few loads I'm worried about."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Were you here when it happened?"
         }
       ]
@@ -595,14 +704,59 @@
       "id": "road_pan",
       "scene": "crossroads",
       "min_seconds": 0.8,
-      "camera": {"from": [3734, 623], "to": [432, 1203]},
+      "camera": {
+        "from": [
+          3734,
+          623
+        ],
+        "to": [
+          432,
+          1203
+        ]
+      },
       "camera_track": "west_road",
       "actors": [
-        {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
-        {"id": "local", "pose": "talk_right", "position": [3899, 863]},
-        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
-        {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
-        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
+        {
+          "id": "iselin",
+          "pose": "listen_left",
+          "position": [
+            4004,
+            863
+          ]
+        },
+        {
+          "id": "local",
+          "pose": "talk_right",
+          "position": [
+            3899,
+            863
+          ]
+        },
+        {
+          "id": "lucan",
+          "pose": "stand_left",
+          "position": [
+            4034,
+            839
+          ],
+          "gait_offset": 0.5
+        },
+        {
+          "id": "clerk",
+          "pose": "stand_left",
+          "position": [
+            4064,
+            879
+          ]
+        },
+        {
+          "id": "caravan",
+          "pose": "parked_left",
+          "position": [
+            4334,
+            888
+          ]
+        }
       ],
       "dialogue": []
     },
@@ -611,8 +765,14 @@
       "scene": "crossroads",
       "min_seconds": 2.2,
       "camera": {
-        "from": [432, 1203],
-        "to": [432, 1203]
+        "from": [
+          432,
+          1203
+        ],
+        "to": [
+          432,
+          1203
+        ]
       },
       "actors": [],
       "sound": "riverbank",
@@ -632,20 +792,62 @@
       "scene": "crossroads",
       "min_seconds": 1.0,
       "camera": {
-        "from": [3734, 623],
-        "to": [3734, 623]
+        "from": [
+          3734,
+          623
+        ],
+        "to": [
+          3734,
+          623
+        ]
       },
       "actors": [
-        {"id": "aldric", "pose": "gesture_left", "position": [4004, 863]},
-        {"id": "local", "pose": "stand_right", "position": [3899, 863]},
-        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
-        {"id": "clerk", "pose": "read_left", "position": [4064, 879]},
-        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
+        {
+          "id": "iselin",
+          "pose": "gesture_left",
+          "position": [
+            4004,
+            863
+          ]
+        },
+        {
+          "id": "local",
+          "pose": "stand_right",
+          "position": [
+            3899,
+            863
+          ]
+        },
+        {
+          "id": "lucan",
+          "pose": "stand_left",
+          "position": [
+            4034,
+            839
+          ],
+          "gait_offset": 0.5
+        },
+        {
+          "id": "clerk",
+          "pose": "read_left",
+          "position": [
+            4064,
+            879
+          ]
+        },
+        {
+          "id": "caravan",
+          "pose": "parked_left",
+          "position": [
+            4334,
+            888
+          ]
+        }
       ],
       "sound": "roadside",
       "dialogue": [
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "We've seen damage like this elsewhere. I wish I could tell you why."
         },
         {
@@ -653,7 +855,7 @@
           "text": "Elsewhere? I thought we had been unlucky."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "So did the people I visited before coming here. There have been a few such incidents."
         },
         {
@@ -661,11 +863,11 @@
           "text": "And every place needs the same stone and carts."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "*nods* Yes. That's part of what I've come to discuss."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "Tell my page which deliveries are waiting. The crew needs to know what people are still trying to get through."
         },
         {
@@ -677,7 +879,7 @@
           "text": "Thank you. I know ours isn't the only road."
         },
         {
-          "speaker": "aldric",
+          "speaker": "iselin",
           "text": "It's still the one you need. Thank you for stopping me."
         }
       ]
@@ -711,7 +913,7 @@
           "move_seconds": 7
         },
         {
-          "id": "aldric",
+          "id": "iselin",
           "pose": "walk_left",
           "position": [
             720,
@@ -738,9 +940,18 @@
           "gait_offset": 0.5
         },
         {
-          "id": "clerk", "pose": "walk_left",
-          "position": [780, 399], "to": [530, 399],
-          "move_seconds": 7, "gait_offset": 0.25
+          "id": "clerk",
+          "pose": "walk_left",
+          "position": [
+            780,
+            399
+          ],
+          "to": [
+            530,
+            399
+          ],
+          "move_seconds": 7,
+          "gait_offset": 0.25
         }
       ],
       "dialogue": [],
@@ -818,12 +1029,12 @@
       "dialogue": [
         {
           "speaker": "serene",
-          "text": "He's had little rest between these visits.",
+          "text": "She's had little rest between these visits.",
           "thought": true
         },
         {
           "speaker": "serene",
-          "text": "I wish I had a simpler answer for him.",
+          "text": "I wish I had a simpler answer for her.",
           "thought": true
         },
         {
@@ -871,7 +1082,7 @@
           "animation_rate": 0.75
         },
         {
-          "id": "aldric",
+          "id": "iselin",
           "pose": "walk_left",
           "position": [
             470,
@@ -901,9 +1112,19 @@
           "gait_offset": 0.5
         },
         {
-          "id": "clerk", "pose": "walk_left",
-          "position": [530, 399], "to": [455, 419],
-          "move_seconds": 3, "after_pose": "stand_left", "gait_offset": 0.25
+          "id": "clerk",
+          "pose": "walk_left",
+          "position": [
+            530,
+            399
+          ],
+          "to": [
+            455,
+            419
+          ],
+          "move_seconds": 3,
+          "after_pose": "stand_left",
+          "gait_offset": 0.25
         }
       ],
       "dialogue": [],

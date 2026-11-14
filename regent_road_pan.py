@@ -294,7 +294,12 @@ class RoadWhipPan:
             raise ValueError('reduced_motion must be a bool')
         state = (sample_or_seconds if isinstance(sample_or_seconds, RoadPanSample)
                  else self.sample(sample_or_seconds, duration, reduced_motion))
-        result = canvas.copy()
+        # Pygame copies Surface subclasses without calling their initializer.
+        # A road-pan snapshot is ordinary pixel data, not a live WorldCanvas.
+        if hasattr(canvas,'patches'):
+            result=pygame.image.frombytes(pygame.image.tobytes(canvas,'RGB'),SIZE,'RGB')
+            result.set_clip(canvas.get_clip())
+        else:result=canvas.copy()
         if reduced_motion or not state.active or state.strength == 0:
             return result
         result.set_clip(None)

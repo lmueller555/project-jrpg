@@ -24,10 +24,11 @@ These integration details describe the current exports and renderer.
 - Stopping selects the facing idle. Conversation uses the conversation-facing
   idle; authored scene poses and external sprite overrides retain ownership.
 
-The actor is ready for scene use. Replacing Aldric's existing quest actors,
-cinematic/meal poses, dialogue and story identifiers remains a separate task.
-The review capture stages Iselin transiently; it does not replace the regent or
-change quest progress.
+The actor is used by the live regent quest and Sanctuary scenes. Arrival
+cinematics and the seated meal use separate complete Iselin drawings. See the
+[replacement review](../../../docs/reviews/iselin_replacement/README.md). The
+earlier walking-integration capture stages an isolated review actor and retains
+its original scope; current gameplay uses the migrated regent identity.
 
 ## Reproduction and review
 

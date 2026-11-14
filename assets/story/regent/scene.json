@@ -12,10 +12,10 @@
   "arrival": [
     {
       "speaker": "caelan",
-      "text": "Regent Aldric? Mother Serene sent me. I’m Caelan."
+      "text": "Regent Iselin? Mother Serene sent me. I’m Caelan."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Thank you, Caelan. Have we kept her waiting?"
     },
     {
@@ -23,7 +23,7 @@
       "text": "We’ve just finished setting the table."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Then we’ve arrived at a very good moment."
     },
     {
@@ -31,11 +31,11 @@
       "text": "*under his breath* Finally."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "*glances back with a tired smile* Yes. I heard that."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "This is Lucan Rooke, my guard. Lucan, Caelan is showing us in."
     },
     {
@@ -79,7 +79,7 @@
       "cue": "meal_settle"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Thank you for receiving us."
     },
     {
@@ -87,7 +87,7 @@
       "text": "You look as though you could use something warm."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "I could use several things, but that’s comfortably the first."
     },
     {
@@ -151,12 +151,12 @@
     },
     {
       "speaker": "lucan",
-      "text": "His lordship chose me because I can manage both."
+      "text": "Her ladyship chose me because I can manage both."
     }
   ],
   "discussion": [
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Thank you for the wonderful meal and company. Now if I may, shall we discuss the matter of our visit?",
       "cue": "open_survey"
     },
@@ -170,7 +170,7 @@
       "cue": "clear_plates"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Elden Vale Sanctuary is one of the last remaining untapped deposits, and we are in need of its resources to hasten repairs around the region."
     },
     {
@@ -178,7 +178,7 @@
       "text": "What about the other quarries?"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "They are already mined day and night, but we can't keep up with the demand. The same thing that happened here to the bridge is happening across Merovar."
     },
     {
@@ -186,19 +186,19 @@
       "text": "Couldn’t the crown send more?"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Would that she could, but alas."
     },
     {
       "speaker": "tomas",
-      "text": "Aren't you Her Majesty's brother? Why would she say no?"
+      "text": "Aren't you Her Majesty's sister? Why would she say no?"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "People haven’t been refusing me, Tomas. They still have to cut the stone and bring it. There are other communities waiting for the same loads."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "A nearer source would give us more room to work. The proposed rock face is clear of the standing Sanctuary's walls."
     },
     {
@@ -206,7 +206,7 @@
       "text": "Yes, but the protected ground covers more than just the walls of the Sanctuary."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "I know. I believe we can preserve the grounds while mining the deposit. I wouldn’t have brought you the proposal otherwise."
     },
     {
@@ -214,7 +214,7 @@
       "text": "The Sanctuary was built there to guide the region’s dead back to the planet. We do not know what lies beneath the aetherial confluence there. It is simply too risky."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Could that work continue if we kept the crews away from the hall and grove?"
     },
     {
@@ -222,7 +222,7 @@
       "text": "No, it would disrupt our duty to the dead."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Alas, there are living people waiting for these roads."
     },
     {
@@ -234,7 +234,7 @@
       "text": "There is also a danger your survey does not show. The caretakers have heard growling inside the cave recently."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Since when?"
     },
     {
@@ -257,7 +257,7 @@
       "cue": "survivor_alarm"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "What happened?"
     },
     {
@@ -277,7 +277,7 @@
       "text": "You’ve already sent men into the reserve!?"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Ahead of my visit. To secure the deposit and prepare the mining work."
     },
     {
@@ -286,7 +286,7 @@
       "cue": "lucan_disbelief"
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "The order came from Her Majesty...and they weren’t supposed to enter the cave."
     },
     {
@@ -333,12 +333,12 @@
       "text": "Page, bring the survey. Stay with us."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Mother Serene—"
     },
     {
       "speaker": "serene",
-      "text": "Bring them back safely, Aldric. We will speak when you return."
+      "text": "Bring them back safely, Iselin. We will speak when you return."
     }
   ],
   "mira_departure": [
@@ -384,7 +384,7 @@
   "aftermath": [
     {
       "speaker": "caelan",
-      "text": "*quietly* He looked relieved when you offered the stone."
+      "text": "*quietly* She looked relieved when you offered the stone."
     },
     {
       "speaker": "serene",
@@ -396,11 +396,11 @@
     },
     {
       "speaker": "serene",
-      "text": "It settles what we can give him today."
+      "text": "It settles what we can give her today."
     },
     {
       "speaker": "caelan",
-      "text": "And he’ll ask about the quarry again."
+      "text": "And she’ll ask about the quarry again."
     },
     {
       "speaker": "serene",
@@ -408,7 +408,7 @@
     },
     {
       "speaker": "caelan",
-      "text": "*after a moment* I liked him."
+      "text": "*after a moment* I liked her."
     },
     {
       "speaker": "serene",
@@ -416,7 +416,7 @@
     },
     {
       "speaker": "caelan",
-      "text": "It sounds like he's in a tough position and it wasn't entirely his choice."
+      "text": "It sounds like she's in a tough position and it wasn't entirely her choice."
     },
     {
       "speaker": "serene",
@@ -451,7 +451,7 @@
   ],
   "arrival_reminder": [
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Lead the way, Caelan. I'll follow you."
     }
   ],
@@ -469,9 +469,9 @@
       "text": "I will."
     }
   ],
-  "aldric_after": [
+  "iselin_after": [
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Thank you for bringing us here, Caelan. I'll see you at the festival."
     }
   ],
@@ -496,7 +496,7 @@
   "clerk_waiting": [
     {
       "speaker": "regent_clerk",
-      "text": "I’ll wait until his lordship has finished."
+      "text": "I’ll wait until her ladyship has finished."
     }
   ],
   "tomas_waiting": [
@@ -507,7 +507,7 @@
   ],
   "arrival_waiting": [
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Mother Serene is expecting us. We'll wait here until she's ready."
     }
   ],
@@ -520,16 +520,16 @@
   "lucan_after": [
     {
       "speaker": "lucan",
-      "text": "I’ll stay with his lordship."
+      "text": "I’ll stay with her ladyship."
     }
   ],
   "arrival_unarmed": [
     {
       "speaker": "caelan",
-      "text": "Regent Aldric? Mother Serene sent me. I’m Caelan."
+      "text": "Regent Iselin? Mother Serene sent me. I’m Caelan."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Thank you, Caelan. Have we kept her waiting?"
     },
     {
@@ -537,7 +537,7 @@
       "text": "Mother Serene is expecting you."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Then we’ve arrived at a very good moment."
     },
     {
@@ -545,11 +545,11 @@
       "text": "*under his breath* Finally."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "*glances back with a tired smile* Yes. I heard that."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "This is Lucan Rooke, my guard. Lucan, Caelan is showing us in."
     },
     {
@@ -572,10 +572,10 @@
   "arrival_before_homecoming": [
     {
       "speaker": "caelan",
-      "text": "Regent Aldric? Mother Serene sent me. I’m Caelan."
+      "text": "Regent Iselin? Mother Serene sent me. I’m Caelan."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Thank you, Caelan. Have we kept her waiting?"
     },
     {
@@ -583,7 +583,7 @@
       "text": "Mother Serene is expecting you."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "Then we’ve arrived at a very good moment."
     },
     {
@@ -591,11 +591,11 @@
       "text": "*under his breath* Finally."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "*glances back with a tired smile* Yes. I heard that."
     },
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "This is Lucan Rooke, my guard. Lucan, Caelan is showing us in."
     },
     {
@@ -664,9 +664,9 @@
       "text": "I’ve got the cloths. Go and find them, Caelan."
     }
   ],
-  "travel_aldric": [
+  "travel_iselin": [
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "We need to reach the people still at the Sanctuary."
     }
   ],
@@ -688,9 +688,9 @@
       "text": "The kit’s ready. Let’s go."
     }
   ],
-  "arrival_aldric_waiting": [
+  "arrival_iselin_waiting": [
     {
-      "speaker": "aldric",
+      "speaker": "iselin",
       "text": "We’re accounting for everyone. Bring word as soon as you find him."
     }
   ],

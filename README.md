@@ -213,7 +213,7 @@ The same Mira actor follows through doors and trail links; progress survives
 leaving and reloading. See the [quest guide](docs/MILL_QUEST.md) and
 [in-game previews](docs/reviews/mill_quest/README.md).
 
-**Aldric arrives after the mill quest.** A detailed, player-advanced
+**Iselin arrives after the mill quest.** A detailed, player-advanced
 [cinematic](docs/REGENT_ARRIVAL.md) opens with a bird-led aerial view of the
 actual Elden Vale landscape, then descends to his caravan at the southern
 land gate. It follows his admission, his conversation with locals about the
@@ -222,12 +222,12 @@ Escape pauses/resumes; Skip ends
 the scene without accepting MQ03 or changing Caelan's location.
 
 **The Regent’s Road is playable after the mill quest.** Meet Serene and Tomas
-in the dining room at home, greet Aldric and Lucan by the brook, and guide the
+in the dining room at home, greet Iselin and Lucan by the brook, and guide the
 visitors directly to the meal. Serene explains the regional Sanctuary's duty
 to guide the dead and the recent growling from its cave. An injured survivor
-interrupts, exposing the Crown crew Aldric secretly sent ahead; Lucan was not
+interrupts, exposing the Crown crew Iselin secretly sent ahead; Lucan was not
 told. Serene stays to care for the survivor while Caelan collects Mira and
-travels with Aldric, Lucan and the page to Elden Vale Sanctuary. The quest
+travels with Iselin, Lucan and the page to Elden Vale Sanctuary. The quest
 remains active at the arrival checkpoint; its arrival cutscene and encounter
 are later work. Existing completed visits retain their progress. See the
 [quest guide](docs/REGENT_QUEST.md), [emergency gameplay review](docs/reviews/mq03_emergency/README.md)
@@ -444,7 +444,7 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 - [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md): the proposed direction, *The Broken Covenant*.
 - [Approved companion foundations](docs/narrative/game_01/COMPANIONS.md): Lucan, Rhea and Edran’s backgrounds, personalities, combat roles and introduction windows.
 - [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
-- [Regional surges and Aldric's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): southern-road damage, repair pressures and the end-MQ02 caravan arrival.
+- [Regional surges and Iselin's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): southern-road damage, repair pressures and the end-MQ02 caravan arrival.
 - [Sanctuary covenant](docs/world/SANCTUARY_COVENANT.md): approved protected-ground boundaries, custodial duties, public evidence and the unresolved trial-cut request.
 - [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
 
@@ -521,6 +521,6 @@ The [watermill](assets/terrain/eldenmere/watermill/README.md) is approved follow
 
 ### Liam’s first lantern — MQ04 opening
 
-After Aldric’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. Continue from Mira to the working mill, the Venn family and Elira’s memorial lantern. After Elira, collect the materials from Mira, take a break at Liam’s home, and bring his questions to Serene in the sanctuary hall. Return home to finish Liam’s personal lantern, carry it to his mother at school, then put it away safely. MQ04 completes after the final farewell; the finished lantern stays unlit at home for tomorrow’s festival. Existing PR3 saves continue directly from Serene without replaying earlier scenes. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [opening dialogue](docs/narrative/game_01/CH01_MQ04.md), [final section](docs/narrative/game_01/CH01_MQ04_PR4.md), and [actual-game finale preview](docs/reviews/lantern_finish/README.md).
+After Iselin’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. Continue from Mira to the working mill, the Venn family and Elira’s memorial lantern. After Elira, collect the materials from Mira, take a break at Liam’s home, and bring his questions to Serene in the sanctuary hall. Return home to finish Liam’s personal lantern, carry it to his mother at school, then put it away safely. MQ04 completes after the final farewell; the finished lantern stays unlit at home for tomorrow’s festival. Existing PR3 saves continue directly from Serene without replaying earlier scenes. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [opening dialogue](docs/narrative/game_01/CH01_MQ04.md), [final section](docs/narrative/game_01/CH01_MQ04_PR4.md), and [actual-game finale preview](docs/reviews/lantern_finish/README.md).
 
 Personal weapon and tool visibility follows the [personal-prop presentation rule](docs/PERSONAL_PROPS.md).

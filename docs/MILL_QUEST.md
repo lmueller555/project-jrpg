@@ -11,7 +11,7 @@ MQ02 now ends with Caelan returning to help Serene and Tomas inside the
 sanctuary dining room. Halden's acknowledged mill report records the repair
 and releases Mira to her workshop, while the quest remains active. After the
 homecoming conversation and actual cup-setting action finish, the existing
-quest rewards settle once and [Aldric's arrival cinematic](REGENT_ARRIVAL.md)
+quest rewards settle once and [Iselin's arrival cinematic](REGENT_ARRIVAL.md)
 plays. It introduces the relief caravan before the party appears at the lower
 brook bridge in town, then returns control to Caelan in the same dining room.
 The [regional story handoff](narrative/game_01/REGIONAL_SURGES.md) continues into
@@ -57,7 +57,7 @@ The first post-repair line preserves his held-rope beat; advancing beyond it rel
 After Halden's report, Mira returns to her workshop and Caelan walks home under
 player control. The final objective directs him to Mother Serene at the
 sanctuary. The existing Serene and Tomas actors are staged inside the dining
-room before arrival, without exposing Aldric's party or enabling MQ03 early.
+room before arrival, without exposing Iselin's party or enabling MQ03 early.
 Caelan's earlier morning offer to help is remembered without suggesting he
 forgot the tables: Tomas and Serene already took over that work.
 
@@ -74,7 +74,7 @@ physical placement and Serene's final acknowledged thanks are required before
 MQ02 can complete. Interrupted prose or movement cannot bypass that boundary.
 
 The dining-room view holds and fades into the arrival. The audience sees
-Aldric's approach while Caelan stays at the sanctuary, and the return preserves
+Iselin's approach while Caelan stays at the sanctuary, and the return preserves
 his room and position. Speaking with Serene afterward accepts MQ03 through the
 short welcome-visitors request rather than repeating the preparations.
 

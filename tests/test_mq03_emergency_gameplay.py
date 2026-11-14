@@ -105,7 +105,7 @@ class MQ03EmergencyGameplayTests(unittest.TestCase):
         self.assertEqual(driver.game.quests.status(LANTERN_QUEST),'locked')
         self.assertFalse(driver.quest.locks_player)
         self.assertFalse(driver.game.combat.active)
-        for actor in (driver.quest.aldric,driver.quest.lucan,driver.quest.clerk):
+        for actor in (driver.quest.iselin,driver.quest.lucan,driver.quest.clerk):
             self.assertIs(driver.quest._world(actor),driver.game.world)
             self.assertTrue(actor.story_visible)
             self.assertEqual(sum(actor in world.npcs for world in driver.game.scenes.values()),1)
@@ -123,7 +123,7 @@ class MQ03EmergencyGameplayTests(unittest.TestCase):
         self.assertNotIn('lucan',driver.game.party.members)
         self.assertEqual([actor.identifier for actor in driver.game.party_travel.actors()].count('mira'),1)
         visible=cast_visibility(driver.game)
-        self.assertEqual(set(visible),{'caelan','mira','aldric','lucan','regent_clerk'})
+        self.assertEqual(set(visible),{'caelan','mira','iselin','lucan','regent_clerk'})
         self.assertTrue(all(record['visible_pixels']>0 for record in visible.values()))
 
     def test_interrupting_care_scene_does_not_softlock_if_player_occupies_a_station(self):

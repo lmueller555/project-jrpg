@@ -16,7 +16,7 @@ from social import facing_toward
 
 
 SPEED = 76.0
-PRINCIPALS = ('caelan', 'mira', 'lucan', 'aldric', 'page')
+PRINCIPALS = ('caelan', 'mira', 'lucan', 'iselin', 'page')
 
 
 def feet(actor, position=None):

@@ -39,7 +39,7 @@ classroom, fitted viewer, and zoomed detail.
 
 **Status:** Approved regional lore. The [Elden Vale overworld](OVERWORLD.md)
 now implements the local landscape and ruined western crossing. The classroom
-map remains unchanged. Aldric's [arrival cinematic](REGENT_ARRIVAL.md) and MQ03
+map remains unchanged. Iselin's [arrival cinematic](REGENT_ARRIVAL.md) and MQ03
 dialogue now present the revised relief-visit story in the game.
 
 Before Game I opens, an extraordinarily powerful lightning surge destroyed
@@ -47,7 +47,7 @@ the road from Eldenmere to the next town south, along the map's corresponding
 southward connection. That town has no approved name: **River Leth** and
 **Lower Leth** are geographic labels, not its name. The
 [Regional Surges guide](narrative/game_01/REGIONAL_SURGES.md) records the
-handful of other recent incidents, Aldric's relief visits and the resulting
+handful of other recent incidents, Iselin's relief visits and the resulting
 repair shortages. The [Sanctuary Covenant](world/SANCTUARY_COVENANT.md)
 explains how those needs bear on the proposed quarry near the old ridge
 sanctuary.

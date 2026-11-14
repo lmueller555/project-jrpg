@@ -327,7 +327,7 @@ class RegentArrival:
             return 'travel' if snapshot.get('party_visible') and snapshot.get('party_moving') else None
         if self.phase.get('sound') == 'travel':
             for actor in self.phase['actors']:
-                if actor['id'] not in ('aldric', 'caravan'):continue
+                if actor['id'] not in ('iselin', 'caravan'):continue
                 start = actor.get('move_start', 0.)
                 duration = actor.get('move_seconds', self.phase['min_seconds'])
                 if (any(key in actor for key in ('to', 'path', 'route'))
@@ -348,7 +348,7 @@ class RegentArrival:
             if snapshot is None:snapshot = self.aerial_snapshot()
             return snapshot.get('approach_speed_pixels', 40.)/40.
         return min((actor.get('animation_rate', 1.) for actor in self.phase['actors']
-                    if actor['id'] in ('aldric', 'caravan')), default=1.)
+                    if actor['id'] in ('iselin', 'caravan')), default=1.)
 
     def update(self, seconds):
         if not self.active:return
@@ -668,7 +668,7 @@ class RegentArrival:
         reference = dict(phase)
         reference['actors'] = [dict(actor) for actor in phase['actors']]
         for actor in reference['actors']:
-            if actor['id'] in ('aldric','lucan','clerk','caravan'):
+            if actor['id'] in ('iselin','lucan','clerk','caravan'):
                 # Translate the whole path, not only its start. The reference
                 # root moves at24px/s; its gait must retain that same speed.
                 for key in ('position','to'):

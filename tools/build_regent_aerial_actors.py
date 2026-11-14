@@ -1,4 +1,4 @@
-"""Export authored bird and overhead convoy art for Aldric's aerial opening.
+"""Export authored bird and overhead convoy art for Iselin's aerial opening.
 
 The source sheets remain unchanged.  Alpha components isolate whole subjects
 where feather tips cross nominal grid boundaries; crops, registration and
@@ -117,9 +117,10 @@ def build():
         'registration':'Shared whole-sheet scale and torso anchors; wings never cropped to a uniform grid.'})
 
     convoy = subjects(SOURCE/'convoy_generated.png', 6, 512)
-    poses = {name:{} for name in ('aldric','guard','caravan')}
+    poses = {name:{} for name in ('guard','caravan')}
     for index,(image,_,bounds) in enumerate(convoy):
-        identifier = ('aldric','guard','caravan')[index%3]
+        if index%3==0:continue  # Original royal figure is retained source history only.
+        identifier = (None,'guard','caravan')[index%3]
         pose = 'overhead' if index < 3 else 'oblique'
         if identifier == 'caravan':
             canvas, target_anchor = (160,160), (80,128)
@@ -163,8 +164,14 @@ def build():
         'source':'offline native part-authored clerk; retained moss coat, brown hair and left-hand hip ledger',
         'overhead_facing':'north', 'oblique_facing':'northwest'})
     outputs.update(lucan_aerial_outputs())
+    if __package__:
+        from .build_regent_iselin import products as iselin_products
+    else:
+        from build_regent_iselin import products as iselin_products
+    for path,data in iselin_products().items():
+        if path.is_relative_to(TARGET):outputs[path.relative_to(TARGET).as_posix()]=data
     outputs['manifest.json'] = json_bytes({'version':1,'actors':{
-        name:name+'/animation.json' for name in ('bird','aldric','guard','caravan','clerk','lucan')}})
+        name:name+'/animation.json' for name in ('bird','iselin','guard','caravan','clerk','lucan')}})
     # Keep the existing compression only after BOTH the recorded hash and all
     # regenerated RGBA pixels agree, just as in the ground actor exporter.
     previous_path = TARGET/'provenance.json'

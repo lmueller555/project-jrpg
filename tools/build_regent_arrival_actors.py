@@ -1,7 +1,7 @@
 """Export registered arrival actors without repainting their retained sources.
 
 Only alpha cleanup, bounded crops, horizontal orientation and nearest resizing
-are used for legacy generated sheets. Separately offline-authored native Aldric
+are used for legacy generated sheets. Separately offline-authored native Iselin
 and clerk cells are copied without re-registration. Originals remain retained.
 """
 from __future__ import annotations
@@ -74,17 +74,6 @@ def build():
                 'back_vehicle_refined':[0,555,1024],
                 'turns':[0,475,887]}
     records={
-      'aldric':{'height':80,'frames':{
-        'stand_left':('travelers',0,0,True),'listen_left':('travelers',1,0,True),
-                'gesture_left':('travelers',2,0,False),'stand_right':('travelers',3,1,False),
-        'stand_back':('back_views',0,1,False),'walk_back_0':('back_views',0,1,False),
-        'walk_back_1':('back_views',1,1,False),'walk_back_2':('back_views',2,1,False),
-        'walk_back_3':('back_views',3,1,False),
-        'turn_left_back':('turns',0,0,False),
-        'walk_left_back_0':('turns',0,0,False),'walk_left_back_1':('turns',1,0,False),
-        'walk_left_back_2':('turns',2,0,False),'walk_left_back_3':('turns',3,0,False)},
-        'loops':{'walk_left_back':['walk_left_back_0','walk_left_back_1','walk_left_back_2','walk_left_back_3'],
-                 'walk_back':['walk_back_0','walk_back_1','walk_back_2','walk_back_3']}},
       'guard':{'height':80,'frames':{
         'stand_right':('travelers',0,2,False),'gesture_right':('travelers',1,2,False),
         'step_0':('walks',0,0,False),'step_1':('walks',1,0,False),
@@ -135,25 +124,9 @@ def build():
             outputs[f'{name}/{pose}.png']=png(sprite)
         manifest={'version':1,'canvas':[80,96],'anchor':[40,92],
                   'poses':{pose:pose+'.png' for pose in frames if not pose.startswith('walk_') and not pose.startswith('step_')},
-                  'loops':{loop:[{'file':pose+'.png','duration_ms':160 if name=='aldric' else 180} for pose in sequence]
+                  'loops':{loop:[{'file':pose+'.png','duration_ms':180} for pose in sequence]
                            for loop,sequence in record['loops'].items()},
                   'source':'imagegen-authored; deterministic crop/alpha/orientation/nearest export'}
-        if name=='aldric':
-            # This separately authored native source already has a fixed root.
-            # Do not crop, mirror or recenter it around its moving boots.
-            directory=SOURCE/'aldric_side_walk'
-            side=json.loads((directory/'side_walk.json').read_text())
-            sheet=Image.open(directory/side['sheet']).convert('RGBA')
-            if (side['canvas']!=[80,96] or side['anchor']!=[40,92]
-                    or len(side['frames'])!=8 or sheet.size!=(640,96)):
-                raise ValueError('Invalid native Aldric side-walk source')
-            for index,entry in enumerate(side['frames']):
-                sprite=sheet.crop((index*80,0,(index+1)*80,96))
-                outputs['aldric/'+entry['file']]=png(sprite)
-            manifest['loops']['walk_left']=[{key:entry[key] for key in ('file','duration_ms','phase')}
-                                            for entry in side['frames']]
-            manifest['gaits']={'walk_left':{'stride_pixels':side['stride_pixels']}}
-            manifest['source']='retained appearance; eight native phase-authored side steps; registered rear/idle exports'
         if name=='clerk':
             # The offline author already supplies native cells and a shared
             # root. Copy them; never crop, resize, mirror or center moving feet.
@@ -274,24 +247,28 @@ def build():
         after=Image.open(io.BytesIO(data)).convert('RGBA')
         if before.size==after.size and before.tobytes()==after.tobytes():
             outputs[name]=original
+    if __package__:
+        from .build_regent_iselin import products as iselin_products
+    else:
+        from build_regent_iselin import products as iselin_products
+    for path,data in iselin_products().items():
+        if path.is_relative_to(TARGET):outputs[path.relative_to(TARGET).as_posix()]=data
     provenance={'version':1,'exporter':'tools/build_regent_arrival_actors.py',
         'sources':{**lucan_sources,**{str((SOURCE/(name+'_generated.png')).relative_to(ROOT)):digest((SOURCE/(name+'_generated.png')).read_bytes()) for name in sheets},
-                 **{str(path.relative_to(ROOT)):digest(path.read_bytes()) for path in
-                        (SOURCE/'aldric_side_walk/side_walk.png',SOURCE/'aldric_side_walk/side_walk.json')},
                       **{path.relative_to(ROOT).as_posix():digest(path.read_bytes())
                           for path in sorted((SOURCE/'clerk_walk').rglob('*')) if path.is_file()}},
       'actors':metadata,'exports':{name:digest(data) for name,data in sorted(outputs.items())},
       'notes':['Original imagegen generations are retained without modification.',
                'Only alpha cleanup, bounded crops, horizontal registration and nearest resizing are applied.',
-               'Human sprites are authored cinematic bodies rather than enlarged overworld sprites.',
-               'Aldric side walking uses eight native support/swing phases, a fixed pelvis root and a 32-pixel full stride.',
+               'Iselin reuses approved whole-frame walks with uniform cinematic sampling; other actors retain their original sources.',
+               'Iselin uses complete scene drawings and approved 16-frame 35ms walks at a fixed body density.',
                'Original side-walk generations are retained; rear walks, idles and all other actors remain byte-identical.',
                'Clerk alone adds offline native part-authored eight-phase side/rear-quarter/rear walks and matching static turn/back poses; exporter copies registered cells.',
                'Clerk originals, every other actor PNG and all portraits retain verified hashes and decoded pixels; no imagegen tool was used for the clerk reconstruction.',
                'Authored rear-three-quarter turns preserve full bodies and a single correctly oriented caravan driver.',
                'Shallow and deep authored vehicle angles bridge side, three-quarter and rear silhouettes without stretching.',
                'The retained intermediate source sheet supplies its lower-left deep angle only; its prototype upper row is not exported.',
-               'Supporting portraits match this cinematic cast; existing Aldric, Serene and Tomas portraits remain authoritative.']}
+               'Supporting portraits match this cinematic cast; existing Iselin, Serene and Tomas portraits remain authoritative.']}
     outputs['provenance.json']=(json.dumps(provenance,indent=2)+'\n').encode()
     return outputs
 

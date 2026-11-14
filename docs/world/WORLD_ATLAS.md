@@ -4,7 +4,7 @@
 and opening regional context.**
 
 **Implementation:** The Elden Vale overworld shows the ruined western crossing
-and road damage. Aldric's arrival and MQ03 dialogue present the relief and
+and road damage. Iselin's arrival and MQ03 dialogue present the relief and
 covenant context below. The classroom world-map artwork is unchanged.
 
 **Auratia** contains four major continents, a significant central island chain
@@ -106,12 +106,12 @@ The blockage in MQ02 obstructs the mill supply; it does not stop the whole
 river or watershed. See the approved
 [Eldenmere elevation and water contract](eldenmere/blockout/README.md).
 
-Regent Aldric's established authority is regional. His
+Regent Iselin's established authority is regional. Her
 administration's immediate concerns lie in Elden Vale and neighbouring upper
-Leth road and quarry districts. Merovar is ruled by one crown through regional
-governors and local institutions, and Aldric is the reigning monarch's younger
-brother. His precise constitutional powers and exact political boundaries
-remain open. The [royal character foundations](../narrative/game_01/CHARACTERS.md#aldric--approved-royal-background)
+Leth road and quarry districts. Iselin's Crown rules a northern kingdom within Merovar, and she is the
+reigning queen's younger sister. This does not establish one Crown ruling the
+entire continent. Her precise constitutional powers and exact political boundaries
+remain open. The [royal character foundations](../narrative/game_01/CHARACTERS.md#iselin--approved-royal-background)
 record this approved relationship separately from proposed family details.
 A geographic region in the atlas is not automatically an administrative province.
 
@@ -119,13 +119,13 @@ A geographic region in the atlas is not automatically an administrative province
 
 Before the opening, an extraordinarily powerful lightning surge destroyed
 the road from Eldenmere to the next town south. That town has no approved
-name. A handful of similar events elsewhere in the region have led Aldric to
+name. A handful of similar events elsewhere in the region have led Iselin to
 visit a couple of affected communities and provide relief. Repairs strain
 available stone, transport and labour across those communities; this is not a
 widespread cataclysm. See [Regional Surges](../narrative/game_01/REGIONAL_SURGES.md)
 for the recent incidents and arrival context.
 
-The resulting material need drives Aldric's request to quarry a nearer seam
+The resulting material need drives Iselin's request to quarry a nearer seam
 inside the protected reserve of **Elden Vale Sanctuary**, northeast of Eldenmere.
 This is a separate site from **Serene's home**, the village household where
 Serene, Caelan and Tomas live and provide community care. The sanctuary's marked reserve
