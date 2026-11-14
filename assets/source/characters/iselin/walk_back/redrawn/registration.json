@@ -1,0 +1,418 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "reference": "assets/source/characters/iselin/idle_back_master.png",
+  "sources": {
+    "A.png": "4b47909f31409f94ebc7090c5af9e086eaaa97e14e7c9b032651e6968ebc44a3",
+    "B.png": "050d1bf57b7a8c1b26510e0e3c5ae0d31bb6aef1e6118ef2635c689f5d4249bf",
+    "C.png": "1c1e14fd80a7fd9618c960b3181f75c7b57637c0c741cbc213ab42ccbb9c6b5b",
+    "D.png": "7d8c386086524c54249a8ea8d8d917460e0181932b4437d86435797ee01c333a",
+    "F.png": "18e176e570335d43bd9a00e8da9330919a3299e4a37e4eb0c86c8c08a0d5789c",
+    "L.png": "700287195a390f0ab5112bf4c58249b5fca1e2611067b01ee654721be08d83f0",
+    "contact_right.png": "9717c7a68fc1097bb668b0ce70579e94e4c363fdee00b8b14dcd07724ab9db87",
+    "keys.png": "84978413be6b0e8c844fdccf5ebad07eb1b09277193155fad00362d576866796"
+  },
+  "processing": "Whole drawing alpha220 extraction, common scale per strip and head/ground registration. No part assembly, mirrors or limb interpolation.",
+  "frames": [
+    {
+      "source": "F.png",
+      "column": 0,
+      "box": [
+        0,
+        0,
+        495,
+        793
+      ],
+      "bounds": [
+        147,
+        54,
+        363,
+        744
+      ],
+      "scale": 0.09855072463768116,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "F.png",
+      "column": 1,
+      "box": [
+        495,
+        0,
+        991,
+        793
+      ],
+      "bounds": [
+        150,
+        54,
+        364,
+        744
+      ],
+      "scale": 0.09855072463768116,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "F.png",
+      "column": 2,
+      "box": [
+        991,
+        0,
+        1487,
+        793
+      ],
+      "bounds": [
+        148,
+        54,
+        364,
+        744
+      ],
+      "scale": 0.09855072463768116,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "F.png",
+      "column": 3,
+      "box": [
+        1487,
+        0,
+        1983,
+        793
+      ],
+      "bounds": [
+        142,
+        54,
+        366,
+        744
+      ],
+      "scale": 0.09855072463768116,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "A.png",
+      "column": 1,
+      "box": [
+        443,
+        0,
+        887,
+        887
+      ],
+      "bounds": [
+        109,
+        65,
+        354,
+        794
+      ],
+      "scale": 0.08808290155440414,
+      "size": [
+        22,
+        64
+      ],
+      "origin": [
+        11,
+        6
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 0,
+      "box": [
+        0,
+        0,
+        443,
+        887
+      ],
+      "bounds": [
+        118,
+        65,
+        370,
+        819
+      ],
+      "scale": 0.09018567639257294,
+      "size": [
+        23,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 1,
+      "box": [
+        443,
+        0,
+        887,
+        887
+      ],
+      "bounds": [
+        105,
+        65,
+        347,
+        819
+      ],
+      "scale": 0.09018567639257294,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ]
+    },
+    {
+      "source": "B.png",
+      "column": 2,
+      "box": [
+        887,
+        0,
+        1330,
+        887
+      ],
+      "bounds": [
+        83,
+        66,
+        332,
+        819
+      ],
+      "scale": 0.09018567639257294,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        9,
+        2
+      ]
+    },
+    {
+      "source": "C.png",
+      "column": 0,
+      "box": [
+        0,
+        0,
+        443,
+        887
+      ],
+      "bounds": [
+        113,
+        65,
+        358,
+        837
+      ],
+      "scale": 0.08808290155440414,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        10,
+        2
+      ]
+    },
+    {
+      "source": "C.png",
+      "column": 1,
+      "box": [
+        443,
+        0,
+        887,
+        887
+      ],
+      "bounds": [
+        100,
+        64,
+        346,
+        794
+      ],
+      "scale": 0.08808290155440414,
+      "size": [
+        22,
+        64
+      ],
+      "origin": [
+        10,
+        6
+      ]
+    },
+    {
+      "source": "keys.png",
+      "column": 2,
+      "box": [
+        887,
+        0,
+        1330,
+        887
+      ],
+      "bounds": [
+        76,
+        64,
+        330,
+        833
+      ],
+      "scale": 0.08842652795838751,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        9,
+        2
+      ]
+    },
+    {
+      "source": "keys.png",
+      "column": 1,
+      "box": [
+        443,
+        0,
+        887,
+        887
+      ],
+      "bounds": [
+        109,
+        64,
+        354,
+        823
+      ],
+      "scale": 0.08842652795838751,
+      "size": [
+        22,
+        67
+      ],
+      "origin": [
+        10,
+        3
+      ]
+    },
+    {
+      "source": "L.png",
+      "column": 0,
+      "box": [
+        0,
+        0,
+        446,
+        880
+      ],
+      "bounds": [
+        124,
+        40,
+        358,
+        811
+      ],
+      "scale": 0.08819714656290532,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "L.png",
+      "column": 1,
+      "box": [
+        446,
+        0,
+        893,
+        880
+      ],
+      "bounds": [
+        116,
+        40,
+        359,
+        811
+      ],
+      "scale": 0.08819714656290532,
+      "size": [
+        21,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "L.png",
+      "column": 2,
+      "box": [
+        893,
+        0,
+        1340,
+        880
+      ],
+      "bounds": [
+        101,
+        40,
+        347,
+        811
+      ],
+      "scale": 0.08819714656290532,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    },
+    {
+      "source": "L.png",
+      "column": 3,
+      "box": [
+        1340,
+        0,
+        1787,
+        880
+      ],
+      "bounds": [
+        87,
+        40,
+        332,
+        811
+      ],
+      "scale": 0.08819714656290532,
+      "size": [
+        22,
+        68
+      ],
+      "origin": [
+        11,
+        2
+      ]
+    }
+  ],
+  "status": "awaiting_user_review"
+}
