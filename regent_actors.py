@@ -29,6 +29,7 @@ class StoryActor:
         self.conversation_ready=False;self.conversation_facing=self.facing
         animation=json.loads((ROOT/record['art']).read_text())
         self.idles={};self.walks={};self.walk_durations={};self.pose_animations={}
+        self.detail_walks={}
         self.detail_idles={direction:(world.image(data['image']),tuple(data['draw_anchor']))
                            for direction,data in animation.get('high_resolution_idles',{}).items()}
         self.pose=None;self.pose_ms=0.;self._pose_clock_origin=None
@@ -46,8 +47,31 @@ class StoryActor:
         else:
             for direction,path in animation['idles'].items():self.idles[direction]=world.image(path)
             for direction,paths in animation['walks'].items():
-                self.walks[direction]=[world.image(p) for p in paths]
-                self.walk_durations[direction]=tuple(140 for _ in paths)
+                if isinstance(paths,dict):
+                    self._load_manifest_walk(direction,paths['manifest'],world)
+                else:
+                    self.walks[direction]=[world.image(p) for p in paths]
+                    self.walk_durations[direction]=tuple(140 for _ in paths)
+
+    def _load_manifest_walk(self,direction,path,world):
+        """Keep authored 2x frames and a world-size fallback on one clock."""
+        manifest_path=ROOT/path
+        manifest=json.loads(manifest_path.read_text())
+        density=manifest['artwork_pixels_per_world_pixel']
+        if density!=2:
+            raise ValueError('Detailed actor walks require 2x artwork density')
+        frames=[world.image((manifest_path.parent/frame['file']).relative_to(ROOT).as_posix())
+                for frame in manifest['frames']]
+        durations=tuple(frame['duration_ms'] for frame in manifest['frames'])
+        if not frames or any(duration<=0 for duration in durations):
+            raise ValueError('Actor walk needs frames with positive durations')
+        size=tuple(manifest['frame_size'])
+        if any(frame.get_size()!=size for frame in frames) or any(value%2 for value in size):
+            raise ValueError('Actor walk frames must match their 2x canvas')
+        self.walk_durations[direction]=durations
+        self.detail_walks[direction]=(frames,tuple(manifest['draw_anchor']))
+        self.walks[direction]=[pygame.transform.scale(frame,(size[0]//2,size[1]//2))
+                               for frame in frames]
 
     def set_pose(self, name, elapsed_ms=0):
         """Restore an authored native pose, including a completed reading hold."""
@@ -83,4 +107,15 @@ class StoryActor:
         direction=self.conversation_facing if self.conversation_ready else self.facing
         if self.moving or self.pose is not None or getattr(self,'story_sprite',None) is not None:
             return None
+        return self.detail_idles.get(direction)
+
+    def detailed_sprite(self, elapsed_ms):
+        """Match sprite() precedence; external scene poses own their artwork."""
+        if getattr(self,'story_sprite',None) is not None:return None
+        direction=self.conversation_facing if self.conversation_ready else self.facing
+        if self.moving and not self.conversation_ready:
+            if direction not in self.detail_walks:return None
+            frames,anchor=self.detail_walks[direction]
+            return animation_frame(frames,self.walk_durations[direction],self.walk_ms),anchor
+        if self.pose in self.pose_animations and not self.conversation_ready:return None
         return self.detail_idles.get(direction)

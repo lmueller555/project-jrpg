@@ -3,11 +3,12 @@ from hashlib import sha256
 import json
 from PIL import Image, ImageDraw
 from tools.export_iselin_first_assets import ROOT, BASE, REVIEW, SPRITE, encoded, json_bytes, matte, font
+from tools.register_iselin_walks import walk_references, ACTOR_SCOPE
 
 
 def products():
     outputs={};records={};directions=('front','left','right','back')
-    animation={'idles':{},'walks':{},'high_resolution_idles':{}}
+    animation={'idles':{},'walks':walk_references(),'high_resolution_idles':{}}
     board=Image.new('RGB',(840,560),'#e8edf2');draw=ImageDraw.Draw(board)
     draw.text((20,16),'ISELIN / FOUR DIRECTIONAL IDLES / 42 x 72',font=font(23),fill='#263c35')
     draw.text((20,52),'Actual exports enlarged 4x; normal party scale at 2x artwork density.',font=font(16),fill='#263c35')
@@ -43,6 +44,6 @@ def products():
         'frame_size':[42,72],'logical_frame_size':[21,36],'draw_anchor':[21,60],
         'foot_anchor':[21,68],'records':records})
     actor=json.loads((ROOT/BASE/'actor.json').read_text())
-    actor['scope']='Four directional idles; walking and cinematic poses remain future work.'
+    actor['scope']=ACTOR_SCOPE
     outputs[f'{BASE}/actor.json']=json_bytes(actor)
     return outputs

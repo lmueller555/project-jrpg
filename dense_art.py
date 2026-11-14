@@ -96,10 +96,15 @@ class WorldCanvas(pygame.Surface):
 
 
 def draw_actor(target, actor, surface, position, elapsed_ms):
-    detail = getattr(actor, 'detailed_idle', lambda _: None)(elapsed_ms)
+    detail_provider = getattr(actor, 'detailed_sprite', None)
+    if detail_provider is None:detail_provider = getattr(actor, 'detailed_idle', lambda _: None)
+    detail = detail_provider(elapsed_ms)
     if detail is not None and isinstance(target, WorldCanvas):
-        image, _ = detail
-        # position already subtracts the ordinary drawing anchor.
-        target.blit_art(image, position)
+        image, detail_anchor = detail
+        # Recover the ground position from the caller's ordinary drawing anchor,
+        # then apply the detailed artwork's anchor at its fixed 2x density.
+        anchor = getattr(actor, 'story_draw_anchor', None) or actor.draw_anchor
+        target.blit_art(image, (position[0]+anchor[0]-detail_anchor[0]/2,
+                                position[1]+anchor[1]-detail_anchor[1]/2))
     else:
         target.blit(surface, position)
