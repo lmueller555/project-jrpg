@@ -1,5 +1,10 @@
 # Leg progression revision — approved
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 The user approved this revised cycle for merge. The upper-body lock and corrected
 leg progression are the accepted right-facing walk; earlier review notes follow.
 
@@ -34,4 +39,5 @@ Validation: approved upper pixels identical; contact/support positions progress
 monotonically in both half-cycles; all16 RGBA exports load in Pygame; dimensions,
 hard transparency and GIF timing pass. Native sheets were inspected at enlarged
 scale for support/passing transitions and continuity into the next contact.
-Motion review remains pending; nothing is merged or activated in the journey.
+The user approved this leg revision and it is merged; runtime activation remains
+separate.

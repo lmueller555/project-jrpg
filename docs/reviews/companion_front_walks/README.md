@@ -1,5 +1,10 @@
 # Companion front-walk animation review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 **Status:** All three four-frame front-walk cycles are approved by the user.
 The character standing designs remain approved.
 

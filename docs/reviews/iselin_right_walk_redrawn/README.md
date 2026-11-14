@@ -1,5 +1,10 @@
 # Iselin right walk — approved whole-frame redraw
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 **Approval:** the user approved the leg-corrected right walk for merge.
 See [the accepted leg revision](LEG_REVISION.md). Earlier review notes follow.
 
@@ -10,7 +15,8 @@ This replaces the rejected layered approach with sixteen complete authored
 character drawings. There are no detached limb layers, reused body cores,
 procedural rotations, mirroring, or limb interpolation in the exported frames.
 This is the right-facing cycle first, following the agreed key-pose workflow.
-The left-facing cycle and runtime integration await this motion review.
+At this initial review stage the left-facing cycle and runtime integration
+were pending; the left cycle is now also approved and merged.
 
 ![Normal speed and half speed](preview.gif)
 
@@ -26,8 +32,8 @@ Reference/body details remain white hair, blue eye, near anatomical-right navy
 mantle and silver brooch, blue/silver coat, and the far anatomical-left braid.
 Visual inspection traced near/far arm and leg chains across the numbered sheet,
 including opposite arm assignments at the contact poses and hidden-limb
-transitions. This remains a user-review draft; a file-count check cannot certify
-natural gait or exact joint angles.
+transitions. This describes the initial review; a file-count check cannot certify natural
+gait or exact joint angles.
 
 Exports are 42×72, with 35ms frame duration and a 560ms full cycle. Each complete
 drawing is cropped, isolated at hard alpha220, reduced at one uniform scale per
@@ -44,5 +50,6 @@ dimensions, ground registration, successful Pygame loading, and GIF timing.
 The 32-frame GIF contains two normal repeats alongside one half-speed repeat;
 30/40ms GIF delays retain the intended560ms normal cycle duration.
 
-No assets have been merged or activated in the saved journey. Earlier rejected
-side-walk work is preserved on its original review branch.
+The leg-corrected cycle is approved and merged. Runtime activation remains
+separate. Earlier rejected side-walk work is preserved on its original review
+branch.

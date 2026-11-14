@@ -1,5 +1,10 @@
 # Companion directional walking review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 **Status:** All nine left, right and rear walk cycles are approved by the user.
 Together with the approved front walks, they complete each character's
 four-direction walking set.

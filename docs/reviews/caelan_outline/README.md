@@ -1,5 +1,10 @@
 # Caelan overworld contour review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 Caelan now uses a crisp, warm near-black inner contour comparable to Mira's
 existing overworld edging. The one-native-pixel pass changes boundary colors
 inside the existing alpha silhouette; it preserves canvas dimensions, ground

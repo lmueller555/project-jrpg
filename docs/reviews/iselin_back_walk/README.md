@@ -1,5 +1,10 @@
 # Iselin rear walk — approved
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 Sixteen whole-character drawings exported at42×72, using the established35ms
 frame time and560ms two-step cycle. The user approved revision 3 for merge into main. These assets follow the
 existing front/side animation format; runtime character replacement is separate.
@@ -29,15 +34,17 @@ or procedural posing is used.
 
 Sources, selected columns, bounding rectangles, uniform scales, origins and
 hashes are retained in `assets/source/characters/iselin/walk_back/redrawn/`.
-Technical export performs hard-alpha extraction, one scale per source strip and
-whole-drawing registration. Rebuild: `python tools/export_iselin_back_walk.py`.
+The initial export used hard-alpha extraction, strip scales and ground-based
+registration. Revision 3 below supersedes that body registration with audited
+crown/belt landmarks. Rebuild: `python tools/export_iselin_back_walk.py`.
 
 Checks cover16 distinct RGBA frames, hard alpha, bounds, timing, successful
 Pygame loading, and the hand/boot exchange at opposing contacts. The native
 sheet was visually inspected for complete silhouettes, costume sides, hand
 count, left/right identities and transitions across strip joins. Such checks
 support motion review; they do not certify precise joint angles or world-space
-foot locking. This remains an in-place animation preview for user approval.
+foot locking. The final in-place preview is approved and merged; runtime walking integration
+remains separate.
 
 ## Right foot correction, revision 2
 

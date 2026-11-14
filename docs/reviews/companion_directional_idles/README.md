@@ -1,5 +1,10 @@
 # Companion directional idle review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 **Status:** All nine left, right and rear poses are approved by the user,
 completing the four-direction idle sets alongside the approved front poses.
 

@@ -1,5 +1,10 @@
 # Vespermaw combat art
 
+Sprite construction, proportions, registration and visual review follow the
+[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). The
+implementation details below describe this asset/system; older construction
+methods are retained for reproducibility, not as new authoring instructions.
+
 Vespermaw's dedicated combat bank retains its heavy beast-shaped silhouette:
 broad forelimbs and jaw, with mineral shoulder and spine growths. It now depicts
 an elemental manifestation of the Sanctuary's disturbed Aether confluence,

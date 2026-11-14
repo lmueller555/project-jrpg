@@ -1,5 +1,10 @@
 # Iselin directional idles
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 The left, right and back views extend the approved 42×72 front idle. The front
 artwork and portrait are unchanged. All four directions now register in the
 existing idle actor and use the display-density renderer at normal party scale.

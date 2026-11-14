@@ -1,5 +1,10 @@
 # Iselin — portrait and front idle review
 
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+This file retains asset-specific implementation details and review history;
+older construction methods and review-stage wording are historical, not current
+general instructions.
+
 **Current status:** the portrait and 42×72 idle are approved and implemented.
 See [implementation and production capture](IMPLEMENTED.md). The original
 review notes below preserve the earlier proposals and approval stages.
