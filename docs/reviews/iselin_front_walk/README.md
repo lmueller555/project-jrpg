@@ -1,4 +1,8 @@
-# Iselin front walk — first review
+# Iselin front walk — approved
+
+The user approved this preview for merge. Runtime walking integration and the
+remaining directions are subsequent work; this milestone supplies the authored
+front cycle. Earlier preview notes below preserve its review context.
 
 Sixteen independently authored poses, exported at 42×72. Design A's anatomical
 left braid and anatomical right mantle are maintained. The full two-step cycle

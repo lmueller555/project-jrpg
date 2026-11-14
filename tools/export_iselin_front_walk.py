@@ -53,7 +53,7 @@ def build():
     # GIF stores centiseconds: alternate 30/40ms to preserve the 560ms cycle.
     previews[0].save(REVIEW/'preview.gif',save_all=True,append_images=previews[1:],
                      duration=[30,40]*16,loop=0,disposal=2,optimize=False)
-    metadata={'character':'iselin','animation':'walk.front','status':'awaiting_user_review',
+    metadata={'character':'iselin','animation':'walk.front','status':'approved',
               'frame_size':[42,72],'draw_anchor':[21,60],'foot_anchor':[21,68],
               'artwork_pixels_per_world_pixel':2,'loop':True,'cycle_ms':560,
               'source':SOURCE.relative_to(ROOT).as_posix(),
@@ -64,7 +64,7 @@ def build():
         'source_sha256':sha256(SOURCE.read_bytes()).hexdigest(),'atlas_grid':[4,4],
         'uniform_scale':scale,'hard_alpha_threshold':128,'frames':records,
         'processing':'Crop, hard alpha, uniform nearest-neighbor reduction and whole-frame registration only.',
-        'approval':'Review pending; no runtime actor replacement or merge.'},indent=2)+'\n')
+        'approval':'User approved the front-walk preview for merge; directional/runtime walking integration remains a later pass.'},indent=2)+'\n')
     print('Exported 16 distinct 42x72 drawings, 560ms cycle, sheet and looping review.')
 
 
