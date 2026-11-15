@@ -1,6 +1,7 @@
 # Caelan left run — artwork review
 
-Status: revision 2 awaiting user artwork approval. Not merged or integrated into gameplay.
+Status: revision 2 user-approved, accepted for merge into main. Gameplay integration
+remains deferred.
 Existing idles, walks, approved runs and live actor selection are unchanged.
 
 - [Normal/half-speed preview with approved left idle](preview_v2.gif)

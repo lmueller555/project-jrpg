@@ -113,8 +113,8 @@ def build():
     for i, frame in enumerate(frames):
         sheet.alpha_composite(frame, (i*56, 0))
     sheet.save(OUT / 'spritesheet.png')
-    manifest = dict(version=1, character='caelan', animation='run.left', status='review',
-        design_status='approved', artwork_status='pending_review', runtime_integration=False,
+    manifest = dict(version=1, character='caelan', animation='run.left', status='approved',
+        design_status='approved', artwork_status='approved', runtime_integration=False,
         artwork_pixels_per_world_pixel=2, frame_size=[56, 76], logical_size=[28, 38],
         draw_anchor=[28, 64], foot_anchor=[28, 72], cycle_ms=400, loop=True,
         source_hashes=hashes, palette_sha256=digest(palette_path), frames=records,
