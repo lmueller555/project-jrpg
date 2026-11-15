@@ -1,9 +1,8 @@
-# Caelan front walk — review
+# Caelan front walk — approved
 
 Sixteen complete 48×72 RGBA poses, 2× artwork density, 24×36 logical canvas,
 [24,60] artwork draw anchor and [24,68] foot anchor. Each frame lasts35ms;
-the two-step loop lasts560ms. **Awaiting user approval; unmerged and not
-activated in gameplay.**
+the two-step loop lasts560ms. **User-approved artwork; unmerged and not activated in gameplay.**
 
 ![Normal speed, half speed and exact approved idle](preview.gif)
 

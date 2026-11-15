@@ -52,12 +52,22 @@ class CaelanFrontBackWalkReviewTests(unittest.TestCase):
         for direction,(bank,data,frames) in self.packs.items():
             source=ROOT/f'assets/source/characters/caelan/walk_{direction}_hd_review'
             for frame,record in zip(frames,data['frames']):
-                snapshot=Image.open(source/'upper_snapshot'/record['file']).convert('RGBA')
+                if direction=='front':
+                    snapshot=Image.open(source/'upper_snapshot'/record['file']).convert('RGBA')
+                    digest=record['upper_sha256']
+                    self.assertIn(record['upper_registration']['source'],data['source_hashes'])
+                else:
+                    # Shoulders/arms/torso remain from the same coupled rear
+                    # drawing when a small leg-join correction is selected.
+                    snapshot=Image.open(source/record['coupled_reference']).convert('RGBA')
+                    digest=hashlib.sha256(snapshot.crop((0,0,48,48)).tobytes()).hexdigest()
+                    old=Image.open(source/record['protected_head_source']).convert('RGBA')
+                    self.assertEqual(frame.crop((0,0,48,24)).tobytes(),old.crop((0,0,48,24)).tobytes())
+                    self.assertEqual(hashlib.sha256(old.crop((0,0,48,24)).tobytes()).hexdigest(),record['head_sha256'])
                 region=snapshot.crop((0,0,48,48)).tobytes()
                 self.assertEqual(frame.crop((0,0,48,48)).tobytes(),region)
-                self.assertEqual(hashlib.sha256(region).hexdigest(),record['upper_sha256'])
-                self.assertIn(record['upper_registration']['source'],data['source_hashes'])
-            self.assertTrue(self.packs['front'][1]['frames'][13]['complete_pose_override'])
+                self.assertEqual(hashlib.sha256(region).hexdigest(),digest)
+        self.assertTrue(self.packs['front'][1]['frames'][13]['complete_pose_override'])
 
     def test_exact_sheet_reconstruction_and_source_hashes(self):
         for direction,(bank,data,frames) in self.packs.items():
@@ -79,8 +89,9 @@ class CaelanFrontBackWalkReviewTests(unittest.TestCase):
                     self.assertEqual([f.info['duration'] for f in ImageSequence.Iterator(gif)],times)
 
     def test_approval_and_runtime_states_are_explicit(self):
-        for bank,data,frames in self.packs.values():
-            self.assertEqual(data['status'],'review');self.assertEqual(data['artwork_status'],'review')
+        for direction,(bank,data,frames) in self.packs.items():
+            expected='approved' if direction=='front' else 'review'
+            self.assertEqual(data['status'],expected);self.assertEqual(data['artwork_status'],expected)
             self.assertEqual(data['design_status'],'approved');self.assertFalse(data['runtime_integration'])
 
     def test_approved_idles_and_side_walks_are_unchanged(self):
@@ -90,3 +101,21 @@ class CaelanFrontBackWalkReviewTests(unittest.TestCase):
         for direction,(bank,data,frames) in self.packs.items():
             idle=ROOT/f'assets/characters/caelan/review_hd/idles/idle_{direction}.png'
             self.assertEqual(hashlib.sha256(idle.read_bytes()).hexdigest(),data['approved_idle_sha256'])
+
+    def test_approved_front_art_and_previews_are_byte_identical(self):
+        path=ROOT/'assets/source/characters/caelan/walk_back_hd_review/revision_2/protected_front.json'
+        for file,digest in json.loads(path.read_text()).items():
+            self.assertEqual(hashlib.sha256((ROOT/file).read_bytes()).hexdigest(),digest)
+
+    def test_rear_contacts_pair_the_trailing_hand_with_the_away_reaching_same_leg(self):
+        frames=self.packs['back'][2]
+        def visible_skin(frame,lo,hi):
+            return sum(1 for x in range(lo,hi) for y in range(38,44)
+                       if (lambda p:p[3] and p[0]>170 and p[0]>p[1]*1.15 and
+                           p[1]>p[2]*1.05 and p[2]>65)(frame.getpixel((x,y))))
+        right_contact,left_contact=frames[0],frames[8]
+        self.assertGreater(visible_skin(right_contact,29,39),visible_skin(right_contact,9,19))
+        self.assertGreater(visible_skin(left_contact,9,19),visible_skin(left_contact,29,39))
+        boots=self.packs['back'][1]['frames']
+        self.assertGreater(boots[0]['boot_observation_windows'][0][2],boots[0]['boot_observation_windows'][1][2])
+        self.assertLess(boots[8]['boot_observation_windows'][0][2],boots[8]['boot_observation_windows'][1][2])

@@ -32,6 +32,12 @@ def sample_upper(source,direction,name,cell,palette):
 
 
 def build(direction):
+    if direction=='back':
+        from tools.export_caelan_back_walk_hd_v2 import build as build_back
+        frames,records=build_back()
+        render_review(direction,frames,records,ROOT/'docs/reviews/caelan_back_walk_hd',
+                      ROOT/'assets/characters/caelan/review_hd/idles/idle_back.png')
+        return
     source=ROOT/f'assets/source/characters/caelan/walk_{direction}_hd_review'
     bank=ROOT/f'assets/characters/caelan/review_hd/walk_{direction}'
     review=ROOT/f'docs/reviews/caelan_{direction}_walk_hd'
@@ -107,8 +113,8 @@ def build(direction):
     for i,frame in enumerate(frames):sheet.alpha_composite(frame,(i*48,0))
     sheet.save(bank/'spritesheet.png')
     idle_path=ROOT/f'assets/characters/caelan/review_hd/idles/idle_{direction}.png';idle=Image.open(idle_path).convert('RGBA')
-    data={'version':1,'character':'caelan','animation':f'walk.{direction}','status':'review',
-        'design_status':'approved','artwork_status':'review','runtime_integration':False,
+    data={'version':1,'character':'caelan','animation':f'walk.{direction}','status':'approved',
+        'design_status':'approved','artwork_status':'approved','runtime_integration':False,
         'frame_size':[48,72],'logical_size':[24,36],'draw_anchor':[24,60],'foot_anchor':[24,68],
         'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,'source_scale':'Uniform per authored atlas; see frame records',
         'source_hashes':hashes,'protected_region':[0,0,48,48],
@@ -117,6 +123,11 @@ def build(direction):
         'alpha_threshold':threshold,'frames':records,
         'processing':'Complete authored drawings; hard alpha, uniform nearest-neighbor sampling, head/neck registration, shared material palette and contour. Upper rows0:48 retain the sampled whole-pose snapshots after complete leg redraws. No detached limb transforms or idle warping.'}
     (bank/'animation.json').write_text(json.dumps(data,indent=2)+'\n');(source/'registration.json').write_text(json.dumps(data,indent=2)+'\n')
+    render_review(direction,frames,records,review,idle_path)
+    print(direction,'crowns',[r['head_crown_y'] for r in records],'boots',[r['boot_observation_windows'] for r in records])
+
+def render_review(direction,frames,records,review,idle_path):
+    idle=Image.open(idle_path).convert('RGBA')
     font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',17)
     small=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',13)
     board=Image.new('RGB',(864,1304),'#303940');draw=ImageDraw.Draw(board)
@@ -138,7 +149,9 @@ def build(direction):
     gif_palette=packed.quantize(colors=256,dither=Image.Dither.NONE)
     indexed=[f.quantize(palette=gif_palette,dither=Image.Dither.NONE) for f in previews]
     indexed[0].save(review/'preview.gif',save_all=True,append_images=indexed[1:],duration=[30,40]*16,loop=0,disposal=2,optimize=False)
-    print(direction,'crowns',[r['head_crown_y'] for r in records],'boots',[r['boot_observation_windows'] for r in records])
+    if direction=='back':
+        board.save(review/'frames_v2.png')
+        (review/'preview_v2.gif').write_bytes((review/'preview.gif').read_bytes())
 
 if __name__=='__main__':
     for direction in ('front','back'):build(direction)

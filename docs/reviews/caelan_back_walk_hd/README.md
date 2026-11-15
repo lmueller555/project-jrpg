@@ -1,84 +1,84 @@
-# Caelan rear walk — review
+# Caelan rear walk — revision 2, review
 
-Sixteen complete 48×72 RGBA poses, 2× artwork density, 24×36 logical canvas,
-[24,60] artwork draw anchor and [24,68] foot anchor. Each frame lasts35ms;
-the two-step loop lasts560ms. **Awaiting user approval; unmerged and not
-activated in gameplay.**
+Sixteen 48×72 frames at 2× artwork density; unchanged 24×36 logical canvas,
+[24,60] draw anchor, [24,68] foot anchor and 16×35ms=560ms cadence.
+**Rear revision awaits user approval. Front artwork is approved. Both remain
+unmerged and inactive in gameplay.**
 
-![Normal speed, half speed and exact approved idle](preview.gif)
+![Normal speed, half speed and approved rear idle](preview_v2.gif)
 
-[Numbered frame sheet](frames.png) · [Stationary hall-scale preview](hall_preview.gif)
+[Numbered drawings](frames_v2.png) · [Hall-scale playback](hall_preview.gif) ·
+[Superseded first review](history_v1/preview.gif)
 
-The main preview shows 4× enlargement and ordinary 960×640-viewport artwork
-size below. The hall capture uses the actual native WorldCanvas compositor
-and temporary saves/settings, with the candidate stationary. Actual traveling,
-direction/idle transitions, depth occlusion during movement and foot locking
-at gameplay speed remain runtime-integration work after art approval.
+## Motion correction
 
-## Applying the animation standard
+The first review's upper and lower drawing selections lost their shared phase:
+trailing arms persisted after the same-side leg moved back, some passing poses
+changed limb depth prematurely, and the return to contact was uneven. Its boot
+continuity checks passed but could not establish correct arm/leg opposition.
 
-The [global visual standard](../../VISUAL_ART_STANDARD.md) is authoritative.
-The approved directional idle supplies appearance. Contact/passing keys and
-Iselin's accepted directional motion supplied planning references, followed by
-small batches of whole-character drawings. Both arm/leg pairs progress in depth;
-same-side arm counters leg, knees bend naturally and hands may be occluded.
-Boot lanes stay narrow rather than reproducing the side view's reach as lateral
-kicks. Anatomical-left hip pouch is viewer left.
+Revision 2 starts with new **complete coupled rear drawings**. The approved
+front walk supplies anatomical phase references; the approved rear idle supplies
+appearance. In rear view, left is viewer left and right is viewer right. At the
+right contact, the right leg reaches away while the right arm trails toward the
+camera; the left pair counters it. The opposite contact exchanges those roles.
+Both shoulders, elbows, hands, hips, knees and boots are considered together.
+Hands reaching away may disappear naturally behind the torso.
 
-Initial batches completed some steps too early. Full-cycle redraws and an
-annotated sole-landmark guide corrected that progression. The actual exported
-boot observations differ slightly from the intended source guide; the manifest
-records both the retained plan and measured export, without claiming exact joint
-positions or biomechanical ground locking. Two small join corrections distribute
-landings across intermediate poses. Maximum adjacent measured boot-height
-change is three artwork pixels, including frame16→1; both boot tracks have
-at least six pixels of depth excursion. Those observations are asset regression
-bounds, not universal animation rules.
+Four small source batches preserve the character's costume and left-hip pouch.
+Selected whole poses and scoped join redraws distribute the passing/landing
+changes and approach to the loop seam. The source column order is not assumed
+to be chronology: the explicit selection plan is in the exporter and final
+registration. No detached limbs are rotated, shifted, stretched or interpolated.
 
-The upper48 rows are retained from sampled complete-drawing snapshots after
-the complete leg redraws, following the regional-preservation workflow used for
-Iselin. This protects the established arms, face/hair, tabard, bracers and pouch.
-No detached limbs are rotated, shifted or stretched; no idle is warped to build
-poses. Row47/48 joins were inspected for knee continuity, old boots, disconnected
-cloth and duplicate outlines. Crown positions stay within rows2–3, with at most
-one pixel of adjacent change, and no extra runtime bob is added.
+Only the previous head region (rows0–23) is retained across the core redraws.
+The previous arms/torso are **not** preserved. Small leg-join corrections retain
+rows0–47 from their corresponding **new coupled pose**, keeping its arm phase
+while smoothing that pose's knee/boot return. These are documented regional
+edits to complete generated drawings under the
+[global visual standard](../../VISUAL_ART_STANDARD.md#6-correct-one-defect-while-protecting-accepted-work),
+not assembly of independently timed arm and leg cycles. Neck/shoulder and
+row47/48 joins were inspected for stale pixels, disconnections and extra limbs.
 
-Sources with different canvas densities are sampled uniformly within each
-atlas, using audited head/neck/belt landmarks. Source metadata records scales,
-origins and selected cells. Occupied height and the lowest boot do not determine
-body scale. The approved right-walk material palette and existing fine black
-contour treatment are retained across both directions.
+Sampling is uniform within each source atlas. Different source canvas densities
+use audited neck/head/belt registration, recorded with crop, origin and scale;
+neither full occupied height nor the lowest boot establishes the body's scale.
+Crown excursion remains one artwork pixel. Observed sole windows change by at
+most three artwork pixels between neighboring frames, including16→1. A shared
+palette and the existing fine black contour treatment remain in use.
 
-## Sources and reproducibility
+## Provenance and checks
 
-Original generated masters, motion references, annotated guides, whole-pose
-snapshots and selection/registration records are retained in
-`assets/source/characters/caelan/walk_back_hd_review/`. The current export combines
-selected upper artwork from the small batches with `leg_revision.png` and
-`join_revision.png`. Guides and source pose indices are recorded in
-`leg_plan.json`; `registration.json` records the actual final selections and
-hashes. Unselected cells, initial keys and `cycle_candidate.png` remain source
-history. They are not alternative production banks.
+Current masters, front phase guides, join guides, original coupled-pose
+snapshots and registration are under
+`assets/source/characters/caelan/walk_back_hd_review/revision_2/`.
+`A.png`–`D.png` are the coupled source batches; `joins_A.png`, `joins_B.png` and
+`final_joins.png` contain complete transition redraws. `before/` preserves the
+rejected first pack; `coupled_before_joins/` preserves the new core drawings.
+`registration.json` identifies every source cell, original head, scoped repair,
+body landmark, uniform scale, source hash and measured boot observation.
 
-Front frame14 selects a complete original A pose for its contact approach.
-Front frame12 and rear frames11/12 use audited chronological source selections;
-source atlas column order is not assumed to be a valid cycle. Final frame order
-is the manifest's explicit list. All reference idles and both approved profile
-walk packs remain byte-identical.
+The front pack and its preview images are SHA-protected by
+`revision_2/protected_front.json`. Recording its approval changes metadata only;
+its PNGs, spritesheet and previews remain byte-identical. The approved idles
+and side walks also remain unchanged.
 
-Eight focused front/rear checks plus fifteen approved-profile regression checks
-pass: dimensions/density/anchors, hard alpha and margins, distinct poses,
-measured crown and boot continuity including the loop, upper-pixel preservation
-and source provenance, exact sheet reconstruction, source/palette/reference
-hashes, explicit review/integration state, and saved GIF cadence. These checks
-support inspection; they cannot certify visual quality or anatomy by themselves.
+Twenty-five focused checks pass. In addition to dimensions, alpha, margins,
+unique frames, timing, sheet reconstruction and source preservation, checks
+cover the visible trailing hand and away-reaching same-side boot at both
+opposite contacts; provenance from the new coupled drawing; the exact head
+region; measured crown/boot continuity through the loop; and approved-front
+pixel preservation. These support visual review, not a guarantee of anatomy
+or world-ground foot locking.
 
-The PNG timing is16×35ms. GIF delays alternate30/40ms: normal plays twice in
-1120ms while half speed plays once. Each preview uses a shared palette to avoid
-temporal recoloring; RGBA PNGs remain authoritative for exact pixels.
+The normal and half-speed previews share a palette and alternate30/40ms GIF
+delays, preserving the average35ms cadence. Exact RGBA PNGs remain authoritative.
+The hall preview is stationary native-compositor playback with temporary saves,
+not activated player travel. Movement speed, stance sliding during travel,
+turning, stopping and moving occlusion remain runtime-integration checks.
 
 ```sh
 python tools/export_caelan_front_back_walk_hd.py
-python tools/capture_caelan_front_back_walk_hd.py
+python -c "from tools.capture_caelan_front_back_walk_hd import capture; capture('back')"
 PYTHONPATH=.:tests python -m unittest test_caelan_front_back_walk_hd test_caelan_left_walk_hd test_caelan_right_walk_hd
 ```
