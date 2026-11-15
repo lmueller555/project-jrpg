@@ -15,9 +15,9 @@ Iselin's detailed artwork is the reference for this increase in fidelity.
 `rendering.py`. The 480×320 logical view has an authoritative 960×640 native
 buffer across exploration, battle and cinematic presentation. Existing asset
 banks retain their legacy density until rebuilt; Iselin's detailed artwork
-and the Sanctuary dining room now use the shared path. The dining room is the
-first integrated environment bank; remaining asset reconstruction and individual
-bank migrations continue as separately scoped work.
+and all three Sanctuary home interiors (hall, bedroom and dining room) now use
+the shared path. Dining was the first integrated environment bank; remaining
+asset reconstruction and individual bank migrations continue as separately scoped work.
 
 This standard replaces conflicting general advice in older character recipes,
 tool descriptions and review notes. Those files retain asset-specific facts,
@@ -165,6 +165,11 @@ is an available opening interaction. Its boundary is the table's support edge.
 New special-object integrations must add their real availability resolver and
 verify completion, interruption and save restoration rather than marking every
 quest-adjacent decoration eligible.
+
+Repeatable inspections remain eligible after their dialogue closes; they are
+not exhausted actions. The bedroom inspection resolvers retain the existing
+opening-stage gates and repeatable dialogue behavior. Do not invent quest
+receipts or change save progress solely to silence a discovery cue.
 
 Review an unhighlighted object, a distant glint, a nearby outline, an occluded
 object and a completed/inactive state at normal game size. Check light/dark

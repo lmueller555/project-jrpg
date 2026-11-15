@@ -1970,6 +1970,8 @@ class Game:
         if not hasattr(self.world,'object_cues'):return
         conditions=set()
         if self.opening.stage=='explore':conditions.add('opening_breakfast')
+        if self.opening.stage in ('explore','assignment','done'):
+            conditions.update('bedroom_inspect_'+key for key in self.opening.data['inspections'])
         enabled=(self._music_focused and not self.social.locked and not self.opening.locks_player
                  and not self.household_action and not self.combat.active and not self.on_title
                  and not self.regent_arrival.active and not self.sanctuary_arrival.active

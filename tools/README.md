@@ -4,8 +4,8 @@ Artwork, textures, sprites, animation, exporters and rendering changes follow th
 [global visual art standard](../docs/VISUAL_ART_STANDARD.md).
 That is the single reference for style, units, density, rendering, construction
 and review; this catalogue records commands and asset-specific implementation
-details. Full-scene 2× rendering is implemented; Sanctuary dining is the first
-migrated environment bank. Other asset rebuilds remain pending.
+details. Full-scene 2× rendering is implemented; Sanctuary hall, bedroom and
+dining are migrated environments. Other asset rebuilds remain pending.
 Use `python tools/profile_renderer.py --frames 30` for temporary-save
 production draw timings.
 Existing command descriptions and frame dimensions below describe their current
@@ -32,6 +32,19 @@ legacy builders do not themselves certify or activate a density migration.
 The [central object-creation guidance](../docs/VISUAL_ART_STANDARD.md#object-creation-and-interaction-readability)
 defines contours, interaction cues and authoring metadata; do not duplicate those
 rules in local recipes.
+
+`python tools/build_sanctuary_home_hd.py` exports the hall and bedroom using
+retained new prop drawings and the dining room's existing 2× materials/furnishings.
+It preserves gameplay registration, exports five fixed-hinge door poses and
+compact daylight layers, and connects the five existing bedroom inspections to
+the shared cue renderer. The previously omitted window destination comes from
+its existing story anchor. Inspection dialogue remains repeatable, with no new
+quest receipts or save schema. Sources/registration live under
+`assets/source/terrain/eldenmere/sanctuary_home_hd/`, and the integrated bank under
+`assets/terrain/eldenmere/sanctuary_home_hd/`. Run this after the dining exporter
+when reproducing the retained legacy full-interior build pipeline.
+`python tools/capture_sanctuary_home_hd.py /tmp/home-review` captures actual room,
+inspection, sleeping/wake and open-door states with temporary saves.
 
 Iselin’s approved complete-frame walk exporters are
 `tools/export_iselin_front_walk.py`,

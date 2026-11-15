@@ -1,0 +1,2458 @@
+{
+  "version": 1,
+  "density": 2,
+  "source_sha256": "578f4939ff268c28a1a13d5d0aa66fcbe97b6a98829bc1815f121e194cb05e9c",
+  "rooms": {
+    "hall": {
+      "map": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+      "original_map": {
+        "size_pixels": [
+          336,
+          336
+        ],
+        "size_tiles": [
+          12,
+          10
+        ],
+        "tile_size": 24,
+        "floor_rect": [
+          24,
+          72,
+          288,
+          240
+        ],
+        "player_probe_size": [
+          24,
+          12
+        ],
+        "player_draw_anchor": [
+          12,
+          30
+        ],
+        "ground_frames": [
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png"
+        ],
+        "ground_frame_duration_ms": 300,
+        "entities": [
+          {
+            "id": "notices",
+            "position": [
+              32,
+              36
+            ],
+            "sort_y": 0,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "bookcase",
+            "position": [
+              36,
+              60
+            ],
+            "sort_y": 120,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "records",
+            "position": [
+              180,
+              54
+            ],
+            "sort_y": 100,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "herbs",
+            "position": [
+              144,
+              60
+            ],
+            "sort_y": 0,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "reading_bench",
+            "position": [
+              48,
+              156
+            ],
+            "sort_y": 186,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "bookstand",
+            "position": [
+              108,
+              138
+            ],
+            "sort_y": 174,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "rug",
+            "position": [
+              120,
+              204
+            ],
+            "sort_y": 0,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "mending_table",
+            "position": [
+              240,
+              168
+            ],
+            "sort_y": 210,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "mending",
+            "position": [
+              252,
+              162
+            ],
+            "sort_y": 210,
+            "sort_priority": 1,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "second_bench",
+            "position": [
+              48,
+              216
+            ],
+            "sort_y": 246,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "washbasin",
+            "position": [
+              36,
+              264
+            ],
+            "sort_y": 296,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "welcome_console",
+            "position": [
+              240,
+              252
+            ],
+            "sort_y": 282,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/console.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "plant",
+            "position": [
+              248,
+              238
+            ],
+            "sort_y": 282,
+            "sort_priority": 1,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "boots",
+            "position": [
+              244,
+              282
+            ],
+            "sort_y": 296,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          }
+        ],
+        "collision": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/collision.png",
+        "foreground": [],
+        "landmarks": [],
+        "doors": [
+          {
+            "id": "courtyard",
+            "anchor": [
+              208,
+              306
+            ],
+            "entry_y": 306,
+            "entry_side": "south",
+            "entry_half_width": 10,
+            "open_radius": 30,
+            "close_radius": 38,
+            "frame_duration_ms": 100,
+            "frames": [],
+            "position": [
+              0,
+              0
+            ],
+            "host": null,
+            "requires_open": false,
+            "destination": "assets/maps/eldenmere/playable/map.json",
+            "spawn": [
+              386.0,
+              306
+            ],
+            "arrival_facing": "front",
+            "arrival_door": "sanctuary"
+          },
+          {
+            "id": "bedroom",
+            "anchor": [
+              84,
+              78
+            ],
+            "entry_y": 78,
+            "entry_side": "north",
+            "entry_half_width": 10,
+            "open_radius": 30,
+            "close_radius": 38,
+            "frame_duration_ms": 100,
+            "frames": [
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_01.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_02.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_03.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_04.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_05.png"
+            ],
+            "position": [
+              72,
+              36
+            ],
+            "host": null,
+            "requires_open": true,
+            "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+            "spawn": [
+              144,
+              294
+            ],
+            "arrival_facing": "back",
+            "arrival_door": "hall"
+          },
+          {
+            "id": "dining",
+            "anchor": [
+              264,
+              78
+            ],
+            "entry_y": 78,
+            "entry_side": "north",
+            "entry_half_width": 10,
+            "open_radius": 30,
+            "close_radius": 38,
+            "frame_duration_ms": 100,
+            "frames": [
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_01.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_02.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_03.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_04.png",
+              "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_05.png"
+            ],
+            "position": [
+              252,
+              36
+            ],
+            "host": null,
+            "requires_open": true,
+            "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/map.json",
+            "spawn": [
+              216,
+              294
+            ],
+            "arrival_facing": "back",
+            "arrival_door": "hall"
+          }
+        ],
+        "npcs": [],
+        "quests": [],
+        "kind": "interior",
+        "destinations": {
+          "notices": [
+            48,
+            90
+          ],
+          "bookcase": [
+            60,
+            132
+          ],
+          "records": [
+            204,
+            114
+          ],
+          "herbs": [
+            156,
+            90
+          ],
+          "reading_bench": [
+            72,
+            204
+          ],
+          "bookstand": [
+            132,
+            186
+          ],
+          "mending_table": [
+            264,
+            228
+          ],
+          "mending": [
+            264,
+            228
+          ],
+          "second_bench": [
+            72,
+            258
+          ],
+          "washbasin": [
+            72,
+            294
+          ],
+          "welcome_console": [
+            228,
+            282
+          ],
+          "plant": [
+            228,
+            282
+          ],
+          "boots": [
+            276,
+            294
+          ]
+        },
+        "source_room": "assets/terrain/eldenmere/sanctuary_interior/hall/room.json",
+        "spawn": [
+          208,
+          294
+        ],
+        "id": "sanctuary_hall",
+        "name": "Serene’s Home — Hall",
+        "overview": "assets/maps/eldenmere/playable/overview.png"
+      },
+      "layout": {
+        "id": "hall",
+        "status": "approved",
+        "label": "Shared hall and reading nook",
+        "theme": "Welcome, practical care and shared memory.",
+        "floor_tiles": [
+          12,
+          10
+        ],
+        "room_size": [
+          336,
+          336
+        ],
+        "floor_rect": [
+          24,
+          72,
+          288,
+          240
+        ],
+        "entry_rect": [
+          192,
+          312,
+          32,
+          8
+        ],
+        "objects": [
+          {
+            "id": "notices",
+            "pack": "sanctuary_interior",
+            "sprite": "noticeboard",
+            "position": [
+              32,
+              36
+            ],
+            "access": [
+              48,
+              90
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png",
+            "frame_size": [
+              32,
+              24
+            ],
+            "floor_rect": null,
+            "sort_y": 0
+          },
+          {
+            "id": "bookcase",
+            "pack": "sanctuary_interior",
+            "sprite": "bookcase",
+            "position": [
+              36,
+              60
+            ],
+            "access": [
+              60,
+              132
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png",
+            "frame_size": [
+              36,
+              60
+            ],
+            "floor_rect": [
+              38,
+              102,
+              32,
+              18
+            ],
+            "sort_y": 120
+          },
+          {
+            "id": "records",
+            "pack": "cottage_storage",
+            "sprite": "cupboard",
+            "position": [
+              180,
+              54
+            ],
+            "access": [
+              204,
+              114
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png",
+            "frame_size": [
+              48,
+              48
+            ],
+            "floor_rect": [
+              184,
+              84,
+              40,
+              16
+            ],
+            "sort_y": 100
+          },
+          {
+            "id": "herbs",
+            "pack": "sanctuary_charm",
+            "sprite": "herb_planter",
+            "position": [
+              144,
+              60
+            ],
+            "access": [
+              156,
+              90
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png",
+            "frame_size": [
+              24,
+              18
+            ],
+            "floor_rect": null,
+            "sort_y": 0
+          },
+          {
+            "id": "reading_bench",
+            "pack": "sanctuary_charm",
+            "sprite": "bench",
+            "position": [
+              48,
+              156
+            ],
+            "access": [
+              72,
+              204
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+            "frame_size": [
+              48,
+              30
+            ],
+            "floor_rect": [
+              52,
+              176,
+              40,
+              10
+            ],
+            "sort_y": 186
+          },
+          {
+            "id": "bookstand",
+            "pack": "sanctuary_interior",
+            "sprite": "bookstand",
+            "position": [
+              108,
+              138
+            ],
+            "access": [
+              132,
+              186
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png",
+            "frame_size": [
+              24,
+              36
+            ],
+            "floor_rect": [
+              111,
+              164,
+              18,
+              10
+            ],
+            "sort_y": 174
+          },
+          {
+            "id": "rug",
+            "pack": "sanctuary_interior",
+            "sprite": "mended_rug",
+            "position": [
+              120,
+              204
+            ],
+            "ground": true,
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+            "frame_size": [
+              48,
+              36
+            ],
+            "floor_rect": null,
+            "sort_y": 0
+          },
+          {
+            "id": "mending_table",
+            "pack": "cottage_furniture",
+            "sprite": "table",
+            "position": [
+              240,
+              168
+            ],
+            "access": [
+              264,
+              228
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+            "frame_size": [
+              48,
+              48
+            ],
+            "floor_rect": [
+              240,
+              184,
+              48,
+              26
+            ],
+            "sort_y": 210
+          },
+          {
+            "id": "mending",
+            "pack": "sanctuary_interior",
+            "sprite": "mending_basket",
+            "position": [
+              252,
+              162
+            ],
+            "parent": "mending_table",
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png",
+            "frame_size": [
+              24,
+              20
+            ],
+            "floor_rect": null,
+            "sort_y": 210,
+            "access": [
+              264,
+              228
+            ]
+          },
+          {
+            "id": "second_bench",
+            "pack": "sanctuary_charm",
+            "sprite": "bench",
+            "position": [
+              48,
+              216
+            ],
+            "access": [
+              72,
+              258
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+            "frame_size": [
+              48,
+              30
+            ],
+            "floor_rect": [
+              52,
+              236,
+              40,
+              10
+            ],
+            "sort_y": 246
+          },
+          {
+            "id": "washbasin",
+            "pack": "cottage_kitchen",
+            "sprite": "washbasin",
+            "position": [
+              36,
+              264
+            ],
+            "access": [
+              72,
+              294
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png",
+            "frame_size": [
+              24,
+              36
+            ],
+            "floor_rect": [
+              38,
+              278,
+              20,
+              18
+            ],
+            "sort_y": 296
+          },
+          {
+            "id": "welcome_console",
+            "pack": "sanctuary_interior",
+            "sprite": "console",
+            "position": [
+              240,
+              252
+            ],
+            "access": [
+              228,
+              282
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/console.png",
+            "frame_size": [
+              36,
+              30
+            ],
+            "floor_rect": [
+              242,
+              272,
+              32,
+              10
+            ],
+            "sort_y": 282
+          },
+          {
+            "id": "plant",
+            "pack": "sanctuary_interior",
+            "sprite": "potted_herb",
+            "position": [
+              248,
+              238
+            ],
+            "parent": "welcome_console",
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+            "frame_size": [
+              18,
+              24
+            ],
+            "floor_rect": null,
+            "sort_y": 282,
+            "access": [
+              228,
+              282
+            ]
+          },
+          {
+            "id": "boots",
+            "pack": "sanctuary_interior",
+            "sprite": "work_boots",
+            "position": [
+              244,
+              282
+            ],
+            "access": [
+              276,
+              294
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png",
+            "frame_size": [
+              14,
+              14
+            ],
+            "floor_rect": [
+              245,
+              292,
+              12,
+              4
+            ],
+            "sort_y": 296
+          }
+        ],
+        "portals": [
+          {
+            "id": "bedroom",
+            "side": "north",
+            "door_position": [
+              72,
+              36
+            ],
+            "rect": [
+              72,
+              72,
+              24,
+              12
+            ],
+            "access": [
+              84,
+              90
+            ],
+            "spawn": [
+              84,
+              90
+            ]
+          },
+          {
+            "id": "dining",
+            "side": "north",
+            "door_position": [
+              252,
+              36
+            ],
+            "rect": [
+              252,
+              72,
+              24,
+              12
+            ],
+            "access": [
+              264,
+              90
+            ],
+            "spawn": [
+              264,
+              90
+            ]
+          },
+          {
+            "id": "courtyard",
+            "side": "south",
+            "rect": [
+              192,
+              312,
+              32,
+              8
+            ],
+            "access": [
+              208,
+              300
+            ],
+            "spawn": [
+              208,
+              294
+            ]
+          }
+        ],
+        "story_anchors": [
+          {
+            "id": "reading_bench",
+            "meaning": "A place to sit, read or wait: the sanctuary belongs to the village."
+          },
+          {
+            "id": "mending",
+            "meaning": "Care appears as repeated ordinary work, alongside quiet reading."
+          },
+          {
+            "id": "records",
+            "meaning": "Closed everyday records storage. No warning text or later revelation is displayed."
+          }
+        ],
+        "hero_foot": [
+          208,
+          276
+        ],
+        "hero_anchor": [
+          12,
+          30
+        ],
+        "actor_probe_size": [
+          24,
+          12
+        ],
+        "navigation_start": [
+          208,
+          306
+        ],
+        "reachable_centres": 12484,
+        "frames": [
+          {
+            "image": "scene_frames/frame_01.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_02.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_03.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_04.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_05.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_06.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_07.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_08.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_09.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_10.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_11.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_12.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_13.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_14.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_15.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_16.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_17.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_18.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_19.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_20.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_21.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_22.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_23.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_24.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_25.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_26.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_27.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_28.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_29.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_30.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_31.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_32.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_33.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_34.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_35.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_36.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          }
+        ],
+        "cycle_duration_ms": 10800,
+        "loop": true,
+        "review_scale": 4,
+        "windows": [
+          [
+            144,
+            30
+          ]
+        ],
+        "hearth_position": null,
+        "steam_origin": null,
+        "engine_interactions_implemented": false,
+        "character_sleep_sit_poses_included": false
+      },
+      "collision_sha256": "12a1bee871757f74ae743d17bf96d08d8c0e4063927b5a5bcb1a98cc5f063025"
+    },
+    "bedroom": {
+      "map": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+      "original_map": {
+        "size_pixels": [
+          288,
+          336
+        ],
+        "size_tiles": [
+          10,
+          10
+        ],
+        "tile_size": 24,
+        "floor_rect": [
+          24,
+          72,
+          240,
+          240
+        ],
+        "player_probe_size": [
+          24,
+          12
+        ],
+        "player_draw_anchor": [
+          12,
+          30
+        ],
+        "ground_frames": [
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_09.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_05.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png",
+          "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/ground/frame_01.png"
+        ],
+        "ground_frame_duration_ms": 300,
+        "entities": [
+          {
+            "id": "bed",
+            "position": [
+              36,
+              108
+            ],
+            "sort_y": 174,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "reading_chair",
+            "position": [
+              108,
+              132
+            ],
+            "sort_y": 166,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "desk",
+            "position": [
+              168,
+              96
+            ],
+            "sort_y": 138,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "notes",
+            "position": [
+              172,
+              94
+            ],
+            "sort_y": 138,
+            "sort_priority": 1,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "desk_chair",
+            "position": [
+              180,
+              144
+            ],
+            "sort_y": 178,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "wardrobe",
+            "position": [
+              204,
+              60
+            ],
+            "sort_y": 106,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "books",
+            "position": [
+              72,
+              38
+            ],
+            "sort_y": 0,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "drawing",
+            "position": [
+              36,
+              34
+            ],
+            "sort_y": 0,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/family_drawing.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "rug",
+            "position": [
+              108,
+              212
+            ],
+            "sort_y": 0,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "washbasin",
+            "position": [
+              36,
+              204
+            ],
+            "sort_y": 236,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "laundry",
+            "position": [
+              36,
+              252
+            ],
+            "sort_y": 272,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "chest",
+            "position": [
+              84,
+              192
+            ],
+            "sort_y": 216,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/clothes_chest.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "clean_clothes",
+            "position": [
+              90,
+              188
+            ],
+            "sort_y": 216,
+            "sort_priority": 1,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/folded_clothes.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "plant",
+            "position": [
+              228,
+              234
+            ],
+            "sort_y": 258,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          },
+          {
+            "id": "boots",
+            "position": [
+              84,
+              264
+            ],
+            "sort_y": 278,
+            "sort_priority": 0,
+            "frames": [
+              "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png"
+            ],
+            "frame_duration_ms": 300,
+            "phase_offset": 0
+          }
+        ],
+        "collision": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/collision.png",
+        "foreground": [],
+        "landmarks": [],
+        "doors": [
+          {
+            "id": "hall",
+            "anchor": [
+              144.0,
+              306
+            ],
+            "entry_y": 306,
+            "entry_side": "south",
+            "entry_half_width": 10,
+            "open_radius": 30,
+            "close_radius": 38,
+            "frame_duration_ms": 100,
+            "frames": [],
+            "position": [
+              0,
+              0
+            ],
+            "host": null,
+            "requires_open": false,
+            "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+            "spawn": [
+              84,
+              90
+            ],
+            "arrival_facing": "front",
+            "arrival_door": "bedroom"
+          }
+        ],
+        "npcs": [],
+        "quests": [],
+        "kind": "interior",
+        "destinations": {
+          "bed": [
+            60,
+            186
+          ],
+          "reading_chair": [
+            120,
+            184
+          ],
+          "desk": [
+            168,
+            156
+          ],
+          "notes": [
+            168,
+            156
+          ],
+          "desk_chair": [
+            180,
+            192
+          ],
+          "wardrobe": [
+            228,
+            120
+          ],
+          "books": [
+            108,
+            90
+          ],
+          "drawing": [
+            60,
+            90
+          ],
+          "washbasin": [
+            72,
+            228
+          ],
+          "laundry": [
+            72,
+            276
+          ],
+          "chest": [
+            96,
+            234
+          ],
+          "clean_clothes": [
+            96,
+            234
+          ],
+          "plant": [
+            216,
+            270
+          ],
+          "boots": [
+            108,
+            288
+          ]
+        },
+        "source_room": "assets/terrain/eldenmere/sanctuary_interior/bedroom/room.json",
+        "spawn": [
+          144,
+          294
+        ],
+        "id": "sanctuary_bedroom",
+        "name": "Caelan's room",
+        "overview": "assets/maps/eldenmere/playable/overview.png"
+      },
+      "layout": {
+        "id": "bedroom",
+        "status": "approved",
+        "label": "Caelan's bedroom",
+        "theme": "Family, curiosity and an ordinary morning.",
+        "floor_tiles": [
+          10,
+          10
+        ],
+        "room_size": [
+          288,
+          336
+        ],
+        "floor_rect": [
+          24,
+          72,
+          240,
+          240
+        ],
+        "entry_rect": [
+          132,
+          312,
+          24,
+          8
+        ],
+        "objects": [
+          {
+            "id": "bed",
+            "pack": "cottage_furniture",
+            "sprite": "bed",
+            "position": [
+              36,
+              108
+            ],
+            "access": [
+              60,
+              186
+            ],
+            "inspect_key": "Bed after waking",
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+            "frame_size": [
+              48,
+              72
+            ],
+            "floor_rect": [
+              44,
+              126,
+              32,
+              48
+            ],
+            "sort_y": 174,
+            "approved_inspect_text": "Tempting. Serene would notice."
+          },
+          {
+            "id": "reading_chair",
+            "pack": "cottage_furniture",
+            "sprite": "chair_down",
+            "position": [
+              108,
+              132
+            ],
+            "access": [
+              120,
+              184
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+            "frame_size": [
+              24,
+              36
+            ],
+            "floor_rect": [
+              111,
+              150,
+              18,
+              16
+            ],
+            "sort_y": 166
+          },
+          {
+            "id": "desk",
+            "pack": "cottage_furniture",
+            "sprite": "table",
+            "position": [
+              168,
+              96
+            ],
+            "access": [
+              168,
+              156
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+            "frame_size": [
+              48,
+              48
+            ],
+            "floor_rect": [
+              168,
+              112,
+              48,
+              26
+            ],
+            "sort_y": 138
+          },
+          {
+            "id": "notes",
+            "pack": "sanctuary_interior",
+            "sprite": "desk_notes",
+            "position": [
+              172,
+              94
+            ],
+            "parent": "desk",
+            "inspect_key": "Desk notes",
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+            "frame_size": [
+              40,
+              20
+            ],
+            "floor_rect": null,
+            "sort_y": 138,
+            "access": [
+              168,
+              156
+            ],
+            "approved_inspect_text": "Copies of the old local inscriptions. Serene says they're easier to read once I stop adding my own guesses."
+          },
+          {
+            "id": "desk_chair",
+            "pack": "cottage_furniture",
+            "sprite": "chair_up",
+            "position": [
+              180,
+              144
+            ],
+            "access": [
+              180,
+              192
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+            "frame_size": [
+              24,
+              36
+            ],
+            "floor_rect": [
+              183,
+              162,
+              18,
+              16
+            ],
+            "sort_y": 178
+          },
+          {
+            "id": "wardrobe",
+            "pack": "cottage_storage",
+            "sprite": "cupboard",
+            "position": [
+              204,
+              60
+            ],
+            "access": [
+              228,
+              120
+            ],
+            "inspect_key": "Wardrobe",
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png",
+            "frame_size": [
+              48,
+              48
+            ],
+            "floor_rect": [
+              208,
+              90,
+              40,
+              16
+            ],
+            "sort_y": 106,
+            "approved_inspect_text": "Clean robes. Mostly clean, anyway."
+          },
+          {
+            "id": "books",
+            "pack": "cottage_storage",
+            "sprite": "shelf",
+            "position": [
+              72,
+              38
+            ],
+            "access": [
+              108,
+              90
+            ],
+            "inspect_key": "Bookshelf",
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png",
+            "frame_size": [
+              48,
+              24
+            ],
+            "floor_rect": null,
+            "sort_y": 0,
+            "approved_inspect_text": "Two chapters left. I keep telling myself I'll finish them before festival week."
+          },
+          {
+            "id": "drawing",
+            "pack": "sanctuary_interior",
+            "sprite": "family_drawing",
+            "position": [
+              36,
+              34
+            ],
+            "access": [
+              60,
+              90
+            ],
+            "inspect_key": "Childhood family drawing",
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/family_drawing.png",
+            "frame_size": [
+              32,
+              28
+            ],
+            "floor_rect": null,
+            "sort_y": 0,
+            "approved_inspect_text": "Tomas insisted that's me. I'm still not sure why he gave me such enormous ears."
+          },
+          {
+            "id": "rug",
+            "pack": "sanctuary_interior",
+            "sprite": "mended_rug",
+            "position": [
+              108,
+              212
+            ],
+            "ground": true,
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+            "frame_size": [
+              48,
+              36
+            ],
+            "floor_rect": null,
+            "sort_y": 0
+          },
+          {
+            "id": "washbasin",
+            "pack": "cottage_kitchen",
+            "sprite": "washbasin",
+            "position": [
+              36,
+              204
+            ],
+            "access": [
+              72,
+              228
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png",
+            "frame_size": [
+              24,
+              36
+            ],
+            "floor_rect": [
+              38,
+              218,
+              20,
+              18
+            ],
+            "sort_y": 236
+          },
+          {
+            "id": "laundry",
+            "pack": "sanctuary_interior",
+            "sprite": "mending_basket",
+            "position": [
+              36,
+              252
+            ],
+            "access": [
+              72,
+              276
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png",
+            "frame_size": [
+              24,
+              20
+            ],
+            "floor_rect": [
+              38,
+              264,
+              20,
+              8
+            ],
+            "sort_y": 272
+          },
+          {
+            "id": "chest",
+            "pack": "sanctuary_interior",
+            "sprite": "clothes_chest",
+            "position": [
+              84,
+              192
+            ],
+            "access": [
+              96,
+              234
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/clothes_chest.png",
+            "frame_size": [
+              36,
+              24
+            ],
+            "floor_rect": [
+              86,
+              206,
+              32,
+              10
+            ],
+            "sort_y": 216
+          },
+          {
+            "id": "clean_clothes",
+            "pack": "sanctuary_interior",
+            "sprite": "folded_clothes",
+            "position": [
+              90,
+              188
+            ],
+            "parent": "chest",
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/folded_clothes.png",
+            "frame_size": [
+              24,
+              16
+            ],
+            "floor_rect": null,
+            "sort_y": 216,
+            "access": [
+              96,
+              234
+            ]
+          },
+          {
+            "id": "plant",
+            "pack": "sanctuary_interior",
+            "sprite": "potted_herb",
+            "position": [
+              228,
+              234
+            ],
+            "access": [
+              216,
+              270
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+            "frame_size": [
+              18,
+              24
+            ],
+            "floor_rect": [
+              232,
+              252,
+              10,
+              6
+            ],
+            "sort_y": 258
+          },
+          {
+            "id": "boots",
+            "pack": "sanctuary_interior",
+            "sprite": "work_boots",
+            "position": [
+              84,
+              264
+            ],
+            "access": [
+              108,
+              288
+            ],
+            "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png",
+            "frame_size": [
+              14,
+              14
+            ],
+            "floor_rect": [
+              85,
+              274,
+              12,
+              4
+            ],
+            "sort_y": 278
+          }
+        ],
+        "portals": [
+          {
+            "id": "hall",
+            "side": "south",
+            "rect": [
+              132,
+              312,
+              24,
+              8
+            ],
+            "access": [
+              144,
+              300
+            ],
+            "spawn": [
+              144,
+              294
+            ]
+          }
+        ],
+        "story_anchors": [
+          {
+            "id": "drawing",
+            "meaning": "The home and sibling affection already present in S01."
+          },
+          {
+            "id": "notes",
+            "meaning": "Caelan studies local inscriptions and adds his own guesses; curiosity lives beside routine."
+          },
+          {
+            "id": "rug",
+            "meaning": "A small repair and worn household belongings suggest continued care."
+          },
+          {
+            "id": "window",
+            "access": [
+              180,
+              90
+            ],
+            "inspect_key": "Window",
+            "approved_inspect_text": "Eldenmere's already awake. It smells like somebody started baking before sunrise."
+          }
+        ],
+        "hero_foot": [
+          144,
+          276
+        ],
+        "hero_anchor": [
+          12,
+          30
+        ],
+        "actor_probe_size": [
+          24,
+          12
+        ],
+        "navigation_start": [
+          144,
+          306
+        ],
+        "reachable_centres": 9434,
+        "frames": [
+          {
+            "image": "scene_frames/frame_01.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_02.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_03.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_04.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_05.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_06.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_07.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_08.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_09.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_10.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_11.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_12.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_13.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_14.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_15.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_16.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_17.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_18.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_19.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_20.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 0,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_21.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_22.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 1,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_23.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_24.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 2,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_25.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_26.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 3,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_27.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_28.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 4,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_29.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_30.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 5,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_31.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_32.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 6,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_33.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_34.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 7,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_35.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          },
+          {
+            "image": "scene_frames/frame_36.png",
+            "duration_ms": 300,
+            "fire_phase": null,
+            "daylight_phase": 8,
+            "steam_phase": null
+          }
+        ],
+        "cycle_duration_ms": 10800,
+        "loop": true,
+        "review_scale": 4,
+        "windows": [
+          [
+            168,
+            32
+          ]
+        ],
+        "hearth_position": null,
+        "steam_origin": null,
+        "engine_interactions_implemented": false,
+        "character_sleep_sit_poses_included": false
+      },
+      "collision_sha256": "a4f796d45cab28ba839b724be5aea813a543424d9d1e62a8f3603bfe45154a9f"
+    }
+  },
+  "props": [
+    {
+      "id": "notices",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png",
+      "cell": 0,
+      "logical_size": [
+        32,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        32,
+        24
+      ]
+    },
+    {
+      "id": "bookcase",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png",
+      "cell": 1,
+      "logical_size": [
+        36,
+        60
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        36,
+        60
+      ]
+    },
+    {
+      "id": "herbs",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png",
+      "cell": 2,
+      "logical_size": [
+        24,
+        18
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        18
+      ]
+    },
+    {
+      "id": "bookstand",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png",
+      "cell": 3,
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        36
+      ]
+    },
+    {
+      "id": "rug",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+      "cell": 4,
+      "logical_size": [
+        48,
+        36
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        48,
+        36
+      ]
+    },
+    {
+      "id": "mending",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png",
+      "cell": 5,
+      "logical_size": [
+        24,
+        20
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        20
+      ]
+    },
+    {
+      "id": "boots",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png",
+      "cell": 6,
+      "logical_size": [
+        14,
+        14
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        14,
+        14
+      ]
+    },
+    {
+      "id": "bed",
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+      "cell": 7,
+      "logical_size": [
+        48,
+        72
+      ],
+      "logical_bounds": [
+        8,
+        6,
+        40,
+        66
+      ]
+    },
+    {
+      "id": "notes",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+      "cell": 8,
+      "logical_size": [
+        40,
+        20
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "drawing",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/family_drawing.png",
+      "cell": 9,
+      "logical_size": [
+        32,
+        28
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        32,
+        28
+      ]
+    },
+    {
+      "id": "chest",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/clothes_chest.png",
+      "cell": 10,
+      "logical_size": [
+        36,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        36,
+        24
+      ]
+    },
+    {
+      "id": "clean_clothes",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/folded_clothes.png",
+      "cell": 11,
+      "logical_size": [
+        24,
+        16
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        16
+      ]
+    },
+    {
+      "id": "preparation_list",
+      "legacy_path": "assets/characters/serene/routines/props/preparation_list.png",
+      "cell": 8,
+      "logical_size": [
+        7,
+        8
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "folded_linen",
+      "legacy_path": "assets/characters/serene/routines/props/folded_linen.png",
+      "cell": 15,
+      "logical_size": [
+        5,
+        4
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        5,
+        4
+      ]
+    }
+  ],
+  "shared_bank": "assets/terrain/eldenmere/sanctuary_dining_hd/manifest.json"
+}

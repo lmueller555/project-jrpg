@@ -116,12 +116,12 @@ class DiningCueIntegrationTests(unittest.TestCase):
         g.world=dining;g.opening.stage='done';g._update_object_cues(.12)
         self.assertEqual(dining.object_cues.states,{})
 
-    def test_room_only_routine_props_use_native_bank_without_changing_hall(self):
+    def test_routine_props_use_native_banks_in_migrated_home_rooms(self):
         g=self.game
         serene=next(a for a in g.persistent_npcs if a.data['id']=='mother_serene')
         for prop in serene.surface_props:
             if prop['scene']=='sanctuary_dining':self.assertIsInstance(prop['surface'],WorldCanvas)
-            elif prop['scene']=='sanctuary_hall':self.assertNotIsInstance(prop['surface'],WorldCanvas)
+            elif prop['scene']=='sanctuary_hall':self.assertIsInstance(prop['surface'],WorldCanvas)
 
     def test_distant_eligible_object_still_glints_and_decorations_do_not(self):
         g=self.game;g.player.position.update(228,294);g._update_object_cues(.1)

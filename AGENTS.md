@@ -7,8 +7,8 @@ It is the single reference for visual style, artwork/world/display units,
 density, sizing, rendering, directional anatomy, gait, registration, export and
 review. Its approved target is 2× artwork density with existing logical sizes
 and gameplay proportions. Full-scene 2× composition is implemented in
-`rendering.py`; bank migrations continue individually, with Sanctuary dining
-the first integrated environment. Use the
+`rendering.py`; Sanctuary hall, bedroom and dining are integrated environments,
+and remaining bank migrations continue individually. Use the
 explicit drawing/transform adapters and native presentation described in the
 standard; bare Pygame writes to the logical mirror lose detail. Apply changes to
 the authorized scope. Older recipes and review notes retain local implementation

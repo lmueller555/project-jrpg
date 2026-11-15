@@ -1,0 +1,153 @@
+{
+  "baseline_commit": "4bacfad9b61c8667060e172dec2f65dcf186233d",
+  "baseline": {
+    "town": {
+      "median_ms": 2.719,
+      "p95_ms": 3.268,
+      "frames": 60
+    },
+    "hall": {
+      "median_ms": 1.622,
+      "p95_ms": 1.759,
+      "frames": 60
+    },
+    "bedroom": {
+      "median_ms": 1.517,
+      "p95_ms": 1.657,
+      "frames": 60
+    },
+    "bedroom_cues": {
+      "median_ms": 1.76,
+      "p95_ms": 2.743,
+      "frames": 60
+    },
+    "dining": {
+      "median_ms": 1.683,
+      "p95_ms": 1.734,
+      "frames": 60
+    },
+    "cave": {
+      "median_ms": 2.926,
+      "p95_ms": 3.078,
+      "frames": 60
+    },
+    "overworld": {
+      "median_ms": 5.716,
+      "p95_ms": 14.162,
+      "frames": 60,
+      "cache": {
+        "render_bytes": 7077888,
+        "render_chunks": 12,
+        "collision_chunks": 0,
+        "metadata_chunks": 27
+      }
+    },
+    "battle": {
+      "median_ms": 5.756,
+      "p95_ms": 6.025,
+      "frames": 60
+    },
+    "regent_arrival": {
+      "median_ms": 3.814,
+      "p95_ms": 4.148,
+      "frames": 60
+    },
+    "aerial_camera_motion": {
+      "median_ms": 6.663,
+      "p95_ms": 26.122,
+      "frames": 60
+    },
+    "ice_reaper_opening": {
+      "median_ms": 14.253,
+      "p95_ms": 15.031,
+      "frames": 60
+    },
+    "ice_reaper_camera_motion": {
+      "median_ms": 35.808,
+      "p95_ms": 43.723,
+      "frames": 60
+    },
+    "transformed_asset_cache": {
+      "bytes": 29235456,
+      "entries": 836,
+      "budget": 33554432
+    },
+    "peak_rss_mib": 1138.2,
+    "method": "960x640 SDL dummy; warm draws, excludes simulation update; temporary saves only"
+  },
+  "home_hd": {
+    "town": {
+      "median_ms": 2.724,
+      "p95_ms": 4.417,
+      "frames": 60
+    },
+    "hall": {
+      "median_ms": 1.518,
+      "p95_ms": 1.633,
+      "frames": 60
+    },
+    "bedroom": {
+      "median_ms": 1.417,
+      "p95_ms": 1.553,
+      "frames": 60
+    },
+    "bedroom_cues": {
+      "median_ms": 1.827,
+      "p95_ms": 2.026,
+      "frames": 60
+    },
+    "dining": {
+      "median_ms": 1.72,
+      "p95_ms": 1.908,
+      "frames": 60
+    },
+    "cave": {
+      "median_ms": 2.925,
+      "p95_ms": 3.138,
+      "frames": 60
+    },
+    "overworld": {
+      "median_ms": 5.693,
+      "p95_ms": 14.248,
+      "frames": 60,
+      "cache": {
+        "render_bytes": 7077888,
+        "render_chunks": 12,
+        "collision_chunks": 0,
+        "metadata_chunks": 27
+      }
+    },
+    "battle": {
+      "median_ms": 5.721,
+      "p95_ms": 6.246,
+      "frames": 60
+    },
+    "regent_arrival": {
+      "median_ms": 3.683,
+      "p95_ms": 4.061,
+      "frames": 60
+    },
+    "aerial_camera_motion": {
+      "median_ms": 6.634,
+      "p95_ms": 26.264,
+      "frames": 60
+    },
+    "ice_reaper_opening": {
+      "median_ms": 14.264,
+      "p95_ms": 15.302,
+      "frames": 60
+    },
+    "ice_reaper_camera_motion": {
+      "median_ms": 35.937,
+      "p95_ms": 40.12,
+      "frames": 60
+    },
+    "transformed_asset_cache": {
+      "bytes": 33537352,
+      "entries": 775,
+      "budget": 33554432
+    },
+    "peak_rss_mib": 1135.3,
+    "method": "960x640 SDL dummy; warm draws, excludes simulation update; temporary saves only"
+  }
+}

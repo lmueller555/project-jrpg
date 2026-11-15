@@ -46,10 +46,17 @@ def profile(frames=30,capture=None):
                     capture.mkdir(parents=True,exist_ok=True)
                     pygame.image.save(game.window,str(capture/(name+'.png')))
             for name,scene,position in [('town','eldenmere.playable',(732,1032)),
+                                        ('hall','sanctuary_hall',(168,276)),
+                                        ('bedroom','sanctuary_bedroom',(144,276)),
                                         ('dining','sanctuary_dining',(228,252)),
                                         ('cave','sanctuary_cave',(1460,1520))]:
                 g.world=g._scene_by_id(scene);g.player.position.update(position)
                 g.opening_fade=0;g.camera.reset();measure(name,g.draw)
+                if scene=='sanctuary_bedroom':
+                    stage=g.opening.stage;g.opening.stage='explore'
+                    g.player.position.update(180,90);g.camera.reset();g._update_object_cues(.12)
+                    measure('bedroom_cues',g.draw,step=lambda:g._update_object_cues(1/60))
+                    g.opening.stage=stage;g._update_object_cues(0)
             g.world=g.overworld_world;g.player.position.update(g.world.data['spawn']);g.camera.reset()
             measure('overworld',g.draw)
             records['overworld']['cache']=g.world.cache_stats
