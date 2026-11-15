@@ -1,6 +1,6 @@
-# Caelan higher-density directional idles — review only
+# Caelan higher-density directional idles — approved
 
-**Status: awaiting user review. Not runtime-integrated or merged into main.**
+**Status: user-approved design and artwork; merged asset pack, not runtime-integrated.**
 
 [Four directional idles](directions.png) · [Hall and cast comparison](hall_comparison.png)
 
@@ -33,7 +33,7 @@ The retained source is
 `assets/source/characters/caelan/idles_hd_review/idles_authored.png`. It was
 newly drawn using the established authored Caelan bank as the design reference
 and Iselin as the pixel-detail/style reference. The source hash, exact cells,
-scale, positions, anchors and review status are recorded in
+scale, positions, anchors and approval status are recorded in
 `assets/characters/caelan/review_hd/idles/idles.json`. PNGs and the four-view
 spritesheet live beside that manifest.
 
@@ -49,8 +49,9 @@ or a claim of animation integration.
 Hard alpha, unclipped bounds, exact 48×72 canvases, unchanged current runtime
 idles, source identity and byte-identical repeated export were verified. Walking,
 running, action poses, collision, game metadata and current runtime PNGs remain
-unchanged. No gait or animation frames are included. Approval and any later
-integration/merge are separate steps.
+unchanged. No gait or animation frames are included. User approval covers these
+four exact idle drawings and their design; walking/running and runtime integration
+remain subsequent work. Future exports preserve this approval status and artwork.
 
 Reproduce these review assets only:
 
