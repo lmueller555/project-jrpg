@@ -29,7 +29,7 @@ class SanctuaryReturn:
         self.dining = game._scene_by_id('sanctuary_dining')
         self.serene = next(a for a in game.persistent_npcs if a.data['id'] == 'mother_serene')
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
-        self._cup = self.dining.image(CUP)
+        self._cup = self.dining.room_art_image(CUP)
         self._body_anchor = tuple(self.dining.data['player_draw_anchor'])
         self._household_anchor = (self._body_anchor[0]+8, self._body_anchor[1]+24)
         self._hands = {d: self.dining.image(EMPTY_HANDS.format(d))
@@ -50,7 +50,7 @@ class SanctuaryReturn:
         # Reuse the room's serving pot beside the new cups on the setting table.
         self.surface_props.append({'id': 'mill_return_serving_pot',
             'scene': 'sanctuary_dining',
-            'surface': self.dining.image('assets/terrain/eldenmere/sanctuary_interior/props/kettle.png'),
+            'surface': self.dining.room_art_image('assets/terrain/eldenmere/sanctuary_interior/props/kettle.png'),
             'position': (278, 178), 'sort_y': 210, 'sort_priority': 1.5,
             'kind': 'pot'})
         self.dining.attach_routine_props(self)

@@ -18,7 +18,8 @@ single guide for appearance, sizing, density, rendering, animation, exports and
 review. The approved rebuild uses two artwork pixels per logical world unit
 while preserving existing on-screen proportions. The full-world
 960×640 render target retains the 480×320 logical view. Shared rendering is
-implemented; asset rebuilding and individual bank migrations remain pending. The guide includes current implementation
+implemented; the Sanctuary dining room is the first migrated environment bank.
+Remaining asset banks are migrated individually. The guide includes current implementation
 status, the full animation workflow and migration acceptance criteria.
 Object interactions also follow the
 [interaction standard](docs/OBJECT_INTERACTION_STANDARD.md) and

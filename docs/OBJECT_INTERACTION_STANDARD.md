@@ -168,6 +168,28 @@ unless those effects are independently part of the authorized gameplay design.
   rewarded or duplicated again. Replaying an unacknowledged beat must rebuild
   that beat's consistent starting arrangement.
 
+## Discovery cues and action availability
+
+Follow [object creation and readability](VISUAL_ART_STANDARD.md#object-creation-and-interaction-readability)
+for black contours, periodic glints, the nearby yellow outline and export metadata.
+Tie cue eligibility to a real available interaction, using the same authoritative
+opening/quest/object state that enables the action. Visual cues do not extend
+interaction reach, bypass facing, collect items, start scenes or complete objectives.
+An available prompt remains the confirmation of the actual action.
+
+Measure proximity from feet to a declared logical interaction boundary; for a
+tabletop prop, author the reachable support edge explicitly. Check the approach
+against collision. Draw cues with their world owner so foregrounds and actors
+can obscure them. After completion/unavailability, remove discovery and proximity
+cues together. Scene exit clears transient proximity; loading reconstructs
+availability without storing cue clocks or awarding duplicate progress.
+
+Pause/focus loss freezes timing. Menus, dialogue and cutscenes suppress cues.
+Test distance/corner thresholds, blocked approaches, depth, completion, scene
+exit/re-entry and save reconstruction alongside the interaction's existing
+positioning and ownership checks. Do not add glints to dialogue-delivered supplies
+unless a separately implemented pickup is actually available.
+
 ## Required review and acceptance
 
 For new or corrected interactions, verify the following in the actual scene:
