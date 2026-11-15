@@ -1,6 +1,6 @@
 # Iselin scene drawings
 
-These image-generation masters complete the royal replacement without changing the approved 42×72 idles, portrait or four 16-frame walking cycles. Follow [the global standard](../../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+These image-generation masters complete the royal replacement without changing the approved 42×72 idles, portrait or four 16-frame walking cycles. Follow [the global standard](../../../../../docs/VISUAL_ART_STANDARD.md).
 
 - `poses.png`: complete listening, gesturing, turning and seated drawings. The remaining two cells are unused perspective studies.
 - `diagonal.png`: sixteen complete rear three-quarter walking drawings in reading order.

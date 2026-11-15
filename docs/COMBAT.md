@@ -1,5 +1,11 @@
 # Wait-ATB combat
 
+Visual style, sizing, density and rendering follow the
+[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
+renderer details below describe the current implementation or its recorded
+asset milestones. The approved higher-density rebuild preserves logical
+footprints; its full-world rendering and asset migration remain pending.
+
 MQ02 introduces combat on the riverbank north of Eldenmere. Caelan and Mira
 fight a Ridgeback Tusker together before inspecting the blocked mill intake.
 Mira is a player-controlled Engineer with a wearable arm rig, her own

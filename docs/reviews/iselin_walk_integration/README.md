@@ -46,4 +46,4 @@ PYTHONPATH=.:tests python -m unittest test_iselin_walk_integration test_iselin_i
 
 [Evidence](evidence.json) records movement samples, camera, real tree placement,
 unchanged quest state and hashes of all 64 approved frames. Authoring rules live
-in the [global standard](../../SPRITE_ANIMATION_STANDARD.md).
+in the [global standard](../../VISUAL_ART_STANDARD.md).

@@ -5,6 +5,10 @@ This is the visibility companion to the mandatory
 That standard governs approach, facing, realistic anatomy, deliberate snaps,
 object ownership, camera depth, and restoration.
 
+The [global visual art standard](VISUAL_ART_STANDARD.md) owns appearance,
+artwork density, sizing, anchors and rendering. Rebuilding a personal prop at
+higher density preserves its logical size, ownership and visibility lifecycle.
+
 Personal objects appear for their authored use and disappear when that use
 finishes. Ordinary player travel must not render a separate sword, toolkit,
 or tool floating beside the character merely because it is owned or equipped.

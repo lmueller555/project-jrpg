@@ -1,5 +1,11 @@
 # Sanctuary dungeon asset pack
 
+Visual style, sizing, density and rendering follow the
+[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
+renderer details below describe the current implementation or its recorded
+asset milestones. The approved higher-density rebuild preserves logical
+footprints; its full-world rendering and asset migration remain pending.
+
 The expanded pack continues the Sanctuary's warm limestone, pale calcite,
 damp teal and tiny red, blue, green, white, orange and purple microcrystals.
 The approved additions are merged and used by the

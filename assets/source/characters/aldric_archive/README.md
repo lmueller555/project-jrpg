@@ -9,4 +9,4 @@ Original authoring scripts and the predecessor side-walk test are preserved unde
 `tools/archive/aldric/`, outside active builders and test discovery.
 
 Current character canon: [Iselin](../../../../docs/narrative/game_01/characters/ISELIN.md).
-Authoring: [global standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Authoring: [global standard](../../../../docs/VISUAL_ART_STANDARD.md).

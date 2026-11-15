@@ -6,12 +6,18 @@ Frames, spacing and button feedback share the same renderer in `ui_style.py`.
 
 ## Readable text and crisp art
 
-The world remains a 480×320 image with integer-scaled 24×24 terrain and 24×36
-character frames. Interface text is drawn separately at the actual output
-resolution with antialiasing. Enlarging the world never enlarges a small bitmap
-of its lettering.
+The [global visual art standard](VISUAL_ART_STANDARD.md) owns style, dimensions,
+density and the rendering contract. The current world uses a 480×320 logical
+canvas, predominantly legacy artwork and selected 2× character detail patches.
+The approved target composes that same logical view at 960×640, with two artwork
+pixels per world unit; the full renderer and asset rebuild remain pending.
+Interface text is drawn separately at the actual output resolution with
+antialiasing. Enlarging the world never enlarges a small bitmap of its lettering.
+Portraits, icons and panels retain their established layout slots and declare
+their own artwork-to-layout sizing; world-density conversion is not applied
+again to display-space UI.
 
-Gallery playback reserves a separate toolbar above its complete 480×320 scene.
+Gallery playback reserves a separate toolbar above its complete logical scene.
 This preview viewport uses nearest-neighbor fitting when an integer scale cannot
 fill the available area; text is still rasterized at the output resolution.
 The toolbar never covers dialogue, actors or the production Skip button.

@@ -1,9 +1,14 @@
 # Asset tools
 
-Character artwork and animation must follow the
-[global sprite and animation standard](../docs/SPRITE_ANIMATION_STANDARD.md).
-That is the single authoring workflow; this catalogue records commands and
-asset-specific implementation details. Older part/mask/layer builders remain
+Artwork, textures, sprites, animation, exporters and rendering changes follow the
+[global visual art standard](../docs/VISUAL_ART_STANDARD.md).
+That is the single reference for style, units, density, rendering, construction
+and review; this catalogue records commands and asset-specific implementation
+details. Its full-world 2× rendering target and asset rebuild are pending.
+Existing command descriptions and frame dimensions below describe their current
+exports. During scoped migrations, update their density/anchor metadata and
+runtime status using the central guide rather than interpreting old pixel
+dimensions as new global limits. Older part/mask/layer builders remain
 for reproducing approved assets, not as the construction method for new walks.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.

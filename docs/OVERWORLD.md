@@ -1,5 +1,11 @@
 # Elden Vale overworld
 
+Visual style, sizing, density and rendering follow the
+[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
+renderer details below describe the current implementation or its recorded
+asset milestones. The approved higher-density rebuild preserves logical
+footprints; its full-world rendering and asset migration remain pending.
+
 Eldenmere's southern road now opens into the first playable region of Auratia.
 This is a separate regional scale: the detailed village retains its existing
 layout, while the overworld represents it with a small, recognizable town.

@@ -1,5 +1,11 @@
 # Elden Vale Sanctuary reserve
 
+Visual style, sizing, density and rendering follow the
+[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
+renderer details below describe the current implementation or its recorded
+asset milestones. The approved higher-density rebuild preserves logical
+footprints; its full-world rendering and asset migration remain pending.
+
 The regional miniature opens into a detailed, peaceful woodland reserve built
 from the same native pixel asset packs as Eldenmere. The layout follows the
 sanctuary reference: southern entrance arch and court,
