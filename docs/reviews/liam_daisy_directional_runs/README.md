@@ -1,7 +1,7 @@
 # Liam and Daisy — remaining running directions
 
 **Existing asset / legacy construction reference.** New or revised artwork
-follows the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
+follows the [global visual art standard](../../VISUAL_ART_STANDARD.md).
 Part, mask, layer and registration recipes below document this pack's existing
 implementation and reproduction, not the authoring method for new animations.
 Approval records and original review evidence are retained.

@@ -1,5 +1,11 @@
 # Emerald grass terrain
 
+Visual style, sizing, density and rendering follow the
+[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
+renderer details below describe the current implementation or its recorded
+asset milestones. The approved higher-density rebuild preserves logical
+footprints; its full-world rendering and asset migration remain pending.
+
 The approved grass palette and variation ship in Eldenmere, the Elden Vale
 Sanctuary's outdoor reserve and the upstream mill area. Maintained lawn stays
 quiet near buildings, meadow patches add different growth and coverage, and

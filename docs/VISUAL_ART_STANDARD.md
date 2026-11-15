@@ -1,26 +1,223 @@
-# Sprite and animation standard
+# Visual art standard
 
-This is the authoritative authoring guide for character and NPC sprites and
-animations: appearances, directional idles, walks, runs, combat and scene poses,
-export recipes, and visual review. Its walking workflow consolidates the lessons
-from Iselin's four approved cycles. Read it before creating or revising artwork,
-builders, or animation tests.
+This is the authoritative guide for the game's visual style, asset sizing,
+rendering contract, character construction, animation, export and review. It
+covers characters, wildlife, terrain, architecture, props, combat art, effects,
+backgrounds, portraits and interface artwork. Read the relevant sections before
+creating or revising artwork, asset builders, renderers or their tests. The
+character workflow below preserves the lessons from Iselin's four approved walks.
+
+**Approved direction:** Rebuild game artwork at two artwork pixels per logical
+world pixel, preserving its existing on-screen proportions and world footprint.
+Iselin's detailed artwork is the reference for this increase in fidelity.
+
+**Implementation status:** The full-world higher-resolution renderer and asset
+rebuild are pending. Today, most scenes use a 480×320 logical world canvas;
+`dense_art.WorldCanvas` preserves selected 2× character artwork through detail
+patches. Iselin's idles and walks use that path. This document establishes the
+target contract; adopting it does not implement the renderer or migrate assets.
 
 This standard replaces conflicting general advice in older character recipes,
 tool descriptions and review notes. Those files retain asset-specific facts,
 commands and historical evidence; they do not prescribe new construction methods.
-Existing approved assets need no automatic rebuild or conversion. Apply these
-rules to the work being requested. Explicit user direction takes precedence.
+Existing approvals remain evidence of the original assets. Migration proceeds
+in explicitly scoped work; new artwork and runtime activation have separate
+statuses. Apply these rules to the work being requested. Explicit user direction
+takes precedence.
 
 For actions involving objects, also follow the
 [character–object interaction standard](OBJECT_INTERACTION_STANDARD.md) for
 staging, ownership, transfer cues and lifecycle, and
 [personal-prop visibility](PERSONAL_PROPS.md) for equipment visibility. This guide
-owns sprite construction and motion quality; those companions own interaction
-behavior. A walk's limb amplitudes and timing are not rules for every combat pose.
+owns appearance, sizing, rendering and motion quality; those companions own
+interaction behavior, ownership and prop visibility. A walk's limb amplitudes
+and timing are not rules for every combat pose.
 The limb examples below describe a biped. For creatures with different anatomy,
 plan their actual limb chains, support pattern and silhouette rather than forcing
 a human two-arm/two-leg gait onto them.
+
+## Navigation
+
+- [Visual direction](#visual-direction)
+- [Units and sizing](#units-and-sizing)
+- [Rendering contract](#rendering-contract)
+- [Migration and acceptance](#migration-and-acceptance)
+- [Character and animation working order](#working-order)
+- [Character design and Iselin's registration example](#1-establish-the-character-before-animating)
+- [Gait planning](#2-plan-the-gait-before-drawing-in-betweens),
+  [complete drawings](#3-draw-complete-coherent-frames),
+  [feet](#4-make-feet-progress-continuously) and
+  [body registration](#5-register-the-body-author-the-bob)
+- [Corrections](#6-correct-one-defect-while-protecting-accepted-work),
+  [exports](#7-export-reproducibly), [review](#8-review-at-three-levels-before-declaring-completion)
+  and [diagnosis](#9-diagnose-before-regenerating)
+
+## Visual direction
+
+Use Iselin's clear silhouettes, readable dark contours, coherent material shading
+and fine costume detail as the fidelity reference. Preserve each character's
+approved appearance, anatomical costume sides and relative height. Her 42×72
+canvas is a character-specific example, not a frame size for the whole cast.
+
+Author additional detail at the target density. Enlarging old pixels alone is
+a compatibility treatment, not a completed visual rebuild. Retained larger
+masters may supply suitable detail after proportion, palette and motion review.
+Keep pixel clusters deliberate and use consistent outline weight within each
+asset family. Ground materials need coherent edges and quiet transitions;
+characters and foreground objects need readable separation. Avoid giving every
+floor tile a character-style black border or filling every surface with noise.
+
+| Asset family | Visual requirements |
+| --- | --- |
+| Characters and wildlife | Preserve identity, physical proportions, near/far anatomy and costume asymmetry across travel, actions and scene poses. Use the complete-drawing workflow below. |
+| Terrain and vegetation | Preserve logical tile coverage, seamless material transitions and grounded roots/banks. Keep paths and interactables legible; foliage density and motion must support the scene's composition. |
+| Buildings and interiors | Preserve established scale, perspective, door clearance, floor envelopes and furnishing relationships. Coordinate exteriors, interiors, cutaways and foreground occlusion. |
+| Props and equipment | Match their users' scale and materials. Keep grip, hinge, support and attachment points explicit, including directional carrying and placed states. |
+| Combat art and effects | Preserve established displayed size, silhouettes, action readability and impact cues. Coordinate projectiles, shadows and effects with the actors and scene camera. |
+| Cinematics and backgrounds | Preserve character identity and environment scale through every used camera view. Declare scene-specific projection and density rather than inferring scale from the PNG canvas. |
+| Portraits and interface artwork | Preserve character identity and existing layout slots. Record their display/layout sizing separately from world coordinates; text retains display-resolution rasterization. |
+
+Maintain coherent palettes and material shading across related assets and their
+animation frames. Regional colors and individual costume palettes retain their
+identity. Keep lighting direction and shadow treatment consistent within a scene;
+test characters and props against both light and dark backgrounds. Coordinate
+painted highlights with dynamic lighting so characters, scenery and effects
+belong to the same environment.
+
+## Units and sizing
+
+Every measurement must declare its coordinate space:
+
+- **Logical world units:** map positions, tile footprints, camera coverage,
+  collision probes, navigation, interaction distances and depth-sort baselines.
+  Existing documentation's world pixels refer to these units.
+- **Artwork pixels:** texels in an exported drawing, atlas cell or texture.
+  The standard density is **2 artwork pixels per logical world unit** on each axis.
+- **Render pixels:** pixels in the scene's composition target. The planned
+  standard world target is **960×640** for the existing **480×320 logical view**.
+- **Display pixels:** pixels in the actual window or embedded viewport after
+  presentation. Interface text is rasterized in this space.
+
+| Asset | Logical frame/footprint | Exported artwork at 2× |
+| --- | --- | --- |
+| Terrain tile | 24×24 | 48×48 |
+| Existing Caelan-sized character canvas | 24×36 | 48×72 |
+| Mira's wider canvas | 32×36 | 64×72 |
+| Iselin's approved canvas | 21×36 | 42×72 |
+
+Character canvas dimensions include transparent padding; they are not the
+visible body height or collision footprint. Larger props and action canvases
+follow the same density rule while retaining their own logical dimensions.
+Regional overworld miniatures, combat staging and cinematic cameras retain
+their established scales. Derive a bank's logical footprint from its actual
+runtime presentation before rebuilding it; raw PNG dimensions alone cannot
+establish how large it appears in those views.
+
+For a world asset at density `d`, artwork dimensions and artwork-space anchors
+are `d ×` their logical equivalents. Keep draw, foot/ground and interaction
+anchors distinct. Iselin's draw anchor is `[21,60]` in artwork pixels and
+`[10.5,30]` in world units; her foot anchor is `[21,68]` / `[10.5,34]`.
+Her collision probe remains 8×4 world units. Fractional logical anchors are valid;
+round at the rendering boundary consistently rather than truncating metadata.
+
+The artwork migration preserves gameplay positions, collision, movement speeds,
+interaction reach, scene transitions, camera coverage and physical proportions.
+Collision and navigation masks remain logical data, independently registered
+from image alpha. A revised silhouette does not automatically redefine them.
+Body-spacing and hand-contact ranges in the interaction standard remain logical
+world measurements; a 4-unit gap spans 8 artwork pixels at 2× density.
+
+## Rendering contract
+
+This section specifies the target implementation, not a claim that every
+existing renderer already supports it.
+
+Preserve the 480×320 logical camera view while composing its world art at
+960×640. Project logical positions and the camera into render space once.
+For a simple unrotated 2× asset, placement is
+`render_position = 2 × (world_position - camera_position) - artwork_draw_anchor`.
+An explicit scene zoom/projection may extend that transform. Keep simulation,
+depth ordering and interaction calculations in their established logical space.
+
+Keep new artwork at its authored density throughout world composition. Drawing
+it into a 480×320 fallback and enlarging the result discards its additional
+detail. Compatibility drawing of legacy art may upscale it at its existing
+logical size, with its migration status still recorded as legacy.
+
+All participating paths must honor the same coordinate contract: the player,
+companions, ambient routines, objects, doors, ground layers, grass, water,
+foregrounds, shadows, cave lighting and effects. Preserve depth and alpha through
+their ordered passes. Any deliberately lower-resolution light/effect field needs
+an explicit transform and an in-scene quality check. Combat, cutscenes, Gallery,
+playtests, transitions and frame snapshots must preserve the appropriate detail
+before display-resolution UI is drawn. A single upgraded actor path does not
+establish whole-game support.
+
+Present pixel artwork with nearest-neighbor sampling. Use integer display
+scaling when it fits; retain fitting/letterboxing behavior for embedded or
+non-integer windows and inspect fractional-scale artifacts. At a 960×640 scene
+viewport, the standard render target can display at 1:1. At a 480×320 viewport,
+detail must be reduced: record that presentation limit rather than claiming
+all source pixels remain visible. Existing small-window support remains in place
+unless a separate implementation explicitly changes it. UI layout, text sizing
+and input mapping must keep working across these presentation sizes.
+
+Asset records and exporters must explicitly record the following contract.
+These are required meanings; the exact shared runtime schema is pending.
+
+| Record | Units / purpose |
+| --- | --- |
+| Artwork dimensions and density | Exported pixel dimensions and artwork pixels per logical unit. |
+| Logical canvas/footprint | Expected world-space size, including intentional padding. |
+| Draw and foot/ground anchors | Named coordinate space and conversion; preserve existing registration. |
+| Attachment points and depth baseline | Grip, hinge, support and sorting coordinates with declared units. |
+| Animation | Frame order, per-frame timing, loop behavior and action/impact cues. |
+| Provenance and state | Sources, extraction/registration recipe, hashes, design approval and runtime migration status. |
+
+Record source density and target density when they differ. Export uniformly,
+preserving physical proportions. Builders must distinguish art dimensions from
+logical masks and gameplay coordinates, and keep checking existing preservation
+contracts intentionally rather than silently repinning historical hashes.
+
+Doubling both artwork dimensions multiplies uncompressed surface storage by
+four. Use bounded caches, visible chunks and reusable assets; avoid retaining
+entire enlarged world images or rebuilding scaled frames on every draw. Profile
+representative populated scenes, animated terrain, cave lighting and battles.
+Set concrete memory/frame-time budgets during renderer implementation and record
+the measured results; this documentation does not assert an unmeasured budget.
+
+## Migration and acceptance
+
+Maintain each asset family's implementation facts in its existing local guide
+and source metadata. Track **legacy**, **rebuilt but not integrated**, and
+**integrated** independently of design approval or merge status. The standard's
+adoption leaves those facts intact; historical 24×24 and 24×36 exports remain
+accurate descriptions of those original files.
+
+For each scoped migration:
+
+1. Inventory the canonical asset bank and its consumers, including action,
+   carrying, seated, combat and cinematic variants. Separate masters, runtime
+   frames, generated variations and historical review files.
+2. Record the existing logical footprint, anchors, collision/navigation data,
+   timing, displayed size and reference scene before rebuilding.
+3. Reuse adequate retained masters or author detailed replacements under this
+   standard. Preserve original sources and identify the current revision.
+4. Export density-aware art and metadata; integrate every affected consumer
+   while preserving its gameplay registration, action cues and object ownership.
+5. Check actual scene scale, alpha, outline/material consistency, tile seams,
+   foreground overlap, lighting and interaction readability. Verify normal and
+   reduced-motion presentation at relevant window sizes and camera views.
+6. Verify reproducible exports, unchanged intended gameplay geometry and
+   applicable lifecycle behavior. Record performance and known limits, update
+   the local migration status, and follow the user's requested review boundary.
+
+Use the existing character/animation review levels below for moving bodies.
+Frame counts and animation timing remain separate from artwork density: a 2×
+rebuild does not automatically impose sixteen-frame walks or retime all NPCs.
+Preserve historical captures and local recipes as evidence, with links to this
+guide for current construction rules. The interaction and personal-prop guides
+continue to own their behavioral requirements.
 
 ## Working order
 

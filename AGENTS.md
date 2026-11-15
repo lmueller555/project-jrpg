@@ -1,11 +1,15 @@
 # Repository instructions
 
-Before creating or changing character/NPC sprites, animation, or corresponding
-asset builders and tests, read the
-[global sprite and animation standard](docs/SPRITE_ANIMATION_STANDARD.md).
-It is the single authoring reference for design, directional anatomy, gait,
-registration, export and review. Older recipes and review notes retain local
-implementation facts and history, not competing construction rules.
+Before creating or changing artwork, textures, sprites, animation, asset
+builders, renderers or their tests, read the
+[global visual art standard](docs/VISUAL_ART_STANDARD.md).
+It is the single reference for visual style, artwork/world/display units,
+density, sizing, rendering, directional anatomy, gait, registration, export and
+review. Its approved target is 2× artwork density with existing logical sizes
+and gameplay proportions. The full-world renderer and asset migration are
+pending; distinguish the target from current implementation. Apply changes to
+the authorized scope. Older recipes and review notes retain local implementation
+facts and history, not competing construction rules.
 
 For object manipulation, scene staging and prop rendering, also read
 [the character–object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md)

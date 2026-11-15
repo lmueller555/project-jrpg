@@ -5,7 +5,7 @@ merged. `actor.json` is the reusable runtime actor definition;
 `animation.json` registers its idles and approved walk manifests.
 
 Authoring follows the
-[global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+[global visual art standard](../../../docs/VISUAL_ART_STANDARD.md).
 These integration details describe the current exports and renderer.
 
 ## Runtime size and playback

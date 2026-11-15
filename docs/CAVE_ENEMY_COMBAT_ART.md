@@ -1,7 +1,7 @@
 # Lithrusk and Veylume combat art
 
 Sprite construction, proportions, registration and visual review follow the
-[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). The
+[global visual art standard](VISUAL_ART_STANDARD.md). The
 implementation details below describe this asset/system; older construction
 methods are retained for reproducibility, not as new authoring instructions.
 
