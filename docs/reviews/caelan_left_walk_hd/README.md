@@ -1,9 +1,8 @@
-# Caelan left-facing walk — review
+# Caelan left-facing walk — approved
 
 Sixteen 48×72 complete frames at 2× artwork density, preserving Caelan's
 24×36 logical canvas, [24,60] artwork draw anchor, [24,68] foot anchor and
-560 ms cadence (16 × 35 ms). **Awaiting user review; unmerged and not activated
-in gameplay.**
+560 ms cadence (16 × 35 ms). **User-approved asset pack; runtime integration remains pending.**
 
 ![Normal speed, half speed and approved left idle](preview.gif)
 

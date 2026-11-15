@@ -77,8 +77,8 @@ def build():
     sheet=Image.new('RGBA',(48*16,72))
     for i,frame in enumerate(exported):sheet.alpha_composite(frame,(48*i,0))
     sheet.save(OUT/'spritesheet.png')
-    manifest={'version':1,'character':'caelan','animation':'walk.left','status':'review',
-        'design_status':'approved','artwork_status':'review',
+    manifest={'version':1,'character':'caelan','animation':'walk.left','status':'approved',
+        'design_status':'approved','artwork_status':'approved',
         'runtime_integration':False,'artwork_pixels_per_world_pixel':2,'frame_size':[48,72],
         'logical_size':[24,36],'draw_anchor':[24,60],'foot_anchor':[24,68],
         'cycle_ms':560,'loop':True,'source_scale':SCALE,'frames':records,
@@ -117,7 +117,7 @@ def build():
     gif_frames=[im.quantize(palette=gif_palette,dither=Image.Dither.NONE) for im in preview]
     gif_frames[0].save(REVIEW/'preview.gif',save_all=True,append_images=gif_frames[1:],
                        duration=[30,40]*16,loop=0,disposal=2,optimize=False)
-    print('Exported 16 review frames, 560ms cadence; runtime activation remains pending.')
+    print('Exported 16 approved frames, 560ms cadence; runtime activation remains pending.')
 
 
 if __name__=='__main__':build()

@@ -79,9 +79,9 @@ class CaelanLeftWalkReviewTests(unittest.TestCase):
             self.assertEqual(frame.crop((0,50,48,72)).tobytes(),region)
             self.assertEqual(hashlib.sha256(region).hexdigest(),record['protected_lower_sha256'])
 
-    def test_approved_references_and_review_status_are_preserved(self):
+    def test_approved_references_and_approval_status_are_preserved(self):
         protected=json.loads((SOURCE/'protected_references.json').read_text())
         for file,digest in protected.items():
             self.assertEqual(hashlib.sha256((ROOT/file).read_bytes()).hexdigest(),digest)
-        self.assertEqual(self.data['status'],'review')
-        self.assertEqual(self.data['artwork_status'],'review')
+        self.assertEqual(self.data['status'],'approved')
+        self.assertEqual(self.data['artwork_status'],'approved')
