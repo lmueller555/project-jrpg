@@ -1,0 +1,317 @@
+{
+  "method": "Complete image-generation redraws against approved left idle and reflected approved motion guides; exported frames contain sampled new drawings, not flipped finished right art.",
+  "appearance_reference": {
+    "source": "assets/source/characters/caelan/idles_hd_review/idles_authored.png",
+    "cell": [
+      627,
+      0,
+      1254,
+      627
+    ]
+  },
+  "anatomy": "Left arm and leg near; right arm and leg far. Pouch is single, near, on anatomical left hip. Right-first contact retained by shifting reflected motion guide eight frames.",
+  "sources": {
+    "A.png": {
+      "original": "/workspace/generated_images/exec-3bf54930-9e42-4032-9a50-ddc08338b2f5.png",
+      "sha256": "aa142c5a50e36560b84e4e08cce0691b34b630f8c7a06ddaf324807b00aa2a6a",
+      "phase_range": [
+        1,
+        4
+      ],
+      "appearance_reference": "idle_reference.png",
+      "motion_reference": "guide_A.png"
+    },
+    "B.png": {
+      "original": "/workspace/generated_images/exec-fe53ae06-b954-4d66-b715-861e0c2c8e53.png",
+      "sha256": "b53be0459263df574861fffeb42246f4684f0a25a04b53d6ec87fba4438a8e18",
+      "phase_range": [
+        5,
+        8
+      ],
+      "appearance_reference": "idle_reference.png",
+      "motion_reference": "guide_B.png"
+    },
+    "C.png": {
+      "original": "/workspace/generated_images/exec-07ac4bf4-7491-4fb7-9470-2d7c2077d9ff.png",
+      "sha256": "dd96c7d6e3a6ca498b91d3f83ea774cca5269d8cedeb5d6006a2fceba1ceeca5",
+      "phase_range": [
+        9,
+        12
+      ],
+      "appearance_reference": "idle_reference.png",
+      "motion_reference": "guide_C.png"
+    },
+    "D.png": {
+      "original": "/workspace/generated_images/exec-e4620d15-998c-44fc-99bc-7243d86342fc.png",
+      "sha256": "b536b04d8d64ed075a156faf80f1da3fdd33f2095ec2ef69878f5e322b2b5534",
+      "phase_range": [
+        13,
+        16
+      ],
+      "appearance_reference": "idle_reference.png",
+      "motion_reference": "guide_D.png"
+    }
+  },
+  "guide_construction": {
+    "guide_A.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "cell_size": [
+        627,
+        627
+      ],
+      "motion_only": true,
+      "cells": [
+        {
+          "cell": 0,
+          "right_frame": 9,
+          "source": "assets/source/characters/caelan/run_right_hd_review/C.png",
+          "source_cell": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "source_sha256": "ec933354f002078b4f29751f430f4a4ca078e648f52dcd84c896ad5591ed3d8c",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 1,
+          "right_frame": 10,
+          "source": "assets/source/characters/caelan/run_right_hd_review/C.png",
+          "source_cell": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "source_sha256": "ec933354f002078b4f29751f430f4a4ca078e648f52dcd84c896ad5591ed3d8c",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 2,
+          "right_frame": 11,
+          "source": "assets/source/characters/caelan/run_right_hd_review/C.png",
+          "source_cell": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "source_sha256": "ec933354f002078b4f29751f430f4a4ca078e648f52dcd84c896ad5591ed3d8c",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 3,
+          "right_frame": 12,
+          "source": "assets/source/characters/caelan/run_right_hd_review/C.png",
+          "source_cell": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "source_sha256": "ec933354f002078b4f29751f430f4a4ca078e648f52dcd84c896ad5591ed3d8c",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        }
+      ]
+    },
+    "guide_B.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "cell_size": [
+        627,
+        627
+      ],
+      "motion_only": true,
+      "cells": [
+        {
+          "cell": 0,
+          "right_frame": 13,
+          "source": "assets/source/characters/caelan/run_right_hd_review/contact_correction.png",
+          "source_cell": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "source_sha256": "f1d63520056dcf0a126d447793ae3a7f3c5f0fc8f867a1d0722e5a73b90a8f6f",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 1,
+          "right_frame": 14,
+          "source": "assets/source/characters/caelan/run_right_hd_review/flight_correction.png",
+          "source_cell": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "source_sha256": "7b27a5cc6f88ca0c960f1a2a81b48b97d025f95ea99eb3b2849b18c41cab58fe",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 2,
+          "right_frame": 15,
+          "source": "assets/source/characters/caelan/run_right_hd_review/flight_correction.png",
+          "source_cell": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "source_sha256": "7b27a5cc6f88ca0c960f1a2a81b48b97d025f95ea99eb3b2849b18c41cab58fe",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 3,
+          "right_frame": 16,
+          "source": "assets/source/characters/caelan/run_right_hd_review/D.png",
+          "source_cell": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "source_sha256": "c595b41bf8b44098177fc1868b622dae679963710f0f447c4a8dd3a8c8c38a16",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        }
+      ]
+    },
+    "guide_C.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "cell_size": [
+        627,
+        627
+      ],
+      "motion_only": true,
+      "cells": [
+        {
+          "cell": 0,
+          "right_frame": 1,
+          "source": "assets/source/characters/caelan/run_right_hd_review/A.png",
+          "source_cell": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "source_sha256": "7754c5252ba64b51c0c6f7b5ca1447a51fe2d81c27e8e0311057505530eee509",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 1,
+          "right_frame": 2,
+          "source": "assets/source/characters/caelan/run_right_hd_review/A.png",
+          "source_cell": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "source_sha256": "7754c5252ba64b51c0c6f7b5ca1447a51fe2d81c27e8e0311057505530eee509",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 2,
+          "right_frame": 3,
+          "source": "assets/source/characters/caelan/run_right_hd_review/A.png",
+          "source_cell": [
+            0,
+            627,
+            627,
+            1254
+          ],
+          "source_sha256": "7754c5252ba64b51c0c6f7b5ca1447a51fe2d81c27e8e0311057505530eee509",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 3,
+          "right_frame": 4,
+          "source": "assets/source/characters/caelan/run_right_hd_review/A.png",
+          "source_cell": [
+            627,
+            627,
+            1254,
+            1254
+          ],
+          "source_sha256": "7754c5252ba64b51c0c6f7b5ca1447a51fe2d81c27e8e0311057505530eee509",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        }
+      ]
+    },
+    "guide_D.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "cell_size": [
+        627,
+        627
+      ],
+      "motion_only": true,
+      "cells": [
+        {
+          "cell": 0,
+          "right_frame": 5,
+          "source": "assets/source/characters/caelan/run_right_hd_review/contact_correction.png",
+          "source_cell": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "source_sha256": "f1d63520056dcf0a126d447793ae3a7f3c5f0fc8f867a1d0722e5a73b90a8f6f",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 1,
+          "right_frame": 6,
+          "source": "assets/source/characters/caelan/run_right_hd_review/flight_correction.png",
+          "source_cell": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "source_sha256": "7b27a5cc6f88ca0c960f1a2a81b48b97d025f95ea99eb3b2849b18c41cab58fe",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 2,
+          "right_frame": 7,
+          "source": "assets/source/characters/caelan/run_right_hd_review/flight_correction.png",
+          "source_cell": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "source_sha256": "7b27a5cc6f88ca0c960f1a2a81b48b97d025f95ea99eb3b2849b18c41cab58fe",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        },
+        {
+          "cell": 3,
+          "right_frame": 8,
+          "source": "assets/source/characters/caelan/run_right_hd_review/contact_correction.png",
+          "source_cell": [
+            627,
+            0,
+            1254,
+            627
+          ],
+          "source_sha256": "f1d63520056dcf0a126d447793ae3a7f3c5f0fc8f867a1d0722e5a73b90a8f6f",
+          "transform": "horizontal reflection of the complete source cell for motion reference only"
+        }
+      ]
+    }
+  }
+}
