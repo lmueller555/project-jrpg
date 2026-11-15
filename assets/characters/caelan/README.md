@@ -1,5 +1,15 @@
 # Caelan — current overworld artwork
 
+## Approved higher-density idles
+
+The four **48×72** directional idles in [the detailed idle pack](review_hd/idles/idles.json)
+are user-approved and merged, retaining a **24×36** logical canvas. They are the
+design reference for the upcoming higher-density walking/running work. Their
+runtime integration is pending; the current player still selects the legacy
+bank described below. See the [approval and previews](../../../docs/reviews/caelan_hd_idles/README.md).
+
+## Current runtime bank
+
 The overworld quality refresh replaces the four directional idles, sixteen walk
 frames and sixteen run frames with registered authored drawings. Status is
 **review**, pending the user's visual review after merge. Earlier approvals
