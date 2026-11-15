@@ -1,0 +1,47 @@
+{
+  "method": "Complete image-generated character drawings, followed by technical alpha extraction, uniform sampling, body registration, shared palette and contour.",
+  "appearance_reference": "assets/source/characters/caelan/idles_hd_review/idles_authored.png bottom-left cell",
+  "anatomy": "Right arm/leg near; left arm/leg far. Single left-hip pouch occluded on far side.",
+  "sources": {
+    "keys.png": {
+      "original": "/workspace/generated_images/exec-cbcc84d3-f060-4e60-a70e-463892162b53.png",
+      "sha256": "bcd8e4a579f46a0c01a3f67b3fb7ce81f9e9d612af9f2cb7ff14ab4d7d0dedc7",
+      "intent": "Contact and flight keys."
+    },
+    "A.png": {
+      "original": "/workspace/generated_images/exec-987596d2-4f06-4a5f-8891-097b48a9833d.png",
+      "sha256": "7754c5252ba64b51c0c6f7b5ca1447a51fe2d81c27e8e0311057505530eee509",
+      "intent": "Right-near support phase 1\u20134; all selected."
+    },
+    "B.png": {
+      "original": "/workspace/generated_images/exec-c7b9f01f-d9eb-4ad0-826b-686d405a573d.png",
+      "sha256": "b25a64db430143283cd259a9d89a569201ea2c335f4b901fdfb3a5110bf8b4aa",
+      "intent": "Initial near-right toeoff/flight5\u20138; superseded."
+    },
+    "C.png": {
+      "original": "/workspace/generated_images/exec-43f192aa-6678-44b0-9ffd-4c4e7f9df692.png",
+      "sha256": "ec933354f002078b4f29751f430f4a4ca078e648f52dcd84c896ad5591ed3d8c",
+      "intent": "Far-left support9\u201312; all selected."
+    },
+    "D.png": {
+      "original": "/workspace/generated_images/exec-a9a54359-e20d-4658-a3d9-f3156412633a.png",
+      "sha256": "c595b41bf8b44098177fc1868b622dae679963710f0f447c4a8dd3a8c8c38a16",
+      "intent": "Initial far-left toeoff/flight13\u201316; only16 retained. 14\u201315 had wrong near-arm phase."
+    },
+    "arm_correction.png": {
+      "original": "/workspace/generated_images/exec-2a0762fd-aea2-407b-8e4a-acf2a8142fa5.png",
+      "sha256": "39840ee3e736f53cb4fa80ee95f75e65acd9753ee395801f5bc075f3a39a95ec",
+      "intent": "Complete redraw trial to fix near-right trailing-arm phase; superseded by flight correction. Semi-transparent fringe; not selected."
+    },
+    "contact_correction.png": {
+      "original": "/workspace/generated_images/exec-e702ce48-d38a-405b-a524-c13076fc964a.png",
+      "sha256": "f1d63520056dcf0a126d447793ae3a7f3c5f0fc8f867a1d0722e5a73b90a8f6f",
+      "intent": "Whole-pose contact/toeoff repair; selected5,8,13. Last cell rejected for wrong near-arm phase."
+    },
+    "flight_correction.png": {
+      "original": "/workspace/generated_images/exec-9e229316-0e1f-4b19-9957-9cccc904c944.png",
+      "sha256": "7b27a5cc6f88ca0c960f1a2a81b48b97d025f95ea99eb3b2849b18c41cab58fe",
+      "intent": "Whole-pose gradual early recovery with correct near/far counter-swing; selected6,7,14,15."
+    }
+  }
+}

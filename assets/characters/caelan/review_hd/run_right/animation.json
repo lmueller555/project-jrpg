@@ -1,0 +1,728 @@
+{
+  "version": 1,
+  "character": "caelan",
+  "animation": "run.right",
+  "status": "review",
+  "design_status": "approved",
+  "artwork_status": "pending_review",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    56,
+    76
+  ],
+  "logical_size": [
+    28,
+    38
+  ],
+  "draw_anchor": [
+    28,
+    64
+  ],
+  "foot_anchor": [
+    28,
+    72
+  ],
+  "cycle_ms": 400,
+  "loop": true,
+  "source_hashes": {
+    "A.png": "7754c5252ba64b51c0c6f7b5ca1447a51fe2d81c27e8e0311057505530eee509",
+    "B.png": "b25a64db430143283cd259a9d89a569201ea2c335f4b901fdfb3a5110bf8b4aa",
+    "contact_correction.png": "f1d63520056dcf0a126d447793ae3a7f3c5f0fc8f867a1d0722e5a73b90a8f6f",
+    "flight_correction.png": "7b27a5cc6f88ca0c960f1a2a81b48b97d025f95ea99eb3b2849b18c41cab58fe",
+    "C.png": "ec933354f002078b4f29751f430f4a4ca078e648f52dcd84c896ad5591ed3d8c",
+    "D.png": "c595b41bf8b44098177fc1868b622dae679963710f0f447c4a8dd3a8c8c38a16"
+  },
+  "palette_sha256": "78818e6977dd31bf8a11483e13683acbe8f484f8a0843c8fae67110baee5267c",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 25,
+      "source": "A.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        139,
+        19,
+        498,
+        542
+      ],
+      "source_head_bounds": [
+        230,
+        19,
+        436,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        4,
+        7
+      ],
+      "sampled_size": [
+        45,
+        65
+      ],
+      "phase": "contact",
+      "support_leg": "right",
+      "support_ground_interval": [
+        36,
+        71,
+        48
+      ],
+      "vertical_registration_offset": 5,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 7
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 25,
+      "source": "A.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        160,
+        29,
+        440,
+        543
+      ],
+      "source_head_bounds": [
+        218,
+        29,
+        429,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        8,
+        8
+      ],
+      "sampled_size": [
+        35,
+        64
+      ],
+      "phase": "compression",
+      "support_leg": "right",
+      "support_ground_interval": [
+        23,
+        71,
+        33
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 8
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 25,
+      "source": "A.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        225,
+        31,
+        436,
+        546
+      ],
+      "source_head_bounds": [
+        230,
+        31,
+        436,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        15,
+        8
+      ],
+      "sampled_size": [
+        26,
+        64
+      ],
+      "phase": "support",
+      "support_leg": "right",
+      "support_ground_interval": [
+        17,
+        71,
+        27
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 8
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 25,
+      "source": "A.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        137,
+        32,
+        445,
+        534
+      ],
+      "source_head_bounds": [
+        216,
+        32,
+        424,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        5,
+        8
+      ],
+      "sampled_size": [
+        38,
+        62
+      ],
+      "phase": "late_support",
+      "support_leg": "right",
+      "support_ground_interval": [
+        6,
+        69,
+        9
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 8
+    },
+    {
+      "file": "frame_05.png",
+      "duration_ms": 25,
+      "source": "contact_correction.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        128,
+        18,
+        457,
+        550
+      ],
+      "source_head_bounds": [
+        224,
+        18,
+        433,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        3,
+        6
+      ],
+      "sampled_size": [
+        41,
+        66
+      ],
+      "phase": "toe_off",
+      "support_leg": "right_toe",
+      "support_ground_interval": [
+        4,
+        71,
+        8
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 6
+    },
+    {
+      "file": "frame_06.png",
+      "duration_ms": 25,
+      "source": "flight_correction.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        140,
+        18,
+        468,
+        533
+      ],
+      "source_head_bounds": [
+        224,
+        18,
+        454,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        3,
+        6
+      ],
+      "sampled_size": [
+        41,
+        64
+      ],
+      "phase": "flight",
+      "support_leg": null,
+      "support_ground_interval": null,
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 6
+    },
+    {
+      "file": "frame_07.png",
+      "duration_ms": 25,
+      "source": "flight_correction.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        129,
+        18,
+        458,
+        545
+      ],
+      "source_head_bounds": [
+        198,
+        18,
+        428,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        5,
+        6
+      ],
+      "sampled_size": [
+        41,
+        65
+      ],
+      "phase": "descending_flight",
+      "support_leg": null,
+      "support_ground_interval": null,
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 6
+    },
+    {
+      "file": "frame_08.png",
+      "duration_ms": 25,
+      "source": "contact_correction.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        150,
+        18,
+        458,
+        550
+      ],
+      "source_head_bounds": [
+        199,
+        18,
+        406,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        9,
+        6
+      ],
+      "sampled_size": [
+        38,
+        66
+      ],
+      "phase": "touchdown",
+      "support_leg": "left",
+      "support_ground_interval": [
+        36,
+        71,
+        45
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 6
+    },
+    {
+      "file": "frame_09.png",
+      "duration_ms": 25,
+      "source": "C.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        140,
+        22,
+        480,
+        543
+      ],
+      "source_head_bounds": [
+        220,
+        22,
+        431,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        5,
+        7
+      ],
+      "sampled_size": [
+        42,
+        65
+      ],
+      "phase": "contact",
+      "support_leg": "left",
+      "support_ground_interval": [
+        35,
+        71,
+        46
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 7
+    },
+    {
+      "file": "frame_10.png",
+      "duration_ms": 25,
+      "source": "C.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        157,
+        25,
+        414,
+        543
+      ],
+      "source_head_bounds": [
+        203,
+        25,
+        414,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        9,
+        8
+      ],
+      "sampled_size": [
+        32,
+        64
+      ],
+      "phase": "compression",
+      "support_leg": "left",
+      "support_ground_interval": [
+        21,
+        71,
+        33
+      ],
+      "vertical_registration_offset": 5,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 8
+    },
+    {
+      "file": "frame_11.png",
+      "duration_ms": 25,
+      "source": "C.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        209,
+        17,
+        432,
+        547
+      ],
+      "source_head_bounds": [
+        223,
+        17,
+        432,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        13,
+        7
+      ],
+      "sampled_size": [
+        28,
+        66
+      ],
+      "phase": "support",
+      "support_leg": "left",
+      "support_ground_interval": [
+        18,
+        72,
+        29
+      ],
+      "vertical_registration_offset": 5,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 7
+    },
+    {
+      "file": "frame_12.png",
+      "duration_ms": 25,
+      "source": "C.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        143,
+        18,
+        458,
+        544
+      ],
+      "source_head_bounds": [
+        203,
+        18,
+        412,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        8,
+        7
+      ],
+      "sampled_size": [
+        39,
+        65
+      ],
+      "phase": "late_support",
+      "support_leg": "left",
+      "support_ground_interval": [
+        11,
+        71,
+        17
+      ],
+      "vertical_registration_offset": 5,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 7
+    },
+    {
+      "file": "frame_13.png",
+      "duration_ms": 25,
+      "source": "contact_correction.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        145,
+        19,
+        443,
+        549
+      ],
+      "source_head_bounds": [
+        224,
+        19,
+        433,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        5,
+        6
+      ],
+      "sampled_size": [
+        37,
+        66
+      ],
+      "phase": "toe_off",
+      "support_leg": "left_toe",
+      "support_ground_interval": [
+        5,
+        71,
+        11
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 6
+    },
+    {
+      "file": "frame_14.png",
+      "duration_ms": 25,
+      "source": "flight_correction.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        143,
+        18,
+        468,
+        531
+      ],
+      "source_head_bounds": [
+        224,
+        18,
+        454,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        4,
+        5
+      ],
+      "sampled_size": [
+        40,
+        64
+      ],
+      "phase": "flight",
+      "support_leg": null,
+      "support_ground_interval": null,
+      "vertical_registration_offset": 3,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 5
+    },
+    {
+      "file": "frame_15.png",
+      "duration_ms": 25,
+      "source": "flight_correction.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        130,
+        18,
+        458,
+        544
+      ],
+      "source_head_bounds": [
+        198,
+        18,
+        428,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        5,
+        6
+      ],
+      "sampled_size": [
+        41,
+        65
+      ],
+      "phase": "descending_flight",
+      "support_leg": null,
+      "support_ground_interval": null,
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 6
+    },
+    {
+      "file": "frame_16.png",
+      "duration_ms": 25,
+      "source": "D.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "alpha_cutoff": 128,
+      "source_bounds": [
+        136,
+        32,
+        499,
+        548
+      ],
+      "source_head_bounds": [
+        215,
+        32,
+        428,
+        190
+      ],
+      "uniform_scale": 0.124,
+      "origin": [
+        5,
+        8
+      ],
+      "sampled_size": [
+        45,
+        64
+      ],
+      "phase": "touchdown",
+      "support_leg": "right",
+      "support_ground_interval": [
+        38,
+        71,
+        42
+      ],
+      "vertical_registration_offset": 4,
+      "source_neck_reference_y": 205,
+      "source_belt_reference_y": 310,
+      "head_crown_y": 8
+    }
+  ],
+  "processing": "Complete generated drawings; uniform nearest sampling, cranial horizontal registration, recorded whole-body vertical registration, shared palette and contour. No limb transforms."
+}
