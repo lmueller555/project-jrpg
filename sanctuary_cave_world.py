@@ -6,6 +6,8 @@ half-resolution viewport before multiplying it into the rendered world. No
 lighting operation touches the UI or changes collision.
 """
 from __future__ import annotations
+from rendering import WorldCanvas, artwork, layer as render_layer, scale as render_scale
+from rendering import draw as render_draw
 
 from collections import OrderedDict
 import math
@@ -81,9 +83,9 @@ class CaveLighting:
         wall_outline = np.column_stack(((radius+dx*wall_distances)/self.SCALE,
                                         (radius+dy*wall_distances)/self.SCALE)).tolist()
         visible = pygame.Surface((diameter, diameter))
-        visible.fill('black');pygame.draw.polygon(visible, 'white', floor_outline)
+        visible.fill('black');render_draw.polygon(visible, 'white', floor_outline)
         walls = pygame.Surface((diameter, diameter))
-        walls.fill('black');pygame.draw.polygon(walls, 'white', wall_outline)
+        walls.fill('black');render_draw.polygon(walls, 'white', wall_outline)
         visibility = pygame.surfarray.array3d(visible)[:, :, 0] > 0
         wall_visibility = pygame.surfarray.array3d(walls)[:, :, 0] > 0
         # Sampling whole low-resolution cells conservatively avoids thin wall
@@ -137,7 +139,7 @@ class CaveLighting:
         small_size = (math.ceil(width/self.SCALE), math.ceil(height/self.SCALE))
         if self._field is None or self._field.get_size() != small_size:
             self._field = pygame.Surface(small_size)
-            self._expanded = pygame.Surface((width, height))
+            self._expanded = render_layer((width,height),0)
         ambient = tuple(self.world.data.get('cave', {}).get('ambient', self.AMBIENT))
         self._field.fill(ambient)
         viewport = pygame.Rect(camera, (width, height))
@@ -158,7 +160,7 @@ class CaveLighting:
                              special_flags=pygame.BLEND_RGB_ADD)
         # Native-pixel scaling keeps occlusion boundaries crisp and never
         # interpolates light across a solid wall into an unlit room.
-        pygame.transform.scale(self._field, (width, height), self._expanded)
+        render_scale(self._field, (width, height), self._expanded)
         # Self-emission belongs to the illumination field, never a sprite
         # redraw. An actor standing in front therefore keeps its own pixels
         # and simply catches the crystal light. These native masks preserve
@@ -200,20 +202,21 @@ class SanctuaryCaveWorld(World):
             emissions = []
             for frame in frames:
                 if id(frame) not in emission_cache:
-                    color = pygame.surfarray.array3d(frame)
-                    alpha = pygame.surfarray.array_alpha(frame)
+                    raw=frame.native if isinstance(frame,WorldCanvas) else frame
+                    color = pygame.surfarray.array3d(raw)
+                    alpha = pygame.surfarray.array_alpha(raw)
                     # Bright mineral facets emit; muted grey/green stone
                     # sockets and transparent margins retain ordinary shading.
                     mineral = ((color.max(axis=2) >= 110)
                                & (((color.max(axis=2)-color.min(axis=2)) >= 28)
                                   | (color.min(axis=2) >= 180))
                                & (alpha > 0))
-                    mask = pygame.Surface(frame.get_size(), pygame.SRCALPHA)
+                    mask = pygame.Surface(raw.get_size(), pygame.SRCALPHA)
                     mask.fill((255, 255, 255, 0))
                     view = pygame.surfarray.pixels_alpha(mask)
                     view[:, :] = np.where(mineral, alpha, 0)
                     del view
-                    emission_cache[id(frame)] = mask
+                    emission_cache[id(frame)] = artwork(mask,2) if isinstance(frame,WorldCanvas) else mask
                 emissions.append(emission_cache[id(frame)])
             self._crystals.append((record, frames, index, tuple(emissions)))
 

@@ -4,6 +4,8 @@ These ambient exchanges never own a quest checkpoint or a durable reward. NPCs
 belong to the reserve scene, independently of the town's household actors.
 """
 from __future__ import annotations
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 
 import json
 from pathlib import Path
@@ -95,7 +97,7 @@ class ReserveCaretaker(ReserveVisitor):
                   pose['grip']-pygame.Vector2(bucket['grip']))
         cache_key = (name, key)
         if cache_key not in self._frames:
-            surface = pygame.Surface(self.animation['action_canvas'], pygame.SRCALPHA)
+            surface = render_layer(self.animation['action_canvas'], pygame.SRCALPHA)
             if pose['order'] == 'before':surface.blit(self.buckets[key], offset)
             surface.blit(self.bodies[name], (0,0))
             if pose['order'] == 'after':surface.blit(self.buckets[key], offset)
@@ -114,8 +116,8 @@ class ReserveCaretaker(ReserveVisitor):
         middle = origin.lerp(self.root, .5);middle.y -= 2
         points = [tuple(round(value) for value in point-pygame.Vector2(camera))
                   for point in (origin,middle,self.root)]
-        pygame.draw.lines(target, '#7ba8ad', False, points, 2)
-        pygame.draw.lines(target, '#d4e7dc', False, points, 1)
+        render_draw.lines(target, '#7ba8ad', False, points, 2)
+        render_draw.lines(target, '#d4e7dc', False, points, 1)
         # The stream is drawn in world space, so a nearby root never gets
         # clipped at the edge of the gardener's fixed native action canvas.
 

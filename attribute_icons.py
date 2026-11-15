@@ -5,6 +5,7 @@ card without a background image. Coordinates describe a 16-unit design, scaled
 into the caller's logical rectangle; icons do not scale with text settings.
 """
 import pygame
+from rendering import draw as render_draw
 
 from character_attributes import ATTRIBUTE_IDS
 
@@ -38,15 +39,15 @@ def draw_attribute_icon(painter, identifier, rect, color):
                 target.top+round(y*(target.height-1)/15))
 
     def polygon(points, width=0):
-        pygame.draw.polygon(canvas, color, [point(*p) for p in points],
+        render_draw.polygon(canvas, color, [point(*p) for p in points],
                             stroke if width else 0)
 
     def line(points, width=1):
-        pygame.draw.lines(canvas, color, False, [point(*p) for p in points],
+        render_draw.lines(canvas, color, False, [point(*p) for p in points],
                           max(1, round(stroke*width)))
 
     def circle(center, radius, width=0):
-        pygame.draw.circle(canvas, color, point(*center),
+        render_draw.circle(canvas, color, point(*center),
                            max(1, round(radius*min(target.size)/16)),
                            stroke if width else 0)
 

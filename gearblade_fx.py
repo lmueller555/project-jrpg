@@ -5,6 +5,8 @@ floor position. Nothing is spawned or accumulated between calls, so pause,
 seek, interrupted gestures and changes in frame rate produce the same image.
 """
 from __future__ import annotations
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 
 import math
 from collections.abc import Mapping
@@ -59,7 +61,7 @@ class GearbladeEffects:
         if not math.isfinite(float(scale)) or scale <= 0:raise ValueError('Invalid actor scale')
         self.art = art or prepare_combat_art()
         self.scale = float(scale)
-        self._layer = pygame.Surface(self.LAYER_SIZE, pygame.SRCALPHA)
+        self._layer = render_layer(self.LAYER_SIZE, pygame.SRCALPHA)
 
     def sample(self, point, state, time_ms, gem, elapsed, slot_age=None,
                action=None, reduced_motion=False, pose_anchors=None, owned_gems=None):
@@ -126,11 +128,11 @@ class GearbladeEffects:
             strength = (.36 if active else .10) * (.6 if sample['mode']=='failed' else 1.)
             if active:
                 radius = 3 if sample['reduced_motion'] else 3+int(math.sin(clock*3.4)>.6)
-                pygame.draw.circle(layer,_color(color,strength*.25),_xy(point),radius+2)
+                render_draw.circle(layer,_color(color,strength*.25),_xy(point),radius+2)
             # Small facets preserve legibility at the native two-times scale.
-            pygame.draw.polygon(layer,_color(color,strength+.25),
+            render_draw.polygon(layer,_color(color,strength+.25),
                                 [_xy(point+v) for v in ((0,-2),(2,0),(0,2),(-2,0))])
-            if active:pygame.draw.line(layer,_color((251,249,230),.78),_xy(point+(-1,-1)),_xy(point),1)
+            if active:render_draw.line(layer,_color((251,249,230),.78),_xy(point+(-1,-1)),_xy(point),1)
         if (sample['slot_age'] is not None and 0 <= sample['slot_age'] < .56
                 and sample['gem'] in anchors['gems']):
             age = sample['slot_age']/.56
@@ -140,8 +142,8 @@ class GearbladeEffects:
                 for i in range(6):
                     angle = i*math.tau/6-age*.8
                     p = point+pygame.Vector2(math.cos(angle),math.sin(angle))*(3+age*8)
-                    pygame.draw.line(layer,_color(color,(1-age)*.65),_xy(p),_xy(p+pygame.Vector2(math.cos(angle),math.sin(angle))*2),1)
-            pygame.draw.circle(layer,_color(color,(1-age)*.6),_xy(point),3,1)
+                    render_draw.line(layer,_color(color,(1-age)*.65),_xy(p),_xy(p+pygame.Vector2(math.cos(angle),math.sin(angle))*2),1)
+            render_draw.circle(layer,_color(color,(1-age)*.6),_xy(point),3,1)
 
     @staticmethod
     def _basis(anchors):
@@ -157,35 +159,35 @@ class GearbladeEffects:
         clock = sample['clock']
         # A very thin edge leaves the authored metal, silhouette and body
         # unobscured. Larger detail only appears in short action bursts.
-        pygame.draw.line(layer,_color(dark,strength*.28),_xy(start),_xy(end),5)
-        pygame.draw.line(layer,_color(mid,strength*.7),_xy(start+normal),_xy(end+normal),2)
-        pygame.draw.line(layer,_color(light,strength*.8),_xy(start-normal),_xy(end-normal),1)
+        render_draw.line(layer,_color(dark,strength*.28),_xy(start),_xy(end),5)
+        render_draw.line(layer,_color(mid,strength*.7),_xy(start+normal),_xy(end+normal),2)
+        render_draw.line(layer,_color(light,strength*.8),_xy(start-normal),_xy(end-normal),1)
         if sample['effect'] == 'nature':
             for side in (-1,1):
                 vine = [start.lerp(end,i/8)+normal*(side*1.8+math.sin(i*.9+clock*2.2)*1.1) for i in range(9)]
-                pygame.draw.lines(layer,_color(mid,strength*.8),False,[_xy(p) for p in vine],1)
+                render_draw.lines(layer,_color(mid,strength*.8),False,[_xy(p) for p in vine],1)
                 for i in (2,5,7):
                     p=vine[i]; tip=p+normal*side*3-direction
-                    pygame.draw.polygon(layer,_color(light,strength*.65),[_xy(p-direction),_xy(tip),_xy(p+direction)])
+                    render_draw.polygon(layer,_color(light,strength*.65),[_xy(p-direction),_xy(tip),_xy(p+direction)])
         elif sample['effect'] == 'water':
             for side in (-1,1):
                 ribbon = [start.lerp(end,i/10)+normal*math.sin(i*.65-clock*2.7+side*1.4)*2.5 for i in range(11)]
-                pygame.draw.lines(layer,_color(mid,strength*.7),False,[_xy(p) for p in ribbon],1)
+                render_draw.lines(layer,_color(mid,strength*.7),False,[_xy(p) for p in ribbon],1)
             p=start.lerp(end,(clock*.34+.3)%1)+normal*2
-            pygame.draw.circle(layer,_color(light,strength*.8),_xy(p),1)
+            render_draw.circle(layer,_color(light,strength*.8),_xy(p),1)
         elif sample['effect'] == 'fire':
             for i in range(5):
                 p=start.lerp(end,(i+.5)/5)
                 lift=2+math.sin(clock*6+i*1.8)*1.1
                 tip=p+pygame.Vector2(-1,-lift)
-                pygame.draw.polygon(layer,_color(mid,strength*.8),[_xy(p-direction*2),_xy(tip),_xy(p+direction*2)])
-                pygame.draw.line(layer,_color(light,strength*.8),_xy(p),_xy(tip),1)
+                render_draw.polygon(layer,_color(mid,strength*.8),[_xy(p-direction*2),_xy(tip),_xy(p+direction*2)])
+                render_draw.line(layer,_color(light,strength*.8),_xy(p),_xy(tip),1)
         elif sample['effect'] == 'ice':
             for i in (1,3,5):
                 p=start.lerp(end,i/6)
                 side=-1 if i==3 else 1
-                pygame.draw.lines(layer,_color(light,strength*.85),False,[_xy(p-direction),_xy(p+normal*side*3),_xy(p+direction)],1)
-                pygame.draw.line(layer,_color(mid,strength*.7),_xy(p),_xy(p-normal*side*2),1)
+                render_draw.lines(layer,_color(light,strength*.85),False,[_xy(p-direction),_xy(p+normal*side*3),_xy(p+direction)],1)
+                render_draw.line(layer,_color(mid,strength*.7),_xy(p),_xy(p-normal*side*2),1)
         else:
             for i in range(3):
                 p=start.lerp(end,(clock*.55+i/3)%1)
@@ -193,8 +195,8 @@ class GearbladeEffects:
 
     @staticmethod
     def _glint(layer, point, color, opacity, size=2):
-        pygame.draw.line(layer,_color(color,opacity),_xy(point+(-size,0)),_xy(point+(size,0)),1)
-        pygame.draw.line(layer,_color(color,opacity),_xy(point+(0,-size)),_xy(point+(0,size)),1)
+        render_draw.line(layer,_color(color,opacity),_xy(point+(-size,0)),_xy(point+(size,0)),1)
+        render_draw.line(layer,_color(color,opacity),_xy(point+(0,-size)),_xy(point+(0,size)),1)
 
     def _motes(self, layer, anchors, sample):
         start,end,direction,normal = self._basis(anchors)
@@ -209,16 +211,16 @@ class GearbladeEffects:
             opacity=sample['strength']*(1-age)*.72
             if sample['effect']=='nature':
                 p+=pygame.Vector2(-age*2,-age*3)
-                pygame.draw.polygon(layer,_color(mid,opacity),[_xy(p+(-2,0)),_xy(p+(1,-2)),_xy(p+(2,1)),_xy(p)])
-                pygame.draw.line(layer,_color(light,opacity*.8),_xy(p),_xy(p+(1,-1)),1)
+                render_draw.polygon(layer,_color(mid,opacity),[_xy(p+(-2,0)),_xy(p+(1,-2)),_xy(p+(2,1)),_xy(p)])
+                render_draw.line(layer,_color(light,opacity*.8),_xy(p),_xy(p+(1,-1)),1)
             elif sample['effect']=='water':
                 p+=pygame.Vector2(0,age*3)
-                pygame.draw.polygon(layer,_color(mid,opacity),[_xy(p+(0,-2)),_xy(p+(1,1)),_xy(p+(-1,1))])
-                pygame.draw.line(layer,_color(light,opacity),_xy(p),_xy(p+(0,1)),1)
+                render_draw.polygon(layer,_color(mid,opacity),[_xy(p+(0,-2)),_xy(p+(1,1)),_xy(p+(-1,1))])
+                render_draw.line(layer,_color(light,opacity),_xy(p),_xy(p+(0,1)),1)
             elif sample['effect']=='fire':
                 p+=pygame.Vector2(math.sin(index+age*3)*2,-age*6)
-                pygame.draw.line(layer,_color(mid,opacity),_xy(p),_xy(p+(0,2)),1)
-                pygame.draw.circle(layer,_color(light,opacity),_xy(p),1)
+                render_draw.line(layer,_color(mid,opacity),_xy(p),_xy(p+(0,2)),1)
+                render_draw.circle(layer,_color(light,opacity),_xy(p),1)
             else:
                 p+=pygame.Vector2(-age*2,-age*2)
                 self._glint(layer,p,light,opacity,1+index%2)
@@ -236,8 +238,8 @@ class GearbladeEffects:
             phase=_clamp((age-i*.045)/.42)
             if not 0<phase<1:continue
             point=p+pygame.Vector2(-2-phase*(3+i),-math.sin(phase*math.pi)*(3+i*.8)+phase*5)
-            pygame.draw.line(layer,_color(mid,envelope*(1-phase)),_xy(point),_xy(point+(1,2)),1)
-            if i%2==0:pygame.draw.circle(layer,_color(light,envelope*(1-phase)),_xy(point),1)
+            render_draw.line(layer,_color(mid,envelope*(1-phase)),_xy(point),_xy(point+(1,2)),1)
+            if i%2==0:render_draw.circle(layer,_color(light,envelope*(1-phase)),_xy(point),1)
 
     def _aether(self, layer, anchors, sample):
         start,end,direction,normal=self._basis(anchors)
@@ -258,8 +260,8 @@ class GearbladeEffects:
             # Two compact sword-aligned streaks make the contact frame clear,
             # without a screen flash, actor shake or elemental hue.
             for side in (-1,1):
-                pygame.draw.line(layer,_color(mid,contact*.8),_xy(start+normal*side*3),_xy(end+direction*5+normal*side*2),2)
-            pygame.draw.line(layer,_color(light,contact),_xy(start),_xy(end+direction*7),2)
+                render_draw.line(layer,_color(mid,contact*.8),_xy(start+normal*side*3),_xy(end+direction*5+normal*side*2),2)
+            render_draw.line(layer,_color(light,contact),_xy(start),_xy(end+direction*7),2)
             self._glint(layer,end+direction*3,light,contact,4 if not sample['reduced_motion'] else 2)
 
     def draw(self, canvas, point, state, time_ms, gem, elapsed, slot_age=None,

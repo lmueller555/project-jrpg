@@ -5,11 +5,13 @@ The caller owns action and impact clocks; drawing never starts a timer or alters
 combat state. Enemy recoil uses the existing two distinct hurt drawings.
 """
 from __future__ import annotations
+from rendering import layer as render_layer
 
 import math
 from collections.abc import Mapping
 
 import pygame
+from rendering import draw as render_draw
 
 
 DART_RELEASE_AT = .75
@@ -170,7 +172,7 @@ class BattleActionEffects:
 
     def _canvas_layer(self, canvas):
         if self._layer is None or self._layer.get_size() != canvas.get_size():
-            self._layer = pygame.Surface(canvas.get_size(), pygame.SRCALPHA)
+            self._layer = render_layer(canvas.get_size(), pygame.SRCALPHA)
         self._layer.fill((0, 0, 0, 0))
         return self._layer
 
@@ -179,15 +181,15 @@ class BattleActionEffects:
         if strength <= 0:return
         dark, mid, light = self._palette(sample['action'])
         radius = 3+round(strength*3)
-        pygame.draw.circle(layer, _color(dark, strength*.28), _xy(point), radius+3)
-        pygame.draw.circle(layer, _color(mid, strength*.9), _xy(point), radius, 1)
-        pygame.draw.circle(layer, _color(light, strength), _xy(point), 2)
+        render_draw.circle(layer, _color(dark, strength*.28), _xy(point), radius+3)
+        render_draw.circle(layer, _color(mid, strength*.9), _xy(point), radius, 1)
+        render_draw.circle(layer, _color(light, strength), _xy(point), 2)
         if sample['reduced_motion']:return
         for i in range(5):
             angle = i*math.tau/5-sample['age']*2
             ray = pygame.Vector2(math.cos(angle), math.sin(angle))
             start = point+ray*(radius+3+(1-strength)*5)
-            pygame.draw.line(layer, _color(mid, strength*.7), _xy(start), _xy(start-ray*2), 1)
+            render_draw.line(layer, _color(mid, strength*.7), _xy(start), _xy(start-ray*2), 1)
 
     def _draw_projectile(self, layer, sample):
         entry = sample['projectile']
@@ -196,15 +198,15 @@ class BattleActionEffects:
         dark, mid, light = self._palette(sample['action'])
         if sample['action'] in self.ICE_ACTIONS:
             normal = pygame.Vector2(-heading.y, heading.x)
-            pygame.draw.polygon(layer, _color(mid, .9), [_xy(point+heading*6),
+            render_draw.polygon(layer, _color(mid, .9), [_xy(point+heading*6),
                 _xy(point+normal*3), _xy(point-heading*5), _xy(point-normal*3)])
-            pygame.draw.line(layer, _color(light, 1.), _xy(point-heading*3), _xy(point+heading*5), 1)
+            render_draw.line(layer, _color(light, 1.), _xy(point-heading*3), _xy(point+heading*5), 1)
             return
         if sample['action'] in self.FIRE_ACTIONS:
             normal = pygame.Vector2(-heading.y, heading.x)
-            pygame.draw.polygon(layer, _color(mid, .9), [_xy(point+heading*4),
+            render_draw.polygon(layer, _color(mid, .9), [_xy(point+heading*4),
                 _xy(point+normal*3-heading*2), _xy(point-heading*10), _xy(point-normal*3)])
-            pygame.draw.line(layer, _color(light, 1.), _xy(point-heading*4), _xy(point+heading*3), 2)
+            render_draw.line(layer, _color(light, 1.), _xy(point-heading*4), _xy(point+heading*3), 2)
             return
         if sample['action'] in self.ELECTRIC_ACTIONS:
             normal = pygame.Vector2(-heading.y, heading.x)
@@ -212,18 +214,18 @@ class BattleActionEffects:
             points = [point-heading*size,
                       point-heading*(size*.67)+normal*3,
                       point-heading*(size*.42)-normal*2, point]
-            pygame.draw.lines(layer, _color(mid, .9), False, [_xy(p) for p in points], 2)
-            pygame.draw.lines(layer, _color(light, 1.), False, [_xy(p) for p in points], 1)
-            pygame.draw.circle(layer, _color(light, .9), _xy(point), 2)
+            render_draw.lines(layer, _color(mid, .9), False, [_xy(p) for p in points], 2)
+            render_draw.lines(layer, _color(light, 1.), False, [_xy(p) for p in points], 1)
+            render_draw.circle(layer, _color(light, .9), _xy(point), 2)
             return
         if not sample['reduced_motion']:
             normal = pygame.Vector2(-heading.y, heading.x)
             tail = point-heading*18
-            pygame.draw.polygon(layer, _color(dark, .38),
+            render_draw.polygon(layer, _color(dark, .38),
                                 [_xy(tail), _xy(point+normal*4), _xy(point-normal*4)])
-            pygame.draw.line(layer, _color(mid, .78), _xy(point-heading*10), _xy(point), 3)
-        pygame.draw.circle(layer, _color(mid, .95), _xy(point), 4 if not sample['reduced_motion'] else 3)
-        pygame.draw.line(layer, _color(light, 1.), _xy(point-heading*2), _xy(point+heading*2), 2)
+            render_draw.line(layer, _color(mid, .78), _xy(point-heading*10), _xy(point), 3)
+        render_draw.circle(layer, _color(mid, .95), _xy(point), 4 if not sample['reduced_motion'] else 3)
+        render_draw.line(layer, _color(light, 1.), _xy(point-heading*2), _xy(point+heading*2), 2)
 
     def _draw_impact(self, layer, point, age, action, reduced_motion=False):
         strength = self.impact_strength(age)
@@ -233,18 +235,18 @@ class BattleActionEffects:
         palette = self._palette(name, kind)
         _, mid, light = palette
         if reduced_motion:
-            pygame.draw.circle(layer, _color(mid, strength*.65), _xy(point), 5, 1)
-            pygame.draw.circle(layer, _color(light, strength*.8), _xy(point), 2)
+            render_draw.circle(layer, _color(mid, strength*.65), _xy(point), 5, 1)
+            render_draw.circle(layer, _color(light, strength*.8), _xy(point), 2)
             return
         expansion = _clamp(age/IMPACT_FLASH_SECONDS)
-        pygame.draw.circle(layer, _color(mid, strength*.35), _xy(point), 7+round(expansion*5), 1)
+        render_draw.circle(layer, _color(mid, strength*.35), _xy(point), 7+round(expansion*5), 1)
         for i in range(6):
             angle = i*math.tau/6+.25
             direction = pygame.Vector2(math.cos(angle), math.sin(angle))
-            pygame.draw.line(layer, _color(mid, strength*.85), _xy(point+direction*(4+expansion*4)),
+            render_draw.line(layer, _color(mid, strength*.85), _xy(point+direction*(4+expansion*4)),
                              _xy(point+direction*(9+expansion*6)), 1)
-        pygame.draw.line(layer, _color(light, strength), _xy(point+(-5, -2)), _xy(point+(5, 2)), 2)
-        pygame.draw.line(layer, _color(light, strength), _xy(point+(-1, -5)), _xy(point+(1, 5)), 2)
+        render_draw.line(layer, _color(light, strength), _xy(point+(-5, -2)), _xy(point+(5, 2)), 2)
+        render_draw.line(layer, _color(light, strength), _xy(point+(-1, -5)), _xy(point+(1, 5)), 2)
 
     def _draw_dust(self, layer, point, age, direction, landing=False):
         duration = .22 if landing else .18
@@ -255,7 +257,7 @@ class BattleActionEffects:
             distance = (2+i*2)*(1+phase*1.6)
             center = point+pygame.Vector2(side*distance, -1-math.sin(phase*math.pi)*(2+i%2))
             radius = max(1, round((2+i%2)*(1-phase*.6)))
-            pygame.draw.ellipse(layer, _color(self.DUST[i%3], (1-phase)*.55),
+            render_draw.ellipse(layer, _color(self.DUST[i%3], (1-phase)*.55),
                                 (round(center.x-radius), round(center.y-1), radius*2, 2))
 
     def draw(self, canvas, actor_point, target_point, action, elapsed=None,
@@ -295,8 +297,8 @@ class BattleActionEffects:
         layer = self._canvas_layer(canvas)
         _, mid, light = self.ELECTRIC
         phase = 0. if reduced_motion else elapsed*2.4
-        pygame.draw.circle(layer, _color(mid, .55), _xy(point), 5, 1)
-        pygame.draw.circle(layer, _color(light, .85), _xy(point), 2)
+        render_draw.circle(layer, _color(mid, .55), _xy(point), 5, 1)
+        render_draw.circle(layer, _color(light, .85), _xy(point), 2)
         if not reduced_motion:
             for index in range(3):
                 angle = phase+index*math.tau/3
@@ -304,5 +306,5 @@ class BattleActionEffects:
                 normal = pygame.Vector2(-direction.y, direction.x)
                 points = [point+direction*6, point+direction*9+normal*2,
                           point+direction*11-normal, point+direction*14]
-                pygame.draw.lines(layer, _color(mid, .8), False, [_xy(p) for p in points], 1)
+                render_draw.lines(layer, _color(mid, .8), False, [_xy(p) for p in points], 1)
         canvas.blit(layer, (0, 0))

@@ -65,6 +65,21 @@ class OverworldStreamingTests(unittest.TestCase):
     def world(self, **options):
         return OverworldWorld(path=self.path, **options)
 
+    def test_declared_two_density_terrain_composes_native_chunks_with_logical_collision(self):
+        from rendering import WorldCanvas, surface_bytes
+        self.manifest()
+        world=self.world()
+        art=pygame.Surface((48,48));art.fill('red');art.set_at((1,0),'blue')
+        path=Path(self.directory.name)/'detailed.png';pygame.image.save(art,str(path))
+        world._art={'tiles':{'grass':{'image':str(path),'artwork_pixels_per_world_pixel':2}}}
+        chunk=world._render_chunk(0,0)
+        self.assertIsInstance(chunk,WorldCanvas)
+        self.assertEqual(chunk.get_size(),(384,384))
+        self.assertEqual(chunk.native.get_size(),(768,768))
+        self.assertEqual(chunk.native.get_at((1,0))[:3],(0,0,255))
+        self.assertEqual(world._collision_chunk(0,0).get_size(),(384,384))
+        self.assertEqual(world.cache_stats['render_bytes'],surface_bytes(chunk))
+
     def test_negative_global_coordinates_and_probe_bounds(self):
         self.manifest(landmarks=[{
             'id': 'western_marker', 'name': 'Western marker',

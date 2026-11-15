@@ -77,14 +77,16 @@ class RoadWhipPanTests(unittest.TestCase):
         cls.manifest = json.loads((ASSETS / 'manifest.json').read_text(encoding='utf-8'))
         cls.pan = RoadWhipPan(cls.manifest)
 
-    def test_effect_uses_plain_snapshot_of_detailed_world_canvas(self):
+    def test_effect_copies_the_complete_detailed_world_canvas(self):
         from dense_art import WorldCanvas
         canvas=WorldCanvas(SIZE);canvas.fill('#34567a')
         before=pixels(canvas)
         for reduced in (False,True):
             result=self.pan.apply(canvas,.4,reduced_motion=reduced)
             self.assertEqual(result.get_size(),SIZE)
-            self.assertNotIsInstance(result,WorldCanvas)
+            self.assertIsInstance(result,WorldCanvas)
+            self.assertEqual(result.native.get_size(),(960,640))
+            self.assertIsNot(result.native,canvas.native)
             self.assertEqual(result.get_bitsize(),canvas.get_bitsize())
             self.assertEqual(result.get_masks(),canvas.get_masks())
             self.assertEqual(pixels(canvas),before)

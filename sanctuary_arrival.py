@@ -3,6 +3,7 @@
 Only acknowledged beats, the rescue handoff and first cave entry persist.
 Camera movement, actor paths and partial pages rebuild on Continue.
 """
+from rendering import scale as render_scale
 from pathlib import Path
 import json
 import pygame
@@ -541,8 +542,7 @@ class SanctuaryArrival(MillGift):
         self._world.reduced_motion=self.reduced_motion
         try:self._world.draw(canvas,g.camera.position(),g.player,self.elapsed*1000,include_ui=False,party_actors=tuple(self.actors.values()))
         finally:g.player.story_visible=old
-        pygame.transform.scale(canvas,ui_surface.get_size(),ui_surface)
-        if hasattr(canvas,'present_detail'):canvas.present_detail(ui_surface)
+        render_scale(canvas,ui_surface.get_size(),ui_surface)
         painter=g.ui.painter(ui_surface);self._layout(painter)
         if self.caption_layout is not None:
             portrait=g.social.portraits[self.caption_layout.portrait_key]

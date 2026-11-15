@@ -4,7 +4,9 @@ Artwork, textures, sprites, animation, exporters and rendering changes follow th
 [global visual art standard](../docs/VISUAL_ART_STANDARD.md).
 That is the single reference for style, units, density, rendering, construction
 and review; this catalogue records commands and asset-specific implementation
-details. Its full-world 2× rendering target and asset rebuild are pending.
+details. Full-scene 2× rendering is implemented; asset rebuilding remains
+pending. Use `python tools/profile_renderer.py --frames 30` for temporary-save
+production draw timings.
 Existing command descriptions and frame dimensions below describe their current
 exports. During scoped migrations, update their density/anchor metadata and
 runtime status using the central guide rather than interpreting old pixel
@@ -26,7 +28,7 @@ Register the approved Iselin walks with `python tools/register_iselin_walks.py`
 and creates world-size fallbacks in memory. The idle exporters preserve this
 registration. `python tools/capture_iselin_walks.py` produces an isolated
 [production travel review](../docs/reviews/iselin_walk_integration/README.md)
-using existing navigation and detail/depth rendering.
+using existing navigation and the shared density/depth renderer.
 
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).
 

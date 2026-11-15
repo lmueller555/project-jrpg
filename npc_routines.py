@@ -1,4 +1,7 @@
 """Moving ambient NPC routines. Runtime uses only Pygame and checked-in art."""
+from rendering import load_art
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 from collections import deque
 import heapq
 import itertools
@@ -143,13 +146,13 @@ class RoutineNPC:
         if not sprite_root.is_absolute():sprite_root=ROOT/sprite_root
 
         for direction in self.DIRECTIONS:
-            idle=world.image((sprite_root/f'idle_{direction}.png').relative_to(ROOT).as_posix())
+            idle=load_art(world,(sprite_root/f'idle_{direction}.png').relative_to(ROOT).as_posix(),self.animation)
             self.idles[direction]=self._padded(idle)
             walk_folder=sprite_root/f'walk_{direction}'
             walk_data=read_json(walk_folder/'animation.json')
             frames=[]
             for frame in walk_data['frames']:
-                image=world.image((walk_folder/frame['file']).relative_to(ROOT).as_posix())
+                image=load_art(world,(walk_folder/frame['file']).relative_to(ROOT).as_posix(),{**self.animation,**walk_data,**frame})
                 frames.append((self._padded(image),int(frame['duration_ms'])))
             self.walks[direction]=frames
 
@@ -163,7 +166,7 @@ class RoutineNPC:
             frames=[]
             for frame in records:
                 path=self._asset_path(frame['file'],metadata_folder)
-                image=world.image(path)
+                image=load_art(world,path,{**self.animation,**metadata,**frame})
                 frame_duration=int(frame['duration_ms'])
                 if frame_duration<=0:
                     raise ValueError(f'Routine action {name!r} has a nonpositive frame duration')
@@ -180,7 +183,7 @@ class RoutineNPC:
         self.walk_sets={}
         for name,directions in self.animation.get('walk_sets',{}).items():
             self.walk_sets[name]={direction:[
-                (self._padded(world.image(self._asset_path(frame['file'],metadata_folder))),
+                (self._padded(load_art(world,self._asset_path(frame['file'],metadata_folder),self.animation)),
                  int(frame['duration_ms'])) for frame in frames]
                 for direction,frames in directions.items()}
             if set(self.walk_sets[name])!=set(self.DIRECTIONS):
@@ -198,12 +201,12 @@ class RoutineNPC:
             if not image_path:
                 raise ValueError(f'Surface prop {record.get("id", "<unknown>")!r} needs a file')
             prop=dict(record)
-            prop['surface']=world.image(self._asset_path(image_path,behavior_folder))
+            prop['surface']=load_art(world,self._asset_path(image_path,behavior_folder),prop)
             self.surface_props.append(prop)
 
     def _padded(self,image):
         if image.get_size()==self.canvas_size:return image
-        canvas=pygame.Surface(self.canvas_size,pygame.SRCALPHA)
+        canvas=render_layer(self.canvas_size,pygame.SRCALPHA)
         canvas.blit(image,self.body_offset)
         return canvas
 
@@ -732,7 +735,7 @@ class Gardener:
         submerged=frame.get('effect')=='ripple'
         cache_key=(name,key,submerged)
         if cache_key not in self._sprite_cache:
-            canvas=pygame.Surface(self.animation['action_canvas'],pygame.SRCALPHA)
+            canvas=render_layer(self.animation['action_canvas'],pygame.SRCALPHA)
             if pose['order']=='before':canvas.blit(self.buckets[key],xy)
             canvas.blit(self.bodies[name],(0,0))
             if pose['order']=='after':
@@ -754,8 +757,8 @@ class Gardener:
             target=pygame.Vector2(self.steps[self.step_index]['bed']['root'])-world_origin
             middle=origin.lerp(target,.5);middle.y-=1
             points=[tuple(round(v) for v in p) for p in (origin,middle,target)]
-            pygame.draw.lines(image,blue,False,points,2)
-            pygame.draw.lines(image,ink,False,points,1)
+            render_draw.lines(image,blue,False,points,2)
+            render_draw.lines(image,ink,False,points,1)
             t=(phase+1)/5
             drop=origin.lerp(target,t)
             image.set_at((round(drop.x),round(drop.y)),pygame.Color(blue))
@@ -768,8 +771,8 @@ class Gardener:
             contact=pygame.Vector2(self.behavior['source_contact'])-center
             radius=4+phase
             x,y=round(contact.x),round(contact.y)
-            pygame.draw.line(image,ink,(x-radius,y-1),(x-4,y-2),1)
-            pygame.draw.line(image,ink,(x+4,y-2),(x+radius,y-1),1)
+            render_draw.line(image,ink,(x-radius,y-1),(x-4,y-2),1)
+            render_draw.line(image,ink,(x+4,y-2),(x+radius,y-1),1)
         elif effect=='drips':
             base=xy+pygame.Vector2(13,18)
             for n in range(2):

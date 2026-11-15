@@ -1,4 +1,5 @@
 """Short local cave introduction with live crystal lighting and an original growl."""
+from rendering import layer as render_layer
 from array import array
 import math
 import random
@@ -78,7 +79,7 @@ class SanctuaryBossEntry(CaveBattleEntry):
             elif not self.reduced_motion:
                 ease = math.sin(min(1., progress/.8)*math.pi/2)**2
                 origin = origin.lerp((1820,140),.8*ease)
-            frame = pygame.Surface(canvas.get_size())
+            frame = render_layer(canvas.get_size())
             game.world.draw(frame, origin, game.player, game.elapsed_ms+self.elapsed*1000,
                             include_ui=False, party_actors=game.party_travel.actors(),
                             effect_time_ms=getattr(game.world,'chasm_elapsed_ms',0.)+self.elapsed*1000)

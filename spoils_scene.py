@@ -4,6 +4,8 @@ The encounter owner commits rewards. This view only presents a detached receipt;
 animations, sound and input never mutate inventory, attributes or progression.
 """
 from __future__ import annotations
+from rendering import scale as render_scale
+from rendering import draw as render_draw
 
 from copy import deepcopy
 import math
@@ -356,7 +358,7 @@ class SpoilsScene:
         if color:
             x, y = rect.center
             points = [(x, y-7), (x+5, y-2), (x+3, y+5), (x, y+8), (x-4, y+4), (x-5, y-2)]
-            pygame.draw.polygon(painter.canvas, color, [painter.point(point) for point in points])
+            render_draw.polygon(painter.canvas, color, [painter.point(point) for point in points])
             painter.line(IVORY, (x, y-5), (x-2, y-1))
         else:
             painter.rect(BRASS, rect.inflate(-7, -7), 1)
@@ -473,7 +475,7 @@ class SpoilsScene:
             painter.text(format(before, ','), (228, row.centery), color='#000000', anchor='midright')
             x, y = 250, row.centery
             painter.line(GROWTH_GREEN, (x-8, y), (x+7, y), 2)
-            pygame.draw.polygon(painter.canvas, GROWTH_GREEN,
+            render_draw.polygon(painter.canvas, GROWTH_GREEN,
                                 [painter.point(point) for point in ((x+8, y), (x+2, y-4), (x+2, y+4))])
             painter.text(format(after, ','), (307, row.centery), color=GROWTH_GREEN, anchor='midright', bold=True)
             if after > before:
@@ -494,11 +496,11 @@ class SpoilsScene:
 
     def draw(self, world_canvas, ui_surface):
         if isinstance(self.background, pygame.Surface):
-            pygame.transform.scale(self.background, world_canvas.get_size(), world_canvas)
+            render_scale(self.background, world_canvas.get_size(), world_canvas)
         elif self.background is not None and hasattr(self.background, '_draw_field'):
             self.background._draw_field(world_canvas)
         else:world_canvas.fill(FOREST_DARK)
-        pygame.transform.scale(world_canvas, ui_surface.get_size(), ui_surface)
+        render_scale(world_canvas, ui_surface.get_size(), ui_surface)
         painter = self.game.ui.painter(ui_surface)
         painter.veil(105)
         painter.rect(BRASS, self.panel_rect, 1)

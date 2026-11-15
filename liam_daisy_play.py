@@ -1,4 +1,5 @@
 """One coordinated, persistent household play routine; runtime needs only Pygame."""
+from rendering import layer as render_layer
 from collections import deque
 import json
 import math
@@ -37,7 +38,7 @@ class PlayPose:
         self.facing='front';self.moving=False;self.running=False;self.walk_ms=0;self.action=None;self.action_ms=0
 
     def pad(self,image):
-        canvas=pygame.Surface(self.size,pygame.SRCALPHA);canvas.blit(image,self.offset);return canvas
+        canvas=render_layer(self.size,pygame.SRCALPHA);canvas.blit(image,self.offset);return canvas
 
     def sprite(self,elapsed_ms=0):
         if self.action:

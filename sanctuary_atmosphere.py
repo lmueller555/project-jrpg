@@ -4,6 +4,7 @@ Particles participate in ordinary world depth sorting. Their visible positions
 never become full-screen overlays, and they introduce no collision or save data.
 """
 from __future__ import annotations
+from rendering import draw as render_draw
 
 import json
 import math
@@ -73,7 +74,7 @@ class SanctuaryAtmosphere:
             # Older reserve snapshots remain usable without the expansion pack.
             for color in ('#d3ead8', '#a6d8d0', '#d0badb'):
                 surface = pygame.Surface((5, 5), pygame.SRCALPHA)
-                pygame.draw.line(surface, color, (1, 2), (3, 1), 1)
+                render_draw.line(surface, color, (1, 2), (3, 1), 1)
                 surface.set_at((2, 3), pygame.Color(color))
                 result.append((surface,))
         return tuple(result)

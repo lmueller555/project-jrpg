@@ -4,6 +4,8 @@ The small authored programs describe local work, not a day/night scheduler.
 Every portable object has exactly one derived location. Saves retain the current
 step, contact time and feet, so Continue never rewinds a carried object or cue.
 """
+from rendering import flip as render_flip
+from rendering import draw as render_draw
 from pathlib import Path
 import copy
 import math
@@ -217,14 +219,14 @@ class GardenOrchard:
   add('barrel',(-549,1191));add('basket',(-510,1192));add('basket',(-149,-254));add('basket',(-127,-254))
   for key,(p,z) in self.portable_positions().items():
    if key=='can' and self.actors[0].pose=='fill':
-    im=pygame.transform.flip(self.art['can'],True,False)
+    im=render_flip(self.art['can'],True,False)
     result.append((z,4,im,(round(p.x)-im.get_width()//2,round(p.y)-im.get_height())))
    else:add(key.split('_')[0],p,z)
   a=self.actors[0];action=self.action('gardener');s=self.state['gardener']
   if action and action.get('pour') and .5<s['elapsed']<1.8:
    # Small animated droplets connect the spout to the crop roots.
    stream=pygame.Surface((12,15),pygame.SRCALPHA)
-   for i in range(3):pygame.draw.line(stream,(126,169,174,210),(i*3,(int(s['elapsed']*18)+i*4)%10),(i*3+1,(int(s['elapsed']*18)+i*4)%10+2))
+   for i in range(3):render_draw.line(stream,(126,169,174,210),(i*3,(int(s['elapsed']*18)+i*4)%10),(i*3+1,(int(s['elapsed']*18)+i*4)%10+2))
    result.append((a.position.y+7,5,stream,(round(a.position.x)+17,round(a.position.y)-20)))
   return result
 

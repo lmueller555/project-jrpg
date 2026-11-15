@@ -4,6 +4,8 @@ Only the pending/seen receipt is durable. Shots, reading positions, art clocks
 and audio belong to this view; the exploration world never advances behind it.
 """
 from __future__ import annotations
+from rendering import layer as render_layer, record_art, immutable
+from rendering import scale as render_scale
 
 from array import array
 import json
@@ -391,17 +393,17 @@ class RegentArrival:
             loaded = dict(record)
             for part in ('background', 'foreground'):
                 if record.get(part):
-                    image = pygame.image.load(str(manifest_path.parent/record[part])).convert_alpha()
+                    image = record_art(immutable(pygame.image.load(str(manifest_path.parent/record[part])).convert_alpha()),record)
                     if image.get_size() != tuple(self.data['canvas']):
                         raise ValueError('Arrival scenery has incorrect dimensions')
                     loaded[part] = image
             if record.get('gate_leaf'):
                 leaf = dict(record['gate_leaf'])
-                leaf['image'] = pygame.image.load(str(manifest_path.parent/leaf['file'])).convert_alpha()
+                leaf['image'] = record_art(immutable(pygame.image.load(str(manifest_path.parent/leaf['file'])).convert_alpha()),{**record,**leaf})
                 loaded['gate_leaf'] = leaf
             loaded['occluders'] = []
             for record_layer in record.get('occluders', []):
-                image = pygame.image.load(str(manifest_path.parent/record_layer['file'])).convert_alpha()
+                image = record_art(pygame.image.load(str(manifest_path.parent/record_layer['file'])).convert_alpha(),{**record,**record_layer})
                 if image.get_size() != tuple(self.data['canvas']):
                     raise ValueError('Arrival occlusion layer has incorrect dimensions')
                 # RGB zero lets subtraction construct an inverse alpha mask
@@ -413,6 +415,7 @@ class RegentArrival:
         # arrival plates keep their original native dimensions and art bytes.
         road_image = pygame.image.load(str(self.crossroads_path.parent/
                                           self.crossroads_data['background'])).convert()
+        road_image=record_art(immutable(road_image),self.crossroads_data)
         if road_image.get_size()!=tuple(self.crossroads_data['canvas']):
             raise ValueError('Crossroads panorama has incorrect dimensions')
         plates['crossroads'] = {'background':road_image}
@@ -428,6 +431,12 @@ class RegentArrival:
                         or not math.isfinite(duration) or duration <= 0 for image, duration in sequence)
                         for sequence in loops.values())):
                 raise ValueError('Invalid arrival actor frames or loop duration')
+            density=record.get('artwork_pixels_per_world_pixel',1)
+            frames={key:record_art(immutable(image),record) for key,image in frames.items()}
+            loops={key:[(record_art(immutable(image),record),duration) for image,duration in sequence]
+                   for key,sequence in loops.items()}
+            record={**record,'canvas':[v/density for v in record['canvas']],
+                    'anchor':[v/density for v in record['anchor']]}
             for pose,gait in record.get('gaits', {}).items():
                 stride = gait.get('stride_pixels')
                 if (pose not in loops or type(stride) not in (int,float)
@@ -545,13 +554,13 @@ class RegentArrival:
         anchor = pygame.Vector2(art['anchor']);position = self.actor_position(actor)
         scale = self._actor_scale(actor)
         if scale != 1.:
-            image = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
+            image = render_scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             anchor *= scale
         point = position-camera-anchor
         occluders = self.scenery.get(self.phase['scene'], {}).get('occluders', [])
         for layer in occluders:
             if position.y > layer['behind_y']:continue
-            visibility = pygame.Surface(image.get_size(), pygame.SRCALPHA)
+            visibility = render_layer(image.get_size(),pygame.SRCALPHA)
             visibility.fill((255, 255, 255, 255))
             origin = position-anchor
             visibility.blit(layer['image'], (-round(origin.x), -round(origin.y)),
@@ -615,7 +624,7 @@ class RegentArrival:
         target = leaf.get('open_scale', (.08, 1.))
         sx, sy = (1+(value-1)*fraction for value in target)
         original = leaf['image']
-        image = (original if fraction == 0 else pygame.transform.scale(original,
+        image = (original if fraction == 0 else render_scale(original,
                  (max(1,round(original.get_width()*sx)),max(1,round(original.get_height()*sy)))))
         hinge = pygame.Vector2(leaf.get('hinge',(0,original.get_height())))
         position = (pygame.Vector2(leaf['position'])-pygame.Vector2(leaf.get('anchor',(0,0)))
@@ -685,11 +694,11 @@ class RegentArrival:
             if viewport is None:self._draw_plate(canvas, include_actors=include_actors, include_gate=include_gate)
             else:
                 self._reference_camera = (0,0)
-                if self._reference_world is None:self._reference_world=pygame.Surface((960,480))
+                if self._reference_world is None:self._reference_world=render_layer((960,480),0)
                 self._draw_plate(self._reference_world,include_actors=include_actors,include_gate=include_gate)
                 bounds=pygame.Rect(*(round(v) for v in viewport))
                 if not self._reference_world.get_rect().contains(bounds):raise ValueError('Aerial landing leaves its ground plate')
-                pygame.transform.scale(self._reference_world.subsurface(bounds),canvas.get_size(),canvas)
+                render_scale(self._reference_world.subsurface(bounds),canvas.get_size(),canvas)
         finally:
             self.data['phases'][index] = phase
             self.phase_index,self.phase_time,self._reference_clock,self._reference_camera = saved
@@ -697,7 +706,7 @@ class RegentArrival:
     def draw(self, canvas, ui_surface):
         self._load();canvas.fill('#1d302a')
         self._draw_plate(canvas)
-        pygame.transform.scale(canvas, ui_surface.get_size(), ui_surface)
+        render_scale(canvas, ui_surface.get_size(), ui_surface)
         painter = self.game.ui.painter(ui_surface)
         self._layout(painter)
         if self.caption_layout is not None:

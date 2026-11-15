@@ -4,7 +4,8 @@ Visual style, sizing, density and rendering follow the
 [global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
 renderer details below describe the current implementation or its recorded
 asset milestones. The approved higher-density rebuild preserves logical
-footprints; its full-world rendering and asset migration remain pending.
+footprints. Full-scene 2× rendering is implemented; asset rebuilding and
+individual bank migration remain pending.
 
 For nearby recovery, return to the Sanctuary hall and take the bed-marked
 north-wing door to the visitor relief room. Attendant Nessa and the bed both

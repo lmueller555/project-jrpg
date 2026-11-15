@@ -16,9 +16,9 @@ All game artwork and its rendering follow the
 [global visual art standard](docs/VISUAL_ART_STANDARD.md), the
 single guide for appearance, sizing, density, rendering, animation, exports and
 review. The approved rebuild uses two artwork pixels per logical world unit
-while preserving existing on-screen proportions. The planned full-world
-960×640 render target retains the 480×320 logical view; renderer implementation
-and asset migrations remain pending. The guide includes current implementation
+while preserving existing on-screen proportions. The full-world
+960×640 render target retains the 480×320 logical view. Shared rendering is
+implemented; asset rebuilding and individual bank migrations remain pending. The guide includes current implementation
 status, the full animation workflow and migration acceptance criteria.
 Object interactions also follow the
 [interaction standard](docs/OBJECT_INTERACTION_STANDARD.md) and
@@ -57,8 +57,8 @@ The game launches fullscreen at the desktop display size. Press **F11** to
 switch to a resizable 960×640 window and back; your window size is remembered
 for that session. Use `python main.py --windowed` to launch directly in a window.
 Headless verification stays windowed for consistent screenshots. The internal
-480×320 world canvas, with selected 2× character detail patches, keeps crisp
-integer scaling and centered borders where
+480×320 logical world view is composed on a complete 960×640 native surface,
+with crisp scaling and centered borders where
 needed to preserve the pixel art's proportions. Interface text is rendered
 separately at display resolution with the bundled Atkinson Hyperlegible fonts,
 so letters have smooth, readable edges instead of enlarged bitmap shapes.

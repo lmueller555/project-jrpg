@@ -1,5 +1,6 @@
 """Scrollable, display-resolution catalogue for isolated cutscene previews."""
 from __future__ import annotations
+from rendering import display_image, scale as render_scale
 
 import math
 from pathlib import Path
@@ -236,7 +237,7 @@ class GalleryUI:
             width, height = self._frame.get_size()
             scale = max(width/background.get_width(), height/background.get_height())
             size = tuple(math.ceil(value*scale) for value in background.get_size())
-            self._frame.blit(pygame.transform.scale(background, size),
+            self._frame.blit(display_image(background, size),
                              ((width-size[0])//2, (height-size[1])//2))
         else:self._frame.fill(FOREST_DARK)
         painter.veil(140)

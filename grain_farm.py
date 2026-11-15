@@ -4,6 +4,7 @@ Only completed physical beats persist. Continue reconstructs an interrupted
 carry at storage; ordinary departure preserves the live controller in place.
 No town actor, route graph, quest objective or streaming chunk owns this work.
 """
+from rendering import layer as render_layer
 import json
 import math
 from pathlib import Path
@@ -127,7 +128,7 @@ class FarmWorker:
 
     @staticmethod
     def _padded(path):
-        canvas=pygame.Surface((40,44),pygame.SRCALPHA)
+        canvas=render_layer((40,44),pygame.SRCALPHA)
         canvas.blit(pygame.image.load(str(path)).convert_alpha(),(8,4))
         return canvas
 
