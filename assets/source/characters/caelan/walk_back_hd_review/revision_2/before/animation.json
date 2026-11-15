@@ -1,0 +1,1490 @@
+{
+  "version": 1,
+  "character": "caelan",
+  "animation": "walk.back",
+  "status": "review",
+  "design_status": "approved",
+  "artwork_status": "review",
+  "runtime_integration": false,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "cycle_ms": 560,
+  "loop": true,
+  "source_scale": "Uniform per authored atlas; see frame records",
+  "source_hashes": {
+    "leg_revision.png": "e93c59865be92af3e0691b83aa991156332b26452ad32854069130b25bfbfa92",
+    "leg_plan.json": "dad59bf0b16f109c2dc4a6f4fd2102246720a6419e8fa2211c65093b42b7a73f",
+    "A.png": "6033776d0d352aa2d8e3ee4346a41bc0317197dd7e9d87e7c6608dfebadef589",
+    "D.png": "e6b4327924f67fb666736361ba3b60d340e0c0c3eb1a7ed51170a964946bd606",
+    "join_revision.png": "71e8147b9ea63aa5b3f3a07ad4243f86e5d2028e37dc16fa6b7bf6d900ed23f8",
+    "C_initial.png": "d7705c9243093020395680f448747b7f4be9f5f05cf12dcc33015d1e5bdc5d44",
+    "B.png": "828410440a5d866e118f426f3d4c27a6719ed7ee6d53088ba7b43f95fb7f39f3"
+  },
+  "protected_region": [
+    0,
+    0,
+    48,
+    48
+  ],
+  "approved_idle_sha256": "54aec75b7f4332d501f6deadefb8aeb149e8fb8d756e6d81c05780c88132f4af",
+  "palette_sha256": "78818e6977dd31bf8a11483e13683acbe8f484f8a0843c8fae67110baee5267c",
+  "alpha_threshold": 128,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        0,
+        0,
+        313,
+        313
+      ],
+      "source_bounds": [
+        104,
+        19,
+        206,
+        300
+      ],
+      "source_head_bounds": [
+        104,
+        19,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "A",
+        0
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_bounds": [
+          246,
+          17,
+          444,
+          554
+        ],
+        "source_head_bounds": [
+          246,
+          17,
+          444,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          69
+        ],
+        "source": "A.png"
+      },
+      "upper_sha256": "ca7644f196ed477046ab83874c41848352a50758b5ca5254477fc4d3df7cd63f",
+      "origin": [
+        12,
+        2
+      ],
+      "sampled_size": [
+        25,
+        69
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          70
+        ],
+        [
+          27,
+          32,
+          66
+        ]
+      ],
+      "phase": "contact"
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        313,
+        0,
+        627,
+        313
+      ],
+      "source_bounds": [
+        105,
+        19,
+        211,
+        300
+      ],
+      "source_head_bounds": [
+        105,
+        19,
+        207,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "D",
+        0
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_bounds": [
+          242,
+          16,
+          442,
+          556
+        ],
+        "source_head_bounds": [
+          242,
+          16,
+          438,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          26,
+          69
+        ],
+        "source": "D.png"
+      },
+      "upper_sha256": "1b51d707a3ae5569a7fc11543014893401e531b4e28e75ff0277a77cc21ff5ba",
+      "origin": [
+        12,
+        2
+      ],
+      "sampled_size": [
+        26,
+        69
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          70
+        ],
+        [
+          27,
+          32,
+          64
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "join_revision.png",
+      "source_cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "source_bounds": [
+        211,
+        37,
+        416,
+        583
+      ],
+      "source_head_bounds": [
+        211,
+        37,
+        410,
+        220
+      ],
+      "source_neck_reference_y": 225,
+      "source_belt_reference_y": 319,
+      "uniform_scale": 0.119,
+      "protected_upper_source": [
+        "D",
+        3
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "source_bounds": [
+          189,
+          17,
+          386,
+          549
+        ],
+        "source_head_bounds": [
+          189,
+          17,
+          385,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          68
+        ],
+        "source": "D.png"
+      },
+      "upper_sha256": "926cd901ad8f22c6ce8c681e3b2763dea74a2c769eb4c004a60bcdc25e7ebc3a",
+      "origin": [
+        12,
+        3
+      ],
+      "sampled_size": [
+        24,
+        65
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          67
+        ],
+        [
+          27,
+          32,
+          66
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        940,
+        0,
+        1254,
+        313
+      ],
+      "source_bounds": [
+        105,
+        19,
+        207,
+        297
+      ],
+      "source_head_bounds": [
+        105,
+        19,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "D",
+        2
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "source_bounds": [
+          242,
+          17,
+          438,
+          552
+        ],
+        "source_head_bounds": [
+          242,
+          17,
+          438,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          68
+        ],
+        "source": "D.png"
+      },
+      "upper_sha256": "46fc0bbeb11bf9a9e29c9a5f26fcd63c7dac78a0b8096269f4ef80e50765f508",
+      "origin": [
+        12,
+        2
+      ],
+      "sampled_size": [
+        25,
+        68
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          65
+        ],
+        [
+          27,
+          32,
+          69
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        0,
+        313,
+        313,
+        627
+      ],
+      "source_bounds": [
+        102,
+        20,
+        206,
+        292
+      ],
+      "source_head_bounds": [
+        104,
+        20,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "A",
+        1
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "source_bounds": [
+          183,
+          17,
+          383,
+          554
+        ],
+        "source_head_bounds": [
+          183,
+          17,
+          383,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          26,
+          69
+        ],
+        "source": "A.png"
+      },
+      "upper_sha256": "d0ace65b4d3aaec7b1df1042a15e348099c7ce6ce4d101b35e657b1681d4a87a",
+      "origin": [
+        11,
+        2
+      ],
+      "sampled_size": [
+        25,
+        67
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          65
+        ],
+        [
+          27,
+          32,
+          68
+        ]
+      ],
+      "phase": "passing"
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        313,
+        313,
+        627,
+        627
+      ],
+      "source_bounds": [
+        100,
+        20,
+        207,
+        296
+      ],
+      "source_head_bounds": [
+        105,
+        20,
+        207,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "A",
+        3
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "source_bounds": [
+          177,
+          17,
+          382,
+          555
+        ],
+        "source_head_bounds": [
+          183,
+          17,
+          382,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          10,
+          2
+        ],
+        "sampled_size": [
+          26,
+          69
+        ],
+        "source": "A.png"
+      },
+      "upper_sha256": "7a61065c64773742ea3e5e728325be3ce1d0939300c7acd4da626792d100d3e8",
+      "origin": [
+        10,
+        2
+      ],
+      "sampled_size": [
+        26,
+        68
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          62
+        ],
+        [
+          27,
+          32,
+          69
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        627,
+        313,
+        940,
+        627
+      ],
+      "source_bounds": [
+        105,
+        20,
+        206,
+        296
+      ],
+      "source_head_bounds": [
+        105,
+        20,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "C_initial",
+        1
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "source_bounds": [
+          178,
+          15,
+          375,
+          552
+        ],
+        "source_head_bounds": [
+          178,
+          15,
+          375,
+          185
+        ],
+        "source_neck_reference_y": 190,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          3
+        ],
+        "sampled_size": [
+          25,
+          69
+        ],
+        "source": "C_initial.png"
+      },
+      "upper_sha256": "6b7166ca8c5531cb5accbc54f424e9d40927bbee7eb0469ed8dd806865326797",
+      "origin": [
+        12,
+        2
+      ],
+      "sampled_size": [
+        25,
+        68
+      ],
+      "head_crown_y": 3,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          61
+        ],
+        [
+          27,
+          32,
+          69
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        940,
+        313,
+        1254,
+        627
+      ],
+      "source_bounds": [
+        105,
+        20,
+        207,
+        300
+      ],
+      "source_head_bounds": [
+        105,
+        20,
+        207,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "C_initial",
+        0
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_bounds": [
+          230,
+          15,
+          427,
+          560
+        ],
+        "source_head_bounds": [
+          230,
+          15,
+          427,
+          185
+        ],
+        "source_neck_reference_y": 190,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          3
+        ],
+        "sampled_size": [
+          25,
+          70
+        ],
+        "source": "C_initial.png"
+      },
+      "upper_sha256": "b3e7f4e5d39b2b6f9161686f05e1c1231c75a19ef3d5994dde06c97b2f960e6e",
+      "origin": [
+        12,
+        2
+      ],
+      "sampled_size": [
+        25,
+        69
+      ],
+      "head_crown_y": 3,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          64
+        ],
+        [
+          27,
+          32,
+          70
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_09.png",
+      "rect": [
+        384,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        0,
+        627,
+        313,
+        940
+      ],
+      "source_bounds": [
+        102,
+        19,
+        206,
+        298
+      ],
+      "source_head_bounds": [
+        104,
+        19,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "B",
+        0
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_bounds": [
+          235,
+          16,
+          433,
+          553
+        ],
+        "source_head_bounds": [
+          236,
+          16,
+          433,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          69
+        ],
+        "source": "B.png"
+      },
+      "upper_sha256": "5b0348afc9bc915def73641d545032201911122dfa629a53a0b3ea88d379b2d9",
+      "origin": [
+        11,
+        2
+      ],
+      "sampled_size": [
+        25,
+        68
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          66
+        ],
+        [
+          27,
+          32,
+          69
+        ]
+      ],
+      "phase": "contact"
+    },
+    {
+      "file": "frame_10.png",
+      "rect": [
+        432,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "join_revision.png",
+      "source_cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "source_bounds": [
+        211,
+        37,
+        410,
+        583
+      ],
+      "source_head_bounds": [
+        211,
+        37,
+        410,
+        220
+      ],
+      "source_neck_reference_y": 225,
+      "source_belt_reference_y": 319,
+      "uniform_scale": 0.119,
+      "protected_upper_source": [
+        "B",
+        1
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "source_bounds": [
+          183,
+          16,
+          380,
+          546
+        ],
+        "source_head_bounds": [
+          183,
+          16,
+          380,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          68
+        ],
+        "source": "B.png"
+      },
+      "upper_sha256": "68d55ddc4ff390f7aefc96f0ba3652cf1e2e85ab33b10c217d04c8183862d568",
+      "origin": [
+        12,
+        3
+      ],
+      "sampled_size": [
+        24,
+        65
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          67
+        ],
+        [
+          27,
+          32,
+          66
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_11.png",
+      "rect": [
+        480,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "source_bounds": [
+        105,
+        19,
+        207,
+        295
+      ],
+      "source_head_bounds": [
+        105,
+        19,
+        207,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "B",
+        2
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "source_bounds": [
+          235,
+          16,
+          433,
+          551
+        ],
+        "source_head_bounds": [
+          235,
+          16,
+          433,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          68
+        ],
+        "source": "B.png"
+      },
+      "upper_sha256": "b4a9b6dd4b3bcfbded7a1e46427fb107433849a717bf280877349b1b7d2baf74",
+      "origin": [
+        12,
+        2
+      ],
+      "sampled_size": [
+        25,
+        68
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          69
+        ],
+        [
+          27,
+          32,
+          64
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_12.png",
+      "rect": [
+        528,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "source_bounds": [
+        104,
+        19,
+        206,
+        298
+      ],
+      "source_head_bounds": [
+        105,
+        19,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "C_initial",
+        2
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "source_bounds": [
+          230,
+          16,
+          427,
+          549
+        ],
+        "source_head_bounds": [
+          230,
+          16,
+          427,
+          185
+        ],
+        "source_neck_reference_y": 190,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          3
+        ],
+        "sampled_size": [
+          25,
+          68
+        ],
+        "source": "C_initial.png"
+      },
+      "upper_sha256": "b51491c117bb235cdcc68c4fde1dd02c01b96cac0e7c924ecb0433818802e5a9",
+      "origin": [
+        11,
+        2
+      ],
+      "sampled_size": [
+        25,
+        68
+      ],
+      "head_crown_y": 3,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          69
+        ],
+        [
+          27,
+          32,
+          63
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_13.png",
+      "rect": [
+        576,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        0,
+        940,
+        313,
+        1254
+      ],
+      "source_bounds": [
+        102,
+        21,
+        209,
+        295
+      ],
+      "source_head_bounds": [
+        104,
+        21,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "C_initial",
+        3
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "source_bounds": [
+          178,
+          16,
+          376,
+          558
+        ],
+        "source_head_bounds": [
+          178,
+          16,
+          376,
+          185
+        ],
+        "source_neck_reference_y": 190,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          3
+        ],
+        "sampled_size": [
+          25,
+          69
+        ],
+        "source": "C_initial.png"
+      },
+      "upper_sha256": "d9249f10a1cbdcc6e85c0fe3017b073de8a58d1bc1c896090a9f9e403f231b5c",
+      "origin": [
+        11,
+        3
+      ],
+      "sampled_size": [
+        26,
+        67
+      ],
+      "head_crown_y": 3,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          69
+        ],
+        [
+          27,
+          32,
+          66
+        ]
+      ],
+      "phase": "passing"
+    },
+    {
+      "file": "frame_14.png",
+      "rect": [
+        624,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        313,
+        940,
+        627,
+        1254
+      ],
+      "source_bounds": [
+        105,
+        21,
+        210,
+        289
+      ],
+      "source_head_bounds": [
+        105,
+        21,
+        207,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "D",
+        2
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "source_bounds": [
+          242,
+          17,
+          438,
+          552
+        ],
+        "source_head_bounds": [
+          242,
+          17,
+          438,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          68
+        ],
+        "source": "D.png"
+      },
+      "upper_sha256": "46fc0bbeb11bf9a9e29c9a5f26fcd63c7dac78a0b8096269f4ef80e50765f508",
+      "origin": [
+        12,
+        3
+      ],
+      "sampled_size": [
+        26,
+        66
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          68
+        ],
+        [
+          27,
+          32,
+          63
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_15.png",
+      "rect": [
+        672,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "source_bounds": [
+        105,
+        21,
+        209,
+        295
+      ],
+      "source_head_bounds": [
+        105,
+        21,
+        206,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "D",
+        1
+      ],
+      "upper_registration": {
+        "source_cell": [
+          627,
+          0,
+          1254,
+          627
+        ],
+        "source_bounds": [
+          189,
+          16,
+          385,
+          557
+        ],
+        "source_head_bounds": [
+          189,
+          16,
+          385,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          25,
+          69
+        ],
+        "source": "D.png"
+      },
+      "upper_sha256": "27a38b6d5507f67cd152af89ce746bd95f57150e0490d5562a0e14842c054ee9",
+      "origin": [
+        12,
+        3
+      ],
+      "sampled_size": [
+        25,
+        67
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          69
+        ],
+        [
+          27,
+          32,
+          63
+        ]
+      ],
+      "phase": "transition"
+    },
+    {
+      "file": "frame_16.png",
+      "rect": [
+        720,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 35,
+      "source": "leg_revision.png",
+      "source_cell": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "source_bounds": [
+        105,
+        21,
+        212,
+        300
+      ],
+      "source_head_bounds": [
+        105,
+        21,
+        207,
+        103
+      ],
+      "source_neck_reference_y": 107.765625,
+      "source_belt_reference_y": 164.9140625,
+      "uniform_scale": 0.24497607655502393,
+      "protected_upper_source": [
+        "D",
+        0
+      ],
+      "upper_registration": {
+        "source_cell": [
+          0,
+          0,
+          627,
+          627
+        ],
+        "source_bounds": [
+          242,
+          16,
+          442,
+          556
+        ],
+        "source_head_bounds": [
+          242,
+          16,
+          438,
+          190
+        ],
+        "source_neck_reference_y": 195,
+        "uniform_scale": 0.128,
+        "origin": [
+          11,
+          2
+        ],
+        "sampled_size": [
+          26,
+          69
+        ],
+        "source": "D.png"
+      },
+      "upper_sha256": "1b51d707a3ae5569a7fc11543014893401e531b4e28e75ff0277a77cc21ff5ba",
+      "origin": [
+        12,
+        3
+      ],
+      "sampled_size": [
+        26,
+        68
+      ],
+      "head_crown_y": 2,
+      "boot_observation_windows": [
+        [
+          17,
+          23,
+          70
+        ],
+        [
+          27,
+          32,
+          63
+        ]
+      ],
+      "phase": "transition"
+    }
+  ],
+  "processing": "Complete authored drawings; hard alpha, uniform nearest-neighbor sampling, head/neck registration, shared material palette and contour. Upper rows0:48 retain the sampled whole-pose snapshots after complete leg redraws. No detached limb transforms or idle warping."
+}
