@@ -1,4 +1,4 @@
-"""Contracts and measured regressions for the two unmerged review cycles."""
+"""Contracts and measured regressions for the approved front and rear cycles."""
 from pathlib import Path
 import hashlib
 import json
@@ -90,7 +90,7 @@ class CaelanFrontBackWalkReviewTests(unittest.TestCase):
 
     def test_approval_and_runtime_states_are_explicit(self):
         for direction,(bank,data,frames) in self.packs.items():
-            expected='approved' if direction=='front' else 'review'
+            expected='approved'
             self.assertEqual(data['status'],expected);self.assertEqual(data['artwork_status'],expected)
             self.assertEqual(data['design_status'],'approved');self.assertFalse(data['runtime_integration'])
 

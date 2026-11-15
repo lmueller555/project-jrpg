@@ -1,9 +1,8 @@
-# Caelan rear walk — revision 2, review
+# Caelan rear walk — revision 2, approved
 
 Sixteen 48×72 frames at 2× artwork density; unchanged 24×36 logical canvas,
 [24,60] draw anchor, [24,68] foot anchor and 16×35ms=560ms cadence.
-**Rear revision awaits user approval. Front artwork is approved. Both remain
-unmerged and inactive in gameplay.**
+**User-approved front and rear artwork. Runtime integration remains pending.**
 
 ![Normal speed, half speed and approved rear idle](preview_v2.gif)
 
