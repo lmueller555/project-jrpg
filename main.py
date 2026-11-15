@@ -15,6 +15,7 @@ except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
 from rendering import scale as render_scale, immutable, record_art
+from object_cues import ObjectCues
 
 from npc_routines import Gardener, RoutineNPC
 from daisy_routine import DaisyRoutine
@@ -201,6 +202,7 @@ class World:
         self.size=tuple(self.data['size_pixels'])
         self._images={} if image_cache is None else image_cache
         self.art_density=self.data.get('artwork_pixels_per_world_pixel',1)
+        self.object_cues=ObjectCues(self.data.get('interaction_cues',()))
         self.ground=[self.art_image(p,self.data,False) for p in self.data['ground_frames']]
         collision=self.image(self.data['collision'],False)
         # Collision exports are monochrome, so white pixels block and black
@@ -260,6 +262,12 @@ class World:
         for prop in actor.surface_props:
             key=(id(actor),prop['id'])
             if prop['scene']==self.data['id'] and key not in registered:
+                path=prop.get('image',prop.get('file'))
+                if path in self.data.get('art_replacements',{}):
+                    surface=self.room_art_image(path)
+                    if surface.get_size()!=prop['surface'].get_size():
+                        raise ValueError('Room prop replacement changed its logical canvas')
+                    prop['surface']=surface
                 self.routine_props.append((actor,prop));registered.add(key)
 
     def image(self,path,alpha=True):
@@ -273,6 +281,10 @@ class World:
         if isinstance(path,dict):
             record={**(record or {}),**path};path=path['file']
         return record_art(self.image(path,alpha),record,default_density)
+
+    def room_art_image(self,path):
+        """Room-only prop replacement; raw image/crop consumers stay unchanged."""
+        return self.art_image(self.data.get('art_replacements',{}).get(path,path))
 
     def probe_rect(self,position,size=None):
         width,height=self.probe_size if size is None else size
@@ -361,7 +373,10 @@ class World:
                 phase=(record['reduced_motion_frame'] if self.reduced_motion and 'reduced_motion_frame' in record else
                        0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces']))
                 surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
-                target.blit(surface,(record['position'][0]-camera[0],record['position'][1]-camera[1]))
+                position=(record['position'][0]-camera[0],record['position'][1]-camera[1])
+                self.object_cues.draw_outline(target,record,surface,position)
+                target.blit(surface,position)
+                self.object_cues.draw_glint(target,record,surface,position)
                 self.draw_doors(target,camera,record['id'])
         # Southern bridge rails occlude actors crossing on the deck.
         for image,position in self.foreground:
@@ -1680,6 +1695,7 @@ class Game:
         return True
 
     def update(self,seconds,direction=None,running=None):
+        self._update_object_cues(0)
         self.elemental_bosses.sync_audio()
         if self.quest_playtest_session is not None:
             session=self.quest_playtest_session
@@ -1931,6 +1947,7 @@ class Game:
                     self.enter(door)
                     break
         self._update_grass(seconds)
+        self._update_object_cues(seconds)
         self.quest_ui.update(seconds)
         self._sync_inventory()
         self._save_retry_seconds=max(0.0,self._save_retry_seconds-seconds)
@@ -1943,6 +1960,26 @@ class Game:
         if location!=self.location_label:
             self.location_label=location
             self.location_seconds=3.5
+
+    def _update_object_cues(self,seconds):
+        previous=getattr(self,'_cue_world',None)
+        if previous is not self.world:
+            if previous is not None and hasattr(previous,'object_cues'):previous.object_cues.reset()
+            if hasattr(self.world,'object_cues'):self.world.object_cues.reset()
+            self._cue_world=self.world
+        if not hasattr(self.world,'object_cues'):return
+        conditions=set()
+        if self.opening.stage=='explore':conditions.add('opening_breakfast')
+        enabled=(self._music_focused and not self.social.locked and not self.opening.locks_player
+                 and not self.household_action and not self.combat.active and not self.on_title
+                 and not self.regent_arrival.active and not self.sanctuary_arrival.active
+                 and not self.sanctuary_rescue.active and not self.opening_cinematic.active
+                 and not self.pause.is_open and not self.inventory_ui.is_open
+                 and not self.party_ui.is_open and not self.world_map_viewer.is_open
+                 and not self.map_open and not self.quest_ui.journal_open
+                 and not self.save_menu.is_open and not self.game_over)
+        self.world.object_cues.update(seconds,self.world,self.player,conditions,
+                                      enabled,self.audio.reduced_motion)
 
     def _update_grass(self,seconds):
         """Advance vegetation on the same exploration clock as moving actors."""

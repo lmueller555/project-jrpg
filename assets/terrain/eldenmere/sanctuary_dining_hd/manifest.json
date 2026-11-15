@@ -1,0 +1,641 @@
+{
+  "version": 1,
+  "status": "integrated",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    432,
+    336
+  ],
+  "recipe": "assets/source/terrain/eldenmere/sanctuary_dining_hd/recipe.json",
+  "collision_sha256": "ad25c2fc2427596b1cd4c9574b5d5ea1e0ea8fb8148c8e29d5fc48ed0ba89bd0",
+  "props": [
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png",
+      "cell": 0,
+      "id": "dishes",
+      "logical_size": [
+        48,
+        24
+      ],
+      "logical_bounds": [
+        4,
+        2,
+        44,
+        22
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/dishes.png",
+      "artwork_size": [
+        96,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png",
+      "cell": 1,
+      "id": "cupboard",
+      "logical_size": [
+        48,
+        48
+      ],
+      "logical_bounds": [
+        4,
+        2,
+        44,
+        46
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/cupboard.png",
+      "artwork_size": [
+        96,
+        96
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/console.png",
+      "cell": 2,
+      "id": "sideboard",
+      "logical_size": [
+        36,
+        30
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        36,
+        30
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/sideboard.png",
+      "artwork_size": [
+        72,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+      "cell": 3,
+      "id": "plant",
+      "logical_size": [
+        18,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        18,
+        24
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/plant.png",
+      "artwork_size": [
+        36,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png",
+      "cell": 4,
+      "id": "pantry",
+      "logical_size": [
+        24,
+        48
+      ],
+      "logical_bounds": [
+        1,
+        2,
+        23,
+        46
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/pantry.png",
+      "artwork_size": [
+        48,
+        96
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png",
+      "cell": 5,
+      "id": "counter",
+      "logical_size": [
+        48,
+        48
+      ],
+      "logical_bounds": [
+        2,
+        8,
+        46,
+        42
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/counter.png",
+      "artwork_size": [
+        96,
+        96
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/kettle.png",
+      "cell": 6,
+      "id": "kettle",
+      "logical_size": [
+        16,
+        18
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        16,
+        18
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/kettle.png",
+      "artwork_size": [
+        32,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png",
+      "cell": 7,
+      "id": "bread",
+      "logical_size": [
+        24,
+        12
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        12
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/bread.png",
+      "artwork_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png",
+      "cell": 8,
+      "id": "washbasin",
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        2,
+        4,
+        22,
+        32
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/washbasin.png",
+      "artwork_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "cell": 9,
+      "id": "table",
+      "logical_size": [
+        48,
+        48
+      ],
+      "logical_bounds": [
+        0,
+        4,
+        48,
+        42
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/table.png",
+      "artwork_size": [
+        96,
+        96
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png",
+      "cell": 10,
+      "id": "breakfast",
+      "logical_size": [
+        40,
+        18
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        40,
+        18
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/breakfast.png",
+      "artwork_size": [
+        80,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+      "cell": 11,
+      "id": "chair_north",
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        3,
+        4,
+        21,
+        34
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_north.png",
+      "artwork_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png",
+      "cell": 12,
+      "id": "chair_west",
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        3,
+        3,
+        21,
+        34
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_west.png",
+      "artwork_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_left.png",
+      "cell": 13,
+      "id": "chair_east",
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        3,
+        3,
+        21,
+        34
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_east.png",
+      "artwork_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/medicine_tray.png",
+      "cell": 14,
+      "id": "halden_supplies",
+      "logical_size": [
+        20,
+        18
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        20,
+        18
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/halden_supplies.png",
+      "artwork_size": [
+        40,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/food_oil_basket.png",
+      "cell": 15,
+      "id": "elira_supplies",
+      "logical_size": [
+        24,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/elira_supplies.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png",
+      "cell": 16,
+      "id": "venn_supplies",
+      "logical_size": [
+        28,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        28,
+        24
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/venn_supplies.png",
+      "artwork_size": [
+        56,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+      "cell": 17,
+      "id": "spare_bench",
+      "logical_size": [
+        48,
+        30
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        48,
+        30
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/spare_bench.png",
+      "artwork_size": [
+        96,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png",
+      "cell": 18,
+      "id": "hearth",
+      "logical_size": [
+        48,
+        72
+      ],
+      "logical_bounds": [
+        2,
+        0,
+        46,
+        68
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_01.png",
+      "artwork_size": [
+        96,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png",
+      "cell": 19,
+      "id": "hearth",
+      "logical_size": [
+        48,
+        72
+      ],
+      "logical_bounds": [
+        2,
+        0,
+        46,
+        68
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_02.png",
+      "artwork_size": [
+        96,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png",
+      "cell": 20,
+      "id": "hearth",
+      "logical_size": [
+        48,
+        72
+      ],
+      "logical_bounds": [
+        2,
+        0,
+        46,
+        68
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_03.png",
+      "artwork_size": [
+        96,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png",
+      "cell": 21,
+      "id": "hearth",
+      "logical_size": [
+        48,
+        72
+      ],
+      "logical_bounds": [
+        2,
+        0,
+        46,
+        68
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_04.png",
+      "artwork_size": [
+        96,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "legacy_path": "assets/characters/tomas/routines/props/storage_box.png",
+      "cell": 22,
+      "id": "tomas_storage_box",
+      "logical_size": [
+        24,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        1,
+        24,
+        23
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/tomas_storage_box.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "chair_south",
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "source": "chair_back.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        3,
+        7,
+        21,
+        34
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_south.png",
+      "artwork_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "provision_jar",
+      "legacy_path": "assets/characters/serene/routines/props/provision_jar.png",
+      "source": "workprops_atlas.png",
+      "cell": 0,
+      "columns": 2,
+      "logical_size": [
+        5,
+        6
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        5,
+        6
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/provision_jar.png",
+      "artwork_size": [
+        10,
+        12
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "bundle",
+      "legacy_path": "assets/characters/tomas/routines/props/bundle.png",
+      "source": "workprops_atlas.png",
+      "cell": 1,
+      "columns": 2,
+      "logical_size": [
+        9,
+        7
+      ],
+      "logical_bounds": [
+        0,
+        1,
+        9,
+        7
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/bundle.png",
+      "artwork_size": [
+        18,
+        14
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "mechanism",
+      "legacy_path": "assets/characters/tomas/routines/props/mechanism.png",
+      "source": "workprops_atlas.png",
+      "cell": 2,
+      "columns": 2,
+      "logical_size": [
+        13,
+        17
+      ],
+      "logical_bounds": [
+        0,
+        2,
+        13,
+        17
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/mechanism.png",
+      "artwork_size": [
+        26,
+        34
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "stack",
+      "legacy_path": "assets/characters/tomas/routines/props/stack.png",
+      "source": "workprops_atlas.png",
+      "cell": 3,
+      "columns": 2,
+      "logical_size": [
+        16,
+        10
+      ],
+      "logical_bounds": [
+        1,
+        1,
+        14,
+        10
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_dining_hd/props/stack.png",
+      "artwork_size": [
+        32,
+        20
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    }
+  ],
+  "legacy_replacements": {
+    "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/dishes.png",
+    "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/cupboard.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/console.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/sideboard.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/plant.png",
+    "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/pantry.png",
+    "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/counter.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/kettle.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/kettle.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/bread.png",
+    "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/washbasin.png",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/table.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/table.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/breakfast.png",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_north.png",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_west.png",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/chair_left.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_east.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/medicine_tray.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/halden_supplies.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/food_oil_basket.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/elira_supplies.png",
+    "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/venn_supplies.png",
+    "assets/terrain/eldenmere/sanctuary_charm/props/bench.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/spare_bench.png",
+    "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_01.png",
+    "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_02.png",
+    "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_03.png",
+    "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/hearth_frame_04.png",
+    "assets/characters/tomas/routines/props/storage_box.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/tomas_storage_box.png",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/chair_south.png",
+    "assets/characters/serene/routines/props/provision_jar.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/provision_jar.png",
+    "assets/characters/tomas/routines/props/bundle.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/bundle.png",
+    "assets/characters/tomas/routines/props/mechanism.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/mechanism.png",
+    "assets/characters/tomas/routines/props/stack.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/stack.png"
+  },
+  "character_banks_migrated": false,
+  "ground_duration_ms": 10800
+}

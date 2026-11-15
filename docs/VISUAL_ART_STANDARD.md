@@ -15,8 +15,9 @@ Iselin's detailed artwork is the reference for this increase in fidelity.
 `rendering.py`. The 480×320 logical view has an authoritative 960×640 native
 buffer across exploration, battle and cinematic presentation. Existing asset
 banks retain their legacy density until rebuilt; Iselin's detailed artwork
-already uses the shared path. Asset reconstruction and individual bank migration
-remain separate work.
+and the Sanctuary dining room now use the shared path. The dining room is the
+first integrated environment bank; remaining asset reconstruction and individual
+bank migrations continue as separately scoped work.
 
 This standard replaces conflicting general advice in older character recipes,
 tool descriptions and review notes. Those files retain asset-specific facts,
@@ -40,6 +41,7 @@ a human two-arm/two-leg gait onto them.
 ## Navigation
 
 - [Visual direction](#visual-direction)
+- [Object creation and interaction readability](#object-creation-and-interaction-readability)
 - [Units and sizing](#units-and-sizing)
 - [Rendering contract](#rendering-contract)
 - [Migration and acceptance](#migration-and-acceptance)
@@ -84,6 +86,92 @@ identity. Keep lighting direction and shadow treatment consistent within a scene
 test characters and props against both light and dark backgrounds. Coordinate
 painted highlights with dynamic lighting so characters, scenery and effects
 belong to the same environment.
+
+## Object creation and interaction readability
+
+Create ordinary and special objects in the same visual style. All distinct
+objects use thin black exterior contours, starting at **one artwork/render
+pixel at 2× density**. Preserve those black pixels when highlighting an object.
+Use restrained internal lines and material shading; quiet floor/plaster textures
+do not need a black box around every repeated tile. A highlight never substitutes
+for a recognizable silhouette, sensible support, accessible placement or clear
+quest directions.
+
+Before drawing a prop, record its logical canvas, occupied silhouette, supporting
+surface/ground anchor, depth baseline, interaction boundary and any grip/hinge
+points. Preserve physical scale when fitting retained high-resolution sources.
+Export hard-alpha artwork with room for its contour; avoid opaque background
+rectangles, soft generation halos and silhouette clipping. Register all animated
+states to the same support: fireplace masonry, furniture legs and containers
+stay still while only the intended flame, vapor, hinge or contents change.
+Keep source artwork, extraction/registration recipe and density metadata together.
+
+### Distinguishing special objects
+
+Use this shared language for collectibles, examinable objects and objects tied
+to a currently available objective/action:
+
+- **Distant discovery:** one small, brief glint every **3–5 seconds**. Stagger
+  timing deterministically by cue ID so a room does not flash together. The
+  current glint lasts 0.28 seconds and spans seven render pixels; author its
+  anchor on a readable part of the object's actual surface.
+- **Nearby confirmation:** a steady, thin yellow silhouette outline **outside
+  the black contour**, starting at **one render pixel** (`#f4d35c`). Activate
+  within **10 logical world units** of the player's feet to the nearest point
+  on the authored interaction boundary. Use Euclidean distance at corners.
+  Fade over 0.12 seconds and retain proximity until the player moves beyond
+  **12 units**, preventing threshold flicker. Do not pulse the whole object.
+- **Action:** the existing interaction prompt confirms what can be done and
+  retains the handler's positioning/facing requirements. A yellow outline
+  advertises an eligible nearby object, not guaranteed permission to activate it.
+- **Lifecycle:** remove both cues when the action is exhausted, unavailable or
+  no longer relevant. Reconstruct eligibility from authoritative gameplay state
+  after loading; presentation must never award progress. Clear proximity on
+  scene exit and suppress cues during dialogue, cutscenes and menus. Pause/focus
+  loss freezes cue time without catchup. Reduced motion uses a small static
+  discovery marker and the same steady proximity outline.
+
+Use actual object/support boundaries, not sprite centers or transparent canvas
+padding. A tabletop object's boundary can describe its supporting table's
+reachable edge; record that choice explicitly. Check collision and line of
+approach so highlights do not advertise an object through a wall. Render both
+cues at the object's normal depth, allowing characters, furniture and foregrounds
+to obscure them. Never draw them as a final always-visible screen overlay.
+
+Ordinary doors, chairs and decoration do not automatically glint or turn yellow.
+Opt in only while a real special interaction is available. Supplies handed over
+through dialogue must not look like independently collectible items. Use staging,
+dialogue and objective text for people and large destinations instead of sparkling
+entire characters/buildings. Essential progression must remain understandable
+without noticing a tiny glint or distinguishing yellow alone.
+
+The runtime reference is `object_cues.ObjectCues`. A world map opts in with:
+
+```json
+"interaction_cues": [{
+  "id": "breakfast",
+  "entity": "breakfast",
+  "available_when": "opening_breakfast",
+  "interaction_boundary": [144, 192, 48, 18],
+  "glint_anchor": [14, 5]
+}]
+```
+
+Boundary coordinates are logical world `[x,y,width,height]`; the glint anchor is
+logical and local to the entity's image origin. `available_when` names an explicit
+gameplay resolver, not an expression to evaluate or an automatic quest reward.
+Sanctuary dining first integrates `opening_breakfast` while joining breakfast
+is an available opening interaction. Its boundary is the table's support edge.
+New special-object integrations must add their real availability resolver and
+verify completion, interruption and save restoration rather than marking every
+quest-adjacent decoration eligible.
+
+Review an unhighlighted object, a distant glint, a nearby outline, an occluded
+object and a completed/inactive state at normal game size. Check light/dark
+surroundings, reduced motion and the final display scaling. The
+[object-interaction standard](OBJECT_INTERACTION_STANDARD.md#discovery-cues-and-action-availability)
+governs action availability and cleanup; this section owns object construction
+and the visible cue treatment.
 
 ## Units and sizing
 

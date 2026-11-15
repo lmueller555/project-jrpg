@@ -4,8 +4,9 @@ Artwork, textures, sprites, animation, exporters and rendering changes follow th
 [global visual art standard](../docs/VISUAL_ART_STANDARD.md).
 That is the single reference for style, units, density, rendering, construction
 and review; this catalogue records commands and asset-specific implementation
-details. Full-scene 2× rendering is implemented; asset rebuilding remains
-pending. Use `python tools/profile_renderer.py --frames 30` for temporary-save
+details. Full-scene 2× rendering is implemented; Sanctuary dining is the first
+migrated environment bank. Other asset rebuilds remain pending.
+Use `python tools/profile_renderer.py --frames 30` for temporary-save
 production draw timings.
 Existing command descriptions and frame dimensions below describe their current
 exports. During scoped migrations, update their density/anchor metadata and
@@ -14,6 +15,23 @@ dimensions as new global limits. Older part/mask/layer builders remain
 for reproducing approved assets, not as the construction method for new walks.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.
+
+`python tools/build_sanctuary_dining_hd.py` exports retained new dining-room
+source atlases at explicit 2× density. It registers furniture, four chair views,
+tabletop/workstation props, fire, steam and architecture to existing logical
+geometry, and uses shared architecture plus small animated lighting layers.
+Sources and exact extraction/registration inventory live under
+`assets/source/terrain/eldenmere/sanctuary_dining_hd/`; runtime metadata lives
+under `assets/terrain/eldenmere/sanctuary_dining_hd/`. Room-only replacements
+also cover later meal scenes without changing shared cottage art or character
+pose banks. `python tools/capture_sanctuary_dining_hd.py /tmp/dining-review`
+captures actual room, distant-glint and nearby-outline states with temporary saves.
+When reproducing the older full interior pipeline, compile the base interiors
+and Tomas's room additions first, then run this exporter last. The retained
+legacy builders do not themselves certify or activate a density migration.
+The [central object-creation guidance](../docs/VISUAL_ART_STANDARD.md#object-creation-and-interaction-readability)
+defines contours, interaction cues and authoring metadata; do not duplicate those
+rules in local recipes.
 
 Iselin’s approved complete-frame walk exporters are
 `tools/export_iselin_front_walk.py`,
