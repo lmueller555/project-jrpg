@@ -5,7 +5,8 @@ rendering contract, character construction, animation, export and review. It
 covers characters, wildlife, terrain, architecture, props, combat art, effects,
 backgrounds, portraits and interface artwork. Read the relevant sections before
 creating or revising artwork, asset builders, renderers or their tests. The
-character workflow below preserves the lessons from Iselin's four approved walks.
+character workflow below preserves the lessons from Iselin's four approved walks;
+running extends them with coupled support, recovery and flight poses.
 
 **Approved direction:** Rebuild game artwork at two artwork pixels per logical
 world pixel, preserving its existing on-screen proportions and world footprint.
@@ -51,6 +52,8 @@ a human two-arm/two-leg gait onto them.
   [complete drawings](#3-draw-complete-coherent-frames),
   [feet](#4-make-feet-progress-continuously) and
   [body registration](#5-register-the-body-author-the-bob)
+- [Running animations](#running-animations): limb coupling, support/flight, phase plan,
+  posture, registration and run-specific acceptance
 - [Corrections](#6-correct-one-defect-while-protecting-accepted-work),
   [exports](#7-export-reproducibly), [review](#8-review-at-three-levels-before-declaring-completion)
   and [diagnosis](#9-diagnose-before-regenerating)
@@ -503,7 +506,7 @@ angle, exact contact coordinate or old test.
 
 ## 3. Draw complete, coherent frames
 
-For new or revised walks, author each pose as a complete character drawing with
+For new or revised walks and runs, author each pose as a complete character drawing with
 its near/far overlaps resolved. Export flattened RGBA frames. Do not manufacture
 the cycle by rotating, sliding or stretching detached arms and legs around an
 unchanging body, or by warping a flattened idle. Adding more frames to a limb
@@ -604,9 +607,12 @@ An in-place preview does not prove world-ground foot locking. When integrating
 travel, compare stance-foot motion against actor displacement at the intended
 world speed: support-foot movement relative to the actor should approximately
 cancel actor travel. Check actual scenery playback for sliding and skating.
-Fix cadence, stride or pose construction rather than moving collision geometry
-to chase the artwork. A run additionally needs its own weight/flight phases;
-simply accelerating a walk does not establish a convincing run.
+Record observed sliding and review cadence, stride and pose construction within
+the authorized scope. Perfect real-world speed matching is not required for an
+otherwise approved stylized gait; do not distort anatomy or change collision
+geometry to force it. A run needs its own support, recovery and flight phases;
+see [running animations](#running-animations). Simply accelerating a walk does
+not establish a convincing run.
 
 ## 5. Register the body; author the bob
 
@@ -644,6 +650,319 @@ Keep the character's declared draw/ground anchors and world position consistent
 across directions, idle transitions and poses. The ground anchor is a logical
 registration reference; it is not recalculated from whichever foot is lowest.
 Do not change collision size as an incidental result of a larger art canvas.
+
+## Running animations
+
+This section extends the shared character construction, correction, export and
+review rules with running mechanics. Its two-arm/two-leg phase plan describes
+a biped; quadrupeds and other creatures need their own anatomical support and
+flight pattern. Existing four-frame asset packs remain historical examples,
+not a required frame count or a template for new runs.
+
+### 1. Establish the run before drawing transitions
+
+A running cycle must communicate **landing, weight absorption, push-off,
+recovery and flight**. These actions distinguish it from walking. Author a
+complete two-step cycle: one right-foot landing and one left-foot landing,
+returning to the original anatomical phase.
+
+Before drawing, establish:
+
+- Approved directional appearance and costume asymmetry.
+- Near/far identities for both arms and legs.
+- Contact, compression, toe-off, flight and opposite-contact keys.
+- Frame count and total cycle duration.
+- Body proportions, forward lean, ground reference and intended vertical excursion.
+- Which foot supports the body in each frame, or whether both are airborne.
+
+More frames subdivide movement; they do not automatically improve anatomy or
+timing. These are internal construction checks before drawing transitions,
+not additional user approval gates.
+
+**Caelan's starting specification for the upcoming HD right-facing run:**
+
+| Property | Target |
+| --- | --- |
+| Direction | Right-facing |
+| Frames | 16 complete drawings |
+| Frame duration | 25 ms |
+| Full two-step cycle | 400 ms, matching the current legacy run |
+| Artwork density | 2 artwork pixels per world unit |
+| Starting canvas | 48×72 artwork pixels |
+| Logical canvas | 24×36 world units |
+| Draw anchor | [24,60] artwork / [12,30] logical |
+| Foot anchor | [24,68] artwork / [12,34] logical |
+| Gameplay running speed | Existing 108 world units/second |
+
+These are authoring targets, not a claim that HD running is integrated.
+Preserve physical character size. If a legitimate pose needs more transparent
+padding, adjust canvas and anchors together rather than shrinking the character
+or clipping a limb. Record the changed artwork/logical canvas and keep gameplay
+collision and visible body proportions independent of that padding.
+
+### 2. Track anatomical identity continuously
+
+For Caelan's right-facing profile:
+
+| Limb | Camera relationship |
+| --- | --- |
+| Right arm | Near |
+| Right leg | Near |
+| Left arm | Far |
+| Left leg | Far |
+
+These identities remain fixed. A limb does not become the near limb because
+it moves forward. Maintain four separate anatomical chains during review:
+
+- Right shoulder → elbow → hand.
+- Left shoulder → elbow → hand.
+- Right hip → knee → ankle → boot.
+- Left hip → knee → ankle → boot.
+
+Both arms and both legs must progress through their complete motions. Natural
+occlusion may hide a limb temporarily; its subsequent appearance must continue
+the same movement. Track the hidden phase in the plan without drawing a ghost
+limb through the torso.
+
+### 3. Couple arms and legs correctly
+
+Each arm generally counters the **same-side leg**:
+
+- Right leg forward pairs with right arm back.
+- Left leg forward pairs with left arm back.
+- Right arm and left leg advance together.
+- Left arm and right leg advance together.
+
+At right-foot contact, the right arm trails and left arm leads. At left-foot
+contact, those roles exchange. This describes the overall swing relationship;
+elbows, knees, wrists and ankles have their own flexion and small timing
+offsets. They should not behave as rigid, perfectly mirrored pendulums.
+
+Inspect the shoulder and upper arm when judging swing direction. A bent forearm
+can place a hand near the torso even while its upper arm swings backward.
+
+### 4. Draw running arms with natural flexion
+
+Running arms should look active and relaxed enough to move, rather than locked
+into a punching pose:
+
+- Swing primarily from the shoulder.
+- Keep a comfortable elbow bend, roughly around a right angle as a starting reference.
+- Allow that angle to open and close naturally.
+- Use loosely closed hands and neutral wrists.
+- Keep the shoulder attachment stable.
+- Let the forearm fold across projected body depth without crossing arbitrarily
+  between anatomical sides.
+
+A shoulder swing around **30–45° forward and backward** is an initial expressive
+reference, not a mandatory angle in every drawing. The far arm needs its own
+complete swing; it must not remain parked behind the torso while the near arm
+performs the animation.
+
+Do not force a hidden far hand into view. Remove obsolete hand pixels when
+redrawing its pose so the character never gains a third arm. Use coherent
+near/far overlaps and the approved material palette rather than hiding an
+unplanned far limb in a flat dark silhouette.
+
+### 5. Give each leg a complete running sequence
+
+Each leg follows:
+
+**Reach → contact → compression → support → push-off → toe-off → recovery →
+forward swing → reach.**
+
+During contact and support:
+
+- Land slightly ahead of the pelvis without an exaggerated straight-legged reach.
+- Keep the landing knee soft.
+- Bend the support knee as the body absorbs weight.
+- Progress the supporting foot backward relative to the body.
+- Extend through the hip and ankle during push-off.
+- Release through a recognizable toe-off.
+
+During recovery and swing:
+
+- Fold the knee so the heel rises behind the body.
+- Bring the recovering leg forward through a bent-knee passing position.
+- Let the lower leg unfold progressively.
+- Lower the approaching foot into contact over several drawings.
+
+The boot must not remain extended ahead for several frames and then snap behind
+the character. Likewise, a high recovering heel must not suddenly become a
+planted boot in the next drawing. Judge hip, knee and ankle together; moving
+only the boot cannot produce convincing recovery. Track actual heel/toe or
+ankle landmarks with the appropriate contact phase, rather than treating the
+lowest silhouette pixel or a changing sole-span midpoint as a fixed joint.
+
+### 6. Include clear flight phases
+
+A run normally includes moments when **neither foot supports the ground**.
+For Caelan's target cycle:
+
+- Use one flight interval after each push-off.
+- Keep the feet visibly released from support.
+- Continue both leg recoveries and both arm swings during flight.
+- Let the body rise and fall smoothly.
+- Prepare the approaching leg for landing before contact occurs.
+
+Flight must not freeze the character in one stretched pose. Do not manufacture
+it by moving an entire standing sprite upward. Knee flexion, ankle position,
+body posture and support release make the airborne state readable together.
+
+### 7. Use this initial sixteen-frame phase plan
+
+This is the construction plan for Caelan's right-facing run. Draw and inspect
+the keys before filling transitions. A row's phase is verified from the actual
+drawing, not inferred solely from its file number.
+
+| Frame | Phase | Near right leg | Far left leg | Arms |
+| --- | --- | --- | --- | --- |
+| 1 | Right contact | Lands slightly ahead, knee soft | Recovering behind | Right trails; left leads |
+| 2 | Compression | Knee bends under load | Heel recovers upward | Both continue toward midpoint |
+| 3 | Mid-support | Supports beneath pelvis | Bent knee passes forward | Near midpoint |
+| 4 | Late support | Extends behind body | Thigh advances | Right advances; left retreats |
+| 5 | Push-off/toe-off | Finishes ground support | Prepares forward reach | Right leads; left trails |
+| 6 | Early flight | Knee folds into recovery | Lower leg starts unfolding | Continue through their arcs |
+| 7 | Flight | Heel recovers behind | Approaches landing position | Near opposing swing extremes |
+| 8 | Landing preparation | Continues recovery | Lowers gently toward contact | Prepare opposite contact |
+| 9 | Left contact | Recovering behind | Lands slightly ahead | Right leads; left trails |
+| 10 | Compression | Heel recovers upward | Knee bends under load | Both approach midpoint |
+| 11 | Mid-support | Bent knee passes forward | Supports beneath pelvis | Near midpoint |
+| 12 | Late support | Thigh advances | Extends behind body | Right retreats; left advances |
+| 13 | Push-off/toe-off | Prepares forward reach | Finishes ground support | Right trails; left leads |
+| 14 | Early flight | Lower leg starts unfolding | Knee folds into recovery | Continue through their arcs |
+| 15 | Flight | Approaches landing position | Heel recovers behind | Near opposing swing extremes |
+| 16 | Landing preparation | Lowers toward right contact | Continues recovery | Continue smoothly into frame 1 |
+
+In this starting plan, frames 1–5 support on right, frames 6–8 are airborne,
+frames 9–13 support on left, and frames 14–16 are airborne. Toe-off ends support;
+landing preparation precedes contact. Final metadata must match the reviewed
+poses if those boundaries change during authoring.
+
+Frames 9–16 exchange anatomical roles. They are separately resolved drawings,
+including near/far overlap and costume detail; do not mirror the first half
+or independently offset arm and leg strips to manufacture the second half.
+
+### 8. Establish posture and expression
+
+Use a modest forward lean appropriate to Caelan's ordinary run:
+
+- Keep the head looking primarily in the travel direction.
+- Maintain a connected neck, shoulder line, ribcage and pelvis.
+- Convey forward intent through posture rather than stretching the torso.
+- Allow restrained shoulder/pelvis counter-rotation.
+- Keep the expression focused and consistent with his approved face.
+- Avoid an exaggerated sprinting grimace unless a separate sprint calls for it.
+
+The lean should feel supported by the whole body. Avoid folding sharply at the
+waist while leaving the hips behind. Preserve Caelan's recognizable face as
+small head/torso orientation changes express movement.
+
+### 9. Register the body and author the vertical motion
+
+Running can have more vertical motion than walking, but it follows weight
+transfer: lower during compression, rise through push-off, reach the upper
+part of the arc during flight, and descend into the next contact.
+
+For Caelan's artwork density, begin with approximately **2–3 artwork pixels of
+total crown excursion**, then judge the result visually. This is a starting
+range, not a universal requirement. Reserve headroom in the run posture for
+flight; add transparent padding if needed rather than clipping the crown.
+
+Keep head size, neck length, torso length and limb proportions stable. Do not
+scale or position each frame using occupied height or the lowest boot. Bent
+knees and airborne feet naturally change those bounds. The declared foot
+anchor is a registration reference, not an instruction to align every pose
+by its lowest pixel.
+
+Do not freeze the head so rigidly that the torso stretches beneath it. Keep
+the whole body coherent through authored motion, and do not add runtime bobbing
+to drawings that already include it. Apply the shared body-landmark registration
+rules to all batches and review batch joins as adjacent animation frames.
+
+### 10. Preserve costume identity and secondary motion
+
+For Caelan:
+
+- Retain chestnut hair, ivory sleeves, teal-and-gold tabard, brown bracers and boots.
+- Keep the single pouch on anatomical left: **far side in right profile**.
+- Let hair and tabard tails follow the motion with restrained lag.
+- Keep the pouch attached to the belt, with modest movement rather than floating.
+- Preserve the thin black exterior contour and consistent material palette.
+
+Secondary motion must loop cleanly. It must not introduce changing hair volume,
+garment length, extra accessories or incorrect costume sides. Other directions
+use their own approved appearance and occlusion; reflected motion guides do
+not authorize flipping the finished asymmetric costume.
+
+### 11. Construct complete drawings and correct locally
+
+Author every pose as a complete character image. Use small batches against the
+same approved keys and landmark grid. Inspect each batch before generating
+more transitions; do not generate a larger batch to compensate for bad keys.
+
+When correcting a defect:
+
+1. Identify the affected anatomical chain and frames.
+2. Preserve snapshots of accepted work.
+3. Redraw complete poses with the specific correction.
+4. Restore accepted regions only where appropriate.
+5. Inspect the repair boundary, neighboring frames and loop seam.
+
+Preserved regions must belong to the **same movement phase**. Combining
+independently timed arms and legs can recreate the rear-walk problem even when
+each region looks acceptable separately. Keep source history, repair windows
+and preservation hashes under the shared correction/export rules.
+
+### 12. Review movement quality without forcing perfect speed matching
+
+Review the run in place and traveling through actual scenery. Prioritize:
+
+- Readable alternating support and flight.
+- Correct near/far limb progression.
+- Natural knee and elbow flexion.
+- Smooth release, recovery and landing.
+- Stable proportions and coherent body motion.
+- Clean transitions and loop seam.
+
+Record visible sliding and cadence observations. Under the current approved
+art direction, perfect real-world speed matching is not a requirement for
+approving an otherwise convincing stylized animation. Prioritize believable
+limb sequencing and expression without forcing a numeric contact target to
+distort anatomy. Report measured limits honestly; passing pose checks does
+not prove world-ground locking.
+
+Preserve gameplay speed and Caelan's existing 400 ms run cadence unless a
+separate change is explicitly reviewed. Keep established cadences for other
+characters unless their own scoped changes authorize retiming. Do not modify
+collision geometry to chase artwork or reopen the approved walking cycles
+as part of the run work.
+
+### 13. Export and acceptance checklist
+
+The review package must include:
+
+- Sixteen complete native RGBA frames and a reconstructable spritesheet for
+  Caelan's target; other scoped runs retain their declared frame budget.
+- Explicit frame order, durations, contact foot and flight intervals.
+- Source drawings, selected cells, registration, palette/alpha settings and hashes.
+- Normal-speed and clearly labeled half-speed previews.
+- Numbered frame sheet and approved-idle comparison at cast scale.
+- Traveling footage when integrating into gameplay.
+
+Automated checks verify dimensions, hard transparency, unclipped margins,
+timing, source preservation, loading and measured continuity. Contact/flight
+metadata must agree with the visual poses; neither labels nor frame uniqueness
+alone prove a run. Keep design approval, artwork approval, merge state and
+runtime integration distinct. Preserve approved references when exporting.
+
+For 25 ms GIF playback, alternate **20/30 ms delays** to preserve the average
+cadence. Label half-speed playback clearly and verify actual saved durations.
+Exact RGBA PNGs remain the authority for color, alpha and fine detail.
+
+**Visual acceptance requires checking all four limb chains across both steps,
+every batch join and frame 16 → 1. Passing export tests alone does not establish
+a convincing run.**
 
 ## 6. Correct one defect while protecting accepted work
 
