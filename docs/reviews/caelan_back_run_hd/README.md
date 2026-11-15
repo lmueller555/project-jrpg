@@ -1,6 +1,7 @@
 # Caelan rear run — artwork review
 
-Status: awaiting user review. Not merged or integrated into gameplay.
+Status: user-approved artwork, accepted for merge into main. Gameplay integration
+remains deferred.
 The live registry, existing directional idles and walks, legacy runs and approved
 HD front run remain unchanged.
 
