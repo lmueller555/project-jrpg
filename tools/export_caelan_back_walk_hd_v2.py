@@ -85,7 +85,7 @@ def build():
     sheet.save(BANK/'spritesheet.png')
     idle_path=ROOT/'assets/characters/caelan/review_hd/idles/idle_back.png'
     data={'version':2,'character':'caelan','animation':'walk.back','status':'approved','design_status':'approved',
-        'artwork_status':'approved','runtime_integration':False,'frame_size':[48,72],'logical_size':[24,36],
+        'artwork_status':'approved','runtime_integration':True,'frame_size':[48,72],'logical_size':[24,36],
         'draw_anchor':[24,60],'foot_anchor':[24,68],'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,
         'source_scale':SCALE,'source_hashes':hashes,'protected_region':[0,0,48,24],
         'approved_idle_sha256':hashlib.sha256(idle_path.read_bytes()).hexdigest(),

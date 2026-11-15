@@ -3,10 +3,13 @@
 MillQuest owns the durable report, dialogue and completion receipts. This
 controller stages the existing family and transient movement only: an interrupted
 pickup starts again at the clean cups, while a committed placement stays visible.
-All bodies are existing approved idle, walking and empty-hand household poses.
+Ordinary approach uses the registered travel bank; cups retain their existing
+legacy walking/grip and empty-hand household poses.
 """
 from rendering import flip as render_flip
 from collections import deque
+import json
+from pathlib import Path
 
 import pygame
 
@@ -31,6 +34,14 @@ class SanctuaryReturn:
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
         self._cup = self.dining.room_art_image(CUP)
         self._body_anchor = tuple(self.dining.data['player_draw_anchor'])
+        # Cup grips belong to these legacy four-phase drawings, independently
+        # of the ordinary player's higher-density travel bank.
+        self._carry_walks = {}
+        for direction in ('front', 'back', 'left', 'right'):
+            folder = Path(f'assets/characters/caelan/walk_{direction}')
+            meta = json.loads((Path(__file__).resolve().parent/folder/'animation.json').read_text())
+            self._carry_walks[direction] = [(self.dining.image((folder/f['file']).as_posix()),f['duration_ms'])
+                                            for f in meta['frames']]
         self._household_anchor = (self._body_anchor[0]+8, self._body_anchor[1]+24)
         self._hands = {d: self.dining.image(EMPTY_HANDS.format(d))
                        for d in ('front', 'back', 'left', 'right')}
@@ -207,14 +218,29 @@ class SanctuaryReturn:
             if travel >= distance-1e-7:self._route.popleft()
         self._clear_player_pose()
         if player.moving:
-            frames = player.walks[player.facing]
-            cursor = self._walk_ms % sum(duration for _, duration in frames)
-            for image, duration in frames:
-                if cursor < duration:break
-                cursor -= duration
-            player.story_sprite = image;player.story_draw_anchor = self._body_anchor
-            self._player_pose = True
+            self._walking_pose()
         return player.position.distance_squared_to(goal) < .01
+
+    def _travel_frames(self):
+        player = self.game.player
+        if self._holding:
+            return (player.runs if player.running else self._carry_walks)[player.facing]
+        return (player.runs if player.running else player.walks)[player.facing]
+
+    def _travel_frame_index(self):
+        frames = self._travel_frames()
+        cursor = self.game.player.walk_ms % sum(duration for _,duration in frames)
+        for index,(_,duration) in enumerate(frames):
+            if cursor < duration:return index
+            cursor -= duration
+        return len(frames)-1
+
+    def _walking_pose(self):
+        self._clear_player_pose()
+        player = self.game.player
+        player.story_sprite = self._travel_frames()[self._travel_frame_index()][0]
+        player.story_draw_anchor = self._body_anchor
+        self._player_pose = True
 
     def _cup_origin(self):
         player = self.game.player
@@ -225,7 +251,7 @@ class SanctuaryReturn:
             return (player.position+pygame.Vector2(self._pose_wrist)
                     -pygame.Vector2(self._household_anchor)-cup_to_hand)
         # Approved normal stride, with the small stack registered to its hand.
-        index = int(player.walk_ms//140) % 4 if player.moving else 0
+        index = self._travel_frame_index() if player.moving else 0
         hands = {'front': ((17, 22), (17, 22), (17, 20), (17, 22)),
                  'back': ((17, 20), (18, 21), (17, 21), (17, 20)),
                  'right': ((16, 21), (16, 21), (16, 22), (16, 21)),
@@ -265,8 +291,8 @@ class SanctuaryReturn:
         elif self._holding:
             # Cancelling live dialogue leaves normal navigation available.
             # Keep a supported hand pose while standing; walking uses the
-            # unmodified directional stride and its registered hand locations.
-            if self.game.player.moving:self._clear_player_pose()
+            # scene-owned legacy directional stride and its registered hand locations.
+            if self.game.player.moving:self._walking_pose()
             else:self._pose(self.game.player.facing)
         # Live conversations can turn to the actual person holding the floor.
         if self.game.social.active:

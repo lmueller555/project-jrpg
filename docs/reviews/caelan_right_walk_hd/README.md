@@ -1,5 +1,13 @@
 # Caelan right-facing walk — approved
 
+**Current runtime status: integrated for normal idles and walking.** See the
+[gameplay integration report](../caelan_walk_integration/README.md) for moving
+footage, compatibility boundaries and remaining stride sliding.
+
+## Original art-review record
+
+The record below describes the standalone artwork review before integration.
+
 **User-approved and merged asset pack; runtime integration remains pending.** This pack contains sixteen
 complete authored 48×72 right-facing drawings, preserving the 24×36 logical
 canvas and the existing 560 ms walking cadence (16 × 35 ms).

@@ -1,5 +1,13 @@
 # Caelan higher-density directional idles — approved
 
+**Current runtime status: integrated for normal idles and walking.** See the
+[gameplay integration report](../caelan_walk_integration/README.md) for moving
+footage, compatibility boundaries and remaining stride sliding.
+
+## Original art-review record
+
+The record below describes the standalone artwork review before integration.
+
 **Status: user-approved design and artwork; merged asset pack, not runtime-integrated.**
 
 [Four directional idles](directions.png) · [Hall and cast comparison](hall_comparison.png)

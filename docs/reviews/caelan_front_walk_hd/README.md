@@ -1,5 +1,13 @@
 # Caelan front walk — approved
 
+**Current runtime status: integrated for normal idles and walking.** See the
+[gameplay integration report](../caelan_walk_integration/README.md) for moving
+footage, compatibility boundaries and remaining stride sliding.
+
+## Original art-review record
+
+The record below describes the standalone artwork review before integration.
+
 Sixteen complete 48×72 RGBA poses, 2× artwork density, 24×36 logical canvas,
 [24,60] artwork draw anchor and [24,68] foot anchor. Each frame lasts35ms;
 the two-step loop lasts560ms. **User-approved artwork; runtime integration remains pending.**

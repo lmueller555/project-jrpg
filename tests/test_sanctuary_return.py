@@ -138,5 +138,26 @@ class SanctuaryReturnTests(unittest.TestCase):
         player.position.update(SOURCE);self.scene._reach(2)
         self.assertEqual(tuple(self.scene._cup_origin()), SOURCE_CUP)
 
+    def test_cup_carry_uses_its_legacy_grips_and_releases_to_hd_travel(self):
+        from rendering import WorldCanvas
+        self.scene.prepare();player=self.game.player
+        self.scene._holding=True;self.scene.action=None
+        for running in (False,True):
+            for direction in ('front','back','left','right'):
+                player.facing=direction;player.moving=True;player.running=running
+                player.walk_ms=150
+                self.scene.update(.035)
+                frames=(player.runs if running else self.scene._carry_walks)[direction]
+                expected=1
+                self.assertIs(player.story_sprite,frames[expected][0])
+                self.assertNotIsInstance(player.story_sprite,WorldCanvas)
+                self.assertEqual(self.scene._travel_frame_index(),expected)
+                self.assertEqual(player.walk_durations[direction],(35,)*16)
+        self.scene.release()
+        player.running=False;player.moving=True;player.walk_ms=150
+        self.assertFalse(hasattr(player,'story_sprite'))
+        self.assertIs(player.sprite(),player.walks['right'][4][0])
+        self.assertIsInstance(player.sprite(),WorldCanvas)
+
 
 if __name__ == '__main__':unittest.main()
