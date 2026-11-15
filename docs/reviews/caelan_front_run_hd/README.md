@@ -1,8 +1,8 @@
 # Caelan front run — artwork review
 
-Status: pending user artwork approval. Not merged or integrated into gameplay.
-The approved directional design is retained; approval of this animation remains
-separate. The live registry and legacy run bank are unchanged.
+Status: user-approved artwork, accepted for merge into main. Gameplay integration
+remains deferred. The approved directional design is retained. The live registry
+and legacy run bank are unchanged.
 
 - [Normal/half-speed preview with approved idle](preview.gif)
 - [Numbered complete frame drawings](frames.png)
