@@ -24,9 +24,8 @@ class CastActorAnimationOwnershipTests(unittest.TestCase):
     def test_authored_actor_keeps_player_animation_banks_and_cadence_unchanged(self):
         surface = pygame.Surface((24, 36), pygame.SRCALPHA)
         world = SimpleNamespace(data={'spawn': (100, 100)},
-                                image=lambda _: surface, can_stand=lambda _: True)
+                                image=lambda path: pygame.image.load(str(ROOT/path)), can_stand=lambda _: True)
         player = Player(world)
-        player.walk_durations = {'front': (140, 140, 140, 140)}
         player.pose_animations = {'rest': {'frames': (surface,), 'durations': (100,),
                                            'anchor': (12, 30), 'loop': False}}
         original_idles = dict(player.idles)
@@ -42,7 +41,7 @@ class CastActorAnimationOwnershipTests(unittest.TestCase):
         self.assertEqual(player.walks, original_walks)
         self.assertEqual(player.runs, original_runs)
         for direction in DIRECTIONS:
-            self.assertEqual([duration for _, duration in player.walks[direction]], [140] * 4)
+            self.assertEqual([duration for _, duration in player.walks[direction]], [35] * 16)
             self.assertEqual([duration for _, duration in player.runs[direction]], [100] * 4)
         self.assertEqual(player.walk_durations, original_durations)
         self.assertEqual(player.pose_animations['rest'], original_pose)

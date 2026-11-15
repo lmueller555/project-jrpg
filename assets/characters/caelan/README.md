@@ -1,56 +1,64 @@
-# Caelan — current overworld artwork
+# Caelan — overworld artwork and runtime registration
 
-## Approved higher-density idles
+The runtime source of truth is [animation.json](animation.json). Normal player
+travel uses the approved HD directional idles and all four approved walks.
+Their existing `review_hd/` paths remain stable; no approved PNGs were moved
+or redrawn for integration.
 
-The four **48×72** directional idles in [the detailed idle pack](review_hd/idles/idles.json)
-are user-approved and merged, retaining a **24×36** logical canvas. They are the
-design reference for the upcoming higher-density walking/running work. Their
-runtime integration is pending; the current player still selects the legacy
-bank described below. See the [approval and previews](../../../docs/reviews/caelan_hd_idles/README.md).
+| Bank | Artwork pixels | Logical canvas | Timing | Runtime state |
+| --- | --- | --- | --- | --- |
+| Directional idles | 48×72 | 24×36 | Stationary | Integrated, approved |
+| Four directional walks | 48×72 | 24×36 | 16×35ms =560ms | Integrated, approved |
+| Four directional runs | 24×36 | 24×36 | 4×100ms =400ms | Retained legacy artwork |
+| Carrying/actions/cinematic bodies | Bank-specific | Existing registration | Existing cues | Scene-owned legacy artwork |
 
-## Approved higher-density right walk
+The logical draw anchor remains [12,30], the foot anchor [12,34]. HD artwork
+records use their corresponding [24,60]/[24,68] artwork anchors. Movement speed,
+collision, interaction distance, world positions and camera coverage stay as
+before. Ordinary travel has no separate sword/tool overlay.
 
-The [right-facing walk pack](review_hd/walk_right/animation.json) is user-approved
-and merged: sixteen complete **48×72** drawings, **35 ms** each, retaining the
-existing **560 ms** cycle. Use it as the motion reference for the remaining
-directions while preserving their anatomical costume sides. Runtime integration
-remains pending. See the [approved cycle and source notes](../../../docs/reviews/caelan_right_walk_hd/README.md).
+`Player` loads each declared bank through the shared density-aware loader.
+HD frames remain native in WorldCanvas composition while their logical mirror
+stays24×36. Each idle/gait reference declares its own density: the root record
+does **not** apply density2 to the legacy runs. There is one authored animation
+clock, and idle/turn/gait reset behavior remains unchanged.
 
-## Current runtime bank
+Scene actors copy mutable banks and authored durations rather than changing the
+player's data. Ordinary inherited travel uses the HD frames and35ms timing.
+Explicit scene banks retain their own poses, anchors, cues and durations.
+SanctuaryReturn's cup grips retain an explicit legacy carrying bank, including
+free movement while holding cups; releasing the scene restores normal HD travel.
+Bespoke rescue/support, seated, household and cinematic artwork remains legacy
+until rebuilt separately. Running and action transitions therefore still change
+pixel detail temporarily.
 
-The overworld quality refresh replaces the four directional idles, sixteen walk
-frames and sixteen run frames with registered authored drawings. Status is
-**review**, pending the user's visual review after merge. Earlier approvals
-remain historical records; they do not approve this new appearance.
+[Integration captures, compatibility checks and limitations](../../../docs/reviews/caelan_walk_integration/README.md)
+include real Player movement in town, Sanctuary hall and the cave. The approved
+stride does not fully cancel world travel at72 world units/s; the measured
+side-view sole-span diagnostic shows about11 render pixels of residual drift
+through the sampled stance. This is a rolling contact proxy, not an ankle-lock
+measurement. The integration preserves approved art,560ms timing and gameplay
+speed; stride refinement is separate artwork work.
 
-Caelan retains chestnut hair, ivory sleeves/tunic, teal tabard with ochre edging,
-brown leather belt/boots, wrist bracers, dark trousers and the anatomical-left
-hip pouch. Profiles have distinct authored faces, sleeves and near/far limbs.
-The one-pixel warm near-black contour matches Mira's overworld line weight.
-It sits inside the existing alpha silhouette, retaining bright skin highlights
-and interior material shading rather than expanding the character.
+## Sources and rebuilds
 
-All individual runtime frames stay **24×36**, with metadata foot anchor
-`[12,34]`. The map's existing draw anchor `[12,30]`, player collision, movement
-speed and gait timing are preserved. Walks remain four phases at 140 ms each;
-runs remain four phases at 100 ms with compact raised flight poses. Registration
-moves whole drawings; it never stretches anatomy or changes planted feet within
-a drawing. Ordinary travel depicts no separate sword or tool.
-
-Rebuild with:
+Sources and exact registration remain alongside the existing approved packs:
+[idles](review_hd/idles/idles.json), [front](review_hd/walk_front/animation.json),
+[rear](review_hd/walk_back/animation.json), [left](review_hd/walk_left/animation.json),
+[right](review_hd/walk_right/animation.json). Integration status is retained on
+re-export; historical approval/reference hashes still protect exact PNG pixels.
 
 ```sh
-python tools/build_caelan_overworld.py
-python tools/build_caelan_overworld.py --check
+python tools/export_caelan_hd_idles.py
+python tools/export_caelan_right_walk_hd.py
+python tools/export_caelan_left_walk_hd.py
+python tools/export_caelan_front_back_walk_hd.py
 ```
 
-Sources, exact rectangles, scales and hashes are in
-`../../source/characters/caelan/overworld_refresh/`. The main builder refreshes
-individual runtime PNGs, current combined sheets, manifests and scoped world
-pose derivatives. Historical procedural walk/run builders describe older art;
-the authored builder is the current source of truth.
-
-Current preview and validation evidence:
-[outline revision](../../../docs/reviews/caelan_outline/README.md) and
-[earlier overworld quality review](../../../docs/reviews/caelan_overworld_refresh/README.md).
-The earlier review GIFs and approval manifests remain unchanged as history.
+The earlier24×36 files and combined direction sheets remain available for the
+legacy runs and scene dependencies. Rebuild that retained bank with
+`python tools/build_caelan_overworld.py --check` (or omit `--check` to export).
+That builder does not replace the HD runtime registry. Older review documents
+retain historical captures and local construction evidence; the
+[global visual standard](../../../docs/VISUAL_ART_STANDARD.md) remains the
+single authoring and rendering guide.

@@ -176,11 +176,11 @@ class CaelanOverworldRefreshTests(unittest.TestCase):
             player.facing=direction
             player.moving=False
             self.assertIs(player.sprite(),player.idles[direction])
-            for running,gait,duration in ((False,'walk',140),(True,'run',100)):
+            for running,gait,duration,count in ((False,'walk',35,16),(True,'run',100,4)):
                 player.moving=True;player.running=running
                 bank=(player.runs if running else player.walks)[direction]
-                self.assertEqual([entry[1] for entry in bank],[duration]*4)
-                for phase in range(4):
+                self.assertEqual([entry[1] for entry in bank],[duration]*count)
+                for phase in range(count):
                     player.walk_ms=(phase+.5)*duration
                     self.assertIs(player.sprite(),bank[phase][0])
         # Sprite canvas changes must not silently change movement speed.

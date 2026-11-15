@@ -14,7 +14,7 @@ try:
 except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
-from rendering import scale as render_scale, immutable, record_art
+from rendering import scale as render_scale, immutable, record_art, load_art
 from object_cues import ObjectCues
 
 from npc_routines import Gardener, RoutineNPC
@@ -401,16 +401,23 @@ class Player:
         self.motion_trace=[]
         self.motion_weights=[]
         self.walk_ms=0.0
-        self.art_metadata=(read_json(ROOT/'assets/characters/caelan/animation.json')
-                           if (ROOT/'assets/characters/caelan/animation.json').exists() else {})
-        self.idles={d:world.art_image(f'assets/characters/caelan/idle_{d}.png',self.art_metadata) for d in ('front','left','right','back')}
+        self.art_metadata=read_json(ROOT/'assets/characters/caelan/animation.json')
+        self.draw_anchor=tuple(self.art_metadata['draw_anchor'])
+        self.idles={direction:load_art(world,record['file'],record)
+                    for direction,record in self.art_metadata['idles'].items()}
         self.walks={};self.runs={}
         for gait,animations in (('walk',self.walks),('run',self.runs)):
-            for direction in self.idles:
-                folder=ROOT/f'assets/characters/caelan/{gait}_{direction}'
-                metadata=read_json(folder/'animation.json')
-                animations[direction]=[(world.art_image((folder/r['file']).relative_to(ROOT).as_posix(),{**self.art_metadata,**metadata}),r['duration_ms'])
+            for direction,reference in self.art_metadata[gait+'s'].items():
+                manifest=ROOT/reference['manifest']
+                metadata=read_json(manifest)
+                # Density is local to the selected bank: legacy runs remain 1x.
+                animations[direction]=[(load_art(world,(manifest.parent/r['file']).relative_to(ROOT).as_posix(),
+                                                 {**metadata,**reference,**r}),r['duration_ms'])
                                        for r in metadata['frames']]
+        self.walk_durations={direction:tuple(duration for _,duration in frames)
+                             for direction,frames in self.walks.items()}
+        self.run_durations={direction:tuple(duration for _,duration in frames)
+                            for direction,frames in self.runs.items()}
         if not world.can_stand(self.position):raise ValueError('Player spawn is blocked')
 
     def update(self,direction,seconds,world,running=False):

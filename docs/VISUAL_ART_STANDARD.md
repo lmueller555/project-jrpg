@@ -14,7 +14,7 @@ Iselin's detailed artwork is the reference for this increase in fidelity.
 **Implementation status:** Full-scene 2× composition is implemented in
 `rendering.py`. The 480×320 logical view has an authoritative 960×640 native
 buffer across exploration, battle and cinematic presentation. Existing asset
-banks retain their legacy density until rebuilt; Iselin's detailed artwork
+banks retain their legacy density until rebuilt; Iselin's detailed artwork, Caelan's approved overworld idles/walks,
 and all three Sanctuary home interiors (hall, bedroom and dining room) now use
 the shared path. Dining was the first integrated environment bank; remaining
 asset reconstruction and individual bank migrations continue as separately scoped work.

@@ -114,7 +114,7 @@ def build(direction):
     sheet.save(bank/'spritesheet.png')
     idle_path=ROOT/f'assets/characters/caelan/review_hd/idles/idle_{direction}.png';idle=Image.open(idle_path).convert('RGBA')
     data={'version':1,'character':'caelan','animation':f'walk.{direction}','status':'approved',
-        'design_status':'approved','artwork_status':'approved','runtime_integration':False,
+        'design_status':'approved','artwork_status':'approved','runtime_integration':True,
         'frame_size':[48,72],'logical_size':[24,36],'draw_anchor':[24,60],'foot_anchor':[24,68],
         'artwork_pixels_per_world_pixel':2,'cycle_ms':560,'loop':True,'source_scale':'Uniform per authored atlas; see frame records',
         'source_hashes':hashes,'protected_region':[0,0,48,48],

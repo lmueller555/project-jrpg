@@ -54,7 +54,7 @@ def build():
         image.putalpha(alpha);image=apply_outline(image)
         image.save(OUT/record['file']);final.append(image)
     manifest={'version':1,'status':'approved','design_status':'approved','artwork_status':'approved',
-        'runtime_integration':False,
+        'runtime_integration':True,
         'source':str(SOURCE.relative_to(ROOT)),'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
         'frame_size':[48,72],'logical_size':[24,36],'artwork_pixels_per_world_pixel':2,
         'draw_anchor':[24,60],'foot_anchor':[24,68],'source_scale':scale,
@@ -75,7 +75,7 @@ def build():
         preview.paste(image,(x+72,414),image)
     d.text((24,389),'Bottom row: normal size at a 960 x 640 game viewport',font=small,fill='#bdc8cd')
     preview.save(REVIEW/'directions.png')
-    print('Exported four approved 48x72 idles; runtime artwork and selectors unchanged.')
+    print('Exported four approved 48x72 idles; runtime registration retained.')
 
 
 if __name__=='__main__':build()

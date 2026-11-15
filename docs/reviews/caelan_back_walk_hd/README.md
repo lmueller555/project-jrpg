@@ -1,5 +1,13 @@
 # Caelan rear walk — revision 2, approved
 
+**Current runtime status: integrated for normal idles and walking.** See the
+[gameplay integration report](../caelan_walk_integration/README.md) for moving
+footage, compatibility boundaries and remaining stride sliding.
+
+## Original art-review record
+
+The record below describes the standalone artwork review before integration.
+
 Sixteen 48×72 frames at 2× artwork density; unchanged 24×36 logical canvas,
 [24,60] draw anchor, [24,68] foot anchor and 16×35ms=560ms cadence.
 **User-approved front and rear artwork. Runtime integration remains pending.**

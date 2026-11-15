@@ -39,6 +39,9 @@ class CastActor:
             self.idles=dict(source.idles)
             self.walks={direction:list(frames) for direction,frames in source.walks.items()}
             self.walk_durations=dict(getattr(source,'walk_durations',{}))
+            for direction,frames in self.walks.items():
+                if direction not in self.walk_durations and frames and isinstance(frames[0],tuple):
+                    self.walk_durations[direction]=tuple(duration for _,duration in frames)
             self.detail_idles=dict(getattr(source,'detail_idles',{}))
             self.detail_walks=dict(getattr(source,'detail_walks',{}))
             self.pose_animations={name:dict(animation) for name,animation in
@@ -49,7 +52,9 @@ class CastActor:
         if art is not None:
             self.draw_anchor=tuple(art['anchor'])
             self.idles={direction:world.image(path) for direction,path in art['idles'].items()}
+            self.detail_idles={}
             for direction,frames in art['walks'].items():
+                self.detail_walks.pop(direction,None)
                 self.walks[direction]=[world.image(frame['file']) for frame in frames]
                 self.walk_durations[direction]=tuple(frame['duration_ms'] for frame in frames)
             for name,animation in art.get('poses',{}).items():

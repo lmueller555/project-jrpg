@@ -79,7 +79,7 @@ def build():
     sheet.save(OUT/'spritesheet.png')
     manifest={'version':1,'character':'caelan','animation':'walk.left','status':'approved',
         'design_status':'approved','artwork_status':'approved',
-        'runtime_integration':False,'artwork_pixels_per_world_pixel':2,'frame_size':[48,72],
+        'runtime_integration':True,'artwork_pixels_per_world_pixel':2,'frame_size':[48,72],
         'logical_size':[24,36],'draw_anchor':[24,60],'foot_anchor':[24,68],
         'cycle_ms':560,'loop':True,'source_scale':SCALE,'frames':records,
         'source_hashes':sources,'palette_sha256':hashlib.sha256(palette_path.read_bytes()).hexdigest(),
@@ -117,7 +117,7 @@ def build():
     gif_frames=[im.quantize(palette=gif_palette,dither=Image.Dither.NONE) for im in preview]
     gif_frames[0].save(REVIEW/'preview.gif',save_all=True,append_images=gif_frames[1:],
                        duration=[30,40]*16,loop=0,disposal=2,optimize=False)
-    print('Exported 16 approved frames, 560ms cadence; runtime activation remains pending.')
+    print('Exported 16 approved frames, 560ms cadence; runtime registration retained.')
 
 
 if __name__=='__main__':build()
