@@ -1,10 +1,10 @@
 # Caelan left run — artwork review
 
-Status: awaiting user artwork approval. Not merged or integrated into gameplay.
+Status: revision 2 awaiting user artwork approval. Not merged or integrated into gameplay.
 Existing idles, walks, approved runs and live actor selection are unchanged.
 
-- [Normal/half-speed preview with approved left idle](preview.gif)
-- [Numbered full-body drawings](frames.png)
+- [Normal/half-speed preview with approved left idle](preview_v2.gif)
+- [Numbered full-body drawings](frames_v2.png)
 - [Native bank and phase metadata](../../../assets/characters/caelan/review_hd/run_left/animation.json)
 
 ## Contract and anatomy
@@ -49,7 +49,9 @@ Source directory: `assets/source/characters/caelan/run_left_hd_review/`.
 `idle_reference.png` is a crop of the approved left idle master. `guide_A.png`
 through `guide_D.png` are reflected source-cell motion references from approved
 right frames 9–16 followed by 1–8. `A.png` through `D.png` contain four new
-chronological batches of complete left-facing redraws, all selected.
+chronological batches of complete left-facing redraws. Revision 2 replaces
+frames 1, 2, 9 and 10 with complete corrected drawings; the other twelve remain
+exactly as exported in revision 1.
 
 `provenance.json` records original generated files, source hashes, appearance
 reference, per-batch phases and the exact source-cell/reflection recipe for each
@@ -78,8 +80,8 @@ Crown positions are `7,8,6,6,7,6,6,8,7,8,7,7,7,6,6,8`: two artwork pixels total
 excursion, at most two between adjacent frames including the seam. Audited
 visible support-sole centers progress backward (screen right) in both stances:
 
-- Right 1–5: 15, 28, 31, 44.5, 50 artwork pixels.
-- Left 9–13: 13.5, 28.5, 33, 50, 51 artwork pixels.
+- Right 1–5: 15, 28.5, 31, 44.5, 50 artwork pixels.
+- Left 9–13: 14, 29, 33, 50, 51 artwork pixels.
 
 These are sole-span observations rather than ankle-joint tracks. Progression is
 uneven and is not calibrated to cancel actor displacement. Support-sole heights
@@ -96,3 +98,34 @@ walk regression suites pass (25 tests).
 Runtime integration is deferred pending artwork approval. Gameplay speed,
 collision, padded-bank loading and direction/idle transitions are unchanged
 by this standalone review package.
+
+
+## Revision 2 — folded-leg readability repair
+
+The first review exposed a boot-like dark trouser protrusion in frames 1, 2, 9
+and 10. Their recovering legs have been redrawn with slimmer, rounded knees,
+a clear shin-to-ankle connection and matte charcoal trousers separated from the
+brown leather boots. Both actual boots remain readable; there is no added
+sole-like edge beneath the coat.
+
+`revision_2/repair_reference.png` retains the four original full poses.
+`revision_2/folded_leg_correction.png` is the complete generated four-pose redraw;
+its provenance and original tool output path are recorded alongside it. The
+exporter samples those entire drawings at the existing density, then restores
+rows 0–47 from each exact same-phase original frame. The repair window is
+[0,48,56,76] in artwork pixels. This preserves the original face, arms, pouch,
+body registration and garment pixels above the repair boundary. The boundary
+and neighboring leg poses were inspected for coherent connections.
+
+All twelve other frame PNGs remain byte-identical. The four repaired upper
+regions are pixel-identical to their original snapshots. The exporter verifies
+both contracts on rebuild against `revision_2/protected_frames.json` and the
+retained `before/` snapshot. Crown positions, canvas, anchors and timing remain
+unchanged. Source/sheet/alpha/padding/GIF checks and all 217 external preservation
+hashes pass. Neither these checks nor the prior walk tests alone certify anatomy;
+the native drawings and lower-body comparison were visually reviewed.
+
+[Compare the previous and revised folded legs](folded_leg_comparison_v2.png).
+Previous frames, manifests and review images remain under `revision_2/before/`
+as superseded history. `preview_v2.gif` and `frames_v2.png` are the current review
+artifacts; the unversioned preview/sheet are aliases of the same revision.

@@ -1,0 +1,34 @@
+{
+  "revision": 2,
+  "reason": "Remove the third-foot impression caused by boot-like folded trouser knee/calf shapes in frames1/2/9/10.",
+  "original_generated_image": "/workspace/generated_images/exec-5f41cc68-63ca-4ddf-b8a5-55b9d637ba60.png",
+  "complete_redraw_source": "folded_leg_correction.png",
+  "sha256": "d7442ec6a65e89ead0b21fcdde980f28007bf2fde93b074e165acef15579c6f3",
+  "appearance_and_phase_reference": "repair_reference.png",
+  "cells_to_frames": [
+    1,
+    2,
+    9,
+    10
+  ],
+  "sampling": "Same .12 uniform whole-pose sampling and head/neck/belt registration as original exporter.",
+  "restoration": {
+    "source": "before/frame_NN.png",
+    "window_artwork": [
+      0,
+      0,
+      56,
+      48
+    ],
+    "reason": "Exact same-phase restoration of original face, arms, pouch, torso and garment details after full-character redraw. No independently timed parts, limb transforms or pose rigs."
+  },
+  "changed_window_artwork": [
+    0,
+    48,
+    56,
+    76
+  ],
+  "protected_snapshot_hashes": "protected_frames.json",
+  "approval": "pending_review",
+  "runtime_integration": false
+}

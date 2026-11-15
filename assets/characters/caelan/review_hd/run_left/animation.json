@@ -28,6 +28,7 @@
   "source_hashes": {
     "A.png": "aa142c5a50e36560b84e4e08cce0691b34b630f8c7a06ddaf324807b00aa2a6a",
     "guide_A.png": "3ba5e5e64d44b53f301f5e0d24d07836581f363bf8868440f28776b0c6edc2b8",
+    "revision_2/folded_leg_correction.png": "d7442ec6a65e89ead0b21fcdde980f28007bf2fde93b074e165acef15579c6f3",
     "B.png": "b53be0459263df574861fffeb42246f4684f0a25a04b53d6ec87fba4438a8e18",
     "guide_B.png": "a3a4d3e48bbe58997d03e67965e62d6996fc6a3bc06af82cfd45375b1d977409",
     "C.png": "dd96c7d6e3a6ca498b91d3f83ea774cca5269d8cedeb5d6006a2fceba1ceeca5",
@@ -40,7 +41,7 @@
     {
       "file": "frame_01.png",
       "duration_ms": 25,
-      "source": "A.png",
+      "source": "revision_2/folded_leg_correction.png",
       "cell": [
         0,
         0,
@@ -49,15 +50,15 @@
       ],
       "alpha_cutoff": 128,
       "source_bounds": [
-        139,
-        19,
-        499,
+        140,
+        17,
+        496,
         557
       ],
       "source_head_bounds": [
-        189,
-        19,
-        407,
+        186,
+        17,
+        406,
         190
       ],
       "uniform_scale": 0.12,
@@ -82,12 +83,19 @@
       "reflected_motion_guide": "guide_A.png",
       "guide_cell": 0,
       "approved_right_reference_frame": 9,
+      "repair_window": [
+        0,
+        48,
+        56,
+        76
+      ],
+      "preserved_upper_sha256": "9f4b6bfdc95c2bcceebb94ceeb4366df1ea1673ddcf308b343fd509d1d9ba898",
       "head_crown_y": 7
     },
     {
       "file": "frame_02.png",
       "duration_ms": 25,
-      "source": "A.png",
+      "source": "revision_2/folded_leg_correction.png",
       "cell": [
         627,
         0,
@@ -96,30 +104,30 @@
       ],
       "alpha_cutoff": 128,
       "source_bounds": [
-        196,
-        22,
+        193,
+        20,
         473,
-        559
+        560
       ],
       "source_head_bounds": [
-        196,
-        22,
+        193,
+        20,
         415,
         190
       ],
       "uniform_scale": 0.12,
       "origin": [
         15,
-        8
+        7
       ],
       "sampled_size": [
-        33,
-        64
+        34,
+        65
       ],
       "phase": "compression",
       "support_leg": "right",
       "support_ground_interval": [
-        22,
+        23,
         71,
         34
       ],
@@ -129,6 +137,13 @@
       "reflected_motion_guide": "guide_A.png",
       "guide_cell": 1,
       "approved_right_reference_frame": 10,
+      "repair_window": [
+        0,
+        48,
+        56,
+        76
+      ],
+      "preserved_upper_sha256": "3ee2e5cec93a5a588891c75907a64c88a03e267440f36c415ea0b747fcd9db62",
       "head_crown_y": 8
     },
     {
@@ -176,6 +191,8 @@
       "reflected_motion_guide": "guide_A.png",
       "guide_cell": 2,
       "approved_right_reference_frame": 11,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 6
     },
     {
@@ -223,6 +240,8 @@
       "reflected_motion_guide": "guide_A.png",
       "guide_cell": 3,
       "approved_right_reference_frame": 12,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 6
     },
     {
@@ -270,6 +289,8 @@
       "reflected_motion_guide": "guide_B.png",
       "guide_cell": 0,
       "approved_right_reference_frame": 13,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 7
     },
     {
@@ -313,6 +334,8 @@
       "reflected_motion_guide": "guide_B.png",
       "guide_cell": 1,
       "approved_right_reference_frame": 14,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 6
     },
     {
@@ -356,6 +379,8 @@
       "reflected_motion_guide": "guide_B.png",
       "guide_cell": 2,
       "approved_right_reference_frame": 15,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 6
     },
     {
@@ -403,29 +428,31 @@
       "reflected_motion_guide": "guide_B.png",
       "guide_cell": 3,
       "approved_right_reference_frame": 16,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 8
     },
     {
       "file": "frame_09.png",
       "duration_ms": 25,
-      "source": "C.png",
+      "source": "revision_2/folded_leg_correction.png",
       "cell": [
         0,
-        0,
         627,
-        627
+        627,
+        1254
       ],
       "alpha_cutoff": 128,
       "source_bounds": [
-        127,
-        18,
-        509,
-        551
+        125,
+        17,
+        508,
+        550
       ],
       "source_head_bounds": [
-        185,
-        18,
-        397,
+        183,
+        17,
+        398,
         190
       ],
       "uniform_scale": 0.12,
@@ -442,7 +469,7 @@
       "support_ground_interval": [
         8,
         70,
-        19
+        20
       ],
       "vertical_registration_offset": 5,
       "source_neck_reference_y": 205,
@@ -450,29 +477,36 @@
       "reflected_motion_guide": "guide_C.png",
       "guide_cell": 0,
       "approved_right_reference_frame": 1,
+      "repair_window": [
+        0,
+        48,
+        56,
+        76
+      ],
+      "preserved_upper_sha256": "01967ccf0a19abf5801718de463db332ca7556a9df7434e38f555215e0a56134",
       "head_crown_y": 7
     },
     {
       "file": "frame_10.png",
       "duration_ms": 25,
-      "source": "C.png",
+      "source": "revision_2/folded_leg_correction.png",
       "cell": [
         627,
-        0,
+        627,
         1254,
-        627
+        1254
       ],
       "alpha_cutoff": 128,
       "source_bounds": [
-        181,
+        180,
         27,
-        459,
+        460,
         550
       ],
       "source_head_bounds": [
-        184,
+        182,
         27,
-        395,
+        396,
         190
       ],
       "uniform_scale": 0.12,
@@ -481,7 +515,7 @@
         8
       ],
       "sampled_size": [
-        33,
+        34,
         63
       ],
       "phase": "compression",
@@ -489,7 +523,7 @@
       "support_ground_interval": [
         23,
         70,
-        34
+        35
       ],
       "vertical_registration_offset": 5,
       "source_neck_reference_y": 205,
@@ -497,6 +531,13 @@
       "reflected_motion_guide": "guide_C.png",
       "guide_cell": 1,
       "approved_right_reference_frame": 2,
+      "repair_window": [
+        0,
+        48,
+        56,
+        76
+      ],
+      "preserved_upper_sha256": "ac223741522a9a8b971f1a2683ba36db0fafb24253d9a23957b8ccd0ab73a9a6",
       "head_crown_y": 8
     },
     {
@@ -544,6 +585,8 @@
       "reflected_motion_guide": "guide_C.png",
       "guide_cell": 2,
       "approved_right_reference_frame": 3,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 7
     },
     {
@@ -591,6 +634,8 @@
       "reflected_motion_guide": "guide_C.png",
       "guide_cell": 3,
       "approved_right_reference_frame": 4,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 7
     },
     {
@@ -638,6 +683,8 @@
       "reflected_motion_guide": "guide_D.png",
       "guide_cell": 0,
       "approved_right_reference_frame": 5,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 7
     },
     {
@@ -681,6 +728,8 @@
       "reflected_motion_guide": "guide_D.png",
       "guide_cell": 1,
       "approved_right_reference_frame": 6,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 6
     },
     {
@@ -724,6 +773,8 @@
       "reflected_motion_guide": "guide_D.png",
       "guide_cell": 2,
       "approved_right_reference_frame": 7,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 6
     },
     {
@@ -771,8 +822,11 @@
       "reflected_motion_guide": "guide_D.png",
       "guide_cell": 3,
       "approved_right_reference_frame": 8,
+      "repair_window": null,
+      "preserved_upper_sha256": null,
       "head_crown_y": 8
     }
   ],
-  "processing": "Complete generated drawings; uniform nearest sampling, cranial horizontal registration, recorded whole-body vertical registration, shared palette and contour. No limb transforms."
+  "revision": 2,
+  "processing": "Complete generated drawings; uniform nearest sampling, cranial horizontal registration, recorded whole-body vertical registration, shared palette and contour. Frames1/2/9/10 retain exact same-phase upper rows0:48 after full-pose leg redraw. No limb transforms."
 }

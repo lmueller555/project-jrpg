@@ -27,6 +27,9 @@ def build():
     REVIEW.mkdir(parents=True, exist_ok=True)
     for path, expected in json.loads((SOURCE / 'protected_references.json').read_text()).items():
         assert digest(ROOT / path) == expected, path
+    protected_frames = json.loads((SOURCE / 'revision_2/protected_frames.json').read_text())
+    for filename, expected in protected_frames.items():
+        assert digest(SOURCE / 'revision_2/before' / filename) == expected, filename
     palette_path = ROOT / 'assets/source/characters/caelan/walk_right_hd_review/palette.json'
     palette = Image.new('P', (1, 1))
     colors = json.loads(palette_path.read_text())['rgb']
@@ -47,7 +50,18 @@ def build():
         for cell in range(4):
             rect = (cell % 2*w, cell // 2*h, (cell % 2+1)*w, (cell // 2+1)*h)
             source_name = path.name
-            drawing = _main_component(atlas.crop(rect))
+            repair_cell = {0: 0, 1: 1, 8: 2, 9: 3}.get(len(frames))
+            if repair_cell is not None:
+                source_name = 'revision_2/folded_leg_correction.png'
+                repair_path = SOURCE / source_name
+                hashes[source_name] = digest(repair_path)
+                repaired = Image.open(repair_path).convert('RGBA')
+                w, h = repaired.width // 2, repaired.height // 2
+                rect = (repair_cell % 2*w, repair_cell // 2*h,
+                        (repair_cell % 2+1)*w, (repair_cell // 2+1)*h)
+                drawing = _main_component(repaired.crop(rect))
+            else:
+                drawing = _main_component(atlas.crop(rect))
             bounds = drawing.getbbox()
             head = drawing.crop((0, 0, w, 190)).getbbox()
             center = (head[0] + head[2]) / 2
@@ -64,6 +78,13 @@ def build():
             frame.putalpha(alpha)
             frame = apply_outline(frame)
             index = len(frames)
+            filename = f'frame_{index+1:02}.png'
+            if repair_cell is not None:
+                # Restore the exact same phase's upper artwork after a complete
+                # generated redraw. No limb rotations, offsets or phase mixing.
+                preserved = Image.open(SOURCE / 'revision_2/before' / filename).convert('RGBA')
+                frame.paste(preserved.crop((0, 0, 56, 48)), (0, 0))
+                assert frame.crop((0, 0, 56, 48)).tobytes() == preserved.crop((0, 0, 56, 48)).tobytes()
             support_span = None
             if support[index] is not None:
                 sole_y = frame.getbbox()[3] - 1
@@ -71,8 +92,9 @@ def build():
                 # On these audited support poses the opposite boot is raised.
                 # This measures the visible sole, never positions/scales the art.
                 support_span = [min(sole_x), sole_y, max(sole_x)]
-            filename = f'frame_{index+1:02}.png'
             frame.save(OUT / filename)
+            if repair_cell is None:
+                assert digest(OUT / filename) == protected_frames[filename], filename
             frames.append(frame)
             records.append(dict(file=filename, duration_ms=25, source=source_name,
                 cell=list(rect), alpha_cutoff=128, source_bounds=list(bounds), source_head_bounds=list(head),
@@ -83,6 +105,9 @@ def build():
                 source_neck_reference_y=205, source_belt_reference_y=310,
                 reflected_motion_guide=f'guide_{batch}.png', guide_cell=cell,
                 approved_right_reference_frame=(index+8)%16+1,
+                repair_window=([0, 48, 56, 76] if repair_cell is not None else None),
+                preserved_upper_sha256=(hashlib.sha256(preserved.crop((0, 0, 56, 48)).tobytes()).hexdigest()
+                    if repair_cell is not None else None),
                 head_crown_y=frame.crop((0, 0, 56, 24)).getbbox()[1]))
     sheet = Image.new('RGBA', (56*16, 76))
     for i, frame in enumerate(frames):
@@ -93,7 +118,8 @@ def build():
         artwork_pixels_per_world_pixel=2, frame_size=[56, 76], logical_size=[28, 38],
         draw_anchor=[28, 64], foot_anchor=[28, 72], cycle_ms=400, loop=True,
         source_hashes=hashes, palette_sha256=digest(palette_path), frames=records,
-        processing='Complete generated drawings; uniform nearest sampling, cranial horizontal registration, recorded whole-body vertical registration, shared palette and contour. No limb transforms.')
+        revision=2,
+        processing='Complete generated drawings; uniform nearest sampling, cranial horizontal registration, recorded whole-body vertical registration, shared palette and contour. Frames1/2/9/10 retain exact same-phase upper rows0:48 after full-pose leg redraw. No limb transforms.')
     (OUT / 'animation.json').write_text(json.dumps(manifest, indent=2)+'\n')
     (SOURCE / 'registration.json').write_text(json.dumps(manifest, indent=2)+'\n')
     idle = Image.open(ROOT / 'assets/characters/caelan/review_hd/idles/idle_left.png').convert('RGBA')
@@ -108,6 +134,7 @@ def build():
         board.paste(big, (x, y), big)
         d.text((x, y+304), f'{i+1:02}  {records[i]["phase"]}', font=small, fill='#d4dbdf')
     board.save(REVIEW / 'frames.png')
+    board.save(REVIEW / 'frames_v2.png')
     preview = []
     for tick in range(32):
         im = Image.new('RGB', (800, 490), '#303940')
@@ -131,6 +158,18 @@ def build():
     gif_frames = [im.quantize(palette=gif_palette, dither=Image.Dither.NONE) for im in preview]
     gif_frames[0].save(REVIEW / 'preview.gif', save_all=True, append_images=gif_frames[1:],
         duration=[20, 30]*16, loop=0, disposal=2, optimize=False)
+    (REVIEW / 'preview_v2.gif').write_bytes((REVIEW / 'preview.gif').read_bytes())
+    comparison = Image.new('RGB', (720, 760), '#303940')
+    cd = ImageDraw.Draw(comparison)
+    cd.text((16, 12), 'FOLDED LEG REPAIR | Previous / Revised | Same movement phase', font=font, fill='#edf0e9')
+    for row, index in enumerate((0, 1, 8, 9)):
+        old = Image.open(SOURCE / 'revision_2/before' / f'frame_{index+1:02}.png').convert('RGBA')
+        for column, frame in enumerate((old, frames[index])):
+            x, y = 100+column*340, 48+row*176
+            lower = frame.crop((0, 40, 56, 76)).resize((224, 144), Image.Resampling.NEAREST)
+            comparison.paste(lower, (x, y), lower)
+            cd.text((x, y+144), f'Frame {index+1:02} | {"Previous" if column == 0 else "Revised"}', font=small, fill='#d4dbdf')
+    comparison.save(REVIEW / 'folded_leg_comparison_v2.png')
     print('Exported left-run candidate: 16 frames / 400ms; runtime unchanged.')
 
 
