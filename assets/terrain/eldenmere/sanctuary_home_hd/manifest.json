@@ -1,0 +1,332 @@
+{
+  "version": 1,
+  "status": "integrated",
+  "artwork_pixels_per_world_pixel": 2,
+  "rooms": {
+    "hall": {
+      "map": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+      "logical_size": [
+        336,
+        336
+      ],
+      "collision_sha256": "12a1bee871757f74ae743d17bf96d08d8c0e4063927b5a5bcb1a98cc5f063025",
+      "ground": "assets/terrain/eldenmere/sanctuary_home_hd/hall/ground.png"
+    },
+    "bedroom": {
+      "map": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+      "logical_size": [
+        288,
+        336
+      ],
+      "collision_sha256": "a4f796d45cab28ba839b724be5aea813a543424d9d1e62a8f3603bfe45154a9f",
+      "ground": "assets/terrain/eldenmere/sanctuary_home_hd/bedroom/ground.png"
+    }
+  },
+  "props": [
+    {
+      "id": "notices",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png",
+      "cell": 0,
+      "logical_size": [
+        32,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        32,
+        24
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/notices.png",
+      "artwork_size": [
+        64,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "bookcase",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png",
+      "cell": 1,
+      "logical_size": [
+        36,
+        60
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        36,
+        60
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/bookcase.png",
+      "artwork_size": [
+        72,
+        120
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "herbs",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png",
+      "cell": 2,
+      "logical_size": [
+        24,
+        18
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        18
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/herbs.png",
+      "artwork_size": [
+        48,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "bookstand",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png",
+      "cell": 3,
+      "logical_size": [
+        24,
+        36
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/bookstand.png",
+      "artwork_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "rug",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+      "cell": 4,
+      "logical_size": [
+        48,
+        36
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        48,
+        36
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/rug.png",
+      "artwork_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "mending",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png",
+      "cell": 5,
+      "logical_size": [
+        24,
+        20
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        20
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/mending.png",
+      "artwork_size": [
+        48,
+        40
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "boots",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png",
+      "cell": 6,
+      "logical_size": [
+        14,
+        14
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        14,
+        14
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/boots.png",
+      "artwork_size": [
+        28,
+        28
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "bed",
+      "legacy_path": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+      "cell": 7,
+      "logical_size": [
+        48,
+        72
+      ],
+      "logical_bounds": [
+        8,
+        6,
+        40,
+        66
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/bed.png",
+      "artwork_size": [
+        96,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "notes",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+      "cell": 8,
+      "logical_size": [
+        40,
+        20
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        40,
+        20
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/notes.png",
+      "artwork_size": [
+        80,
+        40
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "drawing",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/family_drawing.png",
+      "cell": 9,
+      "logical_size": [
+        32,
+        28
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        32,
+        28
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/drawing.png",
+      "artwork_size": [
+        64,
+        56
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "chest",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/clothes_chest.png",
+      "cell": 10,
+      "logical_size": [
+        36,
+        24
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        36,
+        24
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/chest.png",
+      "artwork_size": [
+        72,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "clean_clothes",
+      "legacy_path": "assets/terrain/eldenmere/sanctuary_interior/props/folded_clothes.png",
+      "cell": 11,
+      "logical_size": [
+        24,
+        16
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        24,
+        16
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/clean_clothes.png",
+      "artwork_size": [
+        48,
+        32
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "preparation_list",
+      "legacy_path": "assets/characters/serene/routines/props/preparation_list.png",
+      "cell": 8,
+      "logical_size": [
+        7,
+        8
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        7,
+        8
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/preparation_list.png",
+      "artwork_size": [
+        14,
+        16
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    {
+      "id": "folded_linen",
+      "legacy_path": "assets/characters/serene/routines/props/folded_linen.png",
+      "cell": 15,
+      "logical_size": [
+        5,
+        4
+      ],
+      "logical_bounds": [
+        0,
+        0,
+        5,
+        4
+      ],
+      "image": "assets/terrain/eldenmere/sanctuary_home_hd/props/folded_linen.png",
+      "artwork_size": [
+        10,
+        8
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    }
+  ],
+  "shared_bank": "assets/terrain/eldenmere/sanctuary_dining_hd/manifest.json",
+  "recipe": "assets/source/terrain/eldenmere/sanctuary_home_hd/recipe.json",
+  "source_sha256": "578f4939ff268c28a1a13d5d0aa66fcbe97b6a98829bc1815f121e194cb05e9c",
+  "doors": [
+    "assets/terrain/eldenmere/sanctuary_home_hd/doors/frame_01.png",
+    "assets/terrain/eldenmere/sanctuary_home_hd/doors/frame_02.png",
+    "assets/terrain/eldenmere/sanctuary_home_hd/doors/frame_03.png",
+    "assets/terrain/eldenmere/sanctuary_home_hd/doors/frame_04.png",
+    "assets/terrain/eldenmere/sanctuary_home_hd/doors/frame_05.png"
+  ],
+  "character_banks_migrated": false
+}
