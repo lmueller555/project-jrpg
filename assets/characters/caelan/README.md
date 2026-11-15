@@ -8,6 +8,14 @@ design reference for the upcoming higher-density walking/running work. Their
 runtime integration is pending; the current player still selects the legacy
 bank described below. See the [approval and previews](../../../docs/reviews/caelan_hd_idles/README.md).
 
+## Approved higher-density right walk
+
+The [right-facing walk pack](review_hd/walk_right/animation.json) is user-approved
+and merged: sixteen complete **48×72** drawings, **35 ms** each, retaining the
+existing **560 ms** cycle. Use it as the motion reference for the remaining
+directions while preserving their anatomical costume sides. Runtime integration
+remains pending. See the [approved cycle and source notes](../../../docs/reviews/caelan_right_walk_hd/README.md).
+
 ## Current runtime bank
 
 The overworld quality refresh replaces the four directional idles, sixteen walk

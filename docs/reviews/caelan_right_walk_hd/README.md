@@ -1,6 +1,6 @@
-# Caelan right-facing walk — review candidate
+# Caelan right-facing walk — approved
 
-**Not approved, merged or runtime-integrated.** This pack contains sixteen
+**User-approved and merged asset pack; runtime integration remains pending.** This pack contains sixteen
 complete authored 48×72 right-facing drawings, preserving the 24×36 logical
 canvas and the existing 560 ms walking cadence (16 × 35 ms).
 
@@ -92,6 +92,6 @@ PYTHONPATH=.:tests python -m unittest test_caelan_right_walk_hd
 ```
 
 Exported candidate frames, sheet and manifest are in
-`assets/characters/caelan/review_hd/walk_right/`. User review comes before any
-merge or runtime activation. Other walk directions, running and action poses
-are outside this pack.
+`assets/characters/caelan/review_hd/walk_right/`. User approval covers these
+sixteen exact drawings and their cycle. Other walk directions, running,
+action poses and runtime activation remain subsequent work.
