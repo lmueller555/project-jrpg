@@ -40,6 +40,14 @@ through the sampled stance. This is a rolling contact proxy, not an ankle-lock
 measurement. The integration preserves approved art,560ms timing and gameplay
 speed; stride refinement is separate artwork work.
 
+## Upcoming HD runs
+
+Use the [running animation standard](../../../docs/VISUAL_ART_STANDARD.md#running-animations)
+for the right-facing design and subsequent directions. It owns the near/far
+phase plan, natural limb flexion, support/flight, posture, sizing and review.
+Its HD run specification is a future authoring target; current runtime runs
+remain the legacy bank listed above. Walking is already approved and integrated.
+
 ## Sources and rebuilds
 
 Sources and exact registration remain alongside the existing approved packs:

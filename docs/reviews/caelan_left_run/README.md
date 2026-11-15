@@ -1,18 +1,23 @@
-# Caelan left facing run — approved
+# Caelan left-facing run — historical approval record
 
-The user approved the revised left-facing run with a 1–2 pixel wider arm swing.
-Four native 24×36 RGBA poses play at 100 ms each, with foot anchor [12,34].
-Bent opposing arms, forward lean, folded recovery legs and two flight poses distinguish it from walking.
-Shoulders remain anchored. The head, torso, legs and timing match the initial reviewed proposal.
+New or revised runs follow the [running animation standard](../../VISUAL_ART_STANDARD.md#running-animations).
+This page retains the original review evidence and local asset facts. Its
+four-pose format and old layered source are not construction guidance for new
+animations. See the [current Caelan asset inventory](../../../assets/characters/caelan/README.md)
+for runtime registration and the later retained legacy bank.
 
-- [Walk beside approved run](walk-vs-run.gif): independent 140 ms walk and 100 ms run clocks.
-- [Slow comparison](walk-vs-run-slow.gif): corresponding poses held for 350 ms.
-- [Four poses](run-poses.png).
+The original review approved a left-facing run with a 1–2 pixel wider arm
+swing: four native 24×36 RGBA poses at100 ms each, foot anchor `[12,34]`. Bent
+opposing arms, forward lean, folded recovery legs and two flight poses
+communicated the run in that historical pack.
 
-Native frames and strip: `assets/characters/caelan/run_left/`.
-Editable layers: `assets/source/characters/caelan/run_left/`.
-Rebuild: `python tools/build_caelan_left_run.py` (Pillow).
-Validate: `python -m unittest discover -s tests -p test_caelan_left_run.py -v`.
+- [Original walk/run comparison](walk-vs-run.gif): independent140 ms walk and100 ms run clocks.
+- [Slow comparison](walk-vs-run-slow.gif): corresponding poses held 350 ms.
+- [Original four poses](run-poses.png).
 
-This commits approved animation art only. Other running directions and player run selection remain future work.
-`approval.json` records the approved native frame hashes and unchanged pre-existing Caelan assets.
+`approval.json` retains the reviewed native-frame hashes and protected inputs.
+Source evidence remains under `assets/source/characters/caelan/run_left/`.
+The later authored legacy runtime files live under
+`assets/characters/caelan/run_left/`; the old approval does not automatically
+approve subsequent replacement artwork. Historical builders and approval
+records are retained for reproduction, not as the current authoring workflow.

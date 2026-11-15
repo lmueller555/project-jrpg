@@ -1,21 +1,25 @@
-# Caelan directional runs — approved
+# Caelan directional runs — historical approval record
 
-Front, right and back runs were approved by the user after the four-direction preview.
-The existing approved left run is retained exactly. Each direction has four native
-24×36 RGBA frames, 100 ms per pose and foot anchor [12,34].
+New or revised runs follow the [running animation standard](../../VISUAL_ART_STANDARD.md#running-animations).
+This page preserves the original four-direction review, not a template for
+building new limbs or a statement of the current runtime bank's approval.
+See the [current Caelan asset inventory](../../../assets/characters/caelan/README.md)
+for the retained legacy runs and planned HD work.
 
-- [All four runs](all-directions.gif) · [slow pose inspection](all-directions-slow.gif).
-- [Front poses](front-poses.png) · [Right poses](right-poses.png) · [Back poses](back-poses.png).
+The original front, right and rear runs were approved after the four-direction
+preview; that review retained its approved left run. Each historical direction
+used four 24×36 RGBA frames,100 ms per pose and foot anchor `[12,34]`.
 
-Right-facing limbs share the approved left geometry; its own idle provides the head
-and costume. Front and back use foreshortening, opposing bent arms and alternating
-contact/flight. Native assets live in `assets/characters/caelan/run_DIRECTION/`.
-Editable source layers are four-cell strips under
-`assets/source/characters/caelan/run_DIRECTION/`; each cell is 24×36 and layer order
-is recorded in each animation's per-frame metadata.
+- [Original all-direction comparison](all-directions.gif) · [slow inspection](all-directions-slow.gif).
+- [Front poses](front-poses.png) · [Right poses](right-poses.png) · [Rear poses](back-poses.png).
 
-Rebuild with `python tools/build_caelan_directional_runs.py` (Pillow).
-Validate with `python -m unittest discover -s tests -p 'test_caelan*run*.py' -v`.
-`approval.json` retains the reviewed frame hashes and protected original assets.
+`approval.json` retains the original reviewed-frame hashes and protected inputs.
+The old four-cell layered sources remain under
+`assets/source/characters/caelan/run_DIRECTION/` as historical evidence. Their
+part assembly and reflected geometry are superseded as authoring instructions
+by the complete-drawing workflow in the central standard. Approval evidence,
+previews and source assets are unchanged.
 
-These are animation assets. Player selection of run frames is a separate runtime change.
+The current runtime already selects four-direction legacy runs; the old
+statement that player run selection was future work is obsolete. This cleanup
+changes documentation only and does not replace any runtime frame or builder.

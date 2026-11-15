@@ -12,7 +12,9 @@ Existing command descriptions and frame dimensions below describe their current
 exports. During scoped migrations, update their density/anchor metadata and
 runtime status using the central guide rather than interpreting old pixel
 dimensions as new global limits. Older part/mask/layer builders remain
-for reproducing approved assets, not as the construction method for new walks.
+for reproducing approved assets, not as the construction method for new walks or runs.
+Use the [running animation standard](../docs/VISUAL_ART_STANDARD.md#running-animations)
+for near/far coupling, support/flight phases and run-specific review.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.
 
