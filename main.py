@@ -14,6 +14,8 @@ try:
 except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
+from rendering import scale as render_scale, immutable, record_art
+
 from npc_routines import Gardener, RoutineNPC
 from daisy_routine import DaisyRoutine
 from liam_daisy_play import PlayActor, LiamDaisyPlay
@@ -90,7 +92,7 @@ class Door:
     """A reversible proximity animation and directional doorway contact sensor."""
     def __init__(self,record,world):
         self.data=record
-        self.frames=[world.image(p) for p in record['frames']]
+        self.frames=[world.art_image(p,record,default_density=world.art_density) for p in record['frames']]
         self.progress=0.0
         self.target_open=False
 
@@ -183,7 +185,7 @@ class StationaryNPC:
         self.data=record
         self.position=pygame.Vector2(record['position'])
         self.draw_anchor=record['draw_anchor']
-        self._sprite=world.image(record['sprite'])
+        self._sprite=world.art_image(record['sprite'],record)
         width,height=record['probe_size']
         self.blocker=pygame.Rect(round(self.position.x)-width//2,
                                  round(self.position.y)-height//2,width,height)
@@ -198,7 +200,8 @@ class World:
         self.data=read_json(path)
         self.size=tuple(self.data['size_pixels'])
         self._images={} if image_cache is None else image_cache
-        self.ground=[self.image(p,False) for p in self.data['ground_frames']]
+        self.art_density=self.data.get('artwork_pixels_per_world_pixel',1)
+        self.ground=[self.art_image(p,self.data,False) for p in self.data['ground_frames']]
         collision=self.image(self.data['collision'],False)
         # Collision exports are monochrome, so white pixels block and black
         # pixels remain walkable. Do not use alpha (the mask is opaque).
@@ -208,9 +211,9 @@ class World:
         self._probes={self.probe_size:self.probe}
         self.entities=[]
         for record in self.data['entities']:
-            frames=[self.image(p) for p in record['frames']]
+            frames=[self.art_image(p,record,default_density=self.art_density) for p in record['frames']]
             self.entities.append({**record,'surfaces':frames,'rect':frames[0].get_rect(topleft=record['position'])})
-        self.foreground=[(self.image(r['image']),tuple(r['position'])) for r in self.data['foreground']]
+        self.foreground=[(self.art_image(r['image'],r,default_density=self.art_density),tuple(r['position'])) for r in self.data['foreground']]
         self.overview=self.image(self.data['overview'],False)
         self.doors=[Door(record,self) for record in self.data.get('doors',[])]
         self.well=DrawingWell(self) if any(r['id']=='well' for r in self.entities) else None
@@ -263,8 +266,13 @@ class World:
         key=(path,alpha)
         if key not in self._images:
             image=pygame.image.load(str(ROOT/path))
-            self._images[key]=image.convert_alpha() if alpha else image.convert()
+            self._images[key]=immutable(image.convert_alpha() if alpha else image.convert())
         return self._images[key]
+
+    def art_image(self,path,record=None,alpha=True,default_density=1):
+        if isinstance(path,dict):
+            record={**(record or {}),**path};path=path['file']
+        return record_art(self.image(path,alpha),record,default_density)
 
     def probe_rect(self,position,size=None):
         width,height=self.probe_size if size is None else size
@@ -295,7 +303,7 @@ class World:
         if entity is None:raise KeyError(identifier)
         if state not in entity.get('state_images',{}):raise ValueError(f'Unknown state {state!r} for {identifier}')
         if entity.get('reserved_by') not in (None,owner):return False
-        path=entity['state_images'][state];surface=self.image(path)
+        path=entity['state_images'][state];surface=self.art_image(path,entity,default_density=self.art_density)
         if surface.get_size()!=entity['surfaces'][0].get_size():raise ValueError('Prop states must share frame dimensions')
         entity.update(state=state,frames=[path],surfaces=[surface])
         raw=next(e for e in self.data['entities'] if e['id']==identifier)
@@ -378,13 +386,15 @@ class Player:
         self.motion_trace=[]
         self.motion_weights=[]
         self.walk_ms=0.0
-        self.idles={d:world.image(f'assets/characters/caelan/idle_{d}.png') for d in ('front','left','right','back')}
+        self.art_metadata=(read_json(ROOT/'assets/characters/caelan/animation.json')
+                           if (ROOT/'assets/characters/caelan/animation.json').exists() else {})
+        self.idles={d:world.art_image(f'assets/characters/caelan/idle_{d}.png',self.art_metadata) for d in ('front','left','right','back')}
         self.walks={};self.runs={}
         for gait,animations in (('walk',self.walks),('run',self.runs)):
             for direction in self.idles:
                 folder=ROOT/f'assets/characters/caelan/{gait}_{direction}'
                 metadata=read_json(folder/'animation.json')
-                animations[direction]=[(world.image((folder/r['file']).relative_to(ROOT).as_posix()),r['duration_ms'])
+                animations[direction]=[(world.art_image((folder/r['file']).relative_to(ROOT).as_posix(),{**self.art_metadata,**metadata}),r['duration_ms'])
                                        for r in metadata['frames']]
         if not world.can_stand(self.position):raise ValueError('Player spawn is blocked')
 
@@ -493,7 +503,7 @@ class Game:
         self.elapsed_ms=0.0
         self.map_open=False
         self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
-        self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
+        self.map_image=render_scale(self.world.overview,self.map_size)
         self._setup_persistent_npcs()
         for scene_id in self.town.data.get('ambient_scenes',[]):self._scene_by_id(scene_id)
         self.play_routines=[]
@@ -2178,8 +2188,7 @@ class Game:
         self.opening.draw_world(self.canvas,camera)
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
         _,size,origin=self._ensure_ui_surface()
-        pygame.transform.scale(self.canvas,size,self.ui_surface)
-        self.canvas.present_detail(self.ui_surface)
+        render_scale(self.canvas,size,self.ui_surface)
         for routine in getattr(self.world,'play_routines',[]):
             routine.draw(self.ui_surface,camera,self.world)
         if not self._is_gallery_preview and not self.elemental_bosses.acquisition_active:

@@ -1,11 +1,13 @@
 """Encounter battle views, compact party status and contextual guidance."""
 from __future__ import annotations
+from rendering import layer as render_layer, record_art, immutable
 
 import json
 import math
 from pathlib import Path
 
 import pygame
+from rendering import draw as render_draw, scale as render_scale, rotate as render_rotate
 
 from gear_widget import GearWidget
 from gear_state import GEM_NAMES, GEM_COLORS
@@ -85,6 +87,7 @@ class CombatSprites:
                 surface = pygame.image.load(str(folder/filename)).convert_alpha()
                 if surface.get_size() != tuple(canvas):
                     raise ValueError('Combat animation frames must share their canvas')
+                surface=record_art(immutable(surface),data)
                 frames.append((surface, duration))
                 anchors = record.get('anchors', {})
                 if (not isinstance(anchors, dict)
@@ -93,7 +96,8 @@ class CombatSprites:
                                    or not math.isfinite(value) for value in point)
                                for name, point in anchors.items())):
                     raise ValueError('Invalid combat animation anchors')
-                frame_points.append({name: tuple(point) for name, point in anchors.items()})
+                density=data.get('artwork_pixels_per_world_pixel',1)
+                frame_points.append({name: tuple(v/density for v in point) for name, point in anchors.items()})
             if not frames or type(animation['loop']) is not bool:
                 raise ValueError('Invalid combat animation')
             animations[state] = (frames, animation['loop'])
@@ -105,7 +109,7 @@ class CombatSprites:
         idle = [frame.get_bounding_rect() for frame, _ in animations['idle'][0]
                 if frame.get_bounding_rect().width]
         idle_bounds = idle[0].unionall(idle[1:]) if idle else bounds
-        self.actors[actor] = {'anchor': tuple(anchor), 'animations': animations,
+        self.actors[actor] = {'anchor': tuple(v/data.get('artwork_pixels_per_world_pixel',1) for v in anchor), 'animations': animations,
                              'bounds': bounds, 'idle_bounds': idle_bounds,
                              'frame_anchors': points,
                              'timing': {state: {'contact_ms': entry.get('contact_ms')}
@@ -184,8 +188,8 @@ class BattleScene:
         self._popups = []
         self._reactions = {}
         self.action_fx = BattleActionEffects()
-        self._elemental_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
-        self._rig_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
+        self._elemental_layer = render_layer((480, 320), pygame.SRCALPHA)
+        self._rig_layer = render_layer((480, 320), pygame.SRCALPHA)
         motion_frame('plant', 0, armed=model.weapon_equipped)
         self.action_audio = BattleActionAudio(game)
         self.lucan_fx = LucanSkillEffects()
@@ -301,6 +305,9 @@ class BattleScene:
     def _make_background(path=COMBAT_ART/'eldenmere/background.png'):
         """Load the authored well-side clearing once at its native pixel size."""
         image = pygame.image.load(str(path))
+        metadata_path=Path(path).parent/'battlefield.json'
+        metadata=json.loads(metadata_path.read_text()) if metadata_path.exists() else {}
+        image=record_art(immutable(image),metadata)
         if image.get_size() != (480, 320):
             raise ValueError('Eldenmere battlefield must be 480 by 320 pixels')
         return image.convert()
@@ -311,7 +318,7 @@ class BattleScene:
         image = pygame.image.load(str(path)).convert_alpha()
         if image.get_size() != (24, 12):
             raise ValueError('Eldenmere foreground grass must be 24 by 12 pixels')
-        return tuple(pygame.transform.rotate(image, angle) for angle in (-4, 0, 4))
+        return tuple(render_rotate(image, angle) for angle in (-4, 0, 4))
 
     def _draw_foreground(self, canvas):
         if not self._grass:return
@@ -334,8 +341,8 @@ class BattleScene:
                                    ('nivareth', (54, 8), 34),
                                    ('vespermaw', (126, 17), 65)):
             image = pygame.Surface(size, pygame.SRCALPHA)
-            pygame.draw.ellipse(image, (31, 43, 29, opacity//2), image.get_rect())
-            pygame.draw.ellipse(image, (31, 43, 29, opacity), image.get_rect().inflate(-8, -2))
+            render_draw.ellipse(image, (31, 43, 29, opacity//2), image.get_rect())
+            render_draw.ellipse(image, (31, 43, 29, opacity), image.get_rect().inflate(-8, -2))
             shadows[key] = image
         return shadows
 
@@ -346,12 +353,12 @@ class BattleScene:
             image, ground_y = self._shadows['tusker'], round(point.y)
             factor = self._actor_scale(actor)/2
             if factor != 1:
-                image = pygame.transform.scale(image, (max(1, round(image.get_width()*factor)),
+                image = render_scale(image, (max(1, round(image.get_width()*factor)),
                                                        max(1, round(image.get_height()*factor))))
         elif self._sprite(actor) in CAVE_ENEMIES:
             image = self._shadows[self._sprite(actor)]
             factor = self._actor_scale(actor)/2
-            image = pygame.transform.scale(image, (max(1, round(image.get_width()*factor)),
+            image = render_scale(image, (max(1, round(image.get_width()*factor)),
                                                    max(1, round(image.get_height()*factor))))
             ground_y = round(point.y)
         else:
@@ -359,7 +366,7 @@ class BattleScene:
             ground_y = round(self._home_positions()[actor].y+(0 if self._group or self._cave_field is not None else 14))
             image = self._shadows['enemy_low' if point.y > 177 else 'enemy_high']
             if self._group or self._actor_scale(actor) != 2:
-                image = pygame.transform.scale(image, (max(1, round(image.get_width()*self._actor_scale(actor)/2)),
+                image = render_scale(image, (max(1, round(image.get_width()*self._actor_scale(actor)/2)),
                                                        max(1, round(image.get_height()*self._actor_scale(actor)/2))))
         canvas.blit(image, (round(point.x)-image.get_width()//2,
                             ground_y-image.get_height()//2))
@@ -787,7 +794,7 @@ class BattleScene:
             state, time = self._pose(actor)
             image, anchor = self.sprites.frame(self._sprite(actor), state, time)
             scale = self._actor_scale(actor)
-            rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)),
+            rendered = render_scale(image, (max(1, round(image.get_width()*scale)),
                                                        max(1, round(image.get_height()*scale))))
             point = positions[actor]
             origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
@@ -1677,7 +1684,7 @@ class BattleScene:
                     from gearblade_art import combat_frame
                     image, anchor = combat_frame(image, state, time, owned_gems=self.model.owned_gems)
             scale = self._actor_scale(actor)
-            rendered = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
+            rendered = render_scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             origin = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
             body = rendered.get_bounding_rect().move(origin)
             if sprite=='vespermaw' and self.channel_art is not None:
@@ -1757,8 +1764,8 @@ class BattleScene:
         if action is not None and action.kind == 'enchant':
             point = positions[action.actor]+(0, -34)
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
-            pygame.draw.circle(canvas, '#5da9e9', (round(point.x), round(point.y)), 15+pulse, 1)
-            pygame.draw.circle(canvas, '#b1e4ff', (round(point.x), round(point.y)-18), 2)
+            render_draw.circle(canvas, '#5da9e9', (round(point.x), round(point.y)), 15+pulse, 1)
+            render_draw.circle(canvas, '#b1e4ff', (round(point.x), round(point.y)-18), 2)
         self._draw_mira_effects(canvas)
         self._draw_rig_skill_effects(canvas, positions)
         self._draw_rig_barriers(canvas, positions)
@@ -1782,7 +1789,7 @@ class BattleScene:
             point = start.lerp(end, fraction)
             for index, radius in enumerate((5, 3, 1)):
                 color = ('#376ea2', '#72c8f0', '#d8f7ff')[index]
-                pygame.draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
+                render_draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
         self._draw_foreground(canvas)
 
     def _draw_channel_stream(self,canvas,actor,point,scale,*,foreground):
@@ -1827,7 +1834,7 @@ class BattleScene:
             colors=CONFLUENCE_COLORS.get(getattr(self.model,'vespermaw_element','water'),
                                          CONFLUENCE_COLORS['water'])
             # Small attached throat light remains static under reduced motion.
-            pygame.draw.circle(canvas, colors[1], (round(origin.x), round(origin.y)), 3, 1)
+            render_draw.circle(canvas, colors[1], (round(origin.x), round(origin.y)), 3, 1)
             for _, target in geometry['targets']:
                 if self.reduced_motion:
                     if fraction < 1:continue
@@ -1838,7 +1845,7 @@ class BattleScene:
                 for offset, color in ((0, colors[1]), (3, colors[2])):
                     rect = pygame.Rect(round(center.x-radius/2-offset), round(center.y-radius-offset),
                                        radius+offset*2, radius*2+offset*2)
-                    pygame.draw.arc(canvas, color, rect, -1.15, 1.15, 1)
+                    render_draw.arc(canvas, color, rect, -1.15, 1.15, 1)
         finally:
             canvas.set_clip(previous)
 
@@ -1872,7 +1879,7 @@ class BattleScene:
         target = action.actor if kind == 'escape' else action.target
         if target not in positions:return
         if not hasattr(self, '_item_layer'):
-            self._item_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
+            self._item_layer = render_layer((480, 320), pygame.SRCALPHA)
         layer = self._item_layer;layer.fill((0, 0, 0, 0))
         layer.set_clip(pygame.Rect(0, 35, 480, max(1, self.panel_rect.top-35)))
         center = self._hit_point(target, positions)
@@ -1881,17 +1888,17 @@ class BattleScene:
                else (245, 208, 111) if kind == 'revive' else (125, 226, 157))
         alpha = round(190*(1-progress*.6))
         if self.reduced_motion:
-            pygame.draw.circle(layer, (*rgb, alpha), (round(center.x), round(center.y)), 12, 2)
+            render_draw.circle(layer, (*rgb, alpha), (round(center.x), round(center.y)), 12, 2)
         elif kind == 'escape':
             for index in range(7):
                 point = center+pygame.Vector2((index-3)*(5+progress*5), -progress*index*3)
-                pygame.draw.circle(layer, (*rgb, alpha//2), (round(point.x), round(point.y)), 8+round(progress*12))
+                render_draw.circle(layer, (*rgb, alpha//2), (round(point.x), round(point.y)), 8+round(progress*12))
         else:
             for index in range(8):
                 angle = index*math.tau/8+progress*1.3
                 point = center+pygame.Vector2(math.cos(angle), math.sin(angle))*(10+progress*15)
-                pygame.draw.circle(layer, (*rgb, alpha), (round(point.x), round(point.y)), 2)
-            pygame.draw.circle(layer, (*rgb, alpha//2), (round(center.x), round(center.y)), 9+round(progress*10), 1)
+                render_draw.circle(layer, (*rgb, alpha), (round(point.x), round(point.y)), 2)
+            render_draw.circle(layer, (*rgb, alpha//2), (round(center.x), round(center.y)), 9+round(progress*10), 1)
         canvas.blit(layer, (0, 0))
 
     def _draw_elemental_effects(self, canvas, positions):
@@ -1934,7 +1941,7 @@ class BattleScene:
                 fraction = age/.5
                 alpha = round((1-fraction)*190)
                 if self.reduced_motion:
-                    pygame.draw.circle(layer, (195, 235, 245, alpha),
+                    render_draw.circle(layer, (195, 235, 245, alpha),
                                        (round(point.x), round(point.y)), 7, 1)
                     continue
                 for index in range(7):
@@ -1942,13 +1949,13 @@ class BattleScene:
                     x = point.x+spread+math.sin(index*1.7+fraction*2)*3
                     y = point.y-4-fraction*(10+index%3*4) if steam else point.y+fraction*(9+index%3*3)
                     if steam:
-                        pygame.draw.circle(layer, (215, 235, 238, alpha),
+                        render_draw.circle(layer, (215, 235, 238, alpha),
                                            (round(x), round(y)), 2+index%2)
                     else:
-                        pygame.draw.line(layer, (196, 238, 250, alpha),
+                        render_draw.line(layer, (196, 238, 250, alpha),
                                          (round(x), round(y-2)), (round(x), round(y+2)), 1)
                         if index%2 == 0:
-                            pygame.draw.circle(layer, (248, 165, 86, alpha),
+                            render_draw.circle(layer, (248, 165, 86, alpha),
                                                (round(x+2), round(y-4)), 1)
             canvas.blit(layer, (0, 0))
         finally:
@@ -1971,15 +1978,15 @@ class BattleScene:
                 direction = pygame.Vector2(shot['target']) - pygame.Vector2(shot['origin'])
                 direction = direction.normalize() if direction.length_squared() else pygame.Vector2(-1, 0)
                 tail = point-direction*7
-                pygame.draw.line(canvas, '#bd8751', tuple(round(n) for n in tail),
+                render_draw.line(canvas, '#bd8751', tuple(round(n) for n in tail),
                                  tuple(round(n) for n in point), 2)
-                pygame.draw.line(canvas, '#f1cd77', tuple(round(n) for n in point-direction*3),
+                render_draw.line(canvas, '#f1cd77', tuple(round(n) for n in point-direction*3),
                                  tuple(round(n) for n in point), 1)
             if shot['flash'] and not self.reduced_motion:
                 x, y = (round(n) for n in shot['muzzle'])
                 # A small spring-release glint, not a firearm's fireball.
-                pygame.draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
-                pygame.draw.line(canvas, '#f8f0d9', (x-3, y+2), (x-1, y+1), 1)
+                render_draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
+                render_draw.line(canvas, '#f8f0d9', (x-3, y+2), (x-1, y+1), 1)
     def _rig_skill_geometry(self, positions=None):
         """Read-only skill attachments sampled from the authoritative action."""
         action = self.model.current_action
@@ -2015,27 +2022,27 @@ class BattleScene:
         def point(value):return round(value[0]), round(value[1])
         if action.elapsed < action.impact_at:
             strength = min(1., action.elapsed/max(.001, geometry['release_at']))
-            pygame.draw.circle(layer, (*color, 80), point(attachment), 3+round(strength*2), 1)
-            pygame.draw.circle(layer, (*color, 235), point(attachment), 1)
+            render_draw.circle(layer, (*color, 80), point(attachment), 3+round(strength*2), 1)
+            render_draw.circle(layer, (*color, 235), point(attachment), 1)
             if not self.reduced_motion:
                 for index in range(3):
                     angle = index*math.tau/3+action.elapsed*5
                     mote = attachment+pygame.Vector2(math.cos(angle), math.sin(angle))*(6-strength*3)
-                    pygame.draw.circle(layer, (*color, 155), point(mote), 1)
+                    render_draw.circle(layer, (*color, 155), point(mote), 1)
         if fraction is not None:
             projectile = origin.lerp(target, fraction)
             if key in ('charged_bolt', 'impact_bolt'):
                 direction = target-origin
                 direction = direction.normalize() if direction.length_squared() else pygame.Vector2(-1, 0)
-                pygame.draw.line(layer, (*color, 230), point(projectile-direction*9), point(projectile), 2)
-                pygame.draw.line(layer, (255, 247, 215, 245), point(projectile-direction*3), point(projectile), 1)
+                render_draw.line(layer, (*color, 230), point(projectile-direction*9), point(projectile), 2)
+                render_draw.line(layer, (255, 247, 215, 245), point(projectile-direction*3), point(projectile), 1)
             elif key == 'repair_pulse':
                 if not self.reduced_motion:
-                    pygame.draw.line(layer, (*color, 55), point(origin), point(target), 1)
+                    render_draw.line(layer, (*color, 55), point(origin), point(target), 1)
                     for index in range(4):
                         mote = origin.lerp(target, max(0., min(1., fraction-index*.12)))
-                        pygame.draw.circle(layer, (*color, 225-index*35), point(mote), 1)
-                else:pygame.draw.circle(layer, (*color, 175), point(target), 9, 1)
+                        render_draw.circle(layer, (*color, 225-index*35), point(mote), 1)
+                else:render_draw.circle(layer, (*color, 175), point(target), 9, 1)
             elif key == 'arc_discharge':
                 nodes = [point(origin)]
                 for index in range(1, 7):
@@ -2043,28 +2050,28 @@ class BattleScene:
                     if not self.reduced_motion:node.y += math.sin(index*2.7+action.elapsed*40)*3
                     nodes.append(point(node))
                 nodes.append(point(projectile))
-                pygame.draw.lines(layer, (*color, 225), False, nodes, 1)
-                pygame.draw.circle(layer, (225, 249, 255, 225), point(projectile), 2)
+                render_draw.lines(layer, (*color, 225), False, nodes, 1)
+                render_draw.circle(layer, (225, 249, 255, 225), point(projectile), 2)
             elif key == 'bulwark':
-                pygame.draw.line(layer, (*color, 115), point(origin), point(target), 1)
+                render_draw.line(layer, (*color, 115), point(origin), point(target), 1)
                 self._rig_hex(layer, target, 9+round(fraction*15), (*color, 150))
         # Impact decoration never precedes the actual impact. Lasting shields
         # are rendered separately from the live, remaining barrier pool.
         impact_age = action.elapsed-action.impact_at
         if action.resolved and 0 <= impact_age < .18:
             radius = 8 if self.reduced_motion else 6+round(impact_age*45)
-            pygame.draw.circle(layer, (*color, 180), point(target), radius, 1)
+            render_draw.circle(layer, (*color, 180), point(target), radius, 1)
             if key == 'repair_pulse':
-                pygame.draw.line(layer, (*color, 220), point(target+(-3, 0)), point(target+(3, 0)), 1)
-                pygame.draw.line(layer, (*color, 220), point(target+(0, -3)), point(target+(0, 3)), 1)
+                render_draw.line(layer, (*color, 220), point(target+(-3, 0)), point(target+(3, 0)), 1)
+                render_draw.line(layer, (*color, 220), point(target+(0, -3)), point(target+(0, 3)), 1)
         canvas.blit(layer, (0, 0))
 
     @staticmethod
     def _rig_hex(layer, center, radius, color):
         vertices = [(round(center.x+math.cos(index*math.tau/6)*radius),
                      round(center.y+math.sin(index*math.tau/6)*radius*1.2)) for index in range(6)]
-        pygame.draw.polygon(layer, (*color[:3], min(28, color[3])), vertices)
-        pygame.draw.polygon(layer, color, vertices, 1)
+        render_draw.polygon(layer, (*color[:3], min(28, color[3])), vertices)
+        render_draw.polygon(layer, color, vertices, 1)
 
     def _draw_rig_barriers(self, canvas, positions):
         layer = self._rig_layer;layer.fill((0, 0, 0, 0))
@@ -2241,9 +2248,9 @@ class BattleScene:
         self._draw_field(world_canvas)
         zoom, offset = self._camera()
         if zoom != 1:
-            field = pygame.transform.scale(world_canvas, (round(480*zoom), round(320*zoom)))
+            field = render_scale(world_canvas, (round(480*zoom), round(320*zoom)))
             world_canvas.blit(field, (round(offset[0]), round(offset[1])))
-        pygame.transform.scale(world_canvas, ui_surface.get_size(), ui_surface)
+        render_scale(world_canvas, ui_surface.get_size(), ui_surface)
         model, player, enemy = self.model, self.model.player, self.model.enemy
         self._draw_enemy_status(painter)
         self._draw_announcement(painter)

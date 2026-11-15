@@ -1,5 +1,9 @@
 """Responsive, mouse/keyboard title menu over Eldenmere's dawn vista."""
+from rendering import WorldCanvas, present, record_art, rotate as render_rotate
+from rendering import scale as render_scale
+from rendering import draw as render_draw
 import math
+import json
 from pathlib import Path
 
 import pygame
@@ -23,23 +27,25 @@ class TitleScreen:
         if not hasattr(game,'audio'):game.audio=AudioSettings()
         if not hasattr(game,'music'):game.music=GameMusic(game)
         if not hasattr(game,'ui'):game.ui=UIStyle(game)
-        self.scene=pygame.Surface(SIZE)
+        self.scene=WorldCanvas(SIZE)
         self.ui=pygame.Surface(SIZE,pygame.SRCALPHA)
         self.canvas=self.scene
         self.frame=None
-        self.background=game.town.image('assets/ui/title/eldenmere_dawn.png',False)
+        metadata_path=ROOT/'assets/ui/title/art.json'
+        metadata=json.loads(metadata_path.read_text()) if metadata_path.exists() else {}
+        self.background=record_art(game.town.image('assets/ui/title/eldenmere_dawn.png',False),metadata)
         self.water=TitleWater(game.town)
-        wheel=pygame.transform.scale(self.background.subsurface((237,201,26,36)),(36,36)).convert_alpha()
+        wheel=render_scale(self.background.subsurface((237,201,26,36)),(36,36)).convert_alpha()
         mask=pygame.Surface((36,36),pygame.SRCALPHA)
-        pygame.draw.ellipse(mask,'white',(0,0,36,36))
+        render_draw.ellipse(mask,'white',(0,0,36,36))
         wheel.blit(mask,(0,0),special_flags=pygame.BLEND_RGBA_MULT)
         self.wheel_frames=[]
         for i in range(48):
-            rotated=pygame.transform.rotate(wheel,-i*360/48)
-            frame=pygame.Surface((36,36),pygame.SRCALPHA)
+            rotated=render_rotate(wheel,-i*360/48)
+            frame=WorldCanvas((36,36),pygame.SRCALPHA)
             frame.blit(rotated,rotated.get_rect(center=(18,18)))
             frame.blit(mask,(0,0),special_flags=pygame.BLEND_RGBA_MULT)
-            self.wheel_frames.append(pygame.transform.scale(frame,(26,36)))
+            self.wheel_frames.append(render_scale(frame,(26,36)))
         self.serif=lambda size:pygame.font.Font(str(ROOT/'assets/ui/fonts/DejaVuSerif.ttf'),size)
         self.selected=0
         self.settings=False
@@ -153,17 +159,17 @@ class TitleScreen:
         for x,y in ((278,142),(615,69)):
             for i in range(3):
                 p=(t/5.4+i/3)%1
-                pygame.draw.circle(layer,(226,225,206,round(22*math.sin(p*math.pi))),
+                render_draw.circle(layer,(226,225,206,round(22*math.sin(p*math.pi))),
                                    (round(x+8*p),round(y-15*p)),round(1+2*p))
         pulse=round(14+5*math.sin(t*4.1))
-        pygame.draw.circle(layer,(255,192,75,pulse),(53,173),6)
+        render_draw.circle(layer,(255,192,75,pulse),(53,173),6)
         # A small bird pair crosses the open sky only once per long cycle.
         cycle=t%32
         if 14<cycle<22:
             for i in range(2):
                 x=round((cycle-14)*55)-20-i*12
                 y=42+i*5+round(math.sin(t*4+i))
-                pygame.draw.lines(layer,(72,89,94,160),False,[(x-2,y),(x,y+1),(x+2,y)])
+                render_draw.lines(layer,(72,89,94,160),False,[(x-2,y),(x,y+1),(x+2,y)])
         self.canvas.blit(layer,(0,0))
 
     def _layout_menu(self,painter):
@@ -197,8 +203,11 @@ class TitleScreen:
             self.frame.set_alpha(None)
         cover=max(width/SIZE[0],height/SIZE[1])
         size=(math.ceil(SIZE[0]*cover),math.ceil(SIZE[1]*cover))
-        self.frame.blit(pygame.transform.scale(self.scene,size),
-                        ((width-size[0])//2,(height-size[1])//2))
+        if not hasattr(self,'_world_cover') or self._world_cover.get_size()!=size:
+            self._world_cover=pygame.Surface(size)
+        image=self._world_cover
+        present(self.scene,image)
+        self.frame.blit(image,((width-size[0])//2,(height-size[1])//2))
         # This transparent layer already has its final display dimensions:
         # neither Atkinson body text nor serif logo pixels are enlarged later.
         fit=min(width/SIZE[0],height/SIZE[1])

@@ -18,7 +18,8 @@ These integration details describe the current exports and renderer.
 - `StoryActor` loads those unchanged images and creates 21×36 fallbacks in
   memory. Logical and detailed frames select from the same authored durations
   and movement clock. Navigation owns movement speed and advances that clock.
-- `WorldCanvas` preserves the 42×72 detail at normal party scale, including
+- `rendering.WorldCanvas` preserves the 42×72 detail in its complete native scene
+  buffer at normal party scale, including
   foreground foliage and later depth-ordered blits. Ordinary surfaces use the
   logical fallback. No additional bob or frame interpolation is applied.
 - Stopping selects the facing idle. Conversation uses the conversation-facing

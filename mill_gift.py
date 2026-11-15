@@ -6,6 +6,8 @@ an item from a partially read scene. All portraits/prose use gameplay's shared
 textbox renderer, with literal asterisk emotes.
 """
 from __future__ import annotations
+from rendering import SurfaceCache, project_art, rotate as render_rotate
+from rendering import scale as render_scale
 import json,math
 from pathlib import Path
 import pygame
@@ -24,7 +26,7 @@ class MillGift:
   self.manifest=json.loads((self.asset_root/'animation.json').read_text())
   if self.manifest.get('version')!=1 or [p['id'] for p in self.manifest['phases']]!=list(PHASES):
    raise ValueError('Invalid mill gift presentation')
-  self.images=None;self._scaled={};self._click_sound=None;self._click_channel=None;self.reset()
+  self.images=None;self._scaled=SurfaceCache();self._click_sound=None;self._click_channel=None;self.reset()
 
  def reset(self):
   self.stop_audio()
@@ -170,16 +172,16 @@ class MillGift:
  def _scale(self,image,width,height=None):
   height=height or round(image.get_height()*width/image.get_width())
   key=(id(image),round(width),round(height))
-  if key not in self._scaled:
-   if len(self._scaled)>320:self._scaled.clear()
-   self._scaled[key]=pygame.transform.scale(image,(max(1,round(width)),max(1,round(height))))
-  return self._scaled[key]
+  result=self._scaled.get(key)
+  if result is None:
+   result=project_art(image,(max(1,round(width)),max(1,round(height))));self._scaled[key]=result
+  return result
 
  def _plate(self,canvas,center,zoom):
   plate=self.images['workshop'];w,h=480/zoom,320/zoom
   cx,cy=center
   rect=pygame.Rect(round(cx-w/2),round(cy-h/2),round(w),round(h)).clamp(plate.get_rect())
-  pygame.transform.scale(plate.subsurface(rect),canvas.get_size(),canvas)
+  render_scale(plate.subsurface(rect),canvas.get_size(),canvas)
 
  def draw(self,canvas,ui_surface):
   self._load();q=smooth(self.phase_time/self.phase['min_seconds']);motion=1. if self.reduced_motion else q
@@ -195,7 +197,7 @@ class MillGift:
    canvas.blit(pair,(240-pair.get_width()//2,214-pair.get_height()))
   elif self.shot=='whole':
    self._plate(canvas,(300,455),.95+.08*motion)
-   blade=pygame.transform.rotate(self.images['blade'],90)
+   blade=render_rotate(self.images['blade'],90)
    blade=self._scale(blade,330)
    canvas.blit(blade,(75+round(8*motion),158-blade.get_height()//2))
   else:
@@ -210,7 +212,7 @@ class MillGift:
   alpha=round(90*(1-smooth(self.phase_time/.22)))
   if alpha:
    veil=pygame.Surface(canvas.get_size(),pygame.SRCALPHA);veil.fill((12,20,16,alpha));canvas.blit(veil,(0,0))
-  pygame.transform.scale(canvas,ui_surface.get_size(),ui_surface)
+  render_scale(canvas,ui_surface.get_size(),ui_surface)
   painter=self.game.ui.painter(ui_surface);self._layout(painter)
   if self.caption_layout is not None:
    portrait=self.game.social.portraits[self.caption_layout.portrait_key]

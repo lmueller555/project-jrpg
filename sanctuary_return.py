@@ -5,6 +5,7 @@ controller stages the existing family and transient movement only: an interrupte
 pickup starts again at the clean cups, while a committed placement stays visible.
 All bodies are existing approved idle, walking and empty-hand household poses.
 """
+from rendering import flip as render_flip
 from collections import deque
 
 import pygame
@@ -36,7 +37,7 @@ class SanctuaryReturn:
         # The old household give_left pose extends its far arm backwards.
         # Mirror the existing right-facing pose at draw time to keep a carried
         # cup in front of Caelan when he turns left, without changing a limb.
-        self._hands['left'] = pygame.transform.flip(self._hands['right'], True, False)
+        self._hands['left'] = render_flip(self._hands['right'], True, False)
         self._reaches = [self.dining.image(f'assets/story/elira/reach_{i}.png') for i in range(3)]
         self.surface_props = []
         for kind, origin in (('source', SOURCE_CUP), ('table', TABLE_CUP)):

@@ -1,4 +1,6 @@
 """A hand-operated well whose animation follows its reserved operator's clock."""
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 import json
 from pathlib import Path
 import pygame
@@ -86,14 +88,14 @@ class DrawingWell:
         return pygame.Vector2(self.bucket_grip)
 
     def sprite(self,elapsed_ms):
-        image=pygame.Surface(self.data['canvas_size'],pygame.SRCALPHA)
+        image=render_layer(self.data['canvas_size'],pygame.SRCALPHA)
         image.blit(self.fixed,(0,0))
         i=self.crank_index
         # Grain bands rotate around the spindle's face with the crank. Reverse
         # crank phases reverse these bands as well; idle/filling holds them.
         for x in (28,47):
-            pygame.draw.line(image,'#735136',(x,41+i%4),(x+5,41+i%4))
-            pygame.draw.line(image,'#c69d66',(x+1,41+(i+2)%4),(x+4,41+(i+2)%4))
+            render_draw.line(image,'#735136',(x,41+i%4),(x+5,41+i%4))
+            render_draw.line(image,'#c69d66',(x+1,41+(i+2)%4),(x+4,41+(i+2)%4))
         phase=int(elapsed_ms//100)%4
         # Restrained water glint remains independent of the operated mechanism.
         # Use the same six 200ms ambient phases as the terrain exports.
@@ -103,8 +105,8 @@ class DrawingWell:
         key=f'bucket_0_{self.draw_level}'
         if self.rope_deployed:
             rope_end=tuple(round(v) for v in self.rope_end)
-            pygame.draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
-            pygame.draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
+            render_draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
+            render_draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
         xy=grip-pygame.Vector2(self.bucket_data[key]['grip'])
         # Inside the shaft, the pail is composited before the near rim. At the
         # retrieval transfer it moves forward behind the gardener's body.
@@ -114,8 +116,8 @@ class DrawingWell:
             image.set_clip(None)
         if self.state=='well_fill':
             radius=4+phase
-            pygame.draw.line(image,'#b9d9d2',(40-radius,70),(36,69))
-            pygame.draw.line(image,'#598e9f',(44,69),(40+radius,70))
+            render_draw.line(image,'#b9d9d2',(40-radius,70),(36,69))
+            render_draw.line(image,'#598e9f',(44,69),(40+radius,70))
         image.blit(self.rim,(0,0))
         if self.bucket_on_rope and self.bucket_at_handoff:
             image.blit(self.pails[key],xy)
@@ -124,14 +126,14 @@ class DrawingWell:
         # With no attached pail, only this three-pixel hook hangs beneath the
         # windlass. No line reaches the rim or the gardener.
         if not self.rope_deployed:
-            pygame.draw.lines(image,'#a2b4a7',False,hook)
+            render_draw.lines(image,'#a2b4a7',False,hook)
         if self.state=='well_raise' and grip.y<61:
             for n in range(2):
                 image.set_at((round(grip.x)+n*3,round(grip.y)+14+(phase+n)%4),pygame.Color('#b9d9d2'))
         # Shaft wrap and the crank share the very same phase as her hand.
-        pygame.draw.line(image,'#c69d66',(40+i%2,40),(40+i%2,46),1)
+        render_draw.line(image,'#c69d66',(40+i%2,40),(40+i%2,46),1)
         pivot=self.data['crank_pivot'];hand=self.data['crank_handles'][i]
-        pygame.draw.line(image,'#45382d',pivot,hand,3)
-        pygame.draw.line(image,'#a37b4c',pivot,hand,1)
-        pygame.draw.line(image,'#c69d66',hand,(hand[0]+2,hand[1]),2)
+        render_draw.line(image,'#45382d',pivot,hand,3)
+        render_draw.line(image,'#a37b4c',pivot,hand,1)
+        render_draw.line(image,'#c69d66',hand,(hand[0]+2,hand[1]),2)
         return image

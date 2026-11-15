@@ -1,4 +1,5 @@
 """An elemental guardian's own live chamber shot before honest battle loading."""
+from rendering import layer as render_layer
 import math
 
 import pygame
@@ -23,7 +24,7 @@ class ElementalBossEntry(CaveBattleEntry):
                 destination = pygame.Vector2(self.definition['center'])-pygame.Vector2(canvas.get_size())/2
                 ease = math.sin(min(1., progress/.8)*math.pi/2)**2
                 origin = origin.lerp(destination, .7*ease)
-            frame = pygame.Surface(canvas.get_size())
+            frame = render_layer(canvas.get_size())
             game.world.draw(frame, origin, game.player, game.elapsed_ms+self.elapsed*1000,
                             include_ui=False, party_actors=game.party_travel.actors())
             game.elemental_bosses.draw_world(frame, origin, elapsed_ms=game.elapsed_ms+self.elapsed*1000)

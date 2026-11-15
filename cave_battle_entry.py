@@ -9,6 +9,7 @@ from __future__ import annotations
 import math
 
 import pygame
+from rendering import scale as render_scale
 
 from ui_style import GOLD, IVORY
 
@@ -85,12 +86,12 @@ class CaveBattleEntry:
                 # or an invented encounter actor pasted into the cave.
                 zoom = 1+.035*math.sin(progress*math.pi)
                 size = tuple(round(n*zoom) for n in self.world_frame.get_size())
-                image = pygame.transform.scale(self.world_frame, size)
+                image = render_scale(self.world_frame, size)
                 origin = self.focus*(1-zoom)
                 origin.x = max(canvas.get_width()-size[0], min(0, origin.x))
                 origin.y = max(canvas.get_height()-size[1], min(0, origin.y))
                 canvas.blit(image, (round(origin.x), round(origin.y)))
-            pygame.transform.scale(canvas, ui_surface.get_size(), ui_surface)
+            render_scale(canvas, ui_surface.get_size(), ui_surface)
             painter = game.ui.painter(ui_surface)
             if not self.reduced_motion and .15 < progress < .75:
                 painter.text('!', (self.focus.x, max(16, self.focus.y-42)),

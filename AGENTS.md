@@ -6,8 +6,10 @@ builders, renderers or their tests, read the
 It is the single reference for visual style, artwork/world/display units,
 density, sizing, rendering, directional anatomy, gait, registration, export and
 review. Its approved target is 2× artwork density with existing logical sizes
-and gameplay proportions. The full-world renderer and asset migration are
-pending; distinguish the target from current implementation. Apply changes to
+and gameplay proportions. Full-scene 2× composition is implemented in
+`rendering.py`; asset rebuilding and bank migration remain pending. Use the
+explicit drawing/transform adapters and native presentation described in the
+standard; bare Pygame writes to the logical mirror lose detail. Apply changes to
 the authorized scope. Older recipes and review notes retain local implementation
 facts and history, not competing construction rules.
 

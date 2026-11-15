@@ -5,6 +5,8 @@ has its own complete-body acting clock, travelling ridge ignition and a fur
 reveal tied to the model's 1650 ms commitment, rather than a whole-sprite flash.
 """
 from __future__ import annotations
+from rendering import WorldCanvas, SurfaceCache, record_art, layer as render_layer
+from rendering import draw as render_draw
 
 import json
 import math
@@ -30,8 +32,16 @@ class VespermawChannelArt:
     def __init__(self, root=ROOT):
         self.root=Path(root)
         self.data=json.loads((self.root/'assets/combat/vespermaw/channeling/performance.json').read_text())
-        self.frames=[pygame.image.load(str(self.root/f['file'])).convert_alpha() for f in self.data['frames']]
-        self._tinted={};self._channels={}
+        self.frames=[record_art(pygame.image.load(str(self.root/f['file'])).convert_alpha(),self.data) for f in self.data['frames']]
+        density=self.data.get('artwork_pixels_per_world_pixel',1)
+        if density!=1:
+            from copy import deepcopy
+            self.data=deepcopy(self.data)
+            self.data['anchor']=[v/density for v in self.data['anchor']]
+            for frame in self.data['frames']:
+                frame['anchors']={name:[v/density for v in point] for name,point in frame['anchors'].items()}
+                frame['crystal_tips']=[[v/density for v in point] for point in frame.get('crystal_tips',[])]
+        self._tinted=SurfaceCache();self._channels=SurfaceCache()
 
     def tint(self, surface, element):
         """Retain opaque shading, eyes, outlines and details in every pose."""
@@ -49,6 +59,7 @@ class VespermawChannelArt:
         strength=np.clip((light-28)/32,0,1)[:,:,None]*.92
         mapped=np.rint(rgb*(1-strength)+material*strength).astype(np.uint8)
         image=surface.copy();pygame.surfarray.pixels3d(image)[:]=mapped
+        if isinstance(surface,WorldCanvas):image.native=self.tint(surface.native,element).copy()
         if len(self._tinted)>1600:self._tinted.clear()
         self._tinted[key]=image
         return image
@@ -84,6 +95,14 @@ class VespermawChannelArt:
             if progress>=1:reveal[:]=1
             image=base.copy()
             pygame.surfarray.pixels3d(image)[:]=np.rint(old_rgb*(1-reveal)+new_rgb*reveal).astype(np.uint8)
+            if isinstance(base,WorldCanvas):
+                high_old=pygame.surfarray.array3d(old.native)
+                high_new=pygame.surfarray.array3d(new.native)
+                hx,hy=np.indices(base.native.get_size())
+                high_distance=np.sqrt(((hx/2-spine[0])*.82)**2+((hy/2-spine[1])*1.1)**2)
+                high_reveal=np.clip((progress*radius-high_distance)/9,0,1)[:,:,None]
+                if progress>=1:high_reveal[:]=1
+                pygame.surfarray.pixels3d(image.native)[:]=np.rint(high_old*(1-high_reveal)+high_new*high_reveal).astype(np.uint8)
             self._channel_highlights(image,record,target,record['start_ms'],reduced_motion)
             self._channels[key]=image
         return self._channels[key],tuple(self.data['anchor'])
@@ -94,17 +113,17 @@ class VespermawChannelArt:
         tips=record['crystal_tips']
         # Sequential point ignition and small facets are clipped to the body;
         # the silhouette and crisp native shading remain legible underneath.
-        overlay=pygame.Surface(image.get_size(),pygame.SRCALPHA)
+        overlay=render_layer(image.get_size(),pygame.SRCALPHA)
         for number,(x,y) in enumerate(tips):
             age=milliseconds-(480+number*72)
             if age<0:continue
             pulse=(.78 if reduced else .65+.35*math.sin(age/115))
             alpha=round((85+155*max(0,surge))*pulse)
-            pygame.draw.circle(overlay,(*color,min(180,alpha)),(x,y),4)
-            pygame.draw.line(overlay,(*hot,min(255,alpha+45)),(x,y-2),(x+1,y+2),1)
+            render_draw.circle(overlay,(*color,min(180,alpha)),(x,y),4)
+            render_draw.line(overlay,(*hot,min(255,alpha+45)),(x,y-2),(x+1,y+2),1)
             if number:
                 prior=tips[number-1]
-                pygame.draw.line(overlay,(*color,min(170,alpha)),prior,(x,y),1)
+                render_draw.line(overlay,(*color,min(170,alpha)),prior,(x,y),1)
         # Mask every inner highlight against opaque animal pixels.
         overlay.blit(image,(0,0),special_flags=pygame.BLEND_RGBA_MULT)
         image.blit(overlay,(0,0),special_flags=pygame.BLEND_RGBA_ADD)
@@ -112,7 +131,7 @@ class VespermawChannelArt:
             mouth=record['anchors']['mouth']
             eye=(mouth[0]-10,mouth[1]-7)
             if 0<=eye[0]<image.get_width() and 0<=eye[1]<image.get_height() and image.get_at(eye).a:
-                pygame.draw.line(image,hot,eye,(eye[0]+2,eye[1]),1)
+                render_draw.line(image,hot,eye,(eye[0]+2,eye[1]),1)
 
     def draw_motes(self,target,foot,scale,element,elapsed_ms,reduced_motion=False,intensity=1.):
         """Distinct low-density material motion; no red lightning charge aura."""
@@ -120,7 +139,7 @@ class VespermawChannelArt:
         color,hot=COLORS[element]
         seconds=elapsed_ms/1000
         if reduced_motion:return
-        layer=pygame.Surface(target.get_size(),pygame.SRCALPHA)
+        layer=render_layer(target.get_size(),pygame.SRCALPHA)
         for i in range(12):
             phase=(seconds*(.45 if element=='water' else .7)+i*.173)%1
             x=foot[0]+(math.sin(i*2.4+seconds*.65)*40)*scale
@@ -128,12 +147,12 @@ class VespermawChannelArt:
             a=round(145*math.sin(math.pi*phase)*max(0,min(1,intensity)))
             point=(round(x),round(y));r=max(1,round(scale*.7))
             if element=='fire':
-                pygame.draw.line(layer,(*color,a),point,(point[0]-1,point[1]+round(3*scale)),r)
-                pygame.draw.circle(layer,(*hot,a),point,1)
+                render_draw.line(layer,(*color,a),point,(point[0]-1,point[1]+round(3*scale)),r)
+                render_draw.circle(layer,(*hot,a),point,1)
             elif element=='ice':
-                pygame.draw.line(layer,(*hot,a),(point[0]-r,point[1]),(point[0]+r,point[1]),1)
-                pygame.draw.line(layer,(*color,a),(point[0],point[1]-r),(point[0],point[1]+r),1)
+                render_draw.line(layer,(*hot,a),(point[0]-r,point[1]),(point[0]+r,point[1]),1)
+                render_draw.line(layer,(*color,a),(point[0],point[1]-r),(point[0],point[1]+r),1)
             else:
-                pygame.draw.circle(layer,(*color,a),point,r+1,1)
-                pygame.draw.circle(layer,(*hot,a),(point[0]-1,point[1]-1),1)
+                render_draw.circle(layer,(*color,a),point,r+1,1)
+                render_draw.circle(layer,(*hot,a),(point[0]-1,point[1]-1),1)
         target.blit(layer,(0,0))

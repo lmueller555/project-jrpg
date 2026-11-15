@@ -4,6 +4,7 @@ Durable facts never contain animation clocks or partially read dialogue. One
 existing Mira actor accompanies the player; repair props and the wheel read the
 same restored milestone.
 """
+from rendering import draw as render_draw
 from collections import deque
 import json
 from pathlib import Path
@@ -1033,4 +1034,4 @@ class MillQuest:
         grip = self.layout.get('lever_grip', [498, 374])
         a = (round(hand.x)-camera[0], round(hand.y)-camera[1])
         b = (round(grip[0])-camera[0], round(grip[1])-camera[1])
-        pygame.draw.line(canvas, '#836347', a, b, 1)
+        render_draw.line(canvas, '#836347', a, b, 1)

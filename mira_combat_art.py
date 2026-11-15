@@ -25,6 +25,15 @@ class MiraCombatArt:
     def __init__(self, root=ART, *, data=None):
         self.manifest = (json.loads((Path(root) / 'animation.json').read_text())
                          if data is None else deepcopy(data))
+        density=self.manifest.get('artwork_pixels_per_world_pixel',1)
+        if density not in (1,2):raise ValueError('Invalid Mira artwork density')
+        if density!=1:
+            self.manifest=deepcopy(self.manifest)
+            self.manifest['anchor']=[v/density for v in self.manifest['anchor']]
+            for animation in self.manifest['animations'].values():
+                for frame in animation['frames']:
+                    frame['anchors']={name:[v/density for v in point]
+                                      for name,point in frame.get('anchors',{}).items()}
         self.floor = tuple(self.manifest['anchor'])
         self.animations = self.manifest['animations']
         for animation in self.animations.values():

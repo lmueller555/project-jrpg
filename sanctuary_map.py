@@ -1,5 +1,6 @@
 """A local reserve overview, shared with its hall without loading another scene."""
 from __future__ import annotations
+from rendering import draw as render_draw
 
 import json
 from pathlib import Path
@@ -132,10 +133,10 @@ class SanctuaryMapUI:
             self.marker_rects[record['id']] = rect
             color = '#f5ce6d' if index == self.selected else '#f6efd7'
             center = painter.point(point)
-            pygame.draw.circle(canvas, '#344337', center, max(2, round(4*painter.scale)))
-            pygame.draw.circle(canvas, color, center, max(1, round(2.5*painter.scale)))
+            render_draw.circle(canvas, '#344337', center, max(2, round(4*painter.scale)))
+            render_draw.circle(canvas, color, center, max(1, round(2.5*painter.scale)))
             if index in (self.selected, self.hovered):
-                pygame.draw.circle(canvas, color, center, max(3, round(6*painter.scale)),
+                render_draw.circle(canvas, color, center, max(3, round(6*painter.scale)),
                                    max(1, round(painter.scale)))
         from map_ui import MapUI
         MapUI._player_symbol(painter, self.world_to_map(self.player_position()))

@@ -4,6 +4,7 @@ Only room landmarks and the exterior exit receive markers. Treasure and
 encounter metadata are deliberately absent from the map's navigation records.
 """
 from __future__ import annotations
+from rendering import draw as render_draw
 
 import pygame
 
@@ -83,8 +84,8 @@ class SanctuaryCaveMapUI(SanctuaryMapUI):
                 painter.rect(color, (point[0]-3, point[1]-3, 6, 6), 1)
             else:
                 center = painter.point(point)
-                pygame.draw.circle(canvas, '#344337', center, max(2, round(4*painter.scale)))
-                pygame.draw.circle(canvas, color, center, max(1, round(2.5*painter.scale)))
+                render_draw.circle(canvas, '#344337', center, max(2, round(4*painter.scale)))
+                render_draw.circle(canvas, color, center, max(1, round(2.5*painter.scale)))
             if index in (self.selected, self.hovered):
                 painter.rect('#f5ce6d', (rect.x, rect.y, rect.width, rect.height), 1)
         # Keep room names readable without covering the small whole-level

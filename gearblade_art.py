@@ -4,6 +4,8 @@ Body movement is drawn in the source atlases. Runtime only selects a frame;
 the extra battle margin protects the circular guard and extended sword tip.
 """
 from __future__ import annotations
+from rendering import layer as render_layer, project_art
+from rendering import scale as render_scale
 
 import json
 from functools import lru_cache
@@ -107,8 +109,8 @@ class GearbladeCombat:
                 source.blit(opaque,(0,0),special_flags=pygame.BLEND_RGBA_MULT)
                 scale = self.manifest['atlas_registration']['scale']
                 size = tuple(round(value*scale) for value in source.get_size())
-                drawing = pygame.transform.scale(source,size)
-                image = pygame.Surface(self.manifest['canvas'],pygame.SRCALPHA)
+                drawing = project_art(source,size)
+                image = render_layer(self.manifest['canvas'],pygame.SRCALPHA)
                 foot = frame['source_foot']
                 image.blit(drawing,(round(self.anchor[0]-foot[0]*scale),
                                     round(self.anchor[1]-foot[1]*scale)))

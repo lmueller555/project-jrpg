@@ -1,0 +1,123 @@
+{
+  "baseline_commit": "9cfc8e1cc97ffffb63beb5ec27ad427d92780808",
+  "baseline": {
+    "town": {
+      "median_ms": 1.046,
+      "p95_ms": 1.121,
+      "frames": 60
+    },
+    "dining": {
+      "median_ms": 0.899,
+      "p95_ms": 0.941,
+      "frames": 60
+    },
+    "cave": {
+      "median_ms": 1.093,
+      "p95_ms": 1.148,
+      "frames": 60
+    },
+    "overworld": {
+      "median_ms": 4.508,
+      "p95_ms": 12.668,
+      "frames": 60,
+      "cache": {
+        "render_bytes": 7077888,
+        "render_chunks": 12,
+        "collision_chunks": 0,
+        "metadata_chunks": 27
+      }
+    },
+    "battle": {
+      "median_ms": 4.466,
+      "p95_ms": 4.671,
+      "frames": 60
+    },
+    "regent_arrival": {
+      "median_ms": 2.08,
+      "p95_ms": 2.14,
+      "frames": 60
+    },
+    "aerial_camera_motion": {
+      "median_ms": 6.236,
+      "p95_ms": 25.59,
+      "frames": 60
+    },
+    "ice_reaper_opening": {
+      "median_ms": 4.868,
+      "p95_ms": 4.935,
+      "frames": 60
+    },
+    "ice_reaper_camera_motion": {
+      "median_ms": 32.216,
+      "p95_ms": 40.332,
+      "frames": 60
+    },
+    "transformed_asset_cache": {
+      "bytes": 0,
+      "entries": 0,
+      "budget": 33554432
+    },
+    "peak_rss_mib": 1250.7,
+    "method": "960x640 SDL dummy; warm draws, excludes simulation update; temporary saves only"
+  },
+  "renderer": {
+    "town": {
+      "median_ms": 2.737,
+      "p95_ms": 3.155,
+      "frames": 60
+    },
+    "dining": {
+      "median_ms": 2.473,
+      "p95_ms": 2.97,
+      "frames": 60
+    },
+    "cave": {
+      "median_ms": 2.96,
+      "p95_ms": 3.252,
+      "frames": 60
+    },
+    "overworld": {
+      "median_ms": 5.917,
+      "p95_ms": 14.811,
+      "frames": 60,
+      "cache": {
+        "render_bytes": 7077888,
+        "render_chunks": 12,
+        "collision_chunks": 0,
+        "metadata_chunks": 27
+      }
+    },
+    "battle": {
+      "median_ms": 5.795,
+      "p95_ms": 8.591,
+      "frames": 60
+    },
+    "regent_arrival": {
+      "median_ms": 3.803,
+      "p95_ms": 4.222,
+      "frames": 60
+    },
+    "aerial_camera_motion": {
+      "median_ms": 8.689,
+      "p95_ms": 27.986,
+      "frames": 60
+    },
+    "ice_reaper_opening": {
+      "median_ms": 14.623,
+      "p95_ms": 16.193,
+      "frames": 60
+    },
+    "ice_reaper_camera_motion": {
+      "median_ms": 37.179,
+      "p95_ms": 48.203,
+      "frames": 60
+    },
+    "transformed_asset_cache": {
+      "bytes": 13412032,
+      "entries": 641,
+      "budget": 33554432
+    },
+    "peak_rss_mib": 1136.7,
+    "method": "960x640 SDL dummy; warm draws, excludes simulation update; temporary saves only"
+  }
+}

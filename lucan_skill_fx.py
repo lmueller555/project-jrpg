@@ -3,6 +3,8 @@
 No extra combat actor or interactable is introduced. Effects follow the real
 skill action and its recipients; status badges sample model-owned durations.
 """
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 import math
 
 import pygame
@@ -17,23 +19,23 @@ def icon(target, key, position, color):
     """Native seven-pixel sword, shield and challenge emblems."""
     x, y = map(round, position)
     if key == 'inspire':
-        pygame.draw.line(target, color, (x+1,y+6), (x+6,y+1), 1)
-        pygame.draw.line(target, color, (x+1,y+3), (x+4,y+6), 1)
-        pygame.draw.line(target, color, (x,y+7), (x+1,y+6), 2)
-        pygame.draw.line(target, color, (x+5,y+1), (x+6,y+1), 1)
+        render_draw.line(target, color, (x+1,y+6), (x+6,y+1), 1)
+        render_draw.line(target, color, (x+1,y+3), (x+4,y+6), 1)
+        render_draw.line(target, color, (x,y+7), (x+1,y+6), 2)
+        render_draw.line(target, color, (x+5,y+1), (x+6,y+1), 1)
     elif key == 'bolster':
-        pygame.draw.polygon(target,color,[(x,y+1),(x+3,y),(x+6,y+1),
+        render_draw.polygon(target,color,[(x,y+1),(x+3,y),(x+6,y+1),
             (x+5,y+5),(x+3,y+7),(x+1,y+5)],1)
-        pygame.draw.line(target,color,(x+3,y+1),(x+3,y+5),1)
+        render_draw.line(target,color,(x+3,y+1),(x+3,y+5),1)
     else:
-        pygame.draw.circle(target,color,(x+3,y+3),3,1)
-        pygame.draw.line(target,color,(x+3,y-1),(x+3,y+7),1)
-        pygame.draw.line(target,color,(x-1,y+3),(x+7,y+3),1)
+        render_draw.circle(target,color,(x+3,y+3),3,1)
+        render_draw.line(target,color,(x+3,y-1),(x+3,y+7),1)
+        render_draw.line(target,color,(x-1,y+3),(x+7,y+3),1)
 
 
 class LucanSkillEffects:
     def __init__(self):
-        self.layer = pygame.Surface((480,320), pygame.SRCALPHA)
+        self.layer = render_layer((480,320), pygame.SRCALPHA)
 
     def draw(self, target, action, positions, hit_point, bounds, *, reduced_motion=False):
         if action is None or action.actor != 'lucan' or action.action not in SKILLS:return
@@ -49,12 +51,12 @@ class LucanSkillEffects:
         prep = min(1.,q/max(.01,impact))
         if q < impact:
             radius = 4+round(7*prep)
-            pygame.draw.circle(layer,(*color,round(90*prep)),origin,radius,1)
+            render_draw.circle(layer,(*color,round(90*prep)),origin,radius,1)
             if not reduced_motion:
                 for number in range(5):
                     angle = number*math.tau/5-action.elapsed*2
                     point = origin+pygame.Vector2(math.cos(angle),math.sin(angle))*(radius+2)
-                    pygame.draw.line(layer,(*color,140),point,point+(0,-2),1)
+                    render_draw.line(layer,(*color,140),point,point+(0,-2),1)
         else:
             release = min(1.,(q-impact)/max(.01,1-impact))
             alpha = round(180*(1-release))
@@ -67,25 +69,25 @@ class LucanSkillEffects:
                     else:
                         delta = point-origin
                         end = origin+delta*min(1.,release*3)
-                        pygame.draw.line(layer,(*color,round(alpha*.35)),origin,end,1)
+                        render_draw.line(layer,(*color,round(alpha*.35)),origin,end,1)
                         icon(layer,key,point+(-3,-3),(*color,alpha))
                         for side in (-1,1):
                             x=point.x+side*(10+release*7)
-                            pygame.draw.line(layer,(*color,alpha),(x,point.y-5),(x-side*3,point.y),1)
+                            render_draw.line(layer,(*color,alpha),(x,point.y-5),(x-side*3,point.y),1)
                 elif key == 'inspire':
                     for line in range(3):
                         x=point.x+(line-1)*8
                         y=point.y+12-(0 if reduced_motion else release*19)
-                        pygame.draw.lines(layer,(*color,alpha),False,
+                        render_draw.lines(layer,(*color,alpha),False,
                             [(x-3,y),(x,y-4),(x+3,y)],1)
                     icon(layer,key,point+(-3,-6),(*color,alpha))
                 else:
                     center=point+pygame.Vector2(0,3)
-                    pygame.draw.polygon(layer,(*color,round(alpha*.22)),
+                    render_draw.polygon(layer,(*color,round(alpha*.22)),
                         [(center.x-12,center.y-10),(center.x,center.y-14),
                          (center.x+12,center.y-10),(center.x+9,center.y+7),
                          (center.x,center.y+14),(center.x-9,center.y+7)])
-                    pygame.draw.polygon(layer,(*color,alpha),
+                    render_draw.polygon(layer,(*color,alpha),
                         [(center.x-12,center.y-10),(center.x,center.y-14),
                          (center.x+12,center.y-10),(center.x+9,center.y+7),
                          (center.x,center.y+14),(center.x-9,center.y+7)],1)

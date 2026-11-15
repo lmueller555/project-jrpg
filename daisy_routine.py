@@ -1,4 +1,6 @@
 """Persistent indoor dog routine. Runtime depends only on Pygame."""
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 from collections import deque
 import json
 from pathlib import Path
@@ -51,7 +53,7 @@ class DaisyRoutine:
 
     def _pad(self,image,offset=None):
         if image.get_size()==tuple(self.animation['canvas_size']):return image
-        result=pygame.Surface(self.animation['canvas_size'],pygame.SRCALPHA)
+        result=render_layer(self.animation['canvas_size'],pygame.SRCALPHA)
         result.blit(image,offset or self.animation['native_offset']);return result
 
     def _sample(self,key):return self._rng.randint(*self.behavior[key])
@@ -239,12 +241,12 @@ class DaisyRoutine:
     def draw_background(self,target,camera):
         if self.play_pose is not None:
             if self.play_pose.action and self.play_pose.action.startswith('hop_'):
-                pygame.draw.ellipse(target,'#665c45',(round(self.position.x)-8-camera[0],round(self.position.y)+2-camera[1],16,3))
+                render_draw.ellipse(target,'#665c45',(round(self.position.x)-8-camera[0],round(self.position.y)+2-camera[1],16,3))
             return
         if not self._at_bowl() or self.state!='drink':return
         bowl=self.bowls[self.active_bowl];mask=self.water_masks.get(bowl['state'])
         if mask is None:return
-        ripple=pygame.Surface((24,24),pygame.SRCALPHA)
+        ripple=render_layer((24,24),pygame.SRCALPHA)
         patterns=(((13,12),),((11,12),(14,12)),((12,13),(14,11)),())
         for point in patterns[self.frame_index]:
             if mask.get_at(point).r:ripple.set_at(point,self.ripple_color)

@@ -5,6 +5,9 @@ moves around that world; authored scenic plates supply the distant landscape.
 The caller owns the real-time clock, dialogue, music and playback lifecycle.
 """
 from __future__ import annotations
+from rendering import WorldCanvas, artwork, SurfaceCache, project_art, rotate as render_rotate
+from rendering import scale as render_scale
+from rendering import draw as render_draw
 
 from dataclasses import dataclass
 from functools import lru_cache
@@ -80,7 +83,7 @@ class IceReaperActionStage:
         self.images = {}
         self.actors = {}
         self.missing_assets = []
-        self._scaled = {}
+        self._scaled = SurfaceCache()
         self._load()
         if strict:
             self.validate_assets()
@@ -151,6 +154,11 @@ class IceReaperActionStage:
                                           frame.get('duration_ms', 180)/1000) for frame in frames]
                 data['manifest']['animations'][key] = entry
         environment = self.continuity_root/'environment'
+        metadata=environment/'art.json'
+        self.environment_density=(json.loads(metadata.read_text()).get(
+            'artwork_pixels_per_world_pixel',1) if metadata.exists() else 1)
+        if type(self.environment_density) not in (int,float) or self.environment_density not in (1,2):
+            raise ValueError('Environment artwork density must be 1 or 2')
         panorama_path = environment/'panorama.png'
         self.panorama = None
         self._panorama_cache = {}
@@ -172,7 +180,7 @@ class IceReaperActionStage:
             if not path.exists():
                 self.missing_assets.append(f'environment/{key}.png')
                 path = self.opening/'environment.png'
-            self.plates[key] = pygame.transform.scale(self._read_image(path), (640, 427))
+            self.plates[key] = render_scale(self._read_image(path), (640, 427))
         self.prison_back = self._read_image(self.opening/'ice_prison_back.png')
         self.prison_front = self._read_image(self.opening/'ice_prison_front.png')
         self.shard = self._read_image(self.opening/'glacial_shard.png')
@@ -386,11 +394,10 @@ class IceReaperActionStage:
         width, height = max(1, round(width)), max(1, round(height))
         width, height = min(width, 1400), min(height, 1400)
         key = (id(image), width, height)
-        if key not in self._scaled:
-            if len(self._scaled) > 1800:
-                self._scaled.clear()
-            self._scaled[key] = pygame.transform.scale(image, (width, height))
-        return self._scaled[key]
+        result=self._scaled.get(key)
+        if result is None:
+            result=project_art(image,(width,height));self._scaled[key]=result
+        return result
 
     @staticmethod
     def _flat_direction(vector, fallback=(0, 0, 1)):
@@ -666,8 +673,22 @@ class IceReaperActionStage:
         return tuple(landmarks)
 
     def _panoramic_sky(self, canvas, camera):
+        if isinstance(canvas,WorldCanvas):
+            self._native_shader(canvas,camera,self._panoramic_sky_pixels)
+        else:self._panoramic_sky_pixels(canvas,camera)
+
+    def _native_shader(self,canvas,camera,shader):
+        # Pixel grids are temporary method inputs; world/camera state is untouched.
+        old_x,old_y=self._screen_x,self._screen_y
+        self._screen_x=np.arange(canvas.get_width()*2,dtype=np.float32)[:,None]/2
+        self._screen_y=np.arange(canvas.get_height()*2,dtype=np.float32)[None,:]/2
+        try:shader(canvas.native,camera)
+        finally:self._screen_x,self._screen_y=old_x,old_y
+        pygame.transform.scale(canvas.native,canvas.get_size(),canvas)
+
+    def _panoramic_sky_pixels(self, canvas, camera):
         right, up, forward = camera.basis()
-        key = tuple(round(v, 7) for vector in (right, up, forward) for v in vector)+(camera.focal, *camera.center)
+        key = tuple(round(v, 7) for vector in (right, up, forward) for v in vector)+(camera.focal, *camera.center, *canvas.get_size())
         cached = self._panorama_cache.get(key)
         if cached is not None:
             canvas.blit(cached, (0, 0))
@@ -689,8 +710,16 @@ class IceReaperActionStage:
         canvas.blit(image, (0, 0))
 
     def _background(self, canvas, camera, time):
+        if isinstance(canvas,WorldCanvas) and self.environment_density==1:
+            # Unrebuilt scenic plates retain their legacy sampling grid.
+            # Actors and the rune are composed afterward on the native scene.
+            legacy=pygame.Surface(canvas.get_size())
+            self._background(legacy,camera,time)
+            canvas.blit(legacy,(0,0))
+            return
         # A camera pose always sees the same geography, regardless of shot ID.
-        key = tuple(camera.position)+tuple(camera.target)+(camera.focal, *camera.center)
+        key = tuple(camera.position)+tuple(camera.target)+(camera.focal, *camera.center,
+                                                                  isinstance(canvas,WorldCanvas))
         cached = self._background_cache.get(key)
         if cached is not None:
             canvas.blit(cached, (0, 0))
@@ -719,6 +748,10 @@ class IceReaperActionStage:
         self._background_cache[key] = canvas.copy()
 
     def _ground_plane(self, canvas, camera):
+        if isinstance(canvas,WorldCanvas):self._native_shader(canvas,camera,self._ground_plane_pixels)
+        else:self._ground_plane_pixels(canvas,camera)
+
+    def _ground_plane_pixels(self, canvas, camera):
         if self.ground_texture is None:
             return
         right, up, forward = camera.basis()
@@ -726,18 +759,26 @@ class IceReaperActionStage:
         v=(camera.center[1]-self._screen_y)/camera.focal
         ray_y=forward.y+right.y*u+up.y*v
         distance=-camera.position[1]/np.minimum(ray_y,-.001)
+        alpha=np.where(ray_y<-.015,np.clip((65-distance)/42,0,.45),0)
+        # Snow contributes only below the horizon and inside the fog distance.
+        # Avoid texture sampling and RGB temporaries for the untouched sky.
+        visible=np.nonzero(alpha>0)
+        if not len(visible[0]):return
+        crop=(slice(visible[0].min(),visible[0].max()+1),
+              slice(visible[1].min(),visible[1].max()+1))
         wx=camera.position[0]+distance*(forward.x+right.x*u+up.x*v)
         wz=camera.position[2]+distance*(forward.z+right.z*u+up.z*v)
-        alpha=np.where(ray_y<-.015,np.clip((65-distance)/42,0,.45),0)
+        wx,wz,alpha=wx[crop],wz[crop],alpha[crop]
         # Mirror the authored snow patch at each edge so the moving ground
         # does not expose a checkerboard of hard texture-wrap seams.
         tw, th = self.ground_texture.shape[:2]
-        tx=(wx*22).astype(np.int32)%(2*tw)
-        tz=(wz*22).astype(np.int32)%(2*th)
+        texture_density=22*self.environment_density
+        tx=(wx*texture_density).astype(np.int32)%(2*tw)
+        tz=(wz*texture_density).astype(np.int32)%(2*th)
         tx=np.minimum(tx,2*tw-1-tx)
         tz=np.minimum(tz,2*th-1-tz)
         texture=self.ground_texture[tx,tz].astype(np.float32)
-        target=pygame.surfarray.pixels3d(canvas)
+        target=pygame.surfarray.pixels3d(canvas)[crop]
         target[:]=(target.astype(np.float32)*(1-alpha[:,:,None])+texture*alpha[:,:,None]).astype(np.uint8)
         del target
 
@@ -745,14 +786,14 @@ class IceReaperActionStage:
     def _line3(canvas, camera, color, points, width=1):
         projected = [camera.project(point) for point in points]
         if all(projected):
-            pygame.draw.lines(canvas, color, False, [(round(p[0]),round(p[1])) for p in projected], width)
+            render_draw.lines(canvas, color, False, [(round(p[0]),round(p[1])) for p in projected], width)
 
     def _shadow(self, canvas, camera, position, radius=.5):
         points = [camera.project((position.x+math.cos(a)*radius, .025,
                                   position.z+math.sin(a)*radius*.55))
                   for a in [i*TAU/16 for i in range(16)]]
         if all(points):
-            pygame.draw.polygon(canvas, '#67869d', [(p[0],p[1]) for p in points])
+            render_draw.polygon(canvas, '#67869d', [(p[0],p[1]) for p in points])
 
     def _prison(self, canvas, camera, position, time, front):
         if time >= 16.45:
@@ -790,7 +831,7 @@ class IceReaperActionStage:
             angle = -1.4+phase(time,8.45,9.0)*2.7-i*.035
             point = contact+V3(math.cos(angle)*.6, math.sin(angle)*.8,0)
             q = camera.project(point)
-            if q: pygame.draw.circle(canvas, '#ffd78c', q[:2], max(1,3-i//6))
+            if q: render_draw.circle(canvas, '#ffd78c', q[:2], max(1,3-i//6))
 
     def _dash_snow(self, canvas, camera, positions, time, reduced):
         if not 7.02 <= time <= 10:return
@@ -805,7 +846,7 @@ class IceReaperActionStage:
                 source=origin.lerp(destination,progress)
                 source+=V3(math.sin(i*4.9)*age*.75, math.sin(min(1,age/1.4)*math.pi)*(.2+i%4*.12),math.cos(i*6.2)*age*.65)
                 p=camera.project(source)
-                if p:pygame.draw.circle(canvas,('#d8edfa','#edf8ff','#bcd9ec')[i%3],p[:2],max(1,round(camera.focal/p[2]*(.035+i%3*.025))))
+                if p:render_draw.circle(canvas,('#d8edfa','#edf8ff','#bcd9ec')[i%3],p[:2],max(1,round(camera.focal/p[2]*(.035+i%3*.025))))
 
     def mira_emitter_world(self, time, camera, position):
         action, local, duration = self._action('mira', time)
@@ -827,7 +868,7 @@ class IceReaperActionStage:
         length=max(6,camera.focal*size/p[2])
         image=self._scale(self.shard,self.shard.get_width()/self.shard.get_height()*length,length)
         angle=math.degrees(math.atan2(q[0]-p[0],q[1]-p[1]))
-        image=pygame.transform.rotate(image,angle)
+        image=render_rotate(image,angle)
         if alpha!=255:image.set_alpha(alpha)
         center=pygame.Vector2(p[:2])
         if tip:
@@ -852,7 +893,7 @@ class IceReaperActionStage:
             if not p:continue
             r=max(1,min(6,round(camera.focal/p[2]*(.03+i%4*.025))))
             color=('#fff0bd','#ffb14e','#e98042')[i%3] if fire else ('#e0f8ff','#8bc6ed','#d7edfc')[i%3]
-            pygame.draw.polygon(canvas,color,[(p[0],p[1]-r*1.8),(p[0]+r,p[1]),(p[0],p[1]+r),(p[0]-r,p[1])])
+            render_draw.polygon(canvas,color,[(p[0],p[1]-r*1.8),(p[0]+r,p[1]),(p[0],p[1]+r),(p[0]-r,p[1])])
 
     def _projectiles(self, canvas, camera, positions, time, reduced):
         start=self.first_shard_release()
@@ -869,7 +910,7 @@ class IceReaperActionStage:
             self._fragments(canvas,camera,shield,time,9.0,22 if not reduced else 8)
             if time<9.17:
                 p=camera.project(shield)
-                if p:pygame.draw.circle(canvas,'#f1faff',p[:2],max(1,round((1-phase(time,9.0,9.17))*17)),2)
+                if p:render_draw.circle(canvas,'#f1faff',p[:2],max(1,round((1-phase(time,9.0,9.17))*17)),2)
         second=V3(2.1,11.4,-8)
         if 12.65 <= time < 14.7:
             grow=.2+.8*smooth(phase(time,12.65,14.2))
@@ -880,14 +921,14 @@ class IceReaperActionStage:
             point=muzzle.lerp(second,u)
             self._line3(canvas,camera,'#ffe9a9',[point,muzzle.lerp(second,max(0,u-.1))],4)
             q=camera.project(point)
-            if q:pygame.draw.circle(canvas,'#fff5da',q[:2],3)
+            if q:render_draw.circle(canvas,'#fff5da',q[:2],3)
         if 14.7<=time<15.4:
             self._fragments(canvas,camera,second,time,14.7,32 if not reduced else 10)
             p=camera.project(second)
             if p:
                 age=phase(time,14.7,15.25)
-                pygame.draw.circle(canvas,'#d8f6ff',p[:2],max(1,round(age*42)),2)
-                if time<14.86:pygame.draw.circle(canvas,'#fff2d2',p[:2],max(1,round((1-age)*18)))
+                render_draw.circle(canvas,'#d8f6ff',p[:2],max(1,round(age*42)),2)
+                if time<14.86:render_draw.circle(canvas,'#fff2d2',p[:2],max(1,round((1-age)*18)))
 
     def _rune(self, canvas, camera, time, reduced):
         self.rune_seal.draw(canvas, camera, time, reduced)
@@ -924,14 +965,14 @@ class IceReaperActionStage:
             image=self._scale(self.scope,*SIZE).copy();image.set_alpha(round(255*opacity));canvas.blit(image,(0,0))
         else:
             mask=pygame.Surface(SIZE,pygame.SRCALPHA);mask.fill((10,19,27,round(200*opacity)))
-            pygame.draw.circle(mask,(0,0,0,0),(240,125),130)
+            render_draw.circle(mask,(0,0,0,0),(240,125),130)
             canvas.blit(mask,(0,0))
-            pygame.draw.circle(canvas,'#647a86',(240,125),132,5)
-            pygame.draw.circle(canvas,'#b4bfbd',(240,125),126,1)
+            render_draw.circle(canvas,'#647a86',(240,125),132,5)
+            render_draw.circle(canvas,'#b4bfbd',(240,125),126,1)
         # Fine sight marks leave the shard and Reaper unobscured.
-        for x in (-1,1):pygame.draw.line(canvas,'#dbba76',(240+x*48,125),(240+x*17,125),1)
-        for y in (-1,1):pygame.draw.line(canvas,'#dbba76',(240,125+y*40),(240,125+y*15),1)
-        pygame.draw.circle(canvas,'#d9bd7c',(240,125),3,1)
+        for x in (-1,1):render_draw.line(canvas,'#dbba76',(240+x*48,125),(240+x*17,125),1)
+        for y in (-1,1):render_draw.line(canvas,'#dbba76',(240,125+y*40),(240,125+y*15),1)
+        render_draw.circle(canvas,'#d9bd7c',(240,125),3,1)
 
     def draw(self, canvas, elapsed, reduced_motion=False):
         actual_time=clamp(float(elapsed),5,32)

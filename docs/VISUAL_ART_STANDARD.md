@@ -11,11 +11,12 @@ character workflow below preserves the lessons from Iselin's four approved walks
 world pixel, preserving its existing on-screen proportions and world footprint.
 Iselin's detailed artwork is the reference for this increase in fidelity.
 
-**Implementation status:** The full-world higher-resolution renderer and asset
-rebuild are pending. Today, most scenes use a 480×320 logical world canvas;
-`dense_art.WorldCanvas` preserves selected 2× character artwork through detail
-patches. Iselin's idles and walks use that path. This document establishes the
-target contract; adopting it does not implement the renderer or migrate assets.
+**Implementation status:** Full-scene 2× composition is implemented in
+`rendering.py`. The 480×320 logical view has an authoritative 960×640 native
+buffer across exploration, battle and cinematic presentation. Existing asset
+banks retain their legacy density until rebuilt; Iselin's detailed artwork
+already uses the shared path. Asset reconstruction and individual bank migration
+remain separate work.
 
 This standard replaces conflicting general advice in older character recipes,
 tool descriptions and review notes. Those files retain asset-specific facts,
@@ -93,7 +94,7 @@ Every measurement must declare its coordinate space:
   Existing documentation's world pixels refer to these units.
 - **Artwork pixels:** texels in an exported drawing, atlas cell or texture.
   The standard density is **2 artwork pixels per logical world unit** on each axis.
-- **Render pixels:** pixels in the scene's composition target. The planned
+- **Render pixels:** pixels in the scene's composition target. The
   standard world target is **960×640** for the existing **480×320 logical view**.
 - **Display pixels:** pixels in the actual window or embedded viewport after
   presentation. Interface text is rasterized in this space.
@@ -129,8 +130,8 @@ world measurements; a 4-unit gap spans 8 artwork pixels at 2× density.
 
 ## Rendering contract
 
-This section specifies the target implementation, not a claim that every
-existing renderer already supports it.
+This section defines the shared rendering contract. Current runtime APIs and
+asset metadata conventions are described below.
 
 Preserve the 480×320 logical camera view while composing its world art at
 960×640. Project logical positions and the camera into render space once.
@@ -163,7 +164,7 @@ unless a separate implementation explicitly changes it. UI layout, text sizing
 and input mapping must keep working across these presentation sizes.
 
 Asset records and exporters must explicitly record the following contract.
-These are required meanings; the exact shared runtime schema is pending.
+The current runtime follows the loader conventions below.
 
 | Record | Units / purpose |
 | --- | --- |
@@ -185,6 +186,76 @@ entire enlarged world images or rebuilding scaled frames on every draw. Profile
 representative populated scenes, animated terrain, cave lighting and battles.
 Set concrete memory/frame-time budgets during renderer implementation and record
 the measured results; this documentation does not assert an unmeasured budget.
+
+### Runtime APIs and metadata
+
+`rendering.WorldCanvas` is a logical-coordinate Surface with two buffers:
+its ordinary Surface storage is a compatibility mirror for geometry, sampling
+and existing logical checks; `native` is the authoritative full-scene 2× buffer.
+`get_size()`, rectangles and clips remain logical. `native.get_size()` returns
+render dimensions. The mirror is never enlarged to reconstruct the displayed
+scene. `dense_art.draw_actor` adapts the existing detailed-actor provider to
+this shared compositor; there are no patch lists or pixel-repair scans.
+
+Use the explicit `rendering.draw` primitive adapters, `scale`, `flip` and
+`rotate` for world drawing and intermediate transforms. Bare Pygame drawing or
+array writes on the logical Surface do not update its native buffer. Pixel
+shaders must explicitly synchronize the compatibility mirror and native result.
+Scene blur and rune projection preserve native detail. Legacy cinematic scenery
+keeps its existing sampling grid until rebuilt, then enters the native scene as
+a legacy background; later actors and effects retain their own density. Aerial
+landscape manifest/plane records declare `artwork_pixels_per_world_pixel: 2` to
+select native projection. Ice Reaper continuity scenery declares that field in
+`assets/story/ice_reaper_continuity/environment/art.json` to select native
+sky/ground sampling. These are explicit migration switches, not filename or
+image-size heuristics. Native shader results supply their logical mirror;
+the displayed scene is not reconstructed from that mirror.
+The cave illumination field intentionally retains its logical sampling grid and
+is applied to the native scene as a multiplicative light pass; crystal emission
+masks preserve their declared source density.
+
+- `present(scene, display_surface)` presents the native scene once before UI.
+  Plain display/UI surfaces retain ordinary Pygame behavior.
+- `scale(scene, logical_size)` returns a logical intermediate with its native
+  buffer preserved. Pass an explicit ordinary destination for final display
+  scaling; drawing an intermediate through an ordinary Surface's bare `blit`
+  would consume its logical mirror.
+- `snapshot(scene)` returns an independent, ordinary render-pixel Surface.
+  `WorldCanvas.copy()` and `subsurface()` preserve both initialized buffers;
+  transitions can retain that logical/native registration safely.
+- `record_art(image, record)` normalizes declared artwork density.
+  `World.art_image()` and `load_art()` apply that contract at bank boundaries.
+  `World.image()` retains original image pixels for masks and source processing.
+- `project_art(source, logical_size)` samples retained authored sources directly
+  into both grids for cached projected poses. It preserves the logical sampling
+  while retaining the source detail available to the native view.
+
+The shared density field is `artwork_pixels_per_world_pixel`; omission means
+legacy density 1, while rebuilt assets explicitly declare 2. `logical_size` is
+an optional validation of the normalized dimensions. Exported 2× frame dimensions
+must be divisible by two; pad small assets transparently as needed. Invalid
+density, divisibility or declared logical size fails explicitly.
+
+| Loader | Metadata units and inheritance |
+| --- | --- |
+| World ground/entities/foregrounds/doors | Map, entity and frame records may declare density; entity/frame overrides take precedence. Map/world positions, draw anchors, logical size and collision data remain logical. |
+| Player and routine NPCs | Bank or gait/action records declare density. Existing world draw anchors, action canvases, body offsets, approach and prop positions remain logical; source atlas rectangles remain artwork pixels. |
+| Story actor sheets | Sheet rectangles remain artwork pixels. Density normalizes the extracted frames; the actor record's world draw anchor remains logical. Existing detailed-provider manifests retain their explicit artwork anchors. |
+| Combat and cinematic actor banks | Bank `canvas` and `anchor`, plus frame-local body anchors, describe artwork pixels. Loaders validate raw frames then normalize into logical frames/anchors. Timing and scene positions remain unchanged. |
+| Cinematic backgrounds and cave battlefields | Layer/bank records declare density. Scene layout `canvas`/`size`, camera paths and geographic bounds remain logical. |
+| Portraits and display-space UI | Existing layout slots determine displayed size. World-density conversion is not applied to display-coordinate layout or text. |
+
+Immutable legacy assets use a shared 32 MiB transformed-image budget. Large
+backgrounds are cropped to the visible region before compatibility enlargement.
+Legacy-only overworld terrain chunks retain their original cached density.
+Installing declared 2× tile art selects native chunk composition. The existing
+64 MiB render budget counts both buffers for those chunks, so its LRU holds
+fewer enlarged chunks rather than exceeding the byte limit. Projected
+cinematic/body caches use 64 MiB byte limits per bank; oversized images are
+transient. Ordinary collision caches retain logical resolution. Use
+`python tools/profile_renderer.py --frames 30` for a temporary-save production
+draw benchmark; optional `--capture` is intended for requested or private review.
+Warm draw timings exclude simulation updates and are hardware-specific.
 
 ## Migration and acceptance
 

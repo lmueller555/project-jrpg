@@ -1,4 +1,6 @@
 """Small scene-owned visitors with the game's ordinary grounded registration."""
+from rendering import load_art, record_art
+from rendering import scale as render_scale
 import json
 from pathlib import Path
 import pygame
@@ -35,22 +37,22 @@ class StoryActor:
         self.pose=None;self.pose_ms=0.;self._pose_clock_origin=None
         if 'sheet' in animation:
             sheet=world.image(animation['sheet'])
-            for direction,rect in animation['idles'].items():self.idles[direction]=sheet.subsurface(rect).copy()
+            for direction,rect in animation['idles'].items():self.idles[direction]=record_art(sheet.subsurface(rect).copy(),animation)
             for direction,frames in animation['walks'].items():
-                self.walks[direction]=[sheet.subsurface(frame['rect']).copy() for frame in frames]
+                self.walks[direction]=[record_art(sheet.subsurface(frame['rect']).copy(),animation) for frame in frames]
                 self.walk_durations[direction]=tuple(frame.get('duration_ms',140) for frame in frames)
             for name,pose in animation.get('poses',{}).items():
                 self.pose_animations[name]={
-                    'frames':tuple(sheet.subsurface(frame['rect']).copy() for frame in pose['frames']),
+                    'frames':tuple(record_art(sheet.subsurface(frame['rect']).copy(),animation) for frame in pose['frames']),
                     'durations':tuple(frame['duration_ms'] for frame in pose['frames']),
                     'loop':pose.get('loop',False),'facing':pose.get('facing')}
         else:
-            for direction,path in animation['idles'].items():self.idles[direction]=world.image(path)
+            for direction,path in animation['idles'].items():self.idles[direction]=load_art(world,path,animation)
             for direction,paths in animation['walks'].items():
                 if isinstance(paths,dict):
                     self._load_manifest_walk(direction,paths['manifest'],world)
                 else:
-                    self.walks[direction]=[world.image(p) for p in paths]
+                    self.walks[direction]=[load_art(world,p,animation) for p in paths]
                     self.walk_durations[direction]=tuple(140 for _ in paths)
 
     def _load_manifest_walk(self,direction,path,world):
@@ -70,7 +72,7 @@ class StoryActor:
             raise ValueError('Actor walk frames must match their 2x canvas')
         self.walk_durations[direction]=durations
         self.detail_walks[direction]=(frames,tuple(manifest['draw_anchor']))
-        self.walks[direction]=[pygame.transform.scale(frame,(size[0]//2,size[1]//2))
+        self.walks[direction]=[render_scale(frame,(size[0]//2,size[1]//2))
                                for frame in frames]
 
     def set_pose(self, name, elapsed_ms=0):

@@ -1,5 +1,7 @@
 """Story and optional encounters, with atomic return to the saved journey."""
 from __future__ import annotations
+from rendering import layer as render_layer
+from rendering import draw as render_draw
 
 from copy import deepcopy
 import json
@@ -204,7 +206,7 @@ class CombatEncounters:
     def _capture_world(self):
         """Render the actual approach, including story props, without a frame flip."""
         game = self.game
-        frame = pygame.Surface(game.canvas.get_size())
+        frame = render_layer(game.canvas.get_size())
         camera = game.camera.position()
         travel = getattr(game, 'party_travel', None)
         options = ({'party_actors': travel.actors()}
@@ -1286,7 +1288,7 @@ class CombatEncounters:
             time -= duration
         point = self.position-pygame.Vector2(camera)
         shadow = pygame.Rect(0, 0, 20, 5);shadow.center = point
-        pygame.draw.ellipse(canvas, '#304a35', shadow)
+        render_draw.ellipse(canvas, '#304a35', shadow)
         canvas.blit(image, (round(point.x-self._anchor[0]), round(point.y-self._anchor[1])))
 
 
@@ -1317,5 +1319,5 @@ class CombatEncounters:
             time -= duration
         point = pygame.Vector2(quest.points.get('combat_position', (360, 312)))-camera
         shadow = pygame.Rect(0, 0, 64, 12);shadow.center = (round(point.x), round(point.y))
-        pygame.draw.ellipse(canvas, '#304a35', shadow)
+        render_draw.ellipse(canvas, '#304a35', shadow)
         canvas.blit(image, (round(point.x-anchor[0]), round(point.y-anchor[1])))

@@ -7,10 +7,9 @@ Frames, spacing and button feedback share the same renderer in `ui_style.py`.
 ## Readable text and crisp art
 
 The [global visual art standard](VISUAL_ART_STANDARD.md) owns style, dimensions,
-density and the rendering contract. The current world uses a 480×320 logical
-canvas, predominantly legacy artwork and selected 2× character detail patches.
-The approved target composes that same logical view at 960×640, with two artwork
-pixels per world unit; the full renderer and asset rebuild remain pending.
+density and the rendering contract. The shared renderer composes the 480×320 logical
+view onto a complete 960×640 native surface. It supports legacy artwork and
+explicitly declared 2× assets; individual asset-bank rebuilding remains pending.
 Interface text is drawn separately at the actual output resolution with
 antialiasing. Enlarging the world never enlarges a small bitmap of its lettering.
 Portraits, icons and panels retain their established layout slots and declare
