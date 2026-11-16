@@ -9,7 +9,7 @@ Artwork, textures, sprites, animation, exporters and rendering changes follow th
 That is the single reference for style, units, density, rendering, construction
 and review; this catalogue records commands and asset-specific implementation
 details. Full-scene 2× rendering is implemented; Sanctuary hall, bedroom and
-dining are migrated environments. Other asset rebuilds remain pending.
+dining and the courtyard/approach are migrated environments. Other asset rebuilds remain pending.
 Use `python tools/profile_renderer.py --frames 30` for temporary-save
 production draw timings.
 Existing command descriptions and frame dimensions below describe their current
@@ -21,6 +21,16 @@ Use the [running animation standard](../docs/VISUAL_ART_STANDARD.md#running-anim
 for near/far coupling, support/flight phases and run-specific review.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.
+
+`python tools/build_sanctuary_courtyard_hd.py` integrates selected staged banks
+into the current assembled town. `--check` verifies retained-source hashes and
+reproducible exports. It preserves gameplay registration and patches only the
+courtyard's native ground overlay, facade/door/prop/vegetation artwork, fifteen
+grass variants and scoped overview crop. See the
+[central terrain reference](../docs/TERRAIN_ART_STANDARD.md#integrated-sanctuary-courtyard-and-approach)
+for scope and rebuild order. `python tools/capture_sanctuary_courtyard_hd.py /tmp/courtyard-review`
+captures native scenery, actual walking/running, tree occlusion, door states and
+reduced motion using temporary saves/settings.
 
 `python tools/build_sanctuary_dining_hd.py` exports retained new dining-room
 source atlases at explicit 2× density. It registers furniture, four chair views,

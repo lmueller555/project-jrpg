@@ -123,9 +123,9 @@ class BuildingDoors(unittest.TestCase):
             self.assertIs(self.game.world,hall)
             self.assertEqual(self.game.player.facing,'front')
 
-    def test_all_thirteen_rooms_have_reachable_exits_and_furnishings(self):
+    def test_all_rooms_have_reachable_exits_and_furnishings(self):
         scenes=self.game.town.data['interior_scenes']
-        self.assertEqual(len(scenes),13)
+        self.assertEqual(len(scenes),15)
         for name,path in scenes.items():
             with self.subTest(room=name):
                 world=main.World(main.ROOT/path,self.game.town._images)
@@ -142,9 +142,12 @@ class BuildingDoors(unittest.TestCase):
                         seen.add(candidate)
                         if world.can_stand(candidate):queue.append(candidate)
                 self.assertFalse(remaining,(name,remaining))
-                fx,fy,fw,fh=world.data['floor_rect']
-                for point in [(0,0),(fx,fy+24),(fx+fw,fy+24),(fx+24,fy),(fx+24,fy+fh)]:
-                    self.assertFalse(world.can_stand(point))
+                # Regional Sanctuary rooms use bespoke collision rather than
+                # the original thirteen rooms' rectangular floor contract.
+                if 'floor_rect' in world.data:
+                    fx,fy,fw,fh=world.data['floor_rect']
+                    for point in [(0,0),(fx,fy+24),(fx+fw,fy+24),(fx+24,fy),(fx+24,fy+fh)]:
+                        self.assertFalse(world.can_stand(point))
                 for record in world.entities:
                     self.assertTrue(all((main.ROOT/p).is_file() for p in record['frames']))
 

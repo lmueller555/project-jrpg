@@ -46,6 +46,7 @@ def profile(frames=30,capture=None):
                     capture.mkdir(parents=True,exist_ok=True)
                     pygame.image.save(game.window,str(capture/(name+'.png')))
             for name,scene,position in [('town','eldenmere.playable',(732,1032)),
+                                        ('courtyard','eldenmere.playable',(384,320)),
                                         ('hall','sanctuary_hall',(168,276)),
                                         ('bedroom','sanctuary_bedroom',(144,276)),
                                         ('dining','sanctuary_dining',(228,252)),

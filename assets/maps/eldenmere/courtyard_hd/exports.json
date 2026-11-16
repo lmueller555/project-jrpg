@@ -1,0 +1,1397 @@
+{
+  "builder": "tools/build_sanctuary_courtyard_hd.py",
+  "sources": [
+    {
+      "file": "structure_authored.png",
+      "sha256": "98b0790f398cd4c1378b3b2a9b3f412d3b163d346683aa90609466d4fc861d07",
+      "role": "new_art"
+    },
+    {
+      "file": "props_authored.png",
+      "sha256": "6c85918f499811722ff0181d705c9f1755f7510c67b5475817e6e45315b89c2d",
+      "role": "new_art"
+    },
+    {
+      "file": "baseline_map.json",
+      "sha256": "e29ab59a4a5c920d5430c437c3384ed3d398bdfa0880b888614144619eaa7716",
+      "role": "coverage_or_baseline_reference"
+    },
+    {
+      "file": "overview_reference.png",
+      "sha256": "0cedce98b03e19a96a8bde427e0d297b620b9e3747d127837f7c333986677bfe",
+      "role": "coverage_or_baseline_reference"
+    },
+    {
+      "file": "flagstone_coverage.png",
+      "sha256": "dcb1b8b659cd50399be345587eb65dd381021182c502d705770cfbbc85fcb09d",
+      "role": "coverage_or_baseline_reference"
+    },
+    {
+      "file": "geometry.json",
+      "sha256": "a699fa0772cdc637235742e14713ca5c258841b93430af5eb4fc40c203ac9533",
+      "role": "coverage_or_baseline_reference"
+    }
+  ],
+  "exports": [
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/ground.png",
+      "artwork_size": [
+        864,
+        672
+      ],
+      "sha256": "4a6f82b565c6ad574597964a9acc3c25b31c44ce0b11e890a76026284b9e478d"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/props/herb_planter.png",
+      "artwork_size": [
+        48,
+        36
+      ],
+      "sha256": "b55f9f5c479ceb5eed43f8e02b277f375a0c67efd02dce2b90957590953e6c17"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/props/bench.png",
+      "artwork_size": [
+        96,
+        60
+      ],
+      "sha256": "05ea5e02129a43b6b89f3157c5ddc7647eae610fc0760e6a8d549d6496776883"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/props/provision_basket.png",
+      "artwork_size": [
+        36,
+        36
+      ],
+      "sha256": "b5e46852b9e24fe2ba18a044e19c2d7956705449a8b32249b3a1343a96f6b57b"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/props/lantern.png",
+      "artwork_size": [
+        16,
+        22
+      ],
+      "sha256": "bd263cca4f5d3451268af8afd4f44a0142efc33a0ec0904608979aeee287e106"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/props/bell.png",
+      "artwork_size": [
+        28,
+        32
+      ],
+      "sha256": "ea00bfe49533761e2f704df31409cdfbb1039c535bb3f3052369672e75041b23"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_00.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "9400398c652787696559b63823da84c347992a202019e1ed3edca1b0d07d9364"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_01.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "e6117659db03ca40806f4f658bb174703cf297adb64b377a1a9a2d217254940d"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_02.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "6ddbee6471ecc9aee74faaf696f6f50b2426aa66c059e86bfcf8dc4505f7f2bc"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_03.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "3de20feca7ec9c106408f3e7ebd0be531590c18a6faa5d78a05b2a2bc2497fc0"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_04.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "6e1640039cc18de68b0e077c7a0157eefc9b711266df726e139155d6fc59f26e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_05.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "1297b9c689233ba3054c3d0bd15e405def3ec3d8c2feac6728f5fd6b9b6b9870"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_06.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "dad3c4a056c2b2120de0265320fcc18b42eb8b6acf1ae4e30e7b1a427e1f6eae"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_07.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "b9f63f9061900ac12c3084b9363ac8902fa4124938dfbf0e2e4c8a7323a7818e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_08.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "81e8ecaded79417848bd25b8fec2a5c759f23f5652f651c37903b467121ac6e7"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_09.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "67b04cc2652d55e54f2eee181274b55828be1dfde0c0f9a8b0fe1db3eb2806f1"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_10.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "d4ad2fe2ec52e104839c88ce55941ae1a19482797f95f4fc234ef6cd4c3ba12e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_11.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "ea5419f041041997636dfb99ed5c43440fc692840fa588ac537b782d76c7c7bc"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_12.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "ec122de9770be49511fab492f33f7edd3886489c78cb79bf808f48ca64d5c994"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_13.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "bafca45cf0e7b93e2bead8db562385f625260abe885f46fa6747bc1a44b75da9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_14.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "3f4a357d75b7192da432fc63777282fb2bdf94264e0a1e4c9d879d8fe395f9e9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_15.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "b92498c094b81e172896d35759ecf1d9da9fd7221eb80ec95bbf775ffd1a42df"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_16.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "2c0ea41b90dc985e929e3169cf216eaffc38ffd44fbc93804798d01c5f74a9d5"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_17.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "eb5137a5a00cd1796e338887c4875b6f580d3747bffc56a31dc8d17f8f0d02b9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_18.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "bca4298767fbd782d17f6a3ab912051074876f13f7ffa026b021ed077933241c"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_19.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "670ec1cbc816cdcde14c4c3a30744b4969eae38f97cd233227cbb46b76526bc9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_20.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "6cb0934272b9c3b41a2cdae3f6e202b49da32e4f8d57a9d99b305492a7e56ceb"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_21.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "459e477b8d06958ca95e26d4d98f2606b0518d4a50d09474fedb666c2d177437"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_22.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "50cf5cfb21126131e5c2ca087a45046fede469564f34237c2b2c3ba5cff5bb7a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_23.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "15c1bab7069872f0f1bfa5f9f0f2eabd1bd7a2ca4091d8044bdc67ddcef203f3"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_24.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "e7b339f25ad2183bb00badc20cfdc20b03a136d70bae0ad4c9339384e2f1ede9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_25.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "fcfac26fe27ba19ad87a3d6859895892802b07f7bc487f121a0e7c9f281e73f1"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_26.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "f22c31facc264ba2a670d340e3a4e865a79c35119445765fa116d1623acad24f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_27.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "4bf7bdcb12aaf662ba7c629a11172aebab05d046a57914667d1534b40c7a745c"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_28.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "c555962be93309e818ffcd6b766f506b58071858355af14e24f7886b7ae506b5"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_29.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "14af2c7744f40443a87c1994ba9c35bac51a3d54b541d292c2c8ad9efeb33959"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_30.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "d90ab0b418f57eab390c06e97172ec57eb133e52c747bee8a63727f49d26b41b"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_31.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "414b90ca9800b274a1f41f3b315a7f27cc4e5efb1ce40c9b770c9ca701543238"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_32.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "924b7f0168a073c05deb8a54794d50b0b2edc9b0187cf5e94382e8df80ee2f11"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_33.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "03d23c3a1b88b4f2b165750fbe22b6543b102c911f94e33c3b7ba480606e95e4"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_34.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "b70f4eaba9560f6a0865ee2119faee227418d5e0ebaa14e52ea6475d79638741"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_35.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "5be1a59d338661b1e7ddbae5af6fe6d678d2145a8696323fa42008c34cad5890"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_36.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "e302dcbbe6faeb47668280820f959b57a1a13176ac74d03c4dca4bd32c6fc58d"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_37.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "4216d34c23d3e124ee3fe639dc8fd4d23dfdd8064191d6582bfcd8ef49d61666"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_38.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "18b1d1e3834fb7fe174e9e4962d58748af4e835f4abcd80180813d86bcfe5ad0"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_39.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "d698f7a204620c40414467b3f124b3b3be323919164cdb18fded4492b7f93de8"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_40.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "67564935d3829529162cd554e8591eb717cc63b54c134cff94fcc89519f5cf85"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_41.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "b75ceb407844ffd0ed1a621e7f3d418185d69489d0ad75722624116ae8c0cf3f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_42.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "214852f8dbf3662229a940e3274aa871751bf6bc31b6508feff7167d260d4a3a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_43.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "e5609d58a9c0447641386a5b3de0d22770ec7025089ccf1ddeedcc3e676e164b"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_44.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "331f28bf73660c9959f5238bfb570cdc48566ec4efd763fe37dccc3dcd756020"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_45.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "f314015c6aefa70821d7d30ffd452ac7ce443701b1b1879438566e81a83350c6"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_46.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "44a0dfd29060e85f71d2bc6f4d31bbb6d0f0c85934119541ceb90ce4eca75705"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_47.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "c47c579863932537bd81edf79be3a86d487ec06c028ff355729ddca106f23fd7"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_48.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "3107a97de429694f6b20ffa8324243737a8d656c98a00af08995e7ba5663cb3d"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_49.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "ef9f09e7fec2bfb73149a38ec8f2bb710948127d7df8681b78f2c4ff28d1b744"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_50.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "92e7f2413a83ea3ffb142af510a38d6d8b9e5591f6412ddf84bda14ff1e6661c"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_51.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "1e02a4ee31d566c585483162d5019b8e907c2b33a7220d963ca0676abe760349"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_52.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "477977c403bbec8d579cc8f12cd62442234fcc9972adf78ab625d50a1fca399a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_53.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "14217e5981244612bb4aa77c2607ebc37c61fb9a05bd439695ad277b55aae9d8"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/sanctuary/reduced_motion.png",
+      "artwork_size": [
+        432,
+        432
+      ],
+      "sha256": "3a014fb1395e85c68444f5ae5218ab399e905428fc77a18eb5791333d11e68d2"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "9d09c39b19f298823f780967e6b25a21a33cdd1950f212e47bb68a470fae9381"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "a29c2522122887018832ee90b99e59a3bb36f3f0a3adce8ade1b650a0d4d7211"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "a29c2522122887018832ee90b99e59a3bb36f3f0a3adce8ade1b650a0d4d7211"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_3_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "9d09c39b19f298823f780967e6b25a21a33cdd1950f212e47bb68a470fae9381"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_3_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_4_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "35a63e7b3890cb3625a8b385b5832f18d79181f41d3e6d34b729162af8e8e791"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_4_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_5_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "35a63e7b3890cb3625a8b385b5832f18d79181f41d3e6d34b729162af8e8e791"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/idle_5_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/north_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "9d09c39b19f298823f780967e6b25a21a33cdd1950f212e47bb68a470fae9381"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/north_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/north_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "0772cd9228156e7d6389d3ee5f95a3baed2caac4d1daffff18c21843376f807f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/north_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "a5b5aa6a31e3aa95cb7f9932c06353bb943c6f11d9bf75a7207b7847ceda4a09"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/north_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "5b207323e12e6618b9ded2a9a51330b3013ccff8a429a2eb89b2a7c90820b854"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/north_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "58c0ea934e50a5c790c24970f2c89cc31490bb4e2a9d77070fb670652b7fb7d6"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/east_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "9d09c39b19f298823f780967e6b25a21a33cdd1950f212e47bb68a470fae9381"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/east_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/east_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "a1f7c93635ff600c4c6e70dd1025639df2002f5f22b14e5a0363d02df7f0575a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/east_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "2e98bbd4489c6c11f5b3e392a956c674707880bfb4440973d79f7d8148453c3b"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/east_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fd13b23ec8b1cb02735d144c84db18b5acbdf0106f1d0923412cd9b2eb72df1b"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/east_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "0bafabd3b78c78cb7990107a0363c2e4734c49684ad448ef41dcfe13a6796782"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/south_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "9d09c39b19f298823f780967e6b25a21a33cdd1950f212e47bb68a470fae9381"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/south_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/south_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "ecd74e0ec0aa1860d9423289b2af238ef37ee517743fab156144336ecb2032a6"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/south_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "a5b5aa6a31e3aa95cb7f9932c06353bb943c6f11d9bf75a7207b7847ceda4a09"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/south_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "3e2ac4c7c580bcd9d364ddea866847c798c6b0ffe529d51ddc2b1f7b5d4fe3b7"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/south_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "58c0ea934e50a5c790c24970f2c89cc31490bb4e2a9d77070fb670652b7fb7d6"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/west_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "9d09c39b19f298823f780967e6b25a21a33cdd1950f212e47bb68a470fae9381"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/west_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d8b9e84f2aa23b770c66ab24b58c8033765f24a33a56f3f871418f4032686c0f"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/west_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "ce7085128a0a9089d8ef4d693677a19c9317822b64a670ce4a5a02828f04e2a1"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/west_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "3d7bd620f2f24050cc8384cee45cc0e9434a9d529d867591232e5ba742bb1951"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/west_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "669c8904bdbaf746bc14956c7fe00dda18025ba9c40f99ccbcb440d3918469fd"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/sparse_hd/west_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "5f7129adf03a6b3256fb8309ab2dc6ac3f9f83af37f43f2e0b9c7effc8cbe84e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c1ff12995b5ef35ab8533fba413e6f9a7e40617ad47ca3f0a386cddddf4e11d9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "75d9aa6f899ce8add1bef1b8f97185db1978109df422fa7074ca4f350f80cc40"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "75d9aa6f899ce8add1bef1b8f97185db1978109df422fa7074ca4f350f80cc40"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_3_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c1ff12995b5ef35ab8533fba413e6f9a7e40617ad47ca3f0a386cddddf4e11d9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_3_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_4_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "097a78e4f4e968d80edb96a9bffa0ad193db687729c59f5969f76dddf73e675a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_4_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_5_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "097a78e4f4e968d80edb96a9bffa0ad193db687729c59f5969f76dddf73e675a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/idle_5_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/north_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c1ff12995b5ef35ab8533fba413e6f9a7e40617ad47ca3f0a386cddddf4e11d9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/north_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/north_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "050ba154f8010bab99de5931b5afe25f9da408e4a68e448593756fb205f7dbc6"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/north_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "b167b058dfdcf1d6422b534ebb9aebe7e4ee22a13ab777d2d16c0cfbbcd3a964"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/north_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "83a929d13f5121512e880fec99091f0a12478413cd1ade96865abb3ef35b8aac"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/north_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d06e4fbdbea17d77a3c89493d37a56f6e73d2ee6541d7296073b615419910629"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/east_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c1ff12995b5ef35ab8533fba413e6f9a7e40617ad47ca3f0a386cddddf4e11d9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/east_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/east_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "adace0b73c7ff8a93f8d8a8d0dd3305a46882ba713b012f810bd7a691dba7c1d"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/east_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c4a96ca27af780d27518b5f58d1c20b994fa57f725519ba3ef007f6e09332120"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/east_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "e7d85c85875c448f85a822df8d3e9dd05639a8b105254d1e765c8d882b439650"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/east_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fe7c9ee5f8872d1fd5d7ed9395ba296b92e5b419914ec36445e4b9bba303e5fe"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/south_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c1ff12995b5ef35ab8533fba413e6f9a7e40617ad47ca3f0a386cddddf4e11d9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/south_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/south_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "050ba154f8010bab99de5931b5afe25f9da408e4a68e448593756fb205f7dbc6"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/south_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "b167b058dfdcf1d6422b534ebb9aebe7e4ee22a13ab777d2d16c0cfbbcd3a964"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/south_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "515af6f537a7435f58b9c175892ebc35ba6a7ebb5c013c1d6284f73555b002ee"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/south_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d06e4fbdbea17d77a3c89493d37a56f6e73d2ee6541d7296073b615419910629"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/west_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c1ff12995b5ef35ab8533fba413e6f9a7e40617ad47ca3f0a386cddddf4e11d9"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/west_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "34023d5d012b9ad9f48d66a1c29626c48cf9ae533ab8e08ee5714566f063213e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/west_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "2d0512cf9cd4b62aa7b18084e1192e8c2f606725dd33fa2f07f56dee780ba843"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/west_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "f96beb8137e1c849d1ae1e6b983a6e5c2b3124a43f5b5f38a16f2f1ef3f0fd7a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/west_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "842ae45223d5bd5d0e506f8c2ba7bacadf3fb8dc18bfeef5c9d0f652b37f8713"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/splayed_hd/west_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "510d2ee4d8b52f74de33eeaae06d7a98a00824584f9a3ba30a20e8fbe4019412"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fabc5c1e963e42ea0441a73ab6eb33364a715e5afebb4e61583108c958f44a3e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c5d8f106663947abb9c8154640ec4c71ea4ef4272526b14d765bd04fd4b711d0"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c5d8f106663947abb9c8154640ec4c71ea4ef4272526b14d765bd04fd4b711d0"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_3_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fabc5c1e963e42ea0441a73ab6eb33364a715e5afebb4e61583108c958f44a3e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_3_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_4_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "76a6b7c2bacc9b93d82b893183e180ae004f47269191f940a4c4a7265efea2be"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_4_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_5_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "76a6b7c2bacc9b93d82b893183e180ae004f47269191f940a4c4a7265efea2be"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/idle_5_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/north_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fabc5c1e963e42ea0441a73ab6eb33364a715e5afebb4e61583108c958f44a3e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/north_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/north_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "66e2b827866a1719096df0e5f410cc131290f606ca17491bd60a8899473135b7"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/north_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "e79e34f9b22fee6a332385c849f4ae11943d20fa27a511c4cf3408b8d01bdce7"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/north_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "13e0b66514b08662035480f4396e54a8f339514e0212a1875fbedeb7e77e6adf"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/north_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "464c0faf5647d0d68e799a401f77f76eb92b2ddfe5c4aabb0a88550a78383070"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/east_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fabc5c1e963e42ea0441a73ab6eb33364a715e5afebb4e61583108c958f44a3e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/east_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/east_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "d199b9ed9ce9719c48733e388f4033a3e9c4e238759f1325ab9f86aadb6d5346"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/east_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "41b16f9dff2f49894589b21c4d7c0d6d6bc521992c7c38b9ea3ea1936499e8c0"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/east_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "ba68f4c39308095ffe096eccbfe3e929eec7f7291d7e92e971e834b077e8c788"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/east_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "a20870f6b8488fad4a5144e8c3206b89f25575ff610a57a9d00bca7be1c8c59a"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/south_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fabc5c1e963e42ea0441a73ab6eb33364a715e5afebb4e61583108c958f44a3e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/south_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/south_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "7630681b7b43caff754e4f76576c4b93196920f2b7c0e4e982648875e96cea24"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/south_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "e79e34f9b22fee6a332385c849f4ae11943d20fa27a511c4cf3408b8d01bdce7"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/south_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "dc8047e068a9a21f0c9a922e7123de6b8103ccae69fd2fb75fe27d112ea3933b"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/south_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "464c0faf5647d0d68e799a401f77f76eb92b2ddfe5c4aabb0a88550a78383070"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/west_0_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "fabc5c1e963e42ea0441a73ab6eb33364a715e5afebb4e61583108c958f44a3e"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/west_0_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "1523bdaf989b396cb49be475234433d0040ad77a7878b3b1bfed71a225dc9110"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/west_1_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "c500d76d45656679c5197855b1b30199096f1213f018eae6f9b636a3d7741b35"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/west_1_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "e56324c4834e9985e5050cb950edcd2ee95c95eda356a6d3106adb61c9dcd5fa"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/west_2_rear.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "ad9d5eecf0eabbe912e28f51acfe58c08700820e073e75f8e90f6b1c0824caf3"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/grass/dense_hd/west_2_front.png",
+      "artwork_size": [
+        48,
+        64
+      ],
+      "sha256": "abf49c930479b8bdbe55f44a53303f8ac02298216ad773df5bb237ffe7514e7d"
+    },
+    {
+      "file": "assets/maps/eldenmere/courtyard_hd/overview.png",
+      "artwork_size": [
+        1536,
+        1344
+      ],
+      "sha256": "adb3921fc44c83d45875bac436463df2dcfd0c9184dff2b5d1852c074375b74c"
+    }
+  ]
+}

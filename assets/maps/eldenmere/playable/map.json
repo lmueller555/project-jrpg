@@ -40,63 +40,69 @@
       ],
       "sort_y": 288,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_05.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_09.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_10.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_11.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_12.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_13.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_14.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_15.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_16.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_17.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_18.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_22.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_23.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_24.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_25.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_26.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_27.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_28.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_29.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_30.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_13.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_14.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_15.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_16.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_17.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_18.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_37.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_38.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_39.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_05.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_09.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_28.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_29.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_30.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_49.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_50.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_51.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_52.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_53.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary/frame_54.png"
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_00.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_01.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_02.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_03.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_04.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_05.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_06.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_07.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_08.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_09.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_10.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_11.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_12.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_13.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_14.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_15.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_16.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_17.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_18.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_19.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_20.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_21.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_22.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_23.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_24.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_25.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_26.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_27.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_28.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_29.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_30.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_31.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_32.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_33.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_34.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_35.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_36.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_37.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_38.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_39.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_40.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_41.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_42.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_43.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_44.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_45.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_46.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_47.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_48.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_49.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_50.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_51.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_52.png",
+        "assets/maps/eldenmere/courtyard_hd/sanctuary/frame_53.png"
       ],
       "frame_duration_ms": 200,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        216,
+        216
+      ],
+      "reduced_motion_image": "assets/maps/eldenmere/courtyard_hd/sanctuary/reduced_motion.png"
     },
     {
       "id": "mill",
@@ -370,10 +376,15 @@
       ],
       "sort_y": 332,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.bench/frame_01.png"
+        "assets/maps/eldenmere/courtyard_hd/props/bench.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        48,
+        30
+      ]
     },
     {
       "id": "sanctuary.provision_basket",
@@ -383,10 +394,15 @@
       ],
       "sort_y": 304,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.provision_basket/frame_01.png"
+        "assets/maps/eldenmere/courtyard_hd/props/provision_basket.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        18,
+        18
+      ]
     },
     {
       "id": "sanctuary.shade_tree",
@@ -396,18 +412,24 @@
       ],
       "sort_y": 330,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_05.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_09.png"
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        96,
+        120
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "sanctuary.west_shrub",
@@ -417,18 +439,24 @@
       ],
       "sort_y": 292,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_05.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_09.png"
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 1
+      "phase_offset": 1,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "sanctuary.east_shrub",
@@ -438,18 +466,24 @@
       ],
       "sort_y": 292,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_05.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_09.png"
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/shrub_irregular/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 1
+      "phase_offset": 1,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "sanctuary.west_flowers",
@@ -459,18 +493,24 @@
       ],
       "sort_y": 342,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_01.png"
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 2
+      "phase_offset": 2,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "sanctuary.east_flowers",
@@ -480,18 +520,24 @@
       ],
       "sort_y": 337,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_01.png"
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 2
+      "phase_offset": 2,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "sanctuary.southwest_flowers",
@@ -501,18 +547,24 @@
       ],
       "sort_y": 354,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_01.png"
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 3
+      "phase_offset": 3,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "sanctuary.southeast_flowers",
@@ -522,18 +574,24 @@
       ],
       "sort_y": 355,
       "frames": [
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_01.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_02.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_03.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_04.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_06.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_07.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_08.png",
-        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_01.png"
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 3
+      "phase_offset": 3,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0
     },
     {
       "id": "workshop.workbench",
@@ -1122,7 +1180,7 @@
     }
   ],
   "quests": [],
-  "overview": "assets/maps/eldenmere/playable/overview.png",
+  "overview": "assets/maps/eldenmere/courtyard_hd/overview.png",
   "doors": [
     {
       "id": "sanctuary",
@@ -1137,11 +1195,11 @@
       "close_radius": 38,
       "frame_duration_ms": 100,
       "frames": [
-        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_01.png",
-        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_02.png",
-        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_03.png",
-        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_04.png",
-        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_05.png"
+        "assets/terrain/eldenmere/exteriors_hd/buildings/sanctuary/doors/frame_00.png",
+        "assets/terrain/eldenmere/exteriors_hd/buildings/sanctuary/doors/frame_01.png",
+        "assets/terrain/eldenmere/exteriors_hd/buildings/sanctuary/doors/frame_02.png",
+        "assets/terrain/eldenmere/exteriors_hd/buildings/sanctuary/doors/frame_03.png",
+        "assets/terrain/eldenmere/exteriors_hd/buildings/sanctuary/doors/frame_04.png"
       ],
       "position": [
         370,
@@ -1155,7 +1213,12 @@
         294
       ],
       "arrival_facing": "back",
-      "arrival_door": "courtyard"
+      "arrival_door": "courtyard",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        32,
+        42
+      ]
     },
     {
       "id": "mira",
@@ -1535,7 +1598,7 @@
     }
   ],
   "grass": {
-    "manifest": "assets/terrain/grass/assets.json",
+    "manifest": "assets/maps/eldenmere/courtyard_hd/grass/manifest.json",
     "instances": [
       {
         "id": "sanctuary_meadow.0.2",
@@ -1543,7 +1606,7 @@
           536,
           202
         ],
-        "variant": "arching",
+        "variant": "dense_hd",
         "phase_ms": 574
       },
       {
@@ -1561,7 +1624,7 @@
           503,
           222
         ],
-        "variant": "slender",
+        "variant": "sparse_hd",
         "phase_ms": 773
       },
       {
@@ -1570,7 +1633,7 @@
           525,
           222
         ],
-        "variant": "fan",
+        "variant": "splayed_hd",
         "phase_ms": 1587
       },
       {
@@ -1579,7 +1642,7 @@
           547,
           222
         ],
-        "variant": "seeded",
+        "variant": "dense_hd",
         "phase_ms": 2401
       },
       {
@@ -1606,7 +1669,7 @@
           492,
           242
         ],
-        "variant": "arching",
+        "variant": "dense_hd",
         "phase_ms": 1786
       },
       {
@@ -1615,7 +1678,7 @@
           514,
           242
         ],
-        "variant": "slender",
+        "variant": "sparse_hd",
         "phase_ms": 2600
       },
       {
@@ -1624,7 +1687,7 @@
           536,
           242
         ],
-        "variant": "fan",
+        "variant": "splayed_hd",
         "phase_ms": 3414
       },
       {
@@ -1660,7 +1723,7 @@
           503,
           262
         ],
-        "variant": "seeded",
+        "variant": "dense_hd",
         "phase_ms": 3613
       },
       {
@@ -1669,7 +1732,7 @@
           525,
           262
         ],
-        "variant": "arching",
+        "variant": "dense_hd",
         "phase_ms": 4427
       },
       {
@@ -1678,7 +1741,7 @@
           547,
           262
         ],
-        "variant": "slender",
+        "variant": "sparse_hd",
         "phase_ms": 441
       },
       {
@@ -1687,7 +1750,7 @@
           514,
           282
         ],
-        "variant": "seeded",
+        "variant": "dense_hd",
         "phase_ms": 640
       },
       {
@@ -1696,7 +1759,7 @@
           536,
           282
         ],
-        "variant": "arching",
+        "variant": "dense_hd",
         "phase_ms": 1454
       },
       {
@@ -1705,7 +1768,7 @@
           525,
           302
         ],
-        "variant": "fan",
+        "variant": "splayed_hd",
         "phase_ms": 2467
       },
       {
@@ -1714,7 +1777,7 @@
           547,
           302
         ],
-        "variant": "seeded",
+        "variant": "dense_hd",
         "phase_ms": 3281
       },
       {
@@ -3604,7 +3667,7 @@
           224,
           90
         ],
-        "variant": "arching",
+        "variant": "dense_hd",
         "phase_ms": 278
       }
     ],
@@ -18059,5 +18122,33 @@
         ]
       ]
     ]
+  },
+  "ground_overlays": [
+    {
+      "id": "sanctuary_courtyard_hd",
+      "image": "assets/maps/eldenmere/courtyard_hd/ground.png",
+      "position": [
+        120,
+        72
+      ],
+      "logical_size": [
+        432,
+        336
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    }
+  ],
+  "pause_on_focus_loss": true,
+  "art_integrations": {
+    "sanctuary_courtyard": {
+      "recipe": "assets/source/maps/eldenmere/courtyard_hd/recipe.json",
+      "region_logical": [
+        120,
+        72,
+        432,
+        336
+      ],
+      "density": 2
+    }
   }
 }

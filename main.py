@@ -204,6 +204,9 @@ class World:
         self.art_density=self.data.get('artwork_pixels_per_world_pixel',1)
         self.object_cues=ObjectCues(self.data.get('interaction_cues',()))
         self.ground=[self.art_image(p,self.data,False) for p in self.data['ground_frames']]
+        # Scoped native-density ground layers preserve the shared town bank.
+        self.ground_overlays=[(self.art_image(r['image'],r),tuple(r['position']))
+                              for r in self.data.get('ground_overlays',())]
         collision=self.image(self.data['collision'],False)
         # Collision exports are monochrome, so white pixels block and black
         # pixels remain walkable. Do not use alpha (the mask is opaque).
@@ -214,7 +217,10 @@ class World:
         self.entities=[]
         for record in self.data['entities']:
             frames=[self.art_image(p,record,default_density=self.art_density) for p in record['frames']]
-            self.entities.append({**record,'surfaces':frames,'rect':frames[0].get_rect(topleft=record['position'])})
+            still=(self.art_image(record['reduced_motion_image'],record,default_density=self.art_density)
+                   if record.get('reduced_motion_image') else None)
+            self.entities.append({**record,'surfaces':frames,'still_surface':still,
+                                  'rect':frames[0].get_rect(topleft=record['position'])})
         self.foreground=[(self.art_image(r['image'],r,default_density=self.art_density),tuple(r['position'])) for r in self.data['foreground']]
         self.overview=self.image(self.data['overview'],False)
         self.doors=[Door(record,self) for record in self.data.get('doors',[])]
@@ -327,6 +333,9 @@ class World:
         viewport=pygame.Rect(camera,VIEW_SIZE)
         phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
         target.blit(self.ground[phase],(-camera[0],-camera[1]))
+        for image,position in self.ground_overlays:
+            if image.get_rect(topleft=position).colliderect(viewport):
+                target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
@@ -373,6 +382,8 @@ class World:
                 phase=(record['reduced_motion_frame'] if self.reduced_motion and 'reduced_motion_frame' in record else
                        0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces']))
                 surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
+                if self.reduced_motion and record.get('still_surface') is not None:
+                    surface=record['still_surface']
                 position=(record['position'][0]-camera[0],record['position'][1]-camera[1])
                 self.object_cues.draw_outline(target,record,surface,position)
                 target.blit(surface,position)
@@ -1878,6 +1889,9 @@ class Game:
             return
         if (getattr(self.overworld_travel,'remote',self.overworld_travel.active)
                 and (self.map_open or self.quest_ui.journal_open)):
+            self.opening_audio.set_paused(True)
+            return
+        if not self._music_focused and self.world.data.get('pause_on_focus_loss',False):
             self.opening_audio.set_paused(True)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
