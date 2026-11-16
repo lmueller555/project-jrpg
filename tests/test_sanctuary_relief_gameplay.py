@@ -31,6 +31,16 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
             driver.departure()
             driver.rejoin_mira()
             driver.arrive()
+            # The mandatory arrival owns movement until its acknowledged handoff.
+            # Complete it through real input before exercising free room travel.
+            for _ in range(2400):
+                if driver.game.sanctuary_arrival.completed:break
+                driver.tick(.2)
+                if driver.game.sanctuary_arrival.dialogue:
+                    driver.game.handle_events([
+                        pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False),
+                        pygame.event.Event(pygame.KEYUP,key=pygame.K_SPACE)])
+            assert driver.game.sanctuary_arrival.completed
             assert driver.game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
@@ -106,14 +116,14 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
         self.assertTrue(self.game.sanctuary_relief.active)
         self.assertIn(self.game.sanctuary_relief.attendant, self.game.world.npcs)
 
-    def story(self):
+    def story(self, music='something_is_wrong'):
         game = self.game
         self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
         self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
         self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
         self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
         self.assertIn('mira', game.party.active_ids)
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(game.music.desired_track, music)
 
     def durable_facts(self):
         game = self.game
@@ -203,6 +213,9 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
         self.key(pygame.K_e)
         self.assertEqual(self.game.world.data['id'], 'sanctuary_cave')
         self.settle()
+        # Post-arrival first entry includes the existing blade-resonance exchange.
+        self.game.update(.05,(0,0),False)
+        if self.game.social.active:self.finish_dialogue()
         exit_link = next(link for link in self.game.world.data['cave']['links']
                          if link['id'] == 'reserve')
         self.route(exit_link['approach'])
@@ -210,7 +223,7 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
         self.assertEqual(self.game.world.data['id'], RESERVE_ID)
         self.settle()
         self.assertFalse(self.game.combat.active)
-        self.story()
+        self.story(music='eldenmere')
         after_cave = self.durable_facts()
         self.assertTrue(self.game.attributes.set_current(hp=9, mp=0))
         self.assertTrue(self.game.party.characters['mira'].set_current(hp=0, mp=0))
@@ -225,7 +238,7 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
                              (attributes.value('hp'), attributes.value('mp')))
         self.assertEqual(self.durable_facts(), after_cave)
         self.assertEqual(json.loads(self.path.read_text())['player']['scene'], RELIEF_ID)
-        self.story()
+        self.story(music='eldenmere')
 
     def test_attendant_rest_heals_the_travelling_party_and_preserves_the_pending_outing(self):
         self.enter_room()
@@ -234,7 +247,7 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
         self.assertTrue(game.party.recruit('rhea'))
         self.assertTrue(game.party.recruit('edran'))
         self.assertTrue(game.party.set_available('edran', False, 'Away on story business.'))
-        self.assertTrue(game.party.select(('caelan', 'mira')))
+        self.assertTrue(game.party.select(('caelan', 'mira', 'lucan')))
         self.assertIn('rhea', game.party.reserve_ids)
         for identifier in game.party.available_ids:
             self.assertTrue(game.party.characters[identifier].set_current(hp=0, mp=0))

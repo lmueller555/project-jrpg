@@ -22,43 +22,35 @@ class SanctuaryGrassTests(unittest.TestCase):
     def setUpClass(cls):
         pygame.init();pygame.display.set_mode((480,320))
         cls.world=SanctuaryReserveWorld(ROOT/'assets/maps/elden_vale_sanctuary/map.json')
-        cls.art=json.loads((ROOT/'assets/terrain/elden_vale_sanctuary/art.json').read_text())
-        cls.pack=json.loads((ROOT/'assets/terrain/grass/assets.json').read_text())
+        cls.art=json.loads((ROOT/cls.world.data['art_bank']).read_text())
+        cls.pack=json.loads((ROOT/'assets/terrain/eldenmere/grass_dirt_hd/tileset.json').read_text())
 
     @classmethod
     def tearDownClass(cls):pygame.quit()
 
-    def test_actual_ground_uses_all_twelve_approved_materials(self):
-        materials=self.art['ground_materials']
-        expected=[path for record in self.pack['materials'].values() for path in record['tiles']]
-        self.assertEqual(materials['manifest'],'assets/terrain/grass/assets.json')
-        self.assertEqual(materials['tiles'],expected)
-        self.assertEqual({index for row in materials['indices'] for index in row},set(range(12)))
-        # Check shipped pixels, not only the metadata: each of the twelve
-        # materials must survive as complete tiles somewhere in the ground.
-        with Image.open(ROOT/self.art['ground']) as image:
-            ground=image.convert('RGB')
-        tiles=[Image.open(ROOT/path).convert('RGB').tobytes() for path in expected]
+    def test_actual_ground_preserves_native_approved_grass_arrangements(self):
+        ground=Image.new('RGBA',tuple(v*2 for v in self.world.size))
+        for chunk in self.world.data['ground_overlays']:
+            ground.alpha_composite(Image.open(ROOT/chunk['image']).convert('RGBA'),tuple(v*2 for v in chunk['position']))
+        expected=[Image.open(ROOT/'assets/terrain/eldenmere/grass_dirt_hd'/path).convert('RGBA').tobytes() for path in self.pack['materials']['grass']]
         visible=set()
-        for row,indices in enumerate(materials['indices']):
-            for col,index in enumerate(indices):
-                crop=ground.crop((col*24,row*24,(col+1)*24,(row+1)*24))
-                if crop.tobytes()==tiles[index]:visible.add(index)
-        self.assertEqual(visible,set(range(12)))
+        for y in range(self.world.size[1]//24):
+            for x in range(self.world.size[0]//24):
+                tile=ground.crop((x*48,y*48,(x+1)*48,(y+1)*48)).tobytes()
+                if tile in expected:visible.add(expected.index(tile))
+        self.assertEqual(visible,set(range(len(expected))))
 
     def test_live_grass_is_separate_from_the_cached_ground_and_static_objects(self):
         data=self.world.data
-        self.assertEqual(data['grass']['manifest'],'assets/terrain/grass/assets.json')
+        self.assertEqual(data['grass']['manifest'],'assets/maps/sanctuary_reserve_hd/grass.json')
         instances=data['grass']['instances']
         self.assertGreater(len(instances),60)
         self.assertEqual(len({instance['id'] for instance in instances}),len(instances))
-        self.assertEqual({instance['variant'] for instance in instances},set(self.pack['tall_grass']['variants']))
+        live=json.loads((ROOT/data['grass']['manifest']).read_text())
+        self.assertEqual({instance['variant'] for instance in instances},set(live['tall_grass']['variants']))
+        self.assertTrue(all(key.endswith('_hd') for key in live['tall_grass']['variants']))
         self.assertFalse(any('grass_flowers/grass_' in path
                              for entity in data['entities'] for path in entity['frames']))
-        self.assertFalse(any('grass_flowers/grass_' in record['path']
-                             for record in self.art['source_assets']))
-        self.assertTrue(any(record['path']=='assets/terrain/grass/assets.json'
-                            for record in self.art['source_assets']))
 
     def test_grass_roots_are_walkable_and_stay_clear_of_public_gathering_points(self):
         data=self.world.data

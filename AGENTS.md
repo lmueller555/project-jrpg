@@ -10,7 +10,9 @@ and gameplay proportions. Full-scene 2× composition is implemented in
 `rendering.py`; Eldenmere town, its southern inn/shop lane, town interiors and
 upstream are integrated environments. Other regions and character-bank migrations
 continue individually. The live town composer is `tools/build_eldenmere_hd.py`;
-older full-town compilers must not overwrite its assembled map. Use the
+older full-town compilers must not overwrite its assembled map. The reserve,
+cave approach, public hall and relief room are owned by
+`tools/build_sanctuary_reserve_hd.py`; their legacy build commands forward to it. Use the
 explicit drawing/transform adapters and native presentation described in the
 standard; bare Pygame writes to the logical mirror lose detail. Apply changes to
 the authorized scope. Older recipes and review notes retain local implementation

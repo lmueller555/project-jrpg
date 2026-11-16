@@ -1,0 +1,43 @@
+{
+  "modules": {
+    "petal_white": {
+      "frames": [
+        "assets/maps/sanctuary_reserve_hd/petals/petal_white_0.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_white_1.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_white_2.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_white_3.png"
+      ],
+      "logical_size": [
+        5,
+        5
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "petal_cyan": {
+      "frames": [
+        "assets/maps/sanctuary_reserve_hd/petals/petal_cyan_0.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_cyan_1.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_cyan_2.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_cyan_3.png"
+      ],
+      "logical_size": [
+        5,
+        5
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "petal_amethyst": {
+      "frames": [
+        "assets/maps/sanctuary_reserve_hd/petals/petal_amethyst_0.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_amethyst_1.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_amethyst_2.png",
+        "assets/maps/sanctuary_reserve_hd/petals/petal_amethyst_3.png"
+      ],
+      "logical_size": [
+        5,
+        5
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    }
+  }
+}

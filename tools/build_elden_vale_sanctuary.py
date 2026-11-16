@@ -20,6 +20,14 @@ OUT = ROOT/'assets/maps/elden_vale_sanctuary'
 
 
 def products():
+    current=json.loads((OUT/'map.json').read_text())
+    if 'reserve_hd' in current.get('art_integrations',{}):
+        import sys
+        if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
+        from tools.build_sanctuary_reserve_hd import products as hd_products
+        output=hd_products()
+        return {'map.json':output['assets/maps/elden_vale_sanctuary/map.json'],
+                'collision.png':(OUT/'collision.png').read_bytes()}
     recipe=json.loads(SOURCE.read_text())
     art=json.loads(art_builder.exports()['art.json'])
     blocked=Image.new('L',tuple(recipe['size_pixels']),0)
@@ -58,6 +66,12 @@ def products():
 
 
 def build(check=False):
+    current=json.loads((ROOT/'assets/maps/elden_vale_sanctuary/map.json').read_text())
+    if 'reserve_hd' in current.get('art_integrations',{}):
+        import sys
+        if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
+        from tools.build_sanctuary_reserve_hd import build as build_hd
+        return build_hd(check)
     art_builder.build(check)
     output=products()
     for name,body in output.items():

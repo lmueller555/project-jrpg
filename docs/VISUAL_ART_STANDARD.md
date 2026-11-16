@@ -19,7 +19,8 @@ banks retain their legacy density until rebuilt; Iselin's detailed artwork, Cael
 Caelan’s rebuilt household, carrying, quest-work, casting and cave-assistance poses,
 all three Sanctuary home interiors (hall, bedroom and dining room), and
 the complete Eldenmere town, remaining town interiors, southern inn/shop and
-upstream scene now use the shared path. Dining was the first integrated environment bank; remaining
+upstream scene, Elden Vale Sanctuary reserve/cave approach, Sanctuary Hall and
+visitor relief room now use the shared path. Dining was the first integrated environment bank; remaining
 asset reconstruction and individual bank migrations continue as separately scoped work.
 
 This standard replaces conflicting general advice in older character recipes,
@@ -1152,6 +1153,24 @@ Source, provenance, exports and the scoped build command are listed in the
 [terrain integration reference](TERRAIN_ART_STANDARD.md#integrated-sanctuary-courtyard-and-approach).
 Other exterior designs, inn/shop profiles and their props remain staged; this
 migration does not add new buildings or retire banks still used elsewhere.
+
+### Integrated Elden Vale Sanctuary reserve
+
+The reserve exterior, cave approach, hall and relief room now use native 2×
+environment art at their established logical sizes. Pale limestone, slate,
+emerald woodland, the silver-green memorial tree and cyan/amethyst/opal crystal
+accents preserve the region's identity. The hall/cloister, entrance arch, cave,
+ridges, basin, memorial tree and ceremonial table use retained new master art;
+ordinary terrain, vegetation and furnishings reuse the current HD banks.
+The cave interior is a separate migration. Existing NPC body banks are retained;
+caretaker pails and grove particles use explicit native presentation.
+
+The [terrain integration reference](TERRAIN_ART_STANDARD.md#integrated-elden-vale-sanctuary-reserve)
+owns source/export commands, collision preservation, architectural opening masks,
+chunk/cache behavior and review provenance. Repeatable marker/ledger/cabinet/table
+inspections and the relief bed use the shared eligibility-driven discovery cues.
+Window/lamp colors remain steady; pause, focus and reduced motion govern ambient
+motion. Do not infer gameplay footprints from the new visible silhouettes.
 
 ## Staged Eldenmere HD building exteriors
 

@@ -26,6 +26,7 @@ class ReserveVisitor:
     """An ordinary directional sprite with a small, visible ground footprint."""
     def __init__(self, record, world):
         self.data = dict(record)
+        self.world = world
         self.position = pygame.Vector2(record['position'])
         self.home_facing = record.get('facing', 'front')
         self.facing = self.home_facing
@@ -62,7 +63,7 @@ class ReserveCaretaker(ReserveVisitor):
         self.animation = json.loads((ROOT/base/'animations.json').read_text())
         self.bodies = {key:world.image(base+pose['body'])
                        for key,pose in self.animation['poses'].items()}
-        self.buckets = {key:world.image(base+pose['file'])
+        self.buckets = {key:getattr(world,'room_art_image',world.image)(base+pose['file'])
                         for key,pose in self.animation['buckets'].items()}
         self.draw_anchor = tuple(self.animation['draw_anchor'])
         self.clock = 0.
@@ -70,11 +71,11 @@ class ReserveCaretaker(ReserveVisitor):
         self._frames = {}
 
     def update(self, seconds):
-        if not self.conversation_ready:
+        if not self.conversation_ready and not getattr(self.world,'reduced_motion',False):
             self.clock = (self.clock+max(0., seconds)) % 18.
 
     def _pose(self):
-        if self.conversation_ready:
+        if self.conversation_ready or getattr(self.world,'reduced_motion',False):
             return 'idle_full.'+self.facing, {}
         # Long pauses keep this a small act of care rather than a frantic loop.
         time = self.clock-6.
@@ -240,6 +241,11 @@ class SanctuaryReserve:
             if not clear_sight(game.world, game.player.position, sight):continue
             candidates.append((delta.length_squared(),key,target))
         return min(candidates, key=lambda item:item[:2])[1:] if candidates else None
+
+    def cue_conditions(self):
+        if not self._available():return set()
+        return {'reserve_inspect_'+key for key in self.targets
+                if key in ('boundary','survey','records','remembrance','cabinet')}
 
     def interaction_hint(self):
         nearby = self._nearby()

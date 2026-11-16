@@ -1,0 +1,47 @@
+{
+  "id": "sanctuary_reserve.hd",
+  "artwork_pixels_per_world_pixel": 2,
+  "scenes": {
+    "elden_vale_sanctuary": "assets/maps/elden_vale_sanctuary/map.json",
+    "elden_vale_sanctuary_hall": "assets/maps/elden_vale_sanctuary_hall/map.json",
+    "elden_vale_sanctuary_relief": "assets/maps/elden_vale_sanctuary_relief/map.json"
+  },
+  "sources": [
+    {
+      "file": "landmarks_authored.png",
+      "sha256": "60ae4546d021a36f9c30dbd8f2cf358e4d44a47c0e681e846ac4f58e21e08db4"
+    },
+    {
+      "file": "baseline_maps.json",
+      "sha256": "5bdda3bd4efa65b391227e822b43f2c6a212201ef2ad5db025028d0f5fb4b761"
+    },
+    {
+      "file": "cloister_opening_coverage.png",
+      "sha256": "ca6794dbe3a1ec032775e2d8c2f06757a1d997ca46daf2e2d4c3ad1191a6473e",
+      "purpose": "Retained logical architecture coverage only; no legacy RGB."
+    }
+  ],
+  "collision_sha256": {
+    "elden_vale_sanctuary": "7d8c27cda7f1f8774f70c0c9bc79eb8ce865b58c5c519e3b54e79011eb90cfd5",
+    "elden_vale_sanctuary_hall": "da9ba17b347e07fcc8f93fbecbbe6f7dd02cab2846f073a4ca6dddae25d4bc0a",
+    "elden_vale_sanctuary_relief": "f5b68ec539fabc7db725a7815743a67d8d9c648dde4b1652357f1627075b3ab2"
+  },
+  "sheet": {
+    "columns": 4,
+    "rows": 3,
+    "cells": [
+      "hall",
+      "cloister_roof",
+      "cloister_arches",
+      "column",
+      "entrance",
+      "cave",
+      "ridge",
+      "basin",
+      "memorial_tree",
+      "crystals",
+      "remembrance_table",
+      "stele"
+    ]
+  }
+}
