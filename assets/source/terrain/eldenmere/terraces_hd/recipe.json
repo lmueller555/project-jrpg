@@ -1,0 +1,410 @@
+{
+  "version": 1,
+  "id": "eldenmere.terraces.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "wall_height_logical": 24,
+  "stair_size_logical": [
+    48,
+    48
+  ],
+  "elevation_change_logical": 24,
+  "stair_walkable_rect_logical": [
+    7,
+    0,
+    34,
+    48
+  ],
+  "tread_count": 4,
+  "upper_landing": "N",
+  "lower_landing": "S",
+  "sources": [
+    {
+      "file": "walls_authored.png",
+      "sha256": "51132cfd9a0bce799ddbdfbfd745053f7454473dae8f84a7c1152c9c5badccfc"
+    },
+    {
+      "file": "stairs_authored.png",
+      "sha256": "fae1dbff2622fa8347c2e57ea5300c1a4eff6461e5e59d9e1f48d7c0b5672d20"
+    }
+  ],
+  "wall_variants": [
+    {
+      "id": "maintained",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        418
+      ],
+      "artwork_sample_size": [
+        144,
+        48
+      ]
+    },
+    {
+      "id": "weathered",
+      "source_rect": [
+        0,
+        418,
+        1254,
+        836
+      ],
+      "artwork_sample_size": [
+        144,
+        48
+      ]
+    },
+    {
+      "id": "mossy",
+      "source_rect": [
+        0,
+        836,
+        1254,
+        1254
+      ],
+      "artwork_sample_size": [
+        144,
+        48
+      ]
+    }
+  ],
+  "stair_variants": [
+    {
+      "id": "maintained",
+      "source_rect": [
+        0,
+        0,
+        627,
+        627
+      ]
+    },
+    {
+      "id": "weathered",
+      "source_rect": [
+        627,
+        0,
+        1254,
+        627
+      ]
+    },
+    {
+      "id": "mossy",
+      "source_rect": [
+        0,
+        627,
+        627,
+        1254
+      ]
+    },
+    {
+      "id": "broad_lipped",
+      "source_rect": [
+        627,
+        627,
+        1254,
+        1254
+      ]
+    }
+  ],
+  "logical_envelopes": [
+    {
+      "id": "wall_front_00",
+      "file": "logical_envelopes/wall_front_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png",
+      "legacy_sha256": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_front_01",
+      "file": "logical_envelopes/wall_front_01.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_front_01.png",
+      "legacy_sha256": "7f7a902fa214de70dcc418e332ce840f3bc0e3fc49f16181ecbbcd280f8409c8",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_front_02",
+      "file": "logical_envelopes/wall_front_02.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_front_02.png",
+      "legacy_sha256": "4706f3fb347a1c4e9256e48276afc65bd66564cb53d432dca228830c6f1ad2b5",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_outer_left",
+      "file": "logical_envelopes/wall_outer_left.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_outer_left.png",
+      "legacy_sha256": "2c57d0a7a45b8afa64065d0c037813efc5367de487254b0354576b921d15d8ab",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_inner_left",
+      "file": "logical_envelopes/wall_inner_left.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_inner_left.png",
+      "legacy_sha256": "5376bfbd97fb75715d0e12cf0a0cadef3335ee44117dce6aeb46a409c825b534",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_end_left",
+      "file": "logical_envelopes/wall_end_left.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_end_left.png",
+      "legacy_sha256": "4c51e826d72f40685ce8ac52422e9cde66dde7f01ca7b43c8f401e6ac1c1bda5",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_side_left",
+      "file": "logical_envelopes/wall_side_left.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_side_left.png",
+      "legacy_sha256": "27133eafbff2ebe1686f358558b36602233c79bd3d9590934482e95b40eb7566",
+      "sha256": "fa3ecc2ca43ac12d00e0a5199241594976f6c664aa6545355b021ae88c418580",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_outer_right",
+      "file": "logical_envelopes/wall_outer_right.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_outer_right.png",
+      "legacy_sha256": "2a4bc89fe96e45ee461e8f68a24b681a4e243ade082bcd7fa028f960ed5c1e67",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_inner_right",
+      "file": "logical_envelopes/wall_inner_right.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_inner_right.png",
+      "legacy_sha256": "0365b0ec04e917cba0d5c7008f79f95227c13efe0ee6ec1d854637e864e6a116",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_end_right",
+      "file": "logical_envelopes/wall_end_right.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_end_right.png",
+      "legacy_sha256": "8c62c0a569c9ad623a009776c319fcf7603ca6cdcdbf1de68709b042ddad71da",
+      "sha256": "cb107da00793a5865adf0ea804de4409ec1bb9fc36cec6ebbcff77d45120a86f",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_side_right",
+      "file": "logical_envelopes/wall_side_right.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_side_right.png",
+      "legacy_sha256": "8db5c83a33cf57924fddf2aff02031762ad8457a41d04c09f0accee0acc32ab0",
+      "sha256": "87a15c9fd6d70bce85969e5339f72c14be272d4abc03a63bfab111583a384204",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_back",
+      "file": "logical_envelopes/wall_back.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_back.png",
+      "legacy_sha256": "fb611029d7ff5eebf8a3a671e872d5fc7501067d51628fd8b96ae44f7a8dea76",
+      "sha256": "9beca9b1ab63089c5185678345c2f039a6a4e54cbfbf277eb4a666cfed4b237d",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_back_left",
+      "file": "logical_envelopes/wall_back_left.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_back_left.png",
+      "legacy_sha256": "7269a7dfe35aeb2178103b81fafface8859bfbfed3d64a8108e9056b99e07335",
+      "sha256": "9e118dbd4f66b919e07c60318c7c3be855ad3ef39967d4a15e940e9eacfd5e5e",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    },
+    {
+      "id": "wall_back_right",
+      "file": "logical_envelopes/wall_back_right.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "legacy_geometry_source": "assets/terrain/eldenmere/terraces/tiles/wall_back_right.png",
+      "legacy_sha256": "823d03015d3776edaa5ed92c38ce6a0dbf47a3bed35e7ad9a83023b186b79dac",
+      "sha256": "973fcee28427c26cd695bc807005712e123c02891815d3da1ced109a1ad36570",
+      "purpose": "Coverage/registration only; no legacy stone color pixels are reused."
+    }
+  ],
+  "palette": {
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "grass": {
+      "base": "#2c7c50",
+      "shadow": "#205b3b",
+      "mid": "#286e46",
+      "light": "#42975f",
+      "highlight": "#67b982",
+      "soft_mid": "#28764e",
+      "soft_light": "#34885a",
+      "moss": "#246b48"
+    }
+  },
+  "color_registration": {
+    "target": "stone.base",
+    "contrast": 1.0,
+    "moss_classification": "Source green exceeds red by4 and blue by8; exact existing emerald colors."
+  },
+  "ports": {
+    "registration_width_artwork": 1,
+    "coping_height_artwork": 10,
+    "side_width_artwork": 12,
+    "policy": "Shared straight/cap ports across all styles. Corner/end returns retain explicit connectors; side/back ports register separately. Preserve original logical coverage."
+  },
+  "stair_nosing_rows_artwork": [
+    18,
+    36,
+    54,
+    72
+  ],
+  "stair_tread_intervals_artwork": [
+    [
+      20,
+      36
+    ],
+    [
+      38,
+      54
+    ],
+    [
+      56,
+      72
+    ],
+    [
+      74,
+      90
+    ]
+  ],
+  "terrace_top_variants": [
+    "grass",
+    "dirt",
+    "paving"
+  ],
+  "prefab_size_tiles": [
+    6,
+    6
+  ],
+  "top_size_tiles": [
+    6,
+    3
+  ],
+  "stair_origin_tiles": [
+    2,
+    3
+  ],
+  "scope": "New staged wall/terrace/stair assets only. No spillway/water rebuild, no live map, navigation, collision, renderer or selector changes. Existing south-descending orientation and 24-unit rise retained.",
+  "builder": "tools/build_eldenmere_terraces_hd.py",
+  "baseline_commit": "b532bba7ccab679e61d40ea586e71ee68d95968a",
+  "protected_existing_banks": {
+    "assets/terrain/grass": {
+      "file_count": 256,
+      "tree_sha256": "49470fb91d9767b1c188a4c05c70b0b3b2063df99094b0b87ffb49fa8cdb3549"
+    },
+    "assets/terrain/eldenmere/terraces": {
+      "file_count": 47,
+      "tree_sha256": "7120c6defb773b4df18de1e66b10155e71166877902fa8f17976a7eb677ebd18"
+    },
+    "assets/terrain/eldenmere/grass_dirt_hd": {
+      "file_count": 79,
+      "tree_sha256": "ac0f4f176bc29d973cf61c475ec3eff0855b17ce4299090fc5767599a38d3f1c"
+    },
+    "assets/terrain/eldenmere/stone_paving_hd": {
+      "file_count": 361,
+      "tree_sha256": "2976fb02ee733e91926eec86effee26ffdd7b8a77190a6ff1833f5c3664a6118"
+    },
+    "assets/maps/eldenmere/playable": {
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2"
+    },
+    "assets/characters/caelan/review_hd": {
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372"
+    },
+    "assets/characters/iselin": {
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf"
+    }
+  },
+  "wall_material_registration": {
+    "source_cap_rows_artwork": [
+      0,
+      7
+    ],
+    "target_cap_rows_artwork": [
+      0,
+      10
+    ],
+    "source_face_rows_artwork": [
+      7,
+      48
+    ],
+    "target_face_rows_artwork": [
+      10,
+      48
+    ],
+    "method": "Register the newly drawn coping/face material bands to shared structural extents; no legacy color pixels reused."
+  }
+}
