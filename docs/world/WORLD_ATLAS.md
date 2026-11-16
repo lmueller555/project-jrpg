@@ -21,6 +21,12 @@ world's aether, ancient history and hidden cosmology. The
 and players may learn. The atlas is a writer's reference; a character's own
 map or understanding can be narrower.
 
+Use the [World and Environment Design Standard](../WORLD_DESIGN_STANDARD.md)
+for shared principles and briefs when designing new or revised regions and
+zones. The atlas and approved lore retain canonical geography and cultural
+facts; the standard's illustrative concepts do not establish new locations,
+history or supernatural rules.
+
 ## The world's name
 
 **Auratia** is the world's name. Its language of origin, ancient etymology,
