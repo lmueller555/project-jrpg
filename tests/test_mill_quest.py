@@ -242,7 +242,7 @@ class MillQuestTests(unittest.TestCase):
 
     def test_spell_preserves_body_and_visibly_clears_only_the_small_recess(self):
         self.prepare();self.at('spell',True)
-        idle=self.g.town.image('assets/characters/caelan/idle_right.png')
+        idle=self.g.town.image('assets/story/mill/poses/source_body.png')
         idle_bounds=idle.get_bounding_rect()
         expected_head=pygame.image.tobytes(idle.subsurface((0,0,24,14)),'RGBA')
         expected_legs=pygame.image.tobytes(idle.subsurface((0,25,24,11)),'RGBA')

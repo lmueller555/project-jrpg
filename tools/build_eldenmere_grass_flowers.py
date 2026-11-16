@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Export source-derived 24px ground plants and an additive foliage-scene review."""
 from pathlib import Path
 from PIL import Image, ImageDraw
@@ -144,7 +148,7 @@ def build_scene(recipe, plants):
 def build():
     recipe = read_json(SOURCE / 'recipe.json')
     (OUTPUT / 'scene_frames').mkdir(exist_ok=True)
-    reference = Image.open(SOURCE / recipe['source']).convert('RGB')
+    reference = open_image(SOURCE / recipe['source']).convert('RGB')
     plants = {p['id']: export_plant(recipe, p, reference) for p in recipe['plants']}
     write_json(OUTPUT / 'palette.json', {'status': recipe['status'], 'materials': recipe['palette']})
     write_json(OUTPUT / 'plants.json', {

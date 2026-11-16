@@ -4,6 +4,10 @@ Only crop, uniformly register, nearest-neighbor sample, and lay out reviews.
 This tool does not register Iselin with the game or replace another character.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 
 import argparse
 from hashlib import sha256
@@ -100,8 +104,8 @@ def register_sprite(master):
 
 def comparison(sprite):
     entries = (
-        ("Caelan", Image.open(ROOT / "assets/characters/caelan/idle_front.png").convert("RGBA")),
-        ("Mira", Image.open(ROOT / "assets/characters/mira/idle_front.png").convert("RGBA")),
+        ("Caelan", open_image(ROOT / "assets/characters/caelan/idle_front.png").convert("RGBA")),
+        ("Mira", open_image(ROOT / "assets/characters/mira/idle_front.png").convert("RGBA")),
         ("Iselin", sprite),
     )
     # Existing character foot anchors all share row 34; Mira's current canvas
@@ -118,7 +122,7 @@ def comparison(sprite):
 
 def resolution_study():
     """Export the requested 42x72 trial and an explicitly labeled render mock-up."""
-    master = Image.open(ROOT / SPRITE).convert("RGBA")
+    master = open_image(ROOT / SPRITE).convert("RGBA")
     alpha = master.getchannel("A").point(lambda value: 255 if value >= 128 else 0)
     master.putalpha(alpha)
     bounds = alpha.getbbox()
@@ -138,8 +142,8 @@ def resolution_study():
         for y in range(sprite.height) for x in range(sprite.width)
     ])
     enlarged = matte(sprite, 6)
-    caelan = Image.open(ROOT / "assets/characters/caelan/idle_front.png").convert("RGBA")
-    mira = Image.open(ROOT / "assets/characters/mira/idle_front.png").convert("RGBA")
+    caelan = open_image(ROOT / "assets/characters/caelan/idle_front.png").convert("RGBA")
+    mira = open_image(ROOT / "assets/characters/mira/idle_front.png").convert("RGBA")
     board = Image.new("RGB", (1080, 850), MATTE)
     draw = ImageDraw.Draw(board)
     draw.text((24, 18), "ISELIN / 42 x 72 RESOLUTION TRIAL", font=font(25), fill=INK)
@@ -215,11 +219,11 @@ def resolution_study():
 
 
 def products():
-    master = Image.open(ROOT / PORTRAIT)
+    master = open_image(ROOT / PORTRAIT)
     if master.width != master.height:
         raise ValueError("Iselin's dialogue portrait master must be square")
     portrait = master.convert("RGB").resize((72, 72), Image.Resampling.NEAREST)
-    sprite, sprite_record = register_sprite(Image.open(ROOT / SPRITE))
+    sprite, sprite_record = register_sprite(open_image(ROOT / SPRITE))
     strip, centers = comparison(sprite)
     portrait4 = portrait.resize((288, 288), Image.Resampling.NEAREST)
     sprite16 = matte(sprite, 16)

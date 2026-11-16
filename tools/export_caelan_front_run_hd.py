@@ -1,4 +1,4 @@
-"""Export complete front-run drawings for review; never update the live bank."""
+"""Export complete front-run drawings with approved runtime metadata; selection remains in the registry."""
 from pathlib import Path
 import hashlib
 import json
@@ -89,7 +89,7 @@ def build():
         sheet.alpha_composite(frame, (i*48, 0))
     sheet.save(OUT / 'spritesheet.png')
     manifest = dict(version=1, character='caelan', animation='run.front', status='approved',
-        design_status='approved', artwork_status='approved', runtime_integration=False,
+        design_status='approved', artwork_status='approved', runtime_integration=True,
         artwork_pixels_per_world_pixel=2, frame_size=[48, 76], logical_size=[24, 38],
         draw_anchor=[24, 64], foot_anchor=[24, 72], cycle_ms=400, loop=True,
         source_hashes=hashes, palette_sha256=digest(palette_path), frames=records,
@@ -131,7 +131,7 @@ def build():
     gif_frames = [im.quantize(palette=gif_palette, dither=Image.Dither.NONE) for im in preview]
     gif_frames[0].save(REVIEW / 'preview.gif', save_all=True, append_images=gif_frames[1:],
         duration=[20, 30]*16, loop=0, disposal=2, optimize=False)
-    print('Exported front-run candidate: 16 frames / 400ms; runtime unchanged.')
+    print('Exported front-run bank: 16 frames / 400ms; integrated registry retained.')
 
 
 if __name__ == '__main__':

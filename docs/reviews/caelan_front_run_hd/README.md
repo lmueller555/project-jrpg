@@ -1,3 +1,7 @@
+> Runtime update: approved artwork is integrated into gameplay. The notes below
+> describe its original standalone review; current integration evidence is in
+> [the run integration review](../caelan_run_integration/README.md).
+
 # Caelan front run — artwork review
 
 Status: user-approved artwork, accepted for merge into main. Gameplay integration

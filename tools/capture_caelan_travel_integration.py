@@ -88,12 +88,12 @@ def capture():
                 evidence['scenes'][name]={'scene':scene,'corners':[list(c) for c in corners],'camera':list(camera),'frames':events}
                 if name=='hall':
                     player.position.update(corners[0]);transitions=[]
-                    for mode,vector,count,running in [('WALK HD',(1,0),32,False),('IDLE HD',(0,0),8,False),('RUN legacy',(-1,0),20,True),('IDLE HD',(0,0),8,False)]:
+                    for mode,vector,count,running in [('WALK HD',(1,0),32,False),('IDLE HD',(0,0),8,False),('RUN HD',(-1,0),20,True),('IDLE HD',(0,0),8,False)]:
                         for tick in range(count):
                             player.update(vector,DT,world,running)
                             transitions.append(card(render(world,player,camera),'Caelan / '+mode))
                     gif(OUT/'walk_run_transitions.gif',transitions)
-                    evidence['legacy_transitions'].append('Running uses original 24x36 four-frame drawings; idle/walk remain HD.')
+                    evidence['legacy_transitions'].append('Running uses approved 16x25ms HD drawings with bank-specific padding and anchors.')
             # Real town foreground at its normal painter depth.
             world=game.town;tree=next(e for e in world.entities if e['id']=='sanctuary.shade_tree')
             covered=None
@@ -110,7 +110,7 @@ def capture():
                 if covered:break
             assert covered is not None
             evidence['foreground']=covered
-            # The cup scene owns its legacy body/grip while carrying. Stage
+            # The cup scene samples current HD travel while retaining prop ownership. Stage
             # only transient holding state; no pickup/completion callback runs.
             from sanctuary_return import SOURCE
             cups=game.mill_quest.sanctuary_return;game.world=cups.dining
@@ -121,12 +121,12 @@ def capture():
             for tick in range(120):
                 cups.update(DT)
                 image=render(cups.dining,player,camera,cups.draw_world)
-                carrying.append(card(image,'Caelan / cup delivery / scene-owned legacy grip'))
+                carrying.append(card(image,'Caelan / cup delivery / HD travel / scene-owned cups'))
                 if tick==30:image.save(OUT/'cup_carry.png')
             gif(OUT/'cup_carry.gif',carrying)
             cups.release()
             assert getattr(player,'story_sprite',None) is None
-            evidence['legacy_transitions'].append('Cup carrying retains the four-phase legacy body/grip; release restores HD travel.')
+            evidence['legacy_transitions'].append('Cup carrying uses current HD travel with bounded four-phase logical hand guides; release restores ordinary travel.')
             assert game.quests.to_dict()==quests
             evidence['quests_unchanged']=True
             surfaces=list(player.idles.values())+[f for bank in (player.walks,player.runs) for frames in bank.values() for f,_ in frames]

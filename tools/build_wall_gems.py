@@ -5,6 +5,10 @@ remains visible between them; a seam is neither one large gem nor a stone slab.
 Only facet brightness changes through the six pulse frames.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image, reference_digest
+except ModuleNotFoundError:
+    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -31,7 +35,7 @@ def products():
     spec=json.loads(SOURCE.read_text())
     wall_path=ROOT/spec['wall_texture']
     limestone_path=ROOT/spec['limestone_recipe']
-    wall=Image.open(wall_path).convert('RGBA')
+    wall=open_image(wall_path).convert('RGBA')
     output={};modules={}
 
     def emit(path,value):
@@ -113,7 +117,7 @@ def products():
             scaled=panel.resize((panel.width*3,panel.height*3),Image.Resampling.NEAREST)
             board.paste(scaled,(x,87+row*108))
     ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png'
-    ca=Image.open(ca_path).convert('RGBA')
+    ca=open_image(ca_path).convert('RGBA')
     ca=ca.resize((ca.width*3,ca.height*3),Image.Resampling.NEAREST)
     board.paste(ca,(1430,420),ca)
     draw.text((20,432),'Many tiny facets follow broken mineral seams, with bare limestone between them.',
@@ -143,7 +147,7 @@ def products():
         'deterministic validation. The source recipe is\n'
         '`assets/source/terrain/limestone_cave/wall_gems.json`.\n'
     ).encode()
-    inputs={str(path.relative_to(ROOT)):sha256(path.read_bytes()).hexdigest()
+    inputs={str(path.relative_to(ROOT)):reference_digest(path)
             for path in (SOURCE,wall_path,limestone_path,ca_path)}
     manifest={'version':2,'id':spec['id'],'approval_status':spec['approval_status'],
               'tile_size':24,'representation':spec['representation'],

@@ -131,7 +131,7 @@ class SpeechBubble:
             seen.add(id(actor))
             point = getattr(actor, 'story_position', None) or actor.position
             draw_anchor = (getattr(actor, 'story_draw_anchor', None) or
-                           (getattr(world, 'data', {}).get('player_draw_anchor', (12, 30))
+                           (getattr(actor, 'draw_anchor', getattr(world, 'data', {}).get('player_draw_anchor', (12, 30)))
                             if actor is game.player else getattr(actor, 'draw_anchor', (12, 30))))
             image = getattr(actor, 'story_sprite', None)
             if image is None and hasattr(actor, 'sprite'):

@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Check real asset registration, actor clearance, water grades and review pixels."""
 from collections import deque
 from functools import lru_cache
@@ -14,7 +18,7 @@ def load(path):return json.loads(path.read_text())
 
 
 def opened(path):
-    with Image.open(path) as im:return im.convert('RGBA')
+    with open_image(path) as im:return im.convert('RGBA')
 
 
 class EldenmereTownTests(unittest.TestCase):
@@ -129,7 +133,7 @@ class EldenmereTownTests(unittest.TestCase):
                         self.assertEqual(set(patch.get_flattened_data()),{p[:3]},r['id'])
 
     def test_gif_is_exact_two_times_native_with_original_timing(self):
-        with Image.open(PACK/'town_review.gif') as gif:
+        with open_image(PACK/'town_review.gif') as gif:
             self.assertEqual(gif.size,(3072,2808));self.assertEqual(gif.info['loop'],0)
             self.assertEqual(gif.n_frames,18)
             total=0

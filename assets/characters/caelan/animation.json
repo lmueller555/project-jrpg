@@ -84,37 +84,37 @@
   },
   "runs": {
     "front": {
-      "manifest": "assets/characters/caelan/run_front/animation.json",
-      "artwork_pixels_per_world_pixel": 1,
+      "manifest": "assets/characters/caelan/review_hd/run_front/animation.json",
+      "artwork_pixels_per_world_pixel": 2,
       "logical_size": [
         24,
-        36
+        38
       ]
     },
     "left": {
-      "manifest": "assets/characters/caelan/run_left/animation.json",
-      "artwork_pixels_per_world_pixel": 1,
+      "manifest": "assets/characters/caelan/review_hd/run_left/animation.json",
+      "artwork_pixels_per_world_pixel": 2,
       "logical_size": [
-        24,
-        36
+        28,
+        38
       ]
     },
     "right": {
-      "manifest": "assets/characters/caelan/run_right/animation.json",
-      "artwork_pixels_per_world_pixel": 1,
+      "manifest": "assets/characters/caelan/review_hd/run_right/animation.json",
+      "artwork_pixels_per_world_pixel": 2,
       "logical_size": [
-        24,
-        36
+        28,
+        38
       ]
     },
     "back": {
-      "manifest": "assets/characters/caelan/run_back/animation.json",
-      "artwork_pixels_per_world_pixel": 1,
+      "manifest": "assets/characters/caelan/review_hd/run_back/animation.json",
+      "artwork_pixels_per_world_pixel": 2,
       "logical_size": [
         24,
-        36
+        38
       ]
     }
   },
-  "scope": "Approved HD ordinary idles/walks; legacy runs and scene-owned poses retain their own artwork and timing."
+  "scope": "Approved HD ordinary idles, walks and runs; unique story/action and combat banks retain their own artwork, anchors and timing."
 }

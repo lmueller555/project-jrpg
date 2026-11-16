@@ -1,5 +1,9 @@
 """Register approved character pixels onto compact breakfast and pillow poses."""
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 
 import hashlib
 import json
@@ -26,7 +30,7 @@ def blank(size=SIZE):
 
 
 def load(path):
-    return Image.open(ROOT/path).convert('RGBA')
+    return open_image(ROOT/path).convert('RGBA')
 
 
 def pixel_colors(image):

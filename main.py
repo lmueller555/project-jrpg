@@ -350,7 +350,7 @@ class World:
             ordered.append((getattr(player,'story_sort_y',None) or player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if kind=='player':
-                anchor=getattr(player,'story_draw_anchor',None) or self.data['player_draw_anchor']
+                anchor=getattr(player,'story_draw_anchor',None) or getattr(player,'draw_anchor',self.data['player_draw_anchor'])
                 position=getattr(player,'story_position',None) or player.position
                 target.blit(player.sprite(),(round(position[0])-anchor[0]-camera[0],
                                               round(position[1])-anchor[1]-camera[1]))
@@ -402,7 +402,10 @@ class Player:
         self.motion_weights=[]
         self.walk_ms=0.0
         self.art_metadata=read_json(ROOT/'assets/characters/caelan/animation.json')
-        self.draw_anchor=tuple(self.art_metadata['draw_anchor'])
+        self.base_draw_anchor=tuple(self.art_metadata['draw_anchor'])
+        self.travel_anchors={'idle':{},'walk':{},'run':{}}
+        for direction,record in self.art_metadata['idles'].items():
+            self.travel_anchors['idle'][direction]=self.base_draw_anchor
         self.idles={direction:load_art(world,record['file'],record)
                     for direction,record in self.art_metadata['idles'].items()}
         self.walks={};self.runs={}
@@ -410,7 +413,10 @@ class Player:
             for direction,reference in self.art_metadata[gait+'s'].items():
                 manifest=ROOT/reference['manifest']
                 metadata=read_json(manifest)
-                # Density is local to the selected bank: legacy runs remain 1x.
+                density=metadata.get('artwork_pixels_per_world_pixel',1)
+                self.travel_anchors[gait][direction]=tuple(v/density for v in metadata.get(
+                    'draw_anchor',[v*density for v in self.base_draw_anchor]))
+                # Each bank keeps its own density, padding and authored timing.
                 animations[direction]=[(load_art(world,(manifest.parent/r['file']).relative_to(ROOT).as_posix(),
                                                  {**metadata,**reference,**r}),r['duration_ms'])
                                        for r in metadata['frames']]
@@ -460,6 +466,12 @@ class Player:
         # Each gait uses its authored frame durations, independent of travel speed.
         if self.moving:self.walk_ms+=seconds*1000
         else:self.walk_ms=0
+
+    @property
+    def draw_anchor(self):
+        if getattr(self,'story_sprite',None) is not None:return self.base_draw_anchor
+        gait='run' if self.moving and self.running else 'walk' if self.moving else 'idle'
+        return self.travel_anchors[gait][self.facing]
 
     def sprite(self):
         if getattr(self,'story_sprite',None) is not None:return self.story_sprite

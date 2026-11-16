@@ -6,6 +6,11 @@ painting, resized tree sprite or live Pillow dependency is involved.
 """
 from __future__ import annotations
 
+try:
+    from tools.caelan_reference import reference_digest, open_image
+except ModuleNotFoundError:
+    from caelan_reference import reference_digest, open_image
+
 import argparse
 from hashlib import sha256
 from io import BytesIO
@@ -40,7 +45,7 @@ def shade_path(draw, points, palette, width=9):
 @lru_cache(maxsize=1)
 def foliage_material():
     recipe=json.loads(SOURCE.read_text())
-    source=Image.open(ROOT/'assets/terrain/eldenmere/foliage/tree/idle.png').convert('RGBA')
+    source=open_image(ROOT/'assets/terrain/eldenmere/foliage/tree/idle.png').convert('RGBA')
     old=json.loads((ROOT/'assets/terrain/eldenmere/foliage/palette.json').read_text())
     ramp=[tuple(bytes.fromhex(color[1:])) for color in old['materials']['leaves'].values()]
     return [source.crop(crop) for crop in recipe['leaf_texture_crops']],ramp
@@ -190,7 +195,7 @@ def petal(palette,name,phase):
 def products():
     recipe=json.loads(SOURCE.read_text());palette=recipe['palette']
     for record in recipe['sources']:
-        if sha256((ROOT/record['path']).read_bytes()).hexdigest()!=record['sha256']:
+        if reference_digest(ROOT/record['path'])!=record['sha256']:
             raise ValueError('Grove source reference changed: '+record['path'])
     output={};modules={};images={}
     def export(path,image):
@@ -223,8 +228,8 @@ def products():
         for layer in ('roots','trunk','canopy'):image.alpha_composite(pose[layer])
         combined.append(image)
     module('landmark_combined',combined,anchor,[footprint],layer='review_composite')
-    # Retain the original scale-reference figure in historical material reviews.
-    hero=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+    # Sample the current HD figure at logical scale for this existing review canvas.
+    hero=open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     board=Image.new('RGB',(1200,700),palette['ground']);draw=ImageDraw.Draw(board)
     font=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),18)
     small=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),15)

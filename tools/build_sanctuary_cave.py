@@ -5,6 +5,10 @@ and separately depth-sorted props. The recipe owns topology and placements;
 collision, lighting sockets and overviews come from the same geometry.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 import argparse
 from hashlib import sha256
 from io import BytesIO
@@ -256,7 +260,7 @@ def scene(spec,modules):
                 gd.rounded_rectangle((xx,yy,xx+20,yy+9),radius=2,fill='#7a8485',outline='#a3a89a')
                 gd.line((xx+3,yy+5,xx+17,yy+5),fill='#687776')
     for index,(x,y,shape,color) in enumerate(spec['crystals']):
-        module=modules['crystal.'+shape+'.'+color];ax,ay=module['anchor'];im=Image.open(ROOT/module['frames'][0]).convert('RGBA')
+        module=modules['crystal.'+shape+'.'+color];ax,ay=module['anchor'];im=open_image(ROOT/module['frames'][0]).convert('RGBA')
         rec=prop(f'crystal_{index}',im,(x-ax,y-ay),light_index=len(lights),reduced_motion_frame=2)
         rec.update(frames=module['frames'],phase_offset=index%6,source_module='crystal.'+shape+'.'+color)
         # Use a root immediately in front of the cluster so light enters the room.
@@ -272,7 +276,7 @@ def scene(spec,modules):
     # Inset seams spread mineral growth along the faces between large fans.
     for index,(x,y,shape,color) in enumerate(spec['crystals']):
         if index%2:continue
-        module=modules['vein.'+color];im=Image.open(ROOT/module['frames'][0]).convert('RGBA')
+        module=modules['vein.'+color];im=open_image(ROOT/module['frames'][0]).convert('RGBA')
         rec=prop(f'wall_vein_{index}',im,(x+18,y-37),light_index=index,reduced_motion_frame=2)
         rec.update(frames=module['frames'],phase_offset=index%6,source_module='vein.'+color)
     # Reflections animate over an unchanged physical shoreline.
@@ -314,7 +318,7 @@ def scene(spec,modules):
     overview=ground.convert('RGBA')
     for rec in sorted(entities,key=lambda r:r['sort_y']):
         path=rec['frames'][0];data=OUT.get(path)
-        im=Image.open(BytesIO(data)) if data else Image.open(ROOT/path)
+        im=open_image(BytesIO(data)) if data else open_image(ROOT/path)
         overview.alpha_composite(im.convert('RGBA'),tuple(rec['position']))
     emit(f'{art}/overview.png',overview.convert('RGB'))
     data={'id':'sanctuary_cave_'+key,'name':'Sanctuary Cave — '+({'entrance':'Vein Gallery','hollow':'Splitstone Hollow','depths':'Echo Chamber'}[key]),'kind':'cave','tile_size':24,'size_pixels':[w,h],'size_tiles':[w//24,h//24],
@@ -351,8 +355,8 @@ def build():
         board.paste(im,(510+(0 if orientation=='north' else 105),230),im)
     im=marker();emit(f'{PACK}/keeper_marker.png',im);manifest['modules']['keeper_marker']={'frames':[f'{PACK}/keeper_marker.png'],'size':list(im.size)};board.paste(im,(400,350),im)
     for i,color in enumerate(COLORS):
-        module=modules['crystal.medium_fan.'+color];im=Image.open(ROOT/module['frames'][0]).convert('RGBA');board.paste(im,(20+i*110,440),im);d.text((20+i*110,525),color,fill='#c2cbd0')
-    ca=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA');board.paste(ca,(630,350),ca);d.text((590,390),'Caelan / scale',fill='#c2cbd0')
+        module=modules['crystal.medium_fan.'+color];im=open_image(ROOT/module['frames'][0]).convert('RGBA');board.paste(im,(20+i*110,440),im);d.text((20+i*110,525),color,fill='#c2cbd0')
+    ca=open_image(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA');board.paste(ca,(630,350),ca);d.text((590,390),'Caelan / scale',fill='#c2cbd0')
     for i in range(3):
         wall=cliff(i);board.paste(wall,(470+i*98,70),wall)
     d.text((475,155),'Layered cliff faces / native pixels',fill='#c2cbd0')

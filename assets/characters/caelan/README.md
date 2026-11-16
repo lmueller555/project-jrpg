@@ -1,72 +1,46 @@
 # Caelan — overworld artwork and runtime registration
 
-The runtime source of truth is [animation.json](animation.json). Normal player
-travel uses the approved HD directional idles and all four approved walks.
-Their existing `review_hd/` paths remain stable; no approved PNGs were moved
-or redrawn for integration.
+[animation.json](animation.json) is the runtime source of truth. All four
+approved HD idles, walks and runs are integrated. Existing `review_hd/` paths
+remain stable; no approved PNG was moved, resized or redrawn for integration.
 
-| Bank | Artwork pixels | Logical canvas | Timing | Runtime state |
+| Bank | Artwork pixels | Logical canvas | Timing | Logical draw anchor |
 | --- | --- | --- | --- | --- |
-| Directional idles | 48×72 | 24×36 | Stationary | Integrated, approved |
-| Four directional walks | 48×72 | 24×36 | 16×35ms =560ms | Integrated, approved |
-| Four directional runs | 24×36 | 24×36 | 4×100ms =400ms | Retained legacy artwork |
-| Carrying/actions/cinematic bodies | Bank-specific | Existing registration | Existing cues | Scene-owned legacy artwork |
+| Idles | 48×72 | 24×36 | Stationary | [12,30] |
+| Walks | 48×72 | 24×36 | 16×35 ms = 560 ms | [12,30] |
+| Front/rear runs | 48×76 | 24×38 | 16×25 ms = 400 ms | [12,32] |
+| Left/right runs | 56×76 | 28×38 | 16×25 ms = 400 ms | [14,32] |
 
-The logical draw anchor remains [12,30], the foot anchor [12,34]. HD artwork
-records use their corresponding [24,60]/[24,68] artwork anchors. Movement speed,
-collision, interaction distance, world positions and camera coverage stay as
-before. Ordinary travel has no separate sword/tool overlay.
+Every travel bank declares density 2. `Player.draw_anchor` selects the current
+bank's normalized anchor; scene-specific `story_draw_anchor` retains priority.
+The added run padding changes neither visible body scale nor gameplay position,
+collision, movement speed, camera coverage or interaction reach. Native detail
+survives composition in ordinary worlds and the regional overworld. Stopping,
+blocking and gait/direction changes retain the existing clock-reset behavior.
 
-`Player` loads each declared bank through the shared density-aware loader.
-HD frames remain native in WorldCanvas composition while their logical mirror
-stays24×36. Each idle/gait reference declares its own density: the root record
-does **not** apply density2 to the legacy runs. There is one authored animation
-clock, and idle/turn/gait reset behavior remains unchanged.
+The rescue display actor inherits current HD idles and 35 ms walking frames.
+Cup delivery uses the current HD travel banks with bounded four-phase logical
+hand guides; it no longer loads a second legacy walking bank. Unique household,
+carrying, casting, rescue/support, seated and combat poses retain their own
+artwork, prop cues, densities and anchors. They have no replacements among the
+new locomotion drawings and are not superseded travel banks.
 
-Scene actors copy mutable banks and authored durations rather than changing the
-player's data. Ordinary inherited travel uses the HD frames and35ms timing.
-Explicit scene banks retain their own poses, anchors, cues and durations.
-SanctuaryReturn's cup grips retain an explicit legacy carrying bank, including
-free movement while holding cups; releasing the scene restores normal HD travel.
-Bespoke rescue/support, seated, household and cinematic artwork remains legacy
-until rebuilt separately. Running and action transitions therefore still change
-pixel detail temporarily.
+Superseded 1× idle/walk/run PNGs, strips, manifests, unused old limb sources,
+travel-only previews and obsolete exporters were removed. Git history retains
+those versions. [retired_travel.json](retired_travel.json) records deleted paths,
+hashes and intentional retirements from preservation contracts; every current HD
+sprite remains protected. Source atlases and old prop layers still needed by
+unique scene-action recipes remain source inputs, not selectable travel banks.
+The old 1× travel exporter cannot recreate retired banks.
 
-[Integration captures, compatibility checks and limitations](../../../docs/reviews/caelan_walk_integration/README.md)
-include real Player movement in town, Sanctuary hall and the cave. The approved
-stride does not fully cancel world travel at72 world units/s; the measured
-side-view sole-span diagnostic shows about11 render pixels of residual drift
-through the sampled stance. This is a rolling contact proxy, not an ankle-lock
-measurement. The integration preserves approved art,560ms timing and gameplay
-speed; stride refinement is separate artwork work.
+Old terrain and companion review recipes use `tools.caelan_reference.open_image`
+to sample current HD references explicitly into their existing logical review
+canvases. Historical filename keys are compatibility inputs to that offline
+adapter; no old travel images are loaded or recreated. Gameplay uses density-aware
+loaders instead. Explicitly retired source hashes remain recorded provenance.
 
-## Upcoming HD runs
-
-Use the [running animation standard](../../../docs/VISUAL_ART_STANDARD.md#running-animations)
-for the right-facing design and subsequent directions. It owns the near/far
-phase plan, natural limb flexion, support/flight, posture, sizing and review.
-Its HD run specification is a future authoring target; current runtime runs
-remain the legacy bank listed above. Walking is already approved and integrated.
-
-## Sources and rebuilds
-
-Sources and exact registration remain alongside the existing approved packs:
-[idles](review_hd/idles/idles.json), [front](review_hd/walk_front/animation.json),
-[rear](review_hd/walk_back/animation.json), [left](review_hd/walk_left/animation.json),
-[right](review_hd/walk_right/animation.json). Integration status is retained on
-re-export; historical approval/reference hashes still protect exact PNG pixels.
-
-```sh
-python tools/export_caelan_hd_idles.py
-python tools/export_caelan_right_walk_hd.py
-python tools/export_caelan_left_walk_hd.py
-python tools/export_caelan_front_back_walk_hd.py
-```
-
-The earlier24×36 files and combined direction sheets remain available for the
-legacy runs and scene dependencies. Rebuild that retained bank with
-`python tools/build_caelan_overworld.py --check` (or omit `--check` to export).
-That builder does not replace the HD runtime registry. Older review documents
-retain historical captures and local construction evidence; the
-[global visual standard](../../../docs/VISUAL_ART_STANDARD.md) remains the
-single authoring and rendering guide.
+[Run integration captures and validation](../../../docs/reviews/caelan_run_integration/README.md)
+cover actual Player movement in town, hall and cave, gait transitions, foreground
+occlusion and cup delivery with temporary saves. Stylized foot sliding remains
+an observation, not an integration failure or an invitation to change gameplay
+speed or distort approved anatomy.

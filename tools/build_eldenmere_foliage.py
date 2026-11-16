@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Build source-derived foliage with fixed bark/shadows and local leaf-cluster motion."""
 from pathlib import Path
 from PIL import Image, ImageDraw
@@ -9,7 +13,7 @@ OUTPUT=ROOT/'assets/terrain/eldenmere/foliage'
 PREVIOUS=OUTPUT.parent/'cottage_shapes'
 
 
-def opened(path):return Image.open(path).convert('RGBA')
+def opened(path):return open_image(path).convert('RGBA')
 
 
 def save_loop(path,images,recipe):
@@ -136,7 +140,7 @@ def build_scene(recipe,frames):
 
 def build():
     recipe=read_json(SOURCE/'recipe.json');OUTPUT.mkdir(exist_ok=True);(OUTPUT/'scene_frames').mkdir(exist_ok=True)
-    reference=Image.open(SOURCE/recipe['source']).convert('RGB');frames={}
+    reference=open_image(SOURCE/recipe['source']).convert('RGB');frames={}
     for plant in recipe['plants']:frames[plant['id']]=export_plant(recipe,plant,reference)
     write_json(OUTPUT/'palette.json',{'status':recipe['status'],'materials':recipe['palette']})
     write_json(OUTPUT/'foliage.json',{'id':recipe['id'],'status':recipe['status'],'tile_size':[24,24],

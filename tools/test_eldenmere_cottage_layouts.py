@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Validate cottage-size alignment, furniture access, preserved sprites and previews."""
 from collections import deque
 import json
@@ -14,7 +18,7 @@ def load(path):return json.loads(path.read_text())
 
 
 def opened(path):
-    with Image.open(path) as image:return image.convert('RGBA')
+    with open_image(path) as image:return image.convert('RGBA')
 
 
 class CottageLayoutTests(unittest.TestCase):
@@ -67,11 +71,11 @@ class CottageLayoutTests(unittest.TestCase):
                 self.assertIsNone(occupied.crop(bounds).getbbox());occupied.paste(255,bounds)
                 self.assertEqual((w,h),(12,144))
                 self.assertEqual(room['floor_rect'][1]+room['floor_rect'][3]-(y+h),96)
-            self.assertEqual(occupied.tobytes(),Image.open(pack/'blocking.png').convert('L').tobytes())
+            self.assertEqual(occupied.tobytes(),open_image(pack/'blocking.png').convert('L').tobytes())
 
     def test_full_width_character_probe_reaches_all_furniture_and_hero(self):
         for room in self.rooms:
-            blocked=Image.open(PACK/room['id']/'blocking.png').convert('L')
+            blocked=open_image(PACK/room['id']/'blocking.png').convert('L')
             x0,y0,w,h=room['floor_rect'];pw,ph=room['actor_probe_size']
             self.assertEqual((pw,ph),(24,12))
             def free(x,y):
@@ -90,14 +94,14 @@ class CottageLayoutTests(unittest.TestCase):
 
     def test_character_pixels_and_animation_changes_remain_local(self):
         hero=opened(ROOT/'assets/characters/caelan/idle_front.png');self.assertEqual(hero.size,(24,36))
-        native_masks=[Image.open(TERRAIN/'cottage_hearth/masks'/f'{name}.png').convert('L') for name in ('fire','embers','rim')]
+        native_masks=[open_image(TERRAIN/'cottage_hearth/masks'/f'{name}.png').convert('L') for name in ('fire','embers','rim')]
         for room in self.rooms:
             pack=PACK/room['id'];hearth=next(r for r in room['objects'] if r['id']=='hearth')
             allowed=Image.new('L',tuple(room['room_size']))
             for mask in native_masks:
                 expanded=Image.new('L',allowed.size);expanded.paste(mask,tuple(hearth['position']));allowed=ImageChops.lighter(allowed,expanded)
             for name in ('daylight_mask','floor_glow_mask'):
-                mask=Image.open(pack/f'{name}.png').convert('L').point(lambda p:255 if p else 0)
+                mask=open_image(pack/f'{name}.png').convert('L').point(lambda p:255 if p else 0)
                 allowed=ImageChops.lighter(allowed,mask)
             first=opened(pack/room['frames'][0]['image']).convert('RGB')
             px,py=room['hero_position']
@@ -115,7 +119,7 @@ class CottageLayoutTests(unittest.TestCase):
     def test_individual_gifs_lossless_nearest_pixels_and_complete_loop(self):
         for room in self.rooms:
             pack=PACK/room['id'];tick=0
-            with Image.open(pack/'room_review.gif') as gif:
+            with open_image(pack/'room_review.gif') as gif:
                 self.assertEqual(gif.info['loop'],0)
                 for index in range(gif.n_frames):
                     gif.seek(index);duration=gif.info['duration'];self.assertEqual(duration%300,0)
@@ -129,7 +133,7 @@ class CottageLayoutTests(unittest.TestCase):
 
     def test_comparison_preserves_same_pixel_scale_and_exterior_pairing(self):
         tick=0
-        with Image.open(PACK/'layouts_review.gif') as gif:
+        with open_image(PACK/'layouts_review.gif') as gif:
             self.assertEqual(gif.info['loop'],0);self.assertEqual(gif.size,(3336,1608))
             self.assertEqual(self.index['review_scale'],3)
             for index in range(gif.n_frames):

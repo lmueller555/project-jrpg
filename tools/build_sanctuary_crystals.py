@@ -5,6 +5,10 @@ established limestone pixels; no painted scene or arbitrary image scaling is
 an input. Animation changes only internal facets, leaving solid roots fixed.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image, reference_digest
+except ModuleNotFoundError:
+    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -194,12 +198,12 @@ def memorial(texture):
 
 def products():
     recipe=json.loads(SOURCE.read_text());stone=recipe['limestone'];source=ROOT/stone['source']
-    if sha256(source.read_bytes()).hexdigest()!=stone['sha256']:
+    if reference_digest(source)!=stone['sha256']:
         raise ValueError('Sanctuary limestone source changed')
     for record in recipe['review_sources']:
-        if sha256((ROOT/record['path']).read_bytes()).hexdigest()!=record['sha256']:
+        if reference_digest((ROOT/record['path']))!=record['sha256']:
             raise ValueError('Sanctuary review reference changed: '+record['path'])
-    texture=Image.open(source).convert('RGBA').crop(tuple(stone['crop']))
+    texture=open_image(source).convert('RGBA').crop(tuple(stone['crop']))
     # The ridge reference includes yellow-green moss. Preserve its native
     # pixel structure while moving mineral bases into a quiet limestone ramp.
     ramp=[tuple(bytes.fromhex(color[1:])) for color in stone['ramp']]
@@ -232,7 +236,7 @@ def products():
                () if name=='offering' else ((4,image.height-8,image.width-8,6),),'memorial')
     manifest={'version':1,'id':recipe['id'],'tile_size':24,'modules':modules,
         'palettes':recipe['palettes'],'source_recipe':SOURCE.relative_to(ROOT).as_posix(),
-        'source_recipe_sha256':sha256(SOURCE.read_bytes()).hexdigest(),
+        'source_recipe_sha256':reference_digest(SOURCE),
         'source_assets':[{'path':stone['source'],'sha256':stone['sha256']},*recipe['review_sources']],
         'notes':recipe['notes']}
     output[OUTPUT/'assets.json']=(json.dumps(manifest,indent=2)+'\n').encode()
@@ -241,7 +245,7 @@ def products():
     board=Image.new('RGB',(1240,990),'#173f31');d=ImageDraw.Draw(board)
     d.text((20,14),'Sanctuary crystals / authored native modules / Caelan 34px',font=font,fill='#e3e9d9')
     # Historical scale references retain the original approved figure.
-    hero=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+    hero=open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     shapes=list(recipe['shapes']);colors=list(recipe['palettes'])
     for row,name in enumerate(colors):
         yy=65+row*190

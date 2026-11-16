@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Verify native charm assets, fixed structures, actor access and review delivery."""
 from collections import deque
 import json
@@ -16,7 +20,7 @@ def load(path):return json.loads(path.read_text())
 
 
 def opened(path,mode='RGBA'):
-    with Image.open(path) as image:return image.convert(mode)
+    with open_image(path) as image:return image.convert(mode)
 
 
 def box(rect):
@@ -108,7 +112,7 @@ class SanctuaryCharmTests(unittest.TestCase):
         self.assertEqual(frames[0].tobytes(),self.original.tobytes())
         self.assertEqual(frames[-1].tobytes(),self.original.tobytes())
         self.assertGreater(len({im.tobytes() for im in frames}),3)
-        with Image.open(PACK/'bell_cue.gif') as gif:
+        with open_image(PACK/'bell_cue.gif') as gif:
             self.assertEqual(gif.n_frames,9)
             for i,frame in enumerate(frames):
                 gif.seek(i)
@@ -177,7 +181,7 @@ class SanctuaryCharmTests(unittest.TestCase):
         diff.paste((0,0,0),(0,0),permitted);self.assertIsNone(diff.getbbox())
         hero=opened(ROOT/'assets/characters/caelan/idle_front.png')
         cx,cy,cw,ch=self.meta['review_crop'];hx,hy=self.meta['hero_foot'];scale=self.meta['review_scale']
-        with Image.open(PACK/'sanctuary_review.gif') as gif:
+        with open_image(PACK/'sanctuary_review.gif') as gif:
             self.assertEqual(gif.n_frames,54);self.assertEqual(gif.info['loop'],0)
             total=0
             for i,r in enumerate(self.meta['frames']):
@@ -194,7 +198,7 @@ class SanctuaryCharmTests(unittest.TestCase):
             gif.seek(0)
             self.assertEqual(gif.convert('RGB').tobytes(),opened(PACK/'sanctuary_review.png','RGB').tobytes())
         for name in ('sanctuary_review.png','town_review.png','lantern_variants.png'):
-            with Image.open(PACK/name) as image:self.assertEqual(image.mode,'RGB')
+            with open_image(PACK/name) as image:self.assertEqual(image.mode,'RGB')
 
 
 if __name__=='__main__':unittest.main()

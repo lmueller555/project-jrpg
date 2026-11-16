@@ -40,17 +40,25 @@ class CaelanTravelIntegrationTests(unittest.TestCase):
                     self.assertIs(p.sprite(),p.walks[direction][i][0])
                     self.assertEqual(pygame.image.tobytes(p.sprite().native,'RGBA'),pygame.image.tobytes(expected,'RGBA'))
 
-    def test_runs_remain_legacy_density_and_authored_cadence(self):
+    def test_runs_preserve_hd_pixels_padding_and_authored_cadence(self):
         p=self.player;p.moving=p.running=True
         for direction in DIRECTIONS:
             p.facing=direction
-            self.assertEqual(p.run_durations[direction],(100,)*4)
-            for i in range(4):
-                p.walk_ms=i*100
-                expected=self.world.image(f'assets/characters/caelan/run_{direction}/frame_{i+1:02}.png')
-                self.assertNotIsInstance(p.sprite(),WorldCanvas)
-                self.assertEqual(p.sprite().get_size(),(24,36))
-                self.assertEqual(pygame.image.tobytes(p.sprite(),'RGBA'),pygame.image.tobytes(expected,'RGBA'))
+            self.assertEqual(p.run_durations[direction],(25,)*16)
+            for i in range(16):
+                p.walk_ms=i*25
+                expected=self.world.image(f'assets/characters/caelan/review_hd/run_{direction}/frame_{i+1:02}.png')
+                self.assertIsInstance(p.sprite(),WorldCanvas)
+                self.assertEqual(p.sprite().get_size(),(28,38) if direction in ('left','right') else (24,38))
+                self.assertEqual(p.draw_anchor,(14,32) if direction in ('left','right') else (12,32))
+                self.assertEqual(pygame.image.tobytes(p.sprite().native,'RGBA'),pygame.image.tobytes(expected,'RGBA'))
+                p.walk_ms=i*25+24.999
+                self.assertIs(p.sprite(),p.runs[direction][i][0])
+            p.walk_ms=400
+            self.assertIs(p.sprite(),p.runs[direction][0][0])
+            p.moving=False
+            self.assertEqual(p.draw_anchor,(12,30))
+            p.moving=True
 
     def test_native_anchor_alpha_occlusion_and_plain_surface_fallback(self):
         p=self.player;p.facing='left';p.moving=True;p.walk_ms=245
@@ -123,13 +131,38 @@ class CaelanTravelIntegrationTests(unittest.TestCase):
         self.assertFalse(p.moving);self.assertEqual(p.walk_ms,0)
         self.assertIs(p.sprite(),p.idles['left'])
 
+
+    def test_anchor_tracks_gait_and_story_override_without_moving_world_position(self):
+        p=self.player
+        for direction in DIRECTIONS:
+            p.facing=direction;p.moving=p.running=True
+            position=tuple(p.position)
+            expected=(14,32) if direction in ('left','right') else (12,32)
+            self.assertEqual(p.draw_anchor,expected)
+            p.running=False
+            self.assertEqual(p.draw_anchor,(12,30))
+            p.running=True;p.story_sprite=pygame.Surface((40,48),pygame.SRCALPHA)
+            self.assertEqual(p.draw_anchor,(12,30))
+            del p.story_sprite
+            self.assertEqual(p.draw_anchor,expected)
+            self.assertEqual(tuple(p.position),position)
+
+    def test_superseded_travel_files_are_removed_and_current_run_banks_integrated(self):
+        for d in DIRECTIONS:
+            self.assertFalse((ROOT/f'assets/characters/caelan/idle_{d}.png').exists())
+            for gait in ('walk','run'):
+                self.assertFalse((ROOT/f'assets/characters/caelan/{gait}_{d}').exists())
+            data=json.loads((ROOT/f'assets/characters/caelan/review_hd/run_{d}/animation.json').read_text())
+            self.assertTrue(data['runtime_integration'])
+            self.assertEqual(data['status'],'approved')
+
     def test_runtime_registry_separates_density_and_preserves_approved_pixels(self):
         manifest=json.loads((ROOT/'assets/characters/caelan/animation.json').read_text())
         self.assertEqual(manifest['status'],'integrated')
         self.assertNotIn('artwork_pixels_per_world_pixel',manifest)
         for d in DIRECTIONS:
             self.assertEqual(manifest['walks'][d]['artwork_pixels_per_world_pixel'],2)
-            self.assertEqual(manifest['runs'][d]['artwork_pixels_per_world_pixel'],1)
+            self.assertEqual(manifest['runs'][d]['artwork_pixels_per_world_pixel'],2)
             meta=json.loads((ROOT/manifest['walks'][d]['manifest']).read_text())
             self.assertTrue(meta['runtime_integration']);self.assertEqual(meta['status'],'approved')
         protected=ROOT/'assets/source/characters/caelan/walk_back_hd_review/revision_2/protected_front.json'
