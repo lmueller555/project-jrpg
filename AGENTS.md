@@ -14,6 +14,12 @@ standard; bare Pygame writes to the logical mirror lose detail. Apply changes to
 the authorized scope. Older recipes and review notes retain local implementation
 facts and history, not competing construction rules.
 
+For terrain materials, transitions, vegetation, water, elevation, pack exports
+and terrain integration, also read the
+[terrain art and pack creation standard](docs/TERRAIN_ART_STANDARD.md).
+It owns the complete terrain workflow and existing pack maintenance reference;
+do not recreate parallel terrain-authoring READMEs.
+
 For object manipulation, scene staging and prop rendering, also read
 [the character–object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md)
 and [personal-prop visibility](docs/PERSONAL_PROPS.md).

@@ -7,9 +7,9 @@ collision, a following camera and animated scenery. The retained story and
 asset tooling are documented below.
 
 Eldenmere, the Sanctuary reserve and the upstream mill area use the approved
-[emerald grass terrain pack](docs/GRASS_TERRAIN.md): varied lawn, meadow and
+[emerald grass terrain pack](docs/TERRAIN_ART_STANDARD.md#shared-emerald-grass-in-production): varied lawn, meadow and
 woodland ground, with leg-height grass that parts around travelling characters.
-The separate [playable material study](docs/GRASS_DEMO.md) remains available with
+The separate [playable material study](docs/TERRAIN_ART_STANDARD.md#18-playable-grass-demonstration) remains available with
 `python tools/preview_grass.py` and uses no journey or settings file.
 
 All game artwork and its rendering follow the
@@ -21,6 +21,8 @@ while preserving existing on-screen proportions. The full-world
 implemented; Sanctuary hall, bedroom and dining now use migrated environment banks.
 Remaining asset banks are migrated individually. The guide includes current implementation
 status, the full animation workflow and migration acceptance criteria.
+Terrain creation and pack maintenance use the
+[consolidated terrain standard](docs/TERRAIN_ART_STANDARD.md).
 Object interactions also follow the
 [interaction standard](docs/OBJECT_INTERACTION_STANDARD.md) and
 [prop policy](docs/PERSONAL_PROPS.md). Contributor instructions are in
@@ -516,13 +518,13 @@ The [sage/green-eye](assets/characters/npcs/female_02/README.md) and [plum/hazel
 
 ## New terrain art
 
-The first [Eldenmere grass/dirt pack](assets/terrain/eldenmere/grass_dirt/README.md) is approved at 24×24 pixels per tile. It contains four grass variations, a transparent 47-tile dirt blob atlas and three dirt interiors. The [character-scale review](assets/terrain/eldenmere/grass_dirt/review_scene.png), [complete blob atlas](assets/terrain/eldenmere/grass_dirt/blob_47_review.png) and [material samples](assets/terrain/eldenmere/grass_dirt/materials_review.png) show the approved fresh-green upland-village style. The scene is an art test rather than a canonical town map. Approved irrigation channels, stone terraces, an animated gate, a wooden bridge and a watermill extend this foundation; other village assets remain future work.
+The first [Eldenmere grass/dirt pack](docs/TERRAIN_ART_STANDARD.md#earlier-grassdirt-foundation) is approved at 24×24 pixels per tile. It contains four grass variations, a transparent 47-tile dirt blob atlas and three dirt interiors. The [character-scale review](assets/terrain/eldenmere/grass_dirt/review_scene.png), [complete blob atlas](assets/terrain/eldenmere/grass_dirt/blob_47_review.png) and [material samples](assets/terrain/eldenmere/grass_dirt/materials_review.png) show the approved fresh-green upland-village style. The scene is an art test rather than a canonical town map. Approved irrigation channels, stone terraces, an animated gate, a wooden bridge and a watermill extend this historical foundation. Current terrain-authoring guidance and existing-pack facts are maintained in the consolidated terrain standard.
 
-The first [animated stream-and-bank milestone](assets/terrain/eldenmere/stream/README.md) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/stream/review_scene.gif), [water-cycle close-up](assets/terrain/eldenmere/stream/water_cycle_review.gif) and [47-bank atlas](assets/terrain/eldenmere/stream/bank_47_review.png) use 24×24 tiles beside the approved ground and 24×36 characters. Six 200 ms phases animate local ripples while banks stay fixed; two surface variations share the same clock. This milestone establishes the water style before irrigation modules, terraces and working village props.
+The first [animated stream-and-bank milestone](docs/TERRAIN_ART_STANDARD.md#existing-stream-and-banks) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/stream/review_scene.gif), [water-cycle close-up](assets/terrain/eldenmere/stream/water_cycle_review.gif) and [47-bank atlas](assets/terrain/eldenmere/stream/bank_47_review.png) use 24×24 tiles beside the approved ground and 24×36 characters. Six 200 ms phases animate local ripples while banks stay fixed; two surface variations share the same clock. These retained captures record the earlier stream milestone; current creation guidance is in the consolidated terrain standard.
 
-The [irrigation-channel milestone](assets/terrain/eldenmere/irrigation/README.md) is approved following user review. The [updated looping scene](assets/terrain/eldenmere/irrigation/review_scene.gif), [channel close-up](assets/terrain/eldenmere/irrigation/channels_closeup.gif) and [animated module board](assets/terrain/eldenmere/irrigation/modules_review.gif) show earth-lined 24×24 straights, bends, splits, stream inlets and trickling outlets. Directed currents use the approved water palette and six-frame timing; the channel walls stay fixed. The review extends the previous scene and preserves the existing approved assets.
+The [irrigation-channel milestone](docs/TERRAIN_ART_STANDARD.md#existing-irrigation-channels) is approved following user review. The [updated looping scene](assets/terrain/eldenmere/irrigation/review_scene.gif), [channel close-up](assets/terrain/eldenmere/irrigation/channels_closeup.gif) and [animated module board](assets/terrain/eldenmere/irrigation/modules_review.gif) show earth-lined 24×24 straights, bends, splits, stream inlets and trickling outlets. Directed currents use the approved water palette and six-frame timing; the channel walls stay fixed. The review extends the previous scene and preserves the existing approved assets.
 
-The [stone terrace, steps and spillway milestone](assets/terrain/eldenmere/terraces/README.md) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/terraces/review_scene.gif), [enlarged terrace close-up](assets/terrain/eldenmere/terraces/terrace_closeup.gif) and [module board](assets/terrain/eldenmere/terraces/modules_review.gif) show warm fieldstone, a 24-pixel wall face, a four-tread 48×48 staircase and a six-phase spillway connecting the upper and lower irrigation. Stone stays fixed; falling highlights, impact flecks and ripples animate with the existing water clock. Characters on both levels establish scale.
+The [stone terrace, steps and spillway milestone](docs/TERRAIN_ART_STANDARD.md#existing-terraces-stairs-and-spillway) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/terraces/review_scene.gif), [enlarged terrace close-up](assets/terrain/eldenmere/terraces/terrace_closeup.gif) and [module board](assets/terrain/eldenmere/terraces/modules_review.gif) show warm fieldstone, a 24-pixel wall face, a four-tread 48×48 staircase and a six-phase spillway connecting the upper and lower irrigation. Stone stays fixed; falling highlights, impact flecks and ripples animate with the existing water clock. Characters on both levels establish scale.
 
 The [irrigation gate](assets/terrain/eldenmere/gate/README.md) is approved following user review. Its [updated scene](assets/terrain/eldenmere/gate/review_scene.gif), [gate close-up](assets/terrain/eldenmere/gate/gate_closeup.gif) and [open/closed/jammed comparison](assets/terrain/eldenmere/gate/states_review.gif) show a small hand-lifted wooden sluice on the existing eight-pixel channel. Seven animations cover idle states, opening/closing and pin repair; delayed downstream art demonstrates restricted, stopped and restored flow. The new gate sits on the upper level, with the existing southern spillway carrying water down. The earlier terrace layout and asset files remain unchanged.
 
