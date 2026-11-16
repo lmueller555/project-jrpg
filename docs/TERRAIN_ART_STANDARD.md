@@ -15,12 +15,13 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The new Eldenmere grass/dirt, stone-paving and terrace packs are **rebuilt but
+**Status:** The new Eldenmere grass/dirt, stone-paving, terrace and water/shore packs are **rebuilt but
 not integrated**. Their 48×48 artwork tiles retain a 24×24 logical footprint.
 The shipped town and shared terrain retain previous assets until a separate
 integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
 [stone-paving reference](#staged-eldenmere-hd-stone-paving) and
-[terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs).
+[terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs), plus
+[water/shore reference](#staged-world-hd-water-and-natural-shores).
 
 ## Contents
 
@@ -355,8 +356,8 @@ geometry and reproducible exports. Visual review remains necessary.
    preserve geometry, verify native composition and remove superseded assets/code
    once all references have migrated. Update this document's implementation status.
 
-Grass/dirt, stone paving and terraces are available as staged asset packs below.
-Water/banks and larger vegetation follow as coordinated families. Runtime migration
+Grass/dirt, stone paving, terraces and water/natural shores are staged below.
+Channels/spillways and larger vegetation follow as coordinated families. Runtime migration
 and in-game acceptance remain a separate step.
 
 ## 17. Existing pack maintenance reference
@@ -746,3 +747,70 @@ PYTHONPATH=.:tests python -m unittest test_eldenmere_terraces_hd
 character scale, enlarged modules, stair variants, reproducibility and the
 one-time preservation comparison. These are offline compositions; gameplay
 acceptance remains a later integration step.
+
+### Staged world HD water and natural shores
+
+Source recipe: `assets/source/terrain/water_hd/recipe.json`.
+Staged manifest: `assets/terrain/water_hd/tileset.json`.
+State is `rebuilt` / `not_integrated`; user visual approval is separate and remains
+not reviewed. Eldenmere is the primary scale/palette reference; the bank is reusable
+across regions. No runtime selector, map, collision or navigation is changed.
+
+Four water families are temperate freshwater (existing muted teal ramp), clear
+cold water, peat-stained water and deep lake blue. The latter three have explicitly
+recorded new ramps. Each family has shallow/deep treatments, two arrangements,
+four spatial texture phases and six 200 ms temporal frames: 64 surface records,
+384 animated surface PNGs and 64 explicit reduced-motion stills. A 96×96 artwork
+field spans 2×2 logical tiles. Select spatial phase `(x%2)+2*(y%2)` from one world
+tile origin; select arrangement deterministically in coherent groups. Never
+confuse spatial phase, material arrangement and animation frame. Two-artwork-pixel
+quiet ports are shared across arrangements. All connected water/effects share the
+six-phase, 1.2-second clock. Base texture stays still; source-derived ripple
+clusters move locally with restrained color changes. Reduced motion uses the
+explicit stills and omits animated current/foam effects.
+
+Five shoreline families—grass, exposed earth, sand/gravel, rock and marsh—each
+provide all 47 canonical shapes and two compatible arrangements (235 geometric
+material configurations, 470 bank images). Twenty oriented quarter records supply
+water coverage and each bank/arrangement. Tile size remains 24×24 logical / 48×48
+artwork. Rectangles are artwork pixels; draw anchors remain logical. Legacy
+coverage masks are retained as geometry only, never as enlarged visible artwork.
+New material drawings, crops, named ramps and source hashes are retained.
+
+Water, land-bank and shallow-margin masks are separate. Land bank and water do
+not overlap; the shallow margin is a subset of water. L-mode depth controls contain
+0/85/170/255 discrete depth levels and intersect the water mask. `compose_water`
+registers intermediate depth colors back to the receiving surface palette; depth
+never defines collision, swimming or damage. Submerged pebbles/bed details are
+optional overlays; emergent rocks and plants remain separately depth-sorted.
+
+Supported bank-material meetings are grass–earth, earth–sand, sand–rock,
+earth–rock, earth–marsh and grass–marsh. Twelve junction atlases show both axes
+across all 47 shapes. `mix_banks` uses the actual substrate selector per pixel,
+then a narrow fixed soil contact lip, preserving coverage. Do not choose one bank
+material for a whole tile when two materials meet; do not claim arbitrary bank
+pairs are supported without a reviewed meeting treatment.
+
+Twenty-four directional current overlays cover four straights, eight directed
+bends and four directions each of mouth, widening and narrowing cues. Geometry
+widening/narrowing comes from adjacent shoreline shapes; the overlay does not
+change water coverage. Clip effects to receiving water and recolor to its family.
+Four separate ripple, eddy, foam and impact effect loops supplement nine source
+accents (including submerged pebbles, wet rock, deposits and rooted short plants).
+Banks/supports stay fixed; root anchors, logical sizes and nonblocking decoration
+status are explicit. Tall vegetation, open-ocean surf, frozen surfaces and magical
+water remain separate future work.
+
+```sh
+python tools/build_world_water_hd.py
+python tools/build_world_water_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_world_water_hd
+```
+
+[Water and shore review evidence](reviews/world_water_hd/README.md) includes four
+regional compositions, every shoreline family, a broad repeated water field,
+animated loops, native PNG frames, material studies and placement metadata.
+GIFs use one exact shared palette per sequence; fixed artwork must not flicker
+from frame-specific palette changes. These are offline asset fixtures, not actual
+map integration or gameplay captures. Integration must independently verify live
+terrain boundaries, bridge occlusion, movement and collision under section 14.
