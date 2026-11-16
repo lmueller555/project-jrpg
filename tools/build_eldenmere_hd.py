@@ -432,7 +432,7 @@ def products():
             for layer in ('rear','front'):overview.alpha_composite(image(pose[layer]),pixels((x-12,y-28)))
         for layer in data.get('foreground',[]):overview.alpha_composite(ex.load(layer['image']),pixels(layer['position']))
         data['overview']=ex.png(name+'/overview',overview.resize(tuple(data['size_pixels']),Image.Resampling.NEAREST).convert('RGB'));ex.json(paths[name],data)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'services':'Building/interior integration; currency and merchant transactions remain a separate gameplay system.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

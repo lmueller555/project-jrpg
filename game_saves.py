@@ -19,6 +19,7 @@ class GameSaves:
         self.scene = game.world.data['id']
         self.pending_scene = None
         self.pending_battles = []
+        self.pending_services = []
         self.retry_at = 0.
         self.notice = ''
         self.notice_seconds = 0.
@@ -48,6 +49,7 @@ class GameSaves:
         self.scene_deadline = context['scene_cooldown'] if self.valid_context(context) else 0.
         self.pending_scene = None if data else (self.game.world.data['id'], uuid4().hex)
         self.pending_battles.clear()
+        self.pending_services.clear()
         self.scene = self.game.world.data['id']
         self.retry_at = 0.
         self.notice = ''
@@ -64,7 +66,7 @@ class GameSaves:
                 and not g.sanctuary_boss.locks_player and not g.elemental_bosses.locks_player
                 and not g.cave_lesson.locks_player
                 and not g.opening_fade and not g.transfer_cooldown
-                and (manual or not (g.pause.is_open or g.inventory_ui.is_open or g.party_ui.is_open
+                and (manual or not (g.pause.is_open or g.services.is_open or g.inventory_ui.is_open or g.party_ui.is_open
                                     or g.status_ui.is_open or g.world_map_viewer.is_open
                                     or g.map_open or g.quest_ui.journal_open or g.save_menu.is_open))
                 and any(g.party.characters[key].current_hp > 0 for key in g.party.active_ids)
@@ -106,6 +108,10 @@ class GameSaves:
         event = 'battle:'+self.branch+':'+receipt
         if event not in self.pending_battles:self.pending_battles.append(event)
 
+    def request_service(self, kind):
+        if kind not in ('shop','inn'):raise ValueError('Unknown service')
+        self.pending_services.append((kind,'service:'+self.branch+':'+kind+':'+uuid4().hex))
+
     def update(self, seconds):
         g = self.game
         self.notice_seconds = max(0., self.notice_seconds-seconds)
@@ -121,19 +127,21 @@ class GameSaves:
         if not self.eligible():return
         self.clock += seconds
         if self.clock < self.retry_at:return
-        if not self.pending_battles and self.pending_scene is None:return
+        if not self.pending_battles and not self.pending_services and self.pending_scene is None:return
         battle = bool(self.pending_battles)
-        event = self.pending_battles[0] if battle else 'scene:'+self.pending_scene[1]
-        if not battle and self.pending_scene[0] != current:
+        service = not battle and bool(self.pending_services)
+        event = self.pending_battles[0] if battle else self.pending_services[0][1] if service else 'scene:'+self.pending_scene[1]
+        if not battle and not service and self.pending_scene[0] != current:
             self.pending_scene = None
             return
         deadline = self.scene_deadline
         # Snapshot the cooldown itself so loading cannot evade doorway throttling.
-        if not battle:self.scene_deadline = self.clock+60.
+        if not battle and not service:self.scene_deadline = self.clock+60.
         data = self._snapshot()
-        result = data is not None and self.library.write_auto(data, 'battle' if battle else 'scene', event, summary=self.summary())
+        result = data is not None and self.library.write_auto(data, 'battle' if battle else self.pending_services[0][0] if service else 'scene', event, summary=self.summary())
         if result:
             if battle:self.pending_battles.pop(0)
+            elif service:self.pending_services.pop(0)
             # A completed battle also covers a pending arrival in this scene.
             self.pending_scene = None
             self.notice = 'Autosaved.'

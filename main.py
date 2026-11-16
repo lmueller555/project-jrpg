@@ -45,6 +45,8 @@ from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
 from map_ui import MapUI
 from world_map_viewer import WorldMapViewer
 from inventory import Inventory
+from economy import Wallet, valid_gold
+from town_services import TownServices
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
 from character_progression import CharacterProgression
@@ -621,6 +623,7 @@ class Game:
         self.quest_ui=QuestUI(self)
         self.map_ui=MapUI(self)
         self.world_map_viewer=WorldMapViewer(self)
+        self.wallet=Wallet()
         self.inventory_ui=InventoryUI(self)
         self.status_ui=StatusUI(self)
         self.party_ui=PartyUI(self)
@@ -642,6 +645,7 @@ class Game:
         self.pause=PauseMenu(self)
         self.combat=CombatEncounters(self)
         self.bed_rest=BedRest(self)
+        self.services=TownServices(self)
         self.overworld_travel=OverworldTravel(self)
         from sanctuary_reserve import SanctuaryReserve
         self.sanctuary_reserve=SanctuaryReserve(self)
@@ -751,7 +755,7 @@ class Game:
     def _progress_signature(self):
         return json.dumps({'quests':self.quests.to_dict(),
                            'dialogue_flags':sorted(self.social.flags),
-                           'inventory':self.inventory.to_dict(),
+                           'inventory':self.inventory.to_dict(),'gold':self.wallet.gold,
                            'sanctuary_cave':self.sanctuary_cave.to_dict(),
                            'cave_encounter_pending':self.cave_random_encounters.pending,
                            'cave_lesson':self.cave_lesson.to_dict(),
@@ -864,6 +868,7 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
+               valid_gold(data.get('gold',0)) and
                SanctuaryCave.valid_journey(data) and
                SanctuaryBoss.valid_journey(data) and
                SanctuaryRescue.valid_journey(data) and
@@ -1048,6 +1053,8 @@ class Game:
             position=data['player']['position']
             self.player.facing=data['player']['facing']
             self.exterior_position.update(data['exterior_position'])
+        self.wallet=Wallet(data.get('gold',0) if data is not None else 0)
+        self.services.reset()
         self.battle_rewards=BattleRewards(self.inventory)
         if data is not None and 'battle_rewards' in data:
             self.battle_rewards.restore(data['battle_rewards'])
@@ -1197,7 +1204,7 @@ class Game:
         if checkpoint is not None:saved_position=checkpoint
         post_battle=self.combat.snapshot()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
-              'inventory':self.inventory.to_dict(),
+              'inventory':self.inventory.to_dict(),'gold':self.wallet.gold,
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'cave_lesson':self.cave_lesson.to_dict(),
@@ -1234,6 +1241,7 @@ class Game:
         self.combat.reset()
         self.saves.pending_scene=None
         self.saves.pending_battles.clear()
+        self.saves.pending_services.clear()
         self.opening_audio.reset()
         self.regional_audio.reset()
         self.elemental_bosses.stop_audio()
@@ -1643,6 +1651,10 @@ class Game:
                     return False
                 resumed=not self.pause.is_open or (overlay is not None and self.pause.overlay is None)
                 continue
+            if self.services.is_open:
+                self.services.handle_event(event)
+                resumed=not self.services.is_open
+                continue
             if self.inventory_ui.is_open:
                 self.inventory_ui.handle_event(event)
                 resumed=not self.inventory_ui.is_open
@@ -1757,6 +1769,10 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    if self.services.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
@@ -1826,7 +1842,7 @@ class Game:
                 and not self.opening.locks_player and not self.opening.controls_player
                 and not self.opening_cinematic.active
                 and not any(getattr(getattr(self,name,None),'is_open',False)
-                            for name in ('pause','inventory_ui','world_map_viewer',
+                            for name in ('pause','services','inventory_ui','world_map_viewer',
                                          'party_ui','status_ui'))
                 and not self.party.battle_reason())
 
@@ -1919,9 +1935,9 @@ class Game:
             # focus loss must not finish that scene while its window is away.
             self.opening_audio.set_paused(True)
             return
-        self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
+        self.opening_audio.set_paused(self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or
                                       self.world_map_viewer.is_open or self.party_ui.is_open)
-        if self.pause.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open or self.party_ui.is_open:
+        if self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open or self.party_ui.is_open:
             if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
@@ -2048,7 +2064,7 @@ class Game:
                  and not self.household_action and not self.combat.active and not self.on_title
                  and not self.regent_arrival.active and not self.sanctuary_arrival.active
                  and not self.sanctuary_rescue.active and not self.opening_cinematic.active
-                 and not self.pause.is_open and not self.inventory_ui.is_open
+                 and not self.pause.is_open and not self.services.is_open and not self.inventory_ui.is_open
                  and not self.party_ui.is_open and not self.world_map_viewer.is_open
                  and not self.map_open and not self.quest_ui.journal_open
                  and not self.save_menu.is_open and not self.game_over)
@@ -2064,7 +2080,7 @@ class Game:
                                reduced_motion=self.audio.reduced_motion)
 
     def enter(self,door):
-        if (self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
+        if (self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
                 self.party_ui.is_open or self.world_map_viewer.is_open or self.opening.locks_player or self.household_action):return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
@@ -2098,7 +2114,7 @@ class Game:
     def nearby_world_map(self):
         """Use the reachable floor approach authored beside the classroom map."""
         if (self.on_title or self.opening_cinematic.active or self.combat.active or
-                self.party_ui.is_open or self.world_map_viewer.is_open or self.pause.is_open or self.inventory_ui.is_open or
+                self.party_ui.is_open or self.world_map_viewer.is_open or self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or
                 self.map_open or self.quest_ui.journal_open or self.social.locked or
                 self.household_action or self.opening.locks_player or self.transfer_cooldown):return None
         display=self.world.data.get('world_map_display')
@@ -2128,7 +2144,7 @@ class Game:
         """Use an authored outdoor trail with the same safe checkpoint as doors."""
         if (not isinstance(link,dict) or link not in self.world.data.get('world_links',[]) or
                 self.player.position.distance_to(link['position'])>link.get('radius',20) or
-                self.pause.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
+                self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
                 self.world_map_viewer.is_open or self.party_ui.is_open or
                 self.social.locked or self.household_action or self.opening.locks_player or self.transfer_cooldown):return False
         if link.get('id')=='town_to_upstream' and not self.mill_quest.can_enter_upstream():return False
@@ -2195,7 +2211,7 @@ class Game:
               self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
               self.sanctuary_relief.interaction_hint() or
-              self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
+              self.services.interaction_hint() or self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
               next((hint for visit in self.household_visits
                     if (hint:=visit.interaction_hint())), ''))
         if not hint:hint=self.combat.interaction_hint()
@@ -2334,6 +2350,7 @@ class Game:
         if self.map_open:self.draw_map()
         self.quest_ui.draw_journal(self.ui_surface)
         self.inventory_ui.draw(self.ui_surface)
+        self.services.draw(self.ui_surface)
         self.status_ui.draw(self.ui_surface)
         self.party_ui.draw(self.ui_surface)
         self.world_map_viewer.draw(self.ui_surface)

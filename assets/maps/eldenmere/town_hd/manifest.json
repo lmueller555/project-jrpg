@@ -7493,5 +7493,5 @@
       "sha256": "ae59f2c4f75f9cce7f417d751d5faaa3b0f3f440ac8e72e334b056cc3827a124"
     }
   ],
-  "services": "Building/interior integration; currency and merchant transactions remain a separate gameplay system."
+  "services": "Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json."
 }

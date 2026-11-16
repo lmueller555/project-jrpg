@@ -1311,7 +1311,9 @@ consumables are referenced as possible starting stock; ordinary equipment catalo
 entries and balance decisions remain prerequisites. Unique story gear and key
 items must not be treated as ordinary stock. The original exterior pack supplied artwork and planning evidence. The live town
 integration now supplies entrances, interiors, keeper stations and shared inn
-recovery. Currency, prices and trading remain separate gameplay work; the retained
+recovery. Keeper services now support free consumable purchases and inn stays;
+[the inventory guide](INVENTORY.md#eldenmere-town-services-and-gold) owns prices,
+transactions and currency behavior. The retained
 specification describes those prerequisites rather than preventing access to the
 integrated buildings.
 

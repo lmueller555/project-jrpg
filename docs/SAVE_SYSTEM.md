@@ -29,6 +29,12 @@ autosaves remain available.
   Successful escape requests one after resources and return position settle.
   Battle requests bypass the scene-entry cooldown. Victory receipts prevent
   duplicate publication when a settled encounter is replayed on Continue.
+- Completing a shop session with purchases or a confirmed inn stay requests a
+  service autosave. Requests bypass the scene-entry cooldown, wait for settled
+  dialogue/fades and safe focused exploration, and use the same publication and
+  retry safeguards as other events. Browsing, canceled confirmations and leaving
+  without a purchase do not request service saves. Loading resets open service
+  menus and pending events; the saved inventory and gold are authoritative.
 - There is no periodic elapsed-time autosave. Pausing, menus, focus loss,
   standing still or pushing against a wall never independently request a save.
 - Saves require a living active party member, a clear full player footprint,
@@ -88,3 +94,7 @@ A continued reward transaction retains its autosave publication identity.
 Explicitly loading a slot starts a fresh attempt within the same journey, so
 refighting a boss after rewinding can publish a new recovery save even though
 that boss uses the same reward receipt.
+
+Journey snapshots include optional `gold` (integer 0..999999999); legacy saves
+without it load with zero. Gold and purchased inventory travel together through
+resume checkpoints, manual slots, autosaves and isolated quest playtests.
