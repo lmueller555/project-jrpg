@@ -40,8 +40,15 @@ The limb examples below describe a biped. For creatures with different anatomy,
 plan their actual limb chains, support pattern and silhouette rather than forcing
 a human two-arm/two-leg gait onto them.
 
+Terrain creation and pack maintenance are documented together in the
+[terrain art and pack creation standard](TERRAIN_ART_STANDARD.md). Use it for
+materials, 47-tile blobs, vegetation, water, elevation, terrain exports and
+integration. This document retains the shared project-wide visual/rendering
+contract; terrain-specific authoring instructions belong in that companion.
+
 ## Navigation
 
+- [Terrain creation and pack maintenance](TERRAIN_ART_STANDARD.md)
 - [Visual direction](#visual-direction)
 - [Object creation and interaction readability](#object-creation-and-interaction-readability)
 - [Units and sizing](#units-and-sizing)
