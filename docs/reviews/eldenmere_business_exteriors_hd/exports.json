@@ -1,0 +1,4252 @@
+{
+  "builder": "tools/build_eldenmere_business_exteriors_hd.py",
+  "recipe_sha256": "5469f0505d78c4bec7b65b249e3cd4446b2f61dd4ca8da38f4788ceb07db047d",
+  "sources": [
+    {
+      "file": "buildings_authored.png",
+      "sha256": "ab72ef43a0c36e0f087a5b51cfe9d3e3efdd9d3bbef8ca70f605ced064abb1a6",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "buildings_fixed_authored.png",
+      "sha256": "d553cd19180b562c9a6e8a106f21205aece886ba09a042d2d1a91354fed67b0a",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "displays_authored.png",
+      "sha256": "51979ad34d9ac9c2c397cd5b2524c1af7929a041fd63afc5eea1b20b2b72487c",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "props_authored.png",
+      "sha256": "559593808f9215ce643b87aede7fa607f6ec4587c21fd1206b98bcb7476038af",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "town_context_reference.png",
+      "sha256": "a5346e597b5d67458dc4b5371e373007bb3c8e1235d9e3c4a236dc8e96c883c6",
+      "role": "planning_reference_only",
+      "provenance": "Retained current-town context only; not new HD artwork."
+    }
+  ],
+  "dependencies": [
+    {
+      "file": "assets/source/terrain/eldenmere/exteriors_hd/recipe.json",
+      "sha256": "c0f93179b8fc116f6a65f852434a775e89d1365a9c066f1753921db69fcb2db1"
+    },
+    {
+      "file": "assets/source/terrain/eldenmere/exteriors_hd/doors_authored.png",
+      "sha256": "60f348d316555ab7fde4ade2326ba5e2db37965f1a0ac95d04178c3ed5a01e48"
+    },
+    {
+      "file": "assets/source/terrain/eldenmere/exteriors_hd/effects_authored.png",
+      "sha256": "b2281fc8469010c560a35a92db5d7dcffb02bc21c0e0979f9f3d6a3d677732a6"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/idle.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_00.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_01.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_02.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "e32c2fb219b89fb918ebdf92aacbb7061457f4a1d543f2b6263969dbf8d2f74c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_03.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "e32c2fb219b89fb918ebdf92aacbb7061457f4a1d543f2b6263969dbf8d2f74c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_04.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "e32c2fb219b89fb918ebdf92aacbb7061457f4a1d543f2b6263969dbf8d2f74c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_05.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_06.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_07.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "0bc66a1b4c5003c3aee9e6da600ace43f5e6e89f7429d44c954569db21c6395d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_08.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "0bc66a1b4c5003c3aee9e6da600ace43f5e6e89f7429d44c954569db21c6395d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_09.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_10.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_11.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "e32c2fb219b89fb918ebdf92aacbb7061457f4a1d543f2b6263969dbf8d2f74c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_12.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "e32c2fb219b89fb918ebdf92aacbb7061457f4a1d543f2b6263969dbf8d2f74c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_13.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_14.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_15.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "0bc66a1b4c5003c3aee9e6da600ace43f5e6e89f7429d44c954569db21c6395d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_16.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "0bc66a1b4c5003c3aee9e6da600ace43f5e6e89f7429d44c954569db21c6395d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_inn/frame_17.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "a5439e5352565fa231a8f4cfb3bfdf04041f52c79c158c931b625b79ebcf3dae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/idle.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_00.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_01.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_02.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "aa009fa23e63de09956d385da022328f09863e04dce3556b7b9e91ec65f8e785"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_03.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "aa009fa23e63de09956d385da022328f09863e04dce3556b7b9e91ec65f8e785"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_04.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "aa009fa23e63de09956d385da022328f09863e04dce3556b7b9e91ec65f8e785"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_05.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_06.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_07.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ed34e1d98e628cbffaf8a6d8040d40297d7ee83578c4c6df4055dbcfef6eba8c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_08.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ed34e1d98e628cbffaf8a6d8040d40297d7ee83578c4c6df4055dbcfef6eba8c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_09.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_10.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_11.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "aa009fa23e63de09956d385da022328f09863e04dce3556b7b9e91ec65f8e785"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_12.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "aa009fa23e63de09956d385da022328f09863e04dce3556b7b9e91ec65f8e785"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_13.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_14.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_15.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ed34e1d98e628cbffaf8a6d8040d40297d7ee83578c4c6df4055dbcfef6eba8c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_16.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ed34e1d98e628cbffaf8a6d8040d40297d7ee83578c4c6df4055dbcfef6eba8c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sign_item_shop/frame_17.png",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "sha256": "ba6d9e5a53fbb571232e0c474e81aa92c47784964ca93d397bd869fd9c4f7ebe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png",
+      "artwork_size": [
+        80,
+        48
+      ],
+      "sha256": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/frame_00.png",
+      "artwork_size": [
+        80,
+        48
+      ],
+      "sha256": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/idle.png",
+      "artwork_size": [
+        64,
+        56
+      ],
+      "sha256": "b7d6b59112ba9c206846e2d75e491f7f3a5a3e4326917eafa80fb37b47a726ed"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/frame_00.png",
+      "artwork_size": [
+        64,
+        56
+      ],
+      "sha256": "b7d6b59112ba9c206846e2d75e491f7f3a5a3e4326917eafa80fb37b47a726ed"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/travel_boots/idle.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "9f1547e6fcb5024568cd431e5aaee04185008a5134db90e3dbe6a8d2776c5dd3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/travel_boots/frame_00.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "9f1547e6fcb5024568cd431e5aaee04185008a5134db90e3dbe6a8d2776c5dd3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/travel_pack/idle.png",
+      "artwork_size": [
+        40,
+        40
+      ],
+      "sha256": "0063114be374b89b981611c414b4a719307e4f7f5eee96f9962330996c518d38"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/props/travel_pack/frame_00.png",
+      "artwork_size": [
+        40,
+        40
+      ],
+      "sha256": "0063114be374b89b981611c414b4a719307e4f7f5eee96f9962330996c518d38"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/displays/maintained.png",
+      "artwork_size": [
+        156,
+        96
+      ],
+      "sha256": "f261f682995ed4858ae7c347b1aadab8b5303d2b43bca5af372ade5ffaa8c5dc"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/displays/weathered.png",
+      "artwork_size": [
+        156,
+        96
+      ],
+      "sha256": "57a2281bae6a8a922c3524aba5825cf701afba769d50b74f5520371e071c500f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/structure.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5fcee82ac64e0e9300ebb095ba236c79f76df0a682fcd730aa142160b9ac5f0b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/window_mask.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0220c070bbd418d3da8ba4fd6c1a080369652e57ff4c417b93d160ff9cd15acd"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/doors/frame_00.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "de4f796f65487097bddf7f0ed90ccf5f8580a60ae45c50d4cd1cc6b05f81fb3a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/doors/frame_01.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "21b41befecce9c6d977fcb30f527bb4703b60a9880ecf038d80e2ba6de40e2e4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/doors/frame_02.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "712b898ed862f8892c1a3563fa6c077c8afbc6c1765344b58172350b16fd692b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/doors/frame_03.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "807e46b66f106a195d5dfaad30631041ab5df2b83f1db6336566b8228911fff1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/doors/frame_04.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "ed8bcda92c3cf39b9d979177705228c8a9e701c05ea78fa1363d3b197d3d7be8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/closed.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "e313f4085ff24b69f26732426a234689e732c3f44c2fd7395ee6653a2e09aee8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/open.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "00f842e20a0d17a07c1dd23e4fdd14764832c1027e5994c29c8031034f5af8ab"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5b6d3c49039e0481cd8517f9050ac49242f288a13f4688411d407103ffabdf17"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d6012a6f8f49d55fe9f40b82d3463862a8a16adf7da1cbd37152438db919aaac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d704c49ec3b7a30a397114be47660d9f3d5d78162716f2af4340b9ec149e4eb2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "a551bbabda88a674680e60914b0af5f6e91324583be2557990efceabab615dac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8b28fb48f52f2d4e3b03cb54ba6fca6d846e81c8f1a3789be61078a09e105c07"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5e64141d544a45018f569577f8a19f1bf56fb46cbe9044395c970774f212b69a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "6e17e98d19affc46675b2b1ea387bbdc1f473b8771233cbfba27e964c7ec4759"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8b28fb48f52f2d4e3b03cb54ba6fca6d846e81c8f1a3789be61078a09e105c07"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "906dd2ef9f16e51c8a95e1a5bf9c93beb60697d79b945e095205fff22cc3de3c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "b0452801769eecd0d1ed79a7db9f9d77503d658e64a4162694fb1b4217cc873e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "7785fa5ec884a054f9bd22821b75a311c8d70f1ecb86ef582b11bbc78bbda144"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "da554cb183676ac2839f44db631dc6185234edca4ff42b8e5c0629c291404521"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ed05279f405febe7675b6b9275ae6185953e53cfbd98cedd2b56babdcb5ded8c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "308094db13ab4f576c9e72ceaeb6d97eb810347ef2559fc89f917af74e506c4e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "039cefc48033216f68b6548e66fb4f8e12cee19c9b36c27a8b4c550060bf2b4e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "a3a762611a6da7ec6a506c44521b8a6f170d2ec88f74a8150794ffa7c79bb5ff"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "cc64f5ae4e24ccb45451fb61fc0966edba43fae06096739c26a79a036930081d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "6ceb413eaf5d74c5e25e53d6dcad5ca7a5fe49d5b920383192b904175bc88c58"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "63075a2a8f67265b6ce18ccedaaadff2ef7de7d2c4d08ecae6dc2f408b37819f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5ec13dc11f76d09890d41254ea79a72667d882177403054589d76471446f6c78"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8b28fb48f52f2d4e3b03cb54ba6fca6d846e81c8f1a3789be61078a09e105c07"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "381c6b81fdd844cacbd00138cfca00e2f575956ac110133d821011bf063bf444"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2f36e6c1be0533fcfc7320de659756f88aee412b6324d2b38f2c57d513edb7a1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2f830d496a303d23a99ead2ddc2e794ec88d2bafc9a717aa11068b896ff25bb2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "9aa773aece3fea4c8e95634556ea69967fc1cfe35c8acee033ea3b63ae3992ce"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d929fb42042a3cec6e02471e85bb46cd027fc18654cd6101a8d2261e84d8992e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "83669b73ed71e38a1943b50f28a5ca0040fbc3886e1b27a6868c6a51adfe6e56"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "f643c828ec47681798bc37481a19035e1a2f161bf62d2e71eb5fd79e03d01deb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "72acf5dd794c1b9413c3f0058dbe8cfbcdaed9f016696638e34e3e584168895b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2490d2b0421dcde627c7c347c7bc037f0acb969bd06a4c7f94575071070e9f77"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "810561e580fbc17a577c04db1947c6623dc76be63b999872211e6d747c7df21d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2a0eb416713b38892b145860fd7f190fc074e20d7fb2bc2f521b0bc05d75542e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c0828f42e92f792435daeccbec967f4f38b59e7aea5d3f70c40bfc67c50eb891"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8b28fb48f52f2d4e3b03cb54ba6fca6d846e81c8f1a3789be61078a09e105c07"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "f293d654f7d109804337cb56f3bc18af5c00516058be823110f547e965e35895"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d5ea4feda2ed148c5aacbc30b20cf6115441f32f21a173b45e3188875c24a60a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "046d342fb5ef1a5483488d48413b73c0ee0be593456c2fdb32af29d4088ea397"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "cb02d67ca56d08ddea0c6eb1e8f97212b000ebd86bee3b36f31a7e49a0bbc55e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/windowlight/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14fd001685612e0558a534626c164d42c721806e4da1222d2b562d5bc4578951"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/awning/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/sign/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/smoke/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "872a0bb6863fda76d085f2d59efa09d09475be60a6c787cdcd46d06d623392de"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/ambient/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "b7df100a35694a8d35bcc3c118aec50fb6d8ba0e261479a587eb243231406556"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/structure.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "16418c1ebbca1d692859c5d76e03e904c4ebd31da0756d384a2a50d7098fa0d2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/window_mask.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0204bf7204912653aea1ec4f775ffa0f7e938e4298596515e182c7dd975ead70"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/doors/frame_00.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "de4f796f65487097bddf7f0ed90ccf5f8580a60ae45c50d4cd1cc6b05f81fb3a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/doors/frame_01.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "21b41befecce9c6d977fcb30f527bb4703b60a9880ecf038d80e2ba6de40e2e4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/doors/frame_02.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "712b898ed862f8892c1a3563fa6c077c8afbc6c1765344b58172350b16fd692b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/doors/frame_03.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "807e46b66f106a195d5dfaad30631041ab5df2b83f1db6336566b8228911fff1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/doors/frame_04.png",
+      "artwork_size": [
+        40,
+        72
+      ],
+      "sha256": "ed8bcda92c3cf39b9d979177705228c8a9e701c05ea78fa1363d3b197d3d7be8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/closed.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0b627c1e8b219b31f9305c194e634e1dc9a90e7db47117a768d37abafbdd1ea7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/open.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ea8e542c16bc97876195eff5cf36e5bfd152729242c1389483cdbcfd146306ef"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5b6d3c49039e0481cd8517f9050ac49242f288a13f4688411d407103ffabdf17"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "76258831d62342f86bbe829f92306c80ae65eb65eb676d62fda6139ed32cd087"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d704c49ec3b7a30a397114be47660d9f3d5d78162716f2af4340b9ec149e4eb2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "cf9009da95966aab753f682bc6ef0b8494180d2134baaf559bc99297a1cee1f1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d11b12261e3196a7efd7b0307dc596fcf302bf07af2147bb2b2b2a0c83cce67d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5e64141d544a45018f569577f8a19f1bf56fb46cbe9044395c970774f212b69a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ffa15c8a55c89e0e085c006ca18d570ecb6d70d049f245661361dddd0ab3d866"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d11b12261e3196a7efd7b0307dc596fcf302bf07af2147bb2b2b2a0c83cce67d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "906dd2ef9f16e51c8a95e1a5bf9c93beb60697d79b945e095205fff22cc3de3c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "49636390d6143161e0b96987f4b83beb7abb28f0248e4bf96f2a48b5bae1c0ef"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "7785fa5ec884a054f9bd22821b75a311c8d70f1ecb86ef582b11bbc78bbda144"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d8d5f342fe60efc7064be53c122c77f92a1edaa152799bbacf42c1100e0e001f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ed05279f405febe7675b6b9275ae6185953e53cfbd98cedd2b56babdcb5ded8c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2ff45ece05e1e5022df885b4c55a4de200fa200bdcd1f29f679ce500a1ad4f1d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "039cefc48033216f68b6548e66fb4f8e12cee19c9b36c27a8b4c550060bf2b4e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d717ce99c338a4ac502abaf227ca04b1c1d9a4e8ecfe16acbfe5ea1f3ce8d82e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "cc64f5ae4e24ccb45451fb61fc0966edba43fae06096739c26a79a036930081d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "4f97fe84e886e31c2a9753fdc59eb9c4e6c4bc6a53f352d62e4af44b133e7184"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "63075a2a8f67265b6ce18ccedaaadff2ef7de7d2c4d08ecae6dc2f408b37819f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "462e9f6705b61a71aa54f2dd771cdb7c84de516e7f480339a0de21405ba999b2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d11b12261e3196a7efd7b0307dc596fcf302bf07af2147bb2b2b2a0c83cce67d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "381c6b81fdd844cacbd00138cfca00e2f575956ac110133d821011bf063bf444"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5d6f3a9a319b7571ab6314ea7cb662e60094e6c1dde10fb53112bc8ed131b650"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2f830d496a303d23a99ead2ddc2e794ec88d2bafc9a717aa11068b896ff25bb2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8d77106488442d13d14273eb0bea19c9d76c8919e35c7a5ae9b9cdbed54e8db4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d929fb42042a3cec6e02471e85bb46cd027fc18654cd6101a8d2261e84d8992e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5f85a19339721f53fd7b1e72c2e7d253a7d0ca4ee3b85ad9ef6427c6fc2fe10e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c4ecc8726f2d2ab92ddb90314c02106b86ecb2f6a1bb98305b304a016fbea875"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "f643c828ec47681798bc37481a19035e1a2f161bf62d2e71eb5fd79e03d01deb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5b93b7e04b4343e15c4abcff5a85fc5f0b98da9256dd6b88241ff1073a71da2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2490d2b0421dcde627c7c347c7bc037f0acb969bd06a4c7f94575071070e9f77"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "05772983e2b9910ba94714b963f14f86aaf4344359c3205344a4b19322082f1e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2a0eb416713b38892b145860fd7f190fc074e20d7fb2bc2f521b0bc05d75542e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d40df8d793aa695a9e89b1b6ca4b39b3640b5f1eda8069a38af7cc5080319e3b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d11b12261e3196a7efd7b0307dc596fcf302bf07af2147bb2b2b2a0c83cce67d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "f293d654f7d109804337cb56f3bc18af5c00516058be823110f547e965e35895"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "25dd93a9e4674e7719052a4ee860645cdefc5983ddcaf3c6e9a262344b6c4880"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2505c0299075eb04ebb1aff013d0a4f5adf8cc8e0c2219e4c65e841222354551"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "046d342fb5ef1a5483488d48413b73c0ee0be593456c2fdb32af29d4088ea397"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "64f21653c5a5d11d91cad1cb6994cf56243df6d8a55e5c3ab3000fb9f06eef12"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/windowlight/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c03886845667fcd38a4ce2600dcf6d7b6b2d808d6e0d2366fae81411da3284b8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/awning/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "8c543c9a93be277e12ecc528fe7606dad64318b44a3289de384d7d199a172010"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/sign/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0a13415f42c8263dbf9243d898a8fd75849fdadce50161870e79996fa6ea1dc1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/smoke/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "872a0bb6863fda76d085f2d59efa09d09475be60a6c787cdcd46d06d623392de"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/ambient/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "795cad1ca0f45622526730e45d18e2c1f873a9dd0d06788515c55d09604608c3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/display.png",
+      "artwork_size": [
+        156,
+        96
+      ],
+      "sha256": "027ac9a4057123fc596b5f3cce98dfae8d9c381e442c9f98cd461f616ee6a5a4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/structure.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "dae5bdf9d150ec27e54520356149df6ea0c9155a61f22efdb5c29ae4ef685737"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/window_mask.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "483ceb6d98635942995426b83100f86d08824354f6e680c6d0ce0bd528197f3f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/doors/frame_00.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "3cb6affb9366037f831570e7c8cf3a1aa3fa93fce121c2666d25559e35bc17da"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/doors/frame_01.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "8fdf275677c9a211ef727f3f6c1a298079fd80ee3c3366f90fb74d6101a9dcb3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/doors/frame_02.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "f0255124ec92c5a1df89335c78843cca47d2a364f951ba35d5c491dd9efc0813"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/doors/frame_03.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "ffcd29b2ec8b95806168b7cce7171238eb13fc2ba39eac890fe99e1e373567ac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/doors/frame_04.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "b7e3c5399255062d6b9fd5dd52b6eb0bde11ac92c333c069dad71ee899e8675d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/closed.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/open.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85d36a4f4410f158983e2a18e8c62e6812107b8165c7ce98640b6fa9df3fab6d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "980c6a65000dbcefd2e8c4d7e129e5ca296d527850668d434baf55140c329f8f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "2882e5246d962c3ccb2551528cac726cbaf1a0cee4f5ca124dee1da00480ba6a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "980c6a65000dbcefd2e8c4d7e129e5ca296d527850668d434baf55140c329f8f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "2882e5246d962c3ccb2551528cac726cbaf1a0cee4f5ca124dee1da00480ba6a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "980c6a65000dbcefd2e8c4d7e129e5ca296d527850668d434baf55140c329f8f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "2882e5246d962c3ccb2551528cac726cbaf1a0cee4f5ca124dee1da00480ba6a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fa6c69833c92e5c4e6940997e6d2ab85074674b6f8e1c0b5d2daef7bc56ecdf2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "88a7bf6e1a456067444b0eb9c3b8bff2f8892e7b0c95fc1a891514f662b956a5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fa6c69833c92e5c4e6940997e6d2ab85074674b6f8e1c0b5d2daef7bc56ecdf2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "88a7bf6e1a456067444b0eb9c3b8bff2f8892e7b0c95fc1a891514f662b956a5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "980c6a65000dbcefd2e8c4d7e129e5ca296d527850668d434baf55140c329f8f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "2882e5246d962c3ccb2551528cac726cbaf1a0cee4f5ca124dee1da00480ba6a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "980c6a65000dbcefd2e8c4d7e129e5ca296d527850668d434baf55140c329f8f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "2882e5246d962c3ccb2551528cac726cbaf1a0cee4f5ca124dee1da00480ba6a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fa6c69833c92e5c4e6940997e6d2ab85074674b6f8e1c0b5d2daef7bc56ecdf2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "88a7bf6e1a456067444b0eb9c3b8bff2f8892e7b0c95fc1a891514f662b956a5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fa6c69833c92e5c4e6940997e6d2ab85074674b6f8e1c0b5d2daef7bc56ecdf2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "88a7bf6e1a456067444b0eb9c3b8bff2f8892e7b0c95fc1a891514f662b956a5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/windowlight/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/awning/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "3f7738c637b7448b233b5881f71962e1a281e2cbd0b6f0ab1e4ca2841ea66f98"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/sign/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/smoke/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/ambient/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "85aaf25774fa46bac10b4d60842beaf697eff9ad739089b3ec08b4fc8cd46fda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/display.png",
+      "artwork_size": [
+        156,
+        96
+      ],
+      "sha256": "b6befb8401acc6210f226d30997ed356e82a16bf6bf726173b568c05dc9846fc"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/structure.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "abf3acf27a1d794a08e168254155dde6c885cbdcab5e89da942b88e7d8568c73"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/window_mask.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "483ceb6d98635942995426b83100f86d08824354f6e680c6d0ce0bd528197f3f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/doors/frame_00.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "3cb6affb9366037f831570e7c8cf3a1aa3fa93fce121c2666d25559e35bc17da"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/doors/frame_01.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "8fdf275677c9a211ef727f3f6c1a298079fd80ee3c3366f90fb74d6101a9dcb3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/doors/frame_02.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "f0255124ec92c5a1df89335c78843cca47d2a364f951ba35d5c491dd9efc0813"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/doors/frame_03.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "ffcd29b2ec8b95806168b7cce7171238eb13fc2ba39eac890fe99e1e373567ac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/doors/frame_04.png",
+      "artwork_size": [
+        44,
+        76
+      ],
+      "sha256": "b7e3c5399255062d6b9fd5dd52b6eb0bde11ac92c333c069dad71ee899e8675d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/closed.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/open.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "abac24297a73b74f82c31e2d990e6df8ba0bd877abb0e0df6685af6b065ab944"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "786c0ff2cb5a5b6a09cd7a6b5ae91df71935ce5e7444c6a19a63dd0d271b8742"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "63e1c8725cbf7e1757433602e0ed465bcba5dae9d88d977a8a492a2759cad361"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "786c0ff2cb5a5b6a09cd7a6b5ae91df71935ce5e7444c6a19a63dd0d271b8742"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "63e1c8725cbf7e1757433602e0ed465bcba5dae9d88d977a8a492a2759cad361"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "786c0ff2cb5a5b6a09cd7a6b5ae91df71935ce5e7444c6a19a63dd0d271b8742"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "63e1c8725cbf7e1757433602e0ed465bcba5dae9d88d977a8a492a2759cad361"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "715d366b8717b72a730685df64f910d80c7aab645c3960dab331fe1dae668599"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5b2b8196e3c123b7998a0e8e6ea7a078881f96fdebf0d17aa0a7a7bbc3cd2f42"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "715d366b8717b72a730685df64f910d80c7aab645c3960dab331fe1dae668599"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5b2b8196e3c123b7998a0e8e6ea7a078881f96fdebf0d17aa0a7a7bbc3cd2f42"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "786c0ff2cb5a5b6a09cd7a6b5ae91df71935ce5e7444c6a19a63dd0d271b8742"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "63e1c8725cbf7e1757433602e0ed465bcba5dae9d88d977a8a492a2759cad361"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "786c0ff2cb5a5b6a09cd7a6b5ae91df71935ce5e7444c6a19a63dd0d271b8742"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "24989c4de9c26427e149f757fe6a9ebc9dc842b61c21188a157ad38036d88e33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "63e1c8725cbf7e1757433602e0ed465bcba5dae9d88d977a8a492a2759cad361"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "715d366b8717b72a730685df64f910d80c7aab645c3960dab331fe1dae668599"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5b2b8196e3c123b7998a0e8e6ea7a078881f96fdebf0d17aa0a7a7bbc3cd2f42"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "715d366b8717b72a730685df64f910d80c7aab645c3960dab331fe1dae668599"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5dc96e85bc9c0d10905c4b1d5db771b42b66877fe9a4636fe624e9eae6423f69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "5b2b8196e3c123b7998a0e8e6ea7a078881f96fdebf0d17aa0a7a7bbc3cd2f42"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/windowlight/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/awning/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "8a531fdd12dc60de08d5dd467e20a0ada511b6dab786d96c77522aa5ba0e5e2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/sign/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "766dcab0a4ba838196a667d14e11cf74c9912bf45e3b47b7528e1712e5df6f09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/smoke/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "886a2e56d9c6217b1a68bfd3aa2f1fe21a184a7d1e6bb2bc3d4937b40f574900"
+    },
+    {
+      "file": "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/ambient/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/businesses_native.png",
+      "artwork_size": [
+        900,
+        1040
+      ],
+      "sha256": "069c30b8570d2af8c052ea358a348b165761b63e12c253d819bcb064a46f39e3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "02f575605e1e03db39b13600a97f59ffc1a5b3564422494b82193bc91a22df86"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0f062be048ace093bd1f2b9e7d76cadbb1ffdbf9a324c763dea4f52548943c6a"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "57a516ddea6067bfac38ba5665d3f4279320ceb3a9b145cbf7de185ad5ae3bdb"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "14ffa428643614056cdd246cb9100ecd7f6cf497342d0b95118aae1544b310bc"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "33ca84b6eb4dd8469a3b5a86a7a7d6677125dc42659abd35aef5c97b8f690e15"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "88f092744e6a5cc4928d8e1b8ee4f584560632b521c5fa075cd763c77d469f67"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "6bf38d85828e650eacfb17e1829590b4d78efb619811ae93e11e56e7c539a081"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "12b94da0cf4177bf80c07cb56aadb08193c0177ef406c4cf48df47cb31732d6b"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ae233dcb5fbab3d5504fe77669fd27749ba409183fcb8c07f61dba82efa64079"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2c1a87e63bcc9d23e27a86f3bc15ca5afaa4bddbab9089db02c8d8e791c2bff0"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2f7f8c69a723ba4d89cb03558083d0b0485c15a4122554f023d4a30fc1d72e41"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "cd6d6675265021178694f968dcaeb988e32181bec5ed84ec66535f8234599abc"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "9b817a9e7ae786f551ea88ed4523f538aba8fd97f3bcc72e647e07b540ad7f97"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "3fd33a92e89a433cb29e7b5728bb012139ff2ce592decdf8105e95b173458516"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "887b936f7dcdb7fbfbb65b74a8d430ba0ccb31c113cdee54c90b5d3a63fe5683"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "c36fb27bb1eff567f62a47a412c32ff0b759c0038db3f8ecb8012d9b2d342d30"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0ed5fdf3f624aa454497b609726fb426418ad6733694c20524376ce47e6f936c"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_maintained/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "380e0a7d42f245d23b3af3e290d64e635714e2de6f8bc67881c0c389bb8293f8"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_00.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5c206bc75b15d65da53f498fcc222b73af88388545263a2542f85405034571c0"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_01.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "7db8cfda44337fcf7c2e336558450097332a73955da7f37d167429974a80914e"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_02.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "370020e329e943602ae2bf022e88d62e0c5c68e7ef09f66e37b392ddba8b5859"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_03.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "5fea09ac18ae4e025091eecb7207b572c96abdfa07307ec0587f68cc4043cba9"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_04.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "b19c4e87c05ea2f0326c95f39e0ea98dd16fae3e6414149366baa52baaa42e82"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_05.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "da63f657ea364d7e2f0e038184356bf8e2d3007efa75ff861d44b1573202619e"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_06.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "af1cbc3f3d382d20c27cbcd90247b552f79c2cc61d78fbb4b67df365b044e5aa"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_07.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "a9f0a4f9decca9e7840a17a95ef49f6f928e55c0bd3debacb1decfd3e4501714"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_08.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "44c49287cf2b3dfb4f71269642d2c193426f76126df30cd411185b35751edfcd"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_09.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "0b8bb3ef2d6f6d0b82740c773db26facded6e71a00f4f89a2de071724f7f296f"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_10.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "797165b1c607b2f180f4a6311d2923bc551484397d92558454aa6bb68f1c2d73"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_11.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ddf59483320caa2a7a17631364f210b648ac58c49754a531794ec6a47943fff6"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_12.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "20ee1cee4ddda66009c85d04177f9ce3a0b793d805f21565030da2b269b911d5"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_13.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "6cae50845810a312f15d0e138102b8b7356e5a3040d05eaee15eb7598d203e8b"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_14.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ee4c110d57bc2ff7ed0bd7df75b0f824c0d97435c5db9d40aa2b3fa3020fca98"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_15.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "d3b30828e692126d0516cdd91cfef13018714ab4cb1760b409e32d172ed18590"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_16.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "ff0d782c2803c051ec8ef228b4450ae8b4df315733f3e7b5abcd2ef2bbc88e96"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/inn_weathered/frame_17.png",
+      "artwork_size": [
+        384,
+        480
+      ],
+      "sha256": "2cf04efe59d4b077749ff04e8ed1c1f03e14841fd1b85d0a9c69c5b02d3be753"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fb4c6b66591d5330e0c22b3d1973bd753c9676eb128559da6fd35501ff861121"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fb4c6b66591d5330e0c22b3d1973bd753c9676eb128559da6fd35501ff861121"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fb4c6b66591d5330e0c22b3d1973bd753c9676eb128559da6fd35501ff861121"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d9ecddc4505f77c6dc3f45e793025e91600e0ab83b9d9ec39ef6be25a7dfca99"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d9ecddc4505f77c6dc3f45e793025e91600e0ab83b9d9ec39ef6be25a7dfca99"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fb4c6b66591d5330e0c22b3d1973bd753c9676eb128559da6fd35501ff861121"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "fb4c6b66591d5330e0c22b3d1973bd753c9676eb128559da6fd35501ff861121"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d9ecddc4505f77c6dc3f45e793025e91600e0ab83b9d9ec39ef6be25a7dfca99"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d9ecddc4505f77c6dc3f45e793025e91600e0ab83b9d9ec39ef6be25a7dfca99"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_maintained/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d6b28e6f1d81eb2c4d8228f244e461292b6c1ff0d354d29fb381669d5f7f16ab"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_00.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_01.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_02.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "f3dff4f5a652e74a6d0d73a907689245c5dcc405e36f5b4b713f8f900f872093"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_03.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "f3dff4f5a652e74a6d0d73a907689245c5dcc405e36f5b4b713f8f900f872093"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_04.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "f3dff4f5a652e74a6d0d73a907689245c5dcc405e36f5b4b713f8f900f872093"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_05.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_06.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_07.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d29a8b3be3ae701a8198cbe4383830a16636fcb537528a2c7d8156f6c474faa2"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_08.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d29a8b3be3ae701a8198cbe4383830a16636fcb537528a2c7d8156f6c474faa2"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_09.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_10.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_11.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "f3dff4f5a652e74a6d0d73a907689245c5dcc405e36f5b4b713f8f900f872093"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_12.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "f3dff4f5a652e74a6d0d73a907689245c5dcc405e36f5b4b713f8f900f872093"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_13.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_14.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_15.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d29a8b3be3ae701a8198cbe4383830a16636fcb537528a2c7d8156f6c474faa2"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_16.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "d29a8b3be3ae701a8198cbe4383830a16636fcb537528a2c7d8156f6c474faa2"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/ambient/item_shop_weathered/frame_17.png",
+      "artwork_size": [
+        336,
+        384
+      ],
+      "sha256": "0a1d55244196ed8f4b70fea6b45c199fa50316fbd308e7336acbb62ccb9f97f3"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/display_maintained_closeup.png",
+      "artwork_size": [
+        624,
+        384
+      ],
+      "sha256": "66dde571790b292d0ca5e6023c5fcef71591fe4b2d9e731bb08a0834301f9c47"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/display_weathered_closeup.png",
+      "artwork_size": [
+        624,
+        384
+      ],
+      "sha256": "25830bdeef512fcaf7160b737a613346f429a17477cb3db3ec39e966cc152a9c"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/props.png",
+      "artwork_size": [
+        960,
+        160
+      ],
+      "sha256": "bd5b5dbbab275947fc1b90b8f68977d87c2dd337cfc361da39d10c50c4a824db"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/street_maintained_native.png",
+      "artwork_size": [
+        960,
+        640
+      ],
+      "sha256": "57ae11c6a91bfd16bf6ca4f54e915548e7286238ebcbc3e67be4b6df53f03815"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/street_weathered_native.png",
+      "artwork_size": [
+        960,
+        640
+      ],
+      "sha256": "06b65413b0eab02351c1185c85d5a4ddfa3c517434e21764758d101ae5126b60"
+    },
+    {
+      "file": "docs/reviews/eldenmere_business_exteriors_hd/placement_overview.png",
+      "artwork_size": [
+        1536,
+        1344
+      ],
+      "sha256": "2d0dbfe1fdf7bf90d0aa21f4f904f6d39b4719c588e84de8bd8eadf7ed235338"
+    }
+  ]
+}

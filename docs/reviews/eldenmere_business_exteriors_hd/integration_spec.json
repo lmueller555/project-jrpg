@@ -1,0 +1,35 @@
+{
+  "status": "specification_only_not_implemented",
+  "inn": {
+    "interior": "Ground-floor common room and counter; upstairs guest-room presentation consistent with the four exterior windows. Preserve porch/door clearance.",
+    "keeper": "Create an innkeeper and dialogue-driven Rest/Leave choices during integration.",
+    "rest": "Show the full party price and require an explicit choice; charge and restore eligible active-party HP/MP together. Define status recovery, guest access and timing deliberately.",
+    "failure_cases": [
+      "insufficient funds changes neither currency nor party state",
+      "cancel/leave changes no state",
+      "do not charge for failed or interrupted transition"
+    ],
+    "save": "Add currency and completed rest persistence through the existing versioned save system; autosave only after the successful transaction/scene settles."
+  },
+  "item_shop": {
+    "interior": "Counter and reachable merchant; stock shelves and a display-facing wall consistent with the exterior.",
+    "existing_consumable_ids": [
+      "potion",
+      "ether",
+      "revival_salts",
+      "smoke_bomb",
+      "rest_kit"
+    ],
+    "gear": "Add ordinary weapon and armor catalog entries, prices and equipment rules before sale. Never offer quest/key items or Mira\u2019s unique gift blade as ordinary stock.",
+    "transactions": "One authoritative atomic purchase/sale path; validate price, integer quantity, funds, inventory limits and eligibility before mutation. Persist inventory/currency through current saves.",
+    "window": "Decorative stock behind glass; no pickups, grants, prices, glints or inventory ownership changes from examining the exterior."
+  },
+  "shared_prerequisites": [
+    "currency model and balance decisions",
+    "merchant UI and dialogue integration",
+    "new interiors and reachable NPC stations",
+    "native 2x map and door integration",
+    "revalidate current collision/navigation/quests/NPC routes before applying candidate plots",
+    "actual traversal, reload, game-over, transaction and reduced-motion checks"
+  ]
+}

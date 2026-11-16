@@ -1,0 +1,957 @@
+{
+  "id": "eldenmere.business_exteriors.hd",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "palette": {
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "glass": {
+      "dark": "#34464b",
+      "base": "#53696e",
+      "reflection": "#8ab3b0"
+    },
+    "plaster": {
+      "shadow": "#aa9d80",
+      "base": "#d3c6a4",
+      "light": "#e1d6bc"
+    },
+    "lamplight": {
+      "base": "#e4b66b",
+      "light": "#f5d99a"
+    },
+    "smoke": {
+      "shadow": "#aab5ac",
+      "base": "#c5ccc1",
+      "light": "#dce0d2"
+    },
+    "leaves": {
+      "deep": "#173f31",
+      "shadow": "#205b3b",
+      "base": "#2c7c50",
+      "light": "#42975f",
+      "highlight": "#67b982",
+      "moss": "#246b48"
+    },
+    "outline": {
+      "base": "#171e1a"
+    },
+    "flowers": {
+      "white": "#eee7cf",
+      "yellow": "#d6b552",
+      "violet": "#9685b0",
+      "rose": "#bd7898"
+    },
+    "fabric": {
+      "blue_shadow": "#435d6b",
+      "blue": "#688b9b",
+      "rust_shadow": "#815448",
+      "rust": "#b37d64",
+      "linen": "#ded7bc"
+    },
+    "potion_red": {
+      "shadow": "#a44c4b",
+      "base": "#d46d63",
+      "light": "#f0a390"
+    },
+    "potion_blue": {
+      "shadow": "#3b6d98",
+      "base": "#5c9fc4",
+      "light": "#a1cbd9"
+    },
+    "potion_green": {
+      "shadow": "#487d53",
+      "base": "#79ae63",
+      "light": "#bdd08e"
+    },
+    "potion_violet": {
+      "shadow": "#72538e",
+      "base": "#a17bb8",
+      "light": "#c6add5"
+    },
+    "steel": {
+      "shadow": "#535c5d",
+      "base": "#8e9d9b",
+      "light": "#a4aaa0",
+      "highlight": "#d4d8ce"
+    }
+  },
+  "roof_palettes": {
+    "slate": {
+      "shadow": "#4e5e64",
+      "base": "#657579",
+      "light": "#87948f",
+      "edge": "#a2aaa0"
+    },
+    "terracotta": {
+      "shadow": "#704e47",
+      "base": "#946555",
+      "light": "#b3856a",
+      "edge": "#c6a187"
+    },
+    "moss": {
+      "shadow": "#4e5a46",
+      "base": "#6c7b58",
+      "light": "#8f9a75",
+      "edge": "#adb693"
+    },
+    "heather": {
+      "shadow": "#57515f",
+      "base": "#787083",
+      "light": "#99909f",
+      "edge": "#b7adb9"
+    }
+  },
+  "sources": [
+    {
+      "file": "buildings_authored.png",
+      "sha256": "ab72ef43a0c36e0f087a5b51cfe9d3e3efdd9d3bbef8ca70f605ced064abb1a6",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "buildings_fixed_authored.png",
+      "sha256": "d553cd19180b562c9a6e8a106f21205aece886ba09a042d2d1a91354fed67b0a",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "displays_authored.png",
+      "sha256": "51979ad34d9ac9c2c397cd5b2524c1af7929a041fd63afc5eea1b20b2b72487c",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "props_authored.png",
+      "sha256": "559593808f9215ce643b87aede7fa607f6ec4587c21fd1206b98bcb7476038af",
+      "role": "authored_art",
+      "provenance": "New retained drawing for the inn/item-shop asset pack."
+    },
+    {
+      "file": "town_context_reference.png",
+      "sha256": "a5346e597b5d67458dc4b5371e373007bb3c8e1235d9e3c4a236dc8e96c883c6",
+      "role": "planning_reference_only",
+      "provenance": "Retained current-town context only; not new HD artwork."
+    }
+  ],
+  "dependencies": [
+    {
+      "file": "assets/source/terrain/eldenmere/exteriors_hd/recipe.json",
+      "sha256": "c0f93179b8fc116f6a65f852434a775e89d1365a9c066f1753921db69fcb2db1"
+    },
+    {
+      "file": "assets/source/terrain/eldenmere/exteriors_hd/doors_authored.png",
+      "sha256": "60f348d316555ab7fde4ade2326ba5e2db37965f1a0ac95d04178c3ed5a01e48"
+    },
+    {
+      "file": "assets/source/terrain/eldenmere/exteriors_hd/effects_authored.png",
+      "sha256": "b2281fc8469010c560a35a92db5d7dcffb02bc21c0e0979f9f3d6a3d677732a6"
+    }
+  ],
+  "designs": [
+    {
+      "id": "inn_maintained",
+      "building_type": "inn",
+      "variant": "maintained",
+      "kind": "home",
+      "shape": "inn",
+      "profile": "maintained",
+      "source": "buildings_fixed_authored.png",
+      "source_rect": [
+        3,
+        3,
+        721,
+        610
+      ],
+      "logical_size": [
+        192,
+        240
+      ],
+      "body_bounds_logical": [
+        0,
+        36,
+        192,
+        240
+      ],
+      "ground_rect_logical": [
+        12,
+        144,
+        168,
+        96
+      ],
+      "door_rect_logical": [
+        86,
+        196,
+        20,
+        36
+      ],
+      "source_door_normalized": [
+        0.418,
+        0.712,
+        0.58,
+        0.938
+      ],
+      "door_style": "cottage",
+      "roof": "terracotta",
+      "smoke": true,
+      "chimney_normalized_x": 0.78,
+      "chimney_normalized_y": 0,
+      "window_regions_normalized": [
+        [
+          0.47,
+          0.22,
+          0.54,
+          0.3
+        ],
+        [
+          0.17,
+          0.414,
+          0.25,
+          0.51
+        ],
+        [
+          0.35,
+          0.414,
+          0.43,
+          0.51
+        ],
+        [
+          0.58,
+          0.414,
+          0.66,
+          0.51
+        ],
+        [
+          0.76,
+          0.414,
+          0.84,
+          0.51
+        ],
+        [
+          0.18,
+          0.71,
+          0.29,
+          0.82
+        ],
+        [
+          0.71,
+          0.71,
+          0.82,
+          0.82
+        ]
+      ],
+      "sign": "sign_inn",
+      "sign_position_logical": [
+        8,
+        172
+      ],
+      "display_rect_logical": null,
+      "display_variant": null,
+      "awning_rect_logical": null,
+      "charm": [
+        "guest curtains",
+        "sheltered entrance",
+        "worn threshold",
+        "bed pictogram",
+        "firewood",
+        "bench"
+      ]
+    },
+    {
+      "id": "inn_weathered",
+      "building_type": "inn",
+      "variant": "weathered",
+      "kind": "home",
+      "shape": "inn",
+      "profile": "weathered",
+      "source": "buildings_fixed_authored.png",
+      "source_rect": [
+        727,
+        3,
+        1445,
+        610
+      ],
+      "logical_size": [
+        192,
+        240
+      ],
+      "body_bounds_logical": [
+        0,
+        36,
+        192,
+        240
+      ],
+      "ground_rect_logical": [
+        12,
+        144,
+        168,
+        96
+      ],
+      "door_rect_logical": [
+        86,
+        196,
+        20,
+        36
+      ],
+      "source_door_normalized": [
+        0.418,
+        0.712,
+        0.58,
+        0.938
+      ],
+      "door_style": "cottage",
+      "roof": "terracotta",
+      "smoke": true,
+      "chimney_normalized_x": 0.78,
+      "chimney_normalized_y": 0,
+      "window_regions_normalized": [
+        [
+          0.47,
+          0.22,
+          0.54,
+          0.3
+        ],
+        [
+          0.17,
+          0.414,
+          0.25,
+          0.51
+        ],
+        [
+          0.35,
+          0.414,
+          0.43,
+          0.51
+        ],
+        [
+          0.58,
+          0.414,
+          0.66,
+          0.51
+        ],
+        [
+          0.76,
+          0.414,
+          0.84,
+          0.51
+        ],
+        [
+          0.18,
+          0.71,
+          0.29,
+          0.82
+        ],
+        [
+          0.71,
+          0.71,
+          0.82,
+          0.82
+        ]
+      ],
+      "sign": "sign_inn",
+      "sign_position_logical": [
+        8,
+        172
+      ],
+      "display_rect_logical": null,
+      "display_variant": null,
+      "awning_rect_logical": null,
+      "charm": [
+        "guest curtains",
+        "sheltered entrance",
+        "worn threshold",
+        "bed pictogram",
+        "firewood",
+        "bench"
+      ]
+    },
+    {
+      "id": "item_shop_maintained",
+      "building_type": "item_shop",
+      "variant": "maintained",
+      "kind": "landmark",
+      "shape": "item_shop",
+      "profile": "maintained",
+      "source": "buildings_fixed_authored.png",
+      "source_rect": [
+        3,
+        630,
+        721,
+        1083
+      ],
+      "logical_size": [
+        168,
+        192
+      ],
+      "body_bounds_logical": [
+        0,
+        48,
+        168,
+        192
+      ],
+      "ground_rect_logical": [
+        12,
+        96,
+        144,
+        96
+      ],
+      "door_rect_logical": [
+        34,
+        146,
+        22,
+        38
+      ],
+      "source_door_normalized": [
+        0.218,
+        0.535,
+        0.328,
+        0.915
+      ],
+      "door_style": "cottage",
+      "roof": "slate",
+      "smoke": false,
+      "chimney_normalized_x": 0,
+      "chimney_normalized_y": 0,
+      "window_regions_normalized": [],
+      "sign": "sign_item_shop",
+      "sign_position_logical": [
+        8,
+        103
+      ],
+      "display_rect_logical": [
+        70,
+        136,
+        78,
+        48
+      ],
+      "display_variant": "maintained",
+      "awning_rect_logical": [
+        64,
+        109,
+        88,
+        27
+      ],
+      "charm": [
+        "satchel and potion pictogram",
+        "blue-green awning",
+        "delivery hatch",
+        "rain barrel",
+        "potions/weapons/armor behind glass"
+      ]
+    },
+    {
+      "id": "item_shop_weathered",
+      "building_type": "item_shop",
+      "variant": "weathered",
+      "kind": "landmark",
+      "shape": "item_shop",
+      "profile": "weathered",
+      "source": "buildings_fixed_authored.png",
+      "source_rect": [
+        727,
+        630,
+        1445,
+        1083
+      ],
+      "logical_size": [
+        168,
+        192
+      ],
+      "body_bounds_logical": [
+        0,
+        48,
+        168,
+        192
+      ],
+      "ground_rect_logical": [
+        12,
+        96,
+        144,
+        96
+      ],
+      "door_rect_logical": [
+        34,
+        146,
+        22,
+        38
+      ],
+      "source_door_normalized": [
+        0.218,
+        0.535,
+        0.328,
+        0.915
+      ],
+      "door_style": "cottage",
+      "roof": "slate",
+      "smoke": false,
+      "chimney_normalized_x": 0,
+      "chimney_normalized_y": 0,
+      "window_regions_normalized": [],
+      "sign": "sign_item_shop",
+      "sign_position_logical": [
+        8,
+        103
+      ],
+      "display_rect_logical": [
+        70,
+        136,
+        78,
+        48
+      ],
+      "display_variant": "weathered",
+      "awning_rect_logical": [
+        64,
+        109,
+        88,
+        27
+      ],
+      "charm": [
+        "satchel and potion pictogram",
+        "blue-green awning",
+        "delivery hatch",
+        "rain barrel",
+        "potions/weapons/armor behind glass"
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "sign_inn",
+      "source_rect": [
+        3,
+        3,
+        509,
+        509
+      ],
+      "artwork_size": [
+        48,
+        56
+      ],
+      "logical_size": [
+        24,
+        28
+      ],
+      "mount": "wall",
+      "anchor_artwork": [
+        6,
+        8
+      ],
+      "animation": "hanging",
+      "interaction_cues": false
+    },
+    {
+      "id": "sign_item_shop",
+      "source_rect": [
+        515,
+        3,
+        1021,
+        509
+      ],
+      "artwork_size": [
+        48,
+        56
+      ],
+      "logical_size": [
+        24,
+        28
+      ],
+      "mount": "wall",
+      "anchor_artwork": [
+        6,
+        8
+      ],
+      "animation": "hanging",
+      "interaction_cues": false
+    },
+    {
+      "id": "porch_bench",
+      "source_rect": [
+        1027,
+        3,
+        1533,
+        509
+      ],
+      "artwork_size": [
+        80,
+        48
+      ],
+      "logical_size": [
+        40,
+        24
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        40,
+        44
+      ],
+      "animation": "static",
+      "interaction_cues": false
+    },
+    {
+      "id": "sheltered_firewood",
+      "source_rect": [
+        3,
+        515,
+        509,
+        1021
+      ],
+      "artwork_size": [
+        64,
+        56
+      ],
+      "logical_size": [
+        32,
+        28
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        32,
+        52
+      ],
+      "animation": "static",
+      "interaction_cues": false
+    },
+    {
+      "id": "travel_boots",
+      "source_rect": [
+        515,
+        515,
+        1021,
+        1021
+      ],
+      "artwork_size": [
+        24,
+        24
+      ],
+      "logical_size": [
+        12,
+        12
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        12,
+        20
+      ],
+      "animation": "static",
+      "interaction_cues": false
+    },
+    {
+      "id": "travel_pack",
+      "source_rect": [
+        1027,
+        515,
+        1533,
+        1021
+      ],
+      "artwork_size": [
+        40,
+        40
+      ],
+      "logical_size": [
+        20,
+        20
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        20,
+        36
+      ],
+      "animation": "static",
+      "interaction_cues": false
+    }
+  ],
+  "display_source_cells": [
+    [
+      3,
+      3,
+      988,
+      790
+    ],
+    [
+      994,
+      3,
+      1980,
+      790
+    ]
+  ],
+  "display_sections": {
+    "potions": [
+      0.055,
+      0.17,
+      0.365,
+      0.9
+    ],
+    "weapons": [
+      0.39,
+      0.13,
+      0.665,
+      0.92
+    ],
+    "armor": [
+      0.69,
+      0.13,
+      0.955,
+      0.92
+    ]
+  },
+  "display_contents": {
+    "potions": [
+      "red",
+      "blue",
+      "green",
+      "violet",
+      "round flasks",
+      "square bottles",
+      "conical vials"
+    ],
+    "weapons": [
+      "sword",
+      "round shield"
+    ],
+    "armor": [
+      "helmet",
+      "breastplate"
+    ]
+  },
+  "animation": {
+    "ambient_frames": 18,
+    "ambient_duration_ms": 200,
+    "ambient_cycle_ms": 3600,
+    "door_frames": 5,
+    "door_duration_ms": 100,
+    "reduced_motion": "Use closed/open stills; keep glass stock and reflections stationary."
+  },
+  "candidate_placements": [
+    {
+      "id": "inn",
+      "design": "inn_maintained",
+      "position_logical": [
+        12,
+        744
+      ],
+      "ground_rect_world_logical": [
+        24,
+        888,
+        168,
+        96
+      ],
+      "entry_anchor_world_logical": [
+        108,
+        990
+      ],
+      "proposed_path_centerline_logical": [
+        [
+          108,
+          990
+        ],
+        [
+          108,
+          1104
+        ],
+        [
+          264,
+          1104
+        ]
+      ],
+      "connection_to_existing_lane_logical": [
+        264,
+        1104
+      ]
+    },
+    {
+      "id": "item_shop",
+      "design": "item_shop_maintained",
+      "position_logical": [
+        1164,
+        888
+      ],
+      "ground_rect_world_logical": [
+        1176,
+        984,
+        144,
+        96
+      ],
+      "entry_anchor_world_logical": [
+        1209,
+        1086
+      ],
+      "proposed_path_centerline_logical": [
+        [
+          1209,
+          1086
+        ],
+        [
+          1209,
+          1104
+        ],
+        [
+          972,
+          1104
+        ],
+        [
+          972,
+          912
+        ]
+      ],
+      "connection_to_existing_lane_logical": [
+        972,
+        912
+      ]
+    }
+  ],
+  "placement_checks": [
+    {
+      "id": "inn_footprint",
+      "file": "placement_checks/inn_footprint.png",
+      "rect_world_logical": [
+        24,
+        888,
+        168,
+        96
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "fe72a9c6519268f0b26e32f1c4ae9250ee635dcae36c6dbc07a2cf9993fd99d6"
+    },
+    {
+      "id": "inn_corridor_0",
+      "file": "placement_checks/inn_corridor_0.png",
+      "rect_world_logical": [
+        96,
+        978,
+        24,
+        138
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "97a7c9ebed08e39b9b43e4e0d19a2a59cf9de2caf410948cc52dc3eeaa2d2543"
+    },
+    {
+      "id": "inn_corridor_1",
+      "file": "placement_checks/inn_corridor_1.png",
+      "rect_world_logical": [
+        96,
+        1092,
+        180,
+        24
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "450391e7a26cac2d10225c2aaccc19b862c39d9d6de0829e31f996b5337b8f3a"
+    },
+    {
+      "id": "item_shop_footprint",
+      "file": "placement_checks/item_shop_footprint.png",
+      "rect_world_logical": [
+        1176,
+        984,
+        144,
+        96
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "bb5de4b0083b70277ae105fa9630bb6a7dddfbae868e857039306df88935333a"
+    },
+    {
+      "id": "item_shop_corridor_0",
+      "file": "placement_checks/item_shop_corridor_0.png",
+      "rect_world_logical": [
+        1197,
+        1074,
+        24,
+        42
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "1c9b56e5d58e2ade709c4d9a465b5f49e158e8d7aeffa06dd4564d84663c7e42"
+    },
+    {
+      "id": "item_shop_corridor_1",
+      "file": "placement_checks/item_shop_corridor_1.png",
+      "rect_world_logical": [
+        960,
+        1092,
+        261,
+        24
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "8b836d90b73529d3c43dd1d1355288bdaea3abfacb5cbe0582fd7abb74aa72a1"
+    },
+    {
+      "id": "item_shop_corridor_2",
+      "file": "placement_checks/item_shop_corridor_2.png",
+      "rect_world_logical": [
+        960,
+        900,
+        24,
+        216
+      ],
+      "blocked_pixel_count": 0,
+      "sha256": "1501433b3d0de179d94888b1db59ee4f04f61055519b800d6edc89bdfbeb9903"
+    }
+  ],
+  "placement_status": "Candidate plots and future 24-unit access corridors only; not applied to runtime.",
+  "context_reference": {
+    "file": "town_context_reference.png",
+    "logical_size": [
+      1536,
+      1344
+    ],
+    "map_file": "assets/maps/eldenmere/playable/map.json",
+    "map_sha256": "e29ab59a4a5c920d5430c437c3384ed3d398bdfa0880b888614144619eaa7716",
+    "collision_file": "assets/maps/eldenmere/playable/collision.png",
+    "collision_sha256": "bd44347d8293d1a9267175ead3db68f3a22c6f1ca60260075904bc241077816b",
+    "legacy_density": 1,
+    "presentation": "Planning context only; native business artwork is reviewed separately."
+  },
+  "baseline_commit": "03ab86574ec5372d6a52135ce97c2968932e2f7d",
+  "protected_existing_banks": {
+    "assets/maps/eldenmere/playable": {
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2"
+    },
+    "assets/maps/eldenmere/building_interiors": {
+      "file_count": 185,
+      "tree_sha256": "89aa5a3cbf016a7ecdb8a7558252e537eb06663d4374c805dfe84bc437f0a7ce"
+    },
+    "assets/terrain/eldenmere/exteriors_hd": {
+      "file_count": 1118,
+      "tree_sha256": "83e530e58a1d5a3fa9c634f6bcd9fdb0baa13dda725f5b5e4c9a9e78583f63f0"
+    },
+    "assets/terrain/eldenmere/grass_dirt_hd": {
+      "file_count": 79,
+      "tree_sha256": "ac0f4f176bc29d973cf61c475ec3eff0855b17ce4299090fc5767599a38d3f1c"
+    },
+    "assets/terrain/vegetation_hd": {
+      "file_count": 602,
+      "tree_sha256": "c6dbc3bf0c9eed011cc48d7ced2e27c1936de1807105c52cd58b20a1cc6d0146"
+    },
+    "assets/items": {
+      "file_count": 1,
+      "tree_sha256": "3b430ac128cecf3c5e9af5651502f21707e4589415e51933a8b96e6af2f065e6"
+    },
+    "assets/characters/caelan/review_hd": {
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372"
+    },
+    "assets/characters/iselin": {
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf"
+    }
+  },
+  "builder": "tools/build_eldenmere_business_exteriors_hd.py",
+  "scope": "Staged business exteriors, glass merchandise and signs, plus candidate placement/service integration specification. No live map, merchant transactions, inn healing, inventory, equipment, currency or save changes."
+}

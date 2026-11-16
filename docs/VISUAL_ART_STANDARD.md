@@ -52,6 +52,7 @@ contract; terrain-specific authoring instructions belong in that companion.
 - [Visual direction](#visual-direction)
 - [Object creation and interaction readability](#object-creation-and-interaction-readability)
 - [Staged Eldenmere building exteriors](#staged-eldenmere-hd-building-exteriors)
+- [Staged inns and item shops](#staged-eldenmere-inns-and-item-shops)
 - [Units and sizing](#units-and-sizing)
 - [Rendering contract](#rendering-contract)
 - [Migration and acceptance](#migration-and-acceptance)
@@ -1182,3 +1183,77 @@ must migrate consumers explicitly, preserve map/door geometry, use native render
 adapters, and verify foreground occlusion, traversal, pause/focus and reduced motion.
 The current maps, interiors, door controllers, interaction eligibility and saves
 remain unchanged. Keep the legacy banks until their consumers have migrated.
+
+## Staged Eldenmere inns and item shops
+
+Source recipe: `assets/source/terrain/eldenmere/business_exteriors_hd/recipe.json`.
+Staged manifest: `assets/terrain/eldenmere/business_exteriors_hd/manifest.json`.
+State is **rebuilt / not integrated**, with visual approval recorded separately.
+This extends the preceding architecture bank with maintained and weathered
+versions of a two-story inn and a one-story item shop. Each pair shares logical
+canvases, footprints and entrance geometry for reuse elsewhere.
+
+The inn uses a 192×240 logical / 384×480 artwork canvas and a 168×96 logical ground
+footprint. Its porch, four guest windows, varied curtains, terracotta roof, chimney,
+bench/firewood and bed pictogram establish a welcoming lodging house. The shop uses
+168×192 logical / 336×384 artwork with a 144×96 logical ground footprint, slate roof,
+blue-green awning, delivery hatch, supply baskets, rain barrel and satchel/potion
+pictogram. Weathered variants retain readable stock and entrances rather than
+turning into ruins. Source silhouettes use explicitly inspected crop rectangles;
+do not assume a generated sheet follows its nominal grid or clip neighboring
+objects into a cell.
+
+The item shop's framed glass display is a separate fixed component at local
+[70,136,78,48] logical units, exported at 156×96 artwork pixels. Its left section
+shows red, blue, green and violet potions in round flasks, square bottles and
+conical vials. The center holds a sword and round shield; the right shows a helmet
+and breastplate. Dedicated potion/steel palette roles preserve color and material
+separation at native scale. Subtle source-drawn diagonal reflections sit across
+the stock, with fixed mullions and frame. This is decorative visual merchandise,
+not an inventory/catalog binding, pickup, grant or guaranteed future assortment.
+Keep every display pixel fixed through ambient frames. Pane-light masks and cloth
+motion must not recolor, pulse or obscure the goods; do not add discovery glints,
+labels or yellow outlines to ordinary shop stock.
+
+Separate source-drawn signs replace the baked signs removed from the fixed shells.
+Signs retain their mounting hardware while swaying by at most one artwork pixel.
+Shop awning motion is restricted to the cloth interior at its lower edge, away
+from the display and fixed supports. Inn smoke and optional window light follow
+the established eighteen 200 ms frames (3.6 seconds). Door leaves reuse the prior
+bank's drawn five-state, 100 ms, west-hinged convention at explicitly registered
+portals. Closed/open stills provide reduced-motion alternatives. Six reusable
+props include both signs, a porch bench, sheltered firewood, travel boots and a
+pack/blanket. Their individual logical sizes and mount/ground anchors are recorded.
+
+The pack also retains a **candidate placement plan**, not applied map changes.
+The inn candidate is on the western southern grass plot; the shop candidate is
+southeast of the central residential area. Both footprints and proposed 24-unit
+access corridors were clear in the recorded collision baseline. Proposed routes
+connect to recorded existing dirt-lane points. Their context PNG is a retained
+legacy-density reference used only in a labeled logical-resolution planning
+diagram; native artwork is reviewed separately. Seven logical collision snapshots
+retain baseline evidence without permanently freezing current maps in unit tests.
+Before integration, revalidate then-current buildings, terrain, water/irrigation,
+quests, NPC routines and navigation; add the approaches and allowed routes explicitly.
+
+The generated review `integration_spec.json` scopes future interiors, keeper/
+merchant stations, dialogue, a currency model, atomic purchase/rest transactions,
+inventory limits, save persistence and failure/cancellation handling. Existing
+consumables are referenced as possible starting stock; ordinary equipment catalog
+entries and balance decisions remain prerequisites. Unique story gear and key
+items must not be treated as ordinary stock. The exterior pack does not implement
+merchants, paid rest, healing, interiors, currency or save changes. Those systems
+must be integrated before these become functional destinations.
+
+```sh
+python tools/build_eldenmere_business_exteriors_hd.py
+python tools/build_eldenmere_business_exteriors_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_eldenmere_business_exteriors_hd
+```
+
+[Inn and item-shop review evidence](reviews/eldenmere_business_exteriors_hd/README.md)
+includes both variants at native scale beside unchanged Caelan/Iselin, enlarged
+glass displays, ambient loops, props, the planning diagram and service specification.
+Source art and prior-bank door/smoke dependencies are hashed. Exporters write only
+the new bank and review directory; runtime maps, existing assets, inventory,
+interaction eligibility and saves remain unchanged.
