@@ -15,9 +15,10 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** This change establishes documentation. Eldenmere's terrain packs below
-retain their existing artwork and density until individually rebuilt. New terrain
-is authored at 2× density; documentation adoption alone does not migrate assets.
+**Status:** The new Eldenmere grass/dirt blob pack is **rebuilt but not integrated**.
+Its 48×48 artwork tiles retain a 24×24 logical footprint. The shipped town and
+shared terrain retain their previous assets until a separate integration change.
+See the [staged pack reference](#staged-eldenmere-hd-grassdirt-blob).
 
 ## Contents
 
@@ -353,13 +354,14 @@ geometry and reproducible exports. Visual review remains necessary.
    once all references have migrated. Update this document's implementation status.
 
 Stone paving, terraces, water/banks and larger vegetation follow as coordinated
-families. No new terrain artwork or runtime migration is included in adopting
-this document.
+families. The staged grass/dirt pack below completes the initial asset set; runtime
+migration and in-game acceptance remain a separate step.
 
 ## 17. Existing pack maintenance reference
 
-The dimensions, timings and construction formats below describe **existing 1×
-exports**, not requirements for newly drawn 2× packs. Preserve these implementation
+Except for the explicitly staged HD bank, dimensions, timings and construction
+formats below describe **existing 1× exports**, not requirements for newly drawn
+2× packs. Preserve these implementation
 facts when reproducing the existing bank. Recipes/manifests hold exact crops,
 thresholds, masks, palette roles, placements and hashes. Earlier review images
 include older character art and illustrative layouts; they do not establish current
@@ -392,6 +394,36 @@ Tests verify existing exports and illustrative scenes. Rebuilds can update sourc
 parts and review assets as well as runtime output; use a disposable checkout when
 only checking the historical pipeline. Existing band/cluster methods below are
 bank-specific reproduction facts, not mandatory methods for new plant drawings.
+
+### Staged Eldenmere HD grass/dirt blob
+
+Source recipe: `assets/source/terrain/eldenmere/grass_dirt_hd/recipe.json`.
+Staged pack: `assets/terrain/eldenmere/grass_dirt_hd/tileset.json`.
+State is `rebuilt` / `not_integrated`; user visual approval is recorded separately.
+This bank is not selected by any playable map or runtime terrain registry.
+
+The pack contains 47 distinct 48×48 hard-alpha dirt overlays, a 384×288 atlas
+with its final slot empty, a matching coverage atlas, 20 oriented 24×24 quarter
+pieces, four grass materials and four dirt fills. Logical tile/quarter sizes are
+24×24 and 12×12. Atlas rectangles are artwork coordinates; world anchors remain
+logical. The complete 256-entry lookup uses this document's eight-neighbor rule.
+Grass uses the shipped emerald ramp; dirt uses the existing earth/stone colors.
+Fresh retained material and edge drawings supply the artwork. Source RGB medians
+are registered to the existing base colors before exact-ramp assignment, keeping
+broad ground quiet. Recipe metadata records scales, crops and connection ports.
+
+```sh
+python tools/build_eldenmere_grass_dirt_hd.py
+python tools/build_eldenmere_grass_dirt_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_eldenmere_hd_blob
+```
+
+[Offline review evidence](reviews/eldenmere_hd_blob/README.md) includes all shapes,
+repeated fills, winding paths, corners, islands and scale references. The retained
+cottage is a legacy building shown at its existing physical size; Caelan and
+Iselin retain native approved HD pixels. These are illustrative compositions,
+not gameplay captures or runtime implementation. Integration must later verify
+the actual map, native rendering and interactions under section 14.
 
 ### Shared emerald grass in production
 

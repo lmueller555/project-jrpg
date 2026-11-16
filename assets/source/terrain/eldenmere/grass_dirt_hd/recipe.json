@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "id": "eldenmere.grass_dirt.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "artwork_tile_size": [
+    48,
+    48
+  ],
+  "logical_quarter_size": [
+    12,
+    12
+  ],
+  "sources": [
+    {
+      "file": "materials_authored.png",
+      "sha256": "f6646a7499ffa42d92b34044e4d1a5d745accc4110829b0afc80be273607390e"
+    },
+    {
+      "file": "edge_authored.png",
+      "sha256": "c33a0511fa14043b06f28fae9698ba578bbbb24c086fdf30557105f5faa1dfbd"
+    }
+  ],
+  "material_source": "materials_authored.png",
+  "source_grid": [
+    4,
+    2
+  ],
+  "material_names": [
+    "lawn_00",
+    "lawn_01",
+    "meadow_00",
+    "sheltered_00",
+    "dirt_00",
+    "dirt_01",
+    "dirt_02",
+    "dirt_03"
+  ],
+  "source_cells": [
+    [
+      2,
+      2,
+      442,
+      442
+    ],
+    [
+      446,
+      2,
+      885,
+      442
+    ],
+    [
+      889,
+      2,
+      1328,
+      442
+    ],
+    [
+      1332,
+      2,
+      1772,
+      442
+    ],
+    [
+      2,
+      446,
+      442,
+      885
+    ],
+    [
+      446,
+      446,
+      885,
+      885
+    ],
+    [
+      889,
+      446,
+      1328,
+      885
+    ],
+    [
+      1332,
+      446,
+      1772,
+      885
+    ]
+  ],
+  "palette": {
+    "grass": {
+      "base": "#2c7c50",
+      "shadow": "#205b3b",
+      "mid": "#286e46",
+      "light": "#42975f",
+      "highlight": "#67b982",
+      "soft_mid": "#28764e",
+      "soft_light": "#34885a",
+      "moss": "#246b48"
+    },
+    "dirt": {
+      "edge": "#8d7253",
+      "shadow": "#987b59",
+      "base": "#b18e68",
+      "light": "#c1a17b",
+      "stone": "#969284"
+    }
+  },
+  "palette_sources": [
+    "assets/terrain/grass/assets.json",
+    "assets/terrain/eldenmere/grass_dirt/palette.json"
+  ],
+  "seam_border_artwork_pixels": 2,
+  "edge_profile": [
+    5,
+    5,
+    5,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    6,
+    6,
+    5,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "edge_profile_source": {
+    "file": "edge_authored.png",
+    "sampling_size": [
+      96,
+      96
+    ],
+    "sample_columns": [
+      0,
+      24
+    ],
+    "earth_search_rows": [
+      35,
+      62
+    ],
+    "registration": "Earth/grass classification supplies the 24-sample contour; center on 5px margin, clamp offsets -1..2, lock first/last three samples to shared 5px ports."
+  },
+  "outer_corner_radius": 7,
+  "inner_corner_radius": 5,
+  "ink_width_artwork_pixels": 1,
+  "scope": "Offline 47-shape dirt overlay and new grass/dirt fills only. No map, runtime selector, collision, scenery animation or existing asset replacement.",
+  "lighting": "Quiet overhead surface shading; subtle upper-left highlights in material source. No raised cliff or black tile boxes.",
+  "review": "Native atlas, repeated materials, winding paths/islands/tight corners and illustrative scene using retained Eldenmere building plus approved HD characters.",
+  "builder": "tools/build_eldenmere_grass_dirt_hd.py",
+  "protected_existing_banks": {
+    "assets/terrain/grass": {
+      "file_count": 256,
+      "tree_sha256": "49470fb91d9767b1c188a4c05c70b0b3b2063df99094b0b87ffb49fa8cdb3549"
+    },
+    "assets/terrain/eldenmere/grass_dirt": {
+      "file_count": 65,
+      "tree_sha256": "a1d712e6803905e1e8912c65ac5e988bddb2aa46853f9d3911abc673e0181b4a"
+    },
+    "assets/maps/eldenmere/playable": {
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2"
+    },
+    "assets/characters/caelan/review_hd": {
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372"
+    },
+    "assets/characters/iselin": {
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf"
+    }
+  },
+  "material_color_registration": {
+    "method": "Center sampled source RGB medians on the existing material base before nearest named-ramp assignment. This compensates generated-source color drift and keeps broad ground quiet.",
+    "contrast": 0.72
+  },
+  "connection_contract": "Inner-corner radius equals the straight-edge port margin (5 artwork pixels); first/last three contour samples are locked to that port to preserve alpha/color joins."
+}
