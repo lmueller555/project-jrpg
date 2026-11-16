@@ -1,0 +1,86 @@
+{
+  "presentation": "Offline illustrative asset composition, not a gameplay capture or live map integration.",
+  "artwork_size": [
+    960,
+    768
+  ],
+  "prefabs": [
+    {
+      "prefab": "maintained_grass",
+      "position_artwork": [
+        16,
+        180
+      ]
+    },
+    {
+      "prefab": "weathered_dirt",
+      "position_artwork": [
+        336,
+        180
+      ]
+    },
+    {
+      "prefab": "mossy_paving",
+      "position_artwork": [
+        656,
+        180
+      ]
+    }
+  ],
+  "references": [
+    {
+      "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+      "position_artwork": [
+        152,
+        210
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "role": "Unchanged approved character scale reference, repeated across independent examples."
+    },
+    {
+      "file": "assets/characters/iselin/idle_front_42x72.png",
+      "position_artwork": [
+        139,
+        392
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "role": "Unchanged approved character scale reference, repeated across independent examples."
+    },
+    {
+      "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+      "position_artwork": [
+        472,
+        210
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "role": "Unchanged approved character scale reference, repeated across independent examples."
+    },
+    {
+      "file": "assets/characters/iselin/idle_front_42x72.png",
+      "position_artwork": [
+        459,
+        392
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "role": "Unchanged approved character scale reference, repeated across independent examples."
+    },
+    {
+      "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+      "position_artwork": [
+        792,
+        210
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "role": "Unchanged approved character scale reference, repeated across independent examples."
+    },
+    {
+      "file": "assets/characters/iselin/idle_front_42x72.png",
+      "position_artwork": [
+        779,
+        392
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "role": "Unchanged approved character scale reference, repeated across independent examples."
+    }
+  ]
+}

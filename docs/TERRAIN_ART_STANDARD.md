@@ -15,11 +15,12 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The new Eldenmere grass/dirt and stone-paving packs are **rebuilt but
+**Status:** The new Eldenmere grass/dirt, stone-paving and terrace packs are **rebuilt but
 not integrated**. Their 48×48 artwork tiles retain a 24×24 logical footprint.
 The shipped town and shared terrain retain previous assets until a separate
-integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob)
-and [stone-paving reference](#staged-eldenmere-hd-stone-paving).
+integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
+[stone-paving reference](#staged-eldenmere-hd-stone-paving) and
+[terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs).
 
 ## Contents
 
@@ -354,8 +355,8 @@ geometry and reproducible exports. Visual review remains necessary.
    preserve geometry, verify native composition and remove superseded assets/code
    once all references have migrated. Update this document's implementation status.
 
-Grass/dirt and stone paving are available as staged asset packs below. Terraces,
-water/banks and larger vegetation follow as coordinated families. Runtime migration
+Grass/dirt, stone paving and terraces are available as staged asset packs below.
+Water/banks and larger vegetation follow as coordinated families. Runtime migration
 and in-game acceptance remain a separate step.
 
 ## 17. Existing pack maintenance reference
@@ -694,3 +695,54 @@ intentionally makes older fingerprints historical: a stale check calls for a
 new scoped capture, not editing old verification JSON to pretend it is current.
 Production rollout captures use disposable saves; the upstream still is an
 initialized production fixture, not proof of quest-gated travel.
+
+
+### Staged Eldenmere HD terraces, walls and stairs
+
+Source recipe: `assets/source/terrain/eldenmere/terraces_hd/recipe.json`.
+Staged manifest: `assets/terrain/eldenmere/terraces_hd/tileset.json`.
+These assets are rebuilt at 2× density and **not integrated**. Merge does not
+constitute user visual approval; that status remains explicit in the manifest.
+
+The bank contains three masonry families (maintained, weathered and mossy),
+14 wall modules per family, four stair designs (including broad-lipped stone),
+48 matching upper/lower landings, and nine illustrative terrace prefabs combining
+the three wall treatments with grass, dirt or paving. Wall modules include three
+front-face variations, outer/inner corners, ends, sides, back coping and back
+corners. Shared named connection ports permit wear treatments to meet.
+
+Wall modules occupy 24×24 logical units, exported at 48×48 artwork pixels.
+Wall rise stays 24 logical units. South-descending stairs occupy 48×48 logical
+units (96×96 artwork), rise 24, and have four treads with upper landing north and
+lower landing south. The walkable interval remains x=[7,41) logical, width 34.
+Do not rotate or mirror this stair set into unsupported orientations. Wall
+coverage envelopes retain existing geometry only; every visible material pixel
+comes from the retained new source drawings, registered to the existing stone
+ramp and current emerald greens. Do not enlarge legacy color art as new artwork.
+
+Atlas rectangles and source rectangles are in artwork pixels; anchors, sizes,
+heights, landings and clearance are explicitly named logical fields. Wall `ports`
+name compatible edges, tested across all three treatments. Source coping bands
+are registered to shared ten-artwork-pixel caps; side returns retain the existing
+coverage envelope. Stair quarters reconstruct the full source export. Landing
+contact bands register to the adjacent stair edge. Grass/dirt landings have one
+floor phase; paving has all four world phases, selected using x%2+2*(y%2) from a
+common tile origin. Do not randomly substitute paving phases.
+
+Prefabs are 144×144 logical units with a six-by-three-tile upper floor and a
+south stair opening. Metadata records each module placement, upper/lower landing,
+stair clearance and elevation. They are illustrative compositions, not collision
+masks or automatic navigation. Future integration must preserve live geometry,
+apply explicit renderer adapters, and review actual movement and occlusion.
+Spillway/water assets and active maps are outside this staged bank.
+
+```sh
+python tools/build_eldenmere_terraces_hd.py
+python tools/build_eldenmere_terraces_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_eldenmere_terraces_hd
+```
+
+[Terrace review evidence](reviews/eldenmere_hd_terraces/README.md) records native
+character scale, enlarged modules, stair variants, reproducibility and the
+one-time preservation comparison. These are offline compositions; gameplay
+acceptance remains a later integration step.
