@@ -5,7 +5,6 @@ import unittest
 from PIL import Image
 
 from tools.caelan_outline import apply_outline, INK, STYLE
-from tools.build_caelan_overworld import drawing
 from tools.build_mira_combat import _main_component
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -27,15 +26,6 @@ def edges(image):
                 or not image.getpixel((x+dx,y+dy))[3] for dx,dy in CARDINAL)]
 
 
-def raw_travel(record):
-    cell,bounds,_=drawing(record['index'])
-    crop=cell.crop(bounds)
-    scale=record['scale']
-    body=crop.resize((round(crop.width*scale),round(crop.height*scale)),Image.Resampling.NEAREST)
-    raw=Image.new('RGBA',tuple(record['canvas']))
-    raw.alpha_composite(body,tuple(record['destination']))
-    return raw
-
 
 class CaelanOutlineTests(unittest.TestCase):
     def assert_preserved_silhouette_and_interior(self,raw,outlined):
@@ -46,22 +36,6 @@ class CaelanOutlineTests(unittest.TestCase):
             for x in range(raw.width):
                 if (x,y) not in boundary:
                     self.assertEqual(outlined.getpixel((x,y)),raw.getpixel((x,y)),(x,y))
-
-    def test_all_travel_contours_keep_alpha_and_interior_and_improve_readability(self):
-        registration=read('assets/source/characters/caelan/overworld_refresh/registration.json')
-        self.assertEqual(registration['outline'],STYLE)
-        for record in registration['source_cells']:
-            with self.subTest(file=record['file']):
-                raw=raw_travel(record)
-                image=Image.open(ROOT/record['file']).convert('RGBA')
-                self.assert_preserved_silhouette_and_interior(raw,image)
-                boundary=edges(image)
-                dark=sum(max(image.getpixel(point)[:3])<60 for point in boundary)
-                # Mira's reference idles have ~79–89% dark cardinal edges.
-                # Permit bright facial/hand edge highlights in moving poses.
-                self.assertGreaterEqual(dark/len(boundary),.7)
-                old_dark=sum(max(raw.getpixel(point)[:3])<60 for point in boundary)
-                self.assertGreater(dark,old_dark)
 
     def test_contour_does_not_mutate_input_or_fill_clear_limb_gaps(self):
         raw=Image.new('RGBA',(12,12))

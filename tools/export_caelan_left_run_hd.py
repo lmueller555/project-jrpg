@@ -1,4 +1,4 @@
-"""Export complete left-run drawings for review; never update the live bank."""
+"""Export complete left-run drawings with approved runtime metadata; selection remains in the registry."""
 from pathlib import Path
 import hashlib
 import json
@@ -114,7 +114,7 @@ def build():
         sheet.alpha_composite(frame, (i*56, 0))
     sheet.save(OUT / 'spritesheet.png')
     manifest = dict(version=1, character='caelan', animation='run.left', status='approved',
-        design_status='approved', artwork_status='approved', runtime_integration=False,
+        design_status='approved', artwork_status='approved', runtime_integration=True,
         artwork_pixels_per_world_pixel=2, frame_size=[56, 76], logical_size=[28, 38],
         draw_anchor=[28, 64], foot_anchor=[28, 72], cycle_ms=400, loop=True,
         source_hashes=hashes, palette_sha256=digest(palette_path), frames=records,
@@ -170,7 +170,7 @@ def build():
             comparison.paste(lower, (x, y), lower)
             cd.text((x, y+144), f'Frame {index+1:02} | {"Previous" if column == 0 else "Revised"}', font=small, fill='#d4dbdf')
     comparison.save(REVIEW / 'folded_leg_comparison_v2.png')
-    print('Exported left-run candidate: 16 frames / 400ms; runtime unchanged.')
+    print('Exported left-run bank: 16 frames / 400ms; integrated registry retained.')
 
 
 if __name__ == '__main__':

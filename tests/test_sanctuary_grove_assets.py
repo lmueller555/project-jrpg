@@ -1,3 +1,5 @@
+from tools.caelan_reference import reference_digest
+from tools.caelan_reference import open_image
 """The authored grove stays rooted, readable and native at character scale."""
 from hashlib import sha256
 import json
@@ -24,7 +26,7 @@ class SanctuaryGroveAssetTests(unittest.TestCase):
                 for record in self.modules[name]['frames']]
 
     def test_landmark_scale_and_compatible_physical_tree_base(self):
-        with Image.open(ROOT/'assets/characters/caelan/idle_front.png') as hero:
+        with open_image(ROOT/'assets/characters/caelan/idle_front.png') as hero:
             bounds=hero.convert('RGBA').getchannel('A').getbbox()
         hero_height=bounds[3]-bounds[1]
         image=self.frames('landmark_combined')[0];bounds=image.getchannel('A').getbbox()
@@ -76,7 +78,7 @@ class SanctuaryGroveAssetTests(unittest.TestCase):
     def test_approved_source_references_and_all_exports_remain_reproducible(self):
         for record in self.manifest['source_assets']:
             with self.subTest(source=record['path']):
-                self.assertEqual(sha256((ROOT/record['path']).read_bytes()).hexdigest(),record['sha256'])
+                self.assertEqual(reference_digest(ROOT/record['path']),record['sha256'])
         for path,body in products().items():
             with self.subTest(export=path.relative_to(ROOT)):
                 self.assertEqual(path.read_bytes(),body)

@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Build source-derived cottage interior foundations and an expanded room review."""
 from pathlib import Path
 from PIL import Image, ImageDraw
@@ -12,7 +16,7 @@ OUTPUT = ROOT / 'assets/terrain/eldenmere/cottage_interior'
 def extract_parts(recipe):
     parts = {}
     for record in recipe['source_samples']:
-        reference = Image.open(SOURCE / record.get('source', recipe['source'])).convert('RGB')
+        reference = open_image(SOURCE / record.get('source', recipe['source'])).convert('RGB')
         sample = reference.crop(record['crop']).resize(tuple(record['size']), Image.Resampling.NEAREST)
         image = Image.new('RGBA', sample.size)
         for y in range(image.height):

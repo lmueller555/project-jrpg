@@ -4,12 +4,10 @@ MillQuest owns the durable report, dialogue and completion receipts. This
 controller stages the existing family and transient movement only: an interrupted
 pickup starts again at the clean cups, while a committed placement stays visible.
 Ordinary approach uses the registered travel bank; cups retain their existing
-legacy walking/grip and empty-hand household poses.
+current HD travel with the existing logical grip guides and household poses.
 """
 from rendering import flip as render_flip
 from collections import deque
-import json
-from pathlib import Path
 
 import pygame
 
@@ -34,14 +32,7 @@ class SanctuaryReturn:
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
         self._cup = self.dining.room_art_image(CUP)
         self._body_anchor = tuple(self.dining.data['player_draw_anchor'])
-        # Cup grips belong to these legacy four-phase drawings, independently
-        # of the ordinary player's higher-density travel bank.
-        self._carry_walks = {}
-        for direction in ('front', 'back', 'left', 'right'):
-            folder = Path(f'assets/characters/caelan/walk_{direction}')
-            meta = json.loads((Path(__file__).resolve().parent/folder/'animation.json').read_text())
-            self._carry_walks[direction] = [(self.dining.image((folder/f['file']).as_posix()),f['duration_ms'])
-                                            for f in meta['frames']]
+        self._carry_walks = game.player.walks
         self._household_anchor = (self._body_anchor[0]+8, self._body_anchor[1]+24)
         self._hands = {d: self.dining.image(EMPTY_HANDS.format(d))
                        for d in ('front', 'back', 'left', 'right')}
@@ -238,8 +229,9 @@ class SanctuaryReturn:
     def _walking_pose(self):
         self._clear_player_pose()
         player = self.game.player
+        anchor = player.draw_anchor
         player.story_sprite = self._travel_frames()[self._travel_frame_index()][0]
-        player.story_draw_anchor = self._body_anchor
+        player.story_draw_anchor = anchor
         self._player_pose = True
 
     def _cup_origin(self):
@@ -251,13 +243,17 @@ class SanctuaryReturn:
             return (player.position+pygame.Vector2(self._pose_wrist)
                     -pygame.Vector2(self._household_anchor)-cup_to_hand)
         # Approved normal stride, with the small stack registered to its hand.
-        index = self._travel_frame_index() if player.moving else 0
+        # The hand guide has four phases; the live travel banks have sixteen.
+        frames = self._travel_frames()
+        cycle = sum(duration for _,duration in frames)
+        index = min(3,int(player.walk_ms % cycle / cycle * 4)) if player.moving else 0
         hands = {'front': ((17, 22), (17, 22), (17, 20), (17, 22)),
                  'back': ((17, 20), (18, 21), (17, 21), (17, 20)),
                  'right': ((16, 21), (16, 21), (16, 22), (16, 21)),
                  'left': ((7, 20), (7, 21), (7, 21), (7, 21))}
         hand = pygame.Vector2(hands[player.facing][index])
-        anchor = getattr(player, 'story_draw_anchor', None) or self.game.world.data['player_draw_anchor']
+        anchor = getattr(player, 'story_draw_anchor', None) or player.draw_anchor
+        hand += pygame.Vector2(anchor)-pygame.Vector2(self._body_anchor)
         return player.position+hand-pygame.Vector2(anchor)-cup_to_hand
 
     def update(self, seconds):

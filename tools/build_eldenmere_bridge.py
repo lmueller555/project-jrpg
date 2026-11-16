@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Build layered 24px bridge modules, still decking and six-phase lantern/water art."""
 
 from copy import deepcopy
@@ -28,7 +32,7 @@ def sample_part(source,rect,size,colors):
 
 
 def extract_parts(recipe,palette):
-    reference=Image.open(SOURCE/recipe['source']).convert('RGB'); parts={}
+    reference=open_image(SOURCE/recipe['source']).convert('RGB'); parts={}
     directory=SOURCE/'parts'; directory.mkdir(exist_ok=True)
     for name,size,ramp in [('planks',(24,48),'wood'),('rail',(24,4),'wood'),
                             ('post',(4,14),'wood'),('stone',(24,14),'stone')]:
@@ -121,11 +125,11 @@ def assemble(modules,names,layer,phase=None):
 
 
 def underlying_ground(cell,grass_ids,ground_meta,stream_scene):
-    x,y=cell; tile=Image.open(GROUND/ground_meta['grass']['images'][grass_ids[y][x]]).convert('RGBA')
+    x,y=cell; tile=open_image(GROUND/ground_meta['grass']['images'][grass_ids[y][x]]).convert('RGBA')
     mask=stream_scene['dirt_masks'][y][x]; fill=stream_scene['dirt_fill_variants'][y][x]
     if mask is not None:
         path=ground_meta['dirt_interiors']['images'][fill] if fill is not None else next(t['image'] for t in ground_meta['tiles'] if t['mask']==mask)
-        tile.alpha_composite(Image.open(GROUND/path).convert('RGBA'))
+        tile.alpha_composite(open_image(GROUND/path).convert('RGBA'))
     assert stream_scene['water_masks'][y][x] is None
     return tile
 
@@ -145,19 +149,19 @@ def build_scene(recipe,palette,modules):
     gm=read_json(GROUND/'tileset.json'); rng=Random(341)
     width,height=recipe['scene_size']; grass_ids=deepcopy(old['grass_variants'])
     for row in grass_ids: row.extend(rng.choices(range(4),weights=(5,3,2,1),k=width-len(row)))
-    grass=[Image.open(GROUND/p).convert('RGBA') for p in gm['grass']['images']]
-    dirt={t['mask']:Image.open(GROUND/t['image']).convert('RGBA') for t in gm['tiles']}
+    grass=[open_image(GROUND/p).convert('RGBA') for p in gm['grass']['images']]
+    dirt={t['mask']:open_image(GROUND/t['image']).convert('RGBA') for t in gm['tiles']}
     cells={tuple(p) for p in recipe['east_dirt_cells']}; joins=cells|{tuple(p) for p in recipe['dirt_join_cells']}
     offsets=[(0,-1),(1,-1),(1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1)]
     base=assemble(modules,recipe['assembly'],'base'); front=assemble(modules,recipe['assembly'],'foreground')
-    sprite=Image.open(ROOT/'assets/characters/caelan/idle_right.png').convert('RGBA')
+    sprite=open_image(ROOT/'assets/characters/caelan/idle_right.png').convert('RGBA')
     previews=[]; closeups=[]; frames=[]
     for phase in range(6):
         background=Image.new('RGBA',(width*24,height*24))
         for y,row in enumerate(grass_ids):
             for x,variant in enumerate(row): background.paste(grass[variant],(x*24,y*24))
         source_frame=recipe['base_gate_scene_frames'][phase]
-        old_frame=Image.open(GATE/f'scene_frames/frame_{source_frame:03}.png').convert('RGBA')
+        old_frame=open_image(GATE/f'scene_frames/frame_{source_frame:03}.png').convert('RGBA')
         background.paste(old_frame,(0,0))
         for cell in recipe['restored_cells']:
             background.paste(underlying_ground(cell,grass_ids,gm,stream),(cell[0]*24,cell[1]*24))
@@ -212,7 +216,7 @@ def build():
     base.save(OUTPUT/'base.png'); front.save(OUTPUT/'foreground.png')
     assemble(modules,names,'shadow',0).save(OUTPUT/'water_shadow.png')
     sheet=Image.new('RGBA',(96,432)); boards=[]
-    grass=Image.open(GROUND/'grass_00.png').convert('RGBA')
+    grass=open_image(GROUND/'grass_00.png').convert('RGBA')
     for phase in range(6):
         lanterns=assemble(modules,names,'lanterns',phase); wake=assemble(modules,names,'wake',phase)
         lanterns.save(OUTPUT/f'lanterns/frame_{phase+1:02}.png'); wake.save(OUTPUT/f'wakes/frame_{phase+1:02}.png')

@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Build the mill's modest successful spell and grounded cooperative poses.
 
 Approved source bodies keep their ordinary registration. Caelan's forearm uses
@@ -32,7 +36,7 @@ def padded(image):
 
 def build_caelan():
     source = ROOT/'assets/characters/caelan/idle_right.png'
-    idle = Image.open(source).convert('RGBA')
+    idle = open_image(source).convert('RGBA')
     idle.save(OUT/'source_body.png')
     atlas_size = (max(len(frames) for _, _, frames in TIMELINE)*40, len(TIMELINE)*48)
     atlas = Image.new('RGBA', atlas_size)
@@ -84,10 +88,10 @@ def arm_joints(wrist):
 def build_mira():
     directions = ROOT/'assets/source/characters/mira/directions'
     for direction in ('left', 'right', 'back'):
-        source = Image.open(directions/f'appearance_{direction}.png').convert('RGBA')
+        source = open_image(directions/f'appearance_{direction}.png').convert('RGBA')
         source.save(ROOT/f'assets/characters/mira/idle_{direction}.png')
     source_path = directions/'appearance_right.png'
-    idle = Image.open(source_path).convert('RGBA')
+    idle = open_image(source_path).convert('RGBA')
     idle.save(OUT/'mira_source_body.png')
     # These body-registered stations put the last grip at actor+[6,-10].
     # The catch uses a small angled pick, whose end is actor+[10,-12].

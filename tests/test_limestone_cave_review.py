@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import reference_digest
+except ModuleNotFoundError:
+    from caelan_reference import reference_digest
 """The limestone proposal must be walkable, reproducible and isolated."""
 from collections import deque
 from hashlib import sha256
@@ -103,11 +107,11 @@ class LimestoneCaveReviewTests(unittest.TestCase):
                     with Image.open(ROOT/path) as image:
                         self.assertEqual(image.size, tuple(module['size']), path)
             for path, expected in manifest['inputs'].items():
-                self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
+                self.assertEqual(reference_digest((ROOT/path)), expected, path)
             for path, expected in manifest['artifacts'].items():
-                self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
+                self.assertEqual(reference_digest((ROOT/path)), expected, path)
         for path, expected in self.world.data['build']['source_sha256'].items():
-            self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
+            self.assertEqual(reference_digest((ROOT/path)), expected, path)
 
     def test_hundreds_of_microcrystals_are_recessed_in_walls_and_light_the_floor(self):
         """Shrinking six icons cannot substitute for mineral-rich cave walls."""

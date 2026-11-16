@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Build Caelan's unsuccessful water spell from the approved native-pixel study.
 
 The head, upper body and lower body remain on the ordinary idle registration.
@@ -76,7 +80,7 @@ def native_layers(idle, angle, energy_level):
 
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
-    idle = Image.open(SOURCE).convert('RGBA')
+    idle = open_image(SOURCE).convert('RGBA')
     idle.save(OUT/'source_body.png')
     for obsolete in ['water.png', 'opening_gate.png', 'working_arm.png', 'head.png']:
         (OUT/obsolete).unlink(missing_ok=True)

@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Verify interior foundations, readable materials, clear entry and local daylight."""
 import json
 from pathlib import Path
@@ -13,7 +17,7 @@ def load(path): return json.loads(path.read_text())
 
 
 def opened(path):
-    with Image.open(path) as im: return im.convert('RGBA')
+    with open_image(path) as im: return im.convert('RGBA')
 
 
 class CottageInteriorTests(unittest.TestCase):
@@ -120,7 +124,7 @@ class CottageInteriorTests(unittest.TestCase):
         self.assertEqual(self.room['cycle_duration_ms'],5400)
         structure = opened(PACK/'room/structure.png')
         floor = opened(PACK/'room/floor.png')
-        mask = Image.open(PACK/'room/daylight_mask.png').convert('L')
+        mask = open_image(PACK/'room/daylight_mask.png').convert('L')
         self.assertEqual(set(mask.get_flattened_data()),{0,255})
         self.assertIsNone(ImageChops.multiply(mask,ImageChops.invert(floor.getchannel('A'))).getbbox())
         self.assertGreater(sum(bool(p) for p in mask.get_flattened_data()),300)
@@ -140,7 +144,7 @@ class CottageInteriorTests(unittest.TestCase):
 
     def test_enlarged_gif_lossless_pixels_complete_timeline_and_loop(self):
         tick = 0
-        with Image.open(PACK/'room_review.gif') as gif:
+        with open_image(PACK/'room_review.gif') as gif:
             self.assertEqual(gif.info['loop'],0)
             for encoded in range(gif.n_frames):
                 gif.seek(encoded); duration = gif.info['duration']; self.assertEqual(duration%600,0)

@@ -15,7 +15,7 @@ Iselin's detailed artwork is the reference for this increase in fidelity.
 **Implementation status:** Full-scene 2× composition is implemented in
 `rendering.py`. The 480×320 logical view has an authoritative 960×640 native
 buffer across exploration, battle and cinematic presentation. Existing asset
-banks retain their legacy density until rebuilt; Iselin's detailed artwork, Caelan's approved overworld idles/walks,
+banks retain their legacy density until rebuilt; Iselin's detailed artwork, Caelan's approved overworld idles/walks/runs,
 and all three Sanctuary home interiors (hall, bedroom and dining room) now use
 the shared path. Dining was the first integrated environment bank; remaining
 asset reconstruction and individual bank migrations continue as separately scoped work.
@@ -679,7 +679,7 @@ More frames subdivide movement; they do not automatically improve anatomy or
 timing. These are internal construction checks before drawing transitions,
 not additional user approval gates.
 
-**Caelan's starting specification for the upcoming HD right-facing run:**
+**Caelan's initial construction specification for an HD profile run:**
 
 | Property | Target |
 | --- | --- |
@@ -694,7 +694,11 @@ not additional user approval gates.
 | Foot anchor | [24,68] artwork / [12,34] logical |
 | Gameplay running speed | Existing 108 world units/second |
 
-These are authoring targets, not a claim that HD running is integrated.
+These are initial authoring targets. Caelan's approved four-direction HD runs
+are now integrated: front/rear use 48×76 artwork with [24,64] draw anchors,
+profiles use 56×76 with [28,64]; each remains density 2 and 16×25 ms. The
+extra transparent padding preserves body scale. Current bank manifests and
+`assets/characters/caelan/animation.json` own runtime sizes and registration.
 Preserve physical character size. If a legitimate pose needs more transparent
 padding, adjust canvas and anchors together rather than shrinking the character
 or clipping a limb. Record the changed artwork/logical canvas and keep gameplay

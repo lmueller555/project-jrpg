@@ -413,82 +413,274 @@
         36
       ],
       "idles": {
-        "front": "assets/characters/caelan/idle_front.png",
-        "back": "assets/characters/caelan/idle_back.png",
-        "left": "assets/characters/caelan/idle_left.png",
-        "right": "assets/characters/caelan/idle_right.png"
+        "front": "assets/characters/caelan/review_hd/idles/idle_front.png",
+        "back": "assets/characters/caelan/review_hd/idles/idle_back.png",
+        "left": "assets/characters/caelan/review_hd/idles/idle_left.png",
+        "right": "assets/characters/caelan/review_hd/idles/idle_right.png"
       },
       "walks": {
         "front": [
           {
-            "file": "assets/characters/caelan/walk_front/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_01.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_front/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_02.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_front/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_03.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_front/frame_04.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_04.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_05.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_06.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_07.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_08.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_09.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_10.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_11.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_12.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_13.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_14.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_15.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_front/frame_16.png",
+            "duration_ms": 35
           }
         ],
         "back": [
           {
-            "file": "assets/characters/caelan/walk_back/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_01.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_back/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_02.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_back/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_03.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_back/frame_04.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_04.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_05.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_06.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_07.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_08.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_09.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_10.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_11.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_12.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_13.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_14.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_15.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_back/frame_16.png",
+            "duration_ms": 35
           }
         ],
         "left": [
           {
-            "file": "assets/characters/caelan/walk_left/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_01.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_left/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_02.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_left/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_03.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_left/frame_04.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_04.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_05.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_06.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_07.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_08.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_09.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_10.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_11.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_12.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_13.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_14.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_15.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_left/frame_16.png",
+            "duration_ms": 35
           }
         ],
         "right": [
           {
-            "file": "assets/characters/caelan/walk_right/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_01.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_right/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_02.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_right/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_03.png",
+            "duration_ms": 35
           },
           {
-            "file": "assets/characters/caelan/walk_right/frame_04.png",
-            "duration_ms": 140
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_04.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_05.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_06.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_07.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_08.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_09.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_10.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_11.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_12.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_13.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_14.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_15.png",
+            "duration_ms": 35
+          },
+          {
+            "file": "assets/characters/caelan/review_hd/walk_right/frame_16.png",
+            "duration_ms": 35
           }
         ]
       },
@@ -518,7 +710,8 @@
           ],
           "loop": false
         }
-      }
+      },
+      "travel_artwork_pixels_per_world_pixel": 2
     },
     "caretaker": {
       "anchor": [

@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Build Venn family appearances and the gate's accessible-bank repair poses."""
 from copy import deepcopy
 import hashlib
@@ -15,7 +19,7 @@ OFFSET = (8, 8)
 ANCHOR = (20, 38)
 
 
-def load(path):return Image.open(ROOT/path).convert('RGBA')
+def load(path):return open_image(ROOT/path).convert('RGBA')
 
 
 def read(path):return json.loads((ROOT/path).read_text())

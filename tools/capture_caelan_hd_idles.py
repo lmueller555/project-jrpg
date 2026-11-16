@@ -30,7 +30,7 @@ def capture():
                 path=ROOT/f'assets/characters/caelan/review_hd/idles/idle_{direction}.png'
                 image=artwork(pygame.image.load(str(path)).convert_alpha(),2)
                 actor(direction.title(),image,(x,150),(12,30))
-            actor('Current Caelan',world.image('assets/characters/caelan/idle_front.png'),(96,282),(12,30))
+            actor('Current Caelan',g.player.idles['front'],(96,282),(12,30))
             actor('Current Mira',world.image('assets/characters/mira/idle_front.png'),(162,282),(16,30))
             actor('Iselin',artwork(world.image('assets/characters/iselin/idle_front_42x72.png'),2),
                   (222,282),(10.5,30))

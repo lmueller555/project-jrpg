@@ -5,6 +5,10 @@ texture is sampled at native resolution by the approved limestone author.
 Only the supplemental output directory is written.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image, reference_digest
+except ModuleNotFoundError:
+    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -317,18 +321,18 @@ class StructureAuthor:
             y=50+row*300;d.text((20,y),name,fill='#e8dfc7',font=title)
             examples=[(key,record) for key,record in self.modules.items() if key.startswith(prefix)][:5]
             for col,(key,record) in enumerate(examples):
-                image=Image.open(BytesIO(self.outputs[record['frames'][0]])).convert('RGBA')
+                image=open_image(BytesIO(self.outputs[record['frames'][0]])).convert('RGBA')
                 image=image.resize((image.width*2,image.height*2),Image.Resampling.NEAREST)
                 x=24+col*278;board.alpha_composite(image,(x,y+29)) if board.mode=='RGBA' else board.paste(image,(x,y+29),image)
                 d.text((x,y+282),key.replace(prefix,''),fill='#cbd5c8',font=label)
-        ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png';ca=Image.open(ca_path).convert('RGBA')
+        ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png';ca=open_image(ca_path).convert('RGBA')
         ca=ca.resize((ca.width*2,ca.height*2),Image.Resampling.NEAREST);board.paste(ca,(1315,1878),ca)
         d.text((1130,1962),'Caelan / same enlargement',fill='#e8dfc7',font=label)
         self.emit(f'{PACK}/structure_review.png',board)
         self.emit(f'{PACK}/README.md','# Limestone dungeon structure\n\nStatus: pending visual review.\n\nNative directional walls, caps, bases, ledges, shelves, ramps, worn steps,\npassage mouths and shallow alcoves extend the existing limestone pack.\nRamps and steps use ordinary walking; elevation is a visual composition value.\n`walkable_regions` identify clear passage surfaces, while `footprints` describe\nsolid rock only. All coordinates are local to the unscaled native module.\n\nRebuild with `python tools/build_dungeon_structure.py`; append `--check`\nfor deterministic verification. Source: `assets/source/terrain/limestone_cave/structure.json`.\n')
         paths={SOURCE,ROOT/self.spec['base_manifest'],ROOT/self.spec['base_recipe'],ROOT/'tools/build_limestone_cave_assets.py',Path(__file__).resolve(),ca_path}
         paths.update(ROOT/name for name in self.base.recipe['source_assets'])
-        inputs={str(path.relative_to(ROOT)):sha256(path.read_bytes()).hexdigest() for path in sorted(paths)}
+        inputs={str(path.relative_to(ROOT)):reference_digest(path) for path in sorted(paths)}
         manifest={'version':1,'id':self.spec['id'],'approval_status':self.spec['approval_status'],'tile_size':24,'source_recipe':str(SOURCE.relative_to(ROOT)),'modules':self.modules,'inputs':inputs,'artifacts':{path:sha256(raw).hexdigest() for path,raw in self.outputs.items()}}
         self.emit(f'{PACK}/assets.json',manifest)
         return self.outputs

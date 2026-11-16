@@ -3,7 +3,7 @@
 Only acknowledged beats, the rescue handoff and first cave entry persist.
 Camera movement, actor paths and partial pages rebuild on Continue.
 """
-from rendering import scale as render_scale
+from rendering import scale as render_scale, load_art
 from pathlib import Path
 import json
 import pygame
@@ -51,11 +51,12 @@ class CastActor:
             self.walks={d:[world.image(f'assets/characters/npcs/{variant}/walk_{d}/frame_{i:02}.png') for i in range(1,5)] for d in self.idles}
         if art is not None:
             self.draw_anchor=tuple(art['anchor'])
-            self.idles={direction:world.image(path) for direction,path in art['idles'].items()}
+            travel_meta={'artwork_pixels_per_world_pixel':art.get('travel_artwork_pixels_per_world_pixel',1)}
+            self.idles={direction:load_art(world,path,travel_meta) for direction,path in art['idles'].items()}
             self.detail_idles={}
             for direction,frames in art['walks'].items():
                 self.detail_walks.pop(direction,None)
-                self.walks[direction]=[world.image(frame['file']) for frame in frames]
+                self.walks[direction]=[load_art(world,frame['file'],{**travel_meta,**frame}) for frame in frames]
                 self.walk_durations[direction]=tuple(frame['duration_ms'] for frame in frames)
             for name,animation in art.get('poses',{}).items():
                 self.pose_animations[name]={

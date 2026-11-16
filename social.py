@@ -184,7 +184,7 @@ class SocialSystem:
         position = getattr(actor, 'story_position', None) or actor.position
         anchor = getattr(actor, 'story_draw_anchor', None)
         if anchor is None:
-            anchor = (getattr(self.game.world, 'data', {}).get('player_draw_anchor', (12, 30))
+            anchor = (getattr(actor, 'draw_anchor', getattr(self.game.world, 'data', {}).get('player_draw_anchor', (12, 30)))
                       if actor is self.game.player else getattr(actor, 'draw_anchor', (12, 30)))
         image = getattr(actor, 'story_sprite', None)
         if image is None and hasattr(actor, 'sprite'):

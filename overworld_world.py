@@ -626,7 +626,7 @@ class OverworldWorld:
         for actor, priority in [(npc,2) for npc in self.npcs]+[(player,3)]:
             if not getattr(actor,'story_visible',True):continue
             position = getattr(actor,'story_position',None) or actor.position
-            anchor = getattr(actor,'story_draw_anchor',None) or (self.data['player_draw_anchor'] if actor is player else actor.draw_anchor)
+            anchor = getattr(actor,'story_draw_anchor',None) or getattr(actor,'draw_anchor',self.data['player_draw_anchor'])
             surface = getattr(actor,'story_sprite',None)
             if surface is None:surface = actor.sprite() if actor is player else actor.sprite(elapsed_ms)
             rect = surface.get_rect(topleft=(round(position[0])-anchor[0],round(position[1])-anchor[1]))

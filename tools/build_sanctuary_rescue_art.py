@@ -51,6 +51,14 @@ def products():
     def animation(files,duration=260,loop=False):
         return dict(frames=[dict(file=path,duration_ms=duration) for path in files],anchor=ANCHOR,loop=loop)
     def standard(key):
+        if key=='caelan':
+            registry=json.loads((ROOT/'assets/characters/caelan/animation.json').read_text())
+            walks={}
+            for direction,record in registry['walks'].items():
+                bank=Path(record['manifest']);meta=json.loads((ROOT/bank).read_text())
+                walks[direction]=[dict(file=(bank.parent/f['file']).as_posix(),duration_ms=f['duration_ms']) for f in meta['frames']]
+            return dict(anchor=[12,30],frame_size=[24,36],travel_artwork_pixels_per_world_pixel=2,
+                        idles={d:r['file'] for d,r in registry['idles'].items()},walks=walks,poses={})
         folder=f'assets/characters/{key}'
         return dict(anchor=[12,30],frame_size=[24,36],idles={d:f'{folder}/idle_{d}.png' for d in DIRECTIONS},walks={d:[dict(file=f'{folder}/walk_{d}/frame_{p:02}.png',duration_ms=140) for p in range(1,5)] for d in DIRECTIONS},poses={})
     actors={key:standard(key) for key in ('mira','lucan','caelan')}

@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Export Caelan's authored native bench pose without warping his body.
 
 The imagegen concept establishes a relaxed, two-knee seated silhouette. The
@@ -27,7 +31,7 @@ PALETTE = {
 def build():
     SOURCE.mkdir(parents=True, exist_ok=True)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    idle = Image.open(IDLE).convert('RGBA')
+    idle = open_image(IDLE).convert('RGBA')
     image = Image.new('RGBA', (24, 36))
     # Approved appearance pixels remain registered, including the asymmetric
     # fringe, face, golden tunic, blue vest and upper cream sleeves.

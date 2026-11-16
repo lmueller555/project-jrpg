@@ -1,0 +1,1451 @@
+{
+  "reason": "User-authorized removal of superseded Caelan travel artwork during HD run integration. Unique combat/action poses and their reproducible source inputs remain required. No approved HD sprite pixels were changed.",
+  "removed_files": [
+    {
+      "path": "assets/characters/caelan/idle_back.png",
+      "sha256": "48e1e4c117ac1792ed7a5ee4c4ed24cc571524334afdf12e3a8d15b6c11aa47e"
+    },
+    {
+      "path": "assets/characters/caelan/idle_directions.json",
+      "sha256": "2a2d21eccf097a05290c541acbfe98ff6ca86b4e68aef710403baee90dfdc1db"
+    },
+    {
+      "path": "assets/characters/caelan/idle_directions.png",
+      "sha256": "e684349d335e572d5cc049d43da64055b152350aec00adf46d1688e83cec7308"
+    },
+    {
+      "path": "assets/characters/caelan/idle_directions_review.png",
+      "sha256": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front_preview.png",
+      "sha256": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front_review.png",
+      "sha256": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351"
+    },
+    {
+      "path": "assets/characters/caelan/idle_left.png",
+      "sha256": "aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086"
+    },
+    {
+      "path": "assets/characters/caelan/idle_right.png",
+      "sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/README.md",
+      "sha256": "6c1d1c5474405a3364a50aae7bb0844baf0255b35576b30200b51da4c8914cc6"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/animation.json",
+      "sha256": "2a00bcfcf0bdc567dbb85ad5de4272c9621c9acb5ba63e1faaa41ef0b1142172"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/frame_01.png",
+      "sha256": "cecc793a7655cb9c6d02d9ebe22d929e13d0568757af28c276e67d7dfe97a92e"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/frame_02.png",
+      "sha256": "a911743a781304928d54ec26de2ec9d7effa412680ddc268ae573ca6de612e0c"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/frame_03.png",
+      "sha256": "b7033f3aedaf8efb393f251b0752494c17a5dfd906158d5e820d486526071835"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/frame_04.png",
+      "sha256": "9a80511e848dffc3f96f6971aa9d3a78b23368f7cb96f9cc277a5433643073df"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/frames_review.png",
+      "sha256": "523d84ac432e23c395c06d6f9a2d233554224c43acf8cbda7f34838061d15c92"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/spritesheet.png",
+      "sha256": "b4aab9cdddc5ba1e3e0d1d8d1edac52a75847924c8ebfc2e7fefc7764f251f46"
+    },
+    {
+      "path": "assets/characters/caelan/walk_back/walk_back_preview.gif",
+      "sha256": "7135a314092d6672ad2b9e6950e1059a1133b2c74f248a2e4bec240cb4184948"
+    },
+    {
+      "path": "assets/characters/caelan/walk_directions.json",
+      "sha256": "df2b5eb80e67f31b4203bdfd3b874844d37a14dde1e26bdf336f3ea1aea5d624"
+    },
+    {
+      "path": "assets/characters/caelan/walk_directions.png",
+      "sha256": "b9289d0384e23dfcf0321ce5924eeefbb4a82678c0a746623ea3fad16eb614b9"
+    },
+    {
+      "path": "assets/characters/caelan/walk_directions_review.gif",
+      "sha256": "fcf10aecaed2496a6efa6761d7a1db1eaa5b834906528f39e318ec6a6bf9ca7e"
+    },
+    {
+      "path": "assets/characters/caelan/walk_directions_review.png",
+      "sha256": "fba6b1ec8a24df4b5cabd03bbfb76c35632e4b922efa5200986cd1383c8a92e8"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/README.md",
+      "sha256": "b0489b63b673405f0e4eb2fe7146f2f6f051f07f1a3934ba414d457531477905"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/animation.json",
+      "sha256": "29ebeb6453e53c6f87a38aa5243ebda347fab20573901325b4bbc5ce91990521"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/frame_01.png",
+      "sha256": "16ee3ad7f67ef073a646bf72d0717260c93c4d7580f95eb40f294f1d7d40661f"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/frame_02.png",
+      "sha256": "427a107ceef05fd92b1878420bc0228562caf06a7f31718c26414f2ecf182815"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/frame_03.png",
+      "sha256": "51e1dabf6c13b19d04c6af6b5608b2750fbae2d017b39121fb18e39a396063bb"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/frame_04.png",
+      "sha256": "6c9a77e8b56c4b8d5522a2dfdb6e55b86d44195d02fefb36281dc24ff20564be"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/frames_review.png",
+      "sha256": "94773a2fb01dbb91208a00d9a45b981e4346573460fc1f9d76eeafad80a25127"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/spritesheet.png",
+      "sha256": "58b7892d7fdcd31f8533ba965dc54bc629f75829bc32d39a853c9b8b7656d71c"
+    },
+    {
+      "path": "assets/characters/caelan/walk_front/walk_front_preview.gif",
+      "sha256": "4ed26cee98f4437fd98d098c807b150c0b49ecaed2b28cfa941256bafb040ce1"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/README.md",
+      "sha256": "f06f4340ad6f798f76ebd30530fcdc3b02e66770594c3ea3d39eadaf26d7bcfd"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/animation.json",
+      "sha256": "cedeb0e8715bafde3747ba2733765884369517c18ee2bd367a3f41ff5478d516"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/frame_01.png",
+      "sha256": "bd31d4de4a9aea6d4a21cb2a352786305f936af4d96be3e3a976295a87278bd9"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/frame_02.png",
+      "sha256": "330df1e6e18953109741a343a5b38b38a129a3c91cbc75e009070f1c070f824e"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/frame_03.png",
+      "sha256": "d13a9cc891085bb8311225c549db94dfb5db70aeb229fed023781790c7f2e805"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/frame_04.png",
+      "sha256": "278948c2469428983828721bb1a37ab4f4177ebf18fb560b332efb3a836734f6"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/frames_review.png",
+      "sha256": "4317983f4579f791e25ed6046f8721ce89af5b373d7288c8b57b0dd2f7028d40"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/spritesheet.png",
+      "sha256": "3cbf9db1010ee946a18a04d11b05aff9d0abe9bdca6e74fb5559e7819797dbf9"
+    },
+    {
+      "path": "assets/characters/caelan/walk_left/walk_left_preview.gif",
+      "sha256": "09663f8d3c2167f0bf377443fc16ac6087b65abd6543b6edc5ae2a873b96cff8"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/README.md",
+      "sha256": "9936c911e0f767a84c2a82dbd50643148f50957488b22ebc18a339510412090c"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/animation.json",
+      "sha256": "5969712ac9535553743f06f5ca38a7a15b9270d04e864a7fb25142be7a24e139"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/frame_01.png",
+      "sha256": "dd919ec2769e4b5cf5f020880840b0066da2cfa7d1db392da12c6194cda2738a"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/frame_02.png",
+      "sha256": "79d825b02f7e7e996c5dd83756dcae1beedd84a491a81e6dc0248a7ded7c0135"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/frame_03.png",
+      "sha256": "c81ce51f8fc2c7725f4f0ef8fac86dc711000eb2db3718c52fc81ad8026b07b1"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/frame_04.png",
+      "sha256": "8b8d0303d2a22d5049c31847d0ddc42a9a06cd47b9a5f6c1837fc2323342a09d"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/frames_review.png",
+      "sha256": "acf4360f3dd45bbb501346af0504fcb0c4945c263f83194c940d9526c6da2fa0"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/spritesheet.png",
+      "sha256": "e4f9ad81fd2961d16e96897eaaf3480d4a9e7cff2fd5c5eb0faed6bf83c15dc9"
+    },
+    {
+      "path": "assets/characters/caelan/walk_right/walk_right_preview.gif",
+      "sha256": "7c745b414c4ea7d0886805b452e3d07d7a472fa73146e5bb8d25a4dddfb5ee8d"
+    },
+    {
+      "path": "assets/characters/caelan/run_back/animation.json",
+      "sha256": "33eefc7d22760c8a3d8d1b5ae6dbf69ad349ef8cf9c50fc1e0979bc8093929d0"
+    },
+    {
+      "path": "assets/characters/caelan/run_back/frame_01.png",
+      "sha256": "04de2c6a76ef08f282f7a809634bf38d635bb862d429cea0148c00a765236e31"
+    },
+    {
+      "path": "assets/characters/caelan/run_back/frame_02.png",
+      "sha256": "84f4cd09516a96afdb12fe5c5905fb768236926e9d411ca46d9b0bce3fd5c48c"
+    },
+    {
+      "path": "assets/characters/caelan/run_back/frame_03.png",
+      "sha256": "d849eca02ad7e6969b63af627cf3388cb00d0829cdcf3786edb4cd9563cf3627"
+    },
+    {
+      "path": "assets/characters/caelan/run_back/frame_04.png",
+      "sha256": "82906a2cad93be7c03dba41d343a6fcf44a7aef26e76d4ccdbc15f70ca0b5ca3"
+    },
+    {
+      "path": "assets/characters/caelan/run_back/spritesheet.png",
+      "sha256": "ab759fa35b863a09c8c4e78487f9c0e2a116aa973cad1ad7bae5dd878b819898"
+    },
+    {
+      "path": "assets/characters/caelan/run_front/animation.json",
+      "sha256": "cf78d9bc0ae1cf426a3e6d4b02c01363d8d40df0df479afaf08eeb90e58ce029"
+    },
+    {
+      "path": "assets/characters/caelan/run_front/frame_01.png",
+      "sha256": "0b094d8f75646aa394d1552473a05c87b45641133d48de050b7cdaa4ed363954"
+    },
+    {
+      "path": "assets/characters/caelan/run_front/frame_02.png",
+      "sha256": "368e4a6d022393b2bfbae61d26e3d239eb09616d65957b4a31695a2dfd43dc74"
+    },
+    {
+      "path": "assets/characters/caelan/run_front/frame_03.png",
+      "sha256": "960cabf6ae51527e1250b7cc7804d78d9b022e91c954ccf92c8b7a9f051aa114"
+    },
+    {
+      "path": "assets/characters/caelan/run_front/frame_04.png",
+      "sha256": "b22b9d4b0fdb812151428d50f94e4a941575a12dc2c87b313c1c83b5bb43a0cd"
+    },
+    {
+      "path": "assets/characters/caelan/run_front/spritesheet.png",
+      "sha256": "eeb4f2e6a23351dbd7cb1782f8781fb1a58c21dfeca376239aeeb8621c2714a6"
+    },
+    {
+      "path": "assets/characters/caelan/run_left/animation.json",
+      "sha256": "0ff3b55888ba29b66c84a589e4df64875b635fcf462f2daf89dcc8be24bef008"
+    },
+    {
+      "path": "assets/characters/caelan/run_left/frame_01.png",
+      "sha256": "85380019f16a656c16e8e6299eded907b027fd38d5427b4448fd761554b5383a"
+    },
+    {
+      "path": "assets/characters/caelan/run_left/frame_02.png",
+      "sha256": "61c32be06450797ea0e6188d496a4afb08691198ea9f7b41005d76bc4e8b74f7"
+    },
+    {
+      "path": "assets/characters/caelan/run_left/frame_03.png",
+      "sha256": "7b4e97a71d333de841de5e8b191019a0d372cbe97fe8637ef642d5711317dca6"
+    },
+    {
+      "path": "assets/characters/caelan/run_left/frame_04.png",
+      "sha256": "e4c9584e30b114211bdf066e2f4fabd06058a1eb3de74bc1fe095009b289a05d"
+    },
+    {
+      "path": "assets/characters/caelan/run_left/spritesheet.png",
+      "sha256": "0bbf228c431b6987cf3ae42e31502f8b38e82277f7e3e786b9073f0738f8688a"
+    },
+    {
+      "path": "assets/characters/caelan/run_right/animation.json",
+      "sha256": "c9d07831cfaf3e77acb40f9a0dc8a9277fcfc73d7cc420e2a0b61e7beabe3b18"
+    },
+    {
+      "path": "assets/characters/caelan/run_right/frame_01.png",
+      "sha256": "dd40e7eba71c753d5e7e6276bc61a705624aa1625dc549fdb62e174b3b76b7f1"
+    },
+    {
+      "path": "assets/characters/caelan/run_right/frame_02.png",
+      "sha256": "7a4a74264f10918763d5adb9d9d9ba512812eb9d71c170cf425023830fccf6b4"
+    },
+    {
+      "path": "assets/characters/caelan/run_right/frame_03.png",
+      "sha256": "9f76ce7f1ffc07d96def11e3517a0369f76f1a82c934afc27a513ac7db631c7d"
+    },
+    {
+      "path": "assets/characters/caelan/run_right/frame_04.png",
+      "sha256": "d2375f716d37cd7ed0d2c91aaf6d0616dc31be18d657add47f85a7f69d271eef"
+    },
+    {
+      "path": "assets/characters/caelan/run_right/spritesheet.png",
+      "sha256": "f6bf25146385f6020e996f4589168f9f34211b97ab0fe2443d57416f925a8358"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_front/forward_arm.png",
+      "sha256": "5e4b9c0cfa1729367ec2d3aa9e6dc824291d3c2c8aa9b6f159106020aafee08a"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_front/head.png",
+      "sha256": "4f6bb511b1d3346bb3aa443feaec961c549a4c26b21a77dc7a1a0b03abcf1741"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_front/left_leg.png",
+      "sha256": "453657d9ff807aa0491376acec826f33b914cb827f715c0bfb719851b6c94f66"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_front/rear_arm.png",
+      "sha256": "9157c1985f43da1c12733f8adfb42a37e50486f3ccaef7a0bbbd0ba4fc67b042"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_front/right_leg.png",
+      "sha256": "99b78607512468271078d20a40222755e6ff4ffee84b143df9c022328b1dc52c"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_front/torso.png",
+      "sha256": "d69bd4fa8597fcbf85bf72241cd1d7b19a855e9be27b76f4bcaf086dd9a2cc18"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_back/forward_arm.png",
+      "sha256": "c2e14a0a057b44f0961b4b364ff597b35866d0a6396b69f66c2f0de7283fd3f8"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_back/head.png",
+      "sha256": "6f62d458d3afb5033dd59cbcfdfe77b6ec012f8247f644ca020522a8a71325d4"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_back/left_leg.png",
+      "sha256": "64b14b5ae955388123ea4979cc6b9d59612b1b718b818e8395d49e71bb805830"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_back/rear_arm.png",
+      "sha256": "19e26d59e82a68d35ad56e1578179ebf5e5b5e9da40922c0081fd41b8658f95d"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_back/right_leg.png",
+      "sha256": "e2961864fe3c7007930af964ed53e63e3d923df6148f07484626c6eeace4daa7"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_back/torso.png",
+      "sha256": "6d6c658d43f094ef28b584cfc74d91a5d14ea279eaf3749122970f46320d7b7b"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_01/far_arm.png",
+      "sha256": "114fe3556a701b5c656a5b24182b50af8928c25dcc7fa7f6d699504d462e6c0d"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_01/far_leg.png",
+      "sha256": "524f9f6d940e5853d8dfe850fe22b5b42648a4de938893dc3569ff2b77ec69e7"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_01/head.png",
+      "sha256": "ef7422caa2fd19860f25a60a84d4c6044edad3f6205f9d2cd2bd59f66adf7c10"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_01/near_arm.png",
+      "sha256": "d39583d77dfd7120692c32335306bdd6b46f092f36420c8e13ab114b5fe05991"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_01/near_leg.png",
+      "sha256": "6db4cc12f8c6fbe3e56a48053beaab360d40efc980b6863b7b403fa00efb7a40"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_01/torso.png",
+      "sha256": "8e43aa809b5198e1b43fcc26d9575a5847745347c2a256169d115959ae552bac"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_02/far_arm.png",
+      "sha256": "735ebdb48aabb1c578bb38f5e502f587429d5f9aec1138ab76edd413873cb874"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_02/far_leg.png",
+      "sha256": "3df963c371d6a2975a5d0983c447b09f52f75b6178ed3c5b8d22ef4dc8eaf05b"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_02/head.png",
+      "sha256": "ad974ace81e6d95765d92bc36dd9a747bc654a5ed97135306f7323e2adb388e8"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_02/near_arm.png",
+      "sha256": "73e481e575e70dd40484f7bd81cf62c73f642b2b5dde7356bb3b08f769bc99d3"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_02/near_leg.png",
+      "sha256": "1e3789d4f9ef54375ebbe52a2d6e8a7766e6bdad9611efb1a816200e0e9f69c9"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_02/torso.png",
+      "sha256": "7d423e7fa684d99750cdc71edb2b902dd3f7f64b83e3e5d550ed078fb0f51a1d"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_03/far_arm.png",
+      "sha256": "7f9a1eb8ee4be72a54681cb1146a8fa5cb00f74adca28a2a7e9b094b816aaffc"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_03/far_leg.png",
+      "sha256": "9466f2ce2a270770c905cb3a4044181b2e139e6740dc207249dbc7e028cc59a4"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_03/head.png",
+      "sha256": "ef7422caa2fd19860f25a60a84d4c6044edad3f6205f9d2cd2bd59f66adf7c10"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_03/near_arm.png",
+      "sha256": "6a5ab176478ec79410feee2c7674c35a922094f49eeb14de078b967cec6e0d42"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_03/near_leg.png",
+      "sha256": "586efb968938abfd7babe2d90a689ecaa7117338b9423e2fe0d4b448d7d51bfe"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_03/torso.png",
+      "sha256": "8e43aa809b5198e1b43fcc26d9575a5847745347c2a256169d115959ae552bac"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_04/far_arm.png",
+      "sha256": "edcb865847b39e89489b4de7b5fce2511a0dfd49eb101761379a19896555339f"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_04/far_leg.png",
+      "sha256": "093b959d1a9553a6636877cbe6c03ca80817e5bcf66a23765cd406c47d264ee9"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_04/head.png",
+      "sha256": "ad974ace81e6d95765d92bc36dd9a747bc654a5ed97135306f7323e2adb388e8"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_04/near_arm.png",
+      "sha256": "2cda3de8dd06eaf005fdbf945b03151db09e980d2ebe4f79c3a78cea910082c3"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_04/near_leg.png",
+      "sha256": "8876bb853ded249d9c86e5eae5886d19396a14e74f2422acc299b9a7c76d1812"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_left/frame_04/torso.png",
+      "sha256": "7d423e7fa684d99750cdc71edb2b902dd3f7f64b83e3e5d550ed078fb0f51a1d"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_right/far_arm.png",
+      "sha256": "7bc48fd3870b11cddb9b4aa5437d6fde434048fedd730ce77591a217617ee097"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_right/far_leg.png",
+      "sha256": "6cc6f193b55194f751b4036e40aac716add70d98bf5facb8447fe0262dc44d6f"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_right/head.png",
+      "sha256": "19949a9ab393560928d22101ad7d9ff203656398816d2184d9c74d062b27cdd2"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_right/near_arm.png",
+      "sha256": "62b298abae7dc20405c83eae15b762195c41301a8f406e830bc037341652c222"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_right/near_leg.png",
+      "sha256": "42952c791f79e040d17fa89fd0ad730ffc48724dbd3bcb93267e3e28f323468d"
+    },
+    {
+      "path": "assets/source/characters/caelan/run_right/torso.png",
+      "sha256": "c4445ab8a1bd1c223a3c5e11496269eaba93a240c50230e6fb7d95cb971b9807"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_front/passing_opposite_concept.png",
+      "sha256": "27beed297a2c7380179de37d7da48f26ae80bd3ba4e647424107facc47c7456a"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_front/walk_cycle_concept.png",
+      "sha256": "b6e494a86d66dea25471ba4686c4eb87419680877af4d822d1ae439e17ed7234"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_back/walk_cycle_concept.png",
+      "sha256": "1497c5b3315d4c5941f1f571ec97da1330b25c041e5ef5ca259df6fb52bc3240"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_left/opposite_phases_concept.png",
+      "sha256": "f7be440af4ecfd39a311df348579a74cc8bdc1a7a11377f85e9234d131a52854"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_left/walk_cycle_concept.png",
+      "sha256": "e814a97196d905992ea9db0eaef25840f68b46003b99cbcaa0add30e4532e440"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_right/opposite_phases_concept.png",
+      "sha256": "9560a808a5837c1878f1a5ba55bae564443907cd22e8bd172a9126891a6c9277"
+    },
+    {
+      "path": "assets/source/characters/caelan/walk_right/walk_cycle_concept.png",
+      "sha256": "1462a4b42f8832e6b70989dbc159ec8d24b958645a7aa2e2d9d866948d727946"
+    },
+    {
+      "path": "assets/source/characters/caelan/idle_front_concept.png",
+      "sha256": "01b173e89c6cff9895ee152ee660e2ce4d2a37c01f0341418d58988d21810fbf"
+    },
+    {
+      "path": "assets/source/characters/caelan/idle_turnaround_concept.png",
+      "sha256": "eda59cc27a414b79fd5171e859d5735401cc46c6c6041d1c1e14f2347d610e8f"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_directions.json",
+      "sha256": "14bd3c269de353ce0d0d1df05fc04cb9268efde0e8f47915fa02f27f2cef19c2"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_front/frame_01.png",
+      "sha256": "885a21dd1321d39edd6b081a89f2f4b935815df51950d38f2ea395f24e4c80b9"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_front/frame_02.png",
+      "sha256": "fa01745d2a405fd44d9d62b88ba9d4844691b2cc62002e34211ce8f3cebd2969"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_front/animation.json",
+      "sha256": "b7253900b4447a4ffe1cefa8b216a754acbc439584d7e64784b8ceedd6173c66"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_front/frame_03.png",
+      "sha256": "096db95159817dfcfbe43b43e6a00b5b2ad256c867afbe90cfad001246120652"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_front/README.md",
+      "sha256": "8c8253697c664f18d3be2693394491aa6065ffccaec045258330f2be66a617f4"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_front/frame_04.png",
+      "sha256": "73fafc9af52ea2d6994241245a5d7f7f6d593966ba2725111fc434a8e7f1e840"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_directions_review.png",
+      "sha256": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_right/frame_01.png",
+      "sha256": "32b1b92a9a5a81613daaac334780a2dbedf7a66e2dc79858306dde70b1698b76"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_right/frame_02.png",
+      "sha256": "9f8adecc2532d4e326096b0c6d94800f7b15ca3f74d4964cad1623ed5714e4f2"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_right/animation.json",
+      "sha256": "9978b61a2d4801c016cd03744e2dd0b03146a923ac29f485c4e339da2be87687"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_right/frame_03.png",
+      "sha256": "d596a32d8515ca0610ca9c0ca8c0915eb3607db17ad28737e0f8f462319b4040"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_right/frame_04.png",
+      "sha256": "afe4755766028a4d125e4553423805edc2349ae11cf75140f8373f155282794e"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_front_preview.png",
+      "sha256": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_back/frame_01.png",
+      "sha256": "ad523fc209895f8919a08aee508ce50ba1cb818d5f4a083bbc413099c2294a01"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_back/frame_02.png",
+      "sha256": "9f86a8f7fafb7dc833f0bfcb995a237cae6cad7556236836f78da0aec9805f83"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_back/animation.json",
+      "sha256": "d3372225eeba434a7123b61e62269615fcb1deef2d00c326a313719a0cab9d39"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_back/frame_03.png",
+      "sha256": "6c80f074a08bc8de327c1edd13b5347900f2c9fbc097117c5b2d9f3a2f3f8dc6"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_back/README.md",
+      "sha256": "b2c89b6a65d9ab95fb949acd4e85b230f263e781208e2028d9a91e39c56a1cdf"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_back/frame_04.png",
+      "sha256": "3cd7cd35f684965cbba3fd75eef85e96b5ddda317d306471b2c32db2157e0e56"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_right/frame_01.png",
+      "sha256": "22fe07e9d31703ad2aa2fd4f1c445d48de1aee78408395c2eaeb0fd23338d9ac"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_right/frame_02.png",
+      "sha256": "2ddc0025f79b95884f020f6abd3f5ea2a94b91911c034e638e937e53408c1315"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_right/animation.json",
+      "sha256": "35be62fd85b90fad25273da41a63ce8cd6d842b37589a5db19bafeb54aab4ef0"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_right/frame_03.png",
+      "sha256": "f41ad840cbf1edf5fe999cbe146271af0a982a54178106e1adb6c981137e6fc0"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_right/README.md",
+      "sha256": "538d335cc8425951a46ba1cfe67ff81943dfa9a3f2cb8b857e75e2d9564f8e55"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_right/frame_04.png",
+      "sha256": "e67535de5e3dc3eb6e5e2198f1cf81330bb2fc5400baf9e6ba1a40576f79f1fc"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_back.png",
+      "sha256": "1d2336f31edfc74365a64e7662b31d4fc1f9a23a8593850864e4d27a3aa72c6b"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_front/frame_01.png",
+      "sha256": "ab73200202382aa70e9f91bb7445471066e309d6ec465a954cf48cee1841bdbc"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_front/frame_02.png",
+      "sha256": "9fab2b9272265f17aefd92a29c1e352ae5995d4a176b2da9e4ab6b7eb5545340"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_front/animation.json",
+      "sha256": "b2eaeb297535a2136867bc107be367e2e4d7c33c23c24202a043b3d71d078e94"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_front/frame_03.png",
+      "sha256": "a82cfa185e6f09107ab7e4b9231c25ee1d8a54381aa83b2510439d90db8ad9d1"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_front/frame_04.png",
+      "sha256": "05a8addfdd06567bb260205fdaf2edc9cab0970bbaa54e857da643e22c9bb996"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_directions.png",
+      "sha256": "3a37b901d6917221b39123de35b4f69dae4377ddc5557ec87b3bc000bb10c5fa"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_left/frame_01.png",
+      "sha256": "57a88cb8838a0d9006a4c7a5c3fd9f321c806e83a2d106bd58123d8c117fa450"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_left/frame_02.png",
+      "sha256": "2c4aff1bcab4080f4d56412c9f2d215a0889951d774e88780f61f79b3fa17b16"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_left/animation.json",
+      "sha256": "809b37b69a01d3f5a2b2f71a06e31ac0d833bd8f2d6d270244d5cca626faa542"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_left/frame_03.png",
+      "sha256": "b5a7f5549aaca666818dd76e080c97f00ae796fb2e454370142681b0e8400be3"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_left/frame_04.png",
+      "sha256": "f00f1a59fcf332103841ec9f18f0e4f3de7ede176938a796a6a64c7ae007ae66"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/README.md",
+      "sha256": "18040b23c63c6bf62f9815cf02736b60915ea0692a1b67da97dd7015cd41fd60"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_front_review.png",
+      "sha256": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_back/frame_01.png",
+      "sha256": "b0321ee8bfeb2b07e379be8e39a1e8b9795c660bbd266cff90aa436ee0fe1af5"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_back/frame_02.png",
+      "sha256": "297ff559485175e8354a60f437ed70b49e0549342a0304ac42a235128731b337"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_back/animation.json",
+      "sha256": "05594ecea8b45cd95028bb3c5a61c7024f63a844bb8e93dc1ac379a2ca67f906"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_back/frame_03.png",
+      "sha256": "ba5304edbd967b2380e9d53a0b70adf27331ba028aaf1e01ff8914ce3b3dc906"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/run_back/frame_04.png",
+      "sha256": "2b5088d1f01894fbd93e456d00780a175dc2a2865ee2f9bdac629b5bf90132f6"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_right.png",
+      "sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_left/frame_01.png",
+      "sha256": "530adf3ef8d77bbe6ceaf9ac764a2370c2f13a3a73ec03c2201faadf67438ef8"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_left/frame_02.png",
+      "sha256": "a45d9cc1904995541ab47d8d4a4e09684d625767c2c02e35d46440890dd13517"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_left/animation.json",
+      "sha256": "e90c2827135525fe0919b899f05002dd34fbe03512b727c289257f5d9e48ce55"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_left/frame_03.png",
+      "sha256": "2d3ba50204e90dbcffe9c2a22de29b5a6a3ae1488541acb609e61b4da7e16374"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_left/README.md",
+      "sha256": "5be0242bc8de53adab6668ad2a828492977ce8c8f7c76d7c6fef6e349d2bf92a"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/walk_left/frame_04.png",
+      "sha256": "30802fed35e061dafe6d8b3cda72b37ad74b85bad06ef58ca5ad5d5c6c7dce68"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/legacy/idle_left.png",
+      "sha256": "abee965ac14e3ac424aa6aa63a0a6e74fab5e52572c2c42efd800d48df184259"
+    },
+    {
+      "path": "tools/build_caelan_left_run.py",
+      "sha256": "6bd2054e87e1d8ea0a598797810ac649ac972b979edd88f44dc1b13fe99bc7f0"
+    },
+    {
+      "path": "tools/build_caelan_directional_runs.py",
+      "sha256": "37c7d965cdde1a89e8e80c3277ca04e5d13a2cc5d3010ca71e66e2d97fe4528a"
+    },
+    {
+      "path": "tools/capture_caelan_overworld.py",
+      "sha256": "a418204de7ebff27920026c41574c33be7ad5c3d0b16843354f8e8dfd1ea350d"
+    },
+    {
+      "path": "tools/capture_caelan_outline.py",
+      "sha256": "d054496656253ac4c7a235b4c3833dca958d0f8156ae4eae21e2c2509b8c211c"
+    },
+    {
+      "path": "tests/test_caelan_overworld_refresh.py",
+      "sha256": "d3c004c7038ff276d0f91fb794bed934a5dcf5c93e47563946a4e3d07ecbc26e"
+    },
+    {
+      "path": "tests/test_caelan_left_run.py",
+      "sha256": "129972df03b1f9422e90c60973eaaa04dc046bcd291026101002ff1b8e6aba1d"
+    },
+    {
+      "path": "tests/test_caelan_directional_runs.py",
+      "sha256": "96db8d4e9aed79bfe88ee8056cdb1f00fdf0d5daadb6b3874a55fd19d951b938"
+    },
+    {
+      "path": "docs/reviews/caelan_directional_runs/all-directions-slow.gif",
+      "sha256": "90429cb3da0e3a6c91f749919666a78cfb7f22380ee639fa98e3b290a15c0c0c"
+    },
+    {
+      "path": "docs/reviews/caelan_directional_runs/all-directions.gif",
+      "sha256": "33cd73ec696761576a58aeb3eb11c7e2e298c742bd3faecdee7d6532f9a3b2cb"
+    },
+    {
+      "path": "docs/reviews/caelan_directional_runs/back-poses.png",
+      "sha256": "c6a6736ab4801421dfd38bd6867e5e1a84f3d98fa454ae8a144f3a336e9c07dc"
+    },
+    {
+      "path": "docs/reviews/caelan_directional_runs/front-poses.png",
+      "sha256": "edc1eaec0dbeacc4548ac7211796aee6ce71126c7617118ec077fed85a467dfd"
+    },
+    {
+      "path": "docs/reviews/caelan_directional_runs/right-poses.png",
+      "sha256": "e4787156914b05636d7ecef214b1cbb6feb1e731b8e834ddd849153518f07a37"
+    },
+    {
+      "path": "docs/reviews/caelan_left_run/run-loop.gif",
+      "sha256": "32db1094e0f54aafd05550dc0fff3a6fe6b91dc6962b9d20b66d03eeef388db8"
+    },
+    {
+      "path": "docs/reviews/caelan_left_run/run-poses.png",
+      "sha256": "6a8d2840e8f73fb1ed790f3bd979f92b75409f3f6017ca5f297b03e4db2caf83"
+    },
+    {
+      "path": "docs/reviews/caelan_left_run/walk-vs-run-slow.gif",
+      "sha256": "82fb36ac11de24e392cda52dd48fc2de13b97b135520363e018ed542fa8d9717"
+    },
+    {
+      "path": "docs/reviews/caelan_left_run/walk-vs-run.gif",
+      "sha256": "9f12a8977e821ead71f09130f22193d002304a5e1a505bd6eeaf9dc7a1d03544"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/interactions.png",
+      "sha256": "824188ade65925e9a41d593e1f95f755aca246131510065d0b374177fcc6b5ca"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/halden_lift_precontact.png",
+      "sha256": "07543e7fa386228dedcb8385c9c97cfec82800e20ef5fd68e72692669d011f4e"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_carry_left.png",
+      "sha256": "4004443bd2956287a1cb64c49ae3873d7b8e7bfcfde3db06fe277e8bd5fd4d21"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_reach.png",
+      "sha256": "8097a13df9ca3922f19e970919ab3d8bd8a0cdd95d46906178709b2389d5a779"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_give_precontact.png",
+      "sha256": "6deef14460eec7f0998f1f8ddbf5a0e0ad45bccfe5ac2a6c6db92a2a638c3e53"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_tools_1.png",
+      "sha256": "3e73bd303bf2468ccc2fdb7b253625e0122fa239a6af36f4d331f2a0636e5f5e"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_tools_3.png",
+      "sha256": "bdb12158f30510e642d9e75e65eb72c11eb5c33cf8fecc7c1fd47c8c0c1f1541"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/native_contact_sheet.png",
+      "sha256": "4ea345d6370239f0f1a63d3c83e788d1882e52d2a04fe723845a0d4e7c959b66"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/travel.gif",
+      "sha256": "94139b037d44fed36918aad11966fa008e003832e1a57deac60343505efb4534"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/halden_lift_preparation.png",
+      "sha256": "8778cceaf6f4ca5c84a559b49df7e49acdde5fd7376fdc1e4187e0c0c1895630"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_tools_0.png",
+      "sha256": "e2a931508635cf8120ee858fd0e1c334ab23691cf09d2a994bb834c1b0991a64"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/cave.png",
+      "sha256": "5e1d7be39883f8eac22bf9d2593aacc31c17677e38064d7861e7544c98f185eb"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_carry_right.png",
+      "sha256": "18f797fdc15edd93cf79fe5203165147f5c1c2e4e49fbe51917af4b1c35515bb"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/travel.png",
+      "sha256": "371f4491ebc394473382d715e34e157db1ddb1bf951f0a2760bc6b5e3176d7ce"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_finished.png",
+      "sha256": "c2789bcf58f8a68252d3d0d1e9356bbdafe1eea6286154d02245ada332089ac1"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_carry.png",
+      "sha256": "cdc8fadfcd99e3a05bce2f8798a5cb9a34edf987ecfedca40200c4c739adcb20"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/town.png",
+      "sha256": "f003943b78fbb2f8cf2575ff9e6dde41d3b67560c945add49bf4fcd7facec28c"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_take.png",
+      "sha256": "dfa0b81cd0ce838739ada23d8c44a16c3c48f218fd83030e9fcf58619680045b"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_place.png",
+      "sha256": "c3c2b9fdc78ab1574f31406edb6a710cc26832d2b6f45094f4970ee0955e5afd"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/halden_carry_front.png",
+      "sha256": "6124ede4486df1d29a7d8a01429b81ecbab4c3571a0513e43e41e15017a822e5"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/halden_carry_back.png",
+      "sha256": "ef45e6c629971093ec0f259ebce50affd65cfaf4529afc8c2ece5801632b7bb9"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/elira_lantern_carry_front.png",
+      "sha256": "4b4ce19e9c8379678d26462cd00ce30e85248cf2132677beb0b83951b79e7e0e"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_tools_2.png",
+      "sha256": "206d04c042bda28ce4941504162b93f5f4580f64c49f6d4dc673dce92d9a68d2"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/standing.png",
+      "sha256": "b58b77b0ce3ca8a66ac23d5cc15fe22dc88bf7a6195880a71b78f3aba32f1a56"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/actions.png",
+      "sha256": "9eb9c9aa7867ef394d98d6ea6483d810ca74b6b67be6e1775744eb878023874c"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_give_recovery.png",
+      "sha256": "3f96f8ddd21f3c8b292895609d3b70e0cf2fa6d295a2757af454abb5afa0d002"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/venn_give_contact.png",
+      "sha256": "fcc885839efd710dfccf0766b144f320466e807b2884213c19f039518d95580c"
+    },
+    {
+      "path": "docs/reviews/caelan_overworld_refresh/halden_lift_contact.png",
+      "sha256": "935908dbd35b8c49899ca9aacb7c697fd1194d1c475ac354f6267cb5ae071b4c"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/interactions.png",
+      "sha256": "d718af3e2cb0bb769580a0c9abee1a9cc035579cca9b80627ed23bbe05d60cab"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/halden_lift_precontact.png",
+      "sha256": "5e43e202ae8b2708f393bf6cebabe94e75b63a93df93068a5d50840d6fe15b5b"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_carry_left.png",
+      "sha256": "97be37ee3c440b1dacf2891f0ea50afa05109f7917178ba9bb17c5ad99dc9705"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/rescue_free_worker.png",
+      "sha256": "d4c4aa9510d86b68a4f5bb08dfc2197a4ecc2fa9f8c6e2461838159bd9d71ab8"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_reach.png",
+      "sha256": "13a9f6823b92181366a6a3388751bd9dd8c2f2a3d56757531260b06b576552f8"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/rescue_treatment.png",
+      "sha256": "d71f328ea097140440ebe351f6f0c4afc3bf130ca09ba1d1dffc86f1163e418a"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_give_precontact.png",
+      "sha256": "5a1f3132a14d8d626c5be4c46a543bba580cec4ca6986cb217a634d1653edba4"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_tools_1.png",
+      "sha256": "6437d495b3a84e0fd33b6fe955b030e0709bb456618db4dfaac379593a97762a"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/rescue_greenwell_walk.png",
+      "sha256": "226cd16a0977afc2745ca95e2f322fb8a45a5a293779dfe57cb8f0188651fa29"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_tools_3.png",
+      "sha256": "f6de1dbebe54910cd77368c54b2013af7ce83c2c30062c5750c5194f0e97ad83"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/native_contact_sheet.png",
+      "sha256": "938f1de78e5d8400f42b451f6a7e0432a0e731fc062546fb7301101d234e94fe"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/travel.gif",
+      "sha256": "d307128758f642d188c8520af1e600fe66c6160644e44d740b4ed85212725033"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/rescue_assisted_stand.png",
+      "sha256": "44f07d5c661bafb2763a0002dbd35847d71c8f1bc572bfdd5c30b2c9b51454f6"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/halden_lift_preparation.png",
+      "sha256": "548e4dcad7348001fcdc57baf2f8080da8202a4079a5fce4f7619719aa884b87"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_tools_0.png",
+      "sha256": "653bb839284386718c2c6177924e96957987294dc1811a5825ce51a8b3277a76"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/cave.png",
+      "sha256": "0813b624de30a53b132c897679dccbca75069e6193e63f632530456586428049"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_carry_right.png",
+      "sha256": "dcc48333882f52b496c56edcc9d15af4ba0a0bcf6852a54dfc9336133ca4e5f2"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/travel.png",
+      "sha256": "4f79d686c9aed87e071218484c819470221b022d13c0d47da09e127b854d99f1"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_finished.png",
+      "sha256": "2b079f759ad2929d5b2eee1b0fee003fdb7b18cdb8a58efee8b0dfc6a7bf90c4"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_carry.png",
+      "sha256": "7428757c1373d308336eb8a73435e78b8901e33ffe3de7504f54ce1664d9ca96"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/town.png",
+      "sha256": "85ccf84de665b3ae0436913f7189a412d82d19167e35bde2818bc2ee1a32189f"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/comparison.png",
+      "sha256": "7b9059fc9e634bc80b2dbf6e298471f10d4a672779b8bf67e246cf55959a1229"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_take.png",
+      "sha256": "019825549d49b110a55cc0282068fa85d72d1f2a6d545188a54d8bfeb92a2788"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_place.png",
+      "sha256": "a0835bc88a41d6dcf9c15564893973add3d784d2ac92cc3023c4f7f347d442e3"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/halden_carry_front.png",
+      "sha256": "14855755c18a209991ec49f66fc443f1f30798885ae602b8cf69401aa868d9fb"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/halden_carry_back.png",
+      "sha256": "3d5c95f2c35aa82ff21cfb9bc0a6618ae6587f1c64ac9ebccbc2954e2b67a7a9"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/elira_lantern_carry_front.png",
+      "sha256": "aaa8068ccc07180c628e9ad8cd0898b73761b41887aa3d5366ba54bf5a74ce31"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_tools_2.png",
+      "sha256": "a789718bd5b2add5ee54bdab9da9b86987cc66c960bc0b845bbbfeca85873cf5"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/actions.png",
+      "sha256": "96ae940080482de122a61e8b9531b48fcb5ae4f2c32254cc782ed80cdbe6ddc7"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_give_recovery.png",
+      "sha256": "1ab5bcd1089a96a02b0f063bbf467bb9039bad67d0c4ce567850ee139add7040"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/venn_give_contact.png",
+      "sha256": "ce105af5b5c90e9e375b8933f79f8beda562fb7a4eee4f3ac2a59270807a4c90"
+    },
+    {
+      "path": "docs/reviews/caelan_outline/halden_lift_contact.png",
+      "sha256": "b6a5100d01b90ba2cfd249deab20402db114ecbeb87f360047e643727eecbef7"
+    },
+    {
+      "path": "assets/source/characters/caelan/overworld_refresh/registration.json",
+      "sha256": "b45001c8283fc5d69c91b54cebb626d66257a021cf9d9dc19bb0552dc8bdf034"
+    }
+  ],
+  "preservation_contract_retirements": [
+    {
+      "contract": "assets/source/characters/caelan/run_right_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/idle_back.png": "48e1e4c117ac1792ed7a5ee4c4ed24cc571524334afdf12e3a8d15b6c11aa47e",
+        "assets/characters/caelan/idle_directions.json": "2a2d21eccf097a05290c541acbfe98ff6ca86b4e68aef710403baee90dfdc1db",
+        "assets/characters/caelan/idle_directions.png": "e684349d335e572d5cc049d43da64055b152350aec00adf46d1688e83cec7308",
+        "assets/characters/caelan/idle_directions_review.png": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792",
+        "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
+        "assets/characters/caelan/idle_front_preview.png": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f",
+        "assets/characters/caelan/idle_front_review.png": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351",
+        "assets/characters/caelan/idle_left.png": "aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086",
+        "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
+        "assets/characters/caelan/walk_directions.json": "df2b5eb80e67f31b4203bdfd3b874844d37a14dde1e26bdf336f3ea1aea5d624",
+        "assets/characters/caelan/walk_directions.png": "b9289d0384e23dfcf0321ce5924eeefbb4a82678c0a746623ea3fad16eb614b9",
+        "assets/characters/caelan/walk_directions_review.gif": "fcf10aecaed2496a6efa6761d7a1db1eaa5b834906528f39e318ec6a6bf9ca7e",
+        "assets/characters/caelan/walk_directions_review.png": "fba6b1ec8a24df4b5cabd03bbfb76c35632e4b922efa5200986cd1383c8a92e8",
+        "assets/characters/caelan/animation.json": "78dcdfe41fd74481ca7d374d676363d41e9dc8d0d1c2b7ee9af904c41d87d286",
+        "assets/characters/caelan/run_back/animation.json": "33eefc7d22760c8a3d8d1b5ae6dbf69ad349ef8cf9c50fc1e0979bc8093929d0",
+        "assets/characters/caelan/run_back/frame_01.png": "04de2c6a76ef08f282f7a809634bf38d635bb862d429cea0148c00a765236e31",
+        "assets/characters/caelan/run_back/frame_02.png": "84f4cd09516a96afdb12fe5c5905fb768236926e9d411ca46d9b0bce3fd5c48c",
+        "assets/characters/caelan/run_back/frame_03.png": "d849eca02ad7e6969b63af627cf3388cb00d0829cdcf3786edb4cd9563cf3627",
+        "assets/characters/caelan/run_back/frame_04.png": "82906a2cad93be7c03dba41d343a6fcf44a7aef26e76d4ccdbc15f70ca0b5ca3",
+        "assets/characters/caelan/run_back/spritesheet.png": "ab759fa35b863a09c8c4e78487f9c0e2a116aa973cad1ad7bae5dd878b819898",
+        "assets/characters/caelan/run_front/animation.json": "cf78d9bc0ae1cf426a3e6d4b02c01363d8d40df0df479afaf08eeb90e58ce029",
+        "assets/characters/caelan/run_front/frame_01.png": "0b094d8f75646aa394d1552473a05c87b45641133d48de050b7cdaa4ed363954",
+        "assets/characters/caelan/run_front/frame_02.png": "368e4a6d022393b2bfbae61d26e3d239eb09616d65957b4a31695a2dfd43dc74",
+        "assets/characters/caelan/run_front/frame_03.png": "960cabf6ae51527e1250b7cc7804d78d9b022e91c954ccf92c8b7a9f051aa114",
+        "assets/characters/caelan/run_front/frame_04.png": "b22b9d4b0fdb812151428d50f94e4a941575a12dc2c87b313c1c83b5bb43a0cd",
+        "assets/characters/caelan/run_front/spritesheet.png": "eeb4f2e6a23351dbd7cb1782f8781fb1a58c21dfeca376239aeeb8621c2714a6",
+        "assets/characters/caelan/run_left/animation.json": "0ff3b55888ba29b66c84a589e4df64875b635fcf462f2daf89dcc8be24bef008",
+        "assets/characters/caelan/run_left/frame_01.png": "85380019f16a656c16e8e6299eded907b027fd38d5427b4448fd761554b5383a",
+        "assets/characters/caelan/run_left/frame_02.png": "61c32be06450797ea0e6188d496a4afb08691198ea9f7b41005d76bc4e8b74f7",
+        "assets/characters/caelan/run_left/frame_03.png": "7b4e97a71d333de841de5e8b191019a0d372cbe97fe8637ef642d5711317dca6",
+        "assets/characters/caelan/run_left/frame_04.png": "e4c9584e30b114211bdf066e2f4fabd06058a1eb3de74bc1fe095009b289a05d",
+        "assets/characters/caelan/run_left/spritesheet.png": "0bbf228c431b6987cf3ae42e31502f8b38e82277f7e3e786b9073f0738f8688a",
+        "assets/characters/caelan/run_right/animation.json": "c9d07831cfaf3e77acb40f9a0dc8a9277fcfc73d7cc420e2a0b61e7beabe3b18",
+        "assets/characters/caelan/run_right/frame_01.png": "dd40e7eba71c753d5e7e6276bc61a705624aa1625dc549fdb62e174b3b76b7f1",
+        "assets/characters/caelan/run_right/frame_02.png": "7a4a74264f10918763d5adb9d9d9ba512812eb9d71c170cf425023830fccf6b4",
+        "assets/characters/caelan/run_right/frame_03.png": "9f76ce7f1ffc07d96def11e3517a0369f76f1a82c934afc27a513ac7db631c7d",
+        "assets/characters/caelan/run_right/frame_04.png": "d2375f716d37cd7ed0d2c91aaf6d0616dc31be18d657add47f85a7f69d271eef",
+        "assets/characters/caelan/run_right/spritesheet.png": "f6bf25146385f6020e996f4589168f9f34211b97ab0fe2443d57416f925a8358",
+        "assets/characters/caelan/walk_back/README.md": "6c1d1c5474405a3364a50aae7bb0844baf0255b35576b30200b51da4c8914cc6",
+        "assets/characters/caelan/walk_back/animation.json": "2a00bcfcf0bdc567dbb85ad5de4272c9621c9acb5ba63e1faaa41ef0b1142172",
+        "assets/characters/caelan/walk_back/frame_01.png": "cecc793a7655cb9c6d02d9ebe22d929e13d0568757af28c276e67d7dfe97a92e",
+        "assets/characters/caelan/walk_back/frame_02.png": "a911743a781304928d54ec26de2ec9d7effa412680ddc268ae573ca6de612e0c",
+        "assets/characters/caelan/walk_back/frame_03.png": "b7033f3aedaf8efb393f251b0752494c17a5dfd906158d5e820d486526071835",
+        "assets/characters/caelan/walk_back/frame_04.png": "9a80511e848dffc3f96f6971aa9d3a78b23368f7cb96f9cc277a5433643073df",
+        "assets/characters/caelan/walk_back/frames_review.png": "523d84ac432e23c395c06d6f9a2d233554224c43acf8cbda7f34838061d15c92",
+        "assets/characters/caelan/walk_back/spritesheet.png": "b4aab9cdddc5ba1e3e0d1d8d1edac52a75847924c8ebfc2e7fefc7764f251f46",
+        "assets/characters/caelan/walk_back/walk_back_preview.gif": "7135a314092d6672ad2b9e6950e1059a1133b2c74f248a2e4bec240cb4184948",
+        "assets/characters/caelan/walk_front/README.md": "b0489b63b673405f0e4eb2fe7146f2f6f051f07f1a3934ba414d457531477905",
+        "assets/characters/caelan/walk_front/animation.json": "29ebeb6453e53c6f87a38aa5243ebda347fab20573901325b4bbc5ce91990521",
+        "assets/characters/caelan/walk_front/frame_01.png": "16ee3ad7f67ef073a646bf72d0717260c93c4d7580f95eb40f294f1d7d40661f",
+        "assets/characters/caelan/walk_front/frame_02.png": "427a107ceef05fd92b1878420bc0228562caf06a7f31718c26414f2ecf182815",
+        "assets/characters/caelan/walk_front/frame_03.png": "51e1dabf6c13b19d04c6af6b5608b2750fbae2d017b39121fb18e39a396063bb",
+        "assets/characters/caelan/walk_front/frame_04.png": "6c9a77e8b56c4b8d5522a2dfdb6e55b86d44195d02fefb36281dc24ff20564be",
+        "assets/characters/caelan/walk_front/frames_review.png": "94773a2fb01dbb91208a00d9a45b981e4346573460fc1f9d76eeafad80a25127",
+        "assets/characters/caelan/walk_front/spritesheet.png": "58b7892d7fdcd31f8533ba965dc54bc629f75829bc32d39a853c9b8b7656d71c",
+        "assets/characters/caelan/walk_front/walk_front_preview.gif": "4ed26cee98f4437fd98d098c807b150c0b49ecaed2b28cfa941256bafb040ce1",
+        "assets/characters/caelan/walk_left/README.md": "f06f4340ad6f798f76ebd30530fcdc3b02e66770594c3ea3d39eadaf26d7bcfd",
+        "assets/characters/caelan/walk_left/animation.json": "cedeb0e8715bafde3747ba2733765884369517c18ee2bd367a3f41ff5478d516",
+        "assets/characters/caelan/walk_left/frame_01.png": "bd31d4de4a9aea6d4a21cb2a352786305f936af4d96be3e3a976295a87278bd9",
+        "assets/characters/caelan/walk_left/frame_02.png": "330df1e6e18953109741a343a5b38b38a129a3c91cbc75e009070f1c070f824e",
+        "assets/characters/caelan/walk_left/frame_03.png": "d13a9cc891085bb8311225c549db94dfb5db70aeb229fed023781790c7f2e805",
+        "assets/characters/caelan/walk_left/frame_04.png": "278948c2469428983828721bb1a37ab4f4177ebf18fb560b332efb3a836734f6",
+        "assets/characters/caelan/walk_left/frames_review.png": "4317983f4579f791e25ed6046f8721ce89af5b373d7288c8b57b0dd2f7028d40",
+        "assets/characters/caelan/walk_left/spritesheet.png": "3cbf9db1010ee946a18a04d11b05aff9d0abe9bdca6e74fb5559e7819797dbf9",
+        "assets/characters/caelan/walk_left/walk_left_preview.gif": "09663f8d3c2167f0bf377443fc16ac6087b65abd6543b6edc5ae2a873b96cff8",
+        "assets/characters/caelan/walk_right/README.md": "9936c911e0f767a84c2a82dbd50643148f50957488b22ebc18a339510412090c",
+        "assets/characters/caelan/walk_right/animation.json": "5969712ac9535553743f06f5ca38a7a15b9270d04e864a7fb25142be7a24e139",
+        "assets/characters/caelan/walk_right/frame_01.png": "dd919ec2769e4b5cf5f020880840b0066da2cfa7d1db392da12c6194cda2738a",
+        "assets/characters/caelan/walk_right/frame_02.png": "79d825b02f7e7e996c5dd83756dcae1beedd84a491a81e6dc0248a7ded7c0135",
+        "assets/characters/caelan/walk_right/frame_03.png": "c81ce51f8fc2c7725f4f0ef8fac86dc711000eb2db3718c52fc81ad8026b07b1",
+        "assets/characters/caelan/walk_right/frame_04.png": "8b8d0303d2a22d5049c31847d0ddc42a9a06cd47b9a5f6c1837fc2323342a09d",
+        "assets/characters/caelan/walk_right/frames_review.png": "acf4360f3dd45bbb501346af0504fcb0c4945c263f83194c940d9526c6da2fa0",
+        "assets/characters/caelan/walk_right/spritesheet.png": "e4f9ad81fd2961d16e96897eaaf3480d4a9e7cff2fd5c5eb0faed6bf83c15dc9",
+        "assets/characters/caelan/walk_right/walk_right_preview.gif": "7c745b414c4ea7d0886805b452e3d07d7a472fa73146e5bb8d25a4dddfb5ee8d",
+        "assets/characters/caelan/review_hd/run_front/animation.json": "a190a70b10af0b0fc71ce64dd191b22d75a989a4c694f060b551a027b7bf37a9",
+        "assets/characters/caelan/review_hd/run_back/animation.json": "8ecf120647c92b62e7af7a42e9cde00a3d68c430223ddecc83e5cc8237fe35e7"
+      }
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_front_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/idle_back.png": "48e1e4c117ac1792ed7a5ee4c4ed24cc571524334afdf12e3a8d15b6c11aa47e",
+        "assets/characters/caelan/idle_directions.json": "2a2d21eccf097a05290c541acbfe98ff6ca86b4e68aef710403baee90dfdc1db",
+        "assets/characters/caelan/idle_directions.png": "e684349d335e572d5cc049d43da64055b152350aec00adf46d1688e83cec7308",
+        "assets/characters/caelan/idle_directions_review.png": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792",
+        "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
+        "assets/characters/caelan/idle_front_preview.png": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f",
+        "assets/characters/caelan/idle_front_review.png": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351",
+        "assets/characters/caelan/idle_left.png": "aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086",
+        "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
+        "assets/characters/caelan/walk_directions.json": "df2b5eb80e67f31b4203bdfd3b874844d37a14dde1e26bdf336f3ea1aea5d624",
+        "assets/characters/caelan/walk_directions.png": "b9289d0384e23dfcf0321ce5924eeefbb4a82678c0a746623ea3fad16eb614b9",
+        "assets/characters/caelan/walk_directions_review.gif": "fcf10aecaed2496a6efa6761d7a1db1eaa5b834906528f39e318ec6a6bf9ca7e",
+        "assets/characters/caelan/walk_directions_review.png": "fba6b1ec8a24df4b5cabd03bbfb76c35632e4b922efa5200986cd1383c8a92e8",
+        "assets/characters/caelan/animation.json": "78dcdfe41fd74481ca7d374d676363d41e9dc8d0d1c2b7ee9af904c41d87d286",
+        "assets/characters/caelan/run_back/animation.json": "33eefc7d22760c8a3d8d1b5ae6dbf69ad349ef8cf9c50fc1e0979bc8093929d0",
+        "assets/characters/caelan/run_back/frame_01.png": "04de2c6a76ef08f282f7a809634bf38d635bb862d429cea0148c00a765236e31",
+        "assets/characters/caelan/run_back/frame_02.png": "84f4cd09516a96afdb12fe5c5905fb768236926e9d411ca46d9b0bce3fd5c48c",
+        "assets/characters/caelan/run_back/frame_03.png": "d849eca02ad7e6969b63af627cf3388cb00d0829cdcf3786edb4cd9563cf3627",
+        "assets/characters/caelan/run_back/frame_04.png": "82906a2cad93be7c03dba41d343a6fcf44a7aef26e76d4ccdbc15f70ca0b5ca3",
+        "assets/characters/caelan/run_back/spritesheet.png": "ab759fa35b863a09c8c4e78487f9c0e2a116aa973cad1ad7bae5dd878b819898",
+        "assets/characters/caelan/run_front/animation.json": "cf78d9bc0ae1cf426a3e6d4b02c01363d8d40df0df479afaf08eeb90e58ce029",
+        "assets/characters/caelan/run_front/frame_01.png": "0b094d8f75646aa394d1552473a05c87b45641133d48de050b7cdaa4ed363954",
+        "assets/characters/caelan/run_front/frame_02.png": "368e4a6d022393b2bfbae61d26e3d239eb09616d65957b4a31695a2dfd43dc74",
+        "assets/characters/caelan/run_front/frame_03.png": "960cabf6ae51527e1250b7cc7804d78d9b022e91c954ccf92c8b7a9f051aa114",
+        "assets/characters/caelan/run_front/frame_04.png": "b22b9d4b0fdb812151428d50f94e4a941575a12dc2c87b313c1c83b5bb43a0cd",
+        "assets/characters/caelan/run_front/spritesheet.png": "eeb4f2e6a23351dbd7cb1782f8781fb1a58c21dfeca376239aeeb8621c2714a6",
+        "assets/characters/caelan/run_left/animation.json": "0ff3b55888ba29b66c84a589e4df64875b635fcf462f2daf89dcc8be24bef008",
+        "assets/characters/caelan/run_left/frame_01.png": "85380019f16a656c16e8e6299eded907b027fd38d5427b4448fd761554b5383a",
+        "assets/characters/caelan/run_left/frame_02.png": "61c32be06450797ea0e6188d496a4afb08691198ea9f7b41005d76bc4e8b74f7",
+        "assets/characters/caelan/run_left/frame_03.png": "7b4e97a71d333de841de5e8b191019a0d372cbe97fe8637ef642d5711317dca6",
+        "assets/characters/caelan/run_left/frame_04.png": "e4c9584e30b114211bdf066e2f4fabd06058a1eb3de74bc1fe095009b289a05d",
+        "assets/characters/caelan/run_left/spritesheet.png": "0bbf228c431b6987cf3ae42e31502f8b38e82277f7e3e786b9073f0738f8688a",
+        "assets/characters/caelan/run_right/animation.json": "c9d07831cfaf3e77acb40f9a0dc8a9277fcfc73d7cc420e2a0b61e7beabe3b18",
+        "assets/characters/caelan/run_right/frame_01.png": "dd40e7eba71c753d5e7e6276bc61a705624aa1625dc549fdb62e174b3b76b7f1",
+        "assets/characters/caelan/run_right/frame_02.png": "7a4a74264f10918763d5adb9d9d9ba512812eb9d71c170cf425023830fccf6b4",
+        "assets/characters/caelan/run_right/frame_03.png": "9f76ce7f1ffc07d96def11e3517a0369f76f1a82c934afc27a513ac7db631c7d",
+        "assets/characters/caelan/run_right/frame_04.png": "d2375f716d37cd7ed0d2c91aaf6d0616dc31be18d657add47f85a7f69d271eef",
+        "assets/characters/caelan/run_right/spritesheet.png": "f6bf25146385f6020e996f4589168f9f34211b97ab0fe2443d57416f925a8358",
+        "assets/characters/caelan/walk_back/README.md": "6c1d1c5474405a3364a50aae7bb0844baf0255b35576b30200b51da4c8914cc6",
+        "assets/characters/caelan/walk_back/animation.json": "2a00bcfcf0bdc567dbb85ad5de4272c9621c9acb5ba63e1faaa41ef0b1142172",
+        "assets/characters/caelan/walk_back/frame_01.png": "cecc793a7655cb9c6d02d9ebe22d929e13d0568757af28c276e67d7dfe97a92e",
+        "assets/characters/caelan/walk_back/frame_02.png": "a911743a781304928d54ec26de2ec9d7effa412680ddc268ae573ca6de612e0c",
+        "assets/characters/caelan/walk_back/frame_03.png": "b7033f3aedaf8efb393f251b0752494c17a5dfd906158d5e820d486526071835",
+        "assets/characters/caelan/walk_back/frame_04.png": "9a80511e848dffc3f96f6971aa9d3a78b23368f7cb96f9cc277a5433643073df",
+        "assets/characters/caelan/walk_back/frames_review.png": "523d84ac432e23c395c06d6f9a2d233554224c43acf8cbda7f34838061d15c92",
+        "assets/characters/caelan/walk_back/spritesheet.png": "b4aab9cdddc5ba1e3e0d1d8d1edac52a75847924c8ebfc2e7fefc7764f251f46",
+        "assets/characters/caelan/walk_back/walk_back_preview.gif": "7135a314092d6672ad2b9e6950e1059a1133b2c74f248a2e4bec240cb4184948",
+        "assets/characters/caelan/walk_front/README.md": "b0489b63b673405f0e4eb2fe7146f2f6f051f07f1a3934ba414d457531477905",
+        "assets/characters/caelan/walk_front/animation.json": "29ebeb6453e53c6f87a38aa5243ebda347fab20573901325b4bbc5ce91990521",
+        "assets/characters/caelan/walk_front/frame_01.png": "16ee3ad7f67ef073a646bf72d0717260c93c4d7580f95eb40f294f1d7d40661f",
+        "assets/characters/caelan/walk_front/frame_02.png": "427a107ceef05fd92b1878420bc0228562caf06a7f31718c26414f2ecf182815",
+        "assets/characters/caelan/walk_front/frame_03.png": "51e1dabf6c13b19d04c6af6b5608b2750fbae2d017b39121fb18e39a396063bb",
+        "assets/characters/caelan/walk_front/frame_04.png": "6c9a77e8b56c4b8d5522a2dfdb6e55b86d44195d02fefb36281dc24ff20564be",
+        "assets/characters/caelan/walk_front/frames_review.png": "94773a2fb01dbb91208a00d9a45b981e4346573460fc1f9d76eeafad80a25127",
+        "assets/characters/caelan/walk_front/spritesheet.png": "58b7892d7fdcd31f8533ba965dc54bc629f75829bc32d39a853c9b8b7656d71c",
+        "assets/characters/caelan/walk_front/walk_front_preview.gif": "4ed26cee98f4437fd98d098c807b150c0b49ecaed2b28cfa941256bafb040ce1",
+        "assets/characters/caelan/walk_left/README.md": "f06f4340ad6f798f76ebd30530fcdc3b02e66770594c3ea3d39eadaf26d7bcfd",
+        "assets/characters/caelan/walk_left/animation.json": "cedeb0e8715bafde3747ba2733765884369517c18ee2bd367a3f41ff5478d516",
+        "assets/characters/caelan/walk_left/frame_01.png": "bd31d4de4a9aea6d4a21cb2a352786305f936af4d96be3e3a976295a87278bd9",
+        "assets/characters/caelan/walk_left/frame_02.png": "330df1e6e18953109741a343a5b38b38a129a3c91cbc75e009070f1c070f824e",
+        "assets/characters/caelan/walk_left/frame_03.png": "d13a9cc891085bb8311225c549db94dfb5db70aeb229fed023781790c7f2e805",
+        "assets/characters/caelan/walk_left/frame_04.png": "278948c2469428983828721bb1a37ab4f4177ebf18fb560b332efb3a836734f6",
+        "assets/characters/caelan/walk_left/frames_review.png": "4317983f4579f791e25ed6046f8721ce89af5b373d7288c8b57b0dd2f7028d40",
+        "assets/characters/caelan/walk_left/spritesheet.png": "3cbf9db1010ee946a18a04d11b05aff9d0abe9bdca6e74fb5559e7819797dbf9",
+        "assets/characters/caelan/walk_left/walk_left_preview.gif": "09663f8d3c2167f0bf377443fc16ac6087b65abd6543b6edc5ae2a873b96cff8",
+        "assets/characters/caelan/walk_right/README.md": "9936c911e0f767a84c2a82dbd50643148f50957488b22ebc18a339510412090c",
+        "assets/characters/caelan/walk_right/animation.json": "5969712ac9535553743f06f5ca38a7a15b9270d04e864a7fb25142be7a24e139",
+        "assets/characters/caelan/walk_right/frame_01.png": "dd919ec2769e4b5cf5f020880840b0066da2cfa7d1db392da12c6194cda2738a",
+        "assets/characters/caelan/walk_right/frame_02.png": "79d825b02f7e7e996c5dd83756dcae1beedd84a491a81e6dc0248a7ded7c0135",
+        "assets/characters/caelan/walk_right/frame_03.png": "c81ce51f8fc2c7725f4f0ef8fac86dc711000eb2db3718c52fc81ad8026b07b1",
+        "assets/characters/caelan/walk_right/frame_04.png": "8b8d0303d2a22d5049c31847d0ddc42a9a06cd47b9a5f6c1837fc2323342a09d",
+        "assets/characters/caelan/walk_right/frames_review.png": "acf4360f3dd45bbb501346af0504fcb0c4945c263f83194c940d9526c6da2fa0",
+        "assets/characters/caelan/walk_right/spritesheet.png": "e4f9ad81fd2961d16e96897eaaf3480d4a9e7cff2fd5c5eb0faed6bf83c15dc9",
+        "assets/characters/caelan/walk_right/walk_right_preview.gif": "7c745b414c4ea7d0886805b452e3d07d7a472fa73146e5bb8d25a4dddfb5ee8d"
+      }
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_left_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/idle_back.png": "48e1e4c117ac1792ed7a5ee4c4ed24cc571524334afdf12e3a8d15b6c11aa47e",
+        "assets/characters/caelan/idle_directions.json": "2a2d21eccf097a05290c541acbfe98ff6ca86b4e68aef710403baee90dfdc1db",
+        "assets/characters/caelan/idle_directions.png": "e684349d335e572d5cc049d43da64055b152350aec00adf46d1688e83cec7308",
+        "assets/characters/caelan/idle_directions_review.png": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792",
+        "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
+        "assets/characters/caelan/idle_front_preview.png": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f",
+        "assets/characters/caelan/idle_front_review.png": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351",
+        "assets/characters/caelan/idle_left.png": "aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086",
+        "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
+        "assets/characters/caelan/walk_directions.json": "df2b5eb80e67f31b4203bdfd3b874844d37a14dde1e26bdf336f3ea1aea5d624",
+        "assets/characters/caelan/walk_directions.png": "b9289d0384e23dfcf0321ce5924eeefbb4a82678c0a746623ea3fad16eb614b9",
+        "assets/characters/caelan/walk_directions_review.gif": "fcf10aecaed2496a6efa6761d7a1db1eaa5b834906528f39e318ec6a6bf9ca7e",
+        "assets/characters/caelan/walk_directions_review.png": "fba6b1ec8a24df4b5cabd03bbfb76c35632e4b922efa5200986cd1383c8a92e8",
+        "assets/characters/caelan/animation.json": "78dcdfe41fd74481ca7d374d676363d41e9dc8d0d1c2b7ee9af904c41d87d286",
+        "assets/characters/caelan/run_back/animation.json": "33eefc7d22760c8a3d8d1b5ae6dbf69ad349ef8cf9c50fc1e0979bc8093929d0",
+        "assets/characters/caelan/run_back/frame_01.png": "04de2c6a76ef08f282f7a809634bf38d635bb862d429cea0148c00a765236e31",
+        "assets/characters/caelan/run_back/frame_02.png": "84f4cd09516a96afdb12fe5c5905fb768236926e9d411ca46d9b0bce3fd5c48c",
+        "assets/characters/caelan/run_back/frame_03.png": "d849eca02ad7e6969b63af627cf3388cb00d0829cdcf3786edb4cd9563cf3627",
+        "assets/characters/caelan/run_back/frame_04.png": "82906a2cad93be7c03dba41d343a6fcf44a7aef26e76d4ccdbc15f70ca0b5ca3",
+        "assets/characters/caelan/run_back/spritesheet.png": "ab759fa35b863a09c8c4e78487f9c0e2a116aa973cad1ad7bae5dd878b819898",
+        "assets/characters/caelan/run_front/animation.json": "cf78d9bc0ae1cf426a3e6d4b02c01363d8d40df0df479afaf08eeb90e58ce029",
+        "assets/characters/caelan/run_front/frame_01.png": "0b094d8f75646aa394d1552473a05c87b45641133d48de050b7cdaa4ed363954",
+        "assets/characters/caelan/run_front/frame_02.png": "368e4a6d022393b2bfbae61d26e3d239eb09616d65957b4a31695a2dfd43dc74",
+        "assets/characters/caelan/run_front/frame_03.png": "960cabf6ae51527e1250b7cc7804d78d9b022e91c954ccf92c8b7a9f051aa114",
+        "assets/characters/caelan/run_front/frame_04.png": "b22b9d4b0fdb812151428d50f94e4a941575a12dc2c87b313c1c83b5bb43a0cd",
+        "assets/characters/caelan/run_front/spritesheet.png": "eeb4f2e6a23351dbd7cb1782f8781fb1a58c21dfeca376239aeeb8621c2714a6",
+        "assets/characters/caelan/run_left/animation.json": "0ff3b55888ba29b66c84a589e4df64875b635fcf462f2daf89dcc8be24bef008",
+        "assets/characters/caelan/run_left/frame_01.png": "85380019f16a656c16e8e6299eded907b027fd38d5427b4448fd761554b5383a",
+        "assets/characters/caelan/run_left/frame_02.png": "61c32be06450797ea0e6188d496a4afb08691198ea9f7b41005d76bc4e8b74f7",
+        "assets/characters/caelan/run_left/frame_03.png": "7b4e97a71d333de841de5e8b191019a0d372cbe97fe8637ef642d5711317dca6",
+        "assets/characters/caelan/run_left/frame_04.png": "e4c9584e30b114211bdf066e2f4fabd06058a1eb3de74bc1fe095009b289a05d",
+        "assets/characters/caelan/run_left/spritesheet.png": "0bbf228c431b6987cf3ae42e31502f8b38e82277f7e3e786b9073f0738f8688a",
+        "assets/characters/caelan/run_right/animation.json": "c9d07831cfaf3e77acb40f9a0dc8a9277fcfc73d7cc420e2a0b61e7beabe3b18",
+        "assets/characters/caelan/run_right/frame_01.png": "dd40e7eba71c753d5e7e6276bc61a705624aa1625dc549fdb62e174b3b76b7f1",
+        "assets/characters/caelan/run_right/frame_02.png": "7a4a74264f10918763d5adb9d9d9ba512812eb9d71c170cf425023830fccf6b4",
+        "assets/characters/caelan/run_right/frame_03.png": "9f76ce7f1ffc07d96def11e3517a0369f76f1a82c934afc27a513ac7db631c7d",
+        "assets/characters/caelan/run_right/frame_04.png": "d2375f716d37cd7ed0d2c91aaf6d0616dc31be18d657add47f85a7f69d271eef",
+        "assets/characters/caelan/run_right/spritesheet.png": "f6bf25146385f6020e996f4589168f9f34211b97ab0fe2443d57416f925a8358",
+        "assets/characters/caelan/walk_back/README.md": "6c1d1c5474405a3364a50aae7bb0844baf0255b35576b30200b51da4c8914cc6",
+        "assets/characters/caelan/walk_back/animation.json": "2a00bcfcf0bdc567dbb85ad5de4272c9621c9acb5ba63e1faaa41ef0b1142172",
+        "assets/characters/caelan/walk_back/frame_01.png": "cecc793a7655cb9c6d02d9ebe22d929e13d0568757af28c276e67d7dfe97a92e",
+        "assets/characters/caelan/walk_back/frame_02.png": "a911743a781304928d54ec26de2ec9d7effa412680ddc268ae573ca6de612e0c",
+        "assets/characters/caelan/walk_back/frame_03.png": "b7033f3aedaf8efb393f251b0752494c17a5dfd906158d5e820d486526071835",
+        "assets/characters/caelan/walk_back/frame_04.png": "9a80511e848dffc3f96f6971aa9d3a78b23368f7cb96f9cc277a5433643073df",
+        "assets/characters/caelan/walk_back/frames_review.png": "523d84ac432e23c395c06d6f9a2d233554224c43acf8cbda7f34838061d15c92",
+        "assets/characters/caelan/walk_back/spritesheet.png": "b4aab9cdddc5ba1e3e0d1d8d1edac52a75847924c8ebfc2e7fefc7764f251f46",
+        "assets/characters/caelan/walk_back/walk_back_preview.gif": "7135a314092d6672ad2b9e6950e1059a1133b2c74f248a2e4bec240cb4184948",
+        "assets/characters/caelan/walk_front/README.md": "b0489b63b673405f0e4eb2fe7146f2f6f051f07f1a3934ba414d457531477905",
+        "assets/characters/caelan/walk_front/animation.json": "29ebeb6453e53c6f87a38aa5243ebda347fab20573901325b4bbc5ce91990521",
+        "assets/characters/caelan/walk_front/frame_01.png": "16ee3ad7f67ef073a646bf72d0717260c93c4d7580f95eb40f294f1d7d40661f",
+        "assets/characters/caelan/walk_front/frame_02.png": "427a107ceef05fd92b1878420bc0228562caf06a7f31718c26414f2ecf182815",
+        "assets/characters/caelan/walk_front/frame_03.png": "51e1dabf6c13b19d04c6af6b5608b2750fbae2d017b39121fb18e39a396063bb",
+        "assets/characters/caelan/walk_front/frame_04.png": "6c9a77e8b56c4b8d5522a2dfdb6e55b86d44195d02fefb36281dc24ff20564be",
+        "assets/characters/caelan/walk_front/frames_review.png": "94773a2fb01dbb91208a00d9a45b981e4346573460fc1f9d76eeafad80a25127",
+        "assets/characters/caelan/walk_front/spritesheet.png": "58b7892d7fdcd31f8533ba965dc54bc629f75829bc32d39a853c9b8b7656d71c",
+        "assets/characters/caelan/walk_front/walk_front_preview.gif": "4ed26cee98f4437fd98d098c807b150c0b49ecaed2b28cfa941256bafb040ce1",
+        "assets/characters/caelan/walk_left/README.md": "f06f4340ad6f798f76ebd30530fcdc3b02e66770594c3ea3d39eadaf26d7bcfd",
+        "assets/characters/caelan/walk_left/animation.json": "cedeb0e8715bafde3747ba2733765884369517c18ee2bd367a3f41ff5478d516",
+        "assets/characters/caelan/walk_left/frame_01.png": "bd31d4de4a9aea6d4a21cb2a352786305f936af4d96be3e3a976295a87278bd9",
+        "assets/characters/caelan/walk_left/frame_02.png": "330df1e6e18953109741a343a5b38b38a129a3c91cbc75e009070f1c070f824e",
+        "assets/characters/caelan/walk_left/frame_03.png": "d13a9cc891085bb8311225c549db94dfb5db70aeb229fed023781790c7f2e805",
+        "assets/characters/caelan/walk_left/frame_04.png": "278948c2469428983828721bb1a37ab4f4177ebf18fb560b332efb3a836734f6",
+        "assets/characters/caelan/walk_left/frames_review.png": "4317983f4579f791e25ed6046f8721ce89af5b373d7288c8b57b0dd2f7028d40",
+        "assets/characters/caelan/walk_left/spritesheet.png": "3cbf9db1010ee946a18a04d11b05aff9d0abe9bdca6e74fb5559e7819797dbf9",
+        "assets/characters/caelan/walk_left/walk_left_preview.gif": "09663f8d3c2167f0bf377443fc16ac6087b65abd6543b6edc5ae2a873b96cff8",
+        "assets/characters/caelan/walk_right/README.md": "9936c911e0f767a84c2a82dbd50643148f50957488b22ebc18a339510412090c",
+        "assets/characters/caelan/walk_right/animation.json": "5969712ac9535553743f06f5ca38a7a15b9270d04e864a7fb25142be7a24e139",
+        "assets/characters/caelan/walk_right/frame_01.png": "dd919ec2769e4b5cf5f020880840b0066da2cfa7d1db392da12c6194cda2738a",
+        "assets/characters/caelan/walk_right/frame_02.png": "79d825b02f7e7e996c5dd83756dcae1beedd84a491a81e6dc0248a7ded7c0135",
+        "assets/characters/caelan/walk_right/frame_03.png": "c81ce51f8fc2c7725f4f0ef8fac86dc711000eb2db3718c52fc81ad8026b07b1",
+        "assets/characters/caelan/walk_right/frame_04.png": "8b8d0303d2a22d5049c31847d0ddc42a9a06cd47b9a5f6c1837fc2323342a09d",
+        "assets/characters/caelan/walk_right/frames_review.png": "acf4360f3dd45bbb501346af0504fcb0c4945c263f83194c940d9526c6da2fa0",
+        "assets/characters/caelan/walk_right/spritesheet.png": "e4f9ad81fd2961d16e96897eaaf3480d4a9e7cff2fd5c5eb0faed6bf83c15dc9",
+        "assets/characters/caelan/walk_right/walk_right_preview.gif": "7c745b414c4ea7d0886805b452e3d07d7a472fa73146e5bb8d25a4dddfb5ee8d",
+        "assets/characters/caelan/review_hd/run_right/animation.json": "d959239bfb0670b4dd0c0a0e6a52aee296a6d709322ee133a9eaf68a5fd784f0",
+        "assets/characters/caelan/review_hd/run_front/animation.json": "a190a70b10af0b0fc71ce64dd191b22d75a989a4c694f060b551a027b7bf37a9",
+        "assets/characters/caelan/review_hd/run_back/animation.json": "8ecf120647c92b62e7af7a42e9cde00a3d68c430223ddecc83e5cc8237fe35e7"
+      }
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_back_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/idle_back.png": "48e1e4c117ac1792ed7a5ee4c4ed24cc571524334afdf12e3a8d15b6c11aa47e",
+        "assets/characters/caelan/idle_directions.json": "2a2d21eccf097a05290c541acbfe98ff6ca86b4e68aef710403baee90dfdc1db",
+        "assets/characters/caelan/idle_directions.png": "e684349d335e572d5cc049d43da64055b152350aec00adf46d1688e83cec7308",
+        "assets/characters/caelan/idle_directions_review.png": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792",
+        "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
+        "assets/characters/caelan/idle_front_preview.png": "cd8681d34d4a5a2c79e3ee32ce5fa608ec400e1d6d707a19a94d332b5246dd7f",
+        "assets/characters/caelan/idle_front_review.png": "cea987e3c63b23159140c8a6b406de84113753049479e3b9cb57c81d8aa5d351",
+        "assets/characters/caelan/idle_left.png": "aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086",
+        "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
+        "assets/characters/caelan/walk_directions.json": "df2b5eb80e67f31b4203bdfd3b874844d37a14dde1e26bdf336f3ea1aea5d624",
+        "assets/characters/caelan/walk_directions.png": "b9289d0384e23dfcf0321ce5924eeefbb4a82678c0a746623ea3fad16eb614b9",
+        "assets/characters/caelan/walk_directions_review.gif": "fcf10aecaed2496a6efa6761d7a1db1eaa5b834906528f39e318ec6a6bf9ca7e",
+        "assets/characters/caelan/walk_directions_review.png": "fba6b1ec8a24df4b5cabd03bbfb76c35632e4b922efa5200986cd1383c8a92e8",
+        "assets/characters/caelan/animation.json": "78dcdfe41fd74481ca7d374d676363d41e9dc8d0d1c2b7ee9af904c41d87d286",
+        "assets/characters/caelan/run_back/animation.json": "33eefc7d22760c8a3d8d1b5ae6dbf69ad349ef8cf9c50fc1e0979bc8093929d0",
+        "assets/characters/caelan/run_back/frame_01.png": "04de2c6a76ef08f282f7a809634bf38d635bb862d429cea0148c00a765236e31",
+        "assets/characters/caelan/run_back/frame_02.png": "84f4cd09516a96afdb12fe5c5905fb768236926e9d411ca46d9b0bce3fd5c48c",
+        "assets/characters/caelan/run_back/frame_03.png": "d849eca02ad7e6969b63af627cf3388cb00d0829cdcf3786edb4cd9563cf3627",
+        "assets/characters/caelan/run_back/frame_04.png": "82906a2cad93be7c03dba41d343a6fcf44a7aef26e76d4ccdbc15f70ca0b5ca3",
+        "assets/characters/caelan/run_back/spritesheet.png": "ab759fa35b863a09c8c4e78487f9c0e2a116aa973cad1ad7bae5dd878b819898",
+        "assets/characters/caelan/run_front/animation.json": "cf78d9bc0ae1cf426a3e6d4b02c01363d8d40df0df479afaf08eeb90e58ce029",
+        "assets/characters/caelan/run_front/frame_01.png": "0b094d8f75646aa394d1552473a05c87b45641133d48de050b7cdaa4ed363954",
+        "assets/characters/caelan/run_front/frame_02.png": "368e4a6d022393b2bfbae61d26e3d239eb09616d65957b4a31695a2dfd43dc74",
+        "assets/characters/caelan/run_front/frame_03.png": "960cabf6ae51527e1250b7cc7804d78d9b022e91c954ccf92c8b7a9f051aa114",
+        "assets/characters/caelan/run_front/frame_04.png": "b22b9d4b0fdb812151428d50f94e4a941575a12dc2c87b313c1c83b5bb43a0cd",
+        "assets/characters/caelan/run_front/spritesheet.png": "eeb4f2e6a23351dbd7cb1782f8781fb1a58c21dfeca376239aeeb8621c2714a6",
+        "assets/characters/caelan/run_left/animation.json": "0ff3b55888ba29b66c84a589e4df64875b635fcf462f2daf89dcc8be24bef008",
+        "assets/characters/caelan/run_left/frame_01.png": "85380019f16a656c16e8e6299eded907b027fd38d5427b4448fd761554b5383a",
+        "assets/characters/caelan/run_left/frame_02.png": "61c32be06450797ea0e6188d496a4afb08691198ea9f7b41005d76bc4e8b74f7",
+        "assets/characters/caelan/run_left/frame_03.png": "7b4e97a71d333de841de5e8b191019a0d372cbe97fe8637ef642d5711317dca6",
+        "assets/characters/caelan/run_left/frame_04.png": "e4c9584e30b114211bdf066e2f4fabd06058a1eb3de74bc1fe095009b289a05d",
+        "assets/characters/caelan/run_left/spritesheet.png": "0bbf228c431b6987cf3ae42e31502f8b38e82277f7e3e786b9073f0738f8688a",
+        "assets/characters/caelan/run_right/animation.json": "c9d07831cfaf3e77acb40f9a0dc8a9277fcfc73d7cc420e2a0b61e7beabe3b18",
+        "assets/characters/caelan/run_right/frame_01.png": "dd40e7eba71c753d5e7e6276bc61a705624aa1625dc549fdb62e174b3b76b7f1",
+        "assets/characters/caelan/run_right/frame_02.png": "7a4a74264f10918763d5adb9d9d9ba512812eb9d71c170cf425023830fccf6b4",
+        "assets/characters/caelan/run_right/frame_03.png": "9f76ce7f1ffc07d96def11e3517a0369f76f1a82c934afc27a513ac7db631c7d",
+        "assets/characters/caelan/run_right/frame_04.png": "d2375f716d37cd7ed0d2c91aaf6d0616dc31be18d657add47f85a7f69d271eef",
+        "assets/characters/caelan/run_right/spritesheet.png": "f6bf25146385f6020e996f4589168f9f34211b97ab0fe2443d57416f925a8358",
+        "assets/characters/caelan/walk_back/README.md": "6c1d1c5474405a3364a50aae7bb0844baf0255b35576b30200b51da4c8914cc6",
+        "assets/characters/caelan/walk_back/animation.json": "2a00bcfcf0bdc567dbb85ad5de4272c9621c9acb5ba63e1faaa41ef0b1142172",
+        "assets/characters/caelan/walk_back/frame_01.png": "cecc793a7655cb9c6d02d9ebe22d929e13d0568757af28c276e67d7dfe97a92e",
+        "assets/characters/caelan/walk_back/frame_02.png": "a911743a781304928d54ec26de2ec9d7effa412680ddc268ae573ca6de612e0c",
+        "assets/characters/caelan/walk_back/frame_03.png": "b7033f3aedaf8efb393f251b0752494c17a5dfd906158d5e820d486526071835",
+        "assets/characters/caelan/walk_back/frame_04.png": "9a80511e848dffc3f96f6971aa9d3a78b23368f7cb96f9cc277a5433643073df",
+        "assets/characters/caelan/walk_back/frames_review.png": "523d84ac432e23c395c06d6f9a2d233554224c43acf8cbda7f34838061d15c92",
+        "assets/characters/caelan/walk_back/spritesheet.png": "b4aab9cdddc5ba1e3e0d1d8d1edac52a75847924c8ebfc2e7fefc7764f251f46",
+        "assets/characters/caelan/walk_back/walk_back_preview.gif": "7135a314092d6672ad2b9e6950e1059a1133b2c74f248a2e4bec240cb4184948",
+        "assets/characters/caelan/walk_front/README.md": "b0489b63b673405f0e4eb2fe7146f2f6f051f07f1a3934ba414d457531477905",
+        "assets/characters/caelan/walk_front/animation.json": "29ebeb6453e53c6f87a38aa5243ebda347fab20573901325b4bbc5ce91990521",
+        "assets/characters/caelan/walk_front/frame_01.png": "16ee3ad7f67ef073a646bf72d0717260c93c4d7580f95eb40f294f1d7d40661f",
+        "assets/characters/caelan/walk_front/frame_02.png": "427a107ceef05fd92b1878420bc0228562caf06a7f31718c26414f2ecf182815",
+        "assets/characters/caelan/walk_front/frame_03.png": "51e1dabf6c13b19d04c6af6b5608b2750fbae2d017b39121fb18e39a396063bb",
+        "assets/characters/caelan/walk_front/frame_04.png": "6c9a77e8b56c4b8d5522a2dfdb6e55b86d44195d02fefb36281dc24ff20564be",
+        "assets/characters/caelan/walk_front/frames_review.png": "94773a2fb01dbb91208a00d9a45b981e4346573460fc1f9d76eeafad80a25127",
+        "assets/characters/caelan/walk_front/spritesheet.png": "58b7892d7fdcd31f8533ba965dc54bc629f75829bc32d39a853c9b8b7656d71c",
+        "assets/characters/caelan/walk_front/walk_front_preview.gif": "4ed26cee98f4437fd98d098c807b150c0b49ecaed2b28cfa941256bafb040ce1",
+        "assets/characters/caelan/walk_left/README.md": "f06f4340ad6f798f76ebd30530fcdc3b02e66770594c3ea3d39eadaf26d7bcfd",
+        "assets/characters/caelan/walk_left/animation.json": "cedeb0e8715bafde3747ba2733765884369517c18ee2bd367a3f41ff5478d516",
+        "assets/characters/caelan/walk_left/frame_01.png": "bd31d4de4a9aea6d4a21cb2a352786305f936af4d96be3e3a976295a87278bd9",
+        "assets/characters/caelan/walk_left/frame_02.png": "330df1e6e18953109741a343a5b38b38a129a3c91cbc75e009070f1c070f824e",
+        "assets/characters/caelan/walk_left/frame_03.png": "d13a9cc891085bb8311225c549db94dfb5db70aeb229fed023781790c7f2e805",
+        "assets/characters/caelan/walk_left/frame_04.png": "278948c2469428983828721bb1a37ab4f4177ebf18fb560b332efb3a836734f6",
+        "assets/characters/caelan/walk_left/frames_review.png": "4317983f4579f791e25ed6046f8721ce89af5b373d7288c8b57b0dd2f7028d40",
+        "assets/characters/caelan/walk_left/spritesheet.png": "3cbf9db1010ee946a18a04d11b05aff9d0abe9bdca6e74fb5559e7819797dbf9",
+        "assets/characters/caelan/walk_left/walk_left_preview.gif": "09663f8d3c2167f0bf377443fc16ac6087b65abd6543b6edc5ae2a873b96cff8",
+        "assets/characters/caelan/walk_right/README.md": "9936c911e0f767a84c2a82dbd50643148f50957488b22ebc18a339510412090c",
+        "assets/characters/caelan/walk_right/animation.json": "5969712ac9535553743f06f5ca38a7a15b9270d04e864a7fb25142be7a24e139",
+        "assets/characters/caelan/walk_right/frame_01.png": "dd919ec2769e4b5cf5f020880840b0066da2cfa7d1db392da12c6194cda2738a",
+        "assets/characters/caelan/walk_right/frame_02.png": "79d825b02f7e7e996c5dd83756dcae1beedd84a491a81e6dc0248a7ded7c0135",
+        "assets/characters/caelan/walk_right/frame_03.png": "c81ce51f8fc2c7725f4f0ef8fac86dc711000eb2db3718c52fc81ad8026b07b1",
+        "assets/characters/caelan/walk_right/frame_04.png": "8b8d0303d2a22d5049c31847d0ddc42a9a06cd47b9a5f6c1837fc2323342a09d",
+        "assets/characters/caelan/walk_right/frames_review.png": "acf4360f3dd45bbb501346af0504fcb0c4945c263f83194c940d9526c6da2fa0",
+        "assets/characters/caelan/walk_right/spritesheet.png": "e4f9ad81fd2961d16e96897eaaf3480d4a9e7cff2fd5c5eb0faed6bf83c15dc9",
+        "assets/characters/caelan/walk_right/walk_right_preview.gif": "7c745b414c4ea7d0886805b452e3d07d7a472fa73146e5bb8d25a4dddfb5ee8d",
+        "assets/characters/caelan/review_hd/run_front/animation.json": "a190a70b10af0b0fc71ce64dd191b22d75a989a4c694f060b551a027b7bf37a9"
+      }
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_right_hd_review/protected_references.json",
+      "retired_entries": {
+        "docs/reviews/caelan_front_run_hd/README.md": "9f321df35d7029045c28201cc14ea2c20dc3caa11b3d45a96efc086394d3d53e",
+        "docs/reviews/caelan_back_run_hd/README.md": "688a095a19967932e05e1dd639d8464fd78b3008217aa752c2a79fdf5fe05e27"
+      },
+      "reason": "Review documents now point to actual runtime integration; sprite protection remains unchanged."
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_left_hd_review/protected_references.json",
+      "retired_entries": {
+        "docs/reviews/caelan_front_run_hd/README.md": "9f321df35d7029045c28201cc14ea2c20dc3caa11b3d45a96efc086394d3d53e",
+        "docs/reviews/caelan_back_run_hd/README.md": "688a095a19967932e05e1dd639d8464fd78b3008217aa752c2a79fdf5fe05e27",
+        "docs/reviews/caelan_right_run_hd/README.md": "ef6f93020506733216aeb76061c6c95212ea54027e5c6b6f3bde2b2fa9a97135"
+      },
+      "reason": "Review documents now point to actual runtime integration; sprite protection remains unchanged."
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_back_hd_review/protected_references.json",
+      "retired_entries": {
+        "docs/reviews/caelan_front_run_hd/README.md": "9f321df35d7029045c28201cc14ea2c20dc3caa11b3d45a96efc086394d3d53e"
+      },
+      "reason": "Review documents now point to actual runtime integration; sprite protection remains unchanged."
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_right_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/README.md": "d989b03a328612072375a7d5e03cde7886365a35a831a6d34e195261c829bfd8"
+      },
+      "reason": "Runtime guide updated for all four HD runs; no sprite pixel change."
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_front_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/README.md": "d989b03a328612072375a7d5e03cde7886365a35a831a6d34e195261c829bfd8"
+      },
+      "reason": "Runtime guide updated for all four HD runs; no sprite pixel change."
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_left_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/README.md": "d989b03a328612072375a7d5e03cde7886365a35a831a6d34e195261c829bfd8"
+      },
+      "reason": "Runtime guide updated for all four HD runs; no sprite pixel change."
+    },
+    {
+      "contract": "assets/source/characters/caelan/run_back_hd_review/protected_references.json",
+      "retired_entries": {
+        "assets/characters/caelan/README.md": "d989b03a328612072375a7d5e03cde7886365a35a831a6d34e195261c829bfd8"
+      },
+      "reason": "Runtime guide updated for all four HD runs; no sprite pixel change."
+    }
+  ],
+  "offline_reference_tools_updated": [
+    "build_caelan_overworld_dependents.py",
+    "build_caelan_participation.py",
+    "build_companion_front_walks.py",
+    "build_companion_sprite_studies.py",
+    "build_dungeon_geology.py",
+    "build_dungeon_pack_catalog.py",
+    "build_dungeon_review_scene.py",
+    "build_dungeon_structure.py",
+    "build_dungeon_water.py",
+    "build_eldenmere_bridge.py",
+    "build_eldenmere_cottage_interior.py",
+    "build_eldenmere_foliage.py",
+    "build_eldenmere_garden_fence.py",
+    "build_eldenmere_grass_flowers.py",
+    "build_eldenmere_reeds.py",
+    "build_eldenmere_terrain.py",
+    "build_eldenmere_town.py",
+    "build_elira_visit.py",
+    "build_grass_assets.py",
+    "build_grass_demo_assets.py",
+    "build_limestone_cave_assets.py",
+    "build_microcrystal_adapters.py",
+    "build_mill_poses.py",
+    "build_regent_emergency_assets.py",
+    "build_sanctuary_cave.py",
+    "build_sanctuary_crystals.py",
+    "build_sanctuary_grove.py",
+    "build_sanctuary_opening_poses.py",
+    "build_tomas_idle.py",
+    "build_venn_magicks.py",
+    "build_venn_visit.py",
+    "build_wall_gems.py",
+    "capture_grass_demo.py",
+    "capture_grass_rollout.py",
+    "capture_limestone_cave.py",
+    "export_iselin_first_assets.py",
+    "test_eldenmere_cottage_furniture.py",
+    "test_eldenmere_cottage_interior.py",
+    "test_eldenmere_cottage_kitchen.py",
+    "test_eldenmere_cottage_layouts.py",
+    "test_eldenmere_cottage_storage.py",
+    "test_eldenmere_foliage.py",
+    "test_eldenmere_garden_fence.py",
+    "test_eldenmere_grass_flowers.py",
+    "test_eldenmere_reeds.py",
+    "test_eldenmere_sanctuary_charm.py",
+    "test_eldenmere_sanctuary_interior.py",
+    "test_eldenmere_town.py"
+  ]
+}

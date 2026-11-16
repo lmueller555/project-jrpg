@@ -27,7 +27,7 @@ class CaelanPickupContinuityTests(unittest.TestCase):
         self.assertIsNone(visit.carried)
         self.assertTrue(visit.surface_prop_visible(visit.surface_props[0]))
         self.assertFalse(hasattr(game.player,'story_sprite'))
-        self.assertEqual(pygame.image.tobytes(game.player.sprite(),'RGBA'),registered(1)[0].tobytes())
+        self.assertEqual(pygame.image.tobytes(game.player.sprite(),'RGBA'),pygame.image.tobytes(game.player.idles['back'],'RGBA'))
         visit._update_player(.179)
         self.assertFalse(visit.contact)
         self.assertTrue(visit.surface_prop_visible(visit.surface_props[0]))

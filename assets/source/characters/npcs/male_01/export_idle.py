@@ -55,7 +55,7 @@ def main():
     comparison = Image.new("RGB", (960, 620), background)
     draw = ImageDraw.Draw(comparison)
     for index, (label, path) in enumerate((
-        ("Caelan", ASSETS / "characters/caelan/idle_front.png"),
+        ("Caelan", ASSETS / "characters/caelan/review_hd/idles/idle_front.png"),
         (f"Male NPC 01 ({status})", OUTPUT / "idle_front.png"),
         ("Mira", ASSETS / "characters/mira/idle_front.png"),
     )):

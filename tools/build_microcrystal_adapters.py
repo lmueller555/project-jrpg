@@ -5,6 +5,10 @@ facet orientation and six brightness frames. Every field stays transparent so
 the dungeon's limestone remains visible between the tiny separated grains.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image, reference_digest
+except ModuleNotFoundError:
+    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -33,7 +37,7 @@ def products():
     def opened(path):
         full = ROOT/path;used.add(full)
         if full not in images:
-            with Image.open(full) as image:images[full] = image.convert('RGBA')
+            with open_image(full) as image:images[full] = image.convert('RGBA')
         return images[full]
 
     def emit(path, value):
@@ -162,7 +166,7 @@ def products():
         'deterministic verification. The authoritative source is '
         '`assets/source/terrain/limestone_cave/micro_adapters.json`.\n'
     ).encode()
-    inputs = {str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest() for path in sorted(used)}
+    inputs = {str(path.relative_to(ROOT)): reference_digest(path) for path in sorted(used)}
     manifest = {'version': 1, 'id': spec['id'], 'approval_status': spec['approval_status'],
                 'tile_size': 24, 'representation': 'embedded_microcrystal_adapters',
                 'grain_limits': spec['grain_limits'], 'pulse_frames': spec['pulse_frames'],

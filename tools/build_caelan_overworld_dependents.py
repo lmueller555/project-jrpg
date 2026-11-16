@@ -6,6 +6,10 @@ registrations. Original prop/FX layers and manifests are retained as immutable
 inputs so rebuilding never paints over previously generated results.
 """
 from __future__ import annotations
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 
 import argparse
 from copy import deepcopy
@@ -31,7 +35,7 @@ def encoded(image):
     stream=BytesIO();image.save(stream,format='PNG',optimize=True);return stream.getvalue()
 
 
-def old(name):return Image.open(LEGACY/name).convert('RGBA')
+def old(name):return open_image(LEGACY/name).convert('RGBA')
 def metadata(name):return json.loads((LEGACY/name).read_text())
 def blank(size=(24,36)):return Image.new('RGBA',size)
 
@@ -113,7 +117,7 @@ def products():
 
     # Sack ownership/layering is unchanged. Crouch keys are retained as future
     # pickup studies; activating them needs a separately scoped reachable station.
-    bag=Image.open(ROOT/'assets/story/halden/sack.png').convert('RGBA')
+    bag=open_image(ROOT/'assets/story/halden/sack.png').convert('RGBA')
     grip_boxes={'front':(6,19,17,25),'back':None,'left':(2,18,10,25),'right':(15,18,23,25)}
     def carrying(body,direction,drop=0):
         im=padded(body,(32,40),(4,4))
@@ -216,7 +220,7 @@ def products():
     # Elira's lantern remains the existing sprite, behind Caelan in rear view.
     # Shelf/world ownership transitions and logical ladder stations are intact.
     folder='assets/story/elira'
-    lantern=Image.open(ROOT/'assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png').convert('RGBA')
+    lantern=open_image(ROOT/'assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png').convert('RGBA')
     def lantern_canvas(body,origin=None,behind=False):
         im=blank((40,64));pos=(8+(origin or (18,2))[0],24+(origin or (18,2))[1])
         if origin is not None and behind:im.alpha_composite(lantern,pos)

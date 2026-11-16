@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Validate modular seams, hinged gate behavior, dry access and review delivery."""
 import json
 from pathlib import Path
@@ -14,7 +18,7 @@ def load(path): return json.loads(path.read_text())
 
 
 def opened(path):
-    with Image.open(path) as im: return im.convert('RGBA')
+    with open_image(path) as im: return im.convert('RGBA')
 
 
 class GardenFenceTests(unittest.TestCase):
@@ -187,7 +191,7 @@ class GardenFenceTests(unittest.TestCase):
     def test_scene_gifs_lossless_pixels_durations_and_loops(self):
         for name, crop, scale in (('review_scene', None, 2), ('garden_closeup', self.scene['review']['closeup_rect'], 4)):
             tick = 0
-            with Image.open(PACK / f'{name}.gif') as gif:
+            with open_image(PACK / f'{name}.gif') as gif:
                 self.assertEqual(gif.info['loop'], 0)
                 for encoded in range(gif.n_frames):
                     gif.seek(encoded); duration = gif.info['duration']; self.assertEqual(duration % 100, 0)
@@ -204,7 +208,7 @@ class GardenFenceTests(unittest.TestCase):
     def test_module_board_exact_pixels_and_matching_character_scale(self):
         tick = 0
         names = ('ew_a','ew_b','ns_a','ne_a','nes_a','nesw_a','e_a')
-        with Image.open(PACK / 'modules_review.gif') as gif:
+        with open_image(PACK / 'modules_review.gif') as gif:
             self.assertEqual(gif.info['loop'], 0)
             for encoded in range(gif.n_frames):
                 gif.seek(encoded); duration = gif.info['duration']; self.assertEqual(duration % 100, 0); board = gif.convert('RGB')

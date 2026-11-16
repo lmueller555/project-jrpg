@@ -99,10 +99,10 @@ class VennMagickTests(unittest.TestCase):
         body=Image.open(ART/'body.png').convert('RGBA')
         arms=Image.open(ART/'casting_arm.png').convert('RGBA')
         energy=Image.open(ART/'energy.png').convert('RGBA')
-        idle=Image.open(ROOT/'assets/characters/caelan/idle_right.png').convert('RGBA')
+        idle=Image.open(ART/'body.png').convert('RGBA').crop((8,8,32,44))
         source=ROOT/meta['appearance_source']
         self.assertEqual(meta['appearance_source_sha256'],hashlib.sha256(source.read_bytes()).hexdigest())
-        self.assertEqual(meta['source_idle_sha256'],hashlib.sha256((ROOT/'assets/characters/caelan/idle_right.png').read_bytes()).hexdigest())
+        self.assertEqual(meta['source_idle_sha256'],next(r['sha256'] for r in json.loads((ROOT/'assets/characters/caelan/retired_travel.json').read_text())['removed_files'] if r['path']=='assets/characters/caelan/idle_right.png'))
         self.assertEqual(meta['canvas'],[40,48]);self.assertEqual(meta['anchor'],[20,38])
         self.assertEqual(meta['source_offset'],[8,8])
         first=last=None;seen=set()

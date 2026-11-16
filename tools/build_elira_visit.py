@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Elira's costume and registered lantern poses on approved shared silhouettes."""
 import hashlib
 import json
@@ -13,7 +17,7 @@ OFFSET = (8, 24)
 ANCHOR = (20, 54)
 
 
-def load(path):return Image.open(ROOT/path).convert('RGBA')
+def load(path):return open_image(ROOT/path).convert('RGBA')
 
 
 def save(name, image):

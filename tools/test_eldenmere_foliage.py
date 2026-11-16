@@ -1,3 +1,7 @@
+try:
+    from tools.caelan_reference import open_image
+except ModuleNotFoundError:
+    from caelan_reference import open_image
 """Check fixed foliage structure, restrained cluster motion and synchronized delivery."""
 from pathlib import Path
 import json
@@ -12,7 +16,7 @@ GROUND=PACK.parent/'grass_dirt'
 
 
 def load(p):return json.loads(p.read_text())
-def opened(p):return Image.open(p).convert('RGBA')
+def opened(p):return open_image(p).convert('RGBA')
 
 
 class FoliageTests(unittest.TestCase):
@@ -117,19 +121,19 @@ class FoliageTests(unittest.TestCase):
 
     def test_review_gifs_exact_pixels_durations_and_scale_reference(self):
         for name,crop,scale in (('review_scene',None,2),('garden_closeup',self.scene['review']['closeup_rect'],4)):
-            with Image.open(PACK/f'{name}.gif') as gif:
+            with open_image(PACK/f'{name}.gif') as gif:
                 self.assertEqual(gif.n_frames,54);self.assertEqual(gif.info['loop'],0)
                 total=0
                 for phase,record in enumerate(self.scene['frames']):
-                    expected=Image.open(PACK/record['image']).convert('RGB')
+                    expected=open_image(PACK/record['image']).convert('RGB')
                     if crop:expected=expected.crop(crop)
                     expected=expected.resize((expected.width*scale,expected.height*scale),Image.Resampling.NEAREST)
                     gif.seek(phase);self.assertEqual(gif.info['duration'],200);total+=gif.info['duration']
                     self.assertEqual(expected.tobytes(),gif.convert('RGB').tobytes())
                 self.assertEqual(total,10800);gif.seek(0)
-                self.assertEqual(gif.convert('RGB').tobytes(),Image.open(PACK/f'{name}.png').convert('RGB').tobytes())
+                self.assertEqual(gif.convert('RGB').tobytes(),open_image(PACK/f'{name}.png').convert('RGB').tobytes())
         hero=opened(ROOT/'assets/characters/caelan/idle_front.png')
-        with Image.open(PACK/'foliage_review.gif') as gif:
+        with open_image(PACK/'foliage_review.gif') as gif:
             self.assertEqual(gif.n_frames,9);self.assertEqual(gif.info['loop'],0)
             for phase in range(9):
                 gif.seek(phase);self.assertEqual(gif.info['duration'],600)
