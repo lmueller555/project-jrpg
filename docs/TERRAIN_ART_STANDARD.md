@@ -15,10 +15,11 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The new Eldenmere grass/dirt blob pack is **rebuilt but not integrated**.
-Its 48×48 artwork tiles retain a 24×24 logical footprint. The shipped town and
-shared terrain retain their previous assets until a separate integration change.
-See the [staged pack reference](#staged-eldenmere-hd-grassdirt-blob).
+**Status:** The new Eldenmere grass/dirt and stone-paving packs are **rebuilt but
+not integrated**. Their 48×48 artwork tiles retain a 24×24 logical footprint.
+The shipped town and shared terrain retain previous assets until a separate
+integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob)
+and [stone-paving reference](#staged-eldenmere-hd-stone-paving).
 
 ## Contents
 
@@ -353,13 +354,13 @@ geometry and reproducible exports. Visual review remains necessary.
    preserve geometry, verify native composition and remove superseded assets/code
    once all references have migrated. Update this document's implementation status.
 
-Stone paving, terraces, water/banks and larger vegetation follow as coordinated
-families. The staged grass/dirt pack below completes the initial asset set; runtime
-migration and in-game acceptance remain a separate step.
+Grass/dirt and stone paving are available as staged asset packs below. Terraces,
+water/banks and larger vegetation follow as coordinated families. Runtime migration
+and in-game acceptance remain a separate step.
 
 ## 17. Existing pack maintenance reference
 
-Except for the explicitly staged HD bank, dimensions, timings and construction
+Except for the explicitly staged HD banks, dimensions, timings and construction
 formats below describe **existing 1× exports**, not requirements for newly drawn
 2× packs. Preserve these implementation
 facts when reproducing the existing bank. Recipes/manifests hold exact crops,
@@ -424,6 +425,47 @@ cottage is a legacy building shown at its existing physical size; Caelan and
 Iselin retain native approved HD pixels. These are illustrative compositions,
 not gameplay captures or runtime implementation. Integration must later verify
 the actual map, native rendering and interactions under section 14.
+
+### Staged Eldenmere HD stone paving
+
+Source recipe: `assets/source/terrain/eldenmere/stone_paving_hd/recipe.json`.
+Staged manifest: `assets/terrain/eldenmere/stone_paving_hd/tileset.json`.
+State is `rebuilt` / `not_integrated`, with user visual approval recorded separately.
+No playable map, selector, collision or renderer is changed by creating this bank.
+
+There are **47 canonical boundary shapes**, four phase-correct stone surface
+atlases and separate 47-shape grass/dirt contact-trim atlases. Tile artwork is
+48×48 per 24×24 logical footprint; quarter masks are 24×24 artwork. The fieldstone
+palette is the existing warm gray-beige terrace ramp. New retained surface drawings
+supply irregular fitted stones, quiet worn faces, restrained cracks and highlights.
+Optional sparse moss accents use existing greens and clip to stone mortar/shadow.
+
+**Texture phases are spatial, not random variants or animation frames.** A 96×96
+artwork pattern spans a 2×2 tile block. Select phase
+`(world_tile_x % 2) + 2 * (world_tile_y % 2)` using a common world origin across
+connected paving. The four interior tiles contain different arrangements but must
+retain that adjacency. Their stone/joint ports are paired; random phase selection
+would break joint continuity. Keep the same phase when changing a boundary mask.
+
+The manifest records four body files per shape, contact files, the complete
+256-neighborhood lookup, coverage/quarter masks, coordinate spaces and path bases.
+Stone bodies are common to both surrounds. For grass–dirt–stone junctions, select
+contact trim from the **actual substrate mask per pixel**, then draw the stone
+body above it. Do not choose one surround for an entire mixed paving tile.
+Layer order is substrate, material-clipped contact, phase-correct body, optional
+mortar-clipped moss and independently sorted world objects.
+
+```sh
+python tools/build_eldenmere_stone_paving_hd.py
+python tools/build_eldenmere_stone_paving_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_eldenmere_stone_paving_hd
+```
+
+[Stone-paving review evidence](reviews/eldenmere_hd_stone/README.md) shows both
+surrounds, repeated phase-correct material, a paved square, narrow walkway, enclosed
+patches, three-material junctions and approved character scale beside a retained
+cottage. These are offline compositions, not integration captures. Runtime/native
+composition, interactions and real map geometry still need integration acceptance.
 
 ### Shared emerald grass in production
 

@@ -1,0 +1,1600 @@
+{
+  "version": 1,
+  "id": "eldenmere.stone_paving.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "artwork_tile_size": [
+    48,
+    48
+  ],
+  "logical_quarter_size": [
+    12,
+    12
+  ],
+  "artwork_quarter_size": [
+    24,
+    24
+  ],
+  "rect_space": "artwork",
+  "anchor_space": "logical",
+  "shape_count": 47,
+  "texture_phase_count": 4,
+  "surface_atlases": [
+    "paving_47_phase_0.png",
+    "paving_47_phase_1.png",
+    "paving_47_phase_2.png",
+    "paving_47_phase_3.png"
+  ],
+  "surface_pattern": "surface/pattern_96.png",
+  "interior_phases": [
+    "surface/phase_0.png",
+    "surface/phase_1.png",
+    "surface/phase_2.png",
+    "surface/phase_3.png"
+  ],
+  "texture_phase_rule": "(world_tile_x % 2) + 2 * (world_tile_y % 2); use one world origin across connected paving. Phases are not freely interchangeable fill variants.",
+  "columns": 8,
+  "rows": 6,
+  "unused_slot": 47,
+  "coverage": "coverage_47.png",
+  "neighbor_bits": {
+    "N": 1,
+    "NE": 2,
+    "E": 4,
+    "SE": 8,
+    "S": 16,
+    "SW": 32,
+    "W": 64,
+    "NW": 128
+  },
+  "neighbor_offsets": {
+    "N": [
+      0,
+      -1
+    ],
+    "NE": [
+      1,
+      -1
+    ],
+    "E": [
+      1,
+      0
+    ],
+    "SE": [
+      1,
+      1
+    ],
+    "S": [
+      0,
+      1
+    ],
+    "SW": [
+      -1,
+      1
+    ],
+    "W": [
+      -1,
+      0
+    ],
+    "NW": [
+      -1,
+      -1
+    ]
+  },
+  "diagonal_rule": "Count a diagonal only when both adjoining cardinal neighbors connect.",
+  "lookup_256": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    18,
+    19,
+    18,
+    19,
+    20,
+    21,
+    20,
+    22,
+    18,
+    19,
+    18,
+    19,
+    23,
+    24,
+    23,
+    25,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    26,
+    27,
+    26,
+    27,
+    28,
+    29,
+    28,
+    30,
+    26,
+    27,
+    26,
+    27,
+    31,
+    32,
+    31,
+    33,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    18,
+    37,
+    18,
+    37,
+    20,
+    38,
+    20,
+    39,
+    18,
+    37,
+    18,
+    37,
+    23,
+    40,
+    23,
+    41,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    26,
+    42,
+    26,
+    42,
+    28,
+    43,
+    28,
+    44,
+    26,
+    42,
+    26,
+    42,
+    31,
+    45,
+    31,
+    46
+  ],
+  "tiles": [
+    {
+      "index": 0,
+      "mask": 0,
+      "rect": [
+        0,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_000.png",
+        "body/phase_1/mask_000.png",
+        "body/phase_2/mask_000.png",
+        "body/phase_3/mask_000.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_000.png",
+        "dirt": "contact/dirt/mask_000.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_outer.png",
+        "quarters/coverage/ne_outer.png",
+        "quarters/coverage/sw_outer.png",
+        "quarters/coverage/se_outer.png"
+      ]
+    },
+    {
+      "index": 1,
+      "mask": 1,
+      "rect": [
+        48,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_001.png",
+        "body/phase_1/mask_001.png",
+        "body/phase_2/mask_001.png",
+        "body/phase_3/mask_001.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_001.png",
+        "dirt": "contact/dirt/mask_001.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_outer.png",
+        "quarters/coverage/se_outer.png"
+      ]
+    },
+    {
+      "index": 2,
+      "mask": 4,
+      "rect": [
+        96,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_004.png",
+        "body/phase_1/mask_004.png",
+        "body/phase_2/mask_004.png",
+        "body/phase_3/mask_004.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_004.png",
+        "dirt": "contact/dirt/mask_004.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_outer.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_outer.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 3,
+      "mask": 5,
+      "rect": [
+        144,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_005.png",
+        "body/phase_1/mask_005.png",
+        "body/phase_2/mask_005.png",
+        "body/phase_3/mask_005.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_005.png",
+        "dirt": "contact/dirt/mask_005.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_outer.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 4,
+      "mask": 7,
+      "rect": [
+        192,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_007.png",
+        "body/phase_1/mask_007.png",
+        "body/phase_2/mask_007.png",
+        "body/phase_3/mask_007.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_007.png",
+        "dirt": "contact/dirt/mask_007.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_outer.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 5,
+      "mask": 16,
+      "rect": [
+        240,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_016.png",
+        "body/phase_1/mask_016.png",
+        "body/phase_2/mask_016.png",
+        "body/phase_3/mask_016.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_016.png",
+        "dirt": "contact/dirt/mask_016.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_outer.png",
+        "quarters/coverage/ne_outer.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 6,
+      "mask": 17,
+      "rect": [
+        288,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_017.png",
+        "body/phase_1/mask_017.png",
+        "body/phase_2/mask_017.png",
+        "body/phase_3/mask_017.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_017.png",
+        "dirt": "contact/dirt/mask_017.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 7,
+      "mask": 20,
+      "rect": [
+        336,
+        0,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_020.png",
+        "body/phase_1/mask_020.png",
+        "body/phase_2/mask_020.png",
+        "body/phase_3/mask_020.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_020.png",
+        "dirt": "contact/dirt/mask_020.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_outer.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 8,
+      "mask": 21,
+      "rect": [
+        0,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_021.png",
+        "body/phase_1/mask_021.png",
+        "body/phase_2/mask_021.png",
+        "body/phase_3/mask_021.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_021.png",
+        "dirt": "contact/dirt/mask_021.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 9,
+      "mask": 23,
+      "rect": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_023.png",
+        "body/phase_1/mask_023.png",
+        "body/phase_2/mask_023.png",
+        "body/phase_3/mask_023.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_023.png",
+        "dirt": "contact/dirt/mask_023.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 10,
+      "mask": 28,
+      "rect": [
+        96,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_028.png",
+        "body/phase_1/mask_028.png",
+        "body/phase_2/mask_028.png",
+        "body/phase_3/mask_028.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_028.png",
+        "dirt": "contact/dirt/mask_028.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_outer.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 11,
+      "mask": 29,
+      "rect": [
+        144,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_029.png",
+        "body/phase_1/mask_029.png",
+        "body/phase_2/mask_029.png",
+        "body/phase_3/mask_029.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_029.png",
+        "dirt": "contact/dirt/mask_029.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 12,
+      "mask": 31,
+      "rect": [
+        192,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_031.png",
+        "body/phase_1/mask_031.png",
+        "body/phase_2/mask_031.png",
+        "body/phase_3/mask_031.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_031.png",
+        "dirt": "contact/dirt/mask_031.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_x.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_edge_x.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 13,
+      "mask": 64,
+      "rect": [
+        240,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_064.png",
+        "body/phase_1/mask_064.png",
+        "body/phase_2/mask_064.png",
+        "body/phase_3/mask_064.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_064.png",
+        "dirt": "contact/dirt/mask_064.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_outer.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_outer.png"
+      ]
+    },
+    {
+      "index": 14,
+      "mask": 65,
+      "rect": [
+        288,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_065.png",
+        "body/phase_1/mask_065.png",
+        "body/phase_2/mask_065.png",
+        "body/phase_3/mask_065.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_065.png",
+        "dirt": "contact/dirt/mask_065.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_outer.png"
+      ]
+    },
+    {
+      "index": 15,
+      "mask": 68,
+      "rect": [
+        336,
+        48,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_068.png",
+        "body/phase_1/mask_068.png",
+        "body/phase_2/mask_068.png",
+        "body/phase_3/mask_068.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_068.png",
+        "dirt": "contact/dirt/mask_068.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 16,
+      "mask": 69,
+      "rect": [
+        0,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_069.png",
+        "body/phase_1/mask_069.png",
+        "body/phase_2/mask_069.png",
+        "body/phase_3/mask_069.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_069.png",
+        "dirt": "contact/dirt/mask_069.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 17,
+      "mask": 71,
+      "rect": [
+        48,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_071.png",
+        "body/phase_1/mask_071.png",
+        "body/phase_2/mask_071.png",
+        "body/phase_3/mask_071.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_071.png",
+        "dirt": "contact/dirt/mask_071.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 18,
+      "mask": 80,
+      "rect": [
+        96,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_080.png",
+        "body/phase_1/mask_080.png",
+        "body/phase_2/mask_080.png",
+        "body/phase_3/mask_080.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_080.png",
+        "dirt": "contact/dirt/mask_080.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_outer.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 19,
+      "mask": 81,
+      "rect": [
+        144,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_081.png",
+        "body/phase_1/mask_081.png",
+        "body/phase_2/mask_081.png",
+        "body/phase_3/mask_081.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_081.png",
+        "dirt": "contact/dirt/mask_081.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 20,
+      "mask": 84,
+      "rect": [
+        192,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_084.png",
+        "body/phase_1/mask_084.png",
+        "body/phase_2/mask_084.png",
+        "body/phase_3/mask_084.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_084.png",
+        "dirt": "contact/dirt/mask_084.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 21,
+      "mask": 85,
+      "rect": [
+        240,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_085.png",
+        "body/phase_1/mask_085.png",
+        "body/phase_2/mask_085.png",
+        "body/phase_3/mask_085.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_085.png",
+        "dirt": "contact/dirt/mask_085.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 22,
+      "mask": 87,
+      "rect": [
+        288,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_087.png",
+        "body/phase_1/mask_087.png",
+        "body/phase_2/mask_087.png",
+        "body/phase_3/mask_087.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_087.png",
+        "dirt": "contact/dirt/mask_087.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 23,
+      "mask": 92,
+      "rect": [
+        336,
+        96,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_092.png",
+        "body/phase_1/mask_092.png",
+        "body/phase_2/mask_092.png",
+        "body/phase_3/mask_092.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_092.png",
+        "dirt": "contact/dirt/mask_092.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 24,
+      "mask": 93,
+      "rect": [
+        0,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_093.png",
+        "body/phase_1/mask_093.png",
+        "body/phase_2/mask_093.png",
+        "body/phase_3/mask_093.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_093.png",
+        "dirt": "contact/dirt/mask_093.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 25,
+      "mask": 95,
+      "rect": [
+        48,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_095.png",
+        "body/phase_1/mask_095.png",
+        "body/phase_2/mask_095.png",
+        "body/phase_3/mask_095.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_095.png",
+        "dirt": "contact/dirt/mask_095.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 26,
+      "mask": 112,
+      "rect": [
+        96,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_112.png",
+        "body/phase_1/mask_112.png",
+        "body/phase_2/mask_112.png",
+        "body/phase_3/mask_112.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_112.png",
+        "dirt": "contact/dirt/mask_112.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_outer.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 27,
+      "mask": 113,
+      "rect": [
+        144,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_113.png",
+        "body/phase_1/mask_113.png",
+        "body/phase_2/mask_113.png",
+        "body/phase_3/mask_113.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_113.png",
+        "dirt": "contact/dirt/mask_113.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 28,
+      "mask": 116,
+      "rect": [
+        192,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_116.png",
+        "body/phase_1/mask_116.png",
+        "body/phase_2/mask_116.png",
+        "body/phase_3/mask_116.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_116.png",
+        "dirt": "contact/dirt/mask_116.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 29,
+      "mask": 117,
+      "rect": [
+        240,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_117.png",
+        "body/phase_1/mask_117.png",
+        "body/phase_2/mask_117.png",
+        "body/phase_3/mask_117.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_117.png",
+        "dirt": "contact/dirt/mask_117.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 30,
+      "mask": 119,
+      "rect": [
+        288,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_119.png",
+        "body/phase_1/mask_119.png",
+        "body/phase_2/mask_119.png",
+        "body/phase_3/mask_119.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_119.png",
+        "dirt": "contact/dirt/mask_119.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 31,
+      "mask": 124,
+      "rect": [
+        336,
+        144,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_124.png",
+        "body/phase_1/mask_124.png",
+        "body/phase_2/mask_124.png",
+        "body/phase_3/mask_124.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_124.png",
+        "dirt": "contact/dirt/mask_124.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_edge_y.png",
+        "quarters/coverage/ne_edge_y.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 32,
+      "mask": 125,
+      "rect": [
+        0,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_125.png",
+        "body/phase_1/mask_125.png",
+        "body/phase_2/mask_125.png",
+        "body/phase_3/mask_125.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_125.png",
+        "dirt": "contact/dirt/mask_125.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 33,
+      "mask": 127,
+      "rect": [
+        48,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_127.png",
+        "body/phase_1/mask_127.png",
+        "body/phase_2/mask_127.png",
+        "body/phase_3/mask_127.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_127.png",
+        "dirt": "contact/dirt/mask_127.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_inner.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 34,
+      "mask": 193,
+      "rect": [
+        96,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_193.png",
+        "body/phase_1/mask_193.png",
+        "body/phase_2/mask_193.png",
+        "body/phase_3/mask_193.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_193.png",
+        "dirt": "contact/dirt/mask_193.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_outer.png"
+      ]
+    },
+    {
+      "index": 35,
+      "mask": 197,
+      "rect": [
+        144,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_197.png",
+        "body/phase_1/mask_197.png",
+        "body/phase_2/mask_197.png",
+        "body/phase_3/mask_197.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_197.png",
+        "dirt": "contact/dirt/mask_197.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 36,
+      "mask": 199,
+      "rect": [
+        192,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_199.png",
+        "body/phase_1/mask_199.png",
+        "body/phase_2/mask_199.png",
+        "body/phase_3/mask_199.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_199.png",
+        "dirt": "contact/dirt/mask_199.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_edge_y.png",
+        "quarters/coverage/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 37,
+      "mask": 209,
+      "rect": [
+        240,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_209.png",
+        "body/phase_1/mask_209.png",
+        "body/phase_2/mask_209.png",
+        "body/phase_3/mask_209.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_209.png",
+        "dirt": "contact/dirt/mask_209.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 38,
+      "mask": 213,
+      "rect": [
+        288,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_213.png",
+        "body/phase_1/mask_213.png",
+        "body/phase_2/mask_213.png",
+        "body/phase_3/mask_213.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_213.png",
+        "dirt": "contact/dirt/mask_213.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 39,
+      "mask": 215,
+      "rect": [
+        336,
+        192,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_215.png",
+        "body/phase_1/mask_215.png",
+        "body/phase_2/mask_215.png",
+        "body/phase_3/mask_215.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_215.png",
+        "dirt": "contact/dirt/mask_215.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 40,
+      "mask": 221,
+      "rect": [
+        0,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_221.png",
+        "body/phase_1/mask_221.png",
+        "body/phase_2/mask_221.png",
+        "body/phase_3/mask_221.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_221.png",
+        "dirt": "contact/dirt/mask_221.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 41,
+      "mask": 223,
+      "rect": [
+        48,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_223.png",
+        "body/phase_1/mask_223.png",
+        "body/phase_2/mask_223.png",
+        "body/phase_3/mask_223.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_223.png",
+        "dirt": "contact/dirt/mask_223.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_inner.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 42,
+      "mask": 241,
+      "rect": [
+        96,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_241.png",
+        "body/phase_1/mask_241.png",
+        "body/phase_2/mask_241.png",
+        "body/phase_3/mask_241.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_241.png",
+        "dirt": "contact/dirt/mask_241.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_edge_x.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 43,
+      "mask": 245,
+      "rect": [
+        144,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_245.png",
+        "body/phase_1/mask_245.png",
+        "body/phase_2/mask_245.png",
+        "body/phase_3/mask_245.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_245.png",
+        "dirt": "contact/dirt/mask_245.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 44,
+      "mask": 247,
+      "rect": [
+        192,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_247.png",
+        "body/phase_1/mask_247.png",
+        "body/phase_2/mask_247.png",
+        "body/phase_3/mask_247.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_247.png",
+        "dirt": "contact/dirt/mask_247.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_inner.png"
+      ]
+    },
+    {
+      "index": 45,
+      "mask": 253,
+      "rect": [
+        240,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_253.png",
+        "body/phase_1/mask_253.png",
+        "body/phase_2/mask_253.png",
+        "body/phase_3/mask_253.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_253.png",
+        "dirt": "contact/dirt/mask_253.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_inner.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_full.png"
+      ]
+    },
+    {
+      "index": 46,
+      "mask": 255,
+      "rect": [
+        288,
+        240,
+        48,
+        48
+      ],
+      "body_files": [
+        "body/phase_0/mask_255.png",
+        "body/phase_1/mask_255.png",
+        "body/phase_2/mask_255.png",
+        "body/phase_3/mask_255.png"
+      ],
+      "contact_files": {
+        "grass": "contact/grass/mask_255.png",
+        "dirt": "contact/dirt/mask_255.png"
+      },
+      "coverage_quarters": [
+        "quarters/coverage/nw_full.png",
+        "quarters/coverage/ne_full.png",
+        "quarters/coverage/sw_full.png",
+        "quarters/coverage/se_full.png"
+      ]
+    }
+  ],
+  "contact_atlases": {
+    "grass": "contact_grass_47.png",
+    "dirt": "contact_dirt_47.png"
+  },
+  "contact_rule": "Clip each contact trim to the actual underlying material mask per pixel; draw the common stone body above. Never assign one surround type to an entire mixed tile.",
+  "moss_accents": [
+    "accents/moss_0.png",
+    "accents/moss_1.png",
+    "accents/moss_2.png",
+    "accents/moss_3.png"
+  ],
+  "moss_mortar_mask": "surface/mortar_mask.png",
+  "moss_placement": "Optional stationary accents clipped to stone coverage and dark mortar/shadow pixels; keep travel center clear.",
+  "layer_order": [
+    "grass/dirt substrate",
+    "substrate-clipped contact trim",
+    "phase-correct stone body",
+    "optional mortar-clipped moss",
+    "sorted objects"
+  ],
+  "palette": "palette.json",
+  "recipe": "assets/source/terrain/eldenmere/stone_paving_hd/recipe.json",
+  "path_conventions": {
+    "assets": "pack_relative",
+    "recipe": "repository_relative"
+  },
+  "animation": null
+}

@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "id": "eldenmere.stone_paving.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "sources": [
+    {
+      "file": "paving_authored.png",
+      "sha256": "b70a8f1e21868ce5314a9d999bcbf320cde6416e828d169ebdf2775fcc241f0a"
+    },
+    {
+      "file": "paving_offset_reference.png",
+      "sha256": "49cb04080e72a58452559fb7d955668a516e161db72449e695e9036297b9603f"
+    },
+    {
+      "file": "paving_seams_authored.png",
+      "sha256": "477939ecfc09f5e05af8ff9871ad2512254f56f432adee22d22b499b3778fd9c"
+    },
+    {
+      "file": "moss_authored.png",
+      "sha256": "d64eb71fc33b2b767531fec4c9c7e6278095f966439a5862601160b458082f43"
+    }
+  ],
+  "palette": {
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "grass": {
+      "base": "#2c7c50",
+      "shadow": "#205b3b",
+      "mid": "#286e46",
+      "light": "#42975f",
+      "highlight": "#67b982",
+      "soft_mid": "#28764e",
+      "soft_light": "#34885a",
+      "moss": "#246b48"
+    },
+    "dirt": {
+      "edge": "#8d7253",
+      "shadow": "#987b59",
+      "base": "#b18e68",
+      "light": "#c1a17b",
+      "stone": "#969284"
+    }
+  },
+  "palette_sources": [
+    "assets/terrain/eldenmere/terraces/palette.json",
+    "assets/terrain/eldenmere/grass_dirt_hd/palette.json"
+  ],
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "artwork_tile_size": [
+    48,
+    48
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "pattern": {
+    "source": "paving_seams_authored.png",
+    "boundary_reference": "paving_offset_reference.png",
+    "artwork_size": [
+      96,
+      96
+    ],
+    "uniform_sampling": "nearest",
+    "source_perimeter_restoration_artwork_pixels": 4,
+    "median_rgb_registration_to": "stone.base",
+    "contrast": 1.1,
+    "paired_ports": "Copy x0 to95, x47 to48, then y0 to95 and y47 to48. One-pixel registration preserves matching stone/joint ports at all 48px boundaries.",
+    "phase_grid": [
+      2,
+      2
+    ],
+    "phase_rule": "(world_tile_x % 2) + 2 * (world_tile_y % 2); use one world origin across connected paving. Phases are not freely interchangeable fill variants."
+  },
+  "edge_profile": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "outer_corner_radius": 4,
+  "inner_corner_radius": 4,
+  "edge_finish": {
+    "core": "One-artwork-pixel stone.joint boundary caps cut edge stones. No black ground outline.",
+    "contact_width_artwork_pixels": 1,
+    "grass": "grass.moss",
+    "dirt": "dirt.edge",
+    "mixed_junction_rule": "Clip each contact trim to the actual underlying material mask per pixel; draw the common stone body above. Never assign one surround type to an entire mixed tile."
+  },
+  "moss": {
+    "source": "moss_authored.png",
+    "grid": [
+      2,
+      2
+    ],
+    "artwork_size": [
+      24,
+      24
+    ],
+    "alpha_threshold": 128,
+    "palette_roles": [
+      "shadow",
+      "moss",
+      "mid",
+      "soft_light",
+      "light"
+    ],
+    "placement": "Optional stationary accents clipped to stone coverage and dark mortar/shadow pixels; keep travel center clear.",
+    "sampling": "Harden source coverage at128, retain all components, crop each cell to its occupied bounds, uniformly sample longest side to20 artwork pixels, center on24x24."
+  },
+  "scope": "Staged asset pack only. No active maps, runtime selectors, movement, collision or renderer changes.",
+  "review": "Native material pattern, 47 shapes on both surrounds, all texture phase adjacencies, paved square and narrow walkway, grass/dirt/stone junctions, existing building and approved HD character scale.",
+  "builder": "tools/build_eldenmere_stone_paving_hd.py",
+  "baseline_commit": "2941e322eede2d5021da79486815cb6d912ea945",
+  "protected_existing_banks": {
+    "assets/terrain/grass": {
+      "file_count": 256,
+      "tree_sha256": "49470fb91d9767b1c188a4c05c70b0b3b2063df99094b0b87ffb49fa8cdb3549"
+    },
+    "assets/terrain/eldenmere/grass_dirt": {
+      "file_count": 65,
+      "tree_sha256": "a1d712e6803905e1e8912c65ac5e988bddb2aa46853f9d3911abc673e0181b4a"
+    },
+    "assets/terrain/eldenmere/grass_dirt_hd": {
+      "file_count": 79,
+      "tree_sha256": "ac0f4f176bc29d973cf61c475ec3eff0855b17ce4299090fc5767599a38d3f1c"
+    },
+    "assets/terrain/eldenmere/terraces": {
+      "file_count": 47,
+      "tree_sha256": "7120c6defb773b4df18de1e66b10155e71166877902fa8f17976a7eb677ebd18"
+    },
+    "assets/maps/eldenmere/playable": {
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2"
+    },
+    "assets/characters/caelan/review_hd": {
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372"
+    },
+    "assets/characters/iselin": {
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf"
+    }
+  },
+  "source_derivation": {
+    "paving_offset_reference.png": "Exact toroidal offset of paving_authored.png by half its source width and height, exposing its original wrap discontinuities at the center for drawn seam repair.",
+    "paving_seams_authored.png": "Image generation redraw of the exposed center seam, guided by the offset reference. Final technical export restores the four-artwork-pixel reference perimeter, then registers paired one-pixel tile ports."
+  }
+}

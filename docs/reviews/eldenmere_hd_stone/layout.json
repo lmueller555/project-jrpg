@@ -1,0 +1,2349 @@
+{
+  "size_tiles": [
+    20,
+    16
+  ],
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "artwork_tile_size": [
+    48,
+    48
+  ],
+  "cells": [
+    [
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 28,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 112,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 0,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 16,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 0,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 28,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 124,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 124,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 124,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 124,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 124,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": 124,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 124,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": 112,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 31,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 247,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 223,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": 241,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 31,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 241,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 31,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": 241,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 28,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": 31,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": 241,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 124,
+        "dirt_fill": null,
+        "paving_mask": 31,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 127,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 253,
+        "dirt_fill": null,
+        "paving_mask": 241,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 112,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 17,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 31,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 253,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 124,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 124,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 127,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 241,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 29,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 124,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 124,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 124,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 124,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 127,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 241,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 23,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 199,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 199,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 199,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": 199,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 223,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 255,
+        "dirt_fill": 2,
+        "paving_mask": 255,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 255,
+        "dirt_fill": 3,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 255,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 255,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 241,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 7,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 31,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 223,
+        "dirt_fill": null,
+        "paving_mask": 255,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 255,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 247,
+        "dirt_fill": null,
+        "paving_mask": 241,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 193,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 7,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": 199,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 255,
+        "dirt_fill": 0,
+        "paving_mask": 199,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": 193,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 17,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 0,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ],
+    [
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": 1,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 31,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 255,
+        "dirt_fill": 1,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 241,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 0
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 1
+      }
+    ],
+    [
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 2,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 3,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 7,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 199,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 0,
+        "dirt_mask": 193,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 2
+      },
+      {
+        "grass": 1,
+        "dirt_mask": null,
+        "dirt_fill": null,
+        "paving_mask": null,
+        "texture_phase": 3
+      }
+    ]
+  ],
+  "references": [
+    {
+      "file": "assets/terrain/eldenmere/cottage/closed.png",
+      "position_artwork": [
+        528,
+        0
+      ],
+      "density": 1
+    },
+    {
+      "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+      "position_artwork": [
+        456,
+        372
+      ],
+      "density": 2
+    },
+    {
+      "file": "assets/characters/iselin/idle_front_42x72.png",
+      "position_artwork": [
+        555,
+        420
+      ],
+      "density": 2
+    }
+  ],
+  "moss_placements": [
+    {
+      "variant": 0,
+      "position_artwork": [
+        452,
+        162
+      ],
+      "visible_pixels": 24
+    },
+    {
+      "variant": 1,
+      "position_artwork": [
+        776,
+        550
+      ],
+      "visible_pixels": 20
+    },
+    {
+      "variant": 2,
+      "position_artwork": [
+        490,
+        204
+      ],
+      "visible_pixels": 12
+    },
+    {
+      "variant": 3,
+      "position_artwork": [
+        202,
+        162
+      ],
+      "visible_pixels": 12
+    }
+  ],
+  "presentation": "Offline illustrative composition; no playable map or runtime activation."
+}
