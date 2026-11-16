@@ -15,13 +15,15 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The new Eldenmere grass/dirt, stone-paving, terrace and water/shore packs are **rebuilt but
-not integrated**. Their 48×48 artwork tiles retain a 24×24 logical footprint.
+**Status:** The new Eldenmere grass/dirt, stone-paving, terrace, water/shore and waterworks packs are **rebuilt but
+not integrated**. Tile modules retain 24×24 logical footprints at 48×48 artwork pixels; larger
+structures declare their own logical/artwork sizes.
 The shipped town and shared terrain retain previous assets until a separate
 integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
 [stone-paving reference](#staged-eldenmere-hd-stone-paving) and
 [terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs), plus
-[water/shore reference](#staged-world-hd-water-and-natural-shores).
+[water/shore reference](#staged-world-hd-water-and-natural-shores) and
+[waterworks reference](#staged-eldenmere-hd-channels-and-spillways).
 
 ## Contents
 
@@ -357,7 +359,7 @@ geometry and reproducible exports. Visual review remains necessary.
    once all references have migrated. Update this document's implementation status.
 
 Grass/dirt, stone paving, terraces and water/natural shores are staged below.
-Channels/spillways and larger vegetation follow as coordinated families. Runtime migration
+Channels/spillways are also staged; larger vegetation remains future work. Runtime migration
 and in-game acceptance remain a separate step.
 
 ## 17. Existing pack maintenance reference
@@ -814,3 +816,60 @@ GIFs use one exact shared palette per sequence; fixed artwork must not flicker
 from frame-specific palette changes. These are offline asset fixtures, not actual
 map integration or gameplay captures. Integration must independently verify live
 terrain boundaries, bridge occlusion, movement and collision under section 14.
+
+### Staged Eldenmere HD channels and spillways
+
+Source recipe: `assets/source/terrain/eldenmere/waterworks_hd/recipe.json`.
+Staged manifest: `assets/terrain/eldenmere/waterworks_hd/tileset.json`.
+State is `rebuilt` / `not_integrated`, visual approval not yet reviewed. This bank
+completes the water asset stage, without modifying any active scene or geometry.
+
+Three channel treatments are earth-cut, maintained stone and weathered/lightly
+mossy stone. Each retains all 40 directed modules: 32 routes across 15 cardinal
+connection shapes, four stream intakes and four outlets. The weathered channel
+uses the new mossy masonry material. Ports remain N=1,E=2,S=4,W=8, **not** the
+eight-neighbor shoreline convention. Water is eight logical units wide, with
+existing bank/receiver geometry retained from coverage-only source envelopes.
+Logical modules are 24×24; artwork modules are 48×48. New visible pixels come from
+the world-water source drawings and staged HD masonry, not legacy RGB enlargement.
+
+Banks, water masks, shared per-route flow layers, six composed temporal frames,
+static alternatives and phase atlases are exported separately. A route has one
+input and other connected ports as outputs; do not connect two outputs and expect
+coherent current. Match outgoing ports to incoming opposite ports. Every physical
+port is tested through all six phases within its structural treatment. The
+quiet outer connection pixels retain the receiving material's base color.
+Currents move four artwork pixels per 200 ms phase over a 24-artwork-pixel period,
+matching the existing two-logical-unit step and twelve-logical-unit period.
+
+Intakes overlap an aligned straight natural-stream bank; their water coverage
+opens the central bank while preserving the side supports. Outlets include a
+source-derived airborne droplet crossing the gap to the fixed receiving pool.
+Only outlet effects may extend beyond the water mask, and only within their
+explicit logical `effect_bounds`. Droplets progress toward the receiver and enter
+the pool in the final phases. These are authored visual modules, not simulation.
+
+Three south-only spillways match maintained, weathered and mossy terrace masonry.
+They retain a 24×48 logical / 48×96 artwork footprint, 24-unit fall and north/south
+eight-unit water ports x=[8,16). Structure and coverage are fixed. Downward streaks,
+impact flecks and small basin ripples animate on the common six-phase clock.
+Do not rotate them to unsupported elevations/facings. Integration must separately
+preserve collision, walking routes, elevation and sort/occlusion behavior.
+
+Composed exports use temperate freshwater. Other regional water is supported by
+combining the bank/structure and coverage layers with that family's water surface
+and recolored flow/effect layers. Use its reflection/flow roles rather than merely
+placing temperate-colored marks on another family's water. Reduced motion uses
+explicit still files, with no airborne/current animation.
+
+```sh
+python tools/build_eldenmere_waterworks_hd.py
+python tools/build_eldenmere_waterworks_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_eldenmere_waterworks_hd
+```
+
+[Waterworks review evidence](reviews/eldenmere_waterworks_hd/README.md) records the
+three route inventories and a reconstructible stream-intake/bends/spillway/outlet
+composition. It is an offline fixture; gameplay activation remains separate.
+Recipes pin the geometry and current source dependencies. Existing water, channel,
+terrace and map banks remain available until a separately reviewed migration.
