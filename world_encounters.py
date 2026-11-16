@@ -1299,7 +1299,7 @@ class CombatEncounters:
         if 'tree' not in self._world_art and (folder/'scene.json').exists():
             record = json.loads((folder/'scene.json').read_text())
             path = folder/record['image']
-            self._world_art['tree'] = (pygame.image.load(str(path)).convert_alpha(), record['position'])
+            self._world_art['tree'] = (self.game.world.room_art_image(path.relative_to(ROOT).as_posix()), record['position'])
         if 'tree' in self._world_art:
             image, point = self._world_art['tree']
             canvas.blit(image, (round(point[0]-camera[0]), round(point[1]-camera[1])))

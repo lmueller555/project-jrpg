@@ -31,8 +31,8 @@ class PlayableEldenmere(unittest.TestCase):
         pygame.event.clear()
 
     def test_approved_town_contract_and_current_npcs(self):
-        self.assertEqual(self.world.size,(1536,1344))
-        self.assertEqual(self.world.data['size_tiles'],[64,56])
+        self.assertEqual(self.world.size,(1536,1632))
+        self.assertEqual(self.world.data['size_tiles'],[64,68])
         self.assertEqual(self.world.probe_size,(24,12))
         self.assertEqual([r['id'] for r in self.world.data['npcs']],['mira_worker','sanctuary_gardener'])
         self.assertEqual(self.world.data['quests'],[])
@@ -55,7 +55,7 @@ class PlayableEldenmere(unittest.TestCase):
         for rect in [school['ground_rect'],*school['yard_blockers']]:
             pygame.draw.rect(approved,'white',rect)
         compiled=self.world.image(self.world.data['collision'],False)
-        self.assertEqual(pygame.image.tobytes(approved,'RGB'),pygame.image.tobytes(compiled,'RGB'))
+        self.assertEqual(pygame.image.tobytes(approved,'RGB'),pygame.image.tobytes(compiled.subsurface((0,0,*approved.get_size())),'RGB'))
 
     def test_every_approved_route_destination_is_reachable(self):
         # Restrict this search to the original intended routes, though the
@@ -137,9 +137,9 @@ class PlayableEldenmere(unittest.TestCase):
 
     def test_camera_edges_and_world_bounds(self):
         self.assertEqual(main.camera_for((0,0),self.world.size),(0,0))
-        self.assertEqual(main.camera_for(self.world.size,self.world.size),(1056,1024))
+        self.assertEqual(main.camera_for(self.world.size,self.world.size),(1056,1312))
         self.assertEqual(main.camera_for((20,20),(100,100)),(-190,-110))
-        for p in [(0,0),(-1,400),(1536,500),(400,1344)]:self.assertFalse(self.world.can_stand(p))
+        for p in [(0,0),(-1,400),(1536,500),(400,1632)]:self.assertFalse(self.world.can_stand(p))
 
     def test_roofs_occlude_from_behind_and_player_draws_in_front(self):
         building=next(r for r in self.world.entities if r['id']=='halden')
@@ -150,15 +150,16 @@ class PlayableEldenmere(unittest.TestCase):
             player.position.update(1008,544)
             self.assertTrue(self.world.can_stand(player.position))
             self.world.draw(target,(800,420),player,0)
-            expected=building['surfaces'][0].get_at((60,60))
+            # A registered roof pixel above the marker verifies the same depth pass.
+            expected=building['surfaces'][0].get_at((50,80))
             self.assertEqual(expected.a,255)
-            self.assertEqual(target.get_at((208,120))[:3],expected[:3])
+            self.assertEqual(target.get_at((198,140))[:3],expected[:3])
             player.position.update(1008,650)
             self.world.draw(target,(800,420),player,0)
             self.assertEqual(target.get_at((208,202))[:3],(255,0,255))
 
     def test_animated_environment_map_toggle_and_quit(self):
-        self.assertNotEqual(pygame.image.tobytes(self.world.ground[0],'RGB'),pygame.image.tobytes(self.world.ground[1],'RGB'))
+        self.assertNotEqual(pygame.image.tobytes(self.world.ground_region((816,600,72,72),0).native,'RGB'),pygame.image.tobytes(self.world.ground_region((816,600,72,72),200).native,'RGB'))
         for identifier in ['mill','mira','sanctuary']:
             self.assertGreater(len(next(r for r in self.world.entities if r['id']==identifier)['surfaces']),1)
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_m))

@@ -65,7 +65,7 @@ class LanternQuest:
                                         for f in frames] for kind, frames in meta['actions'].items()})
         self.surface_props = []
         for spec in self.art['props']:
-            states = {k: self.town.image(p) for k, p in spec['states'].items()}
+            states = {k: self.town.room_art_image(p) for k, p in spec['states'].items()}
             prop = {**spec, 'states': states, 'surface': next(iter(states.values()))}
             self.surface_props.append(prop)
             game._scene_by_id(spec['scene']).attach_routine_props(self)

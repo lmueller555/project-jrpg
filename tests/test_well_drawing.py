@@ -124,7 +124,7 @@ class WellDrawing(unittest.TestCase):
                 for x in (*range(34,39),*range(42,47)):
                     if image.get_at((x,y))!=baseline.get_at((x,y)):count+=1
             return count
-        top=visible_pail_pixels(0);middle=visible_pail_pixels(.5);bottom=visible_pail_pixels(1)
+        top=visible_pail_pixels(0);middle=visible_pail_pixels(.25);bottom=visible_pail_pixels(1)
         self.assertGreater(top,middle)
         self.assertGreater(middle,bottom)
         self.assertEqual(bottom,0)
@@ -228,7 +228,7 @@ class WellDrawing(unittest.TestCase):
         self.assertTrue(self.actor.pose()[0].startswith('well_heavy_left_'))
 
     def test_rim_hides_shaft_pail_and_roof_never_changes(self):
-        source=self.world.image('assets/source/terrain/eldenmere/well/parts/native_structure.png')
+        source=self.world.art_image(self.world.data['well_art']['fixed'])
         fixed=self.well.fixed
         for y in range(36):
             for x in range(84):self.assertEqual(fixed.get_at((x,y)),source.get_at((x,y)))

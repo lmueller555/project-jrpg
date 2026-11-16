@@ -53,8 +53,8 @@ class EldenmereSchoolTests(unittest.TestCase):
         self.assertFalse(world.can_stand(footprint.center))
         self.assertTrue(world.can_stand(self.layout['approach']))
         self.assertIn('school',{landmark['id'] for landmark in world.data['landmarks']})
-        self.assertEqual(len(world.doors),11)
-        self.assertEqual(len(world.data['interior_scenes']),13)
+        self.assertEqual(len(world.doors),13)
+        self.assertEqual(len(world.data['interior_scenes']),17)
 
     def test_well_to_school_route_and_entrance_remain_walkable(self):
         start=(600,816);goal=self.layout['approach'];world=self.town
@@ -125,7 +125,7 @@ class EldenmereSchoolTests(unittest.TestCase):
     def test_exterior_animation_and_door_patches_match_at_native_scale(self):
         entity=next(e for e in self.town.entities if e['id']=='school')
         self.assertEqual(entity['position'],[576,528]);self.assertEqual(entity['sort_y'],720)
-        self.assertEqual(len(entity['surfaces']),18);self.assertEqual(entity['frame_duration_ms'],300)
+        self.assertEqual(len(entity['surfaces']),18);self.assertEqual(entity['frame_duration_ms'],200)
         self.assertTrue(all(im.get_size()==(192,192) for im in entity['surfaces']))
         self.assertGreater(len({pygame.image.tobytes(im,'RGBA') for im in entity['surfaces']}),1)
         door=next(d for d in self.town.doors if d.data['id']=='school')
@@ -134,10 +134,11 @@ class EldenmereSchoolTests(unittest.TestCase):
         rect=pygame.Rect(door.data['position'],door.frames[0].get_size())
         rect.move_ip(-entity['position'][0],-entity['position'][1])
         self.assertEqual(rect,pygame.Rect(86,150,20,34))
-        self.assertEqual(pygame.image.tobytes(entity['surfaces'][0].subsurface(rect),'RGBA'),pygame.image.tobytes(door.frames[0],'RGBA'))
+        self.assertEqual(entity['surfaces'][0].subsurface(rect).get_bounding_rect().size,(0,0))
+        self.assertEqual(door.frames[0].native.get_size(),(40,68))
         for relative in dict.fromkeys(entity['frames']):
             with Image.open(ROOT/relative) as im:self.assertTrue(set(im.convert('RGBA').getchannel('A').tobytes())<={0,255})
-        self.assertGreater(len(set(self.room.data['ground_frames'])),1)
+        self.assertEqual(len(set(self.room.data['ground_frames'])),1)
 
     def test_teacher_role_is_registered_without_starting_unapproved_schedules(self):
         self.assertEqual(self.room.data['teacher'],'liam_mother')

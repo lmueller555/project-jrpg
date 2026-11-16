@@ -14,7 +14,7 @@ try:
 except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
-from rendering import scale as render_scale, immutable, record_art, load_art
+from rendering import scale as render_scale, immutable, record_art, load_art, SurfaceCache
 from object_cues import ObjectCues
 
 from npc_routines import Gardener, RoutineNPC
@@ -139,7 +139,7 @@ class BenchWorker:
         self.animation=read_json(ROOT/path)
         self.draw_anchor=self.animation['draw_anchor']
         self.frames=[(world.image((path.parent/f['file']).as_posix()),
-                      world.image((path.parent/f['fitting_file']).as_posix()),f)
+                      world.room_art_image((path.parent/f['fitting_file']).as_posix()),f)
                      for f in self.animation['frames']]
         self.duration_ms=sum(frame[2]['duration_ms'] for frame in self.frames)
         self.probe_size = tuple(record['probe_size'])
@@ -194,6 +194,25 @@ class StationaryNPC:
     def sprite(self,elapsed_ms):return self._sprite
 
 
+class GroundFrames:
+    """Lazy scene-local frames: offscreen chunks never allocate native textures."""
+    def __init__(self,world,record,paths):
+        self.world=world;self.record=record;self.paths=paths
+    def __len__(self):return len(self.paths)
+    def __getitem__(self,index):
+        if isinstance(index,slice):return [self[i] for i in range(*index.indices(len(self)))]
+        path=self.paths[index];record=self.record
+        if isinstance(path,dict):record={**record,**path};path=path['file']
+        key=(path,record.get('artwork_pixels_per_world_pixel',1),tuple(record.get('logical_size',())))
+        cached=self.world._ground_cache.get(key)
+        if cached is not None:return cached
+        # This dedicated bounded cache keeps ground images out of the world's
+        # unbounded raw character/prop cache. The global transform cache is bounded too.
+        raw=immutable(pygame.image.load(str(ROOT/path)).convert_alpha())
+        surface=record_art(raw,record);self.world._ground_cache[key]=surface
+        return surface
+
+
 class World:
     """Approved town art, animated world objects, and pixel-accurate blockers."""
     def __init__(self,path=MAP_FILE,image_cache=None):
@@ -205,8 +224,13 @@ class World:
         self.object_cues=ObjectCues(self.data.get('interaction_cues',()))
         self.ground=[self.art_image(p,self.data,False) for p in self.data['ground_frames']]
         # Scoped native-density ground layers preserve the shared town bank.
-        self.ground_overlays=[(self.art_image(r['image'],r),tuple(r['position']))
-                              for r in self.data.get('ground_overlays',())]
+        self._ground_cache=SurfaceCache(48*1024*1024)
+        self.ground_overlays=[]
+        for r in self.data.get('ground_overlays',()):
+            frames=GroundFrames(self,r,r.get('frames') or [r['image']])
+            size=r.get('logical_size') or frames[0].get_size()
+            self.ground_overlays.append({**r,'surfaces':frames,
+                                         'rect':pygame.Rect(r['position'],size)})
         collision=self.image(self.data['collision'],False)
         # Collision exports are monochrome, so white pixels block and black
         # pixels remain walkable. Do not use alpha (the mask is opaque).
@@ -289,7 +313,7 @@ class World:
         return record_art(self.image(path,alpha),record,default_density)
 
     def room_art_image(self,path):
-        """Room-only prop replacement; raw image/crop consumers stay unchanged."""
+        """Scene-local prop replacement; raw image/crop consumers stay unchanged."""
         return self.art_image(self.data.get('art_replacements',{}).get(path,path))
 
     def probe_rect(self,position,size=None):
@@ -321,21 +345,35 @@ class World:
         if entity is None:raise KeyError(identifier)
         if state not in entity.get('state_images',{}):raise ValueError(f'Unknown state {state!r} for {identifier}')
         if entity.get('reserved_by') not in (None,owner):return False
-        path=entity['state_images'][state];surface=self.art_image(path,entity,default_density=self.art_density)
+        path=entity['state_images'][state]
+        replacement=self.data.get('art_replacements',{}).get(path,path)
+        surface=self.art_image(replacement,entity,default_density=self.art_density)
         if surface.get_size()!=entity['surfaces'][0].get_size():raise ValueError('Prop states must share frame dimensions')
         entity.update(state=state,frames=[path],surfaces=[surface])
         raw=next(e for e in self.data['entities'] if e['id']==identifier)
         raw.update(state=state,frames=[path])
         return True
 
-    def draw(self,target,camera,player,elapsed_ms,include_ui=True,party_actors=()):
-        target.fill('#24302d')
-        viewport=pygame.Rect(camera,VIEW_SIZE)
+    def draw_ground(self,target,camera,elapsed_ms):
+        """Compose only visible ground chunks; controllers can sample this same pass."""
+        viewport=pygame.Rect(camera,target.get_size())
         phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
         target.blit(self.ground[phase],(-camera[0],-camera[1]))
-        for image,position in self.ground_overlays:
-            if image.get_rect(topleft=position).colliderect(viewport):
-                target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
+        for record in self.ground_overlays:
+            if record['rect'].colliderect(viewport):
+                frames=record['surfaces'];index=0 if self.reduced_motion else int(elapsed_ms//record.get('frame_duration_ms',200))%len(frames)
+                position=record['position']
+                target.blit(frames[index],(position[0]-camera[0],position[1]-camera[1]))
+
+    def ground_region(self,rect,elapsed_ms=0):
+        rect=pygame.Rect(rect);canvas=WorldCanvas(rect.size,pygame.SRCALPHA)
+        canvas.fill('#24302d');self.draw_ground(canvas,rect.topleft,elapsed_ms)
+        return canvas
+
+    def draw(self,target,camera,player,elapsed_ms,include_ui=True,party_actors=()):
+        target.fill('#24302d')
+        viewport=pygame.Rect(camera,target.get_size())
+        self.draw_ground(target,camera,elapsed_ms)
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
@@ -2002,6 +2040,7 @@ class Game:
             self._cue_world=self.world
         if not hasattr(self.world,'object_cues'):return
         conditions=set()
+        if self.world.data.get('rest_profile') and self.bed_rest.available(self.world.data['rest_profile']):conditions.add('inn_rest')
         if self.opening.stage=='explore':conditions.add('opening_breakfast')
         if self.opening.stage in ('explore','assignment','done'):
             conditions.update('bedroom_inspect_'+key for key in self.opening.data['inspections'])

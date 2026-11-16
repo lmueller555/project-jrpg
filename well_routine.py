@@ -13,16 +13,18 @@ def mix(a,b,t):return pygame.Vector2(a).lerp(b,max(0,min(1,t)))
 
 class DrawingWell:
     def __init__(self,world):
+        self.world=world
         folder=Path('assets/terrain/eldenmere/well/drawing')
         self.data=json.loads((ROOT/folder/'animation.json').read_text())
-        self.fixed=world.image((folder/self.data['fixed']).as_posix())
-        self.rim=world.image((folder/self.data['front_rim']).as_posix())
+        presentation=world.data.get('well_art',{})
+        self.fixed=(world.art_image(presentation['fixed']) if presentation else world.image((folder/self.data['fixed']).as_posix()))
+        self.rim=(world.art_image(presentation['front_rim']) if presentation else world.image((folder/self.data['front_rim']).as_posix()))
         self.owner=None
         self.pails={}
         anim=json.loads((ROOT/'assets/characters/npcs/female_02/gardener/animations.json').read_text())
         self.bucket_data=anim['buckets']
         for key,record in anim['buckets'].items():
-            self.pails[key]=world.image('assets/characters/npcs/female_02/gardener/'+record['file'])
+            self.pails[key]=getattr(world,'room_art_image',world.image)('assets/characters/npcs/female_02/gardener/'+record['file'])
 
     def reserve(self,actor):
         if self.owner is not None and self.owner is not actor:return False
@@ -99,14 +101,16 @@ class DrawingWell:
         phase=int(elapsed_ms//100)%4
         # Restrained water glint remains independent of the operated mechanism.
         # Use the same six 200ms ambient phases as the terrain exports.
-        phase=int(elapsed_ms//200)%6
+        phase=0 if self.world.reduced_motion else int(elapsed_ms//200)%6
         for x in (29+phase,48-phase):image.set_at((x,69),pygame.Color('#598e9f'))
         grip=self.bucket_grip
         key=f'bucket_0_{self.draw_level}'
         if self.rope_deployed:
             rope_end=tuple(round(v) for v in self.rope_end)
+            image.set_clip(pygame.Rect(0,0,self.data['canvas_size'][0],72))
             render_draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
             render_draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
+            image.set_clip(None)
         xy=grip-pygame.Vector2(self.bucket_data[key]['grip'])
         # Inside the shaft, the pail is composited before the near rim. At the
         # retrieval transfer it moves forward behind the gardener's body.

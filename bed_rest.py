@@ -31,6 +31,7 @@ class BedRest:
         return game.world.can_stand(game.player.position)
 
     def _profile(self):
+        if self.game.world.data.get('rest_profile'):return self.game.world.data['rest_profile']
         return (self.relief['bed'] if self.game.world.data['id'] == self.relief['bed']['scene']
                 else self.data)
 

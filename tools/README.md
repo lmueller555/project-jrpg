@@ -9,7 +9,8 @@ Artwork, textures, sprites, animation, exporters and rendering changes follow th
 That is the single reference for style, units, density, rendering, construction
 and review; this catalogue records commands and asset-specific implementation
 details. Full-scene 2× rendering is implemented; Sanctuary hall, bedroom and
-dining and the courtyard/approach are migrated environments. Other asset rebuilds remain pending.
+dining, the full Eldenmere town/interiors, southern business lane and upstream are
+migrated environments. Other regions and character banks retain their own status.
 Use `python tools/profile_renderer.py --frames 30` for temporary-save
 production draw timings.
 Existing command descriptions and frame dimensions below describe their current
@@ -22,15 +23,16 @@ for near/far coupling, support/flight phases and run-specific review.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.
 
-`python tools/build_sanctuary_courtyard_hd.py` integrates selected staged banks
-into the current assembled town. `--check` verifies retained-source hashes and
-reproducible exports. It preserves gameplay registration and patches only the
-courtyard's native ground overlay, facade/door/prop/vegetation artwork, fifteen
-grass variants and scoped overview crop. See the
-[central terrain reference](../docs/TERRAIN_ART_STANDARD.md#integrated-sanctuary-courtyard-and-approach)
-for scope and rebuild order. `python tools/capture_sanctuary_courtyard_hd.py /tmp/courtyard-review`
-captures native scenery, actual walking/running, tree occlusion, door states and
-reduced motion using temporary saves/settings.
+`python tools/build_eldenmere_hd.py` is the live town/expansion/upstream/interior
+composer. `--check` verifies retained inputs, native exports and linked held-prop
+compositions. `python tools/capture_eldenmere_hd.py /tmp/eldenmere-review` captures
+actual native gameplay, bridge travel, interiors and well work with temporary
+saves/settings. `python tools/check_eldenmere_hd.py --report /tmp/town-checks.json`
+runs the maintained asset/gameplay/quest/save regression selection with scene-fixture
+collection between cases. The [central terrain reference](../docs/TERRAIN_ART_STANDARD.md#integrated-eldenmere-town-and-upstream)
+owns its scope, cache behavior, rebuild order and registry. The courtyard build
+command and legacy terrain-only command forward here. The older full-town compiler
+refuses to overwrite the HD map; historical reproduction needs an isolated checkout.
 
 `python tools/build_sanctuary_dining_hd.py` exports retained new dining-room
 source atlases at explicit 2× density. It registers furniture, four chair views,

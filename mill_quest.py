@@ -75,10 +75,10 @@ class MillQuest:
         self.surface_props = []
         art = read('art.json')
         for record in (art if isinstance(art, list) else art.get('props', [])):
-            states = {key: self.town.image(path) for key, path in record['states'].items()}
+            states = {key: self.town.room_art_image(path) for key, path in record['states'].items()}
             prop = {**record, 'states': states, 'surface': next(iter(states.values()))}
             for key in ('animation', 'moving_frames', 'restored_frames'):
-                if key in record:prop[key] = [self.town.image(path) for path in record[key]]
+                if key in record:prop[key] = [self.town.room_art_image(path) for path in record[key]]
             self.surface_props.append(prop)
         for world in (self.town, self.upstream):world.attach_routine_props(self)
         self._sync_props()
@@ -306,7 +306,7 @@ class MillQuest:
             state = 'cleared' if prop['id'] == 'inspection_pool' and self.spell_done else base_state
             frames = None;fraction = 0.
             if self.restored and prop.get('restored_frames'):
-                frames = prop['restored_frames'];fraction = (int(self.game.elapsed_ms//180)%len(frames))/len(frames)
+                frames = prop['restored_frames'];fraction = (0 if self.game.world.reduced_motion else (int(self.game.elapsed_ms//180)%len(frames))/len(frames))
             if prop['id'] == 'inspection_pool' and self.action == 'spell':
                 frames = prop.get('animation');fraction = max(0., min(1., (self.action_time-.65)/1.2))
             elif prop['id'] == 'intake_screen' and self.action == 'repair':

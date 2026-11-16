@@ -15,7 +15,7 @@ class LiamBlocks:
         self.config=read(config);self.meta=read(META);self.pack=read(PACK);self._rng=random.Random()
         self.blocks=[];self.surface_props=[]
         for spec,center in zip(self.pack['blocks'],self.config['block_centers']):
-            surface=home.image(spec['image']);anchor=pygame.Vector2(spec['draw_anchor'])
+            surface=home.room_art_image(spec['image']);anchor=pygame.Vector2(spec['draw_anchor'])
             block={**spec,'state':'box','center':pygame.Vector2(center),'surface':surface,'anchor':anchor}
             prop={'id':spec['id'],'scene':home.data['id'],'surface':surface,'position':[0,0],'sort_y':209,'sort_priority':1}
             block['prop']=prop;self.blocks.append(block);self.surface_props.append(prop)
@@ -31,7 +31,7 @@ class LiamBlocks:
         self.forget_selected=False;self._forced_accident=None;self._forced_forget=None
         self._contact_done=False;self.mode='build';self.index=0;self.release_requested=False
         self.box=next(e for e in home.entities if e['id']=='liam_block_box')
-        self.lip=home.image(self.pack['front_overlay'])
+        self.lip=home.room_art_image(self.pack['front_overlay'])
         self._sync_props()
 
     @property

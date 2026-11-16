@@ -44,6 +44,16 @@
       "sha256": "d0089debbf24bd9bef9a21bb72845733e9631f11553f8ebbe062bffac9b066cd"
     }
   ],
+  "prop_sources": [
+    {
+      "file": "assets/maps/eldenmere/town_hd/scene_props/227f0672cd0b.png",
+      "sha256": "4726bb81c76ad36f2f3d705d4444b89f4511cfc9c1b632fe32ed0f44c6963dc2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/scene_props/64cee2bc3b94.png",
+      "sha256": "4bbd9a13f60394b51dea4a78cb0e46cebf0fd1d6cbe322b954c7e06df07abd27"
+    }
+  ],
   "outputs": [
     {
       "file": "assets/story/sanctuary_opening/poses/caelan_seated.png",
@@ -515,7 +525,7 @@
         16,
         34
       ],
-      "output_sha256": "a78ffafe58c8bbc559b5082872b1207421fc878f647ff5a9abb20a57c63bd198",
+      "output_sha256": "c981a7d1dc97de95b4d829e745e8d509d09e8248d48e4a80eaa411deb30748d1",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -534,7 +544,7 @@
         16,
         34
       ],
-      "output_sha256": "0f96d3feb9f0fa5eacf8cfd50fb50f225925df06929bf4cce23103e7c2935548",
+      "output_sha256": "af283ae0452521218f9bf0366bea4ee272870b00cec978702b71d5bcd5063f2a",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -572,7 +582,7 @@
         16,
         34
       ],
-      "output_sha256": "97f96903524e68bc6a0d47c48823860502c48ab12a0da8c977a6cc9d8dabb1c1",
+      "output_sha256": "d506b9b90c95b829da4982a53ff59eef0cc431e87a666b7147c35ee221bebc1f",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -610,7 +620,7 @@
         16,
         34
       ],
-      "output_sha256": "1e9f649401c80ee22e25030dae2bd9864fdb78af3f88f5ac8d5c6efae7397996",
+      "output_sha256": "daada56223893e11b77d6e092527353dae3668ef8128b16bed8cce6485cc9b31",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -629,7 +639,7 @@
         16,
         34
       ],
-      "output_sha256": "b34118caeab339d26c0df8a8b8e3378519b07870c9f49e9f6354677dabf32a6c",
+      "output_sha256": "d83c11e66c70c6d1c0b967b12cc5e9b44a00c46267b9a720558a4d9471d6a63e",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -648,7 +658,7 @@
         16,
         34
       ],
-      "output_sha256": "81ff7a0d2a7ed99ff754f10287692e8782dba3b7769e251af9c0c8ae5495ce95",
+      "output_sha256": "fac5cbaf599951b93544856d5194923022c852bd42052f918fd3cb96c12ec0a0",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -667,7 +677,7 @@
         16,
         34
       ],
-      "output_sha256": "a78ffafe58c8bbc559b5082872b1207421fc878f647ff5a9abb20a57c63bd198",
+      "output_sha256": "c981a7d1dc97de95b4d829e745e8d509d09e8248d48e4a80eaa411deb30748d1",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -686,7 +696,7 @@
         16,
         34
       ],
-      "output_sha256": "39ac4b03a8835c846fb4f5d897937d9d7376ed176e7ae43c61d9d1f4a912745a",
+      "output_sha256": "ee928aa9446e50eb418dd6dcb9ec420ec278c5089e573e7e8bd2c62535d01d0f",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -705,7 +715,7 @@
         16,
         34
       ],
-      "output_sha256": "48ec1268d9463cd702c628379cd97eb327873608a4d3d3875688201def0e49df",
+      "output_sha256": "f50c0551649fefc46a25ede2495d56a8789247b09b5d21f886354cb19d54fae3",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -743,7 +753,7 @@
         16,
         34
       ],
-      "output_sha256": "0a248184e66ca77032afa11b3cbf7a3d2d9f1a52e59608e60471f68cb16bcc7e",
+      "output_sha256": "bf5b3acff4f54658bb5029fc975b47b37f2dc12bb96660426cd740beece9be02",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -781,7 +791,7 @@
         16,
         34
       ],
-      "output_sha256": "97161efa195aca3e1157ca163a95997a95f9d3f2a849810477eb328f19704fa8",
+      "output_sha256": "e580e24af8d1c1884a6ecdfe4fd20e864c5c9d405e298e0c546a82f72cfa537d",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -800,7 +810,7 @@
         16,
         34
       ],
-      "output_sha256": "f1e20faa75398668ce7fd624e46578cea55c7c2175cf59df4595eb19bd9e932b",
+      "output_sha256": "092115d0f67fde7903b87075d11f6e333a8fadf565282b61079dfe9bb4e21315",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -819,7 +829,7 @@
         16,
         34
       ],
-      "output_sha256": "2fbaa2c35f5c0ef70c8f347a63da932ada24874d5bb920a3c27932e3cf06add0",
+      "output_sha256": "223f1a9a0eb85597afc666b4ff64b19d96000ae37a00dea54c9cb25e235cdfa0",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -838,7 +848,7 @@
         16,
         34
       ],
-      "output_sha256": "dedbf78f3901cbc11626cb2fafb8e3d2b6a1425a15ff2e24412b45dd38aa5efe",
+      "output_sha256": "1122a62f31957dc21cc8bfe2684d3b26f896a7336c30ebf0aa78cb02f0e3af89",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -857,7 +867,7 @@
         16,
         34
       ],
-      "output_sha256": "6102c3a15b40877cb340ca450942c57b90b7da5bfc24b214d6cfed21bc363ee9",
+      "output_sha256": "62c20b1725f0845426b11197e15470058d74fe104a21f465394e416031fa8d5f",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -876,7 +886,7 @@
         16,
         34
       ],
-      "output_sha256": "3d054338f1ad2ade123cd39fd23361d12f59b7a7336a457ad1e1c443c9c35e6f",
+      "output_sha256": "550ab8dd90fc78c80f68e58fe8d6f97bb84d0bc3ab6320811d96da028b6a4d11",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -914,7 +924,7 @@
         16,
         34
       ],
-      "output_sha256": "24889954acb1ce2731fe4cec60b191dcfb449df2c79382885152322dd42c7206",
+      "output_sha256": "ba98e00c03739a25e4a48e3ad2ca8f3fa3a820d97516193b6b0023ef9f4d5f79",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -952,7 +962,7 @@
         16,
         34
       ],
-      "output_sha256": "2aa3302768dbd886ee840fbd028894485d4cf4ac834978ae5c5d27b02219dea8",
+      "output_sha256": "dc319e443761cfab10c85dde727b8e23290b73a1fd53ebe34067b284e60e08ad",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -971,7 +981,7 @@
         16,
         34
       ],
-      "output_sha256": "4dd0020418e66699b12a6434a105d1706a87b2c71c66b7d03edd403c9d163289",
+      "output_sha256": "54f998cd7eb5659330550cd8737fd72b81ab684e13b9993b01f2d18edb0bfc68",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -990,7 +1000,7 @@
         16,
         34
       ],
-      "output_sha256": "4a96e689849aae73f9fcd69d2873fa5d26f74991050d4a35f3d815519e7874e0",
+      "output_sha256": "4577b8a90266737e828042f650567af5c0a923cdf8da1fe7f7a8e2de31cab092",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1009,7 +1019,7 @@
         16,
         34
       ],
-      "output_sha256": "6102c3a15b40877cb340ca450942c57b90b7da5bfc24b214d6cfed21bc363ee9",
+      "output_sha256": "62c20b1725f0845426b11197e15470058d74fe104a21f465394e416031fa8d5f",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1028,7 +1038,7 @@
         16,
         34
       ],
-      "output_sha256": "33ffeaa48e299c013bfb4f7908ddac54780230afee9c77f3674ab289e7481cee",
+      "output_sha256": "7783a3ee3ceed44da82f5be0113a9234355ad7d871b8ed92c9a216867ecc4b0b",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1047,7 +1057,7 @@
         16,
         34
       ],
-      "output_sha256": "13ccdb94e0bd845c66c3f322e5cd845ef42a15dc7624174dfe71c791a518168c",
+      "output_sha256": "26057bc5f6f824ff398c849b2d337a3710c5cafa39aaa7ea85a3ac385c9e9e83",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1085,7 +1095,7 @@
         16,
         34
       ],
-      "output_sha256": "f8faf24f6e05feda3a5981e7dc47afce64d4e94009690faf5719e63bc5faac30",
+      "output_sha256": "b31b3c15ea851413a408c1bb9a89aac47d222ed08af0d4c9e0bc510055658018",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1123,7 +1133,7 @@
         16,
         34
       ],
-      "output_sha256": "a0162601e4b2273d9acd17d7c8d82dc903925da015ae29608a26886da8c92ba4",
+      "output_sha256": "31457ece6156451531cf8b0824125f27ba49844d99aff7cd4c57ddf41e54ac24",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1142,7 +1152,7 @@
         16,
         34
       ],
-      "output_sha256": "4914785bd493d3e8e2639752a7b2e69407e2e90d154f6b04c8e8fe684eac6c82",
+      "output_sha256": "fbf44a72f6d8581fab5e6146ec18e37f7ea4f1e24a18c29a7ff7562fb563bdf9",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1161,7 +1171,7 @@
         16,
         34
       ],
-      "output_sha256": "d42dbe7ce33667f77ed8f713e1591d380ecc8292d75d2a6b5ca0fff08ef23f50",
+      "output_sha256": "391f51047f483814c743a1cce5d55b0e3e4569863d53d92d1caddfb8c14fb34b",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1180,7 +1190,7 @@
         16,
         34
       ],
-      "output_sha256": "33ffeaa48e299c013bfb4f7908ddac54780230afee9c77f3674ab289e7481cee",
+      "output_sha256": "7783a3ee3ceed44da82f5be0113a9234355ad7d871b8ed92c9a216867ecc4b0b",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1598,7 +1608,7 @@
         20,
         54
       ],
-      "output_sha256": "bed66ef6bb5f10aaa7f3244dcae0799496ae030715dc2120c96762cc87fc6667",
+      "output_sha256": "bd936e0f6290c5239b0ed1ac9d81e3452460ce663db8bf71d70be15890515f64",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1636,7 +1646,7 @@
         20,
         54
       ],
-      "output_sha256": "7723efb45f6a01625dfcfa92dfbcd23626f72bf98bbd724641fdb4662a52aa83",
+      "output_sha256": "243a71938d4b5cba2657978dc0c9ab7d65231161f22c6eb64fc6a0932f47b76b",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1655,7 +1665,7 @@
         20,
         54
       ],
-      "output_sha256": "af4c5feb8c7a2fd41ad406a587104386e7fdcbbd5253334dfad4f017ce11a7be",
+      "output_sha256": "f3709e3084f7cdbe0561a67c324365fcbace3d9d7672b24689ddfa85069b3adc",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1674,7 +1684,7 @@
         20,
         54
       ],
-      "output_sha256": "8a161d7a9aaf280fe0be0892edc911984792b03b073eb479711da93c44dd4ec9",
+      "output_sha256": "3d472becc28ab8c04ed53ae66d86aea01fefd001c88a7e506e8347c9d04a1657",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1693,7 +1703,7 @@
         20,
         54
       ],
-      "output_sha256": "517baa24026d351ccec57227ae247ac6d4b1c830f2ba964838320bba24397a1b",
+      "output_sha256": "7bf544573e0660d970b6c0a8b689861d09f6ff9f6f12dfb1ad32b3a62a7b8d65",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1712,7 +1722,7 @@
         20,
         54
       ],
-      "output_sha256": "a0c51b900c4d3daabbe7aab804e90ad20d9d4eae00fe00d02a15f914ee2d2910",
+      "output_sha256": "6762456ff8f85695957522c0104b5e6c8b1dfc2cc5b8180f4300c5b657f5896a",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1750,7 +1760,7 @@
         20,
         54
       ],
-      "output_sha256": "ad03fdc3726e0b8b6943041fff6e6ab78837455cccf0f1e9faf86bdc643e1bfc",
+      "output_sha256": "9c571ddbb64d63769f559ba5699a67a4451804a64b382ce568237a7b9e19c6f6",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1769,7 +1779,7 @@
         20,
         54
       ],
-      "output_sha256": "5c6b218bef452fc6032931627fa004b8158e65f62fa4ecd4e8d4731c98bec2d9",
+      "output_sha256": "4297d77c4d1e604c6a81e1f6f6b929ca262ca15c38c2cbac363c1d48d6b31440",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1788,7 +1798,7 @@
         20,
         54
       ],
-      "output_sha256": "a11df1ffd6338040481984893e4aa9745559c8a28dcd986fbe900f063ab0417c",
+      "output_sha256": "2de2591b69570f3dcf4e9b52cf98051f3fcc3f6184ebe0ccb92aa3d4ab13d7fe",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1807,7 +1817,7 @@
         20,
         54
       ],
-      "output_sha256": "cfd6ada87f68bc70d46f034fc452d673d1a9f169cf87a3d5eae374e252509f23",
+      "output_sha256": "a20b8a26a7426dbd1c25325006bbd4fd0b90e765c1fe8299bf610e170871ce7e",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1826,7 +1836,7 @@
         20,
         54
       ],
-      "output_sha256": "50685a2f84afc39c6cf1700496a5a490fdfe3d992bcab5645e9224fb5904654d",
+      "output_sha256": "ffa4ca6816b21064e6bc9bad388708333352f78440c90e15949e94bc8e54eaad",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1864,7 +1874,7 @@
         20,
         54
       ],
-      "output_sha256": "11677c59027c70d7048173dcc8debacd8f5672271802631e92dbf261337a3eef",
+      "output_sha256": "9a0856bd0789e6431f9c8b6813060c1d4475ef8f7f3a95d6d594869e3069fd63",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1883,7 +1893,7 @@
         20,
         54
       ],
-      "output_sha256": "49b4c0fd7db1538e1948bda67bac663c2e852397e6cc66b70c7b84f76088228c",
+      "output_sha256": "cc426e5841ae26ce6a81c018ea3a65c3dcbfd61ea73968cc11ef8deb8874524d",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1902,7 +1912,7 @@
         20,
         54
       ],
-      "output_sha256": "fdec06d7217f5e9987117f251a29154484179af564369bd7cc32d6921b21113e",
+      "output_sha256": "30a5970abfdf88f2a0de199d52f0b014df3efbb045281f301c3bfcb143dd56b4",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1921,7 +1931,7 @@
         20,
         54
       ],
-      "output_sha256": "cb2148ff7bde6938b15f2ee154736660d83000990279442909179b6db6591894",
+      "output_sha256": "4d01df15a1a55945d045b88d1ce80f88bcd6874b62d54dad7ae3d1354290c0cb",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1940,7 +1950,7 @@
         20,
         54
       ],
-      "output_sha256": "dce3b6b38999965db7bf94609a9af3c7a1d8bd550f3047430ec0996b27c5e0c1",
+      "output_sha256": "2647d45a9198e026536ebf83438262fbd1f1b2b11ed650d84ab2cb9e44dbae80",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1978,7 +1988,7 @@
         20,
         54
       ],
-      "output_sha256": "33c54231042396cb89c8cbea20e3b833d689e9060048f5de05bce9ca0502b170",
+      "output_sha256": "2c011b2494e2a3e57b23a533dea22d8bd674b78406c41d10a36242f8e330c9a8",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -1997,7 +2007,7 @@
         20,
         54
       ],
-      "output_sha256": "afda562923d86e5cb087ec0cb29e321a948e2e07cd6c2a0d272469a4c7ce1e93",
+      "output_sha256": "85f2bacda7174b01cd378973b369dee452a7b3984e073892b926cb37fae8573e",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2016,7 +2026,7 @@
         20,
         54
       ],
-      "output_sha256": "a8a80861339ae260ac038d9d6de1604acc863f5c9e0122b0ca5cbfdbdb846b1c",
+      "output_sha256": "8b72cf39818fc73080d9f059629e90f19f7a43dd05e8fcbb25245764890c9946",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2035,7 +2045,7 @@
         20,
         54
       ],
-      "output_sha256": "83cea871d98e4054ed8310abffa36fd08f4145e5631453d4781fdd572ea4cf0b",
+      "output_sha256": "033c944f32ea90fc450e609bb98c8f8bb12ef07ba5aed85390dadec939bebdcb",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2073,7 +2083,7 @@
         20,
         54
       ],
-      "output_sha256": "ab7fa257853454b9aa7aaff452324f96e8d0806be8ff75f4ed910d21e4fe45f6",
+      "output_sha256": "e1b9c60826b90a1c50f531e089e2746f210f24556d1c93c1fe26e8964eb946ed",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2111,7 +2121,7 @@
         20,
         54
       ],
-      "output_sha256": "ad03fdc3726e0b8b6943041fff6e6ab78837455cccf0f1e9faf86bdc643e1bfc",
+      "output_sha256": "9c571ddbb64d63769f559ba5699a67a4451804a64b382ce568237a7b9e19c6f6",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2130,7 +2140,7 @@
         20,
         54
       ],
-      "output_sha256": "bc6069c4adf27bd7ac9474e11efad8d4f33534e5441d08186810dae1e2cee1bd",
+      "output_sha256": "85a4bec16fcccf64d55c2508ec3a4555bb2c14be4fc994e840e70100ecce41de",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2187,7 +2197,7 @@
         20,
         54
       ],
-      "output_sha256": "06864098b7fbd0567bd5ff6fec1f73e39ae4981730348a422c60380dfdf3407e",
+      "output_sha256": "d27db92fe0d18b2645df70d6e2322da14c29adc587912ffae90176ae80b7e830",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2225,7 +2235,7 @@
         20,
         54
       ],
-      "output_sha256": "5c6b218bef452fc6032931627fa004b8158e65f62fa4ecd4e8d4731c98bec2d9",
+      "output_sha256": "4297d77c4d1e604c6a81e1f6f6b929ca262ca15c38c2cbac363c1d48d6b31440",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2244,7 +2254,7 @@
         20,
         54
       ],
-      "output_sha256": "f0937ecea13d12468f42f0a9e0da9284e38c95fe86392f7df7370940b9e4bd9d",
+      "output_sha256": "045b5cc545020cf1f5af3642bc8cddc7f84d73a1fef88003d1aaf6419bbed46d",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2301,7 +2311,7 @@
         20,
         54
       ],
-      "output_sha256": "9c14d5a345b24a977eea9d12b37ad78134ce5aae34112207b49a585649af1a43",
+      "output_sha256": "3d265899fc6dd8ab7081a95b757388d65ca5a3e33dd35771eea1372bfbae0ba5",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2339,7 +2349,7 @@
         20,
         54
       ],
-      "output_sha256": "a11df1ffd6338040481984893e4aa9745559c8a28dcd986fbe900f063ab0417c",
+      "output_sha256": "2de2591b69570f3dcf4e9b52cf98051f3fcc3f6184ebe0ccb92aa3d4ab13d7fe",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2358,7 +2368,7 @@
         20,
         54
       ],
-      "output_sha256": "7cd4d2837720c212dfc37e8e3f960e68d542acfbe095a9ea37888d01886533bc",
+      "output_sha256": "e3ec00e5365c98ad2932392665451e4b246d1ccd4db888433500d40d7183a479",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2415,7 +2425,7 @@
         20,
         54
       ],
-      "output_sha256": "a0c51b900c4d3daabbe7aab804e90ad20d9d4eae00fe00d02a15f914ee2d2910",
+      "output_sha256": "6762456ff8f85695957522c0104b5e6c8b1dfc2cc5b8180f4300c5b657f5896a",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2453,7 +2463,7 @@
         20,
         54
       ],
-      "output_sha256": "cfd6ada87f68bc70d46f034fc452d673d1a9f169cf87a3d5eae374e252509f23",
+      "output_sha256": "a20b8a26a7426dbd1c25325006bbd4fd0b90e765c1fe8299bf610e170871ce7e",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"
@@ -2472,7 +2482,7 @@
         20,
         54
       ],
-      "output_sha256": "1a0f9d8a820e3cc2491f5ada47018c140f7ea242ac7e1f556c7eb8fbb5dd1888",
+      "output_sha256": "f6f91877218b50518c2962644a7ea93fd97c4b024c2c466dba54f7fe570b5340",
       "artwork_pixels_per_world_pixel": 2,
       "anchor_space": "logical",
       "contact_space": "logical"

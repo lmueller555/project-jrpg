@@ -66,21 +66,21 @@ class VennVisit:
         self.walk_ms = 0.;self.blocked_seconds = 0.;self.dialogue = None;self.partner = None
         self.debris_cleared = False;self.flow_seconds = 0.;self._pose_owned = False
         self._last_art = None;self._water_cache = {}
-        self.gates = {name: [self.town.image(path) for path in frames] for name, frames in self.art['animations'].items()}
-        self.backgrounds = [self.town.image(path, False) for path in self.art['backgrounds']]
+        self.gates = {name: [self.town.room_art_image(path) for path in frames] for name, frames in self.art['animations'].items()}
+        self.backgrounds = [self.town.room_art_image(path) for path in self.art['backgrounds']]
         self.magick_art = VennMagicks(self.town)
         self.surface_props = [
-            {'id': 'venn_supplies', 'scene': 'venn', 'surface': self.home.image(ART+'provisions.png'),
+            {'id': 'venn_supplies', 'scene': 'venn', 'surface': self.home.room_art_image(ART+'provisions.png'),
              'position': [338, 128], 'sort_y': 175},
-            {'id': 'venn_tools', 'scene': self.town.data['id'], 'surface': self.town.image(ART+'toolbox.png'),
+            {'id': 'venn_tools', 'scene': self.town.data['id'], 'surface': self.town.room_art_image(ART+'toolbox.png'),
              'position': [1400, 686], 'sort_y': 698},
             {'id': 'venn_gate', 'scene': self.town.data['id'], 'surface': self.backgrounds[0].copy(),
              'position': list(GATE_POSITION), 'sort_y': 672},
-            {'id': 'venn_debris', 'scene': self.town.data['id'], 'surface': self.town.image(ART+'debris.png'),
+            {'id': 'venn_debris', 'scene': self.town.data['id'], 'surface': self.town.room_art_image(ART+'debris.png'),
              'position': [1446, 680], 'sort_y': -9998}]
         meta = read('assets/terrain/eldenmere/irrigation/tileset.json')
         routes = {r['id']: r for r in meta['routes']}
-        atlases = [self.town.image('assets/terrain/eldenmere/irrigation/'+f['image']) for f in meta['frames']]
+        atlases = [self.town.room_art_image('assets/terrain/eldenmere/irrigation/'+f['image']) for f in meta['frames']]
         terrain = read('assets/maps/eldenmere/terrain_foundation/scene.json')
         downstream = [c for c in terrain['channels'] if c['branch']=='irrigation' and c['mode']=='trickle' and c['cell'][1]>=28]
         self.water_props = []
@@ -91,7 +91,7 @@ class VennVisit:
             self.water_props.append(prop)
         for fall in terrain['spillways']:
             if fall['branch'] != 'irrigation' or fall['mode'] != 'trickle':continue
-            images = [self.town.image(f'assets/terrain/eldenmere/terraces/spillway/frame_{i+1:02}.png') for i in range(6)]
+            images = [self.town.room_art_image(f'assets/terrain/eldenmere/terraces/spillway/frame_{i+1:02}.png') for i in range(6)]
             self.water_props.append({'id': 'venn_spillway', 'scene': self.town.data['id'],
                 'position': fall['position'], 'sort_y': -9999, 'surface': images[0], 'images': images,
                 'delay': 9*.16})
@@ -395,7 +395,7 @@ class VennVisit:
 
     def _update_art(self, force=False):
         if not force and self.game.world is not self.town:return
-        phase = int(self.game.elapsed_ms//200)%6;animation, frame = self._gate_frame(phase)
+        phase = 0 if self.town.reduced_motion else int(self.game.elapsed_ms//200)%6;animation, frame = self._gate_frame(phase)
         magic = self.action=='repair' and self.action_method=='magicks' and self.phase in self.magick_art.poses
         signature = (phase, animation, frame, self.phase, int(self.phase_time*30) if magic else 0, self.debris_cleared, int(self.flow_seconds/.16) if self.flowing and self.flow_seconds<12 else 100)
         if signature==self._last_art and not force:return
@@ -413,12 +413,12 @@ class VennVisit:
             key = (i, phase)
             if key not in self._water_cache:
                 image = prop['images'][phase];rect = image.get_rect(topleft=prop['position'])
-                background = self.town.ground[phase].subsurface(rect).copy()
+                background = self.town.ground_region(rect,phase*200)
                 background.blit(image, (0, 0));self._water_cache[key] = background
             prop['surface'] = self._water_cache[key]
 
     def draw_world(self, canvas, camera):
         if self.action!='supplies' or self.game.world is not self.home:return
         actor = self.partner if self.contact else self.game.player
-        canvas.blit(self.home.image(ART+'provisions.png'),
+        canvas.blit(self.home.room_art_image(ART+'provisions.png'),
                     (round(actor.position.x)+3-camera[0], round(actor.position.y)-12-camera[1]))
