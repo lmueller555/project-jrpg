@@ -20,6 +20,7 @@ class BedRest:
         game = self.game
         if (game.on_title or game.opening_cinematic.active or game.combat.active
                 or game.pause.is_open or game.inventory_ui.is_open
+                or getattr(getattr(game, 'services', None), 'is_open', False)
                 or getattr(getattr(game, 'party_ui', None), 'is_open', False)
                 or game.world_map_viewer.is_open or game.map_open
                 or game.quest_ui.journal_open or game.social.locked
@@ -31,6 +32,7 @@ class BedRest:
         return game.world.can_stand(game.player.position)
 
     def _profile(self):
+        if self.game.world.data['id']=='inn':return self.game.services.rest_profile()
         if self.game.world.data.get('rest_profile'):return self.game.world.data['rest_profile']
         return (self.relief['bed'] if self.game.world.data['id'] == self.relief['bed']['scene']
                 else self.data)
@@ -58,6 +60,9 @@ class BedRest:
         if not self._near_bed(profile):return False
         return self._offer(profile, lambda:self._near_bed(profile))
 
+    def offer_inn(self, validator):
+        return self._offer(self._profile(), validator)
+
     def offer_relief(self, can_rest=None, *, attendant=False):
         """Offer the visitor bed through its attendant's independently checked range."""
         profile = self.relief['attendant_rest'] if attendant else self.relief['bed']
@@ -83,6 +88,11 @@ class BedRest:
         validator = validator or (lambda:self._near_bed(profile))
         if action != 'rest' or not self.available(profile) or not validator():return
         game = self.game
+        prior_gold = game.wallet.gold
+        if not game.wallet.spend(profile.get('price',0)):
+            self.last_error = 'Not enough gold.'
+            game.social.start_script([{'speaker':'caelan','text':self.last_error}],identifier='inn_rest_unavailable')
+            return
         # Rest recovers the travelling roster, including available reserves.
         # Characters who are elsewhere retain their resources until they return.
         party=getattr(game,'party',None)
@@ -96,11 +106,13 @@ class BedRest:
             attributes.recover()
         store = getattr(game, 'save_store', None)
         if store is not None and store.enabled and not game.save_progress():
+            game.wallet.gold = prior_gold
             for attributes, hp, mp in before:attributes.set_current(hp=hp, mp=mp)
             self.last_error = game.save_error or 'Your rest could not be saved.'
             self._offer(profile, validator, retry=True)
             return
         self.last_error = ''
+        if profile.get('service_id') == 'inn':game.saves.request_service('inn')
         game.player.moving = game.player.running = False
         game.player.walk_ms = 0.0
         game.opening_fade = .65

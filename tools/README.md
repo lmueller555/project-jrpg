@@ -34,6 +34,14 @@ owns its scope, cache behavior, rebuild order and registry. The courtyard build
 command and legacy terrain-only command forward here. The older full-town compiler
 refuses to overwrite the HD map; historical reproduction needs an isolated checkout.
 
+`python tools/capture_town_services.py /tmp/town-services-review` captures the
+actual shop, purchase confirmation, inn stay and gold display at normal/large
+text sizes with disposable saves. `python tools/check_eldenmere_hd.py
+test_town_services` exercises transactions, keeper input, cancellation, recovery,
+currency compatibility and service autosaves. Prices and stock belong to
+`assets/services/eldenmere.json`; gameplay behavior is in
+[the inventory guide](../docs/INVENTORY.md#eldenmere-town-services-and-gold).
+
 `python tools/build_sanctuary_dining_hd.py` exports retained new dining-room
 source atlases at explicit 2× density. It registers furniture, four chair views,
 tabletop/workstation props, fire, steam and architecture to existing logical

@@ -244,6 +244,7 @@ class InventoryUI:
         painter.panel((12, 12, 456, 296), parchment=True)
         painter.lantern((31, 31), color=FOREST, size=10)
         painter.text('Caelan’s satchel', (46, 20), role='name', color=FOREST, bold=True)
+        painter.text(f'{self.game.wallet.gold} gold',(425,23),role='small',color=FOREST,anchor='topright')
         painter.button(self.close_rect, '×')
         for index, (label, rect) in enumerate(zip(CATEGORY_NAMES, self.tabs)):
             selected=index == self.category_index
