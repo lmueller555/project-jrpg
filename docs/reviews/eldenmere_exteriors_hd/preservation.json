@@ -1,0 +1,102 @@
+{
+  "baseline_commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+  "scope": "One-time preservation evidence, not a freeze on future maps or artwork.",
+  "banks": [
+    {
+      "path": "assets/maps/eldenmere/playable",
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/maps/eldenmere/building_interiors",
+      "file_count": 185,
+      "tree_sha256": "89aa5a3cbf016a7ecdb8a7558252e537eb06663d4374c805dfe84bc437f0a7ce",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/maps/eldenmere/liam_house",
+      "file_count": 28,
+      "tree_sha256": "7a333030d15a63fc5229e4ce6bafa77d61cb8f3baedd70fe9b074e0b57d87321",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage",
+      "file_count": 109,
+      "tree_sha256": "fad7c9cb2fb267ceb1eed92043a169233f93187f4582f69bcab6fb5415049d58",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_variants",
+      "file_count": 277,
+      "tree_sha256": "b20f61d2d1f46a483677e2b991f1ca568bf45a34657772186df97fe2d51bd4ad",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_shapes",
+      "file_count": 582,
+      "tree_sha256": "ef0d2da9782165f297297cb40537b44d2d023bfbd6e02a189f1ec642d77e7204",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/workshop",
+      "file_count": 155,
+      "tree_sha256": "19054b40c29b873ac407216c0a93b3d5a6020218cee2966e4beb2623a3dc298a",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/watermill",
+      "file_count": 55,
+      "tree_sha256": "b88877ac714e11c42c87e942e64ac7f036a2f0078168db1312669a38420844f6",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/school",
+      "file_count": 82,
+      "tree_sha256": "9f34bebee24f05148cbd2afbd8af943619df39ddd1c413c79e78ae728c792148",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary",
+      "file_count": 10,
+      "tree_sha256": "9da0b5f1db2b7bf2220ce4386e0562c9324264435797e6ace4a8408feacee6a3",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_charm",
+      "file_count": 158,
+      "tree_sha256": "2ce11cc0920854f321ce80c240bc659dbb145fd94a4c17c617f49b9e4d134bd2",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/vegetation_hd",
+      "file_count": 602,
+      "tree_sha256": "c6dbc3bf0c9eed011cc48d7ced2e27c1936de1807105c52cd58b20a1cc6d0146",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/water_hd",
+      "file_count": 1527,
+      "tree_sha256": "0627b16d053c712bcf5cb41bc8c65f875cfe47c9a78e4cd49d10130a7b53b2a6",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/grass_dirt_hd",
+      "file_count": 79,
+      "tree_sha256": "ac0f4f176bc29d973cf61c475ec3eff0855b17ce4299090fc5767599a38d3f1c",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/characters/caelan/review_hd",
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/characters/iselin",
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf",
+      "matches_baseline": true
+    }
+  ]
+}

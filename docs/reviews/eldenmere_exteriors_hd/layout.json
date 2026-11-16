@@ -1,0 +1,322 @@
+{
+  "presentation": "Offline native-density compositions, not gameplay captures.",
+  "scenes": [
+    {
+      "id": "cottage_lane",
+      "size_artwork": [
+        960,
+        640
+      ],
+      "ground_rule": "Dirt rows 8..10; grass arrangement (x//3+y//4)%4 elsewhere.",
+      "buildings": [
+        {
+          "id": "compact_gardener",
+          "position_artwork": [
+            24,
+            80
+          ]
+        },
+        {
+          "id": "standard_craft",
+          "position_artwork": [
+            288,
+            80
+          ]
+        },
+        {
+          "id": "wide_weathered",
+          "position_artwork": [
+            600,
+            80
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "rain_barrel",
+          "root_artwork": [
+            30,
+            410
+          ],
+          "position_artwork": [
+            10,
+            366
+          ]
+        },
+        {
+          "id": "watering_can",
+          "root_artwork": [
+            240,
+            400
+          ],
+          "position_artwork": [
+            224,
+            376
+          ]
+        },
+        {
+          "id": "orchard_basket",
+          "root_artwork": [
+            530,
+            412
+          ],
+          "position_artwork": [
+            512,
+            384
+          ]
+        },
+        {
+          "id": "fence_panel",
+          "root_artwork": [
+            760,
+            455
+          ],
+          "position_artwork": [
+            720,
+            411
+          ]
+        },
+        {
+          "id": "garden_gate",
+          "root_artwork": [
+            842,
+            455
+          ],
+          "position_artwork": [
+            802,
+            411
+          ]
+        },
+        {
+          "id": "wood_shavings",
+          "root_artwork": [
+            510,
+            400
+          ],
+          "position_artwork": [
+            494,
+            384
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+          "position_artwork": [
+            425,
+            480
+          ]
+        },
+        {
+          "file": "assets/characters/iselin/idle_front_42x72.png",
+          "position_artwork": [
+            490,
+            480
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workshop_yard",
+      "size_artwork": [
+        960,
+        640
+      ],
+      "ground_rule": "Dirt rows 8..10; grass arrangement (x//3+y//4)%4 elsewhere.",
+      "buildings": [
+        {
+          "id": "mira",
+          "position_artwork": [
+            180,
+            90
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "firewood",
+          "root_artwork": [
+            140,
+            430
+          ],
+          "position_artwork": [
+            116,
+            402
+          ]
+        },
+        {
+          "id": "broom",
+          "root_artwork": [
+            535,
+            420
+          ],
+          "position_artwork": [
+            519,
+            368
+          ]
+        },
+        {
+          "id": "stool",
+          "root_artwork": [
+            620,
+            440
+          ],
+          "position_artwork": [
+            604,
+            412
+          ]
+        },
+        {
+          "id": "wood_shavings",
+          "root_artwork": [
+            550,
+            450
+          ],
+          "position_artwork": [
+            534,
+            434
+          ]
+        },
+        {
+          "id": "rain_barrel",
+          "root_artwork": [
+            110,
+            420
+          ],
+          "position_artwork": [
+            90,
+            376
+          ]
+        },
+        {
+          "id": "orchard_basket",
+          "root_artwork": [
+            680,
+            420
+          ],
+          "position_artwork": [
+            662,
+            392
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+          "position_artwork": [
+            425,
+            480
+          ]
+        },
+        {
+          "file": "assets/characters/iselin/idle_front_42x72.png",
+          "position_artwork": [
+            490,
+            480
+          ]
+        }
+      ]
+    },
+    {
+      "id": "school_and_sanctuary",
+      "size_artwork": [
+        960,
+        640
+      ],
+      "ground_rule": "Dirt rows 8..10; grass arrangement (x//3+y//4)%4 elsewhere.",
+      "buildings": [
+        {
+          "id": "school",
+          "position_artwork": [
+            0,
+            30
+          ]
+        },
+        {
+          "id": "sanctuary",
+          "position_artwork": [
+            480,
+            20
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "herb_pot",
+          "root_artwork": [
+            470,
+            480
+          ],
+          "position_artwork": [
+            452,
+            448
+          ]
+        },
+        {
+          "id": "boots",
+          "root_artwork": [
+            420,
+            460
+          ],
+          "position_artwork": [
+            408,
+            440
+          ]
+        },
+        {
+          "id": "flowerpot_pair",
+          "root_artwork": [
+            930,
+            490
+          ],
+          "position_artwork": [
+            906,
+            446
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+          "position_artwork": [
+            425,
+            480
+          ]
+        },
+        {
+          "file": "assets/characters/iselin/idle_front_42x72.png",
+          "position_artwork": [
+            490,
+            480
+          ]
+        }
+      ]
+    }
+  ],
+  "door_review": {
+    "schedule": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "durations_ms": [
+      600,
+      100,
+      100,
+      100,
+      600,
+      600,
+      100,
+      100,
+      100,
+      600
+    ]
+  }
+}

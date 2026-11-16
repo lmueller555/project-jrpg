@@ -27,6 +27,10 @@ integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdir
 [waterworks reference](#staged-eldenmere-hd-channels-and-spillways) and
 [vegetation reference](#staged-world-hd-vegetation-and-natural-accents).
 
+The staged [Eldenmere building exterior bank](VISUAL_ART_STANDARD.md#staged-eldenmere-hd-building-exteriors)
+is documented in the global visual standard; its charm props share this terrain
+scale and palette.
+
 ## Contents
 
 - [Visual direction](#1-visual-direction)
