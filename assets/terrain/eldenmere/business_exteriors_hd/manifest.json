@@ -1,0 +1,1642 @@
+{
+  "version": 1,
+  "id": "eldenmere.business_exteriors.hd",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "path_conventions": {
+    "asset_files": "pack_relative",
+    "recipe_and_base_references": "repository_relative"
+  },
+  "rect_space": "artwork unless logical-suffixed",
+  "anchor_space": "logical unless artwork-suffixed",
+  "buildings": [
+    {
+      "id": "inn_maintained",
+      "building_type": "inn",
+      "variant": "maintained",
+      "logical_size": [
+        192,
+        240
+      ],
+      "ground_rect_logical": [
+        12,
+        144,
+        168,
+        96
+      ],
+      "door_rect_logical": [
+        86,
+        196,
+        20,
+        36
+      ],
+      "charm": [
+        "guest curtains",
+        "sheltered entrance",
+        "worn threshold",
+        "bed pictogram",
+        "firewood",
+        "bench"
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size": [
+        384,
+        480
+      ],
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_logical": 240,
+      "structure": "buildings/inn_maintained/structure.png",
+      "closed": "buildings/inn_maintained/closed.png",
+      "open": "buildings/inn_maintained/open.png",
+      "window_mask": "buildings/inn_maintained/window_mask.png",
+      "door": {
+        "position_logical": [
+          86,
+          196
+        ],
+        "logical_size": [
+          20,
+          36
+        ],
+        "frames": [
+          {
+            "file": "buildings/inn_maintained/doors/frame_00.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_maintained/doors/frame_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_maintained/doors/frame_02.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_maintained/doors/frame_03.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_maintained/doors/frame_04.png",
+            "duration_ms": 100
+          }
+        ],
+        "loop": false,
+        "hold_closed": 0,
+        "hold_open": 4,
+        "closing_order": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "sign": {
+        "prop": "sign_inn",
+        "position_logical": [
+          8,
+          172
+        ],
+        "fixed_mount": true
+      },
+      "display": null,
+      "awning_rect_logical": null,
+      "ambient": {
+        "frames": [
+          {
+            "file": "buildings/inn_maintained/ambient/frame_00.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_00.png",
+              "awning": "buildings/inn_maintained/awning/frame_00.png",
+              "sign": "buildings/inn_maintained/sign/frame_00.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_00.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_01.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_01.png",
+              "awning": "buildings/inn_maintained/awning/frame_01.png",
+              "sign": "buildings/inn_maintained/sign/frame_01.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_01.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_02.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_02.png",
+              "awning": "buildings/inn_maintained/awning/frame_02.png",
+              "sign": "buildings/inn_maintained/sign/frame_02.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_02.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_03.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_03.png",
+              "awning": "buildings/inn_maintained/awning/frame_03.png",
+              "sign": "buildings/inn_maintained/sign/frame_03.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_03.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_04.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_04.png",
+              "awning": "buildings/inn_maintained/awning/frame_04.png",
+              "sign": "buildings/inn_maintained/sign/frame_04.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_04.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_05.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_05.png",
+              "awning": "buildings/inn_maintained/awning/frame_05.png",
+              "sign": "buildings/inn_maintained/sign/frame_05.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_05.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_06.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_06.png",
+              "awning": "buildings/inn_maintained/awning/frame_06.png",
+              "sign": "buildings/inn_maintained/sign/frame_06.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_06.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_07.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_07.png",
+              "awning": "buildings/inn_maintained/awning/frame_07.png",
+              "sign": "buildings/inn_maintained/sign/frame_07.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_07.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_08.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_08.png",
+              "awning": "buildings/inn_maintained/awning/frame_08.png",
+              "sign": "buildings/inn_maintained/sign/frame_08.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_08.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_09.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_09.png",
+              "awning": "buildings/inn_maintained/awning/frame_09.png",
+              "sign": "buildings/inn_maintained/sign/frame_09.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_09.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_10.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_10.png",
+              "awning": "buildings/inn_maintained/awning/frame_10.png",
+              "sign": "buildings/inn_maintained/sign/frame_10.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_10.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_11.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_11.png",
+              "awning": "buildings/inn_maintained/awning/frame_11.png",
+              "sign": "buildings/inn_maintained/sign/frame_11.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_11.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_12.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_12.png",
+              "awning": "buildings/inn_maintained/awning/frame_12.png",
+              "sign": "buildings/inn_maintained/sign/frame_12.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_12.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_13.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_13.png",
+              "awning": "buildings/inn_maintained/awning/frame_13.png",
+              "sign": "buildings/inn_maintained/sign/frame_13.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_13.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_14.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_14.png",
+              "awning": "buildings/inn_maintained/awning/frame_14.png",
+              "sign": "buildings/inn_maintained/sign/frame_14.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_14.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_15.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_15.png",
+              "awning": "buildings/inn_maintained/awning/frame_15.png",
+              "sign": "buildings/inn_maintained/sign/frame_15.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_15.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_16.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_16.png",
+              "awning": "buildings/inn_maintained/awning/frame_16.png",
+              "sign": "buildings/inn_maintained/sign/frame_16.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_16.png"
+            }
+          },
+          {
+            "file": "buildings/inn_maintained/ambient/frame_17.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_maintained/windowlight/frame_17.png",
+              "awning": "buildings/inn_maintained/awning/frame_17.png",
+              "sign": "buildings/inn_maintained/sign/frame_17.png",
+              "smoke": "buildings/inn_maintained/smoke/frame_17.png"
+            }
+          }
+        ],
+        "cycle_ms": 3600,
+        "smoke_optional": true,
+        "reduced_motion": "buildings/inn_maintained/closed.png"
+      },
+      "collision": "not_registered; ground footprint is a proposal for later explicit integration",
+      "door_approach_local_logical": [
+        82,
+        196,
+        28,
+        56
+      ],
+      "interaction_cues": false
+    },
+    {
+      "id": "inn_weathered",
+      "building_type": "inn",
+      "variant": "weathered",
+      "logical_size": [
+        192,
+        240
+      ],
+      "ground_rect_logical": [
+        12,
+        144,
+        168,
+        96
+      ],
+      "door_rect_logical": [
+        86,
+        196,
+        20,
+        36
+      ],
+      "charm": [
+        "guest curtains",
+        "sheltered entrance",
+        "worn threshold",
+        "bed pictogram",
+        "firewood",
+        "bench"
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size": [
+        384,
+        480
+      ],
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_logical": 240,
+      "structure": "buildings/inn_weathered/structure.png",
+      "closed": "buildings/inn_weathered/closed.png",
+      "open": "buildings/inn_weathered/open.png",
+      "window_mask": "buildings/inn_weathered/window_mask.png",
+      "door": {
+        "position_logical": [
+          86,
+          196
+        ],
+        "logical_size": [
+          20,
+          36
+        ],
+        "frames": [
+          {
+            "file": "buildings/inn_weathered/doors/frame_00.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_weathered/doors/frame_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_weathered/doors/frame_02.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_weathered/doors/frame_03.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/inn_weathered/doors/frame_04.png",
+            "duration_ms": 100
+          }
+        ],
+        "loop": false,
+        "hold_closed": 0,
+        "hold_open": 4,
+        "closing_order": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "sign": {
+        "prop": "sign_inn",
+        "position_logical": [
+          8,
+          172
+        ],
+        "fixed_mount": true
+      },
+      "display": null,
+      "awning_rect_logical": null,
+      "ambient": {
+        "frames": [
+          {
+            "file": "buildings/inn_weathered/ambient/frame_00.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_00.png",
+              "awning": "buildings/inn_weathered/awning/frame_00.png",
+              "sign": "buildings/inn_weathered/sign/frame_00.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_00.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_01.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_01.png",
+              "awning": "buildings/inn_weathered/awning/frame_01.png",
+              "sign": "buildings/inn_weathered/sign/frame_01.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_01.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_02.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_02.png",
+              "awning": "buildings/inn_weathered/awning/frame_02.png",
+              "sign": "buildings/inn_weathered/sign/frame_02.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_02.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_03.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_03.png",
+              "awning": "buildings/inn_weathered/awning/frame_03.png",
+              "sign": "buildings/inn_weathered/sign/frame_03.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_03.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_04.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_04.png",
+              "awning": "buildings/inn_weathered/awning/frame_04.png",
+              "sign": "buildings/inn_weathered/sign/frame_04.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_04.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_05.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_05.png",
+              "awning": "buildings/inn_weathered/awning/frame_05.png",
+              "sign": "buildings/inn_weathered/sign/frame_05.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_05.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_06.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_06.png",
+              "awning": "buildings/inn_weathered/awning/frame_06.png",
+              "sign": "buildings/inn_weathered/sign/frame_06.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_06.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_07.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_07.png",
+              "awning": "buildings/inn_weathered/awning/frame_07.png",
+              "sign": "buildings/inn_weathered/sign/frame_07.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_07.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_08.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_08.png",
+              "awning": "buildings/inn_weathered/awning/frame_08.png",
+              "sign": "buildings/inn_weathered/sign/frame_08.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_08.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_09.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_09.png",
+              "awning": "buildings/inn_weathered/awning/frame_09.png",
+              "sign": "buildings/inn_weathered/sign/frame_09.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_09.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_10.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_10.png",
+              "awning": "buildings/inn_weathered/awning/frame_10.png",
+              "sign": "buildings/inn_weathered/sign/frame_10.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_10.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_11.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_11.png",
+              "awning": "buildings/inn_weathered/awning/frame_11.png",
+              "sign": "buildings/inn_weathered/sign/frame_11.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_11.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_12.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_12.png",
+              "awning": "buildings/inn_weathered/awning/frame_12.png",
+              "sign": "buildings/inn_weathered/sign/frame_12.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_12.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_13.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_13.png",
+              "awning": "buildings/inn_weathered/awning/frame_13.png",
+              "sign": "buildings/inn_weathered/sign/frame_13.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_13.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_14.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_14.png",
+              "awning": "buildings/inn_weathered/awning/frame_14.png",
+              "sign": "buildings/inn_weathered/sign/frame_14.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_14.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_15.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_15.png",
+              "awning": "buildings/inn_weathered/awning/frame_15.png",
+              "sign": "buildings/inn_weathered/sign/frame_15.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_15.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_16.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_16.png",
+              "awning": "buildings/inn_weathered/awning/frame_16.png",
+              "sign": "buildings/inn_weathered/sign/frame_16.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_16.png"
+            }
+          },
+          {
+            "file": "buildings/inn_weathered/ambient/frame_17.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/inn_weathered/windowlight/frame_17.png",
+              "awning": "buildings/inn_weathered/awning/frame_17.png",
+              "sign": "buildings/inn_weathered/sign/frame_17.png",
+              "smoke": "buildings/inn_weathered/smoke/frame_17.png"
+            }
+          }
+        ],
+        "cycle_ms": 3600,
+        "smoke_optional": true,
+        "reduced_motion": "buildings/inn_weathered/closed.png"
+      },
+      "collision": "not_registered; ground footprint is a proposal for later explicit integration",
+      "door_approach_local_logical": [
+        82,
+        196,
+        28,
+        56
+      ],
+      "interaction_cues": false
+    },
+    {
+      "id": "item_shop_maintained",
+      "building_type": "item_shop",
+      "variant": "maintained",
+      "logical_size": [
+        168,
+        192
+      ],
+      "ground_rect_logical": [
+        12,
+        96,
+        144,
+        96
+      ],
+      "door_rect_logical": [
+        34,
+        146,
+        22,
+        38
+      ],
+      "charm": [
+        "satchel and potion pictogram",
+        "blue-green awning",
+        "delivery hatch",
+        "rain barrel",
+        "potions/weapons/armor behind glass"
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size": [
+        336,
+        384
+      ],
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_logical": 192,
+      "structure": "buildings/item_shop_maintained/structure.png",
+      "closed": "buildings/item_shop_maintained/closed.png",
+      "open": "buildings/item_shop_maintained/open.png",
+      "window_mask": "buildings/item_shop_maintained/window_mask.png",
+      "door": {
+        "position_logical": [
+          34,
+          146
+        ],
+        "logical_size": [
+          22,
+          38
+        ],
+        "frames": [
+          {
+            "file": "buildings/item_shop_maintained/doors/frame_00.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_maintained/doors/frame_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_maintained/doors/frame_02.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_maintained/doors/frame_03.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_maintained/doors/frame_04.png",
+            "duration_ms": 100
+          }
+        ],
+        "loop": false,
+        "hold_closed": 0,
+        "hold_open": 4,
+        "closing_order": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "sign": {
+        "prop": "sign_item_shop",
+        "position_logical": [
+          8,
+          103
+        ],
+        "fixed_mount": true
+      },
+      "display": {
+        "file": "buildings/item_shop_maintained/display.png",
+        "rect_logical": [
+          70,
+          136,
+          78,
+          48
+        ],
+        "variant": "maintained",
+        "contents": {
+          "potions": [
+            "red",
+            "blue",
+            "green",
+            "violet",
+            "round flasks",
+            "square bottles",
+            "conical vials"
+          ],
+          "weapons": [
+            "sword",
+            "round shield"
+          ],
+          "armor": [
+            "helmet",
+            "breastplate"
+          ]
+        },
+        "glass_reflections": "Stationary source-drawn strokes above merchandise, behind fixed mullions.",
+        "animation": "none",
+        "inventory_binding": "decorative_only",
+        "interaction_cues": false
+      },
+      "awning_rect_logical": [
+        64,
+        109,
+        88,
+        27
+      ],
+      "ambient": {
+        "frames": [
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_00.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_00.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_00.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_00.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_00.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_01.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_01.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_01.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_01.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_01.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_02.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_02.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_02.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_02.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_02.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_03.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_03.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_03.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_03.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_03.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_04.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_04.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_04.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_04.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_04.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_05.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_05.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_05.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_05.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_05.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_06.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_06.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_06.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_06.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_06.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_07.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_07.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_07.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_07.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_07.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_08.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_08.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_08.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_08.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_08.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_09.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_09.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_09.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_09.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_09.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_10.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_10.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_10.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_10.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_10.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_11.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_11.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_11.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_11.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_11.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_12.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_12.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_12.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_12.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_12.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_13.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_13.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_13.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_13.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_13.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_14.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_14.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_14.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_14.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_14.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_15.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_15.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_15.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_15.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_15.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_16.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_16.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_16.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_16.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_16.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_maintained/ambient/frame_17.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_maintained/windowlight/frame_17.png",
+              "awning": "buildings/item_shop_maintained/awning/frame_17.png",
+              "sign": "buildings/item_shop_maintained/sign/frame_17.png",
+              "smoke": "buildings/item_shop_maintained/smoke/frame_17.png"
+            }
+          }
+        ],
+        "cycle_ms": 3600,
+        "smoke_optional": false,
+        "reduced_motion": "buildings/item_shop_maintained/closed.png"
+      },
+      "collision": "not_registered; ground footprint is a proposal for later explicit integration",
+      "door_approach_local_logical": [
+        30,
+        146,
+        30,
+        58
+      ],
+      "interaction_cues": false
+    },
+    {
+      "id": "item_shop_weathered",
+      "building_type": "item_shop",
+      "variant": "weathered",
+      "logical_size": [
+        168,
+        192
+      ],
+      "ground_rect_logical": [
+        12,
+        96,
+        144,
+        96
+      ],
+      "door_rect_logical": [
+        34,
+        146,
+        22,
+        38
+      ],
+      "charm": [
+        "satchel and potion pictogram",
+        "blue-green awning",
+        "delivery hatch",
+        "rain barrel",
+        "potions/weapons/armor behind glass"
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size": [
+        336,
+        384
+      ],
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_logical": 192,
+      "structure": "buildings/item_shop_weathered/structure.png",
+      "closed": "buildings/item_shop_weathered/closed.png",
+      "open": "buildings/item_shop_weathered/open.png",
+      "window_mask": "buildings/item_shop_weathered/window_mask.png",
+      "door": {
+        "position_logical": [
+          34,
+          146
+        ],
+        "logical_size": [
+          22,
+          38
+        ],
+        "frames": [
+          {
+            "file": "buildings/item_shop_weathered/doors/frame_00.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_weathered/doors/frame_01.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_weathered/doors/frame_02.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_weathered/doors/frame_03.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "buildings/item_shop_weathered/doors/frame_04.png",
+            "duration_ms": 100
+          }
+        ],
+        "loop": false,
+        "hold_closed": 0,
+        "hold_open": 4,
+        "closing_order": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "sign": {
+        "prop": "sign_item_shop",
+        "position_logical": [
+          8,
+          103
+        ],
+        "fixed_mount": true
+      },
+      "display": {
+        "file": "buildings/item_shop_weathered/display.png",
+        "rect_logical": [
+          70,
+          136,
+          78,
+          48
+        ],
+        "variant": "weathered",
+        "contents": {
+          "potions": [
+            "red",
+            "blue",
+            "green",
+            "violet",
+            "round flasks",
+            "square bottles",
+            "conical vials"
+          ],
+          "weapons": [
+            "sword",
+            "round shield"
+          ],
+          "armor": [
+            "helmet",
+            "breastplate"
+          ]
+        },
+        "glass_reflections": "Stationary source-drawn strokes above merchandise, behind fixed mullions.",
+        "animation": "none",
+        "inventory_binding": "decorative_only",
+        "interaction_cues": false
+      },
+      "awning_rect_logical": [
+        64,
+        109,
+        88,
+        27
+      ],
+      "ambient": {
+        "frames": [
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_00.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_00.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_00.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_00.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_00.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_01.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_01.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_01.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_01.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_01.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_02.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_02.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_02.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_02.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_02.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_03.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_03.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_03.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_03.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_03.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_04.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_04.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_04.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_04.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_04.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_05.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_05.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_05.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_05.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_05.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_06.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_06.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_06.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_06.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_06.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_07.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_07.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_07.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_07.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_07.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_08.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_08.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_08.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_08.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_08.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_09.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_09.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_09.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_09.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_09.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_10.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_10.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_10.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_10.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_10.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_11.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_11.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_11.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_11.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_11.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_12.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_12.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_12.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_12.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_12.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_13.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_13.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_13.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_13.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_13.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_14.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_14.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_14.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_14.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_14.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_15.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_15.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_15.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_15.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_15.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_16.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_16.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_16.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_16.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_16.png"
+            }
+          },
+          {
+            "file": "buildings/item_shop_weathered/ambient/frame_17.png",
+            "duration_ms": 200,
+            "layers": {
+              "windowlight": "buildings/item_shop_weathered/windowlight/frame_17.png",
+              "awning": "buildings/item_shop_weathered/awning/frame_17.png",
+              "sign": "buildings/item_shop_weathered/sign/frame_17.png",
+              "smoke": "buildings/item_shop_weathered/smoke/frame_17.png"
+            }
+          }
+        ],
+        "cycle_ms": 3600,
+        "smoke_optional": false,
+        "reduced_motion": "buildings/item_shop_weathered/closed.png"
+      },
+      "collision": "not_registered; ground footprint is a proposal for later explicit integration",
+      "door_approach_local_logical": [
+        30,
+        146,
+        30,
+        58
+      ],
+      "interaction_cues": false
+    }
+  ],
+  "props": [
+    {
+      "id": "sign_inn",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "logical_size": [
+        24,
+        28
+      ],
+      "mount": "wall",
+      "anchor_artwork": [
+        6,
+        8
+      ],
+      "animation": "hanging",
+      "interaction_cues": false,
+      "idle": "props/sign_inn/idle.png",
+      "frames": [
+        "props/sign_inn/frame_00.png",
+        "props/sign_inn/frame_01.png",
+        "props/sign_inn/frame_02.png",
+        "props/sign_inn/frame_03.png",
+        "props/sign_inn/frame_04.png",
+        "props/sign_inn/frame_05.png",
+        "props/sign_inn/frame_06.png",
+        "props/sign_inn/frame_07.png",
+        "props/sign_inn/frame_08.png",
+        "props/sign_inn/frame_09.png",
+        "props/sign_inn/frame_10.png",
+        "props/sign_inn/frame_11.png",
+        "props/sign_inn/frame_12.png",
+        "props/sign_inn/frame_13.png",
+        "props/sign_inn/frame_14.png",
+        "props/sign_inn/frame_15.png",
+        "props/sign_inn/frame_16.png",
+        "props/sign_inn/frame_17.png"
+      ],
+      "duration_ms": 200,
+      "cycle_ms": 3600,
+      "draw_anchor_logical": [
+        3.0,
+        4.0
+      ],
+      "collision": "not_registered"
+    },
+    {
+      "id": "sign_item_shop",
+      "artwork_size": [
+        48,
+        56
+      ],
+      "logical_size": [
+        24,
+        28
+      ],
+      "mount": "wall",
+      "anchor_artwork": [
+        6,
+        8
+      ],
+      "animation": "hanging",
+      "interaction_cues": false,
+      "idle": "props/sign_item_shop/idle.png",
+      "frames": [
+        "props/sign_item_shop/frame_00.png",
+        "props/sign_item_shop/frame_01.png",
+        "props/sign_item_shop/frame_02.png",
+        "props/sign_item_shop/frame_03.png",
+        "props/sign_item_shop/frame_04.png",
+        "props/sign_item_shop/frame_05.png",
+        "props/sign_item_shop/frame_06.png",
+        "props/sign_item_shop/frame_07.png",
+        "props/sign_item_shop/frame_08.png",
+        "props/sign_item_shop/frame_09.png",
+        "props/sign_item_shop/frame_10.png",
+        "props/sign_item_shop/frame_11.png",
+        "props/sign_item_shop/frame_12.png",
+        "props/sign_item_shop/frame_13.png",
+        "props/sign_item_shop/frame_14.png",
+        "props/sign_item_shop/frame_15.png",
+        "props/sign_item_shop/frame_16.png",
+        "props/sign_item_shop/frame_17.png"
+      ],
+      "duration_ms": 200,
+      "cycle_ms": 3600,
+      "draw_anchor_logical": [
+        3.0,
+        4.0
+      ],
+      "collision": "not_registered"
+    },
+    {
+      "id": "porch_bench",
+      "artwork_size": [
+        80,
+        48
+      ],
+      "logical_size": [
+        40,
+        24
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        40,
+        44
+      ],
+      "animation": "static",
+      "interaction_cues": false,
+      "idle": "props/porch_bench/idle.png",
+      "frames": [
+        "props/porch_bench/frame_00.png"
+      ],
+      "duration_ms": null,
+      "cycle_ms": null,
+      "draw_anchor_logical": [
+        20.0,
+        22.0
+      ],
+      "collision": "not_registered"
+    },
+    {
+      "id": "sheltered_firewood",
+      "artwork_size": [
+        64,
+        56
+      ],
+      "logical_size": [
+        32,
+        28
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        32,
+        52
+      ],
+      "animation": "static",
+      "interaction_cues": false,
+      "idle": "props/sheltered_firewood/idle.png",
+      "frames": [
+        "props/sheltered_firewood/frame_00.png"
+      ],
+      "duration_ms": null,
+      "cycle_ms": null,
+      "draw_anchor_logical": [
+        16.0,
+        26.0
+      ],
+      "collision": "not_registered"
+    },
+    {
+      "id": "travel_boots",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "logical_size": [
+        12,
+        12
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        12,
+        20
+      ],
+      "animation": "static",
+      "interaction_cues": false,
+      "idle": "props/travel_boots/idle.png",
+      "frames": [
+        "props/travel_boots/frame_00.png"
+      ],
+      "duration_ms": null,
+      "cycle_ms": null,
+      "draw_anchor_logical": [
+        6.0,
+        10.0
+      ],
+      "collision": "not_registered"
+    },
+    {
+      "id": "travel_pack",
+      "artwork_size": [
+        40,
+        40
+      ],
+      "logical_size": [
+        20,
+        20
+      ],
+      "mount": "ground",
+      "anchor_artwork": [
+        20,
+        36
+      ],
+      "animation": "static",
+      "interaction_cues": false,
+      "idle": "props/travel_pack/idle.png",
+      "frames": [
+        "props/travel_pack/frame_00.png"
+      ],
+      "duration_ms": null,
+      "cycle_ms": null,
+      "draw_anchor_logical": [
+        10.0,
+        18.0
+      ],
+      "collision": "not_registered"
+    }
+  ],
+  "display_sections": [
+    {
+      "variant": "maintained",
+      "id": "potions",
+      "rect_artwork": [
+        9,
+        16,
+        48,
+        70
+      ],
+      "contents": [
+        "red",
+        "blue",
+        "green",
+        "violet",
+        "round flasks",
+        "square bottles",
+        "conical vials"
+      ],
+      "file": "displays/maintained.png"
+    },
+    {
+      "variant": "maintained",
+      "id": "weapons",
+      "rect_artwork": [
+        61,
+        12,
+        43,
+        76
+      ],
+      "contents": [
+        "sword",
+        "round shield"
+      ],
+      "file": "displays/maintained.png"
+    },
+    {
+      "variant": "maintained",
+      "id": "armor",
+      "rect_artwork": [
+        108,
+        12,
+        41,
+        76
+      ],
+      "contents": [
+        "helmet",
+        "breastplate"
+      ],
+      "file": "displays/maintained.png"
+    },
+    {
+      "variant": "weathered",
+      "id": "potions",
+      "rect_artwork": [
+        9,
+        16,
+        48,
+        70
+      ],
+      "contents": [
+        "red",
+        "blue",
+        "green",
+        "violet",
+        "round flasks",
+        "square bottles",
+        "conical vials"
+      ],
+      "file": "displays/weathered.png"
+    },
+    {
+      "variant": "weathered",
+      "id": "weapons",
+      "rect_artwork": [
+        61,
+        12,
+        43,
+        76
+      ],
+      "contents": [
+        "sword",
+        "round shield"
+      ],
+      "file": "displays/weathered.png"
+    },
+    {
+      "variant": "weathered",
+      "id": "armor",
+      "rect_artwork": [
+        108,
+        12,
+        41,
+        76
+      ],
+      "contents": [
+        "helmet",
+        "breastplate"
+      ],
+      "file": "displays/weathered.png"
+    }
+  ],
+  "candidate_placements": [
+    {
+      "id": "inn",
+      "design": "inn_maintained",
+      "position_logical": [
+        12,
+        744
+      ],
+      "ground_rect_world_logical": [
+        24,
+        888,
+        168,
+        96
+      ],
+      "entry_anchor_world_logical": [
+        108,
+        990
+      ],
+      "proposed_path_centerline_logical": [
+        [
+          108,
+          990
+        ],
+        [
+          108,
+          1104
+        ],
+        [
+          264,
+          1104
+        ]
+      ],
+      "connection_to_existing_lane_logical": [
+        264,
+        1104
+      ]
+    },
+    {
+      "id": "item_shop",
+      "design": "item_shop_maintained",
+      "position_logical": [
+        1164,
+        888
+      ],
+      "ground_rect_world_logical": [
+        1176,
+        984,
+        144,
+        96
+      ],
+      "entry_anchor_world_logical": [
+        1209,
+        1086
+      ],
+      "proposed_path_centerline_logical": [
+        [
+          1209,
+          1086
+        ],
+        [
+          1209,
+          1104
+        ],
+        [
+          972,
+          1104
+        ],
+        [
+          972,
+          912
+        ]
+      ],
+      "connection_to_existing_lane_logical": [
+        972,
+        912
+      ]
+    }
+  ],
+  "placement_status": "Candidate plots and future 24-unit access corridors only; not applied to runtime.",
+  "palette": "palette.json",
+  "recipe": "assets/source/terrain/eldenmere/business_exteriors_hd/recipe.json",
+  "activation": "Staged assets and planning evidence only; no live maps, interiors, currency, transactions, inventory, equipment, rest healing or save changes."
+}
