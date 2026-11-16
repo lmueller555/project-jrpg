@@ -8,6 +8,11 @@ READMEs. Existing recipes and manifests retain machine-readable implementation
 facts; historical review reports record earlier work rather than prescribe new
 construction methods.
 
+The [World and Environment Design Standard](WORLD_DESIGN_STANDARD.md) owns
+creative place-design principles and the region/zone brief, including identity,
+weather/phenomena, inhabited history, folklore and exploration. Use it to plan
+the place; this document owns terrain authoring, pack maintenance and integration.
+
 The [global visual standard](VISUAL_ART_STANDARD.md) owns project-wide appearance,
 units and rendering. This document applies those rules to the complete terrain
 workflow. Building art follows the global standard; terrain and buildings share

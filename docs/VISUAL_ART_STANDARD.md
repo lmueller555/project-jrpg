@@ -8,6 +8,12 @@ creating or revising artwork, asset builders, renderers or their tests. The
 character workflow below preserves the lessons from Iselin's four approved walks;
 running extends them with coupled support, recovery and flight poses.
 
+The [World and Environment Design Standard](WORLD_DESIGN_STANDARD.md) owns the
+shared creative process for place identity, environmental storytelling,
+exploration and the region/zone design brief. Use it when designing a place;
+this guide retains appearance, sizing, rendering and asset/animation construction.
+Approved regional lore and revelation limits remain authoritative.
+
 **Approved direction:** Rebuild game artwork at two artwork pixels per logical
 world pixel, preserving its existing on-screen proportions and world footprint.
 Iselin's detailed artwork is the reference for this increase in fidelity.

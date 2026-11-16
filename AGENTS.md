@@ -1,5 +1,14 @@
 # Repository instructions
 
+Before designing or substantially revising a world, region, zone or environmental
+scene, read the
+[world and environment design standard](docs/WORLD_DESIGN_STANDARD.md).
+It is the single reference for creative place-design principles and the design
+brief: identity, inhabited landscapes, weather/phenomena, ruins, giant remains,
+folklore and exploration. Approved lore, geography and revelation limits retain
+their authority; illustrative concepts are not new canon. Use the companion art
+standards below for construction and rendering.
+
 Before creating or changing artwork, textures, sprites, animation, asset
 builders, renderers or their tests, read the
 [global visual art standard](docs/VISUAL_ART_STANDARD.md).
@@ -41,7 +50,8 @@ Apply the standard to the work in scope:
   focused tests for transfers and lifecycle state. Summarize the validation in
   the PR; do not claim visual compliance solely from passing completion tests.
 
-The global standards supersede conflicting older scene notes, recipes, tests,
-and historical review prescriptions. Retain historical evidence and local
-implementation facts. Record other inconsistent existing interactions for a
-scoped follow-up rather than silently expanding unrelated work.
+Within their respective scopes, the global standards supersede conflicting older
+scene notes, recipes, tests and historical review prescriptions. Approved lore,
+geography and revelation limits retain their authority. Retain historical evidence
+and local implementation facts. Record other inconsistent existing interactions
+for a scoped follow-up rather than silently expanding unrelated work.

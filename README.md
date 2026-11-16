@@ -12,6 +12,14 @@ woodland ground, with leg-height grass that parts around travelling characters.
 The separate [playable material study](docs/TERRAIN_ART_STANDARD.md#18-playable-grass-demonstration) remains available with
 `python tools/preview_grass.py` and uses no journey or settings file.
 
+World, region, zone and environmental scene design follow the
+[World and Environment Design Standard](docs/WORLD_DESIGN_STANDARD.md).
+It centralizes creative principles and the place-design brief for memorable
+identities, inhabited landscapes, weather and unusual phenomena, ruins,
+enormous creature remains, folklore and exploration. Regional lore retains
+established facts; the standard's illustrative concepts are proposals rather
+than new canon.
+
 All game artwork and its rendering follow the
 [global visual art standard](docs/VISUAL_ART_STANDARD.md), the
 single guide for appearance, sizing, density, rendering, animation, exports and
