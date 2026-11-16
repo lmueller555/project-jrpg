@@ -1,0 +1,545 @@
+{
+  "baseline_commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+  "live_consumers": [
+    {
+      "entity": "halden",
+      "new_design": "standard_gardener",
+      "logical_size": [
+        120,
+        144
+      ],
+      "position_logical": [
+        948,
+        480
+      ],
+      "sort_y_logical": 624,
+      "door_rect_local_logical": [
+        53,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        1001,
+        591
+      ],
+      "entry_anchor_world_logical": [
+        1007.5,
+        630
+      ],
+      "entry_y_logical": 630,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/halden/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/halden/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "elira",
+      "new_design": "compact_gardener",
+      "logical_size": [
+        96,
+        144
+      ],
+      "position_logical": [
+        636,
+        816
+      ],
+      "sort_y_logical": 960,
+      "door_rect_local_logical": [
+        29,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        665,
+        927
+      ],
+      "entry_anchor_world_logical": [
+        671.5,
+        966
+      ],
+      "entry_y_logical": 966,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/elira/map.json",
+      "spawn": [
+        102,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/elira/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "venn",
+      "new_design": "wide_weathered",
+      "logical_size": [
+        144,
+        144
+      ],
+      "position_logical": [
+        1164,
+        576
+      ],
+      "sort_y_logical": 720,
+      "door_rect_local_logical": [
+        77,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        1241,
+        687
+      ],
+      "entry_anchor_world_logical": [
+        1247.5,
+        726
+      ],
+      "entry_y_logical": 726,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/venn/map.json",
+      "spawn": [
+        252,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/venn/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "home_a",
+      "new_design": "standard_craft",
+      "logical_size": [
+        120,
+        144
+      ],
+      "position_logical": [
+        156,
+        576
+      ],
+      "sort_y_logical": 720,
+      "door_rect_local_logical": [
+        53,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        209,
+        687
+      ],
+      "entry_anchor_world_logical": [
+        215.5,
+        726
+      ],
+      "entry_y_logical": 726,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/home_a/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/home_a/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "home_b",
+      "new_design": "standard_heather",
+      "logical_size": [
+        120,
+        144
+      ],
+      "position_logical": [
+        444,
+        528
+      ],
+      "sort_y_logical": 672,
+      "door_rect_local_logical": [
+        53,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        497,
+        639
+      ],
+      "entry_anchor_world_logical": [
+        503.5,
+        678
+      ],
+      "entry_y_logical": 678,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/home_b/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/home_b/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "home_c",
+      "new_design": "standard_weathered",
+      "logical_size": [
+        120,
+        144
+      ],
+      "position_logical": [
+        204,
+        936
+      ],
+      "sort_y_logical": 1080,
+      "door_rect_local_logical": [
+        53,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        257,
+        1047
+      ],
+      "entry_anchor_world_logical": [
+        263.5,
+        1086
+      ],
+      "entry_y_logical": 1086,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/home_c/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/home_c/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "liam_house",
+      "new_design": "wide_craft",
+      "logical_size": [
+        144,
+        144
+      ],
+      "position_logical": [
+        204,
+        384
+      ],
+      "sort_y_logical": 528,
+      "door_rect_local_logical": [
+        77,
+        111,
+        13,
+        26
+      ],
+      "door_world_position_logical": [
+        281,
+        495
+      ],
+      "entry_anchor_world_logical": [
+        287.5,
+        534
+      ],
+      "entry_y_logical": 534,
+      "entry_half_width_logical": 6.5,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json",
+      "spawn": [
+        252,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/liam_house/exterior/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/liam_house/doors/frame_01.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_02.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_03.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_04.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "mira",
+      "new_design": "mira",
+      "logical_size": [
+        168,
+        168
+      ],
+      "position_logical": [
+        564,
+        264
+      ],
+      "sort_y_logical": 432,
+      "door_rect_local_logical": [
+        58,
+        131,
+        28,
+        35
+      ],
+      "door_world_position_logical": [
+        622,
+        395
+      ],
+      "entry_anchor_world_logical": [
+        636.0,
+        438
+      ],
+      "entry_y_logical": 438,
+      "entry_half_width_logical": 10,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/mira/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "mill",
+      "new_design": "mill",
+      "logical_size": [
+        144,
+        168
+      ],
+      "position_logical": [
+        936,
+        204
+      ],
+      "sort_y_logical": 336,
+      "door_rect_local_logical": [
+        26,
+        107,
+        18,
+        31
+      ],
+      "door_world_position_logical": [
+        962,
+        311
+      ],
+      "entry_anchor_world_logical": [
+        971.0,
+        342
+      ],
+      "entry_y_logical": 342,
+      "entry_half_width_logical": 9.0,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json",
+      "spawn": [
+        252,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/mill/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "school",
+      "new_design": "school",
+      "logical_size": [
+        192,
+        192
+      ],
+      "position_logical": [
+        576,
+        528
+      ],
+      "sort_y_logical": 720,
+      "door_rect_local_logical": [
+        86,
+        150,
+        20,
+        34
+      ],
+      "door_world_position_logical": [
+        662,
+        678
+      ],
+      "entry_anchor_world_logical": [
+        672.0,
+        726
+      ],
+      "entry_y_logical": 726,
+      "entry_half_width_logical": 10,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/school/map.json",
+      "spawn": [
+        216,
+        342
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/terrain/eldenmere/school/exterior/frames/frame_01.png",
+      "legacy_door_frames": [
+        "assets/terrain/eldenmere/school/exterior/doors/frame_01.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_02.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_03.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_04.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "entity": "sanctuary",
+      "new_design": "sanctuary",
+      "logical_size": [
+        216,
+        216
+      ],
+      "position_logical": [
+        252,
+        84
+      ],
+      "sort_y_logical": 288,
+      "door_rect_local_logical": [
+        118,
+        156,
+        32,
+        42
+      ],
+      "door_world_position_logical": [
+        370,
+        240
+      ],
+      "entry_anchor_world_logical": [
+        386.0,
+        294
+      ],
+      "entry_y_logical": 294,
+      "entry_half_width_logical": 10,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+      "spawn": [
+        208,
+        294
+      ],
+      "frame_duration_ms": 100,
+      "legacy_entity_frame": "assets/maps/eldenmere/playable/entities/sanctuary/frame_01.png",
+      "legacy_door_frames": [
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_05.png"
+      ],
+      "roof_override": null,
+      "open_radius": 30,
+      "close_radius": 38,
+      "requires_open": true,
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    }
+  ],
+  "scope": "Existing buildings only; no new canonical shops or destinations."
+}

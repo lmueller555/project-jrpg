@@ -51,6 +51,7 @@ contract; terrain-specific authoring instructions belong in that companion.
 - [Terrain creation and pack maintenance](TERRAIN_ART_STANDARD.md)
 - [Visual direction](#visual-direction)
 - [Object creation and interaction readability](#object-creation-and-interaction-readability)
+- [Staged Eldenmere building exteriors](#staged-eldenmere-hd-building-exteriors)
 - [Units and sizing](#units-and-sizing)
 - [Rendering contract](#rendering-contract)
 - [Migration and acceptance](#migration-and-acceptance)
@@ -1086,3 +1087,98 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
   logical/detail timing, navigation, stopping, turning and real foliage occlusion.
 - [Asset tool catalogue](../tools/README.md): commands and local implementation
   details, including legacy builders retained for reproducibility.
+
+## Staged Eldenmere HD building exteriors
+
+Source recipe: `assets/source/terrain/eldenmere/exteriors_hd/recipe.json`.
+Staged manifest: `assets/terrain/eldenmere/exteriors_hd/manifest.json`.
+State is **rebuilt / not integrated**. Merge and user visual approval are separate;
+visual approval remains not reviewed. This bank follows the global sizing,
+rendering, contour and object-cue rules above. Terrain companions remain governed
+by [the terrain standard](TERRAIN_ART_STANDARD.md).
+
+The bank provides ten cottage options and four bespoke landmarks. Nine cottages
+combine compact, standard and wide shapes with gardener, craft-household and
+weathered visual treatments; a heather-roof standard option preserves the existing
+home's palette identity. Landmarks are Mira's workshop, the watermill, village
+school and Sanctuary/Serene's home. These profiles describe visual dressing,
+not new authoritative occupations, businesses, quests or destinations.
+
+Twenty-four separate charm props include pots/planters, three window boxes,
+firewood, broom, boots, rain barrel, watering can, stool, orchard basket, herb
+bundles, wood shavings, two awnings, a laundry line, fence panel, closed garden gate,
+climbing ivy and cog/leaf/book signs. Larger props have individually declared
+canvases; do not fit all objects into a uniform visible size. Boots and watering
+cans remain appropriately smaller than a person. Mounted props have attachment
+anchors; grounded props have foot anchors and separate depth baselines.
+
+Retain the new source drawings and their hashes. Source processing removes the
+magenta background and connected color spill, registers the upper roof/body as
+one plane, and registers lower facade strips around the authoritative portal.
+It samples fine detail into 2× artwork rather than enlarging legacy color pixels.
+Existing wood, stone, plaster, iron, glass and four roof ramps remain the palette
+references; plants use the current emerald ramp. Window light, fabric and flower
+accents have explicit palette roles. Distinct silhouettes receive thin dark
+contours. Repaired plaster, replacement shutters, worn thresholds, patched shingles,
+restrained moss, window boxes and side clutter should suggest household use while
+keeping entrances clear. Exposed roof patches remain wood rather than becoming
+roof-colored noise. Continuous ground follows terrain boundary rules.
+
+The audit snapshots all eleven current building consumers: their canvas sizes,
+world positions, sort baselines, local/world door rectangles, entry anchors and
+widths, open/close radii, destinations, spawns and arrival behavior. Bindings keep
+these logical facts independent from the new silhouette. The snapshot is versioned
+baseline evidence, not a permanent unit-test freeze on unrelated map development.
+Building canvases remain 96/120/144×144 logical for cottages, 168×168 for the
+workshop, 144×168 for the mill, 192×192 for the school and 216×216 for the Sanctuary.
+Exported artwork dimensions double those values. Ground rectangles retain their
+existing logical definitions. Do not infer navigation or collision from art alpha.
+
+Fixed structure, door states, smoke and window light are separate layers. Clear
+the exact authoritative portal from the shell, then place its separately drawn
+five states at the declared local logical position. Door states are 100 ms,
+nonlooping; hold indices are closed=0/open=4 and closing reverses the order.
+Single doors are west-hinged; Sanctuary leaves open at both outer jambs. Preserve
+live entry gating, thresholds, widths, transitions and arrival behavior when
+integrating. Decorative props must not overlap the declared approach envelope.
+
+Ambient smoke/window layers use eighteen 200 ms frames (3.6 seconds). Smoke begins
+at the actual chimney, including its height relative to a taller bell turret,
+and disperses above it. Structures, panes' leadwork and door leaves stay fixed.
+Window masks select only glass or explicitly allowed warm panes; bright blue glass
+must not be classified as amber light, and plaster/beam highlights must not flicker.
+Window light is optional for scene/time-of-day use; reduced motion uses the explicit
+closed/open stills without ambient effects. Bell turrets and shutters remain fixed
+parts of this staged artwork.
+
+Hanging props sway by at most one artwork pixel with fixed mounting hardware.
+Awnings bend at their actual lower cloth edge while their top mount remains fixed.
+Laundry posts and line stay registered. Their optional ambient loops share the
+3.6-second period; idle files provide reduced motion. The gate sprite is a closed
+visual asset, with no new passability or interaction registration. Ordinary props,
+signs, doors and buildings do not automatically receive discovery glints or yellow
+outlines. A future quest interaction must opt into the existing eligibility system.
+
+The mill has a separately authored wheel and fixed structure/axle. Its 48×48
+logical wheel canvas remains at local [88,94], with axle [112,118]. Forty-eight
+200 ms frames rotate clockwise by 7.5 degrees per frame, preserving the existing
+implied full-turn speed of 9.6 seconds. The complete turn avoids assuming an
+imperfectly textured wheel repeats exactly every 45 degrees. Keep the fixed hub
+and facade stationary. The wheel uses an independent clock from smoke/window light;
+reduced motion uses wheel frame zero. The small foreground fence retains the
+left-side placement without covering the entrance.
+
+```sh
+python tools/build_eldenmere_exteriors_hd.py
+python tools/build_eldenmere_exteriors_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_eldenmere_exteriors_hd
+```
+
+[Exterior review evidence](reviews/eldenmere_exteriors_hd/README.md) includes native
+family boards, door/opening reviews, ambient loops, wheel rotation, enlarged prop
+motion and reconstructible 960×640 compositions with unchanged approved Caelan and
+Iselin. These are offline fixtures, not live gameplay captures. Actual integration
+must migrate consumers explicitly, preserve map/door geometry, use native renderer
+adapters, and verify foreground occlusion, traversal, pause/focus and reduced motion.
+The current maps, interiors, door controllers, interaction eligibility and saves
+remain unchanged. Keep the legacy banks until their consumers have migrated.
