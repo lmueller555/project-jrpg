@@ -1,0 +1,3884 @@
+{
+  "presentation": "Offline illustrative compositions, not gameplay captures.",
+  "scenes": [
+    {
+      "id": "eldenmere",
+      "size_artwork": [
+        768,
+        576
+      ],
+      "cells": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "mask": 0,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "mask": 0,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            2
+          ],
+          "mask": 28,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            2
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            7,
+            2
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            8,
+            2
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            2
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            2
+          ],
+          "mask": 112,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "mask": 28,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            4,
+            3
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            3
+          ],
+          "mask": 127,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            3
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            7,
+            3
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            8,
+            3
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            3
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            3
+          ],
+          "mask": 253,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            3
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            3
+          ],
+          "mask": 112,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "mask": 28,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            3,
+            4
+          ],
+          "mask": 127,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            4,
+            4
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            4
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            4
+          ],
+          "mask": 247,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            7,
+            4
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            8,
+            4
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            4
+          ],
+          "mask": 223,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            4
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            4
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            4
+          ],
+          "mask": 253,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            13,
+            4
+          ],
+          "mask": 112,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            2,
+            5
+          ],
+          "mask": 31,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            3,
+            5
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            5
+          ],
+          "mask": 241,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            5
+          ],
+          "mask": 31,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            5
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            5
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            5
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            13,
+            5
+          ],
+          "mask": 241,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            2,
+            6
+          ],
+          "mask": 31,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            3,
+            6
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            6
+          ],
+          "mask": 241,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            6
+          ],
+          "mask": 31,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            6
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            6
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            6
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            13,
+            6
+          ],
+          "mask": 241,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            2,
+            7
+          ],
+          "mask": 7,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            3,
+            7
+          ],
+          "mask": 223,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            4,
+            7
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            7
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            7
+          ],
+          "mask": 253,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            7,
+            7
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            8,
+            7
+          ],
+          "mask": 124,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            7
+          ],
+          "mask": 127,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            7
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            7
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            7
+          ],
+          "mask": 247,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            13,
+            7
+          ],
+          "mask": 197,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            14,
+            7
+          ],
+          "mask": 80,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            3,
+            8
+          ],
+          "mask": 7,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            4,
+            8
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            8
+          ],
+          "mask": 223,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            8
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            7,
+            8
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            8,
+            8
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            8
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            8
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            8
+          ],
+          "mask": 255,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            8
+          ],
+          "mask": 241,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            14,
+            8
+          ],
+          "mask": 17,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            5,
+            9
+          ],
+          "mask": 7,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            6,
+            9
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            7,
+            9
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            8,
+            9
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            9,
+            9
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            10,
+            9
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            11,
+            9
+          ],
+          "mask": 199,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            12,
+            9
+          ],
+          "mask": 197,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            13,
+            9
+          ],
+          "mask": 68,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            14,
+            9
+          ],
+          "mask": 69,
+          "bank": "grass",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "temperate"
+        },
+        {
+          "cell": [
+            15,
+            9
+          ],
+          "mask": 64,
+          "bank": "grass",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "temperate"
+        }
+      ],
+      "accent_placements": [
+        {
+          "id": "submerged_pebbles",
+          "position_artwork": [
+            195,
+            190
+          ]
+        },
+        {
+          "id": "wet_rock",
+          "position_artwork": [
+            245,
+            220
+          ]
+        },
+        {
+          "id": "reed_roots",
+          "position_artwork": [
+            500,
+            454
+          ]
+        }
+      ],
+      "character": {
+        "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+        "position_artwork": [
+          70,
+          260
+        ]
+      },
+      "ground": "grass"
+    },
+    {
+      "id": "mountain",
+      "size_artwork": [
+        768,
+        576
+      ],
+      "cells": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "mask": 0,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "mask": 0,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            2
+          ],
+          "mask": 28,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            2
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            7,
+            2
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            8,
+            2
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            2
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            2
+          ],
+          "mask": 112,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "mask": 28,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            4,
+            3
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            3
+          ],
+          "mask": 127,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            3
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            7,
+            3
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            8,
+            3
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            3
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            3
+          ],
+          "mask": 253,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            3
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            3
+          ],
+          "mask": 112,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "mask": 28,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            3,
+            4
+          ],
+          "mask": 127,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            4,
+            4
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            4
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            4
+          ],
+          "mask": 247,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            7,
+            4
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            8,
+            4
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            4
+          ],
+          "mask": 223,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            4
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            4
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            4
+          ],
+          "mask": 253,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            13,
+            4
+          ],
+          "mask": 112,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            2,
+            5
+          ],
+          "mask": 31,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            3,
+            5
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            5
+          ],
+          "mask": 241,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            5
+          ],
+          "mask": 31,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            5
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            5
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            5
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            13,
+            5
+          ],
+          "mask": 241,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            2,
+            6
+          ],
+          "mask": 31,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            3,
+            6
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            6
+          ],
+          "mask": 241,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            6
+          ],
+          "mask": 31,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            6
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            6
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            6
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            13,
+            6
+          ],
+          "mask": 241,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            2,
+            7
+          ],
+          "mask": 7,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            3,
+            7
+          ],
+          "mask": 223,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            4,
+            7
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            7
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            7
+          ],
+          "mask": 253,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            7,
+            7
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            8,
+            7
+          ],
+          "mask": 124,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            7
+          ],
+          "mask": 127,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            7
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            7
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            7
+          ],
+          "mask": 247,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            13,
+            7
+          ],
+          "mask": 197,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            14,
+            7
+          ],
+          "mask": 80,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            3,
+            8
+          ],
+          "mask": 7,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            4,
+            8
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            8
+          ],
+          "mask": 223,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            8
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            7,
+            8
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            8,
+            8
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            8
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            8
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            8
+          ],
+          "mask": 255,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            8
+          ],
+          "mask": 241,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            14,
+            8
+          ],
+          "mask": 17,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            5,
+            9
+          ],
+          "mask": 7,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            6,
+            9
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            7,
+            9
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            8,
+            9
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            9,
+            9
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            10,
+            9
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            11,
+            9
+          ],
+          "mask": 199,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            12,
+            9
+          ],
+          "mask": 197,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            13,
+            9
+          ],
+          "mask": 68,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            14,
+            9
+          ],
+          "mask": 69,
+          "bank": "rock",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "cold"
+        },
+        {
+          "cell": [
+            15,
+            9
+          ],
+          "mask": 64,
+          "bank": "rock",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "cold"
+        }
+      ],
+      "accent_placements": [
+        {
+          "id": "submerged_pebbles",
+          "position_artwork": [
+            195,
+            190
+          ]
+        },
+        {
+          "id": "wet_rock",
+          "position_artwork": [
+            245,
+            220
+          ]
+        }
+      ],
+      "character": {
+        "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+        "position_artwork": [
+          70,
+          260
+        ]
+      },
+      "ground": "rock"
+    },
+    {
+      "id": "lake",
+      "size_artwork": [
+        768,
+        576
+      ],
+      "cells": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "mask": 0,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "mask": 0,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            2
+          ],
+          "mask": 28,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            2
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            7,
+            2
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            8,
+            2
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            2
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            2
+          ],
+          "mask": 112,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "mask": 28,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            4,
+            3
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            3
+          ],
+          "mask": 127,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            3
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            7,
+            3
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            8,
+            3
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            3
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            3
+          ],
+          "mask": 253,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            3
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            3
+          ],
+          "mask": 112,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "mask": 28,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            3,
+            4
+          ],
+          "mask": 127,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            4,
+            4
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            4
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            4
+          ],
+          "mask": 247,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            7,
+            4
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            8,
+            4
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            4
+          ],
+          "mask": 223,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            4
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            4
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            4
+          ],
+          "mask": 253,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            13,
+            4
+          ],
+          "mask": 112,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            2,
+            5
+          ],
+          "mask": 31,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            3,
+            5
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            5
+          ],
+          "mask": 241,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            5
+          ],
+          "mask": 31,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            5
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            5
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            5
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            13,
+            5
+          ],
+          "mask": 241,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            2,
+            6
+          ],
+          "mask": 31,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            3,
+            6
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            6
+          ],
+          "mask": 241,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            6
+          ],
+          "mask": 31,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            6
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            6
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            6
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            13,
+            6
+          ],
+          "mask": 241,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            2,
+            7
+          ],
+          "mask": 7,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            3,
+            7
+          ],
+          "mask": 223,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            4,
+            7
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            7
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            7
+          ],
+          "mask": 253,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            7,
+            7
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            8,
+            7
+          ],
+          "mask": 124,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            7
+          ],
+          "mask": 127,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            7
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            7
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            7
+          ],
+          "mask": 247,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            13,
+            7
+          ],
+          "mask": 197,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            14,
+            7
+          ],
+          "mask": 80,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            3,
+            8
+          ],
+          "mask": 7,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            4,
+            8
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            8
+          ],
+          "mask": 223,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            8
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            7,
+            8
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            8,
+            8
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            8
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            8
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            8
+          ],
+          "mask": 255,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            8
+          ],
+          "mask": 241,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            14,
+            8
+          ],
+          "mask": 17,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            5,
+            9
+          ],
+          "mask": 7,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            6,
+            9
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            7,
+            9
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            8,
+            9
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            9,
+            9
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            10,
+            9
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            11,
+            9
+          ],
+          "mask": 199,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            12,
+            9
+          ],
+          "mask": 197,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            13,
+            9
+          ],
+          "mask": 68,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            14,
+            9
+          ],
+          "mask": 69,
+          "bank": "sand",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "lake"
+        },
+        {
+          "cell": [
+            15,
+            9
+          ],
+          "mask": 64,
+          "bank": "sand",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "lake"
+        }
+      ],
+      "accent_placements": [
+        {
+          "id": "mud_gravel",
+          "position_artwork": [
+            570,
+            430
+          ]
+        },
+        {
+          "id": "wet_rock",
+          "position_artwork": [
+            245,
+            220
+          ]
+        }
+      ],
+      "character": {
+        "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+        "position_artwork": [
+          70,
+          260
+        ]
+      },
+      "ground": "sand"
+    },
+    {
+      "id": "marsh",
+      "size_artwork": [
+        768,
+        576
+      ],
+      "cells": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "mask": 0,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "mask": 0,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            2
+          ],
+          "mask": 28,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            2
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            7,
+            2
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            8,
+            2
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            2
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            2
+          ],
+          "mask": 112,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "mask": 28,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            4,
+            3
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            3
+          ],
+          "mask": 127,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            3
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            7,
+            3
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            8,
+            3
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            3
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            3
+          ],
+          "mask": 253,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            3
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            3
+          ],
+          "mask": 112,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "mask": 28,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            3,
+            4
+          ],
+          "mask": 127,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            4,
+            4
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            4
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            4
+          ],
+          "mask": 247,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            7,
+            4
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            8,
+            4
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            4
+          ],
+          "mask": 223,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            4
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            4
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            4
+          ],
+          "mask": 253,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            13,
+            4
+          ],
+          "mask": 112,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            2,
+            5
+          ],
+          "mask": 31,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            3,
+            5
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            4,
+            5
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            5
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            5
+          ],
+          "mask": 241,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            5
+          ],
+          "mask": 31,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            5
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            5
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            5
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            13,
+            5
+          ],
+          "mask": 241,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            2,
+            6
+          ],
+          "mask": 31,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            3,
+            6
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            4,
+            6
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            6
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            6
+          ],
+          "mask": 241,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            6
+          ],
+          "mask": 31,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            6
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            6
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            6
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            13,
+            6
+          ],
+          "mask": 241,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            2,
+            7
+          ],
+          "mask": 7,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            3,
+            7
+          ],
+          "mask": 223,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            4,
+            7
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            7
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            7
+          ],
+          "mask": 253,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            7,
+            7
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            8,
+            7
+          ],
+          "mask": 124,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            7
+          ],
+          "mask": 127,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            7
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            7
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            7
+          ],
+          "mask": 247,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            13,
+            7
+          ],
+          "mask": 197,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            14,
+            7
+          ],
+          "mask": 80,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            3,
+            8
+          ],
+          "mask": 7,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            4,
+            8
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            8
+          ],
+          "mask": 223,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            8
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            7,
+            8
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            8,
+            8
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            8
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            8
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            8
+          ],
+          "mask": 255,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 1,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            8
+          ],
+          "mask": 241,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            14,
+            8
+          ],
+          "mask": 17,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 0,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            5,
+            9
+          ],
+          "mask": 7,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            6,
+            9
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            7,
+            9
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            8,
+            9
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            9,
+            9
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            10,
+            9
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            11,
+            9
+          ],
+          "mask": 199,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            12,
+            9
+          ],
+          "mask": 197,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            13,
+            9
+          ],
+          "mask": 68,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 3,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            14,
+            9
+          ],
+          "mask": 69,
+          "bank": "marsh",
+          "arrangement": 1,
+          "texture_phase": 2,
+          "family": "peat"
+        },
+        {
+          "cell": [
+            15,
+            9
+          ],
+          "mask": 64,
+          "bank": "marsh",
+          "arrangement": 0,
+          "texture_phase": 3,
+          "family": "peat"
+        }
+      ],
+      "accent_placements": [
+        {
+          "id": "mud_gravel",
+          "position_artwork": [
+            570,
+            430
+          ]
+        },
+        {
+          "id": "rushes",
+          "position_artwork": [
+            500,
+            446
+          ]
+        }
+      ],
+      "character": {
+        "file": "assets/characters/caelan/review_hd/idles/idle_front.png",
+        "position_artwork": [
+          70,
+          260
+        ]
+      },
+      "ground": "marsh"
+    }
+  ]
+}
