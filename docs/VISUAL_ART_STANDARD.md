@@ -1143,8 +1143,8 @@ herb beds remain at their existing gardener stations. Bench and provision basket
 also keep their established physical canvases, positions and depth baselines.
 
 The bell's mount, lantern bracket, planter boxes and building remain fixed.
-Smoke and local windowlight share the 200 ms ambient clock; the bell uses nine
-600 ms phases within a 10.8-second combined loop. `reduced_motion_image` supplies
+Window lighting stays steady throughout the ambient cycle; smoke uses the
+200 ms clock and the bell uses nine 600 ms phases within a 10.8-second combined loop. `reduced_motion_image` supplies
 a distinct smoke-free, steady-light still without extending the animation loop.
 The thin dark contours and native detail are preserved through the scene buffer.
 
@@ -1212,6 +1212,8 @@ at the actual chimney, including its height relative to a taller bell turret,
 and disperses above it. Structures, panes' leadwork and door leaves stay fixed.
 Window masks select only glass or explicitly allowed warm panes; bright blue glass
 must not be classified as amber light, and plaster/beam highlights must not flicker.
+Window lighting must remain constant across ambient frames: no alternating pane
+colors or brightness pulses. Smoke, signs and cloth may animate independently.
 Window light is optional for scene/time-of-day use; reduced motion uses the explicit
 closed/open stills without ambient effects. Bell turrets and shutters remain fixed
 parts of this staged artwork.

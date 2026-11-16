@@ -378,7 +378,9 @@ uses temporary saves/settings only.
 The earlier courtyard source remains under
 `assets/source/maps/eldenmere/courtyard_hd/`. Its approved facade, planter/prop
 registration and native contact-grass drawings are retained. The complete town
-composer now owns the ground, composed grass manifest and overview. The courtyard
+composer now owns the facade animation, ground, composed grass manifest and overview.
+It rebuilds the approved facade through the courtyard helper, keeping window
+lighting steady while preserving the bell and smoke. The courtyard
 build command forwards to that composer; it cannot restore a historical overview
 or replace another region's bindings. Earlier review images remain historical
 acceptance evidence, not a separate construction guide.
