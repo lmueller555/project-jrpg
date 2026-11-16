@@ -129,6 +129,9 @@ def emerald_products():
 
 
 def compile_emerald(check=False):
+    if 'town_hd' in read_json(OUTPUT/'map.json').get('art_integrations',{}):
+        from build_eldenmere_hd import build as build_hd
+        return build_hd(check)
     products,count=emerald_products();stale=[]
     for path,content in products.items():
         if check:
@@ -157,6 +160,8 @@ def export_entity(spec,prefix='',duration_ms=200):
 
 
 def build():
+    if (OUTPUT/'map.json').exists() and 'town_hd' in read_json(OUTPUT/'map.json').get('art_integrations',{}):
+        raise RuntimeError('The live town is owned by tools/build_eldenmere_hd.py; use an isolated historical checkout for this legacy compiler')
     plan=read_json(BASE/'adapted_plan.json')
     foundation=read_json(ROOT/'assets/source/maps/eldenmere/terrain_foundation/recipe.json')
     recipe=read_json(ROOT/'assets/source/terrain/eldenmere/workshop/recipe.json')

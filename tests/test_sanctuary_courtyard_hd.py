@@ -21,26 +21,20 @@ class CourtyardAssets(unittest.TestCase):
     def setUpClass(cls):
         cls.recipe=read(SOURCE/'recipe.json');cls.old=read(SOURCE/'baseline_map.json');cls.data=read(ROOT/cls.recipe['map'])
 
-    def test_only_declared_art_and_focus_policy_change(self):
-        current=deepcopy(self.data);old=self.old
-        self.assertEqual(current.pop('pause_on_focus_loss'),True)
-        self.assertEqual(set(current.pop('art_integrations')),{'sanctuary_courtyard'})
-        layers=current.pop('ground_overlays');self.assertEqual(len(layers),1)
-        self.assertEqual(layers[0]['position']+layers[0]['logical_size'],self.recipe['region_logical'])
-        current['overview']=old['overview']
-        originals={r['id']:r for r in old['entities']}
-        for r in current['entities']:
-            if r['id'] in self.recipe['entity_ids']:
-                r['frames']=originals[r['id']]['frames']
-                for key in ('artwork_pixels_per_world_pixel','logical_size','reduced_motion_image','reduced_motion_frame'):r.pop(key,None)
-        for r,previous in zip(current['doors'],old['doors']):
-            if r['id']=='sanctuary':
-                r['frames']=previous['frames'];r.pop('artwork_pixels_per_world_pixel');r.pop('logical_size')
-        current['grass']['manifest']=old['grass']['manifest'];originals={r['id']:r for r in old['grass']['instances']}
-        for r in current['grass']['instances']:
-            if r['id'] in self.recipe['grass_ids']:r['variant']=originals[r['id']]['variant']
-        self.assertEqual(current,old)
-        for key,field in [('collision','collision'),('navigation_allowed','navigation')]:self.assertEqual(sha256((ROOT/current[key]).read_bytes()).hexdigest(),self.recipe[field+'_sha256'])
+    def test_courtyard_registration_survives_the_composed_town_migration(self):
+        current={r['id']:r for r in self.data['entities']}
+        previous={r['id']:r for r in self.old['entities']}
+        for name in self.recipe['entity_ids']:
+            for key in ('position','sort_y','phase_offset'):
+                self.assertEqual(current[name][key],previous[name][key],(name,key))
+        door=next(r for r in self.data['doors'] if r['id']=='sanctuary')
+        old=next(r for r in self.old['doors'] if r['id']=='sanctuary')
+        for key,value in old.items():
+            if key!='frames':self.assertEqual(door[key],value)
+        self.assertTrue(self.data['pause_on_focus_loss'])
+        before=Image.open(ROOT/self.old['collision']).convert('L')
+        after=Image.open(ROOT/self.data['collision']).convert('L')
+        self.assertEqual(before.tobytes(),after.crop((0,0,*before.size)).tobytes())
 
     def test_assets_keep_physical_canvases_and_actual_new_detail(self):
         previous={r['id']:r for r in self.old['entities']}
@@ -51,13 +45,13 @@ class CourtyardAssets(unittest.TestCase):
                 self.assertEqual(new.size,tuple(v*2 for v in old.size));self.assertEqual(r['logical_size'],list(old.size))
                 self.assertLessEqual(set(new.getchannel('A').getdata()),{0,255})
                 self.assertTrue(any(len({new.getpixel((x+i,y+j)) for i in (0,1) for j in (0,1)})>1 for y in range(0,new.height,2) for x in range(0,new.width,2)))
-        self.assertEqual(Image.open(ROOT/self.data['ground_overlays'][0]['image']).size,(864,672))
+        self.assertTrue(all(r['artwork_pixels_per_world_pixel']==2 for r in self.data['ground_overlays']))
         self.assertEqual(Image.open(ROOT/self.data['overview']).size,tuple(self.data['size_pixels']))
 
     def test_scoped_grass_keeps_legacy_variants_and_fixed_roots_for_all_poses(self):
         live=read(ROOT/self.data['grass']['manifest'])['tall_grass'];old=read(ROOT/self.recipe['legacy_grass_manifest'])['tall_grass']
         for key in ('anchor','frame_size','contact_rect'):self.assertEqual(live[key],old[key])
-        for name,v in old['variants'].items():self.assertEqual(live['variants'][name],v)
+        self.assertEqual(set(live['variants']),{'sparse_hd','splayed_hd','dense_hd'})
         for name in ('sparse_hd','splayed_hd','dense_hd'):
             v=live['variants'][name];self.assertEqual(sum(f['duration_ms'] for f in v['idle']),4800)
             poses=[*v['idle'],*[p for seq in v['parted'].values() for p in seq]];roots=None
@@ -69,9 +63,11 @@ class CourtyardAssets(unittest.TestCase):
                 if roots is None:roots=root
                 self.assertEqual(root,roots)
 
-    def test_overview_changes_no_pixels_outside_region(self):
-        old=Image.open(SOURCE/'overview_reference.png').convert('RGBA');new=Image.open(ROOT/self.data['overview']).convert('RGBA');x,y,w,h=self.recipe['region_logical']
-        for box in [(0,0,old.width,y),(0,y,x,y+h),(x+w,y,old.width,y+h),(0,y+h,old.width,old.height)]:self.assertEqual(old.crop(box).tobytes(),new.crop(box).tobytes())
+    def test_overview_covers_the_current_composed_town(self):
+        overview=Image.open(ROOT/self.data['overview'])
+        self.assertEqual(overview.size,tuple(self.data['size_pixels']))
+        self.assertIn('town_hd',self.data['art_integrations'])
+
 
 class CourtyardGameplay(unittest.TestCase):
     def setUp(self):

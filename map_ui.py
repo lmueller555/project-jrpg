@@ -34,6 +34,8 @@ DESCRIPTIONS = {
     'commons': 'The village well and a place to meet.',
     'liam_house': 'Liam, his parents, and Daisy live here.',
     'school': 'Eldenmere’s children learn together here.',
+    'inn': 'A common room and guest beds beside the southern lane.',
+    'item_shop': 'Remedies, travelling supplies and equipment behind the shop glass.',
 }
 
 
@@ -102,6 +104,8 @@ class MapUI:
                 result[item.get('id', '')] = tuple(item['ground_rect'])
             if 'well_ground_rect' in item:
                 result['commons'] = tuple(item['well_ground_rect'])
+        for item in self.game.town.data.get('cartography',{}).get('buildings',[]):
+            result[item['id']]=tuple(item['ground_rect'])
         return result
 
     def world_to_map(self, position):
@@ -258,10 +262,12 @@ class MapUI:
         tile = self.game.town.data.get('tile_size', self._plan.get('tile_size_px', 24))
         for start, end, center in self._plan.get('stream_centres', []):
             # Stream bands retain the approved stepped meander and its width.
-            record = ((center-1.5)*tile, start*tile, 3*tile, (end-start+1)*tile)
+            record = ((center-1)*tile, start*tile, 3*tile, (end-start+1)*tile)
             rect = self._world_rect(record)
             painter.rect(WATER_EDGE, rect)
             painter.rect(WATER, rect.inflate(-2, 0))
+        for record in self.game.town.data.get('cartography',{}).get('water_extensions',[]):
+            rect=self._world_rect(record);painter.rect(WATER_EDGE,rect);painter.rect(WATER,rect.inflate(-2,0))
         for branch in self._plan.get('water_branches', []):
             points = [self._tile_point(point) for point in branch.get('points', [])]
             for a, b in zip(points, points[1:]):
@@ -276,6 +282,11 @@ class MapUI:
             for a, b in zip(points, points[1:]):
                 painter.line(PATH_EDGE, a, b, width+1)
                 painter.line(PATH_FILL, a, b, width-1)
+        for line in self.game.town.data.get('cartography',{}).get('roads',[]):
+            points=[self.world_to_map(point) for point in line]
+            for a,b in zip(points,points[1:]):
+                painter.line(PATH_EDGE,a,b,max(2,round(2*tile_width))+1)
+                painter.line(PATH_FILL,a,b,max(2,round(2*tile_width))-1)
         for item in self._extras:
             rects = list(item.get('path_rects_tiles', []))
             if 'path_rect_tiles' in item:rects.append(item['path_rect_tiles'])

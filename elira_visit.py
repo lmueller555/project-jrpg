@@ -52,9 +52,9 @@ class EliraVisit:
         shelf = next(e for e in self.home.entities if e['id'] == 'lantern_shelf')
         shelf['state_images'] = {'full': PACK+'shelf_with_lantern.png', 'empty': PACK+'shelf_empty.png'}
         self.surface_props = [
-            {'id': 'elira_lantern_table', 'scene': 'elira', 'surface': self.home.image(PACK+'lantern_unlit.png'),
+            {'id': 'elira_lantern_table', 'scene': 'elira', 'surface': self.home.room_art_image(PACK+'lantern_unlit.png'),
              'position': list(TABLE_LANTERN), 'sort_y': 271},
-            {'id': 'elira_provisions', 'scene': 'elira', 'surface': self.home.image(ART+'provisions.png'),
+            {'id': 'elira_provisions', 'scene': 'elira', 'surface': self.home.room_art_image(ART+'provisions.png'),
              'position': [194, 119], 'sort_y': 163}]
         self.home.attach_routine_props(self)
         self._sync_shelf()
@@ -280,5 +280,5 @@ class EliraVisit:
     def draw_world(self, canvas, camera):
         if self.action != 'supplies' or self.game.world is not self.home:return
         owner = self.elira if self.contact else self.game.player
-        canvas.blit(self.home.image(ART+'provisions.png'),
+        canvas.blit(self.home.room_art_image(ART+'provisions.png'),
                     (round(owner.position.x)+3-camera[0], round(owner.position.y)-12-camera[1]))

@@ -54,7 +54,8 @@ class SchoolWorldMapTests(unittest.TestCase):
         entity = next(e for e in room.entities if e['id'] == display['entity_id'])
         self.assertEqual(entity['position'], [96, 28])
         self.assertEqual(entity['surfaces'][0].get_size(), (42, 40))
-        image = self.game.town.image('assets/world/auratia/wall_map.png')
+        image = self.room.art_image(entity['frames'][0],entity)
+        self.assertEqual(image.native.get_size(),(84,80))
         self.assertEqual(pygame.image.tobytes(entity['surfaces'][0], 'RGBA'),
                          pygame.image.tobytes(image, 'RGBA'))
         self.assertLessEqual(abs(display['position'][0]-(96+21)), display['radius'])

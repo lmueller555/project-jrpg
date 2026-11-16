@@ -17,8 +17,9 @@ Iselin's detailed artwork is the reference for this increase in fidelity.
 buffer across exploration, battle and cinematic presentation. Existing asset
 banks retain their legacy density until rebuilt; Iselin's detailed artwork, Caelan's approved overworld idles/walks/runs,
 Caelan’s rebuilt household, carrying, quest-work, casting and cave-assistance poses,
-all three Sanctuary home interiors (hall, bedroom and dining room), and the
-Sanctuary courtyard/approach now use the shared path. Dining was the first integrated environment bank; remaining
+all three Sanctuary home interiors (hall, bedroom and dining room), and
+the complete Eldenmere town, remaining town interiors, southern inn/shop and
+upstream scene now use the shared path. Dining was the first integrated environment bank; remaining
 asset reconstruction and individual bank migrations continue as separately scoped work.
 
 This standard replaces conflicting general advice in older character recipes,
@@ -1089,6 +1090,49 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
 - [Asset tool catalogue](../tools/README.md): commands and local implementation
   details, including legacy builders retained for reproducibility.
 
+### Integrated Eldenmere town and businesses
+
+The complete live map uses native 2× environment art with unchanged character and
+world proportions. The classroom map is re-sampled from its retained approved
+Auratia wall-map drawing; the full world map and its geography remain unchanged.
+All existing town building exteriors and ten remaining town
+interiors are migrated; the three Sanctuary interiors retain their earlier bank.
+The separate upstream scene is migrated. Regional Sanctuary/cave scenes and NPC
+body/gait banks retain their own migration status.
+
+The town expands twelve tile rows south, without shifting existing coordinates.
+The inn is at `[192,1224]` and item shop at `[624,1272]` logical units; both connect
+to the existing southbound lane and have furnished, enterable interiors. The inn
+uses the shared confirmed party-rest/save behavior at its guest bed, with an
+eligible discovery cue. The shop's exterior stock stays fixed behind glass and
+its furnished counter adds no automatic item grants. Currency, prices and merchant
+transactions remain a separately specified gameplay system.
+
+Building shells keep clear authoritative portals; separate five-state doors
+retain their logical geometry and 100 ms timing. The mill wheel has an independent
+48-frame, 9.6-second clock and shares the existing story-controlled stop state.
+Reduced motion holds ambient scenery. Explicit still images remove smoke without
+extending animation loops. Foreground rails/canopies retain actor readability.
+
+New retained specialist drawings cover bridges, the working well, workshop props,
+school furnishings and small quest/household objects. Source extraction isolates
+the intended connected silhouette before fitting; neighboring atlas-cell fragments
+must never become part of a prop. Preserve occupied bounds as well as the canvas:
+a small bucket or bowl must not expand to fill its transparent padding.
+
+Scene-local presentation replacements preserve object ownership, state and work
+cues. Held sacks and Elira's memorial lantern are re-composited with the existing
+approved complete Caelan body drawings; travel/body source artwork is unchanged.
+The shelf, first take pose and deposited lantern use the same canonical native
+object, preserving the transfer pixel registration. Do not stretch anatomy to
+match a replacement object.
+
+The [terrain integration reference](TERRAIN_ART_STANDARD.md#integrated-eldenmere-town-and-upstream)
+owns build/check commands, native chunking and compatibility details. Source-bank
+sections below describe original delivery inventories; the live integration
+registry owns current consumers. [Actual-game review evidence](reviews/eldenmere_town_hd/README.md)
+is separate from the older offline pack compositions.
+
 ### Integrated Sanctuary exterior
 
 The courtyard migration registers the Sanctuary facade at 216×216 logical units
@@ -1113,7 +1157,7 @@ migration does not add new buildings or retire banks still used elsewhere.
 
 Source recipe: `assets/source/terrain/eldenmere/exteriors_hd/recipe.json`.
 Staged manifest: `assets/terrain/eldenmere/exteriors_hd/manifest.json`.
-State is **rebuilt / not integrated**. Merge and user visual approval are separate;
+Original delivery state was **rebuilt / not integrated**. Selected live Eldenmere consumers are now integrated above. Merge and user visual approval are separate;
 visual approval remains not reviewed. This bank follows the global sizing,
 rendering, contour and object-cue rules above. Terrain companions remain governed
 by [the terrain standard](TERRAIN_ART_STANDARD.md).
@@ -1201,14 +1245,15 @@ motion and reconstructible 960×640 compositions with unchanged approved Caelan 
 Iselin. These are offline fixtures, not live gameplay captures. Actual integration
 must migrate consumers explicitly, preserve map/door geometry, use native renderer
 adapters, and verify foreground occlusion, traversal, pause/focus and reduced motion.
-The current maps, interiors, door controllers, interaction eligibility and saves
-remain unchanged. Keep the legacy banks until their consumers have migrated.
+That original pack export did not change maps or gameplay. Current integration is
+owned by the town registry above. Keep shared legacy banks while other consumers
+still require them.
 
 ## Staged Eldenmere inns and item shops
 
 Source recipe: `assets/source/terrain/eldenmere/business_exteriors_hd/recipe.json`.
 Staged manifest: `assets/terrain/eldenmere/business_exteriors_hd/manifest.json`.
-State is **rebuilt / not integrated**, with visual approval recorded separately.
+Original delivery state was **rebuilt / not integrated**; the maintained inn/shop now have live Eldenmere bindings above, with visual approval recorded separately.
 This extends the preceding architecture bank with maintained and weathered
 versions of a two-story inn and a one-story item shop. Each pair shares logical
 canvases, footprints and entrance geometry for reuse elsewhere.
@@ -1245,7 +1290,8 @@ portals. Closed/open stills provide reduced-motion alternatives. Six reusable
 props include both signs, a porch bench, sheltered firewood, travel boots and a
 pack/blanket. Their individual logical sizes and mount/ground anchors are recorded.
 
-The pack also retains a **candidate placement plan**, not applied map changes.
+The pack retains its original **candidate placement plan** as historical evidence.
+The live southern expansion uses the integration recipe above instead.
 The inn candidate is on the western southern grass plot; the shop candidate is
 southeast of the central residential area. Both footprints and proposed 24-unit
 access corridors were clear in the recorded collision baseline. Proposed routes
@@ -1261,9 +1307,11 @@ merchant stations, dialogue, a currency model, atomic purchase/rest transactions
 inventory limits, save persistence and failure/cancellation handling. Existing
 consumables are referenced as possible starting stock; ordinary equipment catalog
 entries and balance decisions remain prerequisites. Unique story gear and key
-items must not be treated as ordinary stock. The exterior pack does not implement
-merchants, paid rest, healing, interiors, currency or save changes. Those systems
-must be integrated before these become functional destinations.
+items must not be treated as ordinary stock. The original exterior pack supplied artwork and planning evidence. The live town
+integration now supplies entrances, interiors, keeper stations and shared inn
+recovery. Currency, prices and trading remain separate gameplay work; the retained
+specification describes those prerequisites rather than preventing access to the
+integrated buildings.
 
 ```sh
 python tools/build_eldenmere_business_exteriors_hd.py

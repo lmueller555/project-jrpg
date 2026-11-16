@@ -279,8 +279,9 @@ class LanternQuestTests(unittest.TestCase):
         self.invite();self.g.save_progress();data = json.loads(self.path.read_text())
         data.pop('lantern_quest');self.path.write_text(json.dumps(data))
         other = self.game(True)
-        self.assertFalse(other.has_saved_journey)
-        self.assertTrue(other.save_error)
+        self.assertIsNone(other._validate_journey(copy.deepcopy(data)))
+        self.assertTrue(other.has_saved_journey)
+        self.assertIsNotNone(other._validate_journey(copy.deepcopy(other.saved_journey)))
 
     def test_save_rejects_stage_objective_mismatches_and_unearned_future_progress(self):
         self.invite();self.g.save_progress();data = json.loads(self.path.read_text())

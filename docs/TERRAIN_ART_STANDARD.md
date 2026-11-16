@@ -15,24 +15,20 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The Sanctuary courtyard and approach are the first integrated outdoor
-HD region. They use the rebuilt grass/dirt, paving, maintained masonry/stairs and
-vegetation at 2× artwork density with their original logical footprints. Water,
-waterworks and the rest of Eldenmere remain on their previous runtime assets;
-the reusable HD packs remain staged outside this explicit integration.
-Tile modules retain 24×24 logical footprints at 48×48 artwork pixels; larger
-structures declare their own logical/artwork sizes.
-See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
-[stone-paving reference](#staged-eldenmere-hd-stone-paving),
-[terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs),
-[water/shore reference](#staged-world-hd-water-and-natural-shores),
-[waterworks reference](#staged-eldenmere-hd-channels-and-spillways) and
-[vegetation reference](#staged-world-hd-vegetation-and-natural-accents).
+**Status:** Eldenmere's outdoor town, southern business lane and upstream scene
+now use the rebuilt grass/dirt, paving, maintained masonry/stairs, temperate
+water/shores, channels/spillways and vegetation at 2× artwork density. Original
+world coordinates and the entire original collision/navigation rectangle are
+preserved. The town expands south from 1536×1344 to 1536×1632 logical units.
 
-The staged [Eldenmere building exterior bank](VISUAL_ART_STANDARD.md#staged-eldenmere-hd-building-exteriors)
-and its [inn/item-shop extension](VISUAL_ART_STANDARD.md#staged-eldenmere-inns-and-item-shops)
-are documented in the global visual standard; their charm props share this terrain
-scale and palette.
+The live consumer registry is `assets/maps/eldenmere/town_hd/manifest.json`.
+Standalone pack manifests below retain their original staged-delivery metadata;
+that metadata does not replace the live map's explicit integration registry.
+Unused variants and other regions remain separate migrations. Existing shared
+legacy banks are still required by regional scenes and historical source tools.
+
+Eldenmere's building/interior integration and the new inn/shop follow the
+[global visual standard](VISUAL_ART_STANDARD.md#integrated-eldenmere-town-and-businesses).
 
 ## Contents
 
@@ -325,38 +321,72 @@ A 48×48 tile loses its new detail if an intermediate stage reduces it to 24×24
 Keep raw source loading and density-normalized drawing explicit. Installing a new
 PNG alone does not certify density migration.
 
+### Integrated Eldenmere town and upstream
+
+The maintained owner is `tools/build_eldenmere_hd.py`, with source recipe and new
+retained drawings under `assets/source/maps/eldenmere/town_hd/`. Run it to build;
+use `--check` to verify reproducible exports and the linked held-prop compositions.
+It reads current assembled map records and preserves unrelated quest/NPC data.
+Retained pre-migration maps, logical cell geometry and alpha bounds register the
+new artwork; legacy color pixels are not enlarged into the new environment.
+Changed collision/navigation inside the original town rectangle stops a rebuild
+for explicit source-registration review rather than silently overwriting it.
+
+The town adds twelve 24-unit rows to the south. Inn and shop physical footprints
+sit in this extension, connected to the existing southbound well-square route.
+Their entrances, furnishings, local blockers and return landings are separately
+authored. Original entrances, destinations, routes, spawns and collision remain at
+their original coordinates. Upstream keeps its existing dimensions and collision.
+
+`ground_overlays` are nonoverlapping chunks no larger than 192×192 logical units
+(384×384 artwork). Dry chunks are static; wet chunks reference six 200 ms states.
+One world origin controls tile texture phases. Preserve cardinal channel ports,
+westward outlet bindings and full/trickle states; thin flow follows bends as well
+as straight runs. Shared full-height spillways keep their authored 24×48 footprints.
+Bridge decks/far rails draw below actors; near rails remain the foreground pass.
+
+Ground frames load only when drawn/sampled, through a 48 MiB scene-local LRU.
+They bypass the persistent raw character/prop image cache. The separate global
+transform cache retains its existing bound. `World.draw_ground` is the shared
+composition pass; `World.ground_region` samples a logical rectangle from it for
+quest-controlled flow overlays. Never sample a whole-map `ground[phase]` bitmap:
+the ground is now composed from visible chunks. These helpers preserve native
+pixels through the scene buffer and avoid full-map frame duplication.
+
+The composed grass manifest activates three native variants for every existing
+town/upstream clump, preserving IDs, roots, contact areas, phases and directional
+walk/run/recovery behavior. It removes unused legacy variant references locally;
+other scenes retain their own banks. Plants keep fixed roots and their logical
+canvases. Scene-local prop replacements use `room_art_image` even outdoors;
+raw character/atlas loading remains explicit and separate.
+
+The well retains its rope/crank/handoff data and one-pail ownership. New pails
+register to the old occupied bounds, rotate as rigid props about the handle and
+show distinct fill levels. Rope and pail disappear behind the near rim during
+lowering. Irrigation/intake gates retain their functional opening states. Bowls,
+toy boxes and lantern work retain consumed/empty states and transfer timing.
+
+Pause/focus freezes exploration clocks. Reduced motion holds ambient ground,
+foliage, smoke and light while preserving functional doors, recovery and authored
+work. Native gameplay captures, route evidence and renderer timings are in
+[the town review](reviews/eldenmere_town_hd/README.md). Generate them with
+`python tools/capture_eldenmere_hd.py docs/reviews/eldenmere_town_hd`; the tool
+uses temporary saves/settings only.
+
 ### Integrated Sanctuary courtyard and approach
 
-`assets/source/maps/eldenmere/courtyard_hd/recipe.json` owns the scoped integration
-at logical `[120,72,432,336]`. Rebuild with
-`python tools/build_sanctuary_courtyard_hd.py`; use `--check` for reproducibility.
-It patches the **assembled current map**, keeping later story additions. Run it
-after an intentional legacy terrain-only regeneration. Do not use the older full
-map compiler to recreate this live town.
+The earlier courtyard source remains under
+`assets/source/maps/eldenmere/courtyard_hd/`. Its approved facade, planter/prop
+registration and native contact-grass drawings are retained. The complete town
+composer now owns the ground, composed grass manifest and overview. The courtyard
+build command forwards to that composer; it cannot restore a historical overview
+or replace another region's bindings. Earlier review images remain historical
+acceptance evidence, not a separate construction guide.
 
-The `ground_overlays` record draws native 864×672 artwork after shared ground and
-before doors/actors. Dirt topology, flagstone alpha, retaining-wall placements and
-the walkable staircase retain their existing logical registration. The shared
-legacy ground PNGs are unchanged for other regions. No old RGB is enlarged into
-the new region: retained geometry/coverage files are registration inputs only.
-
-Seven plant entities use the reusable vegetation bank; fifteen existing grass
-clumps use three locally registered native variants in a mixed manifest. Grass
-keeps its 24×32 logical canvas, `[12,28]` anchor, contact area, 4.8-second idle clock,
-directional walk/run response and recovery. Raw images stay 48×64 through
-`record_art`; split rear/front layers retain boot occlusion and fixed roots.
-Other town clumps and shared-world consumers retain their legacy exports.
-
-The map opts into exploration pause on focus loss. Menus already freeze its clock.
-Reduced motion selects still plants, the facade's explicit smoke-free still image,
-and contact-only grass response; functional door opening/closing remains active.
-This is a regional migration, not a new global weather or lighting system.
-
-Capture actual game movement and native renderer views with
-`python tools/capture_sanctuary_courtyard_hd.py docs/reviews/sanctuary_courtyard_hd`.
-The tool uses temporary saves/settings. Review evidence lives in
-[the courtyard review](reviews/sanctuary_courtyard_hd/README.md); construction
-rules remain centralized here and in the visual standard.
+The legacy full-town compiler is guarded against overwriting the HD map. Its
+terrain-only command forwards to the maintained composer. Reproduce historical
+full-map exports in an isolated historical checkout. Do not recompile the live
+map from older blockouts, which omit later buildings and story additions.
 
 ## 15. Review and acceptance
 
@@ -401,9 +431,9 @@ geometry and reproducible exports. Visual review remains necessary.
    once all references have migrated. Update this document's implementation status.
 
 Grass/dirt, stone paving, terraces and water/natural shores are staged below.
-Channels/spillways, vegetation and natural accents are also staged. The Sanctuary
-courtyard integration below activates selected grass/dirt, paving, terrace and
-vegetation exports only; remaining runtime migration is separate work.
+Channels/spillways, vegetation and natural accents retain their original delivery
+references below. The complete Eldenmere integration above activates selected
+town/upstream exports; other regional migrations remain separate work.
 
 ## 17. Existing pack maintenance reference
 
@@ -447,7 +477,7 @@ bank-specific reproduction facts, not mandatory methods for new plant drawings.
 
 Source recipe: `assets/source/terrain/eldenmere/grass_dirt_hd/recipe.json`.
 Staged pack: `assets/terrain/eldenmere/grass_dirt_hd/tileset.json`.
-State is `rebuilt` / `not_integrated`; user visual approval is recorded separately.
+Original delivery status was `rebuilt` / `not_integrated`; current Eldenmere bindings are listed above; user visual approval is recorded separately.
 This bank is not selected by any playable map or runtime terrain registry.
 
 The pack contains 47 distinct 48×48 hard-alpha dirt overlays, a 384×288 atlas
@@ -477,7 +507,7 @@ the actual map, native rendering and interactions under section 14.
 
 Source recipe: `assets/source/terrain/eldenmere/stone_paving_hd/recipe.json`.
 Staged manifest: `assets/terrain/eldenmere/stone_paving_hd/tileset.json`.
-State is `rebuilt` / `not_integrated`, with user visual approval recorded separately.
+Original delivery status was `rebuilt` / `not_integrated`; current Eldenmere bindings are listed above, with user visual approval recorded separately.
 No playable map, selector, collision or renderer is changed by creating this bank.
 
 There are **47 canonical boundary shapes**, four phase-correct stone surface
@@ -747,7 +777,7 @@ initialized production fixture, not proof of quest-gated travel.
 
 Source recipe: `assets/source/terrain/eldenmere/terraces_hd/recipe.json`.
 Staged manifest: `assets/terrain/eldenmere/terraces_hd/tileset.json`.
-These assets are rebuilt at 2× density and **not integrated**. Merge does not
+These assets were delivered at 2× density as a staged bank; current Eldenmere bindings are listed above. Merge does not
 constitute user visual approval; that status remains explicit in the manifest.
 
 The bank contains three masonry families (maintained, weathered and mossy),
@@ -797,7 +827,7 @@ acceptance remains a later integration step.
 
 Source recipe: `assets/source/terrain/water_hd/recipe.json`.
 Staged manifest: `assets/terrain/water_hd/tileset.json`.
-State is `rebuilt` / `not_integrated`; user visual approval is separate and remains
+Original delivery status was `rebuilt` / `not_integrated`; current Eldenmere bindings are listed above; user visual approval is separate and remains
 not reviewed. Eldenmere is the primary scale/palette reference; the bank is reusable
 across regions. No runtime selector, map, collision or navigation is changed.
 
@@ -864,7 +894,7 @@ terrain boundaries, bridge occlusion, movement and collision under section 14.
 
 Source recipe: `assets/source/terrain/eldenmere/waterworks_hd/recipe.json`.
 Staged manifest: `assets/terrain/eldenmere/waterworks_hd/tileset.json`.
-State is `rebuilt` / `not_integrated`, visual approval not yet reviewed. This bank
+Original delivery status was `rebuilt` / `not_integrated`; current Eldenmere bindings are listed above, visual approval not yet reviewed. This bank
 completes the water asset stage, without modifying any active scene or geometry.
 
 Three channel treatments are earth-cut, maintained stone and weathered/lightly
@@ -921,7 +951,7 @@ terrace and map banks remain available until a separately reviewed migration.
 
 Source recipe: `assets/source/terrain/vegetation_hd/recipe.json`.
 Staged manifest: `assets/terrain/vegetation_hd/plants.json`.
-State is `rebuilt` / `not_integrated`; visual approval remains not reviewed.
+Original delivery status was `rebuilt` / `not_integrated`; current Eldenmere bindings are listed above; visual approval remains not reviewed.
 The reusable pack contains **51 designs across 17 families**, three deliberately
 different silhouettes per family, not random scales or mirrored copies.
 

@@ -555,7 +555,7 @@ class Gardener:
         self.probe_size=tuple(record['probe_size'])
         folder=Path(record['animation']).parent
         self.bodies={name:world.image((folder/pose['body']).as_posix()) for name,pose in self.animation['poses'].items()}
-        self.buckets={name:world.image((folder/pose['file']).as_posix()) for name,pose in self.animation['buckets'].items()}
+        self.buckets={name:getattr(world,'room_art_image',world.image)((folder/pose['file']).as_posix()) for name,pose in self.animation['buckets'].items()}
         self.steps=self._steps()
         self.step_index=0;self.state_ms=0.0;self.walk_ms=0.0
         self.facing='right';self.moving=False;self.waiting=False

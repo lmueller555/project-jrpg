@@ -275,7 +275,9 @@ class HaldenGameplayTests(unittest.TestCase):
         self.assertFalse(HaldenVisit.valid_snapshot(bad['halden_visit']))
         bad = copy.deepcopy(data);bad['halden_visit']['concluded'] = True
         self.path.write_text(json.dumps(bad));broken = self.make_game(True)
-        self.assertFalse(broken.has_saved_journey)
+        self.assertIsNone(broken._validate_journey(copy.deepcopy(bad)))
+        self.assertTrue(broken.has_saved_journey)
+        self.assertIsNotNone(broken._validate_journey(copy.deepcopy(broken.saved_journey)))
         self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.visit.stored, set());self.assertFalse(self.visit.owns_tomas)
         self.assertIsNone(self.visit.carried);self.assertFalse(self.visit.medicine)

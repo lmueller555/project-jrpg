@@ -121,6 +121,9 @@ def products():
     out[rec['map']]=document(data);out[PACK+'/exports.json']=document({'builder':rec['builder'],'sources':rec['sources'],'exports':exports});return out
 
 def build(check=False):
+    if 'town_hd' in read(ROOT/'assets/maps/eldenmere/playable/map.json').get('art_integrations',{}):
+        from tools.build_eldenmere_hd import build as build_town
+        return build_town(check)
     result=products();stale=[]
     for path,raw in result.items():
         target=ROOT/path

@@ -5,7 +5,10 @@ import json
 import math
 
 from PIL import Image
-from build_sanctuary_dining_hd import cell,export_sprite,save
+if __package__:
+    from .build_sanctuary_dining_hd import cell,export_sprite,save
+else:
+    from build_sanctuary_dining_hd import cell,export_sprite,save
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/source/terrain/eldenmere/sanctuary_home_hd'

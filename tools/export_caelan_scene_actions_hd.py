@@ -29,6 +29,14 @@ def paste(dest,im,point):dest.alpha_composite(im,tuple(round(v*2) for v in point
 def old(name):return Image.open(INPUTS/name).convert('RGBA')
 def metadata(name):return json.loads((INPUTS/name).read_text())
 def doubled(im):return im.resize((im.width*2,im.height*2),Image.Resampling.NEAREST)
+@lru_cache(None)
+def native_prop(path):
+    """Keep held and deposited objects on the same registered presentation bank."""
+    town=json.loads((ROOT/'assets/maps/eldenmere/playable/map.json').read_text())
+    record=town.get('art_replacements',{}).get(path)
+    if isinstance(record,dict):
+        return Image.open(ROOT/record['file']).convert('RGBA')
+    return doubled(Image.open(ROOT/path).convert('RGBA'))
 def padded(body,size=(40,48),offset=(8,8)):
     im=blank(size);paste(im,body,offset);return im
 
@@ -66,6 +74,7 @@ def walk(d,phase):
 def carry(d,phase):return drawing('carry',DIRECTIONS.index(d)*4+phase)
 
 def products():
+    native_prop.cache_clear()
     result={};records=[]
     def export(path,im,anchor=(12,30)):
         raw=encoded(im);result[path]=raw
@@ -100,7 +109,7 @@ def products():
     document(folder+'/recipe.json',recipe)
     export('assets/characters/caelan/participation_sit_front.png',action_frame(12),anchor=(12,34))
     document('assets/source/characters/caelan/participation_sit/recipe.json',dict(output='assets/characters/caelan/participation_sit_front.png',logical_size=[24,36],draw_anchor=[12,34],seat_contact=[12,25],method='Complete drawn seated-front key.',**META))
-    bag=doubled(Image.open(ROOT/'assets/story/halden/sack.png').convert('RGBA'))
+    bag=native_prop('assets/story/halden/sack.png')
     def carrying(body,d,drop=0):
         im=padded(body,(32,40),(4,4));point={'front':(8,17),'back':(8,17),'left':(2,16),'right':(14,16)}[d];point=(point[0],point[1]+drop)
         if d=='back':
@@ -157,7 +166,7 @@ def products():
     data['layers'].pop('working_arm',None)
     for key in ('source','source_idle','source_sha256','head_pixels_preserved_above_y','lower_body_preserved_from_y'):data.pop(key,None)
     document(folder+'/caelan.json',data)
-    folder='assets/story/elira';lantern=doubled(Image.open(ROOT/'assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png').convert('RGBA'))
+    folder='assets/story/elira';lantern=native_prop('assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png')
     def lantern_canvas(body,origin=None,behind=False):
         im=blank((40,64));pos=(8+(origin or (18,2))[0],24+(origin or (18,2))[1])
         if origin is not None and behind:paste(im,lantern,pos)
@@ -181,7 +190,12 @@ def products():
         export(f'{folder}/place_empty_{p}.png',lantern_canvas(action_frame(0)),anchor=(20,54))
     for p in range(4):export(f'assets/story/sanctuary_rescue/actions/row_5_{p}.png',padded(drawing('sleep_rescue',4+p),(40,40),(8,0)),anchor=(20,34))
     sources=[dict(file=str(p.relative_to(ROOT)),sha256=sha256(p.read_bytes()).hexdigest()) for p in SOURCE.glob('*.png') if not p.name.startswith(('intent_','reference_'))]
-    document('assets/characters/caelan/scene_actions.json',dict(version=1,status='integrated',builder='tools/export_caelan_scene_actions_hd.py',sources=sources,outputs=records,**META))
+    town=json.loads((ROOT/'assets/maps/eldenmere/playable/map.json').read_text());prop_sources=[]
+    for path in ('assets/story/halden/sack.png','assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png'):
+        replacement=town.get('art_replacements',{}).get(path)
+        if isinstance(replacement,dict):
+            p=ROOT/replacement['file'];prop_sources.append({'file':replacement['file'],'sha256':sha256(p.read_bytes()).hexdigest()})
+    document('assets/characters/caelan/scene_actions.json',dict(version=1,status='integrated',builder='tools/export_caelan_scene_actions_hd.py',sources=sources,prop_sources=prop_sources,outputs=records,**META))
     rescue=json.loads((SOURCE/'rescue_input.json').read_text());rescue['actors']['caelan']['poses']['assist'].update(META)
     document('assets/story/sanctuary_rescue/art.json',rescue)
     return result

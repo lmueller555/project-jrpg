@@ -51,10 +51,9 @@ class LanternRest:
         self.carry = {d: {'idle': self.sheet.subsurface(spec['idle']['rect']).copy(),
                           'walk': [(self.sheet.subsurface(f['rect']).copy(), f['duration_ms']) for f in spec['walk']]}
                       for d, spec in self.pose_meta['carry'].items()}
-        self.workshop_empty = self.town.image(self.art['workshop_collected'])
         self.surface_props = []
         for spec in self.art['props']:
-            states = {k: self.town.image(p) for k, p in spec['states'].items()}
+            states = {k: self.town.room_art_image(p) for k, p in spec['states'].items()}
             self.surface_props.append({**spec, 'states': states, 'surface': next(iter(states.values()))})
             self.game._scene_by_id(spec['scene']).attach_routine_props(self)
 

@@ -104,11 +104,11 @@ class HaldenVisit:
         self.surface_props = []
         for i in range(3):
             self.surface_props.append({'id': f'sack_{i}', 'scene': 'halden',
-                'surface': self.home.image(ART+'sack.png'), 'position': [0, 0], 'sort_y': 0})
+                'surface': self.home.room_art_image(ART+'sack.png'), 'position': [0, 0], 'sort_y': 0})
         self.surface_props.append({'id': 'grain_pallet', 'scene': 'halden',
-            'surface': self.home.image(ART+'pallet.png'), 'position': [98, 94], 'sort_y': 96})
+            'surface': self.home.room_art_image(ART+'pallet.png'), 'position': [98, 94], 'sort_y': 96})
         self.surface_props.append({'id': 'halden_medicine', 'scene': 'halden',
-            'surface': self.home.image(ART+'medicine.png'), 'position': [278, 145], 'sort_y': 175})
+            'surface': self.home.room_art_image(ART+'medicine.png'), 'position': [278, 145], 'sort_y': 175})
         self.home.attach_routine_props(self)
         self.home.task_blockers = self.blockers
         self._sync_props()
@@ -536,4 +536,4 @@ class HaldenVisit:
         # One bottle, snapped at the actual handoff beat between close hands.
         owner = self.halden if self.contact else self.game.player
         pos = owner.position
-        canvas.blit(self.home.image(ART+'medicine.png'), (round(pos.x)+4-camera[0], round(pos.y)-14-camera[1]))
+        canvas.blit(self.home.room_art_image(ART+'medicine.png'), (round(pos.x)+4-camera[0], round(pos.y)-14-camera[1]))
