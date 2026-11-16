@@ -1,0 +1,2993 @@
+{
+  "builder": "tools/build_eldenmere_stone_paving_hd.py",
+  "sources": [
+    {
+      "file": "paving_authored.png",
+      "sha256": "b70a8f1e21868ce5314a9d999bcbf320cde6416e828d169ebdf2775fcc241f0a"
+    },
+    {
+      "file": "paving_offset_reference.png",
+      "sha256": "49cb04080e72a58452559fb7d955668a516e161db72449e695e9036297b9603f"
+    },
+    {
+      "file": "paving_seams_authored.png",
+      "sha256": "477939ecfc09f5e05af8ff9871ad2512254f56f432adee22d22b499b3778fd9c"
+    },
+    {
+      "file": "moss_authored.png",
+      "sha256": "d64eb71fc33b2b767531fec4c9c7e6278095f966439a5862601160b458082f43"
+    }
+  ],
+  "recipe_sha256": "0a1e55e09adc1db1862d77907c41e54b6aa3d0e12410a3ab670cdb47863bb8c9",
+  "integration_status": "not_integrated",
+  "outputs": [
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/surface/pattern_96.png",
+      "artwork_size": [
+        96,
+        96
+      ],
+      "sha256": "a22c16a756637aa2f8b208ad8f6dc6b18ba3c4242503e1ff88bf159ee97f5a3f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/surface/phase_0.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e3fa93acba263bdc272845cb23a02ffd2426485d209d7142ab471fd18e7a64b0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/surface/phase_1.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "95c98c4c91c52f26377e57162c15f8461ca8c8cebb3619a3e86eb07d45b7e2b2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/surface/phase_2.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "580b498b3bcad9a80b739609cedd6d69b9d3920005fb66ce85f0a0ff75baae2d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/surface/phase_3.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9f1d46336d2f771ceb8381538ed641b2dc91a65dcb87cb810ab4f4dab174aa58"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/surface/mortar_mask.png",
+      "artwork_size": [
+        96,
+        96
+      ],
+      "sha256": "c3e4908e1874be4eb8f275fc70f3ef50b45c6d3b9d445ad05d22ac1a181dc03c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/accents/moss_0.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "7bdcabb13d23ab56fd14bb45bf0f33ec84e4965971cd7504e3c2f9ed844421de"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/accents/moss_1.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "1019ce3c4e894413263622809a2e13ea9f62403ddcaade63f6081407e7f88bc2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/accents/moss_2.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "791e0cb7a1a648f3770bc3252abe4cf3e5b9e6589406fa17280d07beb1e31947"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/accents/moss_3.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "11095240ec0994093a485f1855344549dd9fec1acd5da2f72ec60fe21d5efb49"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_000.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a20d97871477f06a86d3d3ba1a9412429c13f1987cd6c12e670e84b45937468f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_000.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d73952b6ba95f3ff641d219088cf5a0157a857d96fb2829bbbcb90eb20c1a333"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_000.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "baa180e1ffbe349c9b5ee6947459620b6b71d8ad50bc40698f7e298870ffd96f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_000.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fe0bfec7dbea449ea471dd5bddd1d33c86a5e2ca82122baa5ac51bf197bce799"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_000.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "349bb9a31ba5ead39a223dbb863846022a88cb738eaa60b46ec28bf88848b6a6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_000.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "556ef2cb7b07d1324f6673930c4f7f37e1d59c366dc2f281729a0aee84c2771b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_001.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "23ff9f3c77ad6ff8fa0b243ebe36187ba56fea79eb9d874f0ca3096796b21b5c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_001.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a403728eb87beec64c921bacffed30dd093f75c7d863ba4478522720fda935b5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_001.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "bc7381b15f431ab5f895dc8201e1cbdcf530e071e4ad57aa0fc17f212eb4fc3b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_001.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1e16645800f849579e8ec7dcf84a5c373a31b8b38073978a3c785e4016940f62"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_001.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fbeaf2e58a3dc08d747c5bd8176315da425bae8774092062e0290b4e456c94a7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_001.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0b7b7a37e468043f426e069245f2424d7f2f1d506b3a514b281abafa9fdf85ab"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_004.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ebb0d8913444303e3b39a1f5716824fc8f9f78f0bf50396ee00217c9edaecb99"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_004.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f80fc2c71b135cdd1a83125bf76f0765c4950b0c096ec7e636972e7da72debdc"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_004.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b4348ddd8dbca50c7e4692eb1d5b952e28e9c96ba1dd6de11f9471a2a106330d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_004.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1fddd9168c61b34691034249d072323058b2273d1cf7f021b1f3c62279d278a5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_004.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4750d5358d7447588d2afef250db2d909905ad95bb81a7ef63940c15c0ddcea2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_004.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "568eacf226d9909c7dbcf3331524114b25b080116454f42f0c50a236de24e537"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_005.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "206b1f24393e5c37dba4c11afe0ce718a27174363d0d9bfeef0675d62e7f30c1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_005.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b0be9f9c8350654e77a00b3484fb3d72529272a3a4b861ef308060d450eb2517"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_005.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "025432e1710fb55eac66aae9afe00b021d5c79d1062918bc69e0d874d7c601cc"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_005.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fb921f16859b2eb16c7087eb31251c9b1a49f33efbd52cbb5a9b397a3c5457a1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_005.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4dee8fd407643ae10f500416200703ac660f2ac4290237f32568dd5e51ecf550"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_005.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a6542c1ac307f0467e3df80bb4b2a18a865cc35c68e5fbcd09543aad4aa9ce35"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_007.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "23deaf0f55adead4250ebf592c6c89c14b4e0f837d481d5a745554c328376fb0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_007.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "27b3f7e7adabcad365aa910fcb0b2773a5e9b409242dffcdc48e9c54a837fb67"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_007.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b5d89596e19bf8a92294c8c6fd2de9a21fdc89e4c2a54fd4f276203226a2af70"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_007.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fe51e04648a65b9bd8a9a10ad82df1728e1328d26a142556a243486444e04e72"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_007.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "de51e32cf69bb5ca9debd3f9b95c3edcc2634ffc3586ff555d257b9d748fdfd9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_007.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "cb3061bb8039d25c9987aa2e3d67da59cb7b19b6584fe02008574266769cc258"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_016.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1268e9c998f278cb983cdb50e97be5382db3b7f2025ef59e1aa9f9b1eee518b4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_016.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "938af80c775864f917c634b0d334d2304de987a6ba4a8635be53278c9c79cdb2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_016.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9bdcc11cc2640aad80befa1815b519149620d6c4ef958267f40c070358916a1e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_016.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1325d9b87b987c49718f29f9bf7bdb3c797955578509dd3c65551650f707ad89"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_016.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "24411b03d74d017cc3486c24da422e5fda6ed160a2158020fdfb223059ef20dd"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_016.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f5c16aaefec9e69508e68c9c79678e7f8b210a96c4bc9f4c935bc1d6d7fd83e4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_017.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3070161c4373349b267fc4e16aad9365724df79f6230ac9354adbd669175fdbe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_017.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4e6d07dd1496d3f44b276bd71afa87db52ab53669d0371aee5d56725d4f887f1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_017.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e79268b664d7ddcb76e22c1db3b9a983effca22cff10ba38ca5e1b8326ea0d05"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_017.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "054811dc058a2e6670b70ffd46a7bebdca1f09d15db10058a34e9d029f715e93"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_017.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "23877e00725121e170a756b7f3dcfa398d60a38eabb53474c92410970b3856a7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_017.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7edd78930f5e5d1ed99a39978bbac5d8444252d493f9d1c030c2fec6033ad4e1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_020.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0fd4cfc698f628c6aa85f9dc53f27b95237290d9b12d4b96f1b819ad9072c210"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_020.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "092bab0fd298276def106e69fddcad94f7b119e372312eb3cd492e9ffbf0dd85"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_020.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "135c2251b58f2975e23d1e793dfbd9ed134044aa6cece8177ce2bc740359e3ac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_020.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "47f28a70fe52f2c223bbc043f6614fb1ba7528c3e969f562c4710b1a39151861"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_020.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "38b13561117911b94a154ae2a83e01714e2bcfa0ea817be2ffe2935eb71c4531"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_020.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "5933ee4c0b0d74bed64ccc61fc187f721440b6b05fd8b9be16be947030fd55b5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_021.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d18b5e7d62610c6f7ec993e048bbe86bc06bfd266fcd7148da73761424ff1ce2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_021.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "20ae40d16c597dad11fd0872e507a4573f915944be955190d60b1648260828d1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_021.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6804178bfbf7dc102f1f6e3d665321d8e571cb42c33d6a19666d04002a845192"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_021.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9fc558aace28ad1dd68043dfae0c71053a82fdbe395d77037d6725d51daaba3e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_021.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b0616313a85c2196111890d1981ccf1db1e519521ee1613ce12cc604ab1ea567"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_021.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a4d65b5b408782d94f1fd37598cdbf2401b566e36f9d64fb6db0266d1eb458a0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_023.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ad34c331993a48e3aa7cd163bf5c55b197202f5dc09ffc765a2a34ee3bba3e59"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_023.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d7b5c59c5ac650b2c267ffe8dfe21ff77e5dc98196a862a7d8b1f8ee34a0c7e8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_023.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fefc209cd5f2cc0cf716ab91ab185090ec0b0e677b2817d587758b978708d01e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_023.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7d55efa33382462dda00143195e26b45dac86014d297e22f9a4c9db5605fd3c3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_023.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "33049cd48aae0cebcc57f64cdf214e3089442f019db50389971b9a06bd586019"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_023.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8ce8edf577f949afcc64a36aa89b83ad6419d3f75793803abb5c3ec70b5a15ce"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_028.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "51aafef93f6d2e14613b65b7198d0ec6e9b68a6e16ea83fad832359b8f5966bf"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_028.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c95458781c9c707b1ed04eaa7858adbc6398fb9879e6e6a0227395f8824edd33"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_028.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ad27a0f969be20254533218a836d5bb6ab184fbda86fefb5740aa9bb10a7017d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_028.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d3b35d79fefee55f3e952310db7efe7a9260949deaa926e2d5f6eec5d63494cd"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_028.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b212590f2ee1b89782db0c717683f720c95f46b4b6a734db577468710ba29cd3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_028.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c6e8957225aee1cbc179fb55e8c2e0e145556b22763e33925880232a386ec9c8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_029.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1abaed1f4971bf85fb532d6a12ec3b2c514f8f2a6874dd10f033ab7305dc4ec6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_029.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f05ce6dea82116dfa41893336c359f91f46da7124b0502c7c6e7fcf2369c18a1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_029.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1c52db4798863d56f85ec77ddb7619d0c7397a4eb956a71d6a59fddaa0fb9a1a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_029.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9b87dc6f16774afd5b03775b85cc9b1b84559e64f29a7c1e7b5de338ca45b20b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_029.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "89a753b3c6f672b56b403f0dd3e37f57dc58b931592b7f15858585858e6bf98e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_029.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ec52f7ae8dde1445fb11cd32839331756876929d5cd0c0149943716d50aa6fdc"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_031.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "16199f02cd123d011a326e85b0b24af6ac35c5183eff7e1c2d883da5546b0cd0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_031.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a582dccef0270cc1d045af32339a638334848c5f24a01ddb526a2fb1463c4fb2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_031.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0705790d466ba587bd322cc2c87a78ad6e49262b2417f975d10740f6214cd81a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_031.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e89070c3640e9f73dea098e5d799609bd7f2f1559f6fe74af1d81963a73a83cb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_031.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "632ff874b7dcf94b5f29b0f519ab15c26ea08bccc0d7a887d862898c1c1cc658"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_031.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "57f68e00ce0f44d63f77d04f5aae571b4c56cb7c5a607121ac430fdba5be2fde"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_064.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "696c23804eb159dfac64702dd66ebb37432903052c1e96781d32b25d8fe722e1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_064.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a422d70b1f224ea80dab02b6c77505f1971a116738f5969cd959ad1de611981d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_064.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "163626dd54f559d213a49558c97c69db6a003be9f3974b39109f30d6622c4f2d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_064.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fb702ee92d07f38778a31c30be13fcb10f34eab64571015dfa515f7c52dbb9b9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_064.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "5e617cf9a4abc6411f3d4031767eaea4dbec7f9abfb72063ca05e4436d1e028a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_064.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "921501adc0a32097793ebcf591830020ddeb370d82f09f823c12ee40cc55790e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_065.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "49196c448469ac9f84279750d44766d757e89bf8a4a6728e8eeb91128e29380e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_065.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "5b6fe7efbe2ee6ec6fd019cdb585b179ffbc15055b51006053ee83344664b532"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_065.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c8974fd448b90ceeb43c5a142b2e4345fb38724931f55916679d3e0b59ecaf90"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_065.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "bd7e2949d462711735b3bb520cddbf6527a7989fd82c02add04abaf8b9ed97ab"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_065.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "24609208086b0e9067cbfe154835a22248ee0352d5f424b2ffae71a0a230beff"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_065.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "971aab0cb4b816e61bdd4f6a0b1c94a42e10407e65cb782794b9811581700cee"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_068.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9c824989eb94c7e2ae138ba523a67a923ce6cbb8beb616dc95c0937cdc43b05f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_068.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "5df4e3a68c5fee5f9adee3210af0d64024799c215ef0e3f0768a6fa887a754a0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_068.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0ecf2761e8640612192951bd0a72f771629673bc32cee50283408246721b588b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_068.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "26af6becaaac7c9d4934aa500e6fb37c92ce367c297e3fa460a770fb031ebc9c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_068.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "53312cfef0275fb71dcadd040b6488f125b3c419bed6449e92902609015d0d9d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_068.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6227e001967841d862a849ad3ce769a2c0d74889ac219e966a621287a0382e86"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_069.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ee8f93b56014f039e416acb666f1deaf742d1d4c56a78112186eff8495173bb6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_069.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6156f672c68fd97f8cfb15961c98ce010c0acbede73f7754a0fa275ffe353189"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_069.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "479cfeb57bfb55f966d9e800dee16ddda6600cdc09d015914c6d36e8599a193d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_069.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f9a2a80d6fc1afd7973255683ed0c7ff3dc11d3a407a532e195c47a6b8a9b676"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_069.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8e5042af6d24f557a66cc97e08dfbdb936f21263d7b47f713a55b2d3b62d9b83"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_069.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "db9148061e237b7ad2df659f3fdaff0c256d5cb9a8d3697de89165591596ab57"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_071.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "cfc2b7cb8bdd7a82db6978e5a60dbec3405a5fee86e2ee7ee1475e8ad906f4c1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_071.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e7ffd5cd015a71eef62cb5dc6977622996eec6ba9aaf6784b2f7f03ec91a1eac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_071.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7d3d5bc63aacc499c79443b4f48221b09f3791a3f286b997601b35857b589d9f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_071.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "bf111ab4c24c68614d57f06e67f5edb2705cf9b4065485342d79888e34256dd2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_071.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ec285980520e9d804de8bae9a9f0d1f1cd67e8d5bf9fd708c4139b241407f0ad"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_071.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3bef3177a3449350a9b3f2079e6453b432279cee2981563d96518d7eeb85868a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_080.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4a3377384d964da861feeb97e63af24b2e2a76bd246788ca55087d00bac47400"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_080.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4d87c3f9f72fb08fae5306327ec933150af3121afde2a3d6e1d7fff189270d2d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_080.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a0b4809f0c45fbffba8f5c322814531ada3fc86bb339015e3866156593439e8a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_080.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "2c50b93b9e4d81409b55adff5607f2a921fa703e84141e114f535d11c08b23cb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_080.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b467ca79542bdba1327e3988b0fc0a6c811ea219b96fab4da56bb939325eb015"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_080.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ba7ff11a6bf1427bfe85bab85a8f05ddd5ecbafad0d1775fa3ecf9387b222c6b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_081.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9144800123aff735d7e5e4afe6ddfc7008da33c351e2cc359715cac23ca65682"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_081.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7c18ae8722203bee62197beb1ac92ae50aa6720b3ea38153c369b49828540290"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_081.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b3f82701a1b003029b617707d28f942be3e47838717d87cf795776e71fd851c5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_081.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "501467653acf0a8f296adcaebcfe83823592d0a5519adad8297d4686bb36126b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_081.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "92f9168d05b94531033fa99ba29fe6b5138957d40bcd7f43128263f11857664e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_081.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "03dba72a0de069d08577f452c53634b8089b6db4d14715a49112f231b70621b7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_084.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fff905f888314bdad75b7aa3585d3c20f6fb7dfb7a22efab34c3c0d2ed2f972a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_084.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3546245041bff2f408f7d1128c77104e20e6b8518195b637c0dfea7b51481e96"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_084.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3167b39042803b7b2a1346115b9d708dd82fc325c25f412712d06074a87b6eb3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_084.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "90d3b708da4f34d3b38b88296ebf195570183f4860d0da4970b785718a9431a7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_084.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7a17c0b80a127abb34542482d967d07749ee88d20e68779939bf109d2598fbc3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_084.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "99cd8637d9e7efa65c15e9a172b2cd7b2d293739a8ead73b390b8ca87642a170"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_085.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "12bbbc5bd84e14c3d101ccd63378d4b25a2959594b42422ae92ef25ce6f4e5ce"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_085.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f2a58bf6f3f3041281b13785e4b3da62b9abdee891e22b1ad4b0af4325dfb23d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_085.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "36303b256e798719c768e01664cda7924c3522d361199b316b4bff0b584449d8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_085.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "cc0f37578e4cf138b920431ee875556b7e1fbf5ed7b045082b58a9def54a2718"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_085.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "39cf3f2d88c01cd6bf3082ff028182863f5e1fa0394165bb6cb491d946f61dbd"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_085.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "49aa2b5a138acf46513d8312526f3f5a32d649b542750d61a70a0eda992eba6c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_087.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a1fa9dcc0df81e6c288714490b070f2ff55a55bfc7ad5b77dc242681884a8a79"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_087.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8786a4cabd003bafe19902cc7cdb2c826afb876ee201a4b412a7d3107bcd8550"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_087.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8b0ebf15402507bbb6ddb1ba60fcdeea53dfed78feabd55f99f9d3f7a981261e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_087.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1de0ea2478ee07796b7630a1fe7605cb09b132437870fa519cdeed158f04d413"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_087.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "16a37e828bfb18045614cffcbfa642edc87fb1e9ccb8767093e2ffcd6cc4ac3f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_087.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "afb2227a64358ec79b143fc63079faca33b855604e9ee74e0c2849d7d76990c8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_092.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "84ff7bdcaf4b80316cd0cb6646129babf5557cf9f38be8475671cbd6dae41fa3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_092.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4f9bf80216f19eb3f2960c10a0dadd1c86995047af1951dc84b7a55081260892"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_092.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0f5cdec5bc5d662f9d2013ee80550b38f48bc871065f2634c8f81b89757969c4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_092.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8020c34143d836724ee8e4d85e2cfec17b8ca5ddf85cbaedd29f0afc2970768b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_092.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3c639ba834daa022a4ad8e82d4644d7adb1700991c64b7ce56e911940e7196ff"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_092.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "db586706f1b7a1c6798e20841cd5d4a93600c96089a4dc680ff4b4a1dbbc2244"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_093.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "753d8e49572547396c707e9c5aec31d9e9fc42b59357388e0c5eb44b73e3f591"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_093.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7d8a66b68daaf64209444e74ba5f10d9c97f0ac311034053efd9be97f63c132b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_093.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b4466c4ba90551201a4c50948e86dba87a40d2c237077dfbf1dad1d04940d446"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_093.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8fd7f13b322add439bf12cbf56ca3005837c48a0e8e87c14943643eff9ecc692"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_093.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "dfdabce557d79eba9293f2a35381d8bc062922f7fc63c96d37639c190288c8af"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_093.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3aebdbf65d3141568e7726e225bde3ecc0a494e53337e382c0390450df01349a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_095.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1455b0ab6835d375690cdd5986774bc3dc196aafd63049aa3404d2fe8b150c42"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_095.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fd30a7140a781fe0fe32243ceb8aa2ccb7db4c3a657bfd01a891582826e495f3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_095.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7de42bd6c6f5385120e141dfd52ca1daa245393f8e00682a625a1562e9a6cae5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_095.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "2de4cd83aa05b5bbad765c5c22353f4d55ec27e7f1a7b54c46c387c7cff68407"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_095.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e094f991bbab8c7649b32981a66d90d6c9c5fe91953b1bfce0b3135b3d425734"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_095.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "5a9afca6dfc0850ee2da16345304462dec208b6a14020dd70d1d872952212140"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_112.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0461b99ac7ecc4cbf0c50e0cacd56dcb028e31f14c6bf4cda9f27f26c5a1f3f6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_112.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c3672375721f66e2bec86675876fa8de68d8655caf89939a966eb1ce634342db"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_112.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "eb718c4d7a9773d5e87bed1a90f73ea30db52596572b167a7d8cc3a6b2ff19d7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_112.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "73b6a2e02ea2b02a4362043d0ac2dea64892068a3c8cd53ebc45a56f3b612d9e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_112.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "bf72b65ded8cc3bf3f8aed53beca3a2c8be77af1bcecaa8a5275d62f40b9d96d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_112.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a00840d4529183fc8d0e22b193f4035914b18727738ade8e8722c3672746a4cd"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_113.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ad6e9c55cedfd97160a408d33dc9c9e0c6f1b53b9213b59a5b9eb3fa1efe4e1a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_113.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "98f54f167455855c2eecbca4112e6fd60f156cd7cc759aaefaad5de5f28cdb38"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_113.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f7226acf2888a022df61696865e61fe6a25a0ab998567100be4236b82a7fe483"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_113.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "32c151db69d3ddd10bf5ec9f1d2aee7606d06c5d692616d6b08bf29c53031696"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_113.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e3adabfb5f4c9c9c04d7217a07ef5ad118fdf1a985eec7dee49a467f2f2458f5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_113.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4c20806d22c38aace0fdddcca0b325667ebc70b9f30f37f0c05a32b0d219b47a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_116.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fcc46026eb765de0a618044f458ccb5bf81655102a4a349d87a18bd169ab0e86"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_116.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "08bccd14c1b60278461a915452fe39e3199c6f2380dec518d81647c77961874c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_116.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "2e0be42a39f3cab6e82e7783a979406962746d8358e2b41f37b4fa7667d7ec0e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_116.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "33274e2d269ae1901afb15e275327b4c54ea50c9c8f240085b2571434ec06f0c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_116.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "94b5e10eb0c7c30110fc5cbf638408a0df20f82c0627080824cc236bac2162d6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_116.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f5653f8eaa8f6f6ed2f46189016e42014bc11c2f85b4e5258e9082c179d2d141"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_117.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "eb47392663abf4242acfc5adef9f9ced644281c62d869e931432d53c14f61be0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_117.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4892c7bd14a7fa0a08a5b8965bc65e815c9a7fec97ab1cd363f139a3c9ad182d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_117.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "93ec80fb064e549ee6a65b310cec897f76615f40fa39f7dfde9224c762fc6c4e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_117.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ab4a635ab11e6514acd86694588286ccc4c75565e961708c456bcde1a7ef752a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_117.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4d89a0f3a65443a5ca5124d657a526d0a8eaffba180a0244809674fad5a5bef9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_117.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "cc4814e8b74315a37948ad2a44167190f17f6fa7726c9adef36eb610f86282f1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_119.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7c0ce64f211d5a15f7c505e6bd936e137e9a69fc203556dfc98aefe51bf2e12e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_119.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1e555b7f78b4268c17d71bec66b0dbb061776417d90955772366404666805e1f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_119.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8c6d926c08c91d68a31157096aac21968de7f34ad31635bcb585aa0ff3e2b229"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_119.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "59e2039877e1c43c5cab01b71fda3842c9c2df01753d4510cb9a5f5d6a142327"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_119.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3fb40df08b8aba46595ac8e416f7cbef0b9b5f58c1df3eb216ccd901e6d7b382"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_119.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "445ab00e595da5257c92ea4583b553fcecc1763c95e2f5ba9771251c8328a420"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_124.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e21582fc2465fa0eda74411061f0c28edf4cd41bf15f820ff003e66caa790ea1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_124.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "aa4d6a1ade29fd3c95e7dcd4053196d4354093b20996f611e077eaa859ea0dd3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_124.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "5e7a1b9c5ce905ee89ae48d2adac198d8f3744a5bd4c5d8c4f72caa1ca1dbb1d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_124.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4a77ab5cded8c2b4f128647f16565c1acb447a0cc97c5c5b9496db0bb3b8518d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_124.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "4e1cc3cabb0b7506af40f78b7facee4d58d702148186f166f906cd5ad2cc705c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_124.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9d2fdc6bab6de3da3aa58a062ea283822fe76de85ff7e1d8bdb302a9d3ae39ca"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_125.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b024b77998c8c832818e00aabd8c96fa702880291e97cd296b3ce4618920e18f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_125.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6358d87b010e5400d4815eb92eaf82f86d347d71baadc1231c487f9f5d6e261f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_125.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "90cada6d7a3c72a435e7cee5b129ec218f587ead94eacdf1b41f0c169f49eb5d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_125.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7f618fdc0a4f4aed73e90bd2b8061d7518ef9754a1d7d248dc8f9cee93f8dc9f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_125.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "412876edf42b8ac9e9fcad46c4d57e6efd8dee1403eb1e85fbd8cb1d09dde99a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_125.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6a0b033c6b5e2af93a590c3e70828600287f2a16f1544b2b1256f158395316e7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_127.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e64bd2dbdf1904075df759d6a508f6fe4021b5cbdbc094078ab6805d5df8036d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_127.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "db0caf31136a46c964c0e9e5914bbc425edba50ec4c9a0c1ad0a8b054259d98d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_127.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e59806805f93d076ddd5e71c523eb9d9abf361f0b0db03db3ab0ed04774dbf32"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_127.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ad6359d212700306c14a5271c70c86906029ce99a962ce8d00b451eadd978d72"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_127.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a1212c56bbfdda598a1a106467fa4bf051cebda278894e0ca5eb5d06bdf17806"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_127.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fe6cacff2b37251ecdf1e3619032f516d7b6bda036d43d661fa9acba8b4bbb7e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_193.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fa657ea55e6e9100c1c2d51739e2af9fb8a9689af7e4e558d82e87f977ecd4e7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_193.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d917ecff55f97954d43ca45ba01f286066a82fe449dca9fb3421d33f037469b3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_193.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "90463903be3b2eadad9e2ab2d106ae929350274886a7efc3a6624ba950e1561f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_193.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "44c3297242c5e78216c3f9a672316cae90fdbe18a238996e7e70a132f854f529"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_193.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "17dd543a691de8e3e726becbd6bdd9f9f063f0d4a10804a84e09da988c6bf61f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_193.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "168383910762e8181d21c2f6861c1e75953344fd07f64d56322b728cff6c1834"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_197.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "aeeb5fdef9b0df9f0fef2da42f3b812c76bbd65d6de3117ffa2ecd0efe3de227"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_197.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1b2bebaf37589e87c1bf3f80bdd15d46f9f66632011b10bf104c0407e2aef7ea"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_197.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e3090482f0edf4c8e01a1862f63674e799966daf5801b01a54038e73804d79c1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_197.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e3a347dd48fbbbbc88ae5f88b3dee14094b25bb022b923e41da6203fd857f60b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_197.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0e4f3bbdd9e729454b97548f7fa732d5bd8c6c87d5f7cc9f2e9c92435c16e6f8"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_197.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7b6b90fff6dd21664cf77ca90fa85e5d976177eaf1f342c024e313bb21acefa9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_199.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "46fd25fb619984054e03c2555374645b61930ee749b0f09756660be5d373ee94"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_199.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d1b600f11e54a81205fcc8449ce9b571c694c9e48a0d2eed0a3081a9667b905d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_199.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "aa51e5b75690112765439ed5642cb41975de904753ee9836faa3e41206aa4dd7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_199.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "baf53dce5751be3cc53648b65873d75a049160c6a3fe2e2fb3e4025fae3442c4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_199.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c9843cd4497ce682dc01e2c40d9948a23353000bb8126aba2b9ee135e57671fe"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_199.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "2039d2bb643d23e021166864e45c1124b8262d8c4c200fe49ec06ffefd1dc3f2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_209.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "95ead550678ccf9acb99ab99e516c3b47b28355b7230776b8e92e12f10e17eeb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_209.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6b6c5882bbe843704642e34b2871a3e6a6b7b1144c933392dbfd7c00bf109096"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_209.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "43735350b6ca19f9935cfc951884c22330afec05223bab8b6e181f8ed4ad88cf"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_209.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ae4aa4b7b274640ccd0fe6fceca0fa20e8970d733b8c4857aada69240b2a2f8b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_209.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7c9470528b119a1f21ddcd1fbb89b20f58777cc853662643d5a5dbe0c7cf9ae6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_209.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d4f2d7f73246e6b2ae3623ecbc6699c37914a8d73c41865f50357165c3359722"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_213.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "2003abcc94f340d35bf006ea46cdd307fa8c8a4bcd9d9475420b8f93c8d9110d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_213.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c2ccf66fe0f64e2ea82da8753ade19c897e2677221121ef458f708dafeb301b7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_213.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "601a96187f4883e7158142cb3ebdcc4a72899cbb5602e1e67c65552c043c370f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_213.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9fe15a3ef0720d1b530da7a334baf5a677e4e155fa528d4680bcb94d5e405b09"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_213.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fe20563c8faaec413957f3802155bc171ffe831b3fb2353cb1a6db0b1dba220c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_213.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a6844cb31d09f4c01ebd07225310ba808ea1e90e7febbe1702fecc8e29034eda"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_215.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d85cc715ec4fe83e41d067115585b23d42715f6917d72f5880893d2db371b383"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_215.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "276378c671e25c6aa0a9e428c6c9f3179faacc1caaa79de7e45cb928b5f1c7b4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_215.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "24b3048ae41efc675450ec36b91b4757de87606272bfafbdc979b4e0f6baa4ec"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_215.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f7a7f70a9b35f604726396f53a729bd27d6ee73ecadf12e84e3f9031d1a49148"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_215.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ea943c73184828c635ce679ef62239d46cf55cb986c5b2f26a060441673f9e28"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_215.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "04fab0297e7727fe452bbece66630fa68445b47cb4b838de55e93db4fcc696d7"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_221.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "967f995ddfb66c84a7132a0b91bc0b6e6e572c6a3a5153a146a94dadba00747b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_221.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d1be2974dc8896d7fbd23e0519993d46c24df99621de71f24a07fbbc90e9a322"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_221.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b6527fff5c6a030e60e76cd1f70549dddeedb7bfd38e843938e64404b529c801"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_221.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "b68b2fd15129040c96eb6035898203c1a9106bd270f849a39ea0b786a471a23f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_221.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ed300988c2f79d8f3ba1362ac96a047c3b5625a1004760f7af6bb5a067115f59"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_221.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1cbd70ae9b29b4c9e8bbb9a562ca5728fbefb18e81a7db2be2d097461e821b69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_223.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "278567edcbd8e5a1447ccfa37b1e2d189c22f5984080cc72adda849af08a5c26"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_223.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "bfcd4a5fdd31c700513ed4181e752d12437501f5a237a147987634f1c3d311ab"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_223.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6b11bee1f65d0e9ea12e1d823757a97fc90fdf86f6fde976f42548bfc76103f0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_223.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "de8478618d8d42ac63a8087509a207cec805536b799577a8db795556a32ab058"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_223.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1441d227e1272efa9d332eb068c7ed0803e649e68ca5627b510b8eab4f1a9bf0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_223.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "52f7fda71ff6a1cb0762108fc807d56138f6c1ed24e209530301d5f196cc427b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_241.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "937b0582dbead202c14c46d2c7e084f62e1cb282d6cdfa26074db34645be9004"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_241.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8f36ebbb51cecc2aaae498def8ec74f02d83fadd6e84072b06a224bd328fc3f0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_241.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "7853856ddf56dfb98f07dfb0209ef17b23909108e3754f71b9dc19565b0a041a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_241.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8f4e8b620fa7c91aeea8425d68b5eb97cce68f5725a5cff02611225a4d0d3c6d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_241.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6b8ef527b3214e50ada5e60c160150ccc74ab9e662ab76bf690336c46796c668"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_241.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fdefd46ff59825b08bc38afc4a059c7a0354ee80e935d938e30e9c7b7e54932e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_245.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3905629ec912b1926a05af71f8ef91d18f75787ac2520453e65830d8836e7078"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_245.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "a83f5f3224651ea0a3b599e2a387e20f7f76a70f3ade31294717101f0d966cc6"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_245.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "0e4e6c165d43d9f58719eb4b3158bc178fc183491d90de590a1c2807811a8261"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_245.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "c5080fafa05e49f3cf0b359d58a47fe5faf945b03900af6fe20a2778de81660e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_245.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "22a66b02380dce312e646cb1175a87eca7495edde3bf590cee0a5b84be241b2f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_245.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "8248449c148c0c9ae09a9cde54f4339c46f4169abca935fdfac4328e46d0f858"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_247.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "759896e9de19a56e1d33c59e5724f35c0f4af90e3fa8283ce8ce739af92da88d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_247.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "6bdf3b912f6b052077495a0017dc3d7a04132c292cd94981c9e6f5d2358f4607"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_247.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "d63fc51ffb81e4b56c68baa5c1a8b8d6547b9be374e367481adbea5dc1894b85"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_247.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "1032edf4c26fe575ac675d2f6fd2c606f8f2847dbe83e7f24e7221d78513ef51"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_247.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "bb88224f9780d28ee53dcf756e337e4bc81573d693394491f442f51776e922b4"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_247.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "fb5a3e7524894b6992c930727b888daa2a97eb8c97e275ac80a5f828ea6de3ee"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_253.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "f0608d277deaeaefe711331dce194e97fb554e95dcccd819c9c43d93a4738571"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_253.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "626d67dd44e6ece7a8009cbe89d702cb244d262b17a5a8a8b9e248edb7ed6739"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_253.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "ec141230112fc9408ee7c3aca582997761f55f73378198734106d9064ac9b100"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_253.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "2e8b3b4a576fc005c34f342ccc7fc1c3a1b5f4fa1ea847d84121ce01e75db491"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_253.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "3c9508726edaf0dd32ecd79cc4108178c1873ee74296cd9017c0eff67b7c986a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_253.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "781c166b612495b2b87629bb70e36213522708961fda2e78d1ec7af5a7dc584c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_255.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "e3fa93acba263bdc272845cb23a02ffd2426485d209d7142ab471fd18e7a64b0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_255.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "95c98c4c91c52f26377e57162c15f8461ca8c8cebb3619a3e86eb07d45b7e2b2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_255.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "580b498b3bcad9a80b739609cedd6d69b9d3920005fb66ce85f0a0ff75baae2d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_255.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "9f1d46336d2f771ceb8381538ed641b2dc91a65dcb87cb810ab4f4dab174aa58"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/grass/mask_255.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "805d5875611b6849294386ec70abff2a865ba0dba0973b6789b2693948ecba59"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_255.png",
+      "artwork_size": [
+        48,
+        48
+      ],
+      "sha256": "805d5875611b6849294386ec70abff2a865ba0dba0973b6789b2693948ecba59"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/paving_47_phase_0.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "60c9cadc406d234a6fecef4b41095851f484dc44dd6bfd769324d1d87d1e9d58"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/paving_47_phase_1.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "79c245a11b8bcf11c2f6726d96032e911311fc37aaa660fd6e5d97a4cbbfa527"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/paving_47_phase_2.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "f87385067d32442605f3dc5b1111314625d2ffe8d70a12227188043fd69d16b1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/paving_47_phase_3.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "e2d84c725f0cee1d67c008241b2eb92f301048fd3b97c8a963337c5d5b7214cb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact_grass_47.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "2f257be72456169a6843345a13d7148b82b1ee22495d3e5cd61b6c9b9a2cd55f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/contact_dirt_47.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "68a0702291278c319cc244d24f14d1f1bb1f942113ee507b931a04884ce4a280"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/coverage_47.png",
+      "artwork_size": [
+        384,
+        288
+      ],
+      "sha256": "c4eddc8490b6724486132f3c1fef77fe1b3d680197075d35696195220cacac9b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/nw_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "dfd0a5823dd9b15e60e5f490bc4fa68d4aa2752b0aa5357efd571585093efcd0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/nw_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "dd425c6825c0ec7553cdffc23312aff5ef1bc690ac996d0770ce621c9981dd01"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/nw_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "b4efb41c4a8eee1a1a41bbcc4f125b4fef807b72d85f51f3cd8379e685c485b9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/nw_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "096abb10432c0407fd64d3489848301c72980a21aa51a205f6c7dca7b7e1472f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/nw_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "45646a50c8e4611ba0260d3dc7ecf97695d57ab325c1bf425b2d2eb20624acd2"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/nw_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "20bf6ca6b021511b938a2196ecdda582aad249851b76f66b37467ff219e8f2c9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/nw_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "cfaa1470ba805620d9aa48d342c36085c87bf15214a5d8bbf6194c7a05967e21"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/nw_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "f185a238ac86e912c68a4b177c04778348aa598f51d0dccab63799b2dbdaaeae"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/nw_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "7df2e61f5137ce4c8b177f218f0d103e336ecb2bf115e977fcb7b70eaf293c3c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/nw_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "c5a1f90dca45f99688825bdc9b7cbb5ea45e4fb02f3d8a80e1bf02f8fff6d622"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/nw_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "42bcce651c5674c81b7485a495293f971d7ba0f4d0ee1b319645b4fd7be998bd"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/nw_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "dcabd6441625bd04c1852d6ce0ff2c0190052b6d06030d7fd468537f9bbd133e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/nw_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "c9ecf6f12d7c11ba7485e1c6645abb67351cab7319cddd8cf680375c635095ee"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/nw_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/nw_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/ne_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "28b537cf182fd7e4852e397fa55b71faef8350c4422307cae4b7bd959ab06505"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/ne_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "3a4f03cfb3d794f0d88ec0bfa53f4f5d5a789f8c7c22cb1ea8a1b8a8921a1b31"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/ne_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "d68d87e8616a9b2c20065001dbf683f9cb8c66e95b1b475068ff22af512ab7d1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/ne_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "0ef49cb16202d8c81d9262a139bb80f7b5ed078b54a6893e044622c90134dc85"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/ne_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "cf4f38d34e0e0ea9a4d348bc7f04ee004ef178bf35319b9e9660ba42889a06d3"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/ne_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "f2762e5126cae6d22ccf03157d89bc073e5d950a20c27bfe0ca587f233b9eee5"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/ne_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "310940645dbd33c63f31dba2bc22308e45cb3f948c034069de1c7170318a0616"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/ne_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "51996483dcb1a16805b358a0f4dc114f904c9df6a999dc2d5faadb58f04dfe2a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/ne_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "e458ccc627c035fad261b753d8b1a94a0227cac386cb813b431e0eab01c6a257"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/ne_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "cd5704ea8b0de5bf818b3eaceb0ceb38242b581b43a60543b08c46b8670b2b69"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/ne_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "096354a2ec9cae6837e1f05e845b05e8613906f86554a9051f92ce37af8c6a58"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/ne_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "f106155ce09ebad354a6d674a0ab3f9b4fff8857b156dc3b20e2150446deb688"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/ne_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "c9ecf6f12d7c11ba7485e1c6645abb67351cab7319cddd8cf680375c635095ee"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/ne_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/ne_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/sw_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "d149c67f66ae87935905ef7489c9043542808ce5dc28252177efbd6d302d7330"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/sw_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "0cefbd9080be6e06ccbeceaad0c3d3ae62f8dc4a0e59810b14b694043b607cac"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/sw_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "9c9b968ec4f2da74ee3ca40df541b6cf9caf39abc8a520abc5d5c16ffa76e786"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/sw_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "2268a89617502351f545f6c2c448d9f50193a48cc75fefce0a3c89d25449ca4e"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/sw_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "2b85d111148be3dbefa5e7a91f600a756c04ec50dc73912ee025a4685a0b0f7d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/sw_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "2886cbbee7359e17969873142821d7379f94f8f392c87273c1762beb2ab4a51b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/sw_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "cbe89390f155e52b2940aff3e14c5d2e2c234d9fe3c9f9ad39ec203bc3a24c94"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/sw_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "e25f56cb49b425c651f3f12c80701921548bfdeb590d87fdfaadb68a995c8698"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/sw_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "b88c8c7f67ebbbda525933a2aac584af0c1d6a12ecebab4245749a2e4d8c908d"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/sw_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "440c72137cbff8eee6819b7d353f1e3804efd69e80beb9b0be1a350782893df9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/sw_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "cd9f2847e0224f38bbb67997cd647120d7951bb7ad5f5d3bb2ac88211ef40ad1"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/sw_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "64e0edc21a0d1406684721dfb653b4ab3698f12d50599d2446c63643f57f7914"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/sw_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "c9ecf6f12d7c11ba7485e1c6645abb67351cab7319cddd8cf680375c635095ee"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/sw_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/sw_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/se_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "b4b08c0b18e94655d2f4f82ba68ca6eb94424a60d489210f2e900751e9796adc"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/se_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "85ee7bbce9e6efcbefb8aca8a2b18c724b54c252fa625900d2f6d744e41b0a18"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/se_outer.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bea37b5ceffbba8612ba1814c45b4df214ea90a16c9d30898149f39d92f63c22"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/se_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "1d373fa5a2ba1b6f24cde0d7e4868e4d25fa79f3f70158a0bc2d690793e6293c"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/se_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "2120aa1d062df9aa879aac00b1c1937f7a874273f6da80de0a3992eb2668892a"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/se_edge_x.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "d24793b85199a9ffd33a465c93081722f35c72ab72c03bf41ee77da0e1ab3077"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/se_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "1b4b5a327c822db8bab9d50cbecfc683c1cd1cfb13bb6d1c6533c95a76d86795"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/se_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "f920a6b13b5cdb8a46204aefc3325e064f64acca897aa0cd1586f0c95d303c14"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/se_edge_y.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "880d716ee4d26a40fed17a04dd9d608331f6343250026c266380c52fea19a378"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/se_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "d0d426e44cb9fb5e8d7399b45560aaaf6c6d0668b1927a93329621831f64548f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/se_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "b841fb97a056f033bf36d0cf6387be232e8094bc3c303ec7f92fe7c50f8321eb"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/se_inner.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "312fc96832ed2a43f1a0b8c6d455398b4b94528b9b48ba3580f598fee786fb4b"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/coverage/se_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "c9ecf6f12d7c11ba7485e1c6645abb67351cab7319cddd8cf680375c635095ee"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/grass/se_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "assets/terrain/eldenmere/stone_paving_hd/quarters/dirt/se_full.png",
+      "artwork_size": [
+        24,
+        24
+      ],
+      "sha256": "bf531cfe6b0719aa85ac4660bff0c6d6d6bde317e6439638eb99150b1ab2fa6f"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/blob_on_grass.png",
+      "artwork_size": [
+        1232,
+        1088
+      ],
+      "sha256": "47fa9cf3b1befed2ac1600caff08332d5772bc620e952b00e1250d5897c025de"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/blob_on_dirt.png",
+      "artwork_size": [
+        1232,
+        1088
+      ],
+      "sha256": "0d1a381a79d6ff69876c60ecda14ef9529520d0bf93bb8d1995b217c4f6359cd"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/repeated_surface_native.png",
+      "artwork_size": [
+        480,
+        384
+      ],
+      "sha256": "2f9d632a32d05ab263b8a1bb47fdbae59257fce90138e8311b78c7e2dcf0f6f4"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/underlay_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "7c0b568d78377a7fa4491c787ecc676d11af39b2c05791d0d4c1c256e4aeeea4"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/stone_body_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "c20a8812d4b52dae75776e378ca8c0fbe4b01aaf2ff28dcf87a210ff88b1efc5"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/contacts_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "0d58f675b185d9d29363fdaa67e90d5d4716c76291544306f2a8174cf329ce4e"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/moss_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "6ca85681ee928c12f9e2789e8299b9a0a0fd2a0c5c83b370c3f3a5f071f4c3bc"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/layout_clean_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "1ad8a08debf682df2b89e102923d6f9bc3fa410fbfe547694fb57403de8831f1"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/layout_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "4711a4ffaa3c86a01bea159b3d46f68e70fa7525ac9d163efa879db536618a0e"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/three_material_closeup.png",
+      "artwork_size": [
+        720,
+        720
+      ],
+      "sha256": "8b71efb0135e3c8af5db6b915116957983a2cd5bf2ad6694af112ab9796e69bb"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/scale_scene_native.png",
+      "artwork_size": [
+        960,
+        768
+      ],
+      "sha256": "7dc374876a15ee823cdbd290861aff26bb77f82ec2880ec45d49ca9890a6f4f8"
+    },
+    {
+      "file": "docs/reviews/eldenmere_hd_stone/walkway_scale_closeup.png",
+      "artwork_size": [
+        864,
+        720
+      ],
+      "sha256": "435cc19d4063bd4a54f7495cc391e0a554b0d5ca3cd5109446757bfdedfb4ce3"
+    }
+  ]
+}
