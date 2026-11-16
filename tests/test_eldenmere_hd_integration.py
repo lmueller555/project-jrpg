@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from PIL import Image
+from PIL import Image,ImageChops
 import pygame
 ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'assets/source/maps/eldenmere/town_hd'
@@ -18,6 +18,43 @@ class TownHDContracts(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.old=read(SRC/'baseline_maps.json');cls.town=read(ROOT/'assets/maps/eldenmere/playable/map.json');cls.manifest=read(ROOT/'assets/maps/eldenmere/town_hd/manifest.json')
+    def test_live_building_windows_stay_steady_through_full_ambient_cycles(self):
+        from tools import build_eldenmere_exteriors_hd as exterior
+        from tools.build_world_water_hd import load
+        rec=exterior.recipe()
+        sources={r['file']:load(exterior.SOURCE/r['file']) for r in rec['sources']}
+        packs=('assets/terrain/eldenmere/exteriors_hd/', 'assets/terrain/eldenmere/business_exteriors_hd/')
+        masks={}
+        for pack in packs:
+            for r in read(ROOT/pack/'manifest.json')['buildings']:
+                masks[r['id']]=Image.open(ROOT/pack/r['window_mask']).convert('L')
+                if r.get('display'):
+                    x,y,w,h=[v*2 for v in r['display']['rect_logical']]
+                    masks[r['id']].paste(255,(x,y,x+w,y+h))
+        sanctuary=next(r for r in rec['designs'] if r['id']=='sanctuary')
+        sources['landmarks_authored.png']=load(ROOT/'assets/source/maps/eldenmere/courtyard_hd/structure_authored.png')
+        _,masks['sanctuary']=exterior.building_structure(sanctuary,sources,rec)
+        bindings=read(ROOT/packs[0]/'manifest.json')['bindings']
+        designs={r['entity']:r['new_design'] for r in bindings}
+        # Live business bindings come from the retained town recipe.
+        for r in read(SRC/'recipe.json')['businesses']:
+            designs[r['id']]=r['design']
+        checked=0
+        for e in self.town['entities']:
+            if e['id'] not in designs:continue
+            mask=masks[designs[e['id']]]
+            self.assertIsNotNone(mask.getbbox(),e['id'])
+            with Image.open(ROOT/e['frames'][0]) as raw:first=raw.convert('RGBA')
+            phases=set()
+            for path in e['frames']:
+                with Image.open(ROOT/path) as raw:frame=raw.convert('RGBA')
+                delta=ImageChops.difference(first,frame).convert('RGB')
+                self.assertIsNone(ImageChops.multiply(delta,mask.convert('RGB')).getbbox(),(e['id'],path))
+                phases.add(frame.tobytes())
+            if e['id']=='sanctuary':self.assertGreater(len(phases),1,'Smoke and bell must still animate')
+            checked+=1
+        self.assertEqual(checked,13)
+
     def test_expansion_preserves_every_original_collision_pixel(self):
         self.assertEqual(self.town['size_pixels'],[1536,1632]);self.assertEqual(self.town['size_tiles'],[64,68])
         before=Image.open(SRC/'collision.png').convert('L');after=Image.open(ROOT/self.town['collision']).convert('L')

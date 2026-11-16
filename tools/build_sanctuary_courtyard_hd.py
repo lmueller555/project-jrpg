@@ -21,6 +21,20 @@ def read(path):return json.loads(Path(path).read_text())
 def document(data):return (json.dumps(data,indent=2)+'\n').encode()
 def overlaps(a,b):return a[0]<b[0]+b[2] and b[0]<a[0]+a[2] and a[1]<b[1]+b[3] and b[1]<a[1]+a[3]
 
+def sanctuary_animation(rec,props):
+    """Rebuild the approved facade independently of courtyard ground/geometry."""
+    er=exterior.recipe()
+    design=next(r for r in er['designs'] if r['id']=='sanctuary');sources={r['file']:load(exterior.SOURCE/r['file']) for r in er['sources']};sources['landmarks_authored.png']=load(SOURCE/'structure_authored.png');structure,windows=exterior.building_structure(design,sources,er);_,glyphs=exterior.effect_sources(sources,er)
+    def building(tick,still=False):
+        im=structure.copy()
+        for x,y in rec['planters_world']:im.alpha_composite(props['herb_planter'],((x-252)*2,(y-84)*2))
+        x,y=rec['lantern_local'];im.alpha_composite(props['lantern'],(x*2,y*2))
+        x,y=rec['bell_local'];bell=props['bell'];fixed=4;dx=0 if still else (0,1,2,1,0,-1,-2,-1,0)[tick//3%9];im.alpha_composite(bell.crop((0,0,bell.width,fixed)),(x*2,y*2));im.alpha_composite(bell.crop((0,fixed,bell.width,bell.height)),(x*2+dx,y*2+fixed))
+        if not still:
+            im.alpha_composite(exterior.glow_layer(structure,windows,tick%18,er));im.alpha_composite(exterior.smoke_layer(design,tick%18,glyphs))
+        return im
+    return [building(t) for t in range(54)],building(0,True)
+
 def products():
     rec=read(SOURCE/'recipe.json');out={};exports=[]
     for r in rec['sources']:
@@ -62,16 +76,8 @@ def products():
     for name,r in rec['props'].items():
         col,row=r['cell'];w,h=r['logical_size'];raw=exterior.cutout(sheet,(col*sheet.width//3+4,row*sheet.height//2+4,(col+1)*sheet.width//3-4,(row+1)*sheet.height//2-4));raw.thumbnail((w*2-2,h*2-2),Image.Resampling.NEAREST);im=Image.new('RGBA',(w*2,h*2));im.alpha_composite(raw,((im.width-raw.width)//2,im.height-2-raw.height));props[name]=exterior.quantize(im,er)[0];native(props[name],'props/'+name)
     for name,prop in [('sanctuary.bench','bench'),('sanctuary.provision_basket','provision_basket')]:entities[name].update(frames=[PACK+'/props/'+prop+'.png'],artwork_pixels_per_world_pixel=2,logical_size=rec['props'][prop]['logical_size'])
-    design=next(r for r in er['designs'] if r['id']=='sanctuary');sources={r['file']:load(exterior.SOURCE/r['file']) for r in er['sources']};sources['landmarks_authored.png']=load(SOURCE/'structure_authored.png');structure,windows=exterior.building_structure(design,sources,er);_,glyphs=exterior.effect_sources(sources,er)
-    def building(tick,still=False):
-        im=structure.copy()
-        for x,y in rec['planters_world']:im.alpha_composite(props['herb_planter'],((x-252)*2,(y-84)*2))
-        x,y=rec['lantern_local'];im.alpha_composite(props['lantern'],(x*2,y*2))
-        x,y=rec['bell_local'];bell=props['bell'];fixed=4;dx=0 if still else (0,1,2,1,0,-1,-2,-1,0)[tick//3%9];im.alpha_composite(bell.crop((0,0,bell.width,fixed)),(x*2,y*2));im.alpha_composite(bell.crop((0,fixed,bell.width,bell.height)),(x*2+dx,y*2+fixed))
-        if not still:
-            im.alpha_composite(exterior.glow_layer(structure,windows,tick%18,er));im.alpha_composite(exterior.smoke_layer(design,tick%18,glyphs))
-        return im
-    host=entities['sanctuary'];host.update(frames=[native(building(t),'sanctuary/frame_'+f'{t:02}') for t in range(54)],artwork_pixels_per_world_pixel=2,logical_size=[216,216],reduced_motion_image=native(building(0,True),'sanctuary/reduced_motion'))
+    animation,still=sanctuary_animation(rec,props)
+    host=entities['sanctuary'];host.update(frames=[native(im,'sanctuary/frame_'+f'{t:02}') for t,im in enumerate(animation)],artwork_pixels_per_world_pixel=2,logical_size=[216,216],reduced_motion_image=native(still,'sanctuary/reduced_motion'))
     door=next(r for r in data['doors'] if r['id']=='sanctuary');door.update(frames=[f'assets/terrain/eldenmere/exteriors_hd/buildings/sanctuary/doors/frame_{t:02}.png' for t in range(5)],artwork_pixels_per_world_pixel=2,logical_size=[32,42])
     # Keep every existing grass interaction, anchor and clock. Only scoped variants change.
     manifest=read(ROOT/rec['legacy_grass_manifest']);variants=manifest['tall_grass']['variants']

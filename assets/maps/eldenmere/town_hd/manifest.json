@@ -3,7 +3,7 @@
   "integration_status": "integrated",
   "artwork_pixels_per_world_pixel": 2,
   "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-  "recipe_sha256": "8e88c13310ca89a94ac90af45784fe1327e1ddd1251565de9cba4b5164797e36",
+  "recipe_sha256": "d48b9b6f553e030c3a4435190e278e0024e2a03b9e323ad5f7adbe6df3b602db",
   "scenes": {
     "town": "assets/maps/eldenmere/playable/map.json",
     "upstream": "assets/maps/eldenmere/upstream/map.json",
@@ -68,6 +68,501 @@
   ],
   "exports": [
     {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_0.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c3c62aab2b7b44c5f2eb2d131cc2f6da0513cd1a72c0c97e91edb70cea5f47be"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_1.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "786e1e09bfb4381dbb8d61e652e896614f04ce6ec341a0ba635919f65ec2712c"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_2.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "6c4c1111c634c7bf8cb23ed3153706e7702b924b35fe6b57ef4c2b73692ad7f6"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_3.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "68f22b79b6db99336af76e1a89c05953ff12e65430a8a54aec5c4f94131cb29f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_4.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f63af107a95ee50c37498e3a83e669feaaf9b07cb730bcf6f527fbf81c8850ab"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_5.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "33aeb1b4ba2af5f4152e29e13f252629e80e2def9da0f6e0c4106afbd6e6c2ce"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_6.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "5b2a361d0c8b321d986cbe98b912cff5b086e57a697487beeaa94a638ba2d808"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_7.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "06844654c444cf11d0b833e27112b4e6ad01acd012713209fa42ee76faf33c5f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_8.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f26350794869a0a71bad4310af892573da8e96bb2df4400d744e1f3de769cdb3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_9.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "5560ebf81400616f7a854fc60034d7ecf6e04ff20158a8d20954f9fb6ca2a1ba"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_10.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "82562cfb70254b4138d8ef0ea43b0d7d2541e5fb29f0c6f5a497c6ba4d1232d0"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_11.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "227e7b547c6fffb925efb684fb436f7d1927353d29ba749648898ebbeb1b05a0"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_12.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "4aa8cdd86ff8b4125e68cce83de34f2ecebc05d672e4a5dd79099f09f909c545"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_13.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "acf707267982ff7ff82327ecf7f32c3432b773532b40b4c79614e5c341d09811"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_14.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "5718ed0382e19f123386fb1ec2bea6e30835bd599977dd1c02dd5e547b590e35"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_15.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "410477f6232928abfb0d7f55271cc42b901713fede6e4ab80dd73126a09f2100"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_16.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "64e829df5021b20795396cb9dbece28035332915188a96ce78be33d1e1a48bfe"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_17.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "cc6b880130658131de523d22d4f9778ed561525ed164225bf24bc59a3965c733"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_18.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "05e18971b79a0d684febcff38e23d80ec303c2e0e0a4a8492e936279bd40042b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_19.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3cab6266f95e0197c28601475621f514b4272b1fc8e356c453640f8469cf7db0"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_20.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "84778e9b0d66d78903521bac2091be19d95359989829d95bf1e2b2c009411d09"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_21.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "cdb557f23135989f617178b35539f6cca940cf427fec3f283817f1b24430a337"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_22.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "ee7c77c313ebe6715cea328df2d44c124effb4d05976c6b3bb3546996eed61b8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_23.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e03def93b261ca667c73c055a55b3e9e55f81cf21cc9160a355018bfda8c4d69"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_24.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e0af2ba4ee05ac7c1694d16ec53c2e0f881d39e7ba7fc48af3cba71592f46521"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_25.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "aaec744681c2f9652419d06b32ff61ad8919a7a77865e5ac726163dd57f87266"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_26.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "7643039a30ca0dc982fbaba77aac63779256e4be9803b20aa67e45e6ed1d19e4"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_27.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a1f0cd89617df8609238a577eaa0f0a4961c4ffed3cf3daf61d204f611b693e1"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_28.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "7287d2efd4d30f63d70e4ceb7fa9b79b27fe51e85f7df90f88804350c72b3695"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_29.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "eb97fca783636b9899e82e6f2a2b27f3f088649127e9870799fad1b22c7b4017"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_30.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "db642a2c9e8a481c49c09ab40f066b3d59034690e6d232e7f402473eca19d20a"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_31.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "6b0e0affd7d26108446f08512cdb15afc7c07b6e6ecac582e4b0518eae24909b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_32.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e395fd347fbbb6a16eaf9a51c93b85b967050072c34fc9ce9a7fe95ef98b7067"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_33.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "26b51a070a8426bfd12ce15afdc0e919399d9e3236526e5c82d4667490ee5c26"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_34.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d7498e5ee75f61d1b56d058188881f3ce6705a102405c09f560cbf89d5b67e47"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_35.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "0e617ff18d054232b63acc0b23ab36bb013b49399ff6a61fa18e68f83d6b55bf"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_36.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "89c5e036396cbdae0fbc51c47f397d2de4efd67778c7119b2411a58da9c49d33"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_37.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e97f2b4b304ac4ca07796a870e524690dd87798d06473af0d3656a3c4019b188"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_38.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "73f3feee03a8d5e7e912556c0515dc272c05df97d097e25cf3691909253c7368"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_39.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f50b8095d3d06e599a2199c4455304214d8590b06c9dbeecc0e1c61600e42fe4"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_40.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "bf46f7533932659dd32fd8220913accfbf6f8cb4ade1565c10e06160d585dac8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_41.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f4797428ed14407bf3dd20d433b0d455d41bc82658317d7d40c1c6d725eb07c8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_42.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "1242208fc6d5466306fe0db7dbb87c0b0e7784f28d536344aaffc40565ac2543"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_43.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e42bf0890e9aac403f6ecec27c1c515338a7f2e97c3514afb65adfbb96184a39"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_44.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "804ef0ba817b0417617d37e3b1990aa858abd29c1c2d12c8c754d2ea8bcc176d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_45.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "267b6fdf0e12f108886ee7f80bb7c3a4a5f6416167b48a96c6f5a3ffdde37349"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_46.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "04ed70b2530790b5905531e8d44c0b0d67fe8db8ba1c696e3c394c665b918b4f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_47.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f2a4956d682c96cd0de0d21b141bbaad3ccfebf4c8a6394cff5f045c0011943b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_48.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b56aa502b94ffd98a7ee2e9dacedfd6dc0e4b251e22364181f0c112bac09662b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_49.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "cb628f36aa49cf6e89d496cd8c2fa2814d6465075b1941a1901e5f9575132eeb"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_50.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a4f9daf7dd5c02d8f52920a2e81857456f8f63bfafc7c6ce0ea0f8e08d109869"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_51.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f18c20fd7d1b86b17be593e6a6029bb8c919ec012c4b8353fbca89571d61c69e"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_52.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "9cdf03e573436c7b2fd42299396818ddc8e7b0ed5ebecb7054a179edf653888c"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/ambient_53.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b3a97f44996a83c2276dac259cf72c1a9c47767e564dc938df7607f1a7499cb9"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/sanctuary/still.png",
+      "size_pixels": [
+        432,
+        432
+      ],
+      "pixel_space": "artwork",
+      "sha256": "44cd43e734ce40cc3ab981091c8c35ab77ebc69a5f0a4f83fa7b408f6770b547"
+    },
+    {
       "file": "assets/maps/eldenmere/town_hd/exteriors/halden/ambient_0.png",
       "size_pixels": [
         240,
@@ -92,7 +587,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "bea2d52f9a700b49eda154be78e628e8a1405f11b91a2bfb556c64aa620b0799"
+      "sha256": "95bf44edc7058f7982e54e1a4ce66b7a9e307d4a560382977156890b0214b3fe"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/halden/ambient_3.png",
@@ -101,7 +596,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "5dc2ce91b7f5851896f4220d15d7796eae39863497dbab4a69180762689b4a59"
+      "sha256": "31004dbabf60b27ba82953ad60a51d6ef3c625f6fed1641542e842996d7adc5d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/halden/ambient_4.png",
@@ -155,7 +650,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "b00673d00c8e8159923fb7ad315625e0cec00906c89b98f1eaffd0bb6b47c868"
+      "sha256": "ca2539ec37fb02e1abbd9bbf310bf92b6e94395156b6d1e260bfc71834fb8821"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/halden/ambient_10.png",
@@ -209,7 +704,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "14326a7967f672baa90d5001a67baf137106529fd676798160c4181b498ca2d3"
+      "sha256": "d5bb0b1e687d7a68102701044893f3bbcaec740acc03bbf54b03bddad448363e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/halden/ambient_16.png",
@@ -263,7 +758,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "917d1e4ffba2d7a6009cae5e2963e5b75e67754ec2c2c63b2567653b5b4a2e61"
+      "sha256": "fad1974b27feebb44e12ea43a735e93dd00965b86568b0f861aeee0a40905be5"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/elira/ambient_3.png",
@@ -272,7 +767,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "889115df8bab9a53997c2420827ac841bcfb23907c4b82aad31e6bd610ae6141"
+      "sha256": "478b32923ab468beaeb89ad35eb3aced0135f48a7dd51f0e63caaa79a4a615a9"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/elira/ambient_4.png",
@@ -326,7 +821,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "e9c6bb709fa76eca5a4128fa29ca3236360f2143c3b1f7787ae852fdb718da72"
+      "sha256": "09c60b904ffe0da105eac5af3303829d13da453954b7246409431dd8beb4ffa1"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/elira/ambient_10.png",
@@ -380,7 +875,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "2247adc131d0a7f28a59233aed1b6cce9adeff0f69731a8de19e24e01675751e"
+      "sha256": "8454beb92dcab746a736a6ae2d636fd570fb3c74f97fa780fe1165a4bc35b6a3"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/elira/ambient_16.png",
@@ -434,7 +929,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "27628f901ab78983386f38fdb0344cfccb99a72d17099e3537dd5bbdff2b83f3"
+      "sha256": "f6d1acebd01bfa3f21ec40b9c2a1af5ed3f66284ebd31e229c97d3479ab68ef2"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/venn/ambient_3.png",
@@ -443,7 +938,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "6dbe2b6dbe081d00f94fb6f3f1d587b261866a94fc18b94c0fe2c9ab1a89ae33"
+      "sha256": "7924e3d3d2437d7a082c1f4aa407d444a611b3d5db0ec1d41bdb6029b8467189"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/venn/ambient_4.png",
@@ -497,7 +992,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "9b3906277a834edd32b7adbdd6bb72b61f874514c6b43e05dcd0e14d06ad1ab0"
+      "sha256": "41e4736ecb0af72f3e96363c7d4e720f39d6887e4d317c5dd77784afc3afce7e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/venn/ambient_10.png",
@@ -551,7 +1046,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "e48af1632021d56da7957be969dd97b16d12b0c70dc12c76b70156f2db34b8c7"
+      "sha256": "5210ae20ee81567a50564cf03f774f02b9aacc7944baa9ed6d62723e5ccefb34"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/venn/ambient_16.png",
@@ -605,7 +1100,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "571defc4cec6f1e5ec50a20701dfc087f51ed25e805c3c0dd01eaaaea03bbc54"
+      "sha256": "87b814681e0550f668f5c757ec570647262a276890005944079ffa0b02ff48fc"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_a/ambient_3.png",
@@ -614,7 +1109,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "896e7acd7c99119a5144e097a3c555c71b7ad86c0350a1560715a02a460ebf53"
+      "sha256": "71d17f6a64cbe0347e467eedddcbdc3bc4de0c6142dcc6d64ad02bb90f024f03"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_a/ambient_4.png",
@@ -668,7 +1163,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "d5cc23789bf141aafb0b05a0a8a7ec01a155766db98c8375c9cc407817c2d1ac"
+      "sha256": "1066a3465c7fc70a55b6a94fe726f1fde656a577ce34a22131cb09741d7726d1"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_a/ambient_10.png",
@@ -722,7 +1217,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "2f341a4641c72555356c0fcb308fff768b5fd40d0b2871aa3b79fa0082211352"
+      "sha256": "bb3d6799f41a88eedd6ca223e8ebdd6d766daffadcfb936fb91c93201002a0df"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_a/ambient_16.png",
@@ -776,7 +1271,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "5187450feac8042f0670495c4bf6fbc8b84c79a1664938bd4c9085e70c71a8a7"
+      "sha256": "cd9439ddfc61636a7022d94d3e35dd4dec7779d108ac2918a15cef3e813a435e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_b/ambient_3.png",
@@ -785,7 +1280,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "d463bf4bcc501be35c3a1b35aa743c2f94b322059a5d5b77fb2a0c3adb0e4952"
+      "sha256": "4f8b950e099c71538b1aec3b5780535b4827f2d5c8b3b108301f0057df41080d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_b/ambient_4.png",
@@ -839,7 +1334,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "a3f97437b3e77f38e089fd61d5d6582b1ac11544bc238500790f947f51a11188"
+      "sha256": "dba6e4dcf6fafc34aeef2dbc260f3723226f495e89541eb5e5bf0353bacb8173"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_b/ambient_10.png",
@@ -893,7 +1388,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "454dabd71e154d995fadf512e090f5b891313d13c413b9eaba496d19b18e71d4"
+      "sha256": "e27f4b9148434114ef597f1f6f7352ac2ad14ec23edbd4e563f1023b7a8b0a81"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_b/ambient_16.png",
@@ -947,7 +1442,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "1d456ee308e1c8d9f86311e3083be8b260a0190b113a7e194b8b0bf86e664c61"
+      "sha256": "57ec0db3696c74aa46aa5cf5ed8379fe5cefd313099e3a23c1e9eaed793f3099"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_c/ambient_3.png",
@@ -956,7 +1451,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "67e0acc85b2d9e2daf097182fbb96c866727e6855c5302cff87e7ded9f374978"
+      "sha256": "0164c6c584cb671e3f611a1c3fc2111ecd19b9678181fe234ae02fdb70fd7059"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_c/ambient_4.png",
@@ -1010,7 +1505,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "0e1ccba6b56cd63b7e1f318e6824520f030e4b17207a74a530a6e21aa336e449"
+      "sha256": "7997f384719bede227bd8a5ae9cd743fe4d28e619cf4129f8f9761241efd02fc"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_c/ambient_10.png",
@@ -1064,7 +1559,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "905bcdf88d40b95be07d1acd99dfb2774ae532f124422d653ca0ba54ed172fc2"
+      "sha256": "058e126275b68c5a798e51e540c24174eac8f7c93e6d868a6e42e3ec8d7c5c64"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/home_c/ambient_16.png",
@@ -1118,7 +1613,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "28f5e1f2952a3cdd5276fa538e49cad0b62ddc1a8ad9c71f5009535916584aa0"
+      "sha256": "dd1ea761c9f260cf85a64524db80cc6cf6038b4dc9c01a54cb65a98905559214"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/liam_house/ambient_3.png",
@@ -1127,7 +1622,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "970ff68f3ca3055cf723296083a7254b7e1a878071b8f15862ea59da736f6aaf"
+      "sha256": "e4646d474f64ee6591898ddd41bfd6a410fa1584d5504a36488ee8560e3867ea"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/liam_house/ambient_4.png",
@@ -1181,7 +1676,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "ede88d31597c90579f0b4f7b0ac149b93b0ea3fafdc837b02b16c34bae3f7732"
+      "sha256": "386421e022a20a4ec673a429059f5cda0d1752be29a01825d423fc5e9bb331de"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/liam_house/ambient_10.png",
@@ -1235,7 +1730,7 @@
         288
       ],
       "pixel_space": "artwork",
-      "sha256": "fb5f615826b42779558fc024aa0742a8ead02b07d8ec59acc40d440637f99e8a"
+      "sha256": "5a4111bef003dc11fef95f3be7382886c220b9d535fd7ac07795d2ed95d91fe0"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/liam_house/ambient_16.png",
@@ -1289,7 +1784,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "ccf0a5fd1e6edcff5fd06d6977a986e5aa1479af91405182aa876ca9f29cf2c8"
+      "sha256": "6dd8f8fe38916f0b6f161515e92dc08355f2e1906ba62a7c1afe9ce744dd819f"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mira/ambient_3.png",
@@ -1298,7 +1793,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "4bd1ec5c465281272bb1d06e31a08e8c5ef1acc1ba53238cd69e9288805e0b1a"
+      "sha256": "8bdf88d277ba1070cc4a10e0b52ac2b64e11a12e3baca7a39bd64db7397ee188"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mira/ambient_4.png",
@@ -1352,7 +1847,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "0316f99a03bf8d137034274ab549843d79c5d300d3978f8b10cfea31d94d4db1"
+      "sha256": "c1d3e13047a88a1488b4d995a55bc7c2e037a3df0ac127f159bfd70e931e5a57"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mira/ambient_10.png",
@@ -1406,7 +1901,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "c4e0b9a4bf577241af38a862892e8d7f36010146c69d5756417c042c21af5a7f"
+      "sha256": "f53e9d6817c8e5ac3201b09b93411922b50697382b73e985eeb50b04c509b544"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mira/ambient_16.png",
@@ -1460,7 +1955,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "31e8ec2412a5795b335eb5b1ea93ec26c3ac5f92bfb987da412e9a5d33e91bf5"
+      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_3.png",
@@ -1469,7 +1964,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "31e8ec2412a5795b335eb5b1ea93ec26c3ac5f92bfb987da412e9a5d33e91bf5"
+      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_4.png",
@@ -1523,7 +2018,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "31e8ec2412a5795b335eb5b1ea93ec26c3ac5f92bfb987da412e9a5d33e91bf5"
+      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_10.png",
@@ -1577,7 +2072,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "31e8ec2412a5795b335eb5b1ea93ec26c3ac5f92bfb987da412e9a5d33e91bf5"
+      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_16.png",
@@ -1631,7 +2126,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f98e2c457b516dcd61602728f2352baad112ddfff61416470fd7b26099bb6a18"
+      "sha256": "87797f6414490ec9252dcf8c782f936224da716d878b7731b94a9a7b57ec1e53"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/school/ambient_3.png",
@@ -1640,7 +2135,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f98e2c457b516dcd61602728f2352baad112ddfff61416470fd7b26099bb6a18"
+      "sha256": "87797f6414490ec9252dcf8c782f936224da716d878b7731b94a9a7b57ec1e53"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/school/ambient_4.png",
@@ -1694,7 +2189,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f98e2c457b516dcd61602728f2352baad112ddfff61416470fd7b26099bb6a18"
+      "sha256": "87797f6414490ec9252dcf8c782f936224da716d878b7731b94a9a7b57ec1e53"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/school/ambient_10.png",
@@ -1748,7 +2243,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f98e2c457b516dcd61602728f2352baad112ddfff61416470fd7b26099bb6a18"
+      "sha256": "87797f6414490ec9252dcf8c782f936224da716d878b7731b94a9a7b57ec1e53"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/school/ambient_16.png",
@@ -2234,7 +2729,7 @@
         480
       ],
       "pixel_space": "artwork",
-      "sha256": "c2e039d7f2020c66adf48bb26ecfea456a7589e69041fafddaa1ed3cdc85c536"
+      "sha256": "a0b662a399ac6550c97e5f2119dcbb75d60a3fcd26f177df110903491d2a30fb"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/inn/ambient_3.png",
@@ -2243,7 +2738,7 @@
         480
       ],
       "pixel_space": "artwork",
-      "sha256": "86f6c62ac65761858f34446b75fa1e85fb3fac29243a2f58613124a69dba91fc"
+      "sha256": "af59cbbe39b9da4a073faf52227c496530bcf4f973a9467594d718dd31b5ce2d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/inn/ambient_4.png",
@@ -2297,7 +2792,7 @@
         480
       ],
       "pixel_space": "artwork",
-      "sha256": "7296ca7251c9c571ab9c7b41d6722cb021518a5d42cb779d9fecf549ca8a6d63"
+      "sha256": "31689c43f594f9ae6731fc31b3f6f8a5c6b346df9ae4b8b87e4cd07c4a506805"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/inn/ambient_10.png",
@@ -2351,7 +2846,7 @@
         480
       ],
       "pixel_space": "artwork",
-      "sha256": "b651bfe3c671ad0c6d6ca812f540705117d8cd95fba7d19ebd89dd0c1e887f4b"
+      "sha256": "8656571cca2b688cff384e24687c6d3f3a4a6bec6409d7317d678b4a4a64cb53"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/inn/ambient_16.png",

@@ -250,7 +250,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/compact_gardener/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -501,7 +501,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/compact_craft/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -752,7 +752,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/compact_weathered/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -1003,7 +1003,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/standard_gardener/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -1254,7 +1254,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/standard_craft/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -1505,7 +1505,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/standard_weathered/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -1756,7 +1756,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/wide_gardener/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -2007,7 +2007,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/wide_craft/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -2258,7 +2258,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/wide_weathered/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -2509,7 +2509,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/mira/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -2760,7 +2760,7 @@
         "cycle_ms": 3600,
         "smoke_optional": false,
         "reduced_motion": "buildings/mill/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": {
         "frames": [
@@ -3234,7 +3234,7 @@
         "cycle_ms": 3600,
         "smoke_optional": false,
         "reduced_motion": "buildings/school/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -3485,7 +3485,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/sanctuary/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],
@@ -3736,7 +3736,7 @@
         "cycle_ms": 3600,
         "smoke_optional": true,
         "reduced_motion": "buildings/standard_heather/closed.png",
-        "note": "Windowlight is optional localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
+        "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
       "wheel": null,
       "extra_static_components": [],

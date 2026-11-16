@@ -116,6 +116,13 @@ def products():
     # Every existing exterior is bound independently to its exact existing portal.
     ext_pack='assets/terrain/eldenmere/exteriors_hd/';ext=read(ext_pack+'manifest.json');designs={r['id']:r for r in ext['buildings']}
     town=maps['town'];entities={e['id']:e for e in town['entities']}
+    # The Sanctuary keeps its approved facade, bell and smoke animation while
+    # sharing steady window lighting with the other rebuilt exteriors.
+    from tools.build_sanctuary_courtyard_hd import sanctuary_animation
+    courtyard=read('assets/source/maps/eldenmere/courtyard_hd/recipe.json')
+    courtyard_props={name:image('assets/maps/eldenmere/courtyard_hd/props/'+name+'.png') for name in courtyard['props']}
+    sanctuary_frames,sanctuary_still=sanctuary_animation(courtyard,courtyard_props)
+    update_visual(entities['sanctuary'],[ex.png(f'exteriors/sanctuary/ambient_{i}',im) for i,im in enumerate(sanctuary_frames)],[216,216],reduced_motion_image=ex.png('exteriors/sanctuary/still',sanctuary_still))
     for binding in ext['bindings']:
         name=binding['entity']
         if name=='sanctuary':continue # Already approved, separately retained source/registration.
