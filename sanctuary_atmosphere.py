@@ -4,7 +4,7 @@ Particles participate in ordinary world depth sorting. Their visible positions
 never become full-screen overlays, and they introduce no collision or save data.
 """
 from __future__ import annotations
-from rendering import draw as render_draw
+from rendering import draw as render_draw, layer as render_layer
 
 import json
 import math
@@ -48,12 +48,12 @@ class SanctuaryAtmosphere:
     def _mote_frames():
         frames = []
         for index in range(8):
-            surface = pygame.Surface((5, 5), pygame.SRCALPHA)
+            surface = render_layer((5, 5), pygame.SRCALPHA)
             alpha = 52+index*12
             # Sparse pixel glints retain crisp material-scale silhouettes.
-            surface.set_at((2, 2), (222, 241, 209, min(235, alpha+70)))
+            render_draw.line(surface, (222, 241, 209, min(235, alpha+70)), (2,2), (2,2), 1)
             for point in ((1, 2), (3, 2), (2, 1), (2, 3)):
-                surface.set_at(point, (144, 208, 181, alpha//3))
+                render_draw.line(surface, (144, 208, 181, alpha//3), point, point, 1)
             frames.append(surface)
         return tuple(frames)
 
@@ -68,14 +68,14 @@ class SanctuaryAtmosphere:
                 frames = []
                 for record in module['frames']:
                     file = record if isinstance(record, str) else record['image']
-                    frames.append(self.world.image(file))
+                    frames.append(self.world.art_image(file,module) if module.get('artwork_pixels_per_world_pixel') else self.world.image(file))
                 if frames:result.append(tuple(frames))
         if not result:
             # Older reserve snapshots remain usable without the expansion pack.
             for color in ('#d3ead8', '#a6d8d0', '#d0badb'):
-                surface = pygame.Surface((5, 5), pygame.SRCALPHA)
+                surface = render_layer((5, 5), pygame.SRCALPHA)
                 render_draw.line(surface, color, (1, 2), (3, 1), 1)
-                surface.set_at((2, 3), pygame.Color(color))
+                render_draw.line(surface, color, (2,3), (2,3), 1)
                 result.append((surface,))
         return tuple(result)
 

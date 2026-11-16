@@ -2056,6 +2056,9 @@ class Game:
             self._cue_world=self.world
         if not hasattr(self.world,'object_cues'):return
         conditions=set()
+        reserve=getattr(self,'sanctuary_reserve',None)
+        if reserve is not None:conditions.update(reserve.cue_conditions())
+        if self.world.data['id']=='elden_vale_sanctuary_relief' and self.bed_rest.available(self.bed_rest.relief['bed']):conditions.add('reserve_relief_rest')
         if self.world.data.get('rest_profile') and self.bed_rest.available(self.world.data['rest_profile']):conditions.add('inn_rest')
         if self.opening.stage=='explore':conditions.add('opening_breakfast')
         if self.opening.stage in ('explore','assignment','done'):

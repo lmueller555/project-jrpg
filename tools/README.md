@@ -34,6 +34,14 @@ owns its scope, cache behavior, rebuild order and registry. The courtyard build
 command and legacy terrain-only command forward here. The older full-town compiler
 refuses to overwrite the HD map; historical reproduction needs an isolated checkout.
 
+`python tools/build_sanctuary_reserve_hd.py` owns the reserve/cave approach,
+hall and relief-room HD migration; `--check` verifies the exports. Legacy reserve
+CLI builders forward to it. `python tools/capture_sanctuary_reserve_hd.py
+/tmp/reserve-review` records native scene views, actual movement/door flows and
+the arrival director from disposable initialized fixtures. See the
+[central integration reference](../docs/TERRAIN_ART_STANDARD.md#integrated-elden-vale-sanctuary-reserve)
+for sizing, preserved geometry and source provenance.
+
 `python tools/capture_town_services.py /tmp/town-services-review` captures the
 actual shop, purchase confirmation, inn stay and gold display at normal/large
 text sizes with disposable saves. `python tools/check_eldenmere_hd.py

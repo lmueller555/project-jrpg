@@ -1025,3 +1025,50 @@ records roots, phase offsets, terrain and depth ordering. Static water isolates
 vegetation movement in these offline fixtures. They are not gameplay captures or
 map redesigns. Actual traversal, tree/actor occlusion, environmental lighting,
 contact, collision and reduced-motion acceptance remain integration work.
+
+### Integrated Elden Vale Sanctuary reserve
+
+`tools/build_sanctuary_reserve_hd.py` owns the reserve exterior and cave approach,
+Sanctuary Hall and visitor relief room. Its retained master drawing, extraction
+recipe and pre-migration maps live in `assets/source/maps/sanctuary_reserve_hd/`;
+its current native registry is `assets/maps/sanctuary_reserve_hd/manifest.json`.
+Rebuild with that command and use `--check` for deterministic verification.
+The older reserve exterior/art, hall and relief CLI builders forward to it after
+integration; they cannot restore the earlier assembled maps. Historical exports
+and recipes remain evidence, not live art inputs or alternative construction rules.
+In particular, the retired Caelan reference in the historical reserve pipeline
+is not a dependency of the current build.
+
+Existing logical dimensions, collision files, full player probe, footprints,
+spawn/return landings, public approaches, doors, grove roots and NPC/story stations
+are preserved. Every environment entity declares native 2× artwork and its old
+logical canvas. The memorial tree retains independently sorted roots/trunk/canopy;
+cloister arches retain their original opening coverage as geometry-only control.
+No legacy RGB supplies the rebuilt landmark drawings. The retained cave opening
+clearance clips decorative crystal layers; the keeper rail retains its gameplay
+identity and removal lifecycle.
+
+Ground uses the shared visible-chunk compositor, world-aligned native grass/dirt
+and paving, native low flowers and bounded scene ground caches. Contact grass
+keeps instance identities, roots, phases, contact/recovery rules and current HD
+variants in a scene-local manifest. Interior walls, windows, medallions, furnishings
+and the functional relief doorway share the same density contract. Wall lighting
+stays steady. Basin highlights move locally; stone supports remain fixed.
+
+Caretaker body drawings remain in their existing bank. Pails use scene-local
+native replacements with unchanged grips/angles; water streams use the shared
+render adapters. Grove petals declare their own 2× density and logical size.
+Motes/petals participate in scenery depth; pause/focus freezes the exploration
+clock and reduced motion holds the ambient effects and caretaker at rest.
+
+Small repeatable inspections and the relief bed opt into the existing glint and
+nearby-outline system. Their boundaries identify actual authored approach areas;
+controller availability and ordinary scene/menu gates remain authoritative.
+Buildings, characters, the grove and decorative cave crystals are not blanket
+highlighted. See the visual standard for cue construction and lifecycle rules.
+
+`python tools/capture_sanctuary_reserve_hd.py /tmp/reserve-review` captures an
+initialized disposable exploration fixture, subsequent real walking/running and
+door transfers, inspections, watering, relief rest offers and the actual arrival
+story director. Review evidence and measured warm renderer timings are in
+[the reserve review](reviews/sanctuary_reserve_hd/README.md).
