@@ -329,36 +329,21 @@ class LanternQuestTests(unittest.TestCase):
                 self.assertTrue(saw_contact, 'Caelan should visibly help once he reaches the work.')
                 self.assertEqual(self.c.stage, committed)
 
-    def test_caelan_craft_poses_follow_registered_authored_bodies_and_preserved_frame(self):
-        from tools.build_caelan_overworld import action_frame
+    def test_caelan_craft_complete_hd_bodies_preserve_owned_frame(self):
         meta=json.loads((ROOT/self.c.art['poses']['caelan']).read_text())
         sheet=Image.open(ROOT/meta['sheet']).convert('RGBA')
         body=Image.open(ROOT/meta['layers']['body']).convert('RGBA')
-        arms=Image.open(ROOT/meta['layers']['working_arm']).convert('RGBA')
         frame=Image.open(ROOT/meta['layers']['frame']).convert('RGBA')
-        legacy=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/dependents'/meta['layers']['frame']
-        self.assertEqual(frame.tobytes(),Image.open(legacy).convert('RGBA').tobytes())
-        self.assertEqual(meta['appearance_source_sha256'],hashlib.sha256((ROOT/meta['appearance_source']).read_bytes()).hexdigest())
-        self.assertEqual(meta['canvas'],[40,48]);self.assertEqual(meta['draw_anchor'],[20,38])
-        self.assertEqual(meta['source_offset'],[8,8])
-        ox,oy=meta['source_offset']
-        self.assertTrue({'work','support'}<=set(meta['actions']))
-        seen=set()
+        self.assertEqual(meta['artwork_pixels_per_world_pixel'],2)
+        self.assertEqual(meta['draw_anchor'],[20,38])
+        self.assertNotIn('working_arm',meta['layers'])
         for kind,frames in meta['actions'].items():
-            for index,record in enumerate(frames):
-                with self.subTest(action=kind,frame=index):
-                    x,y,width,height=record['rect']
-                    self.assertEqual((width,height),(40,48))
-                    source_cell=record['appearance_source_cell'];seen.add(source_cell)
-                    expected=Image.new('RGBA',(40,48))
-                    expected.alpha_composite(action_frame(source_cell),(ox,oy))
-                    actual=body.crop((x,y,x+width,y+height))
-                    self.assertEqual(actual.tobytes(),expected.tobytes())
-                    self.assertEqual(actual.getbbox()[3],43)
-                    self.assertIsNone(arms.crop((x,y,x+width,y+height)).getbbox())
-                    expected.alpha_composite(frame.crop((x,y,x+width,y+height)))
-                    self.assertEqual(sheet.crop((x,y,x+width,y+height)).tobytes(),expected.tobytes())
-        self.assertEqual(seen,{24,25,26,27})
+            for rec in frames:
+                x,y,w,h=rec['rect'];self.assertEqual((w,h),(80,96))
+                expected=body.crop((x,y,x+w,y+h));expected.alpha_composite(frame.crop((x,y,x+w,y+h)))
+                self.assertEqual(sheet.crop((x,y,x+w,y+h)).tobytes(),expected.tobytes())
+        loaded=self.c.poses['caelan'][1]['work'][0][0]
+        self.assertEqual(loaded.get_size(),(40,48));self.assertEqual(loaded.native.get_size(),(80,96))
 
     def test_repeat_interactions_cannot_duplicate_frame_credit(self):
         self.frame_ready();progress = self.g.quests.to_dict()

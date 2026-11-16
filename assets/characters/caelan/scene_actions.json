@@ -1,0 +1,2579 @@
+{
+  "version": 1,
+  "status": "integrated",
+  "builder": "tools/export_caelan_scene_actions_hd.py",
+  "sources": [
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/seated_eat.png",
+      "sha256": "30857a9f0032de3aba9f54978fa699db9b937e2189c7a03b1a5b867ce2d4a693"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/cup_work.png",
+      "sha256": "7656c0775e9800b844e298e20a1fe7155f14719e72c7de271a4771bc12764bb5"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/cup_pass.png",
+      "sha256": "2ee91e053696005aab042f42400aae769d39b3189e137727c63e572fbb65e001"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/carry.png",
+      "sha256": "96f105693f0210e96a17de3b9587aab8bd79ec13131c763658f7b68ab478abc1"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/sleep_rescue.png",
+      "sha256": "36660117ba09aeec0cb5716ad9279775964a6313aefa4460aa7bfeac80fb4f26"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/lift_back.png",
+      "sha256": "1e40e68299df3b6eb9ae885963018bb0403410c161f20acf273ed6e5a334b16d"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/cast_wake.png",
+      "sha256": "b9f7e40331d0222b0fd54d807bb1beb180183ea1cdd385cbaa15561d3f83fcfb"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/hold.png",
+      "sha256": "c4a2e472ade577d2ee8c1b1098e526ac83a911061e9560d17d2f5f96584902ab"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/crouch_give.png",
+      "sha256": "0d40d0077582aa530febe2c65460f1fa454dc5d6c852f32430f11e77e01e0128"
+    },
+    {
+      "file": "assets/source/characters/caelan/scene_actions_hd/approved_turnaround.png",
+      "sha256": "d0089debbf24bd9bef9a21bb72845733e9631f11553f8ebbe062bffac9b066cd"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_seated.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "521e0529057da1b94223b4425be8236d83679210bef4bbcd4192777d5b7f4489",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_seated_glance.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "842940d5b282f72d1bce7ec5063e703effd6d8355c47f283ba9e7d44041f1709",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_sleep_head.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "83e947b2b04ef220b34a6e600c6740d078a05dc35b22b8630674ab78359130e1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_01.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "da89ab3233b88976cebfb7f716cf287f614469b04a5596c772b2fb7d8faf33e2",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_04.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "da89ab3233b88976cebfb7f716cf287f614469b04a5596c772b2fb7d8faf33e2",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_02.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "c14b1785e1ffe9a28e5b815f31557682116a9dcb403e8ef37765eff3a1cc4525",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_03.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "c14b1785e1ffe9a28e5b815f31557682116a9dcb403e8ef37765eff3a1cc4525",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_03.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "842940d5b282f72d1bce7ec5063e703effd6d8355c47f283ba9e7d44041f1709",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_02.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "842940d5b282f72d1bce7ec5063e703effd6d8355c47f283ba9e7d44041f1709",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_sit/frame_04.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "521e0529057da1b94223b4425be8236d83679210bef4bbcd4192777d5b7f4489",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_stand/frame_01.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "521e0529057da1b94223b4425be8236d83679210bef4bbcd4192777d5b7f4489",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_01.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "2e4141942b31f13ffae9d088224aa1318b120e9d9abfc79a61d0291166a81394",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_02.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "04410d0ec5d403048421d9888c98499ece4d20bf7ef425e5e7f461b51d182c2e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_03.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "f88166b494a7ff748dcfec199d238211300c6117f85b04608d032d8f7e9a64ca",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_eat/frame_04.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "6f307b2650fd75ada333adc768cc87f67385b3f34416889cdf1f917f718e100e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_01.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "91da8576bff54653814c2ee9fee3be2ddde9060d1c58db0b585d99b4062fcf95",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_02.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "7cb3ab6bb4d2553fa5e5a8c094533ea5f3dbf0a1aa390ec56c79b87252611a6b",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_03.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "8cea8ac2fd64aaae625c51e05fe06e989645f0459735af3051c018c35ab67d15",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/caelan_seated_cup/frame_04.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "9b14b8422e1041f483f7903a0728a090f33ab027e9d07c459919ac82d69bfb4a",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/wake_up/frame_01.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "83e947b2b04ef220b34a6e600c6740d078a05dc35b22b8630674ab78359130e1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/wake_up/frame_02.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "f47590ef1acc3c760802b68273668dd82bd6eb2e73814424d5f21463339e6224",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/wake_up/frame_03.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "c14b1785e1ffe9a28e5b815f31557682116a9dcb403e8ef37765eff3a1cc4525",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_opening/poses/wake_up/frame_04.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "output_sha256": "a5c380d871f5fa5fcfb4a20335eb12b70fae5c810cf5e53e213576dfab4e5b2d",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/characters/caelan/participation_sit_front.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "canvas": [
+        48,
+        72
+      ],
+      "draw_anchor": [
+        12,
+        34
+      ],
+      "output_sha256": "e8f9bd1e2716ec6caaeec5805bad7b7226dd8d617da4107342d5f5066cc04afc",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/hold_front.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "a78ffafe58c8bbc559b5082872b1207421fc878f647ff5a9abb20a57c63bd198",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_front_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "0f96d3feb9f0fa5eacf8cfd50fb50f225925df06929bf4cce23103e7c2935548",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_front_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "43908a24da3f946148d1115704f750d65002a520f0e5a3c3ef5a43590511e697",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_front_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "97f96903524e68bc6a0d47c48823860502c48ab12a0da8c977a6cc9d8dabb1c1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_front_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "43908a24da3f946148d1115704f750d65002a520f0e5a3c3ef5a43590511e697",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_front_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "1e9f649401c80ee22e25030dae2bd9864fdb78af3f88f5ac8d5c6efae7397996",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_front_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "b34118caeab339d26c0df8a8b8e3378519b07870c9f49e9f6354677dabf32a6c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_front_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "81ff7a0d2a7ed99ff754f10287692e8782dba3b7769e251af9c0c8ae5495ce95",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_front_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "a78ffafe58c8bbc559b5082872b1207421fc878f647ff5a9abb20a57c63bd198",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/hold_back.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "39ac4b03a8835c846fb4f5d897937d9d7376ed176e7ae43c61d9d1f4a912745a",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_back_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "48ec1268d9463cd702c628379cd97eb327873608a4d3d3875688201def0e49df",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_back_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "c12bc17622df86cfd70e531e4301fb781ae9005efdc9c99b1b0b090e863c2b1e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_back_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "0a248184e66ca77032afa11b3cbf7a3d2d9f1a52e59608e60471f68cb16bcc7e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_back_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "7b3b932eff5f4fb801e6ea4b8075444619bb6ff7f800a2ecea6bbfd0ad746cca",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_back_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "97161efa195aca3e1157ca163a95997a95f9d3f2a849810477eb328f19704fa8",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_back_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "f1e20faa75398668ce7fd624e46578cea55c7c2175cf59df4595eb19bd9e932b",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_back_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "2fbaa2c35f5c0ef70c8f347a63da932ada24874d5bb920a3c27932e3cf06add0",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_back_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "dedbf78f3901cbc11626cb2fafb8e3d2b6a1425a15ff2e24412b45dd38aa5efe",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/hold_left.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "6102c3a15b40877cb340ca450942c57b90b7da5bfc24b214d6cfed21bc363ee9",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_left_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "3d054338f1ad2ade123cd39fd23361d12f59b7a7336a457ad1e1c443c9c35e6f",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_left_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "540b1ed28131f7b8fff126d14fbd733c82c76556f053e6e9045827fbed8d5093",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_left_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "24889954acb1ce2731fe4cec60b191dcfb449df2c79382885152322dd42c7206",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_left_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "540b1ed28131f7b8fff126d14fbd733c82c76556f053e6e9045827fbed8d5093",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_left_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "2aa3302768dbd886ee840fbd028894485d4cf4ac834978ae5c5d27b02219dea8",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_left_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "4dd0020418e66699b12a6434a105d1706a87b2c71c66b7d03edd403c9d163289",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_left_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "4a96e689849aae73f9fcd69d2873fa5d26f74991050d4a35f3d815519e7874e0",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_left_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "6102c3a15b40877cb340ca450942c57b90b7da5bfc24b214d6cfed21bc363ee9",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/hold_right.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "33ffeaa48e299c013bfb4f7908ddac54780230afee9c77f3674ab289e7481cee",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_right_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "13ccdb94e0bd845c66c3f322e5cd845ef42a15dc7624174dfe71c791a518168c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_right_0.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "d050c6e263a59882b7497aa839a363208b2c00dbc0f41df34359f033aaa0e62e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_right_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "f8faf24f6e05feda3a5981e7dc47afce64d4e94009690faf5719e63bc5faac30",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_right_1.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "d050c6e263a59882b7497aa839a363208b2c00dbc0f41df34359f033aaa0e62e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_right_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "a0162601e4b2273d9acd17d7c8d82dc903925da015ae29608a26886da8c92ba4",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_right_2.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "4914785bd493d3e8e2639752a7b2e69407e2e90d154f6b04c8e8fe684eac6c82",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/carry_right_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "d42dbe7ce33667f77ed8f713e1591d380ecc8292d75d2a6b5ca0fff08ef23f50",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/halden/caelan/lift_right_3.png",
+      "logical_size": [
+        32,
+        40
+      ],
+      "canvas": [
+        64,
+        80
+      ],
+      "draw_anchor": [
+        16,
+        34
+      ],
+      "output_sha256": "33ffeaa48e299c013bfb4f7908ddac54780230afee9c77f3674ab289e7481cee",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/give_front.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "29a63e768e97394db2b4210096138614d3be74af1b07ae95f1b8cdddd8996d32",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/give_back.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "1aa6d2bb1d5c905102d8d4c564fc3591b053fbf9d627fcf12c3b4ea1ff473385",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/give_left.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "24a1a8e19ecc76c46230b386c0932989cbacdce5520643447c9f4d691ed87ae0",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/give_right.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "ca54c4515953b7098b4ac42a6139eb7d5dcaf39a33b9f3743044d161467ae30b",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/hands_0.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "756956d025100737417e3ec701b76e4f5e884d5007bf08207a123067d22c62e6",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/hands_1.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "32195bf99251548ae736dfffa01099458cceab7fd18c70560dff85eac28a50df",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/hands_2.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "f524fade41b4d4bd6bc0121cb4b8f9f9af42f0ea3d62f3b9d1dabb226bae4e78",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/hands_3.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "bc119550e9c672d66578f551b66515060b833c3c26f23627a60633a23c48e19f",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/tools_0.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "fbdf25aae81ce22b64989aba42e231a77e0f2ce1a4a45a67a6499aab3e58886b",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/tools_1.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "3a8d4ab08a63c6e375906b9917ca8b3b80632f4ca0bbbf8f51e458f2658c1839",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/tools_2.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "ad7cb7ea25a190ad330e53c760636c5a44148bc1e0b79b461bab2714a37805f3",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/caelan/tools_3.png",
+      "logical_size": [
+        40,
+        48
+      ],
+      "canvas": [
+        80,
+        96
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "afa1e800474dde450c71d6172490f754609e1631b12dd54ca6d108e1a2c1151c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/magicks/poses.png",
+      "logical_size": [
+        240,
+        192
+      ],
+      "canvas": [
+        480,
+        384
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "bce01fe1aaf61a9ab12c4d12bd96573bc943ea9216878b21c16c1c36ba2dab9f",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/magicks/body.png",
+      "logical_size": [
+        240,
+        192
+      ],
+      "canvas": [
+        480,
+        384
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "12082834a65cdba4e0da444d4996d09bb7fd55270acb3ce2b78bb6f309ef4387",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/venn/magicks/energy.png",
+      "logical_size": [
+        240,
+        192
+      ],
+      "canvas": [
+        480,
+        384
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "ac2a4da9bd7e68157c9601e64b759d7dcc5331cf80714b2bf8938a446ebfd940",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/mill/poses/poses.png",
+      "logical_size": [
+        240,
+        144
+      ],
+      "canvas": [
+        480,
+        288
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "03d14c40320d9536dbca7afa40c6d553e944d641b323cc6f4b4183c88602cef7",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/mill/poses/body.png",
+      "logical_size": [
+        240,
+        144
+      ],
+      "canvas": [
+        480,
+        288
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "de7ee12d80b7c5ea84b3a1509bc1b3cbb95cd869c3f9d0d319272243d98a108c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/mill/poses/energy.png",
+      "logical_size": [
+        240,
+        144
+      ],
+      "canvas": [
+        480,
+        288
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "d65e923c384e5dc574eb659e5194d25ac9e6cc87a1398b040e8f1e07c25f7bcb",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/lantern/poses/caelan.png",
+      "logical_size": [
+        200,
+        96
+      ],
+      "canvas": [
+        400,
+        192
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "f2b98dc52bfa6b4c8dd3408ed88a248772daa99a38f24fa285aefac4a42d1bfd",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/lantern/poses/caelan_body.png",
+      "logical_size": [
+        200,
+        96
+      ],
+      "canvas": [
+        400,
+        192
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "f2b98dc52bfa6b4c8dd3408ed88a248772daa99a38f24fa285aefac4a42d1bfd",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/lantern/poses/caelan_frame.png",
+      "logical_size": [
+        200,
+        96
+      ],
+      "canvas": [
+        400,
+        192
+      ],
+      "draw_anchor": [
+        20,
+        38
+      ],
+      "output_sha256": "830aa6950c7718f63f771488786f5993c47c7ca6d4e4492229d5ce51cdfe9bf3",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/hold_front.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "bed66ef6bb5f10aaa7f3244dcae0799496ae030715dc2120c96762cc87fc6667",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/give_front.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "4185e786702ab2badf4cc1f5cf2c464c8aa641608255c77c611a9319f10f2b43",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_front_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "7723efb45f6a01625dfcfa92dfbcd23626f72bf98bbd724641fdb4662a52aa83",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_front_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "af4c5feb8c7a2fd41ad406a587104386e7fdcbbd5253334dfad4f017ce11a7be",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_front_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "8a161d7a9aaf280fe0be0892edc911984792b03b073eb479711da93c44dd4ec9",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_front_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "517baa24026d351ccec57227ae247ac6d4b1c830f2ba964838320bba24397a1b",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/hold_back.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "a0c51b900c4d3daabbe7aab804e90ad20d9d4eae00fe00d02a15f914ee2d2910",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/give_back.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "1d2e6683418a2f9e06284e38aae129048c415495e9a26379677548fe370a5ddc",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_back_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "ad03fdc3726e0b8b6943041fff6e6ab78837455cccf0f1e9faf86bdc643e1bfc",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_back_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "5c6b218bef452fc6032931627fa004b8158e65f62fa4ecd4e8d4731c98bec2d9",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_back_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "a11df1ffd6338040481984893e4aa9745559c8a28dcd986fbe900f063ab0417c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_back_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "cfd6ada87f68bc70d46f034fc452d673d1a9f169cf87a3d5eae374e252509f23",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/hold_left.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "50685a2f84afc39c6cf1700496a5a490fdfe3d992bcab5645e9224fb5904654d",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/give_left.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "bb81700174e882ebabf8a990ca6fc94b2228aaffc526069e3b1268b752174ab6",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_left_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "11677c59027c70d7048173dcc8debacd8f5672271802631e92dbf261337a3eef",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_left_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "49b4c0fd7db1538e1948bda67bac663c2e852397e6cc66b70c7b84f76088228c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_left_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "fdec06d7217f5e9987117f251a29154484179af564369bd7cc32d6921b21113e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_left_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "cb2148ff7bde6938b15f2ee154736660d83000990279442909179b6db6591894",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/hold_right.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "dce3b6b38999965db7bf94609a9af3c7a1d8bd550f3047430ec0996b27c5e0c1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/give_right.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "54b0f63b16bf3cfc1223ba3559668b9e446d8d3865a58e02301afa440ecce18c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_right_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "33c54231042396cb89c8cbea20e3b833d689e9060048f5de05bce9ca0502b170",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_right_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "afda562923d86e5cb087ec0cb29e321a948e2e07cd6c2a0d272469a4c7ce1e93",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_right_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "a8a80861339ae260ac038d9d6de1604acc863f5c9e0122b0ca5cbfdbdb846b1c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/carry_right_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "83cea871d98e4054ed8310abffa36fd08f4145e5631453d4781fdd572ea4cf0b",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/reach_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "ba3d6a70960f32707fe8bc2b357d7bed3376677eb39fc133de3129b7cc3535d3",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/take_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "ab7fa257853454b9aa7aaff452324f96e8d0806be8ff75f4ed910d21e4fe45f6",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/step_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "caad7bdf203c32749088ec1296d4a685a9506a697463a272680335eb5bed784f",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/down_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "ad03fdc3726e0b8b6943041fff6e6ab78837455cccf0f1e9faf86bdc643e1bfc",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "bc6069c4adf27bd7ac9474e11efad8d4f33534e5441d08186810dae1e2cee1bd",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_empty_0.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "4aa1d99ad1ba7a11ffcef8723ced3404d4a8d3b1d2352b526fafe4d9eec1c4a1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/reach_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "b146ba9b3d05067c180ba0454aca3c1a64fae48084862e8ace769d9c02238b21",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/take_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "06864098b7fbd0567bd5ff6fec1f73e39ae4981730348a422c60380dfdf3407e",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/step_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "900dfeb62b71553f85894cad1770f41c5e510c9777da9ba284f75d6d350c18e2",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/down_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "5c6b218bef452fc6032931627fa004b8158e65f62fa4ecd4e8d4731c98bec2d9",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "f0937ecea13d12468f42f0a9e0da9284e38c95fe86392f7df7370940b9e4bd9d",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_empty_1.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "4aa1d99ad1ba7a11ffcef8723ced3404d4a8d3b1d2352b526fafe4d9eec1c4a1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/reach_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "674d1c8ac42e88e905c595773e78eee850327191e1c40d29f5d5db00f3997975",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/take_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "9c14d5a345b24a977eea9d12b37ad78134ce5aae34112207b49a585649af1a43",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/step_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "58ca6236dead0353df1f8264bd1ba91010e5911ab8eb5577d7bc35c4d1306d41",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/down_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "a11df1ffd6338040481984893e4aa9745559c8a28dcd986fbe900f063ab0417c",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "7cd4d2837720c212dfc37e8e3f960e68d542acfbe095a9ea37888d01886533bc",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_empty_2.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "4aa1d99ad1ba7a11ffcef8723ced3404d4a8d3b1d2352b526fafe4d9eec1c4a1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/reach_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "5a83ae765e638e6f497c79fb89ba1353ea9c77b87997a3304a9eaa4edb1d9b20",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/take_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "a0c51b900c4d3daabbe7aab804e90ad20d9d4eae00fe00d02a15f914ee2d2910",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/step_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "fabf3aac56e291136470330897fdd01cd92077adb8bf5af275565c466940cbf1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/down_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "cfd6ada87f68bc70d46f034fc452d673d1a9f169cf87a3d5eae374e252509f23",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "1a0f9d8a820e3cc2491f5ada47018c140f7ea242ac7e1f556c7eb8fbb5dd1888",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/elira/place_empty_3.png",
+      "logical_size": [
+        40,
+        64
+      ],
+      "canvas": [
+        80,
+        128
+      ],
+      "draw_anchor": [
+        20,
+        54
+      ],
+      "output_sha256": "4aa1d99ad1ba7a11ffcef8723ced3404d4a8d3b1d2352b526fafe4d9eec1c4a1",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_0.png",
+      "logical_size": [
+        40,
+        40
+      ],
+      "canvas": [
+        80,
+        80
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ],
+      "output_sha256": "56ca96291631c54217a86c40fde602f4e6f1059f1226266d8e4d66973ab67827",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_1.png",
+      "logical_size": [
+        40,
+        40
+      ],
+      "canvas": [
+        80,
+        80
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ],
+      "output_sha256": "d1644fdf50ae5a49a30a0ab8ccb1e62e2539a61684f983b9bbd5423ab37ebbe8",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_2.png",
+      "logical_size": [
+        40,
+        40
+      ],
+      "canvas": [
+        80,
+        80
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ],
+      "output_sha256": "d94bbe3eec5c73b075d6cd248e3d05bd68b5f74338b5939e74c702af3ef3e2af",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    },
+    {
+      "file": "assets/story/sanctuary_rescue/actions/row_5_3.png",
+      "logical_size": [
+        40,
+        40
+      ],
+      "canvas": [
+        80,
+        80
+      ],
+      "draw_anchor": [
+        20,
+        34
+      ],
+      "output_sha256": "c3fe8ffb615dc10f71a262383cbb0541da634ed4e91ae4b1392979a34ea0d018",
+      "artwork_pixels_per_world_pixel": 2,
+      "anchor_space": "logical",
+      "contact_space": "logical"
+    }
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "anchor_space": "logical",
+  "contact_space": "logical"
+}

@@ -1,4 +1,5 @@
 """Elira's delivery and a single, physically registered memorial lantern."""
+from caelan_scene_art import image as scene_image
 import json
 from pathlib import Path
 
@@ -196,7 +197,7 @@ class EliraVisit:
             self.game.social.flags.add('CH01_MQ01_ELIRA_DONE');self._save()
 
     def _pose(self, name, position=None, sort_y=None):
-        p = self.game.player;p.story_sprite = self.home.image(ART+name+'.png')
+        p = self.game.player;p.story_sprite = scene_image(self.home,ART+name+'.png')
         p.story_draw_anchor = POSE_ANCHOR
         if position is not None:p.story_position = tuple(position)
         if sort_y is not None:p.story_sort_y = sort_y

@@ -1,4 +1,5 @@
 """Liam's first lantern: four connected sections, one child, one physical object."""
+from caelan_scene_art import frame as scene_frame
 from collections import deque
 import json
 from pathlib import Path
@@ -60,7 +61,7 @@ class LanternQuest:
         self._quest_profiles = set()
         for identifier, path in self.art.get('poses', {}).items():
             meta = json.loads((ROOT/path).read_text());sheet = self.town.image(meta['sheet'])
-            self.poses[identifier] = (meta, {kind: [(sheet.subsurface(f['rect']).copy(), f['duration_ms'])
+            self.poses[identifier] = (meta, {kind: [(scene_frame(sheet,f['rect'],meta), f['duration_ms'])
                                         for f in frames] for kind, frames in meta['actions'].items()})
         self.surface_props = []
         for spec in self.art['props']:

@@ -4,6 +4,7 @@ The overlook seat is purely a visual placement. Physical player feet remain at
 the clear south approach, including in saves; seated context is validated before
 the pose can be restored. Wildlife continues to own the cat and its route.
 """
+from rendering import record_art
 import copy
 import math
 from pathlib import Path
@@ -62,8 +63,9 @@ def progress_state(data):
 class RegionalParticipation:
     def __init__(self, world):
         self.world = world
-        self.sit_sprite = pygame.image.load(str(
-            ROOT/'assets/characters/caelan/participation_sit_front.png')).convert_alpha()
+        self.sit_sprite = record_art(pygame.image.load(str(
+            ROOT/'assets/characters/caelan/participation_sit_front.png')).convert_alpha(),
+            {'artwork_pixels_per_world_pixel':2,'logical_size':[24,36]})
         self._pose_player = None
         self._pose_values = {}
         self.restore()

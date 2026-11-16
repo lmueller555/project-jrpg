@@ -5,4 +5,6 @@ HD run integration at the user's request. Historical evidence remains in Git.
 Current travel banks and validation are documented in
 [Caelan's runtime guide](../../../assets/characters/caelan/README.md) and the
 [global visual standard](../../VISUAL_ART_STANDARD.md).
-Unique scene-action art remains separately registered.
+Scene-action replacements are registered in
+`assets/characters/caelan/scene_actions.json`; their obsolete 1× bodies and
+assembly code have also been removed.

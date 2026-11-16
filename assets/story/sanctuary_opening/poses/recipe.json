@@ -3,12 +3,11 @@
   "status": "implemented",
   "builder": "tools/build_sanctuary_opening_poses.py",
   "source_png_sha256": {
-    "assets/characters/caelan/idle_right.png": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
-    "assets/characters/caelan/idle_front.png": "2411a9e1196555cadb62b9968de38a76fc30cac6fbd40ecd068c0447dbe3df4e",
-    "assets/characters/tomas/idle_left.png": "f6808a69db9a00afdeff443bf72381ad3df2a784d644651d36df7ffda5ad99fa",
-    "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png": "0c5bbe8607c11734ddf08d48f50ab700687006646466d22b98e31b59f82344ce",
-    "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d",
-    "assets/characters/tomas/idle_front.png": "e7fdc37eeb440e5fb422d37c7abc25f8295c33ddf76b32f040774f3013a18033"
+    "assets/characters/caelan/review_hd/idles/idle_front.png": "935d856e56ef4c6c06a7e6290546d7bc1014ec33e9a7a596997dc8f9102fb063",
+    "assets/characters/caelan/review_hd/idles/idle_back.png": "54aec75b7f4332d501f6deadefb8aeb149e8fb8d756e6d81c05780c88132f4af",
+    "assets/characters/caelan/review_hd/idles/spritesheet.png": "16b937913f493d4dab55bb35d281ac1681df5fc3a1b23d7d427422511d706d75",
+    "assets/characters/caelan/review_hd/idles/idle_right.png": "14a1b8925a8f27f406a96803a8e660cacd8fac91d13085782ee11bf9003a5b37",
+    "assets/characters/caelan/review_hd/idles/idle_left.png": "df34e30a6da5bc7267a60fac171dcb074b638fd2337d7ab0fe0f27a28291ed54"
   },
   "frame_size": [
     24,
@@ -24,7 +23,7 @@
       "file": "caelan_seated.png",
       "facing": "right",
       "wrist": [
-        17,
+        16,
         25
       ]
     },
@@ -195,20 +194,16 @@
       200
     ]
   },
-  "notes": "Caelan uses the authored overworld refresh; Tomas, furniture, prop ownership and action timing remain registered.",
-  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
-  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
-  "appearance_registration": "Authored natural poses with native contour; existing canvas, ground anchor and event timing retained.",
-  "outline": {
-    "version": 1,
-    "ink_rgba": [
-      18,
-      12,
-      14,
-      255
-    ],
-    "width_native_pixels": 1,
-    "placement": "inside existing cardinal silhouette",
-    "skin_highlights": "retain bright supported skin-edge pixels"
-  }
+  "notes": "Complete 2× drawn Caelan poses; logical positions, ownership and action cues retained.",
+  "artwork_pixels_per_world_pixel": 2,
+  "anchor_space": "logical",
+  "contact_space": "logical",
+  "appearance_source": "assets/source/characters/caelan/scene_actions_hd",
+  "canvas_space": "logical",
+  "rect_space": "artwork",
+  "frame_size_space": "logical",
+  "artwork_frame_size": [
+    48,
+    72
+  ]
 }

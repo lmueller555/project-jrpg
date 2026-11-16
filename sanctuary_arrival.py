@@ -60,7 +60,7 @@ class CastActor:
                 self.walk_durations[direction]=tuple(frame['duration_ms'] for frame in frames)
             for name,animation in art.get('poses',{}).items():
                 self.pose_animations[name]={
-                    'frames':tuple(world.image(frame['file']) for frame in animation['frames']),
+                    'frames':tuple(load_art(world,frame['file'],animation) for frame in animation['frames']),
                     'durations':tuple(frame['duration_ms'] for frame in animation['frames']),
                     'loop':animation.get('loop',False),
                     'anchor':tuple(animation.get('anchor',self._draw_anchor))}

@@ -708,7 +708,10 @@
             20,
             34
           ],
-          "loop": false
+          "loop": false,
+          "artwork_pixels_per_world_pixel": 2,
+          "anchor_space": "logical",
+          "contact_space": "logical"
         }
       },
       "travel_artwork_pixels_per_world_pixel": 2

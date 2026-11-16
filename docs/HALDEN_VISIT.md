@@ -49,8 +49,12 @@ Malformed progress or a sack task without a medicine receipt is rejected before
 loading. Older saves remain supported. New Game clears local task facts.
 
 `tools/build_halden_visit.py` exports Halden's four-direction costume from the
-shared male template, the sack/pallet/bottle and registered carrying poses using
-Caelan and Tomas's approved four-frame walks. Existing approved art is unchanged.
+shared male template, the sack/pallet/bottle and retained Tomas carrying poses.
+Caelan uses `tools/export_caelan_scene_actions_hd.py`: complete drawn 2× carrying
+keys, rather than joined holding torsos and walking legs. The player approaches
+the reachable station, faces the sack, bends before contact, and transfers it
+once at .36 seconds. A blocked approach releases control without advancing the cue. Sack
+ownership and existing 32×40 logical canvases/[16,34] anchors are retained.
 The generated portrait master is retained in `assets/source/portraits/eldenmere`;
 `tools/export_dialogue_portraits.py` also exports its 72×72 runtime portrait.
 

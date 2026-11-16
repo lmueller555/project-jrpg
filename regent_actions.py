@@ -3,6 +3,7 @@
 The quest owns progress and movement. This view owns only temporary approved
 body drawings, attention and table props; reading is always player paced.
 """
+from caelan_scene_art import image as scene_image
 from rendering import rotate as render_rotate
 from rendering import flip as render_flip
 from rendering import scale as render_scale
@@ -32,12 +33,11 @@ class RegentActions:
         self.reset()
 
     def _image(self, path):
-        if path not in self._images:self._images[path] = self.dining.image(path)
+        if path not in self._images:self._images[path] = scene_image(self.dining,path)
         return self._images[path]
 
     def _hand_pose(self, direction):
-        image = self._image('assets/story/elira/give_right.png')
-        return render_flip(image, True, False) if direction == 'left' else image
+        return self._image(f'assets/story/elira/give_{direction}.png')
 
     def _actors(self):
         result = {'caelan': self.game.player, 'serene': self.owner.serene,
