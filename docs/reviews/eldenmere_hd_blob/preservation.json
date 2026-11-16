@@ -1,0 +1,37 @@
+{
+  "baseline_commit": "eafd0b55dbdd6fef201310dce4908e0a6006bcc4",
+  "scope": "One-time verification for the asset-only PR; historical evidence, not a future immutable map contract.",
+  "existing_file_count": 870,
+  "banks": [
+    {
+      "path": "assets/terrain/grass",
+      "file_count": 256,
+      "tree_sha256": "49470fb91d9767b1c188a4c05c70b0b3b2063df99094b0b87ffb49fa8cdb3549",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/terrain/eldenmere/grass_dirt",
+      "file_count": 65,
+      "tree_sha256": "a1d712e6803905e1e8912c65ac5e988bddb2aa46853f9d3911abc673e0181b4a",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/maps/eldenmere/playable",
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/characters/caelan/review_hd",
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372",
+      "matches_baseline": true
+    },
+    {
+      "path": "assets/characters/iselin",
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf",
+      "matches_baseline": true
+    }
+  ]
+}

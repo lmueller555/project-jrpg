@@ -1,0 +1,1167 @@
+{
+  "version": 1,
+  "id": "eldenmere.grass_dirt.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "artwork_tile_size": [
+    48,
+    48
+  ],
+  "logical_quarter_size": [
+    12,
+    12
+  ],
+  "artwork_quarter_size": [
+    24,
+    24
+  ],
+  "rect_space": "artwork",
+  "anchor_space": "logical",
+  "image": "dirt_blob_47.png",
+  "count": 47,
+  "columns": 8,
+  "rows": 6,
+  "unused_slot": 47,
+  "spacing": 0,
+  "margin": 0,
+  "neighbor_bits": {
+    "N": 1,
+    "NE": 2,
+    "E": 4,
+    "SE": 8,
+    "S": 16,
+    "SW": 32,
+    "W": 64,
+    "NW": 128
+  },
+  "neighbor_offsets": {
+    "N": [
+      0,
+      -1
+    ],
+    "NE": [
+      1,
+      -1
+    ],
+    "E": [
+      1,
+      0
+    ],
+    "SE": [
+      1,
+      1
+    ],
+    "S": [
+      0,
+      1
+    ],
+    "SW": [
+      -1,
+      1
+    ],
+    "W": [
+      -1,
+      0
+    ],
+    "NW": [
+      -1,
+      -1
+    ]
+  },
+  "diagonal_rule": "Diagonal counts only when both adjoining cardinal neighbors connect.",
+  "lookup_256": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    18,
+    19,
+    18,
+    19,
+    20,
+    21,
+    20,
+    22,
+    18,
+    19,
+    18,
+    19,
+    23,
+    24,
+    23,
+    25,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    26,
+    27,
+    26,
+    27,
+    28,
+    29,
+    28,
+    30,
+    26,
+    27,
+    26,
+    27,
+    31,
+    32,
+    31,
+    33,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    18,
+    37,
+    18,
+    37,
+    20,
+    38,
+    20,
+    39,
+    18,
+    37,
+    18,
+    37,
+    23,
+    40,
+    23,
+    41,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    26,
+    42,
+    26,
+    42,
+    28,
+    43,
+    28,
+    44,
+    26,
+    42,
+    26,
+    42,
+    31,
+    45,
+    31,
+    46
+  ],
+  "tiles": [
+    {
+      "index": 0,
+      "mask": 0,
+      "file": "dirt/mask_000.png",
+      "rect": [
+        0,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_outer.png",
+        "quarters/ne_outer.png",
+        "quarters/sw_outer.png",
+        "quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 1,
+      "mask": 1,
+      "file": "dirt/mask_001.png",
+      "rect": [
+        48,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_outer.png",
+        "quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 2,
+      "mask": 4,
+      "file": "dirt/mask_004.png",
+      "rect": [
+        96,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_outer.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_outer.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 3,
+      "mask": 5,
+      "file": "dirt/mask_005.png",
+      "rect": [
+        144,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_outer.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 4,
+      "mask": 7,
+      "file": "dirt/mask_007.png",
+      "rect": [
+        192,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_full.png",
+        "quarters/sw_outer.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 5,
+      "mask": 16,
+      "file": "dirt/mask_016.png",
+      "rect": [
+        240,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_outer.png",
+        "quarters/ne_outer.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 6,
+      "mask": 17,
+      "file": "dirt/mask_017.png",
+      "rect": [
+        288,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 7,
+      "mask": 20,
+      "file": "dirt/mask_020.png",
+      "rect": [
+        336,
+        0,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_outer.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 8,
+      "mask": 21,
+      "file": "dirt/mask_021.png",
+      "rect": [
+        0,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 9,
+      "mask": 23,
+      "file": "dirt/mask_023.png",
+      "rect": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_full.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 10,
+      "mask": 28,
+      "file": "dirt/mask_028.png",
+      "rect": [
+        96,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_outer.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 11,
+      "mask": 29,
+      "file": "dirt/mask_029.png",
+      "rect": [
+        144,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 12,
+      "mask": 31,
+      "file": "dirt/mask_031.png",
+      "rect": [
+        192,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_x.png",
+        "quarters/ne_full.png",
+        "quarters/sw_edge_x.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 13,
+      "mask": 64,
+      "file": "dirt/mask_064.png",
+      "rect": [
+        240,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_outer.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 14,
+      "mask": 65,
+      "file": "dirt/mask_065.png",
+      "rect": [
+        288,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 15,
+      "mask": 68,
+      "file": "dirt/mask_068.png",
+      "rect": [
+        336,
+        48,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 16,
+      "mask": 69,
+      "file": "dirt/mask_069.png",
+      "rect": [
+        0,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 17,
+      "mask": 71,
+      "file": "dirt/mask_071.png",
+      "rect": [
+        48,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_full.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 18,
+      "mask": 80,
+      "file": "dirt/mask_080.png",
+      "rect": [
+        96,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_outer.png",
+        "quarters/sw_inner.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 19,
+      "mask": 81,
+      "file": "dirt/mask_081.png",
+      "rect": [
+        144,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_inner.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 20,
+      "mask": 84,
+      "file": "dirt/mask_084.png",
+      "rect": [
+        192,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_inner.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 21,
+      "mask": 85,
+      "file": "dirt/mask_085.png",
+      "rect": [
+        240,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_inner.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 22,
+      "mask": 87,
+      "file": "dirt/mask_087.png",
+      "rect": [
+        288,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_full.png",
+        "quarters/sw_inner.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 23,
+      "mask": 92,
+      "file": "dirt/mask_092.png",
+      "rect": [
+        336,
+        96,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_inner.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 24,
+      "mask": 93,
+      "file": "dirt/mask_093.png",
+      "rect": [
+        0,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_inner.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 25,
+      "mask": 95,
+      "file": "dirt/mask_095.png",
+      "rect": [
+        48,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_full.png",
+        "quarters/sw_inner.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 26,
+      "mask": 112,
+      "file": "dirt/mask_112.png",
+      "rect": [
+        96,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_outer.png",
+        "quarters/sw_full.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 27,
+      "mask": 113,
+      "file": "dirt/mask_113.png",
+      "rect": [
+        144,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_full.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 28,
+      "mask": 116,
+      "file": "dirt/mask_116.png",
+      "rect": [
+        192,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_full.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 29,
+      "mask": 117,
+      "file": "dirt/mask_117.png",
+      "rect": [
+        240,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_full.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 30,
+      "mask": 119,
+      "file": "dirt/mask_119.png",
+      "rect": [
+        288,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_full.png",
+        "quarters/sw_full.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 31,
+      "mask": 124,
+      "file": "dirt/mask_124.png",
+      "rect": [
+        336,
+        144,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_edge_y.png",
+        "quarters/ne_edge_y.png",
+        "quarters/sw_full.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 32,
+      "mask": 125,
+      "file": "dirt/mask_125.png",
+      "rect": [
+        0,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_full.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 33,
+      "mask": 127,
+      "file": "dirt/mask_127.png",
+      "rect": [
+        48,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_inner.png",
+        "quarters/ne_full.png",
+        "quarters/sw_full.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 34,
+      "mask": 193,
+      "file": "dirt/mask_193.png",
+      "rect": [
+        96,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 35,
+      "mask": 197,
+      "file": "dirt/mask_197.png",
+      "rect": [
+        144,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 36,
+      "mask": 199,
+      "file": "dirt/mask_199.png",
+      "rect": [
+        192,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_full.png",
+        "quarters/sw_edge_y.png",
+        "quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 37,
+      "mask": 209,
+      "file": "dirt/mask_209.png",
+      "rect": [
+        240,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_inner.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 38,
+      "mask": 213,
+      "file": "dirt/mask_213.png",
+      "rect": [
+        288,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_inner.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 39,
+      "mask": 215,
+      "file": "dirt/mask_215.png",
+      "rect": [
+        336,
+        192,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_full.png",
+        "quarters/sw_inner.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 40,
+      "mask": 221,
+      "file": "dirt/mask_221.png",
+      "rect": [
+        0,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_inner.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 41,
+      "mask": 223,
+      "file": "dirt/mask_223.png",
+      "rect": [
+        48,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_full.png",
+        "quarters/sw_inner.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 42,
+      "mask": 241,
+      "file": "dirt/mask_241.png",
+      "rect": [
+        96,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_edge_x.png",
+        "quarters/sw_full.png",
+        "quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 43,
+      "mask": 245,
+      "file": "dirt/mask_245.png",
+      "rect": [
+        144,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_full.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 44,
+      "mask": 247,
+      "file": "dirt/mask_247.png",
+      "rect": [
+        192,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_full.png",
+        "quarters/sw_full.png",
+        "quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 45,
+      "mask": 253,
+      "file": "dirt/mask_253.png",
+      "rect": [
+        240,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_inner.png",
+        "quarters/sw_full.png",
+        "quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 46,
+      "mask": 255,
+      "file": "dirt/mask_255.png",
+      "rect": [
+        288,
+        240,
+        48,
+        48
+      ],
+      "quarters": [
+        "quarters/nw_full.png",
+        "quarters/ne_full.png",
+        "quarters/sw_full.png",
+        "quarters/se_full.png"
+      ]
+    }
+  ],
+  "materials": {
+    "grass": [
+      "materials/lawn_00.png",
+      "materials/lawn_01.png",
+      "materials/meadow_00.png",
+      "materials/sheltered_00.png"
+    ],
+    "dirt": [
+      "materials/dirt_00.png",
+      "materials/dirt_01.png",
+      "materials/dirt_02.png",
+      "materials/dirt_03.png"
+    ]
+  },
+  "layer_order": [
+    "opaque grass",
+    "dirt overlay or fully connected dirt fill",
+    "independent sorted objects"
+  ],
+  "recipe": "assets/source/terrain/eldenmere/grass_dirt_hd/recipe.json",
+  "palette": "palette.json",
+  "path_conventions": {
+    "image": "pack_relative",
+    "tile_files": "pack_relative",
+    "quarter_files": "pack_relative",
+    "material_files": "pack_relative",
+    "palette": "pack_relative",
+    "recipe": "repository_relative"
+  },
+  "animation": null
+}
