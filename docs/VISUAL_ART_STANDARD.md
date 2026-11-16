@@ -17,8 +17,8 @@ Iselin's detailed artwork is the reference for this increase in fidelity.
 buffer across exploration, battle and cinematic presentation. Existing asset
 banks retain their legacy density until rebuilt; Iselin's detailed artwork, Caelan's approved overworld idles/walks/runs,
 Caelan’s rebuilt household, carrying, quest-work, casting and cave-assistance poses,
-and all three Sanctuary home interiors (hall, bedroom and dining room) now use
-the shared path. Dining was the first integrated environment bank; remaining
+all three Sanctuary home interiors (hall, bedroom and dining room), and the
+Sanctuary courtyard/approach now use the shared path. Dining was the first integrated environment bank; remaining
 asset reconstruction and individual bank migrations continue as separately scoped work.
 
 This standard replaces conflicting general advice in older character recipes,
@@ -1088,6 +1088,26 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
   logical/detail timing, navigation, stopping, turning and real foliage occlusion.
 - [Asset tool catalogue](../tools/README.md): commands and local implementation
   details, including legacy builders retained for reproducibility.
+
+### Integrated Sanctuary exterior
+
+The courtyard migration registers the Sanctuary facade at 216×216 logical units
+with native 432×432 artwork. Its five door states use native 64×84 artwork in the
+original 32×42 portal; host, entry anchor, thresholds, destination and arrival are
+unchanged. The fresh facade source separates the bell and planters so the two
+herb beds remain at their existing gardener stations. Bench and provision basket
+also keep their established physical canvases, positions and depth baselines.
+
+The bell's mount, lantern bracket, planter boxes and building remain fixed.
+Smoke and local windowlight share the 200 ms ambient clock; the bell uses nine
+600 ms phases within a 10.8-second combined loop. `reduced_motion_image` supplies
+a distinct smoke-free, steady-light still without extending the animation loop.
+The thin dark contours and native detail are preserved through the scene buffer.
+
+Source, provenance, exports and the scoped build command are listed in the
+[terrain integration reference](TERRAIN_ART_STANDARD.md#integrated-sanctuary-courtyard-and-approach).
+Other exterior designs, inn/shop profiles and their props remain staged; this
+migration does not add new buildings or retire banks still used elsewhere.
 
 ## Staged Eldenmere HD building exteriors
 

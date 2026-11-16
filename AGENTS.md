@@ -8,6 +8,7 @@ density, sizing, rendering, directional anatomy, gait, registration, export and
 review. Its approved target is 2× artwork density with existing logical sizes
 and gameplay proportions. Full-scene 2× composition is implemented in
 `rendering.py`; Sanctuary hall, bedroom and dining are integrated environments,
+the Sanctuary courtyard/approach is the first integrated outdoor region,
 and remaining bank migrations continue individually. Use the
 explicit drawing/transform adapters and native presentation described in the
 standard; bare Pygame writes to the logical mirror lose detail. Apply changes to

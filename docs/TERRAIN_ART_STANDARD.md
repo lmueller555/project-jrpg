@@ -15,12 +15,14 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The new Eldenmere grass/dirt, stone-paving, terrace, water/shore,
-waterworks and vegetation packs are **rebuilt but not integrated**. Tile modules
-retain 24×24 logical footprints at 48×48 artwork pixels; larger structures declare
-their own logical/artwork sizes.
-The shipped town and shared terrain retain previous assets until a separate
-integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
+**Status:** The Sanctuary courtyard and approach are the first integrated outdoor
+HD region. They use the rebuilt grass/dirt, paving, maintained masonry/stairs and
+vegetation at 2× artwork density with their original logical footprints. Water,
+waterworks and the rest of Eldenmere remain on their previous runtime assets;
+the reusable HD packs remain staged outside this explicit integration.
+Tile modules retain 24×24 logical footprints at 48×48 artwork pixels; larger
+structures declare their own logical/artwork sizes.
+See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
 [stone-paving reference](#staged-eldenmere-hd-stone-paving),
 [terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs),
 [water/shore reference](#staged-world-hd-water-and-natural-shores),
@@ -323,6 +325,39 @@ A 48×48 tile loses its new detail if an intermediate stage reduces it to 24×24
 Keep raw source loading and density-normalized drawing explicit. Installing a new
 PNG alone does not certify density migration.
 
+### Integrated Sanctuary courtyard and approach
+
+`assets/source/maps/eldenmere/courtyard_hd/recipe.json` owns the scoped integration
+at logical `[120,72,432,336]`. Rebuild with
+`python tools/build_sanctuary_courtyard_hd.py`; use `--check` for reproducibility.
+It patches the **assembled current map**, keeping later story additions. Run it
+after an intentional legacy terrain-only regeneration. Do not use the older full
+map compiler to recreate this live town.
+
+The `ground_overlays` record draws native 864×672 artwork after shared ground and
+before doors/actors. Dirt topology, flagstone alpha, retaining-wall placements and
+the walkable staircase retain their existing logical registration. The shared
+legacy ground PNGs are unchanged for other regions. No old RGB is enlarged into
+the new region: retained geometry/coverage files are registration inputs only.
+
+Seven plant entities use the reusable vegetation bank; fifteen existing grass
+clumps use three locally registered native variants in a mixed manifest. Grass
+keeps its 24×32 logical canvas, `[12,28]` anchor, contact area, 4.8-second idle clock,
+directional walk/run response and recovery. Raw images stay 48×64 through
+`record_art`; split rear/front layers retain boot occlusion and fixed roots.
+Other town clumps and shared-world consumers retain their legacy exports.
+
+The map opts into exploration pause on focus loss. Menus already freeze its clock.
+Reduced motion selects still plants, the facade's explicit smoke-free still image,
+and contact-only grass response; functional door opening/closing remains active.
+This is a regional migration, not a new global weather or lighting system.
+
+Capture actual game movement and native renderer views with
+`python tools/capture_sanctuary_courtyard_hd.py docs/reviews/sanctuary_courtyard_hd`.
+The tool uses temporary saves/settings. Review evidence lives in
+[the courtyard review](reviews/sanctuary_courtyard_hd/README.md); construction
+rules remain centralized here and in the visual standard.
+
 ## 15. Review and acceptance
 
 ### Individual assets
@@ -366,8 +401,9 @@ geometry and reproducible exports. Visual review remains necessary.
    once all references have migrated. Update this document's implementation status.
 
 Grass/dirt, stone paving, terraces and water/natural shores are staged below.
-Channels/spillways, vegetation and natural accents are also staged. Runtime migration
-and in-game acceptance remain a separate step.
+Channels/spillways, vegetation and natural accents are also staged. The Sanctuary
+courtyard integration below activates selected grass/dirt, paving, terrace and
+vegetation exports only; remaining runtime migration is separate work.
 
 ## 17. Existing pack maintenance reference
 
