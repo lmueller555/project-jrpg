@@ -1,0 +1,1020 @@
+{
+  "id": "eldenmere.waterworks.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "geometry": [
+    {
+      "file": "logical_geometry/shape_01_water.png",
+      "sha256": "1f7b2da9c96fb6be7ac2f60f21360973753dd3f3b4520d627a5cdf5c164ff3b8",
+      "id": "shape_01",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_01_bank.png",
+      "sha256": "292a0dc5163e4de7eeebe97e91ac8375132ad6031edbe1413cb5ad3b7a0f36b5",
+      "id": "shape_01",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_02_water.png",
+      "sha256": "64192dfde9e8846c8c8e0f1eabf51d8fb28fd10e43855b1a17c9480b146ea6dc",
+      "id": "shape_02",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_02_bank.png",
+      "sha256": "788dbcd09f868479ac4923f1b5570cf6e2f0fd8d41d6ea442510ba40d6f37171",
+      "id": "shape_02",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_03_water.png",
+      "sha256": "73d6da267c6b7dcc1d90a2d891753b8c5908121ce47d89695426b090282a9ae1",
+      "id": "shape_03",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_03_bank.png",
+      "sha256": "7690e6fe1793b8105cac128227e2539cbafcd438adb5c5c3ad55b94744122490",
+      "id": "shape_03",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_04_water.png",
+      "sha256": "02946791843fa10668b79d69c282a66371f1b1ce6609dd5b7b7fd3c24730b45a",
+      "id": "shape_04",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_04_bank.png",
+      "sha256": "36fe9cc3f09a8d19b1764b09fbaa354cc58f65575b42b1aca7ce78442a5c6663",
+      "id": "shape_04",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_05_water.png",
+      "sha256": "ac2087a43494110eac56a7a6c4de9c85a8c8c70b1cde694869c0ce6b60a04a28",
+      "id": "shape_05",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_05_bank.png",
+      "sha256": "916c487866267c4c416991b4ab8b5fc51455114b94fa782d0d06666e44941b92",
+      "id": "shape_05",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_06_water.png",
+      "sha256": "1dac3708abfa5821cccae20d39c9aec16365a240bff4a97012aa29a4b4f60131",
+      "id": "shape_06",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_06_bank.png",
+      "sha256": "5d4341c3491b06e00eea8b6b64c432193f22ee9bd1f9283949c3b1c22449c11c",
+      "id": "shape_06",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_07_water.png",
+      "sha256": "66e38207b094bb4dc4a94da2f1f3185453784d7c3343e854ce67ed48c22fac3b",
+      "id": "shape_07",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_07_bank.png",
+      "sha256": "3f42a06ab819d1537b58f90ac68b6d5c3cc5095dea26223f72c076fb355917af",
+      "id": "shape_07",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_08_water.png",
+      "sha256": "366c8a24cc0c6b83960b05283331c0ef6a5dd07d47b431032d836cb43417068f",
+      "id": "shape_08",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_08_bank.png",
+      "sha256": "2d697307fcb6578200c8dd49f293a3a46b52c04ebd0b50b85034b1ad15e9936c",
+      "id": "shape_08",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_09_water.png",
+      "sha256": "268a0edede7f1a5351d754d310a977b68279524b4263af70f1b605128ed16328",
+      "id": "shape_09",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_09_bank.png",
+      "sha256": "fe9194920c074dac4547eff7f6674aae29bdd7b2bbfb9a4239e1ec248cc777d9",
+      "id": "shape_09",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_10_water.png",
+      "sha256": "ad609d8c8133ab0c4921d2241f7d002478f9cb0a921f80c3aea0bebc16a2fcf4",
+      "id": "shape_10",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_10_bank.png",
+      "sha256": "e90c38bf85367ea4f48d6272da4895b1ac3cd55fa737e457404545da635e362f",
+      "id": "shape_10",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_11_water.png",
+      "sha256": "cf61b52217fcde88cc0078816e2b227143fbed970bfcc7c11c2b2d5eb922eec1",
+      "id": "shape_11",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_11_bank.png",
+      "sha256": "049422ba74faf263555db372762d3a6a59e5b7aa442c56586f0df2c4c4859d33",
+      "id": "shape_11",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_12_water.png",
+      "sha256": "357338f91adf967112eb1bfb103d2e907f412c357bea87df70f0e25deed78d5e",
+      "id": "shape_12",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_12_bank.png",
+      "sha256": "bd891f6ab665a26ed7e6e95c906135e5d55e3a33b47cad810578dd40b63efd5d",
+      "id": "shape_12",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_13_water.png",
+      "sha256": "bbb84e9d4c18b5901c98151436b5dc35e6c66ed27ded4773c79ce765fd479f2e",
+      "id": "shape_13",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_13_bank.png",
+      "sha256": "d4d980158b71d828f468849d29fbf0364f97591d11b3fe0429a3045ac834d092",
+      "id": "shape_13",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_14_water.png",
+      "sha256": "787872733bb830b63a571e69a85e5ed42947ad0afdc773440c0cfe766c11bb8f",
+      "id": "shape_14",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_14_bank.png",
+      "sha256": "4b9d75af44739314f142e8082f91276a9503921246b18301b096dc020dfcb118",
+      "id": "shape_14",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_15_water.png",
+      "sha256": "62cddfaa37fcc958c78ba55995d65db970ce48779382224ab3a5ea2c04abc48c",
+      "id": "shape_15",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/shape_15_bank.png",
+      "sha256": "5abf842fc7eb8bc2e74d690e48f1c8b5d5dd7bf2dc7929fcedfb1481dda3aee9",
+      "id": "shape_15",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_n_water.png",
+      "sha256": "983d0340bfaa4c8d52dce333e32e91a9098bca948ff58664b68bdabc95f1d58d",
+      "id": "inlet_n",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_n_bank.png",
+      "sha256": "bd054ae7daac7174c9e183064311a8d81fc1c78eb90a77a7781c764068c49dc3",
+      "id": "inlet_n",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_e_water.png",
+      "sha256": "7e9e987c4525f187bf1aae8da38a58b108f4dd61fa0f10c125df4860218ddb69",
+      "id": "inlet_e",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_e_bank.png",
+      "sha256": "86cc5f6a23e1de4d0bef22f69a8fab89b382ca8a5968308d942d246068cb1929",
+      "id": "inlet_e",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_s_water.png",
+      "sha256": "a1e0e58638c4e4e2f42f70c0ae28ce9cd984d0bde41bba3d89db66fbc0ad7993",
+      "id": "inlet_s",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_s_bank.png",
+      "sha256": "2b46d98721e0847135e7f0024ab9ced28942aa13f7d79fd291fb22566c82d859",
+      "id": "inlet_s",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_w_water.png",
+      "sha256": "b6cbd6a318d6c4190eb661850ed4992c0eaf4c4089c2d1372788cf0e6182f2c1",
+      "id": "inlet_w",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/inlet_w_bank.png",
+      "sha256": "76e21a142145bfd52dff18df7eb76b0287aa0248911d50f7f7dfb0c35b0a6f15",
+      "id": "inlet_w",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_n_water.png",
+      "sha256": "85b76c315cf8f6f4372500fb1ae1db99799d16bf18dae26059c36790c47598a0",
+      "id": "outlet_n",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_n_bank.png",
+      "sha256": "ce91149f8ff71de11526eba6542aa54991784be350ae66e40bb55b8d6b860845",
+      "id": "outlet_n",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_e_water.png",
+      "sha256": "42c554cc648465e7e8fa9a69c6b7ceb248b8d810bc60a94361045dd5609c7363",
+      "id": "outlet_e",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_e_bank.png",
+      "sha256": "e40982b5bfe59e1cddbabba954ea67cff044d9c97272efc084810f171a50b1fc",
+      "id": "outlet_e",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_s_water.png",
+      "sha256": "99d70b4e2411c78e8b7141b7d40c662ca2ede3feded5137dd2b5603f8d83507e",
+      "id": "outlet_s",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_s_bank.png",
+      "sha256": "df6bb105cc682e5fefe75a306068dc8928efa5d51b060491211cbc8262f63adf",
+      "id": "outlet_s",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_w_water.png",
+      "sha256": "bb0f5795be272d9ff611e53df7c6ea254abe6c852357091c6bf7e4ef962d0262",
+      "id": "outlet_w",
+      "kind": "water",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/outlet_w_bank.png",
+      "sha256": "6ed21c87c1c14bd568feb0aa9f083039f40e73060df117dd9014dba3ac98414e",
+      "id": "outlet_w",
+      "kind": "bank",
+      "logical_size": [
+        24,
+        24
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/spillway_structure.png",
+      "sha256": "d12992bc55783dd67291e8501306f066b18c6d3cdea88050f78e56deb7abfc0b",
+      "id": "spillway_south",
+      "kind": "structure",
+      "logical_size": [
+        24,
+        48
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    },
+    {
+      "file": "logical_geometry/spillway_water_mask.png",
+      "sha256": "deaf8da601cbf5c5d33149264ccf49bbb9b96665a47a9aadfd1150c0a4fcba8e",
+      "id": "spillway_south",
+      "kind": "water",
+      "logical_size": [
+        24,
+        48
+      ],
+      "purpose": "Geometry-only legacy coverage. No legacy color pixels reused."
+    }
+  ],
+  "routes": [
+    {
+      "id": "channel_01_from_n",
+      "kind": "channel",
+      "ports": 1,
+      "input": "N",
+      "outputs": []
+    },
+    {
+      "id": "channel_02_from_e",
+      "kind": "channel",
+      "ports": 2,
+      "input": "E",
+      "outputs": []
+    },
+    {
+      "id": "channel_03_from_n",
+      "kind": "channel",
+      "ports": 3,
+      "input": "N",
+      "outputs": [
+        "E"
+      ]
+    },
+    {
+      "id": "channel_03_from_e",
+      "kind": "channel",
+      "ports": 3,
+      "input": "E",
+      "outputs": [
+        "N"
+      ]
+    },
+    {
+      "id": "channel_04_from_s",
+      "kind": "channel",
+      "ports": 4,
+      "input": "S",
+      "outputs": []
+    },
+    {
+      "id": "channel_05_from_n",
+      "kind": "channel",
+      "ports": 5,
+      "input": "N",
+      "outputs": [
+        "S"
+      ]
+    },
+    {
+      "id": "channel_05_from_s",
+      "kind": "channel",
+      "ports": 5,
+      "input": "S",
+      "outputs": [
+        "N"
+      ]
+    },
+    {
+      "id": "channel_06_from_e",
+      "kind": "channel",
+      "ports": 6,
+      "input": "E",
+      "outputs": [
+        "S"
+      ]
+    },
+    {
+      "id": "channel_06_from_s",
+      "kind": "channel",
+      "ports": 6,
+      "input": "S",
+      "outputs": [
+        "E"
+      ]
+    },
+    {
+      "id": "channel_07_from_n",
+      "kind": "channel",
+      "ports": 7,
+      "input": "N",
+      "outputs": [
+        "E",
+        "S"
+      ]
+    },
+    {
+      "id": "channel_07_from_e",
+      "kind": "channel",
+      "ports": 7,
+      "input": "E",
+      "outputs": [
+        "N",
+        "S"
+      ]
+    },
+    {
+      "id": "channel_07_from_s",
+      "kind": "channel",
+      "ports": 7,
+      "input": "S",
+      "outputs": [
+        "N",
+        "E"
+      ]
+    },
+    {
+      "id": "channel_08_from_w",
+      "kind": "channel",
+      "ports": 8,
+      "input": "W",
+      "outputs": []
+    },
+    {
+      "id": "channel_09_from_n",
+      "kind": "channel",
+      "ports": 9,
+      "input": "N",
+      "outputs": [
+        "W"
+      ]
+    },
+    {
+      "id": "channel_09_from_w",
+      "kind": "channel",
+      "ports": 9,
+      "input": "W",
+      "outputs": [
+        "N"
+      ]
+    },
+    {
+      "id": "channel_10_from_e",
+      "kind": "channel",
+      "ports": 10,
+      "input": "E",
+      "outputs": [
+        "W"
+      ]
+    },
+    {
+      "id": "channel_10_from_w",
+      "kind": "channel",
+      "ports": 10,
+      "input": "W",
+      "outputs": [
+        "E"
+      ]
+    },
+    {
+      "id": "channel_11_from_n",
+      "kind": "channel",
+      "ports": 11,
+      "input": "N",
+      "outputs": [
+        "E",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_11_from_e",
+      "kind": "channel",
+      "ports": 11,
+      "input": "E",
+      "outputs": [
+        "N",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_11_from_w",
+      "kind": "channel",
+      "ports": 11,
+      "input": "W",
+      "outputs": [
+        "N",
+        "E"
+      ]
+    },
+    {
+      "id": "channel_12_from_s",
+      "kind": "channel",
+      "ports": 12,
+      "input": "S",
+      "outputs": [
+        "W"
+      ]
+    },
+    {
+      "id": "channel_12_from_w",
+      "kind": "channel",
+      "ports": 12,
+      "input": "W",
+      "outputs": [
+        "S"
+      ]
+    },
+    {
+      "id": "channel_13_from_n",
+      "kind": "channel",
+      "ports": 13,
+      "input": "N",
+      "outputs": [
+        "S",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_13_from_s",
+      "kind": "channel",
+      "ports": 13,
+      "input": "S",
+      "outputs": [
+        "N",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_13_from_w",
+      "kind": "channel",
+      "ports": 13,
+      "input": "W",
+      "outputs": [
+        "N",
+        "S"
+      ]
+    },
+    {
+      "id": "channel_14_from_e",
+      "kind": "channel",
+      "ports": 14,
+      "input": "E",
+      "outputs": [
+        "S",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_14_from_s",
+      "kind": "channel",
+      "ports": 14,
+      "input": "S",
+      "outputs": [
+        "E",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_14_from_w",
+      "kind": "channel",
+      "ports": 14,
+      "input": "W",
+      "outputs": [
+        "E",
+        "S"
+      ]
+    },
+    {
+      "id": "channel_15_from_n",
+      "kind": "channel",
+      "ports": 15,
+      "input": "N",
+      "outputs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_15_from_e",
+      "kind": "channel",
+      "ports": 15,
+      "input": "E",
+      "outputs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_15_from_s",
+      "kind": "channel",
+      "ports": 15,
+      "input": "S",
+      "outputs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    {
+      "id": "channel_15_from_w",
+      "kind": "channel",
+      "ports": 15,
+      "input": "W",
+      "outputs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    {
+      "id": "inlet_n",
+      "kind": "inlet",
+      "direction": "N",
+      "ports": 1,
+      "input": "stream",
+      "outputs": [
+        "N"
+      ]
+    },
+    {
+      "id": "inlet_e",
+      "kind": "inlet",
+      "direction": "E",
+      "ports": 2,
+      "input": "stream",
+      "outputs": [
+        "E"
+      ]
+    },
+    {
+      "id": "inlet_s",
+      "kind": "inlet",
+      "direction": "S",
+      "ports": 4,
+      "input": "stream",
+      "outputs": [
+        "S"
+      ]
+    },
+    {
+      "id": "inlet_w",
+      "kind": "inlet",
+      "direction": "W",
+      "ports": 8,
+      "input": "stream",
+      "outputs": [
+        "W"
+      ]
+    },
+    {
+      "id": "outlet_n",
+      "kind": "outlet",
+      "direction": "N",
+      "ports": 4,
+      "input": "S",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        10,
+        2,
+        4,
+        10
+      ]
+    },
+    {
+      "id": "outlet_e",
+      "kind": "outlet",
+      "direction": "E",
+      "ports": 8,
+      "input": "W",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        12,
+        10,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "outlet_s",
+      "kind": "outlet",
+      "direction": "S",
+      "ports": 1,
+      "input": "N",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        10,
+        12,
+        4,
+        10
+      ]
+    },
+    {
+      "id": "outlet_w",
+      "kind": "outlet",
+      "direction": "W",
+      "ports": 2,
+      "input": "E",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        2,
+        10,
+        10,
+        4
+      ]
+    }
+  ],
+  "channel_treatments": {
+    "earth": "earth",
+    "maintained": "maintained",
+    "weathered": "mossy"
+  },
+  "spillway_treatments": [
+    "maintained",
+    "weathered",
+    "mossy"
+  ],
+  "channel_water_width_logical": 8,
+  "spillway_logical_size": [
+    24,
+    48
+  ],
+  "spillway_elevation_change_logical": 24,
+  "frame_count": 6,
+  "duration_ms": 200,
+  "flow_period_artwork": 24,
+  "flow_step_artwork": 4,
+  "water_pack": "assets/terrain/water_hd/tileset.json",
+  "terrace_pack": "assets/terrain/eldenmere/terraces_hd/tileset.json",
+  "source_dependencies": [
+    {
+      "file": "assets/source/terrain/water_hd/recipe.json",
+      "sha256": "f8b5b7e376ee4eaa8cda60d69428b6547e3237eaacbac365eecc8975a4989f78"
+    },
+    {
+      "file": "assets/terrain/eldenmere/terraces_hd/modules/maintained/wall_front_01.png",
+      "sha256": "dd12749d505aea0f2cfa9b2997734d13935bfcd8d68f0b05f719eaaca66fd8e0"
+    },
+    {
+      "file": "assets/terrain/eldenmere/terraces_hd/modules/weathered/wall_front_01.png",
+      "sha256": "56c498dfde4ef0c5ba3347c1056d9e94d6c817fe3c3d7ee88a49566a981a8191"
+    },
+    {
+      "file": "assets/terrain/eldenmere/terraces_hd/modules/mossy/wall_front_01.png",
+      "sha256": "cb397fa5b93fbc9f0997691c6c9b9549bba7f82f4de1b4cf353cbbb72c56050c"
+    }
+  ],
+  "baseline_commit": "51ef5a85611636aab69b4ffc844fe67dda4835ef",
+  "protected_existing_banks": {
+    "assets/terrain/eldenmere/stream": {
+      "file_count": 36,
+      "tree_sha256": "ff2666d0c15dab57f79fc91bfa59ea02e88370380548855822caf5e534d128e6"
+    },
+    "assets/terrain/eldenmere/irrigation": {
+      "file_count": 24,
+      "tree_sha256": "97e8f51a634530f2b360b4d8a2e587d188e5a1d626630a69f28e47acbebf007f"
+    },
+    "assets/terrain/eldenmere/terraces": {
+      "file_count": 47,
+      "tree_sha256": "7120c6defb773b4df18de1e66b10155e71166877902fa8f17976a7eb677ebd18"
+    },
+    "assets/terrain/eldenmere/terraces_hd": {
+      "file_count": 124,
+      "tree_sha256": "21e5d35bc1d0bcfac0053ff2681be2bf4764337e8e874de9fcf31e2c25248c93"
+    },
+    "assets/terrain/eldenmere/grass_dirt_hd": {
+      "file_count": 79,
+      "tree_sha256": "ac0f4f176bc29d973cf61c475ec3eff0855b17ce4299090fc5767599a38d3f1c"
+    },
+    "assets/terrain/eldenmere/stone_paving_hd": {
+      "file_count": 361,
+      "tree_sha256": "2976fb02ee733e91926eec86effee26ffdd7b8a77190a6ff1833f5c3664a6118"
+    },
+    "assets/maps/eldenmere/playable": {
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2"
+    }
+  },
+  "builder": "tools/build_eldenmere_waterworks_hd.py",
+  "scope": "Staged directed channel/intake/outlet and south spillway art only; no fluid simulation or runtime integration."
+}
