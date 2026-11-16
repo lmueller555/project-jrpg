@@ -1,0 +1,2676 @@
+{
+  "id": "world.vegetation.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "sources": [
+    {
+      "file": "trees_authored.png",
+      "sha256": "fa582d526a2b5eca5d6281fb76ef07d1a7f80ea50fd1f15448523e5daf99afbf",
+      "grid": [
+        3,
+        4
+      ],
+      "provenance": "New source drawing generated for this vegetation rebuild; original retained unchanged."
+    },
+    {
+      "file": "ground_plants_authored.png",
+      "sha256": "f8788e8e733a4ca6b10e322aab008f9688d63c17758a5fce32fe57d1ec93e66e",
+      "grid": [
+        3,
+        5
+      ],
+      "provenance": "New source drawing generated for this vegetation rebuild; original retained unchanged."
+    },
+    {
+      "file": "waterside_authored.png",
+      "sha256": "ca2cbdd713e82f23271ba4cb8852d28cd5bb5f563d87c6bd29d04da6aabd1adb",
+      "grid": [
+        3,
+        3
+      ],
+      "provenance": "New source drawing generated for this vegetation rebuild; original retained unchanged."
+    },
+    {
+      "file": "natural_accents_authored.png",
+      "sha256": "358f3fe82dc0992bd0950211d6a6308adfe2f8ba348a23d0c4abae9d25af4680",
+      "grid": [
+        3,
+        5
+      ],
+      "provenance": "New source drawing generated for this vegetation rebuild; original retained unchanged."
+    }
+  ],
+  "palette": {
+    "leaves": {
+      "deep": "#173f31",
+      "shadow": "#205b3b",
+      "base": "#2c7c50",
+      "light": "#42975f",
+      "highlight": "#67b982"
+    },
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "outline": {
+      "base": "#171e1a"
+    },
+    "birch": {
+      "shadow": "#827d6e",
+      "base": "#b5ae9c",
+      "light": "#d5d0b7",
+      "highlight": "#e6e0cd"
+    },
+    "white": {
+      "shadow": "#b5ae9c",
+      "base": "#dedbc6",
+      "light": "#f1edda"
+    },
+    "yellow": {
+      "shadow": "#a78b42",
+      "base": "#d6b552",
+      "light": "#ecd681"
+    },
+    "violet": {
+      "shadow": "#6d628d",
+      "base": "#9685b0",
+      "light": "#bfb0d0"
+    },
+    "fruit_red": {
+      "shadow": "#834338",
+      "base": "#ac5644",
+      "light": "#cc7a57"
+    }
+  },
+  "designs": [
+    {
+      "id": "broadleaf_full",
+      "family": "broadleaf",
+      "variant": "full",
+      "source": "trees_authored.png",
+      "source_rect": [
+        3,
+        3,
+        359,
+        359
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        180,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "broadleaf_spreading",
+      "family": "broadleaf",
+      "variant": "spreading",
+      "source": "trees_authored.png",
+      "source_rect": [
+        365,
+        3,
+        721,
+        359
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        180,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "broadleaf_weathered",
+      "family": "broadleaf",
+      "variant": "weathered",
+      "source": "trees_authored.png",
+      "source_rect": [
+        727,
+        3,
+        1083,
+        359
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        180,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "woodland_paired",
+      "family": "woodland",
+      "variant": "paired",
+      "source": "trees_authored.png",
+      "source_rect": [
+        3,
+        365,
+        359,
+        721
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        150,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "woodland_leaning",
+      "family": "woodland",
+      "variant": "leaning",
+      "source": "trees_authored.png",
+      "source_rect": [
+        365,
+        365,
+        721,
+        721
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        150,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "woodland_sparse",
+      "family": "woodland",
+      "variant": "sparse",
+      "source": "trees_authored.png",
+      "source_rect": [
+        727,
+        365,
+        1083,
+        721
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        150,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "orchard_red_fruit",
+      "family": "orchard",
+      "variant": "red_fruit",
+      "source": "trees_authored.png",
+      "source_rect": [
+        3,
+        727,
+        359,
+        1083
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        180,
+        164
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "orchard_gold_fruit",
+      "family": "orchard",
+      "variant": "gold_fruit",
+      "source": "trees_authored.png",
+      "source_rect": [
+        365,
+        727,
+        721,
+        1083
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        180,
+        164
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "orchard_old",
+      "family": "orchard",
+      "variant": "old",
+      "source": "trees_authored.png",
+      "source_rect": [
+        727,
+        727,
+        1083,
+        1083
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        180,
+        164
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "conifer_spruce",
+      "family": "conifer",
+      "variant": "spruce",
+      "source": "trees_authored.png",
+      "source_rect": [
+        3,
+        1089,
+        359,
+        1445
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        150,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "conifer_fir",
+      "family": "conifer",
+      "variant": "fir",
+      "source": "trees_authored.png",
+      "source_rect": [
+        365,
+        1089,
+        721,
+        1445
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        150,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "conifer_old_pine",
+      "family": "conifer",
+      "variant": "old_pine",
+      "source": "trees_authored.png",
+      "source_rect": [
+        727,
+        1089,
+        1083,
+        1445
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "logical_size": [
+        96,
+        120
+      ],
+      "max_occupied_size_artwork": [
+        150,
+        184
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "shrub_rounded",
+      "family": "shrub",
+      "variant": "rounded",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        3,
+        3,
+        338,
+        304
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "shrub_irregular",
+      "family": "shrub",
+      "variant": "irregular",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        344,
+        3,
+        679,
+        304
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "shrub_twiggy",
+      "family": "shrub",
+      "variant": "twiggy",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        685,
+        3,
+        1021,
+        304
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "fern_curled",
+      "family": "fern",
+      "variant": "curled",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        3,
+        310,
+        338,
+        611
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "fern_splayed",
+      "family": "fern",
+      "variant": "splayed",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        344,
+        310,
+        679,
+        611
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "fern_upright",
+      "family": "fern",
+      "variant": "upright",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        685,
+        310,
+        1021,
+        611
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "grass_sparse",
+      "family": "grass",
+      "variant": "sparse",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        3,
+        617,
+        338,
+        918
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        40,
+        26
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "grass_splayed",
+      "family": "grass",
+      "variant": "splayed",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        344,
+        617,
+        679,
+        918
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        22
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "grass_dense",
+      "family": "grass",
+      "variant": "dense",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        685,
+        617,
+        1021,
+        918
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        36
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "flowers_white",
+      "family": "flowers",
+      "variant": "white",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        3,
+        924,
+        338,
+        1225
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        40
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "flowers_yellow",
+      "family": "flowers",
+      "variant": "yellow",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        344,
+        924,
+        679,
+        1225
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        40
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "flowers_violet",
+      "family": "flowers",
+      "variant": "violet",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        685,
+        924,
+        1021,
+        1225
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        40
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "groundcover_clover",
+      "family": "groundcover",
+      "variant": "clover",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        3,
+        1231,
+        338,
+        1533
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        26
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "groundcover_ivy",
+      "family": "groundcover",
+      "variant": "ivy",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        344,
+        1231,
+        679,
+        1533
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        26
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "groundcover_moss",
+      "family": "groundcover",
+      "variant": "moss",
+      "source": "ground_plants_authored.png",
+      "source_rect": [
+        685,
+        1231,
+        1021,
+        1533
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        26
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "tall_reeds_cattails",
+      "family": "tall_reeds",
+      "variant": "cattails",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        3,
+        3,
+        415,
+        415
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "logical_size": [
+        24,
+        48
+      ],
+      "max_occupied_size_artwork": [
+        40,
+        72
+      ],
+      "root_anchor_artwork": [
+        24,
+        92
+      ],
+      "draw_anchor_logical": [
+        12,
+        46
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 46,
+      "fixed_rows_from_artwork": 88,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "tall_reeds_splayed",
+      "family": "tall_reeds",
+      "variant": "splayed",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        421,
+        3,
+        833,
+        415
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "logical_size": [
+        24,
+        48
+      ],
+      "max_occupied_size_artwork": [
+        40,
+        72
+      ],
+      "root_anchor_artwork": [
+        24,
+        92
+      ],
+      "draw_anchor_logical": [
+        12,
+        46
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 46,
+      "fixed_rows_from_artwork": 88,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "tall_reeds_dense",
+      "family": "tall_reeds",
+      "variant": "dense",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        839,
+        3,
+        1251,
+        415
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "logical_size": [
+        24,
+        48
+      ],
+      "max_occupied_size_artwork": [
+        40,
+        72
+      ],
+      "root_anchor_artwork": [
+        24,
+        92
+      ],
+      "draw_anchor_logical": [
+        12,
+        46
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 46,
+      "fixed_rows_from_artwork": 88,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "rushes_upright",
+      "family": "rushes",
+      "variant": "upright",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        3,
+        421,
+        415,
+        833
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        42
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "rushes_splayed",
+      "family": "rushes",
+      "variant": "splayed",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        421,
+        421,
+        833,
+        833
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        42
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "rushes_sparse",
+      "family": "rushes",
+      "variant": "sparse",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        839,
+        421,
+        1251,
+        833
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        42
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "bank_flowers_white",
+      "family": "bank_flowers",
+      "variant": "white",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        3,
+        839,
+        415,
+        1251
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "logical_size": [
+        24,
+        48
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        64
+      ],
+      "root_anchor_artwork": [
+        24,
+        88
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        44.0
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 44.0,
+      "fixed_rows_from_artwork": 80,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "bank_flowers_yellow",
+      "family": "bank_flowers",
+      "variant": "yellow",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        421,
+        839,
+        833,
+        1251
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "logical_size": [
+        24,
+        48
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        64
+      ],
+      "root_anchor_artwork": [
+        24,
+        88
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        44.0
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 44.0,
+      "fixed_rows_from_artwork": 80,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "bank_flowers_iris",
+      "family": "bank_flowers",
+      "variant": "iris",
+      "source": "waterside_authored.png",
+      "source_rect": [
+        839,
+        839,
+        1251,
+        1251
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "logical_size": [
+        24,
+        48
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        64
+      ],
+      "root_anchor_artwork": [
+        24,
+        88
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        44.0
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 44.0,
+      "fixed_rows_from_artwork": 80,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "boulder_rounded",
+      "family": "boulder",
+      "variant": "rounded",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        3,
+        3,
+        320,
+        320
+      ],
+      "artwork_size": [
+        96,
+        72
+      ],
+      "logical_size": [
+        48,
+        36
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        60
+      ],
+      "root_anchor_artwork": [
+        48,
+        64
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        32.0
+      ],
+      "ground_rect_logical": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 32.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "boulder_angular",
+      "family": "boulder",
+      "variant": "angular",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        326,
+        3,
+        644,
+        320
+      ],
+      "artwork_size": [
+        96,
+        72
+      ],
+      "logical_size": [
+        48,
+        36
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        60
+      ],
+      "root_anchor_artwork": [
+        48,
+        64
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        32.0
+      ],
+      "ground_rect_logical": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 32.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "boulder_mossy",
+      "family": "boulder",
+      "variant": "mossy",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        650,
+        3,
+        968,
+        320
+      ],
+      "artwork_size": [
+        96,
+        72
+      ],
+      "logical_size": [
+        48,
+        36
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        60
+      ],
+      "root_anchor_artwork": [
+        48,
+        64
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        32.0
+      ],
+      "ground_rect_logical": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 32.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "rock_cluster_round",
+      "family": "rock_cluster",
+      "variant": "round",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        3,
+        326,
+        320,
+        644
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        32
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "rock_cluster_angular",
+      "family": "rock_cluster",
+      "variant": "angular",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        326,
+        326,
+        644,
+        644
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        32
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "rock_cluster_mossy",
+      "family": "rock_cluster",
+      "variant": "mossy",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        650,
+        326,
+        968,
+        644
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        32
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "fallen_log_cut",
+      "family": "fallen_log",
+      "variant": "cut",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        3,
+        650,
+        320,
+        968
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "logical_size": [
+        48,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        36
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "fallen_log_weathered",
+      "family": "fallen_log",
+      "variant": "weathered",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        326,
+        650,
+        644,
+        968
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "logical_size": [
+        48,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        36
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "fallen_log_hollow",
+      "family": "fallen_log",
+      "variant": "hollow",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        650,
+        650,
+        968,
+        968
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "logical_size": [
+        48,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        36
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "stump_cut",
+      "family": "stump",
+      "variant": "cut",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        3,
+        974,
+        320,
+        1292
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "stump_split",
+      "family": "stump",
+      "variant": "split",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        326,
+        974,
+        644,
+        1292
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "stump_mossy",
+      "family": "stump",
+      "variant": "mossy",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        650,
+        974,
+        968,
+        1292
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "logical_size": [
+        24,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        44,
+        38
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "exposed_roots_branching",
+      "family": "exposed_roots",
+      "variant": "branching",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        3,
+        1298,
+        320,
+        1616
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "logical_size": [
+        48,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        36
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "exposed_roots_twisted",
+      "family": "exposed_roots",
+      "variant": "twisted",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        326,
+        1298,
+        644,
+        1616
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "logical_size": [
+        48,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        36
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    },
+    {
+      "id": "exposed_roots_knotted",
+      "family": "exposed_roots",
+      "variant": "knotted",
+      "source": "natural_accents_authored.png",
+      "source_rect": [
+        650,
+        1298,
+        968,
+        1616
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "logical_size": [
+        48,
+        24
+      ],
+      "max_occupied_size_artwork": [
+        88,
+        36
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false
+    }
+  ],
+  "animation": {
+    "frame_count": 9,
+    "duration_ms": 600,
+    "cycle_ms": 5400,
+    "offsets_artwork": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1,
+      0
+    ],
+    "whole_tree_moves": false,
+    "vertical_displacement_artwork": 0,
+    "root_displacement_artwork": 0,
+    "max_displacement_artwork": 1,
+    "reduced_motion": "Use explicit idle drawing; omit breeze."
+  },
+  "outline_method": "One artwork-pixel silhouette contour. Fine rooted plants use canvas padding to preserve colored blades/stems; broad trees/stone/wood register the contour inward. Hard alpha throughout.",
+  "source_processing": "Magenta cutout, uniform nearest sampling within declared occupied envelope, root registration, named-palette assignment. No legacy color pixels reused.",
+  "baseline_commit": "1c6aa041c03082f79090e37bc6e0315d8e578f75",
+  "protected_existing_banks": {
+    "assets/terrain/eldenmere/foliage": {
+      "file_count": 101,
+      "tree_sha256": "f759f4b7d28a19a2dc02c3e8c8ffcbf60c0b40ded3d2ac9d7c2320c6e9e2345c"
+    },
+    "assets/terrain/eldenmere/grass_flowers": {
+      "file_count": 159,
+      "tree_sha256": "e2e1e99f6c18fa82d4e0f1430c073be9161c04636c997f335ed768c2cdd076a8"
+    },
+    "assets/terrain/eldenmere/reeds": {
+      "file_count": 95,
+      "tree_sha256": "cd0e749c262df34cae06429a683366a27d76a382ccca88094d6753d4240046d1"
+    },
+    "assets/terrain/grass": {
+      "file_count": 256,
+      "tree_sha256": "49470fb91d9767b1c188a4c05c70b0b3b2063df99094b0b87ffb49fa8cdb3549"
+    },
+    "assets/terrain/water_hd": {
+      "file_count": 1527,
+      "tree_sha256": "0627b16d053c712bcf5cb41bc8c65f875cfe47c9a78e4cd49d10130a7b53b2a6"
+    },
+    "assets/terrain/eldenmere/waterworks_hd": {
+      "file_count": 1236,
+      "tree_sha256": "ba222787ddb2337570caab33006d1b222b28927f9c4b20459d2333d458a87b3e"
+    },
+    "assets/terrain/eldenmere/terraces_hd": {
+      "file_count": 124,
+      "tree_sha256": "21e5d35bc1d0bcfac0053ff2681be2bf4764337e8e874de9fcf31e2c25248c93"
+    },
+    "assets/maps/eldenmere/playable": {
+      "file_count": 313,
+      "tree_sha256": "ef92b0ba224cb01cf6d5577f32788241186131462e523d9d0eebe5140ee1a2f2"
+    },
+    "assets/characters/caelan/review_hd": {
+      "file_count": 150,
+      "tree_sha256": "974c31b8f230560d5c8d9278b0df2134fa2b502ee7e35924b2135792d5bcc372"
+    },
+    "assets/characters/iselin": {
+      "file_count": 86,
+      "tree_sha256": "eb37c7825ff4067b37aad19bf24d3c4215c0d8c2383ca74dce609ba6134eccaf"
+    }
+  },
+  "builder": "tools/build_world_vegetation_hd.py",
+  "scope": "Staged vegetation and natural accents only. No maps, collision, navigation, runtime animation/contact systems or saves changed. Shared interactive grass remains active and unchanged."
+}

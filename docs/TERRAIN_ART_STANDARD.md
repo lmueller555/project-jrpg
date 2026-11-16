@@ -15,15 +15,17 @@ scale, perspective, lighting and compatible contact edges. For manipulable objec
 also follow the [interaction standard](OBJECT_INTERACTION_STANDARD.md) and
 [personal-prop visibility](PERSONAL_PROPS.md).
 
-**Status:** The new Eldenmere grass/dirt, stone-paving, terrace, water/shore and waterworks packs are **rebuilt but
-not integrated**. Tile modules retain 24×24 logical footprints at 48×48 artwork pixels; larger
-structures declare their own logical/artwork sizes.
+**Status:** The new Eldenmere grass/dirt, stone-paving, terrace, water/shore,
+waterworks and vegetation packs are **rebuilt but not integrated**. Tile modules
+retain 24×24 logical footprints at 48×48 artwork pixels; larger structures declare
+their own logical/artwork sizes.
 The shipped town and shared terrain retain previous assets until a separate
 integration change. See the [grass/dirt reference](#staged-eldenmere-hd-grassdirt-blob),
-[stone-paving reference](#staged-eldenmere-hd-stone-paving) and
-[terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs), plus
-[water/shore reference](#staged-world-hd-water-and-natural-shores) and
-[waterworks reference](#staged-eldenmere-hd-channels-and-spillways).
+[stone-paving reference](#staged-eldenmere-hd-stone-paving),
+[terrace reference](#staged-eldenmere-hd-terraces-walls-and-stairs),
+[water/shore reference](#staged-world-hd-water-and-natural-shores),
+[waterworks reference](#staged-eldenmere-hd-channels-and-spillways) and
+[vegetation reference](#staged-world-hd-vegetation-and-natural-accents).
 
 ## Contents
 
@@ -359,7 +361,7 @@ geometry and reproducible exports. Visual review remains necessary.
    once all references have migrated. Update this document's implementation status.
 
 Grass/dirt, stone paving, terraces and water/natural shores are staged below.
-Channels/spillways are also staged; larger vegetation remains future work. Runtime migration
+Channels/spillways, vegetation and natural accents are also staged. Runtime migration
 and in-game acceptance remain a separate step.
 
 ## 17. Existing pack maintenance reference
@@ -873,3 +875,80 @@ three route inventories and a reconstructible stream-intake/bends/spillway/outle
 composition. It is an offline fixture; gameplay activation remains separate.
 Recipes pin the geometry and current source dependencies. Existing water, channel,
 terrace and map banks remain available until a separately reviewed migration.
+
+### Staged world HD vegetation and natural accents
+
+Source recipe: `assets/source/terrain/vegetation_hd/recipe.json`.
+Staged manifest: `assets/terrain/vegetation_hd/plants.json`.
+State is `rebuilt` / `not_integrated`; visual approval remains not reviewed.
+The reusable pack contains **51 designs across 17 families**, three deliberately
+different silhouettes per family, not random scales or mirrored copies.
+
+| Family group | Families and variants |
+| --- | --- |
+| Trees (12) | Broadleaf full/spreading/weathered; woodland paired/leaning/sparse; orchard red-fruit/gold-fruit/old; conifer spruce/fir/old-pine. |
+| Shrubs and ground plants (15) | Rounded/irregular/twiggy shrubs; curled/splayed/upright ferns; sparse/splayed/dense decorative grass; white/yellow/violet flowers; clover/ivy/moss groundcover. |
+| Waterside (9) | Cattail/splayed/dense tall reeds; upright/splayed/sparse rushes; white/yellow/iris flowering bank plants. |
+| Natural accents (15) | Rounded/angular/mossy boulders and rock clusters; cut/weathered/hollow logs; cut/split/mossy stumps; branching/twisted/knotted exposed roots. |
+
+New retained drawings supply every visible pixel. Technical processing removes
+the magenta background, uniformly samples the cutout into its occupied envelope,
+registers the root, assigns named palette roles and records a one-artwork-pixel
+silhouette contour. Fine stems/blades retain their source color, with the contour
+using canvas padding; broad tree/stone/wood edges register inward. It does not enlarge legacy artwork or invent new geometry
+from the PNG alpha. Leaves use the current shared emerald ramp; bark and stone
+reuse existing ramps. Birch cream, flower ivory/yellow/violet and orchard fruit
+accents are explicit named palette additions. Keep light from the upper left.
+No regional palette switch or seasonal gameplay behavior is implied.
+
+Trees preserve the existing 96×120 logical / 192×240 artwork canvas and supporting
+rectangle [36,96,24,24]. Their root anchor is [48,116] logical / [96,232] artwork;
+most species occupy at most 92 logical units of height, with lower orchard crowns.
+Shrubs and ordinary small plants use 24×24 logical / 48×48 artwork canvases. Tall
+reeds retain 24×48 logical / 48×96 artwork, a [12,46] logical root, and fixed rows
+from artwork y=88. New bank flowers use the same canvas with their own declared
+root/support. Larger boulders, logs and roots have explicitly recorded canvases;
+do not infer their physical size from the visible source drawing.
+
+Each design records artwork/logical sizes, occupied rectangle, root/draw anchor,
+supporting ground rectangle, depth baseline and suitable surfaces. The supporting
+rectangle does **not** automatically define collision. Canopy size does not expand
+the tree's gameplay footprint. Foreground plants and natural accents have thin dark
+contours; ordinary scenery does not acquire discovery glints or interaction cues.
+
+Thirty-six living designs have a nine-frame, 600 ms-per-frame breeze (5.4 seconds).
+Fifteen rocks/deadwood/root accents are static. Trees export fixed trunks/roots,
+source-derived canopy backing and disjoint leaf patches. Patches rustle by at most
+one artwork pixel horizontally with delayed local phases; woody pixels, fruits,
+roots and crown coverage stay fixed. Backing uses existing leaf-shadow colors.
+The rest pose reconstructs the registered drawing exactly. Small plants use
+rooted horizontal bending by at most one artwork pixel, leaving the declared
+base rows unchanged. No whole-tree translation, vertical bob, recoloring pulse,
+randomized frame noise or support drift is permitted. Reduced motion uses idle
+files; pause/focus behavior must be preserved by the eventual runtime consumer.
+
+Every design has an idle file, an animation sheet, explicit frame rectangles and
+per-frame files; trees also retain fixed/backing/cluster layers. The common idle
+atlas is 768×1200 artwork pixels with explicit nonoverlapping rectangles. Asset
+paths are pack-relative; source recipe paths are repository-relative. Never derive
+an anchor or density from atlas position or opaque bounds.
+
+These decorative grass drawings are **not** installed as replacements for the
+existing shared contact-responsive grass. That active bank and its walk/run
+parting, occupied holds, recovery and party/NPC contact behavior remain unchanged.
+Any later migration must explicitly preserve those behaviors; this pack does not
+pretend to implement them through visual-only breeze frames.
+
+```sh
+python tools/build_world_vegetation_hd.py
+python tools/build_world_vegetation_hd.py --check
+PYTHONPATH=.:tests python -m unittest test_world_vegetation_hd
+```
+
+[Vegetation review evidence](reviews/world_vegetation_hd/README.md) includes all
+families, animation boards, native Eldenmere/northern-woodland/wetland compositions
+and a common-baseline comparison with approved Caelan/Iselin. Composition metadata
+records roots, phase offsets, terrain and depth ordering. Static water isolates
+vegetation movement in these offline fixtures. They are not gameplay captures or
+map redesigns. Actual traversal, tree/actor occlusion, environmental lighting,
+contact, collision and reduced-motion acceptance remain integration work.

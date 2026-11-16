@@ -1,0 +1,7592 @@
+{
+  "version": 1,
+  "id": "world.vegetation.hd.24",
+  "artwork_state": "rebuilt",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "path_conventions": {
+    "asset_files": "pack_relative",
+    "recipe": "repository_relative"
+  },
+  "rect_space": "artwork",
+  "anchor_space": "logical unless explicitly artwork-suffixed",
+  "design_count": 51,
+  "family_count": 17,
+  "families": {
+    "broadleaf": [
+      "broadleaf_full",
+      "broadleaf_spreading",
+      "broadleaf_weathered"
+    ],
+    "woodland": [
+      "woodland_paired",
+      "woodland_leaning",
+      "woodland_sparse"
+    ],
+    "orchard": [
+      "orchard_red_fruit",
+      "orchard_gold_fruit",
+      "orchard_old"
+    ],
+    "conifer": [
+      "conifer_spruce",
+      "conifer_fir",
+      "conifer_old_pine"
+    ],
+    "shrub": [
+      "shrub_rounded",
+      "shrub_irregular",
+      "shrub_twiggy"
+    ],
+    "fern": [
+      "fern_curled",
+      "fern_splayed",
+      "fern_upright"
+    ],
+    "grass": [
+      "grass_sparse",
+      "grass_splayed",
+      "grass_dense"
+    ],
+    "flowers": [
+      "flowers_white",
+      "flowers_yellow",
+      "flowers_violet"
+    ],
+    "groundcover": [
+      "groundcover_clover",
+      "groundcover_ivy",
+      "groundcover_moss"
+    ],
+    "tall_reeds": [
+      "tall_reeds_cattails",
+      "tall_reeds_splayed",
+      "tall_reeds_dense"
+    ],
+    "rushes": [
+      "rushes_upright",
+      "rushes_splayed",
+      "rushes_sparse"
+    ],
+    "bank_flowers": [
+      "bank_flowers_white",
+      "bank_flowers_yellow",
+      "bank_flowers_iris"
+    ],
+    "boulder": [
+      "boulder_rounded",
+      "boulder_angular",
+      "boulder_mossy"
+    ],
+    "rock_cluster": [
+      "rock_cluster_round",
+      "rock_cluster_angular",
+      "rock_cluster_mossy"
+    ],
+    "fallen_log": [
+      "fallen_log_cut",
+      "fallen_log_weathered",
+      "fallen_log_hollow"
+    ],
+    "stump": [
+      "stump_cut",
+      "stump_split",
+      "stump_mossy"
+    ],
+    "exposed_roots": [
+      "exposed_roots_branching",
+      "exposed_roots_twisted",
+      "exposed_roots_knotted"
+    ]
+  },
+  "plants": [
+    {
+      "id": "broadleaf_full",
+      "family": "broadleaf",
+      "variant": "full",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/broadleaf_full/idle.png",
+      "sheet": "plants/broadleaf_full/sheet.png",
+      "semantic_mask": "plants/broadleaf_full/semantic_mask.png",
+      "occupied_rect_artwork": [
+        8,
+        48,
+        185,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/broadleaf_full/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_full/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/broadleaf_full/fixed.png",
+      "backing": "plants/broadleaf_full/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/broadleaf_full/clusters/leaf_0.png",
+          "position_artwork": [
+            52,
+            55
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/broadleaf_full/clusters/leaf_1.png",
+          "position_artwork": [
+            15,
+            103
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/broadleaf_full/clusters/leaf_2.png",
+          "position_artwork": [
+            124,
+            103
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/broadleaf_full/clusters/leaf_3.png",
+          "position_artwork": [
+            32,
+            149
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/broadleaf_full/clusters/leaf_4.png",
+          "position_artwork": [
+            107,
+            149
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        0,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "broadleaf_spreading",
+      "family": "broadleaf",
+      "variant": "spreading",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/broadleaf_spreading/idle.png",
+      "sheet": "plants/broadleaf_spreading/sheet.png",
+      "semantic_mask": "plants/broadleaf_spreading/semantic_mask.png",
+      "occupied_rect_artwork": [
+        6,
+        58,
+        186,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_spreading/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/broadleaf_spreading/fixed.png",
+      "backing": "plants/broadleaf_spreading/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/broadleaf_spreading/clusters/leaf_0.png",
+          "position_artwork": [
+            51,
+            64
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/broadleaf_spreading/clusters/leaf_1.png",
+          "position_artwork": [
+            13,
+            110
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/broadleaf_spreading/clusters/leaf_2.png",
+          "position_artwork": [
+            124,
+            110
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/broadleaf_spreading/clusters/leaf_3.png",
+          "position_artwork": [
+            31,
+            153
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/broadleaf_spreading/clusters/leaf_4.png",
+          "position_artwork": [
+            106,
+            153
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        0,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "broadleaf_weathered",
+      "family": "broadleaf",
+      "variant": "weathered",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/broadleaf_weathered/idle.png",
+      "sheet": "plants/broadleaf_weathered/sheet.png",
+      "semantic_mask": "plants/broadleaf_weathered/semantic_mask.png",
+      "occupied_rect_artwork": [
+        10,
+        48,
+        183,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/broadleaf_weathered/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/broadleaf_weathered/fixed.png",
+      "backing": "plants/broadleaf_weathered/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/broadleaf_weathered/clusters/leaf_0.png",
+          "position_artwork": [
+            53,
+            55
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/broadleaf_weathered/clusters/leaf_1.png",
+          "position_artwork": [
+            16,
+            103
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/broadleaf_weathered/clusters/leaf_2.png",
+          "position_artwork": [
+            124,
+            103
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/broadleaf_weathered/clusters/leaf_3.png",
+          "position_artwork": [
+            34,
+            149
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/broadleaf_weathered/clusters/leaf_4.png",
+          "position_artwork": [
+            106,
+            149
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        0,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "woodland_paired",
+      "family": "woodland",
+      "variant": "paired",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/woodland_paired/idle.png",
+      "sheet": "plants/woodland_paired/sheet.png",
+      "semantic_mask": "plants/woodland_paired/semantic_mask.png",
+      "occupied_rect_artwork": [
+        23,
+        48,
+        169,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/woodland_paired/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_paired/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/woodland_paired/fixed.png",
+      "backing": "plants/woodland_paired/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/woodland_paired/clusters/leaf_0.png",
+          "position_artwork": [
+            59,
+            55
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/woodland_paired/clusters/leaf_1.png",
+          "position_artwork": [
+            28,
+            103
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/woodland_paired/clusters/leaf_2.png",
+          "position_artwork": [
+            119,
+            103
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/woodland_paired/clusters/leaf_3.png",
+          "position_artwork": [
+            43,
+            149
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/woodland_paired/clusters/leaf_4.png",
+          "position_artwork": [
+            104,
+            149
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        0,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "woodland_leaning",
+      "family": "woodland",
+      "variant": "leaning",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/woodland_leaning/idle.png",
+      "sheet": "plants/woodland_leaning/sheet.png",
+      "semantic_mask": "plants/woodland_leaning/semantic_mask.png",
+      "occupied_rect_artwork": [
+        27,
+        48,
+        166,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/woodland_leaning/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_leaning/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/woodland_leaning/fixed.png",
+      "backing": "plants/woodland_leaning/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/woodland_leaning/clusters/leaf_0.png",
+          "position_artwork": [
+            61,
+            55
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/woodland_leaning/clusters/leaf_1.png",
+          "position_artwork": [
+            32,
+            103
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/woodland_leaning/clusters/leaf_2.png",
+          "position_artwork": [
+            118,
+            103
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/woodland_leaning/clusters/leaf_3.png",
+          "position_artwork": [
+            46,
+            149
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/woodland_leaning/clusters/leaf_4.png",
+          "position_artwork": [
+            104,
+            149
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        240,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "woodland_sparse",
+      "family": "woodland",
+      "variant": "sparse",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/woodland_sparse/idle.png",
+      "sheet": "plants/woodland_sparse/sheet.png",
+      "semantic_mask": "plants/woodland_sparse/semantic_mask.png",
+      "occupied_rect_artwork": [
+        27,
+        48,
+        166,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/woodland_sparse/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/woodland_sparse/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/woodland_sparse/fixed.png",
+      "backing": "plants/woodland_sparse/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/woodland_sparse/clusters/leaf_0.png",
+          "position_artwork": [
+            61,
+            55
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/woodland_sparse/clusters/leaf_1.png",
+          "position_artwork": [
+            32,
+            103
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/woodland_sparse/clusters/leaf_2.png",
+          "position_artwork": [
+            118,
+            103
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/woodland_sparse/clusters/leaf_3.png",
+          "position_artwork": [
+            46,
+            149
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/woodland_sparse/clusters/leaf_4.png",
+          "position_artwork": [
+            104,
+            149
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        240,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "orchard_red_fruit",
+      "family": "orchard",
+      "variant": "red_fruit",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/orchard_red_fruit/idle.png",
+      "sheet": "plants/orchard_red_fruit/sheet.png",
+      "semantic_mask": "plants/orchard_red_fruit/semantic_mask.png",
+      "occupied_rect_artwork": [
+        15,
+        68,
+        177,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_red_fruit/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/orchard_red_fruit/fixed.png",
+      "backing": "plants/orchard_red_fruit/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/orchard_red_fruit/clusters/leaf_0.png",
+          "position_artwork": [
+            55,
+            74
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/orchard_red_fruit/clusters/leaf_1.png",
+          "position_artwork": [
+            21,
+            117
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/orchard_red_fruit/clusters/leaf_2.png",
+          "position_artwork": [
+            121,
+            117
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/orchard_red_fruit/clusters/leaf_3.png",
+          "position_artwork": [
+            37,
+            158
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/orchard_red_fruit/clusters/leaf_4.png",
+          "position_artwork": [
+            105,
+            158
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        240,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "orchard_gold_fruit",
+      "family": "orchard",
+      "variant": "gold_fruit",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/orchard_gold_fruit/idle.png",
+      "sheet": "plants/orchard_gold_fruit/sheet.png",
+      "semantic_mask": "plants/orchard_gold_fruit/semantic_mask.png",
+      "occupied_rect_artwork": [
+        6,
+        78,
+        186,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_gold_fruit/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/orchard_gold_fruit/fixed.png",
+      "backing": "plants/orchard_gold_fruit/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/orchard_gold_fruit/clusters/leaf_0.png",
+          "position_artwork": [
+            51,
+            84
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/orchard_gold_fruit/clusters/leaf_1.png",
+          "position_artwork": [
+            13,
+            124
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/orchard_gold_fruit/clusters/leaf_2.png",
+          "position_artwork": [
+            124,
+            124
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/orchard_gold_fruit/clusters/leaf_3.png",
+          "position_artwork": [
+            31,
+            162
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/orchard_gold_fruit/clusters/leaf_4.png",
+          "position_artwork": [
+            106,
+            162
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        240,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "orchard_old",
+      "family": "orchard",
+      "variant": "old",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/orchard_old/idle.png",
+      "sheet": "plants/orchard_old/sheet.png",
+      "semantic_mask": "plants/orchard_old/semantic_mask.png",
+      "occupied_rect_artwork": [
+        7,
+        68,
+        186,
+        231
+      ],
+      "frames": [
+        {
+          "file": "plants/orchard_old/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/orchard_old/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/orchard_old/fixed.png",
+      "backing": "plants/orchard_old/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/orchard_old/clusters/leaf_0.png",
+          "position_artwork": [
+            51,
+            74
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/orchard_old/clusters/leaf_1.png",
+          "position_artwork": [
+            14,
+            116
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/orchard_old/clusters/leaf_2.png",
+          "position_artwork": [
+            125,
+            116
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/orchard_old/clusters/leaf_4.png",
+          "position_artwork": [
+            107,
+            157
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        480,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "conifer_spruce",
+      "family": "conifer",
+      "variant": "spruce",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/conifer_spruce/idle.png",
+      "sheet": "plants/conifer_spruce/sheet.png",
+      "semantic_mask": "plants/conifer_spruce/semantic_mask.png",
+      "occupied_rect_artwork": [
+        21,
+        62,
+        171,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/conifer_spruce/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_spruce/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/conifer_spruce/fixed.png",
+      "backing": "plants/conifer_spruce/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/conifer_spruce/clusters/leaf_0.png",
+          "position_artwork": [
+            58,
+            68
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/conifer_spruce/clusters/leaf_1.png",
+          "position_artwork": [
+            27,
+            113
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/conifer_spruce/clusters/leaf_2.png",
+          "position_artwork": [
+            120,
+            113
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/conifer_spruce/clusters/leaf_3.png",
+          "position_artwork": [
+            42,
+            155
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/conifer_spruce/clusters/leaf_4.png",
+          "position_artwork": [
+            105,
+            155
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        480,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "conifer_fir",
+      "family": "conifer",
+      "variant": "fir",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/conifer_fir/idle.png",
+      "sheet": "plants/conifer_fir/sheet.png",
+      "semantic_mask": "plants/conifer_fir/semantic_mask.png",
+      "occupied_rect_artwork": [
+        49,
+        48,
+        144,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/conifer_fir/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_fir/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/conifer_fir/fixed.png",
+      "backing": "plants/conifer_fir/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/conifer_fir/clusters/leaf_0.png",
+          "position_artwork": [
+            72,
+            55
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/conifer_fir/clusters/leaf_1.png",
+          "position_artwork": [
+            52,
+            103
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/conifer_fir/clusters/leaf_2.png",
+          "position_artwork": [
+            111,
+            103
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/conifer_fir/clusters/leaf_3.png",
+          "position_artwork": [
+            62,
+            149
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/conifer_fir/clusters/leaf_4.png",
+          "position_artwork": [
+            102,
+            149
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        480,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "conifer_old_pine",
+      "family": "conifer",
+      "variant": "old_pine",
+      "logical_size": [
+        96,
+        120
+      ],
+      "artwork_size": [
+        192,
+        240
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        116.0
+      ],
+      "root_anchor_artwork": [
+        96,
+        232
+      ],
+      "ground_rect_logical": [
+        36,
+        96,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 116.0,
+      "fixed_rows_from_artwork": 216,
+      "animated": true,
+      "animation_kind": "local_leaf_clusters",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/conifer_old_pine/idle.png",
+      "sheet": "plants/conifer_old_pine/sheet.png",
+      "semantic_mask": "plants/conifer_old_pine/semantic_mask.png",
+      "occupied_rect_artwork": [
+        21,
+        65,
+        171,
+        232
+      ],
+      "frames": [
+        {
+          "file": "plants/conifer_old_pine/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            768,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            960,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1152,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1344,
+            0,
+            192,
+            240
+          ]
+        },
+        {
+          "file": "plants/conifer_old_pine/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            1536,
+            0,
+            192,
+            240
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/conifer_old_pine/fixed.png",
+      "backing": "plants/conifer_old_pine/backing.png",
+      "clusters": [
+        {
+          "id": "leaf_0",
+          "file": "plants/conifer_old_pine/clusters/leaf_0.png",
+          "position_artwork": [
+            58,
+            71
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_1",
+          "file": "plants/conifer_old_pine/clusters/leaf_1.png",
+          "position_artwork": [
+            27,
+            115
+          ],
+          "phase_delay": 1
+        },
+        {
+          "id": "leaf_2",
+          "file": "plants/conifer_old_pine/clusters/leaf_2.png",
+          "position_artwork": [
+            120,
+            115
+          ],
+          "phase_delay": 2
+        },
+        {
+          "id": "leaf_3",
+          "file": "plants/conifer_old_pine/clusters/leaf_3.png",
+          "position_artwork": [
+            42,
+            156
+          ],
+          "phase_delay": 0
+        },
+        {
+          "id": "leaf_4",
+          "file": "plants/conifer_old_pine/clusters/leaf_4.png",
+          "position_artwork": [
+            105,
+            156
+          ],
+          "phase_delay": 1
+        }
+      ],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        480,
+        192,
+        240
+      ]
+    },
+    {
+      "id": "shrub_rounded",
+      "family": "shrub",
+      "variant": "rounded",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/shrub_rounded/idle.png",
+      "sheet": "plants/shrub_rounded/sheet.png",
+      "semantic_mask": "plants/shrub_rounded/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        9,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/shrub_rounded/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_rounded/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/shrub_rounded/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "shrub_irregular",
+      "family": "shrub",
+      "variant": "irregular",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/shrub_irregular/idle.png",
+      "sheet": "plants/shrub_irregular/sheet.png",
+      "semantic_mask": "plants/shrub_irregular/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        15,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/shrub_irregular/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_irregular/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/shrub_irregular/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        96,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "shrub_twiggy",
+      "family": "shrub",
+      "variant": "twiggy",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/shrub_twiggy/idle.png",
+      "sheet": "plants/shrub_twiggy/sheet.png",
+      "semantic_mask": "plants/shrub_twiggy/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        9,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/shrub_twiggy/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/shrub_twiggy/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/shrub_twiggy/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "fern_curled",
+      "family": "fern",
+      "variant": "curled",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/fern_curled/idle.png",
+      "sheet": "plants/fern_curled/sheet.png",
+      "semantic_mask": "plants/fern_curled/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        7,
+        45,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/fern_curled/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_curled/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/fern_curled/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        288,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "fern_splayed",
+      "family": "fern",
+      "variant": "splayed",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/fern_splayed/idle.png",
+      "sheet": "plants/fern_splayed/sheet.png",
+      "semantic_mask": "plants/fern_splayed/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        18,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/fern_splayed/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_splayed/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/fern_splayed/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "fern_upright",
+      "family": "fern",
+      "variant": "upright",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/fern_upright/idle.png",
+      "sheet": "plants/fern_upright/sheet.png",
+      "semantic_mask": "plants/fern_upright/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        7,
+        44,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/fern_upright/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/fern_upright/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/fern_upright/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        480,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "grass_sparse",
+      "family": "grass",
+      "variant": "sparse",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/grass_sparse/idle.png",
+      "sheet": "plants/grass_sparse/sheet.png",
+      "semantic_mask": "plants/grass_sparse/semantic_mask.png",
+      "occupied_rect_artwork": [
+        8,
+        19,
+        42,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/grass_sparse/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_sparse/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/grass_sparse/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Decorative assets only. Existing shared contact-responsive grass is unchanged; preserve its walk/run/occupied/recovery behavior during a future explicit migration.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "grass_splayed",
+      "family": "grass",
+      "variant": "splayed",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/grass_splayed/idle.png",
+      "sheet": "plants/grass_splayed/sheet.png",
+      "semantic_mask": "plants/grass_splayed/semantic_mask.png",
+      "occupied_rect_artwork": [
+        7,
+        23,
+        40,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/grass_splayed/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_splayed/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/grass_splayed/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Decorative assets only. Existing shared contact-responsive grass is unchanged; preserve its walk/run/occupied/recovery behavior during a future explicit migration.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        672,
+        720,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "grass_dense",
+      "family": "grass",
+      "variant": "dense",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/grass_dense/idle.png",
+      "sheet": "plants/grass_dense/sheet.png",
+      "semantic_mask": "plants/grass_dense/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        10,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/grass_dense/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/grass_dense/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/grass_dense/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Decorative assets only. Existing shared contact-responsive grass is unchanged; preserve its walk/run/occupied/recovery behavior during a future explicit migration.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "flowers_white",
+      "family": "flowers",
+      "variant": "white",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/flowers_white/idle.png",
+      "sheet": "plants/flowers_white/sheet.png",
+      "semantic_mask": "plants/flowers_white/semantic_mask.png",
+      "occupied_rect_artwork": [
+        3,
+        5,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/flowers_white/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_white/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/flowers_white/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        96,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "flowers_yellow",
+      "family": "flowers",
+      "variant": "yellow",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/flowers_yellow/idle.png",
+      "sheet": "plants/flowers_yellow/sheet.png",
+      "semantic_mask": "plants/flowers_yellow/semantic_mask.png",
+      "occupied_rect_artwork": [
+        3,
+        5,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/flowers_yellow/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_yellow/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/flowers_yellow/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "flowers_violet",
+      "family": "flowers",
+      "variant": "violet",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/flowers_violet/idle.png",
+      "sheet": "plants/flowers_violet/sheet.png",
+      "semantic_mask": "plants/flowers_violet/semantic_mask.png",
+      "occupied_rect_artwork": [
+        3,
+        5,
+        45,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/flowers_violet/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/flowers_violet/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/flowers_violet/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        288,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "groundcover_clover",
+      "family": "groundcover",
+      "variant": "clover",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/groundcover_clover/idle.png",
+      "sheet": "plants/groundcover_clover/sheet.png",
+      "semantic_mask": "plants/groundcover_clover/semantic_mask.png",
+      "occupied_rect_artwork": [
+        5,
+        19,
+        44,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/groundcover_clover/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_clover/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/groundcover_clover/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "groundcover_ivy",
+      "family": "groundcover",
+      "variant": "ivy",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/groundcover_ivy/idle.png",
+      "sheet": "plants/groundcover_ivy/sheet.png",
+      "semantic_mask": "plants/groundcover_ivy/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        22,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/groundcover_ivy/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_ivy/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/groundcover_ivy/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        480,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "groundcover_moss",
+      "family": "groundcover",
+      "variant": "moss",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/groundcover_moss/idle.png",
+      "sheet": "plants/groundcover_moss/sheet.png",
+      "semantic_mask": "plants/groundcover_moss/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        19,
+        44,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/groundcover_moss/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/groundcover_moss/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/groundcover_moss/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        816,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "tall_reeds_cattails",
+      "family": "tall_reeds",
+      "variant": "cattails",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "draw_anchor_logical": [
+        12,
+        46
+      ],
+      "root_anchor_artwork": [
+        24,
+        92
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 46,
+      "fixed_rows_from_artwork": 88,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/tall_reeds_cattails/idle.png",
+      "sheet": "plants/tall_reeds_cattails/sheet.png",
+      "semantic_mask": "plants/tall_reeds_cattails/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        37,
+        44,
+        93
+      ],
+      "frames": [
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_cattails/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/tall_reeds_cattails/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        672,
+        816,
+        48,
+        96
+      ]
+    },
+    {
+      "id": "tall_reeds_splayed",
+      "family": "tall_reeds",
+      "variant": "splayed",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "draw_anchor_logical": [
+        12,
+        46
+      ],
+      "root_anchor_artwork": [
+        24,
+        92
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 46,
+      "fixed_rows_from_artwork": 88,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/tall_reeds_splayed/idle.png",
+      "sheet": "plants/tall_reeds_splayed/sheet.png",
+      "semantic_mask": "plants/tall_reeds_splayed/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        48,
+        43,
+        93
+      ],
+      "frames": [
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_splayed/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/tall_reeds_splayed/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        912,
+        48,
+        96
+      ]
+    },
+    {
+      "id": "tall_reeds_dense",
+      "family": "tall_reeds",
+      "variant": "dense",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "draw_anchor_logical": [
+        12,
+        46
+      ],
+      "root_anchor_artwork": [
+        24,
+        92
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 46,
+      "fixed_rows_from_artwork": 88,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/tall_reeds_dense/idle.png",
+      "sheet": "plants/tall_reeds_dense/sheet.png",
+      "semantic_mask": "plants/tall_reeds_dense/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        48,
+        44,
+        93
+      ],
+      "frames": [
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/tall_reeds_dense/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/tall_reeds_dense/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        96,
+        912,
+        48,
+        96
+      ]
+    },
+    {
+      "id": "rushes_upright",
+      "family": "rushes",
+      "variant": "upright",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/rushes_upright/idle.png",
+      "sheet": "plants/rushes_upright/sheet.png",
+      "semantic_mask": "plants/rushes_upright/semantic_mask.png",
+      "occupied_rect_artwork": [
+        8,
+        3,
+        40,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/rushes_upright/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_upright/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/rushes_upright/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        912,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "rushes_splayed",
+      "family": "rushes",
+      "variant": "splayed",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/rushes_splayed/idle.png",
+      "sheet": "plants/rushes_splayed/sheet.png",
+      "semantic_mask": "plants/rushes_splayed/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        13,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/rushes_splayed/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_splayed/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/rushes_splayed/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        288,
+        912,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "rushes_sparse",
+      "family": "rushes",
+      "variant": "sparse",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/rushes_sparse/idle.png",
+      "sheet": "plants/rushes_sparse/sheet.png",
+      "semantic_mask": "plants/rushes_sparse/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        5,
+        46,
+        45
+      ],
+      "frames": [
+        {
+          "file": "plants/rushes_sparse/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            48
+          ]
+        },
+        {
+          "file": "plants/rushes_sparse/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/rushes_sparse/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        912,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "bank_flowers_white",
+      "family": "bank_flowers",
+      "variant": "white",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        44.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        88
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 44.0,
+      "fixed_rows_from_artwork": 80,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/bank_flowers_white/idle.png",
+      "sheet": "plants/bank_flowers_white/sheet.png",
+      "semantic_mask": "plants/bank_flowers_white/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        37,
+        46,
+        89
+      ],
+      "frames": [
+        {
+          "file": "plants/bank_flowers_white/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_white/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/bank_flowers_white/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        480,
+        912,
+        48,
+        96
+      ]
+    },
+    {
+      "id": "bank_flowers_yellow",
+      "family": "bank_flowers",
+      "variant": "yellow",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        44.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        88
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 44.0,
+      "fixed_rows_from_artwork": 80,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/bank_flowers_yellow/idle.png",
+      "sheet": "plants/bank_flowers_yellow/sheet.png",
+      "semantic_mask": "plants/bank_flowers_yellow/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        46,
+        46,
+        89
+      ],
+      "frames": [
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_yellow/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/bank_flowers_yellow/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        912,
+        48,
+        96
+      ]
+    },
+    {
+      "id": "bank_flowers_iris",
+      "family": "bank_flowers",
+      "variant": "iris",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_size": [
+        48,
+        96
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        44.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        88
+      ],
+      "ground_rect_logical": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 44.0,
+      "fixed_rows_from_artwork": 80,
+      "animated": true,
+      "animation_kind": "rooted_breeze",
+      "allowed_surfaces": [
+        "damp_bank",
+        "shallow_margin",
+        "marsh_ground"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/bank_flowers_iris/idle.png",
+      "sheet": "plants/bank_flowers_iris/sheet.png",
+      "semantic_mask": "plants/bank_flowers_iris/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        42,
+        45,
+        89
+      ],
+      "frames": [
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_00.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_01.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            48,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_02.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_03.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            144,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_04.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_05.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            240,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_06.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_07.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            336,
+            0,
+            48,
+            96
+          ]
+        },
+        {
+          "file": "plants/bank_flowers_iris/frames/frame_08.png",
+          "duration_ms": 600,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": "plants/bank_flowers_iris/fixed.png",
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": 5400,
+        "max_displacement_artwork": 1,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        672,
+        912,
+        48,
+        96
+      ]
+    },
+    {
+      "id": "boulder_rounded",
+      "family": "boulder",
+      "variant": "rounded",
+      "logical_size": [
+        48,
+        36
+      ],
+      "artwork_size": [
+        96,
+        72
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        32.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        64
+      ],
+      "ground_rect_logical": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 32.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/boulder_rounded/idle.png",
+      "sheet": "plants/boulder_rounded/sheet.png",
+      "semantic_mask": "plants/boulder_rounded/semantic_mask.png",
+      "occupied_rect_artwork": [
+        14,
+        4,
+        83,
+        64
+      ],
+      "frames": [
+        {
+          "file": "plants/boulder_rounded/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            72
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        1008,
+        96,
+        72
+      ]
+    },
+    {
+      "id": "boulder_angular",
+      "family": "boulder",
+      "variant": "angular",
+      "logical_size": [
+        48,
+        36
+      ],
+      "artwork_size": [
+        96,
+        72
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        32.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        64
+      ],
+      "ground_rect_logical": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 32.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/boulder_angular/idle.png",
+      "sheet": "plants/boulder_angular/sheet.png",
+      "semantic_mask": "plants/boulder_angular/semantic_mask.png",
+      "occupied_rect_artwork": [
+        15,
+        4,
+        82,
+        64
+      ],
+      "frames": [
+        {
+          "file": "plants/boulder_angular/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            72
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        96,
+        1008,
+        96,
+        72
+      ]
+    },
+    {
+      "id": "boulder_mossy",
+      "family": "boulder",
+      "variant": "mossy",
+      "logical_size": [
+        48,
+        36
+      ],
+      "artwork_size": [
+        96,
+        72
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        32.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        64
+      ],
+      "ground_rect_logical": [
+        4,
+        24,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 32.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/boulder_mossy/idle.png",
+      "sheet": "plants/boulder_mossy/sheet.png",
+      "semantic_mask": "plants/boulder_mossy/semantic_mask.png",
+      "occupied_rect_artwork": [
+        4,
+        6,
+        92,
+        64
+      ],
+      "frames": [
+        {
+          "file": "plants/boulder_mossy/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            72
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        1008,
+        96,
+        72
+      ]
+    },
+    {
+      "id": "rock_cluster_round",
+      "family": "rock_cluster",
+      "variant": "round",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/rock_cluster_round/idle.png",
+      "sheet": "plants/rock_cluster_round/sheet.png",
+      "semantic_mask": "plants/rock_cluster_round/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        12,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/rock_cluster_round/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        288,
+        1008,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "rock_cluster_angular",
+      "family": "rock_cluster",
+      "variant": "angular",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/rock_cluster_angular/idle.png",
+      "sheet": "plants/rock_cluster_angular/sheet.png",
+      "semantic_mask": "plants/rock_cluster_angular/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        17,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/rock_cluster_angular/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        1008,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "rock_cluster_mossy",
+      "family": "rock_cluster",
+      "variant": "mossy",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "rock",
+        "shore"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/rock_cluster_mossy/idle.png",
+      "sheet": "plants/rock_cluster_mossy/sheet.png",
+      "semantic_mask": "plants/rock_cluster_mossy/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        18,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/rock_cluster_mossy/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        480,
+        1008,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "fallen_log_cut",
+      "family": "fallen_log",
+      "variant": "cut",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/fallen_log_cut/idle.png",
+      "sheet": "plants/fallen_log_cut/sheet.png",
+      "semantic_mask": "plants/fallen_log_cut/semantic_mask.png",
+      "occupied_rect_artwork": [
+        9,
+        4,
+        87,
+        40
+      ],
+      "frames": [
+        {
+          "file": "plants/fallen_log_cut/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        1008,
+        96,
+        48
+      ]
+    },
+    {
+      "id": "fallen_log_weathered",
+      "family": "fallen_log",
+      "variant": "weathered",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/fallen_log_weathered/idle.png",
+      "sheet": "plants/fallen_log_weathered/sheet.png",
+      "semantic_mask": "plants/fallen_log_weathered/semantic_mask.png",
+      "occupied_rect_artwork": [
+        23,
+        4,
+        74,
+        40
+      ],
+      "frames": [
+        {
+          "file": "plants/fallen_log_weathered/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        672,
+        1008,
+        96,
+        48
+      ]
+    },
+    {
+      "id": "fallen_log_hollow",
+      "family": "fallen_log",
+      "variant": "hollow",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/fallen_log_hollow/idle.png",
+      "sheet": "plants/fallen_log_hollow/sheet.png",
+      "semantic_mask": "plants/fallen_log_hollow/semantic_mask.png",
+      "occupied_rect_artwork": [
+        14,
+        4,
+        83,
+        40
+      ],
+      "frames": [
+        {
+          "file": "plants/fallen_log_hollow/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        0,
+        1104,
+        96,
+        48
+      ]
+    },
+    {
+      "id": "stump_cut",
+      "family": "stump",
+      "variant": "cut",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/stump_cut/idle.png",
+      "sheet": "plants/stump_cut/sheet.png",
+      "semantic_mask": "plants/stump_cut/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        13,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/stump_cut/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        96,
+        1104,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "stump_split",
+      "family": "stump",
+      "variant": "split",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/stump_split/idle.png",
+      "sheet": "plants/stump_split/sheet.png",
+      "semantic_mask": "plants/stump_split/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        10,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/stump_split/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        192,
+        1104,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "stump_mossy",
+      "family": "stump",
+      "variant": "mossy",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        22.0
+      ],
+      "root_anchor_artwork": [
+        24,
+        44
+      ],
+      "ground_rect_logical": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "depth_baseline_logical": 22.0,
+      "fixed_rows_from_artwork": 40,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/stump_mossy/idle.png",
+      "sheet": "plants/stump_mossy/sheet.png",
+      "semantic_mask": "plants/stump_mossy/semantic_mask.png",
+      "occupied_rect_artwork": [
+        2,
+        12,
+        46,
+        44
+      ],
+      "frames": [
+        {
+          "file": "plants/stump_mossy/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            48,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        288,
+        1104,
+        48,
+        48
+      ]
+    },
+    {
+      "id": "exposed_roots_branching",
+      "family": "exposed_roots",
+      "variant": "branching",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/exposed_roots_branching/idle.png",
+      "sheet": "plants/exposed_roots_branching/sheet.png",
+      "semantic_mask": "plants/exposed_roots_branching/semantic_mask.png",
+      "occupied_rect_artwork": [
+        16,
+        4,
+        81,
+        40
+      ],
+      "frames": [
+        {
+          "file": "plants/exposed_roots_branching/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        384,
+        1104,
+        96,
+        48
+      ]
+    },
+    {
+      "id": "exposed_roots_twisted",
+      "family": "exposed_roots",
+      "variant": "twisted",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/exposed_roots_twisted/idle.png",
+      "sheet": "plants/exposed_roots_twisted/sheet.png",
+      "semantic_mask": "plants/exposed_roots_twisted/semantic_mask.png",
+      "occupied_rect_artwork": [
+        11,
+        4,
+        85,
+        40
+      ],
+      "frames": [
+        {
+          "file": "plants/exposed_roots_twisted/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        480,
+        1104,
+        96,
+        48
+      ]
+    },
+    {
+      "id": "exposed_roots_knotted",
+      "family": "exposed_roots",
+      "variant": "knotted",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_size": [
+        96,
+        48
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        20.0
+      ],
+      "root_anchor_artwork": [
+        48,
+        40
+      ],
+      "ground_rect_logical": [
+        4,
+        12,
+        40,
+        12
+      ],
+      "depth_baseline_logical": 20.0,
+      "fixed_rows_from_artwork": 0,
+      "animated": false,
+      "animation_kind": "static",
+      "allowed_surfaces": [
+        "grass",
+        "earth",
+        "woodland_floor"
+      ],
+      "collision": "not_registered; supporting rectangle is not an automatic collision mask",
+      "interaction_cues": false,
+      "idle": "plants/exposed_roots_knotted/idle.png",
+      "sheet": "plants/exposed_roots_knotted/sheet.png",
+      "semantic_mask": "plants/exposed_roots_knotted/semantic_mask.png",
+      "occupied_rect_artwork": [
+        13,
+        4,
+        84,
+        40
+      ],
+      "frames": [
+        {
+          "file": "plants/exposed_roots_knotted/frames/frame_00.png",
+          "duration_ms": null,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            48
+          ]
+        }
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "path_space": "pack_relative",
+      "fixed": null,
+      "backing": null,
+      "clusters": [],
+      "wind": {
+        "cycle_ms": null,
+        "max_displacement_artwork": 0,
+        "vertical_displacement_artwork": 0,
+        "whole_tree_moves": false,
+        "reduced_motion": "Use idle file; root and support stay fixed."
+      },
+      "contact_behavior": "Scenery; no runtime response or interaction registered.",
+      "atlas": "idle_atlas.png",
+      "atlas_rect_artwork": [
+        576,
+        1104,
+        96,
+        48
+      ]
+    }
+  ],
+  "animation": {
+    "frame_count": 9,
+    "duration_ms": 600,
+    "cycle_ms": 5400,
+    "offsets_artwork": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1,
+      0
+    ],
+    "whole_tree_moves": false,
+    "vertical_displacement_artwork": 0,
+    "root_displacement_artwork": 0,
+    "max_displacement_artwork": 1,
+    "reduced_motion": "Use explicit idle drawing; omit breeze."
+  },
+  "palette": "palette.json",
+  "recipe": "assets/source/terrain/vegetation_hd/recipe.json",
+  "activation": "Staged only. No maps, runtime renderer, collision, navigation or shared grass behavior changed.",
+  "integration_followup": "Preserve existing contact-responsive shared grass and all logical geometry; verify real movement, occlusion, pause/focus and reduced motion during explicit integration."
+}
