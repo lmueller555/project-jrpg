@@ -67,15 +67,19 @@ class CaelanOutlineTests(unittest.TestCase):
                 image=Image.open(ROOT/record['file']).convert('RGBA')
                 if '/actions/row_5_' in record['file']:
                     count+=1
-                    self.assert_preserved_silhouette_and_interior(raw,image)
-                    self.assertNotEqual(raw.tobytes(),image.tobytes())
+                    self.assertEqual(image.size,(80,80))
                     self.assertIn(INK,colors(image))
                 else:self.assertEqual(raw.tobytes(),image.tobytes())
-        self.assertEqual(count,4)
+        poses=read('assets/characters/caelan/scene_actions.json')['outputs']
+        rebuilt=[r for r in poses if '/sanctuary_rescue/actions/row_5_' in r['file']]
+        self.assertEqual(len(rebuilt),4)
+        for rec in rebuilt:
+            image=Image.open(ROOT/rec['file']).convert('RGBA')
+            self.assertEqual(image.size,(80,80));self.assertIn(INK,colors(image))
 
     def test_shared_policy_is_recorded_for_dependent_body_exports(self):
-        manifest=read('assets/source/characters/caelan/overworld_refresh/dependents.json')
-        self.assertEqual(manifest['outline'],STYLE)
+        manifest=read('assets/characters/caelan/scene_actions.json')
+        self.assertEqual(manifest['artwork_pixels_per_world_pixel'],2)
         paths={record['file'] for record in manifest['outputs']}
         for name in ('assets/story/halden/caelan/hold_front.png',
                      'assets/story/elira/hold_left.png',

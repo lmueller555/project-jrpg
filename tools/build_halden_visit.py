@@ -92,7 +92,7 @@ def build():
     for direction in ('front', 'left', 'right', 'back'):
         base = Image.open(ROOT/f'assets/characters/npcs/male_01/idle_{direction}.png').convert('RGBA')
         save(Path(f'idle_{direction}.png'), miller(base, direction))
-        for character in ('caelan', 'tomas'):
+        for character in ('tomas',):
             idle = Image.open(ROOT/f'assets/characters/{character}/idle_{direction}.png').convert('RGBA')
             save(Path(f'{character}/hold_{direction}.png'), carry(idle, direction, bag))
             folder = ROOT/f'assets/characters/{character}/walk_{direction}'
@@ -113,4 +113,7 @@ def build():
         'directions': ['front', 'left', 'right', 'back']})
 
 
-if __name__ == '__main__':build()
+if __name__ == '__main__':
+    build()
+    from export_caelan_scene_actions_hd import build as build_caelan
+    build_caelan()

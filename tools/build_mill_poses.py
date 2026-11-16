@@ -4,8 +4,7 @@ except ModuleNotFoundError:
     from caelan_reference import open_image
 """Build the mill's modest successful spell and grounded cooperative poses.
 
-Approved source bodies keep their ordinary registration. Caelan's forearm uses
-his reviewed casting study. Mira's far arm rotates about a stationary shoulder;
+Mira's retained bank keeps its ordinary registration. Her far arm rotates about a stationary shoulder;
 her head, hips, legs and boots are never shifted or redrawn.
 """
 from pathlib import Path
@@ -13,65 +12,12 @@ import hashlib
 import json
 import math
 from PIL import Image, ImageDraw
-from build_venn_magicks import native_layers
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'assets/story/mill/poses'
 SIZE = (40, 48)
 OFFSET = (8, 8)
 ANCHOR = (20, 38)
-LAYERS = ['body', 'casting_arm', 'energy']
-TIMELINE = [
-    ('raise_hand', 650, [(90, 0), (65, 0), (40, 0), (15, 0), (-14, 0)]),
-    ('move_water', 1200, [(-14, 1), (-14, 2), (-14, 1), (-14, 1), (-14, 1), (-14, 0)]),
-    ('recover', 650, [(-14, 0), (15, 0), (40, 0), (65, 0), (90, 0)]),
-]
-
-
-def padded(image):
-    canvas = Image.new('RGBA', SIZE)
-    canvas.alpha_composite(image, OFFSET)
-    return canvas
-
-
-def build_caelan():
-    source = ROOT/'assets/characters/caelan/idle_right.png'
-    idle = open_image(source).convert('RGBA')
-    idle.save(OUT/'source_body.png')
-    atlas_size = (max(len(frames) for _, _, frames in TIMELINE)*40, len(TIMELINE)*48)
-    atlas = Image.new('RGBA', atlas_size)
-    layers = {name: Image.new('RGBA', atlas_size) for name in LAYERS}
-    animations = {}
-    for row, (name, duration, specs) in enumerate(TIMELINE):
-        records = []
-        for column, (angle, energy) in enumerate(specs):
-            parts, joints = native_layers(idle, angle, energy)
-            native = Image.new('RGBA', (24, 36))
-            for layer in LAYERS:native.alpha_composite(parts[layer])
-            assert native.crop((0, 0, 24, 14)).tobytes() == idle.crop((0, 0, 24, 14)).tobytes()
-            assert native.crop((0, 25, 24, 36)).tobytes() == idle.crop((0, 25, 24, 36)).tobytes()
-            if angle == 90:assert native.tobytes() == idle.tobytes()
-            rect = [column*40, row*48, 40, 48]
-            atlas.alpha_composite(padded(native), rect[:2])
-            for layer in LAYERS:layers[layer].alpha_composite(padded(parts[layer]), rect[:2])
-            records.append({'rect': rect, 'angle_degrees': angle, 'energy_level': energy,
-                            'casting_hand': [round(joints['wrist'][0])+8, round(joints['wrist'][1])+8],
-                            'joints': {'casting': [[x+8, y+8] for x, y in joints.values()]}})
-        animations[name] = {'duration_ms': duration, 'frames': records}
-    atlas.save(OUT/'poses.png')
-    for name, layer in layers.items():layer.save(OUT/(name+'.png'))
-    (OUT/'animation.json').write_text(json.dumps({
-        'canvas': list(SIZE), 'anchor': list(ANCHOR), 'source_canvas': [24, 36],
-        'source_offset': list(OFFSET), 'source_body': 'source_body.png',
-        'source_idle_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
-        'layer_order': LAYERS, 'arm_lengths': [4, 4],
-        'preserved_source_regions': {'head': [0, 0, 24, 14], 'lower_body': [0, 25, 24, 36]},
-        'outcome': 'success', 'sequence': [name for name, _, _ in TIMELINE],
-        'animations': animations,
-        'effect': 'A small controlled movement of still water; no sustained force against a current.',
-    }, indent=2)+'\n')
-
-
 def arm_joints(wrist):
     shoulder = (13., 17.)
     dx, dy = wrist[0]-shoulder[0], wrist[1]-shoulder[1]
@@ -155,7 +101,9 @@ def build_mira():
 
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
-    build_caelan();build_mira()
+    build_mira()
+    from export_caelan_scene_actions_hd import build as build_caelan
+    build_caelan()
 
 
 if __name__ == '__main__':build()

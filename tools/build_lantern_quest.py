@@ -154,12 +154,7 @@ def working_body(name, wrist):
         for y in range(21, 26):
             for x in range(12, 15):body.putpixel((x, y), (0, 0, 0, 0))
         sleeve = '#cf8099';skin = '#edb57d';head_bottom = 16;lower_top = 27
-    else:
-        # Caelan reaches with the far arm: his near hanging sleeve remains
-        # untouched. Its native shoulder at [14,17] reaches the table with
-        # ordinary arm lengths; moving the near shoulder would stretch it.
-        shoulder = (14., 17.);lengths = (4.5, 4.5);bend = 1
-        sleeve = '#fbeed0';skin = '#e8c49d';head_bottom = 14;lower_top = 25
+    else:raise ValueError('Caelan uses the complete HD scene exporter; supported retained actors: Liam/Mira')
     points = joints(shoulder, wrist, *lengths, bend)
     rounded = [tuple(round(v) for v in p) for p in points]
     d = ImageDraw.Draw(arm)
@@ -185,9 +180,7 @@ def build_poses(name):
         specs = {'work': work_wrists, 'lift': lift_wrists}
     elif name == 'mira':
         specs = {'work': [(12., 24.), (9., 22.), (6., 18.), (6., 18.), (9., 22.)]}
-    else:
-        specs = {'work': [(16., 23.), (19., 20.), (22., 18.), (22., 18.), (19., 20.)],
-                 'support': [(16., 23.), (19., 22.), (21., 21.), (21., 21.)]}
+    else:raise ValueError('Use export_caelan_scene_actions_hd.py for Caelan')
     width = max(map(len, specs.values()))*SIZE[0]
     height = len(specs)*SIZE[1]
     atlas = Image.new('RGBA', (width, height))
@@ -224,19 +217,18 @@ def build_poses(name):
         'source_idle': source_path.relative_to(ROOT).as_posix(),
         'source_sha256': hashlib.sha256(source_path.read_bytes()).hexdigest(),
         'sheet': sheet_path, 'actions': actions, 'layers': layer_paths,
-        'arm_lengths': [3.2, 3.2] if name == 'liam' else [4., 4.] if name == 'mira' else [4.5, 4.5],
+        'arm_lengths': [3.2, 3.2] if name == 'liam' else [4., 4.],
         'head_pixels_preserved_above_y': head_bottom, 'lower_body_preserved_from_y': lower_top,
         'facing': 'left' if name == 'mira' else 'right',
-        'world_work_hand': {'liam': [652, 489], 'mira': [676, 488], 'caelan': [636, 488]}[name],
-        **({'world_support_hand': [649, 505], 'work_station': [626, 500],
-            'support_station': [640, 514], 'working_arm': 'far'} if name == 'caelan' else {}),
+        'world_work_hand': {'liam': [652, 489], 'mira': [676, 488]}[name],
         'frame_handle': [5, 1], 'lift_height_pixels': 2 if name == 'liam' else 0,
     })
 
 
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
-    poses = {name: build_poses(name) for name in ('liam', 'mira', 'caelan')}
+    poses = {name: build_poses(name) for name in ('liam', 'mira')}
+    poses['caelan'] = 'assets/story/lantern/poses/caelan.json'
     table_path = save('props/table.png', table())
     frame_path = save('props/frame.png', frame())
     states = {state: save(f'props/{state}.png', craft_surface(state))
@@ -272,4 +264,7 @@ def build():
     print('Built lantern props, registered work/lift poses, and quest stations.')
 
 
-if __name__ == '__main__':build()
+if __name__ == '__main__':
+    build()
+    from export_caelan_scene_actions_hd import build as build_caelan
+    build_caelan()

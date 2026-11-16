@@ -2,7 +2,7 @@
 
 No body parts are stretched or interpolated. Retained atlases supply
 all joint changes. Source alpha is hardened before nearest-neighbour reduction.
-Caelan's row receives the shared native contour pass after registration.
+Caelan's rebuilt 2× row is supplied by its independent complete-drawing exporter.
 """
 from __future__ import annotations
 import argparse
@@ -17,7 +17,7 @@ from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 from tools.build_mira_combat import _main_component
-from tools.caelan_outline import apply_outline, STYLE
+from tools.caelan_outline import STYLE
 SOURCE=ROOT/'assets/source/story/sanctuary_rescue'
 BASE='assets/story/sanctuary_rescue'
 DIRECTIONS=('front','back','left','right')
@@ -41,13 +41,13 @@ def products():
         x=20-round(body.width/2);y=39-body.height
         if x<0 or y<0 or x+body.width>40:raise ValueError(('Rescue art clipping',name,row,col,body.size))
         image=Image.new('RGBA',(40,40));image.alpha_composite(body,(x,y))
-        if name=='actions_authored.png' and row==5:image=apply_outline(image)
         registration.append(dict(file=path,source=name,source_rect=list(rect),source_bounds=list(bounds),scale=scale,destination=[x,y],canvas=[40,40],draw_anchor=ANCHOR))
         return export(path,image)
     action=[]
     scales=[34/223,34/223,34/223,34/221,34/224,34/229]
-    for row in range(6):
+    for row in range(5):
         action.append([authored('actions_authored.png',row,col,6,scales[row],f'{BASE}/actions/row_{row}_{col}.png') for col in range(4)])
+    action.append([f'{BASE}/actions/row_5_{col}.png' for col in range(4)])
     def animation(files,duration=260,loop=False):
         return dict(frames=[dict(file=path,duration_ms=duration) for path in files],anchor=ANCHOR,loop=loop)
     def standard(key):
@@ -82,7 +82,7 @@ def products():
     actors['worker']['poses']={'pinned':animation(action[0][:2],500,True),'seated':animation([action[0][3]],1000),'rise':animation(action[1],300),'supported':animation([action[1][3]],1000)}
     actors['lucan']['poses']={'brace':animation(action[3][:2],350),'lift':animation(action[3],650)}
     actors['mira']['poses']={'kneel':animation([action[4][0]],1000),'tool':animation(action[4],650),'treat':animation(action[4]+list(reversed(action[4])),400)}
-    actors['caelan']['poses']={'assist':animation(action[5],320)}
+    actors['caelan']['poses']={'assist':{**animation(action[5],320),'artwork_pixels_per_world_pixel':2}}
     slab='assets/terrain/limestone_cave/geology/modules/slab/fallen/0.png'
     tool='assets/story/mill/poses/mira_tool.png'
     linen='assets/story/sanctuary_arrival/performance/linen.png'
@@ -97,6 +97,8 @@ def products():
         registration='assets/source/story/sanctuary_rescue/registration.json')
     result[BASE+'/art.json']=(json.dumps(manifest,indent=2)+'\n').encode()
     result['assets/source/story/sanctuary_rescue/registration.json']=(json.dumps(dict(version=1,sources=sources,frames=registration),indent=2)+'\n').encode()
+    from tools.export_caelan_scene_actions_hd import products as hd_products
+    result.update({path:raw for path,raw in hd_products().items() if path.startswith(BASE+'/')})
     return result
 
 

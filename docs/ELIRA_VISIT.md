@@ -54,7 +54,10 @@ start with the lantern on the shelf, completed visits put it on the table. New
 Game resets the shelf, supplies and local progress. Completed visits use a short
 follow-up line and do not replay rewards, handoffs or the memorial conversation.
 
-`tools/build_elira_visit.py` rebuilds the costume and registered poses.
+`tools/build_elira_visit.py` rebuilds Elira’s retained costume and invokes
+`tools/export_caelan_scene_actions_hd.py` for Caelan’s complete 2× scene poses.
+His 40×64 logical action canvases and [20,54] draw anchors remain unchanged;
+the artwork files are now 80×128. Left/right poses preserve costume asymmetry.
 `tools/export_dialogue_portraits.py` also exports Elira's portrait.
 `tests/test_elira_visit.py` covers real doors/movement/input, exact shelf contact
 pixels, item consumption, interruption/reload boundaries, pause, prerequisite

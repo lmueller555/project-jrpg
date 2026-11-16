@@ -6,7 +6,7 @@ pickup starts again at the clean cups, while a committed placement stays visible
 Ordinary approach uses the registered travel bank; cups retain their existing
 current HD travel with the existing logical grip guides and household poses.
 """
-from rendering import flip as render_flip
+from caelan_scene_art import image as scene_image
 from collections import deque
 
 import pygame
@@ -34,13 +34,9 @@ class SanctuaryReturn:
         self._body_anchor = tuple(self.dining.data['player_draw_anchor'])
         self._carry_walks = game.player.walks
         self._household_anchor = (self._body_anchor[0]+8, self._body_anchor[1]+24)
-        self._hands = {d: self.dining.image(EMPTY_HANDS.format(d))
+        self._hands = {d: scene_image(self.dining,EMPTY_HANDS.format(d))
                        for d in ('front', 'back', 'left', 'right')}
-        # The old household give_left pose extends its far arm backwards.
-        # Mirror the existing right-facing pose at draw time to keep a carried
-        # cup in front of Caelan when he turns left, without changing a limb.
-        self._hands['left'] = render_flip(self._hands['right'], True, False)
-        self._reaches = [self.dining.image(f'assets/story/elira/reach_{i}.png') for i in range(3)]
+        self._reaches = [scene_image(self.dining,f'assets/story/elira/reach_{i}.png') for i in range(3)]
         self.surface_props = []
         for kind, origin in (('source', SOURCE_CUP), ('table', TABLE_CUP)):
             for i in range(2):

@@ -3,6 +3,7 @@
 Persistent facts are separate from short gestures. An interrupted lift resumes
 at its safe source; stored sacks and the medicine receipt are never replayed.
 """
+from caelan_scene_art import image as scene_image
 from collections import deque
 import heapq
 import itertools
@@ -315,7 +316,7 @@ class HaldenVisit:
 
     def _pose(self, actor, character, kind, direction, index=None):
         suffix = '' if index is None else '_'+str(index)
-        actor.story_sprite = self.home.image(ART+f'{character}/{kind}_{direction}{suffix}.png')
+        actor.story_sprite = scene_image(self.home,ART+f'{character}/{kind}_{direction}{suffix}.png')
         actor.story_draw_anchor = (16, 34)
         if actor is self.game.player:self._player_pose = True
         else:self._tomas_pose = True
@@ -335,6 +336,22 @@ class HaldenVisit:
     def _update_player(self, dt):
         player = self.game.player
         if self.action:
+            if self.action != 'medicine' and not self.contact:
+                kind,i = self.action
+                source = SOURCES[i] if kind == 'lift' else STORAGE[i]
+                goal = pygame.Vector2(source[0],source[1]+(18 if kind=='lift' else 22))
+                delta = goal-player.position
+                if delta.length()>.01:
+                    self._clear_player_pose()
+                    player.update(delta,min(dt,delta.length()/72),self.home,False)
+                    if not player.moving:
+                        # A newly blocked station must not trap the player in
+                        # an unfinishable action; leave ownership untouched.
+                        self.action=None;self.action_time=0.
+                        if self.carried is not None:
+                            self._pose(player,'caelan','hold',player.facing)
+                    return
+                player.facing='back';player.moving=False
             self.action_time += dt
             if self.action == 'medicine':
                 if self.action_time >= .4 and not self.contact:
@@ -351,9 +368,9 @@ class HaldenVisit:
                 if kind == 'lift':self.carried = i
                 else:self.stored.add(i);self.carried = None
                 self._save()
-            if kind == 'lift' and self.contact or kind == 'store' and not self.contact:
-                self._pose(player, 'caelan', 'lift', 'back', frame if kind == 'lift' else 3-frame)
-            elif kind == 'store':self._clear_player_pose()
+            # Complete empty-hand crouches precede pickup; held keys precede
+            # placement. Ownership changes once at .36, never before the action.
+            self._pose(player, 'caelan', 'lift', 'back', frame if kind == 'lift' else 3-frame)
             if self.action_time >= .72:
                 self.action = None;self._clear_player_pose();self._save()
         if self.carried is not None and self.action is None:

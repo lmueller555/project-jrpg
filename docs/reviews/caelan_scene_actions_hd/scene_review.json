@@ -1,0 +1,485 @@
+{
+  "method": "Staged registered production scene poses with World.draw, collision/furniture unchanged. This is visual evidence, not a complete gameplay replay. Lifecycle and transfer checks live in focused tests.",
+  "frames": [
+    {
+      "label": "caelan_sit_0",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_sit_1",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_sit_2",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_sit_3",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_eat_0",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_eat_1",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_eat_2",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_eat_3",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_seated_cup_0",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_seated_cup_1",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_seated_cup_2",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "caelan_seated_cup_3",
+      "scene": "sanctuary_dining",
+      "position": [
+        138,
+        200
+      ],
+      "camera": [
+        -24,
+        16
+      ],
+      "logical_sprite_size": [
+        24,
+        36
+      ],
+      "native_sprite_size": [
+        48,
+        72
+      ]
+    },
+    {
+      "label": "sack_lift_0",
+      "scene": "halden",
+      "position": [
+        104,
+        292
+      ],
+      "camera": [
+        -60,
+        16
+      ],
+      "logical_sprite_size": [
+        32,
+        40
+      ],
+      "native_sprite_size": [
+        64,
+        80
+      ]
+    },
+    {
+      "label": "sack_lift_1",
+      "scene": "halden",
+      "position": [
+        104,
+        292
+      ],
+      "camera": [
+        -60,
+        16
+      ],
+      "logical_sprite_size": [
+        32,
+        40
+      ],
+      "native_sprite_size": [
+        64,
+        80
+      ]
+    },
+    {
+      "label": "sack_lift_2",
+      "scene": "halden",
+      "position": [
+        104,
+        292
+      ],
+      "camera": [
+        -60,
+        16
+      ],
+      "logical_sprite_size": [
+        32,
+        40
+      ],
+      "native_sprite_size": [
+        64,
+        80
+      ]
+    },
+    {
+      "label": "sack_lift_3",
+      "scene": "halden",
+      "position": [
+        104,
+        292
+      ],
+      "camera": [
+        -60,
+        16
+      ],
+      "logical_sprite_size": [
+        32,
+        40
+      ],
+      "native_sprite_size": [
+        64,
+        80
+      ]
+    },
+    {
+      "label": "gate_work_0",
+      "scene": "eldenmere.playable",
+      "position": [
+        1428,
+        670
+      ],
+      "camera": [
+        1056,
+        510
+      ],
+      "logical_sprite_size": [
+        40,
+        48
+      ],
+      "native_sprite_size": [
+        80,
+        96
+      ]
+    },
+    {
+      "label": "gate_work_1",
+      "scene": "eldenmere.playable",
+      "position": [
+        1428,
+        670
+      ],
+      "camera": [
+        1056,
+        510
+      ],
+      "logical_sprite_size": [
+        40,
+        48
+      ],
+      "native_sprite_size": [
+        80,
+        96
+      ]
+    },
+    {
+      "label": "gate_work_2",
+      "scene": "eldenmere.playable",
+      "position": [
+        1428,
+        670
+      ],
+      "camera": [
+        1056,
+        510
+      ],
+      "logical_sprite_size": [
+        40,
+        48
+      ],
+      "native_sprite_size": [
+        80,
+        96
+      ]
+    },
+    {
+      "label": "gate_work_3",
+      "scene": "eldenmere.playable",
+      "position": [
+        1428,
+        670
+      ],
+      "camera": [
+        1056,
+        510
+      ],
+      "logical_sprite_size": [
+        40,
+        48
+      ],
+      "native_sprite_size": [
+        80,
+        96
+      ]
+    },
+    {
+      "label": "cave_assist_0",
+      "scene": "sanctuary_cave",
+      "position": [
+        1460,
+        1520
+      ],
+      "camera": [
+        1220,
+        1360
+      ],
+      "logical_sprite_size": [
+        40,
+        40
+      ],
+      "native_sprite_size": [
+        80,
+        80
+      ]
+    },
+    {
+      "label": "cave_assist_1",
+      "scene": "sanctuary_cave",
+      "position": [
+        1460,
+        1520
+      ],
+      "camera": [
+        1220,
+        1360
+      ],
+      "logical_sprite_size": [
+        40,
+        40
+      ],
+      "native_sprite_size": [
+        80,
+        80
+      ]
+    },
+    {
+      "label": "cave_assist_2",
+      "scene": "sanctuary_cave",
+      "position": [
+        1460,
+        1520
+      ],
+      "camera": [
+        1220,
+        1360
+      ],
+      "logical_sprite_size": [
+        40,
+        40
+      ],
+      "native_sprite_size": [
+        80,
+        80
+      ]
+    },
+    {
+      "label": "cave_assist_3",
+      "scene": "sanctuary_cave",
+      "position": [
+        1460,
+        1520
+      ],
+      "camera": [
+        1220,
+        1360
+      ],
+      "logical_sprite_size": [
+        40,
+        40
+      ],
+      "native_sprite_size": [
+        80,
+        80
+      ]
+    }
+  ]
+}

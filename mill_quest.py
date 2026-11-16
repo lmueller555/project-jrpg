@@ -4,6 +4,7 @@ Durable facts never contain animation clocks or partially read dialogue. One
 existing Mira actor accompanies the player; repair props and the wheel read the
 same restored milestone.
 """
+from caelan_scene_art import frame as scene_frame
 from rendering import draw as render_draw
 from collections import deque
 import json
@@ -62,7 +63,7 @@ class MillQuest:
         self._aftermath_recovered = False
         self.cast = read('poses/animation.json')
         sheet = self.town.image(ART+'poses/poses.png')
-        self.cast_poses = {name: [sheet.subsurface(f['rect']).copy() for f in rec['frames']]
+        self.cast_poses = {name: [scene_frame(sheet,f['rect'],self.cast) for f in rec['frames']]
                            for name, rec in self.cast['animations'].items()}
         self._player_route = None
         self._gearblade_focus = None

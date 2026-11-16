@@ -106,8 +106,10 @@ old saves, pause and the family's closing conversation.
 
 `venn_magicks.py` loads the explicit pose sequence from
 `assets/story/venn/magicks/`. Rebuild it with
-`python tools/build_venn_magicks.py` (Pillow). Its source layers are body,
-casting arm and energy; `source_body.png` preserves the original idle reference.
+`python tools/export_caelan_scene_actions_hd.py` (Pillow). Complete drawn
+Caelan bodies and separate retained energy export at 2× artwork density. Atlas
+rectangles use artwork coordinates; anchors and casting contacts remain logical.
+The obsolete detached casting-arm and idle-reference layers are removed.
 The old generic casting frames, successful held-water effect and magick-specific
 gate-opening atlas are removed. The general Venn builder invokes the new builder
 and does not regenerate those superseded assets.

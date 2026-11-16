@@ -135,10 +135,12 @@ Settings menu and the title use `audio_settings.py` and `saves/settings.json`.
 The script and staging coordinates live in `assets/story/opening.json`. The
 seated poses, sleep head, plate and reach frames live beneath
 `assets/story/sanctuary_opening/poses`, with source hashes and registration notes.
-`tools/build_sanctuary_opening_poses.py` rebuilds these native pixel exports from
-the existing approved character art. Each short action has four native 24×36
-key poses, registered display anchors and timing. The original character PNGs
-are unchanged.
+`tools/build_sanctuary_opening_poses.py` restores retained Tomas/prop inputs and
+invokes `tools/export_caelan_scene_actions_hd.py` for Caelan. His complete drawn
+keys are 48×72 artwork pixels with the existing 24×36 logical size, registered
+display anchors and timing. Travel approvals remain unchanged. The old body-part
+assembly has been removed; appearance and interaction rules remain centralized
+in the global visual and object-interaction standards.
 
 ## Saved progress
 

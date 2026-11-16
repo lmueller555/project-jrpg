@@ -242,10 +242,8 @@ class MillQuestTests(unittest.TestCase):
 
     def test_spell_preserves_body_and_visibly_clears_only_the_small_recess(self):
         self.prepare();self.at('spell',True)
-        idle=self.g.town.image('assets/story/mill/poses/source_body.png')
+        idle=self.g.player.idles['right']
         idle_bounds=idle.get_bounding_rect()
-        expected_head=pygame.image.tobytes(idle.subsurface((0,0,24,14)),'RGBA')
-        expected_legs=pygame.image.tobytes(idle.subsurface((0,25,24,11)),'RGBA')
         def recess():
             image=pygame.Surface((8,8))
             self.g.world.draw(image,(504,324),self.g.player,self.g.elapsed_ms,include_ui=False)
@@ -272,8 +270,9 @@ class MillQuestTests(unittest.TestCase):
                     support=art.subsurface((x-8,y-3,16,8))
                     self.assertGreater(pygame.mask.from_surface(support).count(),0)
                 else:
-                    self.assertEqual(pygame.image.tobytes(art.subsurface((x-12,y-30,24,14)),'RGBA'),expected_head)
-                    self.assertEqual(pygame.image.tobytes(art.subsurface((x-12,y-5,24,11)),'RGBA'),expected_legs)
+                    self.assertEqual(art.get_size(),(40,48))
+                    self.assertEqual(art.native.get_size(),(80,96))
+                    self.assertGreater(pygame.mask.from_surface(art.subsurface((x-8,y-3,16,8))).count(),0)
                 checked+=1
         self.assertTrue(self.c.spell_done);self.assertGreater(checked,10)
         self.assertNotEqual(recess(),before)

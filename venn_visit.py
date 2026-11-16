@@ -1,4 +1,5 @@
 """The Venn delivery, two inspections and a failed spell attempt and a practical gate repair."""
+from caelan_scene_art import image as scene_image
 import json
 from pathlib import Path
 
@@ -314,7 +315,7 @@ class VennVisit:
         self._pose_owned = False
 
     def _pose(self, name):
-        self.game.player.story_sprite = self.town.image(ART+'caelan/'+name+'.png')
+        self.game.player.story_sprite = scene_image(self.town,ART+'caelan/'+name+'.png')
         self.game.player.story_draw_anchor = (20, 38);self._pose_owned = True
 
     def _walk(self, goal, seconds):

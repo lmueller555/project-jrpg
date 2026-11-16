@@ -24,7 +24,8 @@ native idle reference. The builder checks head and lower-body preservation and
 exact idle poses at the start and finish. The held-water and magick gate-opening
 assets from the superseded successful-spell sequence are removed.
 
-Rebuild cast art: `python tools/build_venn_magicks.py` (Pillow).
+Historical captures below show the earlier bank. Current cast art rebuilds with
+`python tools/export_caelan_scene_actions_hd.py` (Pillow).
 Rebuild tool poses and gate art: `python tools/build_venn_visit.py` (Pillow).
 Capture: `python tools/capture_venn_magicks.py` (Pygame and Pillow).
 Tests: `python -m unittest discover -s tests -p 'test_venn*.py' -v`.

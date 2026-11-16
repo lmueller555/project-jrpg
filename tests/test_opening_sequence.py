@@ -67,7 +67,13 @@ class World:
                         for actor in self.npcs))
 
     def image(self, path):
-        surface = pygame.Surface((24, 36), pygame.SRCALPHA)
+        from pathlib import Path
+        from PIL import Image
+        source = Path(__file__).resolve().parents[1]/path
+        size = (24,36)
+        if source.exists():
+            with Image.open(source) as artwork:size=artwork.size
+        surface = pygame.Surface(size, pygame.SRCALPHA)
         surface.fill('#bc8f70')
         return surface
 

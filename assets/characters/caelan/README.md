@@ -20,18 +20,25 @@ blocking and gait/direction changes retain the existing clock-reset behavior.
 
 The rescue display actor inherits current HD idles and 35 ms walking frames.
 Cup delivery uses the current HD travel banks with bounded four-phase logical
-hand guides; it no longer loads a second legacy walking bank. Unique household,
-carrying, casting, rescue/support, seated and combat poses retain their own
-artwork, prop cues, densities and anchors. They have no replacements among the
-new locomotion drawings and are not superseded travel banks.
+hand guides; it no longer loads a second legacy walking bank.
+
+[scene_actions.json](scene_actions.json) registers the rebuilt household, seated,
+carrying, handover, workshop/casting, lantern and cave-assistance poses. These
+complete drawn bodies also use density 2 with their existing logical anchors and
+prop cues. `caelan_scene_art.py` explicitly normalizes them at scene-bank
+boundaries; raw `World.image` loading remains unchanged. Rebuild with
+`python tools/export_caelan_scene_actions_hd.py [--check]`. Separately authored
+combat and larger cinematic banks retain their own projection and artwork.
 
 Superseded 1× idle/walk/run PNGs, strips, manifests, unused old limb sources,
 travel-only previews and obsolete exporters were removed. Git history retains
 those versions. [retired_travel.json](retired_travel.json) records deleted paths,
 hashes and intentional retirements from preservation contracts; every current HD
-sprite remains protected. Source atlases and old prop layers still needed by
-unique scene-action recipes remain source inputs, not selectable travel banks.
-The old 1× travel exporter cannot recreate retired banks.
+sprite remains protected. Scene retirement is recorded separately in
+`assets/source/characters/caelan/scene_actions_hd/retired.json`: the old body-part
+assembly, scene/travel masters and blank arm layers are removed. Needed prop/FX
+inputs were extracted into the new source bank before removing old bodies.
+The retired exporters cannot recreate obsolete banks.
 
 Old terrain and companion review recipes use `tools.caelan_reference.open_image`
 to sample current HD references explicitly into their existing logical review
@@ -44,3 +51,6 @@ cover actual Player movement in town, hall and cave, gait transitions, foregroun
 occlusion and cup delivery with temporary saves. Stylized foot sliding remains
 an observation, not an integration failure or an invitation to change gameplay
 speed or distort approved anatomy.
+
+[Scene-action review and validation](../../../docs/reviews/caelan_scene_actions_hd/README.md)
+contains native scene captures, short action previews and lifecycle coverage.
