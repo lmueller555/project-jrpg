@@ -2361,66 +2361,19 @@
     "portal-first facade strips",
     "mill baked service fence"
   ],
-  "native_material_source": {
-    "file": "assets/source/terrain/eldenmere/exteriors_hd/cottages_authored.png",
-    "sha256": "b0de4f541a3887ead4667510f6b7f118a760ba3204367cd9456ef2a95fe2d858",
-    "isolated_shingle_rectangles": [
-      [
-        127,
-        433,
-        151,
-        449
-      ],
-      [
-        154,
-        434,
-        178,
-        450
-      ],
-      [
-        183,
-        434,
-        207,
-        450
-      ],
-      [
-        211,
-        434,
-        235,
-        450
-      ],
-      [
-        113,
-        452,
-        137,
-        468
-      ],
-      [
-        142,
-        452,
-        166,
-        468
-      ],
-      [
-        173,
-        452,
-        197,
-        468
-      ],
-      [
-        202,
-        452,
-        226,
-        468
-      ],
-      [
-        233,
-        452,
-        257,
-        468
-      ]
+  "roof_style_reference": {
+    "historical_commit": "7cebbd6",
+    "assets": [
+      "assets/terrain/eldenmere/cottage/closed.png",
+      "assets/terrain/eldenmere/workshop/closed.png",
+      "assets/terrain/eldenmere/watermill/building.png",
+      "assets/terrain/eldenmere/school/exterior/closed.png",
+      "assets/terrain/eldenmere/sanctuary/closed.png"
     ],
-    "sample": "uniform 24x16 to 21x14; material values mapped to existing roof ramp"
+    "construction": "native 2x authored staggered rectangular courses, restrained bevel/chips, tapered pitched ends and narrow ridge; mill front gable",
+    "scale_reference": "tools/build_eldenmere_school_exterior.py: native 10x6 logical slates",
+    "not_transformed": "No legacy pixels enlarged; no HD concept-sheet shingle fragments sampled.",
+    "scope": "Roof surfaces and silhouettes only; audited eave contacts, walls, flues, logical canvases, thresholds and gameplay registration retained. Inn/shop adapt the earlier material language; they had no 24px predecessor."
   },
-  "source_module_sha256": "59104fc38310349706c7b7cc280aae191d145a11ec5939cfb47af8b452a3b120"
+  "source_module_sha256": "ec357276cfc00c797de22dbb2ed5927191790cf60de7fe83ae7e0625ff2e942d"
 }

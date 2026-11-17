@@ -747,7 +747,7 @@
       ]
     ],
     "dependencies_sha256": {
-      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
       "assets/terrain/eldenmere/exteriors_hd/props/fence_panel/idle.png": "b9c9a60fb64b73b71b763c269913fc3b287d8b9074efbd02d7cf60495b8e9e3c",
       "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png": "34875c6e95485d35996f877b09b0ff5bb0b9de79e2edcd3c29720399a3f745ce",
       "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png": "cb48941e9a0ca6672c9805b8ea0d65f89fe07b5a736e2cddc01d9301542a917d",
@@ -1144,7 +1144,7 @@
       ]
     ],
     "dependencies_sha256": {
-      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
       "assets/terrain/eldenmere/exteriors_hd/props/wood_shavings/idle.png": "5ff90a68a39d139e3d2ea314e7cab001c1f7cac10e33e8f8bd2042dc29997c12",
       "assets/terrain/eldenmere/workyard_props/manifest.json": "18175b0103af50175d7ca62a5c9a0f5b6211a4da912b98eb5ca03b5f741ba81a",
       "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png": "de8c6c3e4cb1384ea934157c112004fa027728e4078ad202fa7eae51dd446b30",
@@ -1514,9 +1514,9 @@
     "retired_grass_records": [],
     "ground_cells": [],
     "dependencies_sha256": {
-      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
+      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "909f5c2ecc11ccbee78278c05aff6200ced1ccf45b7482afb5be0b95359b8c16",
       "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
-      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
       "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png": "d262ab60451a528a8f92b936728bd231b649964c8b0f1f745592652b9ff8884a",
       "assets/terrain/vegetation_hd/plants.json": "263ccc4269fc06c177a5f16e58dacc582783a563107a0d4bc178ba01561917ce",
       "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
@@ -6696,7 +6696,7 @@
       {
         "id": "exteriors_hd",
         "manifest": "assets/terrain/eldenmere/exteriors_hd/manifest.json",
-        "sha256": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+        "sha256": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
         "role": "ordinary_props",
         "source_integration_status": "not_integrated",
         "source_visual_approval": "not_reviewed_by_user",
@@ -6705,7 +6705,7 @@
       {
         "id": "business_exteriors_hd",
         "manifest": "assets/terrain/eldenmere/business_exteriors_hd/manifest.json",
-        "sha256": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
+        "sha256": "909f5c2ecc11ccbee78278c05aff6200ced1ccf45b7482afb5be0b95359b8c16",
         "role": "ordinary_props",
         "source_integration_status": "not_integrated",
         "source_visual_approval": "not_reviewed_by_user",
@@ -15071,7 +15071,7 @@
     "dependencies_sha256": {
       "assets/source/maps/eldenmere/courtyard_hd/geometry.json": "a699fa0772cdc637235742e14713ca5c258841b93430af5eb4fc40c203ac9533",
       "assets/source/maps/eldenmere/town_hd/recipe.json": "722eff2585d621e7600f71f67c015c2271556b2d77ec92a3c745c9cfc66c35bc",
-      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
+      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "909f5c2ecc11ccbee78278c05aff6200ced1ccf45b7482afb5be0b95359b8c16",
       "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/frame_00.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
       "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
       "assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/frame_00.png": "b7d6b59112ba9c206846e2d75e491f7f3a5a3e4326917eafa80fb37b47a726ed",
@@ -15118,7 +15118,7 @@
       "assets/terrain/eldenmere/business_exteriors_hd/props/travel_boots/idle.png": "9f1547e6fcb5024568cd431e5aaee04185008a5134db90e3dbe6a8d2776c5dd3",
       "assets/terrain/eldenmere/business_exteriors_hd/props/travel_pack/frame_00.png": "0063114be374b89b981611c414b4a719307e4f7f5eee96f9962330996c518d38",
       "assets/terrain/eldenmere/business_exteriors_hd/props/travel_pack/idle.png": "0063114be374b89b981611c414b4a719307e4f7f5eee96f9962330996c518d38",
-      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
       "assets/terrain/eldenmere/exteriors_hd/props/awning_blue/frame_00.png": "889ec6bad9bb6021ee17430f932619629eaf1339e32ca3cc2a4cddd95ae7742b",
       "assets/terrain/eldenmere/exteriors_hd/props/awning_blue/frame_01.png": "889ec6bad9bb6021ee17430f932619629eaf1339e32ca3cc2a4cddd95ae7742b",
       "assets/terrain/eldenmere/exteriors_hd/props/awning_blue/frame_02.png": "da29f1715aea1ff430949e94d3f872c018825b97bd219ed7ff2784fd0420f721",
@@ -16251,7 +16251,7 @@
     "assets/story/lantern/village_layout.json": "a5aedb9aad13f4e085b13079a38b572d42c808afe691b9202c0c43dbed14cc2b",
     "assets/story/mill/layout.json": "6150ddec1d6fe790a5de99c099758318059d3ddb4034df9fc87d307b29fbf743",
     "assets/story/regent/layout.json": "23efeee48ca4d706100b9cfb4d83dcfe3b64fbba3d4a2c28a6759ece378a2c47",
-    "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
+    "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "909f5c2ecc11ccbee78278c05aff6200ced1ccf45b7482afb5be0b95359b8c16",
     "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/frame_00.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
     "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
     "assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/frame_00.png": "b7d6b59112ba9c206846e2d75e491f7f3a5a3e4326917eafa80fb37b47a726ed",
@@ -16298,7 +16298,7 @@
     "assets/terrain/eldenmere/business_exteriors_hd/props/travel_boots/idle.png": "9f1547e6fcb5024568cd431e5aaee04185008a5134db90e3dbe6a8d2776c5dd3",
     "assets/terrain/eldenmere/business_exteriors_hd/props/travel_pack/frame_00.png": "0063114be374b89b981611c414b4a719307e4f7f5eee96f9962330996c518d38",
     "assets/terrain/eldenmere/business_exteriors_hd/props/travel_pack/idle.png": "0063114be374b89b981611c414b4a719307e4f7f5eee96f9962330996c518d38",
-    "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+    "assets/terrain/eldenmere/exteriors_hd/manifest.json": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
     "assets/terrain/eldenmere/exteriors_hd/props/awning_blue/frame_00.png": "889ec6bad9bb6021ee17430f932619629eaf1339e32ca3cc2a4cddd95ae7742b",
     "assets/terrain/eldenmere/exteriors_hd/props/awning_blue/frame_01.png": "889ec6bad9bb6021ee17430f932619629eaf1339e32ca3cc2a4cddd95ae7742b",
     "assets/terrain/eldenmere/exteriors_hd/props/awning_blue/frame_02.png": "da29f1715aea1ff430949e94d3f872c018825b97bd219ed7ff2784fd0420f721",

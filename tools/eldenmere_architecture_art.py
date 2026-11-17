@@ -71,29 +71,42 @@ def records():
     return result
 
 
-@lru_cache(maxsize=4)
-def _shingle_details(palette):
-    """Uniformly sampled isolated material, never a house/facade transformation."""
-    source=ROOT/'assets/source/terrain/eldenmere/exteriors_hd/cottages_authored.png'
-    with Image.open(source) as image:master=image.convert('RGBA')
-    boxes=((127,433,151,449),(154,434,178,450),(183,434,207,450),
-           (211,434,235,450),(113,452,137,468),(142,452,166,468),
-           (173,452,197,468),(202,452,226,468),(233,452,257,468))
-    ramp=ROOFS[palette]
-    colors=[tuple(int(c[i:i+2],16) for i in (1,3,5))+(255,) for c in ramp]
-    result=[]
-    for box in boxes:
-        tile=master.crop(box).resize((21,14),Image.Resampling.NEAREST)
-        out=Image.new('RGBA',tile.size)
-        for yy in range(tile.height):
-            for xx in range(tile.width):
-                r,g,b,a=tile.getpixel((xx,yy));value=(r*2+g*3+b)/6
-                # Preserve deliberate cuts, chips and broad planes; map only
-                # the material's value ramp into the region's existing colors.
-                idx=0 if value<65 else 1 if value<99 else 2 if value<146 else 3
-                out.putpixel((xx,yy),colors[idx])
-        result.append(out)
-    return tuple(result)
+def _roof_material(size, bounds, palette, seed, *, dim=False):
+    """Native-authored calm courses, after the actual 24px cottage/school roofs.
+
+    The old school used 10x6 logical slates: keep that material scale, but draw
+    the bevels, joints and restrained chips at native 2x, not enlarged pixels or
+    randomly cropped fragments of the unrelated HD concept sheet.
+    """
+    ramp = ROOFS[palette]
+    layer = Image.new('RGBA', size, ramp[0]); draw = ImageDraw.Draw(layer)
+    rng = random.Random(seed)
+    x, y, w, h = [round(v*2) for v in bounds]
+    width, course = (16, 10) if palette == 'terracotta' else (20, 12)
+    def blend(a, b):
+        aa, bb = [tuple(int(c[i:i+2], 16) for i in (1,3,5)) if isinstance(c,str) else c for c in (a,b)]
+        return tuple((u*3+v)//4 for u,v in zip(aa,bb))
+    base = blend(ramp[1], ramp[0]) if dim else ramp[1]
+    alternate = blend(base, ramp[2])
+    highlight = blend(ramp[2], base) if dim else ramp[2]
+    for row, yy in enumerate(range(y, y+h+course, course)):
+        for xx in range(x-width-(row%2)*(width//2), x+w+width, width):
+            choice = rng.randrange(9)
+            fill = alternate if choice < 2 else blend(base, ramp[0]) if choice == 2 else base
+            draw.rectangle((xx+1,yy+1,xx+width-1,yy+course-2),fill=fill)
+            # A thin upper bevel and dark lower lip, not a second noisy image.
+            draw.line((xx+2,yy+1,xx+width-3,yy+1),fill=highlight)
+            draw.line((xx+width-1,yy+3,xx+width-1,yy+course-2),fill=ramp[0])
+            if rng.randrange(5)==0:
+                # A small stepped lower edge makes this an overlapping slate,
+                # not a perfect masonry rectangle; never independent flecks.
+                draw.line((xx+3,yy+course-2,xx+width-5,yy+course-2),fill=base)
+                draw.point((xx+width-3,yy+course-2),fill=ramp[0])
+            if rng.randrange(4)==0:
+                draw.line((xx+3,yy+2,xx+5,yy+2),fill=ramp[3] if not dim else highlight)
+            if rng.randrange(8)==0:
+                draw.line((xx+width-5,yy+course-3,xx+width-3,yy+course-3),fill=ramp[0])
+    return layer
 
 
 @dataclass
@@ -223,58 +236,94 @@ class Drawing:
                 xx+=ww
 
     def roof(self, rect, palette='slate', hip=5, wear=False, ridge=True):
-        """Parallel eaves and ridge; diagonal hips are roof construction, not convergence."""
+        """Tapered pitched roof, with the existing eaves and depth registration.
+
+        Taper expresses sloping roof ends, not perspective convergence of walls
+        or ground. The roof's declared envelope and occupied footprint stay put.
+        """
         x,y,w,h=rect; ramp=ROOFS[palette]
-        points=((x,y),(x+w,y),(x+w,y+h),(x,y+h))
-        mask=Image.new('L',self.image.size); md=ImageDraw.Draw(mask)
-        pts=[(round(a*2),round(b*2)) for a,b in points];md.polygon(pts,fill=255)
-        layer=Image.new('RGBA',self.image.size);ld=ImageDraw.Draw(layer)
-        ld.polygon(pts,fill=ramp[0],outline=INK)
-        # A short far slope and long near slope explain roof depth. Tile
-        # dimensions stay fixed, with per-course joints and native chipping.
-        ridge_y=round((y+h*.24)*2)
-        roof_seed=random.Random(self.name+str(rect))
-        tiles=_shingle_details(palette)
-        for row,yy in enumerate(range(round(y*2)+1,round((y+h)*2),13)):
-            xx=round(x*2)-((row%2)*7)
-            while xx<round((x+w)*2):
-                tile=tiles[roof_seed.randrange(len(tiles))].copy()
-                if yy<ridge_y:
-                    # Far slope is a separate physical surface, kept quiet.
-                    colors=[tuple(int(c[i:i+2],16) for i in (1,3,5))+(255,) for c in ramp]
-                    dim={color:colors[max(0,index-1)] for index,color in enumerate(colors)}
-                    tile.putdata([dim.get(pixel,pixel) for pixel in tile.get_flattened_data()])
-                layer.alpha_composite(tile,(xx,yy))
-                xx+=20
-        layer.putalpha(mask);self.image.alpha_composite(layer)
-        self.ownership(mask,'roof')
-        self.draw=ImageDraw.Draw(self.image)
-        if hip:
-            ry=y+h*.24
-            # True hipped end planes have diagonal construction edges inside
-            # rectangular orthographic eaves, not converging distant walls.
-            self.line(((x,y),(x+hip,ry),(x,y+h)),ramp[0],2,'roof')
-            self.line(((x+w,y),(x+w-hip,ry),(x+w,y+h)),ramp[0],2,'roof')
-            self.line(((x+.5,y),(x+hip+.5,ry),(x+.5,y+h)),ramp[2],1)
+        inset = min(w*.18, max(hip, w*.14)) if ridge else min(3, w*.08)
+        if self.name == 'sanctuary' and ridge: inset = 12
+        points=((x+inset,y),(x+w-inset,y),(x+w,y+h-2),(x+w-.5,y+h),(x+.5,y+h),(x,y+h-2))
+        pts=[(round(a*2),round(b*2)) for a,b in points]
+        mask=Image.new('L',self.image.size); ImageDraw.Draw(mask).polygon(pts,fill=255)
+        layer=_roof_material(self.image.size,rect,palette,self.name+str(rect))
+        # Quiet, narrow hipped ends turn the surface instead of diagonal ruler
+        # lines across an otherwise rectangular slab. Front courses remain calm.
+        if hip and ridge:
+            ld=ImageDraw.Draw(layer)
+            for side in (0,1):
+                end=((x+inset,y),(x+inset*.50,y+h),(x,y+h)) if side==0 else ((x+w-inset,y),(x+w,y+h),(x+w-inset*.50,y+h))
+                endmask=Image.new('L',self.image.size)
+                ImageDraw.Draw(endmask).polygon([(round(a*2),round(b*2)) for a,b in end],fill=255)
+                dark=_roof_material(self.image.size,rect,palette,self.name+str(rect),dim=True)
+                layer.paste(dark,(0,0),endmask)
+                a,b=end[0],end[1 if side==0 else 2]
+                ld=ImageDraw.Draw(layer);ld.line((round(a[0]*2),round(a[1]*2),round(b[0]*2),round(b[1]*2)),fill=ramp[0],width=1)
+        layer.putalpha(mask); self.image.alpha_composite(layer)
+        self.ownership(mask,'roof'); self.draw=ImageDraw.Draw(self.image)
         self.line(points+(points[0],),INK,1)
+        # Sloped timber verges, narrow top ridge, and the established fascia.
+        self.line(((x+inset,y+.5),(x+.5,y+h-1)),WOOD[1],2,'roof')
+        self.line(((x+w-inset,y+.5),(x+w-.5,y+h-1)),WOOD[0],2,'roof')
+        self.line(((x+inset+.5,y+1),(x+1,y+h-2)),ramp[2],1)
         self.line(((x,y+h),(x+w,y+h)),INK,3,'roof')
-        self.line(((x+1,y+h-1),(x+w-1,y+h-1)),ramp[3],1)
-        # Thin eave fascia and rafter ends have native grain, rather than a flat
-        # black ruler under a featureless rectangle.
+        self.line(((x+1,y+h-1),(x+w-1,y+h-1)),ramp[2],1)
         self.rect((x+.5,y+h+.5,w-1,1.5),WOOD[0],'timber',INK)
         self.line(((x+1,y+h+.5),(x+w-1,y+h+.5)),WOOD[2])
         for xx in range(round(x+4),round(x+w-2),9):
             self.rect((xx,y+h+1,1.5,2),WOOD[2],'timber',INK)
         if ridge:
-            ry=y+h*.24
-            self.rect((x+hip+1,ry-1.5,w-(hip+1)*2,3),ramp[0],'roof',INK)
-            for xx in range(round(x+hip+1),round(x+w-hip-1),7):
-                self.rect((xx+.5,ry-1,5.5,2),ramp[2],'roof')
-                self.line(((xx+1,ry-.5),(xx+5,ry-.5)),ramp[3])
+            # No broad horizontal bar through the upper quarter of the roof.
+            for xx in range(round((x+inset)*2)+1,round((x+w-inset)*2),18):
+                right=min(xx+16,round((x+w-inset)*2)-1)
+                self.draw.rectangle((xx,round(y*2),right,round(y*2)+4),fill=ramp[0])
+                self.draw.line((xx+1,round(y*2)+1,right-1,round(y*2)+1),fill=ramp[2])
+                self.draw.line((xx+2,round(y*2)+2,right-2,round(y*2)+2),fill=ramp[1])
         if wear:
-            for k in range(7):
-                xx=x+6+(k*13)%max(8,int(w-14));yy=y+3+(k*7)%max(5,int(h-8))
-                self.line(((xx,yy),(xx+2,yy),(xx+3,yy+1)),LEAVES[1],2)
+            # A few small damp-side joints, not all-over green roof noise.
+            for k in range(4):
+                xx=x+inset+4+k*7; yy=y+h-5-(k%2)*6
+                self.line(((xx,yy),(xx+2,yy)),LEAVES[1],1)
+        self.roof_bounds.append(list(rect))
+
+    def mill_gable_roof(self, rect):
+        """The old mill's front-gabled identity over the retained processing bay."""
+        x,y,w,h=rect; cx=x+w/2; front=y+h-23; eave=y+h
+        # The front triangle is elevated above, and fits within, the unchanged
+        # occupied bay walls. It does not paint another wall onto the west path.
+        self.polygon(((57,eave),(cx,front),(120,eave)),PLASTER[1],'plaster')
+        self.beam((86,front+3,3,eave-front-3))
+        self.line(((59,eave-1),(cx,front+1),(118,eave-1)),WOOD[0],5,'timber')
+        self.line(((60,eave-1),(cx,front+2),(117,eave-1)),WOOD[2],1)
+        for side,points in enumerate((
+            ((cx,y),(x,y+23),(x,eave),(cx,front)),
+            ((cx,y),(x+w,y+23),(x+w,eave),(cx,front)))):
+            mask=Image.new('L',self.image.size)
+            ImageDraw.Draw(mask).polygon([(round(a*2),round(b*2)) for a,b in points],fill=255)
+            # Author slates in each actual pitched plane: courses follow the
+            # north/south ridge, rather than wallpapering horizontal bricks
+            # over both wings and visually flattening the front gable.
+            layer=Image.new('RGBA',self.image.size,ROOFS['slate'][0]);ld=ImageDraw.Draw(layer)
+            rng=random.Random('mill wing '+str(side));ramp=ROOFS['slate']
+            def project(u,v):
+                return (round((cx+(-u if side==0 else u))*2),round((y+v+u*23/(w/2))*2))
+            for row,u in enumerate(range(0,round(w/2)+6,6)):
+                for v in range(-10-(row%2)*5,round(front-y)+10,10):
+                    fill=ramp[1] if side==0 else '#596b70'
+                    if rng.randrange(8)==0:fill='#718286' if side==0 else '#65777a'
+                    corners=(project(u+.5,v+.5),project(u+.5,v+9.5),project(u+5.5,v+9.5),project(u+5.5,v+.5))
+                    ld.polygon(corners,fill=fill)
+                    ld.line((project(u+.5,v+1),project(u+.5,v+8.5)),fill=ramp[2] if side==0 else ramp[1],width=1)
+                    if rng.randrange(5)==0:ld.line((project(u+1,v+1),project(u+1,v+2)),fill=ramp[2],width=1)
+            layer.putalpha(mask);self.image.alpha_composite(layer);self.ownership(mask,'roof');self.draw=ImageDraw.Draw(self.image)
+            self.line(points+(points[0],),INK,1)
+        self.line(((cx,y),(cx,front)),ROOFS['slate'][0],5,'roof')
+        self.line(((cx-.5,y+.5),(cx-.5,front-.5)),ROOFS['slate'][2],1)
+        for yy in range(round(y+2),round(front),6):
+            self.line(((cx-1,yy),(cx+1,yy)),ROOFS['slate'][1],1)
+        self.line(((x,eave),(cx,front),(x+w,eave)),WOOD[0],5,'roof')
+        self.line(((x+.5,eave-.5),(cx,front-.5),(x+w-.5,eave-.5)),WOOD[2],1)
         self.roof_bounds.append(list(rect))
 
     def window(self, rect, shutters='both', arch=False, curtains=None, lit=False):
@@ -336,10 +385,7 @@ class Drawing:
         shape=Image.new('L',self.image.size)
         ImageDraw.Draw(shape).polygon([(round(xx*2),round(yy*2)) for xx,yy in points],fill=255)
         layer=Image.new('RGBA',self.image.size,ramp[0]);ld=ImageDraw.Draw(layer)
-        tiles=_shingle_details(palette)
-        for row,yy in enumerate(range(round(y*2),round((y+h)*2),10)):
-            for col,xx in enumerate(range(round(x*2)-(row%2)*7,round((x+w)*2),20)):
-                layer.alpha_composite(tiles[(row+col)%len(tiles)],(xx,yy))
+        layer=_roof_material(self.image.size,rect,palette,self.name+' canopy '+str(rect))
         layer.putalpha(shape);self.image.alpha_composite(layer);self.draw=ImageDraw.Draw(self.image)
         self.ownership(shape,'roof')
         self.line(points+(points[0],),INK,1)
@@ -518,7 +564,7 @@ def _mill(d,r):
     d.plaster((24,99,36,33));d.stonework((24,121,36,11))
     d.beam((24,99,3,23));d.beam((57,99,3,23));d.beam((24,101,36,3))
     d.roof((21,25,43,76),'slate',hip=2)
-    d.roof((52,5,72,74),'slate',hip=4)
+    d.mill_gable_roof((52,5,72,74))
     # Hoist projects from the front eave. It explains the tall processing volume
     # without inventing extra residential floors or a decorative upstairs room.
     d.beam((73,79,33,3));d.beam((88,72,3,16))
@@ -740,7 +786,13 @@ def products():
         'retained_native_details':['existing five door states','native mill wheel','courtyard bell at retained mount','cog/book signs','business signs','fixed shop display','inn bench/firewood'],
         'new_native_construction':['deep roof planes with fixed-size shingle courses','registered foundations and occupied walls','per-household window rhythms, joinery and storage','mill receiving annex/hoist/processing structure','school footprint correction and flue','right-hearth workshop flue','two-storey inn structural framing'],
         'not_reused':['legacy RGB buildings','portal-first facade strips','mill baked service fence'],
-        'native_material_source':{'file':'assets/source/terrain/eldenmere/exteriors_hd/cottages_authored.png','sha256':sha256((ROOT/'assets/source/terrain/eldenmere/exteriors_hd/cottages_authored.png').read_bytes()).hexdigest(),'isolated_shingle_rectangles':[[127,433,151,449],[154,434,178,450],[183,434,207,450],[211,434,235,450],[113,452,137,468],[142,452,166,468],[173,452,197,468],[202,452,226,468],[233,452,257,468]],'sample':'uniform 24x16 to 21x14; material values mapped to existing roof ramp'},
+        'roof_style_reference':{
+            'historical_commit':'7cebbd6',
+            'assets':['assets/terrain/eldenmere/cottage/closed.png','assets/terrain/eldenmere/workshop/closed.png','assets/terrain/eldenmere/watermill/building.png','assets/terrain/eldenmere/school/exterior/closed.png','assets/terrain/eldenmere/sanctuary/closed.png'],
+            'construction':'native 2x authored staggered rectangular courses, restrained bevel/chips, tapered pitched ends and narrow ridge; mill front gable',
+            'scale_reference':'tools/build_eldenmere_school_exterior.py: native 10x6 logical slates',
+            'not_transformed':'No legacy pixels enlarged; no HD concept-sheet shingle fragments sampled.',
+            'scope':'Roof surfaces and silhouettes only; audited eave contacts, walls, flues, logical canvases, thresholds and gameplay registration retained. Inn/shop adapt the earlier material language; they had no 24px predecessor.'},
         'source_module_sha256':sha256(Path(__file__).read_bytes()).hexdigest(),
     },indent=2)+'\n').encode()
     return result
