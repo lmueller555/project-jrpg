@@ -1128,8 +1128,10 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
 The complete live map uses native 2× environment art with unchanged character and
 world proportions. The classroom map is re-sampled from its retained approved
 Auratia wall-map drawing; the full world map and its geography remain unchanged.
-All existing town building exteriors and ten remaining town
-interiors are migrated; the three Sanctuary interiors retain their earlier bank.
+All thirteen town building exteriors and fifteen established interiors are
+integrated. Serene, Caelan and Tomas’s hall, bedroom and dining room retain their
+curated household bank and remain distinct from the regional Sanctuary. One
+additional `inn_guest_floor` is registered through the existing interior system.
 The separate upstream scene is migrated. Regional Sanctuary/cave scenes and NPC
 body/gait banks retain their own migration status.
 
@@ -1140,6 +1142,32 @@ uses the shared confirmed party-rest/save behavior at its guest bed, with an
 eligible discovery cue. The shop's exterior stock stays fixed behind glass and
 its furnished counter adds no automatic item grants. Currency, prices and merchant
 transactions remain a separately specified gameplay system.
+
+The source-owned `tools/eldenmere_interior_architecture.py` extension runs inside
+that same live composer. It preserves room identities, fixture positions, stateful
+quest objects, actor ownership and services. Southern cutaway exits show an actual
+opening, side returns and threshold rather than a mat against continuous walls.
+The mill’s east-wall axle, gearing, spindle and stones form one processing assembly;
+its motion reads the existing wheel stop state, with fixed supports and a static
+reduced-motion frame. Workshop supplies, household storage/bedding and decorative
+shop potion/weapon/armor displays communicate use without creating occupations,
+collectibles or purchasable equipment.
+
+The inn retains its existing ground-floor rest bed, keeper and exterior portal.
+Four ordinary upstairs guest bays correspond to its guest-storey window bays.
+Reciprocal stair doors use explicit safe landings and opt-in excursion rearming,
+including after Continue; no upstairs price or recovery system is introduced.
+Named minimal mill/stair/hearth occupancy additions are recorded in the existing
+architecture schedule. Existing restoration retains valid old positions and uses
+its checked room-entry fallback for a newly occupied footprint, without changing
+quest, inventory, party or currency state.
+
+Lantern construction phases retain the actual canonical frame/material drawings,
+not generic paper stock. Those small existing action/carry/home drawings remain
+explicit compatibility artwork, uniformly sampled at 2× rather than claimed as
+new HD poses. The collected contents retain their canonical empty overlay; the
+separately owned real table/support remains visible while one frame moves to its
+existing carrier/home owner at the authored transfer cue.
 
 Building shells keep clear authoritative portals; separate five-state doors
 retain their logical geometry and 100 ms timing. The mill wheel has an independent

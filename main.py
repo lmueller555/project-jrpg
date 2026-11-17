@@ -99,6 +99,16 @@ class Door:
         self.frames=[world.art_image(p,record,default_density=world.art_density) for p in record['frames']]
         self.progress=0.0
         self.target_open=False
+        self.entry_armed=True
+
+    def reset_entry_arm(self,position=None):
+        """Only opt-in stair sensors need a fresh excursion after arrival/load."""
+        area=self.data.get('rearm_after_exit')
+        self.entry_armed=not (area and position is not None
+                              and pygame.Rect(area).collidepoint(position))
+
+    def disarm_on_arrival(self):
+        if self.data.get('rearm_after_exit'):self.entry_armed=False
 
     @property
     def state(self):
@@ -106,6 +116,10 @@ class Door:
         return 'closed' if self.progress<=0 else 'closing'
 
     def update(self,position,seconds,other_positions=()):
+        area=self.data.get('rearm_after_exit')
+        if (area and not self.entry_armed and position is not None
+                and not pygame.Rect(area).collidepoint(position)):
+            self.entry_armed=True
         positions=list(other_positions)
         if position is not None:positions.append(position)
         radius=self.data['close_radius'] if self.target_open else self.data['open_radius']
@@ -123,6 +137,7 @@ class Door:
         return self.frames[min(4,int(self.progress+1e-7))] if self.frames else None
 
     def can_enter(self,position,direction):
+        if not self.entry_armed:return False
         if self.data['requires_open'] and self.state!='open':return False
         north=self.data['entry_side']=='north'
         if (direction[1]>=0 if north else direction[1]<=0):return False
@@ -1146,6 +1161,8 @@ class Game:
         if not self.sanctuary_rescue.restore(data.get('sanctuary_rescue') if data else None,journey=data):return False
         for scene in self.scenes.values():
             scene.reset_grass(reduced_motion=self.audio.reduced_motion)
+            for door in scene.doors:
+                door.reset_entry_arm(self.player.position if scene is self.world else None)
         self.opening_audio.reset()
         self.regional_audio.reset()
         self.pause.close()
@@ -1473,6 +1490,13 @@ class Game:
                 from elden_vale_sanctuary import SanctuaryReserveWorld
                 self.scenes[path]=SanctuaryReserveWorld(path,self.town._images)
             else:self.scenes[path]=World(path,self.town._images)
+        # The indoor drivetrain shares the exterior wheel's existing story
+        # state, even when its room is first loaded after the mill stopped.
+        owner=getattr(self,'opening_conclusion',None)
+        if owner is not None:
+            for record in self.scenes[path].entities:
+                if record.get('animation_driver')=='mill_wheel':
+                    record['animation_stopped']=owner.mill_stopped
         return self.scenes[path]
 
     @property
@@ -2112,7 +2136,9 @@ class Game:
         self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.25
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
-        if arrival:arrival.force_open()
+        if arrival:
+            arrival.force_open()
+            arrival.disarm_on_arrival()
         self.opening.on_enter_scene()
         for owner in (self.mill_quest,self.regent_quest,self.lantern_quest):
             hook=getattr(owner,'on_enter_scene',None)

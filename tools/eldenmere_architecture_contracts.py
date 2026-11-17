@@ -12,8 +12,13 @@ ROOT=Path(__file__).resolve().parents[1]
 SCHEDULE=ROOT/'assets/source/maps/eldenmere/town_hd/architecture_schedule.json'
 BUILDINGS={'sanctuary','mira','mill','school','halden','elira','venn','home_a','home_b','home_c','liam_house','inn','item_shop'}
 
-def validate_schedule(schedule, town):
-    """Fail fast on accidental portal/scale changes before generating artwork."""
+def validate_schedule(schedule, town, scene_records=None):
+    """Validate portals/scales and retained hearths, optionally before disk export.
+
+    The live composer passes its complete in-memory scene records so a first
+    build can validate newly registered floors/fixtures without stale map files.
+    Standalone callers continue checking the actual generated room files.
+    """
     records=schedule['buildings'];assert len(records)==13 and {r['id'] for r in records}==BUILDINGS
     doors={r['id']:r for r in town['doors']};entities={r['id']:r for r in town['entities']}
     for r in records:
@@ -26,7 +31,8 @@ def validate_schedule(schedule, town):
         assert r['approach_clearance_world_logical'][2]>=24,name+' clearance'
         if r['chimney']:
             for hearth in r['chimney']['hearths']:
-                scene=json.loads((ROOT/town['interior_scenes'][hearth['scene']]).read_text())
+                scene=(scene_records[hearth['scene']] if scene_records is not None else
+                       json.loads((ROOT/town['interior_scenes'][hearth['scene']]).read_text()))
                 fixture=next(e for e in scene['entities'] if e['id']==hearth['entity'])
                 assert fixture['position']==hearth['position_logical'],name+' retained hearth'
     assert {r['id'] for r in schedule['crossings']}=={'upper_bridge','main_bridge','mill_landing'}

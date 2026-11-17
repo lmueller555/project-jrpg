@@ -1,0 +1,453 @@
+{
+  "fixture": "Fresh initialized Game; opening disabled; clear-ground route starts. Existing NPCs and quest state remain active. No seeded quests or replacement art.",
+  "native_views": 13,
+  "routes": [
+    {
+      "label": "southern_spine_walk",
+      "running": false,
+      "declared_goals": [
+        [
+          504,
+          1104
+        ],
+        [
+          504,
+          1320
+        ],
+        [
+          528,
+          1368
+        ],
+        [
+          528,
+          1572
+        ]
+      ],
+      "production_waypoints": 7,
+      "replans": 0,
+      "update_frames": 208,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_southern_spine_walk.png",
+      "passed": true
+    },
+    {
+      "label": "southern_spine_walk_return",
+      "running": false,
+      "declared_goals": [
+        [
+          528,
+          1572
+        ],
+        [
+          528,
+          1368
+        ],
+        [
+          504,
+          1320
+        ],
+        [
+          504,
+          1104
+        ]
+      ],
+      "production_waypoints": 7,
+      "replans": 0,
+      "update_frames": 208,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_southern_spine_walk_return.png",
+      "passed": true
+    },
+    {
+      "label": "southern_spine_run",
+      "running": true,
+      "declared_goals": [
+        [
+          504,
+          1104
+        ],
+        [
+          504,
+          1320
+        ],
+        [
+          528,
+          1368
+        ],
+        [
+          528,
+          1572
+        ]
+      ],
+      "production_waypoints": 7,
+      "replans": 0,
+      "update_frames": 141,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_southern_spine_run.png",
+      "passed": true
+    },
+    {
+      "label": "southern_spine_run_return",
+      "running": true,
+      "declared_goals": [
+        [
+          528,
+          1572
+        ],
+        [
+          528,
+          1368
+        ],
+        [
+          504,
+          1320
+        ],
+        [
+          504,
+          1104
+        ]
+      ],
+      "production_waypoints": 7,
+      "replans": 0,
+      "update_frames": 141,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_southern_spine_run_return.png",
+      "passed": true
+    },
+    {
+      "label": "two_bridge_loop_walk",
+      "running": false,
+      "declared_goals": [
+        [
+          384,
+          480
+        ],
+        [
+          936,
+          480
+        ],
+        [
+          936,
+          1032
+        ],
+        [
+          384,
+          1032
+        ],
+        [
+          384,
+          480
+        ]
+      ],
+      "production_waypoints": 8,
+      "replans": 0,
+      "update_frames": 924,
+      "native_crossing_frames": {
+        "upper_bridge": "movement_two_bridge_loop_walk_upper_bridge.png",
+        "lower_bridge": "movement_two_bridge_loop_walk_lower_bridge.png"
+      },
+      "native_end_frame": "movement_two_bridge_loop_walk.png",
+      "passed": true
+    },
+    {
+      "label": "two_bridge_loop_walk_return",
+      "running": false,
+      "declared_goals": [
+        [
+          384,
+          480
+        ],
+        [
+          384,
+          1032
+        ],
+        [
+          936,
+          1032
+        ],
+        [
+          936,
+          480
+        ],
+        [
+          384,
+          480
+        ]
+      ],
+      "production_waypoints": 8,
+      "replans": 0,
+      "update_frames": 924,
+      "native_crossing_frames": {
+        "lower_bridge": "movement_two_bridge_loop_walk_return_lower_bridge.png",
+        "upper_bridge": "movement_two_bridge_loop_walk_return_upper_bridge.png"
+      },
+      "native_end_frame": "movement_two_bridge_loop_walk_return.png",
+      "passed": true
+    },
+    {
+      "label": "two_bridge_loop_run",
+      "running": true,
+      "declared_goals": [
+        [
+          384,
+          480
+        ],
+        [
+          936,
+          480
+        ],
+        [
+          936,
+          1032
+        ],
+        [
+          384,
+          1032
+        ],
+        [
+          384,
+          480
+        ]
+      ],
+      "production_waypoints": 8,
+      "replans": 0,
+      "update_frames": 616,
+      "native_crossing_frames": {
+        "upper_bridge": "movement_two_bridge_loop_run_upper_bridge.png",
+        "lower_bridge": "movement_two_bridge_loop_run_lower_bridge.png"
+      },
+      "native_end_frame": "movement_two_bridge_loop_run.png",
+      "passed": true
+    },
+    {
+      "label": "two_bridge_loop_run_return",
+      "running": true,
+      "declared_goals": [
+        [
+          384,
+          480
+        ],
+        [
+          384,
+          1032
+        ],
+        [
+          936,
+          1032
+        ],
+        [
+          936,
+          480
+        ],
+        [
+          384,
+          480
+        ]
+      ],
+      "production_waypoints": 8,
+      "replans": 0,
+      "update_frames": 616,
+      "native_crossing_frames": {
+        "lower_bridge": "movement_two_bridge_loop_run_return_lower_bridge.png",
+        "upper_bridge": "movement_two_bridge_loop_run_return_upper_bridge.png"
+      },
+      "native_end_frame": "movement_two_bridge_loop_run_return.png",
+      "passed": true
+    },
+    {
+      "label": "school_commons_desire_walk",
+      "running": false,
+      "declared_goals": [
+        [
+          648,
+          768
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          600,
+          828
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 47,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_school_commons_desire_walk.png",
+      "passed": true
+    },
+    {
+      "label": "school_commons_desire_walk_return",
+      "running": false,
+      "declared_goals": [
+        [
+          600,
+          828
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          648,
+          768
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 47,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_school_commons_desire_walk_return.png",
+      "passed": true
+    },
+    {
+      "label": "school_commons_desire_run",
+      "running": true,
+      "declared_goals": [
+        [
+          648,
+          768
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          600,
+          828
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 32,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_school_commons_desire_run.png",
+      "passed": true
+    },
+    {
+      "label": "school_commons_desire_run_return",
+      "running": true,
+      "declared_goals": [
+        [
+          600,
+          828
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          648,
+          768
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 32,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_school_commons_desire_run_return.png",
+      "passed": true
+    },
+    {
+      "label": "elira_lower_loop_desire_walk",
+      "running": false,
+      "declared_goals": [
+        [
+          672,
+          984
+        ],
+        [
+          648,
+          1008
+        ],
+        [
+          624,
+          1032
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 42,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_elira_lower_loop_desire_walk.png",
+      "passed": true
+    },
+    {
+      "label": "elira_lower_loop_desire_walk_return",
+      "running": false,
+      "declared_goals": [
+        [
+          624,
+          1032
+        ],
+        [
+          648,
+          1008
+        ],
+        [
+          672,
+          984
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 42,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_elira_lower_loop_desire_walk_return.png",
+      "passed": true
+    },
+    {
+      "label": "elira_lower_loop_desire_run",
+      "running": true,
+      "declared_goals": [
+        [
+          672,
+          984
+        ],
+        [
+          648,
+          1008
+        ],
+        [
+          624,
+          1032
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 30,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_elira_lower_loop_desire_run.png",
+      "passed": true
+    },
+    {
+      "label": "elira_lower_loop_desire_run_return",
+      "running": true,
+      "declared_goals": [
+        [
+          624,
+          1032
+        ],
+        [
+          648,
+          1008
+        ],
+        [
+          672,
+          984
+        ]
+      ],
+      "production_waypoints": 6,
+      "replans": 0,
+      "update_frames": 30,
+      "native_crossing_frames": {},
+      "native_end_frame": "movement_elira_lower_loop_desire_run_return.png",
+      "passed": true
+    }
+  ],
+  "compiled_street_records": 50,
+  "quest_party_inventory_flags_unchanged": true,
+  "street_input_count": 926
+}

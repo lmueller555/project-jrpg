@@ -85,7 +85,17 @@ class TownHDContracts(unittest.TestCase):
     def test_existing_rooms_and_upstream_keep_collision_and_transition_contracts(self):
         for name,previous in self.old.items():
             if name=='town':continue
-            data=read(ROOT/self.manifest['scenes'][name]);self.assertEqual(data['collision'],previous['collision'])
+            data=read(ROOT/self.manifest['scenes'][name])
+            if name=='mill':
+                additions=read(SRC/'interior_architecture/recipe.json')['collision_additions']['mill']
+                from PIL import ImageDraw
+                expected=Image.open(ROOT/previous['collision']).convert('L')
+                draw=ImageDraw.Draw(expected)
+                for item in additions:
+                    x,y,w,h=item['rect'];draw.rectangle((x,y,x+w-1,y+h-1),fill=255)
+                self.assertEqual(Image.open(ROOT/data['collision']).convert('L').tobytes(),expected.tobytes())
+                self.assertEqual(data['architecture_occupancy'],additions)
+            else:self.assertEqual(data['collision'],previous['collision'])
             for key in ('size_pixels','spawn','player_probe_size','player_draw_anchor','quests'):
                 if key in previous:self.assertEqual(data[key],previous[key],(name,key))
             for current,old in zip(data.get('doors',[]),previous.get('doors',[])):
@@ -110,7 +120,7 @@ class TownHDContracts(unittest.TestCase):
         for r in recipe['sources']:self.assertEqual(sha256((SRC/r['file']).read_bytes()).hexdigest(),r['sha256'])
         for r in self.manifest['exports']:self.assertEqual(sha256((ROOT/r['file']).read_bytes()).hexdigest(),r['sha256'],r['file'])
     def test_businesses_are_new_destinations_with_clear_thresholds(self):
-        self.assertEqual(len(self.town['doors']),13);self.assertEqual(len(self.town['interior_scenes']),17)
+        self.assertEqual(len(self.town['doors']),13);self.assertEqual(len(self.town['interior_scenes']),18)
         for name in ('inn','item_shop'):
             door=next(d for d in self.town['doors'] if d['id']==name);self.assertGreater(door['anchor'][1],1344)
             room=read(ROOT/door['destination']);self.assertEqual(room['id'],name);self.assertTrue(room['entities']);self.assertTrue(room['npcs'])

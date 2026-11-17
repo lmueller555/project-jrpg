@@ -1,0 +1,96 @@
+{
+  "baseline_sha": "00572fd3c78e0699a496e2361414071d2e563b0a",
+  "final_sha_tested": "d80c9e21de8f000db55e2a861e69e7b126406656",
+  "tests": {
+    "eldenmere-pr4-final-test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact.log": {
+      "failure": [
+        "test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact (test_mill_trigger_geometry.MillTriggerGeometryTests.test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (456.0, 288.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-final-test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts.log": {
+      "failure": [
+        "test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts (test_mill_trigger_geometry.MillTriggerGeometryTests.test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-final-test_pool_can_be_used_from_below_without_cutting_through_stone.log": {
+      "failure": [
+        "test_pool_can_be_used_from_below_without_cutting_through_stone (test_mill_trigger_geometry.MillTriggerGeometryTests.test_pool_can_be_used_from_below_without_cutting_through_stone)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-final-test_return_inspection_uses_same_wheel_and_final_speakers_are_present.log": {
+      "failure": [
+        "test_return_inspection_uses_same_wheel_and_final_speakers_are_present (test_mill_trigger_geometry.MillTriggerGeometryTests.test_return_inspection_uses_same_wheel_and_final_speakers_are_present)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-parity-main-test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact.log": {
+      "failure": [
+        "test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact (test_mill_trigger_geometry.MillTriggerGeometryTests.test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (456.0, 288.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-parity-main-test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts.log": {
+      "failure": [
+        "test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts (test_mill_trigger_geometry.MillTriggerGeometryTests.test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-parity-main-test_pool_can_be_used_from_below_without_cutting_through_stone.log": {
+      "failure": [
+        "test_pool_can_be_used_from_below_without_cutting_through_stone (test_mill_trigger_geometry.MillTriggerGeometryTests.test_pool_can_be_used_from_below_without_cutting_through_stone)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    },
+    "eldenmere-pr4-parity-main-test_return_inspection_uses_same_wheel_and_final_speakers_are_present.log": {
+      "failure": [
+        "test_return_inspection_uses_same_wheel_and_final_speakers_are_present (test_mill_trigger_geometry.MillTriggerGeometryTests.test_return_inspection_uses_same_wheel_and_final_speakers_are_present)"
+      ],
+      "assertion": [
+        "unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+      ],
+      "result": [
+        "FAILED (failures=1)"
+      ]
+    }
+  },
+  "cause": "Cardinal 2px find_path rounds start onto even grid but retains odd goal (479,287). Goal is walkable and production movement plus prepare action pass on both revisions.",
+  "initial_suite_attempts": "Concurrent suites were OS-killed mid-run; all four known cases were rerun individually and completed on each revision."
+}
