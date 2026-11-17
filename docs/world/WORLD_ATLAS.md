@@ -141,7 +141,9 @@ trust, public evidence and relief obligations behind the disagreement;
 neither the site's complete history nor the surges' deeper cause is public
 knowledge.
 
-The detailed regional setting is in [Elden Vale](regions/ELDEN_VALE.md).
+The single regional creative brief and retained setting foundations are in
+[Elden Vale — Regional Design Guidance](regions/ELDEN_VALE.md). Its approved
+Pale Antlers and Rising Rain redesign awaits implementation.
 
 ## Merovar and the first game's neighbourhood
 

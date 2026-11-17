@@ -1033,6 +1033,11 @@ contact, collision and reduced-motion acceptance remain integration work.
 
 ### Integrated Elden Vale Sanctuary reserve
 
+The [regional design guidance](world/regions/ELDEN_VALE.md) owns creative direction
+for Elden Vale and the Sanctuary approach, including the future Pale Antlers and
+Rising Rain. The construction reference below describes the existing native
+scenes and does not claim those new features are implemented.
+
 `tools/build_sanctuary_reserve_hd.py` owns the reserve exterior and cave approach,
 Sanctuary Hall and visitor relief room. Its retained master drawing, extraction
 recipe and pre-migration maps live in `assets/source/maps/sanctuary_reserve_hd/`;
@@ -1077,3 +1082,13 @@ initialized disposable exploration fixture, subsequent real walking/running and
 door transfers, inspections, watering, relief rest offers and the actual arrival
 story director. Review evidence and measured warm renderer timings are in
 [the reserve review](reviews/sanctuary_reserve_hd/README.md).
+
+Earlier crystal/grove source recipes are retained under
+`assets/source/terrain/sanctuary_fantasy/`, with historical pack exports under
+`assets/terrain/sanctuary_fantasy/`. Their former builders
+`tools/build_sanctuary_crystals.py` and `tools/build_sanctuary_grove.py` describe
+those earlier banks, not the current reserve composer. The
+[earlier fantasy review](reviews/sanctuary_fantasy/README.md) retains travel,
+landmark depth, map and reduced-motion evidence. Its annotated placement sheet
+is an explanatory diagram. Earlier fingerprint checks belong to that historical
+snapshot; use the maintained native owner above for current scene verification.

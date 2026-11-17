@@ -1,168 +1,129 @@
-# Elden Vale Sanctuary reserve
+# Elden Vale Sanctuary reserve — Gameplay and Runtime Reference
 
-Visual style, sizing, density and rendering follow the
-[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
-renderer details below describe the current implementation or its recorded
-asset milestones. The approved higher-density rebuild preserves logical
-footprints. Full-scene 2× rendering is implemented; asset rebuilding and
-individual bank migration remain pending.
+**Scope:** Current exploration, interactions, scene ownership and reproduction.
+The single creative design authority is
+[Elden Vale — Regional Design Guidance](world/regions/ELDEN_VALE.md).
+The approved Pale Antlers/Rising Rain redesign is awaiting implementation;
+this guide describes the playable scenes, not a separate future layout proposal.
 
-The regional miniature opens into a detailed, peaceful woodland reserve built
-from the same native pixel asset packs as Eldenmere. The layout follows the
-sanctuary reference: southern entrance arch and court,
-pale limestone hall and side cloister, a tended memorial grove to the west,
-the cave approach on the eastern ridge, and a surveyed stone face within the
-southeastern protected boundary.
-
-The [fantasy expansion](SANCTUARY_FANTASY.md) gives the cave an asymmetric crown
-of amethyst, cyan, opal and amber crystals. A silver-green memorial tree,
-carved architectural details, buried masonry and reflecting water repeat the
-same materials through the grounds. Native pixel assets remain independently
-placed, with slow local animation and restrained positional ambience.
-
-The site remains separate from Serene's home in Eldenmere. It was deliberately
-constructed near the natural aether confluence to guide the region's dead back
-to the planet and remember them. Its living grove and shared keeping serve
-that responsibility, as established in
-[the faith guide](world/ELDEN_VALE_FAITH.md) and
-[the covenant](world/SANCTUARY_COVENANT.md).
+The reserve exterior/cave approach, public hall and relief room use native 2×
+environment artwork with their established logical footprints. Construction and
+rendering follow the [visual standard](VISUAL_ART_STANDARD.md) and
+[maintained reserve integration reference](TERRAIN_ART_STANDARD.md#integrated-elden-vale-sanctuary-reserve).
+The Sanctuary remains separate from Serene's home in Eldenmere. Its societal
+purpose and custodial responsibilities are defined in the
+[faith guide](world/ELDEN_VALE_FAITH.md) and
+[covenant](world/SANCTUARY_COVENANT.md).
 
 ## Exploration
 
-Walk onto the sanctuary miniature on the overworld to enter at the southern
-woodland approach. The main paths form a continuous circuit around the court,
-grove, hillside and cave approach. Gentle paths pass around rock shelves; no
-decorative staircase stands across the route. Buildings, trees, walls, benches
-and rock faces have solid footprints consistent with the full player probe.
-Visible open ground is freely walkable, including grass beyond the paths,
-shaded grove clearings, northern shoulders and survey margins. Three open
-cloister bays can be entered from the court; their columns, rear wall and the
-eastern garden workstation remain solid. The bays are assembled as open floors,
-separate columns, arches and roof pieces, with collision at their physical bases.
+Walk onto the regional Sanctuary miniature to enter at the southern woodland
+approach. The current paths form a circuit around the court, grove, hillside and
+cave approach. Visible open ground accepts the complete player probe; physical
+building bases, roots, walls, benches and rock faces remain solid. Three open
+cloister bays can be entered from the court. Their columns, rear wall and garden
+workstation retain their physical footprints and separately sorted scenery.
 
-The hall is a separate, enterable scene with quiet seating and a records table.
-An animated door in its north wall, beside a bed plaque, leads to a small visitor
-relief room. Nessa tends the bed, fresh water and care supplies there. The hall's
-main exit returns to the sanctuary court. The southern reserve exit returns to
-the overworld near the miniature, and the existing Eldenmere entrance still
-returns to the village's southern road.
+The hall is an enterable scene. Its main exit returns to the court, and an
+animated north-wall door beside the bed plaque leads to the visitor relief room.
+The southern reserve exit returns to the overworld outside the miniature's
+contact area. Eldenmere's entry/return remains independent.
 
-Press **M** to inspect the local reserve map. It shows the sanctuary grounds,
-current position and named places, with short descriptions for each landmark.
-The same control closes the map and returns to exploration.
+Press **M** for the local reserve map, with current position, named places and
+landmark descriptions. The hall and relief room use that same regional context.
+
+Caretakers and visitors are live actors. Optional conversations and inspections
+introduce care, remembrance, the confluence and the survey. They do not award
+items, attributes or quest completion. Repeatable eligible small inspections and
+the visitor bed use the shared discovery cues. Ordinary buildings, characters
+and decorative crystals are not blanket highlighted.
 
 ## Visitor relief room
 
-Enter the hall from the Sanctuary court, then follow the bed plaque through the
-north-wing doorway. The relief room has a proper bed, water table, clean linens,
-care supplies, stained glass and a warm memorial lamp, assembled from the same
-native pixel packs as the hall. Attendant Nessa welcomes travelers and those
-keeping vigil. Both her dialogue and the bedside **E: rest** prompt offer an
-explicit **Rest / Not now** choice, with no fee or quest prerequisite.
+Enter the hall, then use its north-wing doorway. Attendant Nessa and the bedside
+**E: rest** prompt offer an explicit **Rest / Not now** choice without a fee or
+quest prerequisite, subject to ordinary scene/control availability.
 
-A short rest fully restores current HP and MP to each available travelling
-member's effective maxima, including reserves and KO companions. Characters
-unavailable elsewhere retain their resources. Levels, EXP, stats, modifiers,
-inventory, equipment, party formation, story progress and the cave encounter
-counter stay intact. There is no overnight time skip or quest completion.
-The existing story music continues through the room and rest.
+Rest restores current HP and MP to effective maxima for every available
+travelling member, including reserves and KO companions. Characters unavailable
+elsewhere retain their resources. Levels, EXP, stats, modifiers, inventory,
+equipment, formation, story progress and the cave encounter counter remain
+intact. There is no overnight time skip or quest completion.
 
-Recovery is saved before the completion message. A failed save restores the
-previous resources and offers **Retry / Not now**. Walking away or changing
-rooms before confirming cannot heal the party remotely. Saving and Continue
-inside the room preserve its location; **M** uses the Sanctuary overview and
-identifies the relief room. This rest point is available during the pending
-MQ03 Sanctuary outing without resolving its unfinished arrival scene.
+Recovery is saved before the completion message. Failed saving restores prior
+resources and offers **Retry / Not now**. Moving away or changing scenes before
+confirmation cannot heal the party remotely. Continue preserves a save made in
+this room. The active story/music owners retain their normal behavior.
 
-The independently rebuilt room is `elden_vale_sanctuary_relief`; its entrance
-and return use normal reciprocal hall doors. Build it with
-`python tools/build_sanctuary_relief_room.py`, and use `--check` to verify the
-exports. The hall's doorway and plaque are part of
-`tools/build_sanctuary_reserve_hall.py`. See the
-[production room captures](reviews/sanctuary_relief/README.md).
+The room is available during the MQ03 outing after any mandatory staging releases
+control; entering it does not acknowledge or bypass an unfinished arrival scene.
+The first post-arrival cave visit also has its existing introductory exchange.
+These control owners must finish normally before free travel resumes.
 
-Caretakers and visitors are live sprites rather than people painted into the
-scenery. Optional conversations and inspections introduce local care,
-remembrance, the natural aether currents and the proposed stone survey. They
-grant no items, attributes or quest completion. Subtle moving motes communicate
-the confluence without revealing an ancient mechanism.
+## Story boundaries and cave access
 
-## Story boundaries
+The Sanctuary reserve is non-combat ground. During MQ03, the
+[arrival director](SANCTUARY_ARRIVAL.md) stages the wounded Crown crew, caretaker
+aid and the rescue decision before returning control at the cave apron. Its
+keeper-rail operation remains story-owned; free exploration uses the existing
+explicit **E** interaction into the [continuous cave](SANCTUARY_CAVE.md).
 
-The cave mouth retains its visible keeper rail and public apron. At the apron,
-press **E** to lift the rail and enter the [crystal cave](SANCTUARY_CAVE.md).
-One continuous cave provides branching exploration, one-time treasure and
-pulsing environmental light. Cave exploration does not resolve MQ03's rescue
-storyline. The
-[cave random encounters](CAVE_RANDOM_ENCOUNTERS.md) are live; the level-seven miniboss is live, while the later rescue payoff and quest
-resolution remain future work. This cave is distinct from the
-historically sealed workers' passage beneath the sanctuary.
+The cave, encounters, Vespermaw fight, rescue and healing-pool evacuation are
+implemented. The return resolution finishes MQ03 only through its final
+acknowledged family exchange. See the
+[quest narrative](narrative/game_01/CH01_MQ03.md),
+[arrival guide](SANCTUARY_ARRIVAL.md) and
+[cave reference](SANCTUARY_CAVE.md) for their respective owners; none grants
+excavation permission or changes regional gate/bridge restrictions.
 
-[Cave Bat](BESTIARY.md#cave-bat) is authored in the Bestiary as a level-2–3
-species for the eastern-ridge caves, joining Lithrusk and Veylume in the cave's
-weighted encounter roster. The reserve remains non-combat ground, with the
-arrival scene staging caretaker aid and injured workers; the keeper rail marks
-an explicit interaction into the cave.
+The historical sealed workers' passage is distinct from the playable ridge cave.
+The later-game descent below the [Echo Chamber rupture](SANCTUARY_CAVE.md#echo-chamber-rupture)
+has no current ladder, transfer or descent action. The established surge/rupture
+link does not define the new regional phenomenon's mechanism or the creature's
+origin. Follow the regional design and canonical story references for these
+boundaries.
 
-During the new MQ03 route, a survivor exposes the Crown crew Iselin secretly
-sent ahead to establish authority and prepare mining. Caretakers have heard
-growling since the bridge incident; the attack's cause and the creature's
-identity remain unresolved. Iselin, Lucan, the page, Caelan and Mira arrive
-with MQ03 still active. The [arrival scene](SANCTUARY_ARRIVAL.md) stages wounded crew, caretaker aid
-and a rescue decision before returning control at the apron. Existing survey
-art is not evidence that the emergency has been resolved or permission granted.
-The guarded regional gates and destroyed western bridge retain their restrictions.
+## Scene ownership and saved journeys
 
-The reserve and hall use their own scene identities while preserving old save
-keys and the town's quest actor
-ownership. Continuing a journey saved here resumes in the corresponding scene.
+`elden_vale_sanctuary`, `elden_vale_sanctuary_hall` and
+`elden_vale_sanctuary_relief` retain their scene identities. Town quest actors
+keep their owners; continuing a save resumes its corresponding scene. Ordinary
+regional contact rearming and transfer cooldowns prevent entry/return loops.
+
+The current exterior is 1152×768 logical units (48×32 tiles); the hall is 576×384
+and the relief room 336×288. The exterior's current full player probe remains
+24×12 logical units. These are live implementation facts, not new pixel-to-world
+distance conversions. Revision work must explicitly handle established routes,
+scene contracts, saved positions and the design's protected circulation.
+
+Ground uses visible native chunks and bounded scene caches. Scenery and furniture
+remain separately placed and depth sorted; their visible silhouette does not
+define collision. Pause/focus freezes exploration clocks; reduced motion holds
+ambient effects and the caretaker at rest. The local map overview is derived
+from the assembled assets.
 
 ## Review and reproduction
 
-The [current fantasy review](reviews/sanctuary_fantasy/README.md) records the
-landmarks, ordinary movement, atmosphere, hall, local map and continued journeys.
-The earlier [pixel asset review](reviews/sanctuary_pixel_assets/README.md) records the
-reserve and hall at normal character scale, ordinary travel from Eldenmere,
-free exploration, the cloister, cave rail, optional inspections, local map and
-Save/Continue. Its disposable save and settings files leave player journeys
-untouched. Reproduce with `python tools/capture_sanctuary_reserve.py`.
-
-The exterior retains its 48 × 32 tile extent at 24 pixels per tile. Emerald grass
-and matching dirt transitions use the shared approved pack. Ordinary foliage,
-flowers, benches, paving and masonry reuse Eldenmere modules. Sanctuary-specific
-crystals, memorial vegetation, architecture, rock and cave pieces extend those
-packs at the same character scale.
-The hall uses modular floors, walls and individual furnishings.
-
-Ground layers are compiled for runtime efficiency. Trees, architecture and
-furniture remain separately placed, depth-sorted objects. Asset placements own
-their solid ground footprints; visible open ground accepts the complete
-24 × 12 player probe. Full-foot flood, straight movement, independent occlusion
-probes and saved-scene tests check the resulting world. The local map uses an
-overview compiled from these same assets.
-
-The previous painted ground, extracted depth silhouettes and localized repair
-patches have been removed from the scene pipeline. Source asset references and
-deterministic build checks make the replacement reproducible.
-
-Rebuild the checked-in scenes with Pillow available:
+The maintained owner is `tools/build_sanctuary_reserve_hd.py` for all three scenes.
+Older exterior/art, hall and relief CLI commands forward to it. Runtime uses
+checked-in products and needs no asset-building step.
 
 ```sh
-python tools/build_sanctuary_crystals.py
-python tools/build_sanctuary_grove.py
-python tools/build_elden_vale_sanctuary.py
-python tools/build_sanctuary_reserve_hall.py
-python tools/build_overworld_sanctuary_art.py
-python tools/build_sanctuary_crystals.py --check
-python tools/build_sanctuary_grove.py --check
-python tools/build_elden_vale_sanctuary.py --check
-python tools/build_sanctuary_reserve_hall.py --check
-python tools/build_overworld_sanctuary_art.py --check
+python tools/build_sanctuary_reserve_hd.py
+python tools/build_sanctuary_reserve_hd.py --check
+python tools/capture_sanctuary_reserve_hd.py /tmp/reserve-review
 ```
 
-The exterior placement recipe is
-[`assets/source/maps/elden_vale_sanctuary/recipe.json`](../assets/source/maps/elden_vale_sanctuary/recipe.json).
-The interior recipe is
-[`assets/source/terrain/elden_vale_sanctuary_hall/recipe.json`](../assets/source/terrain/elden_vale_sanctuary_hall/recipe.json).
-Their exports record the reusable source assets and their hashes. Runtime
-exploration uses the checked-in products and requires no asset-building tools.
+Source drawings, registration and geometry controls are under
+[`assets/source/maps/sanctuary_reserve_hd/`](../assets/source/maps/sanctuary_reserve_hd/).
+The [current native review](reviews/sanctuary_reserve_hd/README.md) records
+initialized gameplay fixtures, actual movement/door transfers, caretaker work,
+rest offers and the complete arrival preview. The
+[terrain integration reference](TERRAIN_ART_STANDARD.md#integrated-elden-vale-sanctuary-reserve)
+owns the maintained build workflow.
+
+Earlier [fantasy](reviews/sanctuary_fantasy/README.md),
+[pixel-asset](reviews/sanctuary_pixel_assets/README.md) and
+[relief-room](reviews/sanctuary_relief/README.md) captures remain historical
+implementation evidence. Their source recipes, snapshots and old dimensions do
+not supersede the current registry or the regional creative design.
