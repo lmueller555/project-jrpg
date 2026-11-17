@@ -167,6 +167,15 @@ All nine buildings have separate furnished interiors. Cottages use the approved 
 
 The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
+The [regional HD foundation](docs/OVERWORLD.md#integrated-hd-foundation) now selects
+native terrain and scenery through an explicit adapted registry while retaining
+the region's logical scale, routes, entrances and work stations. Six area records
+and nonblocking causeway/antler reservations prepare later landscape work.
+[Current gameplay captures](docs/reviews/elden_vale_hd_integration/README.md) show
+this integration; the earlier region previews remain historical comparisons.
+The Pale Antlers, causeway structures, Rising Rain and final atlas updates are
+not yet active in gameplay.
+
 The sanctuary miniature opens into the [Elden Vale Sanctuary reserve](docs/SANCTUARY_RESERVE.md).
 Creative direction for the region and approach is consolidated in
 [Elden Vale — Regional Design Guidance](docs/world/regions/ELDEN_VALE.md), including

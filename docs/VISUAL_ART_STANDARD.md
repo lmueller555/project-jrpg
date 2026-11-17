@@ -25,8 +25,9 @@ banks retain their legacy density until rebuilt; Iselin's detailed artwork, Cael
 Caelan’s rebuilt household, carrying, quest-work, casting and cave-assistance poses,
 all three Sanctuary home interiors (hall, bedroom and dining room), and
 the complete Eldenmere town, remaining town interiors, southern inn/shop and
-upstream scene, Elden Vale Sanctuary reserve/cave approach, Sanctuary Hall and
-visitor relief room now use the shared path. Dining was the first integrated environment bank; remaining
+upstream scene, Elden Vale Sanctuary reserve/cave approach, Sanctuary Hall,
+visitor relief room and the selected Elden Vale regional terrain/scenery foundation
+now use the shared path. Dining was the first integrated environment bank; remaining
 asset reconstruction and individual bank migrations continue as separately scoped work.
 
 This standard replaces conflicting general advice in older character recipes,
@@ -1182,6 +1183,30 @@ chunk/cache behavior and review provenance. Repeatable marker/ledger/cabinet/tab
 inspections and the relief bed use the shared eligibility-driven discovery cues.
 Window/lamp colors remain steady; pause, focus and reduced motion govern ambient
 motion. Do not infer gameplay footprints from the new visible silhouettes.
+
+### Integrated Elden Vale regional foundation
+
+The regional `hd_art_manifest` overlay selects
+`assets/maps/overworld/elden_vale/hd_integration/manifest.json`. Its selected
+terrain and scenery are integrated at 2× density while retaining regional logical
+canvases, foot anchors, collision ownership and travel coordinates. This is a
+separate adapted registry; the original PR 1 foundation pack retains its staged
+`not_integrated` metadata. Build/check commands and material construction are in
+the [central terrain reference](TERRAIN_ART_STANDARD.md#integrated-elden-vale-regional-foundation).
+
+Vegetation frame sets use one union crop, scale and registration across idle,
+moving and fixed states. Their breeze follows the exploration clock with stable
+reduced-motion frames. Ground and animated water retain native detail through
+global phase-aware composition and bounded helpers/chunk caches; logical masks
+continue to own geometry. Existing character, wildlife and work controllers are
+unchanged. The Sanctuary miniature remains separately owned.
+
+The [regional creative guide](world/regions/ELDEN_VALE.md) remains the single design
+authority. Its six-area foundation and nonblocking future landmark reservations
+are recorded in the active layout. Signature remains, causeway structures,
+Rising Rain and final atlas updates are not yet active. See the
+[gameplay foundation review](reviews/elden_vale_hd_integration/README.md) for current
+evidence rather than treating offline source-pack compositions as integration.
 
 ## Staged Eldenmere HD building exteriors
 

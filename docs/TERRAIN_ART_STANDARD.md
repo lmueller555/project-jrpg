@@ -32,6 +32,11 @@ that metadata does not replace the live map's explicit integration registry.
 Unused variants and other regions remain separate migrations. Existing shared
 legacy banks are still required by regional scenes and historical source tools.
 
+Elden Vale's regional foundation now has its own
+[integrated HD bindings](#integrated-elden-vale-regional-foundation), using the
+shared materials and adapted scenery at the existing miniature logical scale.
+The signature landscape, causeway structures and Rising Rain remain inactive.
+
 Eldenmere's building/interior integration and the new inn/shop follow the
 [global visual standard](VISUAL_ART_STANDARD.md#integrated-eldenmere-town-and-businesses).
 
@@ -1093,14 +1098,54 @@ landmark depth, map and reduced-motion evidence. Its annotated placement sheet
 is an explanatory diagram. Earlier fingerprint checks belong to that historical
 snapshot; use the maintained native owner above for current scene verification.
 
+### Integrated Elden Vale regional foundation
+
+`assets/maps/overworld/elden_vale/region.json` selects
+`assets/maps/overworld/elden_vale/hd_integration/manifest.json` through the explicit
+`hd_art_manifest` overlay, with `terrain_hd.enabled` selecting native material
+composition. This registry is integrated; the original staged foundation bank
+below retains its own metadata and remains a source, not the live selector.
+Do not overwrite base/detail/composition banks to activate newer art.
+
+`tools/build_elden_vale_hd_integration.py` preserves the regional canvases and
+foot anchors while adapting selected HD vegetation and reusing foundation props.
+All states of a vegetation donor share one union crop, scale and origin; roots
+and fixed layers remain registered while authored leaves move. The registry
+records source hashes, material aliases and animation frames. Source metadata and
+layout recommendations live under
+`assets/source/maps/overworld/elden_vale/hd_integration/`.
+
+`regional_terrain_hd.py` applies shared emerald grass, dirt, paving, temperate
+water and natural shore detail through existing logical masks. Paving and water
+phases use signed global tile coordinates; agricultural row angles retain their
+authored direction. Material boundaries do not widen paths or redefine water.
+Animated water remains outside a restored bridge deck. Asset/mask helpers and
+streamed render chunks use bounded caches, not enlarged whole-region images.
+Reduced motion holds scenery and water to stable frames.
+
+The live six-area layout records preserve current inhabited places and routes.
+Causeway clearance follows existing stone road; an overhead antler envelope and
+existing-solid candidate support IDs reserve later work without new blocking
+ground. Neither these records nor the artwork activate signature ruins, the
+Pale Antlers, Rising Rain or final atlas artwork.
+
+Rebuild adapted bindings with `python tools/build_elden_vale_hd_integration.py`;
+add `--check` for non-writing verification. The vector layout remains owned by
+`tools/build_elden_vale_overworld.py`. Reproduce the gameplay review with
+`python tools/capture_elden_vale_hd_integration.py /tmp/elden-vale-hd-review`.
+[Current captures and scope](reviews/elden_vale_hd_integration/README.md) remain
+separate from the offline source-pack studies below. Characters, wildlife, work
+props and the separately owned Sanctuary miniature retain their existing owners.
+
 ### Staged Elden Vale regional HD foundation
 
 `tools/build_elden_vale_hd_foundation.py` stages the regional foundation under
 `assets/terrain/overworld/elden_vale/hd/art.json`. Its source recipe and replacement
-inventory live under `assets/source/terrain/overworld/elden_vale/hd/`. This bank is
-**not integrated** and has no user visual approval yet. Existing maps, controllers,
-collision and travel remain authoritative. Do not activate it by overwriting the
-base regional manifests.
+inventory live under `assets/source/terrain/overworld/elden_vale/hd/`. The original
+bank retains **not integrated** metadata and has no user visual approval yet.
+Selected consumers are now integrated through the separate adapted registry
+above. Existing controllers, collision and travel remain authoritative; the
+original staged bank and legacy regional manifests are retained as sources.
 
 The exporter samples retained original regional drawings directly at 2× artwork
 density, preserving logical canvases and anchors. It resolves base/polish/composition
@@ -1118,18 +1163,18 @@ breeze art, not contact-responsive grass behavior or new animal routines.
 
 Crop rows have two orientations; seven material groups have three retained-master
 crop treatments. These are fill/dressing candidates for coherent areas, not new
-47-shape transitions. Future regional integration must blend their contacts using
-the terrain painter and review seams in the actual map. Water retains the donor
+47-shape transitions. The active regional terrain painter supplies material
+contacts; unused variants remain separate selections. Water retains the donor
 pack's temporal frames, spatial phases and bank masks through explicit references.
 
 Build with `python tools/build_elden_vale_hd_foundation.py`; verify without writing
 with the same command plus `--check`. Focused contracts are covered by
 `python -m unittest discover -s tests -p test_elden_vale_hd_foundation.py -v`.
 [Review compositions](reviews/elden_vale_hd_foundation/README.md) are offline asset
-studies, not gameplay captures. The preliminary antler blockout records protected
-routes and candidate overhead space; PR2 must verify supports in detailed ridge
-geometry before finished landmark art. The Sanctuary miniature, signature remains,
-ruins, weather, action poses and atlas updates belong to subsequent work.
+studies, not gameplay captures. Their preliminary antler blockout remains source
+history; the active design-layout records reserve future circulation and views.
+Staged signature and weather packs below do not activate their Sanctuary icon,
+remains, ruins, weather, action poses or atlas artwork in gameplay.
 
 ### Staged Elden Vale signature landscape
 

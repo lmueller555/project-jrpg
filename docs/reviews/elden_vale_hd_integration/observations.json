@@ -1,0 +1,1405 @@
+{
+  "fixture": "Disposable initialized Game exploration; no seeded quest progression. Fixed views position player on clear ground; motion/transfers use actual Game.update.",
+  "actual_renderer": true,
+  "display_size": [
+    960,
+    640
+  ],
+  "views": {
+    "eldenmere_meadows": {
+      "requested_tile": [
+        3,
+        -11
+      ],
+      "player_pixel": [
+        72.0,
+        -264.0
+      ],
+      "camera_pixel": [
+        -168,
+        -472
+      ]
+    },
+    "town_miniature": {
+      "requested_tile": [
+        12,
+        -25
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "camera_pixel": [
+        48,
+        -856
+      ]
+    },
+    "western_bridge": {
+      "requested_tile": [
+        -101,
+        29
+      ],
+      "player_pixel": [
+        -2424.0,
+        696.0
+      ],
+      "camera_pixel": [
+        -2856,
+        536
+      ]
+    },
+    "central_causeway_reservation": {
+      "requested_tile": [
+        -3.0,
+        8.0
+      ],
+      "player_pixel": [
+        -72.0,
+        192.0
+      ],
+      "camera_pixel": [
+        -312,
+        32
+      ]
+    },
+    "northern_woodland": {
+      "requested_tile": [
+        -48,
+        -68
+      ],
+      "player_pixel": [
+        -1152.0,
+        -1632.0
+      ],
+      "camera_pixel": [
+        -1392,
+        -1840
+      ]
+    },
+    "millrace_approach": {
+      "requested_tile": [
+        8,
+        -60
+      ],
+      "player_pixel": [
+        192.0,
+        -1440.0
+      ],
+      "camera_pixel": [
+        -48,
+        -1696
+      ]
+    },
+    "sanctuary_approach": {
+      "requested_tile": [
+        90,
+        -62
+      ],
+      "player_pixel": [
+        2160.0,
+        -1488.0
+      ],
+      "camera_pixel": [
+        1920,
+        -1744
+      ]
+    },
+    "eastern_riverbank": {
+      "requested_tile": [
+        108,
+        -27
+      ],
+      "player_pixel": [
+        2592.0,
+        -648.0
+      ],
+      "camera_pixel": [
+        2472,
+        -808
+      ]
+    },
+    "northern_checkpoint": {
+      "requested_tile": [
+        20,
+        -91
+      ],
+      "player_pixel": [
+        480.0,
+        -2184.0
+      ],
+      "camera_pixel": [
+        240,
+        -2416
+      ]
+    },
+    "southern_checkpoint": {
+      "requested_tile": [
+        28,
+        91
+      ],
+      "player_pixel": [
+        672.0,
+        2184.0
+      ],
+      "camera_pixel": [
+        432,
+        2096
+      ]
+    },
+    "farmstead_1": {
+      "requested_tile": [
+        -36,
+        9.6
+      ],
+      "player_pixel": [
+        -864.0,
+        230.39999999999998
+      ],
+      "camera_pixel": [
+        -1116,
+        30
+      ]
+    },
+    "farmstead_2": {
+      "requested_tile": [
+        -15,
+        52
+      ],
+      "player_pixel": [
+        -360.0,
+        1252.0
+      ],
+      "camera_pixel": [
+        -641,
+        1066
+      ]
+    },
+    "farmstead_3": {
+      "requested_tile": [
+        60,
+        51.6
+      ],
+      "player_pixel": [
+        1440.0,
+        1238.4
+      ],
+      "camera_pixel": [
+        1224,
+        1016
+      ]
+    },
+    "southern_orchard": {
+      "requested_tile": [
+        -4,
+        -10
+      ],
+      "player_pixel": [
+        -96.0,
+        -240.0
+      ],
+      "camera_pixel": [
+        -365,
+        -417
+      ]
+    },
+    "reduced_motion": {
+      "requested_tile": [
+        108,
+        -27
+      ],
+      "player_pixel": [
+        2592.0,
+        -648.0
+      ],
+      "camera_pixel": [
+        2472,
+        -808
+      ]
+    }
+  },
+  "profile_scope": "Warm production world renderer only, SDL dummy; excludes simulation/display/UI. Hardware-specific.",
+  "rss_after_initialized_game_kib": 577996,
+  "registry": {
+    "art_manifest": "assets/terrain/overworld/elden_vale/art.json",
+    "detail_art_manifest": "assets/terrain/overworld/elden_vale/polish/art.json",
+    "composition_art_manifest": "assets/terrain/overworld/elden_vale/composition/art.json",
+    "sanctuary_art_manifest": "assets/terrain/overworld/elden_vale/sanctuary/art.json",
+    "hd_art_manifest": "assets/maps/overworld/elden_vale/hd_integration/manifest.json",
+    "terrain_hd": {
+      "enabled": true,
+      "bank_family": "grass",
+      "water_family": "temperate",
+      "density": 2,
+      "geometry": "Existing vector roads/rivers, unchanged collision grid."
+    }
+  },
+  "registry_record_counts_by_density": {
+    "tiles": {
+      "1": 2,
+      "2": 21
+    },
+    "props": {
+      "1": 12,
+      "2": 48
+    }
+  },
+  "region_sha256": "cf6d6efc3819d42ac5dfdec029836a616072e1ac168e9e34d9b30874a35f1c1a",
+  "rss_after_static_views_kib": 700796,
+  "native_detail": {
+    "prop_key": "farm_house",
+    "source_image": "assets/terrain/overworld/elden_vale/hd/props/farm_house.png",
+    "logical_size": [
+      48,
+      48
+    ],
+    "native_size": [
+      96,
+      96
+    ],
+    "logical_foot_anchor": [
+      24,
+      48
+    ],
+    "source_visible_pixel_mismatches": 0,
+    "changed_pixels_against_legacy_upscale": 6218,
+    "chunk_coord": [
+      0,
+      -2
+    ],
+    "native_chunk_pixels_different_from_mirror_upscale": 150918
+  },
+  "road_walk": {
+    "start_pixel": [
+      288.0,
+      -552.0
+    ],
+    "end_pixel": [
+      280.19165365352126,
+      -336.46528110596057
+    ],
+    "displacement_pixels": 215.676,
+    "trace_pixels": [
+      [
+        288.2690254517239,
+        -549.6151257252582
+      ],
+      [
+        288.31538144306876,
+        -547.2155734499231
+      ],
+      [
+        288.3617374344136,
+        -544.8160211745881
+      ],
+      [
+        288.40809342575847,
+        -542.416468899253
+      ],
+      [
+        288.4544494171033,
+        -540.016916623918
+      ],
+      [
+        288.5008054084482,
+        -537.6173643485829
+      ],
+      [
+        288.547161399793,
+        -535.2178120732478
+      ],
+      [
+        288.5935173911379,
+        -532.8182597979128
+      ],
+      [
+        288.63987338248273,
+        -530.4187075225777
+      ],
+      [
+        288.6862293738276,
+        -528.0191552472427
+      ],
+      [
+        288.73258536517244,
+        -525.6196029719076
+      ],
+      [
+        288.7789413565173,
+        -523.2200506965726
+      ],
+      [
+        288.82529734786215,
+        -520.8204984212375
+      ],
+      [
+        288.871653339207,
+        -518.4209461459025
+      ],
+      [
+        288.91800933055185,
+        -516.0213938705674
+      ],
+      [
+        288.9643653218967,
+        -513.6218415952324
+      ],
+      [
+        288.9801433185484,
+        -511.2218934593716
+      ],
+      [
+        288.99592131519995,
+        -508.8219453235108
+      ],
+      [
+        289.01169931185166,
+        -506.42199718765005
+      ],
+      [
+        289.0274773085032,
+        -504.0220490517893
+      ],
+      [
+        289.0432553051549,
+        -501.6221009159285
+      ],
+      [
+        289.05903330180644,
+        -499.22215278006774
+      ],
+      [
+        289.07481129845814,
+        -496.822204644207
+      ],
+      [
+        289.0905892951097,
+        -494.4222565083462
+      ],
+      [
+        289.1063672917614,
+        -492.02230837248544
+      ],
+      [
+        289.1221452884129,
+        -489.6223602366247
+      ],
+      [
+        289.13792328506463,
+        -487.2224121007639
+      ],
+      [
+        289.15370128171617,
+        -484.82246396490314
+      ],
+      [
+        289.1694792783679,
+        -482.42251582904237
+      ],
+      [
+        289.1852572750194,
+        -480.0225676931816
+      ],
+      [
+        289.2010352716711,
+        -477.62261955732083
+      ],
+      [
+        289.21681326832265,
+        -475.22267142146006
+      ],
+      [
+        289.20197048894477,
+        -472.8227173194197
+      ],
+      [
+        289.1871277095669,
+        -470.4227632173794
+      ],
+      [
+        289.172284930189,
+        -468.02280911533904
+      ],
+      [
+        289.1574421508111,
+        -465.6228550132987
+      ],
+      [
+        289.1425993714332,
+        -463.22290091125836
+      ],
+      [
+        289.12775659205533,
+        -460.822946809218
+      ],
+      [
+        289.11291381267745,
+        -458.4229927071777
+      ],
+      [
+        289.09807103329956,
+        -456.02303860513734
+      ],
+      [
+        289.0832282539215,
+        -453.623084503097
+      ],
+      [
+        289.0683854745436,
+        -451.22313040105666
+      ],
+      [
+        289.05354269516556,
+        -448.8231762990163
+      ],
+      [
+        289.0386999157877,
+        -446.423222196976
+      ],
+      [
+        289.0238571364096,
+        -444.02326809493564
+      ],
+      [
+        289.00901435703173,
+        -441.6233139928953
+      ],
+      [
+        288.9941715776537,
+        -439.22335989085497
+      ],
+      [
+        288.9177927634189,
+        -436.8245755577529
+      ],
+      [
+        288.84141394918413,
+        -434.4257912246508
+      ],
+      [
+        288.76503513494936,
+        -432.02700689154875
+      ],
+      [
+        288.6886563207146,
+        -429.6282225584467
+      ],
+      [
+        288.61227750647964,
+        -427.2294382253446
+      ],
+      [
+        288.53589869224487,
+        -424.83065389224254
+      ],
+      [
+        288.4595198780099,
+        -422.43186955914047
+      ],
+      [
+        288.38314106377516,
+        -420.0330852260384
+      ],
+      [
+        288.3067622495402,
+        -417.6343008929363
+      ],
+      [
+        288.23038343530544,
+        -415.23551655983425
+      ],
+      [
+        288.1540046210705,
+        -412.8367322267322
+      ],
+      [
+        287.9629666653728,
+        -410.444347537874
+      ],
+      [
+        287.7719287096751,
+        -408.05196284901587
+      ],
+      [
+        287.58089075397737,
+        -405.6595781601577
+      ],
+      [
+        287.38985279827966,
+        -403.26719347129955
+      ],
+      [
+        287.19881484258195,
+        -400.8748087824414
+      ],
+      [
+        287.00777688688424,
+        -398.48242409358323
+      ],
+      [
+        286.81673893118653,
+        -396.0900394047251
+      ],
+      [
+        286.6257009754888,
+        -393.6976547158669
+      ],
+      [
+        286.4346630197911,
+        -391.30527002700876
+      ],
+      [
+        286.2436250640934,
+        -388.9128853381506
+      ],
+      [
+        286.0525871083957,
+        -386.52050064929244
+      ],
+      [
+        285.861549152698,
+        -384.1281159604343
+      ],
+      [
+        285.58993871776624,
+        -381.7435347033503
+      ],
+      [
+        285.3183282828345,
+        -379.3589534462663
+      ],
+      [
+        285.04671784790276,
+        -376.9743721891823
+      ],
+      [
+        284.775107412971,
+        -374.5897909320983
+      ],
+      [
+        284.50349697803927,
+        -372.2052096750143
+      ],
+      [
+        284.2318865431075,
+        -369.8206284179303
+      ],
+      [
+        283.9602761081758,
+        -367.43604716084633
+      ],
+      [
+        283.68866567324403,
+        -365.05146590376233
+      ],
+      [
+        283.4170552383123,
+        -362.66688464667834
+      ],
+      [
+        283.14544480338054,
+        -360.28230338959435
+      ],
+      [
+        282.8738343684486,
+        -357.89772213251035
+      ],
+      [
+        282.6022239335169,
+        -355.51314087542636
+      ],
+      [
+        282.33061349858497,
+        -353.12855961834236
+      ],
+      [
+        282.025047806433,
+        -350.7480912594307
+      ],
+      [
+        281.71948211428105,
+        -348.367622900519
+      ],
+      [
+        281.4139164221291,
+        -345.9871545416073
+      ],
+      [
+        281.10835072997713,
+        -343.6066861826956
+      ],
+      [
+        280.8027850378252,
+        -341.22621782378394
+      ],
+      [
+        280.4972193456732,
+        -338.84574946487226
+      ],
+      [
+        280.19165365352126,
+        -336.46528110596057
+      ]
+    ],
+    "frames": 90,
+    "movement": "Game.update at 30 Hz on existing main road"
+  },
+  "road_run": {
+    "start_pixel": [
+      288.0,
+      -552.0
+    ],
+    "end_pixel": [
+      265.78872082991074,
+      -229.43856634711165
+    ],
+    "displacement_pixels": 323.325,
+    "trace_pixels": [
+      [
+        288.4035381775859,
+        -548.4226885878875
+      ],
+      [
+        288.4628320043432,
+        -544.8231769207155
+      ],
+      [
+        288.52212583110054,
+        -541.2236652535435
+      ],
+      [
+        288.5814196578581,
+        -537.6241535863714
+      ],
+      [
+        288.6407134846154,
+        -534.0246419191994
+      ],
+      [
+        288.70000731137293,
+        -530.4251302520274
+      ],
+      [
+        288.75930113813024,
+        -526.8256185848554
+      ],
+      [
+        288.8185949648878,
+        -523.2261069176834
+      ],
+      [
+        288.8778887916451,
+        -519.6265952505114
+      ],
+      [
+        288.93718261840263,
+        -516.0270835833394
+      ],
+      [
+        288.99647644515994,
+        -512.4275719161674
+      ],
+      [
+        289.0180433443509,
+        -508.8276365182944
+      ],
+      [
+        289.0396102435418,
+        -505.22770112042144
+      ],
+      [
+        289.06117714273273,
+        -501.6277657225485
+      ],
+      [
+        289.08274404192366,
+        -498.0278303246755
+      ],
+      [
+        289.1043109411146,
+        -494.42789492680254
+      ],
+      [
+        289.1258778403055,
+        -490.82795952892957
+      ],
+      [
+        289.14744473949645,
+        -487.2280241310566
+      ],
+      [
+        289.16901163868715,
+        -483.62808873318363
+      ],
+      [
+        289.1905785378781,
+        -480.02815333531066
+      ],
+      [
+        289.2121454370688,
+        -476.4282179374377
+      ],
+      [
+        289.2337123362597,
+        -472.8282825395647
+      ],
+      [
+        289.2083790730683,
+        -469.2283716759771
+      ],
+      [
+        289.18304580987683,
+        -465.62846081238945
+      ],
+      [
+        289.1577125466854,
+        -462.0285499488018
+      ],
+      [
+        289.13237928349395,
+        -458.4286390852142
+      ],
+      [
+        289.1070460203023,
+        -454.82872822162653
+      ],
+      [
+        289.08171275711084,
+        -451.2288173580389
+      ],
+      [
+        289.05637949391917,
+        -447.62890649445126
+      ],
+      [
+        289.0310462307277,
+        -444.0289956308636
+      ],
+      [
+        289.00571296753606,
+        -440.429084767276
+      ],
+      [
+        288.8941209550637,
+        -436.8308147353366
+      ],
+      [
+        288.7825289425914,
+        -433.23254470339725
+      ],
+      [
+        288.67093693011907,
+        -429.6342746714579
+      ],
+      [
+        288.55934491764674,
+        -426.0360046395185
+      ],
+      [
+        288.4477529051744,
+        -422.43773460757916
+      ],
+      [
+        288.33616089270186,
+        -418.8394645756398
+      ],
+      [
+        288.2245688802295,
+        -415.24119454370043
+      ],
+      [
+        288.11297686775697,
+        -411.64292451176107
+      ],
+      [
+        287.82003291017327,
+        -408.0548632194034
+      ],
+      [
+        287.52708895258957,
+        -404.4668019270457
+      ],
+      [
+        287.23414499500586,
+        -400.87874063468803
+      ],
+      [
+        286.94120103742216,
+        -397.29067934233035
+      ],
+      [
+        286.64825707983846,
+        -393.70261804997267
+      ],
+      [
+        286.355313122255,
+        -390.114556757615
+      ],
+      [
+        286.0623691646713,
+        -386.5264954652573
+      ],
+      [
+        285.7694252070878,
+        -382.93843417289963
+      ],
+      [
+        285.35759217611576,
+        -379.36206820244865
+      ],
+      [
+        284.9457591451437,
+        -375.7857022319977
+      ],
+      [
+        284.53392611417166,
+        -372.2093362615467
+      ],
+      [
+        284.1220930831996,
+        -368.6329702910957
+      ],
+      [
+        283.71026005222757,
+        -365.05660432064474
+      ],
+      [
+        283.2984270212553,
+        -361.48023835019376
+      ],
+      [
+        282.88659399028325,
+        -357.9038723797428
+      ],
+      [
+        282.47476095931097,
+        -354.3275064092918
+      ],
+      [
+        282.0629279283389,
+        -350.7511404388408
+      ],
+      [
+        281.6011816329276,
+        -347.18087569254067
+      ],
+      [
+        281.13943533751626,
+        -343.6106109462405
+      ],
+      [
+        280.67768904210493,
+        -340.04034619994036
+      ],
+      [
+        280.2159427466936,
+        -336.4700814536402
+      ],
+      [
+        279.75419645128227,
+        -332.89981670734005
+      ],
+      [
+        279.29245015587117,
+        -329.3295519610399
+      ],
+      [
+        278.83070386045983,
+        -325.75928721473974
+      ],
+      [
+        278.36895756504873,
+        -322.1890224684396
+      ],
+      [
+        277.9072112696374,
+        -318.61875772213943
+      ],
+      [
+        277.4454649742263,
+        -315.0484929758393
+      ],
+      [
+        276.9593831627285,
+        -311.4814599689089
+      ],
+      [
+        276.4733013512307,
+        -307.9144269619785
+      ],
+      [
+        275.9872195397329,
+        -304.3473939550481
+      ],
+      [
+        275.5011377282351,
+        -300.78036094811773
+      ],
+      [
+        275.0150559167373,
+        -297.21332794118734
+      ],
+      [
+        274.5289741052395,
+        -293.64629493425696
+      ],
+      [
+        274.0428922937417,
+        -290.07926192732657
+      ],
+      [
+        273.5568104822439,
+        -286.5122289203962
+      ],
+      [
+        273.0707286707461,
+        -282.9451959134658
+      ],
+      [
+        272.5846468592483,
+        -279.3781629065354
+      ],
+      [
+        272.09342380035014,
+        -275.81183427523865
+      ],
+      [
+        271.60220074145195,
+        -272.2455056439419
+      ],
+      [
+        271.11097768255377,
+        -268.67917701264514
+      ],
+      [
+        270.6197546236556,
+        -265.1128483813484
+      ],
+      [
+        270.1285315647574,
+        -261.54651975005163
+      ],
+      [
+        269.6373085058592,
+        -257.9801911187549
+      ],
+      [
+        269.146085446961,
+        -254.41386248745812
+      ],
+      [
+        268.65486238806284,
+        -250.84753385616136
+      ],
+      [
+        268.16363932916465,
+        -247.2812052248646
+      ],
+      [
+        267.68865562931387,
+        -243.71267744931401
+      ],
+      [
+        267.2136719294631,
+        -240.14414967376342
+      ],
+      [
+        266.7386882296123,
+        -236.57562189821283
+      ],
+      [
+        266.2637045297615,
+        -233.00709412266224
+      ],
+      [
+        265.78872082991074,
+        -229.43856634711165
+      ]
+    ],
+    "frames": 90,
+    "movement": "Game.update at 30 Hz on existing main road"
+  },
+  "town_roundtrip": [
+    [
+      "eldenmere.playable",
+      "auratia.overworld"
+    ],
+    [
+      "auratia.overworld",
+      "eldenmere.playable"
+    ]
+  ],
+  "water": {
+    "normal": {
+      "camera_pixel": [
+        -3168,
+        -400
+      ],
+      "native_water_crop": [
+        416,
+        192,
+        544,
+        448
+      ],
+      "changed_pixels_vs_0ms": [
+        310,
+        410
+      ]
+    },
+    "reduced": {
+      "camera_pixel": [
+        -3168,
+        -400
+      ],
+      "native_water_crop": [
+        416,
+        192,
+        544,
+        448
+      ],
+      "changed_pixels_vs_0ms": [
+        0,
+        0
+      ]
+    }
+  },
+  "freeze_resume": {
+    "pause": {
+      "frozen_elapsed_ms": 8393.333333333305,
+      "frozen_position": [
+        288.0,
+        -552.0
+      ],
+      "controller_state_preserved": true,
+      "native_render_unchanged": true
+    },
+    "focus_loss": {
+      "frozen_elapsed_ms": 8493.333333333305,
+      "frozen_position": [
+        288.0,
+        -552.0
+      ],
+      "controller_state_preserved": true,
+      "native_render_unchanged": true
+    }
+  },
+  "save_continue": {
+    "scene": "auratia.overworld",
+    "position": [
+      72.0,
+      -264.0
+    ],
+    "exact_snapshot_keys_preserved": [
+      "quests",
+      "party",
+      "dialogue_flags",
+      "player",
+      "overworld"
+    ],
+    "town_actor_owners": {
+      "mira_worker": 1,
+      "sanctuary_gardener": 1
+    }
+  },
+  "render_input_sha256": {
+    "assets/maps/overworld/elden_vale/hd_integration/manifest.json": "928a624499ae605ad58e2f4152473dc4d2d1b88e7ee6d690ba13224d2583ce85",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/idle.png": "35108ebb729267936f12a1518766e061cee3edc34fa17ae457aa0f4118b8d487",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/idle.png": "26491c7f5f2b28547da41f12304e71302d389754a72dcb614b0d66df9619fabf",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/idle.png": "3aab57f55e1de4731f50e40b5642ac90ee3b0280896bded48fa2da2207e9c7ca",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/idle.png": "1e3443a47c94954ca07c6fd5a356f482d78e9819974c1df51706706bb109f463",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/idle.png": "5886e4431d5f7f457a996924b084968c8f4e57df7c14691ec6300660346a861a",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/idle.png": "294dad777733fc6bb1504551b584bf435ab096db097983e1b04a62fb9fd86698",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/log/idle.png": "f73961a452e21b439a18a566fb0e26b309a76ddaa023a0184b316c677b9d3fee",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/idle.png": "65ba452d2d25eccd961fb0d24dc5090a011bfcdc26d5d5d56e82f782eac86bfb",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/idle.png": "d547d2bb14172569548c7454c5fe0d4347eb4f1289d93e739dde0762ec855179",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/idle.png": "006de905977b00176d8d4a2f07e359ca74b3f86eb42e296efb841304a813daa0",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/idle.png": "e9281f32601bcfd73ef8cc4c5e70e7a027cfbd4f3e1d747c9bfa7973a6a8d54f",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/idle.png": "583a34fcb7732e78688f92a0fa42bf5de6c97d32efeb8f21d0fffdc66217ca9b",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/river_rocks/idle.png": "4c5900beb891ee9cb646df0c079fe3faa8d69c77fc5ac5053c5fddfa8f62cb30",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/rock/idle.png": "ab922fc425b6014548d01c65c095b93c2cbaf23af644538a6ab86d56d7df7de3",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/idle.png": "a64d443e5c848de4a517d82eab129c91a777710c2b81eb3f0d12fb4b51f69dac",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/idle.png": "4ec0dcedb6f9b442b90dc2ac4617bc8ad8f6e37a2dec9269e4410bfc4ed231b6",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/stump/idle.png": "472d4c5820446481162be5f202859ca6435752e7de218003ed8c33bad187cfa0",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/idle.png": "65ba452d2d25eccd961fb0d24dc5090a011bfcdc26d5d5d56e82f782eac86bfb",
+    "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/idle.png": "35108ebb729267936f12a1518766e061cee3edc34fa17ae457aa0f4118b8d487",
+    "assets/maps/overworld/elden_vale/region.json": "cf6d6efc3819d42ac5dfdec029836a616072e1ac168e9e34d9b30874a35f1c1a",
+    "assets/terrain/eldenmere/grass_dirt_hd/materials/dirt_00.png": "9908c2b69c642f29bb1b9315fbc03e787e43ab516c68a10f4ce2a0583538acc3",
+    "assets/terrain/eldenmere/grass_dirt_hd/materials/dirt_01.png": "9fa734087680191c5d20cc2754fc87905aa9706862f0d3c0c248ad21dad6d6ff",
+    "assets/terrain/eldenmere/grass_dirt_hd/materials/lawn_00.png": "2019892e29193e641b688abec000e4a16de210b69c8a982ce28645e4881f31e1",
+    "assets/terrain/eldenmere/grass_dirt_hd/materials/lawn_01.png": "5bae70bd61b489239bc9eba25e8ad75bdeb25961e430bcce7cc3390c2f99bd08",
+    "assets/terrain/eldenmere/grass_dirt_hd/materials/meadow_00.png": "f77c71c42c15b7c9fbb407f34aac6b59c946855099566b2aca27aa80b978be23",
+    "assets/terrain/eldenmere/grass_dirt_hd/materials/sheltered_00.png": "a20f7c1e72b978a887c410d4c2d382e6cb9160a0c7935f7d4938c29a21e9e6e8",
+    "assets/terrain/overworld/elden_vale/art.json": "cd26ece5a475d96332d56619dd5a46557682ec2e5b9155549d3abf19214d623c",
+    "assets/terrain/overworld/elden_vale/composition/art.json": "965f83d1659947278e58fa4670d56eaf6fa22818ac552fb2e4340b354a691f66",
+    "assets/terrain/overworld/elden_vale/hd/props/barn.png": "206246124f7f038c62d4f2fc74aaf88152cc930cc412755cec5d3f65b7364784",
+    "assets/terrain/overworld/elden_vale/hd/props/bench.png": "683f9d38d5add906c2b988a6ad2ebbce3be350ea6584f327f8fa928a4fbf4537",
+    "assets/terrain/overworld/elden_vale/hd/props/bridge_rubble.png": "cc3978343a20aa3189c155ad303aa67b97ddaccd065aba5736d678a735061008",
+    "assets/terrain/overworld/elden_vale/hd/props/broken_bridge_wide.png": "4981e8edf534b004c556abaa9c99fd398a500c146fdd3c8a346fd384cf5840b3",
+    "assets/terrain/overworld/elden_vale/hd/props/cart.png": "de9149db14e72a1f0ece895918bf1a27c8ec0ea41d5c5986dd9acf503ac144c9",
+    "assets/terrain/overworld/elden_vale/hd/props/checkpoint.png": "c751dc98ab85b20fc2e6515f9e4a39bb0ae0a72fe6f2799a2e275c3bd6cd0b28",
+    "assets/terrain/overworld/elden_vale/hd/props/checkpoint_shelter.png": "c6b2363c2ec4351ccdaf9c130688f93afd5ae6d926389c6ca0ae353a2c523656",
+    "assets/terrain/overworld/elden_vale/hd/props/eldenmere.png": "2c6824c8cc8b43c000d37979ea35aa3945b61828a2d25ca00efd04ac1ab600f2",
+    "assets/terrain/overworld/elden_vale/hd/props/farm_house.png": "c9e0723dfcc556099e2a3d8163a0bd9880dceda3a90aebd9ae606be25280e4ef",
+    "assets/terrain/overworld/elden_vale/hd/props/fence_corner.png": "8becf04458ff528b1a6c515edd2c5925882cc023bd8dc391ef5aa81834499f3b",
+    "assets/terrain/overworld/elden_vale/hd/props/fence_h.png": "da140c529b3a2a3de76ed0178e1583991950e7f3751b39fcc1c65e6ba5d9ebf9",
+    "assets/terrain/overworld/elden_vale/hd/props/fence_ns.png": "e6c15d34e381acdea42a847ec1f184916ec1500fbc0b65c124f87c150460a465",
+    "assets/terrain/overworld/elden_vale/hd/props/fence_v.png": "d2b30dad7c03a1f71a1aa94709861b0c4d87a2323f7ec8c47aeb4e2c0c03ccef",
+    "assets/terrain/overworld/elden_vale/hd/props/grain_sacks.png": "126f8520ceff2c48c29ff53f6e7be89e86e263e43c939ee558a5cfd05dde7c9f",
+    "assets/terrain/overworld/elden_vale/hd/props/haystack.png": "e0112b38720b563b144adec79add5a7e9f76a1497c8e27ab86903dfda63d86a4",
+    "assets/terrain/overworld/elden_vale/hd/props/hedge_h.png": "f8e813a8c886fbdbfecc4de71c50581d62f261ca5a0c0179e2e42338b50af7b2",
+    "assets/terrain/overworld/elden_vale/hd/props/hedge_v.png": "bb31de8c517f7a634504abe42d719f719fa84900776b674ba0579e28dea1c804",
+    "assets/terrain/overworld/elden_vale/hd/props/lantern_crates.png": "130512be74519d9b04c5d12088f55091d8b8a7095d7fd12cf2946e7f16ffffe2",
+    "assets/terrain/overworld/elden_vale/hd/props/laundry.png": "6155e5971317c808332ac9d0c6d1ae4c74d5489fdedc85ee22865dc948db3987",
+    "assets/terrain/overworld/elden_vale/hd/props/mountain.png": "80c4e3659f1010e9db36fc6d6f01e26c63b0fe433472b79152c8c754cf0f5d63",
+    "assets/terrain/overworld/elden_vale/hd/props/ridge.png": "c83f47f83cdaff12c1a7dec86983b5dad580721119a0ca4624aeb4d72ce675ca",
+    "assets/terrain/overworld/elden_vale/hd/props/rock_outcrop.png": "2aefc72880f9eadfb2b0596cd75a61d65c536d9238829a364565c99a0bd96d30",
+    "assets/terrain/overworld/elden_vale/hd/props/shed.png": "4e501e0efd3070ed6adf2b24aa7309d87915b9391242b06027e3beff08b7fe76",
+    "assets/terrain/overworld/elden_vale/hd/props/split_rail.png": "ebae89308d3b12f6272a2465c869d5181494cac86504df55f860cb7f1d0d6a38",
+    "assets/terrain/overworld/elden_vale/hd/props/supplies.png": "bac17965058bc1003c3d8046787b84c78e2e7535fc417823cc8506074d50c08d",
+    "assets/terrain/overworld/elden_vale/hd/props/wall_segment.png": "63e7c01cbe1800fcdc323ed1a2c9228851046d6ea5dcf799288d34467d7de4a6",
+    "assets/terrain/overworld/elden_vale/hd/props/wall_segment_moss.png": "43931b1413ab57c58bc2f46e6b8beb7d305a9baa99cfa3936ef83c6e2d626bd0",
+    "assets/terrain/overworld/elden_vale/hd/props/wall_segment_worn.png": "115ad78af4630b2c469d27242c1d1c1442faf7d224b4813b56ed7319f8ec0b81",
+    "assets/terrain/overworld/elden_vale/hd/props/waypost.png": "f3de84935e64b483eefc5376754b0d719313e8f40121933419878598c873ad1f",
+    "assets/terrain/overworld/elden_vale/hd/tiles/bank.png": "bff4507e3ed4ed4621a59117f8e6ab6cd55d20cfaafb3ef8a2a7d24f0dcef2b6",
+    "assets/terrain/overworld/elden_vale/hd/tiles/field.png": "f7cdecb20b25b33c78c16165508ba1baccbfecd562e1aa74a297aca7b5db84f0",
+    "assets/terrain/overworld/elden_vale/hd/tiles/furrows.png": "8c25527e0b131cc151c51a977f9ce26216c838d6dbba4a8974a7b306e350ccbe",
+    "assets/terrain/overworld/elden_vale/hd/tiles/grain.png": "740fbb40f616534d44757956fe923e4fb7bdd33a0203354584db9ce3e0976f7d",
+    "assets/terrain/overworld/elden_vale/hd/tiles/grass_dry.png": "655618646330cd1acd70d768f53f8109fccd7ffef1e5d7a1de85a58854807f80",
+    "assets/terrain/overworld/elden_vale/hd/tiles/gravel.png": "6579de4603220a816a971974edc717d40fbd80b17eec1e1e5898b9787ec2b53f",
+    "assets/terrain/overworld/elden_vale/hd/tiles/leaf_litter.png": "1fcdb2ea375206f3700a52c1fb78af65915e1b7e604b97c74e6f61ecf6c090a4",
+    "assets/terrain/overworld/elden_vale/hd/tiles/scorched.png": "f4f135d4f759c187460a91213121799c5a401eca9c0de6c6e6d10d9fdece4208",
+    "assets/terrain/overworld/elden_vale/hd/tiles/stone_road.png": "4550533eef12ce1a9fa4b58e9dd9320e4fddd3dbfb31b37e7d141c8de8065c54",
+    "assets/terrain/overworld/elden_vale/hd/tiles/stone_road_worn.png": "247d8f596eee1d4adf836206728e961f2fddc0ef8cc6034720e9303d8b0ff683",
+    "assets/terrain/overworld/elden_vale/hd/tiles/vegetables.png": "df0497097c16480fb7b6879aaabf325f2f98653dae1cfb5f7af63063f4f41954",
+    "assets/terrain/overworld/elden_vale/hd/tiles/wall.png": "edf001062d933324bff726f079fcff6524f7139852311efd19c48b12d5f97831",
+    "assets/terrain/overworld/elden_vale/hd/tiles/water.png": "475cc6f830d0ef53b89664bac0e496afa836be4ec962c1ba42b4f4d8a7436f17",
+    "assets/terrain/overworld/elden_vale/polish/art.json": "b5105bfb344de2f1b3c92bf39069be09171073d690c3e154cc81c88f53f8b163",
+    "assets/terrain/overworld/elden_vale/polish/props/bird_1.png": "f336266b2e2261cd8b75959644185ff15301a1fcfb0ee94f25c5bcc19a967e9d",
+    "assets/terrain/overworld/elden_vale/polish/props/bird_2.png": "b4f0d1e563e5b1e6c8bf01b68f123fa4b7c239b69d3087de501a7efd5c712fec",
+    "assets/terrain/overworld/elden_vale/polish/props/butterfly_1.png": "4c1839ecd8b75305ae115c15a792b31c2380aa5e92d0106cae3ecd15034cf409",
+    "assets/terrain/overworld/elden_vale/polish/props/butterfly_2.png": "c2f5bca2340cc00959bd97ea19bdb6fd19d6ee85ddd375c110a18c7fea984f43",
+    "assets/terrain/overworld/elden_vale/polish/props/sheep_1.png": "f7028a71c03df742a6b316ca98d374d9edc2a9f110965818549c01a1dbf34a28",
+    "assets/terrain/overworld/elden_vale/polish/props/sheep_2.png": "968055b5ecf054defe500f777eec8447b4be483a05fe4afb44b4ebf73625db08",
+    "assets/terrain/overworld/elden_vale/polish/props/smoke_1.png": "e8211509cbc8006c5ac30c6b01db4f70e6ba9468d1c426dbd30bc5c39865a91d",
+    "assets/terrain/overworld/elden_vale/polish/props/smoke_2.png": "e65bb20489150a0e0530b135bbae97ccdc0293c1d43990c193ccd3f5ee403add",
+    "assets/terrain/overworld/elden_vale/props/broken_bridge.png": "083ddacdeaeda171950d9c08da7ada5900cd34a46a51b965dd18cb062a9cb085",
+    "assets/terrain/overworld/elden_vale/props/guard_back.png": "d3aaba01eaf4265181c6bf79273ba84808881dad7898c97e4b00f35451906bfb",
+    "assets/terrain/overworld/elden_vale/props/guard_front.png": "f912f027b7df14c27dfdadc9282573982041fc387adf7598a15a8d84173b6543",
+    "assets/terrain/overworld/elden_vale/sanctuary/art.json": "c5a797cdd539f8739a8dc13e8087e98de71efe8497c93a1408ededcace21d6ed",
+    "assets/terrain/overworld/elden_vale/sanctuary/ridge_sanctuary.png": "aea584bde59f1a3759a6710787f6baf7052a23f7170e62b3a9bdc159f139a5e4",
+    "assets/terrain/overworld/elden_vale/tiles/water_glint_1.png": "132af0c4eccb59ccb3091bedb3cf337c79f6e7f70543afd29d973eae123d43bb",
+    "assets/terrain/overworld/elden_vale/tiles/water_glint_2.png": "a6ab8b471930b8624a63a1d48cdd5a29bb5b63094bc0e71ec6ec471e2d032e3a",
+    "main.py": "d930b7979795626d26cb873f6e05fdde0382b6bc12a01e6eaac65fbd917843ea",
+    "overworld_environment.py": "7e0429a9cfde2f53852c7a1fc1621bc8896317cfa1db79ed6240fa9b9da529d2",
+    "overworld_world.py": "bbfe4aac05951bfeb473bf995849c8099b4959eb3190c3750ae2afe4fa9fb3fb",
+    "regional_terrain_hd.py": "ee237fcf851ce7675d520dc664a7ad9df4c90bb7952c7be1f53a4379d1a2876e",
+    "tools/capture_elden_vale_hd_integration.py": "4c973ac76e694ca46eb0fa5c35e3df6cc3f8ac7b1e116491512aefdd22346eee"
+  },
+  "timings": {
+    "eldenmere_meadows": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 4.087556915692403,
+      "warm_draw_ms_max": 4.252623999491334,
+      "cache": {
+        "render_bytes": 47185920,
+        "render_chunks": 16,
+        "collision_chunks": 1,
+        "metadata_chunks": 28
+      },
+      "render_budget_bytes": 67108864
+    },
+    "town_miniature": {
+      "cache_stable_warmup_draws": 9,
+      "warm_draw_ms_mean": 3.718817332507266,
+      "warm_draw_ms_max": 3.771887997572776,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 2,
+        "metadata_chunks": 39
+      },
+      "render_budget_bytes": 67108864
+    },
+    "western_bridge": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 15.411188749567373,
+      "warm_draw_ms_max": 39.63198599376483,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 3,
+        "metadata_chunks": 62
+      },
+      "render_budget_bytes": 67108864
+    },
+    "central_causeway_reservation": {
+      "cache_stable_warmup_draws": 12,
+      "warm_draw_ms_mean": 3.6678877513622865,
+      "warm_draw_ms_max": 3.7535600058618,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 4,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "northern_woodland": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 6.431623000632196,
+      "warm_draw_ms_max": 6.620400003157556,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 6,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "millrace_approach": {
+      "cache_stable_warmup_draws": 16,
+      "warm_draw_ms_mean": 5.093688832857879,
+      "warm_draw_ms_max": 6.154406997666229,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 7,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "sanctuary_approach": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 5.875847751667607,
+      "warm_draw_ms_max": 6.624225003179163,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 8,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "eastern_riverbank": {
+      "cache_stable_warmup_draws": 11,
+      "warm_draw_ms_mean": 14.03027283352761,
+      "warm_draw_ms_max": 28.52647800318664,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 9,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "northern_checkpoint": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 4.323363917137613,
+      "warm_draw_ms_max": 4.390331996546593,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 10,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "southern_checkpoint": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 3.9303819994529476,
+      "warm_draw_ms_max": 4.0079239988699555,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 11,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "farmstead_1": {
+      "cache_stable_warmup_draws": 12,
+      "warm_draw_ms_mean": 4.482530999666778,
+      "warm_draw_ms_max": 4.607800998201128,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 12,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "farmstead_2": {
+      "cache_stable_warmup_draws": 12,
+      "warm_draw_ms_mean": 4.525185334083896,
+      "warm_draw_ms_max": 5.5937790020834655,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 13,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "farmstead_3": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 4.183310749795055,
+      "warm_draw_ms_max": 4.2742150035337545,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 14,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    },
+    "southern_orchard": {
+      "cache_stable_warmup_draws": 14,
+      "warm_draw_ms_mean": 4.169046083309998,
+      "warm_draw_ms_max": 4.225101001793519,
+      "cache": {
+        "render_bytes": 64880640,
+        "render_chunks": 22,
+        "collision_chunks": 15,
+        "metadata_chunks": 64
+      },
+      "render_budget_bytes": 67108864
+    }
+  },
+  "cache_final": {
+    "render_bytes": 64880640,
+    "render_chunks": 22,
+    "collision_chunks": 15,
+    "metadata_chunks": 64
+  },
+  "peak_rss_kib": 1201088,
+  "peak_rss_scope": "Whole capture process: Game asset banks/caches, GIF construction and second initialized Game for Continue; not just regional renderer memory.",
+  "captures": {
+    "central_causeway_reservation.png": "21f96fea111dca455f55d6e06d56d5f21b60ede38c36c7b48a2d8a10779703e9",
+    "eastern_riverbank.png": "2a6be99c1a54ad810eadf7593381cbb980b7ba41e73a455068398981e5cf4cb9",
+    "eldenmere_meadows.png": "cbfcaeb0716664897612acef25d4b4d3e4062b05ef89652032b32c559740edb8",
+    "farmhouse_legacy_upscale.png": "2fdff8f9217805df5147b986e5b8bdebe44410f8a569559b4f0206e3da36f339",
+    "farmhouse_native_pixels.png": "b7c5513241852d597f58da826a553f9497936c020b0b0b9230b645dcee90e899",
+    "farmstead_1.png": "7b344d649a21e5ea694d2c7ae9e2a3eda9584a5f37281e448338fa02cf9cd4d6",
+    "farmstead_2.png": "2b9d355767897684a1ab794a647a0aed41d8939b9940866f2c4254c1acb70000",
+    "farmstead_3.png": "0d4144ddf0f0d4486633b3a83ccb5bf384dd8e6ad1a37acc8d3feaae0ea8b9fe",
+    "ground_logical_upscale.png": "1d2541750388e82fe0a690890e4b4a2f6a255594224b8e135140e727b2ec12d7",
+    "ground_native_detail.png": "5d2371949dc4d1ea0570ed59ddfec77f6c752cc3e74a17a7068c82784927ec58",
+    "millrace_approach.png": "2cd82494aacf6da8b9a84ce47d5606604ec7eac4f05c687eea842a81b2231864",
+    "northern_checkpoint.png": "501cb966c9aa261c6ca181b805074d26f63d4b0e0c2c368ec492426f2fa16a17",
+    "northern_woodland.png": "ad1ad7e208fde88f6bb4bbc9dfe6f176ecbe5da128acefaa5c5e5b5fec6ac347",
+    "reduced_motion.png": "ec9a18655e6b3e6490b97ff4ea966fc6fe18ecead9db01924e39292b1eb78cf0",
+    "road_run.gif": "1fd96e075fd8f96b311eab57e43609582a2325888a5d3d9e83ed48a79879c04f",
+    "road_walk.gif": "ac21bc1c5304741f167c21c0a3a01db88910f684bd4681b6f97e42087145e24d",
+    "sanctuary_approach.png": "2cda513dcf4e133b977bf0b77ad1862c36058e76e235e903e1aead8daa2009b0",
+    "southern_checkpoint.png": "563001f7811b70d13bb15e29d9194ca61502a0f28c94d6a8860ee332df53a6c2",
+    "southern_orchard.png": "c2078289c08698a7a250c0d6abf86e5cdb2bd91f9115b8c276e58f96522f030a",
+    "town_miniature.png": "6644ff608ec5f57f2ca4c10bbb3d88bfaac338351cdf6d127dc4124bb6cd561a",
+    "town_roundtrip.gif": "7eacb12ea07e734de75e9789ff3eb2cee0c2a42b261c44c4897f815401a73a26",
+    "water_animated_0.png": "3e5a6052000ff7e80720df2ee2c749eb52dd1614214ec98c2d20ca2b9528aeb6",
+    "water_animated_200.png": "9113c146dfeba9e406c63d48e74915e93a8e30a4bdcdec2ccc95491a02dbabdb",
+    "water_animated_400.png": "fd1379c39a6a8fade78946769d1bd77343faf9e4d10c22a4d2fb450a2101cf0e",
+    "water_still_0.png": "3e5a6052000ff7e80720df2ee2c749eb52dd1614214ec98c2d20ca2b9528aeb6",
+    "water_still_200.png": "3e5a6052000ff7e80720df2ee2c749eb52dd1614214ec98c2d20ca2b9528aeb6",
+    "water_still_400.png": "3e5a6052000ff7e80720df2ee2c749eb52dd1614214ec98c2d20ca2b9528aeb6",
+    "western_bridge.png": "4ac1c736b5c138596c067793e110935b3f522679b4d86aaa41a4c4c1bdd2e43d"
+  }
+}

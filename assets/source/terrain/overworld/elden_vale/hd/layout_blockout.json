@@ -4701,6 +4701,16 @@
           4,
           4
         ]
+      },
+      {
+        "id": "central_meadow_future_view",
+        "rect_tiles": [
+          -8,
+          2,
+          20,
+          14
+        ],
+        "purpose": "Nonblocking central meadow pause/view reservation"
       }
     ],
     "clearance_paths": [
@@ -4729,6 +4739,33 @@
           ]
         ],
         "width": 3
+      },
+      {
+        "id": "central_causeway_future_clearance",
+        "width": 4,
+        "points": [
+          [
+            10,
+            -1
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            -3,
+            8
+          ],
+          [
+            -15,
+            11
+          ],
+          [
+            -28,
+            14
+          ]
+        ],
+        "purpose": "Retain existing internal stone route for later ruin placement"
       }
     ]
   },

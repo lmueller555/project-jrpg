@@ -1,8 +1,11 @@
 # Elden Vale — Regional Design Guidance
 
 **Status:** Approved regional design direction and retained setting foundations.
-The Pale Antlers, Rising Rain and redesigned regional composition are design
-requirements for future work; this document does not claim they are implemented.
+The HD regional foundation is integrated: live area records and protected
+clearances establish the six-area framework without relocating travel links or
+work stations. The Pale Antlers, causeway structures and Rising Rain remain
+staged assets awaiting gameplay integration. Their complete regional composition
+and final atlas presentation are future work.
 Illustrative dialogue, customs and optional encounters remain scene seeds until
 individually authored. Existing gameplay and completed story events retain their
 established state.
@@ -27,6 +30,8 @@ own live travel, scene behavior and technical references. The
 [terrain](../../TERRAIN_ART_STANDARD.md) standards own asset construction.
 Historical reviews, source recipes, prompts and captures retain provenance and
 implementation facts; they do not prescribe a competing regional design.
+Current foundation captures and implementation limits are in the
+[regional HD review](../../reviews/elden_vale_hd_integration/README.md).
 
 ## Regional identity and emotional intention
 

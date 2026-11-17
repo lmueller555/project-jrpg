@@ -12,7 +12,9 @@ standards below for construction and rendering.
 For Elden Vale, use [the regional design guidance](docs/world/regions/ELDEN_VALE.md)
 as the single creative brief for the region and Sanctuary approach. It includes
 the approved Pale Antlers/Rising Rain target and mandatory nonblocking antler
-placement; these are not yet implemented. Gameplay guides and historical
+placement. The regional HD foundation is integrated, with nonblocking future
+landmark reservations; the antlers, causeway structures and Rising Rain are not
+yet active. Gameplay guides and historical
 recipes/reviews retain technical facts and evidence, not competing design rules.
 
 Before creating or changing artwork, textures, sprites, animation, asset
@@ -23,7 +25,10 @@ density, sizing, rendering, directional anatomy, gait, registration, export and
 review. Its approved target is 2× artwork density with existing logical sizes
 and gameplay proportions. Full-scene 2× composition is implemented in
 `rendering.py`; Eldenmere town, its southern inn/shop lane, town interiors and
-upstream are integrated environments. Other regions and character-bank migrations
+upstream are integrated environments. Elden Vale's regional foundation uses the
+explicit `hd_art_manifest` overlay built by `tools/build_elden_vale_hd_integration.py`
+and phase-aware material composition in `regional_terrain_hd.py`; its staged
+foundation bank is retained separately. Other regions and character-bank migrations
 continue individually. The live town composer is `tools/build_eldenmere_hd.py`;
 older full-town compilers must not overwrite its assembled map. The reserve,
 cave approach, public hall and relief room are owned by

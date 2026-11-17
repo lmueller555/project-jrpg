@@ -188,6 +188,7 @@ class OverworldWorld:
         self.blocked = _BlockedView(self)
         self.doors = [];self.routine_props = [];self.work_fittings = [];self.foreground = []
         self.entities = []
+        self.reduced_motion = False
         self._art = {};self._tiles = {};self._props = {}
         self._load_art()
         self._validate_bridge_width()
@@ -205,6 +206,10 @@ class OverworldWorld:
                                'rect': self._tile_rect(gate['rect_tiles'])})
         self.npcs = [RoadGuard(self, gate, position, index)
                      for gate in self.gates for index,position in enumerate(gate['guard_positions'])]
+        self.terrain_hd = None
+        if self.region.get('terrain_hd', {}).get('enabled'):
+            from regional_terrain_hd import RegionalTerrainHD
+            self.terrain_hd = RegionalTerrainHD(self)
         self.environment = None
         if self.region.get('detail_art_manifest'):
             from overworld_environment import EnvironmentDetail
@@ -259,7 +264,7 @@ class OverworldWorld:
         path = ROOT/candidate if isinstance(candidate, str) else ART_FILE
         self.art_available = path.exists()
         if self.art_available:self._art = json.loads(path.read_text(encoding='utf-8'))
-        for field in ('detail_art_manifest','composition_art_manifest','sanctuary_art_manifest'):
+        for field in ('detail_art_manifest','composition_art_manifest','sanctuary_art_manifest','hd_art_manifest'):
             detail = self.region.get(field)
             if detail and (ROOT/detail).exists():
                 additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
@@ -306,14 +311,19 @@ class OverworldWorld:
             self._tiles[key] = surface
         return self._tiles[key]
 
-    def _prop_image(self, key):
-        if key not in self._props:
-            record = self._art.get('props', {}).get(key)
-            if not record:return None, (0, 0)
-            surface = pygame.image.load(str(ROOT/record['image'])).convert_alpha()
+    def _prop_image(self, key, elapsed_ms=0):
+        record = self._art.get('props', {}).get(key)
+        if not record:return None, (0, 0)
+        frames = record.get('frames', [])
+        phase = (record.get('reduced_motion_frame', 0) if self.reduced_motion else
+                 int(elapsed_ms//record.get('frame_duration_ms', 600)) % len(frames)) if frames else None
+        cache_key = (key, phase) if frames else key
+        if cache_key not in self._props:
+            image = frames[phase] if frames else record['image']
+            surface = pygame.image.load(str(ROOT/image)).convert_alpha()
             surface=record_art(immutable(surface),record)
-            self._props[key] = (surface, tuple(record.get('foot_anchor', (surface.get_width()//2, surface.get_height()))))
-        return self._props[key]
+            self._props[cache_key] = (surface, tuple(record.get('foot_anchor', (surface.get_width()//2, surface.get_height()))))
+        return self._props[cache_key]
 
     def probe_rect(self, position, size=None):
         width, height = self.probe_size if size is None else size
@@ -472,7 +482,10 @@ class OverworldWorld:
         for x in range(0, CHUNK_PIXELS, TILE_SIZE):
             for y in range(0, CHUNK_PIXELS, TILE_SIZE):target.blit(tile, (x, y))
 
-    def _paint_shape(self, target, key, painter):
+    def _paint_shape(self, target, key, painter, origin=(0, 0)):
+        if self.terrain_hd is not None:
+            self.terrain_hd.paint(target, key, painter, origin)
+            return
         overlay = (render_layer((CHUNK_PIXELS, CHUNK_PIXELS),pygame.SRCALPHA)
                    if isinstance(target,WorldCanvas) else pygame.Surface((CHUNK_PIXELS,CHUNK_PIXELS),pygame.SRCALPHA))
         self._pattern(overlay, key)
@@ -532,14 +545,14 @@ class OverworldWorld:
             points = self._local_path(river, cx, cy);width = river.get('width',8)*TILE_SIZE
             if self.environment is not None:self.environment.bank(surface,river,cx,cy)
             else:self._paint_shape(surface, 'bank', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w+24))
-            self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
+            self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w), (ox, oy))
         bridge = self.region.get('bridge')
         if bridge and self._bridge_repaired():
             rect = self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).move(-ox,-oy)
             if chunk_rect.colliderect(self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles']))):
                 render_draw.rect(surface, '#77786c', rect.inflate(0,8))
                 key = 'stone_road_worn' if 'stone_road_worn' in self._art.get('tiles',{}) else 'stone_road'
-                self._paint_shape(surface,key,lambda mask,r=rect:render_draw.rect(mask,'white',r))
+                self._paint_shape(surface,key,lambda mask,r=rect:render_draw.rect(mask,'white',r),(ox,oy))
                 render_draw.line(surface,'#b2b6a4',(rect.left,rect.top-2),(rect.right,rect.top-2),2)
                 render_draw.line(surface,'#606c5b',(rect.left,rect.bottom+2),(rect.right,rect.bottom+2),2)
         for wall in self.region.get('walls', []):
@@ -586,6 +599,9 @@ class OverworldWorld:
             if not self._gate_open(gate):yield {'key':'checkpoint', 'position':gate['position']}
 
     def _draw_water(self, target, camera, elapsed_ms):
+        if self.terrain_hd is not None:
+            self.terrain_hd.draw_water(target, camera, elapsed_ms, reduced_motion=self.reduced_motion)
+            return
         # Shared, deterministic little highlights, rather than animated grounds.
         phase = int(elapsed_ms//450)%3
         for x in range(math.floor(camera[0]/48)*48, camera[0]+target.get_width()+48, 48):
@@ -612,9 +628,11 @@ class OverworldWorld:
         self._draw_water(target,camera,elapsed_ms)
         ordered = []
         for prop in self._static_props(viewport):
-            key,position = (self.environment.prop_frame(prop,elapsed_ms) if self.environment is not None
+            scenery_ms = 0 if self.reduced_motion else elapsed_ms
+            key,position = (self.environment.prop_frame(prop,scenery_ms) if self.environment is not None
                             else (prop['key'],prop['position']))
-            surface, anchor = self._prop_image(key)
+            # Per-instance phases share the scene clock; roots and ground positions never move.
+            surface, anchor = self._prop_image(key, scenery_ms + _stable_hash(round(position[0]), round(position[1]), 139)%5400)
             if surface is None:continue
             x,y = position;rect = surface.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
             if rect.colliderect(viewport):ordered.append((prop['position'][1]+prop.get('sort_offset',0),1,surface,rect.topleft))

@@ -2,9 +2,10 @@
 
 **Scope:** Current regional travel, streaming, controller ownership and reproduction.
 [Elden Vale — Regional Design Guidance](world/regions/ELDEN_VALE.md) is the single
-creative authority for the region, including the approved Pale Antlers and
-Rising Rain direction. Those additions await implementation; current assets and
-coordinates below describe the playable region rather than a competing design.
+creative authority for the region. The HD terrain/scenery foundation is now
+integrated, with six area records and nonblocking reservations for later work.
+The Pale Antlers, causeway structures and Rising Rain remain staged assets;
+they are not yet active in gameplay.
 
 Construction follows the [visual](VISUAL_ART_STANDARD.md) and
 [terrain](TERRAIN_ART_STANDARD.md) standards. The regional overworld is a separate
@@ -13,6 +14,38 @@ presentation scale from the detailed village, reserve and interiors. Historical
 [environment quality](reviews/elden_vale_polish/README.md) and
 [place-composition](reviews/elden_vale_composition/README.md) captures record earlier
 implementation milestones. They remain evidence, not future art direction.
+
+## Integrated HD foundation
+
+`region.json` selects `assets/maps/overworld/elden_vale/hd_integration/manifest.json`
+through `hd_art_manifest`, after the base, detail, composition and Sanctuary art
+records. `tools/build_elden_vale_hd_integration.py` builds this live adapted
+registry from the immutable staged foundation and shared HD packs. The original
+`assets/terrain/overworld/elden_vale/hd/art.json` retains its staged
+`not_integrated` metadata; it is not the runtime selector.
+
+Selected grass, dirt, paving, field materials, water and ordinary scenery use
+native 2× artwork at their existing regional logical sizes. Nineteen vegetation
+aliases use one union crop, scale and registration across each donor's idle,
+frames and fixed layers; original canvases and foot anchors remain unchanged.
+Scenery breeze and water follow the exploration clock, with stable reduced-motion
+frames. Characters, wildlife and work props retain their existing controllers.
+The Sanctuary miniature remains separately owned pending landmark integration;
+its detailed reserve continues to use its existing native bank.
+
+The six `design_layout.areas` records describe home meadows, southern farms,
+western bridge road, central causeway, northern woodland and Sanctuary ridge.
+The causeway reservation follows the existing stone road through `[10,-1]`,
+`[7,4]`, `[-3,8]`, `[-15,11]` and `[-28,14]`. Additional clearing/clearance metadata
+protects this route without placing ruins or changing its travel connections.
+The antlers' overhead envelope is nonblocking; candidate bases reference existing
+solid outcrops. Viewpoint reservations do not clear a town-to-ridge forest corridor
+or turn walkable hillside into new solid ground. Detailed Sanctuary support
+coordinates remain separate from regional tiles.
+
+See the [actual-game foundation review](reviews/elden_vale_hd_integration/README.md)
+for current captures and verification scope. Signature landscape, Rising Rain
+activation and final atlas updates remain subsequent integration work.
 
 ## Geography and travel
 
@@ -139,6 +172,14 @@ and keep canopies continuous across seams. Missing sparse chunks and positions
 outside authored bounds block movement. Full player-foot probes query every
 chunk they touch, including negative-coordinate seams.
 
+`regional_terrain_hd.py` composes native material detail through the existing
+logical road/river masks. Texture phases use signed global tile coordinates,
+including negative coordinates, and crop-row angles retain their authored
+directions. Material contact shading does not expand route widths. Natural bank
+detail is clipped outside the exact water footprint, and the repaired bridge deck
+stays dry. The helper has separate byte-bounded asset and mask caches; it does not
+retain enlarged region-wide textures or an unbounded frame stack.
+
 `overworld_environment.py` supplies the detailed environment layer. Authored
 setpieces group globally positioned props with optional solid foot rectangles.
 Prop ownership, collision indexing and deterministic tree clusters work across
@@ -187,6 +228,10 @@ or complete a quest, replay a reward, or add a regional edge to NPC path graphs.
   `assets/terrain/overworld/elden_vale/composition/art.json`.
 - Original composition generations and measured export recipe:
   `assets/source/terrain/overworld/elden_vale/composition/`.
+- Live adapted HD bindings and vegetation exports:
+  `assets/maps/overworld/elden_vale/hd_integration/manifest.json`.
+- HD registration recipe, source hashes and layout reservation reference:
+  `assets/source/maps/overworld/elden_vale/hd_integration/`.
 
 The `detail_art_manifest` extends the base art at runtime. Existing art and
 the original review images remain unchanged. The layout recipe adds typed crop
@@ -194,6 +239,9 @@ parcels, road hierarchy, authored setpieces and decorative placements. Existing
 world, landmark, town-contact and progression identifiers stay stable.
 The optional `composition_art_manifest` supplies the wider bridge and related
 composition modules while preserving the base and first-pass art files.
+`hd_art_manifest` overlays the selected native bindings last; `terrain_hd.enabled`
+opts the region into native phase-aware material composition. Neither field
+changes collision, quest ownership or the regional coordinate space.
 
 The layout builder pins the approved classroom atlas by SHA-256, retains
 normalized reference anchors, and exports its survey annotation separately.
@@ -204,11 +252,13 @@ distances are authored gameplay interpretations of its geography.
 python tools/build_overworld_art.py --check
 python tools/build_overworld_polish_art.py --check
 python tools/build_overworld_composition_art.py --check
+python tools/build_elden_vale_hd_integration.py --check
 python tools/build_elden_vale_overworld.py --check
 python tools/build_cartography_art.py --check
 python tools/build_elden_vale_cartography.py --check
 python -m unittest discover -s tests -p 'test_overworld_*.py' -v
 python tools/capture_elden_vale_atlas.py
+python tools/capture_elden_vale_hd_integration.py /tmp/elden-vale-hd-review
 ```
 
 The layout check validates wall–river joins, default enclosure reachability,
