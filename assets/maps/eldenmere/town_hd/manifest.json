@@ -4761,7 +4761,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/elira/ground.png",
@@ -4824,7 +4824,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/elira/step_stool.png",
@@ -4968,7 +4968,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/home_a/ground.png",
@@ -5058,7 +5058,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/home_a/tessa_bed.png",
@@ -5166,7 +5166,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/home_b/rowan_bed.png",
@@ -5274,7 +5274,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/home_c/pippa_bed.png",
@@ -5328,7 +5328,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/mira/repair_table.png",
@@ -5391,7 +5391,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/mill/sorting_table.png",
@@ -5526,7 +5526,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_bed.png",
@@ -5556,76 +5556,292 @@
       "sha256": "4ade9f09a5d5ccf1d4901a1fb4838f7ec35a967746e16d788b050af82ab7d7c9"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_00.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "83a677a53eebee2b515dbe0934da9a442ee61643295f9c6759bca966f6a6ac67"
+      "sha256": "98f5982958a83b91abb58ff7d5a21ba88026f4bde05f8f578436603e3878632c"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_0.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_01.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "58919b8f80eb8e07656021a38126d2c27ffcde73a884c29d2b3975426a437d7f"
+      "sha256": "f41067007813157f44b1e9f8ad2df51b42a1d9bab6c924cb549bf34d1ba765dd"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_1.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_02.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "31ffceed2f2b359bcf4d216b0d69dbce85637579cf240828c5a1473e9cd9dd96"
+      "sha256": "7e04e9d2163b274119f9508a80dc09e3694398ec3f8e2536a07e8e2c7530746e"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_2.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_03.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "446d89c5f1ae19d7c53b63d696c7dc48c565db3470c114e1e02fabe357687565"
+      "sha256": "65685f32255f19e91cbcd8cf4c79dc41ebb76f770df8b1b9dfa81a85e36ac243"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_3.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_04.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "7f4137b28ebbc71c88f17b27bd768eac37fd337efc571ed6b24747dce2e7ae7d"
+      "sha256": "56a8bb233b273005ef3bc9b4518090f3a2693441c4f782908b48a1afea00aa10"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_4.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_05.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "7cf21eeb94d2230f509326eeeee1cbe879288355fcd319e0606f68dfc3939502"
+      "sha256": "102b4f52da5b90b4264a9f5c9ee74ddee5498e832b75b64bac9b19c5968046f1"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_5.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_06.png",
       "size_pixels": [
         64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "7cd3ac4b9ee93cb7d46f1ea412a68d7955e45f7a3682d7ec0c807f53b2f1bdc6"
+      "sha256": "828f5b76622655423c241ae9f18f53df88b590b17ca0f2a38c7759338ed7374f"
     },
     {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_07.png",
       "size_pixels": [
-        48,
+        64,
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "e5cc3c7aed4468e7c8dd56841e08c28899c5ee20be144eaa67b653da6500626b"
+      "sha256": "b7293335eb5f5386e67187af32ea88257fb5a19d07fb0e209c68f7af5bad1f4f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_08.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "57c82e448fa351d5585e945e4eee3acbfeccb3524e3a9f32b44a942ca2876a37"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_09.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "8a914a8828689b6425126f00412b25c57dea36d273359433f26de357e023955e"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_10.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "5d515788a1be4d0f91aa37c2dbe8ca1117fd796375c6d6554322d317d443e0f1"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_11.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "95c751c7893cfbcc70d7f93a1cb52497832ac8eac1e6f94b7dd01aeb1910a3e8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_12.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3f1424c5a3936e59e42b163db31a87a887e8cb4c1d014666a3371c6593271f93"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_13.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "359a35bc18f1402b05be54d73ac11f953d38b0f94f6f6fd8373e3086aaebdac3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_14.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "15f3a58d2175cd65a999c4b1f8f6d5159042c7015e737240f9961d6cce0c82c8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_15.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a2b34398de0147094dfd7fe6e3535e57c1b8a44209f2d50ce1e1bc463d168f05"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_16.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "eb425d96b54b2fff59c340dff12360dc17e98e071b29ec3bc965647e328be935"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_17.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "8af69e554362f94e6a394d73734156717ff6c7ae933c418c44f94650ec2336d8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_18.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "1b3086da85a3d4542dad53321d28bd6df0dfb00fb68d5c50f8101bd82b1daafb"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_19.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "606db7a4efc8b1f9626091685b04d9298d7dbe842ca71938f850fa4346c21dac"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_20.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d4ab2e1dbbed7db4e741d253774dea23ec46b69e1487f7b61f5fc53666d051c2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_21.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "39eaee8652f837a578b152848523bfd1c592c760a5c16c30cb7d0a0c49ace262"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_22.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "134a2185abf1f6250fd9dde4c8b9af032d0bbe8ca0dea5d5961ef3b1cbd52432"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_23.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "7afc8f9371f17cc595626b2519fee27d384bebf12cb690751f6c588b6d1e6df7"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_24.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d0c6eac33f29b051e69bf14d6920302a4f5d6cb9e7e461cd5cb4732f2ab3e32d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_25.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "614072c6297c06e970f45917b440200bbd6e824764247023911d5e3091805e99"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_26.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "57bd7f335765e656e470e31a62a703d0a84f5b002f1d3cdb0384a572bc47e6f6"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_27.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "04f52c068d51b33c8013656d56efec57819e2a28ced79643edf48e261d543268"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_28.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d655ca6a34c1c2fa42f30e3361aa9bf70aeea63d001adc99ead9ddc31c37fa3c"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_29.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "8333f1fc7116c6cd2503510d77fc75975cecb8e78471aff3c2b0593827909fd9"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_30.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "bc2549e10974cca1bf3edaff9fa1d72d6a942ef69fcc8f9a7427d10b3ddc16af"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_31.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "30c5fcf1c99dbad7b21d4adf39a8ba37611b66d06ac3b8550f78eb941373a611"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_full.png",
@@ -5634,7 +5850,16 @@
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "e5cc3c7aed4468e7c8dd56841e08c28899c5ee20be144eaa67b653da6500626b"
+      "sha256": "b5477d4c481c56cbca29a3098b9c6a35280528dc324c5461e94496812ea7bb5f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl.png",
+      "size_pixels": [
+        48,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b5477d4c481c56cbca29a3098b9c6a35280528dc324c5461e94496812ea7bb5f"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_half_full.png",
@@ -5643,7 +5868,7 @@
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "0e85cd543516b3b65c0fe5510e4e7d9dbc420fd1ab8e34a21a515c199cec7ab6"
+      "sha256": "0981563e2e75ac5d16f03eafea0a10f37bd5c15b7fc57af125580afbae31dcf5"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_empty.png",
@@ -5652,16 +5877,7 @@
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "22756da732b8089040c0901d34a16a80b84472a6cbad5014578268dd2235c8da"
-    },
-    {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl.png",
-      "size_pixels": [
-        48,
-        48
-      ],
-      "pixel_space": "artwork",
-      "sha256": "35c96a43d00a2ba2db65fc601a1992123eb1bccccecb5fb3dc777aadfada1458"
+      "sha256": "9c28a7ca983e43cdfa38cbacdbbf341dad07e7d3dcca505aa70e159279a9f563"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_full.png",
@@ -5670,7 +5886,16 @@
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "35c96a43d00a2ba2db65fc601a1992123eb1bccccecb5fb3dc777aadfada1458"
+      "sha256": "fd4e6479875f8d247d11b199d836db89d1ab67d257b9652fe8fd8bf666e960e6"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl.png",
+      "size_pixels": [
+        48,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "fd4e6479875f8d247d11b199d836db89d1ab67d257b9652fe8fd8bf666e960e6"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_half_full.png",
@@ -5679,7 +5904,7 @@
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "59aca417e0b87b5fd37548bf3d16a1e9af8d57b72dac8fd78c29a4b0ca1adf9e"
+      "sha256": "171320bc59ef17a1418bdf6b2fccdaa60c1f8d642dd3585d5742b8b5e314f20b"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_empty.png",
@@ -5688,7 +5913,7 @@
         48
       ],
       "pixel_space": "artwork",
-      "sha256": "9000afae1d132f15e50ce0031b9c7d8fc583db7c6c124355ab31aff5824a984c"
+      "sha256": "0e24213fa0282af463e7d1aedd28dde8338b647368ce1cc1bb67d59073c5e3f2"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/school/ground.png",
@@ -5868,7 +6093,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/inn/ground.png",
@@ -6624,7 +6849,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+      "sha256": "b1ed165ec5b6b3c5a7ae1fa180d6d75ece5e5609e3a7ba1663e1eeeb1fd0db08"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_bed_1.png",
@@ -7491,6 +7716,114 @@
       "sha256": "ba2f9bb97345a7675def3d2ab5ad134ae0d9cb016121d2502bf74dcdbc72acea"
     },
     {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_1.png",
+      "size_pixels": [
+        10,
+        10
+      ],
+      "pixel_space": "artwork",
+      "sha256": "5e9db3e896e77b9057561e4a9361a0be39c04feca7a56757416c42444365bca2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_2.png",
+      "size_pixels": [
+        10,
+        10
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f6589c8f94205d4f21febf366fbc3bc878a174eb51f43d48079e7e71d22d052a"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_3.png",
+      "size_pixels": [
+        10,
+        10
+      ],
+      "pixel_space": "artwork",
+      "sha256": "dd97b5752eac1d01d062bd0dff72dacabb4f4066e51e537398f14d8aaeb69978"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_4.png",
+      "size_pixels": [
+        10,
+        10
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e0f5b0871281b247de0b7a9748484a18e484a93466fc0234f38067677474ec02"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_5.png",
+      "size_pixels": [
+        32,
+        8
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f21cb7dcc30772863743037892d0fb0aa2c8754581d0bfcbd20176d432c2ed89"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/front_overlay.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d84a0739f63a748a5d01e5a81917121e8a1b1a5c61b82210735e22885b1483a7"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/source/contents_00_back.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "50cbaad41b6b928124688815ad238ebbf8ac92a2ac0b19ed939ca69f1d4451da"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/source/contents_00_contents.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a8cd488649d8e012640a0575e32a2b83d7c8d52e53a92330eb2352bc716c1b57"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/source/contents_00_front.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d84a0739f63a748a5d01e5a81917121e8a1b1a5c61b82210735e22885b1483a7"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/source/contents_31_back.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "50cbaad41b6b928124688815ad238ebbf8ac92a2ac0b19ed939ca69f1d4451da"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/source/contents_31_contents.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c21a594d56395cb8702605f01f07fda98d87f1c8f4eb47a8e9405f65becb0871"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/source/contents_31_front.png",
+      "size_pixels": [
+        64,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d84a0739f63a748a5d01e5a81917121e8a1b1a5c61b82210735e22885b1483a7"
+    },
+    {
       "file": "assets/maps/eldenmere/town_hd/scene_props/ac72451adc07.png",
       "size_pixels": [
         192,
@@ -8343,7 +8676,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "c9dc3d336287ec946187a8209f56011e3fe3b0398474e11bc5ecd22df35d05df"
+      "sha256": "adb01def9464db9479a4d5b2182f1f1409c489a14a7e707644332118dc85d926"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/elira/overview.png",
@@ -8352,7 +8685,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "0eecb609aca3b42b3d1fc5bfe3ffc49d78eee86e423a9c614560d25707512e2b"
+      "sha256": "cfec0ba741936819082bdc4722c442ab5202af89824b26bae509da1949a98b22"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/venn/overview.png",
@@ -8361,7 +8694,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "43c24fc63e653e9e0d7a600f8d49f36fe3386f9d6134ac6f448f87f2f630ae45"
+      "sha256": "1b17c996aa936e22d86fed070c30bba6ebd21833f14be8749ddd34e03150cdff"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/home_a/overview.png",
@@ -8370,7 +8703,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "9705022ba7b7a48ef154484f708960d1df5af5b71e364b031b582faad2dab94a"
+      "sha256": "e86abf11b08b5088682f2c10e48a7f770c76f28ca498a44143248b8de061593f"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/home_b/overview.png",
@@ -8379,7 +8712,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "ea85c7d79337c4ce7921821aebeda85994b39e39da9c000685dde544060b0710"
+      "sha256": "1f6fdc8cabdaecd2933aa9588a63c62a3d6c22212b795cf2d806aefcbc963103"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/home_c/overview.png",
@@ -8388,7 +8721,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "370e52d29d2ff652d4b5cb184f1f5ba083e358148643d3d9f2863f566f7116d3"
+      "sha256": "d4e540c974c757932868efde6be8e00aca00f0ef4c353a084bb7bf0a9b08455e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/mira/overview.png",
@@ -8397,7 +8730,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "25bd81022b7f94db6ea9843c0163f9ce2048af14394416e7f8c6887e79473203"
+      "sha256": "dbaac991fee06145ef229697713d255cb40ec3d466004fe878f27435e510583a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/mill/overview.png",
@@ -8406,7 +8739,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "03268f68624698fbd8fdec8125ce14d8994bd0a5d3b4f1f8c91b0ece3c17fa35"
+      "sha256": "fe1ee694d65b48e12883625ebc7c767404c5eccb856f2807d7fe4e24e7d1160e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/liam_house/overview.png",
@@ -8415,7 +8748,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "ad8a2b334542ad783e0dedd229bce227ef7af1eb530261a7c1b2c26eca17dba6"
+      "sha256": "2eeb840c3c44ba99b27c5fafec4e41aca5630bc05e6fdfb556bd46aabd9dd0da"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/school/overview.png",
@@ -8424,7 +8757,7 @@
         384
       ],
       "pixel_space": "logical_ui",
-      "sha256": "937f747060753578d72aaf0074d7b1cbdea978a80740421bb18476268448a22a"
+      "sha256": "6e7f2f8d8c1a4bc53f64f9989768c347a6eb34be2b9acfb57e3f6fbd9f000fb7"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/inn/overview.png",
@@ -8433,7 +8766,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "4476b38bcda9ab2a9f1767a9d1f8b083a3da46d8799ecc87ae7bfdd5234bee7f"
+      "sha256": "e8ee8ebf51b354f4e4bda89be3b35261f3a5dbe5f4f031204abb790e78864adc"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/item_shop/overview.png",
@@ -8469,7 +8802,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "a6ef5e7b765b1d15896d73c2f09704a035b8bae30e11eeff0827d8b1de53335a"
+      "sha256": "18c3931e5156f5b946f39dc9777bf3bf8dcf0e47c1075d975721116c2b2f4f57"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/inn_guest_floor/overview.png",

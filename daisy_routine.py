@@ -1,6 +1,7 @@
 """Persistent indoor dog routine. Runtime depends only on Pygame."""
 from rendering import layer as render_layer
 from rendering import draw as render_draw
+from rendering import artwork
 from collections import deque
 import json
 from pathlib import Path
@@ -32,11 +33,18 @@ class DaisyRoutine:
                                    for f in read(path/'animation.json')['frames']]
         self.lying=self._pad(world.image(self.animation['lying_image']),self.animation['lying_offset'])
         self.bowls={kind:next(e for e in world.entities if e['id']==spec['id']) for kind,spec in self.behavior['bowls'].items()}
-        pack=read(ROOT/next(iter(self.bowls.values()))['bowl_pack'])
-        self.lip=world.image((Path(next(iter(self.bowls.values()))['bowl_pack']).parent/pack['front_overlay']).as_posix())
-        self.water_masks={state:world.image((Path(next(iter(self.bowls.values()))['bowl_pack']).parent/pack[key]).as_posix(),False)
+        # Bowl contents, lip and ripple mask share the same registered bank.
+        # Legacy rooms keep their existing pack; the HD room supplies its own.
+        self._world=world;self.lips={}
+        for kind,bowl in self.bowls.items():
+            path=Path(bowl.get('bowl_render_pack',bowl['bowl_pack']));pack=read(ROOT/path)
+            name=pack.get('bowls',{}).get(kind,{}).get('front_overlay',pack.get('front_overlay'))
+            self.lips[kind]=world.art_image((path.parent/name).as_posix(),pack)
+        bowl=self.bowls['water'];path=Path(bowl.get('bowl_render_pack',bowl['bowl_pack']));pack=read(ROOT/path)
+        self.water_masks={state:world.art_image((path.parent/pack[key]).as_posix(),pack,False)
                           for state,key in (('full','content_mask'),('half_full','half_content_mask'))}
-        water=read(ROOT/pack['water_palette_source'])['palette'];self.ripple_color=pygame.Color(water['water_light'])
+        self.ripple_color=pygame.Color('#b7e5e4') if bowl.get('bowl_render_pack') else pygame.Color(
+            read(ROOT/pack['water_palette_source'])['palette']['water_light'])
         self.events=deque(maxlen=128);self.completed_visits={'food':0,'water':0};self.completed_wanders=0
         self.cooldowns={kind:self._sample(f'{kind}_cooldown_ms') for kind in ('food','water')}
         self.state='rest';self.state_ms=0.0;self.duration_ms=self._sample('rest_ms')
@@ -243,17 +251,23 @@ class DaisyRoutine:
             if self.play_pose.action and self.play_pose.action.startswith('hop_'):
                 render_draw.ellipse(target,'#665c45',(round(self.position.x)-8-camera[0],round(self.position.y)+2-camera[1],16,3))
             return
-        if not self._at_bowl() or self.state!='drink':return
+        if self._world.reduced_motion or not self._at_bowl() or self.state!='drink':return
         bowl=self.bowls[self.active_bowl];mask=self.water_masks.get(bowl['state'])
         if mask is None:return
-        ripple=render_layer((24,24),pygame.SRCALPHA)
+        # Clip each render texel, not just the logical 2x2 block's corner.
+        # A rounded half-full edge otherwise lets a ripple spill over the rim.
+        native_mask=getattr(mask,'native',None)
+        if native_mask is None:native_mask=pygame.transform.scale(mask,(48,48))
+        ripple=pygame.Surface((48,48),pygame.SRCALPHA)
         patterns=(((13,12),),((11,12),(14,12)),((12,13),(14,11)),())
-        for point in patterns[self.frame_index]:
-            if mask.get_at(point).r:ripple.set_at(point,self.ripple_color)
-        target.blit(ripple,(bowl['position'][0]-camera[0],bowl['position'][1]-camera[1]))
+        for x,y in patterns[self.frame_index]:
+            for dx,dy in ((0,0),(1,0),(0,1),(1,1)):
+                point=(x*2+dx,y*2+dy)
+                if native_mask.get_at(point).r:ripple.set_at(point,self.ripple_color)
+        target.blit(artwork(ripple,2),(bowl['position'][0]-camera[0],bowl['position'][1]-camera[1]))
 
     def draw_foreground(self,target,camera):
         if self.play_pose is not None:return
         if self._at_bowl():
             bowl=self.bowls[self.active_bowl]
-            target.blit(self.lip,(bowl['position'][0]-camera[0],bowl['position'][1]-camera[1]))
+            target.blit(self.lips[self.active_bowl],(bowl['position'][0]-camera[0],bowl['position'][1]-camera[1]))

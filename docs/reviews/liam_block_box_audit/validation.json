@@ -1,0 +1,593 @@
+{
+  "baseline_commit": "5630648b4fe9cb79ae7b1ad867b4aa5b6e0cc836",
+  "native_frame_size": [
+    960,
+    640
+  ],
+  "selected_outcomes": {
+    "accident": false,
+    "forget": false
+  },
+  "long_initial_wait_skipped": true,
+  "simulated_seconds": 79.33333333333333,
+  "completed_cycles": 1,
+  "final_states": [
+    "box",
+    "box",
+    "box",
+    "box",
+    "box"
+  ],
+  "production_carry_views": [
+    "right",
+    "front",
+    "left",
+    "back"
+  ],
+  "literal_front_subset_all_32_states": true,
+  "reduced_motion_box_pixels_identical": true,
+  "frames": [
+    {
+      "key": "kneel_box_3",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "kneel_left",
+      "box_state": "contents_31",
+      "held": null,
+      "blocks": [
+        "box",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "take_0",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "take_left",
+      "box_state": "contents_31",
+      "held": null,
+      "blocks": [
+        "box",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "take_1",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "take_left",
+      "box_state": "contents_31",
+      "held": null,
+      "blocks": [
+        "box",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "take_2",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "take_left",
+      "box_state": "contents_30",
+      "held": "block_1",
+      "blocks": [
+        "held",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "take_3",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "take_left",
+      "box_state": "contents_30",
+      "held": "block_1",
+      "blocks": [
+        "held",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "rise_with_block_0",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "rise_left",
+      "box_state": "contents_30",
+      "held": "block_1",
+      "blocks": [
+        "held",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "rise_with_block_3",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "rise_left",
+      "box_state": "contents_30",
+      "held": "block_1",
+      "blocks": [
+        "held",
+        "box",
+        "box",
+        "box",
+        "box"
+      ]
+    },
+    {
+      "key": "return_block_0",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "return_left",
+      "box_state": "contents_00",
+      "held": "block_5",
+      "blocks": [
+        "placed",
+        "placed",
+        "placed",
+        "placed",
+        "held"
+      ]
+    },
+    {
+      "key": "return_block_1",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "return_left",
+      "box_state": "contents_00",
+      "held": "block_5",
+      "blocks": [
+        "placed",
+        "placed",
+        "placed",
+        "placed",
+        "held"
+      ]
+    },
+    {
+      "key": "return_block_2",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "return_left",
+      "box_state": "contents_16",
+      "held": null,
+      "blocks": [
+        "placed",
+        "placed",
+        "placed",
+        "placed",
+        "box"
+      ]
+    },
+    {
+      "key": "return_block_3",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "return_left",
+      "box_state": "contents_16",
+      "held": null,
+      "blocks": [
+        "placed",
+        "placed",
+        "placed",
+        "placed",
+        "box"
+      ]
+    },
+    {
+      "key": "rise_return_0",
+      "liam": [
+        80.0,
+        200.0
+      ],
+      "facing": "left",
+      "action": "rise_left",
+      "box_state": "contents_16",
+      "held": null,
+      "blocks": [
+        "placed",
+        "placed",
+        "placed",
+        "placed",
+        "box"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "state": "approach_box"
+    },
+    {
+      "state": "kneel_box"
+    },
+    {
+      "state": "take"
+    },
+    {
+      "take": "block_1"
+    },
+    {
+      "state": "rise_with_block"
+    },
+    {
+      "state": "carry_to_build"
+    },
+    {
+      "state": "kneel_build"
+    },
+    {
+      "state": "place"
+    },
+    {
+      "place": "block_1"
+    },
+    {
+      "state": "rise_for_box"
+    },
+    {
+      "state": "approach_box"
+    },
+    {
+      "state": "kneel_box"
+    },
+    {
+      "state": "take"
+    },
+    {
+      "take": "block_2"
+    },
+    {
+      "state": "rise_with_block"
+    },
+    {
+      "state": "carry_to_build"
+    },
+    {
+      "state": "kneel_build"
+    },
+    {
+      "state": "place"
+    },
+    {
+      "place": "block_2"
+    },
+    {
+      "state": "rise_for_box"
+    },
+    {
+      "state": "approach_box"
+    },
+    {
+      "state": "kneel_box"
+    },
+    {
+      "state": "take"
+    },
+    {
+      "take": "block_3"
+    },
+    {
+      "state": "rise_with_block"
+    },
+    {
+      "state": "carry_to_build"
+    },
+    {
+      "state": "kneel_build"
+    },
+    {
+      "state": "place"
+    },
+    {
+      "place": "block_3"
+    },
+    {
+      "state": "rise_for_box"
+    },
+    {
+      "state": "approach_box"
+    },
+    {
+      "state": "kneel_box"
+    },
+    {
+      "state": "take"
+    },
+    {
+      "take": "block_4"
+    },
+    {
+      "state": "rise_with_block"
+    },
+    {
+      "state": "carry_to_build"
+    },
+    {
+      "state": "kneel_build"
+    },
+    {
+      "state": "place"
+    },
+    {
+      "place": "block_4"
+    },
+    {
+      "state": "rise_for_box"
+    },
+    {
+      "state": "approach_box"
+    },
+    {
+      "state": "kneel_box"
+    },
+    {
+      "state": "take"
+    },
+    {
+      "take": "block_5"
+    },
+    {
+      "state": "rise_with_block"
+    },
+    {
+      "state": "carry_to_build"
+    },
+    {
+      "state": "kneel_build"
+    },
+    {
+      "state": "place"
+    },
+    {
+      "place": "block_5"
+    },
+    {
+      "state": "admire"
+    },
+    {
+      "state": "approach_loose"
+    },
+    {
+      "state": "kneel_loose"
+    },
+    {
+      "state": "collect"
+    },
+    {
+      "collect": "block_5"
+    },
+    {
+      "state": "rise_loose"
+    },
+    {
+      "state": "carry_to_box"
+    },
+    {
+      "state": "kneel_return"
+    },
+    {
+      "state": "return_block"
+    },
+    {
+      "return": "block_5"
+    },
+    {
+      "state": "rise_return"
+    },
+    {
+      "state": "approach_loose"
+    },
+    {
+      "state": "kneel_loose"
+    },
+    {
+      "state": "collect"
+    },
+    {
+      "collect": "block_4"
+    },
+    {
+      "state": "rise_loose"
+    },
+    {
+      "state": "carry_to_box"
+    },
+    {
+      "state": "kneel_return"
+    },
+    {
+      "state": "return_block"
+    },
+    {
+      "return": "block_4"
+    },
+    {
+      "state": "rise_return"
+    },
+    {
+      "state": "approach_loose"
+    },
+    {
+      "state": "kneel_loose"
+    },
+    {
+      "state": "collect"
+    },
+    {
+      "collect": "block_3"
+    },
+    {
+      "state": "rise_loose"
+    },
+    {
+      "state": "carry_to_box"
+    },
+    {
+      "state": "kneel_return"
+    },
+    {
+      "state": "return_block"
+    },
+    {
+      "return": "block_3"
+    },
+    {
+      "state": "rise_return"
+    },
+    {
+      "state": "approach_loose"
+    },
+    {
+      "state": "kneel_loose"
+    },
+    {
+      "state": "collect"
+    },
+    {
+      "collect": "block_2"
+    },
+    {
+      "state": "rise_loose"
+    },
+    {
+      "state": "carry_to_box"
+    },
+    {
+      "state": "kneel_return"
+    },
+    {
+      "state": "return_block"
+    },
+    {
+      "return": "block_2"
+    },
+    {
+      "state": "rise_return"
+    },
+    {
+      "state": "approach_loose"
+    },
+    {
+      "state": "kneel_loose"
+    },
+    {
+      "state": "collect"
+    },
+    {
+      "collect": "block_1"
+    },
+    {
+      "state": "rise_loose"
+    },
+    {
+      "state": "carry_to_box"
+    },
+    {
+      "state": "kneel_return"
+    },
+    {
+      "state": "return_block"
+    },
+    {
+      "return": "block_1"
+    },
+    {
+      "state": "rise_return"
+    },
+    {
+      "state": "leave_play_area"
+    },
+    {
+      "state": "cooldown"
+    }
+  ],
+  "sha256": {
+    "after_carry_views.png": "a16d1f6c4d1e53c82c431274c5f237871a405ecfc6a2a685d8a6d1d585330b84",
+    "after_contacts.png": "b2da93a85d73d22ddf15f7ee5206d1163676e6da7569ae82060cc365fb222d52",
+    "after_counts.png": "c1305e2d4a093141074170c45c6b5f61f233557b0e17713c33c5f9faebc80b5f",
+    "after_return_block_2.png": "6f6d8c17852c585f7d86b56f264ed643cdc869a8f45610a196d6c6dbcfc95d4d",
+    "after_take_2.png": "3dfdd0287fa1111276dce1597a14cde605bc03fa12471f9db918dd4f72c0eae1",
+    "before_contacts.png": "ca1b1f8574381a327a0877423bcadff464bb420417be2217063ecbd87d04a4b0",
+    "before_take_2.png": "c2063063f83d0b06c361ed7fd310886a0d30e7805ee9f00c663cfd3091db51de",
+    "return_block_native.png": "5e9158d7d901af26e522bac2837fb70b80d8abb624ed0b46d665408e85804cc0",
+    "take_native.png": "6d33d38ed434ab5c14a369a1dbdfbe1b1474b15685ec6c2456634f8b9ad86dd4"
+  },
+  "preservation": {
+    "size_pixels": true,
+    "size_tiles": true,
+    "spawn": true,
+    "player_probe_size": true,
+    "player_draw_anchor": true,
+    "collision": true,
+    "doors": true,
+    "npcs": true,
+    "destinations": true,
+    "ground_frames": true,
+    "ground_overlays": true,
+    "foreground": true,
+    "rest_profile": true,
+    "all_other_entities_unchanged": true,
+    "block_routine_file_unchanged": true
+  },
+  "test_results": {
+    "dedicated_suite": {
+      "passed": 4
+    },
+    "isolated_existing_cases": {
+      "passed": 6
+    },
+    "py_compile": "passed",
+    "git_diff_check": "passed"
+  }
+}

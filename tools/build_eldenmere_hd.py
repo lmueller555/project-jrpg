@@ -436,7 +436,14 @@ def products():
         prev={e['id']:e for e in original['entities']};data.setdefault('art_replacements',{})
         for e in data['entities']:
             if name=='mill' and e['id']=='mill.drivetrain':continue
+            if e.get('bowl_kind'):
+                from tools.build_daisy_bowls_hd import integrate as integrate_bowl
+                integrate_bowl(e,data,ex);continue
             before=prev[e['id']];size=tuple(before.get('logical_size') or Image.open(ROOT/before['frames'][0]).size);identifier=e['id'];kind=e.pop('_kind',mappings.get(identifier,identifier))
+            if identifier=='liam_block_box':
+                from tools.liam_block_art import integrate as integrate_blocks
+                integrate_blocks(data,e,before,ex)
+                continue
             if identifier.startswith('pupil_chair'):kind='chair_south'
             if identifier.startswith('pupil_desk'):kind='pupil_desk'
             if kind=='shelf':kind='bookcase'
@@ -454,17 +461,6 @@ def products():
             if kind=='hearth':e['frames']=[r['image'] for r in hddining['props'] if r['id']=='hearth']
             for state,legacy in before.get('state_images',{}).items():
                 state_im=im.copy()
-                if 'bowl' in identifier and state!='full':
-                    # Preserve the drawn ceramic rim; consume only its contents.
-                    w,h=state_im.size;x0,y0,x1,y1=state_im.getbbox();bw,bh=x1-x0,y1-y0
-                    mask=Image.new('L',state_im.size);ImageDraw.Draw(mask).ellipse((x0+bw*.2,y0+bh*.12,x0+bw*.8,y0+bh*.5),fill=255)
-                    if state=='half_full':mask.paste(0,(0,0,(x0+x1)//2,h))
-                    state_im.paste((47,48,43,255),(0,0),ImageChops.multiply(mask,state_im.getchannel('A')))
-                if identifier=='liam_block_box':
-                    state_im=prop('empty_box',size,Image.open(ROOT/before['frames'][0]).getbbox())
-                    for i in range(int(state)):
-                        toy=prop(('toy_red','toy_blue','toy_yellow','toy_green','toy_oak')[i],(7,7))
-                        state_im.alpha_composite(toy,((5+i*4)*2,8))
                 state_path=ex.png('rooms/'+name+'/'+identifier+'_'+state,state_im)
                 e['state_images'][state]=state_path
                 data['art_replacements'][legacy]=ex.art(state_path,size)
@@ -534,9 +530,18 @@ def products():
             for legacy in r.get('states',{}).values():
                 if isinstance(legacy,str) and (ROOT/legacy).exists():replacement(legacy,kind)
     blocks=read('assets/terrain/eldenmere/liam_home/blocks/blocks.json')
+    # Preserve dormant cross-room compatibility aliases. Liam's actual owner
+    # overrides this historical family below with its one canonical drawing.
     for i,r in enumerate(blocks['blocks']):replacement(r['image'],('toy_red','toy_blue','toy_yellow','toy_green','toy_oak')[i])
     lip=blocks['front_overlay'];size=image(lip).size;im=prop('empty_box',size);im.paste((0,0,0,0),(0,0,im.width,round(im.height*.65)))
     replacements[lip]=ex.art(ex.png('scene_props/box_front_lip',im),size)
+    legacy_block_aliases={key:replacements[key] for key in (lip,*[r['image'] for r in blocks['blocks']])}
+    for name,data in maps.items():
+        if name!='liam_house':data.setdefault('art_replacements',{}).update(legacy_block_aliases)
+    from tools.liam_block_art import props as block_props
+    # The block routine belongs only to Liam's room. Replace its retained HD
+    # aliases explicitly; do not repoint unrelated rooms' dormant legacy aliases.
+    maps['liam_house'].setdefault('art_replacements',{}).update(block_props(ex,blocks))
     # Upstream controller sprites use the same state clock, with native new materials.
     for r in read('assets/story/mill/art.json')['props']:
         files=list(r['states'].values())+[p for key in ('animation','moving_frames','restored_frames') for p in r.get(key,[])]

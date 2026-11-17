@@ -9,7 +9,7 @@ import hashlib
 import json
 import math
 
-from PIL import Image, ImageChops, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/source/terrain/eldenmere/sanctuary_dining_hd'
@@ -70,6 +70,78 @@ def export_sprite(source,size,bounds=None,fit=True):
     return canvas
 
 
+def registered_hearth_frames(sources,contract):
+    """Animate only rooted fire, behind one stationary firebox and log lip.
+
+    Independently fitting generated whole-fireplace drawings is not animation
+    registration: their logs and bright flame beds move even with fixed masonry.
+    Keep the first drawing's support, extract just its connected flame family,
+    and give every pose the same local bottom-center attachment.
+    """
+    structure=sources[0].copy()
+    mask=Image.new('L',structure.size)
+    ImageDraw.Draw(mask).polygon([tuple(p) for p in contract['cavity_polygon_artwork']],fill=255)
+    soot=Image.new('RGBA',structure.size,tuple(contract['soot_rgba']))
+    draw=ImageDraw.Draw(soot)
+    for x0,y0,x1,y1 in contract['brick_seams_artwork']:
+        draw.line((x0,y0,x1,y1),fill=tuple(contract['mortar_rgba']))
+    structure.paste(soot,(0,0),mask)
+    layers=[];frames=[]
+    x0,y0,x1,y1=contract['source_flame_rect_artwork']
+    root_x,root_y=contract['root_artwork']
+    for source in sources:
+        warm=set()
+        for y in range(y0,y1):
+            for x in range(x0,x1):
+                r,g,b,a=source.getpixel((x,y))
+                if a and r>=140 and g>=60 and r-g>=12 and g-b>=20:
+                    warm.add((x,y))
+        components=[]
+        while warm:
+            queue=[warm.pop()];component=set(queue)
+            while queue:
+                x,y=queue.pop()
+                for dx in (-1,0,1):
+                    for dy in (-1,0,1):
+                        point=(x+dx,y+dy)
+                        if point in warm:
+                            warm.remove(point);component.add(point);queue.append(point)
+            components.append(component)
+        if not components:raise ValueError('Hearth source has no connected flame')
+        # Discard detached sparks/brick highlights, not just transparent padding.
+        connected=max(components,key=len)
+        flame=Image.new('RGBA',source.size)
+        for point in connected:flame.putpixel(point,source.getpixel(point))
+        bounds=flame.getbbox();flame=flame.crop(bounds)
+        if flame.height>contract['maximum_flame_height_artwork']:
+            height=contract['maximum_flame_height_artwork']
+            flame=flame.resize((round(flame.width*height/flame.height),height),Image.Resampling.NEAREST)
+        bottom=[x for x in range(flame.width) if flame.getpixel((x,flame.height-1))[3]]
+        anchor=(min(bottom)+max(bottom)+1)//2
+        layer=Image.new('RGBA',structure.size)
+        layer.alpha_composite(flame,(root_x-anchor,root_y-flame.height))
+        layer.putalpha(ImageChops.multiply(layer.getchannel('A'),mask))
+        frame=structure.copy();frame.alpha_composite(layer)
+        frames.append(frame);layers.append(layer)
+    return frames,structure,mask,layers
+
+
+def build_hearth(recipe,props):
+    contract=recipe['hearth_animation']
+    sources=[]
+    for item in recipe['props']:
+        if item['id']!='hearth':continue
+        sources.append(export_sprite(cell(props,item['cell'],item.get('columns',5)),
+            tuple(v*2 for v in item['logical_size']),tuple(v*2 for v in item['logical_bounds'])))
+    frames,structure,mask,layers=registered_hearth_frames(sources,contract)
+    save(structure,OUT/'hearth/structure.png');save(mask,OUT/'hearth/cavity_mask.png')
+    for index,(frame,layer) in enumerate(zip(frames,layers),1):
+        save(frame,OUT/f'props/hearth_frame_{index:02}.png')
+        save(layer,OUT/f'hearth/flame_{index:02}.png')
+    return {**contract,'structure':'hearth/structure.png','cavity_mask':'hearth/cavity_mask.png',
+            'flame_layers':[f'hearth/flame_{i:02}.png' for i in range(1,len(frames)+1)]}
+
+
 def build():
     recipe=json.loads((SOURCE/'recipe.json').read_text());original=recipe['original_map']
     for name,digest in recipe['sources'].items():
@@ -89,13 +161,7 @@ def build():
         replacements[item['legacy_path']]=save(image,OUT/f'props/{name}.png')
         exports.append({**item,'image':replacements[item['legacy_path']],
                         'artwork_size':list(size),'artwork_pixels_per_world_pixel':2})
-    # Keep fireplace masonry perfectly registered. Only the fire opening changes.
-    hearth=[OUT/f'props/hearth_frame_{i:02}.png' for i in range(1,5)]
-    base=Image.open(hearth[0]).convert('RGBA')
-    opening=(28,91,69,127)
-    for path in hearth[1:]:
-        fire=Image.open(path).convert('RGBA');frame=base.copy()
-        frame.paste(fire.crop(opening),opening[:2]);frame.save(path)
+    hearth_animation=build_hearth(recipe,props)
     cup=export_sprite(cell(props,24,5),(12,12))
     save(cup,OUT/'props/cup.png')
     # Steam is vapor, not an outlined solid object.
@@ -170,7 +236,7 @@ def build():
                               for path,replacement in replacements.items()}
     data['art_replacements']['assets/story/sanctuary_opening/poses/cup.png']={
         'file':str((OUT/'props/cup.png').relative_to(ROOT)),'artwork_pixels_per_world_pixel':2}
-    data['ground_frames']=[ground for _ in original['ground_frames']]
+    data['ground_frames']=[ground]
     originals={e['id']:e for e in original['entities']}
     data['entities']=[e for e in data['entities'] if e['id'] not in ('dining_daylight','dining_firelight')]
     for entity in data['entities']:
@@ -192,9 +258,23 @@ def build():
               'logical_size':original['size_pixels'],'recipe':str((SOURCE/'recipe.json').relative_to(ROOT)),
               'collision_sha256':recipe['preserved_collision_sha256'],'props':exports,
               'legacy_replacements':replacements,'character_banks_migrated':False,
+              'hearth_animation':hearth_animation,
               'ground_duration_ms':original['ground_frame_duration_ms']*len(original['ground_frames'])}
     (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(f'Exported {len(exports)} registered prop drawings, shared architecture, compact light layers and six steam frames.')
 
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--hearth-only',action='store_true',help='Rebuild the shared fire without touching room/layout exports')
+    args=parser.parse_args()
+    if args.hearth_only:
+        recipe=json.loads((SOURCE/'recipe.json').read_text())
+        for name,digest in recipe['sources'].items():
+            if hashlib.sha256((SOURCE/name).read_bytes()).hexdigest()!=digest:
+                raise ValueError('Source changed: update the explicit extraction recipe first')
+        animation=build_hearth(recipe,Image.open(SOURCE/'props_atlas.png').convert('RGBA'))
+        path=OUT/'manifest.json';manifest=json.loads(path.read_text());manifest['hearth_animation']=animation
+        path.write_text(json.dumps(manifest,indent=2)+'\n')
+    else:build()

@@ -1,0 +1,52 @@
+{
+  "logical_size": [
+    24,
+    24
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "content_mask": "content_mask.png",
+  "half_content_mask": "half_content_mask.png",
+  "bowls": {
+    "food": {
+      "states": {
+        "full": {
+          "image": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_full.png",
+          "fill_fraction": 1,
+          "content_pixels": 158
+        },
+        "half_full": {
+          "image": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_half_full.png",
+          "fill_fraction": 0.5,
+          "content_pixels": 44
+        },
+        "empty": {
+          "image": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_empty.png",
+          "fill_fraction": 0,
+          "content_pixels": 0
+        }
+      },
+      "front_overlay": "food_front_overlay.png"
+    },
+    "water": {
+      "states": {
+        "full": {
+          "image": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_full.png",
+          "fill_fraction": 1,
+          "content_pixels": 158
+        },
+        "half_full": {
+          "image": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_half_full.png",
+          "fill_fraction": 0.5,
+          "content_pixels": 44
+        },
+        "empty": {
+          "image": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_empty.png",
+          "fill_fraction": 0,
+          "content_pixels": 0
+        }
+      },
+      "front_overlay": "water_front_overlay.png"
+    }
+  },
+  "source_recipe": "assets/source/terrain/eldenmere/liam_home/bowls_hd/recipe.json"
+}
