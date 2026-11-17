@@ -55,10 +55,12 @@ class TownHDContracts(unittest.TestCase):
             checked+=1
         self.assertEqual(checked,13)
 
-    def test_expansion_preserves_every_original_collision_pixel(self):
+    def test_expansion_preserves_source_collision_plus_declared_courtyard_supports(self):
         self.assertEqual(self.town['size_pixels'],[1536,1632]);self.assertEqual(self.town['size_tiles'],[64,68])
         before=Image.open(SRC/'collision.png').convert('L');after=Image.open(ROOT/self.town['collision']).convert('L')
-        self.assertEqual(before.tobytes(),after.crop((0,0,*before.size)).tobytes())
+        from tools.build_eldenmere_hd import courtyard_collision
+        expected=courtyard_collision(before,self.town.get('settlement_dressing'))
+        self.assertEqual(expected.tobytes(),after.crop((0,0,*before.size)).tobytes())
         nav=Image.open(ROOT/self.town['navigation_allowed']).convert('L');oldnav=Image.open(SRC/'navigation_allowed.png').convert('L')
         self.assertEqual(nav.crop((0,0,*oldnav.size)).tobytes(),oldnav.tobytes())
     def test_existing_quest_routes_entrances_and_npc_records_are_preserved(self):
@@ -94,7 +96,8 @@ class TownHDContracts(unittest.TestCase):
     def test_grass_instance_identity_and_interaction_registration_survive(self):
         for name in ('town','upstream'):
             data=read(ROOT/self.manifest['scenes'][name]);before=self.old[name]['grass'];after=data['grass']
-            self.assertEqual([{k:v for k,v in r.items() if k!='variant'} for r in before['instances']], [{k:v for k,v in r.items() if k!='variant'} for r in after['instances']])
+            retired=set(data.get('settlement_dressing',{}).get('retired_grass_ids',[]))
+            self.assertEqual([{k:v for k,v in r.items() if k!='variant'} for r in before['instances'] if r['id'] not in retired], [{k:v for k,v in r.items() if k!='variant'} for r in after['instances']])
             self.assertTrue(all(r['variant'].endswith('_hd') for r in after['instances']))
             pack=read(ROOT/after['manifest'])['tall_grass'];self.assertEqual(pack['anchor'],[12,28]);self.assertEqual(pack['frame_size'],[24,32]);self.assertEqual(pack['contact_rect'],[-10,-8,20,12])
     def test_chunks_cover_each_scene_once_and_keep_artwork_native(self):

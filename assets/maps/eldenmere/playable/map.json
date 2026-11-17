@@ -972,6 +972,244 @@
       "reduced_motion_frame": 0
     },
     {
+      "id": "settlement.courtyard.rain_barrel",
+      "position": [
+        492,
+        252
+      ],
+      "sort_y": 274.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/rain_barrel/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        20,
+        24
+      ]
+    },
+    {
+      "id": "settlement.courtyard.herbs_west",
+      "position": [
+        500,
+        280
+      ],
+      "sort_y": 294.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.courtyard.herb_pot",
+      "position": [
+        526,
+        282
+      ],
+      "sort_y": 298.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        18,
+        18
+      ]
+    },
+    {
+      "id": "settlement.courtyard.herbs_east",
+      "position": [
+        548,
+        280
+      ],
+      "sort_y": 294.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.courtyard.flowerpots",
+      "position": [
+        568,
+        250
+      ],
+      "sort_y": 272.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "settlement.courtyard.firewood",
+      "position": [
+        158,
+        284
+      ],
+      "sort_y": 298.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.courtyard.low_fence",
+      "position": [
+        154,
+        334
+      ],
+      "sort_y": 356.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/fence_panel/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        40,
+        24
+      ]
+    },
+    {
+      "id": "settlement.courtyard.west_flowers",
+      "position": [
+        204,
+        336
+      ],
+      "sort_y": 358.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 7,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+    },
+    {
+      "id": "settlement.courtyard.garden_flowers",
+      "position": [
+        532,
+        312
+      ],
+      "sort_y": 334.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 7,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+    },
+    {
+      "id": "settlement.courtyard.west_clover",
+      "position": [
+        154,
+        308
+      ],
+      "sort_y": 330.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 4,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
+      "id": "settlement.courtyard.east_clover",
+      "position": [
+        496,
+        318
+      ],
+      "sort_y": 340.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
       "id": "inn",
       "position": [
         192,
@@ -2272,69 +2510,6 @@
         ],
         "variant": "sparse_hd",
         "phase_ms": 1056
-      },
-      {
-        "id": "sanctuary_meadow.3.0",
-        "position": [
-          503,
-          262
-        ],
-        "variant": "dense_hd",
-        "phase_ms": 3613
-      },
-      {
-        "id": "sanctuary_meadow.3.1",
-        "position": [
-          525,
-          262
-        ],
-        "variant": "dense_hd",
-        "phase_ms": 4427
-      },
-      {
-        "id": "sanctuary_meadow.3.2",
-        "position": [
-          547,
-          262
-        ],
-        "variant": "sparse_hd",
-        "phase_ms": 441
-      },
-      {
-        "id": "sanctuary_meadow.4.1",
-        "position": [
-          514,
-          282
-        ],
-        "variant": "dense_hd",
-        "phase_ms": 640
-      },
-      {
-        "id": "sanctuary_meadow.4.2",
-        "position": [
-          536,
-          282
-        ],
-        "variant": "dense_hd",
-        "phase_ms": 1454
-      },
-      {
-        "id": "sanctuary_meadow.5.1",
-        "position": [
-          525,
-          302
-        ],
-        "variant": "splayed_hd",
-        "phase_ms": 2467
-      },
-      {
-        "id": "sanctuary_meadow.5.2",
-        "position": [
-          547,
-          302
-        ],
-        "variant": "dense_hd",
-        "phase_ms": 3281
       },
       {
         "id": "west_verge.0.2",
@@ -23690,5 +23865,787 @@
       "assets/terrain/eldenmere/stone_paving_hd/tileset.json": "769be134432296f6983e6ba1342de23aea5332c939ddfbf517e7125a14fb6416"
     },
     "coverage_image": "assets/maps/eldenmere/town_hd/streets/coverage.png"
+  },
+  "settlement_dressing": {
+    "district": "serene_terrace",
+    "scope_rect": [
+      120,
+      120,
+      600,
+      336
+    ],
+    "placements": [
+      {
+        "id": "settlement.courtyard.rain_barrel",
+        "asset": "exteriors_hd:rain_barrel",
+        "district": "serene_terrace",
+        "position": [
+          492,
+          252
+        ],
+        "collision": "solid",
+        "footprint": [
+          3,
+          17,
+          14,
+          6
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          20,
+          24
+        ],
+        "occupied_rect": [
+          494.0,
+          255.5,
+          16.0,
+          18.5
+        ],
+        "depth_baseline_logical": 22.0,
+        "world_footprint": [
+          495,
+          269,
+          14,
+          6
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herbs_west",
+        "asset": "exteriors_hd:herb_planter",
+        "district": "serene_terrace",
+        "position": [
+          500,
+          280
+        ],
+        "collision": "solid",
+        "footprint": [
+          4,
+          10,
+          15,
+          4
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          504.0,
+          283.0,
+          15.5,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          504,
+          290,
+          15,
+          4
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herb_pot",
+        "asset": "exteriors_hd:herb_pot",
+        "district": "serene_terrace",
+        "position": [
+          526,
+          282
+        ],
+        "collision": "solid",
+        "footprint": [
+          3,
+          11,
+          12,
+          5
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          18,
+          18
+        ],
+        "occupied_rect": [
+          528.5,
+          285.0,
+          13.0,
+          13.0
+        ],
+        "depth_baseline_logical": 16.0,
+        "world_footprint": [
+          529,
+          293,
+          12,
+          5
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herbs_east",
+        "asset": "exteriors_hd:herb_planter",
+        "district": "serene_terrace",
+        "position": [
+          548,
+          280
+        ],
+        "collision": "solid",
+        "footprint": [
+          4,
+          10,
+          15,
+          4
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          552.0,
+          283.0,
+          15.5,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          552,
+          290,
+          15,
+          4
+        ]
+      },
+      {
+        "id": "settlement.courtyard.flowerpots",
+        "asset": "exteriors_hd:flowerpot_pair",
+        "district": "serene_terrace",
+        "position": [
+          568,
+          250
+        ],
+        "collision": "solid",
+        "footprint": [
+          2,
+          18,
+          20,
+          4
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          570.0,
+          256.5,
+          19.5,
+          15.5
+        ],
+        "depth_baseline_logical": 22.0,
+        "world_footprint": [
+          570,
+          268,
+          20,
+          4
+        ]
+      },
+      {
+        "id": "settlement.courtyard.firewood",
+        "asset": "exteriors_hd:firewood",
+        "district": "serene_terrace",
+        "position": [
+          158,
+          284
+        ],
+        "collision": "solid",
+        "footprint": [
+          4,
+          9,
+          16,
+          5
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          161.5,
+          287.0,
+          17.0,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          162,
+          293,
+          16,
+          5
+        ]
+      },
+      {
+        "id": "settlement.courtyard.low_fence",
+        "asset": "exteriors_hd:fence_panel",
+        "district": "serene_terrace",
+        "position": [
+          154,
+          334
+        ],
+        "collision": "solid",
+        "footprint": [
+          4,
+          19,
+          32,
+          3
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          40,
+          24
+        ],
+        "occupied_rect": [
+          157.5,
+          337.0,
+          33.0,
+          19.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "world_footprint": [
+          158,
+          353,
+          32,
+          3
+        ]
+      },
+      {
+        "id": "settlement.courtyard.west_flowers",
+        "asset": "vegetation_hd:flowers_white",
+        "district": "serene_terrace",
+        "position": [
+          204,
+          336
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          205.0,
+          338.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.courtyard.garden_flowers",
+        "asset": "vegetation_hd:flowers_violet",
+        "district": "serene_terrace",
+        "position": [
+          532,
+          312
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          533.0,
+          314.5,
+          22.0,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.courtyard.west_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "serene_terrace",
+        "position": [
+          154,
+          308
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          156.0,
+          317.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.courtyard.east_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "serene_terrace",
+        "position": [
+          496,
+          318
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          498.0,
+          327.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.courtyard.rain_barrel",
+        "position": [
+          492,
+          252
+        ],
+        "sort_y": 274.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/rain_barrel/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          20,
+          24
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herbs_west",
+        "position": [
+          500,
+          280
+        ],
+        "sort_y": 294.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herb_pot",
+        "position": [
+          526,
+          282
+        ],
+        "sort_y": 298.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          18,
+          18
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herbs_east",
+        "position": [
+          548,
+          280
+        ],
+        "sort_y": 294.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.courtyard.flowerpots",
+        "position": [
+          568,
+          250
+        ],
+        "sort_y": 272.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.courtyard.firewood",
+        "position": [
+          158,
+          284
+        ],
+        "sort_y": 298.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.courtyard.low_fence",
+        "position": [
+          154,
+          334
+        ],
+        "sort_y": 356.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/fence_panel/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          40,
+          24
+        ]
+      },
+      {
+        "id": "settlement.courtyard.west_flowers",
+        "position": [
+          204,
+          336
+        ],
+        "sort_y": 358.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 7,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+      },
+      {
+        "id": "settlement.courtyard.garden_flowers",
+        "position": [
+          532,
+          312
+        ],
+        "sort_y": 334.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 7,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+      },
+      {
+        "id": "settlement.courtyard.west_clover",
+        "position": [
+          154,
+          308
+        ],
+        "sort_y": 330.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 4,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.courtyard.east_clover",
+        "position": [
+          496,
+          318
+        ],
+        "sort_y": 340.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 1,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.courtyard.rain_barrel",
+        "rect": [
+          495,
+          269,
+          14,
+          6
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herbs_west",
+        "rect": [
+          504,
+          290,
+          15,
+          4
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herb_pot",
+        "rect": [
+          529,
+          293,
+          12,
+          5
+        ]
+      },
+      {
+        "id": "settlement.courtyard.herbs_east",
+        "rect": [
+          552,
+          290,
+          15,
+          4
+        ]
+      },
+      {
+        "id": "settlement.courtyard.flowerpots",
+        "rect": [
+          570,
+          268,
+          20,
+          4
+        ]
+      },
+      {
+        "id": "settlement.courtyard.firewood",
+        "rect": [
+          162,
+          293,
+          16,
+          5
+        ]
+      },
+      {
+        "id": "settlement.courtyard.low_fence",
+        "rect": [
+          158,
+          353,
+          32,
+          3
+        ]
+      }
+    ],
+    "retired_grass_ids": [
+      "sanctuary_meadow.3.0",
+      "sanctuary_meadow.3.1",
+      "sanctuary_meadow.3.2",
+      "sanctuary_meadow.4.1",
+      "sanctuary_meadow.4.2",
+      "sanctuary_meadow.5.1",
+      "sanctuary_meadow.5.2"
+    ],
+    "retired_grass_records": [
+      {
+        "id": "sanctuary_meadow.3.0",
+        "position": [
+          503,
+          262
+        ],
+        "variant": "dense_hd",
+        "phase_ms": 3613
+      },
+      {
+        "id": "sanctuary_meadow.3.1",
+        "position": [
+          525,
+          262
+        ],
+        "variant": "dense_hd",
+        "phase_ms": 4427
+      },
+      {
+        "id": "sanctuary_meadow.3.2",
+        "position": [
+          547,
+          262
+        ],
+        "variant": "sparse_hd",
+        "phase_ms": 441
+      },
+      {
+        "id": "sanctuary_meadow.4.1",
+        "position": [
+          514,
+          282
+        ],
+        "variant": "dense_hd",
+        "phase_ms": 640
+      },
+      {
+        "id": "sanctuary_meadow.4.2",
+        "position": [
+          536,
+          282
+        ],
+        "variant": "dense_hd",
+        "phase_ms": 1454
+      },
+      {
+        "id": "sanctuary_meadow.5.1",
+        "position": [
+          525,
+          302
+        ],
+        "variant": "splayed_hd",
+        "phase_ms": 2467
+      },
+      {
+        "id": "sanctuary_meadow.5.2",
+        "position": [
+          547,
+          302
+        ],
+        "variant": "dense_hd",
+        "phase_ms": 3281
+      }
+    ],
+    "garden_cells": [
+      [
+        21,
+        11
+      ],
+      [
+        22,
+        11
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        21,
+        12
+      ],
+      [
+        22,
+        12
+      ],
+      [
+        23,
+        12
+      ]
+    ],
+    "dependencies_sha256": {
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/props/fence_panel/idle.png": "b9c9a60fb64b73b71b763c269913fc3b287d8b9074efbd02d7cf60495b8e9e3c",
+      "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png": "34875c6e95485d35996f877b09b0ff5bb0b9de79e2edcd3c29720399a3f745ce",
+      "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png": "cb48941e9a0ca6672c9805b8ea0d65f89fe07b5a736e2cddc01d9301542a917d",
+      "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png": "d262ab60451a528a8f92b936728bd231b649964c8b0f1f745592652b9ff8884a",
+      "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png": "a1e4a0e5ad652c003e8fb0a60631ece553abfaa0eec9112d10f286beb24fc014",
+      "assets/terrain/eldenmere/exteriors_hd/props/rain_barrel/idle.png": "67de21d8cedc678811cdf8c2ef74e795bf2c44c95bef1e431216fb23ee820397",
+      "assets/terrain/vegetation_hd/plants.json": "263ccc4269fc06c177a5f16e58dacc582783a563107a0d4bc178ba01561917ce",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/idle.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91"
+    }
   }
 }

@@ -46,9 +46,10 @@ do not recreate parallel terrain-authoring READMEs.
 
 Before changing Eldenmere's layout or dressing, also read the
 [settlement framework](docs/TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework).
-Use its source-owned clearance contracts and the existing town composer. Its
-ground-only street pass is integrated; prop placements and new blocking areas
-remain inactive.
+Use its source-owned clearance contracts and the existing town composer. The
+street pass and Serene household courtyard dressing are integrated. Only the
+courtyard's explicitly declared new prop supports add collision; other district
+placements remain inactive.
 
 For object manipulation, scene staging and prop rendering, also read
 [the character–object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md)

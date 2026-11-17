@@ -3079,7 +3079,7 @@
         1632
       ],
       "pixel_space": "logical_geometry",
-      "sha256": "33deaf8bc30fc21351c40df1726abc4b39d15e9150606d0f86677018d4cf2a2d"
+      "sha256": "0b0bdd405e064a97bad379dddba0b5ccccbeb6addb2d4891cf4a85ab180f6a6f"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/navigation_allowed.png",
@@ -3322,7 +3322,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "5df53ee8ca5738f051de42a0cbaebe41c8782bb71d69bbd979c6f9dec24229d8"
+      "sha256": "dbf2ff87d131062921633579a59ef194d27d9c89ba1873bd49e6046959928097"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/3_1_0.png",
@@ -7399,7 +7399,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "7e3dff612f145b43da227cd168ec709ef62f7fbba639f9d3eebb89f1eb6742ed"
+      "sha256": "d6c06d38842e41c16c1aa43f93b2db76ca2a47515d42e935351a83444638e501"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",
@@ -7522,8 +7522,8 @@
   "settlement_framework": {
     "manifest": "assets/maps/eldenmere/settlement/manifest.json",
     "recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
-    "status": "ground_only",
-    "active_placements": 0,
+    "status": "courtyard_dressing",
+    "active_placements": 11,
     "active_ground_treatments": 31
   },
   "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",

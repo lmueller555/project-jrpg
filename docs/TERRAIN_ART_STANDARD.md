@@ -410,11 +410,12 @@ town recipe selects it through `settlement_recipe`.
 candidates. The reproducible report is
 `assets/maps/eldenmere/settlement/manifest.json`.
 
-PR 1 delivered metadata only. **PR 2 integrates ground-only streets with zero
-active prop placements.** The recipe explicitly selects `ground_only`; the helper
-still rejects placements and rejects ground activation under `framework_only`.
-There is no new blocking mask, navigation behavior, interaction, scene or save
-state. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
+PR 1 delivered metadata only; PR 2 integrated the ground-only street pass.
+**PR 3 activates Serene's household courtyard** through `courtyard_dressing`.
+`framework_only` still rejects ground/prop activation and `ground_only` rejects
+placements. Other districts remain inactive. The current courtyard uses explicit
+new solid supports without clearing any existing blocker or changing navigation,
+interactions, scenes or save schemas. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
 the report from its working town data. The standalone framework CLI writes only
 the report. Generated town map/manifest hashes are not producer inputs, avoiding
 a recursive dependency on the town's own outputs.
@@ -424,9 +425,43 @@ ground treatments. Primary compact-earth roads keep the western/southern spine
 legible; secondary lanes retain the two-bridge loop and business connection.
 Small stone surfaces mark selected junctions, bridge approaches, stair feet and
 all 13 doorsteps. Two narrow desire paths acknowledge existing grass travel.
-They do not narrow existing usable roads or declare new walkable ground. Courtyard
-dressing, workyards, civic furniture, household plots, Venn's growing area and
+They do not narrow existing usable roads or declare new walkable ground.
+Workyards, civic furniture, other household plots, Venn's growing area and
 southern planting remain later composition work.
+
+`tools/eldenmere_settlement_dressing.py` owns the courtyard's build-time placement
+resolution. The source recipe confines it to `serene_terrace` and names each
+`settlement.courtyard.*` instance. It preserves the existing home, shade tree,
+bench, provision basket, six watered beds and window troughs. An eastern herb
+pocket and sparse western domestic/planting edge reuse native assets without
+adding gardening, harvesting or water-source interactions.
+
+Ground-mounted containers and fences require explicit integer logical supports
+and conservative tall-occlusion review. Only genuinely low flowers/groundcover
+may remain nonblocking. Validate every proposed occupied silhouette across its
+authored frames against existing artwork and other proposals, then validate
+supports and actor sightlines against the source-owned reservations. An asset's
+availability is not permission to overlap a roof, functional prop or routine.
+Source metadata owns native dimensions, depth, frames and cadence; do not add
+per-instance size or animation overrides. The composer validates freshly built
+artwork through its export buffer rather than reading a previous build's PNG.
+
+The compiled `settlement_dressing` ledger records entities, supports, retired
+grass records, garden cells and source hashes. Rebuilds reconcile only previously
+declared courtyard owners and explicit meadow retirements. Unknown existing
+instances in that namespace fail validation. Deactivation with remaining owned
+entities or retired grass also fails until cleanup is deliberately implemented;
+silently removing collision while retaining visible props is invalid.
+
+The collision check reconstructs the original physical mask plus exactly the
+ledger's declared supports. It never clears old pixels or accepts unrelated
+changes. Verify additive support deltas independently, keep navigation byte
+identical, and test older saves at newly occupied ground through real Continue.
+Garden soil reuses the native grass/dirt blob bank before masonry/water. Bound
+its changes to the declared cells and their one-tile transition rim. Retire only
+the meadow instances that conflict with this planted pocket; preserve other
+grass IDs, roots and contact metadata. The street network and regional scene
+remain independently owned.
 
 Treatment coordinates are logical; native masks and terrain composition use
 twice those dimensions. Routes have explicit widths; rectangles have explicit
@@ -506,6 +541,8 @@ active map/art inputs and native views with an earlier run. See the
 [framework review](reviews/eldenmere_settlement_framework/README.md) for the
 historical framework evidence and its scope. The [street review](reviews/eldenmere_streets/README.md)
 records PR 2's authorized surface differences and unchanged physical interfaces.
+The [courtyard review](reviews/eldenmere_courtyard/README.md) records PR 3's
+explicit support delta, garden composition and retained routine/story access.
 Preservation captures do not certify the visual
 quality of unresolved building, bridge or landmark issues; those asset fixes
 remain separately scoped. The regional guide remains the creative authority.

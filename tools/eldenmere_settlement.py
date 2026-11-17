@@ -1,9 +1,9 @@
-"""Build-time settlement catalogue, clearance and ground-only street contracts.
+"""Build-time settlement catalogue, clearances, streets and scoped dressing.
 
 Coordinates are logical. Selectors scale their geometry from tiles if requested;
 padding is always logical. Routes protect the swept footprint of each segment,
-not their enclosing rectangle. Ground-only activation never permits prop dressing,
-collision changes or another map writer.
+not their enclosing rectangle. Each delivery explicitly enables its bounded
+composition; the courtyard alone currently authorizes new prop supports.
 """
 from copy import deepcopy
 from hashlib import sha256
@@ -264,25 +264,32 @@ def validate_placements(placements, protections, catalogue, town):
     return result
 
 
-def framework(root, town, recipe_path=RECIPE):
+def framework(root, town, recipe_path=RECIPE, *, image_loader=None):
     """Emit reproducible build metadata; return no replacement map or artwork."""
     root = Path(root)
     path = _file(root, recipe_path)
     recipe = json.loads(path.read_text())
-    if recipe.get('version') != 1 or recipe.get('status') not in ('framework_only', 'ground_only'):
+    if recipe.get('version') != 1 or recipe.get('status') not in ('framework_only', 'ground_only', 'courtyard_dressing'):
         raise ValueError('Unsupported settlement recipe version/status')
-    if recipe.get('placements') != [] or (recipe['status'] == 'framework_only' and recipe.get('ground_treatments') != []):
+    if ((recipe['status'] != 'courtyard_dressing' and recipe.get('placements') != []) or
+            (recipe['status'] == 'framework_only' and recipe.get('ground_treatments') != [])):
         raise ValueError('Settlement framework cannot activate placements or ground treatments')
     if town.get('id') != TOWN_ID or recipe.get('scene') != TOWN_ID:
         raise ValueError(f'Settlement framework must use the loaded {TOWN_ID} scene')
     protections = resolve_protections(root, town, recipe)
     catalogue = inventory(root, town=town)
-    validate_placements(recipe['placements'], protections, catalogue, town)
+    from tools.eldenmere_settlement_dressing import resolve_dressing
+    resolved_dressing = resolve_dressing(root, town, recipe, catalogue, protections, image_loader=image_loader)
+    dressing = resolved_dressing if recipe['status'] == 'courtyard_dressing' else None
+    if dressing is None:
+        validate_placements(recipe['placements'], protections, catalogue, town)
     from tools.eldenmere_settlement_streets import resolve_streets
     treatments = resolve_streets(root, town, recipe)
     network, street_sources = resolve_street_network(root, town, recipe, treatments)
     dependencies = dict(catalogue['dependencies_sha256'])
     dependencies[recipe_path] = sha256(path.read_bytes()).hexdigest()
+    if dressing is not None:
+        dependencies.update(dressing['dependencies_sha256'])
     for source in street_sources:
         dependencies[source] = sha256(_file(root, source).read_bytes()).hexdigest()
     for record in protections:
@@ -300,7 +307,8 @@ def framework(root, town, recipe_path=RECIPE):
                           for door in town.get('doors', [])]
     return dict(version=1, id=recipe['id'], status=recipe['status'],
                 coordinate_space='logical town units; selector padding remains logical',
-                active_placements=0, active_ground_treatments=len(treatments),
+                active_placements=len(recipe['placements']), active_ground_treatments=len(treatments),
+                dressing=dressing,
                 ground_treatments=treatments, street_network=network,
                 recipe=recipe_path, districts=deepcopy(recipe['districts']),
                 district_geometry=recipe['district_geometry'],
