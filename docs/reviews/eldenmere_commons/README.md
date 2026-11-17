@@ -19,7 +19,9 @@ image is a cropped diagnostic mask, not a gameplay screenshot.
 source hashes, camera/player fixtures, all 13 framework views and pixel counts,
 native ground phase hashes, movement traces, doorway checks and Continue results.
 [The baseline revision](before_revision.json) identifies clean main
-`b47b027d804a167d30988b56c0fb9650a89f48fe`, after settlement PR 4.
+`2e98894c5820ccfe3810a9e8ff0a63c86d815216`, after settlement PR 4 and the
+independent roof-style revision. The final capture uses the merged production
+build at `9b96225391bff80798d556c54604969caad3e174`.
 
 The production checks passed:
 
@@ -27,9 +29,12 @@ The production checks passed:
   record is retained. Existing non-ground artwork and grass are unchanged.
 - Collision is exactly the baseline union the two declared supports:
   **252 added logical pixels**. Navigation is byte-identical.
-- Each of six full native ground phases changes **97,077 pixels**; zero changed
+- Each of six full native ground phases changes **107,362 pixels**; zero changed
   pixels leave source civic treatment cells plus their one-tile material fringe,
   intersected with the declared **[384, 720, 384, 288]** logical scope.
+- Five source-owned civic treatments include the existing well's canonical
+  48×48 ground support as a visual stone underlay. This removes the former dirt
+  rectangle at its base while preserving every well collision pixel and layer.
 - All 13 framework views have zero changed pixels outside the scope. Only the
   commons and school views differ; the other 11 views are pixel-identical.
 - Four independent well approaches, the south pail/service lane, the school
@@ -55,14 +60,22 @@ This is a scoped production rendering, movement, doorway and save smoke review,
 not a complete quest playthrough or a full gardener-cycle review.
 
 The broader focused suite has **79 passing checks and two confirmed baseline
-failures among 81 checks**. Story checks pass (79), core checks pass (167), and
-business checks pass (13). The two original well-rendering tests are retained.
+failures among 81 checks**. Final core/commons checks pass (184), story checks
+pass (79), and architecture checks pass (14). The two original well-rendering
+tests are retained.
 [Their clean-main comparison](well_baseline_comparison.json) records the stale
 single-entity frame expectation and logical marker/depth test, plus native
 evidence that the existing well's opaque front rim covers its idle water glints.
 That pre-existing runtime limitation is outside this civic layout change.
 The framework water-animation check samples the brook; animated pixels elsewhere
 in a normal civic view do not demonstrate moving well water.
+
+Business checks have **12 passes and one confirmed upstream failure among 13**.
+[The clean-main comparison](business_baseline_comparison.json) proves the same
+palette assertion fails on `2e98894c`: the restored roofs use blended shades while
+the old test permits only literal ramp colors. All four business building PNGs
+are byte-identical to upstream. This PR preserves those roofs and adds only the
+bench's source-owned depth metadata to that pack.
 
 Regenerate after creating a fresh, clean-main baseline with the framework tool,
 exact map/mask copies and six native ground phase witnesses:

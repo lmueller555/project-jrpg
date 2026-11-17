@@ -433,7 +433,8 @@ a recursive dependency on the town's own outputs.
 ground treatments. Primary compact-earth roads keep the western/southern spine
 legible; secondary lanes retain the two-bridge loop and business connection.
 Small stone surfaces mark selected junctions, bridge approaches, stair feet and
-all 13 doorsteps. Two narrow desire paths acknowledge existing grass travel.
+all 13 doorsteps. Two source desire lines acknowledge existing grass travel;
+the school line now also carries the civic stone connection.
 They do not narrow existing usable roads or declare new walkable ground.
 The well square now has a restrained civic stone surface, an existing-line school
 connection and a small southwest resting pad. Other household plots, Venn's growing

@@ -1,6 +1,6 @@
 {
   "fixture": "Fresh initialized production Game; opening disabled, disposable saves/settings. Explicit clear-ground player and fixed exploration camera positions. No quest seeding, actor moves, disabled routines, art changes or zoom. Native 960x640 output.",
-  "source_revision": "b47b027d804a167d30988b56c0fb9650a89f48fe",
+  "source_revision": "2e98894c5820ccfe3810a9e8ff0a63c86d815216",
   "views": {
     "commons_well_closeup": {
       "requested_player_logical": [
@@ -25,8 +25,8 @@
         960,
         640
       ],
-      "png_sha256": "d0371880d7ba280b955f2ee9b8565dcafe921b4308309917e8938b63965c69c8",
-      "pixel_sha256": "84f7c649946ce7892f41d44d5250dd4a7661c291c57f7063bda03ea1e283aaec"
+      "png_sha256": "2d444391a346d550b9ef3d7838876d8a4ba7769a44831924c1d23e98135b865f",
+      "pixel_sha256": "d35456aaba1c745b6492ede224f2621288f16be3ef3a3080e4384d404603ee0d"
     },
     "commons_school_connection": {
       "requested_player_logical": [
@@ -51,8 +51,8 @@
         960,
         640
       ],
-      "png_sha256": "559397d7b3ac6ce5a697260e7f172e8920432a8bf5bf70171d4de5b2c5d12066",
-      "pixel_sha256": "d53cc74efde9f052bf7bb15c12c9e788892810deb20d79682b6de8f402eb15dc"
+      "png_sha256": "a2fc6ff321b9c5ce0433094bb3d2065b9b178464231256f626aa6d4d275d5556",
+      "pixel_sha256": "f73af0dc1fa47696704f627ab5293f52845709782b96708e964c2386989ef743"
     },
     "commons_west_seating": {
       "requested_player_logical": [
@@ -77,8 +77,8 @@
         960,
         640
       ],
-      "png_sha256": "63169a8db6e1e75cdcc88eaf374ced84d2193472ccbc90c6b5267398de2ef7d5",
-      "pixel_sha256": "ce50865d4badc044cf51cfc586bf476b3369c598e7a7554de338cb5878d434bb"
+      "png_sha256": "9ecef3fec02961a5047546d1f57c322eda91d8693c074693954fc5d9302b0c95",
+      "pixel_sha256": "5867727eea7478d622b92baa652974734e1d3acd182004d34bb6642e578f4b58"
     },
     "school_entrance_closeup": {
       "requested_player_logical": [
@@ -103,8 +103,8 @@
         960,
         640
       ],
-      "png_sha256": "db00963d802a9fdaddbeea04f64a9e780a199d108bfaa9fb9ef32df8e3b3dc9a",
-      "pixel_sha256": "07cc925131ad3c45a341d20ea0e798ab759dbb8f27fcdaa2772f3febabf822cd"
+      "png_sha256": "a4c390df2a235859c3896ab6b62631b2d672a826ae6a935cc50c2cac25c07036",
+      "pixel_sha256": "42987634d56e4708c2a6284c57db5ce8f33881dde19b2a70cd729a27c81ec9c9"
     }
   },
   "quest_party_inventory_flags_unchanged": true,
