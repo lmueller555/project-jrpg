@@ -40,13 +40,39 @@ def segment_distance(p,a,b):
     t=max(0,min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/den)) if den else 0
     return ((p[0]-a[0]-t*dx)**2+(p[1]-a[1]-t*dy)**2)**.5
 
-def verify_layout(plan):
-    map_path=ROOT/'assets/maps/elden_vale_sanctuary/map.json'
-    if sha(map_path)!=plan['map_sha256']:raise ValueError('Scene changed: revisit layout plan')
+# Only safety/entry facts are build inputs. Generated visual metadata is not.
+GEOMETRY_FIELDS = (
+    'id', 'size_pixels', 'spawn', 'reserve_exit', 'hall_approach',
+    'player_probe_size', 'doors', 'public_approaches', 'loop_waypoints',
+    'collision_footprints', 'cave_barrier', 'world_links', 'blocked_probes',
+)
+
+
+def geometry_contract(scene):
+    return {key: scene[key] for key in GEOMETRY_FIELDS}
+
+
+def verify_layout(plan, scene=None):
+    if scene is None:
+        scene=json.loads((ROOT/'assets/maps/elden_vale_sanctuary/map.json').read_text())
+    expected=json.loads((ROOT/plan['geometry_contract']).read_text())
+    actual=geometry_contract(scene)
+    for key in GEOMETRY_FIELDS:
+        if actual[key] != expected[key]:
+            raise ValueError(f'Protected geometry changed: {key}; revisit placement review')
+    for key,field in [('scene_size','size_pixels'), ('probe','player_probe_size'),
+                      ('doors','doors'), ('protected_approaches','public_approaches'),
+                      ('protected_loop','loop_waypoints'), ('cave_barrier','cave_barrier')]:
+        if plan[key] != actual[field]:
+            raise ValueError(f'Layout contract changed: {key}')
     collision=Image.open(ROOT/plan['collision']).convert('L')
     if sha(ROOT/plan['collision'])!=plan['collision_sha256']:raise ValueError('Collision changed: revisit supports')
     for support in plan['base_supports']:
         x,y,w,h=support['rect']
+        footprints={item['id']: item['rect'] for item in actual['collision_footprints']}
+        fx,fy,fw,fh=footprints[support['existing_footprint']]
+        if not (fx <= x and fy <= y and x+w <= fx+fw and y+h <= fy+fh):
+            raise ValueError('Support leaves its existing solid footprint / occupies walkable ground')
         if collision.crop((x,y,x+w,y+h)).getextrema()!=(255,255):raise ValueError('Support occupies walkable ground')
         for point in plan['protected_approaches'].values():
             if x-24<=point[0]<=x+w+24 and y-24<=point[1]<=y+h+24:raise ValueError('Support obstructs approach')
@@ -61,7 +87,7 @@ def build(check=False):
         if set(image.getchannel('A').tobytes())-{0,255}:raise ValueError('Soft export alpha')
         products[path]=png(image)
     plan=json.loads((SOURCE/'layout_plan.json').read_text());verify_layout(plan)
-    for path in [SOURCE/'generation_brief.json',SOURCE/'layout_plan.json',Path(__file__),ROOT/'assets/maps/elden_vale_sanctuary/map.json',ROOT/plan['collision']]:depend(path)
+    for path in [SOURCE/'generation_brief.json',SOURCE/'layout_plan.json',Path(__file__),ROOT/plan['geometry_contract'],ROOT/plan['collision']]:depend(path)
     manifest={'id':'elden_vale.signature_landscape.hd','integration_status':'not_integrated',
               'visual_approval':'not_reviewed_by_user','artwork_pixels_per_world_pixel':2,
               'path_space':'repository_relative','anchor_space':'logical','assets':{},'assemblies':{},
@@ -176,8 +202,7 @@ def build(check=False):
         x,y=index%4*300,index//4*220;board.alpha_composite(shown,(x+(300-shown.width)//2,y+185-shown.height))
         draw.text((x+8,y+192),name,fill='black')
     products[REVIEW/'asset_board.png']=png(board)
-    scene_path=ROOT/'assets/maps/elden_vale_sanctuary/map.json';scene=json.loads(scene_path.read_text())
-    plan_image=Image.new('RGB',tuple(scene['size_pixels']),'#dae2d4');draw=ImageDraw.Draw(plan_image)
+    plan_image=Image.new('RGB',tuple(plan['scene_size']),'#dae2d4');draw=ImageDraw.Draw(plan_image)
     draw.line([tuple(p) for p in plan['protected_loop']],fill='#a37a49',width=12)
     for name,point in plan['protected_approaches'].items():
         x,y=point;draw.ellipse((x-15,y-15,x+15,y+15),outline='#335e98',width=2);draw.text((x+16,y),name,fill='black')
@@ -237,6 +262,28 @@ def build(check=False):
     if stale:raise SystemExit('Stale exports: '+', '.join(stale))
     print(f'{"Verified" if check else "Exported"} {len(manifest["assets"])} assets, {len(products)} products')
 
+def record_visual_provenance():
+    """Explicit review output, never an input to staged exports or active maps."""
+    plan=json.loads((SOURCE/'layout_plan.json').read_text())
+    verify_layout(plan)
+    map_path=ROOT/'assets/maps/elden_vale_sanctuary/map.json'
+    report={
+        'purpose': 'Generated visual output observation; not a geometry approval or build input',
+        'map': str(map_path.relative_to(ROOT)),
+        'generated_map_sha256': sha(map_path),
+        'historical_staged_map_sha256': plan['map_sha256'],
+        'geometry_contract_sha256': sha(ROOT/plan['geometry_contract']),
+        'collision_sha256': sha(ROOT/plan['collision']),
+    }
+    (REVIEW/'visual_provenance.json').write_bytes(packed(report))
+
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true')
-    build(parser.parse_args().check)
+    parser.add_argument('--record-visual-provenance', action='store_true',
+                        help='record current generated map hash separately after safety checks')
+    args=parser.parse_args()
+    if args.check and args.record_visual_provenance:
+        parser.error('--check cannot write a visual provenance report')
+    build(args.check)
+    if args.record_visual_provenance: record_visual_provenance()

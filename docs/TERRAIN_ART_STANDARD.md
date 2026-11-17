@@ -1190,7 +1190,11 @@ cross-scale views. Distant views exclude the skull. Parts reconstruct the master
 without gaps or duplicate pixels. Overhead pieces have no ground collision and
 provide alpha masks for future visibility treatment. The layout plan checks the
 proposed base against current solid ridge pixels and protected approaches/loop;
-changed scene/collision inputs require renewed review. World grounding and final
+changed protected geometry/collision inputs require renewed review. The historical
+full-map hash is evidence, not an active visual-build dependency. An explicit
+`protected_geometry.json` snapshot preserves doors, approaches, loop, supports and
+entry facts; `--record-visual-provenance` records generated map hashes separately
+as review output, never as input to the staged pack or active map builders. World grounding and final
 foreground behavior remain integration work, not an alpha-derived collision mask.
 
 Sixteen ridge/dressing drawings and twelve causeway drawings provide handed ends,

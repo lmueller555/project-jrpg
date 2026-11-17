@@ -1,8 +1,10 @@
 """Asset contracts: safe proposed ground contacts, coherent anatomy and open arch."""
+import copy
 import importlib.util
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 PACK=ROOT/'assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json'
@@ -20,6 +22,34 @@ class SignatureLandscapeTests(unittest.TestCase):
         plan['base_supports'][0]['rect']=[432,630,24,12]
         with self.assertRaisesRegex(ValueError,'walkable'):
             self.builder.verify_layout(plan)
+
+    def test_visual_changes_do_not_invalidate_geometry(self):
+        plan=json.loads((ROOT/self.pack['layout_plan']).read_text())
+        scene=json.loads((ROOT/'assets/maps/elden_vale_sanctuary/map.json').read_text())
+        scene['landmark_layers']=[{'id': 'disposable-visual-fixture'}]
+        scene['source_recipe_sha256']='different-generated-visual-output'
+        self.builder.verify_layout(plan, scene)
+
+    def test_protected_geometry_mutations_are_rejected(self):
+        plan=json.loads((ROOT/self.pack['layout_plan']).read_text())
+        original=json.loads((ROOT/'assets/maps/elden_vale_sanctuary/map.json').read_text())
+        for field in self.builder.GEOMETRY_FIELDS:
+            with self.subTest(field=field):
+                scene=copy.deepcopy(original)
+                scene[field]=None
+                with self.assertRaisesRegex(ValueError, 'Protected geometry changed'):
+                    self.builder.verify_layout(plan, scene)
+
+    def test_collision_hash_remains_mandatory(self):
+        plan=json.loads((ROOT/self.pack['layout_plan']).read_text())
+        with patch.object(self.builder, 'sha', return_value='changed-collision'):
+            with self.assertRaisesRegex(ValueError, 'Collision changed'):
+                self.builder.verify_layout(plan)
+
+    def test_visual_map_is_not_staged_build_dependency(self):
+        recipe=json.loads((ROOT/'assets/source/terrain/overworld/elden_vale/signature_landscape_hd/recipe.json').read_text())
+        self.assertNotIn('assets/maps/elden_vale_sanctuary/map.json', recipe['sources'])
+        self.assertIn('assets/source/terrain/overworld/elden_vale/signature_landscape_hd/protected_geometry.json', recipe['sources'])
 
     def test_layers_reconstruct_single_anatomy_and_arch(self):
         for assembly_id,whole in [('antlers','antlers_complete'),('arch','arch_complete')]:

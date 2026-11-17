@@ -1423,3 +1423,24 @@ serves reduced motion. Other wildlife banks and actor IDs remain untouched.
 are offline review evidence. Actual gameplay camera, transitions, actor/workstation
 spacing, interruption/Continue and reduced-motion lifecycle require integration
 review. The optional map event glyph does not activate a forecast UI.
+
+### Explicit landmark layers
+
+`landmark_layers.LandmarkLayers` is shared by detailed `World` and the regional
+renderer. `landmark_layers` records declare an image, native density, logical
+canvas, top-left logical position and `distant`, `ground` or `overhead` role.
+Distant and ground passes precede nearby depth-sorted scenery; overhead follows
+actors. Empty registries preserve existing presentation. These records never
+create collision or interaction cues. Builders separately validate physical
+contacts against protected geometry.
+
+Complete placed bounds determine visibility independently of ordinary regional
+scenery root searches. The source LRU is capped at 16 MiB per world; mutable
+cutaway crops are viewport-bounded and never cached by actor position. Authored
+grayscale masks constrain immediate local fades around visible actor bodies,
+including story positions and travelling-party render actors, and explicitly
+authored interaction visibility points. Source pixels are never mutated.
+The same stable assistance applies under reduced motion, pause and focus loss.
+Disposable actual-game evidence and the cross-scale placement review live in
+[the landmark framework review](reviews/elden_vale_landmark_framework/README.md).
+This framework alone activates no production landmark.
