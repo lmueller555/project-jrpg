@@ -442,7 +442,12 @@ def products():
             for layer in ('rear','front'):overview.alpha_composite(image(pose[layer]),pixels((x-12,y-28)))
         for layer in data.get('foreground',[]):overview.alpha_composite(ex.load(layer['image']),pixels(layer['position']))
         data['overview']=ex.png(name+'/overview',overview.resize(tuple(data['size_pixels']),Image.Resampling.NEAREST).convert('RGB'));ex.json(paths[name],data)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    # Settlement composition has one map owner. PR 1 resolves source-owned
+    # clearances and reusable art as metadata only; it cannot activate dressing.
+    from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
+    settlement=framework(ROOT,town,rec['settlement_recipe'])
+    ex.json(SETTLEMENT_MANIFEST,settlement)
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':0},'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

@@ -44,6 +44,11 @@ and terrain integration, also read the
 It owns the complete terrain workflow and existing pack maintenance reference;
 do not recreate parallel terrain-authoring READMEs.
 
+Before changing Eldenmere's layout or dressing, also read the
+[settlement framework](docs/TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework).
+Use its source-owned clearance contracts and the existing town composer; it is
+currently metadata-only and does not activate new placements or blocking areas.
+
 For object manipulation, scene staging and prop rendering, also read
 [the character–object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md)
 and [personal-prop visibility](docs/PERSONAL_PROPS.md).

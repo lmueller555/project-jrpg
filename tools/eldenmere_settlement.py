@@ -1,0 +1,304 @@
+"""Build-time settlement catalogue and clearance contracts, with no map writer.
+
+Coordinates are logical. Selectors scale their geometry from tiles if requested;
+padding is always logical. Routes protect the swept footprint of each segment,
+not their enclosing rectangle. The current framework recipe deliberately cannot
+activate dressing: later composition PRs must explicitly add that integration.
+"""
+from copy import deepcopy
+from hashlib import sha256
+import json
+import math
+from pathlib import Path
+
+from tools.eldenmere_settlement_inventory import inventory
+
+RECIPE = 'assets/source/maps/eldenmere/settlement/recipe.json'
+MANIFEST = 'assets/maps/eldenmere/settlement/manifest.json'
+TOWN_ID = 'eldenmere.playable'
+
+
+def _file(root, name):
+    path = Path(name)
+    if path.is_absolute() or '..' in path.parts:
+        raise ValueError(f'Settlement source must be repository-relative: {name}')
+    result = (root / path).resolve()
+    if not result.is_relative_to(root.resolve()):
+        raise ValueError(f'Settlement source escapes repository: {name}')
+    if not result.is_file():
+        raise ValueError(f'Missing settlement source: {name}')
+    return result
+
+
+def _numbers(value, length, label):
+    if (not isinstance(value, (list, tuple)) or len(value) != length or
+            any(type(v) not in (int, float) or not math.isfinite(v) for v in value)):
+        raise ValueError(f'{label}: expected {length} finite logical coordinates')
+    return list(value)
+
+
+def _rect(value, label):
+    result = _numbers(value, 4, label)
+    if result[2] <= 0 or result[3] <= 0:
+        raise ValueError(f'{label}: rectangle dimensions must be positive')
+    return result
+
+
+def _select(value, path, trail=()):
+    if not path:
+        return [(value, list(trail))]
+    key, *rest = path
+    if key == '*':
+        if isinstance(value, dict):
+            children = value.items()
+        elif isinstance(value, list):
+            children = enumerate(value)
+        else:
+            raise ValueError(f'Settlement selector wildcard requires a collection at {trail}')
+        result = []
+        for child_key, child in children:
+            result.extend(_select(child, rest, (*trail, child_key)))
+        return result
+    try:
+        child = value[key]
+    except (KeyError, IndexError, TypeError) as error:
+        raise ValueError(f'Settlement selector no longer resolves: {[*trail, key]}') from error
+    return _select(child, rest, (*trail, key))
+
+
+def _protection(identifier, shape, geometry, padding, roles, **evidence):
+    padding = _numbers(padding, 2, identifier+' padding')
+    if any(v < 0 for v in padding):
+        raise ValueError(f'{identifier}: padding cannot be negative')
+    if shape == 'point':
+        geometry = _numbers(geometry, 2, identifier)
+    elif shape == 'rect':
+        geometry = _rect(geometry, identifier)
+    elif shape == 'route':
+        if not isinstance(geometry, list) or len(geometry) < 2:
+            raise ValueError(f'{identifier}: route needs at least two points')
+        geometry = [_numbers(point, 2, identifier) for point in geometry]
+    else:
+        raise ValueError(f'{identifier}: unsupported protection shape {shape}')
+    if not roles or not set(roles) <= {'movement', 'sightline'}:
+        raise ValueError(f'{identifier}: invalid protection roles')
+    return dict(id=identifier, shape=shape, geometry=geometry,
+                padding=padding, roles=list(roles), **evidence)
+
+
+def resolve_protections(root, town, recipe):
+    """Resolve maintained JSON geometry plus explicitly reviewed code regions."""
+    root = Path(root)
+    result = []
+    half = [v/2 for v in town.get('player_probe_size', [24, 12])]
+    for door in town.get('doors', []):
+        radius = max(door['open_radius'], door['close_radius'], door['entry_half_width'])
+        result.append(_protection('door.'+door['id'], 'point', door['anchor'],
+                                  [radius+half[0], radius+half[1]], ['movement', 'sightline'],
+                                  source='loaded town', source_path=['doors', door['id'], 'anchor']))
+    contact = town.get('overworld_exit')
+    if contact:
+        result.append(_protection('travel.southern_exit', 'rect', contact['rect'], half,
+                                  ['movement', 'sightline'], source='loaded town',
+                                  source_path=['overworld_exit', 'rect']))
+        result.append(_protection('travel.southern_return', 'point', contact['return_position'],
+                                  half, ['movement', 'sightline'], source='loaded town',
+                                  source_path=['overworld_exit', 'return_position']))
+    for link in town.get('world_links', []):
+        radius = link.get('radius', 0)
+        result.append(_protection('travel.'+link['id'], 'point', link['position'],
+                                  [radius+half[0], radius+half[1]], ['movement', 'sightline'],
+                                  source='loaded town', source_path=['world_links', link['id']]))
+    entities = {record['id']: record for record in town.get('entities', [])}
+    for name in recipe.get('protected_town_entities', []):
+        if name not in entities:
+            raise ValueError(f'Owned settlement fixture no longer resolves: {name}')
+        entity = entities[name]
+        geometry = [*entity['position'], *entity['logical_size']]
+        result.append(_protection('entity.'+name, 'rect', geometry, [0,0],
+                                  ['movement', 'sightline'], source='loaded town',
+                                  source_path=['entities', name],
+                                  note='Reserve existing owned artwork; new dressing may not replace or overlap it.'))
+    for selector in recipe.get('protected_selectors', []):
+        identifier = selector['id']
+        if selector.get('scene') != TOWN_ID:
+            raise ValueError(f'{identifier}: protection must explicitly belong to {TOWN_ID}')
+        source = selector['source']
+        document = json.loads(_file(root, source).read_text())
+        records = _select(document, selector['path'])
+        requested = selector.get('filter')
+        if requested:
+            found = set()
+            selected = []
+            for record, trail in records:
+                if not isinstance(record, dict):
+                    raise ValueError(f'{identifier}: filter requires object records')
+                value = record.get(requested['field'])
+                if value in requested['values']:
+                    found.add(value)
+                    selected.append((record, trail))
+            if found != set(requested['values']):
+                raise ValueError(f'{identifier}: missing requested records {set(requested["values"])-found}')
+            records = selected
+        if not records:
+            raise ValueError(f'{identifier}: selector is empty')
+        units = selector.get('units', 'logical')
+        if units not in ('logical', 'tiles'):
+            raise ValueError(f'{identifier}: unknown coordinate units {units}')
+        factor = document.get('tile_size_px', town.get('tile_size', 24)) if units == 'tiles' else 1
+        for index, (record, trail) in enumerate(records):
+            extracted = _select(record, selector.get('geometry_path', []))
+            if len(extracted) != 1:
+                raise ValueError(f'{identifier}: geometry_path must resolve one shape per record')
+            geometry = extracted[0][0]
+            shape = selector['shape']
+            if shape == 'route':
+                geometry = [[v*factor for v in point] for point in geometry]
+            elif isinstance(geometry, (list, tuple)):
+                geometry = [v*factor for v in geometry]
+            name = identifier if len(records) == 1 else f'{identifier}.{index}'
+            result.append(_protection(name, shape, geometry, selector['padding'], selector['roles'],
+                                      source=source, source_path=trail+selector.get('geometry_path', []),
+                                      note=selector.get('note', '')))
+    for reviewed in recipe.get('reviewed_regions', []):
+        if reviewed.get('scene') != TOWN_ID:
+            raise ValueError(f'{reviewed["id"]}: reviewed region must belong to {TOWN_ID}')
+        path = _file(root, reviewed['source'])
+        if sha256(path.read_bytes()).hexdigest() != reviewed['source_sha256']:
+            raise ValueError(f'{reviewed["id"]}: code-owned geometry changed; review {reviewed["symbol"]}')
+        result.append(_protection(reviewed['id'], 'rect', reviewed['rect'], reviewed['padding'],
+                                  reviewed['roles'], source=reviewed['source'],
+                                  source_symbol=reviewed['symbol'], note=reviewed['note']))
+    names = [record['id'] for record in result]
+    if len(names) != len(set(names)):
+        raise ValueError('Duplicate settlement protection IDs')
+    return result
+
+
+def _overlap(a, b):
+    return (a[0] < b[0]+b[2] and b[0] < a[0]+a[2] and
+            a[1] < b[1]+b[3] and b[1] < a[1]+a[3])
+
+
+def _line_hits(a, b, rect):
+    """Slab intersection against a rectangle, including conservative edge contact."""
+    low, high = 0., 1.
+    for axis in (0, 1):
+        delta = b[axis]-a[axis]
+        start, end = rect[axis], rect[axis]+rect[axis+2]
+        if not delta:
+            if not start <= a[axis] <= end:
+                return False
+            continue
+        first, last = sorted(((start-a[axis])/delta, (end-a[axis])/delta))
+        low, high = max(low, first), min(high, last)
+        if low > high:
+            return False
+    return True
+
+
+def intersects(rect, protection, *, visibility=False, anchor=(12, 30)):
+    """Test an occupied rectangle against a footprint-swept source geometry."""
+    px, py = protection['padding']
+    # Visibility includes a standing body's height above its feet. Padding in
+    # movement contracts already includes the actor's horizontal footprint.
+    above, below = (anchor[1], 6) if visibility else (0, 0)
+    expanded = [rect[0]-px, rect[1]-py-below,
+                rect[2]+2*px, rect[3]+2*py+above+below]
+    shape, geometry = protection['shape'], protection['geometry']
+    if shape == 'route':
+        return any(_line_hits(a, b, expanded) for a, b in zip(geometry, geometry[1:]))
+    if shape == 'point':
+        return (expanded[0] <= geometry[0] <= expanded[0]+expanded[2] and
+                expanded[1] <= geometry[1] <= expanded[1]+expanded[3])
+    return _overlap(expanded, geometry)
+
+
+def validate_placements(placements, protections, catalogue, town):
+    """Validate future top-left logical instances; never mutate/apply them."""
+    assets = {record['id']: record for record in catalogue['assets']}
+    existing = {record['id'] for record in town.get('entities', [])}
+    seen = set()
+    width, height = town['size_pixels']
+    result = []
+    for placement in placements:
+        name = placement.get('id', '')
+        if not name.startswith('settlement.') or name in seen or name in existing:
+            raise ValueError(f'{name}: instance ID must be unique in the settlement namespace')
+        seen.add(name)
+        asset = assets.get(placement.get('asset'))
+        if asset is None:
+            raise ValueError(f'{name}: unknown semantic asset {placement.get("asset")}')
+        if asset.get('artwork_pixels_per_world_pixel') != 2 or not asset.get('image'):
+            raise ValueError(f'{name}: placement requires a native 2x image asset')
+        x, y = _numbers(placement['position'], 2, name+' position')
+        w, h = _numbers(asset['logical_size'], 2, name+' size')
+        if min(w, h) <= 0 or x < 0 or y < 0 or x+w > width or y+h > height:
+            raise ValueError(f'{name}: artwork bounds leave the town')
+        collision = placement.get('collision', 'none')
+        if collision not in ('none', 'solid'):
+            raise ValueError(f'{name}: unsupported collision policy')
+        footprint = placement.get('footprint')
+        if collision == 'solid' and footprint is None:
+            raise ValueError(f'{name}: solid instance needs an explicit local footprint')
+        if footprint is not None:
+            fx, fy, fw, fh = _rect(footprint, name+' footprint')
+            if fx < 0 or fy < 0 or fx+fw > w or fy+fh > h:
+                raise ValueError(f'{name}: footprint lies outside artwork bounds')
+            if collision == 'solid':
+                for protected in protections:
+                    if 'movement' in protected['roles'] and intersects([x+fx, y+fy, fw, fh], protected):
+                        raise ValueError(f'{name}: footprint blocks {protected["id"]}')
+        occlusion = placement.get('occlusion', 'tall')
+        if occlusion not in ('ground', 'low', 'tall'):
+            raise ValueError(f'{name}: invalid occlusion role')
+        if collision == 'solid' and occlusion == 'ground':
+            raise ValueError(f'{name}: ground dressing cannot be a solid obstacle')
+        if occlusion == 'tall':
+            for protected in protections:
+                if ('sightline' in protected['roles'] and
+                        intersects([x,y,w,h], protected, visibility=True,
+                                   anchor=town.get('player_draw_anchor', [12,30]))):
+                    raise ValueError(f'{name}: artwork obscures {protected["id"]}')
+        result.append(deepcopy(placement))
+    return result
+
+
+def framework(root, town, recipe_path=RECIPE):
+    """Emit reproducible build metadata; return no replacement map or artwork."""
+    root = Path(root)
+    path = _file(root, recipe_path)
+    recipe = json.loads(path.read_text())
+    if recipe.get('version') != 1 or recipe.get('status') != 'framework_only':
+        raise ValueError('Unsupported settlement recipe version/status')
+    if recipe.get('placements') != [] or recipe.get('ground_treatments') != []:
+        raise ValueError('Settlement framework cannot activate placements or ground treatments')
+    if town.get('id') != TOWN_ID or recipe.get('scene') != TOWN_ID:
+        raise ValueError(f'Settlement framework must use the loaded {TOWN_ID} scene')
+    protections = resolve_protections(root, town, recipe)
+    catalogue = inventory(root, town=town)
+    validate_placements(recipe['placements'], protections, catalogue, town)
+    dependencies = dict(catalogue['dependencies_sha256'])
+    dependencies[recipe_path] = sha256(path.read_bytes()).hexdigest()
+    for record in protections:
+        if record['source'] != 'loaded town':
+            source = record['source']
+            dependencies[source] = sha256(_file(root, source).read_bytes()).hexdigest()
+    # These facts track current loaded owners without pinning whole generated
+    # map bytes, so a facade-only rebuild does not invalidate geometry review.
+    interfaces = {key: deepcopy(town.get(key)) for key in
+                  ('id','size_pixels','spawn','player_probe_size','player_draw_anchor',
+                   'destinations','overworld_exit','world_links','interior_scenes')}
+    interfaces['doors'] = [{key: deepcopy(door.get(key)) for key in
+                           ('id','host','anchor','entry_y','entry_side','entry_half_width',
+                            'open_radius','close_radius','destination','spawn','arrival_door')}
+                          for door in town.get('doors', [])]
+    return dict(version=1, id=recipe['id'], status='framework_only',
+                coordinate_space='logical town units; selector padding remains logical',
+                active_placements=0, active_ground_treatments=0,
+                recipe=recipe_path, districts=deepcopy(recipe['districts']),
+                district_geometry=recipe['district_geometry'],
+                placement_notes=deepcopy(recipe.get('placement_notes', [])),
+                protected_spaces=protections, interfaces=interfaces,
+                inventory=catalogue, dependencies_sha256=dict(sorted(dependencies.items())),
+                excluded_coordinate_contexts=deepcopy(recipe.get('excluded_coordinate_contexts', [])))
