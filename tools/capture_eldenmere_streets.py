@@ -238,10 +238,10 @@ def gameplay_capture(folder, *, movement=True):
     return report
 
 
-def capture(folder, baseline, *, movement=True):
+def capture(folder, baseline=None, *, movement=True):
     folder.mkdir(parents=True, exist_ok=True)
     production = framework.production_snapshot()
-    comparison = compare_baseline(baseline, folder)
+    comparison = compare_baseline(baseline, folder) if baseline is not None else None
     framework.capture(folder)
     report = json.loads((folder/'observations.json').read_text())
     report['scope'] = 'Ground-only street integration; native Game fixtures and production movement; no quest playthrough.'
@@ -252,15 +252,17 @@ def capture(folder, baseline, *, movement=True):
     report['capture_png_sha256'] = {path.name: framework.digest(path.read_bytes())
                                    for path in sorted(folder.glob('*.png'))}
     (folder/'observations.json').write_text(json.dumps(report, indent=2)+'\n')
+    comparison_text = '; six ground phases verified inside coverage' if comparison is not None else ''
     print(f"Street review: {len(report['views'])} native views, "
-          f"{len(report['gameplay']['routes'])} movement routes, six ground phases with zero changes outside coverage.")
+          f"{len(report['gameplay']['routes'])} movement routes{comparison_text}.")
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('output', nargs='?', type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument('--baseline-dir', type=Path, required=True,
+    parser.add_argument('--baseline-dir', '--baseline', type=Path,
                         help='Pre-build observations.json, town.json, collision/navigation and ground_phase_0..5.png')
     parser.add_argument('--skip-movement', action='store_true', help='Capture native fixtures and comparison only')
     args = parser.parse_args()
-    capture(args.output.resolve(), args.baseline_dir.resolve(), movement=not args.skip_movement)
+    capture(args.output.resolve(), args.baseline_dir.resolve() if args.baseline_dir else None,
+            movement=not args.skip_movement)
