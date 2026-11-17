@@ -91,4 +91,28 @@ def regional_bindings(products, depend, png_bytes):
     miniature=assets['sanctuary_miniature'];depend(ROOT/miniature['image'])
     props['ridge_sanctuary']={**miniature,'artwork_pixels_per_world_pixel':2,'foot_anchor':[48,78],
                               'collision':'existing Sanctuary entry contract; image is not a trigger','interaction_cues':False}
+    causeway=plan.get('causeway')
+    if causeway:
+        raw=assets['arch_complete'];depend(ROOT/raw['image'])
+        arch=Image.open(ROOT/raw['image']).convert('RGBA').resize(tuple(causeway['arch_projection_artwork']),Image.Resampling.NEAREST)
+        for name,box in causeway['arch_crops'].items():
+            im=arch.crop(tuple(box));record=export(name,im,assembly_position_artwork=box[:2])
+            if name.endswith('lintel'):
+                maskpath=folder/(name+'_mask.png');products[maskpath]=png_bytes(im.getchannel('A'))
+                record['occlusion_mask']=maskpath.relative_to(ROOT).as_posix();landmarks[name]=record
+            else:
+                record['foot_anchor']=[33,80] if name.endswith('left') else [29,80]
+                record['collision']='explicit authored support; never artwork alpha';props[name]=record
+        for key,r in causeway['prop_assets'].items():
+            raw=assets[r['asset']];depend(ROOT/raw['image'])
+            im=Image.open(ROOT/raw['image']).convert('RGBA')
+            if r.get('overlay_asset'):
+                overlay=assets[r['overlay_asset']];depend(ROOT/overlay['image'])
+                im.alpha_composite(Image.open(ROOT/overlay['image']).convert('RGBA'))
+            props[key]=export(key,im,foot_anchor=r['foot_anchor'],source_asset=r['asset'],
+                              collision='explicit authored support; never artwork alpha')
+        raw=assets['paving_top'];depend(ROOT/raw['image'])
+        # Surface-only interior excludes the donor's raised front/side curb.
+        paving=Image.open(ROOT/raw['image']).convert('RGBA').crop(tuple(causeway['paving_crop_artwork']))
+        landmarks['causeway_paving']=export('causeway_paving',paving,source_asset='paving_top',surface_only=True)
     return landmarks,props

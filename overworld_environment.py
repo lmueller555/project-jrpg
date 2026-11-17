@@ -84,6 +84,12 @@ class EnvironmentDetail:
                         if is_road:self.roads_by_chunk[(cx,cy)].append((a,b,radius))
         records = list(world.region.get('decorations',[]))
         for scene in world.region.get('setpieces',[]):records.extend(scene.get('props',[]))
+        records.extend(world.region.get('signature_landscape',{}).get('props',[]))
+        self._signature_clearance = []
+        for record in world.region.get('signature_landscape',{}).get('props',[]):
+            x,y=world._tile_point(record['tile_position']);w,h=record.get('solid',(0,0))
+            padding=record.get('procedural_clearance',12)
+            self._signature_clearance.append(pygame.Rect(round(x)-w//2,round(y)-h//2,w,h).inflate(padding*2,padding*2))
         self.authored = []
         for index,record in enumerate(records):
             prop = {**record,'id':record.get('id',f'authored:{index}'),
@@ -104,8 +110,12 @@ class EnvironmentDetail:
     def prop_key(self, preferred, fallback):
         return preferred if preferred in self.world._art.get('props',{}) else fallback
 
+    def _signature_reserved(self, pixel):
+        return any(rect.collidepoint(pixel) for rect in self._signature_clearance)
+
     def _reserved(self, point, padding=0):
         pixel = self.world._tile_point(point)
+        if self._signature_reserved(pixel):return True
         if self.world.town_entry_rect.inflate(5*TILE,5*TILE).collidepoint(pixel):return True
         if any(rect.collidepoint(pixel) for rect in self._safe_rects):return True
         chunk = (math.floor(point[0]/16),math.floor(point[1]/16))
@@ -219,6 +229,7 @@ class EnvironmentDetail:
                     x,y = point[0]+normal[0]*distance*side,point[1]+normal[1]*distance*side
                     if (math.floor(x/CHUNK),math.floor(y/CHUNK)) != (cx,cy):continue
                     tile = (x/TILE,y/TILE)
+                    if self._signature_reserved((x,y)):continue
                     if any(path_distance(tile,(a,b))<radius for a,b,radius in self.roads_by_chunk.get((cx,cy),())):continue
                     key = self.prop_key('reeds' if seed%4 else 'river_rocks','rock')
                     props.append({'id':f'bank:{river_index}:{index}:{side}','key':key,'position':(x,y)})
@@ -234,6 +245,7 @@ class EnvironmentDetail:
                 x,y = point[0]+normal[0]*(seed%13-6),point[1]+normal[1]*(seed%13-6)
                 if (math.floor(x/CHUNK),math.floor(y/CHUNK)) != (cx,cy):continue
                 tile = (x/TILE,y/TILE)
+                if self._signature_reserved((x,y)):continue
                 if any(path_distance(tile,(a,b))<radius-.8 for a,b,radius in self.roads_by_chunk.get((cx,cy),())):continue
                 key = self.prop_key(('fern','shrub','sapling')[(seed>>7)%3],'rock')
                 if key != 'rock':props.append({'id':f'fringe:{forest_index}:{index}','key':key,'position':(x,y)})
@@ -246,6 +258,7 @@ class EnvironmentDetail:
                 x,y = point[0]+normal[0]*distance*side,point[1]+normal[1]*distance*side
                 if (math.floor(x/CHUNK),math.floor(y/CHUNK)) != (cx,cy):continue
                 tile = (x/TILE,y/TILE)
+                if self._signature_reserved((x,y)):continue
                 if any(path_distance(tile,r['points'])<r.get('width',8)/2+.2 for r in terrain.get('rivers',[])):continue
                 key = self.prop_key(('grass_tuft','flowers_a','flowers_b')[(seed>>7)%3],'rock')
                 if key != 'rock':props.append({'id':f'verge:{road_index}:{index}','key':key,'position':(x,y)})

@@ -1349,6 +1349,132 @@
         48,
         78
       ]
+    },
+    "causeway_arch_left": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_arch_left.png",
+      "logical_size": [
+        60,
+        90
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        180
+      ],
+      "foot_anchor": [
+        33,
+        80
+      ]
+    },
+    "causeway_arch_right": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_arch_right.png",
+      "logical_size": [
+        63,
+        90
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        354,
+        180
+      ],
+      "foot_anchor": [
+        29,
+        80
+      ]
+    },
+    "causeway_deck": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_deck.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        65
+      ],
+      "source_asset": "deck_straight"
+    },
+    "causeway_broken_end": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_broken_end.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        65
+      ],
+      "source_asset": "broken_deck_end"
+    },
+    "causeway_parapet": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_parapet.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        65
+      ],
+      "source_asset": "parapet_damaged"
+    },
+    "causeway_masonry": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_masonry.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        65
+      ],
+      "source_asset": "buried_masonry"
+    },
+    "causeway_foundation": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_foundation.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        65
+      ],
+      "source_asset": "buried_foundation"
+    },
+    "causeway_fragment": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_fragment.png",
+      "logical_size": [
+        48,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "explicit authored support; never artwork alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        13,
+        30
+      ],
+      "source_asset": "bone_fragment_small"
     }
   },
   "landmarks": {
@@ -1425,6 +1551,33 @@
         0,
         500
       ]
+    },
+    "causeway_arch_lintel": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_arch_lintel.png",
+      "logical_size": [
+        240,
+        90
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        0
+      ],
+      "occlusion_mask": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_arch_lintel_mask.png"
+    },
+    "causeway_paving": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/causeway_paving.png",
+      "logical_size": [
+        50,
+        46
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "source_asset": "paving_top",
+      "surface_only": true
     }
   },
   "signature_integration": "Pale Antlers and Sanctuary miniature; original staged bank retained"

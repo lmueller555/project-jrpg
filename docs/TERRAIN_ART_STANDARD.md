@@ -36,7 +36,8 @@ Elden Vale's regional foundation now has its own
 [integrated HD bindings](#integrated-elden-vale-regional-foundation), using the
 shared materials and adapted scenery at the existing miniature logical scale.
 Pale Antlers and Sanctuary views now use explicit landmark integration. Causeway
-structures and Rising Rain remain inactive.
+structures and inhabited ruins now have separate live bindings; Rising Rain
+remains inactive.
 
 Eldenmere's building/interior integration and the new inn/shop follow the
 [global visual standard](VISUAL_ART_STANDARD.md#integrated-eldenmere-town-and-businesses).
@@ -1040,9 +1041,10 @@ contact, collision and reduced-motion acceptance remain integration work.
 ### Integrated Elden Vale Sanctuary reserve
 
 The [regional design guidance](world/regions/ELDEN_VALE.md) owns creative direction
-for Elden Vale and the Sanctuary approach, including the future Pale Antlers and
-Rising Rain. The construction reference below describes the existing native
-scenes and does not claim those new features are implemented.
+for Elden Vale and the Sanctuary approach, including the integrated Pale Antlers
+and future Rising Rain. The construction reference below owns the core native
+scenes; explicit landmark bindings are documented in the later integration
+sections, without promoting the staged weather assets.
 
 `tools/build_sanctuary_reserve_hd.py` owns the reserve exterior and cave approach,
 Sanctuary Hall and visitor relief room. Its retained master drawing, extraction
@@ -1273,3 +1275,19 @@ The town owner also checks its dependent Caelan scene export. Source-inventory
 paths are sorted canonically there so filesystem enumeration order cannot
 invalidate provenance JSON on a fresh checkout. This integration changes only
 that inventory ordering, not actor pixels, poses, dimensions or gameplay.
+
+
+### Integrated old causeway and reused masonry
+
+The regional recipe's explicit causeway props and placements extend the live
+signature adapter, without modifying original setpiece geometry. The complete
+arch is projected once and segmented into a native overhead lintel and ordinary
+depth-sorted piers. Each physical support has a named source-owned footprint;
+flat paving has none. Original deck ports join surviving short remnants off the
+main travel surface, while a parapet/resting edge and sparse buried works show
+inhabited reuse. These are authored assemblies, not a blob autotile system.
+
+Rebuild the vector layout, refresh foundation provenance, then build/check live
+HD bindings. Support validation covers both the reserved and smoothed centerline
+and rejects corridor encroachment. Source artwork, original staged metadata and
+historical reviews remain retained. No new scenery automatically glints.

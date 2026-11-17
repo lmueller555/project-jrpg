@@ -4,8 +4,8 @@
 [Elden Vale — Regional Design Guidance](world/regions/ELDEN_VALE.md) is the single
 creative authority for the region. The HD terrain/scenery foundation is now
 integrated, with six area records and nonblocking reservations for later work.
-The Pale Antlers and Sanctuary presentation are integrated. Causeway structures,
-Rising Rain and final atlas artwork remain deferred.
+The Pale Antlers, Sanctuary presentation and selected old causeway/inhabited ruins
+are integrated. Rising Rain and final atlas artwork remain deferred.
 
 Construction follows the [visual](VISUAL_ART_STANDARD.md) and
 [terrain](TERRAIN_ART_STANDARD.md) standards. The regional overworld is a separate
@@ -544,3 +544,40 @@ The town skyline's authored viewing area starts south of logical y158, with a
 22-unit viewpoint fade margin. Northern-lawn approaches suppress it, preventing
 a distant branch from reading as a small walk-through prop. The intended roof
 vista at `[600,180]` is fully visible; its fixed `[350,50]` anchor never moves.
+
+
+## Old causeway and inhabited ruins
+
+The existing `south_town_road` remains the continuous travel surface. Source-owned
+`signature_landscape.props` adds explicit ordinary depth-sorted physical supports
+and remnants; the original setpieces, roads, boundaries, destinations and work
+stations remain unchanged. Flat surviving/repaired paving is traversable ground,
+while short raised deck remnants sit beside the route rather than implying an
+unsupported climb or a new crossing. Authored overlapping ports join the straight
+deck to its broken end. A reused bench/parapet edge and sparse buried masonry /
+root-covered foundations suggest present use without new services or tasks.
+
+The complete open arch uses a deliberate uniform 1.25 whole-drawing rendition at
+480×360 native pixels, 240×180 logical units, centered on `[236,-24]`. This is an
+explicit physical sizing choice for a new structure, not artwork density
+automatically inflating an existing footprint. The original 94-unit aperture
+cannot preserve the full 96-unit reservation on the diagonal road; the selected
+117.5-unit opening does. Shared source projection and exact part reconstruction
+keep the lintel and independently sorted supports aligned. Collision belongs
+only to explicit visible pier bases, never the lintel, shadow or full PNG canvas.
+
+The vector builder checks every new support against both the reserved polyline
+and generated curved road, preserving the complete 48-unit half-clearance. The
+normal environment solid index retains cross-chunk support coverage. Local
+procedural exclusions prevent plants from growing through the new masonry;
+nonblocking flats and overhead cutaways remain independent of collision caches.
+
+[Actual production review](reviews/elden_vale_causeway/README.md) records complete
+travel, saves, transfers, support registration, native assembly, performance and
+limits. Gate release and western bridge repair remain independent. Rising Rain,
+associated routines/actions and final atlas/minimap artwork are still deferred.
+
+The retained `design_layout` reservation/deferred prose is Step 1 planning
+provenance, not an activation switch. Current activation is stated by
+`signature_landscape.status` and the explicit live asset bindings; original
+staged pack metadata remains separate.

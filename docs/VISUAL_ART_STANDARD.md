@@ -1204,8 +1204,8 @@ unchanged. The Sanctuary miniature remains separately owned.
 The [regional creative guide](world/regions/ELDEN_VALE.md) remains the single design
 authority. Its six-area foundation and nonblocking future landmark reservations
 are recorded in the active layout. Pale Antlers and Sanctuary views now use the
-explicit landmark layers; causeway structures, Rising Rain and final atlas
-updates are not yet active. See the
+explicit landmark layers. Selected causeway structures and reused masonry are
+also integrated; Rising Rain and final atlas updates remain deferred. See the
 [gameplay foundation review](reviews/elden_vale_hd_integration/README.md) for current
 evidence rather than treating offline source-pack compositions as integration.
 
@@ -1468,3 +1468,15 @@ northern lawn: that lawn suppresses the vista instead of adding collision.
 Opacity follows the current viewpoint immediately, with viewport-bounded work,
 no motion clock, history or per-position cache. Observer-dependent distant art
 is omitted from the physical town overview.
+
+
+### Causeway structural registration
+
+The open arch preserves one uniformly projected master and registered parts.
+The lintel is overhead; tall piers use ordinary foot-baseline sorting so actors
+never paint onto their vertical faces. Explicit pier bases own collision. The
+1.25 presentation choice preserves the protected diagonal road rather than
+shrinking the player probe or narrowing circulation. Raised deck remnants and
+parapets stay beside the continuous route; surface-only paving remains under
+actors. New ruins use the same restrained local overhead visibility and native
+composition as the Pale Antlers, without new interaction cues or save fields.

@@ -237,16 +237,25 @@
     "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_mossy/idle.png": "885e4fecc07a2db1e1baebb0bfe069d0b9be91371b474f65bd61cf226b6aad76",
     "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_mossy/frame_00.png": "885e4fecc07a2db1e1baebb0bfe069d0b9be91371b474f65bd61cf226b6aad76",
     "assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json": "97ce2a1d9fde6204c858ac1e6780be1785d145746dd04b3d40f58d698abab98a",
-    "assets/source/maps/overworld/elden_vale/recipe.json": "9a119c8b9d00fc6005662993bf14212ebdaa0c08e32ac00e0425ce392fbf19f3",
-    "tools/elden_vale_landmark_bindings.py": "5a08b7014b9b3ce834cbeb0cf21d27fda133ab772965ae28e1539bd29d0c21e1",
+    "assets/source/maps/overworld/elden_vale/recipe.json": "0a1ec80cc261108fb4ca935e5a93d7da58a725ff307e6b29d7b6d5e0f5f7176c",
+    "tools/elden_vale_landmark_bindings.py": "c43d875af3defa10597d45e791c4fbbe600732e71d5f420f46daf0c0bf6a6402",
     "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_regional.png": "c3c6f8372fe77e09e44ae2f10dd57e0721b69ec36dfb11a7c20bf89f576f9dcc",
     "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_left_end.png": "805bc030466fc8876f3110c0b88bee6110653967a2f486d6de7f39de6e4be074",
     "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_right_end.png": "40514e006c3c430da9e84926eb039406a5c3d602f89bef997d152fc91caea664",
-    "assets/terrain/overworld/elden_vale/signature_landscape_hd/miniature/sanctuary_miniature.png": "40db75fbe744b9ed548c71679aa10c7471314b8d2485587e368939b7a70e8d74"
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/miniature/sanctuary_miniature.png": "40db75fbe744b9ed548c71679aa10c7471314b8d2485587e368939b7a70e8d74",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_complete.png": "04157fa4b97b43dde70c8b808bd66c07d3778d60eea4f7340c3b4abff6873e63",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/deck_straight.png": "9a6f16f49fc8148d2227272a1d9cd3e2f3adec6d590fa8ed62d63c498c49736e",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/broken_deck_end.png": "c33a6b67aaa0b3c8c8e84a9e3e306f4ba0fb51a788fd94dfbd65cd6b307db0f5",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/parapet_damaged.png": "8366e9d495334ce48f19ba9af7332b5c16b205847c7b4a9fbe383cba4406686a",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/buried_masonry.png": "61af0e23a4a7c431e183cc0926a55c2adf610c46ec53536c1d44a3f194730d16",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/buried_foundation.png": "3c2433fcc801d89d65e17c566c879555602342fec1c901470099895860addbb8",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/root_contact.png": "dd90b90276b08ee2d2214366225be70d2a73255bcd9fe9e8ac57fba84905e088",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/bone_fragment_small.png": "23eabf85e7f961d9ed412888f2fd4ffe93b3961fd6cdd270a10048bab948d7ef",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/paving_top.png": "73695c50797ba628dc2d32472091fb16caf24a17ef573b645efc355185811dc3"
   },
   "selected_bindings": {
     "tiles": 21,
-    "props": 51
+    "props": 59
   },
   "method": "Immutable staged foundation plus shared HD materials and common-union vegetation registration",
   "density": 2,
