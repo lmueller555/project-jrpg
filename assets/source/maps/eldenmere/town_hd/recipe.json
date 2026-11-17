@@ -12,6 +12,11 @@
     1344
   ],
   "chunk_logical": 192,
+  "overworld_exit": {
+    "position": [528, 1620],
+    "return_position": [528, 1572],
+    "rect": [504, 1608, 48, 24]
+  },
   "sources": [
     {
       "file": "collision.png",
@@ -66,7 +71,7 @@
       ],
       [
         528,
-        1488
+        1632
       ]
     ],
     [

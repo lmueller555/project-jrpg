@@ -3,7 +3,7 @@
   "integration_status": "integrated",
   "artwork_pixels_per_world_pixel": 2,
   "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-  "recipe_sha256": "923081b02b4fe83bcf72b7a9b016a611ddfb2a61b86b7e2679821e59931a46da",
+  "recipe_sha256": "59bab75c71150a2a8e82868e7b8a50883f11a98155ce3d5f294c92d4dbe12aef",
   "scenes": {
     "town": "assets/maps/eldenmere/playable/map.json",
     "upstream": "assets/maps/eldenmere/upstream/map.json",
@@ -3062,7 +3062,7 @@
         1632
       ],
       "pixel_space": "logical_geometry",
-      "sha256": "8c0b4581aaeac9cb7128a4740c6562d38b5d4ff69548639303389e9471f4466f"
+      "sha256": "195371384343687532eb1a2a965f2c5f91d21a9401182a8a0a6821ec788c83af"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/0_0_0.png",
@@ -4403,7 +4403,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "d1a1690398fc1cf62081bd36716d83b4927371afe39b5afa2bc22e06c66b87e5"
+      "sha256": "0726a7d771f07a374d2b5a21bffa0d89603465f79af7d82d20bf7090255f577d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/3_7_0.png",
@@ -4520,7 +4520,7 @@
         192
       ],
       "pixel_space": "artwork",
-      "sha256": "86e3d0af028fe3ff6fa3f32249b742faf3622a6a3e480f34240ae2b4c3931b13"
+      "sha256": "59439246712b3fd6dd8c8a5466c73dfd557cc415f7bed30074c602e97604265b"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/3_8_0.png",
@@ -7373,7 +7373,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "9f207aa5a059be3d7b4e58193c6f5788af1f20be9c0a0d8e80ae48398b37f3da"
+      "sha256": "0e89c1855e2bb9f0dddc203cdcdfafce0afa6f389602382ebfa4303a5269dbd4"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",

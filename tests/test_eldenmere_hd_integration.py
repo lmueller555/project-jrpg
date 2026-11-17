@@ -65,7 +65,9 @@ class TownHDContracts(unittest.TestCase):
         old=self.old['town'];data=self.town
         for key in ('spawn','player_probe_size','player_draw_anchor','npcs','persistent_npcs','quests','world_links','exterior_scenes'):self.assertEqual(data[key],old[key],key)
         for key in ('destinations','interior_scenes'):
-            self.assertEqual({k:data[key][k] for k in old[key]},old[key])
+            retained={k:v for k,v in old[key].items() if key!='destinations' or k!='southern_exit'}
+            self.assertEqual({k:data[key][k] for k in retained},retained)
+        self.assertEqual(data['destinations']['southern_exit'],data['overworld_exit']['position'])
         for d,previous in zip(data['doors'],old['doors']):
             for key,value in previous.items():
                 if key not in ('frames','artwork_pixels_per_world_pixel','logical_size'):self.assertEqual(d[key],value,(d['id'],key))

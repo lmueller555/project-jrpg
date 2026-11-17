@@ -95,10 +95,14 @@ supply staging area, the two checkpoints and an eastern overlook. Ordinary
 movement remains 72 pixels/second, or 108 while running. This regional scale
 does not establish kilometres, a global travel speed or the final world's size.
 
-Walk down Eldenmere's existing southern road to leave automatically. The player
-appears just south of the miniature. Approach the miniature from any side to
-return to the village's southern entrance, facing north. A short cooldown and
-contact rearming prevent immediate return loops. The existing direct village ↔
+Follow Eldenmere's southern road through the inn/item-shop lane to the town's
+southern edge to leave automatically. The road continues to the expanded map
+boundary; its `overworld_exit` contact and return position are authored in the
+town recipe and exported with the map, alongside `destinations.southern_exit`.
+The pre-expansion exit inside the business district no longer transfers scenes.
+The player appears just south of the miniature. Approach the miniature from any
+side to return on the southern road below the businesses, facing north. A short
+cooldown and contact rearming prevent immediate return loops. The existing direct village ↔
 Upper Millrace route and MQ02 cutscene remain available. The regional millrace
 landmark is a locator, not another quest entrance.
 
