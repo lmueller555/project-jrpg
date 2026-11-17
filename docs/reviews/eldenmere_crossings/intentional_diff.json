@@ -1,0 +1,969 @@
+{
+  "base_commit": "6de3a0617aa78957bec0f2e49b51defd5ed19c9b",
+  "base_tree": "d3d107812188cd7d9297ac5fa688a8a3ed68853b",
+  "map_change": "Only adds the registered mill_landing native foreground record; all existing map records are byte-equivalent JSON.",
+  "protected_map_records_exact": {
+    "doors": true,
+    "destinations": true,
+    "entities": true,
+    "npcs": true,
+    "persistent_npcs": true,
+    "quests": true,
+    "world_links": true,
+    "interior_scenes": true,
+    "exterior_scenes": true,
+    "overworld_exit": true,
+    "spawn": true,
+    "player_probe_size": true
+  },
+  "collision_and_navigation_pngs_byte_identical": true,
+  "generated_file_count": 50,
+  "tracked_generated_files": 49,
+  "new_generated_files": [
+    "assets/maps/eldenmere/town_hd/bridges/mill_landing_front.png"
+  ],
+  "generated_scope_assertions": "Every changed ground-chunk pixel is within a declared crossing canvas. Every changed mill-frame pixel is within the named old fence crop. No regional/interior/upstream map changes.",
+  "generated": [
+    {
+      "file": "assets/maps/eldenmere/playable/map.json",
+      "old_sha256": "dfc9caeead055c65d93ab5d17ed55c3d5991ff87eebc81c9ceb47c4a6fcb39b1",
+      "sha256": "38243fd5266835badd95db6db98e06df27812aae5d44a00b86d69f2b9178dab4",
+      "bytes": 385293
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/bridges/main_bridge_front.png",
+      "old_sha256": "a2c072d4f9936d13fcd7da5f8037e88d8fae0ee88dcb010b47d0804e3153f570",
+      "sha256": "3ccbf8dd4ab6d50f699049d27114edb600b4187060c38e428838ca3c53709ce4",
+      "bytes": 646,
+      "artwork_size": [
+        336,
+        144
+      ],
+      "changed_pixel_bounds_xyxy": [
+        3,
+        98,
+        333,
+        138
+      ]
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/bridges/upper_bridge_front.png",
+      "old_sha256": "8ee17100a84e32b0b754a63d0fea98afd4ebe6775361e959f3fef03f546754b1",
+      "sha256": "91247cb4cf0b64fdc98922e0893ff100356dba864b48fe3cf6a4505b9368d386",
+      "bytes": 609,
+      "artwork_size": [
+        288,
+        144
+      ],
+      "changed_pixel_bounds_xyxy": [
+        3,
+        98,
+        285,
+        138
+      ]
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_0.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_1.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_10.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_11.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_12.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_13.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_14.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_15.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_16.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_17.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_2.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_3.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_4.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_5.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_6.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_7.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_8.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_9.png",
+      "old_sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa",
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a",
+      "bytes": 32752,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/exteriors/mill/still.png",
+      "old_sha256": "88da1f3d8820a9cf654f597065a3648d695e5ff0d03b14c99cdfe7315cfc5d24",
+      "sha256": "8cb362452c921ce488f8ea66a166de5ff6ddc21b3575f996490a3c76a7e40418",
+      "bytes": 33263,
+      "artwork_size": [
+        288,
+        336
+      ],
+      "changed_pixel_bounds_xyxy": [
+        4,
+        282,
+        44,
+        309
+      ],
+      "scope": "Only reassigned old service fence world[938,345,20,14]; wall, roof, portal and wheel unchanged."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/manifest.json",
+      "old_sha256": "9b6a07467f5ec7556b5d341963b6f43d196c51182ca48267a852e635ba576228",
+      "sha256": "f133f8a2398c04470c9537c90e4db842f1582e65e2ca1f80212a913e3fb944d4",
+      "bytes": 225884
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/3_5_0.png",
+      "old_sha256": "1fc5934fb0511d39e82c838541cc58fe6158584f8a6f77a782f875d55336607a",
+      "sha256": "32c99975a662e6e8ba157c5dd12c0a4097936d3650fdbfdd4539964217a8b53b",
+      "bytes": 23494,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        336,
+        74,
+        384,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_0.png",
+      "old_sha256": "daffaa580826b8640c1869d051ce507c1fd5df73a1f89f76151eeeaf5304329c",
+      "sha256": "4c03ad6693ad79668cf5bcbdf23b8faafbd97aff029ddf66ece3daec255d3cec",
+      "bytes": 45046,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        360,
+        254,
+        384,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_1.png",
+      "old_sha256": "663c38a35f85998cd126db2a11362404dfcb8d86ae2fa5cfdc936534f0c94e8d",
+      "sha256": "3367589f54c4b838f2d8473c28c93bd77e478358a81699e42bd0dad4ee32e02e",
+      "bytes": 45090,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        360,
+        254,
+        384,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_2.png",
+      "old_sha256": "7c13ad476df23915faa26b2157047a5961de0dd0f087b282f0bdeb50bfb67b25",
+      "sha256": "d75640a1067e561b84a14fcead4ff70948a24d2ec05645e45318f3627b1943e5",
+      "bytes": 45054,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        360,
+        254,
+        384,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_3.png",
+      "old_sha256": "bb9831a6c2f511596f131aa63a23a5cc26efd95672cfef0b734e8391a4a96b33",
+      "sha256": "3270946973029960ef5f05fb061743a3927690ad430529418453696658ce4048",
+      "bytes": 44851,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        360,
+        254,
+        384,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_4.png",
+      "old_sha256": "caf4a3748531fdb91069c2e83820db09060606043042234d8c223b6c905b952f",
+      "sha256": "0b51ba859c9958c463d5601d464296dc1ef072c16e1af872aa2e65a1d6adfd2c",
+      "bytes": 45087,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        360,
+        254,
+        384,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_5.png",
+      "old_sha256": "8fd0be6c72521c329fdb5087d2170af15d1b80c66e4e228efb3ce39be7720e55",
+      "sha256": "e3a31768657a6fffa2b9d2c921da52c55463a9c160b7bfc42e6d02bba6618939",
+      "bytes": 44712,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        360,
+        254,
+        384,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_0.png",
+      "old_sha256": "2a68481bd351ec9a15d0ad79a19f1c4577a8515cd01dd315bcf111003ea0aaed",
+      "sha256": "15fc7500ea40cb552579427928910b21a6d7b51fe87d1f72f5620193fc08bd25",
+      "bytes": 32209,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        122,
+        288,
+        248
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_1.png",
+      "old_sha256": "c3c36705b91891a3e24f3a993b5ddd60241d18754e7d140afce9de637d73983c",
+      "sha256": "3597f58d3da0797d6ef4441066bddd0a95635e28dcf49fdf0c6a3304d2201b1f",
+      "bytes": 32126,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        122,
+        288,
+        248
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_2.png",
+      "old_sha256": "f4f22ba51bf3e110a03d63b0e187d47340db35b25c32531285e4158ce5d49594",
+      "sha256": "c46c09c26840b30fd8aadb968c0de09a4e0dccac4f987b432862dd0c7bf34174",
+      "bytes": 32137,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        122,
+        288,
+        248
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_3.png",
+      "old_sha256": "7035213ed75abf751944520b9263f8baefd8f4bd4d2dc33f855690a5ff3b51ab",
+      "sha256": "f128c788dfbe22cbc96b3c5f67937de374fbe0792e180787c71c6a0de29a0a55",
+      "bytes": 32016,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        122,
+        288,
+        248
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_4.png",
+      "old_sha256": "502ba182b8ab6a1ee1c458a1d3442b018ef478c844012051621e93019ada866f",
+      "sha256": "863a8a863dd148d8d2cc33f77ec79531b83cf976efe49c1b87d8a07939a34e84",
+      "bytes": 32342,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        122,
+        288,
+        248
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_5.png",
+      "old_sha256": "7f1921be0f429d312f21a27cc34d58fb2c216d9917349831549fe53571b4284d",
+      "sha256": "a724ace3b4cb207522ae95fce7722b790d2e95976df9e5e27890f8a5d33afdd2",
+      "bytes": 31966,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        122,
+        288,
+        248
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_0.png",
+      "old_sha256": "f308987bca2856836f8c69fcdf0fbd7c10eb45aacde686b718a2f101223ba5e0",
+      "sha256": "6377752ab374e46b25c20776f475429b1772bf248a19fade836319494f1e940d",
+      "bytes": 33797,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        74,
+        288,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_1.png",
+      "old_sha256": "46d0a085595e70402ce345b63c800e011731a9c7e6581c6b6b02a9a941bb4960",
+      "sha256": "38b23a6303f75ae23c0bfa9ec64721e07a7100936d11014476984f27383c4c6b",
+      "bytes": 33565,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        74,
+        288,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_2.png",
+      "old_sha256": "3eb7eec93839c7d793d8dd6967f908b43a4baa84a062d40d997e42d2a7d20cb2",
+      "sha256": "e1b11749ffdbe7ff71a91dcb039f13baa81c38b00fb76ffe3035862cfba3f50e",
+      "bytes": 33569,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        74,
+        288,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_3.png",
+      "old_sha256": "a27eb483fa71b62a5e8e16d6b13aa858af5695ee6002fdfc0c725a15e6a8bc88",
+      "sha256": "cd8d261d213666b26e912063b2c4a43be4ddad04df98c82b881ca1c747d5286d",
+      "bytes": 33329,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        74,
+        288,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_4.png",
+      "old_sha256": "89d15cc5df3a9b9b24d293f86f33506996071749760f2d0267b0482539e82c7c",
+      "sha256": "9b7a50a67cf812962419e66f02e9fcf8a6ffa83e9365d125c1d1c9f6a03a4374",
+      "bytes": 34098,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        74,
+        288,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_5.png",
+      "old_sha256": "d467f985ab5c1b99455777f62cf6059a754896c5b18770b2f2fc758ea617bdd2",
+      "sha256": "9a1f94f8a5eba1522ca2a975fbfc5df7b021d788ea3f3618f01590e2ad62ff13",
+      "bytes": 33426,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        74,
+        288,
+        200
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_0.png",
+      "old_sha256": "0d4cb7a61abb8e2cd398a346caf8a119216071f44511f184683a01065c087f2b",
+      "sha256": "143d9aa7a3052d8438103c6eb6338724cd4a6f7b927bcbb76c529a7fbf40a138",
+      "bytes": 40445,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        276,
+        72,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_1.png",
+      "old_sha256": "9428c85233541fb9e53064d773ce5a572bfebcb5c44a7c7a796e18e990cce75b",
+      "sha256": "9529e139a5b50e216d67e4f0ffb585743e48aef08e9803f313672be053330030",
+      "bytes": 40491,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        276,
+        72,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_2.png",
+      "old_sha256": "7a249570c6178a21d1cc5e01210d38e9de60374f28cb3c5f29b8c3d56461953a",
+      "sha256": "6e366a042b9287a4e549d7c8722394f7507565209f95571eb8e2110eb9bf96b8",
+      "bytes": 40605,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        276,
+        72,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_3.png",
+      "old_sha256": "8567483cd14b45a546b5348b33a26af19b787bcaa168acad18c0385921479940",
+      "sha256": "75c8f5c91d0b330f11dd555f800c232df827cf4392ed3d26f90be1332ac84a31",
+      "bytes": 40553,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        276,
+        72,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_4.png",
+      "old_sha256": "76ce3d9e151b48a3cad565a8c464e7263d34c50fc30683bd6aa24058922ae8af",
+      "sha256": "7403f141c0f1895b3978837cbc083af984e6f6f6bb212d29797088cd7a737b60",
+      "bytes": 40545,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        276,
+        72,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_5.png",
+      "old_sha256": "de59066fa4f0369a2195ea3e4ce2a478ed88509c6c2bf8b3bb2baff781cc53f0",
+      "sha256": "ab9fa846f887202427b935acfbea81cca769a82c9adfebb9401a97f8cb69caab",
+      "bytes": 40504,
+      "artwork_size": [
+        384,
+        384
+      ],
+      "changed_pixel_bounds_xyxy": [
+        0,
+        276,
+        72,
+        380
+      ],
+      "scope": "Only the three declared crossing artwork canvases; no neighboring terrain pixels changed."
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/town/overview.png",
+      "old_sha256": "0e89c1855e2bb9f0dddc203cdcdfafce0afa6f389602382ebfa4303a5269dbd4",
+      "sha256": "694334fe517c8c4e91f005bb012225b4b08c86540bf4c6c607fea1080229bf30",
+      "bytes": 611915,
+      "artwork_size": [
+        1536,
+        1632
+      ],
+      "changed_pixel_bounds_xyxy": [
+        744,
+        319,
+        996,
+        1065
+      ]
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/bridges/mill_landing_front.png",
+      "old_sha256": null,
+      "sha256": "0ecc892e4cb6224065077dfccce1a02709cc6db85c89c7d7502b0becf96ee6ee",
+      "bytes": 557,
+      "artwork_size": [
+        96,
+        144
+      ]
+    }
+  ],
+  "authoring_inputs": [
+    {
+      "file": "tools/eldenmere_crossing_art.py",
+      "sha256": "0e39db2e05d4d70a2796fd4afc5b87a212545022a52d8a6e4984c224b3d5ea76"
+    },
+    {
+      "file": "tests/test_eldenmere_crossing_art.py",
+      "sha256": "532a379b622dcecb01cfbf8d9d354ec26ecfdfc905d2b298ec0107d837726566"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/main_bridge/construction_diagram.png",
+      "sha256": "37b969cba7e8e00f5eb3c5f7ff2aa472fbeed1dcdf87f0640e556dfc19f636a2"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/main_bridge/contact_shadow.png",
+      "sha256": "ae65f73a4c6e5b46bd32fcf0a2ebaa15031e6847be74a4a400b7f58a3b566ad8"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/main_bridge/deck.png",
+      "sha256": "e3600db642bd62b6ad538ca8f129bb5a629c0ab790b4cb6ca2ed5c8b98868bb2"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/main_bridge/far_rail.png",
+      "sha256": "61b958d8a2053f2ca3e9ce3460ea89d78b366eac6d8409b1174ab42549d3190f"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/main_bridge/ground.png",
+      "sha256": "4d3eaaff0378f72b1f57f8f29e4ad759625a744bf1d5006d259bb2f3c685ef03"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/main_bridge/near_rail.png",
+      "sha256": "3ccbf8dd4ab6d50f699049d27114edb600b4187060c38e428838ca3c53709ce4"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/mill_landing/construction_diagram.png",
+      "sha256": "51f31527b11dc6d1331166fe9dda1205df808800f765dd31006e4206742ddaff"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/mill_landing/contact_shadow.png",
+      "sha256": "8b3056be22d35e9a63a4e0cf60a4f5536e6f81d106f6dfa8e9f2b1cdbbd5fa16"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/mill_landing/deck.png",
+      "sha256": "51206b9d99b8b56b6972b2625bb736b66ed706de2bc99be5f2c7c762780cbcf4"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/mill_landing/far_rail.png",
+      "sha256": "c7956eab4821ce3c19eb59ca5ab4a1b77c14b83297af40cdaf440d775ec7967f"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/mill_landing/ground.png",
+      "sha256": "292c959774bbf148cf9b80c6bf043938b44c5f83dd8655b149226d99934311fb"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/mill_landing/near_rail.png",
+      "sha256": "0ecc892e4cb6224065077dfccce1a02709cc6db85c89c7d7502b0becf96ee6ee"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/recipe.json",
+      "sha256": "ed973bc2372ab7a07ea9e187d115c4b646aa07fc7ebe706cf18392c4cc783dd7"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/sections/board_a.png",
+      "sha256": "fea6713b033ab07553948743908dce378736595e615af204d98b9db3fb4d93bc"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/sections/board_b.png",
+      "sha256": "5daed89a4fcdbe54b7db8b3da475180f45e1768c83d37f0c887dad2c5adb7100"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/sections/board_c.png",
+      "sha256": "ff2f9c33ccb884629acbb9abea2b3075c31112b84aea14b3e417ff60c6391aa6"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/sections/post.png",
+      "sha256": "a5f0d51c58efe6fd58306adbbee34d35927d1d628429e5f5fdb719ba786148e9"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/sections/rail_bay_24.png",
+      "sha256": "1f951f14bec7d2ba9c725411832f75c27f9aaa70754d78fcb7bbb6decb43aa56"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/upper_bridge/construction_diagram.png",
+      "sha256": "7bc7d4a6d7e6b6bf21239ba894a383af368b5d611ab1a6e24a89235ecd2ba174"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/upper_bridge/contact_shadow.png",
+      "sha256": "c52b331eb52e02dbb0244f3aafbfa8c765e467f5e0b8dc2c75622c94ab639490"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/upper_bridge/deck.png",
+      "sha256": "b2c1c3ce66bfa5da79366dd1c50f5bac70d090503794799472efceeb239891be"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/upper_bridge/far_rail.png",
+      "sha256": "60d500c1fdd0238ebf7e976843951366dc91639047618136e9979d04b4e22d9b"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/upper_bridge/ground.png",
+      "sha256": "5abe75e587bae3ffec2a4dd7cd3564db742ebf06e6dbeea28ceb23111b1faf42"
+    },
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/crossings/upper_bridge/near_rail.png",
+      "sha256": "91247cb4cf0b64fdc98922e0893ff100356dba864b48fe3cf6a4505b9368d386"
+    }
+  ],
+  "patches": {
+    "generated.patch": "20d098f815c9d76e0e1cc630fedf983de8370740ed9f9575ba3988b0f920220f",
+    "qa.patch": "ebec4a6e8254f16d53b2f55a0ecf56ef5d5d52bdba97b931292390d8d7f23042",
+    "wiring.patch": "075bdcdb61cc9838945f13e08a54167ab54e70489bfdfb734722e030e358f3fa"
+  },
+  "reproduction": [
+    "python tools/eldenmere_crossing_art.py --check",
+    "python tools/build_eldenmere_hd.py --check"
+  ],
+  "test_result": "55 focused tests pass. An extra53 preservation tests yield49passes and4existing upstream MQ02 trigger-route failures, all4 reproduced on unchanged57d0613c.",
+  "native_evidence": "../after_pr2_isolated/observations.json: 192 actual Game views,63 movement checks,3 Save/Continue checks,no failures,no unsafe feet.",
+  "baseline_failure": "All four fail trying to route upstream from[480,254] to[479,287]; upstream maps/art/logic are unchanged by this candidate.",
+  "qa_files": {
+    "tools/capture_eldenmere_architecture_audit.py": "bb4f67d61974ec26e02b1065ff2760d0b531066f34dda21a5811f77f46147c74",
+    "tests/test_eldenmere_architecture_review.py": "f68c4a88c70bc63a0ed411e50df59b9aaa53055acddd7f850cc3b4bc328ab671",
+    "tests/test_eldenmere_crossing_integration.py": "ad02f9734afb8c7fab53dd4f067241da7938a2f59b3e28f742264274b86abcbc"
+  }
+}
