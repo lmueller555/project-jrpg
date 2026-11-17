@@ -70,6 +70,24 @@ def products():
         if sha256((SRC/r['file']).read_bytes()).hexdigest()!=r['sha256']:raise ValueError('Changed source '+r['file'])
     for r in rec.get('dependencies',[]):
         if sha256((ROOT/r['file']).read_bytes()).hexdigest()!=r['sha256']:raise ValueError('Changed dependency '+r['file'])
+    # The retained source bank declares independent span-aware assemblies.
+    # Generation owns drawing; the live composer owns after-water placement.
+    from tools.eldenmere_crossing_art import crossing_assemblies
+    crossings=crossing_assemblies();crossing_source=rec['crossing_art']
+    if set(crossing_source['assemblies'])!=set(crossings):raise ValueError('Crossing selector mismatch')
+    source_recipe=read(crossing_source['recipe'])
+    if source_recipe['generator_sha256']!=sha256((ROOT/crossing_source['generator']).read_bytes()).hexdigest():
+        raise ValueError('Rebuild crossing source exports before integrating artwork')
+    for exported in source_recipe['exports']:
+        source_path=ROOT/Path(crossing_source['recipe']).parent/exported['file']
+        if sha256(source_path.read_bytes()).hexdigest()!=exported['sha256']:
+            raise ValueError('Changed crossing source '+str(source_path.relative_to(ROOT)))
+    def without_old_mill_service_fragment(im,entity):
+        # The old fence fragment below the annex is reassigned to the complete
+        # service crossing. Preserve wall/foundation, door and wheel pixels.
+        x,y,w,h=crossings['mill_landing'].metadata['exterior_interface']['remove_old_fence_world']
+        ox,oy=entity['position'];im.paste((0,0,0,0),pixels((x-ox,y-oy,x+w-ox,y+h-oy)))
+        return im
     current_town=read('assets/maps/eldenmere/playable/map.json')
     for field in ('collision','navigation_allowed'):
         expected=Image.open(SRC/(field+'.png')).convert('L')
@@ -130,9 +148,13 @@ def products():
         for i,f in enumerate(r['ambient']['frames']):
             im=image(ext_pack+f['file']).copy();im.paste((0,0,0,0),pixels((dx,dy,dx+dw,dy+dh)))
             # The mill's wheel is a separately controlled 9.6-second clock.
-            if name=='mill':im.paste(image(ext_pack+r['structure']).crop((176,188,272,284)),(176,188))
+            if name=='mill':
+                im.paste(image(ext_pack+r['structure']).crop((176,188,272,284)),(176,188))
+                without_old_mill_service_fragment(im,entities[name])
             frames.append(ex.png(f'exteriors/{name}/ambient_{i}',im))
-        still=image(ext_pack+r['structure']).copy();update_visual(entities[name],frames,r['logical_size'],frame_duration_ms=200,reduced_motion_image=ex.png(f'exteriors/{name}/still',still))
+        still=image(ext_pack+r['structure']).copy()
+        if name=='mill':without_old_mill_service_fragment(still,entities[name])
+        update_visual(entities[name],frames,r['logical_size'],frame_duration_ms=200,reduced_motion_image=ex.png(f'exteriors/{name}/still',still))
         door=next(d for d in town['doors'] if d['id']==name);door.update(frames=[ext_pack+f['file'] for f in r['door']['frames']],artwork_pixels_per_world_pixel=2,logical_size=r['door']['logical_size'])
     wheel={'id':'mill.wheel','position':[1024,298],'sort_y':entities['mill']['sort_y'],'sort_priority':.1,'phase_offset':0,'frame_duration_ms':200,'frames':[ext_pack+f'mill/wheel/frame_{i:02}.png' for i in range(48)],'logical_size':[48,48],'artwork_pixels_per_world_pixel':2,'reduced_motion_frame':0}
     town['entities']=[e for e in town['entities'] if e['id']!='mill.wheel']+[wheel];entities['mill.wheel']=wheel
@@ -207,13 +229,18 @@ def products():
             im=materials.spillway(tick,r['mode'])
             phase.alpha_composite(im,pixels(r['position']))
         phases.append(phase)
-    # Bridge decks belong beneath actors; near rails remain the foreground pass.
-    for r in plan['crossings']:
-        if r['kind']!='stream_bridge':continue
-        x,y,w,h=r['rect'];pos=(x*48,y*48-24);deck=Image.new('RGBA',(w*48,144));deck.alpha_composite(prop('bridge_deck',(w*24,48)),(0,24));deck.alpha_composite(prop('bridge_rail',(w*24,14)),(0,2))
-        rail=Image.new('RGBA',deck.size);rail.alpha_composite(prop('bridge_rail',(w*24,18)),(0,104))
-        for phase in phases:phase.alpha_composite(deck,pos)
-        layer=next(f for f in town['foreground'] if f['id']==r['id']);layer.update(image=ex.png('bridges/'+r['id']+'_front',rail),artwork_pixels_per_world_pixel=2,logical_size=[w*24,72])
+    # Opaque decks and far edges are composited AFTER all water in every phase;
+    # near rails remain the native foreground pass. Padding is not deck length.
+    crossing_records={}
+    for name in crossing_source['assemblies']:
+        assembly=crossings[name]
+        for phase in phases:phase.alpha_composite(assembly.ground,pixels(assembly.position))
+        layer=next((f for f in town['foreground'] if f['id']==name),None)
+        if layer is None:layer={'id':name};town['foreground'].append(layer)
+        layer.update(position=list(assembly.position),image=ex.png('bridges/'+name+'_front',assembly.near_rail),
+                     artwork_pixels_per_world_pixel=2,logical_size=list(assembly.logical_size))
+        crossing_records[name]={**assembly.metadata,'source_recipe':crossing_source['recipe'],
+                                'foreground_image':layer['image'],'ground_selection':'town ground_overlays, after water in every phase'}
     # New southern businesses; all original world coordinates remain unchanged.
     business_pack='assets/terrain/eldenmere/business_exteriors_hd/';business={r['id']:r for r in read(business_pack+'manifest.json')['buildings']}
     collision=Image.new('L',tuple(size),0);original_collision=Image.open(SRC/'collision.png').convert('L');collision.paste(original_collision,(0,0));allowed=Image.new('L',tuple(size));allowed.paste(Image.open(SRC/'navigation_allowed.png').convert('L'),(0,0));cd=ImageDraw.Draw(collision);ad=ImageDraw.Draw(allowed)
@@ -446,7 +473,7 @@ def products():
     from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
     settlement=framework(ROOT,town,rec['settlement_recipe'])
     ex.json(SETTLEMENT_MANIFEST,settlement)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':0},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':0},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

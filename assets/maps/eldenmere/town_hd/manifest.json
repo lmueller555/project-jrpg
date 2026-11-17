@@ -3,7 +3,7 @@
   "integration_status": "integrated",
   "artwork_pixels_per_world_pixel": 2,
   "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-  "recipe_sha256": "f5ba1abd21b8c72cb81f020f4babdb6cb31dc0e069855497517633e44a234b4e",
+  "recipe_sha256": "82e3627f20e146dd744ddcdd54f546c6a26afd451042cbfbc174ab155315574e",
   "scenes": {
     "town": "assets/maps/eldenmere/playable/map.json",
     "upstream": "assets/maps/eldenmere/upstream/map.json",
@@ -67,7 +67,11 @@
     },
     {
       "file": "architecture_schedule.json",
-      "sha256": "477e20a4298702e73443b074775edcd472c145c5bb7d3df23101767f3ad20dba"
+      "sha256": "4ca09ec84d28f40c6c7132ca288d409dd8b47af6266407dae78e2bf206c4c204"
+    },
+    {
+      "file": "crossings/recipe.json",
+      "sha256": "ed973bc2372ab7a07ea9e187d115c4b646aa07fc7ebe706cf18392c4cc783dd7"
     }
   ],
   "exports": [
@@ -1941,7 +1945,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_1.png",
@@ -1950,7 +1954,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_2.png",
@@ -1959,7 +1963,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_3.png",
@@ -1968,7 +1972,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_4.png",
@@ -1977,7 +1981,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_5.png",
@@ -1986,7 +1990,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_6.png",
@@ -1995,7 +1999,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_7.png",
@@ -2004,7 +2008,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_8.png",
@@ -2013,7 +2017,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_9.png",
@@ -2022,7 +2026,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_10.png",
@@ -2031,7 +2035,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_11.png",
@@ -2040,7 +2044,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_12.png",
@@ -2049,7 +2053,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_13.png",
@@ -2058,7 +2062,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_14.png",
@@ -2067,7 +2071,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_15.png",
@@ -2076,7 +2080,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_16.png",
@@ -2085,7 +2089,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/ambient_17.png",
@@ -2094,7 +2098,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "7edeebb2ca8a4d0775cad5caed6a7613a48e1b779c28c577881dc2c4c2d233aa"
+      "sha256": "60c135cfef1b36049bc4a05a3d98e5ca1ebf9d5c8383b6a9fcccf8d6381d296a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/mill/still.png",
@@ -2103,7 +2107,7 @@
         336
       ],
       "pixel_space": "artwork",
-      "sha256": "88da1f3d8820a9cf654f597065a3648d695e5ff0d03b14c99cdfe7315cfc5d24"
+      "sha256": "8cb362452c921ce488f8ea66a166de5ff6ddc21b3575f996490a3c76a7e40418"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/school/ambient_0.png",
@@ -2697,7 +2701,7 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "8ee17100a84e32b0b754a63d0fea98afd4ebe6775361e959f3fef03f546754b1"
+      "sha256": "91247cb4cf0b64fdc98922e0893ff100356dba864b48fe3cf6a4505b9368d386"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/bridges/main_bridge_front.png",
@@ -2706,7 +2710,16 @@
         144
       ],
       "pixel_space": "artwork",
-      "sha256": "a2c072d4f9936d13fcd7da5f8037e88d8fae0ee88dcb010b47d0804e3153f570"
+      "sha256": "3ccbf8dd4ab6d50f699049d27114edb600b4187060c38e428838ca3c53709ce4"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/bridges/mill_landing_front.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "0ecc892e4cb6224065077dfccce1a02709cc6db85c89c7d7502b0becf96ee6ee"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/exteriors/inn/ambient_0.png",
@@ -3318,7 +3331,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "daffaa580826b8640c1869d051ce507c1fd5df73a1f89f76151eeeaf5304329c"
+      "sha256": "4c03ad6693ad79668cf5bcbdf23b8faafbd97aff029ddf66ece3daec255d3cec"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_1.png",
@@ -3327,7 +3340,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "663c38a35f85998cd126db2a11362404dfcb8d86ae2fa5cfdc936534f0c94e8d"
+      "sha256": "3367589f54c4b838f2d8473c28c93bd77e478358a81699e42bd0dad4ee32e02e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_2.png",
@@ -3336,7 +3349,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "7c13ad476df23915faa26b2157047a5961de0dd0f087b282f0bdeb50bfb67b25"
+      "sha256": "d75640a1067e561b84a14fcead4ff70948a24d2ec05645e45318f3627b1943e5"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_3.png",
@@ -3345,7 +3358,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "bb9831a6c2f511596f131aa63a23a5cc26efd95672cfef0b734e8391a4a96b33"
+      "sha256": "3270946973029960ef5f05fb061743a3927690ad430529418453696658ce4048"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_4.png",
@@ -3354,7 +3367,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "caf4a3748531fdb91069c2e83820db09060606043042234d8c223b6c905b952f"
+      "sha256": "0b51ba859c9958c463d5601d464296dc1ef072c16e1af872aa2e65a1d6adfd2c"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_1_5.png",
@@ -3363,7 +3376,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "8fd0be6c72521c329fdb5087d2170af15d1b80c66e4e228efb3ce39be7720e55"
+      "sha256": "e3a31768657a6fffa2b9d2c921da52c55463a9c160b7bfc42e6d02bba6618939"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_0.png",
@@ -3372,7 +3385,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "0d4cb7a61abb8e2cd398a346caf8a119216071f44511f184683a01065c087f2b"
+      "sha256": "143d9aa7a3052d8438103c6eb6338724cd4a6f7b927bcbb76c529a7fbf40a138"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_1.png",
@@ -3381,7 +3394,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "9428c85233541fb9e53064d773ce5a572bfebcb5c44a7c7a796e18e990cce75b"
+      "sha256": "9529e139a5b50e216d67e4f0ffb585743e48aef08e9803f313672be053330030"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_2.png",
@@ -3390,7 +3403,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "7a249570c6178a21d1cc5e01210d38e9de60374f28cb3c5f29b8c3d56461953a"
+      "sha256": "6e366a042b9287a4e549d7c8722394f7507565209f95571eb8e2110eb9bf96b8"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_3.png",
@@ -3399,7 +3412,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "8567483cd14b45a546b5348b33a26af19b787bcaa168acad18c0385921479940"
+      "sha256": "75c8f5c91d0b330f11dd555f800c232df827cf4392ed3d26f90be1332ac84a31"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_4.png",
@@ -3408,7 +3421,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "76ce3d9e151b48a3cad565a8c464e7263d34c50fc30683bd6aa24058922ae8af"
+      "sha256": "7403f141c0f1895b3978837cbc083af984e6f6f6bb212d29797088cd7a737b60"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_1_5.png",
@@ -3417,7 +3430,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "de59066fa4f0369a2195ea3e4ce2a478ed88509c6c2bf8b3bb2baff781cc53f0"
+      "sha256": "ab9fa846f887202427b935acfbea81cca769a82c9adfebb9401a97f8cb69caab"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/6_1_0.png",
@@ -3525,7 +3538,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "2a68481bd351ec9a15d0ad79a19f1c4577a8515cd01dd315bcf111003ea0aaed"
+      "sha256": "15fc7500ea40cb552579427928910b21a6d7b51fe87d1f72f5620193fc08bd25"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_1.png",
@@ -3534,7 +3547,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "c3c36705b91891a3e24f3a993b5ddd60241d18754e7d140afce9de637d73983c"
+      "sha256": "3597f58d3da0797d6ef4441066bddd0a95635e28dcf49fdf0c6a3304d2201b1f"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_2.png",
@@ -3543,7 +3556,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f4f22ba51bf3e110a03d63b0e187d47340db35b25c32531285e4158ce5d49594"
+      "sha256": "c46c09c26840b30fd8aadb968c0de09a4e0dccac4f987b432862dd0c7bf34174"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_3.png",
@@ -3552,7 +3565,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "7035213ed75abf751944520b9263f8baefd8f4bd4d2dc33f855690a5ff3b51ab"
+      "sha256": "f128c788dfbe22cbc96b3c5f67937de374fbe0792e180787c71c6a0de29a0a55"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_4.png",
@@ -3561,7 +3574,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "502ba182b8ab6a1ee1c458a1d3442b018ef478c844012051621e93019ada866f"
+      "sha256": "863a8a863dd148d8d2cc33f77ec79531b83cf976efe49c1b87d8a07939a34e84"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_2_5.png",
@@ -3570,7 +3583,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "7f1921be0f429d312f21a27cc34d58fb2c216d9917349831549fe53571b4284d"
+      "sha256": "a724ace3b4cb207522ae95fce7722b790d2e95976df9e5e27890f8a5d33afdd2"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_2_0.png",
@@ -4002,7 +4015,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "1fc5934fb0511d39e82c838541cc58fe6158584f8a6f77a782f875d55336607a"
+      "sha256": "32c99975a662e6e8ba157c5dd12c0a4097936d3650fdbfdd4539964217a8b53b"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_0.png",
@@ -4011,7 +4024,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f308987bca2856836f8c69fcdf0fbd7c10eb45aacde686b718a2f101223ba5e0"
+      "sha256": "6377752ab374e46b25c20776f475429b1772bf248a19fade836319494f1e940d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_1.png",
@@ -4020,7 +4033,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "46d0a085595e70402ce345b63c800e011731a9c7e6581c6b6b02a9a941bb4960"
+      "sha256": "38b23a6303f75ae23c0bfa9ec64721e07a7100936d11014476984f27383c4c6b"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_2.png",
@@ -4029,7 +4042,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "3eb7eec93839c7d793d8dd6967f908b43a4baa84a062d40d997e42d2a7d20cb2"
+      "sha256": "e1b11749ffdbe7ff71a91dcb039f13baa81c38b00fb76ffe3035862cfba3f50e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_3.png",
@@ -4038,7 +4051,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "a27eb483fa71b62a5e8e16d6b13aa858af5695ee6002fdfc0c725a15e6a8bc88"
+      "sha256": "cd8d261d213666b26e912063b2c4a43be4ddad04df98c82b881ca1c747d5286d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_4.png",
@@ -4047,7 +4060,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "89d15cc5df3a9b9b24d293f86f33506996071749760f2d0267b0482539e82c7c"
+      "sha256": "9b7a50a67cf812962419e66f02e9fcf8a6ffa83e9365d125c1d1c9f6a03a4374"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_5_5.png",
@@ -4056,7 +4069,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "d467f985ab5c1b99455777f62cf6059a754896c5b18770b2f2fc758ea617bdd2"
+      "sha256": "9a1f94f8a5eba1522ca2a975fbfc5df7b021d788ea3f3618f01590e2ad62ff13"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/5_5_0.png",
@@ -7377,7 +7390,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "0e89c1855e2bb9f0dddc203cdcdfafce0afa6f389602382ebfa4303a5269dbd4"
+      "sha256": "694334fe517c8c4e91f005bb012225b4b08c86540bf4c6c607fea1080229bf30"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",
@@ -7505,6 +7518,429 @@
     "active_ground_treatments": 0
   },
   "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
-  "architecture_schedule_sha256": "477e20a4298702e73443b074775edcd472c145c5bb7d3df23101767f3ad20dba",
+  "architecture_schedule_sha256": "4ca09ec84d28f40c6c7132ca288d409dd8b47af6266407dae78e2bf206c4c204",
+  "crossings": {
+    "upper_bridge": {
+      "id": "upper_bridge",
+      "position": [
+        768,
+        444
+      ],
+      "logical_size": [
+        144,
+        72
+      ],
+      "orientation": "east-west",
+      "walk_surface": [
+        0,
+        12,
+        144,
+        48
+      ],
+      "bank_endpoints_world": [
+        [
+          768,
+          480
+        ],
+        [
+          912,
+          480
+        ]
+      ],
+      "bank_overlap_world": [
+        [
+          768,
+          456,
+          48,
+          48
+        ],
+        [
+          888,
+          456,
+          24,
+          48
+        ]
+      ],
+      "water_beside_samples_world": [
+        [
+          850,
+          432
+        ],
+        [
+          850,
+          528
+        ]
+      ],
+      "preserved_clear_rows_world": [
+        456,
+        504
+      ],
+      "rails_logical": {
+        "far_ground_y": 12,
+        "near_ground_y": 60,
+        "rise": 11,
+        "post_centers_x": [
+          3,
+          27,
+          51,
+          75,
+          99,
+          123,
+          141
+        ],
+        "standard_bay": 24,
+        "post_width": 3,
+        "near_occupied_y": [
+          49,
+          62
+        ]
+      },
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size_pixels": [
+        288,
+        144
+      ],
+      "geometry_space": "logical world units; rectangles x/y/width/height",
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_world": 504,
+      "assembly_order": [
+        "water_phase",
+        "contact_shadow",
+        "deck",
+        "far_rail",
+        "actors",
+        "near_rail"
+      ],
+      "collision_owner": "existing town collision; this generator does not change it",
+      "reduced_motion": "same assembly after the selected still water phase",
+      "design_status": "authored; native gameplay review required by integrating PR",
+      "occupied_artwork": {
+        "deck": {
+          "bounds_logical_xyxy": [
+            0.0,
+            12.0,
+            144.0,
+            63.0
+          ],
+          "opaque_pixel_count": 29376
+        },
+        "far_rail": {
+          "bounds_logical_xyxy": [
+            1.5,
+            1.0,
+            142.5,
+            14.0
+          ],
+          "opaque_pixel_count": 3492
+        },
+        "near_rail": {
+          "bounds_logical_xyxy": [
+            1.5,
+            49.0,
+            142.5,
+            62.0
+          ],
+          "opaque_pixel_count": 3492
+        }
+      },
+      "walking_surface_opaque_coverage": 1.0,
+      "source_recipe": "assets/source/maps/eldenmere/town_hd/crossings/recipe.json",
+      "foreground_image": "assets/maps/eldenmere/town_hd/bridges/upper_bridge_front.png",
+      "ground_selection": "town ground_overlays, after water in every phase"
+    },
+    "main_bridge": {
+      "id": "main_bridge",
+      "position": [
+        744,
+        996
+      ],
+      "logical_size": [
+        168,
+        72
+      ],
+      "orientation": "east-west",
+      "walk_surface": [
+        0,
+        12,
+        168,
+        48
+      ],
+      "bank_endpoints_world": [
+        [
+          744,
+          1032
+        ],
+        [
+          912,
+          1032
+        ]
+      ],
+      "bank_overlap_world": [
+        [
+          744,
+          1008,
+          48,
+          48
+        ],
+        [
+          864,
+          1008,
+          48,
+          48
+        ]
+      ],
+      "water_beside_samples_world": [
+        [
+          850,
+          984
+        ],
+        [
+          850,
+          1080
+        ]
+      ],
+      "preserved_clear_rows_world": [
+        1008,
+        1056
+      ],
+      "rails_logical": {
+        "far_ground_y": 12,
+        "near_ground_y": 60,
+        "rise": 11,
+        "post_centers_x": [
+          3,
+          27,
+          51,
+          75,
+          99,
+          123,
+          147,
+          165
+        ],
+        "standard_bay": 24,
+        "post_width": 3,
+        "near_occupied_y": [
+          49,
+          62
+        ]
+      },
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size_pixels": [
+        336,
+        144
+      ],
+      "geometry_space": "logical world units; rectangles x/y/width/height",
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_world": 1056,
+      "assembly_order": [
+        "water_phase",
+        "contact_shadow",
+        "deck",
+        "far_rail",
+        "actors",
+        "near_rail"
+      ],
+      "collision_owner": "existing town collision; this generator does not change it",
+      "reduced_motion": "same assembly after the selected still water phase",
+      "design_status": "authored; native gameplay review required by integrating PR",
+      "occupied_artwork": {
+        "deck": {
+          "bounds_logical_xyxy": [
+            0.0,
+            12.0,
+            168.0,
+            63.0
+          ],
+          "opaque_pixel_count": 34272
+        },
+        "far_rail": {
+          "bounds_logical_xyxy": [
+            1.5,
+            1.0,
+            166.5,
+            14.0
+          ],
+          "opaque_pixel_count": 4068
+        },
+        "near_rail": {
+          "bounds_logical_xyxy": [
+            1.5,
+            49.0,
+            166.5,
+            62.0
+          ],
+          "opaque_pixel_count": 4068
+        }
+      },
+      "walking_surface_opaque_coverage": 1.0,
+      "source_recipe": "assets/source/maps/eldenmere/town_hd/crossings/recipe.json",
+      "foreground_image": "assets/maps/eldenmere/town_hd/bridges/main_bridge_front.png",
+      "ground_selection": "town ground_overlays, after water in every phase"
+    },
+    "mill_landing": {
+      "id": "mill_landing",
+      "position": [
+        948,
+        318
+      ],
+      "logical_size": [
+        48,
+        72
+      ],
+      "orientation": "north-south",
+      "walk_surface": [
+        0,
+        12,
+        48,
+        48
+      ],
+      "bank_endpoints_world": [
+        [
+          971,
+          330
+        ],
+        [
+          971,
+          378
+        ]
+      ],
+      "bank_overlap_world": [
+        [
+          948,
+          330,
+          48,
+          12
+        ],
+        [
+          948,
+          360,
+          48,
+          18
+        ]
+      ],
+      "water_beside_samples_world": [
+        [
+          930,
+          348
+        ],
+        [
+          1008,
+          348
+        ]
+      ],
+      "door_anchor_world": [
+        971,
+        342
+      ],
+      "road_connection_world": [
+        972,
+        384
+      ],
+      "clear_approach_world": [
+        960,
+        330,
+        24,
+        54
+      ],
+      "exterior_interface": {
+        "deck_world": [
+          948,
+          330,
+          48,
+          48
+        ],
+        "door_opening_world": [
+          962,
+          311,
+          18,
+          31
+        ],
+        "wheel_west_world": 1024,
+        "remove_old_fence_world": [
+          938,
+          345,
+          20,
+          14
+        ]
+      },
+      "rails_logical": {
+        "far_ground_x": 3,
+        "near_ground_x": 45,
+        "rise": 11,
+        "post_centers_y": [
+          12,
+          36,
+          60
+        ],
+        "standard_bay": 24,
+        "post_width": 3,
+        "clear_middle_x": [
+          12,
+          36
+        ]
+      },
+      "artwork_pixels_per_world_pixel": 2,
+      "artwork_size_pixels": [
+        96,
+        144
+      ],
+      "geometry_space": "logical world units; rectangles x/y/width/height",
+      "draw_anchor_logical": [
+        0,
+        0
+      ],
+      "depth_baseline_world": 378,
+      "assembly_order": [
+        "water_phase",
+        "contact_shadow",
+        "deck",
+        "far_rail",
+        "actors",
+        "near_rail"
+      ],
+      "collision_owner": "existing town collision; this generator does not change it",
+      "reduced_motion": "same assembly after the selected still water phase",
+      "design_status": "authored; native gameplay review required by integrating PR",
+      "occupied_artwork": {
+        "deck": {
+          "bounds_logical_xyxy": [
+            0.0,
+            12.0,
+            48.0,
+            63.0
+          ],
+          "opaque_pixel_count": 9792
+        },
+        "far_rail": {
+          "bounds_logical_xyxy": [
+            1.5,
+            1.0,
+            4.5,
+            62.0
+          ],
+          "opaque_pixel_count": 644
+        },
+        "near_rail": {
+          "bounds_logical_xyxy": [
+            43.5,
+            1.0,
+            46.5,
+            62.0
+          ],
+          "opaque_pixel_count": 644
+        }
+      },
+      "walking_surface_opaque_coverage": 1.0,
+      "source_recipe": "assets/source/maps/eldenmere/town_hd/crossings/recipe.json",
+      "foreground_image": "assets/maps/eldenmere/town_hd/bridges/mill_landing_front.png",
+      "ground_selection": "town ground_overlays, after water in every phase"
+    }
+  },
   "services": "Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json."
 }

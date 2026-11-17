@@ -1,0 +1,55 @@
+{
+  "base_commit": "6de3a0617aa78957bec0f2e49b51defd5ed19c9b",
+  "focused": {
+    "tests_run": 55,
+    "passed": 55,
+    "failed": 0,
+    "modules": [
+      "test_eldenmere_crossing_integration",
+      "test_eldenmere_crossing_art",
+      "test_eldenmere_architecture_review",
+      "test_eldenmere_architecture_contracts",
+      "test_town_southern_exit",
+      "test_town_services"
+    ]
+  },
+  "preservation": {
+    "tests_run": 53,
+    "passed": 49,
+    "failed": 4,
+    "baseline_failures_reproduced_on": "57d0613cb625c141a583ffef5588fb6b0c512e3c",
+    "failure_location": "upstream route from[480,254] to[479,287]",
+    "report": "preservation_tests.json"
+  },
+  "builder_exports_verified": 842,
+  "actual_game_capture": {
+    "native_views": 192,
+    "movement_door_road_checks": 63,
+    "center_crossing_save_continue": 3,
+    "failures": 0,
+    "unsafe_feet": 0
+  },
+  "limitations": [
+    "Not an uninterrupted quest playthrough.",
+    "Static camera fixtures are disclosed; motion clips use actual Game.update.",
+    "GIFs are native-resolution indexed palettes; exact native rendered RGB is retained in PNGs.",
+    "Unpublished local candidate; hosted CI and merge status not asserted."
+  ],
+  "latest_main_revalidation": {
+    "upstream_framework_commit": "8022e7d5cdd939d832c26ffbc5b0a914ef69e564",
+    "local_pr1_commit": "3ac785c537e7d7dea950b4f3e4e007658f367a19",
+    "merged_remote_pr1_commit": "af11ecb6854b4c17488c140c1c915cdeccf1ec3a",
+    "verified_equal_pr1_tree": "d6b3c72c98d94eb4bec4eddaf5fad9588744515d",
+    "tests_run": 112,
+    "passed": 112,
+    "failures": 0,
+    "builder_exports_verified": 843,
+    "settlement_protected_spaces": 114,
+    "settlement_semantic_assets": 200,
+    "new_native_views_verified": 191,
+    "native_views_identical_to_original_candidate": true,
+    "original_native_export_hashes_identical": 826,
+    "active_settlement_placements": 0,
+    "active_settlement_ground_treatments": 0
+  }
+}

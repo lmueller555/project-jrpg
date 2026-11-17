@@ -6,6 +6,7 @@ captures for those properties.
 """
 from __future__ import annotations
 import copy
+import gc
 import json
 import os
 from pathlib import Path
@@ -35,7 +36,7 @@ class ArchitectureReviewGame(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        cls.g.music.stop();pygame.quit();cls.temporary.cleanup()
+        cls.g.music.stop();pygame.quit();cls.temporary.cleanup();del cls.g;gc.collect()
 
     def station(self,point,focus=None):
         g=self.g;g.world=g.town;g.player.position.update(point);g.player.facing='back'

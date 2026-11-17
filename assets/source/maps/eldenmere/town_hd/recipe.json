@@ -56,7 +56,11 @@
     },
     {
       "file": "architecture_schedule.json",
-      "sha256": "477e20a4298702e73443b074775edcd472c145c5bb7d3df23101767f3ad20dba"
+      "sha256": "4ca09ec84d28f40c6c7132ca288d409dd8b47af6266407dae78e2bf206c4c204"
+    },
+    {
+      "file": "crossings/recipe.json",
+      "sha256": "ed973bc2372ab7a07ea9e187d115c4b646aa07fc7ebe706cf18392c4cc783dd7"
     }
   ],
   "businesses": [
@@ -2559,6 +2563,10 @@
     {
       "file": "assets/source/maps/eldenmere/courtyard_hd/structure_authored.png",
       "sha256": "98b0790f398cd4c1378b3b2a9b3f412d3b163d346683aa90609466d4fc861d07"
+    },
+    {
+      "file": "tools/eldenmere_crossing_art.py",
+      "sha256": "0e39db2e05d4d70a2796fd4afc5b87a212545022a52d8a6e4984c224b3d5ea76"
     }
   ],
   "district_vegetation": [
@@ -2623,5 +2631,15 @@
       1
     ]
   },
-  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json"
+  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
+  "crossing_art": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/crossings/recipe.json",
+    "generator": "tools/eldenmere_crossing_art.py",
+    "assemblies": [
+      "upper_bridge",
+      "main_bridge",
+      "mill_landing"
+    ],
+    "layering": "Deck/far rail after water in every phase; near rail foreground. No collision or portal changes."
+  }
 }

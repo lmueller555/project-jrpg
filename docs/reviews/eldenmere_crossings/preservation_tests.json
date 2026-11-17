@@ -1,0 +1,74 @@
+{
+  "tests_run": 53,
+  "passed": [
+    "test_eldenmere_hd_integration.TownHDContracts.test_businesses_are_new_destinations_with_clear_thresholds",
+    "test_eldenmere_hd_integration.TownHDContracts.test_chunks_cover_each_scene_once_and_keep_artwork_native",
+    "test_eldenmere_hd_integration.TownHDContracts.test_every_original_entity_keeps_its_physical_canvas",
+    "test_eldenmere_hd_integration.TownHDContracts.test_existing_quest_routes_entrances_and_npc_records_are_preserved",
+    "test_eldenmere_hd_integration.TownHDContracts.test_existing_rooms_and_upstream_keep_collision_and_transition_contracts",
+    "test_eldenmere_hd_integration.TownHDContracts.test_expansion_preserves_every_original_collision_pixel",
+    "test_eldenmere_hd_integration.TownHDContracts.test_grass_instance_identity_and_interaction_registration_survive",
+    "test_eldenmere_hd_integration.TownHDContracts.test_live_building_windows_stay_steady_through_full_ambient_cycles",
+    "test_eldenmere_hd_integration.TownHDContracts.test_source_and_export_hashes_are_reproducible",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_both_new_buildings_have_safe_actual_round_trips",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_checkpoint_reloads_inside_the_new_inn",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_focus_pause_freezes_the_expanded_town",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_ground_textures_load_on_demand_with_a_bounded_cache",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_inn_rest_uses_confirmed_recovery_and_cancel_leaves_resources_alone",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_mill_wheel_uses_separate_clock_and_shared_story_stop",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_native_ground_animation_and_reduced_motion_share_controller_sampling",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_southern_lane_connects_to_existing_town_and_both_approaches",
+    "test_eldenmere_hd_integration.TownHDGameplay.test_stateful_native_objects_keep_distinct_consumed_states",
+    "test_doors.BuildingDoors.test_all_rooms_have_reachable_exits_and_furnishings",
+    "test_doors.BuildingDoors.test_all_town_doors_animate_hold_close_and_reverse",
+    "test_doors.BuildingDoors.test_every_exterior_enters_distinct_interior_and_returns_to_same_door",
+    "test_doors.BuildingDoors.test_interior_map_and_small_room_centering",
+    "test_doors.BuildingDoors.test_proximity_alone_does_not_enter_and_closed_door_waits",
+    "test_doors.BuildingDoors.test_proximity_hysteresis_and_front_side_only",
+    "test_doors.BuildingDoors.test_sanctuary_bedroom_and_dining_links_work_both_ways",
+    "test_elden_vale_antlers_integration.ActiveAntlersTests.test_embedded_parts_preserve_every_bone_pixel_and_common_master_offsets",
+    "test_elden_vale_antlers_integration.ActiveAntlersTests.test_every_ground_contact_texel_is_on_named_existing_solid",
+    "test_elden_vale_antlers_integration.ActiveAntlersTests.test_registry_explicitly_adapts_staged_assets_and_activates_complete_arrangement",
+    "test_elden_vale_antlers_integration.ActiveAntlersTests.test_support_validation_rejects_a_shift_onto_walkable_ground",
+    "test_elden_vale_antlers_integration.ActiveAntlersTests.test_town_has_no_antler_placement_or_visibility_configuration",
+    "test_elden_vale_antlers_reserve.AntlerReserveContracts.test_contact_pixels_are_only_on_existing_ridge",
+    "test_elden_vale_antlers_reserve.AntlerReserveContracts.test_native_density_and_explicit_nonblocking_layers",
+    "test_elden_vale_antlers_reserve.AntlerReserveContracts.test_no_new_ordinary_entities_or_gameplay_contracts",
+    "test_elden_vale_antlers_reserve.AntlerReserveContracts.test_registered_parts_reconstruct_all_raised_anatomy",
+    "test_elden_vale_antlers_reserve.AntlerReserveGame.test_actual_game_cutaway_and_north_loop_motion",
+    "test_landmark_layers.LandmarkTests.test_complete_bounds_cull_even_when_root_is_far_outside_view",
+    "test_landmark_layers.LandmarkTests.test_distant_vista_never_reads_as_walkable_lawn_prop",
+    "test_landmark_layers.LandmarkTests.test_explicit_roles_and_no_artwork_collision",
+    "test_landmark_layers.LandmarkTests.test_half_unit_origin_survives_cutaway_and_camera_edge",
+    "test_landmark_layers.LandmarkTests.test_layer_filtering",
+    "test_landmark_layers.LandmarkTests.test_positions_do_not_grow_cache_and_work_is_viewport_bounded",
+    "test_landmark_layers.LandmarkTests.test_story_position_companions_and_interactions_cut_only_locally",
+    "test_landmark_layers.LandmarkTests.test_zero_authored_mask_preserves_opaque_drawing",
+    "test_mill_trigger_geometry.MillTriggerGeometryTests.test_former_town_hotspot_no_longer_offers_or_activates_travel",
+    "test_mill_trigger_geometry.MillTriggerGeometryTests.test_inspections_are_found_at_wheel_and_channel_instead_of_empty_yard",
+    "test_mill_trigger_geometry.MillTriggerGeometryTests.test_intake_inspection_is_beside_visible_screen_and_cancel_safe",
+    "test_mill_trigger_geometry.MillTriggerGeometryTests.test_interaction_geometry_follows_actual_wheel_and_visible_prop_pixels",
+    "test_mill_trigger_geometry.MillTriggerGeometryTests.test_real_e_crosses_both_physical_boundaries_with_same_mira",
+    "test_mill_trigger_geometry.MillTriggerGeometryTests.test_trails_reach_map_edges_and_reciprocal_spawns_are_clear"
+  ],
+  "failures": [
+    {
+      "test": "test_mill_trigger_geometry.MillTriggerGeometryTests.test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 207, in test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact\n    rect = self.visible('bypass');self.approach((rect.left-12, rect.bottom-10))\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 80, in approach\n    self.walk(position)\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 59, in walk\n    self.assertIsNotNone(route, (world.data['id'], tuple(self.g.player.position), tuple(goal)))\nAssertionError: unexpectedly None : ('upstream', (456.0, 288.0), (479, 287))\n"
+    },
+    {
+      "test": "test_mill_trigger_geometry.MillTriggerGeometryTests.test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 232, in test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts\n    self.cast();self.reject_empty_ground((456, 384))\n    ^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 138, in cast\n    self.prepare();rect = self.visible('inspection_pool')\n    ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 134, in prepare\n    self.approach((rect.left-12, rect.bottom-10));self.event('prepare');self.read()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 80, in approach\n    self.walk(position)\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 59, in walk\n    self.assertIsNotNone(route, (world.data['id'], tuple(self.g.player.position), tuple(goal)))\nAssertionError: unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))\n"
+    },
+    {
+      "test": "test_mill_trigger_geometry.MillTriggerGeometryTests.test_pool_can_be_used_from_below_without_cutting_through_stone",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 217, in test_pool_can_be_used_from_below_without_cutting_through_stone\n    self.prepare();self.reject_empty_ground((456, 336))\n    ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 134, in prepare\n    self.approach((rect.left-12, rect.bottom-10));self.event('prepare');self.read()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 80, in approach\n    self.walk(position)\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 59, in walk\n    self.assertIsNotNone(route, (world.data['id'], tuple(self.g.player.position), tuple(goal)))\nAssertionError: unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))\n"
+    },
+    {
+      "test": "test_mill_trigger_geometry.MillTriggerGeometryTests.test_return_inspection_uses_same_wheel_and_final_speakers_are_present",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 241, in test_return_inspection_uses_same_wheel_and_final_speakers_are_present\n    self.repair();self.cross(False);self.reject_empty_ground((984, 408))\n    ^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 144, in repair\n    self.cast();rect = self.visible('lever')\n    ^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 138, in cast\n    self.prepare();rect = self.visible('inspection_pool')\n    ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 134, in prepare\n    self.approach((rect.left-12, rect.bottom-10));self.event('prepare');self.read()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 80, in approach\n    self.walk(position)\n  File \"/workspace/scratch/97954a4a5021/eldenmere-pr2-qa/tests/test_mill_trigger_geometry.py\", line 59, in walk\n    self.assertIsNotNone(route, (world.data['id'], tuple(self.g.player.position), tuple(goal)))\nAssertionError: unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))\n"
+    }
+  ],
+  "errors": [],
+  "skipped": []
+}

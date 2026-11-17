@@ -39,6 +39,20 @@ CROSSINGS = {
 }
 
 
+# Full-foot bridge limits: 48-unit surface minus a 12-unit-high foot probe.
+# The 48-unit mill apron is wide, but its unchanged east doorway blocker at
+# x984 requires the edge approach to fan in before y360. This does NOT claim
+# x978 can walk straight through the narrow throat (it could not in baseline).
+CROSSING_REVIEW_ROUTES = {
+    'upper_bridge': {name: [[744,y],[936,y]] for name,y in
+                     (('far',462),('center',480),('near',498))},
+    'main_bridge': {name: [[720,y],[936,y]] for name,y in
+                    (('far',1014),('center',1032),('near',1050))},
+    'mill_landing': {name: [[x,390],[x,372],[971,372],[971,354]] for name,x in
+                     (('west',960),('center',971),('east',984))},
+}
+
+
 def default_fixture(root):
     town = json.loads((root/'assets/maps/eldenmere/playable/map.json').read_text())
     doors = {r['id']: r for r in town['doors']}
@@ -68,7 +82,8 @@ def capture(output, root, fixture=None, movement=False):
     from main import Game
     from tools.capture_sanctuary_reserve import path as safe_path
     from overworld_travel import WORLD_ID
-    fixture = fixture or default_fixture(root)
+    fixture = json.loads(json.dumps(fixture or default_fixture(root)))
+    fixture.setdefault('crossing_review_routes', CROSSING_REVIEW_ROUTES)
     (output/'fixture.json').write_text(json.dumps(fixture,indent=2)+'\n')
     revision = subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
     report = {'revision': revision, 'source_root': str(root),
@@ -96,7 +111,8 @@ def capture(output, root, fixture=None, movement=False):
             g.opening_fade=g.transfer_cooldown=0; g.audio.set_music(0); g.audio.set_effects(0)
             def station(scene, position, *, focus=None, reduced=False, clock=0):
                 g.world=g._scene_by_id(scene); g.player.position.update(position)
-                g.player.facing='back'; g.transfer_cooldown=g.opening_fade=0
+                g.player.facing='back';g.player.moving=g.player.running=False;g.player.walk_ms=0
+                g.party_travel.reset();g.transfer_cooldown=g.opening_fade=0
                 g.elapsed_ms=clock; g.audio.set_reduced_motion(reduced)
                 if hasattr(g.world,'update_grass'):g.world.update_grass(0,reduced_motion=reduced)
                 else:g.world.reduced_motion=reduced
@@ -161,6 +177,16 @@ def capture(output, root, fixture=None, movement=False):
                     for phase in range(6):
                         station('eldenmere.playable',spec['player'],reduced=reduced,clock=phase*200)
                         shot('crossing_'+name+('_reduced_' if reduced else '_normal_')+str(phase))
+            # Native real-scene rail-edge views use the maximum full-foot bridge
+            # centers; the mill apron edges remain below its existing throat.
+            for name,lanes in fixture['crossing_review_routes'].items():
+                for lane,route in lanes.items():
+                    if name=='mill_landing':point=[route[0][0],372]
+                    else:point=[850,route[0][1]]
+                    for reduced in (False,True):
+                        station('eldenmere.playable',point,reduced=reduced)
+                        g.player.facing='front'
+                        shot('crossing_'+name+'_lane_'+lane+('_reduced' if reduced else '_normal'))
             # Exact production regional/detailed consumers, not synthetic montage.
             for name,scene,point in [('antlers_regional',WORLD_ID,[93*24,-70*24]),
                                      ('antlers_detailed','elden_vale_sanctuary',[1100,270]),
@@ -190,6 +216,22 @@ def capture(output, root, fixture=None, movement=False):
                         else:raise AssertionError('Movement budget')
                     if expected:raise AssertionError(('Missing transfer',expected))
                     return trace
+                for name,lanes in fixture['crossing_review_routes'].items():
+                    for lane,declared_route in lanes.items():
+                        for running in (False,True):
+                            for reverse in (False,True):
+                                route=list(reversed(declared_route)) if reverse else declared_route
+                                label=name+'_lane_'+lane+('_run' if running else '_walk')+('_return' if reverse else '')
+                                try:
+                                    station('eldenmere.playable',route[0]);frames=[]
+                                    assert g.town.can_stand(g.player.position),('Blocked route fixture',route[0])
+                                    trace=follow(route[1:],running,frames=frames)
+                                    report['movement'].append({'label':label,'trace':trace,'passed':True,
+                                        'player_probe':list(g.town.probe_size),'declared_route':route})
+                                    if frames:
+                                        frames[len(frames)//2].save(output/(label+'_native.png'))
+                                        frames[0].save(output/(label+'.gif'),save_all=True,append_images=frames[1:],duration=100,loop=0)
+                                except AssertionError as error:report['failures'].append({'label':label,'error':str(error)})
                 for name,spec in fixture['crossings'].items():
                     for running in (False,True):
                         for reverse in (False,True):
@@ -231,6 +273,17 @@ def capture(output, root, fixture=None, movement=False):
                     trace=follow([[528,1620]],expected=WORLD_ID)
                     assert any(y>1490 for x,y in trace)
                     report['movement'].append({'label':'expanded_south_departure','passed':True,'trace':trace})
+                    returning=[]
+                    for _ in range(180):
+                        g.update(1/60,(0,-1),False);returning.append(list(g.player.position))
+                        if g.world is g.town:break
+                    assert g.world is g.town,'Regional north input did not return to town'
+                    assert list(g.player.position)==g.town.data['overworld_exit']['return_position']
+                    g.update(.6,(0,0),False);assert g.world is g.town,'Immediate return bounce'
+                    g.camera.reset();shot('actual_southern_return')
+                    report['movement'].append({'label':'expanded_south_return','passed':True,'trace':returning,
+                        'safe_feet':g.town.can_stand(g.player.position),'facing':g.player.facing})
+
                 except AssertionError as error:report['failures'].append({'label':'expanded_south_departure','error':str(error)})
             (output/'observations.json').write_text(json.dumps(report,indent=2)+'\n')
             # A labelled downscaled contact board is an index, never native evidence.

@@ -1511,16 +1511,16 @@
         32
       ],
       "far_rail_local_logical": [
-        0,
-        1,
-        144,
-        11
+        1.5,
+        1.0,
+        141.0,
+        13.0
       ],
       "near_rail_local_logical": [
-        0,
-        49,
-        144,
-        11
+        1.5,
+        49.0,
+        141.0,
+        13.0
       ],
       "layers": {
         "deck": "ground, after water every phase",
@@ -1563,16 +1563,16 @@
         32
       ],
       "far_rail_local_logical": [
-        0,
-        1,
-        168,
-        11
+        1.5,
+        1.0,
+        165.0,
+        13.0
       ],
       "near_rail_local_logical": [
-        0,
-        49,
-        168,
-        11
+        1.5,
+        49.0,
+        165.0,
+        13.0
       ],
       "layers": {
         "deck": "ground, after water every phase",
@@ -1586,11 +1586,11 @@
       "id": "mill_landing",
       "origin_world_logical": [
         948,
-        330
+        318
       ],
       "logical_canvas": [
         48,
-        48
+        72
       ],
       "bank_endpoints_world_logical": [
         [
@@ -1604,7 +1604,7 @@
       ],
       "deck_coverage_local_logical": [
         0,
-        0,
+        12,
         48,
         48
       ],
@@ -1618,16 +1618,16 @@
       "near_rail_local_logical": null,
       "side_rails_world_logical": [
         [
-          948,
-          346,
-          7,
-          26
+          949.5,
+          319.0,
+          3.0,
+          61.0
         ],
         [
-          989,
-          346,
-          7,
-          26
+          991.5,
+          319.0,
+          3.0,
+          61.0
         ]
       ],
       "doorstep_world_logical": [
@@ -1643,7 +1643,15 @@
         "side_rails": "separate registered edge pieces, central route clear"
       },
       "assembly": "Complete dry service approach. Mill shell consumes this landing, never restores old baked fence fragment.",
-      "collision_change": null
+      "collision_change": null,
+      "side_rail_bounds_space": "projected occupied artwork, not collision or post ground footprint",
+      "full_probe_approach": "Unchanged 24x12 probe; wide apron edge approaches fan at y372 to x971 before the existing narrow doorway throat. x978 straight through y354 remains blocked by existing wall.",
+      "reassigned_exterior_fragment_world_logical": [
+        938,
+        345,
+        20,
+        14
+      ]
     }
   ],
   "intentional_geometry_changes": []
