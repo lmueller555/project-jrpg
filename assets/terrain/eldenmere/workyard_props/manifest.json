@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "id": "eldenmere.workyard_props.hd",
+  "artwork_state": "retained_native_source_export",
+  "integration_status": "available_for_explicit_placement",
+  "visual_approval": "registration_requires_scene_review",
+  "artwork_pixels_per_world_pixel": 2,
+  "recipe": "assets/source/maps/eldenmere/workyard_props/recipe.json",
+  "recipe_sha256": "9cd2cc148ae2199cdc2f5e77e6088547b62502e94c1c34e84b1b56b0ea5eef17",
+  "exporter": "tools/export_eldenmere_workyard_props.py",
+  "exporter_sha256": "c6b70a81bab83fa57ca89d4b46b2f1a92685774aedb08bb61ffe8e19d0538d0a",
+  "sources": [
+    {
+      "file": "assets/source/maps/eldenmere/town_hd/quest_props_authored.png",
+      "sha256": "c647fd9560d8b1514b933d311cd908f9037237705a012d2a7def58c63e1cff9b",
+      "columns": 4,
+      "rows": 3,
+      "role": "Retained native-detail prop drawings already used by the town composer; no legacy RGB is enlarged."
+    }
+  ],
+  "props": [
+    {
+      "id": "grain_sack",
+      "family": "workyard_storage",
+      "mount": "ground",
+      "logical_size": [
+        20,
+        24
+      ],
+      "artwork_size": [
+        40,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "idle": "props/grain_sack/idle.png",
+      "frames": [
+        {
+          "file": "props/grain_sack/idle.png",
+          "duration_ms": 600
+        }
+      ],
+      "animation": "static",
+      "frame_duration_ms": 600,
+      "depth_baseline_logical": 22,
+      "draw_anchor_logical": [
+        10.0,
+        22
+      ],
+      "anchor_artwork": [
+        20,
+        44
+      ],
+      "anchor_space": "artwork",
+      "occupied_rect_logical": [
+        1.0,
+        2.0,
+        18.0,
+        20.0
+      ],
+      "footprint_root": [
+        2,
+        16,
+        16,
+        6
+      ],
+      "collision": "not_registered; each placement needs an explicit reviewed support",
+      "interaction_cues": false,
+      "semantic_use": "A plain tied burlap sack suitable for dry grain or flour deliveries; contents are not a reward or inventory binding.",
+      "source": {
+        "file": "assets/source/maps/eldenmere/town_hd/quest_props_authored.png",
+        "sha256": "c647fd9560d8b1514b933d311cd908f9037237705a012d2a7def58c63e1cff9b",
+        "cell": 11,
+        "columns": 4,
+        "rows": 3,
+        "silhouette_size": [
+          274,
+          302
+        ]
+      },
+      "output_sha256": "962c35443831dc5b99e67ce7e28a4c424afe9152493fa7e5e17bce3bc7adb1b9"
+    },
+    {
+      "id": "empty_crate",
+      "family": "workyard_storage",
+      "mount": "ground",
+      "logical_size": [
+        24,
+        20
+      ],
+      "artwork_size": [
+        48,
+        40
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "idle": "props/empty_crate/idle.png",
+      "frames": [
+        {
+          "file": "props/empty_crate/idle.png",
+          "duration_ms": 600
+        }
+      ],
+      "animation": "static",
+      "frame_duration_ms": 600,
+      "depth_baseline_logical": 18,
+      "draw_anchor_logical": [
+        12.0,
+        18
+      ],
+      "anchor_artwork": [
+        24,
+        36
+      ],
+      "anchor_space": "artwork",
+      "occupied_rect_logical": [
+        1.0,
+        1.0,
+        22.0,
+        17.0
+      ],
+      "footprint_root": [
+        2,
+        12,
+        20,
+        6
+      ],
+      "collision": "not_registered; each placement needs an explicit reviewed support",
+      "interaction_cues": false,
+      "semantic_use": "An empty wooden storage tray/crate; never a treasure chest or pickup.",
+      "source": {
+        "file": "assets/source/maps/eldenmere/town_hd/quest_props_authored.png",
+        "sha256": "c647fd9560d8b1514b933d311cd908f9037237705a012d2a7def58c63e1cff9b",
+        "cell": 9,
+        "columns": 4,
+        "rows": 3,
+        "silhouette_size": [
+          328,
+          251
+        ]
+      },
+      "output_sha256": "de8c6c3e4cb1384ea934157c112004fa027728e4078ad202fa7eae51dd446b30"
+    },
+    {
+      "id": "toolbox",
+      "family": "workyard_storage",
+      "mount": "ground",
+      "logical_size": [
+        24,
+        20
+      ],
+      "artwork_size": [
+        48,
+        40
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "idle": "props/toolbox/idle.png",
+      "frames": [
+        {
+          "file": "props/toolbox/idle.png",
+          "duration_ms": 600
+        }
+      ],
+      "animation": "static",
+      "frame_duration_ms": 600,
+      "depth_baseline_logical": 18,
+      "draw_anchor_logical": [
+        12.0,
+        18
+      ],
+      "anchor_artwork": [
+        24,
+        36
+      ],
+      "anchor_space": "artwork",
+      "occupied_rect_logical": [
+        3.5,
+        1.0,
+        16.5,
+        17.0
+      ],
+      "footprint_root": [
+        4,
+        12,
+        16,
+        6
+      ],
+      "collision": "not_registered; each placement needs an explicit reviewed support",
+      "interaction_cues": false,
+      "semantic_use": "A stationary carpenter's toolbox with a hammer and wrench; no duplicated carried tool ownership or new work controller.",
+      "source": {
+        "file": "assets/source/maps/eldenmere/town_hd/quest_props_authored.png",
+        "sha256": "c647fd9560d8b1514b933d311cd908f9037237705a012d2a7def58c63e1cff9b",
+        "cell": 10,
+        "columns": 4,
+        "rows": 3,
+        "silhouette_size": [
+          295,
+          303
+        ]
+      },
+      "output_sha256": "878e940f1bed3a1424a38825fb359a610266f9f1f18d3df848af848932eded03"
+    }
+  ],
+  "exports": [
+    {
+      "file": "assets/terrain/eldenmere/workyard_props/props/grain_sack/idle.png",
+      "artwork_size": [
+        40,
+        48
+      ],
+      "sha256": "962c35443831dc5b99e67ce7e28a4c424afe9152493fa7e5e17bce3bc7adb1b9"
+    },
+    {
+      "file": "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png",
+      "artwork_size": [
+        48,
+        40
+      ],
+      "sha256": "de8c6c3e4cb1384ea934157c112004fa027728e4078ad202fa7eae51dd446b30"
+    },
+    {
+      "file": "assets/terrain/eldenmere/workyard_props/props/toolbox/idle.png",
+      "artwork_size": [
+        48,
+        40
+      ],
+      "sha256": "878e940f1bed3a1424a38825fb359a610266f9f1f18d3df848af848932eded03"
+    }
+  ]
+}

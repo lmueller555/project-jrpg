@@ -37,8 +37,9 @@ class CourtyardAssets(unittest.TestCase):
         # New courtyard objects add only their declared ground supports. The
         # prior building, stair and circulation geometry remains authoritative.
         expected=before.copy();draw=ImageDraw.Draw(expected)
-        for support in self.data.get('settlement_dressing',{}).get('solid_footprints',[]):
-            x,y,w,h=support['rect'];draw.rectangle((x,y,x+w-1,y+h-1),fill=255)
+        for key in ('settlement_dressing','settlement_workyards'):
+            for support in self.data.get(key,{}).get('solid_footprints',[]):
+                x,y,w,h=support['rect'];draw.rectangle((x,y,x+w-1,y+h-1),fill=255)
         self.assertEqual(expected.tobytes(),after.crop((0,0,*before.size)).tobytes())
 
     def test_assets_keep_physical_canvases_and_actual_new_detail(self):

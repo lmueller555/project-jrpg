@@ -1,0 +1,31 @@
+{
+  "base_revision": "3481e2b7",
+  "trigger_cases_run_per_revision": 10,
+  "passed_per_revision": 6,
+  "identical_existing_failures": [
+    {
+      "test": "test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact (test_mill_trigger_geometry.MillTriggerGeometryTests.test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact)",
+      "assertion": "AssertionError: unexpectedly None : ('upstream', (456.0, 288.0), (479, 287))"
+    },
+    {
+      "test": "test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts (test_mill_trigger_geometry.MillTriggerGeometryTests.test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts)",
+      "assertion": "AssertionError: unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+    },
+    {
+      "test": "test_pool_can_be_used_from_below_without_cutting_through_stone (test_mill_trigger_geometry.MillTriggerGeometryTests.test_pool_can_be_used_from_below_without_cutting_through_stone)",
+      "assertion": "AssertionError: unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+    },
+    {
+      "test": "test_return_inspection_uses_same_wheel_and_final_speakers_are_present (test_mill_trigger_geometry.MillTriggerGeometryTests.test_return_inspection_uses_same_wheel_and_final_speakers_are_present)",
+      "assertion": "AssertionError: unexpectedly None : ('upstream', (480.00000000000006, 254.0), (479, 287))"
+    }
+  ],
+  "upstream_and_controller_files_unchanged_sha256": {
+    "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
+    "mill_quest.py": "74de4297d1720e7ed5b280b93375c018305ab614a1f0fcc146e98122303db4f3",
+    "tests/test_mill_trigger_geometry.py": "34435083fb69842b6807cbec688e32a13d39dcbcf32f74798c78fa69d086ae49",
+    "assets/maps/eldenmere/upstream/map.json": "1c554e479d2f1ca28086dbcc3bb6a05bd07397712feecf8a0c15b6c586e53726",
+    "assets/maps/eldenmere/upstream/collision.png": "17b3787d84ab064915511d7f36fedf3ba5bad5bfce9c4f886385aeb910a1b578"
+  },
+  "scope": "No upstream geometry or MQ02 controller changes in settlement PR4."
+}

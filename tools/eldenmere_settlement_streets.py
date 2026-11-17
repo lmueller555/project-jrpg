@@ -81,14 +81,18 @@ def resolve_streets(root, town, recipe):
     """
     root = Path(root)
     status = recipe.get('status')
-    if status not in ('framework_only', 'ground_only', 'courtyard_dressing'):
+    if status not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing'):
         raise ValueError('Unsupported settlement street activation status')
-    if recipe.get('placements') != [] and status != 'courtyard_dressing':
+    if recipe.get('placements') != [] and status not in ('courtyard_dressing','workyard_dressing'):
         raise ValueError('Street composition cannot activate placements or runtime objects')
-    if status == 'courtyard_dressing':
+    if status in ('courtyard_dressing','workyard_dressing'):
         config = recipe.get('courtyard_dressing')
         if not isinstance(config, dict) or config.get('district') != 'serene_terrace':
             raise ValueError('Courtyard street pass requires reviewed Serene terrace activation')
+    if status=='workyard_dressing':
+        config=recipe.get('workyard_dressing')
+        if not isinstance(config,dict) or config.get('district')!='workshop_mill':
+            raise ValueError('Workyard street pass requires reviewed workshop/mill activation')
     treatments = recipe.get('ground_treatments')
     if not isinstance(treatments, list):
         raise ValueError('Settlement ground_treatments must be a list')

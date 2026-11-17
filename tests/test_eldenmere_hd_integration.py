@@ -55,11 +55,12 @@ class TownHDContracts(unittest.TestCase):
             checked+=1
         self.assertEqual(checked,13)
 
-    def test_expansion_preserves_source_collision_plus_declared_courtyard_supports(self):
+    def test_expansion_preserves_source_collision_plus_declared_district_supports(self):
         self.assertEqual(self.town['size_pixels'],[1536,1632]);self.assertEqual(self.town['size_tiles'],[64,68])
         before=Image.open(SRC/'collision.png').convert('L');after=Image.open(ROOT/self.town['collision']).convert('L')
-        from tools.build_eldenmere_hd import courtyard_collision
+        from tools.build_eldenmere_hd import courtyard_collision, workyard_collision
         expected=courtyard_collision(before,self.town.get('settlement_dressing'))
+        expected=workyard_collision(expected,self.town.get('settlement_workyards'))
         self.assertEqual(expected.tobytes(),after.crop((0,0,*before.size)).tobytes())
         nav=Image.open(ROOT/self.town['navigation_allowed']).convert('L');oldnav=Image.open(SRC/'navigation_allowed.png').convert('L')
         self.assertEqual(nav.crop((0,0,*oldnav.size)).tobytes(),oldnav.tobytes())

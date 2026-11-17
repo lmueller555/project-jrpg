@@ -270,10 +270,11 @@ class LiveCourtyardContracts(unittest.TestCase):
         expected = original.copy()
         report = self.town['settlement_dressing']
         draw = ImageDraw.Draw(expected)
-        for record in report['solid_footprints']:
-            x, y, width, height = record['rect']
-            self.assertTrue(all(float(value).is_integer() for value in (x, y, width, height)))
-            draw.rectangle((int(x), int(y), int(x+width)-1, int(y+height)-1), fill=255)
+        for district in (report,self.town.get('settlement_workyards',{})):
+            for record in district.get('solid_footprints',[]):
+                x, y, width, height = record['rect']
+                self.assertTrue(all(float(value).is_integer() for value in (x, y, width, height)))
+                draw.rectangle((int(x), int(y), int(x+width)-1, int(y+height)-1), fill=255)
         with Image.open(ROOT/self.town['collision']) as source:
             current = source.convert('L').crop((0, 0, *expected.size))
         self.assertIsNone(ImageChops.difference(expected, current).getbbox())

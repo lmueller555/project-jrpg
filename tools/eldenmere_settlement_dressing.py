@@ -1,4 +1,4 @@
-"""Resolve the reviewed household courtyard's native dressing without writing a map.
+"""Resolve reviewed courtyard and workyard dressing without writing a map.
 
 The source recipe owns placements and explicit physical supports. Asset alpha is
 used for conservative artwork-overlap checks, never as an automatic collision
@@ -17,6 +17,9 @@ from tools.eldenmere_settlement import (_file, _numbers, _overlap, _rect, _selec
 PREFIX = 'settlement.courtyard.'
 DISTRICT = 'serene_terrace'
 STATUS = 'courtyard_dressing'
+WORKYARD_PREFIX = 'settlement.workyards.'
+WORKYARD_DISTRICT = 'workshop_mill'
+WORKYARD_STATUS = 'workyard_dressing'
 PLACEMENT_KEYS = {'id', 'asset', 'district', 'position', 'collision', 'footprint', 'occlusion'}
 CONFIG_KEYS = {'district', 'scope_rect', 'retire_grass_ids', 'garden_cells'}
 LOW_FAMILIES = {'flowers', 'groundcover'}
@@ -35,67 +38,132 @@ def _contained(inner, outer):
     return x >= ox and y >= oy and x+w <= ox+ow and y+h <= oy+oh
 
 
-def _empty():
-    return dict(district=None, scope_rect=None, placements=[], entities=[],
-                solid_footprints=[], retired_grass_ids=[], retired_grass_records=[],
-                garden_cells=[], dependencies_sha256={})
+def _empty(cell_key='garden_cells'):
+    report = dict(district=None, scope_rect=None, placements=[], entities=[],
+                  solid_footprints=[], retired_grass_ids=[], retired_grass_records=[])
+    report[cell_key] = []
+    report['dependencies_sha256'] = {}
+    return report
+
+
+def _combined_placements(recipe):
+    """Partition only the two explicitly enabled regions of the current delivery."""
+    placements = recipe.get('placements')
+    if not isinstance(placements, list):
+        raise ValueError('Settlement placements must be a list')
+    for placement in placements:
+        if not isinstance(placement, dict) or placement.get('district') not in (DISTRICT, WORKYARD_DISTRICT):
+            raise ValueError('Workyard delivery can activate only serene_terrace and workshop_mill')
+    return placements
 
 
 def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader=None):
+    """Retain the courtyard API and ledger when the workyard delivery is active."""
+    if recipe.get('status') == WORKYARD_STATUS:
+        placements = _combined_placements(recipe)
+        recipe = {**recipe, 'status': STATUS,
+                  'placements': [p for p in placements if p['district'] == DISTRICT]}
+    return _resolve_region(root, town, recipe, catalogue, protections,
+                           image_loader=image_loader)
+
+
+def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loader=None):
+    """Resolve workyard props and native ground separately from the courtyard.
+
+    ``ground_entities`` contains flat residue to bake before actors, rather than
+    append to the world's depth-sorted entity list. All placements still share
+    the same source and occupied-artwork validation.
+    """
+    status = recipe.get('status')
+    if status not in ('framework_only', 'ground_only', STATUS, WORKYARD_STATUS):
+        raise ValueError('Unsupported settlement workyard activation status')
+    placements = _combined_placements(recipe) if status in (STATUS, WORKYARD_STATUS) else recipe.get('placements')
+    if not isinstance(placements, list):
+        raise ValueError('Settlement placements must be a list')
+    if status in ('framework_only', 'ground_only') and placements:
+        raise ValueError('Settlement status cannot activate workyard dressing')
+    selected = [p for p in placements if isinstance(p, dict) and p.get('district') == WORKYARD_DISTRICT]
+    view = {**recipe, 'status': WORKYARD_STATUS if status == WORKYARD_STATUS else 'ground_only',
+            'placements': selected}
+    report = _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
+                             district=WORKYARD_DISTRICT, prefix=WORKYARD_PREFIX,
+                             activation_status=WORKYARD_STATUS, config_key='workyard_dressing',
+                             ledger_key='settlement_workyards', cell_key='ground_cells')
+    flat_ids = {placement['id'] for placement in report['placements']
+                if placement['asset'] == 'exteriors_hd:wood_shavings'}
+    report['ground_entities'] = [entity for entity in report['entities'] if entity['id'] in flat_ids]
+    report['entities'] = [entity for entity in report['entities'] if entity['id'] not in flat_ids]
+    return report
+
+
+def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=None,
+                    district=DISTRICT, prefix=PREFIX, activation_status=STATUS,
+                    config_key='courtyard_dressing', ledger_key='settlement_dressing',
+                    cell_key='garden_cells'):
     """Return validated native entities, supports, garden cells and provenance.
 
     ``image_loader`` optionally resolves freshly composed existing PNGs from the
     town export buffer. No supplied object or source file is changed. Containers
     and fences need deliberate integer physical footprints and tall occlusion;
-    only low flower/groundcover scenery may be nonblocking.
+    only low flower/groundcover and explicitly flat workyard residue may be
+    nonblocking.
     """
     root = Path(root).resolve()
+    title = 'Courtyard' if district == DISTRICT else 'Workyard'
+    noun = title.lower()
     status = recipe.get('status')
     placements = recipe.get('placements')
-    if status not in ('framework_only', 'ground_only', STATUS):
+    if status not in ('framework_only', 'ground_only', activation_status):
         raise ValueError('Unsupported settlement dressing activation status')
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
-    if status != STATUS:
-        if placements or recipe.get('courtyard_dressing'):
-            raise ValueError('Settlement status cannot activate courtyard dressing')
-        previous = town.get('settlement_dressing') or {}
+    if status != activation_status:
+        if placements or recipe.get(config_key):
+            raise ValueError(f'Settlement status cannot activate {noun} dressing')
+        previous = town.get(ledger_key) or {}
         if not isinstance(previous, dict):
-            raise ValueError('Invalid previous courtyard ownership report')
-        if previous.get('entities') or previous.get('retired_grass_ids') or previous.get('retired_grass_records'):
-            raise ValueError('Courtyard deactivation requires explicit owned-entity and grass cleanup')
-        return _empty()
+            raise ValueError(f'Invalid previous {noun} ownership report')
+        remaining = any(isinstance(entity, dict) and isinstance(entity.get('id'), str)
+                        and entity['id'].startswith(prefix) for entity in town.get('entities', []))
+        if (previous.get('entities') or previous.get('ground_entities') or previous.get('retired_grass_ids')
+                or previous.get('retired_grass_records') or remaining):
+            raise ValueError(f'{title} deactivation requires explicit owned-entity and grass cleanup')
+        return _empty(cell_key)
     if recipe.get('version') != 1 or recipe.get('scene') != 'eldenmere.playable' or town.get('id') != 'eldenmere.playable':
-        raise ValueError('Courtyard dressing requires the version1 Eldenmere town recipe')
-    config = recipe.get('courtyard_dressing')
-    if not isinstance(config, dict) or set(config) != CONFIG_KEYS:
-        raise ValueError('Courtyard dressing requires only the reviewed configuration keys')
-    if config['district'] != DISTRICT:
-        raise ValueError('Courtyard dressing can activate only serene_terrace')
-    scope = _native_numbers(config['scope_rect'], 4, 'courtyard scope')
-    _rect(scope, 'courtyard scope')
-    districts = [d for d in recipe.get('districts', []) if d.get('id') == DISTRICT]
-    if len(districts) != 1 or not _contained(scope, _rect(districts[0]['rect'], 'courtyard district')):
-        raise ValueError('Courtyard scope must remain inside the reviewed district')
+        raise ValueError(f'{title} dressing requires the version 1 Eldenmere town recipe')
+    config = recipe.get(config_key)
+    if not isinstance(config, dict) or set(config) != ((CONFIG_KEYS - {'garden_cells'}) | {cell_key}):
+        raise ValueError(f'{title} dressing requires only the reviewed configuration keys')
+    if config['district'] != district:
+        raise ValueError(f'{title} dressing can activate only {district}')
+    scope = _native_numbers(config['scope_rect'], 4, noun+' scope')
+    _rect(scope, noun+' scope')
+    districts = [d for d in recipe.get('districts', []) if d.get('id') == district]
+    if len(districts) != 1 or not _contained(scope, _rect(districts[0]['rect'], noun+' district')):
+        raise ValueError(f'{title} scope must remain inside the reviewed district')
     width, height = _numbers(town['size_pixels'], 2, 'town size')
     if not _contained(scope, [0, 0, width, height]):
-        raise ValueError('Courtyard scope leaves town bounds')
+        raise ValueError(f'{title} scope leaves town bounds')
     if len(placements) > 64:
-        raise ValueError('Courtyard dressing is limited to64 reviewed placements')
+        raise ValueError(f'{title} dressing is limited to 64 reviewed placements')
 
-    previous = town.get('settlement_dressing') or {}
+    previous = town.get(ledger_key) or {}
     if not isinstance(previous, dict):
-        raise ValueError('Invalid previous courtyard ownership report')
+        raise ValueError(f'Invalid previous {noun} ownership report')
     owned = set()
-    for entity in previous.get('entities', []):
-        if not isinstance(entity, dict) or not isinstance(entity.get('id'), str) or not entity['id'].startswith(PREFIX):
-            raise ValueError('Previous courtyard ownership may contain only courtyard entities')
+    prior_entities = previous.get('entities', [])
+    prior_ground = previous.get('ground_entities', [])
+    if not isinstance(prior_entities, list) or not isinstance(prior_ground, list):
+        raise ValueError(f'Invalid previous {noun} entity ownership lists')
+    for entity in [*prior_entities, *prior_ground]:
+        if not isinstance(entity, dict) or not isinstance(entity.get('id'), str) or not entity['id'].startswith(prefix):
+            raise ValueError(f'Previous {noun} ownership may contain only {noun} entities')
         if entity['id'] in owned:
-            raise ValueError('Duplicate previous courtyard ownership')
+            raise ValueError(f'Duplicate previous {noun} ownership')
         owned.add(entity['id'])
     for entity in town.get('entities', []):
-        if entity['id'].startswith(PREFIX) and entity['id'] not in owned:
-            raise ValueError('Unowned existing courtyard namespace instance '+entity['id'])
+        if entity['id'].startswith(prefix) and entity['id'] not in owned:
+            raise ValueError(f'Unowned existing {noun} namespace instance '+entity['id'])
     validation_town = {**town, 'entities': [e for e in town.get('entities', []) if e['id'] not in owned]}
     assets = {record['id']: record for record in catalogue['assets']}
     dependencies, pictures = {}, {}
@@ -111,16 +179,16 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
             if pending and image_loader is not None:
                 source = image_loader(relative)
                 if not isinstance(source, Image.Image):
-                    raise ValueError('Courtyard image loader must return native PIL artwork')
+                    raise ValueError(f'{title} image loader must return native PIL artwork')
                 native = source.convert('RGBA')
             else:
                 path = read(relative) if dependency else _file(root, relative)
                 with Image.open(path) as source:
                     native = source.convert('RGBA')
             if density not in (1, 2) or native.size != tuple(v*density for v in logical_size):
-                raise ValueError('Courtyard artwork canvas/density mismatch: '+relative)
+                raise ValueError(f'{title} artwork canvas/density mismatch: '+relative)
             if dependency and set(native.getchannel('A').tobytes()) - {0, 255}:
-                raise ValueError('Courtyard artwork requires hard alpha: '+relative)
+                raise ValueError(f'{title} artwork requires hard alpha: '+relative)
             bbox = native.getbbox()
             pictures[key] = None if bbox is None else [v/density for v in bbox]
         return pictures[key]
@@ -130,14 +198,14 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
         logical_size = record.get('logical_size')
         frames = record.get('frames', [])
         if logical_size is None or not frames:
-            raise ValueError('Existing courtyard-area artwork lacks canvas/frame metadata: '+record['id'])
+            raise ValueError(f'Existing {noun} artwork lacks canvas/frame metadata: '+record['id'])
         bounds = []
         for path in [*frames, *([record['reduced_motion_image']] if record.get('reduced_motion_image') else [])]:
             bbox = picture(path, density, logical_size, dependency=source, pending=not source)
             if bbox is not None:
                 bounds.append(bbox)
         if not bounds:
-            raise ValueError('Courtyard artwork is empty: '+record['id'])
+            raise ValueError(f'{title} artwork is empty: '+record['id'])
         x, y = record['position']
         left, top = min(b[0] for b in bounds), min(b[1] for b in bounds)
         right, bottom = max(b[2] for b in bounds), max(b[3] for b in bounds)
@@ -146,27 +214,32 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
     enriched, entities, solids, seen = [], [], [], set()
     for placement in placements:
         if not isinstance(placement, dict) or set(placement)-PLACEMENT_KEYS:
-            raise ValueError('Unsupported courtyard placement fields')
+            raise ValueError(f'Unsupported {noun} placement fields')
         name = placement.get('id')
-        if not isinstance(name, str) or not name.startswith(PREFIX) or name == PREFIX or name in seen:
-            raise ValueError('Courtyard placement IDs must be unique in '+PREFIX+'*')
+        if not isinstance(name, str) or not name.startswith(prefix) or name == prefix or name in seen:
+            raise ValueError(f'{title} placement IDs must be unique in '+prefix+'*')
         seen.add(name)
-        if placement.get('district') != DISTRICT:
-            raise ValueError(name+': placement leaves authorized courtyard district')
+        if placement.get('district') != district:
+            raise ValueError(name+f': placement leaves authorized {noun} district')
         asset_name = placement.get('asset')
         if not isinstance(asset_name, str):
             raise ValueError(name+': asset must name a catalogued native source')
         asset = assets.get(asset_name)
         if asset is None:
-            raise ValueError(name+': unknown native courtyard asset')
+            raise ValueError(name+f': unknown native {noun} asset')
         if asset.get('artwork_pixels_per_world_pixel') != 2:
-            raise ValueError(name+': courtyard art must be native2x')
+            raise ValueError(name+f': {noun} art must be native 2x')
         position = _native_numbers(placement.get('position'), 2, name+' position')
         logical_size = _native_numbers(asset['logical_size'], 2, name+' logical size')
         if not _contained([*position, *logical_size], scope):
-            raise ValueError(name+': artwork canvas leaves courtyard scope')
-        is_low = asset['id'].startswith('vegetation_hd:') and asset.get('family') in LOW_FAMILIES
-        if is_low:
+            raise ValueError(name+f': artwork canvas leaves {noun} scope')
+        is_vegetation = asset['id'].startswith('vegetation_hd:') and asset.get('family') in LOW_FAMILIES
+        is_flat = asset['id'] == 'exteriors_hd:wood_shavings'
+        is_low = is_vegetation or is_flat
+        if is_flat:
+            if district != WORKYARD_DISTRICT or placement.get('collision') != 'none' or placement.get('occlusion') != 'ground':
+                raise ValueError(name+': wood shavings require flat nonblocking workyard placement')
+        elif is_vegetation:
             if placement.get('collision') != 'none' or placement.get('occlusion') not in ('ground', 'low'):
                 raise ValueError(name+': flowers/groundcover must remain low nonblocking scenery')
         elif placement.get('collision') != 'solid' or placement.get('occlusion') != 'tall':
@@ -176,7 +249,7 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
         manifest = json.loads(read(manifest_path).read_text())
         selector = asset.get('source_selector')
         if not isinstance(selector, list) or not selector or '*' in selector:
-            raise ValueError(name+': courtyard asset needs one exact source selector')
+            raise ValueError(name+f': {noun} asset needs one exact source selector')
         selected = _select(manifest, selector)
         if len(selected) != 1 or not isinstance(selected[0][0], dict):
             raise ValueError(name+': asset source must resolve one metadata record')
@@ -185,12 +258,12 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
             raise ValueError(name+': native source identity/canvas changed')
         density = source.get('artwork_pixels_per_world_pixel', manifest.get('artwork_pixels_per_world_pixel'))
         if density != 2 or source.get('mount', 'ground') != 'ground':
-            raise ValueError(name+': only native ground-mounted courtyard assets are authorized')
+            raise ValueError(name+f': only native ground-mounted {noun} assets are authorized')
         parent = Path(manifest_path).parent
         idle = (parent/source['idle']).as_posix()
         if idle != asset['image']:
             raise ValueError(name+': catalogue idle disagrees with native source')
-        if is_low:
+        if is_vegetation:
             source_frames = source.get('frames', [])
             if not source_frames or any(not isinstance(frame, dict) for frame in source_frames):
                 raise ValueError(name+': vegetation needs authored frame records')
@@ -231,7 +304,7 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
     occupied_existing = []
     for record in validation_town.get('entities', []):
         if 'logical_size' not in record:
-            raise ValueError('Existing artwork needs an explicit logical canvas for courtyard protection: '+record['id'])
+            raise ValueError(f'Existing artwork needs an explicit logical canvas for {noun} protection: '+record['id'])
         if _overlap([*record['position'], *record['logical_size']], scope):
             occupied_existing.append((record['id'], occupied(record)))
     for index, record in enumerate(enriched):
@@ -245,7 +318,7 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
 
     retire = config['retire_grass_ids']
     if not isinstance(retire, list) or any(not isinstance(name, str) for name in retire) or len(set(retire)) != len(retire):
-        raise ValueError('Retired courtyard grass IDs must be a unique explicit list')
+        raise ValueError(f'Retired {noun} grass IDs must be a unique explicit list')
     grass = {record['id']: record for record in town.get('grass', {}).get('instances', [])}
     prior_records = {record['id']: record for record in previous.get('retired_grass_records', [])}
     prior_ids = set(previous.get('retired_grass_ids', []))
@@ -255,23 +328,25 @@ def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader
         if record is None:
             if name in prior_ids and previous.get('scope_rect') == scope:
                 continue
-            raise ValueError('Retired courtyard grass no longer resolves: '+name)
+            raise ValueError(f'Retired {noun} grass no longer resolves: '+name)
         x, y = _native_numbers(record['position'], 2, name+' grass position')
         if not _contained([x-12, y-28, 24, 32], scope):
-            raise ValueError('Retired grass artwork leaves courtyard scope: '+name)
+            raise ValueError(f'Retired grass artwork leaves {noun} scope: '+name)
         retired_records.append(deepcopy(record))
-    cells = config['garden_cells']
+    cells = config[cell_key]
     if not isinstance(cells, list):
-        raise ValueError('Courtyard garden cells must be an explicit list')
+        raise ValueError(f'{title} {cell_key} must be an explicit list')
     garden, used = [], set()
     for cell in cells:
         if (not isinstance(cell, list) or len(cell) != 2 or
                 any(type(v) is not int for v in cell) or tuple(cell) in used):
-            raise ValueError('Garden cells must be unique integer tile pairs')
+            raise ValueError(f'{title} ground cells must be unique integer tile pairs')
         if not _contained([cell[0]*24, cell[1]*24, 24, 24], scope):
-            raise ValueError('Garden soil leaves courtyard scope')
+            raise ValueError(f'Ground treatment leaves {noun} scope')
         used.add(tuple(cell));garden.append(list(cell))
-    return dict(district=DISTRICT, scope_rect=scope, placements=enriched, entities=entities,
-                solid_footprints=solids, retired_grass_ids=list(retire),
-                retired_grass_records=retired_records, garden_cells=garden,
-                dependencies_sha256=dict(sorted(dependencies.items())))
+    report = dict(district=district, scope_rect=scope, placements=enriched, entities=entities,
+                  solid_footprints=solids, retired_grass_ids=list(retire),
+                  retired_grass_records=retired_records)
+    report[cell_key] = garden
+    report['dependencies_sha256'] = dict(sorted(dependencies.items()))
+    return report
