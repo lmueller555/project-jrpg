@@ -271,8 +271,9 @@ class LiveSettlementFrameworkTests(unittest.TestCase):
         second = framework(ROOT, self.town, RECIPE)
         self.assertEqual(first, second)
         self.assertEqual(self.town, before)
-        self.assertEqual(self.recipe['status'], 'ground_only')
-        self.assertEqual(self.recipe['placements'], [])
+        self.assertEqual(self.recipe['status'], 'courtyard_dressing')
+        self.assertEqual(first['active_placements'], len(self.recipe['placements']))
+        self.assertEqual(first['dressing'], self.town['settlement_dressing'])
         self.assertEqual(first['active_ground_treatments'], len(self.recipe['ground_treatments']))
         self.assertEqual(first['street_network'], self.town['cartography']['street_network'])
 

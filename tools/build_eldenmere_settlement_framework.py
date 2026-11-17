@@ -25,7 +25,8 @@ def build(check=False):
     print(f'{"Verified" if check else "Built"} settlement framework: '
           f'{len(report["protected_spaces"])} protected spaces, '
           f'{len(report["inventory"]["assets"])} semantic asset records; '
-          f'{report["active_ground_treatments"]} ground treatments, zero prop placements')
+          f'{report["active_ground_treatments"]} ground treatments, '
+          f'{report["active_placements"]} prop placements')
     return report
 
 

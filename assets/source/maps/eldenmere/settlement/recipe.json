@@ -1,12 +1,12 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "ground_only",
+  "status": "courtyard_dressing",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "PR 2 activates reviewed native street surfaces and cartography only. No prop placements, collision, navigation, actor ownership or gameplay changes.",
+  "activation": "PR 3 retains the reviewed street pass and activates Serene household courtyard dressing only; explicit new solid supports preserve all protected circulation and original blockers.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -28,13 +28,14 @@
         600,
         336
       ],
-      "later_pr": 3,
       "preserve": [
         "household identity",
         "door/stair access",
         "gardener route",
         "visitors and story staging"
-      ]
+      ],
+      "status": "integrated",
+      "delivery_pr": 3
     },
     {
       "id": "workshop_mill",
@@ -1237,7 +1238,171 @@
       "note": "Reviewed outdoor envelope covers pin/channel repair, gate and existing toolbox/debris ownership. CHANNEL_APPROACH and surface-prop positions are code-owned; repair_approach also has art metadata. The interior family/carrying stations are excluded."
     }
   ],
-  "placements": [],
+  "placements": [
+    {
+      "id": "settlement.courtyard.rain_barrel",
+      "asset": "exteriors_hd:rain_barrel",
+      "district": "serene_terrace",
+      "position": [
+        492,
+        252
+      ],
+      "collision": "solid",
+      "footprint": [
+        3,
+        17,
+        14,
+        6
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.herbs_west",
+      "asset": "exteriors_hd:herb_planter",
+      "district": "serene_terrace",
+      "position": [
+        500,
+        280
+      ],
+      "collision": "solid",
+      "footprint": [
+        4,
+        10,
+        15,
+        4
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.herb_pot",
+      "asset": "exteriors_hd:herb_pot",
+      "district": "serene_terrace",
+      "position": [
+        526,
+        282
+      ],
+      "collision": "solid",
+      "footprint": [
+        3,
+        11,
+        12,
+        5
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.herbs_east",
+      "asset": "exteriors_hd:herb_planter",
+      "district": "serene_terrace",
+      "position": [
+        548,
+        280
+      ],
+      "collision": "solid",
+      "footprint": [
+        4,
+        10,
+        15,
+        4
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.flowerpots",
+      "asset": "exteriors_hd:flowerpot_pair",
+      "district": "serene_terrace",
+      "position": [
+        568,
+        250
+      ],
+      "collision": "solid",
+      "footprint": [
+        2,
+        18,
+        20,
+        4
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.firewood",
+      "asset": "exteriors_hd:firewood",
+      "district": "serene_terrace",
+      "position": [
+        158,
+        284
+      ],
+      "collision": "solid",
+      "footprint": [
+        4,
+        9,
+        16,
+        5
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.low_fence",
+      "asset": "exteriors_hd:fence_panel",
+      "district": "serene_terrace",
+      "position": [
+        154,
+        334
+      ],
+      "collision": "solid",
+      "footprint": [
+        4,
+        19,
+        32,
+        3
+      ],
+      "occlusion": "tall"
+    },
+    {
+      "id": "settlement.courtyard.west_flowers",
+      "asset": "vegetation_hd:flowers_white",
+      "district": "serene_terrace",
+      "position": [
+        204,
+        336
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.courtyard.garden_flowers",
+      "asset": "vegetation_hd:flowers_violet",
+      "district": "serene_terrace",
+      "position": [
+        532,
+        312
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.courtyard.west_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "serene_terrace",
+      "position": [
+        154,
+        308
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.courtyard.east_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "serene_terrace",
+      "position": [
+        496,
+        318
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    }
+  ],
   "ground_treatments": [
     {
       "id": "settlement.street.western_spine",
@@ -2052,5 +2217,49 @@
     "layering": "Native ground only, before masonry, stairs and water. Existing bridge decks and foreground rails remain independently owned.",
     "cartography": "Complete source-owned network resolves the original roads, later household/school/well geometry and the same active treatments. No parallel road diagram.",
     "future_prs": "Courtyard, workyards, civic gathering, household plots, Venn growing and southern planting remain PRs 3\u20138."
+  },
+  "courtyard_dressing": {
+    "district": "serene_terrace",
+    "scope_rect": [
+      120,
+      120,
+      600,
+      336
+    ],
+    "retire_grass_ids": [
+      "sanctuary_meadow.3.0",
+      "sanctuary_meadow.3.1",
+      "sanctuary_meadow.3.2",
+      "sanctuary_meadow.4.1",
+      "sanctuary_meadow.4.2",
+      "sanctuary_meadow.5.1",
+      "sanctuary_meadow.5.2"
+    ],
+    "garden_cells": [
+      [
+        21,
+        11
+      ],
+      [
+        22,
+        11
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        21,
+        12
+      ],
+      [
+        22,
+        12
+      ],
+      [
+        23,
+        12
+      ]
+    ]
   }
 }

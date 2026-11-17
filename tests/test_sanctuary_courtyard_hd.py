@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from PIL import Image
+from PIL import Image,ImageDraw
 import pygame
 from rendering import WorldCanvas
 
@@ -34,7 +34,12 @@ class CourtyardAssets(unittest.TestCase):
         self.assertTrue(self.data['pause_on_focus_loss'])
         before=Image.open(ROOT/self.old['collision']).convert('L')
         after=Image.open(ROOT/self.data['collision']).convert('L')
-        self.assertEqual(before.tobytes(),after.crop((0,0,*before.size)).tobytes())
+        # New courtyard objects add only their declared ground supports. The
+        # prior building, stair and circulation geometry remains authoritative.
+        expected=before.copy();draw=ImageDraw.Draw(expected)
+        for support in self.data.get('settlement_dressing',{}).get('solid_footprints',[]):
+            x,y,w,h=support['rect'];draw.rectangle((x,y,x+w-1,y+h-1),fill=255)
+        self.assertEqual(expected.tobytes(),after.crop((0,0,*before.size)).tobytes())
 
     def test_assets_keep_physical_canvases_and_actual_new_detail(self):
         previous={r['id']:r for r in self.old['entities']}

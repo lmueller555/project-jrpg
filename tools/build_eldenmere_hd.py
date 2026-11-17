@@ -68,6 +68,27 @@ def business_anchor(spec,design):
     x,y=spec['position'];dx,_,dw,_=design['door_rect_logical'];_,gy,_,gh=design['ground_rect_logical']
     return [x+dx+dw/2,y+gy+gh+6]
 
+def courtyard_collision(source,dressing):
+    """Add only the declared courtyard supports; retain every source blocker."""
+    out=source.copy()
+    if not dressing:return out
+    placements={p['id']:p for p in dressing.get('placements',[])}
+    painter=ImageDraw.Draw(out);seen=set()
+    for support in dressing.get('solid_footprints',[]):
+        name=support['id'];rect=support['rect'];placement=placements.get(name)
+        if not isinstance(name,str) or not name.startswith('settlement.courtyard.') or name in seen or placement is None:
+            raise ValueError('Unowned courtyard collision support')
+        seen.add(name)
+        if len(rect)!=4 or any(type(v) is not int for v in rect):
+            raise ValueError('Courtyard collision requires integer logical rectangles')
+        x,y,w,h=rect;fx,fy,fw,fh=placement['footprint'];px,py=placement['position']
+        if rect!=[px+fx,py+fy,fw,fh] or placement['collision']!='solid':
+            raise ValueError('Courtyard collision disagrees with its placed support')
+        if min(w,h)<=0 or x<0 or y<0 or x+w>out.width or y+h>out.height:
+            raise ValueError('Courtyard collision leaves the physical mask')
+        painter.rectangle((x,y,x+w-1,y+h-1),fill=255)
+    return out
+
 def products():
     rec=json.loads((SRC/'recipe.json').read_text());old=json.loads((SRC/'baseline_maps.json').read_text());ex=Export();materials=Materials()
     for r in rec['sources']:
@@ -95,6 +116,7 @@ def products():
     current_town=read('assets/maps/eldenmere/playable/map.json')
     for field in ('collision','navigation_allowed'):
         expected=Image.open(SRC/(field+'.png')).convert('L')
+        if field=='collision':expected=courtyard_collision(expected,current_town.get('settlement_dressing'))
         actual=Image.open(ROOT/current_town[field]).convert('L')
         if actual.crop((0,0,*expected.size)).tobytes()!=expected.tobytes():
             raise ValueError('Review changed '+field+' registration before rebuilding the town')
@@ -232,8 +254,29 @@ def products():
     # New business thresholds derive from their source now, not the previous
     # generated map. A later source move must not leave a one-build-old doorstep.
     business_ids={spec['id'] for spec in rec['businesses']}
+    previous_business_doors={door['id']:door for door in town['doors'] if door['id'] in business_ids}
     street_town={**town,'size_pixels':size,'doors':[door for door in town['doors'] if door['id'] not in business_ids]+
-                 [{'id':spec['id'],'anchor':business_anchor(spec,business[spec['design']])} for spec in rec['businesses']]}
+                 [{**previous_business_doors.get(spec['id'],{}),'id':spec['id'],
+                   'anchor':business_anchor(spec,business[spec['design']]),'open_radius':30,'close_radius':38,
+                   'entry_half_width':business[spec['design']]['door_rect_logical'][2]/2}
+                  for spec in rec['businesses']]}
+    from tools.eldenmere_settlement import framework
+    dressing=framework(ROOT,street_town,rec['settlement_recipe'],image_loader=ex.load)['dressing']
+    if dressing is not None:
+        collision=courtyard_collision(collision,dressing);cd=ImageDraw.Draw(collision)
+        dirt.update(map(tuple,dressing['garden_cells']))
+        previous=town.get('settlement_dressing') or {}
+        owned={e['id'] for e in previous.get('entities',[])}
+        town['entities']=[e for e in town['entities'] if e['id'] not in owned]+deepcopy(dressing['entities'])
+        # Restore only this district's previously retired records, then apply
+        # the current garden retirement list. Other districts keep their owners.
+        retired=set(dressing['retired_grass_ids'])
+        grass={g['id']:g for g in town['grass']['instances']}
+        grass.update({g['id']:g for g in previous.get('retired_grass_records',[]) if g['id'] not in grass})
+        source_order={g['id']:i for i,g in enumerate(old['town']['grass']['instances'])}
+        town['grass']['instances']=[deepcopy(g) for g in sorted(grass.values(),key=lambda g:source_order.get(g['id'],len(source_order)))
+                                    if g['id'] not in retired]
+        town['settlement_dressing']=dressing
     base,street_report=paint_streets(materials.ground(size,dirt),ROOT,street_town,street_recipe,materials,collision)
     street_report['coverage_image']=ex.png('streets/coverage',street_report.pop('coverage_mask'))
     town['settlement_streets']={'recipe':rec['settlement_recipe'],**street_report}
@@ -499,12 +542,12 @@ def products():
             for layer in ('rear','front'):overview.alpha_composite(image(pose[layer]),pixels((x-12,y-28)))
         for layer in data.get('foreground',[]):overview.alpha_composite(ex.load(layer['image']),pixels(layer['position']))
         data['overview']=ex.png(name+'/overview',overview.resize(tuple(data['size_pixels']),Image.Resampling.NEAREST).convert('RGB'));ex.json(paths[name],data)
-    # Settlement composition has one map owner. Ground-only activation retains
-    # every prop, clearance, physical mask and gameplay owner.
+    # Settlement composition has one map owner. Courtyard dressing retains
+    # existing owners and records the explicit support-only physical delta.
     from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
-    settlement=framework(ROOT,town,rec['settlement_recipe'])
+    settlement=framework(ROOT,town,rec['settlement_recipe'],image_loader=ex.load)
     ex.json(SETTLEMENT_MANIFEST,settlement)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'interior_architecture':PACK+'/interior_architecture.json','services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':settlement['active_placements'],'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'interior_architecture':PACK+'/interior_architecture.json','services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):
