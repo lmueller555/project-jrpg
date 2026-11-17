@@ -2311,7 +2311,9 @@ class Game:
         if isinstance(self.world,World):
             self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False,
                             party_actors=self.party_travel.actors())
-        else:self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
+        else:
+            self.world.reduced_motion=self.audio.reduced_motion
+            self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
         self.cave_lesson.draw_world(self.canvas,camera)
         self.elemental_bosses.draw_world(self.canvas,camera)
         self.combat.draw_world(self.canvas,camera)

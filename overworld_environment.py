@@ -266,6 +266,9 @@ class EnvironmentDetail:
                         yield prop
 
     def pattern(self, target, key, origin, angle=0):
+        if self.world.terrain_hd is not None:
+            self.world.terrain_hd.pattern(target,key,origin,angle)
+            return
         angle = round(float(angle))%360
         if not angle:
             self.world._pattern(target,key);return
@@ -289,6 +292,9 @@ class EnvironmentDetail:
                 target.blit(tile,(round(x-tile.get_width()/2),round(y-tile.get_height()/2)))
 
     def paint(self, target, key, painter, origin, angle=0):
+        if self.world.terrain_hd is not None:
+            self.world.terrain_hd.paint(target,key,painter,origin,angle)
+            return
         overlay = pygame.Surface((CHUNK,CHUNK),pygame.SRCALPHA)
         self.pattern(overlay,key,origin,angle)
         mask = pygame.Surface((CHUNK,CHUNK),pygame.SRCALPHA)
@@ -319,7 +325,7 @@ class EnvironmentDetail:
         self.paint(target,key,mask,origin,angle)
 
     def ground(self, target, cx, cy):
-        self.world._pattern(target,self.key('grass_meadow','grass'))
+        self.pattern(target,self.key('grass_meadow','grass'),(cx*CHUNK,cy*CHUNK))
         terrain = self.world.region.get('terrain',{})
         for feature in terrain.get('hills',[]):
             if feature.get('ground_treatment') == 'localized':continue
@@ -437,6 +443,9 @@ class EnvironmentDetail:
 
     def bank(self, target, river, cx, cy):
         """Variable dry shore outside the unchanged, solid water footprint."""
+        if self.world.terrain_hd is not None:
+            self.world.terrain_hd.bank(target,river,cx,cy)
+            return
         origin = (cx*CHUNK,cy*CHUNK);viewport = pygame.Rect(origin,(CHUNK,CHUNK))
         points = self.world._local_path(river,cx,cy)
         global_points = [self.world._tile_point(p) for p in river['points']]

@@ -19,7 +19,12 @@ class FoundationTests(unittest.TestCase):
                     self.assertEqual(image.size,tuple(2*n for n in record['logical_size']))
                     self.assertLessEqual(set(image.getchannel('A').tobytes()),{0,255})
         region=json.loads((ROOT/'assets/maps/overworld/elden_vale/region.json').read_text())
-        self.assertNotIn('/hd/',region['art_manifest'])
+        # The original pack remains an immutable staged export. Its registered
+        # regional adaptations are selected by the live overlay manifest.
+        self.assertEqual(self.pack['integration_status'],'not_integrated')
+        live=json.loads((ROOT/region['hd_art_manifest']).read_text())
+        self.assertEqual(live['integration_status'],'integrated')
+        self.assertTrue(region['terrain_hd']['enabled'])
 
     def test_destroyed_bridge_registration_and_gap(self):
         bridge=self.pack['props']['broken_bridge_wide']

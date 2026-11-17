@@ -1,0 +1,1305 @@
+{
+  "version": 1,
+  "id": "elden_vale.hd.foundation.integration",
+  "integration_status": "integrated",
+  "integration_scope": "Selected regional terrain and scenery bindings; other banks retain their own migration state.",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_tile_size": [
+    24,
+    24
+  ],
+  "path_space": "repository_relative",
+  "anchor_space": "logical",
+  "visual_approval": "not_reviewed_by_user",
+  "source_pack": "assets/terrain/overworld/elden_vale/hd/art.json",
+  "source_pack_integration_status": "not_integrated",
+  "geometry_owner": "assets/maps/overworld/elden_vale/region.json",
+  "tiles": {
+    "grass": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/lawn_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "lawn_00"
+    },
+    "dirt": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/dirt_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "dirt_00"
+    },
+    "stone_road": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/stone_road.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "field": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/field.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "forest_floor": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/sheltered_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "sheltered_00"
+    },
+    "water": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/water.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "bank": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/bank.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "scorched": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/scorched.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "wall": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/wall.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "grass_lush": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/lawn_01.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "lawn_01"
+    },
+    "grass_dry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grass_dry.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "grass_meadow": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/meadow_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "meadow_00"
+    },
+    "leaf_litter": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/leaf_litter.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "pasture": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/meadow_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "meadow_00"
+    },
+    "grain": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grain.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "vegetables": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/vegetables.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "furrows": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/furrows.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "orchard_grass": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/sheltered_00.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "sheltered_00"
+    },
+    "gravel": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/gravel.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "stone_road_worn": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/stone_road_worn.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha"
+    },
+    "cart_earth": {
+      "image": "assets/terrain/eldenmere/grass_dirt_hd/materials/dirt_01.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "source_material": "dirt_01"
+    }
+  },
+  "props": {
+    "tree_broadleaf": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/idle.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/idle.png",
+      "source_plant": "broadleaf_full",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_broadleaf/backing.png"
+    },
+    "tree_conifer": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/idle.png",
+      "logical_size": [
+        36,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/idle.png",
+      "source_plant": "conifer_spruce",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/tree_conifer/backing.png"
+    },
+    "rock": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/rock/idle.png",
+      "logical_size": [
+        36,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        24
+      ],
+      "depth_baseline_logical": 24,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/rock/frame_00.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/rock/idle.png",
+      "source_plant": "boulder_rounded",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "static",
+      "interaction_cues": false
+    },
+    "mountain": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/mountain.png",
+      "logical_size": [
+        96,
+        96
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        48,
+        96
+      ],
+      "depth_baseline_logical": 96
+    },
+    "supplies": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/supplies.png",
+      "logical_size": [
+        72,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        36,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "checkpoint": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/checkpoint.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        48,
+        72
+      ],
+      "depth_baseline_logical": 72
+    },
+    "wall_segment": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/wall_segment.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "eldenmere": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/eldenmere.png",
+      "logical_size": [
+        144,
+        120
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        72,
+        120
+      ],
+      "depth_baseline_logical": 120
+    },
+    "oak_a": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/idle.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/idle.png",
+      "source_plant": "broadleaf_full",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_a/backing.png"
+    },
+    "oak_b": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/idle.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/idle.png",
+      "source_plant": "broadleaf_spreading",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_b/backing.png"
+    },
+    "oak_c": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/idle.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/idle.png",
+      "source_plant": "broadleaf_weathered",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/oak_c/backing.png"
+    },
+    "conifer_a": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/idle.png",
+      "logical_size": [
+        36,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/idle.png",
+      "source_plant": "conifer_spruce",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_a/backing.png"
+    },
+    "conifer_b": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/idle.png",
+      "logical_size": [
+        36,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        60
+      ],
+      "depth_baseline_logical": 60,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/idle.png",
+      "source_plant": "conifer_fir",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/conifer_b/backing.png"
+    },
+    "sapling": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/idle.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        36
+      ],
+      "depth_baseline_logical": 36,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/idle.png",
+      "source_plant": "woodland_sparse",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/sapling/backing.png"
+    },
+    "shrub": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/idle.png",
+      "logical_size": [
+        30,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        15,
+        24
+      ],
+      "depth_baseline_logical": 24,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/idle.png",
+      "source_plant": "shrub_rounded",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "rooted_breeze",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/shrub/fixed.png"
+    },
+    "fern": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/idle.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/idle.png",
+      "source_plant": "fern_splayed",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "rooted_breeze",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/fern/fixed.png"
+    },
+    "log": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/log/idle.png",
+      "logical_size": [
+        42,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        21,
+        18
+      ],
+      "depth_baseline_logical": 18,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/log/frame_00.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/log/idle.png",
+      "source_plant": "fallen_log_weathered",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "static",
+      "interaction_cues": false
+    },
+    "stump": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/stump/idle.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/stump/frame_00.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/stump/idle.png",
+      "source_plant": "stump_mossy",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "static",
+      "interaction_cues": false
+    },
+    "flowers_a": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/idle.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/idle.png",
+      "source_plant": "flowers_white",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "rooted_breeze",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_a/fixed.png"
+    },
+    "flowers_b": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/idle.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/idle.png",
+      "source_plant": "flowers_violet",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "rooted_breeze",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/flowers_b/fixed.png"
+    },
+    "reeds": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/idle.png",
+      "logical_size": [
+        30,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        15,
+        30
+      ],
+      "depth_baseline_logical": 30,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/idle.png",
+      "source_plant": "tall_reeds_splayed",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "rooted_breeze",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/reeds/fixed.png"
+    },
+    "river_rocks": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/river_rocks/idle.png",
+      "logical_size": [
+        36,
+        20
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        20
+      ],
+      "depth_baseline_logical": 20,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/river_rocks/frame_00.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/river_rocks/idle.png",
+      "source_plant": "boulder_mossy",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "static",
+      "interaction_cues": false
+    },
+    "rock_outcrop": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/rock_outcrop.png",
+      "logical_size": [
+        64,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        32,
+        36
+      ],
+      "depth_baseline_logical": 36
+    },
+    "ridge": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/ridge.png",
+      "logical_size": [
+        96,
+        64
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        48,
+        64
+      ],
+      "depth_baseline_logical": 64
+    },
+    "farm_house": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/farm_house.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "barn": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/barn.png",
+      "logical_size": [
+        60,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        30,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "shed": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/shed.png",
+      "logical_size": [
+        36,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        30
+      ],
+      "depth_baseline_logical": 30
+    },
+    "haystack": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/haystack.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        24
+      ],
+      "depth_baseline_logical": 24
+    },
+    "grain_sacks": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/grain_sacks.png",
+      "logical_size": [
+        24,
+        20
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        20
+      ],
+      "depth_baseline_logical": 20
+    },
+    "fence_h": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_h.png",
+      "logical_size": [
+        48,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        18
+      ],
+      "depth_baseline_logical": 18
+    },
+    "fence_v": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_v.png",
+      "logical_size": [
+        18,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        9,
+        36
+      ],
+      "depth_baseline_logical": 36
+    },
+    "hedge_h": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/hedge_h.png",
+      "logical_size": [
+        48,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        18
+      ],
+      "depth_baseline_logical": 18
+    },
+    "hedge_v": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/hedge_v.png",
+      "logical_size": [
+        18,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        9,
+        36
+      ],
+      "depth_baseline_logical": 36
+    },
+    "orchard_tree": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/idle.png",
+      "logical_size": [
+        36,
+        42
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        42
+      ],
+      "depth_baseline_logical": 42,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/idle.png",
+      "source_plant": "orchard_red_fruit",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "local_leaf_clusters",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/fixed.png",
+      "backing": "assets/maps/overworld/elden_vale/hd_integration/vegetation/orchard_tree/backing.png"
+    },
+    "cart": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/cart.png",
+      "logical_size": [
+        48,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        30
+      ],
+      "depth_baseline_logical": 30
+    },
+    "waypost": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/waypost.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        36
+      ],
+      "depth_baseline_logical": 36
+    },
+    "bench": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/bench.png",
+      "logical_size": [
+        36,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        18
+      ],
+      "depth_baseline_logical": 18
+    },
+    "laundry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/laundry.png",
+      "logical_size": [
+        48,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        30
+      ],
+      "depth_baseline_logical": 30
+    },
+    "lantern_crates": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/lantern_crates.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        12,
+        24
+      ],
+      "depth_baseline_logical": 24
+    },
+    "checkpoint_shelter": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/checkpoint_shelter.png",
+      "logical_size": [
+        60,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        30,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "bridge_rubble": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/bridge_rubble.png",
+      "logical_size": [
+        48,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        30
+      ],
+      "depth_baseline_logical": 30
+    },
+    "split_rail": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/split_rail.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        24
+      ],
+      "depth_baseline_logical": 24
+    },
+    "grass_tuft": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/idle.png",
+      "logical_size": [
+        18,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        9,
+        18
+      ],
+      "depth_baseline_logical": 18,
+      "frames": [
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_00.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_01.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_02.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_03.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_04.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_05.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_06.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_07.png",
+        "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/idle.png",
+      "source_plant": "grass_sparse",
+      "source_manifest": "assets/terrain/overworld/elden_vale/hd/art.json",
+      "animation_kind": "rooted_breeze",
+      "interaction_cues": false,
+      "fixed": "assets/maps/overworld/elden_vale/hd_integration/vegetation/grass_tuft/fixed.png"
+    },
+    "wall_segment_moss": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/wall_segment_moss.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "wall_segment_worn": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/wall_segment_worn.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    },
+    "broken_bridge_wide": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/broken_bridge_wide.png",
+      "logical_size": [
+        288,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/composition/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        144,
+        94
+      ],
+      "depth_baseline_logical": 94,
+      "deck_top_px": 34,
+      "deck_bottom_px": 106,
+      "deck_clear_width_px": 72,
+      "deck_sample_x_px": [
+        56,
+        232
+      ],
+      "central_gap_x_px": [
+        107,
+        181
+      ],
+      "geometry_space": "logical; artwork values are twice these measurements"
+    },
+    "fence_ns": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_ns.png",
+      "logical_size": [
+        18,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/composition/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        9,
+        24
+      ],
+      "depth_baseline_logical": 24
+    },
+    "fence_corner": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_corner.png",
+      "logical_size": [
+        36,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/composition/recipe.json",
+      "collision": "existing regional geometry; never derived from image alpha",
+      "foot_anchor": [
+        18,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  }
+}

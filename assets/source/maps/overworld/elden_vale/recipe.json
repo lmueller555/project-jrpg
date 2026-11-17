@@ -3,6 +3,7 @@
   "id": "auratia.overworld",
   "name": "Elden Vale",
   "kind": "overworld",
+  "pause_on_focus_loss": true,
   "continent": "Merovar",
   "region_id": "elden_vale_start",
   "tile_size": 24,
@@ -642,6 +643,16 @@
     {
       "id": "sanctuary_path_approach",
       "rect_tiles": [88, -63, 4, 4]
+    },
+    {
+      "id": "central_meadow_future_view",
+      "rect_tiles": [
+        -8,
+        2,
+        20,
+        14
+      ],
+      "purpose": "Nonblocking central meadow pause/view reservation"
     }
   ],
   "route_validation": {
@@ -1337,7 +1348,35 @@
       ]
     }
   ],
-  "clearance_paths": [{"id": "town_all_sides", "points": [[6, -33], [18, -33], [18, -27], [6, -27], [6, -33]], "width": 3}],
+  "clearance_paths": [{"id": "town_all_sides", "points": [[6, -33], [18, -33], [18, -27], [6, -27], [6, -33]], "width": 3},
+    {
+      "id": "central_causeway_future_clearance",
+      "width": 4,
+      "points": [
+        [
+          10,
+          -1
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          -3,
+          8
+        ],
+        [
+          -15,
+          11
+        ],
+        [
+          -28,
+          14
+        ]
+      ],
+      "purpose": "Retain existing internal stone route for later ruin placement"
+    }
+  ],
   "decorations": [
     {"id": "west_grain_edge_0_0", "key": "hedge_h", "tile_position": [-63.2, 12]},
     {"id": "west_grain_edge_0_1", "key": "hedge_h", "tile_position": [-61.823, 12]},
@@ -1460,5 +1499,139 @@
       "intent": "A known regional miniature reached along a maintained woodland path, entering the detailed sanctuary reserve. The cave dungeon remains future work."
     }
   },
-  "sanctuary_art_manifest": "assets/terrain/overworld/elden_vale/sanctuary/art.json"
+  "sanctuary_art_manifest": "assets/terrain/overworld/elden_vale/sanctuary/art.json",
+  "hd_art_manifest": "assets/maps/overworld/elden_vale/hd_integration/manifest.json",
+  "terrain_hd": {
+    "enabled": true,
+    "bank_family": "grass",
+    "water_family": "temperate",
+    "density": 2,
+    "geometry": "Existing vector roads/rivers, unchanged collision grid."
+  },
+  "design_layout": {
+    "guide": "docs/world/regions/ELDEN_VALE.md",
+    "status": "HD foundation integrated; signature landscape and Rising Rain pending",
+    "coordinate_space": "regional tiles; detailed Sanctuary support plan remains separate",
+    "areas": [
+      {
+        "id": "eldenmere_meadows",
+        "center": [
+          12,
+          -28
+        ],
+        "role": "Home and inhabited emerald meadows",
+        "preserve": "town entry/return, work stations and southern access"
+      },
+      {
+        "id": "southern_farms",
+        "center": [
+          -15,
+          51
+        ],
+        "role": "Irregular cultivated parcels and orchard arrivals",
+        "preserve": "farm doorsteps, worker/item ownership and orchard routes"
+      },
+      {
+        "id": "western_bridge_road",
+        "center": [
+          -98,
+          28
+        ],
+        "role": "Damaged crossing, waiting deliveries and repair work",
+        "preserve": "collapsed span, 72-unit deck, independent repair fact"
+      },
+      {
+        "id": "central_causeway",
+        "center": [
+          -3,
+          8
+        ],
+        "role": "Existing stone-road foundation reserved for reused ruins",
+        "preserve": "continuous existing route and generous side clearance"
+      },
+      {
+        "id": "northern_woodland",
+        "center": [
+          8,
+          -64
+        ],
+        "role": "Deeper woodland and working millrace context",
+        "preserve": "woodland loops, overlook and village\u2013millrace link"
+      },
+      {
+        "id": "sanctuary_ridge",
+        "center": [
+          90,
+          -66
+        ],
+        "role": "Wooded limestone approach; future landmark staging",
+        "preserve": "reserve contact/return, public apron, current solid outcrops"
+      }
+    ],
+    "causeway": {
+      "road_id": "south_town_road",
+      "points": [
+        [
+          10,
+          -1
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          -3,
+          8
+        ],
+        [
+          -15,
+          11
+        ],
+        [
+          -28,
+          14
+        ]
+      ],
+      "structures": "Step 2; no additional collision or crossing"
+    },
+    "antlers": {
+      "overhead_rect_tiles": [
+        44,
+        -86,
+        64,
+        43
+      ],
+      "collision": "none; do not solidify the hillside",
+      "regional_support_candidates": [
+        "sanctuary_ledge_5",
+        "sanctuary_upper_outcrop"
+      ],
+      "viewpoints": [
+        [
+          12,
+          -25
+        ],
+        [
+          42,
+          -45
+        ],
+        [
+          69,
+          -55
+        ],
+        [
+          90,
+          -62
+        ]
+      ],
+      "distant_view": "Separate background presentation in Step 2; no artificial cleared town-to-ridge corridor",
+      "detailed_support_plan": "assets/source/terrain/overworld/elden_vale/signature_landscape_hd/layout_plan.json"
+    },
+    "deferred": [
+      "Pale Antlers layers and cutaway",
+      "causeway structures",
+      "Rising Rain event/actions",
+      "final atlas regeneration"
+    ]
+  }
 }
