@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/mill/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -36,7 +36,7 @@
       "sort_y": 106,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/mill/cupboard.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/cupboard.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -56,7 +56,7 @@
       "sort_y": 0,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/mill/shelf.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/shelf.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -76,7 +76,7 @@
       "sort_y": 106,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/mill/pantry.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/pantry.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -139,7 +139,7 @@
       "sort_y": 250,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/mill/storage.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -159,7 +159,7 @@
       "sort_y": 130,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/mill/storage_b.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage_b.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -169,9 +169,41 @@
       ],
       "artwork_pixels_per_world_pixel": 2,
       "reduced_motion_frame": 0
+    },
+    {
+      "id": "mill.drivetrain",
+      "position": [
+        282,
+        104
+      ],
+      "logical_size": [
+        126,
+        72
+      ],
+      "sort_y": 176,
+      "sort_priority": 0,
+      "frames": [
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_00.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_01.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_02.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_03.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_04.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_05.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_06.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_07.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_08.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_09.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_10.png",
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_11.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "reduced_motion_frame": 0,
+      "animation_driver": "mill_wheel"
     }
   ],
-  "collision": "assets/maps/eldenmere/building_interiors/rooms/mill/collision.png",
+  "collision": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/collision.png",
   "foreground": [],
   "landmarks": [],
   "doors": [
@@ -1225,7 +1257,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/mill/storage_b.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage_b.png",
       "logical_size": [
         48,
         48
@@ -1233,7 +1265,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/mill/shelf.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/shelf.png",
       "logical_size": [
         48,
         24
@@ -1241,7 +1273,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/mill/storage.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage.png",
       "logical_size": [
         24,
         48
@@ -1287,7 +1319,65 @@
         48
       ],
       "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/mill/cupboard.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/cupboard.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/mill/shelf.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/shelf.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/mill/pantry.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/pantry.png",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/mill/storage.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage.png",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/mill/storage_b.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage_b.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "One tall working processing bay",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  },
+  "architecture_occupancy": [
+    {
+      "id": "mill_drivetrain_base",
+      "rect": [
+        300,
+        132,
+        96,
+        36
+      ]
+    }
+  ],
+  "architecture_collision_delta": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/collision_delta.png"
 }

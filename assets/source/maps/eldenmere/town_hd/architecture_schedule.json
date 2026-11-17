@@ -3,7 +3,7 @@
   "schema_version": 1,
   "coordinate_space": "logical world units unless named artwork; 2 artwork pixels per world unit",
   "projection": "orthogonal top-down JRPG; ground aligned to map axes, vertical walls rise above declared footprint; no horizon or convergence",
-  "status": "Crossings and all thirteen exterior shells integrated; interior architecture remains the next sequential PR",
+  "status": "Crossings, all thirteen exterior shells and fifteen retained interiors integrated; one real inn guest floor is connected through reciprocal stairs.",
   "protected_baseline_commit": "57d0613cb625c141a583ffef5588fb6b0c512e3c",
   "protected_southern_exit": {
     "position": [
@@ -1716,7 +1716,8 @@
       "identity": "Two-storey inn, common/reception below and guest floor above",
       "design": "inn_maintained",
       "interior_scenes": {
-        "inn": "assets/maps/eldenmere/town_hd/rooms/inn/map.json"
+        "inn": "assets/maps/eldenmere/town_hd/rooms/inn/map.json",
+        "inn_guest_floor": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json"
       },
       "position_world_logical": [
         192,
@@ -1811,7 +1812,17 @@
           26.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
-        "hearths": [],
+        "hearths": [
+          {
+            "scene": "inn",
+            "entity": "inn.hearth",
+            "position_logical": [
+              350,
+              24
+            ],
+            "wall": "right/rear common-room hearth; flue continues through upper east wall"
+          }
+        ],
         "flue_route": "right/rear wall; inn common-room fireplace/flue reserves right wall",
         "planned_before_native_review_logical": [
           154,
@@ -2194,6 +2205,102 @@
       "change": "Wall contact geometry now fits retained occupied ground at the mill annex and school sides. Native roof planes and cap emitter coordinates replace initial PR1 planning envelopes.",
       "gameplay_change": null,
       "preserved": "All logical canvases, positions, occupied ground, depth baselines, portal/entry contracts, collision/navigation, streets and PR2 crossings."
+    },
+    {
+      "scene": "mill",
+      "additions": [
+        {
+          "id": "mill_drivetrain_base",
+          "rect": [
+            300,
+            132,
+            96,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "inn",
+      "additions": [
+        {
+          "id": "inn_stair_west_stringer",
+          "rect": [
+            336,
+            204,
+            5,
+            80
+          ]
+        },
+        {
+          "id": "inn_stair_east_stringer",
+          "rect": [
+            391,
+            204,
+            5,
+            80
+          ]
+        },
+        {
+          "id": "inn_common_hearth_base",
+          "rect": [
+            353,
+            72,
+            42,
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "inn_guest_floor",
+      "additions": [
+        {
+          "id": "guest_bay_screen_1",
+          "rect": [
+            120,
+            72,
+            5,
+            126
+          ]
+        },
+        {
+          "id": "guest_bay_screen_2",
+          "rect": [
+            216,
+            72,
+            5,
+            126
+          ]
+        },
+        {
+          "id": "guest_bay_screen_3",
+          "rect": [
+            312,
+            72,
+            5,
+            126
+          ]
+        },
+        {
+          "id": "guest_stair_west_stringer",
+          "rect": [
+            336,
+            204,
+            5,
+            80
+          ]
+        },
+        {
+          "id": "guest_stair_east_stringer",
+          "rect": [
+            391,
+            204,
+            5,
+            80
+          ]
+        }
+      ]
     }
   ]
 }

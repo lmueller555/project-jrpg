@@ -54,7 +54,7 @@ class EldenmereSchoolTests(unittest.TestCase):
         self.assertTrue(world.can_stand(self.layout['approach']))
         self.assertIn('school',{landmark['id'] for landmark in world.data['landmarks']})
         self.assertEqual(len(world.doors),13)
-        self.assertEqual(len(world.data['interior_scenes']),17)
+        self.assertEqual(len(world.data['interior_scenes']),18)
 
     def test_well_to_school_route_and_entrance_remain_walkable(self):
         start=(600,816);goal=self.layout['approach'];world=self.town

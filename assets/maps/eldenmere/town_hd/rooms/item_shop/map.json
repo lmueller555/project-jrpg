@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/item_shop/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -54,7 +54,7 @@
       ],
       "sort_y": 168,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/item_shop/stock_shelf.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/stock_shelf.png"
       ],
       "phase_offset": 0,
       "frame_duration_ms": 600,
@@ -73,7 +73,7 @@
       ],
       "sort_y": 168,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/item_shop/bookcase.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/bookcase.png"
       ],
       "phase_offset": 0,
       "frame_duration_ms": 600,
@@ -1128,7 +1128,29 @@
         48
       ],
       "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/item_shop/stock_shelf.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/stock_shelf.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/item_shop/bookcase.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/bookcase.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "Decorative fixed potion, weapon and armor display; unchanged consumable service",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  }
 }

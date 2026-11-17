@@ -3,7 +3,7 @@
   "integration_status": "integrated",
   "artwork_pixels_per_world_pixel": 2,
   "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-  "recipe_sha256": "9011eb16f41e85148e34db8b63a720b575d6061e77d4cb91a3b3e0e28427c255",
+  "recipe_sha256": "722eff2585d621e7600f71f67c015c2271556b2d77ec92a3c745c9cfc66c35bc",
   "scenes": {
     "town": "assets/maps/eldenmere/playable/map.json",
     "upstream": "assets/maps/eldenmere/upstream/map.json",
@@ -18,7 +18,11 @@
     "liam_house": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json",
     "school": "assets/maps/eldenmere/building_interiors/rooms/school/map.json",
     "inn": "assets/maps/eldenmere/town_hd/rooms/inn/map.json",
-    "item_shop": "assets/maps/eldenmere/town_hd/rooms/item_shop/map.json"
+    "item_shop": "assets/maps/eldenmere/town_hd/rooms/item_shop/map.json",
+    "sanctuary_hall": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+    "sanctuary_bedroom": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+    "sanctuary_dining": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/map.json",
+    "inn_guest_floor": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json"
   },
   "businesses": [
     {
@@ -67,11 +71,15 @@
     },
     {
       "file": "architecture_schedule.json",
-      "sha256": "09e28794846e80fe5f572121db92d49fa4acdccb3f72e1b48c6905407da46114"
+      "sha256": "26889cd49d018df81a7be9286e9b1ab070f909f03aced9613cd94602c02f54ac"
     },
     {
       "file": "crossings/recipe.json",
       "sha256": "ed973bc2372ab7a07ea9e187d115c4b646aa07fc7ebe706cf18392c4cc783dd7"
+    },
+    {
+      "file": "interior_architecture/recipe.json",
+      "sha256": "16d221c1a6a5d9a3c073fc0f394448f663771242da854ba90fd045adee85461f"
     }
   ],
   "exports": [
@@ -5971,6 +5979,924 @@
       "sha256": "450f4e66412a4e78cb4b124a407149509e02c8492965f076c71bdd968ba957f2"
     },
     {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "73cc3c10f9eb6f16c262073f0b81f8c38ba6f0791ee210f89dc3c4e83cb170ec"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "de3c907b42f7adb7559d94000e38e9573b71e02abb946504fb0411a0ff624872"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3b646c5d1b0cf6e65716629fbe2e3b7d8e4296c38b5140bf3fededb7e6dba7ea"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/pantry.png",
+      "size_pixels": [
+        48,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "431f75af9aa443ab10d414fd29a9675835c07b573c5709949a69f6871dc40370"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage.png",
+      "size_pixels": [
+        48,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "431f75af9aa443ab10d414fd29a9675835c07b573c5709949a69f6871dc40370"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/storage_b.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "de3c907b42f7adb7559d94000e38e9573b71e02abb946504fb0411a0ff624872"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/collision.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "ae5ba4f1b2488eeb02f418959a54126f888948ed0d5b60edfff469e4e3369c26"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/collision_delta.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "b45dac48717659ea4b1bc231f2c0426d55442680fad83be88e5675ed488003ae"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mira/ground.png",
+      "size_pixels": [
+        720,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d170962da2f8caa76e2b7b0e70bdba48ec5fc011d9dd10bc7e60283bb629cb48"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mira/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d2cf10d7a94d6004e2a4b3ecd0b2681bab3494f2f1cbed557754714f8e1f7d91"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mira/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "db1b426745cdced20bce5016a803c81acdc1f1b5a1896ff3cbf8742713d02e57"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/school/ground.png",
+      "size_pixels": [
+        864,
+        768
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3e8ea82dcd56b7dd11fdd8e70cf52c7aab8200770693dadcdfd7dee6de13a4c8"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/ground.png",
+      "size_pixels": [
+        720,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d170962da2f8caa76e2b7b0e70bdba48ec5fc011d9dd10bc7e60283bb629cb48"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "484ba2bdd293c399d2ee45e8e83c49481a58361d8e3ae3d45b06d6bb2b6f598a"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "ecd6060fcbda738d09783e9160335f79fdf75c52dd21c3db22d02ad3d664de9f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "0d2c69adcf02954f94af213de18b7f2ee15814cbd6ffbfc0f0e5add6eeb51e12"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/elira/ground.png",
+      "size_pixels": [
+        576,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "54c97c2007ef1f30149a968baf5bd84400d3751e68dd3b5d72a6df6bede1c3ec"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/elira/bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "69342d50b19b2760f8367b8679b6cb4fc180da22abfe29925ff435db43d95cbc"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/elira/pantry.png",
+      "size_pixels": [
+        48,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a07130c27ac0656fe1151a339028f136e30693b193848c99968508e52cb1e3b3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "cd4040edc27a5ffc4664c9f1e61ed4f9807a40a5f800a5d0b31af021c9ebd5f5"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3f9e00d5c42a44728be5115bce4931cc008c52afe8bf220bf2b050af9b9c1d79"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "41072dfcb4fcef15bb0ff828971f093de123737bfad18ab7975e98cf57bdc223"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f5b0d4302b22fa35531007cb8f14139b0048e4825b5eac1a3b6104516b78ab56"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/pantry.png",
+      "size_pixels": [
+        48,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "6484e8bd7be03e28b7883a0d05b930a88a34342cb1d9f4bb00012783a4a53fd3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_a/ground.png",
+      "size_pixels": [
+        720,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "9c9cb57199a68207e286d8628fa62e43f22bfaeca9e0a338b3ed7ca15a7546c3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_a/bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "44322d36fcf6f35a2143127ad1fbd7aea5417eda1569eec16234548ce23d0e62"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_a/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f35d6e4611ca617bead692be6a265d640d61e767fd0f61bc71e20d364a5feb4b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_a/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "df4218c69fcd90ade79b8e94f0b4d1f022b17bc1d38ceaab994cb71ae1969957"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_a/tessa_bed.png",
+      "size_pixels": [
+        64,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "6177a46c92f524eb0b74530a9802ceb098d098cb2cab25c89a41b331f691882e"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_a/finn_bed.png",
+      "size_pixels": [
+        64,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "2ec7c739a3080d2b0d448e946d76a0ff40ba0416c7c412433356ab62195b8351"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_b/ground.png",
+      "size_pixels": [
+        720,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "8b205439440eab1b158b00339969cb5559f2b3ae715e097948c3dd664887ca6d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_b/bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d7a80d723e002b574e8ec452a387ffd3dede0fc20dc37da1ca35b10198bf3236"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_b/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "1b6d53465ab77955223d5d1b1291b35a50fb6883a9623134746d53fa4609c353"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_b/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e95025695df0b2542c30689b183f380875783bb4377ec39e0dbba5bb3d03e9ca"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_b/rowan_bed.png",
+      "size_pixels": [
+        64,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "33ac9de20e5056daee865bb12c35b409adf3dcae8295b73094b7b3d2952aafcd"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_b/ada_bed.png",
+      "size_pixels": [
+        64,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "da9463250940362e55628891942b64c5e912ab4af5f07ced66464cd69ab95786"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/ground.png",
+      "size_pixels": [
+        720,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "55c1ee7f267270e745f605cec1470ad30efcd0c3e73b446f0a43ce7ff560afea"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "da4c35d24e29597aa1c9edc5bdbb1a094c3def5c6fcf21029630453ed649cb95"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "7876126e8f844510391a9331dbb2684112d2a636c40ff59f77afc0da371cd8c9"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "ae288fa5e245b9cc6463f7d51a65740a13b3ae8a94c42116a484d1c4c92621f5"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/pippa_bed.png",
+      "size_pixels": [
+        64,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "911f40a7af2df09ec7395f5caade2213dd1636a16f5e840e550119058b86d577"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/liam_house/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "cd4040edc27a5ffc4664c9f1e61ed4f9807a40a5f800a5d0b31af021c9ebd5f5"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/liam_house/parents_bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e645cc4454d18493c4b2e04adfc2b1fabe2e9ea217720acbc38daadbc340cfa9"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/liam_house/cupboard.png",
+      "size_pixels": [
+        96,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "9537e444969bca9614e244f5a5c774f50831b550e15133fee204346e5fe12348"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/liam_house/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "02f634ce739d9e93dd41311d29467ae46d70dfb62be3581ef3774419ad8bc53d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/liam_house/pantry.png",
+      "size_pixels": [
+        48,
+        96
+      ],
+      "pixel_space": "artwork",
+      "sha256": "6e26352d033e092d2d4378028e0dfafa972e732559056fbb9e4ee937bbc62bb0"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/liam_house/liam_bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "70b81ffe4a4e7ea09ec1b54364812a3f2b028045d93852af39cb5afee539b033"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "697e57d70c017aac6f201f4e91b9dd2adcca04d85e183bc7bfe4e1d7ff895481"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/guest_bed.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "0ee48ed5b546d0226c7090a0b91ed1b07c8a52d7394d7c89c461ae14035092cf"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/guest_bed_east.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "864cf5a2751cae0aaec835a500fb13160e32f70fc4cd70bb1e24d322a1a9dd66"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/shelf.png",
+      "size_pixels": [
+        96,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3db63c9355e91949d8fc7ef2950649e8ea4fa92953dbc7abb60623f0aa44f71b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/collision.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "878f09c9f04d80966d76888598d951f5300800b372ca81f22154f15438731662"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/collision_delta.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "8260d3ef5dd2b10811f3ad310c96ad665bc5ec7229974e1d6edcbd808b894271"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "697e57d70c017aac6f201f4e91b9dd2adcca04d85e183bc7bfe4e1d7ff895481"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/stock_shelf.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "f6f2c96aa6a475cf5be2f354c7762787cecc44b5422bec30172dd58cc32e52c3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/item_shop/bookcase.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c6f0edf485460e292c318b4dd35606b9ca3bc769195d633229d0177461e71dd7"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/sanctuary_hall/ground.png",
+      "size_pixels": [
+        672,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "57ae974e1b42f2a2c523f5f1e3629c5cb9fafcb7949efeb79c9e765a039fde5f"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/sanctuary_bedroom/ground.png",
+      "size_pixels": [
+        576,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "0dc75c814682b18fa25edee3a05810ab5b8e3a0969c2a147cc954f92af36e9f2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/sanctuary_dining/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "796f7422472ad466b32fabd86413e5b8517c9a29004d03c1a6d970f5980fda54"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_00.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "93f435a4107acd4013b2bca8314c6799cadab24e6dca9a630cc0e16acda34a6d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_01.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "666c9577b5a7f4aebf1296e2307463dd83f73e72e8a030c81ea4349fe48e49a2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_02.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "5577c5442ae4772b3daa17af0fcb7276266afa487c33bffb04f5363d8229b643"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_03.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a8e0ff407c0c1c0d3e5321e6396e2a07a6989220745f88c536c6c8ff2ba8b7c2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_04.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "ef2672e1315fd41d9eed720fe9920ce7513fefb55f3a97703282842de39a1bc0"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_05.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b41383e4f1a7575abdd706006631672e8925e21399d37a1be9e3a5cc4b52cbb1"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_06.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "79ebe83256923703f3e13c97d4faea82a855074680280b6027edd4f4b2c3a862"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_07.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "01379b17bfcd92d9d75aaf56d915bf84b66fc12f24e8a697525e008e4ea3cae3"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_08.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "32c6269a2c9a317511c6cc6972884c22fc26a5290e6a1b6fa856c5af193a5697"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_09.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d5d099d4d12ab954afacb0ce997ab4ddb6a6626b44ed7926ae272ebbe3d417c1"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_10.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "69037d0a6632cc46c8d624c2277bd8cc07e08d500c5ef6731965b44e06d29afe"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/mill/drivetrain_11.png",
+      "size_pixels": [
+        252,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "2983f6b6fa3142cc46508549549baa493467bf055e88195049ecef66a66cf08e"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/hearth.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "d7cac2c010ecac243a0cd326bef7551228c68d252e7d5911f43ee59a387ad6b5"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_bed_1.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "1cababd046a2918af68211b489db5ee4eaa63d2e69016bad8d090e1a68d88157"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_chest_1.png",
+      "size_pixels": [
+        48,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b97a408699d6f482dcd12d1b678f2506c6b80cf78b31451cb12986ce23a0fc39"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/bedside_1.png",
+      "size_pixels": [
+        40,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c105c75dec7cca4a5eeff540c4c3ea5c9b585ce9870d9ebcc72c47f7e28b2e1d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_bed_2.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "90bb05c2b60b3b1e8bdb335c137d6f369ea1d04265a53e279b5e84f95eaf9215"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_chest_2.png",
+      "size_pixels": [
+        48,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b97a408699d6f482dcd12d1b678f2506c6b80cf78b31451cb12986ce23a0fc39"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/bedside_2.png",
+      "size_pixels": [
+        40,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c105c75dec7cca4a5eeff540c4c3ea5c9b585ce9870d9ebcc72c47f7e28b2e1d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_bed_3.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "cbf18aa9246c7614264a35d82c184850767a9c289878074808883ca2b896d05b"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_chest_3.png",
+      "size_pixels": [
+        48,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b97a408699d6f482dcd12d1b678f2506c6b80cf78b31451cb12986ce23a0fc39"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/bedside_3.png",
+      "size_pixels": [
+        40,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c105c75dec7cca4a5eeff540c4c3ea5c9b585ce9870d9ebcc72c47f7e28b2e1d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_bed_4.png",
+      "size_pixels": [
+        96,
+        144
+      ],
+      "pixel_space": "artwork",
+      "sha256": "a2d825a37a971a2a6c4b0a386e06ab843f39c03b79d7456082ed580d8f3d8a36"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/guest_chest_4.png",
+      "size_pixels": [
+        48,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "b97a408699d6f482dcd12d1b678f2506c6b80cf78b31451cb12986ce23a0fc39"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/bedside_4.png",
+      "size_pixels": [
+        40,
+        48
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c105c75dec7cca4a5eeff540c4c3ea5c9b585ce9870d9ebcc72c47f7e28b2e1d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/screen_1.png",
+      "size_pixels": [
+        12,
+        272
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c6ae3c2416446a15e4b8a80975caea63cd4f8fca609a17206875883f5e9e2fcc"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/screen_2.png",
+      "size_pixels": [
+        12,
+        272
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c6ae3c2416446a15e4b8a80975caea63cd4f8fca609a17206875883f5e9e2fcc"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/screen_3.png",
+      "size_pixels": [
+        12,
+        272
+      ],
+      "pixel_space": "artwork",
+      "sha256": "c6ae3c2416446a15e4b8a80975caea63cd4f8fca609a17206875883f5e9e2fcc"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/flue.png",
+      "size_pixels": [
+        24,
+        104
+      ],
+      "pixel_space": "artwork",
+      "sha256": "73ad15f49427bfd00b65606c940df72eeeffc0a4893c88ae4629a4b3ad87c980"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/collision_base.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "0e87c8c332fd776f0bce83370cdbf608b9b2161306dc903197c568a441b4f659"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/ground.png",
+      "size_pixels": [
+        864,
+        672
+      ],
+      "pixel_space": "artwork",
+      "sha256": "2640118ba2084c55d12527eda6aff26456efb9fd909ac95a5161b026a04b0f08"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/collision.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "f92bad52fd09d46758d18e85a1814835b77781e8693a4bccd050ad3709f6ca75"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/collision_delta.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_geometry",
+      "sha256": "46a00bbe2978942c387dd9807bb40bdd1b9859a89b3c3512e5611677723aa032"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/stairs.png",
+      "size_pixels": [
+        120,
+        168
+      ],
+      "pixel_space": "artwork",
+      "sha256": "81c47c6d9f9be62da8a71808e5216f6ae4549bdcb2f2a8fbd5d57cf647c47a25"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn_guest_floor/stairs.png",
+      "size_pixels": [
+        120,
+        168
+      ],
+      "pixel_space": "artwork",
+      "sha256": "30b2a9ada4485d415b4a2bb3194a5f08c145869b554b76631dc6989653363460"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/table.png",
+      "size_pixels": [
+        128,
+        56
+      ],
+      "pixel_space": "artwork",
+      "sha256": "ce72d8e1320ecef6cc27384b501811ef585290e15b3f2f27489109133c6015fb"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/drawing.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3a89112cdf3039c6a11e8dd50817cc56b70b0dff05afd5dcf1fc27aad3eace9d"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/materials.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3b3964920da9b03e32fbbfaf69d677f1c6862cb1419e00f2fa3224e276e1da54"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/test.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "491ece8b4e091902c41d6d46b67f742894f30c21e87034a12b6a14b63c93f8bb"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/partial.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "e06e3ebbd899e269e2be431a8a649e9700e129cb03be13d5feea56ed3eed2c4c"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/frame.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "fee331d04f60478a1fe479c538ce0101773fc89be4baea46975506fdeab511ac"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/lifted.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "3b3964920da9b03e32fbbfaf69d677f1c6862cb1419e00f2fa3224e276e1da54"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/ready.png",
+      "size_pixels": [
+        128,
+        112
+      ],
+      "pixel_space": "artwork",
+      "sha256": "91918fa055a8e09498d24c92d0fde66e5400d6f92ae66d46c9a236bf9ed56b57"
+    },
+    {
       "file": "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_0.png",
       "size_pixels": [
         384,
@@ -7417,7 +8343,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "f12f4d927e7beddaed8e3fdaf1b8c018f1e1362aa34de4044422184f6b00f6f1"
+      "sha256": "c9dc3d336287ec946187a8209f56011e3fe3b0398474e11bc5ecd22df35d05df"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/elira/overview.png",
@@ -7426,7 +8352,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "91ea620d48911acc87f54ed269d0dcf3983561ccacd403a77679605da4c6b7ab"
+      "sha256": "0eecb609aca3b42b3d1fc5bfe3ffc49d78eee86e423a9c614560d25707512e2b"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/venn/overview.png",
@@ -7435,7 +8361,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "4cf90c2d287facbfe57c7a623ffebfc085d3cceb40e665c29b0430aa11da6037"
+      "sha256": "43c24fc63e653e9e0d7a600f8d49f36fe3386f9d6134ac6f448f87f2f630ae45"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/home_a/overview.png",
@@ -7444,7 +8370,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "eb8ce08accb33f8e5ae9f72be9663b5ea1f7adea444504f3a45849d8565dd06b"
+      "sha256": "9705022ba7b7a48ef154484f708960d1df5af5b71e364b031b582faad2dab94a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/home_b/overview.png",
@@ -7453,7 +8379,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "eb8ce08accb33f8e5ae9f72be9663b5ea1f7adea444504f3a45849d8565dd06b"
+      "sha256": "ea85c7d79337c4ce7921821aebeda85994b39e39da9c000685dde544060b0710"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/home_c/overview.png",
@@ -7462,7 +8388,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "d5d0935fd2546984f3f9b90c641e0b38d604fcd52e4ecb78e53b9f286b0b04da"
+      "sha256": "370e52d29d2ff652d4b5cb184f1f5ba083e358148643d3d9f2863f566f7116d3"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/mira/overview.png",
@@ -7471,7 +8397,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "4114f20e9a200cebc98fa520cc33dae27be5dbad5ed85807fec6df507da613eb"
+      "sha256": "25bd81022b7f94db6ea9843c0163f9ce2048af14394416e7f8c6887e79473203"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/mill/overview.png",
@@ -7480,7 +8406,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "f97ed9d1b7cc5ea05689fdfcf0b7fd9a8c630e16d060ba9a781a240b0d06a6c3"
+      "sha256": "03268f68624698fbd8fdec8125ce14d8994bd0a5d3b4f1f8c91b0ece3c17fa35"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/liam_house/overview.png",
@@ -7489,7 +8415,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "5935f371375d8e3d1c38bac65ecb48ea90cb0cd835f985778f28b5876f999862"
+      "sha256": "ad8a2b334542ad783e0dedd229bce227ef7af1eb530261a7c1b2c26eca17dba6"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/school/overview.png",
@@ -7498,7 +8424,7 @@
         384
       ],
       "pixel_space": "logical_ui",
-      "sha256": "4508dbaa94f35391f80586b207c5889971667cddc4cf7450fc2e1091238be52f"
+      "sha256": "937f747060753578d72aaf0074d7b1cbdea978a80740421bb18476268448a22a"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/inn/overview.png",
@@ -7507,7 +8433,7 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "2e4ac8761ba58e15ff41b7e46beb68bdfe804afd5e1ac6cde75e18aec92a9531"
+      "sha256": "4476b38bcda9ab2a9f1767a9d1f8b083a3da46d8799ecc87ae7bfdd5234bee7f"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/item_shop/overview.png",
@@ -7516,7 +8442,43 @@
         336
       ],
       "pixel_space": "logical_ui",
-      "sha256": "ae59f2c4f75f9cce7f417d751d5faaa3b0f3f440ac8e72e334b056cc3827a124"
+      "sha256": "3e4a909abec7c08ee555b7c250652b543a0925295a95e1526b2918c193f021f1"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/sanctuary_hall/overview.png",
+      "size_pixels": [
+        336,
+        336
+      ],
+      "pixel_space": "logical_ui",
+      "sha256": "4f4534fcc20851ca361630fae91fcb146c40ff57ad03b7412c97dd31a08fc125"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/sanctuary_bedroom/overview.png",
+      "size_pixels": [
+        288,
+        336
+      ],
+      "pixel_space": "logical_ui",
+      "sha256": "5a54f6240db7078e22398ff37557c1c05ea3096febfe3bbf4dc541e16ff832d2"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/sanctuary_dining/overview.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_ui",
+      "sha256": "a6ef5e7b765b1d15896d73c2f09704a035b8bae30e11eeff0827d8b1de53335a"
+    },
+    {
+      "file": "assets/maps/eldenmere/town_hd/inn_guest_floor/overview.png",
+      "size_pixels": [
+        432,
+        336
+      ],
+      "pixel_space": "logical_ui",
+      "sha256": "6174e17a911a1cf029e86e8e3cbed1589c92969579d6e65533ee9321e5cc73a0"
     }
   ],
   "settlement_framework": {
@@ -7527,7 +8489,7 @@
     "active_ground_treatments": 31
   },
   "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
-  "architecture_schedule_sha256": "09e28794846e80fe5f572121db92d49fa4acdccb3f72e1b48c6905407da46114",
+  "architecture_schedule_sha256": "26889cd49d018df81a7be9286e9b1ab070f909f03aced9613cd94602c02f54ac",
   "crossings": {
     "upper_bridge": {
       "id": "upper_bridge",
@@ -7951,5 +8913,6 @@
       "ground_selection": "town ground_overlays, after water in every phase"
     }
   },
+  "interior_architecture": "assets/maps/eldenmere/town_hd/interior_architecture.json",
   "services": "Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json."
 }

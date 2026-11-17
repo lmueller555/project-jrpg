@@ -341,7 +341,7 @@ def products():
     # Regional/Sanctuary landmarks have no town placement or shadow substitute.
     town['landmark_layers']=[]
     from tools.eldenmere_architecture_contracts import validate_schedule
-    schedule=read(rec['architecture_schedule']);validate_schedule(schedule,town)
+    schedule=read(rec['architecture_schedule'])
     town['architecture_schedule']=rec['architecture_schedule']
     town['size_pixels']=size;town['size_tiles']=[v//24 for v in size];town['collision']=ex.png('town/collision',collision);town['navigation_allowed']=ex.png('town/navigation_allowed',allowed)
     # The expansion's painted road, route destination and automatic scene
@@ -376,6 +376,7 @@ def products():
         shell=architecture(original,layout,'hall');ground=ex.png('rooms/'+name+'/ground',shell.convert('RGB'));data['ground_frames']=[ground];data['artwork_pixels_per_world_pixel']=2;data['ground_overlays']=[];data['pause_on_focus_loss']=True
         prev={e['id']:e for e in original['entities']};data.setdefault('art_replacements',{})
         for e in data['entities']:
+            if name=='mill' and e['id']=='mill.drivetrain':continue
             before=prev[e['id']];size=tuple(before.get('logical_size') or Image.open(ROOT/before['frames'][0]).size);identifier=e['id'];kind=e.pop('_kind',mappings.get(identifier,identifier))
             if identifier.startswith('pupil_chair'):kind='chair_south'
             if identifier.startswith('pupil_desk'):kind='pupil_desk'
@@ -431,6 +432,11 @@ def products():
                 path=ex.png('rooms/elira/shelf_'+state,im);data['art_replacements'][legacy]=ex.art(path,size)
                 if state=='full':shelf['frames']=[path]
         data['art_bank']=PACK+'/manifest.json'
+    # One source-owned PR4 extension dresses retained fixtures and registers
+    # the real guest floor; it never changes services, quest or actor ownership.
+    from tools.eldenmere_interior_architecture import apply_interior_architecture
+    apply_interior_architecture(maps,paths,ex,furnishing)
+    validate_schedule(schedule,town,scene_records=maps)
     # Upstream remains a separate scene with identical boundaries and quest stations.
     upstream=maps['upstream'];udirt={(x,y) for x in range(6,9) for y in range(9,24)}|{(x,y) for x in range(8,20) for y in range(12,15)}|{(x,y) for x in range(17,22) for y in range(9,19)}
     ubase=materials.ground(upstream['size_pixels'],udirt);uwater={(x,y) for x in range(-1,33) for y in range(4,7)}|{(x,3) for x in [4,5,6,7,8,16,17,18,19]}|{(x,7) for x in [2,3,4,13,14,15,25,26,27]}
@@ -541,7 +547,7 @@ def products():
     from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
     settlement=framework(ROOT,town,rec['settlement_recipe'],image_loader=ex.load)
     ex.json(SETTLEMENT_MANIFEST,settlement)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':settlement['active_placements'],'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':settlement['active_placements'],'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'interior_architecture':PACK+'/interior_architecture.json','services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

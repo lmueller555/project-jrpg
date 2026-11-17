@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/school/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/school/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -1644,5 +1644,11 @@
       "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "Existing school and lesson routes",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  }
 }

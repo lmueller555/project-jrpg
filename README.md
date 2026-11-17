@@ -36,6 +36,11 @@ Object interactions also follow the
 [prop policy](docs/PERSONAL_PROPS.md). Contributor instructions are in
 [AGENTS.md](AGENTS.md).
 
+Eldenmere's interiors include a working mill and a real upstairs inn guest floor,
+connected by reciprocal stairs. The existing downstairs guest-bed recovery and
+shop transactions are unchanged. See the [interior architecture review](docs/reviews/eldenmere_interior_architecture/README.md)
+for native before/after captures, movement, Save/Continue and preservation checks.
+
 Save Game and Load Game now provide ten manual slots and three autosave
 generations per journey. Scene entry and completed battles trigger autosaves;
 party defeat opens Game Over with manual-save/autosave loading. Quest Playtests

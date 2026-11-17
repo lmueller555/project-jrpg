@@ -125,7 +125,8 @@ class BuildingDoors(unittest.TestCase):
 
     def test_all_rooms_have_reachable_exits_and_furnishings(self):
         scenes=self.game.town.data['interior_scenes']
-        self.assertEqual(len(scenes),17)
+        self.assertEqual(len(scenes),18)
+        self.assertIn('inn_guest_floor',scenes)
         for name,path in scenes.items():
             with self.subTest(room=name):
                 world=main.World(main.ROOT/path,self.game.town._images)

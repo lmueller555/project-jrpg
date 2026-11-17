@@ -2360,7 +2360,8 @@
     "elden_vale_sanctuary_hall": "assets/maps/elden_vale_sanctuary_hall/map.json",
     "elden_vale_sanctuary_relief": "assets/maps/elden_vale_sanctuary_relief/map.json",
     "inn": "assets/maps/eldenmere/town_hd/rooms/inn/map.json",
-    "item_shop": "assets/maps/eldenmere/town_hd/rooms/item_shop/map.json"
+    "item_shop": "assets/maps/eldenmere/town_hd/rooms/item_shop/map.json",
+    "inn_guest_floor": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json"
   },
   "layout_additions": [
     "assets/maps/eldenmere/liam_house/house.json",
@@ -20283,7 +20284,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/table.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/294e724748d9.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/table.png",
       "logical_size": [
         64,
         28
@@ -20291,7 +20292,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/drawing.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ca5c79a2ae66.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/drawing.png",
       "logical_size": [
         64,
         56
@@ -20299,7 +20300,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/materials.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f813fff0edc7.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/materials.png",
       "logical_size": [
         64,
         56
@@ -20307,7 +20308,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/test.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/044e14f9bbfa.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/test.png",
       "logical_size": [
         64,
         56
@@ -20315,7 +20316,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/partial.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4288fcb41156.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/partial.png",
       "logical_size": [
         64,
         56
@@ -20323,7 +20324,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/frame.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f8876d58d960.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/frame.png",
       "logical_size": [
         64,
         56
@@ -20331,7 +20332,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/lifted.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/7ac4e5053bb7.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/lifted.png",
       "logical_size": [
         64,
         56
@@ -20339,7 +20340,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/story/lantern/props/ready.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/a93be74b4f88.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/lantern_workshop/ready.png",
       "logical_size": [
         64,
         56

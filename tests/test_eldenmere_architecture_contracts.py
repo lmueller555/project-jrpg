@@ -28,9 +28,9 @@ class ArchitectureContractsTests(unittest.TestCase):
         self.assertEqual(inn['stairs']['reserved_footprint_logical'],[336,204,60,84])
         self.assertEqual(inn['stairs']['clear_landing_logical'],[336,288,60,24])
         self.assertEqual(inn['entrance']['destination'],self.town['interior_scenes']['inn'])
-    def test_mira_mill_school_retained_hearths_have_corresponding_right_flues(self):
+    def test_mira_mill_school_inn_hearths_have_corresponding_right_flues(self):
         for r in self.schedule['buildings']:
-            if r['id'] in ('mira','mill','school'):
+            if r['id'] in ('mira','mill','school','inn'):
                 self.assertEqual(len(r['chimney']['hearths']),1)
                 self.assertGreater(r['chimney']['position_logical'][0],r['logical_canvas'][0]/2)
     def test_town_excludes_antlers_but_separately_owned_views_and_shared_art_remain(self):

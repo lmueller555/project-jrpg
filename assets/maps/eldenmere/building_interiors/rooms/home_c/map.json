@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/home_c/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -36,7 +36,7 @@
       "sort_y": 162,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/home_c/bed.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/bed.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -56,7 +56,7 @@
       "sort_y": 262,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/home_c/cupboard.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/cupboard.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -76,7 +76,7 @@
       "sort_y": 0,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/home_c/shelf.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/shelf.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -220,7 +220,7 @@
       "sort_y": 140,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/home_c/pippa_bed.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/pippa_bed.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -1384,7 +1384,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/home_c/bed.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/bed.png",
       "logical_size": [
         48,
         72
@@ -1392,7 +1392,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/home_c/cupboard.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/cupboard.png",
       "logical_size": [
         48,
         48
@@ -1400,7 +1400,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/home_c/shelf.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/shelf.png",
       "logical_size": [
         48,
         24
@@ -1480,7 +1480,39 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/child_beds/plum.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/home_c/pippa_bed.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/pippa_bed.png",
+      "logical_size": [
+        32,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/home_c/bed.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/bed.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/home_c/cupboard.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/cupboard.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/home_c/shelf.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/shelf.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/home_c/pippa_bed.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/home_c/pippa_bed.png",
       "logical_size": [
         32,
         48
@@ -1488,5 +1520,11 @@
       "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "Existing household with Pippa",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  }
 }
