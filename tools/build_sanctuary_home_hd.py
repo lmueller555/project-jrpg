@@ -4,7 +4,7 @@ import hashlib
 import json
 import math
 
-from PIL import Image
+from PIL import Image, ImageDraw
 if __package__:
     from .build_sanctuary_dining_hd import cell,export_sprite,save
 else:
@@ -39,6 +39,55 @@ def architecture(original,layout,room):
     return shell
 
 
+def door_poses(atlas, recess=None, sill_colors=None):
+    """Five registered leaves over one shallow, orthogonal timber passage.
+
+    Artwork coordinates are native 2x pixels. The 24x36 world portal,
+    west hinge and existing travel sensor stay fixed. The darkened adjoining
+    floor is architectural context, not a miniature room or extra walkable area.
+    """
+    closed=export_sprite(cell(atlas,12,4),(48,72),fit=False)
+    frame=export_sprite(cell(atlas,13,4),(48,72),fit=False)
+    if recess is None:
+        passage=Image.new('RGBA',(48,72),'#24302d')
+        d=ImageDraw.Draw(passage)
+        # A quiet shaded interior beyond the frame, with straight vertical returns.
+        d.rectangle((4,6,43,67),fill='#574c3d')
+        d.rectangle((7,10,40,43),fill='#625847')
+        d.rectangle((7,39,40,43),fill='#453a2d')
+        d.line((8,39,39,39),fill='#79684e')
+        # Horizontal plank tops continue back from the threshold without converging.
+        for row,y in enumerate(range(44,68,6)):
+            d.rectangle((7,y,40,min(y+5,67)),fill=('#6c563d','#725b40')[row%2])
+            d.line((7,y,40,y),fill='#42392c')
+            d.line((10,y+1,38,y+1),fill='#857052')
+            seam=19 if row%2 else 31
+            d.line((seam,y+1,seam,y+5),fill='#54432f')
+        d.rectangle((4,6,6,67),fill='#302a23')
+        d.line((7,10,7,67),fill='#887050')
+        d.rectangle((41,6,43,67),fill='#3f3427')
+        d.line((40,10,40,67),fill='#756247')
+    else:
+        if recess.mode != 'RGBA' or recess.size != (48,72):
+            raise ValueError('Doorway recess must match the native portal canvas')
+        passage=recess.copy()
+    sill,sill_light,sill_mid,sill_shadow=sill_colors or ('#40382c','#c3b18a','#a18e69','#827052')
+    # Retained source cap/jambs are fixed across every pose, drawn in front.
+    passage.alpha_composite(frame)
+    leaf=closed.crop((4,6,44,70))
+    frames=[]
+    for width in (40,32,23,12,3):
+        image=passage.copy()
+        image.alpha_composite(leaf.resize((width,64),Image.Resampling.NEAREST),(4,6))
+        # Stable sill remains visible below the opening/leaf in every state.
+        edge=ImageDraw.Draw(image)
+        edge.rectangle((4,68,43,71),fill=sill)
+        edge.line((5,68,42,68),fill=sill_light)
+        edge.line((5,69,42,69),fill=sill_mid)
+        edge.line((5,70,42,70),fill=sill_shadow)
+        frames.append(image)
+    return frames
+
 def build():
     recipe=json.loads((SOURCE/'recipe.json').read_text())
     atlas_path=SOURCE/'props_atlas.png'
@@ -53,15 +102,8 @@ def build():
         path=save(image,OUT/f"props/{item['id']}.png")
         replacements[item['legacy_path']]=path
         exports.append({**item,'image':path,'artwork_size':list(size),'artwork_pixels_per_world_pixel':2})
-    closed=export_sprite(cell(atlas,12,4),(48,72),fit=False)
-    frame=export_sprite(cell(atlas,13,4),(48,72),fit=False)
-    # A rigid leaf narrows about its left hinge. Registration, jamb and portal
-    # footprint remain fixed; only this mechanical opening projection changes.
-    leaf=closed.crop((4,6,44,70));door_frames=[]
-    for index,width in enumerate((40,32,23,12,3)):
-        image=Image.new('RGBA',(48,72),'#24302d');image.alpha_composite(frame)
-        image.alpha_composite(leaf.resize((width,64),Image.Resampling.NEAREST),(4,6))
-        door_frames.append(save(image,OUT/f'doors/frame_{index+1:02}.png'))
+    door_frames=[save(image,OUT/f'doors/frame_{index+1:02}.png')
+                 for index,image in enumerate(door_poses(atlas))]
     window=str((DINING/'architecture/window.png').relative_to(ROOT))
     manifest_rooms={}
     for name,spec in recipe['rooms'].items():

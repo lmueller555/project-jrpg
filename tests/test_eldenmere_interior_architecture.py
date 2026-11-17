@@ -101,6 +101,26 @@ class InteriorRecipeTests(unittest.TestCase):
                     self.assertFalse(door['requires_open'])
                     self.assertEqual(door['frames'],[])
 
+    def test_south_exit_sill_marks_sensor_and_landing_matches_destination_family(self):
+        samples={}
+        palette=recipe()['palette']
+        sill=tuple(bytes.fromhex(palette['stone'][1:]))
+        cap=tuple(bytes.fromhex(palette['oak_light'][1:]))
+        for name in recipe()['rooms']:
+            data=self.maps[name]
+            door=next(d for d in data['doors'] if d['entry_side']=='south')
+            ground=self.ex.load(data['ground_frames'][0]).convert('RGB')
+            x,y=map(int,door['anchor'])
+            at=lambda dx,dy:ground.getpixel(((x+dx)*2,(y+dy)*2))
+            with self.subTest(room=name):
+                self.assertEqual(at(0,2),sill)
+                self.assertNotEqual(at(0,-8),sill)
+                self.assertEqual(at(-15,-7),cap)
+                self.assertEqual(at(15,-7),cap)
+                self.assertEqual(at(0,22),(36,48,45))
+                samples[name]=ground.crop(((x-10)*2,(y+6)*2,(x+10)*2,(y+14)*2)).tobytes()
+        self.assertEqual(len({samples[n] for n in ('liam_house','school','sanctuary_bedroom')}),3)
+
     def test_all_new_art_uses_native_density_and_hard_alpha(self):
         for path,raw in self.ex.out.items():
             if not path.endswith('.png'):continue

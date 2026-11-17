@@ -1151,6 +1151,12 @@ The source-owned `tools/eldenmere_interior_architecture.py` extension runs insid
 that same live composer. It preserves room identities, fixture positions, stateful
 quest objects, actor ownership and services. Southern cutaway exits show an actual
 opening, side returns and threshold rather than a mat against continuous walls.
+Put the high-contrast sill on the existing transfer line and a shallow strip
+of destination material beyond it. Use plaster-and-timber or masonry returns
+appropriate to the room; don't add a full-height frame over a south cutaway.
+For north-wall doors, keep the frame and sill registered while the leaf opens
+over a shaded destination floor. The inn distinguishes climbing from
+descending with riser lighting and a recessed well, not directional markers.
 The mill’s east-wall axle, gearing, spindle and stones form one processing assembly;
 its motion reads the existing wheel stop state, with fixed supports and a static
 reduced-motion frame. Workshop supplies, household storage/bedding and decorative
