@@ -285,10 +285,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            82,
-            73
+            0,
+            61,
+            96,
+            44
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -302,10 +302,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              82,
-              73
+              0,
+              61,
+              96,
+              44
             ]
           }
         ],
@@ -315,13 +315,28 @@
           72,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              69,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              73,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           73,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           68,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -1153,10 +1168,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            106,
-            73
+            0,
+            61,
+            120,
+            44
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -1170,10 +1185,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              106,
-              73
+              0,
+              61,
+              120,
+              44
             ]
           }
         ],
@@ -1183,13 +1198,28 @@
           96,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              87,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              91,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           91,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           86,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -1559,10 +1589,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            106,
-            73
+            0,
+            61,
+            120,
+            44
           ],
           [
             14,
@@ -1582,10 +1612,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              106,
-              73
+              0,
+              61,
+              120,
+              44
             ]
           }
         ],
@@ -1595,13 +1625,28 @@
           96,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              86,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              90,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           90,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           85,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -1971,10 +2016,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            106,
-            73
+            0,
+            61,
+            120,
+            44
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -1988,10 +2033,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              106,
-              73
+              0,
+              61,
+              120,
+              44
             ]
           }
         ],
@@ -2001,13 +2046,28 @@
           96,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              86,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              90,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           90,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           85,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -2628,10 +2688,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            130,
-            73
+            0,
+            61,
+            144,
+            44
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -2645,10 +2705,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              130,
-              73
+              0,
+              61,
+              144,
+              44
             ]
           }
         ],
@@ -2658,13 +2718,28 @@
           120,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              112,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              116,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           116,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           111,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -3074,10 +3149,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            130,
-            73
+            0,
+            61,
+            144,
+            44
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -3091,10 +3166,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              130,
-              73
+              0,
+              61,
+              144,
+              44
             ]
           }
         ],
@@ -3104,13 +3179,28 @@
           120,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              112,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              116,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           116,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           111,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -3520,10 +3610,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            52,
-            130,
-            75
+            0,
+            77,
+            144,
+            50
           ],
           [
             14,
@@ -3543,10 +3633,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              52,
-              130,
-              75
+              0,
+              77,
+              144,
+              50
             ]
           }
         ],
@@ -3556,13 +3646,28 @@
           120,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              112,
+              59,
+              8,
+              30
+            ],
+            "root_logical": [
+              116,
+              89
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           116,
-          33.5
+          58.5
         ],
         "chimney_cap_rect_logical": [
           111,
-          32.0,
+          57.0,
           10,
           4
         ],
@@ -4104,15 +4209,15 @@
         "roof_planes_logical": [
           [
             21,
-            25,
+            83,
             43,
-            76
+            18
           ],
           [
-            52,
-            5,
-            72,
-            74
+            21,
+            24,
+            103,
+            55
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -4126,10 +4231,10 @@
               72
             ],
             "roof_rect_logical": [
-              52,
-              5,
-              72,
-              74
+              21,
+              24,
+              103,
+              55
             ]
           },
           {
@@ -4142,9 +4247,9 @@
             ],
             "roof_rect_logical": [
               21,
-              25,
+              83,
               43,
-              76
+              18
             ]
           }
         ],
@@ -4154,13 +4259,28 @@
           96,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              98,
+              30,
+              8,
+              25
+            ],
+            "root_logical": [
+              102,
+              55
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           102,
-          7.5
+          29.5
         ],
         "chimney_cap_rect_logical": [
           97,
-          6.0,
+          28.0,
           10,
           4
         ],
@@ -4496,14 +4616,14 @@
         ],
         "roof_planes_logical": [
           [
-            19,
-            43,
-            154,
-            102
+            4.5,
+            82,
+            183,
+            63
           ],
           [
             87,
-            14,
+            53,
             20,
             13
           ]
@@ -4519,10 +4639,10 @@
               96
             ],
             "roof_rect_logical": [
-              19,
-              43,
-              154,
-              102
+              4.5,
+              82,
+              183,
+              63
             ]
           }
         ],
@@ -4532,13 +4652,28 @@
           144,
           96
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              142,
+              65,
+              8,
+              25
+            ],
+            "root_logical": [
+              146,
+              90
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           146,
-          37.5
+          64.5
         ],
         "chimney_cap_rect_logical": [
           141,
-          36.0,
+          63.0,
           10,
           4
         ],
@@ -4988,14 +5123,14 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            31,
-            202,
-            122
+            1,
+            87,
+            214,
+            66
           ],
           [
             34,
-            22,
+            36,
             29,
             15
           ]
@@ -5011,10 +5146,10 @@
               120
             ],
             "roof_rect_logical": [
-              7,
-              31,
-              202,
-              122
+              1,
+              87,
+              214,
+              66
             ]
           }
         ],
@@ -5024,13 +5159,28 @@
           192,
           120
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              173,
+              69,
+              8,
+              30
+            ],
+            "root_logical": [
+              177,
+              99
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           177,
-          27.5
+          68.5
         ],
         "chimney_cap_rect_logical": [
           172,
-          26.0,
+          67.0,
           10,
           4
         ],
@@ -5246,7 +5396,7 @@
         "mill_service_fence": null,
         "bell_mount_logical": [
           42,
-          54
+          68
         ]
       }
     },
@@ -5523,10 +5673,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            32,
-            106,
-            73
+            0,
+            61,
+            120,
+            44
           ],
           [
             48,
@@ -5546,10 +5696,10 @@
               72
             ],
             "roof_rect_logical": [
-              7,
-              32,
-              106,
-              73
+              0,
+              61,
+              120,
+              44
             ]
           }
         ],
@@ -5559,13 +5709,28 @@
           96,
           72
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              84,
+              51,
+              8,
+              24
+            ],
+            "root_logical": [
+              88,
+              75
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           88,
-          21.5
+          50.5
         ],
         "chimney_cap_rect_logical": [
           83,
-          20.0,
+          49.0,
           10,
           4
         ],
@@ -7220,7 +7385,7 @@
   "native_architecture_source": {
     "generator": "tools/eldenmere_architecture_art.py",
     "recipe": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json",
-    "recipe_sha256": "6342de669f7f7ea326d536a892b64d45762801b00cc3337365e214034a2082ad",
+    "recipe_sha256": "3de1d127cd78ca5ee4448682a0fc1912aa28a447d16053b9e1f361b042f66252",
     "selected_live_designs": [
       "compact_gardener",
       "standard_gardener",

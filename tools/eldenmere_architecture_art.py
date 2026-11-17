@@ -34,6 +34,17 @@ ROOFS = {
     'moss': ('#4e5a46', '#6c7b58', '#8f9a75', '#adb693'),
     'heather': ('#57515f', '#787083', '#99909f', '#b7adb9'),
 }
+# Apparent 2D roof height is NOT the north/south occupied ground depth. These
+# shallow silhouettes restore the actual pre-HD bank, at native 2x detail.
+# Eave elevations stay attached to the current facades. Widths restore historic
+# overhangs within the unchanged canvases; they never add collision.
+LOW_ROOFS = {
+    'mira': (0,77,144,50), 'school': (4.5,82,183,63),
+    'sanctuary': (1,87,214,66),
+    # No 24px predecessors: use their first, pre-audit HD silhouettes (90d36c88).
+    'inn': (.5,70,191,54), 'item_shop': (3,86.5,162,48.5),
+    'mill_processing': (21,24,103,55), 'mill_annex': (21,83,43,18),
+}
 # These are live consumers, not new occupations inferred from source names.
 DESIGN_IDS = {
     'standard_gardener': 'halden', 'compact_gardener': 'elira',
@@ -147,6 +158,7 @@ class Drawing:
         self.masks = {n: Image.new('L', self.image.size) for n in ('roof', 'masonry', 'timber', 'plaster', 'glass', 'merchandise')}
         self.panes = []
         self.roof_bounds = []
+        self.chimneys = []
         self.rng = random.Random(name)
 
     @staticmethod
@@ -236,10 +248,10 @@ class Drawing:
                 xx+=ww
 
     def roof(self, rect, palette='slate', hip=5, wear=False, ridge=True):
-        """Tapered pitched roof, with the existing eaves and depth registration.
+        """Low legacy pitched roof, with existing facade/eave registration.
 
         Taper expresses sloping roof ends, not perspective convergence of walls
-        or ground. The roof's declared envelope and occupied footprint stay put.
+        or ground. Its apparent rise is independent of physical ground depth.
         """
         x,y,w,h=rect; ramp=ROOFS[palette]
         inset = min(w*.18, max(hip, w*.14)) if ridge else min(3, w*.08)
@@ -289,42 +301,38 @@ class Drawing:
 
     def mill_gable_roof(self, rect):
         """The old mill's front-gabled identity over the retained processing bay."""
-        x,y,w,h=rect; cx=x+w/2; front=y+h-23; eave=y+h
+        # The original mill was not a symmetric upright roof plate. Its ridge
+        # recedes left, exposing a broad slate wing beside the front gable.
+        # Keep that topology over today's front bay and separately owned annex.
+        envelope=rect; ex,y,ew,h=rect; shift=31
+        x=ex+shift; w=ew-shift; cx=x+w/2; front=y+8; eave=y+h
         # The front triangle is elevated above, and fits within, the unchanged
         # occupied bay walls. It does not paint another wall onto the west path.
+        for side,points in enumerate((
+            ((cx-shift,y),(x-shift,y+h-8),(x,eave),(cx,front)),
+            ((cx-shift,y),(x+w-shift,y+h-8),(x+w,eave),(cx,front)))):
+            mask=Image.new('L',self.image.size)
+            ImageDraw.Draw(mask).polygon([(round(a*2),round(b*2)) for a,b in points],fill=255)
+            # Keep the old mill's calm, readable slate courses at their native
+            # material scale. The outline defines the pitched wing; projecting
+            # tiles through its short receding ridge would stretch them hugely.
+            layer=_roof_material(self.image.size,envelope,'slate','mill wing '+str(side),dim=side==1)
+            layer.putalpha(mask);self.image.alpha_composite(layer);self.ownership(mask,'roof');self.draw=ImageDraw.Draw(self.image)
+            self.line(points+(points[0],),INK,1)
         self.polygon(((57,eave),(cx,front),(120,eave)),PLASTER[1],'plaster')
         self.beam((86,front+3,3,eave-front-3))
         self.line(((59,eave-1),(cx,front+1),(118,eave-1)),WOOD[0],5,'timber')
         self.line(((60,eave-1),(cx,front+2),(117,eave-1)),WOOD[2],1)
-        for side,points in enumerate((
-            ((cx,y),(x,y+23),(x,eave),(cx,front)),
-            ((cx,y),(x+w,y+23),(x+w,eave),(cx,front)))):
-            mask=Image.new('L',self.image.size)
-            ImageDraw.Draw(mask).polygon([(round(a*2),round(b*2)) for a,b in points],fill=255)
-            # Author slates in each actual pitched plane: courses follow the
-            # north/south ridge, rather than wallpapering horizontal bricks
-            # over both wings and visually flattening the front gable.
-            layer=Image.new('RGBA',self.image.size,ROOFS['slate'][0]);ld=ImageDraw.Draw(layer)
-            rng=random.Random('mill wing '+str(side));ramp=ROOFS['slate']
-            def project(u,v):
-                return (round((cx+(-u if side==0 else u))*2),round((y+v+u*23/(w/2))*2))
-            for row,u in enumerate(range(0,round(w/2)+6,6)):
-                for v in range(-10-(row%2)*5,round(front-y)+10,10):
-                    fill=ramp[1] if side==0 else '#596b70'
-                    if rng.randrange(8)==0:fill='#718286' if side==0 else '#65777a'
-                    corners=(project(u+.5,v+.5),project(u+.5,v+9.5),project(u+5.5,v+9.5),project(u+5.5,v+.5))
-                    ld.polygon(corners,fill=fill)
-                    ld.line((project(u+.5,v+1),project(u+.5,v+8.5)),fill=ramp[2] if side==0 else ramp[1],width=1)
-                    if rng.randrange(5)==0:ld.line((project(u+1,v+1),project(u+1,v+2)),fill=ramp[2],width=1)
-            layer.putalpha(mask);self.image.alpha_composite(layer);self.ownership(mask,'roof');self.draw=ImageDraw.Draw(self.image)
-            self.line(points+(points[0],),INK,1)
-        self.line(((cx,y),(cx,front)),ROOFS['slate'][0],5,'roof')
-        self.line(((cx-.5,y+.5),(cx-.5,front-.5)),ROOFS['slate'][2],1)
-        for yy in range(round(y+2),round(front),6):
-            self.line(((cx-1,yy),(cx+1,yy)),ROOFS['slate'][1],1)
+        self.rect((84,52,8,13),WOOD[0],'timber',INK)
+        for xx in (86,89):self.line(((xx,54),(xx,63)),WOOD[2])
+        self.line(((cx-shift,y),(cx,front)),ROOFS['slate'][0],5,'roof')
+        self.line(((cx-shift,y+.5),(cx,front+.5)),ROOFS['slate'][2],1)
+        for u in range(2,shift,6):
+            xx=cx-shift+u; yy=y+u*8/shift
+            self.line(((xx,yy-1),(xx,yy+1)),ROOFS['slate'][1],1)
         self.line(((x,eave),(cx,front),(x+w,eave)),WOOD[0],5,'roof')
         self.line(((x+.5,eave-.5),(cx,front-.5),(x+w-.5,eave-.5)),WOOD[2],1)
-        self.roof_bounds.append(list(rect))
+        self.roof_bounds.append(list(envelope))
 
     def window(self, rect, shutters='both', arch=False, curtains=None, lit=False):
         x,y,w,h=rect
@@ -377,6 +385,7 @@ class Drawing:
         self.rect((x-3.5,y-1,7,2),INK)
         self.line(((x-4.5,y+1.5),(x+4.5,y+1.5)),STONE[5])
         self.line(((x-4,y+height),(x+4,y+height)),WOOD[0],2)
+        self.chimneys.append({'shaft_rect_logical':[x-4,y,8,height],'root_logical':[x,y+height]})
         return [x,y-.5]
 
     def canopy(self,rect,palette='slate'):
@@ -487,8 +496,8 @@ def _cottage(d,name,r):
         d.window((51,114,13,17),shutters='right',curtains='#ded7bc')
         d.window((105,111,17,20),shutters='right')
         d.detail('assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png',(104,127),(24,16))
-    # Long roof footprint is visible behind the front wall; no distant horizon.
-    d.roof((x-5,32,w+10,73),r['roof'],hip={'elira':13,'halden':6,'venn':9,'home_a':0,'home_b':0,'home_c':17,'liam_house':0}[name],wear=name in ('venn','home_c'))
+    # Restore the common low 24px-family silhouette and full old eave span.
+    d.roof((0,61,r['logical_size'][0],44),r['roof'],hip={'elira':13,'halden':6,'venn':9,'home_a':0,'home_b':0,'home_c':17,'liam_house':0}[name],wear=name in ('venn','home_c'))
     d.beam((x-2,105,w+4,3))
     for xx in (x+3,x+w-7):d.brace(xx,108,4,6)
     if name=='halden':
@@ -504,8 +513,8 @@ def _cottage(d,name,r):
         d.rect((80,97,6,4),WOOD[1],'timber',INK)
     if name=='home_a':
         # Long sheet-metal ridge repair, not Liam's broken shingle patch.
-        d.rect((28,42,27,6),'#737e7a','roof',INK)
-        for xx in range(31,53,5):d.line(((xx,43),(xx,47)), '#a4aaa0')
+        d.rect((28,71,27,6),'#737e7a','roof',INK)
+        for xx in range(31,53,5):d.line(((xx,72),(xx,76)), '#a4aaa0')
         d.roof((14,94,23,16),r['roof'],hip=0,ridge=False)
     if name=='home_b':
         d.polygon(((47,105),(59,87),(72,105)),PLASTER[1],'plaster')
@@ -513,11 +522,11 @@ def _cottage(d,name,r):
         d.canopy((48,85,22,7),r['roof'])
         d.rect((56,96,6,5),WOOD[1],'timber',INK)
     if name=='liam_house':
-        d.polygon(((97,62),(115,65),(112,80),(94,77)),WOOD[1],'roof')
-        for yy in (66,71,76):d.line(((97,yy),(112,yy+2)),WOOD[2])
-        d.line(((98,64),(109,78)),WOOD[0],2)
+        d.polygon(((97,83),(115,86),(112,101),(94,98)),WOOD[1],'roof')
+        for yy in (87,92,97):d.line(((97,yy),(112,yy+2)),WOOD[2])
+        d.line(((98,85),(109,99)),WOOD[0],2)
     chimney_x={'elira':73,'halden':91,'home_a':90,'home_b':88,'home_c':90,'venn':116,'liam_house':116}[name]
-    emitter=d.chimney(chimney_x,22,24)
+    emitter=d.chimney(chimney_x,51,24)
     _threshold(d,door,foot);d.portal(door)
     return emitter
 
@@ -532,23 +541,23 @@ def _mira(d,r):
         d.line(((xx,140),(xx,150)),'#a4aaa0',2)
         d.line(((xx-2,142),(xx+2,142)),'#737e7a',2)
     d.rect((100,154,23,3),WOOD[2],'timber',INK)
-    d.roof((7,52,130,75),'terracotta',hip=3)
+    d.roof(LOW_ROOFS['mira'],'terracotta',hip=3)
     d.beam((10,127,124,3))
     for xx in (16,49,93,125):d.brace(xx,130,4,7)
     # Native lower lean-to remains inside occupied walls, not a new blocker.
     d.roof((14,117,30,15),'terracotta',hip=0,ridge=False)
     d.line(((132,130),(144,130)),WOOD[1],5,'timber')
     d.detail('assets/terrain/eldenmere/exteriors_hd/props/sign_cog/idle.png',(135,127),(24,28))
-    emitter=d.chimney(116,34,30)
+    emitter=d.chimney(116,59,30)
     _threshold(d,r['door_rect_logical'],168);d.portal(r['door_rect_logical'])
     return emitter
 
 
 def _mill(d,r):
-    # Two joined orthographic volumes cover the SAME retained 96x72 ground:
+    # Two joined volumes cover the SAME retained 96x72 ground:
     # a tall processing bay at x57..120 and lower receiving annex at x24..60.
-    # Their roof depth covers that ground depth; height changes eave elevation,
-    # never wall width or the occupied blocker.
+    # Apparent roof rises follow the old low annex and front-gabled silhouette,
+    # independently from ground depth; neither changes walls or blockers.
     d.plaster((57,77,63,55),1);d.stonework((57,120,63,12))
     for xx in (57,86,117):d.beam((xx,77,3,44))
     d.beam((57,79,63,3));d.beam((57,117,63,3))
@@ -563,8 +572,11 @@ def _mill(d,r):
     # The lower annex and both foundations start at occupied x=24, not x≈2.
     d.plaster((24,99,36,33));d.stonework((24,121,36,11))
     d.beam((24,99,3,23));d.beam((57,99,3,23));d.beam((24,101,36,3))
-    d.roof((21,25,43,76),'slate',hip=2)
-    d.mill_gable_roof((52,5,72,74))
+    # Short roof-support timbers root the receding side wing on the existing
+    # receiving annex, behind its low roof. They add no wall or ground blocker.
+    d.beam((25,74,3,12));d.beam((49,79,3,7))
+    d.roof(LOW_ROOFS['mill_annex'],'slate',hip=2)
+    d.mill_gable_roof(LOW_ROOFS['mill_processing'])
     # Hoist projects from the front eave. It explains the tall processing volume
     # without inventing extra residential floors or a decorative upstairs room.
     d.beam((73,79,33,3));d.beam((88,72,3,16))
@@ -572,7 +584,9 @@ def _mill(d,r):
     d.line(((89,86),(89,94)),WOOD[3])
     d.stonework((105,117,15,15))
     d.rect((110,116,9,4),'#535c5d','timber',INK)
-    emitter=d.chimney(102,8,24)
+    # Seat the shaft at the narrow right roof return rather than extending
+    # it down across the front gable. The hearth-aligned x stays fixed.
+    emitter=d.chimney(102,30,25)
     _threshold(d,r['door_rect_logical'],140);d.portal(r['door_rect_logical'])
     return emitter
 
@@ -582,18 +596,18 @@ def _school(d,r):
     for xx in (36,60,123,147):
         d.window((xx,152,13,22),shutters='none')
         d.detail('assets/terrain/eldenmere/exteriors_hd/props/windowbox_'+('white' if xx<100 else 'yellow')+'/idle.png',(xx-3,171),(19,14))
-    d.roof((19,43,154,102),'slate',hip=4)
+    d.roof(LOW_ROOFS['school'],'slate',hip=4)
     d.beam((22,145,148,3))
     # Central entry gable is a shallow architectural projection, not a huge side wall.
     d.polygon(((78,149),(96,124),(114,149)),PLASTER[1],'plaster')
     d.brace(79,149,17,-23);d.brace(96,126,17,23)
     d.detail('assets/terrain/eldenmere/exteriors_hd/props/sign_book/idle.png',(86,130),(20,19))
     # School bell with its own roof, backed by roof rather than a horizon scene.
-    d.beam((90,24,3,29));d.beam((101,24,3,29))
-    d.rect((93,27,8,20),WOOD[0],'timber',INK)
-    d.detail('assets/maps/eldenmere/courtyard_hd/props/bell.png',(92,29),(10,19))
-    d.canopy((87,14,20,13),'slate')
-    emitter=d.chimney(146,38,25)
+    d.beam((90,63,3,29));d.beam((101,63,3,29))
+    d.rect((93,66,8,20),WOOD[0],'timber',INK)
+    d.detail('assets/maps/eldenmere/courtyard_hd/props/bell.png',(92,68),(10,19))
+    d.canopy((87,53,20,13),'slate')
+    emitter=d.chimney(146,65,25)
     _threshold(d,r['door_rect_logical'],192);d.portal(r['door_rect_logical'])
     return emitter
 
@@ -603,15 +617,17 @@ def _sanctuary(d,r):
     # Long household facade and existing entrance bays, not a chapel replacement.
     for xx in (25,48,72,165,188):
         d.window((xx,165,12,23),shutters='none',arch=True,curtains='#ded7bc')
-    d.roof((7,31,202,122),'slate',hip=5)
+    d.roof(LOW_ROOFS['sanctuary'],'slate',hip=5)
     d.beam((10,153,196,3))
     for xx in (18,91,159,197):d.brace(xx,156,6,7)
-    # Retain the exact local bell mount [42,54] used by the courtyard helper.
-    d.rect((38,34,21,46),WOOD[0],'timber',INK)
-    d.rect((41,43,15,34),INK)
-    d.beam((38,34,3,45));d.beam((56,34,3,45))
-    d.canopy((34,22,29,15),'slate')
-    emitter=d.chimney(177,28,30)
+    # Move the whole visual belfry together, retaining its original height.
+    # Its peak now sits 51 units above the restored ridge, like the 24px asset.
+    # The courtyard helper owns the matching animated mount [42,68].
+    d.rect((38,48,21,46),WOOD[0],'timber',INK)
+    d.rect((41,57,15,34),INK)
+    d.beam((38,48,3,45));d.beam((56,48,3,45))
+    d.canopy((34,36,29,15),'slate')
+    emitter=d.chimney(177,69,30)
     _threshold(d,r['door_rect_logical'],204);d.portal(r['door_rect_logical'])
     # Porch arch/jambs frame the retained wide double doorway.
     x,y,w,h=r['door_rect_logical']
@@ -629,13 +645,13 @@ def _inn(d,r):
         d.detail('assets/terrain/eldenmere/exteriors_hd/props/windowbox_white/idle.png',(xx-2,160),(24,16))
     d.window((28,195,29,24),shutters='left')
     d.window((136,195,27,24),shutters='right')
-    d.roof((7,24,178,100),'terracotta',hip=5)
+    d.roof(LOW_ROOFS['inn'],'terracotta',hip=5)
     d.beam((10,124,172,4))
     for xx in (17,65,126,171):d.brace(xx,128,5,7)
     # Shallow porch with visible upper surface, jambs and fixed posts.
     d.roof((75,182,42,13),'terracotta',hip=2,ridge=False)
     d.beam((76,195,3,37));d.beam((114,195,3,37))
-    emitter=d.chimney(153,27,29)
+    emitter=d.chimney(153,61,29)
     d.detail('assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png',(23,220),(38,20))
     d.detail('assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/idle.png',(139,215),(31,25))
     _threshold(d,r['door_rect_logical'],240);d.portal(r['door_rect_logical'])
@@ -644,7 +660,7 @@ def _inn(d,r):
 
 def _shop(d,r):
     _facade(d,r['ground_rect_logical'],133,posts=(63,152))
-    d.roof((7,35,154,100),'slate',hip=4)
+    d.roof(LOW_ROOFS['item_shop'],'slate',hip=4)
     d.beam((10,135,148,3))
     d.rect((18,157,12,16),WOOD[1],'timber',INK)
     for xx in (21,25,28):d.line(((xx,158),(xx,171)),WOOD[0])
@@ -686,8 +702,10 @@ def generate_architecture(building_id, record=None):
         'logical_size':r['logical_size'],'ground_rect_logical':r['ground_rect_logical'],
         'depth_baseline_logical':y+h,'door_rect_logical':r['door_rect_logical'],
         'roof_planes_logical':d.roof_bounds,'roof_overhang_is_not_occupied_wall':True,
-        'roof_volumes':[{'role':'processing bay','ground_rect_logical':[57,60,63,72],'roof_rect_logical':[52,5,72,74]},{'role':'receiving annex','ground_rect_logical':[24,60,36,72],'roof_rect_logical':[21,25,43,76]}] if name=='mill' else [{'role':'main occupied volume','ground_rect_logical':r['ground_rect_logical'],'roof_rect_logical':d.roof_bounds[0]}],
+        'roof_volumes':[{'role':'processing bay','ground_rect_logical':[57,60,63,72],'roof_rect_logical':list(LOW_ROOFS['mill_processing'])},{'role':'receiving annex','ground_rect_logical':[24,60,36,72],'roof_rect_logical':list(LOW_ROOFS['mill_annex'])}] if name=='mill' else [{'role':'main occupied volume','ground_rect_logical':r['ground_rect_logical'],'roof_rect_logical':d.roof_bounds[0]}],
         'wall_ground_bounds_logical':r['ground_rect_logical'],
+        'roof_projection':'legacy apparent 2D rise; independent of occupied north/south ground depth',
+        'roof_attachments':d.chimneys,
         'smoke_emitter_logical':emitter,'chimney_cap_rect_logical':[emitter[0]-5,emitter[1]-1.5,10,4] if emitter else None,'pane_regions':d.panes,
         'pane_review':'Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.',
         'export_transform':'native authoring at 2x; no source facade registration or portal-first strip scaling',
@@ -697,7 +715,7 @@ def generate_architecture(building_id, record=None):
         'mill_wheel_position_logical':[88,94] if name=='mill' else None,
         'mill_axle_center_logical':[112,118] if name=='mill' else None,
         'mill_service_fence':'not present; crossing assembly owns service landing' if name=='mill' else None,
-        'bell_mount_logical':[42,54] if name=='sanctuary' else None,
+        'bell_mount_logical':[42,68] if name=='sanctuary' else None,
     }
     return Architecture(d.image,panes,d.masks,meta)
 
@@ -724,7 +742,7 @@ def preview_closed(architecture):
     if name=='mill':
         with Image.open(ROOT/'assets/terrain/eldenmere/exteriors_hd/mill/wheel_idle.png') as im:result.alpha_composite(im.convert('RGBA'),(176,188))
     if name=='sanctuary':
-        with Image.open(ROOT/'assets/maps/eldenmere/courtyard_hd/props/bell.png') as im:result.alpha_composite(im.convert('RGBA'),(84,108))
+        with Image.open(ROOT/'assets/maps/eldenmere/courtyard_hd/props/bell.png') as im:result.alpha_composite(im.convert('RGBA'),(84,136))
     return result
 
 
@@ -784,15 +802,15 @@ def products():
         'palette_reference':'assets/source/terrain/eldenmere/exteriors_hd/recipe.json',
         'designs':schedule,
         'retained_native_details':['existing five door states','native mill wheel','courtyard bell at retained mount','cog/book signs','business signs','fixed shop display','inn bench/firewood'],
-        'new_native_construction':['deep roof planes with fixed-size shingle courses','registered foundations and occupied walls','per-household window rhythms, joinery and storage','mill receiving annex/hoist/processing structure','school footprint correction and flue','right-hearth workshop flue','two-storey inn structural framing'],
+        'new_native_construction':['legacy low-rise roof silhouettes with fixed-size native shingle courses','registered foundations and occupied walls','per-household window rhythms, joinery and storage','mill receiving annex/hoist/processing structure','school footprint correction and flue','right-hearth workshop flue','two-storey inn structural framing'],
         'not_reused':['legacy RGB buildings','portal-first facade strips','mill baked service fence'],
         'roof_style_reference':{
-            'historical_commit':'7cebbd6',
+            'historical_commit':'7cebbd6006a1d925163ffe607443059ffff79880',
             'assets':['assets/terrain/eldenmere/cottage/closed.png','assets/terrain/eldenmere/workshop/closed.png','assets/terrain/eldenmere/watermill/building.png','assets/terrain/eldenmere/school/exterior/closed.png','assets/terrain/eldenmere/sanctuary/closed.png'],
             'construction':'native 2x authored staggered rectangular courses, restrained bevel/chips, tapered pitched ends and narrow ridge; mill front gable',
             'scale_reference':'tools/build_eldenmere_school_exterior.py: native 10x6 logical slates',
             'not_transformed':'No legacy pixels enlarged; no HD concept-sheet shingle fragments sampled.',
-            'scope':'Roof surfaces and silhouettes only; audited eave contacts, walls, flues, logical canvases, thresholds and gameplay registration retained. Inn/shop adapt the earlier material language; they had no 24px predecessor.'},
+            'scope':'Restore old apparent roof height and overhangs, independently of occupied ground depth. Current eave/facade levels, walls, canvases, hearth x registration, thresholds and gameplay remain fixed; flue visual heights and school bell follow the shorter roofs. Courtyard belfry and animated visual mount move together 14 units down; its cadence, interactions and garden remain fixed. Inn/shop reference their first HD silhouettes at 90d36c88; they had no 24px predecessor.'},
         'source_module_sha256':sha256(Path(__file__).read_bytes()).hexdigest(),
     },indent=2)+'\n').encode()
     return result

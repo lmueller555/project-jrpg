@@ -97,10 +97,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        22,
-        202,
-        134
+        1,
+        36,
+        214,
+        120
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -118,7 +118,7 @@
       "chimney": {
         "position_logical": [
           177,
-          27.5
+          68.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -145,14 +145,14 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          31,
-          202,
-          122
+          1,
+          87,
+          214,
+          66
         ],
         [
           34,
-          22,
+          36,
           29,
           15
         ]
@@ -181,7 +181,8 @@
             122
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "mira",
@@ -253,10 +254,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        52,
-        130,
-        83
+        0,
+        77,
+        144,
+        58
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -272,7 +273,7 @@
       "chimney": {
         "position_logical": [
           116,
-          33.5
+          58.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -299,10 +300,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          52,
-          130,
-          75
+          0,
+          77,
+          144,
+          50
         ],
         [
           14,
@@ -335,7 +336,8 @@
             75
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "mill",
@@ -408,9 +410,9 @@
       ],
       "roof_eave_envelope_local_logical": [
         21,
-        5,
+        24,
         103,
-        99
+        80
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -426,7 +428,7 @@
       "chimney": {
         "position_logical": [
           102,
-          7.5
+          29.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -468,15 +470,15 @@
       "roof_planes_local_logical": [
         [
           21,
-          25,
+          83,
           43,
-          76
+          18
         ],
         [
-          52,
-          5,
-          72,
-          74
+          21,
+          24,
+          103,
+          55
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -518,7 +520,8 @@
             76
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "halden",
@@ -590,10 +593,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        106,
-        76
+        0,
+        61,
+        120,
+        47
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -609,7 +612,7 @@
       "chimney": {
         "position_logical": [
           91,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -635,10 +638,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          106,
-          73
+          0,
+          61,
+          120,
+          44
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -665,7 +668,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "elira",
@@ -737,10 +741,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        82,
-        76
+        0,
+        61,
+        96,
+        47
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -756,7 +760,7 @@
       "chimney": {
         "position_logical": [
           73,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -782,10 +786,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          82,
-          73
+          0,
+          61,
+          96,
+          44
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -812,7 +816,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "venn",
@@ -884,10 +889,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        130,
-        76
+        0,
+        61,
+        144,
+        47
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -903,7 +908,7 @@
       "chimney": {
         "position_logical": [
           116,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -928,10 +933,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          130,
-          73
+          0,
+          61,
+          144,
+          44
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -958,7 +963,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "home_a",
@@ -1030,10 +1036,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        106,
-        81
+        0,
+        61,
+        120,
+        52
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1049,7 +1055,7 @@
       "chimney": {
         "position_logical": [
           90,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -1074,10 +1080,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          106,
-          73
+          0,
+          61,
+          120,
+          44
         ],
         [
           14,
@@ -1110,7 +1116,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "home_b",
@@ -1182,10 +1189,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        106,
-        76
+        0,
+        61,
+        120,
+        47
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1201,7 +1208,7 @@
       "chimney": {
         "position_logical": [
           88,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -1226,10 +1233,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          106,
-          73
+          0,
+          61,
+          120,
+          44
         ],
         [
           48,
@@ -1262,7 +1269,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "home_c",
@@ -1334,10 +1342,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        106,
-        76
+        0,
+        61,
+        120,
+        47
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1353,7 +1361,7 @@
       "chimney": {
         "position_logical": [
           90,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -1378,10 +1386,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          106,
-          73
+          0,
+          61,
+          120,
+          44
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -1408,7 +1416,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "liam_house",
@@ -1480,10 +1489,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        32,
-        130,
-        76
+        0,
+        61,
+        144,
+        47
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1499,7 +1508,7 @@
       "chimney": {
         "position_logical": [
           116,
-          21.5
+          50.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -1525,10 +1534,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          32,
-          130,
-          73
+          0,
+          61,
+          144,
+          44
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -1555,7 +1564,8 @@
             73
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "school",
@@ -1627,10 +1637,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        19,
-        14,
-        154,
-        134
+        4.5,
+        53,
+        183.0,
+        95
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1646,7 +1656,7 @@
       "chimney": {
         "position_logical": [
           146,
-          37.5
+          64.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -1673,14 +1683,14 @@
       ],
       "roof_planes_local_logical": [
         [
-          19,
-          43,
-          154,
-          102
+          4.5,
+          82,
+          183,
+          63
         ],
         [
           87,
-          14,
+          53,
           20,
           13
         ]
@@ -1709,7 +1719,8 @@
             102
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "inn",
@@ -1782,10 +1793,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        24,
-        178,
-        174
+        0.5,
+        70,
+        191.0,
+        128
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1809,7 +1820,7 @@
       "chimney": {
         "position_logical": [
           153,
-          26.5
+          60.5
         ],
         "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
@@ -1858,10 +1869,10 @@
       },
       "roof_planes_local_logical": [
         [
-          7,
-          24,
-          178,
-          100
+          0.5,
+          70,
+          191,
+          54
         ],
         [
           75,
@@ -1894,7 +1905,8 @@
             100
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     },
     {
       "id": "item_shop",
@@ -1966,10 +1978,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        7,
-        35,
-        154,
-        103
+        3,
+        86.5,
+        162,
+        51.5
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1989,10 +2001,10 @@
       ],
       "roof_planes_local_logical": [
         [
-          7,
-          35,
-          154,
-          100
+          3,
+          86.5,
+          162,
+          48.5
         ]
       ],
       "wall_contact_bounds_local_logical": [
@@ -2019,7 +2031,8 @@
             100
           ]
         }
-      ]
+      ],
+      "roof_projection": "Legacy apparent 2D rise, independent of occupied ground depth; eave level and physical footprint retained."
     }
   ],
   "crossings": [

@@ -250,7 +250,17 @@ class LiveCommonsContracts(unittest.TestCase):
 
     def test_previous_district_ledgers_and_every_prior_entity_are_unchanged(self):
         for key in ('settlement_dressing','settlement_workyards'):
-            self.assertEqual(self.town[key],self.before[key],key)
+            current_ledger=copy.deepcopy(self.town[key])
+            earlier_ledger=self.before[key]
+            exterior_source='assets/terrain/eldenmere/exteriors_hd/manifest.json'
+            # A roof-art rebuild changes the tracked source hash, not the
+            # placements or supports made from it. Require that the refreshed
+            # value is the real live source; every other ledger byte stays pinned.
+            self.assertEqual(current_ledger['dependencies_sha256'][exterior_source],
+                             sha256((ROOT/exterior_source).read_bytes()).hexdigest())
+            current_ledger['dependencies_sha256'][exterior_source]=(
+                earlier_ledger['dependencies_sha256'][exterior_source])
+            self.assertEqual(current_ledger,earlier_ledger,key)
         current={record['id']:record for record in self.town['entities']}
         for previous in self.before['entities']:
             self.assertEqual(current[previous['id']],previous,previous['id'])
