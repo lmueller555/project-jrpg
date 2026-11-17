@@ -4,7 +4,7 @@
 The HD regional foundation is integrated: live area records and protected
 clearances establish the six-area framework without relocating travel links or
 work stations. The Pale Antlers and Sanctuary presentation are integrated across
-town, regional and detailed views. Selected old causeway structures and inhabited
+regional and detailed Sanctuary views. Eldenmere itself has no antler placement. Selected old causeway structures and inhabited
 ruins are integrated on the existing internal road. Rising Rain and final atlas
 presentation remain future work.
 Illustrative dialogue, customs and optional encounters remain scene seeds until
@@ -96,7 +96,7 @@ new committed scene IDs or additional named settlements.
 
 | Area | Identity and life | Exploration and connections |
 | --- | --- | --- |
-| **Eldenmere and surrounding meadows** | Warm timber, slate, stone foundations, little gardens, pasture and domestic work. Parts of the Pale Antlers appear beyond roofs and trees. | Establish home, then open views toward the wider region. Keep the existing town and its ordinary entrances usable. |
+| **Eldenmere and surrounding meadows** | Warm timber, slate, stone foundations, little gardens, pasture and domestic work. The town stays an enclosed, ordinary ground-plane scene; antler reveals belong to the regional outing. | Establish home, then open views toward the wider region. Keep the existing town and its ordinary entrances usable. |
 | **Southern orchards and farms** | Irregular fields, hedges, grazing animals, collection cloths and covered resting places. Show residents adapting to Rising Rain. | Connect farm doors, working areas and cultivated paths to the southern arrival road. Provide the first accessible encounter with the phenomenon. |
 | **Western bridge road** | Recent damage, waiting carts, displaced deliveries, temporary shelter and repair work. | Make the broken connection legible and approachable without crossing a checkpoint. Preserve the collapsed span and its consequences for travel. |
 | **Central old causeway** | Fragments of a raised stone road through meadows and shallow hollows, incorporated into present life. | Offer useful surviving sections, resting places and optional discoveries while keeping the main route continuous. It stays inside the enclosure. |
@@ -116,8 +116,8 @@ the woodland. Weathered pale surfaces resemble stone at a distance. Moss,
 nesting birds and small trees occupy sheltered hollows. Their visible aging
 and surrounding life make the remains part of the landscape.
 
-From Eldenmere, reveal only portions between roofs and distant trees. The road
-toward the Sanctuary progressively reveals more. A later viewpoint exposes part
+Do not place the Pale Antlers, a shadow or a replacement silhouette inside
+Eldenmere. The regional road toward the Sanctuary progressively reveals them. A later viewpoint exposes part
 of a colossal skull embedded in the hillside: the player recognizes that the
 forms belonged to something alive.
 

@@ -1,3 +1,7 @@
+> Historical evidence: these captures record the previous implementation. The
+> later Eldenmere architecture audit removes the town antler instance and vista
+> configuration; regional and detailed Sanctuary bindings remain active.
+
 # Pale Antlers: active production integration review
 
 Initialized **production Game**, live maps/bindings, unchanged logical collision,

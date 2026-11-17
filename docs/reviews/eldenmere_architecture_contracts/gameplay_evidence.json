@@ -1,0 +1,521 @@
+{
+  "baseline_revision": "57d0613cb625c141a583ffef5588fb6b0c512e3c",
+  "after_map_sha256": "dfc9caeead055c65d93ab5d17ed55c3d5991ff87eebc81c9ceb47c4a6fcb39b1",
+  "method": "Game.draw production maps/bindings, native WorldCanvas 960x640, CameraDirector",
+  "static_fixture": "Static placements are disclosed review fixtures; movement uses Game.update. No replacement art or isolated art composites.",
+  "coverage_per_stage": {
+    "native_views": 173,
+    "movement_checks": 26,
+    "save_continue": {
+      "upper_bridge": {
+        "passed": true,
+        "exact_keys": [
+          "quests",
+          "party",
+          "inventory",
+          "player",
+          "overworld"
+        ],
+        "player": {
+          "scene": "eldenmere.playable",
+          "position": [
+            852.0,
+            480.0
+          ],
+          "facing": "back"
+        }
+      },
+      "main_bridge": {
+        "passed": true,
+        "exact_keys": [
+          "quests",
+          "party",
+          "inventory",
+          "player",
+          "overworld"
+        ],
+        "player": {
+          "scene": "eldenmere.playable",
+          "position": [
+            828.0,
+            1032.0
+          ],
+          "facing": "back"
+        }
+      },
+      "mill_landing": {
+        "passed": true,
+        "exact_keys": [
+          "quests",
+          "party",
+          "inventory",
+          "player",
+          "overworld"
+        ],
+        "player": {
+          "scene": "eldenmere.playable",
+          "position": [
+            971.0,
+            354.0
+          ],
+          "facing": "back"
+        }
+      }
+    },
+    "failures": []
+  },
+  "unchanged_regional_native_rgba": true,
+  "unchanged_detailed_native_rgba": true,
+  "selected_views": {
+    "before_town_north_lane": {
+      "stage": "before",
+      "file": "before_town_north_lane.png",
+      "scene": "eldenmere.playable",
+      "player": [
+        600.0,
+        180.0
+      ],
+      "facing": "back",
+      "camera": [
+        360,
+        20
+      ],
+      "scripted_camera": false,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {
+        "sanctuary": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mill": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "halden": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "elira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "venn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_a": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_b": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_c": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "liam_house": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "school": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "inn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "item_shop": {
+          "state": "closed",
+          "progress": 0.0
+        }
+      },
+      "sha256": "5dba3235f49927847932c550fb7004b4b478b1a239c6de0fd5c70e118274084a",
+      "landmarks": [
+        "pale_antlers_distant"
+      ]
+    },
+    "after_town_north_lane": {
+      "stage": "after_pr1",
+      "file": "after_town_north_lane.png",
+      "scene": "eldenmere.playable",
+      "player": [
+        600.0,
+        180.0
+      ],
+      "facing": "back",
+      "camera": [
+        360,
+        20
+      ],
+      "scripted_camera": false,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {
+        "sanctuary": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mill": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "halden": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "elira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "venn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_a": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_b": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_c": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "liam_house": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "school": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "inn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "item_shop": {
+          "state": "closed",
+          "progress": 0.0
+        }
+      },
+      "sha256": "2d9b8fe45574b2fd3d059c35eadbd1b259b5d3f3dbeaf51bbdde6f381321e242",
+      "landmarks": []
+    },
+    "before_sanctuary_survey": {
+      "stage": "before",
+      "file": "before_sanctuary_survey.png",
+      "scene": "eldenmere.playable",
+      "player": [
+        386.0,
+        318.0
+      ],
+      "facing": "back",
+      "camera": [
+        120,
+        44
+      ],
+      "scripted_camera": true,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {
+        "sanctuary": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mill": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "halden": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "elira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "venn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_a": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_b": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_c": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "liam_house": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "school": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "inn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "item_shop": {
+          "state": "closed",
+          "progress": 0.0
+        }
+      },
+      "sha256": "5aad36f24f7d72047b8a6b9f78346925fa0b4cca0a33dd22f81a2a03e90eeae2"
+    },
+    "after_sanctuary_survey": {
+      "stage": "after_pr1",
+      "file": "after_sanctuary_survey.png",
+      "scene": "eldenmere.playable",
+      "player": [
+        386.0,
+        318.0
+      ],
+      "facing": "back",
+      "camera": [
+        120,
+        44
+      ],
+      "scripted_camera": true,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {
+        "sanctuary": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mill": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "halden": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "elira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "venn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_a": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_b": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_c": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "liam_house": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "school": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "inn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "item_shop": {
+          "state": "closed",
+          "progress": 0.0
+        }
+      },
+      "sha256": "a4291d94abe4b1ff655d65e03883d8ca49d217965c424c59f1388c614c82a589"
+    },
+    "after_regional_antlers_preserved": {
+      "stage": "after_pr1",
+      "file": "after_regional_antlers_preserved.png",
+      "scene": "auratia.overworld",
+      "player": [
+        2232.0,
+        -1680.0
+      ],
+      "facing": "back",
+      "camera": [
+        1992,
+        -1840
+      ],
+      "scripted_camera": false,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {},
+      "sha256": "fb7762ae14e0e2e2861be88de49082a912cd4d6eb09bf942c8beee3e56ebcc29",
+      "landmarks": [
+        "regional_beam_left",
+        "regional_beam_central",
+        "regional_beam_right",
+        "regional_skull_raised",
+        "regional_skull_contact",
+        "causeway_arch_lintel",
+        "causeway_paving_0",
+        "causeway_paving_1",
+        "causeway_paving_2",
+        "causeway_paving_3"
+      ]
+    },
+    "after_detailed_antlers_preserved": {
+      "stage": "after_pr1",
+      "file": "after_detailed_antlers_preserved.png",
+      "scene": "elden_vale_sanctuary",
+      "player": [
+        1100.0,
+        270.0
+      ],
+      "facing": "back",
+      "camera": [
+        672,
+        110
+      ],
+      "scripted_camera": false,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {
+        "sanctuary_hall": {
+          "state": "closed",
+          "progress": 0.0
+        }
+      },
+      "sha256": "61649ed086efa7d7a7575b6f71952af529c66a04a11f4a9c36d85dc6460a4ec4",
+      "landmarks": [
+        "pale_antlers_ridge_west",
+        "pale_antlers_ridge_east",
+        "pale_antlers_strata",
+        "pale_antlers_earth",
+        "pale_antlers_roots",
+        "pale_antlers_ivy",
+        "pale_antlers_moss",
+        "pale_antlers_skull_contact",
+        "pale_antlers_beam_0",
+        "pale_antlers_beam_1",
+        "pale_antlers_beam_2",
+        "pale_antlers_raised_skull"
+      ]
+    },
+    "after_southern_business_lane": {
+      "stage": "after_pr1",
+      "file": "after_southern_business_lane.png",
+      "scene": "eldenmere.playable",
+      "player": [
+        528.0,
+        1488.0
+      ],
+      "facing": "back",
+      "camera": [
+        288,
+        1312
+      ],
+      "scripted_camera": false,
+      "elapsed_ms": 0,
+      "reduced_motion": false,
+      "safe_feet": true,
+      "doors": {
+        "sanctuary": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "mill": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "halden": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "elira": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "venn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_a": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_b": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "home_c": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "liam_house": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "school": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "inn": {
+          "state": "closed",
+          "progress": 0.0
+        },
+        "item_shop": {
+          "state": "closed",
+          "progress": 0.0
+        }
+      },
+      "sha256": "72bd1dbfb2196ea7c0546e15f6f2810909f06055fa09e6c5f5dff0baf5ea75f1",
+      "landmarks": []
+    }
+  },
+  "limitations": [
+    "Not an uninterrupted story playthrough.",
+    "Survey views explicitly focus the production camera to fit tall buildings.",
+    "Collision overlays are diagnostic annotations, not gameplay screenshots.",
+    "Contact boards are downscaled indexes; native PNGs are authoritative.",
+    "Crossing movement in PR1 covers centerlines, not the full usable width (owned by PR2).",
+    "No new inn floor in PR1. Stair behavior is reserved for PR4.",
+    "Drawing quality is reviewed visually, not established by passing tests."
+  ]
+}

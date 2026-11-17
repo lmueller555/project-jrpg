@@ -245,12 +245,11 @@ def products():
     for line in rec['road_centerlines']:
         (x0,y0),(x1,y1)=line
         ad.line((x0,max(1344,y0),x1,max(1344,y1)),fill=255,width=24)
-    signature=read('assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json')['assets']
+    # Regional/Sanctuary landmarks have no town placement or shadow substitute.
     town['landmark_layers']=[]
-    for placement in rec.get('distant_landmarks',[]):
-        donor=signature[placement['source_asset']]
-        town['landmark_layers'].append({**placement,'image':donor['image'],'logical_size':donor['logical_size'],
-            'artwork_pixels_per_world_pixel':2,'interaction_cues':False})
+    from tools.eldenmere_architecture_contracts import validate_schedule
+    schedule=read(rec['architecture_schedule']);validate_schedule(schedule,town)
+    town['architecture_schedule']=rec['architecture_schedule']
     town['size_pixels']=size;town['size_tiles']=[v//24 for v in size];town['collision']=ex.png('town/collision',collision);town['navigation_allowed']=ex.png('town/navigation_allowed',allowed)
     # The expansion's painted road, route destination and automatic scene
     # contact share one authored contract at the current southern boundary.
@@ -447,7 +446,7 @@ def products():
     from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
     settlement=framework(ROOT,town,rec['settlement_recipe'])
     ex.json(SETTLEMENT_MANIFEST,settlement)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':0},'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':0},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

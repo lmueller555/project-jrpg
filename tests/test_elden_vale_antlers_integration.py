@@ -41,14 +41,12 @@ class ActiveAntlersTests(unittest.TestCase):
         self.assertEqual(len(support_rectangles(recipe,plan)),2)
         plan['master_origin_logical'][0]-=200
         with self.assertRaisesRegex(ValueError,'leaves existing solid ridge'):support_rectangles(recipe,plan)
-    def test_town_uses_one_fixed_skull_free_distant_anchor_and_no_new_collision(self):
+    def test_town_has_no_antler_placement_or_visibility_configuration(self):
         town=json.loads((ROOT/'assets/maps/eldenmere/playable/map.json').read_text())
-        self.assertEqual(len(town['landmark_layers']),1)
-        record=town['landmark_layers'][0]
-        self.assertEqual(record['layer'],'distant');self.assertEqual(record['collision'],'none')
-        self.assertEqual(record['source_asset'],'antlers_distant')
-        image=Image.open(ROOT/record['image']).convert('RGBA')
-        self.assertIsNone(image.getchannel('A').crop((0,190,image.width,image.height)).getbbox())
+        recipe=json.loads((ROOT/'assets/source/maps/eldenmere/town_hd/recipe.json').read_text())
+        self.assertEqual(town['landmark_layers'],[])
+        self.assertNotIn('distant_landmarks',recipe)
+        self.assertFalse(any('signature_landscape_hd' in r['file'] for r in recipe['dependencies']))
 
     def test_every_ground_contact_texel_is_on_named_existing_solid(self):
         region=json.loads(REGION_FILE.read_text());manifest=json.loads((ROOT/region['hd_art_manifest']).read_text())
