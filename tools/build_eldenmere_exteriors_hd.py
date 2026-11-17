@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 from hashlib import sha256
 import json
+from functools import lru_cache
 from pathlib import Path
 import sys
 from PIL import Image,ImageChops,ImageDraw,ImageFilter
@@ -62,7 +63,19 @@ def quantize(raw,rec,roof='slate',window_mask=None,roof_y=None,prop=None):
     boundary=ImageChops.subtract(out.getchannel('A'),out.getchannel('A').filter(ImageFilter.MinFilter(3)));out.paste(Image.new('RGBA',out.size,outline),(0,0),boundary);windows=ImageChops.subtract(windows,boundary)
     return out,windows
 
+def _audit_design(name):
+    from tools.eldenmere_architecture_art import DESIGN_IDS,IDENTITIES
+    return name in DESIGN_IDS or name in IDENTITIES
+
+@lru_cache(maxsize=13)
+def _audit_metadata(name):
+    from tools.eldenmere_architecture_art import generate_architecture
+    return generate_architecture(name).metadata
+
 def building_structure(r,sources,rec):
+    if _audit_design(r['id']):
+        from tools.eldenmere_architecture_art import building_structure as native_architecture
+        return native_architecture(r,sources,rec)
     raw=cutout(sources[r['source']],r['source_rect']);cover=Image.new('L',raw.size);draw=ImageDraw.Draw(cover)
     for a,b,c,d in r['window_regions_normalized']:draw.rectangle((int(a*raw.width),int(b*raw.height),int(c*raw.width),int(d*raw.height)),fill=255 if r['kind']=='home' else 128)
     warped=split_registration(raw,r);window_cover=split_registration(cover,r);native,windows=quantize(warped,rec,r['roof'],window_cover,roof_y=r['door_rect_logical'][1]*2-12)
@@ -96,8 +109,13 @@ def effect_sources(sources,rec):
 
 def smoke_layer(r,phase,glyphs):
     im=Image.new('RGBA',tuple(v*2 for v in r['logical_size']))
-    if not r['smoke']:return im
-    bx,by,br,bb=r['body_bounds_logical'];emit_x=round((bx+(br-bx)*r['chimney_normalized_x'])*2);emit_y=round(by*2+r['chimney_normalized_y']/r['source_door_normalized'][1]*(r['door_rect_logical'][1]*2-by*2))
+    if _audit_design(r['id']):
+        emitter=_audit_metadata(r['id'])['smoke_emitter_logical']
+        if emitter is None:return im
+        emit_x,emit_y=[round(value*2) for value in emitter]
+    else:
+        if not r['smoke']:return im
+        bx,by,br,bb=r['body_bounds_logical'];emit_x=round((bx+(br-bx)*r['chimney_normalized_x'])*2);emit_y=round(by*2+r['chimney_normalized_y']/r['source_door_normalized'][1]*(r['door_rect_logical'][1]*2-by*2))
     for i,age_offset in enumerate((0,6,12)):
         age=(phase+age_offset)%18
         if age>=16:continue
@@ -154,7 +172,8 @@ def products():
             smoke=smoke_layer(r,phase,glyphs);glow=glow_layer(structure,window_mask,phase,rec);frame=composed[0].copy();frame.alpha_composite(glow);frame.alpha_composite(smoke);path=prefix+f'/ambient/frame_{phase:02}.png';export(PACK+'/'+path,frame);frames.append(frame)
             sp=prefix+f'/smoke/frame_{phase:02}.png';gp=prefix+f'/windowlight/frame_{phase:02}.png';export(PACK+'/'+sp,smoke);export(PACK+'/'+gp,glow);fx_paths.append({'smoke':sp,'windowlight':gp})
         ambient[name]=frames
-        record={k:r[k] for k in ('id','kind','shape','profile','logical_size','ground_rect_logical','door_rect_logical','roof','charm')};w,h=r['logical_size'];record.update(artwork_pixels_per_world_pixel=2,artwork_size=[w*2,h*2],draw_anchor_logical=[0,0],depth_baseline_logical=r['ground_rect_logical'][1]+r['ground_rect_logical'][3],structure=prefix+'/structure.png',closed=prefix+'/closed.png',open=prefix+'/open.png',door_sheet=prefix+'/door_sheet.png',window_mask=prefix+'/window_mask.png',door={'frames':[{'file':p,'duration_ms':100} for p in door_paths],'position_logical':r['door_rect_logical'][:2],'logical_size':r['door_rect_logical'][2:],'hinge':'both outer jambs' if r['door_style']=='sanctuary' else 'west','loop':False,'hold_closed':0,'hold_open':4,'closing_order':[4,3,2,1,0]},ambient={'frames':[{'file':prefix+f'/ambient/frame_{p:02}.png','duration_ms':200} for p in range(18)],'effects':fx_paths,'cycle_ms':3600,'smoke_optional':r['smoke'],'reduced_motion':prefix+'/closed.png','note':'Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock.'},wheel={'frames':[{'file':f'mill/wheel/frame_{p:02}.png','duration_ms':200} for p in range(48)],'position_logical':[88,94],'logical_size':[48,48],'axle_center_logical':[112,118],'clockwise':True,'step_degrees':7.5,'full_turn_ms':9600,'fixed_hub':'mill/fixed_hub.png'} if name=='mill' else None,extra_static_components=[{'file':'props/fence_panel/idle.png','position_logical':[0,138],'logical_size':[24,18]}] if name=='mill' else [],collision='Preserve authoritative logical geometry during integration; never infer it from alpha.',interaction_cues=False,door_approach_local_logical=[r['door_rect_logical'][0]-4,r['door_rect_logical'][1],r['door_rect_logical'][2]+8,h-r['door_rect_logical'][1]+12])
+        record={k:r[k] for k in ('id','kind','shape','profile','logical_size','ground_rect_logical','door_rect_logical','roof','charm')};w,h=r['logical_size'];record.update(artwork_pixels_per_world_pixel=2,artwork_size=[w*2,h*2],draw_anchor_logical=[0,0],depth_baseline_logical=r['ground_rect_logical'][1]+r['ground_rect_logical'][3],structure=prefix+'/structure.png',closed=prefix+'/closed.png',open=prefix+'/open.png',door_sheet=prefix+'/door_sheet.png',window_mask=prefix+'/window_mask.png',door={'frames':[{'file':p,'duration_ms':100} for p in door_paths],'position_logical':r['door_rect_logical'][:2],'logical_size':r['door_rect_logical'][2:],'hinge':'both outer jambs' if r['door_style']=='sanctuary' else 'west','loop':False,'hold_closed':0,'hold_open':4,'closing_order':[4,3,2,1,0]},ambient={'frames':[{'file':prefix+f'/ambient/frame_{p:02}.png','duration_ms':200} for p in range(18)],'effects':fx_paths,'cycle_ms':3600,'smoke_optional':_audit_metadata(name)['smoke_emitter_logical'] is not None if _audit_design(name) else r['smoke'],'reduced_motion':prefix+'/closed.png','note':'Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock.'},wheel={'frames':[{'file':f'mill/wheel/frame_{p:02}.png','duration_ms':200} for p in range(48)],'position_logical':[88,94],'logical_size':[48,48],'axle_center_logical':[112,118],'clockwise':True,'step_degrees':7.5,'full_turn_ms':9600,'fixed_hub':'mill/fixed_hub.png'} if name=='mill' else None,extra_static_components=[],collision='Preserve authoritative logical geometry during integration; never infer it from alpha.',interaction_cues=False,door_approach_local_logical=[r['door_rect_logical'][0]-4,r['door_rect_logical'][1],r['door_rect_logical'][2]+8,h-r['door_rect_logical'][1]+12])
+        if _audit_design(name):record['architecture_audit']=_audit_metadata(name)
         records.append(record)
     for r in rec['props']:
         name=r['id'];native=prop_native(r,sources,rec);sequence=[prop_frame(native,r,p,rec['palette']) for p in range(18)] if r['animation']!='static' else [native];props[name]=sequence;export(PACK+f'/props/{name}/idle.png',native);paths=[]
@@ -211,7 +230,7 @@ def products():
         for actor in actors:scene.alpha_composite(load(ROOT/actor['file']),tuple(actor['position_artwork']))
         export(REVIEW+'/'+scene_id+'_native.png',scene);scenes.append({'id':scene_id,'size_artwork':[960,640],'ground_rule':'Dirt rows 8..10; grass arrangement (x//3+y//4)%4 elsewhere.','buildings':[{'id':name,'position_artwork':pos} for name,pos in placements],'props':pp,'actors':actors})
     meta={'version':1,'id':rec['id'],'artwork_state':'rebuilt','integration_status':'not_integrated','visual_approval':rec['visual_approval'],'artwork_pixels_per_world_pixel':2,'path_conventions':{'asset_files':'pack_relative','recipe_and_legacy_references':'repository_relative'},'rect_space':'artwork unless explicitly logical-suffixed','anchor_space':'logical unless explicitly artwork-suffixed','buildings':records,'props':prop_records,'bindings':rec['existing_building_audit'],'palette':'palette.json','recipe':'assets/source/terrain/eldenmere/exteriors_hd/recipe.json','activation':'No runtime, map, collision, navigation, door transitions, quest eligibility or save changes.','integration_followup':'Preserve bindings, entry anchors, width, sort_y, destinations, open/close behavior, pause/focus and reduced motion. Replace consumers explicitly; do not infer collision from silhouettes.'}
-    doc(PACK+'/manifest.json',meta);doc(PACK+'/palette.json',{'materials':rec['palette'],'roof_palettes':rec['roof_palettes']});doc(REVIEW+'/audit.json',{'baseline_commit':rec['baseline_commit'],'live_consumers':rec['existing_building_audit'],'scope':'Existing buildings only; no new canonical shops or destinations.'});doc(REVIEW+'/layout.json',{'presentation':'Offline native-density compositions, not gameplay captures.','scenes':scenes,'door_review':{'schedule':door_schedule,'durations_ms':door_times}});doc(REVIEW+'/exports.json',{'builder':rec['builder'],'sources':rec['sources'],'recipe_sha256':sha256((SOURCE/'recipe.json').read_bytes()).hexdigest(),'outputs':exports});return out
+    meta['native_architecture_source']={'generator':'tools/eldenmere_architecture_art.py','recipe':'assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json','recipe_sha256':sha256((ROOT/'assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json').read_bytes()).hexdigest(),'selected_live_designs':[r['id'] for r in records if r.get('architecture_audit')],'status':'Native shells selected for live town consumers; unused legacy variants retain their existing staged path.'};doc(PACK+'/manifest.json',meta);doc(PACK+'/palette.json',{'materials':rec['palette'],'roof_palettes':rec['roof_palettes']});doc(REVIEW+'/audit.json',{'baseline_commit':rec['baseline_commit'],'live_consumers':rec['existing_building_audit'],'scope':'Existing buildings only; no new canonical shops or destinations.'});doc(REVIEW+'/layout.json',{'presentation':'Offline native-density compositions, not gameplay captures.','scenes':scenes,'door_review':{'schedule':door_schedule,'durations_ms':door_times}});doc(REVIEW+'/exports.json',{'builder':rec['builder'],'sources':rec['sources'],'recipe_sha256':sha256((SOURCE/'recipe.json').read_bytes()).hexdigest(),'outputs':exports});return out
 
 def load_from_result(result,path):
     from io import BytesIO

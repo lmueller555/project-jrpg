@@ -138,8 +138,8 @@ def products():
     # Every existing exterior is bound independently to its exact existing portal.
     ext_pack='assets/terrain/eldenmere/exteriors_hd/';ext=read(ext_pack+'manifest.json');designs={r['id']:r for r in ext['buildings']}
     town=maps['town'];entities={e['id']:e for e in town['entities']}
-    # The Sanctuary keeps its approved facade, bell and smoke animation while
-    # sharing steady window lighting with the other rebuilt exteriors.
+    # The household uses the audited native shell with its retained domestic
+    # bell/planter mounts; smoke and steady pane light share the same contract.
     from tools.build_sanctuary_courtyard_hd import sanctuary_animation
     courtyard=read('assets/source/maps/eldenmere/courtyard_hd/recipe.json')
     courtyard_props={name:image('assets/maps/eldenmere/courtyard_hd/props/'+name+'.png') for name in courtyard['props']}
@@ -153,7 +153,10 @@ def products():
             im=image(ext_pack+f['file']).copy();im.paste((0,0,0,0),pixels((dx,dy,dx+dw,dy+dh)))
             # The mill's wheel is a separately controlled 9.6-second clock.
             if name=='mill':
+                # Remove the closed-frame wheel without erasing reviewed pane
+                # light where the wheel canvas overlaps the processing bay.
                 im.paste(image(ext_pack+r['structure']).crop((176,188,272,284)),(176,188))
+                for effect in r['ambient']['effects'][i].values():im.alpha_composite(image(ext_pack+effect))
                 without_old_mill_service_fragment(im,entities[name])
             frames.append(ex.png(f'exteriors/{name}/ambient_{i}',im))
         still=image(ext_pack+r['structure']).copy()
