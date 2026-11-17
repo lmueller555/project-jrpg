@@ -216,8 +216,10 @@ class LiveHouseholdContracts(unittest.TestCase):
     def test_every_prior_entity_ledger_street_and_gameplay_interface_is_preserved(self):
         for key in PREVIOUS_LEDGERS:
             self.assertEqual(self.town[key], self.before[key], key)
+        growing_ids = {e['id'] for e in self.town.get('settlement_growing', {}).get('entities', [])}
         self.assertEqual([e for e in self.town['entities']
-                          if not e['id'].startswith('settlement.households.')], self.before['entities'])
+                          if not e['id'].startswith('settlement.households.') and e['id'] not in growing_ids],
+                         self.before['entities'])
         for key in ('doors', 'destinations', 'overworld_exit', 'world_links', 'interior_scenes',
                     'interaction_cues', 'well_art', 'npcs', 'persistent_npcs', 'foreground',
                     'settlement_streets', 'cartography'):
@@ -237,16 +239,16 @@ class LiveHouseholdContracts(unittest.TestCase):
         self.assertEqual(report, self.town['settlement_households'])
         self.assertEqual(resolve_commons(ROOT, self.town, self.source, catalogue(), protections),
                          self.before['settlement_commons'])
-        validate_district_reports(*(self.town[key] for key in (*PREVIOUS_LEDGERS, 'settlement_households')))
+        validate_district_reports(*(self.town[key] for key in (*PREVIOUS_LEDGERS, 'settlement_households', 'settlement_growing')))
         household_ids = {entity['id'] for entity in report['entities']}
         cues = {record.get('entity') for record in self.town.get('interaction_cues', [])}
         self.assertFalse(household_ids & cues)
 
-    def test_collision_is_the_original_source_plus_four_explicit_ledgers_and_nav_is_identical(self):
+    def test_collision_is_the_original_source_plus_all_explicit_ledgers_and_nav_is_identical(self):
         with Image.open(ROOT/'assets/source/maps/eldenmere/town_hd/collision.png') as image:
             expected = image.convert('L')
         painter = ImageDraw.Draw(expected)
-        for key in (*PREVIOUS_LEDGERS, 'settlement_households'):
+        for key in (*PREVIOUS_LEDGERS, 'settlement_households', 'settlement_growing'):
             for support in self.town[key]['solid_footprints']:
                 x, y, w, h = support['rect']
                 self.assertTrue(all(type(value) is int for value in (x, y, w, h)))
@@ -297,7 +299,7 @@ class HouseholdSaveCompatibility(unittest.TestCase):
                 self.assertTrue(restored.town.can_stand(restored.player.position))
                 for key, value in progress.items():self.assertEqual(getattr(restored, key).to_dict(), value)
                 self.assertEqual(restored.social.flags, game.social.flags)
-                for key in (*PREVIOUS_LEDGERS, 'settlement_households'):
+                for key in (*PREVIOUS_LEDGERS, 'settlement_households', 'settlement_growing'):
                     self.assertEqual(restored.town.data[key], game.town.data[key])
                 ids = [entity['id'] for entity in restored.town.data['settlement_households']['entities']]
                 self.assertEqual(len(ids), len(set(ids)))

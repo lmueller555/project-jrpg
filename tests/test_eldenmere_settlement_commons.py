@@ -292,7 +292,7 @@ class LiveCommonsContracts(unittest.TestCase):
     def test_collision_is_original_source_plus_all_declared_ledgers_and_navigation_is_identical(self):
         with Image.open(ROOT/'assets/source/maps/eldenmere/town_hd/collision.png') as image:expected=image.convert('L')
         draw=ImageDraw.Draw(expected)
-        for key in ('settlement_dressing','settlement_workyards','settlement_commons','settlement_households'):
+        for key in ('settlement_dressing','settlement_workyards','settlement_commons','settlement_households','settlement_growing'):
             for support in self.town[key]['solid_footprints']:
                 x,y,w,h=support['rect'];self.assertTrue(all(type(v) is int for v in (x,y,w,h)))
                 draw.rectangle((x,y,x+w-1,y+h-1),fill=255)

@@ -419,10 +419,11 @@ PR 1 delivered metadata only; PR 2 integrated the ground-only street pass.
 PR 3 activated Serene's household courtyard through `courtyard_dressing`.
 PR 4 activated the workshop/mill yards through `workyard_dressing`.
 PR 5 activated the civic well/school composition through `commons_dressing`.
-**PR 6 retains those districts and activates five central household plots** through
-`household_dressing`, with separately owned source configuration and ledgers.
+PR 6 activated five central household plots through `household_dressing`.
+**PR 7 retains those districts and activates Venn's upper growing plot** through
+`growing_dressing`, with separately owned source configuration and ledgers.
 `framework_only` still rejects ground/prop activation and `ground_only` rejects
-placements. The eastern/southern districts remain inactive.
+placements. Southern arrival composition remains inactive.
 Integrated districts use explicit
 new solid supports without clearing any existing blocker or changing navigation,
 interactions, scenes or save schemas. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
@@ -438,11 +439,11 @@ all 13 doorsteps. Two source desire lines acknowledge existing grass travel;
 the school line now also carries the civic stone connection.
 They do not narrow existing usable roads or declare new walkable ground.
 The well square now has a restrained civic stone surface, an existing-line school
-connection and a small southwest resting pad. Venn's growing area and southern
-planting remain later composition work.
+connection and a small southwest resting pad. Venn's upper plot now has flat
+cultivated strips and clear working aisles. Southern planting remains later work.
 
 `tools/eldenmere_settlement_dressing.py` shares one strict build-time resolver
-across the courtyard, workyards, commons and household plots. The courtyard configuration remains confined
+across the courtyard, workyards, commons, household plots and growing area. The courtyard configuration remains confined
 to `serene_terrace` and names each
 `settlement.courtyard.*` instance. It preserves the existing home, shade tree,
 bench, provision basket, six watered beds and window troughs. An eastern herb
@@ -484,6 +485,45 @@ earth and containers introduce no harvesting, irrigation or new interactions.
 Laundry retains its source-authored 18 frames at 200 ms with the authored idle
 for reduced motion; do not freeze it or add per-instance timing overrides.
 
+The growing configuration confines `settlement.growing.*` instances to the
+original `venn_plots` rectangle in the maintained terrain plan. Resolve that source
+in logical units and require an exact scope match; the broader `eastern_growing`
+district is not permission to plant the lower terrace or gate service lane.
+Two young vegetable strips and one worked/fallow strip repeat native field
+tiles at their authored size, with 24-unit working aisles. A single empty crate
+occupies a separate storage corner. Keep the crop inset clear of the cottage's
+complete occupied artwork, including every smoke frame.
+Keep cultivated fills out of the protected public-route and work-contact
+reservations even though they add no collision: planting must not visually
+consume the irrigation service lane or a repair station.
+
+The native growing-field bank is
+`assets/terrain/eldenmere/growing_fields/manifest.json`, maintained by
+`tools/export_eldenmere_growing_fields.py`. It registers genuine vegetable and
+furrow fills from the retained Elden Vale material masters, tracing their donor,
+master crop, palette pipeline and generator. Native scene review establishes
+their use as young plants and worked soil at the town's 24-world/48-art tile scale.
+Repeat those tiles; never enlarge a regional fill across a whole bed or describe
+these flat surfaces as raised beds. Their darker worked soil distinguishes them
+from the surrounding compact-earth work aisles.
+
+Each declared `bed_contacts` rectangle must own exactly two adjacent field tiles
+of the same material. Bind the bank's authored 96×48 binary contact mask once
+across that whole 48×24-world bed, keeping its internal tile join intact. Source
+notches affect only the outer two artwork pixels; the fully opaque interior keeps
+the original donor pixels. Exposed edge pixels retain the original ground.
+Validate the source mask's dimensions, hash, binary values and opaque interior;
+do not blur, tint or resize the crop fills. Every field tile belongs to one bed.
+
+Only the two explicitly registered growing-field fills may use the growing
+flat-ground exception. Their compiled `ground_entities` bake after street
+materials and before masonry, water and actors, with no movement supports.
+They are not depth-sorted sprites that could cover a walking character. Ordinary
+storage props still need explicit solid supports and tall-occlusion checks.
+Preserve the cottage door and steps, irrigation gate, toolbox, debris, pin/channel
+contacts, repair methods, restored water phases and lower terrace grass. Planting
+does not introduce harvesting, growth simulation, extra gates or new tools.
+
 The retained-source workyard prop bank is
 `assets/terrain/eldenmere/workyard_props/manifest.json`, exported by
 `tools/export_eldenmere_workyard_props.py` from the recipe in
@@ -498,7 +538,7 @@ outputs before composing scenes.
 
 Ground-mounted containers and fences require explicit integer logical supports
 and conservative tall-occlusion review. Only genuinely low flowers/groundcover
-and explicitly supported flat floor wear may remain nonblocking. Validate every proposed occupied silhouette across its
+and explicitly supported flat floor wear/cultivated fills may remain nonblocking. Validate every proposed occupied silhouette across its
 authored frames against existing artwork and other proposals, then validate
 supports and actor sightlines against the source-owned reservations. An asset's
 availability is not permission to overlap a roof, functional prop or routine.
@@ -506,12 +546,12 @@ Source metadata owns native dimensions, depth, frames and cadence; do not add
 per-instance size or animation overrides. The composer validates freshly built
 artwork through its export buffer rather than reading a previous build's PNG.
 
-The compiled `settlement_dressing`, `settlement_workyards`, `settlement_commons`
-and `settlement_households` ledgers record their
+The compiled `settlement_dressing`, `settlement_workyards`, `settlement_commons`,
+`settlement_households` and `settlement_growing` ledgers record their
 own entities, supports, retired grass and source hashes. The courtyard keeps its
-`garden_cells`; workyard, commons and household configurations use `ground_cells`.
-The workyard ledger also
-records static `ground_entities`: wood shavings bake into native ground after
+`garden_cells`; workyard, commons, household and growing configurations use `ground_cells`.
+Workyard and growing ledgers also
+record static `ground_entities`: wood shavings and cultivated fills bake into native ground after
 street materials and before masonry, water and actors. They are not y-sorted
 sprites that could draw over someone's feet.
 

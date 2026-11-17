@@ -1,12 +1,12 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "household_dressing",
+  "status": "growing_dressing",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "PR 6 retains reviewed streets, Serene courtyard, workyards and civic commons; activates five separately bounded central household plots with native domestic props and decorative planting. Venn growing and southern arrival remain PRs 7 and 8. All existing building, quest and routine ownership remains authoritative.",
+  "activation": "PR 7 retains reviewed streets, courtyard, workyards, civic commons and household parcels; activates three flat cultivated strips and a storage corner only inside the original Venn growing plot. Existing cottage, irrigation repair, work contacts and lower terrace retain their owners. Southern arrival remains PR 8.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -85,12 +85,13 @@
         432,
         600
       ],
-      "later_pr": 7,
       "preserve": [
         "sluice access rather than a new town gate",
         "cottage/step routes",
         "working irrigation ownership"
-      ]
+      ],
+      "status": "integrated",
+      "delivery_pr": 7
     },
     {
       "id": "southern_arrival",
@@ -1725,6 +1726,89 @@
         12,
         5
       ]
+    },
+    {
+      "id": "settlement.growing.bed_1_1",
+      "asset": "growing_fields:vegetables_east_west",
+      "district": "eastern_growing",
+      "position": [
+        1320,
+        648
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.growing.bed_1_2",
+      "asset": "growing_fields:vegetables_east_west",
+      "district": "eastern_growing",
+      "position": [
+        1344,
+        648
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.growing.bed_2_1",
+      "asset": "growing_fields:vegetables_east_west",
+      "district": "eastern_growing",
+      "position": [
+        1320,
+        696
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.growing.bed_2_2",
+      "asset": "growing_fields:vegetables_east_west",
+      "district": "eastern_growing",
+      "position": [
+        1344,
+        696
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.growing.bed_3_1",
+      "asset": "growing_fields:furrows_east_west",
+      "district": "eastern_growing",
+      "position": [
+        1320,
+        744
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.growing.bed_3_2",
+      "asset": "growing_fields:furrows_east_west",
+      "district": "eastern_growing",
+      "position": [
+        1344,
+        744
+      ],
+      "collision": "none",
+      "occlusion": "ground"
+    },
+    {
+      "id": "settlement.growing.empty_crate",
+      "asset": "workyard_props:empty_crate",
+      "district": "eastern_growing",
+      "position": [
+        1304,
+        720
+      ],
+      "collision": "solid",
+      "footprint": [
+        2,
+        12,
+        20,
+        6
+      ],
+      "occlusion": "tall"
     }
   ],
   "ground_treatments": [
@@ -2244,7 +2328,8 @@
     "Any later mill delivery apron must also clear the Lantern mill group at current village_layout stations; re-fit it after the exterior/bridge work.",
     "Venn plots touch the cottage overhang; inset beds and preserve the irrigation-gate approaches. This framework grants no harvest or new service behavior.",
     "Existing player trails support dynamic followers. Protect the public corridors and companion clearance instead of inventing fixed Regent/Lantern escort routes.",
-    "PR 6 household parcels preserve baked facade details and all-frame smoke/roof bounds. Liam laundry stays west of family/Daisy play; A receives herbs beside its locker; B a low flower strip beside its linen chest; C a dry fuel corner separate from its rain jar; Elira a quiet brook-side container pocket below her windowbox. Decorative soil/planting creates no harvesting, irrigation or new interactions."
+    "PR 6 household parcels preserve baked facade details and all-frame smoke/roof bounds. Liam laundry stays west of family/Daisy play; A receives herbs beside its locker; B a low flower strip beside its linen chest; C a dry fuel corner separate from its rain jar; Elira a quiet brook-side container pocket below her windowbox. Decorative soil/planting creates no harvesting, irrigation or new interactions.",
+    "PR 7 grows only within the original source venn_plots: two young vegetable strips and one worked/fallow strip at [1320,648,48,24], [1320,696,48,24], [1320,744,48,24], leaving 24-unit work aisles. Each strip repeats two genuine native 24-world/48-art field tiles without enlargement. The crate is ordinary empty storage, separate from the existing quest toolbox, debris and working irrigation gate. Lower grass, stairs, waterways, repairs and harvesting behavior are unchanged."
   ],
   "excluded_coordinate_contexts": [
     {
@@ -2674,7 +2759,7 @@
     "desire": "Two narrow worn lines acknowledge existing grass travel from the school toward the commons and Elira toward the lower loop. They grant no new navigation.",
     "layering": "Native ground only, before masonry, stairs and water. Existing bridge decks and foreground rails remain independently owned.",
     "cartography": "Complete source-owned network resolves the original roads, later household/school/well geometry and the same active treatments. No parallel road diagram.",
-    "future_prs": "Venn growing and southern arrival planting remain PRs 7 and 8; existing streets remain independently owned."
+    "future_prs": "Southern arrival planting remains PR 8; existing streets remain independently owned."
   },
   "courtyard_dressing": {
     "district": "serene_terrace",
@@ -2882,6 +2967,46 @@
           840,
           72,
           120
+        ]
+      }
+    ]
+  },
+  "growing_dressing": {
+    "district": "eastern_growing",
+    "scope_rect": [
+      1296,
+      624,
+      96,
+      168
+    ],
+    "retire_grass_ids": [],
+    "ground_cells": [],
+    "bed_contacts": [
+      {
+        "id": "bed_1",
+        "rect": [
+          1320,
+          648,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "bed_2",
+        "rect": [
+          1320,
+          696,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "bed_3",
+        "rect": [
+          1320,
+          744,
+          48,
+          24
         ]
       }
     ]

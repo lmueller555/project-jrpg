@@ -84,6 +84,28 @@ def household_collision(source,dressing):
     """Add only reviewed household prop supports while retaining old blockers."""
     return _dressing_collision(source,dressing,'settlement.households.')
 
+def growing_collision(source,dressing):
+    """Add only declared growing-area storage supports; cultivated ground stays flat."""
+    return _dressing_collision(source,dressing,'settlement.growing.')
+
+def growing_ground(base,dressing,image_loader):
+    """Repeat native fills inside authored whole-bed contacts, beneath actors."""
+    if not dressing:return base
+    out=base.copy()
+    fields=dressing.get('ground_entities',[])
+    for contact in dressing.get('bed_contacts',[]):
+        x,y,w,h=contact['rect']
+        bed=Image.new('RGBA',pixels((w,h)))
+        for entity in fields:
+            ex,ey=entity['position'];ew,eh=entity['logical_size']
+            if x<=ex and y<=ey and ex+ew<=x+w and ey+eh<=y+h:
+                bed.alpha_composite(image_loader(entity['frames'][0]),pixels((ex-x,ey-y)))
+        mask=image_loader(contact['mask']).convert('L')
+        if mask.size!=bed.size:raise ValueError('Growing bed contact lost native registration')
+        bed.putalpha(ImageChops.multiply(bed.getchannel('A'),mask))
+        out.alpha_composite(bed,pixels((x,y)))
+    return out
+
 def _dressing_collision(source,dressing,namespace):
     out=source.copy()
     if not dressing:return out
@@ -110,6 +132,10 @@ def products():
     for name,raw in workyard_prop_products().items():
         if not (ROOT/name).is_file() or (ROOT/name).read_bytes()!=raw:
             raise ValueError('Rebuild retained-source workyard props before composing the town: '+name)
+    from tools.export_eldenmere_growing_fields import products as growing_field_products
+    for name,raw in growing_field_products().items():
+        if not (ROOT/name).is_file() or (ROOT/name).read_bytes()!=raw:
+            raise ValueError('Rebuild native growing fields before composing the town: '+name)
     for r in rec['sources']:
         if sha256((SRC/r['file']).read_bytes()).hexdigest()!=r['sha256']:raise ValueError('Changed source '+r['file'])
     for r in rec.get('dependencies',[]):
@@ -140,6 +166,7 @@ def products():
             expected=workyard_collision(expected,current_town.get('settlement_workyards'))
             expected=commons_collision(expected,current_town.get('settlement_commons'))
             expected=household_collision(expected,current_town.get('settlement_households'))
+            expected=growing_collision(expected,current_town.get('settlement_growing'))
         actual=Image.open(ROOT/current_town[field]).convert('L')
         if actual.crop((0,0,*expected.size)).tobytes()!=expected.tobytes():
             raise ValueError('Review changed '+field+' registration before rebuilding the town')
@@ -289,7 +316,8 @@ def products():
             ('settlement_dressing',composition['dressing'],'garden_cells',courtyard_collision),
             ('settlement_workyards',composition['workyards'],'ground_cells',workyard_collision),
             ('settlement_commons',composition['commons'],'ground_cells',commons_collision),
-            ('settlement_households',composition['households'],'ground_cells',household_collision)):
+            ('settlement_households',composition['households'],'ground_cells',household_collision),
+            ('settlement_growing',composition['growing'],'ground_cells',growing_collision)):
         if dressing is None:continue
         collision=mask(collision,dressing);cd=ImageDraw.Draw(collision)
         dirt.update(map(tuple,dressing[cell_key]))
@@ -308,6 +336,7 @@ def products():
     base,street_report=paint_streets(materials.ground(size,dirt),ROOT,street_town,street_recipe,materials,collision)
     for entity in (composition['workyards'] or {}).get('ground_entities',[]):
         base.alpha_composite(ex.load(entity['frames'][0]),pixels(entity['position']))
+    base=growing_ground(base,composition['growing'],ex.load)
     street_report['coverage_image']=ex.png('streets/coverage',street_report.pop('coverage_mask'))
     town['settlement_streets']={'recipe':rec['settlement_recipe'],**street_report}
     under=base.copy()

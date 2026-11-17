@@ -1,0 +1,165 @@
+{
+  "source_revision": "5630648b4fe9cb79ae7b1ad867b4aa5b6e0cc836",
+  "source": "Exact unscaled crop from original full native ground phase images before PR7 changes.",
+  "beds": [
+    {
+      "id": "bed_1",
+      "rect": [
+        1320,
+        648,
+        48,
+        24
+      ],
+      "phases": [
+        {
+          "phase": 0,
+          "elapsed_ms": 0,
+          "image": "before_beds/bed_1_phase_0.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 1,
+          "elapsed_ms": 200,
+          "image": "before_beds/bed_1_phase_1.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 2,
+          "elapsed_ms": 400,
+          "image": "before_beds/bed_1_phase_2.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 3,
+          "elapsed_ms": 600,
+          "image": "before_beds/bed_1_phase_3.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 4,
+          "elapsed_ms": 800,
+          "image": "before_beds/bed_1_phase_4.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 5,
+          "elapsed_ms": 1000,
+          "image": "before_beds/bed_1_phase_5.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        }
+      ]
+    },
+    {
+      "id": "bed_2",
+      "rect": [
+        1320,
+        696,
+        48,
+        24
+      ],
+      "phases": [
+        {
+          "phase": 0,
+          "elapsed_ms": 0,
+          "image": "before_beds/bed_2_phase_0.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 1,
+          "elapsed_ms": 200,
+          "image": "before_beds/bed_2_phase_1.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 2,
+          "elapsed_ms": 400,
+          "image": "before_beds/bed_2_phase_2.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 3,
+          "elapsed_ms": 600,
+          "image": "before_beds/bed_2_phase_3.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 4,
+          "elapsed_ms": 800,
+          "image": "before_beds/bed_2_phase_4.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 5,
+          "elapsed_ms": 1000,
+          "image": "before_beds/bed_2_phase_5.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        }
+      ]
+    },
+    {
+      "id": "bed_3",
+      "rect": [
+        1320,
+        744,
+        48,
+        24
+      ],
+      "phases": [
+        {
+          "phase": 0,
+          "elapsed_ms": 0,
+          "image": "before_beds/bed_3_phase_0.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 1,
+          "elapsed_ms": 200,
+          "image": "before_beds/bed_3_phase_1.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 2,
+          "elapsed_ms": 400,
+          "image": "before_beds/bed_3_phase_2.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 3,
+          "elapsed_ms": 600,
+          "image": "before_beds/bed_3_phase_3.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 4,
+          "elapsed_ms": 800,
+          "image": "before_beds/bed_3_phase_4.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        },
+        {
+          "phase": 5,
+          "elapsed_ms": 1000,
+          "image": "before_beds/bed_3_phase_5.png",
+          "png_sha256": "11e09a5dc67b364deac75fa649fe70825ddc2b801332608f48e2d00bd9e09748",
+          "rgba_sha256": "709a74f85145ba910fa2c55d563ccc1f790506277430fa73b2db2dde0bfd5676"
+        }
+      ]
+    }
+  ]
+}
