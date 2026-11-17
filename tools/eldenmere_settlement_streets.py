@@ -81,7 +81,7 @@ def _validate_fixture_underlay(root, town, recipe, source, rect):
     surrounding square, without granting arbitrary streets access to blockers.
     """
     name = source['id']
-    if (recipe.get('status') != 'commons_dressing' or
+    if (recipe.get('status') not in ('commons_dressing', 'household_dressing') or
             source.get('under_fixture') != 'well' or
             name != 'settlement.street.commons.well_base' or
             source.get('shape') != 'rect' or source.get('material') != 'stone'):
@@ -109,22 +109,27 @@ def resolve_streets(root, town, recipe):
     """
     root = Path(root)
     status = recipe.get('status')
-    if status not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing', 'commons_dressing'):
+    if status not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing', 'commons_dressing', 'household_dressing'):
         raise ValueError('Unsupported settlement street activation status')
-    if recipe.get('placements') != [] and status not in ('courtyard_dressing','workyard_dressing','commons_dressing'):
+    if recipe.get('placements') != [] and status not in ('courtyard_dressing','workyard_dressing','commons_dressing','household_dressing'):
         raise ValueError('Street composition cannot activate placements or runtime objects')
-    if status in ('courtyard_dressing','workyard_dressing','commons_dressing'):
+    if status in ('courtyard_dressing','workyard_dressing','commons_dressing','household_dressing'):
         config = recipe.get('courtyard_dressing')
         if not isinstance(config, dict) or config.get('district') != 'serene_terrace':
             raise ValueError('Courtyard street pass requires reviewed Serene terrace activation')
-    if status in ('workyard_dressing','commons_dressing'):
+    if status in ('workyard_dressing','commons_dressing','household_dressing'):
         config=recipe.get('workyard_dressing')
         if not isinstance(config,dict) or config.get('district')!='workshop_mill':
             raise ValueError('Workyard street pass requires reviewed workshop/mill activation')
-    if status=='commons_dressing':
+    if status in ('commons_dressing','household_dressing'):
         config=recipe.get('commons_dressing')
         if not isinstance(config,dict) or config.get('district')!='commons_households':
             raise ValueError('Commons street pass requires reviewed civic activation')
+    if status=='household_dressing':
+        config=recipe.get('household_dressing')
+        if (not isinstance(config,dict) or config.get('district')!='commons_households'
+                or not isinstance(config.get('parcels'),list) or not config['parcels']):
+            raise ValueError('Household street pass requires reviewed cottage parcel activation')
     treatments = recipe.get('ground_treatments')
     if not isinstance(treatments, list):
         raise ValueError('Settlement ground_treatments must be a list')

@@ -3087,7 +3087,7 @@
         1632
       ],
       "pixel_space": "logical_geometry",
-      "sha256": "623a842f5c29499620819e3f41cfd48d4b260ae1987b4c5b7ff17146204c31c2"
+      "sha256": "92685be67551708afddd46941bd5c1e2f6b26930418217b2bc3e808ebc51e0b0"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/navigation_allowed.png",
@@ -3519,7 +3519,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "b817d843fe07eecb4d532a4accfeee05e63c9f2001a62d650d76834f8b1b670e"
+      "sha256": "5b50fb1d3d4edebf786ce333295825f9e0e4b27c30500d1ff6911e34fe286b42"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/1_2_0.png",
@@ -3681,7 +3681,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f94b42666559dad3d32159418c49e99d25a8b5a9421b8823fa516a0dc0fe08fb"
+      "sha256": "7c99ba1eecb71927c78362628fe37e31205f0322e53ce8acc0b68b5624b8b427"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/1_3_0.png",
@@ -3699,7 +3699,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "23083a0113abf7e60891bc6b3aa7a9ce6a153514edd523c14d1ab75398a9f67d"
+      "sha256": "d26e863620fc7c8b3e84f97f4f4c240f9682195935c26f36fd117cbd8d5b1a8d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/3_3_0.png",
@@ -8325,7 +8325,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "3357a6a0c53f8e5d48c9240518a7021420be5e2433139e6e84e7fd8d0e38eb76"
+      "sha256": "287683bf3f7807a4ead4bd687f8031db3fc4f30cd09b86b3c4f35d9e93a2f3f1"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",
@@ -8484,8 +8484,8 @@
   "settlement_framework": {
     "manifest": "assets/maps/eldenmere/settlement/manifest.json",
     "recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
-    "status": "commons_dressing",
-    "active_placements": 22,
+    "status": "household_dressing",
+    "active_placements": 32,
     "active_ground_treatments": 36
   },
   "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",

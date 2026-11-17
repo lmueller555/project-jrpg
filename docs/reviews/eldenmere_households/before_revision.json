@@ -1,0 +1,15 @@
+{
+  "git_commit": "1b2362ebbe47cfd3542acb8ba3ccaf7608ffe85f",
+  "branch": "main",
+  "source": "Clean main after settlement PR5 #257 and low roof proportions PR258; before settlement PR6 production mutations.",
+  "main_py_sha256": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
+  "map_sha256": "85c0aef5c2dc84137a182ca23e50104d6101a7a7362fe47fddfb2389391198fa",
+  "town_map": "assets/maps/eldenmere/playable/map.json",
+  "collision_sha256": "623a842f5c29499620819e3f41cfd48d4b260ae1987b4c5b7ff17146204c31c2",
+  "navigation_allowed_sha256": "195371384343687532eb1a2a965f2c5f91d21a9401182a8a0a6821ec788c83af",
+  "production_source_unchanged": true,
+  "production_active_files": 948,
+  "native_framework_views": 13,
+  "native_ground_phases": 6,
+  "native_household_views": 7
+}

@@ -418,10 +418,11 @@ candidates. The reproducible report is
 PR 1 delivered metadata only; PR 2 integrated the ground-only street pass.
 PR 3 activated Serene's household courtyard through `courtyard_dressing`.
 PR 4 activated the workshop/mill yards through `workyard_dressing`.
-**PR 5 retains both districts and activates the civic well/school composition**
-through `commons_dressing`, with separately owned source configuration and ledgers.
+PR 5 activated the civic well/school composition through `commons_dressing`.
+**PR 6 retains those districts and activates five central household plots** through
+`household_dressing`, with separately owned source configuration and ledgers.
 `framework_only` still rejects ground/prop activation and `ground_only` rejects
-placements. Other household plots and the eastern/southern districts remain inactive.
+placements. The eastern/southern districts remain inactive.
 Integrated districts use explicit
 new solid supports without clearing any existing blocker or changing navigation,
 interactions, scenes or save schemas. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
@@ -437,11 +438,11 @@ all 13 doorsteps. Two source desire lines acknowledge existing grass travel;
 the school line now also carries the civic stone connection.
 They do not narrow existing usable roads or declare new walkable ground.
 The well square now has a restrained civic stone surface, an existing-line school
-connection and a small southwest resting pad. Other household plots, Venn's growing
-area and southern planting remain later composition work.
+connection and a small southwest resting pad. Venn's growing area and southern
+planting remain later composition work.
 
 `tools/eldenmere_settlement_dressing.py` shares one strict build-time resolver
-across the courtyard, workyards and commons. The courtyard configuration remains confined
+across the courtyard, workyards, commons and household plots. The courtyard configuration remains confined
 to `serene_terrace` and names each
 `settlement.courtyard.*` instance. It preserves the existing home, shade tree,
 bench, provision basket, six watered beds and window troughs. An eastern herb
@@ -465,6 +466,24 @@ The bench uses its source-declared depth baseline rather than an instance overri
 Native stone follows the existing school desire line and shared paving phase.
 Keep the through-roads in earth and the central operating/gathering areas open.
 
+The household configuration names five disjoint parcels inside `commons_households`:
+`liam_house`, `home_a`, `home_b`, `home_c` and `elira`. Each
+`settlement.households.*` placement names its parcel; its complete native canvas
+must fit that boundary. Every garden cell and its full one-tile transition fringe,
+and any deliberately retired grass artwork, must also fit one parcel. The broad
+district rectangle does not authorize dressing the intervening streets or civic
+spaces. Civic and household instances share a district but retain distinct
+namespaces and ledgers; combined validation checks all four owners.
+
+These pockets complement the existing facade details: laundry and flowerpots
+beside Liam's open play yard, herbs beside Home A's locker, a low flower strip
+beside Home B's linen chest, dry fuel beside Home C's rain jar, and quiet containers
+beside Elira's windowbox. Preserve the complete Liam/Daisy play envelope, door
+reservations, all-frame roof/smoke bounds and existing household routines. Decorative
+earth and containers introduce no harvesting, irrigation or new interactions.
+Laundry retains its source-authored 18 frames at 200 ms with the authored idle
+for reduced motion; do not freeze it or add per-instance timing overrides.
+
 The retained-source workyard prop bank is
 `assets/terrain/eldenmere/workyard_props/manifest.json`, exported by
 `tools/export_eldenmere_workyard_props.py` from the recipe in
@@ -487,9 +506,10 @@ Source metadata owns native dimensions, depth, frames and cadence; do not add
 per-instance size or animation overrides. The composer validates freshly built
 artwork through its export buffer rather than reading a previous build's PNG.
 
-The compiled `settlement_dressing`, `settlement_workyards` and `settlement_commons` ledgers record their
+The compiled `settlement_dressing`, `settlement_workyards`, `settlement_commons`
+and `settlement_households` ledgers record their
 own entities, supports, retired grass and source hashes. The courtyard keeps its
-`garden_cells`; workyard and commons configurations use `ground_cells`.
+`garden_cells`; workyard, commons and household configurations use `ground_cells`.
 The workyard ledger also
 records static `ground_entities`: wood shavings bake into native ground after
 street materials and before masonry, water and actors. They are not y-sorted
@@ -506,7 +526,7 @@ The collision check reconstructs the original physical mask plus exactly the
 ledger's declared supports. It never clears old pixels or accepts unrelated
 changes. Verify additive support deltas independently, keep navigation byte
 identical, and test older saves at newly occupied ground through real Continue.
-Garden and workyard earth reuse the native grass/dirt blob bank before masonry/water. Bound
+Garden, workyard and household earth reuse the native grass/dirt blob bank before masonry/water. Bound
 its changes to the declared cells and their one-tile transition rim. Retire only
 the meadow instances that conflict with this planted pocket; preserve other
 grass IDs, roots and contact metadata. The street network and regional scene
