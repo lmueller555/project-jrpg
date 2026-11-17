@@ -1359,3 +1359,42 @@ glass displays, ambient loops, props, the planning diagram and service specifica
 Source art and prior-bank door/smoke dependencies are hashed. Exporters write only
 the new bank and review directory; runtime maps, existing assets, inventory,
 interaction eligibility and saves remain unchanged.
+
+### Staged Rising Rain actions and wildlife
+
+Elden Vale's third asset pack is built by
+`tools/build_elden_vale_rising_rain_hd.py`; the
+[central terrain reference](TERRAIN_ART_STANDARD.md#staged-elden-vale-rising-rain)
+owns environment maintenance. All new banks remain **not integrated** and
+**not reviewed by the user**. Existing idles, gaits, cast placement and selectors
+are unchanged.
+
+Eight complete drawn poses each cover right-facing washing gathering for
+`npcs/female_01`, cloth deployment for `npcs/male_02`, and a leaf-catching identity
+study for `liam`. Staged exports live in each actor's `rising_rain_hd/` directory.
+The 96×112 artwork / 48×56 logical action canvas includes reach padding; soles
+register at [48,104] artwork / [24,52] logical. One scale per source strip preserves
+anatomy while bending; adult body heights remain 68 artwork pixels and Liam's
+52, matching twice their original occupied idle heights. Do not normalize every
+pose independently or manufacture movement with detached limbs.
+
+Manifests record frame order/timing, grips, station anchors and ownership cues.
+The stateless preview samples one object location per authored time, including
+interrupted/seeked playback. Gathering finishes holding transport cloth, deployed
+cloth remains at its supports, and the lowered leaf returns to its station.
+Production integration must retain authoritative object ownership, close natural
+reach, actor/prop occlusion, action completion and personal-prop visibility.
+Existing legacy walk frames appear only as approach compatibility references in
+offline previews; no new carrying gait is implied.
+
+The brown/cream bird has sixteen complete drawings: four perch/alert, four takeoff
+and eight flight. Its 64×64 artwork / 32×32 logical canvas is transparent wing
+padding, not an enlarged body. Body scale derives from the original regional perch;
+a cream-breast landmark registers changing wing silhouettes. The separate preview
+trajectory does not change anatomy or commit an animal route. Stable perch artwork
+serves reduced motion. Other wildlife banks and actor IDs remain untouched.
+
+[Numbered sheets, contacts and normal/slow previews](reviews/elden_vale_rising_rain_hd/README.md)
+are offline review evidence. Actual gameplay camera, transitions, actor/workstation
+spacing, interruption/Continue and reduced-motion lifecycle require integration
+review. The optional map event glyph does not activate a forecast UI.

@@ -1,0 +1,175 @@
+{
+  "action": "leaf",
+  "actor": "liam",
+  "integration_status": "not_integrated",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    48,
+    56
+  ],
+  "draw_anchor_logical": [
+    24,
+    52
+  ],
+  "foot_anchor_logical": [
+    24,
+    52
+  ],
+  "body_height_artwork": 52,
+  "source_scale": 0.13402061855670103,
+  "frame_duration_ms": 220,
+  "loop": false,
+  "ownership_cues": [
+    {
+      "frame": 2,
+      "owner": "actor",
+      "state": "raised",
+      "contact_position_logical": [
+        28.5,
+        44
+      ]
+    },
+    {
+      "frame": 7,
+      "owner": "station",
+      "state": "lowered",
+      "contact_position_logical": [
+        28.5,
+        44
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_00.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        26.5,
+        45.0
+      ],
+      "source_cell": 0,
+      "sheet_rect_artwork": [
+        0,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_01.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        28.5,
+        43.0
+      ],
+      "source_cell": 1,
+      "sheet_rect_artwork": [
+        96,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_02.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        27.5,
+        41.5
+      ],
+      "source_cell": 2,
+      "sheet_rect_artwork": [
+        192,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_03.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        27.5,
+        40.5
+      ],
+      "source_cell": 3,
+      "sheet_rect_artwork": [
+        288,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_04.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        28.5,
+        38.5
+      ],
+      "source_cell": 4,
+      "sheet_rect_artwork": [
+        384,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_05.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        28.5,
+        39.0
+      ],
+      "source_cell": 5,
+      "sheet_rect_artwork": [
+        480,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_06.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        27.0,
+        41.5
+      ],
+      "source_cell": 6,
+      "sheet_rect_artwork": [
+        576,
+        0,
+        96,
+        112
+      ]
+    },
+    {
+      "image": "assets/characters/liam/rising_rain_hd/leaf/frame_07.png",
+      "duration_ms": 220,
+      "grip_logical": [
+        26.5,
+        43.5
+      ],
+      "source_cell": 7,
+      "sheet_rect_artwork": [
+        672,
+        0,
+        96,
+        112
+      ]
+    }
+  ],
+  "prop_space": "logical, local to 48x56 canvas",
+  "facing": "right",
+  "approach": "reuse existing right walk at its current legacy density in preview only",
+  "completion": "gather remains carrying; deploy leaves panel; leaf returns to station",
+  "registration": "one source scale; sole centers aligned; no anatomy deformation",
+  "station_grip_logical": [
+    28.5,
+    44
+  ],
+  "placement_peg_logical": null,
+  "sheet": "assets/characters/liam/rising_rain_hd/leaf/spritesheet.png"
+}

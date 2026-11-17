@@ -1162,3 +1162,37 @@ to verify bytes without writing. Focused contracts live in
 [Offline review evidence](reviews/elden_vale_signature_landscape_hd/README.md)
 records source-based assets, scale studies, module connections and the clearance
 plan. It does not certify gameplay integration, map release or new lore.
+
+### Staged Elden Vale Rising Rain
+
+`tools/build_elden_vale_rising_rain_hd.py` owns the third staged regional asset
+pack. Sources, identity references, generation brief and recipe/hashes are under
+`assets/source/terrain/overworld/elden_vale/rising_rain_hd/`; environment exports
+are registered by `assets/terrain/overworld/elden_vale/rising_rain_hd/manifest.json`.
+This bank is **not integrated** and has not received user visual approval.
+
+Sixteen drawn water/atmosphere cells provide surface gathering/detachment, ascending
+clusters, meadow curtains, canopy strands, high veils, wet accents and dedicated
+reduced-motion stills. Exports retain hard masks; controlled whole-layer opacity
+provides intentional atmosphere. Separate fixed posts and cloth panels/bundles,
+ties, leaf states and basket support local-life staging. Ordinary props never
+automatically receive discovery glints or yellow outlines.
+
+The deterministic twelve-second review timeline illustrates the four phenomenon
+phases. It does not establish live frequency, triggers, weather simulation,
+resource collection or combat bonuses. Preview particle placement protects a
+central travel/interaction band. Integration must implement authoritative event
+eligibility, reliable first witnessing, clocks, scene cleanup, bounded rendering
+and actual foreground visibility under normal and reduced motion.
+
+The same builder stages right-facing action clips beside existing actor banks,
+a bird bank beside regional wildlife, and 64×64 atlas icon candidates beside
+cartography. Active selectors and maps stay unchanged. Those clips and icons do
+not establish new NPC schedules, Liam's story location, animal routes or a map
+forecast. Final atlas regeneration follows layout integration.
+
+Build with `python tools/build_elden_vale_rising_rain_hd.py`; use `--check` to
+verify bytes without writing. Focused contracts are in
+`tests/test_elden_vale_rising_rain_hd.py`. See
+[offline previews and limits](reviews/elden_vale_rising_rain_hd/README.md) and the
+[actor export reference](VISUAL_ART_STANDARD.md#staged-rising-rain-actions-and-wildlife).
