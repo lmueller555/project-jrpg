@@ -41,8 +41,18 @@ segmentation and assembly. Existing scene donors remain unchanged.
 
 Focused tests cover support rejection on walkable ground, unchanged input geometry,
 exact anatomical/arch layer reconstruction, real arch opening, density/alpha/masks
-and reference module ports. The scene/collision hashes intentionally fail if the
-layout changes so proposed supports must be reviewed again.
+and reference module ports. The original full-map hash remains historical evidence
+in the layout plan. Integration Step 2 replaces that byte-level visual dependency
+with `protected_geometry.json`: exact scene/probe/entry facts, door contracts,
+public approaches, courtyard loop, physical footprints and cave barrier. The
+collision PNG hash remains mandatory. Changes to these safety facts fail and
+require renewed placement review; visual-only metadata can change independently.
+
+The staged exporter does not consume generated visual map bytes in its dependency
+recipe. `--record-visual-provenance` records the current generated map hash in
+`visual_provenance.json` after safety checks. That review observation is never an
+input to staged assets or active map builders, avoiding a circular dependency.
+It is opt-in and cannot be combined with non-writing `--check`.
 
 Compositions use explicit presentation scales and crops for different viewpoints;
 they are not final world placements. The support study validates the existing

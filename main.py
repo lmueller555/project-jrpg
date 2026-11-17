@@ -15,6 +15,7 @@ except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
 from rendering import scale as render_scale, immutable, record_art, load_art, SurfaceCache
+from landmark_layers import LandmarkLayers
 from object_cues import ObjectCues
 
 from npc_routines import Gardener, RoutineNPC
@@ -221,6 +222,7 @@ class World:
         self.path=Path(path).resolve()
         self.data=read_json(path)
         self.size=tuple(self.data['size_pixels'])
+        self.landmarks=LandmarkLayers(ROOT,self.data.get('landmark_layers',()))
         self._images={} if image_cache is None else image_cache
         self.art_density=self.data.get('artwork_pixels_per_world_pixel',1)
         self.object_cues=ObjectCues(self.data.get('interaction_cues',()))
@@ -376,6 +378,8 @@ class World:
         target.fill('#24302d')
         viewport=pygame.Rect(camera,target.get_size())
         self.draw_ground(target,camera,elapsed_ms)
+        self.landmarks.draw(target,camera,'distant')
+        self.landmarks.draw(target,camera,'ground')
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
@@ -432,6 +436,8 @@ class World:
         # Southern bridge rails occlude actors crossing on the deck.
         for image,position in self.foreground:
             target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
+        self.landmarks.draw(target,camera,'overhead',actors=(player,*self.npcs,*party_actors),
+                            interaction_points=self.data.get('landmark_visibility_points',()))
         if include_ui:
             for routine in getattr(self,'play_routines',[]):routine.draw(target,camera,self)
 

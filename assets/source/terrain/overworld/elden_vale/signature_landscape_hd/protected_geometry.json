@@ -1,0 +1,3110 @@
+{
+  "id": "elden_vale_sanctuary",
+  "size_pixels": [
+    1152,
+    768
+  ],
+  "spawn": [
+    444,
+    642
+  ],
+  "reserve_exit": {
+    "position": [
+      444,
+      735
+    ],
+    "radius": 20
+  },
+  "hall_approach": [
+    535,
+    345
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "doors": [
+    {
+      "id": "sanctuary_hall",
+      "anchor": [
+        535,
+        345
+      ],
+      "entry_y": 345,
+      "entry_side": "north",
+      "entry_half_width": 12,
+      "open_radius": 32,
+      "close_radius": 40,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        535,
+        345
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/elden_vale_sanctuary_hall/map.json",
+      "spawn": [
+        288,
+        328
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "reserve_exit"
+    }
+  ],
+  "public_approaches": {
+    "arrival": [
+      444,
+      642
+    ],
+    "hall": [
+      534,
+      370
+    ],
+    "gardener": [
+      212,
+      480
+    ],
+    "visitor_1": [
+      264,
+      334
+    ],
+    "visitor_2": [
+      300,
+      320
+    ],
+    "grove": [
+      292,
+      244
+    ],
+    "cave": [
+      1008,
+      406
+    ],
+    "survey": [
+      858,
+      630
+    ],
+    "boundary": [
+      456,
+      654
+    ],
+    "rest_bench": [
+      180,
+      570
+    ]
+  },
+  "loop_waypoints": [
+    [
+      444,
+      642
+    ],
+    [
+      264,
+      600
+    ],
+    [
+      192,
+      516
+    ],
+    [
+      192,
+      384
+    ],
+    [
+      264,
+      334
+    ],
+    [
+      292,
+      244
+    ],
+    [
+      336,
+      192
+    ],
+    [
+      528,
+      84
+    ],
+    [
+      744,
+      96
+    ],
+    [
+      960,
+      168
+    ],
+    [
+      1100,
+      240
+    ],
+    [
+      1100,
+      336
+    ],
+    [
+      1100,
+      396
+    ],
+    [
+      1100,
+      444
+    ],
+    [
+      1008,
+      432
+    ],
+    [
+      864,
+      456
+    ],
+    [
+      864,
+      552
+    ],
+    [
+      924,
+      570
+    ],
+    [
+      924,
+      630
+    ],
+    [
+      858,
+      630
+    ],
+    [
+      660,
+      624
+    ],
+    [
+      444,
+      642
+    ]
+  ],
+  "collision_footprints": [
+    {
+      "id": "reserve_tree_00_0",
+      "entity_id": "reserve_tree_00",
+      "rect": [
+        36,
+        96,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_01_0",
+      "entity_id": "reserve_tree_01",
+      "rect": [
+        120,
+        108,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_02_0",
+      "entity_id": "reserve_tree_02",
+      "rect": [
+        216,
+        96,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_03_0",
+      "entity_id": "reserve_tree_03",
+      "rect": [
+        324,
+        84,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_04_0",
+      "entity_id": "reserve_tree_04",
+      "rect": [
+        408,
+        108,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_05_0",
+      "entity_id": "reserve_tree_05",
+      "rect": [
+        504,
+        96,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_06_0",
+      "entity_id": "reserve_tree_06",
+      "rect": [
+        600,
+        120,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_07_0",
+      "entity_id": "reserve_tree_07",
+      "rect": [
+        708,
+        108,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_08_0",
+      "entity_id": "reserve_tree_08",
+      "rect": [
+        816,
+        96,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_09_0",
+      "entity_id": "reserve_tree_09",
+      "rect": [
+        912,
+        120,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_10_0",
+      "entity_id": "reserve_tree_10",
+      "rect": [
+        1008,
+        96,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_11_0",
+      "entity_id": "reserve_tree_11",
+      "rect": [
+        1104,
+        120,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_12_0",
+      "entity_id": "reserve_tree_12",
+      "rect": [
+        72,
+        36,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_13_0",
+      "entity_id": "reserve_tree_13",
+      "rect": [
+        264,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_14_0",
+      "entity_id": "reserve_tree_14",
+      "rect": [
+        444,
+        36,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_15_0",
+      "entity_id": "reserve_tree_15",
+      "rect": [
+        636,
+        36,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_16_0",
+      "entity_id": "reserve_tree_16",
+      "rect": [
+        840,
+        36,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_17_0",
+      "entity_id": "reserve_tree_17",
+      "rect": [
+        1032,
+        36,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_18_0",
+      "entity_id": "reserve_tree_18",
+      "rect": [
+        24,
+        204,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_19_0",
+      "entity_id": "reserve_tree_19",
+      "rect": [
+        84,
+        168,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_20_0",
+      "entity_id": "reserve_tree_20",
+      "rect": [
+        36,
+        312,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_21_0",
+      "entity_id": "reserve_tree_21",
+      "rect": [
+        96,
+        348,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_22_0",
+      "entity_id": "reserve_tree_22",
+      "rect": [
+        24,
+        432,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_23_0",
+      "entity_id": "reserve_tree_23",
+      "rect": [
+        72,
+        480,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_24_0",
+      "entity_id": "reserve_tree_24",
+      "rect": [
+        24,
+        564,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_25_0",
+      "entity_id": "reserve_tree_25",
+      "rect": [
+        84,
+        636,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_26_0",
+      "entity_id": "reserve_tree_26",
+      "rect": [
+        24,
+        708,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_27_0",
+      "entity_id": "reserve_tree_27",
+      "rect": [
+        1116,
+        204,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_28_0",
+      "entity_id": "reserve_tree_28",
+      "rect": [
+        1062,
+        156,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_29_0",
+      "entity_id": "reserve_tree_29",
+      "rect": [
+        1116,
+        444,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_30_0",
+      "entity_id": "reserve_tree_30",
+      "rect": [
+        1068,
+        480,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_31_0",
+      "entity_id": "reserve_tree_31",
+      "rect": [
+        1116,
+        588,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_32_0",
+      "entity_id": "reserve_tree_32",
+      "rect": [
+        1092,
+        672,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_33_0",
+      "entity_id": "reserve_tree_33",
+      "rect": [
+        144,
+        708,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_34_0",
+      "entity_id": "reserve_tree_34",
+      "rect": [
+        204,
+        684,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_35_0",
+      "entity_id": "reserve_tree_35",
+      "rect": [
+        288,
+        732,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_36_0",
+      "entity_id": "reserve_tree_36",
+      "rect": [
+        336,
+        696,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_37_0",
+      "entity_id": "reserve_tree_37",
+      "rect": [
+        564,
+        708,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_38_0",
+      "entity_id": "reserve_tree_38",
+      "rect": [
+        636,
+        684,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_39_0",
+      "entity_id": "reserve_tree_39",
+      "rect": [
+        732,
+        720,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_40_0",
+      "entity_id": "reserve_tree_40",
+      "rect": [
+        816,
+        696,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_41_0",
+      "entity_id": "reserve_tree_41",
+      "rect": [
+        912,
+        732,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_42_0",
+      "entity_id": "reserve_tree_42",
+      "rect": [
+        996,
+        696,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_43_0",
+      "entity_id": "reserve_tree_43",
+      "rect": [
+        132,
+        264,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_44_landmark_roots_0",
+      "entity_id": "reserve_tree_44_landmark_roots",
+      "rect": [
+        348,
+        264,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_45_sapling_arching_0",
+      "entity_id": "reserve_tree_45_sapling_arching",
+      "rect": [
+        132,
+        396,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_46_sapling_upright_0",
+      "entity_id": "reserve_tree_46_sapling_upright",
+      "rect": [
+        324,
+        408,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_47_0",
+      "entity_id": "reserve_tree_47",
+      "rect": [
+        108,
+        528,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_48_0",
+      "entity_id": "reserve_tree_48",
+      "rect": [
+        336,
+        540,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_49_0",
+      "entity_id": "reserve_tree_49",
+      "rect": [
+        780,
+        540,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_tree_50_0",
+      "entity_id": "reserve_tree_50",
+      "rect": [
+        1020,
+        612,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "reserve_shrub_0_0_0",
+      "entity_id": "reserve_shrub_0_0",
+      "rect": [
+        75,
+        267,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_0_1_0",
+      "entity_id": "reserve_shrub_0_1",
+      "rect": [
+        93,
+        259,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_0_2_0",
+      "entity_id": "reserve_shrub_0_2",
+      "rect": [
+        107,
+        277,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_1_0_0",
+      "entity_id": "reserve_shrub_1_0",
+      "rect": [
+        63,
+        435,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_1_1_0",
+      "entity_id": "reserve_shrub_1_1",
+      "rect": [
+        81,
+        427,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_1_2_0",
+      "entity_id": "reserve_shrub_1_2",
+      "rect": [
+        95,
+        445,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_2_0_0",
+      "entity_id": "reserve_shrub_2_0",
+      "rect": [
+        63,
+        615,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_2_1_0",
+      "entity_id": "reserve_shrub_2_1",
+      "rect": [
+        81,
+        607,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_2_2_0",
+      "entity_id": "reserve_shrub_2_2",
+      "rect": [
+        95,
+        625,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_3_0_0",
+      "entity_id": "reserve_shrub_3_0",
+      "rect": [
+        231,
+        111,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_3_1_0",
+      "entity_id": "reserve_shrub_3_1",
+      "rect": [
+        249,
+        103,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_3_2_0",
+      "entity_id": "reserve_shrub_3_2",
+      "rect": [
+        263,
+        121,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_4_0_0",
+      "entity_id": "reserve_shrub_4_0",
+      "rect": [
+        807,
+        147,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_4_1_0",
+      "entity_id": "reserve_shrub_4_1",
+      "rect": [
+        825,
+        139,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_4_2_0",
+      "entity_id": "reserve_shrub_4_2",
+      "rect": [
+        839,
+        157,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_5_0_0",
+      "entity_id": "reserve_shrub_5_0",
+      "rect": [
+        1059,
+        555,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_5_1_0",
+      "entity_id": "reserve_shrub_5_1",
+      "rect": [
+        1077,
+        547,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_5_2_0",
+      "entity_id": "reserve_shrub_5_2",
+      "rect": [
+        1091,
+        565,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_6_0_0",
+      "entity_id": "reserve_shrub_6_0",
+      "rect": [
+        1071,
+        591,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_6_1_0",
+      "entity_id": "reserve_shrub_6_1",
+      "rect": [
+        1089,
+        583,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_6_2_0",
+      "entity_id": "reserve_shrub_6_2",
+      "rect": [
+        1103,
+        601,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_7_0_0",
+      "entity_id": "reserve_shrub_7_0",
+      "rect": [
+        603,
+        705,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_7_1_0",
+      "entity_id": "reserve_shrub_7_1",
+      "rect": [
+        621,
+        697,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_7_2_0",
+      "entity_id": "reserve_shrub_7_2",
+      "rect": [
+        635,
+        715,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_8_0_0",
+      "entity_id": "reserve_shrub_8_0",
+      "rect": [
+        867,
+        705,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_8_1_0",
+      "entity_id": "reserve_shrub_8_1",
+      "rect": [
+        885,
+        697,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_8_2_0",
+      "entity_id": "reserve_shrub_8_2",
+      "rect": [
+        899,
+        715,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_9_0_0",
+      "entity_id": "reserve_shrub_9_0",
+      "rect": [
+        111,
+        699,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_9_1_0",
+      "entity_id": "reserve_shrub_9_1",
+      "rect": [
+        129,
+        691,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_9_2_0",
+      "entity_id": "reserve_shrub_9_2",
+      "rect": [
+        143,
+        709,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_10_0_0",
+      "entity_id": "reserve_shrub_10_0",
+      "rect": [
+        315,
+        687,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_10_1_0",
+      "entity_id": "reserve_shrub_10_1",
+      "rect": [
+        333,
+        679,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_10_2_0",
+      "entity_id": "reserve_shrub_10_2",
+      "rect": [
+        347,
+        697,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_11_0_0",
+      "entity_id": "reserve_shrub_11_0",
+      "rect": [
+        747,
+        195,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_11_1_0",
+      "entity_id": "reserve_shrub_11_1",
+      "rect": [
+        765,
+        187,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_11_2_0",
+      "entity_id": "reserve_shrub_11_2",
+      "rect": [
+        779,
+        205,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_12_0_0",
+      "entity_id": "reserve_shrub_12_0",
+      "rect": [
+        375,
+        519,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_12_1_0",
+      "entity_id": "reserve_shrub_12_1",
+      "rect": [
+        393,
+        511,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_12_2_0",
+      "entity_id": "reserve_shrub_12_2",
+      "rect": [
+        407,
+        529,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_13_0_0",
+      "entity_id": "reserve_shrub_13_0",
+      "rect": [
+        279,
+        147,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_13_1_0",
+      "entity_id": "reserve_shrub_13_1",
+      "rect": [
+        297,
+        139,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_shrub_13_2_0",
+      "entity_id": "reserve_shrub_13_2",
+      "rect": [
+        311,
+        157,
+        18,
+        9
+      ]
+    },
+    {
+      "id": "reserve_bench_0_0",
+      "entity_id": "reserve_bench_0",
+      "rect": [
+        244,
+        272,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "reserve_bench_1_0",
+      "entity_id": "reserve_bench_1",
+      "rect": [
+        136,
+        362,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "reserve_bench_2_0",
+      "entity_id": "reserve_bench_2",
+      "rect": [
+        148,
+        546,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "reserve_bench_3_0",
+      "entity_id": "reserve_bench_3",
+      "rect": [
+        700,
+        452,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "reserve_planter_0_0",
+      "entity_id": "reserve_planter_0",
+      "rect": [
+        404,
+        342,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "reserve_planter_1_0",
+      "entity_id": "reserve_planter_1",
+      "rect": [
+        634,
+        342,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "reserve_planter_2_0",
+      "entity_id": "reserve_planter_2",
+      "rect": [
+        904,
+        366,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "reserve_hall_0",
+      "entity_id": "reserve_hall",
+      "rect": [
+        415,
+        255,
+        104,
+        84
+      ]
+    },
+    {
+      "id": "reserve_hall_1",
+      "entity_id": "reserve_hall",
+      "rect": [
+        551,
+        255,
+        104,
+        84
+      ]
+    },
+    {
+      "id": "reserve_hall_2",
+      "entity_id": "reserve_hall",
+      "rect": [
+        519,
+        255,
+        32,
+        50
+      ]
+    },
+    {
+      "id": "reserve_cloister_back_0",
+      "entity_id": "reserve_cloister_back",
+      "rect": [
+        655,
+        273,
+        240,
+        12
+      ]
+    },
+    {
+      "id": "reserve_cloister_column_0_0",
+      "entity_id": "reserve_cloister_column_0",
+      "rect": [
+        655,
+        325,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "reserve_cloister_column_1_0",
+      "entity_id": "reserve_cloister_column_1",
+      "rect": [
+        731,
+        325,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "reserve_cloister_column_2_0",
+      "entity_id": "reserve_cloister_column_2",
+      "rect": [
+        807,
+        325,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "reserve_cloister_column_3_0",
+      "entity_id": "reserve_cloister_column_3",
+      "rect": [
+        883,
+        325,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "reserve_entrance_arch_0",
+      "entity_id": "reserve_entrance_arch",
+      "rect": [
+        396,
+        656,
+        24,
+        16
+      ]
+    },
+    {
+      "id": "reserve_entrance_arch_1",
+      "entity_id": "reserve_entrance_arch",
+      "rect": [
+        468,
+        656,
+        24,
+        16
+      ]
+    },
+    {
+      "id": "reserve_cave_0",
+      "entity_id": "reserve_cave",
+      "rect": [
+        940,
+        319,
+        35,
+        64
+      ]
+    },
+    {
+      "id": "reserve_cave_1",
+      "entity_id": "reserve_cave",
+      "rect": [
+        1042,
+        319,
+        34,
+        64
+      ]
+    },
+    {
+      "id": "reserve_cave_2",
+      "entity_id": "reserve_cave",
+      "rect": [
+        975,
+        315,
+        67,
+        56
+      ]
+    },
+    {
+      "id": "reserve_cave_keeper_rail_0",
+      "entity_id": "reserve_cave_keeper_rail",
+      "rect": [
+        972,
+        359,
+        72,
+        12
+      ]
+    },
+    {
+      "id": "reserve_survey_seam_0",
+      "entity_id": "reserve_survey_seam",
+      "rect": [
+        892,
+        518,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "court_basin_0",
+      "entity_id": "court_basin",
+      "rect": [
+        748,
+        382,
+        40,
+        12
+      ]
+    },
+    {
+      "id": "reserve_survey_board_0",
+      "entity_id": "reserve_survey_board",
+      "rect": [
+        848,
+        598,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_boundary_marker_0",
+      "entity_id": "reserve_boundary_marker",
+      "rect": [
+        488,
+        648,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "reserve_memorial_marker_0_0",
+      "entity_id": "reserve_memorial_marker_0",
+      "rect": [
+        244,
+        234,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "reserve_memorial_marker_1_0",
+      "entity_id": "reserve_memorial_marker_1",
+      "rect": [
+        328,
+        258,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "reserve_memorial_marker_2_0",
+      "entity_id": "reserve_memorial_marker_2",
+      "rect": [
+        184,
+        462,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "reserve_survey_stake_0_0",
+      "entity_id": "reserve_survey_stake_0",
+      "rect": [
+        888,
+        588,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "reserve_survey_stake_1_0",
+      "entity_id": "reserve_survey_stake_1",
+      "rect": [
+        1008,
+        588,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "reserve_survey_stake_2_0",
+      "entity_id": "reserve_survey_stake_2",
+      "rect": [
+        960,
+        612,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_0_0",
+      "entity_id": "reserve_ridge_band_0",
+      "rect": [
+        604,
+        482,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_1_0",
+      "entity_id": "reserve_ridge_band_1",
+      "rect": [
+        676,
+        494,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_2_0",
+      "entity_id": "reserve_ridge_band_2",
+      "rect": [
+        748,
+        482,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_3_0",
+      "entity_id": "reserve_ridge_band_3",
+      "rect": [
+        904,
+        278,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_4_0",
+      "entity_id": "reserve_ridge_band_4",
+      "rect": [
+        940,
+        272,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_5_0",
+      "entity_id": "reserve_ridge_band_5",
+      "rect": [
+        988,
+        272,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_band_6_0",
+      "entity_id": "reserve_ridge_band_6",
+      "rect": [
+        964,
+        518,
+        88,
+        30
+      ]
+    },
+    {
+      "id": "reserve_ridge_rock_0_0",
+      "entity_id": "reserve_ridge_rock_0",
+      "rect": [
+        920,
+        282,
+        48,
+        18
+      ]
+    },
+    {
+      "id": "reserve_ridge_rock_1_0",
+      "entity_id": "reserve_ridge_rock_1",
+      "rect": [
+        1028,
+        318,
+        48,
+        18
+      ]
+    },
+    {
+      "id": "reserve_ridge_rock_2_0",
+      "entity_id": "reserve_ridge_rock_2",
+      "rect": [
+        776,
+        468,
+        48,
+        18
+      ]
+    },
+    {
+      "id": "ridge_crystal_left_0",
+      "entity_id": "ridge_crystal_left",
+      "rect": [
+        944,
+        346,
+        24,
+        6
+      ]
+    },
+    {
+      "id": "ridge_crystal_right_0",
+      "entity_id": "ridge_crystal_right",
+      "rect": [
+        1047,
+        347,
+        28,
+        6
+      ]
+    },
+    {
+      "id": "ridge_crystal_high_0",
+      "entity_id": "ridge_crystal_high",
+      "rect": [
+        996,
+        316,
+        24,
+        6
+      ]
+    },
+    {
+      "id": "ridge_crystal_left_fan_0",
+      "entity_id": "ridge_crystal_left_fan",
+      "rect": [
+        934,
+        290,
+        26,
+        6
+      ]
+    },
+    {
+      "id": "ridge_crystal_top_fan_0",
+      "entity_id": "ridge_crystal_top_fan",
+      "rect": [
+        981,
+        284,
+        26,
+        6
+      ]
+    },
+    {
+      "id": "ridge_crystal_amber_0",
+      "entity_id": "ridge_crystal_amber",
+      "rect": [
+        1053,
+        368,
+        14,
+        6
+      ]
+    },
+    {
+      "id": "ridge_old_stele_0",
+      "entity_id": "ridge_old_stele",
+      "rect": [
+        612,
+        490,
+        24,
+        7
+      ]
+    },
+    {
+      "id": "ridge_low_stele_0",
+      "entity_id": "ridge_low_stele",
+      "rect": [
+        780,
+        475,
+        24,
+        7
+      ]
+    },
+    {
+      "id": "hall_lamp_west_0",
+      "entity_id": "hall_lamp_west",
+      "rect": [
+        429,
+        328,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "hall_lamp_east_0",
+      "entity_id": "hall_lamp_east",
+      "rect": [
+        625,
+        328,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "entrance_lamp_west_0",
+      "entity_id": "entrance_lamp_west",
+      "rect": [
+        400,
+        659,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "entrance_lamp_east_0",
+      "entity_id": "entrance_lamp_east",
+      "rect": [
+        472,
+        659,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "reserve_south_wall_0_0",
+      "entity_id": "reserve_south_wall_0",
+      "rect": [
+        24,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_1_0",
+      "entity_id": "reserve_south_wall_1",
+      "rect": [
+        48,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_2_0",
+      "entity_id": "reserve_south_wall_2",
+      "rect": [
+        72,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_3_0",
+      "entity_id": "reserve_south_wall_3",
+      "rect": [
+        96,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_4_0",
+      "entity_id": "reserve_south_wall_4",
+      "rect": [
+        120,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_5_0",
+      "entity_id": "reserve_south_wall_5",
+      "rect": [
+        144,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_6_0",
+      "entity_id": "reserve_south_wall_6",
+      "rect": [
+        168,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_7_0",
+      "entity_id": "reserve_south_wall_7",
+      "rect": [
+        192,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_8_0",
+      "entity_id": "reserve_south_wall_8",
+      "rect": [
+        216,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_9_0",
+      "entity_id": "reserve_south_wall_9",
+      "rect": [
+        240,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_10_0",
+      "entity_id": "reserve_south_wall_10",
+      "rect": [
+        264,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_11_0",
+      "entity_id": "reserve_south_wall_11",
+      "rect": [
+        288,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_12_0",
+      "entity_id": "reserve_south_wall_12",
+      "rect": [
+        312,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_13_0",
+      "entity_id": "reserve_south_wall_13",
+      "rect": [
+        336,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_14_0",
+      "entity_id": "reserve_south_wall_14",
+      "rect": [
+        360,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_15_0",
+      "entity_id": "reserve_south_wall_15",
+      "rect": [
+        384,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_16_0",
+      "entity_id": "reserve_south_wall_16",
+      "rect": [
+        492,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_17_0",
+      "entity_id": "reserve_south_wall_17",
+      "rect": [
+        516,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_18_0",
+      "entity_id": "reserve_south_wall_18",
+      "rect": [
+        540,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_19_0",
+      "entity_id": "reserve_south_wall_19",
+      "rect": [
+        564,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_20_0",
+      "entity_id": "reserve_south_wall_20",
+      "rect": [
+        588,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_21_0",
+      "entity_id": "reserve_south_wall_21",
+      "rect": [
+        612,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_22_0",
+      "entity_id": "reserve_south_wall_22",
+      "rect": [
+        636,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_23_0",
+      "entity_id": "reserve_south_wall_23",
+      "rect": [
+        660,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_24_0",
+      "entity_id": "reserve_south_wall_24",
+      "rect": [
+        684,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_25_0",
+      "entity_id": "reserve_south_wall_25",
+      "rect": [
+        708,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_26_0",
+      "entity_id": "reserve_south_wall_26",
+      "rect": [
+        732,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_27_0",
+      "entity_id": "reserve_south_wall_27",
+      "rect": [
+        756,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_28_0",
+      "entity_id": "reserve_south_wall_28",
+      "rect": [
+        780,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_29_0",
+      "entity_id": "reserve_south_wall_29",
+      "rect": [
+        804,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_30_0",
+      "entity_id": "reserve_south_wall_30",
+      "rect": [
+        828,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_31_0",
+      "entity_id": "reserve_south_wall_31",
+      "rect": [
+        852,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_32_0",
+      "entity_id": "reserve_south_wall_32",
+      "rect": [
+        876,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_33_0",
+      "entity_id": "reserve_south_wall_33",
+      "rect": [
+        900,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_34_0",
+      "entity_id": "reserve_south_wall_34",
+      "rect": [
+        924,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_35_0",
+      "entity_id": "reserve_south_wall_35",
+      "rect": [
+        948,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_36_0",
+      "entity_id": "reserve_south_wall_36",
+      "rect": [
+        972,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_37_0",
+      "entity_id": "reserve_south_wall_37",
+      "rect": [
+        996,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_38_0",
+      "entity_id": "reserve_south_wall_38",
+      "rect": [
+        1020,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_39_0",
+      "entity_id": "reserve_south_wall_39",
+      "rect": [
+        1044,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_40_0",
+      "entity_id": "reserve_south_wall_40",
+      "rect": [
+        1068,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_41_0",
+      "entity_id": "reserve_south_wall_41",
+      "rect": [
+        1092,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_south_wall_42_0",
+      "entity_id": "reserve_south_wall_42",
+      "rect": [
+        1116,
+        664,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "reserve_west_wall_0_0",
+      "entity_id": "reserve_west_wall_0",
+      "rect": [
+        16,
+        48,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_1_0",
+      "entity_id": "reserve_west_wall_1",
+      "rect": [
+        16,
+        72,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_2_0",
+      "entity_id": "reserve_west_wall_2",
+      "rect": [
+        16,
+        96,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_3_0",
+      "entity_id": "reserve_west_wall_3",
+      "rect": [
+        16,
+        120,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_4_0",
+      "entity_id": "reserve_west_wall_4",
+      "rect": [
+        16,
+        144,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_5_0",
+      "entity_id": "reserve_west_wall_5",
+      "rect": [
+        16,
+        168,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_6_0",
+      "entity_id": "reserve_west_wall_6",
+      "rect": [
+        16,
+        192,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_7_0",
+      "entity_id": "reserve_west_wall_7",
+      "rect": [
+        16,
+        216,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_8_0",
+      "entity_id": "reserve_west_wall_8",
+      "rect": [
+        16,
+        240,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_9_0",
+      "entity_id": "reserve_west_wall_9",
+      "rect": [
+        16,
+        264,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_10_0",
+      "entity_id": "reserve_west_wall_10",
+      "rect": [
+        16,
+        288,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_11_0",
+      "entity_id": "reserve_west_wall_11",
+      "rect": [
+        16,
+        312,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_12_0",
+      "entity_id": "reserve_west_wall_12",
+      "rect": [
+        16,
+        336,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_13_0",
+      "entity_id": "reserve_west_wall_13",
+      "rect": [
+        16,
+        360,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_14_0",
+      "entity_id": "reserve_west_wall_14",
+      "rect": [
+        16,
+        384,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_15_0",
+      "entity_id": "reserve_west_wall_15",
+      "rect": [
+        16,
+        408,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_16_0",
+      "entity_id": "reserve_west_wall_16",
+      "rect": [
+        16,
+        432,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_17_0",
+      "entity_id": "reserve_west_wall_17",
+      "rect": [
+        16,
+        456,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_18_0",
+      "entity_id": "reserve_west_wall_18",
+      "rect": [
+        16,
+        480,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_19_0",
+      "entity_id": "reserve_west_wall_19",
+      "rect": [
+        16,
+        504,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_20_0",
+      "entity_id": "reserve_west_wall_20",
+      "rect": [
+        16,
+        528,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_21_0",
+      "entity_id": "reserve_west_wall_21",
+      "rect": [
+        16,
+        552,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_22_0",
+      "entity_id": "reserve_west_wall_22",
+      "rect": [
+        16,
+        576,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_23_0",
+      "entity_id": "reserve_west_wall_23",
+      "rect": [
+        16,
+        600,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_west_wall_24_0",
+      "entity_id": "reserve_west_wall_24",
+      "rect": [
+        16,
+        624,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_0_0",
+      "entity_id": "reserve_east_wall_0",
+      "rect": [
+        1120,
+        48,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_1_0",
+      "entity_id": "reserve_east_wall_1",
+      "rect": [
+        1120,
+        72,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_2_0",
+      "entity_id": "reserve_east_wall_2",
+      "rect": [
+        1120,
+        96,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_3_0",
+      "entity_id": "reserve_east_wall_3",
+      "rect": [
+        1120,
+        120,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_4_0",
+      "entity_id": "reserve_east_wall_4",
+      "rect": [
+        1120,
+        144,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_5_0",
+      "entity_id": "reserve_east_wall_5",
+      "rect": [
+        1120,
+        168,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_6_0",
+      "entity_id": "reserve_east_wall_6",
+      "rect": [
+        1120,
+        192,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_7_0",
+      "entity_id": "reserve_east_wall_7",
+      "rect": [
+        1120,
+        216,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_8_0",
+      "entity_id": "reserve_east_wall_8",
+      "rect": [
+        1120,
+        240,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_9_0",
+      "entity_id": "reserve_east_wall_9",
+      "rect": [
+        1120,
+        264,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_10_0",
+      "entity_id": "reserve_east_wall_10",
+      "rect": [
+        1120,
+        288,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_11_0",
+      "entity_id": "reserve_east_wall_11",
+      "rect": [
+        1120,
+        312,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_12_0",
+      "entity_id": "reserve_east_wall_12",
+      "rect": [
+        1120,
+        336,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_13_0",
+      "entity_id": "reserve_east_wall_13",
+      "rect": [
+        1120,
+        360,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_14_0",
+      "entity_id": "reserve_east_wall_14",
+      "rect": [
+        1120,
+        384,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_15_0",
+      "entity_id": "reserve_east_wall_15",
+      "rect": [
+        1120,
+        408,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_16_0",
+      "entity_id": "reserve_east_wall_16",
+      "rect": [
+        1120,
+        432,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_17_0",
+      "entity_id": "reserve_east_wall_17",
+      "rect": [
+        1120,
+        456,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_18_0",
+      "entity_id": "reserve_east_wall_18",
+      "rect": [
+        1120,
+        480,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_19_0",
+      "entity_id": "reserve_east_wall_19",
+      "rect": [
+        1120,
+        504,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_20_0",
+      "entity_id": "reserve_east_wall_20",
+      "rect": [
+        1120,
+        528,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_21_0",
+      "entity_id": "reserve_east_wall_21",
+      "rect": [
+        1120,
+        552,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_22_0",
+      "entity_id": "reserve_east_wall_22",
+      "rect": [
+        1120,
+        576,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_23_0",
+      "entity_id": "reserve_east_wall_23",
+      "rect": [
+        1120,
+        600,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_east_wall_24_0",
+      "entity_id": "reserve_east_wall_24",
+      "rect": [
+        1120,
+        624,
+        12,
+        24
+      ]
+    },
+    {
+      "id": "reserve_north_wall_0_0",
+      "entity_id": "reserve_north_wall_0",
+      "rect": [
+        24,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_1_0",
+      "entity_id": "reserve_north_wall_1",
+      "rect": [
+        48,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_2_0",
+      "entity_id": "reserve_north_wall_2",
+      "rect": [
+        72,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_3_0",
+      "entity_id": "reserve_north_wall_3",
+      "rect": [
+        96,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_4_0",
+      "entity_id": "reserve_north_wall_4",
+      "rect": [
+        120,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_5_0",
+      "entity_id": "reserve_north_wall_5",
+      "rect": [
+        144,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_6_0",
+      "entity_id": "reserve_north_wall_6",
+      "rect": [
+        168,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_7_0",
+      "entity_id": "reserve_north_wall_7",
+      "rect": [
+        192,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_8_0",
+      "entity_id": "reserve_north_wall_8",
+      "rect": [
+        216,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_9_0",
+      "entity_id": "reserve_north_wall_9",
+      "rect": [
+        240,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_10_0",
+      "entity_id": "reserve_north_wall_10",
+      "rect": [
+        264,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_11_0",
+      "entity_id": "reserve_north_wall_11",
+      "rect": [
+        288,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_12_0",
+      "entity_id": "reserve_north_wall_12",
+      "rect": [
+        312,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_13_0",
+      "entity_id": "reserve_north_wall_13",
+      "rect": [
+        336,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_14_0",
+      "entity_id": "reserve_north_wall_14",
+      "rect": [
+        360,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_15_0",
+      "entity_id": "reserve_north_wall_15",
+      "rect": [
+        384,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_16_0",
+      "entity_id": "reserve_north_wall_16",
+      "rect": [
+        408,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_17_0",
+      "entity_id": "reserve_north_wall_17",
+      "rect": [
+        432,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_18_0",
+      "entity_id": "reserve_north_wall_18",
+      "rect": [
+        456,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_19_0",
+      "entity_id": "reserve_north_wall_19",
+      "rect": [
+        480,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_20_0",
+      "entity_id": "reserve_north_wall_20",
+      "rect": [
+        504,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_21_0",
+      "entity_id": "reserve_north_wall_21",
+      "rect": [
+        528,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_22_0",
+      "entity_id": "reserve_north_wall_22",
+      "rect": [
+        552,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_23_0",
+      "entity_id": "reserve_north_wall_23",
+      "rect": [
+        576,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_24_0",
+      "entity_id": "reserve_north_wall_24",
+      "rect": [
+        600,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_25_0",
+      "entity_id": "reserve_north_wall_25",
+      "rect": [
+        624,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_26_0",
+      "entity_id": "reserve_north_wall_26",
+      "rect": [
+        648,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_27_0",
+      "entity_id": "reserve_north_wall_27",
+      "rect": [
+        672,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_28_0",
+      "entity_id": "reserve_north_wall_28",
+      "rect": [
+        696,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_29_0",
+      "entity_id": "reserve_north_wall_29",
+      "rect": [
+        720,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_30_0",
+      "entity_id": "reserve_north_wall_30",
+      "rect": [
+        744,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_31_0",
+      "entity_id": "reserve_north_wall_31",
+      "rect": [
+        768,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_32_0",
+      "entity_id": "reserve_north_wall_32",
+      "rect": [
+        792,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_33_0",
+      "entity_id": "reserve_north_wall_33",
+      "rect": [
+        816,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_34_0",
+      "entity_id": "reserve_north_wall_34",
+      "rect": [
+        840,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_35_0",
+      "entity_id": "reserve_north_wall_35",
+      "rect": [
+        864,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_36_0",
+      "entity_id": "reserve_north_wall_36",
+      "rect": [
+        888,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_37_0",
+      "entity_id": "reserve_north_wall_37",
+      "rect": [
+        912,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_38_0",
+      "entity_id": "reserve_north_wall_38",
+      "rect": [
+        936,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_39_0",
+      "entity_id": "reserve_north_wall_39",
+      "rect": [
+        960,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_40_0",
+      "entity_id": "reserve_north_wall_40",
+      "rect": [
+        984,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_41_0",
+      "entity_id": "reserve_north_wall_41",
+      "rect": [
+        1008,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_42_0",
+      "entity_id": "reserve_north_wall_42",
+      "rect": [
+        1032,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_43_0",
+      "entity_id": "reserve_north_wall_43",
+      "rect": [
+        1056,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_44_0",
+      "entity_id": "reserve_north_wall_44",
+      "rect": [
+        1080,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "reserve_north_wall_45_0",
+      "entity_id": "reserve_north_wall_45",
+      "rect": [
+        1104,
+        36,
+        24,
+        12
+      ]
+    },
+    {
+      "id": "map_west_edge",
+      "rect": [
+        0,
+        0,
+        12,
+        768
+      ]
+    },
+    {
+      "id": "map_east_edge",
+      "rect": [
+        1140,
+        0,
+        12,
+        768
+      ]
+    },
+    {
+      "id": "map_north_edge",
+      "rect": [
+        0,
+        0,
+        1152,
+        48
+      ]
+    }
+  ],
+  "cave_barrier": {
+    "entity_id": "reserve_cave_keeper_rail",
+    "footprint": [
+      972,
+      359,
+      72,
+      12
+    ],
+    "public_approach": [
+      1008,
+      406
+    ],
+    "inner_probe": [
+      1008,
+      359
+    ]
+  },
+  "world_links": [],
+  "blocked_probes": {
+    "hall_wall": [
+      460,
+      320
+    ],
+    "tree_root": [
+      144,
+      276
+    ],
+    "cloister_column": [
+      659,
+      331
+    ],
+    "cave_keeper_rail": [
+      1008,
+      365
+    ],
+    "survey_seam": [
+      934,
+      534
+    ],
+    "south_boundary": [
+      576,
+      668
+    ]
+  }
+}

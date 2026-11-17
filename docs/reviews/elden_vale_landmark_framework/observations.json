@@ -1,0 +1,1289 @@
+{
+  "fixture": "Disposable initialized Game; fixture placements only in memory. Fixed starts are explicit, subsequent motion uses Game.update.",
+  "actual_renderer": true,
+  "display_size": [
+    960,
+    640
+  ],
+  "source_hashes": {
+    "tools/capture_landmark_framework.py": "00d26ded98798cf55288463f0dc0dee4b4475f908d804f66bde2fb0d1396d972",
+    "rendering.py": "4f94406ae0d2c010a6bf7e6c5111eff263556f8e4c97fe97d2adb78ff02d9f35",
+    "camera_director.py": "1701d817a30025838313141027c192f4e99431b7b47d944d3aee43386d0a9d45",
+    "main.py": "207af51256c28742c6494e4340d56f48bb7c1ad69567d24d912bf43a5e7560c7",
+    "overworld_world.py": "77e5d13377d39864a780de84f754a3c5cb7ec0486abddfa7e30a0f939dd67800",
+    "landmark_layers.py": "c15110f5f8fbf371ccf601b25049d5d87cbecb56a7cd2a37af5bb75957760386",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json": "97ce2a1d9fde6204c858ac1e6780be1785d145746dd04b3d40f58d698abab98a",
+    "assets/maps/overworld/elden_vale/region.json": "cf6d6efc3819d42ac5dfdec029836a616072e1ac168e9e34d9b30874a35f1c1a",
+    "assets/maps/elden_vale_sanctuary/map.json": "1c78c857b9eb9308703b8c7bdef33d4c2b8ddc7ece31bcfdd4cbd236c92c91a9",
+    "assets/maps/elden_vale_sanctuary/collision.png": "7d8c27cda7f1f8774f70c0c9bc79eb8ce865b58c5c519e3b54e79011eb90cfd5",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_complete.png": "0c3a7577c8a9fe9e43b3d9037e273668d562acda7d28f73bdbb52e164ed5bba9",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/embedded_skull.png": "14ac7c548afd1ce061698a1a3b2a16e1b3b01b18c69113a5ca6b7f835ab18392",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/embedded_skull.png": "94093cd70f26467fc0ccdda2058d4c8281a4cf6930797f3237f23c1077afa8f5",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/beam_left.png": "16270e1d5578b9e697aae2b36911aa72a313abe8328d2166fc12a3c00da56170",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/beam_left.png": "05e33c9750f8d06f405921b607d3100ef3184726108dfd3173d688c38212e38c",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/beam_central.png": "77e559e8179012a8dfa832592785052334f3fb527770deac26d1974e8284137d",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/beam_central.png": "fb1659a96e62741ac5022d5b86746f3db01bfd99da9c433d07d127c23c318605",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/beam_right.png": "9a90d835df5de6ab0ba298c25f2f8497d537659d22ecb753ad72b9a9a703a01e",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/beam_right.png": "36fac1cec014ec12005f2ba92e04cc41bd1e50de83708c900433d4607446df15",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_regional.png": "c3c6f8372fe77e09e44ae2f10dd57e0721b69ec36dfb11a7c20bf89f576f9dcc",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_distant.png": "b183b667527ce920f646bcfb3bdbcc15f77a90e0f3e691e3888b6f36b02a0e39",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_low.png": "c4489f13202475ead2d0d1ad8d917b2bf16a37b6fa3827fb287b00122517a648",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_tall.png": "5a0609c9df858690261dd6bbd92a4be6873420c8f6ca7a6c7a37375836bb3fcd",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_outer_corner.png": "dc77b23813a22db2b3b9e3d3f4223428477b0b2b7fe8a824f644db9253325e6b",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_inner_corner.png": "4e25954f862050657b5b2e5a1a419359b8573d82b1fbc8d78a9dd0260503ae89",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_left_end.png": "805bc030466fc8876f3110c0b88bee6110653967a2f486d6de7f39de6e4be074",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_right_end.png": "40514e006c3c430da9e84926eb039406a5c3d602f89bef997d152fc91caea664",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_broken_slope.png": "3cb98dfbc2d63f06c000cfd9db0982cc7dbd523f9630a6f6a267c8b39c8a11cc",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/earth_grass_contact.png": "73e1e7c281aa1b05a4c541bdb5a1c6020723e7c077baeb7c9abe21801e9afd2a",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/root_contact.png": "dd90b90276b08ee2d2214366225be70d2a73255bcd9fe9e8ac57fba84905e088",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/ivy_contact.png": "e59abc298e0e8a4ef56d3f8f074f1f3a1a1d6a6f475575e6c796949ff6ac3bf9",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/bone_fragment_small.png": "23eabf85e7f961d9ed412888f2fd4ffe93b3961fd6cdd270a10048bab948d7ef",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/bone_fragment_forked.png": "6839ddcfd03fff4f5316b1375544c5b69b2b7dfc382104b6752468daeb29fbae",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/buried_foundation.png": "3c2433fcc801d89d65e17c566c879555602342fec1c901470099895860addbb8",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/exposed_strata.png": "6628a105f96d9142d69eab1c1fc27d8c27ea4ecffd3ca52656eeb728fb7140c3",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/bone_socket.png": "6d9df57e3a74a7a056f7dd3f88ba976cc8014d9eae9a3a392abd8d9c9aaf50ee",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/nest_moss.png": "016aa84207125a64eba318ca11789bc3d179e46abbd5a613f22c9023c0320ce0",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/deck_straight.png": "9a6f16f49fc8148d2227272a1d9cd3e2f3adec6d590fa8ed62d63c498c49736e",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/paving_top.png": "73695c50797ba628dc2d32472091fb16caf24a17ef573b645efc355185811dc3",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/deck_bend.png": "637748a9e572df0b5d16c503e0f2509a359ea58f86fe13a43fed652a2abf7b22",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/deck_junction.png": "65eacca3a9efcb0037f7f0ff4d021a8cb92636a1c4726d03eab8ec7bcb4a045b",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/broken_deck_end.png": "c33a6b67aaa0b3c8c8e84a9e3e306f4ba0fb51a788fd94dfbd65cd6b307db0f5",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/parapet_intact.png": "83bd33d929f5c8c48cb922473aa7aa3f5e0ad43cebf4a5999a8c3eef8af4281c",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/parapet_damaged.png": "8366e9d495334ce48f19ba9af7332b5c16b205847c7b4a9fbe383cba4406686a",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/parapet_corner.png": "4d049869bf2751c82906590eaa256d610bbbc64367ea8abe07976c9d0faa9596",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_complete.png": "04157fa4b97b43dde70c8b808bd66c07d3778d60eea4f7340c3b4abff6873e63",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_left_pier.png": "7c4db7099af54c29e8faaf4d5ffc35904878b89bef9611d04f74982acd1513eb",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_right_pier.png": "1117a5ec3c12dd835fa8b379432c70c0aa30b5feb5baa33e13dcb4083f9c4002",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/buried_masonry.png": "61af0e23a4a7c431e183cc0926a55c2adf610c46ec53536c1d44a3f194730d16",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_lintel.png": "c04cff800e38a9ac636c12b71351bf1ab35043519f56bf7d3b2bc85173c1eb8d",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_support_left.png": "aaa492f61e27ca0923d3ff84b948db285f5349b9d18b26b66f1cabd804f9f9c0",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_support_right.png": "6a0d8ffeaeb70aef2b8c3209e7158f2f3a454650b82b910fc73c1d67eabb0aa0",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/miniature/sanctuary_miniature.png": "40db75fbe744b9ed548c71679aa10c7471314b8d2485587e368939b7a70e8d74"
+  },
+  "limitations": [
+    "Not production activation, final placement approval, or uninterrupted story playthrough.",
+    "Timing excludes simulation/display/UI and is hardware-specific SDL-dummy world rendering."
+  ],
+  "town_actor_owners": {
+    "mira_worker": 1,
+    "sanctuary_gardener": 1
+  },
+  "regional_probe_size": [
+    24,
+    12
+  ],
+  "overhead_fixture": {
+    "id": "fixture_arch_lintel",
+    "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/causeway/arch_lintel.png",
+    "logical_size": [
+      192.0,
+      72.0
+    ],
+    "artwork_pixels_per_world_pixel": 2,
+    "position": [
+      144.0,
+      -78.5
+    ],
+    "layer": "overhead",
+    "collision": "none"
+  },
+  "reduced_motion_cutaway_stable": true,
+  "cutaway_exercised": true,
+  "native_source_rgba_mismatches": 0,
+  "story_position_fixture": {
+    "exploration": [
+      240.0,
+      -24.0
+    ],
+    "story": [
+      264.0,
+      -24.0
+    ]
+  },
+  "freeze_resume": {
+    "pause": {
+      "time_and_position_preserved": true,
+      "native_cutaway_render_unchanged": true
+    },
+    "focus_loss": {
+      "time_and_position_preserved": true,
+      "native_cutaway_render_unchanged": true
+    },
+    "resumes": true
+  },
+  "span_traversal": [
+    {
+      "running": false,
+      "direction": [
+        0,
+        -1
+      ],
+      "trace": [
+        [
+          240.0,
+          -26.400000000000002
+        ],
+        [
+          240.0,
+          -28.800000000000004
+        ],
+        [
+          240.0,
+          -31.200000000000006
+        ],
+        [
+          240.0,
+          -33.6
+        ],
+        [
+          240.0,
+          -35.99999999999999
+        ],
+        [
+          240.0,
+          -38.399999999999984
+        ],
+        [
+          240.0,
+          -40.799999999999976
+        ],
+        [
+          240.0,
+          -43.19999999999997
+        ],
+        [
+          240.0,
+          -45.59999999999996
+        ],
+        [
+          240.0,
+          -47.99999999999995
+        ],
+        [
+          240.0,
+          -50.39999999999994
+        ],
+        [
+          240.0,
+          -52.79999999999993
+        ],
+        [
+          240.0,
+          -55.199999999999925
+        ],
+        [
+          240.0,
+          -57.599999999999916
+        ],
+        [
+          240.0,
+          -59.99999999999991
+        ],
+        [
+          240.0,
+          -62.3999999999999
+        ],
+        [
+          240.0,
+          -64.7999999999999
+        ],
+        [
+          240.0,
+          -67.19999999999989
+        ]
+      ]
+    },
+    {
+      "running": false,
+      "direction": [
+        0,
+        1
+      ],
+      "trace": [
+        [
+          240.0,
+          -64.7999999999999
+        ],
+        [
+          240.0,
+          -62.399999999999906
+        ],
+        [
+          240.0,
+          -59.999999999999915
+        ],
+        [
+          240.0,
+          -57.59999999999992
+        ],
+        [
+          240.0,
+          -55.19999999999993
+        ],
+        [
+          240.0,
+          -52.79999999999994
+        ],
+        [
+          240.0,
+          -50.39999999999995
+        ],
+        [
+          240.0,
+          -47.99999999999996
+        ],
+        [
+          240.0,
+          -45.599999999999966
+        ],
+        [
+          240.0,
+          -43.199999999999974
+        ],
+        [
+          240.0,
+          -40.79999999999998
+        ],
+        [
+          240.0,
+          -38.39999999999999
+        ],
+        [
+          240.0,
+          -36.0
+        ],
+        [
+          240.0,
+          -33.60000000000001
+        ],
+        [
+          240.0,
+          -31.200000000000014
+        ],
+        [
+          240.0,
+          -28.80000000000001
+        ],
+        [
+          240.0,
+          -26.40000000000001
+        ],
+        [
+          240.0,
+          -24.000000000000007
+        ]
+      ]
+    },
+    {
+      "running": true,
+      "direction": [
+        0,
+        -1
+      ],
+      "trace": [
+        [
+          240.0,
+          -27.6
+        ],
+        [
+          240.0,
+          -31.199999999999996
+        ],
+        [
+          240.0,
+          -34.79999999999999
+        ],
+        [
+          240.0,
+          -38.399999999999984
+        ],
+        [
+          240.0,
+          -41.99999999999998
+        ],
+        [
+          240.0,
+          -45.59999999999997
+        ],
+        [
+          240.0,
+          -49.19999999999997
+        ],
+        [
+          240.0,
+          -52.79999999999996
+        ],
+        [
+          240.0,
+          -56.399999999999956
+        ],
+        [
+          240.0,
+          -59.99999999999995
+        ],
+        [
+          240.0,
+          -63.599999999999945
+        ],
+        [
+          240.0,
+          -67.19999999999996
+        ],
+        [
+          240.0,
+          -70.79999999999998
+        ],
+        [
+          240.0,
+          -74.4
+        ],
+        [
+          240.0,
+          -78.00000000000003
+        ],
+        [
+          240.0,
+          -81.60000000000005
+        ],
+        [
+          240.0,
+          -85.20000000000007
+        ],
+        [
+          240.0,
+          -88.8000000000001
+        ]
+      ]
+    },
+    {
+      "running": true,
+      "direction": [
+        0,
+        1
+      ],
+      "trace": [
+        [
+          240.0,
+          -85.20000000000007
+        ],
+        [
+          240.0,
+          -81.60000000000005
+        ],
+        [
+          240.0,
+          -78.00000000000003
+        ],
+        [
+          240.0,
+          -74.4
+        ],
+        [
+          240.0,
+          -70.79999999999998
+        ],
+        [
+          240.0,
+          -67.19999999999996
+        ],
+        [
+          240.0,
+          -63.599999999999945
+        ],
+        [
+          240.0,
+          -59.99999999999995
+        ],
+        [
+          240.0,
+          -56.399999999999956
+        ],
+        [
+          240.0,
+          -52.79999999999996
+        ],
+        [
+          240.0,
+          -49.19999999999997
+        ],
+        [
+          240.0,
+          -45.59999999999997
+        ],
+        [
+          240.0,
+          -41.99999999999998
+        ],
+        [
+          240.0,
+          -38.399999999999984
+        ],
+        [
+          240.0,
+          -34.79999999999999
+        ],
+        [
+          240.0,
+          -31.199999999999996
+        ],
+        [
+          240.0,
+          -27.6
+        ],
+        [
+          240.0,
+          -24.000000000000007
+        ]
+      ]
+    }
+  ],
+  "save_continue_preserved": [
+    "quests",
+    "party",
+    "dialogue_flags",
+    "player",
+    "overworld",
+    "actor ownership"
+  ],
+  "large_bounds_fixture": {
+    "id": "fixture_antlers_complete",
+    "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_complete.png",
+    "logical_size": [
+      784.0,
+      528.0
+    ],
+    "artwork_pixels_per_world_pixel": 2,
+    "position": [
+      -560,
+      -374
+    ],
+    "layer": "overhead",
+    "collision": "none"
+  },
+  "landmark_cache": {
+    "positions": 240,
+    "source_bytes": 8279040,
+    "source_budget": 16777216,
+    "maximum_working_bytes": 11059200,
+    "draw_ms_mean": 8.58192685833122,
+    "draw_ms_max": 26.37741199987431
+  },
+  "town_distant_fixture": {
+    "id": "fixture_antlers_distant",
+    "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_distant.png",
+    "logical_size": [
+      192.0,
+      132.0
+    ],
+    "artwork_pixels_per_world_pixel": 2,
+    "position": [
+      264,
+      132
+    ],
+    "layer": "distant",
+    "collision": "none"
+  },
+  "detailed_candidate": {
+    "master_origin": [
+      592,
+      -230
+    ],
+    "placements": [
+      {
+        "id": "fixture_embedded_skull",
+        "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/embedded_skull.png",
+        "logical_size": [
+          784.0,
+          148.0
+        ],
+        "artwork_pixels_per_world_pixel": 2,
+        "position": [
+          592.0,
+          150.0
+        ],
+        "layer": "ground",
+        "collision": "none",
+        "occlusion_mask": "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/embedded_skull.png"
+      },
+      {
+        "id": "fixture_beam_left",
+        "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/beam_left.png",
+        "logical_size": [
+          264.0,
+          380.0
+        ],
+        "artwork_pixels_per_world_pixel": 2,
+        "position": [
+          592.0,
+          -230.0
+        ],
+        "layer": "overhead",
+        "collision": "none",
+        "occlusion_mask": "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/beam_left.png"
+      },
+      {
+        "id": "fixture_beam_central",
+        "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/beam_central.png",
+        "logical_size": [
+          256.0,
+          380.0
+        ],
+        "artwork_pixels_per_world_pixel": 2,
+        "position": [
+          856.0,
+          -230.0
+        ],
+        "layer": "overhead",
+        "collision": "none",
+        "occlusion_mask": "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/beam_central.png"
+      },
+      {
+        "id": "fixture_beam_right",
+        "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/beam_right.png",
+        "logical_size": [
+          264.0,
+          380.0
+        ],
+        "artwork_pixels_per_world_pixel": 2,
+        "position": [
+          1112.0,
+          -230.0
+        ],
+        "layer": "overhead",
+        "collision": "none",
+        "occlusion_mask": "assets/terrain/overworld/elden_vale/signature_landscape_hd/masks/beam_right.png"
+      }
+    ],
+    "views": {
+      "study_skull_glimpse": {
+        "player": [
+          864,
+          456
+        ],
+        "camera": [
+          624,
+          296
+        ]
+      },
+      "eastern_loop": {
+        "player": [
+          1100,
+          336
+        ],
+        "camera": [
+          672,
+          176
+        ]
+      },
+      "northern_loop": {
+        "player": [
+          960,
+          168
+        ],
+        "camera": [
+          672,
+          8
+        ]
+      }
+    }
+  },
+  "detailed_projection_study": {
+    "uniform_scale": 0.625,
+    "master_origin": [
+      726,
+      -41
+    ],
+    "master_size": [
+      490,
+      330
+    ],
+    "contact": [
+      948.5,
+      274,
+      45,
+      12.5
+    ],
+    "native_segment_rects": {
+      "embedded_skull": [
+        0,
+        474,
+        980,
+        186
+      ],
+      "beam_left": [
+        0,
+        0,
+        330,
+        474
+      ],
+      "beam_central": [
+        330,
+        0,
+        320,
+        474
+      ],
+      "beam_right": [
+        650,
+        0,
+        330,
+        474
+      ]
+    },
+    "note": "Disposable nearest-neighbour whole-master projection; even-pixel segmentation reconstructs it exactly. Existing art and production metadata unchanged.",
+    "views": {
+      "northern_loop": {
+        "player": [
+          960,
+          168
+        ],
+        "camera": [
+          672,
+          8
+        ]
+      },
+      "cave_apron": {
+        "player": [
+          1008,
+          406
+        ],
+        "camera": [
+          672,
+          246
+        ]
+      },
+      "skull_glimpse": {
+        "player": [
+          864,
+          456
+        ],
+        "camera": [
+          624,
+          296
+        ]
+      }
+    }
+  },
+  "companion_fixture": {
+    "temporary_recruit": "mira",
+    "trace": [
+      {
+        "player": [
+          444.0,
+          639.6000000000001
+        ],
+        "mira": [
+          444.0,
+          663.5999999999999
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          637.2000000000003
+        ],
+        "mira": [
+          444.0,
+          661.1999999999999
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          634.8000000000004
+        ],
+        "mira": [
+          444.0,
+          658.8000000000001
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          632.4000000000005
+        ],
+        "mira": [
+          444.0,
+          656.4000000000001
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          630.0000000000007
+        ],
+        "mira": [
+          444.0,
+          654.0
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          627.6000000000008
+        ],
+        "mira": [
+          444.0,
+          651.5999999999999
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          625.200000000001
+        ],
+        "mira": [
+          444.0,
+          649.2
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          622.8000000000011
+        ],
+        "mira": [
+          444.0,
+          646.8
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          620.4000000000012
+        ],
+        "mira": [
+          444.0,
+          644.4
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          618.0000000000014
+        ],
+        "mira": [
+          444.0,
+          642.0
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          615.6000000000015
+        ],
+        "mira": [
+          444.0,
+          639.6000000000001
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          613.2000000000016
+        ],
+        "mira": [
+          444.0,
+          637.2000000000003
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          610.8000000000018
+        ],
+        "mira": [
+          444.0,
+          634.8000000000004
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          608.4000000000019
+        ],
+        "mira": [
+          444.0,
+          632.4000000000005
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          606.000000000002
+        ],
+        "mira": [
+          444.0,
+          630.0000000000007
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          603.6000000000022
+        ],
+        "mira": [
+          444.0,
+          627.6000000000008
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          601.2000000000023
+        ],
+        "mira": [
+          444.0,
+          625.200000000001
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          598.8000000000025
+        ],
+        "mira": [
+          444.0,
+          622.8000000000011
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          596.4000000000026
+        ],
+        "mira": [
+          444.0,
+          620.4000000000012
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          594.0000000000027
+        ],
+        "mira": [
+          444.0,
+          618.0000000000014
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          591.6000000000029
+        ],
+        "mira": [
+          444.0,
+          615.6000000000015
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          589.200000000003
+        ],
+        "mira": [
+          444.0,
+          613.2000000000016
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          586.8000000000031
+        ],
+        "mira": [
+          444.0,
+          610.8000000000018
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          584.4000000000033
+        ],
+        "mira": [
+          444.0,
+          608.4000000000019
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          582.0000000000034
+        ],
+        "mira": [
+          444.0,
+          606.000000000002
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          579.6000000000035
+        ],
+        "mira": [
+          444.0,
+          603.6000000000022
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          577.2000000000037
+        ],
+        "mira": [
+          444.0,
+          601.2000000000023
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          574.8000000000038
+        ],
+        "mira": [
+          444.0,
+          598.8000000000025
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          572.400000000004
+        ],
+        "mira": [
+          444.0,
+          596.4000000000026
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          570.0000000000041
+        ],
+        "mira": [
+          444.0,
+          594.0000000000027
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          567.6000000000042
+        ],
+        "mira": [
+          444.0,
+          591.6000000000029
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          565.2000000000044
+        ],
+        "mira": [
+          444.0,
+          589.200000000003
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          562.8000000000045
+        ],
+        "mira": [
+          444.0,
+          586.8000000000031
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          560.4000000000046
+        ],
+        "mira": [
+          444.0,
+          584.4000000000033
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          558.0000000000048
+        ],
+        "mira": [
+          444.0,
+          582.0000000000034
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          555.6000000000049
+        ],
+        "mira": [
+          444.0,
+          579.6000000000035
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          553.200000000005
+        ],
+        "mira": [
+          444.0,
+          577.2000000000037
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          550.8000000000052
+        ],
+        "mira": [
+          444.0,
+          574.8000000000038
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          548.4000000000053
+        ],
+        "mira": [
+          444.0,
+          572.400000000004
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          546.0000000000055
+        ],
+        "mira": [
+          444.0,
+          570.0000000000041
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          543.6000000000056
+        ],
+        "mira": [
+          444.0,
+          567.6000000000042
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          541.2000000000057
+        ],
+        "mira": [
+          444.0,
+          565.2000000000044
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          538.8000000000059
+        ],
+        "mira": [
+          444.0,
+          562.8000000000045
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          536.400000000006
+        ],
+        "mira": [
+          444.0,
+          560.4000000000046
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          534.0000000000061
+        ],
+        "mira": [
+          444.0,
+          558.0000000000048
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          531.6000000000063
+        ],
+        "mira": [
+          444.0,
+          555.6000000000049
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          529.2000000000064
+        ],
+        "mira": [
+          444.0,
+          553.200000000005
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          526.8000000000065
+        ],
+        "mira": [
+          444.0,
+          550.8000000000052
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          524.4000000000067
+        ],
+        "mira": [
+          444.0,
+          548.4000000000053
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          522.0000000000068
+        ],
+        "mira": [
+          444.0,
+          546.0000000000055
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          519.600000000007
+        ],
+        "mira": [
+          444.0,
+          543.6000000000056
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          517.2000000000071
+        ],
+        "mira": [
+          444.0,
+          541.2000000000057
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          514.8000000000072
+        ],
+        "mira": [
+          444.0,
+          538.8000000000059
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          512.4000000000074
+        ],
+        "mira": [
+          444.0,
+          536.400000000006
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          510.00000000000733
+        ],
+        "mira": [
+          444.0,
+          534.0000000000061
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          507.6000000000073
+        ],
+        "mira": [
+          444.0,
+          531.6000000000063
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          505.20000000000726
+        ],
+        "mira": [
+          444.0,
+          529.2000000000064
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          502.80000000000723
+        ],
+        "mira": [
+          444.0,
+          526.8000000000065
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          500.4000000000072
+        ],
+        "mira": [
+          444.0,
+          524.4000000000067
+        ]
+      },
+      {
+        "player": [
+          444.0,
+          498.00000000000716
+        ],
+        "mira": [
+          444.0,
+          522.0000000000068
+        ]
+      }
+    ],
+    "note": "Actual passive party follower under disposable span; no production roster or save changes."
+  },
+  "production_collision_sha256": "7d8c27cda7f1f8774f70c0c9bc79eb8ce865b58c5c519e3b54e79011eb90cfd5",
+  "captures": {
+    "detailed_companion_cutaway.png": "c589f68a096022d1ab1ffcd44d30e87a4e6176ad2a785b7eb625959c49943c42",
+    "detailed_eastern_loop.png": "698f4274a86958e45caa16347e445cf2644b768dc0150eadbf12f184c4bf72ff",
+    "detailed_northern_loop.png": "4131fdc1d84ad90890d1b8720b9e639a9255f007833ebfddb78e1fc8b667839e",
+    "detailed_study_skull_glimpse.png": "64adaba72f7b9b19c81575bf90976527f61c9d370accf7aeec7a977c2c5b6415",
+    "lintel_native_detail.png": "ec05c3bad6e6168c987f07324bf99d74ccb5c7dc93cf0d52beee250d56e86604",
+    "offscreen_origin_visible_branch.png": "6ae8f7c3cebee68f158bf4266ee284c753927667423413db2cc11bbb3aaba6d1",
+    "projected_cave_apron.png": "b228f4cd008ad2d1076bb16bdbabbd8842b104f20c5bb75f211d7b8972c6caab",
+    "projected_northern_loop.png": "f9afcd017e1bc8ec4a24b562c5bc09f5bae50ad89c6590915d39788043b43027",
+    "projected_skull_glimpse.png": "64adaba72f7b9b19c81575bf90976527f61c9d370accf7aeec7a977c2c5b6415",
+    "regional_local_cutaway.png": "59f04877b2608d9e8cdbf95b028562a0e705a5e137543766d74b81b36c5dc164",
+    "regional_reduced_motion.png": "9a4f3e9737db0605c114b68abe460ebd520750edd802d22aecd296624b3bfa6c",
+    "span_walk_run.gif": "bfbf6269da8869367d2915acbf413057689e1e1759078cabe3fd95bc6fa0270d",
+    "story_position_cutaway.png": "3a7603ec017192b281bcd2314ca6b6dc23bf1225b25ab8e1f49e421f36a8a645",
+    "town_distant_fixture.png": "197e382cd3a6b1f73e28bfadbe12f4ff07f495360f03556aeb4cf30fabba976b"
+  }
+}

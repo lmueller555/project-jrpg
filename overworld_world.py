@@ -5,6 +5,7 @@ touched by a collision query or a viewport are rasterized; no surface, mask or
 simulation array has the size of the region. Local town scenes remain separate.
 """
 from __future__ import annotations
+from landmark_layers import LandmarkLayers
 from rendering import WorldCanvas, layer as render_layer, record_art, immutable, draw as render_draw
 
 from collections import OrderedDict
@@ -191,6 +192,7 @@ class OverworldWorld:
         self.reduced_motion = False
         self._art = {};self._tiles = {};self._props = {}
         self._load_art()
+        self.landmarks = LandmarkLayers(ROOT,self.region.get('landmark_layers',()))
         self._validate_bridge_width()
         town = self.region.get('town', {})
         self.town_entry_rect = self._tile_rect(town.get('entry_rect_tiles', (9, -33, 6, 6)))
@@ -626,6 +628,8 @@ class OverworldWorld:
             for cy in range(viewport.top//CHUNK_PIXELS, (viewport.bottom-1)//CHUNK_PIXELS+1):
                 target.blit(self._render_chunk(cx,cy), (cx*CHUNK_PIXELS-camera[0],cy*CHUNK_PIXELS-camera[1]))
         self._draw_water(target,camera,elapsed_ms)
+        self.landmarks.draw(target,camera,'distant')
+        self.landmarks.draw(target,camera,'ground')
         ordered = []
         for prop in self._static_props(viewport):
             scenery_ms = 0 if self.reduced_motion else elapsed_ms
@@ -654,6 +658,8 @@ class OverworldWorld:
                 actor,image,anchor,world_position=surface
                 draw_actor(target,actor,image,(round(world_position[0])-anchor[0]-camera[0],round(world_position[1])-anchor[1]-camera[1]),elapsed_ms)
             else:target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
+        self.landmarks.draw(target,camera,'overhead',actors=(player,*self.npcs),
+                            interaction_points=self.region.get('landmark_visibility_points',()))
         # Spread the one-chunk lookahead ring over frames. Ordinary walking
         # reaches an already prepared neighbour without loading the region.
         candidates = [(cx,cy)

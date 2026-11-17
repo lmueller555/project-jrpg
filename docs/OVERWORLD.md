@@ -402,3 +402,107 @@ The guards' production scene is replayed as **Keeping Your Seat** in Gallery;
 routine participation stays outside it. See [the gameplay review](reviews/checkpoint_charm/README.md)
 and [Gallery coverage](GALLERY.md) for current evidence. Gate release, bridge
 repair and quest progression remain independent.
+
+## Signature landmark framework and cross-scale placement plan
+
+Step 2 PR 1 supplies explicit `distant`, `ground` and `overhead` landmark passes
+in `landmark_layers.py`. Production landmark registries remain empty. The
+[disposable initialized-Game review](reviews/elden_vale_landmark_framework/README.md)
+records renderer evidence, not activated scenery or approval of a final landscape.
+The regional creative authority and protected travel contracts above remain
+unchanged. Rising Rain, local actions and final atlas artwork remain deferred.
+
+Landmark positions are top-left **logical world units**, with explicit logical
+size and artwork density. The staged `assets` schema must be adapted to explicit
+runtime records, not merged into a `props` registry. The three passes sit behind
+nearby entities, below actors, and above actors respectively. Overhead local
+cutaways follow actual/story actor positions and authored interaction positions.
+Source LRUs and viewport-sized temporary work remain separate from cached ground.
+Full visible bounds, not ordinary scenery-root lookup, determine visibility.
+Scenery metadata never supplies collision or save fields.
+
+### Selected detailed presentation direction for PR 2
+
+The original support study remains evidence, not a final placement. At its
+full-scale master origin `[592,-230]`, the 784×528-logical master extends beyond
+the reserve on the north/east. The old `[864,456]` viewpoint's ordinary camera
+starts at y296 and crops almost all of the skull. Rendering the complete skull
+in the ground pass also lets the northern-loop actor appear to stand on bone.
+Do not activate that arrangement unchanged or move collision to accommodate it.
+
+The selected direction is a **dedicated build-time 0.625 coherent rendition**:
+project the complete 1568×1056 artwork master once to **980×660 artwork pixels**,
+then register a **490×330 logical** assembly at `[726,-41]`. Segment at native
+x `[0,330,650,980]` and y474, giving even-pixel part dimensions and exact master
+reconstruction. The change from ideal fractional split y475 changes only layer
+ownership of one native row, not anatomy. Preserve orientation and all registered
+relationships; do not independently fit/mirror parts or stretch to the regional
+envelope. No runtime downsampled image cache is necessary.
+
+The registered contact becomes `[948.5,274,45,12.5]`, entirely within the original
+solid `[948,274,72,20]` study. The ordinary protected northern-loop viewpoint
+`[960,168]`, camera `[672,8]`, provides the near anatomical reveal without changing
+camera coverage. The cave apron `[1008,406]` remains usable and intentionally
+screens most of the base behind existing cave scenery. The old southern skull
+view is not promoted to a reveal. All beams remain nonblocking.
+
+PR 2 must finish the contact/depth registration, not merely copy this rectangle:
+
+- Trim only peripheral rubble/root contact fringe against the existing solid
+  ridge union, retaining bone anatomy. In the untrimmed projection, a lowest-
+  contour audit finds 122 native columns over walkable mask, at x895–1139.5 and
+  y273–284.5. This audit is diagnostic, not a replacement for visible support review.
+- Split raised skull/root presentation from the actual grounded contact wherever
+  the eastern circuit overlaps it. A body-center audit finds 27 sampled loop
+  positions near `[1100,267]`–`[1100,295]` over the ground-pass skull image. Raised
+  portions need local cutaway/depth treatment; no extra collision is allowed.
+- Add the essential limestone, earth, root and moss dressing with the same
+  contact/depth checks. Retain the memorial grove, crystals, hall/relief doors,
+  cloister, survey station, care/arrival staging and keeper-rail/cave apron.
+- Re-run the complete circuit in both directions, companions, story arrival/care,
+  rail operation, Save/Continue and normal/reduced-motion visibility after the
+  final rendition and grounding are built. No probe shrinkage, teleports,
+  relocated stations, new story flags or new crossing is part of this plan.
+
+### Regional and town bindings for PR 2
+
+The regional `[44,-86,64,43]` reservation is in **24-unit regional tiles**, not
+reserve coordinates or a target canvas size. Keep the existing
+`sanctuary_ledge_5` at `[96.5,-72]` and `sanctuary_upper_outcrop` at `[93.8,-74]`
+as the physical support candidates; bind any contact wholly inside their actual
+solid footprints. Use a coherent rendition at a declared scale, never fill the
+1536×1032-logical reservation by stretching the 384×264 regional drawing. Inspect
+views at regional tiles `[42,-45]`, `[69,-55]` and `[90,-62]` with full-bounds
+culling. Ridge/cave contact and the 96×80 Sanctuary miniature keep their existing
+entry/forecourt contracts, independent of artwork alpha.
+
+Town uses a fixed world-space `distant` anchor, with no new parallax or cleared
+corridor. The disposable hall/spawn fixture anchors the 192×132 distant drawing
+at `[264,132]` behind the existing roof and trees, demonstrating tip-only roof
+screening; it is not a universal anchor for every town view. PR 2 must select the
+final northern/eastern roof gaps and record their ordinary-camera positions.
+Distant views omit the skull/base; changing cameras must not drag the silhouette
+with the player or place it in front of roofs. Rooted landscape registration is
+owned by the recipe/builders, not ad-hoc capture code.
+
+### Internal causeway and arch plan for PR 3
+
+Use the existing `south_town_road` alignment, in regional tiles:
+`[[10,-1],[7,4],[-3,8],[-15,11],[-28,14]]`. The road is 2.5 tiles / 60 logical
+units wide, within a 4-tile / 96-unit future clearance reservation. Register
+module ports/overlapping joints deliberately along that curved route; paving and
+decks stay below actors, near parapets use deliberate depth, and lintels remain
+overhead. Do not imply pits, climbing or unsupported elevation mechanics.
+
+The N/S-dominant `[10,-1]` to `[7,4]` leg is the first arch candidate, away from
+the `[7,4]` junction to the southern land checkpoint. The E/W remainder is not a
+natural crossing direction for the unrotated horizontal arch opening. Inspect
+final supports against the reserved corridor rather than assuming an authored
+94-unit aperture automatically preserves a 96-unit clearance reservation. Reject
+or move the arch if supports crowd that corridor or the junction. Keep the
+existing 24×12 probe and 22-unit passive-party spacing. Sweep both directions,
+running and diagonal corners with `Game.update`; a centered walk alone is not
+clearance proof. Flat reused paving stays traversable; physical fragments and
+supports require visible, matching footprints outside protected travel/work
+areas. This road remains inside the walls and creates no river, gate, broken-
+bridge or cave bypass. Gate release and bridge repair remain independent facts.
