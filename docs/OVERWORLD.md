@@ -552,21 +552,18 @@ with foot anchor48,78 at the existing landmark position; its canvas creates no
 collision or transfer trigger. Existing entry, forecourt, arrival and return
 contracts remain authoritative.
 
-Eldenmere's town recipe owns one fixed skull-free distant anchor, screened by
-existing northern roofs and trees. Its ordinary camera reveals selected branch
-tips, not an independent second anatomy or a general parallax system. The reserve
-builder owns the dedicated0.625 native rendition, grounded dressing and protected
-circuit; see [reserve runtime](SANCTUARY_RESERVE.md).
+Eldenmere's former town skyline anchor and its viewing-area configuration were
+removed by the architectural audit. There is no town antler shadow or substitute.
+The shared distant asset, regional anatomy and detailed Sanctuary bindings remain
+owned by their existing systems. The reserve builder owns its dedicated0.625
+native rendition, grounded dressing and protected circuit; see
+[reserve runtime](SANCTUARY_RESERVE.md).
 
 [Production gameplay review](reviews/elden_vale_pale_antlers/README.md) records
 actual coverage, timings and limits. The source pack retains staged metadata and
 historical offline studies. Rising Rain, causeway activation and final regional
 atlas/minimap artwork are not part of this step.
 
-The town skyline's authored viewing area starts south of logical y158, with a
-22-unit viewpoint fade margin. Northern-lawn approaches suppress it, preventing
-a distant branch from reading as a small walk-through prop. The intended roof
-vista at `[600,180]` is fully visible; its fixed `[350,50]` anchor never moves.
 
 
 ## Old causeway and inhabited ruins

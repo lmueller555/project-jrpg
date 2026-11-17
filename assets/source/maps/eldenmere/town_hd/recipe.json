@@ -14,9 +14,20 @@
   "chunk_logical": 192,
   "settlement_recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
   "overworld_exit": {
-    "position": [528, 1620],
-    "return_position": [528, 1572],
-    "rect": [504, 1608, 48, 24]
+    "position": [
+      528,
+      1620
+    ],
+    "return_position": [
+      528,
+      1572
+    ],
+    "rect": [
+      504,
+      1608,
+      48,
+      24
+    ]
   },
   "sources": [
     {
@@ -42,6 +53,10 @@
     {
       "file": "quest_props_authored.png",
       "sha256": "c647fd9560d8b1514b933d311cd908f9037237705a012d2a7def58c63e1cff9b"
+    },
+    {
+      "file": "architecture_schedule.json",
+      "sha256": "477e20a4298702e73443b074775edcd472c145c5bb7d3df23101767f3ad20dba"
     }
   ],
   "businesses": [
@@ -2544,14 +2559,6 @@
     {
       "file": "assets/source/maps/eldenmere/courtyard_hd/structure_authored.png",
       "sha256": "98b0790f398cd4c1378b3b2a9b3f412d3b163d346683aa90609466d4fc861d07"
-    },
-    {
-      "file": "assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json",
-      "sha256": "97ce2a1d9fde6204c858ac1e6780be1785d145746dd04b3d40f58d698abab98a"
-    },
-    {
-      "file": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_distant.png",
-      "sha256": "b183b667527ce920f646bcfb3bdbcc15f77a90e0f3e691e3888b6f36b02a0e39"
     }
   ],
   "district_vegetation": [
@@ -2616,24 +2623,5 @@
       1
     ]
   },
-  "distant_landmarks": [
-    {
-      "id": "pale_antlers_distant",
-      "source_asset": "antlers_distant",
-      "position": [
-        350,
-        50
-      ],
-      "layer": "distant",
-      "collision": "none",
-      "anchor_purpose": "Fixed northeastern skyline glimpse beyond north roofs/trees; no skull/base or parallax",
-      "viewing_area_logical": [
-        0,
-        158,
-        1536,
-        1474
-      ],
-      "vista_fade_margin_logical": 22
-    }
-  ]
+  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json"
 }

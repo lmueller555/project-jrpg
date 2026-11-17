@@ -109,6 +109,31 @@ test characters and props against both light and dark backgrounds. Coordinate
 painted highlights with dynamic lighting so characters, scenery and effects
 belong to the same environment.
 
+## Orthogonal exploration architecture
+
+Ordinary Eldenmere exploration uses a consistent orthogonal, top-down JRPG
+projection. Ground surfaces follow the map's horizontal and vertical axes.
+Vertical height rises above an explicitly declared ground footprint; a visible
+front wall must agree with roof depth and the occupied ground beneath it.
+Roofs, decks, porches and steps expose compatible upper surfaces. Flat bridge
+decks read as walkable ground planes, not frontal illustrations of platforms.
+Do not add strong perspective convergence or an implied distant horizon.
+Off-scene objects do not become skyline scenery merely because they are nearby
+in regional geography. Eldenmere contains no Pale Antlers, antler shadow or
+replacement silhouette; regional and detailed Sanctuary bindings remain separate.
+
+The technical per-building and crossing schedule lives with the existing town
+recipe at `assets/source/maps/eldenmere/town_hd/architecture_schedule.json`.
+It owns all 13 building canvases, physical ground, depth baselines, thresholds,
+approaches, floors/circulation, hearth/flue registration, protected fixtures and
+crossing interfaces. Keep those facts in that schedule rather than duplicating
+an art guide. Author revised geometry to its intended proportions; do not stretch
+facade strips independently to repair a mismatched source portal. Explicit reviewed
+pane masks own window light. Roof, masonry, structural timber and merchandise
+remain outside those masks, and solid structure is identical with reduced motion.
+The [labelled construction reference](reviews/eldenmere_architecture_contracts/projection_reference.png)
+shows the ground grid and Caelan at 2× scale; it is not gameplay evidence.
+
 ## Object creation and interaction readability
 
 Create ordinary and special objects in the same visual style. All distinct
@@ -1451,7 +1476,7 @@ This framework alone activates no production landmark.
 
 The live regional registry explicitly adapts the signature asset schema; its
 miniature keeps96×80 logical presentation and the existing transfer contract.
-Town's distant skyline omits skull/base. Regional and detailed views preserve
+Eldenmere has no town landmark placement. Regional and detailed views preserve
 shared anatomical transforms and independently registered overhead pieces. The
 detailed reserve samples the coherent master once into a dedicated980×660 native
 rendition, then segments on even native boundaries. It does not runtime-downsample
@@ -1461,13 +1486,10 @@ Only lower terrestrial fringe is embedded/occluded against named existing ridge
 geometry, protecting the jaw/anatomy. Raised skull and branches retain authored
 mask cutaways for actors and required interactions.
 
-Distant town artwork also declares a fixed `viewing_area_logical` and a
-22-logical-unit `vista_fade_margin_logical`. Its anchor never moves. The artwork
-is a roof-screened vista from the south, not a physical object on the accessible
-northern lawn: that lawn suppresses the vista instead of adding collision.
-Opacity follows the current viewpoint immediately, with viewport-bounded work,
-no motion clock, history or per-position cache. Observer-dependent distant art
-is omitted from the physical town overview.
+The former town skyline/vista configuration was removed by the architectural
+registration audit. Historical town captures remain evidence of the previous
+implementation, not the current placement contract. Shared distant artwork and
+regional/Sanctuary landmark consumers remain available to their owning systems.
 
 
 ### Causeway structural registration

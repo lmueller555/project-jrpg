@@ -277,6 +277,21 @@ stable and the last-to-first transition continuous. Avoid obvious whole-texture
 sliding or brightness pulsing. Highlights explain the water without making every
 surface the brightest moving feature.
 
+### Orthogonal crossing interfaces
+
+Eldenmere crossings follow the global orthogonal exploration projection. The
+source-owned architecture schedule beside `town_hd/recipe.json` declares both
+bank endpoints, full deck coverage, generous walking corridors, separate rail
+placement and the mill doorstep connection. Construct explicit repeat sections,
+joints and ends for the actual span; measure occupied deck/rail artwork, not only
+transparent PNG dimensions. Keep board and post proportions consistent rather
+than stretching a centered donor across different canvases. Bank transitions
+must explain a continuous dry surface while water remains visible beside/below.
+Compose decks after every water phase, including reduced motion. Near rails
+belong to foreground lower-body occlusion, not a screen-wide actor-covering wall.
+The mill service landing owns the complete road-to-door surface; its old baked
+fence is not a substitute and must not return in a later exterior export.
+
 ## 12. Grass and environmental animation
 
 Preserve useful existing grass behavior when rebuilding: gentle breeze,
@@ -1333,8 +1348,8 @@ verify bytes without writing. Focused contracts are in
 by `tools/build_elden_vale_hd_integration.py`. Its native regional segments, masks,
 existing-foot ridge adaptations and miniature register in the live manifest.
 Placements and contact safety remain owned by the regional source recipe. The
-region builder, foundation metadata refresh, live bindings, town and reserve
-builders reproduce in that order; there is no generated reserve-map visual hash
+region builder, foundation metadata refresh, live bindings and reserve
+builders reproduce in that order; Eldenmere has no antler binding; there is no generated reserve-map visual hash
 in the staged signature dependency graph. Preserve the protected geometry and
 collision checks and record visual provenance separately.
 

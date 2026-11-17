@@ -3,7 +3,7 @@
   "integration_status": "integrated",
   "artwork_pixels_per_world_pixel": 2,
   "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-  "recipe_sha256": "847f910f2cef5fd9ba9b07d1e78d0a0a93c14b409fd34245c71bd0584d3269e3",
+  "recipe_sha256": "f5ba1abd21b8c72cb81f020f4babdb6cb31dc0e069855497517633e44a234b4e",
   "scenes": {
     "town": "assets/maps/eldenmere/playable/map.json",
     "upstream": "assets/maps/eldenmere/upstream/map.json",
@@ -64,6 +64,10 @@
     {
       "file": "quest_props_authored.png",
       "sha256": "c647fd9560d8b1514b933d311cd908f9037237705a012d2a7def58c63e1cff9b"
+    },
+    {
+      "file": "architecture_schedule.json",
+      "sha256": "477e20a4298702e73443b074775edcd472c145c5bb7d3df23101767f3ad20dba"
     }
   ],
   "exports": [
@@ -7500,5 +7504,7 @@
     "active_placements": 0,
     "active_ground_treatments": 0
   },
+  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
+  "architecture_schedule_sha256": "477e20a4298702e73443b074775edcd472c145c5bb7d3df23101767f3ad20dba",
   "services": "Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json."
 }
