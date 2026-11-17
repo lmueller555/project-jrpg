@@ -106,12 +106,23 @@ def compare_baseline(baseline, folder):
     # Keep the full metadata witness and original native screenshots in the PR.
     shutil.copyfile(baseline/'observations.json', folder/'before_observations.json')
     shutil.copyfile(baseline/'town.json', folder/'before_town.json')
+    revision = None
+    if (baseline/'baseline_revision.json').is_file():
+        revision = json.loads((baseline/'baseline_revision.json').read_text())
+        shutil.copyfile(baseline/'baseline_revision.json', folder/'before_revision.json')
+    elif (folder/'before_revision.json').exists():
+        (folder/'before_revision.json').unlink()
+    # A refreshed main baseline may rename a fixture. Never retain an old
+    # witness beside its replacement and accidentally present mixed revisions.
+    for stale in folder.glob('before_*.png'):
+        stale.unlink()
     for source in sorted(baseline.glob('*.png')):
         if source.name.startswith('ground_phase_') or source.name in {
                 'collision.png', 'navigation_allowed.png', 'protection_plan_diagnostic.png'}:
             continue
         shutil.copyfile(source, folder/('before_'+source.name))
-    return {'changed_map_fields': changed_fields,
+    return {'baseline_revision': revision,
+            'changed_map_fields': changed_fields,
             'unchanged_map_fields': sorted(set(original)-set(changed_fields)),
             'changed_active_files': changed_files,
             'non_ground_active_artwork_unchanged': True,
