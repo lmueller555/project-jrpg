@@ -1,0 +1,16 @@
+test_authored_four_frame_actions_and_sources_preserve_approved_art (test_daisy_routines.DaisyRoutineTests.test_authored_four_frame_actions_and_sources_preserve_approved_art) ... ok
+test_contact_landmarks_meet_full_and_half_contents_and_front_rim_occludes (test_daisy_routines.DaisyRoutineTests.test_contact_landmarks_meet_full_and_half_contents_and_front_rim_occludes) ... ok
+test_each_food_or_water_visit_consumes_exactly_one_level (test_daisy_routines.DaisyRoutineTests.test_each_food_or_water_visit_consumes_exactly_one_level) ... ok
+test_empty_bowls_are_inspected_without_chewing_lapping_or_consumption (test_daisy_routines.DaisyRoutineTests.test_empty_bowls_are_inspected_without_chewing_lapping_or_consumption) ... ok
+test_expired_cooldowns_automatically_select_a_bowl_after_rest (test_daisy_routines.DaisyRoutineTests.test_expired_cooldowns_automatically_select_a_bowl_after_rest) ... ok
+test_initial_rest_and_production_timing_and_paths (test_daisy_routines.DaisyRoutineTests.test_initial_rest_and_production_timing_and_paths) ... ok
+test_offscreen_update_and_exit_reentry_preserve_actor_and_bowl_state (test_daisy_routines.DaisyRoutineTests.test_offscreen_update_and_exit_reentry_preserve_actor_and_bowl_state) ... ok
+test_player_blocking_station_causes_waiting_without_teleport_or_consumption (test_daisy_routines.DaisyRoutineTests.test_player_blocking_station_causes_waiting_without_teleport_or_consumption) ... ok
+test_reservation_blocks_refill_until_daisy_steps_away (test_daisy_routines.DaisyRoutineTests.test_reservation_blocks_refill_until_daisy_steps_away) ... ok
+test_time_chunking_keeps_movement_and_consumption_consistent (test_daisy_routines.DaisyRoutineTests.test_time_chunking_keeps_movement_and_consumption_consistent) ... ok
+test_wander_stands_walks_pauses_and_settles_without_leaving_room (test_daisy_routines.DaisyRoutineTests.test_wander_stands_walks_pauses_and_settles_without_leaving_room) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 12.594s
+
+OK

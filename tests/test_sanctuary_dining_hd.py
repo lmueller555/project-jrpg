@@ -3,7 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import unittest
-from PIL import Image
+from PIL import Image,ImageChops
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/source/terrain/eldenmere/sanctuary_dining_hd'
@@ -48,7 +48,7 @@ class DiningArtworkTests(unittest.TestCase):
                 self.assertGreaterEqual(occupied,.85,'Opaque source matte must not shrink the drawing')
 
     def test_animated_architecture_is_shared_and_emitter_crop_is_registered(self):
-        self.assertEqual(len(self.data['ground_frames']),36)
+        self.assertEqual(len(self.data['ground_frames']),1)
         self.assertEqual(len(set(self.data['ground_frames'])),1)
         with Image.open(ROOT/self.data['ground_frames'][0]) as ground:
             self.assertEqual(ground.size,(864,672))
@@ -62,12 +62,32 @@ class DiningArtworkTests(unittest.TestCase):
 
     def test_hearth_animation_keeps_structure_fixed_outside_fire_opening(self):
         frames=[Image.open(BANK/f'props/hearth_frame_{i:02}.png').convert('RGBA') for i in range(1,5)]
+        mask=Image.open(BANK/self.manifest['hearth_animation']['cavity_mask']).convert('L')
         for frame in frames[1:]:
-            for y in range(frame.height):
-                for x in range(frame.width):
-                    if 28<=x<69 and 91<=y<127:continue
-                    self.assertEqual(frame.getpixel((x,y)),frames[0].getpixel((x,y)))
+            delta=ImageChops.difference(frame,frames[0]).convert('RGB')
+            self.assertIsNone(ImageChops.multiply(delta,ImageChops.invert(mask).convert('RGB')).getbbox())
         self.assertGreater(len({frame.tobytes() for frame in frames}),1)
+
+    def test_hearth_flames_have_a_stable_root_and_stationary_log_lip(self):
+        from tools.build_sanctuary_dining_hd import cell,export_sprite,registered_hearth_frames
+        contract=self.recipe['hearth_animation']
+        atlas=Image.open(SOURCE/'props_atlas.png').convert('RGBA')
+        raw=[export_sprite(cell(atlas,item['cell'],5),tuple(v*2 for v in item['logical_size']),
+                          tuple(v*2 for v in item['logical_bounds']))
+             for item in self.recipe['props'] if item['id']=='hearth']
+        frames,structure,mask,layers=registered_hearth_frames(raw,contract)
+        root_x,root_y=contract['root_artwork']
+        for index,(frame,layer) in enumerate(zip(frames,layers),1):
+            with self.subTest(phase=index):
+                exported=Image.open(BANK/f'props/hearth_frame_{index:02}.png').convert('RGBA')
+                self.assertEqual(frame.tobytes(),exported.tobytes(),'Deterministic source-derived export')
+                self.assertEqual(frame.crop((0,root_y,96,144)).tobytes(),raw[0].crop((0,root_y,96,144)).tobytes())
+                self.assertIsNone(ImageChops.subtract(layer.getchannel('A'),mask).getbbox())
+                bounds=layer.getbbox();self.assertEqual(bounds[3],root_y)
+                self.assertLessEqual(bounds[3]-bounds[1],contract['maximum_flame_height_artwork'])
+                bottom=[x for x in range(layer.width) if layer.getpixel((x,root_y-1))[3]]
+                self.assertEqual((min(bottom)+max(bottom)+1)//2,root_x)
+                self.assertEqual(structure.getpixel((root_x,root_y)),frame.getpixel((root_x,root_y)))
 
     def test_new_drawings_contain_detail_beyond_enlarged_legacy_pixels(self):
         image=Image.open(BANK/'props/table.png').convert('RGBA')

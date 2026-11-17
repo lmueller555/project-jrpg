@@ -64,6 +64,9 @@ class PlayActor(PlayPose):
     @property
     def blocker(self):return pygame.Rect(round(self.position.x)-self.probe_size[0]//2,round(self.position.y)-self.probe_size[1]//2,*self.probe_size)
 
+    def draw_background(self,target,camera):
+        if self.work_renderer is not None:self.work_renderer.draw_held(target,camera,behind=True)
+
     def draw_foreground(self,target,camera):
         if self.work_renderer is not None:self.work_renderer.draw_held(target,camera)
 

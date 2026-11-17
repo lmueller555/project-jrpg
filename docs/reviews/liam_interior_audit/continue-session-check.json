@@ -1,0 +1,13 @@
+{
+  "saved_scene": "liam_house",
+  "before_save": {
+    "food": "half_full",
+    "water": "full"
+  },
+  "continue_new_session": {
+    "food": "full",
+    "water": "full"
+  },
+  "save_schema_changed": false,
+  "result": "passed intentional historical ambient session boundary"
+}

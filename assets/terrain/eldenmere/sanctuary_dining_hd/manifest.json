@@ -637,5 +637,125 @@
     "assets/characters/tomas/routines/props/stack.png": "assets/terrain/eldenmere/sanctuary_dining_hd/props/stack.png"
   },
   "character_banks_migrated": false,
-  "ground_duration_ms": 10800
+  "ground_duration_ms": 10800,
+  "hearth_animation": {
+    "coordinate_space": "artwork pixels at 2x density, local to the existing 48x72 logical hearth canvas",
+    "cavity_polygon_artwork": [
+      [
+        30,
+        90
+      ],
+      [
+        65,
+        90
+      ],
+      [
+        68,
+        95
+      ],
+      [
+        68,
+        113
+      ],
+      [
+        29,
+        113
+      ],
+      [
+        29,
+        95
+      ]
+    ],
+    "source_flame_rect_artwork": [
+      32,
+      91,
+      66,
+      114
+    ],
+    "root_artwork": [
+      48,
+      114
+    ],
+    "maximum_flame_height_artwork": 20,
+    "fixed_log_lip_y_artwork": 114,
+    "soot_rgba": [
+      39,
+      29,
+      24,
+      255
+    ],
+    "mortar_rgba": [
+      28,
+      24,
+      22,
+      255
+    ],
+    "brick_seams_artwork": [
+      [
+        29,
+        96,
+        68,
+        96
+      ],
+      [
+        29,
+        103,
+        68,
+        103
+      ],
+      [
+        29,
+        110,
+        68,
+        110
+      ],
+      [
+        34,
+        90,
+        34,
+        96
+      ],
+      [
+        54,
+        90,
+        54,
+        96
+      ],
+      [
+        43,
+        97,
+        43,
+        103
+      ],
+      [
+        63,
+        97,
+        63,
+        103
+      ],
+      [
+        34,
+        104,
+        34,
+        110
+      ],
+      [
+        54,
+        104,
+        54,
+        110
+      ]
+    ],
+    "frame_duration_ms": 300,
+    "reduced_motion_frame": 0,
+    "registration": "One stationary frame-1 fireplace and log bed; connected source flame silhouettes share a bottom-center root and are occluded by an inset cavity mask. No sprite translation or independent whole-hearth fitting during playback.",
+    "structure": "hearth/structure.png",
+    "cavity_mask": "hearth/cavity_mask.png",
+    "flame_layers": [
+      "hearth/flame_01.png",
+      "hearth/flame_02.png",
+      "hearth/flame_03.png",
+      "hearth/flame_04.png"
+    ]
+  }
 }

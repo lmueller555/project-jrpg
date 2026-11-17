@@ -191,7 +191,7 @@ class DaisyRoutineTests(unittest.TestCase):
             # is drawn. Contents pixels remain available for mouth/tongue contact.
             for y in range(24):
                 for x in range(24):
-                    color=a.lip.get_at((x,y))
+                    color=a.lips[kind].get_at((x,y))
                     if color.a:
                         point=(bowl['position'][0]+x-camera[0],bowl['position'][1]+y-camera[1])
                         self.assertEqual(target.get_at(point),color)

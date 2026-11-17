@@ -22,7 +22,7 @@ MODULES=('test_eldenmere_hd_integration','test_rendering','test_interactive_gras
          'test_gardener','test_well_drawing','test_halden_visit','test_elira_visit',
          'test_venn_visit','test_mill_quest','test_lantern_quest','test_lantern_rest',
          'test_lantern_finish','test_lantern_village','test_liam_blocks',
-         'test_daisy_routines','test_bed_rest','test_caelan_scene_actions_hd',
+         'test_daisy_routines','test_daisy_bowls_hd','test_bed_rest','test_caelan_scene_actions_hd',
          'test_caelan_pickup_continuity','test_save_system_gameplay','test_save_game',
          'test_save_library')
 class ReviewResult(unittest.TextTestResult):
