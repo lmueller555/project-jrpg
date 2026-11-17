@@ -102,6 +102,42 @@ define collision. Pause/focus freezes exploration clocks; reduced motion holds
 ambient effects and the caretaker at rest. The local map overview is derived
 from the assembled assets.
 
+## Pale Antlers integration
+
+The reserve builder's `pale_antlers` source-recipe record owns the detailed
+landmark, independently of ordinary baseline-validated entity IDs. It projects
+the coherent 1568×1056 master once at build time to 980×660 artwork pixels, with
+logical origin `[726,-41]`. Even native splits at x=0/330/650/980 and y=474
+preserve the exact shared arrangement. Runtime consumes native 2× drawings;
+there is no frame-by-frame scaling or new save state.
+
+The declared `[948.5,274,45,12.5]` logical contact lies in retained ridge band 4.
+Lower earth/root fringe uses an authored uneven embedding contour against
+existing solid ridge bands 3–5. Vertical ridge faces stay continuous above their
+support rather than being cut at a horizontal row; a conservative authored
+polygon preserves jaw/teeth anatomy. Only clipped
+contact pixels enter the ground pass. Elevated skull and all beams use authored
+coverage masks and immediate local cutaways for players, companions,
+story-positioned actors and public approaches. They never contribute collision.
+Native limestone ends, exposed strata, earth, roots, ivy and moss provide the
+contact dressing; their lower edges remain on existing ridge supports.
+
+Ordinary exploration reveals the skull from the eastern/northern courtyard
+circuit, with branches above that route. The central hall forecourt and southern
+arrival camera do not show the landmark at this anchored scale; regional views
+supply the wider approach silhouette. Some tips extend above/right of the
+reserve camera range, intentionally retaining the impression of a larger
+landscape. The cave apron shows the embedded jaw, not the whole assembly.
+The hall, cave rail, memorial grove, station locations, doors, collision,
+public approaches and complete courtyard loop are unchanged. The local overview
+includes these layers; this is not the later world-atlas/minimap artwork phase.
+
+Focused contracts in `tests/test_elden_vale_antlers_reserve.py` check exact
+protected-anatomy reconstruction, density/masks, ridge-only ground contact,
+unchanged gameplay metadata, actual initialized-Game eastern-loop walk/run and
+normal/reduced-motion actor cutaways. Those fixtures are not an uninterrupted
+story playthrough or user visual approval.
+
 ## Review and reproduction
 
 The maintained owner is `tools/build_sanctuary_reserve_hd.py` for all three scenes.

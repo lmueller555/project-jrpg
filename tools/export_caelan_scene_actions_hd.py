@@ -105,7 +105,7 @@ def products():
     for p,im in enumerate([sleep,drawing('sleep_rescue',1),action_frame(15),idle('front')]):export(f'{folder}/wake_up/frame_{p+1:02}.png',im)
     document(folder+'/wake_up/animation.json',info(metadata(folder+'/wake_up/animation.json')))
     recipe=info(metadata(folder+'/recipe.json'));recipe['notes']='Complete 2× drawn Caelan poses; logical positions, ownership and action cues retained.'
-    recipe['source_png_sha256']={str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in (ROOT/'assets/characters/caelan/review_hd/idles').glob('*.png')}
+    recipe['source_png_sha256']={str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'assets/characters/caelan/review_hd/idles').glob('*.png'))}
     document(folder+'/recipe.json',recipe)
     export('assets/characters/caelan/participation_sit_front.png',action_frame(12),anchor=(12,34))
     document('assets/source/characters/caelan/participation_sit/recipe.json',dict(output='assets/characters/caelan/participation_sit_front.png',logical_size=[24,36],draw_anchor=[12,34],seat_contact=[12,25],method='Complete drawn seated-front key.',**META))
@@ -189,7 +189,7 @@ def products():
         export(f'{folder}/place_{p}.png',lantern_canvas(action_frame(0),(round(18-8*f),round(2+6*f))),anchor=(20,54))
         export(f'{folder}/place_empty_{p}.png',lantern_canvas(action_frame(0)),anchor=(20,54))
     for p in range(4):export(f'assets/story/sanctuary_rescue/actions/row_5_{p}.png',padded(drawing('sleep_rescue',4+p),(40,40),(8,0)),anchor=(20,34))
-    sources=[dict(file=str(p.relative_to(ROOT)),sha256=sha256(p.read_bytes()).hexdigest()) for p in SOURCE.glob('*.png') if not p.name.startswith(('intent_','reference_'))]
+    sources=[dict(file=str(p.relative_to(ROOT)),sha256=sha256(p.read_bytes()).hexdigest()) for p in sorted(SOURCE.glob('*.png')) if not p.name.startswith(('intent_','reference_'))]
     town=json.loads((ROOT/'assets/maps/eldenmere/playable/map.json').read_text());prop_sources=[]
     for path in ('assets/story/halden/sack.png','assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png'):
         replacement=town.get('art_replacements',{}).get(path)

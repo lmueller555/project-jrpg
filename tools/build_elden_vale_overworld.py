@@ -220,6 +220,7 @@ def prepare():
     for road in data.get("roads", []):
         if road.get("control_points"):
             road["points"] = smooth_road(road["control_points"], road.get("smooth_steps", 6))
+    data['landmark_layers'] = deepcopy(data.get('signature_landscape',{}).get('placements',[]))
     geography = data["geography"]
     atlas = ROOT / geography["atlas_source"]
     digest = hashlib.sha256(atlas.read_bytes()).hexdigest()

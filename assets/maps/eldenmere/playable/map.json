@@ -21663,5 +21663,32 @@
         288
       ]
     ]
-  }
+  },
+  "landmark_layers": [
+    {
+      "id": "pale_antlers_distant",
+      "source_asset": "antlers_distant",
+      "position": [
+        350,
+        50
+      ],
+      "layer": "distant",
+      "collision": "none",
+      "anchor_purpose": "Fixed northeastern skyline glimpse beyond north roofs/trees; no skull/base or parallax",
+      "viewing_area_logical": [
+        0,
+        158,
+        1536,
+        1474
+      ],
+      "vista_fade_margin_logical": 22,
+      "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_distant.png",
+      "logical_size": [
+        192.0,
+        132.0
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false
+    }
+  ]
 }

@@ -192,7 +192,8 @@ class OverworldWorld:
         self.reduced_motion = False
         self._art = {};self._tiles = {};self._props = {}
         self._load_art()
-        self.landmarks = LandmarkLayers(ROOT,self.region.get('landmark_layers',()))
+        self.landmarks = LandmarkLayers(ROOT,[{**self._art.get('landmarks',{}).get(record.get('asset'),{}),**record}
+                                              for record in self.region.get('landmark_layers',())])
         self._validate_bridge_width()
         town = self.region.get('town', {})
         self.town_entry_rect = self._tile_rect(town.get('entry_rect_tiles', (9, -33, 6, 6)))
@@ -270,7 +271,7 @@ class OverworldWorld:
             detail = self.region.get(field)
             if detail and (ROOT/detail).exists():
                 additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
-                for group in ('tiles','props'):
+                for group in ('tiles','props','landmarks'):
                     self._art.setdefault(group,{}).update(additional.get(group,{}))
 
     def _validate_bridge_width(self):
@@ -628,11 +629,12 @@ class OverworldWorld:
             for cy in range(viewport.top//CHUNK_PIXELS, (viewport.bottom-1)//CHUNK_PIXELS+1):
                 target.blit(self._render_chunk(cx,cy), (cx*CHUNK_PIXELS-camera[0],cy*CHUNK_PIXELS-camera[1]))
         self._draw_water(target,camera,elapsed_ms)
-        self.landmarks.draw(target,camera,'distant')
+        self.landmarks.draw(target,camera,'distant',viewer=player)
         self.landmarks.draw(target,camera,'ground')
         ordered = []
         for prop in self._static_props(viewport):
             scenery_ms = 0 if self.reduced_motion else elapsed_ms
+            prop={**prop,'key':self.region.get('signature_landscape',{}).get('prop_bindings',{}).get(prop.get('id'),prop['key'])}
             key,position = (self.environment.prop_frame(prop,scenery_ms) if self.environment is not None
                             else (prop['key'],prop['position']))
             # Per-instance phases share the scene clock; roots and ground positions never move.

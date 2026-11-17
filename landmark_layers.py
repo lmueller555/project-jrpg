@@ -60,17 +60,33 @@ class LandmarkLayers:
             points.append((round(position[0]), round(position[1])-18))
         return points
 
-    def draw(self, target, camera, layer, *, actors=(), interaction_points=()):
+    def draw(self, target, camera, layer, *, actors=(), interaction_points=(), viewer=None):
         viewport = pygame.Rect(camera, target.get_size())
         points = self.visibility_points(actors) + list(interaction_points)
         self.working_bytes = 0
         for record in self.visible(viewport, layer):
+            opacity=255
+            if viewer is not None and record.get('viewing_area_logical'):
+                area=pygame.Rect(record['viewing_area_logical'])
+                point=getattr(viewer,'story_position',None)
+                if point is None:point=viewer.position
+                x,y=point
+                distance=min(x-area.left,area.right-x,y-area.top,area.bottom-y)
+                if distance<=0:continue
+                margin=max(1,record.get('vista_fade_margin_logical',1))
+                opacity=min(255,round(255*distance/margin))
             image = self.image(record)
             rect = self.bounds(record)
             position = (record['position'][0]-camera[0], record['position'][1]-camera[1])
             affected = [point for point in points if rect.inflate(44, 56).collidepoint(point)] if layer == 'overhead' else []
             if not affected:
-                target.blit(image, position)
+                if opacity==255:target.blit(image, position)
+                else:
+                    vista=WorldCanvas(target.get_size(),pygame.SRCALPHA) if isinstance(target,WorldCanvas) else pygame.Surface(target.get_size(),pygame.SRCALPHA)
+                    vista.blit(image,position);vista.set_alpha(opacity)
+                    target.blit(vista,(0,0))
+                    self.working_bytes=max(self.working_bytes,vista.get_pitch()*vista.get_height()+(vista.native.get_pitch()*vista.native.get_height() if isinstance(vista,WorldCanvas) else 0))
+                    del vista
                 continue
             # A viewport-sized work surface preserves half-unit registration at
             # crop edges without rounding an authored origin into a logical Rect.
@@ -96,3 +112,5 @@ class LandmarkLayers:
             if factor == 2:pygame.transform.scale(raw, work.get_size(), work)
             self.working_bytes = max(self.working_bytes, raw.get_pitch()*raw.get_height()*4 + work.get_pitch()*work.get_height()*2)
             target.blit(work, (0,0))
+            # Release one piece before allocating the next viewport work set.
+            del coverage,fade,coverage_canvas,authored,raw,work

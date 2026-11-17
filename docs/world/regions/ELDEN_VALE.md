@@ -3,9 +3,9 @@
 **Status:** Approved regional design direction and retained setting foundations.
 The HD regional foundation is integrated: live area records and protected
 clearances establish the six-area framework without relocating travel links or
-work stations. The Pale Antlers, causeway structures and Rising Rain remain
-staged assets awaiting gameplay integration. Their complete regional composition
-and final atlas presentation are future work.
+work stations. The Pale Antlers and Sanctuary presentation are integrated across
+town, regional and detailed views. Causeway structures, Rising Rain and final
+atlas presentation remain future work.
 Illustrative dialogue, customs and optional encounters remain scene seeds until
 individually authored. Existing gameplay and completed story events retain their
 established state.
@@ -282,7 +282,7 @@ wording and placements remain scene-writing decisions.
 
 | Distinction | Application here |
 | --- | --- |
-| **Designed observable features** | Enormous exposed antlers and part of a skull; weathered remains supporting living growth; droplets rising into the canopy. These await implementation. |
+| **Designed observable features** | Enormous exposed antlers and part of a skull; weathered remains supporting living growth; droplets rising into the canopy. The remains are integrated; weather awaits implementation. |
 | **Local beliefs and stories** | Shelter, a walking forest, the sky receiving water and the saying about keeping a place. They do not prove supernatural mechanisms. |
 | **Unresolved creator-level questions** | Species, age, death, the oldest ruins' builders/purposes, the phenomenon's mechanism and relationships between those features. |
 
@@ -529,7 +529,7 @@ Acceptance for a future redesign includes:
 - Actual movement, collision/occlusion, relevant story scenes, map presentation,
   pause/focus, reduced motion and save/Continue are reviewed before delivery.
 
-This documentation change does not alter map geometry, rebuild scenery, implement
-weather, add NPC schedules, change dialogue or grant story progression. Current
+The landmark integration preserves map geometry, NPC schedules, dialogue and
+story progression. It does not activate weather. Current
 runtime details belong to the linked gameplay/technical guides; historical source
 recipes and reviews remain evidence of earlier layouts, not a second design brief.

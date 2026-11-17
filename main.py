@@ -378,7 +378,7 @@ class World:
         target.fill('#24302d')
         viewport=pygame.Rect(camera,target.get_size())
         self.draw_ground(target,camera,elapsed_ms)
-        self.landmarks.draw(target,camera,'distant')
+        self.landmarks.draw(target,camera,'distant',viewer=player)
         self.landmarks.draw(target,camera,'ground')
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort

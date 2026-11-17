@@ -2,7 +2,7 @@
   "id": "elden_vale.hd.foundation.integration",
   "dependencies_sha256": {
     "assets/terrain/overworld/elden_vale/hd/art.json": "cca41ebc798c579a62254c98895c0bc2120548029991de3d0236d00e6ec232e2",
-    "tools/build_elden_vale_hd_integration.py": "ef4df9be656d2de74c2e1742795709f8f5f48b06a4a36c1bdc77eb38c507d234",
+    "tools/build_elden_vale_hd_integration.py": "28b54c166c04a103f02327851545ab53b41b010206967096469795295442e987",
     "assets/terrain/overworld/elden_vale/hd/tiles/grass.png": "ef77661d834fe2529d96d9130d57c96b0348423dfb5f24ed8fa3f0cfe0717c76",
     "assets/terrain/overworld/elden_vale/hd/tiles/dirt.png": "780d016145f8103b5f5d8cb12b93944bcae8d7cfe487797a378bd5a871d7a93f",
     "assets/terrain/overworld/elden_vale/hd/tiles/stone_road.png": "4550533eef12ce1a9fa4b58e9dd9320e4fddd3dbfb31b37e7d141c8de8065c54",
@@ -235,11 +235,18 @@
     "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_rounded/idle.png": "d864f83b30a34425794270f0b3416d68f709a218ad810006bafd94c48d788f29",
     "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_rounded/frame_00.png": "d864f83b30a34425794270f0b3416d68f709a218ad810006bafd94c48d788f29",
     "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_mossy/idle.png": "885e4fecc07a2db1e1baebb0bfe069d0b9be91371b474f65bd61cf226b6aad76",
-    "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_mossy/frame_00.png": "885e4fecc07a2db1e1baebb0bfe069d0b9be91371b474f65bd61cf226b6aad76"
+    "assets/terrain/overworld/elden_vale/hd/vegetation/boulder_mossy/frame_00.png": "885e4fecc07a2db1e1baebb0bfe069d0b9be91371b474f65bd61cf226b6aad76",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json": "97ce2a1d9fde6204c858ac1e6780be1785d145746dd04b3d40f58d698abab98a",
+    "assets/source/maps/overworld/elden_vale/recipe.json": "9a119c8b9d00fc6005662993bf14212ebdaa0c08e32ac00e0425ce392fbf19f3",
+    "tools/elden_vale_landmark_bindings.py": "5a08b7014b9b3ce834cbeb0cf21d27fda133ab772965ae28e1539bd29d0c21e1",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_regional.png": "c3c6f8372fe77e09e44ae2f10dd57e0721b69ec36dfb11a7c20bf89f576f9dcc",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_left_end.png": "805bc030466fc8876f3110c0b88bee6110653967a2f486d6de7f39de6e4be074",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_right_end.png": "40514e006c3c430da9e84926eb039406a5c3d602f89bef997d152fc91caea664",
+    "assets/terrain/overworld/elden_vale/signature_landscape_hd/miniature/sanctuary_miniature.png": "40db75fbe744b9ed548c71679aa10c7471314b8d2485587e368939b7a70e8d74"
   },
   "selected_bindings": {
     "tiles": 21,
-    "props": 48
+    "props": 51
   },
   "method": "Immutable staged foundation plus shared HD materials and common-union vegetation registration",
   "density": 2,
@@ -1015,7 +1022,6 @@
     "butterfly_2",
     "guard_back",
     "guard_front",
-    "ridge_sanctuary",
     "sheep_1",
     "sheep_2",
     "smoke_1",

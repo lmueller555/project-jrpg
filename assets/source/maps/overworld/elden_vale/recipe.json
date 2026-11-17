@@ -1633,5 +1633,165 @@
       "Rising Rain event/actions",
       "final atlas regeneration"
     ]
+  },
+  "signature_landscape": {
+    "status": "Pale Antlers active; causeway and Rising Rain deferred",
+    "master_origin_logical": [
+      2143,
+      -1771
+    ],
+    "existing_supports": [
+      "sanctuary_ledge_3",
+      "sanctuary_ledge_4"
+    ],
+    "bone_polygon_source_artwork": [
+      [
+        610,
+        270
+      ],
+      [
+        610,
+        240
+      ],
+      [
+        640,
+        130
+      ],
+      [
+        680,
+        90
+      ],
+      [
+        724,
+        0
+      ],
+      [
+        946,
+        0
+      ],
+      [
+        965,
+        80
+      ],
+      [
+        930,
+        155
+      ],
+      [
+        850,
+        195
+      ],
+      [
+        760,
+        224
+      ],
+      [
+        700,
+        242
+      ],
+      [
+        655,
+        274
+      ]
+    ],
+    "prop_assets": {
+      "signature_ridge_left": "ridge_left_end",
+      "signature_ridge_right": "ridge_right_end"
+    },
+    "prop_bindings": {
+      "sanctuary_ledge_3": "signature_ridge_left",
+      "sanctuary_ledge_4": "signature_ridge_right"
+    },
+    "placements": [
+      {
+        "id": "regional_beam_left",
+        "asset": "regional_beam_left",
+        "position": [
+          2143.0,
+          -1771.0
+        ],
+        "layer": "overhead",
+        "collision": "none"
+      },
+      {
+        "id": "regional_beam_central",
+        "asset": "regional_beam_central",
+        "position": [
+          2273.0,
+          -1771.0
+        ],
+        "layer": "overhead",
+        "collision": "none"
+      },
+      {
+        "id": "regional_beam_right",
+        "asset": "regional_beam_right",
+        "position": [
+          2397.0,
+          -1771.0
+        ],
+        "layer": "overhead",
+        "collision": "none"
+      },
+      {
+        "id": "regional_skull_raised",
+        "asset": "regional_skull_raised",
+        "position": [
+          2143.0,
+          -1581.0
+        ],
+        "layer": "overhead",
+        "collision": "none"
+      },
+      {
+        "id": "regional_skull_contact",
+        "asset": "regional_skull_contact",
+        "position": [
+          2143.0,
+          -1521.0
+        ],
+        "layer": "ground",
+        "collision": "none"
+      }
+    ],
+    "embedding_edge_artwork": [
+      [
+        0,
+        500
+      ],
+      [
+        280,
+        496
+      ],
+      [
+        360,
+        488
+      ],
+      [
+        440,
+        494
+      ],
+      [
+        520,
+        490
+      ],
+      [
+        590,
+        498
+      ],
+      [
+        650,
+        488
+      ],
+      [
+        710,
+        492
+      ],
+      [
+        768,
+        500
+      ]
+    ],
+    "placement_review": "Existing lower northeastern ridge support3 selected after actual ordinary approach camera rejected candidate5; no geometry changed."
   }
 }

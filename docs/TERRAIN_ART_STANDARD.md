@@ -35,7 +35,8 @@ legacy banks are still required by regional scenes and historical source tools.
 Elden Vale's regional foundation now has its own
 [integrated HD bindings](#integrated-elden-vale-regional-foundation), using the
 shared materials and adapted scenery at the existing miniature logical scale.
-The signature landscape, causeway structures and Rising Rain remain inactive.
+Pale Antlers and Sanctuary views now use explicit landmark integration. Causeway
+structures and Rising Rain remain inactive.
 
 Eldenmere's building/interior integration and the new inn/shop follow the
 [global visual standard](VISUAL_ART_STANDARD.md#integrated-eldenmere-town-and-businesses).
@@ -1183,7 +1184,10 @@ limestone ridge/dressing kit, causeway ruins and Sanctuary miniature. Sources,
 generation brief, geometric layout plan and dependency hashes are retained in
 `assets/source/terrain/overworld/elden_vale/signature_landscape_hd/`; exports are
 registered by `assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json`.
-This is **not integrated** and has not received user visual approval.
+This original pack retains **not integrated** metadata and has not received user
+visual approval. Selected remains, ridge dressing and miniature are now active
+through explicit live bindings and the reserve/town builders; the staged manifest
+is not the runtime registry.
 
 One retained anatomy master supplies the registered skull/overhead layers and
 cross-scale views. Distant views exclude the skull. Parts reconstruct the master
@@ -1245,3 +1249,27 @@ verify bytes without writing. Focused contracts are in
 `tests/test_elden_vale_rising_rain_hd.py`. See
 [offline previews and limits](reviews/elden_vale_rising_rain_hd/README.md) and the
 [actor export reference](VISUAL_ART_STANDARD.md#staged-rising-rain-actions-and-wildlife).
+
+
+### Integrated Pale Antlers bindings
+
+`tools/elden_vale_landmark_bindings.py` is the signature-schema adapter consumed
+by `tools/build_elden_vale_hd_integration.py`. Its native regional segments, masks,
+existing-foot ridge adaptations and miniature register in the live manifest.
+Placements and contact safety remain owned by the regional source recipe. The
+region builder, foundation metadata refresh, live bindings, town and reserve
+builders reproduce in that order; there is no generated reserve-map visual hash
+in the staged signature dependency graph. Preserve the protected geometry and
+collision checks and record visual provenance separately.
+
+The reserve recipe's `pale_antlers` block owns its coherent dedicated rendition,
+registration, named solid supports and essential limestone/strata/earth/root/ivy/
+moss dressing. Detailed and regional lower contact fringe is embedded with an
+explicit uneven contour while protecting bone anatomy, never used to generate
+collision. Original staged exports and historical captures remain unchanged.
+Production evidence is in [the gameplay review](reviews/elden_vale_pale_antlers/README.md).
+
+The town owner also checks its dependent Caelan scene export. Source-inventory
+paths are sorted canonically there so filesystem enumeration order cannot
+invalidate provenance JSON on a fresh checkout. This integration changes only
+that inventory ordering, not actor pixels, poses, dimensions or gameplay.

@@ -20,6 +20,42 @@
   ],
   "dependencies": [
     {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json",
+      "sha256": "97ce2a1d9fde6204c858ac1e6780be1785d145746dd04b3d40f58d698abab98a"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_complete.png",
+      "sha256": "0c3a7577c8a9fe9e43b3d9037e273668d562acda7d28f73bdbb52e164ed5bba9"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_left_end.png",
+      "sha256": "805bc030466fc8876f3110c0b88bee6110653967a2f486d6de7f39de6e4be074"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/ridge_right_end.png",
+      "sha256": "40514e006c3c430da9e84926eb039406a5c3d602f89bef997d152fc91caea664"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/ridge/exposed_strata.png",
+      "sha256": "6628a105f96d9142d69eab1c1fc27d8c27ea4ecffd3ca52656eeb728fb7140c3"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/earth_grass_contact.png",
+      "sha256": "73e1e7c281aa1b05a4c541bdb5a1c6020723e7c077baeb7c9abe21801e9afd2a"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/root_contact.png",
+      "sha256": "dd90b90276b08ee2d2214366225be70d2a73255bcd9fe9e8ac57fba84905e088"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/ivy_contact.png",
+      "sha256": "e59abc298e0e8a4ef56d3f8f074f1f3a1a1d6a6f475575e6c796949ff6ac3bf9"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/signature_landscape_hd/dressing/nest_moss.png",
+      "sha256": "016aa84207125a64eba318ca11789bc3d179e46abbd5a613f22c9023c0320ce0"
+    },
+    {
       "path": "assets/terrain/eldenmere/grass_dirt_hd/coverage_47.png",
       "sha256": "fd3cb4870783a0121b6c13748fbb4d2f8bf127c6b2e34c175826b2f1975338fb"
     },
@@ -10733,7 +10769,7 @@
     },
     {
       "path": "assets/maps/eldenmere/town_hd/manifest.json",
-      "sha256": "3c3cafd3abca345c2e6ad6a9f13db1f0b1e5bed7cd16344eac14a51eeb4017c6"
+      "sha256": "957e97372732d0098959ef87d9edfb0179761584504b73f08bd726c32f52ed30"
     },
     {
       "path": "assets/maps/eldenmere/town_hd/mill/overview.png",
@@ -13565,7 +13601,7 @@
     },
     {
       "path": "assets/maps/eldenmere/playable/map.json",
-      "sha256": "6cbe1c1dfdc4fe7d323daeaf6fd02dc2c62e5ed86f9e81f46bdde3528e72ee7b"
+      "sha256": "918b4946e29d5fd51ac80c358e1923fc43ba847764e2e3df62615a002c3a1d62"
     }
   ],
   "collision_sha256": {
@@ -16586,12 +16622,156 @@
       "pixel_space": "artwork"
     },
     {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/ridge_west.png",
+      "size_pixels": [
+        192,
+        144
+      ],
+      "sha256": "c58472422ab49006be0ac1d4c30ec8efb63ac7cf73b4cc10d07c19d565723d8e",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/ridge_east.png",
+      "size_pixels": [
+        192,
+        144
+      ],
+      "sha256": "726c6f4da46109bd482d1b5d1460400760515c2ddd7328642671abe21c37f702",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/strata.png",
+      "size_pixels": [
+        192,
+        144
+      ],
+      "sha256": "876af2ff5b36e646feeed61bfb1146b95064a2c7a01d951d64a3eb2f7490fc18",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/earth.png",
+      "size_pixels": [
+        96,
+        72
+      ],
+      "sha256": "482d4deb075a49d72606ae9860a66ecddff0aeef7483080f2fd599230b58a8a7",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/roots.png",
+      "size_pixels": [
+        192,
+        144
+      ],
+      "sha256": "242d5013215cf47e6df7ee595a0444d4874911bc022ac54eb3b6ac117e2bd384",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/ivy.png",
+      "size_pixels": [
+        96,
+        72
+      ],
+      "sha256": "3b136b55ed26a10c2f540d1707f83488ffadb2822ade7c2281acb98be6d66ed4",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/moss.png",
+      "size_pixels": [
+        48,
+        36
+      ],
+      "sha256": "cb28caa53915b438326dd3e634ca95e9d3676528e99e9649529d278e0c1da722",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/skull_contact.png",
+      "size_pixels": [
+        980,
+        186
+      ],
+      "sha256": "926184c3fff416b48a6aa5ccdab0d1b65f07570d3de653d466a868b3302d3f6b",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/beam_0.png",
+      "size_pixels": [
+        330,
+        474
+      ],
+      "sha256": "9ebde9a9aabf79a629c8ffe43a718179f7427d9e44323277a62a6b6769e04034",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/beam_0_mask.png",
+      "size_pixels": [
+        330,
+        474
+      ],
+      "sha256": "f45dcd3b605211ec307beecac22187ba43e7214e5fad7e80b8242d99eff33fe5",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/beam_1.png",
+      "size_pixels": [
+        320,
+        474
+      ],
+      "sha256": "cb9e351800ccbceeeb5c71e458c9c38dbf3c02ea294a28ea0e358c998c826a8e",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/beam_1_mask.png",
+      "size_pixels": [
+        320,
+        474
+      ],
+      "sha256": "a54fb919ee5e7234bc7738e9ee2cd83bab3e0fe940b98646de3aecdf4688b7fa",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/beam_2.png",
+      "size_pixels": [
+        330,
+        474
+      ],
+      "sha256": "352ba9a684ca138ed494b94639b82b11e176b24b4d4d5897458a72fbb69acc7e",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/beam_2_mask.png",
+      "size_pixels": [
+        330,
+        474
+      ],
+      "sha256": "36f4f7bb1b6922321cb1a499fbe2534e59e305ecdd4989b2ab080105d7a02ab0",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/raised_skull.png",
+      "size_pixels": [
+        980,
+        186
+      ],
+      "sha256": "d959ea1ea108956688e97952e653ae3a0c14920be78c962e92067b97e97a1655",
+      "pixel_space": "artwork"
+    },
+    {
+      "file": "assets/maps/sanctuary_reserve_hd/landmarks/raised_skull_mask.png",
+      "size_pixels": [
+        980,
+        186
+      ],
+      "sha256": "eb53bea52b9192a110693ed0d0f35c3b2185cb7e36de3ac73287c708e2b7f9ee",
+      "pixel_space": "artwork"
+    },
+    {
       "file": "assets/maps/sanctuary_reserve_hd/elden_vale_sanctuary/overview.png",
       "size_pixels": [
         1152,
         768
       ],
-      "sha256": "6433b913d709fa8215932464113101a7c343c2759860250dad344e7deb6a33ca",
+      "sha256": "439cd1d955cf4263d5dd34cb01e8530ce42e8ea13a14283d8b0e9d51dce98ab8",
       "pixel_space": "logical_ui"
     },
     {
