@@ -1,0 +1,13 @@
+{
+  "tests_run": 5,
+  "passed": [
+    "test_daisy_bowls.DaisyBowlTests.test_bowls_are_side_by_side_full_and_static_with_future_states_linked",
+    "test_daisy_bowls.DaisyBowlTests.test_food_and_water_have_full_half_and_empty_native_variants",
+    "test_daisy_bowls.DaisyBowlTests.test_only_the_recessed_contents_change_between_states",
+    "test_daisy_bowls.DaisyBowlTests.test_retained_layers_and_spritesheet_reconstruct_all_six_states",
+    "test_daisy_bowls.DaisyBowlTests.test_small_footprints_and_refill_access_do_not_block_existing_residents"
+  ],
+  "failures": [],
+  "errors": [],
+  "skipped": []
+}

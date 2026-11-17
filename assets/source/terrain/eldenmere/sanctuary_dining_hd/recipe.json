@@ -977,5 +977,117 @@
     "architecture_atlas.png": "98c34a9a7677b0e4df9def16f71de1ac3761c52a5edc9036c8a6b5a16e49a01e",
     "chair_back.png": "73017c3b4b4fe7e19c8c99fb64adc70243b7b9cc74be50da486f5de93865c907",
     "workprops_atlas.png": "55dba09f419ad2a8cee405cc56974da50a6a9af7f12d51d422ee6cd6a8efa880"
+  },
+  "hearth_animation": {
+    "coordinate_space": "artwork pixels at 2x density, local to the existing 48x72 logical hearth canvas",
+    "cavity_polygon_artwork": [
+      [
+        30,
+        90
+      ],
+      [
+        65,
+        90
+      ],
+      [
+        68,
+        95
+      ],
+      [
+        68,
+        113
+      ],
+      [
+        29,
+        113
+      ],
+      [
+        29,
+        95
+      ]
+    ],
+    "source_flame_rect_artwork": [
+      32,
+      91,
+      66,
+      114
+    ],
+    "root_artwork": [
+      48,
+      114
+    ],
+    "maximum_flame_height_artwork": 20,
+    "fixed_log_lip_y_artwork": 114,
+    "soot_rgba": [
+      39,
+      29,
+      24,
+      255
+    ],
+    "mortar_rgba": [
+      28,
+      24,
+      22,
+      255
+    ],
+    "brick_seams_artwork": [
+      [
+        29,
+        96,
+        68,
+        96
+      ],
+      [
+        29,
+        103,
+        68,
+        103
+      ],
+      [
+        29,
+        110,
+        68,
+        110
+      ],
+      [
+        34,
+        90,
+        34,
+        96
+      ],
+      [
+        54,
+        90,
+        54,
+        96
+      ],
+      [
+        43,
+        97,
+        43,
+        103
+      ],
+      [
+        63,
+        97,
+        63,
+        103
+      ],
+      [
+        34,
+        104,
+        34,
+        110
+      ],
+      [
+        54,
+        104,
+        54,
+        110
+      ]
+    ],
+    "frame_duration_ms": 300,
+    "reduced_motion_frame": 0,
+    "registration": "One stationary frame-1 fireplace and log bed; connected source flame silhouettes share a bottom-center root and are occluded by an inset cavity mask. No sprite translation or independent whole-hearth fitting during playback."
   }
 }

@@ -319,25 +319,88 @@
       "sort_y": 203,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box.png"
+        "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_31.png"
       ],
       "frame_duration_ms": 1000,
       "phase_offset": 0,
       "state": "5",
       "state_images": {
-        "0": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_0.png",
-        "1": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_1.png",
-        "2": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_2.png",
-        "3": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_3.png",
-        "4": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_4.png",
-        "5": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_5.png"
+        "contents_00": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_00.png",
+        "contents_01": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_01.png",
+        "contents_02": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_02.png",
+        "contents_03": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_03.png",
+        "contents_04": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_04.png",
+        "contents_05": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_05.png",
+        "contents_06": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_06.png",
+        "contents_07": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_07.png",
+        "contents_08": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_08.png",
+        "contents_09": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_09.png",
+        "contents_10": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_10.png",
+        "contents_11": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_11.png",
+        "contents_12": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_12.png",
+        "contents_13": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_13.png",
+        "contents_14": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_14.png",
+        "contents_15": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_15.png",
+        "contents_16": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_16.png",
+        "contents_17": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_17.png",
+        "contents_18": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_18.png",
+        "contents_19": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_19.png",
+        "contents_20": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_20.png",
+        "contents_21": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_21.png",
+        "contents_22": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_22.png",
+        "contents_23": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_23.png",
+        "contents_24": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_24.png",
+        "contents_25": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_25.png",
+        "contents_26": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_26.png",
+        "contents_27": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_27.png",
+        "contents_28": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_28.png",
+        "contents_29": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_29.png",
+        "contents_30": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_30.png",
+        "contents_31": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_31.png",
+        "0": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_00.png",
+        "1": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_01.png",
+        "2": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_03.png",
+        "3": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_07.png",
+        "4": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_15.png",
+        "5": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_31.png"
       },
       "logical_size": [
         32,
         24
       ],
       "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "reduced_motion_frame": 0,
+      "content_state_prefix": "contents_",
+      "construction_source": "tools/liam_block_art.py",
+      "artwork_registration": {
+        "coordinate_space": "logical_world_units",
+        "canvas": [
+          32,
+          24
+        ],
+        "occupied_ground_rect": [
+          2,
+          15,
+          28,
+          8
+        ],
+        "depth_baseline": 23,
+        "near_face_rect": [
+          2,
+          15.5,
+          28,
+          7
+        ],
+        "east_access": [
+          36,
+          20
+        ],
+        "east_contact": [
+          26,
+          11
+        ],
+        "projection": "orthogonal_parallel_rims"
+      }
     },
     {
       "id": "daisy_food_bowl",
@@ -348,7 +411,7 @@
       "sort_y": 277,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl.png"
+        "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_full.png"
       ],
       "frame_duration_ms": 1000,
       "phase_offset": 0,
@@ -375,7 +438,8 @@
         24
       ],
       "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "reduced_motion_frame": 0,
+      "bowl_render_pack": "assets/terrain/eldenmere/liam_home/bowls_hd/bowls.json"
     },
     {
       "id": "daisy_water_bowl",
@@ -386,7 +450,7 @@
       "sort_y": 277,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl.png"
+        "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_full.png"
       ],
       "frame_duration_ms": 1000,
       "phase_offset": 0,
@@ -413,7 +477,8 @@
         24
       ],
       "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "reduced_motion_frame": 0,
+      "bowl_render_pack": "assets/terrain/eldenmere/liam_home/bowls_hd/bowls.json"
     }
   ],
   "collision": "assets/maps/eldenmere/building_interiors/rooms/liam_house/collision.png",
@@ -762,7 +827,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/block_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ac897a9c0525.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_1.png",
       "logical_size": [
         5,
         5
@@ -770,7 +835,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/block_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/aa628f16db52.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_2.png",
       "logical_size": [
         5,
         5
@@ -778,7 +843,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/block_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0e13d9df3811.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_3.png",
       "logical_size": [
         5,
         5
@@ -786,7 +851,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/block_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/614baa001b87.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_4.png",
       "logical_size": [
         5,
         5
@@ -794,7 +859,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/block_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4b75082081a7.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/block_5.png",
       "logical_size": [
         16,
         4
@@ -802,7 +867,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/front_overlay.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/box_front_lip.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/front_overlay.png",
       "logical_size": [
         32,
         24
@@ -1722,7 +1787,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/box_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_31.png",
       "logical_size": [
         32,
         24
@@ -1730,7 +1795,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/bowls/food_full.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_food_bowl_full.png",
       "logical_size": [
         24,
         24
@@ -1738,7 +1803,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/bowls/water_full.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/daisy_water_bowl_full.png",
       "logical_size": [
         24,
         24
@@ -1746,7 +1811,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/box_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_0.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_00.png",
       "logical_size": [
         32,
         24
@@ -1754,7 +1819,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/box_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_1.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_01.png",
       "logical_size": [
         32,
         24
@@ -1762,7 +1827,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/box_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_2.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_03.png",
       "logical_size": [
         32,
         24
@@ -1770,7 +1835,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/box_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_3.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_07.png",
       "logical_size": [
         32,
         24
@@ -1778,7 +1843,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/liam_home/blocks/box_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/liam_block_box_4.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/liam_house/blocks/contents_15.png",
       "logical_size": [
         32,
         24

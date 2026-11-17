@@ -1,0 +1,14 @@
+test_all_levels_preserve_body_alpha_and_their_exact_front_lip (test_daisy_bowls_hd.DaisyBowlHDExports.test_all_levels_preserve_body_alpha_and_their_exact_front_lip) ... ok
+test_scoped_export_is_reproducible_and_manifest_hashes_match (test_daisy_bowls_hd.DaisyBowlHDExports.test_scoped_export_is_reproducible_and_manifest_hashes_match) ... ok
+test_town_composer_uses_the_same_registered_exports_and_binding (test_daisy_bowls_hd.DaisyBowlHDExports.test_town_composer_uses_the_same_registered_exports_and_binding) ... ok
+test_actual_room_contents_deplete_twice_with_unchanged_support_and_refill (test_daisy_bowls_hd.DaisyBowlHDLive.test_actual_room_contents_deplete_twice_with_unchanged_support_and_refill) ... ok
+test_every_contact_and_lip_uses_the_live_density_bank (test_daisy_bowls_hd.DaisyBowlHDLive.test_every_contact_and_lip_uses_the_live_density_bank) ... ok
+test_initial_surface_is_the_registered_full_state_and_repeated_set_is_stable (test_daisy_bowls_hd.DaisyBowlHDLive.test_initial_surface_is_the_registered_full_state_and_repeated_set_is_stable) ... ok
+test_new_scene_session_starts_full_without_changing_cached_session_levels (test_daisy_bowls_hd.DaisyBowlHDLive.test_new_scene_session_starts_full_without_changing_cached_session_levels) ... ok
+test_pause_and_focus_loss_freeze_consumption_without_catchup (test_daisy_bowls_hd.DaisyBowlHDLive.test_pause_and_focus_loss_freeze_consumption_without_catchup) ... ok
+test_ripples_are_clipped_to_current_water_and_suppressed_in_reduced_motion (test_daisy_bowls_hd.DaisyBowlHDLive.test_ripples_are_clipped_to_current_water_and_suppressed_in_reduced_motion) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.475s
+
+OK

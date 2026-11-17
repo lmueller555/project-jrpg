@@ -1,0 +1,43 @@
+{
+  "camera_logical": [
+    -24,
+    16
+  ],
+  "render_pixels_per_world_unit": 2,
+  "captures": [
+    {
+      "kind": "food",
+      "completed_levels": [
+        "half_full",
+        "empty"
+      ],
+      "visited_states": [
+        "stand_up",
+        "walk",
+        "lower_food",
+        "eat",
+        "raise_food",
+        "settle_down"
+      ],
+      "gif_frame_duration_ms": 200,
+      "gif_initial_wait_skipped": true
+    },
+    {
+      "kind": "water",
+      "completed_levels": [
+        "half_full",
+        "empty"
+      ],
+      "visited_states": [
+        "stand_up",
+        "walk",
+        "lower_water",
+        "drink",
+        "raise_water",
+        "settle_down"
+      ],
+      "gif_frame_duration_ms": 200,
+      "gif_initial_wait_skipped": true
+    }
+  ]
+}
