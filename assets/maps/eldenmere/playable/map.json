@@ -1282,6 +1282,154 @@
       ]
     },
     {
+      "id": "settlement.commons.rest_bench",
+      "position": [
+        432,
+        948
+      ],
+      "sort_y": 970,
+      "frames": [
+        "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        40,
+        24
+      ]
+    },
+    {
+      "id": "settlement.commons.rest_planter",
+      "position": [
+        474,
+        954
+      ],
+      "sort_y": 968.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.commons.rest_violets",
+      "position": [
+        432,
+        984
+      ],
+      "sort_y": 1006.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+    },
+    {
+      "id": "settlement.commons.rest_clover",
+      "position": [
+        468,
+        980
+      ],
+      "sort_y": 1002.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 7,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
+      "id": "settlement.commons.school_clover",
+      "position": [
+        716,
+        780
+      ],
+      "sort_y": 802.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 7,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
+      "id": "settlement.commons.school_flowers",
+      "position": [
+        692,
+        786
+      ],
+      "sort_y": 808.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 8,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+    },
+    {
       "id": "inn",
       "position": [
         192,
@@ -22942,6 +23090,116 @@
           ]
         ],
         "width": 18
+      },
+      {
+        "id": "settlement.street.commons.square",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            492.0,
+            864.0
+          ],
+          [
+            516.0,
+            864.0
+          ]
+        ],
+        "width": 144,
+        "rect": [
+          420,
+          792,
+          168,
+          144
+        ]
+      },
+      {
+        "id": "settlement.street.commons.school_link",
+        "role": "secondary",
+        "material": "stone",
+        "points": [
+          [
+            588,
+            828
+          ],
+          [
+            600,
+            828
+          ],
+          [
+            636,
+            804
+          ],
+          [
+            648,
+            768
+          ],
+          [
+            672,
+            750
+          ]
+        ],
+        "width": 30
+      },
+      {
+        "id": "settlement.street.commons.rest_pad",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            444.0,
+            960.0
+          ],
+          [
+            492.0,
+            960.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          432,
+          948,
+          72,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.commons.rest_link",
+        "role": "secondary",
+        "material": "stone",
+        "points": [
+          [
+            468,
+            930
+          ],
+          [
+            468,
+            960
+          ]
+        ],
+        "width": 30
+      },
+      {
+        "id": "settlement.street.commons.well_base",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            528.0,
+            864.0
+          ],
+          [
+            528.0,
+            864.0
+          ]
+        ],
+        "width": 48,
+        "rect": [
+          504,
+          840,
+          48,
+          48
+        ]
       }
     ]
   },
@@ -23445,6 +23703,124 @@
           ]
         ],
         "width": 18
+      },
+      {
+        "id": "settlement.street.commons.square",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          420,
+          792,
+          168,
+          144
+        ],
+        "source_ref": {
+          "file": "assets/maps/eldenmere/well_square/layout.json",
+          "path": [
+            "plaza_rect_tiles"
+          ]
+        },
+        "note": "Human-scale civic stone around the existing well; keep the western lane and full occupied gathering area open."
+      },
+      {
+        "id": "settlement.street.commons.school_link",
+        "material": "stone",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            588,
+            828
+          ],
+          [
+            600,
+            828
+          ],
+          [
+            636,
+            804
+          ],
+          [
+            648,
+            768
+          ],
+          [
+            672,
+            750
+          ]
+        ],
+        "width": 30,
+        "source_ref": {
+          "file": "assets/story/lantern/layout.json",
+          "path": [
+            "school_approach"
+          ]
+        },
+        "note": "Follow the existing school-to-commons desire line and join the actual school approach; no new navigation or trigger."
+      },
+      {
+        "id": "settlement.street.commons.rest_pad",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          432,
+          948,
+          72,
+          24
+        ],
+        "source_ref": {
+          "file": "assets/maps/eldenmere/well_square/layout.json",
+          "path": [
+            "plaza_rect_tiles"
+          ]
+        },
+        "note": "Small communal resting edge south of the occupied gathering area; keep the south well entry unobstructed."
+      },
+      {
+        "id": "settlement.street.commons.rest_link",
+        "material": "stone",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            468,
+            930
+          ],
+          [
+            468,
+            960
+          ]
+        ],
+        "width": 30,
+        "source_ref": {
+          "file": "assets/maps/eldenmere/well_square/layout.json",
+          "path": [
+            "plaza_rect_tiles"
+          ]
+        },
+        "note": "Join the sitting pad to civic paving without fencing or narrowing the square."
+      },
+      {
+        "id": "settlement.street.commons.well_base",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          504,
+          840,
+          48,
+          48
+        ],
+        "under_fixture": "well",
+        "source_ref": {
+          "file": "assets/maps/eldenmere/well_square/layout.json",
+          "path": [
+            "well_ground_rect"
+          ]
+        },
+        "note": "Visual paving under the canonical well support; physical collision remains exactly unchanged."
       }
     ],
     "cartography": [
@@ -23901,11 +24277,93 @@
           ]
         ],
         "width": 18
+      },
+      {
+        "id": "settlement.street.commons.square",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          420,
+          792,
+          168,
+          144
+        ]
+      },
+      {
+        "id": "settlement.street.commons.school_link",
+        "material": "stone",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            588,
+            828
+          ],
+          [
+            600,
+            828
+          ],
+          [
+            636,
+            804
+          ],
+          [
+            648,
+            768
+          ],
+          [
+            672,
+            750
+          ]
+        ],
+        "width": 30
+      },
+      {
+        "id": "settlement.street.commons.rest_pad",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          432,
+          948,
+          72,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.commons.rest_link",
+        "material": "stone",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            468,
+            930
+          ],
+          [
+            468,
+            960
+          ]
+        ],
+        "width": 30
+      },
+      {
+        "id": "settlement.street.commons.well_base",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          504,
+          840,
+          48,
+          48
+        ]
       }
     ],
-    "painted_native_pixels": 687153,
-    "painted_logical_area": 171788.25,
-    "coverage_sha256": "b1349b41e191354e3de8e9b835a09cbcdc0e642fbe2f5ed8aeec541c7a8fc022",
+    "painted_native_pixels": 800022,
+    "painted_logical_area": 200005.5,
+    "coverage_sha256": "da0e3e162a15d484cbc5793f11bbaa772f17cd98c9f2d56b40be00818a1f1943",
     "coverage_bounds_native": [
       407,
       576,
@@ -23913,28 +24371,71 @@
       3264
     ],
     "source_dependencies_sha256": {
+      "assets/maps/eldenmere/well_square/layout.json": "c34f6942f4ab891a30113525bde697831b1660d92d2704e97c50a24b427aa380",
+      "assets/story/lantern/layout.json": "9557b9cb4fd7bf71294c59595fcd0ea6c279d7acde89ab650a64b014c4037848",
       "assets/terrain/eldenmere/grass_dirt_hd/dirt/mask_255.png": "9908c2b69c642f29bb1b9315fbc03e787e43ab516c68a10f4ce2a0583538acc3",
       "assets/terrain/eldenmere/grass_dirt_hd/tileset.json": "9b9912a8ea2b7daf6b1a3fed355fdbf106bde8fe8b19782230de085ededb4feb",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_001.png": "23ff9f3c77ad6ff8fa0b243ebe36187ba56fea79eb9d874f0ca3096796b21b5c",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_004.png": "ebb0d8913444303e3b39a1f5716824fc8f9f78f0bf50396ee00217c9edaecb99",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_007.png": "23deaf0f55adead4250ebf592c6c89c14b4e0f837d481d5a745554c328376fb0",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_016.png": "1268e9c998f278cb983cdb50e97be5382db3b7f2025ef59e1aa9f9b1eee518b4",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_031.png": "16199f02cd123d011a326e85b0b24af6ac35c5183eff7e1c2d883da5546b0cd0",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_064.png": "696c23804eb159dfac64702dd66ebb37432903052c1e96781d32b25d8fe722e1",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_068.png": "9c824989eb94c7e2ae138ba523a67a923ce6cbb8beb616dc95c0937cdc43b05f",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_112.png": "0461b99ac7ecc4cbf0c50e0cacd56dcb028e31f14c6bf4cda9f27f26c5a1f3f6",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_193.png": "fa657ea55e6e9100c1c2d51739e2af9fb8a9689af7e4e558d82e87f977ecd4e7",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_199.png": "46fd25fb619984054e03c2555374645b61930ee749b0f09756660be5d373ee94",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_223.png": "278567edcbd8e5a1447ccfa37b1e2d189c22f5984080cc72adda849af08a5c26",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_241.png": "937b0582dbead202c14c46d2c7e084f62e1cb282d6cdfa26074db34645be9004",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_247.png": "759896e9de19a56e1d33c59e5724f35c0f4af90e3fa8283ce8ce739af92da88d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_255.png": "e3fa93acba263bdc272845cb23a02ffd2426485d209d7142ab471fd18e7a64b0",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_001.png": "a403728eb87beec64c921bacffed30dd093f75c7d863ba4478522720fda935b5",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_004.png": "f80fc2c71b135cdd1a83125bf76f0765c4950b0c096ec7e636972e7da72debdc",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_007.png": "27b3f7e7adabcad365aa910fcb0b2773a5e9b409242dffcdc48e9c54a837fb67",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_028.png": "c95458781c9c707b1ed04eaa7858adbc6398fb9879e6e6a0227395f8824edd33",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_031.png": "a582dccef0270cc1d045af32339a638334848c5f24a01ddb526a2fb1463c4fb2",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_064.png": "a422d70b1f224ea80dab02b6c77505f1971a116738f5969cd959ad1de611981d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_199.png": "d1b600f11e54a81205fcc8449ce9b571c694c9e48a0d2eed0a3081a9667b905d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_247.png": "6bdf3b912f6b052077495a0017dc3d7a04132c292cd94981c9e6f5d2358f4607",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_255.png": "95c98c4c91c52f26377e57162c15f8461ca8c8cebb3619a3e86eb07d45b7e2b2",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_001.png": "bc7381b15f431ab5f895dc8201e1cbdcf530e071e4ad57aa0fc17f212eb4fc3b",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_004.png": "b4348ddd8dbca50c7e4692eb1d5b952e28e9c96ba1dd6de11f9471a2a106330d",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_016.png": "9bdcc11cc2640aad80befa1815b519149620d6c4ef958267f40c070358916a1e",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_028.png": "ad27a0f969be20254533218a836d5bb6ab184fbda86fefb5740aa9bb10a7017d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_031.png": "0705790d466ba587bd322cc2c87a78ad6e49262b2417f975d10740f6214cd81a",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_064.png": "163626dd54f559d213a49558c97c69db6a003be9f3974b39109f30d6622c4f2d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_119.png": "8c6d926c08c91d68a31157096aac21968de7f34ad31635bcb585aa0ff3e2b229",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_124.png": "5e7a1b9c5ce905ee89ae48d2adac198d8f3744a5bd4c5d8c4f72caa1ca1dbb1d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_241.png": "7853856ddf56dfb98f07dfb0209ef17b23909108e3754f71b9dc19565b0a041a",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_247.png": "d63fc51ffb81e4b56c68baa5c1a8b8d6547b9be374e367481adbea5dc1894b85",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_255.png": "580b498b3bcad9a80b739609cedd6d69b9d3920005fb66ce85f0a0ff75baae2d",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_004.png": "1fddd9168c61b34691034249d072323058b2273d1cf7f021b1f3c62279d278a5",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_016.png": "1325d9b87b987c49718f29f9bf7bdb3c797955578509dd3c65551650f707ad89",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_028.png": "d3b35d79fefee55f3e952310db7efe7a9260949deaa926e2d5f6eec5d63494cd",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_031.png": "e89070c3640e9f73dea098e5d799609bd7f2f1559f6fe74af1d81963a73a83cb",
       "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_064.png": "fb702ee92d07f38778a31c30be13fcb10f34eab64571015dfa515f7c52dbb9b9",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_124.png": "4a77ab5cded8c2b4f128647f16565c1acb447a0cc97c5c5b9496db0bb3b8518d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_127.png": "ad6359d212700306c14a5271c70c86906029ce99a962ce8d00b451eadd978d72",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_193.png": "44c3297242c5e78216c3f9a672316cae90fdbe18a238996e7e70a132f854f529",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_255.png": "9f1d46336d2f771ceb8381538ed641b2dc91a65dcb87cb810ab4f4dab174aa58",
       "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_001.png": "0b7b7a37e468043f426e069245f2424d7f2f1d506b3a514b281abafa9fdf85ab",
       "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_004.png": "568eacf226d9909c7dbcf3331524114b25b080116454f42f0c50a236de24e537",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_007.png": "cb3061bb8039d25c9987aa2e3d67da59cb7b19b6584fe02008574266769cc258",
       "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_016.png": "f5c16aaefec9e69508e68c9c79678e7f8b210a96c4bc9f4c935bc1d6d7fd83e4",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_028.png": "c6e8957225aee1cbc179fb55e8c2e0e145556b22763e33925880232a386ec9c8",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_031.png": "57f68e00ce0f44d63f77d04f5aae571b4c56cb7c5a607121ac430fdba5be2fde",
       "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_064.png": "921501adc0a32097793ebcf591830020ddeb370d82f09f823c12ee40cc55790e",
       "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_068.png": "6227e001967841d862a849ad3ce769a2c0d74889ac219e966a621287a0382e86",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_112.png": "a00840d4529183fc8d0e22b193f4035914b18727738ade8e8722c3672746a4cd",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_119.png": "445ab00e595da5257c92ea4583b553fcecc1763c95e2f5ba9771251c8328a420",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_124.png": "9d2fdc6bab6de3da3aa58a062ea283822fe76de85ff7e1d8bdb302a9d3ae39ca",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_127.png": "fe6cacff2b37251ecdf1e3619032f516d7b6bda036d43d661fa9acba8b4bbb7e",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_193.png": "168383910762e8181d21c2f6861c1e75953344fd07f64d56322b728cff6c1834",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_199.png": "2039d2bb643d23e021166864e45c1124b8262d8c4c200fe49ec06ffefd1dc3f2",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_223.png": "52f7fda71ff6a1cb0762108fc807d56138f6c1ed24e209530301d5f196cc427b",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_241.png": "fdefd46ff59825b08bc38afc4a059c7a0354ee80e935d938e30e9c7b7e54932e",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_247.png": "fb5a3e7524894b6992c930727b888daa2a97eb8c97e275ac80a5f828ea6de3ee",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_255.png": "805d5875611b6849294386ec70abff2a865ba0dba0973b6789b2693948ecba59",
       "assets/terrain/eldenmere/stone_paving_hd/tileset.json": "769be134432296f6983e6ba1342de23aea5332c939ddfbf517e7125a14fb6416"
     },
     "coverage_image": "assets/maps/eldenmere/town_hd/streets/coverage.png"
@@ -25107,5 +25608,382 @@
         "reduced_motion_image": "assets/terrain/eldenmere/exteriors_hd/props/wood_shavings/idle.png"
       }
     ]
+  },
+  "settlement_commons": {
+    "district": "commons_households",
+    "scope_rect": [
+      384,
+      720,
+      384,
+      288
+    ],
+    "placements": [
+      {
+        "id": "settlement.commons.rest_bench",
+        "asset": "business_exteriors_hd:porch_bench",
+        "district": "commons_households",
+        "position": [
+          432,
+          948
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          7,
+          16,
+          26,
+          6
+        ],
+        "logical_size": [
+          40,
+          24
+        ],
+        "occupied_rect": [
+          439.0,
+          951.0,
+          25.5,
+          19.0
+        ],
+        "depth_baseline_logical": 22,
+        "world_footprint": [
+          439,
+          964,
+          26,
+          6
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_planter",
+        "asset": "exteriors_hd:herb_planter",
+        "district": "commons_households",
+        "position": [
+          474,
+          954
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          4,
+          8,
+          16,
+          6
+        ],
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          478.0,
+          957.0,
+          15.5,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          478,
+          962,
+          16,
+          6
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_violets",
+        "asset": "vegetation_hd:flowers_violet",
+        "district": "commons_households",
+        "position": [
+          432,
+          984
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          433.0,
+          986.5,
+          22.0,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.commons.rest_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "commons_households",
+        "position": [
+          468,
+          980
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          470.0,
+          989.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.commons.school_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "commons_households",
+        "position": [
+          716,
+          780
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          718.0,
+          789.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.commons.school_flowers",
+        "asset": "vegetation_hd:flowers_white",
+        "district": "commons_households",
+        "position": [
+          692,
+          786
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          693.0,
+          788.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.commons.rest_bench",
+        "position": [
+          432,
+          948
+        ],
+        "sort_y": 970,
+        "frames": [
+          "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          40,
+          24
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_planter",
+        "position": [
+          474,
+          954
+        ],
+        "sort_y": 968.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_violets",
+        "position": [
+          432,
+          984
+        ],
+        "sort_y": 1006.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 1,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+      },
+      {
+        "id": "settlement.commons.rest_clover",
+        "position": [
+          468,
+          980
+        ],
+        "sort_y": 1002.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 7,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.commons.school_clover",
+        "position": [
+          716,
+          780
+        ],
+        "sort_y": 802.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 7,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.commons.school_flowers",
+        "position": [
+          692,
+          786
+        ],
+        "sort_y": 808.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 8,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.commons.rest_bench",
+        "rect": [
+          439,
+          964,
+          26,
+          6
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_planter",
+        "rect": [
+          478,
+          962,
+          16,
+          6
+        ]
+      }
+    ],
+    "retired_grass_ids": [],
+    "retired_grass_records": [],
+    "ground_cells": [],
+    "dependencies_sha256": {
+      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "909f5c2ecc11ccbee78278c05aff6200ced1ccf45b7482afb5be0b95359b8c16",
+      "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "dbe6e0de2f6ffeea9fbfa9dc4b57e48b01f26d79bab91477a4b8e4d2148c62a0",
+      "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png": "d262ab60451a528a8f92b936728bd231b649964c8b0f1f745592652b9ff8884a",
+      "assets/terrain/vegetation_hd/plants.json": "263ccc4269fc06c177a5f16e58dacc582783a563107a0d4bc178ba01561917ce",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/idle.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91"
+    }
   }
 }

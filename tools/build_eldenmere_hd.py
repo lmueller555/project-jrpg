@@ -76,6 +76,10 @@ def workyard_collision(source,dressing):
     """Add only declared workyard supports, independently of older districts."""
     return _dressing_collision(source,dressing,'settlement.workyards.')
 
+def commons_collision(source,dressing):
+    """Add civic furniture supports without changing the existing road geometry."""
+    return _dressing_collision(source,dressing,'settlement.commons.')
+
 def _dressing_collision(source,dressing,namespace):
     out=source.copy()
     if not dressing:return out
@@ -130,6 +134,7 @@ def products():
         if field=='collision':
             expected=courtyard_collision(expected,current_town.get('settlement_dressing'))
             expected=workyard_collision(expected,current_town.get('settlement_workyards'))
+            expected=commons_collision(expected,current_town.get('settlement_commons'))
         actual=Image.open(ROOT/current_town[field]).convert('L')
         if actual.crop((0,0,*expected.size)).tobytes()!=expected.tobytes():
             raise ValueError('Review changed '+field+' registration before rebuilding the town')
@@ -277,7 +282,8 @@ def products():
     composition=framework(ROOT,street_town,rec['settlement_recipe'],image_loader=ex.load)
     for key,dressing,cell_key,mask in (
             ('settlement_dressing',composition['dressing'],'garden_cells',courtyard_collision),
-            ('settlement_workyards',composition['workyards'],'ground_cells',workyard_collision)):
+            ('settlement_workyards',composition['workyards'],'ground_cells',workyard_collision),
+            ('settlement_commons',composition['commons'],'ground_cells',commons_collision)):
         if dressing is None:continue
         collision=mask(collision,dressing);cd=ImageDraw.Draw(collision)
         dirt.update(map(tuple,dressing[cell_key]))

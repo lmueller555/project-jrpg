@@ -261,12 +261,12 @@ class LiveWorkyardContracts(unittest.TestCase):
                 delta = ImageChops.difference(native.convert('RGB'), actual.convert('RGB'))
                 self.assertIsNone(ImageChops.multiply(delta, opaque.convert('RGB')).getbbox())
 
-    def test_town_collision_is_original_source_plus_both_declared_support_ledgers(self):
+    def test_town_collision_is_original_source_plus_all_declared_support_ledgers(self):
         town = read(ROOT/'assets/maps/eldenmere/playable/map.json')
         with Image.open(ROOT/'assets/source/maps/eldenmere/town_hd/collision.png') as picture:
             expected = picture.convert('L')
         draw = ImageDraw.Draw(expected)
-        for key in ('settlement_dressing', 'settlement_workyards'):
+        for key in ('settlement_dressing', 'settlement_workyards', 'settlement_commons'):
             for support in town[key]['solid_footprints']:
                 x,y,w,h = support['rect'];self.assertTrue(all(type(v) is int for v in (x,y,w,h)))
                 draw.rectangle((x,y,x+w-1,y+h-1), fill=255)
