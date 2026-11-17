@@ -3,7 +3,7 @@
   "schema_version": 1,
   "coordinate_space": "logical world units unless named artwork; 2 artwork pixels per world unit",
   "projection": "orthogonal top-down JRPG; ground aligned to map axes, vertical walls rise above declared footprint; no horizon or convergence",
-  "status": "authoring contract; artwork activated in sequential bridge/exterior/interior PRs",
+  "status": "Crossings and all thirteen exterior shells integrated; interior architecture remains the next sequential PR",
   "protected_baseline_commit": "57d0613cb625c141a583ffef5588fb6b0c512e3c",
   "protected_southern_exit": {
     "position": [
@@ -97,10 +97,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        216,
-        172
+        7,
+        22,
+        202,
+        134
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -117,10 +117,10 @@
       ],
       "chimney": {
         "position_logical": [
-          172,
-          50
+          177,
+          27.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "sanctuary_dining",
@@ -132,12 +132,55 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          172,
+          50
+        ]
       },
       "protected_features_and_stations": [
         "bell mount",
         "two herb beds and gardener approach",
         "opening hall/bedroom/dining circulation"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          31,
+          202,
+          122
+        ],
+        [
+          34,
+          22,
+          29,
+          15
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        84,
+        192,
+        120
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/sanctuary/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            84,
+            192,
+            120
+          ],
+          "roof_rect_logical": [
+            7,
+            31,
+            202,
+            122
+          ]
+        }
       ]
     },
     {
@@ -210,10 +253,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        168,
-        136
+        7,
+        52,
+        130,
+        83
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -229,9 +272,9 @@
       "chimney": {
         "position_logical": [
           116,
-          54
+          33.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "mira",
@@ -243,12 +286,55 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          116,
+          54
+        ]
       },
       "protected_features_and_stations": [
         "cog sign",
         "workbench and repair table",
         "mira_worker [610,448] and fittings station"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          52,
+          130,
+          75
+        ],
+        [
+          14,
+          117,
+          30,
+          15
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        96,
+        120,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/mira/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            96,
+            120,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            52,
+            130,
+            75
+          ]
+        }
       ]
     },
     {
@@ -321,10 +407,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        144,
-        100
+        21,
+        5,
+        103,
+        99
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -340,9 +426,9 @@
       "chimney": {
         "position_logical": [
           102,
-          16
+          7.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "mill",
@@ -354,7 +440,11 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          102,
+          16
+        ]
       },
       "protected_features_and_stations": [
         "wheel local [88,94,48,48], axle [112,118]",
@@ -374,7 +464,61 @@
           118
         ],
         "processing": "Wheel axle enters right wall; gearing/shaft drives millstones inside retained mill scene; tall bay is not extra residential floors."
-      }
+      },
+      "roof_planes_local_logical": [
+        [
+          21,
+          25,
+          43,
+          76
+        ],
+        [
+          52,
+          5,
+          72,
+          74
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        24,
+        60,
+        96,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/mill/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "processing bay",
+          "ground_rect_logical": [
+            57,
+            60,
+            63,
+            72
+          ],
+          "roof_rect_logical": [
+            52,
+            5,
+            72,
+            74
+          ]
+        },
+        {
+          "role": "receiving annex",
+          "ground_rect_logical": [
+            24,
+            60,
+            36,
+            72
+          ],
+          "roof_rect_logical": [
+            21,
+            25,
+            43,
+            76
+          ]
+        }
+      ]
     },
     {
       "id": "halden",
@@ -446,10 +590,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        120,
-        112
+        7,
+        32,
+        106,
+        76
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -464,10 +608,10 @@
       ],
       "chimney": {
         "position_logical": [
-          94,
-          48
+          91,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "halden",
@@ -479,11 +623,48 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          94,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "stateful sack/pallet/medicine handoffs",
         "household use, no newly assigned occupation"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          106,
+          73
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        96,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/halden/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            96,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            106,
+            73
+          ]
+        }
       ]
     },
     {
@@ -556,10 +737,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        96,
-        112
+        7,
+        32,
+        82,
+        76
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -574,10 +755,10 @@
       ],
       "chimney": {
         "position_logical": [
-          75,
-          48
+          73,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "elira",
@@ -589,11 +770,48 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          75,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "memorial lantern shelf/transfer",
         "provisions and existing handoff"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          82,
+          73
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        72,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/elira/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            72,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            82,
+            73
+          ]
+        }
       ]
     },
     {
@@ -666,10 +884,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        144,
-        112
+        7,
+        32,
+        130,
+        76
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -684,10 +902,10 @@
       ],
       "chimney": {
         "position_logical": [
-          112,
-          48
+          116,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "venn",
@@ -699,10 +917,47 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          112,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "toolbox/provisions and irrigation quest access"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          130,
+          73
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        120,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/venn/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            120,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            130,
+            73
+          ]
+        }
       ]
     },
     {
@@ -775,10 +1030,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        120,
-        112
+        7,
+        32,
+        106,
+        81
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -793,10 +1048,10 @@
       ],
       "chimney": {
         "position_logical": [
-          94,
-          48
+          90,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "home_a",
@@ -808,10 +1063,53 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          94,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "individual repair and storage, not Liam duplicate"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          106,
+          73
+        ],
+        [
+          14,
+          94,
+          23,
+          16
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        96,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/home_a/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            96,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            106,
+            73
+          ]
+        }
       ]
     },
     {
@@ -884,10 +1182,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        120,
-        112
+        7,
+        32,
+        106,
+        76
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -902,10 +1200,10 @@
       ],
       "chimney": {
         "position_logical": [
-          94,
-          48
+          88,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "home_b",
@@ -917,10 +1215,53 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          94,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "individual facade/dressing, not Halden recolor"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          106,
+          73
+        ],
+        [
+          48,
+          85,
+          22,
+          7
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        96,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/home_b/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            96,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            106,
+            73
+          ]
+        }
       ]
     },
     {
@@ -993,10 +1334,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        120,
-        112
+        7,
+        32,
+        106,
+        76
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1011,10 +1352,10 @@
       ],
       "chimney": {
         "position_logical": [
-          94,
-          48
+          90,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "home_c",
@@ -1026,10 +1367,47 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          94,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "individual roof wear/planting, not Venn duplicate"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          106,
+          73
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        96,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/home_c/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            96,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            106,
+            73
+          ]
+        }
       ]
     },
     {
@@ -1102,10 +1480,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        144,
-        112
+        7,
+        32,
+        130,
+        76
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1120,10 +1498,10 @@
       ],
       "chimney": {
         "position_logical": [
-          112,
-          48
+          116,
+          21.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "liam_house",
@@ -1135,11 +1513,48 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          112,
+          48
+        ]
       },
       "protected_features_and_stations": [
         "resident beds, toys, pet bowls and routines",
         "distinguish repair/storage from Home A"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          32,
+          130,
+          73
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        72,
+        120,
+        72
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/liam_house/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            72,
+            120,
+            72
+          ],
+          "roof_rect_logical": [
+            7,
+            32,
+            130,
+            73
+          ]
+        }
       ]
     },
     {
@@ -1212,10 +1627,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        192,
-        160
+        19,
+        14,
+        154,
+        134
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1231,9 +1646,9 @@
       "chimney": {
         "position_logical": [
           146,
-          42
+          37.5
         ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
         "hearths": [
           {
             "scene": "school",
@@ -1245,12 +1660,55 @@
             "wall": "right/rear, retained"
           }
         ],
-        "flue_route": "right/rear wall, corresponding to retained hearth"
+        "flue_route": "right/rear wall, corresponding to retained hearth",
+        "planned_before_native_review_logical": [
+          146,
+          42
+        ]
       },
       "protected_features_and_stations": [
         "book emblem and bell",
         "school lesson routes/desks/chairs/board/world map",
         "shade tree must leave facade and entrance legible"
+      ],
+      "roof_planes_local_logical": [
+        [
+          19,
+          43,
+          154,
+          102
+        ],
+        [
+          87,
+          14,
+          20,
+          13
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        24,
+        96,
+        144,
+        96
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/school/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            24,
+            96,
+            144,
+            96
+          ],
+          "roof_rect_logical": [
+            19,
+            43,
+            154,
+            102
+          ]
+        }
       ]
     },
     {
@@ -1323,10 +1781,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        192,
-        208
+        7,
+        24,
+        178,
+        174
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1349,12 +1807,16 @@
       ],
       "chimney": {
         "position_logical": [
+          153,
+          26.5
+        ],
+        "anchor_role": "reviewed top-center cap emitter; native smoke begins at this exact logical point",
+        "hearths": [],
+        "flue_route": "right/rear wall; inn common-room fireplace/flue reserves right wall",
+        "planned_before_native_review_logical": [
           154,
           42
-        ],
-        "anchor_role": "top-center emitter; final art uses this same smoke origin",
-        "hearths": [],
-        "flue_route": "right/rear wall; inn common-room fireplace/flue reserves right wall"
+        ]
       },
       "protected_features_and_stations": [
         "ground-floor guest_bed/rest_profile unchanged",
@@ -1382,7 +1844,46 @@
           336
         ],
         "circulation": "Arrive clear of trigger; face into safe landing, rearm only after leaving. Preserve lower guest_bed and old downstairs saves."
-      }
+      },
+      "roof_planes_local_logical": [
+        [
+          7,
+          24,
+          178,
+          100
+        ],
+        [
+          75,
+          182,
+          42,
+          13
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        144,
+        168,
+        96
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/business_exteriors_hd/architecture_audit/inn/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            144,
+            168,
+            96
+          ],
+          "roof_rect_logical": [
+            7,
+            24,
+            178,
+            100
+          ]
+        }
+      ]
     },
     {
       "id": "item_shop",
@@ -1454,10 +1955,10 @@
         36
       ],
       "roof_eave_envelope_local_logical": [
-        0,
-        0,
-        168,
-        160
+        7,
+        35,
+        154,
+        103
       ],
       "overhang_rule": "Roof/eaves may overhang the occupied wall footprint; no ground-level wall outside its footprint. Door sill/probe offset is retained.",
       "floors": [
@@ -1474,6 +1975,39 @@
       "protected_features_and_stations": [
         "counter and keeper station [216,152]",
         "stock decorative only; current prices/inventory unchanged"
+      ],
+      "roof_planes_local_logical": [
+        [
+          7,
+          35,
+          154,
+          100
+        ]
+      ],
+      "wall_contact_bounds_local_logical": [
+        12,
+        96,
+        144,
+        96
+      ],
+      "architecture_source": "assets/source/terrain/eldenmere/business_exteriors_hd/architecture_audit/item_shop/geometry.json",
+      "projection_review": "PR3 native wall/roof reconstruction; occupied ground, depth and portal retained; roof overhang is not collision",
+      "roof_volumes": [
+        {
+          "role": "main occupied volume",
+          "ground_rect_logical": [
+            12,
+            96,
+            144,
+            96
+          ],
+          "roof_rect_logical": [
+            7,
+            35,
+            154,
+            100
+          ]
+        }
       ]
     }
   ],
@@ -1654,5 +2188,12 @@
       ]
     }
   ],
-  "intentional_geometry_changes": []
+  "intentional_geometry_changes": [
+    {
+      "scope": "PR3 exterior artwork only",
+      "change": "Wall contact geometry now fits retained occupied ground at the mill annex and school sides. Native roof planes and cap emitter coordinates replace initial PR1 planning envelopes.",
+      "gameplay_change": null,
+      "preserved": "All logical canvases, positions, occupied ground, depth baselines, portal/entry contracts, collision/navigation, streets and PR2 crossings."
+    }
+  ]
 }

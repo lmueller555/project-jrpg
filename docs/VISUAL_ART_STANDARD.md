@@ -1234,6 +1234,33 @@ also integrated; Rising Rain and final atlas updates remain deferred. See the
 [gameplay foundation review](reviews/elden_vale_hd_integration/README.md) for current
 evidence rather than treating offline source-pack compositions as integration.
 
+## Audited Eldenmere exterior architecture
+
+The thirteen live town building shells now use the native authoring module
+`tools/eldenmere_architecture_art.py`, with source drawings, explicit pane/material
+masks and geometry records under each existing exterior source recipe's
+`architecture_audit/` directory. The maintained exterior/business builders and town
+composer select these drawings explicitly. Unused staged variants retain their
+historical path; they are not evidence that portal-first facade strip fitting is
+an acceptable construction method for the new live shells.
+
+The existing town architecture schedule records reviewed roof planes, wall
+contacts and exact cap emitters independently from the unchanged ground/door
+registration. Mill/school walls fit their retained occupied ground; overhangs do
+not enlarge blockers. The mill processing bay, corrected annex and hearth flue
+preserve the separately owned PR2 landing and wheel attachment. Mira's right-side
+flue matches her retained hearth. The school flue matches its retained hearth.
+The inn remains two-storey; its real guest-floor integration remains PR4 work.
+
+Pane masks are constructed from individually reviewed panes, never broad slate
+or masonry color selections. Material masks have exclusive visible ownership.
+Native window light, smoke and the fixed shop stock remain separate. Normal and
+Reduced Motion retain identical roof materials and underlying structure. Runtime
+maps, collision, door thresholds, NPC/quest ownership, shops/services and the
+southern departure/return retain their established contracts. Source boards and
+footprint diagrams are labelled separately from the actual native Game captures
+in [the exterior architecture review](reviews/eldenmere_exterior_architecture/README.md).
+
 ## Staged Eldenmere HD building exteriors
 
 Source recipe: `assets/source/terrain/eldenmere/exteriors_hd/recipe.json`.

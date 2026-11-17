@@ -261,7 +261,122 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "elira",
+        "identity": "Compact cared-for household; single mulberry curtain, sheltered wall lantern and a modest remembrance flower pot. No new biography.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          96,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          72,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          29,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            82,
+            73
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              72,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              82,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          72,
+          72
+        ],
+        "smoke_emitter_logical": [
+          73,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          68,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              53.0,
+              113.0,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              59.75,
+              113.0,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              53.0,
+              121.25,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              59.75,
+              121.25,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "compact_craft",
@@ -1014,7 +1129,162 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "halden",
+        "identity": "Maintained cottage; broad stone sill, paired shutters and a small dry grain-storage hatch. No new work identity.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          120,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          53,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            106,
+            73
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              96,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              106,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "smoke_emitter_logical": [
+          91,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          86,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              24.0,
+              114.0,
+              6.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.25,
+              114.0,
+              6.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              24.0,
+              121.75,
+              6.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.25,
+              121.75,
+              6.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              83.0,
+              114.0,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              89.75,
+              114.0,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              83.0,
+              121.75,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              89.75,
+              121.75,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "standard_craft",
@@ -1265,7 +1535,168 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "home_a",
+        "identity": "Domestic house with a narrow left lean-to storage locker and long ridge repair flashing; no Liam roof patch/firewood duplicate.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          120,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          53,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            106,
+            73
+          ],
+          [
+            14,
+            94,
+            23,
+            16
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              96,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              106,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "smoke_emitter_logical": [
+          90,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          85,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              27.0,
+              113.0,
+              4.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              32.75,
+              113.0,
+              4.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              27.0,
+              119.75,
+              4.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              32.75,
+              119.75,
+              4.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              84.0,
+              115.0,
+              4.75,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              89.75,
+              115.0,
+              4.75,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              84.0,
+              122.25,
+              4.75,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              89.75,
+              122.25,
+              4.75,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "standard_weathered",
@@ -1516,7 +1947,162 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "home_c",
+        "identity": "Moss-roof household; broad shutter pair, sheltered rain jar and clustered low planting, without Venn facade weathering.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          120,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          53,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            106,
+            73
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              96,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              106,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "smoke_emitter_logical": [
+          90,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          85,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              26.0,
+              114.0,
+              7.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              34.25,
+              114.0,
+              7.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              26.0,
+              121.75,
+              7.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              34.25,
+              121.75,
+              7.25,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              83.0,
+              116.0,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              88.25,
+              116.0,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              83.0,
+              122.75,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              88.25,
+              122.75,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "wide_gardener",
@@ -2018,7 +2604,202 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "liam_house",
+        "identity": "Family home; offset timber roof repair, open log cradle and three unequal window bays. Toys and Daisy remain owned indoors.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          144,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          120,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          77,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            130,
+            73
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              120,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              130,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          120,
+          72
+        ],
+        "smoke_emitter_logical": [
+          116,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          111,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              25.0,
+              114.0,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.75,
+              114.0,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              25.0,
+              121.75,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.75,
+              121.75,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              53.0,
+              116.0,
+              3.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              57.75,
+              116.0,
+              3.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              53.0,
+              122.75,
+              3.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              57.75,
+              122.75,
+              3.75,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              107.0,
+              113.0,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              113.75,
+              113.0,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              107.0,
+              121.25,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              113.75,
+              121.25,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "wide_weathered",
@@ -2269,7 +3050,202 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "venn",
+        "identity": "Wide family cottage; repaired lower render, louvred storage bay and restrained damp-side roof wear. Quest gate and child remain unchanged.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          144,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          120,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          77,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            130,
+            73
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              120,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              130,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          120,
+          72
+        ],
+        "smoke_emitter_logical": [
+          116,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          111,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              25.0,
+              113.0,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.75,
+              113.0,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              25.0,
+              121.25,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.75,
+              121.25,
+              5.75,
+              7.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              53.0,
+              116.0,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              58.25,
+              116.0,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              53.0,
+              122.75,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              58.25,
+              122.75,
+              4.25,
+              5.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              105.0,
+              114.0,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              111.75,
+              114.0,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              105.0,
+              121.75,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              111.75,
+              121.75,
+              5.75,
+              6.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "mira",
@@ -2520,7 +3496,128 @@
         131,
         36,
         49
-      ]
+      ],
+      "architecture_audit": {
+        "id": "mira",
+        "identity": "Working workshop; broad double doorway, exposed bracing, tool rack, cog sign and retained right-rear hearth flue.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          168,
+          168
+        ],
+        "ground_rect_logical": [
+          12,
+          96,
+          120,
+          72
+        ],
+        "depth_baseline_logical": 168,
+        "door_rect_logical": [
+          58,
+          131,
+          28,
+          35
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            52,
+            130,
+            75
+          ],
+          [
+            14,
+            117,
+            30,
+            15
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              96,
+              120,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              52,
+              130,
+              75
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          96,
+          120,
+          72
+        ],
+        "smoke_emitter_logical": [
+          116,
+          33.5
+        ],
+        "chimney_cap_rect_logical": [
+          111,
+          32.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              24.0,
+              135.0,
+              8.25,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              33.25,
+              135.0,
+              8.25,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              24.0,
+              144.25,
+              8.25,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              33.25,
+              144.25,
+              8.25,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "mill",
@@ -2758,7 +3855,7 @@
           }
         ],
         "cycle_ms": 3600,
-        "smoke_optional": false,
+        "smoke_optional": true,
         "reduced_motion": "buildings/mill/closed.png",
         "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
@@ -2974,19 +4071,7 @@
         "full_turn_ms": 9600,
         "fixed_hub": "mill/fixed_hub.png"
       },
-      "extra_static_components": [
-        {
-          "file": "props/fence_panel/idle.png",
-          "position_logical": [
-            0,
-            138
-          ],
-          "logical_size": [
-            24,
-            18
-          ]
-        }
-      ],
+      "extra_static_components": [],
       "collision": "Preserve authoritative logical geometry during integration; never infer it from alpha.",
       "interaction_cues": false,
       "door_approach_local_logical": [
@@ -2994,7 +4079,149 @@
         107,
         26,
         73
-      ]
+      ],
+      "architecture_audit": {
+        "id": "mill",
+        "identity": "Working grain mill; tall open processing bay with loading doors and pulley beam, low left receiving annex, stone axle seat and right-rear hearth flue.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          144,
+          168
+        ],
+        "ground_rect_logical": [
+          24,
+          60,
+          96,
+          72
+        ],
+        "depth_baseline_logical": 132,
+        "door_rect_logical": [
+          26,
+          107,
+          18,
+          31
+        ],
+        "roof_planes_logical": [
+          [
+            21,
+            25,
+            43,
+            76
+          ],
+          [
+            52,
+            5,
+            72,
+            74
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "processing bay",
+            "ground_rect_logical": [
+              57,
+              60,
+              63,
+              72
+            ],
+            "roof_rect_logical": [
+              52,
+              5,
+              72,
+              74
+            ]
+          },
+          {
+            "role": "receiving annex",
+            "ground_rect_logical": [
+              24,
+              60,
+              36,
+              72
+            ],
+            "roof_rect_logical": [
+              21,
+              25,
+              43,
+              76
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          24,
+          60,
+          96,
+          72
+        ],
+        "smoke_emitter_logical": [
+          102,
+          7.5
+        ],
+        "chimney_cap_rect_logical": [
+          97,
+          6.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              65.0,
+              87.0,
+              2.25,
+              3.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              68.25,
+              87.0,
+              2.25,
+              3.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              65.0,
+              91.25,
+              2.25,
+              3.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              68.25,
+              91.25,
+              2.25,
+              3.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": [
+          88,
+          94
+        ],
+        "mill_axle_center_logical": [
+          112,
+          118
+        ],
+        "mill_service_fence": "not present; crossing assembly owns service landing",
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "school",
@@ -3232,7 +4459,7 @@
           }
         ],
         "cycle_ms": 3600,
-        "smoke_optional": false,
+        "smoke_optional": true,
         "reduced_motion": "buildings/school/closed.png",
         "note": "Windowlight is steady localized warm light; omit in daylight/reduced motion. Wheel uses an independent 9.6-second clock."
       },
@@ -3245,7 +4472,248 @@
         150,
         28,
         54
-      ]
+      ],
+      "architecture_audit": {
+        "id": "school",
+        "identity": "Wide maintained classroom; paired glazed classroom bays, central book gable and bell, walls terminate within the declared footprint; right-rear hearth flue.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          192,
+          192
+        ],
+        "ground_rect_logical": [
+          24,
+          96,
+          144,
+          96
+        ],
+        "depth_baseline_logical": 192,
+        "door_rect_logical": [
+          86,
+          150,
+          20,
+          34
+        ],
+        "roof_planes_logical": [
+          [
+            19,
+            43,
+            154,
+            102
+          ],
+          [
+            87,
+            14,
+            20,
+            13
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              24,
+              96,
+              144,
+              96
+            ],
+            "roof_rect_logical": [
+              19,
+              43,
+              154,
+              102
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          24,
+          96,
+          144,
+          96
+        ],
+        "smoke_emitter_logical": [
+          146,
+          37.5
+        ],
+        "chimney_cap_rect_logical": [
+          141,
+          36.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              38.0,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              42.75,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              38.0,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              42.75,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              62.0,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              66.75,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              62.0,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              66.75,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              125.0,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              129.75,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              125.0,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              129.75,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              149.0,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              153.75,
+              154.0,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              149.0,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              153.75,
+              163.25,
+              3.75,
+              8.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     },
     {
       "id": "sanctuary",
@@ -3496,7 +4964,291 @@
         156,
         40,
         72
-      ]
+      ],
+      "architecture_audit": {
+        "id": "sanctuary",
+        "identity": "Serene, Caelan and Tomas household; long cared-for domestic roof, retained bell mount, arched household panes, herb frontage and right-side dining flue. Not the regional Sanctuary.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          216,
+          216
+        ],
+        "ground_rect_logical": [
+          12,
+          84,
+          192,
+          120
+        ],
+        "depth_baseline_logical": 204,
+        "door_rect_logical": [
+          118,
+          156,
+          32,
+          42
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            31,
+            202,
+            122
+          ],
+          [
+            34,
+            22,
+            29,
+            15
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              84,
+              192,
+              120
+            ],
+            "roof_rect_logical": [
+              7,
+              31,
+              202,
+              122
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          84,
+          192,
+          120
+        ],
+        "smoke_emitter_logical": [
+          177,
+          27.5
+        ],
+        "chimney_cap_rect_logical": [
+          172,
+          26.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              27.0,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.25,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              27.0,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              31.25,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              50.0,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              54.25,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              50.0,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              54.25,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              74.0,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              78.25,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              74.0,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              78.25,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              167.0,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              171.25,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              167.0,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              171.25,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              190.0,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              194.25,
+              167.0,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              190.0,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              194.25,
+              176.75,
+              3.25,
+              8.75
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": [
+          42,
+          54
+        ]
+      }
     },
     {
       "id": "standard_heather",
@@ -3747,7 +5499,168 @@
         111,
         21,
         45
-      ]
+      ],
+      "architecture_audit": {
+        "id": "home_b",
+        "identity": "Heather roof household; small over-door cross gable, paired narrow windows, scalloped lintel and low linen chest.",
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          120,
+          144
+        ],
+        "ground_rect_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "depth_baseline_logical": 144,
+        "door_rect_logical": [
+          53,
+          111,
+          13,
+          26
+        ],
+        "roof_planes_logical": [
+          [
+            7,
+            32,
+            106,
+            73
+          ],
+          [
+            48,
+            85,
+            22,
+            7
+          ]
+        ],
+        "roof_overhang_is_not_occupied_wall": true,
+        "roof_volumes": [
+          {
+            "role": "main occupied volume",
+            "ground_rect_logical": [
+              12,
+              72,
+              96,
+              72
+            ],
+            "roof_rect_logical": [
+              7,
+              32,
+              106,
+              73
+            ]
+          }
+        ],
+        "wall_ground_bounds_logical": [
+          12,
+          72,
+          96,
+          72
+        ],
+        "smoke_emitter_logical": [
+          88,
+          21.5
+        ],
+        "chimney_cap_rect_logical": [
+          83,
+          20.0,
+          10,
+          4
+        ],
+        "pane_regions": [
+          {
+            "rect_logical": [
+              26.0,
+              115.0,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              30.25,
+              115.0,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              26.0,
+              122.25,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              30.25,
+              122.25,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              84.0,
+              115.0,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              88.25,
+              115.0,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              84.0,
+              122.25,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          },
+          {
+            "rect_logical": [
+              88.25,
+              122.25,
+              3.25,
+              6.25
+            ],
+            "role": "front glass",
+            "lighting": true
+          }
+        ],
+        "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+        "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+        "occupied_floors": 1,
+        "fixed_shop_display_rect_logical": null,
+        "business_sign": null,
+        "mill_wheel_position_logical": null,
+        "mill_axle_center_logical": null,
+        "mill_service_fence": null,
+        "bell_mount_logical": null
+      }
     }
   ],
   "props": [
@@ -5303,5 +7216,24 @@
   "palette": "palette.json",
   "recipe": "assets/source/terrain/eldenmere/exteriors_hd/recipe.json",
   "activation": "No runtime, map, collision, navigation, door transitions, quest eligibility or save changes.",
-  "integration_followup": "Preserve bindings, entry anchors, width, sort_y, destinations, open/close behavior, pause/focus and reduced motion. Replace consumers explicitly; do not infer collision from silhouettes."
+  "integration_followup": "Preserve bindings, entry anchors, width, sort_y, destinations, open/close behavior, pause/focus and reduced motion. Replace consumers explicitly; do not infer collision from silhouettes.",
+  "native_architecture_source": {
+    "generator": "tools/eldenmere_architecture_art.py",
+    "recipe": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json",
+    "recipe_sha256": "af4ca5ab341b7340ff44484ba9f9825bb515689c835048fc8ed17e00bd7b4110",
+    "selected_live_designs": [
+      "compact_gardener",
+      "standard_gardener",
+      "standard_craft",
+      "standard_weathered",
+      "wide_craft",
+      "wide_weathered",
+      "mira",
+      "mill",
+      "school",
+      "sanctuary",
+      "standard_heather"
+    ],
+    "status": "Native shells selected for live town consumers; unused legacy variants retain their existing staged path."
+  }
 }

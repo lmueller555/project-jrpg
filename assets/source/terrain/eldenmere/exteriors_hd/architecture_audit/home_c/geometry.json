@@ -1,0 +1,155 @@
+{
+  "id": "home_c",
+  "identity": "Moss-roof household; broad shutter pair, sheltered rain jar and clustered low planting, without Venn facade weathering.",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    120,
+    144
+  ],
+  "ground_rect_logical": [
+    12,
+    72,
+    96,
+    72
+  ],
+  "depth_baseline_logical": 144,
+  "door_rect_logical": [
+    53,
+    111,
+    13,
+    26
+  ],
+  "roof_planes_logical": [
+    [
+      7,
+      32,
+      106,
+      73
+    ]
+  ],
+  "roof_overhang_is_not_occupied_wall": true,
+  "roof_volumes": [
+    {
+      "role": "main occupied volume",
+      "ground_rect_logical": [
+        12,
+        72,
+        96,
+        72
+      ],
+      "roof_rect_logical": [
+        7,
+        32,
+        106,
+        73
+      ]
+    }
+  ],
+  "wall_ground_bounds_logical": [
+    12,
+    72,
+    96,
+    72
+  ],
+  "smoke_emitter_logical": [
+    90,
+    21.5
+  ],
+  "chimney_cap_rect_logical": [
+    85,
+    20.0,
+    10,
+    4
+  ],
+  "pane_regions": [
+    {
+      "rect_logical": [
+        26.0,
+        114.0,
+        7.25,
+        6.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        34.25,
+        114.0,
+        7.25,
+        6.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        26.0,
+        121.75,
+        7.25,
+        6.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        34.25,
+        121.75,
+        7.25,
+        6.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        83.0,
+        116.0,
+        4.25,
+        5.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        88.25,
+        116.0,
+        4.25,
+        5.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        83.0,
+        122.75,
+        4.25,
+        5.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    },
+    {
+      "rect_logical": [
+        88.25,
+        122.75,
+        4.25,
+        5.75
+      ],
+      "role": "front glass",
+      "lighting": true
+    }
+  ],
+  "pane_review": "Explicit per-pane geometry, intersected with actual glass pixels after all framing. No color-selected roof regions.",
+  "export_transform": "native authoring at 2x; no source facade registration or portal-first strip scaling",
+  "occupied_floors": 1,
+  "fixed_shop_display_rect_logical": null,
+  "business_sign": null,
+  "mill_wheel_position_logical": null,
+  "mill_axle_center_logical": null,
+  "mill_service_fence": null,
+  "bell_mount_logical": null
+}
