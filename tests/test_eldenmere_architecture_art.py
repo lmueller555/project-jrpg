@@ -98,7 +98,7 @@ class ArchitectureArtTests(unittest.TestCase):
             self.assertTrue(cx<=emitter[0]<cx+cw and cy<=emitter[1]<cy+ch)
             self.assertIsNotNone(result.material_masks['masonry'].crop(tuple(round(v*2) for v in (cx,cy,cx+cw,cy+ch))).getbbox())
         self.assertIsNone(self.drawings['item_shop'].metadata['smoke_emitter_logical'])
-        self.assertEqual(self.drawings['sanctuary'].metadata['bell_mount_logical'],[42,54])
+        self.assertEqual(self.drawings['sanctuary'].metadata['bell_mount_logical'],[42,68])
 
     def test_shop_merchandise_pixels_never_animate_or_receive_pane_light(self):
         result=self.drawings['item_shop'];box=(140,272,296,368)
@@ -133,15 +133,44 @@ class ArchitectureArtTests(unittest.TestCase):
             self.assertIsNone(ImageChops.multiply(occupied,self.drawings[name].pane_mask).getbbox(),name+' sign must not sweep over panes')
         self.assertEqual(len([p for p in inn.metadata['pane_regions'] if p['rect_logical'][1]<180]),16)
 
-    def test_roof_volumes_cover_ground_depth_without_converging_or_stretching_walls(self):
+    def test_legacy_apparent_roof_rises_do_not_recreate_the_ground_depth_constraint(self):
+        expected={
+            **{n:[0,61,art.records()[n]['logical_size'][0],44] for n in
+               ('halden','elira','venn','home_a','home_b','home_c','liam_house')},
+            'mira':[0,77,144,50], 'school':[4.5,82,183,63],
+            'sanctuary':[1,87,214,66], 'inn':[.5,70,191,54],
+            'item_shop':[3,86.5,162,48.5],
+        }
         for name,drawing in self.drawings.items():
+            if name in expected:self.assertEqual(drawing.metadata['roof_planes_logical'][0],expected[name])
+            self.assertIn('independent',drawing.metadata['roof_projection'])
             for volume in drawing.metadata['roof_volumes']:
                 gx,gy,gw,gh=volume['ground_rect_logical'];rx,ry,rw,rh=volume['roof_rect_logical']
-                self.assertGreaterEqual(rh,gh,(name,volume['role']))
-                self.assertLessEqual(rh-gh,6,(name,'roof depth must reflect occupied ground, not a tall frontal panel'))
+                # The old minimum rh>=gh caused the rejected tall roof plates.
+                # Physical map depth and apparent image rise are different units.
+                self.assertLess(rh,gh,(name,volume['role']))
                 self.assertGreaterEqual(rw,gw,(name,volume['role']))
                 self.assertGreater(gy+gh-(ry+rh),0,(name,'eave height must rise above its ground'))
                 self.assertLessEqual(rx,gx);self.assertGreaterEqual(rx+rw,gx+gw)
+
+    def test_shortened_roof_attachments_are_supported_not_left_floating(self):
+        for name,drawing in self.drawings.items():
+            for attachment in drawing.metadata['roof_attachments']:
+                x,y=attachment['root_logical'];shaft=attachment['shaft_rect_logical']
+                roof=drawing.material_masks['roof']
+                # The shaft is rooted within the new roof, not suspended above
+                # it. Check the actual roof pixels immediately beside its base.
+                left=round((shaft[0]-.5)*2);right=round((shaft[0]+shaft[2]+.5)*2)
+                self.assertTrue(any(roof.getpixel((xx,round(y*2))) for xx in (left,right)),name)
+        sanctuary=self.drawings['sanctuary']
+        rec=json.loads((art.ROOT/'assets/source/maps/eldenmere/courtyard_hd/recipe.json').read_text())
+        self.assertEqual(rec['bell_local'],sanctuary.metadata['bell_mount_logical'])
+        for x in (39,57):
+            self.assertTrue(sanctuary.structure.getpixel((x*2,90*2))[3])
+        # Legacy accents fit the shortened surfaces rather than remaining at
+        # the old high coordinates. Source-native details are not scaled.
+        for name,box in (('home_a',(56,142,110,154)),('liam_house',(188,166,230,202)),('halden',(52,142,84,180))):
+            self.assertIsNotNone(self.drawings[name].structure.crop(box).getbbox(),name)
 
     def test_legacy_roof_language_has_tapered_ends_and_no_mid_plane_ridge(self):
         drawing=art.Drawing('roof-regression',(160,140))
@@ -163,11 +192,12 @@ class ArchitectureArtTests(unittest.TestCase):
         result=self.drawings['mill'];roof=result.material_masks['roof']
         # Roof center ends at the front peak, while its two eaves continue down
         # to the registered wall: a real gable cut, not a painted triangle on a slab.
-        self.assertEqual(roof.getpixel((176,146)),0)
-        self.assertNotEqual(roof.getpixel((110,146)),0)
-        self.assertNotEqual(roof.getpixel((240,146)),0)
-        self.assertNotEqual(result.material_masks['plaster'].getpixel((180,142)),0)
-        self.assertNotEqual(result.material_masks['roof'].getpixel((182,60)),0)
+        self.assertEqual(roof.getpixel((176,140)),0)
+        self.assertNotEqual(roof.getpixel((100,120)),0)
+        self.assertNotEqual(roof.getpixel((232,140)),0)
+        self.assertNotEqual(result.material_masks['plaster'].getpixel((160,132)),0)
+        self.assertNotEqual(result.material_masks['roof'].getpixel((120,52)),0)
+        self.assertEqual(result.metadata['roof_planes_logical'],[[21,83,43,18],[21,24,103,55]])
 
     def test_schedule_uses_reviewed_roof_planes_wall_contacts_and_cap_emitters(self):
         schedule=json.loads((art.ROOT/'assets/source/maps/eldenmere/town_hd/architecture_schedule.json').read_text())

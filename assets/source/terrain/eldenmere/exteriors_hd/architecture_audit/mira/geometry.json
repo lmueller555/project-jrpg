@@ -21,10 +21,10 @@
   ],
   "roof_planes_logical": [
     [
-      7,
-      52,
-      130,
-      75
+      0,
+      77,
+      144,
+      50
     ],
     [
       14,
@@ -44,10 +44,10 @@
         72
       ],
       "roof_rect_logical": [
-        7,
-        52,
-        130,
-        75
+        0,
+        77,
+        144,
+        50
       ]
     }
   ],
@@ -57,13 +57,28 @@
     120,
     72
   ],
+  "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+  "roof_attachments": [
+    {
+      "shaft_rect_logical": [
+        112,
+        59,
+        8,
+        30
+      ],
+      "root_logical": [
+        116,
+        89
+      ]
+    }
+  ],
   "smoke_emitter_logical": [
     116,
-    33.5
+    58.5
   ],
   "chimney_cap_rect_logical": [
     111,
-    32.0,
+    57.0,
     10,
     4
   ],

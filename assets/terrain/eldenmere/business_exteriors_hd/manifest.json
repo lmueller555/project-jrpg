@@ -324,10 +324,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            24,
-            178,
-            100
+            0.5,
+            70,
+            191,
+            54
           ],
           [
             75,
@@ -347,10 +347,10 @@
               96
             ],
             "roof_rect_logical": [
-              7,
-              24,
-              178,
-              100
+              0.5,
+              70,
+              191,
+              54
             ]
           }
         ],
@@ -360,13 +360,28 @@
           168,
           96
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [
+          {
+            "shaft_rect_logical": [
+              149,
+              61,
+              8,
+              29
+            ],
+            "root_logical": [
+              153,
+              90
+            ]
+          }
+        ],
         "smoke_emitter_logical": [
           153,
-          26.5
+          60.5
         ],
         "chimney_cap_rect_logical": [
           148,
-          25.0,
+          59.0,
           10,
           4
         ],
@@ -1268,10 +1283,10 @@
         ],
         "roof_planes_logical": [
           [
-            7,
-            35,
-            154,
-            100
+            3,
+            86.5,
+            162,
+            48.5
           ]
         ],
         "roof_overhang_is_not_occupied_wall": true,
@@ -1285,10 +1300,10 @@
               96
             ],
             "roof_rect_logical": [
-              7,
-              35,
-              154,
-              100
+              3,
+              86.5,
+              162,
+              48.5
             ]
           }
         ],
@@ -1298,6 +1313,8 @@
           144,
           96
         ],
+        "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+        "roof_attachments": [],
         "smoke_emitter_logical": null,
         "chimney_cap_rect_logical": null,
         "pane_regions": [],
@@ -2049,7 +2066,7 @@
   "native_architecture_source": {
     "generator": "tools/eldenmere_architecture_art.py",
     "recipe": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json",
-    "recipe_sha256": "6342de669f7f7ea326d536a892b64d45762801b00cc3337365e214034a2082ad",
+    "recipe_sha256": "3de1d127cd78ca5ee4448682a0fc1912aa28a447d16053b9e1f361b042f66252",
     "selected_live_designs": [
       "inn_maintained",
       "item_shop_maintained"

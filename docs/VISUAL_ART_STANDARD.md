@@ -114,7 +114,11 @@ belong to the same environment.
 Ordinary Eldenmere exploration uses a consistent orthogonal, top-down JRPG
 projection. Ground surfaces follow the map's horizontal and vertical axes.
 Vertical height rises above an explicitly declared ground footprint; a visible
-front wall must agree with roof depth and the occupied ground beneath it.
+front wall must agree with its declared occupied ground and visual supports.
+For Eldenmere, a roof's screen-space rise is an authored silhouette measurement,
+not a projection of its collision-ground depth: do not require roof-image height
+to equal or exceed footprint depth. The restored low historic roof proportions
+below supersede that former constraint, including tests that enforced it.
 Roofs, decks, porches and steps expose compatible upper surfaces. Flat bridge
 decks read as walkable ground planes, not frontal illustrations of platforms.
 Do not add strong perspective convergence or an implied distant horizon.
@@ -1274,18 +1278,35 @@ an acceptable construction method for the new live shells.
 
 The existing town architecture schedule records reviewed roof planes, wall
 contacts and exact cap emitters independently from the unchanged ground/door
-registration. The roof-only restoration reauthors the actual 24px cottage,
-workshop, school, mill and household roof language at native 2×: tapered pitched
-ends, quiet staggered shingle courses, restrained bevels and narrow ridge caps.
-The mill retains its front-gabled identity across two roof wings. Inn/shop adapt
-that earlier material language; neither had a 24px predecessor. Current audited
-wall/eave contacts, canvas sizes, hearth flues, thresholds and occupied ground
-remain authoritative. See the [roof restoration review](reviews/eldenmere_roof_style/README.md)
-for historical pixel references and paired native Game views. Mill/school walls fit their retained occupied ground; overhangs do
-not enlarge blockers. The mill processing bay, corrected annex and hearth flue
-preserve the separately owned PR2 landing and wheel attachment. Mira's right-side
-flue matches her retained hearth. The school flue matches its retained hearth.
-The inn remains two-storey; its real guest-floor integration remains PR4 work.
+registration. The roof-only correction restores the actual 24px cottage,
+workshop, school and household **low silhouettes and eave spans**, not only their
+shingle style. Author the detail natively at 2×: tapered pitched ends, quiet
+staggered courses, restrained bevels and narrow ridge caps. A roof's visible
+height must not be expanded to cover the numeric depth of its ground footprint.
+That former minimum-height interpretation, retained by #256, is superseded;
+conflicting geometry tests and old review prescriptions are historical evidence,
+not permission to recreate tall roofs.
+
+Preserve current wall/facade pixels, eave elevations, canvas sizes, thresholds,
+occupied ground, depth baselines and viewport anchors. Restore roof dimensions
+above those retained eaves; do not stretch walls or move gameplay to force the
+old roof-to-total-body fraction. Keep flues aligned to their hearths. Roof-only attachments may shift vertically
+with the roof; move each cap or bell and its visual mounting point together so
+nothing floats. Leave gameplay attachment and interaction points in place.
+The mill retains an actual front-gabled processing bay, a distinct low receiving
+annex, its hoist, wheel contacts and yard. Inn/shop have no 24px predecessors:
+their own earlier HD silhouettes inform their low roof proportions without
+pretending they are historic cottage assets. The inn remains two-storey; its
+real guest-floor integration remains PR4 work.
+
+See the [roof proportion correction](reviews/eldenmere_roof_proportions/README.md)
+for measurement conventions, historical references and intentional adaptations.
+The [#256 roof-style review](reviews/eldenmere_roof_style/README.md) retains its
+historical captures and validation results, but its statement that roof envelopes
+retain audited depth is superseded. Mill/school walls fit their retained occupied
+ground; overhangs do not enlarge blockers. Preserve the #254 household courtyard
+and #255 workshop/mill workyards. Mira's, the school's and the mill's registered
+hearth/flue relationships remain intact.
 
 Pane masks are constructed from individually reviewed panes, never broad slate
 or masonry color selections. Material masks have exclusive visible ownership.

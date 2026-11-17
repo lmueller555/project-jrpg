@@ -22,15 +22,15 @@
   "roof_planes_logical": [
     [
       21,
-      25,
+      83,
       43,
-      76
+      18
     ],
     [
-      52,
-      5,
-      72,
-      74
+      21,
+      24,
+      103,
+      55
     ]
   ],
   "roof_overhang_is_not_occupied_wall": true,
@@ -44,10 +44,10 @@
         72
       ],
       "roof_rect_logical": [
-        52,
-        5,
-        72,
-        74
+        21,
+        24,
+        103,
+        55
       ]
     },
     {
@@ -60,9 +60,9 @@
       ],
       "roof_rect_logical": [
         21,
-        25,
+        83,
         43,
-        76
+        18
       ]
     }
   ],
@@ -72,13 +72,28 @@
     96,
     72
   ],
+  "roof_projection": "legacy apparent 2D rise; independent of occupied north/south ground depth",
+  "roof_attachments": [
+    {
+      "shaft_rect_logical": [
+        98,
+        30,
+        8,
+        25
+      ],
+      "root_logical": [
+        102,
+        55
+      ]
+    }
+  ],
   "smoke_emitter_logical": [
     102,
-    7.5
+    29.5
   ],
   "chimney_cap_rect_logical": [
     97,
-    6.0,
+    28.0,
     10,
     4
   ],
