@@ -64,7 +64,11 @@ class ExteriorsHDTests(unittest.TestCase):
         specs={r['id']:r for r in self.rec['designs']}
         for r in self.buildings.values():
             if not r['ambient']['smoke_optional']:continue
-            spec=specs[r['id']];bx,by,br,bb=spec['body_bounds_logical'];emit_x=round((bx+(br-bx)*spec['chimney_normalized_x'])*2);emit_y=round(by*2+spec['chimney_normalized_y']/spec['source_door_normalized'][1]*(spec['door_rect_logical'][1]*2-by*2))
+            spec=specs[r['id']]
+            if r.get('architecture_audit'):
+                emit_x,emit_y=[round(value*2) for value in r['architecture_audit']['smoke_emitter_logical']]
+            else:
+                bx,by,br,bb=spec['body_bounds_logical'];emit_x=round((bx+(br-bx)*spec['chimney_normalized_x'])*2);emit_y=round(by*2+spec['chimney_normalized_y']/spec['source_door_normalized'][1]*(spec['door_rect_logical'][1]*2-by*2))
             smoke=im(PACK/r['ambient']['effects'][0]['smoke']);box=smoke.getbbox();self.assertTrue(box[0]>=0 and box[1]>=0 and box[2]<=smoke.width and box[3]<=smoke.height);self.assertLessEqual(box[3],emit_y);self.assertGreater(box[3],emit_y-8);self.assertTrue(box[0]<emit_x<box[2])
     def test_wheel_preserves_position_axle_and_full_turn_speed(self):
         r=self.buildings['mill']['wheel'];self.assertEqual(r['logical_size'],[48,48]);self.assertEqual(r['position_logical'],[88,94]);self.assertEqual(r['axle_center_logical'],[112,118]);self.assertEqual(len(r['frames']),48);self.assertEqual(len(r['frames'])*r['step_degrees'],360);self.assertEqual(sum(f['duration_ms'] for f in r['frames']),r['full_turn_ms']);self.assertEqual(r['full_turn_ms'],9600)

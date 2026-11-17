@@ -56,7 +56,7 @@
     },
     {
       "file": "architecture_schedule.json",
-      "sha256": "4ca09ec84d28f40c6c7132ca288d409dd8b47af6266407dae78e2bf206c4c204"
+      "sha256": "09e28794846e80fe5f572121db92d49fa4acdccb3f72e1b48c6905407da46114"
     },
     {
       "file": "crossings/recipe.json",
@@ -2641,5 +2641,11 @@
       "mill_landing"
     ],
     "layering": "Deck/far rail after water in every phase; near rail foreground. No collision or portal changes."
+  },
+  "exterior_architecture": {
+    "generator": "tools/eldenmere_architecture_art.py",
+    "source_recipe": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json",
+    "consumer_count": 13,
+    "registration": "Reviewed native shells and cap emitters; all existing ground, threshold, route and PR2 crossing contracts retained."
   }
 }
