@@ -1,0 +1,160 @@
+{
+  "artwork_pixels_per_world_pixel": 2,
+  "integration_status": "not_integrated",
+  "logical_size": [
+    32,
+    32
+  ],
+  "anchor_logical": [
+    16,
+    24
+  ],
+  "body_anchor_logical": [
+    16,
+    19.70878856338654
+  ],
+  "facing": "right",
+  "clips": {
+    "perch": {
+      "frames": [
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_00.png"
+      ],
+      "duration_ms": 800,
+      "loop": true
+    },
+    "alert": {
+      "frames": [
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_01.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_02.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_03.png"
+      ],
+      "duration_ms": 180,
+      "loop": false
+    },
+    "takeoff": {
+      "frames": [
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_04.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_05.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_06.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_07.png"
+      ],
+      "duration_ms": 100,
+      "loop": false
+    },
+    "flight": {
+      "frames": [
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_08.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_09.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_10.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_11.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_12.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_13.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_14.png",
+        "assets/characters/regional_wildlife/rising_rain_hd/frame_15.png"
+      ],
+      "duration_ms": 100,
+      "loop": true
+    }
+  },
+  "reduced_motion": "assets/characters/regional_wildlife/rising_rain_hd/frame_00.png",
+  "existing_actor_ids": "unchanged; no animal placement or save changes",
+  "sheet_rects_artwork": {
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_00.png": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_01.png": [
+      64,
+      0,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_02.png": [
+      128,
+      0,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_03.png": [
+      192,
+      0,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_04.png": [
+      0,
+      64,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_05.png": [
+      64,
+      64,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_06.png": [
+      128,
+      64,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_07.png": [
+      192,
+      64,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_08.png": [
+      0,
+      128,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_09.png": [
+      64,
+      128,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_10.png": [
+      128,
+      128,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_11.png": [
+      192,
+      128,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_12.png": [
+      0,
+      192,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_13.png": [
+      64,
+      192,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_14.png": [
+      128,
+      192,
+      64,
+      64
+    ],
+    "assets/characters/regional_wildlife/rising_rain_hd/frame_15.png": [
+      192,
+      192,
+      64,
+      64
+    ]
+  },
+  "sheet": "assets/characters/regional_wildlife/rising_rain_hd/spritesheet.png"
+}

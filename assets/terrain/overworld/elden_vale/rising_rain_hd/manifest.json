@@ -1,0 +1,1381 @@
+{
+  "id": "elden_vale.rising_rain.hd",
+  "integration_status": "not_integrated",
+  "visual_approval": "not_reviewed_by_user",
+  "artwork_pixels_per_world_pixel": 2,
+  "anchor_space": "logical",
+  "path_space": "repository_relative",
+  "effects": {
+    "bead_rest": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/bead_rest.png",
+      "logical_size": [
+        4.0,
+        5.0
+      ],
+      "draw_anchor_logical": [
+        2.0,
+        4.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 0,
+      "reduced_motion": false
+    },
+    "bead_gather": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/bead_gather.png",
+      "logical_size": [
+        4.0,
+        6.0
+      ],
+      "draw_anchor_logical": [
+        2.0,
+        5.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 1,
+      "reduced_motion": false
+    },
+    "bead_detach": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/bead_detach.png",
+      "logical_size": [
+        4.0,
+        7.0
+      ],
+      "draw_anchor_logical": [
+        2.0,
+        6.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 2,
+      "reduced_motion": false
+    },
+    "bead_lift": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/bead_lift.png",
+      "logical_size": [
+        4.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        2.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 3,
+      "reduced_motion": false
+    },
+    "ascent_0": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/ascent_0.png",
+      "logical_size": [
+        12.0,
+        24.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        23.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 4,
+      "reduced_motion": false
+    },
+    "ascent_1": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/ascent_1.png",
+      "logical_size": [
+        12.0,
+        24.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        23.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 5,
+      "reduced_motion": false
+    },
+    "ascent_2": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/ascent_2.png",
+      "logical_size": [
+        12.0,
+        24.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        23.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 6,
+      "reduced_motion": false
+    },
+    "ascent_3": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/ascent_3.png",
+      "logical_size": [
+        12.0,
+        24.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        23.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 7,
+      "reduced_motion": false
+    },
+    "curtain_sparse": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/curtain_sparse.png",
+      "logical_size": [
+        48.0,
+        96.0
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        95.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 8,
+      "reduced_motion": false
+    },
+    "curtain_dense": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/curtain_dense.png",
+      "logical_size": [
+        48.0,
+        96.0
+      ],
+      "draw_anchor_logical": [
+        24.0,
+        95.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 9,
+      "reduced_motion": false
+    },
+    "canopy_strands": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/canopy_strands.png",
+      "logical_size": [
+        96.0,
+        64.0
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        63.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 64,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 10,
+      "reduced_motion": false
+    },
+    "high_veil": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/high_veil.png",
+      "logical_size": [
+        192.0,
+        64.0
+      ],
+      "draw_anchor_logical": [
+        96.0,
+        63.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 64,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 11,
+      "reduced_motion": false
+    },
+    "wet_ground": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/wet_ground.png",
+      "logical_size": [
+        32.0,
+        12.0
+      ],
+      "draw_anchor_logical": [
+        16.0,
+        11.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 64,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 12,
+      "reduced_motion": true
+    },
+    "wet_fence": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/wet_fence.png",
+      "logical_size": [
+        24.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 13,
+      "reduced_motion": false
+    },
+    "still_beads": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/still_beads.png",
+      "logical_size": [
+        24.0,
+        24.0
+      ],
+      "draw_anchor_logical": [
+        12.0,
+        23.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 180,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 14,
+      "reduced_motion": true
+    },
+    "still_veil": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/effects/still_veil.png",
+      "logical_size": [
+        192.0,
+        64.0
+      ],
+      "draw_anchor_logical": [
+        96.0,
+        63.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "opacity": 64,
+      "alpha_policy": "hard mask plus explicit whole-layer opacity",
+      "source_cell": 15,
+      "reduced_motion": true
+    }
+  },
+  "props": {
+    "cloth_folded": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_folded.png",
+      "logical_size": [
+        12.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 0,
+      "ground_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "depth_baseline_logical": 7.0,
+      "grip_anchor_logical": [
+        6.0,
+        1
+      ]
+    },
+    "cloth_carried": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_carried.png",
+      "logical_size": [
+        12.0,
+        12.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        11.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 1,
+      "ground_anchor_logical": [
+        6.0,
+        11.0
+      ],
+      "depth_baseline_logical": 11.0,
+      "grip_anchor_logical": [
+        6.0,
+        1
+      ]
+    },
+    "cloth_panel": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_panel.png",
+      "logical_size": [
+        36.0,
+        20.0
+      ],
+      "draw_anchor_logical": [
+        18.0,
+        19.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 2,
+      "ground_anchor_logical": [
+        18.0,
+        19.0
+      ],
+      "depth_baseline_logical": 19.0,
+      "grip_anchor_logical": [
+        18.0,
+        1
+      ]
+    },
+    "cloth_panel_angled": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_panel_angled.png",
+      "logical_size": [
+        36.0,
+        20.0
+      ],
+      "draw_anchor_logical": [
+        18.0,
+        19.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 3,
+      "ground_anchor_logical": [
+        18.0,
+        19.0
+      ],
+      "depth_baseline_logical": 19.0,
+      "grip_anchor_logical": [
+        18.0,
+        1
+      ]
+    },
+    "post_left": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/post_left.png",
+      "logical_size": [
+        12.0,
+        40.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        39.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 4,
+      "ground_anchor_logical": [
+        6.0,
+        39.0
+      ],
+      "depth_baseline_logical": 39.0,
+      "grip_anchor_logical": [
+        6,
+        11
+      ],
+      "peg_anchor_logical": [
+        10.0,
+        18.0
+      ],
+      "fixed_support": true
+    },
+    "post_right": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/post_right.png",
+      "logical_size": [
+        12.0,
+        40.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        39.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 5,
+      "ground_anchor_logical": [
+        6.0,
+        39.0
+      ],
+      "depth_baseline_logical": 39.0,
+      "grip_anchor_logical": [
+        6,
+        11
+      ],
+      "peg_anchor_logical": [
+        2.0,
+        17.58
+      ],
+      "fixed_support": true
+    },
+    "ties": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/ties.png",
+      "logical_size": [
+        8.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        4.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 6,
+      "ground_anchor_logical": [
+        4.0,
+        7.0
+      ],
+      "depth_baseline_logical": 7.0,
+      "grip_anchor_logical": [
+        6,
+        11
+      ]
+    },
+    "leaf_raised": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/leaf_raised.png",
+      "logical_size": [
+        12.0,
+        12.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        11.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 7,
+      "ground_anchor_logical": [
+        6.0,
+        11.0
+      ],
+      "depth_baseline_logical": 11.0,
+      "grip_anchor_logical": [
+        6,
+        11
+      ]
+    },
+    "leaf_lowered": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/leaf_lowered.png",
+      "logical_size": [
+        12.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 8,
+      "ground_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "depth_baseline_logical": 7.0,
+      "grip_anchor_logical": [
+        11,
+        4
+      ]
+    },
+    "cloth_blue_folded": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_blue_folded.png",
+      "logical_size": [
+        12.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 9,
+      "ground_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "depth_baseline_logical": 7.0,
+      "grip_anchor_logical": [
+        6.0,
+        1
+      ]
+    },
+    "cloth_blue_bundle": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_blue_bundle.png",
+      "logical_size": [
+        12.0,
+        12.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        11.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 10,
+      "ground_anchor_logical": [
+        6.0,
+        11.0
+      ],
+      "depth_baseline_logical": 11.0,
+      "grip_anchor_logical": [
+        6.0,
+        1
+      ]
+    },
+    "washing_basket": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/washing_basket.png",
+      "logical_size": [
+        20.0,
+        16.0
+      ],
+      "draw_anchor_logical": [
+        10.0,
+        15.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "source_cell": 11,
+      "ground_anchor_logical": [
+        10.0,
+        15.0
+      ],
+      "depth_baseline_logical": 15.0,
+      "grip_anchor_logical": [
+        6,
+        11
+      ]
+    },
+    "cloth_held_open": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/cloth_held_open.png",
+      "logical_size": [
+        20.0,
+        12.0
+      ],
+      "draw_anchor_logical": [
+        10.0,
+        11.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "grip_anchor_logical": [
+        18,
+        4
+      ]
+    },
+    "leaf_cup_right": {
+      "image": "assets/terrain/overworld/elden_vale/rising_rain_hd/props/leaf_cup_right.png",
+      "logical_size": [
+        12.0,
+        8.0
+      ],
+      "draw_anchor_logical": [
+        6.0,
+        7.0
+      ],
+      "collision": "none; staged visual only",
+      "interaction_cues": false,
+      "grip_anchor_logical": [
+        1,
+        4
+      ],
+      "source_asset": "leaf_lowered; mirrored flat prop, no actor mirroring"
+    }
+  },
+  "actions": {
+    "gather": {
+      "bank": "assets/characters/npcs/female_01/rising_rain_hd/gather/animation.json",
+      "action": "gather",
+      "actor": "npcs/female_01",
+      "integration_status": "not_integrated",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        48,
+        56
+      ],
+      "draw_anchor_logical": [
+        24,
+        52
+      ],
+      "foot_anchor_logical": [
+        24,
+        52
+      ],
+      "body_height_artwork": 68,
+      "source_scale": 0.17215189873417722,
+      "frame_duration_ms": 220,
+      "loop": false,
+      "ownership_cues": [
+        {
+          "frame": 4,
+          "owner": "actor",
+          "state": "carried",
+          "contact_position_logical": [
+            30.5,
+            43
+          ]
+        }
+      ],
+      "frames": [
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_00.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.0,
+            40.5
+          ],
+          "source_cell": 0,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_01.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.0,
+            37.5
+          ],
+          "source_cell": 1,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_02.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            30.0,
+            40.5
+          ],
+          "source_cell": 2,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_03.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            29.5,
+            42.5
+          ],
+          "source_cell": 3,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_04.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            28.0,
+            39.0
+          ],
+          "source_cell": 4,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_05.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.0,
+            36.5
+          ],
+          "source_cell": 5,
+          "sheet_rect_artwork": [
+            480,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_06.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.5,
+            36.5
+          ],
+          "source_cell": 6,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/female_01/rising_rain_hd/gather/frame_07.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.5,
+            37.0
+          ],
+          "source_cell": 7,
+          "sheet_rect_artwork": [
+            672,
+            0,
+            96,
+            112
+          ]
+        }
+      ],
+      "prop_space": "logical, local to 48x56 canvas",
+      "facing": "right",
+      "approach": "reuse existing right walk at its current legacy density in preview only",
+      "completion": "gather remains carrying; deploy leaves panel; leaf returns to station",
+      "registration": "one source scale; sole centers aligned; no anatomy deformation",
+      "station_grip_logical": [
+        30.5,
+        43
+      ],
+      "placement_peg_logical": null,
+      "sheet": "assets/characters/npcs/female_01/rising_rain_hd/gather/spritesheet.png"
+    },
+    "deploy": {
+      "bank": "assets/characters/npcs/male_02/rising_rain_hd/deploy/animation.json",
+      "action": "deploy",
+      "actor": "npcs/male_02",
+      "integration_status": "not_integrated",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        48,
+        56
+      ],
+      "draw_anchor_logical": [
+        24,
+        52
+      ],
+      "foot_anchor_logical": [
+        24,
+        52
+      ],
+      "body_height_artwork": 68,
+      "source_scale": 0.16748768472906403,
+      "frame_duration_ms": 220,
+      "loop": false,
+      "ownership_cues": [
+        {
+          "frame": 1,
+          "owner": "actor",
+          "state": "folded",
+          "contact_position_logical": [
+            28.5,
+            39
+          ]
+        },
+        {
+          "frame": 3,
+          "owner": "actor",
+          "state": "opening",
+          "contact_position_logical": null
+        },
+        {
+          "frame": 5,
+          "owner": "station",
+          "state": "deployed",
+          "contact_position_logical": [
+            34.5,
+            32
+          ]
+        }
+      ],
+      "frames": [
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_00.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            26.5,
+            39.0
+          ],
+          "source_cell": 0,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_01.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.0,
+            37.5
+          ],
+          "source_cell": 1,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_02.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            28.0,
+            34.0
+          ],
+          "source_cell": 2,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_03.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            32.5,
+            33.5
+          ],
+          "source_cell": 3,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_04.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            33.0,
+            33.0
+          ],
+          "source_cell": 4,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_05.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            33.5,
+            32.0
+          ],
+          "source_cell": 5,
+          "sheet_rect_artwork": [
+            480,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_06.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            31.5,
+            34.0
+          ],
+          "source_cell": 6,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/npcs/male_02/rising_rain_hd/deploy/frame_07.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.0,
+            40.5
+          ],
+          "source_cell": 7,
+          "sheet_rect_artwork": [
+            672,
+            0,
+            96,
+            112
+          ]
+        }
+      ],
+      "prop_space": "logical, local to 48x56 canvas",
+      "facing": "right",
+      "approach": "reuse existing right walk at its current legacy density in preview only",
+      "completion": "gather remains carrying; deploy leaves panel; leaf returns to station",
+      "registration": "one source scale; sole centers aligned; no anatomy deformation",
+      "station_grip_logical": [
+        28.5,
+        39
+      ],
+      "placement_peg_logical": [
+        34.5,
+        32
+      ],
+      "sheet": "assets/characters/npcs/male_02/rising_rain_hd/deploy/spritesheet.png"
+    },
+    "leaf": {
+      "bank": "assets/characters/liam/rising_rain_hd/leaf/animation.json",
+      "action": "leaf",
+      "actor": "liam",
+      "integration_status": "not_integrated",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        48,
+        56
+      ],
+      "draw_anchor_logical": [
+        24,
+        52
+      ],
+      "foot_anchor_logical": [
+        24,
+        52
+      ],
+      "body_height_artwork": 52,
+      "source_scale": 0.13402061855670103,
+      "frame_duration_ms": 220,
+      "loop": false,
+      "ownership_cues": [
+        {
+          "frame": 2,
+          "owner": "actor",
+          "state": "raised",
+          "contact_position_logical": [
+            28.5,
+            44
+          ]
+        },
+        {
+          "frame": 7,
+          "owner": "station",
+          "state": "lowered",
+          "contact_position_logical": [
+            28.5,
+            44
+          ]
+        }
+      ],
+      "frames": [
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_00.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            26.5,
+            45.0
+          ],
+          "source_cell": 0,
+          "sheet_rect_artwork": [
+            0,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_01.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            28.5,
+            43.0
+          ],
+          "source_cell": 1,
+          "sheet_rect_artwork": [
+            96,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_02.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.5,
+            41.5
+          ],
+          "source_cell": 2,
+          "sheet_rect_artwork": [
+            192,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_03.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.5,
+            40.5
+          ],
+          "source_cell": 3,
+          "sheet_rect_artwork": [
+            288,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_04.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            28.5,
+            38.5
+          ],
+          "source_cell": 4,
+          "sheet_rect_artwork": [
+            384,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_05.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            28.5,
+            39.0
+          ],
+          "source_cell": 5,
+          "sheet_rect_artwork": [
+            480,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_06.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            27.0,
+            41.5
+          ],
+          "source_cell": 6,
+          "sheet_rect_artwork": [
+            576,
+            0,
+            96,
+            112
+          ]
+        },
+        {
+          "image": "assets/characters/liam/rising_rain_hd/leaf/frame_07.png",
+          "duration_ms": 220,
+          "grip_logical": [
+            26.5,
+            43.5
+          ],
+          "source_cell": 7,
+          "sheet_rect_artwork": [
+            672,
+            0,
+            96,
+            112
+          ]
+        }
+      ],
+      "prop_space": "logical, local to 48x56 canvas",
+      "facing": "right",
+      "approach": "reuse existing right walk at its current legacy density in preview only",
+      "completion": "gather remains carrying; deploy leaves panel; leaf returns to station",
+      "registration": "one source scale; sole centers aligned; no anatomy deformation",
+      "station_grip_logical": [
+        28.5,
+        44
+      ],
+      "placement_peg_logical": null,
+      "sheet": "assets/characters/liam/rising_rain_hd/leaf/spritesheet.png"
+    }
+  },
+  "wildlife": {
+    "artwork_pixels_per_world_pixel": 2,
+    "integration_status": "not_integrated",
+    "logical_size": [
+      32,
+      32
+    ],
+    "anchor_logical": [
+      16,
+      24
+    ],
+    "body_anchor_logical": [
+      16,
+      19.70878856338654
+    ],
+    "facing": "right",
+    "clips": {
+      "perch": {
+        "frames": [
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_00.png"
+        ],
+        "duration_ms": 800,
+        "loop": true
+      },
+      "alert": {
+        "frames": [
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_01.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_02.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_03.png"
+        ],
+        "duration_ms": 180,
+        "loop": false
+      },
+      "takeoff": {
+        "frames": [
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_04.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_05.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_06.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_07.png"
+        ],
+        "duration_ms": 100,
+        "loop": false
+      },
+      "flight": {
+        "frames": [
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_08.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_09.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_10.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_11.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_12.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_13.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_14.png",
+          "assets/characters/regional_wildlife/rising_rain_hd/frame_15.png"
+        ],
+        "duration_ms": 100,
+        "loop": true
+      }
+    },
+    "reduced_motion": "assets/characters/regional_wildlife/rising_rain_hd/frame_00.png",
+    "existing_actor_ids": "unchanged; no animal placement or save changes",
+    "sheet_rects_artwork": {
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_00.png": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_01.png": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_02.png": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_03.png": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_04.png": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_05.png": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_06.png": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_07.png": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_08.png": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_09.png": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_10.png": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_11.png": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_12.png": [
+        0,
+        192,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_13.png": [
+        64,
+        192,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_14.png": [
+        128,
+        192,
+        64,
+        64
+      ],
+      "assets/characters/regional_wildlife/rising_rain_hd/frame_15.png": [
+        192,
+        192,
+        64,
+        64
+      ]
+    },
+    "sheet": "assets/characters/regional_wildlife/rising_rain_hd/spritesheet.png"
+  },
+  "cartography": {
+    "pale_antlers": {
+      "image": "assets/cartography/elden_vale/rising_rain_hd/pale_antlers.png",
+      "display_size": [
+        64,
+        64
+      ],
+      "coordinate_space": "cartography artwork pixels",
+      "activation": "staged only; atlas unchanged"
+    },
+    "causeway_ruin": {
+      "image": "assets/cartography/elden_vale/rising_rain_hd/causeway_ruin.png",
+      "display_size": [
+        64,
+        64
+      ],
+      "coordinate_space": "cartography artwork pixels",
+      "activation": "staged only; atlas unchanged"
+    },
+    "rising_rain_optional": {
+      "image": "assets/cartography/elden_vale/rising_rain_hd/rising_rain_optional.png",
+      "display_size": [
+        64,
+        64
+      ],
+      "optional": true,
+      "activation": "no live forecast or event indicator implied"
+    }
+  },
+  "preview_timeline_ms": [
+    [
+      "signs",
+      0,
+      2000
+    ],
+    [
+      "arrival",
+      2000,
+      4500
+    ],
+    [
+      "peak",
+      4500,
+      9000
+    ],
+    [
+      "departure",
+      9000,
+      12000
+    ]
+  ],
+  "preview_duration_ms": 12000,
+  "cadence": "Preview only; production recurrence and first-encounter triggers unimplemented.",
+  "lifecycle": {
+    "pause_focus": "freeze clocks without catchup",
+    "exit": "clear transient instances",
+    "resume": "reconstruct eligibility; no pending particle bursts",
+    "reduced_motion": "dedicated stills"
+  },
+  "gameplay_effects": [],
+  "assemblies": {
+    "collection_station": {
+      "coordinate_space": "logical; relative to preview actor canvas origin",
+      "pegs": [
+        [
+          9.5,
+          32
+        ],
+        [
+          34.5,
+          32
+        ]
+      ],
+      "panel_origin": [
+        2.5,
+        29
+      ],
+      "parts": [
+        "post_left",
+        "post_right",
+        "cloth_panel"
+      ],
+      "supports": "fixed; only panel changes owner",
+      "far_corner": "pre-tethered before securing near corner; no remote left-post grab"
+    }
+  }
+}
