@@ -1,12 +1,12 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "commons_dressing",
+  "status": "household_dressing",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "PR 5 retains streets, Serene courtyard and workshop/mill yards, and activates civic paving and a small resting edge beside the well square. Household plots remain PR 6; existing well/school owners and all protected story approaches remain authoritative.",
+  "activation": "PR 6 retains reviewed streets, Serene courtyard, workyards and civic commons; activates five separately bounded central household plots with native domestic props and decorative planting. Venn growing and southern arrival remain PRs 7 and 8. All existing building, quest and routine ownership remains authoritative.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -72,9 +72,8 @@
         "children and pet routines",
         "two-bridge circulation loop"
       ],
-      "status": "civic_integrated_households_pending",
-      "delivery_pr": 5,
-      "later_pr": 6
+      "status": "integrated",
+      "delivery_pr": 6
     },
     {
       "id": "eastern_growing",
@@ -1558,6 +1557,174 @@
       ],
       "collision": "none",
       "occlusion": "low"
+    },
+    {
+      "id": "settlement.households.liam_laundry",
+      "asset": "exteriors_hd:laundry_line",
+      "district": "commons_households",
+      "parcel": "liam_house",
+      "position": [
+        168,
+        552
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        19,
+        36,
+        3
+      ]
+    },
+    {
+      "id": "settlement.households.liam_flowerpots",
+      "asset": "exteriors_hd:flowerpot_pair",
+      "district": "commons_households",
+      "parcel": "liam_house",
+      "position": [
+        168,
+        516
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        18,
+        20,
+        4
+      ]
+    },
+    {
+      "id": "settlement.households.home_a_herbs",
+      "asset": "exteriors_hd:herb_planter",
+      "district": "commons_households",
+      "parcel": "home_a",
+      "position": [
+        282,
+        660
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        4,
+        10,
+        15,
+        4
+      ]
+    },
+    {
+      "id": "settlement.households.home_a_pot",
+      "asset": "exteriors_hd:herb_pot",
+      "district": "commons_households",
+      "parcel": "home_a",
+      "position": [
+        312,
+        684
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        3,
+        11,
+        12,
+        5
+      ]
+    },
+    {
+      "id": "settlement.households.home_b_white_flowers",
+      "asset": "vegetation_hd:flowers_white",
+      "district": "commons_households",
+      "parcel": "home_b",
+      "position": [
+        432,
+        672
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.households.home_b_violets",
+      "asset": "vegetation_hd:flowers_violet",
+      "district": "commons_households",
+      "parcel": "home_b",
+      "position": [
+        456,
+        672
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.households.home_c_firewood",
+      "asset": "exteriors_hd:firewood",
+      "district": "commons_households",
+      "parcel": "home_c",
+      "position": [
+        174,
+        1044
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        4,
+        9,
+        16,
+        5
+      ]
+    },
+    {
+      "id": "settlement.households.home_c_stool",
+      "asset": "exteriors_hd:stool",
+      "district": "commons_households",
+      "parcel": "home_c",
+      "position": [
+        180,
+        1074
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        10,
+        12,
+        4
+      ]
+    },
+    {
+      "id": "settlement.households.elira_herbs",
+      "asset": "exteriors_hd:herb_planter",
+      "district": "commons_households",
+      "parcel": "elira",
+      "position": [
+        750,
+        888
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        4,
+        10,
+        15,
+        4
+      ]
+    },
+    {
+      "id": "settlement.households.elira_pot",
+      "asset": "exteriors_hd:herb_pot",
+      "district": "commons_households",
+      "parcel": "elira",
+      "position": [
+        744,
+        924
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        3,
+        11,
+        12,
+        5
+      ]
     }
   ],
   "ground_treatments": [
@@ -2076,7 +2243,8 @@
     "The old adapted-plan mill_yard space overlaps Halden\u2019s current drawable roof/canvas. Its label is historical land-use intent, not an approved empty placement rectangle.",
     "Any later mill delivery apron must also clear the Lantern mill group at current village_layout stations; re-fit it after the exterior/bridge work.",
     "Venn plots touch the cottage overhang; inset beds and preserve the irrigation-gate approaches. This framework grants no harvest or new service behavior.",
-    "Existing player trails support dynamic followers. Protect the public corridors and companion clearance instead of inventing fixed Regent/Lantern escort routes."
+    "Existing player trails support dynamic followers. Protect the public corridors and companion clearance instead of inventing fixed Regent/Lantern escort routes.",
+    "PR 6 household parcels preserve baked facade details and all-frame smoke/roof bounds. Liam laundry stays west of family/Daisy play; A receives herbs beside its locker; B a low flower strip beside its linen chest; C a dry fuel corner separate from its rain jar; Elira a quiet brook-side container pocket below her windowbox. Decorative soil/planting creates no harvesting, irrigation or new interactions."
   ],
   "excluded_coordinate_contexts": [
     {
@@ -2506,7 +2674,7 @@
     "desire": "Two narrow worn lines acknowledge existing grass travel from the school toward the commons and Elira toward the lower loop. They grant no new navigation.",
     "layering": "Native ground only, before masonry, stairs and water. Existing bridge decks and foreground rails remain independently owned.",
     "cartography": "Complete source-owned network resolves the original roads, later household/school/well geometry and the same active treatments. No parallel road diagram.",
-    "future_prs": "Other household plots, Venn growing and southern planting remain PRs 6\u20138."
+    "future_prs": "Venn growing and southern arrival planting remain PRs 7 and 8; existing streets remain independently owned."
   },
   "courtyard_dressing": {
     "district": "serene_terrace",
@@ -2646,5 +2814,76 @@
     ],
     "retire_grass_ids": [],
     "ground_cells": []
+  },
+  "household_dressing": {
+    "district": "commons_households",
+    "scope_rect": [
+      144,
+      480,
+      672,
+      696
+    ],
+    "retire_grass_ids": [],
+    "ground_cells": [
+      [
+        7,
+        23
+      ],
+      [
+        18,
+        28
+      ],
+      [
+        19,
+        28
+      ]
+    ],
+    "parcels": [
+      {
+        "id": "liam_house",
+        "scope_rect": [
+          144,
+          504,
+          72,
+          96
+        ]
+      },
+      {
+        "id": "home_a",
+        "scope_rect": [
+          264,
+          624,
+          96,
+          120
+        ]
+      },
+      {
+        "id": "home_b",
+        "scope_rect": [
+          408,
+          648,
+          96,
+          72
+        ]
+      },
+      {
+        "id": "home_c",
+        "scope_rect": [
+          144,
+          984,
+          72,
+          120
+        ]
+      },
+      {
+        "id": "elira",
+        "scope_rect": [
+          720,
+          840,
+          72,
+          120
+        ]
+      }
+    ]
   }
 }

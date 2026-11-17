@@ -1430,6 +1430,225 @@
       "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
     },
     {
+      "id": "settlement.households.liam_laundry",
+      "position": [
+        168,
+        552
+      ],
+      "sort_y": 574.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_00.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_01.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_02.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_03.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_04.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_05.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_06.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_07.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_08.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_09.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_10.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_11.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_12.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_13.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_14.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_15.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_16.png",
+        "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_17.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 5,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        40,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/idle.png"
+    },
+    {
+      "id": "settlement.households.liam_flowerpots",
+      "position": [
+        168,
+        516
+      ],
+      "sort_y": 538.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "settlement.households.home_a_herbs",
+      "position": [
+        282,
+        660
+      ],
+      "sort_y": 674.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.households.home_a_pot",
+      "position": [
+        312,
+        684
+      ],
+      "sort_y": 700.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        18,
+        18
+      ]
+    },
+    {
+      "id": "settlement.households.home_b_white_flowers",
+      "position": [
+        432,
+        672
+      ],
+      "sort_y": 694.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+    },
+    {
+      "id": "settlement.households.home_b_violets",
+      "position": [
+        456,
+        672
+      ],
+      "sort_y": 694.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 8,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+    },
+    {
+      "id": "settlement.households.home_c_firewood",
+      "position": [
+        174,
+        1044
+      ],
+      "sort_y": 1058.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.households.home_c_stool",
+      "position": [
+        180,
+        1074
+      ],
+      "sort_y": 1088.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/stool/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        16,
+        16
+      ]
+    },
+    {
+      "id": "settlement.households.elira_herbs",
+      "position": [
+        750,
+        888
+      ],
+      "sort_y": 902.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        16
+      ]
+    },
+    {
+      "id": "settlement.households.elira_pot",
+      "position": [
+        744,
+        924
+      ],
+      "sort_y": 940.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        18,
+        18
+      ]
+    },
+    {
       "id": "inn",
       "position": [
         192,
@@ -25985,5 +26204,748 @@
       "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
       "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91"
     }
+  },
+  "settlement_households": {
+    "district": "commons_households",
+    "scope_rect": [
+      144,
+      480,
+      672,
+      696
+    ],
+    "placements": [
+      {
+        "id": "settlement.households.liam_laundry",
+        "asset": "exteriors_hd:laundry_line",
+        "district": "commons_households",
+        "position": [
+          168,
+          552
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          19,
+          36,
+          3
+        ],
+        "logical_size": [
+          40,
+          24
+        ],
+        "occupied_rect": [
+          170.0,
+          555.0,
+          36.0,
+          19.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "world_footprint": [
+          170,
+          571,
+          36,
+          3
+        ],
+        "parcel": "liam_house"
+      },
+      {
+        "id": "settlement.households.liam_flowerpots",
+        "asset": "exteriors_hd:flowerpot_pair",
+        "district": "commons_households",
+        "position": [
+          168,
+          516
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          18,
+          20,
+          4
+        ],
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          170.0,
+          522.5,
+          19.5,
+          15.5
+        ],
+        "depth_baseline_logical": 22.0,
+        "world_footprint": [
+          170,
+          534,
+          20,
+          4
+        ],
+        "parcel": "liam_house"
+      },
+      {
+        "id": "settlement.households.home_a_herbs",
+        "asset": "exteriors_hd:herb_planter",
+        "district": "commons_households",
+        "position": [
+          282,
+          660
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          4,
+          10,
+          15,
+          4
+        ],
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          286.0,
+          663.0,
+          15.5,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          286,
+          670,
+          15,
+          4
+        ],
+        "parcel": "home_a"
+      },
+      {
+        "id": "settlement.households.home_a_pot",
+        "asset": "exteriors_hd:herb_pot",
+        "district": "commons_households",
+        "position": [
+          312,
+          684
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          3,
+          11,
+          12,
+          5
+        ],
+        "logical_size": [
+          18,
+          18
+        ],
+        "occupied_rect": [
+          314.5,
+          687.0,
+          13.0,
+          13.0
+        ],
+        "depth_baseline_logical": 16.0,
+        "world_footprint": [
+          315,
+          695,
+          12,
+          5
+        ],
+        "parcel": "home_a"
+      },
+      {
+        "id": "settlement.households.home_b_white_flowers",
+        "asset": "vegetation_hd:flowers_white",
+        "district": "commons_households",
+        "position": [
+          432,
+          672
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          433.0,
+          674.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "home_b"
+      },
+      {
+        "id": "settlement.households.home_b_violets",
+        "asset": "vegetation_hd:flowers_violet",
+        "district": "commons_households",
+        "position": [
+          456,
+          672
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          457.0,
+          674.5,
+          22.0,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "home_b"
+      },
+      {
+        "id": "settlement.households.home_c_firewood",
+        "asset": "exteriors_hd:firewood",
+        "district": "commons_households",
+        "position": [
+          174,
+          1044
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          4,
+          9,
+          16,
+          5
+        ],
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          177.5,
+          1047.0,
+          17.0,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          178,
+          1053,
+          16,
+          5
+        ],
+        "parcel": "home_c"
+      },
+      {
+        "id": "settlement.households.home_c_stool",
+        "asset": "exteriors_hd:stool",
+        "district": "commons_households",
+        "position": [
+          180,
+          1074
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          10,
+          12,
+          4
+        ],
+        "logical_size": [
+          16,
+          16
+        ],
+        "occupied_rect": [
+          182.0,
+          1077.0,
+          12.0,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          182,
+          1084,
+          12,
+          4
+        ],
+        "parcel": "home_c"
+      },
+      {
+        "id": "settlement.households.elira_herbs",
+        "asset": "exteriors_hd:herb_planter",
+        "district": "commons_households",
+        "position": [
+          750,
+          888
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          4,
+          10,
+          15,
+          4
+        ],
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          754.0,
+          891.0,
+          15.5,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          754,
+          898,
+          15,
+          4
+        ],
+        "parcel": "elira"
+      },
+      {
+        "id": "settlement.households.elira_pot",
+        "asset": "exteriors_hd:herb_pot",
+        "district": "commons_households",
+        "position": [
+          744,
+          924
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          3,
+          11,
+          12,
+          5
+        ],
+        "logical_size": [
+          18,
+          18
+        ],
+        "occupied_rect": [
+          746.5,
+          927.0,
+          13.0,
+          13.0
+        ],
+        "depth_baseline_logical": 16.0,
+        "world_footprint": [
+          747,
+          935,
+          12,
+          5
+        ],
+        "parcel": "elira"
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.households.liam_laundry",
+        "position": [
+          168,
+          552
+        ],
+        "sort_y": 574.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_00.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_01.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_02.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_03.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_04.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_05.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_06.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_07.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_08.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_09.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_10.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_11.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_12.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_13.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_14.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_15.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_16.png",
+          "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_17.png"
+        ],
+        "frame_duration_ms": 200,
+        "phase_offset": 5,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          40,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/idle.png"
+      },
+      {
+        "id": "settlement.households.liam_flowerpots",
+        "position": [
+          168,
+          516
+        ],
+        "sort_y": 538.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.households.home_a_herbs",
+        "position": [
+          282,
+          660
+        ],
+        "sort_y": 674.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.households.home_a_pot",
+        "position": [
+          312,
+          684
+        ],
+        "sort_y": 700.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          18,
+          18
+        ]
+      },
+      {
+        "id": "settlement.households.home_b_white_flowers",
+        "position": [
+          432,
+          672
+        ],
+        "sort_y": 694.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 1,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+      },
+      {
+        "id": "settlement.households.home_b_violets",
+        "position": [
+          456,
+          672
+        ],
+        "sort_y": 694.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 8,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+      },
+      {
+        "id": "settlement.households.home_c_firewood",
+        "position": [
+          174,
+          1044
+        ],
+        "sort_y": 1058.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.households.home_c_stool",
+        "position": [
+          180,
+          1074
+        ],
+        "sort_y": 1088.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/stool/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          16,
+          16
+        ]
+      },
+      {
+        "id": "settlement.households.elira_herbs",
+        "position": [
+          750,
+          888
+        ],
+        "sort_y": 902.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.households.elira_pot",
+        "position": [
+          744,
+          924
+        ],
+        "sort_y": 940.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          18,
+          18
+        ]
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.households.liam_laundry",
+        "rect": [
+          170,
+          571,
+          36,
+          3
+        ]
+      },
+      {
+        "id": "settlement.households.liam_flowerpots",
+        "rect": [
+          170,
+          534,
+          20,
+          4
+        ]
+      },
+      {
+        "id": "settlement.households.home_a_herbs",
+        "rect": [
+          286,
+          670,
+          15,
+          4
+        ]
+      },
+      {
+        "id": "settlement.households.home_a_pot",
+        "rect": [
+          315,
+          695,
+          12,
+          5
+        ]
+      },
+      {
+        "id": "settlement.households.home_c_firewood",
+        "rect": [
+          178,
+          1053,
+          16,
+          5
+        ]
+      },
+      {
+        "id": "settlement.households.home_c_stool",
+        "rect": [
+          182,
+          1084,
+          12,
+          4
+        ]
+      },
+      {
+        "id": "settlement.households.elira_herbs",
+        "rect": [
+          754,
+          898,
+          15,
+          4
+        ]
+      },
+      {
+        "id": "settlement.households.elira_pot",
+        "rect": [
+          747,
+          935,
+          12,
+          5
+        ]
+      }
+    ],
+    "retired_grass_ids": [],
+    "retired_grass_records": [],
+    "ground_cells": [
+      [
+        7,
+        23
+      ],
+      [
+        18,
+        28
+      ],
+      [
+        19,
+        28
+      ]
+    ],
+    "dependencies_sha256": {
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "1b274c3b96fe446d8c71f9d153aa08cd3d717f1bc48a819209551751c2db1283",
+      "assets/terrain/eldenmere/exteriors_hd/props/firewood/idle.png": "34875c6e95485d35996f877b09b0ff5bb0b9de79e2edcd3c29720399a3f745ce",
+      "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png": "cb48941e9a0ca6672c9805b8ea0d65f89fe07b5a736e2cddc01d9301542a917d",
+      "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png": "d262ab60451a528a8f92b936728bd231b649964c8b0f1f745592652b9ff8884a",
+      "assets/terrain/eldenmere/exteriors_hd/props/herb_pot/idle.png": "a1e4a0e5ad652c003e8fb0a60631ece553abfaa0eec9112d10f286beb24fc014",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_00.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_01.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_02.png": "1bfaf8ce4d39ec4f015a2a972bda582029235b5140c014c2a0b7097d75df28ca",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_03.png": "1bfaf8ce4d39ec4f015a2a972bda582029235b5140c014c2a0b7097d75df28ca",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_04.png": "1bfaf8ce4d39ec4f015a2a972bda582029235b5140c014c2a0b7097d75df28ca",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_05.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_06.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_07.png": "6c00c06026c37eee0e46fc3504517e98117a5c1e7b9384bfe85aca1184ef32a6",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_08.png": "6c00c06026c37eee0e46fc3504517e98117a5c1e7b9384bfe85aca1184ef32a6",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_09.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_10.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_11.png": "1bfaf8ce4d39ec4f015a2a972bda582029235b5140c014c2a0b7097d75df28ca",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_12.png": "1bfaf8ce4d39ec4f015a2a972bda582029235b5140c014c2a0b7097d75df28ca",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_13.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_14.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_15.png": "6c00c06026c37eee0e46fc3504517e98117a5c1e7b9384bfe85aca1184ef32a6",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_16.png": "6c00c06026c37eee0e46fc3504517e98117a5c1e7b9384bfe85aca1184ef32a6",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/frame_17.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/laundry_line/idle.png": "258cd9c1d2d92b5c8333d62e5694489211ee6f166fe828de3f160228f8917782",
+      "assets/terrain/eldenmere/exteriors_hd/props/stool/idle.png": "2f465517b01bce8cfad9b783143dfe6cb4ec2a66a8ee2707de35a1d541963dde",
+      "assets/terrain/vegetation_hd/plants.json": "263ccc4269fc06c177a5f16e58dacc582783a563107a0d4bc178ba01561917ce",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/idle.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287"
+    },
+    "parcels": [
+      {
+        "id": "liam_house",
+        "scope_rect": [
+          144,
+          504,
+          72,
+          96
+        ]
+      },
+      {
+        "id": "home_a",
+        "scope_rect": [
+          264,
+          624,
+          96,
+          120
+        ]
+      },
+      {
+        "id": "home_b",
+        "scope_rect": [
+          408,
+          648,
+          96,
+          72
+        ]
+      },
+      {
+        "id": "home_c",
+        "scope_rect": [
+          144,
+          984,
+          72,
+          120
+        ]
+      },
+      {
+        "id": "elira",
+        "scope_rect": [
+          720,
+          840,
+          72,
+          120
+        ]
+      }
+    ]
   }
 }

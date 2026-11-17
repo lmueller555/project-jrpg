@@ -23,6 +23,10 @@ WORKYARD_STATUS = 'workyard_dressing'
 COMMONS_PREFIX = 'settlement.commons.'
 COMMONS_DISTRICT = 'commons_households'
 COMMONS_STATUS = 'commons_dressing'
+HOUSEHOLD_PREFIX = 'settlement.households.'
+HOUSEHOLD_STATUS = 'household_dressing'
+HOUSEHOLD_PARCELS = frozenset(('liam_house', 'home_a', 'home_b', 'home_c', 'elira'))
+DRESSING_STATUSES = (STATUS, WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS)
 PLACEMENT_KEYS = {'id', 'asset', 'district', 'position', 'collision', 'footprint', 'occlusion'}
 CONFIG_KEYS = {'district', 'scope_rect', 'retire_grass_ids', 'garden_cells'}
 LOW_FAMILIES = {'flowers', 'groundcover'}
@@ -54,18 +58,22 @@ def _combined_placements(recipe):
     placements = recipe.get('placements')
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
-    districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT) if recipe.get('status') == COMMONS_STATUS else (DISTRICT, WORKYARD_DISTRICT)
+    status = recipe.get('status')
+    districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT) if status in (COMMONS_STATUS, HOUSEHOLD_STATUS) else (DISTRICT, WORKYARD_DISTRICT)
     for placement in placements:
         if not isinstance(placement, dict) or placement.get('district') not in districts:
-            if recipe.get('status') == COMMONS_STATUS:
+            if status in (COMMONS_STATUS, HOUSEHOLD_STATUS):
                 raise ValueError('Commons delivery can activate only serene_terrace, workshop_mill and commons_households')
             raise ValueError('Workyard delivery can activate only serene_terrace and workshop_mill')
+        if (isinstance(placement.get('id'), str) and placement['id'].startswith(HOUSEHOLD_PREFIX)
+                and status != HOUSEHOLD_STATUS):
+            raise ValueError('Settlement status cannot activate household dressing')
     return placements
 
 
 def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader=None):
     """Retain the courtyard API and ledger when later deliveries are active."""
-    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS):
+    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS):
         placements = _combined_placements(recipe)
         recipe = {**recipe, 'status': STATUS,
                   'placements': [p for p in placements if p['district'] == DISTRICT]}
@@ -81,15 +89,15 @@ def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loade
     the same source and occupied-artwork validation.
     """
     status = recipe.get('status')
-    if status not in ('framework_only', 'ground_only', STATUS, WORKYARD_STATUS, COMMONS_STATUS):
+    if status not in ('framework_only', 'ground_only', *DRESSING_STATUSES):
         raise ValueError('Unsupported settlement workyard activation status')
-    placements = _combined_placements(recipe) if status in (STATUS, WORKYARD_STATUS, COMMONS_STATUS) else recipe.get('placements')
+    placements = _combined_placements(recipe) if status in DRESSING_STATUSES else recipe.get('placements')
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
     if status in ('framework_only', 'ground_only') and placements:
         raise ValueError('Settlement status cannot activate workyard dressing')
     selected = [p for p in placements if isinstance(p, dict) and p.get('district') == WORKYARD_DISTRICT]
-    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS) else 'ground_only',
+    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS) else 'ground_only',
             'placements': selected}
     report = _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                              district=WORKYARD_DISTRICT, prefix=WORKYARD_PREFIX,
@@ -105,15 +113,16 @@ def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loade
 def resolve_commons(root, town, recipe, catalogue, protections, *, image_loader=None):
     """Resolve the civic delivery without replacing earlier district ownership."""
     status = recipe.get('status')
-    if status not in ('framework_only', 'ground_only', STATUS, WORKYARD_STATUS, COMMONS_STATUS):
+    if status not in ('framework_only', 'ground_only', *DRESSING_STATUSES):
         raise ValueError('Unsupported settlement commons activation status')
-    placements = _combined_placements(recipe) if status in (STATUS, WORKYARD_STATUS, COMMONS_STATUS) else recipe.get('placements')
+    placements = _combined_placements(recipe) if status in DRESSING_STATUSES else recipe.get('placements')
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
     if status in ('framework_only', 'ground_only') and placements:
         raise ValueError('Settlement status cannot activate commons dressing')
-    selected = [p for p in placements if isinstance(p, dict) and p.get('district') == COMMONS_DISTRICT]
-    view = {**recipe, 'status': COMMONS_STATUS if status == COMMONS_STATUS else 'ground_only',
+    selected = [p for p in placements if isinstance(p, dict) and p.get('district') == COMMONS_DISTRICT
+                and not (isinstance(p.get('id'), str) and p['id'].startswith(HOUSEHOLD_PREFIX))]
+    view = {**recipe, 'status': COMMONS_STATUS if status in (COMMONS_STATUS, HOUSEHOLD_STATUS) else 'ground_only',
             'placements': selected}
     return _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                            district=COMMONS_DISTRICT, prefix=COMMONS_PREFIX,
@@ -121,10 +130,85 @@ def resolve_commons(root, town, recipe, catalogue, protections, *, image_loader=
                            ledger_key='settlement_commons', cell_key='ground_cells')
 
 
+def resolve_households(root, town, recipe, catalogue, protections, *, image_loader=None):
+    """Resolve only named cottage parcels, retaining the separate civic owner.
+
+    The shared resolver still owns all artwork, collision and lifecycle checks.
+    Parcel metadata adds a stricter authorization boundary inside the broader
+    commons district; it never grants access to the spaces between these plots.
+    """
+    status = recipe.get('status')
+    if status not in ('framework_only', 'ground_only', *DRESSING_STATUSES):
+        raise ValueError('Unsupported settlement household activation status')
+    placements = _combined_placements(recipe) if status in DRESSING_STATUSES else recipe.get('placements')
+    if not isinstance(placements, list):
+        raise ValueError('Settlement placements must be a list')
+    if status in ('framework_only', 'ground_only') and placements:
+        raise ValueError('Settlement status cannot activate household dressing')
+    selected = [p for p in placements if isinstance(p, dict)
+                and isinstance(p.get('id'), str) and p['id'].startswith(HOUSEHOLD_PREFIX)]
+    view = {**recipe, 'status': HOUSEHOLD_STATUS if status == HOUSEHOLD_STATUS else 'ground_only',
+            'placements': selected}
+    options = dict(image_loader=image_loader, district=COMMONS_DISTRICT, prefix=HOUSEHOLD_PREFIX,
+                   activation_status=HOUSEHOLD_STATUS, config_key='household_dressing',
+                   ledger_key='settlement_households', cell_key='ground_cells', title='Household')
+    if status != HOUSEHOLD_STATUS:
+        report = _resolve_region(root, town, view, catalogue, protections, **options)
+        report['parcels'] = []
+        return report
+    config = recipe.get('household_dressing')
+    required = (CONFIG_KEYS - {'garden_cells'}) | {'ground_cells', 'parcels'}
+    if not isinstance(config, dict) or set(config) != required:
+        raise ValueError('Household dressing requires only the reviewed configuration keys')
+    scope = _native_numbers(config['scope_rect'], 4, 'household scope')
+    _rect(scope, 'household scope')
+    sources = config['parcels']
+    if not isinstance(sources, list) or not 1 <= len(sources) <= len(HOUSEHOLD_PARCELS):
+        raise ValueError('Household dressing needs explicitly named cottage parcels')
+    parcels = {}
+    for source in sources:
+        if not isinstance(source, dict) or set(source) != {'id', 'scope_rect'}:
+            raise ValueError('Household parcels require only id and scope_rect')
+        name = source['id']
+        if not isinstance(name, str) or name not in HOUSEHOLD_PARCELS or name in parcels:
+            raise ValueError('Household parcel IDs must uniquely name reviewed cottage owners')
+        rect = _native_numbers(source['scope_rect'], 4, name+' parcel scope')
+        _rect(rect, name+' parcel scope')
+        if not _contained(rect, scope) or any(_overlap(rect, previous) for previous in parcels.values()):
+            raise ValueError('Household parcels must be disjoint and contained by their reviewed scope')
+        parcels[name] = rect
+    membership = {}
+    stripped = []
+    for placement in selected:
+        parcel = placement.get('parcel')
+        if not isinstance(parcel, str) or parcel not in parcels:
+            raise ValueError('Every household placement must name one reviewed parcel')
+        membership[placement['id']] = parcel
+        stripped.append({key: value for key, value in placement.items() if key != 'parcel'})
+    view = {**view, 'placements': stripped,
+            'household_dressing': {key: value for key, value in config.items() if key != 'parcels'}}
+    report = _resolve_region(root, town, view, catalogue, protections, **options)
+    for placement in report['placements']:
+        parcel = membership[placement['id']]
+        if not _contained([*placement['position'], *placement['logical_size']], parcels[parcel]):
+            raise ValueError(placement['id']+': artwork canvas leaves its named household parcel')
+        placement['parcel'] = parcel
+    for x, y in report['ground_cells']:
+        fringe = [(x-1)*24, (y-1)*24, 72, 72]
+        if not any(_contained(fringe, parcel) for parcel in parcels.values()):
+            raise ValueError('Household ground and its transition rim must fit one reviewed parcel')
+    for record in report['retired_grass_records']:
+        x, y = _native_numbers(record['position'], 2, record['id']+' grass position')
+        if not any(_contained([x-12, y-28, 24, 32], parcel) for parcel in parcels.values()):
+            raise ValueError('Retired grass artwork must fit one reviewed household parcel')
+    report['parcels'] = [{'id': name, 'scope_rect': rect} for name, rect in parcels.items()]
+    return report
+
+
 def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=None,
                     district=DISTRICT, prefix=PREFIX, activation_status=STATUS,
                     config_key='courtyard_dressing', ledger_key='settlement_dressing',
-                    cell_key='garden_cells'):
+                    cell_key='garden_cells', title=None):
     """Return validated native entities, supports, garden cells and provenance.
 
     ``image_loader`` optionally resolves freshly composed existing PNGs from the
@@ -134,7 +218,7 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
     nonblocking.
     """
     root = Path(root).resolve()
-    title = {DISTRICT: 'Courtyard', WORKYARD_DISTRICT: 'Workyard', COMMONS_DISTRICT: 'Commons'}[district]
+    title = title or {DISTRICT: 'Courtyard', WORKYARD_DISTRICT: 'Workyard', COMMONS_DISTRICT: 'Commons'}[district]
     noun = title.lower()
     status = recipe.get('status')
     placements = recipe.get('placements')
@@ -288,6 +372,7 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
         idle = (parent/source['idle']).as_posix()
         if idle != asset['image']:
             raise ValueError(name+': catalogue idle disagrees with native source')
+        is_laundry = asset['id'] == 'exteriors_hd:laundry_line'
         if is_vegetation:
             source_frames = source.get('frames', [])
             if not source_frames or any(not isinstance(frame, dict) for frame in source_frames):
@@ -297,6 +382,16 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
                 raise ValueError(name+': vegetation must retain its source frame cadence')
             frames = [(parent/frame['file']).as_posix() for frame in source_frames]
             duration = next(iter(durations))
+        elif is_laundry:
+            source_frames = source.get('frames')
+            duration = source.get('frame_duration_ms')
+            if (not isinstance(source_frames, list) or len(source_frames) < 2
+                    or any(not isinstance(frame, str) for frame in source_frames)
+                    or type(duration) is not int or duration <= 0
+                    or source.get('animation') != 'cloth'
+                    or source.get('cycle_ms') != len(source_frames)*duration):
+                raise ValueError(name+': laundry must retain its authored cloth frames and cadence')
+            frames = [(parent/frame).as_posix() for frame in source_frames]
         else:
             frames, duration = [idle], 600
         depth = _native_numbers([source.get('depth_baseline_logical')], 1, name+' source depth')[0]
@@ -306,7 +401,7 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
                       frames=frames, frame_duration_ms=duration,
                       phase_offset=int(sha256(name.encode()).hexdigest()[:8], 16) % len(frames),
                       artwork_pixels_per_world_pixel=2, logical_size=logical_size)
-        if is_low:
+        if is_low or is_laundry:
             entity.update(reduced_motion_frame=0, reduced_motion_image=idle)
         occupied_rect = occupied(entity, source=True)
         item = deepcopy(placement)

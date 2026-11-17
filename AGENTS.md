@@ -47,8 +47,10 @@ do not recreate parallel terrain-authoring READMEs.
 Before changing Eldenmere's layout or dressing, also read the
 [settlement framework](docs/TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework).
 Use its source-owned clearance contracts and the existing town composer. The
-street pass, Serene household courtyard, workshop/mill yards and civic well/school
-composition are integrated. Other household plots remain separate work.
+street pass, Serene household courtyard, workshop/mill yards, civic well/school
+composition and five central household plots are integrated. Household props and
+soil remain within their named parcel boundaries; eastern growing and southern
+arrival composition remain separate work.
 Only explicitly declared district prop supports add collision; other district
 placements remain inactive. Preserve existing workstations and quest staging.
 
