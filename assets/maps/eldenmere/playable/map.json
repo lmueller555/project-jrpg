@@ -1210,6 +1210,78 @@
       "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
     },
     {
+      "id": "settlement.workyards.repair_toolbox",
+      "position": [
+        756,
+        360
+      ],
+      "sort_y": 378,
+      "frames": [
+        "assets/terrain/eldenmere/workyard_props/props/toolbox/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        20
+      ]
+    },
+    {
+      "id": "settlement.workyards.repair_crate",
+      "position": [
+        756,
+        396
+      ],
+      "sort_y": 414,
+      "frames": [
+        "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        20
+      ]
+    },
+    {
+      "id": "settlement.workyards.mill_grain",
+      "position": [
+        1080,
+        408
+      ],
+      "sort_y": 430,
+      "frames": [
+        "assets/terrain/eldenmere/workyard_props/props/grain_sack/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        20,
+        24
+      ]
+    },
+    {
+      "id": "settlement.workyards.mill_crate",
+      "position": [
+        1080,
+        440
+      ],
+      "sort_y": 458,
+      "frames": [
+        "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        20
+      ]
+    },
+    {
       "id": "inn",
       "position": [
         192,
@@ -24648,5 +24720,392 @@
       "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
       "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91"
     }
+  },
+  "settlement_workyards": {
+    "district": "workshop_mill",
+    "scope_rect": [
+      552,
+      264,
+      552,
+      288
+    ],
+    "placements": [
+      {
+        "id": "settlement.workyards.repair_toolbox",
+        "asset": "workyard_props:toolbox",
+        "district": "workshop_mill",
+        "position": [
+          756,
+          360
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          4,
+          12,
+          16,
+          6
+        ],
+        "logical_size": [
+          24,
+          20
+        ],
+        "occupied_rect": [
+          759.5,
+          361.0,
+          16.5,
+          17.0
+        ],
+        "depth_baseline_logical": 18,
+        "world_footprint": [
+          760,
+          372,
+          16,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.repair_crate",
+        "asset": "workyard_props:empty_crate",
+        "district": "workshop_mill",
+        "position": [
+          756,
+          396
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          12,
+          20,
+          6
+        ],
+        "logical_size": [
+          24,
+          20
+        ],
+        "occupied_rect": [
+          757.0,
+          397.0,
+          22.0,
+          17.0
+        ],
+        "depth_baseline_logical": 18,
+        "world_footprint": [
+          758,
+          408,
+          20,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.mill_grain",
+        "asset": "workyard_props:grain_sack",
+        "district": "workshop_mill",
+        "position": [
+          1080,
+          408
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          16,
+          16,
+          6
+        ],
+        "logical_size": [
+          20,
+          24
+        ],
+        "occupied_rect": [
+          1081.0,
+          410.0,
+          18.0,
+          20.0
+        ],
+        "depth_baseline_logical": 22,
+        "world_footprint": [
+          1082,
+          424,
+          16,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.mill_crate",
+        "asset": "workyard_props:empty_crate",
+        "district": "workshop_mill",
+        "position": [
+          1080,
+          440
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          12,
+          20,
+          6
+        ],
+        "logical_size": [
+          24,
+          20
+        ],
+        "occupied_rect": [
+          1081.0,
+          441.0,
+          22.0,
+          17.0
+        ],
+        "depth_baseline_logical": 18,
+        "world_footprint": [
+          1082,
+          452,
+          20,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.repair_shavings",
+        "asset": "exteriors_hd:wood_shavings",
+        "district": "workshop_mill",
+        "position": [
+          756,
+          380
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          16,
+          10
+        ],
+        "occupied_rect": [
+          758.5,
+          383.0,
+          11.0,
+          5.0
+        ],
+        "depth_baseline_logical": 8.0
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.workyards.repair_toolbox",
+        "position": [
+          756,
+          360
+        ],
+        "sort_y": 378,
+        "frames": [
+          "assets/terrain/eldenmere/workyard_props/props/toolbox/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          20
+        ]
+      },
+      {
+        "id": "settlement.workyards.repair_crate",
+        "position": [
+          756,
+          396
+        ],
+        "sort_y": 414,
+        "frames": [
+          "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          20
+        ]
+      },
+      {
+        "id": "settlement.workyards.mill_grain",
+        "position": [
+          1080,
+          408
+        ],
+        "sort_y": 430,
+        "frames": [
+          "assets/terrain/eldenmere/workyard_props/props/grain_sack/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          20,
+          24
+        ]
+      },
+      {
+        "id": "settlement.workyards.mill_crate",
+        "position": [
+          1080,
+          440
+        ],
+        "sort_y": 458,
+        "frames": [
+          "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          20
+        ]
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.workyards.repair_toolbox",
+        "rect": [
+          760,
+          372,
+          16,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.repair_crate",
+        "rect": [
+          758,
+          408,
+          20,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.mill_grain",
+        "rect": [
+          1082,
+          424,
+          16,
+          6
+        ]
+      },
+      {
+        "id": "settlement.workyards.mill_crate",
+        "rect": [
+          1082,
+          452,
+          20,
+          6
+        ]
+      }
+    ],
+    "retired_grass_ids": [],
+    "retired_grass_records": [],
+    "ground_cells": [
+      [
+        41,
+        16
+      ],
+      [
+        42,
+        16
+      ],
+      [
+        43,
+        16
+      ],
+      [
+        44,
+        16
+      ],
+      [
+        41,
+        17
+      ],
+      [
+        42,
+        17
+      ],
+      [
+        43,
+        17
+      ],
+      [
+        44,
+        17
+      ],
+      [
+        41,
+        18
+      ],
+      [
+        42,
+        18
+      ],
+      [
+        43,
+        18
+      ],
+      [
+        44,
+        18
+      ],
+      [
+        31,
+        15
+      ],
+      [
+        32,
+        15
+      ],
+      [
+        31,
+        16
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        31,
+        17
+      ],
+      [
+        32,
+        17
+      ]
+    ],
+    "dependencies_sha256": {
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/props/wood_shavings/idle.png": "5ff90a68a39d139e3d2ea314e7cab001c1f7cac10e33e8f8bd2042dc29997c12",
+      "assets/terrain/eldenmere/workyard_props/manifest.json": "18175b0103af50175d7ca62a5c9a0f5b6211a4da912b98eb5ca03b5f741ba81a",
+      "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png": "de8c6c3e4cb1384ea934157c112004fa027728e4078ad202fa7eae51dd446b30",
+      "assets/terrain/eldenmere/workyard_props/props/grain_sack/idle.png": "962c35443831dc5b99e67ce7e28a4c424afe9152493fa7e5e17bce3bc7adb1b9",
+      "assets/terrain/eldenmere/workyard_props/props/toolbox/idle.png": "878e940f1bed3a1424a38825fb359a610266f9f1f18d3df848af848932eded03"
+    },
+    "ground_entities": [
+      {
+        "id": "settlement.workyards.repair_shavings",
+        "position": [
+          756,
+          380
+        ],
+        "sort_y": 388.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/wood_shavings/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          16,
+          10
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/exteriors_hd/props/wood_shavings/idle.png"
+      }
+    ]
   }
 }

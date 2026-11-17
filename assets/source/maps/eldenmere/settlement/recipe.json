@@ -1,12 +1,12 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "courtyard_dressing",
+  "status": "workyard_dressing",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "PR 3 retains the reviewed street pass and activates Serene household courtyard dressing only; explicit new solid supports preserve all protected circulation and original blockers.",
+  "activation": "PR 4 retains reviewed streets and Serene courtyard, and activates workshop/mill working-yard surfaces and decorative stock only. Explicit supports preserve all protected access and existing owners.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -47,13 +47,14 @@
         552,
         288
       ],
-      "later_pr": 4,
       "preserve": [
         "functional fittings and work ownership",
         "bridge and service-landing interfaces",
         "MQ02 inspections",
         "Lantern gathering stations"
-      ]
+      ],
+      "delivery_pr": 4,
+      "status": "integrated"
     },
     {
       "id": "commons_households",
@@ -1401,6 +1402,85 @@
       ],
       "collision": "none",
       "occlusion": "ground"
+    },
+    {
+      "id": "settlement.workyards.repair_toolbox",
+      "asset": "workyard_props:toolbox",
+      "district": "workshop_mill",
+      "position": [
+        756,
+        360
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        4,
+        12,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "settlement.workyards.repair_crate",
+      "asset": "workyard_props:empty_crate",
+      "district": "workshop_mill",
+      "position": [
+        756,
+        396
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        12,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "settlement.workyards.mill_grain",
+      "asset": "workyard_props:grain_sack",
+      "district": "workshop_mill",
+      "position": [
+        1080,
+        408
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        16,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "settlement.workyards.mill_crate",
+      "asset": "workyard_props:empty_crate",
+      "district": "workshop_mill",
+      "position": [
+        1080,
+        440
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        12,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "settlement.workyards.repair_shavings",
+      "asset": "exteriors_hd:wood_shavings",
+      "district": "workshop_mill",
+      "position": [
+        756,
+        380
+      ],
+      "collision": "none",
+      "occlusion": "ground"
     }
   ],
   "ground_treatments": [
@@ -2259,6 +2339,90 @@
       [
         23,
         12
+      ]
+    ]
+  },
+  "workyard_dressing": {
+    "district": "workshop_mill",
+    "scope_rect": [
+      552,
+      264,
+      552,
+      288
+    ],
+    "retire_grass_ids": [],
+    "ground_cells": [
+      [
+        41,
+        16
+      ],
+      [
+        42,
+        16
+      ],
+      [
+        43,
+        16
+      ],
+      [
+        44,
+        16
+      ],
+      [
+        41,
+        17
+      ],
+      [
+        42,
+        17
+      ],
+      [
+        43,
+        17
+      ],
+      [
+        44,
+        17
+      ],
+      [
+        41,
+        18
+      ],
+      [
+        42,
+        18
+      ],
+      [
+        43,
+        18
+      ],
+      [
+        44,
+        18
+      ],
+      [
+        31,
+        15
+      ],
+      [
+        32,
+        15
+      ],
+      [
+        31,
+        16
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        31,
+        17
+      ],
+      [
+        32,
+        17
       ]
     ]
   }

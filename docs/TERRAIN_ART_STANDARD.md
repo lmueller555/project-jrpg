@@ -416,9 +416,11 @@ candidates. The reproducible report is
 `assets/maps/eldenmere/settlement/manifest.json`.
 
 PR 1 delivered metadata only; PR 2 integrated the ground-only street pass.
-**PR 3 activates Serene's household courtyard** through `courtyard_dressing`.
+PR 3 activated Serene's household courtyard through `courtyard_dressing`.
+**PR 4 retains that courtyard and activates the workshop/mill yards** through
+`workyard_dressing`, with separately owned source configuration and ledgers.
 `framework_only` still rejects ground/prop activation and `ground_only` rejects
-placements. Other districts remain inactive. The current courtyard uses explicit
+placements. Other districts remain inactive. Both integrated districts use explicit
 new solid supports without clearing any existing blocker or changing navigation,
 interactions, scenes or save schemas. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
 the report from its working town data. The standalone framework CLI writes only
@@ -431,19 +433,39 @@ legible; secondary lanes retain the two-bridge loop and business connection.
 Small stone surfaces mark selected junctions, bridge approaches, stair feet and
 all 13 doorsteps. Two narrow desire paths acknowledge existing grass travel.
 They do not narrow existing usable roads or declare new walkable ground.
-Workyards, civic furniture, other household plots, Venn's growing area and
+Civic furniture, other household plots, Venn's growing area and
 southern planting remain later composition work.
 
-`tools/eldenmere_settlement_dressing.py` owns the courtyard's build-time placement
-resolution. The source recipe confines it to `serene_terrace` and names each
+`tools/eldenmere_settlement_dressing.py` shares one strict build-time resolver
+between the courtyard and workyards. The courtyard configuration remains confined
+to `serene_terrace` and names each
 `settlement.courtyard.*` instance. It preserves the existing home, shade tree,
 bench, provision basket, six watered beds and window troughs. An eastern herb
 pocket and sparse western domestic/planting edge reuse native assets without
 adding gardening, harvesting or water-source interactions.
 
+The workyard configuration confines `settlement.workyards.*` instances to
+`workshop_mill`. The existing workbench, timber rack, spare fittings, stool/can,
+mill wheel and service landing retain their owners. A small repair bay and flat
+delivery apron establish working uses without filling the MQ02/Lantern gathering
+spaces. Source protection and occupied-art checks own placement decisions; the
+historical `mill_yard` rectangle still overlaps Halden's roof and is not free space.
+
+The retained-source workyard prop bank is
+`assets/terrain/eldenmere/workyard_props/manifest.json`, exported by
+`tools/export_eldenmere_workyard_props.py` from the recipe in
+`assets/source/maps/eldenmere/workyard_props/`. It registers genuine burlap,
+empty-crate and toolbox drawings from the already retained native town master.
+It never enlarges old map pixels, relabels fruit as grain or aliases a live quest
+object. Metadata records source hashes, native registration, hard alpha, depth,
+semantic use and suggested supports; each placement still declares and validates
+its own actual support. Pack availability and user art approval remain separate
+from an explicit town binding. The town composer checks the bank's reproducible
+outputs before composing scenes.
+
 Ground-mounted containers and fences require explicit integer logical supports
 and conservative tall-occlusion review. Only genuinely low flowers/groundcover
-may remain nonblocking. Validate every proposed occupied silhouette across its
+and explicitly supported flat floor wear may remain nonblocking. Validate every proposed occupied silhouette across its
 authored frames against existing artwork and other proposals, then validate
 supports and actor sightlines against the source-owned reservations. An asset's
 availability is not permission to overlap a roof, functional prop or routine.
@@ -451,9 +473,16 @@ Source metadata owns native dimensions, depth, frames and cadence; do not add
 per-instance size or animation overrides. The composer validates freshly built
 artwork through its export buffer rather than reading a previous build's PNG.
 
-The compiled `settlement_dressing` ledger records entities, supports, retired
-grass records, garden cells and source hashes. Rebuilds reconcile only previously
-declared courtyard owners and explicit meadow retirements. Unknown existing
+The compiled `settlement_dressing` and `settlement_workyards` ledgers record their
+own entities, supports, retired grass and source hashes. The courtyard keeps its
+`garden_cells`; workyard surface definitions use `ground_cells`. The latter also
+records static `ground_entities`: wood shavings bake into native ground after
+street materials and before masonry, water and actors. They are not y-sorted
+sprites that could draw over someone's feet.
+
+Combined proposals are checked across district boundaries before either is
+published. Rebuilds reconcile only previously declared district owners and
+explicit meadow retirements. Unknown existing
 instances in that namespace fail validation. Deactivation with remaining owned
 entities or retired grass also fails until cleanup is deliberately implemented;
 silently removing collision while retaining visible props is invalid.
@@ -462,7 +491,7 @@ The collision check reconstructs the original physical mask plus exactly the
 ledger's declared supports. It never clears old pixels or accepts unrelated
 changes. Verify additive support deltas independently, keep navigation byte
 identical, and test older saves at newly occupied ground through real Continue.
-Garden soil reuses the native grass/dirt blob bank before masonry/water. Bound
+Garden and workyard earth reuse the native grass/dirt blob bank before masonry/water. Bound
 its changes to the declared cells and their one-tile transition rim. Retire only
 the meadow instances that conflict with this planted pocket; preserve other
 grass IDs, roots and contact metadata. The street network and regional scene
@@ -521,8 +550,8 @@ town bindings and available reuse candidates. Every listed native canvas is
 checked against declared logical size and 2× density. Candidate availability
 does not approve a new placement, define collision or grant interaction cues.
 The well and existing workshop fixtures retain their functional owners; do not
-replace them with decorative clones. Crop-bed and mill-storage gaps remain
-explicit review items, not silently created art or new gameplay.
+replace them with decorative clones. The crop-bed gap remains an explicit review
+item; the retained workyard bank now supplies separately owned storage art.
 
 `validate_placements` can review future namespaced `settlement.*` proposals
 without applying them. Positions are logical **artwork top-lefts**; a solid
@@ -548,6 +577,8 @@ historical framework evidence and its scope. The [street review](reviews/eldenme
 records PR 2's authorized surface differences and unchanged physical interfaces.
 The [courtyard review](reviews/eldenmere_courtyard/README.md) records PR 3's
 explicit support delta, garden composition and retained routine/story access.
+The [workyard review](reviews/eldenmere_workyards/README.md) records PR 4's repair
+and delivery spaces, separate ownership and unchanged bridge/quest interfaces.
 Preservation captures do not certify the visual
 quality of unresolved building, bridge or landmark issues; those asset fixes
 remain separately scoped. The regional guide remains the creative authority.

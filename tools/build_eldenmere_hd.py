@@ -70,14 +70,21 @@ def business_anchor(spec,design):
 
 def courtyard_collision(source,dressing):
     """Add only the declared courtyard supports; retain every source blocker."""
+    return _dressing_collision(source,dressing,'settlement.courtyard.')
+
+def workyard_collision(source,dressing):
+    """Add only declared workyard supports, independently of older districts."""
+    return _dressing_collision(source,dressing,'settlement.workyards.')
+
+def _dressing_collision(source,dressing,namespace):
     out=source.copy()
     if not dressing:return out
     placements={p['id']:p for p in dressing.get('placements',[])}
     painter=ImageDraw.Draw(out);seen=set()
     for support in dressing.get('solid_footprints',[]):
         name=support['id'];rect=support['rect'];placement=placements.get(name)
-        if not isinstance(name,str) or not name.startswith('settlement.courtyard.') or name in seen or placement is None:
-            raise ValueError('Unowned courtyard collision support')
+        if not isinstance(name,str) or not name.startswith(namespace) or name in seen or placement is None:
+            raise ValueError('Unowned district collision support')
         seen.add(name)
         if len(rect)!=4 or any(type(v) is not int for v in rect):
             raise ValueError('Courtyard collision requires integer logical rectangles')
@@ -91,6 +98,10 @@ def courtyard_collision(source,dressing):
 
 def products():
     rec=json.loads((SRC/'recipe.json').read_text());old=json.loads((SRC/'baseline_maps.json').read_text());ex=Export();materials=Materials()
+    from tools.export_eldenmere_workyard_props import products as workyard_prop_products
+    for name,raw in workyard_prop_products().items():
+        if not (ROOT/name).is_file() or (ROOT/name).read_bytes()!=raw:
+            raise ValueError('Rebuild retained-source workyard props before composing the town: '+name)
     for r in rec['sources']:
         if sha256((SRC/r['file']).read_bytes()).hexdigest()!=r['sha256']:raise ValueError('Changed source '+r['file'])
     for r in rec.get('dependencies',[]):
@@ -116,7 +127,9 @@ def products():
     current_town=read('assets/maps/eldenmere/playable/map.json')
     for field in ('collision','navigation_allowed'):
         expected=Image.open(SRC/(field+'.png')).convert('L')
-        if field=='collision':expected=courtyard_collision(expected,current_town.get('settlement_dressing'))
+        if field=='collision':
+            expected=courtyard_collision(expected,current_town.get('settlement_dressing'))
+            expected=workyard_collision(expected,current_town.get('settlement_workyards'))
         actual=Image.open(ROOT/current_town[field]).convert('L')
         if actual.crop((0,0,*expected.size)).tobytes()!=expected.tobytes():
             raise ValueError('Review changed '+field+' registration before rebuilding the town')
@@ -261,12 +274,15 @@ def products():
                    'entry_half_width':business[spec['design']]['door_rect_logical'][2]/2}
                   for spec in rec['businesses']]}
     from tools.eldenmere_settlement import framework
-    dressing=framework(ROOT,street_town,rec['settlement_recipe'],image_loader=ex.load)['dressing']
-    if dressing is not None:
-        collision=courtyard_collision(collision,dressing);cd=ImageDraw.Draw(collision)
-        dirt.update(map(tuple,dressing['garden_cells']))
-        previous=town.get('settlement_dressing') or {}
-        owned={e['id'] for e in previous.get('entities',[])}
+    composition=framework(ROOT,street_town,rec['settlement_recipe'],image_loader=ex.load)
+    for key,dressing,cell_key,mask in (
+            ('settlement_dressing',composition['dressing'],'garden_cells',courtyard_collision),
+            ('settlement_workyards',composition['workyards'],'ground_cells',workyard_collision)):
+        if dressing is None:continue
+        collision=mask(collision,dressing);cd=ImageDraw.Draw(collision)
+        dirt.update(map(tuple,dressing[cell_key]))
+        previous=town.get(key) or {}
+        owned={e['id'] for e in [*previous.get('entities',[]),*previous.get('ground_entities',[])]}
         town['entities']=[e for e in town['entities'] if e['id'] not in owned]+deepcopy(dressing['entities'])
         # Restore only this district's previously retired records, then apply
         # the current garden retirement list. Other districts keep their owners.
@@ -276,8 +292,10 @@ def products():
         source_order={g['id']:i for i,g in enumerate(old['town']['grass']['instances'])}
         town['grass']['instances']=[deepcopy(g) for g in sorted(grass.values(),key=lambda g:source_order.get(g['id'],len(source_order)))
                                     if g['id'] not in retired]
-        town['settlement_dressing']=dressing
+        town[key]=dressing
     base,street_report=paint_streets(materials.ground(size,dirt),ROOT,street_town,street_recipe,materials,collision)
+    for entity in (composition['workyards'] or {}).get('ground_entities',[]):
+        base.alpha_composite(ex.load(entity['frames'][0]),pixels(entity['position']))
     street_report['coverage_image']=ex.png('streets/coverage',street_report.pop('coverage_mask'))
     town['settlement_streets']={'recipe':rec['settlement_recipe'],**street_report}
     under=base.copy()

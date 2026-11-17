@@ -21,12 +21,19 @@ PACKS = (
     ('vegetation_hd', 'assets/terrain/vegetation_hd/plants.json', 'vegetation'),
     ('exteriors_hd', 'assets/terrain/eldenmere/exteriors_hd/manifest.json', 'ordinary_props'),
     ('business_exteriors_hd', 'assets/terrain/eldenmere/business_exteriors_hd/manifest.json', 'ordinary_props'),
+    ('workyard_props', 'assets/terrain/eldenmere/workyard_props/manifest.json', 'ordinary_props'),
 )
 
 
 def _uses(pack_id, record):
     name = record['id']
     family = record.get('family', '')
+    if pack_id == 'workyard_props':
+        return {
+            'grain_sack': ('dry grain/flour deliveries at a reviewed mill storage edge; no pickup ownership',),
+            'empty_crate': ('ordinary workshop/mill storage with explicit physical supports; no chest or loot cue',),
+            'toolbox': ('stationary repair storage distinct from functional fittings and carried quest tools',),
+        }[name]
     if pack_id == 'vegetation_hd':
         if family in ('broadleaf', 'conifer', 'woodland'):
             return ('shade and woodland margins outside required sightlines',)
@@ -260,9 +267,9 @@ class _Catalogue:
                  'need': 'Ground beds and crop clusters at town scale; scenery grasses and herb pots do not establish a productive plot.',
                  'reuse_first': ['grass_dirt_hd:dirt_blob47', 'exteriors_hd:herb_planter'],
                  'gameplay': 'Decorative land use; no harvest, growth simulation or reward is implied.'},
-                {'id': 'mill_delivery_storage', 'status': 'scale_and_ownership_review_required',
-                 'need': 'Check suitable grain sacks/storage pieces for the mill apron; exclude functional fixtures and enlarged regional miniatures.',
-                 'reuse_first': ['exteriors_hd:orchard_basket', 'exteriors_hd:firewood'],
+                {'id': 'mill_delivery_storage', 'status': 'native_storage_bank_available; placement_review_required',
+                 'need': 'Use the native grain sack and empty crate bank only after reviewing apron scale, supports and ownership; functional fixtures and enlarged regional miniatures remain excluded.',
+                 'reuse_first': ['workyard_props:grain_sack', 'workyard_props:empty_crate'],
                  'gameplay': 'No new pickup, service or work controller is implied.'},
             ],
             'excluded_functional_instances': sorted(excluded, key=lambda value: value['id']),
