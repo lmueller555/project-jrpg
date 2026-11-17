@@ -38,6 +38,7 @@ class LanternRest:
             self.points.setdefault('invitation'+suffix, controller.village_points['reflection'+suffix])
         self.lines = json.loads((ART/'rest_scene.json').read_text())
         self.art = json.loads((ART/'rest_art.json').read_text())
+        self.workshop_empty = self.town.room_art_image(self.art['workshop_collected'])
         self.home = self.game._scene_by_id('liam_house')
         self.sanctuary = self.game._scene_by_id('sanctuary_hall')
         self.father = next(a for a in self.home.npcs if a.data['id'] == 'liam_father')
