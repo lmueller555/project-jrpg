@@ -385,6 +385,80 @@ work. Native gameplay captures, route evidence and renderer timings are in
 `python tools/capture_eldenmere_hd.py docs/reviews/eldenmere_town_hd`; the tool
 uses temporary saves/settings only.
 
+### Eldenmere settlement framework
+
+The settlement framework prepares later street, parcel and public-space work.
+Its source is `assets/source/maps/eldenmere/settlement/recipe.json`; the maintained
+town recipe selects it through `settlement_recipe`.
+`tools/eldenmere_settlement.py` resolves its build-time contracts and
+`tools/eldenmere_settlement_inventory.py` inventories semantic native asset
+candidates. The reproducible report is
+`assets/maps/eldenmere/settlement/manifest.json`.
+
+This first framework delivery has **zero active placements and zero ground
+treatments**. It adds no artwork, runtime blocking mask, navigation change,
+interaction, scene or save state. The helper rejects activation in this recipe;
+later composition PRs must explicitly implement and review the corresponding
+composer integration. `tools/build_eldenmere_hd.py` remains the sole town map
+writer and produces the report from its working town data. The standalone
+framework CLI writes only the report. Generated town map/manifest hashes are not
+producer inputs, avoiding a recursive dependency on the town's own outputs.
+
+Protection records come from current map interfaces and explicit selectors into
+their authoritative route, household, well, work and story sources. They preserve
+source evidence and roles for movement or sightlines. Selectors may read geometry
+in tiles, but their padding is always a **logical half-extent**; it is never
+multiplied by tile size. Routes protect the swept segments and actor clearance,
+not every point inside their enclosing rectangle. These are reservations against
+new dressing, not assertions that all existing protected pixels are walkable.
+An existing well or work surface can already occupy its own reserved area.
+
+Code-owned geometry uses named `reviewed_regions` and a source-file hash. When
+that owner changes, inspect its named scene geometry and update the reviewed
+region deliberately before refreshing provenance. Do not silently repin a hash
+or omit an unresolved selector. Interior, upstream and cinematic coordinates
+are excluded unless the selected geometry explicitly belongs to the town; a
+key named `courtyard` does not establish its scene. The report records these
+excluded contexts for review.
+
+The five district envelopes describe overlapping composition roles, not new
+collision or guaranteed empty placement space. In particular, the historical
+mill-yard rectangle is not an approved free apron: it overlaps later building
+art. Future placements must be checked against current occupied bounds as well
+as protected actors, entrances and routes.
+
+The catalogue separates pack delivery/visual-approval metadata, exact existing
+town bindings and available reuse candidates. Every listed native canvas is
+checked against declared logical size and 2× density. Candidate availability
+does not approve a new placement, define collision or grant interaction cues.
+The well and existing workshop fixtures retain their functional owners; do not
+replace them with decorative clones. Crop-bed and mill-storage gaps remain
+explicit review items, not silently created art or new gameplay.
+
+`validate_placements` can review future namespaced `settlement.*` proposals
+without applying them. Positions are logical **artwork top-lefts**; a solid
+proposal requires a separate local logical footprint. Supporting rectangles and
+alpha do not automatically become collision. Tall artwork is also checked against
+protected standing-character and interaction sightlines. A nonblocking tree can
+still be an invalid placement when it hides a required scene. Ground and low
+dressing roles require deliberate classification rather than bypassing visibility
+review by default.
+
+```sh
+python tools/build_eldenmere_hd.py
+python tools/build_eldenmere_hd.py --check
+python tools/build_eldenmere_settlement_framework.py
+python tools/build_eldenmere_settlement_framework.py --check
+python tools/capture_eldenmere_settlement_framework.py /tmp/eldenmere-framework-review
+```
+
+The capture tool supports `--baseline /path/to/earlier/observations.json` to compare
+active map/art inputs and native views with an earlier run. See the
+[framework review](reviews/eldenmere_settlement_framework/README.md) for the
+current evidence and its scope. Preservation captures do not certify the visual
+quality of unresolved building, bridge or landmark issues; those asset fixes
+remain separately scoped. The regional guide remains the creative authority.
+
 ### Integrated Sanctuary courtyard and approach
 
 The earlier courtyard source remains under

@@ -216,6 +216,29 @@ restoration at town scale before restoring the regional leader, preventing a
 town actor from being placed at regional coordinates. Exploring does not accept
 or complete a quest, replay a reward, or add a regional edge to NPC path graphs.
 
+## Eldenmere settlement layout contracts
+
+The town's build-time settlement framework records protected entrances, streets,
+crossings, operating areas and scene staging before later layout work.
+`assets/source/maps/eldenmere/settlement/recipe.json` selects authoritative source
+geometry; `assets/maps/eldenmere/settlement/manifest.json` reports resolved logical
+reservations and the semantic native-asset catalogue. These records add no
+runtime blockers, placements, ground treatments or new travel links. Existing
+regional and town coordinate spaces retain their own owners.
+
+`tools/build_eldenmere_hd.py` remains the sole town map writer. Its framework helper
+works from the current town interfaces, so the expanded southern exit, business
+approaches and unrelated building/bridge changes are not reconstructed from an
+older blockout. Interior and cinematic coordinates are explicitly excluded from
+town protection unless their selected geometry actually belongs outdoors.
+Source-code-owned regions require review when the recorded owner changes.
+
+Use the [central terrain reference](TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework)
+for selectors, logical padding, future footprint/sightline validation and
+build/check commands. The [framework review](reviews/eldenmere_settlement_framework/README.md)
+records preservation evidence. Street/district dressing and separately scoped
+building/bridge art fixes remain subsequent work.
+
 ## Sources and reproducibility
 
 - Layout source: `assets/source/maps/overworld/elden_vale/recipe.json`.

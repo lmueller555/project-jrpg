@@ -1,0 +1,1285 @@
+{
+  "version": 1,
+  "id": "eldenmere.settlement.framework",
+  "status": "framework_only",
+  "namespace": "settlement",
+  "scene": "eldenmere.playable",
+  "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
+  "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
+  "activation": "No placements, ground treatments, artwork, collision, navigation, actor ownership or gameplay changes in PR 1.",
+  "protected_town_entities": [
+    "well",
+    "sanctuary.bench",
+    "sanctuary.provision_basket",
+    "workshop.workbench",
+    "workshop.timber_rack",
+    "workshop.spare_cog_fittings",
+    "workshop.stool_watering_can",
+    "school.bench"
+  ],
+  "districts": [
+    {
+      "id": "serene_terrace",
+      "name": "Serene's terrace and courtyard",
+      "role": "Quiet household courtyard and community care",
+      "rect": [
+        120,
+        120,
+        600,
+        336
+      ],
+      "later_pr": 3,
+      "preserve": [
+        "household identity",
+        "door/stair access",
+        "gardener route",
+        "visitors and story staging"
+      ]
+    },
+    {
+      "id": "workshop_mill",
+      "name": "Workshop and mill",
+      "role": "Maintenance, water-powered work and deliveries",
+      "rect": [
+        552,
+        264,
+        552,
+        288
+      ],
+      "later_pr": 4,
+      "preserve": [
+        "functional fittings and work ownership",
+        "bridge and service-landing interfaces",
+        "MQ02 inspections",
+        "Lantern gathering stations"
+      ]
+    },
+    {
+      "id": "commons_households",
+      "name": "Commons, school and central housing",
+      "role": "Shared civic center and household frontage",
+      "rect": [
+        144,
+        480,
+        672,
+        696
+      ],
+      "later_prs": [
+        5,
+        6
+      ],
+      "preserve": [
+        "well operating and gathering areas",
+        "school and household entrances",
+        "children and pet routines",
+        "two-bridge circulation loop"
+      ]
+    },
+    {
+      "id": "eastern_growing",
+      "name": "Venn's eastern terrace",
+      "role": "Existing farming and irrigation",
+      "rect": [
+        1104,
+        528,
+        432,
+        600
+      ],
+      "later_pr": 7,
+      "preserve": [
+        "sluice access rather than a new town gate",
+        "cottage/step routes",
+        "working irrigation ownership"
+      ]
+    },
+    {
+      "id": "southern_arrival",
+      "name": "Southern arrival and business frontage",
+      "role": "Visitor services connected to the older village",
+      "rect": [
+        72,
+        1104,
+        744,
+        528
+      ],
+      "later_pr": 8,
+      "preserve": [
+        "both business approaches",
+        "continuous southbound road",
+        "data-driven exit/return",
+        "brook boundary"
+      ]
+    }
+  ],
+  "protected_selectors": [
+    {
+      "id": "public_roads_2_tiles",
+      "source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+      "path": [
+        "roads",
+        "*"
+      ],
+      "shape": "route",
+      "units": "tiles",
+      "padding": [
+        36,
+        30
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "points"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "sanctuary_lane",
+          "upper_lane",
+          "eastern_lane",
+          "lower_lane",
+          "mill_access",
+          "mill_yard_access",
+          "halden_access",
+          "mira_access",
+          "elira_access",
+          "venn_access",
+          "venn_door",
+          "woodland_route",
+          "home_a_access",
+          "home_b_access",
+          "home_c_access"
+        ]
+      },
+      "note": "Protect the authored road half-width plus the complete player footprint; padding is logical even when geometry is in tiles."
+    },
+    {
+      "id": "public_roads_3_tiles",
+      "source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+      "path": [
+        "roads",
+        "*"
+      ],
+      "shape": "route",
+      "units": "tiles",
+      "padding": [
+        48,
+        42
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "points"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "western_lane",
+          "southern_road",
+          "commons_access"
+        ]
+      },
+      "note": "Protect the authored road half-width plus the complete player footprint; padding is logical even when geometry is in tiles."
+    },
+    {
+      "id": "southern_business_roads",
+      "source": "assets/source/maps/eldenmere/town_hd/recipe.json",
+      "path": [
+        "road_centerlines",
+        "*"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        36,
+        30
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Includes the post-expansion southbound road and complete shared business lane; generated exit contacts are protected independently."
+    },
+    {
+      "id": "crossings",
+      "source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+      "path": [
+        "crossings",
+        "*"
+      ],
+      "shape": "rect",
+      "units": "tiles",
+      "padding": [
+        12,
+        6
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "rect"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "upper_bridge",
+          "main_bridge",
+          "mill_landing"
+        ]
+      }
+    },
+    {
+      "id": "terrace_stairs",
+      "source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+      "path": [
+        "stairs",
+        "*"
+      ],
+      "shape": "rect",
+      "units": "tiles",
+      "padding": [
+        12,
+        6
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "rect"
+      ]
+    },
+    {
+      "id": "well_approaches",
+      "source": "assets/maps/eldenmere/well_square/layout.json",
+      "path": [
+        "approaches",
+        "*"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "well_gathering",
+      "source": "assets/maps/eldenmere/well_square/layout.json",
+      "path": [
+        "gathering_rect"
+      ],
+      "shape": "rect",
+      "units": "logical",
+      "padding": [
+        0,
+        0
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "An occupied gathering area, not spare furniture placement space."
+    },
+    {
+      "id": "gardener_rest_position",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "rest_position"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        18,
+        12
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "gardener_source_position",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "source_position"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        18,
+        12
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "gardener_bed_stations",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "beds",
+        "*"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        18,
+        12
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "position"
+      ]
+    },
+    {
+      "id": "gardener_trough_via",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "beds",
+        "*"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "via"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "west_window_trough"
+        ]
+      }
+    },
+    {
+      "id": "gardener_outbound_waypoints",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "outbound_waypoints"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "gardener_return_waypoints",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "return_waypoints"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "gardener_garden_crossing",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "garden_crossing"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "gardener_rest_waypoints",
+      "source": "assets/maps/eldenmere/routines/gardener.json",
+      "path": [
+        "rest_waypoints"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "tomas_town_arrival",
+      "source": "assets/maps/eldenmere/routines/tomas.json",
+      "path": [
+        "steps",
+        "*"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "position"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "enter_courtyard"
+        ]
+      },
+      "note": "Only the transfer into Eldenmere is selected; similarly named courtyard/dining coordinates elsewhere are interior."
+    },
+    {
+      "id": "tomas_town_routes",
+      "source": "assets/maps/eldenmere/routines/tomas.json",
+      "path": [
+        "steps",
+        "*"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        12,
+        8
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "geometry_path": [
+        "waypoints"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "walk_to_courtyard_pause",
+          "return_to_sanctuary"
+        ]
+      }
+    },
+    {
+      "id": "workshop_owned_fittings",
+      "source": "assets/source/terrain/eldenmere/workshop/recipe.json",
+      "path": [
+        "props",
+        "*"
+      ],
+      "filter": {
+        "field": "id",
+        "values": [
+          "workbench",
+          "timber_rack",
+          "spare_cog_fittings",
+          "stool_watering_can"
+        ]
+      },
+      "geometry_path": [
+        "position"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        40,
+        34
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Conservative complete-canvas reservation around authoritative absolute prop origins (largest current canvas36x28); covers the timber rack, original workbench and stool/can outside the doorway corridor. The active bench worker and its separately controlled fitting are already inside door.mira. Mounted source-local props and crop coordinates are excluded."
+    },
+    {
+      "id": "lantern_school_approach",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "school_approach"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_school_workshop_route",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "workshop_route"
+      ],
+      "shape": "route",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Extra room for the existing child/companion procession, without fabricating a route across water."
+    },
+    {
+      "id": "lantern_workshop",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "workshop"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_workshop_mira",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "workshop_mira"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_workshop_liam",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "workshop_liam"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_workshop_tomas",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "workshop_tomas"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_assemble_player",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "assemble_player"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_lift_player",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "lift_player"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable"
+    },
+    {
+      "id": "lantern_craft_footprint",
+      "source": "assets/story/lantern/layout.json",
+      "path": [
+        "craft_footprint"
+      ],
+      "shape": "rect",
+      "units": "logical",
+      "padding": [
+        0,
+        0
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Owned work surface; settlement dressing may not replace it with a decorative copy."
+    },
+    {
+      "id": "lantern_village_mill",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "mill"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_mill_liam",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "mill_liam"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_mill_tomas",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "mill_tomas"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_mill_halden",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "mill_halden"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_reflection",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "reflection"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_reflection_liam",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "reflection_liam"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_reflection_tomas",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "reflection_tomas"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_venn_approach",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "venn_approach"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_village_elira_approach",
+      "source": "assets/story/lantern/village_layout.json",
+      "path": [
+        "elira_approach"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Explicitly selected town station; raw venn/elira character stations in this file belong to their interiors."
+    },
+    {
+      "id": "lantern_rest_collection",
+      "source": "assets/story/lantern/rest_layout.json",
+      "path": [
+        "collection"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Workshop collection is outdoors; home/sanctuary keys in this file are interior."
+    },
+    {
+      "id": "lantern_rest_collection_liam",
+      "source": "assets/story/lantern/rest_layout.json",
+      "path": [
+        "collection_liam"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Workshop collection is outdoors; home/sanctuary keys in this file are interior."
+    },
+    {
+      "id": "lantern_rest_pickup_liam",
+      "source": "assets/story/lantern/rest_layout.json",
+      "path": [
+        "pickup_liam"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Workshop collection is outdoors; home/sanctuary keys in this file are interior."
+    },
+    {
+      "id": "lantern_rest_collection_tomas",
+      "source": "assets/story/lantern/rest_layout.json",
+      "path": [
+        "collection_tomas"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Workshop collection is outdoors; home/sanctuary keys in this file are interior."
+    },
+    {
+      "id": "lantern_rest_collection_mira",
+      "source": "assets/story/lantern/rest_layout.json",
+      "path": [
+        "collection_mira"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Workshop collection is outdoors; home/sanctuary keys in this file are interior."
+    },
+    {
+      "id": "regent_arrival",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "arrival"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "regent_iselin_arrival",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "iselin_arrival"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "regent_clerk_arrival",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "clerk_arrival"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "regent_driver_arrival",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "driver_arrival"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "regent_lucan_arrival",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "lucan_arrival"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "regent_outside_courtyard",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "outside_courtyard"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "regent_survivor_start",
+      "source": "assets/story/regent/layout.json",
+      "path": [
+        "survivor_start"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        30,
+        24
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town station selected explicitly; dining_stations/courtyard meal coordinates must not reserve unrelated town ground."
+    },
+    {
+      "id": "mq02_mill_mechanism",
+      "source": "assets/story/mill/layout.json",
+      "path": [
+        "mill_mechanism"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town-specific inspection/return key; upstream scene_id applies to the other action stations, which are deliberately excluded."
+    },
+    {
+      "id": "mq02_mill_race",
+      "source": "assets/story/mill/layout.json",
+      "path": [
+        "mill_race"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town-specific inspection/return key; upstream scene_id applies to the other action stations, which are deliberately excluded."
+    },
+    {
+      "id": "mq02_mill_return",
+      "source": "assets/story/mill/layout.json",
+      "path": [
+        "mill_return"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town-specific inspection/return key; upstream scene_id applies to the other action stations, which are deliberately excluded."
+    },
+    {
+      "id": "mq02_halden_resolution",
+      "source": "assets/story/mill/layout.json",
+      "path": [
+        "halden_resolution"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town-specific inspection/return key; upstream scene_id applies to the other action stations, which are deliberately excluded."
+    },
+    {
+      "id": "mq02_town_trail",
+      "source": "assets/story/mill/layout.json",
+      "path": [
+        "town_trail"
+      ],
+      "shape": "point",
+      "units": "logical",
+      "padding": [
+        24,
+        18
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Town-specific inspection/return key; upstream scene_id applies to the other action stations, which are deliberately excluded."
+    }
+  ],
+  "reviewed_regions": [
+    {
+      "id": "liam_daisy_outdoor_play",
+      "source": "liam_daisy_play.py",
+      "symbol": "LiamDaisyPlay.__init__; LiamDaisyPlay.update; LiamDaisyPlay._finish_yield",
+      "source_sha256": "471fe6df5d021f0381e636f2cc0a69e40f1f9f72a3902c2288d5a679c938c7c5",
+      "rect": [
+        216,
+        522,
+        160,
+        110
+      ],
+      "padding": [
+        0,
+        0
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Reviewed town envelope contains the 24-point ellipse around (296,590), its 62/30 radii, full actor/player footprints, queue and return targets. The routine is code-owned; a source change requires renewed review. Interior play/bed/bowl coordinates are excluded."
+    },
+    {
+      "id": "venn_gate_work",
+      "source": "venn_visit.py",
+      "symbol": "PIN_APPROACH; CHANNEL_APPROACH; GATE_POSITION; VennVisit.__init__",
+      "source_sha256": "f6b6ed68ecdc20df89d261e4980298139cda01b9e40f4b4bdb8958a37493d4d7",
+      "rect": [
+        1388,
+        624,
+        90,
+        96
+      ],
+      "padding": [
+        0,
+        0
+      ],
+      "roles": [
+        "movement",
+        "sightline"
+      ],
+      "scene": "eldenmere.playable",
+      "note": "Reviewed outdoor envelope covers pin/channel repair, gate and existing toolbox/debris ownership. CHANNEL_APPROACH and surface-prop positions are code-owned; repair_approach also has art metadata. The interior family/carrying stations are excluded."
+    }
+  ],
+  "placements": [],
+  "ground_treatments": [],
+  "placement_notes": [
+    "Resolve all selectors against current authoritative source data; do not copy coordinates from this report into a second live placement authority.",
+    "Generated town doors, opening approaches, world links, exit/return contacts and functional entities are protected by the composer helper in addition to these source selectors.",
+    "Protection regions reserve new placement space; they do not assert every existing pixel is walkable. Existing fixtures, walls and operating surfaces can already occupy their own reserved regions.",
+    "The old adapted-plan mill_yard space overlaps Halden’s current drawable roof/canvas. Its label is historical land-use intent, not an approved empty placement rectangle.",
+    "Any later mill delivery apron must also clear the Lantern mill group at current village_layout stations; re-fit it after the exterior/bridge work.",
+    "Venn plots touch the cottage overhang; inset beds and preserve the irrigation-gate approaches. This framework grants no harvest or new service behavior.",
+    "Existing player trails support dynamic followers. Protect the public corridors and companion clearance instead of inventing fixed Regent/Lantern escort routes."
+  ],
+  "excluded_coordinate_contexts": [
+    {
+      "source": "assets/story/regent/layout.json",
+      "reason": "dining_stations and meal_seats are sanctuary_dining positions; courtyard in a key name does not make a coordinate outdoors."
+    },
+    {
+      "source": "assets/story/regent_arrival/scene.json",
+      "reason": "Aerial/gate/crossroads phase coordinates belong to cinematic projection spaces, not the live Eldenmere map."
+    },
+    {
+      "source": "assets/story/lantern/village_layout.json",
+      "reason": "Only explicit town mill/reflection stations and outdoor approaches are selected; family stations with scene_ids venn/elira belong indoors."
+    },
+    {
+      "source": "assets/story/lantern/rest_layout.json",
+      "reason": "Only workshop collection stations are outdoors; home/sanctuary materials and handoff positions belong to interiors."
+    },
+    {
+      "source": "assets/story/mill/layout.json",
+      "reason": "Only explicit town inspection/return keys are selected; intake/bypass/spell/lever and action_positions belong to upstream."
+    },
+    {
+      "source": "assets/maps/eldenmere/routines/tomas.json",
+      "reason": "Only the steps between enter_courtyard and return_to_hall are outdoors. Other same-scale coordinates belong to household rooms."
+    },
+    {
+      "source": "assets/maps/eldenmere/routines/serene.json",
+      "reason": "Ordinary Serene routine is confined to sanctuary_dining/hall; her town quest appearances are protected through the Regent metadata."
+    },
+    {
+      "source": "assets/maps/eldenmere/routines/daisy.json",
+      "reason": "Ordinary bowl/wander positions and liam_blocks/daisy_bone/household child positions are interior. Their outdoor play uses the reviewed Liam/Daisy code envelope; quest staging uses Lantern metadata."
+    }
+  ]
+}

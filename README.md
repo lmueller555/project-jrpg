@@ -165,6 +165,12 @@ The commons now contains a roofed stone well, a rounded dirt-and-stone square an
 
 All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors.
 
+The build-time [Eldenmere settlement framework](docs/TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework)
+catalogues native dressing candidates and reserves current travel/work/story
+spaces before later composition passes. Its first delivery activates no new
+scenery or terrain. [Preservation captures and the protection plan](docs/reviews/eldenmere_settlement_framework/README.md)
+record the unchanged production town.
+
 The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
 The [regional HD foundation](docs/OVERWORLD.md#integrated-hd-foundation) now selects
