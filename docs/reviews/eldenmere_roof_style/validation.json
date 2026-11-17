@@ -1,0 +1,1408 @@
+{
+  "baseline_commit": "3481e2b7b89abdc58f39616ac2bf83dff611ee3d",
+  "art_candidate_commit": "2422a418621288b56718ff1570559d608a3fa834",
+  "historical_reference_commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+  "historical_reference_provenance": [
+    {
+      "building": "halden",
+      "commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+      "path": "assets/terrain/eldenmere/cottage/closed.png",
+      "review_file": "reference_halden_24px.png",
+      "sha256": "c23eecbcf8efbeb622362975afd125361f63c5607d26f0d4e864b64b7df0971f",
+      "density": 1
+    },
+    {
+      "building": "mira",
+      "commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+      "path": "assets/terrain/eldenmere/workshop/closed.png",
+      "review_file": "reference_mira_24px.png",
+      "sha256": "9b63f0a5f65a6c5166cd23c47638c6e2093cd13cbb01ce202fe93c4a2cb8d39e",
+      "density": 1
+    },
+    {
+      "building": "mill",
+      "commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+      "path": "assets/terrain/eldenmere/watermill/building.png",
+      "review_file": "reference_mill_24px.png",
+      "sha256": "192f5711750421bdfde969d089959cb490a7964343ef1ff12a1ff1ebc5af741b",
+      "density": 1
+    },
+    {
+      "building": "school",
+      "commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+      "path": "assets/terrain/eldenmere/school/exterior/closed.png",
+      "review_file": "reference_school_24px.png",
+      "sha256": "f1e29be0ca1493f0329289ac6599b91edfb58e7ee8d3c5194818a03d971332f3",
+      "density": 1
+    },
+    {
+      "building": "sanctuary",
+      "commit": "7cebbd6006a1d925163ffe607443059ffff79880",
+      "path": "assets/terrain/eldenmere/sanctuary/closed.png",
+      "review_file": "reference_sanctuary_24px.png",
+      "sha256": "71ffcab1d2fc7928a21d33ab27dc1c989b99f85dbf7224941185d1bcdf1217aa",
+      "density": 1
+    }
+  ],
+  "method": "Game.draw production maps/bindings, native WorldCanvas 960x640, CameraDirector",
+  "paired_views": {
+    "building_sanctuary_entrance_normal": {
+      "before_sha256": "8d01a2ce13c11d79dce9a789803a61309a712554148327e466309835b116ddec",
+      "after_sha256": "3bd836d594548bafba23bc4903fda805a44a157930a8de82dbbef6b094352cbe",
+      "changed_native_pixels": 87503,
+      "same_fixture": true
+    },
+    "building_sanctuary_survey_normal": {
+      "before_sha256": "916c8cf70e588a21c583fa01fe0108281fde338b4d01bc68cdfd9fbbe2b4509c",
+      "after_sha256": "2c29101bdae5b358a1ecb83e920f6b61a8c366b8533d6e42c8f202e8162aa492",
+      "changed_native_pixels": 77910,
+      "same_fixture": true
+    },
+    "building_sanctuary_entrance_reduced": {
+      "before_sha256": "9b0c203f16211071541048ab82bfc24db966851c8cf7de75bdcd4ecc82da5790",
+      "after_sha256": "db7cfb41ab2c4f9c22cee3b68d2f07f07752f4a76396bf3656cdd0debd7b556e",
+      "changed_native_pixels": 87503,
+      "same_fixture": true
+    },
+    "building_sanctuary_survey_reduced": {
+      "before_sha256": "6103ed465538ad4474795360fc85a46c9f213039a8daeb3f047bd780b340a573",
+      "after_sha256": "a11858fd332e4804de8b37ce6f34158a658f0f4587340d8812a141c8e0821c26",
+      "changed_native_pixels": 77910,
+      "same_fixture": true
+    },
+    "building_sanctuary_door_opening": {
+      "before_sha256": "326ce6789f06fa27561668cf8b0d174599958acd1689695d1ace44ab0007c360",
+      "after_sha256": "3eee5bc65459f5fed9790cd1de7c59ee4f954abf87af9fe8d1d946023ad63ba2",
+      "changed_native_pixels": 77910,
+      "same_fixture": true
+    },
+    "building_sanctuary_door_open": {
+      "before_sha256": "a2fc08a1d156dee32d93aea10c1e45365f3de7b3541d17e12376ae4021e05287",
+      "after_sha256": "de3d7b9b0bd2c21b22df17b676ceef0f92a4ba7a7fdb70433cf803b7f63af5f6",
+      "changed_native_pixels": 77910,
+      "same_fixture": true
+    },
+    "building_sanctuary_door_closing": {
+      "before_sha256": "3e6afeacb59f620e681c6f21cc922b82babdc752273dbcbcc9b8b54290c6021d",
+      "after_sha256": "53d03feb68b526636bb755912ed5e6676513aabf4d06a4732bb337adc60be5d8",
+      "changed_native_pixels": 77910,
+      "same_fixture": true
+    },
+    "building_sanctuary_door_closed": {
+      "before_sha256": "916c8cf70e588a21c583fa01fe0108281fde338b4d01bc68cdfd9fbbe2b4509c",
+      "after_sha256": "2c29101bdae5b358a1ecb83e920f6b61a8c366b8533d6e42c8f202e8162aa492",
+      "changed_native_pixels": 77910,
+      "same_fixture": true
+    },
+    "interior_sanctuary_arrival_normal": {
+      "before_sha256": "f53386cfbece558df8cdf1e69eb8b8e387e1dee8b5fcfb755155b61ac0859434",
+      "after_sha256": "f53386cfbece558df8cdf1e69eb8b8e387e1dee8b5fcfb755155b61ac0859434",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_sanctuary_arrival_reduced": {
+      "before_sha256": "f53386cfbece558df8cdf1e69eb8b8e387e1dee8b5fcfb755155b61ac0859434",
+      "after_sha256": "f53386cfbece558df8cdf1e69eb8b8e387e1dee8b5fcfb755155b61ac0859434",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_mira_entrance_normal": {
+      "before_sha256": "b0d2c6ab9b371cc6bf341ba617e9ea1400bec271ec44163cd25bd5b63595594e",
+      "after_sha256": "16d5bd615213ee0449d5f1313fa19b4afbc1ae033bf7300852fd84c59b957b59",
+      "changed_native_pixels": 76339,
+      "same_fixture": true
+    },
+    "building_mira_survey_normal": {
+      "before_sha256": "a2d6e7ed2e88a56c4082cb949be336c13db9388af37af5fb18439a9b3d011c09",
+      "after_sha256": "8fc2f960cae9ce2190d31212de99f5e2211f558c27655e161c39588e63317c71",
+      "changed_native_pixels": 37394,
+      "same_fixture": true
+    },
+    "building_mira_entrance_reduced": {
+      "before_sha256": "2e00408f640fd66b16c8d3b43e409139e84c55db776aaea8bb040186d9c1f7d2",
+      "after_sha256": "76d4b078d0dc8ec7408929fd1bc611db788b2aeb399f113a1f12fbfd88150b79",
+      "changed_native_pixels": 76339,
+      "same_fixture": true
+    },
+    "building_mira_survey_reduced": {
+      "before_sha256": "0881603424b409f3a2ce3a63b68c706e91320bb9ee9879af91c04c6fa9297367",
+      "after_sha256": "ca74e361c0407eaae7348b4e5a55a67727b8b36946602013b6d3d728e0c78564",
+      "changed_native_pixels": 37394,
+      "same_fixture": true
+    },
+    "building_mira_door_opening": {
+      "before_sha256": "152a019a7e458cca7374cd4390f6316a60ffa1451987d0d5c9674767f74ad738",
+      "after_sha256": "04ef9339f9df90ccdadca5a10884efb70a0d0555c67ae0997c069373fbeff389",
+      "changed_native_pixels": 37394,
+      "same_fixture": true
+    },
+    "building_mira_door_open": {
+      "before_sha256": "3d64462381a76cd3c0a83a83d65d7b20f4bcc96aa200ad550fe6573d014c2a93",
+      "after_sha256": "50d6217f4f68446181cc9dc92b2c598e0bbc3313c513950f2c443f28166489e9",
+      "changed_native_pixels": 37394,
+      "same_fixture": true
+    },
+    "building_mira_door_closing": {
+      "before_sha256": "32d83e5f7344cc6dbba46048d2caaf4a3bcad608c590ea557b59cf893b2ee971",
+      "after_sha256": "37dc7e5c5054cf597f12e3daf4cc32a508710d1f48774c0c81a1add83ecec425",
+      "changed_native_pixels": 37394,
+      "same_fixture": true
+    },
+    "building_mira_door_closed": {
+      "before_sha256": "a2d6e7ed2e88a56c4082cb949be336c13db9388af37af5fb18439a9b3d011c09",
+      "after_sha256": "8fc2f960cae9ce2190d31212de99f5e2211f558c27655e161c39588e63317c71",
+      "changed_native_pixels": 37394,
+      "same_fixture": true
+    },
+    "interior_mira_arrival_normal": {
+      "before_sha256": "effe9d2adab6f1b585a55472f3936e06349c862750b7a2c5fc0f76a7c5a5b12f",
+      "after_sha256": "effe9d2adab6f1b585a55472f3936e06349c862750b7a2c5fc0f76a7c5a5b12f",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_mira_arrival_reduced": {
+      "before_sha256": "effe9d2adab6f1b585a55472f3936e06349c862750b7a2c5fc0f76a7c5a5b12f",
+      "after_sha256": "effe9d2adab6f1b585a55472f3936e06349c862750b7a2c5fc0f76a7c5a5b12f",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_mill_entrance_normal": {
+      "before_sha256": "d2f84feeed98c5c5f886d256b1872e56051218d4cb9f1f089b978fdff4eaa9f4",
+      "after_sha256": "778d3699d9071e4d473f26868ceaa10b87d441c978aa2f4bc59661dd976a774e",
+      "changed_native_pixels": 30354,
+      "same_fixture": true
+    },
+    "building_mill_survey_normal": {
+      "before_sha256": "abec1c1b7d60c716677050c27c6de369c85dfe4a9e01f38a3e09acb20b0c389a",
+      "after_sha256": "ce7b5fd9e07a3cdbf611c4b1cfe5424848083c12292fe731e13728b2056f50ef",
+      "changed_native_pixels": 25964,
+      "same_fixture": true
+    },
+    "building_mill_entrance_reduced": {
+      "before_sha256": "51f8c8c2fe387e9be2a02eeb68f88287f210dbbbae701c1e71cb8dab9e42c509",
+      "after_sha256": "3a18a65c4b59e5e8b906b20fbef8e40db67cf47f519d3e56ae4224f3713745ea",
+      "changed_native_pixels": 30355,
+      "same_fixture": true
+    },
+    "building_mill_survey_reduced": {
+      "before_sha256": "945300e2e7e7dbab32e9543f0f1cd7ea64f3b48bd3ea51eb9f96009f32d04a02",
+      "after_sha256": "776eddd4043bebd26cac2a60aa9381a46c1e22f25699a3f9d0c83393f58e2c71",
+      "changed_native_pixels": 25965,
+      "same_fixture": true
+    },
+    "building_mill_door_opening": {
+      "before_sha256": "dbec28b78aecb051bdfcd80f89ac05a557ceed9414328b402061a2157e076716",
+      "after_sha256": "06fed581bad18dcf02f60416b046b2e06a1a4b1511bd17f32b51f4b1819bb288",
+      "changed_native_pixels": 25964,
+      "same_fixture": true
+    },
+    "building_mill_door_open": {
+      "before_sha256": "1cc9936b10de38b793498d8fe9999b324dfac205f7865ca321478ac44ef31068",
+      "after_sha256": "8a3eac85bf77356b192b8c56dc691fc9e18f2cfe322126c614fae16034a4c3d4",
+      "changed_native_pixels": 25964,
+      "same_fixture": true
+    },
+    "building_mill_door_closing": {
+      "before_sha256": "50a74070f1a6e7ee31c214955a3455a88d5f5aaf7fdabc6dc757397bc614c387",
+      "after_sha256": "8de6583d16c831d0416bbd8abc5d4eb8fe6870553c813487b4d72c79fc1c2ee9",
+      "changed_native_pixels": 25964,
+      "same_fixture": true
+    },
+    "building_mill_door_closed": {
+      "before_sha256": "abec1c1b7d60c716677050c27c6de369c85dfe4a9e01f38a3e09acb20b0c389a",
+      "after_sha256": "ce7b5fd9e07a3cdbf611c4b1cfe5424848083c12292fe731e13728b2056f50ef",
+      "changed_native_pixels": 25964,
+      "same_fixture": true
+    },
+    "interior_mill_arrival_normal": {
+      "before_sha256": "5b91be8c361d7a62af3cfd67f812a88c559a22348eda9d067305e22802c8d614",
+      "after_sha256": "5b91be8c361d7a62af3cfd67f812a88c559a22348eda9d067305e22802c8d614",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_mill_arrival_reduced": {
+      "before_sha256": "5b91be8c361d7a62af3cfd67f812a88c559a22348eda9d067305e22802c8d614",
+      "after_sha256": "5b91be8c361d7a62af3cfd67f812a88c559a22348eda9d067305e22802c8d614",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_school_entrance_normal": {
+      "before_sha256": "171c1413275bfcfc7d3c25750f0669084d1fd1fe570774298dbc8c276e5af9a6",
+      "after_sha256": "e18235ba76cfbd67531c8063311e76dd4df835e21953aac270485d77cf22ea41",
+      "changed_native_pixels": 70651,
+      "same_fixture": true
+    },
+    "building_school_survey_normal": {
+      "before_sha256": "86095fc6e2b9db991a80a846ce9162225bbf571fe90c1cea75cd8925def4f20c",
+      "after_sha256": "e10e998f978d9f394bf6e321c51fc35f0292bd8535a691f23179a5c051cd6125",
+      "changed_native_pixels": 72627,
+      "same_fixture": true
+    },
+    "building_school_entrance_reduced": {
+      "before_sha256": "ebae77ca62d72f016ca65b0b3fbf18189d80fe6ac6631182f7c9658e53a8d8ff",
+      "after_sha256": "70967cacf08f9f4fe3d3465d39c941157df2de6f5fbb3f432445bf315e64eb84",
+      "changed_native_pixels": 70651,
+      "same_fixture": true
+    },
+    "building_school_survey_reduced": {
+      "before_sha256": "9218357052db2ebe50f8b85d7451751898d04354f21f98c00f0b517447503295",
+      "after_sha256": "d7fea1aed36894d1c1f23d1cfe604b5ec25dd68e3f9fa05ab3142e20f9bfc53d",
+      "changed_native_pixels": 72627,
+      "same_fixture": true
+    },
+    "building_school_door_opening": {
+      "before_sha256": "b2aa6059c840b75ec75bdacbac658292b0f65da577e2041de3214e28a120a3f6",
+      "after_sha256": "ead504f042afe29f6427ed7091a5def940e1d705e1976132288be7a019571c70",
+      "changed_native_pixels": 72627,
+      "same_fixture": true
+    },
+    "building_school_door_open": {
+      "before_sha256": "a2580f01e75606a3867eb946b4e05e77cf1e43e18e800ecd3e4f3ba8fd2d940e",
+      "after_sha256": "c38c637015826cf6d313e114109f786b9c9e1a6ce991d983bb0ed9e06bb9e3a3",
+      "changed_native_pixels": 72627,
+      "same_fixture": true
+    },
+    "building_school_door_closing": {
+      "before_sha256": "f4693ebe690aedf7a4ce285c753162a3a6f1cc8a842221efbf2ffbdc2969b70d",
+      "after_sha256": "24f9cd29dc21019612dc5295e0743055f1f3ed1bfa820f6ed47ac8899fe0e6b7",
+      "changed_native_pixels": 72627,
+      "same_fixture": true
+    },
+    "building_school_door_closed": {
+      "before_sha256": "86095fc6e2b9db991a80a846ce9162225bbf571fe90c1cea75cd8925def4f20c",
+      "after_sha256": "e10e998f978d9f394bf6e321c51fc35f0292bd8535a691f23179a5c051cd6125",
+      "changed_native_pixels": 72627,
+      "same_fixture": true
+    },
+    "interior_school_arrival_normal": {
+      "before_sha256": "37372129cdaf8c3cc61cc2afd35c4a39a0ec50ac01404a95329942185ed2726a",
+      "after_sha256": "37372129cdaf8c3cc61cc2afd35c4a39a0ec50ac01404a95329942185ed2726a",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_school_arrival_reduced": {
+      "before_sha256": "37372129cdaf8c3cc61cc2afd35c4a39a0ec50ac01404a95329942185ed2726a",
+      "after_sha256": "37372129cdaf8c3cc61cc2afd35c4a39a0ec50ac01404a95329942185ed2726a",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_halden_entrance_normal": {
+      "before_sha256": "05d7ab8ad47149c24b75201d581f65448d57eef8d8ca9f1a47845afe61621806",
+      "after_sha256": "02f2d7198b301b6f5d66ee2da195df268f308df1d952204bc3a04653f2f2fbec",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_survey_normal": {
+      "before_sha256": "c1ac6338b4797161c106d83753cfec29a90a7f71f980c6def6c75be539fa412e",
+      "after_sha256": "30b6a58d4bd838801269c8e43a977e8de625cc3b6a9933b32d2392e8fe23e96e",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_entrance_reduced": {
+      "before_sha256": "1f049edc7445c6d207dd212bd01a81809b81bc9cd414822e586fe5c95270fde0",
+      "after_sha256": "45ba577c79ea867d3045c8614d9bfcd932c98ed6059fdfc36cd18ecd9b2b591f",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_survey_reduced": {
+      "before_sha256": "04615a028efc8931c676f6cb451743eb2603ca7ce2c1efbac7f799134d13d4b2",
+      "after_sha256": "b5c393e3f85889f0f6427c9305444927f12c86207dce04be82c4a058dcf8ef68",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_door_opening": {
+      "before_sha256": "9bec89ac7abd8ca52a20ce891b153edc2eb11c5c918e52536512b461632ca507",
+      "after_sha256": "24604b2b21f4308bb6ac039e4b2825d5a7a9041e454fb2431e3ca2a5c0581dbd",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_door_open": {
+      "before_sha256": "db64b31329e6c2138ae69e1ece68f6d9fe186ec0f1e5be77ed6a4b1bb6c1242a",
+      "after_sha256": "fdfed4c08e3a2528ffc7e628ded49c7959cef45a30f5b8dc71deddcaed853bfd",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_door_closing": {
+      "before_sha256": "39c904e2d48e840e0583659698640e2fb474969ecd2f7a3359934e5efebaf5cc",
+      "after_sha256": "e3a50c514925a265c6c0f7e5b4d42dc88b21fd9b3c6c0d3ef781f039cb77d617",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "building_halden_door_closed": {
+      "before_sha256": "c1ac6338b4797161c106d83753cfec29a90a7f71f980c6def6c75be539fa412e",
+      "after_sha256": "30b6a58d4bd838801269c8e43a977e8de625cc3b6a9933b32d2392e8fe23e96e",
+      "changed_native_pixels": 42184,
+      "same_fixture": true
+    },
+    "interior_halden_arrival_normal": {
+      "before_sha256": "a8084f2b59006598227231b406dbef86444488b99bd5948eac478899dcf1dfe5",
+      "after_sha256": "a8084f2b59006598227231b406dbef86444488b99bd5948eac478899dcf1dfe5",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_halden_arrival_reduced": {
+      "before_sha256": "a8084f2b59006598227231b406dbef86444488b99bd5948eac478899dcf1dfe5",
+      "after_sha256": "a8084f2b59006598227231b406dbef86444488b99bd5948eac478899dcf1dfe5",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_elira_entrance_normal": {
+      "before_sha256": "c2f4ab79584d6e43789c339e3e80e92619e1653bddbb7f99975c863a5052da58",
+      "after_sha256": "be422228f0ea2cd71a729e8a9e2b154bca1e2554493fb581dc899bee529aab21",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_survey_normal": {
+      "before_sha256": "3790f3de221eda6f83615b647a5b3952d24f57936ca1004d569fba999846afe7",
+      "after_sha256": "2cf0fbe26176d46109d413a56cba99aa13c763912ac98ab0ea873a15cc18a58f",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_entrance_reduced": {
+      "before_sha256": "10fd28d2d657aa090e5d3c2ad370ecacb15c26f6d2505f5c699e33b5a07da8c8",
+      "after_sha256": "5f7eb7da8df7d239660af4582ed4a50035727b59e23763a7d31b42dbb465f0ae",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_survey_reduced": {
+      "before_sha256": "465771138998b0301db3c0fe718184929659eaccf38e66ea1b3d5a7aeb3b7b43",
+      "after_sha256": "b668170a78855545dc952b69a3a7d53199146c0c697b3dd83f8113b1872498a1",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_door_opening": {
+      "before_sha256": "00938781073438f3aef36ec6b5ca538ad403da099c04b7aa8198eee6e9195134",
+      "after_sha256": "dc401509761a426764a799d7a8e2b0802abf5bc3d75cdf7c5947d28640f498e7",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_door_open": {
+      "before_sha256": "73741b25311498c3e2032f7ba10141029000833e7727bc9fbd2b613e0c0f9964",
+      "after_sha256": "6a1764c58e20be9ad593a9202e636d7ce66f2127a6c1116f987d984a41b82e8e",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_door_closing": {
+      "before_sha256": "65be965316fc63e89ccc0e44b2952c3a25ef0a7de178ae1b32b235c831459b82",
+      "after_sha256": "676458ceb395873c41b3cfc8e022b631f0f81e8707e578014f4d8c447dbf2969",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "building_elira_door_closed": {
+      "before_sha256": "3790f3de221eda6f83615b647a5b3952d24f57936ca1004d569fba999846afe7",
+      "after_sha256": "2cf0fbe26176d46109d413a56cba99aa13c763912ac98ab0ea873a15cc18a58f",
+      "changed_native_pixels": 19011,
+      "same_fixture": true
+    },
+    "interior_elira_arrival_normal": {
+      "before_sha256": "afb0b55149e40cabb618ab3b4bae8b83357711ad244e1ffb3e3cc8a8dae126f8",
+      "after_sha256": "afb0b55149e40cabb618ab3b4bae8b83357711ad244e1ffb3e3cc8a8dae126f8",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_elira_arrival_reduced": {
+      "before_sha256": "afb0b55149e40cabb618ab3b4bae8b83357711ad244e1ffb3e3cc8a8dae126f8",
+      "after_sha256": "afb0b55149e40cabb618ab3b4bae8b83357711ad244e1ffb3e3cc8a8dae126f8",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_venn_entrance_normal": {
+      "before_sha256": "3a2e495eaa2491253f53c7ad9a4cc3b0b74071b8cbc36ae0d47feb5eb0753d1d",
+      "after_sha256": "fc978c09176bbc06a5ad3cb422285a8b11eda60dbee4e2caa0d1b03f5d408e6e",
+      "changed_native_pixels": 29957,
+      "same_fixture": true
+    },
+    "building_venn_survey_normal": {
+      "before_sha256": "9f1f465c54211be7985a0da66532bc96f6a2661522cdcfe3671c97bef503fdad",
+      "after_sha256": "f3532e0183e9a6d3413fed5a830e3bd7e180734cdba87795aa401eb3073db823",
+      "changed_native_pixels": 45000,
+      "same_fixture": true
+    },
+    "building_venn_entrance_reduced": {
+      "before_sha256": "bc2f6027d10eade56df0b67b5b854a389856ed478bb351aa84d0a757139e842d",
+      "after_sha256": "304189c8828d2ff40f191a5334f27f1994084c27be67fa904d13a243e38345ed",
+      "changed_native_pixels": 29957,
+      "same_fixture": true
+    },
+    "building_venn_survey_reduced": {
+      "before_sha256": "ad53148b1a44a70b5b54a6eb0456d101897e10881ad25c307b01f3b4c8a2beaf",
+      "after_sha256": "407d39884ebaf89efd975124f26c998568c32325c243c090e734db952a6b8d47",
+      "changed_native_pixels": 45000,
+      "same_fixture": true
+    },
+    "building_venn_door_opening": {
+      "before_sha256": "4c38848ed3425c7444f067e34daecae35d30a077a2026dea3771f10c4675e169",
+      "after_sha256": "792b57b13bc801843cb48d3ac8043d3a76ef8da8f97d3e872c245d3fd34d70e2",
+      "changed_native_pixels": 45000,
+      "same_fixture": true
+    },
+    "building_venn_door_open": {
+      "before_sha256": "3c99288f8d01330663a14f07abeb6eb8c5567e1cf37152a2775310bfca3a44d6",
+      "after_sha256": "0001d3735df8d4287a3da81d3fb3145b30d66f7b321657630c883acaeedfa463",
+      "changed_native_pixels": 45000,
+      "same_fixture": true
+    },
+    "building_venn_door_closing": {
+      "before_sha256": "1b80a0287a1d8b078529c2fc3813ed8223a53925eaaf6c07bd189ee148391fe4",
+      "after_sha256": "c0b8aaf51bf9de70b90d8b60849f4d80547d21bf2a9b6b4c7ea0d01477bb7c91",
+      "changed_native_pixels": 45000,
+      "same_fixture": true
+    },
+    "building_venn_door_closed": {
+      "before_sha256": "9f1f465c54211be7985a0da66532bc96f6a2661522cdcfe3671c97bef503fdad",
+      "after_sha256": "f3532e0183e9a6d3413fed5a830e3bd7e180734cdba87795aa401eb3073db823",
+      "changed_native_pixels": 45000,
+      "same_fixture": true
+    },
+    "interior_venn_arrival_normal": {
+      "before_sha256": "6e940881d8dc96a4cea438b9d88afeb8bdfa82334e0415fa9297e0640cb4e71a",
+      "after_sha256": "6e940881d8dc96a4cea438b9d88afeb8bdfa82334e0415fa9297e0640cb4e71a",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_venn_arrival_reduced": {
+      "before_sha256": "6e940881d8dc96a4cea438b9d88afeb8bdfa82334e0415fa9297e0640cb4e71a",
+      "after_sha256": "6e940881d8dc96a4cea438b9d88afeb8bdfa82334e0415fa9297e0640cb4e71a",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_home_a_entrance_normal": {
+      "before_sha256": "3beeff1b4c459d648871c89e8ac15894f46f255dce909506b7cea10bc1ae5429",
+      "after_sha256": "0927034dc32348fab47e25e57819df3385636fc8eb115698f041a7ddb8d2657d",
+      "changed_native_pixels": 27589,
+      "same_fixture": true
+    },
+    "building_home_a_survey_normal": {
+      "before_sha256": "6dafe42853b1fbffc71f88fd6e9f5b5de87ede6d58e376aefdaa88fd52d7db78",
+      "after_sha256": "a9e7557ffc58bb6e120c9c0a325132d3217d75959a7227ac7616c2584d74bcf9",
+      "changed_native_pixels": 30661,
+      "same_fixture": true
+    },
+    "building_home_a_entrance_reduced": {
+      "before_sha256": "3d4b5ba748e3720eceb6c9e3e2f0cc513d383f6097f7d9e61d511316e876f8be",
+      "after_sha256": "c955c4e7de2ffa9e1d8e34faedf59499bfc34671edeebfe23dab210da07edb05",
+      "changed_native_pixels": 27589,
+      "same_fixture": true
+    },
+    "building_home_a_survey_reduced": {
+      "before_sha256": "3d849d4b04c00323a4474a0685ddf7a0d70b123a6a6146dbee01e02c97f32d73",
+      "after_sha256": "fa8304375f17dd0d58091ebc03b7cae913f25daca58b106467b99d30f83e0cfa",
+      "changed_native_pixels": 30661,
+      "same_fixture": true
+    },
+    "building_home_a_door_opening": {
+      "before_sha256": "70d18ba85b71274ad001d69ba5102cfd251c2dd8c203137b2869ed13dcc95143",
+      "after_sha256": "3760b205adb82212cf93964d1383c1e9b584a00a878e8866f377a1ed8e5c3380",
+      "changed_native_pixels": 30661,
+      "same_fixture": true
+    },
+    "building_home_a_door_open": {
+      "before_sha256": "c4e7a51a36dbdc9cdbdd62b769df3fc1e3bc36681aaab075c0a0e91b60e6f4bd",
+      "after_sha256": "7308b6c9ac3c4a818df3fd5e109c73742559c9955256747e44a2c5817d6e4213",
+      "changed_native_pixels": 30661,
+      "same_fixture": true
+    },
+    "building_home_a_door_closing": {
+      "before_sha256": "dc2727730431e2ff49de947a818beb7c57d2b4e288b15e966e5549c55a195620",
+      "after_sha256": "d98b3127c1ae0a7e38d2c5760045d4124ec787d1037b2353025afd39e09bcae6",
+      "changed_native_pixels": 30661,
+      "same_fixture": true
+    },
+    "building_home_a_door_closed": {
+      "before_sha256": "6dafe42853b1fbffc71f88fd6e9f5b5de87ede6d58e376aefdaa88fd52d7db78",
+      "after_sha256": "a9e7557ffc58bb6e120c9c0a325132d3217d75959a7227ac7616c2584d74bcf9",
+      "changed_native_pixels": 30661,
+      "same_fixture": true
+    },
+    "interior_home_a_arrival_normal": {
+      "before_sha256": "1ca8d137d476ebf24940792d58f0ee610b72725cb5dad8567912199941782d87",
+      "after_sha256": "1ca8d137d476ebf24940792d58f0ee610b72725cb5dad8567912199941782d87",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_home_a_arrival_reduced": {
+      "before_sha256": "1ca8d137d476ebf24940792d58f0ee610b72725cb5dad8567912199941782d87",
+      "after_sha256": "1ca8d137d476ebf24940792d58f0ee610b72725cb5dad8567912199941782d87",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_home_b_entrance_normal": {
+      "before_sha256": "7784308e6332865527752a4eabcc1aa17c8ea71bf016dd6edee150d402e52cea",
+      "after_sha256": "c13b5cf856211f3188837101a248c6fed8a02f7f60b153fe5b967aa31f726b41",
+      "changed_native_pixels": 75135,
+      "same_fixture": true
+    },
+    "building_home_b_survey_normal": {
+      "before_sha256": "656d549c59cffbc64386e5860347af11c970f673f1f55c640e69c9ddc0c481d1",
+      "after_sha256": "8c8cd96b8e98613e9313bae2b1df86bc5d441485f2286fbceeff4e1d4f0be674",
+      "changed_native_pixels": 80203,
+      "same_fixture": true
+    },
+    "building_home_b_entrance_reduced": {
+      "before_sha256": "79af5ce091ff5b60a1b5ba7a9e93ddb2970d41ca03305ac25e43f9d12cebc483",
+      "after_sha256": "423c55b02630034f74d2ccf4aa220db1ef3ce222a7546c75b7c89d6b8e9f007c",
+      "changed_native_pixels": 75135,
+      "same_fixture": true
+    },
+    "building_home_b_survey_reduced": {
+      "before_sha256": "c1b5471e06a6dbb1cc6972c7637e857fa16fa58517e3bf08274251cd3193c370",
+      "after_sha256": "f178d509ec9cef80f3ce395b8c3b20ae542d464a601b72b1d9776f21a3448c76",
+      "changed_native_pixels": 80203,
+      "same_fixture": true
+    },
+    "building_home_b_door_opening": {
+      "before_sha256": "d007e9cbcac9270812efe71282ebf946397e2dbfc3d638109cd0cd4cd5ba0b40",
+      "after_sha256": "aa3aeadbc30fcbe0f1511af9ae980a52af4d3ec9aa159816f6f86ca626f90949",
+      "changed_native_pixels": 80203,
+      "same_fixture": true
+    },
+    "building_home_b_door_open": {
+      "before_sha256": "157344666977770dc0463a3d1203ad3cedfdfdd8c7223d5b7c9caa8effc9806f",
+      "after_sha256": "70c90b17b7e03b5b604e5123cb5f723efe5fb25bb79bb10ee7bef2ef4180ef50",
+      "changed_native_pixels": 80203,
+      "same_fixture": true
+    },
+    "building_home_b_door_closing": {
+      "before_sha256": "b493c5fcdc920117213cd316d20644af95ab13c441ad374c2f5cbd6201e435e6",
+      "after_sha256": "62304e9116d0ed3d2b0f635b62794fe800d4b03db3730421ee5a82d39f9e2a0c",
+      "changed_native_pixels": 80203,
+      "same_fixture": true
+    },
+    "building_home_b_door_closed": {
+      "before_sha256": "656d549c59cffbc64386e5860347af11c970f673f1f55c640e69c9ddc0c481d1",
+      "after_sha256": "8c8cd96b8e98613e9313bae2b1df86bc5d441485f2286fbceeff4e1d4f0be674",
+      "changed_native_pixels": 80203,
+      "same_fixture": true
+    },
+    "interior_home_b_arrival_normal": {
+      "before_sha256": "4b603c3c9c5f6537fe692092c275d7f8512d932afa6cad7f9246b818e009c00b",
+      "after_sha256": "4b603c3c9c5f6537fe692092c275d7f8512d932afa6cad7f9246b818e009c00b",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_home_b_arrival_reduced": {
+      "before_sha256": "4b603c3c9c5f6537fe692092c275d7f8512d932afa6cad7f9246b818e009c00b",
+      "after_sha256": "4b603c3c9c5f6537fe692092c275d7f8512d932afa6cad7f9246b818e009c00b",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_home_c_entrance_normal": {
+      "before_sha256": "891454d0695cefd2aeb7c1bfeb03a1e77de3d3b2a0e795208459d1730b7c565b",
+      "after_sha256": "229ed5ba49782657339fd650a258df163af5d243a90451d0d3ee12be3d545f0b",
+      "changed_native_pixels": 36234,
+      "same_fixture": true
+    },
+    "building_home_c_survey_normal": {
+      "before_sha256": "a91926c5668e35a23465fa98738cecd297d6b24e1a5ee5919b4693c3fba2a48c",
+      "after_sha256": "13663dac775d7abfe6606d68faf1c028410ae445ad2f6b7f92cc403842a78d96",
+      "changed_native_pixels": 24960,
+      "same_fixture": true
+    },
+    "building_home_c_entrance_reduced": {
+      "before_sha256": "81ada793433f794d5acaa0ed5946d622cd5239f6824bf19ea5b3f1056e3b46ef",
+      "after_sha256": "b2253d1902c58290e50b710859c97d89b2c644b5e576676f98c51c42060e4c48",
+      "changed_native_pixels": 36235,
+      "same_fixture": true
+    },
+    "building_home_c_survey_reduced": {
+      "before_sha256": "4ad998c2b6674b7676ae1152860f356b2ecdd8c31b595364726c93506d2acdaf",
+      "after_sha256": "89723e5b900daf63e9600ee64d1e33798e8a01e2c97f222f00c6b380d4a164cd",
+      "changed_native_pixels": 24960,
+      "same_fixture": true
+    },
+    "building_home_c_door_opening": {
+      "before_sha256": "db9e6310d121c064e257687994b5db6845b9291fbe34abc31e13caabc50bdf9f",
+      "after_sha256": "fe341327e44f3513b40d0fc737c5ca6c18d48562ee82d29fc5f157f1fa01f741",
+      "changed_native_pixels": 24960,
+      "same_fixture": true
+    },
+    "building_home_c_door_open": {
+      "before_sha256": "f5324bf3ea466fadb094d317a8523479fce886a078c6ff7f347d03b04a09d823",
+      "after_sha256": "63ff51056a96572f2ee07d4aef58f4203ce1fa9a87ab77d5e43003d1d3900063",
+      "changed_native_pixels": 24960,
+      "same_fixture": true
+    },
+    "building_home_c_door_closing": {
+      "before_sha256": "07a495f023d5619e9f7f10e6c1e6992a89b203b0bac234d9a9eabb509966bb55",
+      "after_sha256": "85af88eca54b38b6b3bf6d38ac4c042b907b545c1f7aca2bfd39ecad5ca725d0",
+      "changed_native_pixels": 24960,
+      "same_fixture": true
+    },
+    "building_home_c_door_closed": {
+      "before_sha256": "a91926c5668e35a23465fa98738cecd297d6b24e1a5ee5919b4693c3fba2a48c",
+      "after_sha256": "13663dac775d7abfe6606d68faf1c028410ae445ad2f6b7f92cc403842a78d96",
+      "changed_native_pixels": 24960,
+      "same_fixture": true
+    },
+    "interior_home_c_arrival_normal": {
+      "before_sha256": "4cf97b2d24e18315b6819ef4c566c7f95798910a2f58a5c460d267d142eb8c81",
+      "after_sha256": "4cf97b2d24e18315b6819ef4c566c7f95798910a2f58a5c460d267d142eb8c81",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_home_c_arrival_reduced": {
+      "before_sha256": "4cf97b2d24e18315b6819ef4c566c7f95798910a2f58a5c460d267d142eb8c81",
+      "after_sha256": "4cf97b2d24e18315b6819ef4c566c7f95798910a2f58a5c460d267d142eb8c81",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_liam_house_entrance_normal": {
+      "before_sha256": "943b463724f5668a7d0ceda36090f9a2a96244fc4f533e24fab50dacf301f262",
+      "after_sha256": "7c1ebeea7acde21373f6712595eebc42e612592abb7be223d9f213ca0785271b",
+      "changed_native_pixels": 69029,
+      "same_fixture": true
+    },
+    "building_liam_house_survey_normal": {
+      "before_sha256": "2afdab670037831172e5eaaa41bce6a19ac3c4cf7a304ead5ee706c8b2385e52",
+      "after_sha256": "51d76849df70572b3730c8219e3b855a2eaad66bd7684eaf57408b82a374de61",
+      "changed_native_pixels": 48431,
+      "same_fixture": true
+    },
+    "building_liam_house_entrance_reduced": {
+      "before_sha256": "8dc4c78c420157be30870dde2826c6702a95a6897d206c64bd0c5cdd887eb5dc",
+      "after_sha256": "c200fa88a5a42d0fb102c3ee0b3b8b04b1f758cc02e7ab9cf75a072107429172",
+      "changed_native_pixels": 69029,
+      "same_fixture": true
+    },
+    "building_liam_house_survey_reduced": {
+      "before_sha256": "d17dd58670d2619b5a2f53a3da08292c49798d521c5d75b41855ec9b8de0bb26",
+      "after_sha256": "72ac22421b2fdd75de03719594092aa8e8ca46ed9e5a51a3a45cacc7c82dd357",
+      "changed_native_pixels": 48431,
+      "same_fixture": true
+    },
+    "building_liam_house_door_opening": {
+      "before_sha256": "536798623a0d8aab5106a5a41ce3128029292a508c344f2fa4e842d70ca58617",
+      "after_sha256": "195284a139756cc7b92649ede25c653d37d6ffb3b7945da482bef2e3f6e19448",
+      "changed_native_pixels": 48431,
+      "same_fixture": true
+    },
+    "building_liam_house_door_open": {
+      "before_sha256": "d0a6cd56f9c14190a6b91b8560fbc7bd5d2ba358194ed2d2be7287a2a75e9587",
+      "after_sha256": "3889eea97c7d681bf0782beb72a20f4936a42c2b7142a4be0edee67c64dd5e34",
+      "changed_native_pixels": 48431,
+      "same_fixture": true
+    },
+    "building_liam_house_door_closing": {
+      "before_sha256": "1b8bd8103b8d0d690c68ccae0b4af75b35f2fa69f75e8229b37796834df45275",
+      "after_sha256": "ffb9d526f4f12dd304bc56a633c6badd9d541c14dad0450254f24f025955915b",
+      "changed_native_pixels": 48431,
+      "same_fixture": true
+    },
+    "building_liam_house_door_closed": {
+      "before_sha256": "2afdab670037831172e5eaaa41bce6a19ac3c4cf7a304ead5ee706c8b2385e52",
+      "after_sha256": "51d76849df70572b3730c8219e3b855a2eaad66bd7684eaf57408b82a374de61",
+      "changed_native_pixels": 48431,
+      "same_fixture": true
+    },
+    "interior_liam_house_arrival_normal": {
+      "before_sha256": "2a9792cc6230d0cc489f8dbcc3e3a917b9b5a5585681da6786b68fa9863005a5",
+      "after_sha256": "2a9792cc6230d0cc489f8dbcc3e3a917b9b5a5585681da6786b68fa9863005a5",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_liam_house_arrival_reduced": {
+      "before_sha256": "2a9792cc6230d0cc489f8dbcc3e3a917b9b5a5585681da6786b68fa9863005a5",
+      "after_sha256": "2a9792cc6230d0cc489f8dbcc3e3a917b9b5a5585681da6786b68fa9863005a5",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_inn_entrance_normal": {
+      "before_sha256": "9b7d388b4dd10d78c6017e36966f9e705156064c9ee2c6d7761ac1dddfa81f7e",
+      "after_sha256": "455442248ed4626e7da22b6b9ee2ac8a34b60fb6e1b9343685afc542b32597da",
+      "changed_native_pixels": 21877,
+      "same_fixture": true
+    },
+    "building_inn_survey_normal": {
+      "before_sha256": "fed046e500f62f4f4ce75621ad66dcdf5cd569deee05e821ae48284bf68e63cf",
+      "after_sha256": "9355f1bb1e7b3f64b75ea404fb93ee5e064a792f1ffd08e05d69f47166ca5f83",
+      "changed_native_pixels": 57616,
+      "same_fixture": true
+    },
+    "building_inn_entrance_reduced": {
+      "before_sha256": "8db5416a5545726b216d83af78672f844562224b63da42fe9584f7796c681712",
+      "after_sha256": "882dd9c616d6913d01625f7c419d09981c574592dc5df1a39345fb435dc1fb4d",
+      "changed_native_pixels": 21877,
+      "same_fixture": true
+    },
+    "building_inn_survey_reduced": {
+      "before_sha256": "900f73bf650b2d443c93b3f518aec59788c1cbc85ba4a24410cf2d0b08504a90",
+      "after_sha256": "31ea00c1e9d46b502bc61262a99e013f3ff4f17c2c12d79205c42dfcb2fd64ba",
+      "changed_native_pixels": 57617,
+      "same_fixture": true
+    },
+    "building_inn_door_opening": {
+      "before_sha256": "48fde6b560d109dab7e8a0f3b1ee4b6ab4f8dc547e36c7dfe15839ad15560c1d",
+      "after_sha256": "7909edbbb1d49c43dba270517e025e8d6621e7bbe0959605cf645d68d8757769",
+      "changed_native_pixels": 57616,
+      "same_fixture": true
+    },
+    "building_inn_door_open": {
+      "before_sha256": "171a523cc1d56e7c0c74e7be9f78014d3f7471ce4cc583b9220b77db43076660",
+      "after_sha256": "05e9ccbef760a318adf251b9d0b2f9fb7010effd80939c3100fbf6acf28a8f2a",
+      "changed_native_pixels": 57616,
+      "same_fixture": true
+    },
+    "building_inn_door_closing": {
+      "before_sha256": "ed300d5274370ed3d59a8178da57f2218ceeb4fe63c5cf5ed00f0736e529af65",
+      "after_sha256": "5e2cfc581d5ea76cc75b82640e54d8bd103e653b09f4dbca4a7ac78af927cc18",
+      "changed_native_pixels": 57616,
+      "same_fixture": true
+    },
+    "building_inn_door_closed": {
+      "before_sha256": "fed046e500f62f4f4ce75621ad66dcdf5cd569deee05e821ae48284bf68e63cf",
+      "after_sha256": "9355f1bb1e7b3f64b75ea404fb93ee5e064a792f1ffd08e05d69f47166ca5f83",
+      "changed_native_pixels": 57616,
+      "same_fixture": true
+    },
+    "interior_inn_arrival_normal": {
+      "before_sha256": "6255852b143ea79dbcf88642d760423cc617370e9de0fb9d01abc3580372ef93",
+      "after_sha256": "6255852b143ea79dbcf88642d760423cc617370e9de0fb9d01abc3580372ef93",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_inn_arrival_reduced": {
+      "before_sha256": "6255852b143ea79dbcf88642d760423cc617370e9de0fb9d01abc3580372ef93",
+      "after_sha256": "6255852b143ea79dbcf88642d760423cc617370e9de0fb9d01abc3580372ef93",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "building_item_shop_entrance_normal": {
+      "before_sha256": "833826f160906b0039c9105ade4a26ec99f2d2ac8c1f69e972dd5456feb83049",
+      "after_sha256": "3716553d92f173e67b43ed98cd77a066628541647d00d029b49a8f10099afdc0",
+      "changed_native_pixels": 39357,
+      "same_fixture": true
+    },
+    "building_item_shop_survey_normal": {
+      "before_sha256": "e97f9373cf7b78adfe1fc40cdbb32431c90526f9d53ea1353f0686dc343d71c2",
+      "after_sha256": "9e63c03d061f991aaad51e5e9b98666605550b8d92c75b47314d205f1f06ae67",
+      "changed_native_pixels": 41829,
+      "same_fixture": true
+    },
+    "building_item_shop_entrance_reduced": {
+      "before_sha256": "833826f160906b0039c9105ade4a26ec99f2d2ac8c1f69e972dd5456feb83049",
+      "after_sha256": "3716553d92f173e67b43ed98cd77a066628541647d00d029b49a8f10099afdc0",
+      "changed_native_pixels": 39357,
+      "same_fixture": true
+    },
+    "building_item_shop_survey_reduced": {
+      "before_sha256": "e97f9373cf7b78adfe1fc40cdbb32431c90526f9d53ea1353f0686dc343d71c2",
+      "after_sha256": "9e63c03d061f991aaad51e5e9b98666605550b8d92c75b47314d205f1f06ae67",
+      "changed_native_pixels": 41829,
+      "same_fixture": true
+    },
+    "building_item_shop_door_opening": {
+      "before_sha256": "ac63b0436cc6a3665e740a304ad9b7288f2b33291e65db4fdd742f6e0ae71850",
+      "after_sha256": "60737555c35b3430334a8e19ac9a1b007f4a6f7675a9e8842418a4ddcfecab91",
+      "changed_native_pixels": 41829,
+      "same_fixture": true
+    },
+    "building_item_shop_door_open": {
+      "before_sha256": "691ac53b8e66f9cb0b22b6d9a18a3453dac304c6cd3e1ea1da6fc3ad2e57d986",
+      "after_sha256": "061fc298c6da681112f15e7660a79b2408a047e17b208439ae3b8232cd4f9250",
+      "changed_native_pixels": 41829,
+      "same_fixture": true
+    },
+    "building_item_shop_door_closing": {
+      "before_sha256": "12fe2e4cea34a2b835c3dd8c4f2d05a9094da53e42fca1bc490c2e2350a18941",
+      "after_sha256": "2d26e05ffd3cff7e64b9e25d3d91f0cd906b6546b816923d68ac6b33d74a711e",
+      "changed_native_pixels": 41829,
+      "same_fixture": true
+    },
+    "building_item_shop_door_closed": {
+      "before_sha256": "e97f9373cf7b78adfe1fc40cdbb32431c90526f9d53ea1353f0686dc343d71c2",
+      "after_sha256": "9e63c03d061f991aaad51e5e9b98666605550b8d92c75b47314d205f1f06ae67",
+      "changed_native_pixels": 41829,
+      "same_fixture": true
+    },
+    "interior_item_shop_arrival_normal": {
+      "before_sha256": "a29d6d541e8edd960429bfee6cf3fdfe156118b81bae740f71515769781d3780",
+      "after_sha256": "a29d6d541e8edd960429bfee6cf3fdfe156118b81bae740f71515769781d3780",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_item_shop_arrival_reduced": {
+      "before_sha256": "a29d6d541e8edd960429bfee6cf3fdfe156118b81bae740f71515769781d3780",
+      "after_sha256": "a29d6d541e8edd960429bfee6cf3fdfe156118b81bae740f71515769781d3780",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_sanctuary_bedroom_arrival": {
+      "before_sha256": "a6fa6415383245c28b535a73e5b5d1508d3f4adb1c41a22d216a073e074e0eca",
+      "after_sha256": "a6fa6415383245c28b535a73e5b5d1508d3f4adb1c41a22d216a073e074e0eca",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_sanctuary_dining_arrival": {
+      "before_sha256": "493f95eee582b8413633b743b1eb1ff7bf624b8e8eb9f102870f46f3364e8f21",
+      "after_sha256": "493f95eee582b8413633b743b1eb1ff7bf624b8e8eb9f102870f46f3364e8f21",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "interior_inn_guest_floor_arrival": {
+      "before_sha256": "d4817bef47c032230dea20c891aa4858ad1ffab629392e491565e3c79fb05975",
+      "after_sha256": "d4817bef47c032230dea20c891aa4858ad1ffab629392e491565e3c79fb05975",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_normal_0": {
+      "before_sha256": "f852900f01eb76ab339f287723091c36fbc47edd3f967e40f947d0359f3fe2e3",
+      "after_sha256": "97e37d00fa9e6ba24ceff2479d9293b458592866c7d69fbb051d53abb5bf8469",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_normal_1": {
+      "before_sha256": "820d587e92bf770d926d17e82240a029f1510396332b4caea73d216b70a581a2",
+      "after_sha256": "4dec61999165dbba68e106dad29515d4d169ac3f618e7c3ab515af9bcab4568e",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_normal_2": {
+      "before_sha256": "7eb7b27a2cf15afb9d18642e981ecade760e511c4ee17ea36b94e1dab8ffe4af",
+      "after_sha256": "a2309a71d40f85d67f5f9585913a5d79959be5fd0a460a2382142c8285ed11cf",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_normal_3": {
+      "before_sha256": "8238c65c10239c9cd8322d214476d3510dccfbb41e94aec25cbf8ecaf96764dc",
+      "after_sha256": "0773d81db725701709bf011f4138bdeec055b78d8c84648db2ed9552cb91d305",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_normal_4": {
+      "before_sha256": "8be77746e0d884372fbbbcfa124a9f480493c4c8cedf4509bd1178a204e7657b",
+      "after_sha256": "39c03abc2f80f1f535f394c16eda085e0d6aa005a8e4e806baf3d4a7dd6939e1",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_normal_5": {
+      "before_sha256": "ab10b77a2d2f983bc4706f7af194bab15af6296ebb9e4df19d85d66c2ecc4439",
+      "after_sha256": "2f9a24879a7c85f1a4bb3952d217726efff8f061b097cc6db9b68fceb5117ece",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_reduced_0": {
+      "before_sha256": "03c8fb71372e3fbcceff5a66e1f3d7b6a30cc623df7dc9c198fd75cb16346dda",
+      "after_sha256": "0451f06d66cdb411a66595ef7825abce14aae435442579d6f81f2063b3789723",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_reduced_1": {
+      "before_sha256": "03c8fb71372e3fbcceff5a66e1f3d7b6a30cc623df7dc9c198fd75cb16346dda",
+      "after_sha256": "0451f06d66cdb411a66595ef7825abce14aae435442579d6f81f2063b3789723",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_reduced_2": {
+      "before_sha256": "03c8fb71372e3fbcceff5a66e1f3d7b6a30cc623df7dc9c198fd75cb16346dda",
+      "after_sha256": "0451f06d66cdb411a66595ef7825abce14aae435442579d6f81f2063b3789723",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_reduced_3": {
+      "before_sha256": "03c8fb71372e3fbcceff5a66e1f3d7b6a30cc623df7dc9c198fd75cb16346dda",
+      "after_sha256": "0451f06d66cdb411a66595ef7825abce14aae435442579d6f81f2063b3789723",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_reduced_4": {
+      "before_sha256": "03c8fb71372e3fbcceff5a66e1f3d7b6a30cc623df7dc9c198fd75cb16346dda",
+      "after_sha256": "0451f06d66cdb411a66595ef7825abce14aae435442579d6f81f2063b3789723",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_reduced_5": {
+      "before_sha256": "46bda236a86b70ed0d14ddd23715a4cdd6b43e77b3ef0e8b522a711bc199cef3",
+      "after_sha256": "781a8132653bec7935ba2a0d397d8441f9b00ec09a1a96d308e7d49a986a333f",
+      "changed_native_pixels": 73051,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_normal_0": {
+      "before_sha256": "9313e98b11e548c3dbe106a6910420cc6687ae96328d1f0c64df10d2b5a18512",
+      "after_sha256": "2043ddf0f2cc6654a47b0ac19ef482ae2eefb0201a523448ccb287ea62c23aac",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_normal_1": {
+      "before_sha256": "5da19e664eeeb949052aed5e32984e0a3086a400c35a4b26070bc322afc46b02",
+      "after_sha256": "7efab85e196c0393af1ee6d8d3a7669af5ad7d298984d4fcb46a01e2c46be53a",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_normal_2": {
+      "before_sha256": "7b9dd0d8f9825162f054aeca63fdb6844a72d6f9f7cb7df3f88e730baae738aa",
+      "after_sha256": "566a75a6ff4e26c7c985cfa665945caa5f5507faf064f4c90ad0469f537df9ff",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_normal_3": {
+      "before_sha256": "2c19c9676e839465ab28183aa9bdd3d3eaf0ad69f5672cb26eb64e9c0a1917bf",
+      "after_sha256": "83929c6362aa980b33294512672615d964d19b103c1c978d18e08b1637b41931",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_normal_4": {
+      "before_sha256": "b45d43fa54a12c2b436e3681f7c0b6a4c8a6493171a9fb2c3ce6dd1afefdb3a4",
+      "after_sha256": "47ba22436168c1a59956870811ff3e268e021398d788fc211a60b6a89cb67cd2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_normal_5": {
+      "before_sha256": "d3f72e9fb9c6c01fab8354226888eb9f4bd06d1e0679331991019eb236697b21",
+      "after_sha256": "5178a62f0da6415248d75a59890ebd13606bc99c56fb76765deb9bf6d3694665",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_reduced_0": {
+      "before_sha256": "e7d87cf4d3ff2821ca73c8b9c1d4ecc48c9d9ef5448da74e6fa7f436cc8ac956",
+      "after_sha256": "66482aeb4f8f4c5e25e326722ace334ec925958a1bac31376dfc1bbe29382df2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_reduced_1": {
+      "before_sha256": "e7d87cf4d3ff2821ca73c8b9c1d4ecc48c9d9ef5448da74e6fa7f436cc8ac956",
+      "after_sha256": "66482aeb4f8f4c5e25e326722ace334ec925958a1bac31376dfc1bbe29382df2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_reduced_2": {
+      "before_sha256": "e7d87cf4d3ff2821ca73c8b9c1d4ecc48c9d9ef5448da74e6fa7f436cc8ac956",
+      "after_sha256": "66482aeb4f8f4c5e25e326722ace334ec925958a1bac31376dfc1bbe29382df2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_reduced_3": {
+      "before_sha256": "e7d87cf4d3ff2821ca73c8b9c1d4ecc48c9d9ef5448da74e6fa7f436cc8ac956",
+      "after_sha256": "66482aeb4f8f4c5e25e326722ace334ec925958a1bac31376dfc1bbe29382df2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_reduced_4": {
+      "before_sha256": "e7d87cf4d3ff2821ca73c8b9c1d4ecc48c9d9ef5448da74e6fa7f436cc8ac956",
+      "after_sha256": "66482aeb4f8f4c5e25e326722ace334ec925958a1bac31376dfc1bbe29382df2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_reduced_5": {
+      "before_sha256": "e7d87cf4d3ff2821ca73c8b9c1d4ecc48c9d9ef5448da74e6fa7f436cc8ac956",
+      "after_sha256": "66482aeb4f8f4c5e25e326722ace334ec925958a1bac31376dfc1bbe29382df2",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_normal_0": {
+      "before_sha256": "3d2e0c3ec398be79354cb9c1375ac5faa7b7a85a95162d053773ccfa73f6f672",
+      "after_sha256": "1fde3caa0d4e1729869f4ca18ade5886def4f3e7b478399a19f4eb7faece465f",
+      "changed_native_pixels": 26605,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_normal_1": {
+      "before_sha256": "7686cb9d27ff99122fffe1773913fdd0622247340b00e40e5157aaf8a1f08fb6",
+      "after_sha256": "3b949602e679f3f146fb8f8c5a3dfbdc13f864f408151de398e2fd28755c3cde",
+      "changed_native_pixels": 26605,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_normal_2": {
+      "before_sha256": "adbafd2478016f8e8867c550c468089c318e51803702124842a13809ef153442",
+      "after_sha256": "e1c7904fc1d7d68a75c449bddd14e98fb8e0089fcc89a44e7d6af1c79ba1cf53",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_normal_3": {
+      "before_sha256": "34aeee3468cb53e88367d4571ad76372951795ee3a18b673030bda979b31a82a",
+      "after_sha256": "9ad8b1a77f64a9ffc9c42a297cb58202878a987bed5b73c4e4bba2ecf4f6a18a",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_normal_4": {
+      "before_sha256": "57befbc51fc8ecd243dde5b8a1958c42339cf4296f14ae536c90ac4adeb3d1ff",
+      "after_sha256": "5f01675be06658c11994c1303e47377d87db584baff0a8b85cc510ebaa2d31ad",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_normal_5": {
+      "before_sha256": "6d724150133c8dda85c95c830d2d55cec489e12edbac6c38c811dad47d73ddb0",
+      "after_sha256": "e8f1e0a2f85c554a23ec51e8ddbaf14c606c6a5c531f6765d14b8e83e57f2f0c",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_reduced_0": {
+      "before_sha256": "1d2df47b9e16775ff596c8f33a90c3adcea179f13bb4cbcfcfe0ed577208dff6",
+      "after_sha256": "e40d0c1167ec4534e5d9730241bf209afe9435e636dcd910e233975cfc4398f4",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_reduced_1": {
+      "before_sha256": "1d2df47b9e16775ff596c8f33a90c3adcea179f13bb4cbcfcfe0ed577208dff6",
+      "after_sha256": "e40d0c1167ec4534e5d9730241bf209afe9435e636dcd910e233975cfc4398f4",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_reduced_2": {
+      "before_sha256": "1d2df47b9e16775ff596c8f33a90c3adcea179f13bb4cbcfcfe0ed577208dff6",
+      "after_sha256": "e40d0c1167ec4534e5d9730241bf209afe9435e636dcd910e233975cfc4398f4",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_reduced_3": {
+      "before_sha256": "1d2df47b9e16775ff596c8f33a90c3adcea179f13bb4cbcfcfe0ed577208dff6",
+      "after_sha256": "e40d0c1167ec4534e5d9730241bf209afe9435e636dcd910e233975cfc4398f4",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_reduced_4": {
+      "before_sha256": "1d2df47b9e16775ff596c8f33a90c3adcea179f13bb4cbcfcfe0ed577208dff6",
+      "after_sha256": "e40d0c1167ec4534e5d9730241bf209afe9435e636dcd910e233975cfc4398f4",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_reduced_5": {
+      "before_sha256": "1d2df47b9e16775ff596c8f33a90c3adcea179f13bb4cbcfcfe0ed577208dff6",
+      "after_sha256": "e40d0c1167ec4534e5d9730241bf209afe9435e636dcd910e233975cfc4398f4",
+      "changed_native_pixels": 26606,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_lane_far_normal": {
+      "before_sha256": "54fd7bda43a838dba3ecfbe648a34e2a3488be427013a83881a8a52bde125ea5",
+      "after_sha256": "e7bf7940459fb1e56343429418380fd4466787363dc8442aa8a9c5cb6928d8af",
+      "changed_native_pixels": 67488,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_lane_far_reduced": {
+      "before_sha256": "94e1b770cdd737ebfe53727a67d5f4864446c55f48664e0ad0ee361706741b1e",
+      "after_sha256": "b43b3145a505208797e41d53cde6c0cb230e987186b1a5a11c43e0704370f74c",
+      "changed_native_pixels": 67488,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_lane_center_normal": {
+      "before_sha256": "0e1051a15c84213a1ae4aeda722cc4fdc7bde20b933582608033e94673eb391a",
+      "after_sha256": "0b9bf802b94bfcaf520944873c793495979fe7cb0d94c019d070a8e5f6a877fc",
+      "changed_native_pixels": 74012,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_lane_center_reduced": {
+      "before_sha256": "9e8426271b038016fcbc1a9873875134b22d2650b2b0181881b2e5f3d6187755",
+      "after_sha256": "f534750768102279edbc43e8bbb01dc08ad6dea7cc0bbb542eb6fe615caba92c",
+      "changed_native_pixels": 74012,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_lane_near_normal": {
+      "before_sha256": "271e895cdd077106ae04f9cfbbf5f4141b370b40e475683766ceaf4f68da3537",
+      "after_sha256": "bf4570470c3ed841be86a2361ff88e7315212f6dc75a6974646836fb17cd11b3",
+      "changed_native_pixels": 77142,
+      "same_fixture": true
+    },
+    "crossing_upper_bridge_lane_near_reduced": {
+      "before_sha256": "7f7508eeabdc07184f212ee00cfd67f6f10e67e3ff211b6cb528a7755b3e59dd",
+      "after_sha256": "4d8953616de44940f23176f59d828f7de67de563b361a9426af3658b31d95981",
+      "changed_native_pixels": 77142,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_lane_far_normal": {
+      "before_sha256": "3f2efd5b0226d14f97084ba971a43303963e73794e986b72811d731d54fb072f",
+      "after_sha256": "877f16bb8d0179a2189b7868ea2602fd22cb344eddbf4281d29add8cb82513fe",
+      "changed_native_pixels": 17708,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_lane_far_reduced": {
+      "before_sha256": "635fa0708a63f134fd31a3419d3cac2dcfd9b522475006156c8a7ced8e69ec1b",
+      "after_sha256": "8246389330cba69d377cfe0d601a0ebe37bae2739a85a4faf3e94177bb0a1e45",
+      "changed_native_pixels": 17708,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_lane_center_normal": {
+      "before_sha256": "2b4d7858e75a621b58364bc57d92b51d7f2164fae039f3b8ac5c45f33379fe98",
+      "after_sha256": "4b22c7ab715b030fbd5a841fa1c2a486f088d6e44a6763877ee4960b49fa2ee4",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_lane_center_reduced": {
+      "before_sha256": "e5c208396eba407af79a5ab577e18a3c1560f3185c567fa2de3c6b363ff4aff0",
+      "after_sha256": "55c9cc259f304ff3827dfbfb28d60f5e3936b07f7369289c906742365094ddc1",
+      "changed_native_pixels": 13004,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_lane_near_normal": {
+      "before_sha256": "7b43c86664a041648c3581846243bcdd8277fa4f9ea7fed6507794ccb0d199ef",
+      "after_sha256": "56c6545d1042de7fae793a2883bac0393aa684f3ff92dfd5d68ae8a8123b1854",
+      "changed_native_pixels": 8241,
+      "same_fixture": true
+    },
+    "crossing_main_bridge_lane_near_reduced": {
+      "before_sha256": "582573840da136797bba02f0fd7e3ade64a547647e220e2a376ee45871da48e4",
+      "after_sha256": "d7318293e7e6450e8e19d06755db74746f9048f65261fcaa77cdce32610d02d4",
+      "changed_native_pixels": 8241,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_lane_west_normal": {
+      "before_sha256": "79ff12a11680e25faa3e4bc4ae33047fcfad791e96e0a80d12fd1d1ba7b3e71a",
+      "after_sha256": "b28cc05919b8962f0ee8b081e2f31d05e54d5445a2fb2ecf47b0b20f7ea257e9",
+      "changed_native_pixels": 31704,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_lane_west_reduced": {
+      "before_sha256": "ea822b7f88188500983dd0b9cb5249a21d488138e2f77ec67589f3d559879296",
+      "after_sha256": "80ca4a64d9f08b2c7a9d6854deacc4e374da31511a086137c64ba416a273d9ce",
+      "changed_native_pixels": 31704,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_lane_center_normal": {
+      "before_sha256": "928ab6cfdaed5352aa87411e2878d9c24f6046606d24f4caf831ee598d848148",
+      "after_sha256": "613bf52f991fc9fcadcb5459162d0748d36d07735727f4e0b1ae0fb51e1a7dcb",
+      "changed_native_pixels": 31704,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_lane_center_reduced": {
+      "before_sha256": "5467e5b22d18eaac52bb0243f285aa15320072a17763dd86dbedf24c48ac0777",
+      "after_sha256": "367eb76f65e46a3c1d299c7e9e057a9a462c1eda9daa93034ff6bcf926c4aeb5",
+      "changed_native_pixels": 31704,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_lane_east_normal": {
+      "before_sha256": "e39054b94d789478b72bcdb0b6104e7406ad7972ca27d7e40e88ef5240c4a29a",
+      "after_sha256": "c6dc38639c88a05bd309ef7f1fbdd1902dcebe4b24bc91f3a11b1b8441901fb2",
+      "changed_native_pixels": 31704,
+      "same_fixture": true
+    },
+    "crossing_mill_landing_lane_east_reduced": {
+      "before_sha256": "19e885bd9ac18c9b6d95b400ffabbf5295d63fa7f74e2bdf168bfe64be48ae63",
+      "after_sha256": "c7f61b73d585dcb44c1aaceeb48ed47d3e8cb252b4b7eded02d49c91218b77c1",
+      "changed_native_pixels": 31704,
+      "same_fixture": true
+    },
+    "antlers_regional": {
+      "before_sha256": "fb7762ae14e0e2e2861be88de49082a912cd4d6eb09bf942c8beee3e56ebcc29",
+      "after_sha256": "fb7762ae14e0e2e2861be88de49082a912cd4d6eb09bf942c8beee3e56ebcc29",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "antlers_detailed": {
+      "before_sha256": "61649ed086efa7d7a7575b6f71952af529c66a04a11f4a9c36d85dc6460a4ec4",
+      "after_sha256": "61649ed086efa7d7a7575b6f71952af529c66a04a11f4a9c36d85dc6460a4ec4",
+      "changed_native_pixels": 0,
+      "same_fixture": true
+    },
+    "antlers_town_north": {
+      "before_sha256": "97b112f34fe5b95a008072f2b1965b5a8f33c0bfb69cc0ac25fdd9327df59ff7",
+      "after_sha256": "daff1495074cf71db537f28eeca465ca04de3fa57e2b7243e178f19faf89ddf0",
+      "changed_native_pixels": 86757,
+      "same_fixture": true
+    },
+    "antlers_town_north_lane": {
+      "before_sha256": "6b76b167df274791992ffcf8fdc167fab2c32b608986bae2daa13b9304cd234f",
+      "after_sha256": "397f749277b17fcca4e07f3b161ddc633f1a649ff294eebe45d84bf7464f49c6",
+      "changed_native_pixels": 46853,
+      "same_fixture": true
+    },
+    "southern_lane": {
+      "before_sha256": "d3d8c59d48af1adad58d4d11fd438f4a6f27fdaa368767d60610cd34b77a688f",
+      "after_sha256": "b2a26814107db3b78fc59d753c4c8af2a06b6cdac7c08c23f73709de7579068d",
+      "changed_native_pixels": 44694,
+      "same_fixture": true
+    }
+  },
+  "pair_count": 192,
+  "unchanged_views": [
+    "interior_sanctuary_arrival_normal",
+    "interior_sanctuary_arrival_reduced",
+    "interior_mira_arrival_normal",
+    "interior_mira_arrival_reduced",
+    "interior_mill_arrival_normal",
+    "interior_mill_arrival_reduced",
+    "interior_school_arrival_normal",
+    "interior_school_arrival_reduced",
+    "interior_halden_arrival_normal",
+    "interior_halden_arrival_reduced",
+    "interior_elira_arrival_normal",
+    "interior_elira_arrival_reduced",
+    "interior_venn_arrival_normal",
+    "interior_venn_arrival_reduced",
+    "interior_home_a_arrival_normal",
+    "interior_home_a_arrival_reduced",
+    "interior_home_b_arrival_normal",
+    "interior_home_b_arrival_reduced",
+    "interior_home_c_arrival_normal",
+    "interior_home_c_arrival_reduced",
+    "interior_liam_house_arrival_normal",
+    "interior_liam_house_arrival_reduced",
+    "interior_inn_arrival_normal",
+    "interior_inn_arrival_reduced",
+    "interior_item_shop_arrival_normal",
+    "interior_item_shop_arrival_reduced",
+    "interior_sanctuary_bedroom_arrival",
+    "interior_sanctuary_dining_arrival",
+    "interior_inn_guest_floor_arrival",
+    "antlers_regional",
+    "antlers_detailed"
+  ],
+  "native_views": 193,
+  "movement_checks": 63,
+  "movement_failures": [],
+  "save_continue": {
+    "upper_bridge": {
+      "passed": true,
+      "exact_keys": [
+        "quests",
+        "party",
+        "inventory",
+        "player",
+        "overworld"
+      ],
+      "player": {
+        "scene": "eldenmere.playable",
+        "position": [
+          852.0,
+          480.0
+        ],
+        "facing": "back"
+      }
+    },
+    "main_bridge": {
+      "passed": true,
+      "exact_keys": [
+        "quests",
+        "party",
+        "inventory",
+        "player",
+        "overworld"
+      ],
+      "player": {
+        "scene": "eldenmere.playable",
+        "position": [
+          828.0,
+          1032.0
+        ],
+        "facing": "back"
+      }
+    },
+    "mill_landing": {
+      "passed": true,
+      "exact_keys": [
+        "quests",
+        "party",
+        "inventory",
+        "player",
+        "overworld"
+      ],
+      "player": {
+        "scene": "eldenmere.playable",
+        "position": [
+          971.0,
+          354.0
+        ],
+        "facing": "back"
+      }
+    }
+  },
+  "structure_preservation": {
+    "halden": {
+      "changed_pixels": 24292,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "elira": {
+      "changed_pixels": 19011,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "venn": {
+      "changed_pixels": 29957,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "home_a": {
+      "changed_pixels": 23325,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "home_b": {
+      "changed_pixels": 23621,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "home_c": {
+      "changed_pixels": 24960,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "liam_house": {
+      "changed_pixels": 28908,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "mira": {
+      "changed_pixels": 31117,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "mill": {
+      "changed_pixels": 25965,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "school": {
+      "changed_pixels": 49006,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "sanctuary": {
+      "changed_pixels": 73111,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "inn": {
+      "changed_pixels": 57617,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    },
+    "item_shop": {
+      "changed_pixels": 41829,
+      "outside_roof_envelopes_and_legacy_ridge_overrun": 0,
+      "metadata_identical": true,
+      "pane_mask_identical": true
+    }
+  },
+  "scope_note": "Structure differences stay within existing roof envelopes and their legacy cap overrun; canvas/ground/door/flue/roof-plane metadata and pane masks are exact. Full map differences are source-manifest hash metadata only. Ground, collisions, navigation, audited architecture schedule, interiors, crossings, NPC/quest/service code, doors and current courtyard placement are not changed.",
+  "limitations": [
+    "Not an uninterrupted story playthrough.",
+    "Survey views explicitly focus the production camera to fit tall buildings.",
+    "Collision overlays are diagnostic annotations, not gameplay screenshots.",
+    "Contact boards are downscaled indexes; native PNGs are authoritative."
+  ],
+  "visual_approval": "Not reviewed by user; tests do not imply owner visual approval.",
+  "export_checks": {
+    "tools/eldenmere_architecture_art.py --check": 122,
+    "tools/build_eldenmere_exteriors_hd.py --check": 1301,
+    "tools/build_eldenmere_business_exteriors_hd.py --check": 535,
+    "tools/build_eldenmere_hd.py --check": 955
+  },
+  "protected_map_asset_changes": [],
+  "checks_note": "The original combined process and later whole interior module were killed by memory pressure without assertions failing. Every selected test then completed successfully in separate modules or isolated test processes. This is not a full repository-suite run.",
+  "focused_regression_modules": {
+    "test_eldenmere_architecture_art": 14,
+    "test_eldenmere_architecture_contracts": 6,
+    "test_eldenmere_architecture_review": 5,
+    "test_eldenmere_exterior_integration": 3,
+    "test_eldenmere_crossing_art": 14,
+    "test_eldenmere_crossing_integration": 6,
+    "test_eldenmere_hd_integration": 18,
+    "test_eldenmere_interior_architecture": 22,
+    "test_eldenmere_settlement_framework": 17,
+    "test_eldenmere_settlement_streets": 11,
+    "test_eldenmere_settlement_courtyard": 14,
+    "test_town_southern_exit": 5,
+    "test_town_services": 19
+  },
+  "focused_regression_test_count": 154,
+  "focused_regression_result": "154 passed; all selected checks completed successfully in bounded processes."
+}

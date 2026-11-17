@@ -1274,7 +1274,14 @@ an acceptable construction method for the new live shells.
 
 The existing town architecture schedule records reviewed roof planes, wall
 contacts and exact cap emitters independently from the unchanged ground/door
-registration. Mill/school walls fit their retained occupied ground; overhangs do
+registration. The roof-only restoration reauthors the actual 24px cottage,
+workshop, school, mill and household roof language at native 2×: tapered pitched
+ends, quiet staggered shingle courses, restrained bevels and narrow ridge caps.
+The mill retains its front-gabled identity across two roof wings. Inn/shop adapt
+that earlier material language; neither had a 24px predecessor. Current audited
+wall/eave contacts, canvas sizes, hearth flues, thresholds and occupied ground
+remain authoritative. See the [roof restoration review](reviews/eldenmere_roof_style/README.md)
+for historical pixel references and paired native Game views. Mill/school walls fit their retained occupied ground; overhangs do
 not enlarge blockers. The mill processing bay, corrected annex and hearth flue
 preserve the separately owned PR2 landing and wheel attachment. Mira's right-side
 flue matches her retained hearth. The school flue matches its retained hearth.
