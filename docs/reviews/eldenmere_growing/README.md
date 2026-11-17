@@ -21,7 +21,9 @@ The player-depth witness uses Caelan's actual registered sprite, with no marker
 or substitute actor. The small coverage mask is a diagnostic, not scene art.
 
 The baseline is clean main
-`5630648b4fe9cb79ae7b1ad867b4aa5b6e0cc836`, after settlement PR 6.
+`2ea69767fdf78134a11a88cabcc4e293c0a29433`, after settlement PR 6 and the
+independent Liam interior fixes. Final captures use the integrated production
+build at `c7761b94c8cd9c3d019931803ecce5329aa8490b`.
 [Revision metadata](before_revision.json), [original map](before_town.json)
 and [original observations](before_observations.json) are retained for
 fresh-clone checks. [The verification record](observations.json) contains native
@@ -86,9 +88,10 @@ This ordinary exploration review does not execute the family repair quest.
 The tools and magicks repair branches are verified separately; the screenshots
 and movement checks do not claim a full quest playthrough.
 
-The 18 growing checks, 28 Venn checks, 79 story checks and 15 architecture checks
-pass. Existing core coverage contains 196 checks. Civic checks pass 79 of 81,
-and business checks pass 12 of 13. The three failures reproduce on clean main:
+All **214 core/growing checks** pass, including the 18 growing checks. The
+**28 Venn checks**, **79 story checks**, **15 architecture checks** and
+**17 Liam interior preservation checks** also pass on the integrated build.
+Civic checks pass 79 of 81, and business checks pass 12 of 13. The three failures reproduce on clean main:
 two original well-rendering expectations and one business roof-palette
 expectation. Exact runner outputs and unchanged relevant source/art hashes are
 retained in [the baseline comparison](baseline_test_comparison.json). Original
