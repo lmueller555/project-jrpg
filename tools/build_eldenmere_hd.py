@@ -252,6 +252,10 @@ def products():
         town['landmark_layers'].append({**placement,'image':donor['image'],'logical_size':donor['logical_size'],
             'artwork_pixels_per_world_pixel':2,'interaction_cues':False})
     town['size_pixels']=size;town['size_tiles']=[v//24 for v in size];town['collision']=ex.png('town/collision',collision);town['navigation_allowed']=ex.png('town/navigation_allowed',allowed)
+    # The expansion's painted road, route destination and automatic scene
+    # contact share one authored contract at the current southern boundary.
+    town['overworld_exit']=deepcopy(rec['overworld_exit'])
+    town['destinations']['southern_exit']=list(town['overworld_exit']['position'])
     town['ground_overlays']=ex.chunks('town',base,phases);town['ground_frames']=[ex.png('blank',Image.new('RGB',(1,1),'#24302d'))];town['pause_on_focus_loss']=True
     town['art_integrations']['town_hd']={'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'region_logical':[0,0,*size],'density':2,'original_bounds_logical':rec['original_bounds_logical']}
     town['cartography']={'buildings':[{'id':spec['id'],'ground_rect':[spec['position'][0]+business[spec['design']]['ground_rect_logical'][0],spec['position'][1]+business[spec['design']]['ground_rect_logical'][1],*business[spec['design']]['ground_rect_logical'][2:]]} for spec in rec['businesses']],'roads':rec['road_centerlines'],'water_extensions':[[816,1344,72,288]]}

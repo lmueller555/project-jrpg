@@ -1374,8 +1374,8 @@
       516
     ],
     "southern_exit": [
-      516,
-      1332
+      528,
+      1620
     ],
     "woodland_exit": [
       720,
@@ -21641,7 +21641,7 @@
         ],
         [
           528,
-          1488
+          1632
         ]
       ],
       [
@@ -21690,5 +21690,21 @@
       "artwork_pixels_per_world_pixel": 2,
       "interaction_cues": false
     }
-  ]
+  ],
+  "overworld_exit": {
+    "position": [
+      528,
+      1620
+    ],
+    "return_position": [
+      528,
+      1572
+    ],
+    "rect": [
+      504,
+      1608,
+      48,
+      24
+    ]
+  }
 }
