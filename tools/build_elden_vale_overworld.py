@@ -215,6 +215,58 @@ def validate(data):
     }
 
 
+def _rect_segment_distance(rect,a,b):
+    """Exact closed-rectangle to segment distance, in logical world units."""
+    x,y,w,h=rect;lo=0.;hi=1.
+    for start,end,lower,upper in ((a[0],b[0],x,x+w),(a[1],b[1],y,y+h)):
+        delta=end-start
+        if not delta:
+            if not lower<=start<=upper:lo=2;break
+        else:
+            t0,t1=sorted(((lower-start)/delta,(upper-start)/delta));lo=max(lo,t0);hi=min(hi,t1)
+    if lo<=hi:return 0.
+    point_rect=lambda p:math.hypot(max(x-p[0],0,p[0]-x-w),max(y-p[1],0,p[1]-y-h))
+    return min(point_rect(a),point_rect(b),*(_distance(p,a,b)[0] for p in ((x,y),(x+w,y),(x,y+h),(x+w,y+h))))
+
+
+def validate_signature_props(data):
+    """Additional physical contacts cannot consume the protected road/approaches."""
+    props=data.get('signature_landscape',{}).get('props',[])
+    if not props:return
+    ids=[p['id'] for p in data.get('decorations',[])]
+    ids += [p['id'] for s in data.get('setpieces',[]) for p in s.get('props',[])]
+    ids += [p.get('id') for p in props]
+    if any(not isinstance(i,str) or not i for i in ids) or len(ids)!=len(set(ids)):
+        raise ValueError('Signature props need unique nonempty IDs')
+    road=next(r for r in data['roads'] if r['id']==data['design_layout']['causeway']['road_id'])
+    routes=[data['design_layout']['causeway']['points'],road['points']]
+    rects=[]
+    for prop in props:
+        point=prop.get('tile_position',());solid=prop.get('solid',())
+        if len(point)!=2 or len(solid)!=2 or not all(isinstance(v,(int,float)) and math.isfinite(v) for v in (*point,*solid)) or any(v<=0 or int(v)!=v for v in solid):
+            raise ValueError('Signature prop needs finite position and positive integral solid size')
+        x,y=(round(v*data['tile_size']) for v in point);w,h=solid;rect=(x-w//2,y-h//2,w,h)
+        for route in routes:
+            for a,b in zip(route,route[1:]):
+                if _rect_segment_distance(rect,tuple(v*24 for v in a),tuple(v*24 for v in b))<48:
+                    raise ValueError('Signature support encroaches protected 96-unit causeway: '+prop['id'])
+        for safe in data.get('safe_clearings',[]):
+            sx,sy,sw,sh=(v*24 for v in safe['rect_tiles'])
+            if x-w//2<sx+sw and x-w//2+w>sx and y-h//2<sy+sh and y-h//2+h>sy:
+                raise ValueError('Signature support occupies protected work/entry clearing: '+prop['id'])
+        for path in data.get('clearance_paths',[]):
+            for a,b in zip(path['points'],path['points'][1:]):
+                if _rect_segment_distance(rect,tuple(v*24 for v in a),tuple(v*24 for v in b))<path.get('width',2)*12:
+                    raise ValueError('Signature support obstructs protected path: '+prop['id'])
+        for other in data['roads']:
+            for a,b in zip(other['points'],other['points'][1:]):
+                if _rect_segment_distance(rect,tuple(v*24 for v in a),tuple(v*24 for v in b))<other.get('width',3)*12:
+                    raise ValueError('Signature support obstructs maintained road: '+prop['id'])
+        if any(rect[0]<rx+rw and rect[0]+w>rx and rect[1]<ry+rh and rect[1]+h>ry for rx,ry,rw,rh in rects):
+            raise ValueError('Overlapping signature support footprints')
+        rects.append(rect)
+
+
 def prepare():
     data = deepcopy(json.loads(SOURCE.read_text(encoding="utf-8")))
     for road in data.get("roads", []):
@@ -244,6 +296,7 @@ def prepare():
         "exports": [OUTPUT.relative_to(ROOT).as_posix(), REFERENCE.relative_to(ROOT).as_posix()]
     }
     validate(data)
+    validate_signature_props(data)
     return data
 
 

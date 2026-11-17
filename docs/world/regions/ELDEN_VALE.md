@@ -4,8 +4,9 @@
 The HD regional foundation is integrated: live area records and protected
 clearances establish the six-area framework without relocating travel links or
 work stations. The Pale Antlers and Sanctuary presentation are integrated across
-town, regional and detailed views. Causeway structures, Rising Rain and final
-atlas presentation remain future work.
+town, regional and detailed views. Selected old causeway structures and inhabited
+ruins are integrated on the existing internal road. Rising Rain and final atlas
+presentation remain future work.
 Illustrative dialogue, customs and optional encounters remain scene seeds until
 individually authored. Existing gameplay and completed story events retain their
 established state.

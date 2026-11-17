@@ -16,8 +16,9 @@ class ActiveAntlersTests(unittest.TestCase):
     def tearDownClass(cls):pygame.quit()
     def test_registry_explicitly_adapts_staged_assets_and_activates_complete_arrangement(self):
         world=OverworldWorld()
-        self.assertEqual(len(world.landmarks.records),5)
-        self.assertEqual(sum(r['layer']=='overhead' for r in world.landmarks.records),4)
+        antlers=[r for r in world.landmarks.records if r['id'].startswith('regional_')]
+        self.assertEqual(len(antlers),5)
+        self.assertEqual(sum(r['layer']=='overhead' for r in antlers),4)
         self.assertTrue(all(r['artwork_pixels_per_world_pixel']==2 and r['collision']=='none' for r in world.landmarks.records))
         image,anchor=world._prop_image('ridge_sanctuary')
         self.assertEqual(image.get_size(),(96,80));self.assertEqual(anchor,(48,78))
@@ -27,7 +28,8 @@ class ActiveAntlersTests(unittest.TestCase):
         region=json.loads(REGION_FILE.read_text());manifest=json.loads((ROOT/region['hd_art_manifest']).read_text())
         original=Image.open(ROOT/'assets/terrain/overworld/elden_vale/signature_landscape_hd/antlers/antlers_regional.png').convert('RGBA')
         composed=Image.new('RGBA',original.size)
-        for record in manifest['landmarks'].values():composed.alpha_composite(Image.open(ROOT/record['image']).convert('RGBA'),tuple(record['assembly_position_artwork']))
+        for key,record in manifest['landmarks'].items():
+            if key.startswith('regional_'):composed.alpha_composite(Image.open(ROOT/record['image']).convert('RGBA'),tuple(record['assembly_position_artwork']))
         plan=region['signature_landscape'];mask=Image.new('L',original.size)
         ImageDraw.Draw(mask).polygon([(round(x*768/1568),round((760+y)*.5)) for x,y in plan['bone_polygon_source_artwork']],fill=255)
         self.assertIsNone(ImageChops.multiply(ImageChops.difference(original,composed).getchannel('A'),mask).getbbox())

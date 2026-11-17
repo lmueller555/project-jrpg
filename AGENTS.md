@@ -12,9 +12,9 @@ standards below for construction and rendering.
 For Elden Vale, use [the regional design guidance](docs/world/regions/ELDEN_VALE.md)
 as the single creative brief for the region and Sanctuary approach. It includes
 the approved Pale Antlers/Rising Rain target and mandatory nonblocking antler
-placement. The regional HD foundation is integrated, with nonblocking future
-landmark reservations; the Pale Antlers and Sanctuary presentation are integrated; causeway
-structures and Rising Rain remain staged. Gameplay guides and historical
+placement. The regional HD foundation and protected travel routes remain
+authoritative. The Pale Antlers, Sanctuary presentation and selected old
+causeway/ruins are integrated; Rising Rain remains staged. Gameplay guides and historical
 recipes/reviews retain technical facts and evidence, not competing design rules.
 
 Before creating or changing artwork, textures, sprites, animation, asset

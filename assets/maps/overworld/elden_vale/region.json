@@ -12476,7 +12476,7 @@
     ]
   },
   "signature_landscape": {
-    "status": "Pale Antlers active; causeway and Rising Rain deferred",
+    "status": "Pale Antlers, old causeway and inhabited ruins active; Rising Rain deferred",
     "master_origin_logical": [
       2143,
       -1771
@@ -12593,6 +12593,56 @@
         ],
         "layer": "ground",
         "collision": "none"
+      },
+      {
+        "id": "causeway_arch_lintel",
+        "asset": "causeway_arch_lintel",
+        "position": [
+          117,
+          -194
+        ],
+        "layer": "overhead",
+        "collision": "none"
+      },
+      {
+        "id": "causeway_paving_0",
+        "asset": "causeway_paving",
+        "position": [
+          143,
+          73
+        ],
+        "layer": "ground",
+        "collision": "none"
+      },
+      {
+        "id": "causeway_paving_1",
+        "asset": "causeway_paving",
+        "position": [
+          -97,
+          169
+        ],
+        "layer": "ground",
+        "collision": "none"
+      },
+      {
+        "id": "causeway_paving_2",
+        "asset": "causeway_paving",
+        "position": [
+          -385,
+          241
+        ],
+        "layer": "ground",
+        "collision": "none"
+      },
+      {
+        "id": "causeway_paving_3",
+        "asset": "causeway_paving",
+        "position": [
+          -697,
+          313
+        ],
+        "layer": "ground",
+        "collision": "none"
       }
     ],
     "embedding_edge_artwork": [
@@ -12633,7 +12683,218 @@
         500
       ]
     ],
-    "placement_review": "Existing lower northeastern ridge support3 selected after actual ordinary approach camera rejected candidate5; no geometry changed."
+    "placement_review": "Existing lower northeastern ridge support3 selected after actual ordinary approach camera rejected candidate5; no geometry changed.",
+    "props": [
+      {
+        "id": "causeway_arch_left",
+        "key": "causeway_arch_left",
+        "tile_position": [
+          6.25,
+          -1.0
+        ],
+        "solid": [
+          56,
+          16
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_arch_right",
+        "key": "causeway_arch_right",
+        "tile_position": [
+          13.458333333333334,
+          -1.0
+        ],
+        "solid": [
+          59,
+          16
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_deck",
+        "key": "causeway_deck",
+        "tile_position": [
+          -17.0,
+          7.291666666666667
+        ],
+        "solid": [
+          80,
+          10
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_broken_end",
+        "key": "causeway_broken_end",
+        "tile_position": [
+          -13.333333333333334,
+          7.791666666666667
+        ],
+        "solid": [
+          80,
+          10
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_rest_parapet",
+        "key": "causeway_parapet",
+        "tile_position": [
+          -20.916666666666668,
+          15.708333333333334
+        ],
+        "solid": [
+          80,
+          10
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_rest_bench",
+        "key": "bench",
+        "tile_position": [
+          -20.833333333333332,
+          17.083333333333332
+        ],
+        "solid": [
+          30,
+          8
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_buried_masonry",
+        "key": "causeway_masonry",
+        "tile_position": [
+          -28.833333333333332,
+          10.208333333333334
+        ],
+        "solid": [
+          80,
+          10
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_root_foundation",
+        "key": "causeway_foundation",
+        "tile_position": [
+          -33.333333333333336,
+          18.75
+        ],
+        "solid": [
+          80,
+          10
+        ],
+        "procedural_clearance": 12
+      },
+      {
+        "id": "causeway_bone_fragment",
+        "key": "causeway_fragment",
+        "tile_position": [
+          -35.041666666666664,
+          20.291666666666668
+        ],
+        "solid": [
+          22,
+          8
+        ],
+        "procedural_clearance": 12,
+        "contact_review": "Thick grounded left end: explicit logical footprint [-852,483,22,8]; elevated tail has no extra solid. Image origin retained [-854,457]."
+      }
+    ],
+    "causeway": {
+      "physical_scale": 1.25,
+      "sizing_rationale": "Whole arch deliberately projected from 384x288 to 480x360 artwork pixels at density2 (240x180 logical), preserving the full 96-unit diagonal travel corridor. Explicit physical presentation choice, not automatic density enlargement; player, probes, roads and other gameplay proportions remain unchanged.",
+      "arch_projection_artwork": [
+        480,
+        360
+      ],
+      "arch_origin_logical": [
+        117,
+        -194
+      ],
+      "portal_center_logical": [
+        236,
+        -24
+      ],
+      "arch_crops": {
+        "causeway_arch_lintel": [
+          0,
+          0,
+          480,
+          180
+        ],
+        "causeway_arch_left": [
+          0,
+          180,
+          120,
+          360
+        ],
+        "causeway_arch_right": [
+          354,
+          180,
+          480,
+          360
+        ]
+      },
+      "prop_assets": {
+        "causeway_deck": {
+          "asset": "deck_straight",
+          "foot_anchor": [
+            48,
+            65
+          ]
+        },
+        "causeway_broken_end": {
+          "asset": "broken_deck_end",
+          "foot_anchor": [
+            48,
+            65
+          ]
+        },
+        "causeway_parapet": {
+          "asset": "parapet_damaged",
+          "foot_anchor": [
+            48,
+            65
+          ]
+        },
+        "causeway_masonry": {
+          "asset": "buried_masonry",
+          "foot_anchor": [
+            48,
+            65
+          ]
+        },
+        "causeway_foundation": {
+          "asset": "buried_foundation",
+          "foot_anchor": [
+            48,
+            65
+          ],
+          "overlay_asset": "root_contact"
+        },
+        "causeway_fragment": {
+          "asset": "bone_fragment_small",
+          "foot_anchor": [
+            13,
+            30
+          ]
+        }
+      },
+      "joined_port_logical": [
+        -364,
+        170
+      ],
+      "paving_crop_artwork": [
+        46,
+        24,
+        146,
+        116
+      ]
+    }
   },
   "landmark_layers": [
     {
@@ -12685,12 +12946,62 @@
       ],
       "layer": "ground",
       "collision": "none"
+    },
+    {
+      "id": "causeway_arch_lintel",
+      "asset": "causeway_arch_lintel",
+      "position": [
+        117,
+        -194
+      ],
+      "layer": "overhead",
+      "collision": "none"
+    },
+    {
+      "id": "causeway_paving_0",
+      "asset": "causeway_paving",
+      "position": [
+        143,
+        73
+      ],
+      "layer": "ground",
+      "collision": "none"
+    },
+    {
+      "id": "causeway_paving_1",
+      "asset": "causeway_paving",
+      "position": [
+        -97,
+        169
+      ],
+      "layer": "ground",
+      "collision": "none"
+    },
+    {
+      "id": "causeway_paving_2",
+      "asset": "causeway_paving",
+      "position": [
+        -385,
+        241
+      ],
+      "layer": "ground",
+      "collision": "none"
+    },
+    {
+      "id": "causeway_paving_3",
+      "asset": "causeway_paving",
+      "position": [
+        -697,
+        313
+      ],
+      "layer": "ground",
+      "collision": "none"
     }
   ],
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "9a119c8b9d00fc6005662993bf14212ebdaa0c08e32ac00e0425ce392fbf19f3",
+    "source_recipe_sha256": "0a1ec80cc261108fb4ca935e5a93d7da58a725ff307e6b29d7b6d5e0f5f7176c",
     "atlas_reference": "docs/reviews/elden_vale_composition/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",
