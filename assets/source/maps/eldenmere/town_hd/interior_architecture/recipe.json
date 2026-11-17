@@ -1,0 +1,405 @@
+{
+  "id": "eldenmere.interior_architecture",
+  "version": 1,
+  "density": 2,
+  "coordinate_space": "All placements, support points, occupancy and triggers are logical; drawing details and contours are artwork pixels.",
+  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
+  "design_brief": {
+    "identity": "Inhabited timber-and-plaster village rooms, with an industrial watermill and a two-storey travellers' inn.",
+    "intention": "Recognizable work, household care and hospitality, without inventing occupations or new lore.",
+    "materials": "Retained warm oak floor/plaster shell and furnishings; new restrained oak, iron, stone, canvas and woven-linen details at native 2x.",
+    "scope": "Fifteen retained interiors across thirteen buildings, plus exactly one inn guest floor. No regional changes, new stock, rewards, prices or recovery systems.",
+    "canon": "Existing residents, quest props and services retain ownership. Decoration is not a collectible or new occupation."
+  },
+  "palette": {
+    "contour": "#171c1a",
+    "oak_dark": "#493a2b",
+    "oak_shadow": "#6c5035",
+    "oak": "#997047",
+    "oak_light": "#c39a64",
+    "oak_edge": "#dfbb83",
+    "iron_shadow": "#303a3a",
+    "iron": "#64716e",
+    "iron_light": "#a1ada1",
+    "stone_shadow": "#62665d",
+    "stone": "#93988a",
+    "stone_light": "#c0c3ae",
+    "canvas_shadow": "#8f8162",
+    "canvas": "#c4b68a",
+    "canvas_light": "#e3d8ad",
+    "plaster": "#d4c7a8",
+    "glass": "#669a91",
+    "grain": "#cba65a"
+  },
+  "rooms": {
+    "mill": {
+      "purpose": "One tall working processing bay",
+      "storage": "grain",
+      "linen": "#9b8e65",
+      "floor": "industrial",
+      "retained_hearth": [
+        326,
+        24
+      ],
+      "window_positions": [
+        [
+          96,
+          30
+        ],
+        [
+          288,
+          30
+        ]
+      ]
+    },
+    "mira": {
+      "purpose": "Mira's repair workshop",
+      "storage": "workshop",
+      "linen": "#8e8a70",
+      "floor": "workshop",
+      "retained_hearth": [
+        254,
+        24
+      ]
+    },
+    "school": {
+      "purpose": "Existing school and lesson routes",
+      "storage": "school",
+      "linen": "#738d81",
+      "floor": "school",
+      "retained_hearth": [
+        350,
+        24
+      ]
+    },
+    "halden": {
+      "purpose": "Halden's household and retained supply handoffs",
+      "storage": "household_linen",
+      "linen": "#87966d",
+      "floor": "oak"
+    },
+    "elira": {
+      "purpose": "Elira's household, memorial shelf remains its real owned object",
+      "storage": "household_crockery",
+      "linen": "#748f9b",
+      "floor": "woven_blue"
+    },
+    "venn": {
+      "purpose": "Venn's household and existing repair/provision handoffs",
+      "storage": "household_repair",
+      "linen": "#a47b63",
+      "floor": "worn_oak"
+    },
+    "home_a": {
+      "purpose": "Existing household with Tessa and Finn",
+      "storage": "household_baskets",
+      "linen": "#b09a63",
+      "floor": "woven_ochre"
+    },
+    "home_b": {
+      "purpose": "Existing household with Rowan and Ada",
+      "storage": "household_linen",
+      "linen": "#71899a",
+      "floor": "woven_blue"
+    },
+    "home_c": {
+      "purpose": "Existing household with Pippa",
+      "storage": "household_crockery",
+      "linen": "#948194",
+      "floor": "woven_plum"
+    },
+    "liam_house": {
+      "purpose": "Liam's family and Daisy; toys, bowls and routine ownership unchanged",
+      "storage": "household_baskets",
+      "linen": "#718f93",
+      "floor": "oak"
+    },
+    "inn": {
+      "purpose": "Public reception/common room, existing ground rest bed retained",
+      "storage": "inn_linen",
+      "linen": "#6f8c85",
+      "floor": "common"
+    },
+    "item_shop": {
+      "purpose": "Decorative fixed potion, weapon and armor display; unchanged consumable service",
+      "storage": "shop",
+      "linen": "#7b8f85",
+      "floor": "shop"
+    },
+    "sanctuary_hall": {
+      "purpose": "Serene, Caelan and Tomas's domestic hall, not the regional Sanctuary",
+      "storage": "retained",
+      "linen": "#879675",
+      "floor": "retained",
+      "base_ground": "assets/terrain/eldenmere/sanctuary_home_hd/hall/ground.png"
+    },
+    "sanctuary_bedroom": {
+      "purpose": "Caelan's established bedroom, inspections and rest route",
+      "storage": "retained",
+      "linen": "#879675",
+      "floor": "retained",
+      "base_ground": "assets/terrain/eldenmere/sanctuary_home_hd/bedroom/ground.png"
+    },
+    "sanctuary_dining": {
+      "purpose": "Serene's household meals, supplies and Tomas's existing work",
+      "storage": "retained",
+      "linen": "#879675",
+      "floor": "retained",
+      "retained_hearth": [
+        360,
+        24
+      ],
+      "base_ground": "assets/terrain/eldenmere/sanctuary_dining_hd/ground/base.png"
+    }
+  },
+  "mill_processing": {
+    "entity": "mill.drivetrain",
+    "position": [
+      282,
+      104
+    ],
+    "logical_size": [
+      126,
+      72
+    ],
+    "depth_baseline": 176,
+    "wheel_entry_world": [
+      408,
+      128
+    ],
+    "horizontal_axle_world": [
+      [
+        408,
+        128
+      ],
+      [
+        338,
+        128
+      ]
+    ],
+    "bevel_gear_world": [
+      338,
+      128
+    ],
+    "vertical_drive_world": [
+      [
+        324,
+        126
+      ],
+      [
+        324,
+        152
+      ]
+    ],
+    "millstone_world": [
+      316,
+      154
+    ],
+    "animation_driver": "mill_wheel",
+    "frames": 12,
+    "frame_duration_ms": 200,
+    "work_access": "Sorting table [264,180] and entrance [252,294] retained. Millstone is north of the table; western and southern handling aisle stays clear."
+  },
+  "stairs": {
+    "lower_scene": "inn",
+    "upper_scene": "inn_guest_floor",
+    "footprint": [
+      336,
+      204,
+      60,
+      84
+    ],
+    "south_landing": [
+      336,
+      288,
+      60,
+      24
+    ],
+    "trigger_anchor": [
+      366,
+      282
+    ],
+    "entry_side": "north",
+    "entry_half_width": 15,
+    "spawn": [
+      366,
+      300
+    ],
+    "arrival_facing": "front",
+    "rearm_after_exit": [
+      336,
+      204,
+      60,
+      108
+    ],
+    "meaning": "A directional transfer at the first tread. Arrival is on the clear southern landing. Both stair doors stay disarmed until the player leaves the stair/landing rectangle, including Continue."
+  },
+  "guest_floor": {
+    "id": "inn_guest_floor",
+    "size": [
+      432,
+      336
+    ],
+    "map": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json",
+    "bays": 4,
+    "windows": [
+      [
+        72,
+        30
+      ],
+      [
+        168,
+        30
+      ],
+      [
+        264,
+        30
+      ],
+      [
+        360,
+        30
+      ]
+    ],
+    "beds": [
+      [
+        42,
+        96
+      ],
+      [
+        138,
+        96
+      ],
+      [
+        234,
+        96
+      ],
+      [
+        330,
+        96
+      ]
+    ],
+    "screens_x": [
+      120,
+      216,
+      312
+    ],
+    "circulation": "Four sleeping bays correspond to the four exterior guest-storey window bays. Timber screens end at y198, leaving the common corridor and east stair clear. No upper rest_profile, service, keeper, inventory or quest."
+  },
+  "collision_additions": {
+    "mill": [
+      {
+        "id": "mill_drivetrain_base",
+        "rect": [
+          300,
+          132,
+          96,
+          36
+        ]
+      }
+    ],
+    "inn": [
+      {
+        "id": "inn_stair_west_stringer",
+        "rect": [
+          336,
+          204,
+          5,
+          80
+        ]
+      },
+      {
+        "id": "inn_stair_east_stringer",
+        "rect": [
+          391,
+          204,
+          5,
+          80
+        ]
+      },
+      {
+        "id": "inn_common_hearth_base",
+        "rect": [
+          353,
+          72,
+          42,
+          24
+        ]
+      }
+    ],
+    "inn_guest_floor": [
+      {
+        "id": "guest_bay_screen_1",
+        "rect": [
+          120,
+          72,
+          5,
+          126
+        ]
+      },
+      {
+        "id": "guest_bay_screen_2",
+        "rect": [
+          216,
+          72,
+          5,
+          126
+        ]
+      },
+      {
+        "id": "guest_bay_screen_3",
+        "rect": [
+          312,
+          72,
+          5,
+          126
+        ]
+      },
+      {
+        "id": "guest_stair_west_stringer",
+        "rect": [
+          336,
+          204,
+          5,
+          80
+        ]
+      },
+      {
+        "id": "guest_stair_east_stringer",
+        "rect": [
+          391,
+          204,
+          5,
+          80
+        ]
+      }
+    ]
+  },
+  "old_save_policy": "No migration or version change. Existing Game.begin_journey retains exact valid positions; positions now overlapping the explicitly named mill base/stair stringers use its existing checked room-entry fallback. Quest, party, inventory, gold and actor ownership are not mutated by the art extension.",
+  "owned_lantern_surface": {
+    "art": "assets/story/lantern/art.json",
+    "rest_art": "assets/story/lantern/rest_art.json",
+    "table_position": [
+      636,
+      478
+    ],
+    "surface_position": [
+      636,
+      454
+    ],
+    "existing_states": [
+      "drawing",
+      "materials",
+      "test",
+      "partial",
+      "frame",
+      "lifted",
+      "ready"
+    ],
+    "replacement_policy": "Retain canonical registered phase art at explicit compatibility 2x; replace generic-paper aliases, not ownership, state keys, timing or credits. Preserve upstream #250 zero-alpha collected contents; the separately owned real table stays visible at its full original footprint, without a second frame or table overlay.",
+    "canonical_frame_source": "tools/build_lantern_quest.py:frame; retained carry/home drawings remain unchanged",
+    "collision_change": null
+  },
+  "collision_base_paths": {
+    "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/collision.png"
+  }
+}

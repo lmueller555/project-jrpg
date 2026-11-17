@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/venn/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -36,7 +36,7 @@
       "sort_y": 162,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/venn/bed.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/bed.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -56,7 +56,7 @@
       "sort_y": 106,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/venn/cupboard.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/cupboard.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -76,7 +76,7 @@
       "sort_y": 0,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/venn/shelf.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/shelf.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -96,7 +96,7 @@
       "sort_y": 106,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/venn/pantry.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/pantry.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -1321,7 +1321,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/venn/bed.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/bed.png",
       "logical_size": [
         48,
         72
@@ -1329,7 +1329,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/venn/cupboard.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/cupboard.png",
       "logical_size": [
         48,
         48
@@ -1337,7 +1337,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/venn/shelf.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/shelf.png",
       "logical_size": [
         48,
         24
@@ -1345,7 +1345,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/venn/pantry.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/pantry.png",
       "logical_size": [
         24,
         48
@@ -1431,7 +1431,45 @@
         72
       ],
       "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/venn/bed.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/bed.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/venn/cupboard.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/cupboard.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/venn/shelf.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/shelf.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/venn/pantry.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/venn/pantry.png",
+      "logical_size": [
+        24,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "Venn's household and existing repair/provision handoffs",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  }
 }

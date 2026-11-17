@@ -1,0 +1,465 @@
+{
+  "baseline_sha": "00572fd3c78e0699a496e2361414071d2e563b0a",
+  "tested_gameplay_implementation_sha": "b5089cececd68530924785b5827091093e95c681",
+  "note": "Final documentation, test docstring and informational integration-command corrections do not change gameplay, generated art or test logic. Affected interior/HD/door tests were rerun after the 6-unit mill-base correction.",
+  "aggregate": {
+    "modules": 33,
+    "executed_cases": 429,
+    "passed_cases": 424,
+    "baseline_parity_failures": 5,
+    "new_failures": 0,
+    "errors": 0
+  },
+  "modules": [
+    {
+      "module": "test_bed_rest",
+      "exit": 0,
+      "tests": 9,
+      "wall_seconds": 18.81,
+      "log_sha256": "8a555bbcf4a51206080c9e7c7a1973dcedc23258792ed3d9d5f8bb9f29555e18",
+      "command": "python -m unittest discover -s tests -p 'test_bed_rest.py' -v"
+    },
+    {
+      "module": "test_doors",
+      "exit": 0,
+      "tests": 7,
+      "wall_seconds": 3.62,
+      "log_sha256": "4a15ed509af9cbffb3afa0b53281ba84acbd550eb96c3ffa9348101f08a3898f",
+      "command": "python -m unittest discover -s tests -p 'test_doors.py' -v"
+    },
+    {
+      "module": "test_eldenmere_architecture_art",
+      "exit": 0,
+      "tests": 12,
+      "wall_seconds": 2.6,
+      "log_sha256": "25e692aba94ad228f2b30417cce73be47cb8cdf32f962a77f0f0937c8015e2a3",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_architecture_art.py' -v"
+    },
+    {
+      "module": "test_eldenmere_architecture_contracts",
+      "exit": 0,
+      "tests": 6,
+      "wall_seconds": 0.17,
+      "log_sha256": "3d1048e564d10b30fda34a5d1e808dae02aa01c8e44d1df8aa401dfdf6524049",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_architecture_contracts.py' -v"
+    },
+    {
+      "module": "test_eldenmere_architecture_review",
+      "exit": 0,
+      "tests": 5,
+      "wall_seconds": 14.75,
+      "log_sha256": "7de38029a941060b834060bd7dd4ed3474405c6ebd3c27f6399e539f71c427a1",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_architecture_review.py' -v"
+    },
+    {
+      "module": "test_eldenmere_crossing_art",
+      "exit": 0,
+      "tests": 14,
+      "wall_seconds": 0.27,
+      "log_sha256": "28cbbbb324a337f4e3b373b81040145fc9d3f865962d04516debab9a35d1d2bb",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_crossing_art.py' -v"
+    },
+    {
+      "module": "test_eldenmere_crossing_integration",
+      "exit": 0,
+      "tests": 6,
+      "wall_seconds": 14.87,
+      "log_sha256": "a69a09a1e611f63b7802fe7f8f0870ef2669f1d71af0e59b9b23f9a52b7a2774",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_crossing_integration.py' -v"
+    },
+    {
+      "module": "test_eldenmere_hd_integration",
+      "exit": 0,
+      "tests": 18,
+      "wall_seconds": 21.86,
+      "log_sha256": "f4806704a6e1d850743f04e1e2b0230c44051d339753fb33efddf71473b9962a",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_hd_integration.py' -v"
+    },
+    {
+      "module": "test_eldenmere_interior_architecture",
+      "exit": 0,
+      "tests": 22,
+      "wall_seconds": 73.51,
+      "command": "PYTHONPATH=tests python -m unittest <each case ID below> -v",
+      "process_isolation": "Each case is an independent process to bound Pygame allocations. Test logic is unchanged.",
+      "cases": [
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_arrival_is_safe_facing_cooldown_and_disarmed_until_excursion",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 3.32
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_companions_and_persistent_owners_are_not_duplicated_across_stairs",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 3.14
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_continue_both_floors_keeps_state_and_requires_new_stair_excursion",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 7.75
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_ground_rest_and_shop_service_contract_remain_identical",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 1.85
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_lantern_pickup_interruption_continue_and_home_rest_keep_exactly_one_frame",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 12.95
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_mill_stop_before_load_loaded_update_and_continue_share_existing_flag",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 1.62
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_old_downstairs_saves_at_each_new_occupancy_use_checked_fallback",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.38
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_retained_mill_sorting_station_stays_reachable_beside_drivetrain",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.14
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_story_mira_uses_the_same_reciprocal_stairs_and_restores_one_owner",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 5.37
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorGameplayTests.test_walk_run_reciprocity_and_held_north_never_bounces",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 4.2
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_all_buildings_and_three_serene_rooms_are_explicitly_reviewed",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.18
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_all_new_art_uses_native_density_and_hard_alpha",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.76
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_collision_changes_are_exactly_the_named_minimal_additions",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.21
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_guest_floor_is_one_registered_scene_with_four_bays_and_no_extra_service",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.18
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_household_storage_and_bedding_are_differentiated_without_touching_owned_props",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.56
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_mill_processing_explains_the_east_wheel_and_solid_supports_do_not_move",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.23
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_original_fixture_positions_ids_state_images_npcs_and_routes_survive",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.1
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_owned_lantern_phase_art_is_not_replaced_with_generic_paper_stock",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.16
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_schedule_validates_complete_in_memory_scenes_without_prior_guest_exports",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.24
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_source_extension_is_deterministic_for_identical_inputs",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 3.93
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_south_exits_cut_the_wall_and_extend_floor_through_every_retained_room",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.14
+        },
+        {
+          "case": "test_eldenmere_interior_architecture.InteriorRecipeTests.test_stair_reserves_landings_and_original_fixture_access_are_clear",
+          "exit": 0,
+          "tests": 1,
+          "wall_seconds": 2.1
+        }
+      ]
+    },
+    {
+      "module": "test_eldenmere_settlement_framework",
+      "exit": 0,
+      "tests": 17,
+      "wall_seconds": 0.97,
+      "log_sha256": "cbfa2d4b9f135581855fe73e6f41d0e46676c63b266c04c4691f79abe51f9d97",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_settlement_framework.py' -v"
+    },
+    {
+      "module": "test_eldenmere_settlement_streets",
+      "exit": 0,
+      "tests": 11,
+      "wall_seconds": 0.66,
+      "log_sha256": "587fa50b0b06defce45693f89f728764d13d0b1612410d6fd8b50270693a3c09",
+      "command": "python -m unittest discover -s tests -p 'test_eldenmere_settlement_streets.py' -v"
+    },
+    {
+      "module": "test_lantern_actor_handoffs",
+      "exit": 0,
+      "tests": 11,
+      "wall_seconds": 29.1,
+      "log_sha256": "9382b8419689c4662f086e7d65d2e107c1ac27cb5c02b19041917ad54b4f42f6",
+      "command": "python -m unittest discover -s tests -p 'test_lantern_actor_handoffs.py' -v"
+    },
+    {
+      "module": "test_lantern_finish",
+      "exit": 0,
+      "tests": 18,
+      "wall_seconds": 141.64,
+      "log_sha256": "5adb49bc8613d923f33c89121ec8cf70c131e019ff75147fa03823ff0b806674",
+      "command": "python -m unittest discover -s tests -p 'test_lantern_finish.py' -v"
+    },
+    {
+      "module": "test_lantern_quest",
+      "exit": 0,
+      "tests": 24,
+      "wall_seconds": 75.66,
+      "log_sha256": "9bc01c2c71d2a33f86a5ded7bd608bac573973806ba360343946e07145c8a68c",
+      "command": "python -m unittest discover -s tests -p 'test_lantern_quest.py' -v"
+    },
+    {
+      "module": "test_lantern_rest",
+      "exit": 0,
+      "tests": 22,
+      "wall_seconds": 88.78,
+      "log_sha256": "ca983ddfca3684c2f7996559625979f078f8193492681c2e5423c2d52b2b4bef",
+      "command": "python -m unittest discover -s tests -p 'test_lantern_rest.py' -v"
+    },
+    {
+      "module": "test_lantern_village",
+      "exit": 0,
+      "tests": 17,
+      "wall_seconds": 85.95,
+      "log_sha256": "e820339810ab47828cacb5fb274589d6d8c43ee3ec96d5f2e4b2cdb92b33e926",
+      "command": "python -m unittest discover -s tests -p 'test_lantern_village.py' -v"
+    },
+    {
+      "module": "test_liam_household",
+      "exit": 0,
+      "tests": 7,
+      "wall_seconds": 2.03,
+      "log_sha256": "0150984a2b89b4af5c9781ca388456d1d36e097e60d98d0878f159fba6fc91d9",
+      "command": "python -m unittest discover -s tests -p 'test_liam_household.py' -v"
+    },
+    {
+      "module": "test_map_ui_streets",
+      "exit": 0,
+      "tests": 7,
+      "wall_seconds": 0.37,
+      "log_sha256": "f8607e124e84020ae6fd83daa61fff3a5903f522a757e56ce41ff175bb485025",
+      "command": "python -m unittest discover -s tests -p 'test_map_ui_streets.py' -v"
+    },
+    {
+      "module": "test_mill_battle_gameplay",
+      "exit": 0,
+      "tests": 13,
+      "wall_seconds": 32.2,
+      "log_sha256": "bafb90075e30d5a9cbaac2c767fec7ad38cb5a7a42a118ecf3fbf7e5fd399c7c",
+      "command": "python -m unittest discover -s tests -p 'test_mill_battle_gameplay.py' -v"
+    },
+    {
+      "module": "test_mill_quest",
+      "exit": 0,
+      "tests": 20,
+      "wall_seconds": 76.7,
+      "log_sha256": "d4c4c78468057d45ecc6dd47c5d2aec395408ce67ffdd4aca8ee440fa0fce580",
+      "command": "python -m unittest discover -s tests -p 'test_mill_quest.py' -v"
+    },
+    {
+      "module": "test_mill_trigger_geometry",
+      "exit": 1,
+      "tests": 10,
+      "wall_seconds": 40.61,
+      "log_sha256": "b288be370770ec90ac4398f0c66ebc722b7ad75c89e3b2d9296a0bb9d99a9eb2",
+      "command": "python -m unittest discover -s tests -p 'test_mill_trigger_geometry.py' -v"
+    },
+    {
+      "module": "test_millrace_departure",
+      "exit": 0,
+      "tests": 6,
+      "wall_seconds": 25.94,
+      "log_sha256": "adf145f20f26c481f818a0b15b2890c49b37658f188660a03e765066f3a21863",
+      "command": "python -m unittest discover -s tests -p 'test_millrace_departure.py' -v"
+    },
+    {
+      "module": "test_opening_conclusion",
+      "exit": 0,
+      "tests": 8,
+      "wall_seconds": 23.83,
+      "log_sha256": "cf0e12294f222a5fdee77c668632dc8e7f425270c3a384e339934de07ec46cef",
+      "command": "python -m unittest discover -s tests -p 'test_opening_conclusion.py' -v"
+    },
+    {
+      "module": "test_party_travel",
+      "exit": 0,
+      "tests": 15,
+      "wall_seconds": 0.29,
+      "log_sha256": "dc5f40afdba717ffb6d2b6242db61a0ec1ebe983d6b968c0d8b48910dc8898a9",
+      "command": "python -m unittest discover -s tests -p 'test_party_travel.py' -v"
+    },
+    {
+      "module": "test_regent_quest",
+      "exit": 1,
+      "tests": 28,
+      "wall_seconds": 112.27,
+      "log_sha256": "13ba66caae2b3e8bba73add52cea9824d1293dc6f18670d81bd3739f1e12da4f",
+      "command": "python -m unittest discover -s tests -p 'test_regent_quest.py' -v"
+    },
+    {
+      "module": "test_rendering",
+      "exit": 0,
+      "tests": 16,
+      "wall_seconds": 0.58,
+      "log_sha256": "ccef4f976d0c3e569e81e159e091045788394e5f79c418b35a26eb2c7209baeb",
+      "command": "python -m unittest discover -s tests -p 'test_rendering.py' -v"
+    },
+    {
+      "module": "test_save_game",
+      "exit": 0,
+      "tests": 6,
+      "wall_seconds": 0.47,
+      "log_sha256": "a725d126f8ba514a525ba2131aa5af90ad74d7f8cf68ffd7c29c57a2808be4a5",
+      "command": "python -m unittest discover -s tests -p 'test_save_game.py' -v"
+    },
+    {
+      "module": "test_save_library",
+      "exit": 0,
+      "tests": 12,
+      "wall_seconds": 0.27,
+      "log_sha256": "28de7d1b75341d47a7b5d306ca3c2befdc576ca678f86bb6674e0b93ce9e96d2",
+      "command": "python -m unittest discover -s tests -p 'test_save_library.py' -v"
+    },
+    {
+      "module": "test_save_system_gameplay",
+      "exit": 0,
+      "tests": 26,
+      "wall_seconds": 45.95,
+      "log_sha256": "890c18fe4d29dd4db31c07b0d2cd1e7c45351304cf490cc88e7e457cca9d9e49",
+      "command": "python -m unittest discover -s tests -p 'test_save_system_gameplay.py' -v"
+    },
+    {
+      "module": "test_school",
+      "exit": 0,
+      "tests": 6,
+      "wall_seconds": 1.92,
+      "log_sha256": "1f95a4d8a19071ff84473325777e511e532ac9cd8e5809629f0d7819b5a413af",
+      "command": "python -m unittest discover -s tests -p 'test_school.py' -v"
+    },
+    {
+      "module": "test_school_world_map",
+      "exit": 0,
+      "tests": 6,
+      "wall_seconds": 1.67,
+      "log_sha256": "9670cc9e2766ae95bae43eccae1f2c1ca3f722f5deee49052878a628116c1202",
+      "command": "python -m unittest discover -s tests -p 'test_school_world_map.py' -v"
+    },
+    {
+      "module": "test_town_services",
+      "exit": 0,
+      "tests": 19,
+      "wall_seconds": 25.2,
+      "log_sha256": "023ed7b62e23ea64a6c9c3742dd6cb835de3c3e2023daf7322a0045b2a94d7f3",
+      "command": "python -m unittest discover -s tests -p 'test_town_services.py' -v"
+    },
+    {
+      "module": "test_villager_households",
+      "exit": 0,
+      "tests": 5,
+      "wall_seconds": 1.96,
+      "log_sha256": "64e1fdf01fafbb53b088f13224d9e2f02bd0c81cc4f7f6a80c616178e61915cb",
+      "command": "python -m unittest discover -s tests -p 'test_villager_households.py' -v"
+    }
+  ],
+  "known_baseline_failures": {
+    "mq02": {
+      "module": "test_mill_trigger_geometry",
+      "failed_cases": [
+        "test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact (test_mill_trigger_geometry.MillTriggerGeometryTests.test_bypass_prompt_is_at_handle_and_action_walks_to_existing_contact)",
+        "test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts (test_mill_trigger_geometry.MillTriggerGeometryTests.test_haul_prompt_is_at_visible_lever_and_preserves_rope_contacts)",
+        "test_pool_can_be_used_from_below_without_cutting_through_stone (test_mill_trigger_geometry.MillTriggerGeometryTests.test_pool_can_be_used_from_below_without_cutting_through_stone)",
+        "test_return_inspection_uses_same_wheel_and_final_speakers_are_present (test_mill_trigger_geometry.MillTriggerGeometryTests.test_return_inspection_uses_same_wheel_and_final_speakers_are_present)"
+      ],
+      "cause": "Existing helper moves on an even 2-unit grid but goal (479,287) is odd. Both exact main and PR4 fail identically; production Game.update reaches target and prepare completes. No runtime/helper fix included.",
+      "proof": "mq02_parity.json; mq02_main-reachability.json; mq02_final-reachability.json"
+    },
+    "regent": {
+      "module": "test_regent_quest",
+      "failed_cases": [
+        "test_active_visit_cannot_load_without_its_scene_checkpoint (test_regent_quest.RegentQuestTests.test_active_visit_cannot_load_without_its_scene_checkpoint)"
+      ],
+      "cause": "Existing expectation that corrupting the active Regent resume disables Continue, despite existing validated-library fallback. Reproduced identically on exact main and PR4.",
+      "proof": "regent_parity.json"
+    }
+  },
+  "additional_checks": {
+    "builder": "955 Eldenmere exports verified; byte-reproducible authoritative products",
+    "syntax": "py_compile passed for changed runtime, builder, helper, capture and test modules",
+    "whitespace": "git diff --check passed",
+    "town_preservation": "116 nonshared #252 paths byte-identical; town map only interior_scenes/art_replacements differ; 17 prior interior metadata/portals/fixture registrations preserved",
+    "native_interior_capture": {
+      "views": 52,
+      "transfers": 8,
+      "walk_run_both_directions": true,
+      "fresh_disk_continue_both_floors": true,
+      "manual_save_both_floors": true,
+      "same_session_original_bed_rest_upstairs_fresh_continue_downstairs_out": true
+    },
+    "native_town_route": {
+      "views": 193,
+      "movement_checks": 63,
+      "failures": 0
+    },
+    "street_route": {
+      "native_views": 13,
+      "movement_routes": 16,
+      "failures": 0
+    },
+    "separate_lantern_action_capture": "Passed real pickup, transfer, travel and rest driver; retained single ownership and #250 transparent collected surface."
+  },
+  "limits": [
+    "Complete repository suite not run. Counts describe scoped executed cases, not a full-suite green claim.",
+    "Initial highly concurrent aggregates were OS-killed. Bounded discovery/module reruns and final interior per-case processes replace incomplete attempts.",
+    "One initial direct-selection invocation omitted the existing top-level tests helper import path; corrected discovery/PYTHONPATH invocations are recorded above.",
+    "Static review fixtures and seeded prerequisite checkpoints are disclosed. Not an uninterrupted story playthrough."
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "id": "eldenmere.interior_architecture",
+  "version": 1,
+  "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+  "recipe_sha256": "16d221c1a6a5d9a3c073fc0f394448f663771242da854ba90fd045adee85461f",
+  "rooms": {
+    "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json",
+    "mira": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
+    "school": "assets/maps/eldenmere/building_interiors/rooms/school/map.json",
+    "halden": "assets/maps/eldenmere/building_interiors/rooms/halden/map.json",
+    "elira": "assets/maps/eldenmere/building_interiors/rooms/elira/map.json",
+    "venn": "assets/maps/eldenmere/building_interiors/rooms/venn/map.json",
+    "home_a": "assets/maps/eldenmere/building_interiors/rooms/home_a/map.json",
+    "home_b": "assets/maps/eldenmere/building_interiors/rooms/home_b/map.json",
+    "home_c": "assets/maps/eldenmere/building_interiors/rooms/home_c/map.json",
+    "liam_house": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json",
+    "inn": "assets/maps/eldenmere/town_hd/rooms/inn/map.json",
+    "item_shop": "assets/maps/eldenmere/town_hd/rooms/item_shop/map.json",
+    "sanctuary_hall": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+    "sanctuary_bedroom": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+    "sanctuary_dining": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/map.json",
+    "inn_guest_floor": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json"
+  },
+  "existing_room_count": 15,
+  "new_scenes": [
+    "inn_guest_floor"
+  ],
+  "mill_processing": {
+    "entity": "mill.drivetrain",
+    "position": [
+      282,
+      104
+    ],
+    "logical_size": [
+      126,
+      72
+    ],
+    "depth_baseline": 176,
+    "wheel_entry_world": [
+      408,
+      128
+    ],
+    "horizontal_axle_world": [
+      [
+        408,
+        128
+      ],
+      [
+        338,
+        128
+      ]
+    ],
+    "bevel_gear_world": [
+      338,
+      128
+    ],
+    "vertical_drive_world": [
+      [
+        324,
+        126
+      ],
+      [
+        324,
+        152
+      ]
+    ],
+    "millstone_world": [
+      316,
+      154
+    ],
+    "animation_driver": "mill_wheel",
+    "frames": 12,
+    "frame_duration_ms": 200,
+    "work_access": "Sorting table [264,180] and entrance [252,294] retained. Millstone is north of the table; western and southern handling aisle stays clear."
+  },
+  "stairs": {
+    "lower_scene": "inn",
+    "upper_scene": "inn_guest_floor",
+    "footprint": [
+      336,
+      204,
+      60,
+      84
+    ],
+    "south_landing": [
+      336,
+      288,
+      60,
+      24
+    ],
+    "trigger_anchor": [
+      366,
+      282
+    ],
+    "entry_side": "north",
+    "entry_half_width": 15,
+    "spawn": [
+      366,
+      300
+    ],
+    "arrival_facing": "front",
+    "rearm_after_exit": [
+      336,
+      204,
+      60,
+      108
+    ],
+    "meaning": "A directional transfer at the first tread. Arrival is on the clear southern landing. Both stair doors stay disarmed until the player leaves the stair/landing rectangle, including Continue."
+  },
+  "guest_floor": {
+    "id": "inn_guest_floor",
+    "size": [
+      432,
+      336
+    ],
+    "map": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json",
+    "bays": 4,
+    "windows": [
+      [
+        72,
+        30
+      ],
+      [
+        168,
+        30
+      ],
+      [
+        264,
+        30
+      ],
+      [
+        360,
+        30
+      ]
+    ],
+    "beds": [
+      [
+        42,
+        96
+      ],
+      [
+        138,
+        96
+      ],
+      [
+        234,
+        96
+      ],
+      [
+        330,
+        96
+      ]
+    ],
+    "screens_x": [
+      120,
+      216,
+      312
+    ],
+    "circulation": "Four sleeping bays correspond to the four exterior guest-storey window bays. Timber screens end at y198, leaving the common corridor and east stair clear. No upper rest_profile, service, keeper, inventory or quest."
+  },
+  "collision_additions": {
+    "mill": [
+      {
+        "id": "mill_drivetrain_base",
+        "rect": [
+          300,
+          132,
+          96,
+          36
+        ]
+      }
+    ],
+    "inn": [
+      {
+        "id": "inn_stair_west_stringer",
+        "rect": [
+          336,
+          204,
+          5,
+          80
+        ]
+      },
+      {
+        "id": "inn_stair_east_stringer",
+        "rect": [
+          391,
+          204,
+          5,
+          80
+        ]
+      },
+      {
+        "id": "inn_common_hearth_base",
+        "rect": [
+          353,
+          72,
+          42,
+          24
+        ]
+      }
+    ],
+    "inn_guest_floor": [
+      {
+        "id": "guest_bay_screen_1",
+        "rect": [
+          120,
+          72,
+          5,
+          126
+        ]
+      },
+      {
+        "id": "guest_bay_screen_2",
+        "rect": [
+          216,
+          72,
+          5,
+          126
+        ]
+      },
+      {
+        "id": "guest_bay_screen_3",
+        "rect": [
+          312,
+          72,
+          5,
+          126
+        ]
+      },
+      {
+        "id": "guest_stair_west_stringer",
+        "rect": [
+          336,
+          204,
+          5,
+          80
+        ]
+      },
+      {
+        "id": "guest_stair_east_stringer",
+        "rect": [
+          391,
+          204,
+          5,
+          80
+        ]
+      }
+    ]
+  },
+  "lantern_workshop_continuity": {
+    "table_position": [
+      636,
+      478
+    ],
+    "surface_position": [
+      636,
+      454
+    ],
+    "states": [
+      "drawing",
+      "materials",
+      "test",
+      "partial",
+      "frame",
+      "lifted",
+      "ready"
+    ],
+    "collected": "assets/story/lantern/rest_props/workshop_collected.png",
+    "source_density": 1,
+    "export_density": 2,
+    "phase_art": "Retained canonical frame/material/action drawings, uniform compatibility sampling; no generic papers substitution.",
+    "ownership": "Existing table and craft_surface only; canonical zero-alpha contents after pickup, real table/support stays visible, carrier/home objects retain their sources."
+  },
+  "protected": "Original fixture IDs/positions, existing portals, actors, state images, story ownership, services and inventory are unchanged."
+}

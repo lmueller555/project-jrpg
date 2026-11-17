@@ -362,8 +362,13 @@ for explicit source-registration review rather than silently overwriting it.
 The town adds twelve 24-unit rows to the south. Inn and shop physical footprints
 sit in this extension, connected to the existing southbound well-square route.
 Their entrances, furnishings, local blockers and return landings are separately
-authored. Original entrances, destinations, routes, spawns and collision remain at
-their original coordinates. Upstream keeps its existing dimensions and collision.
+authored. Original entrances, destinations, routes and spawns retain their
+coordinates. Interior architecture adds exactly one inn guest floor and only the
+named mill/stair/hearth occupancy in the existing architecture schedule; it does
+not broadly enlarge blockers to fit art. Its stair tops, stringers and clear
+landings use the same orthogonal ground-plane convention. The live composer owns
+those exports through `tools/eldenmere_interior_architecture.py`. Upstream keeps
+its existing dimensions and collision.
 
 `ground_overlays` are nonoverlapping chunks no larger than 192×192 logical units
 (384×384 artwork). Dry chunks are static; wet chunks reference six 200 ms states.

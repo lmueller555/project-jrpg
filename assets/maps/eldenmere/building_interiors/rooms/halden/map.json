@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/halden/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -36,7 +36,7 @@
       "sort_y": 162,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/halden/bed.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/bed.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -56,7 +56,7 @@
       "sort_y": 262,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/halden/cupboard.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/cupboard.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -76,7 +76,7 @@
       "sort_y": 0,
       "sort_priority": 0,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/halden/shelf.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/shelf.png"
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0,
@@ -1273,7 +1273,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/halden/bed.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/bed.png",
       "logical_size": [
         48,
         72
@@ -1281,7 +1281,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/halden/cupboard.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/cupboard.png",
       "logical_size": [
         48,
         48
@@ -1289,7 +1289,7 @@
       "artwork_pixels_per_world_pixel": 2
     },
     "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png": {
-      "file": "assets/maps/eldenmere/town_hd/rooms/halden/shelf.png",
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/shelf.png",
       "logical_size": [
         48,
         24
@@ -1367,7 +1367,37 @@
         72
       ],
       "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/halden/bed.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/bed.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/halden/cupboard.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/cupboard.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/halden/shelf.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/halden/shelf.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "Halden's household and retained supply handoffs",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  }
 }

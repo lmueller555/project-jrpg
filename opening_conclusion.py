@@ -62,6 +62,10 @@ class OpeningConclusion:
     def _stop_mill(self):
         for record in self.game.town.entities:
             if record['id'] in ('mill','mill.wheel'):record['animation_stopped']=self.mill_stopped
+        for scene in self.game.scenes.values():
+            for record in scene.entities:
+                if record.get('animation_driver')=='mill_wheel':
+                    record['animation_stopped']=self.mill_stopped
     def restore(self,data=None):
         self.paths.clear();self.retries.clear();self.dialogue=False;self.settled=False
         self.serene.story_paused=False;self.serene.story_sprite=None;self.halden.end_conversation()

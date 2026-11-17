@@ -23,7 +23,7 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/rooms/inn/ground.png"
+    "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/ground.png"
   ],
   "ground_frame_duration_ms": 300,
   "entities": [
@@ -35,7 +35,7 @@
       ],
       "sort_y": 168,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/inn/guest_bed.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/guest_bed.png"
       ],
       "phase_offset": 0,
       "frame_duration_ms": 600,
@@ -54,7 +54,7 @@
       ],
       "sort_y": 168,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/inn/guest_bed_east.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/guest_bed_east.png"
       ],
       "phase_offset": 0,
       "frame_duration_ms": 600,
@@ -149,7 +149,7 @@
       ],
       "sort_y": 64,
       "frames": [
-        "assets/maps/eldenmere/town_hd/rooms/inn/shelf.png"
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/shelf.png"
       ],
       "phase_offset": 0,
       "frame_duration_ms": 600,
@@ -159,9 +159,49 @@
       ],
       "artwork_pixels_per_world_pixel": 2,
       "reduced_motion_frame": 0
+    },
+    {
+      "id": "inn.hearth",
+      "position": [
+        350,
+        24
+      ],
+      "logical_size": [
+        48,
+        72
+      ],
+      "sort_y": 96,
+      "sort_priority": 0,
+      "frames": [
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/hearth.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "reduced_motion_frame": 0
+    },
+    {
+      "id": "inn.stairs",
+      "position": [
+        336,
+        204
+      ],
+      "logical_size": [
+        60,
+        84
+      ],
+      "sort_y": 288,
+      "sort_priority": 0,
+      "frames": [
+        "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/stairs.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "reduced_motion_frame": 0
     }
   ],
-  "collision": "assets/maps/eldenmere/town_hd/rooms/inn/collision.png",
+  "collision": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/collision.png",
   "foreground": [],
   "landmarks": [],
   "doors": [
@@ -191,6 +231,39 @@
       ],
       "arrival_facing": "front",
       "arrival_door": "inn"
+    },
+    {
+      "id": "guest_stairs",
+      "host": null,
+      "anchor": [
+        366,
+        282
+      ],
+      "entry_y": 282,
+      "entry_side": "north",
+      "entry_half_width": 15,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        336,
+        204
+      ],
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/town_hd/rooms/inn_guest_floor/map.json",
+      "spawn": [
+        366,
+        300
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "common_stairs",
+      "rearm_after_exit": [
+        336,
+        204,
+        60,
+        108
+      ]
     }
   ],
   "npcs": [
@@ -1249,7 +1322,67 @@
         48
       ],
       "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/inn/guest_bed.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/guest_bed.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/inn/guest_bed_east.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/guest_bed_east.png",
+      "logical_size": [
+        48,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "assets/maps/eldenmere/town_hd/rooms/inn/shelf.png": {
+      "file": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/shelf.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2
     }
   },
-  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json"
+  "art_bank": "assets/maps/eldenmere/town_hd/manifest.json",
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "purpose": "Public reception/common room, existing ground rest bed retained",
+    "geometry": "retained except named architecture_occupancy",
+    "south_exits": "open cutaway with jambs and real threshold, no unsynchronized leaf"
+  },
+  "architecture_occupancy": [
+    {
+      "id": "inn_stair_west_stringer",
+      "rect": [
+        336,
+        204,
+        5,
+        80
+      ]
+    },
+    {
+      "id": "inn_stair_east_stringer",
+      "rect": [
+        391,
+        204,
+        5,
+        80
+      ]
+    },
+    {
+      "id": "inn_common_hearth_base",
+      "rect": [
+        353,
+        72,
+        42,
+        24
+      ]
+    }
+  ],
+  "architecture_collision_delta": "assets/maps/eldenmere/town_hd/rooms/interior_architecture/inn/collision_delta.png"
 }

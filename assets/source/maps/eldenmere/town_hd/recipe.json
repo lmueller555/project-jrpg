@@ -56,11 +56,15 @@
     },
     {
       "file": "architecture_schedule.json",
-      "sha256": "09e28794846e80fe5f572121db92d49fa4acdccb3f72e1b48c6905407da46114"
+      "sha256": "26889cd49d018df81a7be9286e9b1ab070f909f03aced9613cd94602c02f54ac"
     },
     {
       "file": "crossings/recipe.json",
       "sha256": "ed973bc2372ab7a07ea9e187d115c4b646aa07fc7ebe706cf18392c4cc783dd7"
+    },
+    {
+      "file": "interior_architecture/recipe.json",
+      "sha256": "16d221c1a6a5d9a3c073fc0f394448f663771242da854ba90fd045adee85461f"
     }
   ],
   "businesses": [
@@ -2567,6 +2571,10 @@
     {
       "file": "tools/eldenmere_crossing_art.py",
       "sha256": "0e39db2e05d4d70a2796fd4afc5b87a212545022a52d8a6e4984c224b3d5ea76"
+    },
+    {
+      "file": "tools/eldenmere_interior_architecture.py",
+      "sha256": "a628d7ba2ffb8ace73f0a2efcf72ac45405b9d24c745108715dcddea78b2d17f"
     }
   ],
   "district_vegetation": [
@@ -2647,5 +2655,10 @@
     "source_recipe": "assets/source/terrain/eldenmere/exteriors_hd/architecture_audit/recipe.json",
     "consumer_count": 13,
     "registration": "Reviewed native shells and cap emitters; all existing ground, threshold, route and PR2 crossing contracts retained."
+  },
+  "interior_architecture": {
+    "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
+    "generator": "tools/eldenmere_interior_architecture.py",
+    "new_scene": "inn_guest_floor"
   }
 }
