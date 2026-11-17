@@ -20,9 +20,10 @@ ROLES = frozenset(('primary', 'secondary', 'residential', 'junction', 'doorstep'
 MATERIALS = frozenset(('dirt', 'stone'))
 COMMON_KEYS = frozenset(('id', 'material', 'role', 'shape', 'source_ref', 'note'))
 SHAPE_KEYS = {'route': frozenset(('points', 'width')),
-              'rect': frozenset(('rect',)),
+              'rect': frozenset(('rect', 'under_fixture')),
               'doorstep': frozenset(('door', 'width', 'depth'))}
 OFFSETS = ((0,-1),(1,-1),(1,0),(1,1),(0,1),(-1,1),(-1,0),(-1,-1))
+WELL_LAYOUT = 'assets/maps/eldenmere/well_square/layout.json'
 
 
 def _number(value, label):
@@ -72,6 +73,33 @@ def _reference(root, reference, label):
     return deepcopy(reference)
 
 
+def _validate_fixture_underlay(root, town, recipe, source, rect):
+    """Authorize only the source well's unchanged support beneath civic paving.
+
+    Collision continues to describe the well's solid base. This exception lets
+    its authoritative ground rectangle receive the same flat stone as the
+    surrounding square, without granting arbitrary streets access to blockers.
+    """
+    name = source['id']
+    if (recipe.get('status') != 'commons_dressing' or
+            source.get('under_fixture') != 'well' or
+            name != 'settlement.street.commons.well_base' or
+            source.get('shape') != 'rect' or source.get('material') != 'stone'):
+        raise ValueError(f'{name}: unsupported fixture underlay activation')
+    if (town.get('layout_source') != WELL_LAYOUT or
+            source.get('source_ref') != {'file': WELL_LAYOUT, 'path': ['well_ground_rect']}):
+        raise ValueError(f'{name}: fixture underlay requires the canonical well layout source')
+    layout = json.loads(_file(root, WELL_LAYOUT).read_text())
+    expected = _coordinates(layout.get('well_ground_rect'), 4, name+' source well support')
+    if expected[2:] != [48, 48] or rect != expected:
+        raise ValueError(f'{name}: fixture underlay must equal the source well support')
+    position = _coordinates(layout.get('well_position'), 2, name+' source well position')
+    instances = [entity for entity in town.get('entities', []) if entity.get('id') == 'well']
+    if (len(instances) != 1 or
+            _coordinates(instances[0].get('position'), 2, name+' well position') != position):
+        raise ValueError(f'{name}: fixture underlay requires the unchanged source well instance')
+
+
 def resolve_streets(root, town, recipe):
     """Validate and resolve only explicitly enabled flat street treatments.
 
@@ -81,18 +109,22 @@ def resolve_streets(root, town, recipe):
     """
     root = Path(root)
     status = recipe.get('status')
-    if status not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing'):
+    if status not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing', 'commons_dressing'):
         raise ValueError('Unsupported settlement street activation status')
-    if recipe.get('placements') != [] and status not in ('courtyard_dressing','workyard_dressing'):
+    if recipe.get('placements') != [] and status not in ('courtyard_dressing','workyard_dressing','commons_dressing'):
         raise ValueError('Street composition cannot activate placements or runtime objects')
-    if status in ('courtyard_dressing','workyard_dressing'):
+    if status in ('courtyard_dressing','workyard_dressing','commons_dressing'):
         config = recipe.get('courtyard_dressing')
         if not isinstance(config, dict) or config.get('district') != 'serene_terrace':
             raise ValueError('Courtyard street pass requires reviewed Serene terrace activation')
-    if status=='workyard_dressing':
+    if status in ('workyard_dressing','commons_dressing'):
         config=recipe.get('workyard_dressing')
         if not isinstance(config,dict) or config.get('district')!='workshop_mill':
             raise ValueError('Workyard street pass requires reviewed workshop/mill activation')
+    if status=='commons_dressing':
+        config=recipe.get('commons_dressing')
+        if not isinstance(config,dict) or config.get('district')!='commons_households':
+            raise ValueError('Commons street pass requires reviewed civic activation')
     treatments = recipe.get('ground_treatments')
     if not isinstance(treatments, list):
         raise ValueError('Settlement ground_treatments must be a list')
@@ -154,6 +186,8 @@ def resolve_streets(root, town, recipe):
             x, y, w, h = rect
             if min(w,h) <= 0 or x < 0 or y < 0 or x+w > width or y+h > height:
                 raise ValueError(f'{name}: rectangle leaves town bounds or is empty')
+            if 'under_fixture' in source:
+                _validate_fixture_underlay(root, town, recipe, source, rect)
         result.append(resolved)
     return result
 
@@ -203,9 +237,16 @@ def paint_streets(base, root, town, recipe, materials, blocked):
             blocked.size != tuple(town['size_pixels'])):
         raise ValueError('Street blocked mask must be logical-size L collision data')
     allowed = blocked.point(lambda value: 0 if value else 255).resize(size, Image.Resampling.NEAREST)
-    masks = {material: ImageChops.multiply(_mask(size, [record for record in treatments
-                                                     if record['material'] == material]), allowed)
-             for material in MATERIALS}
+    masks = {}
+    for material in MATERIALS:
+        ordinary = [record for record in treatments
+                    if record['material'] == material and 'under_fixture' not in record]
+        underlays = [record for record in treatments
+                    if record['material'] == material and 'under_fixture' in record]
+        clipped = ImageChops.multiply(_mask(size, ordinary), allowed)
+        # resolve_streets has already proved that each underlay is precisely
+        # the original well's 48x48 support; all other coverage stays clipped.
+        masks[material] = ImageChops.lighter(clipped, _mask(size, underlays))
     result = base.copy()
     coverage = Image.new('L', size)
     dependencies, images = {}, {}

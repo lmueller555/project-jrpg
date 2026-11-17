@@ -1,12 +1,12 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "workyard_dressing",
+  "status": "commons_dressing",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "PR 4 retains reviewed streets and Serene courtyard, and activates workshop/mill working-yard surfaces and decorative stock only. Explicit supports preserve all protected access and existing owners.",
+  "activation": "PR 5 retains streets, Serene courtyard and workshop/mill yards, and activates civic paving and a small resting edge beside the well square. Household plots remain PR 6; existing well/school owners and all protected story approaches remain authoritative.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -66,16 +66,15 @@
         672,
         696
       ],
-      "later_prs": [
-        5,
-        6
-      ],
       "preserve": [
         "well operating and gathering areas",
         "school and household entrances",
         "children and pet routines",
         "two-bridge circulation loop"
-      ]
+      ],
+      "status": "civic_integrated_households_pending",
+      "delivery_pr": 5,
+      "later_pr": 6
     },
     {
       "id": "eastern_growing",
@@ -1481,6 +1480,84 @@
       ],
       "collision": "none",
       "occlusion": "ground"
+    },
+    {
+      "id": "settlement.commons.rest_bench",
+      "asset": "business_exteriors_hd:porch_bench",
+      "district": "commons_households",
+      "position": [
+        432,
+        948
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        7,
+        16,
+        26,
+        6
+      ]
+    },
+    {
+      "id": "settlement.commons.rest_planter",
+      "asset": "exteriors_hd:herb_planter",
+      "district": "commons_households",
+      "position": [
+        474,
+        954
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        4,
+        8,
+        16,
+        6
+      ]
+    },
+    {
+      "id": "settlement.commons.rest_violets",
+      "asset": "vegetation_hd:flowers_violet",
+      "district": "commons_households",
+      "position": [
+        432,
+        984
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.commons.rest_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "commons_households",
+      "position": [
+        468,
+        980
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.commons.school_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "commons_households",
+      "position": [
+        716,
+        780
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.commons.school_flowers",
+      "asset": "vegetation_hd:flowers_white",
+      "district": "commons_households",
+      "position": [
+        692,
+        786
+      ],
+      "collision": "none",
+      "occlusion": "low"
     }
   ],
   "ground_treatments": [
@@ -1872,6 +1949,124 @@
         ]
       ],
       "width": 18
+    },
+    {
+      "id": "settlement.street.commons.square",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        420,
+        792,
+        168,
+        144
+      ],
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "note": "Human-scale civic stone around the existing well; keep the western lane and full occupied gathering area open."
+    },
+    {
+      "id": "settlement.street.commons.school_link",
+      "material": "stone",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          588,
+          828
+        ],
+        [
+          600,
+          828
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          648,
+          768
+        ],
+        [
+          672,
+          750
+        ]
+      ],
+      "width": 30,
+      "source_ref": {
+        "file": "assets/story/lantern/layout.json",
+        "path": [
+          "school_approach"
+        ]
+      },
+      "note": "Follow the existing school-to-commons desire line and join the actual school approach; no new navigation or trigger."
+    },
+    {
+      "id": "settlement.street.commons.rest_pad",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        432,
+        948,
+        72,
+        24
+      ],
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "note": "Small communal resting edge south of the occupied gathering area; keep the south well entry unobstructed."
+    },
+    {
+      "id": "settlement.street.commons.rest_link",
+      "material": "stone",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          468,
+          930
+        ],
+        [
+          468,
+          960
+        ]
+      ],
+      "width": 30,
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "note": "Join the sitting pad to civic paving without fencing or narrowing the square."
+    },
+    {
+      "id": "settlement.street.commons.well_base",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        504,
+        840,
+        48,
+        48
+      ],
+      "under_fixture": "well",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "well_ground_rect"
+        ]
+      },
+      "note": "Visual paving under the canonical well support; physical collision remains exactly unchanged."
     }
   ],
   "placement_notes": [
@@ -2286,17 +2481,32 @@
     },
     {
       "treatment": "settlement.street.elira_lower_loop_desire"
+    },
+    {
+      "treatment": "settlement.street.commons.square"
+    },
+    {
+      "treatment": "settlement.street.commons.school_link"
+    },
+    {
+      "treatment": "settlement.street.commons.rest_pad"
+    },
+    {
+      "treatment": "settlement.street.commons.rest_link"
+    },
+    {
+      "treatment": "settlement.street.commons.well_base"
     }
   ],
   "street_design": {
     "primary": "Broad compact-earth western and southern spine; preserve every existing usable road width.",
     "secondary": "Compact-earth two-bridge loop, mill/woodland branches and business lane remain legible and connected.",
     "residential": "Quieter existing household approaches remain in their current locations.",
-    "stone": "Restrained globally registered stone at junctions, bridge approaches, stair feet and actual loaded door contacts. No new civic plaza.",
+    "stone": "Globally registered stone at junctions, bridges, stair feet, door contacts and the PR 5 well/school civic surfaces; earth retains the through-road identity.",
     "desire": "Two narrow worn lines acknowledge existing grass travel from the school toward the commons and Elira toward the lower loop. They grant no new navigation.",
     "layering": "Native ground only, before masonry, stairs and water. Existing bridge decks and foreground rails remain independently owned.",
     "cartography": "Complete source-owned network resolves the original roads, later household/school/well geometry and the same active treatments. No parallel road diagram.",
-    "future_prs": "Courtyard, workyards, civic gathering, household plots, Venn growing and southern planting remain PRs 3\u20138."
+    "future_prs": "Other household plots, Venn growing and southern planting remain PRs 6\u20138."
   },
   "courtyard_dressing": {
     "district": "serene_terrace",
@@ -2425,5 +2635,16 @@
         17
       ]
     ]
+  },
+  "commons_dressing": {
+    "district": "commons_households",
+    "scope_rect": [
+      384,
+      720,
+      384,
+      288
+    ],
+    "retire_grass_ids": [],
+    "ground_cells": []
   }
 }

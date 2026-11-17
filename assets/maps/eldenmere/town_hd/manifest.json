@@ -2709,7 +2709,7 @@
         3264
       ],
       "pixel_space": "artwork",
-      "sha256": "0e22e3e83fe30e904820b8a49c767782ecea6649c89ad04c0a47d9730b0c890a"
+      "sha256": "c4e0e7cd8e64156bb0d685f8981572076039e0df1ad33509246d74c9bc1600cf"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/bridges/upper_bridge_front.png",
@@ -3087,7 +3087,7 @@
         1632
       ],
       "pixel_space": "logical_geometry",
-      "sha256": "62ce7747c7be53b8817595790e982a97a23c3141805edc72ac9d84dcc19612ff"
+      "sha256": "623a842f5c29499620819e3f41cfd48d4b260ae1987b4c5b7ff17146204c31c2"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/navigation_allowed.png",
@@ -3708,7 +3708,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "f3d561ecef1bb7505476ebd2675fd3bf655b91c123c52ee8f0079db949e1a28d"
+      "sha256": "98cf9eef354cdb760ab1de10032a6d80a18a893d1601f9dc5873559a832ae346"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_3_0.png",
@@ -3861,7 +3861,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "64b501f92a5d042da564dfa0b0533ebd56f49e78945debe91d9ce258ec2fa48a"
+      "sha256": "056a717c06ffb124dd20034b82f0999512e89184f2733ee8909419609eebe2b7"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/3_4_0.png",
@@ -3870,7 +3870,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "1989434158d2577c27c9a7e241ea634a0a95941cbc9d8e64fdb5d95c65958a07"
+      "sha256": "78f7098ec836c5357f5a69f2cf1c2674044eedbc24167bf8c15152700b0cb307"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/4_4_0.png",
@@ -4023,7 +4023,7 @@
         384
       ],
       "pixel_space": "artwork",
-      "sha256": "dbd37005088f418291f24ac0fd2952e5279a918ddfe74e1f60d924bb087c3b8f"
+      "sha256": "59c58729e197251058a858fa5795b17f7a3735ba2cf4a2fcf54057ee66050483"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/chunks/3_5_0.png",
@@ -8325,7 +8325,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "f82d631aeb2bbe8fba4251eb4069059e9de68566db518bdc0f4a03d0a6a7cf7f"
+      "sha256": "aefe576fe7b554136174c4b969be24f6be6c545792f7cf23be6cb6f3fe78310d"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",
@@ -8484,9 +8484,9 @@
   "settlement_framework": {
     "manifest": "assets/maps/eldenmere/settlement/manifest.json",
     "recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
-    "status": "workyard_dressing",
-    "active_placements": 16,
-    "active_ground_treatments": 31
+    "status": "commons_dressing",
+    "active_placements": 22,
+    "active_ground_treatments": 36
   },
   "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
   "architecture_schedule_sha256": "26889cd49d018df81a7be9286e9b1ab070f909f03aced9613cd94602c02f54ac",

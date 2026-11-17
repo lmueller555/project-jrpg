@@ -1,10 +1,10 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "workyard_dressing",
+  "status": "commons_dressing",
   "coordinate_space": "logical town units; selector padding remains logical",
-  "active_placements": 16,
-  "active_ground_treatments": 31,
+  "active_placements": 22,
+  "active_ground_treatments": 36,
   "dressing": {
     "district": "serene_terrace",
     "scope_rect": [
@@ -1174,6 +1174,383 @@
       }
     ]
   },
+  "commons": {
+    "district": "commons_households",
+    "scope_rect": [
+      384,
+      720,
+      384,
+      288
+    ],
+    "placements": [
+      {
+        "id": "settlement.commons.rest_bench",
+        "asset": "business_exteriors_hd:porch_bench",
+        "district": "commons_households",
+        "position": [
+          432,
+          948
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          7,
+          16,
+          26,
+          6
+        ],
+        "logical_size": [
+          40,
+          24
+        ],
+        "occupied_rect": [
+          439.0,
+          951.0,
+          25.5,
+          19.0
+        ],
+        "depth_baseline_logical": 22,
+        "world_footprint": [
+          439,
+          964,
+          26,
+          6
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_planter",
+        "asset": "exteriors_hd:herb_planter",
+        "district": "commons_households",
+        "position": [
+          474,
+          954
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          4,
+          8,
+          16,
+          6
+        ],
+        "logical_size": [
+          24,
+          16
+        ],
+        "occupied_rect": [
+          478.0,
+          957.0,
+          15.5,
+          11.0
+        ],
+        "depth_baseline_logical": 14.0,
+        "world_footprint": [
+          478,
+          962,
+          16,
+          6
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_violets",
+        "asset": "vegetation_hd:flowers_violet",
+        "district": "commons_households",
+        "position": [
+          432,
+          984
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          433.0,
+          986.5,
+          22.0,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.commons.rest_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "commons_households",
+        "position": [
+          468,
+          980
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          470.0,
+          989.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.commons.school_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "commons_households",
+        "position": [
+          716,
+          780
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          718.0,
+          789.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0
+      },
+      {
+        "id": "settlement.commons.school_flowers",
+        "asset": "vegetation_hd:flowers_white",
+        "district": "commons_households",
+        "position": [
+          692,
+          786
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          693.0,
+          788.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.commons.rest_bench",
+        "position": [
+          432,
+          948
+        ],
+        "sort_y": 970,
+        "frames": [
+          "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          40,
+          24
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_planter",
+        "position": [
+          474,
+          954
+        ],
+        "sort_y": 968.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          16
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_violets",
+        "position": [
+          432,
+          984
+        ],
+        "sort_y": 1006.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 1,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png"
+      },
+      {
+        "id": "settlement.commons.rest_clover",
+        "position": [
+          468,
+          980
+        ],
+        "sort_y": 1002.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 7,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.commons.school_clover",
+        "position": [
+          716,
+          780
+        ],
+        "sort_y": 802.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 7,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.commons.school_flowers",
+        "position": [
+          692,
+          786
+        ],
+        "sort_y": 808.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 8,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.commons.rest_bench",
+        "rect": [
+          439,
+          964,
+          26,
+          6
+        ]
+      },
+      {
+        "id": "settlement.commons.rest_planter",
+        "rect": [
+          478,
+          962,
+          16,
+          6
+        ]
+      }
+    ],
+    "retired_grass_ids": [],
+    "retired_grass_records": [],
+    "ground_cells": [],
+    "dependencies_sha256": {
+      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
+      "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "a8d349e97779415b287bb43271b4acea2bb6b6883b64fdc568b4a87e805d1507",
+      "assets/terrain/eldenmere/exteriors_hd/props/herb_planter/idle.png": "d262ab60451a528a8f92b936728bd231b649964c8b0f1f745592652b9ff8884a",
+      "assets/terrain/vegetation_hd/plants.json": "263ccc4269fc06c177a5f16e58dacc582783a563107a0d4bc178ba01561917ce",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_00.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_01.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_02.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_03.png": "462c4d068f0887b56c028f7dbc907701d69c74a79117112bc2664776510bcc5b",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_04.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_05.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_06.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_07.png": "8a3fa72f3be5d58f5d0848261b09c2dad0215e7dac3c9519fb0d7f594be676f3",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/frames/frame_08.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_violet/idle.png": "6229f36c1c0d6f899f2767ffaa3465c9ee40a1c4cc9605c69666e79181e47082",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/idle.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91"
+    }
+  },
   "ground_treatments": [
     {
       "id": "settlement.street.western_spine",
@@ -1654,6 +2031,124 @@
         ]
       ],
       "width": 18
+    },
+    {
+      "id": "settlement.street.commons.square",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        420,
+        792,
+        168,
+        144
+      ],
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "note": "Human-scale civic stone around the existing well; keep the western lane and full occupied gathering area open."
+    },
+    {
+      "id": "settlement.street.commons.school_link",
+      "material": "stone",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          588,
+          828
+        ],
+        [
+          600,
+          828
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          648,
+          768
+        ],
+        [
+          672,
+          750
+        ]
+      ],
+      "width": 30,
+      "source_ref": {
+        "file": "assets/story/lantern/layout.json",
+        "path": [
+          "school_approach"
+        ]
+      },
+      "note": "Follow the existing school-to-commons desire line and join the actual school approach; no new navigation or trigger."
+    },
+    {
+      "id": "settlement.street.commons.rest_pad",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        432,
+        948,
+        72,
+        24
+      ],
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "note": "Small communal resting edge south of the occupied gathering area; keep the south well entry unobstructed."
+    },
+    {
+      "id": "settlement.street.commons.rest_link",
+      "material": "stone",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          468,
+          930
+        ],
+        [
+          468,
+          960
+        ]
+      ],
+      "width": 30,
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "note": "Join the sitting pad to civic paving without fencing or narrowing the square."
+    },
+    {
+      "id": "settlement.street.commons.well_base",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        504,
+        840,
+        48,
+        48
+      ],
+      "under_fixture": "well",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "well_ground_rect"
+        ]
+      },
+      "note": "Visual paving under the canonical well support; physical collision remains exactly unchanged."
     }
   ],
   "street_network": [
@@ -2674,6 +3169,116 @@
         ]
       ],
       "width": 18
+    },
+    {
+      "id": "settlement.street.commons.square",
+      "role": "junction",
+      "material": "stone",
+      "points": [
+        [
+          492.0,
+          864.0
+        ],
+        [
+          516.0,
+          864.0
+        ]
+      ],
+      "width": 144,
+      "rect": [
+        420,
+        792,
+        168,
+        144
+      ]
+    },
+    {
+      "id": "settlement.street.commons.school_link",
+      "role": "secondary",
+      "material": "stone",
+      "points": [
+        [
+          588,
+          828
+        ],
+        [
+          600,
+          828
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          648,
+          768
+        ],
+        [
+          672,
+          750
+        ]
+      ],
+      "width": 30
+    },
+    {
+      "id": "settlement.street.commons.rest_pad",
+      "role": "junction",
+      "material": "stone",
+      "points": [
+        [
+          444.0,
+          960.0
+        ],
+        [
+          492.0,
+          960.0
+        ]
+      ],
+      "width": 24,
+      "rect": [
+        432,
+        948,
+        72,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.commons.rest_link",
+      "role": "secondary",
+      "material": "stone",
+      "points": [
+        [
+          468,
+          930
+        ],
+        [
+          468,
+          960
+        ]
+      ],
+      "width": 30
+    },
+    {
+      "id": "settlement.street.commons.well_base",
+      "role": "junction",
+      "material": "stone",
+      "points": [
+        [
+          528.0,
+          864.0
+        ],
+        [
+          528.0,
+          864.0
+        ]
+      ],
+      "width": 48,
+      "rect": [
+        504,
+        840,
+        48,
+        48
+      ]
     }
   ],
   "recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
@@ -2726,16 +3331,15 @@
         672,
         696
       ],
-      "later_prs": [
-        5,
-        6
-      ],
       "preserve": [
         "well operating and gathering areas",
         "school and household entrances",
         "children and pet routines",
         "two-bridge circulation loop"
-      ]
+      ],
+      "status": "civic_integrated_households_pending",
+      "delivery_pr": 5,
+      "later_pr": 6
     },
     {
       "id": "eastern_growing",
@@ -6101,7 +6705,7 @@
       {
         "id": "business_exteriors_hd",
         "manifest": "assets/terrain/eldenmere/business_exteriors_hd/manifest.json",
-        "sha256": "c45b7980d658dea1d716600ac612f7e4524a65cdc734eda76efad7a7a4d2a30c",
+        "sha256": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
         "role": "ordinary_props",
         "source_integration_status": "not_integrated",
         "source_visual_approval": "not_reviewed_by_user",
@@ -6137,14 +6741,20 @@
         "intended_uses": [
           "resting-space edges outside actor gathering and travel areas"
         ],
-        "reuse_status": "available_candidate",
-        "current_bindings": [],
+        "reuse_status": "already_bound_in_town",
+        "current_bindings": [
+          {
+            "kind": "town_entity",
+            "id": "settlement.commons.rest_bench"
+          }
+        ],
         "collision_policy": "not_registered",
         "interaction_cues": false,
         "draw_anchor_logical": [
           20.0,
           22.0
         ],
+        "depth_baseline_logical": 22,
         "mount": "ground",
         "animation": {
           "frame_count": 1,
@@ -6740,6 +7350,10 @@
         ],
         "reuse_status": "already_bound_in_town",
         "current_bindings": [
+          {
+            "kind": "town_entity",
+            "id": "settlement.commons.rest_planter"
+          },
           {
             "kind": "town_entity",
             "id": "settlement.courtyard.herbs_east"
@@ -12666,6 +13280,10 @@
           },
           {
             "kind": "town_entity",
+            "id": "settlement.commons.rest_violets"
+          },
+          {
+            "kind": "town_entity",
             "id": "settlement.courtyard.garden_flowers"
           }
         ],
@@ -12731,6 +13349,10 @@
           {
             "kind": "town_entity",
             "id": "school.west_flowers"
+          },
+          {
+            "kind": "town_entity",
+            "id": "settlement.commons.school_flowers"
           },
           {
             "kind": "town_entity",
@@ -13009,6 +13631,14 @@
         ],
         "reuse_status": "already_bound_in_town",
         "current_bindings": [
+          {
+            "kind": "town_entity",
+            "id": "settlement.commons.rest_clover"
+          },
+          {
+            "kind": "town_entity",
+            "id": "settlement.commons.school_clover"
+          },
           {
             "kind": "town_entity",
             "id": "settlement.courtyard.east_clover"
@@ -14441,7 +15071,7 @@
     "dependencies_sha256": {
       "assets/source/maps/eldenmere/courtyard_hd/geometry.json": "a699fa0772cdc637235742e14713ca5c258841b93430af5eb4fc40c203ac9533",
       "assets/source/maps/eldenmere/town_hd/recipe.json": "722eff2585d621e7600f71f67c015c2271556b2d77ec92a3c745c9cfc66c35bc",
-      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "c45b7980d658dea1d716600ac612f7e4524a65cdc734eda76efad7a7a4d2a30c",
+      "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
       "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/frame_00.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
       "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
       "assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/frame_00.png": "b7d6b59112ba9c206846e2d75e491f7f3a5a3e4326917eafa80fb37b47a726ed",
@@ -15613,7 +16243,7 @@
     "assets/maps/eldenmere/terrain_foundation/adapted_plan.json": "59b5ed601c962327888697d2505c9d5c0a796d3035360a303866771b623c2d56",
     "assets/maps/eldenmere/well_square/layout.json": "c34f6942f4ab891a30113525bde697831b1660d92d2704e97c50a24b427aa380",
     "assets/source/maps/eldenmere/courtyard_hd/geometry.json": "a699fa0772cdc637235742e14713ca5c258841b93430af5eb4fc40c203ac9533",
-    "assets/source/maps/eldenmere/settlement/recipe.json": "a89ec6f382270bf24db54577917daebdb463b4ffedb1df91e999fa54fcbd7cb1",
+    "assets/source/maps/eldenmere/settlement/recipe.json": "549f90133bdd08c202c90295eb2a8b93039bda69a6c0db7baf8c3cb2b99e9585",
     "assets/source/maps/eldenmere/town_hd/recipe.json": "722eff2585d621e7600f71f67c015c2271556b2d77ec92a3c745c9cfc66c35bc",
     "assets/source/terrain/eldenmere/workshop/recipe.json": "ebfd46c0209443912d94b35b5965bd8fb117ab20eca3b53217886671b3da70e4",
     "assets/story/lantern/layout.json": "9557b9cb4fd7bf71294c59595fcd0ea6c279d7acde89ab650a64b014c4037848",
@@ -15621,7 +16251,7 @@
     "assets/story/lantern/village_layout.json": "a5aedb9aad13f4e085b13079a38b572d42c808afe691b9202c0c43dbed14cc2b",
     "assets/story/mill/layout.json": "6150ddec1d6fe790a5de99c099758318059d3ddb4034df9fc87d307b29fbf743",
     "assets/story/regent/layout.json": "23efeee48ca4d706100b9cfb4d83dcfe3b64fbba3d4a2c28a6759ece378a2c47",
-    "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "c45b7980d658dea1d716600ac612f7e4524a65cdc734eda76efad7a7a4d2a30c",
+    "assets/terrain/eldenmere/business_exteriors_hd/manifest.json": "d10ddf4c80b3085954a731206c59743a0db43a60ead0ff4f0096ec483b9b40b4",
     "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/frame_00.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
     "assets/terrain/eldenmere/business_exteriors_hd/props/porch_bench/idle.png": "0031ba18e50560d77a848244822b1bafc79d04c9cb625d5469bc1c260edd3a3e",
     "assets/terrain/eldenmere/business_exteriors_hd/props/sheltered_firewood/frame_00.png": "b7d6b59112ba9c206846e2d75e491f7f3a5a3e4326917eafa80fb37b47a726ed",

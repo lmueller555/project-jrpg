@@ -1,4 +1,4 @@
-"""Resolve reviewed courtyard and workyard dressing without writing a map.
+"""Resolve reviewed settlement district dressing without writing a map.
 
 The source recipe owns placements and explicit physical supports. Asset alpha is
 used for conservative artwork-overlap checks, never as an automatic collision
@@ -20,6 +20,9 @@ STATUS = 'courtyard_dressing'
 WORKYARD_PREFIX = 'settlement.workyards.'
 WORKYARD_DISTRICT = 'workshop_mill'
 WORKYARD_STATUS = 'workyard_dressing'
+COMMONS_PREFIX = 'settlement.commons.'
+COMMONS_DISTRICT = 'commons_households'
+COMMONS_STATUS = 'commons_dressing'
 PLACEMENT_KEYS = {'id', 'asset', 'district', 'position', 'collision', 'footprint', 'occlusion'}
 CONFIG_KEYS = {'district', 'scope_rect', 'retire_grass_ids', 'garden_cells'}
 LOW_FAMILIES = {'flowers', 'groundcover'}
@@ -47,19 +50,22 @@ def _empty(cell_key='garden_cells'):
 
 
 def _combined_placements(recipe):
-    """Partition only the two explicitly enabled regions of the current delivery."""
+    """Partition only the explicitly enabled districts of the current delivery."""
     placements = recipe.get('placements')
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
+    districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT) if recipe.get('status') == COMMONS_STATUS else (DISTRICT, WORKYARD_DISTRICT)
     for placement in placements:
-        if not isinstance(placement, dict) or placement.get('district') not in (DISTRICT, WORKYARD_DISTRICT):
+        if not isinstance(placement, dict) or placement.get('district') not in districts:
+            if recipe.get('status') == COMMONS_STATUS:
+                raise ValueError('Commons delivery can activate only serene_terrace, workshop_mill and commons_households')
             raise ValueError('Workyard delivery can activate only serene_terrace and workshop_mill')
     return placements
 
 
 def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader=None):
-    """Retain the courtyard API and ledger when the workyard delivery is active."""
-    if recipe.get('status') == WORKYARD_STATUS:
+    """Retain the courtyard API and ledger when later deliveries are active."""
+    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS):
         placements = _combined_placements(recipe)
         recipe = {**recipe, 'status': STATUS,
                   'placements': [p for p in placements if p['district'] == DISTRICT]}
@@ -75,15 +81,15 @@ def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loade
     the same source and occupied-artwork validation.
     """
     status = recipe.get('status')
-    if status not in ('framework_only', 'ground_only', STATUS, WORKYARD_STATUS):
+    if status not in ('framework_only', 'ground_only', STATUS, WORKYARD_STATUS, COMMONS_STATUS):
         raise ValueError('Unsupported settlement workyard activation status')
-    placements = _combined_placements(recipe) if status in (STATUS, WORKYARD_STATUS) else recipe.get('placements')
+    placements = _combined_placements(recipe) if status in (STATUS, WORKYARD_STATUS, COMMONS_STATUS) else recipe.get('placements')
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
     if status in ('framework_only', 'ground_only') and placements:
         raise ValueError('Settlement status cannot activate workyard dressing')
     selected = [p for p in placements if isinstance(p, dict) and p.get('district') == WORKYARD_DISTRICT]
-    view = {**recipe, 'status': WORKYARD_STATUS if status == WORKYARD_STATUS else 'ground_only',
+    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS) else 'ground_only',
             'placements': selected}
     report = _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                              district=WORKYARD_DISTRICT, prefix=WORKYARD_PREFIX,
@@ -94,6 +100,25 @@ def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loade
     report['ground_entities'] = [entity for entity in report['entities'] if entity['id'] in flat_ids]
     report['entities'] = [entity for entity in report['entities'] if entity['id'] not in flat_ids]
     return report
+
+
+def resolve_commons(root, town, recipe, catalogue, protections, *, image_loader=None):
+    """Resolve the civic delivery without replacing earlier district ownership."""
+    status = recipe.get('status')
+    if status not in ('framework_only', 'ground_only', STATUS, WORKYARD_STATUS, COMMONS_STATUS):
+        raise ValueError('Unsupported settlement commons activation status')
+    placements = _combined_placements(recipe) if status in (STATUS, WORKYARD_STATUS, COMMONS_STATUS) else recipe.get('placements')
+    if not isinstance(placements, list):
+        raise ValueError('Settlement placements must be a list')
+    if status in ('framework_only', 'ground_only') and placements:
+        raise ValueError('Settlement status cannot activate commons dressing')
+    selected = [p for p in placements if isinstance(p, dict) and p.get('district') == COMMONS_DISTRICT]
+    view = {**recipe, 'status': COMMONS_STATUS if status == COMMONS_STATUS else 'ground_only',
+            'placements': selected}
+    return _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
+                           district=COMMONS_DISTRICT, prefix=COMMONS_PREFIX,
+                           activation_status=COMMONS_STATUS, config_key='commons_dressing',
+                           ledger_key='settlement_commons', cell_key='ground_cells')
 
 
 def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=None,
@@ -109,7 +134,7 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
     nonblocking.
     """
     root = Path(root).resolve()
-    title = 'Courtyard' if district == DISTRICT else 'Workyard'
+    title = {DISTRICT: 'Courtyard', WORKYARD_DISTRICT: 'Workyard', COMMONS_DISTRICT: 'Commons'}[district]
     noun = title.lower()
     status = recipe.get('status')
     placements = recipe.get('placements')

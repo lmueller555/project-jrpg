@@ -1,0 +1,112 @@
+{
+  "fixture": "Fresh initialized production Game; opening disabled, disposable saves/settings. Explicit clear-ground player and fixed exploration camera positions. No quest seeding, actor moves, disabled routines, art changes or zoom. Native 960x640 output.",
+  "source_revision": "b47b027d804a167d30988b56c0fb9650a89f48fe",
+  "views": {
+    "commons_well_closeup": {
+      "requested_player_logical": [
+        576,
+        888
+      ],
+      "actual_player_logical": [
+        576.0,
+        888.0
+      ],
+      "clear_ground": true,
+      "camera_focus_logical": [
+        528,
+        864
+      ],
+      "camera_logical": [
+        288,
+        704
+      ],
+      "elapsed_ms": 0,
+      "native_size": [
+        960,
+        640
+      ],
+      "png_sha256": "d0371880d7ba280b955f2ee9b8565dcafe921b4308309917e8938b63965c69c8",
+      "pixel_sha256": "84f7c649946ce7892f41d44d5250dd4a7661c291c57f7063bda03ea1e283aaec"
+    },
+    "commons_school_connection": {
+      "requested_player_logical": [
+        636,
+        804
+      ],
+      "actual_player_logical": [
+        636.0,
+        804.0
+      ],
+      "clear_ground": true,
+      "camera_focus_logical": [
+        624,
+        804
+      ],
+      "camera_logical": [
+        384,
+        644
+      ],
+      "elapsed_ms": 0,
+      "native_size": [
+        960,
+        640
+      ],
+      "png_sha256": "559397d7b3ac6ce5a697260e7f172e8920432a8bf5bf70171d4de5b2c5d12066",
+      "pixel_sha256": "d53cc74efde9f052bf7bb15c12c9e788892810deb20d79682b6de8f402eb15dc"
+    },
+    "commons_west_seating": {
+      "requested_player_logical": [
+        456,
+        900
+      ],
+      "actual_player_logical": [
+        456.0,
+        900.0
+      ],
+      "clear_ground": true,
+      "camera_focus_logical": [
+        456,
+        864
+      ],
+      "camera_logical": [
+        216,
+        704
+      ],
+      "elapsed_ms": 0,
+      "native_size": [
+        960,
+        640
+      ],
+      "png_sha256": "63169a8db6e1e75cdcc88eaf374ced84d2193472ccbc90c6b5267398de2ef7d5",
+      "pixel_sha256": "ce50865d4badc044cf51cfc586bf476b3369c598e7a7554de338cb5878d434bb"
+    },
+    "school_entrance_closeup": {
+      "requested_player_logical": [
+        672,
+        756
+      ],
+      "actual_player_logical": [
+        672.0,
+        756.0
+      ],
+      "clear_ground": true,
+      "camera_focus_logical": [
+        648,
+        720
+      ],
+      "camera_logical": [
+        408,
+        560
+      ],
+      "elapsed_ms": 0,
+      "native_size": [
+        960,
+        640
+      ],
+      "png_sha256": "db00963d802a9fdaddbeea04f64a9e780a199d108bfaa9fb9ef32df8e3b3dc9a",
+      "pixel_sha256": "07cc925131ad3c45a341d20ea0e798ab759dbb8f27fcdaa2772f3febabf822cd"
+    }
+  },
+  "quest_party_inventory_flags_unchanged": true,
+  "production_source_unchanged": true
+}

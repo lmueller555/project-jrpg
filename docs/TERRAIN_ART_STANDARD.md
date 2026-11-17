@@ -417,10 +417,12 @@ candidates. The reproducible report is
 
 PR 1 delivered metadata only; PR 2 integrated the ground-only street pass.
 PR 3 activated Serene's household courtyard through `courtyard_dressing`.
-**PR 4 retains that courtyard and activates the workshop/mill yards** through
-`workyard_dressing`, with separately owned source configuration and ledgers.
+PR 4 activated the workshop/mill yards through `workyard_dressing`.
+**PR 5 retains both districts and activates the civic well/school composition**
+through `commons_dressing`, with separately owned source configuration and ledgers.
 `framework_only` still rejects ground/prop activation and `ground_only` rejects
-placements. Other districts remain inactive. Both integrated districts use explicit
+placements. Other household plots and the eastern/southern districts remain inactive.
+Integrated districts use explicit
 new solid supports without clearing any existing blocker or changing navigation,
 interactions, scenes or save schemas. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
 the report from its working town data. The standalone framework CLI writes only
@@ -433,11 +435,12 @@ legible; secondary lanes retain the two-bridge loop and business connection.
 Small stone surfaces mark selected junctions, bridge approaches, stair feet and
 all 13 doorsteps. Two narrow desire paths acknowledge existing grass travel.
 They do not narrow existing usable roads or declare new walkable ground.
-Civic furniture, other household plots, Venn's growing area and
-southern planting remain later composition work.
+The well square now has a restrained civic stone surface, an existing-line school
+connection and a small southwest resting pad. Other household plots, Venn's growing
+area and southern planting remain later composition work.
 
 `tools/eldenmere_settlement_dressing.py` shares one strict build-time resolver
-between the courtyard and workyards. The courtyard configuration remains confined
+across the courtyard, workyards and commons. The courtyard configuration remains confined
 to `serene_terrace` and names each
 `settlement.courtyard.*` instance. It preserves the existing home, shade tree,
 bench, provision basket, six watered beds and window troughs. An eastern herb
@@ -450,6 +453,16 @@ mill wheel and service landing retain their owners. A small repair bay and flat
 delivery apron establish working uses without filling the MQ02/Lantern gathering
 spaces. Source protection and occupied-art checks own placement decisions; the
 historical `mill_yard` rectangle still overlaps Halden's roof and is not free space.
+
+The commons configuration confines `settlement.commons.*` instances to the reviewed
+civic sub-scope of `commons_households`; the district envelope does not activate
+household gardens. A southwest bench and planter sit beyond the occupied well
+gathering rectangle, with low planting at that edge and below the existing school
+bench. The canonical well, pail, crank, front rim, gardener contacts and queue,
+school furniture, doors and Lantern procession retain their owners and positions.
+The bench uses its source-declared depth baseline rather than an instance override.
+Native stone follows the existing school desire line and shared paving phase.
+Keep the through-roads in earth and the central operating/gathering areas open.
 
 The retained-source workyard prop bank is
 `assets/terrain/eldenmere/workyard_props/manifest.json`, exported by
@@ -473,9 +486,10 @@ Source metadata owns native dimensions, depth, frames and cadence; do not add
 per-instance size or animation overrides. The composer validates freshly built
 artwork through its export buffer rather than reading a previous build's PNG.
 
-The compiled `settlement_dressing` and `settlement_workyards` ledgers record their
+The compiled `settlement_dressing`, `settlement_workyards` and `settlement_commons` ledgers record their
 own entities, supports, retired grass and source hashes. The courtyard keeps its
-`garden_cells`; workyard surface definitions use `ground_cells`. The latter also
+`garden_cells`; workyard and commons configurations use `ground_cells`.
+The workyard ledger also
 records static `ground_entities`: wood shavings bake into native ground after
 street materials and before masonry, water and actors. They are not y-sorted
 sprites that could draw over someone's feet.
@@ -503,7 +517,12 @@ bounds. Doorsteps resolve their center from the **loaded door anchor**, retainin
 fractional logical registration. Unknown treatment keys, invalid geometry,
 unsupported materials and gameplay/collision overrides fail validation. Ground
 is allowed within movement reservations: those reservations protect access from
-new obstacles, not from flat surfaces. Existing physical blockers clip paint.
+new obstacles, not from flat surfaces. Existing physical blockers clip ordinary
+paint. The civic `well_base` treatment alone declares `under_fixture: well`:
+its exact rectangle resolves to the canonical well layout's `well_ground_rect`
+and lets stone continue beneath that existing support. Validate its fixture,
+source, shape, material and activation; it never clears collision or grants
+walkable ground. Do not extend this exception to arbitrary rectangles or props.
 
 Paint before masonry, stairs, water and independently owned bridge assemblies.
 Keep the authored stone blob boundary and spatial phase
