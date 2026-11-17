@@ -168,11 +168,13 @@ All nine buildings have separate furnished interiors. Cottages use the approved 
 The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
 The sanctuary miniature opens into the [Elden Vale Sanctuary reserve](docs/SANCTUARY_RESERVE.md).
-Its [fantasy asset expansion](docs/SANCTUARY_FANTASY.md) adds a multicolored crystal
-ridge, a silver-green memorial tree, carved limestone architecture and a quiet
-reflecting spring at the same native pixel and character scale as Eldenmere.
-The [production review](docs/reviews/sanctuary_fantasy/README.md) shows ordinary
-travel, exploration, landmark depth, hall access and reduced motion. Press E at
+Creative direction for the region and approach is consolidated in
+[Elden Vale — Regional Design Guidance](docs/world/regions/ELDEN_VALE.md), including
+the approved Pale Antlers, Rising Rain and nonblocking landmark placement.
+Those additions await implementation. The currently playable reserve, hall and
+relief room use the native bank described in the
+[terrain integration reference](docs/TERRAIN_ART_STANDARD.md#integrated-elden-vale-sanctuary-reserve)
+and [current review](docs/reviews/sanctuary_reserve_hd/README.md). Press E at
 the cave apron to enter the [Sanctuary crystal cave](docs/SANCTUARY_CAVE.md):
 one continuous limestone dungeon with two exploration loops, six persistent
 treasure caches and tiny wall crystals whose pulses illuminate rock, water and

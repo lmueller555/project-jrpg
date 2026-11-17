@@ -1,32 +1,18 @@
 # Elden Vale overworld
 
-Visual style, sizing, density and rendering follow the
-[global visual art standard](VISUAL_ART_STANDARD.md). Native pixel dimensions and
-renderer details below describe the current implementation or its recorded
-asset milestones. The approved higher-density rebuild preserves logical
-footprints. Full-scene 2× rendering is implemented; asset rebuilding and
-individual bank migration remain pending.
+**Scope:** Current regional travel, streaming, controller ownership and reproduction.
+[Elden Vale — Regional Design Guidance](world/regions/ELDEN_VALE.md) is the single
+creative authority for the region, including the approved Pale Antlers and
+Rising Rain direction. Those additions await implementation; current assets and
+coordinates below describe the playable region rather than a competing design.
 
-Eldenmere's southern road now opens into the first playable region of Auratia.
-This is a separate regional scale: the detailed village retains its existing
-layout, while the overworld represents it with a small, recognizable town.
-The [review captures](reviews/elden_vale_overworld/README.md) show the actual
-renderer and the [atlas survey](reviews/elden_vale_overworld/atlas_reference.png)
-shows how the region follows the approved world map.
-
-The [environment quality pass](reviews/elden_vale_polish/README.md) adds three
-composed farmsteads, smaller crop parcels, village orchards, clustered woodland,
-rocky slopes, riverbank planting and inhabited checkpoints. The main stone road,
-farm cart tracks and woodland footpaths have distinct widths and materials;
-their junctions and bends follow the places they serve. The original regional
-captures remain available as a historical comparison.
-
-The [place-composition pass](reviews/elden_vale_composition/README.md) connects
-farm doors, loading spaces, crop gates and property boundaries into compact
-working places. Orchard aisles arrive at a harvest/resting nook, relief stores
-sit beside their approach, and guards occupy duty stations close to the gates.
-Grouped canopies, connected rock shelves and selected shoreline conditions
-give woodland, foothills and riverbanks more coherent local forms.
+Construction follows the [visual](VISUAL_ART_STANDARD.md) and
+[terrain](TERRAIN_ART_STANDARD.md) standards. The regional overworld is a separate
+presentation scale from the detailed village, reserve and interiors. Historical
+[initial region](reviews/elden_vale_overworld/README.md),
+[environment quality](reviews/elden_vale_polish/README.md) and
+[place-composition](reviews/elden_vale_composition/README.md) captures record earlier
+implementation milestones. They remain evidence, not future art direction.
 
 ## Geography and travel
 
@@ -64,9 +50,9 @@ Walking onto the miniature now enters the [detailed sanctuary reserve](SANCTUARY
 at its southern woodland approach. The reserve contains the court and cloister,
 memorial grove, cave approach and surveyed stone face, with an enterable hall.
 The southern exit returns to the overworld outside the miniature's contact
-area. The cave dungeon and its quest remain future work. Eldenmere's existing
-automatic entry and return remain independent. The
-[current in-game review](reviews/sanctuary_pixel_assets/README.md) shows this visit;
+area. The [continuous cave and rescue](SANCTUARY_CAVE.md) are implemented.
+Eldenmere's existing automatic entry and return remain independent. The
+[current in-game review](reviews/sanctuary_reserve_hd/README.md) shows this visit;
 the [original miniature review](reviews/overworld_sanctuary/README.md) records
 the earlier stage before entry was enabled.
 
@@ -114,7 +100,7 @@ farmstead glyphs are scenery rather than new selectable destinations.
 
 Checkpoint collision belongs to the gate geometry, independently of the guard
 sprites. Passing a gate requires both `CH01_OPENING_REGION_RELEASED` and an
-authored, ready onward destination. Neither destination is ready in this PR.
+authored, ready onward destination. Neither destination is currently authored.
 There is deliberately no producer for the release flag yet: completing MQ04,
 the last currently implemented quest, does not finish the opening chapter.
 The future festival/departure sequence must grant release explicitly.
@@ -123,14 +109,16 @@ Bridge repair is a separate durable fact,
 `ELDEN_VALE_WEST_BRIDGE_REPAIRED`. Restoring the mill, helping Iselin, or opening
 a checkpoint does not repair the bridge. No current quest grants this flag.
 The engine can reconstruct the repaired crossing from the fact for later work;
-this PR implements the destroyed state experienced during the opening.
+the current layout shows the destroyed state experienced during the opening.
 
 The intact land checkpoints reserve a route for Iselin's relief caravan, which
 must not arrive across the ruined bridge. The [arrival cinematic](REGENT_ARRIVAL.md)
 uses the southern land checkpoint and preserves the broken crossing and the
-player's travel restrictions. The new ridge landmark does not open those
+player's travel restrictions. The Sanctuary's ridge site does not open those
 checkpoints, repair the bridge, add an encounter or place the original temple.
-The named southern town, cave dungeon and sanctuary quest remain future work.
+The southern town remains unnamed and its onward destination is future work.
+The cave, Sanctuary arrival, rescue and MQ03 return resolution are implemented;
+they do not grant regional release or bridge repair.
 
 ## Streaming and coordinates
 
@@ -340,3 +328,27 @@ sorting and rest, and an optional act of care for a struggling plant. Both
 workers belong to the region. Their objects, interrupted actions and first-read
 conversation persist independently of streamed scenery. Physical contacts use
 the shared distance-limited regional audio controller.
+
+## Checkpoint familiarity and optional participation
+
+`checkpoint_charm.py` owns the finite northern guards' seat-sharing vignette;
+`regional_participation.py` owns optional overlook sitting, greeting the resting
+farm cat and inspecting the bridge crew's unfinished work. These live controllers
+replace the completed regional charm planning document. They remain implementation
+references beneath the single regional creative design authority.
+
+The guards retain their duty stations and gate clearance. The complete exchange
+plays once, with durable read/contact checkpoints and quieter repeats. The other
+contacts add no named cast, tasks or rewards. Existing orchard, sheep-care,
+workers, props and regional companions keep their own owners.
+
+Hint and E target selection agree. Busy/repeated input cannot restart work or
+consume another target. Sitting offers stand/cancel with a collision-safe return.
+Interruption and Continue preserve ownership and contact state without duplicating
+actors, props or sounds. Cosmetic clocks stay outside progress dirtiness;
+meaningful contacts use the shared positional audio/lifecycle rules.
+
+The guards' production scene is replayed as **Keeping Your Seat** in Gallery;
+routine participation stays outside it. See [the gameplay review](reviews/checkpoint_charm/README.md)
+and [Gallery coverage](GALLERY.md) for current evidence. Gate release, bridge
+repair and quest progression remain independent.

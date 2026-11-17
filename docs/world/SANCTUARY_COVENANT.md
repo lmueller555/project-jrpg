@@ -12,9 +12,9 @@ survivor's report of a cave attack exposes the Crown crew Iselin secretly
 sent ahead to establish authority and begin the mining operation. Lucan was
 unaware of the deployment. The new route reaches the
 [detailed reserve](../SANCTUARY_RESERVE.md) with Iselin, Lucan, the page, Caelan
-and Mira. The [arrival scene](../SANCTUARY_ARRIVAL.md) and cave miniboss are
-implemented; the missing worker's rescue payoff and final MQ03 resolution
-remain later story work.
+and Mira. The [arrival scene](../SANCTUARY_ARRIVAL.md), cave rescue, Vespermaw
+fight, healing-pool evacuation and MQ03 return resolution are implemented.
+Their completion grants no excavation permission.
 
 **Scope:** Elden Vale Sanctuary near Eldenmere, its public covenant, its
 service to the dead and the breach of trust exposed in Chapter 1.

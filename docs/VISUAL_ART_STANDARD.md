@@ -1162,6 +1162,11 @@ migration does not add new buildings or retire banks still used elsewhere.
 
 ### Integrated Elden Vale Sanctuary reserve
 
+Creative direction is centralized in the
+[Elden Vale regional design guidance](world/regions/ELDEN_VALE.md). The Pale
+Antlers and Rising Rain are approved future targets; this section records the
+already integrated environment bank.
+
 The reserve exterior, cave approach, hall and relief room now use native 2×
 environment art at their established logical sizes. Pale limestone, slate,
 emerald woodland, the silver-green memorial tree and cyan/amethyst/opal crystal

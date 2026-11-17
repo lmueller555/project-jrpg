@@ -9,6 +9,12 @@ folklore and exploration. Approved lore, geography and revelation limits retain
 their authority; illustrative concepts are not new canon. Use the companion art
 standards below for construction and rendering.
 
+For Elden Vale, use [the regional design guidance](docs/world/regions/ELDEN_VALE.md)
+as the single creative brief for the region and Sanctuary approach. It includes
+the approved Pale Antlers/Rising Rain target and mandatory nonblocking antler
+placement; these are not yet implemented. Gameplay guides and historical
+recipes/reviews retain technical facts and evidence, not competing design rules.
+
 Before creating or changing artwork, textures, sprites, animation, asset
 builders, renderers or their tests, read the
 [global visual art standard](docs/VISUAL_ART_STANDARD.md).
