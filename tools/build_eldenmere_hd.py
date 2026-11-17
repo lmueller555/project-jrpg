@@ -64,6 +64,10 @@ class Export:
 def update_visual(entity,frames,size,**extra):
     entity.update(frames=frames,logical_size=list(size),artwork_pixels_per_world_pixel=2,**extra)
 
+def business_anchor(spec,design):
+    x,y=spec['position'];dx,_,dw,_=design['door_rect_logical'];_,gy,_,gh=design['ground_rect_logical']
+    return [x+dx+dw/2,y+gy+gh+6]
+
 def products():
     rec=json.loads((SRC/'recipe.json').read_text());old=json.loads((SRC/'baseline_maps.json').read_text());ex=Export();materials=Materials()
     for r in rec['sources']:
@@ -207,7 +211,30 @@ def products():
         (x0,y0),(x1,y1)=line
         for y in range(min(y0,y1)//24,max(y0,y1)//24+1):
             for x in range(min(x0,x1)//24,max(x0,x1)//24+1):dirt.update(((x,y),(x,y-1) if y0==y1 else (x-1,y)))
-    size=rec['town_size_logical'];base=materials.ground(size,dirt);under=base.copy()
+    size=rec['town_size_logical']
+    business_pack='assets/terrain/eldenmere/business_exteriors_hd/';business={r['id']:r for r in read(business_pack+'manifest.json')['buildings']}
+    # Resolve the unchanged physical footprints before painting ground. Native
+    # street masks may not invent paths through buildings, trees or the brook.
+    collision=Image.new('L',tuple(size),0);original_collision=Image.open(SRC/'collision.png').convert('L');collision.paste(original_collision,(0,0));allowed=Image.new('L',tuple(size));allowed.paste(Image.open(SRC/'navigation_allowed.png').convert('L'),(0,0));cd=ImageDraw.Draw(collision);ad=ImageDraw.Draw(allowed)
+    cd.rectangle((816,1344,887,size[1]-1),fill=255)
+    for spec in rec['businesses']:
+        x,y=spec['position'];gx,gy,gw,gh=business[spec['design']]['ground_rect_logical']
+        cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
+    for label,plant,position in rec['district_vegetation']:
+        if 'tree' in label:
+            x,y=position;gx,gy,gw,gh=plants[plant]['ground_rect_logical']
+            cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
+    from tools.eldenmere_settlement_streets import paint_streets
+    street_recipe=read(rec['settlement_recipe'])
+    # New business thresholds derive from their source now, not the previous
+    # generated map. A later source move must not leave a one-build-old doorstep.
+    business_ids={spec['id'] for spec in rec['businesses']}
+    street_town={**town,'size_pixels':size,'doors':[door for door in town['doors'] if door['id'] not in business_ids]+
+                 [{'id':spec['id'],'anchor':business_anchor(spec,business[spec['design']])} for spec in rec['businesses']]}
+    base,street_report=paint_streets(materials.ground(size,dirt),ROOT,street_town,street_recipe,materials,collision)
+    street_report['coverage_image']=ex.png('streets/coverage',street_report.pop('coverage_mask'))
+    town['settlement_streets']={'recipe':rec['settlement_recipe'],**street_report}
+    under=base.copy()
     for r in geo['masonry']:base.alpha_composite(image('assets/terrain/eldenmere/terraces_hd/modules/maintained/'+r['tile']+'.png'),pixels(r['position']))
     for r in geo['stairs']:
         x,y=r['position'];base.paste(under.crop((x*2,y*2,x*2+96,y*2+96)),(x*2,y*2));base.alpha_composite(image('assets/terrain/eldenmere/terraces_hd/stairs/maintained.png'),(x*2,y*2))
@@ -242,10 +269,6 @@ def products():
         crossing_records[name]={**assembly.metadata,'source_recipe':crossing_source['recipe'],
                                 'foreground_image':layer['image'],'ground_selection':'town ground_overlays, after water in every phase'}
     # New southern businesses; all original world coordinates remain unchanged.
-    business_pack='assets/terrain/eldenmere/business_exteriors_hd/';business={r['id']:r for r in read(business_pack+'manifest.json')['buildings']}
-    collision=Image.new('L',tuple(size),0);original_collision=Image.open(SRC/'collision.png').convert('L');collision.paste(original_collision,(0,0));allowed=Image.new('L',tuple(size));allowed.paste(Image.open(SRC/'navigation_allowed.png').convert('L'),(0,0));cd=ImageDraw.Draw(collision);ad=ImageDraw.Draw(allowed)
-    # Preserve every old pixel; extension receives continuing river blockers.
-    cd.rectangle((816,1344,887,size[1]-1),fill=255)
     for name in ('inn','item_shop'):
         town['entities']=[e for e in town['entities'] if e['id']!=name];town['doors']=[d for d in town['doors'] if d['id']!=name];town['landmarks']=[l for l in town['landmarks'] if l['id']!=name]
     for spec in rec['businesses']:
@@ -254,10 +277,9 @@ def products():
             im=image(business_pack+f['file']).copy();im.paste((0,0,0,0),pixels((dx,dy,dx+dw,dy+dh)));frames.append(ex.png(f'exteriors/{name}/ambient_{i}',im))
         still=image(business_pack+r['closed']).copy();still.paste((0,0,0,0),pixels((dx,dy,dx+dw,dy+dh)))
         town['entities'].append({'id':name,'position':[x,y],'sort_y':y+gy+gh,'phase_offset':0,'frame_duration_ms':200,'frames':frames,'logical_size':r['logical_size'],'artwork_pixels_per_world_pixel':2,'reduced_motion_image':ex.png('exteriors/'+name+'/still',still)})
-        anchor=[x+dx+dw/2,y+gy+gh+6];room_path=PACK+'/rooms/'+name+'/map.json'
+        anchor=business_anchor(spec,r);room_path=PACK+'/rooms/'+name+'/map.json'
         town['doors'].append({'id':name,'host':name,'anchor':anchor,'entry_y':anchor[1],'entry_side':'north','entry_half_width':dw/2,'open_radius':30,'close_radius':38,'frame_duration_ms':100,'frames':[business_pack+f['file'] for f in r['door']['frames']],'position':[x+dx,y+dy],'requires_open':True,'destination':room_path,'spawn':[216,294],'arrival_facing':'back','arrival_door':'courtyard','logical_size':[dw,dh],'artwork_pixels_per_world_pixel':2})
         town['interior_scenes'][name]=room_path;town['landmarks'].append({'id':name,'name':spec['name'],'position':anchor});town['destinations'][name]=[round(anchor[0]/2)*2,anchor[1]]
-        cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
         ad.rectangle((round(anchor[0])-12,round(anchor[1])-6,round(anchor[0])+12,1500),fill=255)
         # Native paving connects each threshold to the new shared lane.
         paving=materials.paving((48,72),(round(anchor[0])-12,round(anchor[1])-6));base.alpha_composite(paving,pixels((round(anchor[0])-12,round(anchor[1])-6)))
@@ -266,8 +288,6 @@ def products():
     for label,plant,position in district:
         identifier='south_lane.'+label;town['entities']=[e for e in town['entities'] if e['id']!=identifier]
         r=plants[plant];e={'id':identifier,'position':position,'sort_y':position[1]+r['depth_baseline_logical'],'phase_offset':0};vegetation(e,plant);town['entities'].append(e)
-        if 'tree' in label:
-            x,y=position;gx,gy,gw,gh=r['ground_rect_logical'];cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
     # Mark extension lanes only; original navigation pixels remain authoritative.
     for line in rec['road_centerlines']:
         (x0,y0),(x1,y1)=line
@@ -285,6 +305,8 @@ def products():
     town['ground_overlays']=ex.chunks('town',base,phases);town['ground_frames']=[ex.png('blank',Image.new('RGB',(1,1),'#24302d'))];town['pause_on_focus_loss']=True
     town['art_integrations']['town_hd']={'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'region_logical':[0,0,*size],'density':2,'original_bounds_logical':rec['original_bounds_logical']}
     town['cartography']={'buildings':[{'id':spec['id'],'ground_rect':[spec['position'][0]+business[spec['design']]['ground_rect_logical'][0],spec['position'][1]+business[spec['design']]['ground_rect_logical'][1],*business[spec['design']]['ground_rect_logical'][2:]]} for spec in rec['businesses']],'roads':rec['road_centerlines'],'water_extensions':[[816,1344,72,288]]}
+    from tools.eldenmere_settlement import resolve_street_network
+    town['cartography']['street_network'],_=resolve_street_network(ROOT,town,street_recipe,street_report['treatments'])
     town['expansion']={'original_size':old['town']['size_pixels'],'added_rows':12,'business_lane':'south','existing_coordinates_shifted':False}
     # Remaining rooms use the established native interior shell and shared furniture.
     original_rooms={k:v for k,v in old.items() if k not in ('town','upstream')}
@@ -468,12 +490,12 @@ def products():
             for layer in ('rear','front'):overview.alpha_composite(image(pose[layer]),pixels((x-12,y-28)))
         for layer in data.get('foreground',[]):overview.alpha_composite(ex.load(layer['image']),pixels(layer['position']))
         data['overview']=ex.png(name+'/overview',overview.resize(tuple(data['size_pixels']),Image.Resampling.NEAREST).convert('RGB'));ex.json(paths[name],data)
-    # Settlement composition has one map owner. PR 1 resolves source-owned
-    # clearances and reusable art as metadata only; it cannot activate dressing.
+    # Settlement composition has one map owner. Ground-only activation retains
+    # every prop, clearance, physical mask and gameplay owner.
     from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
     settlement=framework(ROOT,town,rec['settlement_recipe'])
     ex.json(SETTLEMENT_MANIFEST,settlement)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':0},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':0,'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

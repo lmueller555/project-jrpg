@@ -21675,6 +21675,1026 @@
         72,
         288
       ]
+    ],
+    "street_network": [
+      {
+        "id": "settlement.street.network.sanctuary_lane",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            384,
+            288
+          ],
+          [
+            384,
+            480
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.upper_loop",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            384,
+            480
+          ],
+          [
+            960,
+            480
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.western_spine",
+        "role": "primary",
+        "material": "dirt",
+        "points": [
+          [
+            384,
+            480
+          ],
+          [
+            384,
+            1032
+          ]
+        ],
+        "width": 60
+      },
+      {
+        "id": "settlement.street.eastern_loop",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            936,
+            480
+          ],
+          [
+            936,
+            1032
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.lower_loop",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            384,
+            1032
+          ],
+          [
+            960,
+            1032
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.southern_spine",
+        "role": "primary",
+        "material": "dirt",
+        "points": [
+          [
+            504,
+            1032
+          ],
+          [
+            504,
+            1320
+          ],
+          [
+            528,
+            1368
+          ],
+          [
+            528,
+            1632
+          ]
+        ],
+        "width": 60
+      },
+      {
+        "id": "settlement.street.network.mill_access",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            960,
+            336
+          ],
+          [
+            960,
+            480
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.mill_yard_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            960,
+            504
+          ],
+          [
+            1056,
+            504
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.halden_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            936,
+            648
+          ],
+          [
+            1008,
+            648
+          ],
+          [
+            1008,
+            624
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.mira_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            624,
+            432
+          ],
+          [
+            624,
+            480
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.elira_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            672,
+            960
+          ],
+          [
+            672,
+            1032
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.venn_access",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            936,
+            912
+          ],
+          [
+            1176,
+            912
+          ],
+          [
+            1176,
+            816
+          ],
+          [
+            1416,
+            816
+          ],
+          [
+            1416,
+            624
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.venn_door",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            1248,
+            720
+          ],
+          [
+            1248,
+            816
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.woodland_route",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            720,
+            0
+          ],
+          [
+            720,
+            480
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.home_a_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            216,
+            720
+          ],
+          [
+            216,
+            768
+          ],
+          [
+            384,
+            768
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.home_b_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            504,
+            672
+          ],
+          [
+            504,
+            720
+          ],
+          [
+            384,
+            720
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.home_c_access",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            264,
+            1080
+          ],
+          [
+            264,
+            1128
+          ],
+          [
+            504,
+            1128
+          ]
+        ],
+        "width": 48
+      },
+      {
+        "id": "settlement.street.network.commons_access",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            384,
+            888
+          ],
+          [
+            576,
+            888
+          ]
+        ],
+        "width": 72
+      },
+      {
+        "id": "settlement.street.network.liam_house.0",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            240.0,
+            552.0
+          ],
+          [
+            360.0,
+            552.0
+          ]
+        ],
+        "width": 48,
+        "rect": [
+          216,
+          528,
+          168,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.network.school.0",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            624.0,
+            744.0
+          ],
+          [
+            720.0,
+            744.0
+          ]
+        ],
+        "width": 48,
+        "rect": [
+          600,
+          720,
+          144,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.network.school.1",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            624.0,
+            768.0
+          ],
+          [
+            624.0,
+            816.0
+          ]
+        ],
+        "width": 48,
+        "rect": [
+          600,
+          744,
+          48,
+          96
+        ]
+      },
+      {
+        "id": "settlement.street.network.school.2",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            600.0,
+            816.0
+          ],
+          [
+            600.0,
+            816.0
+          ]
+        ],
+        "width": 48,
+        "rect": [
+          576,
+          792,
+          48,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.network.well_square.0",
+        "role": "junction",
+        "material": "dirt",
+        "points": [
+          [
+            480.0,
+            864.0
+          ],
+          [
+            528.0,
+            864.0
+          ]
+        ],
+        "width": 192,
+        "rect": [
+          384,
+          768,
+          240,
+          192
+        ]
+      },
+      {
+        "id": "settlement.street.network.well_square.1",
+        "role": "residential",
+        "material": "dirt",
+        "points": [
+          [
+            528.0,
+            960.0
+          ],
+          [
+            528.0,
+            1032.0
+          ]
+        ],
+        "width": 48,
+        "rect": [
+          504,
+          936,
+          48,
+          120
+        ]
+      },
+      {
+        "id": "settlement.street.business_lane",
+        "role": "secondary",
+        "material": "dirt",
+        "points": [
+          [
+            300,
+            1488
+          ],
+          [
+            696,
+            1488
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.upper_west_junction",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            372.0,
+            492.0
+          ],
+          [
+            396.0,
+            492.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          360,
+          480,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.lower_west_junction",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            372.0,
+            1044.0
+          ],
+          [
+            396.0,
+            1044.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          360,
+          1032,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.arrival_junction",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            492.0,
+            1044.0
+          ],
+          [
+            516.0,
+            1044.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          480,
+          1032,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.business_junction",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            516.0,
+            1500.0
+          ],
+          [
+            540.0,
+            1500.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          504,
+          1488,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.upper_bridge_west",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            756.0,
+            468.0
+          ],
+          [
+            756.0,
+            492.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          744,
+          456,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.upper_bridge_east",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            924.0,
+            468.0
+          ],
+          [
+            924.0,
+            492.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          912,
+          456,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.lower_bridge_west",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            732.0,
+            1020.0
+          ],
+          [
+            732.0,
+            1044.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          720,
+          1008,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.lower_bridge_east",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            924.0,
+            1020.0
+          ],
+          [
+            924.0,
+            1044.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          912,
+          1008,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.home_stair_foot",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            372.0,
+            396.0
+          ],
+          [
+            396.0,
+            396.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          360,
+          384,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.eastern_stair_foot",
+        "role": "junction",
+        "material": "stone",
+        "points": [
+          [
+            1164.0,
+            900.0
+          ],
+          [
+            1188.0,
+            900.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          1152,
+          888,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_sanctuary",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            382.0,
+            300.0
+          ],
+          [
+            390.0,
+            300.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          370.0,
+          288,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_mira",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            632.0,
+            444.0
+          ],
+          [
+            640.0,
+            444.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          620.0,
+          432,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_mill",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            971.0,
+            348.0
+          ],
+          [
+            971.0,
+            348.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          959.0,
+          336,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_halden",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            1007.5,
+            636.0
+          ],
+          [
+            1007.5,
+            636.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          995.5,
+          624,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_elira",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            671.5,
+            972.0
+          ],
+          [
+            671.5,
+            972.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          659.5,
+          960,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_venn",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            1247.5,
+            732.0
+          ],
+          [
+            1247.5,
+            732.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          1235.5,
+          720,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_home_a",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            215.5,
+            732.0
+          ],
+          [
+            215.5,
+            732.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          203.5,
+          720,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_home_b",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            503.5,
+            684.0
+          ],
+          [
+            503.5,
+            684.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          491.5,
+          672,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_home_c",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            263.5,
+            1092.0
+          ],
+          [
+            263.5,
+            1092.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          251.5,
+          1080,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_liam_house",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            287.5,
+            540.0
+          ],
+          [
+            287.5,
+            540.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          275.5,
+          528,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_school",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            668.0,
+            732.0
+          ],
+          [
+            676.0,
+            732.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          656.0,
+          720,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_inn",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            284.0,
+            1476.0
+          ],
+          [
+            292.0,
+            1476.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          272.0,
+          1464,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_item_shop",
+        "role": "doorstep",
+        "material": "stone",
+        "points": [
+          [
+            665.0,
+            1476.0
+          ],
+          [
+            673.0,
+            1476.0
+          ]
+        ],
+        "width": 24,
+        "rect": [
+          653.0,
+          1464,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.school_commons_desire",
+        "role": "desire",
+        "material": "dirt",
+        "points": [
+          [
+            648,
+            768
+          ],
+          [
+            636,
+            804
+          ],
+          [
+            600,
+            828
+          ]
+        ],
+        "width": 18
+      },
+      {
+        "id": "settlement.street.elira_lower_loop_desire",
+        "role": "desire",
+        "material": "dirt",
+        "points": [
+          [
+            672,
+            984
+          ],
+          [
+            648,
+            1008
+          ],
+          [
+            624,
+            1032
+          ]
+        ],
+        "width": 18
+      }
     ]
   },
   "landmark_layers": [],
@@ -21694,5 +22714,981 @@
       24
     ]
   },
-  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json"
+  "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",
+  "settlement_streets": {
+    "recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
+    "treatments": [
+      {
+        "id": "settlement.street.western_spine",
+        "material": "dirt",
+        "role": "primary",
+        "shape": "route",
+        "points": [
+          [
+            384,
+            480
+          ],
+          [
+            384,
+            1032
+          ]
+        ],
+        "width": 60
+      },
+      {
+        "id": "settlement.street.southern_spine",
+        "material": "dirt",
+        "role": "primary",
+        "shape": "route",
+        "points": [
+          [
+            504,
+            1032
+          ],
+          [
+            504,
+            1320
+          ],
+          [
+            528,
+            1368
+          ],
+          [
+            528,
+            1632
+          ]
+        ],
+        "width": 60
+      },
+      {
+        "id": "settlement.street.upper_loop",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            384,
+            480
+          ],
+          [
+            960,
+            480
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.eastern_loop",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            936,
+            480
+          ],
+          [
+            936,
+            1032
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.lower_loop",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            384,
+            1032
+          ],
+          [
+            960,
+            1032
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.business_lane",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            300,
+            1488
+          ],
+          [
+            696,
+            1488
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.upper_west_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          360,
+          480,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.lower_west_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          360,
+          1032,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.arrival_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          480,
+          1032,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.business_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          504,
+          1488,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.upper_bridge_west",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          744,
+          456,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.upper_bridge_east",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          912,
+          456,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.lower_bridge_west",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          720,
+          1008,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.lower_bridge_east",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          912,
+          1008,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.home_stair_foot",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          360,
+          384,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.eastern_stair_foot",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          1152,
+          888,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_sanctuary",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "sanctuary",
+        "width": 32,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          370.0,
+          288,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_mira",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "mira",
+        "width": 32,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          620.0,
+          432,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_mill",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "mill",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          959.0,
+          336,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_halden",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "halden",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          995.5,
+          624,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_elira",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "elira",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          659.5,
+          960,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_venn",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "venn",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          1235.5,
+          720,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_home_a",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "home_a",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          203.5,
+          720,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_home_b",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "home_b",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          491.5,
+          672,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_home_c",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "home_c",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          251.5,
+          1080,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_liam_house",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "liam_house",
+        "width": 24,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          275.5,
+          528,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_school",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "school",
+        "width": 32,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          656.0,
+          720,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_inn",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "inn",
+        "width": 32,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          272.0,
+          1464,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_item_shop",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "door": "item_shop",
+        "width": 32,
+        "depth": 24,
+        "source_shape": "doorstep",
+        "rect": [
+          653.0,
+          1464,
+          32,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.school_commons_desire",
+        "material": "dirt",
+        "role": "desire",
+        "shape": "route",
+        "points": [
+          [
+            648,
+            768
+          ],
+          [
+            636,
+            804
+          ],
+          [
+            600,
+            828
+          ]
+        ],
+        "width": 18
+      },
+      {
+        "id": "settlement.street.elira_lower_loop_desire",
+        "material": "dirt",
+        "role": "desire",
+        "shape": "route",
+        "points": [
+          [
+            672,
+            984
+          ],
+          [
+            648,
+            1008
+          ],
+          [
+            624,
+            1032
+          ]
+        ],
+        "width": 18
+      }
+    ],
+    "cartography": [
+      {
+        "id": "settlement.street.western_spine",
+        "material": "dirt",
+        "role": "primary",
+        "shape": "route",
+        "points": [
+          [
+            384,
+            480
+          ],
+          [
+            384,
+            1032
+          ]
+        ],
+        "width": 60
+      },
+      {
+        "id": "settlement.street.southern_spine",
+        "material": "dirt",
+        "role": "primary",
+        "shape": "route",
+        "points": [
+          [
+            504,
+            1032
+          ],
+          [
+            504,
+            1320
+          ],
+          [
+            528,
+            1368
+          ],
+          [
+            528,
+            1632
+          ]
+        ],
+        "width": 60
+      },
+      {
+        "id": "settlement.street.upper_loop",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            384,
+            480
+          ],
+          [
+            960,
+            480
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.eastern_loop",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            936,
+            480
+          ],
+          [
+            936,
+            1032
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.lower_loop",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            384,
+            1032
+          ],
+          [
+            960,
+            1032
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.business_lane",
+        "material": "dirt",
+        "role": "secondary",
+        "shape": "route",
+        "points": [
+          [
+            300,
+            1488
+          ],
+          [
+            696,
+            1488
+          ]
+        ],
+        "width": 44
+      },
+      {
+        "id": "settlement.street.upper_west_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          360,
+          480,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.lower_west_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          360,
+          1032,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.arrival_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          480,
+          1032,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.business_junction",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          504,
+          1488,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.upper_bridge_west",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          744,
+          456,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.upper_bridge_east",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          912,
+          456,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.lower_bridge_west",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          720,
+          1008,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.lower_bridge_east",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          912,
+          1008,
+          24,
+          48
+        ]
+      },
+      {
+        "id": "settlement.street.home_stair_foot",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          360,
+          384,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.eastern_stair_foot",
+        "material": "stone",
+        "role": "junction",
+        "shape": "rect",
+        "rect": [
+          1152,
+          888,
+          48,
+          24
+        ]
+      },
+      {
+        "id": "settlement.street.doorstep_sanctuary",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 32,
+        "rect": [
+          370.0,
+          288,
+          32,
+          24
+        ],
+        "door": "sanctuary"
+      },
+      {
+        "id": "settlement.street.doorstep_mira",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 32,
+        "rect": [
+          620.0,
+          432,
+          32,
+          24
+        ],
+        "door": "mira"
+      },
+      {
+        "id": "settlement.street.doorstep_mill",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          959.0,
+          336,
+          24,
+          24
+        ],
+        "door": "mill"
+      },
+      {
+        "id": "settlement.street.doorstep_halden",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          995.5,
+          624,
+          24,
+          24
+        ],
+        "door": "halden"
+      },
+      {
+        "id": "settlement.street.doorstep_elira",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          659.5,
+          960,
+          24,
+          24
+        ],
+        "door": "elira"
+      },
+      {
+        "id": "settlement.street.doorstep_venn",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          1235.5,
+          720,
+          24,
+          24
+        ],
+        "door": "venn"
+      },
+      {
+        "id": "settlement.street.doorstep_home_a",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          203.5,
+          720,
+          24,
+          24
+        ],
+        "door": "home_a"
+      },
+      {
+        "id": "settlement.street.doorstep_home_b",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          491.5,
+          672,
+          24,
+          24
+        ],
+        "door": "home_b"
+      },
+      {
+        "id": "settlement.street.doorstep_home_c",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          251.5,
+          1080,
+          24,
+          24
+        ],
+        "door": "home_c"
+      },
+      {
+        "id": "settlement.street.doorstep_liam_house",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 24,
+        "rect": [
+          275.5,
+          528,
+          24,
+          24
+        ],
+        "door": "liam_house"
+      },
+      {
+        "id": "settlement.street.doorstep_school",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 32,
+        "rect": [
+          656.0,
+          720,
+          32,
+          24
+        ],
+        "door": "school"
+      },
+      {
+        "id": "settlement.street.doorstep_inn",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 32,
+        "rect": [
+          272.0,
+          1464,
+          32,
+          24
+        ],
+        "door": "inn"
+      },
+      {
+        "id": "settlement.street.doorstep_item_shop",
+        "material": "stone",
+        "role": "doorstep",
+        "shape": "rect",
+        "width": 32,
+        "rect": [
+          653.0,
+          1464,
+          32,
+          24
+        ],
+        "door": "item_shop"
+      },
+      {
+        "id": "settlement.street.school_commons_desire",
+        "material": "dirt",
+        "role": "desire",
+        "shape": "route",
+        "points": [
+          [
+            648,
+            768
+          ],
+          [
+            636,
+            804
+          ],
+          [
+            600,
+            828
+          ]
+        ],
+        "width": 18
+      },
+      {
+        "id": "settlement.street.elira_lower_loop_desire",
+        "material": "dirt",
+        "role": "desire",
+        "shape": "route",
+        "points": [
+          [
+            672,
+            984
+          ],
+          [
+            648,
+            1008
+          ],
+          [
+            624,
+            1032
+          ]
+        ],
+        "width": 18
+      }
+    ],
+    "painted_native_pixels": 687153,
+    "painted_logical_area": 171788.25,
+    "coverage_sha256": "b1349b41e191354e3de8e9b835a09cbcdc0e642fbe2f5ed8aeec541c7a8fc022",
+    "coverage_bounds_native": [
+      407,
+      576,
+      2519,
+      3264
+    ],
+    "source_dependencies_sha256": {
+      "assets/terrain/eldenmere/grass_dirt_hd/dirt/mask_255.png": "9908c2b69c642f29bb1b9315fbc03e787e43ab516c68a10f4ce2a0583538acc3",
+      "assets/terrain/eldenmere/grass_dirt_hd/tileset.json": "9b9912a8ea2b7daf6b1a3fed355fdbf106bde8fe8b19782230de085ededb4feb",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_001.png": "23ff9f3c77ad6ff8fa0b243ebe36187ba56fea79eb9d874f0ca3096796b21b5c",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_004.png": "ebb0d8913444303e3b39a1f5716824fc8f9f78f0bf50396ee00217c9edaecb99",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_016.png": "1268e9c998f278cb983cdb50e97be5382db3b7f2025ef59e1aa9f9b1eee518b4",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_064.png": "696c23804eb159dfac64702dd66ebb37432903052c1e96781d32b25d8fe722e1",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_0/mask_068.png": "9c824989eb94c7e2ae138ba523a67a923ce6cbb8beb616dc95c0937cdc43b05f",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_001.png": "a403728eb87beec64c921bacffed30dd093f75c7d863ba4478522720fda935b5",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_004.png": "f80fc2c71b135cdd1a83125bf76f0765c4950b0c096ec7e636972e7da72debdc",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_1/mask_064.png": "a422d70b1f224ea80dab02b6c77505f1971a116738f5969cd959ad1de611981d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_001.png": "bc7381b15f431ab5f895dc8201e1cbdcf530e071e4ad57aa0fc17f212eb4fc3b",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_004.png": "b4348ddd8dbca50c7e4692eb1d5b952e28e9c96ba1dd6de11f9471a2a106330d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_016.png": "9bdcc11cc2640aad80befa1815b519149620d6c4ef958267f40c070358916a1e",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_2/mask_064.png": "163626dd54f559d213a49558c97c69db6a003be9f3974b39109f30d6622c4f2d",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_004.png": "1fddd9168c61b34691034249d072323058b2273d1cf7f021b1f3c62279d278a5",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_016.png": "1325d9b87b987c49718f29f9bf7bdb3c797955578509dd3c65551650f707ad89",
+      "assets/terrain/eldenmere/stone_paving_hd/body/phase_3/mask_064.png": "fb702ee92d07f38778a31c30be13fcb10f34eab64571015dfa515f7c52dbb9b9",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_001.png": "0b7b7a37e468043f426e069245f2424d7f2f1d506b3a514b281abafa9fdf85ab",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_004.png": "568eacf226d9909c7dbcf3331524114b25b080116454f42f0c50a236de24e537",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_016.png": "f5c16aaefec9e69508e68c9c79678e7f8b210a96c4bc9f4c935bc1d6d7fd83e4",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_064.png": "921501adc0a32097793ebcf591830020ddeb370d82f09f823c12ee40cc55790e",
+      "assets/terrain/eldenmere/stone_paving_hd/contact/dirt/mask_068.png": "6227e001967841d862a849ad3ce769a2c0d74889ac219e966a621287a0382e86",
+      "assets/terrain/eldenmere/stone_paving_hd/tileset.json": "769be134432296f6983e6ba1342de23aea5332c939ddfbf517e7125a14fb6416"
+    },
+    "coverage_image": "assets/maps/eldenmere/town_hd/streets/coverage.png"
+  }
 }

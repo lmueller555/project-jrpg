@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 from tools.eldenmere_settlement import (framework, resolve_protections,
-                                       validate_placements)
+                                       resolve_street_network, validate_placements)
 
 ROOT = Path(__file__).resolve().parents[1]
 RECIPE = 'assets/source/maps/eldenmere/settlement/recipe.json'
@@ -187,6 +187,37 @@ class SettlementProtectionTests(unittest.TestCase):
         self.assertEqual(len(result), 1)
         self.assertEqual(props, before)
 
+    def test_cartography_requires_declared_units_and_finite_widths(self):
+        (self.root/'fixture.json').write_text(json.dumps({'points': [[40, 40], [160, 40]]}))
+        source = {'id': 'settlement.street.fixture', 'material': 'dirt',
+                  'role': 'secondary', 'source_ref': {'file': 'fixture.json', 'path': ['points']},
+                  'geometry': 'points', 'units': 'logical', 'width': 24}
+        config = {'street_network': [source]}
+        roads, files = resolve_street_network(self.root, self.town, config, [])
+        self.assertEqual(roads[0]['points'], [[40, 40], [160, 40]])
+        self.assertEqual(files, {'fixture.json'})
+        for change in ({'units': 'artwork'}, {'width': float('nan')},
+                       {'width': True}, {'width': -1}):
+            invalid = {**source, **change}
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                resolve_street_network(self.root, self.town, {'street_network': [invalid]}, [])
+
+    def test_cartography_cannot_publish_a_missing_or_overridden_ground_treatment(self):
+        for item in ({'treatment': 'settlement.street.missing'},
+                     {'treatment': 'settlement.street.missing', 'width': 99}):
+            with self.subTest(item=item), self.assertRaises(ValueError):
+                resolve_street_network(self.root, self.town, {'street_network': [item]}, [])
+
+    def test_reordered_source_roads_require_explicit_identity_review(self):
+        (self.root/'fixture.json').write_text(json.dumps({'roads': [
+            {'id': 'other_lane', 'points': [[40,40],[160,40]], 'width': 2}]}))
+        item = {'id': 'settlement.street.expected_lane', 'material': 'dirt',
+                'role': 'residential', 'source_id': 'expected_lane',
+                'source_ref': {'file': 'fixture.json', 'path': ['roads',0]},
+                'geometry': 'road', 'units': 'tiles'}
+        with self.assertRaisesRegex(ValueError, 'identity changed'):
+            resolve_street_network(self.root, self.town, {'street_network': [item]}, [])
+
 
 class LiveSettlementFrameworkTests(unittest.TestCase):
     @classmethod
@@ -240,9 +271,10 @@ class LiveSettlementFrameworkTests(unittest.TestCase):
         second = framework(ROOT, self.town, RECIPE)
         self.assertEqual(first, second)
         self.assertEqual(self.town, before)
-        self.assertEqual(self.recipe['status'], 'framework_only')
+        self.assertEqual(self.recipe['status'], 'ground_only')
         self.assertEqual(self.recipe['placements'], [])
-        self.assertEqual(self.recipe['ground_treatments'], [])
+        self.assertEqual(first['active_ground_treatments'], len(self.recipe['ground_treatments']))
+        self.assertEqual(first['street_network'], self.town['cartography']['street_network'])
 
     def test_real_catalogued_native_asset_is_accepted_by_the_placement_validator(self):
         catalogue = framework(ROOT, self.town, RECIPE)['inventory']
@@ -264,6 +296,7 @@ class LiveSettlementFrameworkTests(unittest.TestCase):
             path = temporary_root/'settlement.json'
             for field in ('placements', 'ground_treatments'):
                 changed = copy.deepcopy(self.recipe)
+                changed['status'] = 'framework_only'
                 changed[field] = [{'id': 'settlement.future_content'}]
                 path.write_text(json.dumps(changed))
                 with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'cannot activate'):
