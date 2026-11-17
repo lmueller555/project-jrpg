@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "id": "eldenmere.settlement.framework",
-  "status": "framework_only",
+  "id": "eldenmere.settlement",
+  "status": "ground_only",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "No placements, ground treatments, artwork, collision, navigation, actor ownership or gameplay changes in PR 1.",
+  "activation": "PR 2 activates reviewed native street surfaces and cartography only. No prop placements, collision, navigation, actor ownership or gameplay changes.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -1238,12 +1238,402 @@
     }
   ],
   "placements": [],
-  "ground_treatments": [],
+  "ground_treatments": [
+    {
+      "id": "settlement.street.western_spine",
+      "material": "dirt",
+      "role": "primary",
+      "shape": "route",
+      "points": [
+        [
+          384,
+          480
+        ],
+        [
+          384,
+          1032
+        ]
+      ],
+      "width": 60
+    },
+    {
+      "id": "settlement.street.southern_spine",
+      "material": "dirt",
+      "role": "primary",
+      "shape": "route",
+      "points": [
+        [
+          504,
+          1032
+        ],
+        [
+          504,
+          1320
+        ],
+        [
+          528,
+          1368
+        ],
+        [
+          528,
+          1632
+        ]
+      ],
+      "width": 60
+    },
+    {
+      "id": "settlement.street.upper_loop",
+      "material": "dirt",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          384,
+          480
+        ],
+        [
+          960,
+          480
+        ]
+      ],
+      "width": 44
+    },
+    {
+      "id": "settlement.street.eastern_loop",
+      "material": "dirt",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          936,
+          480
+        ],
+        [
+          936,
+          1032
+        ]
+      ],
+      "width": 44
+    },
+    {
+      "id": "settlement.street.lower_loop",
+      "material": "dirt",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          384,
+          1032
+        ],
+        [
+          960,
+          1032
+        ]
+      ],
+      "width": 44
+    },
+    {
+      "id": "settlement.street.business_lane",
+      "material": "dirt",
+      "role": "secondary",
+      "shape": "route",
+      "points": [
+        [
+          300,
+          1488
+        ],
+        [
+          696,
+          1488
+        ]
+      ],
+      "width": 44
+    },
+    {
+      "id": "settlement.street.upper_west_junction",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        360,
+        480,
+        48,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.lower_west_junction",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        360,
+        1032,
+        48,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.arrival_junction",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        480,
+        1032,
+        48,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.business_junction",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        504,
+        1488,
+        48,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.upper_bridge_west",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        744,
+        456,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "settlement.street.upper_bridge_east",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        912,
+        456,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "settlement.street.lower_bridge_west",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        720,
+        1008,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "settlement.street.lower_bridge_east",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        912,
+        1008,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "settlement.street.home_stair_foot",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        360,
+        384,
+        48,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.eastern_stair_foot",
+      "material": "stone",
+      "role": "junction",
+      "shape": "rect",
+      "rect": [
+        1152,
+        888,
+        48,
+        24
+      ]
+    },
+    {
+      "id": "settlement.street.doorstep_sanctuary",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "sanctuary",
+      "width": 32,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_mira",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "mira",
+      "width": 32,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_mill",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "mill",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_halden",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "halden",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_elira",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "elira",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_venn",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "venn",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_home_a",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "home_a",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_home_b",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "home_b",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_home_c",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "home_c",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_liam_house",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "liam_house",
+      "width": 24,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_school",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "school",
+      "width": 32,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_inn",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "inn",
+      "width": 32,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.doorstep_item_shop",
+      "material": "stone",
+      "role": "doorstep",
+      "shape": "doorstep",
+      "door": "item_shop",
+      "width": 32,
+      "depth": 24
+    },
+    {
+      "id": "settlement.street.school_commons_desire",
+      "material": "dirt",
+      "role": "desire",
+      "shape": "route",
+      "points": [
+        [
+          648,
+          768
+        ],
+        [
+          636,
+          804
+        ],
+        [
+          600,
+          828
+        ]
+      ],
+      "width": 18
+    },
+    {
+      "id": "settlement.street.elira_lower_loop_desire",
+      "material": "dirt",
+      "role": "desire",
+      "shape": "route",
+      "points": [
+        [
+          672,
+          984
+        ],
+        [
+          648,
+          1008
+        ],
+        [
+          624,
+          1032
+        ]
+      ],
+      "width": 18
+    }
+  ],
   "placement_notes": [
     "Resolve all selectors against current authoritative source data; do not copy coordinates from this report into a second live placement authority.",
     "Generated town doors, opening approaches, world links, exit/return contacts and functional entities are protected by the composer helper in addition to these source selectors.",
     "Protection regions reserve new placement space; they do not assert every existing pixel is walkable. Existing fixtures, walls and operating surfaces can already occupy their own reserved regions.",
-    "The old adapted-plan mill_yard space overlaps Halden’s current drawable roof/canvas. Its label is historical land-use intent, not an approved empty placement rectangle.",
+    "The old adapted-plan mill_yard space overlaps Halden\u2019s current drawable roof/canvas. Its label is historical land-use intent, not an approved empty placement rectangle.",
     "Any later mill delivery apron must also clear the Lantern mill group at current village_layout stations; re-fit it after the exterior/bridge work.",
     "Venn plots touch the cottage overhang; inset beds and preserve the irrigation-gate approaches. This framework grants no harvest or new service behavior.",
     "Existing player trails support dynamic followers. Protect the public corridors and companion clearance instead of inventing fixed Regent/Lantern escort routes."
@@ -1281,5 +1671,386 @@
       "source": "assets/maps/eldenmere/routines/daisy.json",
       "reason": "Ordinary bowl/wander positions and liam_blocks/daisy_bone/household child positions are interior. Their outdoor play uses the reviewed Liam/Daisy code envelope; quest staging uses Lantern metadata."
     }
-  ]
+  ],
+  "street_network": [
+    {
+      "id": "settlement.street.network.sanctuary_lane",
+      "material": "dirt",
+      "role": "secondary",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          0
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "sanctuary_lane"
+    },
+    {
+      "treatment": "settlement.street.upper_loop"
+    },
+    {
+      "treatment": "settlement.street.western_spine"
+    },
+    {
+      "treatment": "settlement.street.eastern_loop"
+    },
+    {
+      "treatment": "settlement.street.lower_loop"
+    },
+    {
+      "treatment": "settlement.street.southern_spine"
+    },
+    {
+      "id": "settlement.street.network.mill_access",
+      "material": "dirt",
+      "role": "secondary",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          6
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "mill_access"
+    },
+    {
+      "id": "settlement.street.network.mill_yard_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          7
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "mill_yard_access"
+    },
+    {
+      "id": "settlement.street.network.halden_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          8
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "halden_access"
+    },
+    {
+      "id": "settlement.street.network.mira_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          9
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "mira_access"
+    },
+    {
+      "id": "settlement.street.network.elira_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          10
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "elira_access"
+    },
+    {
+      "id": "settlement.street.network.venn_access",
+      "material": "dirt",
+      "role": "secondary",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          11
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "venn_access"
+    },
+    {
+      "id": "settlement.street.network.venn_door",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          12
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "venn_door"
+    },
+    {
+      "id": "settlement.street.network.woodland_route",
+      "material": "dirt",
+      "role": "secondary",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          13
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "woodland_route"
+    },
+    {
+      "id": "settlement.street.network.home_a_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          14
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "home_a_access"
+    },
+    {
+      "id": "settlement.street.network.home_b_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          15
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "home_b_access"
+    },
+    {
+      "id": "settlement.street.network.home_c_access",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          16
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "home_c_access"
+    },
+    {
+      "id": "settlement.street.network.commons_access",
+      "material": "dirt",
+      "role": "secondary",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+        "path": [
+          "roads",
+          17
+        ]
+      },
+      "geometry": "road",
+      "units": "tiles",
+      "source_id": "commons_access"
+    },
+    {
+      "id": "settlement.street.network.liam_house.0",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/liam_house/house.json",
+        "path": [
+          "path_rect_tiles"
+        ]
+      },
+      "geometry": "rect",
+      "units": "tiles"
+    },
+    {
+      "id": "settlement.street.network.school.0",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/school/layout.json",
+        "path": [
+          "path_rects_tiles",
+          0
+        ]
+      },
+      "geometry": "rect",
+      "units": "tiles"
+    },
+    {
+      "id": "settlement.street.network.school.1",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/school/layout.json",
+        "path": [
+          "path_rects_tiles",
+          1
+        ]
+      },
+      "geometry": "rect",
+      "units": "tiles"
+    },
+    {
+      "id": "settlement.street.network.school.2",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/school/layout.json",
+        "path": [
+          "path_rects_tiles",
+          2
+        ]
+      },
+      "geometry": "rect",
+      "units": "tiles"
+    },
+    {
+      "id": "settlement.street.network.well_square.0",
+      "material": "dirt",
+      "role": "junction",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "plaza_rect_tiles"
+        ]
+      },
+      "geometry": "rect",
+      "units": "tiles"
+    },
+    {
+      "id": "settlement.street.network.well_square.1",
+      "material": "dirt",
+      "role": "residential",
+      "source_ref": {
+        "file": "assets/maps/eldenmere/well_square/layout.json",
+        "path": [
+          "south_connector_tiles"
+        ]
+      },
+      "geometry": "rect",
+      "units": "tiles"
+    },
+    {
+      "treatment": "settlement.street.business_lane"
+    },
+    {
+      "treatment": "settlement.street.upper_west_junction"
+    },
+    {
+      "treatment": "settlement.street.lower_west_junction"
+    },
+    {
+      "treatment": "settlement.street.arrival_junction"
+    },
+    {
+      "treatment": "settlement.street.business_junction"
+    },
+    {
+      "treatment": "settlement.street.upper_bridge_west"
+    },
+    {
+      "treatment": "settlement.street.upper_bridge_east"
+    },
+    {
+      "treatment": "settlement.street.lower_bridge_west"
+    },
+    {
+      "treatment": "settlement.street.lower_bridge_east"
+    },
+    {
+      "treatment": "settlement.street.home_stair_foot"
+    },
+    {
+      "treatment": "settlement.street.eastern_stair_foot"
+    },
+    {
+      "treatment": "settlement.street.doorstep_sanctuary"
+    },
+    {
+      "treatment": "settlement.street.doorstep_mira"
+    },
+    {
+      "treatment": "settlement.street.doorstep_mill"
+    },
+    {
+      "treatment": "settlement.street.doorstep_halden"
+    },
+    {
+      "treatment": "settlement.street.doorstep_elira"
+    },
+    {
+      "treatment": "settlement.street.doorstep_venn"
+    },
+    {
+      "treatment": "settlement.street.doorstep_home_a"
+    },
+    {
+      "treatment": "settlement.street.doorstep_home_b"
+    },
+    {
+      "treatment": "settlement.street.doorstep_home_c"
+    },
+    {
+      "treatment": "settlement.street.doorstep_liam_house"
+    },
+    {
+      "treatment": "settlement.street.doorstep_school"
+    },
+    {
+      "treatment": "settlement.street.doorstep_inn"
+    },
+    {
+      "treatment": "settlement.street.doorstep_item_shop"
+    },
+    {
+      "treatment": "settlement.street.school_commons_desire"
+    },
+    {
+      "treatment": "settlement.street.elira_lower_loop_desire"
+    }
+  ],
+  "street_design": {
+    "primary": "Broad compact-earth western and southern spine; preserve every existing usable road width.",
+    "secondary": "Compact-earth two-bridge loop, mill/woodland branches and business lane remain legible and connected.",
+    "residential": "Quieter existing household approaches remain in their current locations.",
+    "stone": "Restrained globally registered stone at junctions, bridge approaches, stair feet and actual loaded door contacts. No new civic plaza.",
+    "desire": "Two narrow worn lines acknowledge existing grass travel from the school toward the commons and Elira toward the lower loop. They grant no new navigation.",
+    "layering": "Native ground only, before masonry, stairs and water. Existing bridge decks and foreground rails remain independently owned.",
+    "cartography": "Complete source-owned network resolves the original roads, later household/school/well geometry and the same active treatments. No parallel road diagram.",
+    "future_prs": "Courtyard, workyards, civic gathering, household plots, Venn growing and southern planting remain PRs 3\u20138."
+  }
 }

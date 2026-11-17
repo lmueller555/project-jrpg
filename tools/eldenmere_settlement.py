@@ -1,9 +1,9 @@
-"""Build-time settlement catalogue and clearance contracts, with no map writer.
+"""Build-time settlement catalogue, clearance and ground-only street contracts.
 
 Coordinates are logical. Selectors scale their geometry from tiles if requested;
 padding is always logical. Routes protect the swept footprint of each segment,
-not their enclosing rectangle. The current framework recipe deliberately cannot
-activate dressing: later composition PRs must explicitly add that integration.
+not their enclosing rectangle. Ground-only activation never permits prop dressing,
+collision changes or another map writer.
 """
 from copy import deepcopy
 from hashlib import sha256
@@ -269,17 +269,22 @@ def framework(root, town, recipe_path=RECIPE):
     root = Path(root)
     path = _file(root, recipe_path)
     recipe = json.loads(path.read_text())
-    if recipe.get('version') != 1 or recipe.get('status') != 'framework_only':
+    if recipe.get('version') != 1 or recipe.get('status') not in ('framework_only', 'ground_only'):
         raise ValueError('Unsupported settlement recipe version/status')
-    if recipe.get('placements') != [] or recipe.get('ground_treatments') != []:
+    if recipe.get('placements') != [] or (recipe['status'] == 'framework_only' and recipe.get('ground_treatments') != []):
         raise ValueError('Settlement framework cannot activate placements or ground treatments')
     if town.get('id') != TOWN_ID or recipe.get('scene') != TOWN_ID:
         raise ValueError(f'Settlement framework must use the loaded {TOWN_ID} scene')
     protections = resolve_protections(root, town, recipe)
     catalogue = inventory(root, town=town)
     validate_placements(recipe['placements'], protections, catalogue, town)
+    from tools.eldenmere_settlement_streets import resolve_streets
+    treatments = resolve_streets(root, town, recipe)
+    network, street_sources = resolve_street_network(root, town, recipe, treatments)
     dependencies = dict(catalogue['dependencies_sha256'])
     dependencies[recipe_path] = sha256(path.read_bytes()).hexdigest()
+    for source in street_sources:
+        dependencies[source] = sha256(_file(root, source).read_bytes()).hexdigest()
     for record in protections:
         if record['source'] != 'loaded town':
             source = record['source']
@@ -293,12 +298,77 @@ def framework(root, town, recipe_path=RECIPE):
                            ('id','host','anchor','entry_y','entry_side','entry_half_width',
                             'open_radius','close_radius','destination','spawn','arrival_door')}
                           for door in town.get('doors', [])]
-    return dict(version=1, id=recipe['id'], status='framework_only',
+    return dict(version=1, id=recipe['id'], status=recipe['status'],
                 coordinate_space='logical town units; selector padding remains logical',
-                active_placements=0, active_ground_treatments=0,
+                active_placements=0, active_ground_treatments=len(treatments),
+                ground_treatments=treatments, street_network=network,
                 recipe=recipe_path, districts=deepcopy(recipe['districts']),
                 district_geometry=recipe['district_geometry'],
                 placement_notes=deepcopy(recipe.get('placement_notes', [])),
                 protected_spaces=protections, interfaces=interfaces,
                 inventory=catalogue, dependencies_sha256=dict(sorted(dependencies.items())),
                 excluded_coordinate_contexts=deepcopy(recipe.get('excluded_coordinate_contexts', [])))
+
+
+def resolve_street_network(root, town, recipe, treatments):
+    """Compile cartography from live route sources and the same painted treatments."""
+    result = []
+    sources = set()
+    by_id = {record['id']: record for record in treatments}
+    seen = set()
+    items = recipe.get('street_network', [])
+    if not isinstance(items, list):
+        raise ValueError('Street network must be a list')
+    for item in items:
+        if not isinstance(item, dict):
+            raise ValueError('Street network entries must be objects')
+        if 'treatment' in item:
+            if set(item) != {'treatment'} or item['treatment'] not in by_id:
+                raise ValueError('Street network must reference an active ground treatment')
+            record = deepcopy(by_id[item['treatment']])
+        else:
+            if item.get('units') not in ('logical', 'tiles'):
+                raise ValueError('Invalid cartographic street coordinate units')
+            source = item['source_ref']['file']
+            selected = _select(json.loads(_file(root, source).read_text()), item['source_ref']['path'])
+            if len(selected) != 1:
+                raise ValueError('Street network source must resolve one route or rectangle')
+            selected = selected[0][0]
+            if 'source_id' in item and (not isinstance(selected, dict) or selected.get('id') != item['source_id']):
+                raise ValueError('Cartographic source identity changed; review '+item['id'])
+            sources.add(source)
+            scale = 24 if item.get('units') == 'tiles' else 1
+            record = {key: item[key] for key in ('id', 'role', 'material')}
+            if item['geometry'] == 'road':
+                record.update(points=[[v*scale for v in p] for p in selected['points']],
+                              width=selected['width']*scale)
+            elif item['geometry'] == 'points':
+                record.update(points=[[v*scale for v in p] for p in selected], width=item['width'])
+            elif item['geometry'] == 'rect':
+                record['rect'] = [v*scale for v in selected]
+            else:
+                raise ValueError('Unsupported cartographic street geometry')
+        name = record['id']
+        if not isinstance(name, str) or not name.startswith('settlement.street.') or name in seen:
+            raise ValueError('Cartographic street ID must be unique in settlement.street.*')
+        seen.add(name)
+        if 'rect' in record:
+            x, y, w, h = _rect(record['rect'], name)
+            if x < 0 or y < 0 or x+w > town['size_pixels'][0] or y+h > town['size_pixels'][1]:
+                raise ValueError('Cartographic rectangle leaves town '+name)
+            if w >= h:
+                record.update(points=[[x+h/2, y+h/2], [x+w-h/2, y+h/2]], width=h)
+            else:
+                record.update(points=[[x+w/2, y+w/2], [x+w/2, y+h-w/2]], width=w)
+        points = [_numbers(point, 2, name) for point in record['points']]
+        if len(points) < 2 or any(not (0 <= x <= town['size_pixels'][0] and
+                                     0 <= y <= town['size_pixels'][1]) for x, y in points):
+            raise ValueError('Cartographic street leaves town '+name)
+        if record['role'] not in ('primary','secondary','residential','junction','doorstep','desire'):
+            raise ValueError('Invalid cartographic street role '+name)
+        width = _numbers([record['width']], 1, name+' width')[0]
+        if record['material'] not in ('stone', 'dirt') or width <= 0:
+            raise ValueError('Invalid cartographic street material/width '+name)
+        result.append({key: deepcopy(record[key]) for key in ('id','role','material','points','width','rect')
+                       if key in record})
+    return result, sources

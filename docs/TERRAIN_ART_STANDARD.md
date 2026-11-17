@@ -402,7 +402,7 @@ uses temporary saves/settings only.
 
 ### Eldenmere settlement framework
 
-The settlement framework prepares later street, parcel and public-space work.
+The settlement framework owns street, parcel and public-space composition contracts.
 Its source is `assets/source/maps/eldenmere/settlement/recipe.json`; the maintained
 town recipe selects it through `settlement_recipe`.
 `tools/eldenmere_settlement.py` resolves its build-time contracts and
@@ -410,14 +410,48 @@ town recipe selects it through `settlement_recipe`.
 candidates. The reproducible report is
 `assets/maps/eldenmere/settlement/manifest.json`.
 
-This first framework delivery has **zero active placements and zero ground
-treatments**. It adds no artwork, runtime blocking mask, navigation change,
-interaction, scene or save state. The helper rejects activation in this recipe;
-later composition PRs must explicitly implement and review the corresponding
-composer integration. `tools/build_eldenmere_hd.py` remains the sole town map
-writer and produces the report from its working town data. The standalone
-framework CLI writes only the report. Generated town map/manifest hashes are not
-producer inputs, avoiding a recursive dependency on the town's own outputs.
+PR 1 delivered metadata only. **PR 2 integrates ground-only streets with zero
+active prop placements.** The recipe explicitly selects `ground_only`; the helper
+still rejects placements and rejects ground activation under `framework_only`.
+There is no new blocking mask, navigation behavior, interaction, scene or save
+state. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
+the report from its working town data. The standalone framework CLI writes only
+the report. Generated town map/manifest hashes are not producer inputs, avoiding
+a recursive dependency on the town's own outputs.
+
+`tools/eldenmere_settlement_streets.py` resolves and paints the recipe's native
+ground treatments. Primary compact-earth roads keep the western/southern spine
+legible; secondary lanes retain the two-bridge loop and business connection.
+Small stone surfaces mark selected junctions, bridge approaches, stair feet and
+all 13 doorsteps. Two narrow desire paths acknowledge existing grass travel.
+They do not narrow existing usable roads or declare new walkable ground. Courtyard
+dressing, workyards, civic furniture, household plots, Venn's growing area and
+southern planting remain later composition work.
+
+Treatment coordinates are logical; native masks and terrain composition use
+twice those dimensions. Routes have explicit widths; rectangles have explicit
+bounds. Doorsteps resolve their center from the **loaded door anchor**, retaining
+fractional logical registration. Unknown treatment keys, invalid geometry,
+unsupported materials and gameplay/collision overrides fail validation. Ground
+is allowed within movement reservations: those reservations protect access from
+new obstacles, not from flat surfaces. Existing physical blockers clip paint.
+
+Paint before masonry, stairs, water and independently owned bridge assemblies.
+Keep the authored stone blob boundary and spatial phase
+`x % 2 + 2 * (y % 2)` at a shared world origin. Stone contact sits over its declared
+compact-earth substrate; it does not introduce a new curb or solid support.
+Keep hard alpha and native detail. A published native coverage mask bounds the
+allowed changes; all six final ground phases must match the pre-pass ground
+outside it. Collision, navigation, foregrounds, buildings and door interfaces
+are separately preserved, including bridge ground drawn after water.
+
+The complete `cartography.street_network` is compiled from the maintained old
+route sources, later household/school/well paths and the same active ground
+treatments. Its records use logical world points, widths, material and role.
+`MapUI` uses that complete network instead of drawing the old road diagram again;
+maps without the key retain their legacy fallback. Runtime map display never
+reads the source recipe. Preserve the cartography's source references when an
+unchanged route is maintained rather than copying its geometry into another owner.
 
 Protection records come from current map interfaces and explicit selectors into
 their authoritative route, household, well, work and story sources. They preserve
@@ -467,10 +501,12 @@ python tools/build_eldenmere_settlement_framework.py --check
 python tools/capture_eldenmere_settlement_framework.py /tmp/eldenmere-framework-review
 ```
 
-The capture tool supports `--baseline /path/to/earlier/observations.json` to compare
+The framework capture tool supports `--baseline /path/to/earlier/observations.json` to compare
 active map/art inputs and native views with an earlier run. See the
 [framework review](reviews/eldenmere_settlement_framework/README.md) for the
-current evidence and its scope. Preservation captures do not certify the visual
+historical framework evidence and its scope. The [street review](reviews/eldenmere_streets/README.md)
+records PR 2's authorized surface differences and unchanged physical interfaces.
+Preservation captures do not certify the visual
 quality of unresolved building, bridge or landmark issues; those asset fixes
 remain separately scoped. The regional guide remains the creative authority.
 

@@ -24,7 +24,8 @@ def build(check=False):
         target.write_bytes(raw)
     print(f'{"Verified" if check else "Built"} settlement framework: '
           f'{len(report["protected_spaces"])} protected spaces, '
-          f'{len(report["inventory"]["assets"])} semantic asset records; zero active edits')
+          f'{len(report["inventory"]["assets"])} semantic asset records; '
+          f'{report["active_ground_treatments"]} ground treatments, zero prop placements')
     return report
 
 
