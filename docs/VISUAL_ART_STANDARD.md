@@ -1165,8 +1165,8 @@ migration does not add new buildings or retire banks still used elsewhere.
 
 Creative direction is centralized in the
 [Elden Vale regional design guidance](world/regions/ELDEN_VALE.md). The Pale
-Antlers and Rising Rain are approved future targets; this section records the
-already integrated environment bank.
+Antlers are integrated and Rising Rain remains a future target; this section
+records the already integrated environment bank.
 
 The reserve exterior, cave approach, hall and relief room now use native 2×
 environment art at their established logical sizes. Pale limestone, slate,
@@ -1203,8 +1203,9 @@ unchanged. The Sanctuary miniature remains separately owned.
 
 The [regional creative guide](world/regions/ELDEN_VALE.md) remains the single design
 authority. Its six-area foundation and nonblocking future landmark reservations
-are recorded in the active layout. Signature remains, causeway structures,
-Rising Rain and final atlas updates are not yet active. See the
+are recorded in the active layout. Pale Antlers and Sanctuary views now use the
+explicit landmark layers; causeway structures, Rising Rain and final atlas
+updates are not yet active. See the
 [gameplay foundation review](reviews/elden_vale_hd_integration/README.md) for current
 evidence rather than treating offline source-pack compositions as integration.
 
@@ -1444,3 +1445,26 @@ The same stable assistance applies under reduced motion, pause and focus loss.
 Disposable actual-game evidence and the cross-scale placement review live in
 [the landmark framework review](reviews/elden_vale_landmark_framework/README.md).
 This framework alone activates no production landmark.
+
+
+### Integrated signature landscape presentation
+
+The live regional registry explicitly adapts the signature asset schema; its
+miniature keeps96×80 logical presentation and the existing transfer contract.
+Town's distant skyline omits skull/base. Regional and detailed views preserve
+shared anatomical transforms and independently registered overhead pieces. The
+detailed reserve samples the coherent master once into a dedicated980×660 native
+rendition, then segments on even native boundaries. It does not runtime-downsample
+legacy logical pixels. The selected490×330 logical composition preserves camera
+coverage and existing solid contacts rather than stretching to a reservation.
+Only lower terrestrial fringe is embedded/occluded against named existing ridge
+geometry, protecting the jaw/anatomy. Raised skull and branches retain authored
+mask cutaways for actors and required interactions.
+
+Distant town artwork also declares a fixed `viewing_area_logical` and a
+22-logical-unit `vista_fade_margin_logical`. Its anchor never moves. The artwork
+is a roof-screened vista from the south, not a physical object on the accessible
+northern lawn: that lawn suppresses the vista instead of adding collision.
+Opacity follows the current viewpoint immediately, with viewport-bounded work,
+no motion clock, history or per-position cache. Observer-dependent distant art
+is omitted from the physical town overview.

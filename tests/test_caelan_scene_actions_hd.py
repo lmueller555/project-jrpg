@@ -29,3 +29,10 @@ class CaelanSceneActionsHDTests(unittest.TestCase):
         protected=json.loads((SOURCE/'protected_travel.json').read_text())
         for name,digest in protected.items():
             self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+    def test_provenance_is_independent_of_filesystem_glob_order(self):
+        from unittest.mock import patch
+        from tools.export_caelan_scene_actions_hd import products
+        expected=products();original=Path.glob
+        def reverse_glob(path,pattern):return iter(reversed(list(original(path,pattern))))
+        with patch.object(Path,'glob',reverse_glob):actual=products()
+        self.assertEqual(actual,expected)

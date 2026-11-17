@@ -4,8 +4,8 @@
 [Elden Vale — Regional Design Guidance](world/regions/ELDEN_VALE.md) is the single
 creative authority for the region. The HD terrain/scenery foundation is now
 integrated, with six area records and nonblocking reservations for later work.
-The Pale Antlers, causeway structures and Rising Rain remain staged assets;
-they are not yet active in gameplay.
+The Pale Antlers and Sanctuary presentation are integrated. Causeway structures,
+Rising Rain and final atlas artwork remain deferred.
 
 Construction follows the [visual](VISUAL_ART_STANDARD.md) and
 [terrain](TERRAIN_ART_STANDARD.md) standards. The regional overworld is a separate
@@ -469,8 +469,12 @@ PR 2 must finish the contact/depth registration, not merely copy this rectangle:
 The regional `[44,-86,64,43]` reservation is in **24-unit regional tiles**, not
 reserve coordinates or a target canvas size. Keep the existing
 `sanctuary_ledge_5` at `[96.5,-72]` and `sanctuary_upper_outcrop` at `[93.8,-74]`
-as the physical support candidates; bind any contact wholly inside their actual
-solid footprints. Use a coherent rendition at a declared scale, never fill the
+as the original support candidates, not mandatory final anchors. Actual-game
+ordinary-camera review rejected their northern registration because the drawing
+was wholly above the approach view. The integrated coherent regional master is
+registered at `[2143,-1771]` logical against existing `sanctuary_ledge_3` instead: its
+contact `[2317.37,-1519,35.27,10]` fits the unchanged `[2303,-1519,64,10]` solid
+footprint. No collision or road changed. Use a coherent rendition at a declared scale, never fill the
 1536×1032-logical reservation by stretching the 384×264 regional drawing. Inspect
 views at regional tiles `[42,-45]`, `[69,-55]` and `[90,-62]` with full-bounds
 culling. Ridge/cave contact and the 96×80 Sanctuary miniature keep their existing
@@ -479,8 +483,8 @@ entry/forecourt contracts, independent of artwork alpha.
 Town uses a fixed world-space `distant` anchor, with no new parallax or cleared
 corridor. The disposable hall/spawn fixture anchors the 192×132 distant drawing
 at `[264,132]` behind the existing roof and trees, demonstrating tip-only roof
-screening; it is not a universal anchor for every town view. PR 2 must select the
-final northern/eastern roof gaps and record their ordinary-camera positions.
+screening; it is not a universal anchor for every town view. The integrated town anchor is `[350,50]`; ordinary reachable northern roof gaps
+reveal its branches while the household roof screens the base.
 Distant views omit the skull/base; changing cameras must not drag the silhouette
 with the player or place it in front of roofs. Rooted landscape registration is
 owned by the recipe/builders, not ad-hoc capture code.
@@ -506,3 +510,33 @@ clearance proof. Flat reused paving stays traversable; physical fragments and
 supports require visible, matching footprints outside protected travel/work
 areas. This road remains inside the walls and creates no river, gate, broken-
 bridge or cave bypass. Gate release and bridge repair remain independent facts.
+
+
+## Integrated Pale Antlers and Sanctuary presentation
+
+`signature_landscape` in the regional recipe owns the registered master origin,
+existing support IDs, anatomical protection polygon, embedding edge, per-instance
+ridge bindings and explicit placements. The vector builder copies placements;
+the HD integration builder adapts staged `assets` into separate runtime `landmarks`
+and `props` records. Regional split images reconstruct the same orientation; only
+terrestrial contact fringe embeds into existing solid ridge. Raised skull and
+branches use local cutaways. The new Sanctuary miniature remains96×80 logical
+with foot anchor48,78 at the existing landmark position; its canvas creates no
+collision or transfer trigger. Existing entry, forecourt, arrival and return
+contracts remain authoritative.
+
+Eldenmere's town recipe owns one fixed skull-free distant anchor, screened by
+existing northern roofs and trees. Its ordinary camera reveals selected branch
+tips, not an independent second anatomy or a general parallax system. The reserve
+builder owns the dedicated0.625 native rendition, grounded dressing and protected
+circuit; see [reserve runtime](SANCTUARY_RESERVE.md).
+
+[Production gameplay review](reviews/elden_vale_pale_antlers/README.md) records
+actual coverage, timings and limits. The source pack retains staged metadata and
+historical offline studies. Rising Rain, causeway activation and final regional
+atlas/minimap artwork are not part of this step.
+
+The town skyline's authored viewing area starts south of logical y158, with a
+22-unit viewpoint fade margin. Northern-lawn approaches suppress it, preventing
+a distant branch from reading as a small walk-through prop. The intended roof
+vista at `[600,180]` is fully visible; its fixed `[350,50]` anchor never moves.

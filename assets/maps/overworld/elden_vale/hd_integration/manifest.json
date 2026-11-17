@@ -1300,6 +1300,132 @@
         36
       ],
       "depth_baseline_logical": 36
+    },
+    "signature_ridge_left": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/signature_ridge_left.png",
+      "logical_size": [
+        96,
+        64
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "existing regional geometry; never derived from image alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        64
+      ]
+    },
+    "signature_ridge_right": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/signature_ridge_right.png",
+      "logical_size": [
+        96,
+        64
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "existing regional geometry; never derived from image alpha",
+      "interaction_cues": false,
+      "foot_anchor": [
+        48,
+        64
+      ]
+    },
+    "ridge_sanctuary": {
+      "image": "assets/terrain/overworld/elden_vale/signature_landscape_hd/miniature/sanctuary_miniature.png",
+      "logical_size": [
+        96.0,
+        80.0
+      ],
+      "draw_anchor_logical": [
+        48.0,
+        78.0
+      ],
+      "depth_baseline_logical": 78.0,
+      "collision": "existing Sanctuary entry contract; image is not a trigger",
+      "interaction_cues": false,
+      "logical_entry_geometry": "unchanged; separate runtime contract",
+      "regional_landmark": "antlers_regional is independently placed behind this building icon",
+      "artwork_pixels_per_world_pixel": 2,
+      "foot_anchor": [
+        48,
+        78
+      ]
     }
-  }
+  },
+  "landmarks": {
+    "regional_beam_left": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_beam_left.png",
+      "logical_size": [
+        130,
+        190
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        0
+      ],
+      "occlusion_mask": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_beam_left_mask.png"
+    },
+    "regional_beam_central": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_beam_central.png",
+      "logical_size": [
+        124,
+        190
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        260,
+        0
+      ],
+      "occlusion_mask": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_beam_central_mask.png"
+    },
+    "regional_beam_right": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_beam_right.png",
+      "logical_size": [
+        130,
+        190
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        508,
+        0
+      ],
+      "occlusion_mask": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_beam_right_mask.png"
+    },
+    "regional_skull_raised": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_skull_raised.png",
+      "logical_size": [
+        384,
+        74
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        380
+      ],
+      "occlusion_mask": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_skull_raised_mask.png"
+    },
+    "regional_skull_contact": {
+      "image": "assets/maps/overworld/elden_vale/hd_integration/signature/regional_skull_contact.png",
+      "logical_size": [
+        384,
+        14
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "collision": "none",
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        500
+      ]
+    }
+  },
+  "signature_integration": "Pale Antlers and Sanctuary miniature; original staged bank retained"
 }

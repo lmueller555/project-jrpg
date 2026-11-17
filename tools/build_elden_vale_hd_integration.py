@@ -12,11 +12,14 @@ from copy import deepcopy
 import hashlib
 from io import BytesIO
 import json
+import sys
 from pathlib import Path
 
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from tools.elden_vale_landmark_bindings import regional_bindings
 FOUNDATION = ROOT / "assets/terrain/overworld/elden_vale/hd/art.json"
 OUTPUT = ROOT / "assets/maps/overworld/elden_vale/hd_integration"
 SOURCE = ROOT / "assets/source/maps/overworld/elden_vale/hd_integration"
@@ -241,9 +244,13 @@ def build(check=False):
             **registration,
         }
 
+    landmarks,signature_props=regional_bindings(products,depend,png_bytes)
+    manifest['landmarks']=landmarks
+    manifest['props'].update(signature_props)
+    manifest['signature_integration']='Pale Antlers and Sanctuary miniature; original staged bank retained'
     # This registry cannot replace actors/effects or the separately owned reserve icon.
     forbidden = {"guard_front", "guard_back", "bird_1", "bird_2", "sheep_1", "sheep_2",
-                 "butterfly_1", "butterfly_2", "smoke_1", "smoke_2", "ridge_sanctuary"}
+                 "butterfly_1", "butterfly_2", "smoke_1", "smoke_2"}
     if forbidden.intersection(manifest["props"]):
         raise ValueError("Integration bindings resurrect a separately owned actor/effect")
     products[OUTPUT / "manifest.json"] = json_bytes(manifest)

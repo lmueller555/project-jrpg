@@ -245,6 +245,12 @@ def products():
     for line in rec['road_centerlines']:
         (x0,y0),(x1,y1)=line
         ad.line((x0,max(1344,y0),x1,max(1344,y1)),fill=255,width=24)
+    signature=read('assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json')['assets']
+    town['landmark_layers']=[]
+    for placement in rec.get('distant_landmarks',[]):
+        donor=signature[placement['source_asset']]
+        town['landmark_layers'].append({**placement,'image':donor['image'],'logical_size':donor['logical_size'],
+            'artwork_pixels_per_world_pixel':2,'interaction_cues':False})
     town['size_pixels']=size;town['size_tiles']=[v//24 for v in size];town['collision']=ex.png('town/collision',collision);town['navigation_allowed']=ex.png('town/navigation_allowed',allowed)
     town['ground_overlays']=ex.chunks('town',base,phases);town['ground_frames']=[ex.png('blank',Image.new('RGB',(1,1),'#24302d'))];town['pause_on_focus_loss']=True
     town['art_integrations']['town_hd']={'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'region_logical':[0,0,*size],'density':2,'original_bounds_logical':rec['original_bounds_logical']}

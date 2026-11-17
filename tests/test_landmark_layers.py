@@ -68,3 +68,16 @@ class LandmarkTests(unittest.TestCase):
         target=WorldCanvas((80,80),pygame.SRCALPHA)
         layers.draw(target,(0,0),'overhead',interaction_points=[(5,5)])
         self.assertEqual(target.native.get_at((20,80)),(0,0,0,255))
+
+    def test_distant_vista_never_reads_as_walkable_lawn_prop(self):
+        record={**self.record,'layer':'distant','viewing_area_logical':[0,100,800,500],'vista_fade_margin_logical':20}
+        layers=LandmarkLayers(self.root,[record]);target=WorldCanvas((80,80),pygame.SRCALPHA)
+        viewer=SimpleNamespace(position=(20,80))
+        layers.draw(target,(0,0),'distant',viewer=viewer)
+        self.assertEqual(pygame.mask.from_surface(target.native).count(),0)
+        viewer.position=(20,120);layers.draw(target,(0,0),'distant',viewer=viewer)
+        self.assertEqual(target.native.get_at((4,4)).a,255)
+        target.fill((0,0,0,0));viewer.position=(20,110)
+        layers.draw(target,(0,0),'distant',viewer=viewer)
+        self.assertTrue(120<=target.native.get_at((4,4)).a<=135)
+        self.assertEqual(len(layers.sources),1)

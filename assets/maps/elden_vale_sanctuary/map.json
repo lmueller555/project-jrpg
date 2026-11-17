@@ -20966,10 +20966,28 @@
     "reserve_hd": {
       "density": 2,
       "recipe": "assets/source/maps/sanctuary_reserve_hd/recipe.json"
+    },
+    "pale_antlers": {
+      "projection_artwork": [
+        980,
+        660
+      ],
+      "origin_logical": [
+        726,
+        -41
+      ],
+      "contact_logical": [
+        948.5,
+        274,
+        45,
+        12.5
+      ],
+      "geometry": "retained collision; raised anatomy is nonblocking",
+      "source_manifest": "assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json"
     }
   },
   "source_recipe": "assets/source/maps/sanctuary_reserve_hd/recipe.json",
-  "source_recipe_sha256": "73d9667804552666925df03e4c8738a9c327fa753dc3cd05e8e4ec4d411cba12",
+  "source_recipe_sha256": "9c5af410951be0799afefd9cc2fb4d9f9e0ae7172fe3144bc463deeada3848b4",
   "source_assets": [
     {
       "path": "assets/source/maps/sanctuary_reserve_hd/landmarks_authored.png",
@@ -20983,5 +21001,274 @@
       "path": "assets/source/maps/sanctuary_reserve_hd/cloister_opening_coverage.png",
       "sha256": "ca6794dbe3a1ec032775e2d8c2f06757a1d997ca46daf2e2d4c3ad1191a6473e"
     }
+  ],
+  "landmark_layers": [
+    {
+      "id": "pale_antlers_ridge_west",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/ridge_west.png",
+      "logical_size": [
+        96.0,
+        72.0
+      ],
+      "position": [
+        896,
+        218
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "ridge_left_end"
+    },
+    {
+      "id": "pale_antlers_ridge_east",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/ridge_east.png",
+      "logical_size": [
+        96.0,
+        72.0
+      ],
+      "position": [
+        980,
+        212
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "ridge_right_end"
+    },
+    {
+      "id": "pale_antlers_strata",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/strata.png",
+      "logical_size": [
+        96.0,
+        72.0
+      ],
+      "position": [
+        932,
+        212
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "exposed_strata"
+    },
+    {
+      "id": "pale_antlers_earth",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/earth.png",
+      "logical_size": [
+        48.0,
+        36.0
+      ],
+      "position": [
+        934,
+        266
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "earth_grass_contact"
+    },
+    {
+      "id": "pale_antlers_roots",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/roots.png",
+      "logical_size": [
+        96.0,
+        72.0
+      ],
+      "position": [
+        936,
+        230
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "root_contact"
+    },
+    {
+      "id": "pale_antlers_ivy",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/ivy.png",
+      "logical_size": [
+        48.0,
+        36.0
+      ],
+      "position": [
+        984,
+        234
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "ivy_contact"
+    },
+    {
+      "id": "pale_antlers_moss",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/moss.png",
+      "logical_size": [
+        24.0,
+        18.0
+      ],
+      "position": [
+        962,
+        266
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "source_asset": "nest_moss"
+    },
+    {
+      "id": "pale_antlers_skull_contact",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/skull_contact.png",
+      "logical_size": [
+        490.0,
+        93.0
+      ],
+      "position": [
+        726,
+        196.0
+      ],
+      "layer": "ground",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "contact_logical": [
+        948.5,
+        274,
+        45,
+        12.5
+      ]
+    },
+    {
+      "id": "pale_antlers_beam_0",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/beam_0.png",
+      "logical_size": [
+        165.0,
+        237.0
+      ],
+      "position": [
+        726.0,
+        -41
+      ],
+      "layer": "overhead",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        0
+      ],
+      "occlusion_mask": "assets/maps/sanctuary_reserve_hd/landmarks/beam_0_mask.png"
+    },
+    {
+      "id": "pale_antlers_beam_1",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/beam_1.png",
+      "logical_size": [
+        160.0,
+        237.0
+      ],
+      "position": [
+        891.0,
+        -41
+      ],
+      "layer": "overhead",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        330,
+        0
+      ],
+      "occlusion_mask": "assets/maps/sanctuary_reserve_hd/landmarks/beam_1_mask.png"
+    },
+    {
+      "id": "pale_antlers_beam_2",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/beam_2.png",
+      "logical_size": [
+        165.0,
+        237.0
+      ],
+      "position": [
+        1051.0,
+        -41
+      ],
+      "layer": "overhead",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        650,
+        0
+      ],
+      "occlusion_mask": "assets/maps/sanctuary_reserve_hd/landmarks/beam_2_mask.png"
+    },
+    {
+      "id": "pale_antlers_raised_skull",
+      "image": "assets/maps/sanctuary_reserve_hd/landmarks/raised_skull.png",
+      "logical_size": [
+        490.0,
+        93.0
+      ],
+      "position": [
+        726,
+        196.0
+      ],
+      "layer": "overhead",
+      "collision": "none",
+      "artwork_pixels_per_world_pixel": 2,
+      "interaction_cues": false,
+      "assembly_position_artwork": [
+        0,
+        474
+      ],
+      "occlusion_mask": "assets/maps/sanctuary_reserve_hd/landmarks/raised_skull_mask.png"
+    }
+  ],
+  "landmark_visibility_points": [
+    [
+      444,
+      642
+    ],
+    [
+      534,
+      370
+    ],
+    [
+      212,
+      480
+    ],
+    [
+      264,
+      334
+    ],
+    [
+      300,
+      320
+    ],
+    [
+      292,
+      244
+    ],
+    [
+      1008,
+      406
+    ],
+    [
+      858,
+      630
+    ],
+    [
+      456,
+      654
+    ],
+    [
+      180,
+      570
+    ]
   ]
 }

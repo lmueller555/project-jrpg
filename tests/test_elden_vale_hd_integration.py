@@ -39,6 +39,7 @@ class EldenValeHDIntegrationTests(unittest.TestCase):
     def test_no_new_solid_ground_from_hd_or_reservations(self):
         region=json.loads(REGION_FILE.read_text());baseline=copy.deepcopy(region)
         baseline.pop('terrain_hd');baseline.pop('hd_art_manifest');baseline.pop('design_layout')
+        baseline.pop('landmark_layers',None);baseline.pop('signature_landscape',None)
         frozen=json.loads((ROOT/'assets/source/maps/overworld/elden_vale/hd_integration/preserved_geometry.json').read_text())
         baseline['clearance_paths']=frozen['existing_clearance_paths'];baseline['safe_clearings']=frozen['existing_safe_clearings']
         with tempfile.TemporaryDirectory() as directory:

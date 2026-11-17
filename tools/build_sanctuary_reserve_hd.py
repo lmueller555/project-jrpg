@@ -23,6 +23,76 @@ class ReserveExport(Export):
         self.out[path]=raw;self.records[path]={'file':path,'size_pixels':list(im.size),'sha256':sha256(raw).hexdigest(),'pixel_space':'logical_ui' if name.endswith('/overview') else 'artwork'}
         return path
 
+def antler_products(ex, reserve, spec):
+    """Native shared projection; cosmetic contact masks never define collision."""
+    pack=read(spec['manifest'])
+    source=image(pack['assets']['antlers_complete']['image'])
+    master=source.resize(tuple(spec['projection_artwork']),Image.Resampling.NEAREST)
+    origin=spec['origin_logical'];collision=Image.open(ROOT/reserve['collision']).convert('L')
+    footprints={r['id']:r['rect'] for r in reserve['collision_footprints']}
+    support=spec['contact_logical'];x,y,w,h=support
+    fx,fy,fw,fh=footprints[spec['existing_footprint']]
+    if not (fx<=x and fy<=y and x+w<=fx+fw and y+h<=fy+fh):raise ValueError('Antler contact leaves retained ridge')
+    # A conservative authored anatomical enclosure protects the snout/teeth.
+    # Only the lower earth/root fringe outside physical ridge ground is removed.
+    bone=Image.new('L',master.size);draw=ImageDraw.Draw(bone)
+    draw.polygon([tuple(p) for p in spec['bone_polygon_artwork']],fill=255)
+    ground=Image.new('RGBA',master.size);raised=master.copy()
+    # The irregular skyline is an occlusion contour, not a collision mask.
+    # Faces above a retained support remain continuous down to that support.
+    fringe=Image.new('L',master.size);fd=ImageDraw.Draw(fringe)
+    contour=[tuple(p) for p in spec['fringe_contour_artwork']]
+    fd.polygon([(0,master.height),*contour,(master.width,master.height)],fill=255)
+    ridge=[footprints[key] for key in spec['ridge_footprints']]
+    for yy in range(min(p[1] for p in contour),master.height):
+        for xx in range(master.width):
+            wx=int(origin[0]+xx/2);wy=int(origin[1]+yy/2)
+            solid=any(rx<=wx<rx+rw and ry<=wy<ry+rh for rx,ry,rw,rh in
+                      (footprints[key] for key in spec['ridge_footprints']))
+            solid=solid and collision.getpixel((wx,wy))==255
+            if solid:
+                ground.putpixel((xx,yy),master.getpixel((xx,yy)));raised.putpixel((xx,yy),(0,0,0,0))
+            elif not bone.getpixel((xx,yy)) and fringe.getpixel((xx,yy)):
+                supported_face=any(rx<=wx<rx+rw and wy<ry for rx,ry,rw,rh in ridge)
+                if not supported_face:raised.putpixel((xx,yy),(0,0,0,0))
+    layers=[]
+    def emit(name,im,position,layer,**meta):
+        path=ex.png('landmarks/'+name,im)
+        record={'id':'pale_antlers_'+name,'image':path,'logical_size':[im.width/2,im.height/2],
+                'position':list(position),'layer':layer,'collision':'none','artwork_pixels_per_world_pixel':2,
+                'interaction_cues':False,**meta}
+        if layer=='overhead':
+            # Runtime consumes grayscale authored coverage, not an inferred contact mask.
+            record['occlusion_mask']=ex.png('landmarks/'+name+'_mask',im.getchannel('A'))
+        layers.append(record)
+    # Dressing is rooted against the retained ridge, never a new physical object.
+    for r in spec['dressing']:
+        a=pack['assets'][r['asset']];im=image(a['image']).resize(tuple(2*n for n in r['logical_size']),Image.Resampling.NEAREST)
+        px,py=r['position'];mask=Image.new('L',im.size);md=ImageDraw.Draw(mask)
+        for fid in spec['ridge_footprints']:
+            rx,ry,rw,rh=footprints[fid]
+            # Keep the face above its support; clip its ground edge to real solid pixels.
+            md.rectangle(((rx-px)*2,0,(rx+rw-px)*2-1,(ry+rh-py)*2-1),fill=255)
+        im.putalpha(ImageChops.multiply(im.getchannel('A'),mask))
+        emit(r['id'],im,r['position'],'ground',source_asset=r['asset'])
+    split=spec['split_y_artwork'];columns=spec['split_x_artwork']
+    emit('skull_contact',ground.crop((0,split,master.width,master.height)),
+         (origin[0],origin[1]+split/2),'ground',contact_logical=support)
+    for index,(left,right) in enumerate(zip(columns,columns[1:])):
+        emit('beam_'+str(index),raised.crop((left,0,right,split)),
+             (origin[0]+left/2,origin[1]),'overhead',assembly_position_artwork=[left,0])
+    emit('raised_skull',raised.crop((0,split,master.width,master.height)),
+         (origin[0],origin[1]+split/2),'overhead',assembly_position_artwork=[0,split])
+    reserve['landmark_layers']=layers
+    reserve['landmark_visibility_points']=list(reserve['public_approaches'].values())
+    reserve['art_integrations']={**reserve.get('art_integrations',{}),'pale_antlers':{
+        'projection_artwork':spec['projection_artwork'],'origin_logical':origin,
+        'contact_logical':support,'geometry':'retained collision; raised anatomy is nonblocking',
+        'source_manifest':spec['manifest']}}
+    return [spec['manifest'],pack['assets']['antlers_complete']['image'],
+            *[pack['assets'][r['asset']]['image'] for r in spec['dressing']]]
+
+
 def products():
     rec=read(str((SRC/'recipe.json').relative_to(ROOT)));old=read(str((SRC/'baseline_maps.json').relative_to(ROOT)));ex=ReserveExport();materials=Materials()
     for r in rec['sources']:
@@ -188,7 +258,10 @@ def products():
         frames=[ex.png('petals/'+name+'_'+str(i),glyph.rotate(i*90,Image.Resampling.NEAREST)) for i in range(4)]
         modules[name]={'frames':frames,'logical_size':[5,5],'artwork_pixels_per_world_pixel':2}
     ex.json(PACK+'/petals.json',{'modules':modules});reserve['fantasy_effects']['grove']['petal_manifest']=PACK+'/petals.json'
+    landmark_dependencies=antler_products(ex,reserve,rec['pale_antlers']) if rec.get('pale_antlers') else []
     dependencies=[]
+    for file in landmark_dependencies:
+        dependencies.append({'path':file,'sha256':sha256((ROOT/file).read_bytes()).hexdigest()})
     for root in ('assets/terrain/eldenmere/grass_dirt_hd','assets/terrain/eldenmere/stone_paving_hd','assets/terrain/eldenmere/terraces_hd','assets/terrain/vegetation_hd','assets/terrain/eldenmere/sanctuary_home_hd','assets/terrain/eldenmere/sanctuary_dining_hd','assets/terrain/eldenmere/exteriors_hd','assets/maps/eldenmere/town_hd','assets/maps/eldenmere/courtyard_hd'):
         for p in sorted((ROOT/root).rglob('*')):
             if p.is_file() and p.suffix in ('.png','.json'):dependencies.append({'path':str(p.relative_to(ROOT)),'sha256':sha256(p.read_bytes()).hexdigest()})
@@ -205,7 +278,11 @@ def products():
         canvas=ground.copy() if name==RESERVE else Image.new('RGBA',pixels(data['size_pixels']))
         if name!=RESERVE:
             for chunk in data['ground_overlays']:canvas.alpha_composite(ex.load(chunk['image']),pixels(chunk['position']))
+        for layer in data.get('landmark_layers',[]):
+            if layer['layer']!='overhead':canvas.alpha_composite(ex.load(layer['image']),tuple(round(v*2) for v in layer['position']))
         for e in sorted(data['entities'],key=lambda r:(r['sort_y'],r.get('sort_priority',0))):canvas.alpha_composite(ex.load(e['frames'][0]),pixels(e['position']))
+        for layer in data.get('landmark_layers',[]):
+            if layer['layer']=='overhead':canvas.alpha_composite(ex.load(layer['image']),tuple(round(v*2) for v in layer['position']))
         data['overview']=ex.png(name+'/overview',canvas.resize(tuple(data['size_pixels']),Image.Resampling.NEAREST).convert('RGB'))
         data['build']={'tool':'tools/build_sanctuary_reserve_hd.py','implementation':'native_2x_packs','source_recipe':str((SRC/'recipe.json').relative_to(ROOT)),'art_manifest':PACK+'/manifest.json','source_assets':data['source_assets']}
         ex.json(rec['scenes'][name],data)
