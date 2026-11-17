@@ -143,6 +143,32 @@ class ArchitectureArtTests(unittest.TestCase):
                 self.assertGreater(gy+gh-(ry+rh),0,(name,'eave height must rise above its ground'))
                 self.assertLessEqual(rx,gx);self.assertGreaterEqual(rx+rw,gx+gw)
 
+    def test_legacy_roof_language_has_tapered_ends_and_no_mid_plane_ridge(self):
+        drawing=art.Drawing('roof-regression',(160,140))
+        drawing.roof((10,20,120,80),'slate',hip=6)
+        mask=drawing.masks['roof']
+        # A sloping roof end, not a rectangular slab with diagonals drawn on it.
+        self.assertEqual(mask.getpixel((20,40)),0)
+        self.assertEqual(mask.getpixel((260,40)),0)
+        self.assertNotEqual(mask.getpixel((140,40)),0)
+        self.assertNotEqual(mask.getpixel((24,196)),0)
+        self.assertNotEqual(mask.getpixel((256,196)),0)
+        # The old intrusive quarter-depth black bar is not a ridge anymore.
+        row=drawing.image.crop((70,round((20+80*.24)*2),230,round((20+80*.24)*2)+1))
+        ink=tuple(int(art.INK[i:i+2],16) for i in (1,3,5))+(255,)
+        self.assertNotIn(ink,list(row.get_flattened_data()))
+        self.assertEqual(set(drawing.image.getchannel('A').get_flattened_data()),{0,255})
+
+    def test_mill_processing_roof_has_two_sloped_wings_and_front_gable(self):
+        result=self.drawings['mill'];roof=result.material_masks['roof']
+        # Roof center ends at the front peak, while its two eaves continue down
+        # to the registered wall: a real gable cut, not a painted triangle on a slab.
+        self.assertEqual(roof.getpixel((176,146)),0)
+        self.assertNotEqual(roof.getpixel((110,146)),0)
+        self.assertNotEqual(roof.getpixel((240,146)),0)
+        self.assertNotEqual(result.material_masks['plaster'].getpixel((180,142)),0)
+        self.assertNotEqual(result.material_masks['roof'].getpixel((182,60)),0)
+
     def test_schedule_uses_reviewed_roof_planes_wall_contacts_and_cap_emitters(self):
         schedule=json.loads((art.ROOT/'assets/source/maps/eldenmere/town_hd/architecture_schedule.json').read_text())
         for record in schedule['buildings']:
