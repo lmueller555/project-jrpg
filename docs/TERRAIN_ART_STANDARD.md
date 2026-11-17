@@ -1130,3 +1130,35 @@ studies, not gameplay captures. The preliminary antler blockout records protecte
 routes and candidate overhead space; PR2 must verify supports in detailed ridge
 geometry before finished landmark art. The Sanctuary miniature, signature remains,
 ruins, weather, action poses and atlas updates belong to subsequent work.
+
+### Staged Elden Vale signature landscape
+
+`tools/build_elden_vale_signature_landscape_hd.py` owns the staged Pale Antlers,
+limestone ridge/dressing kit, causeway ruins and Sanctuary miniature. Sources,
+generation brief, geometric layout plan and dependency hashes are retained in
+`assets/source/terrain/overworld/elden_vale/signature_landscape_hd/`; exports are
+registered by `assets/terrain/overworld/elden_vale/signature_landscape_hd/manifest.json`.
+This is **not integrated** and has not received user visual approval.
+
+One retained anatomy master supplies the registered skull/overhead layers and
+cross-scale views. Distant views exclude the skull. Parts reconstruct the master
+without gaps or duplicate pixels. Overhead pieces have no ground collision and
+provide alpha masks for future visibility treatment. The layout plan checks the
+proposed base against current solid ridge pixels and protected approaches/loop;
+changed scene/collision inputs require renewed review. World grounding and final
+foreground behavior remain integration work, not an alpha-derived collision mask.
+
+Sixteen ridge/dressing drawings and twelve causeway drawings provide handed ends,
+corners, natural faces, contact dressing, fragments, decks, parapets, arch and
+buried foundations. They are authored overlap modules rather than 47-shape blobs.
+Reference runs declare matching connection ports, including a lower broken end.
+The wide arch has independent lintel/support layers and an open 94-unit passage.
+The 96×80 logical Sanctuary icon uses current hall/cave/memorial-tree donors; keep
+the monumental antlers on separate layers and preserve existing entry contracts.
+
+Build with `python tools/build_elden_vale_signature_landscape_hd.py`; add `--check`
+to verify bytes without writing. Focused contracts live in
+`tests/test_elden_vale_signature_landscape_hd.py`.
+[Offline review evidence](reviews/elden_vale_signature_landscape_hd/README.md)
+records source-based assets, scale studies, module connections and the clearance
+plan. It does not certify gameplay integration, map release or new lore.

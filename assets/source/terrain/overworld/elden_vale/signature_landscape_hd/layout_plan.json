@@ -1,0 +1,235 @@
+{
+  "status": "staged geometric study; not a runtime placement",
+  "coordinate_space": "logical scene units",
+  "scene_size": [
+    1152,
+    768
+  ],
+  "map_sha256": "1c78c857b9eb9308703b8c7bdef33d4c2b8ddc7ece31bcfdd4cbd236c92c91a9",
+  "collision": "assets/maps/elden_vale_sanctuary/collision.png",
+  "collision_sha256": "7d8c27cda7f1f8774f70c0c9bc79eb8ce865b58c5c519e3b54e79011eb90cfd5",
+  "base_supports": [
+    {
+      "id": "embedded_skull_base",
+      "rect": [
+        948,
+        274,
+        72,
+        20
+      ],
+      "existing_footprint": "reserve_ridge_band_4_0"
+    }
+  ],
+  "protected_approaches": {
+    "arrival": [
+      444,
+      642
+    ],
+    "hall": [
+      534,
+      370
+    ],
+    "gardener": [
+      212,
+      480
+    ],
+    "visitor_1": [
+      264,
+      334
+    ],
+    "visitor_2": [
+      300,
+      320
+    ],
+    "grove": [
+      292,
+      244
+    ],
+    "cave": [
+      1008,
+      406
+    ],
+    "survey": [
+      858,
+      630
+    ],
+    "boundary": [
+      456,
+      654
+    ],
+    "rest_bench": [
+      180,
+      570
+    ]
+  },
+  "protected_loop": [
+    [
+      444,
+      642
+    ],
+    [
+      264,
+      600
+    ],
+    [
+      192,
+      516
+    ],
+    [
+      192,
+      384
+    ],
+    [
+      264,
+      334
+    ],
+    [
+      292,
+      244
+    ],
+    [
+      336,
+      192
+    ],
+    [
+      528,
+      84
+    ],
+    [
+      744,
+      96
+    ],
+    [
+      960,
+      168
+    ],
+    [
+      1100,
+      240
+    ],
+    [
+      1100,
+      336
+    ],
+    [
+      1100,
+      396
+    ],
+    [
+      1100,
+      444
+    ],
+    [
+      1008,
+      432
+    ],
+    [
+      864,
+      456
+    ],
+    [
+      864,
+      552
+    ],
+    [
+      924,
+      570
+    ],
+    [
+      924,
+      630
+    ],
+    [
+      858,
+      630
+    ],
+    [
+      660,
+      624
+    ],
+    [
+      444,
+      642
+    ]
+  ],
+  "doors": [
+    {
+      "id": "sanctuary_hall",
+      "anchor": [
+        535,
+        345
+      ],
+      "entry_y": 345,
+      "entry_side": "north",
+      "entry_half_width": 12,
+      "open_radius": 32,
+      "close_radius": 40,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        535,
+        345
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/elden_vale_sanctuary_hall/map.json",
+      "spawn": [
+        288,
+        328
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "reserve_exit"
+    }
+  ],
+  "cave_barrier": {
+    "entity_id": "reserve_cave_keeper_rail",
+    "footprint": [
+      972,
+      359,
+      72,
+      12
+    ],
+    "public_approach": [
+      1008,
+      406
+    ],
+    "inner_probe": [
+      1008,
+      359
+    ]
+  },
+  "probe": [
+    24,
+    12
+  ],
+  "overhead_policy": "No collision beneath beams. Keep branch gaps; segmented alpha masks support future cutaway.",
+  "viewpoints": [
+    {
+      "name": "woodland approach",
+      "position": [
+        444,
+        642
+      ]
+    },
+    {
+      "name": "forecourt",
+      "position": [
+        534,
+        370
+      ]
+    },
+    {
+      "name": "skull glimpse",
+      "position": [
+        864,
+        456
+      ]
+    }
+  ],
+  "regional_position": [
+    90,
+    -66
+  ],
+  "regional_bounds": "Inside northern wall and west of eastern river; no new crossings.",
+  "revelation": "species, age, death and supernatural relationships unresolved"
+}
