@@ -22,16 +22,22 @@ PACKS = (
     ('exteriors_hd', 'assets/terrain/eldenmere/exteriors_hd/manifest.json', 'ordinary_props'),
     ('business_exteriors_hd', 'assets/terrain/eldenmere/business_exteriors_hd/manifest.json', 'ordinary_props'),
     ('workyard_props', 'assets/terrain/eldenmere/workyard_props/manifest.json', 'ordinary_props'),
+    ('growing_fields', 'assets/terrain/eldenmere/growing_fields/manifest.json', 'ordinary_props'),
 )
 
 
 def _uses(pack_id, record):
     name = record['id']
     family = record.get('family', '')
+    if pack_id == 'growing_fields':
+        return {
+            'vegetables_east_west': ('flat rows of young vegetables in reviewed growing plots; native repetition and material contacts only, no harvest or growth mechanic',),
+            'furrows_east_west': ('flat tilled or fallow strips within existing growing plots; no raised bed, new channel or physical barrier',),
+        }[name]
     if pack_id == 'workyard_props':
         return {
             'grain_sack': ('dry grain/flour deliveries at a reviewed mill storage edge; no pickup ownership',),
-            'empty_crate': ('ordinary workshop/mill storage with explicit physical supports; no chest or loot cue',),
+            'empty_crate': ('ordinary workshop, mill or growing-plot storage with explicit physical supports; no chest or loot cue',),
             'toolbox': ('stationary repair storage distinct from functional fittings and carried quest tools',),
         }[name]
     if pack_id == 'vegetation_hd':
@@ -225,11 +231,19 @@ class _Catalogue:
         for index, record in enumerate(pack[key]):
             frames = [value['file'] if isinstance(value, dict) else value
                       for value in record.get('frames', [])]
+            bindings = []
+            if pack_id == 'growing_fields':
+                paths = {(Path(manifest).parent/value).as_posix()
+                         for value in [record['idle'], *frames]}
+                bindings = [{'kind': 'town_ground_entity', 'id': entry['id'],
+                             'source': 'settlement_growing.ground_entities'}
+                            for entry in (self.town.get('settlement_growing') or {}).get('ground_entities', [])
+                            if paths.intersection(entry.get('frames', []))]
             item = self.add(pack_id, manifest, pack, record['id'],
                             record.get('family', record.get('mount', 'ordinary_prop')),
                             record['logical_size'], [record['idle'], *frames], record=record,
                             uses=_uses(pack_id, record),
-                            source_selector=[key, index])
+                            source_selector=[key, index], bindings=bindings)
             for field in ('fixed', 'backing', 'semantic_mask'):
                 if record.get(field):
                     item[field] = self.image(record[field], record['logical_size'],
@@ -263,9 +277,9 @@ class _Catalogue:
             'consumer_binding_basis': self.consumer_binding_basis,
             'packs': self.packs, 'assets': sorted(self.assets, key=lambda value: value['id']),
             'gaps': [
-                {'id': 'town_scale_cultivated_beds', 'status': 'review_required_before_authoring',
-                 'need': 'Ground beds and crop clusters at town scale; scenery grasses and herb pots do not establish a productive plot.',
-                 'reuse_first': ['grass_dirt_hd:dirt_blob47', 'exteriors_hd:herb_planter'],
+                {'id': 'town_scale_cultivated_beds', 'status': 'native_flat_field_bank_available; placement_and_contact_review_required',
+                 'need': 'Review coherent native young-vegetable and tilled/fallow surfaces at town scale; these are flat fills, not raised beds or mature crop clusters.',
+                 'reuse_first': ['growing_fields:vegetables_east_west', 'growing_fields:furrows_east_west', 'grass_dirt_hd:dirt_blob47'],
                  'gameplay': 'Decorative land use; no harvest, growth simulation or reward is implied.'},
                 {'id': 'mill_delivery_storage', 'status': 'native_storage_bank_available; placement_review_required',
                  'need': 'Use the native grain sack and empty crate bank only after reviewing apron scale, supports and ownership; functional fixtures and enlarged regional miniatures remain excluded.',

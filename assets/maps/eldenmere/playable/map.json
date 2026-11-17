@@ -1649,6 +1649,24 @@
       ]
     },
     {
+      "id": "settlement.growing.empty_crate",
+      "position": [
+        1304,
+        720
+      ],
+      "sort_y": 738,
+      "frames": [
+        "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        20
+      ]
+    },
+    {
       "id": "inn",
       "position": [
         192,
@@ -26945,6 +26963,381 @@
           72,
           120
         ]
+      }
+    ]
+  },
+  "settlement_growing": {
+    "district": "eastern_growing",
+    "scope_rect": [
+      1296,
+      624,
+      96,
+      168
+    ],
+    "placements": [
+      {
+        "id": "settlement.growing.bed_1_1",
+        "asset": "growing_fields:vegetables_east_west",
+        "district": "eastern_growing",
+        "position": [
+          1320,
+          648
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          1320.0,
+          648.0,
+          24.0,
+          24.0
+        ],
+        "depth_baseline_logical": 24
+      },
+      {
+        "id": "settlement.growing.bed_1_2",
+        "asset": "growing_fields:vegetables_east_west",
+        "district": "eastern_growing",
+        "position": [
+          1344,
+          648
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          1344.0,
+          648.0,
+          24.0,
+          24.0
+        ],
+        "depth_baseline_logical": 24
+      },
+      {
+        "id": "settlement.growing.bed_2_1",
+        "asset": "growing_fields:vegetables_east_west",
+        "district": "eastern_growing",
+        "position": [
+          1320,
+          696
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          1320.0,
+          696.0,
+          24.0,
+          24.0
+        ],
+        "depth_baseline_logical": 24
+      },
+      {
+        "id": "settlement.growing.bed_2_2",
+        "asset": "growing_fields:vegetables_east_west",
+        "district": "eastern_growing",
+        "position": [
+          1344,
+          696
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          1344.0,
+          696.0,
+          24.0,
+          24.0
+        ],
+        "depth_baseline_logical": 24
+      },
+      {
+        "id": "settlement.growing.bed_3_1",
+        "asset": "growing_fields:furrows_east_west",
+        "district": "eastern_growing",
+        "position": [
+          1320,
+          744
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          1320.0,
+          744.0,
+          24.0,
+          24.0
+        ],
+        "depth_baseline_logical": 24
+      },
+      {
+        "id": "settlement.growing.bed_3_2",
+        "asset": "growing_fields:furrows_east_west",
+        "district": "eastern_growing",
+        "position": [
+          1344,
+          744
+        ],
+        "collision": "none",
+        "occlusion": "ground",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          1344.0,
+          744.0,
+          24.0,
+          24.0
+        ],
+        "depth_baseline_logical": 24
+      },
+      {
+        "id": "settlement.growing.empty_crate",
+        "asset": "workyard_props:empty_crate",
+        "district": "eastern_growing",
+        "position": [
+          1304,
+          720
+        ],
+        "collision": "solid",
+        "footprint": [
+          2,
+          12,
+          20,
+          6
+        ],
+        "occlusion": "tall",
+        "logical_size": [
+          24,
+          20
+        ],
+        "occupied_rect": [
+          1305.0,
+          721.0,
+          22.0,
+          17.0
+        ],
+        "depth_baseline_logical": 18,
+        "world_footprint": [
+          1306,
+          732,
+          20,
+          6
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.growing.empty_crate",
+        "position": [
+          1304,
+          720
+        ],
+        "sort_y": 738,
+        "frames": [
+          "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          20
+        ]
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.growing.empty_crate",
+        "rect": [
+          1306,
+          732,
+          20,
+          6
+        ]
+      }
+    ],
+    "retired_grass_ids": [],
+    "retired_grass_records": [],
+    "ground_cells": [],
+    "dependencies_sha256": {
+      "assets/maps/eldenmere/terrain_foundation/adapted_plan.json": "59b5ed601c962327888697d2505c9d5c0a796d3035360a303866771b623c2d56",
+      "assets/source/maps/eldenmere/growing_fields/recipe.json": "3e30d6318db2fffc5ec6408d443fb46304ae4ee6479d5b744c8fa7f5ec5a3a3f",
+      "assets/terrain/eldenmere/growing_fields/contacts/worked_bed.png": "cc66a66cfdc10df6d647deae02e3ca226c24a4db14a650f5d09a59ebef150154",
+      "assets/terrain/eldenmere/growing_fields/manifest.json": "07e02b62855178aff8060c16c8ee9b5cf93563974a01552841eab783af7af870",
+      "assets/terrain/eldenmere/growing_fields/materials/furrows_east_west/idle.png": "8c25527e0b131cc151c51a977f9ce26216c838d6dbba4a8974a7b306e350ccbe",
+      "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png": "df0497097c16480fb7b6879aaabf325f2f98653dae1cfb5f7af63063f4f41954",
+      "assets/terrain/eldenmere/workyard_props/manifest.json": "18175b0103af50175d7ca62a5c9a0f5b6211a4da912b98eb5ca03b5f741ba81a",
+      "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png": "de8c6c3e4cb1384ea934157c112004fa027728e4078ad202fa7eae51dd446b30"
+    },
+    "ground_entities": [
+      {
+        "id": "settlement.growing.bed_1_1",
+        "position": [
+          1320,
+          648
+        ],
+        "sort_y": 672,
+        "frames": [
+          "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+      },
+      {
+        "id": "settlement.growing.bed_1_2",
+        "position": [
+          1344,
+          648
+        ],
+        "sort_y": 672,
+        "frames": [
+          "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+      },
+      {
+        "id": "settlement.growing.bed_2_1",
+        "position": [
+          1320,
+          696
+        ],
+        "sort_y": 720,
+        "frames": [
+          "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+      },
+      {
+        "id": "settlement.growing.bed_2_2",
+        "position": [
+          1344,
+          696
+        ],
+        "sort_y": 720,
+        "frames": [
+          "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/growing_fields/materials/vegetables_east_west/idle.png"
+      },
+      {
+        "id": "settlement.growing.bed_3_1",
+        "position": [
+          1320,
+          744
+        ],
+        "sort_y": 768,
+        "frames": [
+          "assets/terrain/eldenmere/growing_fields/materials/furrows_east_west/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/growing_fields/materials/furrows_east_west/idle.png"
+      },
+      {
+        "id": "settlement.growing.bed_3_2",
+        "position": [
+          1344,
+          744
+        ],
+        "sort_y": 768,
+        "frames": [
+          "assets/terrain/eldenmere/growing_fields/materials/furrows_east_west/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/eldenmere/growing_fields/materials/furrows_east_west/idle.png"
+      }
+    ],
+    "bed_contacts": [
+      {
+        "id": "bed_1",
+        "rect": [
+          1320,
+          648,
+          48,
+          24
+        ],
+        "mask": "assets/terrain/eldenmere/growing_fields/contacts/worked_bed.png"
+      },
+      {
+        "id": "bed_2",
+        "rect": [
+          1320,
+          696,
+          48,
+          24
+        ],
+        "mask": "assets/terrain/eldenmere/growing_fields/contacts/worked_bed.png"
+      },
+      {
+        "id": "bed_3",
+        "rect": [
+          1320,
+          744,
+          48,
+          24
+        ],
+        "mask": "assets/terrain/eldenmere/growing_fields/contacts/worked_bed.png"
       }
     ]
   }

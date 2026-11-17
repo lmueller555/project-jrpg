@@ -270,7 +270,7 @@ class LiveCourtyardContracts(unittest.TestCase):
         expected = original.copy()
         report = self.town['settlement_dressing']
         draw = ImageDraw.Draw(expected)
-        for district in (report,self.town.get('settlement_workyards',{}),self.town.get('settlement_commons',{}),self.town.get('settlement_households',{})):
+        for district in (report,self.town.get('settlement_workyards',{}),self.town.get('settlement_commons',{}),self.town.get('settlement_households',{}),self.town.get('settlement_growing',{})):
             for record in district.get('solid_footprints',[]):
                 x, y, width, height = record['rect']
                 self.assertTrue(all(float(value).is_integer() for value in (x, y, width, height)))

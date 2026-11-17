@@ -12,7 +12,7 @@ from pathlib import Path
 from PIL import Image
 
 from tools.eldenmere_settlement import (_file, _numbers, _overlap, _rect, _select,
-                                       validate_placements)
+                                       intersects, validate_placements)
 
 PREFIX = 'settlement.courtyard.'
 DISTRICT = 'serene_terrace'
@@ -26,7 +26,16 @@ COMMONS_STATUS = 'commons_dressing'
 HOUSEHOLD_PREFIX = 'settlement.households.'
 HOUSEHOLD_STATUS = 'household_dressing'
 HOUSEHOLD_PARCELS = frozenset(('liam_house', 'home_a', 'home_b', 'home_c', 'elira'))
-DRESSING_STATUSES = (STATUS, WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS)
+GROWING_PREFIX = 'settlement.growing.'
+GROWING_STATUS = 'growing_dressing'
+GROWING_DISTRICT = 'eastern_growing'
+GROWING_SOURCE = 'assets/maps/eldenmere/terrain_foundation/adapted_plan.json'
+GROWING_MANIFEST = 'assets/terrain/eldenmere/growing_fields/manifest.json'
+GROWING_RECIPE = 'assets/source/maps/eldenmere/growing_fields/recipe.json'
+GROWING_SCOPE = [1296, 624, 96, 168]
+GROWING_FLAT_ASSETS = frozenset(('growing_fields:vegetables_east_west',
+                                'growing_fields:furrows_east_west'))
+DRESSING_STATUSES = (STATUS, WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS)
 PLACEMENT_KEYS = {'id', 'asset', 'district', 'position', 'collision', 'footprint', 'occlusion'}
 CONFIG_KEYS = {'district', 'scope_rect', 'retire_grass_ids', 'garden_cells'}
 LOW_FAMILIES = {'flowers', 'groundcover'}
@@ -59,21 +68,31 @@ def _combined_placements(recipe):
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
     status = recipe.get('status')
-    districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT) if status in (COMMONS_STATUS, HOUSEHOLD_STATUS) else (DISTRICT, WORKYARD_DISTRICT)
+    if status == GROWING_STATUS:
+        districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT, GROWING_DISTRICT)
+    elif status in (COMMONS_STATUS, HOUSEHOLD_STATUS):
+        districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT)
+    else:
+        districts = (DISTRICT, WORKYARD_DISTRICT)
     for placement in placements:
         if not isinstance(placement, dict) or placement.get('district') not in districts:
+            if status == GROWING_STATUS:
+                raise ValueError('Growing delivery can activate only the four reviewed settlement districts')
             if status in (COMMONS_STATUS, HOUSEHOLD_STATUS):
                 raise ValueError('Commons delivery can activate only serene_terrace, workshop_mill and commons_households')
             raise ValueError('Workyard delivery can activate only serene_terrace and workshop_mill')
         if (isinstance(placement.get('id'), str) and placement['id'].startswith(HOUSEHOLD_PREFIX)
-                and status != HOUSEHOLD_STATUS):
+                and status not in (HOUSEHOLD_STATUS, GROWING_STATUS)):
             raise ValueError('Settlement status cannot activate household dressing')
+        if (isinstance(placement.get('id'), str) and placement['id'].startswith(GROWING_PREFIX)
+                and status != GROWING_STATUS):
+            raise ValueError('Settlement status cannot activate growing dressing')
     return placements
 
 
 def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader=None):
     """Retain the courtyard API and ledger when later deliveries are active."""
-    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS):
+    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS):
         placements = _combined_placements(recipe)
         recipe = {**recipe, 'status': STATUS,
                   'placements': [p for p in placements if p['district'] == DISTRICT]}
@@ -97,7 +116,7 @@ def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loade
     if status in ('framework_only', 'ground_only') and placements:
         raise ValueError('Settlement status cannot activate workyard dressing')
     selected = [p for p in placements if isinstance(p, dict) and p.get('district') == WORKYARD_DISTRICT]
-    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS) else 'ground_only',
+    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS) else 'ground_only',
             'placements': selected}
     report = _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                              district=WORKYARD_DISTRICT, prefix=WORKYARD_PREFIX,
@@ -122,7 +141,7 @@ def resolve_commons(root, town, recipe, catalogue, protections, *, image_loader=
         raise ValueError('Settlement status cannot activate commons dressing')
     selected = [p for p in placements if isinstance(p, dict) and p.get('district') == COMMONS_DISTRICT
                 and not (isinstance(p.get('id'), str) and p['id'].startswith(HOUSEHOLD_PREFIX))]
-    view = {**recipe, 'status': COMMONS_STATUS if status in (COMMONS_STATUS, HOUSEHOLD_STATUS) else 'ground_only',
+    view = {**recipe, 'status': COMMONS_STATUS if status in (COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS) else 'ground_only',
             'placements': selected}
     return _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                            district=COMMONS_DISTRICT, prefix=COMMONS_PREFIX,
@@ -147,12 +166,12 @@ def resolve_households(root, town, recipe, catalogue, protections, *, image_load
         raise ValueError('Settlement status cannot activate household dressing')
     selected = [p for p in placements if isinstance(p, dict)
                 and isinstance(p.get('id'), str) and p['id'].startswith(HOUSEHOLD_PREFIX)]
-    view = {**recipe, 'status': HOUSEHOLD_STATUS if status == HOUSEHOLD_STATUS else 'ground_only',
+    view = {**recipe, 'status': HOUSEHOLD_STATUS if status in (HOUSEHOLD_STATUS, GROWING_STATUS) else 'ground_only',
             'placements': selected}
     options = dict(image_loader=image_loader, district=COMMONS_DISTRICT, prefix=HOUSEHOLD_PREFIX,
                    activation_status=HOUSEHOLD_STATUS, config_key='household_dressing',
                    ledger_key='settlement_households', cell_key='ground_cells', title='Household')
-    if status != HOUSEHOLD_STATUS:
+    if status not in (HOUSEHOLD_STATUS, GROWING_STATUS):
         report = _resolve_region(root, town, view, catalogue, protections, **options)
         report['parcels'] = []
         return report
@@ -203,6 +222,144 @@ def resolve_households(root, town, recipe, catalogue, protections, *, image_load
             raise ValueError('Retired grass artwork must fit one reviewed household parcel')
     report['parcels'] = [{'id': name, 'scope_rect': rect} for name, rect in parcels.items()]
     return report
+
+
+def resolve_growing(root, town, recipe, catalogue, protections, *, image_loader=None):
+    """Resolve only Venn's original source plot, keeping crop fills below actors."""
+    status = recipe.get('status')
+    if status not in ('framework_only', 'ground_only', *DRESSING_STATUSES):
+        raise ValueError('Unsupported settlement growing activation status')
+    placements = _combined_placements(recipe) if status in DRESSING_STATUSES else recipe.get('placements')
+    if not isinstance(placements, list):
+        raise ValueError('Settlement placements must be a list')
+    if status in ('framework_only', 'ground_only') and placements:
+        raise ValueError('Settlement status cannot activate growing dressing')
+    selected = [p for p in placements if isinstance(p, dict)
+                and (p.get('district') == GROWING_DISTRICT or
+                     (isinstance(p.get('id'), str) and p['id'].startswith(GROWING_PREFIX)))]
+    view = {**recipe, 'status': GROWING_STATUS if status == GROWING_STATUS else 'ground_only',
+            'placements': selected}
+    source_path = None
+    bed_contacts = None
+    if status == GROWING_STATUS:
+        config = recipe.get('growing_dressing')
+        required = (CONFIG_KEYS - {'garden_cells'}) | {'ground_cells', 'bed_contacts'}
+        if not isinstance(config, dict) or set(config) != required:
+            raise ValueError('Growing dressing requires the reviewed source plot configuration')
+        bed_contacts = config['bed_contacts']
+        view['growing_dressing'] = {key: value for key, value in config.items() if key != 'bed_contacts'}
+        source_path = _file(Path(root), GROWING_SOURCE)
+        plan = json.loads(source_path.read_text())
+        if not isinstance(plan, dict) or not isinstance(plan.get('spaces'), list):
+            raise ValueError('Growing dressing requires the canonical Venn plot source')
+        plots = [space for space in plan['spaces']
+                 if isinstance(space, dict) and space.get('id') == 'venn_plots']
+        if plan.get('tile_size_px') != 24 or len(plots) != 1:
+            raise ValueError('Growing dressing requires the canonical Venn plot source')
+        tiles = _native_numbers(plots[0].get('rect'), 4, 'source Venn plot')
+        _rect(tiles, 'source Venn plot')
+        source_scope = [value*24 for value in tiles]
+        if source_scope != GROWING_SCOPE or config.get('scope_rect') != source_scope:
+            raise ValueError('Growing scope must equal the canonical source Venn plot')
+    report = _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
+                             district=GROWING_DISTRICT, prefix=GROWING_PREFIX,
+                             activation_status=GROWING_STATUS, config_key='growing_dressing',
+                             ledger_key='settlement_growing', cell_key='ground_cells', title='Growing')
+    for x, y in report['ground_cells']:
+        if not _contained([(x-1)*24, (y-1)*24, 72, 72], GROWING_SCOPE):
+            raise ValueError('Growing ground and its transition rim must fit the canonical source plot')
+    # Cultivation must remain off existing circulation and repair stations even
+    # though its baked artwork adds no physical blocker. Ordinary flat street
+    # materials deliberately retain their separate, permissive ground policy.
+    for placement in report['placements']:
+        if placement['asset'] not in GROWING_FLAT_ASSETS:
+            continue
+        for protection in protections:
+            if ({'movement', 'sightline'}.intersection(protection['roles']) and
+                    intersects(placement['occupied_rect'], protection)):
+                raise ValueError(placement['id']+': crop fill covers protected use '+protection['id'])
+    flat_ids = {placement['id'] for placement in report['placements']
+                if placement['asset'] in GROWING_FLAT_ASSETS}
+    report['ground_entities'] = [entity for entity in report['entities'] if entity['id'] in flat_ids]
+    report['entities'] = [entity for entity in report['entities'] if entity['id'] not in flat_ids]
+    report['bed_contacts'] = _growing_bed_contacts(root, bed_contacts, report) if source_path is not None else []
+    if source_path is not None:
+        report['dependencies_sha256'][GROWING_SOURCE] = sha256(source_path.read_bytes()).hexdigest()
+        report['dependencies_sha256'] = dict(sorted(report['dependencies_sha256'].items()))
+    return report
+
+
+def _growing_bed_contacts(root, contacts, report):
+    """Bind one authored binary perimeter mask to each complete two-tile bed."""
+    if not isinstance(contacts, list):
+        raise ValueError('Growing bed_contacts must be an explicit list')
+    root = Path(root).resolve()
+
+    def read(relative):
+        path = _file(root, relative)
+        raw = path.read_bytes()
+        report['dependencies_sha256'][relative] = sha256(raw).hexdigest()
+        return path, raw
+
+    _, raw = read(GROWING_MANIFEST)
+    manifest = json.loads(raw)
+    mask_source = manifest.get('bed_contact')
+    if (not isinstance(mask_source, dict) or mask_source.get('id') != 'worked_bed'
+            or mask_source.get('file') != 'contacts/worked_bed.png'
+            or mask_source.get('logical_size') != [48, 24]
+            or mask_source.get('artwork_size') != [96, 48]
+            or mask_source.get('artwork_pixels_per_world_pixel') != 2
+            or mask_source.get('mask_channel') != 'L'
+            or mask_source.get('source_ref') != {'file': GROWING_RECIPE, 'path': ['bed_contact']}
+            or manifest.get('recipe') != GROWING_RECIPE):
+        raise ValueError('Growing bed contacts require the single authored native worked-bed mask')
+    _, source_raw = read(GROWING_RECIPE)
+    if sha256(source_raw).hexdigest() != manifest.get('recipe_sha256'):
+        raise ValueError('Growing bed contact source recipe hash changed')
+    authored = json.loads(source_raw).get('bed_contact')
+    if (not isinstance(authored, dict) or authored.get('id') != mask_source['id']
+            or authored.get('logical_size') != mask_source['logical_size']
+            or authored.get('opaque_interior_artwork_xyxy') != [2, 2, 94, 46]):
+        raise ValueError('Growing bed contact no longer resolves its authored perimeter source')
+    mask = (Path(GROWING_MANIFEST).parent/mask_source['file']).as_posix()
+    path, mask_raw = read(mask)
+    if sha256(mask_raw).hexdigest() != mask_source.get('sha256'):
+        raise ValueError('Growing bed contact image hash changed')
+    with Image.open(path) as picture:
+        if (picture.mode != 'L' or picture.size != (96, 48)
+                or set(picture.tobytes()) - {0, 255}
+                or picture.crop((2, 2, 94, 46)).getextrema() != (255, 255)):
+            raise ValueError('Growing bed contact must be binary native coverage with its interior fully opaque')
+
+    flat = [placement for placement in report['placements'] if placement['asset'] in GROWING_FLAT_ASSETS]
+    ordinary = [placement for placement in report['placements'] if placement['asset'] not in GROWING_FLAT_ASSETS]
+    result, names, assigned = [], set(), set()
+    for contact in contacts:
+        if not isinstance(contact, dict) or set(contact) != {'id', 'rect'}:
+            raise ValueError('Growing bed contacts require only id and rect; mask overrides are forbidden')
+        name = contact['id']
+        if not isinstance(name, str) or not name.strip() or name in names:
+            raise ValueError('Growing bed contact IDs must be unique nonempty strings')
+        names.add(name)
+        rect = _rect(contact['rect'], name+' bed contact')
+        if (any(type(value) is not int or value % 24 for value in rect)
+                or rect[2:] != [48, 24] or not _contained(rect, GROWING_SCOPE)
+                or any(_overlap(rect, previous['rect']) for previous in result)):
+            raise ValueError('Growing bed contacts must be disjoint 48x24 rectangles on the source plot grid')
+        members = [placement for placement in flat
+                   if _overlap([*placement['position'], *placement['logical_size']], rect)]
+        positions = {(placement['position'][0], placement['position'][1]) for placement in members}
+        if (len(members) != 2 or positions != {(rect[0], rect[1]), (rect[0]+24, rect[1])}
+                or len({placement['asset'] for placement in members}) != 1
+                or any(placement['id'] in assigned for placement in members)):
+            raise ValueError('Each growing bed contact must exactly cover two adjacent tiles of the same crop source')
+        if any(_overlap(rect, [*placement['position'], *placement['logical_size']]) for placement in ordinary):
+            raise ValueError('Growing bed contacts may not cover ordinary props')
+        assigned.update(placement['id'] for placement in members)
+        result.append({'id': name, 'rect': rect, 'mask': mask})
+    if assigned != {placement['id'] for placement in flat}:
+        raise ValueError('Every growing crop tile must belong to exactly one bed contact')
+    return result
 
 
 def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=None,
@@ -343,11 +500,19 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
         if not _contained([*position, *logical_size], scope):
             raise ValueError(name+f': artwork canvas leaves {noun} scope')
         is_vegetation = asset['id'].startswith('vegetation_hd:') and asset.get('family') in LOW_FAMILIES
-        is_flat = asset['id'] == 'exteriors_hd:wood_shavings'
+        is_workyard_flat = asset['id'] == 'exteriors_hd:wood_shavings'
+        is_growing_flat = asset['id'] in GROWING_FLAT_ASSETS
+        if asset['id'].startswith('growing_fields:') and not is_growing_flat:
+            raise ValueError(name+': unknown cultivated ground source')
+        is_flat = is_workyard_flat or is_growing_flat
         is_low = is_vegetation or is_flat
-        if is_flat:
+        if is_workyard_flat:
             if district != WORKYARD_DISTRICT or placement.get('collision') != 'none' or placement.get('occlusion') != 'ground':
                 raise ValueError(name+': wood shavings require flat nonblocking workyard placement')
+        elif is_growing_flat:
+            if (district != GROWING_DISTRICT or placement.get('collision') != 'none'
+                    or placement.get('occlusion') != 'ground' or 'footprint' in placement):
+                raise ValueError(name+': crop fills require flat nonblocking growing placement')
         elif is_vegetation:
             if placement.get('collision') != 'none' or placement.get('occlusion') not in ('ground', 'low'):
                 raise ValueError(name+': flowers/groundcover must remain low nonblocking scenery')
@@ -392,6 +557,14 @@ def _resolve_region(root, town, recipe, catalogue, protections, *, image_loader=
                     or source.get('cycle_ms') != len(source_frames)*duration):
                 raise ValueError(name+': laundry must retain its authored cloth frames and cadence')
             frames = [(parent/frame).as_posix() for frame in source_frames]
+        elif is_growing_flat:
+            if (source.get('logical_size') != [24, 24] or
+                    source.get('depth_baseline_logical') != 24 or
+                    source.get('animation') != 'static' or
+                    source.get('frame_duration_ms') != 600 or
+                    source.get('frames') != [{'file': source['idle'], 'duration_ms': 600}]):
+                raise ValueError(name+': crop fills require their authored static 24x24 ground source')
+            frames, duration = [idle], 600
         else:
             frames, duration = [idle], 600
         depth = _native_numbers([source.get('depth_baseline_logical')], 1, name+' source depth')[0]
