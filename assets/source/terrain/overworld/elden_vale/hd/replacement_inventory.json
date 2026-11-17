@@ -1,0 +1,1634 @@
+[
+  {
+    "id": "grass",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/grass.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grass.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "dirt",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/dirt.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/dirt.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "stone_road",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/stone_road.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/stone_road.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "field",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/field.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/field.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "forest_floor",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/forest_floor.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/forest_floor.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "water",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/water.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/water.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "bank",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/bank.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/bank.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "scorched",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/scorched.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/scorched.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "wall",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/tiles/wall.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/wall.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "tree_broadleaf",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/tree_broadleaf.png",
+    "logical_size": [
+      48,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/tree_broadleaf.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "tree_conifer",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/tree_conifer.png",
+    "logical_size": [
+      36,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/tree_conifer.png",
+      "logical_size": [
+        36,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "rock",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/rock.png",
+    "logical_size": [
+      36,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/rock.png",
+      "logical_size": [
+        36,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        24
+      ],
+      "depth_baseline_logical": 24
+    }
+  },
+  {
+    "id": "mountain",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/mountain.png",
+    "logical_size": [
+      96,
+      96
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/mountain.png",
+      "logical_size": [
+        96,
+        96
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        48,
+        96
+      ],
+      "depth_baseline_logical": 96
+    }
+  },
+  {
+    "id": "supplies",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/supplies.png",
+    "logical_size": [
+      72,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/supplies.png",
+      "logical_size": [
+        72,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        36,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "checkpoint",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/checkpoint.png",
+    "logical_size": [
+      96,
+      72
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/checkpoint.png",
+      "logical_size": [
+        96,
+        72
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        48,
+        72
+      ],
+      "depth_baseline_logical": 72
+    }
+  },
+  {
+    "id": "wall_segment",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/wall_segment.png",
+    "logical_size": [
+      48,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/wall_segment.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "eldenmere",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/props/eldenmere.png",
+    "logical_size": [
+      144,
+      120
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/eldenmere.png",
+      "logical_size": [
+        144,
+        120
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        72,
+        120
+      ],
+      "depth_baseline_logical": 120
+    }
+  },
+  {
+    "id": "grass_lush",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/grass_lush.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grass_lush.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "grass_dry",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/grass_dry.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grass_dry.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "grass_meadow",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grass_meadow.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "leaf_litter",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/leaf_litter.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/leaf_litter.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "pasture",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/pasture.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/pasture.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "grain",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/grain.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/grain.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "vegetables",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/vegetables.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/vegetables.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "furrows",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/furrows.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/furrows.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "orchard_grass",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/orchard_grass.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/orchard_grass.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "gravel",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/gravel.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/gravel.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "stone_road_worn",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/stone_road_worn.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/stone_road_worn.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "cart_earth",
+    "kind": "tiles",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/tiles/cart_earth.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/tiles/cart_earth.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently"
+    }
+  },
+  {
+    "id": "oak_a",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/oak_a.png",
+    "logical_size": [
+      48,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/oak_a.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "oak_b",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/oak_b.png",
+    "logical_size": [
+      48,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/oak_b.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "oak_c",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/oak_c.png",
+    "logical_size": [
+      48,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/oak_c.png",
+      "logical_size": [
+        48,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "conifer_a",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/conifer_a.png",
+    "logical_size": [
+      36,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/conifer_a.png",
+      "logical_size": [
+        36,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "conifer_b",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/conifer_b.png",
+    "logical_size": [
+      36,
+      60
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/conifer_b.png",
+      "logical_size": [
+        36,
+        60
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        60
+      ],
+      "depth_baseline_logical": 60
+    }
+  },
+  {
+    "id": "sapling",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/sapling.png",
+    "logical_size": [
+      24,
+      36
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/sapling.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  },
+  {
+    "id": "shrub",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/shrub.png",
+    "logical_size": [
+      30,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/shrub.png",
+      "logical_size": [
+        30,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        15,
+        24
+      ],
+      "depth_baseline_logical": 24
+    }
+  },
+  {
+    "id": "fern",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/fern.png",
+    "logical_size": [
+      24,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fern.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "log",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/log.png",
+    "logical_size": [
+      42,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/log.png",
+      "logical_size": [
+        42,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        21,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "stump",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/stump.png",
+    "logical_size": [
+      24,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/stump.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "flowers_a",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/flowers_a.png",
+    "logical_size": [
+      24,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/flowers_a.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "flowers_b",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/flowers_b.png",
+    "logical_size": [
+      24,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/flowers_b.png",
+      "logical_size": [
+        24,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "reeds",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/reeds.png",
+    "logical_size": [
+      30,
+      30
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/reeds.png",
+      "logical_size": [
+        30,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        15,
+        30
+      ],
+      "depth_baseline_logical": 30
+    }
+  },
+  {
+    "id": "river_rocks",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png",
+    "logical_size": [
+      36,
+      20
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/river_rocks.png",
+      "logical_size": [
+        36,
+        20
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        20
+      ],
+      "depth_baseline_logical": 20
+    }
+  },
+  {
+    "id": "rock_outcrop",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png",
+    "logical_size": [
+      64,
+      36
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/rock_outcrop.png",
+      "logical_size": [
+        64,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        32,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  },
+  {
+    "id": "ridge",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+    "logical_size": [
+      96,
+      64
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/ridge.png",
+      "logical_size": [
+        96,
+        64
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        48,
+        64
+      ],
+      "depth_baseline_logical": 64
+    }
+  },
+  {
+    "id": "farm_house",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/farm_house.png",
+    "logical_size": [
+      48,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/farm_house.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "barn",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/barn.png",
+    "logical_size": [
+      60,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/barn.png",
+      "logical_size": [
+        60,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        30,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "shed",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/shed.png",
+    "logical_size": [
+      36,
+      30
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/shed.png",
+      "logical_size": [
+        36,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        30
+      ],
+      "depth_baseline_logical": 30
+    }
+  },
+  {
+    "id": "haystack",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/haystack.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/haystack.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        24
+      ],
+      "depth_baseline_logical": 24
+    }
+  },
+  {
+    "id": "grain_sacks",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/grain_sacks.png",
+    "logical_size": [
+      24,
+      20
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/grain_sacks.png",
+      "logical_size": [
+        24,
+        20
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        20
+      ],
+      "depth_baseline_logical": 20
+    }
+  },
+  {
+    "id": "fence_h",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/fence_h.png",
+    "logical_size": [
+      48,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_h.png",
+      "logical_size": [
+        48,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "fence_v",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/fence_v.png",
+    "logical_size": [
+      18,
+      36
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_v.png",
+      "logical_size": [
+        18,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        9,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  },
+  {
+    "id": "hedge_h",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/hedge_h.png",
+    "logical_size": [
+      48,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/hedge_h.png",
+      "logical_size": [
+        48,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "hedge_v",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/hedge_v.png",
+    "logical_size": [
+      18,
+      36
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/hedge_v.png",
+      "logical_size": [
+        18,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        9,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  },
+  {
+    "id": "orchard_tree",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/orchard_tree.png",
+    "logical_size": [
+      36,
+      42
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/orchard_tree.png",
+      "logical_size": [
+        36,
+        42
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        42
+      ],
+      "depth_baseline_logical": 42
+    }
+  },
+  {
+    "id": "cart",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/cart.png",
+    "logical_size": [
+      48,
+      30
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/cart.png",
+      "logical_size": [
+        48,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        30
+      ],
+      "depth_baseline_logical": 30
+    }
+  },
+  {
+    "id": "waypost",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/waypost.png",
+    "logical_size": [
+      24,
+      36
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/waypost.png",
+      "logical_size": [
+        24,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  },
+  {
+    "id": "bench",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/bench.png",
+    "logical_size": [
+      36,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/bench.png",
+      "logical_size": [
+        36,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "laundry",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/laundry.png",
+    "logical_size": [
+      48,
+      30
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/laundry.png",
+      "logical_size": [
+        48,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        30
+      ],
+      "depth_baseline_logical": 30
+    }
+  },
+  {
+    "id": "lantern_crates",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/lantern_crates.png",
+    "logical_size": [
+      24,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/lantern_crates.png",
+      "logical_size": [
+        24,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        12,
+        24
+      ],
+      "depth_baseline_logical": 24
+    }
+  },
+  {
+    "id": "checkpoint_shelter",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/checkpoint_shelter.png",
+    "logical_size": [
+      60,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/checkpoint_shelter.png",
+      "logical_size": [
+        60,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        30,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "bridge_rubble",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/bridge_rubble.png",
+    "logical_size": [
+      48,
+      30
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/bridge_rubble.png",
+      "logical_size": [
+        48,
+        30
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        30
+      ],
+      "depth_baseline_logical": 30
+    }
+  },
+  {
+    "id": "split_rail",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/split_rail.png",
+    "logical_size": [
+      48,
+      24
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/split_rail.png",
+      "logical_size": [
+        48,
+        24
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        24
+      ],
+      "depth_baseline_logical": 24
+    }
+  },
+  {
+    "id": "grass_tuft",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/grass_tuft.png",
+    "logical_size": [
+      18,
+      18
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/grass_tuft.png",
+      "logical_size": [
+        18,
+        18
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        9,
+        18
+      ],
+      "depth_baseline_logical": 18
+    }
+  },
+  {
+    "id": "wall_segment_moss",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/wall_segment_moss.png",
+    "logical_size": [
+      48,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/wall_segment_moss.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "wall_segment_worn",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/polish/props/wall_segment_worn.png",
+    "logical_size": [
+      48,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/wall_segment_worn.png",
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/polish/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        24,
+        48
+      ],
+      "depth_baseline_logical": 48
+    }
+  },
+  {
+    "id": "broken_bridge_wide",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/composition/props/broken_bridge_wide.png",
+    "logical_size": [
+      288,
+      144
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/broken_bridge_wide.png",
+      "logical_size": [
+        288,
+        144
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/composition/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        144,
+        94
+      ],
+      "depth_baseline_logical": 94,
+      "deck_top_px": 34,
+      "deck_bottom_px": 106,
+      "deck_clear_width_px": 72,
+      "deck_sample_x_px": [
+        56,
+        232
+      ],
+      "central_gap_x_px": [
+        107,
+        181
+      ],
+      "geometry_space": "logical; artwork values are twice these measurements"
+    }
+  },
+  {
+    "id": "fence_ns",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/composition/props/fence_ns.png",
+    "logical_size": [
+      18,
+      48
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_ns.png",
+      "logical_size": [
+        18,
+        48
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/composition/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        9,
+        24
+      ],
+      "depth_baseline_logical": 24
+    }
+  },
+  {
+    "id": "fence_corner",
+    "kind": "props",
+    "legacy_image": "assets/terrain/overworld/elden_vale/composition/props/fence_corner.png",
+    "logical_size": [
+      36,
+      36
+    ],
+    "method": "retained_master_export",
+    "entry": {
+      "image": "assets/terrain/overworld/elden_vale/hd/props/fence_corner.png",
+      "logical_size": [
+        36,
+        36
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "source_recipe": "assets/source/terrain/overworld/elden_vale/composition/recipe.json",
+      "collision": "unregistered; preserve consumer geometry independently",
+      "foot_anchor": [
+        18,
+        36
+      ],
+      "depth_baseline_logical": 36
+    }
+  }
+]

@@ -1092,3 +1092,41 @@ those earlier banks, not the current reserve composer. The
 landmark depth, map and reduced-motion evidence. Its annotated placement sheet
 is an explanatory diagram. Earlier fingerprint checks belong to that historical
 snapshot; use the maintained native owner above for current scene verification.
+
+### Staged Elden Vale regional HD foundation
+
+`tools/build_elden_vale_hd_foundation.py` stages the regional foundation under
+`assets/terrain/overworld/elden_vale/hd/art.json`. Its source recipe and replacement
+inventory live under `assets/source/terrain/overworld/elden_vale/hd/`. This bank is
+**not integrated** and has no user visual approval yet. Existing maps, controllers,
+collision and travel remain authoritative. Do not activate it by overwriting the
+base regional manifests.
+
+The exporter samples retained original regional drawings directly at 2× artwork
+density, preserving logical canvases and anchors. It resolves base/polish/composition
+overrides, excludes obsolete wildlife/guards and the superseded narrow bridge,
+and adds a one-artwork-pixel black exterior contour. Green-dominant pixels move
+halfway toward the emerald hue; earth, stone and timber retain source colors.
+The town miniature incorporates current HD inn/shop donors along its southern edge.
+
+The bank references the existing grass/dirt, paving, water, masonry and waterworks
+manifests without flattening their phase/connection metadata. Regional vegetation
+exports cover all 51 existing HD designs: tree canvases are halved in logical size
+for the miniature view; other plants retain their declared sizes. Complete frames,
+idle artwork and available fixed/backing layers retain registration. This stages
+breeze art, not contact-responsive grass behavior or new animal routines.
+
+Crop rows have two orientations; seven material groups have three retained-master
+crop treatments. These are fill/dressing candidates for coherent areas, not new
+47-shape transitions. Future regional integration must blend their contacts using
+the terrain painter and review seams in the actual map. Water retains the donor
+pack's temporal frames, spatial phases and bank masks through explicit references.
+
+Build with `python tools/build_elden_vale_hd_foundation.py`; verify without writing
+with the same command plus `--check`. Focused contracts are covered by
+`python -m unittest discover -s tests -p test_elden_vale_hd_foundation.py -v`.
+[Review compositions](reviews/elden_vale_hd_foundation/README.md) are offline asset
+studies, not gameplay captures. The preliminary antler blockout records protected
+routes and candidate overhead space; PR2 must verify supports in detailed ridge
+geometry before finished landmark art. The Sanctuary miniature, signature remains,
+ruins, weather, action poses and atlas updates belong to subsequent work.
