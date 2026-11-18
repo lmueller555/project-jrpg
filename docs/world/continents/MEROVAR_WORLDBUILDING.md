@@ -38,6 +38,25 @@ distinct responsibility remains governed by the [faith guide](../ELDEN_VALE_FAIT
 and [covenant](../SANCTUARY_COVENANT.md). This is not a change to
 [Elira’s existing festival scenes](../../narrative/game_01/CH01_MQ04_PR2.md).
 
+## Elden Vale: the basket that comes back
+
+A neighbour asks for help with meals. A follower of
+[Serene’s tradition](../ELDEN_VALE_FAITH.md) packs the vegetables.
+Another neighbour, who doesn’t practise it, repairs the basket handle
+and takes two vegetables out. “You’ll pull the bottom through.”
+“She needs enough for tomorrow.” “Then we make two trips.”
+
+The follower says the repairer has already done enough. “She waters my
+beans when I’m away,” the repairer says. “And you walk too fast for
+someone carrying soup.” When the basket comes back, there’s a spoon
+tucked through the handle. The recipient noticed what they forgot.
+
+The first neighbour sees a religious duty in the help. The other thinks
+about the recipient and the beans. Neither needs to win an argument
+about it. This is a proposed encounter with unnamed neighbours, not a
+rite, a change to existing characters’ beliefs, or a substitute for the
+Sanctuary’s duty to the dead.
+
 ## Elden Vale: what the closed passage remembers
 
 The [public evidence in the covenant](../SANCTUARY_COVENANT.md#the-public-evidence-behind-serenes-caution)
@@ -494,23 +513,49 @@ reviewed). At 09:54–15:23 the useful lessons are variation within a group
 and the limits of defining people by habitat or biology; neither implies
 a particular species belongs in this game.
 
+### Optional test: resemblance is not familiarity
+
+Try two alternate versions of the same small encounters. In the
+Rookfen bedtime-screen scene, a visiting adult closes the screen while
+the child is still talking. The child opens it again and the visitor
+stays to listen. At the Marris welcome-home meal, the same visitor knows
+the coat joke already while someone else needs it demonstrated.
+
+In one version, the visitor and the child have a shared nonhuman
+appearance and the unfamiliar guest at the meal is human. In the other,
+everyone is human. Does resemblance make the difference between looking
+like family and knowing how a household works more apparent? If it
+doesn’t, keep the all-human version. Neither version defines a species,
+a migration, a homeland or an ancestry for any established character.
+This applies the previously reviewed
+[transcript on fantasy peoples](https://www.youtube.com/watch?v=-aOa4O_M9ic&t=594s)
+to the narrower question of how familiarity is learned.
+
 ## Next development pass
 
-1. Test one proposed watershed-overlay convention and one lived custom
-   across Elden Vale’s communities. Keep physical and legal limits
-   distinct. Do not add crossing points or turn personal practice into
-   a Vale-wide religious obligation.
-2. Develop a small test for what an optional nonhuman people could add
-   to more than one Merovar community. Keep the result separate from
-   approved ancestry and hidden history. Look next for remaining gaps
-   in regional identity and character ties rather than adding duplicate customs.
+1. Trace one thing that travels between Merovar communities, such as
+   a letter, a tool pattern, or a song fragment. Make its route legible
+   from existing connections instead of adding a new crossing or road.
+   Explain what the receiver actually does with it.
+2. Develop one specific community identity that is not a state, species,
+   or inherited occupation. Keep its membership and disagreements
+   grounded in people, and preserve room for different experiences
+   within the same region.
 
 ## Map implications for a later review
 
-- A writer-only **Upper Leth haulage overlay** could compare a slower stone
-  route and the nearer protected source without choosing a new quarry or
-  making a boundary river navigable. Start with the physical limits that
-  matter to a driver: usable crossings, cart capacity and which loads wait.
+- A writer-only **Upper Leth haulage overlay** could use two kinds of marks.
+  **Passage-state marks** distinguish the ruined western bridge road inside
+  the walls from the southern land checkpoint that relief traffic uses.
+  Do not draw an eastern bridge. **Constraint notes** distinguish the brook,
+  controlled millrace, unnamed boundary rivers and unnamed downstream
+  tributaries. The nearer seam is protected, not an authorized supply;
+  farther stone remains available and takes longer to haul. Omit a mark
+  if it only works by assuming an unestablished crossing, navigable reach,
+  quarry, or excavation permission. Apply the actual-crossing check from
+  the [reviewed map transcript](https://www.youtube.com/watch?v=pjLSv4WNUtY)
+  to the [overworld](../../OVERWORLD.md) and the
+  [covenant](../SANCTUARY_COVENANT.md), which remain authoritative.
 - A writer-only **Rookfen–Marris cargo overlay** could distinguish a delta
   transfer, a coastal leg, and a receiving seaport. Keep its route provisional
   until channel, tide and distance assumptions are checked. It does not move
