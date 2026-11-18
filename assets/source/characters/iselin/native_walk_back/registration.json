@@ -1,0 +1,708 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "appearance_reference": "assets/characters/iselin/native_idles/idle_back.png",
+  "appearance_reference_sha256": "9f6d6359e5c90bdf5dac03a99e348ac4bed4179227c1bc5115f9e279f6bc100d",
+  "construction": "Complete rear key studies and16 complete authored drawings; no limb assembly, mirrored front art or boot-bound normalization.",
+  "anatomy": "Rear anatomical left=image left braid root; anatomical right=image right mantle. Forward/away limbs foreshorten upward; trailing limbs toward camera extend lower.",
+  "registration": "Every whole drawing uses a192x288 source window at1/8 density, placed by head crown/center; no per-pose rescaling or foot registration.",
+  "protected_region": {
+    "source_rect_xywh": [
+      0,
+      0,
+      24,
+      12
+    ],
+    "destination": [
+      0,
+      0
+    ],
+    "reason": "Preserve the approved stationary rear hair/head silhouette after complete-frame export.",
+    "moving_body": "Authored braid bend/mantle/torso/arms/coat/legs below y12 remain intact."
+  },
+  "source_sha256": {
+    "authored.png": "c348da7f0c43da3c4ae046a978b58caa175763f64eeb56f58ff5bcb19efd5226",
+    "keys.png": "e0c46fd73e58eb1248813af9c2432075989e518db4135afacae843c9cdf9c1db"
+  },
+  "records": [
+    {
+      "frame": 1,
+      "phase": "right_contact",
+      "source_rect": [
+        0,
+        0,
+        316,
+        311
+      ],
+      "opaque_bounds": [
+        178,
+        21,
+        280,
+        292
+      ],
+      "head_bounds": [
+        178,
+        21,
+        274,
+        100
+      ],
+      "crown_row": 21,
+      "head_center_x": 226.0,
+      "registered_source_window": [
+        130,
+        13,
+        322,
+        301
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        35
+      ]
+    },
+    {
+      "frame": 2,
+      "phase": "right_settle",
+      "source_rect": [
+        316,
+        0,
+        632,
+        311
+      ],
+      "opaque_bounds": [
+        124,
+        21,
+        227,
+        290
+      ],
+      "head_bounds": [
+        124,
+        21,
+        220,
+        100
+      ],
+      "crown_row": 21,
+      "head_center_x": 172.0,
+      "registered_source_window": [
+        76,
+        13,
+        268,
+        301
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        35
+      ]
+    },
+    {
+      "frame": 3,
+      "phase": "left_release",
+      "source_rect": [
+        632,
+        0,
+        947,
+        311
+      ],
+      "opaque_bounds": [
+        71,
+        21,
+        174,
+        282
+      ],
+      "head_bounds": [
+        71,
+        21,
+        167,
+        100
+      ],
+      "crown_row": 21,
+      "head_center_x": 119.0,
+      "registered_source_window": [
+        23,
+        13,
+        215,
+        301
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 4,
+      "phase": "left_recovery",
+      "source_rect": [
+        947,
+        0,
+        1263,
+        311
+      ],
+      "opaque_bounds": [
+        18,
+        21,
+        121,
+        276
+      ],
+      "head_bounds": [
+        18,
+        21,
+        115,
+        100
+      ],
+      "crown_row": 21,
+      "head_center_x": 66.5,
+      "registered_source_window": [
+        -30,
+        13,
+        162,
+        301
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        33
+      ]
+    },
+    {
+      "frame": 5,
+      "phase": "left_passing",
+      "source_rect": [
+        0,
+        311,
+        316,
+        622
+      ],
+      "opaque_bounds": [
+        178,
+        20,
+        280,
+        285
+      ],
+      "head_bounds": [
+        178,
+        20,
+        274,
+        100
+      ],
+      "crown_row": 20,
+      "head_center_x": 226.0,
+      "registered_source_window": [
+        130,
+        12,
+        322,
+        300
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 6,
+      "phase": "left_advance",
+      "source_rect": [
+        316,
+        311,
+        632,
+        622
+      ],
+      "opaque_bounds": [
+        124,
+        20,
+        226,
+        285
+      ],
+      "head_bounds": [
+        125,
+        20,
+        220,
+        100
+      ],
+      "crown_row": 20,
+      "head_center_x": 172.5,
+      "registered_source_window": [
+        76,
+        12,
+        268,
+        300
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 7,
+      "phase": "left_reach",
+      "source_rect": [
+        632,
+        311,
+        947,
+        622
+      ],
+      "opaque_bounds": [
+        71,
+        20,
+        173,
+        274
+      ],
+      "head_bounds": [
+        71,
+        20,
+        167,
+        100
+      ],
+      "crown_row": 20,
+      "head_center_x": 119.0,
+      "registered_source_window": [
+        23,
+        12,
+        215,
+        300
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        33
+      ]
+    },
+    {
+      "frame": 8,
+      "phase": "left_precontact",
+      "source_rect": [
+        947,
+        311,
+        1263,
+        622
+      ],
+      "opaque_bounds": [
+        19,
+        20,
+        119,
+        271
+      ],
+      "head_bounds": [
+        19,
+        20,
+        115,
+        100
+      ],
+      "crown_row": 20,
+      "head_center_x": 67.0,
+      "registered_source_window": [
+        -29,
+        12,
+        163,
+        300
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        32
+      ]
+    },
+    {
+      "frame": 9,
+      "phase": "left_contact",
+      "source_rect": [
+        0,
+        622,
+        316,
+        934
+      ],
+      "opaque_bounds": [
+        174,
+        19,
+        278,
+        279
+      ],
+      "head_bounds": [
+        179,
+        19,
+        274,
+        100
+      ],
+      "crown_row": 19,
+      "head_center_x": 226.5,
+      "registered_source_window": [
+        130,
+        11,
+        322,
+        299
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 10,
+      "phase": "left_settle",
+      "source_rect": [
+        316,
+        622,
+        632,
+        934
+      ],
+      "opaque_bounds": [
+        121,
+        19,
+        223,
+        278
+      ],
+      "head_bounds": [
+        125,
+        19,
+        220,
+        100
+      ],
+      "crown_row": 19,
+      "head_center_x": 172.5,
+      "registered_source_window": [
+        76,
+        11,
+        268,
+        299
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 11,
+      "phase": "right_release",
+      "source_rect": [
+        632,
+        622,
+        947,
+        934
+      ],
+      "opaque_bounds": [
+        68,
+        20,
+        169,
+        279
+      ],
+      "head_bounds": [
+        72,
+        20,
+        167,
+        100
+      ],
+      "crown_row": 20,
+      "head_center_x": 119.5,
+      "registered_source_window": [
+        24,
+        12,
+        216,
+        300
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 12,
+      "phase": "right_recovery",
+      "source_rect": [
+        947,
+        622,
+        1263,
+        934
+      ],
+      "opaque_bounds": [
+        18,
+        20,
+        117,
+        282
+      ],
+      "head_bounds": [
+        19,
+        20,
+        115,
+        100
+      ],
+      "crown_row": 20,
+      "head_center_x": 67.0,
+      "registered_source_window": [
+        -29,
+        12,
+        163,
+        300
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        34
+      ]
+    },
+    {
+      "frame": 13,
+      "phase": "right_passing",
+      "source_rect": [
+        0,
+        934,
+        316,
+        1245
+      ],
+      "opaque_bounds": [
+        174,
+        18,
+        280,
+        288
+      ],
+      "head_bounds": [
+        178,
+        18,
+        274,
+        100
+      ],
+      "crown_row": 18,
+      "head_center_x": 226.0,
+      "registered_source_window": [
+        130,
+        10,
+        322,
+        298
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        19,
+        35
+      ]
+    },
+    {
+      "frame": 14,
+      "phase": "right_advance",
+      "source_rect": [
+        316,
+        934,
+        632,
+        1245
+      ],
+      "opaque_bounds": [
+        122,
+        18,
+        227,
+        280
+      ],
+      "head_bounds": [
+        125,
+        18,
+        220,
+        100
+      ],
+      "crown_row": 18,
+      "head_center_x": 172.5,
+      "registered_source_window": [
+        76,
+        10,
+        268,
+        298
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 15,
+      "phase": "right_reach",
+      "source_rect": [
+        632,
+        934,
+        947,
+        1245
+      ],
+      "opaque_bounds": [
+        70,
+        18,
+        174,
+        273
+      ],
+      "head_bounds": [
+        72,
+        18,
+        167,
+        100
+      ],
+      "crown_row": 18,
+      "head_center_x": 119.5,
+      "registered_source_window": [
+        24,
+        10,
+        216,
+        298
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        33
+      ]
+    },
+    {
+      "frame": 16,
+      "phase": "right_precontact",
+      "source_rect": [
+        947,
+        934,
+        1263,
+        1245
+      ],
+      "opaque_bounds": [
+        18,
+        18,
+        122,
+        273
+      ],
+      "head_bounds": [
+        19,
+        18,
+        115,
+        100
+      ],
+      "crown_row": 18,
+      "head_center_x": 67.0,
+      "registered_source_window": [
+        -29,
+        10,
+        163,
+        298
+      ],
+      "source_density_scale": 0.125,
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        33
+      ]
+    }
+  ],
+  "exports": {
+    "assets/characters/iselin/native_walk_back/frame_01.png": "40a919ac74ef4cf927bf343dce3c964f9ff8e1cd323cc71b6382a69da7081d4a",
+    "assets/characters/iselin/native_walk_back/frame_02.png": "b1c9d9a5a365393e76f91748333959c7be368d7b3fb459b8fde6d7ee2f08f381",
+    "assets/characters/iselin/native_walk_back/frame_03.png": "923d52424f3572a6d44cd094dc15dedf4e12b27d3c36083d939473e3c4791a06",
+    "assets/characters/iselin/native_walk_back/frame_04.png": "91f616a0ca996c9a716cb45d6437afe533ec7054e56f9ce990b2589ee913c402",
+    "assets/characters/iselin/native_walk_back/frame_05.png": "ad719ffe5ddac722fadba2d1af82af0cc4911a45612a9f909b0859de1a59b5cb",
+    "assets/characters/iselin/native_walk_back/frame_06.png": "13b1fe8912109855b29db6651a854607f35fe826b077aa384cf69c04f5c942ca",
+    "assets/characters/iselin/native_walk_back/frame_07.png": "52ae34dd703c6d86abd54ba6754aedcadba57c3f6bbcc6fd29431a6410cda173",
+    "assets/characters/iselin/native_walk_back/frame_08.png": "f03a117a1ba7021eeea5c10487d9c41d32a8fb531822a4d77fa54c8acf957845",
+    "assets/characters/iselin/native_walk_back/frame_09.png": "767a348916cc963a1c2adaf86a3d8b7e670507c638ff825b51eb093312d09a5b",
+    "assets/characters/iselin/native_walk_back/frame_10.png": "14b77438080f33c21e6bdd33fe30e402eb1530b57920055176b452311b91d566",
+    "assets/characters/iselin/native_walk_back/frame_11.png": "18d37ec655329345899d740180ce1a0b60b282c20c1fec46b06dc5f2df93afca",
+    "assets/characters/iselin/native_walk_back/frame_12.png": "3132a36a93ff4324eec0a780569607417c1fea6284ff3218315dcb1a00611ba5",
+    "assets/characters/iselin/native_walk_back/frame_13.png": "d2322642a8f9e62a37b4a6edf1bcfcb35f67c2cb0734eb467a06b13e57202993",
+    "assets/characters/iselin/native_walk_back/frame_14.png": "884d8209f88c10523a3c461159ac49f411da010185871c798a7644f416b641bb",
+    "assets/characters/iselin/native_walk_back/frame_15.png": "e67bb3958e7ac8128706fed34d26cb4aa1cae71d77474270741a842f1f79fb9e",
+    "assets/characters/iselin/native_walk_back/frame_16.png": "c0aaaf603bf047e04165b65ae40a144b31e6cea4a728f8cfdb391931b9eb262a",
+    "assets/characters/iselin/native_walk_back/spritesheet.png": "eb34018312b7ed2b3d28abe827e99dba21ca5a90da505b529b61fad158447457",
+    "assets/characters/iselin/native_walk_back/review_spritesheet.png": "7df15180abeffd4741b0797624bd4a2983873c8adc7aadb1d6e89c29414b9230",
+    "assets/characters/iselin/native_walk_back/animation.json": "987a084c764197df65315a6a11192d6ae7b507d9c3137d51dd694c13ab797216",
+    "assets/characters/iselin/native_walk_back/review_actor.json": "8bd28ba7ffcb78dc7b0ecfdaffcfa6709e6e1b867242060172440b3dfa72c708",
+    "docs/reviews/iselin_native_back_walk/numbered_frames.png": "401a0e1914d30e3ba1918781b8656dbf1ae3489cb7e36e91caa400db0adc6c18"
+  },
+  "status": "user-approved back walk; staged pending gameplay integration"
+}
