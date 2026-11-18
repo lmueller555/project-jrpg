@@ -1,0 +1,614 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "appearance_reference": "assets/characters/iselin/native_idles/idle_right.png",
+  "appearance_reference_sha256": "a372ac232c61cc36232477200e39e2e5cc0d39a5c7c045247dd08fa83107bd4b",
+  "motion_reference": "assets/source/characters/iselin/native_walk_left/authored.png",
+  "motion_reference_sha256": "1c6ea85e2332808c659447905dfcf4d92f6e34a42f939a1e8178563837d1d19e",
+  "construction": "Complete right-specific key poses and16 complete authored poses; no detached limb assembly or mirrored finished art.",
+  "anatomy": "Near anatomical right, far anatomical left; mantle on near shoulder, braid on far shoulder.",
+  "registration": "One fixed272x362 source grid sampled at nominal0.1 density to27x36; origin[-2,-1] for all16; no per-pose boot normalization.",
+  "protected_region": {
+    "source_rect_xywh": [
+      0,
+      0,
+      24,
+      12
+    ],
+    "destination": [
+      0,
+      1
+    ],
+    "reason": "Preserve approved stationary profile and face through the complete drawn cycle; one-pixel walking settle.",
+    "moving_body": "Authored braid tail/torso/arms/coat/legs below y13 unchanged."
+  },
+  "source_sha256": {
+    "authored.png": "f0faf43cfd36565130d7e6d2a6a270efe7c602fba1c338e31fe48abd13c8aa7c",
+    "keys.png": "f32a92f22fa77ed9f005e2d5f748a74e153f345b3d531964d56ccd3fceb7254b"
+  },
+  "records": [
+    {
+      "frame": 1,
+      "phase": "near_contact",
+      "source_rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "opaque_source_bounds": [
+        59,
+        26,
+        229,
+        351
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        4,
+        2,
+        21,
+        34
+      ]
+    },
+    {
+      "frame": 2,
+      "phase": "near_settle",
+      "source_rect": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "opaque_source_bounds": [
+        75,
+        26,
+        209,
+        351
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 3,
+      "phase": "far_release",
+      "source_rect": [
+        543,
+        0,
+        814,
+        362
+      ],
+      "opaque_source_bounds": [
+        80,
+        26,
+        210,
+        351
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 4,
+      "phase": "far_recovery",
+      "source_rect": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "opaque_source_bounds": [
+        79,
+        26,
+        210,
+        351
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 5,
+      "phase": "far_passing",
+      "source_rect": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "opaque_source_bounds": [
+        79,
+        26,
+        209,
+        349
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 6,
+      "phase": "far_advance",
+      "source_rect": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "opaque_source_bounds": [
+        73,
+        26,
+        209,
+        349
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 7,
+      "phase": "far_reach",
+      "source_rect": [
+        543,
+        362,
+        814,
+        724
+      ],
+      "opaque_source_bounds": [
+        68,
+        26,
+        226,
+        346
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        2,
+        20,
+        33
+      ]
+    },
+    {
+      "frame": 8,
+      "phase": "far_precontact",
+      "source_rect": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "opaque_source_bounds": [
+        63,
+        26,
+        231,
+        348
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        4,
+        2,
+        21,
+        34
+      ]
+    },
+    {
+      "frame": 9,
+      "phase": "far_contact",
+      "source_rect": [
+        0,
+        724,
+        272,
+        1086
+      ],
+      "opaque_source_bounds": [
+        65,
+        26,
+        220,
+        349
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        4,
+        2,
+        20,
+        34
+      ]
+    },
+    {
+      "frame": 10,
+      "phase": "far_settle",
+      "source_rect": [
+        272,
+        724,
+        543,
+        1086
+      ],
+      "opaque_source_bounds": [
+        78,
+        26,
+        213,
+        349
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 11,
+      "phase": "near_release",
+      "source_rect": [
+        543,
+        724,
+        814,
+        1086
+      ],
+      "opaque_source_bounds": [
+        80,
+        26,
+        210,
+        349
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 12,
+      "phase": "near_recovery",
+      "source_rect": [
+        814,
+        724,
+        1086,
+        1086
+      ],
+      "opaque_source_bounds": [
+        79,
+        26,
+        210,
+        349
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 13,
+      "phase": "near_passing",
+      "source_rect": [
+        0,
+        1086,
+        272,
+        1448
+      ],
+      "opaque_source_bounds": [
+        79,
+        26,
+        209,
+        347
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 14,
+      "phase": "near_advance",
+      "source_rect": [
+        272,
+        1086,
+        543,
+        1448
+      ],
+      "opaque_source_bounds": [
+        78,
+        26,
+        209,
+        347
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        2,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 15,
+      "phase": "near_reach",
+      "source_rect": [
+        543,
+        1086,
+        814,
+        1448
+      ],
+      "opaque_source_bounds": [
+        63,
+        26,
+        223,
+        347
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        4,
+        2,
+        20,
+        34
+      ]
+    },
+    {
+      "frame": 16,
+      "phase": "near_precontact",
+      "source_rect": [
+        814,
+        1086,
+        1086,
+        1448
+      ],
+      "opaque_source_bounds": [
+        61,
+        26,
+        232,
+        347
+      ],
+      "source_cell_size": [
+        272,
+        362
+      ],
+      "nominal_density_scale": 0.1,
+      "rounded_sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        4,
+        2,
+        21,
+        34
+      ]
+    }
+  ],
+  "exports": {
+    "assets/characters/iselin/native_walk_right/frame_01.png": "e989ac18c53057dae5d14d29c04d00fd2a881ba47d8a42c431babe357f8d97df",
+    "assets/characters/iselin/native_walk_right/frame_02.png": "1f11d24152152b7c7947f3685dc560f8eef8e6098a01aed496a5d938a8c3bb8f",
+    "assets/characters/iselin/native_walk_right/frame_03.png": "b53f7ef1f3b3f209702998f3ba426d85ac238453ca642779da291d3318e12463",
+    "assets/characters/iselin/native_walk_right/frame_04.png": "b5c80c1cc9b8043676cb89dce2a78d5b556094729a18a73b120d3035ac223ea1",
+    "assets/characters/iselin/native_walk_right/frame_05.png": "1d9ddb1d75e444f0bc6002d24aed2b0b4df829bab07b7549805c94f0b76df32d",
+    "assets/characters/iselin/native_walk_right/frame_06.png": "66f776dcc14d58df803805da3fc06cd756603cd4db8f7133bb51565e3f85314d",
+    "assets/characters/iselin/native_walk_right/frame_07.png": "4195b98d65ea671e06f394d6aa138a5ff35a167968f9bd99517ffaa7ce62c3fb",
+    "assets/characters/iselin/native_walk_right/frame_08.png": "0b3ea246863515403d558faaaabce15cfb139eb58a3cfa8c4ac1422a47a9b5d6",
+    "assets/characters/iselin/native_walk_right/frame_09.png": "9f0ae898fccfb25097d9fa69b5bde8ab33c65e49f9c02d8fe7f290ef8c07a23e",
+    "assets/characters/iselin/native_walk_right/frame_10.png": "e65c5943931b20dd64972eaa972980634adce781bdd2942c21e06c61576867dd",
+    "assets/characters/iselin/native_walk_right/frame_11.png": "34b0879e7c93c4a4e0f4a89c237ae377fbbfe7206f4154182d10c8c1d432b3c4",
+    "assets/characters/iselin/native_walk_right/frame_12.png": "750543855f2926ec783f54176e945ec7c0e49a530a770f328ce14ebf2ae42573",
+    "assets/characters/iselin/native_walk_right/frame_13.png": "81415fb1de8883aec3bce9ee6973c29064a04bd2ec4e69d6826fc155781c1582",
+    "assets/characters/iselin/native_walk_right/frame_14.png": "be70ce6e2b6cfb398f491885e1ae2ab6316f87f18a86f225711b74c30c04cc7a",
+    "assets/characters/iselin/native_walk_right/frame_15.png": "36e96e19459f725fa3465978eec275c8fa3dae03bc32cad048b7bee648d5b1ac",
+    "assets/characters/iselin/native_walk_right/frame_16.png": "75e0d4168042c646430d31961eab73d22988acbab021d038f5fbab39931884fb",
+    "assets/characters/iselin/native_walk_right/spritesheet.png": "f231e0eb20145109b943ca741a5eda7b9f97bda26af5806f7a8b6ef276737e2d",
+    "assets/characters/iselin/native_walk_right/review_spritesheet.png": "8e582d8e79798909a6513fc67bc6f0cf1d2432e0437a57a88459220bf7d42ec7",
+    "assets/characters/iselin/native_walk_right/animation.json": "9cbe9aa92b1e2bbdc3680241dfc866aa7c4211c10edce93b258565a1c27791e2",
+    "assets/characters/iselin/native_walk_right/review_actor.json": "990715bb4a02ffb32db85b481e1ddda1a5f6ca7c8fc3efcb4f081826d489e8d3",
+    "docs/reviews/iselin_native_right_walk/numbered_frames.png": "d973af777d8c3b73e137e0e5f9e2fc3ec41282e5c22b95fb445adfe444b00958"
+  },
+  "status": "user-approved right walk; staged pending gameplay integration"
+}
