@@ -176,6 +176,21 @@ asks what they cooked in it, and someone calls out a rhyme for the answer.
 The verse sticks because the room learns something new. Another hall
 might prefer to end the song without a game.
 
+## Greyfold Uplands: the unfinished house
+
+In one [Greyfold](MEROVAR.md#greyfold-uplands) settlement, a makers’ circle
+furnishes a miniature house with scraps. A shepherd makes chairs; a retired
+quarry worker sews curtains. Anyone who comes can contribute and nobody
+has to explain an absence. A person's usual trade doesn't decide what
+they make for this house.
+
+Returning apprentices want to add a balcony they saw in a river town.
+A founding member says the house no longer looks like home. Someone
+remembers that the original roof copied an inn none of them had
+visited. They keep the roof beside the model and add the balcony.
+The founder stops coming. Their little chair stays. This is one
+voluntary circle, not a Greyfold-wide identity or a guild.
+
 ## Lower Leth: a fair weight after a flood
 
 At one weighing house, the keeper deducts the sack’s weight in front of
@@ -276,6 +291,22 @@ Neighbours who only put up a screen when guests stay over would not
 read the gap the same way. A more crowded household might have no room
 to divide at all. The signal belongs to this family, not the pattern
 or the delta.
+
+## Rookfen: letters without an introduction
+
+**Proposed history:** Between two [Rookfen](MEROVAR.md#rookfen) settlements
+already connected by visiting evenings, someone once had to find a
+relative willing to carry a letter. Hosts started taking small bundles
+for the next visiting boat instead. A patched cloth wrapper still shows
+the crossed-out names of the households that have looked after it.
+The change used an existing connection, not a new channel or a formal post.
+
+An older reed worker remembers no longer saving her news until a cousin
+travelled. A neighbour misses being able to give a delicate message
+some context before it was read. Now people expect a letter to travel
+without a personal favour, but a volunteer still has to be there to
+collect it. The [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed letting one ordinary object show what changed.
 
 ## Redstone March: the first drink
 
@@ -533,14 +564,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Trace one thing that travels between Merovar communities, such as
-   a letter, a tool pattern, or a song fragment. Make its route legible
-   from existing connections instead of adding a new crossing or road.
-   Explain what the receiver actually does with it.
-2. Develop one specific community identity that is not a state, species,
-   or inherited occupation. Keep its membership and disagreements
-   grounded in people, and preserve room for different experiences
-   within the same region.
+1. Test where an established regional office meets local decision-making
+   on something other than a quarry or a relief dispatch. Do not make
+   a one-off compromise into a constitutional rule.
+2. Trace one Marris melody inland or a Valley custom outward. Show
+   what survives in a different setting and who hears a meaning the
+   originators did not intend.
 
 ## Map implications for a later review
 
