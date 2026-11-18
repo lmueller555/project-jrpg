@@ -20,8 +20,8 @@ class OpeningConclusion:
         self.worlds={self.halden:game.halden_visit.home}
         self.paths={};self.retries={};self.settled=False
         self.lines=json.loads((ROOT/'assets/story/opening_conclusion.json').read_text())
-        self.halden.walks={d:[game.town.image(f'assets/story/halden/walk_{d}_{i}.png') for i in range(4)]
-                           for d in ('front','left','right','back')}
+        # Halden owns his density-aware, manifest-timed travel bank.
+        # This scene borrows the same actor without replacing its artwork.
     @property
     def locks_player(self):return False
     @property

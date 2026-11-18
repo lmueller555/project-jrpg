@@ -1,0 +1,96 @@
+{
+  "type": "Actual OpeningConclusion._move in unchanged Halden home geometry",
+  "frames": [
+    {
+      "frame": 0,
+      "position": [
+        192.0,
+        176.0
+      ],
+      "walk_ms": 0.0,
+      "facing": "front",
+      "moving": false
+    },
+    {
+      "frame": 1,
+      "position": [
+        195.92,
+        176.0
+      ],
+      "walk_ms": 70.0,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 2,
+      "position": [
+        199.83999999999997,
+        176.0
+      ],
+      "walk_ms": 140.00000000000003,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 3,
+      "position": [
+        203.75999999999996,
+        176.0
+      ],
+      "walk_ms": 210.00000000000006,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 4,
+      "position": [
+        207.67999999999995,
+        176.0
+      ],
+      "walk_ms": 280.00000000000006,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 5,
+      "position": [
+        211.59999999999994,
+        176.0
+      ],
+      "walk_ms": 350.0,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 6,
+      "position": [
+        215.51999999999992,
+        176.0
+      ],
+      "walk_ms": 419.99999999999994,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 7,
+      "position": [
+        219.4399999999999,
+        176.0
+      ],
+      "walk_ms": 489.9999999999999,
+      "facing": "right",
+      "moving": true
+    },
+    {
+      "frame": 8,
+      "position": [
+        223.3599999999999,
+        176.0
+      ],
+      "walk_ms": 559.9999999999999,
+      "facing": "right",
+      "moving": true
+    }
+  ],
+  "foot_lock": "Stylized 560ms gait at unchanged 56-world-unit travel speed; native stance excursion is shorter than world displacement. Residual sliding remains; no perfect ground-lock claim and no speed/collision alteration."
+}
