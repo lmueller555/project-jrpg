@@ -132,7 +132,12 @@ class SanctuaryRescue(MillGift):
         return False
 
     def _load_art(self):
-        if self.art is None:self.art=json.loads((ASSETS/'art.json').read_text())
+        if self.art is None:
+            self.art=json.loads((ASSETS/'art.json').read_text())
+            # Keep this distinct rescued man on his native bank even when the
+            # shared scene registry is regenerated. No helper/party replacement.
+            worker=ROOT/'assets/characters/rescue_worker/activity_hd/actor.json'
+            self.art['actors']['worker']=json.loads(worker.read_text())
 
     def _make_cast(self):
         self._load_art();g=self.game;world=g.world;self._world=world
@@ -152,6 +157,10 @@ class SanctuaryRescue(MillGift):
             profiles[key]={'name':('Injured worker' if key=='rescue_worker' and self._worker_free else name),'portrait':portrait}
             if portrait not in g.social.portraits:
                 g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
+        # Same original portrait pixels, but private to this rescued speaker.
+        profiles['rescue_worker']['portrait']='rescue_worker_hd'
+        g.social.portraits['rescue_worker_hd']=world.image(
+            'assets/characters/rescue_worker/activity_hd/portrait.png')
 
     def _station(self,actor,point):
         if not self._world.can_stand(point,actor.probe_size):
