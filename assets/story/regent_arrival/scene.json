@@ -171,7 +171,7 @@
         },
         {
           "id": "iselin",
-          "pose": "walk_left",
+          "pose": "gate_walk_left",
           "position": [
             611,
             375
@@ -187,7 +187,9 @@
             "deceleration_seconds": 0.5,
             "settle_seconds": 0.2,
             "action": "stop_left"
-          }
+          },
+          "after_pose": "gate_stand_left",
+          "reference_pose": "gate_incoming_left"
         },
         {
           "id": "lucan",
@@ -265,7 +267,7 @@
         },
         {
           "id": "iselin",
-          "pose": "stand_left",
+          "pose": "gate_stand_left",
           "position": [
             575,
             375
@@ -405,7 +407,7 @@
           "move_start": 0.95,
           "move_seconds": 11.75,
           "after_pose": "stand_back",
-          "before_pose": "stand_left",
+          "before_pose": "gate_stand_left",
           "route": "gate_road",
           "route_start": 180,
           "route_end": 1120,

@@ -1,0 +1,181 @@
+{
+  "classification": "Selected complete R1 drawings reused unchanged below the protected head region in approved R2. Only these records are active lineage; unrelated rejected source poses are not exports.",
+  "camera_canvas": [
+    80,
+    96
+  ],
+  "camera_anchor": [
+    40,
+    92
+  ],
+  "records": {
+    "references/stand_left.png": {
+      "source": "lineage/masters/stop.png",
+      "rect": [
+        512,
+        1152,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_01.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_02.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        512,
+        0,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_03.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        0,
+        384,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_04.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        512,
+        384,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_05.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        0,
+        768,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_06.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        512,
+        768,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_07.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        0,
+        1152,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_08.png": {
+      "source": "lineage/masters/walk_a.png",
+      "rect": [
+        512,
+        1152,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_09.png": {
+      "source": "lineage/masters/walk_b.png",
+      "rect": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_10.png": {
+      "source": "lineage/masters/walk_b.png",
+      "rect": [
+        512,
+        0,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    },
+    "references/walk_left/frame_11.png": {
+      "source": "lineage/masters/walk_b.png",
+      "rect": [
+        0,
+        384,
+        512,
+        384
+      ],
+      "scale": 0.224,
+      "source_anchor": [
+        256,
+        375
+      ]
+    }
+  }
+}

@@ -134,26 +134,34 @@ def write_gif(path, frames, exposure):
             'disposal': 1, 'decoded_pixels_and_exposures_verified': True}
 
 
-def native_board(repository, output):
+def frame_board(repository, output):
+    """Show the actual manifest's complete gate drawings on one fixed grid."""
     from PIL import Image, ImageDraw
-    folder = repository/'assets/source/characters/iselin/native_stop_left/registered'
-    if not folder.exists():return None
-    paths = [repository/'assets/characters/iselin/native_walk_left/frame_16.png',
-             *[folder/f'frame_{i:02}.png' for i in range(1, 9)],
-             repository/'assets/characters/iselin/native_idles/idle_left.png']
-    names = ['Approved handoff', *[f'New frame {i:02}' for i in range(1, 9)], 'Approved idle']
-    board = Image.new('RGB', (900, 550), '#e8edf2');draw = ImageDraw.Draw(board)
-    draw.text((12, 8), 'ISELIN STOP / native 24x36 drawings at 5x / fixed registration',
-              font=font(repository, 19), fill='#263c35')
+    folder = repository/'assets/story/regent_arrival/actors/iselin'
+    manifest = json.loads((folder/'animation.json').read_text())
+    loop = 'gate_walk_left' if 'gate_walk_left' in manifest['loops'] else 'walk_left'
+    idle = 'gate_stand_left' if 'gate_stand_left' in manifest['poses'] else 'stand_left'
+    clip = manifest.get('actions', {}).get('stop_left')
+    if clip is None:return None
+    paths = [(folder/frame['file'], f'Walk {index+1:02}')
+             for index, frame in enumerate(manifest['loops'][loop])]
+    paths.extend((folder/frame['file'], f'Stop {index:02}')
+                 for index, frame in enumerate(clip['entry'][1:], 1))
+    paths.append((folder/manifest['poses'][idle], 'Standing idle'))
+    board = Image.new('RGB', (900, 54+math.ceil(len(paths)/5)*236), '#e8edf2')
+    draw = ImageDraw.Draw(board)
+    draw.text((12, 8), 'ISELIN GATE / production 80x96 drawings at 2x / fixed registration',
+              font=font(repository, 18), fill='#263c35')
     refs = []
-    for i, (path, name) in enumerate(zip(paths, names)):
+    for index, (path, name) in enumerate(paths):
         image = Image.open(path).convert('RGBA')
-        if image.size != (24, 36):raise ValueError('Unexpected native stop canvas')
-        x = 24+(i % 5)*180;y = 48+(i//5)*250
-        board.paste(image.resize((120, 180), Image.Resampling.NEAREST), (x, y),
-                    image.resize((120, 180), Image.Resampling.NEAREST))
-        draw.text((x, y+190), name, font=font(repository, 15), fill='#263c35')
-        refs.append({'path': str(path.relative_to(repository)), 'sha256': digest(path)})
+        if image.size != (80, 96):raise ValueError('Unexpected cinematic frame canvas')
+        large = image.resize((160, 192), Image.Resampling.NEAREST)
+        x = 10+(index % 5)*180;y = 48+(index//5)*236
+        board.paste(large, (x, y), large)
+        draw.text((x, y+198), name, font=font(repository, 15), fill='#263c35')
+        refs.append({'path': str(path.relative_to(repository)), 'sha256': digest(path),
+                     'rgba_sha256': sha256(image.tobytes()).hexdigest()})
     board.save(output/'numbered_frames.png')
     return refs
 
@@ -232,6 +240,65 @@ def mechanics(review):
     return checks
 
 
+def live_bank_evidence(review):
+    """Check production-loaded surfaces against the frozen approval snapshot."""
+    from PIL import Image
+    repository = review.repository
+    approval_path = repository/'assets/source/characters/iselin/cinematic_gate_left/approval.json'
+    if not approval_path.exists():return None
+    approval = json.loads(approval_path.read_text())
+    art = review.scene.actor_art['iselin']
+    if art['canvas'] != [80, 96] or art['anchor'] != [40, 92]:
+        raise ValueError('Live gate registration differs from approval')
+    surfaces = {f'gate_walk_left/frame_{index+1:02}.png': surface
+                for index, (surface, _) in enumerate(art['loops']['gate_walk_left'])}
+    surfaces.update({f'stop_left/frame_{index:02}.png': frame.image
+                     for index, frame in enumerate(art['actions']['stop_left'].entry[1:], 1)})
+    surfaces['gate_stand_left.png'] = art['poses']['gate_stand_left']
+    if len(surfaces) != 25 or len(approval['files']) != 25:
+        raise ValueError('Live gate must load the 25 approved complete drawings')
+    values = {}
+    for relative, surface in surfaces.items():
+        name = 'assets/story/regent_arrival/actors/iselin/'+relative
+        expected = approval['files'][name]
+        rgba_hash = sha256(review.pygame.image.tobytes(surface, 'RGBA')).hexdigest()
+        if (digest(repository/name) != expected['approved_file_sha256']
+                or rgba_hash != expected['approved_rgba_sha256']):
+            raise ValueError('Production gate image differs from approval: '+name)
+        values[name] = {'approved_file_sha256': expected['approved_file_sha256'],
+                        'loaded_rgba_sha256': rgba_hash}
+    baseline_path = repository/'docs/reviews/iselin_native_integration/approved_assets.json'
+    baseline = json.loads(baseline_path.read_text())
+    if len(baseline['sha256']) != 69:raise ValueError('Expected the 69-image ordinary approval baseline')
+    for name, value in baseline['sha256'].items():
+        if digest(repository/name) != value:raise ValueError('Approved ordinary image changed: '+name)
+    return {'source': 'Ordinary RegentArrival._load from the live production manifest; no bank or pose overrides.',
+            'approval_snapshot': str(approval_path.relative_to(repository)),
+            'approval_snapshot_sha256': digest(approval_path),
+            'approved_cinematic_png_count': len(values), 'loaded_surfaces': values,
+            'approved_ordinary_portrait_png_count': len(baseline['sha256']),
+            'all_approved_ordinary_portrait_pngs_unchanged': True}
+
+
+def compare_approved_capture(path, observations):
+    """Compare selected images and staging with the user-approved timed review."""
+    if path is None:return None
+    original = json.loads(path.read_text())
+    previous = {sample['elapsed']: sample for sample in original['timeline_samples']}
+    checked = []
+    for sample in observations:
+        expected = previous[sample['elapsed']]
+        for key in ('shot', 'root', 'camera', 'rendered_frame_rgba_sha256'):
+            if sample[key] != expected[key]:
+                raise ValueError(f'Live capture differs from approved preview at {sample["elapsed"]}: {key}')
+        checked.append({'elapsed': sample['elapsed'],
+                        'approved_rendered_frame_rgba_sha256': expected['rendered_frame_rgba_sha256']})
+    if len(checked) != len(previous):raise ValueError('Approved preview sample count changed')
+    return {'reference_name': path.name, 'reference_sha256': digest(path),
+            'all_approved_timed_images_roots_and_cameras_match': True,
+            'sample_count': len(checked), 'samples': checked}
+
+
 def capture(args):
     from PIL import Image, ImageDraw
     args.out.mkdir(parents=True, exist_ok=True)
@@ -246,6 +313,7 @@ def capture(args):
     with tempfile.TemporaryDirectory(prefix='iselin-walk-stop-') as directory:
         review = Review(repository, directory)
         try:
+            live_bank = live_bank_evidence(review)
             for seconds in times:
                 remaining = seconds-review.elapsed
                 while remaining > .02+1e-10:
@@ -265,6 +333,7 @@ def capture(args):
                     'slow.gif': write_gif(args.out/'slow.gif', frames, 80)}
             checks = mechanics(review) if args.check_mechanics else {}
         finally:review.close()
+    approved_comparison = compare_approved_capture(args.approved_capture, observations)
     board = Image.new('RGB', (960, math.ceil(len(stills)/3)*260), '#e8edf2')
     draw = ImageDraw.Draw(board)
     for i, record in enumerate(stills):
@@ -274,15 +343,20 @@ def capture(args):
         draw.text((x+8, y+219), f'{record["elapsed"]:.2f}s / {record["action"]["stage"]}',
                   font=font(repository, 15), fill='#263c35')
     board.save(args.out/'samples.png')
-    references = native_board(repository, args.out)
+    references = frame_board(repository, args.out)
     contacts = contact_board(repository, args.out, stills, sprites)
     if args.check_preservation:proof = check_preservation()
     dependencies = ['regent_arrival.py', 'cinematic_actor_actions.py',
+                    'tools/build_regent_iselin.py',
+                    'docs/reviews/iselin_native_integration/approved_assets.json',
                     'assets/story/regent_arrival/scene.json',
                     'assets/story/regent_arrival/actors/iselin/animation.json']
-    for name in ('recipe.json', 'registration.json', 'stop_source.png'):
-        candidate = 'assets/source/characters/iselin/native_stop_left/'+name
+    if (repository/'tools/export_iselin_gate_detail.py').is_file():
+        dependencies.append('tools/export_iselin_gate_detail.py')
+    for name in ('approval.json', 'recipe.json', 'registration.json'):
+        candidate = 'assets/source/characters/iselin/cinematic_gate_left/'+name
         if (repository/candidate).is_file():dependencies.append(candidate)
+    dependencies.extend(reference['path'] for reference in (references or []))
     report = {'repository_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'],
                cwd=repository, text=True).strip(), 'classification': args.classification,
               'working_tree_dirty': bool(subprocess.check_output(['git', 'status', '--porcelain=v1'],
@@ -292,7 +366,8 @@ def capture(args):
               'dt': '.02s maximum, split at listed exact meaningful times',
               'gif_crop_window_pixels': list(CROP), 'gif_playback': gifs,
               'timeline_samples': observations, 'meaningful_samples': stills,
-              'mechanic_checks': checks, 'native_references': references,
+              'mechanic_checks': checks, 'production_frame_references': references,
+              'live_bank_approval': live_bank, 'approved_preview_comparison': approved_comparison,
               'world_registration_diagnostic': contacts,
               'preservation': proof, 'input_sha256': {name: digest(repository/name) for name in dependencies},
               'output_sha256': {path.name: digest(path) for path in sorted(args.out.iterdir())
@@ -307,6 +382,8 @@ def main():
                         help='Read another checkout for a labelled historical comparison')
     parser.add_argument('--out', type=Path, default=Path(tempfile.gettempdir())/'iselin-walk-stop')
     parser.add_argument('--classification', default='ACTUAL ARRIVAL / WALK TO STOP TO GREETING')
+    parser.add_argument('--approved-capture', type=Path,
+                        help='Compare every selected image/root/camera with the approved timed review JSON')
     parser.add_argument('--check-preservation', action='store_true',
                         help='Explicitly verify this review historical art baseline')
     parser.add_argument('--check-mechanics', action='store_true')
