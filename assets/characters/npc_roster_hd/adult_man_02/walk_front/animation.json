@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "character": "adult_man_02",
+  "animation": "walk.front",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/adult_man_02/walk_front/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/adult_man_02/walk_front/authored.png": "dbe260f4c0e2e6b2328cb40bae22dfdaaa88a90307cebd3c630e247e80e65caa",
+    "assets/characters/npc_roster_hd/adult_man_02/idle_front.png": "2f40fefcb8d410e0205c1c4edf08c5c1108852c0c15ecdb44aa093a9982bee6d"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        28,
+        65
+      ],
+      "right_boot_bottom": [
+        18,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          28,
+          65
+        ],
+        "right_toe": [
+          18,
+          69
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        28,
+        63
+      ],
+      "right_boot_bottom": [
+        18,
+        68
+      ],
+      "crown_y": 3,
+      "belt_y": 41,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          41
+        ],
+        "left_toe": [
+          28,
+          63
+        ],
+        "right_toe": [
+          18,
+          68
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        28,
+        65
+      ],
+      "right_boot_bottom": [
+        19,
+        67
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          28,
+          65
+        ],
+        "right_toe": [
+          19,
+          67
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        29,
+        67
+      ],
+      "right_boot_bottom": [
+        19,
+        66
+      ],
+      "crown_y": 1,
+      "belt_y": 39,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          29,
+          67
+        ],
+        "right_toe": [
+          19,
+          66
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        29,
+        69
+      ],
+      "right_boot_bottom": [
+        18,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          29,
+          69
+        ],
+        "right_toe": [
+          18,
+          65
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        29,
+        68
+      ],
+      "right_boot_bottom": [
+        19,
+        63
+      ],
+      "crown_y": 3,
+      "belt_y": 41,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          41
+        ],
+        "left_toe": [
+          29,
+          68
+        ],
+        "right_toe": [
+          19,
+          63
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        29,
+        67
+      ],
+      "right_boot_bottom": [
+        19,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          29,
+          67
+        ],
+        "right_toe": [
+          19,
+          65
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        30,
+        66
+      ],
+      "right_boot_bottom": [
+        18,
+        67
+      ],
+      "crown_y": 1,
+      "belt_y": 39,
+      "occlusion": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          30,
+          66
+        ],
+        "right_toe": [
+          18,
+          67
+        ],
+        "occlusion_note": "Forward arm partly behind torso at contacts; both hands near neutral in passing; no hidden leg identity swap"
+      }
+    }
+  ]
+}
