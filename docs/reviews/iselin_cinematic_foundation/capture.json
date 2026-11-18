@@ -1,0 +1,975 @@
+{
+  "gif_playback": {
+    "preview.gif": {
+      "frames": 50,
+      "total_ms": 1000,
+      "decoded_frames_match_quantized_sources": true,
+      "sample_exposures_preserved": true,
+      "disposal": 1
+    },
+    "preview_slow.gif": {
+      "frames": 50,
+      "total_ms": 4000,
+      "decoded_frames_match_quantized_sources": true,
+      "sample_exposures_preserved": true,
+      "disposal": 1
+    }
+  },
+  "timeline_samples": [
+    {
+      "time": 0.0,
+      "shot": "relief",
+      "shot_seconds": 0,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.02,
+      "shot": "relief",
+      "shot_seconds": 0.02,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 20.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.04,
+      "shot": "relief",
+      "shot_seconds": 0.04,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 40.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.06,
+      "shot": "relief",
+      "shot_seconds": 0.06,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 60.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.08,
+      "shot": "relief",
+      "shot_seconds": 0.08,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 80.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.1,
+      "shot": "relief",
+      "shot_seconds": 0.1,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.12,
+      "shot": "relief",
+      "shot_seconds": 0.12,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 19.99999999999999,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.14,
+      "shot": "relief",
+      "shot_seconds": 0.14,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 40.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.16,
+      "shot": "relief",
+      "shot_seconds": 0.16,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 59.999999999999986,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.18,
+      "shot": "relief",
+      "shot_seconds": 0.18,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 79.99999999999999,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.2,
+      "shot": "relief",
+      "shot_seconds": 0.2,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 100.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.22,
+      "shot": "relief",
+      "shot_seconds": 0.22,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 120.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.24,
+      "shot": "relief",
+      "shot_seconds": 0.24,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 140.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.26,
+      "shot": "relief",
+      "shot_seconds": 0.26,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 160.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.28,
+      "shot": "relief",
+      "shot_seconds": 0.28,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 180.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "time": 0.3,
+      "shot": "relief",
+      "shot_seconds": 0.3,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "time": 0.32,
+      "shot": "relief",
+      "shot_seconds": 0.32,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 20.0,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "time": 0.34,
+      "shot": "relief",
+      "shot_seconds": 0.34,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 40.0,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "time": 0.36,
+      "shot": "relief",
+      "shot_seconds": 0.36,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 59.99999999999996,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "time": 0.38,
+      "shot": "relief",
+      "shot_seconds": 0.38,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 79.99999999999996,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "time": 0.4,
+      "shot": "relief",
+      "shot_seconds": 0.4,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 99.99999999999996,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "time": 0.42,
+      "shot": "relief",
+      "shot_seconds": 0.42,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.44,
+      "shot": "relief",
+      "shot_seconds": 0.44,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.46,
+      "shot": "relief",
+      "shot_seconds": 0.46,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.48,
+      "shot": "relief",
+      "shot_seconds": 0.48,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.5,
+      "shot": "relief",
+      "shot_seconds": 0.5,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.52,
+      "shot": "relief",
+      "shot_seconds": 0.52,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.54,
+      "shot": "relief",
+      "shot_seconds": 0.54,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.56,
+      "shot": "relief",
+      "shot_seconds": 0.56,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.58,
+      "shot": "relief",
+      "shot_seconds": 0.58,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.6,
+      "shot": "relief",
+      "shot_seconds": 0.6,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.62,
+      "shot": "relief",
+      "shot_seconds": 0.62,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.64,
+      "shot": "relief",
+      "shot_seconds": 0.64,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.66,
+      "shot": "relief",
+      "shot_seconds": 0.66,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.68,
+      "shot": "relief",
+      "shot_seconds": 0.68,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.7,
+      "shot": "relief",
+      "shot_seconds": 0.7,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.72,
+      "shot": "relief",
+      "shot_seconds": 0.72,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.74,
+      "shot": "relief",
+      "shot_seconds": 0.74,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.76,
+      "shot": "relief",
+      "shot_seconds": 0.76,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.78,
+      "shot": "relief",
+      "shot_seconds": 0.78,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.8,
+      "shot": "relief",
+      "shot_seconds": 0.8,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.82,
+      "shot": "relief",
+      "shot_seconds": 0.82,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.84,
+      "shot": "relief",
+      "shot_seconds": 0.84,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.86,
+      "shot": "relief",
+      "shot_seconds": 0.86,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.88,
+      "shot": "relief",
+      "shot_seconds": 0.88,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.9,
+      "shot": "relief",
+      "shot_seconds": 0.9,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.92,
+      "shot": "relief",
+      "shot_seconds": 0.92,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.94,
+      "shot": "relief",
+      "shot_seconds": 0.94,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.96,
+      "shot": "relief",
+      "shot_seconds": 0.96,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "time": 0.98,
+      "shot": "relief",
+      "shot_seconds": 0.98,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    }
+  ],
+  "meaningful_samples": [
+    {
+      "file": "sample_00.png",
+      "time": 0.0,
+      "shot": "relief",
+      "shot_seconds": 0,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "file": "sample_01.png",
+      "time": 0.05,
+      "shot": "relief",
+      "shot_seconds": 0.05,
+      "action": {
+        "stage": "entry",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 50.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "file": "sample_02.png",
+      "time": 0.1,
+      "shot": "relief",
+      "shot_seconds": 0.1,
+      "action": {
+        "stage": "hold",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": true
+      }
+    },
+    {
+      "file": "sample_03.png",
+      "time": 0.3,
+      "shot": "relief",
+      "shot_seconds": 0.3,
+      "action": {
+        "stage": "recovery",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": 0,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": true
+      }
+    },
+    {
+      "file": "sample_04.png",
+      "time": 0.42,
+      "shot": "relief",
+      "shot_seconds": 0.42,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    },
+    {
+      "file": "sample_05.png",
+      "time": 0.7,
+      "shot": "relief",
+      "shot_seconds": 0.7,
+      "action": {
+        "stage": "rest",
+        "action": "synthetic_mechanic_probe",
+        "cue_id": "review:iselin",
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": true,
+        "active": false
+      }
+    }
+  ],
+  "mechanic_checks": {
+    "duplicate_cue_ignored": true,
+    "duplicate_does_not_reset": true,
+    "busy_distinct_cue_ignored": true,
+    "pause_clock_frozen": true,
+    "draw_queries_are_pure": true,
+    "focus_freezes_review_and_runtime": true,
+    "early_release_finishes_entry": true,
+    "early_release_recovers_to_rest": true,
+    "restart_accepts_same_cue": true
+  },
+  "classification": "Synthetic mechanic probe using existing stills; no authored performance or completed played quest claimed.",
+  "base_commit": "02fb8de5f99f0488e9cd5c9d1c8467d53888aa36",
+  "shot": "relief",
+  "shot_start_seconds": 0,
+  "pose": null,
+  "loop": null,
+  "action": "synthetic_mechanic_probe",
+  "release_at": 0.3,
+  "simulation_seconds": 1.0,
+  "primary_speed": 1,
+  "references": [
+    {
+      "path": "assets/characters/iselin/native_idles/idle_front.png",
+      "sha256": "a0b58e06377223b03652e26d918ce849008c11ca6cab048e49ebea1339d0fa31",
+      "canvas": [
+        24,
+        36
+      ],
+      "enlargement": 4
+    },
+    {
+      "path": "assets/characters/iselin/native_idles/idle_left.png",
+      "sha256": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589",
+      "canvas": [
+        24,
+        36
+      ],
+      "enlargement": 4
+    },
+    {
+      "path": "assets/characters/iselin/native_idles/idle_right.png",
+      "sha256": "a372ac232c61cc36232477200e39e2e5cc0d39a5c7c045247dd08fa83107bd4b",
+      "canvas": [
+        24,
+        36
+      ],
+      "enlargement": 4
+    },
+    {
+      "path": "assets/characters/iselin/native_idles/idle_back.png",
+      "sha256": "9f6d6359e5c90bdf5dac03a99e348ac4bed4179227c1bc5115f9e279f6bc100d",
+      "canvas": [
+        24,
+        36
+      ],
+      "enlargement": 4
+    },
+    {
+      "path": "assets/story/regent/poses/iselin_seated.png",
+      "sha256": "401dd36eeb3f66676881a7fb6210298dd0968a3c27572adbd89ffd108c723f24",
+      "canvas": [
+        24,
+        36
+      ],
+      "enlargement": 4
+    },
+    {
+      "path": "assets/story/regent_aerial/actors/iselin/overhead.png",
+      "sha256": "9eb35141f6cad1fa23c9e8b62cd4310a3db74a72565c777abb7c62c54ce69103",
+      "canvas": [
+        48,
+        64
+      ],
+      "enlargement": 3
+    },
+    {
+      "path": "assets/story/regent_aerial/actors/iselin/oblique.png",
+      "sha256": "0c86cdd3ddda3e5425502a012b1cd2429a172bcc32b79058ac3d02a4f009eb47",
+      "canvas": [
+        48,
+        64
+      ],
+      "enlargement": 3
+    },
+    {
+      "path": "assets/story/regent_arrival/actors/iselin/listen_left.png",
+      "sha256": "7f5c278d41d81876ae673bfd826e9c24c0c3edff455add0f9232530506b807ca",
+      "canvas": [
+        80,
+        96
+      ],
+      "enlargement": 2
+    },
+    {
+      "path": "assets/story/regent_arrival/actors/iselin/gesture_left.png",
+      "sha256": "213a08123fbd7c8f2f57789791de8e5dbf1f12653c40db81849b2967f2399950",
+      "canvas": [
+        80,
+        96
+      ],
+      "enlargement": 2
+    },
+    {
+      "path": "assets/story/regent_arrival/actors/iselin/turn_left_back.png",
+      "sha256": "707891597f1359994a960860742ce9f4ae8c4d620208e832154f23e1f0c7a934",
+      "canvas": [
+        80,
+        96
+      ],
+      "enlargement": 2
+    },
+    {
+      "path": "assets/story/regent_arrival/actors/iselin/stand_left.png",
+      "sha256": "7f5c278d41d81876ae673bfd826e9c24c0c3edff455add0f9232530506b807ca",
+      "canvas": [
+        80,
+        96
+      ],
+      "enlargement": 2
+    },
+    {
+      "path": "assets/story/regent_arrival/actors/iselin/stand_right.png",
+      "sha256": "3fe43704444ccafa0cfc7638d77496864af479e73249fd870a248cd22d62b6c4",
+      "canvas": [
+        80,
+        96
+      ],
+      "enlargement": 2
+    },
+    {
+      "path": "assets/story/regent_arrival/actors/iselin/stand_back.png",
+      "sha256": "1535bfd7db225313b258f32ef7a908c11811c627b46526db0dbdf7a2afcb743c",
+      "canvas": [
+        80,
+        96
+      ],
+      "enlargement": 2
+    }
+  ],
+  "external_inputs": {
+    "docs/reviews/iselin_cinematic_foundation/synthetic_probe.json": "f2f6b5ae779d0167a7f98c38c1a1513553fb658747008508dd5b6ee23ad264cb"
+  },
+  "preservation": {
+    "baseline_commit": "02fb8de5f99f0488e9cd5c9d1c8467d53888aa36",
+    "png_count": 135,
+    "json_count": 32,
+    "all_unchanged": true
+  },
+  "persistence": "Actual isolated Gallery child; temporary parent save/settings; no production asset writes.",
+  "output_sha256": {
+    "early_release.png": "1c579ac0224b30f211459bbdbc1a73c2c64a6b6734049560dd804cc2ff459c5f",
+    "preview.gif": "d7a4f59b145cacf22a9cf12b61a95c1fdc582de007281f32db160007d16c4cf2",
+    "preview_slow.gif": "baeb8093d1bca0806020afec1228ccb9b6d36d2a9f075c4fe3bf82540dcfdcbb",
+    "reference_board.png": "769880803d06638c0bffabef4259234672be8c5b7a0c8b08d42ee9d5771f5d10",
+    "sample_00.png": "2757657c59c869047789c495b2b502ac8a0576e948020805407f4d6863860e7e",
+    "sample_01.png": "4f4b191fb5f6572a3857ac8b497750a21a1a27c0f1841fbf550ed3776ab5b828",
+    "sample_02.png": "b7a7282e3e0ff5e559d09ee96fb7fe2aa1ff8f75393ed10255fbbfb1ab912130",
+    "sample_03.png": "4aa91f45b5665810dd8a6e1b1dcdc425c9ef5a02e928e3758498d13e6f3879b1",
+    "sample_04.png": "b5f24a6790a90733f42f1311f00ecba9c602766c57405994628bfc1b2a520526",
+    "sample_05.png": "c35208a9d9f00382fec80a95c119c78b385eaa43810ea79fd86ff94ee7c55339",
+    "samples.png": "940c1a4d19411639f1c890509d9a0de608d7547c83c8ec9fcd4cc2f86f11dfdb"
+  }
+}

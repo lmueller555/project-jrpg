@@ -22,6 +22,29 @@ owns current production verification. Directional native review helpers remain
 available with temporary saves; pass `--out /tmp/iselin-review` when reproducing
 them so the original approval snapshots stay intact.
 
+Preview individual Iselin arrival poses, walking loops and optional finite
+actions with `python tools/preview_iselin_cinematics.py --list`. The tool uses
+the real arrival Gallery renderer with temporary saves/settings. For example:
+
+```sh
+python tools/preview_iselin_cinematics.py --shot relief --pose gesture_left
+python tools/preview_iselin_cinematics.py --headless --shot gate_greeting --shot-time .4 --probe --release-at .3 --seconds 1 --out /tmp/iselin-probe
+python tools/preview_iselin_cinematics.py --shot gate_greeting --action-file /path/clips.json --action greeting
+```
+
+Space pauses, R restarts, S changes normal/quarter speed, the arrow keys step
+20 ms, E releases an action, F captures a frame and Escape exits. Output defaults
+to `/tmp/iselin-cinematic-preview`. Headless captures include an existing
+artwork reference board and normal/slow playback. `--probe` uses existing stills
+to demonstrate entry/hold/recovery timing; it is not newly drawn motion. The
+[arrival guide](../docs/REGENT_ARRIVAL.md#native-acting-foundation) defines the
+optional actor action schema; the
+[foundation review](../docs/reviews/iselin_cinematic_foundation/README.md) records
+capture staging and preservation checks. `--check-preservation` explicitly checks
+this PR's historical baseline; ordinary future previews allow intentional asset
+changes. Future action files use the same schema and local, correctly registered
+actor frames.
+
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).
 
 Compile functional building doors and room transfers with `python tools/build_building_interiors.py`. It augments the playable town manifest with nine doors, five native poses per visible door, and eleven furnished scene manifests. Approved cottage door frames are reused exactly; other doors derive inward hinge poses from their existing panel pixels. Actor-free ground/light layers, furniture, fire/steam and floor-bounded collision come from approved room assets, with functional mill/workshop workrooms assembled from the same kit. Each house has a distinct scene/return link even when sharing a layout. `build_playable_eldenmere.py` invokes this compiler automatically. `tests/test_doors.py` covers proximity/hold/reversal/hysteresis, walk-in gating, all nine round trips, sanctuary room links, all scene exits/furnishing access, map behavior and small-room centering. Source art remains read only.

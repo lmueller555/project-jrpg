@@ -67,6 +67,53 @@ The full covenant disagreement belongs to MQ03's later meal and discussion.
 Iselin's expected visit was arranged beforehand; she did not set out because
 Caelan restored the mill.
 
+## Native acting foundation
+
+The [sprite and animation standard](SPRITE_ANIMATION_STANDARD.md) owns Iselin's
+appearance, body registration and complete-frame construction. Her current
+arrival assets include static standing/listening/gesture/turn poses and the
+left, rear-three-quarter and rear walks. The acting foundation adds optional
+finite clips; the shipped arrival manifest keeps its existing poses and timing.
+New stopping, greeting, listening, speaking and turning performances are separate
+artwork changes. A reference board and isolated playback evidence are recorded
+in the [foundation review](reviews/iselin_cinematic_foundation/README.md).
+
+An arrival actor's `animation.json` can declare an `actions` object alongside
+its existing `poses` and `loops`. Each named action has this shape:
+
+```json
+{
+  "entry": [{"pose": "stand_left", "duration_ms": 120}],
+  "hold": {"pose": "listen_left", "duration_ms": null},
+  "recovery": [{"pose": "stand_left", "duration_ms": 140}],
+  "rest_pose": "stand_left"
+}
+```
+
+This example reuses existing stills to explain playback; it does not supply
+drawn intermediate motion. Entry and recovery are nonempty lists of frames with
+positive finite millisecond durations. The single hold frame uses a positive
+finite duration or `null` for an indefinite, explicitly released hold. Frames
+reference either a known static `pose` or a `file` within that actor manifest's
+directory, with the same canvas dimensions. `rest_pose` names a static pose.
+Drawn action frames retain the actor's common anchor, scale and depth contract.
+
+The scene API is `play_actor_action(actor_id, action_name, cue_id)`,
+`release_actor_action(actor_id, cue_id=None)`, `actor_action_state(actor_id)` and
+`clear_actor_actions()`. Cue IDs identify authored events, not text pages or draw
+calls. Duplicate IDs do not replay, including after the action settles; a new
+cue during an unfinished action is rejected rather than queued. A release during
+entry allows entry to finish before recovery. A settled action holds its rest
+pose until another action or lifecycle clear returns presentation ownership.
+Future performance PRs can wire the local dialogue cues they actually need.
+
+Only unpaused, focused scene updates advance clip clocks. Drawing is read-only.
+Phase changes, scene start/reset/restore, finish/Skip and Gallery close discard
+the temporary players and cue history. Existing static and walking selection
+continues when no action is active. The durable arrival receipt remains the
+same version-one `waiting`/`pending`/`seen` record; action frames and clocks are
+never serialized or used as quest completion signals.
+
 ## Controls and presentation
 
 Dialogue advances at the player's pace and uses the shared in-game portrait

@@ -1,0 +1,24 @@
+{
+  "classification": "Synthetic mechanic probe using existing still poses; not authored performance animation.",
+  "actions": {
+    "synthetic_mechanic_probe": {
+      "entry": [
+        {
+          "pose": "stand_left",
+          "duration_ms": 100
+        }
+      ],
+      "hold": {
+        "pose": "gesture_left",
+        "duration_ms": null
+      },
+      "recovery": [
+        {
+          "pose": "listen_left",
+          "duration_ms": 120
+        }
+      ],
+      "rest_pose": "stand_left"
+    }
+  }
+}
