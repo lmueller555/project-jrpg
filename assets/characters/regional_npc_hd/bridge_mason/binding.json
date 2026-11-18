@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "actor_id": "bridge_mason",
+  "design_id": "adult_man_01",
+  "preserved_legacy_identity": "assets/characters/npcs/male_01",
+  "activation": {
+    "idle": true,
+    "walk": true,
+    "activity": true
+  },
+  "logical_canvas": [
+    40,
+    44
+  ],
+  "draw_anchor_logical": [
+    20,
+    38
+  ],
+  "body_offset_logical": [
+    8,
+    3.5
+  ],
+  "travel_cycle_ms": 560,
+  "runtime_status": "Canonical native idle/walk/portrait and refined complete activities explicitly selected; original controllers and attachments retained.",
+  "identity_source": "docs/REGION_NPCS.md",
+  "activity_owner": "assets/characters/bridge_workers/mason/animation.json",
+  "preservation": "No actor ID, position, probe, controller, durable state, prop ownership, route, action timing or source bank changes.",
+  "activity_manifest": "assets/characters/regional_npc_hd/bridge_mason/activity_hd/manifest.json",
+  "activity_manifest_sha256": "4b2731ed07084fe96a6ff8d3b7831df7f974d48169f43f3460c062a79f672775"
+}

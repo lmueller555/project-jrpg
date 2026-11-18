@@ -1,0 +1,11 @@
+test_farm_controller_selects_exact_native_frame_without_attachment_change (tests.test_regional_npc_activity_runtime.NativeActivityRuntimeTests.test_farm_controller_selects_exact_native_frame_without_attachment_change) ... ok
+test_idle_uses_roster_and_blocked_occupied_hold_stays_static (tests.test_regional_npc_activity_runtime.NativeActivityRuntimeTests.test_idle_uses_roster_and_blocked_occupied_hold_stays_static) ... ok
+test_native_actor_render_preserves_pixels_and_exact_ground_registration (tests.test_regional_npc_activity_runtime.NativeActivityRuntimeTests.test_native_actor_render_preserves_pixels_and_exact_ground_registration) ... ok
+test_only_explicit_activity_bindings_activate (tests.test_regional_npc_activity_runtime.NativeActivityRuntimeTests.test_only_explicit_activity_bindings_activate) ... ok
+test_picker_lower_is_presentation_only_and_rest_retains_existing_anchor (tests.test_regional_npc_activity_runtime.NativeActivityRuntimeTests.test_picker_lower_is_presentation_only_and_rest_retains_existing_anchor) ... ok
+test_wildlife_owner_ignores_stale_garden_presentation_override (tests.test_regional_npc_activity_runtime.NativeActivityRuntimeTests.test_wildlife_owner_ignores_stale_garden_presentation_override) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.530s
+
+OK
