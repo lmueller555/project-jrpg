@@ -1,0 +1,412 @@
+{
+  "actor": "caretaker",
+  "migration_status": "rebuilt_not_integrated",
+  "poses": {
+    "unhook": {
+      "frames": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_00.png",
+          "duration_ms": 100,
+          "grip": [
+            20,
+            34
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_01.png",
+          "duration_ms": 100,
+          "grip": [
+            17,
+            30
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            20,
+            29
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_02.png",
+          "duration_ms": 100,
+          "grip": [
+            12,
+            26
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            15,
+            28
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_03.png",
+          "duration_ms": 100,
+          "grip": [
+            9,
+            23
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            13,
+            27
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_04.png",
+          "duration_ms": 100,
+          "grip": [
+            8,
+            23
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            13,
+            27
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_05.png",
+          "duration_ms": 100,
+          "grip": [
+            9,
+            26
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            13,
+            29
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_06.png",
+          "duration_ms": 100,
+          "grip": [
+            9,
+            29
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            14,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_07.png",
+          "duration_ms": 100,
+          "grip": [
+            10,
+            31
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            15,
+            31
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_08.png",
+          "duration_ms": 100,
+          "grip": [
+            12,
+            32
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            16,
+            31
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_09.png",
+          "duration_ms": 100,
+          "grip": [
+            15,
+            32
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            19,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_10.png",
+          "duration_ms": 100,
+          "grip": [
+            18,
+            33
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_11.png",
+          "duration_ms": 100,
+          "grip": [
+            20,
+            34
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_12.png",
+          "duration_ms": 100,
+          "grip": [
+            20,
+            34
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_13.png",
+          "duration_ms": 100,
+          "grip": [
+            20,
+            34
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_14.png",
+          "duration_ms": 100,
+          "grip": [
+            20,
+            34
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_15.png",
+          "duration_ms": 100,
+          "grip": [
+            20,
+            34
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            21,
+            30
+          ]
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        20,
+        40
+      ],
+      "facing": "left",
+      "artwork_pixels_per_world_pixel": 2
+    },
+    "receive": {
+      "frames": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_02.png",
+          "duration_ms": 200,
+          "grip": [
+            12,
+            26
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            15,
+            28
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_03.png",
+          "duration_ms": 200,
+          "grip": [
+            9,
+            23
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            13,
+            27
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_04.png",
+          "duration_ms": 200,
+          "grip": [
+            8,
+            23
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            13,
+            27
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_05.png",
+          "duration_ms": 200,
+          "grip": [
+            9,
+            26
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            13,
+            29
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_06.png",
+          "duration_ms": 200,
+          "grip": [
+            9,
+            29
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            14,
+            30
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_07.png",
+          "duration_ms": 200,
+          "grip": [
+            10,
+            31
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            15,
+            31
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_08.png",
+          "duration_ms": 200,
+          "grip": [
+            12,
+            32
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            16,
+            31
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_09.png",
+          "duration_ms": 200,
+          "grip": [
+            15,
+            32
+          ],
+          "shoulder": [
+            18,
+            27
+          ],
+          "elbow": [
+            19,
+            30
+          ]
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        20,
+        40
+      ],
+      "facing": "left",
+      "artwork_pixels_per_world_pixel": 2
+    }
+  }
+}
