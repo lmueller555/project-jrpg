@@ -55,8 +55,8 @@ class MapUITests(unittest.TestCase):
     def key(self, value, repeat=False):
         return self.map.handle_event(pygame.event.Event(pygame.KEYDOWN, key=value, repeat=repeat))
 
-    def test_all_landmarks_have_selectable_geographically_correct_footprints(self):
-        self.assertEqual(len(self.map.building_rects), 11)
+    def test_all_nine_landmarks_have_selectable_geographically_correct_footprints(self):
+        self.assertEqual(len(self.map.building_rects), 9)
         for record in self.game.town.data['landmarks']:
             with self.subTest(place=record['id']):
                 footprint = self.map.building_rects[record['id']]
@@ -84,9 +84,9 @@ class MapUITests(unittest.TestCase):
     def test_keyboard_selection_wraps_ignores_repeat_and_closes(self):
         self.map.selected = 0
         self.key(pygame.K_LEFT)
-        self.assertEqual(self.map.selected, 10)
+        self.assertEqual(self.map.selected, 8)
         self.assertTrue(self.key(pygame.K_RIGHT, repeat=True))
-        self.assertEqual(self.map.selected, 10)
+        self.assertEqual(self.map.selected, 8)
         self.key(pygame.K_RIGHT)
         self.assertEqual(self.map.selected, 0)
         self.key(pygame.K_ESCAPE)

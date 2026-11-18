@@ -9,7 +9,6 @@ from __future__ import annotations
 from functools import lru_cache
 
 import pygame
-from rendering import draw as render_draw, scale as render_scale
 
 
 FINGER_SIZE = (15, 20)
@@ -25,29 +24,29 @@ def target_finger_image():
     image = pygame.Surface(FINGER_SIZE, pygame.SRCALPHA)
     outline = '#18241e'
     ivory, highlight, shade = '#f8f0d9', '#fffdf0', '#baa98c'
-    render_draw.polygon(image, outline, (
+    pygame.draw.polygon(image, outline, (
         (4, 4), (11, 4), (11, 5), (13, 5), (13, 7), (14, 7),
         (14, 11), (13, 11), (13, 12), (10, 12), (10, 14),
         (9, 14), (9, 18), (8, 18), (8, 19), (5, 19),
         (5, 18), (4, 18), (4, 11), (2, 11), (2, 10),
         (0, 10), (0, 7), (1, 7), (1, 6), (3, 6), (3, 5),
     ))
-    render_draw.polygon(image, ivory, (
+    pygame.draw.polygon(image, ivory, (
         (4, 5), (10, 5), (10, 6), (12, 6), (12, 8), (13, 8),
         (13, 10), (12, 10), (12, 11), (9, 11), (9, 13),
         (8, 13), (8, 18), (5, 18), (5, 10), (3, 10),
         (3, 9), (1, 9), (1, 8), (2, 8), (2, 7), (4, 7),
     ))
     # Cuff, bent knuckles and the thumb distinguish the hand from an arrow.
-    render_draw.rect(image, outline, (4, 0, 8, 5))
-    render_draw.rect(image, '#314f40', (5, 1, 6, 2))
-    render_draw.line(image, '#f1cd77', (5, 3), (10, 3))
-    render_draw.line(image, shade, (9, 6), (9, 10))
-    render_draw.line(image, shade, (11, 8), (11, 10))
-    render_draw.line(image, outline, (3, 8), (4, 9))
-    render_draw.line(image, shade, (8, 12), (8, 17))
-    render_draw.line(image, highlight, (5, 11), (5, 17))
-    render_draw.line(image, highlight, (5, 5), (8, 5))
+    pygame.draw.rect(image, outline, (4, 0, 8, 5))
+    pygame.draw.rect(image, '#314f40', (5, 1, 6, 2))
+    pygame.draw.line(image, '#f1cd77', (5, 3), (10, 3))
+    pygame.draw.line(image, shade, (9, 6), (9, 10))
+    pygame.draw.line(image, shade, (11, 8), (11, 10))
+    pygame.draw.line(image, outline, (3, 8), (4, 9))
+    pygame.draw.line(image, shade, (8, 12), (8, 17))
+    pygame.draw.line(image, highlight, (5, 11), (5, 17))
+    pygame.draw.line(image, highlight, (5, 5), (8, 5))
     return image
 
 
@@ -94,10 +93,10 @@ def target_marker_geometry(body_rect, ground_point, *, bounds=None):
 def draw_target_ring(canvas, body_rect, ground_point, *, bounds=None):
     """Draw a red ground circle in perspective, before the enemy sprite."""
     rect = target_marker_geometry(body_rect, ground_point, bounds=bounds)['ring']
-    render_draw.ellipse(canvas, RING_OUTLINE, rect, min(3, max(1, rect.height // 2)))
+    pygame.draw.ellipse(canvas, RING_OUTLINE, rect, min(3, max(1, rect.height // 2)))
     inner = rect.inflate(-2, -2)
     if inner.width > 0 and inner.height > 0:
-        render_draw.ellipse(canvas, RING_RED, inner, min(2, max(1, inner.height // 2)))
+        pygame.draw.ellipse(canvas, RING_RED, inner, min(2, max(1, inner.height // 2)))
     return rect
 
 
@@ -107,6 +106,6 @@ def draw_target_finger(canvas, body_rect, *, bounds=None):
                                   bounds=bounds)['finger']
     image = target_finger_image()
     if rect.size != image.get_size():
-        image = render_scale(image, rect.size)
+        image = pygame.transform.scale(image, rect.size)
     canvas.blit(image, rect)
     return rect

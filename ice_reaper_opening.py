@@ -1,8 +1,5 @@
 """The thirty-two-second Ice Reaper rescue and duel cinematic."""
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 
 import math
 from dataclasses import replace
@@ -176,7 +173,7 @@ class IceReaperOpening(OpeningCinematic):
                 anchor = self.action_stage.winter.opening_anchor
             scale = record.get('pixel_scale', 1)
             if scale != 1:
-                image = render_scale(image, (image.get_width()*scale, image.get_height()*scale))
+                image = pygame.transform.scale(image, (image.get_width()*scale, image.get_height()*scale))
             point = self.actor_position(record['id'])-camera
             canvas.blit(image, (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale)))
         self._draw_prop(canvas, 'ice_prison_front', camera)
@@ -197,39 +194,39 @@ class IceReaperOpening(OpeningCinematic):
         record = self.data['dynamic_props']['glacial_shard']
         point = pygame.Vector2(record['position'])-camera+self._hover_offset()
         point.y -= record['anchor'][1]/2
-        layer = render_layer(VIEW_SIZE, pygame.SRCALPHA)
+        layer = pygame.Surface(VIEW_SIZE, pygame.SRCALPHA)
         time = 0 if self.reduced_motion else self.elapsed
         for radius, alpha in ((36, 8), (24, 12), (13, 17)):
-            render_draw.circle(layer, (106, 192, 251, alpha),
+            pygame.draw.circle(layer, (106, 192, 251, alpha),
                                (round(point.x), round(point.y)), radius)
         for index in range(10):
             angle = index*math.tau/10+time*1.7
             radius = 20+7*math.sin(time*2.3+index)
             center = point+pygame.Vector2(math.cos(angle)*radius, math.sin(angle)*radius*.8)
             x, y = round(center.x), round(center.y)
-            render_draw.polygon(layer, (197, 240, 255, 145),
+            pygame.draw.polygon(layer, (197, 240, 255, 145),
                                 [(x,y-2),(x+1,y),(x,y+2),(x-1,y)])
         canvas.blit(layer, (0, 0))
 
     def _ground_shadows(self, canvas, camera):
-        layer = render_layer(VIEW_SIZE, pygame.SRCALPHA)
+        layer = pygame.Surface(VIEW_SIZE, pygame.SRCALPHA)
         for record in self.data['actors']:
             if record['id'] == 'ice_reaper':
                 continue
             point = self.actor_position(record['id'])-camera
             width = 44 if record['id'] == 'rhea' else 24
-            render_draw.ellipse(layer, (38, 73, 103, 55),
+            pygame.draw.ellipse(layer, (38, 73, 103, 55),
                                 (round(point.x-width/2), round(point.y)-2, width, 5))
         canvas.blit(layer, (0, 0))
 
     def _snow(self, canvas, camera):
         if self.reduced_motion:
             return
-        layer = render_layer(VIEW_SIZE, pygame.SRCALPHA)
+        layer = pygame.Surface(VIEW_SIZE, pygame.SRCALPHA)
         for index in range(17):
             x = (index*109+self.elapsed*(3+index%4)-camera.x*.3)%VIEW_SIZE[0]
             y = (index*61+self.elapsed*(7+index%3)-camera.y*.3)%VIEW_SIZE[1]
-            render_draw.line(layer, (200, 235, 250, 85),
+            pygame.draw.line(layer, (200, 235, 250, 85),
                              (round(x),round(y)), (round(x),round(y)+1))
         canvas.blit(layer, (0, 0))
 

@@ -1,11 +1,9 @@
 """A brief, clock-driven curtain between exploration and a battle view."""
 from __future__ import annotations
-from rendering import layer as render_layer
 
 import math
 
 import pygame
-from rendering import draw as render_draw, scale as render_scale
 
 
 SHADE = (7, 18, 17)
@@ -57,10 +55,10 @@ class BattleTransition:
         if not self.active:return
         width, height = target.get_size()
         if self._veil is None or self._veil.get_size() != target.get_size():
-            self._veil = render_layer(target.get_size(), pygame.SRCALPHA)
+            self._veil = pygame.Surface(target.get_size(), pygame.SRCALPHA)
         veil = self._veil
         if self.phase == 'closing':
-            render_scale(self.world_frame, target.get_size(), target)
+            pygame.transform.scale(self.world_frame, target.get_size(), target)
             progress = _ease(self.elapsed / self.close_seconds)
             if progress <= 0:return
             if self.reduced_motion:
@@ -81,7 +79,7 @@ class BattleTransition:
                 elif distance > height:
                     points = [(0, 0), (distance, 0), (distance-height, height),
                               (0, height)]
-                render_draw.polygon(target, SHADE, points)
+                pygame.draw.polygon(target, SHADE, points)
         elif self.phase == 'covered':
             target.fill(SHADE)
         else:

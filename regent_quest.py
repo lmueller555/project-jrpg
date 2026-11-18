@@ -61,8 +61,7 @@ class RegentQuest:
         self.trail = deque(maxlen=1024);self.last_scene = None
         self.surface_props = []
         for record in art['props']:
-            world=self.dining if record['scene']=='sanctuary_dining' else self.town
-            states = {key: world.room_art_image(path) for key, path in record['states'].items()}
+            states = {key: self.town.image(path) for key, path in record['states'].items()}
             self.surface_props.append({**record, 'states': states,
                                        'surface': next(iter(states.values()))})
         self.town.attach_routine_props(self)

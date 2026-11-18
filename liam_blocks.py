@@ -3,7 +3,6 @@ from collections import deque
 import random
 import pygame
 from liam_daisy_play import read
-import liam_native_art
 from ui_style import draw_ambient_speech
 
 META='assets/characters/liam_family/block_play/animations.json'
@@ -16,14 +15,12 @@ class LiamBlocks:
         self.config=read(config);self.meta=read(META);self.pack=read(PACK);self._rng=random.Random()
         self.blocks=[];self.surface_props=[]
         for spec,center in zip(self.pack['blocks'],self.config['block_centers']):
-            surface=home.room_art_image(spec['image']);anchor=pygame.Vector2(spec['draw_anchor'])
+            surface=home.image(spec['image']);anchor=pygame.Vector2(spec['draw_anchor'])
             block={**spec,'state':'box','center':pygame.Vector2(center),'surface':surface,'anchor':anchor}
             prop={'id':spec['id'],'scene':home.data['id'],'surface':surface,'position':[0,0],'sort_y':209,'sort_priority':1}
             block['prop']=prop;self.blocks.append(block);self.surface_props.append(prop)
-        native=liam_native_art.home_actions(home,'block_play') if self.liam.roster_art is not None else {}
         for name,spec in self.meta['actions'].items():
-            frames=native.get(name)
-            if frames is None:frames=[(home.image(f['file']),f['duration_ms']) for f in spec['frames']]
+            frames=[(home.image(f['file']),f['duration_ms']) for f in spec['frames']]
             if name.startswith('curious_'):shared.dog_pose.actions[name]=frames
             else:self.liam.actions[name]=frames
         home.attach_routine_props(self)
@@ -34,7 +31,7 @@ class LiamBlocks:
         self.forget_selected=False;self._forced_accident=None;self._forced_forget=None
         self._contact_done=False;self.mode='build';self.index=0;self.release_requested=False
         self.box=next(e for e in home.entities if e['id']=='liam_block_box')
-        self.lip=home.room_art_image(self.pack['front_overlay'])
+        self.lip=home.image(self.pack['front_overlay'])
         self._sync_props()
 
     @property
@@ -93,10 +90,8 @@ class LiamBlocks:
         for block in self.blocks:
             block['prop']['position']=list(block['center']-block['anchor'])
             block['prop']['sort_y']=209 if block['state']=='placed' else block['center'].y+3
-        mask=sum(1 << i for i,b in enumerate(self.blocks) if b['state']=='box')
-        state=(f'contents_{mask:02d}' if self.box.get('content_state_prefix') else
-               str(sum(b['state']=='box' for b in self.blocks)))
-        if self.box['state']!=state:self.home.set_entity_state('liam_block_box',state)
+        count=sum(b['state']=='box' for b in self.blocks)
+        if self.box['state']!=str(count):self.home.set_entity_state('liam_block_box',str(count))
 
     def _state(self,name):
         self.state=name;self.state_ms=0;self._contact_done=False
@@ -105,7 +100,6 @@ class LiamBlocks:
 
     def _action(self,name,time=None):
         self.liam.action=name;self.liam.action_ms=self.state_ms if time is None else time;self.liam.moving=False
-        if name.endswith(('_left','_right')):self.liam.facing=name.rsplit('_',1)[-1]
 
     def _frame(self):
         spec=self.meta['actions'][self.liam.action];time=min(self.liam.action_ms,spec['duration_ms']-1)
@@ -308,28 +302,17 @@ class LiamBlocks:
                 self.release_requested=False
                 self.cooldown_ms=self._rng.randint(*self.config['cooldown_ms']);self._state('cooldown')
 
-    def draw_held(self,target,camera,*,behind=False):
+    def draw_held(self,target,camera):
         if self.held is None:return
-        # Rear travel carries behind the torso; front/side and authored reaches
-        # use their near-side hand. Never draw through Liam to advertise a toy.
-        rear=self.liam.action not in self.meta['actions'] and self.liam.facing=='back'
-        if behind!=rear:return
         if self.liam.action in self.meta['actions']:
             _,frame=self._frame();hand=pygame.Vector2(frame['hand_local'])
         else:
             # A small, fixed carry at chest height, changing sides with facing.
-            hand=pygame.Vector2({'left':(60,59),'right':(68,59),
-                                 'front':(64,60),'back':(64,59)}[self.liam.facing])
+            hand=pygame.Vector2(60 if self.liam.facing=='left' else 68,59)
         center=self.liam.position-pygame.Vector2(self.liam.draw_anchor)+hand
         target.blit(self.held['surface'],center-self.held['anchor']-pygame.Vector2(camera))
-        # This is a literal subset of every box state, registered to the real
-        # entity rather than a second guessed box origin. Repaint only if the
-        # held object actually crosses the near rim during a box reach.
-        origin=pygame.Vector2(self.box['position'])
-        held_rect=self.held['surface'].get_rect(topleft=center-self.held['anchor'])
-        lip_rect=self.lip.get_bounding_rect().move(origin)
-        if self.state in ('take','return_block') and held_rect.colliderect(lip_rect):
-            target.blit(self.lip,origin-pygame.Vector2(camera))
+        if self.state in ('take','return_block'):
+            target.blit(self.lip,pygame.Vector2(self.pack['box_position'])-pygame.Vector2(camera))
 
     def draw(self,target,camera,world):
         if self.state!='react' or world is not self.home:return

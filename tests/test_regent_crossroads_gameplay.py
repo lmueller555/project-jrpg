@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import copy
 from hashlib import sha256
-from rendering import scale as render_scale
 import json
 import math
 import os
@@ -437,8 +436,7 @@ class RegentCrossroadsGameplayTests(unittest.TestCase):
         self.assertEqual(effects[0], ((480, 320), pixels(self.g.canvas)))
         self.assertIsNone(scene.caption_layout)
         self.assertEqual(scene.caption_pages, [])
-        expected = pygame.Surface(self.g.ui_surface.get_size())
-        render_scale(self.g.canvas,expected.get_size(),expected)
+        expected = pygame.transform.scale(self.g.canvas, self.g.ui_surface.get_size())
         painter = self.g.ui.painter(expected)
         painter.button(scene.skip_rect, 'Skip')
         painter.text('Esc · Pause', (12, scene.skip_rect.centery),

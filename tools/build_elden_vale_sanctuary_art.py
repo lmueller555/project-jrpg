@@ -388,12 +388,6 @@ def exports():
 
 
 def build(check=False):
-    current=json.loads((ROOT/'assets/maps/elden_vale_sanctuary/map.json').read_text())
-    if 'reserve_hd' in current.get('art_integrations',{}):
-        import sys
-        if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
-        from tools.build_sanctuary_reserve_hd import build as build_hd
-        return build_hd(check)
     products=exports()
     for name,body in products.items():
         path=OUTPUT/name

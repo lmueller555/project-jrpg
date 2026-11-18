@@ -5,10 +5,6 @@ central seal, branching filigree, counter-rotating rings and successive glyphs.
 Camera rays project the same ground coordinates throughout the reveal.
 """
 from __future__ import annotations
-from dataclasses import replace
-from rendering import WorldCanvas
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 
 from collections import OrderedDict
 import json
@@ -37,7 +33,7 @@ class RuneSeal:
         self.size = min(512, image.get_width())
         ratio = self.size/image.get_width()
         if ratio != 1:
-            image = render_scale(image, (self.size, self.size))
+            image = pygame.transform.scale(image, (self.size, self.size))
         self.texture_center = np.array(self.metadata.get('center', [image.get_width()/2]*2), dtype=np.float32)*ratio
         self.art_radius = float(self.metadata.get('outer_radius_px', image.get_width()*.42))*ratio
         if not 0 < self.art_radius <= self.size/2:
@@ -183,15 +179,6 @@ class RuneSeal:
         return value
 
     def draw(self, canvas, camera, time, reduced=False):
-        if isinstance(canvas,WorldCanvas):
-            high_camera=replace(camera,focal=camera.focal*2,
-                                center=tuple(v*2 for v in camera.center))
-            self._draw_pixels(canvas.native,high_camera,time,reduced,False)
-            pygame.transform.scale(canvas.native,canvas.get_size(),canvas)
-            self._embers(canvas,camera,time,reduced)
-        else:self._draw_pixels(canvas,camera,time,reduced)
-
-    def _draw_pixels(self, canvas, camera, time, reduced=False, embers=True):
         if time<self.START+.015:return
         progress=max(0.,min(1.,(time-self.START)/self.DURATION))
         projected=self._projection(canvas,camera)
@@ -215,7 +202,7 @@ class RuneSeal:
         pygame.surfarray.pixels3d(projected_ink)[:]=ink[:,:,:3]
         pygame.surfarray.pixels_alpha(projected_ink)[:]=ink[:,:,3]
         canvas.blit(projected_ink,(x0,y0),special_flags=pygame.BLEND_PREMULTIPLIED)
-        if embers:self._embers(canvas,camera,time,reduced)
+        self._embers(canvas,camera,time,reduced)
 
     def _embers(self, canvas, camera, time, reduced):
         if reduced:return
@@ -231,5 +218,5 @@ class RuneSeal:
                    self.CENTER[2]+math.sin(angle)*radial)
             p=camera.project(point)
             if p is not None:
-                render_draw.circle(canvas,('#ff866b','#ffd0a0','#f84a61')[index%3],
+                pygame.draw.circle(canvas,('#ff866b','#ffd0a0','#f84a61')[index%3],
                                    (round(p[0]),round(p[1])),1+int(index%4==0))

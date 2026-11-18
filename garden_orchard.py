@@ -4,8 +4,6 @@ The small authored programs describe local work, not a day/night scheduler.
 Every portable object has exactly one derived location. Saves retain the current
 step, contact time and feet, so Continue never rewinds a carried object or cue.
 """
-from rendering import flip as render_flip
-from rendering import draw as render_draw
 from pathlib import Path
 import copy
 import math
@@ -98,16 +96,7 @@ class GardenWorker(FarmWorker):
    for pose in ('carry','carry_can','fill','water','weed','reach','sort','admire','rest'):
     self.frames[pose+'_'+direction]=[pygame.image.load(str(ART/f'{role}_{pose}_{direction}_{i}.png')).convert_alpha() for i in range(4 if pose in ('carry','carry_can') else 2)]
 
-  from regional_npc_art import for_actor
-  self.regional_roster=for_actor(self)
-  if self.regional_roster is not None:self.portrait_path=self.regional_roster.portrait_path
-  from regional_npc_activity import for_actor as native_activities
-  self.regional_activity=native_activities(self)
-  self.native_action_key=None;self.native_action_progress=None
-
  def sprite(self,elapsed_ms):
-  if self.pose=='idle' and self.regional_roster is not None:
-   return self.regional_roster.sprite(self.facing,self.moving,self.clock*1000)
   key=('walk' if self.moving else 'idle') if self.pose=='idle' else self.pose
   frames=self.frames[key+'_'+self.facing]
   if self.action_progress is not None:
@@ -145,8 +134,6 @@ class GardenOrchard:
  def _pose(self,a):
   if getattr(a,'wildlife_owned',False):return
   action=self.action(a.role)
-  a.native_action_key='lower' if action and action.get('lower') else None
-  a.native_action_progress=(self.state[a.role]['elapsed']/action['duration'] if action and action.get('duration') else None)
   a.action_progress=(self.state[a.role]['elapsed']/action['duration']
                      if action and action.get('kind') else None)
   a.draw_anchor=(20,44) if a.role=='picker' and (action is None or action.get('pose')=='rest') else (20,38)
@@ -230,14 +217,14 @@ class GardenOrchard:
   add('barrel',(-549,1191));add('basket',(-510,1192));add('basket',(-149,-254));add('basket',(-127,-254))
   for key,(p,z) in self.portable_positions().items():
    if key=='can' and self.actors[0].pose=='fill':
-    im=render_flip(self.art['can'],True,False)
+    im=pygame.transform.flip(self.art['can'],True,False)
     result.append((z,4,im,(round(p.x)-im.get_width()//2,round(p.y)-im.get_height())))
    else:add(key.split('_')[0],p,z)
   a=self.actors[0];action=self.action('gardener');s=self.state['gardener']
   if action and action.get('pour') and .5<s['elapsed']<1.8:
    # Small animated droplets connect the spout to the crop roots.
    stream=pygame.Surface((12,15),pygame.SRCALPHA)
-   for i in range(3):render_draw.line(stream,(126,169,174,210),(i*3,(int(s['elapsed']*18)+i*4)%10),(i*3+1,(int(s['elapsed']*18)+i*4)%10+2))
+   for i in range(3):pygame.draw.line(stream,(126,169,174,210),(i*3,(int(s['elapsed']*18)+i*4)%10),(i*3+1,(int(s['elapsed']*18)+i*4)%10+2))
    result.append((a.position.y+7,5,stream,(round(a.position.x)+17,round(a.position.y)-20)))
   return result
 

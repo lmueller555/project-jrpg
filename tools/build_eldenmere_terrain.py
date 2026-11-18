@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Export 24px grass/dirt materials, 47 blob tiles and a character-scale review."""
 
 import json
@@ -209,7 +205,7 @@ def build_scene(grass, fills, tiles, recipe):
     ]
     characters = []
     for name,path,x,y in sorted(placements,key=lambda p:p[3]):
-        image = open_image(ROOT/path).convert("RGBA")
+        image = Image.open(ROOT/path).convert("RGBA")
         foot = [x*SIZE+12,y*SIZE+20]
         position = [foot[0]-12,foot[1]-34]
         scene.alpha_composite(image,tuple(position))
@@ -230,7 +226,7 @@ def build():
     recipe = json.loads((SOURCE / "recipe.json").read_text())
     OUTPUT.mkdir(parents=True,exist_ok=True)
     (OUTPUT / "dirt").mkdir(exist_ok=True)
-    source = open_image(SOURCE / recipe["source"])
+    source = Image.open(SOURCE / recipe["source"])
     grass = [export_material(source,crop,recipe["palette"]["grass"],recipe["texture_border"],windows)
              for crop,windows in zip(recipe["grass_crops"],recipe["grass_texture_windows"],strict=True)]
     dirt_ramp = {name:color for name,color in recipe["palette"]["dirt"].items() if name!="edge"}

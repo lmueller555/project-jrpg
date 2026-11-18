@@ -4,8 +4,6 @@ These ambient exchanges never own a quest checkpoint or a durable reward. NPCs
 belong to the reserve scene, independently of the town's household actors.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 import json
 from pathlib import Path
@@ -13,7 +11,6 @@ from pathlib import Path
 import pygame
 
 from social import clear_sight, facing_toward
-from npc_roster_art import RosterArt
 
 
 ROOT = Path(__file__).resolve().parent
@@ -27,7 +24,6 @@ class ReserveVisitor:
     """An ordinary directional sprite with a small, visible ground footprint."""
     def __init__(self, record, world):
         self.data = dict(record)
-        self.world = world
         self.position = pygame.Vector2(record['position'])
         self.home_facing = record.get('facing', 'front')
         self.facing = self.home_facing
@@ -36,16 +32,9 @@ class ReserveVisitor:
         self.draw_anchor = (12, 30)
         self.moving = False
         self.conversation_ready = False
-        # Explicit per-role art opt-in, never a blanket variant replacement.
-        # In particular the reserve gardener keeps her existing action bank.
-        self.roster_art = RosterArt(world, record['roster_design']) if record.get('roster_design') else None
-        if self.roster_art is not None:
-            self.idles = self.roster_art.idles
-            self.draw_anchor = self.roster_art.draw_anchor
-        else:
-            base = 'assets/characters/npcs/'+record['variant']
-            self.idles = {direction:world.image(base+'/idle_'+direction+'.png')
-                          for direction in DIRECTIONS}
+        base = 'assets/characters/npcs/'+record['variant']
+        self.idles = {direction:world.image(base+'/idle_'+direction+'.png')
+                      for direction in DIRECTIONS}
 
     @property
     def blocker(self):
@@ -71,7 +60,7 @@ class ReserveCaretaker(ReserveVisitor):
         self.animation = json.loads((ROOT/base/'animations.json').read_text())
         self.bodies = {key:world.image(base+pose['body'])
                        for key,pose in self.animation['poses'].items()}
-        self.buckets = {key:getattr(world,'room_art_image',world.image)(base+pose['file'])
+        self.buckets = {key:world.image(base+pose['file'])
                         for key,pose in self.animation['buckets'].items()}
         self.draw_anchor = tuple(self.animation['draw_anchor'])
         self.clock = 0.
@@ -79,11 +68,11 @@ class ReserveCaretaker(ReserveVisitor):
         self._frames = {}
 
     def update(self, seconds):
-        if not self.conversation_ready and not getattr(self.world,'reduced_motion',False):
+        if not self.conversation_ready:
             self.clock = (self.clock+max(0., seconds)) % 18.
 
     def _pose(self):
-        if self.conversation_ready or getattr(self.world,'reduced_motion',False):
+        if self.conversation_ready:
             return 'idle_full.'+self.facing, {}
         # Long pauses keep this a small act of care rather than a frantic loop.
         time = self.clock-6.
@@ -106,7 +95,7 @@ class ReserveCaretaker(ReserveVisitor):
                   pose['grip']-pygame.Vector2(bucket['grip']))
         cache_key = (name, key)
         if cache_key not in self._frames:
-            surface = render_layer(self.animation['action_canvas'], pygame.SRCALPHA)
+            surface = pygame.Surface(self.animation['action_canvas'], pygame.SRCALPHA)
             if pose['order'] == 'before':surface.blit(self.buckets[key], offset)
             surface.blit(self.bodies[name], (0,0))
             if pose['order'] == 'after':surface.blit(self.buckets[key], offset)
@@ -125,8 +114,8 @@ class ReserveCaretaker(ReserveVisitor):
         middle = origin.lerp(self.root, .5);middle.y -= 2
         points = [tuple(round(value) for value in point-pygame.Vector2(camera))
                   for point in (origin,middle,self.root)]
-        render_draw.lines(target, '#7ba8ad', False, points, 2)
-        render_draw.lines(target, '#d4e7dc', False, points, 1)
+        pygame.draw.lines(target, '#7ba8ad', False, points, 2)
+        pygame.draw.lines(target, '#d4e7dc', False, points, 1)
         # The stream is drawn in world space, so a nearby root never gets
         # clipped at the edge of the gardener's fixed native action canvas.
 
@@ -191,11 +180,8 @@ class SanctuaryReserve:
             social.data['speakers'][record['id']] = {
                 'name':record['name'], 'portrait':portrait, 'actor_id':record['id']}
             if portrait not in social.portraits:
-                actor = self.actors[record['id']]
-                # Roster counterparts retain the approved legacy portrait identity.
-                path = (actor.roster_art.portrait_path if actor.roster_art is not None else
-                        'assets/portraits/eldenmere/'+portraits[portrait]['file'])
-                social.portraits[portrait] = world.image(path)
+                social.portraits[portrait] = world.image(
+                    'assets/portraits/eldenmere/'+portraits[portrait]['file'])
 
     def _release_conversation(self):
         for actor in self.actors.values():actor.end_conversation()
@@ -252,11 +238,6 @@ class SanctuaryReserve:
             if not clear_sight(game.world, game.player.position, sight):continue
             candidates.append((delta.length_squared(),key,target))
         return min(candidates, key=lambda item:item[:2])[1:] if candidates else None
-
-    def cue_conditions(self):
-        if not self._available():return set()
-        return {'reserve_inspect_'+key for key in self.targets
-                if key in ('boundary','survey','records','remembrance','cabinet')}
 
     def interaction_hint(self):
         nearby = self._nearby()

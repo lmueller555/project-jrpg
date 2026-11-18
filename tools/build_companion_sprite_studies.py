@@ -7,10 +7,6 @@ registration only. Optional source.json export overrides use whole-sheet pixel
 coordinates, so a tall staff need not determine a character's body scale.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 
 import argparse
 import colorsys
@@ -158,7 +154,7 @@ def build_actor(actor):
     recipe = json.loads(recipe_path.read_text()) if recipe_path.exists() else {}
     status = recipe.get('art_status', 'review')
     if status not in ('approved', 'review'):raise ValueError(f'Invalid artwork status: {actor}')
-    sheet = open_image(source).convert('RGBA')
+    sheet = Image.open(source).convert('RGBA')
     digest = hashlib.sha256(source.read_bytes()).hexdigest()
     records = {};frames = {}
     for kind, fmt in FORMATS.items():
@@ -169,7 +165,7 @@ def build_actor(actor):
             if existing.get('animation_set') == 'full_combat_review':
                 # The appearance study must not replace a complete animation set.
                 path = directory/existing['image']
-                frames[kind] = open_image(path).convert('RGBA')
+                frames[kind] = Image.open(path).convert('RGBA')
                 records[kind] = {'image': path.relative_to(ROOT).as_posix(),
                     'status': existing['status'],
                     'metadata': existing_path.relative_to(ROOT).as_posix(),
@@ -244,7 +240,7 @@ def scale_board(frames, actors, records):
     for row, (kind, (path, anchor, factor)) in enumerate(references.items()):
         top = 62+row*320;baseline=top+260
         draw.text((24, top), kind.title(), font=font(21), fill=INK)
-        entries = [('Caelan reference', open_image(path).convert('RGBA'), anchor)]
+        entries = [('Caelan reference', Image.open(path).convert('RGBA'), anchor)]
         entries += [(ACTORS[a], frames[a][kind], records[a][kind]['anchor']) for a in actors]
         for col, (name, frame, foot) in enumerate(entries):
             left=col*400

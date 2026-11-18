@@ -1,45 +1,20 @@
 # Project JRPG
 
-Explore Eldenmere and the surrounding Elden Vale as Caelan by running `main.py`.
-The current game uses a 24×24 logical terrain grid, predominantly legacy-sized
-character art and selected detailed actors such as Iselin, with live movement,
-collision, a following camera and animated scenery. The retained story and
-asset tooling are documented below.
+Explore Eldenmere and the surrounding Elden Vale as Caelan by running `main.py`. The game uses 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
 
 Eldenmere, the Sanctuary reserve and the upstream mill area use the approved
-[emerald grass terrain pack](docs/TERRAIN_ART_STANDARD.md#shared-emerald-grass-in-production): varied lawn, meadow and
+[emerald grass terrain pack](docs/GRASS_TERRAIN.md): varied lawn, meadow and
 woodland ground, with leg-height grass that parts around travelling characters.
-The separate [playable material study](docs/TERRAIN_ART_STANDARD.md#18-playable-grass-demonstration) remains available with
+The separate [playable material study](docs/GRASS_DEMO.md) remains available with
 `python tools/preview_grass.py` and uses no journey or settings file.
 
-World, region, zone and environmental scene design follow the
-[World and Environment Design Standard](docs/WORLD_DESIGN_STANDARD.md).
-It centralizes creative principles and the place-design brief for memorable
-identities, inhabited landscapes, weather and unusual phenomena, ruins,
-enormous creature remains, folklore and exploration. Regional lore retains
-established facts; the standard's illustrative concepts are proposals rather
-than new canon.
-
-All game artwork and its rendering follow the
-[global visual art standard](docs/VISUAL_ART_STANDARD.md), the
-single guide for appearance, sizing, density, rendering, animation, exports and
-review. The approved rebuild uses two artwork pixels per logical world unit
-while preserving existing on-screen proportions. The full-world
-960×640 render target retains the 480×320 logical view. Shared rendering is
-implemented; Sanctuary hall, bedroom and dining now use migrated environment banks.
-Remaining asset banks are migrated individually. The guide includes current implementation
-status, the full animation workflow and migration acceptance criteria.
-Terrain creation and pack maintenance use the
-[consolidated terrain standard](docs/TERRAIN_ART_STANDARD.md).
+Character sprites and animation follow the
+[global sprite and animation standard](docs/SPRITE_ANIMATION_STANDARD.md), the
+single authoring guide for appearance, walks, registration, exports and review.
 Object interactions also follow the
 [interaction standard](docs/OBJECT_INTERACTION_STANDARD.md) and
 [prop policy](docs/PERSONAL_PROPS.md). Contributor instructions are in
 [AGENTS.md](AGENTS.md).
-
-Eldenmere's interiors include a working mill and a real upstairs inn guest floor,
-connected by reciprocal stairs. The existing downstairs guest-bed recovery and
-shop transactions are unchanged. See the [interior architecture review](docs/reviews/eldenmere_interior_architecture/README.md)
-for native before/after captures, movement, Save/Continue and preservation checks.
 
 Save Game and Load Game now provide ten manual slots and three autosave
 generations per journey. Scene entry and completed battles trigger autosaves;
@@ -73,8 +48,7 @@ The game launches fullscreen at the desktop display size. Press **F11** to
 switch to a resizable 960×640 window and back; your window size is remembered
 for that session. Use `python main.py --windowed` to launch directly in a window.
 Headless verification stays windowed for consistent screenshots. The internal
-480×320 logical world view is composed on a complete 960×640 native surface,
-with crisp scaling and centered borders where
+480×320 world canvas keeps crisp integer scaling and centered borders where
 needed to preserve the pixel art's proportions. Interface text is rendered
 separately at display resolution with the bundled Atkinson Hyperlegible fonts,
 so letters have smooth, readable edges instead of enlarged bitmap shapes.
@@ -164,37 +138,20 @@ duplicating rewards. The Music slider controls the soundtrack independently of e
 
 The resizable window uses crisp integer pixel scaling. Explore the full approved 64×56-tile layout, both brook bridges, the sanctuary and eastern terrace stairs, all six cottages, the watermill, workshop and commons. Buildings, water, terrace walls and solid props block movement; roofs, trees and bridge rails draw at the appropriate depth. Water, the mill wheel, chimney smoke, lanterns and existing vegetation animate.
 
-The commons contains a roofed stone well, a rounded dirt-and-stone square and a southern path connection. Its rebuilt native-density artwork uses separate depth layers, shaped shaft/water masks and subtle water glints, while retaining the existing solid footprint and walkable square. See the [live well integration and in-game evidence](docs/reviews/well_live/README.md).
+The commons now contains a roofed stone well, a rounded dirt-and-stone square and a southern path connection. The well has solid collision, roof occlusion and subtle water glints; the map labels this area **Well square**. The [updated town layout and in-game previews](docs/reviews/eldenmere_well/README.md) are approved by the user.
 
 **Building doors open automatically when you approach.** They stay open nearby and close as you move away. Walk into an open doorway to enter; walk down through the interior's entrance threshold to return outside. No action key is required. The sanctuary hall also connects to Caelan's bedroom and the dining room through its northern doors.
 
 All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors.
 
-The build-time [Eldenmere settlement framework](docs/TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework)
-catalogues native dressing candidates and reserves current travel/work/story
-spaces before later composition passes. Its first delivery activates no new
-scenery or terrain. [Preservation captures and the protection plan](docs/reviews/eldenmere_settlement_framework/README.md)
-record the unchanged production town.
-
 The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
-The [regional HD foundation](docs/OVERWORLD.md#integrated-hd-foundation) now selects
-native terrain and scenery through an explicit adapted registry while retaining
-the region's logical scale, routes, entrances and work stations. Six area records
-and nonblocking causeway/antler reservations prepare later landscape work.
-[Current gameplay captures](docs/reviews/elden_vale_hd_integration/README.md) show
-this integration; the earlier region previews remain historical comparisons.
-The Pale Antlers, causeway structures, Rising Rain and final atlas updates are
-not yet active in gameplay.
-
 The sanctuary miniature opens into the [Elden Vale Sanctuary reserve](docs/SANCTUARY_RESERVE.md).
-Creative direction for the region and approach is consolidated in
-[Elden Vale — Regional Design Guidance](docs/world/regions/ELDEN_VALE.md), including
-the approved Pale Antlers, Rising Rain and nonblocking landmark placement.
-Those additions await implementation. The currently playable reserve, hall and
-relief room use the native bank described in the
-[terrain integration reference](docs/TERRAIN_ART_STANDARD.md#integrated-elden-vale-sanctuary-reserve)
-and [current review](docs/reviews/sanctuary_reserve_hd/README.md). Press E at
+Its [fantasy asset expansion](docs/SANCTUARY_FANTASY.md) adds a multicolored crystal
+ridge, a silver-green memorial tree, carved limestone architecture and a quiet
+reflecting spring at the same native pixel and character scale as Eldenmere.
+The [production review](docs/reviews/sanctuary_fantasy/README.md) shows ordinary
+travel, exploration, landmark depth, hall access and reduced motion. Press E at
 the cave apron to enter the [Sanctuary crystal cave](docs/SANCTUARY_CAVE.md):
 one continuous limestone dungeon with two exploration loops, six persistent
 treasure caches and tiny wall crystals whose pulses illuminate rock, water and
@@ -232,14 +189,7 @@ Mother Serene now follows one continuous sanctuary schedule. She sorts the house
 
 Mira now works at the bench outside her shop: she inspects a fitting, makes three wrench strokes, tests it by hand and rests. Her [enlarged looping preview](docs/reviews/mira_bench/bench_closeup.gif) is approved by the user. She has foot collision and draws at the appropriate depth; the shop entrance remains clear.
 
-The chestnut-haired gardener in the sage dress uses her current HD roster artwork throughout the commons-well routine. She attaches one canonical pail at the reachable loading station, walks around to the crank, lowers and fills it, raises it and returns to retrieve it. One mechanism clock controls crank rotation, rope length, water and ownership; blocked approaches hold the operation until she arrives. She waters four flower patches and both window troughs, consuming one unit per target, then deposits the empty pail and rests for a randomly chosen 3–5 minutes. Her work continues during ordinary indoor visits and freezes with menus or focus loss. New Game and Continue restore a coherent ambient rest checkpoint without changing the save format. The [live integration review](docs/reviews/well_live/README.md) records actual-game captures, validation and presentation limits; older well reviews remain historical evidence.
-
-Face the well's reachable rim and press **E** to examine it. Brief descriptions
-reflect idle work, active drawing and a full attached pail. Reading holds the
-gardener's current action until the examination closes. Crank, hook and water
-sounds stay close to the well: their volume drops steeply beyond 32 logical
-pixels and reaches silence at 80. Garden pours use the same short radius around
-the pail. Effects volume, menus, focus loss and scene changes apply to these sounds.
+The auburn-haired gardener in the sage dress draws water from the commons well using her own pail. At the near side, she turns away and raises the pail behind her torso while only a three-pixel iron hook hangs beneath the windlass. The concealed pail then snaps to a fully visible parked position directly beneath the spindle and settles by one pixel. It descends with the rope, disappears progressively behind the front rim, fills, and returns visibly to the same top position. During retrieval it snaps behind her torso before emerging at her side. She waters four flower patches and both window troughs, then rests for a randomly chosen 3–5 minutes. She yields to Caelan, takes safe detours where possible and keeps her work/rest and well progress while you visit interiors. The [new enlarged loop and full routine](docs/reviews/gardener_top_winch_bucket/README.md) are approved; earlier versions remain historical review records. Other villagers and quests remain future work.
 
 **Dialogue happens in the running world.** Walk close while
 facing Mother Serene in the sanctuary hall or dining room. She safely sets down her work,
@@ -555,13 +505,13 @@ The [sage/green-eye](assets/characters/npcs/female_02/README.md) and [plum/hazel
 
 ## New terrain art
 
-The first [Eldenmere grass/dirt pack](docs/TERRAIN_ART_STANDARD.md#earlier-grassdirt-foundation) is approved at 24×24 pixels per tile. It contains four grass variations, a transparent 47-tile dirt blob atlas and three dirt interiors. The [character-scale review](assets/terrain/eldenmere/grass_dirt/review_scene.png), [complete blob atlas](assets/terrain/eldenmere/grass_dirt/blob_47_review.png) and [material samples](assets/terrain/eldenmere/grass_dirt/materials_review.png) show the approved fresh-green upland-village style. The scene is an art test rather than a canonical town map. Approved irrigation channels, stone terraces, an animated gate, a wooden bridge and a watermill extend this historical foundation. Current terrain-authoring guidance and existing-pack facts are maintained in the consolidated terrain standard.
+The first [Eldenmere grass/dirt pack](assets/terrain/eldenmere/grass_dirt/README.md) is approved at 24×24 pixels per tile. It contains four grass variations, a transparent 47-tile dirt blob atlas and three dirt interiors. The [character-scale review](assets/terrain/eldenmere/grass_dirt/review_scene.png), [complete blob atlas](assets/terrain/eldenmere/grass_dirt/blob_47_review.png) and [material samples](assets/terrain/eldenmere/grass_dirt/materials_review.png) show the approved fresh-green upland-village style. The scene is an art test rather than a canonical town map. Approved irrigation channels, stone terraces, an animated gate, a wooden bridge and a watermill extend this foundation; other village assets remain future work.
 
-The first [animated stream-and-bank milestone](docs/TERRAIN_ART_STANDARD.md#existing-stream-and-banks) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/stream/review_scene.gif), [water-cycle close-up](assets/terrain/eldenmere/stream/water_cycle_review.gif) and [47-bank atlas](assets/terrain/eldenmere/stream/bank_47_review.png) use 24×24 tiles beside the approved ground and 24×36 characters. Six 200 ms phases animate local ripples while banks stay fixed; two surface variations share the same clock. These retained captures record the earlier stream milestone; current creation guidance is in the consolidated terrain standard.
+The first [animated stream-and-bank milestone](assets/terrain/eldenmere/stream/README.md) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/stream/review_scene.gif), [water-cycle close-up](assets/terrain/eldenmere/stream/water_cycle_review.gif) and [47-bank atlas](assets/terrain/eldenmere/stream/bank_47_review.png) use 24×24 tiles beside the approved ground and 24×36 characters. Six 200 ms phases animate local ripples while banks stay fixed; two surface variations share the same clock. This milestone establishes the water style before irrigation modules, terraces and working village props.
 
-The [irrigation-channel milestone](docs/TERRAIN_ART_STANDARD.md#existing-irrigation-channels) is approved following user review. The [updated looping scene](assets/terrain/eldenmere/irrigation/review_scene.gif), [channel close-up](assets/terrain/eldenmere/irrigation/channels_closeup.gif) and [animated module board](assets/terrain/eldenmere/irrigation/modules_review.gif) show earth-lined 24×24 straights, bends, splits, stream inlets and trickling outlets. Directed currents use the approved water palette and six-frame timing; the channel walls stay fixed. The review extends the previous scene and preserves the existing approved assets.
+The [irrigation-channel milestone](assets/terrain/eldenmere/irrigation/README.md) is approved following user review. The [updated looping scene](assets/terrain/eldenmere/irrigation/review_scene.gif), [channel close-up](assets/terrain/eldenmere/irrigation/channels_closeup.gif) and [animated module board](assets/terrain/eldenmere/irrigation/modules_review.gif) show earth-lined 24×24 straights, bends, splits, stream inlets and trickling outlets. Directed currents use the approved water palette and six-frame timing; the channel walls stay fixed. The review extends the previous scene and preserves the existing approved assets.
 
-The [stone terrace, steps and spillway milestone](docs/TERRAIN_ART_STANDARD.md#existing-terraces-stairs-and-spillway) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/terraces/review_scene.gif), [enlarged terrace close-up](assets/terrain/eldenmere/terraces/terrace_closeup.gif) and [module board](assets/terrain/eldenmere/terraces/modules_review.gif) show warm fieldstone, a 24-pixel wall face, a four-tread 48×48 staircase and a six-phase spillway connecting the upper and lower irrigation. Stone stays fixed; falling highlights, impact flecks and ripples animate with the existing water clock. Characters on both levels establish scale.
+The [stone terrace, steps and spillway milestone](assets/terrain/eldenmere/terraces/README.md) is approved following user review. Its [updated looping scene](assets/terrain/eldenmere/terraces/review_scene.gif), [enlarged terrace close-up](assets/terrain/eldenmere/terraces/terrace_closeup.gif) and [module board](assets/terrain/eldenmere/terraces/modules_review.gif) show warm fieldstone, a 24-pixel wall face, a four-tread 48×48 staircase and a six-phase spillway connecting the upper and lower irrigation. Stone stays fixed; falling highlights, impact flecks and ripples animate with the existing water clock. Characters on both levels establish scale.
 
 The [irrigation gate](assets/terrain/eldenmere/gate/README.md) is approved following user review. Its [updated scene](assets/terrain/eldenmere/gate/review_scene.gif), [gate close-up](assets/terrain/eldenmere/gate/gate_closeup.gif) and [open/closed/jammed comparison](assets/terrain/eldenmere/gate/states_review.gif) show a small hand-lifted wooden sluice on the existing eight-pixel channel. Seven animations cover idle states, opening/closing and pin repair; delayed downstream art demonstrates restricted, stopped and restored flow. The new gate sits on the upper level, with the existing southern spillway carrying water down. The earlier terrace layout and asset files remain unchanged.
 

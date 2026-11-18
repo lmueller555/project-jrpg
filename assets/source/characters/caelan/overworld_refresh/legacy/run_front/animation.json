@@ -1,0 +1,377 @@
+{
+  "character": "caelan",
+  "animation": "run.front",
+  "status": "approved",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "image": "spritesheet.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 100,
+      "airborne": false,
+      "phase": "contact_a",
+      "layer_order": [
+        "rear_arm",
+        "right_leg",
+        "left_leg",
+        "torso",
+        "forward_arm",
+        "head"
+      ],
+      "joints": {
+        "legs": {
+          "left": [
+            [
+              10,
+              26
+            ],
+            [
+              9,
+              30
+            ],
+            [
+              8,
+              32
+            ],
+            [
+              8,
+              34
+            ]
+          ],
+          "right": [
+            [
+              14,
+              26
+            ],
+            [
+              15,
+              28
+            ],
+            [
+              15,
+              26
+            ],
+            [
+              14,
+              27
+            ]
+          ]
+        },
+        "arms": {
+          "left": [
+            [
+              7,
+              17
+            ],
+            [
+              5,
+              21
+            ],
+            [
+              6,
+              23
+            ]
+          ],
+          "right": [
+            [
+              16,
+              17
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              15,
+              17
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 100,
+      "airborne": true,
+      "phase": "flight_a",
+      "layer_order": [
+        "rear_arm",
+        "right_leg",
+        "left_leg",
+        "torso",
+        "forward_arm",
+        "head"
+      ],
+      "joints": {
+        "legs": {
+          "left": [
+            [
+              10,
+              24
+            ],
+            [
+              9,
+              26
+            ],
+            [
+              10,
+              29
+            ],
+            [
+              10,
+              30
+            ]
+          ],
+          "right": [
+            [
+              14,
+              24
+            ],
+            [
+              15,
+              27
+            ],
+            [
+              15,
+              30
+            ],
+            [
+              15,
+              31
+            ]
+          ]
+        },
+        "arms": {
+          "left": [
+            [
+              7,
+              15
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              8,
+              19
+            ]
+          ],
+          "right": [
+            [
+              16,
+              15
+            ],
+            [
+              18,
+              18
+            ],
+            [
+              15,
+              16
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 100,
+      "airborne": false,
+      "phase": "contact_b",
+      "layer_order": [
+        "rear_arm",
+        "right_leg",
+        "left_leg",
+        "torso",
+        "forward_arm",
+        "head"
+      ],
+      "joints": {
+        "legs": {
+          "left": [
+            [
+              10,
+              26
+            ],
+            [
+              9,
+              28
+            ],
+            [
+              9,
+              26
+            ],
+            [
+              10,
+              27
+            ]
+          ],
+          "right": [
+            [
+              14,
+              26
+            ],
+            [
+              15,
+              30
+            ],
+            [
+              16,
+              32
+            ],
+            [
+              16,
+              34
+            ]
+          ]
+        },
+        "arms": {
+          "left": [
+            [
+              7,
+              17
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              8,
+              17
+            ]
+          ],
+          "right": [
+            [
+              16,
+              17
+            ],
+            [
+              18,
+              21
+            ],
+            [
+              17,
+              23
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 100,
+      "airborne": true,
+      "phase": "flight_b",
+      "layer_order": [
+        "rear_arm",
+        "right_leg",
+        "left_leg",
+        "torso",
+        "forward_arm",
+        "head"
+      ],
+      "joints": {
+        "legs": {
+          "left": [
+            [
+              10,
+              24
+            ],
+            [
+              9,
+              27
+            ],
+            [
+              9,
+              30
+            ],
+            [
+              9,
+              31
+            ]
+          ],
+          "right": [
+            [
+              14,
+              24
+            ],
+            [
+              15,
+              26
+            ],
+            [
+              14,
+              29
+            ],
+            [
+              14,
+              30
+            ]
+          ]
+        },
+        "arms": {
+          "left": [
+            [
+              7,
+              15
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              8,
+              16
+            ]
+          ],
+          "right": [
+            [
+              16,
+              15
+            ],
+            [
+              18,
+              18
+            ],
+            [
+              15,
+              19
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

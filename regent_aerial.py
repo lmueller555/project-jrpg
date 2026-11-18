@@ -5,8 +5,6 @@ projection keeps the gate and arriving party registered during the descent;
 no camera, bird or simulation clock advances from drawing a frame.
 """
 from __future__ import annotations
-from rendering import WorldCanvas, record_art, rotate as render_rotate
-from rendering import scale as render_scale
 
 import json
 import math
@@ -105,15 +103,9 @@ class RegentAerial:
         self._canopy_cache = None
         yy,xx = np.mgrid[0:SIZE[1],0:SIZE[0]]
         self.grid = np.stack((xx.ravel(),yy.ravel(),np.ones(xx.size)))
-        yy2,xx2=np.mgrid[0:SIZE[1]*2,0:SIZE[0]*2]
-        self.render_grid=np.stack((xx2.ravel()/2,yy2.ravel()/2,np.ones(xx2.size)))
-        self.render_layer=pygame.Surface((SIZE[0]*2,SIZE[1]*2))
-        self.render_alpha_layer=pygame.Surface((SIZE[0]*2,SIZE[1]*2),pygame.SRCALPHA)
-        self.layer = WorldCanvas(SIZE)
-        self.alpha_layer = WorldCanvas(SIZE,pygame.SRCALPHA)
-        self.legacy_layer=pygame.Surface(SIZE)
-        self.legacy_alpha_layer=pygame.Surface(SIZE,pygame.SRCALPHA)
-        self.ground = WorldCanvas(SIZE)
+        self.layer = pygame.Surface(SIZE)
+        self.alpha_layer = pygame.Surface(SIZE,pygame.SRCALPHA)
+        self.ground = pygame.Surface(SIZE)
 
     @staticmethod
     def _bird_path(seconds):
@@ -282,17 +274,15 @@ class RegentAerial:
             if key not in self.manifest:continue
             item=self.manifest[key]
             image=pygame.image.load(str(path.parent/item['file'])).convert()
-            self.planes[key]={'image':image,'pixels':pygame.surfarray.array3d(image),
-                             'artwork_pixels_per_world_pixel':self.manifest.get('artwork_pixels_per_world_pixel',1),**item}
+            self.planes[key]={'image':image,'pixels':pygame.surfarray.array3d(image),**item}
         path=ASSETS/'actors/manifest.json'
         actors=json.loads(path.read_text())['actors']
         for key,name in actors.items():
             source=path.parent/name;data=json.loads(source.read_text());folder=source.parent
-            poses={p:record_art(pygame.image.load(str(folder/f)).convert_alpha(),data) for p,f in data['poses'].items()}
-            loops={p:[(record_art(pygame.image.load(str(folder/f['file'])).convert_alpha(),data),f['duration_ms']/1000)
+            poses={p:pygame.image.load(str(folder/f)).convert_alpha() for p,f in data['poses'].items()}
+            loops={p:[(pygame.image.load(str(folder/f['file'])).convert_alpha(),f['duration_ms']/1000)
                       for f in seq] for p,seq in data.get('loops',{}).items()}
-            self.actors[key]={**data,'anchor':[v/data.get('artwork_pixels_per_world_pixel',1) for v in data['anchor']],
-                              'poses':poses,'loops':loops}
+            self.actors[key]={**data,'poses':poses,'loops':loops}
 
     @staticmethod
     def _texture_matrix(plane,world_matrix):
@@ -301,23 +291,7 @@ class RegentAerial:
         return world_matrix@pixel_to_world
 
     def _warp(self,plane,matrix,background=None,feather=False,feather_radius=100):
-        density=plane.get('artwork_pixels_per_world_pixel',1)
-        if type(density) not in (int,float) or density not in (1,2):
-            raise ValueError('Landscape artwork density must be 1 or 2')
-        if density==1:
-            return self._warp_pixels(plane,matrix,self.grid,SIZE,self.legacy_layer,
-                                     self.legacy_alpha_layer,feather,feather_radius)
-        result=self.alpha_layer if feather else self.layer
-        high=self._warp_pixels(plane,matrix,self.render_grid,(SIZE[0]*2,SIZE[1]*2),
-                              self.render_layer,self.render_alpha_layer,feather,feather_radius*density)
-        # The native projection is authoritative; derive its compatibility
-        # mirror rather than project the same landscape a second time.
-        pygame.transform.scale(high,SIZE,result)
-        result.native=high
-        return result
-
-    def _warp_pixels(self,plane,matrix,grid,size,layer,alpha_layer,feather=False,feather_radius=100):
-        inverse=np.linalg.inv(matrix);coords=inverse@grid
+        inverse=np.linalg.inv(matrix);coords=inverse@self.grid
         valid=np.abs(coords[2])>1e-8
         denominator=np.where(valid,coords[2],1.)
         xs=np.nan_to_num(coords[0]/denominator,nan=-1e6,posinf=1e6,neginf=-1e6)
@@ -332,12 +306,12 @@ class RegentAerial:
             alpha[~valid]=0
             if 'alpha' in plane:
                 alpha*=plane['alpha'][np.clip(x,0,pixels.shape[0]-1),np.clip(y,0,pixels.shape[1]-1)]/255
-            pygame.surfarray.blit_array(alpha_layer,rgb.reshape(size[1],size[0],3).transpose(1,0,2))
-            target=pygame.surfarray.pixels_alpha(alpha_layer)
-            target[:]=alpha.reshape(size[1],size[0]).T.astype(np.uint8);del target
-            return alpha_layer
-        pygame.surfarray.blit_array(layer,rgb.reshape(size[1],size[0],3).transpose(1,0,2))
-        return layer
+            pygame.surfarray.blit_array(self.alpha_layer,rgb.reshape(SIZE[1],SIZE[0],3).transpose(1,0,2))
+            target=pygame.surfarray.pixels_alpha(self.alpha_layer)
+            target[:]=alpha.reshape(SIZE[1],SIZE[0]).T.astype(np.uint8);del target
+            return self.alpha_layer
+        pygame.surfarray.blit_array(self.layer,rgb.reshape(SIZE[1],SIZE[0],3).transpose(1,0,2))
+        return self.layer
 
     @staticmethod
     def ground_viewport(t):
@@ -356,14 +330,14 @@ class RegentAerial:
         if size is not None:
             box=image.get_bounding_rect();factor=np.asarray(size)/[max(1,box.width),max(1,box.height)]
         anchor=np.asarray(data['anchor'])*factor
-        image=render_scale(image,(max(1,round(image.get_width()*factor[0])),max(1,round(image.get_height()*factor[1]))))
+        image=pygame.transform.scale(image,(max(1,round(image.get_width()*factor[0])),max(1,round(image.get_height()*factor[1]))))
         if angle:
             # Rotate the registered contact, not just the transparent canvas.
             # The wagon's rear-wheel anchor is deliberately below its center.
             offset=np.asarray(image.get_rect().center)-anchor
             radians=math.radians(angle);c,s=math.cos(radians),math.sin(radians)
             center=np.asarray(point)+np.array(((c,s),(-s,c)))@offset
-            image=render_rotate(image,angle)
+            image=pygame.transform.rotate(image,angle)
             rect=image.get_rect(center=(round(center[0]),round(center[1])))
         else:rect=image.get_rect(topleft=(round(point[0]-anchor[0]),round(point[1]-anchor[1])))
         canvas.blit(image,rect)
@@ -377,7 +351,7 @@ class RegentAerial:
         source=pygame.image.load(str(path.parent/spec['file']))
         x,y,w,h=spec['coverage_rect'];factor=max(600/w,400/h,.8)
         if factor>4:raise ValueError('Canopy opaque area is too small for a bounded foreground pass')
-        image=render_scale(source,(round(source.get_width()*factor),round(source.get_height()*factor)))
+        image=pygame.transform.scale(source,(round(source.get_width()*factor),round(source.get_height()*factor)))
         self.canopy={'image':image,'anchor':((x+w/2)*factor,(y+h/2)*factor)}
 
     def _canopy_frame(self,t):
@@ -402,9 +376,9 @@ class RegentAerial:
         east=self._project_world((29.6,96),snapshot['view'])
         width=max(1,round(math.dist(west,east)))
         source=self.owner.scenery['gate']['gate_leaf']['image']
-        image=render_scale(source,(width,2))
+        image=pygame.transform.scale(source,(width,2))
         angle=-math.degrees(math.atan2(east[1]-west[1],east[0]-west[0]))
-        image=render_rotate(image,angle)
+        image=pygame.transform.rotate(image,angle)
         canvas.blit(image,image.get_rect(center=(round((west[0]+east[0])/2),round((west[1]+east[1])/2-1))))
 
     def draw(self,canvas,seconds,draw_ground,reduced_motion=False):

@@ -4,10 +4,6 @@ The reviewed native art functions are reused so promotion cannot subtly change
 the approved pixels. Original source packs and the review prototype stay intact.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -40,7 +36,7 @@ def remap_green(image, replacements):
 def products():
     recipe = json.loads(SOURCE.read_text())
     for source in recipe['sources']:
-        if reference_digest((ROOT/source['path'])) != source['sha256']:
+        if sha256((ROOT/source['path']).read_bytes()).hexdigest() != source['sha256']:
             raise ValueError('Grass source reference changed: '+source['path'])
     palette = recipe['palette']
     output = {}
@@ -55,7 +51,7 @@ def products():
         return (OUTPUT/relative).relative_to(ROOT).as_posix()
 
     # Historical scale references retain the original approved figure.
-    hero = open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+    hero = Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     bounds = hero.getchannel('A').getbbox()
     character_height = bounds[3]-bounds[1]
     if recipe['opaque_height_limit'] != (character_height+1)//2:
@@ -67,7 +63,7 @@ def products():
             'frame_size', 'anchor', 'contact_rect', 'height_limits', 'opaque_height_limit')},
         'flowers': {}, 'dirt_transitions': {},
         'source_recipe': SOURCE.relative_to(ROOT).as_posix(),
-        'source_recipe_sha256': reference_digest(SOURCE),
+        'source_recipe_sha256': sha256(SOURCE.read_bytes()).hexdigest(),
         'source_assets': recipe['sources'], 'approval_reference': recipe['approval_reference']}
     manifest['tall_grass'].update(reference_character_visible_height=character_height,
                                   variants={})
@@ -111,17 +107,17 @@ def products():
     manifest['dirt_transitions']['tiles'] = [
         {'mask': record['mask'], 'image': export(
             f"dirt/mask_{record['mask']:03}.png", remap_green(
-                open_image(dirt_source.parent/record['image']), recipe['legacy_green_remap']))}
+                Image.open(dirt_source.parent/record['image']), recipe['legacy_green_remap']))}
         for record in dirt['tiles']]
     manifest['dirt_transitions']['interiors'] = [
-        export(f'dirt_fill_{index:02}.png', open_image(dirt_source.parent/path))
+        export(f'dirt_fill_{index:02}.png', Image.open(dirt_source.parent/path))
         for index, path in enumerate(dirt['dirt_interiors']['images'])]
     for name in recipe['flowers']:
         folder = ROOT/recipe['legacy_flower_root']/name
         plant = json.loads((folder/'plant.json').read_text())
         for path in sorted(folder.rglob('*.png')):
             export(f'flowers/{name}/{path.relative_to(folder).as_posix()}',
-                   remap_green(open_image(path), recipe['legacy_green_remap']))
+                   remap_green(Image.open(path), recipe['legacy_green_remap']))
         plant.update(id=f'terrain.grass.{name}.24', status=recipe['status'],
                      recipe=SOURCE.relative_to(ROOT).as_posix(),
                      source_metadata=(folder/'plant.json').relative_to(ROOT).as_posix())

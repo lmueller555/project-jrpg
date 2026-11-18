@@ -1,7 +1,0 @@
-/workspace/scratch/97954a4a5021/venn-qa/tests/test_venn_magicks.py:123: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
-  visible=[p for p in effect.getdata() if p[3]]
-.
-----------------------------------------------------------------------
-Ran 1 test in 1.269s
-
-OK

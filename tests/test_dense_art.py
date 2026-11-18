@@ -3,7 +3,6 @@ os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 import unittest
 import pygame
 from dense_art import WorldCanvas
-from rendering import draw as render_draw
 
 
 class DenseArtTests(unittest.TestCase):
@@ -49,7 +48,7 @@ class DenseArtTests(unittest.TestCase):
     def test_direct_primitive_after_actor_remains_visible(self):
         canvas=WorldCanvas((8,8));canvas.fill('black')
         art=pygame.Surface((4,4));art.fill('red');canvas.blit_art(art,(2,2))
-        render_draw.rect(canvas,'green',(2,2,1,1))
+        pygame.draw.rect(canvas,'green',(2,2,1,1))
         target=pygame.transform.scale(canvas,(16,16));canvas.present_detail(target)
         self.assertEqual(target.get_at((4,4)),pygame.Color('green'))
         self.assertEqual(target.get_at((6,6)),pygame.Color('red'))

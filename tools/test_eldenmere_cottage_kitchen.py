@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Verify kitchen native exports, accessible placement and unchanged ambient clocks."""
 import json
 from pathlib import Path
@@ -21,7 +17,7 @@ def load(path):return json.loads(path.read_text())
 
 
 def opened(path):
-    with open_image(path) as image:return image.convert('RGBA')
+    with Image.open(path) as image:return image.convert('RGBA')
 
 
 class CottageKitchenTests(unittest.TestCase):
@@ -85,7 +81,7 @@ class CottageKitchenTests(unittest.TestCase):
 
     def test_preview_gif_lossless_nearest_enlargement_and_complete_loop(self):
         tick=0
-        with open_image(PACK/'room_review.gif') as gif:
+        with Image.open(PACK/'room_review.gif') as gif:
             self.assertEqual(gif.info['loop'],0);self.assertEqual(gif.size,(1152,1152))
             for index in range(gif.n_frames):
                 gif.seek(index);duration=gif.info['duration'];self.assertEqual(duration%300,0)

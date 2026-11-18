@@ -1,12 +1,10 @@
 # Liam and his parents — retained front-idle source
 
 **Existing asset / legacy construction reference.** New or revised artwork
-follows the [global visual art standard](../../../../docs/VISUAL_ART_STANDARD.md).
+follows the [global sprite and animation standard](../../../../docs/SPRITE_ANIMATION_STANDARD.md).
 Part, mask, layer and registration recipes below document this pack's existing
 implementation and reproduction, not the authoring method for new animations.
 Approval records and original review evidence are retained.
-For new or revised runs, use the [running section](../../../../docs/VISUAL_ART_STANDARD.md#running-animations);
-its sixteen-frame biped example is Caelan-specific, and other species need their own support pattern.
 
 `front_idle_concepts.png` retains the generated family appearance plate, ordered
 mother, Liam, father. It supplies the new character designs, separate from the

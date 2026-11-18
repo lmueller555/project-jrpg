@@ -5,10 +5,6 @@ strata, wet edges and calcite deposits are independently authored at native
 resolution. The existing game maps and cave assets are never written here.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -39,7 +35,7 @@ class Author:
         self.palette = self.recipe['palette']
         self.ramps = {name: [rgba(c) for c in colors]
                       for name, colors in self.palette.items() if isinstance(colors, list)}
-        self.source = open_image(ROOT/self.recipe['source_assets'][0]).convert('RGBA')
+        self.source = Image.open(ROOT/self.recipe['source_assets'][0]).convert('RGBA')
         self.outputs = {}
         self.modules = {}
 
@@ -312,7 +308,7 @@ class Author:
         d.text((20,14),'SANCTUARY LIMESTONE / native 24 px material review',font=font,fill='#e3dcc7')
         for row,(name,record) in enumerate(materials.items()):
             y=59+row*45;d.text((20,y+4),name.upper(),font=small,fill='#d3d5bc')
-            for i,path in enumerate(record['tiles']):board.paste(open_image(BytesIO(self.outputs[path])),(130+i*32,y))
+            for i,path in enumerate(record['tiles']):board.paste(Image.open(BytesIO(self.outputs[path])),(130+i*32,y))
         d.text((20,256),'Natural wall strata / erosion / calcite',font=font,fill='#e3dcc7')
         for i in range(6):
             im=self.wall(i);board.paste(im,(20+i*110,291),im)
@@ -327,15 +323,15 @@ class Author:
             im=self.patch(name,2);board.paste(im,(20+col*160,624),im)
         d.text((20,758),'Source relationship / approved regional stone / original character scale',font=font,fill='#e3dcc7')
         for i,path in enumerate(self.recipe['source_assets'][:3]):
-            im=open_image(ROOT/path).convert('RGBA');board.paste(im,(20+i*150,808),im)
-        ca=open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+            im=Image.open(ROOT/path).convert('RGBA');board.paste(im,(20+i*150,808),im)
+        ca=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
         board.paste(ca,(655,808),ca);d.text((600,860),'Caelan: native scale',font=small,fill='#d3d5bc')
         d.text((20,902),'Unlit material board. Crystal emission and colored environment light remain runtime effects.',font=small,fill='#b9c8be')
         self.emit(f'{PACK}/materials_review.png',board)
         detail=Image.new('RGB',(1200,770),'#26322f');dd=ImageDraw.Draw(detail)
         dd.text((22,16),'Regional rock relationship / all scenery enlarged exactly 3x',font=font,fill='#e3dcc7')
-        comparisons=[('Sanctuary exterior source',open_image(ROOT/self.recipe['source_assets'][0]).convert('RGBA')),
-                     ('Current slate cave',open_image(ROOT/'assets/terrain/sanctuary_cave/walls/face_00.png').convert('RGBA')),
+        comparisons=[('Sanctuary exterior source',Image.open(ROOT/self.recipe['source_assets'][0]).convert('RGBA')),
+                     ('Current slate cave',Image.open(ROOT/'assets/terrain/sanctuary_cave/walls/face_00.png').convert('RGBA')),
                      ('Proposed limestone',self.wall(0))]
         for i,(label,im) in enumerate(comparisons):
             x=22+i*390;dd.text((x,58),label,font=font,fill='#e3dcc7')
@@ -350,10 +346,10 @@ class Author:
             dd.text((22+i*292,650),kind.replace('_',' '),font=small,fill='#cdd1bc')
         dd.text((22,704),'Neutral stone receives crystal color in the production lighting pass. No colored light is painted into these modules.',font=small,fill='#b9c8be')
         self.emit(f'{PACK}/regional_comparison.png',detail)
-        inputs={path:reference_digest((ROOT/path)) for path in self.recipe['source_assets']}
+        inputs={path:sha256((ROOT/path).read_bytes()).hexdigest() for path in self.recipe['source_assets']}
         for path in ('assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png','assets/terrain/sanctuary_cave/walls/face_00.png'):
-            inputs[path]=reference_digest((ROOT/path))
-        inputs[SOURCE.relative_to(ROOT).as_posix()]=reference_digest(SOURCE)
+            inputs[path]=sha256((ROOT/path).read_bytes()).hexdigest()
+        inputs[SOURCE.relative_to(ROOT).as_posix()]=sha256(SOURCE.read_bytes()).hexdigest()
         manifest={'version':1,'id':self.recipe['id'],'status':'review','approval_status':'pending_review','tile_size':24,
                   'source_recipe':SOURCE.relative_to(ROOT).as_posix(),'materials':materials,
                   'modules':self.modules,'palette':self.palette,'inputs':inputs,

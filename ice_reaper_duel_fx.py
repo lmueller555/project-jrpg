@@ -4,9 +4,6 @@ The fireballs use eight authored drawings. Their birth sites are registered to
 the six gold diamond patterns in the existing rune; no effect moves that rune.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 
 from collections import OrderedDict
 import json
@@ -51,7 +48,7 @@ class IceReaperDuelFX:
     def _polyline(layer, camera, color, points, width=1):
         projected = [camera.project(point) for point in points]
         if all(point is not None for point in projected):
-            render_draw.lines(layer,color,False,[(round(p[0]),round(p[1])) for p in projected],width)
+            pygame.draw.lines(layer,color,False,[(round(p[0]),round(p[1])) for p in projected],width)
 
     @staticmethod
     def _ring(layer, camera, center, radius, color, width=1):
@@ -67,7 +64,7 @@ class IceReaperDuelFX:
             image = self._cache.pop(key)
             self._cache[key] = image
             return image
-        image = render_scale(source,size)
+        image = pygame.transform.scale(source,size)
         self._cache[key] = image
         if len(self._cache)>128:
             self._cache.popitem(last=False)
@@ -95,7 +92,7 @@ class IceReaperDuelFX:
                     fixed_rune_radius=8.2)
 
     def draw_ground(self, canvas, camera, time, positions, reduced=False):
-        layer = render_layer(canvas.get_size(),pygame.SRCALPHA)
+        layer = pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
         for record in self.fireball_state(time):
             if not record['active']:
                 continue
@@ -105,7 +102,7 @@ class IceReaperDuelFX:
                 points = [camera.project(center+V3(math.cos(i*TAU/24)*radius,0,
                                                     math.sin(i*TAU/24)*radius)) for i in range(24)]
                 if all(points):
-                    render_draw.polygon(layer,(255,94,31,round(alpha*strength)),
+                    pygame.draw.polygon(layer,(255,94,31,round(alpha*strength)),
                                         [(round(p[0]),round(p[1])) for p in points])
             self._ring(layer,camera,center,.43+.12*record['rise'],
                        (255,194,98,round(135*strength)),1)
@@ -120,7 +117,7 @@ class IceReaperDuelFX:
     def _wind(self, canvas, camera, time, positions, reduced):
         if not self.WIND_START<=time<self.WIND_END+.4:
             return
-        layer = render_layer(canvas.get_size(),pygame.SRCALPHA)
+        layer = pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
         origin = V3(positions['rhea'])+V3(0,.55,0)
         direction = V3(positions['mira'])-V3(positions['rhea'])
         direction.y = 0
@@ -143,13 +140,13 @@ class IceReaperDuelFX:
             opacity = max(0.,min(1.,age/.06))*(1-age/.92)
             color = (214,244,255,round(190*opacity))
             width = 1 if reduced else 1+int(index%8==0)
-            render_draw.line(layer,(85,147,181,round(130*opacity)),
+            pygame.draw.line(layer,(85,147,181,round(130*opacity)),
                              (round(tail[0]),round(tail[1])+1),
                              (round(projected[0]),round(projected[1])+1),width)
-            render_draw.line(layer,color,(tail[0],tail[1]),(projected[0],projected[1]),width)
+            pygame.draw.line(layer,color,(tail[0],tail[1]),(projected[0],projected[1]),width)
             if index%5==0:
                 r = max(1,min(4,round(camera.focal/projected[2]*.05)))
-                render_draw.polygon(layer,(235,251,255,round(220*opacity)),
+                pygame.draw.polygon(layer,(235,251,255,round(220*opacity)),
                                     [(projected[0],projected[1]-r),
                                      (projected[0]+r,projected[1]),
                                      (projected[0],projected[1]+r),
@@ -171,7 +168,7 @@ class IceReaperDuelFX:
     def _conjure(self, canvas, camera, time, positions, reduced):
         if not self.SWORD_START<=time<self.SWORD_END+.25:
             return
-        layer = render_layer(canvas.get_size(),pygame.SRCALPHA)
+        layer = pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
         progress = phase(time,self.SWORD_START,self.SWORD_END)
         hand = V3(positions.get('reaper_sword_hand',V3(positions['ice_reaper'])+V3(-.55,2.7,-.1)))
         count = 12 if reduced else 36
@@ -184,13 +181,13 @@ class IceReaperDuelFX:
             if p is None:
                 continue
             r=max(1,min(4,round(camera.focal/p[2]*.035)))
-            render_draw.polygon(layer,(189,237,255,round(150*(1-progress*.6))),
+            pygame.draw.polygon(layer,(189,237,255,round(150*(1-progress*.6))),
                                 [(p[0],p[1]-r*1.7),(p[0]+r,p[1]),
                                  (p[0],p[1]+r*1.7),(p[0]-r,p[1])])
         center=camera.project(hand)
         if center is not None:
             radius=max(2,round(camera.focal/center[2]*(.15+.25*math.sin(progress*math.pi))))
-            render_draw.circle(layer,(169,230,255,55),(round(center[0]),round(center[1])),radius)
+            pygame.draw.circle(layer,(169,230,255,55),(round(center[0]),round(center[1])),radius)
         canvas.blit(layer,(0,0))
 
     def draw_air(self, canvas, camera, time, positions, reduced=False, front=None):
@@ -222,7 +219,7 @@ class IceReaperDuelFX:
             ax,ay=self.manifest['anchor']
             canvas.blit(image,(round(projected[0]-ax*scale),round(projected[1]-ay*scale)))
             if not reduced:
-                layer=render_layer(canvas.get_size(),pygame.SRCALPHA)
+                layer=pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
                 for spark in range(5):
                     age=((time-record['birth'])*.7+spark*.2+record['index']*.13)%1
                     angle=spark*2.399+record['index']
@@ -230,7 +227,7 @@ class IceReaperDuelFX:
                             .15+age*2.5,math.cos(angle)*age*.5)
                     p=camera.project(ember)
                     if p is not None:
-                        render_draw.circle(layer,(255,182,62,round(200*(1-age))),
+                        pygame.draw.circle(layer,(255,182,62,round(200*(1-age))),
                                            (round(p[0]),round(p[1])),1)
                 canvas.blit(layer,(0,0))
 
@@ -240,7 +237,7 @@ class IceReaperDuelFX:
         progress=phase(time,self.CHARGE_START,self.CHARGE_END)
         if reduced:
             return
-        layer=render_layer(canvas.get_size(),pygame.SRCALPHA)
+        layer=pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
         target = camera.project(V3(positions['ice_reaper'])+V3(0,2.8,0))
         center = (canvas.get_width()*.5,canvas.get_height()*.46) if target is None else target[:2]
         center=(max(-80,min(canvas.get_width()+80,center[0])),
@@ -254,7 +251,7 @@ class IceReaperDuelFX:
             b=(center[0]+math.cos(angle)*(radius+length),
                center[1]+math.sin(angle)*(radius+length)*.75)
             color=(182,229,255,round((50+progress*120)*(1-lane*.35)))
-            render_draw.line(layer,color,a,b,1+int(index%9==0))
+            pygame.draw.line(layer,color,a,b,1+int(index%9==0))
         # One restrained icy lens wash accompanies the final close approach.
         wash=math.exp(-((progress-.78)/.14)**2)
         if wash>.01:

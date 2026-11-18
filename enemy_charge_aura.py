@@ -5,8 +5,6 @@ bounds and a paused scene clock while that enemy is preparing or holding a
 powerful attack. Back and front passes preserve the enemy's readable silhouette.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 import math
 
@@ -126,12 +124,12 @@ class EnemyChargeAura:
         """Keep one reusable surface, bounded by the current field canvas."""
         canvas_size = canvas.get_size()
         if self._layer is None or self._canvas_size != canvas_size:
-            self._layer = render_layer(size, pygame.SRCALPHA)
+            self._layer = pygame.Surface(size, pygame.SRCALPHA)
             self._canvas_size = canvas_size
         elif self._layer.get_width() < size[0] or self._layer.get_height() < size[1]:
             capacity = (max(size[0], self._layer.get_width()),
                         max(size[1], self._layer.get_height()))
-            self._layer = render_layer(capacity, pygame.SRCALPHA)
+            self._layer = pygame.Surface(capacity, pygame.SRCALPHA)
         self._layer.fill((0, 0, 0, 0))
         return self._layer
 
@@ -156,18 +154,18 @@ class EnemyChargeAura:
         if foreground:
             for arc in sample['front_arcs']:
                 local = points(arc)
-                render_draw.lines(layer, CRIMSON, False, local, 3)
-                render_draw.lines(layer, EMBER, False, local, 1)
-                render_draw.line(layer, HOT, local[-2], local[-1], 1)
+                pygame.draw.lines(layer, CRIMSON, False, local, 3)
+                pygame.draw.lines(layer, EMBER, False, local, 1)
+                pygame.draw.line(layer, HOT, local[-2], local[-1], 1)
         else:
             for glow, color in zip(sample['glows'], ((85, 8, 27, 46), (160, 17, 38, 48))):
-                render_draw.ellipse(layer, color, glow.move(-region.x, -region.y))
+                pygame.draw.ellipse(layer, color, glow.move(-region.x, -region.y))
             for plume, core in zip(sample['flames'], sample['cores']):
-                render_draw.polygon(layer, CRIMSON, points(plume))
-                render_draw.lines(layer, RED, False, points(core), 3)
+                pygame.draw.polygon(layer, CRIMSON, points(plume))
+                pygame.draw.lines(layer, RED, False, points(core), 3)
             for arc in sample['back_arcs']:
                 local = points(arc)
-                render_draw.lines(layer, EMBER, False, local, 1)
-                render_draw.line(layer, HOT, local[-2], local[-1], 1)
+                pygame.draw.lines(layer, EMBER, False, local, 1)
+                pygame.draw.line(layer, HOT, local[-2], local[-1], 1)
         canvas.blit(layer, region, pygame.Rect(0, 0, *region.size))
         return region

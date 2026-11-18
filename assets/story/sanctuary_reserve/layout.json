@@ -4,8 +4,8 @@
   "hall_scene_id": "elden_vale_sanctuary_hall",
   "actors": [
     {"id":"reserve_caretaker","name":"Reserve caretaker","variant":"female_02","position":[232,448],"plant_root":[262,448],"facing":"right"},
-    {"id":"reserve_visitor_slate","roster_design":"adult_man_03","name":"Grove visitor","variant":"male_03","position":[264,306],"facing":"right"},
-    {"id":"reserve_visitor_plum","roster_design":"adult_woman_03","name":"Visitor’s companion","variant":"female_03","position":[300,306],"facing":"left"}
+    {"id":"reserve_visitor_slate","name":"Grove visitor","variant":"male_03","position":[264,306],"facing":"right"},
+    {"id":"reserve_visitor_plum","name":"Visitor’s companion","variant":"female_03","position":[300,306],"facing":"left"}
   ],
   "targets": {
     "caretaker":{"actor":"reserve_caretaker","approach_id":"gardener","position":[232,448],"approach":[212,480],"radius":30,"label":"Speak with the caretaker"},

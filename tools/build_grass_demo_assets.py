@@ -5,10 +5,6 @@ Explicit material motifs and blade graphs supply the new art; no live map or
 original approved image is modified. Runtime consumes the checked-in frames.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 
 import argparse
 from hashlib import sha256
@@ -157,7 +153,7 @@ def products():
     output={};material_images={};plant_images={}
     palette=recipe['palette']
     # Historical scale references retain the original approved figure.
-    hero=open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+    hero=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     hero_bounds=hero.getchannel('A').getbbox()
     character_height=hero_bounds[3]-hero_bounds[1]
     if recipe['opaque_height_limit'] != (character_height+1)//2:
@@ -216,7 +212,7 @@ def products():
     font=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),18)
     small=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),15)
     draw.text((20,12),'Emerald grass prototype — half-height blades / rooted reactions',font=font,fill='#273c2e')
-    current=open_image(ROOT/recipe['sources'][0]['path']).convert('RGB')
+    current=Image.open(ROOT/recipe['sources'][0]['path']).convert('RGB')
     draw.text((20,48),'Current',font=small,fill='#273c2e')
     board.paste(current.resize((144,144),Image.Resampling.NEAREST),(20,72))
     for row,(family,images) in enumerate(material_images.items()):

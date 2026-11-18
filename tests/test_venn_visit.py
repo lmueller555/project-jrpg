@@ -311,10 +311,7 @@ class VennGameplayTests(unittest.TestCase):
             self.assertFalse(VennVisit.valid_snapshot(record))
         bad = copy.deepcopy(good);bad['inventory']['deliveries'].remove(QUEST+'/venn')
         bad['inventory']['items']['venn_supplies'] = 1;raw = json.dumps(bad);self.path.write_text(raw)
-        broken = self.new_game(True)
-        self.assertIsNone(broken._validate_journey(copy.deepcopy(bad)))
-        self.assertTrue(broken.has_saved_journey)
-        self.assertIsNotNone(broken._validate_journey(copy.deepcopy(broken.saved_journey)))
+        broken = self.new_game(True);self.assertFalse(broken.has_saved_journey)
         self.assertEqual(self.path.read_text(), raw)
 
     def test_new_game_clears_repair_supplies_and_visual_pose(self):

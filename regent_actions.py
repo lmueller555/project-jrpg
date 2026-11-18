@@ -3,14 +3,6 @@
 The quest owns progress and movement. This view owns only temporary approved
 body drawings, attention and table props; reading is always player paced.
 """
-from caelan_scene_art import image as scene_image
-from regent_native_activity import image as native_activity_image
-from serene_scene_art import image as serene_image
-from tomas_scene_art import image as tomas_image, replacement as tomas_replacement
-from rendering import rotate as render_rotate
-from rendering import flip as render_flip
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 import math
 
 import pygame
@@ -36,13 +28,12 @@ class RegentActions:
         self.reset()
 
     def _image(self, path):
-        if path not in self._images:
-            native=native_activity_image(self.dining,path)
-            self._images[path]=native if native is not None else scene_image(self.dining,path)
+        if path not in self._images:self._images[path] = self.dining.image(path)
         return self._images[path]
 
     def _hand_pose(self, direction):
-        return self._image(f'assets/story/elira/give_{direction}.png')
+        image = self._image('assets/story/elira/give_right.png')
+        return pygame.transform.flip(image, True, False) if direction == 'left' else image
 
     def _actors(self):
         result = {'caelan': self.game.player, 'serene': self.owner.serene,
@@ -111,13 +102,10 @@ class RegentActions:
             actor = actors.get(identifier)
             if (actor is None or not self._owned_actor(actor)
                     or self.owner._world(actor) is not self.dining):continue
-            image=tomas_image(self.dining,actor,record['image'],
-                              lambda path:serene_image(self.dining,actor,path,self._image),
-                              flipped=record.get('flip_x',False))
+            image = self._image(record['image'])
             detail = ((self._image(record['detail_image']),tuple(record['detail_anchor']))
                       if 'detail_image' in record else None)
-            if record.get('flip_x') and not tomas_replacement(actor,record['image'],True):
-                image = render_flip(image, True, False)
+            if record.get('flip_x'):image = pygame.transform.flip(image, True, False)
             actor.facing = record['facing'];actor.moving = False
             if self._meal_clock < .35:
                 fraction = min(1., self._meal_clock/.35)
@@ -208,9 +196,8 @@ class RegentActions:
             record = self._seat_records().get('tomas') if self._seating_enabled() else None
             if record and self._meal_clock >= .35:
                 frame = min(3, int(self.clock/.25))
-                path=f'assets/story/sanctuary_opening/poses/tomas_eat/frame_{frame+1:02}.png'
-                image=tomas_image(self.dining,actor,path,self._image,flipped=record.get('flip_x',False))
-                if record.get('flip_x') and not tomas_replacement(actor,path,True):image=render_flip(image,True,False)
+                image = self._image(f'assets/story/sanctuary_opening/poses/tomas_eat/frame_{frame+1:02}.png')
+                if record.get('flip_x'):image = pygame.transform.flip(image, True, False)
                 self._pose(actor, image, record['anchor'], position=record['position'],
                            sort_y=record['sort_y'])
             elif not record:
@@ -229,8 +216,7 @@ class RegentActions:
                 self._pose(actor,actor.idles[direction],actor.draw_anchor)
         elif self.active_cue == 'survivor_aid' and self._owned_actor(self.owner.serene):
             self._pose(self.owner.serene,
-                       serene_image(self.dining, self.owner.serene,
-                                    'assets/story/regent_emergency/poses/serene_aid_left.png', self._image),
+                       self._image('assets/story/regent_emergency/poses/serene_aid_left.png'),
                        (12,30))
 
     def _clear_beat(self):
@@ -240,11 +226,11 @@ class RegentActions:
     def _weapon(self):
         if self._sword is None:
             original = self._image('assets/story/mill_gift/blade.png')
-            self._sword = render_rotate(render_scale(original, (9, 24)), 180)
+            self._sword = pygame.transform.rotate(pygame.transform.scale(original, (9, 24)), 180)
             # Cover the blade with a fitted sheath. The approved gear and gems
             # remain visible above it; the steel is never drawn bare in town.
-            render_draw.polygon(self._sword, '#31383b', ((2, 13), (6, 13), (5, 23), (3, 23)))
-            render_draw.lines(self._sword, '#8c7451', False, ((2, 13), (3, 23), (5, 23), (6, 13)))
+            pygame.draw.polygon(self._sword, '#31383b', ((2, 13), (6, 13), (5, 23), (3, 23)))
+            pygame.draw.lines(self._sword, '#8c7451', False, ((2, 13), (3, 23), (5, 23), (6, 13)))
         return self._sword
 
     def draw_world(self, canvas, camera):
@@ -262,11 +248,11 @@ class RegentActions:
             paper = self._image('assets/story/lantern/rest_props/paper_clean.png')
             fraction = min(1., self.clock/.55) if self.active_cue in ('open_survey', 'open_plan') else 1.
             width = max(2, round(paper.get_width()*fraction))
-            sheet = render_scale(paper, (width, paper.get_height()))
+            sheet = pygame.transform.scale(paper, (width, paper.get_height()))
             canvas.blit(sheet, (168-width//2-camera[0], 177-camera[1]))
         if self._account_open:
             paper = self._image('assets/story/lantern/rest_props/paper_clean.png')
-            sheet = render_scale(paper, (11, 10))
+            sheet = pygame.transform.scale(paper, (11, 10))
             canvas.blit(sheet, (182-camera[0], 180-camera[1]))
         if self.active_cue in ('pass_bread', 'clear_plates'):
             plate = self._image('assets/story/sanctuary_opening/poses/plate.png')
@@ -274,4 +260,4 @@ class RegentActions:
             hand = player.position+pygame.Vector2(sign*8, -6)
             canvas.blit(plate, (round(hand.x)-4-camera[0], round(hand.y)-2-camera[1]))
             if self.active_cue == 'pass_bread':
-                render_draw.rect(canvas, '#ba8b4b', (round(hand.x)-2-camera[0], round(hand.y)-3-camera[1], 4, 2))
+                pygame.draw.rect(canvas, '#ba8b4b', (round(hand.x)-2-camera[0], round(hand.y)-3-camera[1], 4, 2))

@@ -28,7 +28,6 @@ class GallerySession:
         parent.music.stop()
         parent.opening_audio.reset()
         parent.regional_audio.reset()
-        if getattr(parent,'well_audio',None) is not None:parent.well_audio.reset()
         try:
             self.game = Game(window_size=parent.window.get_size(), fullscreen=parent.fullscreen,
                              start_on_title=False, _preview_window=self._preview_surface,
@@ -202,7 +201,6 @@ class GallerySession:
         game = self.game
         if game is not None:
             game.regional_audio.reset()
-            if getattr(game,'well_audio',None) is not None:game.well_audio.reset()
             game.opening_audio.reset()
             game.regent_arrival.reset()
             arrival = getattr(game, 'sanctuary_arrival', None)

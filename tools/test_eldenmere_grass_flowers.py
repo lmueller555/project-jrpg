@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Verify native ground plants, anchored motion, safe placements and review delivery."""
 import json
 from pathlib import Path
@@ -19,7 +15,7 @@ def load(path):
 
 
 def opened(path):
-    with open_image(path) as image:
+    with Image.open(path) as image:
         return image.convert('RGBA')
 
 
@@ -143,7 +139,7 @@ class GroundPlantTests(unittest.TestCase):
 
     def test_gif_lossless_pixels_durations_loops_and_scale_reference(self):
         for name, crop, scale in (('review_scene', None, 2), ('garden_closeup', self.scene['review']['closeup_rect'], 4)):
-            with open_image(PACK / f'{name}.gif') as gif:
+            with Image.open(PACK / f'{name}.gif') as gif:
                 self.assertEqual(gif.n_frames, 54)
                 self.assertEqual(gif.info['loop'], 0)
                 for phase, record in enumerate(self.scene['frames']):
@@ -157,7 +153,7 @@ class GroundPlantTests(unittest.TestCase):
                 gif.seek(0)
                 self.assertEqual(gif.convert('RGB').tobytes(), opened(PACK / f'{name}.png').convert('RGB').tobytes())
         # GIF encoders may merge consecutive held poses; check the decoded timeline.
-        with open_image(PACK / 'plants_review.gif') as gif:
+        with Image.open(PACK / 'plants_review.gif') as gif:
             self.assertEqual(gif.info['loop'], 0)
             tick = 0
             for encoded in range(gif.n_frames):

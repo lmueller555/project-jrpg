@@ -5,8 +5,6 @@ touched by a collision query or a viewport are rasterized; no surface, mask or
 simulation array has the size of the region. Local town scenes remain separate.
 """
 from __future__ import annotations
-from landmark_layers import LandmarkLayers
-from rendering import WorldCanvas, layer as render_layer, record_art, immutable, draw as render_draw
 
 from collections import OrderedDict
 import json
@@ -104,11 +102,8 @@ class RoadGuard:
         self.facing = self.watch_facing
         self.moving = False
         self._conversation_started_ms = None
-        from road_guard_hd_bindings import ACTORS
-        self.hd_art = self.data['id'] in ACTORS
-        cache_key = '_road_guard_art_hd' if self.hd_art else '_road_guard_art'
-        if not hasattr(world, cache_key):
-            folder = ROOT/'assets/characters'/('road_guards_hd' if self.hd_art else 'road_guards')
+        if not hasattr(world, '_road_guard_art'):
+            folder = ROOT/'assets/characters/road_guards'
             manifest = json.loads((folder/'animation.json').read_text())
             frames = {name: pygame.image.load(str(folder/name)).convert_alpha()
                       for name in set(manifest['poses'].values())}
@@ -120,9 +115,8 @@ class RoadGuard:
                         or not math.isfinite(frame['duration_ms']) or frame['duration_ms'] <= 0
                         for frame in clip['frames']):
                     raise ValueError('Invalid road guard animation clip')
-            frames = {key: record_art(image, manifest) for key, image in frames.items()}
-            setattr(world, cache_key, (manifest, frames))
-        self._art, self._frames = getattr(world, cache_key)
+            world._road_guard_art = (manifest, frames)
+        self._art, self._frames = world._road_guard_art
         self.draw_anchor = tuple(self._art['draw_anchor'])
 
     @property
@@ -183,7 +177,7 @@ class OverworldWorld:
                                    for record in self.region.get('landmarks', [])]}
         self.probe_size = (24, 12)
         self._probes = {}
-        self._render_cache = _LRU(render_budget_bytes, lambda surface: surface.get_pitch()*surface.get_height() + (surface.native.get_pitch()*surface.native.get_height() if hasattr(surface,'native') else 0))
+        self._render_cache = _LRU(render_budget_bytes, lambda surface: surface.get_pitch()*surface.get_height())
         self._collision_cache = _LRU(collision_cache_limit)
         self._metadata_cache = _LRU(metadata_cache_limit)
         self._flags = frozenset(progress_flags)
@@ -193,11 +187,8 @@ class OverworldWorld:
         self.blocked = _BlockedView(self)
         self.doors = [];self.routine_props = [];self.work_fittings = [];self.foreground = []
         self.entities = []
-        self.reduced_motion = False
         self._art = {};self._tiles = {};self._props = {}
         self._load_art()
-        self.landmarks = LandmarkLayers(ROOT,[{**self._art.get('landmarks',{}).get(record.get('asset'),{}),**record}
-                                              for record in self.region.get('landmark_layers',())])
         self._validate_bridge_width()
         town = self.region.get('town', {})
         self.town_entry_rect = self._tile_rect(town.get('entry_rect_tiles', (9, -33, 6, 6)))
@@ -213,10 +204,6 @@ class OverworldWorld:
                                'rect': self._tile_rect(gate['rect_tiles'])})
         self.npcs = [RoadGuard(self, gate, position, index)
                      for gate in self.gates for index,position in enumerate(gate['guard_positions'])]
-        self.terrain_hd = None
-        if self.region.get('terrain_hd', {}).get('enabled'):
-            from regional_terrain_hd import RegionalTerrainHD
-            self.terrain_hd = RegionalTerrainHD(self)
         self.environment = None
         if self.region.get('detail_art_manifest'):
             from overworld_environment import EnvironmentDetail
@@ -271,11 +258,11 @@ class OverworldWorld:
         path = ROOT/candidate if isinstance(candidate, str) else ART_FILE
         self.art_available = path.exists()
         if self.art_available:self._art = json.loads(path.read_text(encoding='utf-8'))
-        for field in ('detail_art_manifest','composition_art_manifest','sanctuary_art_manifest','hd_art_manifest'):
+        for field in ('detail_art_manifest','composition_art_manifest','sanctuary_art_manifest'):
             detail = self.region.get(field)
             if detail and (ROOT/detail).exists():
                 additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
-                for group in ('tiles','props','landmarks'):
+                for group in ('tiles','props'):
                     self._art.setdefault(group,{}).update(additional.get(group,{}))
 
     def _validate_bridge_width(self):
@@ -306,7 +293,6 @@ class OverworldWorld:
             if record:
                 loaded = pygame.image.load(str(ROOT/record['image']))
                 surface = loaded.convert_alpha() if key.startswith('water_glint') else loaded.convert()
-                surface=record_art(immutable(surface),record)
                 if surface.get_size() != (TILE_SIZE, TILE_SIZE):
                     raise ValueError(f'Overworld tile {key} must be 24 by 24 pixels')
             else:
@@ -318,19 +304,13 @@ class OverworldWorld:
             self._tiles[key] = surface
         return self._tiles[key]
 
-    def _prop_image(self, key, elapsed_ms=0):
-        record = self._art.get('props', {}).get(key)
-        if not record:return None, (0, 0)
-        frames = record.get('frames', [])
-        phase = (record.get('reduced_motion_frame', 0) if self.reduced_motion else
-                 int(elapsed_ms//record.get('frame_duration_ms', 600)) % len(frames)) if frames else None
-        cache_key = (key, phase) if frames else key
-        if cache_key not in self._props:
-            image = frames[phase] if frames else record['image']
-            surface = pygame.image.load(str(ROOT/image)).convert_alpha()
-            surface=record_art(immutable(surface),record)
-            self._props[cache_key] = (surface, tuple(record.get('foot_anchor', (surface.get_width()//2, surface.get_height()))))
-        return self._props[cache_key]
+    def _prop_image(self, key):
+        if key not in self._props:
+            record = self._art.get('props', {}).get(key)
+            if not record:return None, (0, 0)
+            surface = pygame.image.load(str(ROOT/record['image'])).convert_alpha()
+            self._props[key] = (surface, tuple(record.get('foot_anchor', (surface.get_width()//2, surface.get_height()))))
+        return self._props[key]
 
     def probe_rect(self, position, size=None):
         width, height = self.probe_size if size is None else size
@@ -384,7 +364,7 @@ class OverworldWorld:
     def _draw_path(surface, color, points, width):
         if not points:return
         width = max(1, round(width))
-        # render_draw.lines clips the *centre line* to its destination before
+        # pygame.draw.lines clips the *centre line* to its destination before
         # widening it. A river centred outside a chunk would lose the part of
         # its bank that belongs inside that chunk. Explicit stroke polygons
         # intersect the destination after expansion, for graphics and physics.
@@ -395,9 +375,9 @@ class OverworldWorld:
             nx,ny = -dy/length*half,dx/length*half
             polygon = [(round(a[0]+nx),round(a[1]+ny)),(round(b[0]+nx),round(b[1]+ny)),
                        (round(b[0]-nx),round(b[1]-ny)),(round(a[0]-nx),round(a[1]-ny))]
-            render_draw.polygon(surface,color,polygon)
+            pygame.draw.polygon(surface,color,polygon)
         for point in points:
-            render_draw.circle(surface,color,(round(point[0]),round(point[1])),width//2)
+            pygame.draw.circle(surface,color,(round(point[0]),round(point[1])),width//2)
 
     def _local_path(self, record, cx, cy):
         ox, oy = cx*CHUNK_PIXELS, cy*CHUNK_PIXELS
@@ -435,26 +415,26 @@ class OverworldWorld:
         if bridge:
             if self._bridge_repaired():
                 rect = self._tile_rect(bridge.get('deck_rect_tiles', bridge['damage_rect_tiles'])).move(-origin[0], -origin[1])
-                render_draw.rect(surface, 'black', rect)
+                pygame.draw.rect(surface, 'black', rect)
             else:
                 rect = self._tile_rect(bridge['damage_rect_tiles']).move(-origin[0], -origin[1])
-                render_draw.rect(surface, 'white', rect)
+                pygame.draw.rect(surface, 'white', rect)
         for wall in self.region.get('walls', []):
             for left, right in self._wall_segments(wall):
                 if right <= left:continue
                 rect = self._tile_rect((left, wall['y']-.5, right-left, 1)).move(-origin[0], -origin[1])
-                render_draw.rect(surface, 'white', rect)
+                pygame.draw.rect(surface, 'white', rect)
         for gate in self.gates:
-            if not self._gate_open(gate):render_draw.rect(surface, 'white', gate['rect'].move(-origin[0], -origin[1]))
+            if not self._gate_open(gate):pygame.draw.rect(surface, 'white', gate['rect'].move(-origin[0], -origin[1]))
         props = (self.environment.collision_props(cx,cy) if self.environment is not None
                  else (prop for prop in metadata['props'] if prop.get('solid')))
         for prop in props:
             width, height = prop['solid'];x, y = prop['position']
             rect = pygame.Rect(round(x)-width//2-origin[0], round(y)-height//2-origin[1], width, height)
-            render_draw.rect(surface, 'white', rect)
+            pygame.draw.rect(surface, 'white', rect)
         for prop in self._bridge_debris():
             width,height = prop['solid'];x,y = prop['position']
-            render_draw.rect(surface,'white',pygame.Rect(round(x)-width//2-origin[0],round(y)-height//2-origin[1],width,height))
+            pygame.draw.rect(surface,'white',pygame.Rect(round(x)-width//2-origin[0],round(y)-height//2-origin[1],width,height))
         mask = pygame.mask.from_threshold(surface, (255,255,255), (1,1,1,255))
         return self._collision_cache.put(key, mask)
 
@@ -489,12 +469,8 @@ class OverworldWorld:
         for x in range(0, CHUNK_PIXELS, TILE_SIZE):
             for y in range(0, CHUNK_PIXELS, TILE_SIZE):target.blit(tile, (x, y))
 
-    def _paint_shape(self, target, key, painter, origin=(0, 0)):
-        if self.terrain_hd is not None:
-            self.terrain_hd.paint(target, key, painter, origin)
-            return
-        overlay = (render_layer((CHUNK_PIXELS, CHUNK_PIXELS),pygame.SRCALPHA)
-                   if isinstance(target,WorldCanvas) else pygame.Surface((CHUNK_PIXELS,CHUNK_PIXELS),pygame.SRCALPHA))
+    def _paint_shape(self, target, key, painter):
+        overlay = pygame.Surface((CHUNK_PIXELS, CHUNK_PIXELS), pygame.SRCALPHA)
         self._pattern(overlay, key)
         mask = pygame.Surface((CHUNK_PIXELS, CHUNK_PIXELS), pygame.SRCALPHA);mask.fill((0,0,0,0))
         painter(mask)
@@ -512,10 +488,7 @@ class OverworldWorld:
     def _render_chunk(self, cx, cy):
         key = (cx, cy);cached = self._render_cache.get(key)
         if cached is not None:return cached
-        native=any(record.get('artwork_pixels_per_world_pixel',1)==2
-                   for record in self._art.get('tiles',{}).values())
-        surface = (render_layer((CHUNK_PIXELS, CHUNK_PIXELS),0) if native else
-                   pygame.Surface((CHUNK_PIXELS,CHUNK_PIXELS)))
+        surface = pygame.Surface((CHUNK_PIXELS, CHUNK_PIXELS))
         if self._chunk_metadata(cx, cy) is None:
             surface.fill('#283d38');return surface
         terrain = self.region.get('terrain', {})
@@ -530,7 +503,7 @@ class OverworldWorld:
                 for feature in terrain.get(category, []):
                     if not self._feature_intersects(feature['polygon'], chunk_rect):continue
                     polygon = [(round(x*TILE_SIZE-ox), round(y*TILE_SIZE-oy)) for x, y in feature['polygon']]
-                    self._paint_shape(surface, key, lambda mask, polygon=polygon: render_draw.polygon(mask, 'white', polygon))
+                    self._paint_shape(surface, key, lambda mask, polygon=polygon: pygame.draw.polygon(mask, 'white', polygon))
             for road in self.region.get('roads', []):
                 if not self._feature_intersects(road['points'], chunk_rect, road.get('width',3)*TILE_SIZE/2+10):continue
                 points = self._local_path(road, cx, cy);width = road.get('width', 3)*TILE_SIZE
@@ -545,27 +518,27 @@ class OverworldWorld:
                     continue
                 if not self._feature_intersects(feature['polygon'],chunk_rect):continue
                 polygon = [(round(x*TILE_SIZE-ox),round(y*TILE_SIZE-oy)) for x,y in feature['polygon']]
-                self._paint_shape(surface,'scorched',lambda mask,p=polygon:render_draw.polygon(mask,'white',p))
+                self._paint_shape(surface,'scorched',lambda mask,p=polygon:pygame.draw.polygon(mask,'white',p))
         for river in terrain.get('rivers', []):
             fringe = 40 if self.environment is not None else 24
             if not self._feature_intersects(river['points'], chunk_rect, river.get('width',8)*TILE_SIZE/2+fringe):continue
             points = self._local_path(river, cx, cy);width = river.get('width',8)*TILE_SIZE
             if self.environment is not None:self.environment.bank(surface,river,cx,cy)
             else:self._paint_shape(surface, 'bank', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w+24))
-            self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w), (ox, oy))
+            self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
         bridge = self.region.get('bridge')
         if bridge and self._bridge_repaired():
             rect = self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).move(-ox,-oy)
             if chunk_rect.colliderect(self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles']))):
-                render_draw.rect(surface, '#77786c', rect.inflate(0,8))
+                pygame.draw.rect(surface, '#77786c', rect.inflate(0,8))
                 key = 'stone_road_worn' if 'stone_road_worn' in self._art.get('tiles',{}) else 'stone_road'
-                self._paint_shape(surface,key,lambda mask,r=rect:render_draw.rect(mask,'white',r),(ox,oy))
-                render_draw.line(surface,'#b2b6a4',(rect.left,rect.top-2),(rect.right,rect.top-2),2)
-                render_draw.line(surface,'#606c5b',(rect.left,rect.bottom+2),(rect.right,rect.bottom+2),2)
+                self._paint_shape(surface,key,lambda mask,r=rect:pygame.draw.rect(mask,'white',r))
+                pygame.draw.line(surface,'#b2b6a4',(rect.left,rect.top-2),(rect.right,rect.top-2),2)
+                pygame.draw.line(surface,'#606c5b',(rect.left,rect.bottom+2),(rect.right,rect.bottom+2),2)
         for wall in self.region.get('walls', []):
             for left, right in self._wall_segments(wall):
                 rect = self._tile_rect((left,wall['y']-.5,right-left,1)).move(-ox,-oy)
-                render_draw.rect(surface, '#727c6b', rect)
+                pygame.draw.rect(surface, '#727c6b', rect)
         return self._render_cache.put((cx,cy), surface)
 
     def _static_props(self, viewport):
@@ -606,9 +579,6 @@ class OverworldWorld:
             if not self._gate_open(gate):yield {'key':'checkpoint', 'position':gate['position']}
 
     def _draw_water(self, target, camera, elapsed_ms):
-        if self.terrain_hd is not None:
-            self.terrain_hd.draw_water(target, camera, elapsed_ms, reduced_motion=self.reduced_motion)
-            return
         # Shared, deterministic little highlights, rather than animated grounds.
         phase = int(elapsed_ms//450)%3
         for x in range(math.floor(camera[0]/48)*48, camera[0]+target.get_width()+48, 48):
@@ -623,7 +593,7 @@ class OverworldWorld:
                     if key in self._art.get('tiles',{}):
                         target.blit(self._tile_image(key),(x-camera[0]-12,y-camera[1]-12))
                     else:
-                        render_draw.line(target, '#82aaa2', (x-camera[0], y-camera[1]), (x-camera[0]+5+seed%6, y-camera[1]))
+                        pygame.draw.line(target, '#82aaa2', (x-camera[0], y-camera[1]), (x-camera[0]+5+seed%6, y-camera[1]))
 
     def draw(self, target, camera, player, elapsed_ms, include_ui=True):
         target.fill('#283d38')
@@ -633,16 +603,11 @@ class OverworldWorld:
             for cy in range(viewport.top//CHUNK_PIXELS, (viewport.bottom-1)//CHUNK_PIXELS+1):
                 target.blit(self._render_chunk(cx,cy), (cx*CHUNK_PIXELS-camera[0],cy*CHUNK_PIXELS-camera[1]))
         self._draw_water(target,camera,elapsed_ms)
-        self.landmarks.draw(target,camera,'distant',viewer=player)
-        self.landmarks.draw(target,camera,'ground')
         ordered = []
         for prop in self._static_props(viewport):
-            scenery_ms = 0 if self.reduced_motion else elapsed_ms
-            prop={**prop,'key':self.region.get('signature_landscape',{}).get('prop_bindings',{}).get(prop.get('id'),prop['key'])}
-            key,position = (self.environment.prop_frame(prop,scenery_ms) if self.environment is not None
+            key,position = (self.environment.prop_frame(prop,elapsed_ms) if self.environment is not None
                             else (prop['key'],prop['position']))
-            # Per-instance phases share the scene clock; roots and ground positions never move.
-            surface, anchor = self._prop_image(key, scenery_ms + _stable_hash(round(position[0]), round(position[1]), 139)%5400)
+            surface, anchor = self._prop_image(key)
             if surface is None:continue
             x,y = position;rect = surface.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
             if rect.colliderect(viewport):ordered.append((prop['position'][1]+prop.get('sort_offset',0),1,surface,rect.topleft))
@@ -654,7 +619,7 @@ class OverworldWorld:
         for actor, priority in [(npc,2) for npc in self.npcs]+[(player,3)]:
             if not getattr(actor,'story_visible',True):continue
             position = getattr(actor,'story_position',None) or actor.position
-            anchor = getattr(actor,'story_draw_anchor',None) or getattr(actor,'draw_anchor',self.data['player_draw_anchor'])
+            anchor = getattr(actor,'story_draw_anchor',None) or (self.data['player_draw_anchor'] if actor is player else actor.draw_anchor)
             surface = getattr(actor,'story_sprite',None)
             if surface is None:surface = actor.sprite() if actor is player else actor.sprite(elapsed_ms)
             rect = surface.get_rect(topleft=(round(position[0])-anchor[0],round(position[1])-anchor[1]))
@@ -664,8 +629,6 @@ class OverworldWorld:
                 actor,image,anchor,world_position=surface
                 draw_actor(target,actor,image,(round(world_position[0])-anchor[0]-camera[0],round(world_position[1])-anchor[1]-camera[1]),elapsed_ms)
             else:target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
-        self.landmarks.draw(target,camera,'overhead',actors=(player,*self.npcs),
-                            interaction_points=self.region.get('landmark_visibility_points',()))
         # Spread the one-chunk lookahead ring over frames. Ordinary walking
         # reaches an already prepared neighbour without loading the region.
         candidates = [(cx,cy)

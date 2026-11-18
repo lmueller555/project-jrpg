@@ -5,8 +5,6 @@ story milestones and a deferred retry, so fleeing never rerolls the lesson and
 preparing at the Sanctuary bed never requires replaying its dialogue.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 import math
 
@@ -276,15 +274,15 @@ class CaveLesson:
         tip = point+pygame.Vector2(14,-23)
         reduced = self.game.audio.reduced_motion
         strength = .72 if reduced else .65+.18*math.sin(self._elapsed*2.2)
-        layer = render_layer(target.get_size(),pygame.SRCALPHA)
-        render_draw.line(layer,(50,130,230,round(65*strength)),hand,tip,7)
-        render_draw.line(layer,(85,185,250,round(150*strength)),hand,tip,3)
-        render_draw.circle(layer,(45,145,245,round(150*strength)),hand,4)
-        render_draw.circle(layer,(185,245,255,255),hand,1)
+        layer = pygame.Surface(target.get_size(),pygame.SRCALPHA)
+        pygame.draw.line(layer,(50,130,230,round(65*strength)),hand,tip,7)
+        pygame.draw.line(layer,(85,185,250,round(150*strength)),hand,tip,3)
+        pygame.draw.circle(layer,(45,145,245,round(150*strength)),hand,4)
+        pygame.draw.circle(layer,(185,245,255,255),hand,1)
         if not reduced:
             for index in range(5):
                 age=(self._elapsed*.26+index/5)%1
                 x=hand.x+math.sin(index*2.1+age*4)*9
                 y=hand.y-age*23
-                render_draw.rect(layer,(130,215,255,round((1-age)*130)),(round(x),round(y),1,1))
+                pygame.draw.rect(layer,(130,215,255,round((1-age)*130)),(round(x),round(y),1,1))
         target.blit(layer,(0,0))

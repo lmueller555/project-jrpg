@@ -433,12 +433,7 @@ class RegionalMapTests(unittest.TestCase):
         game = Game.__new__(Game)
         game.__dict__.update(self.game.__dict__)
         game.opening_cinematic = SimpleNamespace(active=False)
-        game.sanctuary_rescue = SimpleNamespace(active=False, maybe_start=Mock())
-        game.sanctuary_arrival = SimpleNamespace(active=False, maybe_start=Mock())
-        game.sanctuary_cave = SimpleNamespace(active=False)
-        game.elemental_bosses = SimpleNamespace(sync_audio=Mock())
         game.regent_arrival = SimpleNamespace(active=False, state='waiting', maybe_start=Mock())
-        game.regent_quest = SimpleNamespace(emergency=SimpleNamespace(sync_music=Mock()))
         game.mill_quest = SimpleNamespace(sync_encounter_music=Mock())
         game.mill_gift = SimpleNamespace(active=False)
         game.music = Mock()
@@ -447,15 +442,10 @@ class RegionalMapTests(unittest.TestCase):
             tick_world=Mock(side_effect=RuntimeError('world resumed')))
         game.social.active = False
         game.on_title = False
-        game.quest_playtest_session = None
-        game.on_quest_playtest = False
         game.gallery_session = None
         game.on_gallery = False
         game._is_gallery_preview = False
-        game.pause = game.inventory_ui = game.world_map_viewer = game.services = game.party_ui = SimpleNamespace(is_open=False)
-        game.save_menu = SimpleNamespace(is_open=False)
-        game.game_over = False
-        game.saves = Mock()
+        game.pause = game.inventory_ui = game.world_map_viewer = SimpleNamespace(is_open=False)
         game.overworld_travel = SimpleNamespace(active=True)
         game.quest_ui.journal_open = False
         game.opening_audio = Mock()

@@ -4,7 +4,6 @@ The controller only reports a seated element. Battle resources, turns, sounds,
 and persistence belong to the caller. All pointer positions use logical units.
 """
 from __future__ import annotations
-from rendering import draw as render_draw
 
 from functools import lru_cache
 import math
@@ -53,30 +52,30 @@ def _point(radius, theta, center=(24, 25)):
 
 
 def _polygon(surface, color, points, width=0):
-    render_draw.polygon(surface, color, [(round(x), round(y)) for x, y in points], width)
+    pygame.draw.polygon(surface, color, [(round(x), round(y)) for x, y in points], width)
 
 
 def _gem(surface, gem, center, bright=False):
     """Upright faceted gems: leaf, droplet, flame and six-point ice crystal."""
     x, y = center
     dark, mid, light, glint = GEM_PALETTES[gem]
-    render_draw.circle(surface, '#071a18', (x, y + 1), 6)
-    render_draw.circle(surface, '#4e4937', (x, y), 5)
-    render_draw.circle(surface, '#b4a780' if bright else '#858c7a', (x, y), 4, 1)
+    pygame.draw.circle(surface, '#071a18', (x, y + 1), 6)
+    pygame.draw.circle(surface, '#4e4937', (x, y), 5)
+    pygame.draw.circle(surface, '#b4a780' if bright else '#858c7a', (x, y), 4, 1)
     if gem == 'nature':
         shape = [(x - 3, y + 3), (x - 3, y - 1), (x, y - 4),
                  (x + 3, y - 3), (x + 3, y + 1), (x, y + 4)]
         _polygon(surface, dark, shape)
         _polygon(surface, mid, [(x - 2, y + 2), (x - 2, y - 1),
                                 (x + 2, y - 3), (x + 2, y + 1), (x, y + 3)])
-        render_draw.line(surface, light, (x - 1, y + 2), (x + 1, y - 2))
-        render_draw.line(surface, light, (x, y), (x - 1, y - 1))
+        pygame.draw.line(surface, light, (x - 1, y + 2), (x + 1, y - 2))
+        pygame.draw.line(surface, light, (x, y), (x - 1, y - 1))
     elif gem == 'water':
         _polygon(surface, dark, [(x, y - 4), (x + 3, y), (x + 3, y + 2),
                                 (x + 1, y + 4), (x - 2, y + 3), (x - 3, y + 1)])
         _polygon(surface, mid, [(x, y - 3), (x + 2, y), (x + 2, y + 2),
                                (x, y + 3), (x - 2, y + 1)])
-        render_draw.line(surface, light, (x - 1, y), (x - 1, y + 2))
+        pygame.draw.line(surface, light, (x - 1, y), (x - 1, y + 2))
         surface.set_at((x, y + 3), pygame.Color(light))
     elif gem == 'fire':
         _polygon(surface, dark, [(x - 3, y + 3), (x - 4, y), (x - 1, y - 4),
@@ -86,8 +85,8 @@ def _gem(surface, gem, center, bright=False):
         _polygon(surface, light, [(x - 1, y + 3), (x, y), (x + 1, y + 3)])
     else:
         for dx, dy in ((0, 4), (3, 2), (3, -2)):
-            render_draw.line(surface, dark, (x - dx, y - dy), (x + dx, y + dy), 3)
-            render_draw.line(surface, light, (x - dx, y - dy), (x + dx, y + dy))
+            pygame.draw.line(surface, dark, (x - dx, y - dy), (x + dx, y + dy), 3)
+            pygame.draw.line(surface, light, (x - dx, y - dy), (x + dx, y + dy))
         surface.set_at((x, y), pygame.Color(glint))
     # A fixed upper-left light keeps the gem faces upright as their mount moves.
     if bright:
@@ -97,24 +96,24 @@ def _gem(surface, gem, center, bright=False):
 def _empty_socket(surface, center):
     """An empty brass setting, with no elemental color or engraved gem."""
     x, y = center
-    render_draw.circle(surface, '#071a18', (x, y + 1), 6)
-    render_draw.circle(surface, '#4e4937', (x, y), 5)
-    render_draw.circle(surface, '#858c7a', (x, y), 4, 1)
-    render_draw.circle(surface, '#182b26', (x, y), 3)
-    render_draw.line(surface, '#687467', (x - 2, y + 2), (x + 1, y + 2))
+    pygame.draw.circle(surface, '#071a18', (x, y + 1), 6)
+    pygame.draw.circle(surface, '#4e4937', (x, y), 5)
+    pygame.draw.circle(surface, '#858c7a', (x, y), 4, 1)
+    pygame.draw.circle(surface, '#182b26', (x, y), 3)
+    pygame.draw.line(surface, '#687467', (x - 2, y + 2), (x + 1, y + 2))
 
 
 @lru_cache(maxsize=1)
 def _housing():
     surface = pygame.Surface((48, 48), pygame.SRCALPHA)
-    render_draw.circle(surface, '#081b17', (24, 26), 23)
-    render_draw.circle(surface, '#5e6854', (24, 25), 23, 1)
-    render_draw.circle(surface, '#253f35', (24, 25), 22, 1)
+    pygame.draw.circle(surface, '#081b17', (24, 26), 23)
+    pygame.draw.circle(surface, '#5e6854', (24, 25), 23, 1)
+    pygame.draw.circle(surface, '#253f35', (24, 25), 22, 1)
     # Riveted, stepped mounting corners retain the UI's green and gold fittings.
     for x, y, sx, sy in ((2, 3, 1, 1), (45, 3, -1, 1),
                          (2, 45, 1, -1), (45, 45, -1, -1)):
-        render_draw.line(surface, '#a49060', (x, y), (x + sx * 6, y))
-        render_draw.line(surface, '#a49060', (x, y), (x, y + sy * 6))
+        pygame.draw.line(surface, '#a49060', (x, y), (x + sx * 6, y))
+        pygame.draw.line(surface, '#a49060', (x, y), (x, y + sy * 6))
         surface.set_at((x + sx * 2, y + sy * 2), pygame.Color('#e7cc8e'))
     return surface
 
@@ -131,33 +130,33 @@ def _mechanism(angle_step, active_index, owned_gems=GEM_ORDER):
                    ((18, -.115), (21, -.09), (21, .09), (18, .115))]
         _polygon(surface, '#192b28', [(x, y + 1) for x, y in corners])
         _polygon(surface, '#687467', corners)
-        render_draw.line(surface, '#c6c9a7', corners[0], corners[1])
-        render_draw.line(surface, '#d6c58d', corners[1], corners[2])
-        render_draw.line(surface, '#39483e', corners[2], corners[3])
-    render_draw.circle(surface, '#30443b', (24, 25), 19)
-    render_draw.circle(surface, '#a5af97', (24, 25), 18, 1)
-    render_draw.circle(surface, '#5f6e5b', (24, 25), 17)
-    render_draw.circle(surface, '#172d26', (24, 25), 15)
-    render_draw.circle(surface, '#bcaa72', (24, 25), 15, 1)
-    render_draw.circle(surface, '#586853', (24, 25), 10, 1)
+        pygame.draw.line(surface, '#c6c9a7', corners[0], corners[1])
+        pygame.draw.line(surface, '#d6c58d', corners[1], corners[2])
+        pygame.draw.line(surface, '#39483e', corners[2], corners[3])
+    pygame.draw.circle(surface, '#30443b', (24, 25), 19)
+    pygame.draw.circle(surface, '#a5af97', (24, 25), 18, 1)
+    pygame.draw.circle(surface, '#5f6e5b', (24, 25), 17)
+    pygame.draw.circle(surface, '#172d26', (24, 25), 15)
+    pygame.draw.circle(surface, '#bcaa72', (24, 25), 15, 1)
+    pygame.draw.circle(surface, '#586853', (24, 25), 10, 1)
     # The rune engravings, radial braces and inner teeth turn with the wheel.
     for index in range(4):
         a = theta + index * QUARTER
         for shift in (-.19, .19):
-            render_draw.line(surface, '#a09568', _point(7, a + shift), _point(10, a + shift))
+            pygame.draw.line(surface, '#a09568', _point(7, a + shift), _point(10, a + shift))
         rune = a + QUARTER / 2
         for start, finish in ((-.10, .10), (-.10, -.03), (.03, .10)):
-            render_draw.line(surface, '#293d31', _point(17, rune + start), _point(17, rune + finish))
-        render_draw.line(surface, '#d0c68e', _point(16, rune - .04), _point(18, rune - .04))
+            pygame.draw.line(surface, '#293d31', _point(17, rune + start), _point(17, rune + finish))
+        pygame.draw.line(surface, '#d0c68e', _point(16, rune - .04), _point(18, rune - .04))
         surface.set_at(_point(17, rune + .09), pygame.Color('#79846a'))
-    render_draw.circle(surface, '#081d1a', (24, 26), 7)
-    render_draw.circle(surface, '#9c8c5b', (24, 25), 6)
-    render_draw.circle(surface, '#d5cdab', (24, 25), 5)
-    render_draw.circle(surface, '#526458', (24, 25), 4)
-    render_draw.circle(surface, '#203d32', (24, 25), 3)
+    pygame.draw.circle(surface, '#081d1a', (24, 26), 7)
+    pygame.draw.circle(surface, '#9c8c5b', (24, 25), 6)
+    pygame.draw.circle(surface, '#d5cdab', (24, 25), 5)
+    pygame.draw.circle(surface, '#526458', (24, 25), 4)
+    pygame.draw.circle(surface, '#203d32', (24, 25), 3)
     # A square axle and short chisel mark create a mechanical center.
-    render_draw.rect(surface, '#b7bca2', (23, 24, 3, 3))
-    render_draw.line(surface, '#3c5247', (23, 26), (25, 24))
+    pygame.draw.rect(surface, '#b7bca2', (23, 24, 3, 3))
+    pygame.draw.line(surface, '#3c5247', (23, 26), (25, 24))
     surface.set_at((23, 24), pygame.Color('#f4e7b8'))
     for index, gem in enumerate(GEM_ORDER):
         center = _point(12, theta + index * QUARTER)
@@ -405,28 +404,28 @@ class GearWidget:
         # The 12 o'clock catch is bolted to the housing, outside the turning bank.
         _polygon(layer, '#142c24', [(19, 0), (28, 0), (29, 6), (24, 11), (19, 6)])
         _polygon(layer, '#6c6546', [(20, 0), (27, 0), (27, 5), (24, 9), (21, 5)])
-        render_draw.line(layer, '#f1cd77', (21, 1), (26, 1))
-        render_draw.line(layer, '#b69e68', (21, 2), (23, 6))
-        render_draw.line(layer, '#394b3a', (26, 2), (25, 6))
+        pygame.draw.line(layer, '#f1cd77', (21, 1), (26, 1))
+        pygame.draw.line(layer, '#b69e68', (21, 2), (23, 6))
+        pygame.draw.line(layer, '#394b3a', (26, 2), (25, 6))
         _polygon(layer, active_color if not moving else '#dbc58b', [(23, 5), (25, 5), (24, 7)])
         if self._passing_remaining > 0 and not self._reduced_motion:
-            render_draw.line(layer, '#aaa16b', (21, 9), (22, 10))
-            render_draw.line(layer, '#aaa16b', (26, 9), (27, 10))
+            pygame.draw.line(layer, '#aaa16b', (21, 9), (22, 10))
+            pygame.draw.line(layer, '#aaa16b', (26, 9), (27, 10))
         if enabled and (self.hovered or focused or self.focused):
             for x, y, sx in ((0, 20, 1), (47, 20, -1)):
-                render_draw.line(layer, '#f1cd77', (x, y), (x, y + 7))
-                render_draw.line(layer, '#b59d66', (x, y), (x + sx * 2, y - 2))
+                pygame.draw.line(layer, '#f1cd77', (x, y), (x, y + 7))
+                pygame.draw.line(layer, '#b59d66', (x, y), (x + sx * 2, y - 2))
         if self.dragging:
-            render_draw.line(layer, '#d5dbba', (21, 46), (27, 46))
+            pygame.draw.line(layer, '#d5dbba', (21, 46), (27, 46))
         if not enabled:
             veil = pygame.Surface((48, 48), pygame.SRCALPHA)
             veil.fill((13, 32, 27, 100))
             layer.blit(veil, (0, 0))
             # One small padlock replaces hover/focus highlights while retaining
             # the visible committed focus beneath the disabled treatment.
-            render_draw.rect(layer, '#c2c7a8', (37, 39, 7, 6))
-            render_draw.rect(layer, '#c2c7a8', (38, 35, 5, 6), 1)
-            render_draw.line(layer, '#33483b', (40, 41), (40, 43))
+            pygame.draw.rect(layer, '#c2c7a8', (37, 39, 7, 6))
+            pygame.draw.rect(layer, '#c2c7a8', (38, 35, 5, 6), 1)
+            pygame.draw.line(layer, '#33483b', (40, 41), (40, 43))
         painter.image(layer, wheel)
         if self._burst_remaining > 0 and not self._reduced_motion and enabled:
             self._draw_burst(painter)
@@ -463,7 +462,7 @@ class GearWidget:
                     if covered:
                         end = (round(start[0] + (finish[0] - start[0]) * covered),
                                round(start[1] + (finish[1] - start[1]) * covered))
-                        render_draw.line(overlay, _color(light, trace_alpha), start, end)
+                        pygame.draw.line(overlay, _color(light, trace_alpha), start, end)
                         if covered < 1:
                             overlay.set_at(end, _color(glint, trace_alpha))
 
@@ -473,9 +472,9 @@ class GearWidget:
                 age = max(0., min(1., progress * 1.2 - (index // 2) * .16))
                 x = round(cx + direction * (4 + 13 * age))
                 y = round(cy - 1 - 10 * age + 3 * age * age + (index // 2) * 5)
-                render_draw.lines(overlay, _color(mid, alpha), False,
+                pygame.draw.lines(overlay, _color(mid, alpha), False,
                                   [(x - direction, y + 3), (x, y), (x + 2 * direction, y - 2)])
-                render_draw.line(overlay, _color(light, alpha), (x, y), (x - direction, y - 2))
+                pygame.draw.line(overlay, _color(light, alpha), (x, y), (x - direction, y - 2))
                 _polygon(overlay, _color(light, alpha),
                          [(x + direction, y - 1), (x + direction, y - 4),
                           (x + 3 * direction, y - 3), (x + 2 * direction, y - 1)])
@@ -487,10 +486,10 @@ class GearWidget:
             # Two offset ripple fronts flatten across the brass, with faceted
             # droplets rising in a small fan and falling back toward the catch.
             radius = round(5 + progress * 12)
-            render_draw.ellipse(overlay, _color(light, round(alpha * .70)),
+            pygame.draw.ellipse(overlay, _color(light, round(alpha * .70)),
                                 (cx - radius, cy - radius // 2, radius * 2 + 1, radius + 1), 1)
             inner = max(2, radius - 4)
-            render_draw.ellipse(overlay, _color(mid, round(alpha * .55)),
+            pygame.draw.ellipse(overlay, _color(mid, round(alpha * .55)),
                                 (cx - inner, cy - inner // 2 + 2, inner * 2 + 1, inner + 1), 1)
             for index, offset in enumerate((-1., -.45, .45, 1.)):
                 x = round(cx + offset * (5 + 15 * progress))
@@ -508,8 +507,8 @@ class GearWidget:
                     turn = age * 5 + index * 1.45
                     path.append((round(cx + direction * (3 + 12 * age) + math.sin(turn) * 2),
                                  round(cy + index % 2 * 3 - age * 18 + math.cos(turn) * 2)))
-                render_draw.lines(overlay, _color(mid, round(alpha * .65)), False, path, 2)
-                render_draw.lines(overlay, _color(light, alpha), False, path[-3:])
+                pygame.draw.lines(overlay, _color(mid, round(alpha * .65)), False, path, 2)
+                pygame.draw.lines(overlay, _color(light, alpha), False, path[-3:])
                 overlay.set_at(path[-1], _color(glint, alpha))
             if progress < .45:
                 tongue = round(5 * (1 - progress / .45))
@@ -525,17 +524,17 @@ class GearWidget:
                 strength = round(alpha * pulse)
                 size = 3 if index % 2 else 2
                 for dx, dy in ((0, size), (size, 1), (size, -1)):
-                    render_draw.line(overlay, _color(light, strength),
+                    pygame.draw.line(overlay, _color(light, strength),
                                      (x - dx, y - dy), (x + dx, y + dy))
                 overlay.set_at((x, y), _color(glint, strength))
                 if size == 3:
                     for direction in (-1, 1):
-                        render_draw.line(overlay, _color(mid, strength),
+                        pygame.draw.line(overlay, _color(mid, strength),
                                          (x, y + 2 * direction), (x + direction, y + 3 * direction))
 
         if progress < .30:
             size = max(1, round((1 - progress / .30) * 4))
-            render_draw.line(overlay, _color(glint, alpha), (cx - size, cy), (cx + size, cy))
-            render_draw.line(overlay, _color(glint, alpha), (cx, cy - size), (cx, cy + size))
+            pygame.draw.line(overlay, _color(glint, alpha), (cx - size, cy), (cx + size, cy))
+            pygame.draw.line(overlay, _color(glint, alpha), (cx, cy - size), (cx, cy + size))
         painter.image(overlay, (round(wheel.left - 8 * scale), round(wheel.top - 8 * scale),
                                 round(64 * scale), round(64 * scale)))

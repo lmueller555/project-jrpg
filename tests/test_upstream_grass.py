@@ -17,7 +17,6 @@ class UpstreamGrassTests(unittest.TestCase):
     def setUpClass(cls):
         cls.data = json.loads(MAP.read_text())
         cls.pack = json.loads(PACK.read_text())
-        cls.original = json.loads((ROOT/'assets/source/maps/eldenmere/town_hd/baseline_maps.json').read_text())['upstream']
 
     def test_collision_and_original_quest_scene_contract_remain_exact(self):
         # These are the approved pre-rollout navigation and scene payloads.
@@ -25,7 +24,7 @@ class UpstreamGrassTests(unittest.TestCase):
         # additive. A vegetation art change must not move any route or prop.
         self.assertEqual(sha256((ROOT/self.data['collision']).read_bytes()).hexdigest(),
                          '17b3787d84ab064915511d7f36fedf3ba5bad5bfce9c4f886385aeb910a1b578')
-        original = {key:value for key,value in self.original.items()
+        original = {key:value for key,value in self.data.items()
                     if key not in ('grass', 'terrain_materials', 'build')}
         encoded = json.dumps(original, sort_keys=True, separators=(',', ':')).encode()
         self.assertEqual(sha256(encoded).hexdigest(),
@@ -40,18 +39,18 @@ class UpstreamGrassTests(unittest.TestCase):
         for x,y in ((9,15), (12,16), (26,12)):
             family,index = materials['cells'][y][x]
             with self.subTest(position=(x,y), family=family):
-                with Image.open(ROOT/self.original['ground_frames'][0]) as ground, \
+                with Image.open(ROOT/self.data['ground_frames'][0]) as ground, \
                         Image.open(ROOT/self.pack['materials'][family]['tiles'][index]) as tile:
                     actual = ground.crop((x*24,y*24,x*24+24,y*24+24)).convert('RGB')
                     self.assertIsNone(ImageChops.difference(actual,tile.convert('RGB')).getbbox())
 
     def test_irregular_grass_patches_stay_clear_of_collision_and_working_stations(self):
         grass = self.data['grass']
-        self.assertEqual(grass['manifest'], 'assets/maps/eldenmere/town_hd/grass.json')
+        self.assertEqual(grass['manifest'], 'assets/terrain/grass/assets.json')
         instances = grass['instances']
         self.assertGreaterEqual(len(instances), 35)
         self.assertEqual(len({item['id'] for item in instances}),len(instances))
-        self.assertEqual({item['variant'] for item in instances},{'sparse_hd','splayed_hd','dense_hd'})
+        self.assertEqual({item['variant'] for item in instances},set(self.pack['tall_grass']['variants']))
         with Image.open(ROOT/self.data['collision']) as image:
             blocking = image.convert('L')
             for item in instances:

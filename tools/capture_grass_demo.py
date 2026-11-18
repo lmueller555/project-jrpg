@@ -4,10 +4,6 @@ The scene is isolated from game journeys. Every review position is reached by
 ordinary walking/running; captures never substitute a character pose or bend.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 import hashlib
@@ -38,7 +34,7 @@ GUARDS = (
 
 
 def digest(path):
-    return reference_digest(path)
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def source_hashes():
@@ -86,7 +82,7 @@ def height_comparison(output):
     """
     from PIL import Image, ImageDraw, ImageFont
     manifest = json.loads((ROOT/'assets/terrain/grass_demo/assets.json').read_text())
-    character = open_image(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    character = Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
     character_bounds = character.getbbox()
     character_height = character_bounds[3]-character_bounds[1]
     anchor_y = manifest['tall_grass']['anchor'][1]
@@ -97,8 +93,8 @@ def height_comparison(output):
         for frames in variant['parted'].values():all_records.extend(frames)
         heights, foreground_tops = [], []
         for record in all_records:
-            rear = open_image(ROOT/record['rear']).convert('RGBA')
-            front = open_image(ROOT/record['front']).convert('RGBA')
+            rear = Image.open(ROOT/record['rear']).convert('RGBA')
+            front = Image.open(ROOT/record['front']).convert('RGBA')
             combined = Image.alpha_composite(rear, front)
             bounds = combined.getbbox()
             heights.append(bounds[3]-bounds[1])
@@ -323,7 +319,7 @@ def capture(output, movie_enabled=True):
         painter = ImageDraw.Draw(board)
         for index, item in enumerate(selected):
             x, y = (index % 2)*480, (index//2)*344
-            with open_image(output/item['file']) as photo:
+            with Image.open(output/item['file']) as photo:
                 board.paste(photo.convert('RGB').resize((480, 320), Image.Resampling.NEAREST), (x, y+24))
             painter.text((x+8, y+7), item['name'].replace('_', ' '), fill='#e1e8c5')
         board.save(output/'contact_sheet.png')

@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Verify sanctuary art, story anchors, door access and lossless review timelines."""
 from collections import deque
 import json
@@ -20,7 +16,7 @@ def load(path):return json.loads(path.read_text())
 
 
 def opened(path,mode='RGBA'):
-    with open_image(path) as image:return image.convert(mode)
+    with Image.open(path) as image:return image.convert(mode)
 
 
 def box(rect):
@@ -174,7 +170,7 @@ class SanctuaryInteriorTests(unittest.TestCase):
     def test_lossless_individual_and_combined_gif_timelines(self):
         for name,meta in self.rooms.items():
             elapsed=0
-            with open_image(PACK/name/'room_review.gif') as gif:
+            with Image.open(PACK/name/'room_review.gif') as gif:
                 self.assertEqual(gif.info['loop'],0)
                 for i in range(gif.n_frames):
                     gif.seek(i);duration=gif.info['duration'];self.assertEqual(duration%300,0)
@@ -185,7 +181,7 @@ class SanctuaryInteriorTests(unittest.TestCase):
                     elapsed+=duration
                 self.assertEqual(elapsed,10800);gif.seek(0)
                 self.assertEqual(gif.convert('RGB').tobytes(),opened(PACK/name/'room_review.png','RGB').tobytes())
-        with open_image(PACK/'interiors_review.gif') as gif:
+        with Image.open(PACK/'interiors_review.gif') as gif:
             self.assertEqual(gif.n_frames,36)
             for i in range(36):
                 gif.seek(i);self.assertEqual(gif.info['duration'],300);actual=gif.convert('RGB')
@@ -194,7 +190,7 @@ class SanctuaryInteriorTests(unittest.TestCase):
                     self.assertEqual(actual.crop(box(column['rect'])).tobytes(),native.resize((native.width*2,native.height*2),Image.Resampling.NEAREST).tobytes())
             gif.seek(0);self.assertEqual(gif.convert('RGB').tobytes(),opened(PACK/'interiors_review.png','RGB').tobytes())
         for path in [PACK/'interiors_review.png',PACK/'connections_review.png',*[PACK/name/'room_review.png' for name in self.rooms]]:
-            with open_image(path) as image:self.assertEqual(image.mode,'RGB')
+            with Image.open(path) as image:self.assertEqual(image.mode,'RGB')
 
 
 if __name__=='__main__':unittest.main()

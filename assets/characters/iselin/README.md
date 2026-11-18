@@ -5,7 +5,7 @@ merged. `actor.json` is the reusable runtime actor definition;
 `animation.json` registers its idles and approved walk manifests.
 
 Authoring follows the
-[global visual art standard](../../../docs/VISUAL_ART_STANDARD.md).
+[global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
 These integration details describe the current exports and renderer.
 
 ## Runtime size and playback
@@ -18,8 +18,7 @@ These integration details describe the current exports and renderer.
 - `StoryActor` loads those unchanged images and creates 21×36 fallbacks in
   memory. Logical and detailed frames select from the same authored durations
   and movement clock. Navigation owns movement speed and advances that clock.
-- `rendering.WorldCanvas` preserves the 42×72 detail in its complete native scene
-  buffer at normal party scale, including
+- `WorldCanvas` preserves the 42×72 detail at normal party scale, including
   foreground foliage and later depth-ordered blits. Ordinary surfaces use the
   logical fallback. No additional bob or frame interpolation is applied.
 - Stopping selects the facing idle. Conversation uses the conversation-facing

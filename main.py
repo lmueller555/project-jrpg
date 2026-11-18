@@ -14,10 +14,6 @@ try:
 except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
-from rendering import scale as render_scale, immutable, record_art, load_art, SurfaceCache
-from landmark_layers import LandmarkLayers
-from object_cues import ObjectCues
-
 from npc_routines import Gardener, RoutineNPC
 from daisy_routine import DaisyRoutine
 from liam_daisy_play import PlayActor, LiamDaisyPlay
@@ -38,8 +34,6 @@ from regent_arrival import RegentArrival
 from mill_gift import MillGift
 from opening_audio import MorningAudio
 from regional_audio import RegionalAudio
-from well_audio import WellAudio
-from well_examination import WellExamination
 from audio_settings import AudioSettings
 from game_music import GameMusic
 from pause_menu import PauseMenu
@@ -48,8 +42,6 @@ from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
 from map_ui import MapUI
 from world_map_viewer import WorldMapViewer
 from inventory import Inventory
-from economy import Wallet, valid_gold
-from town_services import TownServices
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
 from character_progression import CharacterProgression
@@ -98,19 +90,9 @@ class Door:
     """A reversible proximity animation and directional doorway contact sensor."""
     def __init__(self,record,world):
         self.data=record
-        self.frames=[world.art_image(p,record,default_density=world.art_density) for p in record['frames']]
+        self.frames=[world.image(p) for p in record['frames']]
         self.progress=0.0
         self.target_open=False
-        self.entry_armed=True
-
-    def reset_entry_arm(self,position=None):
-        """Only opt-in stair sensors need a fresh excursion after arrival/load."""
-        area=self.data.get('rearm_after_exit')
-        self.entry_armed=not (area and position is not None
-                              and pygame.Rect(area).collidepoint(position))
-
-    def disarm_on_arrival(self):
-        if self.data.get('rearm_after_exit'):self.entry_armed=False
 
     @property
     def state(self):
@@ -118,10 +100,6 @@ class Door:
         return 'closed' if self.progress<=0 else 'closing'
 
     def update(self,position,seconds,other_positions=()):
-        area=self.data.get('rearm_after_exit')
-        if (area and not self.entry_armed and position is not None
-                and not pygame.Rect(area).collidepoint(position)):
-            self.entry_armed=True
         positions=list(other_positions)
         if position is not None:positions.append(position)
         radius=self.data['close_radius'] if self.target_open else self.data['open_radius']
@@ -139,7 +117,6 @@ class Door:
         return self.frames[min(4,int(self.progress+1e-7))] if self.frames else None
 
     def can_enter(self,position,direction):
-        if not self.entry_armed:return False
         if self.data['requires_open'] and self.state!='open':return False
         north=self.data['entry_side']=='north'
         if (direction[1]>=0 if north else direction[1]<=0):return False
@@ -159,7 +136,7 @@ class BenchWorker:
         self.animation=read_json(ROOT/path)
         self.draw_anchor=self.animation['draw_anchor']
         self.frames=[(world.image((path.parent/f['file']).as_posix()),
-                      world.room_art_image((path.parent/f['fitting_file']).as_posix()),f)
+                      world.image((path.parent/f['fitting_file']).as_posix()),f)
                      for f in self.animation['frames']]
         self.duration_ms=sum(frame[2]['duration_ms'] for frame in self.frames)
         self.probe_size = tuple(record['probe_size'])
@@ -201,50 +178,17 @@ class BenchWorker:
 
 
 class StationaryNPC:
-    """Fixed home actor; opt-in roster art does not create a movement schedule."""
+    """One fixed pose with a foot blocker and no behavior or social hooks."""
     def __init__(self,record,world):
         self.data=record
         self.position=pygame.Vector2(record['position'])
         self.draw_anchor=record['draw_anchor']
-        from npc_roster_art import RosterArt, bound_design, named_household_art
-        design_id=bound_design(record['id'])
-        named=named_household_art(world,record['id'])
-        self.roster_art=named if named is not None else RosterArt(world,design_id) if design_id else None
-        self._sprite=world.art_image(record['sprite'],record) if self.roster_art is None else self.roster_art.idles['front']
-        if self.roster_art:
-            if tuple(self.draw_anchor)!=self.roster_art.draw_anchor:
-                raise ValueError('Roster binding must preserve the map draw anchor')
-            self.idles=self.roster_art.idles;self.walks=self.roster_art.walks
-            default_facing=Path(record['sprite']).stem.removeprefix('idle_') if named is not None else 'front'
-            if default_facing not in self.idles:default_facing='front'
-            self.facing=record.get('facing',default_facing);self.moving=False;self.walk_ms=0.
+        self._sprite=world.image(record['sprite'])
         width,height=record['probe_size']
         self.blocker=pygame.Rect(round(self.position.x)-width//2,
                                  round(self.position.y)-height//2,width,height)
 
-    def sprite(self,elapsed_ms):
-        if self.roster_art:
-            return self.roster_art.sprite(self.facing,self.moving,self.walk_ms)
-        return self._sprite
-
-
-class GroundFrames:
-    """Lazy scene-local frames: offscreen chunks never allocate native textures."""
-    def __init__(self,world,record,paths):
-        self.world=world;self.record=record;self.paths=paths
-    def __len__(self):return len(self.paths)
-    def __getitem__(self,index):
-        if isinstance(index,slice):return [self[i] for i in range(*index.indices(len(self)))]
-        path=self.paths[index];record=self.record
-        if isinstance(path,dict):record={**record,**path};path=path['file']
-        key=(path,record.get('artwork_pixels_per_world_pixel',1),tuple(record.get('logical_size',())))
-        cached=self.world._ground_cache.get(key)
-        if cached is not None:return cached
-        # This dedicated bounded cache keeps ground images out of the world's
-        # unbounded raw character/prop cache. The global transform cache is bounded too.
-        raw=immutable(pygame.image.load(str(ROOT/path)).convert_alpha())
-        surface=record_art(raw,record);self.world._ground_cache[key]=surface
-        return surface
+    def sprite(self,elapsed_ms):return self._sprite
 
 
 class World:
@@ -253,19 +197,8 @@ class World:
         self.path=Path(path).resolve()
         self.data=read_json(path)
         self.size=tuple(self.data['size_pixels'])
-        self.landmarks=LandmarkLayers(ROOT,self.data.get('landmark_layers',()))
         self._images={} if image_cache is None else image_cache
-        self.art_density=self.data.get('artwork_pixels_per_world_pixel',1)
-        self.object_cues=ObjectCues(self.data.get('interaction_cues',()))
-        self.ground=[self.art_image(p,self.data,False) for p in self.data['ground_frames']]
-        # Scoped native-density ground layers preserve the shared town bank.
-        self._ground_cache=SurfaceCache(48*1024*1024)
-        self.ground_overlays=[]
-        for r in self.data.get('ground_overlays',()):
-            frames=GroundFrames(self,r,r.get('frames') or [r['image']])
-            size=r.get('logical_size') or frames[0].get_size()
-            self.ground_overlays.append({**r,'surfaces':frames,
-                                         'rect':pygame.Rect(r['position'],size)})
+        self.ground=[self.image(p,False) for p in self.data['ground_frames']]
         collision=self.image(self.data['collision'],False)
         # Collision exports are monochrome, so white pixels block and black
         # pixels remain walkable. Do not use alpha (the mask is opaque).
@@ -275,12 +208,9 @@ class World:
         self._probes={self.probe_size:self.probe}
         self.entities=[]
         for record in self.data['entities']:
-            frames=[self.art_image(p,record,default_density=self.art_density) for p in record['frames']]
-            still=(self.art_image(record['reduced_motion_image'],record,default_density=self.art_density)
-                   if record.get('reduced_motion_image') else None)
-            self.entities.append({**record,'surfaces':frames,'still_surface':still,
-                                  'rect':frames[0].get_rect(topleft=record['position'])})
-        self.foreground=[(self.art_image(r['image'],r,default_density=self.art_density),tuple(r['position'])) for r in self.data['foreground']]
+            frames=[self.image(p) for p in record['frames']]
+            self.entities.append({**record,'surfaces':frames,'rect':frames[0].get_rect(topleft=record['position'])})
+        self.foreground=[(self.image(r['image']),tuple(r['position'])) for r in self.data['foreground']]
         self.overview=self.image(self.data['overview'],False)
         self.doors=[Door(record,self) for record in self.data.get('doors',[])]
         self.well=DrawingWell(self) if any(r['id']=='well' for r in self.entities) else None
@@ -327,29 +257,14 @@ class World:
         for prop in actor.surface_props:
             key=(id(actor),prop['id'])
             if prop['scene']==self.data['id'] and key not in registered:
-                path=prop.get('image',prop.get('file'))
-                if path in self.data.get('art_replacements',{}):
-                    surface=self.room_art_image(path)
-                    if surface.get_size()!=prop['surface'].get_size():
-                        raise ValueError('Room prop replacement changed its logical canvas')
-                    prop['surface']=surface
                 self.routine_props.append((actor,prop));registered.add(key)
 
     def image(self,path,alpha=True):
         key=(path,alpha)
         if key not in self._images:
             image=pygame.image.load(str(ROOT/path))
-            self._images[key]=immutable(image.convert_alpha() if alpha else image.convert())
+            self._images[key]=image.convert_alpha() if alpha else image.convert()
         return self._images[key]
-
-    def art_image(self,path,record=None,alpha=True,default_density=1):
-        if isinstance(path,dict):
-            record={**(record or {}),**path};path=path['file']
-        return record_art(self.image(path,alpha),record,default_density)
-
-    def room_art_image(self,path):
-        """Scene-local prop replacement; raw image/crop consumers stay unchanged."""
-        return self.art_image(self.data.get('art_replacements',{}).get(path,path))
 
     def probe_rect(self,position,size=None):
         width,height=self.probe_size if size is None else size
@@ -380,49 +295,24 @@ class World:
         if entity is None:raise KeyError(identifier)
         if state not in entity.get('state_images',{}):raise ValueError(f'Unknown state {state!r} for {identifier}')
         if entity.get('reserved_by') not in (None,owner):return False
-        path=entity['state_images'][state]
-        replacement=self.data.get('art_replacements',{}).get(path,path)
-        surface=self.art_image(replacement,entity,default_density=self.art_density)
+        path=entity['state_images'][state];surface=self.image(path)
         if surface.get_size()!=entity['surfaces'][0].get_size():raise ValueError('Prop states must share frame dimensions')
         entity.update(state=state,frames=[path],surfaces=[surface])
         raw=next(e for e in self.data['entities'] if e['id']==identifier)
         raw.update(state=state,frames=[path])
         return True
 
-    def draw_ground(self,target,camera,elapsed_ms):
-        """Compose only visible ground chunks; controllers can sample this same pass."""
-        viewport=pygame.Rect(camera,target.get_size())
-        phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
-        target.blit(self.ground[phase],(-camera[0],-camera[1]))
-        for record in self.ground_overlays:
-            if record['rect'].colliderect(viewport):
-                frames=record['surfaces'];index=0 if self.reduced_motion else int(elapsed_ms//record.get('frame_duration_ms',200))%len(frames)
-                position=record['position']
-                target.blit(frames[index],(position[0]-camera[0],position[1]-camera[1]))
-
-    def ground_region(self,rect,elapsed_ms=0):
-        rect=pygame.Rect(rect);canvas=WorldCanvas(rect.size,pygame.SRCALPHA)
-        canvas.fill('#24302d');self.draw_ground(canvas,rect.topleft,elapsed_ms)
-        return canvas
-
     def draw(self,target,camera,player,elapsed_ms,include_ui=True,party_actors=()):
         target.fill('#24302d')
-        viewport=pygame.Rect(camera,target.get_size())
-        self.draw_ground(target,camera,elapsed_ms)
-        self.landmarks.draw(target,camera,'distant',viewer=player)
-        self.landmarks.draw(target,camera,'ground')
+        viewport=pygame.Rect(camera,VIEW_SIZE)
+        phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
+        target.blit(self.ground[phase],(-camera[0],-camera[1]))
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
         ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities
                  if r['rect'].colliderect(viewport) and
-                 not (r['id']=='well' and self.well) and
                  (self.grass is None or self.grass.enabled or 'grass_instance' not in r)]
-        if self.well:
-            well_record=next(r for r in self.entities if r['id']=='well')
-            if well_record['rect'].colliderect(viewport):
-                for baseline,surface,position in self.well.draw_layers(elapsed_ms):
-                    ordered.append((baseline,1,'well_layer',(surface,position)))
         for owner,prop in self.routine_props:
             if not owner.surface_prop_visible(prop):continue
             surface=prop['surface'];rect=surface.get_rect(topleft=prop['position'])
@@ -440,7 +330,7 @@ class World:
             ordered.append((getattr(player,'story_sort_y',None) or player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if kind=='player':
-                anchor=getattr(player,'story_draw_anchor',None) or getattr(player,'draw_anchor',self.data['player_draw_anchor'])
+                anchor=getattr(player,'story_draw_anchor',None) or self.data['player_draw_anchor']
                 position=getattr(player,'story_position',None) or player.position
                 target.blit(player.sprite(),(round(position[0])-anchor[0]-camera[0],
                                               round(position[1])-anchor[1]-camera[1]))
@@ -456,25 +346,18 @@ class World:
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
                 target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
-            elif kind in ('routine_prop','well_layer'):
+            elif kind=='routine_prop':
                 surface,position=record
                 target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
             else:
                 phase=(record['reduced_motion_frame'] if self.reduced_motion and 'reduced_motion_frame' in record else
                        0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces']))
-                surface=record['surfaces'][phase]
-                if self.reduced_motion and record.get('still_surface') is not None:
-                    surface=record['still_surface']
-                position=(record['position'][0]-camera[0],record['position'][1]-camera[1])
-                self.object_cues.draw_outline(target,record,surface,position)
-                target.blit(surface,position)
-                self.object_cues.draw_glint(target,record,surface,position)
+                surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
+                target.blit(surface,(record['position'][0]-camera[0],record['position'][1]-camera[1]))
                 self.draw_doors(target,camera,record['id'])
         # Southern bridge rails occlude actors crossing on the deck.
         for image,position in self.foreground:
             target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
-        self.landmarks.draw(target,camera,'overhead',actors=(player,*self.npcs,*party_actors),
-                            interaction_points=self.data.get('landmark_visibility_points',()))
         if include_ui:
             for routine in getattr(self,'play_routines',[]):routine.draw(target,camera,self)
 
@@ -495,29 +378,14 @@ class Player:
         self.motion_trace=[]
         self.motion_weights=[]
         self.walk_ms=0.0
-        self.art_metadata=read_json(ROOT/'assets/characters/caelan/animation.json')
-        self.base_draw_anchor=tuple(self.art_metadata['draw_anchor'])
-        self.travel_anchors={'idle':{},'walk':{},'run':{}}
-        for direction,record in self.art_metadata['idles'].items():
-            self.travel_anchors['idle'][direction]=self.base_draw_anchor
-        self.idles={direction:load_art(world,record['file'],record)
-                    for direction,record in self.art_metadata['idles'].items()}
+        self.idles={d:world.image(f'assets/characters/caelan/idle_{d}.png') for d in ('front','left','right','back')}
         self.walks={};self.runs={}
         for gait,animations in (('walk',self.walks),('run',self.runs)):
-            for direction,reference in self.art_metadata[gait+'s'].items():
-                manifest=ROOT/reference['manifest']
-                metadata=read_json(manifest)
-                density=metadata.get('artwork_pixels_per_world_pixel',1)
-                self.travel_anchors[gait][direction]=tuple(v/density for v in metadata.get(
-                    'draw_anchor',[v*density for v in self.base_draw_anchor]))
-                # Each bank keeps its own density, padding and authored timing.
-                animations[direction]=[(load_art(world,(manifest.parent/r['file']).relative_to(ROOT).as_posix(),
-                                                 {**metadata,**reference,**r}),r['duration_ms'])
+            for direction in self.idles:
+                folder=ROOT/f'assets/characters/caelan/{gait}_{direction}'
+                metadata=read_json(folder/'animation.json')
+                animations[direction]=[(world.image((folder/r['file']).relative_to(ROOT).as_posix()),r['duration_ms'])
                                        for r in metadata['frames']]
-        self.walk_durations={direction:tuple(duration for _,duration in frames)
-                             for direction,frames in self.walks.items()}
-        self.run_durations={direction:tuple(duration for _,duration in frames)
-                            for direction,frames in self.runs.items()}
         if not world.can_stand(self.position):raise ValueError('Player spawn is blocked')
 
     def update(self,direction,seconds,world,running=False):
@@ -560,12 +428,6 @@ class Player:
         # Each gait uses its authored frame durations, independent of travel speed.
         if self.moving:self.walk_ms+=seconds*1000
         else:self.walk_ms=0
-
-    @property
-    def draw_anchor(self):
-        if getattr(self,'story_sprite',None) is not None:return self.base_draw_anchor
-        gait='run' if self.moving and self.running else 'walk' if self.moving else 'idle'
-        return self.travel_anchors[gait][self.facing]
 
     def sprite(self):
         if getattr(self,'story_sprite',None) is not None:return self.story_sprite
@@ -631,7 +493,7 @@ class Game:
         self.elapsed_ms=0.0
         self.map_open=False
         self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
-        self.map_image=render_scale(self.world.overview,self.map_size)
+        self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
         self._setup_persistent_npcs()
         for scene_id in self.town.data.get('ambient_scenes',[]):self._scene_by_id(scene_id)
         self.play_routines=[]
@@ -666,7 +528,6 @@ class Game:
         self.quest_ui=QuestUI(self)
         self.map_ui=MapUI(self)
         self.world_map_viewer=WorldMapViewer(self)
-        self.wallet=Wallet()
         self.inventory_ui=InventoryUI(self)
         self.status_ui=StatusUI(self)
         self.party_ui=PartyUI(self)
@@ -688,7 +549,6 @@ class Game:
         self.pause=PauseMenu(self)
         self.combat=CombatEncounters(self)
         self.bed_rest=BedRest(self)
-        self.services=TownServices(self)
         self.overworld_travel=OverworldTravel(self)
         from sanctuary_reserve import SanctuaryReserve
         self.sanctuary_reserve=SanctuaryReserve(self)
@@ -702,9 +562,6 @@ class Game:
         self.sanctuary_arrival=SanctuaryArrival(self)
         self.sanctuary_rescue=SanctuaryRescue(self)
         self.regional_audio=RegionalAudio(self)
-        self.well_audio=WellAudio(self)
-        self.well_audio.prepare()
-        self.well_examination=WellExamination(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_embedded else save_path)
         self.game_over=False
@@ -801,7 +658,7 @@ class Game:
     def _progress_signature(self):
         return json.dumps({'quests':self.quests.to_dict(),
                            'dialogue_flags':sorted(self.social.flags),
-                           'inventory':self.inventory.to_dict(),'gold':self.wallet.gold,
+                           'inventory':self.inventory.to_dict(),
                            'sanctuary_cave':self.sanctuary_cave.to_dict(),
                            'cave_encounter_pending':self.cave_random_encounters.pending,
                            'cave_lesson':self.cave_lesson.to_dict(),
@@ -914,7 +771,6 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
-               valid_gold(data.get('gold',0)) and
                SanctuaryCave.valid_journey(data) and
                SanctuaryBoss.valid_journey(data) and
                SanctuaryRescue.valid_journey(data) and
@@ -1054,7 +910,6 @@ class Game:
         self.sanctuary_rescue.reset()
         self.regent_arrival.reset()
         self.combat.reset()
-        self._reset_ambient_work()
         self.attributes.reset()
         if data is not None and 'character_attributes' in data:
             self.attributes.restore(data['character_attributes'])
@@ -1100,8 +955,6 @@ class Game:
             position=data['player']['position']
             self.player.facing=data['player']['facing']
             self.exterior_position.update(data['exterior_position'])
-        self.wallet=Wallet(data.get('gold',0) if data is not None else 0)
-        self.services.reset()
         self.battle_rewards=BattleRewards(self.inventory)
         if data is not None and 'battle_rewards' in data:
             self.battle_rewards.restore(data['battle_rewards'])
@@ -1187,8 +1040,6 @@ class Game:
         if not self.sanctuary_rescue.restore(data.get('sanctuary_rescue') if data else None,journey=data):return False
         for scene in self.scenes.values():
             scene.reset_grass(reduced_motion=self.audio.reduced_motion)
-            for door in scene.doors:
-                door.reset_entry_arm(self.player.position if scene is self.world else None)
         self.opening_audio.reset()
         self.regional_audio.reset()
         self.pause.close()
@@ -1253,7 +1104,7 @@ class Game:
         if checkpoint is not None:saved_position=checkpoint
         post_battle=self.combat.snapshot()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
-              'inventory':self.inventory.to_dict(),'gold':self.wallet.gold,
+              'inventory':self.inventory.to_dict(),
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'cave_lesson':self.cave_lesson.to_dict(),
@@ -1290,25 +1141,12 @@ class Game:
         self.combat.reset()
         self.saves.pending_scene=None
         self.saves.pending_battles.clear()
-        self.saves.pending_services.clear()
         self.opening_audio.reset()
         self.regional_audio.reset()
-        self.well_audio.reset()
         self.elemental_bosses.stop_audio()
         self.player.moving=self.player.running=False
         self._mouse_held=False
         self.save_menu.open('game_over')
-
-    def _reset_ambient_work(self):
-        """Ambient chores restart at rest; they are not durable quest progress.
-
-        Reset both ends of a reservation together, before restoring the player.
-        Ordinary indoor visits keep the same actor and operation alive.
-        """
-        for scene in self.scenes.values():
-            for npc in scene.npcs:
-                if isinstance(npc,Gardener):npc.reset_cycle()
-        self.well_audio.reset()
 
     def return_to_title(self):
         self.save_menu.close()
@@ -1324,7 +1162,6 @@ class Game:
         self.mill_gift.reset()
         self.sanctuary_rescue.reset()
         self.sanctuary_arrival.reset()
-        self._reset_ambient_work()
         self.on_title=True
         self.title.fade=0.
         self.title.selected=0
@@ -1529,13 +1366,6 @@ class Game:
                 from elden_vale_sanctuary import SanctuaryReserveWorld
                 self.scenes[path]=SanctuaryReserveWorld(path,self.town._images)
             else:self.scenes[path]=World(path,self.town._images)
-        # The indoor drivetrain shares the exterior wheel's existing story
-        # state, even when its room is first loaded after the mill stopped.
-        owner=getattr(self,'opening_conclusion',None)
-        if owner is not None:
-            for record in self.scenes[path].entities:
-                if record.get('animation_driver')=='mill_wheel':
-                    record['animation_stopped']=owner.mill_stopped
         return self.scenes[path]
 
     @property
@@ -1634,12 +1464,10 @@ class Game:
                 self.combat.stop_audio()
                 self.elemental_bosses.stop_audio()
                 self.cave_lesson.release_pose()
-                self.well_audio.stop()
                 self.music.stop()
                 return False
             if event.type==pygame.WINDOWFOCUSLOST:
                 self._music_focused=False
-                self.well_audio.stop()
             elif event.type==pygame.WINDOWFOCUSGAINED:
                 self._music_focused=True
             if event.type==pygame.KEYDOWN and event.key==pygame.K_F11:
@@ -1721,10 +1549,6 @@ class Game:
                     self.save_progress()
                     return False
                 resumed=not self.pause.is_open or (overlay is not None and self.pause.overlay is None)
-                continue
-            if self.services.is_open:
-                self.services.handle_event(event)
-                resumed=not self.services.is_open
                 continue
             if self.inventory_ui.is_open:
                 self.inventory_ui.handle_event(event)
@@ -1840,23 +1664,12 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
-                    if self.services.interact():
-                        advanced=True
-                        resumed=True
-                        continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
-                        if not self.combat.interact() and not self.try_world_link():
-                            if self.well_examination.interact():
-                                self.well_audio.stop()
-                                advanced=resumed=True
-                                continue
-                            self.opening.inspect_nearby()
+                        if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
         return True
 
     def update(self,seconds,direction=None,running=None):
-        self.well_audio.update(seconds)
-        self._update_object_cues(0)
         self.elemental_bosses.sync_audio()
         if self.quest_playtest_session is not None:
             session=self.quest_playtest_session
@@ -1887,7 +1700,6 @@ class Game:
             self._update_world(seconds,direction,running)
         finally:
             self.regional_audio.update(0)
-            self.well_audio.update(0)
             self.saves.update(seconds)
 
     def _sync_world_music(self, *, restoring=False):
@@ -1920,7 +1732,7 @@ class Game:
                 and not self.opening.locks_player and not self.opening.controls_player
                 and not self.opening_cinematic.active
                 and not any(getattr(getattr(self,name,None),'is_open',False)
-                            for name in ('pause','services','inventory_ui','world_map_viewer',
+                            for name in ('pause','inventory_ui','world_map_viewer',
                                          'party_ui','status_ui'))
                 and not self.party.battle_reason())
 
@@ -2013,17 +1825,14 @@ class Game:
             # focus loss must not finish that scene while its window is away.
             self.opening_audio.set_paused(True)
             return
-        self.opening_audio.set_paused(self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or
+        self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
                                       self.world_map_viewer.is_open or self.party_ui.is_open)
-        if self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open or self.party_ui.is_open:
+        if self.pause.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open or self.party_ui.is_open:
             if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
         if (getattr(self.overworld_travel,'remote',self.overworld_travel.active)
                 and (self.map_open or self.quest_ui.journal_open)):
-            self.opening_audio.set_paused(True)
-            return
-        if not self._music_focused and self.world.data.get('pause_on_focus_loss',False):
             self.opening_audio.set_paused(True)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
@@ -2087,11 +1896,7 @@ class Game:
             for scene in self.scenes.values():
                 blocker=scene.probe_rect(self.player.position) if scene is self.world else None
                 for npc in scene.npcs:
-                    if isinstance(npc,Gardener):
-                        if (self._music_focused and not self.quest_ui.journal_open
-                                and not self.map_open and not (self.social.script_identifier or '').startswith('well_examine_')):
-                            npc.update(seconds,scene,blocker)
-                    elif isinstance(npc,DaisyRoutine):npc.update(seconds,scene,blocker)
+                    if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
             for npc in self.persistent_npcs:
                 if getattr(npc,'story_paused',False) or getattr(npc,'party_travelling',False):continue
                 scene=self._routine_worlds[npc]
@@ -2116,7 +1921,6 @@ class Game:
                     self.enter(door)
                     break
         self._update_grass(seconds)
-        self._update_object_cues(seconds)
         self.quest_ui.update(seconds)
         self._sync_inventory()
         self._save_retry_seconds=max(0.0,self._save_retry_seconds-seconds)
@@ -2130,32 +1934,6 @@ class Game:
             self.location_label=location
             self.location_seconds=3.5
 
-    def _update_object_cues(self,seconds):
-        previous=getattr(self,'_cue_world',None)
-        if previous is not self.world:
-            if previous is not None and hasattr(previous,'object_cues'):previous.object_cues.reset()
-            if hasattr(self.world,'object_cues'):self.world.object_cues.reset()
-            self._cue_world=self.world
-        if not hasattr(self.world,'object_cues'):return
-        conditions=set()
-        reserve=getattr(self,'sanctuary_reserve',None)
-        if reserve is not None:conditions.update(reserve.cue_conditions())
-        if self.world.data['id']=='elden_vale_sanctuary_relief' and self.bed_rest.available(self.bed_rest.relief['bed']):conditions.add('reserve_relief_rest')
-        if self.world.data.get('rest_profile') and self.bed_rest.available(self.world.data['rest_profile']):conditions.add('inn_rest')
-        if self.opening.stage=='explore':conditions.add('opening_breakfast')
-        if self.opening.stage in ('explore','assignment','done'):
-            conditions.update('bedroom_inspect_'+key for key in self.opening.data['inspections'])
-        enabled=(self._music_focused and not self.social.locked and not self.opening.locks_player
-                 and not self.household_action and not self.combat.active and not self.on_title
-                 and not self.regent_arrival.active and not self.sanctuary_arrival.active
-                 and not self.sanctuary_rescue.active and not self.opening_cinematic.active
-                 and not self.pause.is_open and not self.services.is_open and not self.inventory_ui.is_open
-                 and not self.party_ui.is_open and not self.world_map_viewer.is_open
-                 and not self.map_open and not self.quest_ui.journal_open
-                 and not self.save_menu.is_open and not self.game_over)
-        self.world.object_cues.update(seconds,self.world,self.player,conditions,
-                                      enabled,self.audio.reduced_motion)
-
     def _update_grass(self,seconds):
         """Advance vegetation on the same exploration clock as moving actors."""
         companions=self.party_travel.actors()
@@ -2165,7 +1943,7 @@ class Game:
                                reduced_motion=self.audio.reduced_motion)
 
     def enter(self,door):
-        if (self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
+        if (self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
                 self.party_ui.is_open or self.world_map_viewer.is_open or self.opening.locks_player or self.household_action):return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
@@ -2181,7 +1959,6 @@ class Game:
         if self.social.locked:self.social.cancel()
         if self.world is self.town:self.exterior_position.update(door.data['anchor'])
         origin=self.world
-        self.well_audio.stop()
         self.world=destination
         self.player.position.update(spawn)
         self.sanctuary_relief.ensure_world()
@@ -2189,9 +1966,7 @@ class Game:
         self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.25
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
-        if arrival:
-            arrival.force_open()
-            arrival.disarm_on_arrival()
+        if arrival:arrival.force_open()
         self.opening.on_enter_scene()
         for owner in (self.mill_quest,self.regent_quest,self.lantern_quest):
             hook=getattr(owner,'on_enter_scene',None)
@@ -2202,7 +1977,7 @@ class Game:
     def nearby_world_map(self):
         """Use the reachable floor approach authored beside the classroom map."""
         if (self.on_title or self.opening_cinematic.active or self.combat.active or
-                self.party_ui.is_open or self.world_map_viewer.is_open or self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or
+                self.party_ui.is_open or self.world_map_viewer.is_open or self.pause.is_open or self.inventory_ui.is_open or
                 self.map_open or self.quest_ui.journal_open or self.social.locked or
                 self.household_action or self.opening.locks_player or self.transfer_cooldown):return None
         display=self.world.data.get('world_map_display')
@@ -2232,7 +2007,7 @@ class Game:
         """Use an authored outdoor trail with the same safe checkpoint as doors."""
         if (not isinstance(link,dict) or link not in self.world.data.get('world_links',[]) or
                 self.player.position.distance_to(link['position'])>link.get('radius',20) or
-                self.pause.is_open or self.services.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
+                self.pause.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
                 self.world_map_viewer.is_open or self.party_ui.is_open or
                 self.social.locked or self.household_action or self.opening.locks_player or self.transfer_cooldown):return False
         if link.get('id')=='town_to_upstream' and not self.mill_quest.can_enter_upstream():return False
@@ -2240,7 +2015,6 @@ class Game:
         if not destination.can_stand(spawn):return False
         origin=self.world
         if origin is self.town:self.exterior_position.update(self.player.position)
-        self.well_audio.stop()
         self.world=destination;self.player.position.update(spawn)
         self.player.facing=link.get('arrival_facing','front');self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.3
@@ -2300,14 +2074,13 @@ class Game:
               self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
               self.sanctuary_relief.interaction_hint() or
-              self.services.interaction_hint() or self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
+              self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
               next((hint for visit in self.household_visits
                     if (hint:=visit.interaction_hint())), ''))
         if not hint:hint=self.combat.interaction_hint()
         if not hint:
             link=self.nearby_world_link()
             if link is not None:hint='E: '+link.get('label','Follow the trail')
-        if not hint:hint=self.well_examination.interaction_hint()
         if hint:
             hint=hint.replace(': ',' — ',1)
             available=self.minimap.rect.left-24 if self.minimap.visible else VIEW_SIZE[0]-24
@@ -2398,16 +2171,15 @@ class Game:
         if isinstance(self.world,World):
             self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False,
                             party_actors=self.party_travel.actors())
-        else:
-            self.world.reduced_motion=self.audio.reduced_motion
-            self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
+        else:self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
         self.cave_lesson.draw_world(self.canvas,camera)
         self.elemental_bosses.draw_world(self.canvas,camera)
         self.combat.draw_world(self.canvas,camera)
         self.opening.draw_world(self.canvas,camera)
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
         _,size,origin=self._ensure_ui_surface()
-        render_scale(self.canvas,size,self.ui_surface)
+        pygame.transform.scale(self.canvas,size,self.ui_surface)
+        self.canvas.present_detail(self.ui_surface)
         for routine in getattr(self.world,'play_routines',[]):
             routine.draw(self.ui_surface,camera,self.world)
         if not self._is_gallery_preview and not self.elemental_bosses.acquisition_active:
@@ -2442,7 +2214,6 @@ class Game:
         if self.map_open:self.draw_map()
         self.quest_ui.draw_journal(self.ui_surface)
         self.inventory_ui.draw(self.ui_surface)
-        self.services.draw(self.ui_surface)
         self.status_ui.draw(self.ui_surface)
         self.party_ui.draw(self.ui_surface)
         self.world_map_viewer.draw(self.ui_surface)
@@ -2480,7 +2251,6 @@ def main(argv=None):
     finally:
         game.save_progress()
         game.opening_audio.reset()
-        game.well_audio.reset()
         game.cave_lesson.release_pose()
         game.elemental_bosses.stop_audio()
         game.music.stop()

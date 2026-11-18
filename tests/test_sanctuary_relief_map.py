@@ -41,7 +41,7 @@ class SanctuaryReliefMapTests(unittest.TestCase):
         self.assertEqual(self.world.probe_size, (24, 12))
         for source in self.world.data['source_assets']:
             with self.subTest(source=source['path']):
-                self.assertTrue(source['path'].startswith('assets/source/maps/sanctuary_reserve_hd/'))
+                self.assertTrue(source['path'].startswith('assets/terrain/eldenmere/'))
                 self.assertEqual(hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest(),
                                  source['sha256'])
         hall = World(HALL)

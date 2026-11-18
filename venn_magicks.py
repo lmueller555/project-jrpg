@@ -1,5 +1,4 @@
 """Pose-only animation for Caelan's unsuccessful irrigation spell."""
-from caelan_scene_art import frame as scene_frame
 import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
@@ -10,7 +9,7 @@ class VennMagicks:
         self.data = json.loads((ROOT/ART/'animation.json').read_text())
         self.sequence = self.data['sequence']
         sheet = world.image(ART+'poses.png')
-        self.poses = {name: [scene_frame(sheet,f['rect'],self.data) for f in record['frames']]
+        self.poses = {name: [sheet.subsurface(f['rect']).copy() for f in record['frames']]
                       for name, record in self.data['animations'].items()}
 
     def duration(self, phase):return self.data['animations'][phase]['duration_ms']/1000

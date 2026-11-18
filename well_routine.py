@@ -1,155 +1,137 @@
-"""Live well reservation and native depth passes, driven by one mechanism clock.
-
-The gardener advances the controller after real station arrivals. Drawing reads
-its frozen snapshot and never consults actor animation time or transfers a pail.
-"""
-from collections import OrderedDict
+"""A hand-operated well whose animation follows its reserved operator's clock."""
+import json
 from pathlib import Path
-
 import pygame
 
-from rendering import artwork, layer as render_layer, surface_bytes
-from well_mechanism import WellMechanism
-from well_live_presentation import WellLivePresentation
+ROOT=Path(__file__).resolve().parent
 
-ROOT = Path(__file__).resolve().parent
+
+def mix(a,b,t):return pygame.Vector2(a).lerp(b,max(0,min(1,t)))
 
 
 class DrawingWell:
-    """Exclusive operator reservation and bounded native well presentation."""
-    CACHE_ENTRIES = 48
+    def __init__(self,world):
+        folder=Path('assets/terrain/eldenmere/well/drawing')
+        self.data=json.loads((ROOT/folder/'animation.json').read_text())
+        self.fixed=world.image((folder/self.data['fixed']).as_posix())
+        self.rim=world.image((folder/self.data['front_rim']).as_posix())
+        self.owner=None
+        self.pails={}
+        anim=json.loads((ROOT/'assets/characters/npcs/female_02/gardener/animations.json').read_text())
+        self.bucket_data=anim['buckets']
+        for key,record in anim['buckets'].items():
+            self.pails[key]=world.image('assets/characters/npcs/female_02/gardener/'+record['file'])
 
-    def __init__(self, world):
-        self.world = world
-        self.mechanism = self.model = WellMechanism()
-        self.presentation = WellLivePresentation(world, root=ROOT)
-        contract = self.model.contract
-        binding = getattr(world, 'data', {}).get('well_runtime', {})
-        self.position = tuple(contract['well_world_origin'])
-        if tuple(binding.get('world_origin_logical', self.position)) != self.position:
-            raise ValueError('Live well origin differs from the shared mechanism contract')
-        depths = binding.get('depth_baselines_logical', {})
-        self.depths = (depths.get('back', 840), depths.get('front', 896))
-        if self.depths[0] >= self.depths[1]:
-            raise ValueError('Live well depth passes must be ordered far then near')
-        geometry = contract['geometry']
-        self.data = {
-            'canvas_size': list(self.presentation.base['geometry']['logical_size']),
-            'loading_position': contract['stations']['loading']['feet_world_logical'],
-            'operator_position': contract['stations']['operator']['feet_world_logical'],
-            'loading_grip': geometry['loading_grip_local'],
-            'parked_bucket_grip': geometry['guided_grip_local'],
-            'lowered_bucket_grip': geometry['lowered_grip_local'],
-            'rope_origin': geometry['rope_origin_local'],
-            'crank_pivot': geometry['crank_pivot_local'],
-            'phases_ms': contract['phase_durations_ms'],
-        }
-        self.owner = None
-        self.token = None
-        self._poses = OrderedDict()
-        self._cache_hits = self._cache_misses = 0
+    def reserve(self,actor):
+        if self.owner is not None and self.owner is not actor:return False
+        self.owner=actor;return True
 
-    def reserve(self, actor, water_units=0):
-        if self.owner is not None:
-            return self.token if self.owner is actor else None
-        actor_id = actor.data['id']
-        token = self.model.reserve(actor_id, actor_id+'.pail', water_units=water_units)
-        if token is not None:
-            self.owner, self.token = actor, token
-        return token
-
-    def signal_ready(self, actor, station):
-        return self.owner is actor and self.model.signal_ready(self.token, station)
-
-    def update(self, seconds):
-        """Called by the operator's simulation update, never by the renderer."""
-        self.model.update(seconds)
-
-    def snapshot(self):
-        return self.model.snapshot()
-
-    def drain_events(self):
-        return self.model.drain_events()
-
-    def release(self, actor):
-        """A full pail leaves with its actor only after completed retrieval."""
-        if self.owner is not actor or not self.snapshot().completed:
-            return False
-        self.owner = self.token = None
-        return True
-
-    def reset(self):
-        """Reset only with the ambient actor's coordinated reset_cycle()."""
-        recovery = self.model.reset()
-        self.owner = self.token = None
-        return recovery
+    def release(self,actor):
+        if self.owner is actor:self.owner=None
 
     @property
-    def state(self): return self.snapshot().phase_id
+    def state(self):return self.owner.state if self.owner else 'idle'
 
     @property
-    def time(self): return self.snapshot().phase_elapsed_ms
+    def time(self):return self.owner.state_ms if self.owner else 0
 
     @property
-    def progress(self): return self.snapshot().phase_progress
+    def progress(self):
+        return min(1,self.time/self.data['phases_ms'].get(self.state,1))
 
     @property
-    def crank_index(self): return self.snapshot().crank_sample
+    def crank_index(self):
+        tick=int((self.time+1e-6)//(125 if self.state=='well_raise' else 100))
+        if self.state=='well_lower':return tick%8
+        if self.state=='well_raise':return -tick%8
+        return 0
 
     @property
-    def bucket_grip(self): return pygame.Vector2(self.snapshot().bucket_grip_local)
+    def bucket_grip(self):
+        d=self.data;s=self.state;t=self.progress
+        loading=d['loading_grip'];parked=d['parked_bucket_grip'];low=d['lowered_bucket_grip']
+        if s=='well_settle':
+            bounce=d['settle_bounce_pixels'] if .25<=t<.55 else 0
+            return pygame.Vector2(parked)+(0,bounce)
+        if s=='well_lower':return mix(parked,low,t)
+        if s=='well_fill':return pygame.Vector2(low)
+        if s=='well_raise':return mix(low,parked,t)
+        if s=='well_catch':return pygame.Vector2(parked if t<.55 else loading)
+        if s in ('well_to_crank','well_grip','well_lock','well_to_loading'):
+            return pygame.Vector2(parked)
+        return pygame.Vector2(loading)
 
     @property
-    def bucket_on_rope(self): return self.snapshot().pail_owner == 'well'
+    def draw_level(self):
+        return self.owner.water_units if self.owner else 0
+
+    @property
+    def bucket_on_rope(self):
+        return self.owner is not None and self.state in (
+            'well_settle','well_to_crank','well_grip','well_lower','well_fill',
+            'well_raise','well_lock','well_to_loading','well_catch')
 
     @property
     def bucket_at_handoff(self):
-        state = self.snapshot()
-        return state.bucket_region == 'loading_foreground' and state.pail_owner == 'well'
+        return self.state=='well_catch' and self.progress>=.55
 
     @property
-    def rope_deployed(self): return self.snapshot().rope_deployed
+    def rope_deployed(self):
+        # The connector follows the well-owned pail. It is short while parked
+        # beneath the winch and lengthens only as the pail enters the shaft.
+        return self.bucket_on_rope and not self.bucket_at_handoff
 
     @property
-    def rope_end(self): return pygame.Vector2(self.snapshot().rope_end_local)
+    def rope_end(self):
+        return pygame.Vector2(self.bucket_grip)
 
-    @property
-    def draw_level(self): return self.snapshot().water_units
-
-    @staticmethod
-    def _native_surface(image):
-        return artwork(image, density=2)
-
-    def _layers(self, elapsed_ms):
-        state = self.snapshot()
-        reduced = bool(getattr(self.world, 'reduced_motion', False))
-        key = self.presentation.pose_key(state, elapsed_ms, reduced)
-        pair = self._poses.pop(key, None)
-        if pair is None:
-            self._cache_misses += 1
-            pair = tuple(self._native_surface(image) for image in
-                         self.presentation.render_layers(state, elapsed_ms, reduced))
-        else:
-            self._cache_hits += 1
-        self._poses[key] = pair
-        while len(self._poses) > self.CACHE_ENTRIES:
-            self._poses.popitem(last=False)
-        return pair
-
-    def draw_layers(self, elapsed_ms):
-        """Independent logical/native surfaces with world depth and origin."""
-        return tuple((depth, surface.copy(), self.position)
-                     for depth, surface in zip(self.depths, self._layers(elapsed_ms)))
-
-    def sprite(self, elapsed_ms):
-        """Combined compatibility view; live World uses the two depth passes."""
-        image = render_layer(self.data['canvas_size'], pygame.SRCALPHA)
-        for surface in self._layers(elapsed_ms): image.blit(surface, (0, 0))
+    def sprite(self,elapsed_ms):
+        image=pygame.Surface(self.data['canvas_size'],pygame.SRCALPHA)
+        image.blit(self.fixed,(0,0))
+        i=self.crank_index
+        # Grain bands rotate around the spindle's face with the crank. Reverse
+        # crank phases reverse these bands as well; idle/filling holds them.
+        for x in (28,47):
+            pygame.draw.line(image,'#735136',(x,41+i%4),(x+5,41+i%4))
+            pygame.draw.line(image,'#c69d66',(x+1,41+(i+2)%4),(x+4,41+(i+2)%4))
+        phase=int(elapsed_ms//100)%4
+        # Restrained water glint remains independent of the operated mechanism.
+        # Use the same six 200ms ambient phases as the terrain exports.
+        phase=int(elapsed_ms//200)%6
+        for x in (29+phase,48-phase):image.set_at((x,69),pygame.Color('#598e9f'))
+        grip=self.bucket_grip
+        key=f'bucket_0_{self.draw_level}'
+        if self.rope_deployed:
+            rope_end=tuple(round(v) for v in self.rope_end)
+            pygame.draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
+            pygame.draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
+        xy=grip-pygame.Vector2(self.bucket_data[key]['grip'])
+        # Inside the shaft, the pail is composited before the near rim. At the
+        # retrieval transfer it moves forward behind the gardener's body.
+        if self.bucket_on_rope and not self.bucket_at_handoff:
+            image.set_clip(pygame.Rect(0,0,self.data['canvas_size'][0],72))
+            image.blit(self.pails[key],xy)
+            image.set_clip(None)
+        if self.state=='well_fill':
+            radius=4+phase
+            pygame.draw.line(image,'#b9d9d2',(40-radius,70),(36,69))
+            pygame.draw.line(image,'#598e9f',(44,69),(40+radius,70))
+        image.blit(self.rim,(0,0))
+        if self.bucket_on_rope and self.bucket_at_handoff:
+            image.blit(self.pails[key],xy)
+        x,y=self.data['hook_tip'];mount_y=self.data['hook_mount'][1]
+        hook=[(x,mount_y),(x,y-1),(x+2,y),(x+2,y-1)]
+        # With no attached pail, only this three-pixel hook hangs beneath the
+        # windlass. No line reaches the rim or the gardener.
+        if not self.rope_deployed:
+            pygame.draw.lines(image,'#a2b4a7',False,hook)
+        if self.state=='well_raise' and grip.y<61:
+            for n in range(2):
+                image.set_at((round(grip.x)+n*3,round(grip.y)+14+(phase+n)%4),pygame.Color('#b9d9d2'))
+        # Shaft wrap and the crank share the very same phase as her hand.
+        pygame.draw.line(image,'#c69d66',(40+i%2,40),(40+i%2,46),1)
+        pivot=self.data['crank_pivot'];hand=self.data['crank_handles'][i]
+        pygame.draw.line(image,'#45382d',pivot,hand,3)
+        pygame.draw.line(image,'#a37b4c',pivot,hand,1)
+        pygame.draw.line(image,'#c69d66',hand,(hand[0]+2,hand[1]),2)
         return image
-
-    def cache_info(self):
-        return {'entries': len(self._poses), 'limit': self.CACHE_ENTRIES,
-                'surface_bytes': sum(surface_bytes(surface) for pair in self._poses.values()
-                                     for surface in pair),
-                'max_surface_bytes': self.CACHE_ENTRIES*2*72*88*4*5,
-                'hits': self._cache_hits, 'misses': self._cache_misses}

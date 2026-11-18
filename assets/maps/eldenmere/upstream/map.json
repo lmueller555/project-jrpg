@@ -24,7 +24,12 @@
     30
   ],
   "ground_frames": [
-    "assets/maps/eldenmere/town_hd/blank.png"
+    "assets/maps/eldenmere/upstream/ground/frame_01.png",
+    "assets/maps/eldenmere/upstream/ground/frame_02.png",
+    "assets/maps/eldenmere/upstream/ground/frame_03.png",
+    "assets/maps/eldenmere/upstream/ground/frame_04.png",
+    "assets/maps/eldenmere/upstream/ground/frame_05.png",
+    "assets/maps/eldenmere/upstream/ground/frame_06.png"
   ],
   "ground_frame_duration_ms": 200,
   "collision": "assets/maps/eldenmere/upstream/collision.png",
@@ -37,24 +42,10 @@
       ],
       "sort_y": 72,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_1",
@@ -64,24 +55,10 @@
       ],
       "sort_y": 70,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_2",
@@ -91,24 +68,10 @@
       ],
       "sort_y": 62,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_3",
@@ -118,24 +81,10 @@
       ],
       "sort_y": 76,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_4",
@@ -145,24 +94,10 @@
       ],
       "sort_y": 64,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_5",
@@ -172,24 +107,10 @@
       ],
       "sort_y": 68,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_6",
@@ -199,24 +120,10 @@
       ],
       "sort_y": 68,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_7",
@@ -226,24 +133,10 @@
       ],
       "sort_y": 66,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_8",
@@ -253,24 +146,10 @@
       ],
       "sort_y": 70,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_9",
@@ -280,24 +159,10 @@
       ],
       "sort_y": 254,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_10",
@@ -307,24 +172,10 @@
       ],
       "sort_y": 372,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_11",
@@ -334,24 +185,10 @@
       ],
       "sort_y": 488,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_12",
@@ -361,24 +198,10 @@
       ],
       "sort_y": 582,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_13",
@@ -388,24 +211,10 @@
       ],
       "sort_y": 522,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_14",
@@ -415,24 +224,10 @@
       ],
       "sort_y": 536,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_15",
@@ -442,24 +237,10 @@
       ],
       "sort_y": 522,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_16",
@@ -469,24 +250,10 @@
       ],
       "sort_y": 276,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_17",
@@ -496,24 +263,10 @@
       ],
       "sort_y": 314,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_18",
@@ -523,24 +276,10 @@
       ],
       "sort_y": 438,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_19",
@@ -550,24 +289,10 @@
       ],
       "sort_y": 526,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_20",
@@ -577,24 +302,10 @@
       ],
       "sort_y": 570,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_21",
@@ -604,24 +315,10 @@
       ],
       "sort_y": 412,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_22",
@@ -631,24 +328,10 @@
       ],
       "sort_y": 508,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_23",
@@ -658,24 +341,10 @@
       ],
       "sort_y": 558,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_24",
@@ -685,24 +354,10 @@
       ],
       "sort_y": 550,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_25",
@@ -712,24 +367,10 @@
       ],
       "sort_y": 552,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     },
     {
       "id": "upstream_tree_26",
@@ -739,267 +380,10 @@
       ],
       "sort_y": 566,
       "frames": [
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/broadleaf_full/frames/frame_08.png"
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
       ],
       "frame_duration_ms": 600,
-      "phase_offset": 0,
-      "logical_size": [
-        96,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.0",
-      "position": [
-        290,
-        228
-      ],
-      "sort_y": 252,
-      "phase_offset": 0,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.1",
-      "position": [
-        330,
-        204
-      ],
-      "sort_y": 228,
-      "phase_offset": 1,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.2",
-      "position": [
-        358,
-        416
-      ],
-      "sort_y": 440,
-      "phase_offset": 2,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.3",
-      "position": [
-        596,
-        414
-      ],
-      "sort_y": 438,
-      "phase_offset": 3,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.4",
-      "position": [
-        60,
-        212
-      ],
-      "sort_y": 236,
-      "phase_offset": 4,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.5",
-      "position": [
-        260,
-        370
-      ],
-      "sort_y": 394,
-      "phase_offset": 5,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.6",
-      "position": [
-        690,
-        338
-      ],
-      "sort_y": 362,
-      "phase_offset": 6,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.7",
-      "position": [
-        226,
-        180
-      ],
-      "sort_y": 204,
-      "phase_offset": 7,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
-    },
-    {
-      "id": "upstream.shrub.8",
-      "position": [
-        678,
-        510
-      ],
-      "sort_y": 534,
-      "phase_offset": 8,
-      "frames": [
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_00.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_01.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_02.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_03.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_04.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_05.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_06.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_07.png",
-        "assets/terrain/vegetation_hd/plants/shrub_rounded/frames/frame_08.png"
-      ],
-      "logical_size": [
-        24,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2,
-      "frame_duration_ms": 600,
-      "reduced_motion_frame": 0
+      "phase_offset": 0
     }
   ],
   "foreground": [],
@@ -1014,9 +398,9 @@
       ]
     }
   ],
-  "overview": "assets/maps/eldenmere/town_hd/upstream/overview.png",
+  "overview": "assets/maps/eldenmere/upstream/overview.png",
   "grass": {
-    "manifest": "assets/maps/eldenmere/town_hd/grass.json",
+    "manifest": "assets/terrain/grass/assets.json",
     "instances": [
       {
         "id": "upstream.west_bank.1.1",
@@ -1024,7 +408,7 @@
           102,
           225
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 220
       },
       {
@@ -1033,7 +417,7 @@
           97,
           243
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 1107
       },
       {
@@ -1042,7 +426,7 @@
           115,
           243
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 4548
       },
       {
@@ -1051,7 +435,7 @@
           88,
           259
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 2863
       },
       {
@@ -1060,7 +444,7 @@
           104,
           256
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 2562
       },
       {
@@ -1069,7 +453,7 @@
           122,
           259
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 3733
       },
       {
@@ -1078,7 +462,7 @@
           95,
           277
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 2545
       },
       {
@@ -1087,7 +471,7 @@
           115,
           275
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 4198
       },
       {
@@ -1096,7 +480,7 @@
           103,
           291
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 2656
       },
       {
@@ -1105,7 +489,7 @@
           123,
           292
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 119
       },
       {
@@ -1114,7 +498,7 @@
           98,
           308
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 1623
       },
       {
@@ -1123,7 +507,7 @@
           115,
           310
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 448
       },
       {
@@ -1132,7 +516,7 @@
           104,
           325
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 1862
       },
       {
@@ -1141,7 +525,7 @@
           121,
           325
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 4177
       },
       {
@@ -1150,7 +534,7 @@
           333,
           210
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 3103
       },
       {
@@ -1159,7 +543,7 @@
           374,
           227
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 4295
       },
       {
@@ -1168,7 +552,7 @@
           391,
           224
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 1690
       },
       {
@@ -1177,7 +561,7 @@
           367,
           242
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 4423
       },
       {
@@ -1186,7 +570,7 @@
           384,
           245
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 3508
       },
       {
@@ -1195,7 +579,7 @@
           340,
           260
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 3395
       },
       {
@@ -1204,7 +588,7 @@
           358,
           258
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 3606
       },
       {
@@ -1213,7 +597,7 @@
           239,
           388
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 3412
       },
       {
@@ -1222,7 +606,7 @@
           309,
           389
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 3424
       },
       {
@@ -1231,7 +615,7 @@
           322,
           385
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 2805
       },
       {
@@ -1240,7 +624,7 @@
           342,
           388
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 2698
       },
       {
@@ -1249,7 +633,7 @@
           250,
           402
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 2968
       },
       {
@@ -1258,7 +642,7 @@
           302,
           405
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 4369
       },
       {
@@ -1267,7 +651,7 @@
           318,
           406
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 1348
       },
       {
@@ -1276,7 +660,7 @@
           333,
           402
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 2171
       },
       {
@@ -1285,7 +669,7 @@
           349,
           403
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 110
       },
       {
@@ -1294,7 +678,7 @@
           291,
           422
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 1973
       },
       {
@@ -1303,7 +687,7 @@
           308,
           421
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 518
       },
       {
@@ -1312,7 +696,7 @@
           326,
           420
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 979
       },
       {
@@ -1321,7 +705,7 @@
           579,
           282
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 1166
       },
       {
@@ -1330,7 +714,7 @@
           598,
           282
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 3953
       },
       {
@@ -1339,7 +723,7 @@
           574,
           297
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 4573
       },
       {
@@ -1348,7 +732,7 @@
           588,
           300
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 1250
       },
       {
@@ -1357,7 +741,7 @@
           608,
           298
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 2423
       },
       {
@@ -1366,7 +750,7 @@
           563,
           317
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 697
       },
       {
@@ -1375,7 +759,7 @@
           582,
           316
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 3884
       },
       {
@@ -1384,7 +768,7 @@
           598,
           314
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 2323
       },
       {
@@ -1393,7 +777,7 @@
           612,
           318
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 1990
       },
       {
@@ -1402,7 +786,7 @@
           572,
           331
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 251
       },
       {
@@ -1411,7 +795,7 @@
           592,
           331
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 1284
       },
       {
@@ -1420,7 +804,7 @@
           605,
           335
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 465
       },
       {
@@ -1429,7 +813,7 @@
           565,
           352
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 2719
       },
       {
@@ -1438,7 +822,7 @@
           581,
           351
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 4298
       },
       {
@@ -1447,7 +831,7 @@
           598,
           351
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 1973
       },
       {
@@ -1456,7 +840,7 @@
           615,
           351
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 1888
       },
       {
@@ -1465,7 +849,7 @@
           573,
           368
         ],
-        "variant": "sparse_hd",
+        "variant": "slender",
         "phase_ms": 2137
       },
       {
@@ -1474,7 +858,7 @@
           592,
           368
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 294
       },
       {
@@ -1483,7 +867,7 @@
           608,
           365
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 1523
       },
       {
@@ -1492,7 +876,7 @@
           342,
           71
         ],
-        "variant": "dense_hd",
+        "variant": "arching",
         "phase_ms": 2458
       },
       {
@@ -1501,7 +885,7 @@
           315,
           88
         ],
-        "variant": "dense_hd",
+        "variant": "seeded",
         "phase_ms": 463
       },
       {
@@ -1510,7 +894,7 @@
           332,
           86
         ],
-        "variant": "splayed_hd",
+        "variant": "fan",
         "phase_ms": 4348
       }
     ]
@@ -4661,1226 +4045,5 @@
       "label": "Return to Eldenmere",
       "radius": 24
     }
-  ],
-  "ground_overlays": [
-    {
-      "id": "upstream.0.0",
-      "position": [
-        0,
-        0
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_0.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_1.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_2.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_3.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_4.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_0_5.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.1.0",
-      "position": [
-        192,
-        0
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_0.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_1.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_2.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_3.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_4.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_0_5.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.2.0",
-      "position": [
-        384,
-        0
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_0.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_1.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_2.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_3.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_4.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_0_5.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.3.0",
-      "position": [
-        576,
-        0
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_0.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_1.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_2.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_3.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_4.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_0_5.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.0.1",
-      "position": [
-        0,
-        192
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/0_1_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_1_0.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.1.1",
-      "position": [
-        192,
-        192
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/1_1_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_1_0.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.2.1",
-      "position": [
-        384,
-        192
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_0.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_1.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_2.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_3.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_4.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_1_5.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.3.1",
-      "position": [
-        576,
-        192
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/3_1_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_1_0.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.0.2",
-      "position": [
-        0,
-        384
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/0_2_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/0_2_0.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.1.2",
-      "position": [
-        192,
-        384
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/1_2_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/1_2_0.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.2.2",
-      "position": [
-        384,
-        384
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_0.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_1.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_2.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_3.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_4.png",
-        "assets/maps/eldenmere/town_hd/upstream/chunks/2_2_5.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    },
-    {
-      "id": "upstream.3.2",
-      "position": [
-        576,
-        384
-      ],
-      "logical_size": [
-        192,
-        192
-      ],
-      "image": "assets/maps/eldenmere/town_hd/upstream/chunks/3_2_0.png",
-      "frames": [
-        "assets/maps/eldenmere/town_hd/upstream/chunks/3_2_0.png"
-      ],
-      "frame_duration_ms": 200,
-      "artwork_pixels_per_world_pixel": 2
-    }
-  ],
-  "pause_on_focus_loss": true,
-  "art_integrations": {
-    "town_hd": {
-      "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-      "density": 2
-    }
-  },
-  "art_replacements": {
-    "assets/story/mill/encounter/tree_evidence.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/46cea8d7b842.png",
-      "logical_size": [
-        128,
-        96
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/halden/sack.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/227f0672cd0b.png",
-      "logical_size": [
-        16,
-        18
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/halden/pallet.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f3ebe5070c09.png",
-      "logical_size": [
-        76,
-        26
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/halden/medicine.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/13b2c4e6aef7.png",
-      "logical_size": [
-        5,
-        9
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/elira/provisions.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/682d04c1a6e7.png",
-      "logical_size": [
-        16,
-        14
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/64cee2bc3b94.png",
-      "logical_size": [
-        12,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/provisions.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/7ac2f0e45aae.png",
-      "logical_size": [
-        18,
-        14
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/toolbox.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/491a9c9afb7f.png",
-      "logical_size": [
-        20,
-        12
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/debris.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/e001d5580495.png",
-      "logical_size": [
-        8,
-        13
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/table.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/294e724748d9.png",
-      "logical_size": [
-        64,
-        28
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/drawing.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ca5c79a2ae66.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/materials.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f813fff0edc7.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/test.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/044e14f9bbfa.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/partial.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4288fcb41156.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/frame.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f8876d58d960.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/lifted.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/7ac4e5053bb7.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/ready.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/a93be74b4f88.png",
-      "logical_size": [
-        64,
-        56
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/lantern/props/school_drawing.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/cf6ebee9864e.png",
-      "logical_size": [
-        24,
-        15
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/liam_home/blocks/block_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ac897a9c0525.png",
-      "logical_size": [
-        5,
-        5
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/liam_home/blocks/block_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/aa628f16db52.png",
-      "logical_size": [
-        5,
-        5
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/liam_home/blocks/block_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0e13d9df3811.png",
-      "logical_size": [
-        5,
-        5
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/liam_home/blocks/block_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/614baa001b87.png",
-      "logical_size": [
-        5,
-        5
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/liam_home/blocks/block_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4b75082081a7.png",
-      "logical_size": [
-        16,
-        4
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/liam_home/blocks/front_overlay.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/box_front_lip.png",
-      "logical_size": [
-        32,
-        24
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_screen_blocked.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ac72451adc07.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_screen_prepared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/c43c977919b8.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_screen_cleared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ed7451b7b006.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_screen_restored.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/346a95d00bff.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_move_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/50d4f8d84746.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_move_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/7651afa416a7.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_move_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/9ca5972f0948.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_move_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/11c8d43b265a.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_move_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/c8a655e5904a.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/intake_move_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/8f24ce4b14bc.png",
-      "logical_size": [
-        96,
-        84
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/bypass_blocked.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/c06a9596418d.png",
-      "logical_size": [
-        54,
-        38
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/bypass_prepared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/806f20b705f6.png",
-      "logical_size": [
-        54,
-        38
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/bypass_cleared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/9d036ea6387b.png",
-      "logical_size": [
-        54,
-        38
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/bypass_restored.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/408b00493a23.png",
-      "logical_size": [
-        54,
-        38
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/inspection_pool_blocked.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/b21f21fd8d98.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/inspection_pool_prepared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/d35f33996cd9.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/inspection_pool_cleared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/be54f2bc4fce.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/inspection_pool_restored.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ac99e2e275d0.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/pool_spell_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f3d5a2905308.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/pool_spell_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/e795c84d4826.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/pool_spell_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/5eeb35977655.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/pool_spell_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/b93803e564b8.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/pool_spell_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/af86270368af.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/pool_spell_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/c8e0aedd9779.png",
-      "logical_size": [
-        54,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/lever_blocked.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f9ed8e0fd618.png",
-      "logical_size": [
-        60,
-        42
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/lever_prepared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0ca8029c9ee7.png",
-      "logical_size": [
-        60,
-        42
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/lever_cleared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/60ee80bf059c.png",
-      "logical_size": [
-        60,
-        42
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/lever_restored.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/bb83a00ceee4.png",
-      "logical_size": [
-        60,
-        42
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/millrace_flow_blocked.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/05e1e1228a8d.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/millrace_flow_prepared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/9ccfa6fe9eb4.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/millrace_flow_cleared.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4dfd1c16da61.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/millrace_flow_restored.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/cf97da9fbecc.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/race_flow_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/b30d2fd1d1ef.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/race_flow_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/68cfe3c93e39.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/race_flow_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/41c9df7cd993.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/race_flow_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/49ba39cdb3fe.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/race_flow_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/2f49d75fd771.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/mill/props/race_flow_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/e2c1896c0965.png",
-      "logical_size": [
-        24,
-        408
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/background_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/3c92660705eb.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/background_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/97a530f55323.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/background_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/b51be758a5f2.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/background_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0626967a89a0.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/background_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/9c33a17bf267.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/background_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/e16fec52f45b.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_open_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/2b7a66e64d9f.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_open_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/1fa2b9cb7c2e.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_open_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/9eeb0c33d030.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_open_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/d6b2d0375797.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_open_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/70bcede3e8d2.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_open_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/71b5445b7ae1.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_closed_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0891e09b9ca8.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_closed_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/86133fd6c3c9.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_closed_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4883133e3324.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_closed_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/a591f1fbff30.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_closed_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/05df8bd98301.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_closed_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/656b18e9b6cb.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_jammed_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/304b85a354e2.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_jammed_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/6c5292ab130d.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_jammed_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/060786405fc0.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_jammed_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/3bbc6e3f0960.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_jammed_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/215905966791.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/idle_jammed_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/24a34785ba54.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/opening_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/843deb8b19fd.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/opening_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/fbe53ceba20c.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/opening_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ecd23f59afa9.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/opening_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/3fa791b8cb20.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/opening_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/c6fb577398ab.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/opening_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/cf0959ef8e8f.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/closing_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/297141ccffc6.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/closing_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/577c9622fe3e.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/closing_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/39c6ceac70cc.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/closing_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/a19b1e7236c3.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/closing_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0fdb4e3617db.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/closing_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/aa071888a6bc.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/repair_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/02e145bb8598.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/repair_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/41825b5b3d30.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/repair_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/a4dcdbc38a73.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/repair_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/0257c788e083.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/repair_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/4e3d283f144f.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/repair_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/904b067143ab.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/jamming_0.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/ab8a32578340.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/jamming_1.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/2c2ca89fdff3.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/jamming_2.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f8b20a5dc717.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/jamming_3.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/accbc46ffcec.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/jamming_4.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/95163830082e.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/story/venn/gate/jamming_5.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/f828e0b63ff6.png",
-      "logical_size": [
-        24,
-        36
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/irrigation/frames/frame_01.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/irrigation_0.png",
-      "logical_size": [
-        192,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/irrigation/frames/frame_02.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/irrigation_1.png",
-      "logical_size": [
-        192,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/irrigation/frames/frame_03.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/irrigation_2.png",
-      "logical_size": [
-        192,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/irrigation/frames/frame_04.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/irrigation_3.png",
-      "logical_size": [
-        192,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/irrigation/frames/frame_05.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/irrigation_4.png",
-      "logical_size": [
-        192,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/irrigation/frames/frame_06.png": {
-      "file": "assets/maps/eldenmere/town_hd/scene_props/irrigation_5.png",
-      "logical_size": [
-        192,
-        120
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/terraces/spillway/frame_01.png": {
-      "file": "assets/terrain/eldenmere/waterworks_hd/spillways/maintained/frame_00.png",
-      "logical_size": [
-        24,
-        48
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/terraces/spillway/frame_02.png": {
-      "file": "assets/terrain/eldenmere/waterworks_hd/spillways/maintained/frame_01.png",
-      "logical_size": [
-        24,
-        48
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/terraces/spillway/frame_03.png": {
-      "file": "assets/terrain/eldenmere/waterworks_hd/spillways/maintained/frame_02.png",
-      "logical_size": [
-        24,
-        48
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/terraces/spillway/frame_04.png": {
-      "file": "assets/terrain/eldenmere/waterworks_hd/spillways/maintained/frame_03.png",
-      "logical_size": [
-        24,
-        48
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/terraces/spillway/frame_05.png": {
-      "file": "assets/terrain/eldenmere/waterworks_hd/spillways/maintained/frame_04.png",
-      "logical_size": [
-        24,
-        48
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    },
-    "assets/terrain/eldenmere/terraces/spillway/frame_06.png": {
-      "file": "assets/terrain/eldenmere/waterworks_hd/spillways/maintained/frame_05.png",
-      "logical_size": [
-        24,
-        48
-      ],
-      "artwork_pixels_per_world_pixel": 2
-    }
-  }
+  ]
 }

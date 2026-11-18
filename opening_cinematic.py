@@ -5,9 +5,6 @@ Game owns music, persistence and the final handoff; this view owns its shots,
 acting, readable timed captions and explicit pause/skip controls.
 """
 from __future__ import annotations
-from rendering import layer as render_layer, record_art, immutable
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 
 import json
 import math
@@ -134,14 +131,14 @@ class OpeningCinematic:
             return
         layers = []
         for record in self.data['layers']:
-            image = record_art(immutable(pygame.image.load(str(self._path(record['file']))).convert_alpha()),record)
+            image = pygame.image.load(str(self._path(record['file']))).convert_alpha()
             if image.get_size() != tuple(self.data['canvas']):
                 raise ValueError('Cinematic layers must share their authored canvas')
             layers.append((record, image))
         upper_sky = None
         if self.data.get('upper_sky') is not None:
             record = self.data['upper_sky']
-            upper_sky = record_art(immutable(pygame.image.load(str(self._path(record['file']))).convert_alpha()),record)
+            upper_sky = pygame.image.load(str(self._path(record['file']))).convert_alpha()
             if record.get('size') and upper_sky.get_size() != tuple(record['size']):
                 raise ValueError('Incorrect upper-sky artwork size')
         actors, actor_loops = [], {}
@@ -154,7 +151,7 @@ class OpeningCinematic:
                 image = pygame.image.load(str(path)).convert_alpha()
                 if image.get_size() != tuple(manifest['canvas']):
                     raise ValueError('Cinematic poses must share their actor canvas')
-                return record_art(immutable(image),manifest)
+                return image
             for pose, filename in manifest['poses'].items():
                 frames[pose] = load_frame(filename)
             loops = {}
@@ -184,7 +181,7 @@ class OpeningCinematic:
                 transitions[identifier] = sequence
             if any(cue['pose'] not in frames for cue in self.data['acting'][record['id']]):
                 raise ValueError('Cinematic actor is missing an authored pose')
-            actors.append((record, tuple(v/manifest.get('artwork_pixels_per_world_pixel',1) for v in manifest['anchor']), frames, transitions))
+            actors.append((record, tuple(manifest['anchor']), frames, transitions))
         prop_art = {}
         for identifier, record in self.data.get('dynamic_props', {}).items():
             if identifier == 'lamp':
@@ -202,7 +199,7 @@ class OpeningCinematic:
                 # without displaying the old artwork's rectangular crop.
                 for y in range(48):
                     alpha = round(255*_smooth(y/47))
-                    render_draw.line(mask, (255, 255, 255, alpha), (0, y),
+                    pygame.draw.line(mask, (255, 255, 255, alpha), (0, y),
                                      (image.get_width()-1, y))
                 softened = image.copy()
                 softened.blit(mask, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
@@ -233,7 +230,7 @@ class OpeningCinematic:
             self._dialogue_portraits[portrait_key] = portrait
         mist = pygame.Surface((240, 32), pygame.SRCALPHA)
         for inset in range(14):
-            render_draw.ellipse(mist, (151, 172, 188, 1+inset),
+            pygame.draw.ellipse(mist, (151, 172, 188, 1+inset),
                                 (inset*5, inset, 240-inset*10, 32-inset*2))
         self._mist_texture = mist
 
@@ -526,14 +523,14 @@ class OpeningCinematic:
         lamp = self.data.get('dynamic_props', {}).get('lamp')
         stage = self.lamp_stage
         gain = (0.42, 0.55, 0.76, 1.4)[min(stage, 3)] if lamp else 1.0
-        glow = render_layer(VIEW_SIZE, pygame.SRCALPHA)
+        glow = pygame.Surface(VIEW_SIZE, pygame.SRCALPHA)
         for radius, opacity in ((48, 5), (35, 7), (24, 10), (12, 16)):
-            render_draw.circle(glow, (248, 172, 68, max(0, min(255, round((opacity+pulse)*gain)))),
+            pygame.draw.circle(glow, (248, 172, 68, max(0, min(255, round((opacity+pulse)*gain)))),
                                (round(x), round(y)), round(radius*min(1.2, gain)))
         canvas.blit(glow, (0, 0))
         lean = 0 if self.reduced_motion else round(math.sin(self.elapsed*5.6))
-        render_draw.ellipse(canvas, '#e9a04d', (round(x)-2+lean, round(y)-4, 4, 6))
-        render_draw.ellipse(canvas, '#f8dca0', (round(x)-1, round(y)-2, 2, 4))
+        pygame.draw.ellipse(canvas, '#e9a04d', (round(x)-2+lean, round(y)-4, 4, 6))
+        pygame.draw.ellipse(canvas, '#f8dca0', (round(x)-1, round(y)-2, 2, 4))
 
     def _air(self, canvas, camera):
         if self.reduced_motion:
@@ -541,13 +538,13 @@ class OpeningCinematic:
         # Sparse motes in the lamp's pool of light; their visual clock pauses
         # with every other layer rather than drifting behind a paused actor.
         origin = pygame.Vector2(self.data['lantern_position'])-camera
-        layer = render_layer(VIEW_SIZE, pygame.SRCALPHA)
+        layer = pygame.Surface(VIEW_SIZE, pygame.SRCALPHA)
         for index in range(7):
             cycle = (self.elapsed*.045+index/7)%1
             x = origin.x-21+index*6+math.sin(self.elapsed*.35+index)*3
             y = origin.y+8-cycle*37
             opacity = round(50*math.sin(cycle*math.pi))
-            render_draw.circle(layer, (244, 210, 157, opacity), (round(x), round(y)), 1)
+            pygame.draw.circle(layer, (244, 210, 157, opacity), (round(x), round(y)), 1)
         canvas.blit(layer, (0, 0))
 
     def _mist(self, canvas, camera):
@@ -565,7 +562,7 @@ class OpeningCinematic:
             return
         record = self.data['flare']
         point = self.flare_position-camera
-        layer = render_layer(VIEW_SIZE, pygame.SRCALPHA)
+        layer = pygame.Surface(VIEW_SIZE, pygame.SRCALPHA)
 
         def glow(center, radius, opacity=150):
             center = (round(center.x), round(center.y))
@@ -573,7 +570,7 @@ class OpeningCinematic:
                                          (1.4, .25, (70, 164, 255)),
                                          (1.0, .75, (105, 206, 255)),
                                          (.48, 1.0, (224, 250, 255))):
-                render_draw.circle(layer, (*color, round(opacity*alpha)), center,
+                pygame.draw.circle(layer, (*color, round(opacity*alpha)), center,
                                    max(1, round(radius*scale)))
 
         if self.reduced_motion:
@@ -581,10 +578,10 @@ class OpeningCinematic:
             # travel, radial flashes or moving particle trails.
             if phase != 'charging':
                 glow(point, 4, 180)
-                render_draw.line(layer, (197, 237, 255, 180),
+                pygame.draw.line(layer, (197, 237, 255, 180),
                                  (round(point.x)-6, round(point.y)),
                                  (round(point.x)+6, round(point.y)))
-                render_draw.line(layer, (197, 237, 255, 180),
+                pygame.draw.line(layer, (197, 237, 255, 180),
                                  (round(point.x), round(point.y)-6),
                                  (round(point.x), round(point.y)+6))
         elif phase == 'charging':
@@ -614,7 +611,7 @@ class OpeningCinematic:
                 direction = pygame.Vector2(math.cos(angle), math.sin(angle))
                 end = point+direction*reach+pygame.Vector2(0, fraction*fraction*14)
                 start = point+direction*max(0, reach-12*(1-fraction))
-                render_draw.line(layer, (93, 188, 255, max(0, alpha)),
+                pygame.draw.line(layer, (93, 188, 255, max(0, alpha)),
                                  (round(start.x), round(start.y)), (round(end.x), round(end.y)), 2)
                 glow(end, 2, max(0, alpha))
                 if index%3 == 0:
@@ -625,10 +622,10 @@ class OpeningCinematic:
             pulse = .5+.5*math.sin(self.elapsed*2.2)
             glow(point, 2.6+pulse*.5, 150)
             span = 4+round(pulse*2)
-            render_draw.line(layer, (194, 235, 255, 150),
+            pygame.draw.line(layer, (194, 235, 255, 150),
                              (round(point.x)-span, round(point.y)),
                              (round(point.x)+span, round(point.y)))
-            render_draw.line(layer, (194, 235, 255, 150),
+            pygame.draw.line(layer, (194, 235, 255, 150),
                              (round(point.x), round(point.y)-span),
                              (round(point.x), round(point.y)+span))
         canvas.blit(layer, (0, 0))
@@ -665,7 +662,7 @@ class OpeningCinematic:
             return
         focus = self._zoom_focus(camera)
         size = (math.ceil(VIEW_SIZE[0]*zoom), math.ceil(VIEW_SIZE[1]*zoom))
-        enlarged = render_scale(canvas, size)
+        enlarged = pygame.transform.scale(canvas, size)
         canvas.blit(enlarged, (round(focus.x*(1-zoom)), round(focus.y*(1-zoom))))
 
     @property
@@ -780,7 +777,7 @@ class OpeningCinematic:
         camera = self.camera_position
         self._draw_scene(canvas, camera)
         self._zoom(canvas, camera)
-        render_scale(canvas, ui_surface.get_size(), ui_surface)
+        pygame.transform.scale(canvas, ui_surface.get_size(), ui_surface)
         painter = self.game.ui.painter(ui_surface)
         self._layout(painter)
         self._draw_captions(painter)

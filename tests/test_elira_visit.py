@@ -265,9 +265,7 @@ class EliraGameplayTests(unittest.TestCase):
         bad['inventory']['items']['elira_supplies'] = 1
         raw = json.dumps(bad);self.path.write_text(raw)
         broken = self.make_game(True)
-        self.assertIsNone(broken._validate_journey(copy.deepcopy(bad)))
-        self.assertTrue(broken.has_saved_journey)
-        self.assertIsNotNone(broken._validate_journey(copy.deepcopy(broken.saved_journey)));self.assertEqual(self.path.read_text(), raw)
+        self.assertFalse(broken.has_saved_journey);self.assertEqual(self.path.read_text(), raw)
         self.game.begin_journey(False, show_cinematic=False)
         self.assertEqual(self.visit.lantern, 'shelf');self.assertFalse(self.visit.delivered)
         self.assertIsNone(self.visit.action);self.assertEqual(self.game.quests.status(QUEST), 'available')

@@ -4,9 +4,6 @@ The public checkpoint is a whole scene. Timed poses and dialogue are joined by
 completion barriers, so reading quickly cannot omit a necessary movement.
 """
 from __future__ import annotations
-from caelan_scene_art import image as scene_image
-from rendering import load_art
-from tomas_scene_art import image as tomas_image, enabled as tomas_hd, BASE as TOMAS_BASE
 
 from collections import deque
 import json
@@ -175,9 +172,7 @@ class OpeningSequence:
     def _actor(self, identifier):
         return next(actor for actor in self.game.persistent_npcs if actor.data['id'] == identifier)
 
-    def _image(self, name):
-        actor=next((a for a in self.game.persistent_npcs if a.data['id']=='tomas'),None)
-        return tomas_image(self.game.town,actor,POSES+name,lambda path:scene_image(self.game.town,path))
+    def _image(self, name):return self.game.town.image(POSES+name)
 
     def _animation(self, name):
         if name not in self._animations:
@@ -205,22 +200,10 @@ class OpeningSequence:
     def _walking_pose(self, actor, identity, direction, elapsed, position):
         key = (identity, direction)
         if key not in self._walk_frames:
-            if identity == 'caelan':
-                registry = json.loads((ROOT/'assets/characters/caelan/animation.json').read_text())
-                bank = registry['walks'][direction]
-                manifest = Path(bank['manifest'])
-                metadata = json.loads((ROOT/manifest).read_text())
-                self._walk_frames[key] = [(load_art(self.game.town,(manifest.parent/frame['file']).as_posix(),bank),frame['duration_ms']) for frame in metadata['frames']]
-            elif identity=='tomas' and tomas_hd(actor):
-                folder=f'{TOMAS_BASE}/walk_{direction}'
-                metadata=json.loads((ROOT/folder/'animation.json').read_text())
-                self._walk_frames[key]=[(load_art(self.game.town,folder+'/'+f['file'],metadata),f['duration_ms'])
-                                        for f in metadata['frames']]
-            else:
-                folder = f'assets/characters/{identity}/walk_{direction}'
-                metadata = json.loads((ROOT/folder/'animation.json').read_text(encoding='utf-8'))
-                self._walk_frames[key] = [(self.game.town.image(folder+'/'+frame['file']), frame['duration_ms'])
-                                          for frame in metadata['frames']]
+            folder = f'assets/characters/{identity}/walk_{direction}'
+            metadata = json.loads((ROOT/folder/'animation.json').read_text(encoding='utf-8'))
+            self._walk_frames[key] = [(self.game.town.image(folder+'/'+frame['file']), frame['duration_ms'])
+                                      for frame in metadata['frames']]
         frames = self._walk_frames[key]
         cursor = (elapsed*1000) % sum(duration for _, duration in frames)
         image = frames[-1][0]

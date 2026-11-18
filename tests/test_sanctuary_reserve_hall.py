@@ -33,11 +33,11 @@ class SanctuaryReserveHallTests(unittest.TestCase):
         self.assertEqual(self.world.data['tile_size'],24)
         self.assertEqual(self.world.probe_size,(24,12))
         sources = self.world.data['source_assets']
-        self.assertGreaterEqual(len(sources),2)
+        self.assertGreaterEqual(len(sources),12)
         self.assertEqual(len({record['path'] for record in sources}),len(sources))
         for source in sources:
             with self.subTest(source=source['path']):
-                self.assertTrue(source['path'].startswith('assets/source/maps/sanctuary_reserve_hd/'))
+                self.assertTrue(source['path'].startswith('assets/terrain/eldenmere/'))
                 self.assertEqual(hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest(),
                                  source['sha256'])
         recipe = (ROOT/self.world.data['source_recipe']).read_text()
@@ -72,21 +72,23 @@ class SanctuaryReserveHallTests(unittest.TestCase):
         data=self.world.data
         details=data['fantasy_details']
         self.assertEqual(details['authoring'],'native_pixel_geometry')
-        wall=data['native_wall_details']
-        ground=Image.new('RGBA',tuple(v*2 for v in data['size_pixels']))
-        for chunk in data['ground_overlays']:
-            ground.alpha_composite(Image.open(ROOT/chunk['image']).convert('RGBA'),tuple(v*2 for v in chunk['position']))
-        window=Image.open(ROOT/wall['window']).convert('RGBA')
-        self.assertEqual(window.size,(48,72))
-        for x,y in wall['positions']:
-            self.assertLessEqual(y+36,data['walkable_floor'][1])
-            actual=ground.crop((x*2,y*2,x*2+48,y*2+72))
-            for yy in range(72):
-                for xx in range(48):
-                    pixel=window.getpixel((xx,yy))
-                    if pixel[3]:self.assertEqual(actual.getpixel((xx,yy)),pixel)
-        baseline=json.loads((ROOT/'assets/source/maps/sanctuary_reserve_hd/baseline_maps.json').read_text())
-        recipe=json.loads((ROOT/baseline[data['id']]['source_recipe']).read_text())
+        folder=ROOT/'assets/terrain/elden_vale_sanctuary_hall/fantasy'
+        ground=Image.open(ROOT/data['ground_frames'][0]).convert('RGB')
+        window=Image.open(folder/'crystal_window.png').convert('RGBA')
+        recipe=json.loads((ROOT/data['source_recipe']).read_text())
+        for x,y in recipe['windows']:
+            with self.subTest(window=(x,y)):
+                actual=ground.crop((x,y,x+window.width,y+window.height))
+                for yy in range(window.height):
+                    for xx in range(window.width):
+                        pixel=window.getpixel((xx,yy))
+                        if pixel[3]:self.assertEqual(actual.getpixel((xx,yy)),pixel[:3])
+        for record in details['wall_details']:
+            with self.subTest(module=record['module'],position=record['position']):
+                image=Image.open(folder/(record['module']+'.png')).convert('RGBA')
+                self.assertLessEqual(set(image.getchannel('A').get_flattened_data()),{0,255})
+                self.assertGreaterEqual(record['position'][1],48)
+                self.assertLessEqual(record['position'][1]+image.height,144)
         # The new doorway cuts only its narrow north-wall threshold. Closing
         # that opening reconstructs the earlier hall's exact collision mask.
         collision = Image.open(ROOT/data['collision']).convert('L')
@@ -151,8 +153,8 @@ class SanctuaryReserveHallTests(unittest.TestCase):
     def test_real_gaps_between_leaves_and_flower_spikes_do_not_erase_the_actor(self):
         color = (251,0,245)
         sprite = pygame.Surface((24,36));sprite.fill(color)
-        for position,point,camera in (((45,296),(47,291),(0,64)),
-                                      ((527,296),(529,291),(96,64))):
+        for position,point,camera in (((45,296),(45,292),(0,64)),
+                                      ((527,296),(527,292),(96,64))):
             with self.subTest(gap=point):
                 self.assertTrue(self.world.can_stand(position))
                 player = SimpleNamespace(position=pygame.Vector2(position),sprite=lambda:sprite)

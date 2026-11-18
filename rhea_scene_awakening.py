@@ -4,8 +4,6 @@ A single world-space sprite and its original ice layers remain visible. The
 parent stage supplies the shared cast, scenery, projection and rune renderer.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 import json
 from pathlib import Path
@@ -134,19 +132,19 @@ class RheaSceneAwakening:
         if not frontal or glow <= 0:
             return
         eyes = self.expression_manifest['frames'][name]['eyes']
-        light = render_layer(canvas.get_size(), pygame.SRCALPHA)
+        light = pygame.Surface(canvas.get_size(), pygame.SRCALPHA)
         for x, y in eyes:
             point = (round(origin[0]+x*scale), round(origin[1]+y*scale))
             radius = max(1, round(scale*2))
-            render_draw.circle(light, (48,255,112,round(24*glow)), point, radius)
+            pygame.draw.circle(light, (48,255,112,round(24*glow)), point, radius)
             iris = pygame.Rect(0,0,max(1,round(scale*1.2)),max(1,round(scale*.5)))
             iris.center = point
-            render_draw.ellipse(light, (113,255,165,round(210*glow)), iris)
+            pygame.draw.ellipse(light, (113,255,165,round(210*glow)), iris)
             if gleam > .01:
                 reach = max(2,round(scale*4.6*gleam))
                 color = (179,255,204,round(255*gleam))
-                render_draw.line(light,color,(point[0]-reach,point[1]),(point[0]+reach,point[1]),1)
-                render_draw.line(light,color,(point[0],point[1]-max(1,reach//3)),
+                pygame.draw.line(light,color,(point[0]-reach,point[1]),(point[0]+reach,point[1]),1)
+                pygame.draw.line(light,color,(point[0],point[1]-max(1,reach//3)),
                                  (point[0],point[1]+max(1,reach//3)),1)
         canvas.blit(light,(0,0))
 

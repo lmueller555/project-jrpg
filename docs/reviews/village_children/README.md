@@ -1,9 +1,5 @@
 # Five village children — approved
 
-This is an existing asset review. Its four-pose frame counts and timings are
-local pack facts, not requirements for new artwork. New or revised runs follow
-the [running animation standard](../../VISUAL_ART_STANDARD.md#running-animations).
-
 - [Liam and the five new children at the same scale](height_comparison.png).
 - [All four idle directions](idle_directions.png).
 - [All four walking directions](walks.gif) · [slow pose inspection](walks_slow.gif).

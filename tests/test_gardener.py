@@ -55,7 +55,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.position,pygame.Vector2(a.behavior['rest_position']))
         watered=[e for e in a.events if e['type']=='watered']
         self.assertEqual([e['units'] for e in watered],[5,4,3,2,1,0])
-        self.assertTrue({'well_lower','well_fill','well_raise','well_attach','well_detach','pickup','setdown'}<=states)
+        self.assertTrue({'well_lower','well_fill','well_raise','well_attach','well_unhook','pickup','setdown'}<=states)
         self.assertGreater(self.game.elapsed_ms-started,60000)
         self.assertLess(self.game.elapsed_ms-started,100000)
 
@@ -98,7 +98,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.water_units,well.draw_level)
         self.until(lambda:a.state=='well_raise',limit=3)
         self.assertEqual(a.water_units,6)
-        self.until(lambda:a.state=='well_detach' and self.world.well.snapshot().pail_owner=='actor',limit=15)
+        self.until(lambda:a.state=='well_unhook',limit=15)
         self.assertEqual(a.water_units,6)
         self.assertFalse(well.bucket_on_rope)
         self.assertEqual(a.position,pygame.Vector2(well.data['loading_position']))
@@ -172,12 +172,17 @@ class SanctuaryGardener(unittest.TestCase):
 
     def test_static_action_feet_and_player_depth_order(self):
         a=self.actor
-        # The HD body is a redraw, so use the shared native sole
-        # registration rather than requiring the superseded pixels.
-        sole_bottom=round((a.animation['body_offset'][1]+a.roster_art.foot_anchor[1])*2)+1
-        for name,body in a.bodies.items():
+        recipe=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')
+        for name,spec in a.animation['poses'].items():
             if name.startswith('carry_'):continue
-            self.assertEqual(body.native.get_bounding_rect().bottom,sole_bottom,name)
+            direction='left' if name.endswith('left') else 'right' if name in ('rest',) or name.startswith(('pickup','fill')) or name.endswith('right') else 'front' if name.endswith('front') else 'back'
+            if name in recipe['work_poses']:direction=recipe['work_poses'][name]['direction']
+            original=self.world.image(f'assets/characters/npcs/female_02/idle_{direction}.png')
+            feet=original.subsurface((0,30,24,6));bounds=feet.get_bounding_rect()
+            expected=pygame.image.tobytes(feet.subsurface(bounds),'RGBA')
+            bounds.move_ip(12,36)
+            actual=pygame.image.tobytes(a.bodies[name].subsurface(bounds),'RGBA')
+            self.assertEqual(actual,expected,name)
         marker=pygame.Surface((24,36),pygame.SRCALPHA);marker.fill('#ff00ff')
         target=pygame.Surface(main.VIEW_SIZE);player=self.game.player
         with patch.object(player,'sprite',return_value=marker):
@@ -188,29 +193,20 @@ class SanctuaryGardener(unittest.TestCase):
             self.world.draw(target,(200,240),player,0)
             self.assertEqual(target.get_at((122,98))[:3],(255,0,255))
 
-    def test_carrying_has_four_coupled_strides_and_bucket_levels_are_visible(self):
+    def test_carrying_retains_approved_stride_and_bucket_levels_are_visible(self):
         a=self.actor
-        # Full and empty have the same locomotion. All four lower-body
-        # silhouettes must vary across the carry cycle, regardless of water.
         for direction in ('front','left','right','back'):
-            feet=set()
             for index in range(1,5):
-                stride=[]
+                source=self.world.image(f'assets/characters/npcs/female_02/walk_{direction}/frame_{index:02}.png')
+                expected=pygame.image.tobytes(source.subsurface((0,30,24,6)),'RGBA')
                 for mode in ('empty','full'):
                     body=a.bodies[f'carry_{mode}.{direction}_{index:02}']
-                    stride.append(pygame.image.tobytes(body.native.subsurface((24,74,48,10)),'RGBA'))
-                self.assertEqual(stride[0],stride[1])
-                feet.add(stride[0])
-            self.assertEqual(len(feet),4,direction)
-        # Canonical pails have their own authored water palette. Measure real
-        # filled pixels against empty at native density, not legacy RGB values.
-        empty=a.buckets['bucket_0_0'].native
+                    self.assertEqual(pygame.image.tobytes(body.subsurface((12,36,24,6)),'RGBA'),expected)
+        water_colors={(89,142,159),(185,217,210)}
         counts=[]
         for level in range(a.water_capacity+1):
-            bucket=a.buckets[f'bucket_0_{level}'].native
-            counts.append(sum(bucket.get_at((x,y))!=empty.get_at((x,y))
-                              for x in range(bucket.get_width())
-                              for y in range(bucket.get_height())))
+            bucket=a.buckets[f'bucket_0_{level}']
+            counts.append(sum(bucket.get_at((x,y))[:3] in water_colors for x in range(32) for y in range(32)))
         self.assertEqual(counts[0],0)
         self.assertTrue(all(a<b for a,b in zip(counts,counts[1:])),counts)
 

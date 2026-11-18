@@ -10,8 +10,6 @@ import math
 
 import pygame
 
-from rendering import record_art
-
 
 DIRECTIONS = ('north', 'east', 'south', 'west')
 _FACING = {'back': 'north', 'right': 'east', 'front': 'south', 'left': 'west'}
@@ -70,11 +68,9 @@ class InteractiveGrass:
             if set(parted) != set(DIRECTIONS) or any(len(parted[key]) != 3 for key in DIRECTIONS):
                 raise ValueError('Tall grass requires three poses in all four directions')
             def loaded(record):
-                art = {**data, **variant, **record}
-                surfaces = tuple(record_art(image(record[layer]), art)
-                                 for layer in ('rear', 'front'))
+                surfaces = (image(record['rear']), image(record['front']))
                 if any(surface.get_size() != self.frame_size for surface in surfaces):
-                    raise ValueError('Tall-grass frames must share the logical canvas')
+                    raise ValueError('Tall-grass frames must share the native canvas')
                 return surfaces
             self.variants[identifier] = {
                 'idle': [(loaded(record), record['duration_ms']) for record in idle],

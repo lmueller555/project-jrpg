@@ -1,6 +1,5 @@
 """Inspect Auratia's classroom map without reducing its art to world resolution."""
 from __future__ import annotations
-from rendering import scale as render_scale
 
 import math
 from pathlib import Path
@@ -173,7 +172,7 @@ class WorldMapViewer:
         scaled_size = (max(1, round(source.width*scale)), max(1, round(source.height*scale)))
         key = tuple(source), scaled_size
         if key != self._cached_key:
-            self._cached_crop = render_scale(self.image.subsurface(source), scaled_size)
+            self._cached_crop = pygame.transform.scale(self.image.subsurface(source), scaled_size)
             self._cached_key = key
         position = middle+(pygame.Vector2(source.topleft)-self.center)*scale
         previous_clip = target.get_clip()

@@ -4,8 +4,6 @@ Durable facts never contain animation clocks or partially read dialogue. One
 existing Mira actor accompanies the player; repair props and the wheel read the
 same restored milestone.
 """
-from caelan_scene_art import frame as scene_frame
-from rendering import draw as render_draw
 from collections import deque
 import json
 from pathlib import Path
@@ -63,7 +61,7 @@ class MillQuest:
         self._aftermath_recovered = False
         self.cast = read('poses/animation.json')
         sheet = self.town.image(ART+'poses/poses.png')
-        self.cast_poses = {name: [scene_frame(sheet,f['rect'],self.cast) for f in rec['frames']]
+        self.cast_poses = {name: [sheet.subsurface(f['rect']).copy() for f in rec['frames']]
                            for name, rec in self.cast['animations'].items()}
         self._player_route = None
         self._gearblade_focus = None
@@ -75,10 +73,10 @@ class MillQuest:
         self.surface_props = []
         art = read('art.json')
         for record in (art if isinstance(art, list) else art.get('props', [])):
-            states = {key: self.town.room_art_image(path) for key, path in record['states'].items()}
+            states = {key: self.town.image(path) for key, path in record['states'].items()}
             prop = {**record, 'states': states, 'surface': next(iter(states.values()))}
             for key in ('animation', 'moving_frames', 'restored_frames'):
-                if key in record:prop[key] = [self.town.room_art_image(path) for path in record[key]]
+                if key in record:prop[key] = [self.town.image(path) for path in record[key]]
             self.surface_props.append(prop)
         for world in (self.town, self.upstream):world.attach_routine_props(self)
         self._sync_props()
@@ -306,7 +304,7 @@ class MillQuest:
             state = 'cleared' if prop['id'] == 'inspection_pool' and self.spell_done else base_state
             frames = None;fraction = 0.
             if self.restored and prop.get('restored_frames'):
-                frames = prop['restored_frames'];fraction = (0 if self.game.world.reduced_motion else (int(self.game.elapsed_ms//180)%len(frames))/len(frames))
+                frames = prop['restored_frames'];fraction = (int(self.game.elapsed_ms//180)%len(frames))/len(frames)
             if prop['id'] == 'inspection_pool' and self.action == 'spell':
                 frames = prop.get('animation');fraction = max(0., min(1., (self.action_time-.65)/1.2))
             elif prop['id'] == 'intake_screen' and self.action == 'repair':
@@ -1035,4 +1033,4 @@ class MillQuest:
         grip = self.layout.get('lever_grip', [498, 374])
         a = (round(hand.x)-camera[0], round(hand.y)-camera[1])
         b = (round(grip[0])-camera[0], round(grip[1])-camera[1])
-        render_draw.line(canvas, '#836347', a, b, 1)
+        pygame.draw.line(canvas, '#836347', a, b, 1)

@@ -124,7 +124,6 @@ class RegionalAudio:
     Channels are leased only while get_sound matches our sound identity. Never
     reserve, steal, resize the mixer, or touch music. Dropped cues never queue.
     """
-    durations = DURATIONS
     def __init__(self, game):
         self.game = game; self.voices = {}; self.cache = {}; self.cooldowns = {}
         self.clock = 0.; self.failed = False
@@ -236,7 +235,7 @@ class RegionalAudio:
         if not self.enabled():return
         for key,(source,channel,sound,age) in list(self.voices.items()):
             age += max(0,seconds)
-            if not source.ambient and age>=self.durations[source.sound]:self._stop(key)
+            if not source.ambient and age>=DURATIONS[source.sound]:self._stop(key)
             else:self.voices[key]=(source,channel,sound,age)
         self.cooldowns = {k:v for k,v in self.cooldowns.items() if v>self.clock}
         for source in sorted(sources,key=lambda s:(-s.priority,-self._gain(s),s.key)):

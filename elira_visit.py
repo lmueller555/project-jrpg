@@ -1,6 +1,4 @@
 """Elira's delivery and a single, physically registered memorial lantern."""
-from caelan_scene_art import image as scene_image
-from npc_roster_art import RosterArt
 import json
 from pathlib import Path
 
@@ -25,17 +23,13 @@ class Elira:
         self.data = {'id': 'elira', 'name': 'Elira'}
         self.position = pygame.Vector2(210, 202)
         self.probe_size = (12, 8);self.draw_anchor = (12, 30)
-        self.roster_art = RosterArt(world, 'elira', named=True)
-        self.idles = self.roster_art.idles
-        self.moving = False;self.walk_ms = 0.
+        self.idles = {d: world.image(ART+f'idle_{d}.png') for d in ('front', 'left', 'right', 'back')}
         self.facing = 'front';self.conversation_ready = False;self.conversation_facing = 'front'
 
     @property
     def blocker(self):return pygame.Rect(round(self.position.x)-6, round(self.position.y)-4, 12, 8)
 
-    def sprite(self, elapsed_ms):
-        facing = self.conversation_facing if self.conversation_ready else self.facing
-        return self.roster_art.sprite(facing, self.moving and not self.conversation_ready, self.walk_ms)
+    def sprite(self, elapsed_ms):return self.idles[self.conversation_facing if self.conversation_ready else self.facing]
 
     def request_conversation(self, facing):
         self.conversation_ready = True;self.conversation_facing = facing
@@ -57,9 +51,9 @@ class EliraVisit:
         shelf = next(e for e in self.home.entities if e['id'] == 'lantern_shelf')
         shelf['state_images'] = {'full': PACK+'shelf_with_lantern.png', 'empty': PACK+'shelf_empty.png'}
         self.surface_props = [
-            {'id': 'elira_lantern_table', 'scene': 'elira', 'surface': self.home.room_art_image(PACK+'lantern_unlit.png'),
+            {'id': 'elira_lantern_table', 'scene': 'elira', 'surface': self.home.image(PACK+'lantern_unlit.png'),
              'position': list(TABLE_LANTERN), 'sort_y': 271},
-            {'id': 'elira_provisions', 'scene': 'elira', 'surface': self.home.room_art_image(ART+'provisions.png'),
+            {'id': 'elira_provisions', 'scene': 'elira', 'surface': self.home.image(ART+'provisions.png'),
              'position': [194, 119], 'sort_y': 163}]
         self.home.attach_routine_props(self)
         self._sync_shelf()
@@ -202,7 +196,7 @@ class EliraVisit:
             self.game.social.flags.add('CH01_MQ01_ELIRA_DONE');self._save()
 
     def _pose(self, name, position=None, sort_y=None):
-        p = self.game.player;p.story_sprite = scene_image(self.home,ART+name+'.png')
+        p = self.game.player;p.story_sprite = self.home.image(ART+name+'.png')
         p.story_draw_anchor = POSE_ANCHOR
         if position is not None:p.story_position = tuple(position)
         if sort_y is not None:p.story_sort_y = sort_y
@@ -285,5 +279,5 @@ class EliraVisit:
     def draw_world(self, canvas, camera):
         if self.action != 'supplies' or self.game.world is not self.home:return
         owner = self.elira if self.contact else self.game.player
-        canvas.blit(self.home.room_art_image(ART+'provisions.png'),
+        canvas.blit(self.home.image(ART+'provisions.png'),
                     (round(owner.position.x)+3-camera[0], round(owner.position.y)-12-camera[1]))

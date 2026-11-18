@@ -4,8 +4,6 @@ The chart has its own bounded image cache. It never asks the gameplay world to
 render terrain, load a scene, or allocate an image at the size of Auratia.
 """
 from __future__ import annotations
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 
 from collections import OrderedDict
 import hashlib
@@ -214,7 +212,7 @@ class RegionalCartography:
                                        max(1,round(b[0])-round(a[0])),
                                        max(1,round(b[1])-round(a[1])))
                     if not dest.colliderect(rect):continue
-                    if image.get_size()!=dest.size:image = render_scale(image,dest.size)
+                    if image.get_size()!=dest.size:image = pygame.transform.scale(image,dest.size)
                     target.blit(image,dest)
             return True
         finally:target.set_clip(old)
@@ -224,11 +222,11 @@ class RegionalCartography:
         for group in ('fields','forests','hills'):
             for item in self.data.get('terrain',{}).get(group,[]):
                 points = [tile_to_pixel(p,rect,center,scale) for p in item.get('polygon',[])]
-                if len(points)>=3:render_draw.polygon(target,colors[group],points)
+                if len(points)>=3:pygame.draw.polygon(target,colors[group],points)
         for river in self.data.get('terrain',{}).get('rivers',[]):
             points = [tile_to_pixel(p,rect,center,scale) for p in river.get('points',[])]
             if len(points)>1:
-                render_draw.lines(target,WATER,False,points,max(1,round(river.get('width',10)*scale)))
+                pygame.draw.lines(target,WATER,False,points,max(1,round(river.get('width',10)*scale)))
 
     def draw_routes(self,target,map_rect,center_tiles,scale_px_per_tile,flags=()):
         rect = pygame.Rect(map_rect);scale = float(scale_px_per_tile)
@@ -251,11 +249,11 @@ class RegionalCartography:
                         if kind=='foot':
                             offset = math.dist(a,start)*scale
                             for first,last in _dash_parts(p,q,phase+offset,scale,rect):
-                                render_draw.line(target,'#8c805f',first,last,width+1)
-                                render_draw.line(target,color,first,last,width)
+                                pygame.draw.line(target,'#8c805f',first,last,width+1)
+                                pygame.draw.line(target,color,first,last,width)
                         else:
-                            render_draw.line(target,'#87795c' if kind=='stone' else '#97825f',p,q,width+2 if kind=='stone' else width+1)
-                            render_draw.line(target,color,p,q,width)
+                            pygame.draw.line(target,'#87795c' if kind=='stone' else '#97825f',p,q,width+2 if kind=='stone' else width+1)
+                            pygame.draw.line(target,color,p,q,width)
                     phase += math.dist(a,b)*scale
             for wall in self.data.get('walls',[]):
                 gate = wall.get('gate_x',wall['x0']);half = wall.get('gate_width',0)/2
@@ -264,8 +262,8 @@ class RegionalCartography:
                     a = tile_to_pixel((left,wall['y']),rect,center_tiles,scale)
                     b = tile_to_pixel((right,wall['y']),rect,center_tiles,scale)
                     width = max(1,min(4,round(scale*.55)))
-                    render_draw.line(target,'#53645b',a,b,width+1)
-                    render_draw.line(target,'#c2c2ab',a,b,width)
+                    pygame.draw.line(target,'#53645b',a,b,width+1)
+                    pygame.draw.line(target,'#c2c2ab',a,b,width)
         finally:target.set_clip(old)
 
     def icon(self,key,size=None):
@@ -279,7 +277,7 @@ class RegionalCartography:
             bounds = raw.get_bounding_rect()
             if bounds.width and bounds.height:raw = raw.subsurface(bounds).copy()
             factor = min(size[0]/raw.get_width(),size[1]/raw.get_height())
-            return render_scale(raw,(max(1,round(raw.get_width()*factor)),
+            return pygame.transform.scale(raw,(max(1,round(raw.get_width()*factor)),
                                                max(1,round(raw.get_height()*factor))))
         return self._icons.get((key,size),load)
 

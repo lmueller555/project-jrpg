@@ -13,31 +13,30 @@ ROOT=Path(__file__).resolve().parents[1]
 def read(path):return json.loads((ROOT/path).read_text())
 
 
+def digest(data):
+    return sha256(json.dumps(data,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+
+
 class EldenmereGrassTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data=read('assets/maps/eldenmere/playable/map.json')
         cls.recipe=read('assets/source/maps/eldenmere/grass/recipe.json')
         cls.pack=read(cls.recipe['pack'])
-        cls.live_pack=read(cls.data['grass']['manifest'])
-        cls.courtyard=read('assets/source/maps/eldenmere/courtyard_hd/baseline_map.json')
 
-    def test_original_grass_registration_and_collision_survive_town_expansion(self):
-        baseline=read('assets/source/maps/eldenmere/town_hd/baseline_maps.json')['town']
-        self.assertEqual([{k:v for k,v in r.items() if k!='variant'} for r in self.data['grass']['instances']],
-                         [{k:v for k,v in r.items() if k!='variant'} for r in baseline['grass']['instances']])
-        before=Image.open(ROOT/baseline['collision']).convert('L')
-        after=Image.open(ROOT/self.data['collision']).convert('L')
-        self.assertEqual(before.tobytes(),after.crop((0,0,*before.size)).tobytes())
+    def test_rollout_preserves_collision_and_all_non_art_metadata(self):
+        protected={k:v for k,v in self.data.items() if k not in ('entities','overview','ground_frames','grass')}
+        self.assertEqual(digest(protected),self.recipe['protected_metadata_sha256'])
+        self.assertEqual(sha256((ROOT/self.data['collision']).read_bytes()).hexdigest(),self.recipe['collision_sha256'])
+        entities=[{k:v for k,v in entry.items() if k!='frames'} for entry in self.data['entities']]
+        self.assertEqual(digest(entities),self.recipe['protected_entities_sha256'])
         self.assertTrue({'school','liam_house'}.issubset({entity['id'] for entity in self.data['entities']}))
 
     def test_all_materials_are_used_with_exact_approved_pixels_in_clear_tiles(self):
         cells=self.data['grass']['material_cells']
         used={family:set() for family in self.pack['materials']}
         coverage=Image.open(ROOT/self.recipe['coverage'][0]['image']).convert('L')
-        # The original 1x pack remains a shared source for other regions.
-        original=read('assets/source/maps/eldenmere/town_hd/baseline_maps.json')['town']
-        ground=Image.open(ROOT/original['ground_frames'][0]).convert('RGB')
+        ground=Image.open(ROOT/self.data['ground_frames'][0]).convert('RGB')
         tested={family:set() for family in used}
         for y,row in enumerate(cells):
             for x,(family,index) in enumerate(row):
@@ -68,16 +67,16 @@ class EldenmereGrassTests(unittest.TestCase):
                 self.assertIsNone(collision.crop(box).getbbox())
                 self.assertIsNone(allowed.crop(box).getbbox())
                 self.assertFalse(any(abs(x-p[0])<self.recipe['protected_radius'] and abs(y-p[1])<self.recipe['protected_radius'] for p in protected))
-                self.assertIn(record['variant'],self.live_pack['tall_grass']['variants'])
+                self.assertIn(record['variant'],self.pack['tall_grass']['variants'])
 
     def test_animated_coverage_inputs_are_native_binary_masks_with_recorded_fingerprints(self):
-        self.assertEqual(len(self.recipe['coverage']),6)
+        self.assertEqual(len(self.recipe['coverage']),len(self.data['ground_frames']))
         for record in self.recipe['coverage']:
             with self.subTest(source=record['image']):
                 path=ROOT/record['image']
                 self.assertEqual(sha256(path.read_bytes()).hexdigest(),record['sha256'])
                 image=Image.open(path)
-                self.assertEqual(image.size,(1536,1344))
+                self.assertEqual(image.size,tuple(self.data['size_pixels']))
                 self.assertLessEqual(set(image.get_flattened_data()),{0,255})
 
 

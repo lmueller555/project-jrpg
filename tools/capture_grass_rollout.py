@@ -5,10 +5,6 @@ The upstream overview is separately labelled as an initialized World fixture;
 it does not claim to demonstrate the quest-gated trail transfer.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 import hashlib
@@ -43,7 +39,7 @@ MAPS = ('assets/maps/eldenmere/playable/map.json',
 
 
 def digest(file):
-    return reference_digest(file)
+    return hashlib.sha256(file.read_bytes()).hexdigest()
 
 
 def source_hashes():
@@ -319,7 +315,7 @@ def capture(output):
     for index, (name, label) in enumerate(zip(names, labels)):
         x, y = index%2*480, index//2*344
         painter.text((x+8, y+5), label, font=font, fill='#edf0dc')
-        with open_image(output/name) as picture:
+        with Image.open(output/name) as picture:
             contact.paste(picture.resize((480, 320), Image.Resampling.NEAREST), (x, y+24))
     contact.save(output/'contact_sheet.png')
     detail = Image.new('RGB', (768, 304), '#173f31')
@@ -328,7 +324,7 @@ def capture(output):
                                           ('sanctuary', 'standing'), ('sanctuary', 'running'))):
         record = report['patches'][scene]['views'][pose]
         x, y = record['window_feet']
-        with open_image(output/record['file']) as picture:
+        with Image.open(output/record['file']) as picture:
             crop = picture.crop((x-48, y-100, x+48, y+36))
             detail.paste(crop.resize((192, 272), Image.Resampling.NEAREST), (index*192, 32))
         painter.text((index*192+8, 8), scene.title()+': '+pose, font=font, fill='#edf0dc')

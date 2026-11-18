@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Assemble source-derived modular garden fences and a hinged gate art review."""
 from math import ceil, cos, radians, sin
 from pathlib import Path
@@ -24,7 +20,7 @@ def indexed(image):
 
 
 def extract_parts(recipe):
-    reference = open_image(SOURCE / recipe['source']).convert('RGB')
+    reference = Image.open(SOURCE / recipe['source']).convert('RGB')
     palette = recipe['palette']
     parts = {}
     for record in recipe['samples']:
