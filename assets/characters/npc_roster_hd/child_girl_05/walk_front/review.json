@@ -1,0 +1,184 @@
+{
+  "manifest_sha256": "1263677d7cca98f166f77e5e1e830d2e5d8ab5c202c1a784a6c239bedb175af6",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        36
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        66
+      ],
+      "right_toe": [
+        20,
+        69
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        19
+      ],
+      "neck": [
+        24,
+        37
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        64
+      ],
+      "right_toe": [
+        20,
+        68
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        36
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        64
+      ],
+      "right_toe": [
+        20,
+        66
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        17
+      ],
+      "neck": [
+        24,
+        35
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        67
+      ],
+      "right_toe": [
+        20,
+        65
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        36
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        69
+      ],
+      "right_toe": [
+        20,
+        66
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        19
+      ],
+      "neck": [
+        24,
+        37
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        68
+      ],
+      "right_toe": [
+        20,
+        64
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        36
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        66
+      ],
+      "right_toe": [
+        20,
+        64
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    },
+    {
+      "crown": [
+        24,
+        17
+      ],
+      "neck": [
+        24,
+        35
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        65
+      ],
+      "right_toe": [
+        21,
+        67
+      ],
+      "occlusion_note": "A-line tunic covers hips/knees and upper legs; passing profile feet overlap with near leg in front. Far hand may disappear at passing."
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}
