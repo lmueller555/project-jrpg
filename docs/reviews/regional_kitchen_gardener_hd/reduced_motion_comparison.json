@@ -1,0 +1,25 @@
+{
+  "normal_and_reduced_motion_views": 270,
+  "actor_state_trace_identical": true,
+  "fields_compared": [
+    "tick",
+    "feet",
+    "pose",
+    "facing",
+    "clock",
+    "moving",
+    "animation_key",
+    "native_anchor",
+    "wildlife_basket",
+    "wildlife_owned",
+    "controller_stage"
+  ],
+  "final_garden_identical": true,
+  "final_borrowed_visit_identical": true,
+  "reduced_draw_ms": {
+    "samples": 270,
+    "median": 9.882653001113795,
+    "max": 577.4457500010612
+  },
+  "no_other_binding_installed": true
+}

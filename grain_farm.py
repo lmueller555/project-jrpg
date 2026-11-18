@@ -126,6 +126,12 @@ class FarmWorker:
                 frames.append({**metadata, 'image': image})
             self.clips[key] = {**clip, 'frames': frames}
 
+        from regional_npc_art import for_actor
+        self.regional_roster=for_actor(self)
+        if self.regional_roster is not None:self.portrait_path=self.regional_roster.portrait_path
+        from regional_npc_activity import for_actor as native_activities
+        self.regional_activity=native_activities(self)
+
     @staticmethod
     def _padded(path):
         canvas=render_layer((40,44),pygame.SRCALPHA)
@@ -188,7 +194,13 @@ class FarmWorker:
         prefix = 'cup_hold_' if kind == 'cup' else 'hold_'
         return self.clips[prefix+self.facing]['frames'][0]
 
+    def detailed_sprite(self, elapsed_ms):
+        bank=getattr(self,'regional_activity',None)
+        return bank.detailed_sprite(self,elapsed_ms) if bank is not None else None
+
     def sprite(self, elapsed_ms):
+        if self.pose=='idle' and self.regional_roster is not None:
+            return self.regional_roster.sprite(self.facing,self.moving,self.clock*1000)
         return self.clips[self.animation_key]['frames'][self.frame_index]['image']
 
 

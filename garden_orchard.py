@@ -98,7 +98,16 @@ class GardenWorker(FarmWorker):
    for pose in ('carry','carry_can','fill','water','weed','reach','sort','admire','rest'):
     self.frames[pose+'_'+direction]=[pygame.image.load(str(ART/f'{role}_{pose}_{direction}_{i}.png')).convert_alpha() for i in range(4 if pose in ('carry','carry_can') else 2)]
 
+  from regional_npc_art import for_actor
+  self.regional_roster=for_actor(self)
+  if self.regional_roster is not None:self.portrait_path=self.regional_roster.portrait_path
+  from regional_npc_activity import for_actor as native_activities
+  self.regional_activity=native_activities(self)
+  self.native_action_key=None;self.native_action_progress=None
+
  def sprite(self,elapsed_ms):
+  if self.pose=='idle' and self.regional_roster is not None:
+   return self.regional_roster.sprite(self.facing,self.moving,self.clock*1000)
   key=('walk' if self.moving else 'idle') if self.pose=='idle' else self.pose
   frames=self.frames[key+'_'+self.facing]
   if self.action_progress is not None:
@@ -136,6 +145,8 @@ class GardenOrchard:
  def _pose(self,a):
   if getattr(a,'wildlife_owned',False):return
   action=self.action(a.role)
+  a.native_action_key='lower' if action and action.get('lower') else None
+  a.native_action_progress=(self.state[a.role]['elapsed']/action['duration'] if action and action.get('duration') else None)
   a.action_progress=(self.state[a.role]['elapsed']/action['duration']
                      if action and action.get('kind') else None)
   a.draw_anchor=(20,44) if a.role=='picker' and (action is None or action.get('pose')=='rest') else (20,38)

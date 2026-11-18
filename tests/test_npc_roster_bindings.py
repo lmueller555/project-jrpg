@@ -77,12 +77,16 @@ class RosterBindings(unittest.TestCase):
             original=pygame.image.load(str(ROOT/f'assets/characters/npc_roster_hd/{design}/portrait.png'))
             self.assertEqual(pygame.image.tobytes(social.portraits[key],'RGBA'),
                              pygame.image.tobytes(original,'RGBA'))
+        from regional_npc_art import bound_regional_design
         for speaker in ('bridge_mason','regent_driver'):
-            self.assertEqual(social.data['speakers'][speaker]['portrait'],'male_01')
+            design=bound_regional_design(source_actor) if (source_actor:=social.data['speakers'][speaker].get('actor_id')) else None
+            self.assertEqual(social.data['speakers'][speaker]['portrait'],'npc_roster_hd:'+design if design else 'male_01')
         source=json.loads((ROOT/'assets/dialogue/eldenmere.json').read_text())
         for key,value in source['speakers'].items():
             if key not in ('innkeeper','shopkeeper'):
-                self.assertEqual(social.data['speakers'][key],value)
+                design=bound_regional_design(value.get('actor_id'))
+                expected={**value,'portrait':'npc_roster_hd:'+design} if design else value
+                self.assertEqual(social.data['speakers'][key],expected)
 
     def test_unmigrated_character_art_and_five_household_portrait_bindings(self):
         for identifier,(world,actor) in self.actors().items():
