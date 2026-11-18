@@ -1204,32 +1204,30 @@ sections below describe original delivery inventories; the live integration
 registry owns current consumers. [Actual-game review evidence](reviews/eldenmere_town_hd/README.md)
 is separate from the older offline pack compositions.
 
-The replacement well/pail bank is separately staged under
-`assets/terrain/eldenmere/well_hd/`; its broad top opening, low masonry and rear
-canopy are new coherent drawings registered as a whole. It preserves the current
-physical support as a target while declaring its own draw, ground and mechanism
-anchors. The existing live rig remains active until the later mechanism, actor
-and integration deliveries. Static pack previews do not approve animation,
-hand contact or runtime layer ordering. The
-[staged well reference](TERRAIN_ART_STANDARD.md#staged-eldenmere-well-and-pail)
-owns its source/export commands and status.
+The replacement well and canonical pail are now live through the town recipe's
+explicit `well_runtime` integration binding. The 72×88 logical well at
+`[492,800]` retains its existing physical support, with native 2× structure and
+shaped shaft/water occlusion. Separate back/front layers sort around actors;
+rendering never advances the independent mechanism clock or changes ownership.
+The [well integration reference](TERRAIN_ART_STANDARD.md#integrated-eldenmere-well-and-pail)
+owns source/export commands, calibrated stations and migration status.
 
-The staged gardener performance is separately exported to
-`assets/characters/npcs/female_02/gardener_well_hd/` by
-`tools/build_gardener_well_hd.py`. Its new complete action drawings use native
-96×96 artwork in the existing 48×48 logical action canvas, with distinct draw
-anchor `[24,36]` and visible foot registration `[24,40]`. Sixteen lowering and
-sixteen heavier raising drawings follow the shared mechanism crank sample;
-the read-only `gardener_well_presentation.py` adapter adds no animation clock,
-water accounting or object transfers. Back-facing reach/hold/recovery keys bind
-the canonical pail across the mechanism's ownership cues. Distinct engage,
-brace and brake poses, pickup/setdown and both ground/raised left/right pours
-are also staged. Four-direction travel explicitly retains the existing complete
-four-frame compatibility bodies and 560 ms cadence; it is not a new HD gait.
-The [performance review](reviews/gardener_well_hd/README.md) records source
-provenance, calibrated stations, actual-controller offline previews and limits.
-These exports do not select a new live gardener routine or approve final runtime
-navigation, state restoration or well/actor depth ordering.
+The current sanctuary gardener retains the subsequently migrated
+`adult_woman_02` appearance, registered HD work poses and eight-frame roster
+travel. Sixteen crank samples select the nearest of eight existing complete
+crank/heavy-body drawings. This is explicit reuse of registered artwork, with
+natural near-contact staging; no anatomy is stretched to force exact contact.
+Canonical PR3 pail variants provide pickup, handoff, carrying, fill and pour
+presentation with directional body occlusion.
+
+The earlier `female_02/gardener_well_hd/` complete action drawings remain a
+separate staged authoring delivery and source of the canonical pail variants.
+Its original [performance review](reviews/gardener_well_hd/README.md) preserves
+the proposed bob-haired actor and offline controller study, not the current
+roster selection. [The live review](reviews/well_live/README.md) owns gameplay
+scale, moving-actor depth, routes, transfers and lifecycle acceptance. Source-pack
+approval fields remain historical evidence; runtime activation is explicit in
+the town integration rather than inferred from merge or asset filenames.
 
 ### Integrated Sanctuary exterior
 

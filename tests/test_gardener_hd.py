@@ -30,17 +30,17 @@ class GardenerHDTests(unittest.TestCase):
         pygame.quit()
 
     def actor(self):
-        self.world.well.owner = None
+        self.world.well.reset()
         return Gardener(self.record, self.world, random.Random(23))
 
-    def test_native_body_bank_changes_no_poses_grips_layering_or_cues(self):
+    def test_current_roster_body_identity_and_registered_pose_pixels_are_preserved(self):
         before = json.loads((ROOT / LEGACY).read_text())
         actor = self.actor()
         after = actor.animation
         self.assertEqual(actor.animation_path, GARDENER_HD_ACTION)
         self.assertIn('/adult_woman_02/', actor.portrait_path)
         for name in ('water_capacity', 'body_offset', 'draw_anchor', 'foot_anchor',
-                     'action_canvas', 'animations', 'buckets'):
+                     'action_canvas', 'animations'):
             self.assertEqual(before[name], after[name], name)
         self.assertEqual(set(before['poses']), set(after['poses']))
         for name, old in before['poses'].items():
@@ -54,14 +54,25 @@ class GardenerHDTests(unittest.TestCase):
                 self.assertEqual(image.native.get_size(), (96, 96))
                 self.assertGreater(image.native.get_bounding_rect().width, 14)
                 self.assertEqual(set(pygame.image.tobytes(image.native, 'RGBA')[3::4]), {0, 255})
-        self.assertEqual(actor.buckets.keys(), self.world.well.pails.keys())
+                source=pygame.image.load(str(ROOT/Path(actor.animation_path).parent/record['body']))
+                self.assertEqual(pygame.image.tobytes(image.native,'RGBA'),
+                                 pygame.image.tobytes(source,'RGBA'))
+        # Body art remains the current roster's complete drawings. Rigid props
+        # now come from the canonical new-well bank, independently of the body.
         for name, bucket in actor.buckets.items():
-            self.assertEqual(pygame.image.tobytes(bucket.native, 'RGBA'),
-                             pygame.image.tobytes(self.world.well.pails[name].native, 'RGBA'))
+            self.assertEqual(bucket.native.get_size(), (64, 64))
+            record=actor.animation['buckets'][name]
+            source=pygame.image.load(str(ROOT/'assets/characters/npcs/female_02/gardener_well_hd'/record['file']))
+            self.assertEqual(pygame.image.tobytes(bucket.native,'RGBA'),
+                             pygame.image.tobytes(source,'RGBA'))
 
     def test_walk_between_well_stations_uses_roster_not_a_second_pail(self):
         actor = self.actor()
-        actor.step_index = next(i for i, s in enumerate(actor.steps) if s['id'] == 'well_to_crank')
+        actor.step_index = next(i for i, s in enumerate(actor.steps) if s['id'] == 'well_operation')
+        actor.operation_token = self.world.well.reserve(actor)
+        self.world.well.mechanism.signal_ready(actor.operation_token, 'loading')
+        self.world.well.mechanism.update(1.2)
+        self.assertEqual(self.world.well.snapshot().phase_id, 'await_operator')
         actor.facing = 'right'
         actor.moving = True
         actor.walk_ms = 350

@@ -7,6 +7,7 @@ import unittest
 from unittest.mock import patch
 import pygame
 import main
+from rendering import WorldCanvas
 
 
 class WellSquare(unittest.TestCase):
@@ -46,29 +47,33 @@ class WellSquare(unittest.TestCase):
             self.assertTrue(self.world.can_stand(self.world.data['destinations'][name]),name)
 
     def test_water_moves_while_structure_rope_and_crank_stay_fixed(self):
-        frames=self.well['surfaces'];first=frames[0]
-        self.assertEqual(len(frames),6)
-        self.assertEqual(first.get_size(),(84,96))
+        frames=[self.world.well.sprite(t).native for t in range(0,1200,200)]
+        first=frames[0]
+        self.assertEqual(first.get_size(),(144,176))
         self.assertGreater(len({pygame.image.tobytes(f,'RGBA') for f in frames}),1)
-        mask=self.world.image('assets/source/terrain/eldenmere/well/parts/water_mask.png',False)
+        bank=main.read_json(main.ROOT/'assets/terrain/eldenmere/well_hd/manifest.json')
+        water=next(record['file'] for record in bank['masks'] if record['id']=='water')
+        mask=self.world.image('assets/terrain/eldenmere/well_hd/'+water,False)
         for frame in frames:
-            for y in range(96):
-                for x in range(84):
+            for y in range(first.get_height()):
+                for x in range(first.get_width()):
                     self.assertEqual(frame.get_at((x,y)).a,first.get_at((x,y)).a)
                     if frame.get_at((x,y))!=first.get_at((x,y)):
                         self.assertEqual(mask.get_at((x,y)).r,255)
 
     def test_roof_occludes_from_behind_and_player_draws_in_front(self):
         player=self.game.player
-        marker=pygame.Surface((24,36),pygame.SRCALPHA);marker.fill('#ff00ff')
-        target=pygame.Surface(main.VIEW_SIZE);camera=(408,768)
+        marker=WorldCanvas((24,36),pygame.SRCALPHA);marker.fill('#ff00ff')
+        target=WorldCanvas(main.VIEW_SIZE);camera=(408,768)
         with patch.object(player,'sprite',return_value=marker):
             player.position.update(528,828)
             self.world.draw(target,camera,player,0)
-            self.assertNotEqual(target.get_at((120,52))[:3],(255,0,255))
+            # Sample the new low canopy's actual opaque roof at worldy832;
+            # the former high roof's y820 point is now transparent padding.
+            self.assertNotEqual(target.native.get_at((240,128))[:3],(255,0,255))
             player.position.update(528,900)
             self.world.draw(target,camera,player,0)
-            self.assertEqual(target.get_at((120,112))[:3],(255,0,255))
+            self.assertEqual(target.native.get_at((240,224))[:3],(255,0,255))
 
     def test_square_preserves_building_access_and_gathering_space(self):
         layout=main.read_json(main.ROOT/self.world.data['layout_source'])

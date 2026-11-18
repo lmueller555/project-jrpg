@@ -59,11 +59,14 @@ class WellPackTests(unittest.TestCase):
         self.assertEqual(self.pack['visual_approval'], 'pending_user_review')
         self.assertIs(self.pack['runtime_activation'], False)
         self.assertEqual(self.pack['artwork_pixels_per_world_pixel'], 2)
+        # The immutable pack records its original delivery/approval state.
+        # Live activation belongs to the maintained town integration selector.
         for name in ('assets/maps/eldenmere/playable/map.json',
                      'assets/maps/eldenmere/town_hd/manifest.json'):
             live = json.loads((ROOT / name).read_text())
-            self.assertFalse(any('assets/terrain/eldenmere/well_hd/' in item
-                                 for item in values(live)), name)
+            self.assertEqual(live['well_runtime']['status'], 'integrated')
+            self.assertEqual(live['well_runtime']['manifest'],
+                             'assets/terrain/eldenmere/well_hd/manifest.json')
 
     def test_assembly_canvas_and_registered_source_recipe(self):
         assembly = self.pack['assembly']

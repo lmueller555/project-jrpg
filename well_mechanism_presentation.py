@@ -1,8 +1,8 @@
-"""Side-effect-free native presentation of the staged well mechanism.
+"""Side-effect-free native presentation of the Eldenmere well mechanism.
 
 The controller owns time, readiness, transfers and water. This renderer reads
-only immutable snapshots and uses the retained structural/pail drawings. Nothing
-in the ordinary World or Gardener selects this implementation before PR 4.
+only immutable snapshots and uses the retained structural/pail drawings. The
+live DrawingWell adapter selects its separate far/near world-depth passes.
 """
 from __future__ import annotations
 
@@ -125,25 +125,19 @@ class WellMechanismPresentation:
                 motion.putalpha(ImageChops.subtract(motion.getchannel('A'), self.submerged_mask))
         return motion
 
-    def render(self, snapshot, ambient_ms=0, reduced_motion=False):
-        """Return a caller-owned native RGBA image without advancing simulation."""
-        key = self._signature(snapshot, ambient_ms, reduced_motion)
-        cached = self._cache.get(key)
-        if cached is not None:
-            self._hits += 1; self._cache.move_to_end(key)
-            return cached.copy()
-        self._misses += 1
+    def _render_layers(self, key):
+        """Assemble the far/support pass and the near masonry/mechanism pass."""
         phase, grip, origin, rope, hook, owner, units, region, crank, submerged, contact, water_phase, effect_phase, reduced = key
-        image = self.under.copy()
-        image.alpha_composite(self.water[water_phase])
-        image.alpha_composite(self.spindles[crank])
+        back = self.under.copy()
+        back.alpha_composite(self.water[water_phase])
+        back.alpha_composite(self.spindles[crank])
         moving = self._moving(key)
-        if region != 'loading_foreground': image.alpha_composite(moving)
-        image.alpha_composite(self.front)
-        if region == 'loading_foreground': image.alpha_composite(moving)
-        image.alpha_composite(self.cranks[crank])
+        if region != 'loading_foreground': back.alpha_composite(moving)
+        front = self.front.copy()
+        if region == 'loading_foreground': front.alpha_composite(moving)
+        front.alpha_composite(self.cranks[crank])
         if contact and phase in ('lower', 'fill'):
-            image.alpha_composite(self.contacts[effect_phase])
+            front.alpha_composite(self.contacts[effect_phase])
         if phase == 'raise' and owner == 'well' and not submerged:
             drops = Image.new('RGBA', self.size); draw = ImageDraw.Draw(drops)
             # Water drips belong to the emerging pail; never overwrite stone.
@@ -151,7 +145,31 @@ class WellMechanismPresentation:
                 x, y = grip[0]+dx, grip[1]+self.pail_base_offset_artwork+dy
                 if 0 <= x < self.size[0] and 0 <= y < self.size[1]: draw.point((x, y), fill=self.manifest['palette']['glint'])
             drops.putalpha(ImageChops.multiply(drops.getchannel('A'), self.masks['water']))
-            image.alpha_composite(drops)
+            front.alpha_composite(drops)
+        return back, front
+
+    def render_layers(self, snapshot, ambient_ms=0, reduced_motion=False):
+        """Return independent native far/near passes for world depth sorting.
+
+        No source image is reopened. Live adapters may cache these quantized
+        passes using pose_key(); this method retains no additional image cache.
+        """
+        return self._render_layers(self.pose_key(snapshot, ambient_ms, reduced_motion))
+
+    def pose_key(self, snapshot, ambient_ms=0, reduced_motion=False):
+        """Immutable, quantized presentation key; it is never a gameplay clock."""
+        return self._signature(snapshot, ambient_ms, reduced_motion)
+
+    def render(self, snapshot, ambient_ms=0, reduced_motion=False):
+        """Return a caller-owned native RGBA image without advancing simulation."""
+        key = self.pose_key(snapshot, ambient_ms, reduced_motion)
+        cached = self._cache.get(key)
+        if cached is not None:
+            self._hits += 1; self._cache.move_to_end(key)
+            return cached.copy()
+        self._misses += 1
+        image, front = self._render_layers(key)
+        image.alpha_composite(front)
         self._cache[key] = image
         while len(self._cache) > self.limit: self._cache.popitem(last=False)
         return image.copy()

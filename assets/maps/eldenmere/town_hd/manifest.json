@@ -3,7 +3,7 @@
   "integration_status": "integrated",
   "artwork_pixels_per_world_pixel": 2,
   "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
-  "recipe_sha256": "dbca1faa03c52b0c1f687b103453cc548e153a6e6b99e665d3ee0dd02296e31c",
+  "recipe_sha256": "61bb147aa3b4cc79c332b759b741f1100d8491358d9db6614d7cb44bbae122f1",
   "scenes": {
     "town": "assets/maps/eldenmere/playable/map.json",
     "upstream": "assets/maps/eldenmere/upstream/map.json",
@@ -8658,7 +8658,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "b6c18f67bd92a56b9e8a4e9e3547f204fb734600f3fb8f527ccc81fd77f7dca9"
+      "sha256": "524b4077735dd9cce0570cbbe09ab50d279dc5537951897835debdfc46d43d99"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",
@@ -9247,5 +9247,30 @@
     }
   },
   "interior_architecture": "assets/maps/eldenmere/town_hd/interior_architecture.json",
+  "well_runtime": {
+    "id": "eldenmere.well.live.v1",
+    "status": "integrated",
+    "manifest": "assets/terrain/eldenmere/well_hd/manifest.json",
+    "mechanism_manifest": "assets/terrain/eldenmere/well_hd/mechanism/manifest.json",
+    "mechanism_contract": "assets/source/terrain/eldenmere/well_hd/mechanism/contract.json",
+    "canonical_pail_manifest": "assets/characters/npcs/female_02/gardener_well_hd/animations.json",
+    "world_origin_logical": [
+      492,
+      800
+    ],
+    "depth_baselines_logical": {
+      "back": 840,
+      "front": 896
+    },
+    "actor": {
+      "id": "sanctuary_gardener",
+      "character": "adult_woman_02",
+      "action_bank": "assets/characters/npc_roster_hd/adult_woman_02/gardener_hd/animations.json",
+      "mechanism_phase_samples": 16,
+      "body_phase_samples": 8
+    },
+    "physical_policy": "Retain source collision/navigation and the existing well_ground_rect; artwork alpha does not define physics.",
+    "approval_policy": "Runtime activation is owned by this integration binding; retained source-pack visual approval and original staged delivery metadata remain historical evidence."
+  },
   "services": "Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json."
 }

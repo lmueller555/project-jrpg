@@ -64,6 +64,36 @@ class Export:
 def update_visual(entity,frames,size,**extra):
     entity.update(frames=frames,logical_size=list(size),artwork_pixels_per_world_pixel=2,**extra)
 
+def integrate_live_well(town,recipe):
+    """Select the reviewed well without deriving gameplay physics from its art.
+
+    This is also the surgical metadata entry point for an existing composed map.
+    Static pack provenance remains unchanged; the town owns runtime activation.
+    """
+    binding=deepcopy(recipe['well_runtime'])
+    pack=read(binding['manifest'])
+    contract=read(binding['mechanism_contract'])
+    assembly=pack['assembly'];geometry=pack['geometry']
+    if (binding['status']!='integrated' or
+            binding['world_origin_logical']!=assembly['world_position'] or
+            binding['world_origin_logical']!=contract['well_world_origin']):
+        raise ValueError('Live well origin disagrees with its retained artwork or mechanism')
+    layout=read('assets/maps/eldenmere/well_square/layout.json')
+    if geometry['ground_rect_world_logical']!=layout['well_ground_rect']:
+        raise ValueError('Live well must retain its existing physical support')
+    entity=next(record for record in town['entities'] if record['id']=='well')
+    image_path=(Path(binding['manifest']).parent/assembly['file']).as_posix()
+    update_visual(entity,[image_path],assembly['logical_size'],
+                  position=list(binding['world_origin_logical']),
+                  sort_y=binding['depth_baselines_logical']['front'])
+    town['well_runtime']=binding
+    town.setdefault('art_integrations',{})['well_hd']={
+        'recipe':str((SRC/'recipe.json').relative_to(ROOT)),
+        'manifest':binding['manifest'],'status':'integrated','density':2,
+        'runtime':'well_routine.DrawingWell',
+        'preserved_ground_rect_logical':list(layout['well_ground_rect'])}
+    return town
+
 def business_anchor(spec,design):
     x,y=spec['position'];dx,_,dw,_=design['door_rect_logical'];_,gy,_,gh=design['ground_rect_logical']
     return [x+dx+dw/2,y+gy+gh+6]
@@ -308,6 +338,7 @@ def products():
         path=ex.png('well/'+key,new);well_spec['pails'][key]=ex.art(path,size);town['art_replacements'][legacy]=ex.art(path,size)
     town['well_art']=well_spec
     update_visual(entities['well'],[ex.png('well/idle',fixed.crop((0,0,168,192)))],(84,96))
+    integrate_live_well(town,rec)
     # Town ground is reconstructed from current logical layers, including later yards.
     geo=read('assets/source/maps/eldenmere/courtyard_hd/geometry.json');dirt={tuple(r['cell']) for r in geo['dirt']}
     square=read('assets/maps/eldenmere/well_square/layout.json');dirt.update(map(tuple,square['added_dirt_cells']))
@@ -631,7 +662,7 @@ def products():
     from tools.eldenmere_settlement import framework, MANIFEST as SETTLEMENT_MANIFEST
     settlement=framework(ROOT,town,rec['settlement_recipe'],image_loader=ex.load)
     ex.json(SETTLEMENT_MANIFEST,settlement)
-    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':settlement['active_placements'],'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'interior_architecture':PACK+'/interior_architecture.json','services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
+    ex.json(PACK+'/manifest.json',{'id':rec['id'],'integration_status':'integrated','artwork_pixels_per_world_pixel':2,'recipe':str((SRC/'recipe.json').relative_to(ROOT)),'recipe_sha256':sha256((SRC/'recipe.json').read_bytes()).hexdigest(),'scenes':paths,'businesses':rec['businesses'],'sources':rec['sources'],'exports':list(ex.records.values()),'settlement_framework':{'manifest':SETTLEMENT_MANIFEST,'recipe':rec['settlement_recipe'],'status':settlement['status'],'active_placements':settlement['active_placements'],'active_ground_treatments':settlement['active_ground_treatments']},'architecture_schedule':rec['architecture_schedule'],'architecture_schedule_sha256':sha256((ROOT/rec['architecture_schedule']).read_bytes()).hexdigest(),'crossings':crossing_records,'interior_architecture':PACK+'/interior_architecture.json','well_runtime':deepcopy(rec['well_runtime']),'services':'Inn recovery and consumable purchases use town_services.py; live pricing and stock are in assets/services/eldenmere.json.'})
     return ex.out
 
 def build(check=False):

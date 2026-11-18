@@ -94,6 +94,20 @@ def _validate_fixture_underlay(root, town, recipe, source, rect):
     if expected[2:] != [48, 48] or rect != expected:
         raise ValueError(f'{name}: fixture underlay must equal the source well support')
     position = _coordinates(layout.get('well_position'), 2, name+' source well position')
+    binding=town.get('well_runtime')
+    if binding is not None:
+        # The replacement drawing has a different transparent canvas origin,
+        # while this underlay still belongs to exactly the original support.
+        # Accept only the maintained source selector, not an instance override.
+        town_recipe=json.loads(_file(root,'assets/source/maps/eldenmere/town_hd/recipe.json').read_text())
+        if binding!=town_recipe.get('well_runtime'):
+            raise ValueError(f'{name}: live well binding differs from its source selector')
+        pack=json.loads(_file(root,binding['manifest']).read_text())
+        geometry=pack['geometry']
+        position=_coordinates(geometry.get('world_position_logical'),2,name+' live well origin')
+        if (binding.get('world_origin_logical')!=position or
+                geometry.get('ground_rect_world_logical')!=expected):
+            raise ValueError(f'{name}: live well must retain the source support')
     instances = [entity for entity in town.get('entities', []) if entity.get('id') == 'well']
     if (len(instances) != 1 or
             _coordinates(instances[0].get('position'), 2, name+' well position') != position):

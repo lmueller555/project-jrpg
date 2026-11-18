@@ -1,0 +1,82 @@
+{
+  "root": "/workspace/well-live-pr4",
+  "revision": "7dfa732ea1abe9c62cd7860f453f9b923a20a4af",
+  "native_size": [
+    960,
+    640
+  ],
+  "camera_logical": [
+    288,
+    660
+  ],
+  "iterations": 30,
+  "initial_rest_rng_seed": 2026,
+  "timing_scope": "Production World.draw including native buffer reset; updates, image conversion, UI and display presentation excluded; hardware specific.",
+  "source_sha256": {
+    "main.py": "3d0f9aa07bfc492715f8d9e7799307a644b2a78cf185bf97e74910dcaa323fbf",
+    "npc_routines.py": "532087eefc75dc5363c7250c625592fbd46290d1bb0721a7bfea5ea431989c3c",
+    "well_routine.py": "c95d34a245f9944640333f76425c8eef81f2c11607ab08d3acd3a7c9e1192647",
+    "rendering.py": "4f94406ae0d2c010a6bf7e6c5111eff263556f8e4c97fe97d2adb78ff02d9f35",
+    "well_live_presentation.py": "96f42c28d280fc0da8fd9ae7ea289e1d13e550cb532b5fb21ebec5a47e659f24",
+    "gardener_well_runtime.py": "496b129c0ea13364dde592debc5f5e8a1214a7e2ab83eb1e0657f4e5ef06e479"
+  },
+  "driver_sha256": "41b0e209323865f8459780027adc01320a56e5d32ab454479edbee4983f08e1e",
+  "idle": {
+    "actor_state_start": "rest",
+    "actor_state_end": "rest",
+    "first_draw_ms": 43.07258199696662,
+    "warm_static": {
+      "samples": 30,
+      "min_ms": 1.476420002290979,
+      "mean_ms": 1.6030520663965337,
+      "median_ms": 1.5598009995301254,
+      "p95_ms": 1.8448970004101284,
+      "max_ms": 1.9468110040179454
+    },
+    "moving_draw": {
+      "samples": 30,
+      "min_ms": 1.549781001813244,
+      "mean_ms": 1.7231940667746433,
+      "median_ms": 1.6105225004139356,
+      "p95_ms": 2.120031997037586,
+      "max_ms": 3.461649001110345
+    },
+    "well_cache": {
+      "entries": 3,
+      "limit": 48,
+      "surface_bytes": 760320,
+      "max_surface_bytes": 12165120,
+      "hits": 58,
+      "misses": 3
+    }
+  },
+  "lower": {
+    "actor_state_start": "well_lower",
+    "actor_state_end": "well_lower",
+    "first_draw_ms": 4.089194000698626,
+    "warm_static": {
+      "samples": 30,
+      "min_ms": 1.5836210004636087,
+      "mean_ms": 1.9617224992543925,
+      "median_ms": 1.7658264987403527,
+      "p95_ms": 2.4259130004793406,
+      "max_ms": 2.4283169987029396
+    },
+    "moving_draw": {
+      "samples": 30,
+      "min_ms": 1.6472970019094646,
+      "mean_ms": 2.226410365983611,
+      "median_ms": 1.8451359974278603,
+      "p95_ms": 3.5260739969089627,
+      "max_ms": 3.841820995148737
+    },
+    "well_cache": {
+      "entries": 15,
+      "limit": 48,
+      "surface_bytes": 3801600,
+      "max_surface_bytes": 12165120,
+      "hits": 107,
+      "misses": 15
+    }
+  }
+}

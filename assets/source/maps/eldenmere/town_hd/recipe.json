@@ -2660,5 +2660,30 @@
     "recipe": "assets/source/maps/eldenmere/town_hd/interior_architecture/recipe.json",
     "generator": "tools/eldenmere_interior_architecture.py",
     "new_scene": "inn_guest_floor"
+  },
+  "well_runtime": {
+    "id": "eldenmere.well.live.v1",
+    "status": "integrated",
+    "manifest": "assets/terrain/eldenmere/well_hd/manifest.json",
+    "mechanism_manifest": "assets/terrain/eldenmere/well_hd/mechanism/manifest.json",
+    "mechanism_contract": "assets/source/terrain/eldenmere/well_hd/mechanism/contract.json",
+    "canonical_pail_manifest": "assets/characters/npcs/female_02/gardener_well_hd/animations.json",
+    "world_origin_logical": [
+      492,
+      800
+    ],
+    "depth_baselines_logical": {
+      "back": 840,
+      "front": 896
+    },
+    "actor": {
+      "id": "sanctuary_gardener",
+      "character": "adult_woman_02",
+      "action_bank": "assets/characters/npc_roster_hd/adult_woman_02/gardener_hd/animations.json",
+      "mechanism_phase_samples": 16,
+      "body_phase_samples": 8
+    },
+    "physical_policy": "Retain source collision/navigation and the existing well_ground_rect; artwork alpha does not define physics.",
+    "approval_policy": "Runtime activation is owned by this integration binding; retained source-pack visual approval and original staged delivery metadata remain historical evidence."
   }
 }
