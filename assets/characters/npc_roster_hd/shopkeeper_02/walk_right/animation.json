@@ -1,0 +1,470 @@
+{
+  "version": 1,
+  "character": "shopkeeper_02",
+  "animation": "walk.right",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/shopkeeper_02/walk_right/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/shopkeeper_02/walk_right/authored.png": "a3dcfcb817783c530cda5076058086681c8b7ca44d3f32d217e284a2b0f33022",
+    "assets/characters/npc_roster_hd/shopkeeper_02/idle_right.png": "88459c3b688568cabe13843a2959fd7f26b73356d746da773a03a377d4932b12"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob": 0,
+      "frame": 1,
+      "right_boot_base": [
+        31,
+        69
+      ],
+      "left_boot_base": [
+        15,
+        69
+      ],
+      "crown_y": 2,
+      "belt_center": [
+        28,
+        33
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_detail": "right+left",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob": 1,
+      "frame": 2,
+      "right_boot_base": [
+        26,
+        69
+      ],
+      "left_boot_base": [
+        15,
+        66
+      ],
+      "crown_y": 3,
+      "belt_center": [
+        28,
+        34
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob": 0,
+      "frame": 3,
+      "right_boot_base": [
+        23,
+        69
+      ],
+      "left_boot_base": [
+        24,
+        64
+      ],
+      "crown_y": 2,
+      "belt_center": [
+        28,
+        33
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob": -1,
+      "frame": 4,
+      "right_boot_base": [
+        19,
+        69
+      ],
+      "left_boot_base": [
+        30,
+        67
+      ],
+      "crown_y": 1,
+      "belt_center": [
+        28,
+        32
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_detail": "right_toe",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob": 0,
+      "frame": 5,
+      "right_boot_base": [
+        15,
+        69
+      ],
+      "left_boot_base": [
+        31,
+        69
+      ],
+      "crown_y": 2,
+      "belt_center": [
+        28,
+        33
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_detail": "left+right",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob": 1,
+      "frame": 6,
+      "right_boot_base": [
+        15,
+        66
+      ],
+      "left_boot_base": [
+        26,
+        69
+      ],
+      "crown_y": 3,
+      "belt_center": [
+        28,
+        34
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob": 0,
+      "frame": 7,
+      "right_boot_base": [
+        24,
+        64
+      ],
+      "left_boot_base": [
+        23,
+        69
+      ],
+      "crown_y": 2,
+      "belt_center": [
+        28,
+        33
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob": -1,
+      "frame": 8,
+      "right_boot_base": [
+        30,
+        67
+      ],
+      "left_boot_base": [
+        19,
+        69
+      ],
+      "crown_y": 1,
+      "belt_center": [
+        28,
+        32
+      ],
+      "occlusion": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty.",
+      "support_detail": "left_toe",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Skirt and rust wrap conceal knees and upper shins throughout. Sole markers visible; passing feet partly overlap in profiles. Belt marker is visible apron-tie boundary, not an exposed hip joint. Head rows0:17 retained; hands empty."
+      }
+    }
+  ]
+}
