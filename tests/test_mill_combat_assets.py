@@ -77,7 +77,8 @@ class MillCombatAssetTests(unittest.TestCase):
         self.assert_complete_actor('ridgeback_tusker', (96, 72), (48, 62), 'right',
                                    {'idle', 'attack', 'prepare', 'charge', 'hurt',
                                     'defeat', 'tusk_strike', 'prepare_charge',
-                                    'tusker_charge'})
+                                    'tusker_charge', 'bolt_hurt', 'bolt_hurt_raised',
+                                    'bolt_hurt_low3', 'bolt_hurt_low4'}, 28)
 
 
     def test_every_authored_pose_references_its_retained_source_atlas(self):
@@ -92,10 +93,10 @@ class MillCombatAssetTests(unittest.TestCase):
                 records = {record['source_cell']: record
                            for state in data['animations'].values()
                            for record in state['frames']}
-                # Mira replaces five active firing poses, not her retained
-                # source atlas or the other77 approved drawings.
+                # Mira replaces five active firing poses while retaining the
+                # full source atlas. Tusker adds six authored source cells.
                 expected = ((set(range(82))-set(range(7,12))) | set(range(82,90))
-                            if actor == 'mira' else set(range(16)))
+                            if actor == 'mira' else set(range(22)))
                 self.assertEqual(set(records), expected)
                 for record in records.values():
                     source = ROOT/record.get('source_sheet', data['source_sheet'])
@@ -104,6 +105,44 @@ class MillCombatAssetTests(unittest.TestCase):
                     left, top, right, bottom = record['source_bounds']
                     self.assertTrue(0 <= left < right <= width)
                     self.assertTrue(0 <= top < bottom <= height)
+
+    def test_bolt_recoil_registers_protected_tusker_hooves_and_head(self):
+        folder = ART/'ridgeback_tusker'
+        animations = manifest('ridgeback_tusker')['animations']
+        banks = ['bolt_hurt', 'bolt_hurt_raised', 'bolt_hurt_low3', 'bolt_hurt_low4']
+        for phase, name in enumerate(banks, 1):
+            idle_file = f'idle_{phase:02}.png'
+            with self.subTest(bank=name):
+                data = animations[name]
+                frames = data['frames']
+                self.assertFalse(data['loop'])
+                self.assertEqual([frame['duration_ms'] for frame in frames], [55, 95, 100, 70])
+                self.assertEqual(frames[-1]['file'], idle_file)
+                with Image.open(folder/idle_file) as idle:
+                    for record in frames[:-1]:
+                        self.assertEqual(hashlib.sha256((ROOT/record['source_sheet']).read_bytes()).hexdigest(),
+                                         record['source_sha256'])
+                        with Image.open(folder/record['file']) as image:
+                            self.assertEqual(image.crop((0, 55, 96, 72)).tobytes(),
+                                             idle.crop((0, 55, 96, 72)).tobytes())
+                            self.assertEqual(image.crop((0, 0, 35, 72)).tobytes(),
+                                             idle.crop((0, 0, 35, 72)).tobytes())
+                            if record is frames[0]:
+                                self.assertEqual(image.crop((63, 0, 96, 72)).tobytes(),
+                                                 idle.crop((63, 0, 96, 72)).tobytes())
+                            else:
+                                self.assertNotEqual(image.crop((63, 0, 96, 53)).tobytes(),
+                                                    idle.crop((63, 0, 96, 53)).tobytes())
+
+    def test_bolt_additions_do_not_resize_tusker_or_move_shoulder_outside_body(self):
+        self.sprites.frame('ridgeback_tusker', 'idle', 0)
+        art = self.sprites.actors['ridgeback_tusker']
+        original = [image.get_bounding_rect()
+                    for state, (frames, _) in art['animations'].items()
+                    if not state.startswith('bolt_hurt') for image, _ in frames]
+        self.assertEqual(art['bounds'], original[0].unionall(original[1:]))
+        for image, _ in art['animations']['idle'][0]:
+            self.assertEqual(image.get_at((59, 33)).a, 255)
 
     def test_bolt_shot_and_charge_resolve_during_the_authored_contact_frame(self):
         actions = load_actions()

@@ -15,6 +15,7 @@ from battle_action_fx import BattleActionEffects, target_reaction
 from battle_action_audio import BattleActionAudio
 from combat_motion_art import MOTION_STATES, frame as motion_frame, anchors as motion_anchors
 from mira_combat_art import MiraCombatArt
+from bolt_shot_fx import BoltShotEffects
 from mira_rig_ui import MiraRigUI
 from lucan_skill_fx import LucanSkillEffects, SKILLS as LUCAN_SKILLS, COLORS as LUCAN_COLORS, icon as lucan_status_icon
 from cave_battlefield import CaveBattlefield, CAVE_BATTLEFIELDS
@@ -184,6 +185,7 @@ class BattleScene:
         self._popups = []
         self._reactions = {}
         self.action_fx = BattleActionEffects()
+        self.bolt_fx = BoltShotEffects()
         self._elemental_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         self._rig_layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         motion_frame('plant', 0, armed=model.weapon_equipped)
@@ -1204,11 +1206,21 @@ class BattleScene:
                 age = max(0., event.get('frame_age', 0.))
                 self._reactions[event['target']] = {'age': age, 'guarded': event.get('guarded', False),
                     'lethal': not event['remaining_hp'], 'action': event['action']}
+                if event['action'] == 'bolt_shot' and event.get('actor') == 'mira':
+                    homes = self._home_positions()
+                    point = self._bolt_hit_point(event['target'], homes)
+                    origin = self.mira_art.world_anchor('attack', self.mira_art.release_at*1000,
+                                                        'muzzle', homes['mira'])
+                    contact_ms = (self._elapsed-age)*1000
+                    self._reactions[event['target']].update(
+                        point=tuple(point), direction=tuple(point-pygame.Vector2(origin)),
+                        bolt_pose=self._bolt_recoil_pose(event['target'], contact_ms))
                 group_spell = event['action'] in ('vespermaw_confluence_roar',
                                                   'embravyr_emberwash', 'nivareth_glassfall')
                 if age < .12 and (not group_spell or not roar_impact_cued):
                     metallic = event.get('guarded') and (event['target'] != 'player' or self.model.weapon_equipped)
-                    self.action_audio.play('guard_hit' if metallic else 'impact')
+                    self.action_audio.play('guard_hit' if metallic else
+                                           'bolt_impact' if event['action'] == 'bolt_shot' else 'impact')
                     if group_spell:roar_impact_cued = True
                 self._popups.append({'target': event['target'],
                                      'text': str(event['damage']), 'age': age,
@@ -1428,6 +1440,40 @@ class BattleScene:
             return point+((54, -38) if self._sprite(actor) == 'ridgeback_tusker' else (8, -32))
         return point+(0, -36)
 
+    def _bolt_hit_point(self, actor, positions=None):
+        """Incoming near shoulder, independent of idle breathing and recoil.
+
+        Tusker's authored native shoulder is (59, 33), floor (48, 62).
+        Other species retain their registered body-centre contact rather than
+        borrowing the Tusker's size or blindly striking a wing/tail edge.
+        """
+        positions = self._home_positions() if positions is None else positions
+        if self._sprite(actor) == 'ridgeback_tusker':
+            return positions[actor]+pygame.Vector2(11, -29)*self._actor_scale(actor)
+        return self._hit_point(actor, positions)
+
+    def _bolt_recoil(self, actor, reaction):
+        return (reaction['action'] == 'bolt_shot' and not reaction['guarded']
+                and not reaction['lethal'] and self._sprite(actor) == 'ridgeback_tusker')
+
+    def _bolt_recoil_pose(self, actor, contact_ms):
+        """Match Tusker's idle phase at the authoritative event boundary.
+
+        The 240 ms second idle drawing raises the head considerably. Its own
+        registered bank prevents a head snap from preceding shoulder contact.
+        The other phases similarly preserve their head, hindquarters and hooves.
+        This is presentation selection only, not an enemy action/AI change.
+        """
+        if self._sprite(actor) != 'ridgeback_tusker' or not hasattr(self.sprites, 'actors'):
+            return 'bolt_hurt'
+        frames, loop = self._enemy_art(actor)['animations']['idle']
+        time = max(0., contact_ms)%sum(duration for _, duration in frames)
+        for index, (_, duration) in enumerate(frames):
+            if time < duration:
+                return ('bolt_hurt', 'bolt_hurt_raised', 'bolt_hurt_low3', 'bolt_hurt_low4')[index]
+            time -= duration
+        return 'bolt_hurt'
+
     def _contact_position(self, action, positions):
         """Match the authored contact point to the target's near-side silhouette."""
         contact = sample_choreography(action.choreography, action.impact_at,
@@ -1476,6 +1522,9 @@ class BattleScene:
         for actor, record in self._reactions.items():
             if actor not in positions:continue
             sprite = self._sprite(actor)
+            # The dedicated living Tusker recoil is drawn over planted feet.
+            # Other hits, guarded reactions and lethal defeat retain their path.
+            if self._bolt_recoil(actor, record):continue
             reaction = target_reaction(sprite, record['age'], direction=-1 if self._is_enemy(actor) else 1,
                                        reduced_motion=self.reduced_motion, guarded=record['guarded'])
             if reaction['active']:
@@ -1523,8 +1572,11 @@ class BattleScene:
         reaction = self._reactions.get(actor)
         sprite = self._sprite(actor)
         reaction_length = target_reaction(sprite, 0., guarded=bool(reaction and reaction['guarded']))['duration']
+        if reaction is not None and self._bolt_recoil(actor, reaction):reaction_length = .32
         if reaction is not None and reaction['age'] < (.18 if reaction['lethal'] else reaction_length):
             age = reaction['age']
+            if self._bolt_recoil(actor, reaction):
+                return reaction.get('bolt_pose', 'bolt_hurt'), age*1000
             if actor == 'player':
                 return ('guard_impact' if reaction['guarded'] else 'hurt_recover'), age*1000
             if actor == 'mira' and reaction['guarded']:
@@ -1761,8 +1813,12 @@ class BattleScene:
                                 anchors=attachment, reduced_motion=self.reduced_motion)
         for actor, reaction in self._reactions.items():
             if actor in positions:
-                self.action_fx.draw_impact(canvas, self._hit_point(actor, positions), reaction['age'],
-                                           reaction['action'], reduced_motion=self.reduced_motion)
+                if reaction['action'] == 'bolt_shot' and not reaction['guarded']:
+                    self.bolt_fx.draw_impact(canvas, reaction.get('point', self._bolt_hit_point(actor)),
+                        reaction['age'], reaction.get('direction', (-1, 0)), reduced_motion=self.reduced_motion)
+                else:
+                    self.action_fx.draw_impact(canvas, self._hit_point(actor, positions), reaction['age'],
+                                               reaction['action'], reduced_motion=self.reduced_motion)
         if action is not None and action.kind == 'enchant':
             point = positions[action.actor]+(0, -34)
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
@@ -1970,20 +2026,12 @@ class BattleScene:
             return None
         homes = self._home_positions()
         return self.mira_art.shot(action.elapsed, action.impact_at, homes['mira'],
-                                  self._hit_point(action.target, homes), resolved=action.resolved)
+                                  self._bolt_hit_point(action.target, homes), resolved=action.resolved)
 
     def _draw_mira_effects(self, canvas):
         shot = self._mira_shot()
         if shot is not None:
-            if shot['projectile'] is not None:
-                point = pygame.Vector2(shot['projectile'])
-                direction = pygame.Vector2(shot['target']) - pygame.Vector2(shot['origin'])
-                direction = direction.normalize() if direction.length_squared() else pygame.Vector2(-1, 0)
-                tail = point-direction*7
-                pygame.draw.line(canvas, '#bd8751', tuple(round(n) for n in tail),
-                                 tuple(round(n) for n in point), 2)
-                pygame.draw.line(canvas, '#f1cd77', tuple(round(n) for n in point-direction*3),
-                                 tuple(round(n) for n in point), 1)
+            self.bolt_fx.draw_flight(canvas, shot, reduced_motion=self.reduced_motion)
             if shot['flash'] and not self.reduced_motion:
                 x, y = (round(n) for n in shot['muzzle'])
                 # An attached brass wedge, not an explosion or smoke cloud.

@@ -324,6 +324,226 @@
           ]
         }
       ]
+    },
+    "bolt_hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "bolt_hurt_01.png",
+          "duration_ms": 55,
+          "source_cell": 16,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            89,
+            155,
+            659,
+            558
+          ]
+        },
+        {
+          "file": "bolt_hurt_02.png",
+          "duration_ms": 95,
+          "source_cell": 17,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            813,
+            155,
+            1383,
+            558
+          ]
+        },
+        {
+          "file": "bolt_hurt_03.png",
+          "duration_ms": 100,
+          "source_cell": 18,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            1536,
+            155,
+            2106,
+            558
+          ]
+        },
+        {
+          "file": "idle_01.png",
+          "duration_ms": 70,
+          "source_cell": 0,
+          "source_bounds": [
+            14,
+            34,
+            351,
+            268
+          ]
+        }
+      ]
+    },
+    "bolt_hurt_raised": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "bolt_hurt_raised_01.png",
+          "duration_ms": 55,
+          "source_cell": 19,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil_raised.png",
+          "source_sha256": "6f98ebacc323af895c6a6b917a8f30635541d33c124305382efa2a3d8f4a7de5",
+          "source_bounds": [
+            82,
+            143,
+            654,
+            563
+          ]
+        },
+        {
+          "file": "bolt_hurt_raised_02.png",
+          "duration_ms": 95,
+          "source_cell": 20,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil_raised.png",
+          "source_sha256": "6f98ebacc323af895c6a6b917a8f30635541d33c124305382efa2a3d8f4a7de5",
+          "source_bounds": [
+            806,
+            143,
+            1378,
+            563
+          ]
+        },
+        {
+          "file": "bolt_hurt_raised_03.png",
+          "duration_ms": 100,
+          "source_cell": 21,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil_raised.png",
+          "source_sha256": "6f98ebacc323af895c6a6b917a8f30635541d33c124305382efa2a3d8f4a7de5",
+          "source_bounds": [
+            1530,
+            143,
+            2102,
+            563
+          ]
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 70,
+          "source_cell": 1,
+          "source_bounds": [
+            378,
+            36,
+            716,
+            268
+          ]
+        }
+      ]
+    },
+    "bolt_hurt_low3": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "bolt_hurt_low3_01.png",
+          "duration_ms": 55,
+          "source_cell": 16,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            89,
+            155,
+            659,
+            558
+          ]
+        },
+        {
+          "file": "bolt_hurt_low3_02.png",
+          "duration_ms": 95,
+          "source_cell": 17,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            813,
+            155,
+            1383,
+            558
+          ]
+        },
+        {
+          "file": "bolt_hurt_low3_03.png",
+          "duration_ms": 100,
+          "source_cell": 18,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            1536,
+            155,
+            2106,
+            558
+          ]
+        },
+        {
+          "file": "idle_03.png",
+          "duration_ms": 70,
+          "source_cell": 2,
+          "source_bounds": [
+            747,
+            42,
+            1072,
+            268
+          ]
+        }
+      ]
+    },
+    "bolt_hurt_low4": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "bolt_hurt_low4_01.png",
+          "duration_ms": 55,
+          "source_cell": 16,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            89,
+            155,
+            659,
+            558
+          ]
+        },
+        {
+          "file": "bolt_hurt_low4_02.png",
+          "duration_ms": 95,
+          "source_cell": 17,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            813,
+            155,
+            1383,
+            558
+          ]
+        },
+        {
+          "file": "bolt_hurt_low4_03.png",
+          "duration_ms": 100,
+          "source_cell": 18,
+          "source_sheet": "assets/source/combat/mq02_tusker_bolt_recoil.png",
+          "source_sha256": "e7085c230de90c7fb97f16e6aa2490a33ffcc00929fafb29c0a0a4d7e072ee85",
+          "source_bounds": [
+            1536,
+            155,
+            2106,
+            558
+          ]
+        },
+        {
+          "file": "idle_04.png",
+          "duration_ms": 70,
+          "source_cell": 3,
+          "source_bounds": [
+            1098,
+            45,
+            1434,
+            267
+          ]
+        }
+      ]
     }
   }
 }

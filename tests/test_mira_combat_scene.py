@@ -130,7 +130,7 @@ class MiraCombatSceneTests(unittest.TestCase):
         self.scene.update(.001)
         shot = self.scene._mira_shot()
         self.assertEqual(shot['projectile'], shot['origin'])
-        self.assertEqual(shot['target'], tuple(self.scene._hit_point('enemy')))
+        self.assertEqual(shot['target'], tuple(self.scene._bolt_hit_point('enemy')))
         self.scene.update(.119)
         self.assertIsNotNone(self.scene._mira_shot()['projectile'])
         self.assertEqual(self.model.enemy.hp, hp)
@@ -142,6 +142,82 @@ class MiraCombatSceneTests(unittest.TestCase):
         self.scene.update(.2)
         self.assertEqual(self.model.enemy.hp, damaged_hp)
         self.assertEqual(self.scene._positions()['mira'], home)
+
+    def test_event_owned_bolt_contact_is_same_shoulder_and_recoil_does_not_slide_feet(self):
+        action = self.choose('attack')
+        home = self.scene._home_positions()['enemy'].copy()
+        target = tuple(self.scene._mira_shot()['target'])
+        with patch.object(self.scene.action_audio, 'play') as cues:
+            self.scene.update(.45)
+            record = self.scene._reactions['enemy']
+            self.assertAlmostEqual(record['age'], .05)
+            self.assertEqual(record['point'], target)
+            self.assertEqual(self.scene._pose('enemy')[0], 'bolt_hurt')
+            self.assertEqual(self.scene._ground_positions()['enemy'], home)
+            self.assertEqual(self.scene._camera(), (1., (0., 0.)))
+            self.scene.draw(self.canvas, self.game.ui_surface)
+            self.scene.draw(self.canvas, self.game.ui_surface)
+            self.scene.update(.1)
+        self.assertEqual([call.args for call in cues.call_args_list], [('mira_clack',), ('bolt_impact',)])
+        self.game.audio.reduced_motion = True
+        self.assertEqual(self.scene._ground_positions()['enemy'], home)
+        self.assertEqual(self.scene._reactions['enemy']['point'], target)
+        self.scene.update(.2)
+        self.assertEqual(self.scene._pose('enemy')[0], 'idle')
+
+    def test_guarded_lethal_and_other_action_reactions_keep_existing_pose_paths(self):
+        for action, guarded, lethal in (('bolt_shot', True, False),
+                                        ('bolt_shot', False, True), ('attack', False, False)):
+            with self.subTest(action=action, guarded=guarded, lethal=lethal):
+                self.scene._reactions['enemy'] = dict(age=.05, action=action,
+                                                      guarded=guarded, lethal=lethal)
+                self.assertEqual(self.scene._pose('enemy')[0], 'hurt')
+        self.scene._reactions['enemy'] = dict(age=.19, action='bolt_shot', guarded=False, lethal=True)
+        self.model.enemy.hp = 0
+        self.assertEqual(self.scene._pose('enemy')[0], 'defeat')
+
+    def test_guarded_bolt_keeps_guard_cue_and_generic_hurt(self):
+        self.model.enemy.guarded = True
+        self.choose('attack')
+        with patch.object(self.scene.action_audio, 'play') as cues:
+            self.scene.update(.4)
+        record = self.scene._reactions['enemy']
+        self.assertTrue(record['guarded'])
+        self.assertEqual(self.scene._pose('enemy')[0], 'hurt')
+        self.assertEqual([call.args for call in cues.call_args_list], [('mira_clack',), ('guard_hit',)])
+
+    def test_lethal_bolt_keeps_ordinary_hurt_then_defeat(self):
+        self.model.enemy.hp = 1
+        self.choose('attack')
+        self.scene.update(.4)
+        self.assertTrue(self.scene._reactions['enemy']['lethal'])
+        self.assertEqual(self.scene._pose('enemy')[0], 'hurt')
+        self.scene.update(.18)
+        self.assertEqual(self.scene._pose('enemy')[0], 'defeat')
+
+    def test_non_tusker_shots_use_registered_body_geometry_in_compact_layouts(self):
+        for species, level in (('cave_bat', 2), ('lithrusk', 2), ('veylume', 3),
+                               ('vespermaw', 7), ('embravyr', 5), ('nivareth', 5)):
+            model = BattleModel.from_bestiary(self.game.attributes, species, level, guest_id='mira')
+            scene = BattleScene(self.game, model)
+            for text_scale in (1., 1.5):
+                with self.subTest(species=species, text_scale=text_scale):
+                    self.game.audio.set_text_scale(text_scale)
+                    scene.draw(self.canvas, self.game.ui_surface)
+                    point = scene._bolt_hit_point('enemy')
+                    self.assertEqual(point, scene._hit_point('enemy'))
+                    self.assertTrue(scene.enemy_rects['enemy'].collidepoint(point))
+                    self.assertFalse(scene._bolt_recoil('enemy', dict(
+                        action='bolt_shot', guarded=False, lethal=False)))
+                    self.assertEqual(scene._bolt_recoil_pose('enemy', 300.), 'bolt_hurt')
+
+    def test_tusker_idle_phase_selects_matching_raised_recoil_without_new_clock(self):
+        scene = BattleScene(self.game, self.model)
+        for clock, expected in ((0., 'bolt_hurt'), (239.9, 'bolt_hurt'),
+                                (240., 'bolt_hurt_raised'), (479.9, 'bolt_hurt_raised'),
+                                (480., 'bolt_hurt_low3'), (720., 'bolt_hurt_low4'),
+                                (1200., 'bolt_hurt_raised')):
+            self.assertEqual(scene._bolt_recoil_pose('enemy', clock), expected)
 
     def test_guard_entry_and_held_guard_have_distinct_states_from_guarded_impact(self):
         action = self.choose('guard')
@@ -171,9 +247,10 @@ class MiraCombatSceneTests(unittest.TestCase):
         self.scene.focused = True
         self.game.audio.reduced_motion = True
         self.assertEqual(self.scene._mira_shot(), before)
-        with patch('battle_scene.pygame.draw.line', wraps=pygame.draw.line) as lines:
+        with patch.object(self.scene.bolt_fx, 'draw_flight', wraps=self.scene.bolt_fx.draw_flight) as flight:
             self.scene._draw_mira_effects(self.canvas)
-        self.assertEqual(lines.call_count, 2)
+        self.assertTrue(flight.call_args.kwargs['reduced_motion'])
+        self.assertIsNotNone(flight.call_args.args[1]['projectile'])
 
     def test_release_cue_is_once_after_threshold_and_drawing_does_not_restart_it(self):
         self.choose('attack')

@@ -1,5 +1,9 @@
 """Short action cues honor effect volume and stop cleanly on battle pause."""
 import os
+from pathlib import Path
+import runpy
+import tempfile
+import wave
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -29,6 +33,20 @@ class BattleActionAudioTests(unittest.TestCase):
         self.assertIs(player._sounds['step'],recorded)
         player.stop()
         self.assertFalse(player._channels)
+
+    def test_dry_bolt_contact_is_reproducible_short_and_unclipped(self):
+        root = Path(__file__).resolve().parents[1]/'assets/audio/sfx/mira_bolt_shot'
+        build = runpy.run_path(str(root/'build.py'))['build']
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'bolt.wav';build(path)
+            self.assertEqual(path.read_bytes(), (root/'bolt_impact.wav').read_bytes())
+            with wave.open(str(path)) as sound:
+                self.assertEqual((sound.getnchannels(), sound.getsampwidth()), (1, 2))
+                self.assertAlmostEqual(sound.getnframes()/sound.getframerate(), .096, places=4)
+                from array import array
+                samples = array('h');samples.frombytes(sound.readframes(sound.getnframes()))
+                self.assertLess(max(map(abs, samples)), 32767)
+                self.assertGreater(max(map(abs, samples)), 10000)
 
     def test_live_effect_volume_applies_without_reloading_recording(self):
         settings=SimpleNamespace(effects_volume=1)

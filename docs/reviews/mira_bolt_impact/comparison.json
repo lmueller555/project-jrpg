@@ -1,0 +1,60 @@
+{
+  "base": "a997adbdfb9605c417012a3be35044dc29482e2d",
+  "code_candidate": "19ed3f25fe06d1e09cf55ad55ec4d9ab59813bde",
+  "checks": [
+    {
+      "mode": "normal",
+      "same_authoritative_clocks_hp_damage_and_mira_floor": true,
+      "same_completed_unseeded_lesson": true,
+      "planted_b_floor_during_recoil": [
+        119.0,
+        196.0
+      ],
+      "a_contact": [
+        119.0,
+        148.0
+      ],
+      "b_contact": [
+        141.0,
+        138.0
+      ],
+      "release": {
+        "cue": "mira_clack",
+        "elapsed": 0.28,
+        "action": "bolt_shot"
+      },
+      "impact": {
+        "cue": "bolt_impact",
+        "elapsed": 0.4,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "mode": "reduced",
+      "same_authoritative_clocks_hp_damage_and_mira_floor": true,
+      "same_completed_unseeded_lesson": true,
+      "planted_b_floor_during_recoil": [
+        119.0,
+        196.0
+      ],
+      "a_contact": [
+        119.0,
+        148.0
+      ],
+      "b_contact": [
+        141.0,
+        138.0
+      ],
+      "release": {
+        "cue": "mira_clack",
+        "elapsed": 0.28,
+        "action": "bolt_shot"
+      },
+      "impact": {
+        "cue": "bolt_impact",
+        "elapsed": 0.4,
+        "action": "bolt_shot"
+      }
+    }
+  ]
+}
