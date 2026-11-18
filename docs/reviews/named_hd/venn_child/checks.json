@@ -1,0 +1,43 @@
+{
+  "status": "technical_pass",
+  "idles": {
+    "front": {
+      "bounds": [
+        11,
+        18,
+        38,
+        70
+      ],
+      "occupied_height_world": 26.0
+    },
+    "back": {
+      "bounds": [
+        11,
+        18,
+        38,
+        70
+      ],
+      "occupied_height_world": 26.0
+    },
+    "right": {
+      "bounds": [
+        15,
+        18,
+        35,
+        70
+      ],
+      "occupied_height_world": 26.0
+    },
+    "left": {
+      "bounds": [
+        13,
+        18,
+        33,
+        70
+      ],
+      "occupied_height_world": 26.0
+    }
+  },
+  "portrait_sha256": "1a46f3b97ba231c74f9dddcdcffc6d46fbed17b03da28035811e97a3d3021311",
+  "portrait_exact_copy": true
+}

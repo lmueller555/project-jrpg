@@ -1,0 +1,29 @@
+{
+  "character": "venn_child",
+  "workflow": "native complete polygon drawings, explicit compatible same-phase contour guides; no legacy raster enlargement",
+  "build_commands": [
+    "python assets/source/characters/named_hd/venn_child/walk_author.py",
+    "python assets/source/characters/named_hd/venn_child/export.py"
+  ],
+  "canonical_source": "assets/story/venn/child/idle_{direction}.png",
+  "canonical_portrait": "assets/portraits/eldenmere/venn_child_neutral.png",
+  "protected_behavior": "standing residents, child bedrest remains separate linked activity",
+  "native_size": [
+    48,
+    72
+  ],
+  "world_size": [
+    24,
+    36
+  ],
+  "draw_anchor_world": [
+    12,
+    30
+  ],
+  "ground_anchor_world": [
+    12,
+    34
+  ],
+  "artwork_status": "candidate",
+  "runtime_activation": "separate supplied patches"
+}

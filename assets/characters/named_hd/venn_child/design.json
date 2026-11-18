@@ -1,0 +1,28 @@
+{
+  "id": "venn_child",
+  "display_name": "Venn child",
+  "stationary": true,
+  "density": 2,
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": {
+    "front": "idle_front.png",
+    "back": "idle_back.png",
+    "left": "idle_left.png",
+    "right": "idle_right.png"
+  },
+  "portrait": "portrait.png",
+  "status": "candidate",
+  "design_notes": "Native complete named directional idles preserving original occupied height and palette; no unused gait invented. Original approved portrait retained byte-identically. Four complete native walk banks supplied for standard replacement compatibility; live actor remains stationary."
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "case": "activity_only_no_base",
+    "native_active": false,
+    "zero_blocker": true
+  },
+  {
+    "case": "activity_plus_replacement",
+    "native_active": true,
+    "zero_blocker": true
+  }
+]
