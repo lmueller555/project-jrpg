@@ -3,7 +3,7 @@
   "movement": "RegentQuest._move at74worldpx/s for right travel; pinned in-place inspection separately.",
   "scope": "Review actor only; live Iselin art bindings/walks/quest state unchanged.",
   "persistence": "Disposable save/settings directory; no player saves published.",
-  "base_commit": "d82bcc8f6a355d0cfdf4407afe26f98365c0bdcd",
+  "base_commit": "41e637b251cd9fdf2d5b0273a9bb7bb5d0c14c97",
   "walking_speed_world_px_s": 74,
   "simulation_step_ms": 35,
   "fixed_camera": [
@@ -2524,8 +2524,8 @@
     }
   ],
   "source_sha256": {
-    "assets/characters/iselin/native_walk_right/animation.json": "95e959b55f1729a1a380259fe29951c79684d4527b018a65a287e82b76453dfa",
-    "assets/characters/iselin/native_walk_right/review_actor.json": "438f76d6f28f83e3ceea2bad015b315a7601e270fab39b07c63e7d9c11f1f654",
+    "assets/characters/iselin/native_walk_right/animation.json": "9cbe9aa92b1e2bbdc3680241dfc866aa7c4211c10edce93b258565a1c27791e2",
+    "assets/characters/iselin/native_walk_right/review_actor.json": "990715bb4a02ffb32db85b481e1ddda1a5f6ca7c8fc3efcb4f081826d489e8d3",
     "assets/characters/iselin/native_walk_right/frame_01.png": "e989ac18c53057dae5d14d29c04d00fd2a881ba47d8a42c431babe357f8d97df",
     "assets/characters/iselin/native_walk_right/frame_02.png": "1f11d24152152b7c7947f3685dc560f8eef8e6098a01aed496a5d938a8c3bb8f",
     "assets/characters/iselin/native_walk_right/frame_03.png": "b53f7ef1f3b3f209702998f3ba426d85ac238453ca642779da291d3318e12463",
@@ -2542,8 +2542,9 @@
     "assets/characters/iselin/native_walk_right/frame_14.png": "be70ce6e2b6cfb398f491885e1ae2ab6316f87f18a86f225711b74c30c04cc7a",
     "assets/characters/iselin/native_walk_right/frame_15.png": "36e96e19459f725fa3465978eec275c8fa3dae03bc32cad048b7bee648d5b1ac",
     "assets/characters/iselin/native_walk_right/frame_16.png": "75e0d4168042c646430d31961eab73d22988acbab021d038f5fbab39931884fb",
-    "assets/characters/iselin/native_walk_right/review_spritesheet.png": "7d6ffb6e9f570f2a4daeca4d7ca45e317b6cee5bd5eec0e68cd61870a505173c",
+    "assets/characters/iselin/native_walk_right/review_spritesheet.png": "8e582d8e79798909a6513fc67bc6f0cf1d2432e0437a57a88459220bf7d42ec7",
     "assets/characters/iselin/native_idles/idle_front.png": "a0b58e06377223b03652e26d918ce849008c11ca6cab048e49ebea1339d0fa31",
+    "assets/characters/iselin/native_idles/idle_left.png": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589",
     "assets/characters/iselin/native_idles/idle_right.png": "a372ac232c61cc36232477200e39e2e5cc0d39a5c7c045247dd08fa83107bd4b",
     "assets/characters/iselin/native_idles/idle_back.png": "9f6d6359e5c90bdf5dac03a99e348ac4bed4179227c1bc5115f9e279f6bc100d",
     "tools/capture_iselin_native_front_walk.py": "95c1610226cc8d23a8768fbcf08fa34d9d59165417b2cba714553015784c1519"

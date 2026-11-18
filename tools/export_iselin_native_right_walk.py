@@ -74,7 +74,7 @@ def products():
     sheet = Image.new('RGBA', (24 * 16, 36))
     actor_sheet = Image.new('RGBA', (24 * 20, 36))
     idles = {}
-    for index, direction in enumerate(('front', 'right', 'right', 'back')):
+    for index, direction in enumerate(('front', 'left', 'right', 'back')):
         image = Image.open(ROOT / f'assets/characters/iselin/native_idles/idle_{direction}.png').convert('RGBA')
         actor_sheet.alpha_composite(image, (index * 24, 0))
         idles[direction] = [index * 24, 0, 24, 36]
@@ -85,7 +85,7 @@ def products():
     outputs[OUTPUT / 'review_spritesheet.png'] = png(actor_sheet)
     outputs[OUTPUT / 'animation.json'] = json_bytes({
         'character': 'iselin', 'animation': 'walk.right',
-        'status': 'awaiting user review; campaign not activated',
+        'status': 'user-approved right walk; campaign not activated',
         'frame_size': [24, 36], 'artwork_pixels_per_world_pixel': 1,
         'draw_anchor': [12, 30], 'foot_anchor': [12, 34],
         'cycle_ms': 560, 'loop': True,
@@ -98,7 +98,7 @@ def products():
         'idles': idles,
         'walks': {'right': [{'rect': [(index + 4) * 24, 0, 24, 36], 'duration_ms': 35}
                            for index in range(16)]},
-        'status': 'Review-only native right walk; campaign bindings unchanged.',
+        'status': 'User-approved right walk; review-only actor; campaign bindings unchanged.',
     })
     board = Image.new('RGB', (768, 728), '#e8edf2')
     draw = ImageDraw.Draw(board)
@@ -127,7 +127,7 @@ def products():
                           for p in sorted(SOURCE.glob('*.png'))},
         'records': records,
         'exports': {str(p.relative_to(ROOT)): sha256(data).hexdigest() for p, data in outputs.items()},
-        'status': 'awaiting user review',
+        'status': 'user-approved right walk; staged pending gameplay integration',
     })
     return outputs
 

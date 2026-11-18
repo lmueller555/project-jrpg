@@ -55,7 +55,7 @@ def capture(output=DEFAULT_OUT):
         raise SystemExit('review_actor.json must be the ordinary sheet-based actor animation manifest')
     required.append(ROOT / manifest['sheet'])
     required.extend(ROOT / f'assets/characters/iselin/native_idles/idle_{direction}.png'
-                    for direction in ('front', 'right', 'right', 'back'))
+                    for direction in ('front', 'left', 'right', 'back'))
     required.append(ROOT / 'tools/capture_iselin_native_front_walk.py')
     output.mkdir(parents=True, exist_ok=True)
     travel_frames = []

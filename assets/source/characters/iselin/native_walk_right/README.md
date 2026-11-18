@@ -1,6 +1,6 @@
 # Native Iselin right-walk source
 
-Status: awaiting user review. The right walk is staged separately from the live
+Status: right walk approved by the user. The right walk is staged separately from the live
 campaign bank. Existing approved native idles, front and left walks are intact.
 
 `keys.png` contains four complete right-facing contact/passing studies created
