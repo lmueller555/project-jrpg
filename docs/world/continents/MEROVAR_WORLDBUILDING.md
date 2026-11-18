@@ -68,6 +68,32 @@ A voice test, not new script: “I kept counting the people waiting for the ston
 I should have counted the people I was asking to bear its cost.” Preserve the
 opening’s established limits on what the party knows about her.
 
+## Upper Leth approach: the unnamed town south of Eldenmere
+
+One proposed identity for the next town south is a market that suits
+small consignments. A household can sell a few baskets, arrange for a
+carrier to take its wool with someone else’s load, and buy a tool or
+have a cart repaired without making a longer trip. The place people
+point to is a loading yard with a covered waiting edge. There are
+baskets under the benches, harness drying above them, and someone
+mindful of the next household's goods while they do their shopping.
+
+The [Vale guide](../regions/ELDEN_VALE.md#neighbours-and-travel) puts the
+destination on the way toward the upper Leth market towns. The
+[overworld guide](../../OVERWORLD.md) keeps the far-bank road of the
+damaged western crossing distinct from the southern checkpoint.
+The market does not establish a new bridge, a ford, a navigable
+waterway, a playable layout, or the identity of a larger Upper Leth town.
+
+**Name tests, not assignments:** **Tarrow** is an inherited-sounding
+settlement name without a claimed derivation; **Loadstead** is a more
+literal working name; **the Yard** is what locals might call the loading
+place, not necessarily the town. “We’ll take it to Tarrow” sounds distinct
+from a line naming Eldenmere. I favour *Tarrow* as a test and *the Yard*
+as a local nickname if the town’s market role is accepted. The
+[reviewed naming transcript](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=455s)
+informed testing how a name wears in use. Canon remains unnamed.
+
 ## Upper Leth: the stone-use bench
 
 One upper Leth market town brings a receiving mason, a carrier and a
@@ -165,6 +191,28 @@ teacher decides what to change. The party need not travel to the Lower
 Leth, the incident does not explain any current anomaly, and neither the
 performance nor the meeting is a committed quest.
 
+## Lower Leth: the crossed-out column
+
+**Proposed history:** In one [Lower Leth](MEROVAR.md#lower-leth) town,
+families persuaded a school to stop requiring a settled household to
+vouch for each pupil. Children of tenants or travelling workers could
+enrol directly. The old admission ledger still has a ruled-out
+“household sponsor” column and later entries without sponsors. This
+changed one school’s practice, not regional law.
+
+An older resident remembers carrying their slate through the door
+instead of waiting for someone to speak for them. Their grandchild
+remembers a cousin who got a place but missed lessons for work. “They
+stopped asking whose child you were. They never asked who could spare
+you.” Game I could encounter the ledger or either account without a
+flashback or a new visit. Edran need not have attended the school or
+taken part in the change. Neither account explains a current anomaly.
+
+The [actual Sanderson transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed using a concrete object and individual viewpoints. It supplies
+no facts about the school. Keep testimony and established history
+separate under the [revelation plan](../../narrative/saga/REVELATION_PLAN.md).
+
 ## Lower Leth: Edran’s borrowed lesson book
 
 A clinic colleague of [Edran](../../narrative/game_01/COMPANIONS.md#edran-hale)
@@ -254,6 +302,23 @@ asks the younger escort to check it. When corrected, he moves the mark
 without making a speech. He still straightens when the carrier thanks
 him. This is a voice test, not a fixed hometown custom or mission.
 
+## Redstone March: the second household
+
+Two households in different [Redstone](MEROVAR.md#redstone-march)
+settlements have taken turns hosting each other’s young people for two
+generations. A caravan couple’s daughter stays with a farming family
+while learning wagon repair; the hosts’ son later travels with the
+caravan family. Nobody takes over parental authority or promises a
+marriage. Years later the daughter still sends the farming grandmother
+descriptions of weddings she attends.
+
+The son returns with a partner who dislikes being introduced as a
+“borrowed child.” His mother means affection. His partner hears a
+reminder they have never been family. The grandmother pulls up a
+chair and asks how they would like to be introduced. The connection
+grows through invitations and time spent together, not shared descent
+or an obligation other households must follow.
+
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
 A watcher sees an unfamiliar vessel approaching yesterday’s landing channel.
@@ -306,6 +371,23 @@ but misses the wordplay. When she explains one joke too many, he says,
 “If you tell me when to laugh, I’ll charge admission.” She hands him
 the coat. He makes it turn down the lover. This family can carry a joke
 between languages without agreeing on which version counts as the original.
+
+## Marris Coast: one place, several names
+
+In one [Marris](MEROVAR.md#marris-coast) port, a crew shortens a place-name
+to shout it across a quay. A household keeps the version its relatives
+use overseas. A ledger uses a fixed written entry. Before inventing a
+variant, decide who says it to whom and whether the destination is
+unambiguous. None of the three forms has to be oldest or most correct.
+
+A returning apprentice gives the household form to a porter. He repeats
+the working form so she knows what to say at the quay. A clerk can enter
+both to make a delivery findable without requiring the family to change
+how they speak at home. Do not infer an official language or a migration
+history from the difference alone. Apply the previously reviewed
+[place-naming transcript](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=687s)
+on local and outsider usage, especially the later discussion of names
+travelling with people.
 
 ## Northern kingdom: who gets the next loaded cart?
 
@@ -414,16 +496,14 @@ a particular species belongs in this game.
 
 ## Next development pass
 
-1. Develop the unnamed settlement south of Eldenmere in two steps.
-   First define its ordinary role and the feature locals need to
-   distinguish, using the established road and watershed constraints.
-   Then test a few name candidates against that identity and the Vale
-   naming guide. Keep the existing destination unnamed in canon and
-   do not alter the map.
-2. Give one pre-opening Merovar event a material trace and two different
-   accounts. Look beyond floods, ruptures and supply disputes: a school,
-   workshop, or shared gathering can change who belongs somewhere.
-   Keep author truth, in-world accounts and player disclosure separate.
+1. Test one proposed watershed-overlay convention and one lived custom
+   across Elden Vale’s communities. Keep physical and legal limits
+   distinct. Do not add crossing points or turn personal practice into
+   a Vale-wide religious obligation.
+2. Develop a small test for what an optional nonhuman people could add
+   to more than one Merovar community. Keep the result separate from
+   approved ancestry and hidden history. Look next for remaining gaps
+   in regional identity and character ties rather than adding duplicate customs.
 
 ## Map implications for a later review
 
