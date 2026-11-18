@@ -34,6 +34,7 @@ class StoryActor:
         self.detail_walks={}
         self.detail_idles={direction:(world.image(data['image']),tuple(data['draw_anchor']))
                            for direction,data in animation.get('high_resolution_idles',{}).items()}
+        self.named_art=None
         self.pose=None;self.pose_ms=0.;self._pose_clock_origin=None
         if 'sheet' in animation:
             sheet=world.image(animation['sheet'])
@@ -54,6 +55,24 @@ class StoryActor:
                 else:
                     self.walks[direction]=[load_art(world,p,animation) for p in paths]
                     self.walk_durations[direction]=tuple(140 for _ in paths)
+
+        # Explicit per-actor activation requires both base and activity banks.
+        from regent_native_activity import enabled as native_enabled
+        if native_enabled(record.get('id')):
+            from npc_roster_art import RosterArt
+            self.named_art=RosterArt(world, record['id'], named=True)
+            if self.named_art.draw_anchor != self.draw_anchor:
+                raise ValueError('Named visitor changed its logical draw anchor')
+            # Direct scene consumers (short seat approach/attention) also see
+            # registered native frames, without taking ownership of scene poses.
+            self.idles=dict(self.named_art.idles)
+            self.walks={d:[image for image,_ in frames]
+                        for d,frames in self.named_art.walks.items()}
+            self.walk_durations={d:tuple(ms for _,ms in frames)
+                                 for d,frames in self.named_art.walks.items()}
+
+        from regent_native_activity import animations as native_activities
+        self.pose_animations.update(native_activities(world,record.get('id')))
 
     def _load_manifest_walk(self,direction,path,world):
         """Keep authored 2x frames and a world-size fallback on one clock."""
@@ -96,6 +115,8 @@ class StoryActor:
     def sprite(self,elapsed_ms):
         direction=self.conversation_facing if self.conversation_ready else self.facing
         if self.moving and not self.conversation_ready:
+            if self.named_art is not None:
+                return self.named_art.sprite(direction,True,self.walk_ms)
             frames=self.walks[direction]
             return animation_frame(frames,self.walk_durations[direction],self.walk_ms)
         if self.pose in self.pose_animations and not self.conversation_ready:
@@ -103,6 +124,7 @@ class StoryActor:
             if self._pose_clock_origin is None:self._pose_clock_origin=elapsed_ms-self.pose_ms
             progress=max(self.pose_ms,elapsed_ms-self._pose_clock_origin)
             return animation_frame(pose['frames'],pose['durations'],progress,loop=pose['loop'])
+        if self.named_art is not None:return self.named_art.sprite(direction)
         return self.idles[direction]
 
     def detailed_idle(self, elapsed_ms):

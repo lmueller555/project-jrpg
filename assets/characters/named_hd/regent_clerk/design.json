@@ -1,0 +1,67 @@
+{
+  "id": "regent_clerk",
+  "display_name": "Page",
+  "density": 2,
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    24,
+    36
+  ],
+  "frame_size": [
+    48,
+    72
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": {
+    "front": "idle_front.png",
+    "right": "idle_right.png",
+    "back": "idle_back.png",
+    "left": "idle_left.png"
+  },
+  "portrait": "portrait.png",
+  "idles": {
+    "front": {
+      "file": "assets/characters/named_hd/regent_clerk/idle_front.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "right": {
+      "file": "assets/characters/named_hd/regent_clerk/idle_right.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "back": {
+      "file": "assets/characters/named_hd/regent_clerk/idle_back.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "left": {
+      "file": "assets/characters/named_hd/regent_clerk/idle_left.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    }
+  },
+  "design_notes": "Brown curled hair, moss coat, ivory collar, brass binding, belt and brown boots. Original70-art-pixel height. No invented props.",
+  "version": 1,
+  "status": "candidate_pending_independent_review",
+  "runtime_integration": false
+}
