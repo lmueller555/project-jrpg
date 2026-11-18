@@ -1,0 +1,254 @@
+{
+  "target": "adult_woman_04 left",
+  "reference": "adult_man_01 left",
+  "exact_compatible_region": [
+    0,
+    36,
+    48,
+    72
+  ],
+  "region_alpha_equal": true,
+  "material_region_bijection": [
+    {
+      "reference": [
+        26,
+        14,
+        22,
+        255
+      ],
+      "target": [
+        26,
+        14,
+        22,
+        255
+      ]
+    },
+    {
+      "reference": [
+        110,
+        125,
+        67,
+        255
+      ],
+      "target": [
+        183,
+        138,
+        83,
+        255
+      ]
+    },
+    {
+      "reference": [
+        69,
+        85,
+        49,
+        255
+      ],
+      "target": [
+        123,
+        87,
+        52,
+        255
+      ]
+    },
+    {
+      "reference": [
+        167,
+        183,
+        117,
+        255
+      ],
+      "target": [
+        219,
+        197,
+        145,
+        255
+      ]
+    },
+    {
+      "reference": [
+        232,
+        196,
+        157,
+        255
+      ],
+      "target": [
+        161,
+        110,
+        80,
+        255
+      ]
+    },
+    {
+      "reference": [
+        177,
+        142,
+        86,
+        255
+      ],
+      "target": [
+        177,
+        142,
+        86,
+        255
+      ]
+    },
+    {
+      "reference": [
+        104,
+        68,
+        46,
+        255
+      ],
+      "target": [
+        104,
+        68,
+        46,
+        255
+      ]
+    },
+    {
+      "reference": [
+        255,
+        224,
+        181,
+        255
+      ],
+      "target": [
+        201,
+        150,
+        112,
+        255
+      ]
+    },
+    {
+      "reference": [
+        237,
+        175,
+        120,
+        255
+      ],
+      "target": [
+        102,
+        69,
+        54,
+        255
+      ]
+    },
+    {
+      "reference": [
+        140,
+        112,
+        79,
+        255
+      ],
+      "target": [
+        52,
+        70,
+        74,
+        255
+      ]
+    },
+    {
+      "reference": [
+        185,
+        154,
+        109,
+        255
+      ],
+      "target": [
+        82,
+        106,
+        112,
+        255
+      ]
+    },
+    {
+      "reference": [
+        208,
+        178,
+        129,
+        255
+      ],
+      "target": [
+        128,
+        149,
+        154,
+        255
+      ]
+    },
+    {
+      "reference": [
+        113,
+        75,
+        52,
+        255
+      ],
+      "target": [
+        113,
+        75,
+        52,
+        255
+      ]
+    },
+    {
+      "reference": [
+        135,
+        100,
+        73,
+        255
+      ],
+      "target": [
+        135,
+        100,
+        73,
+        255
+      ]
+    },
+    {
+      "reference": [
+        179,
+        138,
+        88,
+        255
+      ],
+      "target": [
+        179,
+        138,
+        88,
+        255
+      ]
+    },
+    {
+      "reference": [
+        178,
+        138,
+        93,
+        255
+      ],
+      "target": [
+        178,
+        138,
+        93,
+        255
+      ]
+    },
+    {
+      "reference": [
+        152,
+        112,
+        76,
+        255
+      ],
+      "target": [
+        152,
+        112,
+        76,
+        255
+      ]
+    }
+  ],
+  "upper_difference": "own cropped auburn hair, brown skin, ochre work shirt and slate-teal trousers; no assertion of identical head/upper mask",
+  "canonical_target_sha256": "9829a5f7dfcb0870f93f35705453c49c838eeeb40342c1105b239d039e48f2c7",
+  "reference_pose_sha256": "c080667bfb7bd3d4dc63f409daf58fc5b53dc5e46656ab186072c03e8f4bd0fa"
+}
