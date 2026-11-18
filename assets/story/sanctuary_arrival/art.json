@@ -7,86 +7,150 @@
         30
       ],
       "frame_size": [
-        24,
-        36
+        48,
+        72
       ],
       "idles": {
-        "front": "assets/story/sanctuary_arrival/art/caretaker/idle_front.png",
-        "back": "assets/story/sanctuary_arrival/art/caretaker/idle_back.png",
-        "left": "assets/story/sanctuary_arrival/art/caretaker/idle_left.png",
-        "right": "assets/story/sanctuary_arrival/art/caretaker/idle_right.png"
+        "front": "assets/characters/named_hd/sanctuary_caretaker/idle_front.png",
+        "back": "assets/characters/named_hd/sanctuary_caretaker/idle_back.png",
+        "left": "assets/characters/named_hd/sanctuary_caretaker/idle_left.png",
+        "right": "assets/characters/named_hd/sanctuary_caretaker/idle_right.png"
       },
       "walks": {
         "front": [
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_00.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_00.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_01.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_02.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_front/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_front/frame_07.png",
+            "duration_ms": 70
           }
         ],
         "back": [
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_00.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_00.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_01.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_02.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_back/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_back/frame_07.png",
+            "duration_ms": 70
           }
         ],
         "left": [
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_00.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_00.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_01.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_02.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_left/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_left/frame_07.png",
+            "duration_ms": 70
           }
         ],
         "right": [
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_00.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_00.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_01.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_01.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_02.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_02.png",
+            "duration_ms": 70
           },
           {
-            "file": "assets/story/sanctuary_arrival/art/caretaker/walk_right/frame_03.png",
-            "duration_ms": 140
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/named_hd/sanctuary_caretaker/walk_right/frame_07.png",
+            "duration_ms": 70
           }
         ]
       },
@@ -94,7 +158,7 @@
         "unhook": {
           "frames": [
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_00.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_00.png",
               "duration_ms": 100,
               "grip": [
                 20,
@@ -110,7 +174,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_01.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_01.png",
               "duration_ms": 100,
               "grip": [
                 17,
@@ -126,7 +190,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_02.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_02.png",
               "duration_ms": 100,
               "grip": [
                 12,
@@ -142,7 +206,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_03.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_03.png",
               "duration_ms": 100,
               "grip": [
                 9,
@@ -158,7 +222,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_04.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_04.png",
               "duration_ms": 100,
               "grip": [
                 8,
@@ -174,7 +238,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_05.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_05.png",
               "duration_ms": 100,
               "grip": [
                 9,
@@ -190,7 +254,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_06.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_06.png",
               "duration_ms": 100,
               "grip": [
                 9,
@@ -206,7 +270,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_07.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_07.png",
               "duration_ms": 100,
               "grip": [
                 10,
@@ -222,7 +286,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_08.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_08.png",
               "duration_ms": 100,
               "grip": [
                 12,
@@ -238,7 +302,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_09.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_09.png",
               "duration_ms": 100,
               "grip": [
                 15,
@@ -254,7 +318,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_10.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_10.png",
               "duration_ms": 100,
               "grip": [
                 18,
@@ -270,7 +334,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_11.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_11.png",
               "duration_ms": 100,
               "grip": [
                 20,
@@ -286,7 +350,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_12.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_12.png",
               "duration_ms": 100,
               "grip": [
                 20,
@@ -302,7 +366,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_13.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_13.png",
               "duration_ms": 100,
               "grip": [
                 20,
@@ -318,7 +382,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_14.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_14.png",
               "duration_ms": 100,
               "grip": [
                 20,
@@ -334,7 +398,7 @@
               ]
             },
             {
-              "file": "assets/story/sanctuary_arrival/art/caretaker/unhook/frame_15.png",
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_15.png",
               "duration_ms": 100,
               "grip": [
                 20,
@@ -355,12 +419,158 @@
             20,
             40
           ],
-          "facing": "left"
+          "facing": "left",
+          "artwork_pixels_per_world_pixel": 2
+        },
+        "receive": {
+          "frames": [
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_02.png",
+              "duration_ms": 200,
+              "grip": [
+                12,
+                26
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                15,
+                28
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_03.png",
+              "duration_ms": 200,
+              "grip": [
+                9,
+                23
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                27
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_04.png",
+              "duration_ms": 200,
+              "grip": [
+                8,
+                23
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                27
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_05.png",
+              "duration_ms": 200,
+              "grip": [
+                9,
+                26
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                13,
+                29
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_06.png",
+              "duration_ms": 200,
+              "grip": [
+                9,
+                29
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                14,
+                30
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_07.png",
+              "duration_ms": 200,
+              "grip": [
+                10,
+                31
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                15,
+                31
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_08.png",
+              "duration_ms": 200,
+              "grip": [
+                12,
+                32
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                16,
+                31
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_caretaker/unhook/frame_09.png",
+              "duration_ms": 200,
+              "grip": [
+                15,
+                32
+              ],
+              "shoulder": [
+                18,
+                27
+              ],
+              "elbow": [
+                19,
+                30
+              ]
+            }
+          ],
+          "loop": false,
+          "anchor": [
+            20,
+            40
+          ],
+          "facing": "left",
+          "artwork_pixels_per_world_pixel": 2
         }
       },
       "portrait": "arrival_caretaker",
-      "portrait_file": "assets/story/sanctuary_arrival/art/portraits/caretaker.png",
-      "stationary": false
+      "portrait_file": "assets/characters/named_hd/sanctuary_caretaker/portrait.png",
+      "stationary": false,
+      "travel_artwork_pixels_per_world_pixel": 2,
+      "migration_status": "integrated",
+      "activation_requires": [
+        "unhook",
+        "receive"
+      ]
     },
     "worker_a": {
       "anchor": [
