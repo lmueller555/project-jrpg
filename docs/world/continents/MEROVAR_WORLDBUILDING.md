@@ -30,6 +30,7 @@ specified.
 **Canon references and review questions**
 
 [Established material](#where-to-look-for-established-material) ·
+[Historical layers](#historical-layers-what-can-be-placed-in-order) ·
 [Peoples and species](#peoples-are-not-species-and-regions-are-not-personalities) ·
 [Next development pass](#next-development-pass) ·
 [Map implications](#map-implications-for-a-later-review)
@@ -50,6 +51,15 @@ owner rather than repeating the fact. Distinguish author knowledge from
 what a household believes and what Game I has actually shown. An
 unresolved subject is not permission to overwrite existing lore.
 
+
+## Historical layers: what can be placed in order
+
+| Layer | Established or proposed |
+| --- | --- |
+| Ancient foundation | Writer knowledge belongs to [Foundational Lore](../../FOUNDATIONAL_LORE.md) and the [revelation plan](../../narrative/saga/REVELATION_PLAN.md). Do not turn it into the presumed cause of Merovar’s public memories. |
+| Successor communities and later specialization | Successor cultures are established; Merovar’s settlement sequence is not. The Vale and Greyfold wool history is a **proposal** for later specialization, not a dated era or a confirmed route. |
+| Local civic memories | **Established:** the Sanctuary passage injuries and closure predate the opening crisis. **Separate proposals:** Lower Leth’s flood breach and school admission change, and Rookfen’s shared letters. Their order relative to one another or to the wool trade remains open. Testimony can show a person’s experience without settling every fact. |
+| Game I opening | Road damage from the recent regional surges predates the opening encounters. Those surges are distinct from the old Sanctuary accident. Follow the [opening reference](../../narrative/game_01/REGIONAL_SURGES.md) and approved story before making any connection. |
 
 ## Elden Vale: mending before lighting
 
@@ -266,6 +276,24 @@ remembers that the original roof copied an inn none of them had
 visited. They keep the roof beside the model and add the balcony.
 The founder stops coming. Their little chair stays. This is one
 voluntary circle, not a Greyfold-wide identity or a guild.
+
+## Greyfold Uplands: a shared wool press
+
+Two unnamed [Greyfold](MEROVAR.md#greyfold-uplands) settlements use one
+wool press. One keeps it under cover; the other helps maintain it
+instead of paying the full charge. Before shearing, each sends someone
+to agree when they can use it. The days go up on a chalkboard beside
+the press.
+
+The hosts want large paying loads first. Their neighbours want useful
+hours in return for the upkeep. They agree to reserve one morning for
+each settlement before taking outside bookings. A host with just two
+fleeces is relieved. A neighbour with a bigger load wishes they had
+held out. Their interests don’t run neatly along settlement lines.
+
+This is a proposed arrangement, not a state or a region-wide law. The
+[reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8) informed
+showing a political relationship through what people can actually do.
 
 ## Lower Leth: a fair weight after a flood
 
@@ -667,13 +695,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Separate Merovar’s historical material by what can actually be
-   ordered. Mark ancient author knowledge, broad settlement, later
-   proposals and the known opening sequence without inventing exact
-   dates or ordering unrelated local events.
-2. Explore one way two unnamed local communities do something together
-   without assuming they share a Crown official, law or permanent border.
-   Keep the proposal about the relationship, not a new state.
+1. Contrast two settlement patterns already plausible in Redstone.
+   Focus on what neighbours know about one another rather than
+   making the landscape determine people’s behaviour.
+2. Give Mira one encounter with a local practice she didn’t grow up
+   with. Keep her history and voice intact and don’t bind the party
+   to another destination.
 
 ## Map implications for a later review
 
