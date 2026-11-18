@@ -1,0 +1,1737 @@
+{
+  "id": "sanctuary.gardener",
+  "status": "integrated",
+  "character": "adult_woman_02",
+  "water_capacity": 6,
+  "body_frame_size": [
+    24,
+    36
+  ],
+  "action_canvas": [
+    48,
+    48
+  ],
+  "body_offset": [
+    12,
+    6
+  ],
+  "draw_anchor": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    24,
+    40
+  ],
+  "poses": {
+    "idle_empty.front": {
+      "body": "idle_empty.front.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after",
+      "sha256": "98aa7b9280f2930c26a278e968a97e6ff6266efb43e6ab95fba5e4a28be2a368"
+    },
+    "carry_empty.front_01": {
+      "body": "carry_empty.front_01.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after",
+      "sha256": "98aa7b9280f2930c26a278e968a97e6ff6266efb43e6ab95fba5e4a28be2a368"
+    },
+    "carry_empty.front_02": {
+      "body": "carry_empty.front_02.png",
+      "grip": [
+        4,
+        23
+      ],
+      "order": "after",
+      "sha256": "31da844c4520e03c050e2da90825eeecdaac8019f686710d05b6ced89097ef6d"
+    },
+    "carry_empty.front_03": {
+      "body": "carry_empty.front_03.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after",
+      "sha256": "bb1bbb56a9fe1a67e441af92e139218f8e635137c5fbe1725b5640b80ad0fd05"
+    },
+    "carry_empty.front_04": {
+      "body": "carry_empty.front_04.png",
+      "grip": [
+        4,
+        23
+      ],
+      "order": "after",
+      "sha256": "6b2248b41ff067e2f8397c5cb94957787f3b7ec7e49050d38236afd38da01446"
+    },
+    "idle_empty.left": {
+      "body": "idle_empty.left.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "before",
+      "sha256": "eefc84be4e9327366c81e6062cee074edeccf864f2d7c01dc0ab4912f1d69339"
+    },
+    "carry_empty.left_01": {
+      "body": "carry_empty.left_01.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "before",
+      "sha256": "eefc84be4e9327366c81e6062cee074edeccf864f2d7c01dc0ab4912f1d69339"
+    },
+    "carry_empty.left_02": {
+      "body": "carry_empty.left_02.png",
+      "grip": [
+        5,
+        23
+      ],
+      "order": "before",
+      "sha256": "d50215bb0b082cfa5404df9e59cd9bc167ca2bded84d7e39506c0afce28d92f0"
+    },
+    "carry_empty.left_03": {
+      "body": "carry_empty.left_03.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "before",
+      "sha256": "ed040d8e26b30dc17755c499e07455f35978b0fd4c9a1692aa1b82b3f901a5d4"
+    },
+    "carry_empty.left_04": {
+      "body": "carry_empty.left_04.png",
+      "grip": [
+        5,
+        23
+      ],
+      "order": "before",
+      "sha256": "fc0f36e894a6c653fc7f3106c75246cf15b164ce7da49bdd71a6ce67469b42de"
+    },
+    "idle_empty.right": {
+      "body": "idle_empty.right.png",
+      "grip": [
+        19,
+        24
+      ],
+      "order": "after",
+      "sha256": "4248b4a62cdc5fb47963ff1a20a5697af4da68bd134c03bf6eaf68b6034c8c5a"
+    },
+    "carry_empty.right_01": {
+      "body": "carry_empty.right_01.png",
+      "grip": [
+        19,
+        24
+      ],
+      "order": "after",
+      "sha256": "4248b4a62cdc5fb47963ff1a20a5697af4da68bd134c03bf6eaf68b6034c8c5a"
+    },
+    "carry_empty.right_02": {
+      "body": "carry_empty.right_02.png",
+      "grip": [
+        19,
+        23
+      ],
+      "order": "after",
+      "sha256": "6901139964235091c8a3979ad6edf77e93aca627e38b4f1fc0698d6a161989da"
+    },
+    "carry_empty.right_03": {
+      "body": "carry_empty.right_03.png",
+      "grip": [
+        19,
+        24
+      ],
+      "order": "after",
+      "sha256": "52fb533be54d52de7bf23d1b89c4a8ab9141dd7a8abf28b55b21d5dc3e9a4441"
+    },
+    "carry_empty.right_04": {
+      "body": "carry_empty.right_04.png",
+      "grip": [
+        19,
+        23
+      ],
+      "order": "after",
+      "sha256": "36d39e33971706e14cc1a55fc23d718187072fa18679786c296073a5f379d83c"
+    },
+    "idle_empty.back": {
+      "body": "idle_empty.back.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "after",
+      "sha256": "3f1b38d897995d551c019fe91b8b7e65b8c12fc72a06ed9c752744b727631782"
+    },
+    "carry_empty.back_01": {
+      "body": "carry_empty.back_01.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "after",
+      "sha256": "3f1b38d897995d551c019fe91b8b7e65b8c12fc72a06ed9c752744b727631782"
+    },
+    "carry_empty.back_02": {
+      "body": "carry_empty.back_02.png",
+      "grip": [
+        20,
+        23
+      ],
+      "order": "after",
+      "sha256": "9be28e233c64d94d6ddd9152441e67bd43ceb73e9ed198a42a7472dfc6339d5b"
+    },
+    "carry_empty.back_03": {
+      "body": "carry_empty.back_03.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "after",
+      "sha256": "d598cb14cd80ca4039456358f2d6e3fe663644fdae6bb3db99d0fd102d1f5689"
+    },
+    "carry_empty.back_04": {
+      "body": "carry_empty.back_04.png",
+      "grip": [
+        20,
+        23
+      ],
+      "order": "after",
+      "sha256": "c571b445c144705fbdc0edd5e14598a053dae2f4441b862001f581c06dcd867e"
+    },
+    "idle_full.front": {
+      "body": "idle_full.front.png",
+      "grip": [
+        12,
+        21
+      ],
+      "order": "after",
+      "sha256": "fa27d6a9b8390a02a3f61a1484afe92fbf71805d4975fcee00548197811af44f"
+    },
+    "carry_full.front_01": {
+      "body": "carry_full.front_01.png",
+      "grip": [
+        12,
+        21
+      ],
+      "order": "after",
+      "sha256": "fa27d6a9b8390a02a3f61a1484afe92fbf71805d4975fcee00548197811af44f"
+    },
+    "carry_full.front_02": {
+      "body": "carry_full.front_02.png",
+      "grip": [
+        12,
+        20
+      ],
+      "order": "after",
+      "sha256": "4e1a73453e32eea5753c17be8620dfa62fea42028ab038a8dcb23ea38e9ac34c"
+    },
+    "carry_full.front_03": {
+      "body": "carry_full.front_03.png",
+      "grip": [
+        12,
+        21
+      ],
+      "order": "after",
+      "sha256": "07501c2e233a3e080c0b334202bad2488769c4c4fbfb4a2695d34b39be3c04e9"
+    },
+    "carry_full.front_04": {
+      "body": "carry_full.front_04.png",
+      "grip": [
+        12,
+        20
+      ],
+      "order": "after",
+      "sha256": "ccf2f984adf3c0f8a539a123aa3ada5e0e0ae29638f818927808d0a1673f6179"
+    },
+    "idle_full.left": {
+      "body": "idle_full.left.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after",
+      "sha256": "33829bab9829d30b7ca67803c41f1a0a2bbc1789012a3a917fc37b17fa126108"
+    },
+    "carry_full.left_01": {
+      "body": "carry_full.left_01.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after",
+      "sha256": "33829bab9829d30b7ca67803c41f1a0a2bbc1789012a3a917fc37b17fa126108"
+    },
+    "carry_full.left_02": {
+      "body": "carry_full.left_02.png",
+      "grip": [
+        5,
+        18
+      ],
+      "order": "after",
+      "sha256": "eb66bc5b2af2456620bbf75004778ea7926e165a8b126802cf716b177e388183"
+    },
+    "carry_full.left_03": {
+      "body": "carry_full.left_03.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after",
+      "sha256": "fb511e24ec9562b3d363fe2a2ff81bb1ebaef90bf3d4e2ad73ce9da800bb0a45"
+    },
+    "carry_full.left_04": {
+      "body": "carry_full.left_04.png",
+      "grip": [
+        5,
+        18
+      ],
+      "order": "after",
+      "sha256": "d0b7683d6fdfb3593ed133ee2a75a17fc3855d85ad6fd3dc884ca786d17acb06"
+    },
+    "idle_full.right": {
+      "body": "idle_full.right.png",
+      "grip": [
+        19,
+        19
+      ],
+      "order": "after",
+      "sha256": "d18a2cdb3462bf1604f95e4351d4bb25e425da83fd04d8d07b37c46f732e304b"
+    },
+    "carry_full.right_01": {
+      "body": "carry_full.right_01.png",
+      "grip": [
+        19,
+        19
+      ],
+      "order": "after",
+      "sha256": "d18a2cdb3462bf1604f95e4351d4bb25e425da83fd04d8d07b37c46f732e304b"
+    },
+    "carry_full.right_02": {
+      "body": "carry_full.right_02.png",
+      "grip": [
+        19,
+        18
+      ],
+      "order": "after",
+      "sha256": "3f4bb7798634f303273b2f05c0ec881b6eedb025a9bb21545e6a40a4d642fe04"
+    },
+    "carry_full.right_03": {
+      "body": "carry_full.right_03.png",
+      "grip": [
+        19,
+        19
+      ],
+      "order": "after",
+      "sha256": "fd41fd2387d1fba77ec355b6048b8ad7f255060eac82a215b9b7fcbe592e9c62"
+    },
+    "carry_full.right_04": {
+      "body": "carry_full.right_04.png",
+      "grip": [
+        19,
+        18
+      ],
+      "order": "after",
+      "sha256": "02cbfe58f5ac6f61471d75a17a4d5ab9cd0fe406713cb2ae2444e0403f40fe65"
+    },
+    "idle_full.back": {
+      "body": "idle_full.back.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before",
+      "sha256": "0c608614f52a54a85b6bb901335482db54655e5d25639a5500a712bdd2bce989"
+    },
+    "carry_full.back_01": {
+      "body": "carry_full.back_01.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before",
+      "sha256": "0c608614f52a54a85b6bb901335482db54655e5d25639a5500a712bdd2bce989"
+    },
+    "carry_full.back_02": {
+      "body": "carry_full.back_02.png",
+      "grip": [
+        18,
+        19
+      ],
+      "order": "before",
+      "sha256": "f315b8475f2c6dfebd1181c78a72380bcbc443ad1198d30dd3a8d9ca1923562b"
+    },
+    "carry_full.back_03": {
+      "body": "carry_full.back_03.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before",
+      "sha256": "d6a896e514805252ac65df7e1285dddd27b441c5e8a28f214dbba202ee7f518a"
+    },
+    "carry_full.back_04": {
+      "body": "carry_full.back_04.png",
+      "grip": [
+        18,
+        19
+      ],
+      "order": "before",
+      "sha256": "200b4636caf29a59e1c458dc89606d76b1c5b4370dd3131f4171328f038e4b8d"
+    },
+    "well_crank_left_0": {
+      "body": "well_crank_left_0.png",
+      "grip": [
+        3,
+        14
+      ],
+      "order": "after",
+      "sha256": "d55e4992afc1d20757493dea7d919fe30117db9cc55083982ea310b8c682548e"
+    },
+    "well_crank_left_1": {
+      "body": "well_crank_left_1.png",
+      "grip": [
+        2,
+        16
+      ],
+      "order": "after",
+      "sha256": "933a55d3aef78414785272ac5c51fd47722a9751c2650c9e25bfbccb63a1c9de"
+    },
+    "well_crank_left_2": {
+      "body": "well_crank_left_2.png",
+      "grip": [
+        0,
+        17
+      ],
+      "order": "after",
+      "sha256": "fd218a6b1493a075b84de6503bed3d4fae0f5ef07846793508f1d7cc189ed354"
+    },
+    "well_crank_left_3": {
+      "body": "well_crank_left_3.png",
+      "grip": [
+        -2,
+        16
+      ],
+      "order": "after",
+      "sha256": "f173761ef7f15c0a07045cf02b23250d24316da5e560dc08e751715f8207c684"
+    },
+    "well_crank_left_4": {
+      "body": "well_crank_left_4.png",
+      "grip": [
+        -3,
+        14
+      ],
+      "order": "after",
+      "sha256": "9b292b697c170180b13074c2284684e794c140a5c833dc0b0f4f073480eb490c"
+    },
+    "well_crank_left_5": {
+      "body": "well_crank_left_5.png",
+      "grip": [
+        -2,
+        12
+      ],
+      "order": "after",
+      "sha256": "55192360f08e9c2879c4682a5fb8be6e7552a878c3e03057e533f5e88ccc3e82"
+    },
+    "well_crank_left_6": {
+      "body": "well_crank_left_6.png",
+      "grip": [
+        0,
+        11
+      ],
+      "order": "after",
+      "sha256": "0a7dc9699f9c97f795cbd3bef4d2dcd03a77dce0a149fc4bc72b05fe34252d2e"
+    },
+    "well_crank_left_7": {
+      "body": "well_crank_left_7.png",
+      "grip": [
+        2,
+        12
+      ],
+      "order": "after",
+      "sha256": "225d1938dda07a4ce49e9c578e122f7cb08ee3ed30e936d49f00ee826db0e9e0"
+    },
+    "well_heavy_left_0": {
+      "body": "well_heavy_left_0.png",
+      "grip": [
+        3,
+        14
+      ],
+      "order": "after",
+      "sha256": "ac5f89b9757d0da9b9701a9c13b9002c42c0f0afb2a7f4a7832be8873cf6ba18"
+    },
+    "well_heavy_left_1": {
+      "body": "well_heavy_left_1.png",
+      "grip": [
+        2,
+        16
+      ],
+      "order": "after",
+      "sha256": "4ab11ed6bf83653a080c8df6c59eecbb53b371a3c9938d31f4171af082c69561"
+    },
+    "well_heavy_left_2": {
+      "body": "well_heavy_left_2.png",
+      "grip": [
+        0,
+        17
+      ],
+      "order": "after",
+      "sha256": "33e229ad63e918d9144ceffafbdc3e3dc7bcad505d5a70cebb40e8c1a11f4268"
+    },
+    "well_heavy_left_3": {
+      "body": "well_heavy_left_3.png",
+      "grip": [
+        -2,
+        16
+      ],
+      "order": "after",
+      "sha256": "404fe1428df6e917f2e34d0fba268948c921223b4a2fc31e7967e3d54a3983a1"
+    },
+    "well_heavy_left_4": {
+      "body": "well_heavy_left_4.png",
+      "grip": [
+        -3,
+        14
+      ],
+      "order": "after",
+      "sha256": "6e93fd55ea7a6f9ae2e2a761a887a9ad81aa0957f3393cdf82ef27a2e303403e"
+    },
+    "well_heavy_left_5": {
+      "body": "well_heavy_left_5.png",
+      "grip": [
+        -2,
+        12
+      ],
+      "order": "after",
+      "sha256": "3afd06929a83cdd6acd2f5e4c6bb22cbb6127c453dea8738d385d573a2be9671"
+    },
+    "well_heavy_left_6": {
+      "body": "well_heavy_left_6.png",
+      "grip": [
+        0,
+        11
+      ],
+      "order": "after",
+      "sha256": "921d2d4cb9936e7e301f0a49abefa68e0e6109439d465d709e4692f303f76d69"
+    },
+    "well_heavy_left_7": {
+      "body": "well_heavy_left_7.png",
+      "grip": [
+        2,
+        12
+      ],
+      "order": "after",
+      "sha256": "59f4178debaf7cf36a76b1f502f827a58110fc91931f45ef364afd2342e1aba5"
+    },
+    "rest": {
+      "body": "rest.png",
+      "grip": [
+        22,
+        24
+      ],
+      "order": "after",
+      "sha256": "118883e68f5cd75069cbe4f296439f542920422fcd0112fc0ab2489463ebfcf4"
+    },
+    "pickup_reach": {
+      "body": "pickup_reach.png",
+      "grip": [
+        22,
+        24
+      ],
+      "order": "after",
+      "sha256": "d9e3cda97e3276024a4540b01ae86387cb34918c1aa24c23c7d9278c710e24cb"
+    },
+    "pickup_grasp": {
+      "body": "pickup_grasp.png",
+      "grip": [
+        22,
+        24
+      ],
+      "order": "after",
+      "sha256": "aaed3da31648782d0265484713be8197fe84117cfeef1be341717511152806ae"
+    },
+    "fill_reach": {
+      "body": "fill_reach.png",
+      "grip": [
+        22,
+        23
+      ],
+      "order": "after",
+      "sha256": "d9e3cda97e3276024a4540b01ae86387cb34918c1aa24c23c7d9278c710e24cb"
+    },
+    "fill_lower": {
+      "body": "fill_lower.png",
+      "grip": [
+        25,
+        27
+      ],
+      "order": "after",
+      "sha256": "bd0481bc3b56b122d973c21dcbcd3e7dae2da7d4066b4cefb73b50dec8d13c18"
+    },
+    "fill_dip": {
+      "body": "fill_dip.png",
+      "grip": [
+        25,
+        28
+      ],
+      "order": "after",
+      "sha256": "bd0481bc3b56b122d973c21dcbcd3e7dae2da7d4066b4cefb73b50dec8d13c18"
+    },
+    "fill_lift": {
+      "body": "fill_lift.png",
+      "grip": [
+        23,
+        23
+      ],
+      "order": "after",
+      "sha256": "d9e3cda97e3276024a4540b01ae86387cb34918c1aa24c23c7d9278c710e24cb"
+    },
+    "raise_left": {
+      "body": "raise_left.png",
+      "grip": [
+        3,
+        17
+      ],
+      "order": "after",
+      "sha256": "71d47f5d5e81c965a04ffd28e5b1f85939a16fb02697d8cf2e28bc71f67f4990"
+    },
+    "raise_right": {
+      "body": "raise_right.png",
+      "grip": [
+        21,
+        17
+      ],
+      "order": "after",
+      "sha256": "e46a948de1ee81160355044d929d293312f49559789567b5395df80a0840a475"
+    },
+    "lift_trough_right": {
+      "body": "lift_trough_right.png",
+      "grip": [
+        21,
+        14
+      ],
+      "order": "after",
+      "sha256": "44392db646fdfc8de6dd71011c7f3b18e1f6a23f8e48a1ecadbffd033ca730f1"
+    },
+    "half_trough_right": {
+      "body": "half_trough_right.png",
+      "grip": [
+        24,
+        10
+      ],
+      "order": "after",
+      "sha256": "f0afa8a45e4c662d192c7cbd819e2e7f1b98a0440601e11821ba0c5cc6521b10"
+    },
+    "raise_trough_right": {
+      "body": "raise_trough_right.png",
+      "grip": [
+        25,
+        7
+      ],
+      "order": "after",
+      "sha256": "a7ff2d98200f810d23aec2870dd4586642a5d0409e2049fe87c4688c947b74a1"
+    },
+    "lift_trough_left": {
+      "body": "lift_trough_left.png",
+      "grip": [
+        3,
+        14
+      ],
+      "order": "after",
+      "sha256": "29d9ebb9785c71bb4e95b2235a36faa277f439471303a238072ae96bb31067f6"
+    },
+    "half_trough_left": {
+      "body": "half_trough_left.png",
+      "grip": [
+        0,
+        10
+      ],
+      "order": "after",
+      "sha256": "a364037d6209d150cc596e261ce18f9c2e17d5e7c1d8aab14b729e93dd7b12bf"
+    },
+    "raise_trough_left": {
+      "body": "raise_trough_left.png",
+      "grip": [
+        -1,
+        7
+      ],
+      "order": "after",
+      "sha256": "adf6f17db8c66cd2e64700b77549f8cdb473f523cb1301b4033aa9c2f3c73168"
+    },
+    "well_attach_back_0": {
+      "body": "well_attach_back_0.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "before",
+      "sha256": "3b6df52dec1f4761db8be9ac86a7f5d98daebaae50ce9655301bf3161c4093fb"
+    },
+    "well_attach_back_1": {
+      "body": "well_attach_back_1.png",
+      "grip": [
+        19,
+        22
+      ],
+      "order": "before",
+      "sha256": "609ee418668bced0c147e3e6b0a2b17d9c069cc503eb1a85625588ec89c19f4f"
+    },
+    "well_attach_back_2": {
+      "body": "well_attach_back_2.png",
+      "grip": [
+        17,
+        20
+      ],
+      "order": "before",
+      "sha256": "f11305ef954686d58393afcb136e03a769378177631ffa5831a7e8221fa04c15"
+    },
+    "well_attach_back_3": {
+      "body": "well_attach_back_3.png",
+      "grip": [
+        16,
+        18
+      ],
+      "order": "before",
+      "sha256": "91c2f7d488fc9738a04e494f84ad07bb58aab586bf6384facea1b03171ef10b8"
+    },
+    "well_attach_back_4": {
+      "body": "well_attach_back_4.png",
+      "grip": [
+        15,
+        16
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_attach_back_5": {
+      "body": "well_attach_back_5.png",
+      "grip": [
+        13,
+        14
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_attach_back_6": {
+      "body": "well_attach_back_6.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_release_back_0": {
+      "body": "well_release_back_0.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_release_back_1": {
+      "body": "well_release_back_1.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_release_back_2": {
+      "body": "well_release_back_2.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_release_back_3": {
+      "body": "well_release_back_3.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "91c2f7d488fc9738a04e494f84ad07bb58aab586bf6384facea1b03171ef10b8"
+    },
+    "well_release_back_4": {
+      "body": "well_release_back_4.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "f11305ef954686d58393afcb136e03a769378177631ffa5831a7e8221fa04c15"
+    },
+    "well_catch_back_0": {
+      "body": "well_catch_back_0.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "f11305ef954686d58393afcb136e03a769378177631ffa5831a7e8221fa04c15"
+    },
+    "well_catch_back_1": {
+      "body": "well_catch_back_1.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "91c2f7d488fc9738a04e494f84ad07bb58aab586bf6384facea1b03171ef10b8"
+    },
+    "well_catch_back_2": {
+      "body": "well_catch_back_2.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_catch_back_3": {
+      "body": "well_catch_back_3.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_catch_back_4": {
+      "body": "well_catch_back_4.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_catch_back_5": {
+      "body": "well_catch_back_5.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_catch_back_6": {
+      "body": "well_catch_back_6.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_unhook_back": {
+      "body": "well_unhook_back.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_take_back_0": {
+      "body": "well_take_back_0.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "before",
+      "sha256": "069c52f4e511498cfebc83d318b78f0ea95f6372ca73978c7a4570560bd37cb9"
+    },
+    "well_take_back_1": {
+      "body": "well_take_back_1.png",
+      "grip": [
+        13,
+        13
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_take_back_2": {
+      "body": "well_take_back_2.png",
+      "grip": [
+        14,
+        15
+      ],
+      "order": "before",
+      "sha256": "6ffd2cc45593ff76b5a16a4c38d09b5e0955d91470eb70f96889366f8a11ae66"
+    },
+    "well_take_back_3": {
+      "body": "well_take_back_3.png",
+      "grip": [
+        15,
+        16
+      ],
+      "order": "before",
+      "sha256": "91c2f7d488fc9738a04e494f84ad07bb58aab586bf6384facea1b03171ef10b8"
+    },
+    "well_take_back_4": {
+      "body": "well_take_back_4.png",
+      "grip": [
+        16,
+        17
+      ],
+      "order": "before",
+      "sha256": "f11305ef954686d58393afcb136e03a769378177631ffa5831a7e8221fa04c15"
+    },
+    "well_take_back_5": {
+      "body": "well_take_back_5.png",
+      "grip": [
+        17,
+        19
+      ],
+      "order": "before",
+      "sha256": "609ee418668bced0c147e3e6b0a2b17d9c069cc503eb1a85625588ec89c19f4f"
+    },
+    "well_take_back_6": {
+      "body": "well_take_back_6.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before",
+      "sha256": "3b6df52dec1f4761db8be9ac86a7f5d98daebaae50ce9655301bf3161c4093fb"
+    }
+  },
+  "animations": {
+    "carry_empty.front": [
+      {
+        "pose": "carry_empty.front_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.front_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.front_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.front_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_empty.left": [
+      {
+        "pose": "carry_empty.left_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.left_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.left_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.left_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_empty.right": [
+      {
+        "pose": "carry_empty.right_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.right_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.right_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.right_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_empty.back": [
+      {
+        "pose": "carry_empty.back_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.back_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.back_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.back_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.front": [
+      {
+        "pose": "carry_full.front_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.front_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.front_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.front_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.left": [
+      {
+        "pose": "carry_full.left_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.left_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.left_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.left_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.right": [
+      {
+        "pose": "carry_full.right_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.right_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.right_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.right_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.back": [
+      {
+        "pose": "carry_full.back_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.back_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.back_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.back_04",
+        "duration_ms": 140
+      }
+    ],
+    "rest": [
+      {
+        "pose": "rest",
+        "duration_ms": 10000,
+        "level": 0
+      }
+    ],
+    "pickup": [
+      {
+        "pose": "pickup_reach",
+        "duration_ms": 250,
+        "level": 0
+      },
+      {
+        "pose": "pickup_grasp",
+        "duration_ms": 300,
+        "level": 0
+      },
+      {
+        "pose": "idle_empty.right",
+        "duration_ms": 250,
+        "level": 0
+      }
+    ],
+    "setdown": [
+      {
+        "pose": "pickup_reach",
+        "duration_ms": 250,
+        "level": 0
+      },
+      {
+        "pose": "pickup_grasp",
+        "duration_ms": 300,
+        "level": 0
+      },
+      {
+        "pose": "rest",
+        "duration_ms": 250,
+        "level": 0
+      }
+    ],
+    "fill": [
+      {
+        "pose": "fill_reach",
+        "duration_ms": 400,
+        "level": 0
+      },
+      {
+        "pose": "fill_lower",
+        "duration_ms": 400,
+        "level": 0
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 800,
+        "level": 0,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 2,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 3,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 5,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 300,
+        "level": 6,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_lift",
+        "duration_ms": 600,
+        "level": 6,
+        "effect": "drips"
+      },
+      {
+        "pose": "idle_full.right",
+        "duration_ms": 800,
+        "level": 6
+      }
+    ],
+    "inspect.left": [
+      {
+        "pose": "idle_full.left",
+        "duration_ms": 800
+      }
+    ],
+    "pour.left": [
+      {
+        "pose": "raise_left",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "raise_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_left",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "raise_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_left",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.left",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ],
+    "inspect.right": [
+      {
+        "pose": "idle_full.right",
+        "duration_ms": 800
+      }
+    ],
+    "pour.right": [
+      {
+        "pose": "raise_right",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "raise_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_right",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "raise_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_right",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.right",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ],
+    "pour_trough.right": [
+      {
+        "pose": "lift_trough_right",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "half_trough_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_right",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "half_trough_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_right",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.right",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ],
+    "pour_trough.left": [
+      {
+        "pose": "lift_trough_left",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "half_trough_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_left",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "half_trough_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_left",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.left",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ]
+  },
+  "buckets": {
+    "bucket_-50_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_0.png"
+    },
+    "bucket_-50_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_1.png"
+    },
+    "bucket_-50_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_2.png"
+    },
+    "bucket_-50_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_3.png"
+    },
+    "bucket_-50_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_4.png"
+    },
+    "bucket_-50_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_5.png"
+    },
+    "bucket_-50_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_6.png"
+    },
+    "bucket_-25_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_0.png"
+    },
+    "bucket_-25_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_1.png"
+    },
+    "bucket_-25_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_2.png"
+    },
+    "bucket_-25_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_3.png"
+    },
+    "bucket_-25_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_4.png"
+    },
+    "bucket_-25_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_5.png"
+    },
+    "bucket_-25_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_6.png"
+    },
+    "bucket_0_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_0.png"
+    },
+    "bucket_0_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_1.png"
+    },
+    "bucket_0_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_2.png"
+    },
+    "bucket_0_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_3.png"
+    },
+    "bucket_0_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_4.png"
+    },
+    "bucket_0_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_5.png"
+    },
+    "bucket_0_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_6.png"
+    },
+    "bucket_25_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_0.png"
+    },
+    "bucket_25_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_1.png"
+    },
+    "bucket_25_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_2.png"
+    },
+    "bucket_25_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_3.png"
+    },
+    "bucket_25_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_4.png"
+    },
+    "bucket_25_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_5.png"
+    },
+    "bucket_25_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_6.png"
+    },
+    "bucket_50_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_0.png"
+    },
+    "bucket_50_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_1.png"
+    },
+    "bucket_50_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_2.png"
+    },
+    "bucket_50_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_3.png"
+    },
+    "bucket_50_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_4.png"
+    },
+    "bucket_50_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_5.png"
+    },
+    "bucket_50_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_6.png"
+    }
+  },
+  "source_recipe": "assets/source/characters/npc_roster_hd/adult_woman_02/gardener_hd/drawings.json",
+  "bucket_bank": "assets/characters/npcs/female_02/gardener",
+  "artwork_pixels_per_world_pixel": 2,
+  "body_artwork_size": [
+    96,
+    96
+  ],
+  "body_logical_size": [
+    48,
+    48
+  ],
+  "coordinate_units": "logical_world_pixels"
+}

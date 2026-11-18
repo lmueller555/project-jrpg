@@ -172,17 +172,12 @@ class SanctuaryGardener(unittest.TestCase):
 
     def test_static_action_feet_and_player_depth_order(self):
         a=self.actor
-        recipe=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')
-        for name,spec in a.animation['poses'].items():
+        # The HD body is a redraw, so use the shared native sole
+        # registration rather than requiring the superseded pixels.
+        sole_bottom=round((a.animation['body_offset'][1]+a.roster_art.foot_anchor[1])*2)+1
+        for name,body in a.bodies.items():
             if name.startswith('carry_'):continue
-            direction='left' if name.endswith('left') else 'right' if name in ('rest',) or name.startswith(('pickup','fill')) or name.endswith('right') else 'front' if name.endswith('front') else 'back'
-            if name in recipe['work_poses']:direction=recipe['work_poses'][name]['direction']
-            original=self.world.image(f'assets/characters/npcs/female_02/idle_{direction}.png')
-            feet=original.subsurface((0,30,24,6));bounds=feet.get_bounding_rect()
-            expected=pygame.image.tobytes(feet.subsurface(bounds),'RGBA')
-            bounds.move_ip(12,36)
-            actual=pygame.image.tobytes(a.bodies[name].subsurface(bounds),'RGBA')
-            self.assertEqual(actual,expected,name)
+            self.assertEqual(body.native.get_bounding_rect().bottom,sole_bottom,name)
         marker=pygame.Surface((24,36),pygame.SRCALPHA);marker.fill('#ff00ff')
         target=pygame.Surface(main.VIEW_SIZE);player=self.game.player
         with patch.object(player,'sprite',return_value=marker):
@@ -193,15 +188,20 @@ class SanctuaryGardener(unittest.TestCase):
             self.world.draw(target,(200,240),player,0)
             self.assertEqual(target.get_at((122,98))[:3],(255,0,255))
 
-    def test_carrying_retains_approved_stride_and_bucket_levels_are_visible(self):
+    def test_carrying_has_four_coupled_strides_and_bucket_levels_are_visible(self):
         a=self.actor
+        # Full and empty have the same locomotion. All four lower-body
+        # silhouettes must vary across the carry cycle, regardless of water.
         for direction in ('front','left','right','back'):
+            feet=set()
             for index in range(1,5):
-                source=self.world.image(f'assets/characters/npcs/female_02/walk_{direction}/frame_{index:02}.png')
-                expected=pygame.image.tobytes(source.subsurface((0,30,24,6)),'RGBA')
+                stride=[]
                 for mode in ('empty','full'):
                     body=a.bodies[f'carry_{mode}.{direction}_{index:02}']
-                    self.assertEqual(pygame.image.tobytes(body.subsurface((12,36,24,6)),'RGBA'),expected)
+                    stride.append(pygame.image.tobytes(body.native.subsurface((24,74,48,10)),'RGBA'))
+                self.assertEqual(stride[0],stride[1])
+                feet.add(stride[0])
+            self.assertEqual(len(feet),4,direction)
         water_colors={(89,142,159),(185,217,210)}
         counts=[]
         for level in range(a.water_capacity+1):
