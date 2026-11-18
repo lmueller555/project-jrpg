@@ -1,0 +1,594 @@
+{
+  "version": 1,
+  "character": "elder_man_03",
+  "animation": "walk.back",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/elder_man_03/walk_back/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/elder_man_03/walk_back/authored.png": "5de0556c48f8db2ff8448935050d0e1c84c7e3804f2dd22cb6a52757906cdd4d",
+    "assets/characters/npc_roster_hd/elder_man_03/idle_back.png": "ea18dab999a8a5412b2579172df7c1bb9019af6def0d36601ebb9a4e1436ae32"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right contact",
+      "right_sole": [
+        26,
+        66
+      ],
+      "left_sole": [
+        21,
+        69
+      ],
+      "belt_center": [
+        24,
+        42
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        26,
+        66
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        21,
+        69
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          21,
+          69
+        ],
+        "right_toe": [
+          26,
+          66
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right down / left release",
+      "right_sole": [
+        26,
+        67
+      ],
+      "left_sole": [
+        23,
+        66
+      ],
+      "belt_center": [
+        24,
+        43
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        26,
+        67
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        23,
+        66
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": [
+          23,
+          66
+        ],
+        "right_toe": [
+          26,
+          67
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left passing",
+      "right_sole": [
+        27,
+        68
+      ],
+      "left_sole": [
+        21,
+        64
+      ],
+      "belt_center": [
+        24,
+        42
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        27,
+        68
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        21,
+        64
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          21,
+          64
+        ],
+        "right_toe": [
+          27,
+          68
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left recovery / right toe-off",
+      "right_sole": [
+        27,
+        69
+      ],
+      "left_sole": [
+        21,
+        65
+      ],
+      "belt_center": [
+        24,
+        42
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        27,
+        69
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        21,
+        65
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          21,
+          65
+        ],
+        "right_toe": [
+          27,
+          69
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left contact",
+      "right_sole": [
+        27,
+        69
+      ],
+      "left_sole": [
+        21,
+        66
+      ],
+      "belt_center": [
+        24,
+        42
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        27,
+        69
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        21,
+        66
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          21,
+          66
+        ],
+        "right_toe": [
+          27,
+          69
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left down / right release",
+      "right_sole": [
+        29,
+        66
+      ],
+      "left_sole": [
+        21,
+        67
+      ],
+      "belt_center": [
+        24,
+        43
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        29,
+        66
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        21,
+        67
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": [
+          21,
+          67
+        ],
+        "right_toe": [
+          29,
+          66
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right passing",
+      "right_sole": [
+        27,
+        64
+      ],
+      "left_sole": [
+        21,
+        68
+      ],
+      "belt_center": [
+        24,
+        42
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        27,
+        64
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        21,
+        68
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          21,
+          68
+        ],
+        "right_toe": [
+          27,
+          64
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right recovery / left toe-off",
+      "right_sole": [
+        27,
+        65
+      ],
+      "left_sole": [
+        22,
+        69
+      ],
+      "belt_center": [
+        24,
+        42
+      ],
+      "belt_visibility": "visible brass center; no hand overlap",
+      "right_toe": null,
+      "right_heel": [
+        27,
+        65
+      ],
+      "right_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "left_toe": null,
+      "left_heel": [
+        22,
+        69
+      ],
+      "left_foot_visibility": "rear heel/sole visible; anatomical toe occluded on far side of shoe",
+      "arm_occlusion": "one chain per arm; hand visible; upper medial sleeves merge naturally behind torso silhouette",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          22,
+          69
+        ],
+        "right_toe": [
+          27,
+          65
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
