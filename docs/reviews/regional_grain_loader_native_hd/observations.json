@@ -1,0 +1,6258 @@
+{
+  "actor_id": "grain_loader",
+  "binding": {
+    "version": 1,
+    "actor_id": "grain_loader",
+    "design_id": "adult_man_02",
+    "preserved_legacy_identity": "assets/characters/npcs/male_02",
+    "activation": {
+      "idle": true,
+      "walk": true,
+      "activity": true
+    },
+    "logical_canvas": [
+      40,
+      44
+    ],
+    "draw_anchor_logical": [
+      20,
+      38
+    ],
+    "body_offset_logical": [
+      8,
+      3.5
+    ],
+    "travel_cycle_ms": 560,
+    "runtime_status": "Canonical native idle/walk/portrait and refined complete activities explicitly selected; original controllers and attachments retained.",
+    "identity_source": "docs/REGION_NPCS.md#grain-workers",
+    "activity_owner": "assets/characters/grain_workers/loader/animation.json",
+    "preservation": "No actor ID, position, probe, controller, durable state, prop ownership, route, action timing or source bank changes.",
+    "activity_manifest": "assets/characters/regional_npc_hd/grain_loader/activity_hd/manifest.json",
+    "activity_manifest_sha256": "3e3701bf4e007f3d95981da7220734c711e39485111a23a8934deb97cabc3125"
+  },
+  "method": "Game.update30Hz + real Game.draw native960x640; no NPC state overrides. Board crops align feet but preserve native pixels.",
+  "fixtures": [
+    "completed predecessor quests",
+    "player review stations",
+    "mill-restored flag added after genuine cover/rest"
+  ],
+  "extended": true,
+  "reduced_motion": false,
+  "runtime_sha256": {
+    "regional_npc_art.py": "36947e060ab86008fe4bfb71ac12f6781c647a5555f9ee13b0e8c2b97e10292c",
+    "regional_npc_activity.py": "07e91b557d1bcb1d493d41eb41d1d7fc372bf2b1e0b41c93500bef4f83166783",
+    "grain_farm.py": "b07551e6a1d5d88e1569a2551f402065dab9c962a8fd45108ecf726a8b716fb6",
+    "garden_orchard.py": "c04f3f095970792994660b202d2ee098b60701f6e9d12012a09c8ae77a912418",
+    "npc_roster_art.py": "3787c882c0bdc404b14dc377eded42a3fc4282e462f1107612e59a20ab9ed241",
+    "bridge_crew.py": "bc84d793273d35a0d1a11758255f5ce9953dcf0dbc4f01ead381e5a57ddc06bd",
+    "main.py": "2b7b8036ce1950f0be4c2694fcf3befe33e511a26d5a43721d61ec0ca6ef2b0d",
+    "dense_art.py": "1651c9113805d4bcea595ded643fe3e21aee11fa1dfab42b6ac6809e29ce08fc",
+    "rendering.py": "4f94406ae0d2c010a6bf7e6c5111eff263556f8e4c97fe97d2adb78ff02d9f35"
+  },
+  "frames": [
+    {
+      "file": "000_unrepaired_inspect_inspect_front_0.png",
+      "tick": 0,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "inspect",
+      "moving": false,
+      "clock": 0.03333333333333333,
+      "animation_key": "inspect_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "inspect_front_0.png",
+        "duration_ms": 650
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_inspect"
+    },
+    {
+      "file": "001_unrepaired_inspect_inspect_front_1.png",
+      "tick": 19,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "inspect",
+      "moving": false,
+      "clock": 0.6666666666666666,
+      "animation_key": "inspect_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "inspect_front_1.png",
+        "duration_ms": 650
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_inspect"
+    },
+    {
+      "file": "002_unrepaired_cover_cover_front_0.png",
+      "tick": 59,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "cover",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "cover_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "cover_front_0.png",
+        "duration_ms": 500,
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "cloth_offset": [
+          0,
+          -14
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_cover"
+    },
+    {
+      "file": "003_unrepaired_cover_cover_front_1.png",
+      "tick": 75,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "cover",
+      "moving": false,
+      "clock": 0.5333333333333333,
+      "animation_key": "cover_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "cover_front_1.png",
+        "duration_ms": 500,
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "cloth_offset": [
+          0,
+          -14
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_cover"
+    },
+    {
+      "file": "004_unrepaired_rest_stretch_front_0.png",
+      "tick": 90,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "stretch",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "stretch_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "stretch_front_0.png",
+        "duration_ms": 850
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_rest"
+    },
+    {
+      "file": "005_unrepaired_rest_stretch_front_1.png",
+      "tick": 116,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "stretch",
+      "moving": false,
+      "clock": 0.8666666666666666,
+      "animation_key": "stretch_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "stretch_front_1.png",
+        "duration_ms": 850
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_rest"
+    },
+    {
+      "file": "006_unrepaired_rest_idle_front_0.png",
+      "tick": 150,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "idle_front",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 1000
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "unrepaired_rest"
+    },
+    {
+      "file": "007_work_rest_idle_front_0.png",
+      "tick": 157,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": false,
+      "clock": 0.2333333333333333,
+      "animation_key": "idle_front",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 1000
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_rest"
+    },
+    {
+      "file": "008_work_return_idle_back_0.png",
+      "tick": 241,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "back",
+      "pose": "idle",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "idle_back",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 1000
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_return"
+    },
+    {
+      "file": "009_work_inspect_inspect_front_0.png",
+      "tick": 242,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "inspect",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "inspect_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "inspect_front_0.png",
+        "duration_ms": 650
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_inspect"
+    },
+    {
+      "file": "010_work_inspect_inspect_front_1.png",
+      "tick": 262,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "inspect",
+      "moving": false,
+      "clock": 0.6666666666666666,
+      "animation_key": "inspect_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "inspect_front_1.png",
+        "duration_ms": 650
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_inspect"
+    },
+    {
+      "file": "011_work_uncover_cover_front_1.png",
+      "tick": 302,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "cover",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "cover_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "cover_front_1.png",
+        "duration_ms": 500,
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "cloth_offset": [
+          0,
+          -14
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_uncover"
+    },
+    {
+      "file": "012_work_uncover_cover_front_0.png",
+      "tick": 318,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "cover",
+      "moving": false,
+      "clock": 0.5333333333333333,
+      "animation_key": "cover_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "cover_front_0.png",
+        "duration_ms": 500,
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "cloth_offset": [
+          0,
+          -14
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_uncover"
+    },
+    {
+      "file": "013_work_lift_lift_front_0.png",
+      "tick": 333,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "lift_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_0.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -3
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -2,
+            -5
+          ],
+          [
+            2,
+            -5
+          ]
+        ],
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift"
+    },
+    {
+      "file": "014_work_lift_lift_front_1.png",
+      "tick": 342,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.3,
+      "animation_key": "lift_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_1.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -7
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift"
+    },
+    {
+      "file": "015_work_lift_lift_front_2.png",
+      "tick": 351,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.6,
+      "animation_key": "lift_front",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_2.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            5,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift"
+    },
+    {
+      "file": "016_work_lift_lift_front_3.png",
+      "tick": 361,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.9333333333333332,
+      "animation_key": "lift_front",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_3.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            175
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift"
+    },
+    {
+      "file": "017_work_carry_hold_front_0.png",
+      "tick": 369,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "hold_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "hold_front_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_carry"
+    },
+    {
+      "file": "018_work_carry_carry_front_0.png",
+      "tick": 370,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.73333333333332
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": true,
+      "clock": 0.0,
+      "animation_key": "carry_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "carry_front_0.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -4,
+            -14
+          ],
+          [
+            4,
+            -12
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 199.73333333333332,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            169
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_carry"
+    },
+    {
+      "file": "019_work_carry_carry_front_1.png",
+      "tick": 376,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        197.13333333333324
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": true,
+      "clock": 0.19999999999999998,
+      "animation_key": "carry_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "carry_front_1.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -14
+          ],
+          [
+            4,
+            -12
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 204.13333333333324,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            173
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_carry"
+    },
+    {
+      "file": "020_work_carry_carry_front_2.png",
+      "tick": 381,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        200.79999999999984
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": true,
+      "clock": 0.36666666666666664,
+      "animation_key": "carry_front",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "carry_front_2.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -14
+          ],
+          [
+            4,
+            -12
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 207.79999999999984,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_carry"
+    },
+    {
+      "file": "021_work_carry_carry_front_3.png",
+      "tick": 387,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        205.19999999999976
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": true,
+      "clock": 0.5666666666666667,
+      "animation_key": "carry_front",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "carry_front_3.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -14
+          ],
+          [
+            5,
+            -12
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 212.19999999999976,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            181
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_carry"
+    },
+    {
+      "file": "022_work_place_place_right_0.png",
+      "tick": 405,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "place",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "place_right",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "place_right_0.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          4,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            3,
+            -14
+          ],
+          [
+            4,
+            -15
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "023_work_place_place_right_1.png",
+      "tick": 414,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "place",
+      "moving": false,
+      "clock": 0.3,
+      "animation_key": "place_right",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "place_right_1.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          9,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            7,
+            -12
+          ],
+          [
+            9,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "024_work_place_place_right_2.png",
+      "tick": 423,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "place",
+      "moving": false,
+      "clock": 0.6,
+      "animation_key": "place_right",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "place_right_2.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          14,
+          -10
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            10,
+            -11
+          ],
+          [
+            11,
+            -12
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "025_work_place_place_right_3.png",
+      "tick": 433,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "place",
+      "moving": false,
+      "clock": 0.9333333333333332,
+      "animation_key": "place_right",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "place_right_3.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          14,
+          -10
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 0,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "026_work_return_walk_back_0.png",
+      "tick": 442,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        217.26666666666668
+      ],
+      "facing": "back",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.0,
+      "animation_key": "walk_back",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_return"
+    },
+    {
+      "file": "027_work_return_walk_back_1.png",
+      "tick": 447,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        213.60000000000008
+      ],
+      "facing": "back",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.16666666666666666,
+      "animation_key": "walk_back",
+      "frame_index": 1,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_return"
+    },
+    {
+      "file": "028_work_return_walk_back_2.png",
+      "tick": 451,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        210.6666666666668
+      ],
+      "facing": "back",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.3,
+      "animation_key": "walk_back",
+      "frame_index": 2,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_return"
+    },
+    {
+      "file": "029_work_return_walk_back_3.png",
+      "tick": 455,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        207.73333333333352
+      ],
+      "facing": "back",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.4333333333333333,
+      "animation_key": "walk_back",
+      "frame_index": 3,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            177
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_return"
+    },
+    {
+      "file": "030_work_place_push_right_0.png",
+      "tick": 645,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "push",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "push_right",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "push_right_0.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          14,
+          -10
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            11,
+            -18
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "031_work_place_push_right_1.png",
+      "tick": 650,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "push",
+      "moving": false,
+      "clock": 0.16666666666666666,
+      "animation_key": "push_right",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "push_right_1.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          16,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            12,
+            -18
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "032_work_place_push_right_2.png",
+      "tick": 654,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "push",
+      "moving": false,
+      "clock": 0.3,
+      "animation_key": "push_right",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "push_right_2.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          18,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            15,
+            -19
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "033_work_place_push_right_3.png",
+      "tick": 659,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "push",
+      "moving": false,
+      "clock": 0.4666666666666666,
+      "animation_key": "push_right",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "push_right_3.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          20,
+          -12
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            15,
+            -19
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 1,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 225.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -823,
+            195
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_place"
+    },
+    {
+      "file": "034_work_lift_spare_lift_front_0.png",
+      "tick": 759,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "lift_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_0.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -3
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -2,
+            -5
+          ],
+          [
+            2,
+            -5
+          ]
+        ],
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift_spare"
+    },
+    {
+      "file": "035_work_lift_spare_lift_front_1.png",
+      "tick": 768,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.3,
+      "animation_key": "lift_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_1.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -7
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift_spare"
+    },
+    {
+      "file": "036_work_lift_spare_lift_front_2.png",
+      "tick": 777,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.6,
+      "animation_key": "lift_front",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_2.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            5,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift_spare"
+    },
+    {
+      "file": "037_work_lift_spare_lift_front_3.png",
+      "tick": 787,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lift",
+      "moving": false,
+      "clock": 0.9333333333333332,
+      "animation_key": "lift_front",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_3.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_lift_spare"
+    },
+    {
+      "file": "038_work_ready_hold_front_0.png",
+      "tick": 795,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1116,
+        72
+      ],
+      "player_review_position": [
+        -876.0,
+        232.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "hold_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "hold_front_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "work_ready"
+    },
+    {
+      "file": "039_exchange_ready_hold_front_0.png",
+      "tick": 899,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1114,
+        60
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "hold_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "hold_front_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_ready"
+    },
+    {
+      "file": "040_exchange_ready_look_left_0.png",
+      "tick": 1024,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "look",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "look_left",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "look_left_0.png",
+        "duration_ms": 350,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_ready"
+    },
+    {
+      "file": "041_exchange_ready_look_left_1.png",
+      "tick": 1035,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "look",
+      "moving": false,
+      "clock": 0.36666666666666664,
+      "animation_key": "look_left",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "look_left_1.png",
+        "duration_ms": 350,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            3,
+            -14
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": false,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_ready"
+    },
+    {
+      "file": "042_exchange_help_approach_hold_front_0.png",
+      "tick": 1150,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "hold_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "hold_front_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_approach"
+    },
+    {
+      "file": "043_exchange_help_place_hold_front_0.png",
+      "tick": 1191,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "carry",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "hold_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "hold_front_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_place"
+    },
+    {
+      "file": "044_exchange_help_place_lift_front_3.png",
+      "tick": 1216,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lower",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "lift_front",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_3.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_place"
+    },
+    {
+      "file": "045_exchange_help_place_lift_front_2.png",
+      "tick": 1223,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lower",
+      "moving": false,
+      "clock": 0.2333333333333333,
+      "animation_key": "lift_front",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_2.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            5,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_place"
+    },
+    {
+      "file": "046_exchange_help_place_lift_front_1.png",
+      "tick": 1229,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lower",
+      "moving": false,
+      "clock": 0.4333333333333333,
+      "animation_key": "lift_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_1.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -7
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ]
+        ],
+        "gripped": true
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_place"
+    },
+    {
+      "file": "047_exchange_help_place_lift_front_0.png",
+      "tick": 1235,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "lower",
+      "moving": false,
+      "clock": 0.6333333333333333,
+      "animation_key": "lift_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "lift_front_0.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -3
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -2,
+            -5
+          ],
+          [
+            2,
+            -5
+          ]
+        ],
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199.0,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            168
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_place"
+    },
+    {
+      "file": "048_exchange_help_recover_recover_front_0.png",
+      "tick": 1239,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "recover",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "recover_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "recover_front_0.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_recover"
+    },
+    {
+      "file": "049_exchange_help_recover_recover_front_1.png",
+      "tick": 1242,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "recover",
+      "moving": false,
+      "clock": 0.1,
+      "animation_key": "recover_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "recover_front_1.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_recover"
+    },
+    {
+      "file": "050_exchange_help_recover_recover_front_2.png",
+      "tick": 1246,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "recover",
+      "moving": false,
+      "clock": 0.2333333333333333,
+      "animation_key": "recover_front",
+      "frame_index": 2,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "recover_front_2.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_recover"
+    },
+    {
+      "file": "051_exchange_help_recover_recover_front_3.png",
+      "tick": 1249,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "recover",
+      "moving": false,
+      "clock": 0.3333333333333333,
+      "animation_key": "recover_front",
+      "frame_index": 3,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "recover_front_3.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_recover"
+    },
+    {
+      "file": "052_exchange_help_return_idle_front_0.png",
+      "tick": 1252,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "idle_front",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 1000
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_help_return"
+    },
+    {
+      "file": "053_exchange_check_walk_idle_front_0.png",
+      "tick": 1294,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.0
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "idle_front",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 1000
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check_walk"
+    },
+    {
+      "file": "054_exchange_check_walk_walk_front_0.png",
+      "tick": 1295,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        192.73333333333332
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.0,
+      "animation_key": "walk_front",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check_walk"
+    },
+    {
+      "file": "055_exchange_check_walk_walk_front_1.png",
+      "tick": 1300,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        196.39999999999992
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.16666666666666666,
+      "animation_key": "walk_front",
+      "frame_index": 1,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check_walk"
+    },
+    {
+      "file": "056_exchange_check_walk_walk_front_2.png",
+      "tick": 1304,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        199.3333333333332
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.3,
+      "animation_key": "walk_front",
+      "frame_index": 2,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check_walk"
+    },
+    {
+      "file": "057_exchange_check_walk_walk_front_3.png",
+      "tick": 1308,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        202.26666666666648
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": true,
+      "clock": 0.4333333333333333,
+      "animation_key": "walk_front",
+      "frame_index": 3,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 140
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check_walk"
+    },
+    {
+      "file": "058_exchange_check_work_right_0.png",
+      "tick": 1330,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "work",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "work_right",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "work_right_0.png",
+        "duration_ms": 550
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check"
+    },
+    {
+      "file": "059_exchange_check_work_right_1.png",
+      "tick": 1347,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "right",
+      "pose": "work",
+      "moving": false,
+      "clock": 0.5666666666666667,
+      "animation_key": "work_right",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "work_right_1.png",
+        "duration_ms": 550
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": false,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_check"
+    },
+    {
+      "file": "060_exchange_rest_stretch_front_0.png",
+      "tick": 1390,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "front",
+      "pose": "stretch",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "stretch_front",
+      "frame_index": 0,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "stretch_front_0.png",
+        "duration_ms": 850
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": true,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_rest"
+    },
+    {
+      "file": "061_exchange_rest_stretch_front_1.png",
+      "tick": 1416,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "front",
+      "pose": "stretch",
+      "moving": false,
+      "clock": 0.8666666666666666,
+      "animation_key": "stretch_front",
+      "frame_index": 1,
+      "native_activity": true,
+      "native_artwork_size": [
+        96,
+        104
+      ],
+      "native_anchor": [
+        48,
+        92
+      ],
+      "safe_feet": true,
+      "legacy_attachment": {
+        "file": "stretch_front_1.png",
+        "duration_ms": 850
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": true,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_rest"
+    },
+    {
+      "file": "062_exchange_rest_idle_front_0.png",
+      "tick": 1450,
+      "scene": "auratia.overworld",
+      "camera": [
+        -1110,
+        43
+      ],
+      "player_review_position": [
+        -870.0,
+        203.0
+      ],
+      "feet": [
+        -824.0,
+        218.0
+      ],
+      "facing": "front",
+      "pose": "idle",
+      "moving": false,
+      "clock": 0.0,
+      "animation_key": "idle_front",
+      "frame_index": 0,
+      "native_activity": false,
+      "native_artwork_size": null,
+      "native_anchor": null,
+      "safe_feet": true,
+      "legacy_attachment": {
+        "duration_ms": 1000
+      },
+      "physical_state": {
+        "loaded": 2,
+        "exchange_read": true,
+        "scene_done": true,
+        "greeted": []
+      },
+      "prop_records": [
+        {
+          "sort_y": 199,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -830,
+            179
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -810,
+            196
+          ]
+        },
+        {
+          "sort_y": 228,
+          "layer": 4,
+          "image_logical_size": [
+            12,
+            12
+          ],
+          "world_top_left": [
+            -816,
+            198
+          ]
+        }
+      ],
+      "cup_owner": null,
+      "portable_positions": null,
+      "wildlife_basket": [
+        -516.0,
+        1226.0
+      ],
+      "wildlife_owned": false,
+      "controller_stage": "exchange_rest"
+    }
+  ],
+  "final_garden": {
+    "gardener": {
+      "phase": "work",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -526.0,
+        1190.0
+      ],
+      "read": false,
+      "greeted": false
+    },
+    "picker": {
+      "phase": "work",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -145.0,
+        -250.0
+      ],
+      "read": false,
+      "greeted": false
+    }
+  },
+  "final_wildlife": {
+    "version": 2,
+    "animals": {
+      "south_sheep_a": {
+        "position": [
+          -420.0,
+          1476.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "south_sheep_b": {
+        "position": [
+          -314.4,
+          1572.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "east_sheep_a": {
+        "position": [
+          1368.0,
+          1392.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "east_sheep_b": {
+        "position": [
+          1526.4,
+          1464.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "west_bird": {
+        "position": [
+          -878.0,
+          196.0
+        ],
+        "mode": "away",
+        "target": 1,
+        "elapsed": 20.0,
+        "clock": 39.866666666666966,
+        "facing": "left",
+        "cooldown": 0.0
+      },
+      "clearing_bird": {
+        "position": [
+          -1128.0,
+          -1603.2
+        ],
+        "mode": "peck",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "south_butterfly": {
+        "position": [
+          -451.4,
+          1164.8
+        ],
+        "mode": "settle",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "orchard_butterfly": {
+        "position": [
+          -132.2,
+          -268.0
+        ],
+        "mode": "settle",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "farm_cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "mode": "sleep",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      }
+    },
+    "vignette": {
+      "phase": "idle",
+      "step": 0,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -552,
+        1164
+      ],
+      "clock": 0.0,
+      "facing": "front",
+      "basket": "home",
+      "moving": false
+    }
+  },
+  "final_grain": {
+    "loaded": 2,
+    "exchange_read": true,
+    "scene_done": true,
+    "greeted": []
+  },
+  "final_bridge": {
+    "sorted": 0,
+    "tea_beat": 0,
+    "request_read": false,
+    "greeted": [],
+    "cup_phase": "kettle"
+  },
+  "draw_ms": {
+    "samples": 63,
+    "median": 10.370577998401131,
+    "max": 425.77768599949195
+  },
+  "source_manifest_sha256": "3e3701bf4e007f3d95981da7220734c711e39485111a23a8934deb97cabc3125"
+}
