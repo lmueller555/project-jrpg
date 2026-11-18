@@ -68,6 +68,12 @@ padding from the former high roof. Correcting that sample to the new authored
 canopy passed on rerun, alongside the strengthened complete-trip cue test.
 The production code did not change during that correction.
 
+After incorporating main's named-NPC updates through `6b16a2df`, a separate
+23-case compatibility run passed 22 cases. Ada's existing reproducible-rebuild
+test errors because `tools/build_named_ada_hd.py` is absent from that main
+revision. This PR preserves those character assets and does not supply their
+missing authoring tool; the live well and roster compatibility cases passed.
+
 Checks cover blocked loading/operator/retrieval stations, once-only ownership
 and water cues, all six targets, pause/menu/focus loss, indoor continuity,
 New Game/Continue checkpoints, stale tokens, native depth, reduced motion and
@@ -106,17 +112,20 @@ temporary-save fixture, native 960×640 target and logical camera `[288,660]`.
 Each case measures thirty production `World.draw` calls, including native-buffer
 reset. Updates, PNG conversion, interface drawing and display presentation are
 outside the timer. These are hardware-specific samples.
+The final capture and integrated profile include current-main named-NPC
+presentation through `6b16a2df`; the historical `7dfa732e` baseline and its
+original profiling driver are retained unchanged.
 
 | Actual lowering scene | Baseline `7dfa732e` | Integrated native well |
 | --- | ---: | ---: |
-| Warm static median | 1.69 ms | 1.77 ms |
-| Moving draw median | 1.71 ms | 1.85 ms |
-| Moving draw 95th percentile | 1.83 ms | 3.53 ms |
-| First lowering-scene draw | 2.85 ms | 4.09 ms |
+| Warm static median | 1.69 ms | 1.79 ms |
+| Moving draw median | 1.71 ms | 1.91 ms |
+| Moving draw 95th percentile | 1.83 ms | 3.21 ms |
+| First lowering-scene draw | 2.85 ms | 2.47 ms |
 
 The moving case performs an actual 1/60-second `Game.update` between draws,
 exercising changing crank/pail poses and cold pose-cache entries. The first
-full scene draw, which also warms scenery chunks, took 45.00/43.07 ms for the
+full scene draw, which also warms scenery chunks, took 45.00/41.16 ms for the
 baseline/integrated fixture. Median differences this small are within normal
 run variation; this is a scoped draw-cost measurement, not a whole-game frame
 rate claim.

@@ -1,6 +1,6 @@
 {
   "root": "/workspace/well-live-pr4",
-  "revision": "7dfa732ea1abe9c62cd7860f453f9b923a20a4af",
+  "revision": "241ec8fe99ee27a65f6f079d72b66391dc556667",
   "native_size": [
     960,
     640
@@ -13,7 +13,7 @@
   "initial_rest_rng_seed": 2026,
   "timing_scope": "Production World.draw including native buffer reset; updates, image conversion, UI and display presentation excluded; hardware specific.",
   "source_sha256": {
-    "main.py": "3d0f9aa07bfc492715f8d9e7799307a644b2a78cf185bf97e74910dcaa323fbf",
+    "main.py": "c5a424957da2c578ff50acb306d10e106079d3bc0a9a896f0c2f1424f8390a28",
     "npc_routines.py": "532087eefc75dc5363c7250c625592fbd46290d1bb0721a7bfea5ea431989c3c",
     "well_routine.py": "c95d34a245f9944640333f76425c8eef81f2c11607ab08d3acd3a7c9e1192647",
     "rendering.py": "4f94406ae0d2c010a6bf7e6c5111eff263556f8e4c97fe97d2adb78ff02d9f35",
@@ -24,22 +24,22 @@
   "idle": {
     "actor_state_start": "rest",
     "actor_state_end": "rest",
-    "first_draw_ms": 43.07258199696662,
+    "first_draw_ms": 41.15767199982656,
     "warm_static": {
       "samples": 30,
-      "min_ms": 1.476420002290979,
-      "mean_ms": 1.6030520663965337,
-      "median_ms": 1.5598009995301254,
-      "p95_ms": 1.8448970004101284,
-      "max_ms": 1.9468110040179454
+      "min_ms": 1.4654130063718185,
+      "mean_ms": 1.5340138677856885,
+      "median_ms": 1.5110630010894965,
+      "p95_ms": 1.7191770020872355,
+      "max_ms": 1.7714759960654192
     },
     "moving_draw": {
       "samples": 30,
-      "min_ms": 1.549781001813244,
-      "mean_ms": 1.7231940667746433,
-      "median_ms": 1.6105225004139356,
-      "p95_ms": 2.120031997037586,
-      "max_ms": 3.461649001110345
+      "min_ms": 1.4985640009399503,
+      "mean_ms": 1.5723614992263417,
+      "median_ms": 1.5381035009340849,
+      "p95_ms": 1.8721480009844527,
+      "max_ms": 1.9510769998305477
     },
     "well_cache": {
       "entries": 3,
@@ -53,22 +53,22 @@
   "lower": {
     "actor_state_start": "well_lower",
     "actor_state_end": "well_lower",
-    "first_draw_ms": 4.089194000698626,
+    "first_draw_ms": 2.468557999236509,
     "warm_static": {
       "samples": 30,
-      "min_ms": 1.5836210004636087,
-      "mean_ms": 1.9617224992543925,
-      "median_ms": 1.7658264987403527,
-      "p95_ms": 2.4259130004793406,
-      "max_ms": 2.4283169987029396
+      "min_ms": 1.5787440061103553,
+      "mean_ms": 1.783972167565177,
+      "median_ms": 1.7943054990610108,
+      "p95_ms": 2.000672000576742,
+      "max_ms": 2.101855003274977
     },
     "moving_draw": {
       "samples": 30,
-      "min_ms": 1.6472970019094646,
-      "mean_ms": 2.226410365983611,
-      "median_ms": 1.8451359974278603,
-      "p95_ms": 3.5260739969089627,
-      "max_ms": 3.841820995148737
+      "min_ms": 1.6571630039834417,
+      "mean_ms": 2.155058200878557,
+      "median_ms": 1.9080120000580791,
+      "p95_ms": 3.205121000064537,
+      "max_ms": 3.2521030007046647
     },
     "well_cache": {
       "entries": 15,

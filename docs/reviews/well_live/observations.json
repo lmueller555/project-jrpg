@@ -1,6 +1,6 @@
 {
   "scope": "Actual Game simulation and production native World compositor, with disposable saves/settings.",
-  "revision": "7dfa732ea1abe9c62cd7860f453f9b923a20a4af",
+  "revision": "241ec8fe99ee27a65f6f079d72b66391dc556667",
   "runtime_activation": true,
   "step_ms": 100,
   "initial_rest_omitted": true,
@@ -261,7 +261,7 @@
   "pickup_montage": "Pickup and setdown only; the complete trip appears separately.",
   "depth_fixture": "Only diagnostic north/south stills reposition the disposable player; normal route simulation is untouched.",
   "source_sha256": {
-    "main.py": "3d0f9aa07bfc492715f8d9e7799307a644b2a78cf185bf97e74910dcaa323fbf",
+    "main.py": "c5a424957da2c578ff50acb306d10e106079d3bc0a9a896f0c2f1424f8390a28",
     "npc_routines.py": "532087eefc75dc5363c7250c625592fbd46290d1bb0721a7bfea5ea431989c3c",
     "well_routine.py": "c95d34a245f9944640333f76425c8eef81f2c11607ab08d3acd3a7c9e1192647",
     "well_mechanism.py": "f3a44d7d1fd20268b9d8bceba73b44d2af39c812f1f41dfc803d6bf1ef4d827e",
