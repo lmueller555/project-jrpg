@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "actor_id": "grain_coworker",
+  "runtime_activation": false,
+  "dependencies": [
+    {
+      "file": "assets/characters/grain_workers/coworker/animation.json",
+      "sha256": "f9044cf828c62c92e180daea310ed904941b0cfadcd68fc74663b18dc61c7e28"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/identity_reference.png",
+      "sha256": "142eed56552494bd0512856af1250387ef23f137f9676f996600d1c2b7dd7a78"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/native_review.png",
+      "sha256": "bd96b7acdaec5b7c8ff0df9150b11909411e8c7185305393d989e3f354147470"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/work_generated.png",
+      "sha256": "3179481c18792be6643a7cad69ee72c89a999ba3725add5dd00b90fcb5ab14c1"
+    },
+    {
+      "file": "tools/build_grain_coworker.py",
+      "sha256": "acb15c67b5ed1c483167a9a3457492bdebc5ab0e1081cac492b39689c0823f24"
+    }
+  ],
+  "density": 2,
+  "method": "Retained complete-figure master cells selected by original reproducible exporter; native sampling occurs before downsampling, not enlargement of its legacy output.",
+  "activation_gates": [
+    "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
+    "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
+    "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
+    "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
+  ]
+}

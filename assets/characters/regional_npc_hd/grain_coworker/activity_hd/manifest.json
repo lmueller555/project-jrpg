@@ -1,0 +1,1120 @@
+{
+  "version": 1,
+  "actor_id": "grain_coworker",
+  "integration_status": "staged_not_integrated",
+  "runtime_activation": false,
+  "visual_approval": "pending_owner_review",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_canvas": [
+    48,
+    52
+  ],
+  "draw_anchor_logical": [
+    24,
+    46
+  ],
+  "sequences": {
+    "work_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/work_left_0.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -7,
+              -11
+            ],
+            [
+              -6,
+              -10
+            ]
+          ]
+        },
+        {
+          "file": "poses/work_left_1.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -10,
+              -12
+            ],
+            [
+              -7,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "poses/work_left_2.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -11,
+              -12
+            ],
+            [
+              -7,
+              -10
+            ]
+          ]
+        },
+        {
+          "file": "poses/work_left_3.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -8,
+              -11
+            ],
+            [
+              -6,
+              -10
+            ]
+          ]
+        }
+      ]
+    },
+    "assist_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/assist_right_0.png",
+          "duration_ms": 800,
+          "hands": [
+            [
+              9,
+              -14
+            ],
+            [
+              7,
+              -11
+            ]
+          ]
+        }
+      ]
+    },
+    "assist_low_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/assist_low_right_0.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              9,
+              -14
+            ],
+            [
+              7,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "poses/assist_low_right_1.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              9,
+              -10
+            ],
+            [
+              7,
+              -8
+            ]
+          ]
+        },
+        {
+          "file": "poses/assist_low_right_2.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              11,
+              -5
+            ],
+            [
+              8,
+              -4
+            ]
+          ]
+        },
+        {
+          "file": "poses/assist_low_right_3.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              11,
+              -7
+            ],
+            [
+              8,
+              -7
+            ]
+          ]
+        }
+      ]
+    },
+    "recover_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/recover_right_0.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "poses/recover_right_1.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "poses/recover_right_2.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "poses/recover_right_3.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "stretch_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/stretch_front_0.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "poses/stretch_front_1.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "poses/stretch_front_2.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "poses/stretch_front_3.png",
+          "duration_ms": 550
+        }
+      ]
+    }
+  },
+  "frames": [
+    {
+      "clip": "work_left",
+      "index": 0,
+      "file": "poses/work_left_0.png",
+      "sha256": "e90858365d449d87fe8a6e9d9fbf0a12b8ddaf8d898c8d628a51dad389a00ad1",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "work_left_0.png",
+        "duration_ms": 360,
+        "hands": [
+          [
+            -7,
+            -11
+          ],
+          [
+            -6,
+            -10
+          ]
+        ]
+      },
+      "legacy_body_sha256": "77d48e9da0deb9ef0b757de41fd9793679612b37230cb4a39db8312bba0f3645",
+      "source_registration": {
+        "source_rgba_sha256": "07e360a4b0bd71e6d9092c88ecb1b99d6f4bd804a7b537a422018246cd95586d",
+        "source_size_artwork": [
+          340,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          -6,
+          24
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          0,
+          0
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "work_left",
+      "index": 1,
+      "file": "poses/work_left_1.png",
+      "sha256": "f7bde68782d1fee4d251d55d28dfed4ea8ae0246521656711adde2d466acc39d",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "work_left_1.png",
+        "duration_ms": 360,
+        "hands": [
+          [
+            -10,
+            -12
+          ],
+          [
+            -7,
+            -11
+          ]
+        ]
+      },
+      "legacy_body_sha256": "65b74f7134461e12082c77969158b796a9484cf579c82e67c01bbd45195c1897",
+      "source_registration": {
+        "source_rgba_sha256": "2e31fc27443dd83f51b2379fd5ad7442ec2cee8cce7c9f1059207db728472f24",
+        "source_size_artwork": [
+          341,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          -2,
+          24
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          0,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "work_left",
+      "index": 2,
+      "file": "poses/work_left_2.png",
+      "sha256": "6e37ece0c86130345d0ac000ccb67f28c2267881342185a31fe70059224deed0",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "work_left_2.png",
+        "duration_ms": 360,
+        "hands": [
+          [
+            -11,
+            -12
+          ],
+          [
+            -7,
+            -10
+          ]
+        ]
+      },
+      "legacy_body_sha256": "e84ade7e543831133b62e77c0c8131b143364e38edeb5d4f9d90d173d24b0954",
+      "source_registration": {
+        "source_rgba_sha256": "2337c0f1040988199180e98d1718e0098365c9eb888d88c3d8e434e93770de76",
+        "source_size_artwork": [
+          341,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          2,
+          24
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          0,
+          2
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "work_left",
+      "index": 3,
+      "file": "poses/work_left_3.png",
+      "sha256": "385e1132f7d9d8fa7de8fc7c69756136be3671d909964188013e82c0e20c747f",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "work_left_3.png",
+        "duration_ms": 360,
+        "hands": [
+          [
+            -8,
+            -11
+          ],
+          [
+            -6,
+            -10
+          ]
+        ]
+      },
+      "legacy_body_sha256": "16000a4d708096796d5dea78731b4de741c29f0001e4c528746b463c2f6dd721",
+      "source_registration": {
+        "source_rgba_sha256": "50a8c3fbebf5c8c30c3ae69c4c81d245ef8cd35402a9ad99704f9fb79833c92f",
+        "source_size_artwork": [
+          340,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          12,
+          24
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          0,
+          3
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "assist_right",
+      "index": 0,
+      "file": "poses/assist_right_0.png",
+      "sha256": "198eb4956613d51efe222a7cf164b02a8ad5873dd9d25e920f979e4d28b8df20",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "assist_right_0.png",
+        "duration_ms": 800,
+        "hands": [
+          [
+            9,
+            -14
+          ],
+          [
+            7,
+            -11
+          ]
+        ]
+      },
+      "legacy_body_sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718",
+      "source_registration": {
+        "source_rgba_sha256": "bcf6654ae29a474e6d7ea97d21fb251dc22add59cf2facc0d2d5a6a9ba11d3fe",
+        "source_size_artwork": [
+          341,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          6,
+          26
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "assist_low_right",
+      "index": 0,
+      "file": "poses/assist_low_right_0.png",
+      "sha256": "198eb4956613d51efe222a7cf164b02a8ad5873dd9d25e920f979e4d28b8df20",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "assist_low_right_0.png",
+        "duration_ms": 200,
+        "hands": [
+          [
+            9,
+            -14
+          ],
+          [
+            7,
+            -11
+          ]
+        ]
+      },
+      "legacy_body_sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718",
+      "source_registration": {
+        "source_rgba_sha256": "bcf6654ae29a474e6d7ea97d21fb251dc22add59cf2facc0d2d5a6a9ba11d3fe",
+        "source_size_artwork": [
+          341,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          6,
+          26
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "assist_low_right",
+      "index": 1,
+      "file": "poses/assist_low_right_1.png",
+      "sha256": "0dce338743ba847a4a7b1593a62885d709945b52fd5eadeaba4722aa30697e21",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "assist_low_right_1.png",
+        "duration_ms": 200,
+        "hands": [
+          [
+            9,
+            -10
+          ],
+          [
+            7,
+            -8
+          ]
+        ]
+      },
+      "legacy_body_sha256": "23736cf42ea14b2f84fc3242c1e985aa8a98d04a8b7a70528e0af376f538c54e",
+      "source_registration": {
+        "source_rgba_sha256": "2b6a3dd05c95c985dc05d553d16d8cdcc561918edba86016a20d57cab41a55ff",
+        "source_size_artwork": [
+          341,
+          277
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          4,
+          27
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          2,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "assist_low_right",
+      "index": 2,
+      "file": "poses/assist_low_right_2.png",
+      "sha256": "7934f7fb58a1a665af2d38d298d67413bf38e0519e0fd58eada87d7a4f16e348",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "assist_low_right_2.png",
+        "duration_ms": 200,
+        "hands": [
+          [
+            11,
+            -5
+          ],
+          [
+            8,
+            -4
+          ]
+        ]
+      },
+      "legacy_body_sha256": "e5ee257bff8913ef6c0a977eebfb3fbc8888cde903dc868d802a33771faaafa4",
+      "source_registration": {
+        "source_rgba_sha256": "d1cc308c85c4c0bfca3bda7417a8a6594edaae9ad64f7b5a1a41871db4605046",
+        "source_size_artwork": [
+          341,
+          277
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          10,
+          27
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          2,
+          2
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "assist_low_right",
+      "index": 3,
+      "file": "poses/assist_low_right_3.png",
+      "sha256": "3909f1842a602971af623a3a4fd16d92ba7e54c13a0c21028648768ca0a9a448",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "assist_low_right_3.png",
+        "duration_ms": 200,
+        "hands": [
+          [
+            11,
+            -7
+          ],
+          [
+            8,
+            -7
+          ]
+        ]
+      },
+      "legacy_body_sha256": "d87c6ba49e47bf2aed27d006a417b036099fe87e867bcfbfb54700cbe5a17eb3",
+      "source_registration": {
+        "source_rgba_sha256": "3bcb3aa2c923e55dab799b5965ce76e1d1ad7513c744a447416ba3ccec32de75",
+        "source_size_artwork": [
+          340,
+          277
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          17,
+          27
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          2,
+          3
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "recover_right",
+      "index": 0,
+      "file": "poses/recover_right_0.png",
+      "sha256": "3909f1842a602971af623a3a4fd16d92ba7e54c13a0c21028648768ca0a9a448",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_right_0.png",
+        "duration_ms": 100
+      },
+      "legacy_body_sha256": "d87c6ba49e47bf2aed27d006a417b036099fe87e867bcfbfb54700cbe5a17eb3",
+      "source_registration": {
+        "source_rgba_sha256": "3bcb3aa2c923e55dab799b5965ce76e1d1ad7513c744a447416ba3ccec32de75",
+        "source_size_artwork": [
+          340,
+          277
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          17,
+          27
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          2,
+          3
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "recover_right",
+      "index": 1,
+      "file": "poses/recover_right_1.png",
+      "sha256": "0dce338743ba847a4a7b1593a62885d709945b52fd5eadeaba4722aa30697e21",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_right_1.png",
+        "duration_ms": 100
+      },
+      "legacy_body_sha256": "23736cf42ea14b2f84fc3242c1e985aa8a98d04a8b7a70528e0af376f538c54e",
+      "source_registration": {
+        "source_rgba_sha256": "2b6a3dd05c95c985dc05d553d16d8cdcc561918edba86016a20d57cab41a55ff",
+        "source_size_artwork": [
+          341,
+          277
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          4,
+          27
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          2,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "recover_right",
+      "index": 2,
+      "file": "poses/recover_right_2.png",
+      "sha256": "198eb4956613d51efe222a7cf164b02a8ad5873dd9d25e920f979e4d28b8df20",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_right_2.png",
+        "duration_ms": 100
+      },
+      "legacy_body_sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718",
+      "source_registration": {
+        "source_rgba_sha256": "bcf6654ae29a474e6d7ea97d21fb251dc22add59cf2facc0d2d5a6a9ba11d3fe",
+        "source_size_artwork": [
+          341,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          6,
+          26
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "recover_right",
+      "index": 3,
+      "file": "poses/recover_right_3.png",
+      "sha256": "198eb4956613d51efe222a7cf164b02a8ad5873dd9d25e920f979e4d28b8df20",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_right_3.png",
+        "duration_ms": 100
+      },
+      "legacy_body_sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718",
+      "source_registration": {
+        "source_rgba_sha256": "bcf6654ae29a474e6d7ea97d21fb251dc22add59cf2facc0d2d5a6a9ba11d3fe",
+        "source_size_artwork": [
+          341,
+          289
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          6,
+          26
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "stretch_front",
+      "index": 0,
+      "file": "poses/stretch_front_0.png",
+      "sha256": "91ea28e55ac16d2e59d69a056f277c7c5b676fbc5f256cc23e99585dfae65f75",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "stretch_front_0.png",
+        "duration_ms": 550
+      },
+      "legacy_body_sha256": "ab463eca95537c0c24b76ecd2ae9f889d66fafb368f36f691561b2cfac6d0b74",
+      "source_registration": {
+        "source_rgba_sha256": "4c5f5388e86fe8f566626f43b3ecfbd7e82c83fd031131d19532d6d1a2a6697e",
+        "source_size_artwork": [
+          340,
+          300
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          -6,
+          23
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          3,
+          0
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "stretch_front",
+      "index": 1,
+      "file": "poses/stretch_front_1.png",
+      "sha256": "4f7fa69c7ac7aa660e748a885fc4b535aaa7bceff72d45c903f30bed1a6f5c69",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "stretch_front_1.png",
+        "duration_ms": 550
+      },
+      "legacy_body_sha256": "39c2e60c6d1c3caa953b5a3bd5aee661ad535d4fdc28095583826739123e51df",
+      "source_registration": {
+        "source_rgba_sha256": "976d4cdf361ffadcb7bfd5e5e5bc014fd3d42b6e7e3ab21f8bc41a0c3f8db060",
+        "source_size_artwork": [
+          341,
+          300
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          3,
+          23
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          3,
+          1
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "stretch_front",
+      "index": 2,
+      "file": "poses/stretch_front_2.png",
+      "sha256": "910b1107f05c268a2c99bad63bec4ade14b75660609dba90c1a8902ff4524781",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "stretch_front_2.png",
+        "duration_ms": 550
+      },
+      "legacy_body_sha256": "8ce54b4b108ceab4b6c23913de27ad34bad524af3601ea8399f8c5ef9613eb3f",
+      "source_registration": {
+        "source_rgba_sha256": "a2b6d752f391f8b916b8d785002f8d473eeb67a2697fbf1bcec981774d20af6a",
+        "source_size_artwork": [
+          341,
+          300
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          10,
+          23
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          3,
+          2
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    },
+    {
+      "clip": "stretch_front",
+      "index": 3,
+      "file": "poses/stretch_front_3.png",
+      "sha256": "704fc86fcb2ca6475197e655d0e5bf5b3bc2e7ba8de5dc1578f376664bc62ce2",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "stretch_front_3.png",
+        "duration_ms": 550
+      },
+      "legacy_body_sha256": "3c68ff838d4147af57fa686e173a8f0273a0d09117e972e38b035b3a33dc194a",
+      "source_registration": {
+        "source_rgba_sha256": "42d805bc071405effb59846ca502b1faf9a64cd282b19c97ca9c2ed4f93908b2",
+        "source_size_artwork": [
+          340,
+          300
+        ],
+        "uniform_scale_to_native": 0.25,
+        "origin_native": [
+          18,
+          23
+        ],
+        "registration_kind": "soles",
+        "head_aligned": false,
+        "source_cell": [
+          3,
+          3
+        ],
+        "source_file": "assets/source/characters/grain_workers/coworker/work_generated.png"
+      }
+    }
+  ],
+  "source_recipe": "assets/source/characters/regional_npc_hd/grain_coworker/activity_hd/recipe.json",
+  "source_recipe_sha256": "b63753bdca6ff696f74e3d1e8955e1cfa9abc143688f196dd6dda029919f83e1",
+  "builder": "tools/build_regional_worker_activity_hd.py",
+  "builder_sha256": "40d5f987163ffaceabff386533b5b5531bb554e700203ab7464f0ff70d741043",
+  "motion_reviews": [
+    {
+      "file": "review/work_left_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/work_left_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 2880,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/assist_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 800,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/assist_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1600,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/assist_low_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 800,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/assist_low_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1600,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/recover_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/recover_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 800,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/stretch_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 2200,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/stretch_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 4400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    }
+  ],
+  "dependencies": [
+    {
+      "file": "assets/characters/grain_workers/coworker/animation.json",
+      "sha256": "f9044cf828c62c92e180daea310ed904941b0cfadcd68fc74663b18dc61c7e28"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/identity_reference.png",
+      "sha256": "142eed56552494bd0512856af1250387ef23f137f9676f996600d1c2b7dd7a78"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/native_review.png",
+      "sha256": "bd96b7acdaec5b7c8ff0df9150b11909411e8c7185305393d989e3f354147470"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/work_generated.png",
+      "sha256": "3179481c18792be6643a7cad69ee72c89a999ba3725add5dd00b90fcb5ab14c1"
+    },
+    {
+      "file": "tools/build_grain_coworker.py",
+      "sha256": "acb15c67b5ed1c483167a9a3457492bdebc5ab0e1081cac492b39689c0823f24"
+    }
+  ],
+  "activation_gates": [
+    "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
+    "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
+    "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
+    "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
+  ],
+  "canvas_geometry": "Art-only padding grows40x44 to48x52, with anchor20,38 ->24,46; body-to-ground transform and world attachment offsets are unchanged. Padding restores full source crowns instead of clipping high cells.",
+  "limits": "Retained complete source bodies re-sampled uniformly at2x. No runtime binding, prop ownership, hand metadata, timing, collision or save changes; props remain separately owned. Not a user visual approval."
+}
