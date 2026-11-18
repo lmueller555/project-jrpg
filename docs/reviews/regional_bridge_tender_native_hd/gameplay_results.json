@@ -1,0 +1,33 @@
+{
+  "tests_run": 24,
+  "passed": [
+    "test_bridge_crew.BridgeCrewTests.test_finite_batch_then_maintenance_no_story_mutation",
+    "test_bridge_crew.BridgeCrewTests.test_sorting_phase_changes_do_not_stutter_the_independent_surveyor",
+    "test_bridge_crew.BridgeCrewTests.test_full_scene_and_repeat_greeting",
+    "test_bridge_crew.BridgeCrewTests.test_blocked_carry_waits_and_recovers",
+    "test_bridge_crew.BridgeCrewTests.test_no_worker_overlap_during_scene",
+    "test_bridge_crew.BridgeCrewTests.test_pause_map_journal_and_town_suspend",
+    "test_bridge_crew.BridgeCrewTests.test_continue_at_each_completed_tea_beat",
+    "test_bridge_crew.BridgeCrewTests.test_continue_unplaced_stone_returns_to_source",
+    "test_bridge_crew.BridgeCrewTests.test_cancelled_dialogue_keeps_physical_beat",
+    "test_bridge_crew.BridgeCrewTests.test_schema_rejects_corrupt_payload",
+    "test_bridge_crew.BridgeCrewTests.test_chunk_eviction_does_not_own_crew",
+    "test_bridge_crew.BridgeCrewTests.test_handoff_reservation_does_not_trap_player",
+    "test_bridge_crew.BridgeCrewTests.test_main_road_and_approach_remain_clear",
+    "test_bridge_crew.BridgeCrewTests.test_continue_immediately_after_first_dialogue_skips_read_lines",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_explicit_binding_only_and_original_physics",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_unbound_roles_do_not_receive_implicit_sibling_activation",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_native_roster_pixels_survive_padding_and_each_complete_cycle",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_legacy_activity_mirror_and_attachment_metadata_stay_stable",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_bound_speaker_uses_matching_existing_portrait_only",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_all_bindings_keep_original_activity_sources_and_approved_banks_read_only",
+    "test_npc_roster_bindings.RosterBindings.test_exact_seven_without_mutating_map_or_actor_identity",
+    "test_npc_roster_bindings.RosterBindings.test_native_idles_and_all_walk_frames_are_exact_at_world_scale",
+    "test_npc_roster_bindings.RosterBindings.test_service_portraits_are_bound_without_changing_shared_civilian_portraits",
+    "test_npc_roster_bindings.RosterBindings.test_unmigrated_character_art_and_five_household_portrait_bindings"
+  ],
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "execution": "One test case per fresh subprocess using repository ReviewResult."
+}
