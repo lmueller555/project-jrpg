@@ -1,0 +1,433 @@
+{
+  "anchor": [
+    12,
+    30
+  ],
+  "frame_size": [
+    48,
+    72
+  ],
+  "travel_artwork_pixels_per_world_pixel": 2,
+  "migration_status": "integrated",
+  "activation_requires": [
+    "runner_place",
+    "carry_idles",
+    "carry_walks"
+  ],
+  "idles": {
+    "front": "assets/characters/npc_roster_hd/adult_woman_01/idle_front.png",
+    "back": "assets/characters/npc_roster_hd/adult_woman_01/idle_back.png",
+    "left": "assets/characters/npc_roster_hd/adult_woman_01/idle_left.png",
+    "right": "assets/characters/npc_roster_hd/adult_woman_01/idle_right.png"
+  },
+  "walks": {
+    "front": [
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_01.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_02.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_03.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_04.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_05.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_06.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_07.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_front/frame_08.png",
+        "duration_ms": 70
+      }
+    ],
+    "back": [
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_01.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_02.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_03.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_04.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_05.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_06.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_07.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_back/frame_08.png",
+        "duration_ms": 70
+      }
+    ],
+    "left": [
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_01.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_02.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_03.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_04.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_05.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_06.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_07.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_left/frame_08.png",
+        "duration_ms": 70
+      }
+    ],
+    "right": [
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_01.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_02.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_03.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_04.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_05.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_06.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_07.png",
+        "duration_ms": 70
+      },
+      {
+        "file": "assets/characters/npc_roster_hd/adult_woman_01/walk_right/frame_08.png",
+        "duration_ms": 70
+      }
+    ]
+  },
+  "poses": {
+    "runner_place": {
+      "frames": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_00.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            29
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_01.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            31
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_02.png",
+          "duration_ms": 100,
+          "hand": [
+            25,
+            33
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_03.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            35
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_04.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            37
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_05.png",
+          "duration_ms": 100,
+          "hand": [
+            23,
+            39
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_06.png",
+          "duration_ms": 100,
+          "hand": [
+            22,
+            41
+          ],
+          "held_prop": "linen"
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_07.png",
+          "duration_ms": 100,
+          "hand": [
+            22,
+            41
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_08.png",
+          "duration_ms": 100,
+          "hand": [
+            23,
+            38
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_09.png",
+          "duration_ms": 100,
+          "hand": [
+            24,
+            35
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_10.png",
+          "duration_ms": 100,
+          "hand": [
+            26,
+            32
+          ]
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/runner_place/frame_11.png",
+          "duration_ms": 100,
+          "hand": [
+            27,
+            29
+          ]
+        }
+      ],
+      "loop": false,
+      "anchor": [
+        32,
+        40
+      ],
+      "facing": "left",
+      "cue_ms": {
+        "linen_deposit": 700
+      },
+      "artwork_pixels_per_world_pixel": 2
+    }
+  },
+  "carrying": {
+    "carry_artwork_pixels_per_world_pixel": 2,
+    "carry_anchor": [
+      12,
+      30
+    ],
+    "carry_idles": {
+      "front": "assets/characters/named_hd/sanctuary_attendant/carry_idle_front.png",
+      "back": "assets/characters/named_hd/sanctuary_attendant/carry_idle_back.png",
+      "left": "assets/characters/named_hd/sanctuary_attendant/carry_idle_left.png",
+      "right": "assets/characters/named_hd/sanctuary_attendant/carry_idle_right.png"
+    },
+    "carry_walks": {
+      "front": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_00.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_06.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_front/frame_07.png",
+          "duration_ms": 70
+        }
+      ],
+      "back": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_00.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_06.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_back/frame_07.png",
+          "duration_ms": 70
+        }
+      ],
+      "left": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_00.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_06.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_left/frame_07.png",
+          "duration_ms": 70
+        }
+      ],
+      "right": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_00.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_06.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "assets/characters/named_hd/sanctuary_attendant/carry_walk_right/frame_07.png",
+          "duration_ms": 70
+        }
+      ]
+    }
+  },
+  "portrait": "arrival_runner_hd",
+  "portrait_file": "assets/characters/npc_roster_hd/adult_woman_01/portrait.png"
+}
