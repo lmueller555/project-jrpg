@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "character": "child_girl_04",
+  "animation": "walk.left",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/child_girl_04/walk_left/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/child_girl_04/walk_left/authored.png": "a0e5e9a396b2586d7fc319fde62df021a345ae74b262c601b71beae0db10e3e9",
+    "assets/characters/npc_roster_hd/child_girl_04/idle_left.png": "a93609dad2b470c6fa13efdc059db19ad78ff4234f683346aad61de4768860f4"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 1,
+      "base_source": 5,
+      "base_sha256": "40630796450cb3f3a1dccfc09b3720d5f4492e7854366fe46e8a873214b2978f",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        19,
+        57,
+        21,
+        60
+      ],
+      "visible_patch_pixels": 10,
+      "phase": "right_contact",
+      "support_detail": "right contact/left toe",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 2,
+      "base_source": 6,
+      "base_sha256": "dd53f1c77ce019c82c7ff647e6791ce62b31ecb2452c433dd8d00e2709d6c5a5",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        20,
+        57,
+        22,
+        60
+      ],
+      "visible_patch_pixels": 6,
+      "phase": "right_down",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          19
+        ],
+        "neck": [
+          24,
+          37
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 3,
+      "base_source": 7,
+      "base_sha256": "100f800d2a14a52b27db7eba639271e5827955249fe5e44392d2f578ed6bf8b7",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        23,
+        57,
+        25,
+        60
+      ],
+      "visible_patch_pixels": 0,
+      "phase": "left_passing",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 4,
+      "base_source": 8,
+      "base_sha256": "21b9cdbe9044e32e183d5e45c76d6e1262aafa21befa3d15984304ba3bcdd433",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        26,
+        57,
+        28,
+        60
+      ],
+      "visible_patch_pixels": 12,
+      "phase": "left_recovery",
+      "support_detail": "right toe,left recovery",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          17
+        ],
+        "neck": [
+          24,
+          35
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 5,
+      "base_source": 1,
+      "base_sha256": "7414f179a7be485f81cea15826c8d966c4b55ee15f570cd89badcbb85ac30e61",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        26,
+        57,
+        28,
+        59
+      ],
+      "visible_patch_pixels": 5,
+      "phase": "left_contact",
+      "support_detail": "left contact/right toe",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 6,
+      "base_source": 2,
+      "base_sha256": "e15bf1dc3d043239df4484758ed2cf944cd741798b34e85f817ceff8feacabe2",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        26,
+        56,
+        28,
+        58
+      ],
+      "visible_patch_pixels": 0,
+      "phase": "left_down",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          19
+        ],
+        "neck": [
+          24,
+          37
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 7,
+      "base_source": 3,
+      "base_sha256": "28bc8ed3bddea151f5f62f3be8b723e24b256880fd2c059f19694a39b1314189",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        23,
+        56,
+        25,
+        58
+      ],
+      "visible_patch_pixels": 0,
+      "phase": "right_passing",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 8,
+      "base_source": 4,
+      "base_sha256": "fa5a5a978622d968714334d66078ef40397b96fadc3a9dddf6b8a0f64afb4dcf",
+      "patch_anatomy": "RIGHT far knee",
+      "patch_box": [
+        19,
+        56,
+        21,
+        58
+      ],
+      "visible_patch_pixels": 8,
+      "phase": "right_recovery",
+      "support_detail": "left toe,right recovery",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          17
+        ],
+        "neck": [
+          24,
+          35
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
