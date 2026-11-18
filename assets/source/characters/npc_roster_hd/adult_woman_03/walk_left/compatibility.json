@@ -1,0 +1,250 @@
+{
+  "target": "adult_woman_03 left",
+  "reference": "adult_woman_01 left",
+  "exact_alpha_equal": true,
+  "exact_material_region_shape_equal": true,
+  "material_regions": 17,
+  "palette_bijection": [
+    {
+      "reference": [
+        26,
+        14,
+        22,
+        255
+      ],
+      "target": [
+        26,
+        14,
+        22,
+        255
+      ]
+    },
+    {
+      "reference": [
+        75,
+        55,
+        60,
+        255
+      ],
+      "target": [
+        199,
+        159,
+        91,
+        255
+      ]
+    },
+    {
+      "reference": [
+        112,
+        83,
+        90,
+        255
+      ],
+      "target": [
+        234,
+        209,
+        151,
+        255
+      ]
+    },
+    {
+      "reference": [
+        232,
+        196,
+        157,
+        255
+      ],
+      "target": [
+        232,
+        196,
+        157,
+        255
+      ]
+    },
+    {
+      "reference": [
+        248,
+        228,
+        195,
+        255
+      ],
+      "target": [
+        248,
+        228,
+        195,
+        255
+      ]
+    },
+    {
+      "reference": [
+        237,
+        175,
+        120,
+        255
+      ],
+      "target": [
+        237,
+        175,
+        120,
+        255
+      ]
+    },
+    {
+      "reference": [
+        165,
+        103,
+        72,
+        255
+      ],
+      "target": [
+        165,
+        103,
+        72,
+        255
+      ]
+    },
+    {
+      "reference": [
+        77,
+        119,
+        160,
+        255
+      ],
+      "target": [
+        128,
+        84,
+        119,
+        255
+      ]
+    },
+    {
+      "reference": [
+        125,
+        165,
+        199,
+        255
+      ],
+      "target": [
+        173,
+        128,
+        160,
+        255
+      ]
+    },
+    {
+      "reference": [
+        48,
+        79,
+        112,
+        255
+      ],
+      "target": [
+        81,
+        54,
+        79,
+        255
+      ]
+    },
+    {
+      "reference": [
+        177,
+        142,
+        86,
+        255
+      ],
+      "target": [
+        177,
+        142,
+        86,
+        255
+      ]
+    },
+    {
+      "reference": [
+        104,
+        68,
+        46,
+        255
+      ],
+      "target": [
+        104,
+        68,
+        46,
+        255
+      ]
+    },
+    {
+      "reference": [
+        255,
+        224,
+        181,
+        255
+      ],
+      "target": [
+        255,
+        224,
+        181,
+        255
+      ]
+    },
+    {
+      "reference": [
+        135,
+        100,
+        73,
+        255
+      ],
+      "target": [
+        135,
+        100,
+        73,
+        255
+      ]
+    },
+    {
+      "reference": [
+        113,
+        75,
+        52,
+        255
+      ],
+      "target": [
+        113,
+        75,
+        52,
+        255
+      ]
+    },
+    {
+      "reference": [
+        178,
+        138,
+        93,
+        255
+      ],
+      "target": [
+        178,
+        138,
+        93,
+        255
+      ]
+    },
+    {
+      "reference": [
+        152,
+        112,
+        76,
+        255
+      ],
+      "target": [
+        152,
+        112,
+        76,
+        255
+      ]
+    }
+  ],
+  "reference_idle_sha256": "0b83d47b1fe39f84b0dc05badb03dbdbf96ba5b1975ba9d4f118c1dbbce3af80",
+  "target_idle_sha256": "6ffe97361f721fcbe364dc043b0b1821e63cc9d96d859b6f29b38c35e49cdb59",
+  "accepted_source_sha256": "1a9cd796851d3fbc528727cfebd86693693f331bfa7ee68031487c762d8e08e1"
+}
