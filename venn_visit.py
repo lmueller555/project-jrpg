@@ -9,6 +9,7 @@ from inventory import Inventory
 from quests import OPENING_QUEST, QuestLog
 from social import clear_sight, facing_toward
 from venn_magicks import VennMagicks
+from npc_roster_art import RosterArt
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/venn/'
@@ -26,7 +27,11 @@ class VennResident:
         self.data = {'id': 'venn_'+role, 'name': name, 'family_role': role, 'household_id': 'venn'}
         self.position = pygame.Vector2(position);self.probe_size = (12, 8)
         self.draw_anchor = (12, 30);self.facing = 'front'
-        self.idles = {d: world.image(ART+f'{role}/idle_{d}.png') for d in ('front', 'left', 'right', 'back')}
+        bank = ROOT/f'assets/characters/named_hd/venn_{role}/design.json'
+        self.named_art = RosterArt(world, 'venn_'+role, named=True) if role != 'child' and bank.is_file() else None
+        self.idles = (self.named_art.idles if self.named_art else
+                      {d: world.image(ART+f'{role}/idle_{d}.png') for d in ('front', 'left', 'right', 'back')})
+        if self.named_art:self.draw_anchor = self.named_art.draw_anchor
         self.conversation_ready = False;self.conversation_facing = 'front';self.role = role
         if role == 'child':
             self.heads = [world.image(ART+'child/rest_head.png'), world.image(ART+'child/rest_blink.png')]

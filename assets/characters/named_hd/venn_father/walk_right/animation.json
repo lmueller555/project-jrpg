@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "character": "venn_father",
+  "animation": "walk.right",
+  "status": "candidate",
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "cycle_ms": 560,
+  "loop": true,
+  "spritesheet": "spritesheet.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "bounds": [
+        12,
+        2,
+        41,
+        70
+      ],
+      "crown_y": 2,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "bounds": [
+        13,
+        3,
+        37,
+        70
+      ],
+      "crown_y": 3,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "bounds": [
+        15,
+        2,
+        35,
+        70
+      ],
+      "crown_y": 2,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "bounds": [
+        15,
+        1,
+        38,
+        70
+      ],
+      "crown_y": 1,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "bounds": [
+        13,
+        2,
+        40,
+        70
+      ],
+      "crown_y": 2,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "bounds": [
+        14,
+        3,
+        36,
+        70
+      ],
+      "crown_y": 3,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "bounds": [
+        15,
+        2,
+        35,
+        70
+      ],
+      "crown_y": 2,
+      "visible_sole_y": 69
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "bounds": [
+        13,
+        1,
+        39,
+        70
+      ],
+      "crown_y": 1,
+      "visible_sole_y": 69
+    }
+  ]
+}
