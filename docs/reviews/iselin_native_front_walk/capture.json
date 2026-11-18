@@ -1,0 +1,2558 @@
+{
+  "renderer": "World.draw + WorldCanvas.present_detail, 960x640 presentation; scenery frozen at0.",
+  "movement": "RegentQuest._move at74worldpx/s for travel; explicitly pinned in-place inspection separately.",
+  "scope": "Review actor only; live Iselin art bindings/walks/quest state unchanged.",
+  "persistence": "Disposable save/settings directory; no player saves published.",
+  "base_commit": "384e4ecc77043efd0a909c6fba02f5b8b9592a52",
+  "walking_speed_world_px_s": 74,
+  "simulation_step_ms": 35,
+  "fixed_camera": [
+    144,
+    355
+  ],
+  "route_start": [
+    384,
+    432
+  ],
+  "route_goal": [
+    384,
+    598
+  ],
+  "route_clearance_positions": [
+    [
+      384,
+      432
+    ],
+    [
+      384,
+      433
+    ],
+    [
+      384,
+      434
+    ],
+    [
+      384,
+      435
+    ],
+    [
+      384,
+      436
+    ],
+    [
+      384,
+      437
+    ],
+    [
+      384,
+      438
+    ],
+    [
+      384,
+      439
+    ],
+    [
+      384,
+      440
+    ],
+    [
+      384,
+      441
+    ],
+    [
+      384,
+      442
+    ],
+    [
+      384,
+      443
+    ],
+    [
+      384,
+      444
+    ],
+    [
+      384,
+      445
+    ],
+    [
+      384,
+      446
+    ],
+    [
+      384,
+      447
+    ],
+    [
+      384,
+      448
+    ],
+    [
+      384,
+      449
+    ],
+    [
+      384,
+      450
+    ],
+    [
+      384,
+      451
+    ],
+    [
+      384,
+      452
+    ],
+    [
+      384,
+      453
+    ],
+    [
+      384,
+      454
+    ],
+    [
+      384,
+      455
+    ],
+    [
+      384,
+      456
+    ],
+    [
+      384,
+      457
+    ],
+    [
+      384,
+      458
+    ],
+    [
+      384,
+      459
+    ],
+    [
+      384,
+      460
+    ],
+    [
+      384,
+      461
+    ],
+    [
+      384,
+      462
+    ],
+    [
+      384,
+      463
+    ],
+    [
+      384,
+      464
+    ],
+    [
+      384,
+      465
+    ],
+    [
+      384,
+      466
+    ],
+    [
+      384,
+      467
+    ],
+    [
+      384,
+      468
+    ],
+    [
+      384,
+      469
+    ],
+    [
+      384,
+      470
+    ],
+    [
+      384,
+      471
+    ],
+    [
+      384,
+      472
+    ],
+    [
+      384,
+      473
+    ],
+    [
+      384,
+      474
+    ],
+    [
+      384,
+      475
+    ],
+    [
+      384,
+      476
+    ],
+    [
+      384,
+      477
+    ],
+    [
+      384,
+      478
+    ],
+    [
+      384,
+      479
+    ],
+    [
+      384,
+      480
+    ],
+    [
+      384,
+      481
+    ],
+    [
+      384,
+      482
+    ],
+    [
+      384,
+      483
+    ],
+    [
+      384,
+      484
+    ],
+    [
+      384,
+      485
+    ],
+    [
+      384,
+      486
+    ],
+    [
+      384,
+      487
+    ],
+    [
+      384,
+      488
+    ],
+    [
+      384,
+      489
+    ],
+    [
+      384,
+      490
+    ],
+    [
+      384,
+      491
+    ],
+    [
+      384,
+      492
+    ],
+    [
+      384,
+      493
+    ],
+    [
+      384,
+      494
+    ],
+    [
+      384,
+      495
+    ],
+    [
+      384,
+      496
+    ],
+    [
+      384,
+      497
+    ],
+    [
+      384,
+      498
+    ],
+    [
+      384,
+      499
+    ],
+    [
+      384,
+      500
+    ],
+    [
+      384,
+      501
+    ],
+    [
+      384,
+      502
+    ],
+    [
+      384,
+      503
+    ],
+    [
+      384,
+      504
+    ],
+    [
+      384,
+      505
+    ],
+    [
+      384,
+      506
+    ],
+    [
+      384,
+      507
+    ],
+    [
+      384,
+      508
+    ],
+    [
+      384,
+      509
+    ],
+    [
+      384,
+      510
+    ],
+    [
+      384,
+      511
+    ],
+    [
+      384,
+      512
+    ],
+    [
+      384,
+      513
+    ],
+    [
+      384,
+      514
+    ],
+    [
+      384,
+      515
+    ],
+    [
+      384,
+      516
+    ],
+    [
+      384,
+      517
+    ],
+    [
+      384,
+      518
+    ],
+    [
+      384,
+      519
+    ],
+    [
+      384,
+      520
+    ],
+    [
+      384,
+      521
+    ],
+    [
+      384,
+      522
+    ],
+    [
+      384,
+      523
+    ],
+    [
+      384,
+      524
+    ],
+    [
+      384,
+      525
+    ],
+    [
+      384,
+      526
+    ],
+    [
+      384,
+      527
+    ],
+    [
+      384,
+      528
+    ],
+    [
+      384,
+      529
+    ],
+    [
+      384,
+      530
+    ],
+    [
+      384,
+      531
+    ],
+    [
+      384,
+      532
+    ],
+    [
+      384,
+      533
+    ],
+    [
+      384,
+      534
+    ],
+    [
+      384,
+      535
+    ],
+    [
+      384,
+      536
+    ],
+    [
+      384,
+      537
+    ],
+    [
+      384,
+      538
+    ],
+    [
+      384,
+      539
+    ],
+    [
+      384,
+      540
+    ],
+    [
+      384,
+      541
+    ],
+    [
+      384,
+      542
+    ],
+    [
+      384,
+      543
+    ],
+    [
+      384,
+      544
+    ],
+    [
+      384,
+      545
+    ],
+    [
+      384,
+      546
+    ],
+    [
+      384,
+      547
+    ],
+    [
+      384,
+      548
+    ],
+    [
+      384,
+      549
+    ],
+    [
+      384,
+      550
+    ],
+    [
+      384,
+      551
+    ],
+    [
+      384,
+      552
+    ],
+    [
+      384,
+      553
+    ],
+    [
+      384,
+      554
+    ],
+    [
+      384,
+      555
+    ],
+    [
+      384,
+      556
+    ],
+    [
+      384,
+      557
+    ],
+    [
+      384,
+      558
+    ],
+    [
+      384,
+      559
+    ],
+    [
+      384,
+      560
+    ],
+    [
+      384,
+      561
+    ],
+    [
+      384,
+      562
+    ],
+    [
+      384,
+      563
+    ],
+    [
+      384,
+      564
+    ],
+    [
+      384,
+      565
+    ],
+    [
+      384,
+      566
+    ],
+    [
+      384,
+      567
+    ],
+    [
+      384,
+      568
+    ],
+    [
+      384,
+      569
+    ],
+    [
+      384,
+      570
+    ],
+    [
+      384,
+      571
+    ],
+    [
+      384,
+      572
+    ],
+    [
+      384,
+      573
+    ],
+    [
+      384,
+      574
+    ],
+    [
+      384,
+      575
+    ],
+    [
+      384,
+      576
+    ],
+    [
+      384,
+      577
+    ],
+    [
+      384,
+      578
+    ],
+    [
+      384,
+      579
+    ],
+    [
+      384,
+      580
+    ],
+    [
+      384,
+      581
+    ],
+    [
+      384,
+      582
+    ],
+    [
+      384,
+      583
+    ],
+    [
+      384,
+      584
+    ],
+    [
+      384,
+      585
+    ],
+    [
+      384,
+      586
+    ],
+    [
+      384,
+      587
+    ],
+    [
+      384,
+      588
+    ],
+    [
+      384,
+      589
+    ],
+    [
+      384,
+      590
+    ],
+    [
+      384,
+      591
+    ],
+    [
+      384,
+      592
+    ],
+    [
+      384,
+      593
+    ],
+    [
+      384,
+      594
+    ],
+    [
+      384,
+      595
+    ],
+    [
+      384,
+      596
+    ],
+    [
+      384,
+      597
+    ],
+    [
+      384,
+      598
+    ]
+  ],
+  "quests_unchanged": true,
+  "normal_loop_ms": 560,
+  "normal_gif_exposures_ms": [
+    30,
+    40,
+    30,
+    40,
+    30,
+    40,
+    30,
+    40,
+    30,
+    40,
+    30,
+    40,
+    30,
+    40,
+    30,
+    40
+  ],
+  "slow_loop_ms": 1680,
+  "slow_gif_exposures_ms": [
+    100,
+    110,
+    100,
+    110,
+    100,
+    110,
+    100,
+    110,
+    100,
+    110,
+    100,
+    110,
+    100,
+    110,
+    100,
+    110
+  ],
+  "travel_frames": [
+    {
+      "phase": "IDLE",
+      "sample": 0,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "IDLE",
+      "sample": 1,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "IDLE",
+      "sample": 2,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "IDLE",
+      "sample": 3,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "IDLE",
+      "sample": 4,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "IDLE",
+      "sample": 5,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "IDLE",
+      "sample": 6,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "IDLE",
+      "sample": 7,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 8,
+      "position": [
+        384.0,
+        434.59
+      ],
+      "walk_ms": 35.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "217fa1d26e7eb70f4f34403a3366d23a8df82966dfe710637905deb436738fa2",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 9,
+      "position": [
+        384.0,
+        437.18
+      ],
+      "walk_ms": 70.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "53b2d15274489175d46e8f6dde8fa960745b84efd5b6f4ed38cb30d43867871b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 10,
+      "position": [
+        384.0,
+        439.77
+      ],
+      "walk_ms": 105.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "87fecb41f46a089d617c35c3aa1eee7fb65874d2a1e65462cf943b74bbf82cc8",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 11,
+      "position": [
+        384.0,
+        442.36
+      ],
+      "walk_ms": 140.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0fac1adb2f785ea5477321265fa8a6f40284f9e74851bb31acd5de2d24938e9e",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 12,
+      "position": [
+        384.0,
+        444.95
+      ],
+      "walk_ms": 175.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0eee37740fb08e9f00a6717893e9b52aa2adf6975c55bcd4ec642e7db92f00cc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 13,
+      "position": [
+        384.0,
+        447.54
+      ],
+      "walk_ms": 210.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "55b0316e277e8371a6fa9e1ad788e9b50aaacddbe21479424b1c343c7148fbac",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 14,
+      "position": [
+        384.0,
+        450.13
+      ],
+      "walk_ms": 245.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "22b8a44ec591d91ee5e960e2ec5424fc22a06ae2d82ad9938c019882683b974b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 15,
+      "position": [
+        384.0,
+        452.72
+      ],
+      "walk_ms": 280.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0f328cb5cd9268bbed5a5c94acc890684b40f0be10786eb29702da47c7568c",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 16,
+      "position": [
+        384.0,
+        455.31
+      ],
+      "walk_ms": 315.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0f328cb5cd9268bbed5a5c94acc890684b40f0be10786eb29702da47c7568c",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 17,
+      "position": [
+        384.0,
+        457.9
+      ],
+      "walk_ms": 350.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d95f671847a5d23d61c211a3bcd62967b5a0f6f9e8cc218e6fcc75c28ec31e96",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 18,
+      "position": [
+        384.0,
+        460.49
+      ],
+      "walk_ms": 385.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "880c35557f521bb976324731b979d56612379d4b2329b392f71305eb569b6c02",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 19,
+      "position": [
+        384.0,
+        463.08
+      ],
+      "walk_ms": 420.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "88bac3cd86b60610e727d1644dce71d08716139091a05199e608866f25349df7",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 20,
+      "position": [
+        384.0,
+        465.67
+      ],
+      "walk_ms": 455.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "450ce98ffbd76193c18c1d544fa12105593ff47e3f87c46d482ec2d2caa3f8fc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 21,
+      "position": [
+        384.0,
+        468.26
+      ],
+      "walk_ms": 490.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "6a73df2e1c77b4951530fe19f651a57f4e1dccb7271a4478d9de4229356de976",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 22,
+      "position": [
+        384.0,
+        470.85
+      ],
+      "walk_ms": 525.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d5e042a79d08104ddc5d1624392e813a6be53a8e3453fcec4f6e04195685c9a6",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 23,
+      "position": [
+        384.0,
+        473.44
+      ],
+      "walk_ms": 560.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0ae7dd54675eb3702738f85f991b75de3e5ae5a5672d7870062f23bc9b0e13",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 24,
+      "position": [
+        384.0,
+        476.03
+      ],
+      "walk_ms": 595.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d4d2f79151f3ea2f10e83e98955531a9ca16467dacf1880e51c736f702ce8181",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 25,
+      "position": [
+        384.0,
+        478.62
+      ],
+      "walk_ms": 630.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "53b2d15274489175d46e8f6dde8fa960745b84efd5b6f4ed38cb30d43867871b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 26,
+      "position": [
+        384.0,
+        481.21
+      ],
+      "walk_ms": 665.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "87fecb41f46a089d617c35c3aa1eee7fb65874d2a1e65462cf943b74bbf82cc8",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 27,
+      "position": [
+        384.0,
+        483.8
+      ],
+      "walk_ms": 700.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0fac1adb2f785ea5477321265fa8a6f40284f9e74851bb31acd5de2d24938e9e",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 28,
+      "position": [
+        384.0,
+        486.39
+      ],
+      "walk_ms": 735.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0eee37740fb08e9f00a6717893e9b52aa2adf6975c55bcd4ec642e7db92f00cc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 29,
+      "position": [
+        384.0,
+        488.98
+      ],
+      "walk_ms": 770.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "55b0316e277e8371a6fa9e1ad788e9b50aaacddbe21479424b1c343c7148fbac",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 30,
+      "position": [
+        384.0,
+        491.57
+      ],
+      "walk_ms": 805.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "22b8a44ec591d91ee5e960e2ec5424fc22a06ae2d82ad9938c019882683b974b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 31,
+      "position": [
+        384.0,
+        494.16
+      ],
+      "walk_ms": 840.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0f328cb5cd9268bbed5a5c94acc890684b40f0be10786eb29702da47c7568c",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 32,
+      "position": [
+        384.0,
+        496.75
+      ],
+      "walk_ms": 875.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d95f671847a5d23d61c211a3bcd62967b5a0f6f9e8cc218e6fcc75c28ec31e96",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 33,
+      "position": [
+        384.0,
+        499.34
+      ],
+      "walk_ms": 910.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "880c35557f521bb976324731b979d56612379d4b2329b392f71305eb569b6c02",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 34,
+      "position": [
+        384.0,
+        501.93
+      ],
+      "walk_ms": 945.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "88bac3cd86b60610e727d1644dce71d08716139091a05199e608866f25349df7",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 35,
+      "position": [
+        384.0,
+        504.52
+      ],
+      "walk_ms": 980.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "450ce98ffbd76193c18c1d544fa12105593ff47e3f87c46d482ec2d2caa3f8fc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 36,
+      "position": [
+        384.0,
+        507.11
+      ],
+      "walk_ms": 1015.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "6a73df2e1c77b4951530fe19f651a57f4e1dccb7271a4478d9de4229356de976",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 37,
+      "position": [
+        384.0,
+        509.7
+      ],
+      "walk_ms": 1050.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d5e042a79d08104ddc5d1624392e813a6be53a8e3453fcec4f6e04195685c9a6",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 38,
+      "position": [
+        384.0,
+        512.29
+      ],
+      "walk_ms": 1085.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0ae7dd54675eb3702738f85f991b75de3e5ae5a5672d7870062f23bc9b0e13",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 39,
+      "position": [
+        384.0,
+        514.88
+      ],
+      "walk_ms": 1120.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d4d2f79151f3ea2f10e83e98955531a9ca16467dacf1880e51c736f702ce8181",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 40,
+      "position": [
+        384.0,
+        517.47
+      ],
+      "walk_ms": 1155.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "217fa1d26e7eb70f4f34403a3366d23a8df82966dfe710637905deb436738fa2",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 41,
+      "position": [
+        384.0,
+        520.06
+      ],
+      "walk_ms": 1190.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "53b2d15274489175d46e8f6dde8fa960745b84efd5b6f4ed38cb30d43867871b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 42,
+      "position": [
+        384.0,
+        522.65
+      ],
+      "walk_ms": 1225.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "87fecb41f46a089d617c35c3aa1eee7fb65874d2a1e65462cf943b74bbf82cc8",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 43,
+      "position": [
+        384.0,
+        525.24
+      ],
+      "walk_ms": 1260.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0fac1adb2f785ea5477321265fa8a6f40284f9e74851bb31acd5de2d24938e9e",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 44,
+      "position": [
+        384.0,
+        527.83
+      ],
+      "walk_ms": 1295.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0eee37740fb08e9f00a6717893e9b52aa2adf6975c55bcd4ec642e7db92f00cc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 45,
+      "position": [
+        384.0,
+        530.42
+      ],
+      "walk_ms": 1330.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "55b0316e277e8371a6fa9e1ad788e9b50aaacddbe21479424b1c343c7148fbac",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 46,
+      "position": [
+        384.0,
+        533.01
+      ],
+      "walk_ms": 1365.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "22b8a44ec591d91ee5e960e2ec5424fc22a06ae2d82ad9938c019882683b974b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 47,
+      "position": [
+        384.0,
+        535.6
+      ],
+      "walk_ms": 1400.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0f328cb5cd9268bbed5a5c94acc890684b40f0be10786eb29702da47c7568c",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 48,
+      "position": [
+        384.0,
+        538.19
+      ],
+      "walk_ms": 1435.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d95f671847a5d23d61c211a3bcd62967b5a0f6f9e8cc218e6fcc75c28ec31e96",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 49,
+      "position": [
+        384.0,
+        540.78
+      ],
+      "walk_ms": 1470.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "880c35557f521bb976324731b979d56612379d4b2329b392f71305eb569b6c02",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 50,
+      "position": [
+        384.0,
+        543.37
+      ],
+      "walk_ms": 1505.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "88bac3cd86b60610e727d1644dce71d08716139091a05199e608866f25349df7",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 51,
+      "position": [
+        384.0,
+        545.96
+      ],
+      "walk_ms": 1540.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "450ce98ffbd76193c18c1d544fa12105593ff47e3f87c46d482ec2d2caa3f8fc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 52,
+      "position": [
+        384.0,
+        548.55
+      ],
+      "walk_ms": 1575.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "6a73df2e1c77b4951530fe19f651a57f4e1dccb7271a4478d9de4229356de976",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 53,
+      "position": [
+        384.0,
+        551.14
+      ],
+      "walk_ms": 1610.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d5e042a79d08104ddc5d1624392e813a6be53a8e3453fcec4f6e04195685c9a6",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 54,
+      "position": [
+        384.0,
+        553.73
+      ],
+      "walk_ms": 1645.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0ae7dd54675eb3702738f85f991b75de3e5ae5a5672d7870062f23bc9b0e13",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 55,
+      "position": [
+        384.0,
+        556.32
+      ],
+      "walk_ms": 1680.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d4d2f79151f3ea2f10e83e98955531a9ca16467dacf1880e51c736f702ce8181",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 56,
+      "position": [
+        384.0,
+        558.91
+      ],
+      "walk_ms": 1715.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "217fa1d26e7eb70f4f34403a3366d23a8df82966dfe710637905deb436738fa2",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 57,
+      "position": [
+        384.0,
+        561.5
+      ],
+      "walk_ms": 1750.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "53b2d15274489175d46e8f6dde8fa960745b84efd5b6f4ed38cb30d43867871b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 58,
+      "position": [
+        384.0,
+        564.09
+      ],
+      "walk_ms": 1785.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "87fecb41f46a089d617c35c3aa1eee7fb65874d2a1e65462cf943b74bbf82cc8",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 59,
+      "position": [
+        384.0,
+        566.68
+      ],
+      "walk_ms": 1820.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0fac1adb2f785ea5477321265fa8a6f40284f9e74851bb31acd5de2d24938e9e",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 60,
+      "position": [
+        384.0,
+        569.27
+      ],
+      "walk_ms": 1855.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "0eee37740fb08e9f00a6717893e9b52aa2adf6975c55bcd4ec642e7db92f00cc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 61,
+      "position": [
+        384.0,
+        571.86
+      ],
+      "walk_ms": 1890.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "55b0316e277e8371a6fa9e1ad788e9b50aaacddbe21479424b1c343c7148fbac",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 62,
+      "position": [
+        384.0,
+        574.45
+      ],
+      "walk_ms": 1925.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "22b8a44ec591d91ee5e960e2ec5424fc22a06ae2d82ad9938c019882683b974b",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 63,
+      "position": [
+        384.0,
+        577.04
+      ],
+      "walk_ms": 1960.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0f328cb5cd9268bbed5a5c94acc890684b40f0be10786eb29702da47c7568c",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 64,
+      "position": [
+        384.0,
+        579.63
+      ],
+      "walk_ms": 1995.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d95f671847a5d23d61c211a3bcd62967b5a0f6f9e8cc218e6fcc75c28ec31e96",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 65,
+      "position": [
+        384.0,
+        582.22
+      ],
+      "walk_ms": 2030.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "880c35557f521bb976324731b979d56612379d4b2329b392f71305eb569b6c02",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 66,
+      "position": [
+        384.0,
+        584.81
+      ],
+      "walk_ms": 2065.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "88bac3cd86b60610e727d1644dce71d08716139091a05199e608866f25349df7",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 67,
+      "position": [
+        384.0,
+        587.4
+      ],
+      "walk_ms": 2100.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "450ce98ffbd76193c18c1d544fa12105593ff47e3f87c46d482ec2d2caa3f8fc",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 68,
+      "position": [
+        384.0,
+        589.99
+      ],
+      "walk_ms": 2135.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "6a73df2e1c77b4951530fe19f651a57f4e1dccb7271a4478d9de4229356de976",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 69,
+      "position": [
+        384.0,
+        592.58
+      ],
+      "walk_ms": 2170.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "6a73df2e1c77b4951530fe19f651a57f4e1dccb7271a4478d9de4229356de976",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "WALK",
+      "sample": 70,
+      "position": [
+        384.0,
+        595.17
+      ],
+      "walk_ms": 2205.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "d5e042a79d08104ddc5d1624392e813a6be53a8e3453fcec4f6e04195685c9a6",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "WALK",
+      "sample": 71,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "8f0ae7dd54675eb3702738f85f991b75de3e5ae5a5672d7870062f23bc9b0e13",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "STOP",
+      "sample": 72,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "STOP",
+      "sample": 73,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "STOP",
+      "sample": 74,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "STOP",
+      "sample": 75,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "STOP",
+      "sample": 76,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "STOP",
+      "sample": 77,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    },
+    {
+      "phase": "STOP",
+      "sample": 78,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 30
+    },
+    {
+      "phase": "STOP",
+      "sample": 79,
+      "position": [
+        384.0,
+        597.76
+      ],
+      "walk_ms": 2240.0,
+      "moving": false,
+      "facing": "front",
+      "camera": [
+        144,
+        355
+      ],
+      "native_frame_sha256": "237132bd3e21d6a83f97442ae2ffef9b79a6abeb364d1fb05b705f03a757e9ef",
+      "detail_override": false,
+      "simulation_dt_ms": 35,
+      "gif_duration_ms": 40
+    }
+  ],
+  "in_place_frames": [
+    {
+      "phase": "IN_PLACE",
+      "sample": 0,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 0,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "d4d2f79151f3ea2f10e83e98955531a9ca16467dacf1880e51c736f702ce8181",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 1,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 35,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "217fa1d26e7eb70f4f34403a3366d23a8df82966dfe710637905deb436738fa2",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 2,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 70,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "53b2d15274489175d46e8f6dde8fa960745b84efd5b6f4ed38cb30d43867871b",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 3,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 105,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "87fecb41f46a089d617c35c3aa1eee7fb65874d2a1e65462cf943b74bbf82cc8",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 4,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 140,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "0fac1adb2f785ea5477321265fa8a6f40284f9e74851bb31acd5de2d24938e9e",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 5,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 175,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "0eee37740fb08e9f00a6717893e9b52aa2adf6975c55bcd4ec642e7db92f00cc",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 6,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 210,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "55b0316e277e8371a6fa9e1ad788e9b50aaacddbe21479424b1c343c7148fbac",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 7,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 245,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "22b8a44ec591d91ee5e960e2ec5424fc22a06ae2d82ad9938c019882683b974b",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 8,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 280,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "8f0f328cb5cd9268bbed5a5c94acc890684b40f0be10786eb29702da47c7568c",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 9,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 315,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "d95f671847a5d23d61c211a3bcd62967b5a0f6f9e8cc218e6fcc75c28ec31e96",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 10,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 350,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "880c35557f521bb976324731b979d56612379d4b2329b392f71305eb569b6c02",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 11,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 385,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "88bac3cd86b60610e727d1644dce71d08716139091a05199e608866f25349df7",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 12,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 420,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "450ce98ffbd76193c18c1d544fa12105593ff47e3f87c46d482ec2d2caa3f8fc",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 13,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 455,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "6a73df2e1c77b4951530fe19f651a57f4e1dccb7271a4478d9de4229356de976",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 14,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 490,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "d5e042a79d08104ddc5d1624392e813a6be53a8e3453fcec4f6e04195685c9a6",
+      "detail_override": false
+    },
+    {
+      "phase": "IN_PLACE",
+      "sample": 15,
+      "position": [
+        384.0,
+        432.0
+      ],
+      "walk_ms": 525,
+      "moving": true,
+      "facing": "front",
+      "camera": [
+        144,
+        272
+      ],
+      "native_frame_sha256": "8f0ae7dd54675eb3702738f85f991b75de3e5ae5a5672d7870062f23bc9b0e13",
+      "detail_override": false
+    }
+  ],
+  "source_sha256": {
+    "assets/characters/iselin/native_walk_front/animation.json": "5ac64f401fdbf38d811f9e419ff997d1a4070e3b4165c409adeae7853cce1e9e",
+    "assets/characters/iselin/native_walk_front/review_actor.json": "81874150ad657a38ef6411b79175a8ec27151cddfe55bbab66d81f551f171a05",
+    "assets/characters/iselin/native_walk_front/frame_01.png": "8dbcf7d0bb4b13e8a88d082b7b6ea5e15aeec4abe6fd6c3e5f931f88ab456807",
+    "assets/characters/iselin/native_walk_front/frame_02.png": "64a5e0ce3cc2442bfe98896d7166f0aaa58a7b6f7bbee0ae1d339c453679efca",
+    "assets/characters/iselin/native_walk_front/frame_03.png": "54cfb600991a09e78064e641985fe8b2fa28cea886bcb3a5e5b2f47e3cf0fd95",
+    "assets/characters/iselin/native_walk_front/frame_04.png": "7b749f0e6bd8cc5dd92c1933408ad45798d053d099cebd25b72e29bd779dc293",
+    "assets/characters/iselin/native_walk_front/frame_05.png": "5a9178c9590992fb6b71bd6288d24073ec0f0856bc6b22a94701a55e67e5d9ad",
+    "assets/characters/iselin/native_walk_front/frame_06.png": "dc8304ff02bd534917c24f82ea92159ea0e6ee538c772c526a4d7396514a12cf",
+    "assets/characters/iselin/native_walk_front/frame_07.png": "6093b31ceef6ff64249b7bf6d20e4c93a879fdbb096c542db56a94828647301d",
+    "assets/characters/iselin/native_walk_front/frame_08.png": "c37b8fe7cfc6dee9bf1d9e302b1d1072fd1babb2f19342c57b4d4562b966643d",
+    "assets/characters/iselin/native_walk_front/frame_09.png": "f850469f1db746deed4f6859bf2910480c22020cd01cc53603d1f6925a360ba4",
+    "assets/characters/iselin/native_walk_front/frame_10.png": "47155e93a66fcea5488b8e5340cd7c54b918947afa9df5cbc2616b16a347f2a2",
+    "assets/characters/iselin/native_walk_front/frame_11.png": "6bb3a85741a87b627b36bb81acbab630148bd8e4a069353b95b4edeed23d9af4",
+    "assets/characters/iselin/native_walk_front/frame_12.png": "1d3ab69d666b833c3744d15ab3752358dd0055c906e240dd1bf6fa25f78b7d72",
+    "assets/characters/iselin/native_walk_front/frame_13.png": "38e2918bf99f1132c0f03a6dd83f608e64d5986660c9244405c9199df6ed06da",
+    "assets/characters/iselin/native_walk_front/frame_14.png": "9cbfeb6616e2ad1f9f1bd97d8d80f5db3da0c5e7c09b3d207e9145ac5436f0fd",
+    "assets/characters/iselin/native_walk_front/frame_15.png": "2acf0a4bf27575c774d0eef9bc9e42727087033d4c13acbf2c7bdd37f03c5b05",
+    "assets/characters/iselin/native_walk_front/frame_16.png": "76d8862e0fd9f67c9325eff7280ce319b24bcf6fac1ed7cc2c023a330b5709d4",
+    "assets/characters/iselin/native_walk_front/review_spritesheet.png": "799dfbe3b1a9a22106bb8db40b3adfeff400e745d5a95b7c915d90526a43746f",
+    "assets/characters/iselin/native_idles/idle_front.png": "a0b58e06377223b03652e26d918ce849008c11ca6cab048e49ebea1339d0fa31",
+    "assets/characters/iselin/native_idles/idle_left.png": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589",
+    "assets/characters/iselin/native_idles/idle_right.png": "a372ac232c61cc36232477200e39e2e5cc0d39a5c7c045247dd08fa83107bd4b",
+    "assets/characters/iselin/native_idles/idle_back.png": "9f6d6359e5c90bdf5dac03a99e348ac4bed4179227c1bc5115f9e279f6bc100d"
+  },
+  "output_sha256": {
+    "in_game_travel.gif": "a7fdd6267d5cd2dd8138ee36ed5b5f486553964b562155a81c1073820c6be818",
+    "in_game_loop.gif": "304eea683389f7f009420de83e16a51e5cc4bccd00f75877f8f78ed803c26a57",
+    "in_game_loop_slow.gif": "2941c63d9ac91a9a379553d8430aa8a61af415ea67aa83888f5c06de1751330a",
+    "in_game_front_walk.png": "a9db13dc5bac928b0125720d8b4af0e87f1d342de7d229632a38592988ffbf3f",
+    "in_game_closeup.png": "4384e12684ee3e492796b6a95f418d90ca1624ea262198fa9326e46f3232896c"
+  }
+}
