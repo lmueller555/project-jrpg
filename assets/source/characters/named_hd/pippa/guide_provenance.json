@@ -1,0 +1,23 @@
+{
+  "commit": "7dfa732ea1abe9c62cd7860f453f9b923a20a4af",
+  "source_id": "child_girl_05",
+  "scope": "Compatible native child foot/leg contour coordinates retained as motion guide at native scale. No source pose pixels copied. Named heads, sleeves, hands, dress torso/hem and skin/shoe treatment are native target drawings, not roster substitution. Ada body shortened by independently drawn age7 torso, not rescaling.",
+  "directions": {
+    "front": {
+      "path": "assets/characters/npc_roster_hd/child_girl_05/walk_front/spritesheet.png",
+      "sha256": "83b531be84d642318562fe3f97788fd869502c9bfef6eb78b6ac7cd1d7a49755"
+    },
+    "right": {
+      "path": "assets/characters/npc_roster_hd/child_girl_05/walk_right/spritesheet.png",
+      "sha256": "74e941373671fda283cbe2398d44c052e5fc89fd4e2a2baec2907b54731505f3"
+    },
+    "back": {
+      "path": "assets/characters/npc_roster_hd/child_girl_05/walk_back/spritesheet.png",
+      "sha256": "53758036d475e5a8ec1455bdc09089b73f768f19a8f0a00a312bc04d91a5747f"
+    },
+    "left": {
+      "path": "assets/characters/npc_roster_hd/child_girl_05/walk_left/spritesheet.png",
+      "sha256": "4442357badf90b18fbafa00507d89ba0d2785bc316a50f72bc4f78010a790254"
+    }
+  }
+}
