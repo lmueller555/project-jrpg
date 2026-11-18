@@ -1,0 +1,19 @@
+{
+  "canonical_id": "regent_survivor",
+  "references": {
+    "idle_right.png": "73863deec3fae92867b650e430af49820a4d0cfcd6394ad19f551d5db7eafab9",
+    "idle_left.png": "c14c517c7704d91612090c93aaa608792c917b1c046ac408bc5c7a6564d79d7a",
+    "idle_back.png": "bab53be5868038695bba46e0c96789a2738f957284f7c20c41b7e5770857316e",
+    "portrait.png": "4a1001c86e76c19d3b16c80d4ea28560e394640b61f7eb19b499ebb5095d73bd",
+    "idle_front.png": "56823568fd9837afde13be09584e09b138ed2ec7f1a9beed2b0620181c12e377"
+  },
+  "motion_guide": "Approved shopkeeper_01 native leg/foot coordinates retained at native scale; own short shirt, trouser and hair. Arm contour studies reused explicitly from same-task Page, with bare forearm/short sleeve redrawing; survivor guarded left chain replaces, never overlays, the ordinary arm. No guide pixels copied.",
+  "construction": "Four native directional head drawings and target body/arm/leg contours. No old limb pixels or scaled legacy art.",
+  "authored_inputs": [
+    "author_head.py",
+    "author_body.py",
+    "motion_contours.json",
+    "arm_contours.json"
+  ],
+  "portrait": "Existing cinematic portrait retained byte-exact; original dialogue registry unchanged."
+}
