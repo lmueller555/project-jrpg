@@ -104,8 +104,11 @@ class RoadGuard:
         self.facing = self.watch_facing
         self.moving = False
         self._conversation_started_ms = None
-        if not hasattr(world, '_road_guard_art'):
-            folder = ROOT/'assets/characters/road_guards'
+        from road_guard_hd_bindings import ACTORS
+        self.hd_art = self.data['id'] in ACTORS
+        cache_key = '_road_guard_art_hd' if self.hd_art else '_road_guard_art'
+        if not hasattr(world, cache_key):
+            folder = ROOT/'assets/characters'/('road_guards_hd' if self.hd_art else 'road_guards')
             manifest = json.loads((folder/'animation.json').read_text())
             frames = {name: pygame.image.load(str(folder/name)).convert_alpha()
                       for name in set(manifest['poses'].values())}
@@ -117,8 +120,9 @@ class RoadGuard:
                         or not math.isfinite(frame['duration_ms']) or frame['duration_ms'] <= 0
                         for frame in clip['frames']):
                     raise ValueError('Invalid road guard animation clip')
-            world._road_guard_art = (manifest, frames)
-        self._art, self._frames = world._road_guard_art
+            frames = {key: record_art(image, manifest) for key, image in frames.items()}
+            setattr(world, cache_key, (manifest, frames))
+        self._art, self._frames = getattr(world, cache_key)
         self.draw_anchor = tuple(self._art['draw_anchor'])
 
     @property
