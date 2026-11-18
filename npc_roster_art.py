@@ -18,7 +18,10 @@ def bindings():
 
 
 def bound_design(actor_id):
-    return bindings().get(actor_id)
+    existing=bindings().get(actor_id)
+    if existing:return existing
+    from regional_npc_art import bound_regional_design
+    return bound_regional_design(actor_id)
 
 
 NAMED_BANK = Path('assets/characters/named_hd')
