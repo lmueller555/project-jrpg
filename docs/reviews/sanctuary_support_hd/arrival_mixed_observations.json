@@ -1,0 +1,55 @@
+{
+  "completed": true,
+  "steps": 359,
+  "pause_frozen": true,
+  "observations": [
+    {
+      "state": "carry",
+      "step": 29,
+      "position": [
+        600.6,
+        370.0
+      ],
+      "pose_ms": 2900.0,
+      "carrying": true,
+      "placed": false,
+      "delivered": false
+    },
+    {
+      "state": "before",
+      "step": 64,
+      "position": [
+        800.0,
+        350.0
+      ],
+      "pose_ms": 600.0,
+      "carrying": true,
+      "placed": false,
+      "delivered": false
+    },
+    {
+      "state": "after",
+      "step": 65,
+      "position": [
+        800.0,
+        350.0
+      ],
+      "pose_ms": 700.0,
+      "carrying": false,
+      "placed": true,
+      "delivered": false
+    },
+    {
+      "state": "delivered",
+      "step": 70,
+      "position": [
+        800.0,
+        350.0
+      ],
+      "pose_ms": 0.0,
+      "carrying": false,
+      "placed": true,
+      "delivered": true
+    }
+  ]
+}
