@@ -1,0 +1,630 @@
+{
+  "version": 1,
+  "character": "innkeeper_03",
+  "animation": "walk.front",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/innkeeper_03/walk_front/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/innkeeper_03/walk_front/authored.png": "37c0a3a79e79d64d9b53945d6bf42143ca9fd6c82d710a15013fd191d5bea6c9",
+    "assets/characters/npc_roster_hd/innkeeper_03/idle_front.png": "3c78ea311f259ac3b2eab54da0e2252bb8ce9bfbbebe1b870ed34370f02eed64"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob": 0,
+      "frame": 1,
+      "right_toe": [
+        17,
+        69
+      ],
+      "left_toe": [
+        29,
+        66
+      ],
+      "waist_center": [
+        24,
+        39
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "contact",
+      "left_phase": "release",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 39,
+      "left_sole": [
+        29,
+        66
+      ],
+      "right_sole": [
+        17,
+        69
+      ],
+      "support_detail": "right+left",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          29,
+          66
+        ],
+        "right_toe": [
+          17,
+          69
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob": 1,
+      "frame": 2,
+      "right_toe": [
+        18,
+        68
+      ],
+      "left_toe": [
+        29,
+        64
+      ],
+      "waist_center": [
+        24,
+        40
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "support/down",
+      "left_phase": "swing",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 40,
+      "left_sole": [
+        29,
+        64
+      ],
+      "right_sole": [
+        18,
+        68
+      ],
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          29,
+          64
+        ],
+        "right_toe": [
+          18,
+          68
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob": 0,
+      "frame": 3,
+      "right_toe": [
+        18,
+        66
+      ],
+      "left_toe": [
+        29,
+        64
+      ],
+      "waist_center": [
+        24,
+        39
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "support",
+      "left_phase": "passing",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 39,
+      "left_sole": [
+        29,
+        64
+      ],
+      "right_sole": [
+        18,
+        66
+      ],
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          29,
+          64
+        ],
+        "right_toe": [
+          18,
+          66
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob": -1,
+      "frame": 4,
+      "right_toe": [
+        18,
+        65
+      ],
+      "left_toe": [
+        30,
+        67
+      ],
+      "waist_center": [
+        24,
+        38
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "toe_off",
+      "left_phase": "recovery",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 38,
+      "left_sole": [
+        30,
+        67
+      ],
+      "right_sole": [
+        18,
+        65
+      ],
+      "support_detail": "right_toe",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          38
+        ],
+        "left_toe": [
+          30,
+          67
+        ],
+        "right_toe": [
+          18,
+          65
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob": 0,
+      "frame": 5,
+      "right_toe": [
+        19,
+        66
+      ],
+      "left_toe": [
+        29,
+        69
+      ],
+      "waist_center": [
+        24,
+        39
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "release",
+      "left_phase": "contact",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 39,
+      "left_sole": [
+        29,
+        69
+      ],
+      "right_sole": [
+        19,
+        66
+      ],
+      "support_detail": "left+right",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          29,
+          69
+        ],
+        "right_toe": [
+          19,
+          66
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob": 1,
+      "frame": 6,
+      "right_toe": [
+        19,
+        64
+      ],
+      "left_toe": [
+        30,
+        68
+      ],
+      "waist_center": [
+        24,
+        40
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "swing",
+      "left_phase": "support/down",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 40,
+      "left_sole": [
+        30,
+        68
+      ],
+      "right_sole": [
+        19,
+        64
+      ],
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          30,
+          68
+        ],
+        "right_toe": [
+          19,
+          64
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob": 0,
+      "frame": 7,
+      "right_toe": [
+        19,
+        64
+      ],
+      "left_toe": [
+        30,
+        66
+      ],
+      "waist_center": [
+        24,
+        39
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "passing",
+      "left_phase": "support",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 39,
+      "left_sole": [
+        30,
+        66
+      ],
+      "right_sole": [
+        19,
+        64
+      ],
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          30,
+          66
+        ],
+        "right_toe": [
+          19,
+          64
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob": -1,
+      "frame": 8,
+      "right_toe": [
+        19,
+        67
+      ],
+      "left_toe": [
+        30,
+        65
+      ],
+      "waist_center": [
+        24,
+        38
+      ],
+      "coordinate_space": "native artwork",
+      "right_phase": "recovery",
+      "left_phase": "toe_off",
+      "occlusion": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible",
+      "belt_y": 38,
+      "left_sole": [
+        30,
+        65
+      ],
+      "right_sole": [
+        19,
+        67
+      ],
+      "support_detail": "left_toe",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          38
+        ],
+        "left_toe": [
+          30,
+          65
+        ],
+        "right_toe": [
+          19,
+          67
+        ],
+        "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+      }
+    }
+  ]
+}
