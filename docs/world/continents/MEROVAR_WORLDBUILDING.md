@@ -341,7 +341,9 @@ forests. For a voice test, let her eagerly explain an odd current, then
 strike “therefore” from her notebook and ask Caelan what he saw. Her
 curiosity gets ahead of her conclusions; asking for an independent
 observation is the habit that pulls her back. That tension belongs to Rhea,
-not to everyone raised on the western slopes.
+not to everyone raised on the western slopes. Use this as an alternative
+expression of her existing evidence-checking beat, not an extra lesson scene
+or evidence of a Greyfold teaching custom.
 
 ## Greyfold Uplands: who gets the remaining fuel?
 
@@ -869,6 +871,20 @@ ownership, family rank, or seniority. The
 [reviewed character-naming transcript](https://www.youtube.com/watch?v=ikdyuJVq_p8&t=900s)
 informed keeping the pattern in a small group and giving it a reason.
 
+## Marris Coast: what counts as a fair repair
+
+A [Marris](MEROVAR.md#marris-coast) basket maker offers to replace a
+fish seller’s carrying handle in exchange for patching some aprons.
+The seller offers three aprons, counting holes. The maker asks for
+two, pointing to the thick seam that will take longer. They inspect
+both objects before agreeing.
+
+When the fitted handle rubs the seller’s palm, the maker smooths it
+without asking for another patch. They agreed on a handle someone
+could carry, not just time spent repairing it. Neither owes the
+other indefinite help. This is one exchange between neighbours,
+not a local rate or a rule binding their trades.
+
 ## Marris Coast and Elden Vale: Mira asks where the hand goes
 
 In this voice test, a visiting apprentice describes a
@@ -1078,12 +1094,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Follow one ordinary exchange that doesn’t need a price, tax or
-   new route. Clarify what each household considers fair, without
-   making the practice a regional rule.
-2. Recheck one character proposal against the actual character sheet.
-   Keep what expresses a choice and remove any assumption that
-   home geography predicts personality.
+1. Test what Tomas wants to know from someone outside the Vale.
+   Distinguish his interest from Caelan’s social judgment and
+   Mira’s curiosity about how things work.
+2. Compare what the approved Eldenmere classroom tells us with
+   what the proposed Lower Leth school history doesn’t. Do not
+   assume one town’s policy or attendance rule applies to the other.
 
 ## Map implications for a later review
 
