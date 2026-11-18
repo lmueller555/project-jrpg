@@ -310,6 +310,22 @@ This is a proposed arrangement, not a state or a region-wide law. The
 [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8) informed
 showing a political relationship through what people can actually do.
 
+## Greyfold Uplands: what Caelan hears in the verse
+
+In this voice test within the existing hall-song proposal,
+[Caelan](../../narrative/game_01/characters/CAELAN.md#everyday-individuality)
+initially dislikes the guessing verse. A stranger could listen all night
+and never know which uncle snores. When the returning apprentice sings
+about a cooking pot and nobody laughs, he thinks that proves his point.
+Then the grandmother asks what they cooked in it. Caelan listens
+instead of trying to make the silence less awkward.
+
+The apprentice describes their first spoiled supper away from home.
+Someone supplies a rhyme; the apprentice improves it. Caelan still
+wouldn’t volunteer to sing, but next time the pot comes up he laughs
+without checking who else did. This tests a changing social judgment,
+not Mira’s practical kind of curiosity, and requires no visit or scene.
+
 ## Lower Leth: a fair weight after a flood
 
 At one weighing house, the keeper deducts the sack’s weight in front of
@@ -741,6 +757,23 @@ proposal for one inland community, not a custom of the whole kingdom
 or a claim about the Rimeward Shores. The [actual craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed the use of a concrete object to show the relationship.
 
+## Remembering at a table and on a bank
+
+Some Vale households might repair a lantern together, as proposed
+above. What matters to one family is the crooked panel somebody made.
+The [Rookfen cultural foundation](MEROVAR.md#rookfen) already allows some
+coastal households to carry remembrance lamps along a safe raised bank;
+some inland neighbours prefer to visit each other at home. What one
+person remembers may come to mind because they walk past a familiar place.
+
+The difference is how people spend the time together, not whose doctrine
+is correct. The lantern-mending example is proposed and the Rookfen
+examples describe variation, not an obligation. An ordinary lamp does
+not guide the dead. [Elden Vale Sanctuary’s distinct responsibility](../ELDEN_VALE_FAITH.md)
+is not being extended to Rookfen. This uses the previously reviewed
+[lived-religion transcript](https://www.youtube.com/watch?v=1XN9QaX2plk)
+only to focus on what households actually do.
+
 ## Northern terms: which Crown?
 
 When both already-established meanings occur together, use **the
@@ -846,18 +879,18 @@ These are suggested priorities, not approved scenes or new destinations.
 
 | Proposal | Why use it | Before adopting |
 | --- | --- | --- |
-| [Mending before lighting](#elden-vale-mending-before-lighting) | A small action can show affection before the larger festival story without implying a magical rite. | Choose a relationship the game can follow, not a second version of Elira’s scene. |
+| [The basket that comes back](#elden-vale-the-basket-that-comes-back) | Receiving care can leave someone room to choose or contribute. | Prefer a follow-through on a relationship already established, such as the Venn child assessing Liam’s promised tower stairs, over another lantern repair after [Elira’s existing scene](../../narrative/game_01/CH01_MQ04_PR2.md). No delivery objective or assumption about festival attendance. |
 | [Who speaks after the water](#lower-leth-who-speaks-after-the-water) | A remembered rescue shows who can be heard and who still pays for a public decision without invoking a hidden cause. | Decide whose account might challenge the party’s sympathies and whether the ledger or performance is actually needed. |
 | [Mira asks where the hand goes](#marris-coast-and-elden-vale-mira-asks-where-the-hand-goes) | Mira learns something from a visitor by trying it; another region matters without another stop. | Decide whether to establish an early habit or show a later change. |
 
 ## Next development pass
 
-1. Test what Caelan notices about one proposed regional practice,
-   separately from what Mira notices. Keep both grounded in approved
-   character material, and avoid a required new encounter.
-2. Compare two existing ways of remembering or giving care, without
-   assuming one doctrine. Check for overlap with the approved Vale
-   festival scenes before suggesting where any draft can be reused.
+1. Describe the difference between a place Game I actually visits,
+   a place someone speaks about, and a place that only writers need.
+   Follow approved plans and do not turn a draft scene into an itinerary.
+2. Show two nearby Rookfen households receiving a visitor differently,
+   without turning practical or personal differences into one test
+   of belonging.
 
 ## Map implications for a later review
 
