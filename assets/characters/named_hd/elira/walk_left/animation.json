@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "character": "elira",
+  "animation": "walk.left",
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 70,
+      "phase": "right_down",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_05.png",
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_06.png",
+      "duration_ms": 70,
+      "phase": "left_down",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_07.png",
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ]
+    },
+    {
+      "file": "frame_08.png",
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ]
+    }
+  ],
+  "source": "assets/source/characters/named_hd/elira/walk_left_master.png"
+}

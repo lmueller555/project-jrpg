@@ -1,5 +1,6 @@
 """Elira's delivery and a single, physically registered memorial lantern."""
 from caelan_scene_art import image as scene_image
+from npc_roster_art import RosterArt
 import json
 from pathlib import Path
 
@@ -24,13 +25,17 @@ class Elira:
         self.data = {'id': 'elira', 'name': 'Elira'}
         self.position = pygame.Vector2(210, 202)
         self.probe_size = (12, 8);self.draw_anchor = (12, 30)
-        self.idles = {d: world.image(ART+f'idle_{d}.png') for d in ('front', 'left', 'right', 'back')}
+        self.roster_art = RosterArt(world, 'elira', named=True)
+        self.idles = self.roster_art.idles
+        self.moving = False;self.walk_ms = 0.
         self.facing = 'front';self.conversation_ready = False;self.conversation_facing = 'front'
 
     @property
     def blocker(self):return pygame.Rect(round(self.position.x)-6, round(self.position.y)-4, 12, 8)
 
-    def sprite(self, elapsed_ms):return self.idles[self.conversation_facing if self.conversation_ready else self.facing]
+    def sprite(self, elapsed_ms):
+        facing = self.conversation_facing if self.conversation_ready else self.facing
+        return self.roster_art.sprite(facing, self.moving and not self.conversation_ready, self.walk_ms)
 
     def request_conversation(self, facing):
         self.conversation_ready = True;self.conversation_facing = facing
