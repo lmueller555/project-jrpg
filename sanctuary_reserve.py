@@ -13,6 +13,7 @@ from pathlib import Path
 import pygame
 
 from social import clear_sight, facing_toward
+from npc_roster_art import RosterArt
 
 
 ROOT = Path(__file__).resolve().parent
@@ -35,9 +36,16 @@ class ReserveVisitor:
         self.draw_anchor = (12, 30)
         self.moving = False
         self.conversation_ready = False
-        base = 'assets/characters/npcs/'+record['variant']
-        self.idles = {direction:world.image(base+'/idle_'+direction+'.png')
-                      for direction in DIRECTIONS}
+        # Explicit per-role art opt-in, never a blanket variant replacement.
+        # In particular the reserve gardener keeps her existing action bank.
+        self.roster_art = RosterArt(world, record['roster_design']) if record.get('roster_design') else None
+        if self.roster_art is not None:
+            self.idles = self.roster_art.idles
+            self.draw_anchor = self.roster_art.draw_anchor
+        else:
+            base = 'assets/characters/npcs/'+record['variant']
+            self.idles = {direction:world.image(base+'/idle_'+direction+'.png')
+                          for direction in DIRECTIONS}
 
     @property
     def blocker(self):
@@ -183,8 +191,11 @@ class SanctuaryReserve:
             social.data['speakers'][record['id']] = {
                 'name':record['name'], 'portrait':portrait, 'actor_id':record['id']}
             if portrait not in social.portraits:
-                social.portraits[portrait] = world.image(
-                    'assets/portraits/eldenmere/'+portraits[portrait]['file'])
+                actor = self.actors[record['id']]
+                # Roster counterparts retain the approved legacy portrait identity.
+                path = (actor.roster_art.portrait_path if actor.roster_art is not None else
+                        'assets/portraits/eldenmere/'+portraits[portrait]['file'])
+                social.portraits[portrait] = world.image(path)
 
     def _release_conversation(self):
         for actor in self.actors.values():actor.end_conversation()
