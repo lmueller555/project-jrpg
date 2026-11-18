@@ -218,6 +218,10 @@ class SanctuaryArrival(MillGift):
             self.actors[key]=CastActor(key,world,variant=variant,art=self.art['actors'].get(key))
         performance=self.performance
         for name,animation in performance['poses'].items():
+            # Worker A activates only with his complete authored injury/care bank.
+            # Other actors retain their existing performance assets.
+            if name in ('offer_arm','arm_rest') and name in self.art['actors']['worker_a'].get('poses',{}):
+                continue
             actor=self.actors['runner'] if name=='runner_place' else self.actors['worker_a'] if name in ('offer_arm','arm_rest') else self.actors['mira']
             actor.pose_animations[name]={
                 'frames':tuple(world.image(f['file']) for f in animation['frames']),

@@ -368,37 +368,37 @@
         30
       ],
       "frame_size": [
-        24,
-        36
+        48,
+        72
       ],
       "idles": {
-        "front": "assets/story/sanctuary_arrival/art/worker_a/idle_front.png",
-        "back": "assets/story/sanctuary_arrival/art/worker_a/idle_back.png",
-        "left": "assets/story/sanctuary_arrival/art/worker_a/idle_left.png",
-        "right": "assets/story/sanctuary_arrival/art/worker_a/idle_right.png"
+        "front": "assets/characters/named_hd/sanctuary_worker_a/idle_front.png",
+        "back": "assets/characters/named_hd/sanctuary_worker_a/idle_back.png",
+        "left": "assets/characters/named_hd/sanctuary_worker_a/idle_left.png",
+        "right": "assets/characters/named_hd/sanctuary_worker_a/idle_right.png"
       },
       "walks": {
         "front": [
           {
-            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_front.png",
+            "file": "assets/characters/named_hd/sanctuary_worker_a/idle_front.png",
             "duration_ms": 200
           }
         ],
         "back": [
           {
-            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_back.png",
+            "file": "assets/characters/named_hd/sanctuary_worker_a/idle_back.png",
             "duration_ms": 200
           }
         ],
         "left": [
           {
-            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_left.png",
+            "file": "assets/characters/named_hd/sanctuary_worker_a/idle_left.png",
             "duration_ms": 200
           }
         ],
         "right": [
           {
-            "file": "assets/story/sanctuary_arrival/art/worker_a/idle_right.png",
+            "file": "assets/characters/named_hd/sanctuary_worker_a/idle_right.png",
             "duration_ms": 200
           }
         ]
@@ -407,7 +407,7 @@
         "injured": {
           "frames": [
             {
-              "file": "assets/story/sanctuary_arrival/art/worker_a/injured.png",
+              "file": "assets/characters/named_hd/sanctuary_worker_a/injured.png",
               "duration_ms": 1000
             }
           ],
@@ -415,12 +415,172 @@
           "anchor": [
             12,
             30
-          ]
+          ],
+          "artwork_pixels_per_world_pixel": 2
+        },
+        "offer_arm": {
+          "frames": [
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_00.png",
+              "duration_ms": 100,
+              "hand": [
+                34,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_01.png",
+              "duration_ms": 100,
+              "hand": [
+                35,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_02.png",
+              "duration_ms": 100,
+              "hand": [
+                37,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_03.png",
+              "duration_ms": 100,
+              "hand": [
+                38,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_04.png",
+              "duration_ms": 100,
+              "hand": [
+                40,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_05.png",
+              "duration_ms": 100,
+              "hand": [
+                41,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_06.png",
+              "duration_ms": 100,
+              "hand": [
+                43,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/offer_arm/frame_07.png",
+              "duration_ms": 100,
+              "hand": [
+                44,
+                34
+              ]
+            }
+          ],
+          "loop": false,
+          "anchor": [
+            32,
+            40
+          ],
+          "facing": "right",
+          "cue_ms": {},
+          "artwork_pixels_per_world_pixel": 2
+        },
+        "arm_rest": {
+          "frames": [
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_00.png",
+              "duration_ms": 100,
+              "hand": [
+                44,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_01.png",
+              "duration_ms": 100,
+              "hand": [
+                43,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_02.png",
+              "duration_ms": 100,
+              "hand": [
+                41,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_03.png",
+              "duration_ms": 100,
+              "hand": [
+                40,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_04.png",
+              "duration_ms": 100,
+              "hand": [
+                38,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_05.png",
+              "duration_ms": 100,
+              "hand": [
+                37,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_06.png",
+              "duration_ms": 100,
+              "hand": [
+                35,
+                34
+              ]
+            },
+            {
+              "file": "assets/characters/named_hd/sanctuary_worker_a/arm_rest/frame_07.png",
+              "duration_ms": 100,
+              "hand": [
+                34,
+                34
+              ]
+            }
+          ],
+          "loop": false,
+          "anchor": [
+            32,
+            40
+          ],
+          "facing": "right",
+          "cue_ms": {},
+          "artwork_pixels_per_world_pixel": 2
         }
       },
       "portrait": "arrival_worker_a",
-      "portrait_file": "assets/story/sanctuary_arrival/art/portraits/worker_a.png",
-      "stationary": true
+      "portrait_file": "assets/characters/named_hd/sanctuary_worker_a/portrait.png",
+      "stationary": true,
+      "travel_artwork_pixels_per_world_pixel": 2,
+      "migration_status": "integrated",
+      "activation_requires": [
+        "injured",
+        "offer_arm",
+        "arm_rest"
+      ]
     },
     "worker_b": {
       "anchor": [
