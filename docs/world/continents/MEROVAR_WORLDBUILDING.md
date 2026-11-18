@@ -173,6 +173,21 @@ a modern anomaly or places the change in an exact year. The
 [reviewed transcript](https://pickscribe.com/v/V2KpWOLTXx8) supplied the
 craft technique of grounding a longer change in one object and one decision.
 
+## Elden Vale and Rookfen: the letter with too much water
+
+A child in Eldenmere receives a letter from a relative staying with
+a [Rookfen](MEROVAR.md#rookfen) household. In the margin are the house,
+a landing and an enormous boat. The child tells Caelan they don’t have
+roads there. The relative’s next letter mentions a raised walkway:
+“I only drew the way we went.”
+
+The child adds little feet beside the boat and asks whether children
+there visit their friends by water. The drawing is no better as a map
+but it makes a household imaginable. This is a proposed letter from
+one visit, not a picture of the whole delta. The
+[classroom map](../../WORLD_MAP.md) and atlas remain the geographic
+references. No visit or new route is established.
+
 ## Upper Leth approach: the unnamed town south of Eldenmere
 
 One proposed identity for the next town south is a market that suits
@@ -503,6 +518,20 @@ time; one can rely more on seeing the same people, the other makes
 room for long absences. These are examples, not named destinations
 or rules about who is welcoming.
 
+## Redstone March: the second handle
+
+In one [Redstone](MEROVAR.md#redstone-march) household, a cloth shade on
+a light wooden frame stands beside a mending table. Someone shifts it
+as the light changes. A child wants to help but can’t reach the upper
+grip without tipping the frame. Their grandmother adds a lower loop
+and promptly finds that her assistant moves the shade before she has
+finished threading her needle. At evening, they carry it in together.
+
+The shade has two handles because of what these two people do, not
+because it marks a Redstone household. The
+[reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed making the difference visible through daily handling.
+
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
 A watcher sees an unfamiliar vessel approaching yesterday’s landing channel.
@@ -600,6 +629,18 @@ seller points to the wrong bowl. She takes a pinch, laughs, and says,
 plain. The custom works without requiring a shared name for every herb
 or agreement about what tastes right. It belongs to one market, not
 every Marris household.
+
+## Marris Coast: the chest that opens the other way
+
+A [Marris](MEROVAR.md#marris-coast) joiner makes a pegged wooden chest
+for bedding, not cargo. Its owner empties it to check the bottom and has
+a loose hinge refastened rather than buying a new chest. When she moves
+her bed, the lid can’t open from its old side. The repairer suggests
+putting the bed back. She pays to move the hinges instead: “I sleep
+better there.”
+
+This is one furnishing in one proposed household. The repair records
+the owner’s preference, not a coastal style, new asset or room layout.
 
 ## Marris Coast and Elden Vale: Mira asks where the hand goes
 
@@ -755,12 +796,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Show how a young person builds an imperfect picture of another
-   Merovar region from a traveller or a familiar object. Distinguish
-   what they imagine from what the atlas establishes.
-2. Audit material culture for gaps beyond costumes, meals and trade.
-   Develop one useful object or making practice at a time rather
-   than assigning every settlement an emblem.
+1. Select a few existing proposals that could serve Game I most directly.
+   Say why a scene or object earns its place and what must still be
+   decided before any proposal becomes canon.
+2. Test one ordinary case where a travelling official misunderstands
+   what a local object means. Let local knowledge correct the mistake
+   without assigning a new border, power or institution.
 
 ## Map implications for a later review
 
