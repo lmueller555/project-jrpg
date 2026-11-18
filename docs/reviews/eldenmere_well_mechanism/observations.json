@@ -1,0 +1,190 @@
+{
+  "scope": "Staged controller-driven offline mechanism preview, not live gameplay.",
+  "runtime_integration": false,
+  "capture_revision": "00b0aee678409ea61a11753ecc4037937721167b",
+  "working_tree_dirty_at_capture": true,
+  "mechanism_manifest_sha256": "e074e430cf8e961fa9cea864a293f96302a41fed34f28d7dc7f03bd76f6498b6",
+  "helper_sha256": "c19dfe5942218aeaf2c5d367fd8265e204e4120f7dc89d060d5968241f4b4804",
+  "implementation_sha256": {
+    "well_mechanism.py": "1c64dfe4229d16b8786060d383858e4dcf0ffb17aa0ac1ab1fb85039d81cbecf",
+    "well_mechanism_presentation.py": "ab7bf7c1524895ddb1d888557fa589c754d29ceee884363e11bdea927379867e",
+    "tools/build_eldenmere_well_mechanism.py": "e2fb5b1b8970738b74cb841e12a61fec698456e5e1376ed351f94b40141d2d27",
+    "tools/capture_eldenmere_well_mechanism.py": "c19dfe5942218aeaf2c5d367fd8265e204e4120f7dc89d060d5968241f4b4804",
+    "assets/source/terrain/eldenmere/well_hd/mechanism/contract.json": "049a51cc1b13049866737c6afaa20ecea936d150a8db20080a095dcc59d731e5"
+  },
+  "baseline_revision": "665b81702468bb1f177b1c758aa866dc92cf0a69",
+  "active_files_preserved": 969,
+  "protected_files_preserved": 207,
+  "trace_samples": 342,
+  "trace_duration_ms": 17050.0,
+  "phases": [
+    "await_loading",
+    "attach",
+    "await_operator",
+    "engage",
+    "guide_into_shaft",
+    "lower",
+    "fill",
+    "raise",
+    "secure",
+    "await_retrieval",
+    "detach",
+    "complete"
+  ],
+  "events": [
+    {
+      "event_id": [
+        1,
+        "attached"
+      ],
+      "operation_id": 1,
+      "cue_id": "attached",
+      "phase_id": "attach",
+      "operation_elapsed_ms": 840.0,
+      "bucket_grip_local": [
+        36.0,
+        74.0
+      ],
+      "water_units": 0,
+      "pail_owner": "well"
+    },
+    {
+      "event_id": [
+        1,
+        "water_contact"
+      ],
+      "operation_id": 1,
+      "cue_id": "water_contact",
+      "phase_id": "lower",
+      "operation_elapsed_ms": 3844.4444444444443,
+      "bucket_grip_local": [
+        36.0,
+        56.5
+      ],
+      "water_units": 0,
+      "pail_owner": "well"
+    },
+    {
+      "event_id": [
+        1,
+        "mouth_submerged"
+      ],
+      "operation_id": 1,
+      "cue_id": "mouth_submerged",
+      "phase_id": "lower",
+      "operation_elapsed_ms": 5044.444444444444,
+      "bucket_grip_local": [
+        36.0,
+        63.25
+      ],
+      "water_units": 0,
+      "pail_owner": "well"
+    },
+    {
+      "event_id": [
+        1,
+        "fill_complete"
+      ],
+      "operation_id": 1,
+      "cue_id": "fill_complete",
+      "phase_id": "fill",
+      "operation_elapsed_ms": 8200.0,
+      "bucket_grip_local": [
+        36.0,
+        72.0
+      ],
+      "water_units": 6,
+      "pail_owner": "well"
+    },
+    {
+      "event_id": [
+        1,
+        "water_exit"
+      ],
+      "operation_id": 1,
+      "cue_id": "water_exit",
+      "phase_id": "raise",
+      "operation_elapsed_ms": 11644.444444444445,
+      "bucket_grip_local": [
+        36.0,
+        56.5
+      ],
+      "water_units": 6,
+      "pail_owner": "well"
+    },
+    {
+      "event_id": [
+        1,
+        "detached"
+      ],
+      "operation_id": 1,
+      "cue_id": "detached",
+      "phase_id": "detach",
+      "operation_elapsed_ms": 14980.0,
+      "bucket_grip_local": [
+        36.0,
+        74.0
+      ],
+      "water_units": 6,
+      "pail_owner": "actor"
+    },
+    {
+      "event_id": [
+        1,
+        "completed"
+      ],
+      "operation_id": 1,
+      "cue_id": "completed",
+      "phase_id": "complete",
+      "operation_elapsed_ms": 15400.0,
+      "bucket_grip_local": [
+        36.0,
+        74.0
+      ],
+      "water_units": 6,
+      "pail_owner": "actor"
+    }
+  ],
+  "town_composites": {
+    "files": [
+      "town_attach.png",
+      "town_guide_into_shaft.png",
+      "town_lower.png",
+      "town_fill.png",
+      "town_raise.png",
+      "town_secure.png"
+    ],
+    "native_scene_size": [
+      960,
+      640
+    ],
+    "no_game_updates": true,
+    "no_live_operator_performance_claim": true,
+    "in_memory_data_and_progress_preserved": true
+  },
+  "cache": {
+    "entries": 96,
+    "limit": 96,
+    "hits": 263,
+    "misses": 439,
+    "composite_bytes": 9732096,
+    "artwork_size": [
+      144,
+      176
+    ],
+    "density": 2
+  },
+  "output_sha256": {
+    "numbered_phases.png": "bec960e86a5f52f53a6741baeed97516375b1c55d5bfc79b24029b0f8e7dbe4d",
+    "operation_half_speed.gif": "8e63e9c366e0fa6441827c1a9f5455e11f9ba940074d59f99a3ca356187030cd",
+    "operation_normal.gif": "8e7cfdeba06d405140708eb640e0a211c7d6158ec7a75e78ae181e7ead2188b1",
+    "operation_reduced_motion.gif": "0f31325281de6afe7b9bfe157ab5f423a541095559b63d6ef716d33819bc004a",
+    "town_attach.png": "42afe37a6cf330ab7f3974803ff5b3bdd4a595467a166972e7c1ce28fc9f9444",
+    "town_fill.png": "764100a99eb9835b11961121436ae8feb502e99b44671663af73e6bf24660024",
+    "town_guide_into_shaft.png": "f5256a1642bbc75c1f0fd72c09358b9c4c0c2f97b76fa3018eb8eb070c7ed504",
+    "town_lower.png": "8490dce493d42a79ed4f1dfa2868a3fc49725d32e3c8727205a29cafe411a86f",
+    "town_raise.png": "637f5abb11fd2eb1abb59c7edb4b51bae5459612e8a988bfe808114edf7ab060",
+    "town_secure.png": "18dfd6a18aec3e18112a73e6025593e176786d6b09556d86f1b165fc3404e3dc",
+    "trace.json": "fcd36a3abc2ec60f06b3c281e44f2153e6e7319b933e0c912bfa04297d2bc27f"
+  }
+}
