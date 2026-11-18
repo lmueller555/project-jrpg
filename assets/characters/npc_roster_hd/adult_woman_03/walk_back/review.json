@@ -1,0 +1,208 @@
+{
+  "manifest_sha256": "98795628dca378f8a85b99f00f64de1219e494220958a3693fde97fd8556f272",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        18,
+        69
+      ],
+      "right_toe": [
+        28,
+        65
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        41
+      ],
+      "left_toe": [
+        18,
+        67
+      ],
+      "right_toe": [
+        28,
+        66
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        18,
+        65
+      ],
+      "right_toe": [
+        29,
+        67
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        18,
+        66
+      ],
+      "right_toe": [
+        29,
+        68
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        18,
+        65
+      ],
+      "right_toe": [
+        29,
+        69
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        41
+      ],
+      "left_toe": [
+        18,
+        66
+      ],
+      "right_toe": [
+        29,
+        67
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        19,
+        67
+      ],
+      "right_toe": [
+        28,
+        65
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        20,
+        68
+      ],
+      "right_toe": [
+        28,
+        66
+      ],
+      "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}
