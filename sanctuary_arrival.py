@@ -27,7 +27,6 @@ class CastActor:
         self.story_visible=True;self.party_travelling=False;self.moving=False
         self.facing='front';self.walk_ms=0.;self._pose=None;self.pose_ms=0.;self.route=[]
         self.pose_animations={};self.walk_durations={}
-        self.detail_idles={};self.detail_walks={}
         self.carrying=False;self.carry_idles={};self.carry_walks={}
         self.draw_anchor=tuple(getattr(source,'draw_anchor', (12,30)))
         if key=='caelan':self.draw_anchor=(12,30)
@@ -38,8 +37,6 @@ class CastActor:
             self.idles=dict(source.idles)
             self.walks={direction:list(frames) for direction,frames in source.walks.items()}
             self.walk_durations=dict(getattr(source,'walk_durations',{}))
-            self.detail_idles=dict(getattr(source,'detail_idles',{}))
-            self.detail_walks=dict(getattr(source,'detail_walks',{}))
             self.pose_animations={name:dict(animation) for name,animation in
                                   getattr(source,'pose_animations',{}).items()}
         else:
@@ -94,14 +91,6 @@ class CastActor:
         durations=self.walk_durations.get(self.facing,(140,)*len(frames))
         image=self._frame(frames,durations,self.walk_ms)
         return image[0] if isinstance(image,tuple) else image
-
-    def detailed_sprite(self,elapsed_ms):
-        if self.pose in self.pose_animations or self.carrying:return None
-        if self.moving:
-            if self.facing not in self.detail_walks:return None
-            frames,anchor=self.detail_walks[self.facing]
-            return self._frame(frames,self.walk_durations[self.facing],self.walk_ms),anchor
-        return self.detail_idles.get(self.facing)
 
 class SanctuaryArrival(MillGift):
     """Shared cinematic input/captions, with in-world actors and checkpoint beats."""

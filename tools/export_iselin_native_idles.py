@@ -2,7 +2,7 @@
 
 Only hard-alpha extraction, uniform whole-drawing sampling and registration are
 performed here. The character drawings belong to the retained imagegen source.
-The four idles are user-approved; live activation is a separate integration.
+The four approved idles feed the integrated native Iselin actor.
 """
 from __future__ import annotations
 
@@ -68,7 +68,7 @@ def products():
         "idles": {direction: f"assets/characters/iselin/native_idles/idle_{direction}.png"
                   for direction in DIRECTIONS},
         "walks": {},
-        "status": "user-approved idles; not bound to live regent",
+        "status": "user-approved idles; integrated via canonical Iselin actor",
         "frame_size": [24, 36],
         "draw_anchor": [12, 30],
         "foot_anchor": [12, 34],
@@ -81,10 +81,8 @@ def products():
         "references": [
             "assets/characters/caelan/idle_front.png",
             "assets/characters/mira/idle_front.png",
-            "assets/characters/iselin/idle_front_42x72.png",
-            "assets/characters/iselin/idle_left_42x72.png",
-            "assets/characters/iselin/idle_back_42x72.png",
         ],
+        "historical_design_references": "Original generation used the former detailed Iselin front, left and rear drawings for identity; those superseded files were removed after native artwork approval.",
         "construction": "Four complete newly authored low-resolution drawings; no mirrored profiles or detached anatomy.",
         "design": "White hair and blue eyes; blue/silver royal coat; mantle anatomical right, forward braid anatomical left.",
         "export": "Alpha >=220; common crown/sole interval; one uniform source scale; nearest-neighbor registration only.",
@@ -93,7 +91,7 @@ def products():
         "draw_anchor": [12, 30],
         "foot_anchor": [12, 34],
         "collision_probe": [8, 4],
-        "status": "user-approved idles; live HD bank preserved pending integration",
+        "status": "user-approved idles; native actor integrated",
         "records": records,
         "exports": {str(path.relative_to(ROOT)): sha256(data).hexdigest()
                     for path, data in outputs.items()},

@@ -1,56 +1,37 @@
-# Iselin — registered overworld actor
+# Iselin — native overworld actor
 
-The portrait, four directional idles and four 16-frame walks are approved and
-merged. `actor.json` is the reusable runtime actor definition;
-`animation.json` registers its idles and approved walk manifests.
+The four native directional idles and all four 16-frame walking cycles are
+approved and integrated. `actor.json` is the reusable actor definition;
+`animation.json` and `native_overworld.png` register the approved cells through
+the ordinary sheet-based actor loader.
 
-Authoring follows the
-[global sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
-These integration details describe the current exports and renderer.
+- Frame: 24×36 RGBA at one artwork pixel per world pixel.
+- Draw anchor: `[12,30]`; foot anchor: `[12,34]`; collision probe: 8×4.
+- Walk timing: 16×35 ms = 560 ms per full two-step cycle, in every direction.
+- Stopping and conversation choose the approved facing idle. The existing
+  movement clock, routes, world positions and collision remain authoritative.
+- Campaign, Sanctuary cast and return escorts use the same native actor.
+  Seated, arrival and aerial views use the corresponding native design exports.
+- Dialogue keeps the approved 72×72 portrait and its separate retained master.
 
-## Runtime size and playback
-
-- Artwork is 42×72 at two artwork pixels per world pixel, representing a
-  21×36 logical frame. Draw anchor is [21,60] in artwork / [10.5,30] in world
-  coordinates; the collision probe remains 8×4 world pixels.
-- Each direction uses its existing `walk_DIRECTION/animation.json`: sixteen
-  complete frames at 35 ms each, for a 560 ms two-step loop.
-- `StoryActor` loads those unchanged images and creates 21×36 fallbacks in
-  memory. Logical and detailed frames select from the same authored durations
-  and movement clock. Navigation owns movement speed and advances that clock.
-- `WorldCanvas` preserves the 42×72 detail at normal party scale, including
-  foreground foliage and later depth-ordered blits. Ordinary surfaces use the
-  logical fallback. No additional bob or frame interpolation is applied.
-- Stopping selects the facing idle. Conversation uses the conversation-facing
-  idle; authored scene poses and external sprite overrides retain ownership.
-
-The actor is used by the live regent quest and Sanctuary scenes. Arrival
-cinematics and the seated meal use separate complete Iselin drawings. See the
-[replacement review](../../../docs/reviews/iselin_replacement/README.md). The
-earlier walking-integration capture stages an isolated review actor and retains
-its original scope; current gameplay uses the migrated regent identity.
-
-## Reproduction and review
+The approved source PNGs in `native_idles/` and `native_walk_*` are preserved
+byte for byte. Their individual review sheets remain useful inspection assets;
+`native_overworld.png` is the combined live registration. Superseded detailed
+sprite banks, trial exports and their dedicated builders were removed.
 
 ```sh
-python tools/register_iselin_walks.py --check
-python tools/export_iselin_first_assets.py --check
-python tools/capture_iselin_walks.py
-PYTHONPATH=.:tests python -m unittest test_iselin_walk_integration test_iselin_idles test_dense_art
+python tools/build_iselin_native_actor.py --check
+python tools/export_iselin_native_idles.py --check
+python tools/export_iselin_native_front_walk.py --check
+python tools/export_iselin_native_left_walk.py --check
+python tools/export_iselin_native_right_walk.py --check
+python tools/export_iselin_native_back_walk.py --check
+python tools/build_regent_iselin.py --check
+python tools/export_iselin_portrait.py --check
 ```
 
-Run `python tools/register_iselin_walks.py` to re-register the four manifests
-without changing artwork. The idle/first-assets exporters also retain this
-registration when rebuilt.
-
-[Production travel and occlusion review](../../../docs/reviews/iselin_walk_integration/README.md)
-shows four directions, stopping, turns and tree occlusion. Native PNG captures
-are the color/detail references; GIFs are motion previews.
-
-The initial 24×36 idle and resolution study are retained as historical evidence.
-They are superseded by the approved detailed sprite. Sources and provenance live
-under `assets/source/characters/iselin/` and
-`assets/source/portraits/eldenmere/`. See the
-[first detailed-idle implementation](../../../docs/reviews/iselin_first_assets/IMPLEMENTED.md)
-and [directional-idle review](../../../docs/reviews/iselin_first_assets/DIRECTIONAL_IDLES.md)
-for that milestone's original rendering evidence.
+Authoring stays centralized in the
+[sprite and animation standard](../../../docs/SPRITE_ANIMATION_STANDARD.md).
+Current production evidence and fixture limits are in the
+[native integration review](../../../docs/reviews/iselin_native_integration/README.md).
+The separate directional approval reviews retain the original reviewed captures.

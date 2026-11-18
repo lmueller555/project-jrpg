@@ -1,52 +1,629 @@
 {
+  "sheet": "assets/characters/iselin/native_overworld.png",
   "idles": {
-    "front": "assets/characters/iselin/idle_front_logical.png",
-    "left": "assets/characters/iselin/idle_left_logical.png",
-    "right": "assets/characters/iselin/idle_right_logical.png",
-    "back": "assets/characters/iselin/idle_back_logical.png"
+    "front": [
+      0,
+      0,
+      24,
+      36
+    ],
+    "left": [
+      24,
+      0,
+      24,
+      36
+    ],
+    "right": [
+      48,
+      0,
+      24,
+      36
+    ],
+    "back": [
+      72,
+      0,
+      24,
+      36
+    ]
   },
   "walks": {
-    "front": {
-      "manifest": "assets/characters/iselin/walk_front/animation.json"
-    },
-    "left": {
-      "manifest": "assets/characters/iselin/walk_left/animation.json"
-    },
-    "right": {
-      "manifest": "assets/characters/iselin/walk_right/animation.json"
-    },
-    "back": {
-      "manifest": "assets/characters/iselin/walk_back/animation.json"
-    }
+    "front": [
+      {
+        "rect": [
+          96,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          120,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          144,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          168,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          192,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          216,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          240,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          264,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          288,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          312,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          336,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          360,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          384,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          408,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          432,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          456,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      }
+    ],
+    "left": [
+      {
+        "rect": [
+          480,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          504,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          528,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          552,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          576,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          600,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          624,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          648,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          672,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          696,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          720,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          744,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          768,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          792,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          816,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          840,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      }
+    ],
+    "right": [
+      {
+        "rect": [
+          864,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          888,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          912,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          936,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          960,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          984,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1008,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1032,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1056,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1080,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1104,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1128,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1152,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1176,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1200,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1224,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      }
+    ],
+    "back": [
+      {
+        "rect": [
+          1248,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1272,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1296,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1320,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1344,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1368,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1392,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1416,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1440,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1464,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1488,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1512,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1536,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1560,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1584,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      },
+      {
+        "rect": [
+          1608,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 35
+      }
+    ]
   },
-  "high_resolution_idles": {
-    "front": {
-      "image": "assets/characters/iselin/idle_front_42x72.png",
-      "draw_anchor": [
-        21,
-        60
-      ]
-    },
-    "left": {
-      "image": "assets/characters/iselin/idle_left_42x72.png",
-      "draw_anchor": [
-        21,
-        60
-      ]
-    },
-    "right": {
-      "image": "assets/characters/iselin/idle_right_42x72.png",
-      "draw_anchor": [
-        21,
-        60
-      ]
-    },
-    "back": {
-      "image": "assets/characters/iselin/idle_back_42x72.png",
-      "draw_anchor": [
-        21,
-        60
-      ]
-    }
-  }
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "artwork_pixels_per_world_pixel": 1,
+  "status": "Approved native artwork integrated into live Iselin actor."
 }

@@ -65,7 +65,7 @@ def capture(output=DEFAULT_OUT):
             game.elapsed_ms = 0
             game.player.story_visible = True
             for attribute in ('story_sprite', 'story_position', 'story_draw_anchor',
-                              'story_sort_y', 'story_detail'):
+                              'story_sort_y'):
                 if hasattr(game.player, attribute):
                     delattr(game.player, attribute)
             # This is an isolated placement fixture, not a quest-state edit.
@@ -86,7 +86,7 @@ def capture(output=DEFAULT_OUT):
                 'art': (ART / 'animation.json').as_posix(),
             }, game.world)
             actor.story_visible = True
-            assert not actor.detail_idles and not actor.detail_walks
+            assert not getattr(actor, 'detail_idles', {}) and not getattr(actor, 'detail_walks', {})
             for name, person, probe in (('caelan', game.player, game.world.probe_size),
                                         ('mira', mira, mira.probe_size),
                                         ('iselin', actor, actor.probe_size)):
@@ -104,7 +104,7 @@ def capture(output=DEFAULT_OUT):
             for direction in DIRECTIONS:
                 game.player.facing = mira.facing = actor.facing = direction
                 assert actor.sprite(0).get_size() == (24, 36)
-                assert actor.detailed_sprite(0) is None
+                assert getattr(actor, 'detailed_sprite', lambda _: None)(0) is None
                 game.draw()
                 filename = f'in_game_{direction}.png'
                 pygame.image.save(game.window, str(output / filename))
@@ -158,7 +158,7 @@ def capture(output=DEFAULT_OUT):
     exports.extend((output / 'in_game_overview.png', output / 'in_game_closeups.png'))
     metadata = {
         'fixture': 'Four staged facings in Game.draw(), using the actual town and cast idles.',
-        'scope': 'Idle art review only; live Iselin manifests, walks and scene poses unchanged.',
+        'scope': 'Isolated idle inspection fixture; canonical native Iselin is integrated separately.',
         'persistence': 'Temporary save/settings directory; no player saves published.',
         'base_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'source_sha256': {str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest()

@@ -15,5 +15,14 @@
   "loops": {},
   "overhead_facing": "north",
   "oblique_facing": "northwest",
-  "source": "Complete authored Iselin aerial views."
+  "native_canvas": [
+    16,
+    24
+  ],
+  "native_ground_anchor": [
+    8,
+    22
+  ],
+  "camera_scale": 1.5,
+  "source": "Native complete Iselin overhead/oblique drawings; uniform nearest-neighbor aerial presentation."
 }

@@ -2,6 +2,12 @@
 
 [Full arrival with music](full_arrival.mp4) · [Crossroads sequence](crossroads_sequence.mp4)
 
+The [clerk aerial comparison board](clerk_aerial.png) was refreshed during the
+native Iselin integration to show her current aerial sprites. The recordings
+and `capture_report.json` preserve the historical capture, including its original
+comparison-board hash; verifying that report against current assets requires a
+new capture.
+
 The full recording is an **uninterrupted 191.17-second production Game capture**
 at native 480×320, 30 fps. The focused 48.03-second clip contains the final
 crossroads question, westward pan, Carrier account and return exchange.

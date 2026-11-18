@@ -85,7 +85,7 @@ def sample(actor, phase, sample_index, camera):
             'walk_ms': round(actor.walk_ms, 6), 'moving': actor.moving,
             'facing': actor.facing, 'camera': list(camera),
             'native_frame_sha256': sha256(pygame.image.tobytes(actor.sprite(0), 'RGBA')).hexdigest(),
-            'detail_override': actor.detailed_sprite(0) is not None}
+            'detail_override': getattr(actor, 'detailed_sprite', lambda _: None)(0) is not None}
 
 
 def capture(output=DEFAULT_OUT):
@@ -117,7 +117,7 @@ def capture(output=DEFAULT_OUT):
             game.player.moving = game.player.running = False
             game.player.facing = 'front'
             for attribute in ('story_sprite', 'story_position', 'story_draw_anchor',
-                              'story_sort_y', 'story_detail'):
+                              'story_sort_y'):
                 if hasattr(game.player, attribute):
                     delattr(game.player, attribute)
             mira = game.mill_quest.mira
@@ -136,7 +136,7 @@ def capture(output=DEFAULT_OUT):
             actor.story_visible = True
             assert len(actor.walks['front']) == 16
             assert actor.walk_durations['front'] == (35,) * 16
-            assert not actor.detail_idles and not actor.detail_walks
+            assert not getattr(actor, 'detail_idles', {}) and not getattr(actor, 'detail_walks', {})
             assert all(frame.get_size() == (24, 36) for frame in actor.walks['front'])
             game.regent_quest._place(actor, game.world, START)
             before = game.quests.to_dict()
@@ -156,7 +156,7 @@ def capture(output=DEFAULT_OUT):
                 for _ in range(count):
                     game.regent_quest._move(actor, goal, DT, SPEED)
                     assert game.world.can_stand(actor.position, actor.probe_size, actor, player_blocker)
-                    assert actor.detailed_sprite(0) is None
+                    assert getattr(actor, 'detailed_sprite', lambda _: None)(0) is None
                     assert actor.facing == 'front'
                     assert actor.moving == (phase == 'WALK'), (phase, actor.position)
                     image = render(game, camera)
@@ -202,7 +202,7 @@ def capture(output=DEFAULT_OUT):
     metadata = {
         'renderer': 'World.draw + WorldCanvas.present_detail, 960x640 presentation; scenery frozen at0.',
         'movement': 'RegentQuest._move at74worldpx/s for travel; explicitly pinned in-place inspection separately.',
-        'scope': 'Review actor only; live Iselin art bindings/walks/quest state unchanged.',
+        'scope': 'Isolated direction inspection fixture; canonical native Iselin is integrated separately.',
         'persistence': 'Disposable save/settings directory; no player saves published.',
         'base_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'walking_speed_world_px_s': SPEED, 'simulation_step_ms': 35,

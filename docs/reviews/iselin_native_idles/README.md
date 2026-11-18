@@ -1,8 +1,12 @@
 # Iselin native-resolution idle review
 
-**Status: all four idles approved by the user.** The approved facings are staged separately
-from Iselin's live higher-resolution bank. This milestone does not activate the
-new artwork in the campaign or remake walking, cinematic or seated drawings.
+**Status: approved and integrated.** The images below retain the original
+native-art approval snapshot, captured before campaign activation. Its
+`capture.json` preserves the reviewed commit and original input hashes; current
+manifest metadata and helper code may differ after integration. Do not repin
+those historical hashes to imply the original fixture was captured again.
+Current production verification is in the
+[native integration review](../iselin_native_integration/README.md).
 
 Authoring guidance remains in the
 [sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md). These
@@ -47,7 +51,7 @@ After generating the staged native exports, run from the repository root:
 ```sh
 python tools/export_iselin_native_idles.py --check
 SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=. \
-python tools/capture_iselin_native_idles.py
+python tools/capture_iselin_native_idles.py --out /tmp/iselin-native-idles-review
 ```
 
 The helper uses a temporary save/settings directory and never publishes a

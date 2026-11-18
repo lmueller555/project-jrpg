@@ -1,8 +1,12 @@
 # Iselin native back-walk review
 
-**Status: back walk approved by the user.** The native 24×36 back walk is staged beside
-the approved native idles and front/left/right walks. It does not activate the
-new artwork in the campaign or convert seated and cinematic poses.
+**Status: approved and integrated.** The images below retain the original
+native-art approval snapshot, captured before campaign activation. Its
+`capture.json` preserves the reviewed commit and original input hashes; current
+manifest metadata and helper code may differ after integration. Do not repin
+those historical hashes to imply the original fixture was captured again.
+Current production verification is in the
+[native integration review](../iselin_native_integration/README.md).
 
 The [sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md) remains
 the authoring reference. Rear-facing artwork follows the approved back idle,
@@ -68,7 +72,7 @@ After exporting the staged artwork, run from the repository root:
 ```sh
 python tools/export_iselin_native_back_walk.py --check
 SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=. \
-python tools/capture_iselin_native_back_walk.py
+python tools/capture_iselin_native_back_walk.py --out /tmp/iselin-native-back_walk-review
 ```
 
 The helper checks all 167 integer positions on its vertical route, sampled
@@ -81,4 +85,4 @@ hash is also recorded.
 
 All save/settings paths are temporary. This focused art/controller fixture
 does not claim full campaign traversal, save migration or gameplay activation.
-Previously approved artwork and live campaign bindings remain unchanged.
+These isolated fixtures do not modify campaign bindings; current activation is covered by the integration review.

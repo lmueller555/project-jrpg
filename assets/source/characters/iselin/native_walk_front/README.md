@@ -1,7 +1,8 @@
 # Native Iselin front-walk source
 
-Status: front walk approved by the user. This is the front direction only; the live
-campaign still uses the retained higher-resolution bank.
+Status: front walk approved and integrated through the canonical native
+Iselin actor. The complete approved frame PNGs and authored sources remain
+unchanged. Scene-specific presentation is maintained by the native scene builder.
 
 `keys.png` contains four complete contact/passing studies created with
 `image_gen.imagegen` from the approved native front idle and cast walk

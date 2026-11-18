@@ -86,7 +86,7 @@ def products():
     outputs[OUTPUT / 'review_spritesheet.png'] = png(actor_sheet)
     outputs[OUTPUT / 'animation.json'] = json_bytes({
         'character': 'iselin', 'animation': 'walk.left',
-        'status': 'user-approved left walk; campaign not activated',
+        'status': 'user-approved left walk; integrated via canonical Iselin actor',
         'frame_size': [24, 36], 'artwork_pixels_per_world_pixel': 1,
         'draw_anchor': [12, 30], 'foot_anchor': [12, 34],
         'cycle_ms': 560, 'loop': True,
@@ -99,7 +99,7 @@ def products():
         'idles': idles,
         'walks': {'left': [{'rect': [(index + 4) * 24, 0, 24, 36], 'duration_ms': 35}
                            for index in range(16)]},
-        'status': 'User-approved left walk; review-only actor; campaign bindings unchanged.',
+        'status': 'User-approved left walk; isolated inspection actor; canonical gameplay actor is separate.',
     })
     board = Image.new('RGB', (768, 728), '#e8edf2')
     draw = ImageDraw.Draw(board)
@@ -126,7 +126,7 @@ def products():
                           for p in sorted(SOURCE.glob('*.png'))},
         'records': records,
         'exports': {str(p.relative_to(ROOT)): sha256(data).hexdigest() for p, data in outputs.items()},
-        'status': 'user-approved left walk; staged pending gameplay integration',
+        'status': 'user-approved left walk; native actor integrated',
     })
     return outputs
 

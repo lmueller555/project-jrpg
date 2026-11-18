@@ -221,5 +221,14 @@
       "stride_pixels": 32
     }
   },
-  "source": "Complete Iselin drawings and approved 16-frame walks; no limb assembly."
+  "native_canvas": [
+    24,
+    36
+  ],
+  "native_ground_anchor": [
+    12,
+    34
+  ],
+  "camera_scale": 2.3529411764705883,
+  "source": "Native complete Iselin scene drawings and approved16-frame native walks; uniform nearest-neighbor camera presentation."
 }

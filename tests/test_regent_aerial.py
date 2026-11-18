@@ -161,7 +161,8 @@ class RegentAerialTests(unittest.TestCase):
         # vehicle's large transparent canvas or a diagnostic center point.
         contacts = {'caravan': ((59, 116), (101, 116), (60, 76),
                                 (101, 76), (70, 50), (90, 50)),
-                    'iselin': ((24, 55),)}
+                    'iselin': ((24, 52),)}
+        self.assertGreater(aerial.actors['iselin']['poses']['overhead'].get_at((24, 52)).a, 0)
         checked = 0
         painted_checks = 0
         original_sprite = aerial._sprite

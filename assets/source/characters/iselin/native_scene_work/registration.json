@@ -1,0 +1,1173 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "specification_sha256": "5d67dda2dd18f8a42f7be275b30c7d3e9b5100dcb4c68a3efab823a446dae950",
+  "native_ground_canvas": [
+    24,
+    36
+  ],
+  "native_ground_anchor": [
+    12,
+    34
+  ],
+  "ground_camera_canvas": [
+    80,
+    96
+  ],
+  "ground_camera_anchor": [
+    40,
+    92
+  ],
+  "ground_camera_scale": 2.3529411764705883,
+  "aerial_camera_scale": 1.5,
+  "aerial_crop": [
+    14,
+    28,
+    34,
+    56
+  ],
+  "records": {
+    "listen_left": {
+      "source": "assets/characters/iselin/native_idles/idle_left.png",
+      "source_sha256": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589",
+      "source_rect_xywh": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "source_anchor": [
+        0,
+        0
+      ],
+      "destination_anchor": [
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "sample_size": [
+        24,
+        36
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        1,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "65c6b35d6f319de0f5c9cee2401fa3449313506706655722da5d1593b1736c85",
+      "preserve": null
+    },
+    "gesture_left": {
+      "source": "poses.png",
+      "source_sha256": "23f15185968a63a50aa01eb247bd8a599bb05475fd159b119e5042385c618c5d",
+      "source_rect_xywh": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "source_anchor": [
+        262,
+        32
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "uniform_scale": 0.075,
+      "sample_size": [
+        38,
+        38
+      ],
+      "origin": [
+        -8,
+        -1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        0,
+        1,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "77d43619cef4497449f7e208f65f07694fb41377614695e8ccd9730deb7905fe",
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          12
+        ],
+        "destination": [
+          0,
+          0
+        ]
+      }
+    },
+    "turn_left_back": {
+      "source": "poses.png",
+      "source_sha256": "23f15185968a63a50aa01eb247bd8a599bb05475fd159b119e5042385c618c5d",
+      "source_rect_xywh": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "source_anchor": [
+        260,
+        32
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "uniform_scale": 0.075,
+      "sample_size": [
+        38,
+        38
+      ],
+      "origin": [
+        -8,
+        -1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        5,
+        1,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "ab2e769d873c5b5bb8a415db308ca2bc20957109d3027a084f6403b0a36e6923",
+      "preserve": null
+    },
+    "seated_left": {
+      "source": "poses.png",
+      "source_sha256": "23f15185968a63a50aa01eb247bd8a599bb05475fd159b119e5042385c618c5d",
+      "source_rect_xywh": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "source_anchor": [
+        282,
+        66
+      ],
+      "destination_anchor": [
+        12,
+        4
+      ],
+      "uniform_scale": 0.075,
+      "sample_size": [
+        38,
+        38
+      ],
+      "origin": [
+        -9,
+        -1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        1,
+        4,
+        18,
+        34
+      ],
+      "native_rgba_sha256": "f817e7e3c2d6259b58815fd4c0bfe4acf1d5a724360f2f63d9e665c858d7dcf5",
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          12
+        ],
+        "destination": [
+          0,
+          3
+        ]
+      }
+    },
+    "overhead": {
+      "source": "poses.png",
+      "source_sha256": "23f15185968a63a50aa01eb247bd8a599bb05475fd159b119e5042385c618c5d",
+      "source_rect_xywh": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "source_anchor": [
+        256,
+        103
+      ],
+      "destination_anchor": [
+        8,
+        4
+      ],
+      "uniform_scale": 0.052,
+      "sample_size": [
+        27,
+        27
+      ],
+      "origin": [
+        -5,
+        -1
+      ],
+      "canvas": [
+        16,
+        24
+      ],
+      "opaque_bounds": [
+        4,
+        4,
+        13,
+        20
+      ],
+      "native_rgba_sha256": "8be715ea86726b06229bb5fe0760333028a9da0ec5d8904f31daee1433e9be69",
+      "preserve": null
+    },
+    "oblique": {
+      "source": "poses.png",
+      "source_sha256": "23f15185968a63a50aa01eb247bd8a599bb05475fd159b119e5042385c618c5d",
+      "source_rect_xywh": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "source_anchor": [
+        254,
+        87
+      ],
+      "destination_anchor": [
+        8,
+        4
+      ],
+      "uniform_scale": 0.052,
+      "sample_size": [
+        27,
+        27
+      ],
+      "origin": [
+        -5,
+        -1
+      ],
+      "canvas": [
+        16,
+        24
+      ],
+      "opaque_bounds": [
+        4,
+        4,
+        13,
+        22
+      ],
+      "native_rgba_sha256": "51978509537bfdd808e6a79fcac5b9bd0505a48f8602f3ee562649ed25089e31",
+      "preserve": null
+    },
+    "diagonal": [
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          0,
+          0,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          4,
+          1,
+          20,
+          34
+        ],
+        "native_rgba_sha256": "9d94069bc648a8a26a0fdd40815080a251acb77d3cdfd0c609813917a1b52a66",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          272,
+          0,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          18,
+          33
+        ],
+        "native_rgba_sha256": "14462d879396c2a2c1a0e04ce05887d6b08fe05be72364f9f685df9dee2cd721",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          543,
+          0,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "41ff73f8998b3f6bcdd787d7a0948d0ac8e1aa8d7e148cc11bd5608a80e07aaa",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          814,
+          0,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "8c5e3f69b6d277e17a687dcd34edcba890eefcb4de857bad41d94c28aea14356",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          0,
+          362,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "c0bf2c9542e93d42f6604d1e127d85ef58645f2bdcc44fae06e01b72d3a6b492",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          272,
+          362,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "f8512da34aa8326fad3c06af84ee643a972bea7a4e383988ff5d5ad3b292dad2",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          543,
+          362,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "556c6e3fb93f00d303f0c19154d30c996d6e9b49c253cd15b62a238415d02967",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          814,
+          362,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "b03c9fd324e086c3ca96f1ad161dcd493c3b64acc7ec27592c8ae94d9dfccc80",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          0,
+          724,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          4,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "ad9026cc8c60767be7a34a68820286753d003a534eef47c2047fb98ee89b8549",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          272,
+          724,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          4,
+          1,
+          19,
+          32
+        ],
+        "native_rgba_sha256": "b1c35d14d37c36d6dbe02c52c32ef31766d1d07b9a5a1267d2deeaa6709a094f",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          543,
+          724,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "2d65192f1656c83240bc4037ff10e103d1247a5e1ad9b5d2bd1421b423705beb",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          814,
+          724,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          6,
+          1,
+          18,
+          32
+        ],
+        "native_rgba_sha256": "41df973f5c4781d3054eae09133fac505f3508a1373442f21d025f0ca27760c6",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          0,
+          1086,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          6,
+          1,
+          18,
+          32
+        ],
+        "native_rgba_sha256": "d6491ce96d9074268e92cf929b05aee999cf4da667aac08093e137d6c0a2b088",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          272,
+          1086,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          5,
+          1,
+          19,
+          33
+        ],
+        "native_rgba_sha256": "64817117506f83d3eaa5d99d341c86d8d37c44f586c0b8f66174dc4e17659729",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          543,
+          1086,
+          271,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          4,
+          1,
+          20,
+          34
+        ],
+        "native_rgba_sha256": "3188ccbbb979d90f5532fe2d49f955202c9249822efa1a76bbc777b0c39be748",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      },
+      {
+        "source": "diagonal.png",
+        "source_sha256": "3c04c2465cbbb33f972354d672a65d1af709385f444de028e5f0dfefa98fe262",
+        "source_rect_xywh": [
+          814,
+          1086,
+          272,
+          362
+        ],
+        "source_anchor": [
+          144,
+          24
+        ],
+        "destination_anchor": [
+          12,
+          1
+        ],
+        "uniform_scale": 0.1,
+        "sample_size": [
+          27,
+          36
+        ],
+        "origin": [
+          -2,
+          -1
+        ],
+        "canvas": [
+          24,
+          36
+        ],
+        "opaque_bounds": [
+          4,
+          1,
+          20,
+          34
+        ],
+        "native_rgba_sha256": "de90ea74540ee095aa281fd78cd04541a8b7eb1a253c90baada8ae788a474dac",
+        "preserve": null,
+        "protected_native_pose": {
+          "name": "turn_left_back",
+          "rect_xywh": [
+            0,
+            0,
+            24,
+            12
+          ],
+          "rgba_sha256": "13b4e62ddb42595c08e3d82c5a2edb40edfda34abb56e526435527669c9be0d0"
+        }
+      }
+    ]
+  },
+  "approved_asset_dependencies": {
+    "assets/characters/iselin/native_idles/idle_left.png": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589",
+    "assets/characters/iselin/native_idles/idle_right.png": "a372ac232c61cc36232477200e39e2e5cc0d39a5c7c045247dd08fa83107bd4b",
+    "assets/characters/iselin/native_idles/idle_back.png": "9f6d6359e5c90bdf5dac03a99e348ac4bed4179227c1bc5115f9e279f6bc100d",
+    "assets/characters/iselin/native_walk_left/frame_01.png": "e9a35cc3b956677db7b5a7dfcc46ea8cc37a8ca3e916e6c2bd20495b162ee214",
+    "assets/characters/iselin/native_walk_left/frame_02.png": "994be98aa705f35a0eceeaa73316a0afccebd45ddf9eb4c6d1361f2b82e6fced",
+    "assets/characters/iselin/native_walk_left/frame_03.png": "3fcb9b1cfb85b53ea2ce4e6308c840bcf87484f480ee99fd31414916ffe874f9",
+    "assets/characters/iselin/native_walk_left/frame_04.png": "3f1e503f46c715c40885d964bb1d8b42b8be63541da5cf13795131e518d573e2",
+    "assets/characters/iselin/native_walk_left/frame_05.png": "fe91c01a4262a69ac4a098e2917d32ec5df52604518374ea588a222f4916d5ce",
+    "assets/characters/iselin/native_walk_left/frame_06.png": "9f2bb70003a69b50ec393c50ce72b36eb56503e0aefffc69577e83ea234da24c",
+    "assets/characters/iselin/native_walk_left/frame_07.png": "fe6f4b0377975eccbf771a22b6d8d96f623d50a3fb8aafb4cffae714d230b03b",
+    "assets/characters/iselin/native_walk_left/frame_08.png": "be23bc43297ffab1d3b3c6aaee25b52495ff0e19f00b6d1812cccd57a72e409d",
+    "assets/characters/iselin/native_walk_left/frame_09.png": "f3343ba01368d00eb2adc962438e051e58a9eddb8fee4e685f584ed9c06c97ae",
+    "assets/characters/iselin/native_walk_left/frame_10.png": "2c2527db429fe47310d545e0396d2f10ba7292ba2f0331b71acf600e37c51afd",
+    "assets/characters/iselin/native_walk_left/frame_11.png": "f78bc0f3bdf43d4cc162257613400d470559223e1ebca11923bab4767e06d9c8",
+    "assets/characters/iselin/native_walk_left/frame_12.png": "d9abdce5920bebf390ce5dd5c859b20dc4e1592dd6ff62a8665560de31d3cd6e",
+    "assets/characters/iselin/native_walk_left/frame_13.png": "a5869269eb108b44ab74f912bdd78f490d3ac46050a7d6da7d44af7c3713d196",
+    "assets/characters/iselin/native_walk_left/frame_14.png": "92eb96fd873be0a49b2a5c65adf63fe46c9dc55a2dfd69de24d18a61eec50b0d",
+    "assets/characters/iselin/native_walk_left/frame_15.png": "8b85fdcfcd45216d1d8a21c5cc273f4676123a6c13f51fd36fc31f8adbc6ae85",
+    "assets/characters/iselin/native_walk_left/frame_16.png": "5b23cbbfee9e24152259ea8ecb49e89105464df9505908adb3c8bf54c3702716",
+    "assets/characters/iselin/native_walk_back/frame_01.png": "40a919ac74ef4cf927bf343dce3c964f9ff8e1cd323cc71b6382a69da7081d4a",
+    "assets/characters/iselin/native_walk_back/frame_02.png": "b1c9d9a5a365393e76f91748333959c7be368d7b3fb459b8fde6d7ee2f08f381",
+    "assets/characters/iselin/native_walk_back/frame_03.png": "923d52424f3572a6d44cd094dc15dedf4e12b27d3c36083d939473e3c4791a06",
+    "assets/characters/iselin/native_walk_back/frame_04.png": "91f616a0ca996c9a716cb45d6437afe533ec7054e56f9ce990b2589ee913c402",
+    "assets/characters/iselin/native_walk_back/frame_05.png": "ad719ffe5ddac722fadba2d1af82af0cc4911a45612a9f909b0859de1a59b5cb",
+    "assets/characters/iselin/native_walk_back/frame_06.png": "13b1fe8912109855b29db6651a854607f35fe826b077aa384cf69c04f5c942ca",
+    "assets/characters/iselin/native_walk_back/frame_07.png": "52ae34dd703c6d86abd54ba6754aedcadba57c3f6bbcc6fd29431a6410cda173",
+    "assets/characters/iselin/native_walk_back/frame_08.png": "f03a117a1ba7021eeea5c10487d9c41d32a8fb531822a4d77fa54c8acf957845",
+    "assets/characters/iselin/native_walk_back/frame_09.png": "767a348916cc963a1c2adaf86a3d8b7e670507c638ff825b51eb093312d09a5b",
+    "assets/characters/iselin/native_walk_back/frame_10.png": "14b77438080f33c21e6bdd33fe30e402eb1530b57920055176b452311b91d566",
+    "assets/characters/iselin/native_walk_back/frame_11.png": "18d37ec655329345899d740180ce1a0b60b282c20c1fec46b06dc5f2df93afca",
+    "assets/characters/iselin/native_walk_back/frame_12.png": "3132a36a93ff4324eec0a780569607417c1fea6284ff3218315dcb1a00611ba5",
+    "assets/characters/iselin/native_walk_back/frame_13.png": "d2322642a8f9e62a37b4a6edf1bcfcb35f67c2cb0734eb467a06b13e57202993",
+    "assets/characters/iselin/native_walk_back/frame_14.png": "884d8209f88c10523a3c461159ac49f411da010185871c798a7644f416b641bb",
+    "assets/characters/iselin/native_walk_back/frame_15.png": "e67bb3958e7ac8128706fed34d26cb4aa1cae71d77474270741a842f1f79fb9e",
+    "assets/characters/iselin/native_walk_back/frame_16.png": "c0aaaf603bf047e04165b65ae40a144b31e6cea4a728f8cfdb391931b9eb262a"
+  },
+  "construction": "Complete native poses/diagonal cycle; explicit body registration and uniform camera presentation. No predecessor art or limb assembly.",
+  "exports": {
+    "assets/story/regent_arrival/actors/iselin/walk_left_00.png": "f05ddaf05d3533b404952bca5f3f51783fbb3629b190a46ec6389bdb6db5e780",
+    "assets/story/regent_arrival/actors/iselin/walk_left_01.png": "1252dad3818340e5fd2ee140e2647eafd6f83e9fe5abfbe36881680db2040538",
+    "assets/story/regent_arrival/actors/iselin/walk_left_02.png": "51e7650b68e784b813f659219261fe28f19d06977f0d04d4fa77b7af1a8679b3",
+    "assets/story/regent_arrival/actors/iselin/walk_left_03.png": "2e730a30422f083d1dfbb324e917a97d263991f7915776dd4826325060aaa13f",
+    "assets/story/regent_arrival/actors/iselin/walk_left_04.png": "a4c1b1ab298a0739b91ad7c10f168779f1cbdf9c5ccb137e57020e016ffac43d",
+    "assets/story/regent_arrival/actors/iselin/walk_left_05.png": "7e34b1b9feb31f2d5ed2f043f230316ac9fb57dc6d7c434b48c119805e792de3",
+    "assets/story/regent_arrival/actors/iselin/walk_left_06.png": "3b81548d3c2b042ac77d2303582ed1e0c036cf445a84100c5166797ff86ac84e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_07.png": "b905bd4931707c14d2920ea0f20d234c087519c7b947eab1f1e465bab504972c",
+    "assets/story/regent_arrival/actors/iselin/walk_left_08.png": "f248e70fe4104915c559482300a045fae730ca6a8b5d49ae6513538e9797e8c2",
+    "assets/story/regent_arrival/actors/iselin/walk_left_09.png": "6d375ed943f170f306da32871e74336ab90ba0f657128c21a89e5af2e6182c8e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_10.png": "42a84a04417d23ffe79b6ee646099c2e6dc9094eb247574c9daeb7877bf25817",
+    "assets/story/regent_arrival/actors/iselin/walk_left_11.png": "2f660ec6759dcf28fa73b7a70df13fd0dd26b3c5eca7f2ed368cc97626ebb3fd",
+    "assets/story/regent_arrival/actors/iselin/walk_left_12.png": "2ba4a14d281059fc877446ea99f5ee58f4372231c0bfb6c844655e4ccb649a82",
+    "assets/story/regent_arrival/actors/iselin/walk_left_13.png": "215409c83bb34a035a271475eb226a39f60a914f67b3b246a0b0d1d8dbdaf61f",
+    "assets/story/regent_arrival/actors/iselin/walk_left_14.png": "5e464822a1819c9c069b92047b720525ded33c3023b4ba419242f9340ca655f6",
+    "assets/story/regent_arrival/actors/iselin/walk_left_15.png": "75c180560ca90602eb2532e444723dfea55a58f8ee70bbfea158f26892820c54",
+    "assets/story/regent_arrival/actors/iselin/walk_back_00.png": "9515fb7d595a7eba999eb68ffbd3bfe563eee3b2319d63da668bb8eefb6ef163",
+    "assets/story/regent_arrival/actors/iselin/walk_back_01.png": "28c4f47d6b79fa5b39499f10bbb15fe1ea6966f8d279bc129e61652f6f3030f6",
+    "assets/story/regent_arrival/actors/iselin/walk_back_02.png": "f3452a60885cae5d5919b278b6c2b13ae8206b8da503b9da47bb7d27eba9fe0d",
+    "assets/story/regent_arrival/actors/iselin/walk_back_03.png": "f974b442ad5dc4fa903c648ff6370a329bc7321e8d21ea8a6926c93cd751cc69",
+    "assets/story/regent_arrival/actors/iselin/walk_back_04.png": "1bf7caa753516c029038fa7b74853688fce9f9b5bf348a2112f6c773c1607432",
+    "assets/story/regent_arrival/actors/iselin/walk_back_05.png": "c3511eba7e9ed87cf06f645b7ea1aeee03d174f5a1605d81da3838c06bc38921",
+    "assets/story/regent_arrival/actors/iselin/walk_back_06.png": "504e931129a1ccb886f739062a546c3dd51c6baa1155a765cefb0d0b90b4e0df",
+    "assets/story/regent_arrival/actors/iselin/walk_back_07.png": "812f3a01da414d0ce930d132d452e9fe2e34fee357a3b2045adf7c5db8816e9f",
+    "assets/story/regent_arrival/actors/iselin/walk_back_08.png": "db2d44232b06395144a2a33a791d8bede9a66d7cb0a8510d6aa42aa5b41e923b",
+    "assets/story/regent_arrival/actors/iselin/walk_back_09.png": "aa7ce6d9db4938b9c63451f8de66c803fbcbc15da49f1797e942e76f0f700742",
+    "assets/story/regent_arrival/actors/iselin/walk_back_10.png": "d835826f0c7159281e81a860dcd969940b31bc33ef13037c33a30eb0d00ab8d1",
+    "assets/story/regent_arrival/actors/iselin/walk_back_11.png": "7e6a0bdc9b010ab96f5efef6b54175d2131d0a8aaf9448f328dad16277547bd8",
+    "assets/story/regent_arrival/actors/iselin/walk_back_12.png": "8fe33eafa33f9ae849187fe2063df92bac75b201349b69a1857061e0d8cbde5c",
+    "assets/story/regent_arrival/actors/iselin/walk_back_13.png": "745a417e2590c96de00eb43ec9b1fe53e5ab915eff574d14acacfde837107b34",
+    "assets/story/regent_arrival/actors/iselin/walk_back_14.png": "89ae2b0d042306bdfb34772efa7901a08cb3b587f3954a15286d8b90028baaba",
+    "assets/story/regent_arrival/actors/iselin/walk_back_15.png": "1c6e504585fbc46a56ff84e2e3a5a21469fe6d567decc788bc6e61cf09b12cf3",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_00.png": "25394276dda6335f202be2a56a8556444eb17fdb03d1156b0dc5e5ad1ee82483",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_01.png": "a85643565870864da9ba9d0907591b1d66a640dd2de7e172ec4b466b1880b6f4",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_02.png": "767b0971dc9a96e488880d42ee663b14e8268ed0d542fd08877b5a8263c14d23",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_03.png": "34fff837895f0b097de091c2972ea0bee8661b43969690ea7798acbb927eacb7",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_04.png": "620c58bfa536ce58ac5648af5344e933c7b143767bd2aa5a024e024b26ea23af",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_05.png": "df926f9c40b75ab38d47a143924d7c0771c7a46a61b57f117f0c53b32305c073",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_06.png": "5e348a89e3b2c31a221d31318d340003325363e825f2ed5d3b192edc8ec76c3f",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_07.png": "6f3e52600b1a84bc32aa21a7f98c2c6e40dff7f36710bc093a6e27172c805173",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_08.png": "65a3475c232d4c8902cd4ef2a877953a3feda8bc155c715cf785c677d28816ba",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_09.png": "1c86d29e05d7c036a65c7fe5d2041d3ca9249b1d6eee9f681bbda949ef50cea7",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_10.png": "9b938f2512089f172ba4a0882b801023ad064cb40fd02c49062887e4810fdd4a",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_11.png": "7c0eff435e584390add2991073480723a3d06ddc6fa46662d7c1acafa918680e",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_12.png": "39009e8c17344eee42809e2443a1684a983fc080b749abd55bddb803129e1a4f",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_13.png": "257ad29c06e4741334bbabfdffaf9bc57407764a1dc584bd7b40d53651a116eb",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_14.png": "8b6daa5efd4ec8db868d5cb9a3a88d985cb1efa9b5774760184cb206836c5b8a",
+    "assets/story/regent_arrival/actors/iselin/walk_left_back_15.png": "ef4763df146184a47bde2576baede58520cadb56bc0c60f852ff3f3fde7a31c1",
+    "assets/story/regent_arrival/actors/iselin/listen_left.png": "7f5c278d41d81876ae673bfd826e9c24c0c3edff455add0f9232530506b807ca",
+    "assets/story/regent_arrival/actors/iselin/gesture_left.png": "213a08123fbd7c8f2f57789791de8e5dbf1f12653c40db81849b2967f2399950",
+    "assets/story/regent_arrival/actors/iselin/turn_left_back.png": "707891597f1359994a960860742ce9f4ae8c4d620208e832154f23e1f0c7a934",
+    "assets/story/regent_arrival/actors/iselin/stand_left.png": "7f5c278d41d81876ae673bfd826e9c24c0c3edff455add0f9232530506b807ca",
+    "assets/story/regent_arrival/actors/iselin/stand_right.png": "3fe43704444ccafa0cfc7638d77496864af479e73249fd870a248cd22d62b6c4",
+    "assets/story/regent_arrival/actors/iselin/stand_back.png": "1535bfd7db225313b258f32ef7a908c11811c627b46526db0dbdf7a2afcb743c",
+    "assets/story/regent_arrival/actors/iselin/animation.json": "63f7eae0b0d77c88c9b5d9b7774df017ffcbddfee1e70674f48005a769223b67",
+    "assets/story/regent/poses/iselin_seated.png": "401dd36eeb3f66676881a7fb6210298dd0968a3c27572adbd89ffd108c723f24",
+    "assets/story/regent_aerial/actors/iselin/overhead.png": "9eb35141f6cad1fa23c9e8b62cd4310a3db74a72565c777abb7c62c54ce69103",
+    "assets/story/regent_aerial/actors/iselin/oblique.png": "0c86cdd3ddda3e5425502a012b1cd2429a172bcc32b79058ac3d02a4f009eb47",
+    "assets/story/regent_aerial/actors/iselin/animation.json": "6ec06df55a69656fccd06b575cefc08bb915048e69a7242b8e92b706dc1c2af3"
+  }
+}

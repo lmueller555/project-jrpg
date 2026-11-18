@@ -62,12 +62,15 @@ def recolor(source,spec,direction,offset=0):
 def actor_sheet(identifier,spec):
  if identifier=='iselin':
   if __package__:
+   from .build_iselin_native_actor import build as build_native_iselin
    from .build_regent_iselin import build as build_iselin
   else:
+   from build_iselin_native_actor import build as build_native_iselin
    from build_regent_iselin import build as build_iselin
+  build_native_iselin()
   build_iselin()
   return {'id':identifier,'name':'Regent Iselin','position':spec['position'],
-          'probe_size':[8,4],'draw_anchor':[10.5,30],
+          'probe_size':[8,4],'draw_anchor':[12,30],
           'art':'assets/characters/iselin/animation.json','facing':'front'}
  if identifier=='regent_clerk':
   # The Page has a native moss-coat design, not a generic villager recolor.
@@ -165,7 +168,6 @@ DEFAULT_LAYOUT={
 DEFAULT_LAYOUT.update(serene_meal=[168,116], lucan_courtyard=[336,132], driver_courtyard=[336,252])
 DEFAULT_LAYOUT['meal_seats']={'tomas': {'position': [138, 200], 'approach': [108, 200], 'anchor': [12, 30], 'facing': 'right', 'image': 'assets/story/sanctuary_opening/poses/tomas_seated.png', 'sort_y': 206, 'flip_x': True}, 'iselin': {'position': [198, 200], 'approach': [228, 200], 'anchor': [12, 30], 'facing': 'left', 'image': 'assets/story/regent/poses/iselin_seated.png', 'sort_y': 206}, 'mother_serene': {'position': [168, 158], 'approach': [168, 116], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/serene_seated.png', 'sort_y': 206}, 'regent_clerk': {'position': [288, 158], 'approach': [288, 132], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/clerk_seated.png', 'sort_y': 206}, 'lucan': {'position': [336, 158], 'approach': [336, 132], 'anchor': [12, 30], 'facing': 'front', 'image': 'assets/story/regent/poses/lucan_seated.png', 'sort_y': 206}, 'regent_driver': {'position': [336, 234], 'approach': [336, 252], 'anchor': [12, 30], 'facing': 'back', 'image': 'assets/story/regent/poses/driver_seated.png', 'sort_y': 246}}
 
-DEFAULT_LAYOUT['meal_seats']['iselin'].update(anchor=[10.5,30], detail_image='assets/story/regent/poses/iselin_seated_42x72.png', detail_anchor=[21,60])
 
 def build():
  """Maintain the revised visit without overwriting approved art or room edits.
