@@ -1,6 +1,6 @@
 # Iselin native front-walk review
 
-**Status: awaiting user review.** The native 24×36 front walk is staged beside
+**Status: front walk approved by the user.** The native 24×36 front walk is staged beside
 the approved native idle bank. This milestone does not activate it in the
 campaign or remake the other directions, seated artwork or cinematic drawings.
 

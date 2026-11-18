@@ -1,6 +1,6 @@
 # Native Iselin front-walk source
 
-Status: awaiting user review. This is the front direction only; the live
+Status: front walk approved by the user. This is the front direction only; the live
 campaign still uses the retained higher-resolution bank.
 
 `keys.png` contains four complete contact/passing studies created with
