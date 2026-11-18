@@ -1,0 +1,128 @@
+[
+  {
+    "id": "villager_male_01",
+    "design": "adult_man_01",
+    "position": [
+      122.0,
+      180.0
+    ],
+    "blocker": [
+      116,
+      176,
+      12,
+      8
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  },
+  {
+    "id": "villager_female_01",
+    "design": "adult_woman_01",
+    "position": [
+      122.0,
+      180.0
+    ],
+    "blocker": [
+      116,
+      176,
+      12,
+      8
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  },
+  {
+    "id": "villager_male_02",
+    "design": "adult_man_02",
+    "position": [
+      202.0,
+      168.0
+    ],
+    "blocker": [
+      196,
+      164,
+      12,
+      8
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  },
+  {
+    "id": "villager_female_03",
+    "design": "adult_woman_03",
+    "position": [
+      122.0,
+      180.0
+    ],
+    "blocker": [
+      116,
+      176,
+      12,
+      8
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  },
+  {
+    "id": "villager_male_03",
+    "design": "adult_man_03",
+    "position": [
+      202.0,
+      168.0
+    ],
+    "blocker": [
+      196,
+      164,
+      12,
+      8
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  },
+  {
+    "id": "inn_keeper",
+    "design": "innkeeper_05",
+    "position": [
+      168.0,
+      122.0
+    ],
+    "blocker": [
+      164,
+      120,
+      8,
+      4
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  },
+  {
+    "id": "item_shop_keeper",
+    "design": "shopkeeper_03",
+    "position": [
+      216.0,
+      152.0
+    ],
+    "blocker": [
+      212,
+      150,
+      8,
+      4
+    ],
+    "draw_anchor": [
+      12,
+      30
+    ]
+  }
+]

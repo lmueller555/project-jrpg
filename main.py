@@ -199,17 +199,28 @@ class BenchWorker:
 
 
 class StationaryNPC:
-    """One fixed pose with a foot blocker and no behavior or social hooks."""
+    """Fixed home actor; opt-in roster art does not create a movement schedule."""
     def __init__(self,record,world):
         self.data=record
         self.position=pygame.Vector2(record['position'])
         self.draw_anchor=record['draw_anchor']
-        self._sprite=world.art_image(record['sprite'],record)
+        from npc_roster_art import RosterArt, bound_design
+        design_id=bound_design(record['id'])
+        self.roster_art=RosterArt(world,design_id) if design_id else None
+        self._sprite=world.art_image(record['sprite'],record) if self.roster_art is None else self.roster_art.idles['front']
+        if self.roster_art:
+            if tuple(self.draw_anchor)!=self.roster_art.draw_anchor:
+                raise ValueError('Roster binding must preserve the map draw anchor')
+            self.idles=self.roster_art.idles;self.walks=self.roster_art.walks
+            self.facing=record.get('facing','front');self.moving=False;self.walk_ms=0.
         width,height=record['probe_size']
         self.blocker=pygame.Rect(round(self.position.x)-width//2,
                                  round(self.position.y)-height//2,width,height)
 
-    def sprite(self,elapsed_ms):return self._sprite
+    def sprite(self,elapsed_ms):
+        if self.roster_art:
+            return self.roster_art.sprite(self.facing,self.moving,self.walk_ms)
+        return self._sprite
 
 
 class GroundFrames:
