@@ -1,0 +1,31 @@
+{
+  "tests_run": 22,
+  "passed": [
+    "test_grain_farm.GrainFarmTests.test_waits_for_physical_repair_and_has_finite_load",
+    "test_grain_farm.GrainFarmTests.test_blocking_loader_waits_without_losing_sack_then_recovers",
+    "test_grain_farm.GrainFarmTests.test_optional_exchange_commits_after_read_and_physical_payoff",
+    "test_grain_farm.GrainFarmTests.test_map_and_journal_freeze_all_local_clocks",
+    "test_grain_farm.GrainFarmTests.test_continue_rolls_back_unplaced_sack_and_keeps_committed_work",
+    "test_grain_farm.GrainFarmTests.test_continue_does_not_repeat_read_exchange_or_completed_scene",
+    "test_grain_farm.GrainFarmTests.test_invalid_save_payloads_rejected_without_exceptions",
+    "test_grain_farm.GrainFarmTests.test_cache_eviction_and_leaving_keep_single_controller",
+    "test_grain_farm.GrainFarmTests.test_both_cart_placements_snap_only_after_the_complete_action",
+    "test_grain_farm.GrainFarmTests.test_spare_sack_stays_grounded_until_lift_finishes",
+    "test_grain_farm.GrainFarmTests.test_shared_lowering_releases_the_sack_before_empty_handed_recovery",
+    "test_grain_farm.GrainFarmTests.test_ordinary_greeting_freezes_an_unfinished_physical_lift",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_explicit_binding_only_and_original_physics",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_unbound_roles_do_not_receive_implicit_sibling_activation",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_native_roster_pixels_survive_padding_and_each_complete_cycle",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_legacy_activity_mirror_and_attachment_metadata_stay_stable",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_bound_speaker_uses_matching_existing_portrait_only",
+    "test_regional_npc_travel_hd.RegionalNativeTravelTests.test_all_bindings_keep_original_activity_sources_and_approved_banks_read_only",
+    "test_npc_roster_bindings.RosterBindings.test_exact_seven_without_mutating_map_or_actor_identity",
+    "test_npc_roster_bindings.RosterBindings.test_native_idles_and_all_walk_frames_are_exact_at_world_scale",
+    "test_npc_roster_bindings.RosterBindings.test_service_portraits_are_bound_without_changing_shared_civilian_portraits",
+    "test_npc_roster_bindings.RosterBindings.test_unmigrated_character_art_and_five_household_portrait_bindings"
+  ],
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "execution": "One test case per fresh subprocess using repository ReviewResult."
+}
