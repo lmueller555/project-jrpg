@@ -6,6 +6,34 @@ rules and scene beats below are proposals, not facts already true in the
 game. No new destinations, playable layouts, quest obligations or map edits are
 specified.
 
+**Places, households, and local institutions**
+
+[Elden Vale](#elden-vale-mending-before-lighting) ·
+[Upper Leth approach](#upper-leth-approach-the-unnamed-town-south-of-eldenmere) ·
+[Greyfold](#greyfold-uplands-rhea-revises-her-own-theory) ·
+[Lower Leth](#lower-leth-a-fair-weight-after-a-flood) ·
+[Rookfen](#rookfen-and-marris-where-a-cargo-changes-hands) ·
+[Redstone](#redstone-march-the-first-drink) ·
+[Rimeward](#merovars-rimeward-shores-yesterdays-channel) ·
+[Marris](#marris-coast-the-apprentice-explains-the-repair) ·
+[Northern kingdom](#northern-kingdom-who-gets-the-next-loaded-cart)
+
+**Character and naming tests**
+
+[Iselin](#elden-vale-iselin-under-pressure) ·
+[Rhea](#greyfold-uplands-rhea-revises-her-own-theory) ·
+[Edran](#lower-leth-edrans-borrowed-lesson-book) ·
+[Lucan](#redstone-march-lucan-gives-the-account-before-the-title) ·
+[Place names](#elden-vale-naming-places-without-inventing-their-history) ·
+[Personal names](#merovar-naming-people-for-dialogue)
+
+**Canon references and review questions**
+
+[Established material](#where-to-look-for-established-material) ·
+[Peoples and species](#peoples-are-not-species-and-regions-are-not-personalities) ·
+[Next development pass](#next-development-pass) ·
+[Map implications](#map-implications-for-a-later-review)
+
 ## Where to look for established material
 
 | Question | Authoritative reference |
@@ -86,6 +114,23 @@ accountability matters without undoing the injury or breach of trust.
 A voice test, not new script: “I kept counting the people waiting for the stone.
 I should have counted the people I was asking to bear its cost.” Preserve the
 opening’s established limits on what the party knows about her.
+
+## Elden Vale: the notice already posted
+
+In a proposed relief visit, [Iselin’s](../../narrative/game_01/characters/ISELIN.md)
+page puts up a notice for interviews in the Sanctuary hall before checking
+with the keepers. A keeper takes it down: families are expected there for
+remembrance that afternoon. Several petitioners have already travelled.
+A bereaved carrier offers to move her own visit, not everyone else’s.
+Another petitioner will miss paid work if the interviews start later.
+
+Iselin asks what hours the hall can actually offer. She has the page
+correct the notice and tells the people already waiting herself. The
+result shows one boundary without declaring a new law: she can direct
+her relief work, but a notice from her office does not supply the
+keeper’s agreement. This is not an MQ03 beat, a new required visit,
+or a permanent veto. The [reviewed transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed showing politics through a problem the people must actually solve.
 
 ## Upper Leth approach: the unnamed town south of Eldenmere
 
@@ -439,6 +484,20 @@ history from the difference alone. Apply the previously reviewed
 on local and outsider usage, especially the later discussion of names
 travelling with people.
 
+## Marris Coast: the held answer
+
+In one [Marris](MEROVAR.md#marris-coast) sail-mending shed, a singer gives
+two clipped notes and the others answer with one long note. A worker
+draws thread through canvas and rests the needle against a thumbnail
+while the answer sounds. It is familiar company, not a compulsory signal.
+
+A returning relative carries the tune inland. Years later a member of
+an [Elden Vale](../regions/ELDEN_VALE.md) household hums it while folding
+laundry. They stretch the answering note until a child joins from
+another room. At the coast the pause made room for another stitch;
+here it lets a parent hear that a child is still listening. The two
+uses can coexist without making the song an emblem of either region.
+
 ## Northern kingdom: who gets the next loaded cart?
 
 At one winter dispatch review, local delegates bring names and blocked
@@ -564,12 +623,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Test where an established regional office meets local decision-making
-   on something other than a quarry or a relief dispatch. Do not make
-   a one-off compromise into a constitutional rule.
-2. Trace one Marris melody inland or a Valley custom outward. Show
-   what survives in a different setting and who hears a meaning the
-   originators did not intend.
+1. Give one Vale child or young person knowledge of a familiar place
+   that an adult overlooks. Anchor it to a detail the game already
+   records; do not redefine a playable area.
+2. Show how one person new to a Lower Leth community can prove what
+   they know without having a town family to introduce them. Keep
+   the practice local and distinct from a general guild licence.
 
 ## Map implications for a later review
 
