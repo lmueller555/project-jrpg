@@ -1,6 +1,6 @@
 # Native Iselin left-walk source
 
-Status: awaiting user review. This milestone stages the left direction without
+Status: left walk approved by the user. This milestone stages the left direction without
 changing the live campaign bank or the approved native idles/front walk.
 
 `keys.png` contains four complete left-facing contact/passing drawings created

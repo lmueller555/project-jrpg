@@ -1,6 +1,6 @@
 # Iselin native left-walk review
 
-**Status: awaiting user review.** This native 24×36 left walk is staged beside
+**Status: left walk approved by the user.** This native 24×36 left walk is staged beside
 the approved native idles and front walk. It does not activate the artwork in
 the campaign or convert other directions, seated artwork or cinematic poses.
 
