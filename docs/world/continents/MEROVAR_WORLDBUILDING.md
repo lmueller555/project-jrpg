@@ -31,6 +31,7 @@ specified.
 
 [Established material](#where-to-look-for-established-material) ·
 [Historical layers](#historical-layers-what-can-be-placed-in-order) ·
+[Canon review](#before-a-proposal-becomes-canon) ·
 [Peoples and species](#peoples-are-not-species-and-regions-are-not-personalities) ·
 [Next development pass](#next-development-pass) ·
 [Map implications](#map-implications-for-a-later-review)
@@ -928,6 +929,20 @@ This applies the previously reviewed
 [transcript on fantasy peoples](https://www.youtube.com/watch?v=-aOa4O_M9ic&t=594s)
 to the narrower question of how familiarity is learned.
 
+### Optional appearance candidate: two ways to wear a hood
+
+In one alternate version of the Lower Leth weighing dispute, two residents
+have short, swept-back horns. A pullover hood catches. One resident wears
+a hood that unbuttons, still stitched unevenly by a relative. The other
+uses a wrap because it’s faster to put on. No garment is an ancestral
+sign or a practice shared by everyone with that appearance.
+
+They take opposite sides on when to weigh the grain, as do two human
+participants. Neither preference comes from anatomy. Try the same scene
+with an all-human cast and keep this candidate only if the visible
+adaptation adds useful information about the two individuals.
+No species name, origin, powers, asset, or canon assignment follows.
+
 ## A short list for possible Game I use
 
 These are suggested priorities, not approved scenes or new destinations.
@@ -938,14 +953,28 @@ These are suggested priorities, not approved scenes or new destinations.
 | [Who speaks after the water](#lower-leth-who-speaks-after-the-water) | A remembered rescue shows who can be heard and who still pays for a public decision without invoking a hidden cause. | Decide whose account might challenge the party’s sympathies and whether the ledger or performance is actually needed. |
 | [Mira asks where the hand goes](#marris-coast-and-elden-vale-mira-asks-where-the-hand-goes) | Mira learns something from a visitor by trying it; another region matters without another stop. | Decide whether to establish an early habit or show a later change. |
 
+## Before a proposal becomes canon
+
+1. **Find the use.** Say what would change for a particular person or
+   place and why the idea is not already served by an approved scene.
+2. **Name the choice.** Write down the smallest unresolved decision:
+   a relationship, an event, a name, a route assumption, or something
+   else the proposal actually needs. Leave unrelated questions open.
+3. **Protect boundaries.** Check who knows what, what remains a belief,
+   and whether a route, name or scene would require an unapproved
+   map or story change.
+4. **Move, don’t duplicate.** After approval, put the accepted fact
+   in its existing authoritative home. Remove any duplicate here
+   and link to the owner. Merging a proposal is not that approval.
+
 ## Next development pass
 
-1. Draw one optional nonhuman character design on paper only as a
-   writing description. Test whether it buys a useful interaction
-   instead of adding an ancestry label to existing people.
-2. Decide what makes a proposal ready for canon review. Record what
-   would have to move into an authoritative source and what should
-   stay open, without promoting anything by default.
+1. Audit the remaining big gaps in Merovar’s geography, history, and
+   peoples rather than assuming the number of examples means the
+   broad assignment is complete.
+2. Pick one uncovered question with real consequences for more than
+   one community. Break it into narrow, independent pieces and keep
+   exact borders, names, dates and routes open unless actually needed.
 
 ## Map implications for a later review
 
