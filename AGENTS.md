@@ -48,13 +48,15 @@ Before changing Eldenmere's layout or dressing, also read the
 [settlement framework](docs/TERRAIN_ART_STANDARD.md#eldenmere-settlement-framework).
 Use its source-owned clearance contracts and the existing town composer. The
 street pass, Serene household courtyard, workshop/mill yards, civic well/school
-composition, five central household plots and Venn's upper growing plot are
-integrated. Household props and soil remain within their named parcel boundaries;
-growing-area dressing stays within the original source plot. Southern arrival
-composition remains separate work. Preserve the real irrigation gate and its
-repair stations; cultivated fills are flat ground beneath actors.
-Only explicitly declared district prop supports add collision; other district
-placements remain inactive. Preserve existing workstations and quest staging.
+composition, five central household plots, Venn's upper growing plot and southern
+arrival/business pockets are integrated. The eight-part composition pass is
+complete. Household and arrival props stay within named parcel boundaries;
+growing-area dressing stays within the original source plot. Keep the continuous
+southern road, business doors and automatic regional exit/return clear. Preserve
+the real irrigation gate and repair stations; cultivated fills are flat ground
+beneath actors. Only explicitly declared supports add collision. The composer
+verifies source-derived physics across the full expanded town, including its
+southern extension. Preserve existing workstations and quest staging.
 
 For object manipulation, scene staging and prop rendering, also read
 [the character–object interaction standard](docs/OBJECT_INTERACTION_STANDARD.md)

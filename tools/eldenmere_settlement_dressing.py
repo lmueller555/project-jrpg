@@ -35,7 +35,12 @@ GROWING_RECIPE = 'assets/source/maps/eldenmere/growing_fields/recipe.json'
 GROWING_SCOPE = [1296, 624, 96, 168]
 GROWING_FLAT_ASSETS = frozenset(('growing_fields:vegetables_east_west',
                                 'growing_fields:furrows_east_west'))
-DRESSING_STATUSES = (STATUS, WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS)
+ARRIVAL_PREFIX = 'settlement.arrival.'
+ARRIVAL_STATUS = 'arrival_dressing'
+ARRIVAL_DISTRICT = 'southern_arrival'
+ARRIVAL_SCOPE = [72, 1104, 744, 528]
+ARRIVAL_PARCELS = frozenset(('inn_frontage', 'shop_frontage', 'west_approach', 'east_approach'))
+DRESSING_STATUSES = (STATUS, WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS, ARRIVAL_STATUS)
 PLACEMENT_KEYS = {'id', 'asset', 'district', 'position', 'collision', 'footprint', 'occlusion'}
 CONFIG_KEYS = {'district', 'scope_rect', 'retire_grass_ids', 'garden_cells'}
 LOW_FAMILIES = {'flowers', 'groundcover'}
@@ -68,7 +73,9 @@ def _combined_placements(recipe):
     if not isinstance(placements, list):
         raise ValueError('Settlement placements must be a list')
     status = recipe.get('status')
-    if status == GROWING_STATUS:
+    if status == ARRIVAL_STATUS:
+        districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT, GROWING_DISTRICT, ARRIVAL_DISTRICT)
+    elif status == GROWING_STATUS:
         districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT, GROWING_DISTRICT)
     elif status in (COMMONS_STATUS, HOUSEHOLD_STATUS):
         districts = (DISTRICT, WORKYARD_DISTRICT, COMMONS_DISTRICT)
@@ -76,23 +83,28 @@ def _combined_placements(recipe):
         districts = (DISTRICT, WORKYARD_DISTRICT)
     for placement in placements:
         if not isinstance(placement, dict) or placement.get('district') not in districts:
+            if status == ARRIVAL_STATUS:
+                raise ValueError('Arrival delivery can activate only the five reviewed settlement districts')
             if status == GROWING_STATUS:
                 raise ValueError('Growing delivery can activate only the four reviewed settlement districts')
             if status in (COMMONS_STATUS, HOUSEHOLD_STATUS):
                 raise ValueError('Commons delivery can activate only serene_terrace, workshop_mill and commons_households')
             raise ValueError('Workyard delivery can activate only serene_terrace and workshop_mill')
         if (isinstance(placement.get('id'), str) and placement['id'].startswith(HOUSEHOLD_PREFIX)
-                and status not in (HOUSEHOLD_STATUS, GROWING_STATUS)):
+                and status not in (HOUSEHOLD_STATUS, GROWING_STATUS, ARRIVAL_STATUS)):
             raise ValueError('Settlement status cannot activate household dressing')
         if (isinstance(placement.get('id'), str) and placement['id'].startswith(GROWING_PREFIX)
-                and status != GROWING_STATUS):
+                and status not in (GROWING_STATUS, ARRIVAL_STATUS)):
             raise ValueError('Settlement status cannot activate growing dressing')
+        if (isinstance(placement.get('id'), str) and placement['id'].startswith(ARRIVAL_PREFIX)
+                and status != ARRIVAL_STATUS):
+            raise ValueError('Settlement status cannot activate arrival dressing')
     return placements
 
 
 def resolve_dressing(root, town, recipe, catalogue, protections, *, image_loader=None):
     """Retain the courtyard API and ledger when later deliveries are active."""
-    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS):
+    if recipe.get('status') in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS, ARRIVAL_STATUS):
         placements = _combined_placements(recipe)
         recipe = {**recipe, 'status': STATUS,
                   'placements': [p for p in placements if p['district'] == DISTRICT]}
@@ -116,7 +128,7 @@ def resolve_workyards(root, town, recipe, catalogue, protections, *, image_loade
     if status in ('framework_only', 'ground_only') and placements:
         raise ValueError('Settlement status cannot activate workyard dressing')
     selected = [p for p in placements if isinstance(p, dict) and p.get('district') == WORKYARD_DISTRICT]
-    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS) else 'ground_only',
+    view = {**recipe, 'status': WORKYARD_STATUS if status in (WORKYARD_STATUS, COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS, ARRIVAL_STATUS) else 'ground_only',
             'placements': selected}
     report = _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                              district=WORKYARD_DISTRICT, prefix=WORKYARD_PREFIX,
@@ -141,7 +153,7 @@ def resolve_commons(root, town, recipe, catalogue, protections, *, image_loader=
         raise ValueError('Settlement status cannot activate commons dressing')
     selected = [p for p in placements if isinstance(p, dict) and p.get('district') == COMMONS_DISTRICT
                 and not (isinstance(p.get('id'), str) and p['id'].startswith(HOUSEHOLD_PREFIX))]
-    view = {**recipe, 'status': COMMONS_STATUS if status in (COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS) else 'ground_only',
+    view = {**recipe, 'status': COMMONS_STATUS if status in (COMMONS_STATUS, HOUSEHOLD_STATUS, GROWING_STATUS, ARRIVAL_STATUS) else 'ground_only',
             'placements': selected}
     return _resolve_region(root, town, view, catalogue, protections, image_loader=image_loader,
                            district=COMMONS_DISTRICT, prefix=COMMONS_PREFIX,
@@ -166,60 +178,109 @@ def resolve_households(root, town, recipe, catalogue, protections, *, image_load
         raise ValueError('Settlement status cannot activate household dressing')
     selected = [p for p in placements if isinstance(p, dict)
                 and isinstance(p.get('id'), str) and p['id'].startswith(HOUSEHOLD_PREFIX)]
-    view = {**recipe, 'status': HOUSEHOLD_STATUS if status in (HOUSEHOLD_STATUS, GROWING_STATUS) else 'ground_only',
+    view = {**recipe, 'status': HOUSEHOLD_STATUS if status in (HOUSEHOLD_STATUS, GROWING_STATUS, ARRIVAL_STATUS) else 'ground_only',
             'placements': selected}
     options = dict(image_loader=image_loader, district=COMMONS_DISTRICT, prefix=HOUSEHOLD_PREFIX,
                    activation_status=HOUSEHOLD_STATUS, config_key='household_dressing',
-                   ledger_key='settlement_households', cell_key='ground_cells', title='Household')
-    if status not in (HOUSEHOLD_STATUS, GROWING_STATUS):
-        report = _resolve_region(root, town, view, catalogue, protections, **options)
+                   ledger_key='settlement_households', title='Household')
+    return _resolve_parcel_region(root, town, view, catalogue, protections,
+                                  allowed_parcels=HOUSEHOLD_PARCELS, **options)
+
+
+def resolve_arrival(root, town, recipe, catalogue, protections, *, image_loader=None):
+    """Resolve only named southern frontage pockets, preserving the exit road."""
+    status = recipe.get('status')
+    if status not in ('framework_only', 'ground_only', *DRESSING_STATUSES):
+        raise ValueError('Unsupported settlement arrival activation status')
+    placements = _combined_placements(recipe) if status in DRESSING_STATUSES else recipe.get('placements')
+    if not isinstance(placements, list):
+        raise ValueError('Settlement placements must be a list')
+    if status in ('framework_only', 'ground_only') and placements:
+        raise ValueError('Settlement status cannot activate arrival dressing')
+    selected = [p for p in placements if isinstance(p, dict)
+                and (p.get('district') == ARRIVAL_DISTRICT or
+                     (isinstance(p.get('id'), str) and p['id'].startswith(ARRIVAL_PREFIX)))]
+    view = {**recipe, 'status': ARRIVAL_STATUS if status == ARRIVAL_STATUS else 'ground_only',
+            'placements': selected}
+    report = _resolve_parcel_region(root, town, view, catalogue, protections,
+                                    image_loader=image_loader, district=ARRIVAL_DISTRICT,
+                                    prefix=ARRIVAL_PREFIX, activation_status=ARRIVAL_STATUS,
+                                    config_key='arrival_dressing', ledger_key='settlement_arrival',
+                                    title='Arrival', allowed_parcels=ARRIVAL_PARCELS,
+                                    fixed_scope=ARRIVAL_SCOPE)
+    # Plants remain nonblocking, but may not visually occupy a service lane,
+    # doorway, exit/return landing or existing work/gathering reservation.
+    for placement in report['placements']:
+        for protection in protections:
+            if ({'movement', 'sightline'}.intersection(protection['roles']) and
+                    intersects(placement['occupied_rect'], protection)):
+                raise ValueError(placement['id']+': arrival artwork covers protected use '+protection['id'])
+    return report
+
+
+def _resolve_parcel_region(root, town, recipe, catalogue, protections, *,
+                           image_loader=None, district, prefix, activation_status,
+                           config_key, ledger_key, title, allowed_parcels,
+                           fixed_scope=None):
+    """Apply shared artwork checks inside explicit disjoint parcel bounds."""
+    noun = title.lower()
+    if recipe.get('status') != activation_status:
+        report = _resolve_region(root, town, recipe, catalogue, protections,
+                                 image_loader=image_loader, district=district, prefix=prefix,
+                                 activation_status=activation_status, config_key=config_key,
+                                 ledger_key=ledger_key, cell_key='ground_cells', title=title)
         report['parcels'] = []
         return report
-    config = recipe.get('household_dressing')
+    config = recipe.get(config_key)
     required = (CONFIG_KEYS - {'garden_cells'}) | {'ground_cells', 'parcels'}
     if not isinstance(config, dict) or set(config) != required:
-        raise ValueError('Household dressing requires only the reviewed configuration keys')
-    scope = _native_numbers(config['scope_rect'], 4, 'household scope')
-    _rect(scope, 'household scope')
+        raise ValueError(title+' dressing requires only the reviewed configuration keys')
+    scope = _native_numbers(config['scope_rect'], 4, noun+' scope')
+    _rect(scope, noun+' scope')
+    if fixed_scope is not None and scope != fixed_scope:
+        raise ValueError(title+' scope must equal its reviewed source district')
     sources = config['parcels']
-    if not isinstance(sources, list) or not 1 <= len(sources) <= len(HOUSEHOLD_PARCELS):
-        raise ValueError('Household dressing needs explicitly named cottage parcels')
+    if not isinstance(sources, list) or not 1 <= len(sources) <= len(allowed_parcels):
+        raise ValueError(title+' dressing needs explicitly named parcels')
     parcels = {}
     for source in sources:
         if not isinstance(source, dict) or set(source) != {'id', 'scope_rect'}:
-            raise ValueError('Household parcels require only id and scope_rect')
+            raise ValueError(title+' parcels require only id and scope_rect')
         name = source['id']
-        if not isinstance(name, str) or name not in HOUSEHOLD_PARCELS or name in parcels:
-            raise ValueError('Household parcel IDs must uniquely name reviewed cottage owners')
+        if not isinstance(name, str) or name not in allowed_parcels or name in parcels:
+            raise ValueError(title+' parcel IDs must uniquely name reviewed owners')
         rect = _native_numbers(source['scope_rect'], 4, name+' parcel scope')
         _rect(rect, name+' parcel scope')
         if not _contained(rect, scope) or any(_overlap(rect, previous) for previous in parcels.values()):
-            raise ValueError('Household parcels must be disjoint and contained by their reviewed scope')
+            raise ValueError(title+' parcels must be disjoint and contained by their reviewed scope')
         parcels[name] = rect
     membership = {}
     stripped = []
-    for placement in selected:
+    for placement in recipe['placements']:
         parcel = placement.get('parcel')
         if not isinstance(parcel, str) or parcel not in parcels:
-            raise ValueError('Every household placement must name one reviewed parcel')
+            raise ValueError('Every '+noun+' placement must name one reviewed parcel')
         membership[placement['id']] = parcel
         stripped.append({key: value for key, value in placement.items() if key != 'parcel'})
-    view = {**view, 'placements': stripped,
-            'household_dressing': {key: value for key, value in config.items() if key != 'parcels'}}
-    report = _resolve_region(root, town, view, catalogue, protections, **options)
+    view = {**recipe, 'placements': stripped,
+            config_key: {key: value for key, value in config.items() if key != 'parcels'}}
+    report = _resolve_region(root, town, view, catalogue, protections,
+                             image_loader=image_loader, district=district, prefix=prefix,
+                             activation_status=activation_status, config_key=config_key,
+                             ledger_key=ledger_key, cell_key='ground_cells', title=title)
     for placement in report['placements']:
         parcel = membership[placement['id']]
         if not _contained([*placement['position'], *placement['logical_size']], parcels[parcel]):
-            raise ValueError(placement['id']+': artwork canvas leaves its named household parcel')
+            raise ValueError(placement['id']+': artwork canvas leaves its named '+noun+' parcel')
         placement['parcel'] = parcel
     for x, y in report['ground_cells']:
         fringe = [(x-1)*24, (y-1)*24, 72, 72]
         if not any(_contained(fringe, parcel) for parcel in parcels.values()):
-            raise ValueError('Household ground and its transition rim must fit one reviewed parcel')
+            raise ValueError(title+' ground and its transition rim must fit one reviewed parcel')
     for record in report['retired_grass_records']:
         x, y = _native_numbers(record['position'], 2, record['id']+' grass position')
         if not any(_contained([x-12, y-28, 24, 32], parcel) for parcel in parcels.values()):
-            raise ValueError('Retired grass artwork must fit one reviewed household parcel')
+            raise ValueError('Retired grass artwork must fit one reviewed '+noun+' parcel')
     report['parcels'] = [{'id': name, 'scope_rect': rect} for name, rect in parcels.items()]
     return report
 
@@ -237,11 +298,11 @@ def resolve_growing(root, town, recipe, catalogue, protections, *, image_loader=
     selected = [p for p in placements if isinstance(p, dict)
                 and (p.get('district') == GROWING_DISTRICT or
                      (isinstance(p.get('id'), str) and p['id'].startswith(GROWING_PREFIX)))]
-    view = {**recipe, 'status': GROWING_STATUS if status == GROWING_STATUS else 'ground_only',
+    view = {**recipe, 'status': GROWING_STATUS if status in (GROWING_STATUS, ARRIVAL_STATUS) else 'ground_only',
             'placements': selected}
     source_path = None
     bed_contacts = None
-    if status == GROWING_STATUS:
+    if status in (GROWING_STATUS, ARRIVAL_STATUS):
         config = recipe.get('growing_dressing')
         required = (CONFIG_KEYS - {'garden_cells'}) | {'ground_cells', 'bed_contacts'}
         if not isinstance(config, dict) or set(config) != required:

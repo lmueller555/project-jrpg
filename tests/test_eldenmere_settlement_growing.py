@@ -288,8 +288,10 @@ class LiveGrowingContracts(unittest.TestCase):
 
     def test_every_prior_entity_ledger_grass_street_and_gameplay_interface_is_preserved(self):
         for key in PREVIOUS_LEDGERS:self.assertEqual(self.town[key], self.before[key], key)
+        later_ids = {entity['id'] for entity in self.town.get('settlement_arrival', {}).get('entities', [])}
         self.assertEqual([entity for entity in self.town['entities']
-                          if not entity['id'].startswith('settlement.growing.')], self.before['entities'])
+                          if not entity['id'].startswith('settlement.growing.') and entity['id'] not in later_ids],
+                         self.before['entities'])
         for key in ('grass', 'doors', 'destinations', 'overworld_exit', 'world_links', 'interior_scenes',
                     'interaction_cues', 'well_art', 'npcs', 'persistent_npcs', 'foreground',
                     'settlement_streets', 'cartography', 'art_replacements'):
@@ -306,16 +308,16 @@ class LiveGrowingContracts(unittest.TestCase):
         self.assertEqual(gate['source'], 'venn_visit.py')
         report = resolve_growing(ROOT, self.town, self.source, catalogue(), protections)
         self.assertEqual(report, self.town['settlement_growing'])
-        validate_district_reports(*(self.town[key] for key in (*PREVIOUS_LEDGERS, 'settlement_growing')))
+        validate_district_reports(*(self.town[key] for key in (*PREVIOUS_LEDGERS, 'settlement_growing', 'settlement_arrival')))
         ids = {record['id'] for record in [*report['entities'], *report['ground_entities']]}
         self.assertEqual(len(ids), len(report['entities'])+len(report['ground_entities']))
         self.assertFalse(ids & {record.get('entity') for record in self.town.get('interaction_cues', [])})
 
-    def test_collision_is_source_plus_five_ledgers_and_navigation_remains_identical(self):
+    def test_collision_is_source_plus_all_ledgers_and_navigation_remains_identical(self):
         with Image.open(ROOT/'assets/source/maps/eldenmere/town_hd/collision.png') as image:
             expected = image.convert('L')
         painter = ImageDraw.Draw(expected)
-        for key in (*PREVIOUS_LEDGERS, 'settlement_growing'):
+        for key in (*PREVIOUS_LEDGERS, 'settlement_growing', 'settlement_arrival'):
             for support in self.town[key]['solid_footprints']:
                 x, y, w, h = support['rect']
                 self.assertTrue(all(type(value) is int for value in (x, y, w, h)))
@@ -416,7 +418,7 @@ class GrowingSaveCompatibility(unittest.TestCase):
                 self.assertTrue(restored.town.can_stand(restored.player.position))
                 for key, value in progress.items():self.assertEqual(getattr(restored, key).to_dict(), value)
                 self.assertEqual(restored.social.flags, game.social.flags)
-                for key in (*PREVIOUS_LEDGERS, 'settlement_growing'):
+                for key in (*PREVIOUS_LEDGERS, 'settlement_growing', 'settlement_arrival'):
                     self.assertEqual(restored.town.data[key], game.town.data[key])
             finally:
                 game.music.stop()

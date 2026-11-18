@@ -3087,7 +3087,7 @@
         1632
       ],
       "pixel_space": "logical_geometry",
-      "sha256": "f734e1a43fa7665db9a8d101d88c9c21e812a0410af3f824cabcb00883aa285a"
+      "sha256": "c22b417a3c629d9da773e99df580faaae88c6ffdbb61b32823221d7b5cf8920e"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/town/navigation_allowed.png",
@@ -8658,7 +8658,7 @@
         1632
       ],
       "pixel_space": "logical_ui",
-      "sha256": "1127e01612f69cd0945187472a42ba027a7e105b07bcd8abf695f9b415f8c077"
+      "sha256": "b6c18f67bd92a56b9e8a4e9e3547f204fb734600f3fb8f527ccc81fd77f7dca9"
     },
     {
       "file": "assets/maps/eldenmere/town_hd/upstream/overview.png",
@@ -8817,8 +8817,8 @@
   "settlement_framework": {
     "manifest": "assets/maps/eldenmere/settlement/manifest.json",
     "recipe": "assets/source/maps/eldenmere/settlement/recipe.json",
-    "status": "growing_dressing",
-    "active_placements": 39,
+    "status": "arrival_dressing",
+    "active_placements": 49,
     "active_ground_treatments": 36
   },
   "architecture_schedule": "assets/source/maps/eldenmere/town_hd/architecture_schedule.json",

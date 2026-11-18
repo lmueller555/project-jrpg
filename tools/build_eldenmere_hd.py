@@ -68,6 +68,31 @@ def business_anchor(spec,design):
     x,y=spec['position'];dx,_,dw,_=design['door_rect_logical'];_,gy,_,gh=design['ground_rect_logical']
     return [x+dx+dw/2,y+gy+gh+6]
 
+def source_town_physics(recipe):
+    """Reconstruct the complete expanded-town masks from maintained source owners."""
+    size=tuple(recipe['town_size_logical'])
+    collision=Image.new('L',size,0)
+    collision.paste(Image.open(SRC/'collision.png').convert('L'),(0,0))
+    allowed=Image.new('L',size,0)
+    allowed.paste(Image.open(SRC/'navigation_allowed.png').convert('L'),(0,0))
+    cd=ImageDraw.Draw(collision);ad=ImageDraw.Draw(allowed)
+    cd.rectangle((816,1344,887,size[1]-1),fill=255)
+    business={r['id']:r for r in read('assets/terrain/eldenmere/business_exteriors_hd/manifest.json')['buildings']}
+    for spec in recipe['businesses']:
+        design=business[spec['design']]
+        x,y=spec['position'];gx,gy,gw,gh=design['ground_rect_logical']
+        cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
+        ax,ay=business_anchor(spec,design)
+        ad.rectangle((round(ax)-12,round(ay)-6,round(ax)+12,1500),fill=255)
+    plants={r['id']:r for r in read('assets/terrain/vegetation_hd/plants.json')['plants']}
+    for label,plant,position in recipe['district_vegetation']:
+        if 'tree' in label:
+            x,y=position;gx,gy,gw,gh=plants[plant]['ground_rect_logical']
+            cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
+    for (x0,y0),(x1,y1) in recipe['road_centerlines']:
+        ad.line((x0,max(1344,y0),x1,max(1344,y1)),fill=255,width=24)
+    return collision,allowed
+
 def courtyard_collision(source,dressing):
     """Add only the declared courtyard supports; retain every source blocker."""
     return _dressing_collision(source,dressing,'settlement.courtyard.')
@@ -87,6 +112,10 @@ def household_collision(source,dressing):
 def growing_collision(source,dressing):
     """Add only declared growing-area storage supports; cultivated ground stays flat."""
     return _dressing_collision(source,dressing,'settlement.growing.')
+
+def arrival_collision(source,dressing):
+    """Add only reviewed frontage supports while preserving the southern road."""
+    return _dressing_collision(source,dressing,'settlement.arrival.')
 
 def growing_ground(base,dressing,image_loader):
     """Repeat native fills inside authored whole-bed contacts, beneath actors."""
@@ -159,16 +188,18 @@ def products():
         ox,oy=entity['position'];im.paste((0,0,0,0),pixels((x-ox,y-oy,x+w-ox,y+h-oy)))
         return im
     current_town=read('assets/maps/eldenmere/playable/map.json')
+    source_collision,source_allowed=source_town_physics(rec)
     for field in ('collision','navigation_allowed'):
-        expected=Image.open(SRC/(field+'.png')).convert('L')
+        expected=source_collision if field=='collision' else source_allowed
         if field=='collision':
             expected=courtyard_collision(expected,current_town.get('settlement_dressing'))
             expected=workyard_collision(expected,current_town.get('settlement_workyards'))
             expected=commons_collision(expected,current_town.get('settlement_commons'))
             expected=household_collision(expected,current_town.get('settlement_households'))
             expected=growing_collision(expected,current_town.get('settlement_growing'))
+            expected=arrival_collision(expected,current_town.get('settlement_arrival'))
         actual=Image.open(ROOT/current_town[field]).convert('L')
-        if actual.crop((0,0,*expected.size)).tobytes()!=expected.tobytes():
+        if actual.size!=expected.size or actual.tobytes()!=expected.tobytes():
             raise ValueError('Review changed '+field+' registration before rebuilding the town')
     paths={'town':'assets/maps/eldenmere/playable/map.json','upstream':old['town']['exterior_scenes']['upstream'],**{k:v for k,v in old['town']['interior_scenes'].items() if k in old}}
     maps={name:read(path) for name,path in paths.items()}
@@ -290,15 +321,7 @@ def products():
     business_pack='assets/terrain/eldenmere/business_exteriors_hd/';business={r['id']:r for r in read(business_pack+'manifest.json')['buildings']}
     # Resolve the unchanged physical footprints before painting ground. Native
     # street masks may not invent paths through buildings, trees or the brook.
-    collision=Image.new('L',tuple(size),0);original_collision=Image.open(SRC/'collision.png').convert('L');collision.paste(original_collision,(0,0));allowed=Image.new('L',tuple(size));allowed.paste(Image.open(SRC/'navigation_allowed.png').convert('L'),(0,0));cd=ImageDraw.Draw(collision);ad=ImageDraw.Draw(allowed)
-    cd.rectangle((816,1344,887,size[1]-1),fill=255)
-    for spec in rec['businesses']:
-        x,y=spec['position'];gx,gy,gw,gh=business[spec['design']]['ground_rect_logical']
-        cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
-    for label,plant,position in rec['district_vegetation']:
-        if 'tree' in label:
-            x,y=position;gx,gy,gw,gh=plants[plant]['ground_rect_logical']
-            cd.rectangle((x+gx,y+gy,x+gx+gw-1,y+gy+gh-1),fill=255)
+    collision=source_collision.copy();allowed=source_allowed.copy();cd=ImageDraw.Draw(collision)
     from tools.eldenmere_settlement_streets import paint_streets
     street_recipe=read(rec['settlement_recipe'])
     # New business thresholds derive from their source now, not the previous
@@ -317,7 +340,8 @@ def products():
             ('settlement_workyards',composition['workyards'],'ground_cells',workyard_collision),
             ('settlement_commons',composition['commons'],'ground_cells',commons_collision),
             ('settlement_households',composition['households'],'ground_cells',household_collision),
-            ('settlement_growing',composition['growing'],'ground_cells',growing_collision)):
+            ('settlement_growing',composition['growing'],'ground_cells',growing_collision),
+            ('settlement_arrival',composition['arrival'],'ground_cells',arrival_collision)):
         if dressing is None:continue
         collision=mask(collision,dressing);cd=ImageDraw.Draw(collision)
         dirt.update(map(tuple,dressing[cell_key]))
@@ -385,7 +409,6 @@ def products():
         anchor=business_anchor(spec,r);room_path=PACK+'/rooms/'+name+'/map.json'
         town['doors'].append({'id':name,'host':name,'anchor':anchor,'entry_y':anchor[1],'entry_side':'north','entry_half_width':dw/2,'open_radius':30,'close_radius':38,'frame_duration_ms':100,'frames':[business_pack+f['file'] for f in r['door']['frames']],'position':[x+dx,y+dy],'requires_open':True,'destination':room_path,'spawn':[216,294],'arrival_facing':'back','arrival_door':'courtyard','logical_size':[dw,dh],'artwork_pixels_per_world_pixel':2})
         town['interior_scenes'][name]=room_path;town['landmarks'].append({'id':name,'name':spec['name'],'position':anchor});town['destinations'][name]=[round(anchor[0]/2)*2,anchor[1]]
-        ad.rectangle((round(anchor[0])-12,round(anchor[1])-6,round(anchor[0])+12,1500),fill=255)
         # Native paving connects each threshold to the new shared lane.
         paving=materials.paving((48,72),(round(anchor[0])-12,round(anchor[1])-6));base.alpha_composite(paving,pixels((round(anchor[0])-12,round(anchor[1])-6)))
     # Planting defines the new lane without obscuring either entrance or path.
@@ -393,10 +416,7 @@ def products():
     for label,plant,position in district:
         identifier='south_lane.'+label;town['entities']=[e for e in town['entities'] if e['id']!=identifier]
         r=plants[plant];e={'id':identifier,'position':position,'sort_y':position[1]+r['depth_baseline_logical'],'phase_offset':0};vegetation(e,plant);town['entities'].append(e)
-    # Mark extension lanes only; original navigation pixels remain authoritative.
-    for line in rec['road_centerlines']:
-        (x0,y0),(x1,y1)=line
-        ad.line((x0,max(1344,y0),x1,max(1344,y1)),fill=255,width=24)
+    # Complete source navigation, including extension lanes, was resolved above.
     # Regional/Sanctuary landmarks have no town placement or shadow substitute.
     town['landmark_layers']=[]
     from tools.eldenmere_architecture_contracts import validate_schedule

@@ -1667,6 +1667,266 @@
       ]
     },
     {
+      "id": "settlement.arrival.inn_flowerpots",
+      "position": [
+        408,
+        1404
+      ],
+      "sort_y": 1426.0,
+      "frames": [
+        "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "settlement.arrival.inn_white_flowers",
+      "position": [
+        432,
+        1428
+      ],
+      "sort_y": 1450.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+    },
+    {
+      "id": "settlement.arrival.inn_clover",
+      "position": [
+        456,
+        1404
+      ],
+      "sort_y": 1426.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
+      "id": "settlement.arrival.shop_empty_crate",
+      "position": [
+        588,
+        1428
+      ],
+      "sort_y": 1446,
+      "frames": [
+        "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        20
+      ]
+    },
+    {
+      "id": "settlement.arrival.shop_yellow_flowers",
+      "position": [
+        576,
+        1392
+      ],
+      "sort_y": 1414.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 3,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_yellow/idle.png"
+    },
+    {
+      "id": "settlement.arrival.shop_clover",
+      "position": [
+        600,
+        1392
+      ],
+      "sort_y": 1414.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 3,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
+      "id": "settlement.arrival.west_white_flowers",
+      "position": [
+        456,
+        1602
+      ],
+      "sort_y": 1624.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 6,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+    },
+    {
+      "id": "settlement.arrival.west_clover",
+      "position": [
+        432,
+        1608
+      ],
+      "sort_y": 1630.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 8,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
+      "id": "settlement.arrival.east_yellow_flowers",
+      "position": [
+        576,
+        1602
+      ],
+      "sort_y": 1624.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 8,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_yellow/idle.png"
+    },
+    {
+      "id": "settlement.arrival.east_clover",
+      "position": [
+        600,
+        1590
+      ],
+      "sort_y": 1612.0,
+      "frames": [
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+        "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 5,
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        24
+      ],
+      "reduced_motion_frame": 0,
+      "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+    },
+    {
       "id": "inn",
       "position": [
         192,
@@ -27338,6 +27598,631 @@
           24
         ],
         "mask": "assets/terrain/eldenmere/growing_fields/contacts/worked_bed.png"
+      }
+    ]
+  },
+  "settlement_arrival": {
+    "district": "southern_arrival",
+    "scope_rect": [
+      72,
+      1104,
+      744,
+      528
+    ],
+    "placements": [
+      {
+        "id": "settlement.arrival.inn_flowerpots",
+        "asset": "exteriors_hd:flowerpot_pair",
+        "district": "southern_arrival",
+        "position": [
+          408,
+          1404
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          18,
+          20,
+          4
+        ],
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          410.0,
+          1410.5,
+          19.5,
+          15.5
+        ],
+        "depth_baseline_logical": 22.0,
+        "world_footprint": [
+          410,
+          1422,
+          20,
+          4
+        ],
+        "parcel": "inn_frontage"
+      },
+      {
+        "id": "settlement.arrival.inn_white_flowers",
+        "asset": "vegetation_hd:flowers_white",
+        "district": "southern_arrival",
+        "position": [
+          432,
+          1428
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          433.0,
+          1430.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "inn_frontage"
+      },
+      {
+        "id": "settlement.arrival.inn_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "southern_arrival",
+        "position": [
+          456,
+          1404
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          458.0,
+          1413.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "inn_frontage"
+      },
+      {
+        "id": "settlement.arrival.shop_empty_crate",
+        "asset": "workyard_props:empty_crate",
+        "district": "southern_arrival",
+        "position": [
+          588,
+          1428
+        ],
+        "collision": "solid",
+        "occlusion": "tall",
+        "footprint": [
+          2,
+          12,
+          20,
+          6
+        ],
+        "logical_size": [
+          24,
+          20
+        ],
+        "occupied_rect": [
+          589.0,
+          1429.0,
+          22.0,
+          17.0
+        ],
+        "depth_baseline_logical": 18,
+        "world_footprint": [
+          590,
+          1440,
+          20,
+          6
+        ],
+        "parcel": "shop_frontage"
+      },
+      {
+        "id": "settlement.arrival.shop_yellow_flowers",
+        "asset": "vegetation_hd:flowers_yellow",
+        "district": "southern_arrival",
+        "position": [
+          576,
+          1392
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          577.0,
+          1394.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "shop_frontage"
+      },
+      {
+        "id": "settlement.arrival.shop_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "southern_arrival",
+        "position": [
+          600,
+          1392
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          602.0,
+          1401.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "shop_frontage"
+      },
+      {
+        "id": "settlement.arrival.west_white_flowers",
+        "asset": "vegetation_hd:flowers_white",
+        "district": "southern_arrival",
+        "position": [
+          456,
+          1602
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          457.0,
+          1604.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "west_approach"
+      },
+      {
+        "id": "settlement.arrival.west_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "southern_arrival",
+        "position": [
+          432,
+          1608
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          434.0,
+          1617.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "west_approach"
+      },
+      {
+        "id": "settlement.arrival.east_yellow_flowers",
+        "asset": "vegetation_hd:flowers_yellow",
+        "district": "southern_arrival",
+        "position": [
+          576,
+          1602
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          577.0,
+          1604.5,
+          22.5,
+          20.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "east_approach"
+      },
+      {
+        "id": "settlement.arrival.east_clover",
+        "asset": "vegetation_hd:groundcover_clover",
+        "district": "southern_arrival",
+        "position": [
+          600,
+          1590
+        ],
+        "collision": "none",
+        "occlusion": "low",
+        "logical_size": [
+          24,
+          24
+        ],
+        "occupied_rect": [
+          602.0,
+          1599.5,
+          20.5,
+          13.0
+        ],
+        "depth_baseline_logical": 22.0,
+        "parcel": "east_approach"
+      }
+    ],
+    "entities": [
+      {
+        "id": "settlement.arrival.inn_flowerpots",
+        "position": [
+          408,
+          1404
+        ],
+        "sort_y": 1426.0,
+        "frames": [
+          "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ]
+      },
+      {
+        "id": "settlement.arrival.inn_white_flowers",
+        "position": [
+          432,
+          1428
+        ],
+        "sort_y": 1450.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+      },
+      {
+        "id": "settlement.arrival.inn_clover",
+        "position": [
+          456,
+          1404
+        ],
+        "sort_y": 1426.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 1,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.arrival.shop_empty_crate",
+        "position": [
+          588,
+          1428
+        ],
+        "sort_y": 1446,
+        "frames": [
+          "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 0,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          20
+        ]
+      },
+      {
+        "id": "settlement.arrival.shop_yellow_flowers",
+        "position": [
+          576,
+          1392
+        ],
+        "sort_y": 1414.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 3,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_yellow/idle.png"
+      },
+      {
+        "id": "settlement.arrival.shop_clover",
+        "position": [
+          600,
+          1392
+        ],
+        "sort_y": 1414.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 3,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.arrival.west_white_flowers",
+        "position": [
+          456,
+          1602
+        ],
+        "sort_y": 1624.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 6,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_white/idle.png"
+      },
+      {
+        "id": "settlement.arrival.west_clover",
+        "position": [
+          432,
+          1608
+        ],
+        "sort_y": 1630.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 8,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      },
+      {
+        "id": "settlement.arrival.east_yellow_flowers",
+        "position": [
+          576,
+          1602
+        ],
+        "sort_y": 1624.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 8,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/flowers_yellow/idle.png"
+      },
+      {
+        "id": "settlement.arrival.east_clover",
+        "position": [
+          600,
+          1590
+        ],
+        "sort_y": 1612.0,
+        "frames": [
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png",
+          "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png"
+        ],
+        "frame_duration_ms": 600,
+        "phase_offset": 5,
+        "artwork_pixels_per_world_pixel": 2,
+        "logical_size": [
+          24,
+          24
+        ],
+        "reduced_motion_frame": 0,
+        "reduced_motion_image": "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png"
+      }
+    ],
+    "solid_footprints": [
+      {
+        "id": "settlement.arrival.inn_flowerpots",
+        "rect": [
+          410,
+          1422,
+          20,
+          4
+        ]
+      },
+      {
+        "id": "settlement.arrival.shop_empty_crate",
+        "rect": [
+          590,
+          1440,
+          20,
+          6
+        ]
+      }
+    ],
+    "retired_grass_ids": [],
+    "retired_grass_records": [],
+    "ground_cells": [],
+    "dependencies_sha256": {
+      "assets/terrain/eldenmere/exteriors_hd/manifest.json": "1b274c3b96fe446d8c71f9d153aa08cd3d717f1bc48a819209551751c2db1283",
+      "assets/terrain/eldenmere/exteriors_hd/props/flowerpot_pair/idle.png": "cb48941e9a0ca6672c9805b8ea0d65f89fe07b5a736e2cddc01d9301542a917d",
+      "assets/terrain/eldenmere/workyard_props/manifest.json": "18175b0103af50175d7ca62a5c9a0f5b6211a4da912b98eb5ca03b5f741ba81a",
+      "assets/terrain/eldenmere/workyard_props/props/empty_crate/idle.png": "de8c6c3e4cb1384ea934157c112004fa027728e4078ad202fa7eae51dd446b30",
+      "assets/terrain/vegetation_hd/plants.json": "263ccc4269fc06c177a5f16e58dacc582783a563107a0d4bc178ba01561917ce",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_00.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_01.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_02.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_03.png": "57bb6fe3b8204c79fa6f239e462c4b916bd11a037eabd3b115df6227618cde69",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_04.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_05.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_06.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_07.png": "ce714de36f26b91393847feec9afdf4f41bb24c68a800af3f8b12fedba72cade",
+      "assets/terrain/vegetation_hd/plants/flowers_white/frames/frame_08.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_white/idle.png": "a18adeed41c935b30c40c3eac55a82dd53ff633add3de2d9fda4b3c54674b287",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_00.png": "52f2de2cb10e7c5eb4735036d302fccad37b648dbf6afce92470bfa923da8339",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_01.png": "9b4d36014b1bac41eea2a0b9b693a52d4656b92f93307b1677ac5e0c94f56d89",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_02.png": "9b4d36014b1bac41eea2a0b9b693a52d4656b92f93307b1677ac5e0c94f56d89",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_03.png": "9b4d36014b1bac41eea2a0b9b693a52d4656b92f93307b1677ac5e0c94f56d89",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_04.png": "52f2de2cb10e7c5eb4735036d302fccad37b648dbf6afce92470bfa923da8339",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_05.png": "5932485a3023b90ce15a8432baf64e47c5efb0d865da6b4a0b2085ad94b85fc5",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_06.png": "5932485a3023b90ce15a8432baf64e47c5efb0d865da6b4a0b2085ad94b85fc5",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_07.png": "5932485a3023b90ce15a8432baf64e47c5efb0d865da6b4a0b2085ad94b85fc5",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/frames/frame_08.png": "52f2de2cb10e7c5eb4735036d302fccad37b648dbf6afce92470bfa923da8339",
+      "assets/terrain/vegetation_hd/plants/flowers_yellow/idle.png": "52f2de2cb10e7c5eb4735036d302fccad37b648dbf6afce92470bfa923da8339",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_00.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_01.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_02.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_03.png": "f3379f1483b0e9ed22d2f52ff8abdbc4ca1aa2946385f5f006ed20a9ba9f92ae",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_04.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_05.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_06.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_07.png": "f2e8afeb31896175eae791536c1cb09e3656cd7c1be861759d2e31cc3260543f",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/frames/frame_08.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91",
+      "assets/terrain/vegetation_hd/plants/groundcover_clover/idle.png": "f278ee2248fb4a6737db88ae308d8acd686807c55737375cd87e5b2caff9da91"
+    },
+    "parcels": [
+      {
+        "id": "inn_frontage",
+        "scope_rect": [
+          384,
+          1392,
+          96,
+          72
+        ]
+      },
+      {
+        "id": "shop_frontage",
+        "scope_rect": [
+          576,
+          1392,
+          48,
+          72
+        ]
+      },
+      {
+        "id": "west_approach",
+        "scope_rect": [
+          432,
+          1600,
+          48,
+          32
+        ]
+      },
+      {
+        "id": "east_approach",
+        "scope_rect": [
+          576,
+          1584,
+          48,
+          48
+        ]
       }
     ]
   }
