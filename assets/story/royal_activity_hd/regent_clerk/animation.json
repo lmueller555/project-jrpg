@@ -1,0 +1,124 @@
+{
+  "id": "regent_clerk",
+  "canvas": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "poses": {
+    "read": {
+      "frames": [
+        {
+          "file": "read_00.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "read_01.png",
+          "duration_ms": 110
+        },
+        {
+          "file": "read_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_03.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "read_04.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "read_05.png",
+          "duration_ms": 200
+        }
+      ],
+      "loop": false,
+      "facing": "left"
+    },
+    "read_attention": {
+      "frames": [
+        {
+          "file": "read_attention_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_attention_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_attention_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_attention_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_attention_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_attention_05.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "facing": "left"
+    },
+    "read_resume": {
+      "frames": [
+        {
+          "file": "read_resume_00.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_resume_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_resume_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_resume_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_resume_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "read_resume_05.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "facing": "left"
+    },
+    "seated": {
+      "frames": [
+        {
+          "file": "seated_00.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "facing": "front"
+    }
+  },
+  "status": "candidate_pending_independent_review",
+  "runtime_integration": false
+}
