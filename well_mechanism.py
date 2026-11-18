@@ -1,9 +1,9 @@
-"""Independent, deterministic controller for the staged Eldenmere well.
+"""Independent, deterministic controller for the Eldenmere well.
 
-This module does not import Game, Pygame or a resident. The future gameplay
+This module does not import Game, Pygame or a resident. The live gardener
 adapter signals real station arrivals and consumes operation events. Artwork
 and actor adapters only read frozen snapshots; drawing cannot advance work or
-transfer a pail. The existing live DrawingWell remains untouched.
+transfer a pail. DrawingWell owns the live reservation and depth passes.
 """
 from __future__ import annotations
 

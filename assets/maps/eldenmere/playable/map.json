@@ -687,18 +687,18 @@
     {
       "id": "well",
       "position": [
-        486,
-        792
+        492,
+        800
       ],
-      "sort_y": 888,
+      "sort_y": 896,
       "frames": [
-        "assets/maps/eldenmere/town_hd/well/idle.png"
+        "assets/terrain/eldenmere/well_hd/assembled.png"
       ],
       "frame_duration_ms": 200,
       "phase_offset": 0,
       "logical_size": [
-        84,
-        96
+        72,
+        88
       ],
       "artwork_pixels_per_world_pixel": 2
     },
@@ -20925,6 +20925,19 @@
         1536,
         1344
       ]
+    },
+    "well_hd": {
+      "recipe": "assets/source/maps/eldenmere/town_hd/recipe.json",
+      "manifest": "assets/terrain/eldenmere/well_hd/manifest.json",
+      "status": "integrated",
+      "density": 2,
+      "runtime": "well_routine.DrawingWell",
+      "preserved_ground_rect_logical": [
+        504,
+        840,
+        48,
+        48
+      ]
     }
   },
   "art_replacements": {
@@ -28225,5 +28238,30 @@
         ]
       }
     ]
+  },
+  "well_runtime": {
+    "id": "eldenmere.well.live.v1",
+    "status": "integrated",
+    "manifest": "assets/terrain/eldenmere/well_hd/manifest.json",
+    "mechanism_manifest": "assets/terrain/eldenmere/well_hd/mechanism/manifest.json",
+    "mechanism_contract": "assets/source/terrain/eldenmere/well_hd/mechanism/contract.json",
+    "canonical_pail_manifest": "assets/characters/npcs/female_02/gardener_well_hd/animations.json",
+    "world_origin_logical": [
+      492,
+      800
+    ],
+    "depth_baselines_logical": {
+      "back": 840,
+      "front": 896
+    },
+    "actor": {
+      "id": "sanctuary_gardener",
+      "character": "adult_woman_02",
+      "action_bank": "assets/characters/npc_roster_hd/adult_woman_02/gardener_hd/animations.json",
+      "mechanism_phase_samples": 16,
+      "body_phase_samples": 8
+    },
+    "physical_policy": "Retain source collision/navigation and the existing well_ground_rect; artwork alpha does not define physics.",
+    "approval_policy": "Runtime activation is owned by this integration binding; retained source-pack visual approval and original staged delivery metadata remain historical evidence."
   }
 }

@@ -86,7 +86,7 @@ class GardenerWellHDTests(unittest.TestCase):
         data.update(changes)
         return data
 
-    def test_new_performance_is_staged_and_not_selected_by_live_owners(self):
+    def test_original_character_delivery_stays_staged_while_pails_are_reused(self):
         self.assertEqual(self.manifest['integration_status'], 'staged')
         self.assertIs(self.manifest['runtime_activation'], False)
         self.assertEqual(self.manifest['visual_approval'], 'pending_user_review')
@@ -94,6 +94,15 @@ class GardenerWellHDTests(unittest.TestCase):
                          'assets/maps/eldenmere/routines/gardener.json',
                          'assets/characters/npcs/female_02/gardener/animations.json'):
             current = json.loads((ROOT/relative).read_text())
+            if relative.endswith('playable/map.json'):
+                # PR4 keeps the newer adult_woman_02 body identity. It reuses
+                # only this original delivery's canonical rigid pail variants.
+                binding = current['well_runtime']
+                self.assertEqual(binding['canonical_pail_manifest'],
+                                 'assets/characters/npcs/female_02/gardener_well_hd/animations.json')
+                self.assertIn('/adult_woman_02/', binding['actor']['action_bank'])
+                current = deepcopy(current)
+                current['well_runtime'].pop('canonical_pail_manifest')
             self.assertFalse(any('gardener_well_hd/' in value for value in strings(current)), relative)
 
     def test_explicit_native_density_keeps_draw_and_foot_registration_distinct(self):

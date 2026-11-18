@@ -405,75 +405,91 @@ work. Native gameplay captures, route evidence and renderer timings are in
 `python tools/capture_eldenmere_hd.py docs/reviews/eldenmere_town_hd`; the tool
 uses temporary saves/settings only.
 
-### Staged Eldenmere well and pail
+<a id="staged-eldenmere-well-and-pail"></a>
 
-The six-part well rebuild starts with the static bank at
-`assets/terrain/eldenmere/well_hd/manifest.json`, exported by
-`tools/build_eldenmere_well_pack.py` from retained new masters and authored
-geometry in `assets/source/terrain/eldenmere/well_hd/recipe.json`.
-It is **staged, not integrated, and awaiting user visual review**. The existing
-working well, gardener, source collision/navigation and town bindings remain
-unchanged. Merge status does not activate the bank or approve its appearance.
+### Integrated Eldenmere well and pail
 
-The new 72×88 logical canvas contains native 144×176 artwork. Its canvas origin
-is distinct from its ground anchor; the source retains the existing 48×48 well
-support and declares loading/operator standing targets outside it. Explicit
-artwork-space polygons partition one uniformly registered structural master
-into masonry, visible water, timber supports, windlass and canopy. The contact
-shadow has a hard mask with declared whole-layer opacity. Shaped aperture,
-water and near-wall masks replace the former rectangular clipping assumption
-when the later mechanism is implemented.
+The live town now selects the replacement well through `well_runtime` in
+`assets/source/maps/eldenmere/town_hd/recipe.json`. The maintained town composer,
+`tools/build_eldenmere_hd.py`, validates that binding against the retained pack
+and mechanism geometry, then writes it into the playable map and integration
+manifest. Its `integrate_live_well(town, recipe)` helper is idempotent and also
+supports a metadata-only binding update. Rebuilding the town cannot restore the
+former well selector.
 
-The separate 12×18 logical pail has seven neutral static fill levels. Fill changes
-stay inside the authored interior mask; wood, iron, handle and alpha remain
-fixed. The mechanism delivery below adds the separate moving parts and motion
-contract. Gardener poses, sounds, player interactions and runtime activation are
-separate deliveries; static pack approval does not establish their behavior.
+The static bank remains `assets/terrain/eldenmere/well_hd/manifest.json`, exported
+by `tools/build_eldenmere_well_pack.py` from the retained masters and authored
+geometry in `assets/source/terrain/eldenmere/well_hd/recipe.json`. Its original
+staged/approval fields record that asset delivery; the live town binding owns
+runtime activation. Integration does not silently change source hashes or claim
+user visual approval. The original [static pack review](reviews/eldenmere_well_pack/README.md)
+remains an offline historical comparison.
 
-Run `python tools/build_eldenmere_well_pack.py` to export, and add `--check` to
-verify without writing. Focused contracts are in
-`tests/test_eldenmere_well_pack.py`.
-[The asset review](reviews/eldenmere_well_pack/README.md) compares the proposal
-with actual town scenery at native size; its substituted well is an explicitly
-labelled offline composite, not live gameplay or an occlusion/movement claim.
+The 72×88 logical canvas contains native 144×176 artwork at world origin
+`[492,800]`. The occupied support remains `[504,840,48,48]`; collision and
+navigation retain their source bytes. Art alpha never defines new physical
+blocking. Explicit masks partition one uniformly registered master into masonry,
+water, supports, windlass and canopy. The contact shadow has a hard mask and
+whole-layer opacity. Shaped aperture, water and near-wall masks confine shaft
+motion and submersion. The live compositor sorts the two native well layers
+around actors at baselines 840 and 896, then presents the complete 2× scene.
 
-### Staged Eldenmere well mechanism
+The canonical 12×18 logical pail retains seven fill levels. Rigid tilted variants
+are supplied by the PR3 pail bank at
+`assets/characters/npcs/female_02/gardener_well_hd/animations.json`; changing fill
+never repaints its wood, iron, handle or alpha. The pail has one owner through
+pickup, attachment, drawing water, retrieval, carrying, pouring and setdown.
+Back-facing transport applies torso occlusion; streams leave the transformed
+lower mouth lip toward the garden root and require water in the pail.
 
-The additive `well_mechanism.py` controller and
-`well_mechanism_presentation.py` renderer consume the retained static bank.
-Their calibrated source contract is
-`assets/source/terrain/eldenmere/well_hd/mechanism/contract.json`; moving-part
-art is described alongside it and exported to
-`assets/terrain/eldenmere/well_hd/mechanism/` by
-`tools/build_eldenmere_well_mechanism.py`. The bank remains staged and has no
-ordinary `World`, gardener, map, interaction, audio or save binding.
+Run `python tools/build_eldenmere_well_pack.py --check` to verify the static
+exports without writes. `tests/test_eldenmere_well_pack.py` retains the original
+pack contracts. Source art and live runtime migration are separate statuses.
 
-The controller owns time, explicit station-readiness gates, reservation tokens,
-once-only events and pail ownership. Its snapshots/events are immutable. The
-actor presentation reads normalized progress and the actual stopped crank phase;
-it must not advance a second mechanism clock or perform transfers while drawing.
-Abort returns an explicit physical recovery description. Replacing an attached
-pail requires the later integration's coordinated actor/well reset.
+<a id="staged-eldenmere-well-mechanism"></a>
 
-Motion derives from the pail's declared grip, mouth and base. The guided load
-clears the water before entering the shaft; contact occurs when the base reaches
-the water and filling requires the mouth to submerge. Rope length, hook endpoint
-and signed crank turns share one registration. The source contract owns the
-operator-station amendment from the new pose keys; PR1's provisional targets
-remain unchanged. Read the current contract rather than copying old coordinates.
+### Integrated Eldenmere well mechanism
 
-Crank/winding marks and bounded water effects have independent native components.
-Shaped shaft/water masks protect masonry, and only submerged motion is obscured
-by the water plane. Reduced motion holds ambient water while essential work
-continues. The presentation preloads components and bounds its composite cache.
-Normal/slow/reduced previews and trace evidence are in
-[the mechanism review](reviews/eldenmere_well_mechanism/README.md). They are staged
-offline studies; an omitted actor-held pail is not proof of the gardener handoff.
+`well_mechanism.py` owns functional time, station-readiness gates, reservation
+tokens, immutable snapshots/events and once-only ownership cues. Its retained
+contract is `assets/source/terrain/eldenmere/well_hd/mechanism/contract.json`;
+mechanical art is exported alongside the static bank by
+`tools/build_eldenmere_well_mechanism.py`. `well_routine.DrawingWell` binds that
+controller and its native presentation to the live `World`. Rendering samples
+state without advancing it or transferring the pail.
 
-Use `python tools/build_eldenmere_well_mechanism.py --check` to verify exports
-without writes. Controller/presentation checks are in
-`tests/test_well_mechanism.py` and `tests/test_well_mechanism_presentation.py`.
-The existing live well remains selected until the integration delivery.
+The live loading station is `[528,894]`, facing back; the operating station is
+`[564,866]`, facing left. These calibrated targets supersede PR1's provisional
+standing positions without modifying that historical source recipe. The actor
+walks around the well through `[564,894]` and signals readiness only after
+reaching the required station. A blocked approach holds the mechanism instead
+of allowing invisible work or teleporting the actor.
+
+The guided load clears the water before entering the shaft. Contact occurs
+when the pail base reaches the water; filling requires mouth submersion. Rope
+length, hook endpoint and signed crank turns share one registration. The pail
+returns continuously to the loading point before its retrieval cue. The live
+actor uses the current `adult_woman_02` native work bank: sixteen mechanical
+samples select the nearest of its eight registered crank/heavy-body poses.
+The earlier PR3 bob-haired actor drawings stay preserved as a separate staged
+bank; they do not replace the subsequently migrated character's identity.
+
+Reduced motion holds ambient water while essential work continues. Menus and
+focus loss freeze the exploration clock. Interior visits retain the same actor
+and operation, while New Game/Continue reconstruct the transient routine at its
+rest checkpoint with actor and well reset together. The six existing garden
+beds consume one unit each at the authored pour cue, with no inventory or quest
+reward attached to this ambient work.
+
+Use `python tools/build_eldenmere_well_mechanism.py --check` and
+`python tools/build_gardener_well_hd.py --check` for retained exports. The staged
+[mechanism study](reviews/eldenmere_well_mechanism/README.md) remains historical;
+[the live integration review](reviews/well_live/README.md) owns actual-game
+acceptance, route and depth evidence. Its [implementation scope](reviews/well_live/implementation.md)
+records the integration boundaries and lifecycle policy. Controller/presentation
+contracts stay in `tests/test_well_mechanism.py` and
+`tests/test_well_mechanism_presentation.py`; live behavior is verified in
+`tests/test_well_live.py`.
 
 ### Eldenmere settlement framework
 

@@ -55,7 +55,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.position,pygame.Vector2(a.behavior['rest_position']))
         watered=[e for e in a.events if e['type']=='watered']
         self.assertEqual([e['units'] for e in watered],[5,4,3,2,1,0])
-        self.assertTrue({'well_lower','well_fill','well_raise','well_attach','well_unhook','pickup','setdown'}<=states)
+        self.assertTrue({'well_lower','well_fill','well_raise','well_attach','well_detach','pickup','setdown'}<=states)
         self.assertGreater(self.game.elapsed_ms-started,60000)
         self.assertLess(self.game.elapsed_ms-started,100000)
 
@@ -98,7 +98,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.water_units,well.draw_level)
         self.until(lambda:a.state=='well_raise',limit=3)
         self.assertEqual(a.water_units,6)
-        self.until(lambda:a.state=='well_unhook',limit=15)
+        self.until(lambda:a.state=='well_detach' and self.world.well.snapshot().pail_owner=='actor',limit=15)
         self.assertEqual(a.water_units,6)
         self.assertFalse(well.bucket_on_rope)
         self.assertEqual(a.position,pygame.Vector2(well.data['loading_position']))
@@ -202,11 +202,15 @@ class SanctuaryGardener(unittest.TestCase):
                 self.assertEqual(stride[0],stride[1])
                 feet.add(stride[0])
             self.assertEqual(len(feet),4,direction)
-        water_colors={(89,142,159),(185,217,210)}
+        # Canonical pails have their own authored water palette. Measure real
+        # filled pixels against empty at native density, not legacy RGB values.
+        empty=a.buckets['bucket_0_0'].native
         counts=[]
         for level in range(a.water_capacity+1):
-            bucket=a.buckets[f'bucket_0_{level}']
-            counts.append(sum(bucket.get_at((x,y))[:3] in water_colors for x in range(32) for y in range(32)))
+            bucket=a.buckets[f'bucket_0_{level}'].native
+            counts.append(sum(bucket.get_at((x,y))!=empty.get_at((x,y))
+                              for x in range(bucket.get_width())
+                              for y in range(bucket.get_height())))
         self.assertEqual(counts[0],0)
         self.assertTrue(all(a<b for a,b in zip(counts,counts[1:])),counts)
 

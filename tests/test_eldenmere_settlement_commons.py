@@ -263,7 +263,22 @@ class LiveCommonsContracts(unittest.TestCase):
             self.assertEqual(current_ledger,earlier_ledger,key)
         current={record['id']:record for record in self.town['entities']}
         for previous in self.before['entities']:
-            self.assertEqual(current[previous['id']],previous,previous['id'])
+            if previous['id']=='well':
+                # PR4 replaces only this fixture's native appearance/depth.
+                # Its physical support and every nonvisual field stay pinned.
+                actual=copy.deepcopy(current['well']);earlier=copy.deepcopy(previous)
+                binding=self.town['well_runtime']
+                self.assertEqual(actual['position'],binding['world_origin_logical'])
+                self.assertEqual(actual['logical_size'],[72,88])
+                self.assertEqual(actual['sort_y'],binding['depth_baselines_logical']['front'])
+                for key in ('frames','position','logical_size','artwork_pixels_per_world_pixel','sort_y'):
+                    actual.pop(key,None);earlier.pop(key,None)
+                self.assertEqual(actual,earlier,'well nonvisual fields')
+                layout=read(ROOT/'assets/maps/eldenmere/well_square/layout.json')
+                self.assertEqual(layout['well_ground_rect'],[504,840,48,48])
+                self.assertEqual(self.town['collision'],self.before['collision'])
+            else:
+                self.assertEqual(current[previous['id']],previous,previous['id'])
         report=self.town['settlement_commons']
         for entity in report['entities']:self.assertEqual(current[entity['id']],entity)
         ids=[record['id'] for record in self.town['entities']]

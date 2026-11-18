@@ -414,7 +414,13 @@ class World:
         # objects so Caelan can walk in front of and behind the same building.
         ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities
                  if r['rect'].colliderect(viewport) and
+                 not (r['id']=='well' and self.well) and
                  (self.grass is None or self.grass.enabled or 'grass_instance' not in r)]
+        if self.well:
+            well_record=next(r for r in self.entities if r['id']=='well')
+            if well_record['rect'].colliderect(viewport):
+                for baseline,surface,position in self.well.draw_layers(elapsed_ms):
+                    ordered.append((baseline,1,'well_layer',(surface,position)))
         for owner,prop in self.routine_props:
             if not owner.surface_prop_visible(prop):continue
             surface=prop['surface'];rect=surface.get_rect(topleft=prop['position'])
@@ -448,13 +454,13 @@ class World:
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
                 target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
-            elif kind=='routine_prop':
+            elif kind in ('routine_prop','well_layer'):
                 surface,position=record
                 target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
             else:
                 phase=(record['reduced_motion_frame'] if self.reduced_motion and 'reduced_motion_frame' in record else
                        0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces']))
-                surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
+                surface=record['surfaces'][phase]
                 if self.reduced_motion and record.get('still_surface') is not None:
                     surface=record['still_surface']
                 position=(record['position'][0]-camera[0],record['position'][1]-camera[1])
@@ -1043,6 +1049,7 @@ class Game:
         self.sanctuary_rescue.reset()
         self.regent_arrival.reset()
         self.combat.reset()
+        self._reset_ambient_work()
         self.attributes.reset()
         if data is not None and 'character_attributes' in data:
             self.attributes.restore(data['character_attributes'])
@@ -1286,6 +1293,16 @@ class Game:
         self._mouse_held=False
         self.save_menu.open('game_over')
 
+    def _reset_ambient_work(self):
+        """Ambient chores restart at rest; they are not durable quest progress.
+
+        Reset both ends of a reservation together, before restoring the player.
+        Ordinary indoor visits keep the same actor and operation alive.
+        """
+        for scene in self.scenes.values():
+            for npc in scene.npcs:
+                if isinstance(npc,Gardener):npc.reset_cycle()
+
     def return_to_title(self):
         self.save_menu.close()
         if self._is_quest_playtest:
@@ -1300,6 +1317,7 @@ class Game:
         self.mill_gift.reset()
         self.sanctuary_rescue.reset()
         self.sanctuary_arrival.reset()
+        self._reset_ambient_work()
         self.on_title=True
         self.title.fade=0.
         self.title.selected=0
@@ -2053,7 +2071,10 @@ class Game:
             for scene in self.scenes.values():
                 blocker=scene.probe_rect(self.player.position) if scene is self.world else None
                 for npc in scene.npcs:
-                    if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
+                    if isinstance(npc,Gardener):
+                        if (self._music_focused and not self.quest_ui.journal_open
+                                and not self.map_open):npc.update(seconds,scene,blocker)
+                    elif isinstance(npc,DaisyRoutine):npc.update(seconds,scene,blocker)
             for npc in self.persistent_npcs:
                 if getattr(npc,'story_paused',False) or getattr(npc,'party_travelling',False):continue
                 scene=self._routine_worlds[npc]
