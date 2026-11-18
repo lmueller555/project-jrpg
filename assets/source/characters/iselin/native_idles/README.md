@@ -23,5 +23,5 @@ frames, one artwork pixel per world pixel, draw anchor `[12,30]`, foot anchor
 no walks or high-resolution override. The current campaign bank is unchanged.
 
 In-game comparison evidence and reproduction instructions are in
-`docs/reviews/iselin_native_idles/README.md`. Status: awaiting user review;
-these are idle candidates, not a completed walking or cinematic conversion.
+`docs/reviews/iselin_native_idles/README.md`. The user approved all four idles.
+Walking, cinematic conversion and live activation remain separate work.

@@ -2,7 +2,7 @@
 
 Only hard-alpha extraction, uniform whole-drawing sampling and registration are
 performed here. The character drawings belong to the retained imagegen source.
-Live Iselin bindings remain unchanged pending review of these four idles.
+The four idles are user-approved; live activation is a separate integration.
 """
 from __future__ import annotations
 
@@ -68,7 +68,7 @@ def products():
         "idles": {direction: f"assets/characters/iselin/native_idles/idle_{direction}.png"
                   for direction in DIRECTIONS},
         "walks": {},
-        "status": "idle-review-only; not bound to live regent",
+        "status": "user-approved idles; not bound to live regent",
         "frame_size": [24, 36],
         "draw_anchor": [12, 30],
         "foot_anchor": [12, 34],
@@ -93,7 +93,7 @@ def products():
         "draw_anchor": [12, 30],
         "foot_anchor": [12, 34],
         "collision_probe": [8, 4],
-        "status": "awaiting user review; live HD bank preserved",
+        "status": "user-approved idles; live HD bank preserved pending integration",
         "records": records,
         "exports": {str(path.relative_to(ROOT)): sha256(data).hexdigest()
                     for path, data in outputs.items()},

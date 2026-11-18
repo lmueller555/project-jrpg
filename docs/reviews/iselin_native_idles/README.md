@@ -1,6 +1,6 @@
 # Iselin native-resolution idle review
 
-**Status: awaiting user review.** Four new idle facings are staged separately
+**Status: all four idles approved by the user.** The approved facings are staged separately
 from Iselin's live higher-resolution bank. This milestone does not activate the
 new artwork in the campaign or remake walking, cinematic or seated drawings.
 
