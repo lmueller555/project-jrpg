@@ -44,6 +44,9 @@ class MiraCombatArt:
                 or not 0 < release_ms < contact_ms):
             raise ValueError('Mira shot release must precede impact')
         self.release_at = release_ms / 1000
+        self.contact_at = contact_ms / 1000
+        self.duration = sum(record['duration_ms'] for record in self.animations['attack']['frames']) / 1000
+        self.flash_duration = self.animations['attack'].get('flash_duration_ms', 60) / 1000
 
     def frame_record(self, state, elapsed_ms):
         """Select exactly like CombatSprites, clamping finished nonloop poses."""
@@ -102,4 +105,4 @@ class MiraCombatArt:
                                for axis in range(2))
         return {'release_at': self.release_at, 'origin': origin, 'muzzle': muzzle,
                 'target': tuple(target_point), 'fraction': fraction, 'projectile': projectile,
-                'flash': self.release_at <= elapsed < self.release_at + .06}
+                'flash': self.release_at <= elapsed < self.release_at + self.flash_duration}

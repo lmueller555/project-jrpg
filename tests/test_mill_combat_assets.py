@@ -71,7 +71,7 @@ class MillCombatAssetTests(unittest.TestCase):
                                    {'idle', 'attack', 'guard', 'hurt', 'victory',
                                     'defeat', 'walk', 'bolt_shot', 'flee',
                                     'guard_enter', 'guard_impact', 'charged_bolt', 'bulwark',
-                                    'repair_pulse', 'impact_bolt', 'arc_discharge'}, 82)
+                                    'repair_pulse', 'impact_bolt', 'arc_discharge'}, 85)
 
     def test_tusker_has_distinct_native_preparation_charge_and_collapse_poses(self):
         self.assert_complete_actor('ridgeback_tusker', (96, 72), (48, 62), 'right',
@@ -92,7 +92,11 @@ class MillCombatAssetTests(unittest.TestCase):
                 records = {record['source_cell']: record
                            for state in data['animations'].values()
                            for record in state['frames']}
-                self.assertEqual(set(records), set(range(82 if actor == 'mira' else 16)))
+                # Mira replaces five active firing poses, not her retained
+                # source atlas or the other77 approved drawings.
+                expected = ((set(range(82))-set(range(7,12))) | set(range(82,90))
+                            if actor == 'mira' else set(range(16)))
+                self.assertEqual(set(records), expected)
                 for record in records.values():
                     source = ROOT/record.get('source_sheet', data['source_sheet'])
                     with Image.open(source) as image:
@@ -108,7 +112,7 @@ class MillCombatAssetTests(unittest.TestCase):
                                      ('ridgeback_tusker', 'charge', 'tusker_charge')):
             with self.subTest(actor=actor, action=action):
                 frames = manifest(actor)['animations'][state]['frames']
-                self.assertEqual(len(frames), 8 if actor == 'mira' else 3)
+                self.assertEqual(len(frames), 11 if actor == 'mira' else 3)
                 self.assertEqual(sum(frame['duration_ms'] for frame in frames),
                                  round(actions[action]['duration']*1000))
                 impact = actions[action]['impact_at']*1000
@@ -124,6 +128,26 @@ class MillCombatAssetTests(unittest.TestCase):
                 self.assertEqual(pygame.image.tobytes(actual, 'RGBA'),
                                  pygame.image.tobytes(expected, 'RGBA'))
                 self.assertEqual(anchor, tuple(manifest(actor)['anchor']))
+
+    def test_mira_preserves_all_original_sheet_cells_including_unused_firing_poses(self):
+        data = manifest('mira')
+        self.assertEqual((data['authored_frames'],data['sheet_grid']),(90,[8,12]))
+        original = {record['source_cell']:record['file']
+                    for animation in data['animations'].values() for record in animation['frames']
+                    if record['source_cell'] < 82}
+        original.update({cell:f'attack_{cell-3:02}.png' for cell in range(7,12)})
+        self.assertEqual(set(original),set(range(82)))
+        sheet=Image.open(ART/'mira/spritesheet.png').convert('RGBA')
+        protected=json.loads((ROOT/'assets/source/combat/mira_bolt_firing/recipe.json').read_text())['protected_outputs']
+        for cell,filename in original.items():
+            with self.subTest(source_cell=cell,file=filename):
+                image=Image.open(ART/'mira'/filename).convert('RGBA')
+                x,y=cell%8*64,cell//8*64
+                self.assertEqual(sheet.crop((x,y,x+64,y+64)).tobytes(),image.tobytes())
+                relative=f'assets/combat/mira/{filename}'
+                self.assertEqual(hashlib.sha256((ROOT/relative).read_bytes()).hexdigest(),protected[relative])
+        attack=data['animations']['attack']
+        self.assertEqual((attack['release_ms'],attack['contact_ms'],attack['duration_ms']),(280,400,800))
 
     def test_charge_preparation_remains_visible_after_its_non_damaging_action(self):
         action = load_actions()['prepare_charge']

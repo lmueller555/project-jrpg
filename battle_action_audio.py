@@ -13,9 +13,11 @@ SOURCES = {
     'release': ('ice_reaper_rescue/source/fps_blaster.ogg', .18),
     'impact': ('ice_reaper_rescue/source/platform_land.ogg', .22),
     'guard_hit': ('ice_reaper_rescue/shield_impact.ogg', .18),
+    # A short, dry mechanism click; no blaster report or lingering tail.
+    'mira_clack': ('mira/bolt_clack.wav', .17),
 }
 LIMITS = {'step': .17, 'land': .22, 'swing': .22, 'focus': .10,
-          'release': .25, 'impact': .08, 'guard_hit': .24}
+          'release': .25, 'impact': .08, 'guard_hit': .24, 'mira_clack': .065}
 
 
 class BattleActionAudio:

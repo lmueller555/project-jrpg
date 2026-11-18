@@ -184,7 +184,15 @@ class MiraCombatSceneTests(unittest.TestCase):
             self.scene._draw_mira_effects(self.canvas)
             self.scene._draw_mira_effects(self.canvas)
             self.scene.update(.01)
-        self.assertEqual([call.args for call in cues.call_args_list], [('focus',)])
+        self.assertEqual([call.args for call in cues.call_args_list], [('mira_clack',)])
+
+    def test_skipped_whole_action_keeps_one_clack_without_replaying_on_draw(self):
+        self.choose('attack')
+        with patch.object(self.scene.action_audio,'play') as cues:
+            self.scene.update(.8)
+            self.scene._draw_mira_effects(self.canvas)
+            self.scene.update(0)
+        self.assertEqual([call.args for call in cues.call_args_list].count(('mira_clack',)),1)
 
     def test_bulwark_projector_uses_current_drawing_anchor_and_actual_impact(self):
         action = self.choose('bulwark')

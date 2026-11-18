@@ -1,0 +1,6036 @@
+{
+  "fps": 100,
+  "scope": "PR1 firing only; projectile/contact unchanged until PR2",
+  "entry": "Unseeded New Game through production MQ01 and MQ02 inputs",
+  "fixture_changes": [
+    "Music muted; effects volume1 for cue capture",
+    "Disposable save/settings files"
+  ],
+  "audio": "Actual event cue buffers reconstructed on the action clock, not SDL loopback",
+  "modes": {
+    "normal": {
+      "home": [
+        404.0,
+        151.0
+      ],
+      "start_hp": 245,
+      "cues": [
+        {
+          "elapsed": 0.28,
+          "cue": "mira_clack",
+          "raw_bytes": 11356,
+          "decoded_peak": 2847
+        },
+        {
+          "elapsed": 0.4,
+          "cue": "impact",
+          "raw_bytes": 9832,
+          "decoded_peak": 3154
+        }
+      ],
+      "timeline": [
+        {
+          "requested": 0.0,
+          "elapsed": 0.0,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            0.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.01,
+          "elapsed": 0.01,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            10.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.02,
+          "elapsed": 0.02,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            20.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.03,
+          "elapsed": 0.03,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            30.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.04,
+          "elapsed": 0.04,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            40.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.05,
+          "elapsed": 0.05,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            50.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.06,
+          "elapsed": 0.06,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            60.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.07,
+          "elapsed": 0.07,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            70.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.08,
+          "elapsed": 0.08,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            80.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.09,
+          "elapsed": 0.09,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            90.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.1,
+          "elapsed": 0.1,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            100.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.11,
+          "elapsed": 0.11,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            110.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.12,
+          "elapsed": 0.12,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            120.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.13,
+          "elapsed": 0.13,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            130.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.14,
+          "elapsed": 0.14,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            140.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.15,
+          "elapsed": 0.15,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            150.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.16,
+          "elapsed": 0.16,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            160.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.17,
+          "elapsed": 0.17,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            170.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.18,
+          "elapsed": 0.18,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            180.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.19,
+          "elapsed": 0.19,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            190.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.2,
+          "elapsed": 0.2,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            200.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.21,
+          "elapsed": 0.21,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            210.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.22,
+          "elapsed": 0.22,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            220.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.23,
+          "elapsed": 0.23,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            230.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.24,
+          "elapsed": 0.24,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            240.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.25,
+          "elapsed": 0.25,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            250.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.26,
+          "elapsed": 0.26,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            260.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.27,
+          "elapsed": 0.27,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            270.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.279,
+          "elapsed": 0.279,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            279.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.28,
+          "elapsed": 0.28,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            280.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.0,
+            "projectile": [
+              368.0,
+              99.0
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.29,
+          "elapsed": 0.29,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            290.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.08333333333333295,
+            "projectile": [
+              347.2500000000001,
+              103.08333333333331
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.3,
+          "elapsed": 0.3,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            300.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.16666666666666635,
+            "projectile": [
+              326.50000000000006,
+              107.16666666666666
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.31,
+          "elapsed": 0.31,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            310.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.24999999999999978,
+            "projectile": [
+              305.75000000000006,
+              111.24999999999999
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.32,
+          "elapsed": 0.32,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            320.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.3333333333333332,
+            "projectile": [
+              285.0,
+              115.33333333333333
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.33,
+          "elapsed": 0.33,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            330.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.4166666666666666,
+            "projectile": [
+              264.25,
+              119.41666666666666
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.34,
+          "elapsed": 0.34,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            340.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.5,
+            "projectile": [
+              243.5,
+              123.5
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.35,
+          "elapsed": 0.35,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            350.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.5833333333333329,
+            "projectile": [
+              222.7500000000001,
+              127.58333333333331
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.36,
+          "elapsed": 0.36,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            360.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.6666666666666664,
+            "projectile": [
+              202.00000000000006,
+              131.66666666666666
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.37,
+          "elapsed": 0.37,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            370.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.7499999999999998,
+            "projectile": [
+              181.25000000000006,
+              135.75
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.38,
+          "elapsed": 0.38,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            380.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.8333333333333331,
+            "projectile": [
+              160.50000000000006,
+              139.83333333333331
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.39,
+          "elapsed": 0.39,
+          "resolved": false,
+          "hp": 245,
+          "pose": [
+            "attack",
+            390.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.9166666666666666,
+            "projectile": [
+              139.75,
+              143.91666666666666
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.4,
+          "elapsed": 0.4,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            400.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.41,
+          "elapsed": 0.41,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            410.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.42,
+          "elapsed": 0.42,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            420.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.43,
+          "elapsed": 0.43,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            430.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.44,
+          "elapsed": 0.44,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            440.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.45,
+          "elapsed": 0.45,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            450.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.46,
+          "elapsed": 0.46,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            460.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.47,
+          "elapsed": 0.47,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            470.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.48,
+          "elapsed": 0.48,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            480.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.49,
+          "elapsed": 0.49,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            490.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.5,
+          "elapsed": 0.5,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            500.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.51,
+          "elapsed": 0.51,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            510.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.52,
+          "elapsed": 0.52,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            520.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.53,
+          "elapsed": 0.53,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            530.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.54,
+          "elapsed": 0.54,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            540.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.55,
+          "elapsed": 0.55,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            550.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.56,
+          "elapsed": 0.56,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            560.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.57,
+          "elapsed": 0.57,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            570.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.58,
+          "elapsed": 0.58,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            580.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.59,
+          "elapsed": 0.59,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            590.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.6,
+          "elapsed": 0.6,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            600.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.61,
+          "elapsed": 0.61,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            610.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.62,
+          "elapsed": 0.62,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            620.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.63,
+          "elapsed": 0.63,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            630.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.64,
+          "elapsed": 0.64,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            640.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.65,
+          "elapsed": 0.65,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            650.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.66,
+          "elapsed": 0.66,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            660.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.67,
+          "elapsed": 0.67,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            670.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.68,
+          "elapsed": 0.68,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            680.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.69,
+          "elapsed": 0.69,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            690.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.7,
+          "elapsed": 0.7,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            700.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.71,
+          "elapsed": 0.71,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            710.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.72,
+          "elapsed": 0.72,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            720.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.73,
+          "elapsed": 0.73,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            730.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.74,
+          "elapsed": 0.74,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            740.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.75,
+          "elapsed": 0.75,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            750.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.76,
+          "elapsed": 0.76,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            760.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.77,
+          "elapsed": 0.77,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            770.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.78,
+          "elapsed": 0.78,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            780.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.79,
+          "elapsed": 0.79,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            790.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.799,
+          "elapsed": 0.799,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "attack",
+            799.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.8,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19200.000000000116
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.81,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19210.000000000116
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.82,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19220.00000000012
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.83,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19230.00000000012
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.84,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19240.000000000124
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.85,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19250.000000000124
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.86,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19260.000000000127
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.87,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19270.000000000127
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.88,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19280.000000000127
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.89,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19290.00000000013
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.9,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19300.00000000013
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.91,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19310.000000000135
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.92,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19320.000000000135
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.93,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19330.00000000014
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.94,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19340.00000000014
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.95,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19350.00000000014
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.96,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19360.000000000142
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.97,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19370.000000000142
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.98,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19380.000000000146
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.99,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19390.000000000146
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 1.0,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 228,
+          "pose": [
+            "guard",
+            19400.00000000015
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        }
+      ],
+      "audio_peak": 0.021055221557617188,
+      "mixer": [
+        44100,
+        -16,
+        2
+      ],
+      "frames": 101,
+      "sources": {
+        "battle_scene.py": "b11ac839886a4711fbc74718a54f6651caa431bdf59db2c928cad18fde1bba50",
+        "mira_combat_art.py": "f3aa5a61f6ce114ffcc593224fbe5747e83f5c710df9c61da12866a122507def",
+        "battle_action_audio.py": "52a99362145252eba67889586e2a63c8c8619055a363fc95c83e20cb9696bf9c",
+        "assets/audio/sfx/mira/bolt_clack.wav": "5fa190c4b49ceb4e54133a5f72748d84a37ab9af3c744d1bf219c9d50a6a433d",
+        "assets/combat/mira/animation.json": "a85f024ec6f9293e01d447ce5e004d9add041c8c155a5857f44d0d3f58b084a0"
+      }
+    },
+    "reduced_motion": {
+      "home": [
+        404.0,
+        151.0
+      ],
+      "start_hp": 243,
+      "cues": [
+        {
+          "elapsed": 0.28,
+          "cue": "mira_clack",
+          "raw_bytes": 11356,
+          "decoded_peak": 2847
+        },
+        {
+          "elapsed": 0.4,
+          "cue": "impact",
+          "raw_bytes": 9832,
+          "decoded_peak": 3154
+        }
+      ],
+      "timeline": [
+        {
+          "requested": 0.0,
+          "elapsed": 0.0,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            0.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.01,
+          "elapsed": 0.01,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            10.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.02,
+          "elapsed": 0.02,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            20.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.03,
+          "elapsed": 0.03,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            30.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.04,
+          "elapsed": 0.04,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            40.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.05,
+          "elapsed": 0.05,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            50.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.06,
+          "elapsed": 0.06,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            60.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.07,
+          "elapsed": 0.07,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            70.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.08,
+          "elapsed": 0.08,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            80.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.09,
+          "elapsed": 0.09,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            90.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              378.0,
+              109.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.1,
+          "elapsed": 0.1,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            100.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.11,
+          "elapsed": 0.11,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            110.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.12,
+          "elapsed": 0.12,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            120.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.13,
+          "elapsed": 0.13,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            130.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.14,
+          "elapsed": 0.14,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            140.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.15,
+          "elapsed": 0.15,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            150.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.16,
+          "elapsed": 0.16,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            160.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.17,
+          "elapsed": 0.17,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            170.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              101.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.18,
+          "elapsed": 0.18,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            180.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.19,
+          "elapsed": 0.19,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            190.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.2,
+          "elapsed": 0.2,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            200.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.21,
+          "elapsed": 0.21,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            210.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.22,
+          "elapsed": 0.22,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            220.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.23,
+          "elapsed": 0.23,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            230.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.24,
+          "elapsed": 0.24,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            240.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.25,
+          "elapsed": 0.25,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            250.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.26,
+          "elapsed": 0.26,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            260.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.27,
+          "elapsed": 0.27,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            270.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.279,
+          "elapsed": 0.279,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            279.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.28,
+          "elapsed": 0.28,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            280.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.0,
+            "projectile": [
+              368.0,
+              99.0
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.29,
+          "elapsed": 0.29,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            290.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.08333333333333295,
+            "projectile": [
+              347.2500000000001,
+              103.08333333333331
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.3,
+          "elapsed": 0.3,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            300.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.16666666666666635,
+            "projectile": [
+              326.50000000000006,
+              107.16666666666666
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.31,
+          "elapsed": 0.31,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            310.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.24999999999999978,
+            "projectile": [
+              305.75000000000006,
+              111.24999999999999
+            ],
+            "flash": true
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.32,
+          "elapsed": 0.32,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            320.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.3333333333333332,
+            "projectile": [
+              285.0,
+              115.33333333333333
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.33,
+          "elapsed": 0.33,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            330.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.4166666666666666,
+            "projectile": [
+              264.25,
+              119.41666666666666
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.34,
+          "elapsed": 0.34,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            340.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.5,
+            "projectile": [
+              243.5,
+              123.5
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.35,
+          "elapsed": 0.35,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            350.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.5833333333333329,
+            "projectile": [
+              222.7500000000001,
+              127.58333333333331
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.36,
+          "elapsed": 0.36,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            360.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.6666666666666664,
+            "projectile": [
+              202.00000000000006,
+              131.66666666666666
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.37,
+          "elapsed": 0.37,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            370.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.7499999999999998,
+            "projectile": [
+              181.25000000000006,
+              135.75
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.38,
+          "elapsed": 0.38,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            380.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.8333333333333331,
+            "projectile": [
+              160.50000000000006,
+              139.83333333333331
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.39,
+          "elapsed": 0.39,
+          "resolved": false,
+          "hp": 243,
+          "pose": [
+            "attack",
+            390.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": 0.9166666666666666,
+            "projectile": [
+              139.75,
+              143.91666666666666
+            ],
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.4,
+          "elapsed": 0.4,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            400.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.41,
+          "elapsed": 0.41,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            410.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.42,
+          "elapsed": 0.42,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            420.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.43,
+          "elapsed": 0.43,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            430.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.44,
+          "elapsed": 0.44,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            440.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.45,
+          "elapsed": 0.45,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            450.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.46,
+          "elapsed": 0.46,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            460.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.47,
+          "elapsed": 0.47,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            470.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.48,
+          "elapsed": 0.48,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            480.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.49,
+          "elapsed": 0.49,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            490.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              374.0,
+              97.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.5,
+          "elapsed": 0.5,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            500.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.51,
+          "elapsed": 0.51,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            510.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.52,
+          "elapsed": 0.52,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            520.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.53,
+          "elapsed": 0.53,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            530.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.54,
+          "elapsed": 0.54,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            540.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.55,
+          "elapsed": 0.55,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            550.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.56,
+          "elapsed": 0.56,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            560.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.57,
+          "elapsed": 0.57,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            570.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              99.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.58,
+          "elapsed": 0.58,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            580.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.59,
+          "elapsed": 0.59,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            590.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.6,
+          "elapsed": 0.6,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            600.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.61,
+          "elapsed": 0.61,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            610.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.62,
+          "elapsed": 0.62,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            620.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.63,
+          "elapsed": 0.63,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            630.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.64,
+          "elapsed": 0.64,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            640.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.65,
+          "elapsed": 0.65,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            650.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.66,
+          "elapsed": 0.66,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            660.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.67,
+          "elapsed": 0.67,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            670.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              370.0,
+              103.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.68,
+          "elapsed": 0.68,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            680.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.69,
+          "elapsed": 0.69,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            690.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.7,
+          "elapsed": 0.7,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            700.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.71,
+          "elapsed": 0.71,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            710.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.72,
+          "elapsed": 0.72,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            720.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.73,
+          "elapsed": 0.73,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            730.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.74,
+          "elapsed": 0.74,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            740.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.75,
+          "elapsed": 0.75,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            750.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.76,
+          "elapsed": 0.76,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            760.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.77,
+          "elapsed": 0.77,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            770.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.78,
+          "elapsed": 0.78,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            780.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.79,
+          "elapsed": 0.79,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            790.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.799,
+          "elapsed": 0.799,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "attack",
+            799.0
+          ],
+          "shot": {
+            "release_at": 0.28,
+            "origin": [
+              368.0,
+              99.0
+            ],
+            "muzzle": [
+              368.0,
+              113.0
+            ],
+            "target": [
+              119.0,
+              148.0
+            ],
+            "fraction": null,
+            "projectile": null,
+            "flash": false
+          },
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.8,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19200.000000000116
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.81,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19210.000000000116
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.82,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19220.00000000012
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.83,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19230.00000000012
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.84,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19240.000000000124
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.85,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19250.000000000124
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.86,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19260.000000000127
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.87,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19270.000000000127
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.88,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19280.000000000127
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.89,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19290.00000000013
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.9,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19300.00000000013
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.91,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19310.000000000135
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.92,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19320.000000000135
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.93,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19330.00000000014
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.94,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19340.00000000014
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.95,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19350.00000000014
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.96,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19360.000000000142
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.97,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19370.000000000142
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.98,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19380.000000000146
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 0.99,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19390.000000000146
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        },
+        {
+          "requested": 1.0,
+          "elapsed": 0.8,
+          "resolved": true,
+          "hp": 226,
+          "pose": [
+            "guard",
+            19400.00000000015
+          ],
+          "shot": null,
+          "mira_floor": [
+            404.0,
+            151.0
+          ]
+        }
+      ],
+      "audio_peak": 0.021055221557617188,
+      "mixer": [
+        44100,
+        -16,
+        2
+      ],
+      "frames": 101,
+      "sources": {
+        "battle_scene.py": "b11ac839886a4711fbc74718a54f6651caa431bdf59db2c928cad18fde1bba50",
+        "mira_combat_art.py": "f3aa5a61f6ce114ffcc593224fbe5747e83f5c710df9c61da12866a122507def",
+        "battle_action_audio.py": "52a99362145252eba67889586e2a63c8c8619055a363fc95c83e20cb9696bf9c",
+        "assets/audio/sfx/mira/bolt_clack.wav": "5fa190c4b49ceb4e54133a5f72748d84a37ab9af3c744d1bf219c9d50a6a433d",
+        "assets/combat/mira/animation.json": "a85f024ec6f9293e01d447ce5e004d9add041c8c155a5857f44d0d3f58b084a0"
+      }
+    }
+  }
+}

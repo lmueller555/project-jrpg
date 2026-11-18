@@ -975,6 +975,9 @@ class BattleScene:
             step = min(remaining, charge_boundary, commit_boundary, action_boundary)
             events_before = len(self.model.events)
             self.model.update(step, atb_multiplier=multiplier)
+            # A large frame may finish the action before the outer cue sample.
+            # Read its retained clock once, without changing model boundaries.
+            self._mira_release_cue(action)
             remaining = max(0.,remaining-step)
             # Preserve presentation ages across the internal simulation slices.
             for event in self.model.events[events_before:]:
@@ -1270,9 +1273,7 @@ class BattleScene:
             return
         if (action is not None and action.actor == 'mira'
                 and action.action == 'bolt_shot' and self.mira_art is not None):
-            if action.elapsed >= self.mira_art.release_at and 'mira_release' not in self._cue_phases:
-                self._cue_phases.add('mira_release')
-                self.action_audio.play('focus')
+            self._mira_release_cue(action)
             return
         if action is not None and action.actor == 'mira' and action.action in RIG_SKILLS:
             if action.elapsed >= max(.05, action.impact_at-.18) and 'rig_release' not in self._cue_phases:
@@ -1295,6 +1296,14 @@ class BattleScene:
         cue = {'approach': 'step', 'strike': 'swing', 'retreat': 'step',
                'land': 'land', 'focus': 'focus', 'release': 'release'}.get(sample.phase)
         if cue:self.action_audio.play(cue)
+
+    def _mira_release_cue(self, action):
+        """The authored snap owns one dry clack, including skipped frames."""
+        if (action is not None and action.actor == 'mira' and action.action == 'bolt_shot'
+                and self.mira_art is not None and action.elapsed >= self.mira_art.release_at
+                and 'mira_release' not in self._cue_phases):
+            self._cue_phases.add('mira_release')
+            self.action_audio.play('mira_clack')
 
     def _home_positions(self):
         offset = max(0, 202-self.panel_rect.top)
@@ -1977,9 +1986,10 @@ class BattleScene:
                                  tuple(round(n) for n in point), 1)
             if shot['flash'] and not self.reduced_motion:
                 x, y = (round(n) for n in shot['muzzle'])
-                # A small spring-release glint, not a firearm's fireball.
-                pygame.draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
-                pygame.draw.line(canvas, '#f8f0d9', (x-3, y+2), (x-1, y+1), 1)
+                # An attached brass wedge, not an explosion or smoke cloud.
+                pygame.draw.polygon(canvas, '#bd8751',
+                                    ((x-1,y-2),(x-5,y),(x-1,y+2),(x-2,y)))
+                pygame.draw.line(canvas, '#f1cd77', (x-4,y), (x-2,y), 1)
     def _rig_skill_geometry(self, positions=None):
         """Read-only skill attachments sampled from the authoritative action."""
         action = self.model.current_action

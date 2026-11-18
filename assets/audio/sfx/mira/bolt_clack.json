@@ -1,0 +1,13 @@
+{
+  "source": "assets/audio/sfx/ice_reaper_rescue/source/fps_weapon_change.ogg",
+  "source_sha256": "0b39e0f0d733cae3c44a838d67ab8c8510cf3b245016e398a7eb9ab13cda1449",
+  "file": "bolt_clack.wav",
+  "sha256": "5fa190c4b49ceb4e54133a5f72748d84a37ab9af3c744d1bf219c9d50a6a433d",
+  "duration_seconds": 0.065,
+  "sample_rate": 44100,
+  "channels": 2,
+  "format": "PCM signed16LE",
+  "license": "MIT; Kenney Starter Kit FPS, retained source/fps_LICENSE.md",
+  "license_file": "assets/audio/sfx/ice_reaper_rescue/source/fps_LICENSE.md",
+  "processing": "First65ms, ffmpeg resampling to44100; runtime applies its existing short fade and cue gain"
+}

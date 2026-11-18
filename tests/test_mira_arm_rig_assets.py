@@ -36,7 +36,9 @@ class MiraRedrawAssetTests(unittest.TestCase):
     def test_drawings_use_anatomical_floor_registration_instead_of_silhouette_center(self):
         records = {frame['source_cell']: frame for animation in self.data['animations'].values()
                    for frame in animation['frames']}
-        self.assertEqual(len(records), 82)
+        # Five replaced attack drawings remain as historical sheet cells;
+        # eight scoped firing drawings join the 77 still-addressed originals.
+        self.assertEqual(len(records), 85)
         for index, frame in records.items():
             with self.subTest(drawing=index):
                 self.assertEqual(frame['anchors']['floor'], [32,54])
@@ -98,7 +100,7 @@ class MiraRedrawAssetTests(unittest.TestCase):
 
     def test_arm_rig_studies_have_complete_registered_sequences_and_retained_sources(self):
         sources = {entry['path']: entry for entry in self.data['source_sheets']}
-        self.assertEqual(len(sources), 2)
+        self.assertEqual(len(sources), 3)
         for path, record in sources.items():
             self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(), record['sha256'])
         for state in ('charged_bolt', 'bulwark', 'repair_pulse', 'impact_bolt', 'arc_discharge'):
