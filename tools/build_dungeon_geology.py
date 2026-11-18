@@ -5,10 +5,6 @@ recipes. New native silhouettes supply erosion, fragments, roots and mineral
 deposits without changing any approved map or asset. Only raised slabs block.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -261,7 +257,7 @@ class GeologyAuthor:
         for row,family in enumerate(self.spec['families']):
             for col in range(4):
                 key=f'{family}.{col}';record=self.modules[key]
-                image=open_image(BytesIO(self.outputs[record['frames'][0]])).convert('RGBA')
+                image=Image.open(BytesIO(self.outputs[record['frames'][0]])).convert('RGBA')
                 x=20+col*cell_w;y=55+row*cell_h
                 # Use the actual dry limestone below sparse floor overlays.
                 if record['ground_decal']:
@@ -274,7 +270,7 @@ class GeologyAuthor:
         for row,group in enumerate((DIRECTIONS[:4],DIRECTIONS[4:8],DIRECTIONS[8:])):
             for col,direction in enumerate(group):
                 key=f'transition.earth.{direction}.0';record=self.modules[key]
-                image=open_image(BytesIO(self.outputs[record['frames'][0]])).convert('RGBA')
+                image=Image.open(BytesIO(self.outputs[record['frames'][0]])).convert('RGBA')
                 back=self.base.material_tile('dry',0);back.alpha_composite(image)
                 # Four adjacent cells show edge readability at native tile size.
                 patch=Image.new('RGBA',(48,48))
@@ -284,7 +280,7 @@ class GeologyAuthor:
                 x=20+col*cell_w;y=offset+row*cell_h
                 d.text((x,y),key,font=small,fill='#d5d5bf');board.paste(patch,(x,y+24),patch)
         ca_path=ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png'
-        with open_image(ca_path) as source:ca=source.convert('RGBA')
+        with Image.open(ca_path) as source:ca=source.convert('RGBA')
         ca=ca.resize((ca.width*2,ca.height*2),Image.Resampling.NEAREST)
         board.paste(ca,(board.width-90,board.height-85),ca)
         d.text((20,board.height-30),'Small scatter and entrance details are walkable decals; only raised slabs have a solid base.',font=small,fill='#c5cebc')
@@ -313,7 +309,7 @@ class GeologyAuthor:
         manifest={'version':1,'id':self.spec['id'],'approval_status':self.spec['approval_status'],
                   'tile_size':24,'source_recipe':SOURCE.relative_to(ROOT).as_posix(),
                   'materials':materials,'modules':self.modules,
-                  'inputs':{str(path.relative_to(ROOT)):reference_digest(path)
+                  'inputs':{str(path.relative_to(ROOT)):sha256(path.read_bytes()).hexdigest()
                             for path in sorted(set(inputs))},
                   'artifacts':{path:sha256(raw).hexdigest() for path,raw in self.outputs.items()}}
         self.emit(f'{PACK}/assets.json',manifest)

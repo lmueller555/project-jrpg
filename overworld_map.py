@@ -5,7 +5,6 @@ states and Caelan's marker stay live, in display pixels. Old vector helpers are
 kept as a bounded fallback for unregistered fixture or future-region geometry.
 """
 from __future__ import annotations
-from rendering import draw as render_draw
 
 import math
 
@@ -303,12 +302,12 @@ class RegionalMapUI:
     @staticmethod
     def _polygon(painter, color, points, width=0):
         if len(points) >= 3:
-            render_draw.polygon(painter.canvas, color, [painter.point(point) for point in points],
+            pygame.draw.polygon(painter.canvas, color, [painter.point(point) for point in points],
                                 max(1, round(width*painter.scale)) if width else 0)
 
     @staticmethod
     def _circle(painter, color, point, radius, width=0):
-        render_draw.circle(painter.canvas, color, painter.point(point), max(1, round(radius*painter.scale)),
+        pygame.draw.circle(painter.canvas, color, painter.point(point), max(1, round(radius*painter.scale)),
                            max(1, round(width*painter.scale)) if width else 0)
 
     @staticmethod
@@ -537,9 +536,9 @@ class RegionalMapUI:
         def shape(points):
             return [painter.point((point[0]+x*c-y*s,point[1]+x*s+y*c)) for x,y in points]
         outline = shape(((0,-7),(5,5),(0,2),(-5,5)))
-        render_draw.polygon(painter.canvas,INK,outline)
-        render_draw.polygon(painter.canvas,'#fff5d5',shape(((0,-5.5),(3.5,3.5),(0,1),(-3.5,3.5))))
-        render_draw.polygon(painter.canvas,'#d9aa46',shape(((0,-3.5),(1.8,2),(0,.5),(-1.8,2))))
+        pygame.draw.polygon(painter.canvas,INK,outline)
+        pygame.draw.polygon(painter.canvas,'#fff5d5',shape(((0,-5.5),(3.5,3.5),(0,1),(-3.5,3.5))))
+        pygame.draw.polygon(painter.canvas,'#d9aa46',shape(((0,-3.5),(1.8,2),(0,.5),(-1.8,2))))
 
     def _description(self, record):
         if record.get('kind') == 'bridge':

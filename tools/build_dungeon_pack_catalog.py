@@ -6,10 +6,6 @@ labelled cell; animated pages have matching GIFs, and a lossless PDF retains
 all pages without reducing the pixel art to a contact-sheet thumbnail.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 from collections import Counter, defaultdict
@@ -92,7 +88,7 @@ def products():
     def opened(path):
         used.add(ROOT/path)
         if path not in images:
-            with open_image(ROOT/path) as image:images[path] = image.convert('RGBA')
+            with Image.open(ROOT/path) as image:images[path] = image.convert('RGBA')
         return images[path]
     def add(source, name, record, kind):
         frames = record['frames'];image = opened(frames[0])
@@ -224,7 +220,7 @@ def products():
                'entries':entries,'pages':pages,'summary':summary,
                'overview':f'{OUT}/overview.png','pdf':f'{OUT}/full_catalog.pdf',
                'archive':f'{OUT}/native_assets.zip','archive_files':sorted(archive_paths),
-               'inputs':{str(path.relative_to(ROOT)):reference_digest(path) for path in sorted(used)},
+               'inputs':{str(path.relative_to(ROOT)):sha256(path.read_bytes()).hexdigest() for path in sorted(used)},
                'artifacts':{path:sha256(data).hexdigest() for path,data in outputs.items()}}
     outputs[f'{OUT}/catalog.json'] = json_bytes(catalog)
     return outputs

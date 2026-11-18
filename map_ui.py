@@ -19,19 +19,6 @@ SOFT_INK = '#6d7054'
 BRASS = '#a88c4b'
 PATH_EDGE = '#ad9768'
 PATH_FILL = '#d3bb88'
-# Map strokes describe hierarchy without introducing another world-road source.
-# Widths are logical-world values in compiled cartography.street_network records.
-STREET_ROLES = {
-    'desire': (.65, 1, '#c2b28f', '#dacead'),
-    'residential': (.8, 2, PATH_EDGE, PATH_FILL),
-    'secondary': (.9, 2, PATH_EDGE, PATH_FILL),
-    'primary': (1.0, 3, '#a38a63', '#cfb184'),
-    'junction': (1.0, 3, PATH_EDGE, PATH_FILL),
-    'doorstep': (.7, 1, PATH_EDGE, PATH_FILL),
-}
-STREET_ORDER = {role: index for index, role in enumerate(STREET_ROLES)}
-STONE_EDGE = '#a4a18c'
-STONE_FILL = '#cdc9af'
 WATER = '#789798'
 WATER_EDGE = '#547679'
 ROOF = '#8a7660'
@@ -47,8 +34,6 @@ DESCRIPTIONS = {
     'commons': 'The village well and a place to meet.',
     'liam_house': 'Liam, his parents, and Daisy live here.',
     'school': 'Eldenmere’s children learn together here.',
-    'inn': 'A common room and guest beds beside the southern lane.',
-    'item_shop': 'Remedies, travelling supplies and equipment behind the shop glass.',
 }
 
 
@@ -117,8 +102,6 @@ class MapUI:
                 result[item.get('id', '')] = tuple(item['ground_rect'])
             if 'well_ground_rect' in item:
                 result['commons'] = tuple(item['well_ground_rect'])
-        for item in self.game.town.data.get('cartography',{}).get('buildings',[]):
-            result[item['id']]=tuple(item['ground_rect'])
         return result
 
     def world_to_map(self, position):
@@ -275,43 +258,17 @@ class MapUI:
         tile = self.game.town.data.get('tile_size', self._plan.get('tile_size_px', 24))
         for start, end, center in self._plan.get('stream_centres', []):
             # Stream bands retain the approved stepped meander and its width.
-            record = ((center-1)*tile, start*tile, 3*tile, (end-start+1)*tile)
+            record = ((center-1.5)*tile, start*tile, 3*tile, (end-start+1)*tile)
             rect = self._world_rect(record)
             painter.rect(WATER_EDGE, rect)
             painter.rect(WATER, rect.inflate(-2, 0))
-        for record in self.game.town.data.get('cartography',{}).get('water_extensions',[]):
-            rect=self._world_rect(record);painter.rect(WATER_EDGE,rect);painter.rect(WATER,rect.inflate(-2,0))
         for branch in self._plan.get('water_branches', []):
             points = [self._tile_point(point) for point in branch.get('points', [])]
             for a, b in zip(points, points[1:]):
                 painter.line(WATER_EDGE, a, b, 3)
                 painter.line(WATER, a, b, 1)
 
-    def _draw_street_network(self, painter, records):
-        """Use compiled logical geometry; runtime never reads a street recipe."""
-        world_scale = self.map_rect.width/self.game.town.size[0]
-        for record in sorted(records, key=lambda item: STREET_ORDER.get(item.get('role'), 2)):
-            factor, minimum, edge, fill = STREET_ROLES.get(record.get('role'), STREET_ROLES['secondary'])
-            if record.get('material') == 'stone':
-                edge, fill = STONE_EDGE, STONE_FILL
-            if record.get('rect') is not None:
-                # Plazas and square junctions retain their declared surface,
-                # rather than relying on a zero-length or short thick line.
-                rect = self._world_rect(record['rect'])
-                painter.rect(edge, rect)
-                inner = rect.inflate(-2, -2)
-                painter.rect(fill, inner if inner.width > 0 and inner.height > 0 else rect)
-                continue
-            width = max(minimum, round(record.get('width', 24)*world_scale*factor))
-            points = [self.world_to_map(point) for point in record['points']]
-            segments = list(zip(points, points[1:]))
-            # Fill all joins after their outlines so one segment's border does
-            # not cut across the preceding segment at an elbow.
-            for a, b in segments:painter.line(edge, a, b, width+1)
-            for a, b in segments:painter.line(fill, a, b, max(1, width-1))
-
-    def _draw_legacy_roads(self, painter):
-        """Compatibility for maps whose cartography predates a complete network."""
+    def _draw_roads(self, painter):
         tile_width = self.map_rect.width/self.game.town.size[0]*self.game.town.data.get('tile_size', 24)
         for record in self._plan.get('roads', []):
             points = [self._tile_point(point) for point in record['points']]
@@ -319,26 +276,12 @@ class MapUI:
             for a, b in zip(points, points[1:]):
                 painter.line(PATH_EDGE, a, b, width+1)
                 painter.line(PATH_FILL, a, b, width-1)
-        for line in self.game.town.data.get('cartography',{}).get('roads',[]):
-            points=[self.world_to_map(point) for point in line]
-            for a,b in zip(points,points[1:]):
-                painter.line(PATH_EDGE,a,b,max(2,round(2*tile_width))+1)
-                painter.line(PATH_FILL,a,b,max(2,round(2*tile_width))-1)
         for item in self._extras:
             rects = list(item.get('path_rects_tiles', []))
             if 'path_rect_tiles' in item:rects.append(item['path_rect_tiles'])
             if 'plaza_rect_tiles' in item:rects.append(item['plaza_rect_tiles'])
             for record in rects:
                 painter.rect(PATH_FILL, self._tile_rect(record))
-
-    def _draw_roads(self, painter):
-        cartography = self.game.town.data.get('cartography', {})
-        if 'street_network' in cartography:
-            # Presence, including an intentionally empty network, replaces all
-            # old blockout, later-addition and expansion road layers.
-            self._draw_street_network(painter, cartography['street_network'])
-        else:
-            self._draw_legacy_roads(painter)
         for record in self._plan.get('crossings', []):
             rect = self._tile_rect(record['rect'])
             painter.rect('#a68e67', rect)

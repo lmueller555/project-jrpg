@@ -1,5 +1,4 @@
 """The Venn delivery, two inspections and a failed spell attempt and a practical gate repair."""
-from caelan_scene_art import image as scene_image
 import json
 from pathlib import Path
 
@@ -9,8 +8,6 @@ from inventory import Inventory
 from quests import OPENING_QUEST, QuestLog
 from social import clear_sight, facing_toward
 from venn_magicks import VennMagicks
-from npc_roster_art import RosterArt
-from rendering import load_art
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/venn/'
@@ -28,21 +25,10 @@ class VennResident:
         self.data = {'id': 'venn_'+role, 'name': name, 'family_role': role, 'household_id': 'venn'}
         self.position = pygame.Vector2(position);self.probe_size = (12, 8)
         self.draw_anchor = (12, 30);self.facing = 'front'
-        bank = ROOT/f'assets/characters/named_hd/venn_{role}/design.json'
-        self.named_art = RosterArt(world, 'venn_'+role, named=True) if role != 'child' and bank.is_file() else None
-        self.idles = (self.named_art.idles if self.named_art else
-                      {d: world.image(ART+f'{role}/idle_{d}.png') for d in ('front', 'left', 'right', 'back')})
-        if self.named_art:self.draw_anchor = self.named_art.draw_anchor
+        self.idles = {d: world.image(ART+f'{role}/idle_{d}.png') for d in ('front', 'left', 'right', 'back')}
         self.conversation_ready = False;self.conversation_facing = 'front';self.role = role
         if role == 'child':
-            rest_root = Path('assets/characters/named_hd/venn_child/bedrest')
-            rest_manifest = ROOT/rest_root/'animation.json'
-            if rest_manifest.is_file() and (ROOT/'assets/characters/named_hd/venn_child/design.json').is_file():
-                meta = json.loads(rest_manifest.read_text())
-                self.heads = [load_art(world, (rest_root/frame['file']).as_posix(), meta)
-                              for frame in meta['frames']]
-            else:
-                self.heads = [world.image(ART+'child/rest_head.png'), world.image(ART+'child/rest_blink.png')]
+            self.heads = [world.image(ART+'child/rest_head.png'), world.image(ART+'child/rest_blink.png')]
             self.story_position = (60, 112);self.story_draw_anchor = (12, 12);self.story_sort_y = 167
 
     @property
@@ -79,21 +65,21 @@ class VennVisit:
         self.walk_ms = 0.;self.blocked_seconds = 0.;self.dialogue = None;self.partner = None
         self.debris_cleared = False;self.flow_seconds = 0.;self._pose_owned = False
         self._last_art = None;self._water_cache = {}
-        self.gates = {name: [self.town.room_art_image(path) for path in frames] for name, frames in self.art['animations'].items()}
-        self.backgrounds = [self.town.room_art_image(path) for path in self.art['backgrounds']]
+        self.gates = {name: [self.town.image(path) for path in frames] for name, frames in self.art['animations'].items()}
+        self.backgrounds = [self.town.image(path, False) for path in self.art['backgrounds']]
         self.magick_art = VennMagicks(self.town)
         self.surface_props = [
-            {'id': 'venn_supplies', 'scene': 'venn', 'surface': self.home.room_art_image(ART+'provisions.png'),
+            {'id': 'venn_supplies', 'scene': 'venn', 'surface': self.home.image(ART+'provisions.png'),
              'position': [338, 128], 'sort_y': 175},
-            {'id': 'venn_tools', 'scene': self.town.data['id'], 'surface': self.town.room_art_image(ART+'toolbox.png'),
+            {'id': 'venn_tools', 'scene': self.town.data['id'], 'surface': self.town.image(ART+'toolbox.png'),
              'position': [1400, 686], 'sort_y': 698},
             {'id': 'venn_gate', 'scene': self.town.data['id'], 'surface': self.backgrounds[0].copy(),
              'position': list(GATE_POSITION), 'sort_y': 672},
-            {'id': 'venn_debris', 'scene': self.town.data['id'], 'surface': self.town.room_art_image(ART+'debris.png'),
+            {'id': 'venn_debris', 'scene': self.town.data['id'], 'surface': self.town.image(ART+'debris.png'),
              'position': [1446, 680], 'sort_y': -9998}]
         meta = read('assets/terrain/eldenmere/irrigation/tileset.json')
         routes = {r['id']: r for r in meta['routes']}
-        atlases = [self.town.room_art_image('assets/terrain/eldenmere/irrigation/'+f['image']) for f in meta['frames']]
+        atlases = [self.town.image('assets/terrain/eldenmere/irrigation/'+f['image']) for f in meta['frames']]
         terrain = read('assets/maps/eldenmere/terrain_foundation/scene.json')
         downstream = [c for c in terrain['channels'] if c['branch']=='irrigation' and c['mode']=='trickle' and c['cell'][1]>=28]
         self.water_props = []
@@ -104,7 +90,7 @@ class VennVisit:
             self.water_props.append(prop)
         for fall in terrain['spillways']:
             if fall['branch'] != 'irrigation' or fall['mode'] != 'trickle':continue
-            images = [self.town.room_art_image(f'assets/terrain/eldenmere/terraces/spillway/frame_{i+1:02}.png') for i in range(6)]
+            images = [self.town.image(f'assets/terrain/eldenmere/terraces/spillway/frame_{i+1:02}.png') for i in range(6)]
             self.water_props.append({'id': 'venn_spillway', 'scene': self.town.data['id'],
                 'position': fall['position'], 'sort_y': -9999, 'surface': images[0], 'images': images,
                 'delay': 9*.16})
@@ -328,7 +314,7 @@ class VennVisit:
         self._pose_owned = False
 
     def _pose(self, name):
-        self.game.player.story_sprite = scene_image(self.town,ART+'caelan/'+name+'.png')
+        self.game.player.story_sprite = self.town.image(ART+'caelan/'+name+'.png')
         self.game.player.story_draw_anchor = (20, 38);self._pose_owned = True
 
     def _walk(self, goal, seconds):
@@ -408,7 +394,7 @@ class VennVisit:
 
     def _update_art(self, force=False):
         if not force and self.game.world is not self.town:return
-        phase = 0 if self.town.reduced_motion else int(self.game.elapsed_ms//200)%6;animation, frame = self._gate_frame(phase)
+        phase = int(self.game.elapsed_ms//200)%6;animation, frame = self._gate_frame(phase)
         magic = self.action=='repair' and self.action_method=='magicks' and self.phase in self.magick_art.poses
         signature = (phase, animation, frame, self.phase, int(self.phase_time*30) if magic else 0, self.debris_cleared, int(self.flow_seconds/.16) if self.flowing and self.flow_seconds<12 else 100)
         if signature==self._last_art and not force:return
@@ -426,12 +412,12 @@ class VennVisit:
             key = (i, phase)
             if key not in self._water_cache:
                 image = prop['images'][phase];rect = image.get_rect(topleft=prop['position'])
-                background = self.town.ground_region(rect,phase*200)
+                background = self.town.ground[phase].subsurface(rect).copy()
                 background.blit(image, (0, 0));self._water_cache[key] = background
             prop['surface'] = self._water_cache[key]
 
     def draw_world(self, canvas, camera):
         if self.action!='supplies' or self.game.world is not self.home:return
         actor = self.partner if self.contact else self.game.player
-        canvas.blit(self.home.room_art_image(ART+'provisions.png'),
+        canvas.blit(self.home.image(ART+'provisions.png'),
                     (round(actor.position.x)+3-camera[0], round(actor.position.y)-12-camera[1]))

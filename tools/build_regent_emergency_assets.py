@@ -5,10 +5,6 @@ Authored wraps, dust and guarded poses are separate derived assets. No shared
 actor or scene is changed by this builder.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 
 import argparse
 from hashlib import sha256
@@ -93,22 +89,22 @@ def products():
         return (OUTPUT/name).relative_to(ROOT).as_posix()
     idles = {};walks = {}
     for direction in DIRECTIONS:
-        idle = injured(open_image(root/f'idle_{direction}.png'), direction, recipe['palette'])
+        idle = injured(Image.open(root/f'idle_{direction}.png'), direction, recipe['palette'])
         idles[direction] = export(f'idle_{direction}.png', idle)
         frames = [export(f'walk_{direction}/frame_{index:02}.png', injured(
-            open_image(root/f'walk_{direction}/frame_{index+1:02}.png'), direction, recipe['palette']))
+            Image.open(root/f'walk_{direction}/frame_{index+1:02}.png'), direction, recipe['palette']))
             for index in range(4)]
         walks[direction] = [frames[index] for index in recipe['walk_order']]
-    alarm = injured(open_image(root/'idle_front.png'), 'front', recipe['palette'], alarm=True)
+    alarm = injured(Image.open(root/'idle_front.png'), 'front', recipe['palette'], alarm=True)
     poses = {'alarm_front':export('poses/alarm_front.png', alarm),
              'rest_front':export('poses/rest_front.png', resting(images['idle_front.png'], recipe['palette']))}
-    aid = open_image(ROOT/'assets/characters/serene/idle_left.png').convert('RGBA')
+    aid = Image.open(ROOT/'assets/characters/serene/idle_left.png').convert('RGBA')
     aid_draw = ImageDraw.Draw(aid)
     aid_draw.line((8,21,5,23,3,23), fill=recipe['palette']['skin'], width=2)
     aid_draw.rectangle((0,23,3,25), fill=recipe['palette']['bandage_shadow'])
     aid_draw.line((0,23,3,23), fill=recipe['palette']['bandage_light'])
     poses['serene_aid_left'] = export('poses/serene_aid_left.png', aid)
-    portrait = open_image(ROOT/recipe['source_portrait']).convert('RGB')
+    portrait = Image.open(ROOT/recipe['source_portrait']).convert('RGB')
     painter = ImageDraw.Draw(portrait)
     painter.polygon(((22,26),(29,25),(30,28),(23,29)), fill=recipe['palette']['bandage_shadow'])
     painter.line((23,26,29,26), fill=recipe['palette']['bandage'], width=2)
@@ -141,7 +137,7 @@ def products():
     small = ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),16)
     draw.text((20,12),'MQ03 survivor / native injured Crown worker /24×36 source scale',font=font,fill='#e3e8d6')
     # Retain the original scale-reference figure in historical material reviews.
-    hero = open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+    hero = Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
     for index,direction in enumerate(DIRECTIONS):
         x=24+index*190;y=60
         for image,dx in ((hero,0),(images[f'idle_{direction}.png'],80)):

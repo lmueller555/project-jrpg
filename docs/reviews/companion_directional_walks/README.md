@@ -1,6 +1,6 @@
 # Companion directional walking review
 
-Authoring rules live in the [global visual art standard](../../VISUAL_ART_STANDARD.md).
+Authoring rules live in the [global sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md).
 This file retains asset-specific implementation details and review history;
 older construction methods and review-stage wording are historical, not current
 general instructions.

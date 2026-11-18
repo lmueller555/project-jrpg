@@ -7,7 +7,7 @@ import pygame
 
 import test_halden_visit as fixtures
 from halden_visit import SOURCES
-from caelan_scene_art import image as scene_image
+from tools.build_caelan_overworld import registered
 
 
 class CaelanPickupContinuityTests(unittest.TestCase):
@@ -26,9 +26,8 @@ class CaelanPickupContinuityTests(unittest.TestCase):
         self.assertFalse(visit.contact)
         self.assertIsNone(visit.carried)
         self.assertTrue(visit.surface_prop_visible(visit.surface_props[0]))
-        self.assertTrue(hasattr(game.player,'story_sprite'))
-        empty=scene_image(visit.home,'assets/story/halden/caelan/lift_back_1.png')
-        self.assertEqual(pygame.image.tobytes(game.player.story_sprite,'RGBA'),pygame.image.tobytes(empty,'RGBA'))
+        self.assertFalse(hasattr(game.player,'story_sprite'))
+        self.assertEqual(pygame.image.tobytes(game.player.sprite(),'RGBA'),registered(1)[0].tobytes())
         visit._update_player(.179)
         self.assertFalse(visit.contact)
         self.assertTrue(visit.surface_prop_visible(visit.surface_props[0]))
@@ -36,27 +35,10 @@ class CaelanPickupContinuityTests(unittest.TestCase):
         self.assertTrue(visit.contact)
         self.assertEqual(visit.carried,0)
         self.assertFalse(visit.surface_prop_visible(visit.surface_props[0]))
-        held=scene_image(visit.home,'assets/story/halden/caelan/lift_back_2.png')
+        held=visit.home.image('assets/story/halden/caelan/lift_back_2.png')
         self.assertEqual(pygame.image.tobytes(game.player.story_sprite,'RGBA'),pygame.image.tobytes(held,'RGBA'))
         visit._update_player(.36)
         self.assertIsNone(visit.action)
         self.assertEqual(visit.carried,0)
         self.assertFalse(visit.surface_prop_visible(visit.surface_props[0]))
         self.assertEqual(game.inventory.to_dict(),inventory)
-
-    def test_blocked_approach_cannot_animate_or_transfer_the_sack(self):
-        from unittest.mock import patch
-        fixture=fixtures.HaldenGameplayTests(methodName='runTest')
-        fixture.setUp();self.addCleanup(fixture.doCleanups);self.addCleanup(fixture.tearDown)
-        fixture.medicine();game,visit=fixture.game,fixture.visit
-        game.player.position.update(SOURCES[0][0]+12,SOURCES[0][1]+18)
-        visit.action=('lift',0);visit.action_time=0.;visit.contact=False
-        with patch.object(visit.home,'can_stand',return_value=False):
-            visit._update_player(.2)
-        self.assertEqual(visit.action_time,0.)
-        self.assertFalse(visit.contact);self.assertIsNone(visit.carried)
-        self.assertTrue(visit.surface_prop_visible(visit.surface_props[0]))
-        self.assertIsNone(visit.action)
-        visit.action=('lift',0)
-        for _ in range(90):visit._update_player(1/60)
-        self.assertEqual(visit.carried,0);self.assertIsNone(visit.action)

@@ -20,8 +20,8 @@ class OpeningConclusion:
         self.worlds={self.halden:game.halden_visit.home}
         self.paths={};self.retries={};self.settled=False
         self.lines=json.loads((ROOT/'assets/story/opening_conclusion.json').read_text())
-        # Halden owns his density-aware, manifest-timed travel bank.
-        # This scene borrows the same actor without replacing its artwork.
+        self.halden.walks={d:[game.town.image(f'assets/story/halden/walk_{d}_{i}.png') for i in range(4)]
+                           for d in ('front','left','right','back')}
     @property
     def locks_player(self):return False
     @property
@@ -61,11 +61,7 @@ class OpeningConclusion:
         return None
     def _stop_mill(self):
         for record in self.game.town.entities:
-            if record['id'] in ('mill','mill.wheel'):record['animation_stopped']=self.mill_stopped
-        for scene in self.game.scenes.values():
-            for record in scene.entities:
-                if record.get('animation_driver')=='mill_wheel':
-                    record['animation_stopped']=self.mill_stopped
+            if record['id']=='mill':record['animation_stopped']=self.mill_stopped
     def restore(self,data=None):
         self.paths.clear();self.retries.clear();self.dialogue=False;self.settled=False
         self.serene.story_paused=False;self.serene.story_sprite=None;self.halden.end_conversation()

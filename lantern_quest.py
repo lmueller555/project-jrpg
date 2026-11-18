@@ -1,6 +1,4 @@
 """Liam's first lantern: four connected sections, one child, one physical object."""
-from caelan_scene_art import frame as scene_frame
-import liam_native_art
 from collections import deque
 import json
 from pathlib import Path
@@ -61,17 +59,12 @@ class LanternQuest:
         self._pose_actors = set();self.poses = {}
         self._quest_profiles = set()
         for identifier, path in self.art.get('poses', {}).items():
-            if identifier=='liam':
-                meta,sheet=liam_native_art.story_sheet(self.town,'assembly',path)
-                def pose_frame(rect):return sheet.subsurface(rect).copy()
-            else:
-                meta=json.loads((ROOT/path).read_text());sheet=self.town.image(meta['sheet'])
-                def pose_frame(rect):return scene_frame(sheet,rect,meta)
-            self.poses[identifier] = (meta, {kind: [(pose_frame(f['rect']), f['duration_ms'])
+            meta = json.loads((ROOT/path).read_text());sheet = self.town.image(meta['sheet'])
+            self.poses[identifier] = (meta, {kind: [(sheet.subsurface(f['rect']).copy(), f['duration_ms'])
                                         for f in frames] for kind, frames in meta['actions'].items()})
         self.surface_props = []
         for spec in self.art['props']:
-            states = {k: self.town.room_art_image(p) for k, p in spec['states'].items()}
+            states = {k: self.town.image(p) for k, p in spec['states'].items()}
             prop = {**spec, 'states': states, 'surface': next(iter(states.values()))}
             self.surface_props.append(prop)
             game._scene_by_id(spec['scene']).attach_routine_props(self)

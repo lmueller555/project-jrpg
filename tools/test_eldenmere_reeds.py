@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Verify connected reed motion, dry bank anchors and lossless scene delivery."""
 import json
 from pathlib import Path
@@ -19,7 +15,7 @@ def load(path):
 
 
 def opened(path):
-    with open_image(path) as image:
+    with Image.open(path) as image:
         return image.convert('RGBA')
 
 
@@ -164,7 +160,7 @@ class ReedTests(unittest.TestCase):
         review = self.scene['review']
         for name, crop, scale in (('review_scene', None, review['scene_scale']),
                                   ('banks_closeup', review['closeup_rect'], review['closeup_scale'])):
-            with open_image(PACK / f'{name}.gif') as gif:
+            with Image.open(PACK / f'{name}.gif') as gif:
                 self.assertEqual(gif.n_frames, 54)
                 self.assertEqual(gif.info['loop'], 0)
                 for phase, record in enumerate(self.scene['frames']):
@@ -177,7 +173,7 @@ class ReedTests(unittest.TestCase):
                     self.assertEqual(expected.tobytes(), gif.convert('RGB').tobytes())
                 gif.seek(0)
                 self.assertEqual(gif.convert('RGB').tobytes(), opened(PACK / f'{name}.png').convert('RGB').tobytes())
-        with open_image(PACK / 'reeds_review.gif') as gif:
+        with Image.open(PACK / 'reeds_review.gif') as gif:
             self.assertEqual(gif.info['loop'], 0)
             tick = 0
             for encoded in range(gif.n_frames):

@@ -4,9 +4,6 @@ Art stays in the native generated asset kit. This module places that art and
 clips materials to authored terrain; it never allocates a region-sized image.
 """
 from __future__ import annotations
-from rendering import rotate as render_rotate
-from rendering import scale as render_scale
-from rendering import draw as render_draw
 
 from collections import defaultdict
 import math
@@ -84,12 +81,6 @@ class EnvironmentDetail:
                         if is_road:self.roads_by_chunk[(cx,cy)].append((a,b,radius))
         records = list(world.region.get('decorations',[]))
         for scene in world.region.get('setpieces',[]):records.extend(scene.get('props',[]))
-        records.extend(world.region.get('signature_landscape',{}).get('props',[]))
-        self._signature_clearance = []
-        for record in world.region.get('signature_landscape',{}).get('props',[]):
-            x,y=world._tile_point(record['tile_position']);w,h=record.get('solid',(0,0))
-            padding=record.get('procedural_clearance',12)
-            self._signature_clearance.append(pygame.Rect(round(x)-w//2,round(y)-h//2,w,h).inflate(padding*2,padding*2))
         self.authored = []
         for index,record in enumerate(records):
             prop = {**record,'id':record.get('id',f'authored:{index}'),
@@ -110,12 +101,8 @@ class EnvironmentDetail:
     def prop_key(self, preferred, fallback):
         return preferred if preferred in self.world._art.get('props',{}) else fallback
 
-    def _signature_reserved(self, pixel):
-        return any(rect.collidepoint(pixel) for rect in self._signature_clearance)
-
     def _reserved(self, point, padding=0):
         pixel = self.world._tile_point(point)
-        if self._signature_reserved(pixel):return True
         if self.world.town_entry_rect.inflate(5*TILE,5*TILE).collidepoint(pixel):return True
         if any(rect.collidepoint(pixel) for rect in self._safe_rects):return True
         chunk = (math.floor(point[0]/16),math.floor(point[1]/16))
@@ -229,7 +216,6 @@ class EnvironmentDetail:
                     x,y = point[0]+normal[0]*distance*side,point[1]+normal[1]*distance*side
                     if (math.floor(x/CHUNK),math.floor(y/CHUNK)) != (cx,cy):continue
                     tile = (x/TILE,y/TILE)
-                    if self._signature_reserved((x,y)):continue
                     if any(path_distance(tile,(a,b))<radius for a,b,radius in self.roads_by_chunk.get((cx,cy),())):continue
                     key = self.prop_key('reeds' if seed%4 else 'river_rocks','rock')
                     props.append({'id':f'bank:{river_index}:{index}:{side}','key':key,'position':(x,y)})
@@ -245,7 +231,6 @@ class EnvironmentDetail:
                 x,y = point[0]+normal[0]*(seed%13-6),point[1]+normal[1]*(seed%13-6)
                 if (math.floor(x/CHUNK),math.floor(y/CHUNK)) != (cx,cy):continue
                 tile = (x/TILE,y/TILE)
-                if self._signature_reserved((x,y)):continue
                 if any(path_distance(tile,(a,b))<radius-.8 for a,b,radius in self.roads_by_chunk.get((cx,cy),())):continue
                 key = self.prop_key(('fern','shrub','sapling')[(seed>>7)%3],'rock')
                 if key != 'rock':props.append({'id':f'fringe:{forest_index}:{index}','key':key,'position':(x,y)})
@@ -258,7 +243,6 @@ class EnvironmentDetail:
                 x,y = point[0]+normal[0]*distance*side,point[1]+normal[1]*distance*side
                 if (math.floor(x/CHUNK),math.floor(y/CHUNK)) != (cx,cy):continue
                 tile = (x/TILE,y/TILE)
-                if self._signature_reserved((x,y)):continue
                 if any(path_distance(tile,r['points'])<r.get('width',8)/2+.2 for r in terrain.get('rivers',[])):continue
                 key = self.prop_key(('grass_tuft','flowers_a','flowers_b')[(seed>>7)%3],'rock')
                 if key != 'rock':props.append({'id':f'verge:{road_index}:{index}','key':key,'position':(x,y)})
@@ -279,9 +263,6 @@ class EnvironmentDetail:
                         yield prop
 
     def pattern(self, target, key, origin, angle=0):
-        if self.world.terrain_hd is not None:
-            self.world.terrain_hd.pattern(target,key,origin,angle)
-            return
         angle = round(float(angle))%360
         if not angle:
             self.world._pattern(target,key);return
@@ -290,8 +271,8 @@ class EnvironmentDetail:
             # One-pixel overlap prevents raster cracks between rotated native
             # material swatches. The swatches themselves stay unmodified.
             tile = self.world._tile_image(key).convert_alpha()
-            if angle%90:tile = render_scale(tile,(25,25))
-            self._textures[cache_key] = render_rotate(tile,-angle)
+            if angle%90:tile = pygame.transform.scale(tile,(25,25))
+            self._textures[cache_key] = pygame.transform.rotate(tile,-angle)
         tile = self._textures[cache_key]
         radians = math.radians(angle);c,s = math.cos(radians),math.sin(radians)
         if not angle%90:c,s = round(c),round(s)
@@ -305,9 +286,6 @@ class EnvironmentDetail:
                 target.blit(tile,(round(x-tile.get_width()/2),round(y-tile.get_height()/2)))
 
     def paint(self, target, key, painter, origin, angle=0):
-        if self.world.terrain_hd is not None:
-            self.world.terrain_hd.paint(target,key,painter,origin,angle)
-            return
         overlay = pygame.Surface((CHUNK,CHUNK),pygame.SRCALPHA)
         self.pattern(overlay,key,origin,angle)
         mask = pygame.Surface((CHUNK,CHUNK),pygame.SRCALPHA)
@@ -323,7 +301,7 @@ class EnvironmentDetail:
         area = sum(a[0]*b[1]-b[0]*a[1] for a,b in zip(points,points[1:]+points[:1]))
         inward = 1 if area > 0 else -1
         def mask(surface):
-            render_draw.polygon(surface,'white',local)
+            pygame.draw.polygon(surface,'white',local)
             if inset:self.world._draw_path(surface,(0,0,0,0),local+local[:1],inset*2)
             if roughness:
                 closed = points+[points[0]]
@@ -334,11 +312,11 @@ class EnvironmentDetail:
                     jitter = ((seed%(roughness*2+1))-roughness)+inset*inward
                     x = round(point[0]+normal[0]*jitter-origin[0]);y = round(point[1]+normal[1]*jitter-origin[1])
                     radius = 2+seed%max(2,roughness)
-                    render_draw.circle(surface,'white',(x,y),radius)
+                    pygame.draw.circle(surface,'white',(x,y),radius)
         self.paint(target,key,mask,origin,angle)
 
     def ground(self, target, cx, cy):
-        self.pattern(target,self.key('grass_meadow','grass'),(cx*CHUNK,cy*CHUNK))
+        self.world._pattern(target,self.key('grass_meadow','grass'))
         terrain = self.world.region.get('terrain',{})
         for feature in terrain.get('hills',[]):
             if feature.get('ground_treatment') == 'localized':continue
@@ -384,9 +362,9 @@ class EnvironmentDetail:
                 width,height = 32+seed%16,18+(seed>>7)%10
                 rect = pygame.Rect(round(x)-width//2-origin[0],
                                    round(y)-height//2-origin[1]-2,width,height)
-                render_draw.ellipse(surface,'white',rect)
+                pygame.draw.ellipse(surface,'white',rect)
                 for side in (-1,1):
-                    render_draw.circle(surface,'white',
+                    pygame.draw.circle(surface,'white',
                                        (rect.centerx+side*(width//3),rect.centery+side*3),5)
         self.paint(target,self.key('leaf_litter','forest_floor'),mask,origin)
 
@@ -408,7 +386,7 @@ class EnvironmentDetail:
                 x,y = prop['position'];wide = prop['key'] == 'ridge'
                 width,height = (100,26) if wide else (64,20)
                 rect = pygame.Rect(round(x)-width//2-origin[0],round(y)-height//2-origin[1],width,height)
-                render_draw.ellipse(surface,'white',rect)
+                pygame.draw.ellipse(surface,'white',rect)
         self.paint(target,self.key('grass_dry','dirt'),mask,origin)
 
     @staticmethod
@@ -437,7 +415,7 @@ class EnvironmentDetail:
                         edge = width/2-1+seed%3
                         x = round(point[0]+normal[0]*edge*side-origin[0])
                         y = round(point[1]+normal[1]*edge*side-origin[1])
-                        render_draw.circle(surface,(0,0,0,0),(x,y),1+seed%3)
+                        pygame.draw.circle(surface,(0,0,0,0),(x,y),1+seed%3)
             self.paint(target,self.key('grass_dry','dirt'),
                        lambda mask,p=points,w=width:self.world._draw_path(mask,'white',p,w+10),origin)
             if kind == 'cart' and road.get('ruts',True):
@@ -456,9 +434,6 @@ class EnvironmentDetail:
 
     def bank(self, target, river, cx, cy):
         """Variable dry shore outside the unchanged, solid water footprint."""
-        if self.world.terrain_hd is not None:
-            self.world.terrain_hd.bank(target,river,cx,cy)
-            return
         origin = (cx*CHUNK,cy*CHUNK);viewport = pygame.Rect(origin,(CHUNK,CHUNK))
         points = self.world._local_path(river,cx,cy)
         global_points = [self.world._tile_point(p) for p in river['points']]
@@ -469,7 +444,7 @@ class EnvironmentDetail:
                 seed = stable(index,57,42)
                 for side in (-1,1):
                     distance = width/2+11+seed%8
-                    render_draw.circle(mask,'white',(round(point[0]+normal[0]*distance*side-origin[0]),
+                    pygame.draw.circle(mask,'white',(round(point[0]+normal[0]*distance*side-origin[0]),
                                                      round(point[1]+normal[1]*distance*side-origin[1])),4+seed%5)
         self.paint(target,self.key('grass_lush','grass'),grass,origin)
         def earth(mask):
@@ -480,7 +455,7 @@ class EnvironmentDetail:
                     distance = width/2+3+seed%5
                     center = (round(point[0]+normal[0]*distance*side-origin[0]),
                               round(point[1]+normal[1]*distance*side-origin[1]))
-                    render_draw.circle(mask,'white',center,3+seed%4)
+                    pygame.draw.circle(mask,'white',center,3+seed%4)
         self.paint(target,'bank',earth,origin)
         def gravel(mask):
             for point,normal,index,_ in samples(global_points,47,viewport,width/2+35):
@@ -490,7 +465,7 @@ class EnvironmentDetail:
                 distance = width/2+6
                 center = (round(point[0]+normal[0]*distance*side-origin[0]),
                           round(point[1]+normal[1]*distance*side-origin[1]))
-                render_draw.circle(mask,'white',center,4+seed%9)
+                pygame.draw.circle(mask,'white',center,4+seed%9)
         if not self.world.region.get('terrain',{}).get('shore_conditions'):
             self.paint(target,self.key('gravel','bank'),gravel,origin)
 

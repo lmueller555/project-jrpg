@@ -5,7 +5,6 @@ settlement owns rewards and resources; this owner retains encounter choices,
 entry checkpoints and the acknowledged acquisition presentation.
 """
 from __future__ import annotations
-from rendering import scale as render_scale
 
 from copy import deepcopy
 import json
@@ -591,7 +590,7 @@ class ElementalBosses:
                 clock = self.game.elapsed_ms if elapsed_ms is None else elapsed_ms
                 image, anchor = self._sprites.frame(key, 'idle', 0 if self.game.audio.reduced_motion else clock)
                 scale = .5
-                image = render_scale(image, tuple(max(1, round(n*scale)) for n in image.get_size()))
+                image = pygame.transform.scale(image, tuple(max(1, round(n*scale)) for n in image.get_size()))
                 floor = (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale))
                 target.blit(image, floor)
                 self.presentation_error = ''

@@ -6,10 +6,6 @@ center and floor coordinate, never the full equipment bounding box or a moving
 support foot. Source and export recipes remain beside the generated artwork.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 
 import argparse
 from collections import Counter
@@ -184,9 +180,9 @@ def build_actor(actor):
     status = recipe.get('art_status', 'review')
     if status not in ('approved', 'review'):
         raise ValueError(f'Invalid front-walk approval status: {actor}')
-    sheet = open_image(source_path).convert('RGBA')
+    sheet = Image.open(source_path).convert('RGBA')
     idle_path = ROOT/f'assets/characters/{actor}/idle_front.png'
-    idle = open_image(idle_path).convert('RGBA')
+    idle = Image.open(idle_path).convert('RGBA')
     palette = approved_palette(idle)
     export, prepared = extract_sources(sheet, recipe)
     scale, anchor, scale_info = choose_scale(actor, export, prepared)
@@ -254,7 +250,7 @@ def save_gif(path, frames, palettes):
     indexed = [frame.quantize(palette=fixed, dither=Image.Dither.NONE) for frame in frames]
     indexed[0].save(path, save_all=True, append_images=indexed[1:], duration=[DURATION]*4,
                     loop=0, disposal=2, optimize=False, background=0)
-    with open_image(path) as image:
+    with Image.open(path) as image:
         durations = [frame.info.get('duration') for frame in ImageSequence.Iterator(image)]
         assert len(durations) == 4 and durations == [DURATION]*4, (path, durations)
         assert image.info.get('loop') == 0
@@ -283,8 +279,8 @@ def actor_previews(actor, record):
 
 def combined_preview(records):
     caelen_path = ROOT/'assets/characters/caelan/walk_front'
-    reference = [open_image(caelen_path/f'frame_{i+1:02}.png').convert('RGBA') for i in range(4)]
-    reference_idle = open_image(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    reference = [Image.open(caelen_path/f'frame_{i+1:02}.png').convert('RGBA') for i in range(4)]
+    reference_idle = Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
     actors = list(records)
     frames = []
     for index in range(4):

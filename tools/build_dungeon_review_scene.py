@@ -5,10 +5,6 @@ source recipe owns geometry, physical footprints, review stations and routes;
 production maps and controllers are never written by this tool.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import reference_digest, open_image
-except ModuleNotFoundError:
-    from caelan_reference import reference_digest, open_image
 import argparse
 from hashlib import sha256
 from io import BytesIO
@@ -32,7 +28,7 @@ def products():
         path=ROOT/name;used.add(path);return json.loads(path.read_text())
     def opened(name):
         path=ROOT/name;used.add(path)
-        with open_image(path) as image:return image.convert('RGBA')
+        with Image.open(path) as image:return image.convert('RGBA')
     def emit(name,image):
         path=(OUTPUT/name).relative_to(ROOT).as_posix();out[path]=encoded(image);return path
     packs={name:read(path) for name,path in spec['manifests'].items()}
@@ -181,7 +177,7 @@ def products():
     emit('ground.png',ground.convert('RGB'));emit('collision.png',collision.convert('RGB'));emit('water_mask.png',water_mask.convert('RGB'))
     overview=ground.copy()
     for rec in sorted(entities,key=lambda r:(r['sort_y'],r.get('sort_priority',0))):
-        raw=out.get(rec['frames'][0]);image=open_image(BytesIO(raw)).convert('RGBA') if raw else opened(rec['frames'][0])
+        raw=out.get(rec['frames'][0]);image=Image.open(BytesIO(raw)).convert('RGBA') if raw else opened(rec['frames'][0])
         overview.alpha_composite(image,tuple(rec['position']))
     emit('overview.png',overview.convert('RGB'))
     checks=dict(spec['review_checks']);checks['solid_points']=checks['solid_points']+solids
@@ -198,7 +194,7 @@ def products():
                   'review_points':spec['review_points'],'routes':spec['routes'],'review_checks':checks,
                   'placed_modules':placed,'water_tiles':water_records,'treasures':[],'links':[]},
           'build':{'tool':'tools/build_dungeon_review_scene.py','source_recipe':SOURCE.relative_to(ROOT).as_posix(),
-                   'source_sha256':{str(path.relative_to(ROOT)):reference_digest(path) for path in sorted(used)}}}
+                   'source_sha256':{str(path.relative_to(ROOT)):sha256(path.read_bytes()).hexdigest() for path in sorted(used)}}}
     # Catch authored endpoints before handing the scene to the movement review.
     for name,point in spec['review_points'].items():
         x,y=(round(value) for value in point)

@@ -3,10 +3,8 @@
 MillQuest owns the durable report, dialogue and completion receipts. This
 controller stages the existing family and transient movement only: an interrupted
 pickup starts again at the clean cups, while a committed placement stays visible.
-Ordinary approach uses the registered travel bank; cups retain their existing
-current HD travel with the existing logical grip guides and household poses.
+All bodies are existing approved idle, walking and empty-hand household poses.
 """
-from caelan_scene_art import image as scene_image
 from collections import deque
 
 import pygame
@@ -30,13 +28,16 @@ class SanctuaryReturn:
         self.dining = game._scene_by_id('sanctuary_dining')
         self.serene = next(a for a in game.persistent_npcs if a.data['id'] == 'mother_serene')
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
-        self._cup = self.dining.room_art_image(CUP)
+        self._cup = self.dining.image(CUP)
         self._body_anchor = tuple(self.dining.data['player_draw_anchor'])
-        self._carry_walks = game.player.walks
         self._household_anchor = (self._body_anchor[0]+8, self._body_anchor[1]+24)
-        self._hands = {d: scene_image(self.dining,EMPTY_HANDS.format(d))
+        self._hands = {d: self.dining.image(EMPTY_HANDS.format(d))
                        for d in ('front', 'back', 'left', 'right')}
-        self._reaches = [scene_image(self.dining,f'assets/story/elira/reach_{i}.png') for i in range(3)]
+        # The old household give_left pose extends its far arm backwards.
+        # Mirror the existing right-facing pose at draw time to keep a carried
+        # cup in front of Caelan when he turns left, without changing a limb.
+        self._hands['left'] = pygame.transform.flip(self._hands['right'], True, False)
+        self._reaches = [self.dining.image(f'assets/story/elira/reach_{i}.png') for i in range(3)]
         self.surface_props = []
         for kind, origin in (('source', SOURCE_CUP), ('table', TABLE_CUP)):
             for i in range(2):
@@ -48,7 +49,7 @@ class SanctuaryReturn:
         # Reuse the room's serving pot beside the new cups on the setting table.
         self.surface_props.append({'id': 'mill_return_serving_pot',
             'scene': 'sanctuary_dining',
-            'surface': self.dining.room_art_image('assets/terrain/eldenmere/sanctuary_interior/props/kettle.png'),
+            'surface': self.dining.image('assets/terrain/eldenmere/sanctuary_interior/props/kettle.png'),
             'position': (278, 178), 'sort_y': 210, 'sort_priority': 1.5,
             'kind': 'pot'})
         self.dining.attach_routine_props(self)
@@ -205,30 +206,14 @@ class SanctuaryReturn:
             if travel >= distance-1e-7:self._route.popleft()
         self._clear_player_pose()
         if player.moving:
-            self._walking_pose()
+            frames = player.walks[player.facing]
+            cursor = self._walk_ms % sum(duration for _, duration in frames)
+            for image, duration in frames:
+                if cursor < duration:break
+                cursor -= duration
+            player.story_sprite = image;player.story_draw_anchor = self._body_anchor
+            self._player_pose = True
         return player.position.distance_squared_to(goal) < .01
-
-    def _travel_frames(self):
-        player = self.game.player
-        if self._holding:
-            return (player.runs if player.running else self._carry_walks)[player.facing]
-        return (player.runs if player.running else player.walks)[player.facing]
-
-    def _travel_frame_index(self):
-        frames = self._travel_frames()
-        cursor = self.game.player.walk_ms % sum(duration for _,duration in frames)
-        for index,(_,duration) in enumerate(frames):
-            if cursor < duration:return index
-            cursor -= duration
-        return len(frames)-1
-
-    def _walking_pose(self):
-        self._clear_player_pose()
-        player = self.game.player
-        anchor = player.draw_anchor
-        player.story_sprite = self._travel_frames()[self._travel_frame_index()][0]
-        player.story_draw_anchor = anchor
-        self._player_pose = True
 
     def _cup_origin(self):
         player = self.game.player
@@ -239,17 +224,13 @@ class SanctuaryReturn:
             return (player.position+pygame.Vector2(self._pose_wrist)
                     -pygame.Vector2(self._household_anchor)-cup_to_hand)
         # Approved normal stride, with the small stack registered to its hand.
-        # The hand guide has four phases; the live travel banks have sixteen.
-        frames = self._travel_frames()
-        cycle = sum(duration for _,duration in frames)
-        index = min(3,int(player.walk_ms % cycle / cycle * 4)) if player.moving else 0
+        index = int(player.walk_ms//140) % 4 if player.moving else 0
         hands = {'front': ((17, 22), (17, 22), (17, 20), (17, 22)),
                  'back': ((17, 20), (18, 21), (17, 21), (17, 20)),
                  'right': ((16, 21), (16, 21), (16, 22), (16, 21)),
                  'left': ((7, 20), (7, 21), (7, 21), (7, 21))}
         hand = pygame.Vector2(hands[player.facing][index])
-        anchor = getattr(player, 'story_draw_anchor', None) or player.draw_anchor
-        hand += pygame.Vector2(anchor)-pygame.Vector2(self._body_anchor)
+        anchor = getattr(player, 'story_draw_anchor', None) or self.game.world.data['player_draw_anchor']
         return player.position+hand-pygame.Vector2(anchor)-cup_to_hand
 
     def update(self, seconds):
@@ -283,8 +264,8 @@ class SanctuaryReturn:
         elif self._holding:
             # Cancelling live dialogue leaves normal navigation available.
             # Keep a supported hand pose while standing; walking uses the
-            # scene-owned legacy directional stride and its registered hand locations.
-            if self.game.player.moving:self._walking_pose()
+            # unmodified directional stride and its registered hand locations.
+            if self.game.player.moving:self._clear_player_pose()
             else:self._pose(self.game.player.facing)
         # Live conversations can turn to the actual person holding the floor.
         if self.game.social.active:

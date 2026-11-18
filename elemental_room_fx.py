@@ -4,8 +4,6 @@ The owner never changes music or reserves mixer channels. Geometry comes from
 the live cave and guardian registry; no second chamber coordinate table exists.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 from array import array
 from dataclasses import dataclass
@@ -105,8 +103,8 @@ class ElementalRoomEffects:
             left, top = min(point[0] for point in points), min(point[1] for point in points)
             right, bottom = max(point[0] for point in points)+1, max(point[1] for point in points)+1
             bounds = pygame.Rect(left, top, right-left, bottom-top)
-            polygon = render_layer(bounds.size, pygame.SRCALPHA)
-            render_draw.polygon(polygon, (255, 255, 255, 255),
+            polygon = pygame.Surface(bounds.size, pygame.SRCALPHA)
+            pygame.draw.polygon(polygon, (255, 255, 255, 255),
                                 [(x-left, y-top) for x, y in points])
             floor = pygame.mask.from_surface(polygon)
             blocked = getattr(world, 'blocked', None)
@@ -124,7 +122,7 @@ class ElementalRoomEffects:
                 return tuple(found)
 
             rooms[identifier] = Room(guardian['element'], bounds, floor, alpha,
-                render_layer(bounds.size, pygame.SRCALPHA),
+                pygame.Surface(bounds.size, pygame.SRCALPHA),
                 positions(12 if guardian['element'] == 'fire' else 10), positions(3))
         self._rooms, self._world = rooms, world
 
@@ -206,18 +204,18 @@ class ElementalRoomEffects:
                     y = (origin_y+time*speed*.25) % room.bounds.height
                 point = (round(x), round(y))
                 if room.element == 'fire':
-                    render_draw.circle(layer, (235, 113, 36, 25), point, 2)
-                    render_draw.circle(layer, (255, 195, 96, 145), point, 1)
+                    pygame.draw.circle(layer, (235, 113, 36, 25), point, 2)
+                    pygame.draw.circle(layer, (255, 195, 96, 145), point, 1)
                 else:
-                    render_draw.circle(layer, (190, 226, 245, 95), point, 1)
+                    pygame.draw.circle(layer, (190, 226, 245, 95), point, 1)
                     if index % 4 == 0:
-                        render_draw.line(layer, (220, 239, 248, 70),
+                        pygame.draw.line(layer, (220, 239, 248, 70),
                                          (point[0]-1, point[1]), (point[0]+1, point[1]))
             if room.element == 'fire' and not reduced:
                 for x, y, phase, _ in room.wisps:
                     points = [(round(x+math.sin(time*.7+phase*math.tau+step*.8)*2), y-step*3)
                               for step in range(4)]
-                    render_draw.lines(layer, (232, 148, 87, 28), False, points, 1)
+                    pygame.draw.lines(layer, (232, 148, 87, 28), False, points, 1)
             # Intersect the complete effect, including glow radii and wisps,
             # with the actual authored floor and live collision mask.
             layer.blit(room.alpha, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

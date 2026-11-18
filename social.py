@@ -1,5 +1,4 @@
 """Proximity conversations, speaker portraits, and routine-safe interruptions."""
-from npc_roster_art import bound_design
 import json
 import math
 from pathlib import Path
@@ -66,17 +65,9 @@ class SocialSystem:
         self.portraits = {}
         manifest = json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())
         for speaker in self.data['speakers'].values():
-            design_id = bound_design(speaker.get('actor_id'))
-            if design_id:
-                # Do not overwrite shared male_01: driver and bridge worker stay unchanged.
-                key = 'npc_roster_hd:' + design_id
-                speaker['portrait'] = key
-                self.portraits[key] = game.town.image(
-                    f'assets/characters/npc_roster_hd/{design_id}/portrait.png')
-            else:
-                key = speaker['portrait']
-                record = manifest['portraits'][key]
-                self.portraits[key] = game.town.image('assets/portraits/eldenmere/'+record['file'])
+            key = speaker['portrait']
+            record = manifest['portraits'][key]
+            self.portraits[key] = game.town.image('assets/portraits/eldenmere/'+record['file'])
         self.bubble = SpeechBubble(self)
 
     def painter(self, canvas=None):
@@ -193,7 +184,7 @@ class SocialSystem:
         position = getattr(actor, 'story_position', None) or actor.position
         anchor = getattr(actor, 'story_draw_anchor', None)
         if anchor is None:
-            anchor = (getattr(actor, 'draw_anchor', getattr(self.game.world, 'data', {}).get('player_draw_anchor', (12, 30)))
+            anchor = (getattr(self.game.world, 'data', {}).get('player_draw_anchor', (12, 30))
                       if actor is self.game.player else getattr(actor, 'draw_anchor', (12, 30)))
         image = getattr(actor, 'story_sprite', None)
         if image is None and hasattr(actor, 'sprite'):

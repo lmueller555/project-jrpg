@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import reference_digest
 """The complete dungeon pack must remain reusable, walkable and reviewable."""
 from collections import Counter, deque
 from concurrent.futures import ThreadPoolExecutor
@@ -83,9 +79,9 @@ class DungeonPackExpansionTests(unittest.TestCase):
                 self.assertEqual(result.returncode,0,builder+'\n'+result.stdout+result.stderr)
         for source,manifest in self.manifests.items():
             for path,expected in manifest['inputs'].items():
-                self.assertEqual(reference_digest((ROOT/path)),expected,(source,path))
+                self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),expected,(source,path))
             for path,expected in manifest['artifacts'].items():
-                self.assertEqual(reference_digest((ROOT/path)),expected,(source,path))
+                self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),expected,(source,path))
             for name,module in manifest['modules'].items():
                 for path in module['frames']:
                     with Image.open(ROOT/path) as image:self.assertEqual(image.size,tuple(module['size']),(source,name,path))
@@ -108,9 +104,9 @@ class DungeonPackExpansionTests(unittest.TestCase):
             if page.get('animation'):self.assertTrue((ROOT/page['animation']).is_file())
         self.assertGreaterEqual(len(pages),6)
         for path,expected_hash in catalog.get('inputs',{}).items():
-            self.assertEqual(reference_digest((ROOT/path)),expected_hash,path)
+            self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),expected_hash,path)
         for path,expected_hash in catalog.get('artifacts',{}).items():
-            self.assertEqual(reference_digest((ROOT/path)),expected_hash,path)
+            self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),expected_hash,path)
         pdf=CATALOG.parent/'full_catalog.pdf'
         self.assertTrue(pdf.read_bytes().startswith(b'%PDF'))
         with zipfile.ZipFile(ROOT/catalog['archive']) as archive:

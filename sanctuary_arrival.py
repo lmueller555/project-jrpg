@@ -3,7 +3,6 @@
 Only acknowledged beats, the rescue handoff and first cave entry persist.
 Camera movement, actor paths and partial pages rebuild on Continue.
 """
-from rendering import scale as render_scale, load_art
 from pathlib import Path
 import json
 import pygame
@@ -39,9 +38,6 @@ class CastActor:
             self.idles=dict(source.idles)
             self.walks={direction:list(frames) for direction,frames in source.walks.items()}
             self.walk_durations=dict(getattr(source,'walk_durations',{}))
-            for direction,frames in self.walks.items():
-                if direction not in self.walk_durations and frames and isinstance(frames[0],tuple):
-                    self.walk_durations[direction]=tuple(duration for _,duration in frames)
             self.detail_idles=dict(getattr(source,'detail_idles',{}))
             self.detail_walks=dict(getattr(source,'detail_walks',{}))
             self.pose_animations={name:dict(animation) for name,animation in
@@ -51,16 +47,13 @@ class CastActor:
             self.walks={d:[world.image(f'assets/characters/npcs/{variant}/walk_{d}/frame_{i:02}.png') for i in range(1,5)] for d in self.idles}
         if art is not None:
             self.draw_anchor=tuple(art['anchor'])
-            travel_meta={'artwork_pixels_per_world_pixel':art.get('travel_artwork_pixels_per_world_pixel',1)}
-            self.idles={direction:load_art(world,path,travel_meta) for direction,path in art['idles'].items()}
-            self.detail_idles={}
+            self.idles={direction:world.image(path) for direction,path in art['idles'].items()}
             for direction,frames in art['walks'].items():
-                self.detail_walks.pop(direction,None)
-                self.walks[direction]=[load_art(world,frame['file'],{**travel_meta,**frame}) for frame in frames]
+                self.walks[direction]=[world.image(frame['file']) for frame in frames]
                 self.walk_durations[direction]=tuple(frame['duration_ms'] for frame in frames)
             for name,animation in art.get('poses',{}).items():
                 self.pose_animations[name]={
-                    'frames':tuple(load_art(world,frame['file'],animation) for frame in animation['frames']),
+                    'frames':tuple(world.image(frame['file']) for frame in animation['frames']),
                     'durations':tuple(frame['duration_ms'] for frame in animation['frames']),
                     'loop':animation.get('loop',False),
                     'anchor':tuple(animation.get('anchor',self._draw_anchor))}
@@ -218,22 +211,15 @@ class SanctuaryArrival(MillGift):
             self.actors[key]=CastActor(key,world,variant=variant,art=self.art['actors'].get(key))
         performance=self.performance
         for name,animation in performance['poses'].items():
-            # Worker A activates only with his complete authored injury/care bank.
-            # Other actors retain their existing performance assets.
-            if ((name in ('offer_arm','arm_rest') and name in self.art['actors']['worker_a'].get('poses',{}))
-                    or (name=='runner_place' and name in self.art['actors'].get('runner',{}).get('poses',{}))):
-                continue
             actor=self.actors['runner'] if name=='runner_place' else self.actors['worker_a'] if name in ('offer_arm','arm_rest') else self.actors['mira']
             actor.pose_animations[name]={
                 'frames':tuple(world.image(f['file']) for f in animation['frames']),
                 'durations':tuple(f['duration_ms'] for f in animation['frames']),
                 'loop':False,'anchor':tuple(animation['anchor'])}
         runner=self.actors['runner']
-        carry=self.art['actors'].get('runner',{}).get('carrying',performance)
-        carry_meta={'artwork_pixels_per_world_pixel':carry.get('carry_artwork_pixels_per_world_pixel',1)}
-        runner.carry_idles={direction:load_art(world,path,carry_meta) for direction,path in carry['carry_idles'].items()}
-        runner.carry_walks={direction:[load_art(world,f['file'],carry_meta) for f in frames] for direction,frames in carry['carry_walks'].items()}
-        runner.walk_durations={direction:tuple(f['duration_ms'] for f in frames) for direction,frames in carry['carry_walks'].items()}
+        runner.carry_idles={direction:world.image(path) for direction,path in performance['carry_idles'].items()}
+        runner.carry_walks={direction:[world.image(f['file']) for f in frames] for direction,frames in performance['carry_walks'].items()}
+        runner.walk_durations={direction:tuple(f['duration_ms'] for f in frames) for direction,frames in performance['carry_walks'].items()}
         portraits=json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())['portraits']
         for key,name,actor in (('arrival_caretaker','Caretaker','caretaker'),('arrival_worker','Injured worker','worker_a')):
             portrait=self.art['actors'][actor]['portrait']
@@ -242,12 +228,8 @@ class SanctuaryArrival(MillGift):
                 g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
         for role,name,portrait in (('worker_b','Injured worker','arrival_worker_b'),('runner','Sanctuary attendant','female_01'),('sentry','Sanctuary lookout','female_02')):
             key='arrival_'+role
-            actor_art=self.art['actors'].get(role,{})
-            portrait=actor_art.get('portrait',portrait)
             g.social.data['speakers'][key]={'name':name,'portrait':portrait}
-            if portrait not in g.social.portraits:
-                path=actor_art.get('portrait_file') or 'assets/portraits/eldenmere/'+portraits[portrait]['file']
-                g.social.portraits[portrait]=world.image(path)
+            if portrait not in g.social.portraits:g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
         for actor in c.sanctuary_escorts:c._hide(actor)
         starts=self.manifest['starts']
         first=self.manifest['beats'][0]['goals']
@@ -559,7 +541,8 @@ class SanctuaryArrival(MillGift):
         self._world.reduced_motion=self.reduced_motion
         try:self._world.draw(canvas,g.camera.position(),g.player,self.elapsed*1000,include_ui=False,party_actors=tuple(self.actors.values()))
         finally:g.player.story_visible=old
-        render_scale(canvas,ui_surface.get_size(),ui_surface)
+        pygame.transform.scale(canvas,ui_surface.get_size(),ui_surface)
+        if hasattr(canvas,'present_detail'):canvas.present_detail(ui_surface)
         painter=g.ui.painter(ui_surface);self._layout(painter)
         if self.caption_layout is not None:
             portrait=g.social.portraits[self.caption_layout.portrait_key]

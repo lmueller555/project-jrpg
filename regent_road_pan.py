@@ -7,11 +7,10 @@ the next source. This helper loads no panorama, owns no clock and calls no
 scene, actor, display or audio code. Sampling allocates no image buffers.
 """
 from __future__ import annotations
-from rendering import draw as render_draw, WorldCanvas, layer as render_layer
 
 from bisect import bisect_right
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 import math
 from numbers import Real
 
@@ -233,7 +232,7 @@ class RoadWhipPan:
                              sum(_streak_alpha(strength, i) > 0 for i in range(MAX_STREAKS)), True)
 
     @staticmethod
-    def _blur_pixels(source: pygame.Surface, target: pygame.Surface, state: RoadPanSample) -> None:
+    def _blur(source: pygame.Surface, target: pygame.Surface, state: RoadPanSample) -> None:
         alpha = round(144 * state.strength)
         if not alpha:
             return
@@ -241,14 +240,13 @@ class RoadWhipPan:
         output = pygame.surfarray.pixels3d(target)
         try:
             total = np.zeros(rgb.shape, dtype=np.uint16)
-            width,height=source.get_size()
-            x, y = np.arange(width), np.arange(height)
+            x, y = np.arange(SIZE[0]), np.arange(SIZE[1])
             for i, weight in enumerate(_WEIGHTS):
                 offset = state.blur_px * (i / (BLUR_TAPS - 1) - .5)
                 dx, dy = (round(offset * component) for component in state.screen_motion_direction)
                 # Sample the nearest source edge, including corners. No empty
                 # shifted rectangles, panorama copies, wrapping or black fringe.
-                xs, ys = np.clip(x - dx, 0, width - 1), np.clip(y - dy, 0, height - 1)
+                xs, ys = np.clip(x - dx, 0, SIZE[0] - 1), np.clip(y - dy, 0, SIZE[1] - 1)
                 total += np.multiply(rgb[xs[:, None], ys[None, :]], weight, dtype=np.uint16)
             total += 32
             total //= 64
@@ -259,13 +257,6 @@ class RoadWhipPan:
             output[:] = total
         finally:
             del output, rgb  # Release pygame locks before any blit/UI handoff.
-
-    @staticmethod
-    def _blur(source, target, state):
-        RoadWhipPan._blur_pixels(source,target,state)
-        if isinstance(source,WorldCanvas):
-            RoadWhipPan._blur_pixels(source.native,target.native,
-                                    replace(state,blur_px=state.blur_px*2))
 
     @staticmethod
     def _streaks(layer: pygame.Surface, state: RoadPanSample) -> None:
@@ -284,7 +275,7 @@ class RoadWhipPan:
             dx, dy = sign * length / 2, slope * length / 2
             tail, tip = (round(x - dx), round(y - dy)), (round(x + dx), round(y + dy))
             shoulder = (round(tip[0] - sign * 8), round(tip[1] - slope * 8))
-            render_draw.polygon(layer, (232, 241, 220, alpha),
+            pygame.draw.polygon(layer, (232, 241, 220, alpha),
                                 (tail, (shoulder[0], shoulder[1] - 1), tip,
                                  (shoulder[0], shoulder[1] + 1)))
 
@@ -303,14 +294,19 @@ class RoadWhipPan:
             raise ValueError('reduced_motion must be a bool')
         state = (sample_or_seconds if isinstance(sample_or_seconds, RoadPanSample)
                  else self.sample(sample_or_seconds, duration, reduced_motion))
-        result=canvas.copy()
+        # Pygame copies Surface subclasses without calling their initializer.
+        # A road-pan snapshot is ordinary pixel data, not a live WorldCanvas.
+        if hasattr(canvas,'patches'):
+            result=pygame.Surface(canvas.get_size(),0,canvas)
+            result.blit(canvas,(0,0))
+            result.set_clip(canvas.get_clip())
+        else:result=canvas.copy()
         if reduced_motion or not state.active or state.strength == 0:
             return result
         result.set_clip(None)
         self._blur(canvas, result, state)
         if state.streak_count:
-            layer = (render_layer(SIZE) if isinstance(canvas,WorldCanvas) else
-                     pygame.Surface(SIZE,pygame.SRCALPHA,32))
+            layer = pygame.Surface(SIZE, pygame.SRCALPHA, 32)
             self._streaks(layer, state)
             result.blit(layer, (0, 0))
         result.set_clip(canvas.get_clip())

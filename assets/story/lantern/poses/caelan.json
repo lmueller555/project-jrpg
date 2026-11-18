@@ -15,6 +15,9 @@
     24,
     36
   ],
+  "source": "assets/story/lantern/poses/caelan_source.png",
+  "source_idle": "assets/characters/caelan/idle_right.png",
+  "source_sha256": "46915d9e3d56231cbc89550f7dbbd3d224b88748a97ea56db5362f909fb29207",
   "sheet": "assets/story/lantern/poses/caelan.png",
   "actions": {
     "work": [
@@ -22,10 +25,24 @@
         "rect": [
           0,
           0,
-          80,
-          96
+          40,
+          48
         ],
         "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            11.962731490302513,
+            21.01242283656583
+          ],
+          [
+            16.0,
+            23.0
+          ]
+        ],
         "hand": [
           24,
           31
@@ -38,12 +55,26 @@
       },
       {
         "rect": [
-          80,
+          40,
           0,
-          80,
-          96
+          40,
+          48
         ],
         "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            14.736397403708233,
+            21.439337660486277
+          ],
+          [
+            19.0,
+            20.0
+          ]
+        ],
         "hand": [
           27,
           28
@@ -56,48 +87,90 @@
       },
       {
         "rect": [
+          80,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            17.751930530821582,
+            19.484555753427337
+          ],
+          [
+            22.0,
+            18.0
+          ]
+        ],
+        "hand": [
+          30,
+          26
+        ],
+        "native_wrist": [
+          22.0,
+          18.0
+        ],
+        "appearance_source_cell": 26
+      },
+      {
+        "rect": [
+          120,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            17.751930530821582,
+            19.484555753427337
+          ],
+          [
+            22.0,
+            18.0
+          ]
+        ],
+        "hand": [
+          30,
+          26
+        ],
+        "native_wrist": [
+          22.0,
+          18.0
+        ],
+        "appearance_source_cell": 26
+      },
+      {
+        "rect": [
           160,
           0,
-          80,
-          96
+          40,
+          48
         ],
         "duration_ms": 160,
-        "hand": [
-          30,
-          26
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            14.736397403708233,
+            21.439337660486277
+          ],
+          [
+            19.0,
+            20.0
+          ]
         ],
-        "native_wrist": [
-          22.0,
-          18.0
-        ],
-        "appearance_source_cell": 26
-      },
-      {
-        "rect": [
-          240,
-          0,
-          80,
-          96
-        ],
-        "duration_ms": 160,
-        "hand": [
-          30,
-          26
-        ],
-        "native_wrist": [
-          22.0,
-          18.0
-        ],
-        "appearance_source_cell": 26
-      },
-      {
-        "rect": [
-          320,
-          0,
-          80,
-          96
-        ],
-        "duration_ms": 160,
         "hand": [
           27,
           28
@@ -113,11 +186,25 @@
       {
         "rect": [
           0,
-          96,
-          80,
-          96
+          48,
+          40,
+          48
         ],
         "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            11.962731490302513,
+            21.01242283656583
+          ],
+          [
+            16.0,
+            23.0
+          ]
+        ],
         "hand": [
           24,
           31
@@ -130,12 +217,26 @@
       },
       {
         "rect": [
-          80,
-          96,
-          80,
-          96
+          40,
+          48,
+          40,
+          48
         ],
         "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            14.531498031497048,
+            21.468501968502952
+          ],
+          [
+            19.0,
+            22.0
+          ]
+        ],
         "hand": [
           27,
           30
@@ -148,12 +249,26 @@
       },
       {
         "rect": [
-          160,
-          96,
           80,
-          96
+          48,
+          40,
+          48
         ],
         "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            16.50772212328633,
+            20.73648628424892
+          ],
+          [
+            21.0,
+            21.0
+          ]
+        ],
         "hand": [
           29,
           29
@@ -166,12 +281,26 @@
       },
       {
         "rect": [
-          240,
-          96,
-          80,
-          96
+          120,
+          48,
+          40,
+          48
         ],
         "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            16.50772212328633,
+            20.73648628424892
+          ],
+          [
+            21.0,
+            21.0
+          ]
+        ],
         "hand": [
           29,
           29
@@ -186,8 +315,15 @@
   },
   "layers": {
     "body": "assets/story/lantern/poses/caelan_body.png",
+    "working_arm": "assets/story/lantern/poses/caelan_working_arm.png",
     "frame": "assets/story/lantern/poses/caelan_frame.png"
   },
+  "arm_lengths": [
+    4.5,
+    4.5
+  ],
+  "head_pixels_preserved_above_y": 14,
+  "lower_body_preserved_from_y": 25,
   "facing": "right",
   "world_work_hand": [
     636,
@@ -211,11 +347,19 @@
     1
   ],
   "lift_height_pixels": 0,
-  "artwork_pixels_per_world_pixel": 2,
-  "anchor_space": "logical",
-  "contact_space": "logical",
-  "appearance_source": "assets/source/characters/caelan/scene_actions_hd",
-  "canvas_space": "logical",
-  "rect_space": "artwork",
-  "frame_size_space": "logical"
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "appearance_registration": "Authored natural poses with native contour; existing canvas, ground anchor and event timing retained.",
+  "outline": {
+    "version": 1,
+    "ink_rgba": [
+      18,
+      12,
+      14,
+      255
+    ],
+    "width_native_pixels": 1,
+    "placement": "inside existing cardinal silhouette",
+    "skin_highlights": "retain bright supported skin-edge pixels"
+  }
 }

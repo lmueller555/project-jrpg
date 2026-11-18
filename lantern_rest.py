@@ -1,5 +1,4 @@
 """Liam's home break and sanctuary questions, inside the same lantern quest."""
-import liam_native_art
 import json
 from pathlib import Path
 
@@ -39,22 +38,23 @@ class LanternRest:
             self.points.setdefault('invitation'+suffix, controller.village_points['reflection'+suffix])
         self.lines = json.loads((ART/'rest_scene.json').read_text())
         self.art = json.loads((ART/'rest_art.json').read_text())
-        self.workshop_empty = self.town.room_art_image(self.art['workshop_collected'])
         self.home = self.game._scene_by_id('liam_house')
         self.sanctuary = self.game._scene_by_id('sanctuary_hall')
         self.father = next(a for a in self.home.npcs if a.data['id'] == 'liam_father')
         self.serene = controller.serene
         self.father_pose = None;self.serene_owned = False
         self.zone = None;self.work_time = 0.;self.pose_owned = False
-        self.pose_meta,self.sheet=liam_native_art.story_sheet(self.town,'rest',self.art['poses']['liam'])
+        self.pose_meta = json.loads((ROOT/self.art['poses']['liam']).read_text())
+        self.sheet = self.town.image(self.pose_meta['sheet'])
         self.actions = {kind: [(self.sheet.subsurface(f['rect']).copy(), f['duration_ms']) for f in frames]
                         for kind, frames in self.pose_meta['actions'].items()}
         self.carry = {d: {'idle': self.sheet.subsurface(spec['idle']['rect']).copy(),
                           'walk': [(self.sheet.subsurface(f['rect']).copy(), f['duration_ms']) for f in spec['walk']]}
                       for d, spec in self.pose_meta['carry'].items()}
+        self.workshop_empty = self.town.image(self.art['workshop_collected'])
         self.surface_props = []
         for spec in self.art['props']:
-            states = {k: self.town.room_art_image(p) for k, p in spec['states'].items()}
+            states = {k: self.town.image(p) for k, p in spec['states'].items()}
             self.surface_props.append({**spec, 'states': states, 'surface': next(iter(states.values()))})
             self.game._scene_by_id(spec['scene']).attach_routine_props(self)
 

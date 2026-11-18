@@ -13,8 +13,6 @@ import math
 from pathlib import Path
 
 import pygame
-from rendering import record_art
-from checkpoint_hd_bindings import ACTORS as HD_ACTIVITY_ACTORS
 
 
 ROOT = Path(__file__).resolve().parent
@@ -153,20 +151,11 @@ class CheckpointCharm:
         self.enabled = len(self.actors) == 2
         if not self.enabled:self.actors = {}
         self.clips = {}
-        self.hd_clips = {}
         if self.enabled:
             metadata = json.loads((ART/'animation.json').read_text())
             for key, clip in metadata['clips'].items():
                 self.clips[key] = {**clip, 'frames': [{**frame, 'image': pygame.image.load(
                     str(ART/frame['file'])).convert_alpha()} for frame in clip['frames']]}
-            if any(getattr(actor, 'hd_art', False) and actor.data['id'] in HD_ACTIVITY_ACTORS
-                   for actor in self.actors.values()):
-                folder = ROOT/'assets/characters/checkpoint_charm_hd'
-                native = json.loads((folder/'animation.json').read_text())
-                for key, clip in native['clips'].items():
-                    self.hd_clips[key] = {**clip, 'frames': [{**frame, 'image': record_art(
-                        pygame.image.load(str(folder/frame['file'])).convert_alpha(), native)}
-                        for frame in clip['frames']]}
         self.restore()
 
     @property
@@ -195,9 +184,8 @@ class CheckpointCharm:
 
     def progress_dict(self):return progress_state(self.to_dict())
 
-    def _image(self, key, time, duration=None, actor=None):
-        native = actor is not None and getattr(actor, 'hd_art', False) and actor.data['id'] in HD_ACTIVITY_ACTORS
-        clip = (self.hd_clips if native else self.clips)[key];frames = clip['frames']
+    def _image(self, key, time, duration=None):
+        clip = self.clips[key];frames = clip['frames']
         total = sum(frame['duration_ms'] for frame in frames)
         clock = time*1000 if duration is None else time/duration*total
         clock = clock % total if clip.get('loop', False) else min(clock, total-.001)
@@ -227,13 +215,13 @@ class CheckpointCharm:
         if stage in ROUTES:
             actor = self.actors[ROUTES[stage][0]]
             actor.moving = self.state['moving'];actor.facing = self.state['facing']
-            if actor.moving:actor.story_sprite = self._image('walk_'+actor.facing, self.state['clock'], actor=actor)
+            if actor.moving:actor.story_sprite = self._image('walk_'+actor.facing, self.state['clock'])
             else:actor.story_sprite = actor._frames['idle_'+actor.facing+'_0.png']
         if stage in ACTIONS:
             role, key, duration, _, _ = ACTIONS[stage]
-            self.actors[role].story_sprite = self._image(key, self.state['elapsed'], duration, actor=self.actors[role])
-        if stage == 'opening':owner.story_sprite = self._image('sit_front', self.state['clock'], actor=owner)
-        if stage == 'banter':borrower.story_sprite = self._image('sit_front', self.state['clock'], actor=borrower)
+            self.actors[role].story_sprite = self._image(key, self.state['elapsed'], duration)
+        if stage == 'opening':owner.story_sprite = self._image('sit_front', self.state['clock'])
+        if stage == 'banter':borrower.story_sprite = self._image('sit_front', self.state['clock'])
 
     def _commit(self, game):
         self.state['positions'] = {role: list(actor.position) for role, actor in self.actors.items()}

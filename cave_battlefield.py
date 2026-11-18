@@ -5,7 +5,6 @@ import json
 from pathlib import Path
 
 import pygame
-from rendering import record_art, immutable
 
 
 ROOT = Path(__file__).resolve().parent
@@ -31,7 +30,6 @@ class CaveBattlefield:
             if not isinstance(filename, str) or Path(filename).is_absolute() or '..' in Path(filename).parts:
                 raise ValueError('Invalid cave battlefield frame')
             frame = pygame.image.load(str(root/filename)).convert()
-            frame=record_art(immutable(frame),data)
             if frame.get_size() != (480, 320):raise ValueError('Invalid cave battlefield size')
             self.frames.append(frame)
         static = data.get('reduced_motion_frame', 0)

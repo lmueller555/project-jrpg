@@ -21,12 +21,6 @@ world's aether, ancient history and hidden cosmology. The
 and players may learn. The atlas is a writer's reference; a character's own
 map or understanding can be narrower.
 
-Use the [World and Environment Design Standard](../WORLD_DESIGN_STANDARD.md)
-for shared principles and briefs when designing new or revised regions and
-zones. The atlas and approved lore retain canonical geography and cultural
-facts; the standard's illustrative concepts do not establish new locations,
-history or supernatural rules.
-
 ## The world's name
 
 **Auratia** is the world's name. Its language of origin, ancient etymology,
@@ -141,9 +135,7 @@ trust, public evidence and relief obligations behind the disagreement;
 neither the site's complete history nor the surges' deeper cause is public
 knowledge.
 
-The single regional creative brief and retained setting foundations are in
-[Elden Vale — Regional Design Guidance](regions/ELDEN_VALE.md). Its approved
-Pale Antlers and Rising Rain redesign awaits implementation.
+The detailed regional setting is in [Elden Vale](regions/ELDEN_VALE.md).
 
 ## Merovar and the first game's neighbourhood
 

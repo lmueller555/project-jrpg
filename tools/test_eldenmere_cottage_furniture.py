@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Verify reusable furniture exports, room access, unchanged art and GIF delivery."""
 import hashlib
 import json
@@ -19,7 +15,7 @@ def load(path): return json.loads(path.read_text())
 
 
 def opened(path):
-    with open_image(path) as image: return image.convert('RGBA')
+    with Image.open(path) as image: return image.convert('RGBA')
 
 
 class CottageFurnitureTests(unittest.TestCase):
@@ -108,7 +104,7 @@ class CottageFurnitureTests(unittest.TestCase):
         self.assertEqual(self.room['hero_position'],self.base['hero_position'])
         self.assertEqual(len(self.room['frames']),9)
         layer = opened(PACK/self.room['furniture_layer'])
-        light_mask = open_image(INTERIOR/'room/daylight_mask.png').convert('L')
+        light_mask = Image.open(INTERIOR/'room/daylight_mask.png').convert('L')
         self.assertIsNone(ImageChops.multiply(light_mask,layer.getchannel('A')).getbbox())
         hero = opened(ROOT/'assets/characters/caelan/idle_front.png')
         self.assertEqual(hero.size,(24,36))
@@ -127,7 +123,7 @@ class CottageFurnitureTests(unittest.TestCase):
 
     def test_loop_complete_timing_lossless_enlargement_and_static_preview(self):
         tick = 0
-        with open_image(PACK/'room_review.gif') as gif:
+        with Image.open(PACK/'room_review.gif') as gif:
             self.assertEqual(gif.info['loop'],0)
             self.assertEqual(gif.size,(1152,1152))
             for encoded in range(gif.n_frames):

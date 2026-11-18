@@ -5,8 +5,6 @@ onto an actual output surface and rasterizes its fonts there with antialiasing;
 text never travels through the low-resolution world image.
 """
 from __future__ import annotations
-from rendering import WorldCanvas, display_image, scale as render_scale
-from rendering import draw as render_draw
 
 from array import array
 import math
@@ -271,16 +269,14 @@ class Painter:
         return lines or ['']
 
     def rect(self, color, rect, width=0):
-        render_draw.rect(self.canvas, color, self.area(rect), 0 if not width else max(1, round(width*self.scale)))
+        pygame.draw.rect(self.canvas, color, self.area(rect), 0 if not width else max(1, round(width*self.scale)))
 
     def line(self, color, a, b, width=1):
-        render_draw.line(self.canvas, color, self.point(a), self.point(b), max(1, round(width*self.scale)))
+        pygame.draw.line(self.canvas, color, self.point(a), self.point(b), max(1, round(width*self.scale)))
 
     def image(self, surface, rect):
         target = self.area(rect)
-        image=(render_scale(surface,target.size) if isinstance(self.canvas,WorldCanvas)
-               else display_image(surface,target.size))
-        self.canvas.blit(image,target)
+        self.canvas.blit(pygame.transform.scale(surface, target.size), target)
 
     def veil(self, alpha=180):
         layer = pygame.Surface(self.canvas.get_size(), pygame.SRCALPHA)

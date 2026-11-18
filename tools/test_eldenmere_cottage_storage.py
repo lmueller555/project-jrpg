@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Verify storage materials, wall mounting, room access and exact preview delivery."""
 import json
 from pathlib import Path
@@ -19,7 +15,7 @@ def load(path): return json.loads(path.read_text())
 
 
 def opened(path):
-    with open_image(path) as image: return image.convert('RGBA')
+    with Image.open(path) as image: return image.convert('RGBA')
 
 
 class CottageStorageTests(unittest.TestCase):
@@ -87,7 +83,7 @@ class CottageStorageTests(unittest.TestCase):
         self.assertEqual(len(self.room['frames']),9)
         layer = opened(PACK/'storage_layer.png')
         mask = layer.getchannel('A')
-        light = open_image(INTERIOR/'room/daylight_mask.png').convert('L')
+        light = Image.open(INTERIOR/'room/daylight_mask.png').convert('L')
         first = opened(PACK/self.room['frames'][0]['image']).convert('RGB')
         hero = opened(ROOT/'assets/characters/caelan/idle_front.png')
         px,py = self.room['hero_position']
@@ -110,7 +106,7 @@ class CottageStorageTests(unittest.TestCase):
 
     def test_loop_lossless_enlargement_complete_timing_and_still(self):
         tick = 0
-        with open_image(PACK/'room_review.gif') as gif:
+        with Image.open(PACK/'room_review.gif') as gif:
             self.assertEqual(gif.info['loop'],0)
             self.assertEqual(gif.size,(1152,1152))
             for index in range(gif.n_frames):

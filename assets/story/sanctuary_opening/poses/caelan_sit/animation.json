@@ -66,15 +66,19 @@
     }
   ],
   "registration": "Interpolate display positions continuously; logical standing feet stay on clear floor.",
-  "artwork_pixels_per_world_pixel": 2,
-  "anchor_space": "logical",
-  "contact_space": "logical",
-  "appearance_source": "assets/source/characters/caelan/scene_actions_hd",
-  "canvas_space": "logical",
-  "rect_space": "artwork",
-  "frame_size_space": "logical",
-  "artwork_frame_size": [
-    48,
-    72
-  ]
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_source_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "appearance_registration": "Authored natural poses with native contour; existing canvas, ground anchor and event timing retained.",
+  "outline": {
+    "version": 1,
+    "ink_rgba": [
+      18,
+      12,
+      14,
+      255
+    ],
+    "width_native_pixels": 1,
+    "placement": "inside existing cardinal silhouette",
+    "skin_highlights": "retain bright supported skin-edge pixels"
+  }
 }

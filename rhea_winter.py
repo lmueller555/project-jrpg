@@ -4,8 +4,6 @@ Selection is a pure function of view and the cinematic clock. All body poses
 and cloth shapes come from drawings; the renderer never stretches her anatomy.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 import json
 import math
@@ -127,7 +125,7 @@ class RheaWinterSprites:
         if elapsed < self.BREAKOUT or reduced:
             return
         strength = min(1., (elapsed-self.BREAKOUT)/.25)
-        layer = render_layer(canvas.get_size(), pygame.SRCALPHA)
+        layer = pygame.Surface(canvas.get_size(), pygame.SRCALPHA)
         clock = elapsed-self.BREAKOUT
         for index in range(7):
             height = ((clock*.38+index*.237) % 1.)*2.15
@@ -141,6 +139,6 @@ class RheaWinterSprites:
             x, y, depth = projected
             fade = math.sin(height/2.15*math.pi)*strength
             size = max(1, min(2, round(camera.focal/depth*.012)))
-            render_draw.circle(layer, (60, 255, 119, round(105*fade)),
+            pygame.draw.circle(layer, (60, 255, 119, round(105*fade)),
                                (round(x),round(y)), size)
         canvas.blit(layer, (0, 0))

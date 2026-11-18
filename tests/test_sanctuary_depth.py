@@ -51,18 +51,24 @@ class SanctuaryDepthTests(unittest.TestCase):
                          ('Wrong scenery overlap', feet, point, 'hidden' if hidden else 'visible'))
 
     def test_ground_and_scenery_are_assembled_from_hash_verified_pixel_packs(self):
-        manifest = json.loads((ROOT/self.world.data['art_bank']).read_text())
-        sources = self.world.data['source_assets']+manifest['dependencies']
+        manifest = json.loads((ROOT/'assets/terrain/elden_vale_sanctuary/art.json').read_text())
+        sources = manifest['source_assets']
         paths = [record['path'] for record in sources]
-        self.assertGreaterEqual(len(sources),8)
-        self.assertEqual(len(paths),len(set(paths)))
+        self.assertGreaterEqual(len(sources), 8)
+        self.assertEqual(len(paths), len(set(paths)))
         for record in sources:
-            self.assertEqual(hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest(),record['sha256'])
-        self.assertTrue(any('/grass_dirt_hd/' in path for path in paths))
-        self.assertTrue(any('/vegetation_hd/' in path for path in paths))
-        self.assertFalse(any('overworld_refresh/legacy' in path for path in paths))
-        self.assertEqual(self.world.data['build']['implementation'],'native_2x_packs')
-        self.assertEqual(self.world.data['build']['source_assets'],self.world.data['source_assets'])
+            with self.subTest(source=record['path']):
+                self.assertEqual(hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest(),
+                                 record['sha256'])
+        self.assertIn('assets/terrain/grass/assets.json',paths)
+        self.assertTrue(any('/grass/dirt/' in path for path in paths))
+        self.assertTrue(any('/eldenmere/foliage/' in path for path in paths))
+        for obsolete in ('clean_plate_generated.png','approved_preview.png',
+                         'elden_vale_cloister_openings','elden_vale_cave_barrier'):
+            self.assertFalse(any(obsolete in path for path in paths),obsolete)
+        self.assertEqual(self.world.data['build']['implementation'], 'native_pixel_asset_packs')
+        self.assertEqual(self.world.data['build']['source_assets'], sources)
+        self.assertNotIn('clean_plate_sha256', manifest)
 
     def test_western_tree_crown_covers_rear_poses_and_leaves_front_poses_visible(self):
         self.assert_pixel_depth((144,238),(144,218),hidden=True)
@@ -75,7 +81,7 @@ class SanctuaryDepthTests(unittest.TestCase):
 
     def test_basin_and_bench_cover_rear_feet_and_leave_front_poses_visible(self):
         cases = (
-            ('basin_back',(768,370),(764,366),True),
+            ('basin_back',(768,370),(764,364),True),
             ('basin_front',(768,412),(768,392),False),
             ('bench_back',(264,260),(262,256),True),
             ('bench_front',(264,300),(264,280),False),

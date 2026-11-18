@@ -1,4 +1,0 @@
-# Liam: native HD identity and live activation
-Cocoa forelock, teal collar, ochre tunic and original eight-year-old proportions. The 72×72 approved portrait stays byte-identical. Four walks retain the original 560ms loop; separate running poses retain the 400ms chase cadence. Walks document their accepted compatible body contour guide and independently authored costume/head details. Running has its own lower body and flight outlines.
-[Live capture](liam-live.png) uses the actual five-block cycle, invitation, chase and return to bed. The original native box lip remains fixed and the existing room quilt layers over the new actor-only sleeping pose. Liam uses the same identity in all three festival lantern sections.
-The separate activity PR supplies the complete source and art banks. Do not activate until both packages exist in the target tree. Daisy, block ownership, task clocks, props, quest/save and collision are unchanged.

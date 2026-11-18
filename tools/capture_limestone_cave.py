@@ -4,10 +4,6 @@ The review never constructs Game or accesses journey/settings files. Retained
 images use the same World, Player and crystal-lighting renderer as gameplay.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 
 import argparse
 import hashlib
@@ -302,7 +298,7 @@ def capture(output, movie_enabled=True):
             # Caelan shares the exact enlargement of the wall crops. The
             # picture therefore makes the grain size judgeable without
             # inflating the tiny crystal facets into decorative gem icons.
-            with open_image(ROOT/'assets/characters/caelan/idle_front.png') as source:
+            with Image.open(ROOT/'assets/characters/caelan/idle_front.png') as source:
                 character = source.convert('RGBA')
             character = character.resize((character.width*3, character.height*3),
                                          Image.Resampling.NEAREST)

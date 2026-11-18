@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Build Venn family appearances and the gate's accessible-bank repair poses."""
 from copy import deepcopy
 import hashlib
@@ -9,6 +5,7 @@ import json
 from pathlib import Path
 
 from PIL import Image, ImageDraw
+from build_elira_visit import elbow
 from build_eldenmere_gate import channel_assets, gate_frame, poses
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,7 +15,7 @@ OFFSET = (8, 8)
 ANCHOR = (20, 38)
 
 
-def load(path):return open_image(ROOT/path).convert('RGBA')
+def load(path):return Image.open(ROOT/path).convert('RGBA')
 
 
 def read(path):return json.loads((ROOT/path).read_text())
@@ -81,6 +78,45 @@ def family():
     return hashes
 
 
+def body_pose(index, mode):
+    """Standing repair: fixed body, short bent arm and a tool for reach."""
+    import math
+    body = load('assets/characters/caelan/idle_right.png')
+    image = Image.new('RGBA', SIZE)
+    image.alpha_composite(body, OFFSET)
+    d = ImageDraw.Draw(image)
+    # The front/far shoulder is already on the mechanism side of the chest.
+    # Rotate an anatomically short arm; the shaft, never the limb, spans the gap.
+    shoulder = (22., 25.)
+    wrists = [(27., 27.), (27., 25.), (28., 26.), (28., 27.)] if mode == 'tools' else [(28., 28.), (28., 27.), (28., 26.), (28., 25.)]
+    wrist = wrists[index]
+    dx, dy = wrist[0]-shoulder[0], wrist[1]-shoulder[1]
+    distance = math.hypot(dx, dy);upper = 4.;forearm = 4.5
+    along = (upper**2-forearm**2+distance**2)/(2*distance)
+    height = math.sqrt(max(0., upper**2-along**2))
+    joint = (shoulder[0]+dx*along/distance-dy*height/distance,
+             shoulder[1]+dy*along/distance+dx*height/distance)
+    points = [tuple(round(v) for v in p) for p in (shoulder, joint, wrist)]
+    # Tools are behind the grip, but in front of the gate when the actor draws.
+    if mode == 'tools':
+        head = [(34, 26), (33, 23), (34, 26), (34, 27)][index]
+        d.line((round(wrist[0])-2, round(wrist[1])+1, *head), fill='#836347', width=2)
+        d.rectangle((head[0]-1, head[1]-1, head[0]+1, head[1]+1), fill='#737e7a')
+        d.line((head[0]-1, head[1]-1, head[0]+1, head[1]-1), fill='#a4aaa0')
+    else:
+        # A modest borrowed hook clears debris and lifts the board. Its long
+        # handle makes contact possible while both feet remain on the dry bank.
+        tip = [(37, 26), (37, 25), (37, 24), (37, 23)][index]
+        d.line((round(wrist[0])-2, round(wrist[1])+1, *tip), fill='#836347', width=1)
+        d.line((tip[0]-2, tip[1], tip[0], tip[1], tip[0], tip[1]+2), fill='#737e7a', width=1)
+        d.point((tip[0]-1, tip[1]), fill='#a4aaa0')
+    d.line(points, fill='#1a0e16', width=3)
+    d.line(points, fill='#fbeed0', width=1)
+    x, y = points[-1]
+    d.line((x, y, x+1, y), fill='#e8c49d')
+    return image
+
+
 def gate_assets():
     recipe = read('assets/source/terrain/eldenmere/gate/recipe.json')
     palette = read('assets/terrain/eldenmere/gate/palette.json')['materials']
@@ -113,6 +149,13 @@ def gate_assets():
 
 def build():
     hashes = family()
+    # Superseded generic casting frames are replaced by the held-water atlas.
+    for i in range(4):(OUT/f'caelan/magicks_{i}.png').unlink(missing_ok=True)
+    for mode in ('tools', 'hands'):
+        for i in range(4):save(Path(f'caelan/{mode}_{i}.png'), body_pose(i, mode))
+    for direction in ('front', 'back', 'left', 'right'):
+        im = Image.new('RGBA', SIZE);im.alpha_composite(load(f'assets/characters/caelan/idle_{direction}.png'), OFFSET)
+        save(Path(f'caelan/give_{direction}.png'), im)
     head = load((OUT/'child/rest_head.png').relative_to(ROOT))
     provisions = Image.new('RGBA', (18, 14));d = ImageDraw.Draw(provisions)
     d.rectangle((1, 6, 16, 13), fill='#836347');d.line((2, 6, 15, 6), fill='#b79a6c')
@@ -136,5 +179,5 @@ def build():
 
 if __name__ == '__main__':
     build()
-    from export_caelan_scene_actions_hd import build as build_magicks
+    from build_venn_magicks import build as build_magicks
     build_magicks()

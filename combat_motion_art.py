@@ -6,8 +6,6 @@ and places each complete drawing on the existing 64-pixel combat canvas.
 The action timeline owns travel and jump height; this bank owns body poses.
 """
 from __future__ import annotations
-from rendering import layer as render_layer, project_art
-from rendering import scale as render_scale
 
 import json
 import math
@@ -49,9 +47,9 @@ class CombatMotionArt:
                 opaque = mask.to_surface(setcolor=(255, 255, 255, 255),
                                          unsetcolor=(0, 0, 0, 0))
                 source.blit(opaque, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
-                drawing = project_art(source, tuple(
+                drawing = pygame.transform.scale(source, tuple(
                     max(1, round(value * scale)) for value in source.get_size()))
-                image = render_layer(self.manifest['canvas'], pygame.SRCALPHA)
+                image = pygame.Surface(self.manifest['canvas'], pygame.SRCALPHA)
                 foot = record['source_foot']
                 image.blit(drawing, (round(self.anchor[0] - foot[0] * scale),
                                      round(self.anchor[1] - foot[1] * scale)))

@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Compose the approved village plan from native approved environment assets."""
 from array import array
 from collections import deque
@@ -29,7 +25,7 @@ FONT_DIR=Path('/usr/share/fonts/truetype/dejavu')
 
 @lru_cache(None)
 def opened(path):
-    with open_image(path) as im:
+    with Image.open(path) as im:
         return im.convert('RGBA')
 
 

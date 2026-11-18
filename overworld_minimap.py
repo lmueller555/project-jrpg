@@ -5,7 +5,6 @@ the actual display resolution. It never asks the gameplay world to render an
 overview and keeps no second terrain cache.
 """
 from __future__ import annotations
-from rendering import draw as render_draw
 
 import pygame
 
@@ -114,8 +113,8 @@ class OverworldMinimap:
             # Small compatible fixtures and an unavailable art pack still have
             # a readable landmark, without any world-sized fallback image.
             radius = max(2, round(2*painter.scale))
-            render_draw.circle(target, '#f3e6bb', point, radius+1)
-            render_draw.circle(target, '#485e49', point, radius)
+            pygame.draw.circle(target, '#f3e6bb', point, radius+1)
+            pygame.draw.circle(target, '#485e49', point, radius)
             rect = pygame.Rect(point[0]-radius, point[1]-radius, radius*2+1, radius*2+1)
         self.marker_rects[record.get('id', self._icon_key(record))] = rect
 
@@ -131,10 +130,10 @@ class OverworldMinimap:
                   center-direction*size*.32,
                   center-direction*size*.8-side*size*.78]
         halo = max(6, round(size*1.45))
-        render_draw.circle(target, '#16382c', center, halo)
-        render_draw.polygon(target, '#fff3ce', points)
-        render_draw.polygon(target, '#513f22', points, max(1, round(painter.scale*.7)))
-        render_draw.circle(target, '#efc66c', center, max(1, round(painter.scale)))
+        pygame.draw.circle(target, '#16382c', center, halo)
+        pygame.draw.polygon(target, '#fff3ce', points)
+        pygame.draw.polygon(target, '#513f22', points, max(1, round(painter.scale*.7)))
+        pygame.draw.circle(target, '#efc66c', center, max(1, round(painter.scale)))
 
     def draw(self, target):
         self.marker_rects.clear()

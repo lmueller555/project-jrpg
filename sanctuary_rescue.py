@@ -5,8 +5,6 @@ work replay from that milestone's coherent starting arrangement, never from an
 uncommitted tool/rock transfer. Combat rewards remain owned by SanctuaryBoss.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import scale as render_scale
 
 import json
 import math
@@ -132,12 +130,7 @@ class SanctuaryRescue(MillGift):
         return False
 
     def _load_art(self):
-        if self.art is None:
-            self.art=json.loads((ASSETS/'art.json').read_text())
-            # Keep this distinct rescued man on his native bank even when the
-            # shared scene registry is regenerated. No helper/party replacement.
-            worker=ROOT/'assets/characters/rescue_worker/activity_hd/actor.json'
-            self.art['actors']['worker']=json.loads(worker.read_text())
+        if self.art is None:self.art=json.loads((ASSETS/'art.json').read_text())
 
     def _make_cast(self):
         self._load_art();g=self.game;world=g.world;self._world=world
@@ -157,10 +150,6 @@ class SanctuaryRescue(MillGift):
             profiles[key]={'name':('Injured worker' if key=='rescue_worker' and self._worker_free else name),'portrait':portrait}
             if portrait not in g.social.portraits:
                 g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
-        # Same original portrait pixels, but private to this rescued speaker.
-        profiles['rescue_worker']['portrait']='rescue_worker_hd'
-        g.social.portraits['rescue_worker_hd']=world.image(
-            'assets/characters/rescue_worker/activity_hd/portrait.png')
 
     def _station(self,actor,point):
         if not self._world.can_stand(point,actor.probe_size):
@@ -546,9 +535,9 @@ class SanctuaryRescue(MillGift):
         world.entities.extend(records)
         try:
             world.reduced_motion=self.reduced_motion
-            frame=render_layer(size)
+            frame=pygame.Surface(size)
             world.draw(frame,origin,g.player,self.elapsed*1000,include_ui=False,party_actors=tuple(self.actors.values()))
-            render_scale(frame.subsurface((0,0,width,height)),size,canvas)
+            pygame.transform.scale(frame.subsurface((0,0,width,height)),size,canvas)
         finally:
             g.player.story_visible=old
             for actor,visible in hidden:actor.story_visible=visible
@@ -562,8 +551,8 @@ class SanctuaryRescue(MillGift):
         if self.phase_index==19 and not self._escort_route:
             fade=max(fade,smooth(self._action_elapsed/self.phase['min_seconds']))
         if fade:
-            veil=render_layer(size,pygame.SRCALPHA);veil.fill((0,0,0,round(255*fade)));canvas.blit(veil,(0,0))
-        render_scale(canvas,ui_surface.get_size(),ui_surface)
+            veil=pygame.Surface(size,pygame.SRCALPHA);veil.fill((0,0,0,round(255*fade)));canvas.blit(veil,(0,0))
+        pygame.transform.scale(canvas,ui_surface.get_size(),ui_surface)
         painter=g.ui.painter(ui_surface);self._layout(painter)
         if self.caption_layout is not None:
             speech_bubble.draw_dialogue_frame(painter,self.caption_layout,g.social.portraits[self.caption_layout.portrait_key])

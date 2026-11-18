@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import open_image
-except ModuleNotFoundError:
-    from caelan_reference import open_image
 """Export Tomas's retained appearance at 32 visible pixels within a 24×36 frame."""
 import json
 from pathlib import Path
@@ -48,7 +44,7 @@ def sample_source(source,recipe,palette):
 def build():
     recipe=json.loads((SOURCE/'export.json').read_text())
     palette=json.loads((OUT/'palette.json').read_text())
-    source=open_image(SOURCE/recipe['source']).convert('RGBA')
+    source=Image.open(SOURCE/recipe['source']).convert('RGBA')
     native=sample_source(source,recipe,palette)
     assert native.size==(24,36)
     assert native.getbbox()==(6,3,18,35), 'Expected 12×32 visible bounds, baseline 34'
@@ -63,7 +59,7 @@ def build():
     patch=(*rgb(palette['materials']['patch'][0]),255)
     patch_pixels=[(x,y) for y in range(36) for x in range(24) if native.getpixel((x,y))==patch]
     assert patch_pixels and all(x>=12 and 26<=y<31 for x,y in patch_pixels)
-    reference=open_image(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    reference=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
     bounds,reference_bounds=native.getbbox(),reference.getbbox()
     assert bounds[3]==reference_bounds[3]==35
     assert (reference_bounds[3]-reference_bounds[1])-(bounds[3]-bounds[1])==2
@@ -92,7 +88,7 @@ def build():
     draw.text((32,16),'Sanctuary family — shared scale and foot baseline',font=font(27),fill='#26343e')
     draw.text((32,56),'24×36 frames at 16× · Tomas is two native pixels shorter',font=font(21),fill='#52616c')
     for i,(label,character) in enumerate([('Caelan · 34 px','caelan'),('Tomas · 32 px · review','tomas'),('Serene · 34 px','serene')]):
-        sprite=open_image(ROOT/f'assets/characters/{character}/idle_front.png').convert('RGBA')
+        sprite=Image.open(ROOT/f'assets/characters/{character}/idle_front.png').convert('RGBA')
         enlarged=sprite.resize((384,576),Image.Resampling.NEAREST)
         x=32+i*416
         board.paste(enlarged,(x,112),enlarged)

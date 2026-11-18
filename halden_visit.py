@@ -3,9 +3,6 @@
 Persistent facts are separate from short gestures. An interrupted lift resumes
 at its safe source; stored sacks and the medicine receipt are never replayed.
 """
-from caelan_scene_art import image as scene_image
-from tomas_scene_art import image as tomas_image
-from npc_roster_art import RosterArt
 from collections import deque
 import heapq
 import itertools
@@ -71,9 +68,7 @@ class Halden:
         self.data = {'id': 'halden', 'name': 'Master Halden'}
         self.position = pygame.Vector2(192, 176)
         self.probe_size = (12, 8);self.draw_anchor = (12, 30)
-        self.roster_art = RosterArt(world, 'halden', named=True)
-        self.idles = self.roster_art.idles
-        self.walks = self.roster_art.walks
+        self.idles = {d: world.image(ART+f'idle_{d}.png') for d in ('front', 'back', 'left', 'right')}
         self.moving = False;self.walk_ms = 0.;self.opens_doors = True
         self.facing = 'front';self.conversation_ready = False
         self.conversation_facing = 'front'
@@ -82,8 +77,9 @@ class Halden:
     def blocker(self):return pygame.Rect(round(self.position.x)-6, round(self.position.y)-4, 12, 8)
 
     def sprite(self, elapsed_ms):
-        facing = self.conversation_facing if self.conversation_ready else self.facing
-        return self.roster_art.sprite(facing, self.moving and not self.conversation_ready, self.walk_ms)
+        if self.moving and not self.conversation_ready and hasattr(self, 'walks'):
+            return self.walks[self.facing][int(self.walk_ms//140)%4]
+        return self.idles[self.conversation_facing if self.conversation_ready else self.facing]
 
     def request_conversation(self, facing):
         self.conversation_ready = True;self.conversation_facing = facing
@@ -107,11 +103,11 @@ class HaldenVisit:
         self.surface_props = []
         for i in range(3):
             self.surface_props.append({'id': f'sack_{i}', 'scene': 'halden',
-                'surface': tomas_image(self.home,self.tomas,ART+'sack.png',self.home.room_art_image), 'position': [0, 0], 'sort_y': 0})
+                'surface': self.home.image(ART+'sack.png'), 'position': [0, 0], 'sort_y': 0})
         self.surface_props.append({'id': 'grain_pallet', 'scene': 'halden',
-            'surface': self.home.room_art_image(ART+'pallet.png'), 'position': [98, 94], 'sort_y': 96})
+            'surface': self.home.image(ART+'pallet.png'), 'position': [98, 94], 'sort_y': 96})
         self.surface_props.append({'id': 'halden_medicine', 'scene': 'halden',
-            'surface': self.home.room_art_image(ART+'medicine.png'), 'position': [278, 145], 'sort_y': 175})
+            'surface': self.home.image(ART+'medicine.png'), 'position': [278, 145], 'sort_y': 175})
         self.home.attach_routine_props(self)
         self.home.task_blockers = self.blockers
         self._sync_props()
@@ -319,8 +315,7 @@ class HaldenVisit:
 
     def _pose(self, actor, character, kind, direction, index=None):
         suffix = '' if index is None else '_'+str(index)
-        actor.story_sprite = tomas_image(self.home,actor,ART+f'{character}/{kind}_{direction}{suffix}.png',
-                                        lambda path:scene_image(self.home,path))
+        actor.story_sprite = self.home.image(ART+f'{character}/{kind}_{direction}{suffix}.png')
         actor.story_draw_anchor = (16, 34)
         if actor is self.game.player:self._player_pose = True
         else:self._tomas_pose = True
@@ -340,22 +335,6 @@ class HaldenVisit:
     def _update_player(self, dt):
         player = self.game.player
         if self.action:
-            if self.action != 'medicine' and not self.contact:
-                kind,i = self.action
-                source = SOURCES[i] if kind == 'lift' else STORAGE[i]
-                goal = pygame.Vector2(source[0],source[1]+(18 if kind=='lift' else 22))
-                delta = goal-player.position
-                if delta.length()>.01:
-                    self._clear_player_pose()
-                    player.update(delta,min(dt,delta.length()/72),self.home,False)
-                    if not player.moving:
-                        # A newly blocked station must not trap the player in
-                        # an unfinishable action; leave ownership untouched.
-                        self.action=None;self.action_time=0.
-                        if self.carried is not None:
-                            self._pose(player,'caelan','hold',player.facing)
-                    return
-                player.facing='back';player.moving=False
             self.action_time += dt
             if self.action == 'medicine':
                 if self.action_time >= .4 and not self.contact:
@@ -372,9 +351,9 @@ class HaldenVisit:
                 if kind == 'lift':self.carried = i
                 else:self.stored.add(i);self.carried = None
                 self._save()
-            # Complete empty-hand crouches precede pickup; held keys precede
-            # placement. Ownership changes once at .36, never before the action.
-            self._pose(player, 'caelan', 'lift', 'back', frame if kind == 'lift' else 3-frame)
+            if kind == 'lift' and self.contact or kind == 'store' and not self.contact:
+                self._pose(player, 'caelan', 'lift', 'back', frame if kind == 'lift' else 3-frame)
+            elif kind == 'store':self._clear_player_pose()
             if self.action_time >= .72:
                 self.action = None;self._clear_player_pose();self._save()
         if self.carried is not None and self.action is None:
@@ -540,4 +519,4 @@ class HaldenVisit:
         # One bottle, snapped at the actual handoff beat between close hands.
         owner = self.halden if self.contact else self.game.player
         pos = owner.position
-        canvas.blit(self.home.room_art_image(ART+'medicine.png'), (round(pos.x)+4-camera[0], round(pos.y)-14-camera[1]))
+        canvas.blit(self.home.image(ART+'medicine.png'), (round(pos.x)+4-camera[0], round(pos.y)-14-camera[1]))

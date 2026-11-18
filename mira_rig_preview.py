@@ -5,8 +5,6 @@ study only seeks Mira's authored poses and draws illustrative attachment FX.
 Its allocation widget is local presentation state, never a saved loadout.
 """
 from __future__ import annotations
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 
 import math
 import random
@@ -78,7 +76,7 @@ class _RigStudyScene(BattleScene):
         active = .22 < progress < .78
         if self.reduced_motion:active = .3 < progress < .65
         if not active:return
-        layer = render_layer((480, 320), pygame.SRCALPHA)
+        layer = pygame.Surface((480, 320), pygame.SRCALPHA)
         layer.set_clip(pygame.Rect(0, 34, 480, max(1, self.panel_rect.top-34)))
 
         def point(value):return round(value[0]), round(value[1])
@@ -86,37 +84,37 @@ class _RigStudyScene(BattleScene):
         if state in ('attack', 'charged_bolt', 'impact_bolt'):
             color = (251, 193, 91) if state != 'attack' else (241, 218, 139)
             charge = state == 'charged_bolt' and progress < .48
-            render_draw.circle(layer, (*color, 85), point(origin), 5 if charge else 3)
-            render_draw.circle(layer, (*color, 235), point(origin), 2)
+            pygame.draw.circle(layer, (*color, 85), point(origin), 5 if charge else 3)
+            pygame.draw.circle(layer, (*color, 235), point(origin), 2)
             if not charge and progress > .44:
                 fraction = min(1., (progress-.44)/.24)
                 projectile = origin.lerp(target, fraction)
-                render_draw.line(layer, (*color, 220), point(projectile+(7, 0)), point(projectile), 2)
-                render_draw.circle(layer, (255, 245, 205, 240), point(projectile), 2)
+                pygame.draw.line(layer, (*color, 220), point(projectile+(7, 0)), point(projectile), 2)
+                pygame.draw.circle(layer, (255, 245, 205, 240), point(projectile), 2)
         if state in ('bulwark', 'impact_bolt'):
             center = self._hit_point('mira', positions)+pygame.Vector2(-5, 0)
             radius = 32 if state == 'bulwark' else 24
             points = [point(center+pygame.Vector2(math.cos(index*math.tau/6),
                 math.sin(index*math.tau/6))*radius) for index in range(6)]
-            render_draw.polygon(layer, (110, 213, 234, 35), points)
-            render_draw.polygon(layer, (148, 234, 245, 205), points, 1)
-            render_draw.line(layer, (148, 234, 245, 120), point(origin), point(center), 1)
+            pygame.draw.polygon(layer, (110, 213, 234, 35), points)
+            pygame.draw.polygon(layer, (148, 234, 245, 205), points, 1)
+            pygame.draw.line(layer, (148, 234, 245, 120), point(origin), point(center), 1)
         if state == 'repair_pulse':
             ally = self._hit_point('player', positions)
-            render_draw.line(layer, (144, 224, 165, 90), point(origin), point(ally), 1)
+            pygame.draw.line(layer, (144, 224, 165, 90), point(origin), point(ally), 1)
             for index in range(5):
                 fraction = (progress*1.5+index/5) % 1
                 mote = origin.lerp(ally, fraction)
-                render_draw.circle(layer, (164, 241, 178, 225), point(mote), 1)
-            render_draw.circle(layer, (144, 224, 165, 145), point(ally), 12, 1)
+                pygame.draw.circle(layer, (164, 241, 178, 225), point(mote), 1)
+            pygame.draw.circle(layer, (144, 224, 165, 145), point(ally), 12, 1)
         if state == 'arc_discharge':
             points = []
             for index in range(9):
                 value = origin.lerp(target, index/8)
                 if index not in (0, 8):value.y += (3 if index % 2 else -3)
                 points.append(point(value))
-            render_draw.lines(layer, (107, 187, 247, 120), False, points, 3)
-            render_draw.lines(layer, (213, 243, 255, 240), False, points, 1)
+            pygame.draw.lines(layer, (107, 187, 247, 120), False, points, 3)
+            pygame.draw.lines(layer, (213, 243, 255, 240), False, points, 1)
         canvas.blit(layer, (0, 0))
 
 

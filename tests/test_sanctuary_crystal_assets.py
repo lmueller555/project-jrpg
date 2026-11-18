@@ -1,7 +1,3 @@
-try:
-    from tools.caelan_reference import reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import reference_digest
 """The authored mineral modules retain physical silhouettes during shimmer."""
 from hashlib import sha256
 import json
@@ -81,7 +77,7 @@ class SanctuaryCrystalAssetTests(unittest.TestCase):
 
     def test_source_provenance_and_deterministic_exports_match_checked_in_art(self):
         for record in self.manifest['source_assets']:
-            self.assertEqual(reference_digest((ROOT/record['path'])),record['sha256'])
+            self.assertEqual(sha256((ROOT/record['path']).read_bytes()).hexdigest(),record['sha256'])
         self.assertEqual(sha256((ROOT/self.manifest['source_recipe']).read_bytes()).hexdigest(),
                          self.manifest['source_recipe_sha256'])
         for path,expected in products().items():

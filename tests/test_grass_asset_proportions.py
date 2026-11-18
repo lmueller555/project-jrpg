@@ -1,4 +1,3 @@
-from tools.caelan_reference import open_image
 """Actual native grass pixels preserve the requested scale and emerald hue."""
 import colorsys
 import json
@@ -26,7 +25,7 @@ class GrassAssetProportionTests(unittest.TestCase):
         cls.grass = cls.data['tall_grass']
 
     def test_actual_grass_silhouettes_stay_approximately_half_caelans_visible_height(self):
-        with open_image(ROOT/'assets/characters/caelan/idle_front.png') as hero:
+        with Image.open(ROOT/'assets/characters/caelan/idle_front.png') as hero:
             hero_bounds = hero.convert('RGBA').getchannel('A').getbbox()
             character_height = hero_bounds[3]-hero_bounds[1]
         self.assertEqual(character_height, 34)

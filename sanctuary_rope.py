@@ -1,5 +1,4 @@
 """Fixed Sanctuary posts and a hand-authored, separately moving rope."""
-from rendering import layer as render_layer
 from pathlib import Path
 
 import pygame
@@ -49,7 +48,7 @@ class SanctuaryRope:
         posts = world.image(self.art['posts'])
         self.frames = []
         for frame in self.art['rope_frames']:
-            image = render_layer(posts.get_size(), pygame.SRCALPHA)
+            image = pygame.Surface(posts.get_size(), pygame.SRCALPHA)
             image.blit(world.image(frame['file']), (0, 0))
             image.blit(posts, (0, 0))
             self.frames.append(image)

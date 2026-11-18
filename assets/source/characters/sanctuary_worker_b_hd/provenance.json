@@ -1,9 +1,0 @@
-{
-  "identity": "Original Sanctuary arrival worker_b, not rescue worker",
-  "source": "master.png",
-  "authoring": "Complete five-view identity sheet generated from original four idles, injured pose and portrait. Second generation corrected anatomical right bandage across front/back. No limb rig or legacy upscale.",
-  "export": "export.py --activity; threshold alpha at190, sample each complete drawing uniformly using same scale60/standing-front-height; ground at y68; native2x",
-  "appearance": "Tousled chestnut hair, olive shirt, brown trousers, right lower-leg bandage",
-  "activity": "Seated facing right, rear hand grounded, far knee bent, bandaged right leg extended",
-  "status": "Activity staged before base identity activation. No standing/travel change in activity commit."
-}

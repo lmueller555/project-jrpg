@@ -92,26 +92,64 @@ class VennMagickTests(unittest.TestCase):
         self.assertTrue({'work_pin','clear_channel','open'}<=phases)
         self.assertTrue(self.v.debris_cleared);self.assertTrue(self.v.flowing)
 
-    def test_complete_hd_spell_bodies_have_fx_and_restore_idle(self):
+    def test_authored_spell_and_work_poses_keep_registered_body_and_recovery(self):
+        from tools.build_caelan_overworld import action_frame
         meta=self.v.magick_art.data
         sheet=Image.open(ART/'poses.png').convert('RGBA')
         body=Image.open(ART/'body.png').convert('RGBA')
+        arms=Image.open(ART/'casting_arm.png').convert('RGBA')
         energy=Image.open(ART/'energy.png').convert('RGBA')
-        self.assertEqual(meta['artwork_pixels_per_world_pixel'],2)
-        self.assertEqual(meta['anchor'],[20,38])
-        self.assertFalse((ART/'casting_arm.png').exists())
-        first=last=None
+        idle=Image.open(ROOT/'assets/characters/caelan/idle_right.png').convert('RGBA')
+        source=ROOT/meta['appearance_source']
+        self.assertEqual(meta['appearance_source_sha256'],hashlib.sha256(source.read_bytes()).hexdigest())
+        self.assertEqual(meta['source_idle_sha256'],hashlib.sha256((ROOT/'assets/characters/caelan/idle_right.png').read_bytes()).hexdigest())
+        self.assertEqual(meta['canvas'],[40,48]);self.assertEqual(meta['anchor'],[20,38])
+        self.assertEqual(meta['source_offset'],[8,8])
+        first=last=None;seen=set()
         for phase in meta['sequence']:
-            for rec in meta['animations'][phase]['frames']:
-                x,y,w,h=rec['rect'];self.assertEqual((w,h),(80,96))
-                expected=body.crop((x,y,x+w,y+h));expected.alpha_composite(energy.crop((x,y,x+w,y+h)))
-                pose=sheet.crop((x,y,x+w,y+h));self.assertEqual(pose.tobytes(),expected.tobytes())
+            for record in meta['animations'][phase]['frames']:
+                x,y,w,h=record['rect'];pose=sheet.crop((x,y,x+w,y+h))
+                self.assertEqual((w,h),(40,48))
+                index=record['appearance_source_cell']
+                native=idle if index is None else action_frame(index)
+                if index is not None:seen.add(index)
+                expected=Image.new('RGBA',(40,48));expected.alpha_composite(native,(8,8))
+                actual_body=body.crop((x,y,x+w,y+h))
+                self.assertEqual(actual_body.tobytes(),expected.tobytes())
+                self.assertEqual(actual_body.getbbox()[3],43)
+                # Full authored arms replace the earlier procedural overlay.
+                self.assertIsNone(arms.crop((x,y,x+w,y+h)).getbbox())
+                expected.alpha_composite(energy.crop((x,y,x+w,y+h)))
+                self.assertEqual(pose.tobytes(),expected.tobytes())
+                self.assertLessEqual(set(pose.getchannel('A').tobytes()),{0,255})
                 if first is None:first=pose
                 last=pose
-        self.assertEqual(first.tobytes(),last.tobytes())
-        pose=self.v.magick_art.pose(meta['sequence'][0],0)
-        self.assertEqual(pose.get_size(),(40,48))
-        self.assertEqual(pose.native.get_size(),(80,96))
+        self.assertEqual(seen,{28,29,30})
+        expected=Image.new('RGBA',(40,48));expected.alpha_composite(idle,(8,8))
+        self.assertEqual(first.tobytes(),expected.tobytes())
+        self.assertEqual(last.tobytes(),expected.tobytes())
+        # Practical repairs now use complete registered authored poses rather
+        # than freezing the head and legs of an unrelated idle drawing.
+        manifest=json.loads((ROOT/'assets/source/characters/caelan/overworld_refresh/dependents.json').read_text())
+        registered={entry['file']:entry for entry in manifest['outputs']}
+        for mode in ('tools','hands'):
+            for index in range(4):
+                relative=f'assets/story/venn/caelan/{mode}_{index}.png'
+                with self.subTest(work_pose=relative):
+                    record=registered[relative]
+                    self.assertEqual(len(record['source_cells']),1)
+                    source_cell=record['source_cells'][0]
+                    self.assertIn(source_cell,(25,26,27))
+                    self.assertEqual(record['canvas'],[40,48])
+                    self.assertEqual(record['draw_anchor'],[20,38])
+                    pose=Image.open(ROOT/relative).convert('RGBA')
+                    authored=action_frame(source_cell)
+                    # The retained tool can overlap the hands, never the head
+                    # crown or boot support that establish body registration.
+                    self.assertEqual(pose.crop((8,8,32,18)).tobytes(),authored.crop((0,0,24,10)).tobytes())
+                    self.assertEqual(pose.crop((8,36,32,44)).tobytes(),authored.crop((0,28,24,36)).tobytes())
+                    self.assertEqual(pose.getbbox()[3],43)
+        self.assertTrue(all(not (ROOT/f'assets/story/venn/caelan/magicks_{i}.png').exists() for i in range(4)))
 
     def test_magic_is_a_small_blue_effect_that_disappears_before_idle(self):
         meta=self.v.magick_art.data
@@ -122,7 +160,7 @@ class VennMagickTests(unittest.TestCase):
                 x,y,w,h=record['rect'];effect=energy.crop((x,y,x+w,y+h))
                 visible=[p for p in effect.getdata() if p[3]]
                 counts.append(len(visible))
-                self.assertLessEqual(len(visible),32)
+                self.assertLessEqual(len(visible),8)
                 for r,g,b,a in visible:self.assertGreater(b,r)
         self.assertEqual(counts[0],0);self.assertEqual(counts[-1],0)
         self.assertGreater(max(counts),0)

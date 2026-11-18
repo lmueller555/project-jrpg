@@ -61,7 +61,7 @@ def registered_pose(sheet, column, row):
     if feet is None:
         raise ValueError('Guard pose has no planted boot contact')
     foot_x = box[0]+(feet[0]+feet[2])/2
-    scale = 36/267*(CANVAS[0]/40)
+    scale = 36/267
     size = (round(pose.width*scale), round(pose.height*scale))
     pose = pose.resize(size, Image.Resampling.NEAREST)
     point = (round(ANCHOR[0]-(foot_x-box[0])*scale), ANCHOR[1]-size[1])

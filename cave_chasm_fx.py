@@ -1,6 +1,4 @@
 """Deterministic, bounded rising aether shared by map and battle exports."""
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 import math
 
 PERIOD_MS=12000
@@ -37,13 +35,13 @@ def draw_aether(target,camera,bounds,elapsed_ms,reduced_motion=False):
     x,y,w,h=bounds
     viewport=pygame.Rect(round(camera[0]),round(camera[1]),*target.get_size())
     if not viewport.colliderect(pygame.Rect(x,y-h,w,h*2)):return
-    layer=render_layer(target.get_size(),pygame.SRCALPHA)
+    layer=pygame.Surface(target.get_size(),pygame.SRCALPHA)
     # A quiet below-floor glow never erases the dark centre of the pit.
     pulse=.65 if reduced_motion else .55+.10*math.cos(elapsed_ms/PERIOD_MS*math.tau)
     glow=pygame.Rect(round(x-camera[0]+w*.08),round(y-camera[1]+h*.32),round(w*.84),round(h*.43))
-    render_draw.ellipse(layer,(58,104,134,round(15*pulse)),glow)
+    pygame.draw.ellipse(layer,(58,104,134,round(15*pulse)),glow)
     for a,b,color,alpha in strands(bounds,elapsed_ms,reduced_motion):
         a=(a[0]-camera[0],a[1]-camera[1]);b=(b[0]-camera[0],b[1]-camera[1])
-        render_draw.line(layer,(*color,alpha//5),a,b,3)
-        render_draw.line(layer,(*color,alpha),a,b,1)
+        pygame.draw.line(layer,(*color,alpha//5),a,b,3)
+        pygame.draw.line(layer,(*color,alpha),a,b,1)
     target.blit(layer,(0,0))

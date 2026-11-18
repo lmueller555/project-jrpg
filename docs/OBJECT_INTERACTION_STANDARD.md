@@ -1,8 +1,8 @@
 # Character–object interaction standard
 
-Visual style, artwork density, sizing, rendering, sprite construction,
-walking mechanics, registration and asset review are defined in the
-[global visual art standard](VISUAL_ART_STANDARD.md). This
+Sprite design, complete-frame construction, walking mechanics, registration and
+asset review are defined in the
+[global sprite and animation standard](SPRITE_ANIMATION_STANDARD.md). This
 companion covers how those animations interact with objects and scene state.
 
 This is the mandatory global standard for player characters and NPCs manipulating
@@ -58,14 +58,9 @@ with the required character facing. For two-character interactions, stage both
 participants so their natural poses can cooperate without implausible body
 overlap. Hold the work position until the action and transfer finish.
 
-Measure distances in **logical world units**, before artwork-density conversion,
-camera zoom, display scaling or screenshot enlargement. Every `px` range below
-means a logical world measurement. The following are initial authoring defaults
-for our roughly 24×36-world-unit character canvases, not universal hard limits.
-The higher-density rebuild preserves these physical spacing guides. Declare
-whether grip/contact metadata uses artwork or logical coordinates, and convert
-both participants into the same world space before comparing them. Follow the
-central visual standard for anchor conversion and fractional coordinates.
+Measure distances in **native world pixels**, before camera zoom, display
+scaling, or screenshot enlargement. The following are initial authoring defaults
+for our roughly 24×36-pixel characters, not universal hard limits:
 
 | Measurement | Suggested range |
 | --- | --- |
@@ -167,28 +162,6 @@ unless those effects are independently part of the authorized gameplay design.
   using the scene's existing checkpoint model. A committed transfer must not be
   rewarded or duplicated again. Replaying an unacknowledged beat must rebuild
   that beat's consistent starting arrangement.
-
-## Discovery cues and action availability
-
-Follow [object creation and readability](VISUAL_ART_STANDARD.md#object-creation-and-interaction-readability)
-for black contours, periodic glints, the nearby yellow outline and export metadata.
-Tie cue eligibility to a real available interaction, using the same authoritative
-opening/quest/object state that enables the action. Visual cues do not extend
-interaction reach, bypass facing, collect items, start scenes or complete objectives.
-An available prompt remains the confirmation of the actual action.
-
-Measure proximity from feet to a declared logical interaction boundary; for a
-tabletop prop, author the reachable support edge explicitly. Check the approach
-against collision. Draw cues with their world owner so foregrounds and actors
-can obscure them. After completion/unavailability, remove discovery and proximity
-cues together. Scene exit clears transient proximity; loading reconstructs
-availability without storing cue clocks or awarding duplicate progress.
-
-Pause/focus loss freezes timing. Menus, dialogue and cutscenes suppress cues.
-Test distance/corner thresholds, blocked approaches, depth, completion, scene
-exit/re-entry and save reconstruction alongside the interaction's existing
-positioning and ownership checks. Do not add glints to dialogue-delivered supplies
-unless a separately implemented pickup is actually available.
 
 ## Required review and acceptance
 

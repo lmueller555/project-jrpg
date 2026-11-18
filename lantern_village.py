@@ -44,7 +44,7 @@ class LanternVillage:
         self.gathered = False;self.zone = None
         self.surface_props = []
         for spec in self.art['props']:
-            states = {key: self.town.room_art_image(path) for key, path in spec['states'].items()}
+            states = {key: self.town.image(path) for key, path in spec['states'].items()}
             self.surface_props.append({**spec, 'states': states, 'surface': next(iter(states.values()))})
             self.game._scene_by_id(spec['scene']).attach_routine_props(self)
 

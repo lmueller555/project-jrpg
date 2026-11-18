@@ -1,6 +1,6 @@
 {
   "output": "assets/characters/caelan/participation_sit_front.png",
-  "logical_size": [
+  "size": [
     24,
     36
   ],
@@ -12,8 +12,9 @@
     12,
     25
   ],
-  "method": "Complete drawn seated-front key.",
-  "artwork_pixels_per_world_pixel": 2,
-  "anchor_space": "logical",
-  "contact_space": "logical"
+  "boots_baseline": 34,
+  "appearance_source": "assets/source/characters/caelan/overworld_refresh/actions_authored.png",
+  "appearance_sha256": "1e9284fe25c1d8448a8527299581a41ce0a846e78392a81b5f4b9f5c60a390fa",
+  "source_cell": 12,
+  "method": "Independent authored front seated pose with natural bent knees; fixed game registration."
 }

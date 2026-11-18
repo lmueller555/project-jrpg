@@ -106,9 +106,9 @@ class GrassDemoIntegrationTests(unittest.TestCase):
         covered = self.demo.canvas.copy()
         sprite = player.sprite()
         mask = pygame.mask.from_surface(sprite)
-        anchor = player.draw_anchor
-        x0 = round(player.position.x-anchor[0]-self.demo.camera[0])
-        y0 = round(player.position.y-anchor[1]-self.demo.camera[1])
+        anchor = world.data['player_draw_anchor']
+        x0 = round(player.position.x)-anchor[0]-self.demo.camera[0]
+        y0 = round(player.position.y)-anchor[1]-self.demo.camera[1]
         upper_body = legs = changed_legs = 0
         for y in range(sprite.get_height()):
             for x in range(sprite.get_width()):
@@ -169,9 +169,9 @@ class GrassDemoIntegrationTests(unittest.TestCase):
                             covered = self.demo.canvas
                             sprite = player.sprite()
                             mask = pygame.mask.from_surface(sprite)
-                            anchor = player.draw_anchor
-                            x0 = round(player.position.x-anchor[0]-self.demo.camera[0])
-                            y0 = round(player.position.y-anchor[1]-self.demo.camera[1])
+                            anchor = world.data['player_draw_anchor']
+                            x0 = round(player.position.x)-anchor[0]-self.demo.camera[0]
+                            y0 = round(player.position.y)-anchor[1]-self.demo.camera[1]
                             for y in range(25):
                                 for x in range(sprite.get_width()):
                                     if mask.get_at((x, y)):
@@ -210,9 +210,9 @@ class GrassDemoIntegrationTests(unittest.TestCase):
                         covered = self.demo.canvas
                         sprite = player.sprite()
                         mask = pygame.mask.from_surface(sprite)
-                        anchor = player.draw_anchor
-                        x0 = round(player.position.x-anchor[0]-self.demo.camera[0])
-                        y0 = round(player.position.y-anchor[1]-self.demo.camera[1])
+                        anchor = world.data['player_draw_anchor']
+                        x0 = round(player.position.x)-anchor[0]-self.demo.camera[0]
+                        y0 = round(player.position.y)-anchor[1]-self.demo.camera[1]
                         for y in range(25):
                             for x in range(sprite.get_width()):
                                 if mask.get_at((x, y)):

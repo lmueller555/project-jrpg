@@ -5,9 +5,7 @@
 keeping its labels and terrain detail available when zooming.
 
 `wall_map.png` is a separate 42×40 native pixel sprite for the existing school
-wall slot. The live HD school now uses an 84×80 derivative re-sampled from the
-same retained authored source by `tools/build_eldenmere_hd.py`; this 42×40 export
-remains a legacy reference. The full-size viewer map is unchanged. Its simplified blue sea, four continental landmasses, island chain
+wall slot. Its simplified blue sea, four continental landmasses, island chain
 and white polar areas remain readable without attempting miniature labels.
 The generated prop source is retained in
 [`assets/source/world/auratia`](../../source/world/auratia/README.md).

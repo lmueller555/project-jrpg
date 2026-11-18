@@ -47,8 +47,8 @@ class BuildingDoors(unittest.TestCase):
             if self.game.world is not before:return
         self.fail(f'Walk-in did not transfer through {door.data["id"]}')
 
-    def test_all_town_doors_animate_hold_close_and_reverse(self):
-        self.assertEqual(len(self.game.town.doors),13)
+    def test_all_eleven_doors_animate_hold_close_and_reverse(self):
+        self.assertEqual(len(self.game.town.doors),11)
         for door in self.game.town.doors:
             with self.subTest(door=door.data['id']):
                 self.assertEqual(len(door.frames),5)
@@ -123,10 +123,9 @@ class BuildingDoors(unittest.TestCase):
             self.assertIs(self.game.world,hall)
             self.assertEqual(self.game.player.facing,'front')
 
-    def test_all_rooms_have_reachable_exits_and_furnishings(self):
+    def test_all_thirteen_rooms_have_reachable_exits_and_furnishings(self):
         scenes=self.game.town.data['interior_scenes']
-        self.assertEqual(len(scenes),18)
-        self.assertIn('inn_guest_floor',scenes)
+        self.assertEqual(len(scenes),13)
         for name,path in scenes.items():
             with self.subTest(room=name):
                 world=main.World(main.ROOT/path,self.game.town._images)
@@ -143,12 +142,9 @@ class BuildingDoors(unittest.TestCase):
                         seen.add(candidate)
                         if world.can_stand(candidate):queue.append(candidate)
                 self.assertFalse(remaining,(name,remaining))
-                # Regional Sanctuary rooms use bespoke collision rather than
-                # the original thirteen rooms' rectangular floor contract.
-                if 'floor_rect' in world.data:
-                    fx,fy,fw,fh=world.data['floor_rect']
-                    for point in [(0,0),(fx,fy+24),(fx+fw,fy+24),(fx+24,fy),(fx+24,fy+fh)]:
-                        self.assertFalse(world.can_stand(point))
+                fx,fy,fw,fh=world.data['floor_rect']
+                for point in [(0,0),(fx,fy+24),(fx+fw,fy+24),(fx+24,fy),(fx+24,fy+fh)]:
+                    self.assertFalse(world.can_stand(point))
                 for record in world.entities:
                     self.assertTrue(all((main.ROOT/p).is_file() for p in record['frames']))
 

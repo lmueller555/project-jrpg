@@ -5,10 +5,6 @@ water regions; every bank is identical through animation. The existing cave,
 base limestone pack and game code are read-only inputs.
 """
 from __future__ import annotations
-try:
-    from tools.caelan_reference import open_image, reference_digest
-except ModuleNotFoundError:
-    from caelan_reference import open_image, reference_digest
 
 import argparse
 from hashlib import sha256
@@ -274,7 +270,7 @@ class WaterAuthor:
                 ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png']
         manifest={'version':1,'id':self.spec['id'],'approval_status':self.spec['approval_status'],
                   'tile_size':24,'source_recipe':SOURCE.relative_to(ROOT).as_posix(),
-                  'modules':self.modules,'inputs':{str(p.relative_to(ROOT)):reference_digest(p) for p in inputs},
+                  'modules':self.modules,'inputs':{str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in inputs},
                   'artifacts':{path:sha256(raw).hexdigest() for path,raw in self.outputs.items()}}
         self.emit(f'{PACK}/assets.json',manifest)
         return self.outputs
@@ -294,7 +290,7 @@ class WaterAuthor:
                 board.paste(frame,(x+(cellw-frame.width)//2,y),frame)
                 label=name.replace('stream.','stream.\n').replace('bank.','bank.\n')
                 draw.multiline_text((x+3,y+150),label,fill='#e6dfc9',font=font,spacing=2)
-            ca=open_image(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
+            ca=Image.open(ROOT/'assets/source/characters/caelan/overworld_refresh/legacy/idle_front.png').convert('RGBA')
             ca=ca.resize((ca.width*2,ca.height*2),Image.Resampling.NEAREST)
             board.paste(ca,(cols*cellw-74,10),ca)
             draw.text((cols*cellw-150,55),'Caelan / same 2x',fill='#c4d2c6',font=font)

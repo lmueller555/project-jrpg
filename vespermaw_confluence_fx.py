@@ -3,8 +3,6 @@
 The model owns form changes. These effects only sample its current free action;
 no draw calls advance clocks, commit forms, or create combat events.
 """
-from rendering import layer as render_layer
-from rendering import draw as render_draw
 from array import array
 import math
 import random
@@ -24,7 +22,7 @@ def clamp(value):return max(0., min(1., value))
 
 class VespermawConfluenceEffects:
     def __init__(self):
-        self.layer = render_layer((480, 320), pygame.SRCALPHA)
+        self.layer = pygame.Surface((480, 320), pygame.SRCALPHA)
 
     def draw(self, target, source, spine, foot, action, *, bounds,
              reduced_motion=False, foreground=False):
@@ -38,8 +36,8 @@ class VespermawConfluenceEffects:
         weight = incoming*fading
         if reduced_motion:
             if not foreground:
-                render_draw.line(layer, (*colors[0], 75), source, spine, 1)
-                render_draw.circle(layer, (*colors[1], 95), spine, 7, 1)
+                pygame.draw.line(layer, (*colors[0], 75), source, spine, 1)
+                pygame.draw.circle(layer, (*colors[1], 95), spine, 7, 1)
             target.blit(layer, (0, 0));return
         if not foreground:
             # Three distinct helical strands draw toward the registered spine.
@@ -58,8 +56,8 @@ class VespermawConfluenceEffects:
                     point.y -= math.sin(math.pi*t)*11
                     points.append(tuple(point))
                 if len(points)>1:
-                    render_draw.lines(layer, (*colors[0], round(35*weight)), False, points, 7)
-                    render_draw.lines(layer, (*colors[strand % 3], round(150*weight)), False, points, 1)
+                    pygame.draw.lines(layer, (*colors[0], round(35*weight)), False, points, 7)
+                    pygame.draw.lines(layer, (*colors[strand % 3], round(150*weight)), False, points, 1)
             # Packets and shape language distinguish sparks, flakes and drops.
             for i in range(24):
                 t = (action.elapsed*(.65+i%3*.08)+i/24)%1
@@ -70,7 +68,7 @@ class VespermawConfluenceEffects:
             # Grounded light spills beneath the animal, not over the whole UI.
             for i in range(3):
                 rect=pygame.Rect(0,0,54+i*13,12+i*4);rect.center=foot
-                render_draw.ellipse(layer, (*colors[0], round((25-i*5)*weight)),rect)
+                pygame.draw.ellipse(layer, (*colors[0], round((25-i*5)*weight)),rect)
         else:
             burst = math.sin(math.pi*clamp((progress-.58)/.32))
             for i in range(18):
@@ -83,7 +81,7 @@ class VespermawConfluenceEffects:
             if .64<progress<.90:
                 q=clamp((progress-.64)/.26)
                 rect=pygame.Rect(0,0,round(20+q*66),round(6+q*18));rect.center=foot
-                render_draw.ellipse(layer,(*colors[1],round(120*(1-q))),rect,1)
+                pygame.draw.ellipse(layer,(*colors[1],round(120*(1-q))),rect,1)
         target.blit(layer, (0,0))
 
     @staticmethod
@@ -91,13 +89,13 @@ class VespermawConfluenceEffects:
         if alpha<=0:return
         x,y=round(point.x),round(point.y);color=(*colors[1+index%2],alpha)
         if element=='ice':
-            render_draw.line(layer,color,(x-2,y),(x+2,y),1)
-            render_draw.line(layer,color,(x,y-2),(x,y+2),1)
+            pygame.draw.line(layer,color,(x-2,y),(x+2,y),1)
+            pygame.draw.line(layer,color,(x,y-2),(x,y+2),1)
         elif element=='water':
-            render_draw.line(layer,color,(x,y-2),(x,y+1),2)
-            render_draw.line(layer,(*colors[2],alpha),(x,y-1),(x,y),1)
+            pygame.draw.line(layer,color,(x,y-2),(x,y+1),2)
+            pygame.draw.line(layer,(*colors[2],alpha),(x,y-1),(x,y),1)
         else:
-            render_draw.line(layer,color,(x,y),(x+index%2,y-2-index%3),1)
+            pygame.draw.line(layer,color,(x,y),(x+index%2,y-2-index%3),1)
 
 
 class VespermawChannelAudio:

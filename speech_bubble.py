@@ -3,7 +3,6 @@
 All layout and hit testing use world-view coordinates. Lettering is rendered
 straight onto the display-resolution UI surface, separately from pixel art.
 """
-from rendering import draw as render_draw
 from dataclasses import dataclass
 import math
 
@@ -131,7 +130,7 @@ class SpeechBubble:
             seen.add(id(actor))
             point = getattr(actor, 'story_position', None) or actor.position
             draw_anchor = (getattr(actor, 'story_draw_anchor', None) or
-                           (getattr(actor, 'draw_anchor', getattr(world, 'data', {}).get('player_draw_anchor', (12, 30)))
+                           (getattr(world, 'data', {}).get('player_draw_anchor', (12, 30))
                             if actor is game.player else getattr(actor, 'draw_anchor', (12, 30))))
             image = getattr(actor, 'story_sprite', None)
             if image is None and hasattr(actor, 'sprite'):
@@ -254,9 +253,9 @@ class SpeechBubble:
             x = panel.right-1 if side == 'right' else panel.left
             tip_x = min(x+9, anchor[0]) if side == 'right' else max(x-9, anchor[0])
             points = [(x, y-5), (x, y+5), (tip_x, y)]
-        render_draw.polygon(painter.canvas, BRASS, [painter.point(point) for point in points])
+        pygame.draw.polygon(painter.canvas, BRASS, [painter.point(point) for point in points])
         inner = [(round((x+points[2][0])/2), round((y+points[2][1])/2)) for x, y in points]
-        render_draw.polygon(painter.canvas, FOREST, [painter.point(point) for point in inner])
+        pygame.draw.polygon(painter.canvas, FOREST, [painter.point(point) for point in inner])
 
     def draw(self, canvas, camera=None, elapsed_ms=0):
         painter = self._painter(canvas)

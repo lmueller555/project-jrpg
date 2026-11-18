@@ -20,23 +20,9 @@ HALL_ID = 'elden_vale_sanctuary_hall'
 RELIEF_ID = 'elden_vale_sanctuary_relief'
 RESERVE_FILE = ROOT/'assets/maps/elden_vale_sanctuary/map.json'
 RESERVE_SCENES = frozenset((RESERVE_ID, HALL_ID, RELIEF_ID))
-
-
-def town_exit_contract(data):
-    """Read current map contacts; older map fixtures retain their old edge."""
-    record = data.get('overworld_exit', {
-        'position': (516, 1332), 'return_position': (516, 1284),
-        'rect': (492, 1320, 48, 24),
-    })
-    return (tuple(record['position']), tuple(record['return_position']),
-            pygame.Rect(record['rect']))
-
-
-# Capture/path tools import these defaults. Runtime reads its loaded town's
-# contract as well, so rebuilding or loading a different map cannot leave its
-# automatic travel contact behind at the pre-expansion boundary.
-TOWN_EXIT, TOWN_RETURN, TOWN_EXIT_RECT = town_exit_contract(
-    json.loads((ROOT/'assets/maps/eldenmere/playable/map.json').read_text()))
+TOWN_EXIT = (516, 1332)
+TOWN_RETURN = (516, 1284)
+TOWN_EXIT_RECT = pygame.Rect(492, 1320, 48, 24)
 
 
 class OverworldTravel:
@@ -61,14 +47,6 @@ class OverworldTravel:
     @property
     def active(self):
         return bool(getattr(self.game.world, 'is_overworld', False))
-
-    @property
-    def town_return(self):
-        return town_exit_contract(self.game.town.data)[1]
-
-    @property
-    def town_exit_rect(self):
-        return town_exit_contract(self.game.town.data)[2]
 
     @property
     def in_reserve(self):
@@ -199,7 +177,7 @@ class OverworldTravel:
             return None
         checkpoint = (self.game.world, tuple(self.game.player.position), self.game.player.facing)
         self.game.world = self.game.town
-        self.game.player.position.update(self.town_return)
+        self.game.player.position.update(TOWN_RETURN)
         return checkpoint
 
     def finish_story_restore(self, checkpoint):
@@ -330,9 +308,8 @@ class OverworldTravel:
         g = self.game
         if not self.active or not self.can_travel():
             return False
-        contact = self.town_exit_rect
-        landing = self._landing(g.town, self.town_return,
-                                lambda point: not contact.colliderect(g.town.probe_rect(point)))
+        landing = self._landing(g.town, TOWN_RETURN,
+                                lambda point: not TOWN_EXIT_RECT.collidepoint(point))
         if landing is None:
             return False
         return self._commit(g.town, landing, 'back', {'id': 'overworld_to_town'})
@@ -404,7 +381,7 @@ class OverworldTravel:
         # Observe leaving a contact even during the short transfer cooldown.
         # A running player can reach the town exit again before it expires.
         if g.world is g.town:
-            touching = self.town_exit_rect.colliderect(g.town.probe_rect(g.player.position))
+            touching = TOWN_EXIT_RECT.colliderect(g.town.probe_rect(g.player.position))
             if not touching:
                 self._town_armed = True
         elif self.active:

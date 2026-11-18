@@ -40,19 +40,15 @@ class ResidentPose:
     def __init__(self, actor, world):
         self.actor = actor
         self.original = {key: actor.__dict__.get(key, _MISSING) for key in self.FIELDS}
-        roster = getattr(actor, 'roster_art', None)
-        if roster is not None:
-            self.idles, self.walks = roster.idles, roster.walks
-        else:
-            root = actor.data.get('sprite_root', f"assets/characters/{actor.data['id']}")
-            self.idles = {direction: world.image(f'{root}/idle_{direction}.png')
-                          for direction in DIRECTIONS}
-            self.walks = {}
-            for direction in DIRECTIONS:
-                folder = f'{root}/walk_{direction}'
-                meta = json.loads((ROOT/folder/'animation.json').read_text())
-                self.walks[direction] = [(world.image(f"{folder}/{frame['file']}"),
-                                          frame['duration_ms']) for frame in meta['frames']]
+        root = actor.data.get('sprite_root', f"assets/characters/{actor.data['id']}")
+        self.idles = {direction: world.image(f'{root}/idle_{direction}.png')
+                      for direction in DIRECTIONS}
+        self.walks = {}
+        for direction in DIRECTIONS:
+            folder = f'{root}/walk_{direction}'
+            meta = json.loads((ROOT/folder/'animation.json').read_text())
+            self.walks[direction] = [(world.image(f"{folder}/{frame['file']}"),
+                                      frame['duration_ms']) for frame in meta['frames']]
         actor.probe_size = tuple(actor.data['probe_size'])
         actor.opens_doors = True
         actor.facing = 'right' if actor.data['id'] == 'liam_mother' else 'front'
