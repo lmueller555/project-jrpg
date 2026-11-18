@@ -1,0 +1,215 @@
+{
+  "fixture": "Four staged facings in Game.draw(), using the actual town and cast idles.",
+  "scope": "Idle art review only; live Iselin manifests, walks and scene poses unchanged.",
+  "persistence": "Temporary save/settings directory; no player saves published.",
+  "base_commit": "21f9f1029fc224f8af824614f7401523015ad87a",
+  "source_sha256": {
+    "assets/characters/iselin/native_idles/animation.json": "e90895da804573ddc4260b366d122044ef7a2c1739b7f0f1aa82fb306a2b567e",
+    "assets/characters/iselin/native_idles/idle_front.png": "a0b58e06377223b03652e26d918ce849008c11ca6cab048e49ebea1339d0fa31",
+    "assets/characters/iselin/native_idles/idle_left.png": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589",
+    "assets/characters/iselin/native_idles/idle_right.png": "a372ac232c61cc36232477200e39e2e5cc0d39a5c7c045247dd08fa83107bd4b",
+    "assets/characters/iselin/native_idles/idle_back.png": "9f6d6359e5c90bdf5dac03a99e348ac4bed4179227c1bc5115f9e279f6bc100d"
+  },
+  "output_sha256": {
+    "in_game_front.png": "49c32f742990062727c9262b8d60123891deee1f18d386e30731d6d9bd8c2977",
+    "in_game_left.png": "5ca08b44b6c32dd8bc7e65f3a3adc8c134c5a1655d3cfb1532b99790fb87ea1b",
+    "in_game_right.png": "1926d3ac81396fb19dc73c456a28561628c238d789ebb76f9856bf62b4d3919e",
+    "in_game_back.png": "2371ee7d09f0ad8f5af3ac49992918371e09465a48db7c3c5ac97d372c774338",
+    "in_game_overview.png": "47b317f695326fae7f33ac0d0e65017648b78b99935e3a59c7026ffaafc6988c",
+    "in_game_closeups.png": "f857bc6079f5b06f2a67804fac47cd16f794b8825c7bfb02721182cb38e0e5ca"
+  },
+  "frames": [
+    {
+      "direction": "front",
+      "file": "in_game_front.png",
+      "window_size": [
+        960,
+        640
+      ],
+      "camera": [
+        144,
+        170
+      ],
+      "overview_crop": [
+        240,
+        170,
+        720,
+        430
+      ],
+      "closeup_crop": [
+        364,
+        248,
+        596,
+        332
+      ],
+      "closeup_enlargement": 2,
+      "positions": {
+        "caelan": [
+          336,
+          330
+        ],
+        "mira": [
+          384,
+          330
+        ],
+        "iselin": [
+          432,
+          330
+        ]
+      },
+      "iselin_draw_anchor": [
+        12,
+        30
+      ],
+      "iselin_probe": [
+        8,
+        4
+      ],
+      "iselin_detail_override": false
+    },
+    {
+      "direction": "left",
+      "file": "in_game_left.png",
+      "window_size": [
+        960,
+        640
+      ],
+      "camera": [
+        144,
+        170
+      ],
+      "overview_crop": [
+        240,
+        170,
+        720,
+        430
+      ],
+      "closeup_crop": [
+        364,
+        248,
+        596,
+        332
+      ],
+      "closeup_enlargement": 2,
+      "positions": {
+        "caelan": [
+          336,
+          330
+        ],
+        "mira": [
+          384,
+          330
+        ],
+        "iselin": [
+          432,
+          330
+        ]
+      },
+      "iselin_draw_anchor": [
+        12,
+        30
+      ],
+      "iselin_probe": [
+        8,
+        4
+      ],
+      "iselin_detail_override": false
+    },
+    {
+      "direction": "right",
+      "file": "in_game_right.png",
+      "window_size": [
+        960,
+        640
+      ],
+      "camera": [
+        144,
+        170
+      ],
+      "overview_crop": [
+        240,
+        170,
+        720,
+        430
+      ],
+      "closeup_crop": [
+        364,
+        248,
+        596,
+        332
+      ],
+      "closeup_enlargement": 2,
+      "positions": {
+        "caelan": [
+          336,
+          330
+        ],
+        "mira": [
+          384,
+          330
+        ],
+        "iselin": [
+          432,
+          330
+        ]
+      },
+      "iselin_draw_anchor": [
+        12,
+        30
+      ],
+      "iselin_probe": [
+        8,
+        4
+      ],
+      "iselin_detail_override": false
+    },
+    {
+      "direction": "back",
+      "file": "in_game_back.png",
+      "window_size": [
+        960,
+        640
+      ],
+      "camera": [
+        144,
+        170
+      ],
+      "overview_crop": [
+        240,
+        170,
+        720,
+        430
+      ],
+      "closeup_crop": [
+        364,
+        248,
+        596,
+        332
+      ],
+      "closeup_enlargement": 2,
+      "positions": {
+        "caelan": [
+          336,
+          330
+        ],
+        "mira": [
+          384,
+          330
+        ],
+        "iselin": [
+          432,
+          330
+        ]
+      },
+      "iselin_draw_anchor": [
+        12,
+        30
+      ],
+      "iselin_probe": [
+        8,
+        4
+      ],
+      "iselin_detail_override": false
+    }
+  ]
+}
