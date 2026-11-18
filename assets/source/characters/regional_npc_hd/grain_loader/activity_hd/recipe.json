@@ -29,11 +29,223 @@
     }
   ],
   "density": 2,
-  "method": "Retained complete-figure master cells selected by original reproducible exporter; native sampling occurs before downsampling, not enlargement of its legacy output.",
+  "method": "Native complete-pose contour redraws matching adult_man_02; refined_masters override retained historical cells without resizing bodies or changing logical metadata.",
   "activation_gates": [
     "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
     "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
     "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
     "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
-  ]
+  ],
+  "refined_masters": {
+    "poses/hold_front_0.png": {
+      "file": "refined_masters/hold_front_0.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+    },
+    "poses/carry_front_0.png": {
+      "file": "refined_masters/carry_front_0.png",
+      "sha256": "7498efb3b99003a2cf78becc7e12146e9fc39ae4d9d4f98e585527dc6e34431d"
+    },
+    "poses/carry_front_1.png": {
+      "file": "refined_masters/carry_front_1.png",
+      "sha256": "5eed8b7e5aa1eb069860e6cfa24411759e67b89a8f453cc055d546baafed19fb"
+    },
+    "poses/carry_front_2.png": {
+      "file": "refined_masters/carry_front_2.png",
+      "sha256": "59f1f33edcffeae0f906ba50dabcef2fa6ead6a2efb7b639c6f1b71a0940d9dd"
+    },
+    "poses/carry_front_3.png": {
+      "file": "refined_masters/carry_front_3.png",
+      "sha256": "218028e86f2d809b4221f56c9e4d90175e068055efe9efd280cf2748df909314"
+    },
+    "poses/hold_back_0.png": {
+      "file": "refined_masters/hold_back_0.png",
+      "sha256": "9f63810c6b832cef4cf21434d4bf9cf9fca3fd1b81684e9362612a6ba092a74d"
+    },
+    "poses/carry_back_0.png": {
+      "file": "refined_masters/carry_back_0.png",
+      "sha256": "06a870a1ea68d566a5c67e0118aad13f6ae279f20e896ff116f2741d0bdb666c"
+    },
+    "poses/carry_back_1.png": {
+      "file": "refined_masters/carry_back_1.png",
+      "sha256": "f24fb5e7fe91367138cff6be998d24e4de144e5a9b058d105f795f63f4555fdc"
+    },
+    "poses/carry_back_2.png": {
+      "file": "refined_masters/carry_back_2.png",
+      "sha256": "46e3b7db81d56d3605e042f26cb8fc279321f7c7ed511456d3c5e24d1a461ab8"
+    },
+    "poses/carry_back_3.png": {
+      "file": "refined_masters/carry_back_3.png",
+      "sha256": "c81db363bc0284bfb78c40d1678e24be428b4dede2e658a4d3b58f324f16d5d7"
+    },
+    "poses/hold_left_0.png": {
+      "file": "refined_masters/hold_left_0.png",
+      "sha256": "c2fc19a70ebf9a04065cc139566db97060f22bddccb2b70789c9c896a428f57c"
+    },
+    "poses/carry_left_0.png": {
+      "file": "refined_masters/carry_left_0.png",
+      "sha256": "cc6edc212a06d53cf235d8529526be6ed5038738cddc78293251a1d1cdde03da"
+    },
+    "poses/carry_left_1.png": {
+      "file": "refined_masters/carry_left_1.png",
+      "sha256": "0d9fee10020c9261426b2130d41f46e1ec1345be957f42fdfc6fb2dc8eb19aff"
+    },
+    "poses/carry_left_2.png": {
+      "file": "refined_masters/carry_left_2.png",
+      "sha256": "50c9e2749cd1d6429cd9aaa1e552dd31b96244a5cb74bef5cebba0ca0c6c95a2"
+    },
+    "poses/carry_left_3.png": {
+      "file": "refined_masters/carry_left_3.png",
+      "sha256": "4d73f809a51d58e08d6548d240994c639b37ff8d1d8b5b3fe854a643d638bd9f"
+    },
+    "poses/hold_right_0.png": {
+      "file": "refined_masters/hold_right_0.png",
+      "sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5"
+    },
+    "poses/carry_right_0.png": {
+      "file": "refined_masters/carry_right_0.png",
+      "sha256": "c709dade76944ca351a5019f78e86decfba4903796fcfbe0e88c3ea87bb6fab6"
+    },
+    "poses/carry_right_1.png": {
+      "file": "refined_masters/carry_right_1.png",
+      "sha256": "b4b8c0b4c4be63dcc5aa86ae8245af9cd6c48a768f7df22fc2e2acac0f2f760a"
+    },
+    "poses/carry_right_2.png": {
+      "file": "refined_masters/carry_right_2.png",
+      "sha256": "043968b93c1585a363aac52fb6331a8fa101929b156955193e5937314cd3b078"
+    },
+    "poses/carry_right_3.png": {
+      "file": "refined_masters/carry_right_3.png",
+      "sha256": "70a5fd1b3e413d210becd42bec8212499bfa17cf2e82560481f95495945bb534"
+    },
+    "poses/lift_front_0.png": {
+      "file": "refined_masters/lift_front_0.png",
+      "sha256": "414232c253c0fc707a1e9590ec3e18605863246d12e64f4706c25bb9d818e9a6"
+    },
+    "poses/recover_front_0.png": {
+      "file": "refined_masters/recover_front_0.png",
+      "sha256": "414232c253c0fc707a1e9590ec3e18605863246d12e64f4706c25bb9d818e9a6"
+    },
+    "poses/place_right_0.png": {
+      "file": "refined_masters/place_right_0.png",
+      "sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5"
+    },
+    "poses/push_right_0.png": {
+      "file": "refined_masters/push_right_0.png",
+      "sha256": "9e41898d441e48442bcff0506f482adcb69b095323cf6af57e6509c61c5f983c"
+    },
+    "poses/lift_front_1.png": {
+      "file": "refined_masters/lift_front_1.png",
+      "sha256": "7322330efca4f0fbf46a8923d2b35f37031cf415e0c4b75617d72392d40ce7ae"
+    },
+    "poses/recover_front_1.png": {
+      "file": "refined_masters/recover_front_1.png",
+      "sha256": "7322330efca4f0fbf46a8923d2b35f37031cf415e0c4b75617d72392d40ce7ae"
+    },
+    "poses/place_right_1.png": {
+      "file": "refined_masters/place_right_1.png",
+      "sha256": "a4bbda1e7326bce8196e62f6cbac7eb04bc56c9ca04d286b38a837ce70774039"
+    },
+    "poses/push_right_1.png": {
+      "file": "refined_masters/push_right_1.png",
+      "sha256": "b7ce1bf0e17b5668436c28b8148f1f5f37d7b5dcd59d73d5fe1d959c00b5060d"
+    },
+    "poses/lift_front_2.png": {
+      "file": "refined_masters/lift_front_2.png",
+      "sha256": "64bf6a00977ce466ac89efa691b85e2767c4fd71d800009a185a207da783b7b2"
+    },
+    "poses/recover_front_2.png": {
+      "file": "refined_masters/recover_front_2.png",
+      "sha256": "64bf6a00977ce466ac89efa691b85e2767c4fd71d800009a185a207da783b7b2"
+    },
+    "poses/place_right_2.png": {
+      "file": "refined_masters/place_right_2.png",
+      "sha256": "dd741c09831997c0dfdeccc1f920a7b728eed2a31bcb75b84b804f3cc76e15df"
+    },
+    "poses/push_right_2.png": {
+      "file": "refined_masters/push_right_2.png",
+      "sha256": "b40e12edc8344ea37650edf7d407940e7b31afcf56c0bcfd1e67c073961c535f"
+    },
+    "poses/lift_front_3.png": {
+      "file": "refined_masters/lift_front_3.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+    },
+    "poses/recover_front_3.png": {
+      "file": "refined_masters/recover_front_3.png",
+      "sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf"
+    },
+    "poses/place_right_3.png": {
+      "file": "refined_masters/place_right_3.png",
+      "sha256": "7c3ed49feeac2e608c9db7d4185454707fdeb3e20f7a0dcc96ae7f9a18a5335b"
+    },
+    "poses/push_right_3.png": {
+      "file": "refined_masters/push_right_3.png",
+      "sha256": "5d499f9a7f5bdeda8eb1c5aecc5543bf5b5696c82d63de86ab76d305d34d2bf2"
+    },
+    "poses/cover_front_0.png": {
+      "file": "refined_masters/cover_front_0.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+    },
+    "poses/inspect_front_0.png": {
+      "file": "refined_masters/inspect_front_0.png",
+      "sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf"
+    },
+    "poses/look_left_0.png": {
+      "file": "refined_masters/look_left_0.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+    },
+    "poses/work_right_0.png": {
+      "file": "refined_masters/work_right_0.png",
+      "sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5"
+    },
+    "poses/stretch_front_0.png": {
+      "file": "refined_masters/stretch_front_0.png",
+      "sha256": "7126e7b594c9e0d0dd6643cfc1da11bf2a5cd26866a0839c819849082e52f9ef"
+    },
+    "poses/cover_front_1.png": {
+      "file": "refined_masters/cover_front_1.png",
+      "sha256": "0a78648ea012b95d0374ebbef97f838b93f1e5914eee30d0ae3ab2d4b2ccfa55"
+    },
+    "poses/inspect_front_1.png": {
+      "file": "refined_masters/inspect_front_1.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+    },
+    "poses/look_left_1.png": {
+      "file": "refined_masters/look_left_1.png",
+      "sha256": "6ae506ccfff7e98d4d8aafd61cc3d4d2320abfaaeecb4fd6cf72be4373f51613"
+    },
+    "poses/work_right_1.png": {
+      "file": "refined_masters/work_right_1.png",
+      "sha256": "260e77c3cde9d283de2fb6f24d46b2ae0c2d11ec3cd4096c786f1202411cd905"
+    },
+    "poses/stretch_front_1.png": {
+      "file": "refined_masters/stretch_front_1.png",
+      "sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf"
+    }
+  },
+  "refinement": {
+    "identity": "adult_man_02",
+    "method": "Complete native contours with exact canonical head pixels, rust collared shirt, charcoal trousers, brown boots. No resized chibi source, geometric limb rig or runtime compositing.",
+    "author": "author.py",
+    "author_sha256": "95e80e5ea8766dab64e3b20bd33bfe059d55cc2256a87c70221000393e1c4e4a",
+    "contours_sha256": "9e1aaaec178a22001b3d6fe54ca7cd45afcf47d0a3512ee4be1323bf48b5911d",
+    "identity_sha256": {
+      "idle_back.png": "83af124a057d8f9582a0be6b485923cc93588d3d30f5bc2b62e96e184da5e30a",
+      "idle_front.png": "2f40fefcb8d410e0205c1c4edf08c5c1108852c0c15ecdb44aa093a9982bee6d",
+      "idle_left.png": "462fcd6d719432516df0c2a4be8d4fe28ee234cc20ab7bcd7777ba2676d73a81",
+      "idle_right.png": "d1bad92fb667316d7dfa1d96f07ca7a58d05623b1bfb2fa2ace09a4edddd0112"
+    },
+    "body_origin_artwork": [
+      24,
+      23
+    ],
+    "anchor_artwork": [
+      48,
+      92
+    ],
+    "artwork_canvas": [
+      96,
+      104
+    ],
+    "metadata": "Existing filenames/timing/prop positions/ownership remain unchanged. Native body-only source; props remain separate."
+  }
 }

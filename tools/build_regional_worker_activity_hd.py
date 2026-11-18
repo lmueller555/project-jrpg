@@ -104,6 +104,18 @@ def _capture(root,role):
         return out
     return normal(legacy),normal(native),metadata,records
 
+def refined_body(recipe,file,folder,data,trace):
+    """Select a hash-pinned complete master, never transform an existing body."""
+    refinement=recipe.get('refined_masters',{}).get(file)
+    if refinement is None:return data,trace
+    relative=Path(refinement['file']);folder=folder.resolve();target=(folder/relative).resolve()
+    if relative.is_absolute() or not target.is_relative_to(folder):raise ValueError('Refined master leaves actor source')
+    refined=target.read_bytes()
+    if digest(refined)!=refinement['sha256']:raise ValueError('Reviewed refined master changed: '+file)
+    with Image.open(BytesIO(refined)) as raw:im=raw.convert('RGBA')
+    if im.size!=(96,104) or not im.getbbox() or set(im.getchannel('A').tobytes())-{0,255}:raise ValueError('Invalid complete refined master')
+    return refined,{'original_registration':trace,'refined_complete_master':str(relative),'refined_master_sha256':digest(refined)}
+
 def products(role,root=ROOT,recipe_root=None):
     recipe_root=recipe_root or root
     if role not in ROLES:raise ValueError('Role has no retained complete-body source')
@@ -113,6 +125,8 @@ def products(role,root=ROOT,recipe_root=None):
     for record in recipe['dependencies']:
         if digest((root/record['file']).read_bytes())!=record['sha256']:raise ValueError('Reviewed source changed: '+record['file'])
     legacy,native,metadata,traces=_capture(root,role);bank=ROLES[role][1]
+    expected={'poses/'+f['file'] for clip in metadata['sequences'].values() for f in clip['frames']}
+    if set(recipe.get('refined_masters',{}))-expected:raise ValueError('Unknown refined master filename')
     pack='assets/characters/regional_npc_hd/'+role+'/activity_hd'
     output={};frames=[];native_by_legacy={};review=[]
     coworker=None
@@ -127,6 +141,8 @@ def products(role,root=ROOT,recipe_root=None):
                 reused_clip='work_left' if clip=='measure_left' else 'stretch_front'
                 reused=f'assets/characters/regional_npc_hd/grain_coworker/activity_hd/poses/{reused_clip}_{index}.png'
                 data=coworker[reused];trace={'reuse_complete_native_body':reused,'legacy_selection':'assets/characters/grain_workers/coworker/'+reused_clip+'_'+str(index)+'.png'}
+            file='poses/'+frame['file']
+            data,trace=refined_body(recipe,file,recipe_root/source,data,trace)
             with Image.open(BytesIO(data)) as original:im=original.convert('RGBA')
             if im.size!=(96,104) or set(im.getchannel('A').tobytes())-{0,255}:raise ValueError('Native body shape/alpha changed')
             file='poses/'+frame['file'];output[pack+'/'+file]=data
@@ -162,7 +178,7 @@ def products(role,root=ROOT,recipe_root=None):
               'builder':'tools/build_regional_worker_activity_hd.py','builder_sha256':digest(Path(__file__).read_bytes()),
               'motion_reviews':motion_reviews,'dependencies':recipe['dependencies'],'activation_gates':recipe['activation_gates'],
               'canvas_geometry':'Art-only padding grows40x44 to48x52, with anchor20,38 ->24,46; body-to-ground transform and world attachment offsets are unchanged. Padding restores full source crowns instead of clipping high cells.',
-              'limits':'Retained complete source bodies re-sampled uniformly at2x. No runtime binding, prop ownership, hand metadata, timing, collision or save changes; props remain separately owned. Not a user visual approval.'}
+              'limits':'Retained complete source bodies re-sampled uniformly at2x, or explicitly reviewed complete refined masters at the same registration. No runtime binding, prop ownership, hand metadata, timing, collision or save changes; props remain separately owned. Not a user visual approval.'}
     output[pack+'/manifest.json']=doc(manifest)
     return output
 
