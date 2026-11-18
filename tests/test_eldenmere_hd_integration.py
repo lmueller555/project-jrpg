@@ -57,15 +57,18 @@ class TownHDContracts(unittest.TestCase):
 
     def test_expansion_preserves_source_collision_plus_declared_district_supports(self):
         self.assertEqual(self.town['size_pixels'],[1536,1632]);self.assertEqual(self.town['size_tiles'],[64,68])
-        before=Image.open(SRC/'collision.png').convert('L');after=Image.open(ROOT/self.town['collision']).convert('L')
-        from tools.build_eldenmere_hd import courtyard_collision, workyard_collision, commons_collision, household_collision, growing_collision
-        expected=courtyard_collision(before,self.town.get('settlement_dressing'))
+        after=Image.open(ROOT/self.town['collision']).convert('L')
+        from tools.build_eldenmere_hd import source_town_physics, courtyard_collision, workyard_collision, commons_collision, household_collision, growing_collision, arrival_collision
+        expected,expected_nav=source_town_physics(read(SRC/'recipe.json'))
+        expected=courtyard_collision(expected,self.town.get('settlement_dressing'))
         expected=workyard_collision(expected,self.town.get('settlement_workyards'))
         expected=commons_collision(expected,self.town.get('settlement_commons'))
         expected=household_collision(expected,self.town.get('settlement_households'))
         expected=growing_collision(expected,self.town.get('settlement_growing'))
-        self.assertEqual(expected.tobytes(),after.crop((0,0,*before.size)).tobytes())
+        expected=arrival_collision(expected,self.town.get('settlement_arrival'))
+        self.assertEqual(expected.size,after.size);self.assertEqual(expected.tobytes(),after.tobytes())
         nav=Image.open(ROOT/self.town['navigation_allowed']).convert('L');oldnav=Image.open(SRC/'navigation_allowed.png').convert('L')
+        self.assertEqual(expected_nav.tobytes(),nav.tobytes())
         self.assertEqual(nav.crop((0,0,*oldnav.size)).tobytes(),oldnav.tobytes())
     def test_existing_quest_routes_entrances_and_npc_records_are_preserved(self):
         old=self.old['town'];data=self.town

@@ -204,8 +204,8 @@ class LiveSettlementStreetContracts(unittest.TestCase):
         cls.source = read(RECIPE)
 
     def test_live_streets_keep_all_architectural_entrances_during_district_dressing(self):
-        self.assertEqual(self.source['status'], 'growing_dressing')
-        self.assertTrue(all(p['district'] in ('serene_terrace','workshop_mill','commons_households','eastern_growing') for p in self.source['placements']))
+        self.assertEqual(self.source['status'], 'arrival_dressing')
+        self.assertTrue(all(p['district'] in ('serene_terrace','workshop_mill','commons_households','eastern_growing','southern_arrival') for p in self.source['placements']))
         self.assertTrue(self.source['ground_treatments'])
         authored = read(ROOT/'assets/source/maps/eldenmere/town_hd/recipe.json')
         architecture = read(ROOT/authored['architecture_schedule'])
@@ -238,7 +238,7 @@ class LiveSettlementStreetContracts(unittest.TestCase):
         report = read(ROOT/'assets/maps/eldenmere/settlement/manifest.json')
         live = read(ROOT/'assets/maps/eldenmere/town_hd/manifest.json')
         treatments = resolve_streets(ROOT, self.town, self.source)
-        self.assertEqual(report['status'], 'growing_dressing')
+        self.assertEqual(report['status'], 'arrival_dressing')
         self.assertEqual(report['active_placements'], len(self.source['placements']))
         self.assertEqual(report['active_ground_treatments'], len(treatments))
         self.assertEqual(report['ground_treatments'], treatments)

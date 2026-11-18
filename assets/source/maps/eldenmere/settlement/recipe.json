@@ -1,12 +1,12 @@
 {
   "version": 1,
   "id": "eldenmere.settlement",
-  "status": "growing_dressing",
+  "status": "arrival_dressing",
   "namespace": "settlement",
   "scene": "eldenmere.playable",
   "coordinate_space": "logical world units unless selector units is tiles; all padding is logical half-extents",
   "district_geometry": "Overlapping composition-role envelopes only; never collision or permission to place props blindly.",
-  "activation": "PR 7 retains reviewed streets, courtyard, workyards, civic commons and household parcels; activates three flat cultivated strips and a storage corner only inside the original Venn growing plot. Existing cottage, irrigation repair, work contacts and lower terrace retain their owners. Southern arrival remains PR 8.",
+  "activation": "PR 8 completes the eight-part settlement composition pass. Retain reviewed streets and all five prior dressing owners; activate only four narrow southern business/arrival pockets. The continuous road, inn and shop services, automatic regional departure/return, and all existing quest and asset owners remain authoritative.",
   "protected_town_entities": [
     "well",
     "sanctuary.bench",
@@ -103,13 +103,14 @@
         744,
         528
       ],
-      "later_pr": 8,
       "preserve": [
         "both business approaches",
         "continuous southbound road",
         "data-driven exit/return",
         "brook boundary"
-      ]
+      ],
+      "status": "integrated",
+      "delivery_pr": 8
     }
   ],
   "protected_selectors": [
@@ -1809,6 +1810,138 @@
         6
       ],
       "occlusion": "tall"
+    },
+    {
+      "id": "settlement.arrival.inn_flowerpots",
+      "asset": "exteriors_hd:flowerpot_pair",
+      "district": "southern_arrival",
+      "parcel": "inn_frontage",
+      "position": [
+        408,
+        1404
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        18,
+        20,
+        4
+      ]
+    },
+    {
+      "id": "settlement.arrival.inn_white_flowers",
+      "asset": "vegetation_hd:flowers_white",
+      "district": "southern_arrival",
+      "parcel": "inn_frontage",
+      "position": [
+        432,
+        1428
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.inn_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "southern_arrival",
+      "parcel": "inn_frontage",
+      "position": [
+        456,
+        1404
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.shop_empty_crate",
+      "asset": "workyard_props:empty_crate",
+      "district": "southern_arrival",
+      "parcel": "shop_frontage",
+      "position": [
+        588,
+        1428
+      ],
+      "collision": "solid",
+      "occlusion": "tall",
+      "footprint": [
+        2,
+        12,
+        20,
+        6
+      ]
+    },
+    {
+      "id": "settlement.arrival.shop_yellow_flowers",
+      "asset": "vegetation_hd:flowers_yellow",
+      "district": "southern_arrival",
+      "parcel": "shop_frontage",
+      "position": [
+        576,
+        1392
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.shop_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "southern_arrival",
+      "parcel": "shop_frontage",
+      "position": [
+        600,
+        1392
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.west_white_flowers",
+      "asset": "vegetation_hd:flowers_white",
+      "district": "southern_arrival",
+      "parcel": "west_approach",
+      "position": [
+        456,
+        1602
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.west_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "southern_arrival",
+      "parcel": "west_approach",
+      "position": [
+        432,
+        1608
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.east_yellow_flowers",
+      "asset": "vegetation_hd:flowers_yellow",
+      "district": "southern_arrival",
+      "parcel": "east_approach",
+      "position": [
+        576,
+        1602
+      ],
+      "collision": "none",
+      "occlusion": "low"
+    },
+    {
+      "id": "settlement.arrival.east_clover",
+      "asset": "vegetation_hd:groundcover_clover",
+      "district": "southern_arrival",
+      "parcel": "east_approach",
+      "position": [
+        600,
+        1590
+      ],
+      "collision": "none",
+      "occlusion": "low"
     }
   ],
   "ground_treatments": [
@@ -2329,7 +2462,8 @@
     "Venn plots touch the cottage overhang; inset beds and preserve the irrigation-gate approaches. This framework grants no harvest or new service behavior.",
     "Existing player trails support dynamic followers. Protect the public corridors and companion clearance instead of inventing fixed Regent/Lantern escort routes.",
     "PR 6 household parcels preserve baked facade details and all-frame smoke/roof bounds. Liam laundry stays west of family/Daisy play; A receives herbs beside its locker; B a low flower strip beside its linen chest; C a dry fuel corner separate from its rain jar; Elira a quiet brook-side container pocket below her windowbox. Decorative soil/planting creates no harvesting, irrigation or new interactions.",
-    "PR 7 grows only within the original source venn_plots: two young vegetable strips and one worked/fallow strip at [1320,648,48,24], [1320,696,48,24], [1320,744,48,24], leaving 24-unit work aisles. Each strip repeats two genuine native 24-world/48-art field tiles without enlargement. The crate is ordinary empty storage, separate from the existing quest toolbox, debris and working irrigation gate. Lower grass, stairs, waterways, repairs and harvesting behavior are unchanged."
+    "PR 7 grows only within the original source venn_plots: two young vegetable strips and one worked/fallow strip at [1320,648,48,24], [1320,696,48,24], [1320,744,48,24], leaving 24-unit work aisles. Each strip repeats two genuine native 24-world/48-art field tiles without enlargement. The crate is ordinary empty storage, separate from the existing quest toolbox, debris and working irrigation gate. Lower grass, stairs, waterways, repairs and harvesting behavior are unchanged.",
+    "PR 8 keeps the southern spine and regional departure/return unobstructed. Four disjoint pockets hold restrained inn planting, one ordinary shop receiving crate and low exit verges. Existing trees, inn bench/firewood/windowboxes/sign, shop hatch/awning/merchandise/sign remain singular. No new soil, paving, loose pickups, services or interaction cues are introduced. Verify real walk/run departures on all three exit lanes, regional return, both business doors and older-checkpoint recovery."
   ],
   "excluded_coordinate_contexts": [
     {
@@ -2759,7 +2893,7 @@
     "desire": "Two narrow worn lines acknowledge existing grass travel from the school toward the commons and Elira toward the lower loop. They grant no new navigation.",
     "layering": "Native ground only, before masonry, stairs and water. Existing bridge decks and foreground rails remain independently owned.",
     "cartography": "Complete source-owned network resolves the original roads, later household/school/well geometry and the same active treatments. No parallel road diagram.",
-    "future_prs": "Southern arrival planting remains PR 8; existing streets remain independently owned."
+    "future_prs": "All eight settlement deliveries are integrated. Future composition revisions must preserve existing source-owned streets, district owners and clearances."
   },
   "courtyard_dressing": {
     "district": "serene_terrace",
@@ -3007,6 +3141,55 @@
           744,
           48,
           24
+        ]
+      }
+    ]
+  },
+  "arrival_dressing": {
+    "district": "southern_arrival",
+    "scope_rect": [
+      72,
+      1104,
+      744,
+      528
+    ],
+    "retire_grass_ids": [],
+    "ground_cells": [],
+    "parcels": [
+      {
+        "id": "inn_frontage",
+        "scope_rect": [
+          384,
+          1392,
+          96,
+          72
+        ]
+      },
+      {
+        "id": "shop_frontage",
+        "scope_rect": [
+          576,
+          1392,
+          48,
+          72
+        ]
+      },
+      {
+        "id": "west_approach",
+        "scope_rect": [
+          432,
+          1600,
+          48,
+          32
+        ]
+      },
+      {
+        "id": "east_approach",
+        "scope_rect": [
+          576,
+          1584,
+          48,
+          48
         ]
       }
     ]

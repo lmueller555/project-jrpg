@@ -420,10 +420,13 @@ PR 3 activated Serene's household courtyard through `courtyard_dressing`.
 PR 4 activated the workshop/mill yards through `workyard_dressing`.
 PR 5 activated the civic well/school composition through `commons_dressing`.
 PR 6 activated five central household plots through `household_dressing`.
-**PR 7 retains those districts and activates Venn's upper growing plot** through
-`growing_dressing`, with separately owned source configuration and ledgers.
+PR 7 activated Venn's upper growing plot through `growing_dressing`.
+**PR 8 completes the eight-part composition pass** through `arrival_dressing`,
+adding four southern business/arrival pockets while retaining every earlier owner.
+Source configurations and ledgers remain separate.
 `framework_only` still rejects ground/prop activation and `ground_only` rejects
-placements. Southern arrival composition remains inactive.
+placements. All currently approved composition districts are integrated; that
+does not authorize placements outside their explicit scopes and parcel boundaries.
 Integrated districts use explicit
 new solid supports without clearing any existing blocker or changing navigation,
 interactions, scenes or save schemas. `tools/build_eldenmere_hd.py` remains the sole town map writer and produces
@@ -440,10 +443,12 @@ the school line now also carries the civic stone connection.
 They do not narrow existing usable roads or declare new walkable ground.
 The well square now has a restrained civic stone surface, an existing-line school
 connection and a small southwest resting pad. Venn's upper plot now has flat
-cultivated strips and clear working aisles. Southern planting remains later work.
+cultivated strips and clear working aisles. Restrained southern planting now frames
+the business lane and continuous arrival road.
 
 `tools/eldenmere_settlement_dressing.py` shares one strict build-time resolver
-across the courtyard, workyards, commons, household plots and growing area. The courtyard configuration remains confined
+across the courtyard, workyards, commons, household plots, growing area and arrival
+pockets. The courtyard configuration remains confined
 to `serene_terrace` and names each
 `settlement.courtyard.*` instance. It preserves the existing home, shade tree,
 bench, provision basket, six watered beds and window troughs. An eastern herb
@@ -474,7 +479,7 @@ must fit that boundary. Every garden cell and its full one-tile transition fring
 and any deliberately retired grass artwork, must also fit one parcel. The broad
 district rectangle does not authorize dressing the intervening streets or civic
 spaces. Civic and household instances share a district but retain distinct
-namespaces and ledgers; combined validation checks all four owners.
+namespaces and ledgers; combined validation checks every active owner.
 
 These pockets complement the existing facade details: laundry and flowerpots
 beside Liam's open play yard, herbs beside Home A's locker, a low flower strip
@@ -524,6 +529,29 @@ Preserve the cottage door and steps, irrigation gate, toolbox, debris, pin/chann
 contacts, repair methods, restored water phases and lower terrace grass. Planting
 does not introduce harvesting, growth simulation, extra gates or new tools.
 
+The arrival configuration confines `settlement.arrival.*` instances to four
+disjoint named pockets in `southern_arrival`: `inn_frontage`, `shop_frontage`,
+`west_approach` and `east_approach`. Every instance names its parcel; complete
+canvases, soil transition fringes and any deliberate grass retirement must fit
+that pocket. The broad district boundary does not grant permission to fill the
+road. Even nonblocking plants must keep their occupied artwork out of protected
+public-route, exit/return, doorway and work-contact reservations.
+
+The inn receives flowerpots and a maintained planted edge; the shop receives one
+ordinary empty crate and low planting. Sparse flowers and clover frame the exit
+verges beneath existing tree silhouettes. Preserve the baked inn bench, firewood,
+windowboxes and sign, and the shop hatch, awning, merchandise and sign. These
+pockets reuse native assets without new soil, paving, canopies, loose pickups,
+outside rest facilities or additional interaction cues. Preserve existing service
+prices, stock, confirmations and quest behavior.
+
+Keep the source-owned southern spine and both business approaches continuous.
+Do not relocate the data-driven departure/return contract or treat the old map
+boundary as the exit. Validate actual walking and running along the center and
+both edge lanes through automatic regional departure and return, with guard
+rearming through ordinary movement. Check both business doors and Continue from
+the arrival landing and from formerly clear positions occupied by new supports.
+
 The retained-source workyard prop bank is
 `assets/terrain/eldenmere/workyard_props/manifest.json`, exported by
 `tools/export_eldenmere_workyard_props.py` from the recipe in
@@ -547,9 +575,9 @@ per-instance size or animation overrides. The composer validates freshly built
 artwork through its export buffer rather than reading a previous build's PNG.
 
 The compiled `settlement_dressing`, `settlement_workyards`, `settlement_commons`,
-`settlement_households` and `settlement_growing` ledgers record their
+`settlement_households`, `settlement_growing` and `settlement_arrival` ledgers record their
 own entities, supports, retired grass and source hashes. The courtyard keeps its
-`garden_cells`; workyard, commons, household and growing configurations use `ground_cells`.
+`garden_cells`; workyard, commons, household, growing and arrival configurations use `ground_cells`.
 Workyard and growing ledgers also
 record static `ground_entities`: wood shavings and cultivated fills bake into native ground after
 street materials and before masonry, water and actors. They are not y-sorted
@@ -562,10 +590,16 @@ instances in that namespace fail validation. Deactivation with remaining owned
 entities or retired grass also fails until cleanup is deliberately implemented;
 silently removing collision while retaining visible props is invalid.
 
-The collision check reconstructs the original physical mask plus exactly the
-ledger's declared supports. It never clears old pixels or accepts unrelated
-changes. Verify additive support deltas independently, keep navigation byte
-identical, and test older saves at newly occupied ground through real Continue.
+The collision check reconstructs the entire expanded town from maintained source:
+the original masks, source-owned business/tree/brook supports and extension
+navigation, plus exactly the six ledgers' declared supports. The same source
+physics function supplies validation and composition. Compare full dimensions
+and all pixels, including the southern rows beyond the original 1344-unit height;
+never copy the live generated mask as its own baseline. It never clears old pixels
+or accepts unrelated changes. Verify additive support deltas independently against
+the complete pre-change mask, keep navigation byte-identical, and test older saves
+at newly occupied ground through real Continue. Arrival planting leaves all six
+native ground phases unchanged.
 Garden, workyard and household earth reuse the native grass/dirt blob bank before masonry/water. Bound
 its changes to the declared cells and their one-tile transition rim. Retire only
 the meadow instances that conflict with this planted pocket; preserve other

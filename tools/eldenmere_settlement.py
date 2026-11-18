@@ -285,27 +285,29 @@ def framework(root, town, recipe_path=RECIPE, *, image_loader=None):
     root = Path(root)
     path = _file(root, recipe_path)
     recipe = json.loads(path.read_text())
-    if recipe.get('version') != 1 or recipe.get('status') not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing', 'commons_dressing', 'household_dressing', 'growing_dressing'):
+    if recipe.get('version') != 1 or recipe.get('status') not in ('framework_only', 'ground_only', 'courtyard_dressing', 'workyard_dressing', 'commons_dressing', 'household_dressing', 'growing_dressing','arrival_dressing'):
         raise ValueError('Unsupported settlement recipe version/status')
-    if ((recipe['status'] not in ('courtyard_dressing','workyard_dressing','commons_dressing','household_dressing','growing_dressing') and recipe.get('placements') != []) or
+    if ((recipe['status'] not in ('courtyard_dressing','workyard_dressing','commons_dressing','household_dressing','growing_dressing','arrival_dressing') and recipe.get('placements') != []) or
             (recipe['status'] == 'framework_only' and recipe.get('ground_treatments') != [])):
         raise ValueError('Settlement framework cannot activate placements or ground treatments')
     if town.get('id') != TOWN_ID or recipe.get('scene') != TOWN_ID:
         raise ValueError(f'Settlement framework must use the loaded {TOWN_ID} scene')
     protections = resolve_protections(root, town, recipe)
     catalogue = inventory(root, town=town)
-    from tools.eldenmere_settlement_dressing import resolve_dressing, resolve_workyards, resolve_commons, resolve_households, resolve_growing
+    from tools.eldenmere_settlement_dressing import resolve_dressing, resolve_workyards, resolve_commons, resolve_households, resolve_growing, resolve_arrival
     resolved_dressing = resolve_dressing(root, town, recipe, catalogue, protections, image_loader=image_loader)
     resolved_workyards = resolve_workyards(root, town, recipe, catalogue, protections, image_loader=image_loader)
     resolved_commons = resolve_commons(root, town, recipe, catalogue, protections, image_loader=image_loader)
     resolved_households = resolve_households(root, town, recipe, catalogue, protections, image_loader=image_loader)
     resolved_growing = resolve_growing(root, town, recipe, catalogue, protections, image_loader=image_loader)
-    dressing = resolved_dressing if recipe['status'] in ('courtyard_dressing','workyard_dressing','commons_dressing','household_dressing','growing_dressing') else None
-    workyards = resolved_workyards if recipe['status'] in ('workyard_dressing','commons_dressing','household_dressing','growing_dressing') else None
-    commons = resolved_commons if recipe['status'] in ('commons_dressing','household_dressing','growing_dressing') else None
-    households = resolved_households if recipe['status'] in ('household_dressing','growing_dressing') else None
-    growing = resolved_growing if recipe['status']=='growing_dressing' else None
-    validate_district_reports(dressing,workyards,commons,households,growing)
+    resolved_arrival = resolve_arrival(root, town, recipe, catalogue, protections, image_loader=image_loader)
+    dressing = resolved_dressing if recipe['status'] in ('courtyard_dressing','workyard_dressing','commons_dressing','household_dressing','growing_dressing','arrival_dressing') else None
+    workyards = resolved_workyards if recipe['status'] in ('workyard_dressing','commons_dressing','household_dressing','growing_dressing','arrival_dressing') else None
+    commons = resolved_commons if recipe['status'] in ('commons_dressing','household_dressing','growing_dressing','arrival_dressing') else None
+    households = resolved_households if recipe['status'] in ('household_dressing','growing_dressing','arrival_dressing') else None
+    growing = resolved_growing if recipe['status'] in ('growing_dressing','arrival_dressing') else None
+    arrival = resolved_arrival if recipe['status']=='arrival_dressing' else None
+    validate_district_reports(dressing,workyards,commons,households,growing,arrival)
     if dressing is None:
         validate_placements(recipe['placements'], protections, catalogue, town)
     from tools.eldenmere_settlement_streets import resolve_streets
@@ -323,6 +325,8 @@ def framework(root, town, recipe_path=RECIPE, *, image_loader=None):
         dependencies.update(households['dependencies_sha256'])
     if growing is not None:
         dependencies.update(growing['dependencies_sha256'])
+    if arrival is not None:
+        dependencies.update(arrival['dependencies_sha256'])
     for source in street_sources:
         dependencies[source] = sha256(_file(root, source).read_bytes()).hexdigest()
     for record in protections:
@@ -341,7 +345,7 @@ def framework(root, town, recipe_path=RECIPE, *, image_loader=None):
     return dict(version=1, id=recipe['id'], status=recipe['status'],
                 coordinate_space='logical town units; selector padding remains logical',
                 active_placements=len(recipe['placements']), active_ground_treatments=len(treatments),
-                dressing=dressing, workyards=workyards, commons=commons, households=households, growing=growing,
+                dressing=dressing, workyards=workyards, commons=commons, households=households, growing=growing, arrival=arrival,
                 ground_treatments=treatments, street_network=network,
                 recipe=recipe_path, districts=deepcopy(recipe['districts']),
                 district_geometry=recipe['district_geometry'],
