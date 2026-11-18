@@ -1,47 +1,25 @@
-# Iselin royal replacement review
+# Iselin narrative replacement history
 
-Iselin replaces the former regent in live opening scenes, MQ02/MQ03 dialogue, portraits, actor registration, Gallery playback and post-rescue resolution. Her title, quest stages and existing outcomes are preserved. Her approved biography and spoiler boundaries are recorded in [ISELIN.md](../../narrative/game_01/characters/ISELIN.md).
+The original replacement made Iselin the live regent across the opening,
+MQ02/MQ03 dialogue, portraits, arrival scenes, Gallery playback and post-rescue
+resolution. Her existing title, quest stages and outcomes were preserved. The
+approved biography and disclosure limits remain in
+[ISELIN.md](../../narrative/game_01/characters/ISELIN.md).
 
-## Visual evidence
+The native artwork integration preserves those story and save contracts while
+replacing the superseded detailed sprite bank. The earlier detailed-art images,
+preview animations, source masters and dedicated builders were removed at the
+user's request. Their obsolete export commands and visual checks no longer
+serve as current reproduction instructions.
 
-- [Scene artwork](scene_art.png): complete cinematic gestures, seated drawing, aerial views and diagonal walking cells.
-- [Gate greeting](gate_greeting.png), [meal](emergency/meal_with_lucan.png), and [Sanctuary arrival](../gallery/regional_sanctuary_arrival.png): production renderers with Iselin's detailed sprites.
-- [Diagonal walking preview](diagonal_walk.gif): the new complete-drawing cinematic cycle, 16 frames over 560 ms.
-- [Post-rescue report](resolution_report.png): acknowledged resolution dialogue using the replacement identity.
+Current art, production captures and verification are documented in the
+[native integration review](../iselin_native_integration/README.md).
+The ordinary approved idles/walks and dialogue portrait remain byte-identical
+to their respective native-art approvals.
 
-The approved portrait, all four idles and all 64 ordinary walking PNGs are preserved. New artwork is confined to missing scene-specific poses and perspectives. Historical royal artwork and obsolete builders are archived outside live registries and test discovery.
-
-## Reproduction and limits
-
-Run with the project's Pygame/Pillow environment and `PYTHONPATH=.`:
-
-```sh
-python tools/build_regent_iselin.py --check
-python tools/build_regent_arrival_actors.py --check
-python tools/build_regent_aerial_actors.py --check
-python tools/capture_iselin_replacement.py
-python tools/capture_mq03_emergency.py --out docs/reviews/iselin_replacement/emergency --no-movie
-python tools/capture_mq03_emergency.py --out docs/reviews/iselin_replacement/emergency --check
-```
-
-The emergency driver traverses the actual welcome, meal, interruption, party rejoin and travel flow, including saved checkpoints and Continue. Its verification JSON records inputs and capture hashes. The post-rescue images use explicitly seeded victory/evacuation fixtures, followed by the actual dialogue/checkpoint chain; they do not claim a complete played battle. Gallery images use the production replay controller.
-
-Validation covers actor manifests, detailed seating, saved legacy unavailable reasons, arrival/aerial rendering, Sanctuary staging and the MQ03 resolution chain. The existing `test_active_visit_cannot_load_without_its_scene_checkpoint` save-fallback failure is reproducible on the original main runtime and remains outside this replacement.
-
-Integration checks also exposed and corrected a detailed-canvas copy error in the road-pan effect and a missing detail presentation step in the Sanctuary cinematic. Ordinary surface alpha/clip behavior remains covered by the road-pan regressions.
-
-The [last 50 ms of the aerial handoff](handoff.png) show continuous ground motion.
-Mean RGB difference to the endpoint is 5.0266/255 (1.971%); the palette-dependent
-check now uses a 2% full-range bound. The final aerial frame must still equal
-the first ground frame byte for byte, with no black fade.
-
-The crossroads frame-order checks compare complete RGB hashes for opaque
-scene/UI surfaces. Unused fourth bytes in non-alpha display surfaces are
-excluded; true alpha/clip behavior remains covered by the road-pan unit tests.
-Hashing also prevents unittest from spending minutes diffing binary buffers.
-
-Two legacy `test_regent_crossroads_art` checks also retain a stale region-JSON
-fingerprint: they expect `0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88`,
-but main already contains `3f783a64c266d67a2c1dbdab33232947715affd10b3e89a2316f05176bf9f015`.
-The region file, retained recipe and crossroads builder are unchanged by this
-replacement. These original art-history fingerprints were not silently repinned.
+The original story replacement also corrected detailed-canvas copying in the
+road-pan effect and missing presentation in the Sanctuary scene. Shared canvas
+copy/alpha/clip behavior remains a renderer concern, independent of Iselin's
+now-native artwork. Exact aerial handoff continuity and quest/save regressions
+retain their dedicated tests; this historical note does not certify a new
+full battle/road playthrough.

@@ -1,0 +1,409 @@
+{
+  "version": 1,
+  "quests": {
+    "version": 1,
+    "quests": {
+      "CH01_MQ01": {
+        "status": "completed",
+        "completed_objectives": [
+          "halden",
+          "elira",
+          "venn"
+        ]
+      },
+      "CH01_MQ02": {
+        "status": "completed",
+        "completed_objectives": [
+          "meet_mira",
+          "diagnose_mill",
+          "prepare_journey",
+          "secure_trail",
+          "reach_intake",
+          "prepare_intake",
+          "small_spell",
+          "repair_intake",
+          "verify_mill",
+          "report",
+          "return_sanctuary"
+        ]
+      },
+      "CH01_MQ03": {
+        "status": "active",
+        "completed_objectives": [
+          "meet_visitors"
+        ]
+      },
+      "CH01_MQ04": {
+        "status": "locked",
+        "completed_objectives": []
+      }
+    }
+  },
+  "opening": {
+    "version": 1,
+    "stage": "disabled"
+  },
+  "inventory": {
+    "version": 1,
+    "items": {
+      "ether": 5,
+      "potion": 5,
+      "rest_kit": 3,
+      "revival_salts": 3,
+      "smoke_bomb": 3
+    },
+    "granted_quests": [
+      "CH01_MQ01"
+    ],
+    "deliveries": [
+      "CH01_MQ01/elira",
+      "CH01_MQ01/halden",
+      "CH01_MQ01/venn"
+    ]
+  },
+  "sanctuary_cave": {
+    "version": 1,
+    "opened": []
+  },
+  "cave_random_encounters": {
+    "version": 1,
+    "identity": 2919500291,
+    "rng_state": 2834016134,
+    "sequence": 0,
+    "threshold": 666.0460564415504,
+    "remaining": 666.0460564415504,
+    "was_safe": null,
+    "pending": null
+  },
+  "cave_lesson": {
+    "version": 1,
+    "resonance_seen": false,
+    "battle_cleared": false,
+    "deferred": false
+  },
+  "sanctuary_boss": {
+    "version": 1,
+    "defeated": false,
+    "intro_seen": false,
+    "pending": null
+  },
+  "sanctuary_rescue": {
+    "version": 1,
+    "stage": "undiscovered"
+  },
+  "elemental_bosses": {
+    "version": 1,
+    "bosses": {
+      "embravyr": {
+        "pending_acquisition": false,
+        "intro_seen": false,
+        "discovered": false,
+        "defeated": false
+      },
+      "nivareth": {
+        "pending_acquisition": false,
+        "intro_seen": false,
+        "discovered": false,
+        "defeated": false
+      }
+    },
+    "victory_order": [],
+    "pending": null
+  },
+  "sanctuary_arrival": {
+    "version": 1,
+    "beat": 0,
+    "completed": false,
+    "cave_entered": false
+  },
+  "character_attributes": {
+    "version": 3,
+    "character_id": "caelan",
+    "attributes": {
+      "hp": 140,
+      "mp": 30,
+      "str": 10,
+      "mag": 10,
+      "spr": 10,
+      "def": 10,
+      "m_def": 10,
+      "speed": 10,
+      "acc": 10,
+      "eva": 10,
+      "lck": 10
+    },
+    "current_hp": 140,
+    "current_mp": 30
+  },
+  "character_levels": {
+    "version": 1,
+    "characters": {
+      "caelan": {
+        "version": 1,
+        "character_id": "caelan",
+        "total_xp": 0
+      },
+      "mira": {
+        "version": 1,
+        "character_id": "mira",
+        "total_xp": 0
+      },
+      "lucan": {
+        "version": 1,
+        "character_id": "lucan",
+        "total_xp": 0
+      },
+      "rhea": {
+        "version": 1,
+        "character_id": "rhea",
+        "total_xp": 0
+      },
+      "edran": {
+        "version": 1,
+        "character_id": "edran",
+        "total_xp": 0
+      }
+    }
+  },
+  "party": {
+    "version": 1,
+    "members": {
+      "caelan": {
+        "available": true,
+        "reason": "",
+        "temporary": false
+      },
+      "mira": {
+        "available": false,
+        "reason": "Working in Eldenmere.",
+        "temporary": true
+      }
+    },
+    "active": [
+      "caelan"
+    ],
+    "characters": {
+      "caelan": {
+        "version": 3,
+        "character_id": "caelan",
+        "attributes": {
+          "hp": 140,
+          "mp": 30,
+          "str": 10,
+          "mag": 10,
+          "spr": 10,
+          "def": 10,
+          "m_def": 10,
+          "speed": 10,
+          "acc": 10,
+          "eva": 10,
+          "lck": 10
+        },
+        "current_hp": 140,
+        "current_mp": 30
+      },
+      "mira": {
+        "version": 3,
+        "character_id": "mira",
+        "attributes": {
+          "hp": 150,
+          "mp": 30,
+          "str": 10,
+          "mag": 10,
+          "spr": 10,
+          "def": 10,
+          "m_def": 10,
+          "speed": 10,
+          "acc": 10,
+          "eva": 10,
+          "lck": 10
+        },
+        "current_hp": 150,
+        "current_mp": 30
+      },
+      "lucan": {
+        "version": 3,
+        "character_id": "lucan",
+        "attributes": {
+          "hp": 170,
+          "mp": 20,
+          "str": 12,
+          "mag": 7,
+          "spr": 8,
+          "def": 12,
+          "m_def": 9,
+          "speed": 8,
+          "acc": 11,
+          "eva": 8,
+          "lck": 9
+        },
+        "current_hp": 170,
+        "current_mp": 20
+      },
+      "rhea": {
+        "version": 3,
+        "character_id": "rhea",
+        "attributes": {
+          "hp": 100,
+          "mp": 45,
+          "str": 6,
+          "mag": 13,
+          "spr": 10,
+          "def": 7,
+          "m_def": 10,
+          "speed": 10,
+          "acc": 10,
+          "eva": 10,
+          "lck": 10
+        },
+        "current_hp": 100,
+        "current_mp": 45
+      },
+      "edran": {
+        "version": 3,
+        "character_id": "edran",
+        "attributes": {
+          "hp": 160,
+          "mp": 40,
+          "str": 7,
+          "mag": 7,
+          "spr": 13,
+          "def": 12,
+          "m_def": 12,
+          "speed": 8,
+          "acc": 9,
+          "eva": 7,
+          "lck": 10
+        },
+        "current_hp": 160,
+        "current_mp": 40
+      }
+    },
+    "event": null
+  },
+  "character_abilities": {
+    "version": 1,
+    "characters": {
+      "caelan": {
+        "equipped_weapon": null,
+        "first_weapon_acquired": false
+      },
+      "edran": {
+        "equipped_weapon": null,
+        "first_weapon_acquired": false
+      },
+      "lucan": {
+        "equipped_weapon": null,
+        "first_weapon_acquired": false
+      },
+      "mira": {
+        "equipped_weapon": null,
+        "first_weapon_acquired": false
+      },
+      "rhea": {
+        "equipped_weapon": null,
+        "first_weapon_acquired": false
+      }
+    },
+    "gear_gems": {
+      "caelan": []
+    }
+  },
+  "mira_rig": {
+    "version": 1,
+    "allocation": {
+      "weapons": 2,
+      "protection": 2,
+      "support": 2
+    }
+  },
+  "battle_rewards": {
+    "version": 1,
+    "receipts": []
+  },
+  "halden_visit": {
+    "version": 1,
+    "stored_sacks": [
+      0,
+      1,
+      2
+    ],
+    "carried_sack": null,
+    "concluded": true,
+    "departed": true
+  },
+  "elira_visit": {
+    "version": 1,
+    "lantern": "table"
+  },
+  "venn_visit": {
+    "version": 2,
+    "inspected": [
+      "pin",
+      "channel"
+    ],
+    "method": null,
+    "repaired": true,
+    "magicks_failed": false
+  },
+  "opening_conclusion": {
+    "version": 1,
+    "stage": "done"
+  },
+  "mill_quest": {
+    "version": 2,
+    "inspected": [
+      "mechanism",
+      "race",
+      "intake"
+    ],
+    "prepared": true,
+    "spell_done": true,
+    "encouraged": true,
+    "restored": true,
+    "verified": true,
+    "resolved": true,
+    "warned": true,
+    "encounter_cleared": true,
+    "aftermath_done": true,
+    "legacy_bypass": false
+  },
+  "regent_quest": {
+    "version": 3,
+    "stage": "escorting"
+  },
+  "regent_arrival": {
+    "version": 1,
+    "state": "seen"
+  },
+  "lantern_quest": {
+    "version": 1,
+    "stage": "idle"
+  },
+  "dialogue_flags": [],
+  "player": {
+    "scene": "eldenmere.playable",
+    "position": [
+      384.0,
+      432.0
+    ],
+    "facing": "front"
+  },
+  "exterior_position": [
+    384.0,
+    312.0
+  ],
+  "overworld": {
+    "version": 1,
+    "region": "elden_vale_start",
+    "discovered": [
+      "eldenmere"
+    ]
+  },
+  "save_context": {
+    "campaign": "aabdb079c19c4042a94234951df05ebb",
+    "branch": "9dda98b713d04e7dadb8513fdecdbca4",
+    "playtime": 0.0,
+    "scene_cooldown": 0.0
+  }
+}

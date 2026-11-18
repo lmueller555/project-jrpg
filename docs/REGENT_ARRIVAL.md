@@ -155,7 +155,6 @@ python tools/build_regent_crossroads.py --check
 PYTHONPATH=tests python -m unittest test_regent_clerk_walk test_regent_crossroads_art test_regent_road_pan test_regent_crossroads_gameplay test_iselin_replacement test_regent_arrival test_regent_arrival_staging test_regent_quest
 python tools/capture_regent_arrival.py
 python tools/capture_regent_arrival_polish.py
-python tools/capture_iselin_replacement.py
 python tools/capture_regent_crossroads.py
 python tools/capture_regent_crossroads.py --check
 ```
@@ -169,7 +168,7 @@ records earlier staging. The predecessor's
 [historical side-walk review](reviews/aldric_side_walk/README.md) is archived
 implementation evidence. Current Iselin scenes use complete authored poses,
 her approved 16-frame walks, and a new rear-three-quarter cycle, exported by
-`tools/build_regent_iselin.py`. The current replacement review records the
+`tools/build_regent_iselin.py`. The current native integration review records the
 cinematic, meal, Sanctuary and save-checkpoint checks.
 The full arrival can also be replayed from the title screen's **Gallery** as
 **Iselin's Relief Caravan**, without loading or changing a journey.

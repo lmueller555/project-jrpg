@@ -25,7 +25,8 @@ class ReplacementTests(unittest.TestCase):
         art=json.loads((ROOT/'assets/story/regent/art.json').read_text())
         actor=next(a for a in art['actors'] if a['id']=='iselin')
         self.assertEqual(actor['art'],'assets/characters/iselin/animation.json')
-        self.assertEqual(actor['draw_anchor'],[10.5,30])
+        self.assertEqual(actor['draw_anchor'],[12,30])
+        self.assertEqual(actor['probe_size'],[8,4])
         manifest=json.loads((ROOT/'assets/story/regent_arrival/actors/iselin/animation.json').read_text())
         for direction in ('left','left_back','back'):
             self.assertEqual(len(manifest['loops']['walk_'+direction]),16)
@@ -33,17 +34,20 @@ class ReplacementTests(unittest.TestCase):
             with self.subTest(export=str(path)):
                 self.assertEqual(path.read_bytes(),data)
 
-    def test_seating_retains_detail_and_releases_its_override(self):
+    def test_native_seating_releases_its_override(self):
         with tempfile.TemporaryDirectory() as directory:
             g=make_game(directory,seed=False,embedded=False)
             try:
                 c=g.regent_quest;a=c.iselin;c.stage='welcome';c._meal_ready=True
                 c._place(a,c.dining,c.points['meal_seats']['iselin']['approach'])
                 action=c.scene_actions;action._meal_clock=.1;action._apply_seating()
-                self.assertIsNotNone(a.detailed_sprite(0))
+                self.assertEqual(a.facing,'left')
+                self.assertIs(a.story_sprite,a.walks['left'][2])
+                self.assertIsNone(getattr(a,'detailed_sprite',None))
                 action._meal_clock=1;action._apply_seating()
-                self.assertEqual(a.sprite(0).get_size(),(21,36))
-                self.assertEqual(a.detailed_sprite(0)[0].get_size(),(42,72))
+                self.assertEqual(a.story_sprite.get_size(),(24,36))
+                self.assertEqual(a.story_draw_anchor,(12,30))
+                self.assertFalse(hasattr(a,'story_detail'))
                 action.release()
                 self.assertFalse(hasattr(a,'story_detail'))
                 self.assertFalse(hasattr(a,'story_sprite'))
@@ -56,8 +60,9 @@ class ReplacementTests(unittest.TestCase):
                 source=g.regent_quest.iselin
                 actor=CastActor('iselin',g.world,source=source)
                 actor.moving=True;actor.facing='back';actor.walk_ms=70
-                self.assertEqual(actor.sprite(0).get_size(),(21,36))
-                self.assertEqual(actor.detailed_sprite(0)[0].get_size(),(42,72))
+                self.assertEqual(actor.sprite(0).get_size(),(24,36))
+                self.assertIsNone(getattr(actor,'detailed_sprite',None))
+                self.assertEqual(actor.draw_anchor,(12,30))
                 self.assertEqual(actor.walk_durations['back'],(35,)*16)
                 party=PartyState(g.party.characters['caelan'])
                 self.assertTrue(party.recruit('lucan',temporary=True))

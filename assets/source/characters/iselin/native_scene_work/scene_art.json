@@ -1,0 +1,616 @@
+{
+  "version": 1,
+  "poses": {
+    "listen_left": {
+      "approved_image": "assets/characters/iselin/native_idles/idle_left.png",
+      "native": true,
+      "canvas": [
+        24,
+        36
+      ]
+    },
+    "gesture_left": {
+      "source": "poses.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "scale": 0.075,
+      "source_anchor": [
+        262,
+        32
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          12
+        ],
+        "destination": [
+          0,
+          0
+        ]
+      }
+    },
+    "turn_left_back": {
+      "source": "poses.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "scale": 0.075,
+      "source_anchor": [
+        260,
+        32
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ]
+    },
+    "seated_left": {
+      "source": "poses.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "scale": 0.075,
+      "source_anchor": [
+        282,
+        66
+      ],
+      "destination_anchor": [
+        12,
+        4
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          12
+        ],
+        "destination": [
+          0,
+          3
+        ]
+      }
+    },
+    "overhead": {
+      "source": "poses.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "scale": 0.052,
+      "source_anchor": [
+        256,
+        103
+      ],
+      "destination_anchor": [
+        8,
+        4
+      ],
+      "canvas": [
+        16,
+        24
+      ]
+    },
+    "oblique": {
+      "source": "poses.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "scale": 0.052,
+      "source_anchor": [
+        254,
+        87
+      ],
+      "destination_anchor": [
+        8,
+        4
+      ],
+      "canvas": [
+        16,
+        24
+      ]
+    }
+  },
+  "diagonal": [
+    {
+      "source": "diagonal.png",
+      "rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        272,
+        0,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        543,
+        0,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        814,
+        0,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        0,
+        362,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        272,
+        362,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        543,
+        362,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        814,
+        362,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        0,
+        724,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        272,
+        724,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        543,
+        724,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        814,
+        724,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        0,
+        1086,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        272,
+        1086,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        543,
+        1086,
+        271,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    },
+    {
+      "source": "diagonal.png",
+      "rect": [
+        814,
+        1086,
+        272,
+        362
+      ],
+      "scale": 0.1,
+      "source_anchor": [
+        144,
+        24
+      ],
+      "destination_anchor": [
+        12,
+        1
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "preserve_native_pose": "turn_left_back",
+      "preserve_rect": [
+        0,
+        0,
+        24,
+        12
+      ]
+    }
+  ],
+  "registration_notes": "Pose sources share0.075density from upright crown/neck/body proportions; seated shares that density with lower head registration. Aerial views share0.052density, preserving overhead foreshortening. Diagonal shares0.1density and crown/waist grid across all16."
+}

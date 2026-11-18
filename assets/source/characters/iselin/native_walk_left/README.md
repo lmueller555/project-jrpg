@@ -1,7 +1,8 @@
 # Native Iselin left-walk source
 
-Status: left walk approved by the user. This milestone stages the left direction without
-changing the live campaign bank or the approved native idles/front walk.
+Status: left walk approved and integrated through the canonical native
+Iselin actor. The complete approved frame PNGs and authored sources remain
+unchanged. Scene-specific presentation is maintained by the native scene builder.
 
 `keys.png` contains four complete left-facing contact/passing drawings created
 with `image_gen.imagegen`. `authored.png` contains the sixteen complete drawings

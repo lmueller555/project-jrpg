@@ -1,8 +1,8 @@
 # Native Iselin back-walk source
 
-Status: back walk approved by the user. This is the rear-direction asset milestone;
-existing approved native idles/front/left/right walks and live bindings remain
-unchanged.
+Status: back walk approved and integrated through the canonical native
+Iselin actor. The complete approved frame PNGs and authored sources remain
+unchanged. Scene-specific presentation is maintained by the native scene builder.
 
 `keys.png` contains four complete rear contact/passing studies created with
 `image_gen.imagegen`. `authored.png` contains sixteen complete new drawings

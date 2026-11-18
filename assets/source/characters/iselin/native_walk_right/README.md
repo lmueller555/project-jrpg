@@ -1,7 +1,8 @@
 # Native Iselin right-walk source
 
-Status: right walk approved by the user. The right walk is staged separately from the live
-campaign bank. Existing approved native idles, front and left walks are intact.
+Status: right walk approved and integrated through the canonical native
+Iselin actor. The complete approved frame PNGs and authored sources remain
+unchanged. Scene-specific presentation is maintained by the native scene builder.
 
 `keys.png` contains four complete right-facing contact/passing studies created
 with `image_gen.imagegen`. `authored.png` contains sixteen complete new drawings

@@ -1,8 +1,12 @@
 # Iselin native right-walk review
 
-**Status: right walk approved by the user.** This native 24×36 right walk is staged beside
-the approved native idles and front/left walks. It does not activate the new
-artwork in the campaign or convert rear, seated or cinematic poses.
+**Status: approved and integrated.** The images below retain the original
+native-art approval snapshot, captured before campaign activation. Its
+`capture.json` preserves the reviewed commit and original input hashes; current
+manifest metadata and helper code may differ after integration. Do not repin
+those historical hashes to imply the original fixture was captured again.
+Current production verification is in the
+[native integration review](../iselin_native_integration/README.md).
 
 The [sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md) remains
 the authoring reference. The right-facing appearance keeps the anatomical-right
@@ -63,7 +67,7 @@ After exporting the staged artwork, run from the repository root:
 ```sh
 python tools/export_iselin_native_right_walk.py --check
 SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=. \
-python tools/capture_iselin_native_right_walk.py
+python tools/capture_iselin_native_right_walk.py --out /tmp/iselin-native-right_walk-review
 ```
 
 The helper checks all 167 integer positions on its horizontal route, sampled
@@ -75,4 +79,4 @@ from the front-walk capture helper, whose source hash is also recorded.
 
 All save/settings paths are temporary. This focused art/controller fixture does
 not claim full campaign traversal, save migration or gameplay activation.
-Previously approved artwork and live campaign bindings remain unchanged.
+These isolated fixtures do not modify campaign bindings; current activation is covered by the integration review.

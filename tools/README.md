@@ -8,20 +8,19 @@ for reproducing approved assets, not as the construction method for new walks.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.
 
-Iselin’s approved complete-frame walk exporters are
-`tools/export_iselin_front_walk.py`,
-`tools/export_iselin_right_walk_redrawn.py`,
-`tools/export_iselin_left_walk.py` and
-`tools/export_iselin_back_walk.py`. The rear exporter uses
-`tools/iselin_back_walk_stability.py` for body-landmark registration.
-See the standard for the workflow and linked revision evidence.
+Iselin uses the approved native 24×36 idles and four 16-frame walks. Export
+individual banks with `tools/export_iselin_native_idles.py` and
+`tools/export_iselin_native_{front,left,right,back}_walk.py`. Each supports
+`--check`. `python tools/build_iselin_native_actor.py --check` verifies the
+combined ordinary actor registration, and `tools/build_regent_iselin.py --check`
+verifies scene-specific views. `tools/export_iselin_portrait.py --check` keeps
+the approved dialogue portrait independent from character sprites.
 
-Register the approved Iselin walks with `python tools/register_iselin_walks.py`
-(or `--check` to verify registration). `StoryActor` loads the native manifests
-and creates world-size fallbacks in memory. The idle exporters preserve this
-registration. `python tools/capture_iselin_walks.py` produces an isolated
-[production travel review](../docs/reviews/iselin_walk_integration/README.md)
-using existing navigation and detail/depth rendering.
+The old detailed Iselin banks, prototype studies and dedicated HD exporters
+were removed. The [native integration review](../docs/reviews/iselin_native_integration/README.md)
+owns current production verification. Directional native review helpers remain
+available with temporary saves; pass `--out /tmp/iselin-review` when reproducing
+them so the original approval snapshots stay intact.
 
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).
 

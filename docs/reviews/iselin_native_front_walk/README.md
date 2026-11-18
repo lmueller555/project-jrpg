@@ -1,8 +1,12 @@
 # Iselin native front-walk review
 
-**Status: front walk approved by the user.** The native 24×36 front walk is staged beside
-the approved native idle bank. This milestone does not activate it in the
-campaign or remake the other directions, seated artwork or cinematic drawings.
+**Status: approved and integrated.** The images below retain the original
+native-art approval snapshot, captured before campaign activation. Its
+`capture.json` preserves the reviewed commit and original input hashes; current
+manifest metadata and helper code may differ after integration. Do not repin
+those historical hashes to imply the original fixture was captured again.
+Current production verification is in the
+[native integration review](../iselin_native_integration/README.md).
 
 The [sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md) remains
 the authoring reference. This review uses complete authored frames with the
@@ -58,7 +62,7 @@ After exporting the staged artwork, run from the repository root:
 ```sh
 python tools/export_iselin_native_front_walk.py --check
 SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=. \
-python tools/capture_iselin_native_front_walk.py
+python tools/capture_iselin_native_front_walk.py --out /tmp/iselin-native-front_walk-review
 ```
 
 The helper checks all 167 integer route positions, sampled travel clearance,
@@ -69,5 +73,5 @@ source/output hashes, clearance evidence and the base commit.
 
 All save/settings paths are temporary. This is focused art and controller
 review evidence; it does not claim a completed quest traversal, save migration
-or gameplay activation. Existing approved idles and live campaign banks remain
-unchanged.
+or gameplay activation. The isolated fixture does not modify campaign bindings; current activation
+is covered by the integration review.

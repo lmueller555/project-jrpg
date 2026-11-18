@@ -79,22 +79,27 @@ world-space stride.
 
 Iselin is a worked example, not a universal size requirement:
 
-| Property | Approved Iselin value |
+| Property | Approved current Iselin value |
 | --- | --- |
-| Exported artwork frame | 42×72 RGBA |
-| Artwork density | 2 artwork pixels per world pixel |
-| Logical frame | 21×36 world pixels |
-| Draw anchor | [21,60] artwork / [10.5,30] world |
-| Ground/foot anchor | [21,68] artwork / [10.5,34] world |
+| Exported artwork frame | 24×36 RGBA |
+| Artwork density | 1 artwork pixel per world pixel |
+| Logical frame | 24×36 world pixels |
+| Draw anchor | [12,30] artwork/world |
+| Ground/foot anchor | [12,34] artwork/world |
 | Collision probe | 8×4 world pixels |
 | Walk | 16 frames × 35 ms = 560 ms per full two-step cycle |
 
-The established detailed renderer preserves higher-resolution idle and walk
-artwork at ordinary party scale. Resizing it to the logical fallback discards detail;
-enlarging that fallback later cannot recover it. Validate the intended rendering
-path and target window scale. Iselin's walk manifests are registered on her
-reusable actor and the regent's opening/MQ03 scenes. Cinematic and seated
-poses have separate complete drawings and preserve the same character design.
+The approved native idle and walk PNGs feed one ordinary sheet-based actor.
+They do not use detailed-image overrides or runtime downsampling. Display and
+cinematic camera enlargement remain separate from source artwork density:
+large scene canvases preserve the native pixel clusters and the same costume.
+Validate the intended drawing path and target window scale, together with
+foreground depth and seated/aerial registration.
+
+Iselin's superseded detailed bank and prototype studies were deleted after the
+native replacement was approved. They are no longer construction or rendering
+requirements. The individual native approval reviews preserve their original
+scope and captures; the integration review records current gameplay consumers.
 
 ## 2. Plan the gait before drawing in-betweens
 
@@ -201,8 +206,8 @@ arm appears. Likewise, remove obsolete boots, coat fragments and outlines.
 An approved opposite-side gait may supply reflected **motion guides**. Redraw
 the new direction's face, clothing and hair from its approved idle; do not flip
 the finished asymmetric costume and call it complete. Document any deliberate
-reuse of already approved pose pixels. Iselin's left walk preserves reflected
-approved lower-leg movement while using new left-specific upper artwork.
+reuse of already approved pose pixels. Iselin's native side walks use separate
+complete drawings with their own near/far mantle and braid placement.
 
 For Iselin, the mantle is on anatomical right and the braid runs forward over
 anatomical left. Her rear view shows the braid root/bend, not a newly invented
@@ -233,11 +238,12 @@ displacements and loop-seam displacement; inspect sudden outliers visually.
 Ease the approach to contact and draw the missing passing/recovery poses instead
 of reordering unrelated extremes or shortening a frame to hide a snap.
 
-Iselin's rear boot once dropped about nine artwork pixels from frame 4 to 5.
-The correction reduced lift and divided the return into smaller drawn changes;
-the accepted revision has no adjacent vertical change above three artwork pixels.
-That is a regression bound for this asset, not a universal speed limit. Front/rear
-screen-space boot height also represents depth, so measure the intended motion.
+An earlier detailed Iselin study had a rear boot drop about nine artwork
+pixels between adjacent frames. Reducing lift and drawing the missing return
+poses corrected it. That source-specific numeric bound is historical, not a
+constraint on the current native bank or other assets. Front/rear screen-space
+boot height also represents depth; inspect an actual heel/toe landmark rather
+than assuming every silhouette-bound change is a foot reset.
 
 An in-place preview does not prove world-ground foot locking. When integrating
 travel, compare stance-foot motion against actor displacement at the intended
@@ -265,19 +271,20 @@ origin. Never independently stretch horizontal and vertical axes or resize
 individual limbs to make landmarks meet. If several body proportions still
 disagree, redraw the source rather than repeatedly compensating during export.
 
-Author a small, periodic vertical bob tied to weight transfer. At Iselin's
-42×72 density, a total excursion around 1–2 artwork pixels is a useful initial
-range, not a requirement for every character or gait. Keep the head, neck,
-shoulders and torso coherent; the legs accommodate weight transfer naturally.
-Keep support-foot contact grounded rather than translating the whole character
-and its planted boots up and down. Do not add another runtime bob to artwork
-that already includes one.
+Author a small, periodic vertical bob tied to weight transfer when the gait
+needs it. At native density, a total excursion around one world pixel is a
+useful starting point, not a requirement for every character. Keep the head,
+neck, shoulders and torso coherent; legs accommodate weight transfer naturally.
+Keep support contact grounded rather than translating planted boots with the
+whole body. Do not add a runtime bob to artwork that already includes one.
 
-Iselin's accepted rear crown positions are
-`3,3,2,2,3,4,4,3,3,3,2,2,3,4,4,3`: two gentle excursions per full cycle,
-no neighboring jump above one artwork pixel, including frame 16 → 1.
-The earlier four-pixel down/up impulses were export/proportion defects.
-Check exported head and belt pixels, not just the bob array in the recipe.
+Iselin's current native walks preserve approved stationary head regions after
+complete-frame authoring. The side cycles use a constant one-pixel walking
+settle, while front/rear retain their registered head height. Their moving
+bodies remain authored below the protected boundary. These asset-specific
+choices avoid source-strip head-shape twitch; they are not a prescription to
+freeze every character's upper body. Inspect the neck and garment joins and
+actual weight transfer, not just the equality of protected pixels.
 
 Keep the character's declared draw/ground anchors and world position consistent
 across directions, idle transitions and poses. The ground anchor is a logical
@@ -380,17 +387,17 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
 
 ## Implementation references (examples, not competing standards)
 
-- [Iselin front walk](reviews/iselin_front_walk/README.md): complete-frame source
-  and the 16-frame cadence.
-- [Right walk leg correction](reviews/iselin_right_walk_redrawn/LEG_REVISION.md):
-  preserve accepted arms while repairing foot progression.
-- [Left walk](reviews/iselin_left_walk_redrawn/README.md): reuse approved motion
-  with direction-specific costume and braid motion.
-- [Rear walk, final body revision](reviews/iselin_back_walk/README.md#body-stability-correction-revision-3-current):
-  smaller boot lift, body-landmark registration, controlled bob and seam cleanup.
-- [Iselin detailed idle rendering](reviews/iselin_first_assets/IMPLEMENTED.md):
-  artwork/world density and production occlusion.
-- [Iselin runtime walking](reviews/iselin_walk_integration/README.md): shared
-  logical/detail timing, navigation, stopping, turning and real foliage occlusion.
-- [Asset tool catalogue](../tools/README.md): commands and local implementation
-  details, including legacy builders retained for reproducibility.
+- [Native idles](reviews/iselin_native_idles/README.md): approved directional
+  appearance, consistent body scale and ordinary pixel density.
+- [Native front walk](reviews/iselin_native_front_walk/README.md): complete-frame
+  sources, 16-frame cadence and protected approved head pixels.
+- [Native left walk](reviews/iselin_native_left_walk/README.md) and
+  [native right walk](reviews/iselin_native_right_walk/README.md): complete
+  directional drawings, near/far limb exchange and asymmetric costume sides.
+- [Native rear walk](reviews/iselin_native_back_walk/README.md): restrained rear
+  reach, crown/waist registration and foot-contact inspection.
+- [Native gameplay integration](reviews/iselin_native_integration/README.md):
+  current actor, scene and lifecycle verification. Individual approval captures
+  remain historical snapshots at their recorded commits.
+- [Asset tool catalogue](../tools/README.md): current reproduction commands and
+  local implementation facts.
