@@ -1,0 +1,635 @@
+{
+  "version": 1,
+  "character": "innkeeper_01",
+  "animation": "walk.left",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/innkeeper_01/walk_left/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/innkeeper_01/walk_left/authored.png": "92603bf8e5230c9920476e5f6bcb9f39f527169c1491de5de310c27797f794f4",
+    "assets/characters/npc_roster_hd/innkeeper_01/idle_left.png": "5535c44ea3093c3a96fc3f4d43f8161a04005e58062f2c5be18b2ec3e45750b0"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        26,
+        67
+      ],
+      "right_boot_bottom": [
+        17,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 28,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 1,
+        "left_visible_toe": [
+          26,
+          67
+        ],
+        "right_visible_toe": [
+          17,
+          69
+        ],
+        "belt_visible_marker": [
+          21,
+          28
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          28
+        ],
+        "left_toe": [
+          26,
+          67
+        ],
+        "right_toe": [
+          17,
+          69
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        28,
+        64
+      ],
+      "right_boot_bottom": [
+        20,
+        69
+      ],
+      "crown_y": 3,
+      "belt_y": 29,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 2,
+        "left_visible_toe": [
+          28,
+          64
+        ],
+        "right_visible_toe": [
+          20,
+          69
+        ],
+        "belt_visible_marker": [
+          21,
+          29
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          29
+        ],
+        "left_toe": [
+          28,
+          64
+        ],
+        "right_toe": [
+          20,
+          69
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        23,
+        65
+      ],
+      "right_boot_bottom": [
+        23,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 28,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 3,
+        "left_visible_toe": [
+          23,
+          65
+        ],
+        "right_visible_toe": [
+          23,
+          69
+        ],
+        "belt_visible_marker": [
+          21,
+          28
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          28
+        ],
+        "left_toe": [
+          23,
+          65
+        ],
+        "right_toe": [
+          23,
+          69
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        18,
+        67
+      ],
+      "right_boot_bottom": [
+        26,
+        69
+      ],
+      "crown_y": 1,
+      "belt_y": 27,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 4,
+        "left_visible_toe": [
+          18,
+          67
+        ],
+        "right_visible_toe": [
+          26,
+          69
+        ],
+        "belt_visible_marker": [
+          21,
+          27
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          27
+        ],
+        "left_toe": [
+          18,
+          67
+        ],
+        "right_toe": [
+          26,
+          69
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        16,
+        69
+      ],
+      "right_boot_bottom": [
+        27,
+        67
+      ],
+      "crown_y": 2,
+      "belt_y": 28,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 5,
+        "left_visible_toe": [
+          16,
+          69
+        ],
+        "right_visible_toe": [
+          27,
+          67
+        ],
+        "belt_visible_marker": [
+          21,
+          28
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          28
+        ],
+        "left_toe": [
+          16,
+          69
+        ],
+        "right_toe": [
+          27,
+          67
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        19,
+        69
+      ],
+      "right_boot_bottom": [
+        30,
+        64
+      ],
+      "crown_y": 3,
+      "belt_y": 29,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 6,
+        "left_visible_toe": [
+          19,
+          69
+        ],
+        "right_visible_toe": [
+          30,
+          64
+        ],
+        "belt_visible_marker": [
+          21,
+          29
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          29
+        ],
+        "left_toe": [
+          19,
+          69
+        ],
+        "right_toe": [
+          30,
+          64
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        22,
+        69
+      ],
+      "right_boot_bottom": [
+        25,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 28,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "right_boot_bottom_visibility": "occluded; visible far toe vertex [23,63] tracked separately",
+      "visible_landmarks": {
+        "frame": 7,
+        "left_visible_toe": [
+          22,
+          69
+        ],
+        "right_visible_toe": [
+          23,
+          63
+        ],
+        "belt_visible_marker": [
+          21,
+          28
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          28
+        ],
+        "left_toe": [
+          22,
+          69
+        ],
+        "right_toe": [
+          25,
+          65
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        25,
+        69
+      ],
+      "right_boot_bottom": [
+        20,
+        67
+      ],
+      "crown_y": 1,
+      "belt_y": 27,
+      "occlusion": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing",
+      "visible_landmarks": {
+        "frame": 8,
+        "left_visible_toe": [
+          25,
+          69
+        ],
+        "right_visible_toe": [
+          20,
+          67
+        ],
+        "belt_visible_marker": [
+          21,
+          27
+        ],
+        "boot_ownership_verified": true
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          27
+        ],
+        "left_toe": [
+          25,
+          69
+        ],
+        "right_toe": [
+          20,
+          67
+        ],
+        "occlusion_note": "Anatomical left near, right far; front apron occludes upper leading thigh; far arm hides behind slim torso in passing"
+      }
+    }
+  ]
+}
