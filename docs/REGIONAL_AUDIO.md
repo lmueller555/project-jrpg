@@ -68,8 +68,8 @@ bridge, world, save, arrival and audio-setting tests remain regression coverage.
 See [audible review](reviews/regional_audio/README.md) for historical capture
 details; that recording predates the removal of wind audio.
 
-Garden/orchard work uses two finite synthesized materials: leaf handling and
-soft fruit/wicker contact. Filling the can and watering plants are silent;
+Regional garden/orchard work uses two finite synthesized materials: leaf handling and
+soft fruit/wicker contact. Its filling-can and watering actions are silent;
 their animations, timings and saved action progress are unchanged.
 The remaining sound producers live in
 `garden_orchard.py`, share the `garden_work` incidental family, and emit only at
@@ -78,3 +78,45 @@ finish and the object snaps to its new owner or resting place. Other work
 contacts keep their authored timing. Contact time persists with the worker action, preventing a
 Continue from repeating an already-heard contact. Existing attenuation, hard
 cutoff, pause/exit handling and four-voice budgeting are unchanged.
+
+## Eldenmere well feedback
+
+`WellAudio` shares the identity-checked channel leasing engine, with its own
+town-only eligibility, original synthesized material bank and attenuation curve.
+It uses the existing Effects volume and leaves the regional sources and music
+mix unchanged. The well and its gardener retain ownership of the work clock,
+water and transfers; audio only observes their snapshots and event IDs.
+
+Well work is centered at logical world `[528,864]`. Its multiplier is full through
+32 logical units, then falls as `((80-distance)/48)^3`; it is exactly zero at or
+beyond 80 units. Relative levels are approximately 29.6% at 48 units, 3.7% at 64,
+and 0.46% at 72. These percentages multiply each material's restrained base gain
+and the user's Effects setting. Camera position does not affect hearing.
+The existing ambient activation inset prevents repeated starts around the edge;
+active sounds still stop at the exact 80-unit boundary.
+
+The winding/rope bed follows actual crank movement, and the small filling bed
+requires the submerged-mouth fill phase. Hook contacts, water entry and emergence
+drips use the mechanism's once-only event IDs. The gardener's finite pouring cue
+starts at visible flow and follows the pail, using the same short 32/80-unit bubble
+at its actual garden location. It cannot be heard back at the well from the distant
+Sanctuary beds. Pickup/resting poses and completed empty pours emit no fabricated
+water sounds.
+
+Pause, focus loss, modal menus, examination dialogue, combat, title and scene exit
+release owned voices. Ordinary indoor visits can continue the ambient chore, but
+its inaudible contacts are consumed immediately. Muted, distant, interrupted and
+budget-rejected cues are never queued. A contact more than 125 ms old is discarded
+after a long frame; the current winding/fill bed may restart when eligible, while
+old impacts and mid-flow pours do not replay on return or unmute. New Game,
+Continue and ambient reset clear audio leases and observation history without
+serializing handles or granting gameplay progress.
+
+The material PCM is deterministic and generated for the available signed-16-bit
+mixer format. Game construction prepares the six sounds without playing them or
+leasing a channel, keeping the first nearby operation from doing cold synthesis
+during movement. Missing devices, unsupported formats or playback failure remain
+nonfatal. Focused coverage is in `test_well_audio.py`,
+`test_well_examination.py` and `test_well_feedback_gameplay.py`; the
+[well feedback review](reviews/well_feedback/README.md) records the accepted-voice
+stream, cutoff measurements and reproducible review procedure.

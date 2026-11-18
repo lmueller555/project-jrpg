@@ -234,6 +234,13 @@ Mira now works at the bench outside her shop: she inspects a fitting, makes thre
 
 The chestnut-haired gardener in the sage dress uses her current HD roster artwork throughout the commons-well routine. She attaches one canonical pail at the reachable loading station, walks around to the crank, lowers and fills it, raises it and returns to retrieve it. One mechanism clock controls crank rotation, rope length, water and ownership; blocked approaches hold the operation until she arrives. She waters four flower patches and both window troughs, consuming one unit per target, then deposits the empty pail and rests for a randomly chosen 3–5 minutes. Her work continues during ordinary indoor visits and freezes with menus or focus loss. New Game and Continue restore a coherent ambient rest checkpoint without changing the save format. The [live integration review](docs/reviews/well_live/README.md) records actual-game captures, validation and presentation limits; older well reviews remain historical evidence.
 
+Face the well's reachable rim and press **E** to examine it. Brief descriptions
+reflect idle work, active drawing and a full attached pail. Reading holds the
+gardener's current action until the examination closes. Crank, hook and water
+sounds stay close to the well: their volume drops steeply beyond 32 logical
+pixels and reaches silence at 80. Garden pours use the same short radius around
+the pail. Effects volume, menus, focus loss and scene changes apply to these sounds.
+
 **Dialogue happens in the running world.** Walk close while
 facing Mother Serene in the sanctuary hall or dining room. She safely sets down her work,
 turns and pauses. A compact speech bubble above the current speaker contains
