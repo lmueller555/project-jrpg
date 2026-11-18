@@ -1,0 +1,208 @@
+{
+  "manifest_sha256": "3f90d68d75384bfdf7c0d9161aad72af2db9c2bb93182492e34949b8d7f1ef3f",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        33
+      ],
+      "left_toe": [
+        17,
+        67
+      ],
+      "right_toe": [
+        35,
+        69
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        34
+      ],
+      "left_toe": [
+        19,
+        64
+      ],
+      "right_toe": [
+        33,
+        69
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        33
+      ],
+      "left_toe": [
+        23,
+        65
+      ],
+      "right_toe": [
+        31,
+        69
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        32
+      ],
+      "left_toe": [
+        34,
+        67
+      ],
+      "right_toe": [
+        29,
+        69
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        33
+      ],
+      "left_toe": [
+        35,
+        69
+      ],
+      "right_toe": [
+        17,
+        67
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        34
+      ],
+      "left_toe": [
+        33,
+        69
+      ],
+      "right_toe": [
+        19,
+        64
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        33
+      ],
+      "left_toe": [
+        31,
+        69
+      ],
+      "right_toe": [
+        29,
+        65
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        32
+      ],
+      "left_toe": [
+        20,
+        69
+      ],
+      "right_toe": [
+        34,
+        67
+      ],
+      "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}
