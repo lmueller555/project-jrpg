@@ -28,13 +28,15 @@ class PickerNative(unittest.TestCase):
     with Image.open(O/f['file']) as im:self.assertEqual(im.getbbox()[3],bottom, f['file'])
  def test_nonwriting_check_and_author_reproducibility(self):
   def snapshot():
-   return {str(p.relative_to(R)):(p.stat().st_mtime_ns,hashlib.sha256(p.read_bytes()).hexdigest()) for folder in ['assets','docs','tools'] for p in (R/folder).rglob('*') if p.is_file()}
+   folders=(S,O,R/'docs/qa/regional_picker_actions');files=[p for folder in folders for p in folder.rglob('*') if p.is_file()]+[R/'tools/build_regional_picker_actions_hd.py']
+   return {str(p.relative_to(R)):(p.stat().st_mtime_ns,hashlib.sha256(p.read_bytes()).hexdigest()) for p in files}
   before=snapshot();subprocess.run([sys.executable,str(R/'tools/build_regional_picker_actions_hd.py'),'--check'],check=True,capture_output=True);self.assertEqual(before,snapshot())
   with tempfile.TemporaryDirectory() as tmp:
    source=Path(tmp)/'source';shutil.copytree(S,source);shutil.rmtree(source/'masters');subprocess.run([sys.executable,str(source/'author.py')],check=True)
    for p in (S/'masters').glob('*.png'):self.assertEqual(p.read_bytes(),(source/'masters'/p.name).read_bytes())
    # Missing output must fail rather than silently repair; stage only tiny exporter inputs.
-   stage=Path(tmp)/'check';shutil.copytree(R/'tools',stage/'tools');shutil.copytree(R/'assets',stage/'assets');shutil.copytree(R/'docs',stage/'docs')
+   stage=Path(tmp)/'check';(stage/'tools').mkdir(parents=True);shutil.copyfile(R/'tools/build_regional_picker_actions_hd.py',stage/'tools/build_regional_picker_actions_hd.py')
+   for folder in (S,O,R/'docs/qa/regional_picker_actions'):shutil.copytree(folder,stage/folder.relative_to(R))
    victim=stage/'assets/characters/regional_npc_hd/regional_picker/actions_hd/carry_front_00.png';victim.unlink()
    result=subprocess.run([sys.executable,str(stage/'tools/build_regional_picker_actions_hd.py'),'--check'],capture_output=True)
    self.assertNotEqual(result.returncode,0);self.assertFalse(victim.exists())
