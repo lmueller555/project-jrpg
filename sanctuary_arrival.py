@@ -218,15 +218,22 @@ class SanctuaryArrival(MillGift):
             self.actors[key]=CastActor(key,world,variant=variant,art=self.art['actors'].get(key))
         performance=self.performance
         for name,animation in performance['poses'].items():
+            # Worker A activates only with his complete authored injury/care bank.
+            # Other actors retain their existing performance assets.
+            if ((name in ('offer_arm','arm_rest') and name in self.art['actors']['worker_a'].get('poses',{}))
+                    or (name=='runner_place' and name in self.art['actors'].get('runner',{}).get('poses',{}))):
+                continue
             actor=self.actors['runner'] if name=='runner_place' else self.actors['worker_a'] if name in ('offer_arm','arm_rest') else self.actors['mira']
             actor.pose_animations[name]={
                 'frames':tuple(world.image(f['file']) for f in animation['frames']),
                 'durations':tuple(f['duration_ms'] for f in animation['frames']),
                 'loop':False,'anchor':tuple(animation['anchor'])}
         runner=self.actors['runner']
-        runner.carry_idles={direction:world.image(path) for direction,path in performance['carry_idles'].items()}
-        runner.carry_walks={direction:[world.image(f['file']) for f in frames] for direction,frames in performance['carry_walks'].items()}
-        runner.walk_durations={direction:tuple(f['duration_ms'] for f in frames) for direction,frames in performance['carry_walks'].items()}
+        carry=self.art['actors'].get('runner',{}).get('carrying',performance)
+        carry_meta={'artwork_pixels_per_world_pixel':carry.get('carry_artwork_pixels_per_world_pixel',1)}
+        runner.carry_idles={direction:load_art(world,path,carry_meta) for direction,path in carry['carry_idles'].items()}
+        runner.carry_walks={direction:[load_art(world,f['file'],carry_meta) for f in frames] for direction,frames in carry['carry_walks'].items()}
+        runner.walk_durations={direction:tuple(f['duration_ms'] for f in frames) for direction,frames in carry['carry_walks'].items()}
         portraits=json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())['portraits']
         for key,name,actor in (('arrival_caretaker','Caretaker','caretaker'),('arrival_worker','Injured worker','worker_a')):
             portrait=self.art['actors'][actor]['portrait']

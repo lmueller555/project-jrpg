@@ -5,6 +5,7 @@ body drawings, attention and table props; reading is always player paced.
 """
 from caelan_scene_art import image as scene_image
 from serene_scene_art import image as serene_image
+from tomas_scene_art import image as tomas_image, replacement as tomas_replacement
 from rendering import rotate as render_rotate
 from rendering import flip as render_flip
 from rendering import scale as render_scale
@@ -107,10 +108,13 @@ class RegentActions:
             actor = actors.get(identifier)
             if (actor is None or not self._owned_actor(actor)
                     or self.owner._world(actor) is not self.dining):continue
-            image = serene_image(self.dining, actor, record['image'], self._image)
+            image=tomas_image(self.dining,actor,record['image'],
+                              lambda path:serene_image(self.dining,actor,path,self._image),
+                              flipped=record.get('flip_x',False))
             detail = ((self._image(record['detail_image']),tuple(record['detail_anchor']))
                       if 'detail_image' in record else None)
-            if record.get('flip_x'):image = render_flip(image, True, False)
+            if record.get('flip_x') and not tomas_replacement(actor,record['image'],True):
+                image = render_flip(image, True, False)
             actor.facing = record['facing'];actor.moving = False
             if self._meal_clock < .35:
                 fraction = min(1., self._meal_clock/.35)
@@ -201,8 +205,9 @@ class RegentActions:
             record = self._seat_records().get('tomas') if self._seating_enabled() else None
             if record and self._meal_clock >= .35:
                 frame = min(3, int(self.clock/.25))
-                image = self._image(f'assets/story/sanctuary_opening/poses/tomas_eat/frame_{frame+1:02}.png')
-                if record.get('flip_x'):image = render_flip(image, True, False)
+                path=f'assets/story/sanctuary_opening/poses/tomas_eat/frame_{frame+1:02}.png'
+                image=tomas_image(self.dining,actor,path,self._image,flipped=record.get('flip_x',False))
+                if record.get('flip_x') and not tomas_replacement(actor,path,True):image=render_flip(image,True,False)
                 self._pose(actor, image, record['anchor'], position=record['position'],
                            sort_y=record['sort_y'])
             elif not record:
