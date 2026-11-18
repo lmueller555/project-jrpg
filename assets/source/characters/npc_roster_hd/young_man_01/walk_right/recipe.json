@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/young_man_01/walk_right/authored.png",
+  "source_sha256": "ab749491ff8fb7f7d29734ceaa9b906c678a35c0398ee56fb7a7781c360470d6",
+  "reference": "assets/characters/npc_roster_hd/young_man_01/idle_right.png",
+  "reference_sha256": "7cbd5238e1bd3a6a977e3c791411fbf75666c621a063e5b1208f87b76ab1ac25",
+  "drawing": "Eight complete, independently plotted native pixel drawings; no isolated limb transforms. Approved head/appearance retained within authored bob.",
+  "export": "No rescale or normalization, crop retained source at recorded rectangles.",
+  "registration": "Common head/neck and torso registration, fixed 24,60 draw and 24,69 foot references.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "left contact",
+    "left down",
+    "right passing",
+    "right recovery",
+    "right contact",
+    "right down",
+    "left passing",
+    "left recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "0/255"
+}
