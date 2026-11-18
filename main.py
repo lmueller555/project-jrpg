@@ -204,15 +204,18 @@ class StationaryNPC:
         self.data=record
         self.position=pygame.Vector2(record['position'])
         self.draw_anchor=record['draw_anchor']
-        from npc_roster_art import RosterArt, bound_design
+        from npc_roster_art import RosterArt, bound_design, named_household_art
         design_id=bound_design(record['id'])
-        self.roster_art=RosterArt(world,design_id) if design_id else None
+        named=named_household_art(world,record['id'])
+        self.roster_art=named if named is not None else RosterArt(world,design_id) if design_id else None
         self._sprite=world.art_image(record['sprite'],record) if self.roster_art is None else self.roster_art.idles['front']
         if self.roster_art:
             if tuple(self.draw_anchor)!=self.roster_art.draw_anchor:
                 raise ValueError('Roster binding must preserve the map draw anchor')
             self.idles=self.roster_art.idles;self.walks=self.roster_art.walks
-            self.facing=record.get('facing','front');self.moving=False;self.walk_ms=0.
+            default_facing=Path(record['sprite']).stem.removeprefix('idle_') if named is not None else 'front'
+            if default_facing not in self.idles:default_facing='front'
+            self.facing=record.get('facing',default_facing);self.moving=False;self.walk_ms=0.
         width,height=record['probe_size']
         self.blocker=pygame.Rect(round(self.position.x)-width//2,
                                  round(self.position.y)-height//2,width,height)

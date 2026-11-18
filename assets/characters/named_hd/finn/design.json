@@ -1,0 +1,31 @@
+{
+  "id": "finn",
+  "display_name": "Finn",
+  "age_group": "child",
+  "age_years": 6,
+  "gender": "boy",
+  "role": "civilian",
+  "density": 2,
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": {
+    "front": "idle_front.png",
+    "back": "idle_back.png",
+    "left": "idle_left.png",
+    "right": "idle_right.png"
+  },
+  "portrait": "portrait.png",
+  "status": "integrated",
+  "design_notes": "Native 44-art-pixel occupied Finn, preserved 22-world-pixel height: tousled brown hair, green eyes, tan shirt, olive vest and brown trousers. Original approved portrait retained without changes."
+}
