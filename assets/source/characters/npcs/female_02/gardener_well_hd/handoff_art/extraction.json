@@ -1,0 +1,2747 @@
+{
+  "version": 1,
+  "artwork_pixels_per_world_pixel": 2,
+  "status": "staged_authored_pose_sources",
+  "method": "New image_gen complete character drawings, technical cell extraction, hard alpha and uniform whole-frame normalization only. No limbs/body parts rotate or warp in export.",
+  "identity_reference": "assets/characters/npcs/female_02/idle_back.png",
+  "threshold": 220,
+  "records": [
+    {
+      "group": "attach_back",
+      "index": 0,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 0,
+      "source_cell_rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        101,
+        47,
+        214,
+        333
+      ],
+      "source_foot": [
+        157.0,
+        333
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_00.png",
+      "native_sha256": "326425421f0b77c8b18cab766aae8f944892e7814064d190b4801ca3056b275b",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 1,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 1,
+      "source_cell_rect": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        85,
+        47,
+        199,
+        333
+      ],
+      "source_foot": [
+        142.0,
+        333
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_01.png",
+      "native_sha256": "5ab5d391129db050795314f295bccedafb186c89341f30de7f545b0d129597ad",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 2,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 2,
+      "source_cell_rect": [
+        543,
+        0,
+        814,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        71,
+        47,
+        185,
+        333
+      ],
+      "source_foot": [
+        128.0,
+        333
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_02.png",
+      "native_sha256": "787394b8c07559f5fd8d81637c7bf0016aee4b0461b2f952e7c3d34268bd6820",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 3,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 3,
+      "source_cell_rect": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        57,
+        47,
+        171,
+        333
+      ],
+      "source_foot": [
+        113.5,
+        333
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_03.png",
+      "native_sha256": "1a4e5161de9978e9ab2450042098edd8b61aac3db8a29d211215d8f0d728710b",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 4,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 4,
+      "source_cell_rect": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        101,
+        41,
+        214,
+        326
+      ],
+      "source_foot": [
+        157.5,
+        326
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_04.png",
+      "native_sha256": "2de1a578ba7484797e1ca87e55d8688dd486752162870cbc5f8a46f4d41b65f1",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 5,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 5,
+      "source_cell_rect": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        85,
+        41,
+        199,
+        326
+      ],
+      "source_foot": [
+        142.5,
+        326
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_05.png",
+      "native_sha256": "7109069d5ffee854d0050f2bec24e062eb3569ac907e4411f4dfeb67a550bd8b",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 6,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 6,
+      "source_cell_rect": [
+        543,
+        362,
+        814,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        72,
+        41,
+        185,
+        326
+      ],
+      "source_foot": [
+        128.0,
+        326
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_06.png",
+      "native_sha256": "a068429d06c7ba3448fd152b6ed6efcfd285c6ae1843298a9dcec10dd2b1dd0d",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "attach_back",
+      "index": 7,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 7,
+      "source_cell_rect": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        57,
+        41,
+        171,
+        326
+      ],
+      "source_foot": [
+        113.5,
+        326
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/attach_back/frame_07.png",
+      "native_sha256": "ff08d5c42925787d7e8612474f3bd74a894518b0dc88eeaf1fe83c6bb09fab8d",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 0,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 8,
+      "source_cell_rect": [
+        0,
+        724,
+        272,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        105,
+        32,
+        209,
+        322
+      ],
+      "source_foot": [
+        155.0,
+        322
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        25,
+        69
+      ],
+      "native_offset": [
+        36,
+        11
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_00.png",
+      "native_sha256": "88c5b75a7b52eb0db681019a4d18444a521acc405926796f6c48a3c779fcd55d",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 1,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 9,
+      "source_cell_rect": [
+        272,
+        724,
+        543,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        85,
+        34,
+        195,
+        322
+      ],
+      "source_foot": [
+        140.0,
+        322
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        26,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_01.png",
+      "native_sha256": "aa84dc7d188694a5eec99c78d2c80f5132d8dc9a1c7a42e63a314b97fccabcfc",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 2,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 10,
+      "source_cell_rect": [
+        543,
+        724,
+        814,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        60,
+        45,
+        200,
+        322
+      ],
+      "source_foot": [
+        127.0,
+        322
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        33,
+        66
+      ],
+      "native_offset": [
+        32,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_02.png",
+      "native_sha256": "ec6f12b612821c354a48cecde5519b48ffedc0bd76b1564c97db46cb591e1e62",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 3,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 11,
+      "source_cell_rect": [
+        814,
+        724,
+        1086,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        36,
+        57,
+        193,
+        322
+      ],
+      "source_foot": [
+        113.0,
+        322
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        37,
+        63
+      ],
+      "native_offset": [
+        30,
+        17
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_03.png",
+      "native_sha256": "c7db8d0834bb9e0532bf08fae13d16641c301fb7def3603ea8a53dfb4f39b95d",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 4,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 12,
+      "source_cell_rect": [
+        0,
+        1086,
+        272,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        82,
+        56,
+        237,
+        313
+      ],
+      "source_foot": [
+        159.0,
+        313
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        37,
+        61
+      ],
+      "native_offset": [
+        30,
+        19
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_04.png",
+      "native_sha256": "ebd167304e89ee828f5dab0c06d1e84bcaf9dfbe214357994ec022374c1555d1",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 5,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 13,
+      "source_cell_rect": [
+        272,
+        1086,
+        543,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        79,
+        41,
+        213,
+        313
+      ],
+      "source_foot": [
+        142.0,
+        313
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        32,
+        65
+      ],
+      "native_offset": [
+        33,
+        15
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_05.png",
+      "native_sha256": "fc10072ae640933594e79a98685f7f24c6c63fb2c8090ca1e871bf7ca36c4cb7",
+      "discarded_fragment_components": 1
+    },
+    {
+      "group": "pickup_left",
+      "index": 6,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 14,
+      "source_cell_rect": [
+        543,
+        1086,
+        814,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        67,
+        30,
+        186,
+        313
+      ],
+      "source_foot": [
+        128.0,
+        313
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        28,
+        67
+      ],
+      "native_offset": [
+        33,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_06.png",
+      "native_sha256": "076410559030765d0ad23bae0ffc640904543c8984539d407e5d6c04af54f9fe",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pickup_left",
+      "index": 7,
+      "source": "transfer_pickup_master.png",
+      "source_sha256": "eb2d466b39d8fa172432d086e7f4b14c813650d57e25014f41f98bff0d5a1082",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 15,
+      "source_cell_rect": [
+        814,
+        1086,
+        1086,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        66,
+        25,
+        174,
+        313
+      ],
+      "source_foot": [
+        114.0,
+        313
+      ],
+      "whole_frame_uniform_scale": 0.23776223776223776,
+      "native_crop_size": [
+        26,
+        68
+      ],
+      "native_offset": [
+        37,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pickup_left/frame_07.png",
+      "native_sha256": "340ce57abd186471a17811e95806f3bb78de86d899ef1fac53fc2f0d5d7e9a05",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 0,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 0,
+      "source_cell_rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        93,
+        69,
+        200,
+        349
+      ],
+      "source_foot": [
+        149.5,
+        349
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        26,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_00.png",
+      "native_sha256": "0094708ee47f9b0f92a7b6741aa1765dd838757caf5ffdb4b0aae8460a6dd308",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 1,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 1,
+      "source_cell_rect": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        78,
+        69,
+        197,
+        349
+      ],
+      "source_foot": [
+        142.5,
+        349
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        29,
+        68
+      ],
+      "native_offset": [
+        32,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_01.png",
+      "native_sha256": "60d4c084f97777cd52da7db962e0e7b34df5fec8d24b964d427309f8abdfd174",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 2,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 2,
+      "source_cell_rect": [
+        543,
+        0,
+        814,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        68,
+        75,
+        198,
+        348
+      ],
+      "source_foot": [
+        133.5,
+        348
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        32,
+        66
+      ],
+      "native_offset": [
+        32,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_02.png",
+      "native_sha256": "ebec8ff97e8df9050093bf0a37efff99492fdfbea0110bc433e748efc2439aee",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 3,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 3,
+      "source_cell_rect": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        53,
+        76,
+        197,
+        348
+      ],
+      "source_foot": [
+        127.5,
+        348
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        35,
+        66
+      ],
+      "native_offset": [
+        30,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_03.png",
+      "native_sha256": "695758437a3fee6f6a0cdd863df03b166aafcc1a8889aa1508000f2635b6e056",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 4,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 4,
+      "source_cell_rect": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        81,
+        77,
+        231,
+        342
+      ],
+      "source_foot": [
+        153.0,
+        342
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        36,
+        64
+      ],
+      "native_offset": [
+        31,
+        16
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_04.png",
+      "native_sha256": "427d9e2da00a7dd34d938f65110f5ded1313258f80f8af712ebd4f9927109849",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 5,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 5,
+      "source_cell_rect": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        73,
+        73,
+        211,
+        342
+      ],
+      "source_foot": [
+        144.5,
+        342
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        34,
+        65
+      ],
+      "native_offset": [
+        31,
+        15
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_05.png",
+      "native_sha256": "6e7ea4e712e88d1ad5d619a977f3557ed6e8be50a2d222a1bd3efef9a11ba513",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 6,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 6,
+      "source_cell_rect": [
+        543,
+        362,
+        814,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        70,
+        67,
+        193,
+        342
+      ],
+      "source_foot": [
+        135.0,
+        342
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        30,
+        67
+      ],
+      "native_offset": [
+        32,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_06.png",
+      "native_sha256": "fd5b69f6b964b51adfced49415d1b42181f92087c50a1540a959e0285110544a",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_left",
+      "index": 7,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 7,
+      "source_cell_rect": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        65,
+        66,
+        180,
+        342
+      ],
+      "source_foot": [
+        128.5,
+        342
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        28,
+        67
+      ],
+      "native_offset": [
+        33,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_left/frame_07.png",
+      "native_sha256": "0e41912fef2b891ba556e9ae5a3eb257c60e9ccaa4d91fb20d441f3e51e083d6",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 0,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 8,
+      "source_cell_rect": [
+        0,
+        724,
+        272,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        90,
+        53,
+        199,
+        334
+      ],
+      "source_foot": [
+        144.5,
+        334
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        26,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_00.png",
+      "native_sha256": "e4623bf1273303f7289b6c47bb7128b5a3aa57960625c27930f0f92ce8faab10",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 1,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 9,
+      "source_cell_rect": [
+        272,
+        724,
+        543,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        72,
+        56,
+        193,
+        334
+      ],
+      "source_foot": [
+        129.5,
+        334
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        29,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_01.png",
+      "native_sha256": "84cbf3da51ed115f7efeff0a01610413c83786e0189df650e90feb1459a389c7",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 2,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 10,
+      "source_cell_rect": [
+        543,
+        724,
+        814,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        52,
+        61,
+        183,
+        334
+      ],
+      "source_foot": [
+        118.0,
+        334
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        32,
+        66
+      ],
+      "native_offset": [
+        32,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_02.png",
+      "native_sha256": "9535d3afeba82efc7789976681d3ff2cf56a81a3567e3c28fa1e583f77ba4863",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 3,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 11,
+      "source_cell_rect": [
+        814,
+        724,
+        1086,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        34,
+        63,
+        178,
+        334
+      ],
+      "source_foot": [
+        106.5,
+        334
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        35,
+        66
+      ],
+      "native_offset": [
+        30,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_03.png",
+      "native_sha256": "a2399983c3573b5b5c1fbd922868d5a567ae1379af3cc586140e35cfc859ec3f",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 4,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 12,
+      "source_cell_rect": [
+        0,
+        1086,
+        272,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        64,
+        63,
+        210,
+        325
+      ],
+      "source_foot": [
+        139.5,
+        325
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        35,
+        64
+      ],
+      "native_offset": [
+        30,
+        16
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_04.png",
+      "native_sha256": "bd69a64186d5666f41a113efc748ae83a9ea2ab407e3f552b1aca152efbe05b0",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 5,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 13,
+      "source_cell_rect": [
+        272,
+        1086,
+        543,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        61,
+        55,
+        195,
+        325
+      ],
+      "source_foot": [
+        130.5,
+        325
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        33,
+        66
+      ],
+      "native_offset": [
+        31,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_05.png",
+      "native_sha256": "8f2e8fbeba0170d1454d39f63ac0633995c29765c048ff39012a45a13e86443a",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 6,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 14,
+      "source_cell_rect": [
+        543,
+        1086,
+        814,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        60,
+        53,
+        181,
+        325
+      ],
+      "source_foot": [
+        119.0,
+        325
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        29,
+        66
+      ],
+      "native_offset": [
+        34,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_06.png",
+      "native_sha256": "443c98a8da3bbcfa00922bcf03ff50fb4a147d1eb609dc64bdeac07e5ec422f9",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_ground_right",
+      "index": 7,
+      "source": "ground_pour_master.png",
+      "source_sha256": "5274aced862da7d526b1525030e6662bab8f12c0afd0a1d94a7fef75d9ab1799",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 15,
+      "source_cell_rect": [
+        814,
+        1086,
+        1086,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        60,
+        50,
+        176,
+        325
+      ],
+      "source_foot": [
+        116.5,
+        325
+      ],
+      "whole_frame_uniform_scale": 0.24285714285714285,
+      "native_crop_size": [
+        28,
+        67
+      ],
+      "native_offset": [
+        34,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_ground_right/frame_07.png",
+      "native_sha256": "9a0d69f06b51d4b1abf9e8b1db4d8a1b852e5373ed588e28f59b6634b14ab81d",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 0,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 0,
+      "source_cell_rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        94,
+        72,
+        199,
+        347
+      ],
+      "source_foot": [
+        149.5,
+        347
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        26,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_00.png",
+      "native_sha256": "e570745b5185d0d6cfcd78de388a36fd24203fb5c620f345557f1f06659155de",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 1,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 1,
+      "source_cell_rect": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        84,
+        72,
+        192,
+        347
+      ],
+      "source_foot": [
+        142.5,
+        347
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_01.png",
+      "native_sha256": "4a1e37e67346737733c850845cdc20706bdeb19e8a65b53b68207bcd67a97dea",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 2,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 2,
+      "source_cell_rect": [
+        543,
+        0,
+        814,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        56,
+        74,
+        187,
+        347
+      ],
+      "source_foot": [
+        134.0,
+        347
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        32,
+        68
+      ],
+      "native_offset": [
+        29,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_02.png",
+      "native_sha256": "88a7484ad1bd584e27a406278356e1058ae239ba3bb199bd589278abdf3a8921",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 3,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 3,
+      "source_cell_rect": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        37,
+        75,
+        194,
+        347
+      ],
+      "source_foot": [
+        126.5,
+        347
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        39,
+        67
+      ],
+      "native_offset": [
+        26,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_03.png",
+      "native_sha256": "2d983ebcca0ae4f85cc0ec436be8ce650e2c7e9ebc2e6da626642b0763f9e3ec",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 4,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 4,
+      "source_cell_rect": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        60,
+        73,
+        223,
+        339
+      ],
+      "source_foot": [
+        154.5,
+        339
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        40,
+        66
+      ],
+      "native_offset": [
+        25,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_04.png",
+      "native_sha256": "dea1a2361af80d977ec863acd3617e50310baab7fb5a8a8cfe969c17d286327b",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 5,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 5,
+      "source_cell_rect": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        66,
+        72,
+        209,
+        339
+      ],
+      "source_foot": [
+        146.0,
+        339
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        35,
+        66
+      ],
+      "native_offset": [
+        28,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_05.png",
+      "native_sha256": "ddbba79e34b40ca0c68642d5f14e8ce392d558ef32ca16ce1600d3575c2e30fd",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 6,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 6,
+      "source_cell_rect": [
+        543,
+        362,
+        814,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        71,
+        69,
+        190,
+        339
+      ],
+      "source_foot": [
+        134.0,
+        339
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        29,
+        67
+      ],
+      "native_offset": [
+        32,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_06.png",
+      "native_sha256": "8d6431316ebd9aef2fa96cffbbf0e7d66c8004c1f6a2f398844f586b11298c0b",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_left",
+      "index": 7,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 7,
+      "source_cell_rect": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        68,
+        69,
+        178,
+        339
+      ],
+      "source_foot": [
+        128.0,
+        339
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        27,
+        67
+      ],
+      "native_offset": [
+        33,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_left/frame_07.png",
+      "native_sha256": "48d6fff2129fbb0feb8d14adc02759b9a00289a1c707abe90d41df0289cb6b06",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 0,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 8,
+      "source_cell_rect": [
+        0,
+        724,
+        272,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        89,
+        48,
+        198,
+        324
+      ],
+      "source_foot": [
+        145.0,
+        324
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_00.png",
+      "native_sha256": "cd6d42f982665747109a0ba2e079276f906927979f585ae071dee215e8c1ec26",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 1,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 9,
+      "source_cell_rect": [
+        272,
+        724,
+        543,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        80,
+        49,
+        191,
+        324
+      ],
+      "source_foot": [
+        135.0,
+        324
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        27,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_01.png",
+      "native_sha256": "0b3bf5d604b821ddf40a616d5a3b5c1daeca26904741a44cf3c54efe41058055",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 2,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 10,
+      "source_cell_rect": [
+        543,
+        724,
+        814,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        62,
+        51,
+        197,
+        324
+      ],
+      "source_foot": [
+        118.0,
+        324
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        33,
+        68
+      ],
+      "native_offset": [
+        34,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_02.png",
+      "native_sha256": "9d3122a0d5fae81d1bfc9c0e0f092bf7056a43f040c4d58c2a4b40913d2172b6",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 3,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 11,
+      "source_cell_rect": [
+        814,
+        724,
+        1086,
+        1086
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        44,
+        50,
+        200,
+        324
+      ],
+      "source_foot": [
+        112.5,
+        324
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        39,
+        68
+      ],
+      "native_offset": [
+        31,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_03.png",
+      "native_sha256": "37c95c571ab74aca0d0ee5847914ca9ed0679df96cc0779a4449f204edb00f3e",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 4,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 12,
+      "source_cell_rect": [
+        0,
+        1086,
+        272,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        63,
+        50,
+        220,
+        314
+      ],
+      "source_foot": [
+        137.0,
+        314
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        39,
+        65
+      ],
+      "native_offset": [
+        30,
+        15
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_04.png",
+      "native_sha256": "d704e146e77cb3366596e638963e9a27ed4595d51a64c5ce46429dbba1c93971",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 5,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 13,
+      "source_cell_rect": [
+        272,
+        1086,
+        543,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        62,
+        48,
+        198,
+        314
+      ],
+      "source_foot": [
+        129.5,
+        314
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        34,
+        66
+      ],
+      "native_offset": [
+        31,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_05.png",
+      "native_sha256": "1b0fdb72ce186fee895f2c09ea92f3ed4fabd485417b28713231fcc8c1f5700f",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 6,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 14,
+      "source_cell_rect": [
+        543,
+        1086,
+        814,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        60,
+        46,
+        184,
+        314
+      ],
+      "source_foot": [
+        120.5,
+        314
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        31,
+        66
+      ],
+      "native_offset": [
+        33,
+        14
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_06.png",
+      "native_sha256": "3b7bf6586b0bc146cc7737dff2f4bba24d62766cc882b7b17ed331d8c5ca69a7",
+      "discarded_fragment_components": 0
+    },
+    {
+      "group": "pour_trough_right",
+      "index": 7,
+      "source": "trough_pour_master.png",
+      "source_sha256": "3893afa957d8bec99a0adb313cb7787cdbd3626dac328c6a17f894aa0d5ff3d4",
+      "grid": [
+        4,
+        4
+      ],
+      "cell": 15,
+      "source_cell_rect": [
+        814,
+        1086,
+        1086,
+        1448
+      ],
+      "alpha_threshold": 220,
+      "source_component_policy": "Isolate the coherent complete full-body component after hard-alpha threshold; discard transparent generation fringe/noise only.",
+      "source_bbox": [
+        62,
+        44,
+        175,
+        314
+      ],
+      "source_foot": [
+        119.5,
+        314
+      ],
+      "whole_frame_uniform_scale": 0.24727272727272728,
+      "native_crop_size": [
+        28,
+        67
+      ],
+      "native_offset": [
+        34,
+        13
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/pour_trough_right/frame_07.png",
+      "native_sha256": "403f762149ffb937082544dc4ca808471cdd0cd93a30f4140e106a52736c50ff",
+      "discarded_fragment_components": 1
+    }
+  ],
+  "limits": "Static complete pose drawings. Grip/contact and joint mechanism timeline need final parent-level review. Attachment/retrieval can reverse authored reach/recover poses where motion remains natural."
+}

@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "method": "Complete image_gen-authored poses; technical component/cell isolation, hard alpha and uniform whole-frame normalization only.",
+  "records": [
+    {
+      "group": "support_left",
+      "index": 0,
+      "label": "engage_start",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 0,
+      "source_cell_rect": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        162,
+        42,
+        294,
+        399
+      ],
+      "source_foot": [
+        228.0,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        25,
+        68
+      ],
+      "native_offset": [
+        35,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_00.png",
+      "native_sha256": "de8db0e4b0901f8aa92a1717bbe7f74a45851ac1ae648bfd76fa4d6b2036b650"
+    },
+    {
+      "group": "support_left",
+      "index": 1,
+      "label": "engage_reach",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 1,
+      "source_cell_rect": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        123,
+        42,
+        293,
+        399
+      ],
+      "source_foot": [
+        228.0,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        32,
+        68
+      ],
+      "native_offset": [
+        28,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_01.png",
+      "native_sha256": "37408e24a30eb4fe2f4b2b7342206724b4bff2401294779cf590bcd85ce3ad63"
+    },
+    {
+      "group": "support_left",
+      "index": 2,
+      "label": "engage_grip",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 2,
+      "source_cell_rect": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        136,
+        42,
+        294,
+        399
+      ],
+      "source_foot": [
+        228.5,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        30,
+        68
+      ],
+      "native_offset": [
+        30,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_02.png",
+      "native_sha256": "ce194d8ff3715167cddacd811c918300ac73b287bd8851ceae122537219810b8"
+    },
+    {
+      "group": "support_left",
+      "index": 3,
+      "label": "brace_hold",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 3,
+      "source_cell_rect": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        129,
+        42,
+        295,
+        399
+      ],
+      "source_foot": [
+        229.0,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        32,
+        68
+      ],
+      "native_offset": [
+        29,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_03.png",
+      "native_sha256": "bc118d210aed425b5a0c2bb211d3d37562e7ef731b230b3da9ce11119ab78fb2"
+    },
+    {
+      "group": "support_left",
+      "index": 4,
+      "label": "secure_brake",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 4,
+      "source_cell_rect": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        129,
+        42,
+        294,
+        399
+      ],
+      "source_foot": [
+        228.0,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        31,
+        68
+      ],
+      "native_offset": [
+        29,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_04.png",
+      "native_sha256": "c5f7aee874b4d95fbeab335ff635c0d894917c3f593dcec25ee5a24d508142dd"
+    },
+    {
+      "group": "support_left",
+      "index": 5,
+      "label": "disengage_release",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 5,
+      "source_cell_rect": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        124,
+        42,
+        294,
+        399
+      ],
+      "source_foot": [
+        227.5,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        32,
+        68
+      ],
+      "native_offset": [
+        28,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_05.png",
+      "native_sha256": "e49d41fcc0b0fc8a4ac3448266ea7f325ea0ca1c7ef56e9aec3350959b20be22"
+    },
+    {
+      "group": "support_left",
+      "index": 6,
+      "label": "disengage_recover",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 6,
+      "source_cell_rect": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        137,
+        42,
+        294,
+        399
+      ],
+      "source_foot": [
+        228.0,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        30,
+        68
+      ],
+      "native_offset": [
+        31,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_06.png",
+      "native_sha256": "9d47f48b416b80a0176bd6bf0b29f90954f3f1333d1b74cef7e22dc9553515f6"
+    },
+    {
+      "group": "support_left",
+      "index": 7,
+      "label": "disengage_rest",
+      "source": "support_master.png",
+      "source_sha256": "ddf2bead15f5913b0a83dec71f72f50cb4a39b71fc3053a55f4d7d7a800bbc41",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": 7,
+      "source_cell_rect": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "alpha_threshold": 220,
+      "source_bbox": [
+        165,
+        41,
+        295,
+        399
+      ],
+      "source_foot": [
+        228.5,
+        399
+      ],
+      "whole_frame_uniform_scale": 0.19047619047619047,
+      "native_crop_size": [
+        25,
+        68
+      ],
+      "native_offset": [
+        36,
+        12
+      ],
+      "canvas_artwork": [
+        96,
+        96
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "draw_anchor_logical": [
+        24,
+        36
+      ],
+      "foot_anchor_artwork": [
+        48,
+        80
+      ],
+      "native_file": "native/frame_07.png",
+      "native_sha256": "46122ff89e569681fb20897a22170eda38694416afd9c2e7d9919d5b499c6cff"
+    }
+  ]
+}

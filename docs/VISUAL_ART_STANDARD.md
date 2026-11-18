@@ -1214,6 +1214,23 @@ hand contact or runtime layer ordering. The
 [staged well reference](TERRAIN_ART_STANDARD.md#staged-eldenmere-well-and-pail)
 owns its source/export commands and status.
 
+The staged gardener performance is separately exported to
+`assets/characters/npcs/female_02/gardener_well_hd/` by
+`tools/build_gardener_well_hd.py`. Its new complete action drawings use native
+96×96 artwork in the existing 48×48 logical action canvas, with distinct draw
+anchor `[24,36]` and visible foot registration `[24,40]`. Sixteen lowering and
+sixteen heavier raising drawings follow the shared mechanism crank sample;
+the read-only `gardener_well_presentation.py` adapter adds no animation clock,
+water accounting or object transfers. Back-facing reach/hold/recovery keys bind
+the canonical pail across the mechanism's ownership cues. Distinct engage,
+brace and brake poses, pickup/setdown and both ground/raised left/right pours
+are also staged. Four-direction travel explicitly retains the existing complete
+four-frame compatibility bodies and 560 ms cadence; it is not a new HD gait.
+The [performance review](reviews/gardener_well_hd/README.md) records source
+provenance, calibrated stations, actual-controller offline previews and limits.
+These exports do not select a new live gardener routine or approve final runtime
+navigation, state restoration or well/actor depth ordering.
+
 ### Integrated Sanctuary exterior
 
 The courtyard migration registers the Sanctuary facade at 216×216 logical units

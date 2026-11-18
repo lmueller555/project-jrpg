@@ -1,0 +1,1232 @@
+{
+  "method": "Image_gen authored complete frames; whole-cell uniform nearest normalization and foot registration only. No anatomy morphing, limb rigs, frame interpolation or pixel redraw.",
+  "uniform_scale": 0.24727272727272728,
+  "sources": [
+    {
+      "file": "lower_master.png",
+      "sha256": "5fa02c91040dd1bd4cf4e1653ecffea7bd7d4f67096e6781d45633ecfecc3c59"
+    },
+    {
+      "file": "raise_master.png",
+      "sha256": "61605c3122abd701a4396f79d82effaa20befc6812bab7b9d844e4b6c326b6d2"
+    }
+  ],
+  "frames": [
+    {
+      "id": "lower_00",
+      "file": "native/lower_00.png",
+      "family": "lower",
+      "sample": 0,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        0,
+        0,
+        312,
+        316
+      ],
+      "source_foot_artwork": [
+        175.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        7
+      ],
+      "hand_grip_artwork": [
+        29.0,
+        45.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_01",
+      "file": "native/lower_01.png",
+      "family": "lower",
+      "sample": 1,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        312,
+        0,
+        623,
+        316
+      ],
+      "source_foot_artwork": [
+        166.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        7
+      ],
+      "hand_grip_artwork": [
+        33,
+        41
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_02",
+      "file": "native/lower_02.png",
+      "family": "lower",
+      "sample": 2,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        623,
+        0,
+        934,
+        316
+      ],
+      "source_foot_artwork": [
+        157.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        9,
+        7
+      ],
+      "hand_grip_artwork": [
+        33.0,
+        39.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_03",
+      "file": "native/lower_03.png",
+      "family": "lower",
+      "sample": 3,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        934,
+        0,
+        1246,
+        316
+      ],
+      "source_foot_artwork": [
+        147.5,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        12,
+        7
+      ],
+      "hand_grip_artwork": [
+        34.0,
+        37.5
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_04",
+      "file": "native/lower_04.png",
+      "family": "lower",
+      "sample": 4,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        0,
+        316,
+        312,
+        632
+      ],
+      "source_foot_artwork": [
+        175.5,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        7
+      ],
+      "hand_grip_artwork": [
+        34.0,
+        36.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_05",
+      "file": "native/lower_05.png",
+      "family": "lower",
+      "sample": 5,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        312,
+        316,
+        623,
+        632
+      ],
+      "source_foot_artwork": [
+        165.5,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        7
+      ],
+      "hand_grip_artwork": [
+        35.5,
+        36.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_06",
+      "file": "native/lower_06.png",
+      "family": "lower",
+      "sample": 6,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        623,
+        316,
+        934,
+        632
+      ],
+      "source_foot_artwork": [
+        157.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        9,
+        7
+      ],
+      "hand_grip_artwork": [
+        33.0,
+        42.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_07",
+      "file": "native/lower_07.png",
+      "family": "lower",
+      "sample": 7,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        934,
+        316,
+        1246,
+        632
+      ],
+      "source_foot_artwork": [
+        148.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        11,
+        7
+      ],
+      "hand_grip_artwork": [
+        35.0,
+        49.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_08",
+      "file": "native/lower_08.png",
+      "family": "lower",
+      "sample": 8,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        0,
+        632,
+        312,
+        947
+      ],
+      "source_foot_artwork": [
+        175.5,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        7
+      ],
+      "hand_grip_artwork": [
+        38.0,
+        48.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_09",
+      "file": "native/lower_09.png",
+      "family": "lower",
+      "sample": 9,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        312,
+        632,
+        623,
+        947
+      ],
+      "source_foot_artwork": [
+        166.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        7
+      ],
+      "hand_grip_artwork": [
+        36,
+        51
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_10",
+      "file": "native/lower_10.png",
+      "family": "lower",
+      "sample": 10,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        623,
+        632,
+        934,
+        947
+      ],
+      "source_foot_artwork": [
+        157.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        9,
+        7
+      ],
+      "hand_grip_artwork": [
+        32,
+        50
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_11",
+      "file": "native/lower_11.png",
+      "family": "lower",
+      "sample": 11,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        934,
+        632,
+        1246,
+        947
+      ],
+      "source_foot_artwork": [
+        148.0,
+        294
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        11,
+        7
+      ],
+      "hand_grip_artwork": [
+        30.0,
+        49.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_12",
+      "file": "native/lower_12.png",
+      "family": "lower",
+      "sample": 12,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        0,
+        947,
+        312,
+        1263
+      ],
+      "source_foot_artwork": [
+        175.0,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        7
+      ],
+      "hand_grip_artwork": [
+        30,
+        48
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_13",
+      "file": "native/lower_13.png",
+      "family": "lower",
+      "sample": 13,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        312,
+        947,
+        623,
+        1263
+      ],
+      "source_foot_artwork": [
+        166.0,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        7
+      ],
+      "hand_grip_artwork": [
+        31.0,
+        45.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_14",
+      "file": "native/lower_14.png",
+      "family": "lower",
+      "sample": 14,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        623,
+        947,
+        934,
+        1263
+      ],
+      "source_foot_artwork": [
+        157.0,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        9,
+        7
+      ],
+      "hand_grip_artwork": [
+        29,
+        44
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "lower_15",
+      "file": "native/lower_15.png",
+      "family": "lower",
+      "sample": 15,
+      "source_master": "lower_master.png",
+      "source_cell": [
+        934,
+        947,
+        1246,
+        1263
+      ],
+      "source_foot_artwork": [
+        148.0,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        11,
+        7
+      ],
+      "hand_grip_artwork": [
+        28,
+        43
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_00",
+      "file": "native/raise_00.png",
+      "family": "raise",
+      "sample": 0,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        0,
+        0,
+        310,
+        318
+      ],
+      "source_foot_artwork": [
+        182.0,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        3,
+        7
+      ],
+      "hand_grip_artwork": [
+        27,
+        44
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_01",
+      "file": "native/raise_01.png",
+      "family": "raise",
+      "sample": 1,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        310,
+        0,
+        619,
+        318
+      ],
+      "source_foot_artwork": [
+        174.5,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        7
+      ],
+      "hand_grip_artwork": [
+        29.0,
+        51.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_02",
+      "file": "native/raise_02.png",
+      "family": "raise",
+      "sample": 2,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        619,
+        0,
+        928,
+        318
+      ],
+      "source_foot_artwork": [
+        166.5,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        7
+      ],
+      "hand_grip_artwork": [
+        30,
+        31
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_03",
+      "file": "native/raise_03.png",
+      "family": "raise",
+      "sample": 3,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        928,
+        0,
+        1238,
+        318
+      ],
+      "source_foot_artwork": [
+        160.0,
+        295
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        8,
+        7
+      ],
+      "hand_grip_artwork": [
+        29.0,
+        29.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_04",
+      "file": "native/raise_04.png",
+      "family": "raise",
+      "sample": 4,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        0,
+        318,
+        310,
+        636
+      ],
+      "source_foot_artwork": [
+        184.0,
+        292
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        3,
+        8
+      ],
+      "hand_grip_artwork": [
+        32,
+        50
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_05",
+      "file": "native/raise_05.png",
+      "family": "raise",
+      "sample": 5,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        310,
+        318,
+        619,
+        636
+      ],
+      "source_foot_artwork": [
+        175.0,
+        292
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        8
+      ],
+      "hand_grip_artwork": [
+        29,
+        43
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_06",
+      "file": "native/raise_06.png",
+      "family": "raise",
+      "sample": 6,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        619,
+        318,
+        928,
+        636
+      ],
+      "source_foot_artwork": [
+        167.5,
+        292
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        8
+      ],
+      "hand_grip_artwork": [
+        28.5,
+        40.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_07",
+      "file": "native/raise_07.png",
+      "family": "raise",
+      "sample": 7,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        928,
+        318,
+        1238,
+        636
+      ],
+      "source_foot_artwork": [
+        160.0,
+        292
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        8,
+        8
+      ],
+      "hand_grip_artwork": [
+        26.0,
+        41.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_08",
+      "file": "native/raise_08.png",
+      "family": "raise",
+      "sample": 8,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        0,
+        636,
+        310,
+        953
+      ],
+      "source_foot_artwork": [
+        184.5,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        2,
+        8
+      ],
+      "hand_grip_artwork": [
+        25,
+        46
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_09",
+      "file": "native/raise_09.png",
+      "family": "raise",
+      "sample": 9,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        310,
+        636,
+        619,
+        953
+      ],
+      "source_foot_artwork": [
+        174.0,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        5,
+        8
+      ],
+      "hand_grip_artwork": [
+        29.0,
+        52.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_10",
+      "file": "native/raise_10.png",
+      "family": "raise",
+      "sample": 10,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        619,
+        636,
+        928,
+        953
+      ],
+      "source_foot_artwork": [
+        166.0,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        7,
+        8
+      ],
+      "hand_grip_artwork": [
+        31.0,
+        35.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_11",
+      "file": "native/raise_11.png",
+      "family": "raise",
+      "sample": 11,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        928,
+        636,
+        1238,
+        953
+      ],
+      "source_foot_artwork": [
+        160.5,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        8,
+        8
+      ],
+      "hand_grip_artwork": [
+        29,
+        34
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_12",
+      "file": "native/raise_12.png",
+      "family": "raise",
+      "sample": 12,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        0,
+        953,
+        310,
+        1271
+      ],
+      "source_foot_artwork": [
+        183.5,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        3,
+        8
+      ],
+      "hand_grip_artwork": [
+        29,
+        50
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_13",
+      "file": "native/raise_13.png",
+      "family": "raise",
+      "sample": 13,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        310,
+        953,
+        619,
+        1271
+      ],
+      "source_foot_artwork": [
+        176.0,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        4,
+        8
+      ],
+      "hand_grip_artwork": [
+        28.0,
+        43.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_14",
+      "file": "native/raise_14.png",
+      "family": "raise",
+      "sample": 14,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        619,
+        953,
+        928,
+        1271
+      ],
+      "source_foot_artwork": [
+        168.5,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        6,
+        8
+      ],
+      "hand_grip_artwork": [
+        25.0,
+        39.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "raise_15",
+      "file": "native/raise_15.png",
+      "family": "raise",
+      "sample": 15,
+      "source_master": "raise_master.png",
+      "source_cell": [
+        928,
+        953,
+        1238,
+        1271
+      ],
+      "source_foot_artwork": [
+        161.0,
+        291
+      ],
+      "uniform_scale": 0.24727272727272728,
+      "registration_offset_artwork": [
+        8,
+        8
+      ],
+      "hand_grip_artwork": [
+        25.0,
+        40.0
+      ],
+      "foot_artwork": [
+        48,
+        80
+      ],
+      "logical_size": [
+        48,
+        48
+      ],
+      "artwork_size": [
+        96,
+        96
+      ]
+    }
+  ]
+}
