@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "character": "tessa",
+  "animation": "run.back",
+  "status": "candidate",
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "cycle_ms": 400,
+  "loop": true,
+  "spritesheet": "spritesheet.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 100,
+      "phase": "right_contact",
+      "bounds": [
+        8,
+        14,
+        37,
+        70
+      ],
+      "crown_y": 14,
+      "lowest_visible_sole_y": 69
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 100,
+      "phase": "flight_left_recovery",
+      "bounds": [
+        9,
+        12,
+        37,
+        67
+      ],
+      "crown_y": 12,
+      "lowest_visible_sole_y": 66
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 100,
+      "phase": "left_contact",
+      "bounds": [
+        9,
+        14,
+        37,
+        70
+      ],
+      "crown_y": 14,
+      "lowest_visible_sole_y": 69
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 100,
+      "phase": "flight_right_recovery",
+      "bounds": [
+        11,
+        12,
+        37,
+        67
+      ],
+      "crown_y": 12,
+      "lowest_visible_sole_y": 66
+    }
+  ]
+}
