@@ -1,0 +1,635 @@
+{
+  "version": 1,
+  "character": "innkeeper_06",
+  "animation": "walk.right",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/innkeeper_06/walk_right/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/innkeeper_06/walk_right/authored.png": "a77f0a30d9ad290d1044666ef37f5cf5074ffad3509d21dfe17f8ec75d653091",
+    "assets/characters/npc_roster_hd/innkeeper_06/idle_right.png": "955978f21751a7adca409a2f1a631676623ebaf28ba7526aa66a360f5ca342f2"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        17,
+        67
+      ],
+      "right_boot_bottom": [
+        35,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 33,
+      "visible_landmarks": {
+        "frame": 1,
+        "left_visible_toe": [
+          17,
+          67
+        ],
+        "right_visible_toe": [
+          35,
+          69
+        ],
+        "belt_visible_marker": [
+          29,
+          33
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          33
+        ],
+        "left_toe": [
+          17,
+          67
+        ],
+        "right_toe": [
+          35,
+          69
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        19,
+        64
+      ],
+      "right_boot_bottom": [
+        33,
+        69
+      ],
+      "crown_y": 3,
+      "belt_y": 34,
+      "visible_landmarks": {
+        "frame": 2,
+        "left_visible_toe": [
+          19,
+          64
+        ],
+        "right_visible_toe": [
+          33,
+          69
+        ],
+        "belt_visible_marker": [
+          29,
+          34
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          34
+        ],
+        "left_toe": [
+          19,
+          64
+        ],
+        "right_toe": [
+          33,
+          69
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        23,
+        65
+      ],
+      "right_boot_bottom": [
+        31,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 33,
+      "visible_landmarks": {
+        "frame": 3,
+        "left_visible_toe": [
+          21,
+          62
+        ],
+        "right_visible_toe": [
+          31,
+          69
+        ],
+        "belt_visible_marker": [
+          29,
+          33
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "left_boot_bottom_visibility": "hidden by near boot; visible lateral toe [21,62] tracked separately",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          33
+        ],
+        "left_toe": [
+          23,
+          65
+        ],
+        "right_toe": [
+          31,
+          69
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        34,
+        67
+      ],
+      "right_boot_bottom": [
+        29,
+        69
+      ],
+      "crown_y": 1,
+      "belt_y": 32,
+      "visible_landmarks": {
+        "frame": 4,
+        "left_visible_toe": [
+          34,
+          67
+        ],
+        "right_visible_toe": [
+          29,
+          69
+        ],
+        "belt_visible_marker": [
+          29,
+          32
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          32
+        ],
+        "left_toe": [
+          34,
+          67
+        ],
+        "right_toe": [
+          29,
+          69
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        35,
+        69
+      ],
+      "right_boot_bottom": [
+        17,
+        67
+      ],
+      "crown_y": 2,
+      "belt_y": 33,
+      "visible_landmarks": {
+        "frame": 5,
+        "left_visible_toe": [
+          35,
+          69
+        ],
+        "right_visible_toe": [
+          17,
+          67
+        ],
+        "belt_visible_marker": [
+          29,
+          33
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          33
+        ],
+        "left_toe": [
+          35,
+          69
+        ],
+        "right_toe": [
+          17,
+          67
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        33,
+        69
+      ],
+      "right_boot_bottom": [
+        19,
+        64
+      ],
+      "crown_y": 3,
+      "belt_y": 34,
+      "visible_landmarks": {
+        "frame": 6,
+        "left_visible_toe": [
+          33,
+          69
+        ],
+        "right_visible_toe": [
+          19,
+          64
+        ],
+        "belt_visible_marker": [
+          29,
+          34
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          34
+        ],
+        "left_toe": [
+          33,
+          69
+        ],
+        "right_toe": [
+          19,
+          64
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        31,
+        69
+      ],
+      "right_boot_bottom": [
+        29,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 33,
+      "visible_landmarks": {
+        "frame": 7,
+        "left_visible_toe": [
+          31,
+          69
+        ],
+        "right_visible_toe": [
+          29,
+          65
+        ],
+        "belt_visible_marker": [
+          29,
+          33
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          33
+        ],
+        "left_toe": [
+          31,
+          69
+        ],
+        "right_toe": [
+          29,
+          65
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        20,
+        69
+      ],
+      "right_boot_bottom": [
+        34,
+        67
+      ],
+      "crown_y": 1,
+      "belt_y": 32,
+      "visible_landmarks": {
+        "frame": 8,
+        "left_visible_toe": [
+          20,
+          69
+        ],
+        "right_visible_toe": [
+          34,
+          67
+        ],
+        "belt_visible_marker": [
+          29,
+          32
+        ],
+        "boot_ownership_verified": true
+      },
+      "occlusion": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          32
+        ],
+        "left_toe": [
+          20,
+          69
+        ],
+        "right_toe": [
+          34,
+          67
+        ],
+        "occlusion_note": "Long apron and skirt cover knees; anatomical right appears screen-left. Axial stance recedes in screen y; swing lifts and returns."
+      }
+    }
+  ]
+}
