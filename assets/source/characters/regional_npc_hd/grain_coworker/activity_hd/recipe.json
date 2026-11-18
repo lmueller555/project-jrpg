@@ -31,5 +31,6696 @@
     "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
     "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
     "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
-  ]
+  ],
+  "refined_masters": {
+    "poses/work_left_0.png": {
+      "file": "refined_masters/work_left_0.png",
+      "sha256": "0bf4a6c8d0a0b431f34e985803f53cf0da8a1436bfb3a7a18161edbf24ece66c"
+    },
+    "poses/work_left_1.png": {
+      "file": "refined_masters/work_left_1.png",
+      "sha256": "c0965969bc13cdf3701bd7132489cb0a3159285eb70f920054064d8df5768946"
+    },
+    "poses/work_left_2.png": {
+      "file": "refined_masters/work_left_2.png",
+      "sha256": "33bca5f68c867f97dfa0068b18ab04e90003439e6acf54e14f8bf75b86227853"
+    },
+    "poses/work_left_3.png": {
+      "file": "refined_masters/work_left_3.png",
+      "sha256": "54fbaff30894d0e3a8306b520b41a49d97037b82e0da14fc9704a05488abf07a"
+    },
+    "poses/assist_right_0.png": {
+      "file": "refined_masters/assist_right_0.png",
+      "sha256": "7fddfdb5f9c5431fdb770d46144532df5d31e2bd2985402599d608cb9fe5ff20"
+    },
+    "poses/assist_low_right_0.png": {
+      "file": "refined_masters/assist_low_right_0.png",
+      "sha256": "7fddfdb5f9c5431fdb770d46144532df5d31e2bd2985402599d608cb9fe5ff20"
+    },
+    "poses/assist_low_right_1.png": {
+      "file": "refined_masters/assist_low_right_1.png",
+      "sha256": "127c0e4a5fc1d3bd3291db7189b9f8e9f736c0d329f53bd97f670705cf4ff823"
+    },
+    "poses/assist_low_right_2.png": {
+      "file": "refined_masters/assist_low_right_2.png",
+      "sha256": "5d5bd2031a3672cf17b57da65dfdc976589e5494cc4edad15f0ae6dba40057ee"
+    },
+    "poses/assist_low_right_3.png": {
+      "file": "refined_masters/assist_low_right_3.png",
+      "sha256": "ab107a44e4580e32df1b57beb4f9960196d489cdf2f8c200f8491d67ba011148"
+    },
+    "poses/recover_right_0.png": {
+      "file": "refined_masters/recover_right_0.png",
+      "sha256": "cc4798bc04d81624101f3a9f66779db7e23e0ac42e3ef4b967aed2e6c1692f7a"
+    },
+    "poses/recover_right_1.png": {
+      "file": "refined_masters/recover_right_1.png",
+      "sha256": "128b96678933fed1484c1946592b561de425d17a898ce2c66fbf212b3e11bfca"
+    },
+    "poses/recover_right_2.png": {
+      "file": "refined_masters/recover_right_2.png",
+      "sha256": "90ed4840f98c9d3fd1602295ecde7ca11c520ace808bd9e8e4b5dd595029ef32"
+    },
+    "poses/recover_right_3.png": {
+      "file": "refined_masters/recover_right_3.png",
+      "sha256": "2d4668204cb93f4a47c5359d962028bec3dd4e147bbe4bf3c5cc2829875a0c81"
+    },
+    "poses/stretch_front_0.png": {
+      "file": "refined_masters/stretch_front_0.png",
+      "sha256": "5e9d9f3046e191e533dfcbe950ecf14bb247f201c1a37ea6f9455b9e002c1a8d"
+    },
+    "poses/stretch_front_1.png": {
+      "file": "refined_masters/stretch_front_1.png",
+      "sha256": "1eb4d3fc156be39a348a20a0b5809150b9a6301b42d3b13ad14e334e01450884"
+    },
+    "poses/stretch_front_2.png": {
+      "file": "refined_masters/stretch_front_2.png",
+      "sha256": "91039e127398274310017f04adf41906bffc245c2062b855f5468d6d4a04a121"
+    },
+    "poses/stretch_front_3.png": {
+      "file": "refined_masters/stretch_front_3.png",
+      "sha256": "afd0af15859ac89c385cc86a19f1632ffe2b8770c727282410cbad7afff0b296"
+    }
+  },
+  "native_drawings": {
+    "poses/work_left_0.png": {
+      "face": "left",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_left.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              24,
+              29
+            ],
+            [
+              20,
+              29
+            ],
+            [
+              19,
+              36
+            ],
+            [
+              16,
+              42
+            ],
+            [
+              11,
+              46
+            ],
+            [
+              10,
+              49
+            ],
+            [
+              13,
+              52
+            ],
+            [
+              17,
+              48
+            ],
+            [
+              22,
+              43
+            ],
+            [
+              25,
+              36
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              11,
+              48
+            ],
+            [
+              13,
+              48
+            ],
+            [
+              13,
+              50
+            ],
+            [
+              11,
+              50
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              28,
+              26
+            ],
+            [
+              20,
+              26
+            ],
+            [
+              16,
+              31
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              31,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              29
+            ],
+            [
+              26,
+              29
+            ],
+            [
+              27,
+              39
+            ],
+            [
+              28,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              29
+            ],
+            [
+              20,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              41
+            ],
+            [
+              28,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              11,
+              48
+            ],
+            [
+              13,
+              48
+            ],
+            [
+              13,
+              50
+            ],
+            [
+              11,
+              50
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              18,
+              35
+            ],
+            [
+              14,
+              40
+            ],
+            [
+              9,
+              44
+            ],
+            [
+              7,
+              47
+            ],
+            [
+              10,
+              50
+            ],
+            [
+              14,
+              47
+            ],
+            [
+              20,
+              42
+            ],
+            [
+              24,
+              35
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              9,
+              46
+            ],
+            [
+              11,
+              46
+            ],
+            [
+              11,
+              48
+            ],
+            [
+              9,
+              48
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/work_left_1.png": {
+      "face": "left",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_left.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              18,
+              35
+            ],
+            [
+              14,
+              40
+            ],
+            [
+              9,
+              44
+            ],
+            [
+              7,
+              47
+            ],
+            [
+              10,
+              50
+            ],
+            [
+              14,
+              47
+            ],
+            [
+              20,
+              42
+            ],
+            [
+              24,
+              35
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              9,
+              46
+            ],
+            [
+              11,
+              46
+            ],
+            [
+              11,
+              48
+            ],
+            [
+              9,
+              48
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              28,
+              26
+            ],
+            [
+              20,
+              26
+            ],
+            [
+              16,
+              31
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              31,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              29
+            ],
+            [
+              26,
+              29
+            ],
+            [
+              27,
+              39
+            ],
+            [
+              28,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              29
+            ],
+            [
+              20,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              41
+            ],
+            [
+              28,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              9,
+              46
+            ],
+            [
+              11,
+              46
+            ],
+            [
+              11,
+              48
+            ],
+            [
+              9,
+              48
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              16,
+              35
+            ],
+            [
+              10,
+              39
+            ],
+            [
+              3,
+              42
+            ],
+            [
+              1,
+              45
+            ],
+            [
+              4,
+              48
+            ],
+            [
+              10,
+              45
+            ],
+            [
+              17,
+              41
+            ],
+            [
+              23,
+              35
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              3,
+              44
+            ],
+            [
+              5,
+              44
+            ],
+            [
+              5,
+              46
+            ],
+            [
+              3,
+              46
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/work_left_2.png": {
+      "face": "left",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_left.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              18,
+              35
+            ],
+            [
+              14,
+              42
+            ],
+            [
+              9,
+              46
+            ],
+            [
+              7,
+              49
+            ],
+            [
+              10,
+              52
+            ],
+            [
+              14,
+              49
+            ],
+            [
+              20,
+              43
+            ],
+            [
+              24,
+              35
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              9,
+              48
+            ],
+            [
+              11,
+              48
+            ],
+            [
+              11,
+              50
+            ],
+            [
+              9,
+              50
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              28,
+              26
+            ],
+            [
+              20,
+              26
+            ],
+            [
+              16,
+              31
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              31,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              29
+            ],
+            [
+              26,
+              29
+            ],
+            [
+              27,
+              39
+            ],
+            [
+              28,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              29
+            ],
+            [
+              20,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              41
+            ],
+            [
+              28,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              9,
+              48
+            ],
+            [
+              11,
+              48
+            ],
+            [
+              11,
+              50
+            ],
+            [
+              9,
+              50
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              16,
+              34
+            ],
+            [
+              9,
+              39
+            ],
+            [
+              1,
+              42
+            ],
+            [
+              -1,
+              45
+            ],
+            [
+              2,
+              48
+            ],
+            [
+              9,
+              45
+            ],
+            [
+              17,
+              41
+            ],
+            [
+              23,
+              35
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              1,
+              44
+            ],
+            [
+              3,
+              44
+            ],
+            [
+              3,
+              46
+            ],
+            [
+              1,
+              46
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/work_left_3.png": {
+      "face": "left",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_left.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              24,
+              29
+            ],
+            [
+              20,
+              29
+            ],
+            [
+              19,
+              36
+            ],
+            [
+              16,
+              42
+            ],
+            [
+              11,
+              46
+            ],
+            [
+              10,
+              49
+            ],
+            [
+              13,
+              52
+            ],
+            [
+              17,
+              48
+            ],
+            [
+              22,
+              43
+            ],
+            [
+              25,
+              36
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              11,
+              48
+            ],
+            [
+              13,
+              48
+            ],
+            [
+              13,
+              50
+            ],
+            [
+              11,
+              50
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              28,
+              26
+            ],
+            [
+              20,
+              26
+            ],
+            [
+              16,
+              31
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              31,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              29
+            ],
+            [
+              26,
+              29
+            ],
+            [
+              27,
+              39
+            ],
+            [
+              28,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              29
+            ],
+            [
+              20,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              41
+            ],
+            [
+              28,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              11,
+              48
+            ],
+            [
+              13,
+              48
+            ],
+            [
+              13,
+              50
+            ],
+            [
+              11,
+              50
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              18,
+              35
+            ],
+            [
+              13,
+              40
+            ],
+            [
+              7,
+              44
+            ],
+            [
+              5,
+              47
+            ],
+            [
+              8,
+              50
+            ],
+            [
+              13,
+              47
+            ],
+            [
+              20,
+              42
+            ],
+            [
+              24,
+              35
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ],
+            [
+              23,
+              36
+            ],
+            [
+              19,
+              35
+            ],
+            [
+              17,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              28
+            ],
+            [
+              23,
+              27
+            ],
+            [
+              25,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              7,
+              46
+            ],
+            [
+              9,
+              46
+            ],
+            [
+              9,
+              48
+            ],
+            [
+              7,
+              48
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/assist_right_0.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_right.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              23,
+              29
+            ],
+            [
+              27,
+              29
+            ],
+            [
+              30,
+              35
+            ],
+            [
+              32,
+              40
+            ],
+            [
+              37,
+              44
+            ],
+            [
+              40,
+              46
+            ],
+            [
+              39,
+              49
+            ],
+            [
+              36,
+              50
+            ],
+            [
+              30,
+              46
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              22,
+              34
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              37,
+              46
+            ],
+            [
+              39,
+              46
+            ],
+            [
+              39,
+              48
+            ],
+            [
+              37,
+              48
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              19,
+              26
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              31,
+              31
+            ],
+            [
+              29,
+              39
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              16,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              29
+            ],
+            [
+              21,
+              29
+            ],
+            [
+              20,
+              39
+            ],
+            [
+              19,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              27,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              19,
+              41
+            ],
+            [
+              27,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              37,
+              46
+            ],
+            [
+              39,
+              46
+            ],
+            [
+              39,
+              48
+            ],
+            [
+              37,
+              48
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              39
+            ],
+            [
+              40,
+              38
+            ],
+            [
+              44,
+              39
+            ],
+            [
+              45,
+              42
+            ],
+            [
+              42,
+              44
+            ],
+            [
+              34,
+              45
+            ],
+            [
+              29,
+              41
+            ],
+            [
+              24,
+              35
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              41,
+              40
+            ],
+            [
+              43,
+              40
+            ],
+            [
+              43,
+              42
+            ],
+            [
+              41,
+              42
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/assist_low_right_0.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_right.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              23,
+              29
+            ],
+            [
+              27,
+              29
+            ],
+            [
+              30,
+              35
+            ],
+            [
+              32,
+              40
+            ],
+            [
+              37,
+              44
+            ],
+            [
+              40,
+              46
+            ],
+            [
+              39,
+              49
+            ],
+            [
+              36,
+              50
+            ],
+            [
+              30,
+              46
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              22,
+              34
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              37,
+              46
+            ],
+            [
+              39,
+              46
+            ],
+            [
+              39,
+              48
+            ],
+            [
+              37,
+              48
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              19,
+              26
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              31,
+              31
+            ],
+            [
+              29,
+              39
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              16,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              29
+            ],
+            [
+              21,
+              29
+            ],
+            [
+              20,
+              39
+            ],
+            [
+              19,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              27,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              19,
+              41
+            ],
+            [
+              27,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              37,
+              46
+            ],
+            [
+              39,
+              46
+            ],
+            [
+              39,
+              48
+            ],
+            [
+              37,
+              48
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              23,
+              28
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              39
+            ],
+            [
+              40,
+              38
+            ],
+            [
+              44,
+              39
+            ],
+            [
+              45,
+              42
+            ],
+            [
+              42,
+              44
+            ],
+            [
+              34,
+              45
+            ],
+            [
+              29,
+              41
+            ],
+            [
+              24,
+              35
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              41,
+              40
+            ],
+            [
+              43,
+              40
+            ],
+            [
+              43,
+              42
+            ],
+            [
+              41,
+              42
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/assist_low_right_1.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        3,
+        7
+      ],
+      "native_leg_source": null,
+      "shapes": [
+        {
+          "points": [
+            [
+              19,
+              44
+            ],
+            [
+              25,
+              45
+            ],
+            [
+              26,
+              51
+            ],
+            [
+              20,
+              58
+            ],
+            [
+              18,
+              65
+            ],
+            [
+              13,
+              66
+            ],
+            [
+              13,
+              60
+            ],
+            [
+              15,
+              53
+            ]
+          ],
+          "fill": "#594334",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              45
+            ],
+            [
+              29,
+              45
+            ],
+            [
+              33,
+              50
+            ],
+            [
+              33,
+              56
+            ],
+            [
+              29,
+              63
+            ],
+            [
+              28,
+              68
+            ],
+            [
+              22,
+              69
+            ],
+            [
+              23,
+              63
+            ],
+            [
+              26,
+              56
+            ],
+            [
+              23,
+              52
+            ]
+          ],
+          "fill": "#7e6049",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              63
+            ],
+            [
+              18,
+              63
+            ],
+            [
+              20,
+              67
+            ],
+            [
+              19,
+              69
+            ],
+            [
+              10,
+              69
+            ],
+            [
+              9,
+              67
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              65
+            ],
+            [
+              29,
+              65
+            ],
+            [
+              32,
+              67
+            ],
+            [
+              32,
+              69
+            ],
+            [
+              22,
+              69
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              53
+            ],
+            [
+              28,
+              57
+            ],
+            [
+              26,
+              62
+            ]
+          ],
+          "fill": "#a17f60",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              26,
+              32
+            ],
+            [
+              30,
+              33
+            ],
+            [
+              31,
+              40
+            ],
+            [
+              32,
+              46
+            ],
+            [
+              37,
+              50
+            ],
+            [
+              40,
+              52
+            ],
+            [
+              39,
+              55
+            ],
+            [
+              36,
+              56
+            ],
+            [
+              29,
+              51
+            ],
+            [
+              27,
+              44
+            ],
+            [
+              25,
+              37
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              37,
+              52
+            ],
+            [
+              39,
+              52
+            ],
+            [
+              39,
+              54
+            ],
+            [
+              37,
+              54
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              31
+            ],
+            [
+              29,
+              31
+            ],
+            [
+              34,
+              36
+            ],
+            [
+              34,
+              43
+            ],
+            [
+              31,
+              51
+            ],
+            [
+              21,
+              51
+            ],
+            [
+              19,
+              43
+            ],
+            [
+              19,
+              36
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              33
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              29,
+              48
+            ],
+            [
+              27,
+              48
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              35
+            ],
+            [
+              22,
+              42
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              46
+            ],
+            [
+              31,
+              46
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              45
+            ],
+            [
+              31,
+              45
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              37,
+              52
+            ],
+            [
+              39,
+              52
+            ],
+            [
+              39,
+              54
+            ],
+            [
+              37,
+              54
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              26,
+              31
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              32,
+              39
+            ],
+            [
+              35,
+              43
+            ],
+            [
+              41,
+              46
+            ],
+            [
+              44,
+              48
+            ],
+            [
+              43,
+              51
+            ],
+            [
+              40,
+              52
+            ],
+            [
+              33,
+              48
+            ],
+            [
+              28,
+              42
+            ],
+            [
+              25,
+              36
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              38
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              28,
+              41
+            ],
+            [
+              25,
+              37
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              38
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              41,
+              48
+            ],
+            [
+              43,
+              48
+            ],
+            [
+              43,
+              50
+            ],
+            [
+              41,
+              50
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/assist_low_right_2.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        3,
+        7
+      ],
+      "native_leg_source": null,
+      "shapes": [
+        {
+          "points": [
+            [
+              19,
+              44
+            ],
+            [
+              25,
+              45
+            ],
+            [
+              26,
+              51
+            ],
+            [
+              20,
+              58
+            ],
+            [
+              18,
+              65
+            ],
+            [
+              13,
+              66
+            ],
+            [
+              13,
+              60
+            ],
+            [
+              15,
+              53
+            ]
+          ],
+          "fill": "#594334",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              45
+            ],
+            [
+              29,
+              45
+            ],
+            [
+              33,
+              50
+            ],
+            [
+              33,
+              56
+            ],
+            [
+              29,
+              63
+            ],
+            [
+              28,
+              68
+            ],
+            [
+              22,
+              69
+            ],
+            [
+              23,
+              63
+            ],
+            [
+              26,
+              56
+            ],
+            [
+              23,
+              52
+            ]
+          ],
+          "fill": "#7e6049",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              63
+            ],
+            [
+              18,
+              63
+            ],
+            [
+              20,
+              67
+            ],
+            [
+              19,
+              69
+            ],
+            [
+              10,
+              69
+            ],
+            [
+              9,
+              67
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              65
+            ],
+            [
+              29,
+              65
+            ],
+            [
+              32,
+              67
+            ],
+            [
+              32,
+              69
+            ],
+            [
+              22,
+              69
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              53
+            ],
+            [
+              28,
+              57
+            ],
+            [
+              26,
+              62
+            ]
+          ],
+          "fill": "#a17f60",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              27,
+              36
+            ],
+            [
+              31,
+              37
+            ],
+            [
+              31,
+              44
+            ],
+            [
+              32,
+              51
+            ],
+            [
+              37,
+              57
+            ],
+            [
+              42,
+              59
+            ],
+            [
+              42,
+              62
+            ],
+            [
+              39,
+              64
+            ],
+            [
+              35,
+              61
+            ],
+            [
+              29,
+              56
+            ],
+            [
+              27,
+              49
+            ],
+            [
+              25,
+              42
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              39,
+              60
+            ],
+            [
+              41,
+              60
+            ],
+            [
+              41,
+              62
+            ],
+            [
+              39,
+              62
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              31
+            ],
+            [
+              29,
+              31
+            ],
+            [
+              34,
+              36
+            ],
+            [
+              34,
+              43
+            ],
+            [
+              31,
+              51
+            ],
+            [
+              21,
+              51
+            ],
+            [
+              19,
+              43
+            ],
+            [
+              19,
+              36
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              33
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              29,
+              48
+            ],
+            [
+              27,
+              48
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              35
+            ],
+            [
+              22,
+              42
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              46
+            ],
+            [
+              31,
+              46
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              45
+            ],
+            [
+              31,
+              45
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              39,
+              60
+            ],
+            [
+              41,
+              60
+            ],
+            [
+              41,
+              62
+            ],
+            [
+              39,
+              62
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              27,
+              35
+            ],
+            [
+              31,
+              36
+            ],
+            [
+              33,
+              43
+            ],
+            [
+              36,
+              49
+            ],
+            [
+              42,
+              54
+            ],
+            [
+              47,
+              56
+            ],
+            [
+              49,
+              59
+            ],
+            [
+              47,
+              62
+            ],
+            [
+              43,
+              61
+            ],
+            [
+              37,
+              57
+            ],
+            [
+              31,
+              52
+            ],
+            [
+              28,
+              45
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              38
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              28,
+              41
+            ],
+            [
+              25,
+              37
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              38
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              45,
+              58
+            ],
+            [
+              47,
+              58
+            ],
+            [
+              47,
+              60
+            ],
+            [
+              45,
+              60
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/assist_low_right_3.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        3,
+        7
+      ],
+      "native_leg_source": null,
+      "shapes": [
+        {
+          "points": [
+            [
+              19,
+              44
+            ],
+            [
+              25,
+              45
+            ],
+            [
+              26,
+              51
+            ],
+            [
+              20,
+              58
+            ],
+            [
+              18,
+              65
+            ],
+            [
+              13,
+              66
+            ],
+            [
+              13,
+              60
+            ],
+            [
+              15,
+              53
+            ]
+          ],
+          "fill": "#594334",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              45
+            ],
+            [
+              29,
+              45
+            ],
+            [
+              33,
+              50
+            ],
+            [
+              33,
+              56
+            ],
+            [
+              29,
+              63
+            ],
+            [
+              28,
+              68
+            ],
+            [
+              22,
+              69
+            ],
+            [
+              23,
+              63
+            ],
+            [
+              26,
+              56
+            ],
+            [
+              23,
+              52
+            ]
+          ],
+          "fill": "#7e6049",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              63
+            ],
+            [
+              18,
+              63
+            ],
+            [
+              20,
+              67
+            ],
+            [
+              19,
+              69
+            ],
+            [
+              10,
+              69
+            ],
+            [
+              9,
+              67
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              65
+            ],
+            [
+              29,
+              65
+            ],
+            [
+              32,
+              67
+            ],
+            [
+              32,
+              69
+            ],
+            [
+              22,
+              69
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              53
+            ],
+            [
+              28,
+              57
+            ],
+            [
+              26,
+              62
+            ]
+          ],
+          "fill": "#a17f60",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              26,
+              34
+            ],
+            [
+              30,
+              35
+            ],
+            [
+              31,
+              42
+            ],
+            [
+              33,
+              48
+            ],
+            [
+              39,
+              52
+            ],
+            [
+              42,
+              54
+            ],
+            [
+              41,
+              57
+            ],
+            [
+              38,
+              58
+            ],
+            [
+              31,
+              53
+            ],
+            [
+              27,
+              47
+            ],
+            [
+              25,
+              40
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              39,
+              54
+            ],
+            [
+              41,
+              54
+            ],
+            [
+              41,
+              56
+            ],
+            [
+              39,
+              56
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              31
+            ],
+            [
+              29,
+              31
+            ],
+            [
+              34,
+              36
+            ],
+            [
+              34,
+              43
+            ],
+            [
+              31,
+              51
+            ],
+            [
+              21,
+              51
+            ],
+            [
+              19,
+              43
+            ],
+            [
+              19,
+              36
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              33
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              29,
+              48
+            ],
+            [
+              27,
+              48
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              35
+            ],
+            [
+              22,
+              42
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              46
+            ],
+            [
+              31,
+              46
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              45
+            ],
+            [
+              31,
+              45
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              39,
+              54
+            ],
+            [
+              41,
+              54
+            ],
+            [
+              41,
+              56
+            ],
+            [
+              39,
+              56
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              32,
+              41
+            ],
+            [
+              36,
+              46
+            ],
+            [
+              43,
+              51
+            ],
+            [
+              47,
+              52
+            ],
+            [
+              49,
+              55
+            ],
+            [
+              46,
+              58
+            ],
+            [
+              42,
+              57
+            ],
+            [
+              35,
+              52
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              26,
+              39
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              38
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              28,
+              41
+            ],
+            [
+              25,
+              37
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              33
+            ],
+            [
+              30,
+              34
+            ],
+            [
+              33,
+              38
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              45,
+              54
+            ],
+            [
+              47,
+              54
+            ],
+            [
+              47,
+              56
+            ],
+            [
+              45,
+              56
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": null
+        }
+      ]
+    },
+    "poses/recover_right_0.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        3,
+        7
+      ],
+      "native_leg_source": null,
+      "shapes": [
+        {
+          "points": [
+            [
+              19,
+              44
+            ],
+            [
+              25,
+              45
+            ],
+            [
+              26,
+              51
+            ],
+            [
+              20,
+              58
+            ],
+            [
+              18,
+              65
+            ],
+            [
+              13,
+              66
+            ],
+            [
+              13,
+              60
+            ],
+            [
+              15,
+              53
+            ]
+          ],
+          "fill": "#594334",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              45
+            ],
+            [
+              29,
+              45
+            ],
+            [
+              33,
+              50
+            ],
+            [
+              33,
+              56
+            ],
+            [
+              29,
+              63
+            ],
+            [
+              28,
+              68
+            ],
+            [
+              22,
+              69
+            ],
+            [
+              23,
+              63
+            ],
+            [
+              26,
+              56
+            ],
+            [
+              23,
+              52
+            ]
+          ],
+          "fill": "#7e6049",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              63
+            ],
+            [
+              18,
+              63
+            ],
+            [
+              20,
+              67
+            ],
+            [
+              19,
+              69
+            ],
+            [
+              10,
+              69
+            ],
+            [
+              9,
+              67
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              65
+            ],
+            [
+              29,
+              65
+            ],
+            [
+              32,
+              67
+            ],
+            [
+              32,
+              69
+            ],
+            [
+              22,
+              69
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              53
+            ],
+            [
+              28,
+              57
+            ],
+            [
+              26,
+              62
+            ]
+          ],
+          "fill": "#a17f60",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              22,
+              31
+            ],
+            [
+              29,
+              31
+            ],
+            [
+              34,
+              36
+            ],
+            [
+              34,
+              43
+            ],
+            [
+              31,
+              51
+            ],
+            [
+              21,
+              51
+            ],
+            [
+              19,
+              43
+            ],
+            [
+              19,
+              36
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              33
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              29,
+              48
+            ],
+            [
+              27,
+              48
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              22,
+              35
+            ],
+            [
+              22,
+              42
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              46
+            ],
+            [
+              31,
+              46
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              21,
+              45
+            ],
+            [
+              31,
+              45
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              29,
+              30
+            ],
+            [
+              32,
+              38
+            ],
+            [
+              31,
+              46
+            ],
+            [
+              28,
+              48
+            ],
+            [
+              25,
+              46
+            ],
+            [
+              26,
+              39
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/recover_right_1.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        2,
+        4
+      ],
+      "native_leg_source": null,
+      "shapes": [
+        {
+          "points": [
+            [
+              18,
+              44
+            ],
+            [
+              24,
+              45
+            ],
+            [
+              24,
+              52
+            ],
+            [
+              21,
+              58
+            ],
+            [
+              20,
+              65
+            ],
+            [
+              15,
+              66
+            ],
+            [
+              15,
+              59
+            ],
+            [
+              16,
+              52
+            ]
+          ],
+          "fill": "#594334",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              24,
+              44
+            ],
+            [
+              29,
+              45
+            ],
+            [
+              31,
+              51
+            ],
+            [
+              30,
+              57
+            ],
+            [
+              28,
+              64
+            ],
+            [
+              28,
+              68
+            ],
+            [
+              22,
+              69
+            ],
+            [
+              23,
+              61
+            ],
+            [
+              25,
+              55
+            ],
+            [
+              23,
+              50
+            ]
+          ],
+          "fill": "#7e6049",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              14,
+              64
+            ],
+            [
+              20,
+              64
+            ],
+            [
+              21,
+              67
+            ],
+            [
+              20,
+              69
+            ],
+            [
+              12,
+              69
+            ],
+            [
+              12,
+              67
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              22,
+              65
+            ],
+            [
+              28,
+              65
+            ],
+            [
+              31,
+              67
+            ],
+            [
+              31,
+              69
+            ],
+            [
+              21,
+              69
+            ]
+          ],
+          "fill": "#714b34",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              26,
+              52
+            ],
+            [
+              27,
+              57
+            ],
+            [
+              25,
+              62
+            ]
+          ],
+          "fill": "#a17f60",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              28
+            ],
+            [
+              28,
+              28
+            ],
+            [
+              32,
+              33
+            ],
+            [
+              31,
+              40
+            ],
+            [
+              30,
+              48
+            ],
+            [
+              19,
+              48
+            ],
+            [
+              17,
+              39
+            ],
+            [
+              18,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              20,
+              31
+            ],
+            [
+              20,
+              40
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              19,
+              43
+            ],
+            [
+              29,
+              43
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              42
+            ],
+            [
+              28,
+              42
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              29,
+              30
+            ],
+            [
+              31,
+              38
+            ],
+            [
+              30,
+              45
+            ],
+            [
+              27,
+              48
+            ],
+            [
+              25,
+              46
+            ],
+            [
+              26,
+              39
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/recover_right_2.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        1,
+        2
+      ],
+      "native_leg_source": "idle_right.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              19,
+              26
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              31,
+              31
+            ],
+            [
+              29,
+              39
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              16,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              29
+            ],
+            [
+              21,
+              29
+            ],
+            [
+              20,
+              39
+            ],
+            [
+              19,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              27,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              19,
+              41
+            ],
+            [
+              27,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              29,
+              30
+            ],
+            [
+              31,
+              38
+            ],
+            [
+              30,
+              45
+            ],
+            [
+              27,
+              48
+            ],
+            [
+              25,
+              46
+            ],
+            [
+              26,
+              39
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/recover_right_3.png": {
+      "face": "right",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_right.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              19,
+              26
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              31,
+              31
+            ],
+            [
+              29,
+              39
+            ],
+            [
+              29,
+              46
+            ],
+            [
+              18,
+              46
+            ],
+            [
+              16,
+              34
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              19,
+              29
+            ],
+            [
+              21,
+              29
+            ],
+            [
+              20,
+              39
+            ],
+            [
+              19,
+              43
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              27,
+              34
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              19,
+              41
+            ],
+            [
+              27,
+              41
+            ]
+          ],
+          "fill": "#68442e",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              20,
+              40
+            ],
+            [
+              27,
+              40
+            ]
+          ],
+          "fill": "#b18e56",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              25,
+              29
+            ],
+            [
+              29,
+              30
+            ],
+            [
+              32,
+              38
+            ],
+            [
+              31,
+              46
+            ],
+            [
+              28,
+              48
+            ],
+            [
+              25,
+              46
+            ],
+            [
+              26,
+              39
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              23,
+              27
+            ],
+            [
+              27,
+              28
+            ],
+            [
+              30,
+              32
+            ],
+            [
+              29,
+              36
+            ],
+            [
+              25,
+              35
+            ],
+            [
+              22,
+              31
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/stretch_front_0.png": {
+      "face": "front",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_front.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              33,
+              29
+            ],
+            [
+              36,
+              31
+            ],
+            [
+              37,
+              39
+            ],
+            [
+              37,
+              45
+            ],
+            [
+              35,
+              48
+            ],
+            [
+              32,
+              46
+            ],
+            [
+              33,
+              39
+            ],
+            [
+              31,
+              33
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              16,
+              25
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              27,
+              24
+            ],
+            [
+              32,
+              25
+            ],
+            [
+              35,
+              30
+            ],
+            [
+              32,
+              37
+            ],
+            [
+              30,
+              39
+            ],
+            [
+              31,
+              45
+            ],
+            [
+              26,
+              47
+            ],
+            [
+              23,
+              45
+            ],
+            [
+              16,
+              46
+            ],
+            [
+              16,
+              39
+            ],
+            [
+              13,
+              36
+            ],
+            [
+              12,
+              30
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              27
+            ],
+            [
+              32,
+              30
+            ],
+            [
+              29,
+              37
+            ],
+            [
+              29,
+              43
+            ],
+            [
+              26,
+              44
+            ],
+            [
+              26,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              41
+            ],
+            [
+              29,
+              41
+            ]
+          ],
+          "fill": "#59402b",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              40
+            ],
+            [
+              29,
+              40
+            ]
+          ],
+          "fill": "#9f7a48",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              23,
+              40
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              26,
+              42
+            ],
+            [
+              23,
+              42
+            ]
+          ],
+          "fill": "#d9b967",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              19,
+              25
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              17,
+              27
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              24,
+              30
+            ],
+            [
+              24,
+              38
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              13,
+              28
+            ],
+            [
+              17,
+              28
+            ],
+            [
+              16,
+              35
+            ],
+            [
+              15,
+              42
+            ],
+            [
+              12,
+              47
+            ],
+            [
+              9,
+              45
+            ],
+            [
+              11,
+              38
+            ],
+            [
+              10,
+              32
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              34,
+              28
+            ],
+            [
+              30,
+              28
+            ],
+            [
+              31,
+              35
+            ],
+            [
+              32,
+              42
+            ],
+            [
+              35,
+              47
+            ],
+            [
+              38,
+              45
+            ],
+            [
+              36,
+              38
+            ],
+            [
+              37,
+              32
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              27
+            ],
+            [
+              17,
+              27
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              20,
+              36
+            ],
+            [
+              15,
+              36
+            ],
+            [
+              11,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              35,
+              27
+            ],
+            [
+              30,
+              27
+            ],
+            [
+              26,
+              32
+            ],
+            [
+              27,
+              36
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              36,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/stretch_front_1.png": {
+      "face": "front",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_front.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              33,
+              29
+            ],
+            [
+              36,
+              31
+            ],
+            [
+              37,
+              39
+            ],
+            [
+              37,
+              45
+            ],
+            [
+              35,
+              48
+            ],
+            [
+              32,
+              46
+            ],
+            [
+              33,
+              39
+            ],
+            [
+              31,
+              33
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              16,
+              25
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              27,
+              24
+            ],
+            [
+              32,
+              25
+            ],
+            [
+              35,
+              30
+            ],
+            [
+              32,
+              37
+            ],
+            [
+              30,
+              39
+            ],
+            [
+              31,
+              45
+            ],
+            [
+              26,
+              47
+            ],
+            [
+              23,
+              45
+            ],
+            [
+              16,
+              46
+            ],
+            [
+              16,
+              39
+            ],
+            [
+              13,
+              36
+            ],
+            [
+              12,
+              30
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              27
+            ],
+            [
+              32,
+              30
+            ],
+            [
+              29,
+              37
+            ],
+            [
+              29,
+              43
+            ],
+            [
+              26,
+              44
+            ],
+            [
+              26,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              41
+            ],
+            [
+              29,
+              41
+            ]
+          ],
+          "fill": "#59402b",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              40
+            ],
+            [
+              29,
+              40
+            ]
+          ],
+          "fill": "#9f7a48",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              23,
+              40
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              26,
+              42
+            ],
+            [
+              23,
+              42
+            ]
+          ],
+          "fill": "#d9b967",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              19,
+              25
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              17,
+              27
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              24,
+              30
+            ],
+            [
+              24,
+              38
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              13,
+              28
+            ],
+            [
+              17,
+              29
+            ],
+            [
+              14,
+              34
+            ],
+            [
+              9,
+              33
+            ],
+            [
+              6,
+              27
+            ],
+            [
+              7,
+              21
+            ],
+            [
+              10,
+              21
+            ],
+            [
+              10,
+              27
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              34,
+              28
+            ],
+            [
+              30,
+              29
+            ],
+            [
+              33,
+              34
+            ],
+            [
+              38,
+              33
+            ],
+            [
+              41,
+              27
+            ],
+            [
+              40,
+              21
+            ],
+            [
+              37,
+              21
+            ],
+            [
+              37,
+              27
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              27
+            ],
+            [
+              17,
+              27
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              20,
+              36
+            ],
+            [
+              15,
+              36
+            ],
+            [
+              11,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              35,
+              27
+            ],
+            [
+              30,
+              27
+            ],
+            [
+              26,
+              32
+            ],
+            [
+              27,
+              36
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              36,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/stretch_front_2.png": {
+      "face": "front",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_front.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              33,
+              29
+            ],
+            [
+              36,
+              31
+            ],
+            [
+              37,
+              39
+            ],
+            [
+              37,
+              45
+            ],
+            [
+              35,
+              48
+            ],
+            [
+              32,
+              46
+            ],
+            [
+              33,
+              39
+            ],
+            [
+              31,
+              33
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              16,
+              25
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              27,
+              24
+            ],
+            [
+              32,
+              25
+            ],
+            [
+              35,
+              30
+            ],
+            [
+              32,
+              37
+            ],
+            [
+              30,
+              39
+            ],
+            [
+              31,
+              45
+            ],
+            [
+              26,
+              47
+            ],
+            [
+              23,
+              45
+            ],
+            [
+              16,
+              46
+            ],
+            [
+              16,
+              39
+            ],
+            [
+              13,
+              36
+            ],
+            [
+              12,
+              30
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              27
+            ],
+            [
+              32,
+              30
+            ],
+            [
+              29,
+              37
+            ],
+            [
+              29,
+              43
+            ],
+            [
+              26,
+              44
+            ],
+            [
+              26,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              41
+            ],
+            [
+              29,
+              41
+            ]
+          ],
+          "fill": "#59402b",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              40
+            ],
+            [
+              29,
+              40
+            ]
+          ],
+          "fill": "#9f7a48",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              23,
+              40
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              26,
+              42
+            ],
+            [
+              23,
+              42
+            ]
+          ],
+          "fill": "#d9b967",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              19,
+              25
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              17,
+              27
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              24,
+              30
+            ],
+            [
+              24,
+              38
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              13,
+              28
+            ],
+            [
+              17,
+              29
+            ],
+            [
+              15,
+              23
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              7,
+              19
+            ],
+            [
+              9,
+              25
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              34,
+              28
+            ],
+            [
+              30,
+              29
+            ],
+            [
+              32,
+              23
+            ],
+            [
+              35,
+              18
+            ],
+            [
+              36,
+              13
+            ],
+            [
+              40,
+              13
+            ],
+            [
+              40,
+              19
+            ],
+            [
+              38,
+              25
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              27
+            ],
+            [
+              17,
+              27
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              20,
+              36
+            ],
+            [
+              15,
+              36
+            ],
+            [
+              11,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              35,
+              27
+            ],
+            [
+              30,
+              27
+            ],
+            [
+              26,
+              32
+            ],
+            [
+              27,
+              36
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              36,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        }
+      ]
+    },
+    "poses/stretch_front_3.png": {
+      "face": "front",
+      "origin": [
+        24,
+        23
+      ],
+      "head_shift": [
+        0,
+        0
+      ],
+      "native_leg_source": "idle_front.png",
+      "shapes": [
+        {
+          "points": [
+            [
+              33,
+              29
+            ],
+            [
+              36,
+              31
+            ],
+            [
+              37,
+              39
+            ],
+            [
+              37,
+              45
+            ],
+            [
+              35,
+              48
+            ],
+            [
+              32,
+              46
+            ],
+            [
+              33,
+              39
+            ],
+            [
+              31,
+              33
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              16,
+              25
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              27,
+              24
+            ],
+            [
+              32,
+              25
+            ],
+            [
+              35,
+              30
+            ],
+            [
+              32,
+              37
+            ],
+            [
+              30,
+              39
+            ],
+            [
+              31,
+              45
+            ],
+            [
+              26,
+              47
+            ],
+            [
+              23,
+              45
+            ],
+            [
+              16,
+              46
+            ],
+            [
+              16,
+              39
+            ],
+            [
+              13,
+              36
+            ],
+            [
+              12,
+              30
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              28,
+              27
+            ],
+            [
+              32,
+              30
+            ],
+            [
+              29,
+              37
+            ],
+            [
+              29,
+              43
+            ],
+            [
+              26,
+              44
+            ],
+            [
+              26,
+              31
+            ]
+          ],
+          "fill": "#394955",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ]
+          ],
+          "fill": "#91a5b0",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              41
+            ],
+            [
+              29,
+              41
+            ]
+          ],
+          "fill": "#59402b",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              18,
+              40
+            ],
+            [
+              29,
+              40
+            ]
+          ],
+          "fill": "#9f7a48",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              23,
+              40
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              26,
+              42
+            ],
+            [
+              23,
+              42
+            ]
+          ],
+          "fill": "#d9b967",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              19,
+              25
+            ],
+            [
+              23,
+              29
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              17,
+              27
+            ]
+          ],
+          "fill": "#91a5b0",
+          "outline": null
+        },
+        {
+          "points": [
+            [
+              24,
+              30
+            ],
+            [
+              24,
+              38
+            ]
+          ],
+          "fill": "#394955",
+          "line": true
+        },
+        {
+          "points": [
+            [
+              13,
+              28
+            ],
+            [
+              17,
+              29
+            ],
+            [
+              16,
+              35
+            ],
+            [
+              12,
+              39
+            ],
+            [
+              8,
+              36
+            ],
+            [
+              7,
+              30
+            ],
+            [
+              10,
+              29
+            ],
+            [
+              11,
+              33
+            ]
+          ],
+          "fill": "#e8c49d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              34,
+              28
+            ],
+            [
+              30,
+              29
+            ],
+            [
+              31,
+              35
+            ],
+            [
+              35,
+              39
+            ],
+            [
+              39,
+              36
+            ],
+            [
+              40,
+              30
+            ],
+            [
+              37,
+              29
+            ],
+            [
+              36,
+              33
+            ]
+          ],
+          "fill": "#edaf78",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              12,
+              27
+            ],
+            [
+              17,
+              27
+            ],
+            [
+              21,
+              32
+            ],
+            [
+              20,
+              36
+            ],
+            [
+              15,
+              36
+            ],
+            [
+              11,
+              32
+            ]
+          ],
+          "fill": "#596e7d",
+          "outline": "#1a0e16"
+        },
+        {
+          "points": [
+            [
+              35,
+              27
+            ],
+            [
+              30,
+              27
+            ],
+            [
+              26,
+              32
+            ],
+            [
+              27,
+              36
+            ],
+            [
+              32,
+              36
+            ],
+            [
+              36,
+              32
+            ]
+          ],
+          "fill": "#394955",
+          "outline": "#1a0e16"
+        }
+      ]
+    }
+  },
+  "refinement": {
+    "method": "New native full body/cuff/contact contours with exact approved directional head and compatible same-phase native lower-body references. No legacy raster warp/recolor.",
+    "design_id": "adult_man_03",
+    "body_origin_native": [
+      24,
+      23
+    ],
+    "head_crop": [
+      0,
+      0,
+      48,
+      28
+    ],
+    "frame_size": [
+      96,
+      104
+    ],
+    "anchor_native": [
+      48,
+      92
+    ],
+    "approved_source_sha256": {
+      "idle_right.png": "27399efb8082238b13a7c86da8c7b9292aaef47a2fe37ee6277a5a336bfa121c",
+      "idle_left.png": "2c661f99a810177755b2ccb82e80a8485bb9d63b410aef85196a441f2dde22ad",
+      "idle_back.png": "acbca7ce73889d88fc326262b1cb5cf4a8323022b92970b38b4109591d93a291",
+      "idle_front.png": "12b824f3c74ef479094a17412b888049a667d6dfd12e1fe339c76ee59677798d",
+      "walk_back/frame_07.png": "894cdb346bd2dccb2e1a687aecf39ab9a13221ebce8113f16e99b95cfd8ff49e",
+      "walk_back/frame_06.png": "da3a62b48939bb6f82cb9e5d4db1bed4b1e042a599ecb92ea561dfcd8c77d8bd",
+      "walk_back/frame_05.png": "76408f3f6ae0b5e5f309c7fb9b7d02cda976999224c4a67332ff0269dd52477d",
+      "walk_back/frame_04.png": "d273f459dc9fa5bea7fcfa4ee653205d093ae2f0e63d1a95cdae66f96d3ca46a",
+      "walk_back/frame_02.png": "1e9177c39ad9472d4fb53015e720633b81b45b94032f02c0dfec4a8d79b47213",
+      "walk_back/frame_01.png": "5d406baaf6d10ae38bda9b300308351a74872233068077bc71dc41c1335fb1b2",
+      "walk_back/frame_08.png": "44a8537689336b87e5b72997aef2e504979704ed7779f97e780ac2f9c3c17302",
+      "walk_back/frame_03.png": "5b6d3b582bd3ef54bb4cc040637d7279d47831feec20d757eaacd1e10960b975",
+      "walk_left/frame_07.png": "dad19b3d81bca2c4d58f38532e45c22632275054a33ad8ad42e44e6519015abf",
+      "walk_left/frame_06.png": "3692eb8ec15485a2774a5c133ccb06434c3d2974144e1dcd81d8c68bd4097f7b",
+      "walk_left/frame_05.png": "8d0059884dfbdae8124dc3fc0b1db9f9ed5aee0e62fa767833e1ab2f283e717c",
+      "walk_left/frame_04.png": "f75004bf297b5e31011d6c3e190d9a9e2e659a6bfb84b0f724973315166a847e",
+      "walk_left/frame_02.png": "c018c9216ce49748254d0fa96a1c709a6cf1374e6bcfddc59378043990e2f48c",
+      "walk_left/frame_01.png": "7480f9968e7e8dda413e4d36fb77de0d7c27907effe2553bbb72237ddb4a6e07",
+      "walk_left/frame_08.png": "ba2cb22a7eda51efcbb00707f699115eb67d81e063c63bb7b841ebbcc2f3ed3c",
+      "walk_left/frame_03.png": "97050d39d1bbd6d99194cf8007f7c7d6a9a164ed9cacfbe35ebd2be668088c9e",
+      "walk_front/frame_07.png": "96b4207fc894c305b031caa88e70a774cb6c0864dfbf195e67b8b1c3c058ac92",
+      "walk_front/frame_06.png": "540ab0f7e1f32a5cf8d66de1790b1f2cfbfd78b864288c9b0e1fc109f765f95f",
+      "walk_front/frame_05.png": "561ffa54e342e9738272a27e0281b5c6e7dbb368b995fcfa610533059c70ec77",
+      "walk_front/frame_04.png": "1ca01088516b4d47c8de87409b8d00a55c4c3e7fd677289e78a1a7b6326c295c",
+      "walk_front/frame_02.png": "fe57a41a7e3b1a532d9e4f6643028f501496fb44428bf186627f727f025abe6b",
+      "walk_front/frame_01.png": "542f86b32878fec72d23d2a035ccbff96de9bb1aa7ceea909acf76bda2bf181c",
+      "walk_front/frame_08.png": "0a10ed811a537dd008ecd8d0f7efd49cb1404865058d29bc4b88d1b4f2c22a4f",
+      "walk_front/frame_03.png": "20a983ff2fec591ffd4a2e1a3fe52dca1d7c084d2b507cf4b2e4ae814f3afde8",
+      "walk_right/frame_07.png": "fc1896323da6e3b1d5b2052769ea6c849f4af2ff21cdf256bc88e0aa10f9001c",
+      "walk_right/frame_06.png": "24d924db10421e510c1c905bf97a44b245610d9cfcb4560f1f01d45c0e1fcfc3",
+      "walk_right/frame_05.png": "7d12b064d015e7685d64150f12321535d072e667a298dc1e60767f0377fd24cc",
+      "walk_right/frame_04.png": "778be100e9f09d5201d070374afa7d7e0516ba1d8116591822ffc804beb8e2ba",
+      "walk_right/frame_02.png": "2a90cd259d09b618a31bafc1a2ce99cd7e2e1198ee58142e0f2b94cd8d3539cd",
+      "walk_right/frame_01.png": "d444f7369ad62876f5bdb73a3e3bd22b27543ebe27da54d53362ec76aaee6312",
+      "walk_right/frame_08.png": "e8df93881905251326f110137ae8b8a108ddd8017ce6bf7f7e09934b96e7901e",
+      "walk_right/frame_03.png": "912c2e6a8db5257bf7e15fd79c6c58daaebde01d5e05b2e588b480ed8b089de0"
+    },
+    "sequence_frame_contract": {
+      "work_left": {
+        "loop": true,
+        "frames": [
+          {
+            "file": "poses/work_left_0.png",
+            "duration_ms": 360,
+            "hands": [
+              [
+                -7,
+                -11
+              ],
+              [
+                -6,
+                -10
+              ]
+            ]
+          },
+          {
+            "file": "poses/work_left_1.png",
+            "duration_ms": 360,
+            "hands": [
+              [
+                -10,
+                -12
+              ],
+              [
+                -7,
+                -11
+              ]
+            ]
+          },
+          {
+            "file": "poses/work_left_2.png",
+            "duration_ms": 360,
+            "hands": [
+              [
+                -11,
+                -12
+              ],
+              [
+                -7,
+                -10
+              ]
+            ]
+          },
+          {
+            "file": "poses/work_left_3.png",
+            "duration_ms": 360,
+            "hands": [
+              [
+                -8,
+                -11
+              ],
+              [
+                -6,
+                -10
+              ]
+            ]
+          }
+        ]
+      },
+      "assist_right": {
+        "loop": false,
+        "frames": [
+          {
+            "file": "poses/assist_right_0.png",
+            "duration_ms": 800,
+            "hands": [
+              [
+                9,
+                -14
+              ],
+              [
+                7,
+                -11
+              ]
+            ]
+          }
+        ]
+      },
+      "assist_low_right": {
+        "loop": false,
+        "frames": [
+          {
+            "file": "poses/assist_low_right_0.png",
+            "duration_ms": 200,
+            "hands": [
+              [
+                9,
+                -14
+              ],
+              [
+                7,
+                -11
+              ]
+            ]
+          },
+          {
+            "file": "poses/assist_low_right_1.png",
+            "duration_ms": 200,
+            "hands": [
+              [
+                9,
+                -10
+              ],
+              [
+                7,
+                -8
+              ]
+            ]
+          },
+          {
+            "file": "poses/assist_low_right_2.png",
+            "duration_ms": 200,
+            "hands": [
+              [
+                11,
+                -5
+              ],
+              [
+                8,
+                -4
+              ]
+            ]
+          },
+          {
+            "file": "poses/assist_low_right_3.png",
+            "duration_ms": 200,
+            "hands": [
+              [
+                11,
+                -7
+              ],
+              [
+                8,
+                -7
+              ]
+            ]
+          }
+        ]
+      },
+      "recover_right": {
+        "loop": false,
+        "frames": [
+          {
+            "file": "poses/recover_right_0.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "poses/recover_right_1.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "poses/recover_right_2.png",
+            "duration_ms": 100
+          },
+          {
+            "file": "poses/recover_right_3.png",
+            "duration_ms": 100
+          }
+        ]
+      },
+      "stretch_front": {
+        "loop": false,
+        "frames": [
+          {
+            "file": "poses/stretch_front_0.png",
+            "duration_ms": 550
+          },
+          {
+            "file": "poses/stretch_front_1.png",
+            "duration_ms": 550
+          },
+          {
+            "file": "poses/stretch_front_2.png",
+            "duration_ms": 550
+          },
+          {
+            "file": "poses/stretch_front_3.png",
+            "duration_ms": 550
+          }
+        ]
+      }
+    }
+  }
 }
