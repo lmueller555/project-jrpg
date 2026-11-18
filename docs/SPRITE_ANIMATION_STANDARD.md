@@ -92,7 +92,9 @@ Iselin is a worked example, not a universal size requirement:
 The approved native idle and walk PNGs feed one ordinary sheet-based actor.
 They do not use detailed-image overrides or runtime downsampling. Display and
 cinematic camera enlargement remain separate from source artwork density:
-large scene canvases preserve the native pixel clusters and the same costume.
+native-derived scene canvases preserve the native pixel clusters and costume.
+The separately approved detailed gate performance is described in section 10;
+it does not change the ordinary actor's native art or collision.
 Validate the intended drawing path and target window scale, together with
 foreground depth and seated/aerial registration.
 
@@ -401,13 +403,25 @@ Camera presentation and source density remain separate. Current Iselin uses:
 | View | Source canvas and registration | Presentation |
 | --- | --- | --- |
 | Ordinary world and seated meal | 24×36, draw anchor `[12,30]`, ordinary foot reference `[12,34]` | One artwork pixel per world pixel; 8×4 ordinary collision probe. |
-| Arrival ground shots | 24×36, ground reference `[12,34]` | Uniform nearest-neighbor enlargement by `80/34` into 80×96, anchor `[40,92]`. |
+| Arrival gate approach, stop and greeting | Complete detailed drawings sampled directly onto 80×96, anchor `[40,92]` | Approved cinematic detail matching the page and Lucan; no 24×36 intermediate. |
+| Other arrival ground performances | 24×36, ground reference `[12,34]` | Uniform nearest-neighbor enlargement by `80/34` into 80×96, anchor `[40,92]`. |
 | Arrival aerial shots | 16×24, ground reference `[8,22]` | Uniform nearest-neighbor enlargement by `1.5` into 48×64, anchor `[24,56]`. |
 
 These are existing camera contracts, not permission to scale each drawing by its
 occupied bounds. A larger action canvas requires an explicitly registered anchor
 and visual review. Preserve ordinary collision, authored travel positions and
 scene perspective when changing artwork.
+
+The detailed gate bank is a scoped cinematic exception approved separately from
+the ordinary native actor. Its final walking poses anticipate this particular
+stop; select `gate_walk_left` and `gate_stand_left` for that performance rather
+than replacing the generic looping `walk_left` used by longer travel shots.
+The aerial descent uses `gate_incoming_left`, a separately reviewed cycle of
+the first eight approved poses, so it joins the detailed ground shot without
+repeating the later stop anticipation. Its 16-pixel stride keeps the same
+two-pixel spacing per pose as the sixteen-pose ground approach.
+The [live gate integration review](reviews/iselin_detailed_gate_live/README.md)
+records the approved pixels and production selection.
 
 ### Entry, hold, recovery and rest
 

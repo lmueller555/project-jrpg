@@ -1,5 +1,6 @@
 """The authored gate stop owns its deceleration, clip clock and safe handoff."""
 from copy import deepcopy
+from hashlib import sha256
 import json
 import os
 from pathlib import Path
@@ -80,14 +81,85 @@ class IselinWalkStopTests(unittest.TestCase):
         total = sum(frame.duration_ms for frame in (*clip.entry, *clip.recovery))
         self.assertEqual(total+clip.hold_duration_ms, 700)
         self.assertEqual(pygame.image.tobytes(clip.entry[0].image, 'RGBA'),
-                         pygame.image.tobytes(art['loops']['walk_left'][15][0], 'RGBA'))
-        self.assertIs(clip.recovery[-1].image, art['poses']['stand_left'])
-        self.assertIs(clip.rest_image, art['poses']['stand_left'])
+                         pygame.image.tobytes(art['loops']['gate_walk_left'][15][0], 'RGBA'))
+        self.assertIs(clip.recovery[-1].image, art['poses']['gate_stand_left'])
+        self.assertIs(clip.rest_image, art['poses']['gate_stand_left'])
         for index, image in enumerate([frame.image for frame in clip.entry]+[clip.hold_image]):
             with self.subTest(frame=index):
                 self.assertEqual(image.get_size(), (80, 96))
                 self.assertTrue(image.get_bounding_rect().width)
                 self.assertLessEqual(set(pygame.image.tobytes(image, 'RGBA')[3::4]), {0, 255})
+
+    def test_live_loader_uses_the_exact_approved_detailed_bank(self):
+        # This fingerprint was recorded independently from the approved R2
+        # review, before promotion. Reading only the production controller here
+        # prevents a review-only bank override from satisfying integration.
+        art = self.scene.actor_art['iselin'];clip = art['actions']['stop_left']
+        surfaces = [image for image, _ in art['loops']['gate_walk_left']]
+        surfaces += [frame.image for frame in clip.entry[1:]]
+        surfaces.append(art['poses']['gate_stand_left'])
+        self.assertEqual(len(surfaces), 25)
+        self.assertEqual(sha256(b''.join(pygame.image.tobytes(image, 'RGBA')
+                         for image in surfaces)).hexdigest(),
+                         'c1a5b77c6724985715912cf76e04879f1fd7cde111e27f7ff512eea2cbb4efe5')
+        self.assertEqual(art['gaits']['gate_walk_left']['stride_pixels'], 32)
+        self.assertEqual([duration for _, duration in art['loops']['gate_walk_left']], [.035]*16)
+        incoming = art['loops']['gate_incoming_left']
+        self.assertEqual(len(incoming), 8)
+        self.assertEqual(art['gaits']['gate_incoming_left']['stride_pixels'], 16)
+        for index, (image, duration) in enumerate(incoming):
+            with self.subTest(incoming_frame=index):
+                self.assertEqual(duration, .035)
+                self.assertEqual(pygame.image.tobytes(image, 'RGBA'),
+                                 pygame.image.tobytes(art['loops']['gate_walk_left'][index][0], 'RGBA'))
+        self.assertEqual(pygame.image.tobytes(clip.entry[-1].image, 'RGBA'),
+                         pygame.image.tobytes(art['poses']['gate_stand_left'], 'RGBA'))
+
+    def test_production_updates_select_the_approved_approach_stop_and_greeting(self):
+        art = self.scene.actor_art['iselin'];clip = art['actions']['stop_left']
+        samples = [(.84, art['loops']['gate_walk_left'][10][0]),
+                   (.92, art['loops']['gate_walk_left'][11][0]),
+                   (1.02, art['loops']['gate_walk_left'][12][0]),
+                   (1.10, art['loops']['gate_walk_left'][13][0]),
+                   (1.18, art['loops']['gate_walk_left'][14][0]),
+                   (1.25, clip.entry[0].image)]
+        samples += [(1.29 + index*.06, frame.image)
+                    for index, frame in enumerate(clip.entry[1:])]
+        samples += [(1.83, art['poses']['gate_stand_left']),
+                    (1.96, art['poses']['gate_stand_left'])]
+        elapsed = 0.
+        for seconds, expected in samples:
+            self.update(seconds-elapsed);elapsed = seconds
+            with self.subTest(seconds=seconds):
+                self.assertIs(self.scene._frame(self.actor()), expected)
+        self.assertEqual(self.scene.shot, 'gate_greeting')
+        self.assertEqual(self.state()['stage'], 'idle')
+
+    def test_stop_anticipation_is_scoped_away_from_looping_travel(self):
+        art = self.scene.actor_art['iselin']
+        # The approved anticipation tail is not a generic repeating gait.
+        # Preserve the complete original travel loop and check actual selectors
+        # in shots that run long enough to wrap it more than once.
+        self.assertEqual(sha256(b''.join(pygame.image.tobytes(image, 'RGBA')
+                         for image, _ in art['loops']['walk_left'])).hexdigest(),
+                         '209079655210d62d21b91a3ba05cb2716674e7c171497ab6f3365fd2494f9c6f')
+        for index, phase in enumerate(self.scene.data['phases']):
+            for actor in phase['actors']:
+                if actor['id'] != 'iselin':continue
+                with self.subTest(shot=phase['id']):
+                    if actor['pose'] == 'gate_walk_left':
+                        self.assertEqual(phase['id'], 'gate_approach')
+                        self.assertEqual(actor['reference_pose'], 'gate_incoming_left')
+                    if phase['id'] not in ('town_approach', 'town_parking'):continue
+                    self.scene.clear_actor_actions()
+                    self.scene.phase_index = index
+                    for seconds in (.2, 1.4, 2.8):
+                        self.scene.phase_time = seconds
+                        self.assertEqual(self.scene.actor_pose(actor), 'walk_left')
+                        self.assertTrue(any(self.scene._frame(actor) is image
+                                            for image, _ in art['loops']['walk_left']))
+                        self.assertFalse(any(self.scene._frame(actor) is image
+                                             for image, _ in art['loops']['gate_walk_left']))
 
     def test_invalid_stop_annotations_cannot_create_impossible_motion(self):
         original = self.scene.data
@@ -183,7 +255,7 @@ class IselinWalkStopTests(unittest.TestCase):
         self.assertEqual(self.state()['stage'], 'entry')
         self.assertEqual(self.state()['elapsed_ms'], 0)
         self.assertEqual(pygame.image.tobytes(self.scene._frame(actor), 'RGBA'),
-                         pygame.image.tobytes(art['loops']['walk_left'][15][0], 'RGBA'))
+                         pygame.image.tobytes(art['loops']['gate_walk_left'][15][0], 'RGBA'))
         cue = self.state()['cue_id']
         for _ in range(20):self.update(.02)
         self.assertAlmostEqual(self.state()['elapsed_ms'], 400)
@@ -306,7 +378,7 @@ class IselinWalkStopTests(unittest.TestCase):
     def test_settled_greeting_cannot_replay_stop_during_a_long_dialogue_hold(self):
         self.update(1.94)
         actor = self.actor();art = self.scene.actor_art['iselin']
-        self.assertIs(self.scene._frame(actor), art['poses']['stand_left'])
+        self.assertIs(self.scene._frame(actor), art['poses']['gate_stand_left'])
         self.assertEqual(self.scene.actor_position(actor), pygame.Vector2(575, 375))
         self.update(.02)
         self.assertEqual(self.scene.shot, 'gate_greeting')
@@ -315,7 +387,7 @@ class IselinWalkStopTests(unittest.TestCase):
         self.assertEqual(self.scene.shot, 'gate_greeting')
         self.assertIsNotNone(self.scene.dialogue)
         self.assertEqual(self.state()['stage'], 'idle')
-        self.assertIs(self.scene._frame(self.actor()), art['poses']['stand_left'])
+        self.assertIs(self.scene._frame(self.actor()), art['poses']['gate_stand_left'])
 
     def test_reference_sampling_keeps_linear_aerial_gait_and_live_stop_state(self):
         self.update(1.4)
@@ -326,14 +398,19 @@ class IselinWalkStopTests(unittest.TestCase):
             if actor['id'] == 'iselin':
                 art = self.scene.actor_art['iselin']
                 image = self.scene._frame(actor)
-                observed.append((self.scene.actor_position(actor),
-                                 any(image is frame for frame, _ in art['loops']['walk_left'])))
+                observed.append((self.scene.actor_position(actor), image))
             return original(canvas, actor, camera)
         with patch.object(self.scene, '_draw_actor', side_effect=draw):
             self.scene.ground_reference_frame(pygame.Surface((480, 320)), seconds=-.2)
-        self.assertEqual(len(observed), 1)
+            self.scene.ground_reference_frame(pygame.Surface((480, 320)), seconds=0.)
+        self.assertEqual(len(observed), 2)
         self.assertEqual(observed[0][0], pygame.Vector2(615.8, 375))
-        self.assertTrue(observed[0][1])
+        self.assertEqual(observed[1][0], pygame.Vector2(611, 375))
+        art = self.scene.actor_art['iselin']
+        self.assertIs(observed[0][1], art['loops']['gate_incoming_left'][5][0])
+        self.assertIs(observed[1][1], art['loops']['gate_incoming_left'][0][0])
+        self.assertEqual(pygame.image.tobytes(observed[1][1], 'RGBA'),
+                         pygame.image.tobytes(art['loops']['gate_walk_left'][0][0], 'RGBA'))
         self.assertEqual((self.scene.data, self.state(), self.scene.phase_time, self.scene.elapsed), before)
         self.assertIsNone(self.scene._reference_clock)
 

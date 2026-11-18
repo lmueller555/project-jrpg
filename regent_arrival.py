@@ -807,6 +807,9 @@ class RegentArrival:
         reference = dict(phase)
         reference['actors'] = [dict(actor) for actor in phase['actors']]
         for actor in reference['actors']:
+            # Aerial descent uses the approved incoming cycle, excluding the
+            # later stop anticipation while retaining detail at the handoff.
+            actor['pose'] = actor.pop('reference_pose', actor['pose'])
             if actor['id'] in ('iselin','lucan','clerk','caravan'):
                 stop = actor.pop('stop', None)
                 if stop is not None:

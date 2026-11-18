@@ -1,0 +1,271 @@
+{
+  "version": 2,
+  "classification": "User-approved detailed cinematic gate approach, stop and standing settle; original R2 pixels retained. Not a generic looping travel cycle.",
+  "head_preservation": {
+    "image": "references/stand_left.png",
+    "rect": [
+      0,
+      0,
+      80,
+      35
+    ]
+  },
+  "stand_left": {
+    "source": "masters/stop_05_08_quad.png",
+    "rect": [
+      724,
+      543,
+      724,
+      543
+    ],
+    "scale": 0.1515,
+    "source_anchor": [
+      356,
+      522
+    ]
+  },
+  "walk_left": [
+    {
+      "image": "references/walk_left/frame_01.png"
+    },
+    {
+      "image": "references/walk_left/frame_02.png"
+    },
+    {
+      "image": "references/walk_left/frame_03.png"
+    },
+    {
+      "image": "references/walk_left/frame_04.png"
+    },
+    {
+      "image": "references/walk_left/frame_05.png"
+    },
+    {
+      "image": "references/walk_left/frame_06.png"
+    },
+    {
+      "image": "references/walk_left/frame_07.png"
+    },
+    {
+      "image": "references/walk_left/frame_08.png"
+    },
+    {
+      "image": "references/walk_left/frame_09.png"
+    },
+    {
+      "image": "references/walk_left/frame_10.png"
+    },
+    {
+      "image": "references/walk_left/frame_11.png"
+    },
+    {
+      "source": "masters/walk_12_compact_single.png",
+      "rect": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "scale": 0.0842,
+      "source_anchor": [
+        724,
+        1032
+      ]
+    },
+    {
+      "source": "masters/walk_13_14_pair.png",
+      "rect": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "scale": 0.12,
+      "source_anchor": [
+        512,
+        734
+      ]
+    },
+    {
+      "source": "masters/walk_13_14_pair.png",
+      "rect": [
+        1024,
+        0,
+        1024,
+        768
+      ],
+      "scale": 0.12,
+      "source_anchor": [
+        512,
+        734
+      ]
+    },
+    {
+      "source": "masters/walk_15_16_pair.png",
+      "rect": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "scale": 0.12,
+      "source_anchor": [
+        512,
+        734
+      ]
+    },
+    {
+      "source": "masters/walk_15_16_pair.png",
+      "rect": [
+        1024,
+        0,
+        1024,
+        768
+      ],
+      "scale": 0.12,
+      "source_anchor": [
+        512,
+        734
+      ]
+    }
+  ],
+  "stop_left": [
+    {
+      "source": "masters/stop_01_04_quad.png",
+      "rect": [
+        0,
+        0,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    },
+    {
+      "source": "masters/stop_01_04_quad.png",
+      "rect": [
+        724,
+        0,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    },
+    {
+      "source": "masters/stop_01_04_quad.png",
+      "rect": [
+        0,
+        543,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    },
+    {
+      "source": "masters/stop_04_compact_single.png",
+      "rect": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "scale": 0.07575,
+      "source_anchor": [
+        712,
+        1044
+      ]
+    },
+    {
+      "source": "masters/stop_05_08_quad.png",
+      "rect": [
+        0,
+        0,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    },
+    {
+      "source": "masters/stop_05_08_quad.png",
+      "rect": [
+        724,
+        0,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    },
+    {
+      "source": "masters/stop_05_08_quad.png",
+      "rect": [
+        0,
+        543,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    },
+    {
+      "source": "masters/stop_05_08_quad.png",
+      "rect": [
+        724,
+        543,
+        724,
+        543
+      ],
+      "scale": 0.1515,
+      "source_anchor": [
+        356,
+        522
+      ]
+    }
+  ],
+  "timing": {
+    "handoff_ms": 40,
+    "stop_frame_ms": [
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "hold_ms": 60,
+    "recovery_ms": 120
+  },
+  "unselected_history": [
+    "keys.png",
+    "late_walk_attempt_01.png",
+    "late_walk_guided_01.png",
+    "stop_guided_01.png",
+    "walk_12_single.png",
+    "stop_01_04_narrow_attempt.png",
+    "stop_04_single.png"
+  ],
+  "registration_notes": "Each source master retains one whole-body density and source anchor, checked against crown/collar/belt/floor guides. No individual limb is assembled, translated, stretched or aligned to a toe target. All rows0\u201334 retain the high-resolution R1 identity reference."
+}

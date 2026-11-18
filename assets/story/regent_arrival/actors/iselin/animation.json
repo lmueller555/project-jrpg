@@ -14,7 +14,8 @@
     "turn_left_back": "turn_left_back.png",
     "stand_left": "stand_left.png",
     "stand_right": "stand_right.png",
-    "stand_back": "stand_back.png"
+    "stand_back": "stand_back.png",
+    "gate_stand_left": "gate_stand_left.png"
   },
   "loops": {
     "walk_left": [
@@ -214,13 +215,113 @@
         "file": "walk_left_back_15.png",
         "duration_ms": 35
       }
+    ],
+    "gate_walk_left": [
+      {
+        "file": "gate_walk_left/frame_01.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_02.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_03.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_04.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_05.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_06.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_07.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_08.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_09.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_10.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_11.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_12.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_13.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_14.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_15.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_16.png",
+        "duration_ms": 35
+      }
+    ],
+    "gate_incoming_left": [
+      {
+        "file": "gate_walk_left/frame_01.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_02.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_03.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_04.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_05.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_06.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_07.png",
+        "duration_ms": 35
+      },
+      {
+        "file": "gate_walk_left/frame_08.png",
+        "duration_ms": 35
+      }
     ]
   },
   "actions": {
     "stop_left": {
       "entry": [
         {
-          "file": "walk_left_15.png",
+          "file": "gate_walk_left/frame_16.png",
           "duration_ms": 40
         },
         {
@@ -262,16 +363,38 @@
       },
       "recovery": [
         {
-          "pose": "stand_left",
+          "pose": "gate_stand_left",
           "duration_ms": 120
         }
       ],
-      "rest_pose": "stand_left"
+      "rest_pose": "gate_stand_left"
     }
   },
   "gaits": {
     "walk_left": {
       "stride_pixels": 32
+    },
+    "gate_walk_left": {
+      "stride_pixels": 32
+    },
+    "gate_incoming_left": {
+      "stride_pixels": 16
+    }
+  },
+  "detailed_performances": {
+    "gate_stop": {
+      "canvas": [
+        80,
+        96
+      ],
+      "anchor": [
+        40,
+        92
+      ],
+      "source": "assets/source/characters/iselin/cinematic_gate_left/approval.json",
+      "loop": "gate_walk_left",
+      "rest_pose": "gate_stand_left",
+      "scope": "Gate approach, stop, greeting and initial admission wait; not a generic travel loop."
     }
   },
   "native_canvas": [
@@ -283,5 +406,5 @@
     34
   ],
   "camera_scale": 2.3529411764705883,
-  "source": "Native complete Iselin scene and stopping drawings with approved16-frame native walks; uniform nearest-neighbor camera presentation."
+  "source": "Native-derived generic travel and scene poses, plus the approved directly authored 80x96 gate approach, stop and idle. Native metadata applies to the generic poses; detailed_performances records the gate exception."
 }

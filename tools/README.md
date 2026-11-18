@@ -16,9 +16,16 @@ combined ordinary actor registration, and `tools/build_regent_iselin.py --check`
 verifies scene-specific views. `tools/export_iselin_portrait.py --check` keeps
 the approved dialogue portrait independent from character sprites.
 
-The old detailed Iselin banks, prototype studies and dedicated HD exporters
+The old detailed overworld banks, prototype studies and dedicated HD exporters
 were removed. The [native integration review](../docs/reviews/iselin_native_integration/README.md)
-owns current production verification. Directional native review helpers remain
+records ordinary actor verification. The separately approved cinematic gate
+performance uses true 80×96 detail matching the page and Lucan. Reproduce its
+selected drawings with `python tools/export_iselin_gate_detail.py --check`;
+`tools/build_regent_iselin.py` includes that pack in the live actor manifest.
+`gate_walk_left` anticipates a single gate stop; generic `walk_left` remains the
+looping travel bank. The aerial lead-in uses `gate_incoming_left`, the first
+eight approved drawings at a 16-pixel stride, to preserve detail through the
+ground handoff while excluding the stop-specific tail. Directional native review helpers remain
 available with temporary saves; pass `--out /tmp/iselin-review` when reproducing
 them so the original approval snapshots stay intact.
 
@@ -49,12 +56,12 @@ Capture Iselin's live arrival-gate walking stop with
 `python tools/capture_iselin_walk_stop.py --check-mechanics --out /tmp/iselin-walk-stop`.
 After initial shot selection it uses ordinary production updates through the
 walk, deceleration, settle and greeting. It exports normal/quarter-speed crops,
-full-shot samples, a native frame board and a separately labeled fixed-world
+full-shot samples, the live cinematic frame board and a separately labeled fixed-world
 registration diagnostic. `--check-preservation` optionally checks the historical
 PNG baseline; `--repository /path/to/checkout` supports a labeled before capture.
-See the [walk-stop review](../docs/reviews/iselin_walk_stop/README.md) for source,
-timing, interruption checks and capture limits. Rebuild the complete new stop
-drawings with the existing `tools/build_regent_iselin.py`; the approved ordinary
+See the [live detailed gate review](../docs/reviews/iselin_detailed_gate_live/README.md)
+for approval, timing, interruption checks and capture limits. Rebuild the gate
+drawings with `tools/build_regent_iselin.py`; the approved ordinary
 idles and walking banks remain unchanged.
 
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).

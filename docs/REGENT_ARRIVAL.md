@@ -118,22 +118,29 @@ never serialized or used as quest completion signals.
 
 Iselin approaches the gate at the existing 24 cinematic pixels per second.
 At 1.25 seconds she has traveled 30 pixels and reaches the sixteenth approved
-left-walk drawing. The `stop_left` clip begins on that exact image, decelerates
-with her final step, and settles into the exact approved `stand_left` pose.
+gate-walk drawing. The `stop_left` clip begins on that exact image, decelerates
+with her final step, and settles into the approved `gate_stand_left` pose.
+The gate uses the detailed `gate_walk_left` bank. During aerial descent,
+`gate_incoming_left` cycles its first eight approved drawings without the later
+stop anticipation. Its 16-pixel stride preserves the same two-pixel pose spacing
+and joins the ground approach on the identical first frame. Longer travel shots
+retain their existing generic `walk_left` cycle.
 
 | Approach time | Movement and performance |
 | --- | --- |
 | 0–1.25 s | Original straight approach, root `[611,375]` to `[581,375]`, unchanged gait phase. |
 | 1.25–1.75 s | Linear reduction of speed from 24 to zero, covering the final six pixels to `[575,375]`. Leading boot remains supported as the trailing boot closes. |
 | 1.75–1.95 s | Root stays still; arms, coat and braid finish settling. |
-| Greeting | Temporary stop ownership clears; the ordinary approved standing pose remains. |
+| Greeting | Temporary stop ownership clears; the detailed gate standing pose remains, including the initial admission wait. |
 
 The 700 ms clip uses the approved walk handoff for 40 ms, eight complete new
 drawings at 60 ms each, a 60 ms hold, and 120 ms recovery on the approved idle.
-All source poses share one native density and registration; neither the feet nor
-body bounds determine per-frame scale. Head/neck preservation and palette
-registration are documented alongside the complete generated source under
-`assets/source/characters/iselin/native_stop_left/`.
+The approved detailed drawings are sampled directly onto the 80×96 cinematic
+grid with anchor `[40,92]`. Each source master has fixed whole-body registration;
+neither feet nor changing occupied bounds determine per-frame scale. Complete
+sources, high-resolution head/neck preservation, registration and immutable
+approval hashes live under `assets/source/characters/iselin/cinematic_gate_left/`.
+The earlier native stop source and its review remain historical evidence.
 
 The approach camera retains its original 1.5-second pan and then holds.
 Caravan, Lucan and page tracks still stop at 1.5 seconds; wagon/hoof audio follows
@@ -157,11 +164,14 @@ A straight-moving actor can declare this bounded annotation:
 The finite action duration must equal deceleration plus settle. Scene updates
 start the cue once and account for only the time since its boundary, including
 when a large update crosses it. Drawing and reading dialogue do not trigger the
-clip. Aerial ground-reference sampling retains the uninterrupted incoming walk.
+clip. Aerial ground-reference sampling uses the separate uninterrupted incoming
+cycle and never borrows the live stopping action.
 
-The [walk-stop review](reviews/iselin_walk_stop/README.md) records continuous
-production-shot captures, normal/slow playback, frame inspection and lifecycle
-validation. It distinguishes initial review stationing from played scene updates.
+The [live detailed gate review](reviews/iselin_detailed_gate_live/README.md)
+records production-loaded normal/slow captures, approved-pixel checks and
+lifecycle validation. Initial review stationing selects the shot; production
+updates then own all movement, action and camera selection. The earlier
+[native stop review](reviews/iselin_walk_stop/README.md) remains historical.
 
 ## Controls and presentation
 

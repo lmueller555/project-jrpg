@@ -145,7 +145,10 @@ class RegentArrivalStagingTests(unittest.TestCase):
                     rect = self.scene._draw_actor(canvas, actor, self.scene.camera_position)
                     ground = self.scene.actor_position(actor)-self.scene.camera_position
                     self.assertLessEqual(abs(rect.bottom-ground.y), 3)
-                self.assertIn(poses[0], ('stand_left', 'parked_left', 'walk_left'))
+                if actor['id'] == 'iselin':
+                    self.assertEqual(poses[0], 'gate_stand_left')
+                else:
+                    self.assertIn(poses[0], ('stand_left', 'parked_left', 'walk_left'))
                 turning = [pose for pose in poses if pose in ('turn_left_back', 'walk_left_back')]
                 self.assertTrue(turning, poses)
                 self.assertIn('walk_back', poses)
