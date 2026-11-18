@@ -85,6 +85,19 @@ about it. This is a proposed encounter with unnamed neighbours, not a
 rite, a change to existing characters’ beliefs, or a substitute for the
 Sanctuary’s duty to the dead.
 
+## Elden Vale: Halden’s mill voice
+
+A child has heard [Halden](../../narrative/game_01/CHAPTER_01.md) talking
+over the working mill wheel often enough to think of it as one of his
+voices. They meet him in a quiet place and tell him he’s speaking too
+softly. “Do the mill voice.” He gives an absurdly thunderous greeting
+and goes back to his conversation at an ordinary volume.
+
+An adult hears machinery that makes everyone raise their voice. The
+child hears a person they know becoming wonderfully different at work.
+This is a proposed moment with an unnamed child, not a scripted task or
+a change to Halden’s established work or the [mill](../regions/ELDEN_VALE.md).
+
 ## Elden Vale: what the closed passage remembers
 
 The [public evidence in the covenant](../SANCTUARY_COVENANT.md#the-public-evidence-behind-serenes-caution)
@@ -307,6 +320,19 @@ including the irritating ones. She makes room for visiting learners. When
 Edran is in town, he covers one of her teaching afternoons so she can leave
 early. The exchange is a proposed relationship, not a fixed scene or an
 earlier introduction, and neither person considers the argument settled.
+
+## Lower Leth: the stool beside the carving stall
+
+At one [Lower Leth](MEROVAR.md#lower-leth) market, a carver keeps a
+loose-legged stool beside her stall. She pays a travelling woodworker a
+small fee to repair one joint while she watches. She turns the stool over,
+then sits. When a grower asks who could mend their orchard crates, she can
+recommend a specific piece of work instead of vouching for a stranger’s family.
+
+A neighbouring stallholder hires only people he knows: a sound joint
+doesn’t tell him who will still be in town tomorrow. The stool opens one
+door without becoming a regional test, a licence to work, or proof that
+any stranger will get a job.
 
 ## Rookfen and Marris: where a cargo changes hands
 
@@ -623,12 +649,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Give one Vale child or young person knowledge of a familiar place
-   that an adult overlooks. Anchor it to a detail the game already
-   records; do not redefine a playable area.
-2. Show how one person new to a Lower Leth community can prove what
-   they know without having a town family to introduce them. Keep
-   the practice local and distinct from a general guild licence.
+1. Define one proposed historical phase between the ancient foundation
+   and the recent local stories. Give it a surviving material trace
+   rather than a new date, dynasty or hidden cause.
+2. Make the Rookfen–Marris overlay easier to assess without deciding a
+   route: distinguish what a landing, coastal leg and receiving port
+   need before any line goes on a map.
 
 ## Map implications for a later review
 
