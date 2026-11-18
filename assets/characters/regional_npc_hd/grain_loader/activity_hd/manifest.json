@@ -1,0 +1,3533 @@
+{
+  "version": 1,
+  "actor_id": "grain_loader",
+  "integration_status": "staged_not_integrated",
+  "runtime_activation": false,
+  "visual_approval": "pending_owner_review",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_canvas": [
+    48,
+    52
+  ],
+  "draw_anchor_logical": [
+    24,
+    46
+  ],
+  "sequences": {
+    "inspect_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/inspect_front_0.png",
+          "duration_ms": 650
+        },
+        {
+          "file": "poses/inspect_front_1.png",
+          "duration_ms": 650
+        }
+      ]
+    },
+    "cover_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/cover_front_0.png",
+          "duration_ms": 500,
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "cloth_offset": [
+            0,
+            -14
+          ]
+        },
+        {
+          "file": "poses/cover_front_1.png",
+          "duration_ms": 500,
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "cloth_offset": [
+            0,
+            -14
+          ]
+        }
+      ]
+    },
+    "lift_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/lift_front_0.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -3
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -2,
+              -5
+            ],
+            [
+              2,
+              -5
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "poses/lift_front_1.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -7
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -8
+            ],
+            [
+              3,
+              -8
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "poses/lift_front_2.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -11
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              5,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "poses/lift_front_3.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "recover_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/recover_front_0.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "poses/recover_front_1.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "poses/recover_front_2.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "poses/recover_front_3.png",
+          "duration_ms": 100,
+          "gripped": false
+        }
+      ]
+    },
+    "hold_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/hold_front_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/hold_back_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/hold_left_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/hold_right_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -12
+            ],
+            [
+              6,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/carry_front_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -4,
+              -14
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_front_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -14
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_front_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -14
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_front_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -14
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/carry_back_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_back_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_back_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_back_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/carry_left_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_left_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_left_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_left_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/carry_right_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              6,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_right_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -14
+            ],
+            [
+              7,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_right_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -14
+            ],
+            [
+              7,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "poses/carry_right_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -14
+            ],
+            [
+              7,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "look_left": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/look_left_0.png",
+          "duration_ms": 350,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "poses/look_left_1.png",
+          "duration_ms": 350,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              3,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "place_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/place_right_0.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            4,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              3,
+              -14
+            ],
+            [
+              4,
+              -15
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "poses/place_right_1.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            9,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              7,
+              -12
+            ],
+            [
+              9,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "poses/place_right_2.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            14,
+            -10
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              10,
+              -11
+            ],
+            [
+              11,
+              -12
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "poses/place_right_3.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            14,
+            -10
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "gripped": false
+        }
+      ]
+    },
+    "push_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/push_right_0.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            14,
+            -10
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              11,
+              -18
+            ]
+          ]
+        },
+        {
+          "file": "poses/push_right_1.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            16,
+            -11
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              12,
+              -18
+            ]
+          ]
+        },
+        {
+          "file": "poses/push_right_2.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            18,
+            -11
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              15,
+              -19
+            ]
+          ]
+        },
+        {
+          "file": "poses/push_right_3.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            20,
+            -12
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              15,
+              -19
+            ]
+          ]
+        }
+      ]
+    },
+    "work_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "poses/work_right_0.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "poses/work_right_1.png",
+          "duration_ms": 550
+        }
+      ]
+    },
+    "stretch_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "poses/stretch_front_0.png",
+          "duration_ms": 850
+        },
+        {
+          "file": "poses/stretch_front_1.png",
+          "duration_ms": 850
+        }
+      ]
+    }
+  },
+  "frames": [
+    {
+      "clip": "inspect_front",
+      "index": 0,
+      "file": "poses/inspect_front_0.png",
+      "sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "inspect_front_0.png",
+        "duration_ms": 650
+      },
+      "legacy_body_sha256": "b1b8d2084f93500788b2fe0008e1860599af7638d2482f510e90a1a4d16aec54",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "07ac28aff0a6119f074b96b1dff3012eae5cd7f0389da5f5bd5a1a72082d194c",
+          "source_size_artwork": [
+            113,
+            221
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            31,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/inspect_front_0.png",
+        "refined_master_sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf"
+      }
+    },
+    {
+      "clip": "inspect_front",
+      "index": 1,
+      "file": "poses/inspect_front_1.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "inspect_front_1.png",
+        "duration_ms": 650
+      },
+      "legacy_body_sha256": "423559a698ba6cf75d28ff5d48162433c9f71be7997885b0db49adf68e41fe54",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "4fcc7f583adf3480d0309c541e0cb5a1052f57a3dd1282c1289998b149388942",
+          "source_size_artwork": [
+            122,
+            198
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            29,
+            31
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/inspect_front_1.png",
+        "refined_master_sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+      }
+    },
+    {
+      "clip": "cover_front",
+      "index": 0,
+      "file": "poses/cover_front_0.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "cover_front_0.png",
+        "duration_ms": 500,
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "cloth_offset": [
+          0,
+          -14
+        ]
+      },
+      "legacy_body_sha256": "3a5719c39dee31f0881e5a4800e413d9668bf3bf3aa353902c3a40f2e2702a0a",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "3382b12689c972ef4355ca4fdc35aa92c9778a30084cec91e795074328f686e5",
+          "source_size_artwork": [
+            110,
+            250
+          ],
+          "uniform_scale_to_native": 0.272,
+          "origin_native": [
+            33,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/cover_front_0.png",
+        "refined_master_sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+      }
+    },
+    {
+      "clip": "cover_front",
+      "index": 1,
+      "file": "poses/cover_front_1.png",
+      "sha256": "0a78648ea012b95d0374ebbef97f838b93f1e5914eee30d0ae3ab2d4b2ccfa55",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "cover_front_1.png",
+        "duration_ms": 500,
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "cloth_offset": [
+          0,
+          -14
+        ]
+      },
+      "legacy_body_sha256": "2cffa067b406614fdc6de8168de39b6dda3d35bfd335d4ad9896b4c35c6355f9",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "3ec1ca3c8a3ff7628d8bf4693a0e99141e7e306ecf1be621585ab14c096e7236",
+          "source_size_artwork": [
+            122,
+            223
+          ],
+          "uniform_scale_to_native": 0.272,
+          "origin_native": [
+            31,
+            31
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/cover_front_1.png",
+        "refined_master_sha256": "0a78648ea012b95d0374ebbef97f838b93f1e5914eee30d0ae3ab2d4b2ccfa55"
+      }
+    },
+    {
+      "clip": "lift_front",
+      "index": 0,
+      "file": "poses/lift_front_0.png",
+      "sha256": "414232c253c0fc707a1e9590ec3e18605863246d12e64f4706c25bb9d818e9a6",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "lift_front_0.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -3
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -2,
+            -5
+          ],
+          [
+            2,
+            -5
+          ]
+        ],
+        "gripped": false
+      },
+      "legacy_body_sha256": "1e39ef6edbc65830c411996558a8ef8f8c4c29a4615f6eb23070c2189dd842fe",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "faa9695e130264fd8c836c3bffaaf4857ec9a3ea7a1809aa15b9aecadccb2b68",
+          "source_size_artwork": [
+            132,
+            193
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            28,
+            33
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/lift_front_0.png",
+        "refined_master_sha256": "414232c253c0fc707a1e9590ec3e18605863246d12e64f4706c25bb9d818e9a6"
+      }
+    },
+    {
+      "clip": "lift_front",
+      "index": 1,
+      "file": "poses/lift_front_1.png",
+      "sha256": "7322330efca4f0fbf46a8923d2b35f37031cf415e0c4b75617d72392d40ce7ae",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "lift_front_1.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -7
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ]
+        ],
+        "gripped": true
+      },
+      "legacy_body_sha256": "8161489abd4adb412d1fcd7af7ffe9ba4c080347467d261fc5184c3f8ab505c0",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "8d6ce6b79735291c06e9f91b12509b03a710dd7c4e5964d616a4fa563459b796",
+          "source_size_artwork": [
+            123,
+            214
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            29,
+            26
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/lift_front_1.png",
+        "refined_master_sha256": "7322330efca4f0fbf46a8923d2b35f37031cf415e0c4b75617d72392d40ce7ae"
+      }
+    },
+    {
+      "clip": "lift_front",
+      "index": 2,
+      "file": "poses/lift_front_2.png",
+      "sha256": "64bf6a00977ce466ac89efa691b85e2767c4fd71d800009a185a207da783b7b2",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "lift_front_2.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            5,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "legacy_body_sha256": "a88c165fbccd1e7dba74a2de346eb1f99a62f319b1d3fece570662561d7fa54b",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "ebb0961e6591a052b5feed898a7d2a84be1d45e67741c75a2315c0577b930436",
+          "source_size_artwork": [
+            110,
+            227
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            31,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/lift_front_2.png",
+        "refined_master_sha256": "64bf6a00977ce466ac89efa691b85e2767c4fd71d800009a185a207da783b7b2"
+      }
+    },
+    {
+      "clip": "lift_front",
+      "index": 3,
+      "file": "poses/lift_front_3.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "lift_front_3.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "legacy_body_sha256": "2b1d31622326dd568aa4eb23f43e9be5e627b8f6ecc7fd94ab9adfadbab196bc",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "7cfb499cabc23db50da7b6d65ad85c5424db6da993c8d4accc920d106d13896f",
+          "source_size_artwork": [
+            110,
+            234
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            33,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/lift_front_3.png",
+        "refined_master_sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+      }
+    },
+    {
+      "clip": "recover_front",
+      "index": 0,
+      "file": "poses/recover_front_0.png",
+      "sha256": "414232c253c0fc707a1e9590ec3e18605863246d12e64f4706c25bb9d818e9a6",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_front_0.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "legacy_body_sha256": "1e39ef6edbc65830c411996558a8ef8f8c4c29a4615f6eb23070c2189dd842fe",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "faa9695e130264fd8c836c3bffaaf4857ec9a3ea7a1809aa15b9aecadccb2b68",
+          "source_size_artwork": [
+            132,
+            193
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            28,
+            33
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/recover_front_0.png",
+        "refined_master_sha256": "414232c253c0fc707a1e9590ec3e18605863246d12e64f4706c25bb9d818e9a6"
+      }
+    },
+    {
+      "clip": "recover_front",
+      "index": 1,
+      "file": "poses/recover_front_1.png",
+      "sha256": "7322330efca4f0fbf46a8923d2b35f37031cf415e0c4b75617d72392d40ce7ae",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_front_1.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "legacy_body_sha256": "8161489abd4adb412d1fcd7af7ffe9ba4c080347467d261fc5184c3f8ab505c0",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "8d6ce6b79735291c06e9f91b12509b03a710dd7c4e5964d616a4fa563459b796",
+          "source_size_artwork": [
+            123,
+            214
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            29,
+            26
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/recover_front_1.png",
+        "refined_master_sha256": "7322330efca4f0fbf46a8923d2b35f37031cf415e0c4b75617d72392d40ce7ae"
+      }
+    },
+    {
+      "clip": "recover_front",
+      "index": 2,
+      "file": "poses/recover_front_2.png",
+      "sha256": "64bf6a00977ce466ac89efa691b85e2767c4fd71d800009a185a207da783b7b2",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_front_2.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "legacy_body_sha256": "a88c165fbccd1e7dba74a2de346eb1f99a62f319b1d3fece570662561d7fa54b",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "ebb0961e6591a052b5feed898a7d2a84be1d45e67741c75a2315c0577b930436",
+          "source_size_artwork": [
+            110,
+            227
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            31,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/recover_front_2.png",
+        "refined_master_sha256": "64bf6a00977ce466ac89efa691b85e2767c4fd71d800009a185a207da783b7b2"
+      }
+    },
+    {
+      "clip": "recover_front",
+      "index": 3,
+      "file": "poses/recover_front_3.png",
+      "sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "recover_front_3.png",
+        "duration_ms": 100,
+        "gripped": false
+      },
+      "legacy_body_sha256": "0d99e1e3126cb1d8380b51797fcd0a6f9fb1f74362537d6d848ba568d38eee6b",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "e21c6ecb643ab050ca7c6e5bf0807eec4ead1ba276970ad897f0be57ed9bc2c3",
+          "source_size_artwork": [
+            113,
+            218
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            31,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/recover_front_3.png",
+        "refined_master_sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf"
+      }
+    },
+    {
+      "clip": "hold_front",
+      "index": 0,
+      "file": "poses/hold_front_0.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "hold_front_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "2b1d31622326dd568aa4eb23f43e9be5e627b8f6ecc7fd94ab9adfadbab196bc",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "7cfb499cabc23db50da7b6d65ad85c5424db6da993c8d4accc920d106d13896f",
+          "source_size_artwork": [
+            110,
+            234
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            33,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/hold_front_0.png",
+        "refined_master_sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+      }
+    },
+    {
+      "clip": "hold_back",
+      "index": 0,
+      "file": "poses/hold_back_0.png",
+      "sha256": "9f63810c6b832cef4cf21434d4bf9cf9fca3fd1b81684e9362612a6ba092a74d",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "hold_back_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "back",
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "d475021230e9ae8b56909594f467b8df2e7f01a0493cd5694412b313a23d3e08",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "f5abe231a00a04e616aa077a872e90637145561f28f00e512155264f3f195fb5",
+          "source_size_artwork": [
+            111,
+            234
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            32,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/hold_back_0.png",
+        "refined_master_sha256": "9f63810c6b832cef4cf21434d4bf9cf9fca3fd1b81684e9362612a6ba092a74d"
+      }
+    },
+    {
+      "clip": "hold_left",
+      "index": 0,
+      "file": "poses/hold_left_0.png",
+      "sha256": "c2fc19a70ebf9a04065cc139566db97060f22bddccb2b70789c9c896a428f57c",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "hold_left_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          -7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -6,
+            -14
+          ],
+          [
+            -5,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "a596136ef1d83a0edb71e0f9959dec392df4b631e8086628f4d419c234f3d32b",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "aa6d1993dcb5b88623bdfaba303ac6219044d1aa0d683930f0c18d414d8faa2a",
+          "source_size_artwork": [
+            132,
+            259
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            30,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/hold_left_0.png",
+        "refined_master_sha256": "c2fc19a70ebf9a04065cc139566db97060f22bddccb2b70789c9c896a428f57c"
+      }
+    },
+    {
+      "clip": "hold_right",
+      "index": 0,
+      "file": "poses/hold_right_0.png",
+      "sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "hold_right_0.png",
+        "duration_ms": 720,
+        "sack_offset": [
+          7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            5,
+            -12
+          ],
+          [
+            6,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "aa7e5ba3b2fa3572ee392429ec30f1c3bae518cd0a92d3d46c7cd339cff4cae4",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "699a8d5737c34b353592f8effc03f14f2c6c7073762070b7db78b53ce07b18dc",
+          "source_size_artwork": [
+            115,
+            234
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            31,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/hold_right_0.png",
+        "refined_master_sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5"
+      }
+    },
+    {
+      "clip": "carry_front",
+      "index": 0,
+      "file": "poses/carry_front_0.png",
+      "sha256": "7498efb3b99003a2cf78becc7e12146e9fc39ae4d9d4f98e585527dc6e34431d",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_front_0.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -4,
+            -14
+          ],
+          [
+            4,
+            -12
+          ]
+        ]
+      },
+      "legacy_body_sha256": "1cb5714a630d00e67a129f508e16a0895170e45ff5764d3768c8a9c12163c1ba",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "da2aa29e6f9e6caf45826de0bd097ecc0a5651b16ed8d369c0a06777667b7b40",
+          "source_size_artwork": [
+            117,
+            250
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            37,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_front_0.png",
+        "refined_master_sha256": "7498efb3b99003a2cf78becc7e12146e9fc39ae4d9d4f98e585527dc6e34431d"
+      }
+    },
+    {
+      "clip": "carry_front",
+      "index": 1,
+      "file": "poses/carry_front_1.png",
+      "sha256": "5eed8b7e5aa1eb069860e6cfa24411759e67b89a8f453cc055d546baafed19fb",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_front_1.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -14
+          ],
+          [
+            4,
+            -12
+          ]
+        ]
+      },
+      "legacy_body_sha256": "c69684f14a396e0eed1a88c6ae1e22fbaa0fd3e96550a5c20c04acef32f04abc",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "e06da0df1af113740a364e393a73643caa2396b42f2ad0625a2c419b08211bba",
+          "source_size_artwork": [
+            117,
+            252
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            36,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_front_1.png",
+        "refined_master_sha256": "5eed8b7e5aa1eb069860e6cfa24411759e67b89a8f453cc055d546baafed19fb"
+      }
+    },
+    {
+      "clip": "carry_front",
+      "index": 2,
+      "file": "poses/carry_front_2.png",
+      "sha256": "59f1f33edcffeae0f906ba50dabcef2fa6ead6a2efb7b639c6f1b71a0940d9dd",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_front_2.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -14
+          ],
+          [
+            4,
+            -12
+          ]
+        ]
+      },
+      "legacy_body_sha256": "da40fa8351702a49cf30c5709d261316b58ebf36e04333374a75a37b6757170d",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "74f432f57019ae1e6fd79cf6b5314b5d6777a26704b5740efdbb2e8bb085a629",
+          "source_size_artwork": [
+            119,
+            252
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            37,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_front_2.png",
+        "refined_master_sha256": "59f1f33edcffeae0f906ba50dabcef2fa6ead6a2efb7b639c6f1b71a0940d9dd"
+      }
+    },
+    {
+      "clip": "carry_front",
+      "index": 3,
+      "file": "poses/carry_front_3.png",
+      "sha256": "218028e86f2d809b4221f56c9e4d90175e068055efe9efd280cf2748df909314",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_front_3.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -3,
+            -14
+          ],
+          [
+            5,
+            -12
+          ]
+        ]
+      },
+      "legacy_body_sha256": "f63cbf235e5b2a5d40b56b1b17e9635885dda4c1721358e63981e160a472c602",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "6dc4080d3113e9970e47009348cfb803bde0973df9a13a42dfbaa48e2a15e003",
+          "source_size_artwork": [
+            116,
+            251
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            36,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_front_3.png",
+        "refined_master_sha256": "218028e86f2d809b4221f56c9e4d90175e068055efe9efd280cf2748df909314"
+      }
+    },
+    {
+      "clip": "carry_back",
+      "index": 0,
+      "file": "poses/carry_back_0.png",
+      "sha256": "06a870a1ea68d566a5c67e0118aad13f6ae279f20e896ff116f2741d0bdb666c",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_back_0.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "back",
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "686cddfdb2ce05a8f30602a4c282749cc4e4b71a54e7288d4b2fbef91ccbdefe",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "8d82c1bba98a20ee5cd6d813f02e19151445c3925f7f4c880abdb5006cf5fbcd",
+          "source_size_artwork": [
+            119,
+            256
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            28,
+            23
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_back_0.png",
+        "refined_master_sha256": "06a870a1ea68d566a5c67e0118aad13f6ae279f20e896ff116f2741d0bdb666c"
+      }
+    },
+    {
+      "clip": "carry_back",
+      "index": 1,
+      "file": "poses/carry_back_1.png",
+      "sha256": "f24fb5e7fe91367138cff6be998d24e4de144e5a9b058d105f795f63f4555fdc",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_back_1.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "back",
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "ade998cfdb8b8c61ef372b961890bed1b446e60a59ef0c834f87748ecda87cdf",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "8e01ea132c7b4455ed38068dcf669a46bc6333c415f632e45db4249366f72b6b",
+          "source_size_artwork": [
+            116,
+            253
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            31,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_back_1.png",
+        "refined_master_sha256": "f24fb5e7fe91367138cff6be998d24e4de144e5a9b058d105f795f63f4555fdc"
+      }
+    },
+    {
+      "clip": "carry_back",
+      "index": 2,
+      "file": "poses/carry_back_2.png",
+      "sha256": "46e3b7db81d56d3605e042f26cb8fc279321f7c7ed511456d3c5e24d1a461ab8",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_back_2.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "back",
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "153e143ed4949bb0aae10352c568cbcc24f268f7d2ce6653655b959f2e38e50d",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "1861091ed134ab4d46c6b83bf2fed1e17c01749b9ea26e0f77b59b3a757fc483",
+          "source_size_artwork": [
+            119,
+            255
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            29,
+            23
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_back_2.png",
+        "refined_master_sha256": "46e3b7db81d56d3605e042f26cb8fc279321f7c7ed511456d3c5e24d1a461ab8"
+      }
+    },
+    {
+      "clip": "carry_back",
+      "index": 3,
+      "file": "poses/carry_back_3.png",
+      "sha256": "c81db363bc0284bfb78c40d1678e24be428b4dede2e658a4d3b58f324f16d5d7",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_back_3.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "back",
+        "hands": [
+          [
+            -4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "9e4338d31d0a1928056554a7e1398c6650fd47cc5af1c78c3a3b544e724a693e",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "ea8bdaf7c7d0d90ca2ccb0ca510ceea18beb40a77946733c1408f0ded5d6b879",
+          "source_size_artwork": [
+            116,
+            253
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            31,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_back_3.png",
+        "refined_master_sha256": "c81db363bc0284bfb78c40d1678e24be428b4dede2e658a4d3b58f324f16d5d7"
+      }
+    },
+    {
+      "clip": "carry_left",
+      "index": 0,
+      "file": "poses/carry_left_0.png",
+      "sha256": "cc6edc212a06d53cf235d8529526be6ed5038738cddc78293251a1d1cdde03da",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_left_0.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          -7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -6,
+            -13
+          ],
+          [
+            -5,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "c75da12963d19d945a2890712f8571ef9415c9e3427455d43aa35862a27baf04",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "1e8d7b758b4e57d66dd5bc57229ae6b1626a698a6d6ba94c43256c592211482b",
+          "source_size_artwork": [
+            145,
+            258
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            29,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_left_0.png",
+        "refined_master_sha256": "cc6edc212a06d53cf235d8529526be6ed5038738cddc78293251a1d1cdde03da"
+      }
+    },
+    {
+      "clip": "carry_left",
+      "index": 1,
+      "file": "poses/carry_left_1.png",
+      "sha256": "0d9fee10020c9261426b2130d41f46e1ec1345be957f42fdfc6fb2dc8eb19aff",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_left_1.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          -7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -6,
+            -14
+          ],
+          [
+            -5,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "a596136ef1d83a0edb71e0f9959dec392df4b631e8086628f4d419c234f3d32b",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "aa6d1993dcb5b88623bdfaba303ac6219044d1aa0d683930f0c18d414d8faa2a",
+          "source_size_artwork": [
+            132,
+            259
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            30,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_left_1.png",
+        "refined_master_sha256": "0d9fee10020c9261426b2130d41f46e1ec1345be957f42fdfc6fb2dc8eb19aff"
+      }
+    },
+    {
+      "clip": "carry_left",
+      "index": 2,
+      "file": "poses/carry_left_2.png",
+      "sha256": "50c9e2749cd1d6429cd9aaa1e552dd31b96244a5cb74bef5cebba0ca0c6c95a2",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_left_2.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          -7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -6,
+            -13
+          ],
+          [
+            -5,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "a02dffcb20c527286db3636051740e56a2e159aa5a9e69cc6f365de9d75ecf92",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "52d1e80118605264805e707039c85afddc240f321e01aa7e93fbcf18212830a7",
+          "source_size_artwork": [
+            153,
+            258
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            27,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_left_2.png",
+        "refined_master_sha256": "50c9e2749cd1d6429cd9aaa1e552dd31b96244a5cb74bef5cebba0ca0c6c95a2"
+      }
+    },
+    {
+      "clip": "carry_left",
+      "index": 3,
+      "file": "poses/carry_left_3.png",
+      "sha256": "4d73f809a51d58e08d6548d240994c639b37ff8d1d8b5b3fe854a643d638bd9f",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_left_3.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          -7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -6,
+            -14
+          ],
+          [
+            -5,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "8a401031fd437fbbbc8a172ace5c672e290c93efe0dc3c1d581e3b0219276ff1",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "eb685b7a5fd2c0d286cc2b3647cd1de56f4ac3cf0739e2ca691dac4f930c0b3c",
+          "source_size_artwork": [
+            125,
+            259
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            30,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_left_3.png",
+        "refined_master_sha256": "4d73f809a51d58e08d6548d240994c639b37ff8d1d8b5b3fe854a643d638bd9f"
+      }
+    },
+    {
+      "clip": "carry_right",
+      "index": 0,
+      "file": "poses/carry_right_0.png",
+      "sha256": "c709dade76944ca351a5019f78e86decfba4903796fcfbe0e88c3ea87bb6fab6",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_right_0.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            5,
+            -13
+          ],
+          [
+            6,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "23c419e5d3c70a0beb83992063948b46976c5803d9b501ddecad294878477832",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "6543e325e985246663bcf6ce2dd27fc466442a002fe494077544f4cf954b4cb2",
+          "source_size_artwork": [
+            149,
+            255
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            28,
+            23
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_right_0.png",
+        "refined_master_sha256": "c709dade76944ca351a5019f78e86decfba4903796fcfbe0e88c3ea87bb6fab6"
+      }
+    },
+    {
+      "clip": "carry_right",
+      "index": 1,
+      "file": "poses/carry_right_1.png",
+      "sha256": "b4b8c0b4c4be63dcc5aa86ae8245af9cd6c48a768f7df22fc2e2acac0f2f760a",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_right_1.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            5,
+            -14
+          ],
+          [
+            7,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "b8a597043c2c9f59f3515ac0fb4a2ef1cecaf091c927f84bb4bc6987ea2519fe",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "1399d437faf7c47fcbd899a741cde4fc0e2d49ce9dce107323e2012ad4a94e12",
+          "source_size_artwork": [
+            127,
+            258
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            40,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_right_1.png",
+        "refined_master_sha256": "b4b8c0b4c4be63dcc5aa86ae8245af9cd6c48a768f7df22fc2e2acac0f2f760a"
+      }
+    },
+    {
+      "clip": "carry_right",
+      "index": 2,
+      "file": "poses/carry_right_2.png",
+      "sha256": "043968b93c1585a363aac52fb6331a8fa101929b156955193e5937314cd3b078",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_right_2.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            5,
+            -14
+          ],
+          [
+            7,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "bf74c60c5df821cba92f278848b74e550a8bc49459ab131e478fc6d26a009282",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "1885cf10b54e3d4a50a8d8d6ccf25b291fc66d2d2ea3a2a4408ce603fef68ac0",
+          "source_size_artwork": [
+            161,
+            258
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            27,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_right_2.png",
+        "refined_master_sha256": "043968b93c1585a363aac52fb6331a8fa101929b156955193e5937314cd3b078"
+      }
+    },
+    {
+      "clip": "carry_right",
+      "index": 3,
+      "file": "poses/carry_right_3.png",
+      "sha256": "70a5fd1b3e413d210becd42bec8212499bfa17cf2e82560481f95495945bb534",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "carry_right_3.png",
+        "duration_ms": 180,
+        "sack_offset": [
+          7,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            5,
+            -14
+          ],
+          [
+            7,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "240f888155db924fe990bf624fa725c06f65e435be6d75f14775407897c12fd5",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "f1cc60baac218d78fd742f058edde0bef47b69d57c63f69b367189d200b0fddf",
+          "source_size_artwork": [
+            127,
+            258
+          ],
+          "uniform_scale_to_native": 0.2698412698412698,
+          "origin_native": [
+            38,
+            22
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/carry_right_3.png",
+        "refined_master_sha256": "70a5fd1b3e413d210becd42bec8212499bfa17cf2e82560481f95495945bb534"
+      }
+    },
+    {
+      "clip": "look_left",
+      "index": 0,
+      "file": "poses/look_left_0.png",
+      "sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "look_left_0.png",
+        "duration_ms": 350,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ]
+      },
+      "legacy_body_sha256": "2b1d31622326dd568aa4eb23f43e9be5e627b8f6ecc7fd94ab9adfadbab196bc",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "7cfb499cabc23db50da7b6d65ad85c5424db6da993c8d4accc920d106d13896f",
+          "source_size_artwork": [
+            110,
+            234
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            33,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/look_left_0.png",
+        "refined_master_sha256": "ece35ef4be5ffe7f59af4df1016fb6062714463effa0253cc4dc8794a6322562"
+      }
+    },
+    {
+      "clip": "look_left",
+      "index": 1,
+      "file": "poses/look_left_1.png",
+      "sha256": "6ae506ccfff7e98d4d8aafd61cc3d4d2320abfaaeecb4fd6cf72be4373f51613",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "look_left_1.png",
+        "duration_ms": 350,
+        "sack_offset": [
+          0,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            -5,
+            -13
+          ],
+          [
+            3,
+            -14
+          ]
+        ]
+      },
+      "legacy_body_sha256": "d45d2e6fd3eeac6d107b3c148846ed9503bcc60f0905eda72a33dee5b1a63070",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "f8a18d53da955ea5ed595c608f7a4adf99915bfc57877b3fedc4063ba9d60ff7",
+          "source_size_artwork": [
+            109,
+            245
+          ],
+          "uniform_scale_to_native": 0.27755102040816326,
+          "origin_native": [
+            33,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/look_left_1.png",
+        "refined_master_sha256": "6ae506ccfff7e98d4d8aafd61cc3d4d2320abfaaeecb4fd6cf72be4373f51613"
+      }
+    },
+    {
+      "clip": "place_right",
+      "index": 0,
+      "file": "poses/place_right_0.png",
+      "sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "place_right_0.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          4,
+          -14
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            3,
+            -14
+          ],
+          [
+            4,
+            -15
+          ]
+        ],
+        "gripped": true
+      },
+      "legacy_body_sha256": "51ba79d547b6a19904c28185c19908763be5dd3ed47fba756735c52f19ccebc0",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "846df7968723a777b5fa32c41ab55ac9b3e02bceab4273fc8f469c2b44760223",
+          "source_size_artwork": [
+            105,
+            253
+          ],
+          "uniform_scale_to_native": 0.26877470355731226,
+          "origin_native": [
+            34,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/place_right_0.png",
+        "refined_master_sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5"
+      }
+    },
+    {
+      "clip": "place_right",
+      "index": 1,
+      "file": "poses/place_right_1.png",
+      "sha256": "a4bbda1e7326bce8196e62f6cbac7eb04bc56c9ca04d286b38a837ce70774039",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "place_right_1.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          9,
+          -13
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            7,
+            -12
+          ],
+          [
+            9,
+            -13
+          ]
+        ],
+        "gripped": true
+      },
+      "legacy_body_sha256": "b5263683ca5293190131d414db956d1a30bc612125daca6d3dff4ea0537166b3",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "8f68cfa1f64bd7723c65828206f501b8a1a548d01ddcbe55825c0e4df1362d6a",
+          "source_size_artwork": [
+            132,
+            245
+          ],
+          "uniform_scale_to_native": 0.26877470355731226,
+          "origin_native": [
+            34,
+            26
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/place_right_1.png",
+        "refined_master_sha256": "a4bbda1e7326bce8196e62f6cbac7eb04bc56c9ca04d286b38a837ce70774039"
+      }
+    },
+    {
+      "clip": "place_right",
+      "index": 2,
+      "file": "poses/place_right_2.png",
+      "sha256": "dd741c09831997c0dfdeccc1f920a7b728eed2a31bcb75b84b804f3cc76e15df",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "place_right_2.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          14,
+          -10
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            10,
+            -11
+          ],
+          [
+            11,
+            -12
+          ]
+        ],
+        "gripped": true
+      },
+      "legacy_body_sha256": "f3a999dd5ab813e050a18c519aa13344a81084c31266594196c094607941b322",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "d4e9524ac628bcdc8bf33b2db6e1efe2c4f21f30884cfc5ae1898765ecd3fc14",
+          "source_size_artwork": [
+            149,
+            227
+          ],
+          "uniform_scale_to_native": 0.26877470355731226,
+          "origin_native": [
+            35,
+            31
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/place_right_2.png",
+        "refined_master_sha256": "dd741c09831997c0dfdeccc1f920a7b728eed2a31bcb75b84b804f3cc76e15df"
+      }
+    },
+    {
+      "clip": "place_right",
+      "index": 3,
+      "file": "poses/place_right_3.png",
+      "sha256": "7c3ed49feeac2e608c9db7d4185454707fdeb3e20f7a0dcc96ae7f9a18a5335b",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "place_right_3.png",
+        "duration_ms": 300,
+        "sack_offset": [
+          14,
+          -10
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            4,
+            -13
+          ],
+          [
+            4,
+            -13
+          ]
+        ],
+        "gripped": false
+      },
+      "legacy_body_sha256": "d063c86d265293d5dcaeaf185ea9b11f08808ad41b9832ac55a01eaa07df9477",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "cd4e61bfc4c4d6c4478caf2cae8b64438d5858126f7f7210e92b61519accf342",
+          "source_size_artwork": [
+            103,
+            253
+          ],
+          "uniform_scale_to_native": 0.26877470355731226,
+          "origin_native": [
+            34,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/place_right_3.png",
+        "refined_master_sha256": "7c3ed49feeac2e608c9db7d4185454707fdeb3e20f7a0dcc96ae7f9a18a5335b"
+      }
+    },
+    {
+      "clip": "push_right",
+      "index": 0,
+      "file": "poses/push_right_0.png",
+      "sha256": "9e41898d441e48442bcff0506f482adcb69b095323cf6af57e6509c61c5f983c",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "push_right_0.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          14,
+          -10
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            11,
+            -18
+          ]
+        ]
+      },
+      "legacy_body_sha256": "1640bfb2b2c3c699b539fe6ed5f1e74017dd8228953439745a12d8f14e216ffe",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "f25a0defd41ac3f7eadca5979ec82afdc8d9dd5abba9245d721fad4ddf911d1f",
+          "source_size_artwork": [
+            144,
+            230
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            32,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/push_right_0.png",
+        "refined_master_sha256": "9e41898d441e48442bcff0506f482adcb69b095323cf6af57e6509c61c5f983c"
+      }
+    },
+    {
+      "clip": "push_right",
+      "index": 1,
+      "file": "poses/push_right_1.png",
+      "sha256": "b7ce1bf0e17b5668436c28b8148f1f5f37d7b5dcd59d73d5fe1d959c00b5060d",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "push_right_1.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          16,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            12,
+            -18
+          ]
+        ]
+      },
+      "legacy_body_sha256": "3b6bd1fb2115ac876f6832d2ddcdb78e2977f824ad6a51233132d0bfd37db087",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "85ff16942985218cc00524ea5a907970047fe4612d22b3113f3b5440297bf78e",
+          "source_size_artwork": [
+            149,
+            230
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            32,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/push_right_1.png",
+        "refined_master_sha256": "b7ce1bf0e17b5668436c28b8148f1f5f37d7b5dcd59d73d5fe1d959c00b5060d"
+      }
+    },
+    {
+      "clip": "push_right",
+      "index": 2,
+      "file": "poses/push_right_2.png",
+      "sha256": "b40e12edc8344ea37650edf7d407940e7b31afcf56c0bcfd1e67c073961c535f",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "push_right_2.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          18,
+          -11
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            15,
+            -19
+          ]
+        ]
+      },
+      "legacy_body_sha256": "2c623437e48076867f72fcf200b9b35a589ecf05926dbb565d48b90717bb2d55",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "16003ff4037bafdb77db2b0158ae4fac5eaea3c31c0f62f4477a252bb748f320",
+          "source_size_artwork": [
+            172,
+            230
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            32,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/push_right_2.png",
+        "refined_master_sha256": "b40e12edc8344ea37650edf7d407940e7b31afcf56c0bcfd1e67c073961c535f"
+      }
+    },
+    {
+      "clip": "push_right",
+      "index": 3,
+      "file": "poses/push_right_3.png",
+      "sha256": "5d499f9a7f5bdeda8eb1c5aecc5543bf5b5696c82d63de86ab76d305d34d2bf2",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "push_right_3.png",
+        "duration_ms": 240,
+        "sack_offset": [
+          20,
+          -12
+        ],
+        "sack_layer": "front",
+        "hands": [
+          [
+            15,
+            -19
+          ]
+        ]
+      },
+      "legacy_body_sha256": "2c623437e48076867f72fcf200b9b35a589ecf05926dbb565d48b90717bb2d55",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "16003ff4037bafdb77db2b0158ae4fac5eaea3c31c0f62f4477a252bb748f320",
+          "source_size_artwork": [
+            172,
+            230
+          ],
+          "uniform_scale_to_native": 0.2905982905982906,
+          "origin_native": [
+            32,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/push_right_3.png",
+        "refined_master_sha256": "5d499f9a7f5bdeda8eb1c5aecc5543bf5b5696c82d63de86ab76d305d34d2bf2"
+      }
+    },
+    {
+      "clip": "work_right",
+      "index": 0,
+      "file": "poses/work_right_0.png",
+      "sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "work_right_0.png",
+        "duration_ms": 550
+      },
+      "legacy_body_sha256": "c599fb9246404b665959e8e735cd3d72a11c2ec516aabca0b2fe73311fdff3e3",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "0c16ad2527a3a7ce85d05a9831dacca97b1268dd1d2f91d9a4047f579fb65e25",
+          "source_size_artwork": [
+            111,
+            241
+          ],
+          "uniform_scale_to_native": 0.27755102040816326,
+          "origin_native": [
+            33,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/work_right_0.png",
+        "refined_master_sha256": "1486648ab5da5d16fc4a17f98ebbf159ea4e9ecfd28340f6213ff2bc661c05b5"
+      }
+    },
+    {
+      "clip": "work_right",
+      "index": 1,
+      "file": "poses/work_right_1.png",
+      "sha256": "260e77c3cde9d283de2fb6f24d46b2ae0c2d11ec3cd4096c786f1202411cd905",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "work_right_1.png",
+        "duration_ms": 550
+      },
+      "legacy_body_sha256": "d266e0140a95a33278f8ec2279d3c7983976111b1c25a5c339def8654ae4d080",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "bf0ca0ebbd08f49ed29331bd52cd9251b648fae7a2bedfbfbd60cbe458372554",
+          "source_size_artwork": [
+            106,
+            245
+          ],
+          "uniform_scale_to_native": 0.27755102040816326,
+          "origin_native": [
+            33,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/work_right_1.png",
+        "refined_master_sha256": "260e77c3cde9d283de2fb6f24d46b2ae0c2d11ec3cd4096c786f1202411cd905"
+      }
+    },
+    {
+      "clip": "stretch_front",
+      "index": 0,
+      "file": "poses/stretch_front_0.png",
+      "sha256": "7126e7b594c9e0d0dd6643cfc1da11bf2a5cd26866a0839c819849082e52f9ef",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "stretch_front_0.png",
+        "duration_ms": 850
+      },
+      "legacy_body_sha256": "e906319f6853caad94c3a96dfab53566a479ea555e7647fe23432a9bd72b30e4",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "9953d10b318c0918c7198b48fea580027634c6b2f5e59cd6c95e89a2c3e9d9a0",
+          "source_size_artwork": [
+            127,
+            222
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            29,
+            24
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/stretch_front_0.png",
+        "refined_master_sha256": "7126e7b594c9e0d0dd6643cfc1da11bf2a5cd26866a0839c819849082e52f9ef"
+      }
+    },
+    {
+      "clip": "stretch_front",
+      "index": 1,
+      "file": "poses/stretch_front_1.png",
+      "sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf",
+      "logical_size": [
+        48,
+        52
+      ],
+      "artwork_size": [
+        96,
+        104
+      ],
+      "artwork_pixels_per_world_pixel": 2,
+      "draw_anchor_logical": [
+        24,
+        46
+      ],
+      "logical_attachment_metadata": {
+        "file": "stretch_front_1.png",
+        "duration_ms": 850
+      },
+      "legacy_body_sha256": "0d99e1e3126cb1d8380b51797fcd0a6f9fb1f74362537d6d848ba568d38eee6b",
+      "source_registration": {
+        "original_registration": {
+          "source_rgba_sha256": "e21c6ecb643ab050ca7c6e5bf0807eec4ead1ba276970ad897f0be57ed9bc2c3",
+          "source_size_artwork": [
+            113,
+            218
+          ],
+          "uniform_scale_to_native": 0.3063063063063063,
+          "origin_native": [
+            31,
+            25
+          ],
+          "registration_kind": "cropped",
+          "head_aligned": false
+        },
+        "refined_complete_master": "refined_masters/stretch_front_1.png",
+        "refined_master_sha256": "7eacca24c7d29d539cd969c1157f3c015c97ac4fefb98b6c6a38bd210bc2d7cf"
+      }
+    }
+  ],
+  "source_recipe": "assets/source/characters/regional_npc_hd/grain_loader/activity_hd/recipe.json",
+  "source_recipe_sha256": "9e18774e7553f783c61a58f27971049a1265089bf8d5602e686bd8d44346a0a9",
+  "builder": "tools/build_regional_worker_activity_hd.py",
+  "builder_sha256": "6d895e862944f5f59be2d4c72218743dadd6d323a6843e5925dddfb8079f09ea",
+  "motion_reviews": [
+    {
+      "file": "review/inspect_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1300,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/inspect_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 2600,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/cover_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1000,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/cover_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 2000,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/lift_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1200,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/lift_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 2400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/recover_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/recover_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 800,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_back_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_back_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_left_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_left_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/hold_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_back_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_back_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_left_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_left_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 720,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/carry_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1440,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/look_left_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 700,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/look_left_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/place_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1200,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/place_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 2400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/push_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 960,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/push_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 1920,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/work_right_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1100,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/work_right_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 2200,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/stretch_front_normal.gif",
+      "speed": "normal",
+      "authored_duration_ms": 1700,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    },
+    {
+      "file": "review/stretch_front_half_speed.gif",
+      "speed": "half_speed",
+      "authored_duration_ms": 3400,
+      "presentation": "Offline body-only motion review, not gameplay. PNGs remain exact color/alpha authority."
+    }
+  ],
+  "dependencies": [
+    {
+      "file": "assets/characters/grain_workers/loader/animation.json",
+      "sha256": "2939465cd212c27be84ea0e28650783c2b9962cb7f49ed56820d904cd9d2cf10"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/carry_sheet_generated.png",
+      "sha256": "eb868088b47f4a830ff5c3c70778c48b23515effa0c4ed7e0ace9ee67bb12f92"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/loaded_walk_generated.png",
+      "sha256": "c9c1a2e60c1b287b999182223c2b392350c9d4321880b1a6673a568bfc48cd4b"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/native_review.png",
+      "sha256": "b2d4e8719f41930aaea45ecdbee1cb015615094caf2a57392511c6164428e769"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/work_sheet_generated.png",
+      "sha256": "69ba841d1f341ea13cf276c419e9d4a669d512ed6e66de38b9e3dd3a4d9e5e80"
+    },
+    {
+      "file": "tools/build_grain_loader.py",
+      "sha256": "88f927033a1703b76c9b15cc545c45bfc18ca2c9dd521ee64365c8ff0f6ac3e6"
+    }
+  ],
+  "activation_gates": [
+    "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
+    "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
+    "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
+    "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
+  ],
+  "canvas_geometry": "Art-only padding grows40x44 to48x52, with anchor20,38 ->24,46; body-to-ground transform and world attachment offsets are unchanged. Padding restores full source crowns instead of clipping high cells.",
+  "limits": "Retained complete source bodies re-sampled uniformly at2x, or explicitly reviewed complete refined masters at the same registration. No runtime binding, prop ownership, hand metadata, timing, collision or save changes; props remain separately owned. Not a user visual approval."
+}

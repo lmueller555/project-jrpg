@@ -1,0 +1,565 @@
+{
+  "frames": 46,
+  "canvas": [
+    96,
+    104
+  ],
+  "anchor": [
+    48,
+    92
+  ],
+  "body_origin": [
+    24,
+    23
+  ],
+  "hard_alpha": true,
+  "all_source_hashes_match": true,
+  "metadata": "Unchanged staged sequence contract; no export/runtime change in this package",
+  "hands_diagnostic": [
+    {
+      "file": "poses/cover_front_0.png",
+      "logical_target": [
+        -4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/cover_front_0.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/cover_front_1.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/cover_front_1.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_0.png",
+      "logical_target": [
+        -2,
+        -5
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_0.png",
+      "logical_target": [
+        2,
+        -5
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_1.png",
+      "logical_target": [
+        -3,
+        -8
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_1.png",
+      "logical_target": [
+        3,
+        -8
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_2.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_2.png",
+      "logical_target": [
+        5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_3.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/lift_front_3.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/hold_front_0.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/hold_front_0.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/hold_back_0.png",
+      "logical_target": [
+        -4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/hold_back_0.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/hold_left_0.png",
+      "logical_target": [
+        -6,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/hold_left_0.png",
+      "logical_target": [
+        -5,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/hold_right_0.png",
+      "logical_target": [
+        5,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/hold_right_0.png",
+      "logical_target": [
+        6,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_front_0.png",
+      "logical_target": [
+        -4,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_front_0.png",
+      "logical_target": [
+        4,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_front_1.png",
+      "logical_target": [
+        -3,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_front_1.png",
+      "logical_target": [
+        4,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_front_2.png",
+      "logical_target": [
+        -3,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_front_2.png",
+      "logical_target": [
+        4,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_front_3.png",
+      "logical_target": [
+        -3,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_front_3.png",
+      "logical_target": [
+        5,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 1.0
+    },
+    {
+      "file": "poses/carry_back_0.png",
+      "logical_target": [
+        -4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_0.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_1.png",
+      "logical_target": [
+        -4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_1.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_2.png",
+      "logical_target": [
+        -4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_2.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_3.png",
+      "logical_target": [
+        -4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_back_3.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.707
+    },
+    {
+      "file": "poses/carry_left_0.png",
+      "logical_target": [
+        -6,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_left_0.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_left_1.png",
+      "logical_target": [
+        -6,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_left_1.png",
+      "logical_target": [
+        -5,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_left_2.png",
+      "logical_target": [
+        -6,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_left_2.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_left_3.png",
+      "logical_target": [
+        -6,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_left_3.png",
+      "logical_target": [
+        -5,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_right_0.png",
+      "logical_target": [
+        5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_right_0.png",
+      "logical_target": [
+        6,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/carry_right_1.png",
+      "logical_target": [
+        5,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_right_1.png",
+      "logical_target": [
+        7,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 1.414
+    },
+    {
+      "file": "poses/carry_right_2.png",
+      "logical_target": [
+        5,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_right_2.png",
+      "logical_target": [
+        7,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 1.414
+    },
+    {
+      "file": "poses/carry_right_3.png",
+      "logical_target": [
+        5,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/carry_right_3.png",
+      "logical_target": [
+        7,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 1.414
+    },
+    {
+      "file": "poses/look_left_0.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/look_left_0.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/look_left_1.png",
+      "logical_target": [
+        -5,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/look_left_1.png",
+      "logical_target": [
+        3,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/place_right_0.png",
+      "logical_target": [
+        3,
+        -14
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/place_right_0.png",
+      "logical_target": [
+        4,
+        -15
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/place_right_1.png",
+      "logical_target": [
+        7,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/place_right_1.png",
+      "logical_target": [
+        9,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 1.803
+    },
+    {
+      "file": "poses/place_right_2.png",
+      "logical_target": [
+        10,
+        -11
+      ],
+      "nearest_drawn_skin_gap_logical": 0.5
+    },
+    {
+      "file": "poses/place_right_2.png",
+      "logical_target": [
+        11,
+        -12
+      ],
+      "nearest_drawn_skin_gap_logical": 1.581
+    },
+    {
+      "file": "poses/place_right_3.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/place_right_3.png",
+      "logical_target": [
+        4,
+        -13
+      ],
+      "nearest_drawn_skin_gap_logical": 0.0
+    },
+    {
+      "file": "poses/push_right_0.png",
+      "logical_target": [
+        11,
+        -18
+      ],
+      "nearest_drawn_skin_gap_logical": 1.5
+    },
+    {
+      "file": "poses/push_right_1.png",
+      "logical_target": [
+        12,
+        -18
+      ],
+      "nearest_drawn_skin_gap_logical": 1.5
+    },
+    {
+      "file": "poses/push_right_2.png",
+      "logical_target": [
+        15,
+        -19
+      ],
+      "nearest_drawn_skin_gap_logical": 4.0
+    },
+    {
+      "file": "poses/push_right_3.png",
+      "logical_target": [
+        15,
+        -19
+      ],
+      "nearest_drawn_skin_gap_logical": 4.0
+    }
+  ],
+  "runtime_acceptance": "PENDING coordinator actual-game snapshots with separately owned props"
+}
