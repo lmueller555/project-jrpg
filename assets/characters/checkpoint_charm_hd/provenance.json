@@ -1,0 +1,499 @@
+{
+  "version": 1,
+  "exporter": "tools/build_checkpoint_charm_hd.py",
+  "sources": {
+    "assets/source/characters/checkpoint_charm/poses_generated.png": "2c1a82ee129f8dcecf75993f445d1265df87e6850b5c5bbf4ca35b7ac427af5e"
+  },
+  "registrations": {
+    "walk_front_0": {
+      "source_cell": [
+        0,
+        0,
+        256,
+        250
+      ],
+      "alpha_bounds": [
+        89,
+        19,
+        226,
+        240
+      ],
+      "registration": [
+        17,
+        5
+      ],
+      "scale": 0.32
+    },
+    "walk_front_1": {
+      "source_cell": [
+        256,
+        0,
+        512,
+        250
+      ],
+      "alpha_bounds": [
+        72,
+        19,
+        214,
+        240
+      ],
+      "registration": [
+        17,
+        5
+      ],
+      "scale": 0.32
+    },
+    "walk_front_2": {
+      "source_cell": [
+        512,
+        0,
+        768,
+        250
+      ],
+      "alpha_bounds": [
+        52,
+        19,
+        193,
+        240
+      ],
+      "registration": [
+        17,
+        5
+      ],
+      "scale": 0.32
+    },
+    "walk_front_3": {
+      "source_cell": [
+        768,
+        0,
+        1024,
+        250
+      ],
+      "alpha_bounds": [
+        34,
+        19,
+        176,
+        240
+      ],
+      "registration": [
+        16,
+        5
+      ],
+      "scale": 0.32
+    },
+    "walk_back_0": {
+      "source_cell": [
+        0,
+        250,
+        256,
+        490
+      ],
+      "alpha_bounds": [
+        88,
+        11,
+        227,
+        231
+      ],
+      "registration": [
+        19,
+        6
+      ],
+      "scale": 0.32
+    },
+    "walk_back_1": {
+      "source_cell": [
+        256,
+        250,
+        512,
+        490
+      ],
+      "alpha_bounds": [
+        72,
+        11,
+        212,
+        231
+      ],
+      "registration": [
+        18,
+        6
+      ],
+      "scale": 0.32
+    },
+    "walk_back_2": {
+      "source_cell": [
+        512,
+        250,
+        768,
+        490
+      ],
+      "alpha_bounds": [
+        56,
+        11,
+        195,
+        231
+      ],
+      "registration": [
+        19,
+        6
+      ],
+      "scale": 0.32
+    },
+    "walk_back_3": {
+      "source_cell": [
+        768,
+        250,
+        1024,
+        490
+      ],
+      "alpha_bounds": [
+        34,
+        11,
+        176,
+        231
+      ],
+      "registration": [
+        18,
+        6
+      ],
+      "scale": 0.32
+    },
+    "walk_left_0": {
+      "source_cell": [
+        0,
+        490,
+        256,
+        730
+      ],
+      "alpha_bounds": [
+        88,
+        7,
+        211,
+        234
+      ],
+      "registration": [
+        21,
+        3
+      ],
+      "scale": 0.32
+    },
+    "walk_left_1": {
+      "source_cell": [
+        256,
+        490,
+        512,
+        730
+      ],
+      "alpha_bounds": [
+        85,
+        7,
+        198,
+        234
+      ],
+      "registration": [
+        23,
+        3
+      ],
+      "scale": 0.32
+    },
+    "walk_left_2": {
+      "source_cell": [
+        512,
+        490,
+        768,
+        730
+      ],
+      "alpha_bounds": [
+        50,
+        7,
+        183,
+        234
+      ],
+      "registration": [
+        20,
+        3
+      ],
+      "scale": 0.32
+    },
+    "walk_left_3": {
+      "source_cell": [
+        768,
+        490,
+        1024,
+        730
+      ],
+      "alpha_bounds": [
+        54,
+        7,
+        169,
+        234
+      ],
+      "registration": [
+        23,
+        3
+      ],
+      "scale": 0.32
+    },
+    "walk_right_0": {
+      "source_cell": [
+        0,
+        730,
+        256,
+        985
+      ],
+      "alpha_bounds": [
+        98,
+        9,
+        226,
+        245
+      ],
+      "registration": [
+        18,
+        0
+      ],
+      "scale": 0.32
+    },
+    "walk_right_1": {
+      "source_cell": [
+        256,
+        730,
+        512,
+        985
+      ],
+      "alpha_bounds": [
+        82,
+        9,
+        213,
+        245
+      ],
+      "registration": [
+        19,
+        0
+      ],
+      "scale": 0.32
+    },
+    "walk_right_2": {
+      "source_cell": [
+        512,
+        730,
+        768,
+        985
+      ],
+      "alpha_bounds": [
+        72,
+        7,
+        199,
+        245
+      ],
+      "registration": [
+        19,
+        0
+      ],
+      "scale": 0.32
+    },
+    "walk_right_3": {
+      "source_cell": [
+        768,
+        730,
+        1024,
+        985
+      ],
+      "alpha_bounds": [
+        56,
+        9,
+        181,
+        245
+      ],
+      "registration": [
+        20,
+        0
+      ],
+      "scale": 0.32
+    },
+    "sit_0": {
+      "source_cell": [
+        0,
+        985,
+        256,
+        1228
+      ],
+      "alpha_bounds": [
+        84,
+        16,
+        226,
+        235
+      ],
+      "registration": [
+        20,
+        6
+      ],
+      "scale": 0.32
+    },
+    "sit_1": {
+      "source_cell": [
+        256,
+        985,
+        512,
+        1228
+      ],
+      "alpha_bounds": [
+        68,
+        20,
+        216,
+        232
+      ],
+      "registration": [
+        18,
+        8
+      ],
+      "scale": 0.32
+    },
+    "sit_2": {
+      "source_cell": [
+        512,
+        985,
+        768,
+        1228
+      ],
+      "alpha_bounds": [
+        49,
+        30,
+        193,
+        233
+      ],
+      "registration": [
+        20,
+        11
+      ],
+      "scale": 0.32
+    },
+    "sit_3": {
+      "source_cell": [
+        768,
+        985,
+        1024,
+        1228
+      ],
+      "alpha_bounds": [
+        37,
+        22,
+        183,
+        233
+      ],
+      "registration": [
+        20,
+        8
+      ],
+      "scale": 0.32
+    },
+    "check_right_0": {
+      "source_cell": [
+        0,
+        1228,
+        256,
+        1536
+      ],
+      "alpha_bounds": [
+        93,
+        10,
+        194,
+        244
+      ],
+      "registration": [
+        21,
+        1
+      ],
+      "scale": 0.32
+    },
+    "check_right_1": {
+      "source_cell": [
+        256,
+        1228,
+        512,
+        1536
+      ],
+      "alpha_bounds": [
+        75,
+        23,
+        194,
+        244
+      ],
+      "registration": [
+        23,
+        5
+      ],
+      "scale": 0.32
+    },
+    "check_right_2": {
+      "source_cell": [
+        512,
+        1228,
+        768,
+        1536
+      ],
+      "alpha_bounds": [
+        46,
+        23,
+        182,
+        244
+      ],
+      "registration": [
+        23,
+        5
+      ],
+      "scale": 0.32
+    },
+    "check_right_3": {
+      "source_cell": [
+        768,
+        1228,
+        1024,
+        1536
+      ],
+      "alpha_bounds": [
+        53,
+        10,
+        156,
+        244
+      ],
+      "registration": [
+        21,
+        1
+      ],
+      "scale": 0.32
+    }
+  },
+  "exports": {
+    "assets/characters/checkpoint_charm_hd/walk_front_0.png": "5d47aa5ba76861853f6b6947fd367822b50cc3de761ff6267d7fe457a0872e28",
+    "assets/characters/checkpoint_charm_hd/walk_front_1.png": "53ad47644b0e12994f7cc0abd302e3ce408a5c40e245285f245a73d5ed40d6f0",
+    "assets/characters/checkpoint_charm_hd/walk_front_2.png": "845e8bbbbb9566962855c71674a421963a23608bd5c5114ec7b2297d0a7f2f32",
+    "assets/characters/checkpoint_charm_hd/walk_front_3.png": "6a4b770db0b84507575f013f7ecf51f7b602d23801d2275e40ba816639463e96",
+    "assets/characters/checkpoint_charm_hd/walk_back_0.png": "aea1e59d7a5378b2c06f9580869d0fc1f6a87b7cf2bb07681673957d3d0a14bf",
+    "assets/characters/checkpoint_charm_hd/walk_back_1.png": "d3d5a4af49dcd6ed4c7bd84372bd717bf83e3d037255199faa36183bc66e53e9",
+    "assets/characters/checkpoint_charm_hd/walk_back_2.png": "1358ab5d036093338d790003d8eb79c46b51ded0ee34f61512fca49f24b1aeb2",
+    "assets/characters/checkpoint_charm_hd/walk_back_3.png": "d1ec6fdc70e0ce8453ef38836be4dce0067372ccf21f02b42dbae3103beaa758",
+    "assets/characters/checkpoint_charm_hd/walk_left_0.png": "6fc926296d91891d77d639eeb56c897e7915d3fcb58ee9ad4f78cf3ed5785152",
+    "assets/characters/checkpoint_charm_hd/walk_left_1.png": "3bcf2304227311fe7f8964bbc7a698fb715fc99018109996db567347ca1225d8",
+    "assets/characters/checkpoint_charm_hd/walk_left_2.png": "936ac9263e885dcc73b989aed5f9fcba6df10f7540da9c20d0919af529aa1158",
+    "assets/characters/checkpoint_charm_hd/walk_left_3.png": "9ba083daa0daf7092e25b1dd1c291795d7ea7595b769781ded033ae3e6dfa373",
+    "assets/characters/checkpoint_charm_hd/walk_right_0.png": "e794efac804e7bb5aac4079d0a8039145eeb053e3f2aaecc86759f84d624342e",
+    "assets/characters/checkpoint_charm_hd/walk_right_1.png": "15ac8901bd3a8acf08a980934514d3391d0fbd2af0e4becc021da15848cc4eb6",
+    "assets/characters/checkpoint_charm_hd/walk_right_2.png": "43afb7dab4e0d11512581a04370fc5295732aec816cc50f0beb52d2059c99aa7",
+    "assets/characters/checkpoint_charm_hd/walk_right_3.png": "d6787d03af6290346b99d2fa53af4546c7f3613d5dc5340ed3fd383cecfd866c",
+    "assets/characters/checkpoint_charm_hd/sit_0.png": "a06dc4d45754d12c65640dbd8317520912b1033a434838ab6d3c73bb4f14e729",
+    "assets/characters/checkpoint_charm_hd/sit_1.png": "64ba340de867405961a3b71028a84a102b163d48d1ebae2b9f9482cc1c51d885",
+    "assets/characters/checkpoint_charm_hd/sit_2.png": "876e6c08b9253f4f41843c248c0ee8ba2f00384c6cf5a8871476dc6e2b27cdd0",
+    "assets/characters/checkpoint_charm_hd/sit_3.png": "f6930a04491c225a4f6edb56a2e0b62574e467f7330a98a91103b41d2cba9f04",
+    "assets/characters/checkpoint_charm_hd/check_right_0.png": "a1bfbb0951b3f8f1b2114e8d5884d7f5544ce1aa4ae86ff74b8bef25ca95e757",
+    "assets/characters/checkpoint_charm_hd/check_right_1.png": "c4987d82d9a66420acd77cae3882b1ad97ec50244a758cf002d4528f0a5829e5",
+    "assets/characters/checkpoint_charm_hd/check_right_2.png": "b3a8fbee94833a6173caca1f8a394c718c050f01eefddb67afdc8ff95a38167a",
+    "assets/characters/checkpoint_charm_hd/check_right_3.png": "110d8fe89ace054ab9e55a41f0c759c03ce57ea9efd0a1be6ee4d14ffd280a8d",
+    "assets/characters/checkpoint_charm_hd/animation.json": "7371bc1a249788e58ffbd35ab2d0b8c2a0efb70cdaf76343cca7f948c1dbd516",
+    "assets/characters/checkpoint_charm_hd/review.png": "da226fcc8cbebd60c5a0990a9f1942fa8abf65ce33dcc64a841b7437ab270116"
+  },
+  "notes": [
+    "Twenty-four complete generated body poses; no body-part transforms or runtime mirroring.",
+    "Every exported pose uses the same uniform nearest-neighbor scale.",
+    "Seated poses articulate hips and knees; standing height is never compressed.",
+    "The physical-left shield and existing closed-helmet portrait identity are retained."
+  ]
+}
