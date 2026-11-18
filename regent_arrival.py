@@ -14,6 +14,7 @@ import random
 import pygame
 
 import speech_bubble
+from cinematic_actor_actions import ActionPlayer, idle_state, load_actions
 from regent_aerial import RegentAerial
 from regent_aerial_audio import RegentAerialAudio
 from regent_road_pan import RoadWhipPan
@@ -131,6 +132,7 @@ class RegentArrival:
         self._reference_world = None
         self.scenery = None
         self.actor_art = {}
+        self._actor_actions = {}
         self.profiles = {}
         self.portraits = {}
         self.skip_rect = pygame.Rect(426, 292, 44, 20)
@@ -206,6 +208,7 @@ class RegentArrival:
     def arrival_complete(self):return self.state == 'seen'
 
     def reset(self):
+        self.clear_actor_actions()
         self.audio.stop()
         self.bird_audio.reset()
         self.state = 'waiting'
@@ -236,6 +239,7 @@ class RegentArrival:
                 or self.game.social.active or self.game.pause.is_open
                 or self.game.combat.active):return False
         self.active = True;self.paused = False;self.focused = bool(self.game._music_focused)
+        self.clear_actor_actions()
         self.phase_index = 0;self.phase_time = 0.;self.elapsed = 0.
         self.dialogue_index = 0;self.page_index = 0
         self.game.player.moving = False;self.game._mouse_held = False
@@ -318,6 +322,7 @@ class RegentArrival:
                 or self.dialogue_index < len(self.phase['dialogue'])):return
         if self.phase_index+1 == len(self.data['phases']):self.finish('finished');return
         self.phase_index += 1;self.phase_time = 0.
+        self.clear_actor_actions()
         self.dialogue_index = 0;self.page_index = 0
         self.caption_layout = None;self.caption_pages = [];self.caption_lines = []
 
@@ -358,6 +363,7 @@ class RegentArrival:
                           gain=self._audio_gain(snapshot), travel_rate=self._travel_rate(snapshot))
         self.bird_audio.update(0 if paused else seconds, snapshot, paused=paused)
         if paused:return
+        for player in self._actor_actions.values():player.update(max(0., seconds))
         self.phase_time += max(0., seconds);self.elapsed += max(0., seconds)
         if (self.shot == 'sanctuary_close' and self.fade_alpha
                 and not self._music_transition_started):
@@ -366,6 +372,7 @@ class RegentArrival:
         self._next_if_ready()
 
     def finish(self, reason='finished'):
+        self.clear_actor_actions()
         if not self.active:return False
         self.audio.stop();self.bird_audio.stop()
         self.active = False;self.paused = False;self.state = 'seen';self.finished_reason = reason
@@ -433,7 +440,11 @@ class RegentArrival:
                 if (pose not in loops or type(stride) not in (int,float)
                         or not math.isfinite(stride) or stride <= 0):
                     raise ValueError('Invalid arrival actor stride')
-            actors[identifier] = {**record, 'poses': frames, 'loops': loops}
+            loaded = {**record, 'poses': frames, 'loops': loops}
+            if 'actions' in record:
+                loaded['actions'] = load_actions(record, frames, path,
+                    lambda filename: pygame.image.load(str(filename)).convert_alpha())
+            actors[identifier] = loaded
         for key, record in self.data['speakers'].items():
             profile = dict(self.game.social.data['speakers'].get(record.get('profile'), record))
             if record.get('portrait_file'):
@@ -504,6 +515,10 @@ class RegentArrival:
 
     def _frame(self, actor):
         art = self.actor_art[actor['id']]
+        # Aerial ground-reference draws temporarily sample another phase; they
+        # must not borrow a current shot's action or mutate any clip clock.
+        player = self._actor_actions.get(actor['id']) if self._reference_clock is None else None
+        if player is not None and player.frame is not None:return player.frame
         pose = self.actor_pose(actor)
         start = actor.get('move_start', 0.)
         if pose in art['loops']:
@@ -531,6 +546,36 @@ class RegentArrival:
                 time -= duration
             return frames[-1][0]
         return art['poses'][pose]
+
+    def play_actor_action(self, actor_id, action_name, cue_id):
+        """Start one transient cue for a currently drawn scene-owned actor."""
+        if (not self.active or self.phase['scene'] in ('aerial', 'world')
+                or not any(actor['id'] == actor_id for actor in self.phase['actors'])):
+            return False
+        self._load()
+        clips = self.actor_art[actor_id].get('actions', {})
+        if not isinstance(action_name, str) or action_name not in clips:
+            raise ValueError('Unknown actor action: ' + str(action_name))
+        player = self._actor_actions.get(actor_id)
+        if player is None:
+            player = ActionPlayer(clips)
+            started = player.play(action_name, cue_id)
+            if started:self._actor_actions[actor_id] = player
+            return started
+        return player.play(action_name, cue_id)
+
+    def release_actor_action(self, actor_id, cue_id=None):
+        player = self._actor_actions.get(actor_id)
+        return player.release(cue_id) if player is not None else False
+
+    def actor_action_state(self, actor_id):
+        if actor_id not in self.data['actors']:raise KeyError(actor_id)
+        player = self._actor_actions.get(actor_id)
+        return player.state if player is not None else idle_state()
+
+    def clear_actor_actions(self):
+        """Discard local presentation clocks, settled overrides and cue history."""
+        self._actor_actions.clear()
 
     def _actor_scale(self, actor):
         scale = actor.get('scale', 1.)

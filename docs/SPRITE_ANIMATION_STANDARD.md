@@ -385,6 +385,66 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
 | Body looks fine enlarged but skates in game | Cadence/stride mismatch or wrong world/art units | Compare stance with actor travel and verify density/anchor use. |
 | First frame pops after the last | Endpoints and secondary motion were reviewed separately | Inspect the loop seam as an ordinary adjacent pair and draw its missing transition. |
 
+## 10. Cinematic performances and finite actions
+
+Build each performance around the character's approved directional references.
+For current Iselin, retain white hair, blue eyes, blue/silver royal clothing,
+the mantle on anatomical right, the forward braid on anatomical left and a
+readable black exterior outline. Use the approved pixels as palette references.
+Keep crown, head width, neck, shoulders and pelvis coherent across poses; inspect
+the whole figure rather than stretching a body to match a hand or foot target.
+Her arrival acting should convey composure, warmth and fatigue through restrained
+head, shoulder and hand movement. Establish key poses before intermediate frames.
+
+Camera presentation and source density remain separate. Current Iselin uses:
+
+| View | Source canvas and registration | Presentation |
+| --- | --- | --- |
+| Ordinary world and seated meal | 24×36, draw anchor `[12,30]`, ordinary foot reference `[12,34]` | One artwork pixel per world pixel; 8×4 ordinary collision probe. |
+| Arrival ground shots | 24×36, ground reference `[12,34]` | Uniform nearest-neighbor enlargement by `80/34` into 80×96, anchor `[40,92]`. |
+| Arrival aerial shots | 16×24, ground reference `[8,22]` | Uniform nearest-neighbor enlargement by `1.5` into 48×64, anchor `[24,56]`. |
+
+These are existing camera contracts, not permission to scale each drawing by its
+occupied bounds. A larger action canvas requires an explicitly registered anchor
+and visual review. Preserve ordinary collision, authored travel positions and
+scene perspective when changing artwork.
+
+### Entry, hold, recovery and rest
+
+A one-time action has an authored entry, a stable hold, a recovery and a settled
+rest pose. Frame counts and individual exposures follow the action; a greeting
+does not inherit a walk's sixteen-frame budget. Draw complete, coherent frames
+for head turns, gestures, stops and sit/stand transitions. Review near/far limbs,
+costume overlap, support contacts and modest cloth/hair follow-through.
+
+Choose either a finite hold or a player-paced hold released by the scene. A long
+reading pause should leave the character in a comfortable resting pose. Trigger
+each performance with a stable cue identity so pagination or repeated input
+cannot restart it. Early release should finish the entry and recover coherently;
+scene exit or Skip releases presentation ownership immediately. An action's
+visual completion alone must not award inventory, quest facts or object transfers.
+Actions that manipulate props additionally follow the interaction standard's
+approach, facing, transfer cue and ownership rules.
+
+Advance action clocks through scene updates. Rendering samples the current pose
+without advancing time. Pause and focus loss freeze entry, hold and recovery.
+Phase changes, restart, restore, Skip and closing a Gallery session discard
+temporary action state. It is not part of the journey save schema.
+
+### Focused review
+
+Give each new performance its own key-pose and motion review. Compare the entry
+and recovery against the actual preceding and following poses. Present numbered
+frames, normal/slow playback and the performance in its production shot with the
+other cast, camera scale, furniture and foreground occlusion intact. Review a
+long hold, early release, repeated cue, pause/resume and scene exit alongside the
+normal action. Keep unrelated approved animations unchanged.
+
+A playback probe assembled from existing stills demonstrates clock and lifecycle
+behavior. Label it as a synthetic probe; it is not a newly authored performance
+or evidence that intermediate motion is finished. Keep review commands and
+scene-specific clip schemas in the relevant scene guide and tool catalogue.
+
 ## Implementation references (examples, not competing standards)
 
 - [Native idles](reviews/iselin_native_idles/README.md): approved directional
