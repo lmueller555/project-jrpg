@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/shopkeeper_04/walk_right/authored.png",
+  "source_sha256": "03cd5dd55304642373a2b5ef1925822da989bbc7a7358fa70301b2a78751dcde",
+  "reference": "assets/characters/npc_roster_hd/shopkeeper_04/idle_right.png",
+  "reference_sha256": "cd49daf4fe4a4e88a00a179b816ea2f3c5cf0df82e7c33acf2192cc955d0d083",
+  "drawing": "Eight complete, independently plotted native pixel drawings; no isolated limb transforms. Approved head/appearance retained within authored bob.",
+  "export": "No rescale or normalization, crop retained source at recorded rectangles.",
+  "registration": "Common head/neck and torso registration, fixed 24,60 draw and 24,69 foot references.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "left contact",
+    "left down",
+    "right passing",
+    "right recovery",
+    "right contact",
+    "right down",
+    "left passing",
+    "left recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "0/255"
+}
