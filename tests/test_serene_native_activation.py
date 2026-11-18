@@ -16,9 +16,9 @@ class SereneNativeActivation(unittest.TestCase):
  def actor(self,who='mother_serene'):
   records=json.loads((ROOT/'assets/maps/eldenmere/playable/map.json').read_text())['persistent_npcs']
   return RoutineNPC(next(r for r in records if r['id']==who),self.world)
- def test_generated_legacy_record_activates_only_serene(self):
+ def test_generated_legacy_record_activates_serene_with_no_tomas_alias(self):
   a=self.actor();self.assertTrue(enabled(a));self.assertEqual(a.sprite_root,SPRITE_ROOT);self.assertEqual(a.animation_path,ACTION_ROOT+'/routines/animations.json');self.assertEqual(a.data['sprite_root'],'assets/characters/serene')
-  t=self.actor('tomas');self.assertFalse(enabled(t));self.assertEqual(t.animation_path,t.data['animation']);self.assertEqual(t.sprite_root,t.data['sprite_root'])
+  t=self.actor('tomas');self.assertFalse(enabled(t));self.assertEqual(t.data['animation'],'assets/characters/tomas/routines/animations.json');self.assertNotEqual(t.sprite_root,a.sprite_root)
  def test_native_pixels_survive_padding_and_walk_cadence(self):
   a=self.actor();self.assertEqual(a.draw_anchor,(24,36));self.assertEqual(a.body_offset,(12,6));self.assertEqual(a.probe_size,(12,8));self.assertEqual(a.canvas_size,(48,48))
   for face,surface in a.idles.items():
