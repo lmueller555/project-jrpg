@@ -1,0 +1,199 @@
+{
+  "character": "iselin",
+  "animation": "walk.left",
+  "status": "awaiting user review; campaign not activated",
+  "frame_size": [
+    24,
+    36
+  ],
+  "artwork_pixels_per_world_pixel": 1,
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "cycle_ms": 560,
+  "loop": true,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_contact"
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_settle"
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_release"
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_recovery"
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        96,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_passing"
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        120,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_advance"
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        144,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_reach"
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        168,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_precontact"
+    },
+    {
+      "file": "frame_09.png",
+      "rect": [
+        192,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_contact"
+    },
+    {
+      "file": "frame_10.png",
+      "rect": [
+        216,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "far_settle"
+    },
+    {
+      "file": "frame_11.png",
+      "rect": [
+        240,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_release"
+    },
+    {
+      "file": "frame_12.png",
+      "rect": [
+        264,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_recovery"
+    },
+    {
+      "file": "frame_13.png",
+      "rect": [
+        288,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_passing"
+    },
+    {
+      "file": "frame_14.png",
+      "rect": [
+        312,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_advance"
+    },
+    {
+      "file": "frame_15.png",
+      "rect": [
+        336,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_reach"
+    },
+    {
+      "file": "frame_16.png",
+      "rect": [
+        360,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 35,
+      "phase": "near_precontact"
+    }
+  ],
+  "construction": "Complete left-specific drawings; no limb rig or mirrored costume."
+}
