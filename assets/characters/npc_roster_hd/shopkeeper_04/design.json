@@ -1,0 +1,73 @@
+{
+  "id": "shopkeeper_04",
+  "display_name": "Outfitter",
+  "age_group": "adult",
+  "gender": "woman",
+  "role": "shopkeeper",
+  "density": 2,
+  "logical_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34.5
+  ],
+  "frames": {
+    "front": "idle_front.png",
+    "back": "idle_back.png",
+    "left": "idle_left.png",
+    "right": "idle_right.png"
+  },
+  "portrait": "portrait.png",
+  "design_notes": "Tall adult woman with dark brown skin, braided black ponytail, confident angular face; long muted blue tailored vest over cream blouse, plum trousers, tan ankle boots, measuring tape draped around neck, brass garment buttons. No handheld object. Four authored views; empty idle hands; handheld service props reserved for future action art. Crown y=2, sole y=69. Separate dialogue bust authored on dark green. Built-in image generation master sampled with nearest-neighbor and hard-alpha native contour export; not a recolor.",
+  "version": 1,
+  "artwork_pixels_per_world_pixel": 2,
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "idles": {
+    "front": {
+      "file": "assets/characters/npc_roster_hd/shopkeeper_04/idle_front.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "left": {
+      "file": "assets/characters/npc_roster_hd/shopkeeper_04/idle_left.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "right": {
+      "file": "assets/characters/npc_roster_hd/shopkeeper_04/idle_right.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "back": {
+      "file": "assets/characters/npc_roster_hd/shopkeeper_04/idle_back.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    }
+  },
+  "dialogue_portrait": {
+    "file": "assets/characters/npc_roster_hd/shopkeeper_04/portrait.png",
+    "logical_size": [
+      72,
+      72
+    ],
+    "expression": "neutral"
+  },
+  "status": "idle_bank"
+}
